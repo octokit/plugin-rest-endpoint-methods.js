@@ -46,7 +46,7 @@ const MyOctokit = Octokit.plugin(restEndpointMethods);
 const octokit = new MyOctokit({ auth: "secret123" });
 
 // See https://developer.github.com/v3/repos/#create
-octokit.repos.createForAuthenticatedUser({
+octokit.rest.repos.createForAuthenticatedUser({
   name: "my-new-repo"
 });
 ```
