@@ -6,6 +6,49 @@
 [![Build Status](https://github.com/octokit/plugin-rest-endpoint-methods.js/workflows/Test/badge.svg)](https://github.com/octokit/plugin-rest-endpoint-methods.js/actions?workflow=Test)
 [![Greenkeeper](https://badges.greenkeeper.io/octokit/plugin-rest-endpoint-methods.js.svg)](https://greenkeeper.io/)
 
+## Usage
+
+<table>
+<tbody valign=top align=left>
+<tr><th>
+Browsers
+</th><td width=100%>
+
+Load `@octokit/plugin-rest-endpoint-methods` and [`@octokit/core`](https://github.com/octokit/core.js) (or core-compatible module) directly from [cdn.pika.dev](https://cdn.pika.dev)
+
+```html
+<script type="module">
+  import { Octokit } from "https://cdn.pika.dev/@octokit/core";
+  import { restEndpointMethods } from "https://cdn.pika.dev/@octokit/plugin-rest-endpoint-methods";
+</script>
+```
+
+</td></tr>
+<tr><th>
+Node
+</th><td>
+
+Install with `npm install @octokit/core @octokit/plugin-rest-endpoint-methods`. Optionally replace `@octokit/core` with a core-compatible module
+
+```js
+const { Octokit } = require("@octokit/core");
+const { restEndpointMethods } = require("@octokit/plugin-rest-endpoint-methods");
+```
+
+</td></tr>
+</tbody>
+</table>
+
+```js
+const MyOctokit = Octokit.plugin(restEndpointMethods);
+const octokit = new MyOctokit({ auth: "secret123" });
+
+// See https://developer.github.com/v3/repos/#create
+octokit.repos.createForAuthenticatedUser({
+  name: 'my-new-repo'
+})
+```
+
 ## Contributing
 
 See [CONTRIBUTING.md](CONTRIBUTING.md)
