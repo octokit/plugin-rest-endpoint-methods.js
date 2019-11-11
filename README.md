@@ -28,11 +28,13 @@ Load `@octokit/plugin-rest-endpoint-methods` and [`@octokit/core`](https://githu
 Node
 </th><td>
 
-Install with `npm install @octokit/core @octokit/plugin-rest-endpoint-methods`. Optionally replace `@octokit/core` with a core-compatible module
+Install with `npm install @octokit/core @octokit/plugin-rest-endpoint-methods`. Optionally replace `@octokit/core` with a compatible module
 
 ```js
 const { Octokit } = require("@octokit/core");
-const { restEndpointMethods } = require("@octokit/plugin-rest-endpoint-methods");
+const {
+  restEndpointMethods
+} = require("@octokit/plugin-rest-endpoint-methods");
 ```
 
 </td></tr>
@@ -45,14 +47,14 @@ const octokit = new MyOctokit({ auth: "secret123" });
 
 // See https://developer.github.com/v3/repos/#create
 octokit.repos.createForAuthenticatedUser({
-  name: 'my-new-repo'
-})
+  name: "my-new-repo"
+});
 ```
 
 ## Contributing
 
 See [CONTRIBUTING.md](CONTRIBUTING.md)
-  
+
 ## License
 
 [MIT](LICENSE)
