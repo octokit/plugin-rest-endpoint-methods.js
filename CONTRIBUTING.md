@@ -33,13 +33,17 @@ npm test
 ## Submitting the Pull Request
 
 - Create a new branch locally.
-- Make your changes in that branch to your fork repository
+- Make your changes in that branch and push them to your fork
 - Submit a pull request from your topic branch to the master branch on the `octokit/plugin-rest-endpoint-methods.js` repository.
 - Be sure to tag any issues your pull request is taking care of / contributing to. Adding "Closes #123" to a pull request description will automatically close the issue once the pull request is merged in.
 
 ## Testing a pull request from github repo locally:
 
 You can install `@octokit/plugin-rest-endpoint-methods` from each pull request. Replace `[PULL REQUEST NUMBER]`
+
+```
+npm install https://github.pika.dev/octokit/plugin-rest-endpoint-methods.js/pr/[PULL REQUEST NUMBER]
+```
 
 Once you are done testing, you can revert back to the default module `@octokit/plugin-rest-endpoint-methods` from npm with `npm install @octokit/plugin-rest-endpoint-methods`
 
