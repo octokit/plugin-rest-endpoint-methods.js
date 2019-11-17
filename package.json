@@ -18,7 +18,9 @@
   ],
   "author": "Gregor Martynus (https://twitter.com/gr2m)",
   "license": "MIT",
-  "dependencies": {},
+  "dependencies": {
+    "@octokit/types": "^2.0.1"
+  },
   "devDependencies": {
     "@octokit/core": "^2.1.2",
     "@pika/pack": "^0.5.0",
