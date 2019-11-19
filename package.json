@@ -7,7 +7,11 @@
     "lint": "prettier --check '{src,test}/**/*' '!src/generated/**' README.md package.json",
     "lint:fix": "prettier --write '{src,test}/**/*' '!src/generated/**' README.md package.json",
     "pretest": "npm run -s lint",
-    "test": "jest --coverage"
+    "test": "jest --coverage",
+    "update-endpoints": "npm-run-all update-endpoints:*",
+    "update-endpoints:fetch-json": "node scripts/update-endpoints/fetch-json",
+    "update-endpoints:code": "node scripts/update-endpoints/code",
+    "update-endpoints:typescript": "node scripts/update-endpoints/typescript"
   },
   "repository": "https://github.com/octokit/plugin-rest-endpoint-methods.js",
   "keywords": [
@@ -24,6 +28,7 @@
   },
   "devDependencies": {
     "@octokit/core": "^2.1.2",
+    "@octokit/graphql": "^4.3.1",
     "@pika/pack": "^0.5.0",
     "@pika/plugin-build-node": "^0.7.1",
     "@pika/plugin-build-web": "^0.7.1",
@@ -33,6 +38,7 @@
     "@types/node": "^12.12.7",
     "fetch-mock": "^8.0.0",
     "jest": "^24.9.0",
+    "npm-run-all": "^4.1.5",
     "prettier": "^1.19.1",
     "semantic-release": "^15.13.30",
     "semantic-release-plugin-update-version-in-files": "^1.0.0",
