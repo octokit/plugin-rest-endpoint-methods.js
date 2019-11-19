@@ -8,5 +8,4 @@ type EndpointMethodsObject = {
 
 export type Api = {
   registerEndpoints: (endpoints: EndpointMethodsObject) => void;
-  rest: RestEndpointMethods;
-};
+} & RestEndpointMethods;
