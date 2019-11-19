@@ -48,7 +48,7 @@
     "typescript": "^3.7.2"
   },
   "peerDependencies": {
-    "@octokit/core": ">2.1.2"
+    "@octokit/core": ">=2.1.2"
   },
   "jest": {
     "preset": "ts-jest",
