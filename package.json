@@ -19,7 +19,8 @@
   "author": "Gregor Martynus (https://twitter.com/gr2m)",
   "license": "MIT",
   "dependencies": {
-    "@octokit/types": "^2.0.1"
+    "@octokit/types": "^2.0.1",
+    "deprecation": "^2.3.1"
   },
   "devDependencies": {
     "@octokit/core": "^2.1.2",
@@ -35,6 +36,7 @@
     "prettier": "^1.19.1",
     "semantic-release": "^15.13.30",
     "semantic-release-plugin-update-version-in-files": "^1.0.0",
+    "sort-keys": "^4.0.0",
     "ts-jest": "^24.1.0",
     "typescript": "^3.7.2"
   },
