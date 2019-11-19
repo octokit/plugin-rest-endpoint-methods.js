@@ -3,13 +3,12 @@ import { Octokit } from "@octokit/core";
 
 import { restEndpointMethods } from "../src";
 
-describe("Smoke test", () => {
-  it("README example", async () => {
+describe("REST API endpoint methods", () => {
+  it.only("README example", async () => {
     const mock = fetchMock.sandbox().post(
       "path:/user/repos",
       { ok: true },
       {
-        // @ts-ignore see https://github.com/DefinitelyTyped/DefinitelyTyped/pull/40133
         body: {
           name: "my-new-repo"
         }
@@ -25,8 +24,42 @@ describe("Smoke test", () => {
     });
 
     // See https://developer.github.com/v3/repos/#create
-    const { data } = await octokit.rest.repos.createForAuthenticatedUser({
+    const { data } = await octokit.repos.createForAuthenticatedUser({
       name: "my-new-repo"
+    });
+
+    expect(data).toStrictEqual({ ok: true });
+  });
+
+  it("Required preview header", async () => {
+    const mock = fetchMock.sandbox().post(
+      "path:/repos/octocat/hello-world/dispatches",
+      { ok: true },
+      {
+        headers: {
+          accept: "application/vnd.github.everest-preview+json"
+        },
+        body: {
+          event_type: "greeting",
+          client_payload: { name: "Mona" }
+        }
+      }
+    );
+
+    const MyOctokit = Octokit.plugin(restEndpointMethods);
+    const octokit = new MyOctokit({
+      auth: "secret123",
+      request: {
+        fetch: mock
+      }
+    });
+
+    // See https://developer.github.com/v3/repos/#create
+    const { data } = await octokit.repos.createDispatchEvent({
+      owner: "octocat",
+      repo: "hello-world",
+      event_type: "greeting",
+      client_payload: { name: "Mona" }
     });
 
     expect(data).toStrictEqual({ ok: true });
