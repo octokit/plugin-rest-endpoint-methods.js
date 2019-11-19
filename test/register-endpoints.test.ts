@@ -27,6 +27,7 @@ describe("Deprecations", () => {
     // make sure .registerEndpoints does not remove other methods on the same scope
     expect(typeof octokit.issues.get).toBe("function");
 
+    // @ts-ignore
     const { data } = await octokit.issues.fooBar();
 
     expect(data).toStrictEqual({ ok: true });
