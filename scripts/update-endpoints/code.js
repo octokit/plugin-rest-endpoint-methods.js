@@ -115,7 +115,8 @@ async function generateRoutes() {
   writeFileSync(
     ROUTES_PATH,
     prettier.format(
-      `export default ` + JSON.stringify(sortKeys(newRoutes, { deep: true }))
+      `export default ` + JSON.stringify(sortKeys(newRoutes, { deep: true })),
+      { parser: "typescript" }
     )
   );
   console.log(`${ROUTES_PATH} written.`);
