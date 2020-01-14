@@ -33,14 +33,6 @@ octokit.${endpoint.scope}.${endpoint.id}(${
     })
     .join("\n\n");
 
-  // writeFileSync(
-  //   ROUTES_PATH,
-  //   prettier.format(JSON.stringify(sortKeys(newRoutes, { deep: true })), {
-  //     parser: "json"
-  //   })
-  // );
-  // console.log(`${ROUTES_PATH} written.`);
-
   const currentContent = readFileSync(README_PATH, "utf8");
   const newContent = currentContent.replace(
     /const octokit = new MyOctokit\({ auth: "secret123" }\);[\s\S]*\`/,
