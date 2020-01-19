@@ -4,7 +4,7 @@ import { Octokit } from "@octokit/core";
 import { restEndpointMethods } from "../src";
 
 describe("REST API endpoint methods", () => {
-  it.only("README example", async () => {
+  it("README example", async () => {
     const mock = fetchMock.sandbox().post(
       "path:/user/repos",
       { ok: true },
