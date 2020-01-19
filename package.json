@@ -11,8 +11,7 @@
     "update-endpoints": "npm-run-all update-endpoints:*",
     "update-endpoints:fetch-json": "node scripts/update-endpoints/fetch-json",
     "update-endpoints:code": "node scripts/update-endpoints/code",
-    "update-endpoints:docs": "node scripts/update-endpoints/docs",
-    "update-endpoints:typescript": "node scripts/update-endpoints/typescript"
+    "update-endpoints:docs": "node scripts/update-endpoints/docs"
   },
   "repository": "https://github.com/octokit/plugin-rest-endpoint-methods.js",
   "keywords": [
