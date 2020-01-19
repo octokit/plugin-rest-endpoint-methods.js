@@ -8,6 +8,14 @@ export default {
       },
       url: "/user/starred/:owner/:repo"
     },
+    checkWatchingRepoLegacy: {
+      method: "GET",
+      params: {
+        owner: { required: true, type: "string" },
+        repo: { required: true, type: "string" }
+      },
+      url: "/user/subscriptions/:owner/:repo"
+    },
     deleteRepoSubscription: {
       method: "DELETE",
       params: {
@@ -246,6 +254,14 @@ export default {
       },
       url: "/user/starred/:owner/:repo"
     },
+    stopWatchingRepoLegacy: {
+      method: "DELETE",
+      params: {
+        owner: { required: true, type: "string" },
+        repo: { required: true, type: "string" }
+      },
+      url: "/user/subscriptions/:owner/:repo"
+    },
     unstarRepo: {
       method: "DELETE",
       params: {
@@ -253,6 +269,14 @@ export default {
         repo: { required: true, type: "string" }
       },
       url: "/user/starred/:owner/:repo"
+    },
+    watchRepoLegacy: {
+      method: "PUT",
+      params: {
+        owner: { required: true, type: "string" },
+        repo: { required: true, type: "string" }
+      },
+      url: "/user/subscriptions/:owner/:repo"
     }
   },
   apps: {
@@ -538,6 +562,12 @@ export default {
         client_id: { required: true, type: "string" }
       },
       url: "/applications/:client_id/grants/:access_token"
+    },
+    revokeInstallationToken: {
+      headers: { accept: "application/vnd.github.gambit-preview+json" },
+      method: "DELETE",
+      params: {},
+      url: "/installation/token"
     }
   },
   checks: {
@@ -1697,7 +1727,6 @@ export default {
   meta: { get: { method: "GET", params: {}, url: "/meta" } },
   migrations: {
     cancelImport: {
-      headers: { accept: "application/vnd.github.barred-rock-preview+json" },
       method: "DELETE",
       params: {
         owner: { required: true, type: "string" },
@@ -1736,7 +1765,6 @@ export default {
       url: "/orgs/:org/migrations/:migration_id/archive"
     },
     getCommitAuthors: {
-      headers: { accept: "application/vnd.github.barred-rock-preview+json" },
       method: "GET",
       params: {
         owner: { required: true, type: "string" },
@@ -1746,7 +1774,6 @@ export default {
       url: "/repos/:owner/:repo/import/authors"
     },
     getImportProgress: {
-      headers: { accept: "application/vnd.github.barred-rock-preview+json" },
       method: "GET",
       params: {
         owner: { required: true, type: "string" },
@@ -1755,7 +1782,6 @@ export default {
       url: "/repos/:owner/:repo/import"
     },
     getLargeFiles: {
-      headers: { accept: "application/vnd.github.barred-rock-preview+json" },
       method: "GET",
       params: {
         owner: { required: true, type: "string" },
@@ -1794,8 +1820,28 @@ export default {
       },
       url: "/orgs/:org/migrations"
     },
+    listReposForOrg: {
+      headers: { accept: "application/vnd.github.wyandotte-preview+json" },
+      method: "GET",
+      params: {
+        migration_id: { required: true, type: "integer" },
+        org: { required: true, type: "string" },
+        page: { type: "integer" },
+        per_page: { type: "integer" }
+      },
+      url: "/orgs/:org/migrations/:migration_id/repositories"
+    },
+    listReposForUser: {
+      headers: { accept: "application/vnd.github.wyandotte-preview+json" },
+      method: "GET",
+      params: {
+        migration_id: { required: true, type: "integer" },
+        page: { type: "integer" },
+        per_page: { type: "integer" }
+      },
+      url: "/user/:migration_id/repositories"
+    },
     mapCommitAuthor: {
-      headers: { accept: "application/vnd.github.barred-rock-preview+json" },
       method: "PATCH",
       params: {
         author_id: { required: true, type: "integer" },
@@ -1807,7 +1853,6 @@ export default {
       url: "/repos/:owner/:repo/import/authors/:author_id"
     },
     setLfsPreference: {
-      headers: { accept: "application/vnd.github.barred-rock-preview+json" },
       method: "PATCH",
       params: {
         owner: { required: true, type: "string" },
@@ -1836,7 +1881,6 @@ export default {
       url: "/orgs/:org/migrations"
     },
     startImport: {
-      headers: { accept: "application/vnd.github.barred-rock-preview+json" },
       method: "PUT",
       params: {
         owner: { required: true, type: "string" },
@@ -1872,7 +1916,6 @@ export default {
       url: "/orgs/:org/migrations/:migration_id/repos/:repo_name/lock"
     },
     updateImport: {
-      headers: { accept: "application/vnd.github.barred-rock-preview+json" },
       method: "PATCH",
       params: {
         owner: { required: true, type: "string" },
@@ -2330,6 +2373,9 @@ export default {
           enum: ["all", "private", "none"],
           type: "string"
         },
+        members_can_create_internal_repositories: { type: "boolean" },
+        members_can_create_private_repositories: { type: "boolean" },
+        members_can_create_public_repositories: { type: "boolean" },
         members_can_create_repositories: { type: "boolean" },
         name: { type: "string" },
         org: { required: true, type: "string" }
@@ -3103,10 +3149,9 @@ export default {
       url: "/repos/:owner/:repo/pulls/comments/:comment_id/reactions"
     },
     createForTeamDiscussion: {
-      headers: {
-        accept:
-          "application/vnd.github.echo-preview+json,application/vnd.github.squirrel-girl-preview+json"
-      },
+      deprecated:
+        "octokit.reactions.createForTeamDiscussion() has been renamed to octokit.reactions.createForTeamDiscussionLegacy() (2020-01-16)",
+      headers: { accept: "application/vnd.github.squirrel-girl-preview+json" },
       method: "POST",
       params: {
         content: {
@@ -3129,10 +3174,9 @@ export default {
       url: "/teams/:team_id/discussions/:discussion_number/reactions"
     },
     createForTeamDiscussionComment: {
-      headers: {
-        accept:
-          "application/vnd.github.echo-preview+json,application/vnd.github.squirrel-girl-preview+json"
-      },
+      deprecated:
+        "octokit.reactions.createForTeamDiscussionComment() has been renamed to octokit.reactions.createForTeamDiscussionCommentLegacy() (2020-01-16)",
+      headers: { accept: "application/vnd.github.squirrel-girl-preview+json" },
       method: "POST",
       params: {
         comment_number: { required: true, type: "integer" },
@@ -3156,11 +3200,111 @@ export default {
       url:
         "/teams/:team_id/discussions/:discussion_number/comments/:comment_number/reactions"
     },
-    delete: {
-      headers: {
-        accept:
-          "application/vnd.github.echo-preview+json,application/vnd.github.squirrel-girl-preview+json"
+    createForTeamDiscussionCommentInOrg: {
+      headers: { accept: "application/vnd.github.squirrel-girl-preview+json" },
+      method: "POST",
+      params: {
+        comment_number: { required: true, type: "integer" },
+        content: {
+          enum: [
+            "+1",
+            "-1",
+            "laugh",
+            "confused",
+            "heart",
+            "hooray",
+            "rocket",
+            "eyes"
+          ],
+          required: true,
+          type: "string"
+        },
+        discussion_number: { required: true, type: "integer" },
+        org: { required: true, type: "string" },
+        team_slug: { required: true, type: "string" }
       },
+      url:
+        "/orgs/:org/teams/:team_slug/discussions/:discussion_number/comments/:comment_number/reactions"
+    },
+    createForTeamDiscussionCommentLegacy: {
+      deprecated:
+        "octokit.reactions.createForTeamDiscussionCommentLegacy() is deprecated, see https://developer.github.com/v3/reactions/#create-reaction-for-a-team-discussion-comment-legacy",
+      headers: { accept: "application/vnd.github.squirrel-girl-preview+json" },
+      method: "POST",
+      params: {
+        comment_number: { required: true, type: "integer" },
+        content: {
+          enum: [
+            "+1",
+            "-1",
+            "laugh",
+            "confused",
+            "heart",
+            "hooray",
+            "rocket",
+            "eyes"
+          ],
+          required: true,
+          type: "string"
+        },
+        discussion_number: { required: true, type: "integer" },
+        team_id: { required: true, type: "integer" }
+      },
+      url:
+        "/teams/:team_id/discussions/:discussion_number/comments/:comment_number/reactions"
+    },
+    createForTeamDiscussionInOrg: {
+      headers: { accept: "application/vnd.github.squirrel-girl-preview+json" },
+      method: "POST",
+      params: {
+        content: {
+          enum: [
+            "+1",
+            "-1",
+            "laugh",
+            "confused",
+            "heart",
+            "hooray",
+            "rocket",
+            "eyes"
+          ],
+          required: true,
+          type: "string"
+        },
+        discussion_number: { required: true, type: "integer" },
+        org: { required: true, type: "string" },
+        team_slug: { required: true, type: "string" }
+      },
+      url:
+        "/orgs/:org/teams/:team_slug/discussions/:discussion_number/reactions"
+    },
+    createForTeamDiscussionLegacy: {
+      deprecated:
+        "octokit.reactions.createForTeamDiscussionLegacy() is deprecated, see https://developer.github.com/v3/reactions/#create-reaction-for-a-team-discussion-legacy",
+      headers: { accept: "application/vnd.github.squirrel-girl-preview+json" },
+      method: "POST",
+      params: {
+        content: {
+          enum: [
+            "+1",
+            "-1",
+            "laugh",
+            "confused",
+            "heart",
+            "hooray",
+            "rocket",
+            "eyes"
+          ],
+          required: true,
+          type: "string"
+        },
+        discussion_number: { required: true, type: "integer" },
+        team_id: { required: true, type: "integer" }
+      },
+      url: "/teams/:team_id/discussions/:discussion_number/reactions"
+    },
+    delete: {
+      headers: { accept: "application/vnd.github.squirrel-girl-preview+json" },
       method: "DELETE",
       params: { reaction_id: { required: true, type: "integer" } },
       url: "/reactions/:reaction_id"
@@ -3267,10 +3411,9 @@ export default {
       url: "/repos/:owner/:repo/pulls/comments/:comment_id/reactions"
     },
     listForTeamDiscussion: {
-      headers: {
-        accept:
-          "application/vnd.github.echo-preview+json,application/vnd.github.squirrel-girl-preview+json"
-      },
+      deprecated:
+        "octokit.reactions.listForTeamDiscussion() has been renamed to octokit.reactions.listForTeamDiscussionLegacy() (2020-01-16)",
+      headers: { accept: "application/vnd.github.squirrel-girl-preview+json" },
       method: "GET",
       params: {
         content: {
@@ -3294,10 +3437,9 @@ export default {
       url: "/teams/:team_id/discussions/:discussion_number/reactions"
     },
     listForTeamDiscussionComment: {
-      headers: {
-        accept:
-          "application/vnd.github.echo-preview+json,application/vnd.github.squirrel-girl-preview+json"
-      },
+      deprecated:
+        "octokit.reactions.listForTeamDiscussionComment() has been renamed to octokit.reactions.listForTeamDiscussionCommentLegacy() (2020-01-16)",
+      headers: { accept: "application/vnd.github.squirrel-girl-preview+json" },
       method: "GET",
       params: {
         comment_number: { required: true, type: "integer" },
@@ -3321,6 +3463,113 @@ export default {
       },
       url:
         "/teams/:team_id/discussions/:discussion_number/comments/:comment_number/reactions"
+    },
+    listForTeamDiscussionCommentInOrg: {
+      headers: { accept: "application/vnd.github.squirrel-girl-preview+json" },
+      method: "GET",
+      params: {
+        comment_number: { required: true, type: "integer" },
+        content: {
+          enum: [
+            "+1",
+            "-1",
+            "laugh",
+            "confused",
+            "heart",
+            "hooray",
+            "rocket",
+            "eyes"
+          ],
+          type: "string"
+        },
+        discussion_number: { required: true, type: "integer" },
+        org: { required: true, type: "string" },
+        page: { type: "integer" },
+        per_page: { type: "integer" },
+        team_slug: { required: true, type: "string" }
+      },
+      url:
+        "/orgs/:org/teams/:team_slug/discussions/:discussion_number/comments/:comment_number/reactions"
+    },
+    listForTeamDiscussionCommentLegacy: {
+      deprecated:
+        "octokit.reactions.listForTeamDiscussionCommentLegacy() is deprecated, see https://developer.github.com/v3/reactions/#list-reactions-for-a-team-discussion-comment-legacy",
+      headers: { accept: "application/vnd.github.squirrel-girl-preview+json" },
+      method: "GET",
+      params: {
+        comment_number: { required: true, type: "integer" },
+        content: {
+          enum: [
+            "+1",
+            "-1",
+            "laugh",
+            "confused",
+            "heart",
+            "hooray",
+            "rocket",
+            "eyes"
+          ],
+          type: "string"
+        },
+        discussion_number: { required: true, type: "integer" },
+        page: { type: "integer" },
+        per_page: { type: "integer" },
+        team_id: { required: true, type: "integer" }
+      },
+      url:
+        "/teams/:team_id/discussions/:discussion_number/comments/:comment_number/reactions"
+    },
+    listForTeamDiscussionInOrg: {
+      headers: { accept: "application/vnd.github.squirrel-girl-preview+json" },
+      method: "GET",
+      params: {
+        content: {
+          enum: [
+            "+1",
+            "-1",
+            "laugh",
+            "confused",
+            "heart",
+            "hooray",
+            "rocket",
+            "eyes"
+          ],
+          type: "string"
+        },
+        discussion_number: { required: true, type: "integer" },
+        org: { required: true, type: "string" },
+        page: { type: "integer" },
+        per_page: { type: "integer" },
+        team_slug: { required: true, type: "string" }
+      },
+      url:
+        "/orgs/:org/teams/:team_slug/discussions/:discussion_number/reactions"
+    },
+    listForTeamDiscussionLegacy: {
+      deprecated:
+        "octokit.reactions.listForTeamDiscussionLegacy() is deprecated, see https://developer.github.com/v3/reactions/#list-reactions-for-a-team-discussion-legacy",
+      headers: { accept: "application/vnd.github.squirrel-girl-preview+json" },
+      method: "GET",
+      params: {
+        content: {
+          enum: [
+            "+1",
+            "-1",
+            "laugh",
+            "confused",
+            "heart",
+            "hooray",
+            "rocket",
+            "eyes"
+          ],
+          type: "string"
+        },
+        discussion_number: { required: true, type: "integer" },
+        page: { type: "integer" },
+        per_page: { type: "integer" },
+        team_id: { required: true, type: "integer" }
+      },
+      url: "/teams/:team_id/discussions/:discussion_number/reactions"
     }
   },
   repos: {
@@ -3536,6 +3785,7 @@ export default {
         allow_rebase_merge: { type: "boolean" },
         allow_squash_merge: { type: "boolean" },
         auto_init: { type: "boolean" },
+        delete_branch_on_merge: { type: "boolean" },
         description: { type: "string" },
         gitignore_template: { type: "string" },
         has_issues: { type: "boolean" },
@@ -3546,7 +3796,11 @@ export default {
         license_template: { type: "string" },
         name: { required: true, type: "string" },
         private: { type: "boolean" },
-        team_id: { type: "integer" }
+        team_id: { type: "integer" },
+        visibility: {
+          enum: ["public", "private", "visibility", "internal"],
+          type: "string"
+        }
       },
       url: "/user/repos"
     },
@@ -3582,6 +3836,7 @@ export default {
         allow_rebase_merge: { type: "boolean" },
         allow_squash_merge: { type: "boolean" },
         auto_init: { type: "boolean" },
+        delete_branch_on_merge: { type: "boolean" },
         description: { type: "string" },
         gitignore_template: { type: "string" },
         has_issues: { type: "boolean" },
@@ -3593,7 +3848,11 @@ export default {
         name: { required: true, type: "string" },
         org: { required: true, type: "string" },
         private: { type: "boolean" },
-        team_id: { type: "integer" }
+        team_id: { type: "integer" },
+        visibility: {
+          enum: ["public", "private", "visibility", "internal"],
+          type: "string"
+        }
       },
       url: "/orgs/:org/repos"
     },
@@ -4340,7 +4599,15 @@ export default {
           type: "string"
         },
         type: {
-          enum: ["all", "public", "private", "forks", "sources", "member"],
+          enum: [
+            "all",
+            "public",
+            "private",
+            "forks",
+            "sources",
+            "member",
+            "internal"
+          ],
           type: "string"
         }
       },
@@ -4753,7 +5020,6 @@ export default {
       url: "/repos/:owner/:repo/hooks/:hook_id/tests"
     },
     transfer: {
-      headers: { accept: "application/vnd.github.nightshade-preview+json" },
       method: "POST",
       params: {
         new_owner: { type: "string" },
@@ -4771,6 +5037,7 @@ export default {
         allow_squash_merge: { type: "boolean" },
         archived: { type: "boolean" },
         default_branch: { type: "string" },
+        delete_branch_on_merge: { type: "boolean" },
         description: { type: "string" },
         has_issues: { type: "boolean" },
         has_projects: { type: "boolean" },
@@ -4780,17 +5047,24 @@ export default {
         name: { type: "string" },
         owner: { required: true, type: "string" },
         private: { type: "boolean" },
-        repo: { required: true, type: "string" }
+        repo: { required: true, type: "string" },
+        visibility: {
+          enum: ["public", "private", "visibility", "internal"],
+          type: "string"
+        }
       },
       url: "/repos/:owner/:repo"
     },
     updateBranchProtection: {
       method: "PUT",
       params: {
+        allow_deletions: { type: "boolean" },
+        allow_force_pushes: { allowNull: true, type: "boolean" },
         branch: { required: true, type: "string" },
         enforce_admins: { allowNull: true, required: true, type: "boolean" },
         owner: { required: true, type: "string" },
         repo: { required: true, type: "string" },
+        required_linear_history: { type: "boolean" },
         required_pull_request_reviews: {
           allowNull: true,
           required: true,
@@ -4992,6 +5266,13 @@ export default {
       },
       url: "/search/commits"
     },
+    emailLegacy: {
+      deprecated:
+        "octokit.search.emailLegacy() is deprecated, see https://developer.github.com/v3/search/legacy/#email-search",
+      method: "GET",
+      params: { email: { required: true, type: "string" } },
+      url: "/legacy/user/email/:email"
+    },
     issues: {
       deprecated:
         "octokit.search.issues() has been renamed to octokit.search.issuesAndPullRequests() (2018-12-27)",
@@ -5046,6 +5327,18 @@ export default {
       },
       url: "/search/issues"
     },
+    issuesLegacy: {
+      deprecated:
+        "octokit.search.issuesLegacy() is deprecated, see https://developer.github.com/v3/search/legacy/#search-issues",
+      method: "GET",
+      params: {
+        keyword: { required: true, type: "string" },
+        owner: { required: true, type: "string" },
+        repository: { required: true, type: "string" },
+        state: { enum: ["open", "closed"], required: true, type: "string" }
+      },
+      url: "/legacy/issues/search/:owner/:repository/:state/:keyword"
+    },
     labels: {
       method: "GET",
       params: {
@@ -5070,6 +5363,19 @@ export default {
       },
       url: "/search/repositories"
     },
+    reposLegacy: {
+      deprecated:
+        "octokit.search.reposLegacy() is deprecated, see https://developer.github.com/v3/search/legacy/#search-repositories",
+      method: "GET",
+      params: {
+        keyword: { required: true, type: "string" },
+        language: { type: "string" },
+        order: { enum: ["asc", "desc"], type: "string" },
+        sort: { enum: ["stars", "forks", "updated"], type: "string" },
+        start_page: { type: "string" }
+      },
+      url: "/legacy/repos/search/:keyword"
+    },
     topics: {
       method: "GET",
       params: { q: { required: true, type: "string" } },
@@ -5085,12 +5391,34 @@ export default {
         sort: { enum: ["followers", "repositories", "joined"], type: "string" }
       },
       url: "/search/users"
+    },
+    usersLegacy: {
+      deprecated:
+        "octokit.search.usersLegacy() is deprecated, see https://developer.github.com/v3/search/legacy/#search-users",
+      method: "GET",
+      params: {
+        keyword: { required: true, type: "string" },
+        order: { enum: ["asc", "desc"], type: "string" },
+        sort: { enum: ["stars", "forks", "updated"], type: "string" },
+        start_page: { type: "string" }
+      },
+      url: "/legacy/user/search/:keyword"
     }
   },
   teams: {
     addMember: {
       deprecated:
-        "octokit.teams.addMember() is deprecated, see https://developer.github.com/v3/teams/members/#add-team-member",
+        "octokit.teams.addMember() has been renamed to octokit.teams.addMemberLegacy() (2020-01-16)",
+      method: "PUT",
+      params: {
+        team_id: { required: true, type: "integer" },
+        username: { required: true, type: "string" }
+      },
+      url: "/teams/:team_id/members/:username"
+    },
+    addMemberLegacy: {
+      deprecated:
+        "octokit.teams.addMemberLegacy() is deprecated, see https://developer.github.com/v3/teams/members/#add-team-member-legacy",
       method: "PUT",
       params: {
         team_id: { required: true, type: "integer" },
@@ -5099,6 +5427,29 @@ export default {
       url: "/teams/:team_id/members/:username"
     },
     addOrUpdateMembership: {
+      deprecated:
+        "octokit.teams.addOrUpdateMembership() has been renamed to octokit.teams.addOrUpdateMembershipLegacy() (2020-01-16)",
+      method: "PUT",
+      params: {
+        role: { enum: ["member", "maintainer"], type: "string" },
+        team_id: { required: true, type: "integer" },
+        username: { required: true, type: "string" }
+      },
+      url: "/teams/:team_id/memberships/:username"
+    },
+    addOrUpdateMembershipInOrg: {
+      method: "PUT",
+      params: {
+        org: { required: true, type: "string" },
+        role: { enum: ["member", "maintainer"], type: "string" },
+        team_slug: { required: true, type: "string" },
+        username: { required: true, type: "string" }
+      },
+      url: "/orgs/:org/teams/:team_slug/memberships/:username"
+    },
+    addOrUpdateMembershipLegacy: {
+      deprecated:
+        "octokit.teams.addOrUpdateMembershipLegacy() is deprecated, see https://developer.github.com/v3/teams/members/#add-or-update-team-membership-legacy",
       method: "PUT",
       params: {
         role: { enum: ["member", "maintainer"], type: "string" },
@@ -5108,6 +5459,31 @@ export default {
       url: "/teams/:team_id/memberships/:username"
     },
     addOrUpdateProject: {
+      deprecated:
+        "octokit.teams.addOrUpdateProject() has been renamed to octokit.teams.addOrUpdateProjectLegacy() (2020-01-16)",
+      headers: { accept: "application/vnd.github.inertia-preview+json" },
+      method: "PUT",
+      params: {
+        permission: { enum: ["read", "write", "admin"], type: "string" },
+        project_id: { required: true, type: "integer" },
+        team_id: { required: true, type: "integer" }
+      },
+      url: "/teams/:team_id/projects/:project_id"
+    },
+    addOrUpdateProjectInOrg: {
+      headers: { accept: "application/vnd.github.inertia-preview+json" },
+      method: "PUT",
+      params: {
+        org: { required: true, type: "string" },
+        permission: { enum: ["read", "write", "admin"], type: "string" },
+        project_id: { required: true, type: "integer" },
+        team_slug: { required: true, type: "string" }
+      },
+      url: "/orgs/:org/teams/:team_slug/projects/:project_id"
+    },
+    addOrUpdateProjectLegacy: {
+      deprecated:
+        "octokit.teams.addOrUpdateProjectLegacy() is deprecated, see https://developer.github.com/v3/teams/#add-or-update-team-project-legacy",
       headers: { accept: "application/vnd.github.inertia-preview+json" },
       method: "PUT",
       params: {
@@ -5118,6 +5494,31 @@ export default {
       url: "/teams/:team_id/projects/:project_id"
     },
     addOrUpdateRepo: {
+      deprecated:
+        "octokit.teams.addOrUpdateRepo() has been renamed to octokit.teams.addOrUpdateRepoLegacy() (2020-01-16)",
+      method: "PUT",
+      params: {
+        owner: { required: true, type: "string" },
+        permission: { enum: ["pull", "push", "admin"], type: "string" },
+        repo: { required: true, type: "string" },
+        team_id: { required: true, type: "integer" }
+      },
+      url: "/teams/:team_id/repos/:owner/:repo"
+    },
+    addOrUpdateRepoInOrg: {
+      method: "PUT",
+      params: {
+        org: { required: true, type: "string" },
+        owner: { required: true, type: "string" },
+        permission: { enum: ["pull", "push", "admin"], type: "string" },
+        repo: { required: true, type: "string" },
+        team_slug: { required: true, type: "string" }
+      },
+      url: "/orgs/:org/teams/:team_slug/repos/:owner/:repo"
+    },
+    addOrUpdateRepoLegacy: {
+      deprecated:
+        "octokit.teams.addOrUpdateRepoLegacy() is deprecated, see https://developer.github.com/v3/teams/#add-or-update-team-repository-legacy",
       method: "PUT",
       params: {
         owner: { required: true, type: "string" },
@@ -5128,6 +5529,29 @@ export default {
       url: "/teams/:team_id/repos/:owner/:repo"
     },
     checkManagesRepo: {
+      deprecated:
+        "octokit.teams.checkManagesRepo() has been renamed to octokit.teams.checkManagesRepoLegacy() (2020-01-16)",
+      method: "GET",
+      params: {
+        owner: { required: true, type: "string" },
+        repo: { required: true, type: "string" },
+        team_id: { required: true, type: "integer" }
+      },
+      url: "/teams/:team_id/repos/:owner/:repo"
+    },
+    checkManagesRepoInOrg: {
+      method: "GET",
+      params: {
+        org: { required: true, type: "string" },
+        owner: { required: true, type: "string" },
+        repo: { required: true, type: "string" },
+        team_slug: { required: true, type: "string" }
+      },
+      url: "/orgs/:org/teams/:team_slug/repos/:owner/:repo"
+    },
+    checkManagesRepoLegacy: {
+      deprecated:
+        "octokit.teams.checkManagesRepoLegacy() is deprecated, see https://developer.github.com/v3/teams/#check-if-a-team-manages-a-repository-legacy",
       method: "GET",
       params: {
         owner: { required: true, type: "string" },
@@ -5151,7 +5575,8 @@ export default {
       url: "/orgs/:org/teams"
     },
     createDiscussion: {
-      headers: { accept: "application/vnd.github.echo-preview+json" },
+      deprecated:
+        "octokit.teams.createDiscussion() has been renamed to octokit.teams.createDiscussionLegacy() (2020-01-16)",
       method: "POST",
       params: {
         body: { required: true, type: "string" },
@@ -5162,7 +5587,8 @@ export default {
       url: "/teams/:team_id/discussions"
     },
     createDiscussionComment: {
-      headers: { accept: "application/vnd.github.echo-preview+json" },
+      deprecated:
+        "octokit.teams.createDiscussionComment() has been renamed to octokit.teams.createDiscussionCommentLegacy() (2020-01-16)",
       method: "POST",
       params: {
         body: { required: true, type: "string" },
@@ -5171,13 +5597,60 @@ export default {
       },
       url: "/teams/:team_id/discussions/:discussion_number/comments"
     },
+    createDiscussionCommentInOrg: {
+      method: "POST",
+      params: {
+        body: { required: true, type: "string" },
+        discussion_number: { required: true, type: "integer" },
+        org: { required: true, type: "string" },
+        team_slug: { required: true, type: "string" }
+      },
+      url: "/orgs/:org/teams/:team_slug/discussions/:discussion_number/comments"
+    },
+    createDiscussionCommentLegacy: {
+      deprecated:
+        "octokit.teams.createDiscussionCommentLegacy() is deprecated, see https://developer.github.com/v3/teams/discussion_comments/#create-a-comment-legacy",
+      method: "POST",
+      params: {
+        body: { required: true, type: "string" },
+        discussion_number: { required: true, type: "integer" },
+        team_id: { required: true, type: "integer" }
+      },
+      url: "/teams/:team_id/discussions/:discussion_number/comments"
+    },
+    createDiscussionInOrg: {
+      method: "POST",
+      params: {
+        body: { required: true, type: "string" },
+        org: { required: true, type: "string" },
+        private: { type: "boolean" },
+        team_slug: { required: true, type: "string" },
+        title: { required: true, type: "string" }
+      },
+      url: "/orgs/:org/teams/:team_slug/discussions"
+    },
+    createDiscussionLegacy: {
+      deprecated:
+        "octokit.teams.createDiscussionLegacy() is deprecated, see https://developer.github.com/v3/teams/discussions/#create-a-discussion-legacy",
+      method: "POST",
+      params: {
+        body: { required: true, type: "string" },
+        private: { type: "boolean" },
+        team_id: { required: true, type: "integer" },
+        title: { required: true, type: "string" }
+      },
+      url: "/teams/:team_id/discussions"
+    },
     delete: {
+      deprecated:
+        "octokit.teams.delete() has been renamed to octokit.teams.deleteLegacy() (2020-01-16)",
       method: "DELETE",
       params: { team_id: { required: true, type: "integer" } },
       url: "/teams/:team_id"
     },
     deleteDiscussion: {
-      headers: { accept: "application/vnd.github.echo-preview+json" },
+      deprecated:
+        "octokit.teams.deleteDiscussion() has been renamed to octokit.teams.deleteDiscussionLegacy() (2020-01-16)",
       method: "DELETE",
       params: {
         discussion_number: { required: true, type: "integer" },
@@ -5186,7 +5659,8 @@ export default {
       url: "/teams/:team_id/discussions/:discussion_number"
     },
     deleteDiscussionComment: {
-      headers: { accept: "application/vnd.github.echo-preview+json" },
+      deprecated:
+        "octokit.teams.deleteDiscussionComment() has been renamed to octokit.teams.deleteDiscussionCommentLegacy() (2020-01-16)",
       method: "DELETE",
       params: {
         comment_number: { required: true, type: "integer" },
@@ -5196,7 +5670,66 @@ export default {
       url:
         "/teams/:team_id/discussions/:discussion_number/comments/:comment_number"
     },
+    deleteDiscussionCommentInOrg: {
+      method: "DELETE",
+      params: {
+        comment_number: { required: true, type: "integer" },
+        discussion_number: { required: true, type: "integer" },
+        org: { required: true, type: "string" },
+        team_slug: { required: true, type: "string" }
+      },
+      url:
+        "/orgs/:org/teams/:team_slug/discussions/:discussion_number/comments/:comment_number"
+    },
+    deleteDiscussionCommentLegacy: {
+      deprecated:
+        "octokit.teams.deleteDiscussionCommentLegacy() is deprecated, see https://developer.github.com/v3/teams/discussion_comments/#delete-a-comment-legacy",
+      method: "DELETE",
+      params: {
+        comment_number: { required: true, type: "integer" },
+        discussion_number: { required: true, type: "integer" },
+        team_id: { required: true, type: "integer" }
+      },
+      url:
+        "/teams/:team_id/discussions/:discussion_number/comments/:comment_number"
+    },
+    deleteDiscussionInOrg: {
+      method: "DELETE",
+      params: {
+        discussion_number: { required: true, type: "integer" },
+        org: { required: true, type: "string" },
+        team_slug: { required: true, type: "string" }
+      },
+      url: "/orgs/:org/teams/:team_slug/discussions/:discussion_number"
+    },
+    deleteDiscussionLegacy: {
+      deprecated:
+        "octokit.teams.deleteDiscussionLegacy() is deprecated, see https://developer.github.com/v3/teams/discussions/#delete-a-discussion-legacy",
+      method: "DELETE",
+      params: {
+        discussion_number: { required: true, type: "integer" },
+        team_id: { required: true, type: "integer" }
+      },
+      url: "/teams/:team_id/discussions/:discussion_number"
+    },
+    deleteInOrg: {
+      method: "DELETE",
+      params: {
+        org: { required: true, type: "string" },
+        team_slug: { required: true, type: "string" }
+      },
+      url: "/orgs/:org/teams/:team_slug"
+    },
+    deleteLegacy: {
+      deprecated:
+        "octokit.teams.deleteLegacy() is deprecated, see https://developer.github.com/v3/teams/#delete-team-legacy",
+      method: "DELETE",
+      params: { team_id: { required: true, type: "integer" } },
+      url: "/teams/:team_id"
+    },
     get: {
+      deprecated:
+        "octokit.teams.get() has been renamed to octokit.teams.getLegacy() (2020-01-16)",
       method: "GET",
       params: { team_id: { required: true, type: "integer" } },
       url: "/teams/:team_id"
@@ -5210,7 +5743,8 @@ export default {
       url: "/orgs/:org/teams/:team_slug"
     },
     getDiscussion: {
-      headers: { accept: "application/vnd.github.echo-preview+json" },
+      deprecated:
+        "octokit.teams.getDiscussion() has been renamed to octokit.teams.getDiscussionLegacy() (2020-01-16)",
       method: "GET",
       params: {
         discussion_number: { required: true, type: "integer" },
@@ -5219,7 +5753,8 @@ export default {
       url: "/teams/:team_id/discussions/:discussion_number"
     },
     getDiscussionComment: {
-      headers: { accept: "application/vnd.github.echo-preview+json" },
+      deprecated:
+        "octokit.teams.getDiscussionComment() has been renamed to octokit.teams.getDiscussionCommentLegacy() (2020-01-16)",
       method: "GET",
       params: {
         comment_number: { required: true, type: "integer" },
@@ -5229,9 +5764,68 @@ export default {
       url:
         "/teams/:team_id/discussions/:discussion_number/comments/:comment_number"
     },
+    getDiscussionCommentInOrg: {
+      method: "GET",
+      params: {
+        comment_number: { required: true, type: "integer" },
+        discussion_number: { required: true, type: "integer" },
+        org: { required: true, type: "string" },
+        team_slug: { required: true, type: "string" }
+      },
+      url:
+        "/orgs/:org/teams/:team_slug/discussions/:discussion_number/comments/:comment_number"
+    },
+    getDiscussionCommentLegacy: {
+      deprecated:
+        "octokit.teams.getDiscussionCommentLegacy() is deprecated, see https://developer.github.com/v3/teams/discussion_comments/#get-a-single-comment-legacy",
+      method: "GET",
+      params: {
+        comment_number: { required: true, type: "integer" },
+        discussion_number: { required: true, type: "integer" },
+        team_id: { required: true, type: "integer" }
+      },
+      url:
+        "/teams/:team_id/discussions/:discussion_number/comments/:comment_number"
+    },
+    getDiscussionInOrg: {
+      method: "GET",
+      params: {
+        discussion_number: { required: true, type: "integer" },
+        org: { required: true, type: "string" },
+        team_slug: { required: true, type: "string" }
+      },
+      url: "/orgs/:org/teams/:team_slug/discussions/:discussion_number"
+    },
+    getDiscussionLegacy: {
+      deprecated:
+        "octokit.teams.getDiscussionLegacy() is deprecated, see https://developer.github.com/v3/teams/discussions/#get-a-single-discussion-legacy",
+      method: "GET",
+      params: {
+        discussion_number: { required: true, type: "integer" },
+        team_id: { required: true, type: "integer" }
+      },
+      url: "/teams/:team_id/discussions/:discussion_number"
+    },
+    getLegacy: {
+      deprecated:
+        "octokit.teams.getLegacy() is deprecated, see https://developer.github.com/v3/teams/#get-team-legacy",
+      method: "GET",
+      params: { team_id: { required: true, type: "integer" } },
+      url: "/teams/:team_id"
+    },
     getMember: {
       deprecated:
-        "octokit.teams.getMember() is deprecated, see https://developer.github.com/v3/teams/members/#get-team-member",
+        "octokit.teams.getMember() has been renamed to octokit.teams.getMemberLegacy() (2020-01-16)",
+      method: "GET",
+      params: {
+        team_id: { required: true, type: "integer" },
+        username: { required: true, type: "string" }
+      },
+      url: "/teams/:team_id/members/:username"
+    },
+    getMemberLegacy: {
+      deprecated:
+        "octokit.teams.getMemberLegacy() is deprecated, see https://developer.github.com/v3/teams/members/#get-team-member-legacy",
       method: "GET",
       params: {
         team_id: { required: true, type: "integer" },
@@ -5240,6 +5834,27 @@ export default {
       url: "/teams/:team_id/members/:username"
     },
     getMembership: {
+      deprecated:
+        "octokit.teams.getMembership() has been renamed to octokit.teams.getMembershipLegacy() (2020-01-16)",
+      method: "GET",
+      params: {
+        team_id: { required: true, type: "integer" },
+        username: { required: true, type: "string" }
+      },
+      url: "/teams/:team_id/memberships/:username"
+    },
+    getMembershipInOrg: {
+      method: "GET",
+      params: {
+        org: { required: true, type: "string" },
+        team_slug: { required: true, type: "string" },
+        username: { required: true, type: "string" }
+      },
+      url: "/orgs/:org/teams/:team_slug/memberships/:username"
+    },
+    getMembershipLegacy: {
+      deprecated:
+        "octokit.teams.getMembershipLegacy() is deprecated, see https://developer.github.com/v3/teams/members/#get-team-membership-legacy",
       method: "GET",
       params: {
         team_id: { required: true, type: "integer" },
@@ -5257,7 +5872,29 @@ export default {
       url: "/orgs/:org/teams"
     },
     listChild: {
-      headers: { accept: "application/vnd.github.hellcat-preview+json" },
+      deprecated:
+        "octokit.teams.listChild() has been renamed to octokit.teams.listChildLegacy() (2020-01-16)",
+      method: "GET",
+      params: {
+        page: { type: "integer" },
+        per_page: { type: "integer" },
+        team_id: { required: true, type: "integer" }
+      },
+      url: "/teams/:team_id/teams"
+    },
+    listChildInOrg: {
+      method: "GET",
+      params: {
+        org: { required: true, type: "string" },
+        page: { type: "integer" },
+        per_page: { type: "integer" },
+        team_slug: { required: true, type: "string" }
+      },
+      url: "/orgs/:org/teams/:team_slug/teams"
+    },
+    listChildLegacy: {
+      deprecated:
+        "octokit.teams.listChildLegacy() is deprecated, see https://developer.github.com/v3/teams/#list-child-teams-legacy",
       method: "GET",
       params: {
         page: { type: "integer" },
@@ -5267,7 +5904,33 @@ export default {
       url: "/teams/:team_id/teams"
     },
     listDiscussionComments: {
-      headers: { accept: "application/vnd.github.echo-preview+json" },
+      deprecated:
+        "octokit.teams.listDiscussionComments() has been renamed to octokit.teams.listDiscussionCommentsLegacy() (2020-01-16)",
+      method: "GET",
+      params: {
+        direction: { enum: ["asc", "desc"], type: "string" },
+        discussion_number: { required: true, type: "integer" },
+        page: { type: "integer" },
+        per_page: { type: "integer" },
+        team_id: { required: true, type: "integer" }
+      },
+      url: "/teams/:team_id/discussions/:discussion_number/comments"
+    },
+    listDiscussionCommentsInOrg: {
+      method: "GET",
+      params: {
+        direction: { enum: ["asc", "desc"], type: "string" },
+        discussion_number: { required: true, type: "integer" },
+        org: { required: true, type: "string" },
+        page: { type: "integer" },
+        per_page: { type: "integer" },
+        team_slug: { required: true, type: "string" }
+      },
+      url: "/orgs/:org/teams/:team_slug/discussions/:discussion_number/comments"
+    },
+    listDiscussionCommentsLegacy: {
+      deprecated:
+        "octokit.teams.listDiscussionCommentsLegacy() is deprecated, see https://developer.github.com/v3/teams/discussion_comments/#list-comments-legacy",
       method: "GET",
       params: {
         direction: { enum: ["asc", "desc"], type: "string" },
@@ -5279,7 +5942,31 @@ export default {
       url: "/teams/:team_id/discussions/:discussion_number/comments"
     },
     listDiscussions: {
-      headers: { accept: "application/vnd.github.echo-preview+json" },
+      deprecated:
+        "octokit.teams.listDiscussions() has been renamed to octokit.teams.listDiscussionsLegacy() (2020-01-16)",
+      method: "GET",
+      params: {
+        direction: { enum: ["asc", "desc"], type: "string" },
+        page: { type: "integer" },
+        per_page: { type: "integer" },
+        team_id: { required: true, type: "integer" }
+      },
+      url: "/teams/:team_id/discussions"
+    },
+    listDiscussionsInOrg: {
+      method: "GET",
+      params: {
+        direction: { enum: ["asc", "desc"], type: "string" },
+        org: { required: true, type: "string" },
+        page: { type: "integer" },
+        per_page: { type: "integer" },
+        team_slug: { required: true, type: "string" }
+      },
+      url: "/orgs/:org/teams/:team_slug/discussions"
+    },
+    listDiscussionsLegacy: {
+      deprecated:
+        "octokit.teams.listDiscussionsLegacy() is deprecated, see https://developer.github.com/v3/teams/discussions/#list-discussions-legacy",
       method: "GET",
       params: {
         direction: { enum: ["asc", "desc"], type: "string" },
@@ -5295,6 +5982,31 @@ export default {
       url: "/user/teams"
     },
     listMembers: {
+      deprecated:
+        "octokit.teams.listMembers() has been renamed to octokit.teams.listMembersLegacy() (2020-01-16)",
+      method: "GET",
+      params: {
+        page: { type: "integer" },
+        per_page: { type: "integer" },
+        role: { enum: ["member", "maintainer", "all"], type: "string" },
+        team_id: { required: true, type: "integer" }
+      },
+      url: "/teams/:team_id/members"
+    },
+    listMembersInOrg: {
+      method: "GET",
+      params: {
+        org: { required: true, type: "string" },
+        page: { type: "integer" },
+        per_page: { type: "integer" },
+        role: { enum: ["member", "maintainer", "all"], type: "string" },
+        team_slug: { required: true, type: "string" }
+      },
+      url: "/orgs/:org/teams/:team_slug/members"
+    },
+    listMembersLegacy: {
+      deprecated:
+        "octokit.teams.listMembersLegacy() is deprecated, see https://developer.github.com/v3/teams/members/#list-team-members-legacy",
       method: "GET",
       params: {
         page: { type: "integer" },
@@ -5305,6 +6017,29 @@ export default {
       url: "/teams/:team_id/members"
     },
     listPendingInvitations: {
+      deprecated:
+        "octokit.teams.listPendingInvitations() has been renamed to octokit.teams.listPendingInvitationsLegacy() (2020-01-16)",
+      method: "GET",
+      params: {
+        page: { type: "integer" },
+        per_page: { type: "integer" },
+        team_id: { required: true, type: "integer" }
+      },
+      url: "/teams/:team_id/invitations"
+    },
+    listPendingInvitationsInOrg: {
+      method: "GET",
+      params: {
+        org: { required: true, type: "string" },
+        page: { type: "integer" },
+        per_page: { type: "integer" },
+        team_slug: { required: true, type: "string" }
+      },
+      url: "/orgs/:org/teams/:team_slug/invitations"
+    },
+    listPendingInvitationsLegacy: {
+      deprecated:
+        "octokit.teams.listPendingInvitationsLegacy() is deprecated, see https://developer.github.com/v3/teams/members/#list-pending-team-invitations-legacy",
       method: "GET",
       params: {
         page: { type: "integer" },
@@ -5314,6 +6049,31 @@ export default {
       url: "/teams/:team_id/invitations"
     },
     listProjects: {
+      deprecated:
+        "octokit.teams.listProjects() has been renamed to octokit.teams.listProjectsLegacy() (2020-01-16)",
+      headers: { accept: "application/vnd.github.inertia-preview+json" },
+      method: "GET",
+      params: {
+        page: { type: "integer" },
+        per_page: { type: "integer" },
+        team_id: { required: true, type: "integer" }
+      },
+      url: "/teams/:team_id/projects"
+    },
+    listProjectsInOrg: {
+      headers: { accept: "application/vnd.github.inertia-preview+json" },
+      method: "GET",
+      params: {
+        org: { required: true, type: "string" },
+        page: { type: "integer" },
+        per_page: { type: "integer" },
+        team_slug: { required: true, type: "string" }
+      },
+      url: "/orgs/:org/teams/:team_slug/projects"
+    },
+    listProjectsLegacy: {
+      deprecated:
+        "octokit.teams.listProjectsLegacy() is deprecated, see https://developer.github.com/v3/teams/#list-team-projects-legacy",
       headers: { accept: "application/vnd.github.inertia-preview+json" },
       method: "GET",
       params: {
@@ -5324,6 +6084,8 @@ export default {
       url: "/teams/:team_id/projects"
     },
     listRepos: {
+      deprecated:
+        "octokit.teams.listRepos() has been renamed to octokit.teams.listReposLegacy() (2020-01-16)",
       method: "GET",
       params: {
         page: { type: "integer" },
@@ -5332,9 +6094,30 @@ export default {
       },
       url: "/teams/:team_id/repos"
     },
-    removeMember: {
+    listReposInOrg: {
+      method: "GET",
+      params: {
+        org: { required: true, type: "string" },
+        page: { type: "integer" },
+        per_page: { type: "integer" },
+        team_slug: { required: true, type: "string" }
+      },
+      url: "/orgs/:org/teams/:team_slug/repos"
+    },
+    listReposLegacy: {
       deprecated:
-        "octokit.teams.removeMember() is deprecated, see https://developer.github.com/v3/teams/members/#remove-team-member",
+        "octokit.teams.listReposLegacy() is deprecated, see https://developer.github.com/v3/teams/#list-team-repos-legacy",
+      method: "GET",
+      params: {
+        page: { type: "integer" },
+        per_page: { type: "integer" },
+        team_id: { required: true, type: "integer" }
+      },
+      url: "/teams/:team_id/repos"
+    },
+    removeMemberLegacy: {
+      deprecated:
+        "octokit.teams.removeMemberLegacy() is deprecated, see https://developer.github.com/v3/teams/members/#remove-team-member-legacy",
       method: "DELETE",
       params: {
         team_id: { required: true, type: "integer" },
@@ -5342,7 +6125,18 @@ export default {
       },
       url: "/teams/:team_id/members/:username"
     },
-    removeMembership: {
+    removeMembershipInOrg: {
+      method: "DELETE",
+      params: {
+        org: { required: true, type: "string" },
+        team_slug: { required: true, type: "string" },
+        username: { required: true, type: "string" }
+      },
+      url: "/orgs/:org/teams/:team_slug/memberships/:username"
+    },
+    removeMembershipLegacy: {
+      deprecated:
+        "octokit.teams.removeMembershipLegacy() is deprecated, see https://developer.github.com/v3/teams/members/#remove-team-membership-legacy",
       method: "DELETE",
       params: {
         team_id: { required: true, type: "integer" },
@@ -5351,6 +6145,27 @@ export default {
       url: "/teams/:team_id/memberships/:username"
     },
     removeProject: {
+      deprecated:
+        "octokit.teams.removeProject() has been renamed to octokit.teams.removeProjectLegacy() (2020-01-16)",
+      method: "DELETE",
+      params: {
+        project_id: { required: true, type: "integer" },
+        team_id: { required: true, type: "integer" }
+      },
+      url: "/teams/:team_id/projects/:project_id"
+    },
+    removeProjectInOrg: {
+      method: "DELETE",
+      params: {
+        org: { required: true, type: "string" },
+        project_id: { required: true, type: "integer" },
+        team_slug: { required: true, type: "string" }
+      },
+      url: "/orgs/:org/teams/:team_slug/projects/:project_id"
+    },
+    removeProjectLegacy: {
+      deprecated:
+        "octokit.teams.removeProjectLegacy() is deprecated, see https://developer.github.com/v3/teams/#remove-team-project-legacy",
       method: "DELETE",
       params: {
         project_id: { required: true, type: "integer" },
@@ -5359,6 +6174,29 @@ export default {
       url: "/teams/:team_id/projects/:project_id"
     },
     removeRepo: {
+      deprecated:
+        "octokit.teams.removeRepo() has been renamed to octokit.teams.removeRepoLegacy() (2020-01-16)",
+      method: "DELETE",
+      params: {
+        owner: { required: true, type: "string" },
+        repo: { required: true, type: "string" },
+        team_id: { required: true, type: "integer" }
+      },
+      url: "/teams/:team_id/repos/:owner/:repo"
+    },
+    removeRepoInOrg: {
+      method: "DELETE",
+      params: {
+        org: { required: true, type: "string" },
+        owner: { required: true, type: "string" },
+        repo: { required: true, type: "string" },
+        team_slug: { required: true, type: "string" }
+      },
+      url: "/orgs/:org/teams/:team_slug/repos/:owner/:repo"
+    },
+    removeRepoLegacy: {
+      deprecated:
+        "octokit.teams.removeRepoLegacy() is deprecated, see https://developer.github.com/v3/teams/#remove-team-repository-legacy",
       method: "DELETE",
       params: {
         owner: { required: true, type: "string" },
@@ -5368,6 +6206,29 @@ export default {
       url: "/teams/:team_id/repos/:owner/:repo"
     },
     reviewProject: {
+      deprecated:
+        "octokit.teams.reviewProject() has been renamed to octokit.teams.reviewProjectLegacy() (2020-01-16)",
+      headers: { accept: "application/vnd.github.inertia-preview+json" },
+      method: "GET",
+      params: {
+        project_id: { required: true, type: "integer" },
+        team_id: { required: true, type: "integer" }
+      },
+      url: "/teams/:team_id/projects/:project_id"
+    },
+    reviewProjectInOrg: {
+      headers: { accept: "application/vnd.github.inertia-preview+json" },
+      method: "GET",
+      params: {
+        org: { required: true, type: "string" },
+        project_id: { required: true, type: "integer" },
+        team_slug: { required: true, type: "string" }
+      },
+      url: "/orgs/:org/teams/:team_slug/projects/:project_id"
+    },
+    reviewProjectLegacy: {
+      deprecated:
+        "octokit.teams.reviewProjectLegacy() is deprecated, see https://developer.github.com/v3/teams/#review-a-team-project-legacy",
       headers: { accept: "application/vnd.github.inertia-preview+json" },
       method: "GET",
       params: {
@@ -5377,6 +6238,8 @@ export default {
       url: "/teams/:team_id/projects/:project_id"
     },
     update: {
+      deprecated:
+        "octokit.teams.update() has been renamed to octokit.teams.updateLegacy() (2020-01-16)",
       method: "PATCH",
       params: {
         description: { type: "string" },
@@ -5389,7 +6252,8 @@ export default {
       url: "/teams/:team_id"
     },
     updateDiscussion: {
-      headers: { accept: "application/vnd.github.echo-preview+json" },
+      deprecated:
+        "octokit.teams.updateDiscussion() has been renamed to octokit.teams.updateDiscussionLegacy() (2020-01-16)",
       method: "PATCH",
       params: {
         body: { type: "string" },
@@ -5400,7 +6264,8 @@ export default {
       url: "/teams/:team_id/discussions/:discussion_number"
     },
     updateDiscussionComment: {
-      headers: { accept: "application/vnd.github.echo-preview+json" },
+      deprecated:
+        "octokit.teams.updateDiscussionComment() has been renamed to octokit.teams.updateDiscussionCommentLegacy() (2020-01-16)",
       method: "PATCH",
       params: {
         body: { required: true, type: "string" },
@@ -5410,6 +6275,81 @@ export default {
       },
       url:
         "/teams/:team_id/discussions/:discussion_number/comments/:comment_number"
+    },
+    updateDiscussionCommentInOrg: {
+      method: "PATCH",
+      params: {
+        body: { required: true, type: "string" },
+        comment_number: { required: true, type: "integer" },
+        discussion_number: { required: true, type: "integer" },
+        org: { required: true, type: "string" },
+        team_slug: { required: true, type: "string" }
+      },
+      url:
+        "/orgs/:org/teams/:team_slug/discussions/:discussion_number/comments/:comment_number"
+    },
+    updateDiscussionCommentLegacy: {
+      deprecated:
+        "octokit.teams.updateDiscussionCommentLegacy() is deprecated, see https://developer.github.com/v3/teams/discussion_comments/#edit-a-comment-legacy",
+      method: "PATCH",
+      params: {
+        body: { required: true, type: "string" },
+        comment_number: { required: true, type: "integer" },
+        discussion_number: { required: true, type: "integer" },
+        team_id: { required: true, type: "integer" }
+      },
+      url:
+        "/teams/:team_id/discussions/:discussion_number/comments/:comment_number"
+    },
+    updateDiscussionInOrg: {
+      method: "PATCH",
+      params: {
+        body: { type: "string" },
+        discussion_number: { required: true, type: "integer" },
+        org: { required: true, type: "string" },
+        team_slug: { required: true, type: "string" },
+        title: { type: "string" }
+      },
+      url: "/orgs/:org/teams/:team_slug/discussions/:discussion_number"
+    },
+    updateDiscussionLegacy: {
+      deprecated:
+        "octokit.teams.updateDiscussionLegacy() is deprecated, see https://developer.github.com/v3/teams/discussions/#edit-a-discussion-legacy",
+      method: "PATCH",
+      params: {
+        body: { type: "string" },
+        discussion_number: { required: true, type: "integer" },
+        team_id: { required: true, type: "integer" },
+        title: { type: "string" }
+      },
+      url: "/teams/:team_id/discussions/:discussion_number"
+    },
+    updateInOrg: {
+      method: "PATCH",
+      params: {
+        description: { type: "string" },
+        name: { required: true, type: "string" },
+        org: { required: true, type: "string" },
+        parent_team_id: { type: "integer" },
+        permission: { enum: ["pull", "push", "admin"], type: "string" },
+        privacy: { enum: ["secret", "closed"], type: "string" },
+        team_slug: { required: true, type: "string" }
+      },
+      url: "/orgs/:org/teams/:team_slug"
+    },
+    updateLegacy: {
+      deprecated:
+        "octokit.teams.updateLegacy() is deprecated, see https://developer.github.com/v3/teams/#edit-team-legacy",
+      method: "PATCH",
+      params: {
+        description: { type: "string" },
+        name: { required: true, type: "string" },
+        parent_team_id: { type: "integer" },
+        permission: { enum: ["pull", "push", "admin"], type: "string" },
+        privacy: { enum: ["secret", "closed"], type: "string" },
+        team_id: { required: true, type: "integer" }
+      },
+      url: "/teams/:team_id"
     }
   },
   users: {
@@ -5478,7 +6418,6 @@ export default {
       url: "/users/:username"
     },
     getContextForUser: {
-      headers: { accept: "application/vnd.github.hagar-preview+json" },
       method: "GET",
       params: {
         subject_id: { type: "string" },
