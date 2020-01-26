@@ -36,9 +36,6 @@ describe("REST API endpoint methods", () => {
       "path:/repos/octocat/hello-world/dispatches",
       { ok: true },
       {
-        headers: {
-          accept: "application/vnd.github.everest-preview+json"
-        },
         body: {
           event_type: "greeting",
           client_payload: { name: "Mona" }
