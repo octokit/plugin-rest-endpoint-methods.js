@@ -285,7 +285,7 @@ export default {
     },
     checkAuthorization: {
       deprecated:
-        "octokit.oauthAuthorizations.checkAuthorization() has been renamed to octokit.apps.checkAuthorization() (2019-11-05)",
+        "octokit.apps.checkAuthorization() is deprecated, see https://developer.github.com/v3/apps/oauth_applications/#check-an-authorization",
       method: "GET",
       params: {
         access_token: { required: true, type: "string" },
@@ -502,7 +502,7 @@ export default {
     },
     resetAuthorization: {
       deprecated:
-        "octokit.oauthAuthorizations.resetAuthorization() has been renamed to octokit.apps.resetAuthorization() (2019-11-05)",
+        "octokit.apps.resetAuthorization() is deprecated, see https://developer.github.com/v3/apps/oauth_applications/#reset-an-authorization",
       method: "POST",
       params: {
         access_token: { required: true, type: "string" },
@@ -521,7 +521,7 @@ export default {
     },
     revokeAuthorizationForApplication: {
       deprecated:
-        "octokit.oauthAuthorizations.revokeAuthorizationForApplication() has been renamed to octokit.apps.revokeAuthorizationForApplication() (2019-11-05)",
+        "octokit.apps.revokeAuthorizationForApplication() is deprecated, see https://developer.github.com/v3/apps/oauth_applications/#revoke-an-authorization-for-an-application",
       method: "DELETE",
       params: {
         access_token: { required: true, type: "string" },
@@ -531,7 +531,7 @@ export default {
     },
     revokeGrantForApplication: {
       deprecated:
-        "octokit.oauthAuthorizations.revokeGrantForApplication() has been renamed to octokit.apps.revokeGrantForApplication() (2019-11-05)",
+        "octokit.apps.revokeGrantForApplication() is deprecated, see https://developer.github.com/v3/apps/oauth_applications/#revoke-a-grant-for-an-application",
       method: "DELETE",
       params: {
         access_token: { required: true, type: "string" },
