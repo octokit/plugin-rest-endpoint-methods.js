@@ -6046,6 +6046,16 @@ export default {
       },
       url: "/teams/:team_id/repos"
     },
+    removeMember: {
+      deprecated:
+        "octokit.teams.removeMember() has been renamed to octokit.teams.removeMemberLegacy() (2020-01-16)",
+      method: "DELETE",
+      params: {
+        team_id: { required: true, type: "integer" },
+        username: { required: true, type: "string" }
+      },
+      url: "/teams/:team_id/members/:username"
+    },
     removeMemberLegacy: {
       deprecated:
         "octokit.teams.removeMemberLegacy() is deprecated, see https://developer.github.com/v3/teams/members/#remove-team-member-legacy",
@@ -6055,6 +6065,16 @@ export default {
         username: { required: true, type: "string" }
       },
       url: "/teams/:team_id/members/:username"
+    },
+    removeMembership: {
+      deprecated:
+        "octokit.teams.removeMembership() has been renamed to octokit.teams.removeMembershipLegacy() (2020-01-16)",
+      method: "DELETE",
+      params: {
+        team_id: { required: true, type: "integer" },
+        username: { required: true, type: "string" }
+      },
+      url: "/teams/:team_id/memberships/:username"
     },
     removeMembershipInOrg: {
       method: "DELETE",
