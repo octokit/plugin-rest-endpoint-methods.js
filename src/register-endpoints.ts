@@ -51,13 +51,16 @@ export function registerEndpoints(octokit: any, routes: any) {
       }
 
       if (apiOptions.deprecated) {
-        octokit[namespaceName][apiName] = function deprecatedEndpointMethod() {
-          octokit.log.warn(
-            new Deprecation(`[@octokit/rest] ${apiOptions.deprecated}`)
-          );
-          octokit[namespaceName][apiName] = request;
-          return request.apply(null, arguments);
-        };
+        octokit[namespaceName][apiName] = Object.assign(
+          function deprecatedEndpointMethod() {
+            octokit.log.warn(
+              new Deprecation(`[@octokit/rest] ${apiOptions.deprecated}`)
+            );
+            octokit[namespaceName][apiName] = request;
+            return request.apply(null, arguments);
+          },
+          request
+        );
 
         return;
       }
