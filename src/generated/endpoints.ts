@@ -8,14 +8,6 @@ export default {
       },
       url: "/user/starred/:owner/:repo"
     },
-    checkWatchingRepoLegacy: {
-      method: "GET",
-      params: {
-        owner: { required: true, type: "string" },
-        repo: { required: true, type: "string" }
-      },
-      url: "/user/subscriptions/:owner/:repo"
-    },
     deleteRepoSubscription: {
       method: "DELETE",
       params: {
@@ -254,14 +246,6 @@ export default {
       },
       url: "/user/starred/:owner/:repo"
     },
-    stopWatchingRepoLegacy: {
-      method: "DELETE",
-      params: {
-        owner: { required: true, type: "string" },
-        repo: { required: true, type: "string" }
-      },
-      url: "/user/subscriptions/:owner/:repo"
-    },
     unstarRepo: {
       method: "DELETE",
       params: {
@@ -269,14 +253,6 @@ export default {
         repo: { required: true, type: "string" }
       },
       url: "/user/starred/:owner/:repo"
-    },
-    watchRepoLegacy: {
-      method: "PUT",
-      params: {
-        owner: { required: true, type: "string" },
-        repo: { required: true, type: "string" }
-      },
-      url: "/user/subscriptions/:owner/:repo"
     }
   },
   apps: {
