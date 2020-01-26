@@ -5241,13 +5241,6 @@ export default {
       },
       url: "/search/commits"
     },
-    emailLegacy: {
-      deprecated:
-        "octokit.search.emailLegacy() is deprecated, see https://developer.github.com/v3/search/legacy/#email-search",
-      method: "GET",
-      params: { email: { required: true, type: "string" } },
-      url: "/legacy/user/email/:email"
-    },
     issues: {
       deprecated:
         "octokit.search.issues() has been renamed to octokit.search.issuesAndPullRequests() (2018-12-27)",
@@ -5302,18 +5295,6 @@ export default {
       },
       url: "/search/issues"
     },
-    issuesLegacy: {
-      deprecated:
-        "octokit.search.issuesLegacy() is deprecated, see https://developer.github.com/v3/search/legacy/#search-issues",
-      method: "GET",
-      params: {
-        keyword: { required: true, type: "string" },
-        owner: { required: true, type: "string" },
-        repository: { required: true, type: "string" },
-        state: { enum: ["open", "closed"], required: true, type: "string" }
-      },
-      url: "/legacy/issues/search/:owner/:repository/:state/:keyword"
-    },
     labels: {
       method: "GET",
       params: {
@@ -5338,19 +5319,6 @@ export default {
       },
       url: "/search/repositories"
     },
-    reposLegacy: {
-      deprecated:
-        "octokit.search.reposLegacy() is deprecated, see https://developer.github.com/v3/search/legacy/#search-repositories",
-      method: "GET",
-      params: {
-        keyword: { required: true, type: "string" },
-        language: { type: "string" },
-        order: { enum: ["asc", "desc"], type: "string" },
-        sort: { enum: ["stars", "forks", "updated"], type: "string" },
-        start_page: { type: "string" }
-      },
-      url: "/legacy/repos/search/:keyword"
-    },
     topics: {
       method: "GET",
       params: { q: { required: true, type: "string" } },
@@ -5366,18 +5334,6 @@ export default {
         sort: { enum: ["followers", "repositories", "joined"], type: "string" }
       },
       url: "/search/users"
-    },
-    usersLegacy: {
-      deprecated:
-        "octokit.search.usersLegacy() is deprecated, see https://developer.github.com/v3/search/legacy/#search-users",
-      method: "GET",
-      params: {
-        keyword: { required: true, type: "string" },
-        order: { enum: ["asc", "desc"], type: "string" },
-        sort: { enum: ["stars", "forks", "updated"], type: "string" },
-        start_page: { type: "string" }
-      },
-      url: "/legacy/user/search/:keyword"
     }
   },
   teams: {
