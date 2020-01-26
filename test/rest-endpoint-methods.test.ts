@@ -61,4 +61,10 @@ describe("REST API endpoint methods", () => {
 
     expect(data).toStrictEqual({ ok: true });
   });
+
+  it("deprecated endpoint methods have .endpoint() method, too", () => {
+    const MyOctokit = Octokit.plugin(restEndpointMethods);
+    const octokit = new MyOctokit();
+    expect(typeof octokit.teams.listMembersLegacy.endpoint).toEqual("function");
+  });
 });
