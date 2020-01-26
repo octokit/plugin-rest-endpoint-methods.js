@@ -83,7 +83,10 @@ octokit.apps.deleteAuthorization({ client_id, access_token });
 octokit.apps.revokeGrantForApplication({ client_id, access_token });
 
 // DEPRECATED: octokit.oauthAuthorizations.revokeGrantForApplication() has been renamed to octokit.apps.revokeGrantForApplication()
-octokit.apps.revokeGrantForApplication({ client_id, access_token });
+octokit.oauthAuthorizations.revokeGrantForApplication({
+  client_id,
+  access_token
+});
 
 // https://developer.github.com/v3/apps/oauth_applications/#check-a-token
 octokit.apps.checkToken({ client_id, access_token });
@@ -98,19 +101,22 @@ octokit.apps.deleteToken({ client_id, access_token });
 octokit.apps.checkAuthorization({ client_id, access_token });
 
 // DEPRECATED: octokit.oauthAuthorizations.checkAuthorization() has been renamed to octokit.apps.checkAuthorization()
-octokit.apps.checkAuthorization({ client_id, access_token });
+octokit.oauthAuthorizations.checkAuthorization({ client_id, access_token });
 
 // https://developer.github.com/v3/apps/oauth_applications/#reset-an-authorization
 octokit.apps.resetAuthorization({ client_id, access_token });
 
 // DEPRECATED: octokit.oauthAuthorizations.resetAuthorization() has been renamed to octokit.apps.resetAuthorization()
-octokit.apps.resetAuthorization({ client_id, access_token });
+octokit.oauthAuthorizations.resetAuthorization({ client_id, access_token });
 
 // https://developer.github.com/v3/apps/oauth_applications/#revoke-an-authorization-for-an-application
 octokit.apps.revokeAuthorizationForApplication({ client_id, access_token });
 
 // DEPRECATED: octokit.oauthAuthorizations.revokeAuthorizationForApplication() has been renamed to octokit.apps.revokeAuthorizationForApplication()
-octokit.apps.revokeAuthorizationForApplication({ client_id, access_token });
+octokit.oauthAuthorizations.revokeAuthorizationForApplication({
+  client_id,
+  access_token
+});
 
 // https://developer.github.com/v3/apps/#get-a-single-github-app
 octokit.apps.getBySlug({ app_slug });
