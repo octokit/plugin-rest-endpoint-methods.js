@@ -15,6 +15,11 @@ generateRoutes();
 async function generateRoutes() {
   const examples = ENDPOINTS.concat(WORKAROUNDS)
     .map(endpoint => {
+      if (endpoint.isLegacy && !/^\/teams\/\{team_id\}/.test(endpoint.url)) {
+        // ignore legacy endpoints with the exception of the new teams legacy methods
+        return;
+      }
+
       const paramNames = endpoint.parameters
         .filter(parameter => !parameter.alias)
         .filter(parameter => !parameter.name.includes("."))
