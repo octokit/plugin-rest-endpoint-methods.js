@@ -3723,7 +3723,6 @@ export default {
       url: "/repos/:owner/:repo/deployments/:deployment_id/statuses"
     },
     createDispatchEvent: {
-      headers: { accept: "application/vnd.github.everest-preview+json" },
       method: "POST",
       params: {
         client_payload: { type: "object" },
