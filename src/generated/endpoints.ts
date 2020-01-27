@@ -1,4 +1,247 @@
 export default {
+  actions: {
+    cancelWorkflowRun: {
+      method: "POST",
+      params: {
+        owner: { required: true, type: "string" },
+        repo: { required: true, type: "string" },
+        run_id: { required: true, type: "integer" }
+      },
+      url: "/repos/:owner/:repo/actions/runs/:run_id/cancel"
+    },
+    createOrUpdateSecretForRepo: {
+      method: "PUT",
+      params: {
+        encrypted_value: { type: "string" },
+        key_id: { type: "integer" },
+        name: { required: true, type: "string" },
+        owner: { required: true, type: "string" },
+        repo: { required: true, type: "string" }
+      },
+      url: "/repos/:owner/:repo/actions/secrets/:name"
+    },
+    createRegistrationToken: {
+      method: "POST",
+      params: {
+        owner: { required: true, type: "string" },
+        repo: { required: true, type: "string" }
+      },
+      url: "/repos/:owner/:repo/actions/runners/registration-token"
+    },
+    createRemoveToken: {
+      method: "POST",
+      params: {
+        owner: { required: true, type: "string" },
+        repo: { required: true, type: "string" }
+      },
+      url: "/repos/:owner/:repo/actions/runners/remove-token"
+    },
+    deleteArtifact: {
+      method: "DELETE",
+      params: {
+        artifact_id: { required: true, type: "integer" },
+        owner: { required: true, type: "string" },
+        repo: { required: true, type: "string" }
+      },
+      url: "/repos/:owner/:repo/actions/artifacts/:artifact_id"
+    },
+    deleteSecretFromRepo: {
+      method: "DELETE",
+      params: {
+        name: { required: true, type: "string" },
+        owner: { required: true, type: "string" },
+        repo: { required: true, type: "string" }
+      },
+      url: "/repos/:owner/:repo/actions/secrets/:name"
+    },
+    downloadArtifact: {
+      method: "GET",
+      params: {
+        archive_format: { required: true, type: "string" },
+        artifact_id: { required: true, type: "integer" },
+        owner: { required: true, type: "string" },
+        repo: { required: true, type: "string" }
+      },
+      url: "/repos/:owner/:repo/actions/artifacts/:artifact_id/:archive_format"
+    },
+    getArtifact: {
+      method: "GET",
+      params: {
+        artifact_id: { required: true, type: "integer" },
+        owner: { required: true, type: "string" },
+        repo: { required: true, type: "string" }
+      },
+      url: "/repos/:owner/:repo/actions/artifacts/:artifact_id"
+    },
+    getPublicKey: {
+      method: "GET",
+      params: {
+        owner: { required: true, type: "string" },
+        repo: { required: true, type: "string" }
+      },
+      url: "/repos/:owner/:repo/actions/secrets/public-key"
+    },
+    getSecret: {
+      method: "GET",
+      params: {
+        name: { required: true, type: "string" },
+        owner: { required: true, type: "string" },
+        page: { type: "integer" },
+        per_page: { type: "integer" },
+        repo: { required: true, type: "string" }
+      },
+      url: "/repos/:owner/:repo/actions/secrets/:name"
+    },
+    getSelfHostedRunner: {
+      method: "GET",
+      params: {
+        owner: { required: true, type: "string" },
+        repo: { required: true, type: "string" },
+        runner_id: { required: true, type: "integer" }
+      },
+      url: "/repos/:owner/:repo/actions/runners/:runner_id"
+    },
+    getWorkflow: {
+      method: "GET",
+      params: {
+        owner: { required: true, type: "string" },
+        repo: { required: true, type: "string" },
+        workflow_id: { required: true, type: "integer" }
+      },
+      url: "/repos/:owner/:repo/actions/workflows/:workflow_id"
+    },
+    getWorkflowJob: {
+      method: "GET",
+      params: {
+        job_id: { required: true, type: "integer" },
+        owner: { required: true, type: "string" },
+        repo: { required: true, type: "string" }
+      },
+      url: "/repos/:owner/:repo/actions/jobs/:job_id"
+    },
+    getWorkflowRun: {
+      method: "GET",
+      params: {
+        owner: { required: true, type: "string" },
+        repo: { required: true, type: "string" },
+        run_id: { required: true, type: "integer" }
+      },
+      url: "/repos/:owner/:repo/actions/runs/:run_id"
+    },
+    listJobsForWorkflowRun: {
+      method: "GET",
+      params: {
+        owner: { required: true, type: "string" },
+        page: { type: "integer" },
+        per_page: { type: "integer" },
+        repo: { required: true, type: "string" },
+        run_id: { required: true, type: "integer" }
+      },
+      url: "/repos/:owner/:repo/actions/runs/:run_id/jobs"
+    },
+    listRepoWorkflowRuns: {
+      method: "GET",
+      params: {
+        owner: { required: true, type: "string" },
+        page: { type: "integer" },
+        per_page: { type: "integer" },
+        repo: { required: true, type: "string" }
+      },
+      url: "/repos/:owner/:repo/actions/runs"
+    },
+    listRepoWorkflows: {
+      method: "GET",
+      params: {
+        owner: { required: true, type: "string" },
+        page: { type: "integer" },
+        per_page: { type: "integer" },
+        repo: { required: true, type: "string" }
+      },
+      url: "/repos/:owner/:repo/actions/workflows"
+    },
+    listSecretsForRepo: {
+      method: "GET",
+      params: {
+        owner: { required: true, type: "string" },
+        page: { type: "integer" },
+        per_page: { type: "integer" },
+        repo: { required: true, type: "string" }
+      },
+      url: "/repos/:owner/:repo/actions/secrets"
+    },
+    listSelfHostedRunnersForRepo: {
+      method: "GET",
+      params: {
+        owner: { required: true, type: "string" },
+        page: { type: "integer" },
+        per_page: { type: "integer" },
+        repo: { required: true, type: "string" }
+      },
+      url: "/repos/:owner/:repo/actions/runners"
+    },
+    listWorkflowJobLogs: {
+      method: "GET",
+      params: {
+        job_id: { required: true, type: "integer" },
+        owner: { required: true, type: "string" },
+        page: { type: "integer" },
+        per_page: { type: "integer" },
+        repo: { required: true, type: "string" }
+      },
+      url: "/repos/:owner/:repo/actions/jobs/:job_id/logs"
+    },
+    listWorkflowRunArtifacts: {
+      method: "GET",
+      params: {
+        owner: { required: true, type: "string" },
+        page: { type: "integer" },
+        per_page: { type: "integer" },
+        repo: { required: true, type: "string" },
+        run_id: { required: true, type: "integer" }
+      },
+      url: "/repos/:owner/:repo/actions/runs/:run_id/artifacts"
+    },
+    listWorkflowRunLogs: {
+      method: "GET",
+      params: {
+        owner: { required: true, type: "string" },
+        page: { type: "integer" },
+        per_page: { type: "integer" },
+        repo: { required: true, type: "string" },
+        run_id: { required: true, type: "integer" }
+      },
+      url: "/repos/:owner/:repo/actions/runs/:run_id/logs"
+    },
+    listWorkflowRuns: {
+      method: "GET",
+      params: {
+        owner: { required: true, type: "string" },
+        page: { type: "integer" },
+        per_page: { type: "integer" },
+        repo: { required: true, type: "string" },
+        workflow_id: { required: true, type: "integer" }
+      },
+      url: "/repos/:owner/:repo/actions/workflows/:workflow_id/runs"
+    },
+    reRunWorkflow: {
+      method: "POST",
+      params: {
+        owner: { required: true, type: "string" },
+        repo: { required: true, type: "string" },
+        run_id: { required: true, type: "integer" }
+      },
+      url: "/repos/:owner/:repo/actions/runs/:run_id/rerun"
+    },
+    removeSelfHostedRunner: {
+      method: "DELETE",
+      params: {
+        owner: { required: true, type: "string" },
+        repo: { required: true, type: "string" },
+        runner_id: { required: true, type: "integer" }
+      },
+      url: "/repos/:owner/:repo/actions/runners/:runner_id"
+    }
+  },
   activity: {
     checkStarringRepo: {
       method: "GET",
@@ -1725,6 +1968,15 @@ export default {
       },
       url: "/orgs/:org/migrations/:migration_id/archive"
     },
+    downloadArchiveForOrg: {
+      headers: { accept: "application/vnd.github.wyandotte-preview+json" },
+      method: "GET",
+      params: {
+        migration_id: { required: true, type: "integer" },
+        org: { required: true, type: "string" }
+      },
+      url: "/orgs/:org/migrations/:migration_id/archive"
+    },
     getArchiveForAuthenticatedUser: {
       headers: { accept: "application/vnd.github.wyandotte-preview+json" },
       method: "GET",
@@ -1732,6 +1984,8 @@ export default {
       url: "/user/migrations/:migration_id/archive"
     },
     getArchiveForOrg: {
+      deprecated:
+        "octokit.migrations.getArchiveForOrg() has been renamed to octokit.migrations.downloadArchiveForOrg() (2020-01-27)",
       headers: { accept: "application/vnd.github.wyandotte-preview+json" },
       method: "GET",
       params: {
