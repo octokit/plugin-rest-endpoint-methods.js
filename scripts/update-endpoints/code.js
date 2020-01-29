@@ -5,7 +5,6 @@ const prettier = require("prettier");
 const sortKeys = require("sort-keys");
 
 const ENDPOINTS = require("./generated/endpoints.json");
-const WORKAROUNDS = require("./workarounds");
 
 const ROUTES_PATH = join(
   __dirname,
@@ -21,7 +20,7 @@ const newRoutes = {};
 generateRoutes();
 
 async function generateRoutes() {
-  ENDPOINTS.concat(WORKAROUNDS).forEach(endpoint => {
+  ENDPOINTS.forEach(endpoint => {
     const scope = endpoint.scope;
 
     if (endpoint.isLegacy && !/^\/teams\/\{team_id\}/.test(endpoint.url)) {
