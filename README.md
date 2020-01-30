@@ -2654,6 +2654,7 @@ octokit.activity.listReposStarredByUser({ username, sort, direction });
 
 // https://developer.github.com/v3/activity/watching/#list-repositories-being-watched
 octokit.activity.listReposWatchedByUser({ username });
+<<<<<<< HEAD
 
 // https://developer.github.com/v3/repos/commits/#get-a-single-commit
 octokit.repos.getCommitRefSha({ owner, ref, repo });
@@ -2686,6 +2687,8 @@ octokit.pulls.createFromIssue({
 
 // https://developer.github.com/v3/repos/releases/#upload-a-release-asset
 octokit.repos.uploadReleaseAsset({ data, headers, label, name, url });
+=======
+>>>>>>> docs: remove obsolete `octokit.pulls.createFromIssue`, `octokit.git.listRefs`, `octokit.repos.getCommitRefSha`
 ```
 
 There is one method for each REST API endpoint documented at [https://developer.github.com/v3](https://developer.github.com/v3).
