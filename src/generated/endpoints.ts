@@ -1865,13 +1865,13 @@ export default {
       method: "PATCH",
       params: {
         color: { type: "string" },
-        current_name: { required: true, type: "string" },
         description: { type: "string" },
-        name: { type: "string" },
+        name: { required: true, type: "string" },
+        new_name: { type: "string" },
         owner: { required: true, type: "string" },
         repo: { required: true, type: "string" }
       },
-      url: "/repos/:owner/:repo/labels/:current_name"
+      url: "/repos/:owner/:repo/labels/:name"
     },
     updateMilestone: {
       method: "PATCH",
