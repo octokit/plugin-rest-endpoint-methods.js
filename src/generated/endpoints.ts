@@ -5420,6 +5420,7 @@ export default {
       url: "/repos/:owner/:repo/releases/assets/:asset_id"
     },
     uploadReleaseAsset: {
+      headers: { "content-length": null, "content-type": null },
       method: "POST",
       params: {
         data: { mapTo: "data", required: true, type: "string | object" },
@@ -5428,10 +5429,13 @@ export default {
         "headers.content-length": { required: true, type: "integer" },
         "headers.content-type": { required: true, type: "string" },
         label: { type: "string" },
-        name: { required: true, type: "string" },
-        url: { required: true, type: "string" }
+        name: { type: "string" },
+        origin: { type: "string" },
+        owner: { required: true, type: "string" },
+        release_id: { required: true, type: "integer" },
+        repo: { required: true, type: "string" }
       },
-      url: ":url"
+      url: ":origin/repos/:owner/:repo/releases/:release_id/assets{?name,label}"
     }
   },
   search: {
