@@ -1972,6 +1972,17 @@ octokit.repos.deleteRelease({ owner, repo, release_id });
 // https://developer.github.com/v3/repos/releases/#list-assets-for-a-release
 octokit.repos.listAssetsForRelease({ owner, repo, release_id });
 
+// https://developer.github.com/v3/repos/releases/#upload-a-release-asset
+octokit.repos.uploadReleaseAsset({
+  owner,
+  repo,
+  release_id,
+  name,
+  label,
+  file,
+  origin
+});
+
 // https://developer.github.com/v3/activity/starring/#list-stargazers
 octokit.activity.listStargazersForRepo({ owner, repo });
 
@@ -2643,38 +2654,6 @@ octokit.activity.listReposStarredByUser({ username, sort, direction });
 
 // https://developer.github.com/v3/activity/watching/#list-repositories-being-watched
 octokit.activity.listReposWatchedByUser({ username });
-
-// https://developer.github.com/v3/repos/commits/#get-a-single-commit
-octokit.repos.getCommitRefSha({ owner, ref, repo });
-
-// https://developer.github.com/v3/git/refs/#get-all-references
-octokit.git.listRefs({ owner, repo, namespace });
-
-// https://developer.github.com/v3/issues/labels/#update-a-label
-octokit.issues.updateLabel({
-  owner,
-  repo,
-  current_name,
-  color,
-  name,
-  description
-});
-
-// https://developer.github.com/v3/pulls/#create-a-pull-request
-octokit.pulls.createFromIssue({
-  owner,
-  repo,
-  base,
-  draft,
-  head,
-  issue,
-  maintainer_can_modify,
-  owner,
-  repo
-});
-
-// https://developer.github.com/v3/repos/releases/#upload-a-release-asset
-octokit.repos.uploadReleaseAsset({ file, headers, label, name, url });
 ```
 
 There is one method for each REST API endpoint documented at [https://developer.github.com/v3](https://developer.github.com/v3).
