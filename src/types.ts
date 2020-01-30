@@ -1,6 +1,6 @@
 import { Route, RequestParameters } from "@octokit/types";
 
-import { RestEndpointMethods } from "./generated/rest-endpoint-methods-types";
+import { RestEndpointMethods } from "./generated/types";
 
 export type Api = RestEndpointMethods;
 
