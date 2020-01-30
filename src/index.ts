@@ -1,9 +1,9 @@
 import { Octokit } from "@octokit/core";
 
-import endpointsByScope from "./generated/endpoints";
+import ENDPOINTS from "./generated/endpoints";
 import { VERSION } from "./version";
 import { Api } from "./types";
-import { registerEndpoints } from "./register-endpoints";
+import { endpointsToMethods } from "./endpoints-to-methods";
 
 /**
  * This plugin is a 1:1 copy of internal @octokit/rest plugins. The primary
@@ -16,21 +16,6 @@ import { registerEndpoints } from "./register-endpoints";
  * https://github.com/octokit/plugin-rest-endpoint-methods.js/pull/1
  */
 export function restEndpointMethods(octokit: Octokit): Api {
-  // @ts-ignore
-  octokit.registerEndpoints = registerEndpoints.bind(null, octokit);
-
-  // Aliasing scopes for backward compatibility
-  // See https://github.com/octokit/rest.js/pull/1134
-  // @ts-ignore
-  registerEndpoints(
-    octokit,
-    Object.assign(endpointsByScope, {
-      gitdata: endpointsByScope.git,
-      authorization: endpointsByScope.oauthAuthorizations,
-      pullRequests: endpointsByScope.pulls
-    })
-  );
-
-  return {} as Api;
+  return endpointsToMethods(octokit, ENDPOINTS);
 }
 restEndpointMethods.VERSION = VERSION;
