@@ -28,98 +28,92 @@ async function generateRoutes() {
       return;
     }
 
+    const idName = endpoint.id;
+    const route = `${endpoint.method} ${endpoint.url}`;
+    const endpointDefaults = {};
+    const endpointDecorations = {};
+
     if (!newRoutes[scope]) {
       newRoutes[scope] = {};
     }
 
-    const idName = endpoint.id;
-    const url = endpoint.url.toLowerCase().replace(/\{(\w+)\}/g, ":$1");
+    if (endpoint.headers.length) {
+      const headers = endpoint.headers.reduce((result, header) => {
+        // accept header is set via mediatype
+        if (header.name === "accept") {
+          return result;
+        }
 
-    // new route
-    newRoutes[scope][idName] = {
-      method: endpoint.method,
-      headers: endpoint.headers.reduce((result, header) => {
+        // ignore headers with null values. THese can be required headers that must be set by the user,
+        // such as `headers['content-type']` for `octokit.repos.uploadReleaseAsset()`
+        if (header.value === null) {
+          return result;
+        }
+
         if (!result) {
           result = {};
         }
+
         result[header.name] = header.value;
         return result;
-      }, undefined),
-      params: endpoint.parameters.reduce((result, param) => {
-        result[param.name] = {
-          type: param.type
-        };
-        if (param.allowNull) {
-          result[param.name].allowNull = true;
-        }
-        if (param.required) {
-          result[param.name].required = true;
-        }
-        if (param.mapToData) {
-          result[param.name].mapTo = "data";
-        }
-        if (param.enum) {
-          result[param.name].enum = param.enum;
-        }
-        if (param.validation) {
-          result[param.name].validation = param.validation;
-        }
-        if (param.deprecated) {
-          result[param.name].deprecated = true;
+      }, undefined);
 
-          if (param.alias) {
-            result[param.name].alias = param.alias;
-            result[param.name].type = result[param.alias].type;
-          } else {
-            result[param.name].type = param.type;
-            result[param.name].description = param.description;
-          }
-        }
+      if (headers) {
+        endpointDefaults.headers = headers;
+      }
+    }
 
-        return result;
-      }, {}),
-      url,
-      deprecated: newRoutes[scope][idName]
-        ? newRoutes[scope][idName].deprecated
-        : undefined
-    };
-
-    const previewHeaders = endpoint.previews
-      .map(preview => `application/vnd.github.${preview.name}-preview+json`)
-      .join(",");
-
-    if (previewHeaders) {
-      newRoutes[scope][idName].headers = {
-        accept: previewHeaders
+    if (endpoint.previews.length) {
+      endpointDefaults.mediaType = {
+        previews: endpoint.previews.map(preview => preview.name)
       };
     }
 
     if (endpoint.renamed) {
-      const { before, after } = endpoint.renamed;
-      if (!newRoutes[before.scope]) {
-        newRoutes[before.scope] = {};
-      }
-
-      if (!newRoutes[before.scope][before.id]) {
-        newRoutes[before.scope][before.id] = newRoutes[scope][idName];
-      }
-
-      newRoutes[before.scope][
-        before.id
-      ].deprecated = `octokit.${before.scope}.${before.id}() has been renamed to octokit.${after.scope}.${after.id}() (${endpoint.renamed.date})`;
+      endpointDecorations.renamed = [
+        endpoint.renamed.after.scope,
+        endpoint.renamed.after.id
+      ];
     }
 
-    if (endpoint.isDeprecated && !newRoutes[scope][idName].deprecated) {
-      newRoutes[scope][
-        idName
-      ].deprecated = `octokit.${scope}.${idName}() is deprecated, see ${endpoint.documentationUrl}`;
+    if (endpoint.isDeprecated && !endpoint.renamed) {
+      endpointDecorations.deprecated = `octokit.${scope}.${idName}() is deprecated, see ${endpoint.documentationUrl}`;
+    }
+
+    const renamedParameters = endpoint.parameters.filter(
+      parameter => !!parameter.alias
+    );
+
+    if (renamedParameters.length) {
+      endpointDecorations.renamedParameters = {};
+
+      for (const parameter of renamedParameters) {
+        endpointDecorations.renamedParameters[parameter.name] = parameter.alias;
+        if (!parameter.deprecated) {
+          console.log(`parameter`);
+          console.log(parameter);
+        }
+      }
+    }
+
+    newRoutes[scope][idName] = [route];
+
+    if (Object.keys(endpointDecorations).length) {
+      newRoutes[scope][idName].push(endpointDefaults, endpointDecorations);
+    } else if (Object.keys(endpointDefaults).length) {
+      newRoutes[scope][idName].push(endpointDefaults);
     }
   });
 
   writeFileSync(
     ROUTES_PATH,
     prettier.format(
-      `export default ` + JSON.stringify(sortKeys(newRoutes, { deep: true })),
+      `import { EndpointsDefaultsAndDecorations } from "../types";
+  const Endpoints: EndpointsDefaultsAndDecorations = ${JSON.stringify(
+    sortKeys(newRoutes, { deep: true })
+  )}
+  
+  export default Endpoints`,
       { parser: "typescript" }
     )
   );
