@@ -1332,17 +1332,6 @@ export default {
       },
       url: "/repos/:owner/:repo/git/matching-refs/:ref"
     },
-    listRefs: {
-      method: "GET",
-      params: {
-        namespace: { type: "string" },
-        owner: { required: true, type: "string" },
-        page: { type: "integer" },
-        per_page: { type: "integer" },
-        repo: { required: true, type: "string" }
-      },
-      url: "/repos/:owner/:repo/git/refs/:namespace"
-    },
     updateRef: {
       method: "PATCH",
       params: {
@@ -2959,21 +2948,6 @@ export default {
       },
       url: "/repos/:owner/:repo/pulls/:pull_number/comments"
     },
-    createFromIssue: {
-      deprecated:
-        "octokit.pulls.createFromIssue() is deprecated, see https://developer.github.com/v3/pulls/#create-a-pull-request",
-      method: "POST",
-      params: {
-        base: { required: true, type: "string" },
-        draft: { type: "boolean" },
-        head: { required: true, type: "string" },
-        issue: { required: true, type: "integer" },
-        maintainer_can_modify: { type: "boolean" },
-        owner: { required: true, type: "string" },
-        repo: { required: true, type: "string" }
-      },
-      url: "/repos/:owner/:repo/pulls"
-    },
     createReview: {
       method: "POST",
       params: {
@@ -4397,18 +4371,6 @@ export default {
         repo: { required: true, type: "string" }
       },
       url: "/repos/:owner/:repo/comments/:comment_id"
-    },
-    getCommitRefSha: {
-      deprecated:
-        "octokit.repos.getCommitRefSha() is deprecated, see https://developer.github.com/v3/repos/commits/#get-a-single-commit",
-      headers: { accept: "application/vnd.github.v3.sha" },
-      method: "GET",
-      params: {
-        owner: { required: true, type: "string" },
-        ref: { required: true, type: "string" },
-        repo: { required: true, type: "string" }
-      },
-      url: "/repos/:owner/:repo/commits/:ref"
     },
     getContents: {
       method: "GET",
