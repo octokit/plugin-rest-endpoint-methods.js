@@ -417,54 +417,6 @@ type UsersAddEmailsResponseItem = {
   verified: boolean;
   visibility: string | null;
 };
-type TeamsUpdateLegacyResponseOrganization = {
-  avatar_url: string;
-  blog: string;
-  company: string;
-  created_at: string;
-  description: string;
-  email: string;
-  events_url: string;
-  followers: number;
-  following: number;
-  has_organization_projects: boolean;
-  has_repository_projects: boolean;
-  hooks_url: string;
-  html_url: string;
-  id: number;
-  is_verified: boolean;
-  issues_url: string;
-  location: string;
-  login: string;
-  members_url: string;
-  name: string;
-  node_id: string;
-  public_gists: number;
-  public_members_url: string;
-  public_repos: number;
-  repos_url: string;
-  type: string;
-  url: string;
-};
-type TeamsUpdateLegacyResponse = {
-  created_at: string;
-  description: string;
-  html_url: string;
-  id: number;
-  members_count: number;
-  members_url: string;
-  name: string;
-  node_id: string;
-  organization: TeamsUpdateLegacyResponseOrganization;
-  parent: null;
-  permission: string;
-  privacy: string;
-  repos_count: number;
-  repositories_url: string;
-  slug: string;
-  updated_at: string;
-  url: string;
-};
 type TeamsUpdateInOrgResponseOrganization = {
   avatar_url: string;
   blog: string;
@@ -510,56 +462,6 @@ type TeamsUpdateInOrgResponse = {
   repos_count: number;
   repositories_url: string;
   slug: string;
-  updated_at: string;
-  url: string;
-};
-type TeamsUpdateDiscussionLegacyResponseReactions = {
-  "+1": number;
-  "-1": number;
-  confused: number;
-  heart: number;
-  hooray: number;
-  laugh: number;
-  total_count: number;
-  url: string;
-};
-type TeamsUpdateDiscussionLegacyResponseAuthor = {
-  avatar_url: string;
-  events_url: string;
-  followers_url: string;
-  following_url: string;
-  gists_url: string;
-  gravatar_id: string;
-  html_url: string;
-  id: number;
-  login: string;
-  node_id: string;
-  organizations_url: string;
-  received_events_url: string;
-  repos_url: string;
-  site_admin: boolean;
-  starred_url: string;
-  subscriptions_url: string;
-  type: string;
-  url: string;
-};
-type TeamsUpdateDiscussionLegacyResponse = {
-  author: TeamsUpdateDiscussionLegacyResponseAuthor;
-  body: string;
-  body_html: string;
-  body_version: string;
-  comments_count: number;
-  comments_url: string;
-  created_at: string;
-  html_url: string;
-  last_edited_at: string;
-  node_id: string;
-  number: number;
-  pinned: boolean;
-  private: boolean;
-  reactions: TeamsUpdateDiscussionLegacyResponseReactions;
-  team_url: string;
-  title: string;
   updated_at: string;
   url: string;
 };
@@ -613,51 +515,6 @@ type TeamsUpdateDiscussionInOrgResponse = {
   updated_at: string;
   url: string;
 };
-type TeamsUpdateDiscussionCommentLegacyResponseReactions = {
-  "+1": number;
-  "-1": number;
-  confused: number;
-  heart: number;
-  hooray: number;
-  laugh: number;
-  total_count: number;
-  url: string;
-};
-type TeamsUpdateDiscussionCommentLegacyResponseAuthor = {
-  avatar_url: string;
-  events_url: string;
-  followers_url: string;
-  following_url: string;
-  gists_url: string;
-  gravatar_id: string;
-  html_url: string;
-  id: number;
-  login: string;
-  node_id: string;
-  organizations_url: string;
-  received_events_url: string;
-  repos_url: string;
-  site_admin: boolean;
-  starred_url: string;
-  subscriptions_url: string;
-  type: string;
-  url: string;
-};
-type TeamsUpdateDiscussionCommentLegacyResponse = {
-  author: TeamsUpdateDiscussionCommentLegacyResponseAuthor;
-  body: string;
-  body_html: string;
-  body_version: string;
-  created_at: string;
-  discussion_url: string;
-  html_url: string;
-  last_edited_at: string;
-  node_id: string;
-  number: number;
-  reactions: TeamsUpdateDiscussionCommentLegacyResponseReactions;
-  updated_at: string;
-  url: string;
-};
 type TeamsUpdateDiscussionCommentInOrgResponseReactions = {
   "+1": number;
   "-1": number;
@@ -703,49 +560,6 @@ type TeamsUpdateDiscussionCommentInOrgResponse = {
   updated_at: string;
   url: string;
 };
-type TeamsReviewProjectLegacyResponsePermissions = {
-  admin: boolean;
-  read: boolean;
-  write: boolean;
-};
-type TeamsReviewProjectLegacyResponseCreator = {
-  avatar_url: string;
-  events_url: string;
-  followers_url: string;
-  following_url: string;
-  gists_url: string;
-  gravatar_id: string;
-  html_url: string;
-  id: number;
-  login: string;
-  node_id: string;
-  organizations_url: string;
-  received_events_url: string;
-  repos_url: string;
-  site_admin: boolean;
-  starred_url: string;
-  subscriptions_url: string;
-  type: string;
-  url: string;
-};
-type TeamsReviewProjectLegacyResponse = {
-  body: string;
-  columns_url: string;
-  created_at: string;
-  creator: TeamsReviewProjectLegacyResponseCreator;
-  html_url: string;
-  id: number;
-  name: string;
-  node_id: string;
-  number: number;
-  organization_permission: string;
-  owner_url: string;
-  permissions: TeamsReviewProjectLegacyResponsePermissions;
-  private: boolean;
-  state: string;
-  updated_at: string;
-  url: string;
-};
 type TeamsReviewProjectInOrgResponsePermissions = {
   admin: boolean;
   read: boolean;
@@ -788,118 +602,6 @@ type TeamsReviewProjectInOrgResponse = {
   state: string;
   updated_at: string;
   url: string;
-};
-type TeamsListReposLegacyResponseItemPermissions = {
-  admin: boolean;
-  pull: boolean;
-  push: boolean;
-};
-type TeamsListReposLegacyResponseItemOwner = {
-  avatar_url: string;
-  events_url: string;
-  followers_url: string;
-  following_url: string;
-  gists_url: string;
-  gravatar_id: string;
-  html_url: string;
-  id: number;
-  login: string;
-  node_id: string;
-  organizations_url: string;
-  received_events_url: string;
-  repos_url: string;
-  site_admin: boolean;
-  starred_url: string;
-  subscriptions_url: string;
-  type: string;
-  url: string;
-};
-type TeamsListReposLegacyResponseItemLicense = {
-  key: string;
-  name: string;
-  node_id: string;
-  spdx_id: string;
-  url: string;
-};
-type TeamsListReposLegacyResponseItem = {
-  archive_url: string;
-  archived: boolean;
-  assignees_url: string;
-  blobs_url: string;
-  branches_url: string;
-  clone_url: string;
-  collaborators_url: string;
-  comments_url: string;
-  commits_url: string;
-  compare_url: string;
-  contents_url: string;
-  contributors_url: string;
-  created_at: string;
-  default_branch: string;
-  deployments_url: string;
-  description: string;
-  disabled: boolean;
-  downloads_url: string;
-  events_url: string;
-  fork: boolean;
-  forks_count: number;
-  forks_url: string;
-  full_name: string;
-  git_commits_url: string;
-  git_refs_url: string;
-  git_tags_url: string;
-  git_url: string;
-  has_downloads: boolean;
-  has_issues: boolean;
-  has_pages: boolean;
-  has_projects: boolean;
-  has_wiki: boolean;
-  homepage: string;
-  hooks_url: string;
-  html_url: string;
-  id: number;
-  is_template: boolean;
-  issue_comment_url: string;
-  issue_events_url: string;
-  issues_url: string;
-  keys_url: string;
-  labels_url: string;
-  language: null;
-  languages_url: string;
-  license: TeamsListReposLegacyResponseItemLicense;
-  merges_url: string;
-  milestones_url: string;
-  mirror_url: string;
-  name: string;
-  network_count: number;
-  node_id: string;
-  notifications_url: string;
-  open_issues_count: number;
-  owner: TeamsListReposLegacyResponseItemOwner;
-  permissions: TeamsListReposLegacyResponseItemPermissions;
-  private: boolean;
-  pulls_url: string;
-  pushed_at: string;
-  releases_url: string;
-  size: number;
-  ssh_url: string;
-  stargazers_count: number;
-  stargazers_url: string;
-  statuses_url: string;
-  subscribers_count: number;
-  subscribers_url: string;
-  subscription_url: string;
-  svn_url: string;
-  tags_url: string;
-  teams_url: string;
-  temp_clone_token: string;
-  template_repository: null;
-  topics: Array<string>;
-  trees_url: string;
-  updated_at: string;
-  url: string;
-  visibility: string;
-  watchers_count: number;
 };
 type TeamsListReposInOrgResponseItemPermissions = {
   admin: boolean;
@@ -1013,49 +715,6 @@ type TeamsListReposInOrgResponseItem = {
   visibility: string;
   watchers_count: number;
 };
-type TeamsListProjectsLegacyResponseItemPermissions = {
-  admin: boolean;
-  read: boolean;
-  write: boolean;
-};
-type TeamsListProjectsLegacyResponseItemCreator = {
-  avatar_url: string;
-  events_url: string;
-  followers_url: string;
-  following_url: string;
-  gists_url: string;
-  gravatar_id: string;
-  html_url: string;
-  id: number;
-  login: string;
-  node_id: string;
-  organizations_url: string;
-  received_events_url: string;
-  repos_url: string;
-  site_admin: boolean;
-  starred_url: string;
-  subscriptions_url: string;
-  type: string;
-  url: string;
-};
-type TeamsListProjectsLegacyResponseItem = {
-  body: string;
-  columns_url: string;
-  created_at: string;
-  creator: TeamsListProjectsLegacyResponseItemCreator;
-  html_url: string;
-  id: number;
-  name: string;
-  node_id: string;
-  number: number;
-  organization_permission: string;
-  owner_url: string;
-  permissions: TeamsListProjectsLegacyResponseItemPermissions;
-  private: boolean;
-  state: string;
-  updated_at: string;
-  url: string;
-};
 type TeamsListProjectsInOrgResponseItemPermissions = {
   admin: boolean;
   read: boolean;
@@ -1099,36 +758,6 @@ type TeamsListProjectsInOrgResponseItem = {
   updated_at: string;
   url: string;
 };
-type TeamsListPendingInvitationsLegacyResponseItemInviter = {
-  avatar_url: string;
-  events_url: string;
-  followers_url: string;
-  following_url: string;
-  gists_url: string;
-  gravatar_id: string;
-  html_url: string;
-  id: number;
-  login: string;
-  node_id: string;
-  organizations_url: string;
-  received_events_url: string;
-  repos_url: string;
-  site_admin: boolean;
-  starred_url: string;
-  subscriptions_url: string;
-  type: string;
-  url: string;
-};
-type TeamsListPendingInvitationsLegacyResponseItem = {
-  created_at: string;
-  email: string;
-  id: number;
-  invitation_team_url: string;
-  inviter: TeamsListPendingInvitationsLegacyResponseItemInviter;
-  login: string;
-  role: string;
-  team_count: number;
-};
 type TeamsListPendingInvitationsInOrgResponseItemInviter = {
   avatar_url: string;
   events_url: string;
@@ -1158,26 +787,6 @@ type TeamsListPendingInvitationsInOrgResponseItem = {
   login: string;
   role: string;
   team_count: number;
-};
-type TeamsListMembersLegacyResponseItem = {
-  avatar_url: string;
-  events_url: string;
-  followers_url: string;
-  following_url: string;
-  gists_url: string;
-  gravatar_id: string;
-  html_url: string;
-  id: number;
-  login: string;
-  node_id: string;
-  organizations_url: string;
-  received_events_url: string;
-  repos_url: string;
-  site_admin: boolean;
-  starred_url: string;
-  subscriptions_url: string;
-  type: string;
-  url: string;
 };
 type TeamsListMembersInOrgResponseItem = {
   avatar_url: string;
@@ -1247,56 +856,6 @@ type TeamsListForAuthenticatedUserResponseItem = {
   updated_at: string;
   url: string;
 };
-type TeamsListDiscussionsLegacyResponseItemReactions = {
-  "+1": number;
-  "-1": number;
-  confused: number;
-  heart: number;
-  hooray: number;
-  laugh: number;
-  total_count: number;
-  url: string;
-};
-type TeamsListDiscussionsLegacyResponseItemAuthor = {
-  avatar_url: string;
-  events_url: string;
-  followers_url: string;
-  following_url: string;
-  gists_url: string;
-  gravatar_id: string;
-  html_url: string;
-  id: number;
-  login: string;
-  node_id: string;
-  organizations_url: string;
-  received_events_url: string;
-  repos_url: string;
-  site_admin: boolean;
-  starred_url: string;
-  subscriptions_url: string;
-  type: string;
-  url: string;
-};
-type TeamsListDiscussionsLegacyResponseItem = {
-  author: TeamsListDiscussionsLegacyResponseItemAuthor;
-  body: string;
-  body_html: string;
-  body_version: string;
-  comments_count: number;
-  comments_url: string;
-  created_at: string;
-  html_url: string;
-  last_edited_at: null;
-  node_id: string;
-  number: number;
-  pinned: boolean;
-  private: boolean;
-  reactions: TeamsListDiscussionsLegacyResponseItemReactions;
-  team_url: string;
-  title: string;
-  updated_at: string;
-  url: string;
-};
 type TeamsListDiscussionsInOrgResponseItemReactions = {
   "+1": number;
   "-1": number;
@@ -1347,51 +906,6 @@ type TeamsListDiscussionsInOrgResponseItem = {
   updated_at: string;
   url: string;
 };
-type TeamsListDiscussionCommentsLegacyResponseItemReactions = {
-  "+1": number;
-  "-1": number;
-  confused: number;
-  heart: number;
-  hooray: number;
-  laugh: number;
-  total_count: number;
-  url: string;
-};
-type TeamsListDiscussionCommentsLegacyResponseItemAuthor = {
-  avatar_url: string;
-  events_url: string;
-  followers_url: string;
-  following_url: string;
-  gists_url: string;
-  gravatar_id: string;
-  html_url: string;
-  id: number;
-  login: string;
-  node_id: string;
-  organizations_url: string;
-  received_events_url: string;
-  repos_url: string;
-  site_admin: boolean;
-  starred_url: string;
-  subscriptions_url: string;
-  type: string;
-  url: string;
-};
-type TeamsListDiscussionCommentsLegacyResponseItem = {
-  author: TeamsListDiscussionCommentsLegacyResponseItemAuthor;
-  body: string;
-  body_html: string;
-  body_version: string;
-  created_at: string;
-  discussion_url: string;
-  html_url: string;
-  last_edited_at: null;
-  node_id: string;
-  number: number;
-  reactions: TeamsListDiscussionCommentsLegacyResponseItemReactions;
-  updated_at: string;
-  url: string;
-};
 type TeamsListDiscussionCommentsInOrgResponseItemReactions = {
   "+1": number;
   "-1": number;
@@ -1437,32 +951,6 @@ type TeamsListDiscussionCommentsInOrgResponseItem = {
   updated_at: string;
   url: string;
 };
-type TeamsListChildLegacyResponseItemParent = {
-  description: string;
-  html_url: string;
-  id: number;
-  members_url: string;
-  name: string;
-  node_id: string;
-  permission: string;
-  privacy: string;
-  repositories_url: string;
-  slug: string;
-  url: string;
-};
-type TeamsListChildLegacyResponseItem = {
-  description: string;
-  id: number;
-  members_url: string;
-  name: string;
-  node_id: string;
-  parent: TeamsListChildLegacyResponseItemParent;
-  permission: string;
-  privacy: string;
-  repositories_url: string;
-  slug: string;
-  url: string;
-};
 type TeamsListChildInOrgResponseItemParent = {
   description: string;
   html_url: string;
@@ -1503,112 +991,9 @@ type TeamsListResponseItem = {
   slug: string;
   url: string;
 };
-type TeamsGetMembershipLegacyResponse = {
-  role: string;
-  state: string;
-  url: string;
-};
 type TeamsGetMembershipInOrgResponse = {
   role: string;
   state: string;
-  url: string;
-};
-type TeamsGetLegacyResponseOrganization = {
-  avatar_url: string;
-  blog: string;
-  company: string;
-  created_at: string;
-  description: string;
-  email: string;
-  events_url: string;
-  followers: number;
-  following: number;
-  has_organization_projects: boolean;
-  has_repository_projects: boolean;
-  hooks_url: string;
-  html_url: string;
-  id: number;
-  is_verified: boolean;
-  issues_url: string;
-  location: string;
-  login: string;
-  members_url: string;
-  name: string;
-  node_id: string;
-  public_gists: number;
-  public_members_url: string;
-  public_repos: number;
-  repos_url: string;
-  type: string;
-  url: string;
-};
-type TeamsGetLegacyResponse = {
-  created_at: string;
-  description: string;
-  html_url: string;
-  id: number;
-  members_count: number;
-  members_url: string;
-  name: string;
-  node_id: string;
-  organization: TeamsGetLegacyResponseOrganization;
-  parent: null;
-  permission: string;
-  privacy: string;
-  repos_count: number;
-  repositories_url: string;
-  slug: string;
-  updated_at: string;
-  url: string;
-};
-type TeamsGetDiscussionLegacyResponseReactions = {
-  "+1": number;
-  "-1": number;
-  confused: number;
-  heart: number;
-  hooray: number;
-  laugh: number;
-  total_count: number;
-  url: string;
-};
-type TeamsGetDiscussionLegacyResponseAuthor = {
-  avatar_url: string;
-  events_url: string;
-  followers_url: string;
-  following_url: string;
-  gists_url: string;
-  gravatar_id: string;
-  html_url: string;
-  id: number;
-  login: string;
-  node_id: string;
-  organizations_url: string;
-  received_events_url: string;
-  repos_url: string;
-  site_admin: boolean;
-  starred_url: string;
-  subscriptions_url: string;
-  type: string;
-  url: string;
-};
-type TeamsGetDiscussionLegacyResponse = {
-  author: TeamsGetDiscussionLegacyResponseAuthor;
-  body: string;
-  body_html: string;
-  body_version: string;
-  comments_count: number;
-  comments_url: string;
-  created_at: string;
-  html_url: string;
-  last_edited_at: null;
-  node_id: string;
-  number: number;
-  pinned: boolean;
-  private: boolean;
-  reactions: TeamsGetDiscussionLegacyResponseReactions;
-  team_url: string;
-  title: string;
-  updated_at: string;
   url: string;
 };
 type TeamsGetDiscussionInOrgResponseReactions = {
@@ -1658,51 +1043,6 @@ type TeamsGetDiscussionInOrgResponse = {
   reactions: TeamsGetDiscussionInOrgResponseReactions;
   team_url: string;
   title: string;
-  updated_at: string;
-  url: string;
-};
-type TeamsGetDiscussionCommentLegacyResponseReactions = {
-  "+1": number;
-  "-1": number;
-  confused: number;
-  heart: number;
-  hooray: number;
-  laugh: number;
-  total_count: number;
-  url: string;
-};
-type TeamsGetDiscussionCommentLegacyResponseAuthor = {
-  avatar_url: string;
-  events_url: string;
-  followers_url: string;
-  following_url: string;
-  gists_url: string;
-  gravatar_id: string;
-  html_url: string;
-  id: number;
-  login: string;
-  node_id: string;
-  organizations_url: string;
-  received_events_url: string;
-  repos_url: string;
-  site_admin: boolean;
-  starred_url: string;
-  subscriptions_url: string;
-  type: string;
-  url: string;
-};
-type TeamsGetDiscussionCommentLegacyResponse = {
-  author: TeamsGetDiscussionCommentLegacyResponseAuthor;
-  body: string;
-  body_html: string;
-  body_version: string;
-  created_at: string;
-  discussion_url: string;
-  html_url: string;
-  last_edited_at: null;
-  node_id: string;
-  number: number;
-  reactions: TeamsGetDiscussionCommentLegacyResponseReactions;
   updated_at: string;
   url: string;
 };
@@ -1799,56 +1139,6 @@ type TeamsGetByNameResponse = {
   updated_at: string;
   url: string;
 };
-type TeamsCreateDiscussionLegacyResponseReactions = {
-  "+1": number;
-  "-1": number;
-  confused: number;
-  heart: number;
-  hooray: number;
-  laugh: number;
-  total_count: number;
-  url: string;
-};
-type TeamsCreateDiscussionLegacyResponseAuthor = {
-  avatar_url: string;
-  events_url: string;
-  followers_url: string;
-  following_url: string;
-  gists_url: string;
-  gravatar_id: string;
-  html_url: string;
-  id: number;
-  login: string;
-  node_id: string;
-  organizations_url: string;
-  received_events_url: string;
-  repos_url: string;
-  site_admin: boolean;
-  starred_url: string;
-  subscriptions_url: string;
-  type: string;
-  url: string;
-};
-type TeamsCreateDiscussionLegacyResponse = {
-  author: TeamsCreateDiscussionLegacyResponseAuthor;
-  body: string;
-  body_html: string;
-  body_version: string;
-  comments_count: number;
-  comments_url: string;
-  created_at: string;
-  html_url: string;
-  last_edited_at: null;
-  node_id: string;
-  number: number;
-  pinned: boolean;
-  private: boolean;
-  reactions: TeamsCreateDiscussionLegacyResponseReactions;
-  team_url: string;
-  title: string;
-  updated_at: string;
-  url: string;
-};
 type TeamsCreateDiscussionInOrgResponseReactions = {
   "+1": number;
   "-1": number;
@@ -1896,51 +1186,6 @@ type TeamsCreateDiscussionInOrgResponse = {
   reactions: TeamsCreateDiscussionInOrgResponseReactions;
   team_url: string;
   title: string;
-  updated_at: string;
-  url: string;
-};
-type TeamsCreateDiscussionCommentLegacyResponseReactions = {
-  "+1": number;
-  "-1": number;
-  confused: number;
-  heart: number;
-  hooray: number;
-  laugh: number;
-  total_count: number;
-  url: string;
-};
-type TeamsCreateDiscussionCommentLegacyResponseAuthor = {
-  avatar_url: string;
-  events_url: string;
-  followers_url: string;
-  following_url: string;
-  gists_url: string;
-  gravatar_id: string;
-  html_url: string;
-  id: number;
-  login: string;
-  node_id: string;
-  organizations_url: string;
-  received_events_url: string;
-  repos_url: string;
-  site_admin: boolean;
-  starred_url: string;
-  subscriptions_url: string;
-  type: string;
-  url: string;
-};
-type TeamsCreateDiscussionCommentLegacyResponse = {
-  author: TeamsCreateDiscussionCommentLegacyResponseAuthor;
-  body: string;
-  body_html: string;
-  body_version: string;
-  created_at: string;
-  discussion_url: string;
-  html_url: string;
-  last_edited_at: null;
-  node_id: string;
-  number: number;
-  reactions: TeamsCreateDiscussionCommentLegacyResponseReactions;
   updated_at: string;
   url: string;
 };
@@ -2036,113 +1281,6 @@ type TeamsCreateResponse = {
   slug: string;
   updated_at: string;
   url: string;
-};
-type TeamsCheckManagesRepoLegacyResponsePermissions = {
-  admin: boolean;
-  pull: boolean;
-  push: boolean;
-};
-type TeamsCheckManagesRepoLegacyResponseOwner = {
-  avatar_url: string;
-  events_url: string;
-  followers_url: string;
-  following_url: string;
-  gists_url: string;
-  gravatar_id: string;
-  html_url: string;
-  id: number;
-  login: string;
-  node_id: string;
-  organizations_url: string;
-  received_events_url: string;
-  repos_url: string;
-  site_admin: boolean;
-  starred_url: string;
-  subscriptions_url: string;
-  type: string;
-  url: string;
-};
-type TeamsCheckManagesRepoLegacyResponse = {
-  allow_merge_commit: boolean;
-  allow_rebase_merge: boolean;
-  allow_squash_merge: boolean;
-  archive_url: string;
-  archived: boolean;
-  assignees_url: string;
-  blobs_url: string;
-  branches_url: string;
-  clone_url: string;
-  collaborators_url: string;
-  comments_url: string;
-  commits_url: string;
-  compare_url: string;
-  contents_url: string;
-  contributors_url: string;
-  created_at: string;
-  default_branch: string;
-  deployments_url: string;
-  description: string;
-  disabled: boolean;
-  downloads_url: string;
-  events_url: string;
-  fork: boolean;
-  forks_count: number;
-  forks_url: string;
-  full_name: string;
-  git_commits_url: string;
-  git_refs_url: string;
-  git_tags_url: string;
-  git_url: string;
-  has_downloads: boolean;
-  has_issues: boolean;
-  has_pages: boolean;
-  has_projects: boolean;
-  has_wiki: boolean;
-  homepage: string;
-  hooks_url: string;
-  html_url: string;
-  id: number;
-  is_template: boolean;
-  issue_comment_url: string;
-  issue_events_url: string;
-  issues_url: string;
-  keys_url: string;
-  labels_url: string;
-  language: null;
-  languages_url: string;
-  merges_url: string;
-  milestones_url: string;
-  mirror_url: string;
-  name: string;
-  network_count: number;
-  node_id: string;
-  notifications_url: string;
-  open_issues_count: number;
-  owner: TeamsCheckManagesRepoLegacyResponseOwner;
-  permissions: TeamsCheckManagesRepoLegacyResponsePermissions;
-  private: boolean;
-  pulls_url: string;
-  pushed_at: string;
-  releases_url: string;
-  size: number;
-  ssh_url: string;
-  stargazers_count: number;
-  stargazers_url: string;
-  statuses_url: string;
-  subscribers_count: number;
-  subscribers_url: string;
-  subscription_url: string;
-  svn_url: string;
-  tags_url: string;
-  teams_url: string;
-  temp_clone_token: string;
-  template_repository: null;
-  topics: Array<string>;
-  trees_url: string;
-  updated_at: string;
-  url: string;
-  visibility: string;
-  watchers_count: number;
 };
 type TeamsCheckManagesRepoInOrgResponsePermissions = {
   admin: boolean;
@@ -2251,53 +1389,14 @@ type TeamsCheckManagesRepoInOrgResponse = {
   visibility: string;
   watchers_count: number;
 };
-type TeamsAddOrUpdateProjectLegacyResponse = {
-  documentation_url: string;
-  message: string;
-};
 type TeamsAddOrUpdateProjectInOrgResponse = {
   documentation_url: string;
   message: string;
-};
-type TeamsAddOrUpdateMembershipLegacyResponse = {
-  role: string;
-  state: string;
-  url: string;
 };
 type TeamsAddOrUpdateMembershipInOrgResponse = {
   role: string;
   state: string;
   url: string;
-};
-type TeamsAddMemberLegacyResponseErrorsItem = {
-  code: string;
-  field: string;
-  resource: string;
-};
-type TeamsAddMemberLegacyResponse = {
-  errors: Array<TeamsAddMemberLegacyResponseErrorsItem>;
-  message: string;
-};
-type SearchUsersLegacyResponseUsersItem = {
-  created: string;
-  created_at: string;
-  followers: number;
-  followers_count: number;
-  fullname: string;
-  gravatar_id: string;
-  id: string;
-  language: string;
-  location: string;
-  login: string;
-  name: string;
-  public_repo_count: number;
-  repos: number;
-  score: number;
-  type: string;
-  username: string;
-};
-type SearchUsersLegacyResponse = {
-  users: Array<SearchUsersLegacyResponseUsersItem>;
 };
 type SearchUsersResponseItemsItem = {
   avatar_url: string;
@@ -2337,34 +1436,6 @@ type SearchTopicsResponse = {
   incomplete_results: boolean;
   items: Array<SearchTopicsResponseItemsItem>;
   total_count: number;
-};
-type SearchReposLegacyResponseRepositoriesItem = {
-  created: string;
-  created_at: string;
-  description: string;
-  followers: number;
-  fork: boolean;
-  forks: number;
-  has_downloads: boolean;
-  has_issues: boolean;
-  has_wiki: boolean;
-  homepage: string;
-  language: string;
-  name: string;
-  open_issues: number;
-  owner: string;
-  private: boolean;
-  pushed: string;
-  pushed_at: string;
-  score: number;
-  size: number;
-  type: string;
-  url: string;
-  username: string;
-  watchers: number;
-};
-type SearchReposLegacyResponse = {
-  repositories: Array<SearchReposLegacyResponseRepositoriesItem>;
 };
 type SearchReposResponseItemsItemOwner = {
   avatar_url: string;
@@ -2420,24 +1491,6 @@ type SearchLabelsResponse = {
   incomplete_results: boolean;
   items: Array<SearchLabelsResponseItemsItem>;
   total_count: number;
-};
-type SearchIssuesLegacyResponseIssuesItem = {
-  body: string;
-  comments: number;
-  created_at: string;
-  gravatar_id: string;
-  html_url: string;
-  labels: Array<string>;
-  number: number;
-  position: number;
-  state: string;
-  title: string;
-  updated_at: string;
-  user: string;
-  votes: number;
-};
-type SearchIssuesLegacyResponse = {
-  issues: Array<SearchIssuesLegacyResponseIssuesItem>;
 };
 type SearchIssuesAndPullRequestsResponseItemsItemUser = {
   avatar_url: string;
@@ -2499,24 +1552,6 @@ type SearchIssuesAndPullRequestsResponse = {
   items: Array<SearchIssuesAndPullRequestsResponseItemsItem>;
   total_count: number;
 };
-type SearchEmailLegacyResponseUser = {
-  blog: string;
-  company: string;
-  created: string;
-  created_at: string;
-  email: string;
-  followers_count: number;
-  following_count: number;
-  gravatar_id: string;
-  id: number;
-  location: string;
-  login: string;
-  name: string;
-  public_gist_count: number;
-  public_repo_count: number;
-  type: string;
-};
-type SearchEmailLegacyResponse = { user: SearchEmailLegacyResponseUser };
 type SearchCommitsResponseItemsItemRepositoryOwner = {
   avatar_url: string;
   events_url: string;
@@ -8475,33 +7510,6 @@ type ReposAddCollaboratorResponse = {
   repository: ReposAddCollaboratorResponseRepository;
   url: string;
 };
-type ReactionsListForTeamDiscussionLegacyResponseItemUser = {
-  avatar_url: string;
-  events_url: string;
-  followers_url: string;
-  following_url: string;
-  gists_url: string;
-  gravatar_id: string;
-  html_url: string;
-  id: number;
-  login: string;
-  node_id: string;
-  organizations_url: string;
-  received_events_url: string;
-  repos_url: string;
-  site_admin: boolean;
-  starred_url: string;
-  subscriptions_url: string;
-  type: string;
-  url: string;
-};
-type ReactionsListForTeamDiscussionLegacyResponseItem = {
-  content: string;
-  created_at: string;
-  id: number;
-  node_id: string;
-  user: ReactionsListForTeamDiscussionLegacyResponseItemUser;
-};
 type ReactionsListForTeamDiscussionInOrgResponseItemUser = {
   avatar_url: string;
   events_url: string;
@@ -8528,33 +7536,6 @@ type ReactionsListForTeamDiscussionInOrgResponseItem = {
   id: number;
   node_id: string;
   user: ReactionsListForTeamDiscussionInOrgResponseItemUser;
-};
-type ReactionsListForTeamDiscussionCommentLegacyResponseItemUser = {
-  avatar_url: string;
-  events_url: string;
-  followers_url: string;
-  following_url: string;
-  gists_url: string;
-  gravatar_id: string;
-  html_url: string;
-  id: number;
-  login: string;
-  node_id: string;
-  organizations_url: string;
-  received_events_url: string;
-  repos_url: string;
-  site_admin: boolean;
-  starred_url: string;
-  subscriptions_url: string;
-  type: string;
-  url: string;
-};
-type ReactionsListForTeamDiscussionCommentLegacyResponseItem = {
-  content: string;
-  created_at: string;
-  id: number;
-  node_id: string;
-  user: ReactionsListForTeamDiscussionCommentLegacyResponseItemUser;
 };
 type ReactionsListForTeamDiscussionCommentInOrgResponseItemUser = {
   avatar_url: string;
@@ -8691,33 +7672,6 @@ type ReactionsListForCommitCommentResponseItem = {
   node_id: string;
   user: ReactionsListForCommitCommentResponseItemUser;
 };
-type ReactionsCreateForTeamDiscussionLegacyResponseUser = {
-  avatar_url: string;
-  events_url: string;
-  followers_url: string;
-  following_url: string;
-  gists_url: string;
-  gravatar_id: string;
-  html_url: string;
-  id: number;
-  login: string;
-  node_id: string;
-  organizations_url: string;
-  received_events_url: string;
-  repos_url: string;
-  site_admin: boolean;
-  starred_url: string;
-  subscriptions_url: string;
-  type: string;
-  url: string;
-};
-type ReactionsCreateForTeamDiscussionLegacyResponse = {
-  content: string;
-  created_at: string;
-  id: number;
-  node_id: string;
-  user: ReactionsCreateForTeamDiscussionLegacyResponseUser;
-};
 type ReactionsCreateForTeamDiscussionInOrgResponseUser = {
   avatar_url: string;
   events_url: string;
@@ -8744,33 +7698,6 @@ type ReactionsCreateForTeamDiscussionInOrgResponse = {
   id: number;
   node_id: string;
   user: ReactionsCreateForTeamDiscussionInOrgResponseUser;
-};
-type ReactionsCreateForTeamDiscussionCommentLegacyResponseUser = {
-  avatar_url: string;
-  events_url: string;
-  followers_url: string;
-  following_url: string;
-  gists_url: string;
-  gravatar_id: string;
-  html_url: string;
-  id: number;
-  login: string;
-  node_id: string;
-  organizations_url: string;
-  received_events_url: string;
-  repos_url: string;
-  site_admin: boolean;
-  starred_url: string;
-  subscriptions_url: string;
-  type: string;
-  url: string;
-};
-type ReactionsCreateForTeamDiscussionCommentLegacyResponse = {
-  content: string;
-  created_at: string;
-  id: number;
-  node_id: string;
-  user: ReactionsCreateForTeamDiscussionCommentLegacyResponseUser;
 };
 type ReactionsCreateForTeamDiscussionCommentInOrgResponseUser = {
   avatar_url: string;
@@ -22066,14 +20993,8 @@ type ReactionsListForPullRequestReviewCommentResponse = Array<
 type ReactionsListForTeamDiscussionCommentInOrgResponse = Array<
   ReactionsListForTeamDiscussionCommentInOrgResponseItem
 >;
-type ReactionsListForTeamDiscussionCommentLegacyResponse = Array<
-  ReactionsListForTeamDiscussionCommentLegacyResponseItem
->;
 type ReactionsListForTeamDiscussionInOrgResponse = Array<
   ReactionsListForTeamDiscussionInOrgResponseItem
->;
-type ReactionsListForTeamDiscussionLegacyResponse = Array<
-  ReactionsListForTeamDiscussionLegacyResponseItem
 >;
 type ReposAddProtectedBranchAppRestrictionsResponse = Array<
   ReposAddProtectedBranchAppRestrictionsResponseItem
@@ -22175,36 +21096,21 @@ type ReposReplaceProtectedBranchUserRestrictionsResponse = Array<
 >;
 type TeamsListResponse = Array<TeamsListResponseItem>;
 type TeamsListChildInOrgResponse = Array<TeamsListChildInOrgResponseItem>;
-type TeamsListChildLegacyResponse = Array<TeamsListChildLegacyResponseItem>;
 type TeamsListDiscussionCommentsInOrgResponse = Array<
   TeamsListDiscussionCommentsInOrgResponseItem
 >;
-type TeamsListDiscussionCommentsLegacyResponse = Array<
-  TeamsListDiscussionCommentsLegacyResponseItem
->;
 type TeamsListDiscussionsInOrgResponse = Array<
   TeamsListDiscussionsInOrgResponseItem
->;
-type TeamsListDiscussionsLegacyResponse = Array<
-  TeamsListDiscussionsLegacyResponseItem
 >;
 type TeamsListForAuthenticatedUserResponse = Array<
   TeamsListForAuthenticatedUserResponseItem
 >;
 type TeamsListMembersInOrgResponse = Array<TeamsListMembersInOrgResponseItem>;
-type TeamsListMembersLegacyResponse = Array<TeamsListMembersLegacyResponseItem>;
 type TeamsListPendingInvitationsInOrgResponse = Array<
   TeamsListPendingInvitationsInOrgResponseItem
 >;
-type TeamsListPendingInvitationsLegacyResponse = Array<
-  TeamsListPendingInvitationsLegacyResponseItem
->;
 type TeamsListProjectsInOrgResponse = Array<TeamsListProjectsInOrgResponseItem>;
-type TeamsListProjectsLegacyResponse = Array<
-  TeamsListProjectsLegacyResponseItem
->;
 type TeamsListReposInOrgResponse = Array<TeamsListReposInOrgResponseItem>;
-type TeamsListReposLegacyResponse = Array<TeamsListReposLegacyResponseItem>;
 type UsersAddEmailsResponse = Array<UsersAddEmailsResponseItem>;
 type UsersListResponse = Array<UsersListResponseItem>;
 type UsersListBlockedResponse = Array<UsersListBlockedResponseItem>;
@@ -22443,10 +21349,6 @@ export type ActionsRemoveSelfHostedRunnerParams = {
   runner_id: number;
 };
 export type ActivityCheckStarringRepoParams = {
-  owner: string;
-  repo: string;
-};
-export type ActivityCheckWatchingRepoLegacyParams = {
   owner: string;
   repo: string;
 };
@@ -22744,15 +21646,7 @@ export type ActivityStarRepoParams = {
   owner: string;
   repo: string;
 };
-export type ActivityStopWatchingRepoLegacyParams = {
-  owner: string;
-  repo: string;
-};
 export type ActivityUnstarRepoParams = {
-  owner: string;
-  repo: string;
-};
-export type ActivityWatchRepoLegacyParams = {
   owner: string;
   repo: string;
 };
@@ -25711,23 +24605,6 @@ export type ReactionsCreateForTeamDiscussionCommentInOrgParams = {
   org: string;
   team_slug: string;
 };
-export type ReactionsCreateForTeamDiscussionCommentLegacyParams = {
-  comment_number: number;
-  /**
-   * The [reaction type](https://developer.github.com/v3/reactions/#reaction-types) to add to the team discussion comment.
-   */
-  content:
-    | "+1"
-    | "-1"
-    | "laugh"
-    | "confused"
-    | "heart"
-    | "hooray"
-    | "rocket"
-    | "eyes";
-  discussion_number: number;
-  team_id: number;
-};
 export type ReactionsCreateForTeamDiscussionInOrgParams = {
   /**
    * The [reaction type](https://developer.github.com/v3/reactions/#reaction-types) to add to the team discussion.
@@ -25744,22 +24621,6 @@ export type ReactionsCreateForTeamDiscussionInOrgParams = {
   discussion_number: number;
   org: string;
   team_slug: string;
-};
-export type ReactionsCreateForTeamDiscussionLegacyParams = {
-  /**
-   * The [reaction type](https://developer.github.com/v3/reactions/#reaction-types) to add to the team discussion.
-   */
-  content:
-    | "+1"
-    | "-1"
-    | "laugh"
-    | "confused"
-    | "heart"
-    | "hooray"
-    | "rocket"
-    | "eyes";
-  discussion_number: number;
-  team_id: number;
 };
 export type ReactionsDeleteParams = {
   reaction_id: number;
@@ -25890,31 +24751,6 @@ export type ReactionsListForTeamDiscussionCommentInOrgParams = {
   per_page?: number;
   team_slug: string;
 };
-export type ReactionsListForTeamDiscussionCommentLegacyParams = {
-  comment_number: number;
-  /**
-   * Returns a single [reaction type](https://developer.github.com/v3/reactions/#reaction-types). Omit this parameter to list all reactions to a team discussion comment.
-   */
-  content?:
-    | "+1"
-    | "-1"
-    | "laugh"
-    | "confused"
-    | "heart"
-    | "hooray"
-    | "rocket"
-    | "eyes";
-  discussion_number: number;
-  /**
-   * Page number of the results to fetch.
-   */
-  page?: number;
-  /**
-   * Results per page (max 100)
-   */
-  per_page?: number;
-  team_id: number;
-};
 export type ReactionsListForTeamDiscussionInOrgParams = {
   /**
    * Returns a single [reaction type](https://developer.github.com/v3/reactions/#reaction-types). Omit this parameter to list all reactions to a team discussion.
@@ -25939,30 +24775,6 @@ export type ReactionsListForTeamDiscussionInOrgParams = {
    */
   per_page?: number;
   team_slug: string;
-};
-export type ReactionsListForTeamDiscussionLegacyParams = {
-  /**
-   * Returns a single [reaction type](https://developer.github.com/v3/reactions/#reaction-types). Omit this parameter to list all reactions to a team discussion.
-   */
-  content?:
-    | "+1"
-    | "-1"
-    | "laugh"
-    | "confused"
-    | "heart"
-    | "hooray"
-    | "rocket"
-    | "eyes";
-  discussion_number: number;
-  /**
-   * Page number of the results to fetch.
-   */
-  page?: number;
-  /**
-   * Results per page (max 100)
-   */
-  per_page?: number;
-  team_id: number;
 };
 export type ReposAcceptInvitationParams = {
   invitation_id: number;
@@ -27597,12 +26409,6 @@ export type SearchCommitsParams = {
    */
   sort?: "author-date" | "committer-date";
 };
-export type SearchEmailLegacyParams = {
-  /**
-   * The email address.
-   */
-  email: string;
-};
 export type SearchIssuesAndPullRequestsParams = {
   /**
    * Determines whether the first search result returned is the highest number of matches (`desc`) or lowest number of matches (`asc`). This parameter is ignored unless you provide `sort`.
@@ -27635,18 +26441,6 @@ export type SearchIssuesAndPullRequestsParams = {
     | "interactions"
     | "created"
     | "updated";
-};
-export type SearchIssuesLegacyParams = {
-  /**
-   * The search term.
-   */
-  keyword: string;
-  owner: string;
-  repository: string;
-  /**
-   * Indicates the state of the issues to return. Can be either `open` or `closed`.
-   */
-  state: "open" | "closed";
 };
 export type SearchLabelsParams = {
   /**
@@ -27688,28 +26482,6 @@ export type SearchReposParams = {
    */
   sort?: "stars" | "forks" | "help-wanted-issues" | "updated";
 };
-export type SearchReposLegacyParams = {
-  /**
-   * The search term.
-   */
-  keyword: string;
-  /**
-   * Filter results by language.
-   */
-  language?: string;
-  /**
-   * The sort field. if `sort` param is provided. Can be either `asc` or `desc`.
-   */
-  order?: "asc" | "desc";
-  /**
-   * The sort field. One of `stars`, `forks`, or `updated`. Default: results are sorted by best match.
-   */
-  sort?: "stars" | "forks" | "updated";
-  /**
-   * The page number to fetch.
-   */
-  start_page?: string;
-};
 export type SearchTopicsParams = {
   /**
    * The query contains one or more search keywords and qualifiers. Qualifiers allow you to limit your search to specific areas of GitHub. The REST API supports the same qualifiers as GitHub.com. To learn more about the format of the query, see [Constructing a search query](https://developer.github.com/v3/search/#constructing-a-search-query).
@@ -27738,28 +26510,6 @@ export type SearchUsersParams = {
    */
   sort?: "followers" | "repositories" | "joined";
 };
-export type SearchUsersLegacyParams = {
-  /**
-   * The search term.
-   */
-  keyword: string;
-  /**
-   * The sort field. if `sort` param is provided. Can be either `asc` or `desc`.
-   */
-  order?: "asc" | "desc";
-  /**
-   * The sort field. One of `stars`, `forks`, or `updated`. Default: results are sorted by best match.
-   */
-  sort?: "stars" | "forks" | "updated";
-  /**
-   * The page number to fetch.
-   */
-  start_page?: string;
-};
-export type TeamsAddMemberLegacyParams = {
-  team_id: number;
-  username: string;
-};
 export type TeamsAddOrUpdateMembershipInOrgParams = {
   org: string;
   /**
@@ -27769,16 +26519,6 @@ export type TeamsAddOrUpdateMembershipInOrgParams = {
    */
   role?: "member" | "maintainer";
   team_slug: string;
-  username: string;
-};
-export type TeamsAddOrUpdateMembershipLegacyParams = {
-  /**
-   * The role that this user should have in the team. Can be one of:
-   * \* `member` - a normal member of the team.
-   * \* `maintainer` - a team maintainer. Able to add/remove other team members, promote other team members to team maintainer, and edit the team's name and description.
-   */
-  role?: "member" | "maintainer";
-  team_id: number;
   username: string;
 };
 export type TeamsAddOrUpdateProjectInOrgParams = {
@@ -27793,18 +26533,6 @@ export type TeamsAddOrUpdateProjectInOrgParams = {
   permission?: "read" | "write" | "admin";
   project_id: number;
   team_slug: string;
-};
-export type TeamsAddOrUpdateProjectLegacyParams = {
-  /**
-   * The permission to grant to the team for this project. Can be one of:
-   * \* `read` - team members can read, but not write to or administer this project.
-   * \* `write` - team members can read and write, but not administer this project.
-   * \* `admin` - team members can read, write and administer this project.
-   * Default: the team's `permission` attribute will be used to determine what permission to grant the team on this project. Note that, if you choose not to pass any parameters, you'll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see "[HTTP verbs](https://developer.github.com/v3/#http-verbs)."
-   */
-  permission?: "read" | "write" | "admin";
-  project_id: number;
-  team_id: number;
 };
 export type TeamsAddOrUpdateRepoInOrgParams = {
   org: string;
@@ -27821,30 +26549,11 @@ export type TeamsAddOrUpdateRepoInOrgParams = {
   repo: string;
   team_slug: string;
 };
-export type TeamsAddOrUpdateRepoLegacyParams = {
-  owner: string;
-  /**
-   * The permission to grant the team on this repository. Can be one of:
-   * \* `pull` - team members can pull, but not push to or administer this repository.
-   * \* `push` - team members can pull and push, but not administer this repository.
-   * \* `admin` - team members can pull, push and administer this repository.
-   *
-   * If no permission is specified, the team's `permission` attribute will be used to determine what permission to grant the team on this repository.
-   */
-  permission?: "pull" | "push" | "admin";
-  repo: string;
-  team_id: number;
-};
 export type TeamsCheckManagesRepoInOrgParams = {
   org: string;
   owner: string;
   repo: string;
   team_slug: string;
-};
-export type TeamsCheckManagesRepoLegacyParams = {
-  owner: string;
-  repo: string;
-  team_id: number;
 };
 export type TeamsCreateParamsDeprecatedPermission = {
   /**
@@ -27931,14 +26640,6 @@ export type TeamsCreateDiscussionCommentInOrgParams = {
   org: string;
   team_slug: string;
 };
-export type TeamsCreateDiscussionCommentLegacyParams = {
-  /**
-   * The discussion comment's body text.
-   */
-  body: string;
-  discussion_number: number;
-  team_id: number;
-};
 export type TeamsCreateDiscussionInOrgParams = {
   /**
    * The discussion post's body text.
@@ -27955,47 +26656,20 @@ export type TeamsCreateDiscussionInOrgParams = {
    */
   title: string;
 };
-export type TeamsCreateDiscussionLegacyParams = {
-  /**
-   * The discussion post's body text.
-   */
-  body: string;
-  /**
-   * Private posts are only visible to team members, organization owners, and team maintainers. Public posts are visible to all members of the organization. Set to `true` to create a private post.
-   */
-  private?: boolean;
-  team_id: number;
-  /**
-   * The discussion post's title.
-   */
-  title: string;
-};
 export type TeamsDeleteDiscussionCommentInOrgParams = {
   comment_number: number;
   discussion_number: number;
   org: string;
   team_slug: string;
 };
-export type TeamsDeleteDiscussionCommentLegacyParams = {
-  comment_number: number;
-  discussion_number: number;
-  team_id: number;
-};
 export type TeamsDeleteDiscussionInOrgParams = {
   discussion_number: number;
   org: string;
   team_slug: string;
 };
-export type TeamsDeleteDiscussionLegacyParams = {
-  discussion_number: number;
-  team_id: number;
-};
 export type TeamsDeleteInOrgParams = {
   org: string;
   team_slug: string;
-};
-export type TeamsDeleteLegacyParams = {
-  team_id: number;
 };
 export type TeamsGetByNameParams = {
   org: string;
@@ -28007,34 +26681,14 @@ export type TeamsGetDiscussionCommentInOrgParams = {
   org: string;
   team_slug: string;
 };
-export type TeamsGetDiscussionCommentLegacyParams = {
-  comment_number: number;
-  discussion_number: number;
-  team_id: number;
-};
 export type TeamsGetDiscussionInOrgParams = {
   discussion_number: number;
   org: string;
   team_slug: string;
 };
-export type TeamsGetDiscussionLegacyParams = {
-  discussion_number: number;
-  team_id: number;
-};
-export type TeamsGetLegacyParams = {
-  team_id: number;
-};
-export type TeamsGetMemberLegacyParams = {
-  team_id: number;
-  username: string;
-};
 export type TeamsGetMembershipInOrgParams = {
   org: string;
   team_slug: string;
-  username: string;
-};
-export type TeamsGetMembershipLegacyParams = {
-  team_id: number;
   username: string;
 };
 export type TeamsListParams = {
@@ -28060,17 +26714,6 @@ export type TeamsListChildInOrgParams = {
   per_page?: number;
   team_slug: string;
 };
-export type TeamsListChildLegacyParams = {
-  /**
-   * Page number of the results to fetch.
-   */
-  page?: number;
-  /**
-   * Results per page (max 100)
-   */
-  per_page?: number;
-  team_id: number;
-};
 export type TeamsListDiscussionCommentsInOrgParams = {
   /**
    * Sorts the discussion comments by the date they were created. To return the oldest comments first, set to `asc`. Can be one of `asc` or `desc`.
@@ -28088,22 +26731,6 @@ export type TeamsListDiscussionCommentsInOrgParams = {
   per_page?: number;
   team_slug: string;
 };
-export type TeamsListDiscussionCommentsLegacyParams = {
-  /**
-   * Sorts the discussion comments by the date they were created. To return the oldest comments first, set to `asc`. Can be one of `asc` or `desc`.
-   */
-  direction?: "asc" | "desc";
-  discussion_number: number;
-  /**
-   * Page number of the results to fetch.
-   */
-  page?: number;
-  /**
-   * Results per page (max 100)
-   */
-  per_page?: number;
-  team_id: number;
-};
 export type TeamsListDiscussionsInOrgParams = {
   /**
    * Sorts the discussion comments by the date they were created. To return the oldest comments first, set to `asc`. Can be one of `asc` or `desc`.
@@ -28119,21 +26746,6 @@ export type TeamsListDiscussionsInOrgParams = {
    */
   per_page?: number;
   team_slug: string;
-};
-export type TeamsListDiscussionsLegacyParams = {
-  /**
-   * Sorts the discussion comments by the date they were created. To return the oldest comments first, set to `asc`. Can be one of `asc` or `desc`.
-   */
-  direction?: "asc" | "desc";
-  /**
-   * Page number of the results to fetch.
-   */
-  page?: number;
-  /**
-   * Results per page (max 100)
-   */
-  per_page?: number;
-  team_id: number;
 };
 export type TeamsListForAuthenticatedUserParams = {
   /**
@@ -28164,24 +26776,6 @@ export type TeamsListMembersInOrgParams = {
   role?: "member" | "maintainer" | "all";
   team_slug: string;
 };
-export type TeamsListMembersLegacyParams = {
-  /**
-   * Page number of the results to fetch.
-   */
-  page?: number;
-  /**
-   * Results per page (max 100)
-   */
-  per_page?: number;
-  /**
-   * Filters members returned by their role in the team. Can be one of:
-   * \* `member` - normal members of the team.
-   * \* `maintainer` - team maintainers.
-   * \* `all` - all members of the team.
-   */
-  role?: "member" | "maintainer" | "all";
-  team_id: number;
-};
 export type TeamsListPendingInvitationsInOrgParams = {
   org: string;
   /**
@@ -28193,17 +26787,6 @@ export type TeamsListPendingInvitationsInOrgParams = {
    */
   per_page?: number;
   team_slug: string;
-};
-export type TeamsListPendingInvitationsLegacyParams = {
-  /**
-   * Page number of the results to fetch.
-   */
-  page?: number;
-  /**
-   * Results per page (max 100)
-   */
-  per_page?: number;
-  team_id: number;
 };
 export type TeamsListProjectsInOrgParams = {
   org: string;
@@ -28217,17 +26800,6 @@ export type TeamsListProjectsInOrgParams = {
   per_page?: number;
   team_slug: string;
 };
-export type TeamsListProjectsLegacyParams = {
-  /**
-   * Page number of the results to fetch.
-   */
-  page?: number;
-  /**
-   * Results per page (max 100)
-   */
-  per_page?: number;
-  team_id: number;
-};
 export type TeamsListReposInOrgParams = {
   org: string;
   /**
@@ -28240,28 +26812,9 @@ export type TeamsListReposInOrgParams = {
   per_page?: number;
   team_slug: string;
 };
-export type TeamsListReposLegacyParams = {
-  /**
-   * Page number of the results to fetch.
-   */
-  page?: number;
-  /**
-   * Results per page (max 100)
-   */
-  per_page?: number;
-  team_id: number;
-};
-export type TeamsRemoveMemberLegacyParams = {
-  team_id: number;
-  username: string;
-};
 export type TeamsRemoveMembershipInOrgParams = {
   org: string;
   team_slug: string;
-  username: string;
-};
-export type TeamsRemoveMembershipLegacyParams = {
-  team_id: number;
   username: string;
 };
 export type TeamsRemoveProjectInOrgParams = {
@@ -28269,29 +26822,16 @@ export type TeamsRemoveProjectInOrgParams = {
   project_id: number;
   team_slug: string;
 };
-export type TeamsRemoveProjectLegacyParams = {
-  project_id: number;
-  team_id: number;
-};
 export type TeamsRemoveRepoInOrgParams = {
   org: string;
   owner: string;
   repo: string;
   team_slug: string;
 };
-export type TeamsRemoveRepoLegacyParams = {
-  owner: string;
-  repo: string;
-  team_id: number;
-};
 export type TeamsReviewProjectInOrgParams = {
   org: string;
   project_id: number;
   team_slug: string;
-};
-export type TeamsReviewProjectLegacyParams = {
-  project_id: number;
-  team_id: number;
 };
 export type TeamsUpdateDiscussionCommentInOrgParams = {
   /**
@@ -28303,15 +26843,6 @@ export type TeamsUpdateDiscussionCommentInOrgParams = {
   org: string;
   team_slug: string;
 };
-export type TeamsUpdateDiscussionCommentLegacyParams = {
-  /**
-   * The discussion comment's body text.
-   */
-  body: string;
-  comment_number: number;
-  discussion_number: number;
-  team_id: number;
-};
 export type TeamsUpdateDiscussionInOrgParams = {
   /**
    * The discussion post's body text.
@@ -28320,18 +26851,6 @@ export type TeamsUpdateDiscussionInOrgParams = {
   discussion_number: number;
   org: string;
   team_slug: string;
-  /**
-   * The discussion post's title.
-   */
-  title?: string;
-};
-export type TeamsUpdateDiscussionLegacyParams = {
-  /**
-   * The discussion post's body text.
-   */
-  body?: string;
-  discussion_number: number;
-  team_id: number;
   /**
    * The discussion post's title.
    */
@@ -28394,62 +26913,6 @@ export type TeamsUpdateInOrgParams = {
    */
   privacy?: "secret" | "closed";
   team_slug: string;
-};
-export type TeamsUpdateLegacyParamsDeprecatedPermission = {
-  /**
-   * The description of the team.
-   */
-  description?: string;
-  /**
-   * The name of the team.
-   */
-  name: string;
-  /**
-   * The ID of a team to set as the parent team.
-   */
-  parent_team_id?: number;
-  /**
-   * **Deprecated**. The permission that new repositories will be added to the team with when none is specified. Can be one of:
-   * \* `pull` - team members can pull, but not push to or administer newly-added repositories.
-   * \* `push` - team members can pull and push, but not administer newly-added repositories.
-   * \* `admin` - team members can pull, push and administer newly-added repositories.
-   * @deprecated "permission" parameter has been deprecated and will be removed in future
-   */
-  permission?: string;
-  /**
-   * The level of privacy this team should have. Editing teams without specifying this parameter leaves `privacy` intact. The options are:
-   * **For a non-nested team:**
-   * \* `secret` - only visible to organization owners and members of this team.
-   * \* `closed` - visible to all members of this organization.
-   * **For a parent or child team:**
-   * \* `closed` - visible to all members of this organization.
-   */
-  privacy?: "secret" | "closed";
-  team_id: number;
-};
-export type TeamsUpdateLegacyParams = {
-  /**
-   * The description of the team.
-   */
-  description?: string;
-  /**
-   * The name of the team.
-   */
-  name: string;
-  /**
-   * The ID of a team to set as the parent team.
-   */
-  parent_team_id?: number;
-  /**
-   * The level of privacy this team should have. Editing teams without specifying this parameter leaves `privacy` intact. The options are:
-   * **For a non-nested team:**
-   * \* `secret` - only visible to organization owners and members of this team.
-   * \* `closed` - visible to all members of this organization.
-   * **For a parent or child team:**
-   * \* `closed` - visible to all members of this organization.
-   */
-  privacy?: "secret" | "closed";
-  team_id: number;
 };
 export type UsersAddEmailsParams = {
   /**
@@ -29450,16 +27913,6 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface;
     };
     /**
-     * Requires for the user to be authenticated.
-     */
-    checkWatchingRepoLegacy: {
-      (
-        params?: RequestParameters & ActivityCheckWatchingRepoLegacyParams
-      ): Promise<AnyResponse>;
-
-      endpoint: EndpointInterface;
-    };
-    /**
      * This endpoint should only be used to stop watching a repository. To control whether or not you wish to receive notifications from a repository, [set the repository's subscription manually](https://developer.github.com/v3/activity/watching/#set-a-repository-subscription).
      */
     deleteRepoSubscription: {
@@ -29755,30 +28208,8 @@ export type RestEndpointMethods = {
     /**
      * Requires for the user to be authenticated.
      */
-    stopWatchingRepoLegacy: {
-      (
-        params?: RequestParameters & ActivityStopWatchingRepoLegacyParams
-      ): Promise<AnyResponse>;
-
-      endpoint: EndpointInterface;
-    };
-    /**
-     * Requires for the user to be authenticated.
-     */
     unstarRepo: {
       (params?: RequestParameters & ActivityUnstarRepoParams): Promise<
-        AnyResponse
-      >;
-
-      endpoint: EndpointInterface;
-    };
-    /**
-     * Requires the user to be authenticated.
-     *
-     * Note that you'll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see "[HTTP verbs](https://developer.github.com/v3/#http-verbs)."
-     */
-    watchRepoLegacy: {
-      (params?: RequestParameters & ActivityWatchRepoLegacyParams): Promise<
         AnyResponse
       >;
 
@@ -32837,22 +31268,6 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface;
     };
     /**
-     * **Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [`Create reaction for a team discussion comment`](https://developer.github.com/v3/reactions/#create-reaction-for-a-team-discussion-comment) endpoint.
-     *
-     * Create a reaction to a [team discussion comment](https://developer.github.com/v3/teams/discussion_comments/). OAuth access tokens require the `write:discussion` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/). A response with a `Status: 200 OK` means that you already added the reaction type to this team discussion comment.
-     * @deprecated octokit.reactions.createForTeamDiscussionCommentLegacy() is deprecated, see https://developer.github.com/v3/reactions/#create-reaction-for-a-team-discussion-comment-legacy
-     */
-    createForTeamDiscussionCommentLegacy: {
-      (
-        params?: RequestParameters &
-          ReactionsCreateForTeamDiscussionCommentLegacyParams
-      ): Promise<
-        OctokitResponse<ReactionsCreateForTeamDiscussionCommentLegacyResponse>
-      >;
-
-      endpoint: EndpointInterface;
-    };
-    /**
      * Create a reaction to a [team discussion](https://developer.github.com/v3/teams/discussions/). OAuth access tokens require the `write:discussion` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/). A response with a `Status: 200 OK` means that you already added the reaction type to this team discussion.
      *
      * **Note:** You can also specify a team by `org_id` and `team_id` using the route `POST /organizations/:org_id/team/:team_id/discussions/:discussion_number/reactions`.
@@ -32862,22 +31277,6 @@ export type RestEndpointMethods = {
         params?: RequestParameters & ReactionsCreateForTeamDiscussionInOrgParams
       ): Promise<
         OctokitResponse<ReactionsCreateForTeamDiscussionInOrgResponse>
-      >;
-
-      endpoint: EndpointInterface;
-    };
-    /**
-     * **Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [`Create reaction for a team discussion`](https://developer.github.com/v3/reactions/#create-reaction-for-a-team-discussion) endpoint.
-     *
-     * Create a reaction to a [team discussion](https://developer.github.com/v3/teams/discussions/). OAuth access tokens require the `write:discussion` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/). A response with a `Status: 200 OK` means that you already added the reaction type to this team discussion.
-     * @deprecated octokit.reactions.createForTeamDiscussionLegacy() is deprecated, see https://developer.github.com/v3/reactions/#create-reaction-for-a-team-discussion-legacy
-     */
-    createForTeamDiscussionLegacy: {
-      (
-        params?: RequestParameters &
-          ReactionsCreateForTeamDiscussionLegacyParams
-      ): Promise<
-        OctokitResponse<ReactionsCreateForTeamDiscussionLegacyResponse>
       >;
 
       endpoint: EndpointInterface;
@@ -32951,22 +31350,6 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface;
     };
     /**
-     * **Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [`List reactions for a team discussion comment`](https://developer.github.com/v3/reactions/#list-reactions-for-a-team-discussion-comment) endpoint.
-     *
-     * List the reactions to a [team discussion comment](https://developer.github.com/v3/teams/discussion_comments/). OAuth access tokens require the `read:discussion` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
-     * @deprecated octokit.reactions.listForTeamDiscussionCommentLegacy() is deprecated, see https://developer.github.com/v3/reactions/#list-reactions-for-a-team-discussion-comment-legacy
-     */
-    listForTeamDiscussionCommentLegacy: {
-      (
-        params?: RequestParameters &
-          ReactionsListForTeamDiscussionCommentLegacyParams
-      ): Promise<
-        OctokitResponse<ReactionsListForTeamDiscussionCommentLegacyResponse>
-      >;
-
-      endpoint: EndpointInterface;
-    };
-    /**
      * List the reactions to a [team discussion](https://developer.github.com/v3/teams/discussions/). OAuth access tokens require the `read:discussion` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
      *
      * **Note:** You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/:org_id/team/:team_id/discussions/:discussion_number/reactions`.
@@ -32975,19 +31358,6 @@ export type RestEndpointMethods = {
       (
         params?: RequestParameters & ReactionsListForTeamDiscussionInOrgParams
       ): Promise<OctokitResponse<ReactionsListForTeamDiscussionInOrgResponse>>;
-
-      endpoint: EndpointInterface;
-    };
-    /**
-     * **Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [`List reactions for a team discussion`](https://developer.github.com/v3/reactions/#list-reactions-for-a-team-discussion) endpoint.
-     *
-     * List the reactions to a [team discussion](https://developer.github.com/v3/teams/discussions/). OAuth access tokens require the `read:discussion` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
-     * @deprecated octokit.reactions.listForTeamDiscussionLegacy() is deprecated, see https://developer.github.com/v3/reactions/#list-reactions-for-a-team-discussion-legacy
-     */
-    listForTeamDiscussionLegacy: {
-      (
-        params?: RequestParameters & ReactionsListForTeamDiscussionLegacyParams
-      ): Promise<OctokitResponse<ReactionsListForTeamDiscussionLegacyResponse>>;
 
       endpoint: EndpointInterface;
     };
@@ -34815,17 +33185,6 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface;
     };
     /**
-     * This API call is added for compatibility reasons only. There's no guarantee that full email searches will always be available. The `@` character in the address must be left unencoded. Searches only against public email addresses (as configured on the user's GitHub profile).
-     * @deprecated octokit.search.emailLegacy() is deprecated, see https://developer.github.com/v3/search/legacy/#email-search
-     */
-    emailLegacy: {
-      (params?: RequestParameters & SearchEmailLegacyParams): Promise<
-        OctokitResponse<SearchEmailLegacyResponse>
-      >;
-
-      endpoint: EndpointInterface;
-    };
-    /**
      * Find issues by state and keyword. This method returns up to 100 results [per page](https://developer.github.com/v3/#pagination).
      *
      * When searching for issues, you can get text match metadata for the issue **title**, issue **body**, and issue **comment body** fields when you pass the `text-match` media type. For more details about how to receive highlighted search results, see [Text match metadata](https://developer.github.com/v3/search/#text-match-metadata).
@@ -34837,17 +33196,6 @@ export type RestEndpointMethods = {
     issuesAndPullRequests: {
       (params?: RequestParameters & SearchIssuesAndPullRequestsParams): Promise<
         OctokitResponse<SearchIssuesAndPullRequestsResponse>
-      >;
-
-      endpoint: EndpointInterface;
-    };
-    /**
-     * Find issues by state and keyword.
-     * @deprecated octokit.search.issuesLegacy() is deprecated, see https://developer.github.com/v3/search/legacy/#search-issues
-     */
-    issuesLegacy: {
-      (params?: RequestParameters & SearchIssuesLegacyParams): Promise<
-        OctokitResponse<SearchIssuesLegacyResponse>
       >;
 
       endpoint: EndpointInterface;
@@ -34882,17 +33230,6 @@ export type RestEndpointMethods = {
     repos: {
       (params?: RequestParameters & SearchReposParams): Promise<
         OctokitResponse<SearchReposResponse>
-      >;
-
-      endpoint: EndpointInterface;
-    };
-    /**
-     * Find repositories by keyword. Note, this legacy method does not follow the v3 pagination pattern. This method returns up to 100 results per page and pages can be fetched using the `start_page` parameter.
-     * @deprecated octokit.search.reposLegacy() is deprecated, see https://developer.github.com/v3/search/legacy/#search-repositories
-     */
-    reposLegacy: {
-      (params?: RequestParameters & SearchReposLegacyParams): Promise<
-        OctokitResponse<SearchReposLegacyResponse>
       >;
 
       endpoint: EndpointInterface;
@@ -34933,40 +33270,8 @@ export type RestEndpointMethods = {
 
       endpoint: EndpointInterface;
     };
-    /**
-     * Find users by keyword.
-     * @deprecated octokit.search.usersLegacy() is deprecated, see https://developer.github.com/v3/search/legacy/#search-users
-     */
-    usersLegacy: {
-      (params?: RequestParameters & SearchUsersLegacyParams): Promise<
-        OctokitResponse<SearchUsersLegacyResponse>
-      >;
-
-      endpoint: EndpointInterface;
-    };
   };
   teams: {
-    /**
-     * The "Add team member" endpoint (described below) is deprecated.
-     *
-     * We recommend using the [Add team membership](https://developer.github.com/v3/teams/members/#add-or-update-team-membership) endpoint instead. It allows you to invite new organization members to your teams.
-     *
-     * Team synchronization is available for organizations using GitHub Enterprise Cloud. For more information, see [GitHub's products](https://help.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
-     *
-     * To add someone to a team, the authenticated user must be an organization owner or a team maintainer in the team they're changing. The person being added to the team must be a member of the team's organization.
-     *
-     * **Note:** When you have team synchronization set up for a team with your organization's identity provider (IdP), you will see an error if you attempt to use the API for making changes to the team's membership. If you have access to manage group membership in your IdP, you can manage GitHub team membership through your identity provider, which automatically adds and removes team members in an organization. For more information, see "[Synchronizing teams between your identity provider and GitHub](https://help.github.com/articles/synchronizing-teams-between-your-identity-provider-and-github/)."
-     *
-     * Note that you'll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see "[HTTP verbs](https://developer.github.com/v3/#http-verbs)."
-     * @deprecated octokit.teams.addMemberLegacy() is deprecated, see https://developer.github.com/v3/teams/members/#add-team-member-legacy
-     */
-    addMemberLegacy: {
-      (params?: RequestParameters & TeamsAddMemberLegacyParams): Promise<
-        OctokitResponse<TeamsAddMemberLegacyResponse>
-      >;
-
-      endpoint: EndpointInterface;
-    };
     /**
      * Team synchronization is available for organizations using GitHub Enterprise Cloud. For more information, see [GitHub's products](https://help.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
      *
@@ -34988,27 +33293,6 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface;
     };
     /**
-     * **Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [`Add or update team membership`](https://developer.github.com/v3/teams/members/#add-or-update-team-membership) endpoint.
-     *
-     * Team synchronization is available for organizations using GitHub Enterprise Cloud. For more information, see [GitHub's products](https://help.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
-     *
-     * If the user is already a member of the team's organization, this endpoint will add the user to the team. To add a membership between an organization member and a team, the authenticated user must be an organization owner or a team maintainer.
-     *
-     * **Note:** When you have team synchronization set up for a team with your organization's identity provider (IdP), you will see an error if you attempt to use the API for making changes to the team's membership. If you have access to manage group membership in your IdP, you can manage GitHub team membership through your identity provider, which automatically adds and removes team members in an organization. For more information, see "[Synchronizing teams between your identity provider and GitHub](https://help.github.com/articles/synchronizing-teams-between-your-identity-provider-and-github/)."
-     *
-     * If the user is unaffiliated with the team's organization, this endpoint will send an invitation to the user via email. This newly-created membership will be in the "pending" state until the user accepts the invitation, at which point the membership will transition to the "active" state and the user will be added as a member of the team. To add a membership between an unaffiliated user and a team, the authenticated user must be an organization owner.
-     *
-     * If the user is already a member of the team, this endpoint will update the role of the team member's role. To update the membership of a team member, the authenticated user must be an organization owner or a team maintainer.
-     * @deprecated octokit.teams.addOrUpdateMembershipLegacy() is deprecated, see https://developer.github.com/v3/teams/members/#add-or-update-team-membership-legacy
-     */
-    addOrUpdateMembershipLegacy: {
-      (
-        params?: RequestParameters & TeamsAddOrUpdateMembershipLegacyParams
-      ): Promise<OctokitResponse<TeamsAddOrUpdateMembershipLegacyResponse>>;
-
-      endpoint: EndpointInterface;
-    };
-    /**
      * Adds an organization project to a team. To add a project to a team or update the team's permission on a project, the authenticated user must have `admin` permissions for the project. The project and team must be part of the same organization.
      *
      * **Note:** You can also specify a team by `org_id` and `team_id` using the route `PUT /organizations/:org_id/team/:team_id/projects/:project_id`.
@@ -35017,19 +33301,6 @@ export type RestEndpointMethods = {
       (
         params?: RequestParameters & TeamsAddOrUpdateProjectInOrgParams
       ): Promise<OctokitResponse<TeamsAddOrUpdateProjectInOrgResponse>>;
-
-      endpoint: EndpointInterface;
-    };
-    /**
-     * **Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [`Add or update team project`](https://developer.github.com/v3/teams/#add-or-update-team-project) endpoint.
-     *
-     * Adds an organization project to a team. To add a project to a team or update the team's permission on a project, the authenticated user must have `admin` permissions for the project. The project and team must be part of the same organization.
-     * @deprecated octokit.teams.addOrUpdateProjectLegacy() is deprecated, see https://developer.github.com/v3/teams/#add-or-update-team-project-legacy
-     */
-    addOrUpdateProjectLegacy: {
-      (
-        params?: RequestParameters & TeamsAddOrUpdateProjectLegacyParams
-      ): Promise<OctokitResponse<TeamsAddOrUpdateProjectLegacyResponse>>;
 
       endpoint: EndpointInterface;
     };
@@ -35046,21 +33317,6 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface;
     };
     /**
-     * **Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [`Add or update team repository`](https://developer.github.com/v3/teams/#add-or-update-team-repository) endpoint.
-     *
-     * To add a repository to a team or update the team's permission on a repository, the authenticated user must have admin access to the repository, and must be able to see the team. The repository must be owned by the organization, or a direct fork of a repository owned by the organization. You will get a `422 Unprocessable Entity` status if you attempt to add a repository to a team that is not owned by the organization.
-     *
-     * Note that, if you choose not to pass any parameters, you'll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see "[HTTP verbs](https://developer.github.com/v3/#http-verbs)."
-     * @deprecated octokit.teams.addOrUpdateRepoLegacy() is deprecated, see https://developer.github.com/v3/teams/#add-or-update-team-repository-legacy
-     */
-    addOrUpdateRepoLegacy: {
-      (params?: RequestParameters & TeamsAddOrUpdateRepoLegacyParams): Promise<
-        AnyResponse
-      >;
-
-      endpoint: EndpointInterface;
-    };
-    /**
      * Checks whether a team has `admin`, `push`, or `pull` permission for a repository. Repositories inherited through a parent team will also be checked.
      *
      * **Note:** You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/:org_id/team/:team_id/repos/:owner/:repo`.
@@ -35070,21 +33326,6 @@ export type RestEndpointMethods = {
     checkManagesRepoInOrg: {
       (params?: RequestParameters & TeamsCheckManagesRepoInOrgParams): Promise<
         OctokitResponse<TeamsCheckManagesRepoInOrgResponse>
-      >;
-
-      endpoint: EndpointInterface;
-    };
-    /**
-     * **Note**: Repositories inherited through a parent team will also be checked.
-     *
-     * **Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [`Check if a team manages a repository`](https://developer.github.com/v3/teams/#check-if-a-team-manages-a-repository) endpoint.
-     *
-     * You can also get information about the specified repository, including what permissions the team grants on it, by passing the following custom [media type](https://developer.github.com/v3/media/) via the `Accept` header:
-     * @deprecated octokit.teams.checkManagesRepoLegacy() is deprecated, see https://developer.github.com/v3/teams/#check-if-a-team-manages-a-repository-legacy
-     */
-    checkManagesRepoLegacy: {
-      (params?: RequestParameters & TeamsCheckManagesRepoLegacyParams): Promise<
-        OctokitResponse<TeamsCheckManagesRepoLegacyResponse>
       >;
 
       endpoint: EndpointInterface;
@@ -35119,21 +33360,6 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface;
     };
     /**
-     * **Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [`Create a comment`](https://developer.github.com/v3/teams/discussion_comments/#create-a-comment) endpoint.
-     *
-     * Creates a new comment on a team discussion. OAuth access tokens require the `write:discussion` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
-     *
-     * This endpoint triggers [notifications](https://help.github.com/articles/about-notifications/). Creating content too quickly using this endpoint may result in abuse rate limiting. See "[Abuse rate limits](https://developer.github.com/v3/#abuse-rate-limits)" and "[Dealing with abuse rate limits](https://developer.github.com/v3/guides/best-practices-for-integrators/#dealing-with-abuse-rate-limits)" for details.
-     * @deprecated octokit.teams.createDiscussionCommentLegacy() is deprecated, see https://developer.github.com/v3/teams/discussion_comments/#create-a-comment-legacy
-     */
-    createDiscussionCommentLegacy: {
-      (
-        params?: RequestParameters & TeamsCreateDiscussionCommentLegacyParams
-      ): Promise<OctokitResponse<TeamsCreateDiscussionCommentLegacyResponse>>;
-
-      endpoint: EndpointInterface;
-    };
-    /**
      * Creates a new discussion post on a team's page. OAuth access tokens require the `write:discussion` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
      *
      * This endpoint triggers [notifications](https://help.github.com/articles/about-notifications/). Creating content too quickly using this endpoint may result in abuse rate limiting. See "[Abuse rate limits](https://developer.github.com/v3/#abuse-rate-limits)" and "[Dealing with abuse rate limits](https://developer.github.com/v3/guides/best-practices-for-integrators/#dealing-with-abuse-rate-limits)" for details.
@@ -35143,21 +33369,6 @@ export type RestEndpointMethods = {
     createDiscussionInOrg: {
       (params?: RequestParameters & TeamsCreateDiscussionInOrgParams): Promise<
         OctokitResponse<TeamsCreateDiscussionInOrgResponse>
-      >;
-
-      endpoint: EndpointInterface;
-    };
-    /**
-     * **Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [`Create a discussion`](https://developer.github.com/v3/teams/discussions/#create-a-discussion) endpoint.
-     *
-     * Creates a new discussion post on a team's page. OAuth access tokens require the `write:discussion` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
-     *
-     * This endpoint triggers [notifications](https://help.github.com/articles/about-notifications/). Creating content too quickly using this endpoint may result in abuse rate limiting. See "[Abuse rate limits](https://developer.github.com/v3/#abuse-rate-limits)" and "[Dealing with abuse rate limits](https://developer.github.com/v3/guides/best-practices-for-integrators/#dealing-with-abuse-rate-limits)" for details.
-     * @deprecated octokit.teams.createDiscussionLegacy() is deprecated, see https://developer.github.com/v3/teams/discussions/#create-a-discussion-legacy
-     */
-    createDiscussionLegacy: {
-      (params?: RequestParameters & TeamsCreateDiscussionLegacyParams): Promise<
-        OctokitResponse<TeamsCreateDiscussionLegacyResponse>
       >;
 
       endpoint: EndpointInterface;
@@ -35175,38 +33386,12 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface;
     };
     /**
-     * **Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [`Delete a comment`](https://developer.github.com/v3/teams/discussion_comments/#delete-a-comment) endpoint.
-     *
-     * Deletes a comment on a team discussion. OAuth access tokens require the `write:discussion` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
-     * @deprecated octokit.teams.deleteDiscussionCommentLegacy() is deprecated, see https://developer.github.com/v3/teams/discussion_comments/#delete-a-comment-legacy
-     */
-    deleteDiscussionCommentLegacy: {
-      (
-        params?: RequestParameters & TeamsDeleteDiscussionCommentLegacyParams
-      ): Promise<AnyResponse>;
-
-      endpoint: EndpointInterface;
-    };
-    /**
      * Delete a discussion from a team's page. OAuth access tokens require the `write:discussion` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
      *
      * **Note:** You can also specify a team by `org_id` and `team_id` using the route `DELETE /organizations/:org_id/team/:team_id/discussions/:discussion_number`.
      */
     deleteDiscussionInOrg: {
       (params?: RequestParameters & TeamsDeleteDiscussionInOrgParams): Promise<
-        AnyResponse
-      >;
-
-      endpoint: EndpointInterface;
-    };
-    /**
-     * **Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [`Delete a discussion`](https://developer.github.com/v3/teams/discussions/#delete-a-discussion) endpoint.
-     *
-     * Delete a discussion from a team's page. OAuth access tokens require the `write:discussion` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
-     * @deprecated octokit.teams.deleteDiscussionLegacy() is deprecated, see https://developer.github.com/v3/teams/discussions/#delete-a-discussion-legacy
-     */
-    deleteDiscussionLegacy: {
-      (params?: RequestParameters & TeamsDeleteDiscussionLegacyParams): Promise<
         AnyResponse
       >;
 
@@ -35221,21 +33406,6 @@ export type RestEndpointMethods = {
      */
     deleteInOrg: {
       (params?: RequestParameters & TeamsDeleteInOrgParams): Promise<
-        AnyResponse
-      >;
-
-      endpoint: EndpointInterface;
-    };
-    /**
-     * **Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [`Delete team`](https://developer.github.com/v3/teams/#delete-team) endpoint.
-     *
-     * To delete a team, the authenticated user must be an organization owner or team maintainer.
-     *
-     * If you are an organization owner, deleting a parent team will delete all of its child teams as well.
-     * @deprecated octokit.teams.deleteLegacy() is deprecated, see https://developer.github.com/v3/teams/#delete-team-legacy
-     */
-    deleteLegacy: {
-      (params?: RequestParameters & TeamsDeleteLegacyParams): Promise<
         AnyResponse
       >;
 
@@ -35266,19 +33436,6 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface;
     };
     /**
-     * **Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [`Get a single comment`](https://developer.github.com/v3/teams/discussion_comments/#get-a-single-comment) endpoint.
-     *
-     * Get a specific comment on a team discussion. OAuth access tokens require the `read:discussion` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
-     * @deprecated octokit.teams.getDiscussionCommentLegacy() is deprecated, see https://developer.github.com/v3/teams/discussion_comments/#get-a-single-comment-legacy
-     */
-    getDiscussionCommentLegacy: {
-      (
-        params?: RequestParameters & TeamsGetDiscussionCommentLegacyParams
-      ): Promise<OctokitResponse<TeamsGetDiscussionCommentLegacyResponse>>;
-
-      endpoint: EndpointInterface;
-    };
-    /**
      * Get a specific discussion on a team's page. OAuth access tokens require the `read:discussion` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
      *
      * **Note:** You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/:org_id/team/:team_id/discussions/:discussion_number`.
@@ -35286,45 +33443,6 @@ export type RestEndpointMethods = {
     getDiscussionInOrg: {
       (params?: RequestParameters & TeamsGetDiscussionInOrgParams): Promise<
         OctokitResponse<TeamsGetDiscussionInOrgResponse>
-      >;
-
-      endpoint: EndpointInterface;
-    };
-    /**
-     * **Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [`Get a single discussion`](https://developer.github.com/v3/teams/discussions/#get-a-single-discussion) endpoint.
-     *
-     * Get a specific discussion on a team's page. OAuth access tokens require the `read:discussion` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
-     * @deprecated octokit.teams.getDiscussionLegacy() is deprecated, see https://developer.github.com/v3/teams/discussions/#get-a-single-discussion-legacy
-     */
-    getDiscussionLegacy: {
-      (params?: RequestParameters & TeamsGetDiscussionLegacyParams): Promise<
-        OctokitResponse<TeamsGetDiscussionLegacyResponse>
-      >;
-
-      endpoint: EndpointInterface;
-    };
-    /**
-     * **Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the [`Get team by name`](https://developer.github.com/v3/teams/#get-team-by-name) endpoint.
-     * @deprecated octokit.teams.getLegacy() is deprecated, see https://developer.github.com/v3/teams/#get-team-legacy
-     */
-    getLegacy: {
-      (params?: RequestParameters & TeamsGetLegacyParams): Promise<
-        OctokitResponse<TeamsGetLegacyResponse>
-      >;
-
-      endpoint: EndpointInterface;
-    };
-    /**
-     * The "Get team member" endpoint (described below) is deprecated.
-     *
-     * We recommend using the [Get team membership](https://developer.github.com/v3/teams/members/#get-team-membership) endpoint instead. It allows you to get both active and pending memberships.
-     *
-     * To list members in a team, the team must be visible to the authenticated user.
-     * @deprecated octokit.teams.getMemberLegacy() is deprecated, see https://developer.github.com/v3/teams/members/#get-team-member-legacy
-     */
-    getMemberLegacy: {
-      (params?: RequestParameters & TeamsGetMemberLegacyParams): Promise<
-        AnyResponse
       >;
 
       endpoint: EndpointInterface;
@@ -35341,23 +33459,6 @@ export type RestEndpointMethods = {
     getMembershipInOrg: {
       (params?: RequestParameters & TeamsGetMembershipInOrgParams): Promise<
         OctokitResponse<TeamsGetMembershipInOrgResponse>
-      >;
-
-      endpoint: EndpointInterface;
-    };
-    /**
-     * **Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [`Get team membership`](https://developer.github.com/v3/teams/members/#get-team-membership) endpoint.
-     *
-     * Team members will include the members of child teams.
-     *
-     * To get a user's membership with a team, the team must be visible to the authenticated user.
-     *
-     * **Note:** The `role` for organization owners returns as `maintainer`. For more information about `maintainer` roles, see [Create team](https://developer.github.com/v3/teams#create-team).
-     * @deprecated octokit.teams.getMembershipLegacy() is deprecated, see https://developer.github.com/v3/teams/members/#get-team-membership-legacy
-     */
-    getMembershipLegacy: {
-      (params?: RequestParameters & TeamsGetMembershipLegacyParams): Promise<
-        OctokitResponse<TeamsGetMembershipLegacyResponse>
       >;
 
       endpoint: EndpointInterface;
@@ -35385,19 +33486,6 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface;
     };
     /**
-     * **Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [`List child teams`](https://developer.github.com/v3/teams/#list-child-teams) endpoint.
-     *
-     *
-     * @deprecated octokit.teams.listChildLegacy() is deprecated, see https://developer.github.com/v3/teams/#list-child-teams-legacy
-     */
-    listChildLegacy: {
-      (params?: RequestParameters & TeamsListChildLegacyParams): Promise<
-        OctokitResponse<TeamsListChildLegacyResponse>
-      >;
-
-      endpoint: EndpointInterface;
-    };
-    /**
      * List all comments on a team discussion. OAuth access tokens require the `read:discussion` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
      *
      * **Note:** You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/:org_id/team/:team_id/discussions/:discussion_number/comments`.
@@ -35410,19 +33498,6 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface;
     };
     /**
-     * **Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [`List comments`](https://developer.github.com/v3/teams/discussion_comments/#list-comments) endpoint.
-     *
-     * List all comments on a team discussion. OAuth access tokens require the `read:discussion` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
-     * @deprecated octokit.teams.listDiscussionCommentsLegacy() is deprecated, see https://developer.github.com/v3/teams/discussion_comments/#list-comments-legacy
-     */
-    listDiscussionCommentsLegacy: {
-      (
-        params?: RequestParameters & TeamsListDiscussionCommentsLegacyParams
-      ): Promise<OctokitResponse<TeamsListDiscussionCommentsLegacyResponse>>;
-
-      endpoint: EndpointInterface;
-    };
-    /**
      * List all discussions on a team's page. OAuth access tokens require the `read:discussion` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
      *
      * **Note:** You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/:org_id/team/:team_id/discussions`.
@@ -35430,19 +33505,6 @@ export type RestEndpointMethods = {
     listDiscussionsInOrg: {
       (params?: RequestParameters & TeamsListDiscussionsInOrgParams): Promise<
         OctokitResponse<TeamsListDiscussionsInOrgResponse>
-      >;
-
-      endpoint: EndpointInterface;
-    };
-    /**
-     * **Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [`List discussions`](https://developer.github.com/v3/teams/discussions/#list-discussions) endpoint.
-     *
-     * List all discussions on a team's page. OAuth access tokens require the `read:discussion` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
-     * @deprecated octokit.teams.listDiscussionsLegacy() is deprecated, see https://developer.github.com/v3/teams/discussions/#list-discussions-legacy
-     */
-    listDiscussionsLegacy: {
-      (params?: RequestParameters & TeamsListDiscussionsLegacyParams): Promise<
-        OctokitResponse<TeamsListDiscussionsLegacyResponse>
       >;
 
       endpoint: EndpointInterface;
@@ -35470,19 +33532,6 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface;
     };
     /**
-     * **Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [`List team members`](https://developer.github.com/v3/teams/members/#list-team-members) endpoint.
-     *
-     * Team members will include the members of child teams.
-     * @deprecated octokit.teams.listMembersLegacy() is deprecated, see https://developer.github.com/v3/teams/members/#list-team-members-legacy
-     */
-    listMembersLegacy: {
-      (params?: RequestParameters & TeamsListMembersLegacyParams): Promise<
-        OctokitResponse<TeamsListMembersLegacyResponse>
-      >;
-
-      endpoint: EndpointInterface;
-    };
-    /**
      * The return hash contains a `role` field which refers to the Organization Invitation role and will be one of the following values: `direct_member`, `admin`, `billing_manager`, `hiring_manager`, or `reinstate`. If the invitee is not a GitHub member, the `login` field in the return hash will be `null`.
      *
      * **Note:** You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/:org_id/team/:team_id/invitations`.
@@ -35491,19 +33540,6 @@ export type RestEndpointMethods = {
       (
         params?: RequestParameters & TeamsListPendingInvitationsInOrgParams
       ): Promise<OctokitResponse<TeamsListPendingInvitationsInOrgResponse>>;
-
-      endpoint: EndpointInterface;
-    };
-    /**
-     * **Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [`List pending team invitations`](https://developer.github.com/v3/teams/members/#list-pending-team-invitations) endpoint.
-     *
-     * The return hash contains a `role` field which refers to the Organization Invitation role and will be one of the following values: `direct_member`, `admin`, `billing_manager`, `hiring_manager`, or `reinstate`. If the invitee is not a GitHub member, the `login` field in the return hash will be `null`.
-     * @deprecated octokit.teams.listPendingInvitationsLegacy() is deprecated, see https://developer.github.com/v3/teams/members/#list-pending-team-invitations-legacy
-     */
-    listPendingInvitationsLegacy: {
-      (
-        params?: RequestParameters & TeamsListPendingInvitationsLegacyParams
-      ): Promise<OctokitResponse<TeamsListPendingInvitationsLegacyResponse>>;
 
       endpoint: EndpointInterface;
     };
@@ -35520,19 +33556,6 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface;
     };
     /**
-     * **Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [`List team projects`](https://developer.github.com/v3/teams/#list-team-projects) endpoint.
-     *
-     * Lists the organization projects for a team.
-     * @deprecated octokit.teams.listProjectsLegacy() is deprecated, see https://developer.github.com/v3/teams/#list-team-projects-legacy
-     */
-    listProjectsLegacy: {
-      (params?: RequestParameters & TeamsListProjectsLegacyParams): Promise<
-        OctokitResponse<TeamsListProjectsLegacyResponse>
-      >;
-
-      endpoint: EndpointInterface;
-    };
-    /**
      * Lists a team's repositories visible to the authenticated user.
      *
      * **Note:** You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/:org_id/team/:team_id/repos`.
@@ -35540,36 +33563,6 @@ export type RestEndpointMethods = {
     listReposInOrg: {
       (params?: RequestParameters & TeamsListReposInOrgParams): Promise<
         OctokitResponse<TeamsListReposInOrgResponse>
-      >;
-
-      endpoint: EndpointInterface;
-    };
-    /**
-     * **Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [`List team repos`](https://developer.github.com/v3/teams/#list-team-repos) endpoint.
-     * @deprecated octokit.teams.listReposLegacy() is deprecated, see https://developer.github.com/v3/teams/#list-team-repos-legacy
-     */
-    listReposLegacy: {
-      (params?: RequestParameters & TeamsListReposLegacyParams): Promise<
-        OctokitResponse<TeamsListReposLegacyResponse>
-      >;
-
-      endpoint: EndpointInterface;
-    };
-    /**
-     * The "Remove team member" endpoint (described below) is deprecated.
-     *
-     * We recommend using the [Remove team membership](https://developer.github.com/v3/teams/members/#remove-team-membership) endpoint instead. It allows you to remove both active and pending memberships.
-     *
-     * Team synchronization is available for organizations using GitHub Enterprise Cloud. For more information, see [GitHub's products](https://help.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
-     *
-     * To remove a team member, the authenticated user must have 'admin' permissions to the team or be an owner of the org that the team is associated with. Removing a team member does not delete the user, it just removes them from the team.
-     *
-     * **Note:** When you have team synchronization set up for a team with your organization's identity provider (IdP), you will see an error if you attempt to use the API for making changes to the team's membership. If you have access to manage group membership in your IdP, you can manage GitHub team membership through your identity provider, which automatically adds and removes team members in an organization. For more information, see "[Synchronizing teams between your identity provider and GitHub](https://help.github.com/articles/synchronizing-teams-between-your-identity-provider-and-github/)."
-     * @deprecated octokit.teams.removeMemberLegacy() is deprecated, see https://developer.github.com/v3/teams/members/#remove-team-member-legacy
-     */
-    removeMemberLegacy: {
-      (params?: RequestParameters & TeamsRemoveMemberLegacyParams): Promise<
-        AnyResponse
       >;
 
       endpoint: EndpointInterface;
@@ -35591,42 +33584,12 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface;
     };
     /**
-     * **Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [`Remove team membership`](https://developer.github.com/v3/teams/members/#remove-team-membership) endpoint.
-     *
-     * Team synchronization is available for organizations using GitHub Enterprise Cloud. For more information, see [GitHub's products](https://help.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
-     *
-     * To remove a membership between a user and a team, the authenticated user must have 'admin' permissions to the team or be an owner of the organization that the team is associated with. Removing team membership does not delete the user, it just removes their membership from the team.
-     *
-     * **Note:** When you have team synchronization set up for a team with your organization's identity provider (IdP), you will see an error if you attempt to use the API for making changes to the team's membership. If you have access to manage group membership in your IdP, you can manage GitHub team membership through your identity provider, which automatically adds and removes team members in an organization. For more information, see "[Synchronizing teams between your identity provider and GitHub](https://help.github.com/articles/synchronizing-teams-between-your-identity-provider-and-github/)."
-     * @deprecated octokit.teams.removeMembershipLegacy() is deprecated, see https://developer.github.com/v3/teams/members/#remove-team-membership-legacy
-     */
-    removeMembershipLegacy: {
-      (params?: RequestParameters & TeamsRemoveMembershipLegacyParams): Promise<
-        AnyResponse
-      >;
-
-      endpoint: EndpointInterface;
-    };
-    /**
      * Removes an organization project from a team. An organization owner or a team maintainer can remove any project from the team. To remove a project from a team as an organization member, the authenticated user must have `read` access to both the team and project, or `admin` access to the team or project. This endpoint removes the project from the team, but does not delete the project.
      *
      * **Note:** You can also specify a team by `org_id` and `team_id` using the route `DELETE /organizations/:org_id/team/:team_id/projects/:project_id`.
      */
     removeProjectInOrg: {
       (params?: RequestParameters & TeamsRemoveProjectInOrgParams): Promise<
-        AnyResponse
-      >;
-
-      endpoint: EndpointInterface;
-    };
-    /**
-     * **Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [`Remove team project`](https://developer.github.com/v3/teams/#remove-team-project) endpoint.
-     *
-     * Removes an organization project from a team. An organization owner or a team maintainer can remove any project from the team. To remove a project from a team as an organization member, the authenticated user must have `read` access to both the team and project, or `admin` access to the team or project. **Note:** This endpoint removes the project from the team, but does not delete it.
-     * @deprecated octokit.teams.removeProjectLegacy() is deprecated, see https://developer.github.com/v3/teams/#remove-team-project-legacy
-     */
-    removeProjectLegacy: {
-      (params?: RequestParameters & TeamsRemoveProjectLegacyParams): Promise<
         AnyResponse
       >;
 
@@ -35645,19 +33608,6 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface;
     };
     /**
-     * **Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [`Remove team repository`](https://developer.github.com/v3/teams/#remove-team-repository) endpoint.
-     *
-     * If the authenticated user is an organization owner or a team maintainer, they can remove any repositories from the team. To remove a repository from a team as an organization member, the authenticated user must have admin access to the repository and must be able to see the team. NOTE: This does not delete the repository, it just removes it from the team.
-     * @deprecated octokit.teams.removeRepoLegacy() is deprecated, see https://developer.github.com/v3/teams/#remove-team-repository-legacy
-     */
-    removeRepoLegacy: {
-      (params?: RequestParameters & TeamsRemoveRepoLegacyParams): Promise<
-        AnyResponse
-      >;
-
-      endpoint: EndpointInterface;
-    };
-    /**
      * Checks whether a team has `read`, `write`, or `admin` permissions for an organization project. The response includes projects inherited from a parent team.
      *
      * **Note:** You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/:org_id/team/:team_id/projects/:project_id`.
@@ -35665,19 +33615,6 @@ export type RestEndpointMethods = {
     reviewProjectInOrg: {
       (params?: RequestParameters & TeamsReviewProjectInOrgParams): Promise<
         OctokitResponse<TeamsReviewProjectInOrgResponse>
-      >;
-
-      endpoint: EndpointInterface;
-    };
-    /**
-     * **Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [`Review a team project`](https://developer.github.com/v3/teams/#review-a-team-project) endpoint.
-     *
-     * Checks whether a team has `read`, `write`, or `admin` permissions for an organization project. The response includes projects inherited from a parent team.
-     * @deprecated octokit.teams.reviewProjectLegacy() is deprecated, see https://developer.github.com/v3/teams/#review-a-team-project-legacy
-     */
-    reviewProjectLegacy: {
-      (params?: RequestParameters & TeamsReviewProjectLegacyParams): Promise<
-        OctokitResponse<TeamsReviewProjectLegacyResponse>
       >;
 
       endpoint: EndpointInterface;
@@ -35695,19 +33632,6 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface;
     };
     /**
-     * **Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [`Edit a comment`](https://developer.github.com/v3/teams/discussion_comments/#edit-a-comment) endpoint.
-     *
-     * Edits the body text of a discussion comment. OAuth access tokens require the `write:discussion` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
-     * @deprecated octokit.teams.updateDiscussionCommentLegacy() is deprecated, see https://developer.github.com/v3/teams/discussion_comments/#edit-a-comment-legacy
-     */
-    updateDiscussionCommentLegacy: {
-      (
-        params?: RequestParameters & TeamsUpdateDiscussionCommentLegacyParams
-      ): Promise<OctokitResponse<TeamsUpdateDiscussionCommentLegacyResponse>>;
-
-      endpoint: EndpointInterface;
-    };
-    /**
      * Edits the title and body text of a discussion post. Only the parameters you provide are updated. OAuth access tokens require the `write:discussion` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
      *
      * **Note:** You can also specify a team by `org_id` and `team_id` using the route `PATCH /organizations/:org_id/team/:team_id/discussions/:discussion_number`.
@@ -35715,19 +33639,6 @@ export type RestEndpointMethods = {
     updateDiscussionInOrg: {
       (params?: RequestParameters & TeamsUpdateDiscussionInOrgParams): Promise<
         OctokitResponse<TeamsUpdateDiscussionInOrgResponse>
-      >;
-
-      endpoint: EndpointInterface;
-    };
-    /**
-     * **Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [`Edit a discussion`](https://developer.github.com/v3/teams/discussions/#edit-a-discussion) endpoint.
-     *
-     * Edits the title and body text of a discussion post. Only the parameters you provide are updated. OAuth access tokens require the `write:discussion` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
-     * @deprecated octokit.teams.updateDiscussionLegacy() is deprecated, see https://developer.github.com/v3/teams/discussions/#edit-a-discussion-legacy
-     */
-    updateDiscussionLegacy: {
-      (params?: RequestParameters & TeamsUpdateDiscussionLegacyParams): Promise<
-        OctokitResponse<TeamsUpdateDiscussionLegacyResponse>
       >;
 
       endpoint: EndpointInterface;
@@ -35743,24 +33654,6 @@ export type RestEndpointMethods = {
       ): Promise<OctokitResponse<TeamsUpdateInOrgResponse>>;
       (params?: RequestParameters & TeamsUpdateInOrgParams): Promise<
         OctokitResponse<TeamsUpdateInOrgResponse>
-      >;
-
-      endpoint: EndpointInterface;
-    };
-    /**
-     * **Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [`Edit team`](https://developer.github.com/v3/teams/#edit-team) endpoint.
-     *
-     * To edit a team, the authenticated user must either be an organization owner or a team maintainer.
-     *
-     * **Note:** With nested teams, the `privacy` for parent teams cannot be `secret`.
-     * @deprecated octokit.teams.updateLegacy() is deprecated, see https://developer.github.com/v3/teams/#edit-team-legacy
-     */
-    updateLegacy: {
-      (
-        params?: RequestParameters & TeamsUpdateLegacyParamsDeprecatedPermission
-      ): Promise<OctokitResponse<TeamsUpdateLegacyResponse>>;
-      (params?: RequestParameters & TeamsUpdateLegacyParams): Promise<
-        OctokitResponse<TeamsUpdateLegacyResponse>
       >;
 
       endpoint: EndpointInterface;
