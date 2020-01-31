@@ -25996,11 +25996,11 @@ export type ReposUpdateReleaseAssetParams = {
   repo: string;
 };
 export type ReposUploadReleaseAssetParams = {
-  data: string | object;
-  headers: ReposUploadReleaseAssetParamsHeaders;
   /**
-   * An alternate short description of the asset. Used in place of the filename. This should be set in a URI query parameter.
+   * The raw file data
    */
+  data: string;
+  headers: ReposUploadReleaseAssetParamsHeaders;
   label?: string;
   name?: string;
   owner: string;
