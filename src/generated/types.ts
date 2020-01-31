@@ -21442,25 +21442,9 @@ export type AppsAddRepoToInstallationParams = {
 };
 export type AppsCheckAccountIsAssociatedWithAnyParams = {
   account_id: number;
-  /**
-   * Page number of the results to fetch.
-   */
-  page?: number;
-  /**
-   * Results per page (max 100)
-   */
-  per_page?: number;
 };
 export type AppsCheckAccountIsAssociatedWithAnyStubbedParams = {
   account_id: number;
-  /**
-   * Page number of the results to fetch.
-   */
-  page?: number;
-  /**
-   * Results per page (max 100)
-   */
-  per_page?: number;
 };
 export type AppsCheckTokenParams = {
   /**
@@ -22359,14 +22343,6 @@ export type IssuesGetParams = {
 export type IssuesGetCommentParams = {
   comment_id: number;
   owner: string;
-  /**
-   * Page number of the results to fetch.
-   */
-  page?: number;
-  /**
-   * Results per page (max 100)
-   */
-  per_page?: number;
   repo: string;
 };
 export type IssuesGetEventParams = {
@@ -23577,14 +23553,6 @@ export type ProjectsDeleteColumnParams = {
   column_id: number;
 };
 export type ProjectsGetParams = {
-  /**
-   * Page number of the results to fetch.
-   */
-  page?: number;
-  /**
-   * Results per page (max 100)
-   */
-  per_page?: number;
   project_id: number;
 };
 export type ProjectsGetCardParams = {
