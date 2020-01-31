@@ -32743,7 +32743,7 @@
         "deprecated": null
       },
       {
-        "name": "file",
+        "name": "data",
         "description": "The raw file data",
         "in": "BODY",
         "type": "string",
