@@ -13,7 +13,8 @@
     "headers": [
       {
         "name": "accept",
-        "value": "application/vnd.github.machine-man-preview+json"
+        "value": "application/vnd.github.machine-man-preview+json",
+        "required": true
       }
     ],
     "parameters": [],
@@ -42,7 +43,11 @@
     "documentationUrl": "https://developer.github.com/v3/apps/#create-a-github-app-from-a-manifest",
     "previews": [{ "name": "fury" }],
     "headers": [
-      { "name": "accept", "value": "application/vnd.github.fury-preview+json" }
+      {
+        "name": "accept",
+        "value": "application/vnd.github.fury-preview+json",
+        "required": true
+      }
     ],
     "parameters": [
       {
@@ -86,7 +91,8 @@
     "headers": [
       {
         "name": "accept",
-        "value": "application/vnd.github.machine-man-preview+json"
+        "value": "application/vnd.github.machine-man-preview+json",
+        "required": true
       }
     ],
     "parameters": [
@@ -144,7 +150,8 @@
     "headers": [
       {
         "name": "accept",
-        "value": "application/vnd.github.machine-man-preview+json"
+        "value": "application/vnd.github.machine-man-preview+json",
+        "required": true
       }
     ],
     "parameters": [
@@ -189,7 +196,8 @@
     "headers": [
       {
         "name": "accept",
-        "value": "application/vnd.github.gambit-preview+json,application/vnd.github.machine-man-preview+json"
+        "value": "application/vnd.github.gambit-preview+json,application/vnd.github.machine-man-preview+json",
+        "required": true
       }
     ],
     "parameters": [
@@ -218,13 +226,14 @@
     "url": "/app/installations/{installation_id}/access_tokens",
     "isDeprecated": false,
     "isLegacy": false,
-    "description": "Creates an installation access token that enables a GitHub App to make authenticated API requests for the app's installation on an organization or individual account. Installation tokens expire one hour from the time you create them. Using an expired token produces a status code of `401 - Unauthorized`, and requires creating a new installation token.\n\nBy default the installation token has access to all repositories that the installation can access. To restrict the access to specific repositories, you can provide the `repository_ids` when creating the token. When you omit `repository_ids`, the response does not contain the `repositories` key.\n\nYou must use a [JWT](https://developer.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint.\n\nThis example grants the token \"Read and write\" permission to `issues` and \"Read\" permission to `contents`, and restricts the token's access to the repository with an `id` of 1296269.",
+    "description": "Creates an installation access token that enables a GitHub App to make authenticated API requests for the app's installation on an organization or individual account. Installation tokens expire one hour from the time you create them. Using an expired token produces a status code of `401 - Unauthorized`, and requires creating a new installation token. By default the installation token has access to all repositories that the installation can access. To restrict the access to specific repositories, you can provide the `repository_ids` when creating the token. When you omit `repository_ids`, the response does not contain the `repositories` key.\n\nYou must use a [JWT](https://developer.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint.\n\nThis example grants the token \"Read and write\" permission to `issues` and \"Read\" permission to `contents`, and restricts the token's access to the repository with an `id` of 1296269.",
     "documentationUrl": "https://developer.github.com/v3/apps/#create-a-new-installation-token",
     "previews": [{ "name": "machine-man" }],
     "headers": [
       {
         "name": "accept",
-        "value": "application/vnd.github.machine-man-preview+json"
+        "value": "application/vnd.github.machine-man-preview+json",
+        "required": true
       }
     ],
     "parameters": [
@@ -418,7 +427,8 @@
     "headers": [
       {
         "name": "accept",
-        "value": "application/vnd.github.doctor-strange-preview+json"
+        "value": "application/vnd.github.doctor-strange-preview+json",
+        "required": true
       }
     ],
     "parameters": [
@@ -560,7 +570,8 @@
     "headers": [
       {
         "name": "accept",
-        "value": "application/vnd.github.doctor-strange-preview+json"
+        "value": "application/vnd.github.doctor-strange-preview+json",
+        "required": true
       }
     ],
     "parameters": [
@@ -618,7 +629,8 @@
     "headers": [
       {
         "name": "accept",
-        "value": "application/vnd.github.doctor-strange-preview+json"
+        "value": "application/vnd.github.doctor-strange-preview+json",
+        "required": true
       }
     ],
     "parameters": [
@@ -676,7 +688,8 @@
     "headers": [
       {
         "name": "accept",
-        "value": "application/vnd.github.doctor-strange-preview+json"
+        "value": "application/vnd.github.doctor-strange-preview+json",
+        "required": true
       }
     ],
     "parameters": [
@@ -1040,7 +1053,8 @@
     "headers": [
       {
         "name": "accept",
-        "value": "application/vnd.github.machine-man-preview+json"
+        "value": "application/vnd.github.machine-man-preview+json",
+        "required": true
       }
     ],
     "parameters": [
@@ -1784,7 +1798,8 @@
     "headers": [
       {
         "name": "accept",
-        "value": "application/vnd.github.scarlet-witch-preview+json"
+        "value": "application/vnd.github.scarlet-witch-preview+json",
+        "required": true
       }
     ],
     "parameters": [],
@@ -1815,7 +1830,8 @@
     "headers": [
       {
         "name": "accept",
-        "value": "application/vnd.github.scarlet-witch-preview+json"
+        "value": "application/vnd.github.scarlet-witch-preview+json",
+        "required": true
       }
     ],
     "parameters": [
@@ -1860,7 +1876,8 @@
     "headers": [
       {
         "name": "accept",
-        "value": "application/vnd.github.corsair-preview+json"
+        "value": "application/vnd.github.corsair-preview+json",
+        "required": true
       }
     ],
     "parameters": [
@@ -3117,7 +3134,8 @@
     "headers": [
       {
         "name": "accept",
-        "value": "application/vnd.github.machine-man-preview+json"
+        "value": "application/vnd.github.machine-man-preview+json",
+        "required": true
       }
     ],
     "parameters": [
@@ -3175,7 +3193,8 @@
     "headers": [
       {
         "name": "accept",
-        "value": "application/vnd.github.gambit-preview+json"
+        "value": "application/vnd.github.gambit-preview+json",
+        "required": true
       }
     ],
     "parameters": [],
@@ -3768,7 +3787,11 @@
     "documentationUrl": "https://developer.github.com/v3/markdown/#render-a-markdown-document-in-raw-mode",
     "previews": [],
     "headers": [
-      { "name": "content-type", "value": "text/plain; charset=utf-8" }
+      {
+        "name": "content-type",
+        "value": "text/plain; charset=utf-8",
+        "required": false
+      }
     ],
     "parameters": [
       {
@@ -4648,9 +4671,9 @@
     "parameters": [
       {
         "name": "since",
-        "description": "The integer ID of the last Organization that you've seen.",
+        "description": "The integer ID of the last organization that you've seen.",
         "in": "QUERY",
-        "type": "string",
+        "type": "integer",
         "required": false,
         "enum": null,
         "allowNull": false,
@@ -4732,7 +4755,7 @@
         "description": "response",
         "examples": [
           {
-            "data": "{\"login\":\"github\",\"id\":1,\"node_id\":\"MDEyOk9yZ2FuaXphdGlvbjE=\",\"url\":\"https://api.github.com/orgs/github\",\"repos_url\":\"https://api.github.com/orgs/github/repos\",\"events_url\":\"https://api.github.com/orgs/github/events\",\"hooks_url\":\"https://api.github.com/orgs/github/hooks\",\"issues_url\":\"https://api.github.com/orgs/github/issues\",\"members_url\":\"https://api.github.com/orgs/github/members{/member}\",\"public_members_url\":\"https://api.github.com/orgs/github/public_members{/member}\",\"avatar_url\":\"https://github.com/images/error/octocat_happy.gif\",\"description\":\"A great organization\",\"name\":\"github\",\"company\":\"GitHub\",\"blog\":\"https://github.com/blog\",\"location\":\"San Francisco\",\"email\":\"octocat@github.com\",\"is_verified\":true,\"has_organization_projects\":true,\"has_repository_projects\":true,\"public_repos\":2,\"public_gists\":1,\"followers\":20,\"following\":0,\"html_url\":\"https://github.com/octocat\",\"created_at\":\"2008-01-14T04:33:35Z\",\"type\":\"Organization\",\"total_private_repos\":100,\"owned_private_repos\":100,\"private_gists\":81,\"disk_usage\":10000,\"collaborators\":8,\"billing_email\":\"support@github.com\",\"plan\":{\"name\":\"Medium\",\"space\":400,\"private_repos\":20},\"default_repository_settings\":\"read\",\"members_can_create_repositories\":true,\"two_factor_requirement_enabled\":true,\"members_allowed_repository_creation_type\":\"all\",\"members_can_create_public_repositories\":false,\"members_can_create_private_repositories\":false,\"members_can_create_internal_repositories\":false}"
+            "data": "{\"login\":\"github\",\"id\":1,\"node_id\":\"MDEyOk9yZ2FuaXphdGlvbjE=\",\"url\":\"https://api.github.com/orgs/github\",\"repos_url\":\"https://api.github.com/orgs/github/repos\",\"events_url\":\"https://api.github.com/orgs/github/events\",\"hooks_url\":\"https://api.github.com/orgs/github/hooks\",\"issues_url\":\"https://api.github.com/orgs/github/issues\",\"members_url\":\"https://api.github.com/orgs/github/members{/member}\",\"public_members_url\":\"https://api.github.com/orgs/github/public_members{/member}\",\"avatar_url\":\"https://github.com/images/error/octocat_happy.gif\",\"description\":\"A great organization\",\"name\":\"github\",\"company\":\"GitHub\",\"blog\":\"https://github.com/blog\",\"location\":\"San Francisco\",\"email\":\"octocat@github.com\",\"is_verified\":true,\"has_organization_projects\":true,\"has_repository_projects\":true,\"public_repos\":2,\"public_gists\":1,\"followers\":20,\"following\":0,\"html_url\":\"https://github.com/octocat\",\"created_at\":\"2008-01-14T04:33:35Z\",\"type\":\"Organization\",\"total_private_repos\":100,\"owned_private_repos\":100,\"private_gists\":81,\"disk_usage\":10000,\"collaborators\":8,\"billing_email\":\"support@github.com\",\"plan\":{\"name\":\"Medium\",\"space\":400,\"private_repos\":20},\"default_repository_permission\":\"read\",\"members_can_create_repositories\":true,\"two_factor_requirement_enabled\":true,\"members_allowed_repository_creation_type\":\"all\",\"members_can_create_public_repositories\":false,\"members_can_create_private_repositories\":false,\"members_can_create_internal_repositories\":false}"
           },
           {
             "data": "{\"login\":\"github\",\"id\":1,\"node_id\":\"MDEyOk9yZ2FuaXphdGlvbjE=\",\"url\":\"https://api.github.com/orgs/github\",\"repos_url\":\"https://api.github.com/orgs/github/repos\",\"events_url\":\"https://api.github.com/orgs/github/events\",\"hooks_url\":\"https://api.github.com/orgs/github/hooks\",\"issues_url\":\"https://api.github.com/orgs/github/issues\",\"members_url\":\"https://api.github.com/orgs/github/members{/member}\",\"public_members_url\":\"https://api.github.com/orgs/github/public_members{/member}\",\"avatar_url\":\"https://github.com/images/error/octocat_happy.gif\",\"description\":\"A great organization\",\"name\":\"github\",\"company\":\"GitHub\",\"blog\":\"https://github.com/blog\",\"location\":\"San Francisco\",\"email\":\"octocat@github.com\",\"is_verified\":true,\"has_organization_projects\":true,\"has_repository_projects\":true,\"public_repos\":2,\"public_gists\":1,\"followers\":20,\"following\":0,\"html_url\":\"https://github.com/octocat\",\"created_at\":\"2008-01-14T04:33:35Z\",\"type\":\"Organization\",\"plan\":{\"name\":\"team\",\"space\":976562499,\"private_repos\":999999,\"filled_seats\":4,\"seats\":5}}"
@@ -4957,7 +4980,7 @@
         "description": "response",
         "examples": [
           {
-            "data": "{\"login\":\"github\",\"id\":1,\"node_id\":\"MDEyOk9yZ2FuaXphdGlvbjE=\",\"url\":\"https://api.github.com/orgs/github\",\"repos_url\":\"https://api.github.com/orgs/github/repos\",\"events_url\":\"https://api.github.com/orgs/github/events\",\"hooks_url\":\"https://api.github.com/orgs/github/hooks\",\"issues_url\":\"https://api.github.com/orgs/github/issues\",\"members_url\":\"https://api.github.com/orgs/github/members{/member}\",\"public_members_url\":\"https://api.github.com/orgs/github/public_members{/member}\",\"avatar_url\":\"https://github.com/images/error/octocat_happy.gif\",\"description\":\"A great organization\",\"name\":\"github\",\"company\":\"GitHub\",\"blog\":\"https://github.com/blog\",\"location\":\"San Francisco\",\"email\":\"octocat@github.com\",\"is_verified\":true,\"has_organization_projects\":true,\"has_repository_projects\":true,\"public_repos\":2,\"public_gists\":1,\"followers\":20,\"following\":0,\"html_url\":\"https://github.com/octocat\",\"created_at\":\"2008-01-14T04:33:35Z\",\"type\":\"Organization\",\"total_private_repos\":100,\"owned_private_repos\":100,\"private_gists\":81,\"disk_usage\":10000,\"collaborators\":8,\"billing_email\":\"support@github.com\",\"plan\":{\"name\":\"Medium\",\"space\":400,\"private_repos\":20},\"default_repository_settings\":\"read\",\"members_can_create_repositories\":true,\"two_factor_requirement_enabled\":true,\"members_allowed_repository_creation_type\":\"all\",\"members_can_create_public_repositories\":false,\"members_can_create_private_repositories\":false,\"members_can_create_internal_repositories\":false}"
+            "data": "{\"login\":\"github\",\"id\":1,\"node_id\":\"MDEyOk9yZ2FuaXphdGlvbjE=\",\"url\":\"https://api.github.com/orgs/github\",\"repos_url\":\"https://api.github.com/orgs/github/repos\",\"events_url\":\"https://api.github.com/orgs/github/events\",\"hooks_url\":\"https://api.github.com/orgs/github/hooks\",\"issues_url\":\"https://api.github.com/orgs/github/issues\",\"members_url\":\"https://api.github.com/orgs/github/members{/member}\",\"public_members_url\":\"https://api.github.com/orgs/github/public_members{/member}\",\"avatar_url\":\"https://github.com/images/error/octocat_happy.gif\",\"description\":\"A great organization\",\"name\":\"github\",\"company\":\"GitHub\",\"blog\":\"https://github.com/blog\",\"location\":\"San Francisco\",\"email\":\"octocat@github.com\",\"is_verified\":true,\"has_organization_projects\":true,\"has_repository_projects\":true,\"public_repos\":2,\"public_gists\":1,\"followers\":20,\"following\":0,\"html_url\":\"https://github.com/octocat\",\"created_at\":\"2008-01-14T04:33:35Z\",\"type\":\"Organization\",\"total_private_repos\":100,\"owned_private_repos\":100,\"private_gists\":81,\"disk_usage\":10000,\"collaborators\":8,\"billing_email\":\"support@github.com\",\"plan\":{\"name\":\"Medium\",\"space\":400,\"private_repos\":20},\"default_repository_permission\":\"read\",\"members_can_create_repositories\":true,\"two_factor_requirement_enabled\":true,\"members_allowed_repository_creation_type\":\"all\",\"members_can_create_public_repositories\":false,\"members_can_create_private_repositories\":false,\"members_can_create_internal_repositories\":false}"
           }
         ]
       }
@@ -5696,7 +5719,8 @@
     "headers": [
       {
         "name": "accept",
-        "value": "application/vnd.github.machine-man-preview+json"
+        "value": "application/vnd.github.machine-man-preview+json",
+        "required": true
       }
     ],
     "parameters": [
@@ -5741,7 +5765,8 @@
     "headers": [
       {
         "name": "accept",
-        "value": "application/vnd.github.machine-man-preview+json"
+        "value": "application/vnd.github.machine-man-preview+json",
+        "required": true
       }
     ],
     "parameters": [
@@ -5791,7 +5816,8 @@
     "headers": [
       {
         "name": "accept",
-        "value": "application/vnd.github.machine-man-preview+json"
+        "value": "application/vnd.github.machine-man-preview+json",
+        "required": true
       }
     ],
     "parameters": [
@@ -5862,7 +5888,8 @@
     "headers": [
       {
         "name": "accept",
-        "value": "application/vnd.github.sombra-preview+json"
+        "value": "application/vnd.github.sombra-preview+json",
+        "required": true
       }
     ],
     "parameters": [
@@ -5907,7 +5934,8 @@
     "headers": [
       {
         "name": "accept",
-        "value": "application/vnd.github.sombra-preview+json"
+        "value": "application/vnd.github.sombra-preview+json",
+        "required": true
       }
     ],
     "parameters": [
@@ -5965,7 +5993,8 @@
     "headers": [
       {
         "name": "accept",
-        "value": "application/vnd.github.sombra-preview+json"
+        "value": "application/vnd.github.sombra-preview+json",
+        "required": true
       }
     ],
     "parameters": [
@@ -6809,7 +6838,8 @@
     "headers": [
       {
         "name": "accept",
-        "value": "application/vnd.github.wyandotte-preview+json"
+        "value": "application/vnd.github.wyandotte-preview+json",
+        "required": true
       }
     ],
     "parameters": [
@@ -6880,7 +6910,8 @@
     "headers": [
       {
         "name": "accept",
-        "value": "application/vnd.github.wyandotte-preview+json"
+        "value": "application/vnd.github.wyandotte-preview+json",
+        "required": true
       }
     ],
     "parameters": [
@@ -6938,7 +6969,8 @@
     "headers": [
       {
         "name": "accept",
-        "value": "application/vnd.github.wyandotte-preview+json"
+        "value": "application/vnd.github.wyandotte-preview+json",
+        "required": true
       }
     ],
     "parameters": [
@@ -6986,7 +7018,8 @@
     "headers": [
       {
         "name": "accept",
-        "value": "application/vnd.github.wyandotte-preview+json"
+        "value": "application/vnd.github.wyandotte-preview+json",
+        "required": true
       }
     ],
     "parameters": [
@@ -7039,7 +7072,8 @@
     "headers": [
       {
         "name": "accept",
-        "value": "application/vnd.github.wyandotte-preview+json"
+        "value": "application/vnd.github.wyandotte-preview+json",
+        "required": true
       }
     ],
     "parameters": [
@@ -7087,7 +7121,8 @@
     "headers": [
       {
         "name": "accept",
-        "value": "application/vnd.github.wyandotte-preview+json"
+        "value": "application/vnd.github.wyandotte-preview+json",
+        "required": true
       }
     ],
     "parameters": [
@@ -7148,7 +7183,8 @@
     "headers": [
       {
         "name": "accept",
-        "value": "application/vnd.github.wyandotte-preview+json"
+        "value": "application/vnd.github.wyandotte-preview+json",
+        "required": true
       }
     ],
     "parameters": [
@@ -7420,7 +7456,8 @@
     "headers": [
       {
         "name": "accept",
-        "value": "application/vnd.github.inertia-preview+json"
+        "value": "application/vnd.github.inertia-preview+json",
+        "required": true
       }
     ],
     "parameters": [
@@ -7504,7 +7541,8 @@
     "headers": [
       {
         "name": "accept",
-        "value": "application/vnd.github.inertia-preview+json"
+        "value": "application/vnd.github.inertia-preview+json",
+        "required": true
       }
     ],
     "parameters": [
@@ -9377,7 +9415,8 @@
     "headers": [
       {
         "name": "accept",
-        "value": "application/vnd.github.squirrel-girl-preview+json"
+        "value": "application/vnd.github.squirrel-girl-preview+json",
+        "required": true
       }
     ],
     "parameters": [
@@ -9509,7 +9548,8 @@
     "headers": [
       {
         "name": "accept",
-        "value": "application/vnd.github.squirrel-girl-preview+json"
+        "value": "application/vnd.github.squirrel-girl-preview+json",
+        "required": true
       }
     ],
     "parameters": [
@@ -9615,7 +9655,8 @@
     "headers": [
       {
         "name": "accept",
-        "value": "application/vnd.github.squirrel-girl-preview+json"
+        "value": "application/vnd.github.squirrel-girl-preview+json",
+        "required": true
       }
     ],
     "parameters": [
@@ -9734,7 +9775,8 @@
     "headers": [
       {
         "name": "accept",
-        "value": "application/vnd.github.squirrel-girl-preview+json"
+        "value": "application/vnd.github.squirrel-girl-preview+json",
+        "required": true
       }
     ],
     "parameters": [
@@ -10217,7 +10259,8 @@
     "headers": [
       {
         "name": "accept",
-        "value": "application/vnd.github.inertia-preview+json"
+        "value": "application/vnd.github.inertia-preview+json",
+        "required": true
       }
     ],
     "parameters": [
@@ -10301,7 +10344,8 @@
     "headers": [
       {
         "name": "accept",
-        "value": "application/vnd.github.inertia-preview+json"
+        "value": "application/vnd.github.inertia-preview+json",
+        "required": true
       }
     ],
     "parameters": [
@@ -10372,7 +10416,8 @@
     "headers": [
       {
         "name": "accept",
-        "value": "application/vnd.github.inertia-preview+json"
+        "value": "application/vnd.github.inertia-preview+json",
+        "required": true
       }
     ],
     "parameters": [
@@ -10900,7 +10945,8 @@
     "headers": [
       {
         "name": "accept",
-        "value": "application/vnd.github.inertia-preview+json"
+        "value": "application/vnd.github.inertia-preview+json",
+        "required": true
       }
     ],
     "parameters": [
@@ -10945,7 +10991,8 @@
     "headers": [
       {
         "name": "accept",
-        "value": "application/vnd.github.inertia-preview+json"
+        "value": "application/vnd.github.inertia-preview+json",
+        "required": true
       }
     ],
     "parameters": [
@@ -11016,7 +11063,8 @@
     "headers": [
       {
         "name": "accept",
-        "value": "application/vnd.github.inertia-preview+json"
+        "value": "application/vnd.github.inertia-preview+json",
+        "required": true
       }
     ],
     "parameters": [
@@ -11051,7 +11099,8 @@
     "headers": [
       {
         "name": "accept",
-        "value": "application/vnd.github.inertia-preview+json"
+        "value": "application/vnd.github.inertia-preview+json",
+        "required": true
       }
     ],
     "parameters": [
@@ -11112,7 +11161,8 @@
     "headers": [
       {
         "name": "accept",
-        "value": "application/vnd.github.inertia-preview+json"
+        "value": "application/vnd.github.inertia-preview+json",
+        "required": true
       }
     ],
     "parameters": [
@@ -11157,7 +11207,8 @@
     "headers": [
       {
         "name": "accept",
-        "value": "application/vnd.github.inertia-preview+json"
+        "value": "application/vnd.github.inertia-preview+json",
+        "required": true
       }
     ],
     "parameters": [
@@ -11215,7 +11266,8 @@
     "headers": [
       {
         "name": "accept",
-        "value": "application/vnd.github.inertia-preview+json"
+        "value": "application/vnd.github.inertia-preview+json",
+        "required": true
       }
     ],
     "parameters": [
@@ -11250,7 +11302,8 @@
     "headers": [
       {
         "name": "accept",
-        "value": "application/vnd.github.inertia-preview+json"
+        "value": "application/vnd.github.inertia-preview+json",
+        "required": true
       }
     ],
     "parameters": [
@@ -11334,7 +11387,8 @@
     "headers": [
       {
         "name": "accept",
-        "value": "application/vnd.github.inertia-preview+json"
+        "value": "application/vnd.github.inertia-preview+json",
+        "required": true
       }
     ],
     "parameters": [
@@ -11418,7 +11472,8 @@
     "headers": [
       {
         "name": "accept",
-        "value": "application/vnd.github.inertia-preview+json"
+        "value": "application/vnd.github.inertia-preview+json",
+        "required": true
       }
     ],
     "parameters": [
@@ -11466,7 +11521,8 @@
     "headers": [
       {
         "name": "accept",
-        "value": "application/vnd.github.inertia-preview+json"
+        "value": "application/vnd.github.inertia-preview+json",
+        "required": true
       }
     ],
     "parameters": [
@@ -11537,7 +11593,8 @@
     "headers": [
       {
         "name": "accept",
-        "value": "application/vnd.github.inertia-preview+json"
+        "value": "application/vnd.github.inertia-preview+json",
+        "required": true
       }
     ],
     "parameters": [
@@ -11647,7 +11704,8 @@
     "headers": [
       {
         "name": "accept",
-        "value": "application/vnd.github.inertia-preview+json"
+        "value": "application/vnd.github.inertia-preview+json",
+        "required": true
       }
     ],
     "parameters": [
@@ -11682,7 +11740,8 @@
     "headers": [
       {
         "name": "accept",
-        "value": "application/vnd.github.inertia-preview+json"
+        "value": "application/vnd.github.inertia-preview+json",
+        "required": true
       }
     ],
     "parameters": [
@@ -11766,7 +11825,8 @@
     "headers": [
       {
         "name": "accept",
-        "value": "application/vnd.github.inertia-preview+json"
+        "value": "application/vnd.github.inertia-preview+json",
+        "required": true
       }
     ],
     "parameters": [
@@ -11827,7 +11887,8 @@
     "headers": [
       {
         "name": "accept",
-        "value": "application/vnd.github.inertia-preview+json"
+        "value": "application/vnd.github.inertia-preview+json",
+        "required": true
       }
     ],
     "parameters": [
@@ -11875,7 +11936,8 @@
     "headers": [
       {
         "name": "accept",
-        "value": "application/vnd.github.inertia-preview+json"
+        "value": "application/vnd.github.inertia-preview+json",
+        "required": true
       }
     ],
     "parameters": [
@@ -11933,7 +11995,8 @@
     "headers": [
       {
         "name": "accept",
-        "value": "application/vnd.github.inertia-preview+json"
+        "value": "application/vnd.github.inertia-preview+json",
+        "required": true
       }
     ],
     "parameters": [
@@ -12004,7 +12067,8 @@
     "headers": [
       {
         "name": "accept",
-        "value": "application/vnd.github.inertia-preview+json"
+        "value": "application/vnd.github.inertia-preview+json",
+        "required": true
       }
     ],
     "parameters": [
@@ -12088,7 +12152,8 @@
     "headers": [
       {
         "name": "accept",
-        "value": "application/vnd.github.squirrel-girl-preview+json"
+        "value": "application/vnd.github.squirrel-girl-preview+json",
+        "required": true
       }
     ],
     "parameters": [
@@ -14380,7 +14445,8 @@
     "headers": [
       {
         "name": "accept",
-        "value": "application/vnd.github.london-preview+json"
+        "value": "application/vnd.github.london-preview+json",
+        "required": true
       }
     ],
     "parameters": [
@@ -14428,7 +14494,8 @@
     "headers": [
       {
         "name": "accept",
-        "value": "application/vnd.github.london-preview+json"
+        "value": "application/vnd.github.london-preview+json",
+        "required": true
       }
     ],
     "parameters": [
@@ -15508,7 +15575,11 @@
     "documentationUrl": "https://developer.github.com/v3/repos/branches/#get-required-signatures-of-protected-branch",
     "previews": [{ "name": "zzzax" }],
     "headers": [
-      { "name": "accept", "value": "application/vnd.github.zzzax-preview+json" }
+      {
+        "name": "accept",
+        "value": "application/vnd.github.zzzax-preview+json",
+        "required": true
+      }
     ],
     "parameters": [
       {
@@ -15576,7 +15647,11 @@
     "documentationUrl": "https://developer.github.com/v3/repos/branches/#add-required-signatures-of-protected-branch",
     "previews": [{ "name": "zzzax" }],
     "headers": [
-      { "name": "accept", "value": "application/vnd.github.zzzax-preview+json" }
+      {
+        "name": "accept",
+        "value": "application/vnd.github.zzzax-preview+json",
+        "required": true
+      }
     ],
     "parameters": [
       {
@@ -15644,7 +15719,11 @@
     "documentationUrl": "https://developer.github.com/v3/repos/branches/#remove-required-signatures-of-protected-branch",
     "previews": [{ "name": "zzzax" }],
     "headers": [
-      { "name": "accept", "value": "application/vnd.github.zzzax-preview+json" }
+      {
+        "name": "accept",
+        "value": "application/vnd.github.zzzax-preview+json",
+        "required": true
+      }
     ],
     "parameters": [
       {
@@ -17622,7 +17701,8 @@
     "headers": [
       {
         "name": "accept",
-        "value": "application/vnd.github.antiope-preview+json"
+        "value": "application/vnd.github.antiope-preview+json",
+        "required": true
       }
     ],
     "parameters": [
@@ -18080,7 +18160,8 @@
     "headers": [
       {
         "name": "accept",
-        "value": "application/vnd.github.antiope-preview+json"
+        "value": "application/vnd.github.antiope-preview+json",
+        "required": true
       }
     ],
     "parameters": [
@@ -18535,7 +18616,8 @@
     "headers": [
       {
         "name": "accept",
-        "value": "application/vnd.github.antiope-preview+json"
+        "value": "application/vnd.github.antiope-preview+json",
+        "required": true
       }
     ],
     "parameters": [
@@ -18606,7 +18688,8 @@
     "headers": [
       {
         "name": "accept",
-        "value": "application/vnd.github.antiope-preview+json"
+        "value": "application/vnd.github.antiope-preview+json",
+        "required": true
       }
     ],
     "parameters": [
@@ -18703,7 +18786,8 @@
     "headers": [
       {
         "name": "accept",
-        "value": "application/vnd.github.antiope-preview+json"
+        "value": "application/vnd.github.antiope-preview+json",
+        "required": true
       }
     ],
     "parameters": [
@@ -18774,7 +18858,8 @@
     "headers": [
       {
         "name": "accept",
-        "value": "application/vnd.github.antiope-preview+json"
+        "value": "application/vnd.github.antiope-preview+json",
+        "required": true
       }
     ],
     "parameters": [
@@ -18871,7 +18956,8 @@
     "headers": [
       {
         "name": "accept",
-        "value": "application/vnd.github.antiope-preview+json"
+        "value": "application/vnd.github.antiope-preview+json",
+        "required": true
       }
     ],
     "parameters": [
@@ -18942,7 +19028,8 @@
     "headers": [
       {
         "name": "accept",
-        "value": "application/vnd.github.antiope-preview+json"
+        "value": "application/vnd.github.antiope-preview+json",
+        "required": true
       }
     ],
     "parameters": [
@@ -19078,7 +19165,8 @@
     "headers": [
       {
         "name": "accept",
-        "value": "application/vnd.github.antiope-preview+json"
+        "value": "application/vnd.github.antiope-preview+json",
+        "required": true
       }
     ],
     "parameters": [
@@ -19768,7 +19856,8 @@
     "headers": [
       {
         "name": "accept",
-        "value": "application/vnd.github.squirrel-girl-preview+json"
+        "value": "application/vnd.github.squirrel-girl-preview+json",
+        "required": true
       }
     ],
     "parameters": [
@@ -19887,7 +19976,8 @@
     "headers": [
       {
         "name": "accept",
-        "value": "application/vnd.github.squirrel-girl-preview+json"
+        "value": "application/vnd.github.squirrel-girl-preview+json",
+        "required": true
       }
     ],
     "parameters": [
@@ -20122,7 +20212,11 @@
     "documentationUrl": "https://developer.github.com/v3/repos/commits/#list-branches-for-head-commit",
     "previews": [{ "name": "groot" }],
     "headers": [
-      { "name": "accept", "value": "application/vnd.github.groot-preview+json" }
+      {
+        "name": "accept",
+        "value": "application/vnd.github.groot-preview+json",
+        "required": true
+      }
     ],
     "parameters": [
       {
@@ -20426,7 +20520,11 @@
     "documentationUrl": "https://developer.github.com/v3/repos/commits/#list-pull-requests-associated-with-commit",
     "previews": [{ "name": "groot" }],
     "headers": [
-      { "name": "accept", "value": "application/vnd.github.groot-preview+json" }
+      {
+        "name": "accept",
+        "value": "application/vnd.github.groot-preview+json",
+        "required": true
+      }
     ],
     "parameters": [
       {
@@ -20614,7 +20712,8 @@
     "headers": [
       {
         "name": "accept",
-        "value": "application/vnd.github.antiope-preview+json"
+        "value": "application/vnd.github.antiope-preview+json",
+        "required": true
       }
     ],
     "parameters": [
@@ -20750,7 +20849,8 @@
     "headers": [
       {
         "name": "accept",
-        "value": "application/vnd.github.antiope-preview+json"
+        "value": "application/vnd.github.antiope-preview+json",
+        "required": true
       }
     ],
     "parameters": [
@@ -21031,7 +21131,8 @@
     "headers": [
       {
         "name": "accept",
-        "value": "application/vnd.github.scarlet-witch-preview+json"
+        "value": "application/vnd.github.scarlet-witch-preview+json",
+        "required": true
       }
     ],
     "parameters": [
@@ -25913,7 +26014,8 @@
     "headers": [
       {
         "name": "accept",
-        "value": "application/vnd.github.machine-man-preview+json"
+        "value": "application/vnd.github.machine-man-preview+json",
+        "required": true
       }
     ],
     "parameters": [
@@ -25971,7 +26073,8 @@
     "headers": [
       {
         "name": "accept",
-        "value": "application/vnd.github.machine-man-preview+json"
+        "value": "application/vnd.github.machine-man-preview+json",
+        "required": true
       }
     ],
     "parameters": [
@@ -26034,7 +26137,8 @@
     "headers": [
       {
         "name": "accept",
-        "value": "application/vnd.github.sombra-preview+json"
+        "value": "application/vnd.github.sombra-preview+json",
+        "required": true
       }
     ],
     "parameters": [
@@ -26092,7 +26196,8 @@
     "headers": [
       {
         "name": "accept",
-        "value": "application/vnd.github.sombra-preview+json"
+        "value": "application/vnd.github.sombra-preview+json",
+        "required": true
       }
     ],
     "parameters": [
@@ -26163,7 +26268,8 @@
     "headers": [
       {
         "name": "accept",
-        "value": "application/vnd.github.sombra-preview+json"
+        "value": "application/vnd.github.sombra-preview+json",
+        "required": true
       }
     ],
     "parameters": [
@@ -27071,7 +27177,8 @@
     "headers": [
       {
         "name": "accept",
-        "value": "application/vnd.github.squirrel-girl-preview+json"
+        "value": "application/vnd.github.squirrel-girl-preview+json",
+        "required": true
       }
     ],
     "parameters": [
@@ -27190,7 +27297,8 @@
     "headers": [
       {
         "name": "accept",
-        "value": "application/vnd.github.squirrel-girl-preview+json"
+        "value": "application/vnd.github.squirrel-girl-preview+json",
+        "required": true
       }
     ],
     "parameters": [
@@ -28777,7 +28885,8 @@
     "headers": [
       {
         "name": "accept",
-        "value": "application/vnd.github.squirrel-girl-preview+json"
+        "value": "application/vnd.github.squirrel-girl-preview+json",
+        "required": true
       }
     ],
     "parameters": [
@@ -28909,7 +29018,8 @@
     "headers": [
       {
         "name": "accept",
-        "value": "application/vnd.github.squirrel-girl-preview+json"
+        "value": "application/vnd.github.squirrel-girl-preview+json",
+        "required": true
       }
     ],
     "parameters": [
@@ -29015,7 +29125,8 @@
     "headers": [
       {
         "name": "accept",
-        "value": "application/vnd.github.mockingbird-preview+json"
+        "value": "application/vnd.github.mockingbird-preview+json",
+        "required": true
       }
     ],
     "parameters": [
@@ -30870,7 +30981,8 @@
     "headers": [
       {
         "name": "accept",
-        "value": "application/vnd.github.switcheroo-preview+json"
+        "value": "application/vnd.github.switcheroo-preview+json",
+        "required": true
       }
     ],
     "parameters": [
@@ -30967,7 +31079,8 @@
     "headers": [
       {
         "name": "accept",
-        "value": "application/vnd.github.switcheroo-preview+json"
+        "value": "application/vnd.github.switcheroo-preview+json",
+        "required": true
       }
     ],
     "parameters": [
@@ -31335,7 +31448,8 @@
     "headers": [
       {
         "name": "accept",
-        "value": "application/vnd.github.inertia-preview+json"
+        "value": "application/vnd.github.inertia-preview+json",
+        "required": true
       }
     ],
     "parameters": [
@@ -31432,7 +31546,8 @@
     "headers": [
       {
         "name": "accept",
-        "value": "application/vnd.github.inertia-preview+json"
+        "value": "application/vnd.github.inertia-preview+json",
+        "required": true
       }
     ],
     "parameters": [
@@ -32110,7 +32225,8 @@
     "headers": [
       {
         "name": "accept",
-        "value": "application/vnd.github.squirrel-girl-preview+json"
+        "value": "application/vnd.github.squirrel-girl-preview+json",
+        "required": true
       }
     ],
     "parameters": [
@@ -32229,7 +32345,8 @@
     "headers": [
       {
         "name": "accept",
-        "value": "application/vnd.github.squirrel-girl-preview+json"
+        "value": "application/vnd.github.squirrel-girl-preview+json",
+        "required": true
       }
     ],
     "parameters": [
@@ -34816,7 +34933,8 @@
     "headers": [
       {
         "name": "accept",
-        "value": "application/vnd.github.lydian-preview+json"
+        "value": "application/vnd.github.lydian-preview+json",
+        "required": true
       }
     ],
     "parameters": [
@@ -35865,8 +35983,8 @@
     "documentationUrl": "https://developer.github.com/v3/repos/releases/#upload-a-release-asset",
     "previews": [],
     "headers": [
-      { "name": "content-length", "value": null },
-      { "name": "content-type", "value": null }
+      { "name": "content-length", "value": null, "required": true },
+      { "name": "content-type", "value": null, "required": true }
     ],
     "parameters": [
       {
@@ -36861,7 +36979,11 @@
     "documentationUrl": "https://developer.github.com/v3/repos/#list-all-topics-for-a-repository",
     "previews": [{ "name": "mercy" }],
     "headers": [
-      { "name": "accept", "value": "application/vnd.github.mercy-preview+json" }
+      {
+        "name": "accept",
+        "value": "application/vnd.github.mercy-preview+json",
+        "required": true
+      }
     ],
     "parameters": [
       {
@@ -36914,7 +37036,11 @@
     "documentationUrl": "https://developer.github.com/v3/repos/#replace-all-topics-for-a-repository",
     "previews": [{ "name": "mercy" }],
     "headers": [
-      { "name": "accept", "value": "application/vnd.github.mercy-preview+json" }
+      {
+        "name": "accept",
+        "value": "application/vnd.github.mercy-preview+json",
+        "required": true
+      }
     ],
     "parameters": [
       {
@@ -37299,7 +37425,8 @@
     "headers": [
       {
         "name": "accept",
-        "value": "application/vnd.github.dorian-preview+json"
+        "value": "application/vnd.github.dorian-preview+json",
+        "required": true
       }
     ],
     "parameters": [
@@ -37347,7 +37474,8 @@
     "headers": [
       {
         "name": "accept",
-        "value": "application/vnd.github.dorian-preview+json"
+        "value": "application/vnd.github.dorian-preview+json",
+        "required": true
       }
     ],
     "parameters": [
@@ -37395,7 +37523,8 @@
     "headers": [
       {
         "name": "accept",
-        "value": "application/vnd.github.dorian-preview+json"
+        "value": "application/vnd.github.dorian-preview+json",
+        "required": true
       }
     ],
     "parameters": [
@@ -37512,7 +37641,8 @@
     "headers": [
       {
         "name": "accept",
-        "value": "application/vnd.github.baptiste-preview+json"
+        "value": "application/vnd.github.baptiste-preview+json",
+        "required": true
       }
     ],
     "parameters": [
@@ -37623,9 +37753,9 @@
     "parameters": [
       {
         "name": "since",
-        "description": "The integer ID of the last Repository that you've seen.",
+        "description": "The integer ID of the last repository that you've seen.",
         "in": "QUERY",
-        "type": "string",
+        "type": "integer",
         "required": false,
         "enum": null,
         "allowNull": false,
@@ -37778,7 +37908,11 @@
     "documentationUrl": "https://developer.github.com/v3/search/#search-commits",
     "previews": [{ "name": "cloak" }],
     "headers": [
-      { "name": "accept", "value": "application/vnd.github.cloak-preview+json" }
+      {
+        "name": "accept",
+        "value": "application/vnd.github.cloak-preview+json",
+        "required": true
+      }
     ],
     "parameters": [
       {
@@ -40189,7 +40323,8 @@
     "headers": [
       {
         "name": "accept",
-        "value": "application/vnd.github.squirrel-girl-preview+json"
+        "value": "application/vnd.github.squirrel-girl-preview+json",
+        "required": true
       }
     ],
     "parameters": [
@@ -40308,7 +40443,8 @@
     "headers": [
       {
         "name": "accept",
-        "value": "application/vnd.github.squirrel-girl-preview+json"
+        "value": "application/vnd.github.squirrel-girl-preview+json",
+        "required": true
       }
     ],
     "parameters": [
@@ -40435,7 +40571,8 @@
     "headers": [
       {
         "name": "accept",
-        "value": "application/vnd.github.squirrel-girl-preview+json"
+        "value": "application/vnd.github.squirrel-girl-preview+json",
+        "required": true
       }
     ],
     "parameters": [
@@ -40528,7 +40665,8 @@
     "headers": [
       {
         "name": "accept",
-        "value": "application/vnd.github.squirrel-girl-preview+json"
+        "value": "application/vnd.github.squirrel-girl-preview+json",
+        "required": true
       }
     ],
     "parameters": [
@@ -40632,7 +40770,8 @@
     "headers": [
       {
         "name": "accept",
-        "value": "application/vnd.github.squirrel-girl-preview+json"
+        "value": "application/vnd.github.squirrel-girl-preview+json",
+        "required": true
       }
     ],
     "parameters": [
@@ -40738,7 +40877,8 @@
     "headers": [
       {
         "name": "accept",
-        "value": "application/vnd.github.squirrel-girl-preview+json"
+        "value": "application/vnd.github.squirrel-girl-preview+json",
+        "required": true
       }
     ],
     "parameters": [
@@ -40849,7 +40989,8 @@
     "headers": [
       {
         "name": "accept",
-        "value": "application/vnd.github.squirrel-girl-preview+json"
+        "value": "application/vnd.github.squirrel-girl-preview+json",
+        "required": true
       }
     ],
     "parameters": [
@@ -40929,7 +41070,8 @@
     "headers": [
       {
         "name": "accept",
-        "value": "application/vnd.github.squirrel-girl-preview+json"
+        "value": "application/vnd.github.squirrel-girl-preview+json",
+        "required": true
       }
     ],
     "parameters": [
@@ -41988,7 +42130,8 @@
     "headers": [
       {
         "name": "accept",
-        "value": "application/vnd.github.inertia-preview+json"
+        "value": "application/vnd.github.inertia-preview+json",
+        "required": true
       }
     ],
     "parameters": [
@@ -42059,7 +42202,8 @@
     "headers": [
       {
         "name": "accept",
-        "value": "application/vnd.github.inertia-preview+json"
+        "value": "application/vnd.github.inertia-preview+json",
+        "required": true
       }
     ],
     "parameters": [
@@ -42135,7 +42279,8 @@
     "headers": [
       {
         "name": "accept",
-        "value": "application/vnd.github.inertia-preview+json"
+        "value": "application/vnd.github.inertia-preview+json",
+        "required": true
       }
     ],
     "parameters": [
@@ -42193,7 +42338,8 @@
     "headers": [
       {
         "name": "accept",
-        "value": "application/vnd.github.inertia-preview+json"
+        "value": "application/vnd.github.inertia-preview+json",
+        "required": true
       }
     ],
     "parameters": [
@@ -42256,7 +42402,8 @@
     "headers": [
       {
         "name": "accept",
-        "value": "application/vnd.github.inertia-preview+json"
+        "value": "application/vnd.github.inertia-preview+json",
+        "required": true
       }
     ],
     "parameters": [
@@ -42327,7 +42474,8 @@
     "headers": [
       {
         "name": "accept",
-        "value": "application/vnd.github.inertia-preview+json"
+        "value": "application/vnd.github.inertia-preview+json",
+        "required": true
       }
     ],
     "parameters": [
@@ -43963,7 +44111,8 @@
     "headers": [
       {
         "name": "accept",
-        "value": "application/vnd.github.machine-man-preview+json"
+        "value": "application/vnd.github.machine-man-preview+json",
+        "required": true
       }
     ],
     "parameters": [
@@ -44021,7 +44170,8 @@
     "headers": [
       {
         "name": "accept",
-        "value": "application/vnd.github.machine-man-preview+json"
+        "value": "application/vnd.github.machine-man-preview+json",
+        "required": true
       }
     ],
     "parameters": [
@@ -44092,7 +44242,8 @@
     "headers": [
       {
         "name": "accept",
-        "value": "application/vnd.github.machine-man-preview+json"
+        "value": "application/vnd.github.machine-man-preview+json",
+        "required": true
       }
     ],
     "parameters": [
@@ -44140,7 +44291,8 @@
     "headers": [
       {
         "name": "accept",
-        "value": "application/vnd.github.machine-man-preview+json"
+        "value": "application/vnd.github.machine-man-preview+json",
+        "required": true
       }
     ],
     "parameters": [
@@ -44826,7 +44978,8 @@
     "headers": [
       {
         "name": "accept",
-        "value": "application/vnd.github.wyandotte-preview+json"
+        "value": "application/vnd.github.wyandotte-preview+json",
+        "required": true
       }
     ],
     "parameters": [
@@ -44884,7 +45037,8 @@
     "headers": [
       {
         "name": "accept",
-        "value": "application/vnd.github.wyandotte-preview+json"
+        "value": "application/vnd.github.wyandotte-preview+json",
+        "required": true
       }
     ],
     "parameters": [
@@ -44929,7 +45083,8 @@
     "headers": [
       {
         "name": "accept",
-        "value": "application/vnd.github.wyandotte-preview+json"
+        "value": "application/vnd.github.wyandotte-preview+json",
+        "required": true
       }
     ],
     "parameters": [
@@ -44964,7 +45119,8 @@
     "headers": [
       {
         "name": "accept",
-        "value": "application/vnd.github.wyandotte-preview+json"
+        "value": "application/vnd.github.wyandotte-preview+json",
+        "required": true
       }
     ],
     "parameters": [
@@ -44999,7 +45155,8 @@
     "headers": [
       {
         "name": "accept",
-        "value": "application/vnd.github.wyandotte-preview+json"
+        "value": "application/vnd.github.wyandotte-preview+json",
+        "required": true
       }
     ],
     "parameters": [
@@ -45100,7 +45257,8 @@
     "headers": [
       {
         "name": "accept",
-        "value": "application/vnd.github.inertia-preview+json"
+        "value": "application/vnd.github.inertia-preview+json",
+        "required": true
       }
     ],
     "parameters": [
@@ -46132,7 +46290,8 @@
     "headers": [
       {
         "name": "accept",
-        "value": "application/vnd.github.wyandotte-preview+json"
+        "value": "application/vnd.github.wyandotte-preview+json",
+        "required": true
       }
     ],
     "parameters": [
@@ -46879,7 +47038,8 @@
     "headers": [
       {
         "name": "accept",
-        "value": "application/vnd.github.machine-man-preview+json"
+        "value": "application/vnd.github.machine-man-preview+json",
+        "required": true
       }
     ],
     "parameters": [
@@ -46924,7 +47084,8 @@
     "headers": [
       {
         "name": "accept",
-        "value": "application/vnd.github.machine-man-preview+json"
+        "value": "application/vnd.github.machine-man-preview+json",
+        "required": true
       }
     ],
     "parameters": [
@@ -47102,7 +47263,8 @@
     "headers": [
       {
         "name": "accept",
-        "value": "application/vnd.github.inertia-preview+json"
+        "value": "application/vnd.github.inertia-preview+json",
+        "required": true
       }
     ],
     "parameters": [
