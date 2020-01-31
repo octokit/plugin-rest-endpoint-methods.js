@@ -799,25 +799,9 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
       "POST /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}/reactions",
       { mediaType: { previews: ["squirrel-girl"] } }
     ],
-    createForTeamDiscussionCommentLegacy: [
-      "POST /teams/{team_id}/discussions/{discussion_number}/comments/{comment_number}/reactions",
-      { mediaType: { previews: ["squirrel-girl"] } },
-      {
-        deprecated:
-          "octokit.reactions.createForTeamDiscussionCommentLegacy() is deprecated, see https://developer.github.com/v3/reactions/#create-reaction-for-a-team-discussion-comment-legacy"
-      }
-    ],
     createForTeamDiscussionInOrg: [
       "POST /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/reactions",
       { mediaType: { previews: ["squirrel-girl"] } }
-    ],
-    createForTeamDiscussionLegacy: [
-      "POST /teams/{team_id}/discussions/{discussion_number}/reactions",
-      { mediaType: { previews: ["squirrel-girl"] } },
-      {
-        deprecated:
-          "octokit.reactions.createForTeamDiscussionLegacy() is deprecated, see https://developer.github.com/v3/reactions/#create-reaction-for-a-team-discussion-legacy"
-      }
     ],
     delete: [
       "DELETE /reactions/{reaction_id}",
@@ -843,25 +827,9 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
       "GET /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}/reactions",
       { mediaType: { previews: ["squirrel-girl"] } }
     ],
-    listForTeamDiscussionCommentLegacy: [
-      "GET /teams/{team_id}/discussions/{discussion_number}/comments/{comment_number}/reactions",
-      { mediaType: { previews: ["squirrel-girl"] } },
-      {
-        deprecated:
-          "octokit.reactions.listForTeamDiscussionCommentLegacy() is deprecated, see https://developer.github.com/v3/reactions/#list-reactions-for-a-team-discussion-comment-legacy"
-      }
-    ],
     listForTeamDiscussionInOrg: [
       "GET /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/reactions",
       { mediaType: { previews: ["squirrel-girl"] } }
-    ],
-    listForTeamDiscussionLegacy: [
-      "GET /teams/{team_id}/discussions/{discussion_number}/reactions",
-      { mediaType: { previews: ["squirrel-girl"] } },
-      {
-        deprecated:
-          "octokit.reactions.listForTeamDiscussionLegacy() is deprecated, see https://developer.github.com/v3/reactions/#list-reactions-for-a-team-discussion-legacy"
-      }
     ]
   },
   repos: {
@@ -1151,317 +1119,77 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     users: ["GET /search/users"]
   },
   teams: {
-    addMemberLegacy: [
-      "PUT /teams/{team_id}/members/{username}",
-      {},
-      {
-        deprecated:
-          "octokit.teams.addMemberLegacy() is deprecated, see https://developer.github.com/v3/teams/members/#add-team-member-legacy"
-      }
-    ],
     addOrUpdateMembershipInOrg: [
       "PUT /orgs/{org}/teams/{team_slug}/memberships/{username}"
-    ],
-    addOrUpdateMembershipLegacy: [
-      "PUT /teams/{team_id}/memberships/{username}",
-      {},
-      {
-        deprecated:
-          "octokit.teams.addOrUpdateMembershipLegacy() is deprecated, see https://developer.github.com/v3/teams/members/#add-or-update-team-membership-legacy"
-      }
     ],
     addOrUpdateProjectInOrg: [
       "PUT /orgs/{org}/teams/{team_slug}/projects/{project_id}",
       { mediaType: { previews: ["inertia"] } }
     ],
-    addOrUpdateProjectLegacy: [
-      "PUT /teams/{team_id}/projects/{project_id}",
-      { mediaType: { previews: ["inertia"] } },
-      {
-        deprecated:
-          "octokit.teams.addOrUpdateProjectLegacy() is deprecated, see https://developer.github.com/v3/teams/#add-or-update-team-project-legacy"
-      }
-    ],
     addOrUpdateRepoInOrg: [
       "PUT /orgs/{org}/teams/{team_slug}/repos/{owner}/{repo}"
     ],
-    addOrUpdateRepoLegacy: [
-      "PUT /teams/{team_id}/repos/{owner}/{repo}",
-      {},
-      {
-        deprecated:
-          "octokit.teams.addOrUpdateRepoLegacy() is deprecated, see https://developer.github.com/v3/teams/#add-or-update-team-repository-legacy"
-      }
-    ],
     checkManagesRepoInOrg: [
       "GET /orgs/{org}/teams/{team_slug}/repos/{owner}/{repo}"
-    ],
-    checkManagesRepoLegacy: [
-      "GET /teams/{team_id}/repos/{owner}/{repo}",
-      {},
-      {
-        deprecated:
-          "octokit.teams.checkManagesRepoLegacy() is deprecated, see https://developer.github.com/v3/teams/#check-if-a-team-manages-a-repository-legacy"
-      }
     ],
     create: ["POST /orgs/{org}/teams"],
     createDiscussionCommentInOrg: [
       "POST /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments"
     ],
-    createDiscussionCommentLegacy: [
-      "POST /teams/{team_id}/discussions/{discussion_number}/comments",
-      {},
-      {
-        deprecated:
-          "octokit.teams.createDiscussionCommentLegacy() is deprecated, see https://developer.github.com/v3/teams/discussion_comments/#create-a-comment-legacy"
-      }
-    ],
     createDiscussionInOrg: ["POST /orgs/{org}/teams/{team_slug}/discussions"],
-    createDiscussionLegacy: [
-      "POST /teams/{team_id}/discussions",
-      {},
-      {
-        deprecated:
-          "octokit.teams.createDiscussionLegacy() is deprecated, see https://developer.github.com/v3/teams/discussions/#create-a-discussion-legacy"
-      }
-    ],
     deleteDiscussionCommentInOrg: [
       "DELETE /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}"
-    ],
-    deleteDiscussionCommentLegacy: [
-      "DELETE /teams/{team_id}/discussions/{discussion_number}/comments/{comment_number}",
-      {},
-      {
-        deprecated:
-          "octokit.teams.deleteDiscussionCommentLegacy() is deprecated, see https://developer.github.com/v3/teams/discussion_comments/#delete-a-comment-legacy"
-      }
     ],
     deleteDiscussionInOrg: [
       "DELETE /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}"
     ],
-    deleteDiscussionLegacy: [
-      "DELETE /teams/{team_id}/discussions/{discussion_number}",
-      {},
-      {
-        deprecated:
-          "octokit.teams.deleteDiscussionLegacy() is deprecated, see https://developer.github.com/v3/teams/discussions/#delete-a-discussion-legacy"
-      }
-    ],
     deleteInOrg: ["DELETE /orgs/{org}/teams/{team_slug}"],
-    deleteLegacy: [
-      "DELETE /teams/{team_id}",
-      {},
-      {
-        deprecated:
-          "octokit.teams.deleteLegacy() is deprecated, see https://developer.github.com/v3/teams/#delete-team-legacy"
-      }
-    ],
     getByName: ["GET /orgs/{org}/teams/{team_slug}"],
     getDiscussionCommentInOrg: [
       "GET /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}"
     ],
-    getDiscussionCommentLegacy: [
-      "GET /teams/{team_id}/discussions/{discussion_number}/comments/{comment_number}",
-      {},
-      {
-        deprecated:
-          "octokit.teams.getDiscussionCommentLegacy() is deprecated, see https://developer.github.com/v3/teams/discussion_comments/#get-a-single-comment-legacy"
-      }
-    ],
     getDiscussionInOrg: [
       "GET /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}"
-    ],
-    getDiscussionLegacy: [
-      "GET /teams/{team_id}/discussions/{discussion_number}",
-      {},
-      {
-        deprecated:
-          "octokit.teams.getDiscussionLegacy() is deprecated, see https://developer.github.com/v3/teams/discussions/#get-a-single-discussion-legacy"
-      }
-    ],
-    getLegacy: [
-      "GET /teams/{team_id}",
-      {},
-      {
-        deprecated:
-          "octokit.teams.getLegacy() is deprecated, see https://developer.github.com/v3/teams/#get-team-legacy"
-      }
-    ],
-    getMemberLegacy: [
-      "GET /teams/{team_id}/members/{username}",
-      {},
-      {
-        deprecated:
-          "octokit.teams.getMemberLegacy() is deprecated, see https://developer.github.com/v3/teams/members/#get-team-member-legacy"
-      }
     ],
     getMembershipInOrg: [
       "GET /orgs/{org}/teams/{team_slug}/memberships/{username}"
     ],
-    getMembershipLegacy: [
-      "GET /teams/{team_id}/memberships/{username}",
-      {},
-      {
-        deprecated:
-          "octokit.teams.getMembershipLegacy() is deprecated, see https://developer.github.com/v3/teams/members/#get-team-membership-legacy"
-      }
-    ],
     list: ["GET /orgs/{org}/teams"],
     listChildInOrg: ["GET /orgs/{org}/teams/{team_slug}/teams"],
-    listChildLegacy: [
-      "GET /teams/{team_id}/teams",
-      {},
-      {
-        deprecated:
-          "octokit.teams.listChildLegacy() is deprecated, see https://developer.github.com/v3/teams/#list-child-teams-legacy"
-      }
-    ],
     listDiscussionCommentsInOrg: [
       "GET /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments"
     ],
-    listDiscussionCommentsLegacy: [
-      "GET /teams/{team_id}/discussions/{discussion_number}/comments",
-      {},
-      {
-        deprecated:
-          "octokit.teams.listDiscussionCommentsLegacy() is deprecated, see https://developer.github.com/v3/teams/discussion_comments/#list-comments-legacy"
-      }
-    ],
     listDiscussionsInOrg: ["GET /orgs/{org}/teams/{team_slug}/discussions"],
-    listDiscussionsLegacy: [
-      "GET /teams/{team_id}/discussions",
-      {},
-      {
-        deprecated:
-          "octokit.teams.listDiscussionsLegacy() is deprecated, see https://developer.github.com/v3/teams/discussions/#list-discussions-legacy"
-      }
-    ],
     listForAuthenticatedUser: ["GET /user/teams"],
     listMembersInOrg: ["GET /orgs/{org}/teams/{team_slug}/members"],
-    listMembersLegacy: [
-      "GET /teams/{team_id}/members",
-      {},
-      {
-        deprecated:
-          "octokit.teams.listMembersLegacy() is deprecated, see https://developer.github.com/v3/teams/members/#list-team-members-legacy"
-      }
-    ],
     listPendingInvitationsInOrg: [
       "GET /orgs/{org}/teams/{team_slug}/invitations"
-    ],
-    listPendingInvitationsLegacy: [
-      "GET /teams/{team_id}/invitations",
-      {},
-      {
-        deprecated:
-          "octokit.teams.listPendingInvitationsLegacy() is deprecated, see https://developer.github.com/v3/teams/members/#list-pending-team-invitations-legacy"
-      }
     ],
     listProjectsInOrg: [
       "GET /orgs/{org}/teams/{team_slug}/projects",
       { mediaType: { previews: ["inertia"] } }
     ],
-    listProjectsLegacy: [
-      "GET /teams/{team_id}/projects",
-      { mediaType: { previews: ["inertia"] } },
-      {
-        deprecated:
-          "octokit.teams.listProjectsLegacy() is deprecated, see https://developer.github.com/v3/teams/#list-team-projects-legacy"
-      }
-    ],
     listReposInOrg: ["GET /orgs/{org}/teams/{team_slug}/repos"],
-    listReposLegacy: [
-      "GET /teams/{team_id}/repos",
-      {},
-      {
-        deprecated:
-          "octokit.teams.listReposLegacy() is deprecated, see https://developer.github.com/v3/teams/#list-team-repos-legacy"
-      }
-    ],
-    removeMemberLegacy: [
-      "DELETE /teams/{team_id}/members/{username}",
-      {},
-      {
-        deprecated:
-          "octokit.teams.removeMemberLegacy() is deprecated, see https://developer.github.com/v3/teams/members/#remove-team-member-legacy"
-      }
-    ],
     removeMembershipInOrg: [
       "DELETE /orgs/{org}/teams/{team_slug}/memberships/{username}"
-    ],
-    removeMembershipLegacy: [
-      "DELETE /teams/{team_id}/memberships/{username}",
-      {},
-      {
-        deprecated:
-          "octokit.teams.removeMembershipLegacy() is deprecated, see https://developer.github.com/v3/teams/members/#remove-team-membership-legacy"
-      }
     ],
     removeProjectInOrg: [
       "DELETE /orgs/{org}/teams/{team_slug}/projects/{project_id}"
     ],
-    removeProjectLegacy: [
-      "DELETE /teams/{team_id}/projects/{project_id}",
-      {},
-      {
-        deprecated:
-          "octokit.teams.removeProjectLegacy() is deprecated, see https://developer.github.com/v3/teams/#remove-team-project-legacy"
-      }
-    ],
     removeRepoInOrg: [
       "DELETE /orgs/{org}/teams/{team_slug}/repos/{owner}/{repo}"
-    ],
-    removeRepoLegacy: [
-      "DELETE /teams/{team_id}/repos/{owner}/{repo}",
-      {},
-      {
-        deprecated:
-          "octokit.teams.removeRepoLegacy() is deprecated, see https://developer.github.com/v3/teams/#remove-team-repository-legacy"
-      }
     ],
     reviewProjectInOrg: [
       "GET /orgs/{org}/teams/{team_slug}/projects/{project_id}",
       { mediaType: { previews: ["inertia"] } }
     ],
-    reviewProjectLegacy: [
-      "GET /teams/{team_id}/projects/{project_id}",
-      { mediaType: { previews: ["inertia"] } },
-      {
-        deprecated:
-          "octokit.teams.reviewProjectLegacy() is deprecated, see https://developer.github.com/v3/teams/#review-a-team-project-legacy"
-      }
-    ],
     updateDiscussionCommentInOrg: [
       "PATCH /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}"
-    ],
-    updateDiscussionCommentLegacy: [
-      "PATCH /teams/{team_id}/discussions/{discussion_number}/comments/{comment_number}",
-      {},
-      {
-        deprecated:
-          "octokit.teams.updateDiscussionCommentLegacy() is deprecated, see https://developer.github.com/v3/teams/discussion_comments/#edit-a-comment-legacy"
-      }
     ],
     updateDiscussionInOrg: [
       "PATCH /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}"
     ],
-    updateDiscussionLegacy: [
-      "PATCH /teams/{team_id}/discussions/{discussion_number}",
-      {},
-      {
-        deprecated:
-          "octokit.teams.updateDiscussionLegacy() is deprecated, see https://developer.github.com/v3/teams/discussions/#edit-a-discussion-legacy"
-      }
-    ],
-    updateInOrg: ["PATCH /orgs/{org}/teams/{team_slug}"],
-    updateLegacy: [
-      "PATCH /teams/{team_id}",
-      {},
-      {
-        deprecated:
-          "octokit.teams.updateLegacy() is deprecated, see https://developer.github.com/v3/teams/#edit-team-legacy"
-      }
-    ]
+    updateInOrg: ["PATCH /orgs/{org}/teams/{team_slug}"]
   },
   users: {
     addEmails: ["POST /user/emails"],
