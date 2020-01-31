@@ -73,6 +73,10 @@ describe("REST API endpoint methods", () => {
         query: {
           name: "test.txt",
           label: "test"
+        },
+        matcher: (url, { body }) => {
+          expect(body).toEqual("test 1, 2");
+          return true;
         }
       }
     );
@@ -93,9 +97,40 @@ describe("REST API endpoint methods", () => {
         owner: "octocat",
         repo: "hello-world",
         release_id: 123,
-        file: "test 1, 2",
+        data: "test 1, 2",
         name: "test.txt",
         label: "test"
+      })
+      .catch(error => {
+        console.log(error);
+
+        throw error;
+      });
+  });
+
+  it("octokit.repos.addProtectedBranchRequiredStatusChecksContexts()", async () => {
+    const mock = fetchMock.sandbox().postOnce(
+      "https://api.github.com/repos/octocat/hello-world/branches/latest/protection/required_status_checks/contexts",
+      { ok: true },
+      {
+        body: ["myci1", "myci2"]
+      }
+    );
+
+    const MyOctokit = Octokit.plugin(restEndpointMethods);
+    const octokit = new MyOctokit({
+      auth: "secret123",
+      request: {
+        fetch: mock
+      }
+    });
+
+    return octokit.repos
+      .addProtectedBranchRequiredStatusChecksContexts({
+        owner: "octocat",
+        repo: "hello-world",
+        branch: "latest",
+        contexts: ["myci1", "myci2"]
       })
       .catch(error => {
         console.log(error);
