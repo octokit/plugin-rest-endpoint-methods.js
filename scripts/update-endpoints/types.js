@@ -337,17 +337,16 @@ async function getRoutes() {
       method: endpoint.method,
       url,
       description: endpoint.description,
-      headers: endpoint.headers.reduce((result, header) => {
-        if (!result) {
-          result = {};
-        }
-        result[header.name] = header.value;
-        return result;
-      }, undefined),
       deprecated: newRoutes[scope][idName]
         ? newRoutes[scope][idName].deprecated
         : undefined,
       params: endpoint.parameters.reduce((result, param) => {
+        // "origin" is a URL parameter only relevant for octokit.repos.uploadReleaseAsset()
+        // We remove it and set a default for `baseUrl`, which is a special default parameter
+        if (param.name === "origin") {
+          return result;
+        }
+
         result[param.name] = {
           type: param.type,
           description:
@@ -398,14 +397,32 @@ async function getRoutes() {
           : undefined
     };
 
-    const previewHeaders = endpoint.previews
-      .map(preview => `application/vnd.github.${preview.name}-preview+json`)
-      .join(",");
+    // add required headers as parameters
+    const requiredHeaders = endpoint.headers.filter(header => {
+      // if value is set, we pass the header with its expected value automatically
+      if (header.value) {
+        return false;
+      }
 
-    if (previewHeaders) {
-      newRoutes[scope][idName].headers = {
-        accept: previewHeaders
+      return header.required;
+    });
+
+    if (requiredHeaders.length) {
+      newRoutes[scope][idName].params.headers = {
+        type: "object",
+        required: true
       };
+      for (const header of requiredHeaders) {
+        // Content-Length header is set automatically
+        if (header.name === "content-length") {
+          continue;
+        }
+
+        newRoutes[scope][idName].params[`headers.${header.name}`] = {
+          type: "string",
+          required: true
+        };
+      }
     }
 
     if (endpoint.renamed) {
