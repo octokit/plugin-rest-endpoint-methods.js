@@ -3683,7 +3683,7 @@ type SearchCodeResponse = {
   items: Array<SearchCodeResponseItemsItem>;
   total_count: number;
 };
-type ReposUploadReleaseAssetResponseValueUploader = {
+type ReposUploadReleaseAssetResponseUploader = {
   avatar_url: string;
   events_url: string;
   followers_url: string;
@@ -3703,7 +3703,7 @@ type ReposUploadReleaseAssetResponseValueUploader = {
   type: string;
   url: string;
 };
-type ReposUploadReleaseAssetResponseValue = {
+type ReposUploadReleaseAssetResponse = {
   browser_download_url: string;
   content_type: string;
   created_at: string;
@@ -3715,11 +3715,8 @@ type ReposUploadReleaseAssetResponseValue = {
   size: number;
   state: string;
   updated_at: string;
-  uploader: ReposUploadReleaseAssetResponseValueUploader;
+  uploader: ReposUploadReleaseAssetResponseUploader;
   url: string;
-};
-type ReposUploadReleaseAssetResponse = {
-  value: ReposUploadReleaseAssetResponseValue;
 };
 type ReposUpdateReleaseAssetResponseUploader = {
   avatar_url: string;
@@ -12831,504 +12828,6 @@ type PullsCreateReviewResponse = {
   pull_request_url: string;
   state: string;
   user: PullsCreateReviewResponseUser;
-};
-type PullsCreateFromIssueResponseUser = {
-  avatar_url: string;
-  events_url: string;
-  followers_url: string;
-  following_url: string;
-  gists_url: string;
-  gravatar_id: string;
-  html_url: string;
-  id: number;
-  login: string;
-  node_id: string;
-  organizations_url: string;
-  received_events_url: string;
-  repos_url: string;
-  site_admin: boolean;
-  starred_url: string;
-  subscriptions_url: string;
-  type: string;
-  url: string;
-};
-type PullsCreateFromIssueResponseRequestedTeamsItem = {
-  description: string;
-  html_url: string;
-  id: number;
-  members_url: string;
-  name: string;
-  node_id: string;
-  parent: null;
-  permission: string;
-  privacy: string;
-  repositories_url: string;
-  slug: string;
-  url: string;
-};
-type PullsCreateFromIssueResponseRequestedReviewersItem = {
-  avatar_url: string;
-  events_url: string;
-  followers_url: string;
-  following_url: string;
-  gists_url: string;
-  gravatar_id: string;
-  html_url: string;
-  id: number;
-  login: string;
-  node_id: string;
-  organizations_url: string;
-  received_events_url: string;
-  repos_url: string;
-  site_admin: boolean;
-  starred_url: string;
-  subscriptions_url: string;
-  type: string;
-  url: string;
-};
-type PullsCreateFromIssueResponseMilestoneCreator = {
-  avatar_url: string;
-  events_url: string;
-  followers_url: string;
-  following_url: string;
-  gists_url: string;
-  gravatar_id: string;
-  html_url: string;
-  id: number;
-  login: string;
-  node_id: string;
-  organizations_url: string;
-  received_events_url: string;
-  repos_url: string;
-  site_admin: boolean;
-  starred_url: string;
-  subscriptions_url: string;
-  type: string;
-  url: string;
-};
-type PullsCreateFromIssueResponseMilestone = {
-  closed_at: string;
-  closed_issues: number;
-  created_at: string;
-  creator: PullsCreateFromIssueResponseMilestoneCreator;
-  description: string;
-  due_on: string;
-  html_url: string;
-  id: number;
-  labels_url: string;
-  node_id: string;
-  number: number;
-  open_issues: number;
-  state: string;
-  title: string;
-  updated_at: string;
-  url: string;
-};
-type PullsCreateFromIssueResponseMergedBy = {
-  avatar_url: string;
-  events_url: string;
-  followers_url: string;
-  following_url: string;
-  gists_url: string;
-  gravatar_id: string;
-  html_url: string;
-  id: number;
-  login: string;
-  node_id: string;
-  organizations_url: string;
-  received_events_url: string;
-  repos_url: string;
-  site_admin: boolean;
-  starred_url: string;
-  subscriptions_url: string;
-  type: string;
-  url: string;
-};
-type PullsCreateFromIssueResponseLabelsItem = {
-  color: string;
-  default: boolean;
-  description: string;
-  id: number;
-  name: string;
-  node_id: string;
-  url: string;
-};
-type PullsCreateFromIssueResponseHeadUser = {
-  avatar_url: string;
-  events_url: string;
-  followers_url: string;
-  following_url: string;
-  gists_url: string;
-  gravatar_id: string;
-  html_url: string;
-  id: number;
-  login: string;
-  node_id: string;
-  organizations_url: string;
-  received_events_url: string;
-  repos_url: string;
-  site_admin: boolean;
-  starred_url: string;
-  subscriptions_url: string;
-  type: string;
-  url: string;
-};
-type PullsCreateFromIssueResponseHeadRepoPermissions = {
-  admin: boolean;
-  pull: boolean;
-  push: boolean;
-};
-type PullsCreateFromIssueResponseHeadRepoOwner = {
-  avatar_url: string;
-  events_url: string;
-  followers_url: string;
-  following_url: string;
-  gists_url: string;
-  gravatar_id: string;
-  html_url: string;
-  id: number;
-  login: string;
-  node_id: string;
-  organizations_url: string;
-  received_events_url: string;
-  repos_url: string;
-  site_admin: boolean;
-  starred_url: string;
-  subscriptions_url: string;
-  type: string;
-  url: string;
-};
-type PullsCreateFromIssueResponseHeadRepo = {
-  allow_merge_commit: boolean;
-  allow_rebase_merge: boolean;
-  allow_squash_merge: boolean;
-  archive_url: string;
-  archived: boolean;
-  assignees_url: string;
-  blobs_url: string;
-  branches_url: string;
-  clone_url: string;
-  collaborators_url: string;
-  comments_url: string;
-  commits_url: string;
-  compare_url: string;
-  contents_url: string;
-  contributors_url: string;
-  created_at: string;
-  default_branch: string;
-  deployments_url: string;
-  description: string;
-  disabled: boolean;
-  downloads_url: string;
-  events_url: string;
-  fork: boolean;
-  forks_count: number;
-  forks_url: string;
-  full_name: string;
-  git_commits_url: string;
-  git_refs_url: string;
-  git_tags_url: string;
-  git_url: string;
-  has_downloads: boolean;
-  has_issues: boolean;
-  has_pages: boolean;
-  has_projects: boolean;
-  has_wiki: boolean;
-  homepage: string;
-  hooks_url: string;
-  html_url: string;
-  id: number;
-  is_template: boolean;
-  issue_comment_url: string;
-  issue_events_url: string;
-  issues_url: string;
-  keys_url: string;
-  labels_url: string;
-  language: null;
-  languages_url: string;
-  merges_url: string;
-  milestones_url: string;
-  mirror_url: string;
-  name: string;
-  network_count: number;
-  node_id: string;
-  notifications_url: string;
-  open_issues_count: number;
-  owner: PullsCreateFromIssueResponseHeadRepoOwner;
-  permissions: PullsCreateFromIssueResponseHeadRepoPermissions;
-  private: boolean;
-  pulls_url: string;
-  pushed_at: string;
-  releases_url: string;
-  size: number;
-  ssh_url: string;
-  stargazers_count: number;
-  stargazers_url: string;
-  statuses_url: string;
-  subscribers_count: number;
-  subscribers_url: string;
-  subscription_url: string;
-  svn_url: string;
-  tags_url: string;
-  teams_url: string;
-  temp_clone_token: string;
-  template_repository: null;
-  topics: Array<string>;
-  trees_url: string;
-  updated_at: string;
-  url: string;
-  visibility: string;
-  watchers_count: number;
-};
-type PullsCreateFromIssueResponseHead = {
-  label: string;
-  ref: string;
-  repo: PullsCreateFromIssueResponseHeadRepo;
-  sha: string;
-  user: PullsCreateFromIssueResponseHeadUser;
-};
-type PullsCreateFromIssueResponseBaseUser = {
-  avatar_url: string;
-  events_url: string;
-  followers_url: string;
-  following_url: string;
-  gists_url: string;
-  gravatar_id: string;
-  html_url: string;
-  id: number;
-  login: string;
-  node_id: string;
-  organizations_url: string;
-  received_events_url: string;
-  repos_url: string;
-  site_admin: boolean;
-  starred_url: string;
-  subscriptions_url: string;
-  type: string;
-  url: string;
-};
-type PullsCreateFromIssueResponseBaseRepoPermissions = {
-  admin: boolean;
-  pull: boolean;
-  push: boolean;
-};
-type PullsCreateFromIssueResponseBaseRepoOwner = {
-  avatar_url: string;
-  events_url: string;
-  followers_url: string;
-  following_url: string;
-  gists_url: string;
-  gravatar_id: string;
-  html_url: string;
-  id: number;
-  login: string;
-  node_id: string;
-  organizations_url: string;
-  received_events_url: string;
-  repos_url: string;
-  site_admin: boolean;
-  starred_url: string;
-  subscriptions_url: string;
-  type: string;
-  url: string;
-};
-type PullsCreateFromIssueResponseBaseRepo = {
-  allow_merge_commit: boolean;
-  allow_rebase_merge: boolean;
-  allow_squash_merge: boolean;
-  archive_url: string;
-  archived: boolean;
-  assignees_url: string;
-  blobs_url: string;
-  branches_url: string;
-  clone_url: string;
-  collaborators_url: string;
-  comments_url: string;
-  commits_url: string;
-  compare_url: string;
-  contents_url: string;
-  contributors_url: string;
-  created_at: string;
-  default_branch: string;
-  deployments_url: string;
-  description: string;
-  disabled: boolean;
-  downloads_url: string;
-  events_url: string;
-  fork: boolean;
-  forks_count: number;
-  forks_url: string;
-  full_name: string;
-  git_commits_url: string;
-  git_refs_url: string;
-  git_tags_url: string;
-  git_url: string;
-  has_downloads: boolean;
-  has_issues: boolean;
-  has_pages: boolean;
-  has_projects: boolean;
-  has_wiki: boolean;
-  homepage: string;
-  hooks_url: string;
-  html_url: string;
-  id: number;
-  is_template: boolean;
-  issue_comment_url: string;
-  issue_events_url: string;
-  issues_url: string;
-  keys_url: string;
-  labels_url: string;
-  language: null;
-  languages_url: string;
-  merges_url: string;
-  milestones_url: string;
-  mirror_url: string;
-  name: string;
-  network_count: number;
-  node_id: string;
-  notifications_url: string;
-  open_issues_count: number;
-  owner: PullsCreateFromIssueResponseBaseRepoOwner;
-  permissions: PullsCreateFromIssueResponseBaseRepoPermissions;
-  private: boolean;
-  pulls_url: string;
-  pushed_at: string;
-  releases_url: string;
-  size: number;
-  ssh_url: string;
-  stargazers_count: number;
-  stargazers_url: string;
-  statuses_url: string;
-  subscribers_count: number;
-  subscribers_url: string;
-  subscription_url: string;
-  svn_url: string;
-  tags_url: string;
-  teams_url: string;
-  temp_clone_token: string;
-  template_repository: null;
-  topics: Array<string>;
-  trees_url: string;
-  updated_at: string;
-  url: string;
-  visibility: string;
-  watchers_count: number;
-};
-type PullsCreateFromIssueResponseBase = {
-  label: string;
-  ref: string;
-  repo: PullsCreateFromIssueResponseBaseRepo;
-  sha: string;
-  user: PullsCreateFromIssueResponseBaseUser;
-};
-type PullsCreateFromIssueResponseAssigneesItem = {
-  avatar_url: string;
-  events_url: string;
-  followers_url: string;
-  following_url: string;
-  gists_url: string;
-  gravatar_id: string;
-  html_url: string;
-  id: number;
-  login: string;
-  node_id: string;
-  organizations_url: string;
-  received_events_url: string;
-  repos_url: string;
-  site_admin: boolean;
-  starred_url: string;
-  subscriptions_url: string;
-  type: string;
-  url: string;
-};
-type PullsCreateFromIssueResponseAssignee = {
-  avatar_url: string;
-  events_url: string;
-  followers_url: string;
-  following_url: string;
-  gists_url: string;
-  gravatar_id: string;
-  html_url: string;
-  id: number;
-  login: string;
-  node_id: string;
-  organizations_url: string;
-  received_events_url: string;
-  repos_url: string;
-  site_admin: boolean;
-  starred_url: string;
-  subscriptions_url: string;
-  type: string;
-  url: string;
-};
-type PullsCreateFromIssueResponseLinksStatuses = { href: string };
-type PullsCreateFromIssueResponseLinksSelf = { href: string };
-type PullsCreateFromIssueResponseLinksReviewComments = { href: string };
-type PullsCreateFromIssueResponseLinksReviewComment = { href: string };
-type PullsCreateFromIssueResponseLinksIssue = { href: string };
-type PullsCreateFromIssueResponseLinksHtml = { href: string };
-type PullsCreateFromIssueResponseLinksCommits = { href: string };
-type PullsCreateFromIssueResponseLinksComments = { href: string };
-type PullsCreateFromIssueResponseLinks = {
-  comments: PullsCreateFromIssueResponseLinksComments;
-  commits: PullsCreateFromIssueResponseLinksCommits;
-  html: PullsCreateFromIssueResponseLinksHtml;
-  issue: PullsCreateFromIssueResponseLinksIssue;
-  review_comment: PullsCreateFromIssueResponseLinksReviewComment;
-  review_comments: PullsCreateFromIssueResponseLinksReviewComments;
-  self: PullsCreateFromIssueResponseLinksSelf;
-  statuses: PullsCreateFromIssueResponseLinksStatuses;
-};
-type PullsCreateFromIssueResponse = {
-  _links: PullsCreateFromIssueResponseLinks;
-  active_lock_reason: string;
-  additions: number;
-  assignee: PullsCreateFromIssueResponseAssignee;
-  assignees: Array<PullsCreateFromIssueResponseAssigneesItem>;
-  author_association: string;
-  base: PullsCreateFromIssueResponseBase;
-  body: string;
-  changed_files: number;
-  closed_at: string;
-  comments: number;
-  comments_url: string;
-  commits: number;
-  commits_url: string;
-  created_at: string;
-  deletions: number;
-  diff_url: string;
-  draft: boolean;
-  head: PullsCreateFromIssueResponseHead;
-  html_url: string;
-  id: number;
-  issue_url: string;
-  labels: Array<PullsCreateFromIssueResponseLabelsItem>;
-  locked: boolean;
-  maintainer_can_modify: boolean;
-  merge_commit_sha: string;
-  mergeable: boolean;
-  mergeable_state: string;
-  merged: boolean;
-  merged_at: string;
-  merged_by: PullsCreateFromIssueResponseMergedBy;
-  milestone: PullsCreateFromIssueResponseMilestone;
-  node_id: string;
-  number: number;
-  patch_url: string;
-  rebaseable: boolean;
-  requested_reviewers: Array<
-    PullsCreateFromIssueResponseRequestedReviewersItem
-  >;
-  requested_teams: Array<PullsCreateFromIssueResponseRequestedTeamsItem>;
-  review_comment_url: string;
-  review_comments: number;
-  review_comments_url: string;
-  state: string;
-  statuses_url: string;
-  title: string;
-  updated_at: string;
-  url: string;
-  user: PullsCreateFromIssueResponseUser;
 };
 type PullsCreateCommentReplyResponseUser = {
   avatar_url: string;
@@ -25588,16 +25087,6 @@ export type GitListMatchingRefsParams = {
   ref: string;
   repo: string;
 };
-export type GitListRefsParams = {
-  /**
-   * Filter by sub-namespace (reference prefix). Most commen examples would be `'heads/'` and `'tags/'` to retrieve branches or tags
-   */
-  namespace?: string;
-  owner: string;
-  page?: number;
-  per_page?: number;
-  repo: string;
-};
 export type GitUpdateRefParams = {
   /**
    * Indicates whether to force the update or to make sure the update is a fast-forward update. Leaving this out or setting it to `false` will make sure you're not overwriting work.
@@ -26488,15 +25977,15 @@ export type IssuesUpdateLabelParams = {
    * The [hexadecimal color code](http://www.color-hex.com/) for the label, without the leading `#`.
    */
   color?: string;
-  current_name: string;
   /**
    * A short description of the label.
    */
   description?: string;
+  name: string;
   /**
    * The new name of the label. Emoji can be added to label names, using either native emoji or colon-style markup. For example, typing `:strawberry:` will render the emoji ![:strawberry:](https://github.githubassets.com/images/icons/emoji/unicode/1f353.png ":strawberry:"). For a full list of available emoji and codes, see [emoji-cheat-sheet.com](http://emoji-cheat-sheet.com/).
    */
-  name?: string;
+  new_name?: string;
   owner: string;
   repo: string;
 };
@@ -27901,15 +27390,6 @@ export type PullsCreateCommentReplyParams = {
    * **Required when using multi-line comments**. To create multi-line comments, you must use the `comfort-fade` preview header. The `start_side` is the starting side of the diff that the comment applies to. Can be `LEFT` or `RIGHT`. To learn more about multi-line comments, see "[Commenting on a pull request](https://help.github.com/en/articles/commenting-on-a-pull-request#adding-line-comments-to-a-pull-request)" in the GitHub Help documentation. See `side` in this table for additional context.
    */
   start_side?: "LEFT" | "RIGHT" | "side";
-};
-export type PullsCreateFromIssueParams = {
-  base: string;
-  draft?: boolean;
-  head: string;
-  issue: number;
-  maintainer_can_modify?: boolean;
-  owner: string;
-  repo: string;
 };
 export type PullsCreateReviewParamsDeprecatedNumber = {
   /**
@@ -29698,11 +29178,6 @@ export type ReposGetCommitCommentParams = {
   owner: string;
   repo: string;
 };
-export type ReposGetCommitRefShaParams = {
-  owner: string;
-  ref: string;
-  repo: string;
-};
 export type ReposGetContentsParams = {
   owner: string;
   path: string;
@@ -30712,25 +30187,6 @@ export type ReposUpdateReleaseAssetParams = {
   owner: string;
   repo: string;
 };
-export type ReposUploadReleaseAssetParamsDeprecatedFile = {
-  /**
-   * @deprecated "file" parameter renamed to "data"
-   */
-  file: string | object;
-  headers: ReposUploadReleaseAssetParamsHeaders;
-  /**
-   * An alternate short description of the asset. Used in place of the filename. This should be set in a URI query parameter.
-   */
-  label?: string;
-  /**
-   * The file name of the asset. This should be set in a URI query parameter.
-   */
-  name: string;
-  /**
-   * The `upload_url` key returned from creating or getting a release
-   */
-  url: string;
-};
 export type ReposUploadReleaseAssetParams = {
   data: string | object;
   headers: ReposUploadReleaseAssetParamsHeaders;
@@ -30742,10 +30198,9 @@ export type ReposUploadReleaseAssetParams = {
    * The file name of the asset. This should be set in a URI query parameter.
    */
   name: string;
-  /**
-   * The `upload_url` key returned from creating or getting a release
-   */
-  url: string;
+  owner: string;
+  release_id: number;
+  repo: string;
 };
 export type SearchCodeParams = {
   /**
@@ -32715,10 +32170,6 @@ export type ReposUpdateProtectedBranchPullRequestReviewEnforcementParamsDismissa
    */
   users?: string[];
 };
-export type ReposUploadReleaseAssetParamsHeaders = {
-  "content-length": number;
-  "content-type": string;
-};
 
 export type RestEndpointMethods = {
   actions: {
@@ -34368,14 +33819,6 @@ export type RestEndpointMethods = {
       (params?: RequestParameters & GitListMatchingRefsParams): Promise<
         OctokitResponse<GitListMatchingRefsResponse>
       >;
-
-      endpoint: EndpointInterface;
-    };
-    /**
-     * Returns an array of all the references from your Git database, including notes and stashes if they exist on the server. Anything in the namespace is returned, not just `heads` and `tags`. If there are no references to list, a `404` is returned.
-     */
-    listRefs: {
-      (params?: RequestParameters & GitListRefsParams): Promise<AnyResponse>;
 
       endpoint: EndpointInterface;
     };
@@ -36242,14 +35685,6 @@ export type RestEndpointMethods = {
 
       endpoint: EndpointInterface;
     };
-
-    createFromIssue: {
-      (params?: RequestParameters & PullsCreateFromIssueParams): Promise<
-        OctokitResponse<PullsCreateFromIssueResponse>
-      >;
-
-      endpoint: EndpointInterface;
-    };
     /**
      * This endpoint triggers [notifications](https://help.github.com/articles/about-notifications/). Creating content too quickly using this endpoint may result in abuse rate limiting. See "[Abuse rate limits](https://developer.github.com/v3/#abuse-rate-limits)" and "[Dealing with abuse rate limits](https://developer.github.com/v3/guides/best-practices-for-integrators/#dealing-with-abuse-rate-limits)" for details.
      *
@@ -37662,21 +37097,6 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface;
     };
     /**
-     * **Note:** To access this endpoint, you must provide a custom [media type](https://developer.github.com/v3/media) in the `Accept` header:
-     * ```
-     * application/vnd.github.VERSION.sha
-     * ```
-     * Returns the SHA-1 of the commit reference. You must have `read` access for the repository to get the SHA-1 of a commit reference. You can use this endpoint to check if a remote reference's SHA-1 is the same as your local reference's SHA-1 by providing the local SHA-1 reference as the ETag.
-     * @deprecated "Get the SHA-1 of a commit reference" will be removed. Use "Get a single commit" instead with media type format set to "sha" instead.
-     */
-    getCommitRefSha: {
-      (params?: RequestParameters & ReposGetCommitRefShaParams): Promise<
-        AnyResponse
-      >;
-
-      endpoint: EndpointInterface;
-    };
-    /**
      * Gets the contents of a file or directory in a repository. Specify the file path or directory in `:path`. If you omit `:path`, you will receive the contents of all files in the repository.
      *
      * Files and symlinks support [a custom media type](https://developer.github.com/v3/repos/contents/#custom-media-types) for retrieving the raw content or rendered HTML (when supported). All content types support [a custom media type](https://developer.github.com/v3/repos/contents/#custom-media-types) to ensure the content is returned in a consistent object format.
@@ -38834,11 +38254,15 @@ export type RestEndpointMethods = {
      * `application/zip`
      *
      * GitHub expects the asset data in its raw binary form, rather than JSON. You will send the raw binary content of the asset as the request body. Everything else about the endpoint is the same as the rest of the API. For example, you'll still need to pass your authentication to be able to upload an asset.
+     *
+     * **Notes:**
+     *
+     * *   GitHub renames asset filenames that have special characters, non-alphanumeric characters, and leading or trailing periods. The "[List assets for a release](https://developer.github.com/v3/repos/releases/#list-assets-for-a-release)" endpoint lists the renamed filenames. For more information and help, contact [GitHub Support](https://github.com/contact).
+     * *   If you upload an asset with the same filename as another uploaded asset, you'll receive an error and must delete the old file before you can re-upload the new asset.
+     *
+     * This may leave an empty asset with a state of `starter`. It can be safely deleted.
      */
     uploadReleaseAsset: {
-      (
-        params?: RequestParameters & ReposUploadReleaseAssetParamsDeprecatedFile
-      ): Promise<OctokitResponse<ReposUploadReleaseAssetResponse>>;
       (params?: RequestParameters & ReposUploadReleaseAssetParams): Promise<
         OctokitResponse<ReposUploadReleaseAssetResponse>
       >;
