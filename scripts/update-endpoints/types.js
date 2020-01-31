@@ -312,7 +312,7 @@ type EmptyParams = {};`,
     process.cwd(),
     "src",
     "generated",
-    "rest-endpoint-methods-types.ts"
+    "types.ts"
   );
 
   writeFileSync(definitionFilePath, source, "utf8");
