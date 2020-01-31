@@ -62,13 +62,7 @@ describe("REST API endpoint methods", () => {
     expect(data).toStrictEqual({ ok: true });
   });
 
-  it("deprecated endpoint methods have .endpoint() method, too", () => {
-    const MyOctokit = Octokit.plugin(restEndpointMethods);
-    const octokit = new MyOctokit();
-    expect(typeof octokit.teams.listMembersLegacy.endpoint).toEqual("function");
-  });
-
-  it.only("octokit.repos.uploadReleaseAsset()", async () => {
+  it("octokit.repos.uploadReleaseAsset()", async () => {
     const mock = fetchMock.sandbox().postOnce(
       "https://uploads.github.com/repos/octocat/hello-world/releases/123/assets",
       { ok: true },
