@@ -30192,12 +30192,9 @@ export type ReposUploadReleaseAssetParams = {
    * The raw file data
    */
   file: string;
+  headers: ReposUploadReleaseAssetParamsHeaders;
   label?: string;
   name?: string;
-  /**
-   * The URL origin (protocol + host name + port) is included in `upload_url` returned in the response of the "Create a release" endpoint
-   */
-  origin?: string;
   owner: string;
   release_id: number;
   repo: string;
@@ -32169,6 +32166,9 @@ export type ReposUpdateProtectedBranchPullRequestReviewEnforcementParamsDismissa
    * The list of user `login`s with dismissal access
    */
   users?: string[];
+};
+export type ReposUploadReleaseAssetParamsHeaders = {
+  "content-type": string;
 };
 
 export type RestEndpointMethods = {

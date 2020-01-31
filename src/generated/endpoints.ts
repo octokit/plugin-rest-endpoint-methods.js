@@ -1376,7 +1376,8 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
       "PATCH /repos/{owner}/{repo}/releases/assets/{asset_id}"
     ],
     uploadReleaseAsset: [
-      "POST {origin}/repos/{owner}/{repo}/releases/{release_id}/assets{?name,label}"
+      "POST /repos/{owner}/{repo}/releases/{release_id}/assets{?name,label}",
+      { baseUrl: "https://uploads.github.com" }
     ]
   },
   search: {
