@@ -143,21 +143,6 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
       "DELETE /applications/{client_id}/token",
       { mediaType: { previews: ["doctor-strange"] } }
     ],
-    findOrgInstallation: [
-      "GET /orgs/{org}/installation",
-      { mediaType: { previews: ["machine-man"] } },
-      { renamed: ["apps", "getOrgInstallation"] }
-    ],
-    findRepoInstallation: [
-      "GET /repos/{owner}/{repo}/installation",
-      { mediaType: { previews: ["machine-man"] } },
-      { renamed: ["apps", "getRepoInstallation"] }
-    ],
-    findUserInstallation: [
-      "GET /users/{username}/installation",
-      { mediaType: { previews: ["machine-man"] } },
-      { renamed: ["apps", "getUserInstallation"] }
-    ],
     getAuthenticated: [
       "GET /app",
       { mediaType: { previews: ["machine-man"] } }
@@ -379,21 +364,13 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
   },
   issues: {
     addAssignees: [
-      "POST /repos/{owner}/{repo}/issues/{issue_number}/assignees",
-      {},
-      { renamedParameters: { number: "issue_number" } }
+      "POST /repos/{owner}/{repo}/issues/{issue_number}/assignees"
     ],
-    addLabels: [
-      "POST /repos/{owner}/{repo}/issues/{issue_number}/labels",
-      {},
-      { renamedParameters: { number: "issue_number" } }
-    ],
+    addLabels: ["POST /repos/{owner}/{repo}/issues/{issue_number}/labels"],
     checkAssignee: ["GET /repos/{owner}/{repo}/assignees/{assignee}"],
     create: ["POST /repos/{owner}/{repo}/issues"],
     createComment: [
-      "POST /repos/{owner}/{repo}/issues/{issue_number}/comments",
-      {},
-      { renamedParameters: { number: "issue_number" } }
+      "POST /repos/{owner}/{repo}/issues/{issue_number}/comments"
     ],
     createLabel: ["POST /repos/{owner}/{repo}/labels"],
     createMilestone: ["POST /repos/{owner}/{repo}/milestones"],
@@ -402,104 +379,54 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     ],
     deleteLabel: ["DELETE /repos/{owner}/{repo}/labels/{name}"],
     deleteMilestone: [
-      "DELETE /repos/{owner}/{repo}/milestones/{milestone_number}",
-      {},
-      { renamedParameters: { number: "milestone_number" } }
+      "DELETE /repos/{owner}/{repo}/milestones/{milestone_number}"
     ],
-    get: [
-      "GET /repos/{owner}/{repo}/issues/{issue_number}",
-      {},
-      { renamedParameters: { number: "issue_number" } }
-    ],
+    get: ["GET /repos/{owner}/{repo}/issues/{issue_number}"],
     getComment: ["GET /repos/{owner}/{repo}/issues/comments/{comment_id}"],
     getEvent: ["GET /repos/{owner}/{repo}/issues/events/{event_id}"],
     getLabel: ["GET /repos/{owner}/{repo}/labels/{name}"],
-    getMilestone: [
-      "GET /repos/{owner}/{repo}/milestones/{milestone_number}",
-      {},
-      { renamedParameters: { number: "milestone_number" } }
-    ],
+    getMilestone: ["GET /repos/{owner}/{repo}/milestones/{milestone_number}"],
     list: ["GET /issues"],
     listAssignees: ["GET /repos/{owner}/{repo}/assignees"],
-    listComments: [
-      "GET /repos/{owner}/{repo}/issues/{issue_number}/comments",
-      {},
-      { renamedParameters: { number: "issue_number" } }
-    ],
+    listComments: ["GET /repos/{owner}/{repo}/issues/{issue_number}/comments"],
     listCommentsForRepo: ["GET /repos/{owner}/{repo}/issues/comments"],
-    listEvents: [
-      "GET /repos/{owner}/{repo}/issues/{issue_number}/events",
-      {},
-      { renamedParameters: { number: "issue_number" } }
-    ],
+    listEvents: ["GET /repos/{owner}/{repo}/issues/{issue_number}/events"],
     listEventsForRepo: ["GET /repos/{owner}/{repo}/issues/events"],
     listEventsForTimeline: [
       "GET /repos/{owner}/{repo}/issues/{issue_number}/timeline",
-      { mediaType: { previews: ["mockingbird"] } },
-      { renamedParameters: { number: "issue_number" } }
+      { mediaType: { previews: ["mockingbird"] } }
     ],
     listForAuthenticatedUser: ["GET /user/issues"],
     listForOrg: ["GET /orgs/{org}/issues"],
     listForRepo: ["GET /repos/{owner}/{repo}/issues"],
     listLabelsForMilestone: [
-      "GET /repos/{owner}/{repo}/milestones/{milestone_number}/labels",
-      {},
-      { renamedParameters: { number: "milestone_number" } }
+      "GET /repos/{owner}/{repo}/milestones/{milestone_number}/labels"
     ],
     listLabelsForRepo: ["GET /repos/{owner}/{repo}/labels"],
     listLabelsOnIssue: [
-      "GET /repos/{owner}/{repo}/issues/{issue_number}/labels",
-      {},
-      { renamedParameters: { number: "issue_number" } }
+      "GET /repos/{owner}/{repo}/issues/{issue_number}/labels"
     ],
     listMilestonesForRepo: ["GET /repos/{owner}/{repo}/milestones"],
-    lock: [
-      "PUT /repos/{owner}/{repo}/issues/{issue_number}/lock",
-      {},
-      { renamedParameters: { number: "issue_number" } }
-    ],
+    lock: ["PUT /repos/{owner}/{repo}/issues/{issue_number}/lock"],
     removeAssignees: [
-      "DELETE /repos/{owner}/{repo}/issues/{issue_number}/assignees",
-      {},
-      { renamedParameters: { number: "issue_number" } }
+      "DELETE /repos/{owner}/{repo}/issues/{issue_number}/assignees"
     ],
     removeLabel: [
-      "DELETE /repos/{owner}/{repo}/issues/{issue_number}/labels/{name}",
-      {},
-      { renamedParameters: { number: "issue_number" } }
+      "DELETE /repos/{owner}/{repo}/issues/{issue_number}/labels/{name}"
     ],
-    removeLabels: [
-      "DELETE /repos/{owner}/{repo}/issues/{issue_number}/labels",
-      {},
-      { renamedParameters: { number: "issue_number" } }
-    ],
-    replaceLabels: [
-      "PUT /repos/{owner}/{repo}/issues/{issue_number}/labels",
-      {},
-      { renamedParameters: { number: "issue_number" } }
-    ],
-    unlock: [
-      "DELETE /repos/{owner}/{repo}/issues/{issue_number}/lock",
-      {},
-      { renamedParameters: { number: "issue_number" } }
-    ],
-    update: [
-      "PATCH /repos/{owner}/{repo}/issues/{issue_number}",
-      {},
-      { renamedParameters: { number: "issue_number" } }
-    ],
+    removeLabels: ["DELETE /repos/{owner}/{repo}/issues/{issue_number}/labels"],
+    replaceLabels: ["PUT /repos/{owner}/{repo}/issues/{issue_number}/labels"],
+    unlock: ["DELETE /repos/{owner}/{repo}/issues/{issue_number}/lock"],
+    update: ["PATCH /repos/{owner}/{repo}/issues/{issue_number}"],
     updateComment: ["PATCH /repos/{owner}/{repo}/issues/comments/{comment_id}"],
     updateLabel: ["PATCH /repos/{owner}/{repo}/labels/{name}"],
     updateMilestone: [
-      "PATCH /repos/{owner}/{repo}/milestones/{milestone_number}",
-      {},
-      { renamedParameters: { number: "milestone_number" } }
+      "PATCH /repos/{owner}/{repo}/milestones/{milestone_number}"
     ]
   },
   licenses: {
     get: ["GET /licenses/{license}"],
     getForRepo: ["GET /repos/{owner}/{repo}/license"],
-    list: ["GET /licenses", {}, { renamed: ["licenses", "listCommonlyUsed"] }],
     listCommonlyUsed: ["GET /licenses"]
   },
   markdown: {
@@ -527,11 +454,6 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     getArchiveForAuthenticatedUser: [
       "GET /user/migrations/{migration_id}/archive",
       { mediaType: { previews: ["wyandotte"] } }
-    ],
-    getArchiveForOrg: [
-      "GET /orgs/{org}/migrations/{migration_id}/archive",
-      { mediaType: { previews: ["wyandotte"] } },
-      { renamed: ["migrations", "downloadArchiveForOrg"] }
     ],
     getCommitAuthors: ["GET /repos/{owner}/{repo}/import/authors"],
     getImportProgress: ["GET /repos/{owner}/{repo}/import"],
@@ -576,11 +498,6 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     updateImport: ["PATCH /repos/{owner}/{repo}/import"]
   },
   oauthAuthorizations: {
-    checkAuthorization: [
-      "GET /applications/{client_id}/tokens/{access_token}",
-      {},
-      { renamed: ["apps", "checkAuthorization"] }
-    ],
     createAuthorization: [
       "POST /authorizations",
       {},
@@ -637,16 +554,6 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
           "octokit.oauthAuthorizations.getOrCreateAuthorizationForAppAndFingerprint() is deprecated, see https://developer.github.com/v3/oauth_authorizations/#get-or-create-an-authorization-for-a-specific-app-and-fingerprint"
       }
     ],
-    getOrCreateAuthorizationForAppFingerprint: [
-      "PUT /authorizations/clients/{client_id}/{fingerprint}",
-      {},
-      {
-        renamed: [
-          "oauthAuthorizations",
-          "getOrCreateAuthorizationForAppAndFingerprint"
-        ]
-      }
-    ],
     listAuthorizations: [
       "GET /authorizations",
       {},
@@ -662,21 +569,6 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
         deprecated:
           "octokit.oauthAuthorizations.listGrants() is deprecated, see https://developer.github.com/v3/oauth_authorizations/#list-your-grants"
       }
-    ],
-    resetAuthorization: [
-      "POST /applications/{client_id}/tokens/{access_token}",
-      {},
-      { renamed: ["apps", "resetAuthorization"] }
-    ],
-    revokeAuthorizationForApplication: [
-      "DELETE /applications/{client_id}/tokens/{access_token}",
-      {},
-      { renamed: ["apps", "revokeAuthorizationForApplication"] }
-    ],
-    revokeGrantForApplication: [
-      "DELETE /applications/{client_id}/grants/{access_token}",
-      {},
-      { renamed: ["apps", "revokeGrantForApplication"] }
     ],
     updateAuthorization: [
       "PATCH /authorizations/{authorization_id}",
@@ -834,121 +726,55 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     ]
   },
   pulls: {
-    checkIfMerged: [
-      "GET /repos/{owner}/{repo}/pulls/{pull_number}/merge",
-      {},
-      { renamedParameters: { number: "pull_number" } }
-    ],
+    checkIfMerged: ["GET /repos/{owner}/{repo}/pulls/{pull_number}/merge"],
     create: ["POST /repos/{owner}/{repo}/pulls"],
-    createComment: [
-      "POST /repos/{owner}/{repo}/pulls/{pull_number}/comments",
-      {},
-      { renamedParameters: { number: "pull_number" } }
-    ],
-    createCommentReply: [
-      "POST /repos/{owner}/{repo}/pulls/{pull_number}/comments",
-      {},
-      {
-        renamed: ["pulls", "createComment"],
-        renamedParameters: { number: "pull_number" }
-      }
-    ],
-    createReview: [
-      "POST /repos/{owner}/{repo}/pulls/{pull_number}/reviews",
-      {},
-      { renamedParameters: { number: "pull_number" } }
-    ],
+    createComment: ["POST /repos/{owner}/{repo}/pulls/{pull_number}/comments"],
+    createReview: ["POST /repos/{owner}/{repo}/pulls/{pull_number}/reviews"],
     createReviewCommentReply: [
       "POST /repos/{owner}/{repo}/pulls/{pull_number}/comments/{comment_id}/replies"
     ],
     createReviewRequest: [
-      "POST /repos/{owner}/{repo}/pulls/{pull_number}/requested_reviewers",
-      {},
-      { renamedParameters: { number: "pull_number" } }
+      "POST /repos/{owner}/{repo}/pulls/{pull_number}/requested_reviewers"
     ],
     deleteComment: ["DELETE /repos/{owner}/{repo}/pulls/comments/{comment_id}"],
     deletePendingReview: [
-      "DELETE /repos/{owner}/{repo}/pulls/{pull_number}/reviews/{review_id}",
-      {},
-      { renamedParameters: { number: "pull_number" } }
+      "DELETE /repos/{owner}/{repo}/pulls/{pull_number}/reviews/{review_id}"
     ],
     deleteReviewRequest: [
-      "DELETE /repos/{owner}/{repo}/pulls/{pull_number}/requested_reviewers",
-      {},
-      { renamedParameters: { number: "pull_number" } }
+      "DELETE /repos/{owner}/{repo}/pulls/{pull_number}/requested_reviewers"
     ],
     dismissReview: [
-      "PUT /repos/{owner}/{repo}/pulls/{pull_number}/reviews/{review_id}/dismissals",
-      {},
-      { renamedParameters: { number: "pull_number" } }
+      "PUT /repos/{owner}/{repo}/pulls/{pull_number}/reviews/{review_id}/dismissals"
     ],
-    get: [
-      "GET /repos/{owner}/{repo}/pulls/{pull_number}",
-      {},
-      { renamedParameters: { number: "pull_number" } }
-    ],
+    get: ["GET /repos/{owner}/{repo}/pulls/{pull_number}"],
     getComment: ["GET /repos/{owner}/{repo}/pulls/comments/{comment_id}"],
     getCommentsForReview: [
-      "GET /repos/{owner}/{repo}/pulls/{pull_number}/reviews/{review_id}/comments",
-      {},
-      { renamedParameters: { number: "pull_number" } }
+      "GET /repos/{owner}/{repo}/pulls/{pull_number}/reviews/{review_id}/comments"
     ],
     getReview: [
-      "GET /repos/{owner}/{repo}/pulls/{pull_number}/reviews/{review_id}",
-      {},
-      { renamedParameters: { number: "pull_number" } }
+      "GET /repos/{owner}/{repo}/pulls/{pull_number}/reviews/{review_id}"
     ],
     list: ["GET /repos/{owner}/{repo}/pulls"],
-    listComments: [
-      "GET /repos/{owner}/{repo}/pulls/{pull_number}/comments",
-      {},
-      { renamedParameters: { number: "pull_number" } }
-    ],
+    listComments: ["GET /repos/{owner}/{repo}/pulls/{pull_number}/comments"],
     listCommentsForRepo: ["GET /repos/{owner}/{repo}/pulls/comments"],
-    listCommits: [
-      "GET /repos/{owner}/{repo}/pulls/{pull_number}/commits",
-      {},
-      { renamedParameters: { number: "pull_number" } }
-    ],
-    listFiles: [
-      "GET /repos/{owner}/{repo}/pulls/{pull_number}/files",
-      {},
-      { renamedParameters: { number: "pull_number" } }
-    ],
+    listCommits: ["GET /repos/{owner}/{repo}/pulls/{pull_number}/commits"],
+    listFiles: ["GET /repos/{owner}/{repo}/pulls/{pull_number}/files"],
     listReviewRequests: [
-      "GET /repos/{owner}/{repo}/pulls/{pull_number}/requested_reviewers",
-      {},
-      { renamedParameters: { number: "pull_number" } }
+      "GET /repos/{owner}/{repo}/pulls/{pull_number}/requested_reviewers"
     ],
-    listReviews: [
-      "GET /repos/{owner}/{repo}/pulls/{pull_number}/reviews",
-      {},
-      { renamedParameters: { number: "pull_number" } }
-    ],
-    merge: [
-      "PUT /repos/{owner}/{repo}/pulls/{pull_number}/merge",
-      {},
-      { renamedParameters: { number: "pull_number" } }
-    ],
+    listReviews: ["GET /repos/{owner}/{repo}/pulls/{pull_number}/reviews"],
+    merge: ["PUT /repos/{owner}/{repo}/pulls/{pull_number}/merge"],
     submitReview: [
-      "POST /repos/{owner}/{repo}/pulls/{pull_number}/reviews/{review_id}/events",
-      {},
-      { renamedParameters: { number: "pull_number" } }
+      "POST /repos/{owner}/{repo}/pulls/{pull_number}/reviews/{review_id}/events"
     ],
-    update: [
-      "PATCH /repos/{owner}/{repo}/pulls/{pull_number}",
-      {},
-      { renamedParameters: { number: "pull_number" } }
-    ],
+    update: ["PATCH /repos/{owner}/{repo}/pulls/{pull_number}"],
     updateBranch: [
       "PUT /repos/{owner}/{repo}/pulls/{pull_number}/update-branch",
       { mediaType: { previews: ["lydian"] } }
     ],
     updateComment: ["PATCH /repos/{owner}/{repo}/pulls/comments/{comment_id}"],
     updateReview: [
-      "PUT /repos/{owner}/{repo}/pulls/{pull_number}/reviews/{review_id}",
-      {},
-      { renamedParameters: { number: "pull_number" } }
+      "PUT /repos/{owner}/{repo}/pulls/{pull_number}/reviews/{review_id}"
     ]
   },
   rateLimit: { get: ["GET /rate_limit"] },
@@ -959,8 +785,7 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     ],
     createForIssue: [
       "POST /repos/{owner}/{repo}/issues/{issue_number}/reactions",
-      { mediaType: { previews: ["squirrel-girl"] } },
-      { renamedParameters: { number: "issue_number" } }
+      { mediaType: { previews: ["squirrel-girl"] } }
     ],
     createForIssueComment: [
       "POST /repos/{owner}/{repo}/issues/comments/{comment_id}/reactions",
@@ -969,16 +794,6 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     createForPullRequestReviewComment: [
       "POST /repos/{owner}/{repo}/pulls/comments/{comment_id}/reactions",
       { mediaType: { previews: ["squirrel-girl"] } }
-    ],
-    createForTeamDiscussion: [
-      "POST /teams/{team_id}/discussions/{discussion_number}/reactions",
-      { mediaType: { previews: ["squirrel-girl"] } },
-      { renamed: ["reactions", "createForTeamDiscussionLegacy"] }
-    ],
-    createForTeamDiscussionComment: [
-      "POST /teams/{team_id}/discussions/{discussion_number}/comments/{comment_number}/reactions",
-      { mediaType: { previews: ["squirrel-girl"] } },
-      { renamed: ["reactions", "createForTeamDiscussionCommentLegacy"] }
     ],
     createForTeamDiscussionCommentInOrg: [
       "POST /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}/reactions",
@@ -1014,8 +829,7 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     ],
     listForIssue: [
       "GET /repos/{owner}/{repo}/issues/{issue_number}/reactions",
-      { mediaType: { previews: ["squirrel-girl"] } },
-      { renamedParameters: { number: "issue_number" } }
+      { mediaType: { previews: ["squirrel-girl"] } }
     ],
     listForIssueComment: [
       "GET /repos/{owner}/{repo}/issues/comments/{comment_id}/reactions",
@@ -1024,16 +838,6 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     listForPullRequestReviewComment: [
       "GET /repos/{owner}/{repo}/pulls/comments/{comment_id}/reactions",
       { mediaType: { previews: ["squirrel-girl"] } }
-    ],
-    listForTeamDiscussion: [
-      "GET /teams/{team_id}/discussions/{discussion_number}/reactions",
-      { mediaType: { previews: ["squirrel-girl"] } },
-      { renamed: ["reactions", "listForTeamDiscussionLegacy"] }
-    ],
-    listForTeamDiscussionComment: [
-      "GET /teams/{team_id}/discussions/{discussion_number}/comments/{comment_number}/reactions",
-      { mediaType: { previews: ["squirrel-girl"] } },
-      { renamed: ["reactions", "listForTeamDiscussionCommentLegacy"] }
     ],
     listForTeamDiscussionCommentInOrg: [
       "GET /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}/reactions",
@@ -1090,20 +894,13 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     ],
     compareCommits: ["GET /repos/{owner}/{repo}/compare/{base}...{head}"],
     createCommitComment: [
-      "POST /repos/{owner}/{repo}/commits/{commit_sha}/comments",
-      {},
-      { renamedParameters: { sha: "commit_sha" } }
+      "POST /repos/{owner}/{repo}/commits/{commit_sha}/comments"
     ],
     createDeployment: ["POST /repos/{owner}/{repo}/deployments"],
     createDeploymentStatus: [
       "POST /repos/{owner}/{repo}/deployments/{deployment_id}/statuses"
     ],
     createDispatchEvent: ["POST /repos/{owner}/{repo}/dispatches"],
-    createFile: [
-      "PUT /repos/{owner}/{repo}/contents/{path}",
-      {},
-      { renamed: ["repos", "createOrUpdateFile"] }
-    ],
     createForAuthenticatedUser: ["POST /user/repos"],
     createFork: ["POST /repos/{owner}/{repo}/forks"],
     createHook: ["POST /repos/{owner}/{repo}/hooks"],
@@ -1167,11 +964,7 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
       "GET /repos/{owner}/{repo}/collaborators/{username}/permission"
     ],
     getCombinedStatusForRef: ["GET /repos/{owner}/{repo}/commits/{ref}/status"],
-    getCommit: [
-      "GET /repos/{owner}/{repo}/commits/{ref}",
-      {},
-      { renamedParameters: { commit_sha: "ref", sha: "ref" } }
-    ],
+    getCommit: ["GET /repos/{owner}/{repo}/commits/{ref}"],
     getCommitActivityStats: ["GET /repos/{owner}/{repo}/stats/commit_activity"],
     getCommitComment: ["GET /repos/{owner}/{repo}/comments/{comment_id}"],
     getContents: ["GET /repos/{owner}/{repo}/contents/{path}"],
@@ -1219,11 +1012,6 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     ],
     getViews: ["GET /repos/{owner}/{repo}/traffic/views"],
     list: ["GET /user/repos"],
-    listAppsWithAccessToProtectedBranch: [
-      "GET /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/apps",
-      {},
-      { renamed: ["repos", "getAppsWithAccessToProtectedBranch"] }
-    ],
     listAssetsForRelease: [
       "GET /repos/{owner}/{repo}/releases/{release_id}/assets"
     ],
@@ -1234,9 +1022,7 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     ],
     listCollaborators: ["GET /repos/{owner}/{repo}/collaborators"],
     listCommentsForCommit: [
-      "GET /repos/{owner}/{repo}/commits/{commit_sha}/comments",
-      {},
-      { renamedParameters: { ref: "commit_sha" } }
+      "GET /repos/{owner}/{repo}/commits/{commit_sha}/comments"
     ],
     listCommitComments: ["GET /repos/{owner}/{repo}/comments"],
     listCommits: ["GET /repos/{owner}/{repo}/commits"],
@@ -1258,16 +1044,6 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     listProtectedBranchRequiredStatusChecksContexts: [
       "GET /repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks/contexts"
     ],
-    listProtectedBranchTeamRestrictions: [
-      "GET /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams",
-      {},
-      { renamed: ["repos", "getTeamsWithAccessToProtectedBranch"] }
-    ],
-    listProtectedBranchUserRestrictions: [
-      "GET /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users",
-      {},
-      { renamed: ["repos", "getUsersWithAccessToProtectedBranch"] }
-    ],
     listPublic: ["GET /repositories"],
     listPullRequestsAssociatedWithCommit: [
       "GET /repos/{owner}/{repo}/commits/{commit_sha}/pulls",
@@ -1277,19 +1053,9 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     listStatusesForRef: ["GET /repos/{owner}/{repo}/commits/{ref}/statuses"],
     listTags: ["GET /repos/{owner}/{repo}/tags"],
     listTeams: ["GET /repos/{owner}/{repo}/teams"],
-    listTeamsWithAccessToProtectedBranch: [
-      "GET /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams",
-      {},
-      { renamed: ["repos", "getTeamsWithAccessToProtectedBranch"] }
-    ],
     listTopics: [
       "GET /repos/{owner}/{repo}/topics",
       { mediaType: { previews: ["mercy"] } }
-    ],
-    listUsersWithAccessToProtectedBranch: [
-      "GET /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users",
-      {},
-      { renamed: ["repos", "getUsersWithAccessToProtectedBranch"] }
     ],
     merge: ["POST /repos/{owner}/{repo}/merges"],
     pingHook: ["POST /repos/{owner}/{repo}/hooks/{hook_id}/pings"],
@@ -1355,11 +1121,6 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
       "PUT /repos/{owner}/{repo}/branches/{branch}/protection"
     ],
     updateCommitComment: ["PATCH /repos/{owner}/{repo}/comments/{comment_id}"],
-    updateFile: [
-      "PUT /repos/{owner}/{repo}/contents/{path}",
-      {},
-      { renamed: ["repos", "createOrUpdateFile"] }
-    ],
     updateHook: ["PATCH /repos/{owner}/{repo}/hooks/{hook_id}"],
     updateInformationAboutPagesSite: ["PUT /repos/{owner}/{repo}/pages"],
     updateInvitation: [
@@ -1383,11 +1144,6 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
   search: {
     code: ["GET /search/code"],
     commits: ["GET /search/commits", { mediaType: { previews: ["cloak"] } }],
-    issues: [
-      "GET /search/issues",
-      {},
-      { renamed: ["search", "issuesAndPullRequests"] }
-    ],
     issuesAndPullRequests: ["GET /search/issues"],
     labels: ["GET /search/labels"],
     repos: ["GET /search/repositories"],
@@ -1395,11 +1151,6 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     users: ["GET /search/users"]
   },
   teams: {
-    addMember: [
-      "PUT /teams/{team_id}/members/{username}",
-      {},
-      { renamed: ["teams", "addMemberLegacy"] }
-    ],
     addMemberLegacy: [
       "PUT /teams/{team_id}/members/{username}",
       {},
@@ -1407,11 +1158,6 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
         deprecated:
           "octokit.teams.addMemberLegacy() is deprecated, see https://developer.github.com/v3/teams/members/#add-team-member-legacy"
       }
-    ],
-    addOrUpdateMembership: [
-      "PUT /teams/{team_id}/memberships/{username}",
-      {},
-      { renamed: ["teams", "addOrUpdateMembershipLegacy"] }
     ],
     addOrUpdateMembershipInOrg: [
       "PUT /orgs/{org}/teams/{team_slug}/memberships/{username}"
@@ -1423,11 +1169,6 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
         deprecated:
           "octokit.teams.addOrUpdateMembershipLegacy() is deprecated, see https://developer.github.com/v3/teams/members/#add-or-update-team-membership-legacy"
       }
-    ],
-    addOrUpdateProject: [
-      "PUT /teams/{team_id}/projects/{project_id}",
-      { mediaType: { previews: ["inertia"] } },
-      { renamed: ["teams", "addOrUpdateProjectLegacy"] }
     ],
     addOrUpdateProjectInOrg: [
       "PUT /orgs/{org}/teams/{team_slug}/projects/{project_id}",
@@ -1441,11 +1182,6 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
           "octokit.teams.addOrUpdateProjectLegacy() is deprecated, see https://developer.github.com/v3/teams/#add-or-update-team-project-legacy"
       }
     ],
-    addOrUpdateRepo: [
-      "PUT /teams/{team_id}/repos/{owner}/{repo}",
-      {},
-      { renamed: ["teams", "addOrUpdateRepoLegacy"] }
-    ],
     addOrUpdateRepoInOrg: [
       "PUT /orgs/{org}/teams/{team_slug}/repos/{owner}/{repo}"
     ],
@@ -1456,11 +1192,6 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
         deprecated:
           "octokit.teams.addOrUpdateRepoLegacy() is deprecated, see https://developer.github.com/v3/teams/#add-or-update-team-repository-legacy"
       }
-    ],
-    checkManagesRepo: [
-      "GET /teams/{team_id}/repos/{owner}/{repo}",
-      {},
-      { renamed: ["teams", "checkManagesRepoLegacy"] }
     ],
     checkManagesRepoInOrg: [
       "GET /orgs/{org}/teams/{team_slug}/repos/{owner}/{repo}"
@@ -1474,16 +1205,6 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
       }
     ],
     create: ["POST /orgs/{org}/teams"],
-    createDiscussion: [
-      "POST /teams/{team_id}/discussions",
-      {},
-      { renamed: ["teams", "createDiscussionLegacy"] }
-    ],
-    createDiscussionComment: [
-      "POST /teams/{team_id}/discussions/{discussion_number}/comments",
-      {},
-      { renamed: ["teams", "createDiscussionCommentLegacy"] }
-    ],
     createDiscussionCommentInOrg: [
       "POST /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments"
     ],
@@ -1503,21 +1224,6 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
         deprecated:
           "octokit.teams.createDiscussionLegacy() is deprecated, see https://developer.github.com/v3/teams/discussions/#create-a-discussion-legacy"
       }
-    ],
-    delete: [
-      "DELETE /teams/{team_id}",
-      {},
-      { renamed: ["teams", "deleteLegacy"] }
-    ],
-    deleteDiscussion: [
-      "DELETE /teams/{team_id}/discussions/{discussion_number}",
-      {},
-      { renamed: ["teams", "deleteDiscussionLegacy"] }
-    ],
-    deleteDiscussionComment: [
-      "DELETE /teams/{team_id}/discussions/{discussion_number}/comments/{comment_number}",
-      {},
-      { renamed: ["teams", "deleteDiscussionCommentLegacy"] }
     ],
     deleteDiscussionCommentInOrg: [
       "DELETE /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}"
@@ -1550,18 +1256,7 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
           "octokit.teams.deleteLegacy() is deprecated, see https://developer.github.com/v3/teams/#delete-team-legacy"
       }
     ],
-    get: ["GET /teams/{team_id}", {}, { renamed: ["teams", "getLegacy"] }],
     getByName: ["GET /orgs/{org}/teams/{team_slug}"],
-    getDiscussion: [
-      "GET /teams/{team_id}/discussions/{discussion_number}",
-      {},
-      { renamed: ["teams", "getDiscussionLegacy"] }
-    ],
-    getDiscussionComment: [
-      "GET /teams/{team_id}/discussions/{discussion_number}/comments/{comment_number}",
-      {},
-      { renamed: ["teams", "getDiscussionCommentLegacy"] }
-    ],
     getDiscussionCommentInOrg: [
       "GET /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}"
     ],
@@ -1592,11 +1287,6 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
           "octokit.teams.getLegacy() is deprecated, see https://developer.github.com/v3/teams/#get-team-legacy"
       }
     ],
-    getMember: [
-      "GET /teams/{team_id}/members/{username}",
-      {},
-      { renamed: ["teams", "getMemberLegacy"] }
-    ],
     getMemberLegacy: [
       "GET /teams/{team_id}/members/{username}",
       {},
@@ -1604,11 +1294,6 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
         deprecated:
           "octokit.teams.getMemberLegacy() is deprecated, see https://developer.github.com/v3/teams/members/#get-team-member-legacy"
       }
-    ],
-    getMembership: [
-      "GET /teams/{team_id}/memberships/{username}",
-      {},
-      { renamed: ["teams", "getMembershipLegacy"] }
     ],
     getMembershipInOrg: [
       "GET /orgs/{org}/teams/{team_slug}/memberships/{username}"
@@ -1622,11 +1307,6 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
       }
     ],
     list: ["GET /orgs/{org}/teams"],
-    listChild: [
-      "GET /teams/{team_id}/teams",
-      {},
-      { renamed: ["teams", "listChildLegacy"] }
-    ],
     listChildInOrg: ["GET /orgs/{org}/teams/{team_slug}/teams"],
     listChildLegacy: [
       "GET /teams/{team_id}/teams",
@@ -1635,11 +1315,6 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
         deprecated:
           "octokit.teams.listChildLegacy() is deprecated, see https://developer.github.com/v3/teams/#list-child-teams-legacy"
       }
-    ],
-    listDiscussionComments: [
-      "GET /teams/{team_id}/discussions/{discussion_number}/comments",
-      {},
-      { renamed: ["teams", "listDiscussionCommentsLegacy"] }
     ],
     listDiscussionCommentsInOrg: [
       "GET /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments"
@@ -1652,11 +1327,6 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
           "octokit.teams.listDiscussionCommentsLegacy() is deprecated, see https://developer.github.com/v3/teams/discussion_comments/#list-comments-legacy"
       }
     ],
-    listDiscussions: [
-      "GET /teams/{team_id}/discussions",
-      {},
-      { renamed: ["teams", "listDiscussionsLegacy"] }
-    ],
     listDiscussionsInOrg: ["GET /orgs/{org}/teams/{team_slug}/discussions"],
     listDiscussionsLegacy: [
       "GET /teams/{team_id}/discussions",
@@ -1667,11 +1337,6 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
       }
     ],
     listForAuthenticatedUser: ["GET /user/teams"],
-    listMembers: [
-      "GET /teams/{team_id}/members",
-      {},
-      { renamed: ["teams", "listMembersLegacy"] }
-    ],
     listMembersInOrg: ["GET /orgs/{org}/teams/{team_slug}/members"],
     listMembersLegacy: [
       "GET /teams/{team_id}/members",
@@ -1680,11 +1345,6 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
         deprecated:
           "octokit.teams.listMembersLegacy() is deprecated, see https://developer.github.com/v3/teams/members/#list-team-members-legacy"
       }
-    ],
-    listPendingInvitations: [
-      "GET /teams/{team_id}/invitations",
-      {},
-      { renamed: ["teams", "listPendingInvitationsLegacy"] }
     ],
     listPendingInvitationsInOrg: [
       "GET /orgs/{org}/teams/{team_slug}/invitations"
@@ -1696,11 +1356,6 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
         deprecated:
           "octokit.teams.listPendingInvitationsLegacy() is deprecated, see https://developer.github.com/v3/teams/members/#list-pending-team-invitations-legacy"
       }
-    ],
-    listProjects: [
-      "GET /teams/{team_id}/projects",
-      { mediaType: { previews: ["inertia"] } },
-      { renamed: ["teams", "listProjectsLegacy"] }
     ],
     listProjectsInOrg: [
       "GET /orgs/{org}/teams/{team_slug}/projects",
@@ -1714,11 +1369,6 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
           "octokit.teams.listProjectsLegacy() is deprecated, see https://developer.github.com/v3/teams/#list-team-projects-legacy"
       }
     ],
-    listRepos: [
-      "GET /teams/{team_id}/repos",
-      {},
-      { renamed: ["teams", "listReposLegacy"] }
-    ],
     listReposInOrg: ["GET /orgs/{org}/teams/{team_slug}/repos"],
     listReposLegacy: [
       "GET /teams/{team_id}/repos",
@@ -1728,11 +1378,6 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
           "octokit.teams.listReposLegacy() is deprecated, see https://developer.github.com/v3/teams/#list-team-repos-legacy"
       }
     ],
-    removeMember: [
-      "DELETE /teams/{team_id}/members/{username}",
-      {},
-      { renamed: ["teams", "removeMemberLegacy"] }
-    ],
     removeMemberLegacy: [
       "DELETE /teams/{team_id}/members/{username}",
       {},
@@ -1740,11 +1385,6 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
         deprecated:
           "octokit.teams.removeMemberLegacy() is deprecated, see https://developer.github.com/v3/teams/members/#remove-team-member-legacy"
       }
-    ],
-    removeMembership: [
-      "DELETE /teams/{team_id}/memberships/{username}",
-      {},
-      { renamed: ["teams", "removeMembershipLegacy"] }
     ],
     removeMembershipInOrg: [
       "DELETE /orgs/{org}/teams/{team_slug}/memberships/{username}"
@@ -1757,11 +1397,6 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
           "octokit.teams.removeMembershipLegacy() is deprecated, see https://developer.github.com/v3/teams/members/#remove-team-membership-legacy"
       }
     ],
-    removeProject: [
-      "DELETE /teams/{team_id}/projects/{project_id}",
-      {},
-      { renamed: ["teams", "removeProjectLegacy"] }
-    ],
     removeProjectInOrg: [
       "DELETE /orgs/{org}/teams/{team_slug}/projects/{project_id}"
     ],
@@ -1772,11 +1407,6 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
         deprecated:
           "octokit.teams.removeProjectLegacy() is deprecated, see https://developer.github.com/v3/teams/#remove-team-project-legacy"
       }
-    ],
-    removeRepo: [
-      "DELETE /teams/{team_id}/repos/{owner}/{repo}",
-      {},
-      { renamed: ["teams", "removeRepoLegacy"] }
     ],
     removeRepoInOrg: [
       "DELETE /orgs/{org}/teams/{team_slug}/repos/{owner}/{repo}"
@@ -1789,11 +1419,6 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
           "octokit.teams.removeRepoLegacy() is deprecated, see https://developer.github.com/v3/teams/#remove-team-repository-legacy"
       }
     ],
-    reviewProject: [
-      "GET /teams/{team_id}/projects/{project_id}",
-      { mediaType: { previews: ["inertia"] } },
-      { renamed: ["teams", "reviewProjectLegacy"] }
-    ],
     reviewProjectInOrg: [
       "GET /orgs/{org}/teams/{team_slug}/projects/{project_id}",
       { mediaType: { previews: ["inertia"] } }
@@ -1805,21 +1430,6 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
         deprecated:
           "octokit.teams.reviewProjectLegacy() is deprecated, see https://developer.github.com/v3/teams/#review-a-team-project-legacy"
       }
-    ],
-    update: [
-      "PATCH /teams/{team_id}",
-      {},
-      { renamed: ["teams", "updateLegacy"] }
-    ],
-    updateDiscussion: [
-      "PATCH /teams/{team_id}/discussions/{discussion_number}",
-      {},
-      { renamed: ["teams", "updateDiscussionLegacy"] }
-    ],
-    updateDiscussionComment: [
-      "PATCH /teams/{team_id}/discussions/{discussion_number}/comments/{comment_number}",
-      {},
-      { renamed: ["teams", "updateDiscussionCommentLegacy"] }
     ],
     updateDiscussionCommentInOrg: [
       "PATCH /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}"
