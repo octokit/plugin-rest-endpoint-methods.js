@@ -34,16 +34,16 @@ export function endpointsToMethods(
 
       const scopeMethods = newMethods[scope] as EndpointMethods;
 
-      if (decorations) {
-        scopeMethods[methodName] = decorate(
-          octokit,
-          scope,
-          methodName,
-          endpointDefaults,
-          decorations
-        );
-        continue;
-      }
+      // if (decorations) {
+      //   scopeMethods[methodName] = decorate(
+      //     octokit,
+      //     scope,
+      //     methodName,
+      //     endpointDefaults,
+      //     decorations
+      //   );
+      //   continue;
+      // }
 
       scopeMethods[methodName] = octokit.request.defaults(endpointDefaults);
     }
@@ -52,53 +52,49 @@ export function endpointsToMethods(
   return newMethods as RestEndpointMethods;
 }
 
-function decorate(
-  octokit: Octokit,
-  scope: string,
-  methodName: string,
-  defaults: EndpointOptions,
-  decorations: EndpointDecorations
-) {
-  const requestWithDefaults = octokit.request.defaults(defaults);
+// NOTE: there are currently no deprecations. But we keep the code
+//       below for future reference
+// function decorate(
+//   octokit: Octokit,
+//   scope: string,
+//   methodName: string,
+//   defaults: EndpointOptions,
+//   decorations: EndpointDecorations
+// ) {
+//   const requestWithDefaults = octokit.request.defaults(defaults);
 
-  function withDeprecations(
-    ...args: [Route, RequestParameters?] | [EndpointOptions]
-  ) {
-    if (decorations.renamed) {
-      const [newScope, newMethodName] = decorations.renamed;
-      octokit.log.warn(
-        `octokit.${scope}.${methodName}() has been renamed to octokit.${newScope}.${newMethodName}()`
-      );
-    }
-
-    if (decorations.deprecated) {
-      octokit.log.warn(decorations.deprecated);
-    }
-
-    if (decorations.renamedParameters) {
-      // @ts-ignore https://github.com/microsoft/TypeScript/issues/25488
-      const options = requestWithDefaults.endpoint.merge(...args);
-
-      for (const [name, alias] of Object.entries(
-        decorations.renamedParameters
-      )) {
-        if (name in options) {
-          octokit.log.warn(
-            `"${name}" parameter is deprecated for "octokit.${scope}.${methodName}()". Use "${alias}" instead`
-          );
-          if (!(alias in options)) {
-            options[alias] = options[name];
-          }
-          delete options[name];
-        }
-      }
-
-      return requestWithDefaults(options);
-    }
-
-    // @ts-ignore https://github.com/microsoft/TypeScript/issues/25488
-    return requestWithDefaults(...args);
-  }
-
-  return Object.assign(withDeprecations, requestWithDefaults);
-}
+//   function withDeprecations(
+//     ...args: [Route, RequestParameters?] | [EndpointOptions]
+//   ) {
+//     if (decorations.renamed) {
+//       const [newScope, newMethodName] = decorations.renamed;
+//       octokit.log.warn(
+//         `octokit.${scope}.${methodName}() has been renamed to octokit.${newScope}.${newMethodName}()`
+//       );
+//     }
+//     if (decorations.deprecated) {
+//       octokit.log.warn(decorations.deprecated);
+//     }
+//     if (decorations.renamedParameters) {
+//       // @ts-ignore https://github.com/microsoft/TypeScript/issues/25488
+//       const options = requestWithDefaults.endpoint.merge(...args);
+//       for (const [name, alias] of Object.entries(
+//         decorations.renamedParameters
+//       )) {
+//         if (name in options) {
+//           octokit.log.warn(
+//             `"${name}" parameter is deprecated for "octokit.${scope}.${methodName}()". Use "${alias}" instead`
+//           );
+//           if (!(alias in options)) {
+//             options[alias] = options[name];
+//           }
+//           delete options[name];
+//         }
+//       }
+//       return requestWithDefaults(options);
+//     }
+//     // @ts-ignore https://github.com/microsoft/TypeScript/issues/25488
+//     return requestWithDefaults(...args);
+//   }
+//   return Object.assign(withDeprecations, requestWithDefaults);
+// }
