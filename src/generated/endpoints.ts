@@ -107,14 +107,6 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     checkAccountIsAssociatedWithAnyStubbed: [
       "GET /marketplace_listing/stubbed/accounts/{account_id}"
     ],
-    checkAuthorization: [
-      "GET /applications/{client_id}/tokens/{access_token}",
-      {},
-      {
-        deprecated:
-          "octokit.apps.checkAuthorization() is deprecated, see https://developer.github.com/v3/apps/oauth_applications/#check-an-authorization"
-      }
-    ],
     checkToken: [
       "POST /applications/{client_id}/token",
       { mediaType: { previews: ["doctor-strange"] } }
@@ -201,33 +193,9 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
       "DELETE /user/installations/{installation_id}/repositories/{repository_id}",
       { mediaType: { previews: ["machine-man"] } }
     ],
-    resetAuthorization: [
-      "POST /applications/{client_id}/tokens/{access_token}",
-      {},
-      {
-        deprecated:
-          "octokit.apps.resetAuthorization() is deprecated, see https://developer.github.com/v3/apps/oauth_applications/#reset-an-authorization"
-      }
-    ],
     resetToken: [
       "PATCH /applications/{client_id}/token",
       { mediaType: { previews: ["doctor-strange"] } }
-    ],
-    revokeAuthorizationForApplication: [
-      "DELETE /applications/{client_id}/tokens/{access_token}",
-      {},
-      {
-        deprecated:
-          "octokit.apps.revokeAuthorizationForApplication() is deprecated, see https://developer.github.com/v3/apps/oauth_applications/#revoke-an-authorization-for-an-application"
-      }
-    ],
-    revokeGrantForApplication: [
-      "DELETE /applications/{client_id}/grants/{access_token}",
-      {},
-      {
-        deprecated:
-          "octokit.apps.revokeGrantForApplication() is deprecated, see https://developer.github.com/v3/apps/oauth_applications/#revoke-a-grant-for-an-application"
-      }
     ],
     revokeInstallationToken: [
       "DELETE /installation/token",
@@ -496,88 +464,6 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
       { mediaType: { previews: ["wyandotte"] } }
     ],
     updateImport: ["PATCH /repos/{owner}/{repo}/import"]
-  },
-  oauthAuthorizations: {
-    createAuthorization: [
-      "POST /authorizations",
-      {},
-      {
-        deprecated:
-          "octokit.oauthAuthorizations.createAuthorization() is deprecated, see https://developer.github.com/v3/oauth_authorizations/#create-a-new-authorization"
-      }
-    ],
-    deleteAuthorization: [
-      "DELETE /authorizations/{authorization_id}",
-      {},
-      {
-        deprecated:
-          "octokit.oauthAuthorizations.deleteAuthorization() is deprecated, see https://developer.github.com/v3/oauth_authorizations/#delete-an-authorization"
-      }
-    ],
-    deleteGrant: [
-      "DELETE /applications/grants/{grant_id}",
-      {},
-      {
-        deprecated:
-          "octokit.oauthAuthorizations.deleteGrant() is deprecated, see https://developer.github.com/v3/oauth_authorizations/#delete-a-grant"
-      }
-    ],
-    getAuthorization: [
-      "GET /authorizations/{authorization_id}",
-      {},
-      {
-        deprecated:
-          "octokit.oauthAuthorizations.getAuthorization() is deprecated, see https://developer.github.com/v3/oauth_authorizations/#get-a-single-authorization"
-      }
-    ],
-    getGrant: [
-      "GET /applications/grants/{grant_id}",
-      {},
-      {
-        deprecated:
-          "octokit.oauthAuthorizations.getGrant() is deprecated, see https://developer.github.com/v3/oauth_authorizations/#get-a-single-grant"
-      }
-    ],
-    getOrCreateAuthorizationForApp: [
-      "PUT /authorizations/clients/{client_id}",
-      {},
-      {
-        deprecated:
-          "octokit.oauthAuthorizations.getOrCreateAuthorizationForApp() is deprecated, see https://developer.github.com/v3/oauth_authorizations/#get-or-create-an-authorization-for-a-specific-app"
-      }
-    ],
-    getOrCreateAuthorizationForAppAndFingerprint: [
-      "PUT /authorizations/clients/{client_id}/{fingerprint}",
-      {},
-      {
-        deprecated:
-          "octokit.oauthAuthorizations.getOrCreateAuthorizationForAppAndFingerprint() is deprecated, see https://developer.github.com/v3/oauth_authorizations/#get-or-create-an-authorization-for-a-specific-app-and-fingerprint"
-      }
-    ],
-    listAuthorizations: [
-      "GET /authorizations",
-      {},
-      {
-        deprecated:
-          "octokit.oauthAuthorizations.listAuthorizations() is deprecated, see https://developer.github.com/v3/oauth_authorizations/#list-your-authorizations"
-      }
-    ],
-    listGrants: [
-      "GET /applications/grants",
-      {},
-      {
-        deprecated:
-          "octokit.oauthAuthorizations.listGrants() is deprecated, see https://developer.github.com/v3/oauth_authorizations/#list-your-grants"
-      }
-    ],
-    updateAuthorization: [
-      "PATCH /authorizations/{authorization_id}",
-      {},
-      {
-        deprecated:
-          "octokit.oauthAuthorizations.updateAuthorization() is deprecated, see https://developer.github.com/v3/oauth_authorizations/#update-an-existing-authorization"
-      }
-    ]
   },
   orgs: {
     addOrUpdateMembership: ["PUT /orgs/{org}/memberships/{username}"],

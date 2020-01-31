@@ -12153,146 +12153,6 @@ type OrgsAddOrUpdateMembershipResponse = {
   url: string;
   user: OrgsAddOrUpdateMembershipResponseUser;
 };
-type OauthAuthorizationsUpdateAuthorizationResponseApp = {
-  client_id: string;
-  name: string;
-  url: string;
-};
-type OauthAuthorizationsUpdateAuthorizationResponse = {
-  app: OauthAuthorizationsUpdateAuthorizationResponseApp;
-  created_at: string;
-  fingerprint: string;
-  hashed_token: string;
-  id: number;
-  note: string;
-  note_url: string;
-  scopes: Array<string>;
-  token: string;
-  token_last_eight: string;
-  updated_at: string;
-  url: string;
-};
-type OauthAuthorizationsListGrantsResponseItemApp = {
-  client_id: string;
-  name: string;
-  url: string;
-};
-type OauthAuthorizationsListGrantsResponseItem = {
-  app: OauthAuthorizationsListGrantsResponseItemApp;
-  created_at: string;
-  id: number;
-  scopes: Array<string>;
-  updated_at: string;
-  url: string;
-};
-type OauthAuthorizationsListAuthorizationsResponseItemApp = {
-  client_id: string;
-  name: string;
-  url: string;
-};
-type OauthAuthorizationsListAuthorizationsResponseItem = {
-  app: OauthAuthorizationsListAuthorizationsResponseItemApp;
-  created_at: string;
-  fingerprint: string;
-  hashed_token: string;
-  id: number;
-  note: string;
-  note_url: string;
-  scopes: Array<string>;
-  token: string;
-  token_last_eight: string;
-  updated_at: string;
-  url: string;
-};
-type OauthAuthorizationsGetOrCreateAuthorizationForAppAndFingerprintResponseApp = {
-  client_id: string;
-  name: string;
-  url: string;
-};
-type OauthAuthorizationsGetOrCreateAuthorizationForAppAndFingerprintResponse = {
-  app: OauthAuthorizationsGetOrCreateAuthorizationForAppAndFingerprintResponseApp;
-  created_at: string;
-  fingerprint: string;
-  hashed_token: string;
-  id: number;
-  note: string;
-  note_url: string;
-  scopes: Array<string>;
-  token: string;
-  token_last_eight: string;
-  updated_at: string;
-  url: string;
-};
-type OauthAuthorizationsGetOrCreateAuthorizationForAppResponseApp = {
-  client_id: string;
-  name: string;
-  url: string;
-};
-type OauthAuthorizationsGetOrCreateAuthorizationForAppResponse = {
-  app: OauthAuthorizationsGetOrCreateAuthorizationForAppResponseApp;
-  created_at: string;
-  fingerprint: string;
-  hashed_token: string;
-  id: number;
-  note: string;
-  note_url: string;
-  scopes: Array<string>;
-  token: string;
-  token_last_eight: string;
-  updated_at: string;
-  url: string;
-};
-type OauthAuthorizationsGetGrantResponseApp = {
-  client_id: string;
-  name: string;
-  url: string;
-};
-type OauthAuthorizationsGetGrantResponse = {
-  app: OauthAuthorizationsGetGrantResponseApp;
-  created_at: string;
-  id: number;
-  scopes: Array<string>;
-  updated_at: string;
-  url: string;
-};
-type OauthAuthorizationsGetAuthorizationResponseApp = {
-  client_id: string;
-  name: string;
-  url: string;
-};
-type OauthAuthorizationsGetAuthorizationResponse = {
-  app: OauthAuthorizationsGetAuthorizationResponseApp;
-  created_at: string;
-  fingerprint: string;
-  hashed_token: string;
-  id: number;
-  note: string;
-  note_url: string;
-  scopes: Array<string>;
-  token: string;
-  token_last_eight: string;
-  updated_at: string;
-  url: string;
-};
-type OauthAuthorizationsCreateAuthorizationResponseApp = {
-  client_id: string;
-  name: string;
-  url: string;
-};
-type OauthAuthorizationsCreateAuthorizationResponse = {
-  app: OauthAuthorizationsCreateAuthorizationResponseApp;
-  created_at: string;
-  fingerprint: string;
-  hashed_token: string;
-  id: number;
-  note: string;
-  note_url: string;
-  scopes: Array<string>;
-  token: string;
-  token_last_eight: string;
-  updated_at: string;
-  url: string;
-};
 type MigrationsUpdateImportResponse = {
   authors_url: string;
   html_url: string;
@@ -18208,46 +18068,6 @@ type AppsResetTokenResponse = {
   url: string;
   user: AppsResetTokenResponseUser;
 };
-type AppsResetAuthorizationResponseUser = {
-  avatar_url: string;
-  events_url: string;
-  followers_url: string;
-  following_url: string;
-  gists_url: string;
-  gravatar_id: string;
-  html_url: string;
-  id: number;
-  login: string;
-  node_id: string;
-  organizations_url: string;
-  received_events_url: string;
-  repos_url: string;
-  site_admin: boolean;
-  starred_url: string;
-  subscriptions_url: string;
-  type: string;
-  url: string;
-};
-type AppsResetAuthorizationResponseApp = {
-  client_id: string;
-  name: string;
-  url: string;
-};
-type AppsResetAuthorizationResponse = {
-  app: AppsResetAuthorizationResponseApp;
-  created_at: string;
-  fingerprint: string;
-  hashed_token: string;
-  id: number;
-  note: string;
-  note_url: string;
-  scopes: Array<string>;
-  token: string;
-  token_last_eight: string;
-  updated_at: string;
-  url: string;
-  user: AppsResetAuthorizationResponseUser;
-};
 type AppsListReposResponseRepositoriesItemOwner = {
   avatar_url: string;
   events_url: string;
@@ -19176,46 +18996,6 @@ type AppsCheckTokenResponse = {
   updated_at: string;
   url: string;
   user: AppsCheckTokenResponseUser;
-};
-type AppsCheckAuthorizationResponseUser = {
-  avatar_url: string;
-  events_url: string;
-  followers_url: string;
-  following_url: string;
-  gists_url: string;
-  gravatar_id: string;
-  html_url: string;
-  id: number;
-  login: string;
-  node_id: string;
-  organizations_url: string;
-  received_events_url: string;
-  repos_url: string;
-  site_admin: boolean;
-  starred_url: string;
-  subscriptions_url: string;
-  type: string;
-  url: string;
-};
-type AppsCheckAuthorizationResponseApp = {
-  client_id: string;
-  name: string;
-  url: string;
-};
-type AppsCheckAuthorizationResponse = {
-  app: AppsCheckAuthorizationResponseApp;
-  created_at: string;
-  fingerprint: string;
-  hashed_token: string;
-  id: number;
-  note: string;
-  note_url: string;
-  scopes: Array<string>;
-  token: string;
-  token_last_eight: string;
-  updated_at: string;
-  url: string;
-  user: AppsCheckAuthorizationResponseUser;
 };
 type AppsCheckAccountIsAssociatedWithAnyStubbedResponseMarketplacePurchasePlan = {
   accounts_url: string;
@@ -20936,12 +20716,6 @@ type MigrationsListReposForOrgResponse = Array<
 type MigrationsListReposForUserResponse = Array<
   MigrationsListReposForUserResponseItem
 >;
-type OauthAuthorizationsListAuthorizationsResponse = Array<
-  OauthAuthorizationsListAuthorizationsResponseItem
->;
-type OauthAuthorizationsListGrantsResponse = Array<
-  OauthAuthorizationsListGrantsResponseItem
->;
 type OrgsListResponse = Array<OrgsListResponseItem>;
 type OrgsListBlockedUsersResponse = Array<OrgsListBlockedUsersResponseItem>;
 type OrgsListForAuthenticatedUserResponse = Array<
@@ -21352,6 +21126,10 @@ export type ActivityCheckStarringRepoParams = {
   owner: string;
   repo: string;
 };
+export type ActivityCheckWatchingRepoLegacyParams = {
+  owner: string;
+  repo: string;
+};
 export type ActivityDeleteRepoSubscriptionParams = {
   owner: string;
   repo: string;
@@ -21646,7 +21424,15 @@ export type ActivityStarRepoParams = {
   owner: string;
   repo: string;
 };
+export type ActivityStopWatchingRepoLegacyParams = {
+  owner: string;
+  repo: string;
+};
 export type ActivityUnstarRepoParams = {
+  owner: string;
+  repo: string;
+};
+export type ActivityWatchRepoLegacyParams = {
   owner: string;
   repo: string;
 };
@@ -21675,10 +21461,6 @@ export type AppsCheckAccountIsAssociatedWithAnyStubbedParams = {
    * Results per page (max 100)
    */
   per_page?: number;
-};
-export type AppsCheckAuthorizationParams = {
-  access_token: string;
-  client_id: string;
 };
 export type AppsCheckTokenParams = {
   /**
@@ -21868,23 +21650,11 @@ export type AppsRemoveRepoFromInstallationParams = {
   installation_id: number;
   repository_id: number;
 };
-export type AppsResetAuthorizationParams = {
-  access_token: string;
-  client_id: string;
-};
 export type AppsResetTokenParams = {
   /**
    * The OAuth access token used to authenticate to the GitHub API.
    */
   access_token?: string;
-  client_id: string;
-};
-export type AppsRevokeAuthorizationForApplicationParams = {
-  access_token: string;
-  client_id: string;
-};
-export type AppsRevokeGrantForApplicationParams = {
-  access_token: string;
   client_id: string;
 };
 export type ChecksCreateParams = {
@@ -23287,134 +23057,6 @@ export type MigrationsUpdateImportParams = {
    * The username to provide to the originating repository.
    */
   vcs_username?: string;
-};
-export type OauthAuthorizationsCreateAuthorizationParams = {
-  /**
-   * The 20 character OAuth app client key for which to create the token.
-   */
-  client_id?: string;
-  /**
-   * The 40 character OAuth app client secret for which to create the token.
-   */
-  client_secret?: string;
-  /**
-   * A unique string to distinguish an authorization from others created for the same client ID and user.
-   */
-  fingerprint?: string;
-  /**
-   * A note to remind you what the OAuth token is for. Tokens not associated with a specific OAuth application (i.e. personal access tokens) must have a unique note.
-   */
-  note: string;
-  /**
-   * A URL to remind you what app the OAuth token is for.
-   */
-  note_url?: string;
-  /**
-   * A list of scopes that this authorization is in.
-   */
-  scopes?: string[];
-};
-export type OauthAuthorizationsDeleteAuthorizationParams = {
-  authorization_id: number;
-};
-export type OauthAuthorizationsDeleteGrantParams = {
-  grant_id: number;
-};
-export type OauthAuthorizationsGetAuthorizationParams = {
-  authorization_id: number;
-};
-export type OauthAuthorizationsGetGrantParams = {
-  grant_id: number;
-};
-export type OauthAuthorizationsGetOrCreateAuthorizationForAppParams = {
-  client_id: string;
-  /**
-   * The 40 character OAuth app client secret associated with the client ID specified in the URL.
-   */
-  client_secret: string;
-  /**
-   * A unique string to distinguish an authorization from others created for the same client and user. If provided, this API is functionally equivalent to [Get-or-create an authorization for a specific app and fingerprint](https://developer.github.com/v3/oauth_authorizations/#get-or-create-an-authorization-for-a-specific-app-and-fingerprint).
-   */
-  fingerprint?: string;
-  /**
-   * A note to remind you what the OAuth token is for.
-   */
-  note?: string;
-  /**
-   * A URL to remind you what app the OAuth token is for.
-   */
-  note_url?: string;
-  /**
-   * A list of scopes that this authorization is in.
-   */
-  scopes?: string[];
-};
-export type OauthAuthorizationsGetOrCreateAuthorizationForAppAndFingerprintParams = {
-  client_id: string;
-  /**
-   * The 40 character OAuth app client secret associated with the client ID specified in the URL.
-   */
-  client_secret: string;
-  fingerprint: string;
-  /**
-   * A note to remind you what the OAuth token is for.
-   */
-  note?: string;
-  /**
-   * A URL to remind you what app the OAuth token is for.
-   */
-  note_url?: string;
-  /**
-   * A list of scopes that this authorization is in.
-   */
-  scopes?: string[];
-};
-export type OauthAuthorizationsListAuthorizationsParams = {
-  /**
-   * Page number of the results to fetch.
-   */
-  page?: number;
-  /**
-   * Results per page (max 100)
-   */
-  per_page?: number;
-};
-export type OauthAuthorizationsListGrantsParams = {
-  /**
-   * Page number of the results to fetch.
-   */
-  page?: number;
-  /**
-   * Results per page (max 100)
-   */
-  per_page?: number;
-};
-export type OauthAuthorizationsUpdateAuthorizationParams = {
-  /**
-   * A list of scopes to add to this authorization.
-   */
-  add_scopes?: string[];
-  authorization_id: number;
-  /**
-   * A unique string to distinguish an authorization from others created for the same client ID and user.
-   */
-  fingerprint?: string;
-  /**
-   * A note to remind you what the OAuth token is for. Tokens not associated with a specific OAuth application (i.e. personal access tokens) must have a unique note.
-   */
-  note?: string;
-  /**
-   * A URL to remind you what app the OAuth token is for.
-   */
-  note_url?: string;
-  /**
-   * A list of scopes to remove from this authorization.
-   */
-  remove_scopes?: string[];
-  /**
-   * Replaces the authorization scopes with these.
-   */
-  scopes?: string[];
 };
 export type OrgsAddOrUpdateMembershipParams = {
   org: string;
@@ -27913,6 +27555,16 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface;
     };
     /**
+     * Requires for the user to be authenticated.
+     */
+    checkWatchingRepoLegacy: {
+      (
+        params?: RequestParameters & ActivityCheckWatchingRepoLegacyParams
+      ): Promise<AnyResponse>;
+
+      endpoint: EndpointInterface;
+    };
+    /**
      * This endpoint should only be used to stop watching a repository. To control whether or not you wish to receive notifications from a repository, [set the repository's subscription manually](https://developer.github.com/v3/activity/watching/#set-a-repository-subscription).
      */
     deleteRepoSubscription: {
@@ -28208,8 +27860,30 @@ export type RestEndpointMethods = {
     /**
      * Requires for the user to be authenticated.
      */
+    stopWatchingRepoLegacy: {
+      (
+        params?: RequestParameters & ActivityStopWatchingRepoLegacyParams
+      ): Promise<AnyResponse>;
+
+      endpoint: EndpointInterface;
+    };
+    /**
+     * Requires for the user to be authenticated.
+     */
     unstarRepo: {
       (params?: RequestParameters & ActivityUnstarRepoParams): Promise<
+        AnyResponse
+      >;
+
+      endpoint: EndpointInterface;
+    };
+    /**
+     * Requires the user to be authenticated.
+     *
+     * Note that you'll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see "[HTTP verbs](https://developer.github.com/v3/#http-verbs)."
+     */
+    watchRepoLegacy: {
+      (params?: RequestParameters & ActivityWatchRepoLegacyParams): Promise<
         AnyResponse
       >;
 
@@ -28252,19 +27926,6 @@ export type RestEndpointMethods = {
           AppsCheckAccountIsAssociatedWithAnyStubbedParams
       ): Promise<
         OctokitResponse<AppsCheckAccountIsAssociatedWithAnyStubbedResponse>
-      >;
-
-      endpoint: EndpointInterface;
-    };
-    /**
-     * **Deprecation Notice:** GitHub will replace and discontinue OAuth endpoints containing `access_token` in the path parameter. We are introducing new endpoints that allow you to securely manage tokens for OAuth Apps by using `access_token` as an input parameter. For more information, see the [blog post](https://developer.github.com/changes/2019-11-05-deprecated-passwords-and-authorizations-api).
-     *
-     * OAuth applications can use a special API method for checking OAuth token validity without exceeding the normal rate limits for failed login attempts. Authentication works differently with this particular endpoint. You must use [Basic Authentication](https://developer.github.com/v3/auth#basic-authentication) when accessing this endpoint, using the OAuth application's `client_id` and `client_secret` as the username and password. Invalid tokens will return `404 NOT FOUND`.
-     * @deprecated octokit.apps.checkAuthorization() is deprecated, see https://developer.github.com/v3/apps/oauth_applications/#check-an-authorization
-     */
-    checkAuthorization: {
-      (params?: RequestParameters & AppsCheckAuthorizationParams): Promise<
-        OctokitResponse<AppsCheckAuthorizationResponse>
       >;
 
       endpoint: EndpointInterface;
@@ -28575,53 +28236,12 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface;
     };
     /**
-     * **Deprecation Notice:** GitHub will replace and discontinue OAuth endpoints containing `access_token` in the path parameter. We are introducing new endpoints that allow you to securely manage tokens for OAuth Apps by using `access_token` as an input parameter. For more information, see the [blog post](https://developer.github.com/changes/2019-11-05-deprecated-passwords-and-authorizations-api).
-     *
-     * OAuth applications can use this API method to reset a valid OAuth token without end-user involvement. Applications must save the "token" property in the response because changes take effect immediately. You must use [Basic Authentication](https://developer.github.com/v3/auth#basic-authentication) when accessing this endpoint, using the OAuth application's `client_id` and `client_secret` as the username and password. Invalid tokens will return `404 NOT FOUND`.
-     * @deprecated octokit.apps.resetAuthorization() is deprecated, see https://developer.github.com/v3/apps/oauth_applications/#reset-an-authorization
-     */
-    resetAuthorization: {
-      (params?: RequestParameters & AppsResetAuthorizationParams): Promise<
-        OctokitResponse<AppsResetAuthorizationResponse>
-      >;
-
-      endpoint: EndpointInterface;
-    };
-    /**
      * OAuth applications can use this API method to reset a valid OAuth token without end-user involvement. Applications must save the "token" property in the response because changes take effect immediately. You must use [Basic Authentication](https://developer.github.com/v3/auth#basic-authentication) when accessing this endpoint, using the OAuth application's `client_id` and `client_secret` as the username and password. Invalid tokens will return `404 NOT FOUND`.
      */
     resetToken: {
       (params?: RequestParameters & AppsResetTokenParams): Promise<
         OctokitResponse<AppsResetTokenResponse>
       >;
-
-      endpoint: EndpointInterface;
-    };
-    /**
-     * **Deprecation Notice:** GitHub will replace and discontinue OAuth endpoints containing `access_token` in the path parameter. We are introducing new endpoints that allow you to securely manage tokens for OAuth Apps by using `access_token` as an input parameter. For more information, see the [blog post](https://developer.github.com/changes/2019-11-05-deprecated-passwords-and-authorizations-api).
-     *
-     * OAuth application owners can revoke a single token for an OAuth application. You must use [Basic Authentication](https://developer.github.com/v3/auth#basic-authentication) when accessing this endpoint, using the OAuth application's `client_id` and `client_secret` as the username and password.
-     * @deprecated octokit.apps.revokeAuthorizationForApplication() is deprecated, see https://developer.github.com/v3/apps/oauth_applications/#revoke-an-authorization-for-an-application
-     */
-    revokeAuthorizationForApplication: {
-      (
-        params?: RequestParameters & AppsRevokeAuthorizationForApplicationParams
-      ): Promise<AnyResponse>;
-
-      endpoint: EndpointInterface;
-    };
-    /**
-     * **Deprecation Notice:** GitHub will replace and discontinue OAuth endpoints containing `access_token` in the path parameter. We are introducing new endpoints that allow you to securely manage tokens for OAuth Apps by using `access_token` as an input parameter. For more information, see the [blog post](https://developer.github.com/changes/2019-11-05-deprecated-passwords-and-authorizations-api).
-     *
-     * OAuth application owners can revoke a grant for their OAuth application and a specific user. You must use [Basic Authentication](https://developer.github.com/v3/auth#basic-authentication) when accessing this endpoint, using the OAuth application's `client_id` and `client_secret` as the username and password. You must also provide a valid token as `:access_token` and the grant for the token's owner will be deleted.
-     *
-     * Deleting an OAuth application's grant will also delete all OAuth tokens associated with the application for the user. Once deleted, the application will have no access to the user's account and will no longer be listed on [the Applications settings page under "Authorized OAuth Apps" on GitHub](https://github.com/settings/applications#authorized).
-     * @deprecated octokit.apps.revokeGrantForApplication() is deprecated, see https://developer.github.com/v3/apps/oauth_applications/#revoke-a-grant-for-an-application
-     */
-    revokeGrantForApplication: {
-      (
-        params?: RequestParameters & AppsRevokeGrantForApplicationParams
-      ): Promise<AnyResponse>;
 
       endpoint: EndpointInterface;
     };
@@ -30035,169 +29655,6 @@ export type RestEndpointMethods = {
     updateImport: {
       (params?: RequestParameters & MigrationsUpdateImportParams): Promise<
         OctokitResponse<MigrationsUpdateImportResponse>
-      >;
-
-      endpoint: EndpointInterface;
-    };
-  };
-  oauthAuthorizations: {
-    /**
-     * **Deprecation Notice:** GitHub will discontinue the [OAuth Authorizations API](https://developer.github.com/v3/oauth_authorizations/), which is used by integrations to create personal access tokens and OAuth tokens, and you must now create these tokens using our [web application flow](https://developer.github.com/apps/building-oauth-apps/authorizing-oauth-apps/#web-application-flow). For more information, see the [blog post](https://developer.github.com/changes/2019-11-05-deprecated-passwords-and-authorizations-api).
-     *
-     * **Warning:** Apps must use the [web application flow](https://developer.github.com/apps/building-oauth-apps/authorizing-oauth-apps/#web-application-flow) to obtain OAuth tokens that work with GitHub SAML organizations. OAuth tokens created using the Authorizations API will be unable to access GitHub SAML organizations. For more information, see the [blog post](https://developer.github.com/changes/2019-11-05-deprecated-passwords-and-authorizations-api).
-     *
-     * Creates OAuth tokens using [Basic Authentication](https://developer.github.com/v3/auth#basic-authentication). If you have two-factor authentication setup, Basic Authentication for this endpoint requires that you use a one-time password (OTP) and your username and password instead of tokens. For more information, see "[Working with two-factor authentication](https://developer.github.com/v3/auth/#working-with-two-factor-authentication)."
-     *
-     * To create tokens for a particular OAuth application using this endpoint, you must authenticate as the user you want to create an authorization for and provide the app's client ID and secret, found on your OAuth application's settings page. If your OAuth application intends to create multiple tokens for one user, use `fingerprint` to differentiate between them.
-     *
-     * You can also create tokens on GitHub from the [personal access tokens settings](https://github.com/settings/tokens) page. Read more about these tokens in [the GitHub Help documentation](https://help.github.com/articles/creating-an-access-token-for-command-line-use).
-     *
-     * Organizations that enforce SAML SSO require personal access tokens to be whitelisted. Read more about whitelisting tokens in [the GitHub Help documentation](https://help.github.com/articles/about-identity-and-access-management-with-saml-single-sign-on).
-     * @deprecated octokit.oauthAuthorizations.createAuthorization() is deprecated, see https://developer.github.com/v3/oauth_authorizations/#create-a-new-authorization
-     */
-    createAuthorization: {
-      (
-        params?: RequestParameters &
-          OauthAuthorizationsCreateAuthorizationParams
-      ): Promise<
-        OctokitResponse<OauthAuthorizationsCreateAuthorizationResponse>
-      >;
-
-      endpoint: EndpointInterface;
-    };
-    /**
-     * **Deprecation Notice:** GitHub will discontinue the [OAuth Authorizations API](https://developer.github.com/v3/oauth_authorizations/), which is used by integrations to create personal access tokens and OAuth tokens, and you must now create these tokens using our [web application flow](https://developer.github.com/apps/building-oauth-apps/authorizing-oauth-apps/#web-application-flow). For more information, see the [blog post](https://developer.github.com/changes/2019-11-05-deprecated-passwords-and-authorizations-api).
-     * @deprecated octokit.oauthAuthorizations.deleteAuthorization() is deprecated, see https://developer.github.com/v3/oauth_authorizations/#delete-an-authorization
-     */
-    deleteAuthorization: {
-      (
-        params?: RequestParameters &
-          OauthAuthorizationsDeleteAuthorizationParams
-      ): Promise<AnyResponse>;
-
-      endpoint: EndpointInterface;
-    };
-    /**
-     * **Deprecation Notice:** GitHub will discontinue the [OAuth Authorizations API](https://developer.github.com/v3/oauth_authorizations/), which is used by integrations to create personal access tokens and OAuth tokens, and you must now create these tokens using our [web application flow](https://developer.github.com/apps/building-oauth-apps/authorizing-oauth-apps/#web-application-flow). For more information, see the [blog post](https://developer.github.com/changes/2019-11-05-deprecated-passwords-and-authorizations-api).
-     *
-     * Deleting an OAuth application's grant will also delete all OAuth tokens associated with the application for your user. Once deleted, the application has no access to your account and is no longer listed on [the application authorizations settings screen within GitHub](https://github.com/settings/applications#authorized).
-     * @deprecated octokit.oauthAuthorizations.deleteGrant() is deprecated, see https://developer.github.com/v3/oauth_authorizations/#delete-a-grant
-     */
-    deleteGrant: {
-      (
-        params?: RequestParameters & OauthAuthorizationsDeleteGrantParams
-      ): Promise<AnyResponse>;
-
-      endpoint: EndpointInterface;
-    };
-    /**
-     * **Deprecation Notice:** GitHub will discontinue the [OAuth Authorizations API](https://developer.github.com/v3/oauth_authorizations/), which is used by integrations to create personal access tokens and OAuth tokens, and you must now create these tokens using our [web application flow](https://developer.github.com/apps/building-oauth-apps/authorizing-oauth-apps/#web-application-flow). For more information, see the [blog post](https://developer.github.com/changes/2019-11-05-deprecated-passwords-and-authorizations-api).
-     * @deprecated octokit.oauthAuthorizations.getAuthorization() is deprecated, see https://developer.github.com/v3/oauth_authorizations/#get-a-single-authorization
-     */
-    getAuthorization: {
-      (
-        params?: RequestParameters & OauthAuthorizationsGetAuthorizationParams
-      ): Promise<OctokitResponse<OauthAuthorizationsGetAuthorizationResponse>>;
-
-      endpoint: EndpointInterface;
-    };
-    /**
-     * **Deprecation Notice:** GitHub will discontinue the [OAuth Authorizations API](https://developer.github.com/v3/oauth_authorizations/), which is used by integrations to create personal access tokens and OAuth tokens, and you must now create these tokens using our [web application flow](https://developer.github.com/apps/building-oauth-apps/authorizing-oauth-apps/#web-application-flow). For more information, see the [blog post](https://developer.github.com/changes/2019-11-05-deprecated-passwords-and-authorizations-api).
-     * @deprecated octokit.oauthAuthorizations.getGrant() is deprecated, see https://developer.github.com/v3/oauth_authorizations/#get-a-single-grant
-     */
-    getGrant: {
-      (params?: RequestParameters & OauthAuthorizationsGetGrantParams): Promise<
-        OctokitResponse<OauthAuthorizationsGetGrantResponse>
-      >;
-
-      endpoint: EndpointInterface;
-    };
-    /**
-     * **Deprecation Notice:** GitHub will discontinue the [OAuth Authorizations API](https://developer.github.com/v3/oauth_authorizations/), which is used by integrations to create personal access tokens and OAuth tokens, and you must now create these tokens using our [web application flow](https://developer.github.com/apps/building-oauth-apps/authorizing-oauth-apps/#web-application-flow). For more information, see the [blog post](https://developer.github.com/changes/2019-11-05-deprecated-passwords-and-authorizations-api).
-     *
-     * **Warning:** Apps must use the [web application flow](https://developer.github.com/apps/building-oauth-apps/authorizing-oauth-apps/#web-application-flow) to obtain OAuth tokens that work with GitHub SAML organizations. OAuth tokens created using the Authorizations API will be unable to access GitHub SAML organizations. For more information, see the [blog post](https://developer.github.com/changes/2019-11-05-deprecated-passwords-and-authorizations-api).
-     *
-     * Creates a new authorization for the specified OAuth application, only if an authorization for that application doesn't already exist for the user. The URL includes the 20 character client ID for the OAuth app that is requesting the token. It returns the user's existing authorization for the application if one is present. Otherwise, it creates and returns a new one.
-     *
-     * If you have two-factor authentication setup, Basic Authentication for this endpoint requires that you use a one-time password (OTP) and your username and password instead of tokens. For more information, see "[Working with two-factor authentication](https://developer.github.com/v3/auth/#working-with-two-factor-authentication)."
-     *
-     * **Deprecation Notice:** GitHub will discontinue the [OAuth Authorizations API](https://developer.github.com/v3/oauth_authorizations/), which is used by integrations to create personal access tokens and OAuth tokens, and you must now create these tokens using our [web application flow](https://developer.github.com/apps/building-oauth-apps/authorizing-oauth-apps/#web-application-flow). For more information, see the [blog post](https://developer.github.com/changes/2019-11-05-deprecated-passwords-and-authorizations-api).
-     * @deprecated octokit.oauthAuthorizations.getOrCreateAuthorizationForApp() is deprecated, see https://developer.github.com/v3/oauth_authorizations/#get-or-create-an-authorization-for-a-specific-app
-     */
-    getOrCreateAuthorizationForApp: {
-      (
-        params?: RequestParameters &
-          OauthAuthorizationsGetOrCreateAuthorizationForAppParams
-      ): Promise<
-        OctokitResponse<
-          OauthAuthorizationsGetOrCreateAuthorizationForAppResponse
-        >
-      >;
-
-      endpoint: EndpointInterface;
-    };
-    /**
-     * **Deprecation Notice:** GitHub will discontinue the [OAuth Authorizations API](https://developer.github.com/v3/oauth_authorizations/), which is used by integrations to create personal access tokens and OAuth tokens, and you must now create these tokens using our [web application flow](https://developer.github.com/apps/building-oauth-apps/authorizing-oauth-apps/#web-application-flow). For more information, see the [blog post](https://developer.github.com/changes/2019-11-05-deprecated-passwords-and-authorizations-api).
-     *
-     * **Warning:** Apps must use the [web application flow](https://developer.github.com/apps/building-oauth-apps/authorizing-oauth-apps/#web-application-flow) to obtain OAuth tokens that work with GitHub SAML organizations. OAuth tokens created using the Authorizations API will be unable to access GitHub SAML organizations. For more information, see the [blog post](https://developer.github.com/changes/2019-11-05-deprecated-passwords-and-authorizations-api).
-     *
-     * This method will create a new authorization for the specified OAuth application, only if an authorization for that application and fingerprint do not already exist for the user. The URL includes the 20 character client ID for the OAuth app that is requesting the token. `fingerprint` is a unique string to distinguish an authorization from others created for the same client ID and user. It returns the user's existing authorization for the application if one is present. Otherwise, it creates and returns a new one.
-     *
-     * If you have two-factor authentication setup, Basic Authentication for this endpoint requires that you use a one-time password (OTP) and your username and password instead of tokens. For more information, see "[Working with two-factor authentication](https://developer.github.com/v3/auth/#working-with-two-factor-authentication)."
-     * @deprecated octokit.oauthAuthorizations.getOrCreateAuthorizationForAppAndFingerprint() is deprecated, see https://developer.github.com/v3/oauth_authorizations/#get-or-create-an-authorization-for-a-specific-app-and-fingerprint
-     */
-    getOrCreateAuthorizationForAppAndFingerprint: {
-      (
-        params?: RequestParameters &
-          OauthAuthorizationsGetOrCreateAuthorizationForAppAndFingerprintParams
-      ): Promise<
-        OctokitResponse<
-          OauthAuthorizationsGetOrCreateAuthorizationForAppAndFingerprintResponse
-        >
-      >;
-
-      endpoint: EndpointInterface;
-    };
-    /**
-     * **Deprecation Notice:** GitHub will discontinue the [OAuth Authorizations API](https://developer.github.com/v3/oauth_authorizations/), which is used by integrations to create personal access tokens and OAuth tokens, and you must now create these tokens using our [web application flow](https://developer.github.com/apps/building-oauth-apps/authorizing-oauth-apps/#web-application-flow). For more information, see the [blog post](https://developer.github.com/changes/2019-11-05-deprecated-passwords-and-authorizations-api).
-     * @deprecated octokit.oauthAuthorizations.listAuthorizations() is deprecated, see https://developer.github.com/v3/oauth_authorizations/#list-your-authorizations
-     */
-    listAuthorizations: {
-      (
-        params?: RequestParameters & OauthAuthorizationsListAuthorizationsParams
-      ): Promise<
-        OctokitResponse<OauthAuthorizationsListAuthorizationsResponse>
-      >;
-
-      endpoint: EndpointInterface;
-    };
-    /**
-     * **Deprecation Notice:** GitHub will discontinue the [OAuth Authorizations API](https://developer.github.com/v3/oauth_authorizations/), which is used by integrations to create personal access tokens and OAuth tokens, and you must now create these tokens using our [web application flow](https://developer.github.com/apps/building-oauth-apps/authorizing-oauth-apps/#web-application-flow). For more information, see the [blog post](https://developer.github.com/changes/2019-11-05-deprecated-passwords-and-authorizations-api).
-     *
-     * You can use this API to list the set of OAuth applications that have been granted access to your account. Unlike the [list your authorizations](https://developer.github.com/v3/oauth_authorizations/#list-your-authorizations) API, this API does not manage individual tokens. This API will return one entry for each OAuth application that has been granted access to your account, regardless of the number of tokens an application has generated for your user. The list of OAuth applications returned matches what is shown on [the application authorizations settings screen within GitHub](https://github.com/settings/applications#authorized). The `scopes` returned are the union of scopes authorized for the application. For example, if an application has one token with `repo` scope and another token with `user` scope, the grant will return `["repo", "user"]`.
-     * @deprecated octokit.oauthAuthorizations.listGrants() is deprecated, see https://developer.github.com/v3/oauth_authorizations/#list-your-grants
-     */
-    listGrants: {
-      (
-        params?: RequestParameters & OauthAuthorizationsListGrantsParams
-      ): Promise<OctokitResponse<OauthAuthorizationsListGrantsResponse>>;
-
-      endpoint: EndpointInterface;
-    };
-    /**
-     * **Deprecation Notice:** GitHub will discontinue the [OAuth Authorizations API](https://developer.github.com/v3/oauth_authorizations/), which is used by integrations to create personal access tokens and OAuth tokens, and you must now create these tokens using our [web application flow](https://developer.github.com/apps/building-oauth-apps/authorizing-oauth-apps/#web-application-flow). For more information, see the [blog post](https://developer.github.com/changes/2019-11-05-deprecated-passwords-and-authorizations-api).
-     *
-     * If you have two-factor authentication setup, Basic Authentication for this endpoint requires that you use a one-time password (OTP) and your username and password instead of tokens. For more information, see "[Working with two-factor authentication](https://developer.github.com/v3/auth/#working-with-two-factor-authentication)."
-     *
-     * You can only send one of these scope keys at a time.
-     * @deprecated octokit.oauthAuthorizations.updateAuthorization() is deprecated, see https://developer.github.com/v3/oauth_authorizations/#update-an-existing-authorization
-     */
-    updateAuthorization: {
-      (
-        params?: RequestParameters &
-          OauthAuthorizationsUpdateAuthorizationParams
-      ): Promise<
-        OctokitResponse<OauthAuthorizationsUpdateAuthorizationResponse>
       >;
 
       endpoint: EndpointInterface;
