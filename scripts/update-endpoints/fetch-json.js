@@ -10,7 +10,7 @@ if (!process.env.VERSION) {
 
 const QUERY = `
   query ($version: String!, $ignoreChangesBefore: String!) {
-    endpoints(version: $version, ignoreChangesBefore: $ignoreChangesBefore, filter: { isLegacy: false, isGithubCloudOnly: false }) {
+    endpoints(version: $version, ignoreChangesBefore: $ignoreChangesBefore, filter: { isDeprecated: false, isGithubCloudOnly: false }) {
       name
       scope(format: CAMELCASE)
       id(format: CAMELCASE)
