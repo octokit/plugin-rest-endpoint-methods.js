@@ -39,7 +39,7 @@
     "@types/jest": "^25.1.0",
     "@types/node": "^13.1.0",
     "fetch-mock": "^8.0.0",
-    "jest": "^24.9.0",
+    "jest": "^25.1.0",
     "lodash.camelcase": "^4.3.0",
     "lodash.set": "^4.3.2",
     "lodash.upperfirst": "^4.3.1",
