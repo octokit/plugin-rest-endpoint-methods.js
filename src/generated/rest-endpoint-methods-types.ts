@@ -30712,8 +30712,27 @@ export type ReposUpdateReleaseAssetParams = {
   owner: string;
   repo: string;
 };
-export type ReposUploadReleaseAssetParams = {
+export type ReposUploadReleaseAssetParamsDeprecatedFile = {
+  /**
+   * @deprecated "file" parameter renamed to "data"
+   */
   file: string | object;
+  headers: ReposUploadReleaseAssetParamsHeaders;
+  /**
+   * An alternate short description of the asset. Used in place of the filename. This should be set in a URI query parameter.
+   */
+  label?: string;
+  /**
+   * The file name of the asset. This should be set in a URI query parameter.
+   */
+  name: string;
+  /**
+   * The `upload_url` key returned from creating or getting a release
+   */
+  url: string;
+};
+export type ReposUploadReleaseAssetParams = {
+  data: string | object;
   headers: ReposUploadReleaseAssetParamsHeaders;
   /**
    * An alternate short description of the asset. Used in place of the filename. This should be set in a URI query parameter.
@@ -38817,6 +38836,9 @@ export type RestEndpointMethods = {
      * GitHub expects the asset data in its raw binary form, rather than JSON. You will send the raw binary content of the asset as the request body. Everything else about the endpoint is the same as the rest of the API. For example, you'll still need to pass your authentication to be able to upload an asset.
      */
     uploadReleaseAsset: {
+      (
+        params?: RequestParameters & ReposUploadReleaseAssetParamsDeprecatedFile
+      ): Promise<OctokitResponse<ReposUploadReleaseAssetResponse>>;
       (params?: RequestParameters & ReposUploadReleaseAssetParams): Promise<
         OctokitResponse<ReposUploadReleaseAssetResponse>
       >;
