@@ -61,15 +61,7 @@ type UsersTogglePrimaryEmailVisibilityResponseItem = {
   visibility: string;
 };
 type UsersListPublicKeysForUserResponseItem = { id: number; key: string };
-type UsersListPublicKeysResponseItem = {
-  created_at: string;
-  id: number;
-  key: string;
-  read_only: boolean;
-  title: string;
-  url: string;
-  verified: boolean;
-};
+type UsersListPublicKeysResponseItem = { key: string; key_id: string };
 type UsersListPublicEmailsResponseItem = {
   email: string;
   primary: boolean;
@@ -266,15 +258,7 @@ type UsersListResponseItem = {
   type: string;
   url: string;
 };
-type UsersGetPublicKeyResponse = {
-  created_at: string;
-  id: number;
-  key: string;
-  read_only: boolean;
-  title: string;
-  url: string;
-  verified: boolean;
-};
+type UsersGetPublicKeyResponse = { key: string; key_id: string };
 type UsersGetGpgKeyResponseSubkeysItem = {
   can_certify: boolean;
   can_encrypt_comms: boolean;
@@ -397,15 +381,7 @@ type UsersGetAuthenticatedResponse = {
   updated_at: string;
   url: string;
 };
-type UsersCreatePublicKeyResponse = {
-  created_at: string;
-  id: number;
-  key: string;
-  read_only: boolean;
-  title: string;
-  url: string;
-  verified: boolean;
-};
+type UsersCreatePublicKeyResponse = { key: string; key_id: string };
 type UsersCreateGpgKeyResponseSubkeysItem = {
   can_certify: boolean;
   can_encrypt_comms: boolean;
@@ -420,10 +396,7 @@ type UsersCreateGpgKeyResponseSubkeysItem = {
   public_key: string;
   subkeys: Array<any>;
 };
-type UsersCreateGpgKeyResponseEmailsItem = {
-  email: string;
-  verified: boolean;
-};
+type UsersCreateGpgKeyResponseEmailsItem = { email: string; verified: boolean };
 type UsersCreateGpgKeyResponse = {
   can_certify: boolean;
   can_encrypt_comms: boolean;
@@ -2052,11 +2025,7 @@ type TeamsGetMembershipInOrgResponse = {
   state: string;
   url: string;
 };
-type TeamsGetMembershipResponse = {
-  role: string;
-  state: string;
-  url: string;
-};
+type TeamsGetMembershipResponse = { role: string; state: string; url: string };
 type TeamsGetLegacyResponseOrganization = {
   avatar_url: string;
   blog: string;
@@ -4294,9 +4263,7 @@ type ReposUpdateBranchProtectionResponseEnforceAdmins = {
   enabled: boolean;
   url: string;
 };
-type ReposUpdateBranchProtectionResponseAllowForcePushes = {
-  enabled: boolean;
-};
+type ReposUpdateBranchProtectionResponseAllowForcePushes = { enabled: boolean };
 type ReposUpdateBranchProtectionResponseAllowDeletions = { enabled: boolean };
 type ReposUpdateBranchProtectionResponse = {
   allow_deletions: ReposUpdateBranchProtectionResponseAllowDeletions;
@@ -6914,11 +6881,7 @@ type ReposGetReleaseResponse = {
   url: string;
   zipball_url: string;
 };
-type ReposGetReadmeResponseLinks = {
-  git: string;
-  html: string;
-  self: string;
-};
+type ReposGetReadmeResponseLinks = { git: string; html: string; self: string };
 type ReposGetReadmeResponse = {
   _links: ReposGetReadmeResponseLinks;
   content: string;
@@ -8280,10 +8243,7 @@ type ReposGetResponse = {
   visibility: string;
   watchers_count: number;
 };
-type ReposEnablePagesSiteResponseSource = {
-  branch: string;
-  directory: string;
-};
+type ReposEnablePagesSiteResponseSource = { branch: string; directory: string };
 type ReposEnablePagesSiteResponse = {
   cname: string;
   custom_404: boolean;
@@ -19004,6 +18964,20 @@ type GitListMatchingRefsResponseItem = {
   ref: string;
   url: string;
 };
+type GitGetTreeResponseTreeItem = {
+  mode: string;
+  path: string;
+  sha: string;
+  size?: number;
+  type: string;
+  url: string;
+};
+type GitGetTreeResponse = {
+  sha: string;
+  tree: Array<GitGetTreeResponseTreeItem>;
+  truncated: boolean;
+  url: string;
+};
 type GitGetTagResponseVerification = {
   payload: null;
   reason: string;
@@ -19042,11 +19016,7 @@ type GitGetCommitResponseCommitter = {
   email: string;
   name: string;
 };
-type GitGetCommitResponseAuthor = {
-  date: string;
-  email: string;
-  name: string;
-};
+type GitGetCommitResponseAuthor = { date: string; email: string; name: string };
 type GitGetCommitResponse = {
   author: GitGetCommitResponseAuthor;
   committer: GitGetCommitResponseCommitter;
@@ -19083,11 +19053,7 @@ type GitCreateTagResponseVerification = {
   signature: null;
   verified: boolean;
 };
-type GitCreateTagResponseTagger = {
-  date: string;
-  email: string;
-  name: string;
-};
+type GitCreateTagResponseTagger = { date: string; email: string; name: string };
 type GitCreateTagResponseObject = { sha: string; type: string; url: string };
 type GitCreateTagResponse = {
   message: string;
@@ -20598,9 +20564,7 @@ type ChecksListForSuiteResponseCheckRunsItem = {
   name: string;
   node_id: string;
   output: ChecksListForSuiteResponseCheckRunsItemOutput;
-  pull_requests: Array<
-    ChecksListForSuiteResponseCheckRunsItemPullRequestsItem
-  >;
+  pull_requests: Array<ChecksListForSuiteResponseCheckRunsItemPullRequestsItem>;
   started_at: string;
   status: string;
   url: string;
@@ -23161,10 +23125,7 @@ type ActivityListFeedsResponseLinksCurrentUserActor = {
   href: string;
   type: string;
 };
-type ActivityListFeedsResponseLinksCurrentUser = {
-  href: string;
-  type: string;
-};
+type ActivityListFeedsResponseLinksCurrentUser = { href: string; type: string };
 type ActivityListFeedsResponseLinks = {
   current_user: ActivityListFeedsResponseLinksCurrentUser;
   current_user_actor: ActivityListFeedsResponseLinksCurrentUserActor;
@@ -23289,6 +23250,700 @@ type ActivityGetRepoSubscriptionResponse = {
   subscribed: boolean;
   url: string;
 };
+type ActionsListWorkflowRunsResponseWorkflowRunsItemRepositoryOwner = {
+  avatar_url: string;
+  events_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  gravatar_id: string;
+  html_url: string;
+  id: number;
+  login: string;
+  node_id: string;
+  organizations_url: string;
+  received_events_url: string;
+  repos_url: string;
+  site_admin: boolean;
+  starred_url: string;
+  subscriptions_url: string;
+  type: string;
+  url: string;
+};
+type ActionsListWorkflowRunsResponseWorkflowRunsItemRepository = {
+  archive_url: string;
+  assignees_url: string;
+  blobs_url: string;
+  branches_url: string;
+  collaborators_url: string;
+  comments_url: string;
+  commits_url: string;
+  compare_url: string;
+  contents_url: string;
+  contributors_url: string;
+  deployments_url: string;
+  description: string;
+  downloads_url: string;
+  events_url: string;
+  fork: boolean;
+  forks_url: string;
+  full_name: string;
+  git_commits_url: string;
+  git_refs_url: string;
+  git_tags_url: string;
+  git_url: string;
+  html_url: string;
+  id: number;
+  issue_comment_url: string;
+  issue_events_url: string;
+  issues_url: string;
+  keys_url: string;
+  labels_url: string;
+  languages_url: string;
+  merges_url: string;
+  milestones_url: string;
+  name: string;
+  node_id: string;
+  notifications_url: string;
+  owner: ActionsListWorkflowRunsResponseWorkflowRunsItemRepositoryOwner;
+  private: boolean;
+  pulls_url: string;
+  releases_url: string;
+  ssh_url: string;
+  stargazers_url: string;
+  statuses_url: string;
+  subscribers_url: string;
+  subscription_url: string;
+  tags_url: string;
+  teams_url: string;
+  trees_url: string;
+  url: string;
+};
+type ActionsListWorkflowRunsResponseWorkflowRunsItemHeadRepositoryOwner = {
+  avatar_url: string;
+  events_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  gravatar_id: string;
+  html_url: string;
+  id: number;
+  login: string;
+  node_id: string;
+  organizations_url: string;
+  received_events_url: string;
+  repos_url: string;
+  site_admin: boolean;
+  starred_url: string;
+  subscriptions_url: string;
+  type: string;
+  url: string;
+};
+type ActionsListWorkflowRunsResponseWorkflowRunsItemHeadRepository = {
+  archive_url: string;
+  assignees_url: string;
+  blobs_url: string;
+  branches_url: string;
+  collaborators_url: string;
+  comments_url: string;
+  commits_url: string;
+  compare_url: string;
+  contents_url: string;
+  contributors_url: string;
+  deployments_url: string;
+  description: null;
+  downloads_url: string;
+  events_url: string;
+  fork: boolean;
+  forks_url: string;
+  full_name: string;
+  git_commits_url: string;
+  git_refs_url: string;
+  git_tags_url: string;
+  hooks_url: string;
+  html_url: string;
+  id: number;
+  issue_comment_url: string;
+  issue_events_url: string;
+  issues_url: string;
+  keys_url: string;
+  labels_url: string;
+  languages_url: string;
+  merges_url: string;
+  milestones_url: string;
+  name: string;
+  node_id: string;
+  notifications_url: string;
+  owner: ActionsListWorkflowRunsResponseWorkflowRunsItemHeadRepositoryOwner;
+  private: boolean;
+  pulls_url: string;
+  releases_url: string;
+  stargazers_url: string;
+  statuses_url: string;
+  subscribers_url: string;
+  subscription_url: string;
+  tags_url: string;
+  teams_url: string;
+  trees_url: string;
+  url: string;
+};
+type ActionsListWorkflowRunsResponseWorkflowRunsItemHeadCommitCommitter = {
+  email: string;
+  name: string;
+};
+type ActionsListWorkflowRunsResponseWorkflowRunsItemHeadCommitAuthor = {
+  email: string;
+  name: string;
+};
+type ActionsListWorkflowRunsResponseWorkflowRunsItemHeadCommit = {
+  author: ActionsListWorkflowRunsResponseWorkflowRunsItemHeadCommitAuthor;
+  committer: ActionsListWorkflowRunsResponseWorkflowRunsItemHeadCommitCommitter;
+  id: string;
+  message: string;
+  timestamp: string;
+  tree_id: string;
+};
+type ActionsListWorkflowRunsResponseWorkflowRunsItem = {
+  artifacts_url: string;
+  cancel_url: string;
+  check_suite_id: number;
+  conclusion: null;
+  created_at: string;
+  event: string;
+  head_branch: string;
+  head_commit: ActionsListWorkflowRunsResponseWorkflowRunsItemHeadCommit;
+  head_repository: ActionsListWorkflowRunsResponseWorkflowRunsItemHeadRepository;
+  head_sha: string;
+  html_url: string;
+  id: number;
+  jobs_url: string;
+  logs_url: string;
+  node_id: string;
+  pull_requests: Array<any>;
+  repository: ActionsListWorkflowRunsResponseWorkflowRunsItemRepository;
+  rerun_url: string;
+  run_number: number;
+  status: string;
+  updated_at: string;
+  url: string;
+  workflow_url: string;
+};
+type ActionsListWorkflowRunsResponse = {
+  total_count: number;
+  workflow_runs: Array<ActionsListWorkflowRunsResponseWorkflowRunsItem>;
+};
+type ActionsListWorkflowRunArtifactsResponseItemArtifactsItem = {
+  archive_download_url: string;
+  created_at: string;
+  expired: string;
+  expires_at: string;
+  id: number;
+  name: string;
+  node_id: string;
+  size_in_bytes: number;
+};
+type ActionsListWorkflowRunArtifactsResponseItem = {
+  artifacts: Array<ActionsListWorkflowRunArtifactsResponseItemArtifactsItem>;
+  total_count: number;
+};
+type ActionsListSelfHostedRunnersForRepoResponseItemItem = {
+  id: number;
+  name: string;
+  os: string;
+  status: string;
+};
+type ActionsListSecretsForRepoResponseItemSecretsItem = {
+  created_at: string;
+  name: string;
+  updated_at: string;
+};
+type ActionsListSecretsForRepoResponseItem = {
+  secrets: Array<ActionsListSecretsForRepoResponseItemSecretsItem>;
+  total_count: number;
+};
+type ActionsListRepoWorkflowsResponseWorkflowsItem = {
+  badge_url: string;
+  created_at: string;
+  html_url: string;
+  id: number;
+  name: string;
+  node_id: string;
+  path: string;
+  state: string;
+  updated_at: string;
+  url: string;
+};
+type ActionsListRepoWorkflowsResponse = {
+  total_count: number;
+  workflows: Array<ActionsListRepoWorkflowsResponseWorkflowsItem>;
+};
+type ActionsListRepoWorkflowRunsResponseWorkflowRunsItemRepositoryOwner = {
+  avatar_url: string;
+  events_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  gravatar_id: string;
+  html_url: string;
+  id: number;
+  login: string;
+  node_id: string;
+  organizations_url: string;
+  received_events_url: string;
+  repos_url: string;
+  site_admin: boolean;
+  starred_url: string;
+  subscriptions_url: string;
+  type: string;
+  url: string;
+};
+type ActionsListRepoWorkflowRunsResponseWorkflowRunsItemRepository = {
+  archive_url: string;
+  assignees_url: string;
+  blobs_url: string;
+  branches_url: string;
+  collaborators_url: string;
+  comments_url: string;
+  commits_url: string;
+  compare_url: string;
+  contents_url: string;
+  contributors_url: string;
+  deployments_url: string;
+  description: string;
+  downloads_url: string;
+  events_url: string;
+  fork: boolean;
+  forks_url: string;
+  full_name: string;
+  git_commits_url: string;
+  git_refs_url: string;
+  git_tags_url: string;
+  git_url: string;
+  html_url: string;
+  id: number;
+  issue_comment_url: string;
+  issue_events_url: string;
+  issues_url: string;
+  keys_url: string;
+  labels_url: string;
+  languages_url: string;
+  merges_url: string;
+  milestones_url: string;
+  name: string;
+  node_id: string;
+  notifications_url: string;
+  owner: ActionsListRepoWorkflowRunsResponseWorkflowRunsItemRepositoryOwner;
+  private: boolean;
+  pulls_url: string;
+  releases_url: string;
+  ssh_url: string;
+  stargazers_url: string;
+  statuses_url: string;
+  subscribers_url: string;
+  subscription_url: string;
+  tags_url: string;
+  teams_url: string;
+  trees_url: string;
+  url: string;
+};
+type ActionsListRepoWorkflowRunsResponseWorkflowRunsItemHeadRepositoryOwner = {
+  avatar_url: string;
+  events_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  gravatar_id: string;
+  html_url: string;
+  id: number;
+  login: string;
+  node_id: string;
+  organizations_url: string;
+  received_events_url: string;
+  repos_url: string;
+  site_admin: boolean;
+  starred_url: string;
+  subscriptions_url: string;
+  type: string;
+  url: string;
+};
+type ActionsListRepoWorkflowRunsResponseWorkflowRunsItemHeadRepository = {
+  archive_url: string;
+  assignees_url: string;
+  blobs_url: string;
+  branches_url: string;
+  collaborators_url: string;
+  comments_url: string;
+  commits_url: string;
+  compare_url: string;
+  contents_url: string;
+  contributors_url: string;
+  deployments_url: string;
+  description: null;
+  downloads_url: string;
+  events_url: string;
+  fork: boolean;
+  forks_url: string;
+  full_name: string;
+  git_commits_url: string;
+  git_refs_url: string;
+  git_tags_url: string;
+  hooks_url: string;
+  html_url: string;
+  id: number;
+  issue_comment_url: string;
+  issue_events_url: string;
+  issues_url: string;
+  keys_url: string;
+  labels_url: string;
+  languages_url: string;
+  merges_url: string;
+  milestones_url: string;
+  name: string;
+  node_id: string;
+  notifications_url: string;
+  owner: ActionsListRepoWorkflowRunsResponseWorkflowRunsItemHeadRepositoryOwner;
+  private: boolean;
+  pulls_url: string;
+  releases_url: string;
+  stargazers_url: string;
+  statuses_url: string;
+  subscribers_url: string;
+  subscription_url: string;
+  tags_url: string;
+  teams_url: string;
+  trees_url: string;
+  url: string;
+};
+type ActionsListRepoWorkflowRunsResponseWorkflowRunsItemHeadCommitCommitter = {
+  email: string;
+  name: string;
+};
+type ActionsListRepoWorkflowRunsResponseWorkflowRunsItemHeadCommitAuthor = {
+  email: string;
+  name: string;
+};
+type ActionsListRepoWorkflowRunsResponseWorkflowRunsItemHeadCommit = {
+  author: ActionsListRepoWorkflowRunsResponseWorkflowRunsItemHeadCommitAuthor;
+  committer: ActionsListRepoWorkflowRunsResponseWorkflowRunsItemHeadCommitCommitter;
+  id: string;
+  message: string;
+  timestamp: string;
+  tree_id: string;
+};
+type ActionsListRepoWorkflowRunsResponseWorkflowRunsItem = {
+  artifacts_url: string;
+  cancel_url: string;
+  check_suite_id: number;
+  conclusion: null;
+  created_at: string;
+  event: string;
+  head_branch: string;
+  head_commit: ActionsListRepoWorkflowRunsResponseWorkflowRunsItemHeadCommit;
+  head_repository: ActionsListRepoWorkflowRunsResponseWorkflowRunsItemHeadRepository;
+  head_sha: string;
+  html_url: string;
+  id: number;
+  jobs_url: string;
+  logs_url: string;
+  node_id: string;
+  pull_requests: Array<any>;
+  repository: ActionsListRepoWorkflowRunsResponseWorkflowRunsItemRepository;
+  rerun_url: string;
+  run_number: number;
+  status: string;
+  updated_at: string;
+  url: string;
+  workflow_url: string;
+};
+type ActionsListRepoWorkflowRunsResponse = {
+  total_count: number;
+  workflow_runs: Array<ActionsListRepoWorkflowRunsResponseWorkflowRunsItem>;
+};
+type ActionsListJobsForWorkflowRunResponseItemWorkflowJobsItemStepsItem = {
+  completed_at: string;
+  conclusion: string;
+  name: string;
+  number: number;
+  started_at: string;
+  status: string;
+};
+type ActionsListJobsForWorkflowRunResponseItemWorkflowJobsItem = {
+  check_run_url: string;
+  completed_at: string;
+  conclusion: string;
+  head_sha: string;
+  html_url: string;
+  id: number;
+  name: string;
+  node_id: string;
+  run_id: number;
+  run_url: string;
+  started_at: string;
+  status: string;
+  steps: Array<
+    ActionsListJobsForWorkflowRunResponseItemWorkflowJobsItemStepsItem
+  >;
+  url: string;
+};
+type ActionsListJobsForWorkflowRunResponseItem = {
+  total_count: number;
+  workflow_jobs: Array<
+    ActionsListJobsForWorkflowRunResponseItemWorkflowJobsItem
+  >;
+};
+type ActionsGetWorkflowRunResponseRepositoryOwner = {
+  avatar_url: string;
+  events_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  gravatar_id: string;
+  html_url: string;
+  id: number;
+  login: string;
+  node_id: string;
+  organizations_url: string;
+  received_events_url: string;
+  repos_url: string;
+  site_admin: boolean;
+  starred_url: string;
+  subscriptions_url: string;
+  type: string;
+  url: string;
+};
+type ActionsGetWorkflowRunResponseRepository = {
+  archive_url: string;
+  assignees_url: string;
+  blobs_url: string;
+  branches_url: string;
+  collaborators_url: string;
+  comments_url: string;
+  commits_url: string;
+  compare_url: string;
+  contents_url: string;
+  contributors_url: string;
+  deployments_url: string;
+  description: string;
+  downloads_url: string;
+  events_url: string;
+  fork: boolean;
+  forks_url: string;
+  full_name: string;
+  git_commits_url: string;
+  git_refs_url: string;
+  git_tags_url: string;
+  git_url: string;
+  html_url: string;
+  id: number;
+  issue_comment_url: string;
+  issue_events_url: string;
+  issues_url: string;
+  keys_url: string;
+  labels_url: string;
+  languages_url: string;
+  merges_url: string;
+  milestones_url: string;
+  name: string;
+  node_id: string;
+  notifications_url: string;
+  owner: ActionsGetWorkflowRunResponseRepositoryOwner;
+  private: boolean;
+  pulls_url: string;
+  releases_url: string;
+  ssh_url: string;
+  stargazers_url: string;
+  statuses_url: string;
+  subscribers_url: string;
+  subscription_url: string;
+  tags_url: string;
+  teams_url: string;
+  trees_url: string;
+  url: string;
+};
+type ActionsGetWorkflowRunResponseHeadRepositoryOwner = {
+  avatar_url: string;
+  events_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  gravatar_id: string;
+  html_url: string;
+  id: number;
+  login: string;
+  node_id: string;
+  organizations_url: string;
+  received_events_url: string;
+  repos_url: string;
+  site_admin: boolean;
+  starred_url: string;
+  subscriptions_url: string;
+  type: string;
+  url: string;
+};
+type ActionsGetWorkflowRunResponseHeadRepository = {
+  archive_url: string;
+  assignees_url: string;
+  blobs_url: string;
+  branches_url: string;
+  collaborators_url: string;
+  comments_url: string;
+  commits_url: string;
+  compare_url: string;
+  contents_url: string;
+  contributors_url: string;
+  deployments_url: string;
+  description: null;
+  downloads_url: string;
+  events_url: string;
+  fork: boolean;
+  forks_url: string;
+  full_name: string;
+  git_commits_url: string;
+  git_refs_url: string;
+  git_tags_url: string;
+  hooks_url: string;
+  html_url: string;
+  id: number;
+  issue_comment_url: string;
+  issue_events_url: string;
+  issues_url: string;
+  keys_url: string;
+  labels_url: string;
+  languages_url: string;
+  merges_url: string;
+  milestones_url: string;
+  name: string;
+  node_id: string;
+  notifications_url: string;
+  owner: ActionsGetWorkflowRunResponseHeadRepositoryOwner;
+  private: boolean;
+  pulls_url: string;
+  releases_url: string;
+  stargazers_url: string;
+  statuses_url: string;
+  subscribers_url: string;
+  subscription_url: string;
+  tags_url: string;
+  teams_url: string;
+  trees_url: string;
+  url: string;
+};
+type ActionsGetWorkflowRunResponseHeadCommitCommitter = {
+  email: string;
+  name: string;
+};
+type ActionsGetWorkflowRunResponseHeadCommitAuthor = {
+  email: string;
+  name: string;
+};
+type ActionsGetWorkflowRunResponseHeadCommit = {
+  author: ActionsGetWorkflowRunResponseHeadCommitAuthor;
+  committer: ActionsGetWorkflowRunResponseHeadCommitCommitter;
+  id: string;
+  message: string;
+  timestamp: string;
+  tree_id: string;
+};
+type ActionsGetWorkflowRunResponse = {
+  artifacts_url: string;
+  cancel_url: string;
+  check_suite_id: number;
+  conclusion: null;
+  created_at: string;
+  event: string;
+  head_branch: string;
+  head_commit: ActionsGetWorkflowRunResponseHeadCommit;
+  head_repository: ActionsGetWorkflowRunResponseHeadRepository;
+  head_sha: string;
+  html_url: string;
+  id: number;
+  jobs_url: string;
+  logs_url: string;
+  node_id: string;
+  pull_requests: Array<any>;
+  repository: ActionsGetWorkflowRunResponseRepository;
+  rerun_url: string;
+  run_number: number;
+  status: string;
+  updated_at: string;
+  url: string;
+  workflow_url: string;
+};
+type ActionsGetWorkflowJobResponseStepsItem = {
+  completed_at: string;
+  conclusion: string;
+  name: string;
+  number: number;
+  started_at: string;
+  status: string;
+};
+type ActionsGetWorkflowJobResponse = {
+  check_run_url: string;
+  completed_at: string;
+  conclusion: string;
+  head_sha: string;
+  html_url: string;
+  id: number;
+  name: string;
+  node_id: string;
+  run_id: number;
+  run_url: string;
+  started_at: string;
+  status: string;
+  steps: Array<ActionsGetWorkflowJobResponseStepsItem>;
+  url: string;
+};
+type ActionsGetWorkflowResponse = {
+  badge_url: string;
+  created_at: string;
+  html_url: string;
+  id: number;
+  name: string;
+  node_id: string;
+  path: string;
+  state: string;
+  updated_at: string;
+  url: string;
+};
+type ActionsGetSelfHostedRunnerResponse = {
+  id: number;
+  name: string;
+  os: string;
+  status: string;
+};
+type ActionsGetSecretResponse = {
+  created_at: string;
+  name: string;
+  updated_at: string;
+};
+type ActionsGetPublicKeyResponse = { key: string; key_id: string };
+type ActionsGetArtifactResponse = {
+  archive_download_url: string;
+  created_at: string;
+  expired: string;
+  expires_at: string;
+  id: number;
+  name: string;
+  node_id: string;
+  size_in_bytes: number;
+};
+type ActionsCreateRemoveTokenResponse = { expires_at: string; token: string };
+type ActionsCreateRegistrationTokenResponse = {
+  expires_at: string;
+  token: string;
+};
+type ActionsListJobsForWorkflowRunResponse = Array<
+  ActionsListJobsForWorkflowRunResponseItem
+>;
+type ActionsListSecretsForRepoResponse = Array<
+  ActionsListSecretsForRepoResponseItem
+>;
+type ActionsListSelfHostedRunnersForRepoResponse = Array<
+  Array<ActionsListSelfHostedRunnersForRepoResponseItemItem>
+>;
+type ActionsListWorkflowRunArtifactsResponse = Array<
+  ActionsListWorkflowRunArtifactsResponseItem
+>;
 type ActivityListNotificationsResponse = Array<
   ActivityListNotificationsResponseItem
 >;
@@ -23337,9 +23992,7 @@ type GistsListCommentsResponse = Array<GistsListCommentsResponseItem>;
 type GistsListCommitsResponse = Array<GistsListCommitsResponseItem>;
 type GistsListForksResponse = Array<GistsListForksResponseItem>;
 type GistsListPublicResponse = Array<GistsListPublicResponseItem>;
-type GistsListPublicForUserResponse = Array<
-  GistsListPublicForUserResponseItem
->;
+type GistsListPublicForUserResponse = Array<GistsListPublicForUserResponseItem>;
 type GistsListStarredResponse = Array<GistsListStarredResponseItem>;
 type GitListMatchingRefsResponse = Array<GitListMatchingRefsResponseItem>;
 type GitignoreListTemplatesResponse = Array<string>;
@@ -23509,9 +24162,7 @@ type ReposListBranchesResponse = Array<ReposListBranchesResponseItem>;
 type ReposListBranchesForHeadCommitResponse = Array<
   ReposListBranchesForHeadCommitResponseItem
 >;
-type ReposListCollaboratorsResponse = Array<
-  ReposListCollaboratorsResponseItem
->;
+type ReposListCollaboratorsResponse = Array<ReposListCollaboratorsResponseItem>;
 type ReposListCommentsForCommitResponse = Array<
   ReposListCommentsForCommitResponseItem
 >;
@@ -23608,9 +24259,7 @@ type TeamsListForAuthenticatedUserResponse = Array<
 >;
 type TeamsListMembersResponse = Array<TeamsListMembersResponseItem>;
 type TeamsListMembersInOrgResponse = Array<TeamsListMembersInOrgResponseItem>;
-type TeamsListMembersLegacyResponse = Array<
-  TeamsListMembersLegacyResponseItem
->;
+type TeamsListMembersLegacyResponse = Array<TeamsListMembersLegacyResponseItem>;
 type TeamsListPendingInvitationsResponse = Array<
   TeamsListPendingInvitationsResponseItem
 >;
@@ -23621,9 +24270,7 @@ type TeamsListPendingInvitationsLegacyResponse = Array<
   TeamsListPendingInvitationsLegacyResponseItem
 >;
 type TeamsListProjectsResponse = Array<TeamsListProjectsResponseItem>;
-type TeamsListProjectsInOrgResponse = Array<
-  TeamsListProjectsInOrgResponseItem
->;
+type TeamsListProjectsInOrgResponse = Array<TeamsListProjectsInOrgResponseItem>;
 type TeamsListProjectsLegacyResponse = Array<
   TeamsListProjectsLegacyResponseItem
 >;
@@ -23660,19 +24307,223 @@ type UsersTogglePrimaryEmailVisibilityResponse = Array<
 >;
 
 // param types
+export type ActionsCancelWorkflowRunParams = {
+  owner: string;
+  repo: string;
+  run_id: number;
+};
+export type ActionsCreateOrUpdateSecretForRepoParams = {
+  /**
+   * Value for your secret, encrypted with [LibSodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages) using the public key retrieved from the [Get your public key](https://developer.github.com/v3/actions/secrets/#get-your-public-key) endpoint.
+   */
+  encrypted_value?: string;
+  /**
+   * ID of the key you used to encrypt the secret.
+   */
+  key_id?: string;
+  name: string;
+  owner: string;
+  repo: string;
+};
+export type ActionsCreateRegistrationTokenParams = {
+  owner: string;
+  repo: string;
+};
+export type ActionsCreateRemoveTokenParams = {
+  owner: string;
+  repo: string;
+};
+export type ActionsDeleteArtifactParams = {
+  artifact_id: number;
+  owner: string;
+  repo: string;
+};
+export type ActionsDeleteSecretFromRepoParams = {
+  name: string;
+  owner: string;
+  repo: string;
+};
+export type ActionsDownloadArtifactParams = {
+  archive_format: string;
+  artifact_id: number;
+  owner: string;
+  repo: string;
+};
+export type ActionsGetArtifactParams = {
+  artifact_id: number;
+  owner: string;
+  repo: string;
+};
+export type ActionsGetPublicKeyParams = {
+  owner: string;
+  repo: string;
+};
+export type ActionsGetSecretParams = {
+  name: string;
+  owner: string;
+  /**
+   * Page number of the results to fetch.
+   */
+  page?: number;
+  /**
+   * Results per page (max 100)
+   */
+  per_page?: number;
+  repo: string;
+};
+export type ActionsGetSelfHostedRunnerParams = {
+  owner: string;
+  repo: string;
+  runner_id: number;
+};
+export type ActionsGetWorkflowParams = {
+  owner: string;
+  repo: string;
+  workflow_id: number;
+};
+export type ActionsGetWorkflowJobParams = {
+  job_id: number;
+  owner: string;
+  repo: string;
+};
+export type ActionsGetWorkflowRunParams = {
+  owner: string;
+  repo: string;
+  run_id: number;
+};
+export type ActionsListJobsForWorkflowRunParams = {
+  owner: string;
+  /**
+   * Page number of the results to fetch.
+   */
+  page?: number;
+  /**
+   * Results per page (max 100)
+   */
+  per_page?: number;
+  repo: string;
+  run_id: number;
+};
+export type ActionsListRepoWorkflowRunsParams = {
+  owner: string;
+  /**
+   * Page number of the results to fetch.
+   */
+  page?: number;
+  /**
+   * Results per page (max 100)
+   */
+  per_page?: number;
+  repo: string;
+};
+export type ActionsListRepoWorkflowsParams = {
+  owner: string;
+  /**
+   * Page number of the results to fetch.
+   */
+  page?: number;
+  /**
+   * Results per page (max 100)
+   */
+  per_page?: number;
+  repo: string;
+};
+export type ActionsListSecretsForRepoParams = {
+  owner: string;
+  /**
+   * Page number of the results to fetch.
+   */
+  page?: number;
+  /**
+   * Results per page (max 100)
+   */
+  per_page?: number;
+  repo: string;
+};
+export type ActionsListSelfHostedRunnersForRepoParams = {
+  owner: string;
+  /**
+   * Page number of the results to fetch.
+   */
+  page?: number;
+  /**
+   * Results per page (max 100)
+   */
+  per_page?: number;
+  repo: string;
+};
+export type ActionsListWorkflowJobLogsParams = {
+  job_id: number;
+  owner: string;
+  /**
+   * Page number of the results to fetch.
+   */
+  page?: number;
+  /**
+   * Results per page (max 100)
+   */
+  per_page?: number;
+  repo: string;
+};
+export type ActionsListWorkflowRunArtifactsParams = {
+  owner: string;
+  /**
+   * Page number of the results to fetch.
+   */
+  page?: number;
+  /**
+   * Results per page (max 100)
+   */
+  per_page?: number;
+  repo: string;
+  run_id: number;
+};
+export type ActionsListWorkflowRunLogsParams = {
+  owner: string;
+  /**
+   * Page number of the results to fetch.
+   */
+  page?: number;
+  /**
+   * Results per page (max 100)
+   */
+  per_page?: number;
+  repo: string;
+  run_id: number;
+};
+export type ActionsListWorkflowRunsParams = {
+  owner: string;
+  /**
+   * Page number of the results to fetch.
+   */
+  page?: number;
+  /**
+   * Results per page (max 100)
+   */
+  per_page?: number;
+  repo: string;
+  workflow_id: number;
+};
+export type ActionsReRunWorkflowParams = {
+  owner: string;
+  repo: string;
+  run_id: number;
+};
+export type ActionsRemoveSelfHostedRunnerParams = {
+  owner: string;
+  repo: string;
+  runner_id: number;
+};
 export type ActivityCheckStarringRepoParams = {
   owner: string;
-
   repo: string;
 };
 export type ActivityCheckWatchingRepoLegacyParams = {
   owner: string;
-
   repo: string;
 };
 export type ActivityDeleteRepoSubscriptionParams = {
   owner: string;
-
   repo: string;
 };
 export type ActivityDeleteThreadSubscriptionParams = {
@@ -23680,7 +24531,6 @@ export type ActivityDeleteThreadSubscriptionParams = {
 };
 export type ActivityGetRepoSubscriptionParams = {
   owner: string;
-
   repo: string;
 };
 export type ActivityGetThreadParams = {
@@ -23699,7 +24549,6 @@ export type ActivityListEventsForOrgParams = {
    * Results per page (max 100)
    */
   per_page?: number;
-
   username: string;
 };
 export type ActivityListEventsForUserParams = {
@@ -23711,7 +24560,6 @@ export type ActivityListEventsForUserParams = {
    * Results per page (max 100)
    */
   per_page?: number;
-
   username: string;
 };
 export type ActivityListNotificationsParams = {
@@ -23749,7 +24597,6 @@ export type ActivityListNotificationsForRepoParams = {
    * Only show notifications updated before the given time. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.
    */
   before?: string;
-
   owner: string;
   /**
    * Page number of the results to fetch.
@@ -23763,7 +24610,6 @@ export type ActivityListNotificationsForRepoParams = {
    * Results per page (max 100)
    */
   per_page?: number;
-
   repo: string;
   /**
    * Only show notifications updated after the given time. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.
@@ -23801,7 +24647,6 @@ export type ActivityListPublicEventsForRepoNetworkParams = {
    * Results per page (max 100)
    */
   per_page?: number;
-
   repo: string;
 };
 export type ActivityListPublicEventsForUserParams = {
@@ -23813,7 +24658,6 @@ export type ActivityListPublicEventsForUserParams = {
    * Results per page (max 100)
    */
   per_page?: number;
-
   username: string;
 };
 export type ActivityListReceivedEventsForUserParams = {
@@ -23825,7 +24669,6 @@ export type ActivityListReceivedEventsForUserParams = {
    * Results per page (max 100)
    */
   per_page?: number;
-
   username: string;
 };
 export type ActivityListReceivedPublicEventsForUserParams = {
@@ -23837,7 +24680,6 @@ export type ActivityListReceivedPublicEventsForUserParams = {
    * Results per page (max 100)
    */
   per_page?: number;
-
   username: string;
 };
 export type ActivityListRepoEventsParams = {
@@ -23850,7 +24692,6 @@ export type ActivityListRepoEventsParams = {
    * Results per page (max 100)
    */
   per_page?: number;
-
   repo: string;
 };
 export type ActivityListReposStarredByAuthenticatedUserParams = {
@@ -23888,7 +24729,6 @@ export type ActivityListReposStarredByUserParams = {
    * One of `created` (when the repository was starred) or `updated` (when it was last pushed to).
    */
   sort?: "created" | "updated";
-
   username: string;
 };
 export type ActivityListReposWatchedByUserParams = {
@@ -23900,7 +24740,6 @@ export type ActivityListReposWatchedByUserParams = {
    * Results per page (max 100)
    */
   per_page?: number;
-
   username: string;
 };
 export type ActivityListStargazersForRepoParams = {
@@ -23913,7 +24752,6 @@ export type ActivityListStargazersForRepoParams = {
    * Results per page (max 100)
    */
   per_page?: number;
-
   repo: string;
 };
 export type ActivityListWatchedReposForAuthenticatedUserParams = {
@@ -23936,7 +24774,6 @@ export type ActivityListWatchersForRepoParams = {
    * Results per page (max 100)
    */
   per_page?: number;
-
   repo: string;
 };
 export type ActivityMarkAsReadParams = {
@@ -23950,9 +24787,7 @@ export type ActivityMarkNotificationsAsReadForRepoParams = {
    * Describes the last point that notifications were checked. Anything updated since this time will not be updated. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`. Default: The current timestamp.
    */
   last_read_at?: string;
-
   owner: string;
-
   repo: string;
 };
 export type ActivityMarkThreadAsReadParams = {
@@ -23963,9 +24798,7 @@ export type ActivitySetRepoSubscriptionParams = {
    * Determines if all notifications should be blocked from this repository.
    */
   ignored?: boolean;
-
   owner: string;
-
   repo: string;
   /**
    * Determines if notifications should be received from this repository.
@@ -23977,32 +24810,26 @@ export type ActivitySetThreadSubscriptionParams = {
    * Unsubscribes and subscribes you to a conversation. Set `ignored` to `true` to block all notifications from this thread.
    */
   ignored?: boolean;
-
   thread_id: number;
 };
 export type ActivityStarRepoParams = {
   owner: string;
-
   repo: string;
 };
 export type ActivityStopWatchingRepoLegacyParams = {
   owner: string;
-
   repo: string;
 };
 export type ActivityUnstarRepoParams = {
   owner: string;
-
   repo: string;
 };
 export type ActivityWatchRepoLegacyParams = {
   owner: string;
-
   repo: string;
 };
 export type AppsAddRepoToInstallationParams = {
   installation_id: number;
-
   repository_id: number;
 };
 export type AppsCheckAccountIsAssociatedWithAnyParams = {
@@ -24029,7 +24856,6 @@ export type AppsCheckAccountIsAssociatedWithAnyStubbedParams = {
 };
 export type AppsCheckAuthorizationParams = {
   access_token: string;
-
   client_id: string;
 };
 export type AppsCheckTokenParams = {
@@ -24037,7 +24863,6 @@ export type AppsCheckTokenParams = {
    * The OAuth access token used to authenticate to the GitHub API.
    */
   access_token?: string;
-
   client_id: string;
 };
 export type AppsCreateContentAttachmentParams = {
@@ -24045,7 +24870,6 @@ export type AppsCreateContentAttachmentParams = {
    * The body text of the content attachment displayed in the body or comment of an issue or pull request. This parameter supports markdown.
    */
   body: string;
-
   content_reference_id: number;
   /**
    * The title of the content attachment displayed in the body or comment of an issue or pull request.
@@ -24071,7 +24895,6 @@ export type AppsDeleteAuthorizationParams = {
    * The OAuth access token used to authenticate to the GitHub API.
    */
   access_token?: string;
-
   client_id: string;
 };
 export type AppsDeleteInstallationParams = {
@@ -24082,7 +24905,6 @@ export type AppsDeleteTokenParams = {
    * The OAuth access token used to authenticate to the GitHub API.
    */
   access_token?: string;
-
   client_id: string;
 };
 export type AppsFindOrgInstallationParams = {
@@ -24090,7 +24912,6 @@ export type AppsFindOrgInstallationParams = {
 };
 export type AppsFindRepoInstallationParams = {
   owner: string;
-
   repo: string;
 };
 export type AppsFindUserInstallationParams = {
@@ -24107,7 +24928,6 @@ export type AppsGetOrgInstallationParams = {
 };
 export type AppsGetRepoInstallationParams = {
   owner: string;
-
   repo: string;
 };
 export type AppsGetUserInstallationParams = {
@@ -24126,7 +24946,6 @@ export type AppsListAccountsUserOrOrgOnPlanParams = {
    * Results per page (max 100)
    */
   per_page?: number;
-
   plan_id: number;
   /**
    * Sorts the GitHub accounts by the date they were created or last updated. Can be one of `created` or `updated`.
@@ -24146,7 +24965,6 @@ export type AppsListAccountsUserOrOrgOnPlanStubbedParams = {
    * Results per page (max 100)
    */
   per_page?: number;
-
   plan_id: number;
   /**
    * Sorts the GitHub accounts by the date they were created or last updated. Can be one of `created` or `updated`.
@@ -24236,12 +25054,10 @@ export type AppsListReposParams = {
 };
 export type AppsRemoveRepoFromInstallationParams = {
   installation_id: number;
-
   repository_id: number;
 };
 export type AppsResetAuthorizationParams = {
   access_token: string;
-
   client_id: string;
 };
 export type AppsResetTokenParams = {
@@ -24249,17 +25065,14 @@ export type AppsResetTokenParams = {
    * The OAuth access token used to authenticate to the GitHub API.
    */
   access_token?: string;
-
   client_id: string;
 };
 export type AppsRevokeAuthorizationForApplicationParams = {
   access_token: string;
-
   client_id: string;
 };
 export type AppsRevokeGrantForApplicationParams = {
   access_token: string;
-
   client_id: string;
 };
 export type ChecksCreateParams = {
@@ -24302,9 +25115,7 @@ export type ChecksCreateParams = {
    * Check runs can accept a variety of data in the `output` object, including a `title` and `summary` and can optionally provide descriptive details about the run. See the [`output` object](https://developer.github.com/v3/checks/runs/#output-object) description.
    */
   output?: ChecksCreateParamsOutput;
-
   owner: string;
-
   repo: string;
   /**
    * The time that the check run began. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.
@@ -24320,28 +25131,21 @@ export type ChecksCreateSuiteParams = {
    * The sha of the head commit.
    */
   head_sha: string;
-
   owner: string;
-
   repo: string;
 };
 export type ChecksGetParams = {
   check_run_id: number;
-
   owner: string;
-
   repo: string;
 };
 export type ChecksGetSuiteParams = {
   check_suite_id: number;
-
   owner: string;
-
   repo: string;
 };
 export type ChecksListAnnotationsParams = {
   check_run_id: number;
-
   owner: string;
   /**
    * Page number of the results to fetch.
@@ -24351,7 +25155,6 @@ export type ChecksListAnnotationsParams = {
    * Results per page (max 100)
    */
   per_page?: number;
-
   repo: string;
 };
 export type ChecksListForRefParams = {
@@ -24363,7 +25166,6 @@ export type ChecksListForRefParams = {
    * Filters check runs by their `completed_at` timestamp. Can be one of `latest` (returning the most recent check runs) or `all`.
    */
   filter?: "latest" | "all";
-
   owner: string;
   /**
    * Page number of the results to fetch.
@@ -24373,9 +25175,7 @@ export type ChecksListForRefParams = {
    * Results per page (max 100)
    */
   per_page?: number;
-
   ref: string;
-
   repo: string;
   /**
    * Returns check runs with the specified `status`. Can be one of `queued`, `in_progress`, or `completed`.
@@ -24387,13 +25187,11 @@ export type ChecksListForSuiteParams = {
    * Returns check runs with the specified `name`.
    */
   check_name?: string;
-
   check_suite_id: number;
   /**
    * Filters check runs by their `completed_at` timestamp. Can be one of `latest` (returning the most recent check runs) or `all`.
    */
   filter?: "latest" | "all";
-
   owner: string;
   /**
    * Page number of the results to fetch.
@@ -24403,7 +25201,6 @@ export type ChecksListForSuiteParams = {
    * Results per page (max 100)
    */
   per_page?: number;
-
   repo: string;
   /**
    * Returns check runs with the specified `status`. Can be one of `queued`, `in_progress`, or `completed`.
@@ -24419,7 +25216,6 @@ export type ChecksListSuitesForRefParams = {
    * Filters checks suites by the name of the [check run](https://developer.github.com/v3/checks/runs/).
    */
   check_name?: string;
-
   owner: string;
   /**
    * Page number of the results to fetch.
@@ -24429,16 +25225,12 @@ export type ChecksListSuitesForRefParams = {
    * Results per page (max 100)
    */
   per_page?: number;
-
   ref: string;
-
   repo: string;
 };
 export type ChecksRerequestSuiteParams = {
   check_suite_id: number;
-
   owner: string;
-
   repo: string;
 };
 export type ChecksSetSuitesPreferencesParams = {
@@ -24446,9 +25238,7 @@ export type ChecksSetSuitesPreferencesParams = {
    * Enables or disables automatic creation of CheckSuite events upon pushes to the repository. Enabled by default. See the [`auto_trigger_checks` object](https://developer.github.com/v3/checks/suites/#auto_trigger_checks-object) description for details.
    */
   auto_trigger_checks?: ChecksSetSuitesPreferencesParamsAutoTriggerChecks[];
-
   owner: string;
-
   repo: string;
 };
 export type ChecksUpdateParams = {
@@ -24456,7 +25246,6 @@ export type ChecksUpdateParams = {
    * Possible further actions the integrator can perform, which a user may trigger. Each action includes a `label`, `identifier` and `description`. A maximum of three actions are accepted. See the [`actions` object](https://developer.github.com/v3/checks/runs/#actions-object) description. To learn more about check runs and requested actions, see "[Check runs and requested actions](https://developer.github.com/v3/checks/runs/#check-runs-and-requested-actions)."
    */
   actions?: ChecksUpdateParamsActions[];
-
   check_run_id: number;
   /**
    * The time the check completed. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.
@@ -24489,9 +25278,7 @@ export type ChecksUpdateParams = {
    * Check runs can accept a variety of data in the `output` object, including a `title` and `summary` and can optionally provide descriptive details about the run. See the [`output` object](https://developer.github.com/v3/checks/runs/#output-object-1) description.
    */
   output?: ChecksUpdateParamsOutput;
-
   owner: string;
-
   repo: string;
   /**
    * This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.
@@ -24507,7 +25294,6 @@ export type CodesOfConductGetConductCodeParams = {
 };
 export type CodesOfConductGetForRepoParams = {
   owner: string;
-
   repo: string;
 };
 export type GistsCheckIsStarredParams = {
@@ -24532,7 +25318,6 @@ export type GistsCreateCommentParams = {
    * The comment text.
    */
   body: string;
-
   gist_id: string;
 };
 export type GistsDeleteParams = {
@@ -24540,7 +25325,6 @@ export type GistsDeleteParams = {
 };
 export type GistsDeleteCommentParams = {
   comment_id: number;
-
   gist_id: string;
 };
 export type GistsForkParams = {
@@ -24551,12 +25335,10 @@ export type GistsGetParams = {
 };
 export type GistsGetCommentParams = {
   comment_id: number;
-
   gist_id: string;
 };
 export type GistsGetRevisionParams = {
   gist_id: string;
-
   sha: string;
 };
 export type GistsListParams = {
@@ -24633,7 +25415,6 @@ export type GistsListPublicForUserParams = {
    * This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`. Only gists updated at or after this time are returned.
    */
   since?: string;
-
   username: string;
 };
 export type GistsListStarredParams = {
@@ -24665,7 +25446,6 @@ export type GistsUpdateParams = {
    * The filenames and content that make up this gist.
    */
   files?: GistsUpdateParamsFiles;
-
   gist_id: string;
 };
 export type GistsUpdateCommentParams = {
@@ -24673,9 +25453,7 @@ export type GistsUpdateCommentParams = {
    * The comment text.
    */
   body: string;
-
   comment_id: number;
-
   gist_id: string;
 };
 export type GitCreateBlobParams = {
@@ -24687,9 +25465,7 @@ export type GitCreateBlobParams = {
    * The encoding used for `content`. Currently, `"utf-8"` and `"base64"` are supported.
    */
   encoding?: string;
-
   owner: string;
-
   repo: string;
 };
 export type GitCreateCommitParams = {
@@ -24705,13 +25481,11 @@ export type GitCreateCommitParams = {
    * The commit message
    */
   message: string;
-
   owner: string;
   /**
    * The SHAs of the commits that were the parents of this commit. If omitted or empty, the commit will be written as a root commit. For a single parent, an array of one SHA should be provided; for a merge commit, an array of more than one should be provided.
    */
   parents: string[];
-
   repo: string;
   /**
    * The [PGP signature](https://en.wikipedia.org/wiki/Pretty_Good_Privacy) of the commit. GitHub adds the signature to the `gpgsig` header of the created commit. For a commit signature to be verifiable by Git or GitHub, it must be an ASCII-armored detached PGP signature over the string commit as it would be written to the object database. To pass a `signature` parameter, you need to first manually create a valid PGP signature, which can be complicated. You may find it easier to [use the command line](https://git-scm.com/book/id/v2/Git-Tools-Signing-Your-Work) to create signed commits.
@@ -24728,7 +25502,6 @@ export type GitCreateRefParams = {
    * The name of the fully qualified reference (ie: `refs/heads/master`). If it doesn't start with 'refs' and have at least two slashes, it will be rejected.
    */
   ref: string;
-
   repo: string;
   /**
    * The SHA1 value for this reference.
@@ -24744,9 +25517,7 @@ export type GitCreateTagParams = {
    * The SHA of the git object this is tagging.
    */
   object: string;
-
   owner: string;
-
   repo: string;
   /**
    * The tag's name. This is typically a version (e.g., "v0.0.1").
@@ -24766,9 +25537,7 @@ export type GitCreateTreeParams = {
    * The SHA1 of the tree you want to update with new data. If you don't set this, the commit will be created on top of everything; however, it will only contain your change, the rest of your files will show up as deleted.
    */
   base_tree?: string;
-
   owner: string;
-
   repo: string;
   /**
    * Objects (of `path`, `mode`, `type`, and `sha`) specifying a tree structure.
@@ -24777,46 +25546,33 @@ export type GitCreateTreeParams = {
 };
 export type GitDeleteRefParams = {
   owner: string;
-
   ref: string;
-
   repo: string;
 };
 export type GitGetBlobParams = {
   file_sha: string;
-
   owner: string;
-
   repo: string;
 };
 export type GitGetCommitParams = {
   commit_sha: string;
-
   owner: string;
-
   repo: string;
 };
 export type GitGetRefParams = {
   owner: string;
-
   ref: string;
-
   repo: string;
 };
 export type GitGetTagParams = {
   owner: string;
-
   repo: string;
-
   tag_sha: string;
 };
 export type GitGetTreeParams = {
   owner: string;
-
   recursive?: "1";
-
   repo: string;
-
   tree_sha: string;
 };
 export type GitListMatchingRefsParams = {
@@ -24829,9 +25585,7 @@ export type GitListMatchingRefsParams = {
    * Results per page (max 100)
    */
   per_page?: number;
-
   ref: string;
-
   repo: string;
 };
 export type GitListRefsParams = {
@@ -24839,13 +25593,9 @@ export type GitListRefsParams = {
    * Filter by sub-namespace (reference prefix). Most commen examples would be `'heads/'` and `'tags/'` to retrieve branches or tags
    */
   namespace?: string;
-
   owner: string;
-
   page?: number;
-
   per_page?: number;
-
   repo: string;
 };
 export type GitUpdateRefParams = {
@@ -24853,11 +25603,8 @@ export type GitUpdateRefParams = {
    * Indicates whether to force the update or to make sure the update is a fast-forward update. Leaving this out or setting it to `false` will make sure you're not overwriting work.
    */
   force?: boolean;
-
   owner: string;
-
   ref: string;
-
   repo: string;
   /**
    * The SHA1 value to set this reference to
@@ -24872,7 +25619,6 @@ export type InteractionsAddOrUpdateRestrictionsForOrgParams = {
    * Specifies the group of GitHub users who can comment, open issues, or create pull requests in public repositories for the given organization. Must be one of: `existing_users`, `contributors_only`, or `collaborators_only`.
    */
   limit: "existing_users" | "contributors_only" | "collaborators_only";
-
   org: string;
 };
 export type InteractionsAddOrUpdateRestrictionsForRepoParams = {
@@ -24880,9 +25626,7 @@ export type InteractionsAddOrUpdateRestrictionsForRepoParams = {
    * Specifies the group of GitHub users who can comment, open issues, or create pull requests for the given repository. Must be one of: `existing_users`, `contributors_only`, or `collaborators_only`.
    */
   limit: "existing_users" | "contributors_only" | "collaborators_only";
-
   owner: string;
-
   repo: string;
 };
 export type InteractionsGetRestrictionsForOrgParams = {
@@ -24890,7 +25634,6 @@ export type InteractionsGetRestrictionsForOrgParams = {
 };
 export type InteractionsGetRestrictionsForRepoParams = {
   owner: string;
-
   repo: string;
 };
 export type InteractionsRemoveRestrictionsForOrgParams = {
@@ -24898,7 +25641,6 @@ export type InteractionsRemoveRestrictionsForOrgParams = {
 };
 export type InteractionsRemoveRestrictionsForRepoParams = {
   owner: string;
-
   repo: string;
 };
 export type IssuesAddAssigneesParamsDeprecatedNumber = {
@@ -24910,9 +25652,7 @@ export type IssuesAddAssigneesParamsDeprecatedNumber = {
    * @deprecated "number" parameter renamed to "issue_number"
    */
   number: number;
-
   owner: string;
-
   repo: string;
 };
 export type IssuesAddAssigneesParams = {
@@ -24920,11 +25660,8 @@ export type IssuesAddAssigneesParams = {
    * Usernames of people to assign this issue to. _NOTE: Only users with push access can add assignees to an issue. Assignees are silently ignored otherwise._
    */
   assignees?: string[];
-
   issue_number: number;
-
   owner: string;
-
   repo: string;
 };
 export type IssuesAddLabelsParamsDeprecatedNumber = {
@@ -24936,9 +25673,7 @@ export type IssuesAddLabelsParamsDeprecatedNumber = {
    * @deprecated "number" parameter renamed to "issue_number"
    */
   number: number;
-
   owner: string;
-
   repo: string;
 };
 export type IssuesAddLabelsParams = {
@@ -24947,16 +25682,12 @@ export type IssuesAddLabelsParams = {
    * The name of the label to add to the issue. Must contain at least one label. **Note:** Alternatively, you can pass a single label as a `string` or an `array` of labels directly, but GitHub recommends passing an object with the `labels` key.
    */
   labels: string[];
-
   owner: string;
-
   repo: string;
 };
 export type IssuesCheckAssigneeParams = {
   assignee: string;
-
   owner: string;
-
   repo: string;
 };
 export type IssuesCreateParamsDeprecatedAssignee = {
@@ -24981,9 +25712,7 @@ export type IssuesCreateParamsDeprecatedAssignee = {
    * The `number` of the milestone to associate this issue with. _NOTE: Only users with push access can set the milestone for new issues. The milestone is silently dropped otherwise._
    */
   milestone?: number;
-
   owner: string;
-
   repo: string;
   /**
    * The title of the issue.
@@ -25007,9 +25736,7 @@ export type IssuesCreateParams = {
    * The `number` of the milestone to associate this issue with. _NOTE: Only users with push access can set the milestone for new issues. The milestone is silently dropped otherwise._
    */
   milestone?: number;
-
   owner: string;
-
   repo: string;
   /**
    * The title of the issue.
@@ -25025,9 +25752,7 @@ export type IssuesCreateCommentParamsDeprecatedNumber = {
    * @deprecated "number" parameter renamed to "issue_number"
    */
   number: number;
-
   owner: string;
-
   repo: string;
 };
 export type IssuesCreateCommentParams = {
@@ -25035,11 +25760,8 @@ export type IssuesCreateCommentParams = {
    * The contents of the comment.
    */
   body: string;
-
   issue_number: number;
-
   owner: string;
-
   repo: string;
 };
 export type IssuesCreateLabelParams = {
@@ -25055,9 +25777,7 @@ export type IssuesCreateLabelParams = {
    * The name of the label. Emoji can be added to label names, using either native emoji or colon-style markup. For example, typing `:strawberry:` will render the emoji ![:strawberry:](https://github.githubassets.com/images/icons/emoji/unicode/1f353.png ":strawberry:"). For a full list of available emoji and codes, see [emoji-cheat-sheet.com](http://emoji-cheat-sheet.com/).
    */
   name: string;
-
   owner: string;
-
   repo: string;
 };
 export type IssuesCreateMilestoneParams = {
@@ -25069,9 +25789,7 @@ export type IssuesCreateMilestoneParams = {
    * The milestone due date. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.
    */
   due_on?: string;
-
   owner: string;
-
   repo: string;
   /**
    * The state of the milestone. Either `open` or `closed`.
@@ -25084,16 +25802,12 @@ export type IssuesCreateMilestoneParams = {
 };
 export type IssuesDeleteCommentParams = {
   comment_id: number;
-
   owner: string;
-
   repo: string;
 };
 export type IssuesDeleteLabelParams = {
   name: string;
-
   owner: string;
-
   repo: string;
 };
 export type IssuesDeleteMilestoneParamsDeprecatedNumber = {
@@ -25101,16 +25815,12 @@ export type IssuesDeleteMilestoneParamsDeprecatedNumber = {
    * @deprecated "number" parameter renamed to "milestone_number"
    */
   number: number;
-
   owner: string;
-
   repo: string;
 };
 export type IssuesDeleteMilestoneParams = {
   milestone_number: number;
-
   owner: string;
-
   repo: string;
 };
 export type IssuesGetParamsDeprecatedNumber = {
@@ -25118,21 +25828,16 @@ export type IssuesGetParamsDeprecatedNumber = {
    * @deprecated "number" parameter renamed to "issue_number"
    */
   number: number;
-
   owner: string;
-
   repo: string;
 };
 export type IssuesGetParams = {
   issue_number: number;
-
   owner: string;
-
   repo: string;
 };
 export type IssuesGetCommentParams = {
   comment_id: number;
-
   owner: string;
   /**
    * Page number of the results to fetch.
@@ -25142,21 +25847,16 @@ export type IssuesGetCommentParams = {
    * Results per page (max 100)
    */
   per_page?: number;
-
   repo: string;
 };
 export type IssuesGetEventParams = {
   event_id: number;
-
   owner: string;
-
   repo: string;
 };
 export type IssuesGetLabelParams = {
   name: string;
-
   owner: string;
-
   repo: string;
 };
 export type IssuesGetMilestoneParamsDeprecatedNumber = {
@@ -25164,16 +25864,12 @@ export type IssuesGetMilestoneParamsDeprecatedNumber = {
    * @deprecated "number" parameter renamed to "milestone_number"
    */
   number: number;
-
   owner: string;
-
   repo: string;
 };
 export type IssuesGetMilestoneParams = {
   milestone_number: number;
-
   owner: string;
-
   repo: string;
 };
 export type IssuesListParams = {
@@ -25225,7 +25921,6 @@ export type IssuesListAssigneesParams = {
    * Results per page (max 100)
    */
   per_page?: number;
-
   repo: string;
 };
 export type IssuesListCommentsParamsDeprecatedNumber = {
@@ -25233,7 +25928,6 @@ export type IssuesListCommentsParamsDeprecatedNumber = {
    * @deprecated "number" parameter renamed to "issue_number"
    */
   number: number;
-
   owner: string;
   /**
    * Page number of the results to fetch.
@@ -25243,7 +25937,6 @@ export type IssuesListCommentsParamsDeprecatedNumber = {
    * Results per page (max 100)
    */
   per_page?: number;
-
   repo: string;
   /**
    * Only comments updated at or after this time are returned. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.
@@ -25252,7 +25945,6 @@ export type IssuesListCommentsParamsDeprecatedNumber = {
 };
 export type IssuesListCommentsParams = {
   issue_number: number;
-
   owner: string;
   /**
    * Page number of the results to fetch.
@@ -25262,7 +25954,6 @@ export type IssuesListCommentsParams = {
    * Results per page (max 100)
    */
   per_page?: number;
-
   repo: string;
   /**
    * Only comments updated at or after this time are returned. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.
@@ -25274,9 +25965,7 @@ export type IssuesListCommentsForRepoParams = {
    * Either `asc` or `desc`. Ignored without the `sort` parameter.
    */
   direction?: "asc" | "desc";
-
   owner: string;
-
   repo: string;
   /**
    * Only comments updated at or after this time are returned. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.
@@ -25292,7 +25981,6 @@ export type IssuesListEventsParamsDeprecatedNumber = {
    * @deprecated "number" parameter renamed to "issue_number"
    */
   number: number;
-
   owner: string;
   /**
    * Page number of the results to fetch.
@@ -25302,12 +25990,10 @@ export type IssuesListEventsParamsDeprecatedNumber = {
    * Results per page (max 100)
    */
   per_page?: number;
-
   repo: string;
 };
 export type IssuesListEventsParams = {
   issue_number: number;
-
   owner: string;
   /**
    * Page number of the results to fetch.
@@ -25317,7 +26003,6 @@ export type IssuesListEventsParams = {
    * Results per page (max 100)
    */
   per_page?: number;
-
   repo: string;
 };
 export type IssuesListEventsForRepoParams = {
@@ -25330,7 +26015,6 @@ export type IssuesListEventsForRepoParams = {
    * Results per page (max 100)
    */
   per_page?: number;
-
   repo: string;
 };
 export type IssuesListEventsForTimelineParamsDeprecatedNumber = {
@@ -25338,7 +26022,6 @@ export type IssuesListEventsForTimelineParamsDeprecatedNumber = {
    * @deprecated "number" parameter renamed to "issue_number"
    */
   number: number;
-
   owner: string;
   /**
    * Page number of the results to fetch.
@@ -25348,12 +26031,10 @@ export type IssuesListEventsForTimelineParamsDeprecatedNumber = {
    * Results per page (max 100)
    */
   per_page?: number;
-
   repo: string;
 };
 export type IssuesListEventsForTimelineParams = {
   issue_number: number;
-
   owner: string;
   /**
    * Page number of the results to fetch.
@@ -25363,7 +26044,6 @@ export type IssuesListEventsForTimelineParams = {
    * Results per page (max 100)
    */
   per_page?: number;
-
   repo: string;
 };
 export type IssuesListForAuthenticatedUserParams = {
@@ -25423,7 +26103,6 @@ export type IssuesListForOrgParams = {
    * A list of comma separated label names. Example: `bug,ui,@high`
    */
   labels?: string;
-
   org: string;
   /**
    * Page number of the results to fetch.
@@ -25471,7 +26150,6 @@ export type IssuesListForRepoParams = {
    * If an `integer` is passed, it should refer to a milestone by its `number` field. If the string `*` is passed, issues with any milestone are accepted. If the string `none` is passed, issues without milestones are returned.
    */
   milestone?: string;
-
   owner: string;
   /**
    * Page number of the results to fetch.
@@ -25481,7 +26159,6 @@ export type IssuesListForRepoParams = {
    * Results per page (max 100)
    */
   per_page?: number;
-
   repo: string;
   /**
    * Only issues updated at or after this time are returned. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.
@@ -25501,7 +26178,6 @@ export type IssuesListLabelsForMilestoneParamsDeprecatedNumber = {
    * @deprecated "number" parameter renamed to "milestone_number"
    */
   number: number;
-
   owner: string;
   /**
    * Page number of the results to fetch.
@@ -25511,12 +26187,10 @@ export type IssuesListLabelsForMilestoneParamsDeprecatedNumber = {
    * Results per page (max 100)
    */
   per_page?: number;
-
   repo: string;
 };
 export type IssuesListLabelsForMilestoneParams = {
   milestone_number: number;
-
   owner: string;
   /**
    * Page number of the results to fetch.
@@ -25526,7 +26200,6 @@ export type IssuesListLabelsForMilestoneParams = {
    * Results per page (max 100)
    */
   per_page?: number;
-
   repo: string;
 };
 export type IssuesListLabelsForRepoParams = {
@@ -25539,7 +26212,6 @@ export type IssuesListLabelsForRepoParams = {
    * Results per page (max 100)
    */
   per_page?: number;
-
   repo: string;
 };
 export type IssuesListLabelsOnIssueParamsDeprecatedNumber = {
@@ -25547,7 +26219,6 @@ export type IssuesListLabelsOnIssueParamsDeprecatedNumber = {
    * @deprecated "number" parameter renamed to "issue_number"
    */
   number: number;
-
   owner: string;
   /**
    * Page number of the results to fetch.
@@ -25557,12 +26228,10 @@ export type IssuesListLabelsOnIssueParamsDeprecatedNumber = {
    * Results per page (max 100)
    */
   per_page?: number;
-
   repo: string;
 };
 export type IssuesListLabelsOnIssueParams = {
   issue_number: number;
-
   owner: string;
   /**
    * Page number of the results to fetch.
@@ -25572,7 +26241,6 @@ export type IssuesListLabelsOnIssueParams = {
    * Results per page (max 100)
    */
   per_page?: number;
-
   repo: string;
 };
 export type IssuesListMilestonesForRepoParams = {
@@ -25580,7 +26248,6 @@ export type IssuesListMilestonesForRepoParams = {
    * The direction of the sort. Either `asc` or `desc`.
    */
   direction?: "asc" | "desc";
-
   owner: string;
   /**
    * Page number of the results to fetch.
@@ -25590,7 +26257,6 @@ export type IssuesListMilestonesForRepoParams = {
    * Results per page (max 100)
    */
   per_page?: number;
-
   repo: string;
   /**
    * What to sort results by. Either `due_on` or `completeness`.
@@ -25614,9 +26280,7 @@ export type IssuesLockParamsDeprecatedNumber = {
    * @deprecated "number" parameter renamed to "issue_number"
    */
   number: number;
-
   owner: string;
-
   repo: string;
 };
 export type IssuesLockParams = {
@@ -25629,9 +26293,7 @@ export type IssuesLockParams = {
    * \* `spam`
    */
   lock_reason?: "off-topic" | "too heated" | "resolved" | "spam";
-
   owner: string;
-
   repo: string;
 };
 export type IssuesRemoveAssigneesParamsDeprecatedNumber = {
@@ -25643,9 +26305,7 @@ export type IssuesRemoveAssigneesParamsDeprecatedNumber = {
    * @deprecated "number" parameter renamed to "issue_number"
    */
   number: number;
-
   owner: string;
-
   repo: string;
 };
 export type IssuesRemoveAssigneesParams = {
@@ -25653,11 +26313,8 @@ export type IssuesRemoveAssigneesParams = {
    * Usernames of assignees to remove from an issue. _NOTE: Only users with push access can remove assignees from an issue. Assignees are silently ignored otherwise._
    */
   assignees?: string[];
-
   issue_number: number;
-
   owner: string;
-
   repo: string;
 };
 export type IssuesRemoveLabelParamsDeprecatedNumber = {
@@ -25666,18 +26323,13 @@ export type IssuesRemoveLabelParamsDeprecatedNumber = {
    * @deprecated "number" parameter renamed to "issue_number"
    */
   number: number;
-
   owner: string;
-
   repo: string;
 };
 export type IssuesRemoveLabelParams = {
   issue_number: number;
-
   name: string;
-
   owner: string;
-
   repo: string;
 };
 export type IssuesRemoveLabelsParamsDeprecatedNumber = {
@@ -25685,16 +26337,12 @@ export type IssuesRemoveLabelsParamsDeprecatedNumber = {
    * @deprecated "number" parameter renamed to "issue_number"
    */
   number: number;
-
   owner: string;
-
   repo: string;
 };
 export type IssuesRemoveLabelsParams = {
   issue_number: number;
-
   owner: string;
-
   repo: string;
 };
 export type IssuesReplaceLabelsParamsDeprecatedNumber = {
@@ -25706,9 +26354,7 @@ export type IssuesReplaceLabelsParamsDeprecatedNumber = {
    * @deprecated "number" parameter renamed to "issue_number"
    */
   number: number;
-
   owner: string;
-
   repo: string;
 };
 export type IssuesReplaceLabelsParams = {
@@ -25717,9 +26363,7 @@ export type IssuesReplaceLabelsParams = {
    * The names of the labels to add to the issue. You can pass an empty array to remove all labels. **Note:** Alternatively, you can pass a single label as a `string` or an `array` of labels directly, but GitHub recommends passing an object with the `labels` key.
    */
   labels?: string[];
-
   owner: string;
-
   repo: string;
 };
 export type IssuesUnlockParamsDeprecatedNumber = {
@@ -25727,16 +26371,12 @@ export type IssuesUnlockParamsDeprecatedNumber = {
    * @deprecated "number" parameter renamed to "issue_number"
    */
   number: number;
-
   owner: string;
-
   repo: string;
 };
 export type IssuesUnlockParams = {
   issue_number: number;
-
   owner: string;
-
   repo: string;
 };
 export type IssuesUpdateParamsDeprecatedNumber = {
@@ -25760,9 +26400,7 @@ export type IssuesUpdateParamsDeprecatedNumber = {
    * @deprecated "number" parameter renamed to "issue_number"
    */
   number: number;
-
   owner: string;
-
   repo: string;
   /**
    * State of the issue. Either `open` or `closed`.
@@ -25787,7 +26425,6 @@ export type IssuesUpdateParamsDeprecatedAssignee = {
    * The contents of the issue.
    */
   body?: string;
-
   issue_number: number;
   /**
    * Labels to associate with this issue. Pass one or more Labels to _replace_ the set of Labels on this Issue. Send an empty array (`[]`) to clear all Labels from the Issue. _NOTE: Only users with push access can set labels for issues. Labels are silently dropped otherwise._
@@ -25797,9 +26434,7 @@ export type IssuesUpdateParamsDeprecatedAssignee = {
    * The `number` of the milestone to associate this issue with or `null` to remove current. _NOTE: Only users with push access can set the milestone for issues. The milestone is silently dropped otherwise._
    */
   milestone?: number | null;
-
   owner: string;
-
   repo: string;
   /**
    * State of the issue. Either `open` or `closed`.
@@ -25819,7 +26454,6 @@ export type IssuesUpdateParams = {
    * The contents of the issue.
    */
   body?: string;
-
   issue_number: number;
   /**
    * Labels to associate with this issue. Pass one or more Labels to _replace_ the set of Labels on this Issue. Send an empty array (`[]`) to clear all Labels from the Issue. _NOTE: Only users with push access can set labels for issues. Labels are silently dropped otherwise._
@@ -25829,9 +26463,7 @@ export type IssuesUpdateParams = {
    * The `number` of the milestone to associate this issue with or `null` to remove current. _NOTE: Only users with push access can set the milestone for issues. The milestone is silently dropped otherwise._
    */
   milestone?: number | null;
-
   owner: string;
-
   repo: string;
   /**
    * State of the issue. Either `open` or `closed`.
@@ -25847,11 +26479,8 @@ export type IssuesUpdateCommentParams = {
    * The contents of the comment.
    */
   body: string;
-
   comment_id: number;
-
   owner: string;
-
   repo: string;
 };
 export type IssuesUpdateLabelParams = {
@@ -25859,7 +26488,6 @@ export type IssuesUpdateLabelParams = {
    * The [hexadecimal color code](http://www.color-hex.com/) for the label, without the leading `#`.
    */
   color?: string;
-
   current_name: string;
   /**
    * A short description of the label.
@@ -25869,9 +26497,7 @@ export type IssuesUpdateLabelParams = {
    * The new name of the label. Emoji can be added to label names, using either native emoji or colon-style markup. For example, typing `:strawberry:` will render the emoji ![:strawberry:](https://github.githubassets.com/images/icons/emoji/unicode/1f353.png ":strawberry:"). For a full list of available emoji and codes, see [emoji-cheat-sheet.com](http://emoji-cheat-sheet.com/).
    */
   name?: string;
-
   owner: string;
-
   repo: string;
 };
 export type IssuesUpdateMilestoneParamsDeprecatedNumber = {
@@ -25887,9 +26513,7 @@ export type IssuesUpdateMilestoneParamsDeprecatedNumber = {
    * @deprecated "number" parameter renamed to "milestone_number"
    */
   number: number;
-
   owner: string;
-
   repo: string;
   /**
    * The state of the milestone. Either `open` or `closed`.
@@ -25909,11 +26533,8 @@ export type IssuesUpdateMilestoneParams = {
    * The milestone due date. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.
    */
   due_on?: string;
-
   milestone_number: number;
-
   owner: string;
-
   repo: string;
   /**
    * The state of the milestone. Either `open` or `closed`.
@@ -25929,7 +26550,6 @@ export type LicensesGetParams = {
 };
 export type LicensesGetForRepoParams = {
   owner: string;
-
   repo: string;
 };
 export type MarkdownRenderParams = {
@@ -25953,7 +26573,6 @@ export type MarkdownRenderRawParams = {
 };
 export type MigrationsCancelImportParams = {
   owner: string;
-
   repo: string;
 };
 export type MigrationsDeleteArchiveForAuthenticatedUserParams = {
@@ -25961,7 +26580,10 @@ export type MigrationsDeleteArchiveForAuthenticatedUserParams = {
 };
 export type MigrationsDeleteArchiveForOrgParams = {
   migration_id: number;
-
+  org: string;
+};
+export type MigrationsDownloadArchiveForOrgParams = {
+  migration_id: number;
   org: string;
 };
 export type MigrationsGetArchiveForAuthenticatedUserParams = {
@@ -25969,12 +26591,10 @@ export type MigrationsGetArchiveForAuthenticatedUserParams = {
 };
 export type MigrationsGetArchiveForOrgParams = {
   migration_id: number;
-
   org: string;
 };
 export type MigrationsGetCommitAuthorsParams = {
   owner: string;
-
   repo: string;
   /**
    * Only authors found after this id are returned. Provide the highest author ID you've seen so far. New authors may be added to the list at any point while the importer is performing the `raw` step.
@@ -25983,12 +26603,10 @@ export type MigrationsGetCommitAuthorsParams = {
 };
 export type MigrationsGetImportProgressParams = {
   owner: string;
-
   repo: string;
 };
 export type MigrationsGetLargeFilesParams = {
   owner: string;
-
   repo: string;
 };
 export type MigrationsGetStatusForAuthenticatedUserParams = {
@@ -25996,7 +26614,6 @@ export type MigrationsGetStatusForAuthenticatedUserParams = {
 };
 export type MigrationsGetStatusForOrgParams = {
   migration_id: number;
-
   org: string;
 };
 export type MigrationsListForAuthenticatedUserParams = {
@@ -26022,7 +26639,6 @@ export type MigrationsListForOrgParams = {
 };
 export type MigrationsListReposForOrgParams = {
   migration_id: number;
-
   org: string;
   /**
    * Page number of the results to fetch.
@@ -26054,14 +26670,11 @@ export type MigrationsMapCommitAuthorParams = {
    * The new Git author name.
    */
   name?: string;
-
   owner: string;
-
   repo: string;
 };
 export type MigrationsSetLfsPreferenceParams = {
   owner: string;
-
   repo: string;
   /**
    * Can be one of `opt_in` (large files will be stored using Git LFS) or `opt_out` (large files will be removed during the import).
@@ -26091,7 +26704,6 @@ export type MigrationsStartForOrgParams = {
    * Indicates whether repositories should be locked (to prevent manipulation) while migrating data.
    */
   lock_repositories?: boolean;
-
   org: string;
   /**
    * A list of arrays indicating which repositories should be migrated.
@@ -26100,7 +26712,6 @@ export type MigrationsStartForOrgParams = {
 };
 export type MigrationsStartImportParams = {
   owner: string;
-
   repo: string;
   /**
    * For a tfvc import, the name of the project that is being imported.
@@ -26125,19 +26736,15 @@ export type MigrationsStartImportParams = {
 };
 export type MigrationsUnlockRepoForAuthenticatedUserParams = {
   migration_id: number;
-
   repo_name: string;
 };
 export type MigrationsUnlockRepoForOrgParams = {
   migration_id: number;
-
   org: string;
-
   repo_name: string;
 };
 export type MigrationsUpdateImportParams = {
   owner: string;
-
   repo: string;
   /**
    * The password to provide to the originating repository.
@@ -26150,7 +26757,6 @@ export type MigrationsUpdateImportParams = {
 };
 export type OauthAuthorizationsCheckAuthorizationParams = {
   access_token: string;
-
   client_id: string;
 };
 export type OauthAuthorizationsCreateAuthorizationParams = {
@@ -26220,7 +26826,6 @@ export type OauthAuthorizationsGetOrCreateAuthorizationForAppAndFingerprintParam
    * The 40 character OAuth app client secret associated with the client ID specified in the URL.
    */
   client_secret: string;
-
   fingerprint: string;
   /**
    * A note to remind you what the OAuth token is for.
@@ -26241,7 +26846,6 @@ export type OauthAuthorizationsGetOrCreateAuthorizationForAppFingerprintParams =
    * The 40 character OAuth app client secret associated with the client ID specified in the URL.
    */
   client_secret: string;
-
   fingerprint: string;
   /**
    * A note to remind you what the OAuth token is for.
@@ -26278,17 +26882,14 @@ export type OauthAuthorizationsListGrantsParams = {
 };
 export type OauthAuthorizationsResetAuthorizationParams = {
   access_token: string;
-
   client_id: string;
 };
 export type OauthAuthorizationsRevokeAuthorizationForApplicationParams = {
   access_token: string;
-
   client_id: string;
 };
 export type OauthAuthorizationsRevokeGrantForApplicationParams = {
   access_token: string;
-
   client_id: string;
 };
 export type OauthAuthorizationsUpdateAuthorizationParams = {
@@ -26296,7 +26897,6 @@ export type OauthAuthorizationsUpdateAuthorizationParams = {
    * A list of scopes to add to this authorization.
    */
   add_scopes?: string[];
-
   authorization_id: number;
   /**
    * A unique string to distinguish an authorization from others created for the same client ID and user.
@@ -26327,37 +26927,30 @@ export type OrgsAddOrUpdateMembershipParams = {
    * \* `member` - The user will become a non-owner member of the organization.
    */
   role?: "admin" | "member";
-
   username: string;
 };
 export type OrgsBlockUserParams = {
   org: string;
-
   username: string;
 };
 export type OrgsCheckBlockedUserParams = {
   org: string;
-
   username: string;
 };
 export type OrgsCheckMembershipParams = {
   org: string;
-
   username: string;
 };
 export type OrgsCheckPublicMembershipParams = {
   org: string;
-
   username: string;
 };
 export type OrgsConcealMembershipParams = {
   org: string;
-
   username: string;
 };
 export type OrgsConvertMemberToOutsideCollaboratorParams = {
   org: string;
-
   username: string;
 };
 export type OrgsCreateHookParams = {
@@ -26377,7 +26970,6 @@ export type OrgsCreateHookParams = {
    * Must be passed as "web".
    */
   name: string;
-
   org: string;
 };
 export type OrgsCreateInvitationParams = {
@@ -26389,7 +26981,6 @@ export type OrgsCreateInvitationParams = {
    * **Required unless you provide `email`**. GitHub user ID for the person you are inviting.
    */
   invitee_id?: number;
-
   org: string;
   /**
    * Specify role for new member. Can be one of:
@@ -26405,7 +26996,6 @@ export type OrgsCreateInvitationParams = {
 };
 export type OrgsDeleteHookParams = {
   hook_id: number;
-
   org: string;
 };
 export type OrgsGetParams = {
@@ -26413,12 +27003,10 @@ export type OrgsGetParams = {
 };
 export type OrgsGetHookParams = {
   hook_id: number;
-
   org: string;
 };
 export type OrgsGetMembershipParams = {
   org: string;
-
   username: string;
 };
 export type OrgsGetMembershipForAuthenticatedUserParams = {
@@ -26460,7 +27048,6 @@ export type OrgsListForUserParams = {
    * Results per page (max 100)
    */
   per_page?: number;
-
   username: string;
 };
 export type OrgsListHooksParams = {
@@ -26487,7 +27074,6 @@ export type OrgsListInstallationsParams = {
 };
 export type OrgsListInvitationTeamsParams = {
   invitation_id: number;
-
   org: string;
   /**
    * Page number of the results to fetch.
@@ -26505,7 +27091,6 @@ export type OrgsListMembersParams = {
    * \* `all` - All members the authenticated user can see.
    */
   filter?: "2fa_disabled" | "all";
-
   org: string;
   /**
    * Page number of the results to fetch.
@@ -26544,7 +27129,6 @@ export type OrgsListOutsideCollaboratorsParams = {
    * \* `all`: All outside collaborators.
    */
   filter?: "2fa_disabled" | "all";
-
   org: string;
   /**
    * Page number of the results to fetch.
@@ -26579,32 +27163,26 @@ export type OrgsListPublicMembersParams = {
 };
 export type OrgsPingHookParams = {
   hook_id: number;
-
   org: string;
 };
 export type OrgsPublicizeMembershipParams = {
   org: string;
-
   username: string;
 };
 export type OrgsRemoveMemberParams = {
   org: string;
-
   username: string;
 };
 export type OrgsRemoveMembershipParams = {
   org: string;
-
   username: string;
 };
 export type OrgsRemoveOutsideCollaboratorParams = {
   org: string;
-
   username: string;
 };
 export type OrgsUnblockUserParams = {
   org: string;
-
   username: string;
 };
 export type OrgsUpdateParamsDeprecatedMembersAllowedRepositoryCreationType = {
@@ -26686,7 +27264,6 @@ export type OrgsUpdateParamsDeprecatedMembersAllowedRepositoryCreationType = {
    * The shorthand name of the company.
    */
   name?: string;
-
   org: string;
 };
 export type OrgsUpdateParams = {
@@ -26759,7 +27336,6 @@ export type OrgsUpdateParams = {
    * The shorthand name of the company.
    */
   name?: string;
-
   org: string;
 };
 export type OrgsUpdateHookParams = {
@@ -26775,9 +27351,7 @@ export type OrgsUpdateHookParams = {
    * Determines what [events](https://developer.github.com/v3/activity/events/types/) the hook is triggered for.
    */
   events?: string[];
-
   hook_id: number;
-
   org: string;
 };
 export type OrgsUpdateMembershipParams = {
@@ -26795,9 +27369,7 @@ export type ProjectsAddCollaboratorParams = {
    * \* `admin` - can read, write and administer this project.
    */
   permission?: "read" | "write" | "admin";
-
   project_id: number;
-
   username: string;
 };
 export type ProjectsCreateCardParams = {
@@ -26821,7 +27393,6 @@ export type ProjectsCreateColumnParams = {
    * The name of the column.
    */
   name: string;
-
   project_id: number;
 };
 export type ProjectsCreateForAuthenticatedUserParams = {
@@ -26843,7 +27414,6 @@ export type ProjectsCreateForOrgParams = {
    * The name of the project.
    */
   name: string;
-
   org: string;
 };
 export type ProjectsCreateForRepoParams = {
@@ -26855,9 +27425,7 @@ export type ProjectsCreateForRepoParams = {
    * The name of the project.
    */
   name: string;
-
   owner: string;
-
   repo: string;
 };
 export type ProjectsDeleteParams = {
@@ -26878,7 +27446,6 @@ export type ProjectsGetParams = {
    * Results per page (max 100)
    */
   per_page?: number;
-
   project_id: number;
 };
 export type ProjectsGetCardParams = {
@@ -26892,7 +27459,6 @@ export type ProjectsListCardsParams = {
    * Filters the project cards that are returned by the card's state. Can be one of `all`,`archived`, or `not_archived`.
    */
   archived_state?: "all" | "archived" | "not_archived";
-
   column_id: number;
   /**
    * Page number of the results to fetch.
@@ -26919,7 +27485,6 @@ export type ProjectsListCollaboratorsParams = {
    * Results per page (max 100)
    */
   per_page?: number;
-
   project_id: number;
 };
 export type ProjectsListColumnsParams = {
@@ -26931,7 +27496,6 @@ export type ProjectsListColumnsParams = {
    * Results per page (max 100)
    */
   per_page?: number;
-
   project_id: number;
 };
 export type ProjectsListForOrgParams = {
@@ -26959,7 +27523,6 @@ export type ProjectsListForRepoParams = {
    * Results per page (max 100)
    */
   per_page?: number;
-
   repo: string;
   /**
    * Indicates the state of the projects to return. Can be either `open`, `closed`, or `all`.
@@ -26979,7 +27542,6 @@ export type ProjectsListForUserParams = {
    * Indicates the state of the projects to return. Can be either `open`, `closed`, or `all`.
    */
   state?: "open" | "closed" | "all";
-
   username: string;
 };
 export type ProjectsMoveCardParams = {
@@ -27002,12 +27564,10 @@ export type ProjectsMoveColumnParams = {
 };
 export type ProjectsRemoveCollaboratorParams = {
   project_id: number;
-
   username: string;
 };
 export type ProjectsReviewUserPermissionLevelParams = {
   project_id: number;
-
   username: string;
 };
 export type ProjectsUpdateParams = {
@@ -27039,7 +27599,6 @@ export type ProjectsUpdateParams = {
    * \* `true` - Only the user can view a project board created on a user account. Organization members with the appropriate `organization_permission` can see project boards in an organization account.
    */
   private?: boolean;
-
   project_id: number;
   /**
    * State of the project. Either `open` or `closed`.
@@ -27051,7 +27610,6 @@ export type ProjectsUpdateCardParams = {
    * Use `true` to archive a project card. Specify `false` if you need to restore a previously archived project card.
    */
   archived?: boolean;
-
   card_id: number;
   /**
    * The card's note content. Only valid for cards without another type of content, so this cannot be specified if the card already has a `content_id` and `content_type`.
@@ -27070,16 +27628,12 @@ export type PullsCheckIfMergedParamsDeprecatedNumber = {
    * @deprecated "number" parameter renamed to "pull_number"
    */
   number: number;
-
   owner: string;
-
   repo: string;
 };
 export type PullsCheckIfMergedParams = {
   owner: string;
-
   pull_number: number;
-
   repo: string;
 };
 export type PullsCreateParams = {
@@ -27103,9 +27657,7 @@ export type PullsCreateParams = {
    * Indicates whether [maintainers can modify](https://help.github.com/articles/allowing-changes-to-a-pull-request-branch-created-from-a-fork/) the pull request.
    */
   maintainer_can_modify?: boolean;
-
   owner: string;
-
   repo: string;
   /**
    * The title of the new pull request.
@@ -27129,7 +27681,6 @@ export type PullsCreateCommentParamsDeprecatedNumber = {
    * @deprecated "number" parameter renamed to "pull_number"
    */
   number: number;
-
   owner: string;
   /**
    * The relative path to the file that necessitates a comment.
@@ -27139,7 +27690,6 @@ export type PullsCreateCommentParamsDeprecatedNumber = {
    * **Required without `comfort-fade` preview**. The position in the diff where you want to add a review comment. Note this value is not the same as the line number in the file. For help finding the position value, read the note above.
    */
   position?: number;
-
   repo: string;
   /**
    * **Required with `comfort-fade` preview**. In a split diff view, the side of the diff that the pull request's changes appear on. Can be `LEFT` or `RIGHT`. Use `LEFT` for deletions that appear in red. Use `RIGHT` for additions that appear in green or unchanged lines that appear in white and are shown for context. For a multi-line comment, side represents whether the last line of the comment range is a deletion or addition. For more information, see "[Diff view options](https://help.github.com/en/articles/about-comparing-branches-in-pull-requests#diff-view-options)" in the GitHub Help documentation.
@@ -27172,7 +27722,6 @@ export type PullsCreateCommentParamsDeprecatedInReplyTo = {
    * **Required with `comfort-fade` preview**. The line of the blob in the pull request diff that the comment applies to. For a multi-line comment, the last line of the range that your comment applies to.
    */
   line?: number;
-
   owner: string;
   /**
    * The relative path to the file that necessitates a comment.
@@ -27182,9 +27731,7 @@ export type PullsCreateCommentParamsDeprecatedInReplyTo = {
    * **Required without `comfort-fade` preview**. The position in the diff where you want to add a review comment. Note this value is not the same as the line number in the file. For help finding the position value, read the note above.
    */
   position?: number;
-
   pull_number: number;
-
   repo: string;
   /**
    * **Required with `comfort-fade` preview**. In a split diff view, the side of the diff that the pull request's changes appear on. Can be `LEFT` or `RIGHT`. Use `LEFT` for deletions that appear in red. Use `RIGHT` for additions that appear in green or unchanged lines that appear in white and are shown for context. For a multi-line comment, side represents whether the last line of the comment range is a deletion or addition. For more information, see "[Diff view options](https://help.github.com/en/articles/about-comparing-branches-in-pull-requests#diff-view-options)" in the GitHub Help documentation.
@@ -27212,7 +27759,6 @@ export type PullsCreateCommentParams = {
    * **Required with `comfort-fade` preview**. The line of the blob in the pull request diff that the comment applies to. For a multi-line comment, the last line of the range that your comment applies to.
    */
   line?: number;
-
   owner: string;
   /**
    * The relative path to the file that necessitates a comment.
@@ -27222,9 +27768,7 @@ export type PullsCreateCommentParams = {
    * **Required without `comfort-fade` preview**. The position in the diff where you want to add a review comment. Note this value is not the same as the line number in the file. For help finding the position value, read the note above.
    */
   position?: number;
-
   pull_number: number;
-
   repo: string;
   /**
    * **Required with `comfort-fade` preview**. In a split diff view, the side of the diff that the pull request's changes appear on. Can be `LEFT` or `RIGHT`. Use `LEFT` for deletions that appear in red. Use `RIGHT` for additions that appear in green or unchanged lines that appear in white and are shown for context. For a multi-line comment, side represents whether the last line of the comment range is a deletion or addition. For more information, see "[Diff view options](https://help.github.com/en/articles/about-comparing-branches-in-pull-requests#diff-view-options)" in the GitHub Help documentation.
@@ -27256,7 +27800,6 @@ export type PullsCreateCommentReplyParamsDeprecatedNumber = {
    * @deprecated "number" parameter renamed to "pull_number"
    */
   number: number;
-
   owner: string;
   /**
    * The relative path to the file that necessitates a comment.
@@ -27266,7 +27809,6 @@ export type PullsCreateCommentReplyParamsDeprecatedNumber = {
    * **Required without `comfort-fade` preview**. The position in the diff where you want to add a review comment. Note this value is not the same as the line number in the file. For help finding the position value, read the note above.
    */
   position?: number;
-
   repo: string;
   /**
    * **Required with `comfort-fade` preview**. In a split diff view, the side of the diff that the pull request's changes appear on. Can be `LEFT` or `RIGHT`. Use `LEFT` for deletions that appear in red. Use `RIGHT` for additions that appear in green or unchanged lines that appear in white and are shown for context. For a multi-line comment, side represents whether the last line of the comment range is a deletion or addition. For more information, see "[Diff view options](https://help.github.com/en/articles/about-comparing-branches-in-pull-requests#diff-view-options)" in the GitHub Help documentation.
@@ -27299,7 +27841,6 @@ export type PullsCreateCommentReplyParamsDeprecatedInReplyTo = {
    * **Required with `comfort-fade` preview**. The line of the blob in the pull request diff that the comment applies to. For a multi-line comment, the last line of the range that your comment applies to.
    */
   line?: number;
-
   owner: string;
   /**
    * The relative path to the file that necessitates a comment.
@@ -27309,9 +27850,7 @@ export type PullsCreateCommentReplyParamsDeprecatedInReplyTo = {
    * **Required without `comfort-fade` preview**. The position in the diff where you want to add a review comment. Note this value is not the same as the line number in the file. For help finding the position value, read the note above.
    */
   position?: number;
-
   pull_number: number;
-
   repo: string;
   /**
    * **Required with `comfort-fade` preview**. In a split diff view, the side of the diff that the pull request's changes appear on. Can be `LEFT` or `RIGHT`. Use `LEFT` for deletions that appear in red. Use `RIGHT` for additions that appear in green or unchanged lines that appear in white and are shown for context. For a multi-line comment, side represents whether the last line of the comment range is a deletion or addition. For more information, see "[Diff view options](https://help.github.com/en/articles/about-comparing-branches-in-pull-requests#diff-view-options)" in the GitHub Help documentation.
@@ -27339,7 +27878,6 @@ export type PullsCreateCommentReplyParams = {
    * **Required with `comfort-fade` preview**. The line of the blob in the pull request diff that the comment applies to. For a multi-line comment, the last line of the range that your comment applies to.
    */
   line?: number;
-
   owner: string;
   /**
    * The relative path to the file that necessitates a comment.
@@ -27349,9 +27887,7 @@ export type PullsCreateCommentReplyParams = {
    * **Required without `comfort-fade` preview**. The position in the diff where you want to add a review comment. Note this value is not the same as the line number in the file. For help finding the position value, read the note above.
    */
   position?: number;
-
   pull_number: number;
-
   repo: string;
   /**
    * **Required with `comfort-fade` preview**. In a split diff view, the side of the diff that the pull request's changes appear on. Can be `LEFT` or `RIGHT`. Use `LEFT` for deletions that appear in red. Use `RIGHT` for additions that appear in green or unchanged lines that appear in white and are shown for context. For a multi-line comment, side represents whether the last line of the comment range is a deletion or addition. For more information, see "[Diff view options](https://help.github.com/en/articles/about-comparing-branches-in-pull-requests#diff-view-options)" in the GitHub Help documentation.
@@ -27368,17 +27904,11 @@ export type PullsCreateCommentReplyParams = {
 };
 export type PullsCreateFromIssueParams = {
   base: string;
-
   draft?: boolean;
-
   head: string;
-
   issue: number;
-
   maintainer_can_modify?: boolean;
-
   owner: string;
-
   repo: string;
 };
 export type PullsCreateReviewParamsDeprecatedNumber = {
@@ -27402,9 +27932,7 @@ export type PullsCreateReviewParamsDeprecatedNumber = {
    * @deprecated "number" parameter renamed to "pull_number"
    */
   number: number;
-
   owner: string;
-
   repo: string;
 };
 export type PullsCreateReviewParams = {
@@ -27424,11 +27952,8 @@ export type PullsCreateReviewParams = {
    * The review action you want to perform. The review actions include: `APPROVE`, `REQUEST_CHANGES`, or `COMMENT`. By leaving this blank, you set the review action state to `PENDING`, which means you will need to [submit the pull request review](https://developer.github.com/v3/pulls/reviews/#submit-a-pull-request-review) when you are ready.
    */
   event?: "APPROVE" | "REQUEST_CHANGES" | "COMMENT";
-
   owner: string;
-
   pull_number: number;
-
   repo: string;
 };
 export type PullsCreateReviewCommentReplyParams = {
@@ -27436,13 +27961,9 @@ export type PullsCreateReviewCommentReplyParams = {
    * The text of the review comment.
    */
   body: string;
-
   comment_id: number;
-
   owner: string;
-
   pull_number: number;
-
   repo: string;
 };
 export type PullsCreateReviewRequestParamsDeprecatedNumber = {
@@ -27450,9 +27971,7 @@ export type PullsCreateReviewRequestParamsDeprecatedNumber = {
    * @deprecated "number" parameter renamed to "pull_number"
    */
   number: number;
-
   owner: string;
-
   repo: string;
   /**
    * An array of user `login`s that will be requested.
@@ -27465,9 +27984,7 @@ export type PullsCreateReviewRequestParamsDeprecatedNumber = {
 };
 export type PullsCreateReviewRequestParams = {
   owner: string;
-
   pull_number: number;
-
   repo: string;
   /**
    * An array of user `login`s that will be requested.
@@ -27480,9 +27997,7 @@ export type PullsCreateReviewRequestParams = {
 };
 export type PullsDeleteCommentParams = {
   comment_id: number;
-
   owner: string;
-
   repo: string;
 };
 export type PullsDeletePendingReviewParamsDeprecatedNumber = {
@@ -27490,20 +28005,14 @@ export type PullsDeletePendingReviewParamsDeprecatedNumber = {
    * @deprecated "number" parameter renamed to "pull_number"
    */
   number: number;
-
   owner: string;
-
   repo: string;
-
   review_id: number;
 };
 export type PullsDeletePendingReviewParams = {
   owner: string;
-
   pull_number: number;
-
   repo: string;
-
   review_id: number;
 };
 export type PullsDeleteReviewRequestParamsDeprecatedNumber = {
@@ -27511,9 +28020,7 @@ export type PullsDeleteReviewRequestParamsDeprecatedNumber = {
    * @deprecated "number" parameter renamed to "pull_number"
    */
   number: number;
-
   owner: string;
-
   repo: string;
   /**
    * An array of user `login`s that will be removed.
@@ -27526,9 +28033,7 @@ export type PullsDeleteReviewRequestParamsDeprecatedNumber = {
 };
 export type PullsDeleteReviewRequestParams = {
   owner: string;
-
   pull_number: number;
-
   repo: string;
   /**
    * An array of user `login`s that will be removed.
@@ -27548,11 +28053,8 @@ export type PullsDismissReviewParamsDeprecatedNumber = {
    * @deprecated "number" parameter renamed to "pull_number"
    */
   number: number;
-
   owner: string;
-
   repo: string;
-
   review_id: number;
 };
 export type PullsDismissReviewParams = {
@@ -27560,13 +28062,9 @@ export type PullsDismissReviewParams = {
    * The message for the pull request review dismissal
    */
   message: string;
-
   owner: string;
-
   pull_number: number;
-
   repo: string;
-
   review_id: number;
 };
 export type PullsGetParamsDeprecatedNumber = {
@@ -27574,23 +28072,17 @@ export type PullsGetParamsDeprecatedNumber = {
    * @deprecated "number" parameter renamed to "pull_number"
    */
   number: number;
-
   owner: string;
-
   repo: string;
 };
 export type PullsGetParams = {
   owner: string;
-
   pull_number: number;
-
   repo: string;
 };
 export type PullsGetCommentParams = {
   comment_id: number;
-
   owner: string;
-
   repo: string;
 };
 export type PullsGetCommentsForReviewParamsDeprecatedNumber = {
@@ -27598,7 +28090,6 @@ export type PullsGetCommentsForReviewParamsDeprecatedNumber = {
    * @deprecated "number" parameter renamed to "pull_number"
    */
   number: number;
-
   owner: string;
   /**
    * Page number of the results to fetch.
@@ -27608,9 +28099,7 @@ export type PullsGetCommentsForReviewParamsDeprecatedNumber = {
    * Results per page (max 100)
    */
   per_page?: number;
-
   repo: string;
-
   review_id: number;
 };
 export type PullsGetCommentsForReviewParams = {
@@ -27623,11 +28112,8 @@ export type PullsGetCommentsForReviewParams = {
    * Results per page (max 100)
    */
   per_page?: number;
-
   pull_number: number;
-
   repo: string;
-
   review_id: number;
 };
 export type PullsGetReviewParamsDeprecatedNumber = {
@@ -27635,20 +28121,14 @@ export type PullsGetReviewParamsDeprecatedNumber = {
    * @deprecated "number" parameter renamed to "pull_number"
    */
   number: number;
-
   owner: string;
-
   repo: string;
-
   review_id: number;
 };
 export type PullsGetReviewParams = {
   owner: string;
-
   pull_number: number;
-
   repo: string;
-
   review_id: number;
 };
 export type PullsListParams = {
@@ -27664,7 +28144,6 @@ export type PullsListParams = {
    * Filter pulls by head user or head organization and branch name in the format of `user:ref-name` or `organization:ref-name`. For example: `github:new-script-format` or `octocat:test-branch`.
    */
   head?: string;
-
   owner: string;
   /**
    * Page number of the results to fetch.
@@ -27674,7 +28153,6 @@ export type PullsListParams = {
    * Results per page (max 100)
    */
   per_page?: number;
-
   repo: string;
   /**
    * What to sort results by. Can be either `created`, `updated`, `popularity` (comment count) or `long-running` (age, filtering by pulls updated in the last month).
@@ -27694,7 +28172,6 @@ export type PullsListCommentsParamsDeprecatedNumber = {
    * @deprecated "number" parameter renamed to "pull_number"
    */
   number: number;
-
   owner: string;
   /**
    * Page number of the results to fetch.
@@ -27704,7 +28181,6 @@ export type PullsListCommentsParamsDeprecatedNumber = {
    * Results per page (max 100)
    */
   per_page?: number;
-
   repo: string;
   /**
    * This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`. Only returns comments `updated` at or after this time.
@@ -27720,7 +28196,6 @@ export type PullsListCommentsParams = {
    * Can be either `asc` or `desc`. Ignored without `sort` parameter.
    */
   direction?: "asc" | "desc";
-
   owner: string;
   /**
    * Page number of the results to fetch.
@@ -27730,9 +28205,7 @@ export type PullsListCommentsParams = {
    * Results per page (max 100)
    */
   per_page?: number;
-
   pull_number: number;
-
   repo: string;
   /**
    * This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`. Only returns comments `updated` at or after this time.
@@ -27748,7 +28221,6 @@ export type PullsListCommentsForRepoParams = {
    * Can be either `asc` or `desc`. Ignored without `sort` parameter.
    */
   direction?: "asc" | "desc";
-
   owner: string;
   /**
    * Page number of the results to fetch.
@@ -27758,7 +28230,6 @@ export type PullsListCommentsForRepoParams = {
    * Results per page (max 100)
    */
   per_page?: number;
-
   repo: string;
   /**
    * This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`. Only returns comments `updated` at or after this time.
@@ -27774,7 +28245,6 @@ export type PullsListCommitsParamsDeprecatedNumber = {
    * @deprecated "number" parameter renamed to "pull_number"
    */
   number: number;
-
   owner: string;
   /**
    * Page number of the results to fetch.
@@ -27784,7 +28254,6 @@ export type PullsListCommitsParamsDeprecatedNumber = {
    * Results per page (max 100)
    */
   per_page?: number;
-
   repo: string;
 };
 export type PullsListCommitsParams = {
@@ -27797,9 +28266,7 @@ export type PullsListCommitsParams = {
    * Results per page (max 100)
    */
   per_page?: number;
-
   pull_number: number;
-
   repo: string;
 };
 export type PullsListFilesParamsDeprecatedNumber = {
@@ -27807,7 +28274,6 @@ export type PullsListFilesParamsDeprecatedNumber = {
    * @deprecated "number" parameter renamed to "pull_number"
    */
   number: number;
-
   owner: string;
   /**
    * Page number of the results to fetch.
@@ -27817,7 +28283,6 @@ export type PullsListFilesParamsDeprecatedNumber = {
    * Results per page (max 100)
    */
   per_page?: number;
-
   repo: string;
 };
 export type PullsListFilesParams = {
@@ -27830,9 +28295,7 @@ export type PullsListFilesParams = {
    * Results per page (max 100)
    */
   per_page?: number;
-
   pull_number: number;
-
   repo: string;
 };
 export type PullsListReviewRequestsParamsDeprecatedNumber = {
@@ -27840,7 +28303,6 @@ export type PullsListReviewRequestsParamsDeprecatedNumber = {
    * @deprecated "number" parameter renamed to "pull_number"
    */
   number: number;
-
   owner: string;
   /**
    * Page number of the results to fetch.
@@ -27850,7 +28312,6 @@ export type PullsListReviewRequestsParamsDeprecatedNumber = {
    * Results per page (max 100)
    */
   per_page?: number;
-
   repo: string;
 };
 export type PullsListReviewRequestsParams = {
@@ -27863,9 +28324,7 @@ export type PullsListReviewRequestsParams = {
    * Results per page (max 100)
    */
   per_page?: number;
-
   pull_number: number;
-
   repo: string;
 };
 export type PullsListReviewsParamsDeprecatedNumber = {
@@ -27873,7 +28332,6 @@ export type PullsListReviewsParamsDeprecatedNumber = {
    * @deprecated "number" parameter renamed to "pull_number"
    */
   number: number;
-
   owner: string;
   /**
    * Page number of the results to fetch.
@@ -27883,7 +28341,6 @@ export type PullsListReviewsParamsDeprecatedNumber = {
    * Results per page (max 100)
    */
   per_page?: number;
-
   repo: string;
 };
 export type PullsListReviewsParams = {
@@ -27896,9 +28353,7 @@ export type PullsListReviewsParams = {
    * Results per page (max 100)
    */
   per_page?: number;
-
   pull_number: number;
-
   repo: string;
 };
 export type PullsMergeParamsDeprecatedNumber = {
@@ -27918,9 +28373,7 @@ export type PullsMergeParamsDeprecatedNumber = {
    * @deprecated "number" parameter renamed to "pull_number"
    */
   number: number;
-
   owner: string;
-
   repo: string;
   /**
    * SHA that pull request head must match to allow merge.
@@ -27940,11 +28393,8 @@ export type PullsMergeParams = {
    * Merge method to use. Possible values are `merge`, `squash` or `rebase`. Default is `merge`.
    */
   merge_method?: "merge" | "squash" | "rebase";
-
   owner: string;
-
   pull_number: number;
-
   repo: string;
   /**
    * SHA that pull request head must match to allow merge.
@@ -27964,11 +28414,8 @@ export type PullsSubmitReviewParamsDeprecatedNumber = {
    * @deprecated "number" parameter renamed to "pull_number"
    */
   number: number;
-
   owner: string;
-
   repo: string;
-
   review_id: number;
 };
 export type PullsSubmitReviewParams = {
@@ -27980,13 +28427,9 @@ export type PullsSubmitReviewParams = {
    * The review action you want to perform. The review actions include: `APPROVE`, `REQUEST_CHANGES`, or `COMMENT`. When you leave this blank, the API returns _HTTP 422 (Unrecognizable entity)_ and sets the review action state to `PENDING`, which means you will need to re-submit the pull request review using a review action.
    */
   event: "APPROVE" | "REQUEST_CHANGES" | "COMMENT";
-
   owner: string;
-
   pull_number: number;
-
   repo: string;
-
   review_id: number;
 };
 export type PullsUpdateParamsDeprecatedNumber = {
@@ -28006,9 +28449,7 @@ export type PullsUpdateParamsDeprecatedNumber = {
    * @deprecated "number" parameter renamed to "pull_number"
    */
   number: number;
-
   owner: string;
-
   repo: string;
   /**
    * State of this Pull Request. Either `open` or `closed`.
@@ -28032,11 +28473,8 @@ export type PullsUpdateParams = {
    * Indicates whether [maintainers can modify](https://help.github.com/articles/allowing-changes-to-a-pull-request-branch-created-from-a-fork/) the pull request.
    */
   maintainer_can_modify?: boolean;
-
   owner: string;
-
   pull_number: number;
-
   repo: string;
   /**
    * State of this Pull Request. Either `open` or `closed`.
@@ -28052,11 +28490,8 @@ export type PullsUpdateBranchParams = {
    * The expected SHA of the pull request's HEAD ref. This is the most recent commit on the pull request's branch. If the expected SHA does not match the pull request's HEAD, you will receive a `422 Unprocessable Entity` status. You can use the "[List commits on a repository](https://developer.github.com/v3/repos/commits/#list-commits-on-a-repository)" endpoint to find the most recent commit SHA. Default: SHA of the pull request's current HEAD ref.
    */
   expected_head_sha?: string;
-
   owner: string;
-
   pull_number: number;
-
   repo: string;
 };
 export type PullsUpdateCommentParams = {
@@ -28064,11 +28499,8 @@ export type PullsUpdateCommentParams = {
    * The text of the reply to the review comment.
    */
   body: string;
-
   comment_id: number;
-
   owner: string;
-
   repo: string;
 };
 export type PullsUpdateReviewParamsDeprecatedNumber = {
@@ -28080,11 +28512,8 @@ export type PullsUpdateReviewParamsDeprecatedNumber = {
    * @deprecated "number" parameter renamed to "pull_number"
    */
   number: number;
-
   owner: string;
-
   repo: string;
-
   review_id: number;
 };
 export type PullsUpdateReviewParams = {
@@ -28092,13 +28521,9 @@ export type PullsUpdateReviewParams = {
    * The body text of the pull request review.
    */
   body: string;
-
   owner: string;
-
   pull_number: number;
-
   repo: string;
-
   review_id: number;
 };
 export type ReactionsCreateForCommitCommentParams = {
@@ -28115,9 +28540,7 @@ export type ReactionsCreateForCommitCommentParams = {
     | "hooray"
     | "rocket"
     | "eyes";
-
   owner: string;
-
   repo: string;
 };
 export type ReactionsCreateForIssueParamsDeprecatedNumber = {
@@ -28137,9 +28560,7 @@ export type ReactionsCreateForIssueParamsDeprecatedNumber = {
    * @deprecated "number" parameter renamed to "issue_number"
    */
   number: number;
-
   owner: string;
-
   repo: string;
 };
 export type ReactionsCreateForIssueParams = {
@@ -28155,11 +28576,8 @@ export type ReactionsCreateForIssueParams = {
     | "hooray"
     | "rocket"
     | "eyes";
-
   issue_number: number;
-
   owner: string;
-
   repo: string;
 };
 export type ReactionsCreateForIssueCommentParams = {
@@ -28176,9 +28594,7 @@ export type ReactionsCreateForIssueCommentParams = {
     | "hooray"
     | "rocket"
     | "eyes";
-
   owner: string;
-
   repo: string;
 };
 export type ReactionsCreateForPullRequestReviewCommentParams = {
@@ -28195,9 +28611,7 @@ export type ReactionsCreateForPullRequestReviewCommentParams = {
     | "hooray"
     | "rocket"
     | "eyes";
-
   owner: string;
-
   repo: string;
 };
 export type ReactionsCreateForTeamDiscussionParams = {
@@ -28213,9 +28627,7 @@ export type ReactionsCreateForTeamDiscussionParams = {
     | "hooray"
     | "rocket"
     | "eyes";
-
   discussion_number: number;
-
   team_id: number;
 };
 export type ReactionsCreateForTeamDiscussionCommentParams = {
@@ -28232,9 +28644,7 @@ export type ReactionsCreateForTeamDiscussionCommentParams = {
     | "hooray"
     | "rocket"
     | "eyes";
-
   discussion_number: number;
-
   team_id: number;
 };
 export type ReactionsCreateForTeamDiscussionCommentInOrgParams = {
@@ -28251,11 +28661,8 @@ export type ReactionsCreateForTeamDiscussionCommentInOrgParams = {
     | "hooray"
     | "rocket"
     | "eyes";
-
   discussion_number: number;
-
   org: string;
-
   team_slug: string;
 };
 export type ReactionsCreateForTeamDiscussionCommentLegacyParams = {
@@ -28272,9 +28679,7 @@ export type ReactionsCreateForTeamDiscussionCommentLegacyParams = {
     | "hooray"
     | "rocket"
     | "eyes";
-
   discussion_number: number;
-
   team_id: number;
 };
 export type ReactionsCreateForTeamDiscussionInOrgParams = {
@@ -28290,11 +28695,8 @@ export type ReactionsCreateForTeamDiscussionInOrgParams = {
     | "hooray"
     | "rocket"
     | "eyes";
-
   discussion_number: number;
-
   org: string;
-
   team_slug: string;
 };
 export type ReactionsCreateForTeamDiscussionLegacyParams = {
@@ -28310,9 +28712,7 @@ export type ReactionsCreateForTeamDiscussionLegacyParams = {
     | "hooray"
     | "rocket"
     | "eyes";
-
   discussion_number: number;
-
   team_id: number;
 };
 export type ReactionsDeleteParams = {
@@ -28332,7 +28732,6 @@ export type ReactionsListForCommitCommentParams = {
     | "hooray"
     | "rocket"
     | "eyes";
-
   owner: string;
   /**
    * Page number of the results to fetch.
@@ -28342,7 +28741,6 @@ export type ReactionsListForCommitCommentParams = {
    * Results per page (max 100)
    */
   per_page?: number;
-
   repo: string;
 };
 export type ReactionsListForIssueParamsDeprecatedNumber = {
@@ -28362,7 +28760,6 @@ export type ReactionsListForIssueParamsDeprecatedNumber = {
    * @deprecated "number" parameter renamed to "issue_number"
    */
   number: number;
-
   owner: string;
   /**
    * Page number of the results to fetch.
@@ -28372,7 +28769,6 @@ export type ReactionsListForIssueParamsDeprecatedNumber = {
    * Results per page (max 100)
    */
   per_page?: number;
-
   repo: string;
 };
 export type ReactionsListForIssueParams = {
@@ -28388,9 +28784,7 @@ export type ReactionsListForIssueParams = {
     | "hooray"
     | "rocket"
     | "eyes";
-
   issue_number: number;
-
   owner: string;
   /**
    * Page number of the results to fetch.
@@ -28400,7 +28794,6 @@ export type ReactionsListForIssueParams = {
    * Results per page (max 100)
    */
   per_page?: number;
-
   repo: string;
 };
 export type ReactionsListForIssueCommentParams = {
@@ -28417,7 +28810,6 @@ export type ReactionsListForIssueCommentParams = {
     | "hooray"
     | "rocket"
     | "eyes";
-
   owner: string;
   /**
    * Page number of the results to fetch.
@@ -28427,7 +28819,6 @@ export type ReactionsListForIssueCommentParams = {
    * Results per page (max 100)
    */
   per_page?: number;
-
   repo: string;
 };
 export type ReactionsListForPullRequestReviewCommentParams = {
@@ -28444,7 +28835,6 @@ export type ReactionsListForPullRequestReviewCommentParams = {
     | "hooray"
     | "rocket"
     | "eyes";
-
   owner: string;
   /**
    * Page number of the results to fetch.
@@ -28454,7 +28844,6 @@ export type ReactionsListForPullRequestReviewCommentParams = {
    * Results per page (max 100)
    */
   per_page?: number;
-
   repo: string;
 };
 export type ReactionsListForTeamDiscussionParams = {
@@ -28470,7 +28859,6 @@ export type ReactionsListForTeamDiscussionParams = {
     | "hooray"
     | "rocket"
     | "eyes";
-
   discussion_number: number;
   /**
    * Page number of the results to fetch.
@@ -28480,7 +28868,6 @@ export type ReactionsListForTeamDiscussionParams = {
    * Results per page (max 100)
    */
   per_page?: number;
-
   team_id: number;
 };
 export type ReactionsListForTeamDiscussionCommentParams = {
@@ -28497,7 +28884,6 @@ export type ReactionsListForTeamDiscussionCommentParams = {
     | "hooray"
     | "rocket"
     | "eyes";
-
   discussion_number: number;
   /**
    * Page number of the results to fetch.
@@ -28507,7 +28893,6 @@ export type ReactionsListForTeamDiscussionCommentParams = {
    * Results per page (max 100)
    */
   per_page?: number;
-
   team_id: number;
 };
 export type ReactionsListForTeamDiscussionCommentInOrgParams = {
@@ -28524,9 +28909,7 @@ export type ReactionsListForTeamDiscussionCommentInOrgParams = {
     | "hooray"
     | "rocket"
     | "eyes";
-
   discussion_number: number;
-
   org: string;
   /**
    * Page number of the results to fetch.
@@ -28536,7 +28919,6 @@ export type ReactionsListForTeamDiscussionCommentInOrgParams = {
    * Results per page (max 100)
    */
   per_page?: number;
-
   team_slug: string;
 };
 export type ReactionsListForTeamDiscussionCommentLegacyParams = {
@@ -28553,7 +28935,6 @@ export type ReactionsListForTeamDiscussionCommentLegacyParams = {
     | "hooray"
     | "rocket"
     | "eyes";
-
   discussion_number: number;
   /**
    * Page number of the results to fetch.
@@ -28563,7 +28944,6 @@ export type ReactionsListForTeamDiscussionCommentLegacyParams = {
    * Results per page (max 100)
    */
   per_page?: number;
-
   team_id: number;
 };
 export type ReactionsListForTeamDiscussionInOrgParams = {
@@ -28579,9 +28959,7 @@ export type ReactionsListForTeamDiscussionInOrgParams = {
     | "hooray"
     | "rocket"
     | "eyes";
-
   discussion_number: number;
-
   org: string;
   /**
    * Page number of the results to fetch.
@@ -28591,7 +28969,6 @@ export type ReactionsListForTeamDiscussionInOrgParams = {
    * Results per page (max 100)
    */
   per_page?: number;
-
   team_slug: string;
 };
 export type ReactionsListForTeamDiscussionLegacyParams = {
@@ -28607,7 +28984,6 @@ export type ReactionsListForTeamDiscussionLegacyParams = {
     | "hooray"
     | "rocket"
     | "eyes";
-
   discussion_number: number;
   /**
    * Page number of the results to fetch.
@@ -28617,7 +28993,6 @@ export type ReactionsListForTeamDiscussionLegacyParams = {
    * Results per page (max 100)
    */
   per_page?: number;
-
   team_id: number;
 };
 export type ReposAcceptInvitationParams = {
@@ -28632,9 +29007,7 @@ export type ReposAddCollaboratorParams = {
    * \* `admin` - can pull, push and administer this repository.
    */
   permission?: "pull" | "push" | "admin";
-
   repo: string;
-
   username: string;
 };
 export type ReposAddDeployKeyParams = {
@@ -28642,7 +29015,6 @@ export type ReposAddDeployKeyParams = {
    * The contents of the key.
    */
   key: string;
-
   owner: string;
   /**
    * If `true`, the key will only be able to read repository contents. Otherwise, the key will be able to read and write.
@@ -28650,7 +29022,6 @@ export type ReposAddDeployKeyParams = {
    * Deploy keys with write access can perform the same actions as an organization member with admin access, or a collaborator on a personal repository. For more information, see "[Repository permission levels for an organization](https://help.github.com/articles/repository-permission-levels-for-an-organization/)" and "[Permission levels for a user account repository](https://help.github.com/articles/permission-levels-for-a-user-account-repository/)."
    */
   read_only?: boolean;
-
   repo: string;
   /**
    * A name for the key.
@@ -28659,73 +29030,51 @@ export type ReposAddDeployKeyParams = {
 };
 export type ReposAddProtectedBranchAdminEnforcementParams = {
   branch: string;
-
   owner: string;
-
   repo: string;
 };
 export type ReposAddProtectedBranchAppRestrictionsParams = {
   apps: string[];
-
   branch: string;
-
   owner: string;
-
   repo: string;
 };
 export type ReposAddProtectedBranchRequiredSignaturesParams = {
   branch: string;
-
   owner: string;
-
   repo: string;
 };
 export type ReposAddProtectedBranchRequiredStatusChecksContextsParams = {
   branch: string;
-
   contexts: string[];
-
   owner: string;
-
   repo: string;
 };
 export type ReposAddProtectedBranchTeamRestrictionsParams = {
   branch: string;
-
   owner: string;
-
   repo: string;
-
   teams: string[];
 };
 export type ReposAddProtectedBranchUserRestrictionsParams = {
   branch: string;
-
   owner: string;
-
   repo: string;
-
   users: string[];
 };
 export type ReposCheckCollaboratorParams = {
   owner: string;
-
   repo: string;
-
   username: string;
 };
 export type ReposCheckVulnerabilityAlertsParams = {
   owner: string;
-
   repo: string;
 };
 export type ReposCompareCommitsParams = {
   base: string;
-
   head: string;
-
   owner: string;
-
   repo: string;
 };
 export type ReposCreateCommitCommentParamsDeprecatedSha = {
@@ -28733,7 +29082,6 @@ export type ReposCreateCommitCommentParamsDeprecatedSha = {
    * The contents of the comment.
    */
   body: string;
-
   owner: string;
   /**
    * Relative path of the file to comment on.
@@ -28743,7 +29091,6 @@ export type ReposCreateCommitCommentParamsDeprecatedSha = {
    * Line index in the diff to comment on.
    */
   position?: number;
-
   repo: string;
   /**
    * @deprecated "sha" parameter renamed to "commit_sha"
@@ -28755,14 +29102,12 @@ export type ReposCreateCommitCommentParamsDeprecatedLine = {
    * The contents of the comment.
    */
   body: string;
-
   commit_sha: string;
   /**
    * **Deprecated**. Use **position** parameter instead. Line number in the file to comment on.
    * @deprecated "line" parameter has been deprecated and will be removed in future
    */
   line?: number;
-
   owner: string;
   /**
    * Relative path of the file to comment on.
@@ -28772,7 +29117,6 @@ export type ReposCreateCommitCommentParamsDeprecatedLine = {
    * Line index in the diff to comment on.
    */
   position?: number;
-
   repo: string;
 };
 export type ReposCreateCommitCommentParams = {
@@ -28780,9 +29124,7 @@ export type ReposCreateCommitCommentParams = {
    * The contents of the comment.
    */
   body: string;
-
   commit_sha: string;
-
   owner: string;
   /**
    * Relative path of the file to comment on.
@@ -28792,7 +29134,6 @@ export type ReposCreateCommitCommentParams = {
    * Line index in the diff to comment on.
    */
   position?: number;
-
   repo: string;
 };
 export type ReposCreateDeploymentParams = {
@@ -28808,7 +29149,6 @@ export type ReposCreateDeploymentParams = {
    * Name for the target deployment environment (e.g., `production`, `staging`, `qa`).
    */
   environment?: string;
-
   owner: string;
   /**
    * JSON payload with extra information about the deployment.
@@ -28823,7 +29163,6 @@ export type ReposCreateDeploymentParams = {
    * The ref to deploy. This can be a branch, tag, or SHA.
    */
   ref: string;
-
   repo: string;
   /**
    * The [status](https://developer.github.com/v3/repos/statuses/) contexts to verify against commit status checks. If you omit this parameter, GitHub verifies all unique contexts before creating a deployment. To bypass checking entirely, pass an empty array. Defaults to all unique contexts.
@@ -28846,7 +29185,6 @@ export type ReposCreateDeploymentStatusParams = {
    * **Note:** This parameter requires you to use the [`application/vnd.github.ant-man-preview+json`](https://developer.github.com/v3/previews/#enhanced-deployments) custom media type.
    */
   auto_inactive?: boolean;
-
   deployment_id: number;
   /**
    * A short description of the status. The maximum description length is 140 characters.
@@ -28866,9 +29204,7 @@ export type ReposCreateDeploymentStatusParams = {
    * **Note:** This parameter requires you to use the [`application/vnd.github.ant-man-preview+json`](https://developer.github.com/v3/previews/#enhanced-deployments) custom media type. **Note:** This parameter requires you to use the [`application/vnd.github.ant-man-preview+json`](https://developer.github.com/v3/previews/#enhanced-deployments) custom media type.
    */
   log_url?: string;
-
   owner: string;
-
   repo: string;
   /**
    * The state of the status. Can be one of `error`, `failure`, `inactive`, `in_progress`, `queued` `pending`, or `success`. **Note:** To use the `inactive` state, you must provide the [`application/vnd.github.ant-man-preview+json`](https://developer.github.com/v3/previews/#enhanced-deployments) custom media type. To use the `in_progress` and `queued` states, you must provide the [`application/vnd.github.flash-preview+json`](https://developer.github.com/v3/previews/#deployment-statuses) custom media type.
@@ -28895,9 +29231,7 @@ export type ReposCreateDispatchEventParams = {
    * **Required:** A custom webhook event name.
    */
   event_type?: string;
-
   owner: string;
-
   repo: string;
 };
 export type ReposCreateFileParams = {
@@ -28921,11 +29255,8 @@ export type ReposCreateFileParams = {
    * The commit message.
    */
   message: string;
-
   owner: string;
-
   path: string;
-
   repo: string;
   /**
    * **Required if you are updating a file**. The blob SHA of the file being replaced.
@@ -29008,9 +29339,7 @@ export type ReposCreateForkParams = {
    * Optional parameter to specify the organization name if forking into an organization.
    */
   organization?: string;
-
   owner: string;
-
   repo: string;
 };
 export type ReposCreateHookParams = {
@@ -29030,9 +29359,7 @@ export type ReposCreateHookParams = {
    * Use `web` to create a webhook. Default: `web`. This parameter only accepts the value `web`.
    */
   name?: string;
-
   owner: string;
-
   repo: string;
 };
 export type ReposCreateInOrgParams = {
@@ -29092,7 +29419,6 @@ export type ReposCreateInOrgParams = {
    * The name of the repository.
    */
   name: string;
-
   org: string;
   /**
    * Either `true` to create a private repository or `false` to create a public one. Creating private repositories requires a paid GitHub account.
@@ -29129,11 +29455,8 @@ export type ReposCreateOrUpdateFileParams = {
    * The commit message.
    */
   message: string;
-
   owner: string;
-
   path: string;
-
   repo: string;
   /**
    * **Required if you are updating a file**. The blob SHA of the file being replaced.
@@ -29153,13 +29476,11 @@ export type ReposCreateReleaseParams = {
    * The name of the release.
    */
   name?: string;
-
   owner: string;
   /**
    * `true` to identify the release as a prerelease. `false` to identify the release as a full release.
    */
   prerelease?: boolean;
-
   repo: string;
   /**
    * The name of the tag.
@@ -29179,11 +29500,8 @@ export type ReposCreateStatusParams = {
    * A short description of the status.
    */
   description?: string;
-
   owner: string;
-
   repo: string;
-
   sha: string;
   /**
    * The state of the status. Can be one of `error`, `failure`, `pending`, or `success`.
@@ -29213,9 +29531,7 @@ export type ReposCreateUsingTemplateParams = {
    * Either `true` to create a new private repository or `false` to create a new public one.
    */
   private?: boolean;
-
   template_owner: string;
-
   template_repo: string;
 };
 export type ReposDeclineInvitationParams = {
@@ -29223,21 +29539,16 @@ export type ReposDeclineInvitationParams = {
 };
 export type ReposDeleteParams = {
   owner: string;
-
   repo: string;
 };
 export type ReposDeleteCommitCommentParams = {
   comment_id: number;
-
   owner: string;
-
   repo: string;
 };
 export type ReposDeleteDownloadParams = {
   download_id: number;
-
   owner: string;
-
   repo: string;
 };
 export type ReposDeleteFileParams = {
@@ -29257,11 +29568,8 @@ export type ReposDeleteFileParams = {
    * The commit message.
    */
   message: string;
-
   owner: string;
-
   path: string;
-
   repo: string;
   /**
    * The blob SHA of the file being replaced.
@@ -29270,97 +29578,72 @@ export type ReposDeleteFileParams = {
 };
 export type ReposDeleteHookParams = {
   hook_id: number;
-
   owner: string;
-
   repo: string;
 };
 export type ReposDeleteInvitationParams = {
   invitation_id: number;
-
   owner: string;
-
   repo: string;
 };
 export type ReposDeleteReleaseParams = {
   owner: string;
-
   release_id: number;
-
   repo: string;
 };
 export type ReposDeleteReleaseAssetParams = {
   asset_id: number;
-
   owner: string;
-
   repo: string;
 };
 export type ReposDisableAutomatedSecurityFixesParams = {
   owner: string;
-
   repo: string;
 };
 export type ReposDisablePagesSiteParams = {
   owner: string;
-
   repo: string;
 };
 export type ReposDisableVulnerabilityAlertsParams = {
   owner: string;
-
   repo: string;
 };
 export type ReposEnableAutomatedSecurityFixesParams = {
   owner: string;
-
   repo: string;
 };
 export type ReposEnablePagesSiteParams = {
   owner: string;
-
   repo: string;
-
   source?: ReposEnablePagesSiteParamsSource;
 };
 export type ReposEnableVulnerabilityAlertsParams = {
   owner: string;
-
   repo: string;
 };
 export type ReposGetParams = {
   owner: string;
-
   repo: string;
 };
 export type ReposGetAppsWithAccessToProtectedBranchParams = {
   branch: string;
-
   owner: string;
-
   repo: string;
 };
 export type ReposGetArchiveLinkParams = {
   archive_format: string;
-
   owner: string;
-
   ref: string;
-
   repo: string;
 };
 export type ReposGetBranchParams = {
   branch: string;
-
   owner: string;
-
   repo: string;
 };
 export type ReposGetBranchProtectionParams = {
   branch: string;
-
   owner: string;
-
   repo: string;
 };
 export type ReposGetClonesParams = {
@@ -29369,31 +29652,24 @@ export type ReposGetClonesParams = {
    * Must be one of: `day`, `week`.
    */
   per?: "day" | "week";
-
   repo: string;
 };
 export type ReposGetCodeFrequencyStatsParams = {
   owner: string;
-
   repo: string;
 };
 export type ReposGetCollaboratorPermissionLevelParams = {
   owner: string;
-
   repo: string;
-
   username: string;
 };
 export type ReposGetCombinedStatusForRefParams = {
   owner: string;
-
   ref: string;
-
   repo: string;
 };
 export type ReposGetCommitParamsDeprecatedSha = {
   owner: string;
-
   repo: string;
   /**
    * @deprecated "sha" parameter renamed to "ref"
@@ -29405,155 +29681,115 @@ export type ReposGetCommitParamsDeprecatedCommitSha = {
    * @deprecated "commit_sha" parameter renamed to "ref"
    */
   commit_sha: string;
-
   owner: string;
-
   repo: string;
 };
 export type ReposGetCommitParams = {
   owner: string;
-
   ref: string;
-
   repo: string;
 };
 export type ReposGetCommitActivityStatsParams = {
   owner: string;
-
   repo: string;
 };
 export type ReposGetCommitCommentParams = {
   comment_id: number;
-
   owner: string;
-
   repo: string;
 };
 export type ReposGetCommitRefShaParams = {
   owner: string;
-
   ref: string;
-
   repo: string;
 };
 export type ReposGetContentsParams = {
   owner: string;
-
   path: string;
   /**
    * The name of the commit/branch/tag. Default: the repository’s default branch (usually `master`)
    */
   ref?: string;
-
   repo: string;
 };
 export type ReposGetContributorsStatsParams = {
   owner: string;
-
   repo: string;
 };
 export type ReposGetDeployKeyParams = {
   key_id: number;
-
   owner: string;
-
   repo: string;
 };
 export type ReposGetDeploymentParams = {
   deployment_id: number;
-
   owner: string;
-
   repo: string;
 };
 export type ReposGetDeploymentStatusParams = {
   deployment_id: number;
-
   owner: string;
-
   repo: string;
-
   status_id: number;
 };
 export type ReposGetDownloadParams = {
   download_id: number;
-
   owner: string;
-
   repo: string;
 };
 export type ReposGetHookParams = {
   hook_id: number;
-
   owner: string;
-
   repo: string;
 };
 export type ReposGetLatestPagesBuildParams = {
   owner: string;
-
   repo: string;
 };
 export type ReposGetLatestReleaseParams = {
   owner: string;
-
   repo: string;
 };
 export type ReposGetPagesParams = {
   owner: string;
-
   repo: string;
 };
 export type ReposGetPagesBuildParams = {
   build_id: number;
-
   owner: string;
-
   repo: string;
 };
 export type ReposGetParticipationStatsParams = {
   owner: string;
-
   repo: string;
 };
 export type ReposGetProtectedBranchAdminEnforcementParams = {
   branch: string;
-
   owner: string;
-
   repo: string;
 };
 export type ReposGetProtectedBranchPullRequestReviewEnforcementParams = {
   branch: string;
-
   owner: string;
-
   repo: string;
 };
 export type ReposGetProtectedBranchRequiredSignaturesParams = {
   branch: string;
-
   owner: string;
-
   repo: string;
 };
 export type ReposGetProtectedBranchRequiredStatusChecksParams = {
   branch: string;
-
   owner: string;
-
   repo: string;
 };
 export type ReposGetProtectedBranchRestrictionsParams = {
   branch: string;
-
   owner: string;
-
   repo: string;
 };
 export type ReposGetPunchCardStatsParams = {
   owner: string;
-
   repo: string;
 };
 export type ReposGetReadmeParams = {
@@ -29562,52 +29798,39 @@ export type ReposGetReadmeParams = {
    * The name of the commit/branch/tag. Default: the repository’s default branch (usually `master`)
    */
   ref?: string;
-
   repo: string;
 };
 export type ReposGetReleaseParams = {
   owner: string;
-
   release_id: number;
-
   repo: string;
 };
 export type ReposGetReleaseAssetParams = {
   asset_id: number;
-
   owner: string;
-
   repo: string;
 };
 export type ReposGetReleaseByTagParams = {
   owner: string;
-
   repo: string;
-
   tag: string;
 };
 export type ReposGetTeamsWithAccessToProtectedBranchParams = {
   branch: string;
-
   owner: string;
-
   repo: string;
 };
 export type ReposGetTopPathsParams = {
   owner: string;
-
   repo: string;
 };
 export type ReposGetTopReferrersParams = {
   owner: string;
-
   repo: string;
 };
 export type ReposGetUsersWithAccessToProtectedBranchParams = {
   branch: string;
-
   owner: string;
-
   repo: string;
 };
 export type ReposGetViewsParams = {
@@ -29616,7 +29839,6 @@ export type ReposGetViewsParams = {
    * Must be one of: `day`, `week`.
    */
   per?: "day" | "week";
-
   repo: string;
 };
 export type ReposListParams = {
@@ -29656,9 +29878,7 @@ export type ReposListParams = {
 };
 export type ReposListAppsWithAccessToProtectedBranchParams = {
   branch: string;
-
   owner: string;
-
   repo: string;
 };
 export type ReposListAssetsForReleaseParams = {
@@ -29671,9 +29891,7 @@ export type ReposListAssetsForReleaseParams = {
    * Results per page (max 100)
    */
   per_page?: number;
-
   release_id: number;
-
   repo: string;
 };
 export type ReposListBranchesParams = {
@@ -29690,14 +29908,11 @@ export type ReposListBranchesParams = {
    * Setting to `true` returns only protected branches. When set to `false`, only unprotected branches are returned. Omitting this parameter returns all branches.
    */
   protected?: boolean;
-
   repo: string;
 };
 export type ReposListBranchesForHeadCommitParams = {
   commit_sha: string;
-
   owner: string;
-
   repo: string;
 };
 export type ReposListCollaboratorsParams = {
@@ -29708,7 +29923,6 @@ export type ReposListCollaboratorsParams = {
    * \* `all`: All collaborators the authenticated user can see.
    */
   affiliation?: "outside" | "direct" | "all";
-
   owner: string;
   /**
    * Page number of the results to fetch.
@@ -29718,7 +29932,6 @@ export type ReposListCollaboratorsParams = {
    * Results per page (max 100)
    */
   per_page?: number;
-
   repo: string;
 };
 export type ReposListCommentsForCommitParamsDeprecatedRef = {
@@ -29735,12 +29948,10 @@ export type ReposListCommentsForCommitParamsDeprecatedRef = {
    * @deprecated "ref" parameter renamed to "commit_sha"
    */
   ref: string;
-
   repo: string;
 };
 export type ReposListCommentsForCommitParams = {
   commit_sha: string;
-
   owner: string;
   /**
    * Page number of the results to fetch.
@@ -29750,7 +29961,6 @@ export type ReposListCommentsForCommitParams = {
    * Results per page (max 100)
    */
   per_page?: number;
-
   repo: string;
 };
 export type ReposListCommitCommentsParams = {
@@ -29763,7 +29973,6 @@ export type ReposListCommitCommentsParams = {
    * Results per page (max 100)
    */
   per_page?: number;
-
   repo: string;
 };
 export type ReposListCommitsParams = {
@@ -29771,7 +29980,6 @@ export type ReposListCommitsParams = {
    * GitHub login or email address by which to filter by commit author.
    */
   author?: string;
-
   owner: string;
   /**
    * Page number of the results to fetch.
@@ -29785,7 +29993,6 @@ export type ReposListCommitsParams = {
    * Results per page (max 100)
    */
   per_page?: number;
-
   repo: string;
   /**
    * SHA or branch to start listing commits from. Default: the repository’s default branch (usually `master`).
@@ -29805,7 +30012,6 @@ export type ReposListContributorsParams = {
    * Set to `1` or `true` to include anonymous contributors in results.
    */
   anon?: string;
-
   owner: string;
   /**
    * Page number of the results to fetch.
@@ -29815,7 +30021,6 @@ export type ReposListContributorsParams = {
    * Results per page (max 100)
    */
   per_page?: number;
-
   repo: string;
 };
 export type ReposListDeployKeysParams = {
@@ -29828,12 +30033,10 @@ export type ReposListDeployKeysParams = {
    * Results per page (max 100)
    */
   per_page?: number;
-
   repo: string;
 };
 export type ReposListDeploymentStatusesParams = {
   deployment_id: number;
-
   owner: string;
   /**
    * Page number of the results to fetch.
@@ -29843,7 +30046,6 @@ export type ReposListDeploymentStatusesParams = {
    * Results per page (max 100)
    */
   per_page?: number;
-
   repo: string;
 };
 export type ReposListDeploymentsParams = {
@@ -29851,7 +30053,6 @@ export type ReposListDeploymentsParams = {
    * The name of the environment that was deployed to (e.g., `staging` or `production`).
    */
   environment?: string;
-
   owner: string;
   /**
    * Page number of the results to fetch.
@@ -29865,7 +30066,6 @@ export type ReposListDeploymentsParams = {
    * The name of the ref. This can be a branch, tag, or SHA.
    */
   ref?: string;
-
   repo: string;
   /**
    * The SHA recorded at creation time.
@@ -29886,7 +30086,6 @@ export type ReposListDownloadsParams = {
    * Results per page (max 100)
    */
   per_page?: number;
-
   repo: string;
 };
 export type ReposListForOrgParams = {
@@ -29894,7 +30093,6 @@ export type ReposListForOrgParams = {
    * Can be one of `asc` or `desc`. Default: when using `full_name`: `asc`, otherwise `desc`
    */
   direction?: "asc" | "desc";
-
   org: string;
   /**
    * Page number of the results to fetch.
@@ -29941,7 +30139,6 @@ export type ReposListForUserParams = {
    * Can be one of `all`, `owner`, `member`.
    */
   type?: "all" | "owner" | "member";
-
   username: string;
 };
 export type ReposListForksParams = {
@@ -29954,7 +30151,6 @@ export type ReposListForksParams = {
    * Results per page (max 100)
    */
   per_page?: number;
-
   repo: string;
   /**
    * The sort order. Can be either `newest`, `oldest`, or `stargazers`.
@@ -29971,7 +30167,6 @@ export type ReposListHooksParams = {
    * Results per page (max 100)
    */
   per_page?: number;
-
   repo: string;
 };
 export type ReposListInvitationsParams = {
@@ -29984,7 +30179,6 @@ export type ReposListInvitationsParams = {
    * Results per page (max 100)
    */
   per_page?: number;
-
   repo: string;
 };
 export type ReposListInvitationsForAuthenticatedUserParams = {
@@ -29999,7 +30193,6 @@ export type ReposListInvitationsForAuthenticatedUserParams = {
 };
 export type ReposListLanguagesParams = {
   owner: string;
-
   repo: string;
 };
 export type ReposListPagesBuildsParams = {
@@ -30012,28 +30205,21 @@ export type ReposListPagesBuildsParams = {
    * Results per page (max 100)
    */
   per_page?: number;
-
   repo: string;
 };
 export type ReposListProtectedBranchRequiredStatusChecksContextsParams = {
   branch: string;
-
   owner: string;
-
   repo: string;
 };
 export type ReposListProtectedBranchTeamRestrictionsParams = {
   branch: string;
-
   owner: string;
-
   repo: string;
 };
 export type ReposListProtectedBranchUserRestrictionsParams = {
   branch: string;
-
   owner: string;
-
   repo: string;
 };
 export type ReposListPublicParams = {
@@ -30052,7 +30238,6 @@ export type ReposListPublicParams = {
 };
 export type ReposListPullRequestsAssociatedWithCommitParams = {
   commit_sha: string;
-
   owner: string;
   /**
    * Page number of the results to fetch.
@@ -30062,7 +30247,6 @@ export type ReposListPullRequestsAssociatedWithCommitParams = {
    * Results per page (max 100)
    */
   per_page?: number;
-
   repo: string;
 };
 export type ReposListReleasesParams = {
@@ -30075,7 +30259,6 @@ export type ReposListReleasesParams = {
    * Results per page (max 100)
    */
   per_page?: number;
-
   repo: string;
 };
 export type ReposListStatusesForRefParams = {
@@ -30088,9 +30271,7 @@ export type ReposListStatusesForRefParams = {
    * Results per page (max 100)
    */
   per_page?: number;
-
   ref: string;
-
   repo: string;
 };
 export type ReposListTagsParams = {
@@ -30103,7 +30284,6 @@ export type ReposListTagsParams = {
    * Results per page (max 100)
    */
   per_page?: number;
-
   repo: string;
 };
 export type ReposListTeamsParams = {
@@ -30116,26 +30296,20 @@ export type ReposListTeamsParams = {
    * Results per page (max 100)
    */
   per_page?: number;
-
   repo: string;
 };
 export type ReposListTeamsWithAccessToProtectedBranchParams = {
   branch: string;
-
   owner: string;
-
   repo: string;
 };
 export type ReposListTopicsParams = {
   owner: string;
-
   repo: string;
 };
 export type ReposListUsersWithAccessToProtectedBranchParams = {
   branch: string;
-
   owner: string;
-
   repo: string;
 };
 export type ReposMergeParams = {
@@ -30151,144 +30325,100 @@ export type ReposMergeParams = {
    * The head to merge. This can be a branch name or a commit SHA1.
    */
   head: string;
-
   owner: string;
-
   repo: string;
 };
 export type ReposPingHookParams = {
   hook_id: number;
-
   owner: string;
-
   repo: string;
 };
 export type ReposRemoveBranchProtectionParams = {
   branch: string;
-
   owner: string;
-
   repo: string;
 };
 export type ReposRemoveCollaboratorParams = {
   owner: string;
-
   repo: string;
-
   username: string;
 };
 export type ReposRemoveDeployKeyParams = {
   key_id: number;
-
   owner: string;
-
   repo: string;
 };
 export type ReposRemoveProtectedBranchAdminEnforcementParams = {
   branch: string;
-
   owner: string;
-
   repo: string;
 };
 export type ReposRemoveProtectedBranchAppRestrictionsParams = {
   apps: string[];
-
   branch: string;
-
   owner: string;
-
   repo: string;
 };
 export type ReposRemoveProtectedBranchPullRequestReviewEnforcementParams = {
   branch: string;
-
   owner: string;
-
   repo: string;
 };
 export type ReposRemoveProtectedBranchRequiredSignaturesParams = {
   branch: string;
-
   owner: string;
-
   repo: string;
 };
 export type ReposRemoveProtectedBranchRequiredStatusChecksParams = {
   branch: string;
-
   owner: string;
-
   repo: string;
 };
 export type ReposRemoveProtectedBranchRequiredStatusChecksContextsParams = {
   branch: string;
-
   contexts: string[];
-
   owner: string;
-
   repo: string;
 };
 export type ReposRemoveProtectedBranchRestrictionsParams = {
   branch: string;
-
   owner: string;
-
   repo: string;
 };
 export type ReposRemoveProtectedBranchTeamRestrictionsParams = {
   branch: string;
-
   owner: string;
-
   repo: string;
-
   teams: string[];
 };
 export type ReposRemoveProtectedBranchUserRestrictionsParams = {
   branch: string;
-
   owner: string;
-
   repo: string;
-
   users: string[];
 };
 export type ReposReplaceProtectedBranchAppRestrictionsParams = {
   apps: string[];
-
   branch: string;
-
   owner: string;
-
   repo: string;
 };
 export type ReposReplaceProtectedBranchRequiredStatusChecksContextsParams = {
   branch: string;
-
   contexts: string[];
-
   owner: string;
-
   repo: string;
 };
 export type ReposReplaceProtectedBranchTeamRestrictionsParams = {
   branch: string;
-
   owner: string;
-
   repo: string;
-
   teams: string[];
 };
 export type ReposReplaceProtectedBranchUserRestrictionsParams = {
   branch: string;
-
   owner: string;
-
   repo: string;
-
   users: string[];
 };
 export type ReposReplaceTopicsParams = {
@@ -30296,26 +30426,20 @@ export type ReposReplaceTopicsParams = {
    * An array of topics to add to the repository. Pass one or more topics to _replace_ the set of existing topics. Send an empty array (`[]`) to clear all topics from the repository. **Note:** Topic `names` cannot contain uppercase letters.
    */
   names: string[];
-
   owner: string;
-
   repo: string;
 };
 export type ReposRequestPageBuildParams = {
   owner: string;
-
   repo: string;
 };
 export type ReposRetrieveCommunityProfileMetricsParams = {
   owner: string;
-
   repo: string;
 };
 export type ReposTestPushHookParams = {
   hook_id: number;
-
   owner: string;
-
   repo: string;
 };
 export type ReposTransferParams = {
@@ -30323,9 +30447,7 @@ export type ReposTransferParams = {
    * **Required:** The username or organization name the repository will be transferred to.
    */
   new_owner?: string;
-
   owner: string;
-
   repo: string;
   /**
    * ID of the team or teams to add to the repository. Teams can only be added to organization-owned repositories.
@@ -30385,14 +30507,12 @@ export type ReposUpdateParams = {
    * The name of the repository.
    */
   name?: string;
-
   owner: string;
   /**
    * Either `true` to make the repository private or `false` to make it public. Creating private repositories requires a paid GitHub account. Default: `false`.
    * **Note**: You will get a `422` error if the organization restricts [changing repository visibility](https://help.github.com/articles/repository-permission-levels-for-an-organization#changing-the-visibility-of-repositories) to organization owners and a non-owner tries to change the value of private. **Note**: You will get a `422` error if the organization restricts [changing repository visibility](https://help.github.com/articles/repository-permission-levels-for-an-organization#changing-the-visibility-of-repositories) to organization owners and a non-owner tries to change the value of private.
    */
   private?: boolean;
-
   repo: string;
   /**
    * Can be `public` or `private`. If your organization is associated with an enterprise account using GitHub Enterprise Cloud, `visibility` can also be `internal`. The `visibility` parameter overrides the `private` parameter when you use both along with the `nebula-preview` preview header.
@@ -30408,15 +30528,12 @@ export type ReposUpdateBranchProtectionParams = {
    * Permits force pushes to the protected branch by anyone with write access to the repository. Set to `true` to allow force pushes. Set to `false` or `null` to block force pushes. Default: `false`. For more information, see "[Enabling force pushes to a protected branch](https://help.github.com/en/github/administering-a-repository/enabling-force-pushes-to-a-protected-branch)" in the GitHub Help documentation."
    */
   allow_force_pushes?: boolean | null;
-
   branch: string;
   /**
    * Enforce all configured restrictions for administrators. Set to `true` to enforce required status checks for repository administrators. Set to `null` to disable.
    */
   enforce_admins: boolean | null;
-
   owner: string;
-
   repo: string;
   /**
    * Enforces a linear commit Git history, which prevents anyone from pushing merge commits to a branch. Set to `true` to enforce a linear commit history. Set to `false` to disable a linear commit Git history. Your repository must allow squash merging or rebase merging before you can enable a linear commit history. Default: `false`. For more information, see "[Requiring a linear commit history](https://help.github.com/github/administering-a-repository/requiring-a-linear-commit-history)" in the GitHub Help documentation.
@@ -30440,11 +30557,8 @@ export type ReposUpdateCommitCommentParams = {
    * The contents of the comment
    */
   body: string;
-
   comment_id: number;
-
   owner: string;
-
   repo: string;
 };
 export type ReposUpdateFileParams = {
@@ -30468,11 +30582,8 @@ export type ReposUpdateFileParams = {
    * The commit message.
    */
   message: string;
-
   owner: string;
-
   path: string;
-
   repo: string;
   /**
    * **Required if you are updating a file**. The blob SHA of the file being replaced.
@@ -30496,15 +30607,12 @@ export type ReposUpdateHookParams = {
    * Determines what [events](https://developer.github.com/v3/activity/events/types/) the hook is triggered for. This replaces the entire array of events.
    */
   events?: string[];
-
   hook_id: number;
-
   owner: string;
   /**
    * Determines a list of events to be removed from the list of events that the Hook triggers for.
    */
   remove_events?: string[];
-
   repo: string;
 };
 export type ReposUpdateInformationAboutPagesSiteParams = {
@@ -30512,9 +30620,7 @@ export type ReposUpdateInformationAboutPagesSiteParams = {
    * Specify a custom domain for the repository. Sending a `null` value will remove the custom domain. For more about custom domains, see "[Using a custom domain with GitHub Pages](https://help.github.com/articles/using-a-custom-domain-with-github-pages/)."
    */
   cname?: string;
-
   owner: string;
-
   repo: string;
   /**
    * Update the source for the repository. Must include the branch name, and may optionally specify the subdirectory `/docs`. Possible values are `"gh-pages"`, `"master"`, and `"master /docs"`.
@@ -30523,13 +30629,11 @@ export type ReposUpdateInformationAboutPagesSiteParams = {
 };
 export type ReposUpdateInvitationParams = {
   invitation_id: number;
-
   owner: string;
   /**
    * The permissions that the associated user will have on the repository. Valid values are `read`, `write`, and `admin`.
    */
   permissions?: "read" | "write" | "admin";
-
   repo: string;
 };
 export type ReposUpdateProtectedBranchPullRequestReviewEnforcementParams = {
@@ -30542,9 +30646,7 @@ export type ReposUpdateProtectedBranchPullRequestReviewEnforcementParams = {
    * Specify which users and teams can dismiss pull request reviews. Pass an empty `dismissal_restrictions` object to disable. User and team `dismissal_restrictions` are only available for organization-owned repositories. Omit this parameter for personal repositories.
    */
   dismissal_restrictions?: ReposUpdateProtectedBranchPullRequestReviewEnforcementParamsDismissalRestrictions;
-
   owner: string;
-
   repo: string;
   /**
    * Blocks merging pull requests until [code owners](https://help.github.com/articles/about-code-owners/) have reviewed.
@@ -30561,9 +30663,7 @@ export type ReposUpdateProtectedBranchRequiredStatusChecksParams = {
    * The list of status checks to require in order to merge into this branch
    */
   contexts?: string[];
-
   owner: string;
-
   repo: string;
   /**
    * Require branches to be up to date before merging.
@@ -30583,15 +30683,12 @@ export type ReposUpdateReleaseParams = {
    * The name of the release.
    */
   name?: string;
-
   owner: string;
   /**
    * `true` to identify the release as a prerelease, `false` to identify the release as a full release.
    */
   prerelease?: boolean;
-
   release_id: number;
-
   repo: string;
   /**
    * The name of the tag.
@@ -30612,14 +30709,11 @@ export type ReposUpdateReleaseAssetParams = {
    * The file name of the asset.
    */
   name?: string;
-
   owner: string;
-
   repo: string;
 };
 export type ReposUploadReleaseAssetParams = {
   file: string | object;
-
   headers: ReposUploadReleaseAssetParamsHeaders;
   /**
    * An alternate short description of the asset. Used in place of the filename. This should be set in a URI query parameter.
@@ -30755,9 +30849,7 @@ export type SearchIssuesLegacyParams = {
    * The search term.
    */
   keyword: string;
-
   owner: string;
-
   repository: string;
   /**
    * Indicates the state of the issues to return. Can be either `open` or `closed`.
@@ -30874,12 +30966,10 @@ export type SearchUsersLegacyParams = {
 };
 export type TeamsAddMemberParams = {
   team_id: number;
-
   username: string;
 };
 export type TeamsAddMemberLegacyParams = {
   team_id: number;
-
   username: string;
 };
 export type TeamsAddOrUpdateMembershipParams = {
@@ -30889,9 +30979,7 @@ export type TeamsAddOrUpdateMembershipParams = {
    * \* `maintainer` - a team maintainer. Able to add/remove other team members, promote other team members to team maintainer, and edit the team's name and description.
    */
   role?: "member" | "maintainer";
-
   team_id: number;
-
   username: string;
 };
 export type TeamsAddOrUpdateMembershipInOrgParams = {
@@ -30902,9 +30990,7 @@ export type TeamsAddOrUpdateMembershipInOrgParams = {
    * \* `maintainer` - a team maintainer. Able to add/remove other team members, promote other team members to team maintainer, and edit the team's name and description.
    */
   role?: "member" | "maintainer";
-
   team_slug: string;
-
   username: string;
 };
 export type TeamsAddOrUpdateMembershipLegacyParams = {
@@ -30914,9 +31000,7 @@ export type TeamsAddOrUpdateMembershipLegacyParams = {
    * \* `maintainer` - a team maintainer. Able to add/remove other team members, promote other team members to team maintainer, and edit the team's name and description.
    */
   role?: "member" | "maintainer";
-
   team_id: number;
-
   username: string;
 };
 export type TeamsAddOrUpdateProjectParams = {
@@ -30928,9 +31012,7 @@ export type TeamsAddOrUpdateProjectParams = {
    * Default: the team's `permission` attribute will be used to determine what permission to grant the team on this project. Note that, if you choose not to pass any parameters, you'll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see "[HTTP verbs](https://developer.github.com/v3/#http-verbs)."
    */
   permission?: "read" | "write" | "admin";
-
   project_id: number;
-
   team_id: number;
 };
 export type TeamsAddOrUpdateProjectInOrgParams = {
@@ -30943,9 +31025,7 @@ export type TeamsAddOrUpdateProjectInOrgParams = {
    * Default: the team's `permission` attribute will be used to determine what permission to grant the team on this project. Note that, if you choose not to pass any parameters, you'll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see "[HTTP verbs](https://developer.github.com/v3/#http-verbs)."
    */
   permission?: "read" | "write" | "admin";
-
   project_id: number;
-
   team_slug: string;
 };
 export type TeamsAddOrUpdateProjectLegacyParams = {
@@ -30957,9 +31037,7 @@ export type TeamsAddOrUpdateProjectLegacyParams = {
    * Default: the team's `permission` attribute will be used to determine what permission to grant the team on this project. Note that, if you choose not to pass any parameters, you'll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see "[HTTP verbs](https://developer.github.com/v3/#http-verbs)."
    */
   permission?: "read" | "write" | "admin";
-
   project_id: number;
-
   team_id: number;
 };
 export type TeamsAddOrUpdateRepoParams = {
@@ -30973,14 +31051,11 @@ export type TeamsAddOrUpdateRepoParams = {
    * If no permission is specified, the team's `permission` attribute will be used to determine what permission to grant the team on this repository.
    */
   permission?: "pull" | "push" | "admin";
-
   repo: string;
-
   team_id: number;
 };
 export type TeamsAddOrUpdateRepoInOrgParams = {
   org: string;
-
   owner: string;
   /**
    * The permission to grant the team on this repository. Can be one of:
@@ -30991,9 +31066,7 @@ export type TeamsAddOrUpdateRepoInOrgParams = {
    * If no permission is specified, the team's `permission` attribute will be used to determine what permission to grant the team on this repository.
    */
   permission?: "pull" | "push" | "admin";
-
   repo: string;
-
   team_slug: string;
 };
 export type TeamsAddOrUpdateRepoLegacyParams = {
@@ -31007,32 +31080,23 @@ export type TeamsAddOrUpdateRepoLegacyParams = {
    * If no permission is specified, the team's `permission` attribute will be used to determine what permission to grant the team on this repository.
    */
   permission?: "pull" | "push" | "admin";
-
   repo: string;
-
   team_id: number;
 };
 export type TeamsCheckManagesRepoParams = {
   owner: string;
-
   repo: string;
-
   team_id: number;
 };
 export type TeamsCheckManagesRepoInOrgParams = {
   org: string;
-
   owner: string;
-
   repo: string;
-
   team_slug: string;
 };
 export type TeamsCheckManagesRepoLegacyParams = {
   owner: string;
-
   repo: string;
-
   team_id: number;
 };
 export type TeamsCreateParamsDeprecatedPermission = {
@@ -31048,7 +31112,6 @@ export type TeamsCreateParamsDeprecatedPermission = {
    * The name of the team.
    */
   name: string;
-
   org: string;
   /**
    * The ID of a team to set as the parent team.
@@ -31091,7 +31154,6 @@ export type TeamsCreateParams = {
    * The name of the team.
    */
   name: string;
-
   org: string;
   /**
    * The ID of a team to set as the parent team.
@@ -31122,7 +31184,6 @@ export type TeamsCreateDiscussionParams = {
    * Private posts are only visible to team members, organization owners, and team maintainers. Public posts are visible to all members of the organization. Set to `true` to create a private post.
    */
   private?: boolean;
-
   team_id: number;
   /**
    * The discussion post's title.
@@ -31134,9 +31195,7 @@ export type TeamsCreateDiscussionCommentParams = {
    * The discussion comment's body text.
    */
   body: string;
-
   discussion_number: number;
-
   team_id: number;
 };
 export type TeamsCreateDiscussionCommentInOrgParams = {
@@ -31144,11 +31203,8 @@ export type TeamsCreateDiscussionCommentInOrgParams = {
    * The discussion comment's body text.
    */
   body: string;
-
   discussion_number: number;
-
   org: string;
-
   team_slug: string;
 };
 export type TeamsCreateDiscussionCommentLegacyParams = {
@@ -31156,9 +31212,7 @@ export type TeamsCreateDiscussionCommentLegacyParams = {
    * The discussion comment's body text.
    */
   body: string;
-
   discussion_number: number;
-
   team_id: number;
 };
 export type TeamsCreateDiscussionInOrgParams = {
@@ -31166,13 +31220,11 @@ export type TeamsCreateDiscussionInOrgParams = {
    * The discussion post's body text.
    */
   body: string;
-
   org: string;
   /**
    * Private posts are only visible to team members, organization owners, and team maintainers. Public posts are visible to all members of the organization. Set to `true` to create a private post.
    */
   private?: boolean;
-
   team_slug: string;
   /**
    * The discussion post's title.
@@ -31188,7 +31240,6 @@ export type TeamsCreateDiscussionLegacyParams = {
    * Private posts are only visible to team members, organization owners, and team maintainers. Public posts are visible to all members of the organization. Set to `true` to create a private post.
    */
   private?: boolean;
-
   team_id: number;
   /**
    * The discussion post's title.
@@ -31200,47 +31251,35 @@ export type TeamsDeleteParams = {
 };
 export type TeamsDeleteDiscussionParams = {
   discussion_number: number;
-
   team_id: number;
 };
 export type TeamsDeleteDiscussionCommentParams = {
   comment_number: number;
-
   discussion_number: number;
-
   team_id: number;
 };
 export type TeamsDeleteDiscussionCommentInOrgParams = {
   comment_number: number;
-
   discussion_number: number;
-
   org: string;
-
   team_slug: string;
 };
 export type TeamsDeleteDiscussionCommentLegacyParams = {
   comment_number: number;
-
   discussion_number: number;
-
   team_id: number;
 };
 export type TeamsDeleteDiscussionInOrgParams = {
   discussion_number: number;
-
   org: string;
-
   team_slug: string;
 };
 export type TeamsDeleteDiscussionLegacyParams = {
   discussion_number: number;
-
   team_id: number;
 };
 export type TeamsDeleteInOrgParams = {
   org: string;
-
   team_slug: string;
 };
 export type TeamsDeleteLegacyParams = {
@@ -31251,47 +31290,35 @@ export type TeamsGetParams = {
 };
 export type TeamsGetByNameParams = {
   org: string;
-
   team_slug: string;
 };
 export type TeamsGetDiscussionParams = {
   discussion_number: number;
-
   team_id: number;
 };
 export type TeamsGetDiscussionCommentParams = {
   comment_number: number;
-
   discussion_number: number;
-
   team_id: number;
 };
 export type TeamsGetDiscussionCommentInOrgParams = {
   comment_number: number;
-
   discussion_number: number;
-
   org: string;
-
   team_slug: string;
 };
 export type TeamsGetDiscussionCommentLegacyParams = {
   comment_number: number;
-
   discussion_number: number;
-
   team_id: number;
 };
 export type TeamsGetDiscussionInOrgParams = {
   discussion_number: number;
-
   org: string;
-
   team_slug: string;
 };
 export type TeamsGetDiscussionLegacyParams = {
   discussion_number: number;
-
   team_id: number;
 };
 export type TeamsGetLegacyParams = {
@@ -31299,29 +31326,23 @@ export type TeamsGetLegacyParams = {
 };
 export type TeamsGetMemberParams = {
   team_id: number;
-
   username: string;
 };
 export type TeamsGetMemberLegacyParams = {
   team_id: number;
-
   username: string;
 };
 export type TeamsGetMembershipParams = {
   team_id: number;
-
   username: string;
 };
 export type TeamsGetMembershipInOrgParams = {
   org: string;
-
   team_slug: string;
-
   username: string;
 };
 export type TeamsGetMembershipLegacyParams = {
   team_id: number;
-
   username: string;
 };
 export type TeamsListParams = {
@@ -31344,7 +31365,6 @@ export type TeamsListChildParams = {
    * Results per page (max 100)
    */
   per_page?: number;
-
   team_id: number;
 };
 export type TeamsListChildInOrgParams = {
@@ -31357,7 +31377,6 @@ export type TeamsListChildInOrgParams = {
    * Results per page (max 100)
    */
   per_page?: number;
-
   team_slug: string;
 };
 export type TeamsListChildLegacyParams = {
@@ -31369,7 +31388,6 @@ export type TeamsListChildLegacyParams = {
    * Results per page (max 100)
    */
   per_page?: number;
-
   team_id: number;
 };
 export type TeamsListDiscussionCommentsParams = {
@@ -31377,7 +31395,6 @@ export type TeamsListDiscussionCommentsParams = {
    * Sorts the discussion comments by the date they were created. To return the oldest comments first, set to `asc`. Can be one of `asc` or `desc`.
    */
   direction?: "asc" | "desc";
-
   discussion_number: number;
   /**
    * Page number of the results to fetch.
@@ -31387,7 +31404,6 @@ export type TeamsListDiscussionCommentsParams = {
    * Results per page (max 100)
    */
   per_page?: number;
-
   team_id: number;
 };
 export type TeamsListDiscussionCommentsInOrgParams = {
@@ -31395,9 +31411,7 @@ export type TeamsListDiscussionCommentsInOrgParams = {
    * Sorts the discussion comments by the date they were created. To return the oldest comments first, set to `asc`. Can be one of `asc` or `desc`.
    */
   direction?: "asc" | "desc";
-
   discussion_number: number;
-
   org: string;
   /**
    * Page number of the results to fetch.
@@ -31407,7 +31421,6 @@ export type TeamsListDiscussionCommentsInOrgParams = {
    * Results per page (max 100)
    */
   per_page?: number;
-
   team_slug: string;
 };
 export type TeamsListDiscussionCommentsLegacyParams = {
@@ -31415,7 +31428,6 @@ export type TeamsListDiscussionCommentsLegacyParams = {
    * Sorts the discussion comments by the date they were created. To return the oldest comments first, set to `asc`. Can be one of `asc` or `desc`.
    */
   direction?: "asc" | "desc";
-
   discussion_number: number;
   /**
    * Page number of the results to fetch.
@@ -31425,7 +31437,6 @@ export type TeamsListDiscussionCommentsLegacyParams = {
    * Results per page (max 100)
    */
   per_page?: number;
-
   team_id: number;
 };
 export type TeamsListDiscussionsParams = {
@@ -31441,7 +31452,6 @@ export type TeamsListDiscussionsParams = {
    * Results per page (max 100)
    */
   per_page?: number;
-
   team_id: number;
 };
 export type TeamsListDiscussionsInOrgParams = {
@@ -31449,7 +31459,6 @@ export type TeamsListDiscussionsInOrgParams = {
    * Sorts the discussion comments by the date they were created. To return the oldest comments first, set to `asc`. Can be one of `asc` or `desc`.
    */
   direction?: "asc" | "desc";
-
   org: string;
   /**
    * Page number of the results to fetch.
@@ -31459,7 +31468,6 @@ export type TeamsListDiscussionsInOrgParams = {
    * Results per page (max 100)
    */
   per_page?: number;
-
   team_slug: string;
 };
 export type TeamsListDiscussionsLegacyParams = {
@@ -31475,7 +31483,6 @@ export type TeamsListDiscussionsLegacyParams = {
    * Results per page (max 100)
    */
   per_page?: number;
-
   team_id: number;
 };
 export type TeamsListForAuthenticatedUserParams = {
@@ -31504,7 +31511,6 @@ export type TeamsListMembersParams = {
    * \* `all` - all members of the team.
    */
   role?: "member" | "maintainer" | "all";
-
   team_id: number;
 };
 export type TeamsListMembersInOrgParams = {
@@ -31524,7 +31530,6 @@ export type TeamsListMembersInOrgParams = {
    * \* `all` - all members of the team.
    */
   role?: "member" | "maintainer" | "all";
-
   team_slug: string;
 };
 export type TeamsListMembersLegacyParams = {
@@ -31543,7 +31548,6 @@ export type TeamsListMembersLegacyParams = {
    * \* `all` - all members of the team.
    */
   role?: "member" | "maintainer" | "all";
-
   team_id: number;
 };
 export type TeamsListPendingInvitationsParams = {
@@ -31555,7 +31559,6 @@ export type TeamsListPendingInvitationsParams = {
    * Results per page (max 100)
    */
   per_page?: number;
-
   team_id: number;
 };
 export type TeamsListPendingInvitationsInOrgParams = {
@@ -31568,7 +31571,6 @@ export type TeamsListPendingInvitationsInOrgParams = {
    * Results per page (max 100)
    */
   per_page?: number;
-
   team_slug: string;
 };
 export type TeamsListPendingInvitationsLegacyParams = {
@@ -31580,7 +31582,6 @@ export type TeamsListPendingInvitationsLegacyParams = {
    * Results per page (max 100)
    */
   per_page?: number;
-
   team_id: number;
 };
 export type TeamsListProjectsParams = {
@@ -31592,7 +31593,6 @@ export type TeamsListProjectsParams = {
    * Results per page (max 100)
    */
   per_page?: number;
-
   team_id: number;
 };
 export type TeamsListProjectsInOrgParams = {
@@ -31605,7 +31605,6 @@ export type TeamsListProjectsInOrgParams = {
    * Results per page (max 100)
    */
   per_page?: number;
-
   team_slug: string;
 };
 export type TeamsListProjectsLegacyParams = {
@@ -31617,7 +31616,6 @@ export type TeamsListProjectsLegacyParams = {
    * Results per page (max 100)
    */
   per_page?: number;
-
   team_id: number;
 };
 export type TeamsListReposParams = {
@@ -31629,7 +31627,6 @@ export type TeamsListReposParams = {
    * Results per page (max 100)
    */
   per_page?: number;
-
   team_id: number;
 };
 export type TeamsListReposInOrgParams = {
@@ -31642,7 +31639,6 @@ export type TeamsListReposInOrgParams = {
    * Results per page (max 100)
    */
   per_page?: number;
-
   team_slug: string;
 };
 export type TeamsListReposLegacyParams = {
@@ -31654,91 +31650,69 @@ export type TeamsListReposLegacyParams = {
    * Results per page (max 100)
    */
   per_page?: number;
-
   team_id: number;
 };
 export type TeamsRemoveMemberParams = {
   team_id: number;
-
   username: string;
 };
 export type TeamsRemoveMemberLegacyParams = {
   team_id: number;
-
   username: string;
 };
 export type TeamsRemoveMembershipParams = {
   team_id: number;
-
   username: string;
 };
 export type TeamsRemoveMembershipInOrgParams = {
   org: string;
-
   team_slug: string;
-
   username: string;
 };
 export type TeamsRemoveMembershipLegacyParams = {
   team_id: number;
-
   username: string;
 };
 export type TeamsRemoveProjectParams = {
   project_id: number;
-
   team_id: number;
 };
 export type TeamsRemoveProjectInOrgParams = {
   org: string;
-
   project_id: number;
-
   team_slug: string;
 };
 export type TeamsRemoveProjectLegacyParams = {
   project_id: number;
-
   team_id: number;
 };
 export type TeamsRemoveRepoParams = {
   owner: string;
-
   repo: string;
-
   team_id: number;
 };
 export type TeamsRemoveRepoInOrgParams = {
   org: string;
-
   owner: string;
-
   repo: string;
-
   team_slug: string;
 };
 export type TeamsRemoveRepoLegacyParams = {
   owner: string;
-
   repo: string;
-
   team_id: number;
 };
 export type TeamsReviewProjectParams = {
   project_id: number;
-
   team_id: number;
 };
 export type TeamsReviewProjectInOrgParams = {
   org: string;
-
   project_id: number;
-
   team_slug: string;
 };
 export type TeamsReviewProjectLegacyParams = {
   project_id: number;
-
   team_id: number;
 };
 export type TeamsUpdateParamsDeprecatedPermission = {
@@ -31771,7 +31745,6 @@ export type TeamsUpdateParamsDeprecatedPermission = {
    * \* `closed` - visible to all members of this organization.
    */
   privacy?: "secret" | "closed";
-
   team_id: number;
 };
 export type TeamsUpdateParams = {
@@ -31796,7 +31769,6 @@ export type TeamsUpdateParams = {
    * \* `closed` - visible to all members of this organization.
    */
   privacy?: "secret" | "closed";
-
   team_id: number;
 };
 export type TeamsUpdateDiscussionParams = {
@@ -31804,9 +31776,7 @@ export type TeamsUpdateDiscussionParams = {
    * The discussion post's body text.
    */
   body?: string;
-
   discussion_number: number;
-
   team_id: number;
   /**
    * The discussion post's title.
@@ -31818,11 +31788,8 @@ export type TeamsUpdateDiscussionCommentParams = {
    * The discussion comment's body text.
    */
   body: string;
-
   comment_number: number;
-
   discussion_number: number;
-
   team_id: number;
 };
 export type TeamsUpdateDiscussionCommentInOrgParams = {
@@ -31830,13 +31797,9 @@ export type TeamsUpdateDiscussionCommentInOrgParams = {
    * The discussion comment's body text.
    */
   body: string;
-
   comment_number: number;
-
   discussion_number: number;
-
   org: string;
-
   team_slug: string;
 };
 export type TeamsUpdateDiscussionCommentLegacyParams = {
@@ -31844,11 +31807,8 @@ export type TeamsUpdateDiscussionCommentLegacyParams = {
    * The discussion comment's body text.
    */
   body: string;
-
   comment_number: number;
-
   discussion_number: number;
-
   team_id: number;
 };
 export type TeamsUpdateDiscussionInOrgParams = {
@@ -31856,11 +31816,8 @@ export type TeamsUpdateDiscussionInOrgParams = {
    * The discussion post's body text.
    */
   body?: string;
-
   discussion_number: number;
-
   org: string;
-
   team_slug: string;
   /**
    * The discussion post's title.
@@ -31872,9 +31829,7 @@ export type TeamsUpdateDiscussionLegacyParams = {
    * The discussion post's body text.
    */
   body?: string;
-
   discussion_number: number;
-
   team_id: number;
   /**
    * The discussion post's title.
@@ -31890,7 +31845,6 @@ export type TeamsUpdateInOrgParamsDeprecatedPermission = {
    * The name of the team.
    */
   name: string;
-
   org: string;
   /**
    * The ID of a team to set as the parent team.
@@ -31913,7 +31867,6 @@ export type TeamsUpdateInOrgParamsDeprecatedPermission = {
    * \* `closed` - visible to all members of this organization.
    */
   privacy?: "secret" | "closed";
-
   team_slug: string;
 };
 export type TeamsUpdateInOrgParams = {
@@ -31925,7 +31878,6 @@ export type TeamsUpdateInOrgParams = {
    * The name of the team.
    */
   name: string;
-
   org: string;
   /**
    * The ID of a team to set as the parent team.
@@ -31940,7 +31892,6 @@ export type TeamsUpdateInOrgParams = {
    * \* `closed` - visible to all members of this organization.
    */
   privacy?: "secret" | "closed";
-
   team_slug: string;
 };
 export type TeamsUpdateLegacyParamsDeprecatedPermission = {
@@ -31973,7 +31924,6 @@ export type TeamsUpdateLegacyParamsDeprecatedPermission = {
    * \* `closed` - visible to all members of this organization.
    */
   privacy?: "secret" | "closed";
-
   team_id: number;
 };
 export type TeamsUpdateLegacyParams = {
@@ -31998,7 +31948,6 @@ export type TeamsUpdateLegacyParams = {
    * \* `closed` - visible to all members of this organization.
    */
   privacy?: "secret" | "closed";
-
   team_id: number;
 };
 export type UsersAddEmailsParams = {
@@ -32018,7 +31967,6 @@ export type UsersCheckFollowingParams = {
 };
 export type UsersCheckFollowingForUserParams = {
   target_user: string;
-
   username: string;
 };
 export type UsersCreateGpgKeyParams = {
@@ -32064,7 +32012,6 @@ export type UsersGetContextForUserParams = {
    * Identifies which additional information you'd like to receive about the person's hovercard. Can be `organization`, `repository`, `issue`, `pull_request`. **Required** when using `subject_id`.
    */
   subject_type?: "organization" | "repository" | "issue" | "pull_request";
-
   username: string;
 };
 export type UsersGetGpgKeyParams = {
@@ -32116,7 +32063,6 @@ export type UsersListFollowersForUserParams = {
    * Results per page (max 100)
    */
   per_page?: number;
-
   username: string;
 };
 export type UsersListFollowingForAuthenticatedUserParams = {
@@ -32138,7 +32084,6 @@ export type UsersListFollowingForUserParams = {
    * Results per page (max 100)
    */
   per_page?: number;
-
   username: string;
 };
 export type UsersListGpgKeysParams = {
@@ -32160,7 +32105,6 @@ export type UsersListGpgKeysForUserParams = {
    * Results per page (max 100)
    */
   per_page?: number;
-
   username: string;
 };
 export type UsersListPublicEmailsParams = {
@@ -32192,7 +32136,6 @@ export type UsersListPublicKeysForUserParams = {
    * Results per page (max 100)
    */
   per_page?: number;
-
   username: string;
 };
 export type UsersTogglePrimaryEmailVisibilityParams = {
@@ -32245,181 +32188,512 @@ export type UsersUpdateAuthenticatedParams = {
 // child param types
 export type AppsCreateInstallationTokenParamsPermissions = {};
 export type ChecksCreateParamsActions = {
+  /**
+   * A short explanation of what this action would do. The maximum size is 40 characters.
+   */
   description: string;
+  /**
+   * A reference for the action on the integrator's system. The maximum size is 20 characters.
+   */
   identifier: string;
+  /**
+   * The text to be displayed on a button in the web UI. The maximum size is 20 characters.
+   */
   label: string;
 };
 export type ChecksCreateParamsOutput = {
+  /**
+   * Adds information from your analysis to specific lines of code. Annotations are visible on GitHub in the **Checks** and **Files changed** tab of the pull request. The Checks API limits the number of annotations to a maximum of 50 per API request. To create more than 50 annotations, you have to make multiple requests to the [Update a check run](https://developer.github.com/v3/checks/runs/#update-a-check-run) endpoint. Each time you update the check run, annotations are appended to the list of annotations that already exist for the check run. For details about how you can view annotations on GitHub, see "[About status checks](https://help.github.com/articles/about-status-checks#checks)". See the [`annotations` object](https://developer.github.com/v3/checks/runs/#annotations-object) description for details about how to use this parameter.
+   */
   annotations?: ChecksCreateParamsOutputAnnotations[];
+  /**
+   * Adds images to the output displayed in the GitHub pull request UI. See the [`images` object](https://developer.github.com/v3/checks/runs/#images-object) description for details.
+   */
   images?: ChecksCreateParamsOutputImages[];
+  /**
+   * The summary of the check run. This parameter supports Markdown.
+   */
   summary: string;
+  /**
+   * The details of the check run. This parameter supports Markdown.
+   */
   text?: string;
+  /**
+   * The title of the check run.
+   */
   title: string;
 };
 export type ChecksCreateParamsOutputAnnotations = {
+  /**
+   * The level of the annotation. Can be one of `notice`, `warning`, or `failure`.
+   */
   annotation_level: "notice" | "warning" | "failure";
+  /**
+   * The end column of the annotation. Annotations only support `start_column` and `end_column` on the same line. Omit this parameter if `start_line` and `end_line` have different values.
+   */
   end_column?: number;
+  /**
+   * The end line of the annotation.
+   */
   end_line: number;
+  /**
+   * A short description of the feedback for these lines of code. The maximum size is 64 KB.
+   */
   message: string;
+  /**
+   * The path of the file to add an annotation to. For example, `assets/css/main.css`.
+   */
   path: string;
+  /**
+   * Details about this annotation. The maximum size is 64 KB.
+   */
   raw_details?: string;
+  /**
+   * The start column of the annotation. Annotations only support `start_column` and `end_column` on the same line. Omit this parameter if `start_line` and `end_line` have different values.
+   */
   start_column?: number;
+  /**
+   * The start line of the annotation.
+   */
   start_line: number;
+  /**
+   * The title that represents the annotation. The maximum size is 255 characters.
+   */
   title?: string;
 };
 export type ChecksCreateParamsOutputImages = {
+  /**
+   * The alternative text for the image.
+   */
   alt: string;
+  /**
+   * A short image description.
+   */
   caption?: string;
+  /**
+   * The full URL of the image.
+   */
   image_url: string;
 };
 export type ChecksSetSuitesPreferencesParamsAutoTriggerChecks = {
+  /**
+   * The `id` of the GitHub App.
+   */
   app_id: number;
+  /**
+   * Set to `true` to enable automatic creation of CheckSuite events upon pushes to the repository, or `false` to disable them.
+   */
   setting: boolean;
 };
 export type ChecksUpdateParamsActions = {
+  /**
+   * A short explanation of what this action would do. The maximum size is 40 characters.
+   */
   description: string;
+  /**
+   * A reference for the action on the integrator's system. The maximum size is 20 characters.
+   */
   identifier: string;
+  /**
+   * The text to be displayed on a button in the web UI. The maximum size is 20 characters.
+   */
   label: string;
 };
 export type ChecksUpdateParamsOutput = {
+  /**
+   * Adds information from your analysis to specific lines of code. Annotations are visible in GitHub's pull request UI. Annotations are visible in GitHub's pull request UI. The Checks API limits the number of annotations to a maximum of 50 per API request. To create more than 50 annotations, you have to make multiple requests to the [Update a check run](https://developer.github.com/v3/checks/runs/#update-a-check-run) endpoint. Each time you update the check run, annotations are appended to the list of annotations that already exist for the check run. For details about annotations in the UI, see "[About status checks](https://help.github.com/articles/about-status-checks#checks)". See the [`annotations` object](https://developer.github.com/v3/checks/runs/#annotations-object-1) description for details.
+   */
   annotations?: ChecksUpdateParamsOutputAnnotations[];
+  /**
+   * Adds images to the output displayed in the GitHub pull request UI. See the [`images` object](https://developer.github.com/v3/checks/runs/#annotations-object-1) description for details.
+   */
   images?: ChecksUpdateParamsOutputImages[];
+  /**
+   * Can contain Markdown.
+   */
   summary: string;
+  /**
+   * Can contain Markdown.
+   */
   text?: string;
+  /**
+   * **Required**.
+   */
   title?: string;
 };
 export type ChecksUpdateParamsOutputAnnotations = {
+  /**
+   * The level of the annotation. Can be one of `notice`, `warning`, or `failure`.
+   */
   annotation_level: "notice" | "warning" | "failure";
+  /**
+   * The end column of the annotation. Annotations only support `start_column` and `end_column` on the same line. Omit this parameter if `start_line` and `end_line` have different values.
+   */
   end_column?: number;
+  /**
+   * The end line of the annotation.
+   */
   end_line: number;
+  /**
+   * A short description of the feedback for these lines of code. The maximum size is 64 KB.
+   */
   message: string;
+  /**
+   * The path of the file to add an annotation to. For example, `assets/css/main.css`.
+   */
   path: string;
+  /**
+   * Details about this annotation. The maximum size is 64 KB.
+   */
   raw_details?: string;
+  /**
+   * The start column of the annotation. Annotations only support `start_column` and `end_column` on the same line. Omit this parameter if `start_line` and `end_line` have different values.
+   */
   start_column?: number;
+  /**
+   * The start line of the annotation.
+   */
   start_line: number;
+  /**
+   * The title that represents the annotation. The maximum size is 255 characters.
+   */
   title?: string;
 };
 export type ChecksUpdateParamsOutputImages = {
+  /**
+   * The alternative text for the image.
+   */
   alt: string;
+  /**
+   * A short image description.
+   */
   caption?: string;
+  /**
+   * The full URL of the image.
+   */
   image_url: string;
 };
 export type GistsCreateParamsFiles = {
+  /**
+   * The content of the file.
+   */
   content?: string;
 };
 export type GistsUpdateParamsFiles = {
+  /**
+   * The updated content of the file.
+   */
   content?: string;
+  /**
+   * The new name for this file. To delete a file, set the value of the filename to `null`.
+   */
   filename?: string;
 };
 export type GitCreateCommitParamsAuthor = {
+  /**
+   * Indicates when this commit was authored (or committed). This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.
+   */
   date?: string;
+  /**
+   * The email of the author (or committer) of the commit
+   */
   email?: string;
+  /**
+   * The name of the author (or committer) of the commit
+   */
   name?: string;
 };
 export type GitCreateCommitParamsCommitter = {
+  /**
+   * Indicates when this commit was authored (or committed). This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.
+   */
   date?: string;
+  /**
+   * The email of the author (or committer) of the commit
+   */
   email?: string;
+  /**
+   * The name of the author (or committer) of the commit
+   */
   name?: string;
 };
 export type GitCreateTagParamsTagger = {
+  /**
+   * When this object was tagged. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.
+   */
   date?: string;
+  /**
+   * The email of the author of the tag
+   */
   email?: string;
+  /**
+   * The name of the author of the tag
+   */
   name?: string;
 };
 export type GitCreateTreeParamsTree = {
+  /**
+   * The content you want this file to have. GitHub will write this blob out and use that SHA for this entry. Use either this, or `tree.sha`.
+   *
+   * **Note:** Use either `tree.sha` or `content` to specify the contents of the entry. Using both `tree.sha` and `content` will return an error.
+   */
   content?: string;
+  /**
+   * The file mode; one of `100644` for file (blob), `100755` for executable (blob), `040000` for subdirectory (tree), `160000` for submodule (commit), or `120000` for a blob that specifies the path of a symlink.
+   */
   mode?: "100644" | "100755" | "040000" | "160000" | "120000";
+  /**
+   * The file referenced in the tree.
+   */
   path?: string;
-  sha?: string;
+  /**
+   * The SHA1 checksum ID of the object in the tree. Also called `tree.sha`. If the value is `null` then the file will be deleted.
+   *
+   * **Note:** Use either `tree.sha` or `content` to specify the contents of the entry. Using both `tree.sha` and `content` will return an error.
+   */
+  sha?: string | null;
+  /**
+   * Either `blob`, `tree`, or `commit`.
+   */
   type?: "blob" | "tree" | "commit";
 };
 export type OrgsCreateHookParamsConfig = {
+  /**
+   * The media type used to serialize the payloads. Supported values include `json` and `form`. The default is `form`.
+   */
   content_type?: string;
+  /**
+   * Determines whether the SSL certificate of the host for `url` will be verified when delivering payloads. Supported values include `0` (verification is performed) and `1` (verification is not performed). The default is `0`. **We strongly recommend not setting this to `1` as you are subject to man-in-the-middle and other attacks.**
+   */
   insecure_ssl?: string;
+  /**
+   * If provided, the `secret` will be used as the `key` to generate the HMAC hex digest value in the [`X-Hub-Signature`](https://developer.github.com/webhooks/#delivery-headers) header.
+   */
   secret?: string;
+  /**
+   * The URL to which the payloads will be delivered.
+   */
   url: string;
 };
 export type OrgsUpdateHookParamsConfig = {
+  /**
+   * The media type used to serialize the payloads. Supported values include `json` and `form`. The default is `form`.
+   */
   content_type?: string;
+  /**
+   * Determines whether the SSL certificate of the host for `url` will be verified when delivering payloads. Supported values include `0` (verification is performed) and `1` (verification is not performed). The default is `0`. **We strongly recommend not setting this to `1` as you are subject to man-in-the-middle and other attacks.**
+   */
   insecure_ssl?: string;
+  /**
+   * If provided, the `secret` will be used as the `key` to generate the HMAC hex digest value in the [`X-Hub-Signature`](https://developer.github.com/webhooks/#delivery-headers) header.
+   */
   secret?: string;
+  /**
+   * The URL to which the payloads will be delivered.
+   */
   url: string;
 };
 export type PullsCreateReviewParamsComments = {
+  /**
+   * Text of the review comment.
+   */
   body: string;
+  /**
+   * The relative path to the file that necessitates a review comment.
+   */
   path: string;
+  /**
+   * The position in the diff where you want to add a review comment. Note this value is not the same as the line number in the file. For help finding the position value, read the note below.
+   */
   position: number;
 };
 export type ReposCreateDispatchEventParamsClientPayload = {};
 export type ReposCreateFileParamsAuthor = {
+  /**
+   * The email of the author or committer of the commit. You'll receive a `422` status code if `email` is omitted.
+   */
   email: string;
+  /**
+   * The name of the author or committer of the commit. You'll receive a `422` status code if `name` is omitted.
+   */
   name: string;
 };
 export type ReposCreateFileParamsCommitter = {
+  /**
+   * The email of the author or committer of the commit. You'll receive a `422` status code if `email` is omitted.
+   */
   email: string;
+  /**
+   * The name of the author or committer of the commit. You'll receive a `422` status code if `name` is omitted.
+   */
   name: string;
 };
 export type ReposCreateHookParamsConfig = {
+  /**
+   * The media type used to serialize the payloads. Supported values include `json` and `form`. The default is `form`.
+   */
   content_type?: string;
+  /**
+   * Determines whether the SSL certificate of the host for `url` will be verified when delivering payloads. Supported values include `0` (verification is performed) and `1` (verification is not performed). The default is `0`. **We strongly recommend not setting this to `1` as you are subject to man-in-the-middle and other attacks.**
+   */
   insecure_ssl?: string;
+  /**
+   * If provided, the `secret` will be used as the `key` to generate the HMAC hex digest value in the [`X-Hub-Signature`](https://developer.github.com/webhooks/#delivery-headers) header.
+   */
   secret?: string;
+  /**
+   * The URL to which the payloads will be delivered.
+   */
   url: string;
 };
 export type ReposCreateOrUpdateFileParamsAuthor = {
+  /**
+   * The email of the author or committer of the commit. You'll receive a `422` status code if `email` is omitted.
+   */
   email: string;
+  /**
+   * The name of the author or committer of the commit. You'll receive a `422` status code if `name` is omitted.
+   */
   name: string;
 };
 export type ReposCreateOrUpdateFileParamsCommitter = {
+  /**
+   * The email of the author or committer of the commit. You'll receive a `422` status code if `email` is omitted.
+   */
   email: string;
+  /**
+   * The name of the author or committer of the commit. You'll receive a `422` status code if `name` is omitted.
+   */
   name: string;
 };
 export type ReposDeleteFileParamsAuthor = {
+  /**
+   * The email of the author (or committer) of the commit
+   */
   email?: string;
+  /**
+   * The name of the author (or committer) of the commit
+   */
   name?: string;
 };
 export type ReposDeleteFileParamsCommitter = {
+  /**
+   * The email of the author (or committer) of the commit
+   */
   email?: string;
+  /**
+   * The name of the author (or committer) of the commit
+   */
   name?: string;
 };
 export type ReposEnablePagesSiteParamsSource = {
+  /**
+   * The repository branch used to publish your [site's source files](https://help.github.com/articles/configuring-a-publishing-source-for-github-pages/). Can be either `master` or `gh-pages`.
+   */
   branch?: "master" | "gh-pages";
+  /**
+   * The repository directory that includes the source files for the Pages site. When `branch` is `master`, you can change `path` to `/docs`. When `branch` is `gh-pages`, you are unable to specify a `path` other than `/`.
+   */
   path?: string;
 };
 export type ReposUpdateBranchProtectionParamsRequiredPullRequestReviews = {
+  /**
+   * Set to `true` if you want to automatically dismiss approving reviews when someone pushes a new commit.
+   */
   dismiss_stale_reviews?: boolean;
+  /**
+   * Specify which users and teams can dismiss pull request reviews. Pass an empty `dismissal_restrictions` object to disable. User and team `dismissal_restrictions` are only available for organization-owned repositories. Omit this parameter for personal repositories.
+   */
   dismissal_restrictions?: ReposUpdateBranchProtectionParamsRequiredPullRequestReviewsDismissalRestrictions;
+  /**
+   * Blocks merging pull requests until [code owners](https://help.github.com/articles/about-code-owners/) review them.
+   */
   require_code_owner_reviews?: boolean;
+  /**
+   * Specify the number of reviewers required to approve pull requests. Use a number between 1 and 6.
+   */
   required_approving_review_count?: number;
 };
 export type ReposUpdateBranchProtectionParamsRequiredPullRequestReviewsDismissalRestrictions = {
+  /**
+   * The list of team `slug`s with dismissal access
+   */
   teams?: string[];
+  /**
+   * The list of user `login`s with dismissal access
+   */
   users?: string[];
 };
 export type ReposUpdateBranchProtectionParamsRequiredStatusChecks = {
+  /**
+   * The list of status checks to require in order to merge into this branch
+   */
   contexts: string[];
+  /**
+   * Require branches to be up to date before merging.
+   */
   strict: boolean;
 };
 export type ReposUpdateBranchProtectionParamsRestrictions = {
+  /**
+   * The list of app `slug`s with push access
+   */
   apps?: string[];
+  /**
+   * The list of team `slug`s with push access
+   */
   teams: string[];
+  /**
+   * The list of user `login`s with push access
+   */
   users: string[];
 };
 export type ReposUpdateFileParamsAuthor = {
+  /**
+   * The email of the author or committer of the commit. You'll receive a `422` status code if `email` is omitted.
+   */
   email: string;
+  /**
+   * The name of the author or committer of the commit. You'll receive a `422` status code if `name` is omitted.
+   */
   name: string;
 };
 export type ReposUpdateFileParamsCommitter = {
+  /**
+   * The email of the author or committer of the commit. You'll receive a `422` status code if `email` is omitted.
+   */
   email: string;
+  /**
+   * The name of the author or committer of the commit. You'll receive a `422` status code if `name` is omitted.
+   */
   name: string;
 };
 export type ReposUpdateHookParamsConfig = {
+  /**
+   * The media type used to serialize the payloads. Supported values include `json` and `form`. The default is `form`.
+   */
   content_type?: string;
+  /**
+   * Determines whether the SSL certificate of the host for `url` will be verified when delivering payloads. Supported values include `0` (verification is performed) and `1` (verification is not performed). The default is `0`. **We strongly recommend not setting this to `1` as you are subject to man-in-the-middle and other attacks.**
+   */
   insecure_ssl?: string;
+  /**
+   * If provided, the `secret` will be used as the `key` to generate the HMAC hex digest value in the [`X-Hub-Signature`](https://developer.github.com/webhooks/#delivery-headers) header.
+   */
   secret?: string;
+  /**
+   * The URL to which the payloads will be delivered.
+   */
   url: string;
 };
 export type ReposUpdateProtectedBranchPullRequestReviewEnforcementParamsDismissalRestrictions = {
+  /**
+   * The list of team `slug`s with dismissal access
+   */
   teams?: string[];
+  /**
+   * The list of user `login`s with dismissal access
+   */
   users?: string[];
 };
 export type ReposUploadReleaseAssetParamsHeaders = {
@@ -32428,15 +32702,290 @@ export type ReposUploadReleaseAssetParamsHeaders = {
 };
 
 export type RestEndpointMethods = {
+  actions: {
+    /**
+     * Cancels a workflow run using its `id`. Anyone with write access to the repository can use this endpoint. GitHub Apps must have the `actions` permission to use this endpoint.
+     */
+    cancelWorkflowRun: {
+      (params?: RequestParameters & ActionsCancelWorkflowRunParams): Promise<
+        AnyResponse
+      >;
+
+      endpoint: EndpointInterface;
+    };
+    /**
+     * Creates or updates a secret with an encrypted value. Encrypt your secret using [LibSodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages). Anyone with write access to the repository can use this endpoint. GitHub Apps must have the `secrets` permission to use this endpoint.
+     *
+     * Encrypt your secret using the [tweetsodium](https://github.com/mastahyeti/tweetsodium) library.
+     *
+     *
+     *
+     * Encrypt your secret using [pynacl](https://pynacl.readthedocs.io/en/stable/public/#nacl-public-sealedbox) with Python 3.
+     *
+     *
+     *
+     * Encrypt your secret using the [Sodium.Core](https://www.nuget.org/packages/Sodium.Core/) package.
+     *
+     *
+     *
+     * Encrypt your secret using the [rbnacl](https://github.com/RubyCrypto/rbnacl) gem.
+     */
+    createOrUpdateSecretForRepo: {
+      (
+        params?: RequestParameters & ActionsCreateOrUpdateSecretForRepoParams
+      ): Promise<AnyResponse>;
+
+      endpoint: EndpointInterface;
+    };
+    /**
+     * Returns a token that you can pass to the `config` script. The token expires after one hour. Anyone with admin access to the repository can use this endpoint. GitHub Apps must have the `administration` permission to use this endpoint.
+     *
+     * Configure your self-hosted runner, replacing TOKEN with the registration token provided by this endpoint.
+     */
+    createRegistrationToken: {
+      (
+        params?: RequestParameters & ActionsCreateRegistrationTokenParams
+      ): Promise<OctokitResponse<ActionsCreateRegistrationTokenResponse>>;
+
+      endpoint: EndpointInterface;
+    };
+    /**
+     * Returns a token that you can pass to remove a self-hosted runner from a repository. The token expires after one hour. Anyone with admin access to the repository can use this endpoint. GitHub Apps must have the `administration` permission to use this endpoint.
+     *
+     * Remove your self-hosted runner from a repository, replacing TOKEN with the remove token provided by this endpoint.
+     */
+    createRemoveToken: {
+      (params?: RequestParameters & ActionsCreateRemoveTokenParams): Promise<
+        OctokitResponse<ActionsCreateRemoveTokenResponse>
+      >;
+
+      endpoint: EndpointInterface;
+    };
+    /**
+     * Deletes an artifact for a workflow run. Anyone with write access to the repository can use this endpoint. GitHub Apps must have the `actions` permission to use this endpoint.
+     */
+    deleteArtifact: {
+      (params?: RequestParameters & ActionsDeleteArtifactParams): Promise<
+        AnyResponse
+      >;
+
+      endpoint: EndpointInterface;
+    };
+    /**
+     * Deletes a secret in a repository using the secret name. Anyone with write access to the repository can use this endpoint. GitHub Apps must have the `secrets` permission to use this endpoint.
+     */
+    deleteSecretFromRepo: {
+      (params?: RequestParameters & ActionsDeleteSecretFromRepoParams): Promise<
+        AnyResponse
+      >;
+
+      endpoint: EndpointInterface;
+    };
+    /**
+     * Gets a redirect URL to download an archive for a repository. This URL expires after 1 minute. Look for `Location:` in the response header to find the URL for the download. The `:archive_format` must be `zip`. Anyone with read access to the repository can use this endpoint. GitHub Apps must have the `actions` permission to use this endpoint.
+     *
+     * Call this endpoint using the `-v` flag, which enables verbose output and allows you to see the download URL in the header. To download the file into the current working directory, specify the filename using the `-o` flag.
+     */
+    downloadArtifact: {
+      (params?: RequestParameters & ActionsDownloadArtifactParams): Promise<
+        AnyResponse
+      >;
+
+      endpoint: EndpointInterface;
+    };
+    /**
+     * Gets a specific artifact for a workflow run. Anyone with read access to the repository can use this endpoint. GitHub Apps must have the `actions` permission to use this endpoint.
+     */
+    getArtifact: {
+      (params?: RequestParameters & ActionsGetArtifactParams): Promise<
+        OctokitResponse<ActionsGetArtifactResponse>
+      >;
+
+      endpoint: EndpointInterface;
+    };
+    /**
+     * Gets your public key, which you must store. You need your public key to use other secrets endpoints. Use the returned `key` to encrypt your secrets. Anyone with read access to the repository can use this endpoint. GitHub Apps must have the `secrets` permission to use this endpoint.
+     */
+    getPublicKey: {
+      (params?: RequestParameters & ActionsGetPublicKeyParams): Promise<
+        OctokitResponse<ActionsGetPublicKeyResponse>
+      >;
+
+      endpoint: EndpointInterface;
+    };
+    /**
+     * Gets a single secret without revealing its encrypted value. Anyone with write access to the repository can use this endpoint. GitHub Apps must have the `secrets` permission to use this endpoint.
+     */
+    getSecret: {
+      (params?: RequestParameters & ActionsGetSecretParams): Promise<
+        OctokitResponse<ActionsGetSecretResponse>
+      >;
+
+      endpoint: EndpointInterface;
+    };
+    /**
+     * Gets a specific self-hosted runner. Anyone with admin access to the repository can use this endpoint. GitHub Apps must have the `administration` permission to use this endpoint.
+     */
+    getSelfHostedRunner: {
+      (params?: RequestParameters & ActionsGetSelfHostedRunnerParams): Promise<
+        OctokitResponse<ActionsGetSelfHostedRunnerResponse>
+      >;
+
+      endpoint: EndpointInterface;
+    };
+    /**
+     * Gets a specific workflow. You can also replace `:workflow_id` with `:workflow_file_name`. For example, you could use `main.yml`. Anyone with read access to the repository can use this endpoint. GitHub Apps must have the `actions` permission to use this endpoint.
+     */
+    getWorkflow: {
+      (params?: RequestParameters & ActionsGetWorkflowParams): Promise<
+        OctokitResponse<ActionsGetWorkflowResponse>
+      >;
+
+      endpoint: EndpointInterface;
+    };
+    /**
+     * Gets a specific job in a workflow run. Anyone with read access to the repository can use this endpoint. GitHub Apps must have the `actions` permission to use this endpoint.
+     */
+    getWorkflowJob: {
+      (params?: RequestParameters & ActionsGetWorkflowJobParams): Promise<
+        OctokitResponse<ActionsGetWorkflowJobResponse>
+      >;
+
+      endpoint: EndpointInterface;
+    };
+    /**
+     * Gets a specific workflow run. Anyone with read access to the repository can use this endpoint. GitHub Apps must have the `actions` permission to use this endpoint.
+     */
+    getWorkflowRun: {
+      (params?: RequestParameters & ActionsGetWorkflowRunParams): Promise<
+        OctokitResponse<ActionsGetWorkflowRunResponse>
+      >;
+
+      endpoint: EndpointInterface;
+    };
+    /**
+     * Lists jobs for a workflow run. Anyone with read access to the repository can use this endpoint. GitHub Apps must have the `actions` permission to use this endpoint.
+     */
+    listJobsForWorkflowRun: {
+      (
+        params?: RequestParameters & ActionsListJobsForWorkflowRunParams
+      ): Promise<OctokitResponse<ActionsListJobsForWorkflowRunResponse>>;
+
+      endpoint: EndpointInterface;
+    };
+    /**
+     * Lists all workflow runs for a repository. Anyone with read access to the repository can use this endpoint. GitHub Apps must have the `actions` permission to use this endpoint.
+     */
+    listRepoWorkflowRuns: {
+      (params?: RequestParameters & ActionsListRepoWorkflowRunsParams): Promise<
+        OctokitResponse<ActionsListRepoWorkflowRunsResponse>
+      >;
+
+      endpoint: EndpointInterface;
+    };
+    /**
+     * Lists the workflows in a repository. Anyone with read access to the repository can use this endpoint. GitHub Apps must have the `actions` permission to use this endpoint.
+     */
+    listRepoWorkflows: {
+      (params?: RequestParameters & ActionsListRepoWorkflowsParams): Promise<
+        OctokitResponse<ActionsListRepoWorkflowsResponse>
+      >;
+
+      endpoint: EndpointInterface;
+    };
+    /**
+     * Lists all secrets available in a repository without revealing their encrypted values. Anyone with write access to the repository can use this endpoint. GitHub Apps must have the `secrets` permission to use this endpoint.
+     */
+    listSecretsForRepo: {
+      (params?: RequestParameters & ActionsListSecretsForRepoParams): Promise<
+        OctokitResponse<ActionsListSecretsForRepoResponse>
+      >;
+
+      endpoint: EndpointInterface;
+    };
+    /**
+     * Lists all self-hosted runners for a repository. Anyone with admin access to the repository can use this endpoint. GitHub Apps must have the `administration` permission to use this endpoint.
+     */
+    listSelfHostedRunnersForRepo: {
+      (
+        params?: RequestParameters & ActionsListSelfHostedRunnersForRepoParams
+      ): Promise<OctokitResponse<ActionsListSelfHostedRunnersForRepoResponse>>;
+
+      endpoint: EndpointInterface;
+    };
+    /**
+     * Gets a redirect URL to download a plain text file of logs for a workflow job. This link expires after 1 minute. Look for `Location:` in the response header to find the URL for the download. Anyone with read access to the repository can use this endpoint. GitHub Apps must have the `actions` permission to use this endpoint.
+     *
+     * Call this endpoint using the `-v` flag, which enables verbose output and allows you to see the download URL in the header. To download the file into the current working directory, specify the filename using the `-o` flag.
+     */
+    listWorkflowJobLogs: {
+      (params?: RequestParameters & ActionsListWorkflowJobLogsParams): Promise<
+        AnyResponse
+      >;
+
+      endpoint: EndpointInterface;
+    };
+    /**
+     * Lists artifacts for a workflow run. Anyone with read access to the repository can use this endpoint. GitHub Apps must have the `actions` permission to use this endpoint.
+     */
+    listWorkflowRunArtifacts: {
+      (
+        params?: RequestParameters & ActionsListWorkflowRunArtifactsParams
+      ): Promise<OctokitResponse<ActionsListWorkflowRunArtifactsResponse>>;
+
+      endpoint: EndpointInterface;
+    };
+    /**
+     * Gets a redirect URL to download an archive of log files for a workflow run. This link expires after 1 minute. Look for `Location:` in the response header to find the URL for the download. Anyone with read access to the repository can use this endpoint. GitHub Apps must have the `actions` permission to use this endpoint.
+     *
+     * Call this endpoint using the `-v` flag, which enables verbose output and allows you to see the download URL in the header. To download the file into the current working directory, specify the filename using the `-o` flag.
+     */
+    listWorkflowRunLogs: {
+      (params?: RequestParameters & ActionsListWorkflowRunLogsParams): Promise<
+        AnyResponse
+      >;
+
+      endpoint: EndpointInterface;
+    };
+    /**
+     * List all workflow runs for a workflow. You can also replace `:workflow_id` with `:workflow_file_name`. For example, you could use `main.yml`. Anyone with read access to the repository can use this endpoint.
+     */
+    listWorkflowRuns: {
+      (params?: RequestParameters & ActionsListWorkflowRunsParams): Promise<
+        OctokitResponse<ActionsListWorkflowRunsResponse>
+      >;
+
+      endpoint: EndpointInterface;
+    };
+    /**
+     * Re-runs your workflow run using its `id`. Anyone with write access to the repository can use this endpoint. GitHub Apps must have the `actions` permission to use this endpoint.
+     */
+    reRunWorkflow: {
+      (params?: RequestParameters & ActionsReRunWorkflowParams): Promise<
+        AnyResponse
+      >;
+
+      endpoint: EndpointInterface;
+    };
+    /**
+     * Forces the removal of a self-hosted runner from a repository. You can use this endpoint to completely remove the runner when the machine you were using no longer exists. Anyone with admin access to the repository can use this endpoint. GitHub Apps must have the `administration` permission to use this endpoint.
+     */
+    removeSelfHostedRunner: {
+      (
+        params?: RequestParameters & ActionsRemoveSelfHostedRunnerParams
+      ): Promise<AnyResponse>;
+
+      endpoint: EndpointInterface;
+    };
+  };
   activity: {
     /**
      * Requires for the user to be authenticated.
      */
     checkStarringRepo: {
-      (
-        params?: RequestParameters &
-          ActivityCheckStarringRepoParams
-      ): Promise<AnyResponse>;
+      (params?: RequestParameters & ActivityCheckStarringRepoParams): Promise<
+        AnyResponse
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -32445,8 +32994,7 @@ export type RestEndpointMethods = {
      */
     checkWatchingRepoLegacy: {
       (
-        params?: RequestParameters &
-          ActivityCheckWatchingRepoLegacyParams
+        params?: RequestParameters & ActivityCheckWatchingRepoLegacyParams
       ): Promise<AnyResponse>;
 
       endpoint: EndpointInterface;
@@ -32456,8 +33004,7 @@ export type RestEndpointMethods = {
      */
     deleteRepoSubscription: {
       (
-        params?: RequestParameters &
-          ActivityDeleteRepoSubscriptionParams
+        params?: RequestParameters & ActivityDeleteRepoSubscriptionParams
       ): Promise<AnyResponse>;
 
       endpoint: EndpointInterface;
@@ -32467,26 +33014,24 @@ export type RestEndpointMethods = {
      */
     deleteThreadSubscription: {
       (
-        params?: RequestParameters &
-          ActivityDeleteThreadSubscriptionParams
+        params?: RequestParameters & ActivityDeleteThreadSubscriptionParams
       ): Promise<AnyResponse>;
 
       endpoint: EndpointInterface;
     };
 
     getRepoSubscription: {
-      (
-        params?: RequestParameters &
-          ActivityGetRepoSubscriptionParams
-      ): Promise<OctokitResponse<ActivityGetRepoSubscriptionResponse>>;
+      (params?: RequestParameters & ActivityGetRepoSubscriptionParams): Promise<
+        OctokitResponse<ActivityGetRepoSubscriptionResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
 
     getThread: {
-      (
-        params?: RequestParameters & ActivityGetThreadParams
-      ): Promise<OctokitResponse<ActivityGetThreadResponse>>;
+      (params?: RequestParameters & ActivityGetThreadParams): Promise<
+        OctokitResponse<ActivityGetThreadResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -32497,11 +33042,8 @@ export type RestEndpointMethods = {
      */
     getThreadSubscription: {
       (
-        params?: RequestParameters &
-          ActivityGetThreadSubscriptionParams
-      ): Promise<
-        OctokitResponse<ActivityGetThreadSubscriptionResponse>
-      >;
+        params?: RequestParameters & ActivityGetThreadSubscriptionParams
+      ): Promise<OctokitResponse<ActivityGetThreadSubscriptionResponse>>;
 
       endpoint: EndpointInterface;
     };
@@ -32509,9 +33051,9 @@ export type RestEndpointMethods = {
      * This is the user's organization dashboard. You must be authenticated as the user to view this.
      */
     listEventsForOrg: {
-      (
-        params?: RequestParameters & ActivityListEventsForOrgParams
-      ): Promise<AnyResponse>;
+      (params?: RequestParameters & ActivityListEventsForOrgParams): Promise<
+        AnyResponse
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -32519,10 +33061,9 @@ export type RestEndpointMethods = {
      * If you are authenticated as the given user, you will see your private events. Otherwise, you'll only see public events.
      */
     listEventsForUser: {
-      (
-        params?: RequestParameters &
-          ActivityListEventsForUserParams
-      ): Promise<AnyResponse>;
+      (params?: RequestParameters & ActivityListEventsForUserParams): Promise<
+        AnyResponse
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -32552,10 +33093,9 @@ export type RestEndpointMethods = {
      * The following example uses the `since` parameter to list notifications that have been updated after the specified time.
      */
     listNotifications: {
-      (
-        params?: RequestParameters &
-          ActivityListNotificationsParams
-      ): Promise<OctokitResponse<ActivityListNotificationsResponse>>;
+      (params?: RequestParameters & ActivityListNotificationsParams): Promise<
+        OctokitResponse<ActivityListNotificationsResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -32564,11 +33104,8 @@ export type RestEndpointMethods = {
      */
     listNotificationsForRepo: {
       (
-        params?: RequestParameters &
-          ActivityListNotificationsForRepoParams
-      ): Promise<
-        OctokitResponse<ActivityListNotificationsForRepoResponse>
-      >;
+        params?: RequestParameters & ActivityListNotificationsForRepoParams
+      ): Promise<OctokitResponse<ActivityListNotificationsForRepoResponse>>;
 
       endpoint: EndpointInterface;
     };
@@ -32576,17 +33113,16 @@ export type RestEndpointMethods = {
      * We delay the public events feed by five minutes, which means the most recent event returned by the public events API actually occurred at least five minutes ago.
      */
     listPublicEvents: {
-      (
-        params?: RequestParameters & ActivityListPublicEventsParams
-      ): Promise<AnyResponse>;
+      (params?: RequestParameters & ActivityListPublicEventsParams): Promise<
+        AnyResponse
+      >;
 
       endpoint: EndpointInterface;
     };
 
     listPublicEventsForOrg: {
       (
-        params?: RequestParameters &
-          ActivityListPublicEventsForOrgParams
+        params?: RequestParameters & ActivityListPublicEventsForOrgParams
       ): Promise<AnyResponse>;
 
       endpoint: EndpointInterface;
@@ -32603,8 +33139,7 @@ export type RestEndpointMethods = {
 
     listPublicEventsForUser: {
       (
-        params?: RequestParameters &
-          ActivityListPublicEventsForUserParams
+        params?: RequestParameters & ActivityListPublicEventsForUserParams
       ): Promise<AnyResponse>;
 
       endpoint: EndpointInterface;
@@ -32614,8 +33149,7 @@ export type RestEndpointMethods = {
      */
     listReceivedEventsForUser: {
       (
-        params?: RequestParameters &
-          ActivityListReceivedEventsForUserParams
+        params?: RequestParameters & ActivityListReceivedEventsForUserParams
       ): Promise<AnyResponse>;
 
       endpoint: EndpointInterface;
@@ -32631,9 +33165,9 @@ export type RestEndpointMethods = {
     };
 
     listRepoEvents: {
-      (
-        params?: RequestParameters & ActivityListRepoEventsParams
-      ): Promise<AnyResponse>;
+      (params?: RequestParameters & ActivityListRepoEventsParams): Promise<
+        AnyResponse
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -32645,9 +33179,7 @@ export type RestEndpointMethods = {
         params?: RequestParameters &
           ActivityListReposStarredByAuthenticatedUserParams
       ): Promise<
-        OctokitResponse<
-          ActivityListReposStarredByAuthenticatedUserResponse
-        >
+        OctokitResponse<ActivityListReposStarredByAuthenticatedUserResponse>
       >;
 
       endpoint: EndpointInterface;
@@ -32657,22 +33189,16 @@ export type RestEndpointMethods = {
      */
     listReposStarredByUser: {
       (
-        params?: RequestParameters &
-          ActivityListReposStarredByUserParams
-      ): Promise<
-        OctokitResponse<ActivityListReposStarredByUserResponse>
-      >;
+        params?: RequestParameters & ActivityListReposStarredByUserParams
+      ): Promise<OctokitResponse<ActivityListReposStarredByUserResponse>>;
 
       endpoint: EndpointInterface;
     };
 
     listReposWatchedByUser: {
       (
-        params?: RequestParameters &
-          ActivityListReposWatchedByUserParams
-      ): Promise<
-        OctokitResponse<ActivityListReposWatchedByUserResponse>
-      >;
+        params?: RequestParameters & ActivityListReposWatchedByUserParams
+      ): Promise<OctokitResponse<ActivityListReposWatchedByUserResponse>>;
 
       endpoint: EndpointInterface;
     };
@@ -32681,11 +33207,8 @@ export type RestEndpointMethods = {
      */
     listStargazersForRepo: {
       (
-        params?: RequestParameters &
-          ActivityListStargazersForRepoParams
-      ): Promise<
-        OctokitResponse<ActivityListStargazersForRepoResponse>
-      >;
+        params?: RequestParameters & ActivityListStargazersForRepoParams
+      ): Promise<OctokitResponse<ActivityListStargazersForRepoResponse>>;
 
       endpoint: EndpointInterface;
     };
@@ -32695,19 +33218,16 @@ export type RestEndpointMethods = {
         params?: RequestParameters &
           ActivityListWatchedReposForAuthenticatedUserParams
       ): Promise<
-        OctokitResponse<
-          ActivityListWatchedReposForAuthenticatedUserResponse
-        >
+        OctokitResponse<ActivityListWatchedReposForAuthenticatedUserResponse>
       >;
 
       endpoint: EndpointInterface;
     };
 
     listWatchersForRepo: {
-      (
-        params?: RequestParameters &
-          ActivityListWatchersForRepoParams
-      ): Promise<OctokitResponse<ActivityListWatchersForRepoResponse>>;
+      (params?: RequestParameters & ActivityListWatchersForRepoParams): Promise<
+        OctokitResponse<ActivityListWatchersForRepoResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -32715,9 +33235,9 @@ export type RestEndpointMethods = {
      * Marks a notification as "read" removes it from the [default view on GitHub](https://github.com/notifications). If the number of notifications is too large to complete in one request, you will receive a `202 Accepted` status and GitHub will run an asynchronous process to mark notifications as "read." To check whether any "unread" notifications remain, you can use the [List your notifications](https://developer.github.com/v3/activity/notifications/#list-your-notifications) endpoint and pass the query parameter `all=false`.
      */
     markAsRead: {
-      (
-        params?: RequestParameters & ActivityMarkAsReadParams
-      ): Promise<AnyResponse>;
+      (params?: RequestParameters & ActivityMarkAsReadParams): Promise<
+        AnyResponse
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -32734,9 +33254,9 @@ export type RestEndpointMethods = {
     };
 
     markThreadAsRead: {
-      (
-        params?: RequestParameters & ActivityMarkThreadAsReadParams
-      ): Promise<AnyResponse>;
+      (params?: RequestParameters & ActivityMarkThreadAsReadParams): Promise<
+        AnyResponse
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -32744,10 +33264,9 @@ export type RestEndpointMethods = {
      * If you would like to watch a repository, set `subscribed` to `true`. If you would like to ignore notifications made within a repository, set `ignored` to `true`. If you would like to stop watching a repository, [delete the repository's subscription](https://developer.github.com/v3/activity/watching/#delete-a-repository-subscription) completely.
      */
     setRepoSubscription: {
-      (
-        params?: RequestParameters &
-          ActivitySetRepoSubscriptionParams
-      ): Promise<OctokitResponse<ActivitySetRepoSubscriptionResponse>>;
+      (params?: RequestParameters & ActivitySetRepoSubscriptionParams): Promise<
+        OctokitResponse<ActivitySetRepoSubscriptionResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -32756,11 +33275,8 @@ export type RestEndpointMethods = {
      */
     setThreadSubscription: {
       (
-        params?: RequestParameters &
-          ActivitySetThreadSubscriptionParams
-      ): Promise<
-        OctokitResponse<ActivitySetThreadSubscriptionResponse>
-      >;
+        params?: RequestParameters & ActivitySetThreadSubscriptionParams
+      ): Promise<OctokitResponse<ActivitySetThreadSubscriptionResponse>>;
 
       endpoint: EndpointInterface;
     };
@@ -32770,9 +33286,9 @@ export type RestEndpointMethods = {
      * Note that you'll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see "[HTTP verbs](https://developer.github.com/v3/#http-verbs)."
      */
     starRepo: {
-      (
-        params?: RequestParameters & ActivityStarRepoParams
-      ): Promise<AnyResponse>;
+      (params?: RequestParameters & ActivityStarRepoParams): Promise<
+        AnyResponse
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -32781,8 +33297,7 @@ export type RestEndpointMethods = {
      */
     stopWatchingRepoLegacy: {
       (
-        params?: RequestParameters &
-          ActivityStopWatchingRepoLegacyParams
+        params?: RequestParameters & ActivityStopWatchingRepoLegacyParams
       ): Promise<AnyResponse>;
 
       endpoint: EndpointInterface;
@@ -32791,9 +33306,9 @@ export type RestEndpointMethods = {
      * Requires for the user to be authenticated.
      */
     unstarRepo: {
-      (
-        params?: RequestParameters & ActivityUnstarRepoParams
-      ): Promise<AnyResponse>;
+      (params?: RequestParameters & ActivityUnstarRepoParams): Promise<
+        AnyResponse
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -32803,9 +33318,9 @@ export type RestEndpointMethods = {
      * Note that you'll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see "[HTTP verbs](https://developer.github.com/v3/#http-verbs)."
      */
     watchRepoLegacy: {
-      (
-        params?: RequestParameters & ActivityWatchRepoLegacyParams
-      ): Promise<AnyResponse>;
+      (params?: RequestParameters & ActivityWatchRepoLegacyParams): Promise<
+        AnyResponse
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -32817,10 +33332,9 @@ export type RestEndpointMethods = {
      * You must use a personal access token (which you can create via the [command line](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/) or the [OAuth Authorizations API](https://developer.github.com/v3/oauth_authorizations/#create-a-new-authorization)) or [Basic Authentication](https://developer.github.com/v3/auth/#basic-authentication) to access this endpoint.
      */
     addRepoToInstallation: {
-      (
-        params?: RequestParameters &
-          AppsAddRepoToInstallationParams
-      ): Promise<AnyResponse>;
+      (params?: RequestParameters & AppsAddRepoToInstallationParams): Promise<
+        AnyResponse
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -32831,11 +33345,8 @@ export type RestEndpointMethods = {
      */
     checkAccountIsAssociatedWithAny: {
       (
-        params?: RequestParameters &
-          AppsCheckAccountIsAssociatedWithAnyParams
-      ): Promise<
-        OctokitResponse<AppsCheckAccountIsAssociatedWithAnyResponse>
-      >;
+        params?: RequestParameters & AppsCheckAccountIsAssociatedWithAnyParams
+      ): Promise<OctokitResponse<AppsCheckAccountIsAssociatedWithAnyResponse>>;
 
       endpoint: EndpointInterface;
     };
@@ -32849,9 +33360,7 @@ export type RestEndpointMethods = {
         params?: RequestParameters &
           AppsCheckAccountIsAssociatedWithAnyStubbedParams
       ): Promise<
-        OctokitResponse<
-          AppsCheckAccountIsAssociatedWithAnyStubbedResponse
-        >
+        OctokitResponse<AppsCheckAccountIsAssociatedWithAnyStubbedResponse>
       >;
 
       endpoint: EndpointInterface;
@@ -32860,12 +33369,12 @@ export type RestEndpointMethods = {
      * **Deprecation Notice:** GitHub will replace and discontinue OAuth endpoints containing `access_token` in the path parameter. We are introducing new endpoints that allow you to securely manage tokens for OAuth Apps by using `access_token` as an input parameter. For more information, see the [blog post](https://developer.github.com/changes/2019-11-05-deprecated-passwords-and-authorizations-api).
      *
      * OAuth applications can use a special API method for checking OAuth token validity without exceeding the normal rate limits for failed login attempts. Authentication works differently with this particular endpoint. You must use [Basic Authentication](https://developer.github.com/v3/auth#basic-authentication) when accessing this endpoint, using the OAuth application's `client_id` and `client_secret` as the username and password. Invalid tokens will return `404 NOT FOUND`.
-     * @deprecated apps.checkAuthorization() is deprecated, see https://developer.github.com/v3/apps/oauth_applications/#check-an-authorization
+     * @deprecated octokit.apps.checkAuthorization() is deprecated, see https://developer.github.com/v3/apps/oauth_applications/#check-an-authorization
      */
     checkAuthorization: {
-      (
-        params?: RequestParameters & AppsCheckAuthorizationParams
-      ): Promise<OctokitResponse<AppsCheckAuthorizationResponse>>;
+      (params?: RequestParameters & AppsCheckAuthorizationParams): Promise<
+        OctokitResponse<AppsCheckAuthorizationResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -32889,10 +33398,9 @@ export type RestEndpointMethods = {
      * This example creates a content attachment for the domain `https://errors.ai/`.
      */
     createContentAttachment: {
-      (
-        params?: RequestParameters &
-          AppsCreateContentAttachmentParams
-      ): Promise<OctokitResponse<AppsCreateContentAttachmentResponse>>;
+      (params?: RequestParameters & AppsCreateContentAttachmentParams): Promise<
+        OctokitResponse<AppsCreateContentAttachmentResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -32900,9 +33408,9 @@ export type RestEndpointMethods = {
      * Use this endpoint to complete the handshake necessary when implementing the [GitHub App Manifest flow](https://developer.github.com/apps/building-github-apps/creating-github-apps-from-a-manifest/). When you create a GitHub App with the manifest flow, you receive a temporary `code` used to retrieve the GitHub App's `id`, `pem` (private key), and `webhook_secret`.
      */
     createFromManifest: {
-      (
-        params?: RequestParameters & AppsCreateFromManifestParams
-      ): Promise<OctokitResponse<AppsCreateFromManifestResponse>>;
+      (params?: RequestParameters & AppsCreateFromManifestParams): Promise<
+        OctokitResponse<AppsCreateFromManifestResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -32916,10 +33424,9 @@ export type RestEndpointMethods = {
      * This example grants the token "Read and write" permission to `issues` and "Read" permission to `contents`, and restricts the token's access to the repository with an `id` of 1296269.
      */
     createInstallationToken: {
-      (
-        params?: RequestParameters &
-          AppsCreateInstallationTokenParams
-      ): Promise<OctokitResponse<AppsCreateInstallationTokenResponse>>;
+      (params?: RequestParameters & AppsCreateInstallationTokenParams): Promise<
+        OctokitResponse<AppsCreateInstallationTokenResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -32929,9 +33436,9 @@ export type RestEndpointMethods = {
      * Deleting an OAuth application's grant will also delete all OAuth tokens associated with the application for the user. Once deleted, the application will have no access to the user's account and will no longer be listed on [the application authorizations settings screen within GitHub](https://github.com/settings/applications#authorized).
      */
     deleteAuthorization: {
-      (
-        params?: RequestParameters & AppsDeleteAuthorizationParams
-      ): Promise<AnyResponse>;
+      (params?: RequestParameters & AppsDeleteAuthorizationParams): Promise<
+        AnyResponse
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -32941,9 +33448,9 @@ export type RestEndpointMethods = {
      * You must use a [JWT](https://developer.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint.
      */
     deleteInstallation: {
-      (
-        params?: RequestParameters & AppsDeleteInstallationParams
-      ): Promise<AnyResponse>;
+      (params?: RequestParameters & AppsDeleteInstallationParams): Promise<
+        AnyResponse
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -32951,9 +33458,9 @@ export type RestEndpointMethods = {
      * OAuth application owners can revoke a single token for an OAuth application. You must use [Basic Authentication](https://developer.github.com/v3/auth#basic-authentication) when accessing this endpoint, using the OAuth application's `client_id` and `client_secret` as the username and password.
      */
     deleteToken: {
-      (
-        params?: RequestParameters & AppsDeleteTokenParams
-      ): Promise<AnyResponse>;
+      (params?: RequestParameters & AppsDeleteTokenParams): Promise<
+        AnyResponse
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -32961,12 +33468,12 @@ export type RestEndpointMethods = {
      * Enables an authenticated GitHub App to find the organization's installation information.
      *
      * You must use a [JWT](https://developer.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint.
-     * @deprecated apps.findOrgInstallation() has been renamed to apps.getOrgInstallation() (2019-04-10)
+     * @deprecated octokit.apps.findOrgInstallation() has been renamed to octokit.apps.getOrgInstallation() (2019-04-10)
      */
     findOrgInstallation: {
-      (
-        params?: RequestParameters & AppsFindOrgInstallationParams
-      ): Promise<OctokitResponse<AppsFindOrgInstallationResponse>>;
+      (params?: RequestParameters & AppsFindOrgInstallationParams): Promise<
+        OctokitResponse<AppsFindOrgInstallationResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -32974,12 +33481,12 @@ export type RestEndpointMethods = {
      * Enables an authenticated GitHub App to find the repository's installation information. The installation's account type will be either an organization or a user account, depending which account the repository belongs to.
      *
      * You must use a [JWT](https://developer.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint.
-     * @deprecated apps.findRepoInstallation() has been renamed to apps.getRepoInstallation() (2019-04-10)
+     * @deprecated octokit.apps.findRepoInstallation() has been renamed to octokit.apps.getRepoInstallation() (2019-04-10)
      */
     findRepoInstallation: {
-      (
-        params?: RequestParameters & AppsFindRepoInstallationParams
-      ): Promise<OctokitResponse<AppsFindRepoInstallationResponse>>;
+      (params?: RequestParameters & AppsFindRepoInstallationParams): Promise<
+        OctokitResponse<AppsFindRepoInstallationResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -32987,12 +33494,12 @@ export type RestEndpointMethods = {
      * Enables an authenticated GitHub App to find the user’s installation information.
      *
      * You must use a [JWT](https://developer.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint.
-     * @deprecated apps.findUserInstallation() has been renamed to apps.getUserInstallation() (2019-04-10)
+     * @deprecated octokit.apps.findUserInstallation() has been renamed to octokit.apps.getUserInstallation() (2019-04-10)
      */
     findUserInstallation: {
-      (
-        params?: RequestParameters & AppsFindUserInstallationParams
-      ): Promise<OctokitResponse<AppsFindUserInstallationResponse>>;
+      (params?: RequestParameters & AppsFindUserInstallationParams): Promise<
+        OctokitResponse<AppsFindUserInstallationResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -33024,9 +33531,9 @@ export type RestEndpointMethods = {
      * You must use a [JWT](https://developer.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint.
      */
     getInstallation: {
-      (
-        params?: RequestParameters & AppsGetInstallationParams
-      ): Promise<OctokitResponse<AppsGetInstallationResponse>>;
+      (params?: RequestParameters & AppsGetInstallationParams): Promise<
+        OctokitResponse<AppsGetInstallationResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -33036,9 +33543,9 @@ export type RestEndpointMethods = {
      * You must use a [JWT](https://developer.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint.
      */
     getOrgInstallation: {
-      (
-        params?: RequestParameters & AppsGetOrgInstallationParams
-      ): Promise<OctokitResponse<AppsGetOrgInstallationResponse>>;
+      (params?: RequestParameters & AppsGetOrgInstallationParams): Promise<
+        OctokitResponse<AppsGetOrgInstallationResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -33048,9 +33555,9 @@ export type RestEndpointMethods = {
      * You must use a [JWT](https://developer.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint.
      */
     getRepoInstallation: {
-      (
-        params?: RequestParameters & AppsGetRepoInstallationParams
-      ): Promise<OctokitResponse<AppsGetRepoInstallationResponse>>;
+      (params?: RequestParameters & AppsGetRepoInstallationParams): Promise<
+        OctokitResponse<AppsGetRepoInstallationResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -33060,9 +33567,9 @@ export type RestEndpointMethods = {
      * You must use a [JWT](https://developer.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint.
      */
     getUserInstallation: {
-      (
-        params?: RequestParameters & AppsGetUserInstallationParams
-      ): Promise<OctokitResponse<AppsGetUserInstallationResponse>>;
+      (params?: RequestParameters & AppsGetUserInstallationParams): Promise<
+        OctokitResponse<AppsGetUserInstallationResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -33073,11 +33580,8 @@ export type RestEndpointMethods = {
      */
     listAccountsUserOrOrgOnPlan: {
       (
-        params?: RequestParameters &
-          AppsListAccountsUserOrOrgOnPlanParams
-      ): Promise<
-        OctokitResponse<AppsListAccountsUserOrOrgOnPlanResponse>
-      >;
+        params?: RequestParameters & AppsListAccountsUserOrOrgOnPlanParams
+      ): Promise<OctokitResponse<AppsListAccountsUserOrOrgOnPlanResponse>>;
 
       endpoint: EndpointInterface;
     };
@@ -33110,9 +33614,7 @@ export type RestEndpointMethods = {
         params?: RequestParameters &
           AppsListInstallationReposForAuthenticatedUserParams
       ): Promise<
-        OctokitResponse<
-          AppsListInstallationReposForAuthenticatedUserResponse
-        >
+        OctokitResponse<AppsListInstallationReposForAuthenticatedUserResponse>
       >;
 
       endpoint: EndpointInterface;
@@ -33123,9 +33625,9 @@ export type RestEndpointMethods = {
      * The permissions the installation has are included under the `permissions` key.
      */
     listInstallations: {
-      (
-        params?: RequestParameters & AppsListInstallationsParams
-      ): Promise<OctokitResponse<AppsListInstallationsResponse>>;
+      (params?: RequestParameters & AppsListInstallationsParams): Promise<
+        OctokitResponse<AppsListInstallationsResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -33143,9 +33645,7 @@ export type RestEndpointMethods = {
         params?: RequestParameters &
           AppsListInstallationsForAuthenticatedUserParams
       ): Promise<
-        OctokitResponse<
-          AppsListInstallationsForAuthenticatedUserResponse
-        >
+        OctokitResponse<AppsListInstallationsForAuthenticatedUserResponse>
       >;
 
       endpoint: EndpointInterface;
@@ -33194,9 +33694,9 @@ export type RestEndpointMethods = {
      * GitHub Apps must use a [JWT](https://developer.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint. OAuth Apps must use [basic authentication](https://developer.github.com/v3/auth/#basic-authentication) with their client ID and client secret to access this endpoint.
      */
     listPlansStubbed: {
-      (
-        params?: RequestParameters & AppsListPlansStubbedParams
-      ): Promise<OctokitResponse<AppsListPlansStubbedResponse>>;
+      (params?: RequestParameters & AppsListPlansStubbedParams): Promise<
+        OctokitResponse<AppsListPlansStubbedResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -33219,8 +33719,7 @@ export type RestEndpointMethods = {
      */
     removeRepoFromInstallation: {
       (
-        params?: RequestParameters &
-          AppsRemoveRepoFromInstallationParams
+        params?: RequestParameters & AppsRemoveRepoFromInstallationParams
       ): Promise<AnyResponse>;
 
       endpoint: EndpointInterface;
@@ -33229,12 +33728,12 @@ export type RestEndpointMethods = {
      * **Deprecation Notice:** GitHub will replace and discontinue OAuth endpoints containing `access_token` in the path parameter. We are introducing new endpoints that allow you to securely manage tokens for OAuth Apps by using `access_token` as an input parameter. For more information, see the [blog post](https://developer.github.com/changes/2019-11-05-deprecated-passwords-and-authorizations-api).
      *
      * OAuth applications can use this API method to reset a valid OAuth token without end-user involvement. Applications must save the "token" property in the response because changes take effect immediately. You must use [Basic Authentication](https://developer.github.com/v3/auth#basic-authentication) when accessing this endpoint, using the OAuth application's `client_id` and `client_secret` as the username and password. Invalid tokens will return `404 NOT FOUND`.
-     * @deprecated apps.resetAuthorization() is deprecated, see https://developer.github.com/v3/apps/oauth_applications/#reset-an-authorization
+     * @deprecated octokit.apps.resetAuthorization() is deprecated, see https://developer.github.com/v3/apps/oauth_applications/#reset-an-authorization
      */
     resetAuthorization: {
-      (
-        params?: RequestParameters & AppsResetAuthorizationParams
-      ): Promise<OctokitResponse<AppsResetAuthorizationResponse>>;
+      (params?: RequestParameters & AppsResetAuthorizationParams): Promise<
+        OctokitResponse<AppsResetAuthorizationResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -33252,12 +33751,11 @@ export type RestEndpointMethods = {
      * **Deprecation Notice:** GitHub will replace and discontinue OAuth endpoints containing `access_token` in the path parameter. We are introducing new endpoints that allow you to securely manage tokens for OAuth Apps by using `access_token` as an input parameter. For more information, see the [blog post](https://developer.github.com/changes/2019-11-05-deprecated-passwords-and-authorizations-api).
      *
      * OAuth application owners can revoke a single token for an OAuth application. You must use [Basic Authentication](https://developer.github.com/v3/auth#basic-authentication) when accessing this endpoint, using the OAuth application's `client_id` and `client_secret` as the username and password.
-     * @deprecated apps.revokeAuthorizationForApplication() is deprecated, see https://developer.github.com/v3/apps/oauth_applications/#revoke-an-authorization-for-an-application
+     * @deprecated octokit.apps.revokeAuthorizationForApplication() is deprecated, see https://developer.github.com/v3/apps/oauth_applications/#revoke-an-authorization-for-an-application
      */
     revokeAuthorizationForApplication: {
       (
-        params?: RequestParameters &
-          AppsRevokeAuthorizationForApplicationParams
+        params?: RequestParameters & AppsRevokeAuthorizationForApplicationParams
       ): Promise<AnyResponse>;
 
       endpoint: EndpointInterface;
@@ -33268,12 +33766,11 @@ export type RestEndpointMethods = {
      * OAuth application owners can revoke a grant for their OAuth application and a specific user. You must use [Basic Authentication](https://developer.github.com/v3/auth#basic-authentication) when accessing this endpoint, using the OAuth application's `client_id` and `client_secret` as the username and password. You must also provide a valid token as `:access_token` and the grant for the token's owner will be deleted.
      *
      * Deleting an OAuth application's grant will also delete all OAuth tokens associated with the application for the user. Once deleted, the application will have no access to the user's account and will no longer be listed on [the Applications settings page under "Authorized OAuth Apps" on GitHub](https://github.com/settings/applications#authorized).
-     * @deprecated apps.revokeGrantForApplication() is deprecated, see https://developer.github.com/v3/apps/oauth_applications/#revoke-a-grant-for-an-application
+     * @deprecated octokit.apps.revokeGrantForApplication() is deprecated, see https://developer.github.com/v3/apps/oauth_applications/#revoke-a-grant-for-an-application
      */
     revokeGrantForApplication: {
       (
-        params?: RequestParameters &
-          AppsRevokeGrantForApplicationParams
+        params?: RequestParameters & AppsRevokeGrantForApplicationParams
       ): Promise<AnyResponse>;
 
       endpoint: EndpointInterface;
@@ -33286,9 +33783,7 @@ export type RestEndpointMethods = {
      * You must use an [installation access token](https://developer.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-an-installation) to access this endpoint.
      */
     revokeInstallationToken: {
-      (params?: RequestParameters & EmptyParams): Promise<
-        AnyResponse
-      >;
+      (params?: RequestParameters & EmptyParams): Promise<AnyResponse>;
 
       endpoint: EndpointInterface;
     };
@@ -33312,9 +33807,9 @@ export type RestEndpointMethods = {
      * By default, check suites are automatically created when you create a [check run](https://developer.github.com/v3/checks/runs/). You only need to use this endpoint for manually creating check suites when you've disabled automatic creation using "[Set preferences for check suites on a repository](https://developer.github.com/v3/checks/suites/#set-preferences-for-check-suites-on-a-repository)". Your GitHub App must have the `checks:write` permission to create check suites.
      */
     createSuite: {
-      (
-        params?: RequestParameters & ChecksCreateSuiteParams
-      ): Promise<OctokitResponse<ChecksCreateSuiteResponse>>;
+      (params?: RequestParameters & ChecksCreateSuiteParams): Promise<
+        OctokitResponse<ChecksCreateSuiteResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -33346,9 +33841,9 @@ export type RestEndpointMethods = {
      * Lists annotations for a check run using the annotation `id`. GitHub Apps must have the `checks:read` permission on a private repository or pull access to a public repository to get annotations for a check run. OAuth Apps and authenticated users must have the `repo` scope to get annotations for a check run in a private repository.
      */
     listAnnotations: {
-      (
-        params?: RequestParameters & ChecksListAnnotationsParams
-      ): Promise<OctokitResponse<ChecksListAnnotationsResponse>>;
+      (params?: RequestParameters & ChecksListAnnotationsParams): Promise<
+        OctokitResponse<ChecksListAnnotationsResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -33358,9 +33853,9 @@ export type RestEndpointMethods = {
      * Lists check runs for a commit ref. The `ref` can be a SHA, branch name, or a tag name. GitHub Apps must have the `checks:read` permission on a private repository or pull access to a public repository to get check runs. OAuth Apps and authenticated users must have the `repo` scope to get check runs in a private repository.
      */
     listForRef: {
-      (
-        params?: RequestParameters & ChecksListForRefParams
-      ): Promise<OctokitResponse<ChecksListForRefResponse>>;
+      (params?: RequestParameters & ChecksListForRefParams): Promise<
+        OctokitResponse<ChecksListForRefResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -33370,9 +33865,9 @@ export type RestEndpointMethods = {
      * Lists check runs for a check suite using its `id`. GitHub Apps must have the `checks:read` permission on a private repository or pull access to a public repository to get check runs. OAuth Apps and authenticated users must have the `repo` scope to get check runs in a private repository.
      */
     listForSuite: {
-      (
-        params?: RequestParameters & ChecksListForSuiteParams
-      ): Promise<OctokitResponse<ChecksListForSuiteResponse>>;
+      (params?: RequestParameters & ChecksListForSuiteParams): Promise<
+        OctokitResponse<ChecksListForSuiteResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -33382,9 +33877,9 @@ export type RestEndpointMethods = {
      * Lists check suites for a commit `ref`. The `ref` can be a SHA, branch name, or a tag name. GitHub Apps must have the `checks:read` permission on a private repository or pull access to a public repository to list check suites. OAuth Apps and authenticated users must have the `repo` scope to get check suites in a private repository.
      */
     listSuitesForRef: {
-      (
-        params?: RequestParameters & ChecksListSuitesForRefParams
-      ): Promise<OctokitResponse<ChecksListSuitesForRefResponse>>;
+      (params?: RequestParameters & ChecksListSuitesForRefParams): Promise<
+        OctokitResponse<ChecksListSuitesForRefResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -33394,9 +33889,9 @@ export type RestEndpointMethods = {
      * To rerequest a check suite, your GitHub App must have the `checks:read` permission on a private repository or pull access to a public repository.
      */
     rerequestSuite: {
-      (
-        params?: RequestParameters & ChecksRerequestSuiteParams
-      ): Promise<AnyResponse>;
+      (params?: RequestParameters & ChecksRerequestSuiteParams): Promise<
+        AnyResponse
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -33404,10 +33899,9 @@ export type RestEndpointMethods = {
      * Changes the default automatic flow when creating check suites. By default, the CheckSuiteEvent is automatically created each time code is pushed to a repository. When you disable the automatic creation of check suites, you can manually [Create a check suite](https://developer.github.com/v3/checks/suites/#create-a-check-suite). You must have admin permissions in the repository to set preferences for check suites.
      */
     setSuitesPreferences: {
-      (
-        params?: RequestParameters &
-          ChecksSetSuitesPreferencesParams
-      ): Promise<OctokitResponse<ChecksSetSuitesPreferencesResponse>>;
+      (params?: RequestParameters & ChecksSetSuitesPreferencesParams): Promise<
+        OctokitResponse<ChecksSetSuitesPreferencesResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -33427,11 +33921,8 @@ export type RestEndpointMethods = {
   codesOfConduct: {
     getConductCode: {
       (
-        params?: RequestParameters &
-          CodesOfConductGetConductCodeParams
-      ): Promise<
-        OctokitResponse<CodesOfConductGetConductCodeResponse>
-      >;
+        params?: RequestParameters & CodesOfConductGetConductCodeParams
+      ): Promise<OctokitResponse<CodesOfConductGetConductCodeResponse>>;
 
       endpoint: EndpointInterface;
     };
@@ -33439,9 +33930,9 @@ export type RestEndpointMethods = {
      * This method returns the contents of the repository's code of conduct file, if one is detected.
      */
     getForRepo: {
-      (
-        params?: RequestParameters & CodesOfConductGetForRepoParams
-      ): Promise<OctokitResponse<CodesOfConductGetForRepoResponse>>;
+      (params?: RequestParameters & CodesOfConductGetForRepoParams): Promise<
+        OctokitResponse<CodesOfConductGetForRepoResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -33459,18 +33950,16 @@ export type RestEndpointMethods = {
      * Lists all the emojis available to use on GitHub.
      */
     get: {
-      (params?: RequestParameters & EmptyParams): Promise<
-        AnyResponse
-      >;
+      (params?: RequestParameters & EmptyParams): Promise<AnyResponse>;
 
       endpoint: EndpointInterface;
     };
   };
   gists: {
     checkIsStarred: {
-      (
-        params?: RequestParameters & GistsCheckIsStarredParams
-      ): Promise<AnyResponse>;
+      (params?: RequestParameters & GistsCheckIsStarredParams): Promise<
+        AnyResponse
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -33488,25 +33977,23 @@ export type RestEndpointMethods = {
     };
 
     createComment: {
-      (
-        params?: RequestParameters & GistsCreateCommentParams
-      ): Promise<OctokitResponse<GistsCreateCommentResponse>>;
-
-      endpoint: EndpointInterface;
-    };
-
-    delete: {
-      (params?: RequestParameters & GistsDeleteParams): Promise<
-        AnyResponse
+      (params?: RequestParameters & GistsCreateCommentParams): Promise<
+        OctokitResponse<GistsCreateCommentResponse>
       >;
 
       endpoint: EndpointInterface;
     };
 
+    delete: {
+      (params?: RequestParameters & GistsDeleteParams): Promise<AnyResponse>;
+
+      endpoint: EndpointInterface;
+    };
+
     deleteComment: {
-      (
-        params?: RequestParameters & GistsDeleteCommentParams
-      ): Promise<AnyResponse>;
+      (params?: RequestParameters & GistsDeleteCommentParams): Promise<
+        AnyResponse
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -33530,17 +34017,17 @@ export type RestEndpointMethods = {
     };
 
     getComment: {
-      (
-        params?: RequestParameters & GistsGetCommentParams
-      ): Promise<OctokitResponse<GistsGetCommentResponse>>;
+      (params?: RequestParameters & GistsGetCommentParams): Promise<
+        OctokitResponse<GistsGetCommentResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
 
     getRevision: {
-      (
-        params?: RequestParameters & GistsGetRevisionParams
-      ): Promise<OctokitResponse<GistsGetRevisionResponse>>;
+      (params?: RequestParameters & GistsGetRevisionParams): Promise<
+        OctokitResponse<GistsGetRevisionResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -33554,17 +34041,17 @@ export type RestEndpointMethods = {
     };
 
     listComments: {
-      (
-        params?: RequestParameters & GistsListCommentsParams
-      ): Promise<OctokitResponse<GistsListCommentsResponse>>;
+      (params?: RequestParameters & GistsListCommentsParams): Promise<
+        OctokitResponse<GistsListCommentsResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
 
     listCommits: {
-      (
-        params?: RequestParameters & GistsListCommitsParams
-      ): Promise<OctokitResponse<GistsListCommitsResponse>>;
+      (params?: RequestParameters & GistsListCommitsParams): Promise<
+        OctokitResponse<GistsListCommitsResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -33582,17 +34069,17 @@ export type RestEndpointMethods = {
      * Note: With [pagination](https://developer.github.com/v3/#pagination), you can fetch up to 3000 gists. For example, you can fetch 100 pages with 30 gists per page or 30 pages with 100 gists per page.
      */
     listPublic: {
-      (
-        params?: RequestParameters & GistsListPublicParams
-      ): Promise<OctokitResponse<GistsListPublicResponse>>;
+      (params?: RequestParameters & GistsListPublicParams): Promise<
+        OctokitResponse<GistsListPublicResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
 
     listPublicForUser: {
-      (
-        params?: RequestParameters & GistsListPublicForUserParams
-      ): Promise<OctokitResponse<GistsListPublicForUserResponse>>;
+      (params?: RequestParameters & GistsListPublicForUserParams): Promise<
+        OctokitResponse<GistsListPublicForUserResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -33600,9 +34087,9 @@ export type RestEndpointMethods = {
      * List the authenticated user's starred gists:
      */
     listStarred: {
-      (
-        params?: RequestParameters & GistsListStarredParams
-      ): Promise<OctokitResponse<GistsListStarredResponse>>;
+      (params?: RequestParameters & GistsListStarredParams): Promise<
+        OctokitResponse<GistsListStarredResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -33610,17 +34097,13 @@ export type RestEndpointMethods = {
      * Note that you'll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see "[HTTP verbs](https://developer.github.com/v3/#http-verbs)."
      */
     star: {
-      (params?: RequestParameters & GistsStarParams): Promise<
-        AnyResponse
-      >;
+      (params?: RequestParameters & GistsStarParams): Promise<AnyResponse>;
 
       endpoint: EndpointInterface;
     };
 
     unstar: {
-      (params?: RequestParameters & GistsUnstarParams): Promise<
-        AnyResponse
-      >;
+      (params?: RequestParameters & GistsUnstarParams): Promise<AnyResponse>;
 
       endpoint: EndpointInterface;
     };
@@ -33636,9 +34119,9 @@ export type RestEndpointMethods = {
     };
 
     updateComment: {
-      (
-        params?: RequestParameters & GistsUpdateCommentParams
-      ): Promise<OctokitResponse<GistsUpdateCommentResponse>>;
+      (params?: RequestParameters & GistsUpdateCommentParams): Promise<
+        OctokitResponse<GistsUpdateCommentResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -33681,9 +34164,9 @@ export type RestEndpointMethods = {
      * | `valid`                  | None of the above errors applied, so the signature is considered to be verified.                                                  |
      */
     createCommit: {
-      (
-        params?: RequestParameters & GitCreateCommitParams
-      ): Promise<OctokitResponse<GitCreateCommitResponse>>;
+      (params?: RequestParameters & GitCreateCommitParams): Promise<
+        OctokitResponse<GitCreateCommitResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -33751,9 +34234,7 @@ export type RestEndpointMethods = {
      * ```
      */
     deleteRef: {
-      (params?: RequestParameters & GitDeleteRefParams): Promise<
-        AnyResponse
-      >;
+      (params?: RequestParameters & GitDeleteRefParams): Promise<AnyResponse>;
 
       endpoint: EndpointInterface;
     };
@@ -33846,11 +34327,13 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface;
     };
     /**
-     * If `truncated` is `true`, the number of items in the `tree` array exceeded our maximum limit. If you need to fetch more items, you can clone the repository and iterate over the Git data locally.
+     * Returns a single tree using the SHA1 value for that tree.
+     *
+     * If `truncated` is `true` in the response then the number of items in the `tree` array exceeded our maximum limit. If you need to fetch more items, you can clone the repository and iterate over the Git data locally.
      */
     getTree: {
       (params?: RequestParameters & GitGetTreeParams): Promise<
-        AnyResponse
+        OctokitResponse<GitGetTreeResponse>
       >;
 
       endpoint: EndpointInterface;
@@ -33865,9 +34348,9 @@ export type RestEndpointMethods = {
      * If you request matching references for a branch named `feature` but the branch `feature` doesn't exist, the response can still include other matching head refs that start with the word `feature`, such as `featureA` and `featureB`.
      */
     listMatchingRefs: {
-      (
-        params?: RequestParameters & GitListMatchingRefsParams
-      ): Promise<OctokitResponse<GitListMatchingRefsResponse>>;
+      (params?: RequestParameters & GitListMatchingRefsParams): Promise<
+        OctokitResponse<GitListMatchingRefsResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -33875,9 +34358,7 @@ export type RestEndpointMethods = {
      * Returns an array of all the references from your Git database, including notes and stashes if they exist on the server. Anything in the namespace is returned, not just `heads` and `tags`. If there are no references to list, a `404` is returned.
      */
     listRefs: {
-      (params?: RequestParameters & GitListRefsParams): Promise<
-        AnyResponse
-      >;
+      (params?: RequestParameters & GitListRefsParams): Promise<AnyResponse>;
 
       endpoint: EndpointInterface;
     };
@@ -33897,9 +34378,9 @@ export type RestEndpointMethods = {
      * Use the raw [media type](https://developer.github.com/v3/media/) to get the raw contents.
      */
     getTemplate: {
-      (
-        params?: RequestParameters & GitignoreGetTemplateParams
-      ): Promise<OctokitResponse<GitignoreGetTemplateResponse>>;
+      (params?: RequestParameters & GitignoreGetTemplateParams): Promise<
+        OctokitResponse<GitignoreGetTemplateResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -33923,9 +34404,7 @@ export type RestEndpointMethods = {
         params?: RequestParameters &
           InteractionsAddOrUpdateRestrictionsForOrgParams
       ): Promise<
-        OctokitResponse<
-          InteractionsAddOrUpdateRestrictionsForOrgResponse
-        >
+        OctokitResponse<InteractionsAddOrUpdateRestrictionsForOrgResponse>
       >;
 
       endpoint: EndpointInterface;
@@ -33938,9 +34417,7 @@ export type RestEndpointMethods = {
         params?: RequestParameters &
           InteractionsAddOrUpdateRestrictionsForRepoParams
       ): Promise<
-        OctokitResponse<
-          InteractionsAddOrUpdateRestrictionsForRepoResponse
-        >
+        OctokitResponse<InteractionsAddOrUpdateRestrictionsForRepoResponse>
       >;
 
       endpoint: EndpointInterface;
@@ -33950,11 +34427,8 @@ export type RestEndpointMethods = {
      */
     getRestrictionsForOrg: {
       (
-        params?: RequestParameters &
-          InteractionsGetRestrictionsForOrgParams
-      ): Promise<
-        OctokitResponse<InteractionsGetRestrictionsForOrgResponse>
-      >;
+        params?: RequestParameters & InteractionsGetRestrictionsForOrgParams
+      ): Promise<OctokitResponse<InteractionsGetRestrictionsForOrgResponse>>;
 
       endpoint: EndpointInterface;
     };
@@ -33963,11 +34437,8 @@ export type RestEndpointMethods = {
      */
     getRestrictionsForRepo: {
       (
-        params?: RequestParameters &
-          InteractionsGetRestrictionsForRepoParams
-      ): Promise<
-        OctokitResponse<InteractionsGetRestrictionsForRepoResponse>
-      >;
+        params?: RequestParameters & InteractionsGetRestrictionsForRepoParams
+      ): Promise<OctokitResponse<InteractionsGetRestrictionsForRepoResponse>>;
 
       endpoint: EndpointInterface;
     };
@@ -33976,8 +34447,7 @@ export type RestEndpointMethods = {
      */
     removeRestrictionsForOrg: {
       (
-        params?: RequestParameters &
-          InteractionsRemoveRestrictionsForOrgParams
+        params?: RequestParameters & InteractionsRemoveRestrictionsForOrgParams
       ): Promise<AnyResponse>;
 
       endpoint: EndpointInterface;
@@ -33987,8 +34457,7 @@ export type RestEndpointMethods = {
      */
     removeRestrictionsForRepo: {
       (
-        params?: RequestParameters &
-          InteractionsRemoveRestrictionsForRepoParams
+        params?: RequestParameters & InteractionsRemoveRestrictionsForRepoParams
       ): Promise<AnyResponse>;
 
       endpoint: EndpointInterface;
@@ -34002,24 +34471,22 @@ export type RestEndpointMethods = {
      */
     addAssignees: {
       (
-        params?: RequestParameters &
-          IssuesAddAssigneesParamsDeprecatedNumber
+        params?: RequestParameters & IssuesAddAssigneesParamsDeprecatedNumber
       ): Promise<OctokitResponse<IssuesAddAssigneesResponse>>;
-      (
-        params?: RequestParameters & IssuesAddAssigneesParams
-      ): Promise<OctokitResponse<IssuesAddAssigneesResponse>>;
+      (params?: RequestParameters & IssuesAddAssigneesParams): Promise<
+        OctokitResponse<IssuesAddAssigneesResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
 
     addLabels: {
       (
-        params?: RequestParameters &
-          IssuesAddLabelsParamsDeprecatedNumber
+        params?: RequestParameters & IssuesAddLabelsParamsDeprecatedNumber
       ): Promise<OctokitResponse<IssuesAddLabelsResponse>>;
-      (
-        params?: RequestParameters & IssuesAddLabelsParams
-      ): Promise<OctokitResponse<IssuesAddLabelsResponse>>;
+      (params?: RequestParameters & IssuesAddLabelsParams): Promise<
+        OctokitResponse<IssuesAddLabelsResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -34031,9 +34498,9 @@ export type RestEndpointMethods = {
      * Otherwise a `404` status code is returned.
      */
     checkAssignee: {
-      (
-        params?: RequestParameters & IssuesCheckAssigneeParams
-      ): Promise<AnyResponse>;
+      (params?: RequestParameters & IssuesCheckAssigneeParams): Promise<
+        AnyResponse
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -34044,8 +34511,7 @@ export type RestEndpointMethods = {
      */
     create: {
       (
-        params?: RequestParameters &
-          IssuesCreateParamsDeprecatedAssignee
+        params?: RequestParameters & IssuesCreateParamsDeprecatedAssignee
       ): Promise<OctokitResponse<IssuesCreateResponse>>;
       (params?: RequestParameters & IssuesCreateParams): Promise<
         OctokitResponse<IssuesCreateResponse>
@@ -34058,56 +34524,54 @@ export type RestEndpointMethods = {
      */
     createComment: {
       (
-        params?: RequestParameters &
-          IssuesCreateCommentParamsDeprecatedNumber
+        params?: RequestParameters & IssuesCreateCommentParamsDeprecatedNumber
       ): Promise<OctokitResponse<IssuesCreateCommentResponse>>;
-      (
-        params?: RequestParameters & IssuesCreateCommentParams
-      ): Promise<OctokitResponse<IssuesCreateCommentResponse>>;
+      (params?: RequestParameters & IssuesCreateCommentParams): Promise<
+        OctokitResponse<IssuesCreateCommentResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
 
     createLabel: {
-      (
-        params?: RequestParameters & IssuesCreateLabelParams
-      ): Promise<OctokitResponse<IssuesCreateLabelResponse>>;
+      (params?: RequestParameters & IssuesCreateLabelParams): Promise<
+        OctokitResponse<IssuesCreateLabelResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
 
     createMilestone: {
-      (
-        params?: RequestParameters & IssuesCreateMilestoneParams
-      ): Promise<OctokitResponse<IssuesCreateMilestoneResponse>>;
+      (params?: RequestParameters & IssuesCreateMilestoneParams): Promise<
+        OctokitResponse<IssuesCreateMilestoneResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
 
     deleteComment: {
-      (
-        params?: RequestParameters & IssuesDeleteCommentParams
-      ): Promise<AnyResponse>;
+      (params?: RequestParameters & IssuesDeleteCommentParams): Promise<
+        AnyResponse
+      >;
 
       endpoint: EndpointInterface;
     };
 
     deleteLabel: {
-      (
-        params?: RequestParameters & IssuesDeleteLabelParams
-      ): Promise<AnyResponse>;
+      (params?: RequestParameters & IssuesDeleteLabelParams): Promise<
+        AnyResponse
+      >;
 
       endpoint: EndpointInterface;
     };
 
     deleteMilestone: {
       (
-        params?: RequestParameters &
-          IssuesDeleteMilestoneParamsDeprecatedNumber
+        params?: RequestParameters & IssuesDeleteMilestoneParamsDeprecatedNumber
       ): Promise<AnyResponse>;
-      (
-        params?: RequestParameters & IssuesDeleteMilestoneParams
-      ): Promise<AnyResponse>;
+      (params?: RequestParameters & IssuesDeleteMilestoneParams): Promise<
+        AnyResponse
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -34119,10 +34583,9 @@ export type RestEndpointMethods = {
      * Be aware that the `id` of a pull request returned from "Issues" endpoints will be an _issue id_. To find out the pull request id, use the "[List pull requests](https://developer.github.com/v3/pulls/#list-pull-requests)" endpoint.
      */
     get: {
-      (
-        params?: RequestParameters &
-          IssuesGetParamsDeprecatedNumber
-      ): Promise<OctokitResponse<IssuesGetResponse>>;
+      (params?: RequestParameters & IssuesGetParamsDeprecatedNumber): Promise<
+        OctokitResponse<IssuesGetResponse>
+      >;
       (params?: RequestParameters & IssuesGetParams): Promise<
         OctokitResponse<IssuesGetResponse>
       >;
@@ -34131,9 +34594,9 @@ export type RestEndpointMethods = {
     };
 
     getComment: {
-      (
-        params?: RequestParameters & IssuesGetCommentParams
-      ): Promise<OctokitResponse<IssuesGetCommentResponse>>;
+      (params?: RequestParameters & IssuesGetCommentParams): Promise<
+        OctokitResponse<IssuesGetCommentResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -34156,12 +34619,11 @@ export type RestEndpointMethods = {
 
     getMilestone: {
       (
-        params?: RequestParameters &
-          IssuesGetMilestoneParamsDeprecatedNumber
+        params?: RequestParameters & IssuesGetMilestoneParamsDeprecatedNumber
       ): Promise<OctokitResponse<IssuesGetMilestoneResponse>>;
-      (
-        params?: RequestParameters & IssuesGetMilestoneParams
-      ): Promise<OctokitResponse<IssuesGetMilestoneResponse>>;
+      (params?: RequestParameters & IssuesGetMilestoneParams): Promise<
+        OctokitResponse<IssuesGetMilestoneResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -34181,9 +34643,9 @@ export type RestEndpointMethods = {
      * Lists the [available assignees](https://help.github.com/articles/assigning-issues-and-pull-requests-to-other-github-users/) for issues in a repository.
      */
     listAssignees: {
-      (
-        params?: RequestParameters & IssuesListAssigneesParams
-      ): Promise<OctokitResponse<IssuesListAssigneesResponse>>;
+      (params?: RequestParameters & IssuesListAssigneesParams): Promise<
+        OctokitResponse<IssuesListAssigneesResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -34192,12 +34654,11 @@ export type RestEndpointMethods = {
      */
     listComments: {
       (
-        params?: RequestParameters &
-          IssuesListCommentsParamsDeprecatedNumber
+        params?: RequestParameters & IssuesListCommentsParamsDeprecatedNumber
       ): Promise<OctokitResponse<IssuesListCommentsResponse>>;
-      (
-        params?: RequestParameters & IssuesListCommentsParams
-      ): Promise<OctokitResponse<IssuesListCommentsResponse>>;
+      (params?: RequestParameters & IssuesListCommentsParams): Promise<
+        OctokitResponse<IssuesListCommentsResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -34205,30 +34666,28 @@ export type RestEndpointMethods = {
      * By default, Issue Comments are ordered by ascending ID.
      */
     listCommentsForRepo: {
-      (
-        params?: RequestParameters &
-          IssuesListCommentsForRepoParams
-      ): Promise<OctokitResponse<IssuesListCommentsForRepoResponse>>;
+      (params?: RequestParameters & IssuesListCommentsForRepoParams): Promise<
+        OctokitResponse<IssuesListCommentsForRepoResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
 
     listEvents: {
       (
-        params?: RequestParameters &
-          IssuesListEventsParamsDeprecatedNumber
+        params?: RequestParameters & IssuesListEventsParamsDeprecatedNumber
       ): Promise<OctokitResponse<IssuesListEventsResponse>>;
-      (
-        params?: RequestParameters & IssuesListEventsParams
-      ): Promise<OctokitResponse<IssuesListEventsResponse>>;
+      (params?: RequestParameters & IssuesListEventsParams): Promise<
+        OctokitResponse<IssuesListEventsResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
 
     listEventsForRepo: {
-      (
-        params?: RequestParameters & IssuesListEventsForRepoParams
-      ): Promise<OctokitResponse<IssuesListEventsForRepoResponse>>;
+      (params?: RequestParameters & IssuesListEventsForRepoParams): Promise<
+        OctokitResponse<IssuesListEventsForRepoResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -34238,10 +34697,9 @@ export type RestEndpointMethods = {
         params?: RequestParameters &
           IssuesListEventsForTimelineParamsDeprecatedNumber
       ): Promise<OctokitResponse<IssuesListEventsForTimelineResponse>>;
-      (
-        params?: RequestParameters &
-          IssuesListEventsForTimelineParams
-      ): Promise<OctokitResponse<IssuesListEventsForTimelineResponse>>;
+      (params?: RequestParameters & IssuesListEventsForTimelineParams): Promise<
+        OctokitResponse<IssuesListEventsForTimelineResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -34252,11 +34710,8 @@ export type RestEndpointMethods = {
      */
     listForAuthenticatedUser: {
       (
-        params?: RequestParameters &
-          IssuesListForAuthenticatedUserParams
-      ): Promise<
-        OctokitResponse<IssuesListForAuthenticatedUserResponse>
-      >;
+        params?: RequestParameters & IssuesListForAuthenticatedUserParams
+      ): Promise<OctokitResponse<IssuesListForAuthenticatedUserResponse>>;
 
       endpoint: EndpointInterface;
     };
@@ -34266,9 +34721,9 @@ export type RestEndpointMethods = {
      * Be aware that the `id` of a pull request returned from "Issues" endpoints will be an _issue id_. To find out the pull request id, use the "[List pull requests](https://developer.github.com/v3/pulls/#list-pull-requests)" endpoint.
      */
     listForOrg: {
-      (
-        params?: RequestParameters & IssuesListForOrgParams
-      ): Promise<OctokitResponse<IssuesListForOrgResponse>>;
+      (params?: RequestParameters & IssuesListForOrgParams): Promise<
+        OctokitResponse<IssuesListForOrgResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -34278,9 +34733,9 @@ export type RestEndpointMethods = {
      * Be aware that the `id` of a pull request returned from "Issues" endpoints will be an _issue id_. To find out the pull request id, use the "[List pull requests](https://developer.github.com/v3/pulls/#list-pull-requests)" endpoint.
      */
     listForRepo: {
-      (
-        params?: RequestParameters & IssuesListForRepoParams
-      ): Promise<OctokitResponse<IssuesListForRepoResponse>>;
+      (params?: RequestParameters & IssuesListForRepoParams): Promise<
+        OctokitResponse<IssuesListForRepoResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -34289,23 +34744,18 @@ export type RestEndpointMethods = {
       (
         params?: RequestParameters &
           IssuesListLabelsForMilestoneParamsDeprecatedNumber
-      ): Promise<
-        OctokitResponse<IssuesListLabelsForMilestoneResponse>
-      >;
+      ): Promise<OctokitResponse<IssuesListLabelsForMilestoneResponse>>;
       (
-        params?: RequestParameters &
-          IssuesListLabelsForMilestoneParams
-      ): Promise<
-        OctokitResponse<IssuesListLabelsForMilestoneResponse>
-      >;
+        params?: RequestParameters & IssuesListLabelsForMilestoneParams
+      ): Promise<OctokitResponse<IssuesListLabelsForMilestoneResponse>>;
 
       endpoint: EndpointInterface;
     };
 
     listLabelsForRepo: {
-      (
-        params?: RequestParameters & IssuesListLabelsForRepoParams
-      ): Promise<OctokitResponse<IssuesListLabelsForRepoResponse>>;
+      (params?: RequestParameters & IssuesListLabelsForRepoParams): Promise<
+        OctokitResponse<IssuesListLabelsForRepoResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -34315,18 +34765,17 @@ export type RestEndpointMethods = {
         params?: RequestParameters &
           IssuesListLabelsOnIssueParamsDeprecatedNumber
       ): Promise<OctokitResponse<IssuesListLabelsOnIssueResponse>>;
-      (
-        params?: RequestParameters & IssuesListLabelsOnIssueParams
-      ): Promise<OctokitResponse<IssuesListLabelsOnIssueResponse>>;
+      (params?: RequestParameters & IssuesListLabelsOnIssueParams): Promise<
+        OctokitResponse<IssuesListLabelsOnIssueResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
 
     listMilestonesForRepo: {
-      (
-        params?: RequestParameters &
-          IssuesListMilestonesForRepoParams
-      ): Promise<OctokitResponse<IssuesListMilestonesForRepoResponse>>;
+      (params?: RequestParameters & IssuesListMilestonesForRepoParams): Promise<
+        OctokitResponse<IssuesListMilestonesForRepoResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -34336,13 +34785,10 @@ export type RestEndpointMethods = {
      * Note that, if you choose not to pass any parameters, you'll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see "[HTTP verbs](https://developer.github.com/v3/#http-verbs)."
      */
     lock: {
-      (
-        params?: RequestParameters &
-          IssuesLockParamsDeprecatedNumber
-      ): Promise<AnyResponse>;
-      (params?: RequestParameters & IssuesLockParams): Promise<
+      (params?: RequestParameters & IssuesLockParamsDeprecatedNumber): Promise<
         AnyResponse
       >;
+      (params?: RequestParameters & IssuesLockParams): Promise<AnyResponse>;
 
       endpoint: EndpointInterface;
     };
@@ -34353,12 +34799,11 @@ export type RestEndpointMethods = {
      */
     removeAssignees: {
       (
-        params?: RequestParameters &
-          IssuesRemoveAssigneesParamsDeprecatedNumber
+        params?: RequestParameters & IssuesRemoveAssigneesParamsDeprecatedNumber
       ): Promise<OctokitResponse<IssuesRemoveAssigneesResponse>>;
-      (
-        params?: RequestParameters & IssuesRemoveAssigneesParams
-      ): Promise<OctokitResponse<IssuesRemoveAssigneesResponse>>;
+      (params?: RequestParameters & IssuesRemoveAssigneesParams): Promise<
+        OctokitResponse<IssuesRemoveAssigneesResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -34367,36 +34812,33 @@ export type RestEndpointMethods = {
      */
     removeLabel: {
       (
-        params?: RequestParameters &
-          IssuesRemoveLabelParamsDeprecatedNumber
+        params?: RequestParameters & IssuesRemoveLabelParamsDeprecatedNumber
       ): Promise<OctokitResponse<IssuesRemoveLabelResponse>>;
-      (
-        params?: RequestParameters & IssuesRemoveLabelParams
-      ): Promise<OctokitResponse<IssuesRemoveLabelResponse>>;
+      (params?: RequestParameters & IssuesRemoveLabelParams): Promise<
+        OctokitResponse<IssuesRemoveLabelResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
 
     removeLabels: {
       (
-        params?: RequestParameters &
-          IssuesRemoveLabelsParamsDeprecatedNumber
+        params?: RequestParameters & IssuesRemoveLabelsParamsDeprecatedNumber
       ): Promise<AnyResponse>;
-      (
-        params?: RequestParameters & IssuesRemoveLabelsParams
-      ): Promise<AnyResponse>;
+      (params?: RequestParameters & IssuesRemoveLabelsParams): Promise<
+        AnyResponse
+      >;
 
       endpoint: EndpointInterface;
     };
 
     replaceLabels: {
       (
-        params?: RequestParameters &
-          IssuesReplaceLabelsParamsDeprecatedNumber
+        params?: RequestParameters & IssuesReplaceLabelsParamsDeprecatedNumber
       ): Promise<OctokitResponse<IssuesReplaceLabelsResponse>>;
-      (
-        params?: RequestParameters & IssuesReplaceLabelsParams
-      ): Promise<OctokitResponse<IssuesReplaceLabelsResponse>>;
+      (params?: RequestParameters & IssuesReplaceLabelsParams): Promise<
+        OctokitResponse<IssuesReplaceLabelsResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -34405,12 +34847,9 @@ export type RestEndpointMethods = {
      */
     unlock: {
       (
-        params?: RequestParameters &
-          IssuesUnlockParamsDeprecatedNumber
+        params?: RequestParameters & IssuesUnlockParamsDeprecatedNumber
       ): Promise<AnyResponse>;
-      (params?: RequestParameters & IssuesUnlockParams): Promise<
-        AnyResponse
-      >;
+      (params?: RequestParameters & IssuesUnlockParams): Promise<AnyResponse>;
 
       endpoint: EndpointInterface;
     };
@@ -34419,12 +34858,10 @@ export type RestEndpointMethods = {
      */
     update: {
       (
-        params?: RequestParameters &
-          IssuesUpdateParamsDeprecatedNumber
+        params?: RequestParameters & IssuesUpdateParamsDeprecatedNumber
       ): Promise<OctokitResponse<IssuesUpdateResponse>>;
       (
-        params?: RequestParameters &
-          IssuesUpdateParamsDeprecatedAssignee
+        params?: RequestParameters & IssuesUpdateParamsDeprecatedAssignee
       ): Promise<OctokitResponse<IssuesUpdateResponse>>;
       (params?: RequestParameters & IssuesUpdateParams): Promise<
         OctokitResponse<IssuesUpdateResponse>
@@ -34434,29 +34871,28 @@ export type RestEndpointMethods = {
     };
 
     updateComment: {
-      (
-        params?: RequestParameters & IssuesUpdateCommentParams
-      ): Promise<OctokitResponse<IssuesUpdateCommentResponse>>;
+      (params?: RequestParameters & IssuesUpdateCommentParams): Promise<
+        OctokitResponse<IssuesUpdateCommentResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
 
     updateLabel: {
-      (
-        params?: RequestParameters & IssuesUpdateLabelParams
-      ): Promise<OctokitResponse<IssuesUpdateLabelResponse>>;
+      (params?: RequestParameters & IssuesUpdateLabelParams): Promise<
+        OctokitResponse<IssuesUpdateLabelResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
 
     updateMilestone: {
       (
-        params?: RequestParameters &
-          IssuesUpdateMilestoneParamsDeprecatedNumber
+        params?: RequestParameters & IssuesUpdateMilestoneParamsDeprecatedNumber
       ): Promise<OctokitResponse<IssuesUpdateMilestoneResponse>>;
-      (
-        params?: RequestParameters & IssuesUpdateMilestoneParams
-      ): Promise<OctokitResponse<IssuesUpdateMilestoneResponse>>;
+      (params?: RequestParameters & IssuesUpdateMilestoneParams): Promise<
+        OctokitResponse<IssuesUpdateMilestoneResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -34475,14 +34911,14 @@ export type RestEndpointMethods = {
      * Similar to [the repository contents API](https://developer.github.com/v3/repos/contents/#get-contents), this method also supports [custom media types](https://developer.github.com/v3/repos/contents/#custom-media-types) for retrieving the raw license content or rendered license HTML.
      */
     getForRepo: {
-      (
-        params?: RequestParameters & LicensesGetForRepoParams
-      ): Promise<OctokitResponse<LicensesGetForRepoResponse>>;
+      (params?: RequestParameters & LicensesGetForRepoParams): Promise<
+        OctokitResponse<LicensesGetForRepoResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
     /**
-     * @deprecated licenses.list() has been renamed to licenses.listCommonlyUsed() (2019-03-05)
+     * @deprecated octokit.licenses.list() has been renamed to octokit.licenses.listCommonlyUsed() (2019-03-05)
      */
     list: {
       (params?: RequestParameters & EmptyParams): Promise<
@@ -34502,9 +34938,7 @@ export type RestEndpointMethods = {
   };
   markdown: {
     render: {
-      (params?: RequestParameters & MarkdownRenderParams): Promise<
-        AnyResponse
-      >;
+      (params?: RequestParameters & MarkdownRenderParams): Promise<AnyResponse>;
 
       endpoint: EndpointInterface;
     };
@@ -34512,9 +34946,9 @@ export type RestEndpointMethods = {
      * You must send Markdown as plain text (using a `Content-Type` header of `text/plain` or `text/x-markdown`) to this endpoint, rather than using JSON format. In raw mode, [GitHub Flavored Markdown](https://github.github.com/gfm/) is not supported and Markdown will be rendered in plain format like a README.md file. Markdown content must be 400 KB or less.
      */
     renderRaw: {
-      (
-        params?: RequestParameters & MarkdownRenderRawParams
-      ): Promise<AnyResponse>;
+      (params?: RequestParameters & MarkdownRenderRawParams): Promise<
+        AnyResponse
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -34536,9 +34970,9 @@ export type RestEndpointMethods = {
      * Stop an import for a repository.
      */
     cancelImport: {
-      (
-        params?: RequestParameters & MigrationsCancelImportParams
-      ): Promise<AnyResponse>;
+      (params?: RequestParameters & MigrationsCancelImportParams): Promise<
+        AnyResponse
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -34558,8 +34992,17 @@ export type RestEndpointMethods = {
      */
     deleteArchiveForOrg: {
       (
-        params?: RequestParameters &
-          MigrationsDeleteArchiveForOrgParams
+        params?: RequestParameters & MigrationsDeleteArchiveForOrgParams
+      ): Promise<AnyResponse>;
+
+      endpoint: EndpointInterface;
+    };
+    /**
+     * Fetches the URL to a migration archive.
+     */
+    downloadArchiveForOrg: {
+      (
+        params?: RequestParameters & MigrationsDownloadArchiveForOrgParams
       ): Promise<AnyResponse>;
 
       endpoint: EndpointInterface;
@@ -34597,12 +35040,14 @@ export type RestEndpointMethods = {
     };
     /**
      * Fetches the URL to a migration archive.
+     *
+     *
+     * @deprecated octokit.migrations.getArchiveForOrg() has been renamed to octokit.migrations.downloadArchiveForOrg() (2020-01-27)
      */
     getArchiveForOrg: {
-      (
-        params?: RequestParameters &
-          MigrationsGetArchiveForOrgParams
-      ): Promise<AnyResponse>;
+      (params?: RequestParameters & MigrationsGetArchiveForOrgParams): Promise<
+        AnyResponse
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -34612,10 +35057,9 @@ export type RestEndpointMethods = {
      * This API method and the "Map a commit author" method allow you to provide correct Git author information.
      */
     getCommitAuthors: {
-      (
-        params?: RequestParameters &
-          MigrationsGetCommitAuthorsParams
-      ): Promise<OctokitResponse<MigrationsGetCommitAuthorsResponse>>;
+      (params?: RequestParameters & MigrationsGetCommitAuthorsParams): Promise<
+        OctokitResponse<MigrationsGetCommitAuthorsResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -34656,10 +35100,9 @@ export type RestEndpointMethods = {
      * *   `large_files_count` - the total number of files larger than 100MB found in the originating repository. To see a list of these files, make a "Get Large Files" request.
      */
     getImportProgress: {
-      (
-        params?: RequestParameters &
-          MigrationsGetImportProgressParams
-      ): Promise<OctokitResponse<MigrationsGetImportProgressResponse>>;
+      (params?: RequestParameters & MigrationsGetImportProgressParams): Promise<
+        OctokitResponse<MigrationsGetImportProgressResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -34667,9 +35110,9 @@ export type RestEndpointMethods = {
      * List files larger than 100MB found during the import
      */
     getLargeFiles: {
-      (
-        params?: RequestParameters & MigrationsGetLargeFilesParams
-      ): Promise<OctokitResponse<MigrationsGetLargeFilesResponse>>;
+      (params?: RequestParameters & MigrationsGetLargeFilesParams): Promise<
+        OctokitResponse<MigrationsGetLargeFilesResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -34688,9 +35131,7 @@ export type RestEndpointMethods = {
         params?: RequestParameters &
           MigrationsGetStatusForAuthenticatedUserParams
       ): Promise<
-        OctokitResponse<
-          MigrationsGetStatusForAuthenticatedUserResponse
-        >
+        OctokitResponse<MigrationsGetStatusForAuthenticatedUserResponse>
       >;
 
       endpoint: EndpointInterface;
@@ -34706,10 +35147,9 @@ export type RestEndpointMethods = {
      * *   `failed`, which means the migration failed.
      */
     getStatusForOrg: {
-      (
-        params?: RequestParameters &
-          MigrationsGetStatusForOrgParams
-      ): Promise<OctokitResponse<MigrationsGetStatusForOrgResponse>>;
+      (params?: RequestParameters & MigrationsGetStatusForOrgParams): Promise<
+        OctokitResponse<MigrationsGetStatusForOrgResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -34718,11 +35158,8 @@ export type RestEndpointMethods = {
      */
     listForAuthenticatedUser: {
       (
-        params?: RequestParameters &
-          MigrationsListForAuthenticatedUserParams
-      ): Promise<
-        OctokitResponse<MigrationsListForAuthenticatedUserResponse>
-      >;
+        params?: RequestParameters & MigrationsListForAuthenticatedUserParams
+      ): Promise<OctokitResponse<MigrationsListForAuthenticatedUserResponse>>;
 
       endpoint: EndpointInterface;
     };
@@ -34730,9 +35167,9 @@ export type RestEndpointMethods = {
      * Lists the most recent migrations.
      */
     listForOrg: {
-      (
-        params?: RequestParameters & MigrationsListForOrgParams
-      ): Promise<OctokitResponse<MigrationsListForOrgResponse>>;
+      (params?: RequestParameters & MigrationsListForOrgParams): Promise<
+        OctokitResponse<MigrationsListForOrgResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -34740,10 +35177,9 @@ export type RestEndpointMethods = {
      * List all the repositories for this organization migration.
      */
     listReposForOrg: {
-      (
-        params?: RequestParameters &
-          MigrationsListReposForOrgParams
-      ): Promise<OctokitResponse<MigrationsListReposForOrgResponse>>;
+      (params?: RequestParameters & MigrationsListReposForOrgParams): Promise<
+        OctokitResponse<MigrationsListReposForOrgResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -34751,10 +35187,9 @@ export type RestEndpointMethods = {
      * Lists all the repositories for this user migration.
      */
     listReposForUser: {
-      (
-        params?: RequestParameters &
-          MigrationsListReposForUserParams
-      ): Promise<OctokitResponse<MigrationsListReposForUserResponse>>;
+      (params?: RequestParameters & MigrationsListReposForUserParams): Promise<
+        OctokitResponse<MigrationsListReposForUserResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -34762,10 +35197,9 @@ export type RestEndpointMethods = {
      * Update an author's identity for the import. Your application can continue updating authors any time before you push new commits to the repository.
      */
     mapCommitAuthor: {
-      (
-        params?: RequestParameters &
-          MigrationsMapCommitAuthorParams
-      ): Promise<OctokitResponse<MigrationsMapCommitAuthorResponse>>;
+      (params?: RequestParameters & MigrationsMapCommitAuthorParams): Promise<
+        OctokitResponse<MigrationsMapCommitAuthorResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -34773,10 +35207,9 @@ export type RestEndpointMethods = {
      * You can import repositories from Subversion, Mercurial, and TFS that include files larger than 100MB. This ability is powered by [Git LFS](https://git-lfs.github.com). You can learn more about our LFS feature and working with large files [on our help site](https://help.github.com/articles/versioning-large-files/).
      */
     setLfsPreference: {
-      (
-        params?: RequestParameters &
-          MigrationsSetLfsPreferenceParams
-      ): Promise<OctokitResponse<MigrationsSetLfsPreferenceResponse>>;
+      (params?: RequestParameters & MigrationsSetLfsPreferenceParams): Promise<
+        OctokitResponse<MigrationsSetLfsPreferenceResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -34785,11 +35218,8 @@ export type RestEndpointMethods = {
      */
     startForAuthenticatedUser: {
       (
-        params?: RequestParameters &
-          MigrationsStartForAuthenticatedUserParams
-      ): Promise<
-        OctokitResponse<MigrationsStartForAuthenticatedUserResponse>
-      >;
+        params?: RequestParameters & MigrationsStartForAuthenticatedUserParams
+      ): Promise<OctokitResponse<MigrationsStartForAuthenticatedUserResponse>>;
 
       endpoint: EndpointInterface;
     };
@@ -34797,9 +35227,9 @@ export type RestEndpointMethods = {
      * Initiates the generation of a migration archive.
      */
     startForOrg: {
-      (
-        params?: RequestParameters & MigrationsStartForOrgParams
-      ): Promise<OctokitResponse<MigrationsStartForOrgResponse>>;
+      (params?: RequestParameters & MigrationsStartForOrgParams): Promise<
+        OctokitResponse<MigrationsStartForOrgResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -34807,9 +35237,9 @@ export type RestEndpointMethods = {
      * Start a source import to a GitHub repository using GitHub Importer.
      */
     startImport: {
-      (
-        params?: RequestParameters & MigrationsStartImportParams
-      ): Promise<OctokitResponse<MigrationsStartImportResponse>>;
+      (params?: RequestParameters & MigrationsStartImportParams): Promise<
+        OctokitResponse<MigrationsStartImportResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -34828,10 +35258,9 @@ export type RestEndpointMethods = {
      * Unlocks a repository that was locked for migration. You should unlock each migrated repository and [delete them](https://developer.github.com/v3/repos/#delete-a-repository) when the migration is complete and you no longer need the source data.
      */
     unlockRepoForOrg: {
-      (
-        params?: RequestParameters &
-          MigrationsUnlockRepoForOrgParams
-      ): Promise<AnyResponse>;
+      (params?: RequestParameters & MigrationsUnlockRepoForOrgParams): Promise<
+        AnyResponse
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -34845,9 +35274,9 @@ export type RestEndpointMethods = {
      * To restart an import, no parameters are provided in the update request.
      */
     updateImport: {
-      (
-        params?: RequestParameters & MigrationsUpdateImportParams
-      ): Promise<OctokitResponse<MigrationsUpdateImportResponse>>;
+      (params?: RequestParameters & MigrationsUpdateImportParams): Promise<
+        OctokitResponse<MigrationsUpdateImportResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -34857,12 +35286,11 @@ export type RestEndpointMethods = {
      * **Deprecation Notice:** GitHub will replace and discontinue OAuth endpoints containing `access_token` in the path parameter. We are introducing new endpoints that allow you to securely manage tokens for OAuth Apps by using `access_token` as an input parameter. For more information, see the [blog post](https://developer.github.com/changes/2019-11-05-deprecated-passwords-and-authorizations-api).
      *
      * OAuth applications can use a special API method for checking OAuth token validity without exceeding the normal rate limits for failed login attempts. Authentication works differently with this particular endpoint. You must use [Basic Authentication](https://developer.github.com/v3/auth#basic-authentication) when accessing this endpoint, using the OAuth application's `client_id` and `client_secret` as the username and password. Invalid tokens will return `404 NOT FOUND`.
-     * @deprecated oauthAuthorizations.checkAuthorization() is deprecated, see https://developer.github.com/v3/apps/oauth_applications/#check-an-authorization
+     * @deprecated octokit.oauthAuthorizations.checkAuthorization() is deprecated, see https://developer.github.com/v3/apps/oauth_applications/#check-an-authorization
      */
     checkAuthorization: {
       (
-        params?: RequestParameters &
-          OauthAuthorizationsCheckAuthorizationParams
+        params?: RequestParameters & OauthAuthorizationsCheckAuthorizationParams
       ): Promise<
         OctokitResponse<OauthAuthorizationsCheckAuthorizationResponse>
       >;
@@ -34881,7 +35309,7 @@ export type RestEndpointMethods = {
      * You can also create tokens on GitHub from the [personal access tokens settings](https://github.com/settings/tokens) page. Read more about these tokens in [the GitHub Help documentation](https://help.github.com/articles/creating-an-access-token-for-command-line-use).
      *
      * Organizations that enforce SAML SSO require personal access tokens to be whitelisted. Read more about whitelisting tokens in [the GitHub Help documentation](https://help.github.com/articles/about-identity-and-access-management-with-saml-single-sign-on).
-     * @deprecated oauthAuthorizations.createAuthorization() is deprecated, see https://developer.github.com/v3/oauth_authorizations/#create-a-new-authorization
+     * @deprecated octokit.oauthAuthorizations.createAuthorization() is deprecated, see https://developer.github.com/v3/oauth_authorizations/#create-a-new-authorization
      */
     createAuthorization: {
       (
@@ -34895,7 +35323,7 @@ export type RestEndpointMethods = {
     };
     /**
      * **Deprecation Notice:** GitHub will discontinue the [OAuth Authorizations API](https://developer.github.com/v3/oauth_authorizations/), which is used by integrations to create personal access tokens and OAuth tokens, and you must now create these tokens using our [web application flow](https://developer.github.com/apps/building-oauth-apps/authorizing-oauth-apps/#web-application-flow). For more information, see the [blog post](https://developer.github.com/changes/2019-11-05-deprecated-passwords-and-authorizations-api).
-     * @deprecated oauthAuthorizations.deleteAuthorization() is deprecated, see https://developer.github.com/v3/oauth_authorizations/#delete-an-authorization
+     * @deprecated octokit.oauthAuthorizations.deleteAuthorization() is deprecated, see https://developer.github.com/v3/oauth_authorizations/#delete-an-authorization
      */
     deleteAuthorization: {
       (
@@ -34909,39 +35337,34 @@ export type RestEndpointMethods = {
      * **Deprecation Notice:** GitHub will discontinue the [OAuth Authorizations API](https://developer.github.com/v3/oauth_authorizations/), which is used by integrations to create personal access tokens and OAuth tokens, and you must now create these tokens using our [web application flow](https://developer.github.com/apps/building-oauth-apps/authorizing-oauth-apps/#web-application-flow). For more information, see the [blog post](https://developer.github.com/changes/2019-11-05-deprecated-passwords-and-authorizations-api).
      *
      * Deleting an OAuth application's grant will also delete all OAuth tokens associated with the application for your user. Once deleted, the application has no access to your account and is no longer listed on [the application authorizations settings screen within GitHub](https://github.com/settings/applications#authorized).
-     * @deprecated oauthAuthorizations.deleteGrant() is deprecated, see https://developer.github.com/v3/oauth_authorizations/#delete-a-grant
+     * @deprecated octokit.oauthAuthorizations.deleteGrant() is deprecated, see https://developer.github.com/v3/oauth_authorizations/#delete-a-grant
      */
     deleteGrant: {
       (
-        params?: RequestParameters &
-          OauthAuthorizationsDeleteGrantParams
+        params?: RequestParameters & OauthAuthorizationsDeleteGrantParams
       ): Promise<AnyResponse>;
 
       endpoint: EndpointInterface;
     };
     /**
      * **Deprecation Notice:** GitHub will discontinue the [OAuth Authorizations API](https://developer.github.com/v3/oauth_authorizations/), which is used by integrations to create personal access tokens and OAuth tokens, and you must now create these tokens using our [web application flow](https://developer.github.com/apps/building-oauth-apps/authorizing-oauth-apps/#web-application-flow). For more information, see the [blog post](https://developer.github.com/changes/2019-11-05-deprecated-passwords-and-authorizations-api).
-     * @deprecated oauthAuthorizations.getAuthorization() is deprecated, see https://developer.github.com/v3/oauth_authorizations/#get-a-single-authorization
+     * @deprecated octokit.oauthAuthorizations.getAuthorization() is deprecated, see https://developer.github.com/v3/oauth_authorizations/#get-a-single-authorization
      */
     getAuthorization: {
       (
-        params?: RequestParameters &
-          OauthAuthorizationsGetAuthorizationParams
-      ): Promise<
-        OctokitResponse<OauthAuthorizationsGetAuthorizationResponse>
-      >;
+        params?: RequestParameters & OauthAuthorizationsGetAuthorizationParams
+      ): Promise<OctokitResponse<OauthAuthorizationsGetAuthorizationResponse>>;
 
       endpoint: EndpointInterface;
     };
     /**
      * **Deprecation Notice:** GitHub will discontinue the [OAuth Authorizations API](https://developer.github.com/v3/oauth_authorizations/), which is used by integrations to create personal access tokens and OAuth tokens, and you must now create these tokens using our [web application flow](https://developer.github.com/apps/building-oauth-apps/authorizing-oauth-apps/#web-application-flow). For more information, see the [blog post](https://developer.github.com/changes/2019-11-05-deprecated-passwords-and-authorizations-api).
-     * @deprecated oauthAuthorizations.getGrant() is deprecated, see https://developer.github.com/v3/oauth_authorizations/#get-a-single-grant
+     * @deprecated octokit.oauthAuthorizations.getGrant() is deprecated, see https://developer.github.com/v3/oauth_authorizations/#get-a-single-grant
      */
     getGrant: {
-      (
-        params?: RequestParameters &
-          OauthAuthorizationsGetGrantParams
-      ): Promise<OctokitResponse<OauthAuthorizationsGetGrantResponse>>;
+      (params?: RequestParameters & OauthAuthorizationsGetGrantParams): Promise<
+        OctokitResponse<OauthAuthorizationsGetGrantResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -34955,7 +35378,7 @@ export type RestEndpointMethods = {
      * If you have two-factor authentication setup, Basic Authentication for this endpoint requires that you use a one-time password (OTP) and your username and password instead of tokens. For more information, see "[Working with two-factor authentication](https://developer.github.com/v3/auth/#working-with-two-factor-authentication)."
      *
      * **Deprecation Notice:** GitHub will discontinue the [OAuth Authorizations API](https://developer.github.com/v3/oauth_authorizations/), which is used by integrations to create personal access tokens and OAuth tokens, and you must now create these tokens using our [web application flow](https://developer.github.com/apps/building-oauth-apps/authorizing-oauth-apps/#web-application-flow). For more information, see the [blog post](https://developer.github.com/changes/2019-11-05-deprecated-passwords-and-authorizations-api).
-     * @deprecated oauthAuthorizations.getOrCreateAuthorizationForApp() is deprecated, see https://developer.github.com/v3/oauth_authorizations/#get-or-create-an-authorization-for-a-specific-app
+     * @deprecated octokit.oauthAuthorizations.getOrCreateAuthorizationForApp() is deprecated, see https://developer.github.com/v3/oauth_authorizations/#get-or-create-an-authorization-for-a-specific-app
      */
     getOrCreateAuthorizationForApp: {
       (
@@ -34977,7 +35400,7 @@ export type RestEndpointMethods = {
      * This method will create a new authorization for the specified OAuth application, only if an authorization for that application and fingerprint do not already exist for the user. The URL includes the 20 character client ID for the OAuth app that is requesting the token. `fingerprint` is a unique string to distinguish an authorization from others created for the same client ID and user. It returns the user's existing authorization for the application if one is present. Otherwise, it creates and returns a new one.
      *
      * If you have two-factor authentication setup, Basic Authentication for this endpoint requires that you use a one-time password (OTP) and your username and password instead of tokens. For more information, see "[Working with two-factor authentication](https://developer.github.com/v3/auth/#working-with-two-factor-authentication)."
-     * @deprecated oauthAuthorizations.getOrCreateAuthorizationForAppAndFingerprint() is deprecated, see https://developer.github.com/v3/oauth_authorizations/#get-or-create-an-authorization-for-a-specific-app-and-fingerprint
+     * @deprecated octokit.oauthAuthorizations.getOrCreateAuthorizationForAppAndFingerprint() is deprecated, see https://developer.github.com/v3/oauth_authorizations/#get-or-create-an-authorization-for-a-specific-app-and-fingerprint
      */
     getOrCreateAuthorizationForAppAndFingerprint: {
       (
@@ -34999,7 +35422,7 @@ export type RestEndpointMethods = {
      * This method will create a new authorization for the specified OAuth application, only if an authorization for that application and fingerprint do not already exist for the user. The URL includes the 20 character client ID for the OAuth app that is requesting the token. `fingerprint` is a unique string to distinguish an authorization from others created for the same client ID and user. It returns the user's existing authorization for the application if one is present. Otherwise, it creates and returns a new one.
      *
      * If you have two-factor authentication setup, Basic Authentication for this endpoint requires that you use a one-time password (OTP) and your username and password instead of tokens. For more information, see "[Working with two-factor authentication](https://developer.github.com/v3/auth/#working-with-two-factor-authentication)."
-     * @deprecated oauthAuthorizations.getOrCreateAuthorizationForAppFingerprint() is deprecated, see https://developer.github.com/v3/oauth_authorizations/#get-or-create-an-authorization-for-a-specific-app-and-fingerprint
+     * @deprecated octokit.oauthAuthorizations.getOrCreateAuthorizationForAppFingerprint() is deprecated, see https://developer.github.com/v3/oauth_authorizations/#get-or-create-an-authorization-for-a-specific-app-and-fingerprint
      */
     getOrCreateAuthorizationForAppFingerprint: {
       (
@@ -35015,12 +35438,11 @@ export type RestEndpointMethods = {
     };
     /**
      * **Deprecation Notice:** GitHub will discontinue the [OAuth Authorizations API](https://developer.github.com/v3/oauth_authorizations/), which is used by integrations to create personal access tokens and OAuth tokens, and you must now create these tokens using our [web application flow](https://developer.github.com/apps/building-oauth-apps/authorizing-oauth-apps/#web-application-flow). For more information, see the [blog post](https://developer.github.com/changes/2019-11-05-deprecated-passwords-and-authorizations-api).
-     * @deprecated oauthAuthorizations.listAuthorizations() is deprecated, see https://developer.github.com/v3/oauth_authorizations/#list-your-authorizations
+     * @deprecated octokit.oauthAuthorizations.listAuthorizations() is deprecated, see https://developer.github.com/v3/oauth_authorizations/#list-your-authorizations
      */
     listAuthorizations: {
       (
-        params?: RequestParameters &
-          OauthAuthorizationsListAuthorizationsParams
+        params?: RequestParameters & OauthAuthorizationsListAuthorizationsParams
       ): Promise<
         OctokitResponse<OauthAuthorizationsListAuthorizationsResponse>
       >;
@@ -35031,15 +35453,12 @@ export type RestEndpointMethods = {
      * **Deprecation Notice:** GitHub will discontinue the [OAuth Authorizations API](https://developer.github.com/v3/oauth_authorizations/), which is used by integrations to create personal access tokens and OAuth tokens, and you must now create these tokens using our [web application flow](https://developer.github.com/apps/building-oauth-apps/authorizing-oauth-apps/#web-application-flow). For more information, see the [blog post](https://developer.github.com/changes/2019-11-05-deprecated-passwords-and-authorizations-api).
      *
      * You can use this API to list the set of OAuth applications that have been granted access to your account. Unlike the [list your authorizations](https://developer.github.com/v3/oauth_authorizations/#list-your-authorizations) API, this API does not manage individual tokens. This API will return one entry for each OAuth application that has been granted access to your account, regardless of the number of tokens an application has generated for your user. The list of OAuth applications returned matches what is shown on [the application authorizations settings screen within GitHub](https://github.com/settings/applications#authorized). The `scopes` returned are the union of scopes authorized for the application. For example, if an application has one token with `repo` scope and another token with `user` scope, the grant will return `["repo", "user"]`.
-     * @deprecated oauthAuthorizations.listGrants() is deprecated, see https://developer.github.com/v3/oauth_authorizations/#list-your-grants
+     * @deprecated octokit.oauthAuthorizations.listGrants() is deprecated, see https://developer.github.com/v3/oauth_authorizations/#list-your-grants
      */
     listGrants: {
       (
-        params?: RequestParameters &
-          OauthAuthorizationsListGrantsParams
-      ): Promise<
-        OctokitResponse<OauthAuthorizationsListGrantsResponse>
-      >;
+        params?: RequestParameters & OauthAuthorizationsListGrantsParams
+      ): Promise<OctokitResponse<OauthAuthorizationsListGrantsResponse>>;
 
       endpoint: EndpointInterface;
     };
@@ -35047,12 +35466,11 @@ export type RestEndpointMethods = {
      * **Deprecation Notice:** GitHub will replace and discontinue OAuth endpoints containing `access_token` in the path parameter. We are introducing new endpoints that allow you to securely manage tokens for OAuth Apps by using `access_token` as an input parameter. For more information, see the [blog post](https://developer.github.com/changes/2019-11-05-deprecated-passwords-and-authorizations-api).
      *
      * OAuth applications can use this API method to reset a valid OAuth token without end-user involvement. Applications must save the "token" property in the response because changes take effect immediately. You must use [Basic Authentication](https://developer.github.com/v3/auth#basic-authentication) when accessing this endpoint, using the OAuth application's `client_id` and `client_secret` as the username and password. Invalid tokens will return `404 NOT FOUND`.
-     * @deprecated oauthAuthorizations.resetAuthorization() is deprecated, see https://developer.github.com/v3/apps/oauth_applications/#reset-an-authorization
+     * @deprecated octokit.oauthAuthorizations.resetAuthorization() is deprecated, see https://developer.github.com/v3/apps/oauth_applications/#reset-an-authorization
      */
     resetAuthorization: {
       (
-        params?: RequestParameters &
-          OauthAuthorizationsResetAuthorizationParams
+        params?: RequestParameters & OauthAuthorizationsResetAuthorizationParams
       ): Promise<
         OctokitResponse<OauthAuthorizationsResetAuthorizationResponse>
       >;
@@ -35063,7 +35481,7 @@ export type RestEndpointMethods = {
      * **Deprecation Notice:** GitHub will replace and discontinue OAuth endpoints containing `access_token` in the path parameter. We are introducing new endpoints that allow you to securely manage tokens for OAuth Apps by using `access_token` as an input parameter. For more information, see the [blog post](https://developer.github.com/changes/2019-11-05-deprecated-passwords-and-authorizations-api).
      *
      * OAuth application owners can revoke a single token for an OAuth application. You must use [Basic Authentication](https://developer.github.com/v3/auth#basic-authentication) when accessing this endpoint, using the OAuth application's `client_id` and `client_secret` as the username and password.
-     * @deprecated oauthAuthorizations.revokeAuthorizationForApplication() is deprecated, see https://developer.github.com/v3/apps/oauth_applications/#revoke-an-authorization-for-an-application
+     * @deprecated octokit.oauthAuthorizations.revokeAuthorizationForApplication() is deprecated, see https://developer.github.com/v3/apps/oauth_applications/#revoke-an-authorization-for-an-application
      */
     revokeAuthorizationForApplication: {
       (
@@ -35079,7 +35497,7 @@ export type RestEndpointMethods = {
      * OAuth application owners can revoke a grant for their OAuth application and a specific user. You must use [Basic Authentication](https://developer.github.com/v3/auth#basic-authentication) when accessing this endpoint, using the OAuth application's `client_id` and `client_secret` as the username and password. You must also provide a valid token as `:access_token` and the grant for the token's owner will be deleted.
      *
      * Deleting an OAuth application's grant will also delete all OAuth tokens associated with the application for the user. Once deleted, the application will have no access to the user's account and will no longer be listed on [the Applications settings page under "Authorized OAuth Apps" on GitHub](https://github.com/settings/applications#authorized).
-     * @deprecated oauthAuthorizations.revokeGrantForApplication() is deprecated, see https://developer.github.com/v3/apps/oauth_applications/#revoke-a-grant-for-an-application
+     * @deprecated octokit.oauthAuthorizations.revokeGrantForApplication() is deprecated, see https://developer.github.com/v3/apps/oauth_applications/#revoke-a-grant-for-an-application
      */
     revokeGrantForApplication: {
       (
@@ -35095,7 +35513,7 @@ export type RestEndpointMethods = {
      * If you have two-factor authentication setup, Basic Authentication for this endpoint requires that you use a one-time password (OTP) and your username and password instead of tokens. For more information, see "[Working with two-factor authentication](https://developer.github.com/v3/auth/#working-with-two-factor-authentication)."
      *
      * You can only send one of these scope keys at a time.
-     * @deprecated oauthAuthorizations.updateAuthorization() is deprecated, see https://developer.github.com/v3/oauth_authorizations/#update-an-existing-authorization
+     * @deprecated octokit.oauthAuthorizations.updateAuthorization() is deprecated, see https://developer.github.com/v3/oauth_authorizations/#update-an-existing-authorization
      */
     updateAuthorization: {
       (
@@ -35121,18 +35539,15 @@ export type RestEndpointMethods = {
      * To prevent abuse, the authenticated user is limited to 50 organization invitations per 24 hour period. If the organization is more than one month old or on a paid plan, the limit is 500 invitations per 24 hour period.
      */
     addOrUpdateMembership: {
-      (
-        params?: RequestParameters &
-          OrgsAddOrUpdateMembershipParams
-      ): Promise<OctokitResponse<OrgsAddOrUpdateMembershipResponse>>;
+      (params?: RequestParameters & OrgsAddOrUpdateMembershipParams): Promise<
+        OctokitResponse<OrgsAddOrUpdateMembershipResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
 
     blockUser: {
-      (params?: RequestParameters & OrgsBlockUserParams): Promise<
-        AnyResponse
-      >;
+      (params?: RequestParameters & OrgsBlockUserParams): Promise<AnyResponse>;
 
       endpoint: EndpointInterface;
     };
@@ -35142,9 +35557,9 @@ export type RestEndpointMethods = {
      * If the user is not blocked:
      */
     checkBlockedUser: {
-      (
-        params?: RequestParameters & OrgsCheckBlockedUserParams
-      ): Promise<AnyResponse>;
+      (params?: RequestParameters & OrgsCheckBlockedUserParams): Promise<
+        AnyResponse
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -35152,26 +35567,25 @@ export type RestEndpointMethods = {
      * Check if a user is, publicly or privately, a member of the organization.
      */
     checkMembership: {
-      (
-        params?: RequestParameters & OrgsCheckMembershipParams
-      ): Promise<AnyResponse>;
+      (params?: RequestParameters & OrgsCheckMembershipParams): Promise<
+        AnyResponse
+      >;
 
       endpoint: EndpointInterface;
     };
 
     checkPublicMembership: {
-      (
-        params?: RequestParameters &
-          OrgsCheckPublicMembershipParams
-      ): Promise<AnyResponse>;
+      (params?: RequestParameters & OrgsCheckPublicMembershipParams): Promise<
+        AnyResponse
+      >;
 
       endpoint: EndpointInterface;
     };
 
     concealMembership: {
-      (
-        params?: RequestParameters & OrgsConcealMembershipParams
-      ): Promise<AnyResponse>;
+      (params?: RequestParameters & OrgsConcealMembershipParams): Promise<
+        AnyResponse
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -35204,17 +35618,15 @@ export type RestEndpointMethods = {
      * This endpoint triggers [notifications](https://help.github.com/articles/about-notifications/). Creating content too quickly using this endpoint may result in abuse rate limiting. See "[Abuse rate limits](https://developer.github.com/v3/#abuse-rate-limits)" and "[Dealing with abuse rate limits](https://developer.github.com/v3/guides/best-practices-for-integrators/#dealing-with-abuse-rate-limits)" for details.
      */
     createInvitation: {
-      (
-        params?: RequestParameters & OrgsCreateInvitationParams
-      ): Promise<OctokitResponse<OrgsCreateInvitationResponse>>;
+      (params?: RequestParameters & OrgsCreateInvitationParams): Promise<
+        OctokitResponse<OrgsCreateInvitationResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
 
     deleteHook: {
-      (params?: RequestParameters & OrgsDeleteHookParams): Promise<
-        AnyResponse
-      >;
+      (params?: RequestParameters & OrgsDeleteHookParams): Promise<AnyResponse>;
 
       endpoint: EndpointInterface;
     };
@@ -35242,17 +35654,16 @@ export type RestEndpointMethods = {
      * In order to get a user's membership with an organization, the authenticated user must be an organization member.
      */
     getMembership: {
-      (
-        params?: RequestParameters & OrgsGetMembershipParams
-      ): Promise<OctokitResponse<OrgsGetMembershipResponse>>;
+      (params?: RequestParameters & OrgsGetMembershipParams): Promise<
+        OctokitResponse<OrgsGetMembershipResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
 
     getMembershipForAuthenticatedUser: {
       (
-        params?: RequestParameters &
-          OrgsGetMembershipForAuthenticatedUserParams
+        params?: RequestParameters & OrgsGetMembershipForAuthenticatedUserParams
       ): Promise<
         OctokitResponse<OrgsGetMembershipForAuthenticatedUserResponse>
       >;
@@ -35275,9 +35686,9 @@ export type RestEndpointMethods = {
      * List the users blocked by an organization.
      */
     listBlockedUsers: {
-      (
-        params?: RequestParameters & OrgsListBlockedUsersParams
-      ): Promise<OctokitResponse<OrgsListBlockedUsersResponse>>;
+      (params?: RequestParameters & OrgsListBlockedUsersParams): Promise<
+        OctokitResponse<OrgsListBlockedUsersResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -35290,11 +35701,8 @@ export type RestEndpointMethods = {
      */
     listForAuthenticatedUser: {
       (
-        params?: RequestParameters &
-          OrgsListForAuthenticatedUserParams
-      ): Promise<
-        OctokitResponse<OrgsListForAuthenticatedUserResponse>
-      >;
+        params?: RequestParameters & OrgsListForAuthenticatedUserParams
+      ): Promise<OctokitResponse<OrgsListForAuthenticatedUserResponse>>;
 
       endpoint: EndpointInterface;
     };
@@ -35304,9 +35712,9 @@ export type RestEndpointMethods = {
      * This method only lists _public_ memberships, regardless of authentication. If you need to fetch all of the organization memberships (public and private) for the authenticated user, use the [List your organizations](https://developer.github.com/v3/orgs/#list-your-organizations) API instead.
      */
     listForUser: {
-      (
-        params?: RequestParameters & OrgsListForUserParams
-      ): Promise<OctokitResponse<OrgsListForUserResponse>>;
+      (params?: RequestParameters & OrgsListForUserParams): Promise<
+        OctokitResponse<OrgsListForUserResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -35322,9 +35730,9 @@ export type RestEndpointMethods = {
      * Lists all GitHub Apps in an organization. The installation count includes all GitHub Apps installed on repositories in the organization. You must be an organization owner with `admin:read` scope to use this endpoint.
      */
     listInstallations: {
-      (
-        params?: RequestParameters & OrgsListInstallationsParams
-      ): Promise<OctokitResponse<OrgsListInstallationsResponse>>;
+      (params?: RequestParameters & OrgsListInstallationsParams): Promise<
+        OctokitResponse<OrgsListInstallationsResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -35332,9 +35740,9 @@ export type RestEndpointMethods = {
      * List all teams associated with an invitation. In order to see invitations in an organization, the authenticated user must be an organization owner.
      */
     listInvitationTeams: {
-      (
-        params?: RequestParameters & OrgsListInvitationTeamsParams
-      ): Promise<OctokitResponse<OrgsListInvitationTeamsResponse>>;
+      (params?: RequestParameters & OrgsListInvitationTeamsParams): Promise<
+        OctokitResponse<OrgsListInvitationTeamsResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -35342,17 +35750,17 @@ export type RestEndpointMethods = {
      * List all users who are members of an organization. If the authenticated user is also a member of this organization then both concealed and public members will be returned.
      */
     listMembers: {
-      (
-        params?: RequestParameters & OrgsListMembersParams
-      ): Promise<OctokitResponse<OrgsListMembersResponse>>;
+      (params?: RequestParameters & OrgsListMembersParams): Promise<
+        OctokitResponse<OrgsListMembersResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
 
     listMemberships: {
-      (
-        params?: RequestParameters & OrgsListMembershipsParams
-      ): Promise<OctokitResponse<OrgsListMembershipsResponse>>;
+      (params?: RequestParameters & OrgsListMembershipsParams): Promise<
+        OctokitResponse<OrgsListMembershipsResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -35361,11 +35769,8 @@ export type RestEndpointMethods = {
      */
     listOutsideCollaborators: {
       (
-        params?: RequestParameters &
-          OrgsListOutsideCollaboratorsParams
-      ): Promise<
-        OctokitResponse<OrgsListOutsideCollaboratorsResponse>
-      >;
+        params?: RequestParameters & OrgsListOutsideCollaboratorsParams
+      ): Promise<OctokitResponse<OrgsListOutsideCollaboratorsResponse>>;
 
       endpoint: EndpointInterface;
     };
@@ -35373,10 +35778,9 @@ export type RestEndpointMethods = {
      * The return hash contains a `role` field which refers to the Organization Invitation role and will be one of the following values: `direct_member`, `admin`, `billing_manager`, `hiring_manager`, or `reinstate`. If the invitee is not a GitHub member, the `login` field in the return hash will be `null`.
      */
     listPendingInvitations: {
-      (
-        params?: RequestParameters &
-          OrgsListPendingInvitationsParams
-      ): Promise<OctokitResponse<OrgsListPendingInvitationsResponse>>;
+      (params?: RequestParameters & OrgsListPendingInvitationsParams): Promise<
+        OctokitResponse<OrgsListPendingInvitationsResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -35384,9 +35788,9 @@ export type RestEndpointMethods = {
      * Members of an organization can choose to have their membership publicized or not.
      */
     listPublicMembers: {
-      (
-        params?: RequestParameters & OrgsListPublicMembersParams
-      ): Promise<OctokitResponse<OrgsListPublicMembersResponse>>;
+      (params?: RequestParameters & OrgsListPublicMembersParams): Promise<
+        OctokitResponse<OrgsListPublicMembersResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -35394,9 +35798,7 @@ export type RestEndpointMethods = {
      * This will trigger a [ping event](https://developer.github.com/webhooks/#ping-event) to be sent to the hook.
      */
     pingHook: {
-      (params?: RequestParameters & OrgsPingHookParams): Promise<
-        AnyResponse
-      >;
+      (params?: RequestParameters & OrgsPingHookParams): Promise<AnyResponse>;
 
       endpoint: EndpointInterface;
     };
@@ -35406,9 +35808,9 @@ export type RestEndpointMethods = {
      * Note that you'll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see "[HTTP verbs](https://developer.github.com/v3/#http-verbs)."
      */
     publicizeMembership: {
-      (
-        params?: RequestParameters & OrgsPublicizeMembershipParams
-      ): Promise<AnyResponse>;
+      (params?: RequestParameters & OrgsPublicizeMembershipParams): Promise<
+        AnyResponse
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -35416,9 +35818,9 @@ export type RestEndpointMethods = {
      * Removing a user from this list will remove them from all teams and they will no longer have any access to the organization's repositories.
      */
     removeMember: {
-      (
-        params?: RequestParameters & OrgsRemoveMemberParams
-      ): Promise<AnyResponse>;
+      (params?: RequestParameters & OrgsRemoveMemberParams): Promise<
+        AnyResponse
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -35428,9 +35830,9 @@ export type RestEndpointMethods = {
      * If the specified user is an active member of the organization, this will remove them from the organization. If the specified user has been invited to the organization, this will cancel their invitation. The specified user will receive an email notification in both cases.
      */
     removeMembership: {
-      (
-        params?: RequestParameters & OrgsRemoveMembershipParams
-      ): Promise<AnyResponse>;
+      (params?: RequestParameters & OrgsRemoveMembershipParams): Promise<
+        AnyResponse
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -35439,19 +35841,16 @@ export type RestEndpointMethods = {
      */
     removeOutsideCollaborator: {
       (
-        params?: RequestParameters &
-          OrgsRemoveOutsideCollaboratorParams
-      ): Promise<
-        OctokitResponse<OrgsRemoveOutsideCollaboratorResponse>
-      >;
+        params?: RequestParameters & OrgsRemoveOutsideCollaboratorParams
+      ): Promise<OctokitResponse<OrgsRemoveOutsideCollaboratorResponse>>;
 
       endpoint: EndpointInterface;
     };
 
     unblockUser: {
-      (
-        params?: RequestParameters & OrgsUnblockUserParams
-      ): Promise<AnyResponse>;
+      (params?: RequestParameters & OrgsUnblockUserParams): Promise<
+        AnyResponse
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -35481,9 +35880,9 @@ export type RestEndpointMethods = {
     };
 
     updateMembership: {
-      (
-        params?: RequestParameters & OrgsUpdateMembershipParams
-      ): Promise<OctokitResponse<OrgsUpdateMembershipResponse>>;
+      (params?: RequestParameters & OrgsUpdateMembershipParams): Promise<
+        OctokitResponse<OrgsUpdateMembershipResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -35493,9 +35892,9 @@ export type RestEndpointMethods = {
      * Adds a collaborator to a an organization project and sets their permission level. You must be an organization owner or a project `admin` to add a collaborator.
      */
     addCollaborator: {
-      (
-        params?: RequestParameters & ProjectsAddCollaboratorParams
-      ): Promise<AnyResponse>;
+      (params?: RequestParameters & ProjectsAddCollaboratorParams): Promise<
+        AnyResponse
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -35505,28 +35904,25 @@ export type RestEndpointMethods = {
      * Be aware that the `id` of a pull request returned from "Issues" endpoints will be an _issue id_. To find out the pull request id, use the "[List pull requests](https://developer.github.com/v3/pulls/#list-pull-requests)" endpoint.
      */
     createCard: {
-      (
-        params?: RequestParameters & ProjectsCreateCardParams
-      ): Promise<OctokitResponse<ProjectsCreateCardResponse>>;
+      (params?: RequestParameters & ProjectsCreateCardParams): Promise<
+        OctokitResponse<ProjectsCreateCardResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
 
     createColumn: {
-      (
-        params?: RequestParameters & ProjectsCreateColumnParams
-      ): Promise<OctokitResponse<ProjectsCreateColumnResponse>>;
+      (params?: RequestParameters & ProjectsCreateColumnParams): Promise<
+        OctokitResponse<ProjectsCreateColumnResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
 
     createForAuthenticatedUser: {
       (
-        params?: RequestParameters &
-          ProjectsCreateForAuthenticatedUserParams
-      ): Promise<
-        OctokitResponse<ProjectsCreateForAuthenticatedUserResponse>
-      >;
+        params?: RequestParameters & ProjectsCreateForAuthenticatedUserParams
+      ): Promise<OctokitResponse<ProjectsCreateForAuthenticatedUserResponse>>;
 
       endpoint: EndpointInterface;
     };
@@ -35534,9 +35930,9 @@ export type RestEndpointMethods = {
      * Creates an organization project board. Returns a `404 Not Found` status if projects are disabled in the organization. If you do not have sufficient privileges to perform this action, a `401 Unauthorized` or `410 Gone` status is returned.
      */
     createForOrg: {
-      (
-        params?: RequestParameters & ProjectsCreateForOrgParams
-      ): Promise<OctokitResponse<ProjectsCreateForOrgResponse>>;
+      (params?: RequestParameters & ProjectsCreateForOrgParams): Promise<
+        OctokitResponse<ProjectsCreateForOrgResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -35544,9 +35940,9 @@ export type RestEndpointMethods = {
      * Creates a repository project board. Returns a `404 Not Found` status if projects are disabled in the repository. If you do not have sufficient privileges to perform this action, a `401 Unauthorized` or `410 Gone` status is returned.
      */
     createForRepo: {
-      (
-        params?: RequestParameters & ProjectsCreateForRepoParams
-      ): Promise<OctokitResponse<ProjectsCreateForRepoResponse>>;
+      (params?: RequestParameters & ProjectsCreateForRepoParams): Promise<
+        OctokitResponse<ProjectsCreateForRepoResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -35554,25 +35950,23 @@ export type RestEndpointMethods = {
      * Deletes a project board. Returns a `404 Not Found` status if projects are disabled.
      */
     delete: {
-      (params?: RequestParameters & ProjectsDeleteParams): Promise<
+      (params?: RequestParameters & ProjectsDeleteParams): Promise<AnyResponse>;
+
+      endpoint: EndpointInterface;
+    };
+
+    deleteCard: {
+      (params?: RequestParameters & ProjectsDeleteCardParams): Promise<
         AnyResponse
       >;
 
       endpoint: EndpointInterface;
     };
 
-    deleteCard: {
-      (
-        params?: RequestParameters & ProjectsDeleteCardParams
-      ): Promise<AnyResponse>;
-
-      endpoint: EndpointInterface;
-    };
-
     deleteColumn: {
-      (
-        params?: RequestParameters & ProjectsDeleteColumnParams
-      ): Promise<AnyResponse>;
+      (params?: RequestParameters & ProjectsDeleteColumnParams): Promise<
+        AnyResponse
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -35588,25 +35982,25 @@ export type RestEndpointMethods = {
     };
 
     getCard: {
-      (
-        params?: RequestParameters & ProjectsGetCardParams
-      ): Promise<OctokitResponse<ProjectsGetCardResponse>>;
+      (params?: RequestParameters & ProjectsGetCardParams): Promise<
+        OctokitResponse<ProjectsGetCardResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
 
     getColumn: {
-      (
-        params?: RequestParameters & ProjectsGetColumnParams
-      ): Promise<OctokitResponse<ProjectsGetColumnResponse>>;
+      (params?: RequestParameters & ProjectsGetColumnParams): Promise<
+        OctokitResponse<ProjectsGetColumnResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
 
     listCards: {
-      (
-        params?: RequestParameters & ProjectsListCardsParams
-      ): Promise<OctokitResponse<ProjectsListCardsResponse>>;
+      (params?: RequestParameters & ProjectsListCardsParams): Promise<
+        OctokitResponse<ProjectsListCardsResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -35614,18 +36008,17 @@ export type RestEndpointMethods = {
      * Lists the collaborators for an organization project. For a project, the list of collaborators includes outside collaborators, organization members that are direct collaborators, organization members with access through team memberships, organization members with access through default organization permissions, and organization owners. You must be an organization owner or a project `admin` to list collaborators.
      */
     listCollaborators: {
-      (
-        params?: RequestParameters &
-          ProjectsListCollaboratorsParams
-      ): Promise<OctokitResponse<ProjectsListCollaboratorsResponse>>;
+      (params?: RequestParameters & ProjectsListCollaboratorsParams): Promise<
+        OctokitResponse<ProjectsListCollaboratorsResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
 
     listColumns: {
-      (
-        params?: RequestParameters & ProjectsListColumnsParams
-      ): Promise<OctokitResponse<ProjectsListColumnsResponse>>;
+      (params?: RequestParameters & ProjectsListColumnsParams): Promise<
+        OctokitResponse<ProjectsListColumnsResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -35635,9 +36028,9 @@ export type RestEndpointMethods = {
      * s
      */
     listForOrg: {
-      (
-        params?: RequestParameters & ProjectsListForOrgParams
-      ): Promise<OctokitResponse<ProjectsListForOrgResponse>>;
+      (params?: RequestParameters & ProjectsListForOrgParams): Promise<
+        OctokitResponse<ProjectsListForOrgResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -35645,33 +36038,33 @@ export type RestEndpointMethods = {
      * Lists the projects in a repository. Returns a `404 Not Found` status if projects are disabled in the repository. If you do not have sufficient privileges to perform this action, a `401 Unauthorized` or `410 Gone` status is returned.
      */
     listForRepo: {
-      (
-        params?: RequestParameters & ProjectsListForRepoParams
-      ): Promise<OctokitResponse<ProjectsListForRepoResponse>>;
+      (params?: RequestParameters & ProjectsListForRepoParams): Promise<
+        OctokitResponse<ProjectsListForRepoResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
 
     listForUser: {
-      (
-        params?: RequestParameters & ProjectsListForUserParams
-      ): Promise<OctokitResponse<ProjectsListForUserResponse>>;
+      (params?: RequestParameters & ProjectsListForUserParams): Promise<
+        OctokitResponse<ProjectsListForUserResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
 
     moveCard: {
-      (
-        params?: RequestParameters & ProjectsMoveCardParams
-      ): Promise<AnyResponse>;
+      (params?: RequestParameters & ProjectsMoveCardParams): Promise<
+        AnyResponse
+      >;
 
       endpoint: EndpointInterface;
     };
 
     moveColumn: {
-      (
-        params?: RequestParameters & ProjectsMoveColumnParams
-      ): Promise<AnyResponse>;
+      (params?: RequestParameters & ProjectsMoveColumnParams): Promise<
+        AnyResponse
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -35679,10 +36072,9 @@ export type RestEndpointMethods = {
      * Removes a collaborator from an organization project. You must be an organization owner or a project `admin` to remove a collaborator.
      */
     removeCollaborator: {
-      (
-        params?: RequestParameters &
-          ProjectsRemoveCollaboratorParams
-      ): Promise<AnyResponse>;
+      (params?: RequestParameters & ProjectsRemoveCollaboratorParams): Promise<
+        AnyResponse
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -35691,11 +36083,8 @@ export type RestEndpointMethods = {
      */
     reviewUserPermissionLevel: {
       (
-        params?: RequestParameters &
-          ProjectsReviewUserPermissionLevelParams
-      ): Promise<
-        OctokitResponse<ProjectsReviewUserPermissionLevelResponse>
-      >;
+        params?: RequestParameters & ProjectsReviewUserPermissionLevelParams
+      ): Promise<OctokitResponse<ProjectsReviewUserPermissionLevelResponse>>;
 
       endpoint: EndpointInterface;
     };
@@ -35711,17 +36100,17 @@ export type RestEndpointMethods = {
     };
 
     updateCard: {
-      (
-        params?: RequestParameters & ProjectsUpdateCardParams
-      ): Promise<OctokitResponse<ProjectsUpdateCardResponse>>;
+      (params?: RequestParameters & ProjectsUpdateCardParams): Promise<
+        OctokitResponse<ProjectsUpdateCardResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
 
     updateColumn: {
-      (
-        params?: RequestParameters & ProjectsUpdateColumnParams
-      ): Promise<OctokitResponse<ProjectsUpdateColumnResponse>>;
+      (params?: RequestParameters & ProjectsUpdateColumnParams): Promise<
+        OctokitResponse<ProjectsUpdateColumnResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -35729,12 +36118,11 @@ export type RestEndpointMethods = {
   pulls: {
     checkIfMerged: {
       (
-        params?: RequestParameters &
-          PullsCheckIfMergedParamsDeprecatedNumber
+        params?: RequestParameters & PullsCheckIfMergedParamsDeprecatedNumber
       ): Promise<AnyResponse>;
-      (
-        params?: RequestParameters & PullsCheckIfMergedParams
-      ): Promise<AnyResponse>;
+      (params?: RequestParameters & PullsCheckIfMergedParams): Promise<
+        AnyResponse
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -35783,16 +36171,14 @@ export type RestEndpointMethods = {
      */
     createComment: {
       (
-        params?: RequestParameters &
-          PullsCreateCommentParamsDeprecatedNumber
+        params?: RequestParameters & PullsCreateCommentParamsDeprecatedNumber
       ): Promise<OctokitResponse<PullsCreateCommentResponse>>;
       (
-        params?: RequestParameters &
-          PullsCreateCommentParamsDeprecatedInReplyTo
+        params?: RequestParameters & PullsCreateCommentParamsDeprecatedInReplyTo
       ): Promise<OctokitResponse<PullsCreateCommentResponse>>;
-      (
-        params?: RequestParameters & PullsCreateCommentParams
-      ): Promise<OctokitResponse<PullsCreateCommentResponse>>;
+      (params?: RequestParameters & PullsCreateCommentParams): Promise<
+        OctokitResponse<PullsCreateCommentResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -35822,7 +36208,7 @@ export type RestEndpointMethods = {
      *
      * *   For multi-line comments, the last line of the comment range for the `position` attribute.
      * *   For single-line comments, the diff-positioned way of referencing comments for the `position` attribute. For more information, see `position` in the [input parameters](https://developer.github.com/v3/pulls/comments/#parameters-2) table.
-     * @deprecated pulls.createCommentReply() has been renamed to pulls.createComment() (2019-09-09)
+     * @deprecated octokit.pulls.createCommentReply() has been renamed to octokit.pulls.createComment() (2019-09-09)
      */
     createCommentReply: {
       (
@@ -35833,17 +36219,17 @@ export type RestEndpointMethods = {
         params?: RequestParameters &
           PullsCreateCommentReplyParamsDeprecatedInReplyTo
       ): Promise<OctokitResponse<PullsCreateCommentReplyResponse>>;
-      (
-        params?: RequestParameters & PullsCreateCommentReplyParams
-      ): Promise<OctokitResponse<PullsCreateCommentReplyResponse>>;
+      (params?: RequestParameters & PullsCreateCommentReplyParams): Promise<
+        OctokitResponse<PullsCreateCommentReplyResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
 
     createFromIssue: {
-      (
-        params?: RequestParameters & PullsCreateFromIssueParams
-      ): Promise<OctokitResponse<PullsCreateFromIssueResponse>>;
+      (params?: RequestParameters & PullsCreateFromIssueParams): Promise<
+        OctokitResponse<PullsCreateFromIssueResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -35856,12 +36242,11 @@ export type RestEndpointMethods = {
      */
     createReview: {
       (
-        params?: RequestParameters &
-          PullsCreateReviewParamsDeprecatedNumber
+        params?: RequestParameters & PullsCreateReviewParamsDeprecatedNumber
       ): Promise<OctokitResponse<PullsCreateReviewResponse>>;
-      (
-        params?: RequestParameters & PullsCreateReviewParams
-      ): Promise<OctokitResponse<PullsCreateReviewResponse>>;
+      (params?: RequestParameters & PullsCreateReviewParams): Promise<
+        OctokitResponse<PullsCreateReviewResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -35872,11 +36257,8 @@ export type RestEndpointMethods = {
      */
     createReviewCommentReply: {
       (
-        params?: RequestParameters &
-          PullsCreateReviewCommentReplyParams
-      ): Promise<
-        OctokitResponse<PullsCreateReviewCommentReplyResponse>
-      >;
+        params?: RequestParameters & PullsCreateReviewCommentReplyParams
+      ): Promise<OctokitResponse<PullsCreateReviewCommentReplyResponse>>;
 
       endpoint: EndpointInterface;
     };
@@ -35888,9 +36270,9 @@ export type RestEndpointMethods = {
         params?: RequestParameters &
           PullsCreateReviewRequestParamsDeprecatedNumber
       ): Promise<OctokitResponse<PullsCreateReviewRequestResponse>>;
-      (
-        params?: RequestParameters & PullsCreateReviewRequestParams
-      ): Promise<OctokitResponse<PullsCreateReviewRequestResponse>>;
+      (params?: RequestParameters & PullsCreateReviewRequestParams): Promise<
+        OctokitResponse<PullsCreateReviewRequestResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -35898,9 +36280,9 @@ export type RestEndpointMethods = {
      * Deletes a review comment.
      */
     deleteComment: {
-      (
-        params?: RequestParameters & PullsDeleteCommentParams
-      ): Promise<AnyResponse>;
+      (params?: RequestParameters & PullsDeleteCommentParams): Promise<
+        AnyResponse
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -35910,9 +36292,9 @@ export type RestEndpointMethods = {
         params?: RequestParameters &
           PullsDeletePendingReviewParamsDeprecatedNumber
       ): Promise<OctokitResponse<PullsDeletePendingReviewResponse>>;
-      (
-        params?: RequestParameters & PullsDeletePendingReviewParams
-      ): Promise<OctokitResponse<PullsDeletePendingReviewResponse>>;
+      (params?: RequestParameters & PullsDeletePendingReviewParams): Promise<
+        OctokitResponse<PullsDeletePendingReviewResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -35922,9 +36304,9 @@ export type RestEndpointMethods = {
         params?: RequestParameters &
           PullsDeleteReviewRequestParamsDeprecatedNumber
       ): Promise<AnyResponse>;
-      (
-        params?: RequestParameters & PullsDeleteReviewRequestParams
-      ): Promise<AnyResponse>;
+      (params?: RequestParameters & PullsDeleteReviewRequestParams): Promise<
+        AnyResponse
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -35933,12 +36315,11 @@ export type RestEndpointMethods = {
      */
     dismissReview: {
       (
-        params?: RequestParameters &
-          PullsDismissReviewParamsDeprecatedNumber
+        params?: RequestParameters & PullsDismissReviewParamsDeprecatedNumber
       ): Promise<OctokitResponse<PullsDismissReviewResponse>>;
-      (
-        params?: RequestParameters & PullsDismissReviewParams
-      ): Promise<OctokitResponse<PullsDismissReviewResponse>>;
+      (params?: RequestParameters & PullsDismissReviewParams): Promise<
+        OctokitResponse<PullsDismissReviewResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -35960,9 +36341,9 @@ export type RestEndpointMethods = {
      * Pass the appropriate [media type](https://developer.github.com/v3/media/#commits-commit-comparison-and-pull-requests) to fetch diff and patch formats.
      */
     get: {
-      (
-        params?: RequestParameters & PullsGetParamsDeprecatedNumber
-      ): Promise<OctokitResponse<PullsGetResponse>>;
+      (params?: RequestParameters & PullsGetParamsDeprecatedNumber): Promise<
+        OctokitResponse<PullsGetResponse>
+      >;
       (params?: RequestParameters & PullsGetParams): Promise<
         OctokitResponse<PullsGetResponse>
       >;
@@ -35993,9 +36374,9 @@ export type RestEndpointMethods = {
      * The `reactions` key will have the following payload where `url` can be used to construct the API location for [listing and creating](https://developer.github.com/v3/reactions) reactions.
      */
     getComment: {
-      (
-        params?: RequestParameters & PullsGetCommentParams
-      ): Promise<OctokitResponse<PullsGetCommentResponse>>;
+      (params?: RequestParameters & PullsGetCommentParams): Promise<
+        OctokitResponse<PullsGetCommentResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -36005,18 +36386,16 @@ export type RestEndpointMethods = {
         params?: RequestParameters &
           PullsGetCommentsForReviewParamsDeprecatedNumber
       ): Promise<OctokitResponse<PullsGetCommentsForReviewResponse>>;
-      (
-        params?: RequestParameters &
-          PullsGetCommentsForReviewParams
-      ): Promise<OctokitResponse<PullsGetCommentsForReviewResponse>>;
+      (params?: RequestParameters & PullsGetCommentsForReviewParams): Promise<
+        OctokitResponse<PullsGetCommentsForReviewResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
 
     getReview: {
       (
-        params?: RequestParameters &
-          PullsGetReviewParamsDeprecatedNumber
+        params?: RequestParameters & PullsGetReviewParamsDeprecatedNumber
       ): Promise<OctokitResponse<PullsGetReviewResponse>>;
       (params?: RequestParameters & PullsGetReviewParams): Promise<
         OctokitResponse<PullsGetReviewResponse>
@@ -36059,12 +36438,11 @@ export type RestEndpointMethods = {
      */
     listComments: {
       (
-        params?: RequestParameters &
-          PullsListCommentsParamsDeprecatedNumber
+        params?: RequestParameters & PullsListCommentsParamsDeprecatedNumber
       ): Promise<OctokitResponse<PullsListCommentsResponse>>;
-      (
-        params?: RequestParameters & PullsListCommentsParams
-      ): Promise<OctokitResponse<PullsListCommentsResponse>>;
+      (params?: RequestParameters & PullsListCommentsParams): Promise<
+        OctokitResponse<PullsListCommentsResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -36092,9 +36470,9 @@ export type RestEndpointMethods = {
      * The `reactions` key will have the following payload where `url` can be used to construct the API location for [listing and creating](https://developer.github.com/v3/reactions) reactions.
      */
     listCommentsForRepo: {
-      (
-        params?: RequestParameters & PullsListCommentsForRepoParams
-      ): Promise<OctokitResponse<PullsListCommentsForRepoResponse>>;
+      (params?: RequestParameters & PullsListCommentsForRepoParams): Promise<
+        OctokitResponse<PullsListCommentsForRepoResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -36103,22 +36481,20 @@ export type RestEndpointMethods = {
      */
     listCommits: {
       (
-        params?: RequestParameters &
-          PullsListCommitsParamsDeprecatedNumber
+        params?: RequestParameters & PullsListCommitsParamsDeprecatedNumber
       ): Promise<OctokitResponse<PullsListCommitsResponse>>;
-      (
-        params?: RequestParameters & PullsListCommitsParams
-      ): Promise<OctokitResponse<PullsListCommitsResponse>>;
+      (params?: RequestParameters & PullsListCommitsParams): Promise<
+        OctokitResponse<PullsListCommitsResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
     /**
-     * **Note:** The response includes a maximum of 300 files.
+     * **Note:** Responses include a maximum of 3000 files. The paginated response returns 30 files per page by default.
      */
     listFiles: {
       (
-        params?: RequestParameters &
-          PullsListFilesParamsDeprecatedNumber
+        params?: RequestParameters & PullsListFilesParamsDeprecatedNumber
       ): Promise<OctokitResponse<PullsListFilesResponse>>;
       (params?: RequestParameters & PullsListFilesParams): Promise<
         OctokitResponse<PullsListFilesResponse>
@@ -36132,9 +36508,9 @@ export type RestEndpointMethods = {
         params?: RequestParameters &
           PullsListReviewRequestsParamsDeprecatedNumber
       ): Promise<OctokitResponse<PullsListReviewRequestsResponse>>;
-      (
-        params?: RequestParameters & PullsListReviewRequestsParams
-      ): Promise<OctokitResponse<PullsListReviewRequestsResponse>>;
+      (params?: RequestParameters & PullsListReviewRequestsParams): Promise<
+        OctokitResponse<PullsListReviewRequestsResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -36143,12 +36519,11 @@ export type RestEndpointMethods = {
      */
     listReviews: {
       (
-        params?: RequestParameters &
-          PullsListReviewsParamsDeprecatedNumber
+        params?: RequestParameters & PullsListReviewsParamsDeprecatedNumber
       ): Promise<OctokitResponse<PullsListReviewsResponse>>;
-      (
-        params?: RequestParameters & PullsListReviewsParams
-      ): Promise<OctokitResponse<PullsListReviewsResponse>>;
+      (params?: RequestParameters & PullsListReviewsParams): Promise<
+        OctokitResponse<PullsListReviewsResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -36156,10 +36531,9 @@ export type RestEndpointMethods = {
      * This endpoint triggers [notifications](https://help.github.com/articles/about-notifications/). Creating content too quickly using this endpoint may result in abuse rate limiting. See "[Abuse rate limits](https://developer.github.com/v3/#abuse-rate-limits)" and "[Dealing with abuse rate limits](https://developer.github.com/v3/guides/best-practices-for-integrators/#dealing-with-abuse-rate-limits)" for details.
      */
     merge: {
-      (
-        params?: RequestParameters &
-          PullsMergeParamsDeprecatedNumber
-      ): Promise<OctokitResponse<PullsMergeResponse>>;
+      (params?: RequestParameters & PullsMergeParamsDeprecatedNumber): Promise<
+        OctokitResponse<PullsMergeResponse>
+      >;
       (params?: RequestParameters & PullsMergeParams): Promise<
         OctokitResponse<PullsMergeResponse>
       >;
@@ -36169,12 +36543,11 @@ export type RestEndpointMethods = {
 
     submitReview: {
       (
-        params?: RequestParameters &
-          PullsSubmitReviewParamsDeprecatedNumber
+        params?: RequestParameters & PullsSubmitReviewParamsDeprecatedNumber
       ): Promise<OctokitResponse<PullsSubmitReviewResponse>>;
-      (
-        params?: RequestParameters & PullsSubmitReviewParams
-      ): Promise<OctokitResponse<PullsSubmitReviewResponse>>;
+      (params?: RequestParameters & PullsSubmitReviewParams): Promise<
+        OctokitResponse<PullsSubmitReviewResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -36184,10 +36557,9 @@ export type RestEndpointMethods = {
      * To open or update a pull request in a public repository, you must have write access to the head or the source branch. For organization-owned repositories, you must be a member of the organization that owns the repository to open or update a pull request.
      */
     update: {
-      (
-        params?: RequestParameters &
-          PullsUpdateParamsDeprecatedNumber
-      ): Promise<OctokitResponse<PullsUpdateResponse>>;
+      (params?: RequestParameters & PullsUpdateParamsDeprecatedNumber): Promise<
+        OctokitResponse<PullsUpdateResponse>
+      >;
       (params?: RequestParameters & PullsUpdateParams): Promise<
         OctokitResponse<PullsUpdateResponse>
       >;
@@ -36198,9 +36570,9 @@ export type RestEndpointMethods = {
      * Updates the pull request branch with the latest upstream changes by merging HEAD from the base branch into the pull request branch.
      */
     updateBranch: {
-      (
-        params?: RequestParameters & PullsUpdateBranchParams
-      ): Promise<OctokitResponse<PullsUpdateBranchResponse>>;
+      (params?: RequestParameters & PullsUpdateBranchParams): Promise<
+        OctokitResponse<PullsUpdateBranchResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -36226,9 +36598,9 @@ export type RestEndpointMethods = {
      * *   For single-line comments, the diff-positioned way of referencing comments for the `position` attribute. For more information, see `position` in the [input parameters](https://developer.github.com/v3/pulls/comments/#parameters-2) table.
      */
     updateComment: {
-      (
-        params?: RequestParameters & PullsUpdateCommentParams
-      ): Promise<OctokitResponse<PullsUpdateCommentResponse>>;
+      (params?: RequestParameters & PullsUpdateCommentParams): Promise<
+        OctokitResponse<PullsUpdateCommentResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -36237,12 +36609,11 @@ export type RestEndpointMethods = {
      */
     updateReview: {
       (
-        params?: RequestParameters &
-          PullsUpdateReviewParamsDeprecatedNumber
+        params?: RequestParameters & PullsUpdateReviewParamsDeprecatedNumber
       ): Promise<OctokitResponse<PullsUpdateReviewResponse>>;
-      (
-        params?: RequestParameters & PullsUpdateReviewParams
-      ): Promise<OctokitResponse<PullsUpdateReviewResponse>>;
+      (params?: RequestParameters & PullsUpdateReviewParams): Promise<
+        OctokitResponse<PullsUpdateReviewResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -36282,11 +36653,8 @@ export type RestEndpointMethods = {
      */
     createForCommitComment: {
       (
-        params?: RequestParameters &
-          ReactionsCreateForCommitCommentParams
-      ): Promise<
-        OctokitResponse<ReactionsCreateForCommitCommentResponse>
-      >;
+        params?: RequestParameters & ReactionsCreateForCommitCommentParams
+      ): Promise<OctokitResponse<ReactionsCreateForCommitCommentResponse>>;
 
       endpoint: EndpointInterface;
     };
@@ -36298,9 +36666,9 @@ export type RestEndpointMethods = {
         params?: RequestParameters &
           ReactionsCreateForIssueParamsDeprecatedNumber
       ): Promise<OctokitResponse<ReactionsCreateForIssueResponse>>;
-      (
-        params?: RequestParameters & ReactionsCreateForIssueParams
-      ): Promise<OctokitResponse<ReactionsCreateForIssueResponse>>;
+      (params?: RequestParameters & ReactionsCreateForIssueParams): Promise<
+        OctokitResponse<ReactionsCreateForIssueResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -36309,11 +36677,8 @@ export type RestEndpointMethods = {
      */
     createForIssueComment: {
       (
-        params?: RequestParameters &
-          ReactionsCreateForIssueCommentParams
-      ): Promise<
-        OctokitResponse<ReactionsCreateForIssueCommentResponse>
-      >;
+        params?: RequestParameters & ReactionsCreateForIssueCommentParams
+      ): Promise<OctokitResponse<ReactionsCreateForIssueCommentResponse>>;
 
       endpoint: EndpointInterface;
     };
@@ -36325,9 +36690,7 @@ export type RestEndpointMethods = {
         params?: RequestParameters &
           ReactionsCreateForPullRequestReviewCommentParams
       ): Promise<
-        OctokitResponse<
-          ReactionsCreateForPullRequestReviewCommentResponse
-        >
+        OctokitResponse<ReactionsCreateForPullRequestReviewCommentResponse>
       >;
 
       endpoint: EndpointInterface;
@@ -36336,15 +36699,12 @@ export type RestEndpointMethods = {
      * **Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [`Create reaction for a team discussion`](https://developer.github.com/v3/reactions/#create-reaction-for-a-team-discussion) endpoint.
      *
      * Create a reaction to a [team discussion](https://developer.github.com/v3/teams/discussions/). OAuth access tokens require the `write:discussion` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/). A response with a `Status: 200 OK` means that you already added the reaction type to this team discussion.
-     * @deprecated reactions.createForTeamDiscussion() is deprecated, see https://developer.github.com/v3/reactions/#create-reaction-for-a-team-discussion-legacy
+     * @deprecated octokit.reactions.createForTeamDiscussion() is deprecated, see https://developer.github.com/v3/reactions/#create-reaction-for-a-team-discussion-legacy
      */
     createForTeamDiscussion: {
       (
-        params?: RequestParameters &
-          ReactionsCreateForTeamDiscussionParams
-      ): Promise<
-        OctokitResponse<ReactionsCreateForTeamDiscussionResponse>
-      >;
+        params?: RequestParameters & ReactionsCreateForTeamDiscussionParams
+      ): Promise<OctokitResponse<ReactionsCreateForTeamDiscussionResponse>>;
 
       endpoint: EndpointInterface;
     };
@@ -36352,16 +36712,14 @@ export type RestEndpointMethods = {
      * **Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [`Create reaction for a team discussion comment`](https://developer.github.com/v3/reactions/#create-reaction-for-a-team-discussion-comment) endpoint.
      *
      * Create a reaction to a [team discussion comment](https://developer.github.com/v3/teams/discussion_comments/). OAuth access tokens require the `write:discussion` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/). A response with a `Status: 200 OK` means that you already added the reaction type to this team discussion comment.
-     * @deprecated reactions.createForTeamDiscussionComment() is deprecated, see https://developer.github.com/v3/reactions/#create-reaction-for-a-team-discussion-comment-legacy
+     * @deprecated octokit.reactions.createForTeamDiscussionComment() is deprecated, see https://developer.github.com/v3/reactions/#create-reaction-for-a-team-discussion-comment-legacy
      */
     createForTeamDiscussionComment: {
       (
         params?: RequestParameters &
           ReactionsCreateForTeamDiscussionCommentParams
       ): Promise<
-        OctokitResponse<
-          ReactionsCreateForTeamDiscussionCommentResponse
-        >
+        OctokitResponse<ReactionsCreateForTeamDiscussionCommentResponse>
       >;
 
       endpoint: EndpointInterface;
@@ -36376,9 +36734,7 @@ export type RestEndpointMethods = {
         params?: RequestParameters &
           ReactionsCreateForTeamDiscussionCommentInOrgParams
       ): Promise<
-        OctokitResponse<
-          ReactionsCreateForTeamDiscussionCommentInOrgResponse
-        >
+        OctokitResponse<ReactionsCreateForTeamDiscussionCommentInOrgResponse>
       >;
 
       endpoint: EndpointInterface;
@@ -36387,16 +36743,14 @@ export type RestEndpointMethods = {
      * **Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [`Create reaction for a team discussion comment`](https://developer.github.com/v3/reactions/#create-reaction-for-a-team-discussion-comment) endpoint.
      *
      * Create a reaction to a [team discussion comment](https://developer.github.com/v3/teams/discussion_comments/). OAuth access tokens require the `write:discussion` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/). A response with a `Status: 200 OK` means that you already added the reaction type to this team discussion comment.
-     * @deprecated reactions.createForTeamDiscussionCommentLegacy() is deprecated, see https://developer.github.com/v3/reactions/#create-reaction-for-a-team-discussion-comment-legacy
+     * @deprecated octokit.reactions.createForTeamDiscussionCommentLegacy() is deprecated, see https://developer.github.com/v3/reactions/#create-reaction-for-a-team-discussion-comment-legacy
      */
     createForTeamDiscussionCommentLegacy: {
       (
         params?: RequestParameters &
           ReactionsCreateForTeamDiscussionCommentLegacyParams
       ): Promise<
-        OctokitResponse<
-          ReactionsCreateForTeamDiscussionCommentLegacyResponse
-        >
+        OctokitResponse<ReactionsCreateForTeamDiscussionCommentLegacyResponse>
       >;
 
       endpoint: EndpointInterface;
@@ -36408,8 +36762,7 @@ export type RestEndpointMethods = {
      */
     createForTeamDiscussionInOrg: {
       (
-        params?: RequestParameters &
-          ReactionsCreateForTeamDiscussionInOrgParams
+        params?: RequestParameters & ReactionsCreateForTeamDiscussionInOrgParams
       ): Promise<
         OctokitResponse<ReactionsCreateForTeamDiscussionInOrgResponse>
       >;
@@ -36420,7 +36773,7 @@ export type RestEndpointMethods = {
      * **Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [`Create reaction for a team discussion`](https://developer.github.com/v3/reactions/#create-reaction-for-a-team-discussion) endpoint.
      *
      * Create a reaction to a [team discussion](https://developer.github.com/v3/teams/discussions/). OAuth access tokens require the `write:discussion` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/). A response with a `Status: 200 OK` means that you already added the reaction type to this team discussion.
-     * @deprecated reactions.createForTeamDiscussionLegacy() is deprecated, see https://developer.github.com/v3/reactions/#create-reaction-for-a-team-discussion-legacy
+     * @deprecated octokit.reactions.createForTeamDiscussionLegacy() is deprecated, see https://developer.github.com/v3/reactions/#create-reaction-for-a-team-discussion-legacy
      */
     createForTeamDiscussionLegacy: {
       (
@@ -36436,9 +36789,9 @@ export type RestEndpointMethods = {
      * OAuth access tokens require the `write:discussion` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/), when deleting a [team discussion](https://developer.github.com/v3/teams/discussions/) or [team discussion comment](https://developer.github.com/v3/teams/discussion_comments/).
      */
     delete: {
-      (
-        params?: RequestParameters & ReactionsDeleteParams
-      ): Promise<AnyResponse>;
+      (params?: RequestParameters & ReactionsDeleteParams): Promise<
+        AnyResponse
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -36447,11 +36800,8 @@ export type RestEndpointMethods = {
      */
     listForCommitComment: {
       (
-        params?: RequestParameters &
-          ReactionsListForCommitCommentParams
-      ): Promise<
-        OctokitResponse<ReactionsListForCommitCommentResponse>
-      >;
+        params?: RequestParameters & ReactionsListForCommitCommentParams
+      ): Promise<OctokitResponse<ReactionsListForCommitCommentResponse>>;
 
       endpoint: EndpointInterface;
     };
@@ -36460,12 +36810,11 @@ export type RestEndpointMethods = {
      */
     listForIssue: {
       (
-        params?: RequestParameters &
-          ReactionsListForIssueParamsDeprecatedNumber
+        params?: RequestParameters & ReactionsListForIssueParamsDeprecatedNumber
       ): Promise<OctokitResponse<ReactionsListForIssueResponse>>;
-      (
-        params?: RequestParameters & ReactionsListForIssueParams
-      ): Promise<OctokitResponse<ReactionsListForIssueResponse>>;
+      (params?: RequestParameters & ReactionsListForIssueParams): Promise<
+        OctokitResponse<ReactionsListForIssueResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -36474,11 +36823,8 @@ export type RestEndpointMethods = {
      */
     listForIssueComment: {
       (
-        params?: RequestParameters &
-          ReactionsListForIssueCommentParams
-      ): Promise<
-        OctokitResponse<ReactionsListForIssueCommentResponse>
-      >;
+        params?: RequestParameters & ReactionsListForIssueCommentParams
+      ): Promise<OctokitResponse<ReactionsListForIssueCommentResponse>>;
 
       endpoint: EndpointInterface;
     };
@@ -36490,9 +36836,7 @@ export type RestEndpointMethods = {
         params?: RequestParameters &
           ReactionsListForPullRequestReviewCommentParams
       ): Promise<
-        OctokitResponse<
-          ReactionsListForPullRequestReviewCommentResponse
-        >
+        OctokitResponse<ReactionsListForPullRequestReviewCommentResponse>
       >;
 
       endpoint: EndpointInterface;
@@ -36501,15 +36845,12 @@ export type RestEndpointMethods = {
      * **Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [`List reactions for a team discussion`](https://developer.github.com/v3/reactions/#list-reactions-for-a-team-discussion) endpoint.
      *
      * List the reactions to a [team discussion](https://developer.github.com/v3/teams/discussions/). OAuth access tokens require the `read:discussion` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
-     * @deprecated reactions.listForTeamDiscussion() is deprecated, see https://developer.github.com/v3/reactions/#list-reactions-for-a-team-discussion-legacy
+     * @deprecated octokit.reactions.listForTeamDiscussion() is deprecated, see https://developer.github.com/v3/reactions/#list-reactions-for-a-team-discussion-legacy
      */
     listForTeamDiscussion: {
       (
-        params?: RequestParameters &
-          ReactionsListForTeamDiscussionParams
-      ): Promise<
-        OctokitResponse<ReactionsListForTeamDiscussionResponse>
-      >;
+        params?: RequestParameters & ReactionsListForTeamDiscussionParams
+      ): Promise<OctokitResponse<ReactionsListForTeamDiscussionResponse>>;
 
       endpoint: EndpointInterface;
     };
@@ -36517,12 +36858,11 @@ export type RestEndpointMethods = {
      * **Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [`List reactions for a team discussion comment`](https://developer.github.com/v3/reactions/#list-reactions-for-a-team-discussion-comment) endpoint.
      *
      * List the reactions to a [team discussion comment](https://developer.github.com/v3/teams/discussion_comments/). OAuth access tokens require the `read:discussion` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
-     * @deprecated reactions.listForTeamDiscussionComment() is deprecated, see https://developer.github.com/v3/reactions/#list-reactions-for-a-team-discussion-comment-legacy
+     * @deprecated octokit.reactions.listForTeamDiscussionComment() is deprecated, see https://developer.github.com/v3/reactions/#list-reactions-for-a-team-discussion-comment-legacy
      */
     listForTeamDiscussionComment: {
       (
-        params?: RequestParameters &
-          ReactionsListForTeamDiscussionCommentParams
+        params?: RequestParameters & ReactionsListForTeamDiscussionCommentParams
       ): Promise<
         OctokitResponse<ReactionsListForTeamDiscussionCommentResponse>
       >;
@@ -36539,9 +36879,7 @@ export type RestEndpointMethods = {
         params?: RequestParameters &
           ReactionsListForTeamDiscussionCommentInOrgParams
       ): Promise<
-        OctokitResponse<
-          ReactionsListForTeamDiscussionCommentInOrgResponse
-        >
+        OctokitResponse<ReactionsListForTeamDiscussionCommentInOrgResponse>
       >;
 
       endpoint: EndpointInterface;
@@ -36550,16 +36888,14 @@ export type RestEndpointMethods = {
      * **Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [`List reactions for a team discussion comment`](https://developer.github.com/v3/reactions/#list-reactions-for-a-team-discussion-comment) endpoint.
      *
      * List the reactions to a [team discussion comment](https://developer.github.com/v3/teams/discussion_comments/). OAuth access tokens require the `read:discussion` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
-     * @deprecated reactions.listForTeamDiscussionCommentLegacy() is deprecated, see https://developer.github.com/v3/reactions/#list-reactions-for-a-team-discussion-comment-legacy
+     * @deprecated octokit.reactions.listForTeamDiscussionCommentLegacy() is deprecated, see https://developer.github.com/v3/reactions/#list-reactions-for-a-team-discussion-comment-legacy
      */
     listForTeamDiscussionCommentLegacy: {
       (
         params?: RequestParameters &
           ReactionsListForTeamDiscussionCommentLegacyParams
       ): Promise<
-        OctokitResponse<
-          ReactionsListForTeamDiscussionCommentLegacyResponse
-        >
+        OctokitResponse<ReactionsListForTeamDiscussionCommentLegacyResponse>
       >;
 
       endpoint: EndpointInterface;
@@ -36571,11 +36907,8 @@ export type RestEndpointMethods = {
      */
     listForTeamDiscussionInOrg: {
       (
-        params?: RequestParameters &
-          ReactionsListForTeamDiscussionInOrgParams
-      ): Promise<
-        OctokitResponse<ReactionsListForTeamDiscussionInOrgResponse>
-      >;
+        params?: RequestParameters & ReactionsListForTeamDiscussionInOrgParams
+      ): Promise<OctokitResponse<ReactionsListForTeamDiscussionInOrgResponse>>;
 
       endpoint: EndpointInterface;
     };
@@ -36583,24 +36916,21 @@ export type RestEndpointMethods = {
      * **Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [`List reactions for a team discussion`](https://developer.github.com/v3/reactions/#list-reactions-for-a-team-discussion) endpoint.
      *
      * List the reactions to a [team discussion](https://developer.github.com/v3/teams/discussions/). OAuth access tokens require the `read:discussion` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
-     * @deprecated reactions.listForTeamDiscussionLegacy() is deprecated, see https://developer.github.com/v3/reactions/#list-reactions-for-a-team-discussion-legacy
+     * @deprecated octokit.reactions.listForTeamDiscussionLegacy() is deprecated, see https://developer.github.com/v3/reactions/#list-reactions-for-a-team-discussion-legacy
      */
     listForTeamDiscussionLegacy: {
       (
-        params?: RequestParameters &
-          ReactionsListForTeamDiscussionLegacyParams
-      ): Promise<
-        OctokitResponse<ReactionsListForTeamDiscussionLegacyResponse>
-      >;
+        params?: RequestParameters & ReactionsListForTeamDiscussionLegacyParams
+      ): Promise<OctokitResponse<ReactionsListForTeamDiscussionLegacyResponse>>;
 
       endpoint: EndpointInterface;
     };
   };
   repos: {
     acceptInvitation: {
-      (
-        params?: RequestParameters & ReposAcceptInvitationParams
-      ): Promise<AnyResponse>;
+      (params?: RequestParameters & ReposAcceptInvitationParams): Promise<
+        AnyResponse
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -36616,9 +36946,9 @@ export type RestEndpointMethods = {
      * To prevent abuse, you are limited to sending 50 invitations to a repository per 24 hour period. Note there is no limit if you are inviting organization members to an organization repository.
      */
     addCollaborator: {
-      (
-        params?: RequestParameters & ReposAddCollaboratorParams
-      ): Promise<OctokitResponse<ReposAddCollaboratorResponse>>;
+      (params?: RequestParameters & ReposAddCollaboratorParams): Promise<
+        OctokitResponse<ReposAddCollaboratorResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -36626,9 +36956,9 @@ export type RestEndpointMethods = {
      * Here's how you can create a read-only deploy key:
      */
     addDeployKey: {
-      (
-        params?: RequestParameters & ReposAddDeployKeyParams
-      ): Promise<OctokitResponse<ReposAddDeployKeyResponse>>;
+      (params?: RequestParameters & ReposAddDeployKeyParams): Promise<
+        OctokitResponse<ReposAddDeployKeyResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -36642,9 +36972,7 @@ export type RestEndpointMethods = {
         params?: RequestParameters &
           ReposAddProtectedBranchAdminEnforcementParams
       ): Promise<
-        OctokitResponse<
-          ReposAddProtectedBranchAdminEnforcementResponse
-        >
+        OctokitResponse<ReposAddProtectedBranchAdminEnforcementResponse>
       >;
 
       endpoint: EndpointInterface;
@@ -36678,9 +37006,7 @@ export type RestEndpointMethods = {
         params?: RequestParameters &
           ReposAddProtectedBranchRequiredSignaturesParams
       ): Promise<
-        OctokitResponse<
-          ReposAddProtectedBranchRequiredSignaturesResponse
-        >
+        OctokitResponse<ReposAddProtectedBranchRequiredSignaturesResponse>
       >;
 
       endpoint: EndpointInterface;
@@ -36714,9 +37040,7 @@ export type RestEndpointMethods = {
         params?: RequestParameters &
           ReposAddProtectedBranchTeamRestrictionsParams
       ): Promise<
-        OctokitResponse<
-          ReposAddProtectedBranchTeamRestrictionsResponse
-        >
+        OctokitResponse<ReposAddProtectedBranchTeamRestrictionsResponse>
       >;
 
       endpoint: EndpointInterface;
@@ -36735,9 +37059,7 @@ export type RestEndpointMethods = {
         params?: RequestParameters &
           ReposAddProtectedBranchUserRestrictionsParams
       ): Promise<
-        OctokitResponse<
-          ReposAddProtectedBranchUserRestrictionsResponse
-        >
+        OctokitResponse<ReposAddProtectedBranchUserRestrictionsResponse>
       >;
 
       endpoint: EndpointInterface;
@@ -36748,9 +37070,9 @@ export type RestEndpointMethods = {
      * Team members will include the members of child teams.
      */
     checkCollaborator: {
-      (
-        params?: RequestParameters & ReposCheckCollaboratorParams
-      ): Promise<AnyResponse>;
+      (params?: RequestParameters & ReposCheckCollaboratorParams): Promise<
+        AnyResponse
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -36759,8 +37081,7 @@ export type RestEndpointMethods = {
      */
     checkVulnerabilityAlerts: {
       (
-        params?: RequestParameters &
-          ReposCheckVulnerabilityAlertsParams
+        params?: RequestParameters & ReposCheckVulnerabilityAlertsParams
       ): Promise<AnyResponse>;
 
       endpoint: EndpointInterface;
@@ -36801,9 +37122,9 @@ export type RestEndpointMethods = {
      * | `valid`                  | None of the above errors applied, so the signature is considered to be verified.                                                  |
      */
     compareCommits: {
-      (
-        params?: RequestParameters & ReposCompareCommitsParams
-      ): Promise<OctokitResponse<ReposCompareCommitsResponse>>;
+      (params?: RequestParameters & ReposCompareCommitsParams): Promise<
+        OctokitResponse<ReposCompareCommitsResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -36814,16 +37135,15 @@ export type RestEndpointMethods = {
      */
     createCommitComment: {
       (
-        params?: RequestParameters &
-          ReposCreateCommitCommentParamsDeprecatedSha
+        params?: RequestParameters & ReposCreateCommitCommentParamsDeprecatedSha
       ): Promise<OctokitResponse<ReposCreateCommitCommentResponse>>;
       (
         params?: RequestParameters &
           ReposCreateCommitCommentParamsDeprecatedLine
       ): Promise<OctokitResponse<ReposCreateCommitCommentResponse>>;
-      (
-        params?: RequestParameters & ReposCreateCommitCommentParams
-      ): Promise<OctokitResponse<ReposCreateCommitCommentResponse>>;
+      (params?: RequestParameters & ReposCreateCommitCommentParams): Promise<
+        OctokitResponse<ReposCreateCommitCommentResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -36861,9 +37181,9 @@ export type RestEndpointMethods = {
      * This error happens when the `required_contexts` parameter indicates that one or more contexts need to have a `success` status for the commit to be deployed, but one or more of the required contexts do not have a state of `success`.
      */
     createDeployment: {
-      (
-        params?: RequestParameters & ReposCreateDeploymentParams
-      ): Promise<OctokitResponse<ReposCreateDeploymentResponse>>;
+      (params?: RequestParameters & ReposCreateDeploymentParams): Promise<
+        OctokitResponse<ReposCreateDeploymentResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -36873,10 +37193,9 @@ export type RestEndpointMethods = {
      * GitHub Apps require `read & write` access to "Deployments" and `read-only` access to "Repo contents" (for private repos). OAuth Apps require the `repo_deployment` scope.
      */
     createDeploymentStatus: {
-      (
-        params?: RequestParameters &
-          ReposCreateDeploymentStatusParams
-      ): Promise<OctokitResponse<ReposCreateDeploymentStatusResponse>>;
+      (params?: RequestParameters & ReposCreateDeploymentStatusParams): Promise<
+        OctokitResponse<ReposCreateDeploymentStatusResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -36890,20 +37209,20 @@ export type RestEndpointMethods = {
      * This input example shows how you can use the `client_payload` as a test to debug your workflow.
      */
     createDispatchEvent: {
-      (
-        params?: RequestParameters & ReposCreateDispatchEventParams
-      ): Promise<AnyResponse>;
+      (params?: RequestParameters & ReposCreateDispatchEventParams): Promise<
+        AnyResponse
+      >;
 
       endpoint: EndpointInterface;
     };
     /**
      * Creates a new file or updates an existing file in a repository.
-     * @deprecated repos.createFile() has been renamed to repos.createOrUpdateFile() (2019-06-07)
+     * @deprecated octokit.repos.createFile() has been renamed to octokit.repos.createOrUpdateFile() (2019-06-07)
      */
     createFile: {
-      (
-        params?: RequestParameters & ReposCreateFileParams
-      ): Promise<OctokitResponse<ReposCreateFileResponse>>;
+      (params?: RequestParameters & ReposCreateFileParams): Promise<
+        OctokitResponse<ReposCreateFileResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -36919,11 +37238,8 @@ export type RestEndpointMethods = {
      */
     createForAuthenticatedUser: {
       (
-        params?: RequestParameters &
-          ReposCreateForAuthenticatedUserParams
-      ): Promise<
-        OctokitResponse<ReposCreateForAuthenticatedUserResponse>
-      >;
+        params?: RequestParameters & ReposCreateForAuthenticatedUserParams
+      ): Promise<OctokitResponse<ReposCreateForAuthenticatedUserResponse>>;
 
       endpoint: EndpointInterface;
     };
@@ -36933,9 +37249,9 @@ export type RestEndpointMethods = {
      * **Note**: Forking a Repository happens asynchronously. You may have to wait a short period of time before you can access the git objects. If this takes longer than 5 minutes, be sure to contact [GitHub Support](https://github.com/contact) or [GitHub Premium Support](https://premium.githubsupport.com).
      */
     createFork: {
-      (
-        params?: RequestParameters & ReposCreateForkParams
-      ): Promise<OctokitResponse<ReposCreateForkResponse>>;
+      (params?: RequestParameters & ReposCreateForkParams): Promise<
+        OctokitResponse<ReposCreateForkResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -36945,9 +37261,9 @@ export type RestEndpointMethods = {
      * Here's how you can create a hook that posts payloads in JSON format:
      */
     createHook: {
-      (
-        params?: RequestParameters & ReposCreateHookParams
-      ): Promise<OctokitResponse<ReposCreateHookResponse>>;
+      (params?: RequestParameters & ReposCreateHookParams): Promise<
+        OctokitResponse<ReposCreateHookResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -36962,9 +37278,9 @@ export type RestEndpointMethods = {
      * *   `repo` scope to create a private repository
      */
     createInOrg: {
-      (
-        params?: RequestParameters & ReposCreateInOrgParams
-      ): Promise<OctokitResponse<ReposCreateInOrgResponse>>;
+      (params?: RequestParameters & ReposCreateInOrgParams): Promise<
+        OctokitResponse<ReposCreateInOrgResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -36972,9 +37288,9 @@ export type RestEndpointMethods = {
      * Creates a new file or updates an existing file in a repository.
      */
     createOrUpdateFile: {
-      (
-        params?: RequestParameters & ReposCreateOrUpdateFileParams
-      ): Promise<OctokitResponse<ReposCreateOrUpdateFileResponse>>;
+      (params?: RequestParameters & ReposCreateOrUpdateFileParams): Promise<
+        OctokitResponse<ReposCreateOrUpdateFileResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -36984,9 +37300,9 @@ export type RestEndpointMethods = {
      * This endpoint triggers [notifications](https://help.github.com/articles/about-notifications/). Creating content too quickly using this endpoint may result in abuse rate limiting. See "[Abuse rate limits](https://developer.github.com/v3/#abuse-rate-limits)" and "[Dealing with abuse rate limits](https://developer.github.com/v3/guides/best-practices-for-integrators/#dealing-with-abuse-rate-limits)" for details.
      */
     createRelease: {
-      (
-        params?: RequestParameters & ReposCreateReleaseParams
-      ): Promise<OctokitResponse<ReposCreateReleaseResponse>>;
+      (params?: RequestParameters & ReposCreateReleaseParams): Promise<
+        OctokitResponse<ReposCreateReleaseResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -36996,9 +37312,9 @@ export type RestEndpointMethods = {
      * Note: there is a limit of 1000 statuses per `sha` and `context` within a repository. Attempts to create more than 1000 statuses will result in a validation error.
      */
     createStatus: {
-      (
-        params?: RequestParameters & ReposCreateStatusParams
-      ): Promise<OctokitResponse<ReposCreateStatusResponse>>;
+      (params?: RequestParameters & ReposCreateStatusParams): Promise<
+        OctokitResponse<ReposCreateStatusResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -37015,17 +37331,17 @@ export type RestEndpointMethods = {
      * \`
      */
     createUsingTemplate: {
-      (
-        params?: RequestParameters & ReposCreateUsingTemplateParams
-      ): Promise<OctokitResponse<ReposCreateUsingTemplateResponse>>;
+      (params?: RequestParameters & ReposCreateUsingTemplateParams): Promise<
+        OctokitResponse<ReposCreateUsingTemplateResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
 
     declineInvitation: {
-      (
-        params?: RequestParameters & ReposDeclineInvitationParams
-      ): Promise<AnyResponse>;
+      (params?: RequestParameters & ReposDeclineInvitationParams): Promise<
+        AnyResponse
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -37043,17 +37359,17 @@ export type RestEndpointMethods = {
     };
 
     deleteCommitComment: {
-      (
-        params?: RequestParameters & ReposDeleteCommitCommentParams
-      ): Promise<AnyResponse>;
+      (params?: RequestParameters & ReposDeleteCommitCommentParams): Promise<
+        AnyResponse
+      >;
 
       endpoint: EndpointInterface;
     };
 
     deleteDownload: {
-      (
-        params?: RequestParameters & ReposDeleteDownloadParams
-      ): Promise<AnyResponse>;
+      (params?: RequestParameters & ReposDeleteDownloadParams): Promise<
+        AnyResponse
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -37067,25 +37383,25 @@ export type RestEndpointMethods = {
      * You must provide values for both `name` and `email`, whether you choose to use `author` or `committer`. Otherwise, you'll receive a `422` status code.
      */
     deleteFile: {
-      (
-        params?: RequestParameters & ReposDeleteFileParams
-      ): Promise<OctokitResponse<ReposDeleteFileResponse>>;
+      (params?: RequestParameters & ReposDeleteFileParams): Promise<
+        OctokitResponse<ReposDeleteFileResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
 
     deleteHook: {
-      (
-        params?: RequestParameters & ReposDeleteHookParams
-      ): Promise<AnyResponse>;
+      (params?: RequestParameters & ReposDeleteHookParams): Promise<
+        AnyResponse
+      >;
 
       endpoint: EndpointInterface;
     };
 
     deleteInvitation: {
-      (
-        params?: RequestParameters & ReposDeleteInvitationParams
-      ): Promise<AnyResponse>;
+      (params?: RequestParameters & ReposDeleteInvitationParams): Promise<
+        AnyResponse
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -37093,17 +37409,17 @@ export type RestEndpointMethods = {
      * Users with push access to the repository can delete a release.
      */
     deleteRelease: {
-      (
-        params?: RequestParameters & ReposDeleteReleaseParams
-      ): Promise<AnyResponse>;
+      (params?: RequestParameters & ReposDeleteReleaseParams): Promise<
+        AnyResponse
+      >;
 
       endpoint: EndpointInterface;
     };
 
     deleteReleaseAsset: {
-      (
-        params?: RequestParameters & ReposDeleteReleaseAssetParams
-      ): Promise<AnyResponse>;
+      (params?: RequestParameters & ReposDeleteReleaseAssetParams): Promise<
+        AnyResponse
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -37112,17 +37428,16 @@ export type RestEndpointMethods = {
      */
     disableAutomatedSecurityFixes: {
       (
-        params?: RequestParameters &
-          ReposDisableAutomatedSecurityFixesParams
+        params?: RequestParameters & ReposDisableAutomatedSecurityFixesParams
       ): Promise<AnyResponse>;
 
       endpoint: EndpointInterface;
     };
 
     disablePagesSite: {
-      (
-        params?: RequestParameters & ReposDisablePagesSiteParams
-      ): Promise<AnyResponse>;
+      (params?: RequestParameters & ReposDisablePagesSiteParams): Promise<
+        AnyResponse
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -37131,8 +37446,7 @@ export type RestEndpointMethods = {
      */
     disableVulnerabilityAlerts: {
       (
-        params?: RequestParameters &
-          ReposDisableVulnerabilityAlertsParams
+        params?: RequestParameters & ReposDisableVulnerabilityAlertsParams
       ): Promise<AnyResponse>;
 
       endpoint: EndpointInterface;
@@ -37142,17 +37456,16 @@ export type RestEndpointMethods = {
      */
     enableAutomatedSecurityFixes: {
       (
-        params?: RequestParameters &
-          ReposEnableAutomatedSecurityFixesParams
+        params?: RequestParameters & ReposEnableAutomatedSecurityFixesParams
       ): Promise<AnyResponse>;
 
       endpoint: EndpointInterface;
     };
 
     enablePagesSite: {
-      (
-        params?: RequestParameters & ReposEnablePagesSiteParams
-      ): Promise<OctokitResponse<ReposEnablePagesSiteResponse>>;
+      (params?: RequestParameters & ReposEnablePagesSiteParams): Promise<
+        OctokitResponse<ReposEnablePagesSiteResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -37161,8 +37474,7 @@ export type RestEndpointMethods = {
      */
     enableVulnerabilityAlerts: {
       (
-        params?: RequestParameters &
-          ReposEnableVulnerabilityAlertsParams
+        params?: RequestParameters & ReposEnableVulnerabilityAlertsParams
       ): Promise<AnyResponse>;
 
       endpoint: EndpointInterface;
@@ -37187,9 +37499,7 @@ export type RestEndpointMethods = {
         params?: RequestParameters &
           ReposGetAppsWithAccessToProtectedBranchParams
       ): Promise<
-        OctokitResponse<
-          ReposGetAppsWithAccessToProtectedBranchResponse
-        >
+        OctokitResponse<ReposGetAppsWithAccessToProtectedBranchResponse>
       >;
 
       endpoint: EndpointInterface;
@@ -37202,9 +37512,9 @@ export type RestEndpointMethods = {
      * To follow redirects with curl, use the `-L` switch:
      */
     getArchiveLink: {
-      (
-        params?: RequestParameters & ReposGetArchiveLinkParams
-      ): Promise<AnyResponse>;
+      (params?: RequestParameters & ReposGetArchiveLinkParams): Promise<
+        AnyResponse
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -37220,9 +37530,9 @@ export type RestEndpointMethods = {
      * Protected branches are available in public repositories with GitHub Free, and in public and private repositories with GitHub Pro, GitHub Team, and GitHub Enterprise Cloud. For more information, see [GitHub's products](https://help.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
      */
     getBranchProtection: {
-      (
-        params?: RequestParameters & ReposGetBranchProtectionParams
-      ): Promise<OctokitResponse<ReposGetBranchProtectionResponse>>;
+      (params?: RequestParameters & ReposGetBranchProtectionParams): Promise<
+        OctokitResponse<ReposGetBranchProtectionResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -37240,10 +37550,9 @@ export type RestEndpointMethods = {
      * Returns a weekly aggregate of the number of additions and deletions pushed to a repository.
      */
     getCodeFrequencyStats: {
-      (
-        params?: RequestParameters &
-          ReposGetCodeFrequencyStatsParams
-      ): Promise<OctokitResponse<ReposGetCodeFrequencyStatsResponse>>;
+      (params?: RequestParameters & ReposGetCodeFrequencyStatsParams): Promise<
+        OctokitResponse<ReposGetCodeFrequencyStatsResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -37252,11 +37561,8 @@ export type RestEndpointMethods = {
      */
     getCollaboratorPermissionLevel: {
       (
-        params?: RequestParameters &
-          ReposGetCollaboratorPermissionLevelParams
-      ): Promise<
-        OctokitResponse<ReposGetCollaboratorPermissionLevelResponse>
-      >;
+        params?: RequestParameters & ReposGetCollaboratorPermissionLevelParams
+      ): Promise<OctokitResponse<ReposGetCollaboratorPermissionLevelResponse>>;
 
       endpoint: EndpointInterface;
     };
@@ -37273,11 +37579,8 @@ export type RestEndpointMethods = {
      */
     getCombinedStatusForRef: {
       (
-        params?: RequestParameters &
-          ReposGetCombinedStatusForRefParams
-      ): Promise<
-        OctokitResponse<ReposGetCombinedStatusForRefResponse>
-      >;
+        params?: RequestParameters & ReposGetCombinedStatusForRefParams
+      ): Promise<OctokitResponse<ReposGetCombinedStatusForRefResponse>>;
 
       endpoint: EndpointInterface;
     };
@@ -37311,13 +37614,11 @@ export type RestEndpointMethods = {
      * | `valid`                  | None of the above errors applied, so the signature is considered to be verified.                                                  |
      */
     getCommit: {
+      (params?: RequestParameters & ReposGetCommitParamsDeprecatedSha): Promise<
+        OctokitResponse<ReposGetCommitResponse>
+      >;
       (
-        params?: RequestParameters &
-          ReposGetCommitParamsDeprecatedSha
-      ): Promise<OctokitResponse<ReposGetCommitResponse>>;
-      (
-        params?: RequestParameters &
-          ReposGetCommitParamsDeprecatedCommitSha
+        params?: RequestParameters & ReposGetCommitParamsDeprecatedCommitSha
       ): Promise<OctokitResponse<ReposGetCommitResponse>>;
       (params?: RequestParameters & ReposGetCommitParams): Promise<
         OctokitResponse<ReposGetCommitResponse>
@@ -37329,18 +37630,17 @@ export type RestEndpointMethods = {
      * Returns the last year of commit activity grouped by week. The `days` array is a group of commits per day, starting on `Sunday`.
      */
     getCommitActivityStats: {
-      (
-        params?: RequestParameters &
-          ReposGetCommitActivityStatsParams
-      ): Promise<OctokitResponse<ReposGetCommitActivityStatsResponse>>;
+      (params?: RequestParameters & ReposGetCommitActivityStatsParams): Promise<
+        OctokitResponse<ReposGetCommitActivityStatsResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
 
     getCommitComment: {
-      (
-        params?: RequestParameters & ReposGetCommitCommentParams
-      ): Promise<OctokitResponse<ReposGetCommitCommentResponse>>;
+      (params?: RequestParameters & ReposGetCommitCommentParams): Promise<
+        OctokitResponse<ReposGetCommitCommentResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -37353,9 +37653,9 @@ export type RestEndpointMethods = {
      * @deprecated "Get the SHA-1 of a commit reference" will be removed. Use "Get a single commit" instead with media type format set to "sha" instead.
      */
     getCommitRefSha: {
-      (
-        params?: RequestParameters & ReposGetCommitRefShaParams
-      ): Promise<AnyResponse>;
+      (params?: RequestParameters & ReposGetCommitRefShaParams): Promise<
+        AnyResponse
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -37383,9 +37683,9 @@ export type RestEndpointMethods = {
      * If the submodule repository is not hosted on github.com, the Git URLs (`git_url` and `_links["git"]`) and the github.com URLs (`html_url` and `_links["html"]`) will have null values.
      */
     getContents: {
-      (
-        params?: RequestParameters & ReposGetContentsParams
-      ): Promise<OctokitResponse<ReposGetContentsResponse>>;
+      (params?: RequestParameters & ReposGetContentsParams): Promise<
+        OctokitResponse<ReposGetContentsResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -37400,26 +37700,25 @@ export type RestEndpointMethods = {
      * *   `c` - Number of commits
      */
     getContributorsStats: {
-      (
-        params?: RequestParameters &
-          ReposGetContributorsStatsParams
-      ): Promise<OctokitResponse<ReposGetContributorsStatsResponse>>;
+      (params?: RequestParameters & ReposGetContributorsStatsParams): Promise<
+        OctokitResponse<ReposGetContributorsStatsResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
 
     getDeployKey: {
-      (
-        params?: RequestParameters & ReposGetDeployKeyParams
-      ): Promise<OctokitResponse<ReposGetDeployKeyResponse>>;
+      (params?: RequestParameters & ReposGetDeployKeyParams): Promise<
+        OctokitResponse<ReposGetDeployKeyResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
 
     getDeployment: {
-      (
-        params?: RequestParameters & ReposGetDeploymentParams
-      ): Promise<OctokitResponse<ReposGetDeploymentResponse>>;
+      (params?: RequestParameters & ReposGetDeploymentParams): Promise<
+        OctokitResponse<ReposGetDeploymentResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -37427,17 +37726,17 @@ export type RestEndpointMethods = {
      * Users with pull access can view a deployment status for a deployment:
      */
     getDeploymentStatus: {
-      (
-        params?: RequestParameters & ReposGetDeploymentStatusParams
-      ): Promise<OctokitResponse<ReposGetDeploymentStatusResponse>>;
+      (params?: RequestParameters & ReposGetDeploymentStatusParams): Promise<
+        OctokitResponse<ReposGetDeploymentStatusResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
 
     getDownload: {
-      (
-        params?: RequestParameters & ReposGetDownloadParams
-      ): Promise<OctokitResponse<ReposGetDownloadResponse>>;
+      (params?: RequestParameters & ReposGetDownloadParams): Promise<
+        OctokitResponse<ReposGetDownloadResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -37451,9 +37750,9 @@ export type RestEndpointMethods = {
     };
 
     getLatestPagesBuild: {
-      (
-        params?: RequestParameters & ReposGetLatestPagesBuildParams
-      ): Promise<OctokitResponse<ReposGetLatestPagesBuildResponse>>;
+      (params?: RequestParameters & ReposGetLatestPagesBuildParams): Promise<
+        OctokitResponse<ReposGetLatestPagesBuildResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -37463,9 +37762,9 @@ export type RestEndpointMethods = {
      * The latest release is the most recent non-prerelease, non-draft release, sorted by the `created_at` attribute. The `created_at` attribute is the date of the commit used for the release, and not the date when the release was drafted or published.
      */
     getLatestRelease: {
-      (
-        params?: RequestParameters & ReposGetLatestReleaseParams
-      ): Promise<OctokitResponse<ReposGetLatestReleaseResponse>>;
+      (params?: RequestParameters & ReposGetLatestReleaseParams): Promise<
+        OctokitResponse<ReposGetLatestReleaseResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -37479,9 +37778,9 @@ export type RestEndpointMethods = {
     };
 
     getPagesBuild: {
-      (
-        params?: RequestParameters & ReposGetPagesBuildParams
-      ): Promise<OctokitResponse<ReposGetPagesBuildResponse>>;
+      (params?: RequestParameters & ReposGetPagesBuildParams): Promise<
+        OctokitResponse<ReposGetPagesBuildResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -37491,10 +37790,9 @@ export type RestEndpointMethods = {
      * The array order is oldest week (index 0) to most recent week.
      */
     getParticipationStats: {
-      (
-        params?: RequestParameters &
-          ReposGetParticipationStatsParams
-      ): Promise<OctokitResponse<ReposGetParticipationStatsResponse>>;
+      (params?: RequestParameters & ReposGetParticipationStatsParams): Promise<
+        OctokitResponse<ReposGetParticipationStatsResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -37506,9 +37804,7 @@ export type RestEndpointMethods = {
         params?: RequestParameters &
           ReposGetProtectedBranchAdminEnforcementParams
       ): Promise<
-        OctokitResponse<
-          ReposGetProtectedBranchAdminEnforcementResponse
-        >
+        OctokitResponse<ReposGetProtectedBranchAdminEnforcementResponse>
       >;
 
       endpoint: EndpointInterface;
@@ -37540,9 +37836,7 @@ export type RestEndpointMethods = {
         params?: RequestParameters &
           ReposGetProtectedBranchRequiredSignaturesParams
       ): Promise<
-        OctokitResponse<
-          ReposGetProtectedBranchRequiredSignaturesResponse
-        >
+        OctokitResponse<ReposGetProtectedBranchRequiredSignaturesResponse>
       >;
 
       endpoint: EndpointInterface;
@@ -37555,9 +37849,7 @@ export type RestEndpointMethods = {
         params?: RequestParameters &
           ReposGetProtectedBranchRequiredStatusChecksParams
       ): Promise<
-        OctokitResponse<
-          ReposGetProtectedBranchRequiredStatusChecksResponse
-        >
+        OctokitResponse<ReposGetProtectedBranchRequiredStatusChecksResponse>
       >;
 
       endpoint: EndpointInterface;
@@ -37571,11 +37863,8 @@ export type RestEndpointMethods = {
      */
     getProtectedBranchRestrictions: {
       (
-        params?: RequestParameters &
-          ReposGetProtectedBranchRestrictionsParams
-      ): Promise<
-        OctokitResponse<ReposGetProtectedBranchRestrictionsResponse>
-      >;
+        params?: RequestParameters & ReposGetProtectedBranchRestrictionsParams
+      ): Promise<OctokitResponse<ReposGetProtectedBranchRestrictionsResponse>>;
 
       endpoint: EndpointInterface;
     };
@@ -37589,9 +37878,9 @@ export type RestEndpointMethods = {
      * For example, `[2, 14, 25]` indicates that there were 25 total commits, during the 2:00pm hour on Tuesdays. All times are based on the time zone of individual commits.
      */
     getPunchCardStats: {
-      (
-        params?: RequestParameters & ReposGetPunchCardStatsParams
-      ): Promise<OctokitResponse<ReposGetPunchCardStatsResponse>>;
+      (params?: RequestParameters & ReposGetPunchCardStatsParams): Promise<
+        OctokitResponse<ReposGetPunchCardStatsResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -37611,9 +37900,9 @@ export type RestEndpointMethods = {
      * **Note:** This returns an `upload_url` key corresponding to the endpoint for uploading release assets. This key is a [hypermedia resource](https://developer.github.com/v3/#hypermedia).
      */
     getRelease: {
-      (
-        params?: RequestParameters & ReposGetReleaseParams
-      ): Promise<OctokitResponse<ReposGetReleaseResponse>>;
+      (params?: RequestParameters & ReposGetReleaseParams): Promise<
+        OctokitResponse<ReposGetReleaseResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -37621,9 +37910,9 @@ export type RestEndpointMethods = {
      * To download the asset's binary content, set the `Accept` header of the request to [`application/octet-stream`](https://developer.github.com/v3/media/#media-types). The API will either redirect the client to the location, or stream it directly if possible. API clients should handle both a `200` or `302` response.
      */
     getReleaseAsset: {
-      (
-        params?: RequestParameters & ReposGetReleaseAssetParams
-      ): Promise<OctokitResponse<ReposGetReleaseAssetResponse>>;
+      (params?: RequestParameters & ReposGetReleaseAssetParams): Promise<
+        OctokitResponse<ReposGetReleaseAssetResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -37631,9 +37920,9 @@ export type RestEndpointMethods = {
      * Get a published release with the specified tag.
      */
     getReleaseByTag: {
-      (
-        params?: RequestParameters & ReposGetReleaseByTagParams
-      ): Promise<OctokitResponse<ReposGetReleaseByTagResponse>>;
+      (params?: RequestParameters & ReposGetReleaseByTagParams): Promise<
+        OctokitResponse<ReposGetReleaseByTagResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -37647,9 +37936,7 @@ export type RestEndpointMethods = {
         params?: RequestParameters &
           ReposGetTeamsWithAccessToProtectedBranchParams
       ): Promise<
-        OctokitResponse<
-          ReposGetTeamsWithAccessToProtectedBranchResponse
-        >
+        OctokitResponse<ReposGetTeamsWithAccessToProtectedBranchResponse>
       >;
 
       endpoint: EndpointInterface;
@@ -37658,9 +37945,9 @@ export type RestEndpointMethods = {
      * Get the top 10 popular contents over the last 14 days.
      */
     getTopPaths: {
-      (
-        params?: RequestParameters & ReposGetTopPathsParams
-      ): Promise<OctokitResponse<ReposGetTopPathsResponse>>;
+      (params?: RequestParameters & ReposGetTopPathsParams): Promise<
+        OctokitResponse<ReposGetTopPathsResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -37668,9 +37955,9 @@ export type RestEndpointMethods = {
      * Get the top 10 referrers over the last 14 days.
      */
     getTopReferrers: {
-      (
-        params?: RequestParameters & ReposGetTopReferrersParams
-      ): Promise<OctokitResponse<ReposGetTopReferrersResponse>>;
+      (params?: RequestParameters & ReposGetTopReferrersParams): Promise<
+        OctokitResponse<ReposGetTopReferrersResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -37684,9 +37971,7 @@ export type RestEndpointMethods = {
         params?: RequestParameters &
           ReposGetUsersWithAccessToProtectedBranchParams
       ): Promise<
-        OctokitResponse<
-          ReposGetUsersWithAccessToProtectedBranchResponse
-        >
+        OctokitResponse<ReposGetUsersWithAccessToProtectedBranchResponse>
       >;
 
       endpoint: EndpointInterface;
@@ -37707,9 +37992,7 @@ export type RestEndpointMethods = {
      * The authenticated user has explicit permission to access repositories they own, repositories where they are a collaborator, and repositories that they can access through an organization membership.
      */
     list: {
-      (params?: RequestParameters & ReposListParams): Promise<
-        AnyResponse
-      >;
+      (params?: RequestParameters & ReposListParams): Promise<AnyResponse>;
 
       endpoint: EndpointInterface;
     };
@@ -37717,34 +38000,31 @@ export type RestEndpointMethods = {
      * Protected branches are available in public repositories with GitHub Free, and in public and private repositories with GitHub Pro, GitHub Team, and GitHub Enterprise Cloud. For more information, see [GitHub's products](https://help.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
      *
      * Lists the GitHub Apps that have push access to this branch. Only installed GitHub Apps with `write` access to the `contents` permission can be added as authorized actors on a protected branch.
-     * @deprecated repos.listAppsWithAccessToProtectedBranch() has been renamed to repos.getAppsWithAccessToProtectedBranch() (2019-09-13)
+     * @deprecated octokit.repos.listAppsWithAccessToProtectedBranch() has been renamed to octokit.repos.getAppsWithAccessToProtectedBranch() (2019-09-13)
      */
     listAppsWithAccessToProtectedBranch: {
       (
         params?: RequestParameters &
           ReposListAppsWithAccessToProtectedBranchParams
       ): Promise<
-        OctokitResponse<
-          ReposListAppsWithAccessToProtectedBranchResponse
-        >
+        OctokitResponse<ReposListAppsWithAccessToProtectedBranchResponse>
       >;
 
       endpoint: EndpointInterface;
     };
 
     listAssetsForRelease: {
-      (
-        params?: RequestParameters &
-          ReposListAssetsForReleaseParams
-      ): Promise<OctokitResponse<ReposListAssetsForReleaseResponse>>;
+      (params?: RequestParameters & ReposListAssetsForReleaseParams): Promise<
+        OctokitResponse<ReposListAssetsForReleaseResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
 
     listBranches: {
-      (
-        params?: RequestParameters & ReposListBranchesParams
-      ): Promise<OctokitResponse<ReposListBranchesResponse>>;
+      (params?: RequestParameters & ReposListBranchesParams): Promise<
+        OctokitResponse<ReposListBranchesResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -37755,11 +38035,8 @@ export type RestEndpointMethods = {
      */
     listBranchesForHeadCommit: {
       (
-        params?: RequestParameters &
-          ReposListBranchesForHeadCommitParams
-      ): Promise<
-        OctokitResponse<ReposListBranchesForHeadCommitResponse>
-      >;
+        params?: RequestParameters & ReposListBranchesForHeadCommitParams
+      ): Promise<OctokitResponse<ReposListBranchesForHeadCommitResponse>>;
 
       endpoint: EndpointInterface;
     };
@@ -37769,9 +38046,9 @@ export type RestEndpointMethods = {
      * Team members will include the members of child teams.
      */
     listCollaborators: {
-      (
-        params?: RequestParameters & ReposListCollaboratorsParams
-      ): Promise<OctokitResponse<ReposListCollaboratorsResponse>>;
+      (params?: RequestParameters & ReposListCollaboratorsParams): Promise<
+        OctokitResponse<ReposListCollaboratorsResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -37783,10 +38060,9 @@ export type RestEndpointMethods = {
         params?: RequestParameters &
           ReposListCommentsForCommitParamsDeprecatedRef
       ): Promise<OctokitResponse<ReposListCommentsForCommitResponse>>;
-      (
-        params?: RequestParameters &
-          ReposListCommentsForCommitParams
-      ): Promise<OctokitResponse<ReposListCommentsForCommitResponse>>;
+      (params?: RequestParameters & ReposListCommentsForCommitParams): Promise<
+        OctokitResponse<ReposListCommentsForCommitResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -37796,9 +38072,9 @@ export type RestEndpointMethods = {
      * Comments are ordered by ascending ID.
      */
     listCommitComments: {
-      (
-        params?: RequestParameters & ReposListCommitCommentsParams
-      ): Promise<OctokitResponse<ReposListCommitCommentsResponse>>;
+      (params?: RequestParameters & ReposListCommitCommentsParams): Promise<
+        OctokitResponse<ReposListCommitCommentsResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -37826,9 +38102,9 @@ export type RestEndpointMethods = {
      * | `valid`                  | None of the above errors applied, so the signature is considered to be verified.                                                  |
      */
     listCommits: {
-      (
-        params?: RequestParameters & ReposListCommitsParams
-      ): Promise<OctokitResponse<ReposListCommitsResponse>>;
+      (params?: RequestParameters & ReposListCommitsParams): Promise<
+        OctokitResponse<ReposListCommitsResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -37838,17 +38114,17 @@ export type RestEndpointMethods = {
      * GitHub identifies contributors by author email address. This endpoint groups contribution counts by GitHub user, which includes all associated email addresses. To improve performance, only the first 500 author email addresses in the repository link to GitHub users. The rest will appear as anonymous contributors without associated GitHub user information.
      */
     listContributors: {
-      (
-        params?: RequestParameters & ReposListContributorsParams
-      ): Promise<OctokitResponse<ReposListContributorsResponse>>;
+      (params?: RequestParameters & ReposListContributorsParams): Promise<
+        OctokitResponse<ReposListContributorsResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
 
     listDeployKeys: {
-      (
-        params?: RequestParameters & ReposListDeployKeysParams
-      ): Promise<OctokitResponse<ReposListDeployKeysResponse>>;
+      (params?: RequestParameters & ReposListDeployKeysParams): Promise<
+        OctokitResponse<ReposListDeployKeysResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -37856,10 +38132,9 @@ export type RestEndpointMethods = {
      * Users with pull access can view deployment statuses for a deployment:
      */
     listDeploymentStatuses: {
-      (
-        params?: RequestParameters &
-          ReposListDeploymentStatusesParams
-      ): Promise<OctokitResponse<ReposListDeploymentStatusesResponse>>;
+      (params?: RequestParameters & ReposListDeploymentStatusesParams): Promise<
+        OctokitResponse<ReposListDeploymentStatusesResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -37867,17 +38142,17 @@ export type RestEndpointMethods = {
      * Simple filtering of deployments is available via query parameters:
      */
     listDeployments: {
-      (
-        params?: RequestParameters & ReposListDeploymentsParams
-      ): Promise<OctokitResponse<ReposListDeploymentsResponse>>;
+      (params?: RequestParameters & ReposListDeploymentsParams): Promise<
+        OctokitResponse<ReposListDeploymentsResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
 
     listDownloads: {
-      (
-        params?: RequestParameters & ReposListDownloadsParams
-      ): Promise<OctokitResponse<ReposListDownloadsResponse>>;
+      (params?: RequestParameters & ReposListDownloadsParams): Promise<
+        OctokitResponse<ReposListDownloadsResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -37885,9 +38160,9 @@ export type RestEndpointMethods = {
      * Lists repositories for the specified organization.
      */
     listForOrg: {
-      (
-        params?: RequestParameters & ReposListForOrgParams
-      ): Promise<OctokitResponse<ReposListForOrgResponse>>;
+      (params?: RequestParameters & ReposListForOrgParams): Promise<
+        OctokitResponse<ReposListForOrgResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -37895,9 +38170,9 @@ export type RestEndpointMethods = {
      * Lists public repositories for the specified user.
      */
     listForUser: {
-      (
-        params?: RequestParameters & ReposListForUserParams
-      ): Promise<AnyResponse>;
+      (params?: RequestParameters & ReposListForUserParams): Promise<
+        AnyResponse
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -37921,9 +38196,9 @@ export type RestEndpointMethods = {
      * When authenticating as a user with admin rights to a repository, this endpoint will list all currently open repository invitations.
      */
     listInvitations: {
-      (
-        params?: RequestParameters & ReposListInvitationsParams
-      ): Promise<OctokitResponse<ReposListInvitationsResponse>>;
+      (params?: RequestParameters & ReposListInvitationsParams): Promise<
+        OctokitResponse<ReposListInvitationsResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -37935,9 +38210,7 @@ export type RestEndpointMethods = {
         params?: RequestParameters &
           ReposListInvitationsForAuthenticatedUserParams
       ): Promise<
-        OctokitResponse<
-          ReposListInvitationsForAuthenticatedUserResponse
-        >
+        OctokitResponse<ReposListInvitationsForAuthenticatedUserResponse>
       >;
 
       endpoint: EndpointInterface;
@@ -37946,17 +38219,17 @@ export type RestEndpointMethods = {
      * Lists languages for the specified repository. The value shown for each language is the number of bytes of code written in that language.
      */
     listLanguages: {
-      (
-        params?: RequestParameters & ReposListLanguagesParams
-      ): Promise<OctokitResponse<ReposListLanguagesResponse>>;
+      (params?: RequestParameters & ReposListLanguagesParams): Promise<
+        OctokitResponse<ReposListLanguagesResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
 
     listPagesBuilds: {
-      (
-        params?: RequestParameters & ReposListPagesBuildsParams
-      ): Promise<OctokitResponse<ReposListPagesBuildsResponse>>;
+      (params?: RequestParameters & ReposListPagesBuildsParams): Promise<
+        OctokitResponse<ReposListPagesBuildsResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -37979,16 +38252,14 @@ export type RestEndpointMethods = {
      * Protected branches are available in public repositories with GitHub Free, and in public and private repositories with GitHub Pro, GitHub Team, and GitHub Enterprise Cloud. For more information, see [GitHub's products](https://help.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
      *
      * Lists the teams who have push access to this branch. The list includes child teams.
-     * @deprecated repos.listProtectedBranchTeamRestrictions() has been renamed to repos.getTeamsWithAccessToProtectedBranch() (2019-09-09)
+     * @deprecated octokit.repos.listProtectedBranchTeamRestrictions() has been renamed to octokit.repos.getTeamsWithAccessToProtectedBranch() (2019-09-09)
      */
     listProtectedBranchTeamRestrictions: {
       (
         params?: RequestParameters &
           ReposListProtectedBranchTeamRestrictionsParams
       ): Promise<
-        OctokitResponse<
-          ReposListProtectedBranchTeamRestrictionsResponse
-        >
+        OctokitResponse<ReposListProtectedBranchTeamRestrictionsResponse>
       >;
 
       endpoint: EndpointInterface;
@@ -37997,16 +38268,14 @@ export type RestEndpointMethods = {
      * Protected branches are available in public repositories with GitHub Free, and in public and private repositories with GitHub Pro, GitHub Team, and GitHub Enterprise Cloud. For more information, see [GitHub's products](https://help.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
      *
      * Lists the people who have push access to this branch.
-     * @deprecated repos.listProtectedBranchUserRestrictions() has been renamed to repos.getUsersWithAccessToProtectedBranch() (2019-09-09)
+     * @deprecated octokit.repos.listProtectedBranchUserRestrictions() has been renamed to octokit.repos.getUsersWithAccessToProtectedBranch() (2019-09-09)
      */
     listProtectedBranchUserRestrictions: {
       (
         params?: RequestParameters &
           ReposListProtectedBranchUserRestrictionsParams
       ): Promise<
-        OctokitResponse<
-          ReposListProtectedBranchUserRestrictionsResponse
-        >
+        OctokitResponse<ReposListProtectedBranchUserRestrictionsResponse>
       >;
 
       endpoint: EndpointInterface;
@@ -38017,9 +38286,9 @@ export type RestEndpointMethods = {
      * Note: Pagination is powered exclusively by the `since` parameter. Use the [Link header](https://developer.github.com/v3/#link-header) to get the URL for the next page of repositories.
      */
     listPublic: {
-      (
-        params?: RequestParameters & ReposListPublicParams
-      ): Promise<OctokitResponse<ReposListPublicResponse>>;
+      (params?: RequestParameters & ReposListPublicParams): Promise<
+        OctokitResponse<ReposListPublicResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -38031,9 +38300,7 @@ export type RestEndpointMethods = {
         params?: RequestParameters &
           ReposListPullRequestsAssociatedWithCommitParams
       ): Promise<
-        OctokitResponse<
-          ReposListPullRequestsAssociatedWithCommitResponse
-        >
+        OctokitResponse<ReposListPullRequestsAssociatedWithCommitResponse>
       >;
 
       endpoint: EndpointInterface;
@@ -38044,9 +38311,9 @@ export type RestEndpointMethods = {
      * Information about published releases are available to everyone. Only users with push access will receive listings for draft releases.
      */
     listReleases: {
-      (
-        params?: RequestParameters & ReposListReleasesParams
-      ): Promise<OctokitResponse<ReposListReleasesResponse>>;
+      (params?: RequestParameters & ReposListReleasesParams): Promise<
+        OctokitResponse<ReposListReleasesResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -38056,9 +38323,9 @@ export type RestEndpointMethods = {
      * This resource is also available via a legacy route: `GET /repos/:owner/:repo/statuses/:ref`.
      */
     listStatusesForRef: {
-      (
-        params?: RequestParameters & ReposListStatusesForRefParams
-      ): Promise<OctokitResponse<ReposListStatusesForRefResponse>>;
+      (params?: RequestParameters & ReposListStatusesForRefParams): Promise<
+        OctokitResponse<ReposListStatusesForRefResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -38082,25 +38349,23 @@ export type RestEndpointMethods = {
      * Protected branches are available in public repositories with GitHub Free, and in public and private repositories with GitHub Pro, GitHub Team, and GitHub Enterprise Cloud. For more information, see [GitHub's products](https://help.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
      *
      * Lists the teams who have push access to this branch. The list includes child teams.
-     * @deprecated repos.listTeamsWithAccessToProtectedBranch() has been renamed to repos.getTeamsWithAccessToProtectedBranch() (2019-09-13)
+     * @deprecated octokit.repos.listTeamsWithAccessToProtectedBranch() has been renamed to octokit.repos.getTeamsWithAccessToProtectedBranch() (2019-09-13)
      */
     listTeamsWithAccessToProtectedBranch: {
       (
         params?: RequestParameters &
           ReposListTeamsWithAccessToProtectedBranchParams
       ): Promise<
-        OctokitResponse<
-          ReposListTeamsWithAccessToProtectedBranchResponse
-        >
+        OctokitResponse<ReposListTeamsWithAccessToProtectedBranchResponse>
       >;
 
       endpoint: EndpointInterface;
     };
 
     listTopics: {
-      (
-        params?: RequestParameters & ReposListTopicsParams
-      ): Promise<OctokitResponse<ReposListTopicsResponse>>;
+      (params?: RequestParameters & ReposListTopicsParams): Promise<
+        OctokitResponse<ReposListTopicsResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -38108,16 +38373,14 @@ export type RestEndpointMethods = {
      * Protected branches are available in public repositories with GitHub Free, and in public and private repositories with GitHub Pro, GitHub Team, and GitHub Enterprise Cloud. For more information, see [GitHub's products](https://help.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
      *
      * Lists the people who have push access to this branch.
-     * @deprecated repos.listUsersWithAccessToProtectedBranch() has been renamed to repos.getUsersWithAccessToProtectedBranch() (2019-09-13)
+     * @deprecated octokit.repos.listUsersWithAccessToProtectedBranch() has been renamed to octokit.repos.getUsersWithAccessToProtectedBranch() (2019-09-13)
      */
     listUsersWithAccessToProtectedBranch: {
       (
         params?: RequestParameters &
           ReposListUsersWithAccessToProtectedBranchParams
       ): Promise<
-        OctokitResponse<
-          ReposListUsersWithAccessToProtectedBranchResponse
-        >
+        OctokitResponse<ReposListUsersWithAccessToProtectedBranchResponse>
       >;
 
       endpoint: EndpointInterface;
@@ -38134,9 +38397,7 @@ export type RestEndpointMethods = {
      * This will trigger a [ping event](https://developer.github.com/webhooks/#ping-event) to be sent to the hook.
      */
     pingHook: {
-      (params?: RequestParameters & ReposPingHookParams): Promise<
-        AnyResponse
-      >;
+      (params?: RequestParameters & ReposPingHookParams): Promise<AnyResponse>;
 
       endpoint: EndpointInterface;
     };
@@ -38144,26 +38405,25 @@ export type RestEndpointMethods = {
      * Protected branches are available in public repositories with GitHub Free, and in public and private repositories with GitHub Pro, GitHub Team, and GitHub Enterprise Cloud. For more information, see [GitHub's products](https://help.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
      */
     removeBranchProtection: {
-      (
-        params?: RequestParameters &
-          ReposRemoveBranchProtectionParams
-      ): Promise<AnyResponse>;
+      (params?: RequestParameters & ReposRemoveBranchProtectionParams): Promise<
+        AnyResponse
+      >;
 
       endpoint: EndpointInterface;
     };
 
     removeCollaborator: {
-      (
-        params?: RequestParameters & ReposRemoveCollaboratorParams
-      ): Promise<AnyResponse>;
+      (params?: RequestParameters & ReposRemoveCollaboratorParams): Promise<
+        AnyResponse
+      >;
 
       endpoint: EndpointInterface;
     };
 
     removeDeployKey: {
-      (
-        params?: RequestParameters & ReposRemoveDeployKeyParams
-      ): Promise<AnyResponse>;
+      (params?: RequestParameters & ReposRemoveDeployKeyParams): Promise<
+        AnyResponse
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -38194,9 +38454,7 @@ export type RestEndpointMethods = {
         params?: RequestParameters &
           ReposRemoveProtectedBranchAppRestrictionsParams
       ): Promise<
-        OctokitResponse<
-          ReposRemoveProtectedBranchAppRestrictionsResponse
-        >
+        OctokitResponse<ReposRemoveProtectedBranchAppRestrictionsResponse>
       >;
 
       endpoint: EndpointInterface;
@@ -38278,9 +38536,7 @@ export type RestEndpointMethods = {
         params?: RequestParameters &
           ReposRemoveProtectedBranchTeamRestrictionsParams
       ): Promise<
-        OctokitResponse<
-          ReposRemoveProtectedBranchTeamRestrictionsResponse
-        >
+        OctokitResponse<ReposRemoveProtectedBranchTeamRestrictionsResponse>
       >;
 
       endpoint: EndpointInterface;
@@ -38299,9 +38555,7 @@ export type RestEndpointMethods = {
         params?: RequestParameters &
           ReposRemoveProtectedBranchUserRestrictionsParams
       ): Promise<
-        OctokitResponse<
-          ReposRemoveProtectedBranchUserRestrictionsResponse
-        >
+        OctokitResponse<ReposRemoveProtectedBranchUserRestrictionsResponse>
       >;
 
       endpoint: EndpointInterface;
@@ -38320,9 +38574,7 @@ export type RestEndpointMethods = {
         params?: RequestParameters &
           ReposReplaceProtectedBranchAppRestrictionsParams
       ): Promise<
-        OctokitResponse<
-          ReposReplaceProtectedBranchAppRestrictionsResponse
-        >
+        OctokitResponse<ReposReplaceProtectedBranchAppRestrictionsResponse>
       >;
 
       endpoint: EndpointInterface;
@@ -38356,9 +38608,7 @@ export type RestEndpointMethods = {
         params?: RequestParameters &
           ReposReplaceProtectedBranchTeamRestrictionsParams
       ): Promise<
-        OctokitResponse<
-          ReposReplaceProtectedBranchTeamRestrictionsResponse
-        >
+        OctokitResponse<ReposReplaceProtectedBranchTeamRestrictionsResponse>
       >;
 
       endpoint: EndpointInterface;
@@ -38377,18 +38627,16 @@ export type RestEndpointMethods = {
         params?: RequestParameters &
           ReposReplaceProtectedBranchUserRestrictionsParams
       ): Promise<
-        OctokitResponse<
-          ReposReplaceProtectedBranchUserRestrictionsResponse
-        >
+        OctokitResponse<ReposReplaceProtectedBranchUserRestrictionsResponse>
       >;
 
       endpoint: EndpointInterface;
     };
 
     replaceTopics: {
-      (
-        params?: RequestParameters & ReposReplaceTopicsParams
-      ): Promise<OctokitResponse<ReposReplaceTopicsResponse>>;
+      (params?: RequestParameters & ReposReplaceTopicsParams): Promise<
+        OctokitResponse<ReposReplaceTopicsResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -38398,9 +38646,9 @@ export type RestEndpointMethods = {
      * Build requests are limited to one concurrent build per repository and one concurrent build per requester. If you request a build while another is still in progress, the second request will be queued until the first completes.
      */
     requestPageBuild: {
-      (
-        params?: RequestParameters & ReposRequestPageBuildParams
-      ): Promise<OctokitResponse<ReposRequestPageBuildResponse>>;
+      (params?: RequestParameters & ReposRequestPageBuildParams): Promise<
+        OctokitResponse<ReposRequestPageBuildResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -38409,11 +38657,8 @@ export type RestEndpointMethods = {
      */
     retrieveCommunityProfileMetrics: {
       (
-        params?: RequestParameters &
-          ReposRetrieveCommunityProfileMetricsParams
-      ): Promise<
-        OctokitResponse<ReposRetrieveCommunityProfileMetricsResponse>
-      >;
+        params?: RequestParameters & ReposRetrieveCommunityProfileMetricsParams
+      ): Promise<OctokitResponse<ReposRetrieveCommunityProfileMetricsResponse>>;
 
       endpoint: EndpointInterface;
     };
@@ -38423,9 +38668,9 @@ export type RestEndpointMethods = {
      * **Note**: Previously `/repos/:owner/:repo/hooks/:hook_id/test`
      */
     testPushHook: {
-      (
-        params?: RequestParameters & ReposTestPushHookParams
-      ): Promise<AnyResponse>;
+      (params?: RequestParameters & ReposTestPushHookParams): Promise<
+        AnyResponse
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -38459,54 +38704,52 @@ export type RestEndpointMethods = {
      * **Note**: The list of users, apps, and teams in total is limited to 100 items.
      */
     updateBranchProtection: {
-      (
-        params?: RequestParameters &
-          ReposUpdateBranchProtectionParams
-      ): Promise<OctokitResponse<ReposUpdateBranchProtectionResponse>>;
+      (params?: RequestParameters & ReposUpdateBranchProtectionParams): Promise<
+        OctokitResponse<ReposUpdateBranchProtectionResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
 
     updateCommitComment: {
-      (
-        params?: RequestParameters & ReposUpdateCommitCommentParams
-      ): Promise<OctokitResponse<ReposUpdateCommitCommentResponse>>;
+      (params?: RequestParameters & ReposUpdateCommitCommentParams): Promise<
+        OctokitResponse<ReposUpdateCommitCommentResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
     /**
      * Creates a new file or updates an existing file in a repository.
-     * @deprecated repos.updateFile() has been renamed to repos.createOrUpdateFile() (2019-06-07)
+     * @deprecated octokit.repos.updateFile() has been renamed to octokit.repos.createOrUpdateFile() (2019-06-07)
      */
     updateFile: {
-      (
-        params?: RequestParameters & ReposUpdateFileParams
-      ): Promise<OctokitResponse<ReposUpdateFileResponse>>;
+      (params?: RequestParameters & ReposUpdateFileParams): Promise<
+        OctokitResponse<ReposUpdateFileResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
 
     updateHook: {
-      (
-        params?: RequestParameters & ReposUpdateHookParams
-      ): Promise<OctokitResponse<ReposUpdateHookResponse>>;
+      (params?: RequestParameters & ReposUpdateHookParams): Promise<
+        OctokitResponse<ReposUpdateHookResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
 
     updateInformationAboutPagesSite: {
       (
-        params?: RequestParameters &
-          ReposUpdateInformationAboutPagesSiteParams
+        params?: RequestParameters & ReposUpdateInformationAboutPagesSiteParams
       ): Promise<AnyResponse>;
 
       endpoint: EndpointInterface;
     };
 
     updateInvitation: {
-      (
-        params?: RequestParameters & ReposUpdateInvitationParams
-      ): Promise<OctokitResponse<ReposUpdateInvitationResponse>>;
+      (params?: RequestParameters & ReposUpdateInvitationParams): Promise<
+        OctokitResponse<ReposUpdateInvitationResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -38539,9 +38782,7 @@ export type RestEndpointMethods = {
         params?: RequestParameters &
           ReposUpdateProtectedBranchRequiredStatusChecksParams
       ): Promise<
-        OctokitResponse<
-          ReposUpdateProtectedBranchRequiredStatusChecksResponse
-        >
+        OctokitResponse<ReposUpdateProtectedBranchRequiredStatusChecksResponse>
       >;
 
       endpoint: EndpointInterface;
@@ -38550,9 +38791,9 @@ export type RestEndpointMethods = {
      * Users with push access to the repository can edit a release.
      */
     updateRelease: {
-      (
-        params?: RequestParameters & ReposUpdateReleaseParams
-      ): Promise<OctokitResponse<ReposUpdateReleaseResponse>>;
+      (params?: RequestParameters & ReposUpdateReleaseParams): Promise<
+        OctokitResponse<ReposUpdateReleaseResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -38560,9 +38801,9 @@ export type RestEndpointMethods = {
      * Users with push access to the repository can edit a release asset.
      */
     updateReleaseAsset: {
-      (
-        params?: RequestParameters & ReposUpdateReleaseAssetParams
-      ): Promise<OctokitResponse<ReposUpdateReleaseAssetResponse>>;
+      (params?: RequestParameters & ReposUpdateReleaseAssetParams): Promise<
+        OctokitResponse<ReposUpdateReleaseAssetResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -38578,9 +38819,9 @@ export type RestEndpointMethods = {
      * GitHub expects the asset data in its raw binary form, rather than JSON. You will send the raw binary content of the asset as the request body. Everything else about the endpoint is the same as the rest of the API. For example, you'll still need to pass your authentication to be able to upload an asset.
      */
     uploadReleaseAsset: {
-      (
-        params?: RequestParameters & ReposUploadReleaseAssetParams
-      ): Promise<OctokitResponse<ReposUploadReleaseAssetResponse>>;
+      (params?: RequestParameters & ReposUploadReleaseAssetParams): Promise<
+        OctokitResponse<ReposUploadReleaseAssetResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -38632,12 +38873,12 @@ export type RestEndpointMethods = {
     };
     /**
      * This API call is added for compatibility reasons only. There's no guarantee that full email searches will always be available. The `@` character in the address must be left unencoded. Searches only against public email addresses (as configured on the user's GitHub profile).
-     * @deprecated search.emailLegacy() is deprecated, see https://developer.github.com/v3/search/legacy/#email-search
+     * @deprecated octokit.search.emailLegacy() is deprecated, see https://developer.github.com/v3/search/legacy/#email-search
      */
     emailLegacy: {
-      (
-        params?: RequestParameters & SearchEmailLegacyParams
-      ): Promise<OctokitResponse<SearchEmailLegacyResponse>>;
+      (params?: RequestParameters & SearchEmailLegacyParams): Promise<
+        OctokitResponse<SearchEmailLegacyResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -38649,7 +38890,7 @@ export type RestEndpointMethods = {
      * Let's say you want to find the oldest unresolved Python bugs on Windows. Your query might look something like this.
      *
      * In this query, we're searching for the keyword `windows`, within any open issue that's labeled as `bug`. The search runs across repositories whose primary language is Python. We’re sorting by creation date in ascending order, so that the oldest issues appear first in the search results.
-     * @deprecated search.issues() has been renamed to search.issuesAndPullRequests() (2018-12-27)
+     * @deprecated octokit.search.issues() has been renamed to octokit.search.issuesAndPullRequests() (2018-12-27)
      */
     issues: {
       (params?: RequestParameters & SearchIssuesParams): Promise<
@@ -38668,21 +38909,20 @@ export type RestEndpointMethods = {
      * In this query, we're searching for the keyword `windows`, within any open issue that's labeled as `bug`. The search runs across repositories whose primary language is Python. We’re sorting by creation date in ascending order, so that the oldest issues appear first in the search results.
      */
     issuesAndPullRequests: {
-      (
-        params?: RequestParameters &
-          SearchIssuesAndPullRequestsParams
-      ): Promise<OctokitResponse<SearchIssuesAndPullRequestsResponse>>;
+      (params?: RequestParameters & SearchIssuesAndPullRequestsParams): Promise<
+        OctokitResponse<SearchIssuesAndPullRequestsResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
     /**
      * Find issues by state and keyword.
-     * @deprecated search.issuesLegacy() is deprecated, see https://developer.github.com/v3/search/legacy/#search-issues
+     * @deprecated octokit.search.issuesLegacy() is deprecated, see https://developer.github.com/v3/search/legacy/#search-issues
      */
     issuesLegacy: {
-      (
-        params?: RequestParameters & SearchIssuesLegacyParams
-      ): Promise<OctokitResponse<SearchIssuesLegacyResponse>>;
+      (params?: RequestParameters & SearchIssuesLegacyParams): Promise<
+        OctokitResponse<SearchIssuesLegacyResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -38722,12 +38962,12 @@ export type RestEndpointMethods = {
     };
     /**
      * Find repositories by keyword. Note, this legacy method does not follow the v3 pagination pattern. This method returns up to 100 results per page and pages can be fetched using the `start_page` parameter.
-     * @deprecated search.reposLegacy() is deprecated, see https://developer.github.com/v3/search/legacy/#search-repositories
+     * @deprecated octokit.search.reposLegacy() is deprecated, see https://developer.github.com/v3/search/legacy/#search-repositories
      */
     reposLegacy: {
-      (
-        params?: RequestParameters & SearchReposLegacyParams
-      ): Promise<OctokitResponse<SearchReposLegacyResponse>>;
+      (params?: RequestParameters & SearchReposLegacyParams): Promise<
+        OctokitResponse<SearchReposLegacyResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -38769,12 +39009,12 @@ export type RestEndpointMethods = {
     };
     /**
      * Find users by keyword.
-     * @deprecated search.usersLegacy() is deprecated, see https://developer.github.com/v3/search/legacy/#search-users
+     * @deprecated octokit.search.usersLegacy() is deprecated, see https://developer.github.com/v3/search/legacy/#search-users
      */
     usersLegacy: {
-      (
-        params?: RequestParameters & SearchUsersLegacyParams
-      ): Promise<OctokitResponse<SearchUsersLegacyResponse>>;
+      (params?: RequestParameters & SearchUsersLegacyParams): Promise<
+        OctokitResponse<SearchUsersLegacyResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -38792,7 +39032,7 @@ export type RestEndpointMethods = {
      * **Note:** When you have team synchronization set up for a team with your organization's identity provider (IdP), you will see an error if you attempt to use the API for making changes to the team's membership. If you have access to manage group membership in your IdP, you can manage GitHub team membership through your identity provider, which automatically adds and removes team members in an organization. For more information, see "[Synchronizing teams between your identity provider and GitHub](https://help.github.com/articles/synchronizing-teams-between-your-identity-provider-and-github/)."
      *
      * Note that you'll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see "[HTTP verbs](https://developer.github.com/v3/#http-verbs)."
-     * @deprecated teams.addMember() is deprecated, see https://developer.github.com/v3/teams/members/#add-team-member-legacy
+     * @deprecated octokit.teams.addMember() is deprecated, see https://developer.github.com/v3/teams/members/#add-team-member-legacy
      */
     addMember: {
       (params?: RequestParameters & TeamsAddMemberParams): Promise<
@@ -38813,12 +39053,12 @@ export type RestEndpointMethods = {
      * **Note:** When you have team synchronization set up for a team with your organization's identity provider (IdP), you will see an error if you attempt to use the API for making changes to the team's membership. If you have access to manage group membership in your IdP, you can manage GitHub team membership through your identity provider, which automatically adds and removes team members in an organization. For more information, see "[Synchronizing teams between your identity provider and GitHub](https://help.github.com/articles/synchronizing-teams-between-your-identity-provider-and-github/)."
      *
      * Note that you'll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see "[HTTP verbs](https://developer.github.com/v3/#http-verbs)."
-     * @deprecated teams.addMemberLegacy() is deprecated, see https://developer.github.com/v3/teams/members/#add-team-member-legacy
+     * @deprecated octokit.teams.addMemberLegacy() is deprecated, see https://developer.github.com/v3/teams/members/#add-team-member-legacy
      */
     addMemberLegacy: {
-      (
-        params?: RequestParameters & TeamsAddMemberLegacyParams
-      ): Promise<OctokitResponse<TeamsAddMemberLegacyResponse>>;
+      (params?: RequestParameters & TeamsAddMemberLegacyParams): Promise<
+        OctokitResponse<TeamsAddMemberLegacyResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -38834,13 +39074,12 @@ export type RestEndpointMethods = {
      * If the user is unaffiliated with the team's organization, this endpoint will send an invitation to the user via email. This newly-created membership will be in the "pending" state until the user accepts the invitation, at which point the membership will transition to the "active" state and the user will be added as a member of the team. To add a membership between an unaffiliated user and a team, the authenticated user must be an organization owner.
      *
      * If the user is already a member of the team, this endpoint will update the role of the team member's role. To update the membership of a team member, the authenticated user must be an organization owner or a team maintainer.
-     * @deprecated teams.addOrUpdateMembership() is deprecated, see https://developer.github.com/v3/teams/members/#add-or-update-team-membership-legacy
+     * @deprecated octokit.teams.addOrUpdateMembership() is deprecated, see https://developer.github.com/v3/teams/members/#add-or-update-team-membership-legacy
      */
     addOrUpdateMembership: {
-      (
-        params?: RequestParameters &
-          TeamsAddOrUpdateMembershipParams
-      ): Promise<OctokitResponse<TeamsAddOrUpdateMembershipResponse>>;
+      (params?: RequestParameters & TeamsAddOrUpdateMembershipParams): Promise<
+        OctokitResponse<TeamsAddOrUpdateMembershipResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -38859,11 +39098,8 @@ export type RestEndpointMethods = {
      */
     addOrUpdateMembershipInOrg: {
       (
-        params?: RequestParameters &
-          TeamsAddOrUpdateMembershipInOrgParams
-      ): Promise<
-        OctokitResponse<TeamsAddOrUpdateMembershipInOrgResponse>
-      >;
+        params?: RequestParameters & TeamsAddOrUpdateMembershipInOrgParams
+      ): Promise<OctokitResponse<TeamsAddOrUpdateMembershipInOrgResponse>>;
 
       endpoint: EndpointInterface;
     };
@@ -38879,15 +39115,12 @@ export type RestEndpointMethods = {
      * If the user is unaffiliated with the team's organization, this endpoint will send an invitation to the user via email. This newly-created membership will be in the "pending" state until the user accepts the invitation, at which point the membership will transition to the "active" state and the user will be added as a member of the team. To add a membership between an unaffiliated user and a team, the authenticated user must be an organization owner.
      *
      * If the user is already a member of the team, this endpoint will update the role of the team member's role. To update the membership of a team member, the authenticated user must be an organization owner or a team maintainer.
-     * @deprecated teams.addOrUpdateMembershipLegacy() is deprecated, see https://developer.github.com/v3/teams/members/#add-or-update-team-membership-legacy
+     * @deprecated octokit.teams.addOrUpdateMembershipLegacy() is deprecated, see https://developer.github.com/v3/teams/members/#add-or-update-team-membership-legacy
      */
     addOrUpdateMembershipLegacy: {
       (
-        params?: RequestParameters &
-          TeamsAddOrUpdateMembershipLegacyParams
-      ): Promise<
-        OctokitResponse<TeamsAddOrUpdateMembershipLegacyResponse>
-      >;
+        params?: RequestParameters & TeamsAddOrUpdateMembershipLegacyParams
+      ): Promise<OctokitResponse<TeamsAddOrUpdateMembershipLegacyResponse>>;
 
       endpoint: EndpointInterface;
     };
@@ -38895,12 +39128,12 @@ export type RestEndpointMethods = {
      * **Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [`Add or update team project`](https://developer.github.com/v3/teams/#add-or-update-team-project) endpoint.
      *
      * Adds an organization project to a team. To add a project to a team or update the team's permission on a project, the authenticated user must have `admin` permissions for the project. The project and team must be part of the same organization.
-     * @deprecated teams.addOrUpdateProject() is deprecated, see https://developer.github.com/v3/teams/#add-or-update-team-project-legacy
+     * @deprecated octokit.teams.addOrUpdateProject() is deprecated, see https://developer.github.com/v3/teams/#add-or-update-team-project-legacy
      */
     addOrUpdateProject: {
-      (
-        params?: RequestParameters & TeamsAddOrUpdateProjectParams
-      ): Promise<OctokitResponse<TeamsAddOrUpdateProjectResponse>>;
+      (params?: RequestParameters & TeamsAddOrUpdateProjectParams): Promise<
+        OctokitResponse<TeamsAddOrUpdateProjectResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -38911,11 +39144,8 @@ export type RestEndpointMethods = {
      */
     addOrUpdateProjectInOrg: {
       (
-        params?: RequestParameters &
-          TeamsAddOrUpdateProjectInOrgParams
-      ): Promise<
-        OctokitResponse<TeamsAddOrUpdateProjectInOrgResponse>
-      >;
+        params?: RequestParameters & TeamsAddOrUpdateProjectInOrgParams
+      ): Promise<OctokitResponse<TeamsAddOrUpdateProjectInOrgResponse>>;
 
       endpoint: EndpointInterface;
     };
@@ -38923,15 +39153,12 @@ export type RestEndpointMethods = {
      * **Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [`Add or update team project`](https://developer.github.com/v3/teams/#add-or-update-team-project) endpoint.
      *
      * Adds an organization project to a team. To add a project to a team or update the team's permission on a project, the authenticated user must have `admin` permissions for the project. The project and team must be part of the same organization.
-     * @deprecated teams.addOrUpdateProjectLegacy() is deprecated, see https://developer.github.com/v3/teams/#add-or-update-team-project-legacy
+     * @deprecated octokit.teams.addOrUpdateProjectLegacy() is deprecated, see https://developer.github.com/v3/teams/#add-or-update-team-project-legacy
      */
     addOrUpdateProjectLegacy: {
       (
-        params?: RequestParameters &
-          TeamsAddOrUpdateProjectLegacyParams
-      ): Promise<
-        OctokitResponse<TeamsAddOrUpdateProjectLegacyResponse>
-      >;
+        params?: RequestParameters & TeamsAddOrUpdateProjectLegacyParams
+      ): Promise<OctokitResponse<TeamsAddOrUpdateProjectLegacyResponse>>;
 
       endpoint: EndpointInterface;
     };
@@ -38941,12 +39168,12 @@ export type RestEndpointMethods = {
      * To add a repository to a team or update the team's permission on a repository, the authenticated user must have admin access to the repository, and must be able to see the team. The repository must be owned by the organization, or a direct fork of a repository owned by the organization. You will get a `422 Unprocessable Entity` status if you attempt to add a repository to a team that is not owned by the organization.
      *
      * Note that, if you choose not to pass any parameters, you'll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see "[HTTP verbs](https://developer.github.com/v3/#http-verbs)."
-     * @deprecated teams.addOrUpdateRepo() is deprecated, see https://developer.github.com/v3/teams/#add-or-update-team-repository-legacy
+     * @deprecated octokit.teams.addOrUpdateRepo() is deprecated, see https://developer.github.com/v3/teams/#add-or-update-team-repository-legacy
      */
     addOrUpdateRepo: {
-      (
-        params?: RequestParameters & TeamsAddOrUpdateRepoParams
-      ): Promise<AnyResponse>;
+      (params?: RequestParameters & TeamsAddOrUpdateRepoParams): Promise<
+        AnyResponse
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -38956,10 +39183,9 @@ export type RestEndpointMethods = {
      * **Note:** You can also specify a team by `org_id` and `team_id` using the route `PUT /organizations/:org_id/team/:team_id/repos/:owner/:repo`.
      */
     addOrUpdateRepoInOrg: {
-      (
-        params?: RequestParameters &
-          TeamsAddOrUpdateRepoInOrgParams
-      ): Promise<AnyResponse>;
+      (params?: RequestParameters & TeamsAddOrUpdateRepoInOrgParams): Promise<
+        AnyResponse
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -38969,13 +39195,12 @@ export type RestEndpointMethods = {
      * To add a repository to a team or update the team's permission on a repository, the authenticated user must have admin access to the repository, and must be able to see the team. The repository must be owned by the organization, or a direct fork of a repository owned by the organization. You will get a `422 Unprocessable Entity` status if you attempt to add a repository to a team that is not owned by the organization.
      *
      * Note that, if you choose not to pass any parameters, you'll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see "[HTTP verbs](https://developer.github.com/v3/#http-verbs)."
-     * @deprecated teams.addOrUpdateRepoLegacy() is deprecated, see https://developer.github.com/v3/teams/#add-or-update-team-repository-legacy
+     * @deprecated octokit.teams.addOrUpdateRepoLegacy() is deprecated, see https://developer.github.com/v3/teams/#add-or-update-team-repository-legacy
      */
     addOrUpdateRepoLegacy: {
-      (
-        params?: RequestParameters &
-          TeamsAddOrUpdateRepoLegacyParams
-      ): Promise<AnyResponse>;
+      (params?: RequestParameters & TeamsAddOrUpdateRepoLegacyParams): Promise<
+        AnyResponse
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -38985,12 +39210,12 @@ export type RestEndpointMethods = {
      * **Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [`Check if a team manages a repository`](https://developer.github.com/v3/teams/#check-if-a-team-manages-a-repository) endpoint.
      *
      * You can also get information about the specified repository, including what permissions the team grants on it, by passing the following custom [media type](https://developer.github.com/v3/media/) via the `Accept` header:
-     * @deprecated teams.checkManagesRepo() is deprecated, see https://developer.github.com/v3/teams/#check-if-a-team-manages-a-repository-legacy
+     * @deprecated octokit.teams.checkManagesRepo() is deprecated, see https://developer.github.com/v3/teams/#check-if-a-team-manages-a-repository-legacy
      */
     checkManagesRepo: {
-      (
-        params?: RequestParameters & TeamsCheckManagesRepoParams
-      ): Promise<OctokitResponse<TeamsCheckManagesRepoResponse>>;
+      (params?: RequestParameters & TeamsCheckManagesRepoParams): Promise<
+        OctokitResponse<TeamsCheckManagesRepoResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -39002,10 +39227,9 @@ export type RestEndpointMethods = {
      * You can also get information about the specified repository, including what permissions the team grants on it, by passing the following custom [media type](https://developer.github.com/v3/media/) via the `Accept` header:
      */
     checkManagesRepoInOrg: {
-      (
-        params?: RequestParameters &
-          TeamsCheckManagesRepoInOrgParams
-      ): Promise<OctokitResponse<TeamsCheckManagesRepoInOrgResponse>>;
+      (params?: RequestParameters & TeamsCheckManagesRepoInOrgParams): Promise<
+        OctokitResponse<TeamsCheckManagesRepoInOrgResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -39015,13 +39239,12 @@ export type RestEndpointMethods = {
      * **Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [`Check if a team manages a repository`](https://developer.github.com/v3/teams/#check-if-a-team-manages-a-repository) endpoint.
      *
      * You can also get information about the specified repository, including what permissions the team grants on it, by passing the following custom [media type](https://developer.github.com/v3/media/) via the `Accept` header:
-     * @deprecated teams.checkManagesRepoLegacy() is deprecated, see https://developer.github.com/v3/teams/#check-if-a-team-manages-a-repository-legacy
+     * @deprecated octokit.teams.checkManagesRepoLegacy() is deprecated, see https://developer.github.com/v3/teams/#check-if-a-team-manages-a-repository-legacy
      */
     checkManagesRepoLegacy: {
-      (
-        params?: RequestParameters &
-          TeamsCheckManagesRepoLegacyParams
-      ): Promise<OctokitResponse<TeamsCheckManagesRepoLegacyResponse>>;
+      (params?: RequestParameters & TeamsCheckManagesRepoLegacyParams): Promise<
+        OctokitResponse<TeamsCheckManagesRepoLegacyResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -39032,8 +39255,7 @@ export type RestEndpointMethods = {
      */
     create: {
       (
-        params?: RequestParameters &
-          TeamsCreateParamsDeprecatedPermission
+        params?: RequestParameters & TeamsCreateParamsDeprecatedPermission
       ): Promise<OctokitResponse<TeamsCreateResponse>>;
       (params?: RequestParameters & TeamsCreateParams): Promise<
         OctokitResponse<TeamsCreateResponse>
@@ -39047,12 +39269,12 @@ export type RestEndpointMethods = {
      * Creates a new discussion post on a team's page. OAuth access tokens require the `write:discussion` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
      *
      * This endpoint triggers [notifications](https://help.github.com/articles/about-notifications/). Creating content too quickly using this endpoint may result in abuse rate limiting. See "[Abuse rate limits](https://developer.github.com/v3/#abuse-rate-limits)" and "[Dealing with abuse rate limits](https://developer.github.com/v3/guides/best-practices-for-integrators/#dealing-with-abuse-rate-limits)" for details.
-     * @deprecated teams.createDiscussion() is deprecated, see https://developer.github.com/v3/teams/discussions/#create-a-discussion-legacy
+     * @deprecated octokit.teams.createDiscussion() is deprecated, see https://developer.github.com/v3/teams/discussions/#create-a-discussion-legacy
      */
     createDiscussion: {
-      (
-        params?: RequestParameters & TeamsCreateDiscussionParams
-      ): Promise<OctokitResponse<TeamsCreateDiscussionResponse>>;
+      (params?: RequestParameters & TeamsCreateDiscussionParams): Promise<
+        OctokitResponse<TeamsCreateDiscussionResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -39062,15 +39284,12 @@ export type RestEndpointMethods = {
      * Creates a new comment on a team discussion. OAuth access tokens require the `write:discussion` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
      *
      * This endpoint triggers [notifications](https://help.github.com/articles/about-notifications/). Creating content too quickly using this endpoint may result in abuse rate limiting. See "[Abuse rate limits](https://developer.github.com/v3/#abuse-rate-limits)" and "[Dealing with abuse rate limits](https://developer.github.com/v3/guides/best-practices-for-integrators/#dealing-with-abuse-rate-limits)" for details.
-     * @deprecated teams.createDiscussionComment() is deprecated, see https://developer.github.com/v3/teams/discussion_comments/#create-a-comment-legacy
+     * @deprecated octokit.teams.createDiscussionComment() is deprecated, see https://developer.github.com/v3/teams/discussion_comments/#create-a-comment-legacy
      */
     createDiscussionComment: {
       (
-        params?: RequestParameters &
-          TeamsCreateDiscussionCommentParams
-      ): Promise<
-        OctokitResponse<TeamsCreateDiscussionCommentResponse>
-      >;
+        params?: RequestParameters & TeamsCreateDiscussionCommentParams
+      ): Promise<OctokitResponse<TeamsCreateDiscussionCommentResponse>>;
 
       endpoint: EndpointInterface;
     };
@@ -39083,11 +39302,8 @@ export type RestEndpointMethods = {
      */
     createDiscussionCommentInOrg: {
       (
-        params?: RequestParameters &
-          TeamsCreateDiscussionCommentInOrgParams
-      ): Promise<
-        OctokitResponse<TeamsCreateDiscussionCommentInOrgResponse>
-      >;
+        params?: RequestParameters & TeamsCreateDiscussionCommentInOrgParams
+      ): Promise<OctokitResponse<TeamsCreateDiscussionCommentInOrgResponse>>;
 
       endpoint: EndpointInterface;
     };
@@ -39097,15 +39313,12 @@ export type RestEndpointMethods = {
      * Creates a new comment on a team discussion. OAuth access tokens require the `write:discussion` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
      *
      * This endpoint triggers [notifications](https://help.github.com/articles/about-notifications/). Creating content too quickly using this endpoint may result in abuse rate limiting. See "[Abuse rate limits](https://developer.github.com/v3/#abuse-rate-limits)" and "[Dealing with abuse rate limits](https://developer.github.com/v3/guides/best-practices-for-integrators/#dealing-with-abuse-rate-limits)" for details.
-     * @deprecated teams.createDiscussionCommentLegacy() is deprecated, see https://developer.github.com/v3/teams/discussion_comments/#create-a-comment-legacy
+     * @deprecated octokit.teams.createDiscussionCommentLegacy() is deprecated, see https://developer.github.com/v3/teams/discussion_comments/#create-a-comment-legacy
      */
     createDiscussionCommentLegacy: {
       (
-        params?: RequestParameters &
-          TeamsCreateDiscussionCommentLegacyParams
-      ): Promise<
-        OctokitResponse<TeamsCreateDiscussionCommentLegacyResponse>
-      >;
+        params?: RequestParameters & TeamsCreateDiscussionCommentLegacyParams
+      ): Promise<OctokitResponse<TeamsCreateDiscussionCommentLegacyResponse>>;
 
       endpoint: EndpointInterface;
     };
@@ -39117,10 +39330,9 @@ export type RestEndpointMethods = {
      * **Note:** You can also specify a team by `org_id` and `team_id` using the route `POST /organizations/:org_id/team/:team_id/discussions`.
      */
     createDiscussionInOrg: {
-      (
-        params?: RequestParameters &
-          TeamsCreateDiscussionInOrgParams
-      ): Promise<OctokitResponse<TeamsCreateDiscussionInOrgResponse>>;
+      (params?: RequestParameters & TeamsCreateDiscussionInOrgParams): Promise<
+        OctokitResponse<TeamsCreateDiscussionInOrgResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -39130,13 +39342,12 @@ export type RestEndpointMethods = {
      * Creates a new discussion post on a team's page. OAuth access tokens require the `write:discussion` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
      *
      * This endpoint triggers [notifications](https://help.github.com/articles/about-notifications/). Creating content too quickly using this endpoint may result in abuse rate limiting. See "[Abuse rate limits](https://developer.github.com/v3/#abuse-rate-limits)" and "[Dealing with abuse rate limits](https://developer.github.com/v3/guides/best-practices-for-integrators/#dealing-with-abuse-rate-limits)" for details.
-     * @deprecated teams.createDiscussionLegacy() is deprecated, see https://developer.github.com/v3/teams/discussions/#create-a-discussion-legacy
+     * @deprecated octokit.teams.createDiscussionLegacy() is deprecated, see https://developer.github.com/v3/teams/discussions/#create-a-discussion-legacy
      */
     createDiscussionLegacy: {
-      (
-        params?: RequestParameters &
-          TeamsCreateDiscussionLegacyParams
-      ): Promise<OctokitResponse<TeamsCreateDiscussionLegacyResponse>>;
+      (params?: RequestParameters & TeamsCreateDiscussionLegacyParams): Promise<
+        OctokitResponse<TeamsCreateDiscussionLegacyResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -39146,12 +39357,10 @@ export type RestEndpointMethods = {
      * To delete a team, the authenticated user must be an organization owner or team maintainer.
      *
      * If you are an organization owner, deleting a parent team will delete all of its child teams as well.
-     * @deprecated teams.delete() is deprecated, see https://developer.github.com/v3/teams/#delete-team-legacy
+     * @deprecated octokit.teams.delete() is deprecated, see https://developer.github.com/v3/teams/#delete-team-legacy
      */
     delete: {
-      (params?: RequestParameters & TeamsDeleteParams): Promise<
-        AnyResponse
-      >;
+      (params?: RequestParameters & TeamsDeleteParams): Promise<AnyResponse>;
 
       endpoint: EndpointInterface;
     };
@@ -39159,12 +39368,12 @@ export type RestEndpointMethods = {
      * **Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [`Delete a discussion`](https://developer.github.com/v3/teams/discussions/#delete-a-discussion) endpoint.
      *
      * Delete a discussion from a team's page. OAuth access tokens require the `write:discussion` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
-     * @deprecated teams.deleteDiscussion() is deprecated, see https://developer.github.com/v3/teams/discussions/#delete-a-discussion-legacy
+     * @deprecated octokit.teams.deleteDiscussion() is deprecated, see https://developer.github.com/v3/teams/discussions/#delete-a-discussion-legacy
      */
     deleteDiscussion: {
-      (
-        params?: RequestParameters & TeamsDeleteDiscussionParams
-      ): Promise<AnyResponse>;
+      (params?: RequestParameters & TeamsDeleteDiscussionParams): Promise<
+        AnyResponse
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -39172,12 +39381,11 @@ export type RestEndpointMethods = {
      * **Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [`Delete a comment`](https://developer.github.com/v3/teams/discussion_comments/#delete-a-comment) endpoint.
      *
      * Deletes a comment on a team discussion. OAuth access tokens require the `write:discussion` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
-     * @deprecated teams.deleteDiscussionComment() is deprecated, see https://developer.github.com/v3/teams/discussion_comments/#delete-a-comment-legacy
+     * @deprecated octokit.teams.deleteDiscussionComment() is deprecated, see https://developer.github.com/v3/teams/discussion_comments/#delete-a-comment-legacy
      */
     deleteDiscussionComment: {
       (
-        params?: RequestParameters &
-          TeamsDeleteDiscussionCommentParams
+        params?: RequestParameters & TeamsDeleteDiscussionCommentParams
       ): Promise<AnyResponse>;
 
       endpoint: EndpointInterface;
@@ -39189,8 +39397,7 @@ export type RestEndpointMethods = {
      */
     deleteDiscussionCommentInOrg: {
       (
-        params?: RequestParameters &
-          TeamsDeleteDiscussionCommentInOrgParams
+        params?: RequestParameters & TeamsDeleteDiscussionCommentInOrgParams
       ): Promise<AnyResponse>;
 
       endpoint: EndpointInterface;
@@ -39199,12 +39406,11 @@ export type RestEndpointMethods = {
      * **Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [`Delete a comment`](https://developer.github.com/v3/teams/discussion_comments/#delete-a-comment) endpoint.
      *
      * Deletes a comment on a team discussion. OAuth access tokens require the `write:discussion` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
-     * @deprecated teams.deleteDiscussionCommentLegacy() is deprecated, see https://developer.github.com/v3/teams/discussion_comments/#delete-a-comment-legacy
+     * @deprecated octokit.teams.deleteDiscussionCommentLegacy() is deprecated, see https://developer.github.com/v3/teams/discussion_comments/#delete-a-comment-legacy
      */
     deleteDiscussionCommentLegacy: {
       (
-        params?: RequestParameters &
-          TeamsDeleteDiscussionCommentLegacyParams
+        params?: RequestParameters & TeamsDeleteDiscussionCommentLegacyParams
       ): Promise<AnyResponse>;
 
       endpoint: EndpointInterface;
@@ -39215,10 +39421,9 @@ export type RestEndpointMethods = {
      * **Note:** You can also specify a team by `org_id` and `team_id` using the route `DELETE /organizations/:org_id/team/:team_id/discussions/:discussion_number`.
      */
     deleteDiscussionInOrg: {
-      (
-        params?: RequestParameters &
-          TeamsDeleteDiscussionInOrgParams
-      ): Promise<AnyResponse>;
+      (params?: RequestParameters & TeamsDeleteDiscussionInOrgParams): Promise<
+        AnyResponse
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -39226,13 +39431,12 @@ export type RestEndpointMethods = {
      * **Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [`Delete a discussion`](https://developer.github.com/v3/teams/discussions/#delete-a-discussion) endpoint.
      *
      * Delete a discussion from a team's page. OAuth access tokens require the `write:discussion` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
-     * @deprecated teams.deleteDiscussionLegacy() is deprecated, see https://developer.github.com/v3/teams/discussions/#delete-a-discussion-legacy
+     * @deprecated octokit.teams.deleteDiscussionLegacy() is deprecated, see https://developer.github.com/v3/teams/discussions/#delete-a-discussion-legacy
      */
     deleteDiscussionLegacy: {
-      (
-        params?: RequestParameters &
-          TeamsDeleteDiscussionLegacyParams
-      ): Promise<AnyResponse>;
+      (params?: RequestParameters & TeamsDeleteDiscussionLegacyParams): Promise<
+        AnyResponse
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -39244,9 +39448,9 @@ export type RestEndpointMethods = {
      * If you are an organization owner, deleting a parent team will delete all of its child teams as well.
      */
     deleteInOrg: {
-      (
-        params?: RequestParameters & TeamsDeleteInOrgParams
-      ): Promise<AnyResponse>;
+      (params?: RequestParameters & TeamsDeleteInOrgParams): Promise<
+        AnyResponse
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -39256,18 +39460,18 @@ export type RestEndpointMethods = {
      * To delete a team, the authenticated user must be an organization owner or team maintainer.
      *
      * If you are an organization owner, deleting a parent team will delete all of its child teams as well.
-     * @deprecated teams.deleteLegacy() is deprecated, see https://developer.github.com/v3/teams/#delete-team-legacy
+     * @deprecated octokit.teams.deleteLegacy() is deprecated, see https://developer.github.com/v3/teams/#delete-team-legacy
      */
     deleteLegacy: {
-      (
-        params?: RequestParameters & TeamsDeleteLegacyParams
-      ): Promise<AnyResponse>;
+      (params?: RequestParameters & TeamsDeleteLegacyParams): Promise<
+        AnyResponse
+      >;
 
       endpoint: EndpointInterface;
     };
     /**
      * **Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the [`Get team by name`](https://developer.github.com/v3/teams/#get-team-by-name) endpoint.
-     * @deprecated teams.get() is deprecated, see https://developer.github.com/v3/teams/#get-team-legacy
+     * @deprecated octokit.teams.get() is deprecated, see https://developer.github.com/v3/teams/#get-team-legacy
      */
     get: {
       (params?: RequestParameters & TeamsGetParams): Promise<
@@ -39292,12 +39496,12 @@ export type RestEndpointMethods = {
      * **Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [`Get a single discussion`](https://developer.github.com/v3/teams/discussions/#get-a-single-discussion) endpoint.
      *
      * Get a specific discussion on a team's page. OAuth access tokens require the `read:discussion` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
-     * @deprecated teams.getDiscussion() is deprecated, see https://developer.github.com/v3/teams/discussions/#get-a-single-discussion-legacy
+     * @deprecated octokit.teams.getDiscussion() is deprecated, see https://developer.github.com/v3/teams/discussions/#get-a-single-discussion-legacy
      */
     getDiscussion: {
-      (
-        params?: RequestParameters & TeamsGetDiscussionParams
-      ): Promise<OctokitResponse<TeamsGetDiscussionResponse>>;
+      (params?: RequestParameters & TeamsGetDiscussionParams): Promise<
+        OctokitResponse<TeamsGetDiscussionResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -39305,13 +39509,12 @@ export type RestEndpointMethods = {
      * **Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [`Get a single comment`](https://developer.github.com/v3/teams/discussion_comments/#get-a-single-comment) endpoint.
      *
      * Get a specific comment on a team discussion. OAuth access tokens require the `read:discussion` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
-     * @deprecated teams.getDiscussionComment() is deprecated, see https://developer.github.com/v3/teams/discussion_comments/#get-a-single-comment-legacy
+     * @deprecated octokit.teams.getDiscussionComment() is deprecated, see https://developer.github.com/v3/teams/discussion_comments/#get-a-single-comment-legacy
      */
     getDiscussionComment: {
-      (
-        params?: RequestParameters &
-          TeamsGetDiscussionCommentParams
-      ): Promise<OctokitResponse<TeamsGetDiscussionCommentResponse>>;
+      (params?: RequestParameters & TeamsGetDiscussionCommentParams): Promise<
+        OctokitResponse<TeamsGetDiscussionCommentResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -39322,11 +39525,8 @@ export type RestEndpointMethods = {
      */
     getDiscussionCommentInOrg: {
       (
-        params?: RequestParameters &
-          TeamsGetDiscussionCommentInOrgParams
-      ): Promise<
-        OctokitResponse<TeamsGetDiscussionCommentInOrgResponse>
-      >;
+        params?: RequestParameters & TeamsGetDiscussionCommentInOrgParams
+      ): Promise<OctokitResponse<TeamsGetDiscussionCommentInOrgResponse>>;
 
       endpoint: EndpointInterface;
     };
@@ -39334,15 +39534,12 @@ export type RestEndpointMethods = {
      * **Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [`Get a single comment`](https://developer.github.com/v3/teams/discussion_comments/#get-a-single-comment) endpoint.
      *
      * Get a specific comment on a team discussion. OAuth access tokens require the `read:discussion` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
-     * @deprecated teams.getDiscussionCommentLegacy() is deprecated, see https://developer.github.com/v3/teams/discussion_comments/#get-a-single-comment-legacy
+     * @deprecated octokit.teams.getDiscussionCommentLegacy() is deprecated, see https://developer.github.com/v3/teams/discussion_comments/#get-a-single-comment-legacy
      */
     getDiscussionCommentLegacy: {
       (
-        params?: RequestParameters &
-          TeamsGetDiscussionCommentLegacyParams
-      ): Promise<
-        OctokitResponse<TeamsGetDiscussionCommentLegacyResponse>
-      >;
+        params?: RequestParameters & TeamsGetDiscussionCommentLegacyParams
+      ): Promise<OctokitResponse<TeamsGetDiscussionCommentLegacyResponse>>;
 
       endpoint: EndpointInterface;
     };
@@ -39352,9 +39549,9 @@ export type RestEndpointMethods = {
      * **Note:** You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/:org_id/team/:team_id/discussions/:discussion_number`.
      */
     getDiscussionInOrg: {
-      (
-        params?: RequestParameters & TeamsGetDiscussionInOrgParams
-      ): Promise<OctokitResponse<TeamsGetDiscussionInOrgResponse>>;
+      (params?: RequestParameters & TeamsGetDiscussionInOrgParams): Promise<
+        OctokitResponse<TeamsGetDiscussionInOrgResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -39362,18 +39559,18 @@ export type RestEndpointMethods = {
      * **Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [`Get a single discussion`](https://developer.github.com/v3/teams/discussions/#get-a-single-discussion) endpoint.
      *
      * Get a specific discussion on a team's page. OAuth access tokens require the `read:discussion` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
-     * @deprecated teams.getDiscussionLegacy() is deprecated, see https://developer.github.com/v3/teams/discussions/#get-a-single-discussion-legacy
+     * @deprecated octokit.teams.getDiscussionLegacy() is deprecated, see https://developer.github.com/v3/teams/discussions/#get-a-single-discussion-legacy
      */
     getDiscussionLegacy: {
-      (
-        params?: RequestParameters & TeamsGetDiscussionLegacyParams
-      ): Promise<OctokitResponse<TeamsGetDiscussionLegacyResponse>>;
+      (params?: RequestParameters & TeamsGetDiscussionLegacyParams): Promise<
+        OctokitResponse<TeamsGetDiscussionLegacyResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
     /**
      * **Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the [`Get team by name`](https://developer.github.com/v3/teams/#get-team-by-name) endpoint.
-     * @deprecated teams.getLegacy() is deprecated, see https://developer.github.com/v3/teams/#get-team-legacy
+     * @deprecated octokit.teams.getLegacy() is deprecated, see https://developer.github.com/v3/teams/#get-team-legacy
      */
     getLegacy: {
       (params?: RequestParameters & TeamsGetLegacyParams): Promise<
@@ -39388,12 +39585,10 @@ export type RestEndpointMethods = {
      * We recommend using the [Get team membership](https://developer.github.com/v3/teams/members/#get-team-membership) endpoint instead. It allows you to get both active and pending memberships.
      *
      * To list members in a team, the team must be visible to the authenticated user.
-     * @deprecated teams.getMember() is deprecated, see https://developer.github.com/v3/teams/members/#get-team-member-legacy
+     * @deprecated octokit.teams.getMember() is deprecated, see https://developer.github.com/v3/teams/members/#get-team-member-legacy
      */
     getMember: {
-      (params?: RequestParameters & TeamsGetMemberParams): Promise<
-        AnyResponse
-      >;
+      (params?: RequestParameters & TeamsGetMemberParams): Promise<AnyResponse>;
 
       endpoint: EndpointInterface;
     };
@@ -39403,12 +39598,12 @@ export type RestEndpointMethods = {
      * We recommend using the [Get team membership](https://developer.github.com/v3/teams/members/#get-team-membership) endpoint instead. It allows you to get both active and pending memberships.
      *
      * To list members in a team, the team must be visible to the authenticated user.
-     * @deprecated teams.getMemberLegacy() is deprecated, see https://developer.github.com/v3/teams/members/#get-team-member-legacy
+     * @deprecated octokit.teams.getMemberLegacy() is deprecated, see https://developer.github.com/v3/teams/members/#get-team-member-legacy
      */
     getMemberLegacy: {
-      (
-        params?: RequestParameters & TeamsGetMemberLegacyParams
-      ): Promise<AnyResponse>;
+      (params?: RequestParameters & TeamsGetMemberLegacyParams): Promise<
+        AnyResponse
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -39420,12 +39615,12 @@ export type RestEndpointMethods = {
      * To get a user's membership with a team, the team must be visible to the authenticated user.
      *
      * **Note:** The `role` for organization owners returns as `maintainer`. For more information about `maintainer` roles, see [Create team](https://developer.github.com/v3/teams#create-team).
-     * @deprecated teams.getMembership() is deprecated, see https://developer.github.com/v3/teams/members/#get-team-membership-legacy
+     * @deprecated octokit.teams.getMembership() is deprecated, see https://developer.github.com/v3/teams/members/#get-team-membership-legacy
      */
     getMembership: {
-      (
-        params?: RequestParameters & TeamsGetMembershipParams
-      ): Promise<OctokitResponse<TeamsGetMembershipResponse>>;
+      (params?: RequestParameters & TeamsGetMembershipParams): Promise<
+        OctokitResponse<TeamsGetMembershipResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -39439,9 +39634,9 @@ export type RestEndpointMethods = {
      * **Note:** The `role` for organization owners returns as `maintainer`. For more information about `maintainer` roles, see [Create team](https://developer.github.com/v3/teams#create-team).
      */
     getMembershipInOrg: {
-      (
-        params?: RequestParameters & TeamsGetMembershipInOrgParams
-      ): Promise<OctokitResponse<TeamsGetMembershipInOrgResponse>>;
+      (params?: RequestParameters & TeamsGetMembershipInOrgParams): Promise<
+        OctokitResponse<TeamsGetMembershipInOrgResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -39453,12 +39648,12 @@ export type RestEndpointMethods = {
      * To get a user's membership with a team, the team must be visible to the authenticated user.
      *
      * **Note:** The `role` for organization owners returns as `maintainer`. For more information about `maintainer` roles, see [Create team](https://developer.github.com/v3/teams#create-team).
-     * @deprecated teams.getMembershipLegacy() is deprecated, see https://developer.github.com/v3/teams/members/#get-team-membership-legacy
+     * @deprecated octokit.teams.getMembershipLegacy() is deprecated, see https://developer.github.com/v3/teams/members/#get-team-membership-legacy
      */
     getMembershipLegacy: {
-      (
-        params?: RequestParameters & TeamsGetMembershipLegacyParams
-      ): Promise<OctokitResponse<TeamsGetMembershipLegacyResponse>>;
+      (params?: RequestParameters & TeamsGetMembershipLegacyParams): Promise<
+        OctokitResponse<TeamsGetMembershipLegacyResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -39476,7 +39671,7 @@ export type RestEndpointMethods = {
      * **Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [`List child teams`](https://developer.github.com/v3/teams/#list-child-teams) endpoint.
      *
      *
-     * @deprecated teams.listChild() is deprecated, see https://developer.github.com/v3/teams/#list-child-teams-legacy
+     * @deprecated octokit.teams.listChild() is deprecated, see https://developer.github.com/v3/teams/#list-child-teams-legacy
      */
     listChild: {
       (params?: RequestParameters & TeamsListChildParams): Promise<
@@ -39491,9 +39686,9 @@ export type RestEndpointMethods = {
      * **Note:** You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/:org_id/team/:team_id/teams`.
      */
     listChildInOrg: {
-      (
-        params?: RequestParameters & TeamsListChildInOrgParams
-      ): Promise<OctokitResponse<TeamsListChildInOrgResponse>>;
+      (params?: RequestParameters & TeamsListChildInOrgParams): Promise<
+        OctokitResponse<TeamsListChildInOrgResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -39501,12 +39696,12 @@ export type RestEndpointMethods = {
      * **Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [`List child teams`](https://developer.github.com/v3/teams/#list-child-teams) endpoint.
      *
      *
-     * @deprecated teams.listChildLegacy() is deprecated, see https://developer.github.com/v3/teams/#list-child-teams-legacy
+     * @deprecated octokit.teams.listChildLegacy() is deprecated, see https://developer.github.com/v3/teams/#list-child-teams-legacy
      */
     listChildLegacy: {
-      (
-        params?: RequestParameters & TeamsListChildLegacyParams
-      ): Promise<OctokitResponse<TeamsListChildLegacyResponse>>;
+      (params?: RequestParameters & TeamsListChildLegacyParams): Promise<
+        OctokitResponse<TeamsListChildLegacyResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -39514,13 +39709,12 @@ export type RestEndpointMethods = {
      * **Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [`List comments`](https://developer.github.com/v3/teams/discussion_comments/#list-comments) endpoint.
      *
      * List all comments on a team discussion. OAuth access tokens require the `read:discussion` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
-     * @deprecated teams.listDiscussionComments() is deprecated, see https://developer.github.com/v3/teams/discussion_comments/#list-comments-legacy
+     * @deprecated octokit.teams.listDiscussionComments() is deprecated, see https://developer.github.com/v3/teams/discussion_comments/#list-comments-legacy
      */
     listDiscussionComments: {
-      (
-        params?: RequestParameters &
-          TeamsListDiscussionCommentsParams
-      ): Promise<OctokitResponse<TeamsListDiscussionCommentsResponse>>;
+      (params?: RequestParameters & TeamsListDiscussionCommentsParams): Promise<
+        OctokitResponse<TeamsListDiscussionCommentsResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -39531,11 +39725,8 @@ export type RestEndpointMethods = {
      */
     listDiscussionCommentsInOrg: {
       (
-        params?: RequestParameters &
-          TeamsListDiscussionCommentsInOrgParams
-      ): Promise<
-        OctokitResponse<TeamsListDiscussionCommentsInOrgResponse>
-      >;
+        params?: RequestParameters & TeamsListDiscussionCommentsInOrgParams
+      ): Promise<OctokitResponse<TeamsListDiscussionCommentsInOrgResponse>>;
 
       endpoint: EndpointInterface;
     };
@@ -39543,15 +39734,12 @@ export type RestEndpointMethods = {
      * **Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [`List comments`](https://developer.github.com/v3/teams/discussion_comments/#list-comments) endpoint.
      *
      * List all comments on a team discussion. OAuth access tokens require the `read:discussion` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
-     * @deprecated teams.listDiscussionCommentsLegacy() is deprecated, see https://developer.github.com/v3/teams/discussion_comments/#list-comments-legacy
+     * @deprecated octokit.teams.listDiscussionCommentsLegacy() is deprecated, see https://developer.github.com/v3/teams/discussion_comments/#list-comments-legacy
      */
     listDiscussionCommentsLegacy: {
       (
-        params?: RequestParameters &
-          TeamsListDiscussionCommentsLegacyParams
-      ): Promise<
-        OctokitResponse<TeamsListDiscussionCommentsLegacyResponse>
-      >;
+        params?: RequestParameters & TeamsListDiscussionCommentsLegacyParams
+      ): Promise<OctokitResponse<TeamsListDiscussionCommentsLegacyResponse>>;
 
       endpoint: EndpointInterface;
     };
@@ -39559,12 +39747,12 @@ export type RestEndpointMethods = {
      * **Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [`List discussions`](https://developer.github.com/v3/teams/discussions/#list-discussions) endpoint.
      *
      * List all discussions on a team's page. OAuth access tokens require the `read:discussion` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
-     * @deprecated teams.listDiscussions() is deprecated, see https://developer.github.com/v3/teams/discussions/#list-discussions-legacy
+     * @deprecated octokit.teams.listDiscussions() is deprecated, see https://developer.github.com/v3/teams/discussions/#list-discussions-legacy
      */
     listDiscussions: {
-      (
-        params?: RequestParameters & TeamsListDiscussionsParams
-      ): Promise<OctokitResponse<TeamsListDiscussionsResponse>>;
+      (params?: RequestParameters & TeamsListDiscussionsParams): Promise<
+        OctokitResponse<TeamsListDiscussionsResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -39574,10 +39762,9 @@ export type RestEndpointMethods = {
      * **Note:** You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/:org_id/team/:team_id/discussions`.
      */
     listDiscussionsInOrg: {
-      (
-        params?: RequestParameters &
-          TeamsListDiscussionsInOrgParams
-      ): Promise<OctokitResponse<TeamsListDiscussionsInOrgResponse>>;
+      (params?: RequestParameters & TeamsListDiscussionsInOrgParams): Promise<
+        OctokitResponse<TeamsListDiscussionsInOrgResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -39585,13 +39772,12 @@ export type RestEndpointMethods = {
      * **Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [`List discussions`](https://developer.github.com/v3/teams/discussions/#list-discussions) endpoint.
      *
      * List all discussions on a team's page. OAuth access tokens require the `read:discussion` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
-     * @deprecated teams.listDiscussionsLegacy() is deprecated, see https://developer.github.com/v3/teams/discussions/#list-discussions-legacy
+     * @deprecated octokit.teams.listDiscussionsLegacy() is deprecated, see https://developer.github.com/v3/teams/discussions/#list-discussions-legacy
      */
     listDiscussionsLegacy: {
-      (
-        params?: RequestParameters &
-          TeamsListDiscussionsLegacyParams
-      ): Promise<OctokitResponse<TeamsListDiscussionsLegacyResponse>>;
+      (params?: RequestParameters & TeamsListDiscussionsLegacyParams): Promise<
+        OctokitResponse<TeamsListDiscussionsLegacyResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -39600,11 +39786,8 @@ export type RestEndpointMethods = {
      */
     listForAuthenticatedUser: {
       (
-        params?: RequestParameters &
-          TeamsListForAuthenticatedUserParams
-      ): Promise<
-        OctokitResponse<TeamsListForAuthenticatedUserResponse>
-      >;
+        params?: RequestParameters & TeamsListForAuthenticatedUserParams
+      ): Promise<OctokitResponse<TeamsListForAuthenticatedUserResponse>>;
 
       endpoint: EndpointInterface;
     };
@@ -39612,12 +39795,12 @@ export type RestEndpointMethods = {
      * **Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [`List team members`](https://developer.github.com/v3/teams/members/#list-team-members) endpoint.
      *
      * Team members will include the members of child teams.
-     * @deprecated teams.listMembers() is deprecated, see https://developer.github.com/v3/teams/members/#list-team-members-legacy
+     * @deprecated octokit.teams.listMembers() is deprecated, see https://developer.github.com/v3/teams/members/#list-team-members-legacy
      */
     listMembers: {
-      (
-        params?: RequestParameters & TeamsListMembersParams
-      ): Promise<OctokitResponse<TeamsListMembersResponse>>;
+      (params?: RequestParameters & TeamsListMembersParams): Promise<
+        OctokitResponse<TeamsListMembersResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -39627,9 +39810,9 @@ export type RestEndpointMethods = {
      * To list members in a team, the team must be visible to the authenticated user.
      */
     listMembersInOrg: {
-      (
-        params?: RequestParameters & TeamsListMembersInOrgParams
-      ): Promise<OctokitResponse<TeamsListMembersInOrgResponse>>;
+      (params?: RequestParameters & TeamsListMembersInOrgParams): Promise<
+        OctokitResponse<TeamsListMembersInOrgResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -39637,12 +39820,12 @@ export type RestEndpointMethods = {
      * **Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [`List team members`](https://developer.github.com/v3/teams/members/#list-team-members) endpoint.
      *
      * Team members will include the members of child teams.
-     * @deprecated teams.listMembersLegacy() is deprecated, see https://developer.github.com/v3/teams/members/#list-team-members-legacy
+     * @deprecated octokit.teams.listMembersLegacy() is deprecated, see https://developer.github.com/v3/teams/members/#list-team-members-legacy
      */
     listMembersLegacy: {
-      (
-        params?: RequestParameters & TeamsListMembersLegacyParams
-      ): Promise<OctokitResponse<TeamsListMembersLegacyResponse>>;
+      (params?: RequestParameters & TeamsListMembersLegacyParams): Promise<
+        OctokitResponse<TeamsListMembersLegacyResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -39650,13 +39833,12 @@ export type RestEndpointMethods = {
      * **Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [`List pending team invitations`](https://developer.github.com/v3/teams/members/#list-pending-team-invitations) endpoint.
      *
      * The return hash contains a `role` field which refers to the Organization Invitation role and will be one of the following values: `direct_member`, `admin`, `billing_manager`, `hiring_manager`, or `reinstate`. If the invitee is not a GitHub member, the `login` field in the return hash will be `null`.
-     * @deprecated teams.listPendingInvitations() is deprecated, see https://developer.github.com/v3/teams/members/#list-pending-team-invitations-legacy
+     * @deprecated octokit.teams.listPendingInvitations() is deprecated, see https://developer.github.com/v3/teams/members/#list-pending-team-invitations-legacy
      */
     listPendingInvitations: {
-      (
-        params?: RequestParameters &
-          TeamsListPendingInvitationsParams
-      ): Promise<OctokitResponse<TeamsListPendingInvitationsResponse>>;
+      (params?: RequestParameters & TeamsListPendingInvitationsParams): Promise<
+        OctokitResponse<TeamsListPendingInvitationsResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -39667,11 +39849,8 @@ export type RestEndpointMethods = {
      */
     listPendingInvitationsInOrg: {
       (
-        params?: RequestParameters &
-          TeamsListPendingInvitationsInOrgParams
-      ): Promise<
-        OctokitResponse<TeamsListPendingInvitationsInOrgResponse>
-      >;
+        params?: RequestParameters & TeamsListPendingInvitationsInOrgParams
+      ): Promise<OctokitResponse<TeamsListPendingInvitationsInOrgResponse>>;
 
       endpoint: EndpointInterface;
     };
@@ -39679,15 +39858,12 @@ export type RestEndpointMethods = {
      * **Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [`List pending team invitations`](https://developer.github.com/v3/teams/members/#list-pending-team-invitations) endpoint.
      *
      * The return hash contains a `role` field which refers to the Organization Invitation role and will be one of the following values: `direct_member`, `admin`, `billing_manager`, `hiring_manager`, or `reinstate`. If the invitee is not a GitHub member, the `login` field in the return hash will be `null`.
-     * @deprecated teams.listPendingInvitationsLegacy() is deprecated, see https://developer.github.com/v3/teams/members/#list-pending-team-invitations-legacy
+     * @deprecated octokit.teams.listPendingInvitationsLegacy() is deprecated, see https://developer.github.com/v3/teams/members/#list-pending-team-invitations-legacy
      */
     listPendingInvitationsLegacy: {
       (
-        params?: RequestParameters &
-          TeamsListPendingInvitationsLegacyParams
-      ): Promise<
-        OctokitResponse<TeamsListPendingInvitationsLegacyResponse>
-      >;
+        params?: RequestParameters & TeamsListPendingInvitationsLegacyParams
+      ): Promise<OctokitResponse<TeamsListPendingInvitationsLegacyResponse>>;
 
       endpoint: EndpointInterface;
     };
@@ -39695,12 +39871,12 @@ export type RestEndpointMethods = {
      * **Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [`List team projects`](https://developer.github.com/v3/teams/#list-team-projects) endpoint.
      *
      * Lists the organization projects for a team.
-     * @deprecated teams.listProjects() is deprecated, see https://developer.github.com/v3/teams/#list-team-projects-legacy
+     * @deprecated octokit.teams.listProjects() is deprecated, see https://developer.github.com/v3/teams/#list-team-projects-legacy
      */
     listProjects: {
-      (
-        params?: RequestParameters & TeamsListProjectsParams
-      ): Promise<OctokitResponse<TeamsListProjectsResponse>>;
+      (params?: RequestParameters & TeamsListProjectsParams): Promise<
+        OctokitResponse<TeamsListProjectsResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -39710,9 +39886,9 @@ export type RestEndpointMethods = {
      * **Note:** You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/:org_id/team/:team_id/projects`.
      */
     listProjectsInOrg: {
-      (
-        params?: RequestParameters & TeamsListProjectsInOrgParams
-      ): Promise<OctokitResponse<TeamsListProjectsInOrgResponse>>;
+      (params?: RequestParameters & TeamsListProjectsInOrgParams): Promise<
+        OctokitResponse<TeamsListProjectsInOrgResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -39720,18 +39896,18 @@ export type RestEndpointMethods = {
      * **Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [`List team projects`](https://developer.github.com/v3/teams/#list-team-projects) endpoint.
      *
      * Lists the organization projects for a team.
-     * @deprecated teams.listProjectsLegacy() is deprecated, see https://developer.github.com/v3/teams/#list-team-projects-legacy
+     * @deprecated octokit.teams.listProjectsLegacy() is deprecated, see https://developer.github.com/v3/teams/#list-team-projects-legacy
      */
     listProjectsLegacy: {
-      (
-        params?: RequestParameters & TeamsListProjectsLegacyParams
-      ): Promise<OctokitResponse<TeamsListProjectsLegacyResponse>>;
+      (params?: RequestParameters & TeamsListProjectsLegacyParams): Promise<
+        OctokitResponse<TeamsListProjectsLegacyResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
     /**
      * **Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [`List team repos`](https://developer.github.com/v3/teams/#list-team-repos) endpoint.
-     * @deprecated teams.listRepos() is deprecated, see https://developer.github.com/v3/teams/#list-team-repos-legacy
+     * @deprecated octokit.teams.listRepos() is deprecated, see https://developer.github.com/v3/teams/#list-team-repos-legacy
      */
     listRepos: {
       (params?: RequestParameters & TeamsListReposParams): Promise<
@@ -39746,20 +39922,20 @@ export type RestEndpointMethods = {
      * **Note:** You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/:org_id/team/:team_id/repos`.
      */
     listReposInOrg: {
-      (
-        params?: RequestParameters & TeamsListReposInOrgParams
-      ): Promise<OctokitResponse<TeamsListReposInOrgResponse>>;
+      (params?: RequestParameters & TeamsListReposInOrgParams): Promise<
+        OctokitResponse<TeamsListReposInOrgResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
     /**
      * **Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [`List team repos`](https://developer.github.com/v3/teams/#list-team-repos) endpoint.
-     * @deprecated teams.listReposLegacy() is deprecated, see https://developer.github.com/v3/teams/#list-team-repos-legacy
+     * @deprecated octokit.teams.listReposLegacy() is deprecated, see https://developer.github.com/v3/teams/#list-team-repos-legacy
      */
     listReposLegacy: {
-      (
-        params?: RequestParameters & TeamsListReposLegacyParams
-      ): Promise<OctokitResponse<TeamsListReposLegacyResponse>>;
+      (params?: RequestParameters & TeamsListReposLegacyParams): Promise<
+        OctokitResponse<TeamsListReposLegacyResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -39773,12 +39949,12 @@ export type RestEndpointMethods = {
      * To remove a team member, the authenticated user must have 'admin' permissions to the team or be an owner of the org that the team is associated with. Removing a team member does not delete the user, it just removes them from the team.
      *
      * **Note:** When you have team synchronization set up for a team with your organization's identity provider (IdP), you will see an error if you attempt to use the API for making changes to the team's membership. If you have access to manage group membership in your IdP, you can manage GitHub team membership through your identity provider, which automatically adds and removes team members in an organization. For more information, see "[Synchronizing teams between your identity provider and GitHub](https://help.github.com/articles/synchronizing-teams-between-your-identity-provider-and-github/)."
-     * @deprecated teams.removeMember() is deprecated, see https://developer.github.com/v3/teams/members/#remove-team-member-legacy
+     * @deprecated octokit.teams.removeMember() is deprecated, see https://developer.github.com/v3/teams/members/#remove-team-member-legacy
      */
     removeMember: {
-      (
-        params?: RequestParameters & TeamsRemoveMemberParams
-      ): Promise<AnyResponse>;
+      (params?: RequestParameters & TeamsRemoveMemberParams): Promise<
+        AnyResponse
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -39792,12 +39968,12 @@ export type RestEndpointMethods = {
      * To remove a team member, the authenticated user must have 'admin' permissions to the team or be an owner of the org that the team is associated with. Removing a team member does not delete the user, it just removes them from the team.
      *
      * **Note:** When you have team synchronization set up for a team with your organization's identity provider (IdP), you will see an error if you attempt to use the API for making changes to the team's membership. If you have access to manage group membership in your IdP, you can manage GitHub team membership through your identity provider, which automatically adds and removes team members in an organization. For more information, see "[Synchronizing teams between your identity provider and GitHub](https://help.github.com/articles/synchronizing-teams-between-your-identity-provider-and-github/)."
-     * @deprecated teams.removeMemberLegacy() is deprecated, see https://developer.github.com/v3/teams/members/#remove-team-member-legacy
+     * @deprecated octokit.teams.removeMemberLegacy() is deprecated, see https://developer.github.com/v3/teams/members/#remove-team-member-legacy
      */
     removeMemberLegacy: {
-      (
-        params?: RequestParameters & TeamsRemoveMemberLegacyParams
-      ): Promise<AnyResponse>;
+      (params?: RequestParameters & TeamsRemoveMemberLegacyParams): Promise<
+        AnyResponse
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -39809,12 +39985,12 @@ export type RestEndpointMethods = {
      * To remove a membership between a user and a team, the authenticated user must have 'admin' permissions to the team or be an owner of the organization that the team is associated with. Removing team membership does not delete the user, it just removes their membership from the team.
      *
      * **Note:** When you have team synchronization set up for a team with your organization's identity provider (IdP), you will see an error if you attempt to use the API for making changes to the team's membership. If you have access to manage group membership in your IdP, you can manage GitHub team membership through your identity provider, which automatically adds and removes team members in an organization. For more information, see "[Synchronizing teams between your identity provider and GitHub](https://help.github.com/articles/synchronizing-teams-between-your-identity-provider-and-github/)."
-     * @deprecated teams.removeMembership() is deprecated, see https://developer.github.com/v3/teams/members/#remove-team-membership-legacy
+     * @deprecated octokit.teams.removeMembership() is deprecated, see https://developer.github.com/v3/teams/members/#remove-team-membership-legacy
      */
     removeMembership: {
-      (
-        params?: RequestParameters & TeamsRemoveMembershipParams
-      ): Promise<AnyResponse>;
+      (params?: RequestParameters & TeamsRemoveMembershipParams): Promise<
+        AnyResponse
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -39828,10 +40004,9 @@ export type RestEndpointMethods = {
      * **Note:** You can also specify a team by `org_id` and `team_id` using the route `DELETE /organizations/:org_id/team/:team_id/memberships/:username`.
      */
     removeMembershipInOrg: {
-      (
-        params?: RequestParameters &
-          TeamsRemoveMembershipInOrgParams
-      ): Promise<AnyResponse>;
+      (params?: RequestParameters & TeamsRemoveMembershipInOrgParams): Promise<
+        AnyResponse
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -39843,13 +40018,12 @@ export type RestEndpointMethods = {
      * To remove a membership between a user and a team, the authenticated user must have 'admin' permissions to the team or be an owner of the organization that the team is associated with. Removing team membership does not delete the user, it just removes their membership from the team.
      *
      * **Note:** When you have team synchronization set up for a team with your organization's identity provider (IdP), you will see an error if you attempt to use the API for making changes to the team's membership. If you have access to manage group membership in your IdP, you can manage GitHub team membership through your identity provider, which automatically adds and removes team members in an organization. For more information, see "[Synchronizing teams between your identity provider and GitHub](https://help.github.com/articles/synchronizing-teams-between-your-identity-provider-and-github/)."
-     * @deprecated teams.removeMembershipLegacy() is deprecated, see https://developer.github.com/v3/teams/members/#remove-team-membership-legacy
+     * @deprecated octokit.teams.removeMembershipLegacy() is deprecated, see https://developer.github.com/v3/teams/members/#remove-team-membership-legacy
      */
     removeMembershipLegacy: {
-      (
-        params?: RequestParameters &
-          TeamsRemoveMembershipLegacyParams
-      ): Promise<AnyResponse>;
+      (params?: RequestParameters & TeamsRemoveMembershipLegacyParams): Promise<
+        AnyResponse
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -39857,12 +40031,12 @@ export type RestEndpointMethods = {
      * **Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [`Remove team project`](https://developer.github.com/v3/teams/#remove-team-project) endpoint.
      *
      * Removes an organization project from a team. An organization owner or a team maintainer can remove any project from the team. To remove a project from a team as an organization member, the authenticated user must have `read` access to both the team and project, or `admin` access to the team or project. **Note:** This endpoint removes the project from the team, but does not delete it.
-     * @deprecated teams.removeProject() is deprecated, see https://developer.github.com/v3/teams/#remove-team-project-legacy
+     * @deprecated octokit.teams.removeProject() is deprecated, see https://developer.github.com/v3/teams/#remove-team-project-legacy
      */
     removeProject: {
-      (
-        params?: RequestParameters & TeamsRemoveProjectParams
-      ): Promise<AnyResponse>;
+      (params?: RequestParameters & TeamsRemoveProjectParams): Promise<
+        AnyResponse
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -39872,9 +40046,9 @@ export type RestEndpointMethods = {
      * **Note:** You can also specify a team by `org_id` and `team_id` using the route `DELETE /organizations/:org_id/team/:team_id/projects/:project_id`.
      */
     removeProjectInOrg: {
-      (
-        params?: RequestParameters & TeamsRemoveProjectInOrgParams
-      ): Promise<AnyResponse>;
+      (params?: RequestParameters & TeamsRemoveProjectInOrgParams): Promise<
+        AnyResponse
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -39882,12 +40056,12 @@ export type RestEndpointMethods = {
      * **Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [`Remove team project`](https://developer.github.com/v3/teams/#remove-team-project) endpoint.
      *
      * Removes an organization project from a team. An organization owner or a team maintainer can remove any project from the team. To remove a project from a team as an organization member, the authenticated user must have `read` access to both the team and project, or `admin` access to the team or project. **Note:** This endpoint removes the project from the team, but does not delete it.
-     * @deprecated teams.removeProjectLegacy() is deprecated, see https://developer.github.com/v3/teams/#remove-team-project-legacy
+     * @deprecated octokit.teams.removeProjectLegacy() is deprecated, see https://developer.github.com/v3/teams/#remove-team-project-legacy
      */
     removeProjectLegacy: {
-      (
-        params?: RequestParameters & TeamsRemoveProjectLegacyParams
-      ): Promise<AnyResponse>;
+      (params?: RequestParameters & TeamsRemoveProjectLegacyParams): Promise<
+        AnyResponse
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -39895,12 +40069,12 @@ export type RestEndpointMethods = {
      * **Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [`Remove team repository`](https://developer.github.com/v3/teams/#remove-team-repository) endpoint.
      *
      * If the authenticated user is an organization owner or a team maintainer, they can remove any repositories from the team. To remove a repository from a team as an organization member, the authenticated user must have admin access to the repository and must be able to see the team. NOTE: This does not delete the repository, it just removes it from the team.
-     * @deprecated teams.removeRepo() is deprecated, see https://developer.github.com/v3/teams/#remove-team-repository-legacy
+     * @deprecated octokit.teams.removeRepo() is deprecated, see https://developer.github.com/v3/teams/#remove-team-repository-legacy
      */
     removeRepo: {
-      (
-        params?: RequestParameters & TeamsRemoveRepoParams
-      ): Promise<AnyResponse>;
+      (params?: RequestParameters & TeamsRemoveRepoParams): Promise<
+        AnyResponse
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -39910,9 +40084,9 @@ export type RestEndpointMethods = {
      * **Note:** You can also specify a team by `org_id` and `team_id` using the route `DELETE /organizations/:org_id/team/:team_id/repos/:owner/:repo`.
      */
     removeRepoInOrg: {
-      (
-        params?: RequestParameters & TeamsRemoveRepoInOrgParams
-      ): Promise<AnyResponse>;
+      (params?: RequestParameters & TeamsRemoveRepoInOrgParams): Promise<
+        AnyResponse
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -39920,12 +40094,12 @@ export type RestEndpointMethods = {
      * **Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [`Remove team repository`](https://developer.github.com/v3/teams/#remove-team-repository) endpoint.
      *
      * If the authenticated user is an organization owner or a team maintainer, they can remove any repositories from the team. To remove a repository from a team as an organization member, the authenticated user must have admin access to the repository and must be able to see the team. NOTE: This does not delete the repository, it just removes it from the team.
-     * @deprecated teams.removeRepoLegacy() is deprecated, see https://developer.github.com/v3/teams/#remove-team-repository-legacy
+     * @deprecated octokit.teams.removeRepoLegacy() is deprecated, see https://developer.github.com/v3/teams/#remove-team-repository-legacy
      */
     removeRepoLegacy: {
-      (
-        params?: RequestParameters & TeamsRemoveRepoLegacyParams
-      ): Promise<AnyResponse>;
+      (params?: RequestParameters & TeamsRemoveRepoLegacyParams): Promise<
+        AnyResponse
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -39933,12 +40107,12 @@ export type RestEndpointMethods = {
      * **Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [`Review a team project`](https://developer.github.com/v3/teams/#review-a-team-project) endpoint.
      *
      * Checks whether a team has `read`, `write`, or `admin` permissions for an organization project. The response includes projects inherited from a parent team.
-     * @deprecated teams.reviewProject() is deprecated, see https://developer.github.com/v3/teams/#review-a-team-project-legacy
+     * @deprecated octokit.teams.reviewProject() is deprecated, see https://developer.github.com/v3/teams/#review-a-team-project-legacy
      */
     reviewProject: {
-      (
-        params?: RequestParameters & TeamsReviewProjectParams
-      ): Promise<OctokitResponse<TeamsReviewProjectResponse>>;
+      (params?: RequestParameters & TeamsReviewProjectParams): Promise<
+        OctokitResponse<TeamsReviewProjectResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -39948,9 +40122,9 @@ export type RestEndpointMethods = {
      * **Note:** You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/:org_id/team/:team_id/projects/:project_id`.
      */
     reviewProjectInOrg: {
-      (
-        params?: RequestParameters & TeamsReviewProjectInOrgParams
-      ): Promise<OctokitResponse<TeamsReviewProjectInOrgResponse>>;
+      (params?: RequestParameters & TeamsReviewProjectInOrgParams): Promise<
+        OctokitResponse<TeamsReviewProjectInOrgResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -39958,12 +40132,12 @@ export type RestEndpointMethods = {
      * **Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [`Review a team project`](https://developer.github.com/v3/teams/#review-a-team-project) endpoint.
      *
      * Checks whether a team has `read`, `write`, or `admin` permissions for an organization project. The response includes projects inherited from a parent team.
-     * @deprecated teams.reviewProjectLegacy() is deprecated, see https://developer.github.com/v3/teams/#review-a-team-project-legacy
+     * @deprecated octokit.teams.reviewProjectLegacy() is deprecated, see https://developer.github.com/v3/teams/#review-a-team-project-legacy
      */
     reviewProjectLegacy: {
-      (
-        params?: RequestParameters & TeamsReviewProjectLegacyParams
-      ): Promise<OctokitResponse<TeamsReviewProjectLegacyResponse>>;
+      (params?: RequestParameters & TeamsReviewProjectLegacyParams): Promise<
+        OctokitResponse<TeamsReviewProjectLegacyResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -39973,12 +40147,11 @@ export type RestEndpointMethods = {
      * To edit a team, the authenticated user must either be an organization owner or a team maintainer.
      *
      * **Note:** With nested teams, the `privacy` for parent teams cannot be `secret`.
-     * @deprecated teams.update() is deprecated, see https://developer.github.com/v3/teams/#edit-team-legacy
+     * @deprecated octokit.teams.update() is deprecated, see https://developer.github.com/v3/teams/#edit-team-legacy
      */
     update: {
       (
-        params?: RequestParameters &
-          TeamsUpdateParamsDeprecatedPermission
+        params?: RequestParameters & TeamsUpdateParamsDeprecatedPermission
       ): Promise<OctokitResponse<TeamsUpdateResponse>>;
       (params?: RequestParameters & TeamsUpdateParams): Promise<
         OctokitResponse<TeamsUpdateResponse>
@@ -39990,12 +40163,12 @@ export type RestEndpointMethods = {
      * **Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [`Edit a discussion`](https://developer.github.com/v3/teams/discussions/#edit-a-discussion) endpoint.
      *
      * Edits the title and body text of a discussion post. Only the parameters you provide are updated. OAuth access tokens require the `write:discussion` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
-     * @deprecated teams.updateDiscussion() is deprecated, see https://developer.github.com/v3/teams/discussions/#edit-a-discussion-legacy
+     * @deprecated octokit.teams.updateDiscussion() is deprecated, see https://developer.github.com/v3/teams/discussions/#edit-a-discussion-legacy
      */
     updateDiscussion: {
-      (
-        params?: RequestParameters & TeamsUpdateDiscussionParams
-      ): Promise<OctokitResponse<TeamsUpdateDiscussionResponse>>;
+      (params?: RequestParameters & TeamsUpdateDiscussionParams): Promise<
+        OctokitResponse<TeamsUpdateDiscussionResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -40003,15 +40176,12 @@ export type RestEndpointMethods = {
      * **Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [`Edit a comment`](https://developer.github.com/v3/teams/discussion_comments/#edit-a-comment) endpoint.
      *
      * Edits the body text of a discussion comment. OAuth access tokens require the `write:discussion` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
-     * @deprecated teams.updateDiscussionComment() is deprecated, see https://developer.github.com/v3/teams/discussion_comments/#edit-a-comment-legacy
+     * @deprecated octokit.teams.updateDiscussionComment() is deprecated, see https://developer.github.com/v3/teams/discussion_comments/#edit-a-comment-legacy
      */
     updateDiscussionComment: {
       (
-        params?: RequestParameters &
-          TeamsUpdateDiscussionCommentParams
-      ): Promise<
-        OctokitResponse<TeamsUpdateDiscussionCommentResponse>
-      >;
+        params?: RequestParameters & TeamsUpdateDiscussionCommentParams
+      ): Promise<OctokitResponse<TeamsUpdateDiscussionCommentResponse>>;
 
       endpoint: EndpointInterface;
     };
@@ -40022,11 +40192,8 @@ export type RestEndpointMethods = {
      */
     updateDiscussionCommentInOrg: {
       (
-        params?: RequestParameters &
-          TeamsUpdateDiscussionCommentInOrgParams
-      ): Promise<
-        OctokitResponse<TeamsUpdateDiscussionCommentInOrgResponse>
-      >;
+        params?: RequestParameters & TeamsUpdateDiscussionCommentInOrgParams
+      ): Promise<OctokitResponse<TeamsUpdateDiscussionCommentInOrgResponse>>;
 
       endpoint: EndpointInterface;
     };
@@ -40034,15 +40201,12 @@ export type RestEndpointMethods = {
      * **Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [`Edit a comment`](https://developer.github.com/v3/teams/discussion_comments/#edit-a-comment) endpoint.
      *
      * Edits the body text of a discussion comment. OAuth access tokens require the `write:discussion` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
-     * @deprecated teams.updateDiscussionCommentLegacy() is deprecated, see https://developer.github.com/v3/teams/discussion_comments/#edit-a-comment-legacy
+     * @deprecated octokit.teams.updateDiscussionCommentLegacy() is deprecated, see https://developer.github.com/v3/teams/discussion_comments/#edit-a-comment-legacy
      */
     updateDiscussionCommentLegacy: {
       (
-        params?: RequestParameters &
-          TeamsUpdateDiscussionCommentLegacyParams
-      ): Promise<
-        OctokitResponse<TeamsUpdateDiscussionCommentLegacyResponse>
-      >;
+        params?: RequestParameters & TeamsUpdateDiscussionCommentLegacyParams
+      ): Promise<OctokitResponse<TeamsUpdateDiscussionCommentLegacyResponse>>;
 
       endpoint: EndpointInterface;
     };
@@ -40052,10 +40216,9 @@ export type RestEndpointMethods = {
      * **Note:** You can also specify a team by `org_id` and `team_id` using the route `PATCH /organizations/:org_id/team/:team_id/discussions/:discussion_number`.
      */
     updateDiscussionInOrg: {
-      (
-        params?: RequestParameters &
-          TeamsUpdateDiscussionInOrgParams
-      ): Promise<OctokitResponse<TeamsUpdateDiscussionInOrgResponse>>;
+      (params?: RequestParameters & TeamsUpdateDiscussionInOrgParams): Promise<
+        OctokitResponse<TeamsUpdateDiscussionInOrgResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -40063,13 +40226,12 @@ export type RestEndpointMethods = {
      * **Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [`Edit a discussion`](https://developer.github.com/v3/teams/discussions/#edit-a-discussion) endpoint.
      *
      * Edits the title and body text of a discussion post. Only the parameters you provide are updated. OAuth access tokens require the `write:discussion` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
-     * @deprecated teams.updateDiscussionLegacy() is deprecated, see https://developer.github.com/v3/teams/discussions/#edit-a-discussion-legacy
+     * @deprecated octokit.teams.updateDiscussionLegacy() is deprecated, see https://developer.github.com/v3/teams/discussions/#edit-a-discussion-legacy
      */
     updateDiscussionLegacy: {
-      (
-        params?: RequestParameters &
-          TeamsUpdateDiscussionLegacyParams
-      ): Promise<OctokitResponse<TeamsUpdateDiscussionLegacyResponse>>;
+      (params?: RequestParameters & TeamsUpdateDiscussionLegacyParams): Promise<
+        OctokitResponse<TeamsUpdateDiscussionLegacyResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -40080,12 +40242,11 @@ export type RestEndpointMethods = {
      */
     updateInOrg: {
       (
-        params?: RequestParameters &
-          TeamsUpdateInOrgParamsDeprecatedPermission
+        params?: RequestParameters & TeamsUpdateInOrgParamsDeprecatedPermission
       ): Promise<OctokitResponse<TeamsUpdateInOrgResponse>>;
-      (
-        params?: RequestParameters & TeamsUpdateInOrgParams
-      ): Promise<OctokitResponse<TeamsUpdateInOrgResponse>>;
+      (params?: RequestParameters & TeamsUpdateInOrgParams): Promise<
+        OctokitResponse<TeamsUpdateInOrgResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -40095,16 +40256,15 @@ export type RestEndpointMethods = {
      * To edit a team, the authenticated user must either be an organization owner or a team maintainer.
      *
      * **Note:** With nested teams, the `privacy` for parent teams cannot be `secret`.
-     * @deprecated teams.updateLegacy() is deprecated, see https://developer.github.com/v3/teams/#edit-team-legacy
+     * @deprecated octokit.teams.updateLegacy() is deprecated, see https://developer.github.com/v3/teams/#edit-team-legacy
      */
     updateLegacy: {
       (
-        params?: RequestParameters &
-          TeamsUpdateLegacyParamsDeprecatedPermission
+        params?: RequestParameters & TeamsUpdateLegacyParamsDeprecatedPermission
       ): Promise<OctokitResponse<TeamsUpdateLegacyResponse>>;
-      (
-        params?: RequestParameters & TeamsUpdateLegacyParams
-      ): Promise<OctokitResponse<TeamsUpdateLegacyResponse>>;
+      (params?: RequestParameters & TeamsUpdateLegacyParams): Promise<
+        OctokitResponse<TeamsUpdateLegacyResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -40122,9 +40282,7 @@ export type RestEndpointMethods = {
     };
 
     block: {
-      (params?: RequestParameters & UsersBlockParams): Promise<
-        AnyResponse
-      >;
+      (params?: RequestParameters & UsersBlockParams): Promise<AnyResponse>;
 
       endpoint: EndpointInterface;
     };
@@ -40134,26 +40292,25 @@ export type RestEndpointMethods = {
      * If the user is not blocked:
      */
     checkBlocked: {
-      (
-        params?: RequestParameters & UsersCheckBlockedParams
-      ): Promise<AnyResponse>;
+      (params?: RequestParameters & UsersCheckBlockedParams): Promise<
+        AnyResponse
+      >;
 
       endpoint: EndpointInterface;
     };
 
     checkFollowing: {
-      (
-        params?: RequestParameters & UsersCheckFollowingParams
-      ): Promise<AnyResponse>;
+      (params?: RequestParameters & UsersCheckFollowingParams): Promise<
+        AnyResponse
+      >;
 
       endpoint: EndpointInterface;
     };
 
     checkFollowingForUser: {
-      (
-        params?: RequestParameters &
-          UsersCheckFollowingForUserParams
-      ): Promise<AnyResponse>;
+      (params?: RequestParameters & UsersCheckFollowingForUserParams): Promise<
+        AnyResponse
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -40161,9 +40318,9 @@ export type RestEndpointMethods = {
      * Adds a GPG key to the authenticated user's GitHub account. Requires that you are authenticated via Basic Auth, or OAuth with at least `write:gpg_key` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
      */
     createGpgKey: {
-      (
-        params?: RequestParameters & UsersCreateGpgKeyParams
-      ): Promise<OctokitResponse<UsersCreateGpgKeyResponse>>;
+      (params?: RequestParameters & UsersCreateGpgKeyParams): Promise<
+        OctokitResponse<UsersCreateGpgKeyResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -40171,9 +40328,9 @@ export type RestEndpointMethods = {
      * Adds a public SSH key to the authenticated user's GitHub account. Requires that you are authenticated via Basic Auth, or OAuth with at least `write:public_key` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
      */
     createPublicKey: {
-      (
-        params?: RequestParameters & UsersCreatePublicKeyParams
-      ): Promise<OctokitResponse<UsersCreatePublicKeyResponse>>;
+      (params?: RequestParameters & UsersCreatePublicKeyParams): Promise<
+        OctokitResponse<UsersCreatePublicKeyResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -40181,9 +40338,9 @@ export type RestEndpointMethods = {
      * This endpoint is accessible with the `user` scope.
      */
     deleteEmails: {
-      (
-        params?: RequestParameters & UsersDeleteEmailsParams
-      ): Promise<AnyResponse>;
+      (params?: RequestParameters & UsersDeleteEmailsParams): Promise<
+        AnyResponse
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -40191,9 +40348,9 @@ export type RestEndpointMethods = {
      * Removes a GPG key from the authenticated user's GitHub account. Requires that you are authenticated via Basic Auth or via OAuth with at least `admin:gpg_key` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
      */
     deleteGpgKey: {
-      (
-        params?: RequestParameters & UsersDeleteGpgKeyParams
-      ): Promise<AnyResponse>;
+      (params?: RequestParameters & UsersDeleteGpgKeyParams): Promise<
+        AnyResponse
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -40201,9 +40358,9 @@ export type RestEndpointMethods = {
      * Removes a public SSH key from the authenticated user's GitHub account. Requires that you are authenticated via Basic Auth or via OAuth with at least `admin:public_key` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
      */
     deletePublicKey: {
-      (
-        params?: RequestParameters & UsersDeletePublicKeyParams
-      ): Promise<AnyResponse>;
+      (params?: RequestParameters & UsersDeletePublicKeyParams): Promise<
+        AnyResponse
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -40213,9 +40370,7 @@ export type RestEndpointMethods = {
      * Following a user requires the user to be logged in and authenticated with basic auth or OAuth with the `user:follow` scope.
      */
     follow: {
-      (params?: RequestParameters & UsersFollowParams): Promise<
-        AnyResponse
-      >;
+      (params?: RequestParameters & UsersFollowParams): Promise<AnyResponse>;
 
       endpoint: EndpointInterface;
     };
@@ -40241,9 +40396,9 @@ export type RestEndpointMethods = {
      * The Emails API enables you to list all of your email addresses, and toggle a primary email to be visible publicly. For more information, see "[Emails API](https://developer.github.com/v3/users/emails/)".
      */
     getByUsername: {
-      (
-        params?: RequestParameters & UsersGetByUsernameParams
-      ): Promise<OctokitResponse<UsersGetByUsernameResponse>>;
+      (params?: RequestParameters & UsersGetByUsernameParams): Promise<
+        OctokitResponse<UsersGetByUsernameResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -40253,9 +40408,9 @@ export type RestEndpointMethods = {
      * The `subject_type` and `subject_id` parameters provide context for the person's hovercard, which returns more information than without the parameters. For example, if you wanted to find out more about `octocat` who owns the `Spoon-Knife` repository via cURL, it would look like this:
      */
     getContextForUser: {
-      (
-        params?: RequestParameters & UsersGetContextForUserParams
-      ): Promise<OctokitResponse<UsersGetContextForUserResponse>>;
+      (params?: RequestParameters & UsersGetContextForUserParams): Promise<
+        OctokitResponse<UsersGetContextForUserResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -40273,9 +40428,9 @@ export type RestEndpointMethods = {
      * View extended details for a single public SSH key. Requires that you are authenticated via Basic Auth or via OAuth with at least `read:public_key` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
      */
     getPublicKey: {
-      (
-        params?: RequestParameters & UsersGetPublicKeyParams
-      ): Promise<OctokitResponse<UsersGetPublicKeyResponse>>;
+      (params?: RequestParameters & UsersGetPublicKeyParams): Promise<
+        OctokitResponse<UsersGetPublicKeyResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -40305,9 +40460,9 @@ export type RestEndpointMethods = {
      * Lists all of your email addresses, and specifies which one is visible to the public. This endpoint is accessible with the `user:email` scope.
      */
     listEmails: {
-      (
-        params?: RequestParameters & UsersListEmailsParams
-      ): Promise<OctokitResponse<UsersListEmailsResponse>>;
+      (params?: RequestParameters & UsersListEmailsParams): Promise<
+        OctokitResponse<UsersListEmailsResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -40324,10 +40479,9 @@ export type RestEndpointMethods = {
     };
 
     listFollowersForUser: {
-      (
-        params?: RequestParameters &
-          UsersListFollowersForUserParams
-      ): Promise<OctokitResponse<UsersListFollowersForUserResponse>>;
+      (params?: RequestParameters & UsersListFollowersForUserParams): Promise<
+        OctokitResponse<UsersListFollowersForUserResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -40344,10 +40498,9 @@ export type RestEndpointMethods = {
     };
 
     listFollowingForUser: {
-      (
-        params?: RequestParameters &
-          UsersListFollowingForUserParams
-      ): Promise<OctokitResponse<UsersListFollowingForUserResponse>>;
+      (params?: RequestParameters & UsersListFollowingForUserParams): Promise<
+        OctokitResponse<UsersListFollowingForUserResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -40355,9 +40508,9 @@ export type RestEndpointMethods = {
      * Lists the current user's GPG keys. Requires that you are authenticated via Basic Auth or via OAuth with at least `read:gpg_key` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
      */
     listGpgKeys: {
-      (
-        params?: RequestParameters & UsersListGpgKeysParams
-      ): Promise<OctokitResponse<UsersListGpgKeysResponse>>;
+      (params?: RequestParameters & UsersListGpgKeysParams): Promise<
+        OctokitResponse<UsersListGpgKeysResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -40365,9 +40518,9 @@ export type RestEndpointMethods = {
      * Lists the GPG keys for a user. This information is accessible by anyone.
      */
     listGpgKeysForUser: {
-      (
-        params?: RequestParameters & UsersListGpgKeysForUserParams
-      ): Promise<OctokitResponse<UsersListGpgKeysForUserResponse>>;
+      (params?: RequestParameters & UsersListGpgKeysForUserParams): Promise<
+        OctokitResponse<UsersListGpgKeysForUserResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -40375,9 +40528,9 @@ export type RestEndpointMethods = {
      * Lists your publicly visible email address, which you can set with the [Toggle primary email visibility](https://developer.github.com/v3/users/emails/#toggle-primary-email-visibility) endpoint. This endpoint is accessible with the `user:email` scope.
      */
     listPublicEmails: {
-      (
-        params?: RequestParameters & UsersListPublicEmailsParams
-      ): Promise<OctokitResponse<UsersListPublicEmailsResponse>>;
+      (params?: RequestParameters & UsersListPublicEmailsParams): Promise<
+        OctokitResponse<UsersListPublicEmailsResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -40385,9 +40538,9 @@ export type RestEndpointMethods = {
      * Lists the public SSH keys for the authenticated user's GitHub account. Requires that you are authenticated via Basic Auth or via OAuth with at least `read:public_key` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
      */
     listPublicKeys: {
-      (
-        params?: RequestParameters & UsersListPublicKeysParams
-      ): Promise<OctokitResponse<UsersListPublicKeysResponse>>;
+      (params?: RequestParameters & UsersListPublicKeysParams): Promise<
+        OctokitResponse<UsersListPublicKeysResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -40395,10 +40548,9 @@ export type RestEndpointMethods = {
      * Lists the _verified_ public SSH keys for a user. This is accessible by anyone.
      */
     listPublicKeysForUser: {
-      (
-        params?: RequestParameters &
-          UsersListPublicKeysForUserParams
-      ): Promise<OctokitResponse<UsersListPublicKeysForUserResponse>>;
+      (params?: RequestParameters & UsersListPublicKeysForUserParams): Promise<
+        OctokitResponse<UsersListPublicKeysForUserResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -40407,19 +40559,14 @@ export type RestEndpointMethods = {
      */
     togglePrimaryEmailVisibility: {
       (
-        params?: RequestParameters &
-          UsersTogglePrimaryEmailVisibilityParams
-      ): Promise<
-        OctokitResponse<UsersTogglePrimaryEmailVisibilityResponse>
-      >;
+        params?: RequestParameters & UsersTogglePrimaryEmailVisibilityParams
+      ): Promise<OctokitResponse<UsersTogglePrimaryEmailVisibilityResponse>>;
 
       endpoint: EndpointInterface;
     };
 
     unblock: {
-      (params?: RequestParameters & UsersUnblockParams): Promise<
-        AnyResponse
-      >;
+      (params?: RequestParameters & UsersUnblockParams): Promise<AnyResponse>;
 
       endpoint: EndpointInterface;
     };
@@ -40427,9 +40574,7 @@ export type RestEndpointMethods = {
      * Unfollowing a user requires the user to be logged in and authenticated with basic auth or OAuth with the `user:follow` scope.
      */
     unfollow: {
-      (params?: RequestParameters & UsersUnfollowParams): Promise<
-        AnyResponse
-      >;
+      (params?: RequestParameters & UsersUnfollowParams): Promise<AnyResponse>;
 
       endpoint: EndpointInterface;
     };
@@ -40437,9 +40582,9 @@ export type RestEndpointMethods = {
      * **Note:** If your email is set to private and you send an `email` parameter as part of this request to update your profile, your privacy settings are still enforced: the email address will not be displayed on your public profile or via the API.
      */
     updateAuthenticated: {
-      (
-        params?: RequestParameters & UsersUpdateAuthenticatedParams
-      ): Promise<OctokitResponse<UsersUpdateAuthenticatedResponse>>;
+      (params?: RequestParameters & UsersUpdateAuthenticatedParams): Promise<
+        OctokitResponse<UsersUpdateAuthenticatedResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
