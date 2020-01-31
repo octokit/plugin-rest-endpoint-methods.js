@@ -82,12 +82,6 @@ octokit.apps.deleteAuthorization({ client_id, access_token });
 // https://developer.github.com/v3/apps/oauth_applications/#revoke-a-grant-for-an-application
 octokit.apps.revokeGrantForApplication({ client_id, access_token });
 
-// DEPRECATED: octokit.oauthAuthorizations.revokeGrantForApplication() has been renamed to octokit.apps.revokeGrantForApplication()
-octokit.oauthAuthorizations.revokeGrantForApplication({
-  client_id,
-  access_token
-});
-
 // https://developer.github.com/v3/apps/oauth_applications/#check-a-token
 octokit.apps.checkToken({ client_id, access_token });
 
@@ -100,23 +94,11 @@ octokit.apps.deleteToken({ client_id, access_token });
 // https://developer.github.com/v3/apps/oauth_applications/#check-an-authorization
 octokit.apps.checkAuthorization({ client_id, access_token });
 
-// DEPRECATED: octokit.oauthAuthorizations.checkAuthorization() has been renamed to octokit.apps.checkAuthorization()
-octokit.oauthAuthorizations.checkAuthorization({ client_id, access_token });
-
 // https://developer.github.com/v3/apps/oauth_applications/#reset-an-authorization
 octokit.apps.resetAuthorization({ client_id, access_token });
 
-// DEPRECATED: octokit.oauthAuthorizations.resetAuthorization() has been renamed to octokit.apps.resetAuthorization()
-octokit.oauthAuthorizations.resetAuthorization({ client_id, access_token });
-
 // https://developer.github.com/v3/apps/oauth_applications/#revoke-an-authorization-for-an-application
 octokit.apps.revokeAuthorizationForApplication({ client_id, access_token });
-
-// DEPRECATED: octokit.oauthAuthorizations.revokeAuthorizationForApplication() has been renamed to octokit.apps.revokeAuthorizationForApplication()
-octokit.oauthAuthorizations.revokeAuthorizationForApplication({
-  client_id,
-  access_token
-});
 
 // https://developer.github.com/v3/apps/#get-a-single-github-app
 octokit.apps.getBySlug({ app_slug });
@@ -146,16 +128,6 @@ octokit.oauthAuthorizations.getOrCreateAuthorizationForApp({
 
 // https://developer.github.com/v3/oauth_authorizations/#get-or-create-an-authorization-for-a-specific-app-and-fingerprint
 octokit.oauthAuthorizations.getOrCreateAuthorizationForAppAndFingerprint({
-  client_id,
-  fingerprint,
-  client_secret,
-  scopes,
-  note,
-  note_url
-});
-
-// DEPRECATED: octokit.oauthAuthorizations.getOrCreateAuthorizationForAppFingerprint() has been renamed to octokit.oauthAuthorizations.getOrCreateAuthorizationForAppAndFingerprint()
-octokit.oauthAuthorizations.getOrCreateAuthorizationForAppFingerprint({
   client_id,
   fingerprint,
   client_secret,
@@ -274,9 +246,6 @@ octokit.issues.list({ filter, state, labels, sort, direction, since });
 // https://developer.github.com/v3/licenses/#list-commonly-used-licenses
 octokit.licenses.listCommonlyUsed();
 
-// DEPRECATED: octokit.licenses.list() has been renamed to octokit.licenses.listCommonlyUsed()
-octokit.licenses.list();
-
 // https://developer.github.com/v3/licenses/#get-an-individual-license
 octokit.licenses.get({ license });
 
@@ -392,9 +361,6 @@ octokit.orgs.pingHook({ org, hook_id });
 // https://developer.github.com/v3/apps/#get-an-organization-installation
 octokit.apps.getOrgInstallation({ org });
 
-// DEPRECATED: octokit.apps.findOrgInstallation() has been renamed to octokit.apps.getOrgInstallation()
-octokit.apps.findOrgInstallation({ org });
-
 // https://developer.github.com/v3/orgs/#list-installations-for-an-organization
 octokit.orgs.listInstallations({ org });
 
@@ -461,9 +427,6 @@ octokit.migrations.getStatusForOrg({ org, migration_id });
 
 // https://developer.github.com/v3/migrations/orgs/#download-an-organization-migration-archive
 octokit.migrations.downloadArchiveForOrg({ org, migration_id });
-
-// DEPRECATED: octokit.migrations.getArchiveForOrg() has been renamed to octokit.migrations.downloadArchiveForOrg()
-octokit.migrations.getArchiveForOrg({ org, migration_id });
 
 // https://developer.github.com/v3/migrations/orgs/#delete-an-organization-migration-archive
 octokit.migrations.deleteArchiveForOrg({ org, migration_id });
@@ -1019,9 +982,6 @@ octokit.repos.removeProtectedBranchRestrictions({ owner, repo, branch });
 // https://developer.github.com/v3/repos/branches/#list-apps-with-access-to-protected-branch
 octokit.repos.getAppsWithAccessToProtectedBranch({ owner, repo, branch });
 
-// DEPRECATED: octokit.repos.listAppsWithAccessToProtectedBranch() has been renamed to octokit.repos.getAppsWithAccessToProtectedBranch()
-octokit.repos.listAppsWithAccessToProtectedBranch({ owner, repo, branch });
-
 // https://developer.github.com/v3/repos/branches/#replace-app-restrictions-of-protected-branch
 octokit.repos.replaceProtectedBranchAppRestrictions({
   owner,
@@ -1043,12 +1003,6 @@ octokit.repos.removeProtectedBranchAppRestrictions({
 
 // https://developer.github.com/v3/repos/branches/#list-teams-with-access-to-protected-branch
 octokit.repos.getTeamsWithAccessToProtectedBranch({ owner, repo, branch });
-
-// DEPRECATED: octokit.repos.listProtectedBranchTeamRestrictions() has been renamed to octokit.repos.getTeamsWithAccessToProtectedBranch()
-octokit.repos.listProtectedBranchTeamRestrictions({ owner, repo, branch });
-
-// DEPRECATED: octokit.repos.listTeamsWithAccessToProtectedBranch() has been renamed to octokit.repos.getTeamsWithAccessToProtectedBranch()
-octokit.repos.listTeamsWithAccessToProtectedBranch({ owner, repo, branch });
 
 // https://developer.github.com/v3/repos/branches/#replace-team-restrictions-of-protected-branch
 octokit.repos.replaceProtectedBranchTeamRestrictions({
@@ -1076,12 +1030,6 @@ octokit.repos.removeProtectedBranchTeamRestrictions({
 
 // https://developer.github.com/v3/repos/branches/#list-users-with-access-to-protected-branch
 octokit.repos.getUsersWithAccessToProtectedBranch({ owner, repo, branch });
-
-// DEPRECATED: octokit.repos.listProtectedBranchUserRestrictions() has been renamed to octokit.repos.getUsersWithAccessToProtectedBranch()
-octokit.repos.listProtectedBranchUserRestrictions({ owner, repo, branch });
-
-// DEPRECATED: octokit.repos.listUsersWithAccessToProtectedBranch() has been renamed to octokit.repos.getUsersWithAccessToProtectedBranch()
-octokit.repos.listUsersWithAccessToProtectedBranch({ owner, repo, branch });
 
 // https://developer.github.com/v3/repos/branches/#replace-user-restrictions-of-protected-branch
 octokit.repos.replaceProtectedBranchUserRestrictions({
@@ -1252,32 +1200,6 @@ octokit.repos.getContents({ owner, repo, path, ref });
 
 // https://developer.github.com/v3/repos/contents/#create-or-update-a-file
 octokit.repos.createOrUpdateFile({
-  owner,
-  repo,
-  path,
-  message,
-  content,
-  sha,
-  branch,
-  committer,
-  author
-});
-
-// DEPRECATED: octokit.repos.createFile() has been renamed to octokit.repos.createOrUpdateFile()
-octokit.repos.createFile({
-  owner,
-  repo,
-  path,
-  message,
-  content,
-  sha,
-  branch,
-  committer,
-  author
-});
-
-// DEPRECATED: octokit.repos.updateFile() has been renamed to octokit.repos.createOrUpdateFile()
-octokit.repos.updateFile({
   owner,
   repo,
   path,
@@ -1478,9 +1400,6 @@ octokit.migrations.setLfsPreference({ owner, repo, use_lfs });
 
 // https://developer.github.com/v3/apps/#get-a-repository-installation
 octokit.apps.getRepoInstallation({ owner, repo });
-
-// DEPRECATED: octokit.apps.findRepoInstallation() has been renamed to octokit.apps.getRepoInstallation()
-octokit.apps.findRepoInstallation({ owner, repo });
 
 // https://developer.github.com/v3/interactions/repos/#get-interaction-restrictions-for-a-repository
 octokit.interactions.getRestrictionsForRepo({ owner, repo });
@@ -1805,24 +1724,7 @@ octokit.pulls.createComment({
   side,
   line,
   start_line,
-  start_side,
-  in_reply_to
-});
-
-// DEPRECATED: octokit.pulls.createCommentReply() has been renamed to octokit.pulls.createComment()
-octokit.pulls.createCommentReply({
-  owner,
-  repo,
-  pull_number,
-  body,
-  commit_id,
-  path,
-  position,
-  side,
-  line,
-  start_line,
-  start_side,
-  in_reply_to
+  start_side
 });
 
 // https://developer.github.com/v3/pulls/comments/#create-a-review-comment-reply
@@ -2085,9 +1987,6 @@ octokit.search.commits({ q, sort, order });
 // https://developer.github.com/v3/search/#search-issues-and-pull-requests
 octokit.search.issuesAndPullRequests({ q, sort, order });
 
-// DEPRECATED: octokit.search.issues() has been renamed to octokit.search.issuesAndPullRequests()
-octokit.search.issues({ q, sort, order });
-
 // https://developer.github.com/v3/search/#search-labels
 octokit.search.labels({ repository_id, q, sort, order });
 
@@ -2103,21 +2002,8 @@ octokit.search.users({ q, sort, order });
 // https://developer.github.com/v3/teams/#get-team-legacy
 octokit.teams.getLegacy({ team_id });
 
-// DEPRECATED: octokit.teams.get() has been renamed to octokit.teams.getLegacy()
-octokit.teams.get({ team_id });
-
 // https://developer.github.com/v3/teams/#edit-team-legacy
 octokit.teams.updateLegacy({
-  team_id,
-  name,
-  description,
-  privacy,
-  permission,
-  parent_team_id
-});
-
-// DEPRECATED: octokit.teams.update() has been renamed to octokit.teams.updateLegacy()
-octokit.teams.update({
   team_id,
   name,
   description,
@@ -2129,26 +2015,14 @@ octokit.teams.update({
 // https://developer.github.com/v3/teams/#delete-team-legacy
 octokit.teams.deleteLegacy({ team_id });
 
-// DEPRECATED: octokit.teams.delete() has been renamed to octokit.teams.deleteLegacy()
-octokit.teams.delete({ team_id });
-
 // https://developer.github.com/v3/teams/discussions/#list-discussions-legacy
 octokit.teams.listDiscussionsLegacy({ team_id, direction });
-
-// DEPRECATED: octokit.teams.listDiscussions() has been renamed to octokit.teams.listDiscussionsLegacy()
-octokit.teams.listDiscussions({ team_id, direction });
 
 // https://developer.github.com/v3/teams/discussions/#create-a-discussion-legacy
 octokit.teams.createDiscussionLegacy({ team_id, title, body, private });
 
-// DEPRECATED: octokit.teams.createDiscussion() has been renamed to octokit.teams.createDiscussionLegacy()
-octokit.teams.createDiscussion({ team_id, title, body, private });
-
 // https://developer.github.com/v3/teams/discussions/#get-a-single-discussion-legacy
 octokit.teams.getDiscussionLegacy({ team_id, discussion_number });
-
-// DEPRECATED: octokit.teams.getDiscussion() has been renamed to octokit.teams.getDiscussionLegacy()
-octokit.teams.getDiscussion({ team_id, discussion_number });
 
 // https://developer.github.com/v3/teams/discussions/#edit-a-discussion-legacy
 octokit.teams.updateDiscussionLegacy({
@@ -2158,14 +2032,8 @@ octokit.teams.updateDiscussionLegacy({
   body
 });
 
-// DEPRECATED: octokit.teams.updateDiscussion() has been renamed to octokit.teams.updateDiscussionLegacy()
-octokit.teams.updateDiscussion({ team_id, discussion_number, title, body });
-
 // https://developer.github.com/v3/teams/discussions/#delete-a-discussion-legacy
 octokit.teams.deleteDiscussionLegacy({ team_id, discussion_number });
-
-// DEPRECATED: octokit.teams.deleteDiscussion() has been renamed to octokit.teams.deleteDiscussionLegacy()
-octokit.teams.deleteDiscussion({ team_id, discussion_number });
 
 // https://developer.github.com/v3/teams/discussion_comments/#list-comments-legacy
 octokit.teams.listDiscussionCommentsLegacy({
@@ -2174,9 +2042,6 @@ octokit.teams.listDiscussionCommentsLegacy({
   direction
 });
 
-// DEPRECATED: octokit.teams.listDiscussionComments() has been renamed to octokit.teams.listDiscussionCommentsLegacy()
-octokit.teams.listDiscussionComments({ team_id, discussion_number, direction });
-
 // https://developer.github.com/v3/teams/discussion_comments/#create-a-comment-legacy
 octokit.teams.createDiscussionCommentLegacy({
   team_id,
@@ -2184,18 +2049,8 @@ octokit.teams.createDiscussionCommentLegacy({
   body
 });
 
-// DEPRECATED: octokit.teams.createDiscussionComment() has been renamed to octokit.teams.createDiscussionCommentLegacy()
-octokit.teams.createDiscussionComment({ team_id, discussion_number, body });
-
 // https://developer.github.com/v3/teams/discussion_comments/#get-a-single-comment-legacy
 octokit.teams.getDiscussionCommentLegacy({
-  team_id,
-  discussion_number,
-  comment_number
-});
-
-// DEPRECATED: octokit.teams.getDiscussionComment() has been renamed to octokit.teams.getDiscussionCommentLegacy()
-octokit.teams.getDiscussionComment({
   team_id,
   discussion_number,
   comment_number
@@ -2209,14 +2064,6 @@ octokit.teams.updateDiscussionCommentLegacy({
   body
 });
 
-// DEPRECATED: octokit.teams.updateDiscussionComment() has been renamed to octokit.teams.updateDiscussionCommentLegacy()
-octokit.teams.updateDiscussionComment({
-  team_id,
-  discussion_number,
-  comment_number,
-  body
-});
-
 // https://developer.github.com/v3/teams/discussion_comments/#delete-a-comment-legacy
 octokit.teams.deleteDiscussionCommentLegacy({
   team_id,
@@ -2224,23 +2071,8 @@ octokit.teams.deleteDiscussionCommentLegacy({
   comment_number
 });
 
-// DEPRECATED: octokit.teams.deleteDiscussionComment() has been renamed to octokit.teams.deleteDiscussionCommentLegacy()
-octokit.teams.deleteDiscussionComment({
-  team_id,
-  discussion_number,
-  comment_number
-});
-
 // https://developer.github.com/v3/reactions/#list-reactions-for-a-team-discussion-comment-legacy
 octokit.reactions.listForTeamDiscussionCommentLegacy({
-  team_id,
-  discussion_number,
-  comment_number,
-  content
-});
-
-// DEPRECATED: octokit.reactions.listForTeamDiscussionComment() has been renamed to octokit.reactions.listForTeamDiscussionCommentLegacy()
-octokit.reactions.listForTeamDiscussionComment({
   team_id,
   discussion_number,
   comment_number,
@@ -2255,23 +2087,8 @@ octokit.reactions.createForTeamDiscussionCommentLegacy({
   content
 });
 
-// DEPRECATED: octokit.reactions.createForTeamDiscussionComment() has been renamed to octokit.reactions.createForTeamDiscussionCommentLegacy()
-octokit.reactions.createForTeamDiscussionComment({
-  team_id,
-  discussion_number,
-  comment_number,
-  content
-});
-
 // https://developer.github.com/v3/reactions/#list-reactions-for-a-team-discussion-legacy
 octokit.reactions.listForTeamDiscussionLegacy({
-  team_id,
-  discussion_number,
-  content
-});
-
-// DEPRECATED: octokit.reactions.listForTeamDiscussion() has been renamed to octokit.reactions.listForTeamDiscussionLegacy()
-octokit.reactions.listForTeamDiscussion({
   team_id,
   discussion_number,
   content
@@ -2284,114 +2101,56 @@ octokit.reactions.createForTeamDiscussionLegacy({
   content
 });
 
-// DEPRECATED: octokit.reactions.createForTeamDiscussion() has been renamed to octokit.reactions.createForTeamDiscussionLegacy()
-octokit.reactions.createForTeamDiscussion({
-  team_id,
-  discussion_number,
-  content
-});
-
 // https://developer.github.com/v3/teams/members/#list-pending-team-invitations-legacy
 octokit.teams.listPendingInvitationsLegacy({ team_id });
-
-// DEPRECATED: octokit.teams.listPendingInvitations() has been renamed to octokit.teams.listPendingInvitationsLegacy()
-octokit.teams.listPendingInvitations({ team_id });
 
 // https://developer.github.com/v3/teams/members/#list-team-members-legacy
 octokit.teams.listMembersLegacy({ team_id, role });
 
-// DEPRECATED: octokit.teams.listMembers() has been renamed to octokit.teams.listMembersLegacy()
-octokit.teams.listMembers({ team_id, role });
-
 // https://developer.github.com/v3/teams/members/#get-team-member-legacy
 octokit.teams.getMemberLegacy({ team_id, username });
-
-// DEPRECATED: octokit.teams.getMember() has been renamed to octokit.teams.getMemberLegacy()
-octokit.teams.getMember({ team_id, username });
 
 // https://developer.github.com/v3/teams/members/#add-team-member-legacy
 octokit.teams.addMemberLegacy({ team_id, username });
 
-// DEPRECATED: octokit.teams.addMember() has been renamed to octokit.teams.addMemberLegacy()
-octokit.teams.addMember({ team_id, username });
-
 // https://developer.github.com/v3/teams/members/#remove-team-member-legacy
 octokit.teams.removeMemberLegacy({ team_id, username });
-
-// DEPRECATED: octokit.teams.removeMember() has been renamed to octokit.teams.removeMemberLegacy()
-octokit.teams.removeMember({ team_id, username });
 
 // https://developer.github.com/v3/teams/members/#get-team-membership-legacy
 octokit.teams.getMembershipLegacy({ team_id, username });
 
-// DEPRECATED: octokit.teams.getMembership() has been renamed to octokit.teams.getMembershipLegacy()
-octokit.teams.getMembership({ team_id, username });
-
 // https://developer.github.com/v3/teams/members/#add-or-update-team-membership-legacy
 octokit.teams.addOrUpdateMembershipLegacy({ team_id, username, role });
-
-// DEPRECATED: octokit.teams.addOrUpdateMembership() has been renamed to octokit.teams.addOrUpdateMembershipLegacy()
-octokit.teams.addOrUpdateMembership({ team_id, username, role });
 
 // https://developer.github.com/v3/teams/members/#remove-team-membership-legacy
 octokit.teams.removeMembershipLegacy({ team_id, username });
 
-// DEPRECATED: octokit.teams.removeMembership() has been renamed to octokit.teams.removeMembershipLegacy()
-octokit.teams.removeMembership({ team_id, username });
-
 // https://developer.github.com/v3/teams/#list-team-projects-legacy
 octokit.teams.listProjectsLegacy({ team_id });
-
-// DEPRECATED: octokit.teams.listProjects() has been renamed to octokit.teams.listProjectsLegacy()
-octokit.teams.listProjects({ team_id });
 
 // https://developer.github.com/v3/teams/#review-a-team-project-legacy
 octokit.teams.reviewProjectLegacy({ team_id, project_id });
 
-// DEPRECATED: octokit.teams.reviewProject() has been renamed to octokit.teams.reviewProjectLegacy()
-octokit.teams.reviewProject({ team_id, project_id });
-
 // https://developer.github.com/v3/teams/#add-or-update-team-project-legacy
 octokit.teams.addOrUpdateProjectLegacy({ team_id, project_id, permission });
-
-// DEPRECATED: octokit.teams.addOrUpdateProject() has been renamed to octokit.teams.addOrUpdateProjectLegacy()
-octokit.teams.addOrUpdateProject({ team_id, project_id, permission });
 
 // https://developer.github.com/v3/teams/#remove-team-project-legacy
 octokit.teams.removeProjectLegacy({ team_id, project_id });
 
-// DEPRECATED: octokit.teams.removeProject() has been renamed to octokit.teams.removeProjectLegacy()
-octokit.teams.removeProject({ team_id, project_id });
-
 // https://developer.github.com/v3/teams/#list-team-repos-legacy
 octokit.teams.listReposLegacy({ team_id });
-
-// DEPRECATED: octokit.teams.listRepos() has been renamed to octokit.teams.listReposLegacy()
-octokit.teams.listRepos({ team_id });
 
 // https://developer.github.com/v3/teams/#check-if-a-team-manages-a-repository-legacy
 octokit.teams.checkManagesRepoLegacy({ team_id, owner, repo });
 
-// DEPRECATED: octokit.teams.checkManagesRepo() has been renamed to octokit.teams.checkManagesRepoLegacy()
-octokit.teams.checkManagesRepo({ team_id, owner, repo });
-
 // https://developer.github.com/v3/teams/#add-or-update-team-repository-legacy
 octokit.teams.addOrUpdateRepoLegacy({ team_id, owner, repo, permission });
-
-// DEPRECATED: octokit.teams.addOrUpdateRepo() has been renamed to octokit.teams.addOrUpdateRepoLegacy()
-octokit.teams.addOrUpdateRepo({ team_id, owner, repo, permission });
 
 // https://developer.github.com/v3/teams/#remove-team-repository-legacy
 octokit.teams.removeRepoLegacy({ team_id, owner, repo });
 
-// DEPRECATED: octokit.teams.removeRepo() has been renamed to octokit.teams.removeRepoLegacy()
-octokit.teams.removeRepo({ team_id, owner, repo });
-
 // https://developer.github.com/v3/teams/#list-child-teams-legacy
 octokit.teams.listChildLegacy({ team_id });
-
-// DEPRECATED: octokit.teams.listChild() has been renamed to octokit.teams.listChildLegacy()
-octokit.teams.listChild({ team_id });
 
 // https://developer.github.com/v3/users/#get-the-authenticated-user
 octokit.users.getAuthenticated();
@@ -2627,9 +2386,6 @@ octokit.users.getContextForUser({ username, subject_type, subject_id });
 
 // https://developer.github.com/v3/apps/#get-a-user-installation
 octokit.apps.getUserInstallation({ username });
-
-// DEPRECATED: octokit.apps.findUserInstallation() has been renamed to octokit.apps.getUserInstallation()
-octokit.apps.findUserInstallation({ username });
 
 // https://developer.github.com/v3/users/keys/#list-public-keys-for-a-user
 octokit.users.listPublicKeysForUser({ username });
