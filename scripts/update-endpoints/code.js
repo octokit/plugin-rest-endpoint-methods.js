@@ -28,6 +28,11 @@ async function generateRoutes() {
       return;
     }
 
+    const isUploadReleaseAssetUrl = /^\{origin\}/.test(endpoint.url);
+    if (isUploadReleaseAssetUrl) {
+      endpoint.url = endpoint.url.substr("{origin}".length);
+    }
+
     const idName = endpoint.id;
     const route = `${endpoint.method} ${endpoint.url}`;
     const endpointDefaults = {};
@@ -94,6 +99,10 @@ async function generateRoutes() {
           console.log(parameter);
         }
       }
+    }
+
+    if (isUploadReleaseAssetUrl) {
+      endpointDefaults.baseUrl = "https://uploads.github.com";
     }
 
     newRoutes[scope][idName] = [route];
