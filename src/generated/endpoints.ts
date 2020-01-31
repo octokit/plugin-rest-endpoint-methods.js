@@ -5460,7 +5460,8 @@ export default {
     uploadReleaseAsset: {
       method: "POST",
       params: {
-        file: { mapTo: "data", required: true, type: "string | object" },
+        data: { mapTo: "data", required: true, type: "string | object" },
+        file: { alias: "data", deprecated: true, type: "string | object" },
         headers: { required: true, type: "object" },
         "headers.content-length": { required: true, type: "integer" },
         "headers.content-type": { required: true, type: "string" },
