@@ -94,10 +94,6 @@ async function generateRoutes() {
 
       for (const parameter of renamedParameters) {
         endpointDecorations.renamedParameters[parameter.name] = parameter.alias;
-        if (!parameter.deprecated) {
-          console.log(`parameter`);
-          console.log(parameter);
-        }
       }
     }
 
