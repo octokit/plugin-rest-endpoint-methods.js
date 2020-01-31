@@ -2685,7 +2685,7 @@ octokit.pulls.createFromIssue({
 });
 
 // https://developer.github.com/v3/repos/releases/#upload-a-release-asset
-octokit.repos.uploadReleaseAsset({ file, headers, label, name, url });
+octokit.repos.uploadReleaseAsset({ data, headers, label, name, url });
 ```
 
 There is one method for each REST API endpoint documented at [https://developer.github.com/v3](https://developer.github.com/v3).
