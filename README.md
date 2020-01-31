@@ -67,20 +67,8 @@ octokit.apps.createInstallationToken({
   permissions
 });
 
-// https://developer.github.com/v3/oauth_authorizations/#list-your-grants
-octokit.oauthAuthorizations.listGrants();
-
-// https://developer.github.com/v3/oauth_authorizations/#get-a-single-grant
-octokit.oauthAuthorizations.getGrant({ grant_id });
-
-// https://developer.github.com/v3/oauth_authorizations/#delete-a-grant
-octokit.oauthAuthorizations.deleteGrant({ grant_id });
-
 // https://developer.github.com/v3/apps/oauth_applications/#delete-an-app-authorization
 octokit.apps.deleteAuthorization({ client_id, access_token });
-
-// https://developer.github.com/v3/apps/oauth_applications/#revoke-a-grant-for-an-application
-octokit.apps.revokeGrantForApplication({ client_id, access_token });
 
 // https://developer.github.com/v3/apps/oauth_applications/#check-a-token
 octokit.apps.checkToken({ client_id, access_token });
@@ -91,67 +79,8 @@ octokit.apps.resetToken({ client_id, access_token });
 // https://developer.github.com/v3/apps/oauth_applications/#delete-an-app-token
 octokit.apps.deleteToken({ client_id, access_token });
 
-// https://developer.github.com/v3/apps/oauth_applications/#check-an-authorization
-octokit.apps.checkAuthorization({ client_id, access_token });
-
-// https://developer.github.com/v3/apps/oauth_applications/#reset-an-authorization
-octokit.apps.resetAuthorization({ client_id, access_token });
-
-// https://developer.github.com/v3/apps/oauth_applications/#revoke-an-authorization-for-an-application
-octokit.apps.revokeAuthorizationForApplication({ client_id, access_token });
-
 // https://developer.github.com/v3/apps/#get-a-single-github-app
 octokit.apps.getBySlug({ app_slug });
-
-// https://developer.github.com/v3/oauth_authorizations/#list-your-authorizations
-octokit.oauthAuthorizations.listAuthorizations();
-
-// https://developer.github.com/v3/oauth_authorizations/#create-a-new-authorization
-octokit.oauthAuthorizations.createAuthorization({
-  scopes,
-  note,
-  note_url,
-  client_id,
-  client_secret,
-  fingerprint
-});
-
-// https://developer.github.com/v3/oauth_authorizations/#get-or-create-an-authorization-for-a-specific-app
-octokit.oauthAuthorizations.getOrCreateAuthorizationForApp({
-  client_id,
-  client_secret,
-  scopes,
-  note,
-  note_url,
-  fingerprint
-});
-
-// https://developer.github.com/v3/oauth_authorizations/#get-or-create-an-authorization-for-a-specific-app-and-fingerprint
-octokit.oauthAuthorizations.getOrCreateAuthorizationForAppAndFingerprint({
-  client_id,
-  fingerprint,
-  client_secret,
-  scopes,
-  note,
-  note_url
-});
-
-// https://developer.github.com/v3/oauth_authorizations/#get-a-single-authorization
-octokit.oauthAuthorizations.getAuthorization({ authorization_id });
-
-// https://developer.github.com/v3/oauth_authorizations/#update-an-existing-authorization
-octokit.oauthAuthorizations.updateAuthorization({
-  authorization_id,
-  scopes,
-  add_scopes,
-  remove_scopes,
-  note,
-  note_url,
-  fingerprint
-});
-
-// https://developer.github.com/v3/oauth_authorizations/#delete-an-authorization
-octokit.oauthAuthorizations.deleteAuthorization({ authorization_id });
 
 // https://developer.github.com/v3/codes_of_conduct/#list-all-codes-of-conduct
 octokit.codesOfConduct.listConductCodes();
