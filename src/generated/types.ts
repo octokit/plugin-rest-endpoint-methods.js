@@ -30194,10 +30194,7 @@ export type ReposUploadReleaseAssetParams = {
    * An alternate short description of the asset. Used in place of the filename. This should be set in a URI query parameter.
    */
   label?: string;
-  /**
-   * The file name of the asset. This should be set in a URI query parameter.
-   */
-  name: string;
+  name?: string;
   owner: string;
   release_id: number;
   repo: string;
@@ -32169,6 +32166,9 @@ export type ReposUpdateProtectedBranchPullRequestReviewEnforcementParamsDismissa
    * The list of user `login`s with dismissal access
    */
   users?: string[];
+};
+export type ReposUploadReleaseAssetParamsHeaders = {
+  "content-type": string;
 };
 
 export type RestEndpointMethods = {
