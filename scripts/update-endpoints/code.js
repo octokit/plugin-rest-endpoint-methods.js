@@ -97,6 +97,14 @@ async function generateRoutes() {
       }
     }
 
+    const mapToDataParameter = endpoint.parameters.find(parameter => {
+      return parameter.mapToData && parameter.name !== "data";
+    });
+
+    if (mapToDataParameter) {
+      endpointDecorations.mapToData = mapToDataParameter.name;
+    }
+
     if (isUploadReleaseAssetUrl) {
       endpointDefaults.baseUrl = "https://uploads.github.com";
     }
