@@ -726,20 +726,28 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
       "POST /repos/{owner}/{repo}/branches/{branch}/protection/enforce_admins"
     ],
     addProtectedBranchAppRestrictions: [
-      "POST /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/apps"
+      "POST /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/apps",
+      {},
+      { mapToData: "apps" }
     ],
     addProtectedBranchRequiredSignatures: [
       "POST /repos/{owner}/{repo}/branches/{branch}/protection/required_signatures",
       { mediaType: { previews: ["zzzax"] } }
     ],
     addProtectedBranchRequiredStatusChecksContexts: [
-      "POST /repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks/contexts"
+      "POST /repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks/contexts",
+      {},
+      { mapToData: "contexts" }
     ],
     addProtectedBranchTeamRestrictions: [
-      "POST /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams"
+      "POST /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams",
+      {},
+      { mapToData: "teams" }
     ],
     addProtectedBranchUserRestrictions: [
-      "POST /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users"
+      "POST /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users",
+      {},
+      { mapToData: "users" }
     ],
     checkCollaborator: ["GET /repos/{owner}/{repo}/collaborators/{username}"],
     checkVulnerabilityAlerts: [
@@ -924,7 +932,9 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
       "DELETE /repos/{owner}/{repo}/branches/{branch}/protection/enforce_admins"
     ],
     removeProtectedBranchAppRestrictions: [
-      "DELETE /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/apps"
+      "DELETE /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/apps",
+      {},
+      { mapToData: "apps" }
     ],
     removeProtectedBranchPullRequestReviewEnforcement: [
       "DELETE /repos/{owner}/{repo}/branches/{branch}/protection/required_pull_request_reviews"
@@ -937,28 +947,42 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
       "DELETE /repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks"
     ],
     removeProtectedBranchRequiredStatusChecksContexts: [
-      "DELETE /repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks/contexts"
+      "DELETE /repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks/contexts",
+      {},
+      { mapToData: "contexts" }
     ],
     removeProtectedBranchRestrictions: [
       "DELETE /repos/{owner}/{repo}/branches/{branch}/protection/restrictions"
     ],
     removeProtectedBranchTeamRestrictions: [
-      "DELETE /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams"
+      "DELETE /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams",
+      {},
+      { mapToData: "teams" }
     ],
     removeProtectedBranchUserRestrictions: [
-      "DELETE /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users"
+      "DELETE /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users",
+      {},
+      { mapToData: "users" }
     ],
     replaceProtectedBranchAppRestrictions: [
-      "PUT /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/apps"
+      "PUT /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/apps",
+      {},
+      { mapToData: "apps" }
     ],
     replaceProtectedBranchRequiredStatusChecksContexts: [
-      "PUT /repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks/contexts"
+      "PUT /repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks/contexts",
+      {},
+      { mapToData: "contexts" }
     ],
     replaceProtectedBranchTeamRestrictions: [
-      "PUT /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams"
+      "PUT /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams",
+      {},
+      { mapToData: "teams" }
     ],
     replaceProtectedBranchUserRestrictions: [
-      "PUT /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users"
+      "PUT /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users",
+      {},
+      { mapToData: "users" }
     ],
     replaceTopics: [
       "PUT /repos/{owner}/{repo}/topics",

@@ -5,6 +5,7 @@ import { RestEndpointMethods } from "./generated/types";
 export type Api = RestEndpointMethods;
 
 export type EndpointDecorations = {
+  mapToData?: string;
   deprecated?: string;
   renamed?: [string, string];
   renamedParameters?: {
