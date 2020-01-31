@@ -108,7 +108,7 @@ describe("REST API endpoint methods", () => {
       });
   });
 
-  it("octokit.repos.addProtectedBranchRequiredStatusChecksContexts()", async () => {
+  it("octokit.repos.addProtectedBranchRequiredStatusChecksContexts(): `contexts` option value is sent as request body without namespace", async () => {
     const mock = fetchMock.sandbox().postOnce(
       "https://api.github.com/repos/octocat/hello-world/branches/latest/protection/required_status_checks/contexts",
       { ok: true },
