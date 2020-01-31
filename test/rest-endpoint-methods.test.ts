@@ -67,4 +67,46 @@ describe("REST API endpoint methods", () => {
     const octokit = new MyOctokit();
     expect(typeof octokit.teams.listMembersLegacy.endpoint).toEqual("function");
   });
+
+  it.only("octokit.repos.uploadReleaseAsset()", async () => {
+    const mock = fetchMock.sandbox().postOnce(
+      "https://uploads.github.com/repos/octocat/hello-world/releases/123/assets",
+      { ok: true },
+      {
+        headers: {
+          "content-type": "text/plain"
+        },
+        query: {
+          name: "test.txt",
+          label: "test"
+        }
+      }
+    );
+
+    const MyOctokit = Octokit.plugin(restEndpointMethods);
+    const octokit = new MyOctokit({
+      auth: "secret123",
+      request: {
+        fetch: mock
+      }
+    });
+
+    return octokit.repos
+      .uploadReleaseAsset({
+        headers: {
+          "content-type": "text/plain"
+        },
+        owner: "octocat",
+        repo: "hello-world",
+        release_id: 123,
+        file: "test 1, 2",
+        name: "test.txt",
+        label: "test"
+      })
+      .catch(error => {
+        console.log(error);
+
+        throw error;
+      });
+  });
 });
