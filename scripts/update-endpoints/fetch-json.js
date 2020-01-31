@@ -26,6 +26,7 @@ const QUERY = `
       headers {
         name
         value
+        required
       }
       parameters {
         name
