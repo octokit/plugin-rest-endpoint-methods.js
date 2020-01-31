@@ -2437,7 +2437,7 @@ export default {
       params: {
         page: { type: "integer" },
         per_page: { type: "integer" },
-        since: { type: "string" }
+        since: { type: "integer" }
       },
       url: "/organizations"
     },
@@ -4948,7 +4948,7 @@ export default {
       params: {
         page: { type: "integer" },
         per_page: { type: "integer" },
-        since: { type: "string" }
+        since: { type: "integer" }
       },
       url: "/repositories"
     },

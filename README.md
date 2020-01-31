@@ -1972,6 +1972,17 @@ octokit.repos.deleteRelease({ owner, repo, release_id });
 // https://developer.github.com/v3/repos/releases/#list-assets-for-a-release
 octokit.repos.listAssetsForRelease({ owner, repo, release_id });
 
+// https://developer.github.com/v3/repos/releases/#upload-a-release-asset
+octokit.repos.uploadReleaseAsset({
+  owner,
+  repo,
+  release_id,
+  name,
+  label,
+  file,
+  origin
+});
+
 // https://developer.github.com/v3/activity/starring/#list-stargazers
 octokit.activity.listStargazersForRepo({ owner, repo });
 
