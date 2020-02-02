@@ -31,6 +31,9 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     getWorkflow: ["GET /repos/{owner}/{repo}/actions/workflows/{workflow_id}"],
     getWorkflowJob: ["GET /repos/{owner}/{repo}/actions/jobs/{job_id}"],
     getWorkflowRun: ["GET /repos/{owner}/{repo}/actions/runs/{run_id}"],
+    listDownloadsForSelfHostedRunnerApplication: [
+      "GET /repos/{owner}/{repo}/actions/runners/downloads"
+    ],
     listJobsForWorkflowRun: [
       "GET /repos/{owner}/{repo}/actions/runs/{run_id}/jobs"
     ],
