@@ -23432,7 +23432,7 @@ type ActionsListWorkflowRunsResponse = {
   total_count: number;
   workflow_runs: Array<ActionsListWorkflowRunsResponseWorkflowRunsItem>;
 };
-type ActionsListWorkflowRunArtifactsResponseItemArtifactsItem = {
+type ActionsListWorkflowRunArtifactsResponseArtifactsItem = {
   archive_download_url: string;
   created_at: string;
   expired: string;
@@ -23442,8 +23442,8 @@ type ActionsListWorkflowRunArtifactsResponseItemArtifactsItem = {
   node_id: string;
   size_in_bytes: number;
 };
-type ActionsListWorkflowRunArtifactsResponseItem = {
-  artifacts: Array<ActionsListWorkflowRunArtifactsResponseItemArtifactsItem>;
+type ActionsListWorkflowRunArtifactsResponse = {
+  artifacts: Array<ActionsListWorkflowRunArtifactsResponseArtifactsItem>;
   total_count: number;
 };
 type ActionsListSelfHostedRunnersForRepoResponseItemItem = {
@@ -23452,13 +23452,13 @@ type ActionsListSelfHostedRunnersForRepoResponseItemItem = {
   os: string;
   status: string;
 };
-type ActionsListSecretsForRepoResponseItemSecretsItem = {
+type ActionsListSecretsForRepoResponseSecretsItem = {
   created_at: string;
   name: string;
   updated_at: string;
 };
-type ActionsListSecretsForRepoResponseItem = {
-  secrets: Array<ActionsListSecretsForRepoResponseItemSecretsItem>;
+type ActionsListSecretsForRepoResponse = {
+  secrets: Array<ActionsListSecretsForRepoResponseSecretsItem>;
   total_count: number;
 };
 type ActionsListRepoWorkflowsResponseWorkflowsItem = {
@@ -23659,7 +23659,7 @@ type ActionsListRepoWorkflowRunsResponse = {
   total_count: number;
   workflow_runs: Array<ActionsListRepoWorkflowRunsResponseWorkflowRunsItem>;
 };
-type ActionsListJobsForWorkflowRunResponseItemWorkflowJobsItemStepsItem = {
+type ActionsListJobsForWorkflowRunResponseJobsItemStepsItem = {
   completed_at: string;
   conclusion: string;
   name: string;
@@ -23667,7 +23667,7 @@ type ActionsListJobsForWorkflowRunResponseItemWorkflowJobsItemStepsItem = {
   started_at: string;
   status: string;
 };
-type ActionsListJobsForWorkflowRunResponseItemWorkflowJobsItem = {
+type ActionsListJobsForWorkflowRunResponseJobsItem = {
   check_run_url: string;
   completed_at: string;
   conclusion: string;
@@ -23680,16 +23680,18 @@ type ActionsListJobsForWorkflowRunResponseItemWorkflowJobsItem = {
   run_url: string;
   started_at: string;
   status: string;
-  steps: Array<
-    ActionsListJobsForWorkflowRunResponseItemWorkflowJobsItemStepsItem
-  >;
+  steps: Array<ActionsListJobsForWorkflowRunResponseJobsItemStepsItem>;
   url: string;
 };
-type ActionsListJobsForWorkflowRunResponseItem = {
+type ActionsListJobsForWorkflowRunResponse = {
+  jobs: Array<ActionsListJobsForWorkflowRunResponseJobsItem>;
   total_count: number;
-  workflow_jobs: Array<
-    ActionsListJobsForWorkflowRunResponseItemWorkflowJobsItem
-  >;
+};
+type ActionsListDownloadsForSelfHostedRunnerApplicationResponseItem = {
+  architecture: string;
+  download_url: string;
+  filename: string;
+  os: string;
 };
 type ActionsGetWorkflowRunResponseRepositoryOwner = {
   avatar_url: string;
@@ -23932,17 +23934,11 @@ type ActionsCreateRegistrationTokenResponse = {
   expires_at: string;
   token: string;
 };
-type ActionsListJobsForWorkflowRunResponse = Array<
-  ActionsListJobsForWorkflowRunResponseItem
->;
-type ActionsListSecretsForRepoResponse = Array<
-  ActionsListSecretsForRepoResponseItem
+type ActionsListDownloadsForSelfHostedRunnerApplicationResponse = Array<
+  ActionsListDownloadsForSelfHostedRunnerApplicationResponseItem
 >;
 type ActionsListSelfHostedRunnersForRepoResponse = Array<
   Array<ActionsListSelfHostedRunnersForRepoResponseItemItem>
->;
-type ActionsListWorkflowRunArtifactsResponse = Array<
-  ActionsListWorkflowRunArtifactsResponseItem
 >;
 type ActivityListNotificationsResponse = Array<
   ActivityListNotificationsResponseItem
@@ -24391,6 +24387,10 @@ export type ActionsGetWorkflowRunParams = {
   repo: string;
   run_id: number;
 };
+export type ActionsListDownloadsForSelfHostedRunnerApplicationParams = {
+  owner: string;
+  repo: string;
+};
 export type ActionsListJobsForWorkflowRunParams = {
   owner: string;
   /**
@@ -24405,6 +24405,18 @@ export type ActionsListJobsForWorkflowRunParams = {
   run_id: number;
 };
 export type ActionsListRepoWorkflowRunsParams = {
+  /**
+   * Returns someone's workflow runs. Use the login for the user who created the `push` associated with the check suite or workflow run.
+   */
+  actor?: string;
+  /**
+   * Returns workflow runs associated with a branch. Use the name of the branch of the `push`.
+   */
+  branch?: string;
+  /**
+   * Returns workflow run triggered by the event you specify. For example, `push`, `pull_request` or `issue`. For more information, see "[Events that trigger workflows](https://help.github.com/en/actions/automating-your-workflow-with-github-actions/events-that-trigger-workflows)" in the GitHub Help documentation.
+   */
+  event?: string;
   owner: string;
   /**
    * Page number of the results to fetch.
@@ -24415,6 +24427,10 @@ export type ActionsListRepoWorkflowRunsParams = {
    */
   per_page?: number;
   repo: string;
+  /**
+   * Returns workflow runs associated with the check run `status` or `conclusion` you specify. For example, a conclusion can be `success` or a status can be `completed`. For more information, see the `status` and `conclusion` options available in "[Create a check run](https://developer.github.com/v3/checks/runs/#create-a-check-run)."
+   */
+  status?: "completed" | "status" | "conclusion";
 };
 export type ActionsListRepoWorkflowsParams = {
   owner: string;
@@ -24492,6 +24508,18 @@ export type ActionsListWorkflowRunLogsParams = {
   run_id: number;
 };
 export type ActionsListWorkflowRunsParams = {
+  /**
+   * Returns someone's workflow runs. Use the login for the user who created the `push` associated with the check suite or workflow run.
+   */
+  actor?: string;
+  /**
+   * Returns workflow runs associated with a branch. Use the name of the branch of the `push`.
+   */
+  branch?: string;
+  /**
+   * Returns workflow run triggered by the event you specify. For example, `push`, `pull_request` or `issue`. For more information, see "[Events that trigger workflows](https://help.github.com/en/actions/automating-your-workflow-with-github-actions/events-that-trigger-workflows)" in the GitHub Help documentation.
+   */
+  event?: string;
   owner: string;
   /**
    * Page number of the results to fetch.
@@ -24502,6 +24530,10 @@ export type ActionsListWorkflowRunsParams = {
    */
   per_page?: number;
   repo: string;
+  /**
+   * Returns workflow runs associated with the check run `status` or `conclusion` you specify. For example, a conclusion can be `success` or a status can be `completed`. For more information, see the `status` and `conclusion` options available in "[Create a check run](https://developer.github.com/v3/checks/runs/#create-a-check-run)."
+   */
+  status?: "completed" | "status" | "conclusion";
   workflow_id: number;
 };
 export type ActionsReRunWorkflowParams = {
@@ -24834,25 +24866,9 @@ export type AppsAddRepoToInstallationParams = {
 };
 export type AppsCheckAccountIsAssociatedWithAnyParams = {
   account_id: number;
-  /**
-   * Page number of the results to fetch.
-   */
-  page?: number;
-  /**
-   * Results per page (max 100)
-   */
-  per_page?: number;
 };
 export type AppsCheckAccountIsAssociatedWithAnyStubbedParams = {
   account_id: number;
-  /**
-   * Page number of the results to fetch.
-   */
-  page?: number;
-  /**
-   * Results per page (max 100)
-   */
-  per_page?: number;
 };
 export type AppsCheckAuthorizationParams = {
   access_token: string;
@@ -25839,14 +25855,6 @@ export type IssuesGetParams = {
 export type IssuesGetCommentParams = {
   comment_id: number;
   owner: string;
-  /**
-   * Page number of the results to fetch.
-   */
-  page?: number;
-  /**
-   * Results per page (max 100)
-   */
-  per_page?: number;
   repo: string;
 };
 export type IssuesGetEventParams = {
@@ -27438,14 +27446,6 @@ export type ProjectsDeleteColumnParams = {
   column_id: number;
 };
 export type ProjectsGetParams = {
-  /**
-   * Page number of the results to fetch.
-   */
-  page?: number;
-  /**
-   * Results per page (max 100)
-   */
-  per_page?: number;
   project_id: number;
 };
 export type ProjectsGetCardParams = {
@@ -32883,6 +32883,21 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface;
     };
     /**
+     * Lists binaries for the self-hosted runner application that you can download and run. Anyone with admin access to the repository can use this endpoint. GitHub Apps must have the `administration` permission to use this endpoint.
+     */
+    listDownloadsForSelfHostedRunnerApplication: {
+      (
+        params?: RequestParameters &
+          ActionsListDownloadsForSelfHostedRunnerApplicationParams
+      ): Promise<
+        OctokitResponse<
+          ActionsListDownloadsForSelfHostedRunnerApplicationResponse
+        >
+      >;
+
+      endpoint: EndpointInterface;
+    };
+    /**
      * Lists jobs for a workflow run. Anyone with read access to the repository can use this endpoint. GitHub Apps must have the `actions` permission to use this endpoint.
      */
     listJobsForWorkflowRun: {
@@ -32893,7 +32908,9 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface;
     };
     /**
-     * Lists all workflow runs for a repository. Anyone with read access to the repository can use this endpoint. GitHub Apps must have the `actions` permission to use this endpoint.
+     * Lists all workflow runs for a repository. You can use parameters to narrow the list of results. For more information about using parameters, see [Parameters](https://developer.github.com/v3/#parameters).
+     *
+     * Anyone with read access to the repository can use this endpoint. GitHub Apps must have the `actions` permission to use this endpoint.
      */
     listRepoWorkflowRuns: {
       (params?: RequestParameters & ActionsListRepoWorkflowRunsParams): Promise<
@@ -32967,7 +32984,9 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface;
     };
     /**
-     * List all workflow runs for a workflow. You can also replace `:workflow_id` with `:workflow_file_name`. For example, you could use `main.yml`. Anyone with read access to the repository can use this endpoint.
+     * List all workflow runs for a workflow. You can also replace `:workflow_id` with `:workflow_file_name`. For example, you could use `main.yml`. You can use parameters to narrow the list of results. For more information about using parameters, see [Parameters](https://developer.github.com/v3/#parameters).
+     *
+     * Anyone with read access to the repository can use this endpoint.
      */
     listWorkflowRuns: {
       (params?: RequestParameters & ActionsListWorkflowRunsParams): Promise<
