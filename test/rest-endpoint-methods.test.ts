@@ -138,4 +138,20 @@ describe("REST API endpoint methods", () => {
         throw error;
       });
   });
+
+  it("octokit.apps.listInstallations(): method without options (octokit/rest.js#818)", async () => {
+    const mock = fetchMock
+      .sandbox()
+      .getOnce("https://api.github.com/app/installations", { ok: true });
+
+    const MyOctokit = Octokit.plugin(restEndpointMethods);
+    const octokit = new MyOctokit({
+      auth: "secret123",
+      request: {
+        fetch: mock
+      }
+    });
+
+    return octokit.apps.listInstallations();
+  });
 });
