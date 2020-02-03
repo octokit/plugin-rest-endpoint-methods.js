@@ -111,4 +111,62 @@ describe("Deprecations", () => {
     expect(data).toStrictEqual({ ok: true });
     expect(warnCalledCount).toEqual(1);
   });
+
+  it("octokit.pullRequests.get", () => {
+    const mock = fetchMock
+      .sandbox()
+      .getOnce("path:/repos/octocat/hello-world/pulls/123", {
+        ok: true
+      });
+    const MyOctokit = Octokit.plugin(restEndpointMethods);
+    let warnCalledCount = 0;
+    const octokit = new MyOctokit({
+      log: {
+        warn: (deprecation: Error) => {
+          warnCalledCount++;
+          expect(deprecation.message).toMatch(
+            `[@octokit/plugin-rest-endpoint-methods] "octokit.pullRequests.*" methods are deprecated, use "octokit.pulls.*" instead`
+          );
+        }
+      },
+      request: {
+        fetch: mock
+      }
+    });
+    octokit.pullRequests.get({
+      owner: "octocat",
+      repo: "hello-world",
+      pull_number: 123
+    });
+    expect(warnCalledCount).toEqual(1);
+  });
+
+  it("octokit.gitdata.getCommit", () => {
+    const mock = fetchMock
+      .sandbox()
+      .getOnce("path:/repos/octocat/hello-world/git/commits/sha123", {
+        ok: true
+      });
+    const MyOctokit = Octokit.plugin(restEndpointMethods);
+    let warnCalledCount = 0;
+    const octokit = new MyOctokit({
+      log: {
+        warn: (deprecation: Error) => {
+          warnCalledCount++;
+          expect(deprecation.message).toMatch(
+            `[@octokit/plugin-rest-endpoint-methods] "octokit.gitdata.*" methods are deprecated, use "octokit.git.*" instead`
+          );
+        }
+      },
+      request: {
+        fetch: mock
+      }
+    });
+    octokit.gitdata.getCommit({
+      owner: "octocat",
+      repo: "hello-world",
+      commit_sha: "sha123"
+    });
+    expect(warnCalledCount).toEqual(1);
+  });
 });
