@@ -1,4 +1,5 @@
 import { Octokit } from "@octokit/core";
+import { Deprecation } from "deprecation";
 
 import endpointsByScope from "./generated/endpoints";
 import { VERSION } from "./version";
@@ -19,17 +20,28 @@ export function restEndpointMethods(octokit: Octokit): Api {
   // @ts-ignore
   octokit.registerEndpoints = registerEndpoints.bind(null, octokit);
 
+  registerEndpoints(octokit, endpointsByScope);
+
   // Aliasing scopes for backward compatibility
   // See https://github.com/octokit/rest.js/pull/1134
-  // @ts-ignore
-  registerEndpoints(
-    octokit,
-    Object.assign(endpointsByScope, {
-      gitdata: endpointsByScope.git,
-      authorization: endpointsByScope.oauthAuthorizations,
-      pullRequests: endpointsByScope.pulls
-    })
-  );
+  [
+    ["gitdata", "git"],
+    ["authorization", "oauthAuthorizations"],
+    ["pullRequests", "pulls"]
+  ].forEach(([deprecatedScope, scope]) => {
+    Object.defineProperty(octokit, deprecatedScope, {
+      get() {
+        octokit.log.warn(
+          // @ts-ignore
+          new Deprecation(
+            `[@octokit/plugin-rest-endpoint-methods] "octokit.${deprecatedScope}.*" methods are deprecated, use "octokit.${scope}.*" instead`
+          )
+        );
+        // @ts-ignore
+        return octokit[scope];
+      }
+    });
+  });
 
   return {} as Api;
 }
