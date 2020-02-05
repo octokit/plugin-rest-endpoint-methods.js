@@ -21684,7 +21684,7 @@ export type ChecksCreateParams = {
   completed_at?: string;
   /**
    * **Required if you provide `completed_at` or a `status` of `completed`**. The final conclusion of the check. Can be one of `success`, `failure`, `neutral`, `cancelled`, `timed_out`, or `action_required`. When the conclusion is `action_required`, additional details should be provided on the site specified by `details_url`.
-   * **Note:** Providing `conclusion` will automatically set the `status` parameter to `completed`.
+   * **Note:** Providing `conclusion` will automatically set the `status` parameter to `completed`. Only GitHub can change a check run conclusion to `stale`.
    */
   conclusion?:
     | "success"
@@ -21851,7 +21851,7 @@ export type ChecksUpdateParams = {
   completed_at?: string;
   /**
    * **Required if you provide `completed_at` or a `status` of `completed`**. The final conclusion of the check. Can be one of `success`, `failure`, `neutral`, `cancelled`, `timed_out`, or `action_required`.
-   * **Note:** Providing `conclusion` will automatically set the `status` parameter to `completed`.
+   * **Note:** Providing `conclusion` will automatically set the `status` parameter to `completed`. Only GitHub can change a check run conclusion to `stale`.
    */
   conclusion?:
     | "success"
