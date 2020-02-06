@@ -1,5 +1,20 @@
-import { RestEndpointMethods } from "./generated/rest-endpoint-methods-types";
+import { Route, RequestParameters } from "@octokit/types";
 
-export type Api = {
-  registerEndpoints: (endpoints: any) => void;
-} & RestEndpointMethods;
+import { RestEndpointMethods } from "./generated/types";
+
+export type Api = RestEndpointMethods;
+
+export type EndpointDecorations = {
+  mapToData?: string;
+  deprecated?: string;
+  renamed?: [string, string];
+  renamedParameters?: {
+    [name: string]: string;
+  };
+};
+
+export type EndpointsDefaultsAndDecorations = {
+  [scope: string]: {
+    [methodName: string]: [Route, RequestParameters?, EndpointDecorations?];
+  };
+};

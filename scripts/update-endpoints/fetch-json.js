@@ -9,8 +9,8 @@ if (!process.env.VERSION) {
 }
 
 const QUERY = `
-  query ($version: String) {
-    endpoints(version: $version, filter: { isGithubCloudOnly: false }) {
+  query ($version: String!, $ignoreChangesBefore: String!) {
+    endpoints(version: $version, ignoreChangesBefore: $ignoreChangesBefore, filter: { isDeprecated: false, isGithubCloudOnly: false }) {
       name
       scope(format: CAMELCASE)
       id(format: CAMELCASE)
@@ -26,6 +26,7 @@ const QUERY = `
       headers {
         name
         value
+        required
       }
       parameters {
         name
@@ -67,7 +68,8 @@ main();
 async function main() {
   const { endpoints } = await graphql(QUERY, {
     url: "https://octokit-routes-graphql-server.now.sh/",
-    version: process.env.VERSION
+    version: process.env.VERSION,
+    ignoreChangesBefore: "2020-02-01"
   });
 
   writeFileSync(
