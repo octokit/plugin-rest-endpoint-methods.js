@@ -1,4 +1,5 @@
 import { Octokit } from "@octokit/core";
+import { Deprecation } from "deprecation";
 
 import ENDPOINTS from "./generated/endpoints";
 import { VERSION } from "./version";
