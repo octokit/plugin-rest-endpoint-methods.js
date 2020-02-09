@@ -47,11 +47,6 @@ Results per page (max 100)
 Page number of the results to fetch.
 
 </td></tr>
-<tr><td>number</td><td>no</td><td>
-
-null
-
-</td></tr>
   </tbody>
 </table>
 

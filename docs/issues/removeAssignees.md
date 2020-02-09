@@ -39,11 +39,6 @@ issue_number parameter
 Usernames of assignees to remove from an issue. _NOTE: Only users with push access can remove assignees from an issue. Assignees are silently ignored otherwise._
 
 </td></tr>
-<tr><td>number</td><td>no</td><td>
-
-null
-
-</td></tr>
   </tbody>
 </table>
 

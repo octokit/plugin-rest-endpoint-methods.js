@@ -39,11 +39,6 @@ issue_number parameter
 Usernames of people to assign this issue to. _NOTE: Only users with push access can add assignees to an issue. Assignees are silently ignored otherwise._
 
 </td></tr>
-<tr><td>number</td><td>no</td><td>
-
-null
-
-</td></tr>
   </tbody>
 </table>
 

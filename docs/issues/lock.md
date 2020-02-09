@@ -43,11 +43,6 @@ The reason for locking the issue or pull request conversation. Lock will fail if
 \* `spam`
 
 </td></tr>
-<tr><td>number</td><td>no</td><td>
-
-null
-
-</td></tr>
   </tbody>
 </table>
 

@@ -71,11 +71,6 @@ The position in the diff where you want to add a review comment. Note this value
 Text of the review comment.
 
 </td></tr>
-<tr><td>number</td><td>no</td><td>
-
-null
-
-</td></tr>
   </tbody>
 </table>
 

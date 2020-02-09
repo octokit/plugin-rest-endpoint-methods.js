@@ -42,11 +42,6 @@ An array of user `login`s that will be requested.
 An array of team `slug`s that will be requested.
 
 </td></tr>
-<tr><td>number</td><td>no</td><td>
-
-null
-
-</td></tr>
   </tbody>
 </table>
 

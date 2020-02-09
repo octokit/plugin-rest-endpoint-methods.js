@@ -58,16 +58,6 @@ repo parameter
 ref parameter
 
 </td></tr>
-<tr><td>sha</td><td>no</td><td>
-
-null
-
-</td></tr>
-<tr><td>commit_sha</td><td>no</td><td>
-
-null
-
-</td></tr>
   </tbody>
 </table>
 

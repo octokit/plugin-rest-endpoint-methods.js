@@ -54,11 +54,6 @@ Line index in the diff to comment on.
 **Deprecated**. Use **position** parameter instead. Line number in the file to comment on.
 
 </td></tr>
-<tr><td>sha</td><td>no</td><td>
-
-null
-
-</td></tr>
   </tbody>
 </table>
 

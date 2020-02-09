@@ -42,11 +42,6 @@ review_id parameter
 The message for the pull request review dismissal
 
 </td></tr>
-<tr><td>number</td><td>no</td><td>
-
-null
-
-</td></tr>
   </tbody>
 </table>
 

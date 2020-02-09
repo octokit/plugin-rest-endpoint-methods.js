@@ -42,11 +42,6 @@ review_id parameter
 The body text of the pull request review.
 
 </td></tr>
-<tr><td>number</td><td>no</td><td>
-
-null
-
-</td></tr>
   </tbody>
 </table>
 
