@@ -37,11 +37,6 @@ issue_number parameter
 The contents of the comment.
 
 </td></tr>
-<tr><td>number</td><td>no</td><td>
-
-null
-
-</td></tr>
   </tbody>
 </table>
 

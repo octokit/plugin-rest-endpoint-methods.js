@@ -32,11 +32,6 @@ repo parameter
 issue_number parameter
 
 </td></tr>
-<tr><td>number</td><td>no</td><td>
-
-null
-
-</td></tr>
   </tbody>
 </table>
 

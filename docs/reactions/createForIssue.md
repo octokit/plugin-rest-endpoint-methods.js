@@ -37,11 +37,6 @@ issue_number parameter
 The [reaction type](https://developer.github.com/v3/reactions/#reaction-types) to add to the issue.
 
 </td></tr>
-<tr><td>number</td><td>no</td><td>
-
-null
-
-</td></tr>
   </tbody>
 </table>
 

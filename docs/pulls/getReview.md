@@ -35,11 +35,6 @@ pull_number parameter
 review_id parameter
 
 </td></tr>
-<tr><td>number</td><td>no</td><td>
-
-null
-
-</td></tr>
   </tbody>
 </table>
 

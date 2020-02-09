@@ -52,11 +52,6 @@ SHA that pull request head must match to allow merge.
 Merge method to use. Possible values are `merge`, `squash` or `rebase`. Default is `merge`.
 
 </td></tr>
-<tr><td>number</td><td>no</td><td>
-
-null
-
-</td></tr>
   </tbody>
 </table>
 

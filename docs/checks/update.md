@@ -62,7 +62,7 @@ The current status. Can be one of `queued`, `in_progress`, or `completed`.
 <tr><td>conclusion</td><td>no</td><td>
 
 **Required if you provide `completed_at` or a `status` of `completed`**. The final conclusion of the check. Can be one of `success`, `failure`, `neutral`, `cancelled`, `timed_out`, or `action_required`.  
-**Note:** Providing `conclusion` will automatically set the `status` parameter to `completed`.
+**Note:** Providing `conclusion` will automatically set the `status` parameter to `completed`. Only GitHub can change a check run conclusion to `stale`.
 
 </td></tr>
 <tr><td>completed_at</td><td>no</td><td>
