@@ -34,7 +34,7 @@ function template(endpoint) {
     param =>
       `<tr><td>${param.name}</td><td>${param.required ? "yes" : "no"}</td><td>
 
-${param.description}
+${param.description || ""}
 
 </td></tr>`
   );
