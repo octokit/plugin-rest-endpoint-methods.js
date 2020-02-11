@@ -7,7 +7,9 @@ Enables an authenticated GitHub App to find the organization's installation info
 You must use a [JWT](https://developer.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint.
 
 ```js
-octokit.apps.findOrgInstallation(org);
+octokit.apps.findOrgInstallation({
+  org
+});
 ```
 
 ## Parameters

@@ -7,7 +7,9 @@
 Team members will include the members of child teams.
 
 ```js
-octokit.teams.listMembersLegacy(team_id);
+octokit.teams.listMembersLegacy({
+  team_id
+});
 ```
 
 ## Parameters

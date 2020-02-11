@@ -3,7 +3,10 @@
 Requires for the user to be authenticated.
 
 ```js
-octokit.activity.stopWatchingRepoLegacy(owner, repo);
+octokit.activity.stopWatchingRepoLegacy({
+  owner,
+  repo
+});
 ```
 
 ## Parameters

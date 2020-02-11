@@ -1,7 +1,11 @@
 # Replace all labels for an issue
 
 ```js
-octokit.issues.replaceLabels(owner, repo, issue_number);
+octokit.issues.replaceLabels({
+  owner,
+  repo,
+  issue_number
+});
 ```
 
 ## Parameters

@@ -3,7 +3,9 @@
 Lists the collaborators for an organization project. For a project, the list of collaborators includes outside collaborators, organization members that are direct collaborators, organization members with access through team memberships, organization members with access through default organization permissions, and organization owners. You must be an organization owner or a project `admin` to list collaborators.
 
 ```js
-octokit.projects.listCollaborators(project_id);
+octokit.projects.listCollaborators({
+  project_id
+});
 ```
 
 ## Parameters

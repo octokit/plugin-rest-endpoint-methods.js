@@ -3,7 +3,11 @@
 Updates the pull request branch with the latest upstream changes by merging HEAD from the base branch into the pull request branch.
 
 ```js
-octokit.pulls.updateBranch(owner, repo, pull_number);
+octokit.pulls.updateBranch({
+  owner,
+  repo,
+  pull_number
+});
 ```
 
 ## Parameters

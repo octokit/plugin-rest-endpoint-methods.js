@@ -1,7 +1,10 @@
 # Get a specific revision of a gist
 
 ```js
-octokit.gists.getRevision(gist_id, sha);
+octokit.gists.getRevision({
+  gist_id,
+  sha
+});
 ```
 
 ## Parameters

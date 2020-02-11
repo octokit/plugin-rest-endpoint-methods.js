@@ -3,7 +3,9 @@
 OAuth access tokens require the `write:discussion` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/), when deleting a [team discussion](https://developer.github.com/v3/teams/discussions/) or [team discussion comment](https://developer.github.com/v3/teams/discussion_comments/).
 
 ```js
-octokit.reactions.delete(reaction_id);
+octokit.reactions.delete({
+  reaction_id
+});
 ```
 
 ## Parameters

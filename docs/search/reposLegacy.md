@@ -5,7 +5,9 @@
 Find repositories by keyword. Note, this legacy method does not follow the v3 pagination pattern. This method returns up to 100 results per page and pages can be fetched using the `start_page` parameter.
 
 ```js
-octokit.search.reposLegacy(keyword);
+octokit.search.reposLegacy({
+  keyword
+});
 ```
 
 ## Parameters

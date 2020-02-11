@@ -1,7 +1,9 @@
 # Unstar a gist
 
 ```js
-octokit.gists.unstar(gist_id);
+octokit.gists.unstar({
+  gist_id
+});
 ```
 
 ## Parameters

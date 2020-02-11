@@ -1,7 +1,12 @@
 # Get comments for a single review
 
 ```js
-octokit.pulls.getCommentsForReview(owner, repo, pull_number, review_id);
+octokit.pulls.getCommentsForReview({
+  owner,
+  repo,
+  pull_number,
+  review_id
+});
 ```
 
 ## Parameters

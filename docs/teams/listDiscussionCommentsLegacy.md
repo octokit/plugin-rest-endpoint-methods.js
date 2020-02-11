@@ -7,7 +7,10 @@
 List all comments on a team discussion. OAuth access tokens require the `read:discussion` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
 
 ```js
-octokit.teams.listDiscussionCommentsLegacy(team_id, discussion_number);
+octokit.teams.listDiscussionCommentsLegacy({
+  team_id,
+  discussion_number
+});
 ```
 
 ## Parameters

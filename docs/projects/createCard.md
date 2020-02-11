@@ -5,7 +5,9 @@
 Be aware that the `id` of a pull request returned from "Issues" endpoints will be an _issue id_. To find out the pull request id, use the "[List pull requests](https://developer.github.com/v3/pulls/#list-pull-requests)" endpoint.
 
 ```js
-octokit.projects.createCard(column_id);
+octokit.projects.createCard({
+  column_id
+});
 ```
 
 ## Parameters

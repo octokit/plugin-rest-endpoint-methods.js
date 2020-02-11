@@ -11,7 +11,9 @@ Let's say you want to find the oldest unresolved Python bugs on Windows. Your qu
 In this query, we're searching for the keyword `windows`, within any open issue that's labeled as `bug`. The search runs across repositories whose primary language is Python. We’re sorting by creation date in ascending order, so that the oldest issues appear first in the search results.
 
 ```js
-octokit.search.issues(q);
+octokit.search.issues({
+  q
+});
 ```
 
 ## Parameters

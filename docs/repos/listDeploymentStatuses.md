@@ -3,7 +3,11 @@
 Users with pull access can view deployment statuses for a deployment:
 
 ```js
-octokit.repos.listDeploymentStatuses(owner, repo, deployment_id);
+octokit.repos.listDeploymentStatuses({
+  owner,
+  repo,
+  deployment_id
+});
 ```
 
 ## Parameters

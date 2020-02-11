@@ -7,7 +7,12 @@ This endpoint triggers [notifications](https://help.github.com/articles/about-no
 **Note:** You can also specify a team by `org_id` and `team_id` using the route `POST /organizations/:org_id/team/:team_id/discussions`.
 
 ```js
-octokit.teams.createDiscussionInOrg(org, team_slug, title, body);
+octokit.teams.createDiscussionInOrg({
+  org,
+  team_slug,
+  title,
+  body
+});
 ```
 
 ## Parameters

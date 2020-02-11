@@ -3,7 +3,12 @@
 Create a reaction to a [commit comment](https://developer.github.com/v3/repos/comments/). A response with a `Status: 200 OK` means that you already added the reaction type to this commit comment.
 
 ```js
-octokit.reactions.createForCommitComment(owner, repo, comment_id, content);
+octokit.reactions.createForCommitComment({
+  owner,
+  repo,
+  comment_id,
+  content
+});
 ```
 
 ## Parameters

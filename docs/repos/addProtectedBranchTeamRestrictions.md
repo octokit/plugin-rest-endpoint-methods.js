@@ -9,7 +9,12 @@ Grants the specified teams push access for this branch. You can also give push a
 | `array` | The teams that can have push access. Use the team's `slug`. **Note**: The list of users, apps, and teams in total is limited to 100 items. |
 
 ```js
-octokit.repos.addProtectedBranchTeamRestrictions(owner, repo, branch, teams);
+octokit.repos.addProtectedBranchTeamRestrictions({
+  owner,
+  repo,
+  branch,
+  teams
+});
 ```
 
 ## Parameters

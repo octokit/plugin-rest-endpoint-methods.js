@@ -23,7 +23,11 @@ The `submodule_git_url` identifies the location of the submodule repository, and
 If the submodule repository is not hosted on github.com, the Git URLs (`git_url` and `_links["git"]`) and the github.com URLs (`html_url` and `_links["html"]`) will have null values.
 
 ```js
-octokit.repos.getContents(owner, repo, path);
+octokit.repos.getContents({
+  owner,
+  repo,
+  path
+});
 ```
 
 ## Parameters

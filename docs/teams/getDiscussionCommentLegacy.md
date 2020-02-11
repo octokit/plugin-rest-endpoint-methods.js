@@ -7,11 +7,11 @@
 Get a specific comment on a team discussion. OAuth access tokens require the `read:discussion` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
 
 ```js
-octokit.teams.getDiscussionCommentLegacy(
+octokit.teams.getDiscussionCommentLegacy({
   team_id,
   discussion_number,
   comment_number
-);
+});
 ```
 
 ## Parameters

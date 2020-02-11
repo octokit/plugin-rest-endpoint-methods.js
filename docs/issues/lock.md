@@ -5,7 +5,11 @@ Users with push access can lock an issue or pull request's conversation.
 Note that, if you choose not to pass any parameters, you'll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see "[HTTP verbs](https://developer.github.com/v3/#http-verbs)."
 
 ```js
-octokit.issues.lock(owner, repo, issue_number);
+octokit.issues.lock({
+  owner,
+  repo,
+  issue_number
+});
 ```
 
 ## Parameters

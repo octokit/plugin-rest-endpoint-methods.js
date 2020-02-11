@@ -1,7 +1,11 @@
 # Delete a review request
 
 ```js
-octokit.pulls.deleteReviewRequest(owner, repo, pull_number);
+octokit.pulls.deleteReviewRequest({
+  owner,
+  repo,
+  pull_number
+});
 ```
 
 ## Parameters

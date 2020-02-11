@@ -3,7 +3,10 @@
 Requires for the user to be authenticated.
 
 ```js
-octokit.activity.unstarRepo(owner, repo);
+octokit.activity.unstarRepo({
+  owner,
+  repo
+});
 ```
 
 ## Parameters

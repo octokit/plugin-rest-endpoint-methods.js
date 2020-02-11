@@ -3,7 +3,10 @@
 Lists all self-hosted runners for a repository. Anyone with admin access to the repository can use this endpoint. GitHub Apps must have the `administration` permission to use this endpoint.
 
 ```js
-octokit.actions.listSelfHostedRunnersForRepo(owner, repo);
+octokit.actions.listSelfHostedRunnersForRepo({
+  owner,
+  repo
+});
 ```
 
 ## Parameters

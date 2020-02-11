@@ -9,7 +9,10 @@ Each array contains the day number, hour number, and number of commits:
 For example, `[2, 14, 25]` indicates that there were 25 total commits, during the 2:00pm hour on Tuesdays. All times are based on the time zone of individual commits.
 
 ```js
-octokit.repos.getPunchCardStats(owner, repo);
+octokit.repos.getPunchCardStats({
+  owner,
+  repo
+});
 ```
 
 ## Parameters

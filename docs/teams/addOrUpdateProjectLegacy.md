@@ -7,7 +7,10 @@
 Adds an organization project to a team. To add a project to a team or update the team's permission on a project, the authenticated user must have `admin` permissions for the project. The project and team must be part of the same organization.
 
 ```js
-octokit.teams.addOrUpdateProjectLegacy(team_id, project_id);
+octokit.teams.addOrUpdateProjectLegacy({
+  team_id,
+  project_id
+});
 ```
 
 ## Parameters

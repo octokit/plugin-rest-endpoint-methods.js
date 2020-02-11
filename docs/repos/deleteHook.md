@@ -1,7 +1,11 @@
 # Delete a hook
 
 ```js
-octokit.repos.deleteHook(owner, repo, hook_id);
+octokit.repos.deleteHook({
+  owner,
+  repo,
+  hook_id
+});
 ```
 
 ## Parameters

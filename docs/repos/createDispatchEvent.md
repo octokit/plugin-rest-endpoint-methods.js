@@ -9,7 +9,10 @@ To give you write access to the repository, you must use a personal access token
 This input example shows how you can use the `client_payload` as a test to debug your workflow.
 
 ```js
-octokit.repos.createDispatchEvent(owner, repo);
+octokit.repos.createDispatchEvent({
+  owner,
+  repo
+});
 ```
 
 ## Parameters

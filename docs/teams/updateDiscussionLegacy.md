@@ -7,7 +7,10 @@
 Edits the title and body text of a discussion post. Only the parameters you provide are updated. OAuth access tokens require the `write:discussion` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
 
 ```js
-octokit.teams.updateDiscussionLegacy(team_id, discussion_number);
+octokit.teams.updateDiscussionLegacy({
+  team_id,
+  discussion_number
+});
 ```
 
 ## Parameters

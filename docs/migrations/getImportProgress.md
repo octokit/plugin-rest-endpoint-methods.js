@@ -36,7 +36,10 @@ This section includes details about Git LFS related fields that may be present i
 - `large_files_count` - the total number of files larger than 100MB found in the originating repository. To see a list of these files, make a "Get Large Files" request.
 
 ```js
-octokit.migrations.getImportProgress(owner, repo);
+octokit.migrations.getImportProgress({
+  owner,
+  repo
+});
 ```
 
 ## Parameters

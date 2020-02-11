@@ -7,12 +7,12 @@
 Edits the body text of a discussion comment. OAuth access tokens require the `write:discussion` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
 
 ```js
-octokit.teams.updateDiscussionCommentLegacy(
+octokit.teams.updateDiscussionCommentLegacy({
   team_id,
   discussion_number,
   comment_number,
   body
-);
+});
 ```
 
 ## Parameters

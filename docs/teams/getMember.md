@@ -11,7 +11,10 @@ We recommend using the [Get team membership](https://developer.github.com/v3/tea
 To list members in a team, the team must be visible to the authenticated user.
 
 ```js
-octokit.teams.getMember(team_id, username);
+octokit.teams.getMember({
+  team_id,
+  username
+});
 ```
 
 ## Parameters

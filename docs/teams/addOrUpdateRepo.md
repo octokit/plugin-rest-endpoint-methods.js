@@ -11,7 +11,11 @@ To add a repository to a team or update the team's permission on a repository, t
 Note that, if you choose not to pass any parameters, you'll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see "[HTTP verbs](https://developer.github.com/v3/#http-verbs)."
 
 ```js
-octokit.teams.addOrUpdateRepo(team_id, owner, repo);
+octokit.teams.addOrUpdateRepo({
+  team_id,
+  owner,
+  repo
+});
 ```
 
 ## Parameters

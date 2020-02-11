@@ -1,7 +1,9 @@
 # Get an individual license
 
 ```js
-octokit.licenses.get(license);
+octokit.licenses.get({
+  license
+});
 ```
 
 ## Parameters

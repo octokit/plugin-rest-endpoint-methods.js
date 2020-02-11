@@ -7,7 +7,9 @@
 Deleting an OAuth application's grant will also delete all OAuth tokens associated with the application for your user. Once deleted, the application has no access to your account and is no longer listed on [the application authorizations settings screen within GitHub](https://github.com/settings/applications#authorized).
 
 ```js
-octokit.oauthAuthorizations.deleteGrant(grant_id);
+octokit.oauthAuthorizations.deleteGrant({
+  grant_id
+});
 ```
 
 ## Parameters

@@ -3,7 +3,9 @@
 This endpoint is accessible with the `user` scope.
 
 ```js
-octokit.users.deleteEmails(emails);
+octokit.users.deleteEmails({
+  emails
+});
 ```
 
 ## Parameters

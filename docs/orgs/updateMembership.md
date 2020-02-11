@@ -1,7 +1,10 @@
 # Edit your organization membership
 
 ```js
-octokit.orgs.updateMembership(org, state);
+octokit.orgs.updateMembership({
+  org,
+  state
+});
 ```
 
 ## Parameters

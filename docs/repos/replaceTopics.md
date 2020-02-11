@@ -1,7 +1,11 @@
 # Replace all topics for a repository
 
 ```js
-octokit.repos.replaceTopics(owner, repo, names);
+octokit.repos.replaceTopics({
+  owner,
+  repo,
+  names
+});
 ```
 
 ## Parameters

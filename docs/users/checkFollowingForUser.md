@@ -1,7 +1,10 @@
 # Check if one user follows another
 
 ```js
-octokit.users.checkFollowingForUser(username, target_user);
+octokit.users.checkFollowingForUser({
+  username,
+  target_user
+});
 ```
 
 ## Parameters

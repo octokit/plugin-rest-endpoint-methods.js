@@ -5,7 +5,12 @@
 Find issues by state and keyword.
 
 ```js
-octokit.search.issuesLegacy(owner, repository, state, keyword);
+octokit.search.issuesLegacy({
+  owner,
+  repository,
+  state,
+  keyword
+});
 ```
 
 ## Parameters

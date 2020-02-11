@@ -3,7 +3,11 @@
 Temporarily restricts interactions to certain GitHub users within the given repository. You must have owner or admin access to set restrictions.
 
 ```js
-octokit.interactions.addOrUpdateRestrictionsForRepo(owner, repo, limit);
+octokit.interactions.addOrUpdateRestrictionsForRepo({
+  owner,
+  repo,
+  limit
+});
 ```
 
 ## Parameters

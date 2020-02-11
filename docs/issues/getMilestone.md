@@ -1,7 +1,11 @@
 # Get a single milestone
 
 ```js
-octokit.issues.getMilestone(owner, repo, milestone_number);
+octokit.issues.getMilestone({
+  owner,
+  repo,
+  milestone_number
+});
 ```
 
 ## Parameters

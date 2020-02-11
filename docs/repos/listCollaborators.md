@@ -5,7 +5,10 @@ For organization-owned repositories, the list of collaborators includes outside 
 Team members will include the members of child teams.
 
 ```js
-octokit.repos.listCollaborators(owner, repo);
+octokit.repos.listCollaborators({
+  owner,
+  repo
+});
 ```
 
 ## Parameters

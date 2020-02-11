@@ -5,7 +5,11 @@ This will trigger the hook with the latest push to the current repository if the
 **Note**: Previously `/repos/:owner/:repo/hooks/:hook_id/test`
 
 ```js
-octokit.repos.testPushHook(owner, repo, hook_id);
+octokit.repos.testPushHook({
+  owner,
+  repo,
+  hook_id
+});
 ```
 
 ## Parameters

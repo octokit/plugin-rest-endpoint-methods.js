@@ -1,7 +1,9 @@
 # List public events performed by a user
 
 ```js
-octokit.activity.listPublicEventsForUser(username);
+octokit.activity.listPublicEventsForUser({
+  username
+});
 ```
 
 ## Parameters

@@ -1,7 +1,11 @@
 # Get a deploy key
 
 ```js
-octokit.repos.getDeployKey(owner, repo, key_id);
+octokit.repos.getDeployKey({
+  owner,
+  repo,
+  key_id
+});
 ```
 
 ## Parameters

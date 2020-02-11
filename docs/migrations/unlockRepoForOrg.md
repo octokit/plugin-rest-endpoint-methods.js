@@ -3,7 +3,11 @@
 Unlocks a repository that was locked for migration. You should unlock each migrated repository and [delete them](https://developer.github.com/v3/repos/#delete-a-repository) when the migration is complete and you no longer need the source data.
 
 ```js
-octokit.migrations.unlockRepoForOrg(org, migration_id, repo_name);
+octokit.migrations.unlockRepoForOrg({
+  org,
+  migration_id,
+  repo_name
+});
 ```
 
 ## Parameters

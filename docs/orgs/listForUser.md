@@ -5,7 +5,9 @@ List [public organization memberships](https://help.github.com/articles/publiciz
 This method only lists _public_ memberships, regardless of authentication. If you need to fetch all of the organization memberships (public and private) for the authenticated user, use the [List your organizations](https://developer.github.com/v3/orgs/#list-your-organizations) API instead.
 
 ```js
-octokit.orgs.listForUser(username);
+octokit.orgs.listForUser({
+  username
+});
 ```
 
 ## Parameters

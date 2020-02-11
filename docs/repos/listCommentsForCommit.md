@@ -3,7 +3,11 @@
 Use the `:commit_sha` to specify the commit that will have its comments listed.
 
 ```js
-octokit.repos.listCommentsForCommit(owner, repo, commit_sha);
+octokit.repos.listCommentsForCommit({
+  owner,
+  repo,
+  commit_sha
+});
 ```
 
 ## Parameters

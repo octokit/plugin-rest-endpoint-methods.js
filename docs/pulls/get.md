@@ -17,7 +17,11 @@ The value of the `merge_commit_sha` attribute changes depending on the state of 
 Pass the appropriate [media type](https://developer.github.com/v3/media/#commits-commit-comparison-and-pull-requests) to fetch diff and patch formats.
 
 ```js
-octokit.pulls.get(owner, repo, pull_number);
+octokit.pulls.get({
+  owner,
+  repo,
+  pull_number
+});
 ```
 
 ## Parameters

@@ -3,7 +3,10 @@
 Returns an array of all the references from your Git database, including notes and stashes if they exist on the server. Anything in the namespace is returned, not just `heads` and `tags`. If there are no references to list, a `404` is returned.
 
 ```js
-octokit.git.listRefs(owner, repo);
+octokit.git.listRefs({
+  owner,
+  repo
+});
 ```
 
 ## Parameters

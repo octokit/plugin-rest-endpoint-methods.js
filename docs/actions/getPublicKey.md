@@ -3,7 +3,10 @@
 Gets your public key, which you must store. You need your public key to use other secrets endpoints. Use the returned `key` to encrypt your secrets. Anyone with read access to the repository can use this endpoint. GitHub Apps must have the `secrets` permission to use this endpoint.
 
 ```js
-octokit.actions.getPublicKey(owner, repo);
+octokit.actions.getPublicKey({
+  owner,
+  repo
+});
 ```
 
 ## Parameters

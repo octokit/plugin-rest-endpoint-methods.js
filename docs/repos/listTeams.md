@@ -1,7 +1,10 @@
 # List teams
 
 ```js
-octokit.repos.listTeams(owner, repo);
+octokit.repos.listTeams({
+  owner,
+  repo
+});
 ```
 
 ## Parameters

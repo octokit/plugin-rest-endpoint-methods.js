@@ -1,7 +1,11 @@
 # List review requests
 
 ```js
-octokit.pulls.listReviewRequests(owner, repo, pull_number);
+octokit.pulls.listReviewRequests({
+  owner,
+  repo,
+  pull_number
+});
 ```
 
 ## Parameters

@@ -9,7 +9,13 @@ The `author` section is optional and is filled in with the `committer` informati
 You must provide values for both `name` and `email`, whether you choose to use `author` or `committer`. Otherwise, you'll receive a `422` status code.
 
 ```js
-octokit.repos.deleteFile(owner, repo, path, message, sha);
+octokit.repos.deleteFile({
+  owner,
+  repo,
+  path,
+  message,
+  sha
+});
 ```
 
 ## Parameters

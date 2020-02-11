@@ -5,7 +5,10 @@ To create a team, the authenticated user must be a member or owner of `:org`. By
 When you create a new team, you automatically become a team maintainer without explicitly adding yourself to the optional array of `maintainers`. For more information, see "[About teams](https://help.github.com/en/github/setting-up-and-managing-organizations-and-teams/about-teams)" in the GitHub Help documentation.
 
 ```js
-octokit.teams.create(org, name);
+octokit.teams.create({
+  org,
+  name
+});
 ```
 
 ## Parameters

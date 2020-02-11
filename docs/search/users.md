@@ -9,7 +9,9 @@ Imagine you're looking for a list of popular users. You might try out this query
 Here, we're looking at users with the name Tom. We're only interested in those with more than 42 repositories, and only if they have over 1,000 followers.
 
 ```js
-octokit.search.users(q);
+octokit.search.users({
+  q
+});
 ```
 
 ## Parameters

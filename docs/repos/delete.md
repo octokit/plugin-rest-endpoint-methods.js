@@ -5,7 +5,10 @@ Deleting a repository requires admin access. If OAuth is used, the `delete_repo`
 If an organization owner has configured the organization to prevent members from deleting organization-owned repositories, a member will get this response:
 
 ```js
-octokit.repos.delete(owner, repo);
+octokit.repos.delete({
+  owner,
+  repo
+});
 ```
 
 ## Parameters

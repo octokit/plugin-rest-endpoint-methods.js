@@ -1,7 +1,12 @@
 # Update a reference
 
 ```js
-octokit.git.updateRef(owner, repo, ref, sha);
+octokit.git.updateRef({
+  owner,
+  repo,
+  ref,
+  sha
+});
 ```
 
 ## Parameters

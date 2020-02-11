@@ -3,7 +3,10 @@
 Enables automated security fixes for a repository. The authenticated user must have admin access to the repository. For more information, see "[Configuring automated security fixes](https://help.github.com/en/articles/configuring-automated-security-fixes)" in the GitHub Help documentation.
 
 ```js
-octokit.repos.enableAutomatedSecurityFixes(owner, repo);
+octokit.repos.enableAutomatedSecurityFixes({
+  owner,
+  repo
+});
 ```
 
 ## Parameters

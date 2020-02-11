@@ -11,14 +11,14 @@ This endpoint makes use of [a Hypermedia relation](https://developer.github.com/
     GitHub expects the asset data in its raw binary form, rather than JSON. You will send the raw binary content of the asset as the request body. Everything else about the endpoint is the same as the rest of the API. For example, you'll still need to pass your authentication to be able to upload an asset.
 
 ```js
-octokit.repos.uploadReleaseAsset(
-  data,
-  headers,
-  headers.content - length,
-  headers.content - type,
-  name,
-  url
-);
+octokit.repos.uploadReleaseAsset({
+        data,
+headers,
+headers.content-length,
+headers.content-type,
+name,
+url
+      })
 ```
 
 ## Parameters

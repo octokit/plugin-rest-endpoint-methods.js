@@ -9,7 +9,12 @@ Replaces the list of apps that have push access to this branch. This removes all
 | `array` | The GitHub Apps that have push access to this branch. Use the app's `slug`. **Note**: The list of users, apps, and teams in total is limited to 100 items. |
 
 ```js
-octokit.repos.replaceProtectedBranchAppRestrictions(owner, repo, branch, apps);
+octokit.repos.replaceProtectedBranchAppRestrictions({
+  owner,
+  repo,
+  branch,
+  apps
+});
 ```
 
 ## Parameters

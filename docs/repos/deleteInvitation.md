@@ -1,7 +1,11 @@
 # Delete a repository invitation
 
 ```js
-octokit.repos.deleteInvitation(owner, repo, invitation_id);
+octokit.repos.deleteInvitation({
+  owner,
+  repo,
+  invitation_id
+});
 ```
 
 ## Parameters

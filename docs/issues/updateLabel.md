@@ -1,7 +1,11 @@
 # Update a label
 
 ```js
-octokit.issues.updateLabel(owner, repo, current_name);
+octokit.issues.updateLabel({
+  owner,
+  repo,
+  current_name
+});
 ```
 
 ## Parameters

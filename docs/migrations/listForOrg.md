@@ -3,7 +3,9 @@
 Lists the most recent migrations.
 
 ```js
-octokit.migrations.listForOrg(org);
+octokit.migrations.listForOrg({
+  org
+});
 ```
 
 ## Parameters

@@ -9,7 +9,9 @@ You must use a [user-to-server OAuth access token](https://developer.github.com/
 The access the user has to each repository is included in the hash under the `permissions` key.
 
 ```js
-octokit.apps.listInstallationReposForAuthenticatedUser(installation_id);
+octokit.apps.listInstallationReposForAuthenticatedUser({
+  installation_id
+});
 ```
 
 ## Parameters

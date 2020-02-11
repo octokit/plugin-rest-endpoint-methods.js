@@ -1,7 +1,9 @@
 # Get your organization membership
 
 ```js
-octokit.orgs.getMembershipForAuthenticatedUser(org);
+octokit.orgs.getMembershipForAuthenticatedUser({
+  org
+});
 ```
 
 ## Parameters

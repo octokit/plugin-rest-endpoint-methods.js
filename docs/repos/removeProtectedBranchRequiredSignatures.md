@@ -5,7 +5,11 @@ Protected branches are available in public repositories with GitHub Free, and in
 When authenticated with admin or owner permissions to the repository, you can use this endpoint to disable required signed commits on a branch. You must enable branch protection to require signed commits.
 
 ```js
-octokit.repos.removeProtectedBranchRequiredSignatures(owner, repo, branch);
+octokit.repos.removeProtectedBranchRequiredSignatures({
+  owner,
+  repo,
+  branch
+});
 ```
 
 ## Parameters

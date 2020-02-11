@@ -1,7 +1,10 @@
 # Create a project column
 
 ```js
-octokit.projects.createColumn(project_id, name);
+octokit.projects.createColumn({
+  project_id,
+  name
+});
 ```
 
 ## Parameters

@@ -1,7 +1,9 @@
 # Get a project card
 
 ```js
-octokit.projects.getCard(card_id);
+octokit.projects.getCard({
+  card_id
+});
 ```
 
 ## Parameters

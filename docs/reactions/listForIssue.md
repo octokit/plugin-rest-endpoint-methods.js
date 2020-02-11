@@ -3,7 +3,11 @@
 List the reactions to an [issue](https://developer.github.com/v3/issues/).
 
 ```js
-octokit.reactions.listForIssue(owner, repo, issue_number);
+octokit.reactions.listForIssue({
+  owner,
+  repo,
+  issue_number
+});
 ```
 
 ## Parameters

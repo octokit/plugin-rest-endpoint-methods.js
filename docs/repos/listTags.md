@@ -1,7 +1,10 @@
 # List tags
 
 ```js
-octokit.repos.listTags(owner, repo);
+octokit.repos.listTags({
+  owner,
+  repo
+});
 ```
 
 ## Parameters

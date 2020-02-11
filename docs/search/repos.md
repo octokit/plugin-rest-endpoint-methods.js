@@ -11,7 +11,9 @@ You can search for multiple topics by adding more `topic:` instances, and includ
 In this request, we're searching for repositories with the word `tetris` in the name, the description, or the README. We're limiting the results to only find repositories where the primary language is Assembly. We're sorting by stars in descending order, so that the most popular repositories appear first in the search results.
 
 ```js
-octokit.search.repos(q);
+octokit.search.repos({
+  q
+});
 ```
 
 ## Parameters

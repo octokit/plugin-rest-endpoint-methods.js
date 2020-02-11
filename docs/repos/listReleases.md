@@ -5,7 +5,10 @@ This returns a list of releases, which does not include regular Git tags that ha
 Information about published releases are available to everyone. Only users with push access will receive listings for draft releases.
 
 ```js
-octokit.repos.listReleases(owner, repo);
+octokit.repos.listReleases({
+  owner,
+  repo
+});
 ```
 
 ## Parameters

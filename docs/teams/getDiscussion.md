@@ -9,7 +9,10 @@
 Get a specific discussion on a team's page. OAuth access tokens require the `read:discussion` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
 
 ```js
-octokit.teams.getDiscussion(team_id, discussion_number);
+octokit.teams.getDiscussion({
+  team_id,
+  discussion_number
+});
 ```
 
 ## Parameters

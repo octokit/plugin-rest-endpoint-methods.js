@@ -9,7 +9,10 @@
 List the reactions to a [team discussion](https://developer.github.com/v3/teams/discussions/). OAuth access tokens require the `read:discussion` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
 
 ```js
-octokit.reactions.listForTeamDiscussion(team_id, discussion_number);
+octokit.reactions.listForTeamDiscussion({
+  team_id,
+  discussion_number
+});
 ```
 
 ## Parameters

@@ -1,7 +1,9 @@
 # List a user's followers
 
 ```js
-octokit.users.listFollowersForUser(username);
+octokit.users.listFollowersForUser({
+  username
+});
 ```
 
 ## Parameters

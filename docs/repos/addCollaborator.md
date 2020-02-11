@@ -11,7 +11,11 @@ The invitee will receive a notification that they have been invited to the repos
 To prevent abuse, you are limited to sending 50 invitations to a repository per 24 hour period. Note there is no limit if you are inviting organization members to an organization repository.
 
 ```js
-octokit.repos.addCollaborator(owner, repo, username);
+octokit.repos.addCollaborator({
+  owner,
+  repo,
+  username
+});
 ```
 
 ## Parameters

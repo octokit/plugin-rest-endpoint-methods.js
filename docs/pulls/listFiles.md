@@ -3,7 +3,11 @@
 **Note:** Responses include a maximum of 3000 files. The paginated response returns 30 files per page by default.
 
 ```js
-octokit.pulls.listFiles(owner, repo, pull_number);
+octokit.pulls.listFiles({
+  owner,
+  repo,
+  pull_number
+});
 ```
 
 ## Parameters

@@ -7,11 +7,11 @@
 Deletes a comment on a team discussion. OAuth access tokens require the `write:discussion` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
 
 ```js
-octokit.teams.deleteDiscussionCommentLegacy(
+octokit.teams.deleteDiscussionCommentLegacy({
   team_id,
   discussion_number,
   comment_number
-);
+});
 ```
 
 ## Parameters

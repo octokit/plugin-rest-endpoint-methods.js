@@ -9,7 +9,10 @@ OAuth application owners can revoke a grant for their OAuth application and a sp
 Deleting an OAuth application's grant will also delete all OAuth tokens associated with the application for the user. Once deleted, the application will have no access to the user's account and will no longer be listed on [the Applications settings page under "Authorized OAuth Apps" on GitHub](https://github.com/settings/applications#authorized).
 
 ```js
-octokit.apps.revokeGrantForApplication(client_id, access_token);
+octokit.apps.revokeGrantForApplication({
+  client_id,
+  access_token
+});
 ```
 
 ## Parameters

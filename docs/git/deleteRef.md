@@ -9,7 +9,11 @@ DELETE /repos/octocat/Hello-World/git/refs/tags/v1.0
 ```
 
 ```js
-octokit.git.deleteRef(owner, repo, ref);
+octokit.git.deleteRef({
+  owner,
+  repo,
+  ref
+});
 ```
 
 ## Parameters

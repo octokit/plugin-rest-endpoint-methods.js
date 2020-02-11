@@ -1,7 +1,11 @@
 # List assets for a release
 
 ```js
-octokit.repos.listAssetsForRelease(owner, repo, release_id);
+octokit.repos.listAssetsForRelease({
+  owner,
+  repo,
+  release_id
+});
 ```
 
 ## Parameters

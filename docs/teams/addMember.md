@@ -17,7 +17,10 @@ To add someone to a team, the authenticated user must be an organization owner o
 Note that you'll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see "[HTTP verbs](https://developer.github.com/v3/#http-verbs)."
 
 ```js
-octokit.teams.addMember(team_id, username);
+octokit.teams.addMember({
+  team_id,
+  username
+});
 ```
 
 ## Parameters

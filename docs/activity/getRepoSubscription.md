@@ -1,7 +1,10 @@
 # Get a Repository Subscription
 
 ```js
-octokit.activity.getRepoSubscription(owner, repo);
+octokit.activity.getRepoSubscription({
+  owner,
+  repo
+});
 ```
 
 ## Parameters

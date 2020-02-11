@@ -3,7 +3,11 @@
 Issue owners and users with push access can edit an issue.
 
 ```js
-octokit.issues.update(owner, repo, issue_number);
+octokit.issues.update({
+  owner,
+  repo,
+  issue_number
+});
 ```
 
 ## Parameters

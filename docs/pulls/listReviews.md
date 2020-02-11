@@ -3,7 +3,11 @@
 The list of reviews returns in chronological order.
 
 ```js
-octokit.pulls.listReviews(owner, repo, pull_number);
+octokit.pulls.listReviews({
+  owner,
+  repo,
+  pull_number
+});
 ```
 
 ## Parameters

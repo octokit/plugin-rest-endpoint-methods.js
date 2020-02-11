@@ -7,7 +7,10 @@
 Checks whether a team has `read`, `write`, or `admin` permissions for an organization project. The response includes projects inherited from a parent team.
 
 ```js
-octokit.teams.reviewProjectLegacy(team_id, project_id);
+octokit.teams.reviewProjectLegacy({
+  team_id,
+  project_id
+});
 ```
 
 ## Parameters

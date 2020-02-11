@@ -5,7 +5,10 @@ Lists the child teams of the team requested by `:team_slug`.
 **Note:** You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/:org_id/team/:team_id/teams`.
 
 ```js
-octokit.teams.listChildInOrg(org, team_slug);
+octokit.teams.listChildInOrg({
+  org,
+  team_slug
+});
 ```
 
 ## Parameters

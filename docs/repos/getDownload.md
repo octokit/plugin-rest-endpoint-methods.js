@@ -1,7 +1,11 @@
 # Get a single download
 
 ```js
-octokit.repos.getDownload(owner, repo, download_id);
+octokit.repos.getDownload({
+  owner,
+  repo,
+  download_id
+});
 ```
 
 ## Parameters

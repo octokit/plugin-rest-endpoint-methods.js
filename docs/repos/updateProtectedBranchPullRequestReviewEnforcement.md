@@ -7,11 +7,11 @@ Updating pull request review enforcement requires admin or owner permissions to 
 **Note**: Passing new arrays of `users` and `teams` replaces their previous values.
 
 ```js
-octokit.repos.updateProtectedBranchPullRequestReviewEnforcement(
+octokit.repos.updateProtectedBranchPullRequestReviewEnforcement({
   owner,
   repo,
   branch
-);
+});
 ```
 
 ## Parameters

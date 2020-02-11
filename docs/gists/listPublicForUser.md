@@ -1,7 +1,9 @@
 # List public gists for the specified user
 
 ```js
-octokit.gists.listPublicForUser(username);
+octokit.gists.listPublicForUser({
+  username
+});
 ```
 
 ## Parameters

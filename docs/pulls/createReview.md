@@ -7,7 +7,14 @@ This endpoint triggers [notifications](https://help.github.com/articles/about-no
 The `position` value equals the number of lines down from the first "@@" hunk header in the file you want to add a comment. The line just below the "@@" line is position 1, the next line is position 2, and so on. The position in the diff continues to increase through lines of whitespace and additional hunks until the beginning of a new file.
 
 ```js
-octokit.pulls.createReview(owner, repo, pull_number, comments[].path, comments[].position, comments[].body)
+octokit.pulls.createReview({
+        owner,
+repo,
+pull_number,
+comments[].path,
+comments[].position,
+comments[].body
+      })
 ```
 
 ## Parameters

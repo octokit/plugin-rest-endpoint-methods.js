@@ -9,7 +9,9 @@ The `email` key in the following response is the publicly visible email address 
 The Emails API enables you to list all of your email addresses, and toggle a primary email to be visible publicly. For more information, see "[Emails API](https://developer.github.com/v3/users/emails/)".
 
 ```js
-octokit.users.getByUsername(username);
+octokit.users.getByUsername({
+  username
+});
 ```
 
 ## Parameters

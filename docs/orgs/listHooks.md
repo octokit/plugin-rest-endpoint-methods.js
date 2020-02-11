@@ -1,7 +1,9 @@
 # List hooks
 
 ```js
-octokit.orgs.listHooks(org);
+octokit.orgs.listHooks({
+  org
+});
 ```
 
 ## Parameters

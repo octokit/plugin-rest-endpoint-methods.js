@@ -1,7 +1,11 @@
 # Get a single deployment
 
 ```js
-octokit.repos.getDeployment(owner, repo, deployment_id);
+octokit.repos.getDeployment({
+  owner,
+  repo,
+  deployment_id
+});
 ```
 
 ## Parameters

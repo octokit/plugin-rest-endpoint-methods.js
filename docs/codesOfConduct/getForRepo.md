@@ -3,7 +3,10 @@
 This method returns the contents of the repository's code of conduct file, if one is detected.
 
 ```js
-octokit.codesOfConduct.getForRepo(owner, repo);
+octokit.codesOfConduct.getForRepo({
+  owner,
+  repo
+});
 ```
 
 ## Parameters

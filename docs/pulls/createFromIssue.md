@@ -3,7 +3,15 @@
 **This method is deprecated.**
 
 ```js
-octokit.pulls.createFromIssue(owner, repo, base, head, issue, owner, repo);
+octokit.pulls.createFromIssue({
+  owner,
+  repo,
+  base,
+  head,
+  issue,
+  owner,
+  repo
+});
 ```
 
 ## Parameters

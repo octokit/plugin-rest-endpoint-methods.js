@@ -7,7 +7,9 @@ Enables an authenticated GitHub App to find the user’s installation informatio
 You must use a [JWT](https://developer.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint.
 
 ```js
-octokit.apps.findUserInstallation(username);
+octokit.apps.findUserInstallation({
+  username
+});
 ```
 
 ## Parameters

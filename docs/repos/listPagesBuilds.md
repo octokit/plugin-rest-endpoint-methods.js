@@ -1,7 +1,10 @@
 # List Pages builds
 
 ```js
-octokit.repos.listPagesBuilds(owner, repo);
+octokit.repos.listPagesBuilds({
+  owner,
+  repo
+});
 ```
 
 ## Parameters

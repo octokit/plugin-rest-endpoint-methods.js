@@ -9,7 +9,9 @@
 List all discussions on a team's page. OAuth access tokens require the `read:discussion` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
 
 ```js
-octokit.teams.listDiscussions(team_id);
+octokit.teams.listDiscussions({
+  team_id
+});
 ```
 
 ## Parameters

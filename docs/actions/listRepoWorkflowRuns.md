@@ -5,7 +5,10 @@ Lists all workflow runs for a repository. You can use parameters to narrow the l
 Anyone with read access to the repository can use this endpoint. GitHub Apps must have the `actions` permission to use this endpoint.
 
 ```js
-octokit.actions.listRepoWorkflowRuns(owner, repo);
+octokit.actions.listRepoWorkflowRuns({
+  owner,
+  repo
+});
 ```
 
 ## Parameters
