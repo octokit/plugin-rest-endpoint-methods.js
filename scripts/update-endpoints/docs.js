@@ -42,9 +42,13 @@ ${param.description || ""}
   const requiredParameterNames = endpoint.parameters
     .filter(parameter => parameter.required)
     .map(parameter => parameter.name);
-  const example = `octokit.${endpoint.scope}.${
-    endpoint.id
-  }(${requiredParameterNames.join(", ")})`;
+  const example =
+    `octokit.${endpoint.scope}.${endpoint.id}` +
+    (requiredParameterNames.length
+      ? `({
+        ${requiredParameterNames.join(",\n")}
+      })`
+      : "()");
 
   const content = `
 # ${endpoint.name}
