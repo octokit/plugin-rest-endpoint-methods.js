@@ -1,7 +1,10 @@
 # List downloads for a repository
 
 ```js
-octokit.repos.listDownloads(owner, repo);
+octokit.repos.listDownloads({
+  owner,
+  repo
+});
 ```
 
 ## Parameters

@@ -5,7 +5,11 @@ Protected branches are available in public repositories with GitHub Free, and in
 Lists the teams who have push access to this branch. The list includes child teams.
 
 ```js
-octokit.repos.getTeamsWithAccessToProtectedBranch(owner, repo, branch);
+octokit.repos.getTeamsWithAccessToProtectedBranch({
+  owner,
+  repo,
+  branch
+});
 ```
 
 ## Parameters

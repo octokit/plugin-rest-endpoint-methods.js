@@ -1,7 +1,9 @@
 # Unblock a user
 
 ```js
-octokit.users.unblock(username);
+octokit.users.unblock({
+  username
+});
 ```
 
 ## Parameters

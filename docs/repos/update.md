@@ -3,7 +3,10 @@
 **Note**: To edit a repository's topics, use the [`topics` endpoint](https://developer.github.com/v3/repos/#replace-all-topics-for-a-repository).
 
 ```js
-octokit.repos.update(owner, repo);
+octokit.repos.update({
+  owner,
+  repo
+});
 ```
 
 ## Parameters

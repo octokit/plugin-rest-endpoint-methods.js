@@ -5,12 +5,12 @@ Get a specific comment on a team discussion. OAuth access tokens require the `re
 **Note:** You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/:org_id/team/:team_id/discussions/:discussion_number/comments/:comment_number`.
 
 ```js
-octokit.teams.getDiscussionCommentInOrg(
+octokit.teams.getDiscussionCommentInOrg({
   org,
   team_slug,
   discussion_number,
   comment_number
-);
+});
 ```
 
 ## Parameters

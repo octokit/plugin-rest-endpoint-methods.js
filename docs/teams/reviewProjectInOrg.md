@@ -5,7 +5,11 @@ Checks whether a team has `read`, `write`, or `admin` permissions for an organiz
 **Note:** You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/:org_id/team/:team_id/projects/:project_id`.
 
 ```js
-octokit.teams.reviewProjectInOrg(org, team_slug, project_id);
+octokit.teams.reviewProjectInOrg({
+  org,
+  team_slug,
+  project_id
+});
 ```
 
 ## Parameters

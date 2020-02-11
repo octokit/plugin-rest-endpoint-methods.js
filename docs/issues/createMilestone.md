@@ -1,7 +1,11 @@
 # Create a milestone
 
 ```js
-octokit.issues.createMilestone(owner, repo, title);
+octokit.issues.createMilestone({
+  owner,
+  repo,
+  title
+});
 ```
 
 ## Parameters

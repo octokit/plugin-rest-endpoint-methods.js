@@ -1,7 +1,9 @@
 # Mark a thread as read
 
 ```js
-octokit.activity.markThreadAsRead(thread_id);
+octokit.activity.markThreadAsRead({
+  thread_id
+});
 ```
 
 ## Parameters

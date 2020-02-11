@@ -5,7 +5,10 @@ Team members will include the members of child teams.
 To list members in a team, the team must be visible to the authenticated user.
 
 ```js
-octokit.teams.listMembersInOrg(org, team_slug);
+octokit.teams.listMembersInOrg({
+  org,
+  team_slug
+});
 ```
 
 ## Parameters

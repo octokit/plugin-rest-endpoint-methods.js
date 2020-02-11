@@ -1,7 +1,10 @@
 # Update information about a Pages site
 
 ```js
-octokit.repos.updateInformationAboutPagesSite(owner, repo);
+octokit.repos.updateInformationAboutPagesSite({
+  owner,
+  repo
+});
 ```
 
 ## Parameters

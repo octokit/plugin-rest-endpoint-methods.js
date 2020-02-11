@@ -1,7 +1,9 @@
 # List project cards
 
 ```js
-octokit.projects.listCards(column_id);
+octokit.projects.listCards({
+  column_id
+});
 ```
 
 ## Parameters

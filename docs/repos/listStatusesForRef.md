@@ -5,7 +5,11 @@ Users with pull access in a repository can view commit statuses for a given ref.
 This resource is also available via a legacy route: `GET /repos/:owner/:repo/statuses/:ref`.
 
 ```js
-octokit.repos.listStatusesForRef(owner, repo, ref);
+octokit.repos.listStatusesForRef({
+  owner,
+  repo,
+  ref
+});
 ```
 
 ## Parameters

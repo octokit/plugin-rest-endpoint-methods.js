@@ -9,7 +9,11 @@ You must use an [installation access token](https://developer.github.com/apps/bu
 This example creates a content attachment for the domain `https://errors.ai/`.
 
 ```js
-octokit.apps.createContentAttachment(content_reference_id, title, body);
+octokit.apps.createContentAttachment({
+  content_reference_id,
+  title,
+  body
+});
 ```
 
 ## Parameters

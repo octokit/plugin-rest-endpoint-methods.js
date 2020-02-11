@@ -1,7 +1,11 @@
 # Get a single event
 
 ```js
-octokit.issues.getEvent(owner, repo, event_id);
+octokit.issues.getEvent({
+  owner,
+  repo,
+  event_id
+});
 ```
 
 ## Parameters

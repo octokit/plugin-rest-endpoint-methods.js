@@ -1,7 +1,12 @@
 # Perform a merge
 
 ```js
-octokit.repos.merge(owner, repo, base, head);
+octokit.repos.merge({
+  owner,
+  repo,
+  base,
+  head
+});
 ```
 
 ## Parameters

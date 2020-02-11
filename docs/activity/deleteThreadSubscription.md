@@ -3,7 +3,9 @@
 Mutes all future notifications for a conversation until you comment on the thread or get **@mention**ed.
 
 ```js
-octokit.activity.deleteThreadSubscription(thread_id);
+octokit.activity.deleteThreadSubscription({
+  thread_id
+});
 ```
 
 ## Parameters

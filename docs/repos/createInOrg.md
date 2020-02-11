@@ -10,7 +10,10 @@ When using [OAuth](https://developer.github.com/apps/building-oauth-apps/underst
 - `repo` scope to create a private repository
 
 ```js
-octokit.repos.createInOrg(org, name);
+octokit.repos.createInOrg({
+  org,
+  name
+});
 ```
 
 ## Parameters

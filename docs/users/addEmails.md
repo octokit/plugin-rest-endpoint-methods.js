@@ -3,7 +3,9 @@
 This endpoint is accessible with the `user` scope.
 
 ```js
-octokit.users.addEmails(emails);
+octokit.users.addEmails({
+  emails
+});
 ```
 
 ## Parameters

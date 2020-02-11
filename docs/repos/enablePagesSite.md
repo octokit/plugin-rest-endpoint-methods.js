@@ -1,7 +1,10 @@
 # Enable a Pages site
 
 ```js
-octokit.repos.enablePagesSite(owner, repo);
+octokit.repos.enablePagesSite({
+  owner,
+  repo
+});
 ```
 
 ## Parameters

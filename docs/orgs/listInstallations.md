@@ -3,7 +3,9 @@
 Lists all GitHub Apps in an organization. The installation count includes all GitHub Apps installed on repositories in the organization. You must be an organization owner with `admin:read` scope to use this endpoint.
 
 ```js
-octokit.orgs.listInstallations(org);
+octokit.orgs.listInstallations({
+  org
+});
 ```
 
 ## Parameters

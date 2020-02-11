@@ -9,7 +9,12 @@ Grants the specified people push access for this branch.
 | `array` | Usernames for people who can have push access. **Note**: The list of users, apps, and teams in total is limited to 100 items. |
 
 ```js
-octokit.repos.addProtectedBranchUserRestrictions(owner, repo, branch, users);
+octokit.repos.addProtectedBranchUserRestrictions({
+  owner,
+  repo,
+  branch,
+  users
+});
 ```
 
 ## Parameters

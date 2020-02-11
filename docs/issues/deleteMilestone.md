@@ -1,7 +1,11 @@
 # Delete a milestone
 
 ```js
-octokit.issues.deleteMilestone(owner, repo, milestone_number);
+octokit.issues.deleteMilestone({
+  owner,
+  repo,
+  milestone_number
+});
 ```
 
 ## Parameters

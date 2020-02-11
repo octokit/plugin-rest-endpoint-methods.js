@@ -5,7 +5,9 @@ This checks to see if the current user is subscribed to a thread. You can also [
 Note that subscriptions are only generated if a user is participating in a conversation--for example, they've replied to the thread, were **@mentioned**, or manually subscribe to a thread.
 
 ```js
-octokit.activity.getThreadSubscription(thread_id);
+octokit.activity.getThreadSubscription({
+  thread_id
+});
 ```
 
 ## Parameters

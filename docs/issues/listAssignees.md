@@ -3,7 +3,10 @@
 Lists the [available assignees](https://help.github.com/articles/assigning-issues-and-pull-requests-to-other-github-users/) for issues in a repository.
 
 ```js
-octokit.issues.listAssignees(owner, repo);
+octokit.issues.listAssignees({
+  owner,
+  repo
+});
 ```
 
 ## Parameters

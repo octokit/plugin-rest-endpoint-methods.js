@@ -5,7 +5,11 @@ Edits the title and body text of a discussion post. Only the parameters you prov
 **Note:** You can also specify a team by `org_id` and `team_id` using the route `PATCH /organizations/:org_id/team/:team_id/discussions/:discussion_number`.
 
 ```js
-octokit.teams.updateDiscussionInOrg(org, team_slug, discussion_number);
+octokit.teams.updateDiscussionInOrg({
+  org,
+  team_slug,
+  discussion_number
+});
 ```
 
 ## Parameters

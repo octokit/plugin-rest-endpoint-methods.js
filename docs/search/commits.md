@@ -11,7 +11,9 @@ Only the _default branch_ is considered. In most cases, this will be the `master
 Suppose you want to find commits related to CSS in the [octocat/Spoon-Knife](https://github.com/octocat/Spoon-Knife) repository. Your query would look something like this:
 
 ```js
-octokit.search.commits(q);
+octokit.search.commits({
+  q
+});
 ```
 
 ## Parameters

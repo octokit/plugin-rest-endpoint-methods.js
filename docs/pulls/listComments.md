@@ -23,7 +23,11 @@ If you don't use the `comfort-fade` preview header, multi-line and single-line c
 The `reactions` key will have the following payload where `url` can be used to construct the API location for [listing and creating](https://developer.github.com/v3/reactions) reactions.
 
 ```js
-octokit.pulls.listComments(owner, repo, pull_number);
+octokit.pulls.listComments({
+  owner,
+  repo,
+  pull_number
+});
 ```
 
 ## Parameters

@@ -5,7 +5,10 @@ You can request that your site be built from the latest revision on the default 
 Build requests are limited to one concurrent build per repository and one concurrent build per requester. If you request a build while another is still in progress, the second request will be queued until the first completes.
 
 ```js
-octokit.repos.requestPageBuild(owner, repo);
+octokit.repos.requestPageBuild({
+  owner,
+  repo
+});
 ```
 
 ## Parameters

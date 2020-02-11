@@ -3,7 +3,13 @@
 Update the review summary comment with new text.
 
 ```js
-octokit.pulls.updateReview(owner, repo, pull_number, review_id, body);
+octokit.pulls.updateReview({
+  owner,
+  repo,
+  pull_number,
+  review_id,
+  body
+});
 ```
 
 ## Parameters

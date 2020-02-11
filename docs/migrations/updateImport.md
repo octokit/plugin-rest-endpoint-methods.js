@@ -9,7 +9,10 @@ The following example demonstrates the workflow for updating an import with "pro
 To restart an import, no parameters are provided in the update request.
 
 ```js
-octokit.migrations.updateImport(owner, repo);
+octokit.migrations.updateImport({
+  owner,
+  repo
+});
 ```
 
 ## Parameters

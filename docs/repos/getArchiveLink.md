@@ -7,7 +7,12 @@ _Note_: For private repositories, these links are temporary and expire after fiv
 To follow redirects with curl, use the `-L` switch:
 
 ```js
-octokit.repos.getArchiveLink(owner, repo, archive_format, ref);
+octokit.repos.getArchiveLink({
+  owner,
+  repo,
+  archive_format,
+  ref
+});
 ```
 
 ## Parameters

@@ -5,7 +5,9 @@ Lists the projects in an organization. Returns a `404 Not Found` status if proje
 s
 
 ```js
-octokit.projects.listForOrg(org);
+octokit.projects.listForOrg({
+  org
+});
 ```
 
 ## Parameters

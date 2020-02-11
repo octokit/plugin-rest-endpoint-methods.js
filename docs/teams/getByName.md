@@ -5,7 +5,10 @@ Gets a team using the team's `slug`. GitHub generates the `slug` from the team `
 **Note:** You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/:org_id/team/:team_id`.
 
 ```js
-octokit.teams.getByName(org, team_slug);
+octokit.teams.getByName({
+  org,
+  team_slug
+});
 ```
 
 ## Parameters

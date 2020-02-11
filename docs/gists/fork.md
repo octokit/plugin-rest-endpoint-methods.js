@@ -3,7 +3,9 @@
 **Note**: This was previously `/gists/:gist_id/fork`.
 
 ```js
-octokit.gists.fork(gist_id);
+octokit.gists.fork({
+  gist_id
+});
 ```
 
 ## Parameters

@@ -12,7 +12,11 @@ When using [OAuth](https://developer.github.com/apps/building-oauth-apps/underst
 \`
 
 ```js
-octokit.repos.createUsingTemplate(template_owner, template_repo, name);
+octokit.repos.createUsingTemplate({
+  template_owner,
+  template_repo,
+  name
+});
 ```
 
 ## Parameters

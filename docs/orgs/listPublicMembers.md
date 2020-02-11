@@ -3,7 +3,9 @@
 Members of an organization can choose to have their membership publicized or not.
 
 ```js
-octokit.orgs.listPublicMembers(org);
+octokit.orgs.listPublicMembers({
+  org
+});
 ```
 
 ## Parameters

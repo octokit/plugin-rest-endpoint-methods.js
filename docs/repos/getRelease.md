@@ -3,7 +3,11 @@
 **Note:** This returns an `upload_url` key corresponding to the endpoint for uploading release assets. This key is a [hypermedia resource](https://developer.github.com/v3/#hypermedia).
 
 ```js
-octokit.repos.getRelease(owner, repo, release_id);
+octokit.repos.getRelease({
+  owner,
+  repo,
+  release_id
+});
 ```
 
 ## Parameters

@@ -5,7 +5,12 @@ Users with `push` access can create deployment statuses for a given deployment.
 GitHub Apps require `read & write` access to "Deployments" and `read-only` access to "Repo contents" (for private repos). OAuth Apps require the `repo_deployment` scope.
 
 ```js
-octokit.repos.createDeploymentStatus(owner, repo, deployment_id, state);
+octokit.repos.createDeploymentStatus({
+  owner,
+  repo,
+  deployment_id,
+  state
+});
 ```
 
 ## Parameters

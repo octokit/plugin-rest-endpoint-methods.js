@@ -1,7 +1,9 @@
 # Delete a project card
 
 ```js
-octokit.projects.deleteCard(card_id);
+octokit.projects.deleteCard({
+  card_id
+});
 ```
 
 ## Parameters

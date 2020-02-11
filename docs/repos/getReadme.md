@@ -5,7 +5,10 @@ Gets the preferred README for a repository.
 READMEs support [custom media types](https://developer.github.com/v3/repos/contents/#custom-media-types) for retrieving the raw content or rendered HTML.
 
 ```js
-octokit.repos.getReadme(owner, repo);
+octokit.repos.getReadme({
+  owner,
+  repo
+});
 ```
 
 ## Parameters

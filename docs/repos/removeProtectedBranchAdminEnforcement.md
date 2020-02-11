@@ -5,7 +5,11 @@ Protected branches are available in public repositories with GitHub Free, and in
 Removing admin enforcement requires admin or owner permissions to the repository and branch protection to be enabled.
 
 ```js
-octokit.repos.removeProtectedBranchAdminEnforcement(owner, repo, branch);
+octokit.repos.removeProtectedBranchAdminEnforcement({
+  owner,
+  repo,
+  branch
+});
 ```
 
 ## Parameters

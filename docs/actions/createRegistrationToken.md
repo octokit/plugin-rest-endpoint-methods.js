@@ -5,7 +5,10 @@ Returns a token that you can pass to the `config` script. The token expires afte
 Configure your self-hosted runner, replacing TOKEN with the registration token provided by this endpoint.
 
 ```js
-octokit.actions.createRegistrationToken(owner, repo);
+octokit.actions.createRegistrationToken({
+  owner,
+  repo
+});
 ```
 
 ## Parameters

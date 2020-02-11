@@ -1,7 +1,9 @@
 # Decline a repository invitation
 
 ```js
-octokit.repos.declineInvitation(invitation_id);
+octokit.repos.declineInvitation({
+  invitation_id
+});
 ```
 
 ## Parameters

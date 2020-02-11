@@ -3,7 +3,10 @@
 List all notifications for the current user.
 
 ```js
-octokit.activity.listNotificationsForRepo(owner, repo);
+octokit.activity.listNotificationsForRepo({
+  owner,
+  repo
+});
 ```
 
 ## Parameters

@@ -1,7 +1,10 @@
 # Disable a Pages site
 
 ```js
-octokit.repos.disablePagesSite(owner, repo);
+octokit.repos.disablePagesSite({
+  owner,
+  repo
+});
 ```
 
 ## Parameters

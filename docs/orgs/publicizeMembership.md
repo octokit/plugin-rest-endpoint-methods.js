@@ -5,7 +5,10 @@ The user can publicize their own membership. (A user cannot publicize the member
 Note that you'll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see "[HTTP verbs](https://developer.github.com/v3/#http-verbs)."
 
 ```js
-octokit.orgs.publicizeMembership(org, username);
+octokit.orgs.publicizeMembership({
+  org,
+  username
+});
 ```
 
 ## Parameters

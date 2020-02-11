@@ -13,7 +13,9 @@ In this request, we're searching for topics with the keyword `ruby`, and we're l
 **Note:** A search for featured Ruby topics only has 6 total results, so a [Link header](https://developer.github.com/v3/#link-header) indicating pagination is not included in the response.
 
 ```js
-octokit.search.topics(q);
+octokit.search.topics({
+  q
+});
 ```
 
 ## Parameters

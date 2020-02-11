@@ -3,7 +3,11 @@
 Deletes a secret in a repository using the secret name. Anyone with write access to the repository can use this endpoint. GitHub Apps must have the `secrets` permission to use this endpoint.
 
 ```js
-octokit.actions.deleteSecretFromRepo(owner, repo, name);
+octokit.actions.deleteSecretFromRepo({
+  owner,
+  repo,
+  name
+});
 ```
 
 ## Parameters

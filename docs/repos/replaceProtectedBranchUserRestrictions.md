@@ -9,12 +9,12 @@ Replaces the list of people that have push access to this branch. This removes a
 | `array` | Usernames for people who can have push access. **Note**: The list of users, apps, and teams in total is limited to 100 items. |
 
 ```js
-octokit.repos.replaceProtectedBranchUserRestrictions(
+octokit.repos.replaceProtectedBranchUserRestrictions({
   owner,
   repo,
   branch,
   users
-);
+});
 ```
 
 ## Parameters

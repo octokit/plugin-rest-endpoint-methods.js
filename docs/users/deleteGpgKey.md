@@ -3,7 +3,9 @@
 Removes a GPG key from the authenticated user's GitHub account. Requires that you are authenticated via Basic Auth or via OAuth with at least `admin:gpg_key` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
 
 ```js
-octokit.users.deleteGpgKey(gpg_key_id);
+octokit.users.deleteGpgKey({
+  gpg_key_id
+});
 ```
 
 ## Parameters

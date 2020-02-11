@@ -1,7 +1,9 @@
 # View a single thread
 
 ```js
-octokit.activity.getThread(thread_id);
+octokit.activity.getThread({
+  thread_id
+});
 ```
 
 ## Parameters

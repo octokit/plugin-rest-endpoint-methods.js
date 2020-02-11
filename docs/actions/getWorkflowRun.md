@@ -3,7 +3,11 @@
 Gets a specific workflow run. Anyone with read access to the repository can use this endpoint. GitHub Apps must have the `actions` permission to use this endpoint.
 
 ```js
-octokit.actions.getWorkflowRun(owner, repo, run_id);
+octokit.actions.getWorkflowRun({
+  owner,
+  repo,
+  run_id
+});
 ```
 
 ## Parameters

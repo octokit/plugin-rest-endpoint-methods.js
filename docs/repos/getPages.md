@@ -1,7 +1,10 @@
 # Get information about a Pages site
 
 ```js
-octokit.repos.getPages(owner, repo);
+octokit.repos.getPages({
+  owner,
+  repo
+});
 ```
 
 ## Parameters

@@ -9,7 +9,10 @@ Suppose you want to find labels in the `linguist` repository that match `bug`, `
 The labels that best match for the query appear first in the search results.
 
 ```js
-octokit.search.labels(repository_id, q);
+octokit.search.labels({
+  repository_id,
+  q
+});
 ```
 
 ## Parameters

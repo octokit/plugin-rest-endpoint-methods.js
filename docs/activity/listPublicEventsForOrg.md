@@ -1,7 +1,9 @@
 # List public events for an organization
 
 ```js
-octokit.activity.listPublicEventsForOrg(org);
+octokit.activity.listPublicEventsForOrg({
+  org
+});
 ```
 
 ## Parameters

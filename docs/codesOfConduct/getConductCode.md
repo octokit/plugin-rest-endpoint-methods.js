@@ -1,7 +1,9 @@
 # Get an individual code of conduct
 
 ```js
-octokit.codesOfConduct.getConductCode(key);
+octokit.codesOfConduct.getConductCode({
+  key
+});
 ```
 
 ## Parameters

@@ -3,7 +3,10 @@
 Sets the visibility for your primary email addresses.
 
 ```js
-octokit.users.togglePrimaryEmailVisibility(email, visibility);
+octokit.users.togglePrimaryEmailVisibility({
+  email,
+  visibility
+});
 ```
 
 ## Parameters

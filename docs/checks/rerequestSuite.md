@@ -5,7 +5,11 @@ Triggers GitHub to rerequest an existing check suite, without pushing new code t
 To rerequest a check suite, your GitHub App must have the `checks:read` permission on a private repository or pull access to a public repository.
 
 ```js
-octokit.checks.rerequestSuite(owner, repo, check_suite_id);
+octokit.checks.rerequestSuite({
+  owner,
+  repo,
+  check_suite_id
+});
 ```
 
 ## Parameters

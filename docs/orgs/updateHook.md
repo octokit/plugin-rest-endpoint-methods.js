@@ -1,7 +1,11 @@
 # Edit a hook
 
 ```js
-octokit.orgs.updateHook(org, hook_id, config.url);
+octokit.orgs.updateHook({
+        org,
+hook_id,
+config.url
+      })
 ```
 
 ## Parameters

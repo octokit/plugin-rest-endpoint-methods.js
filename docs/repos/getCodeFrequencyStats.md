@@ -3,7 +3,10 @@
 Returns a weekly aggregate of the number of additions and deletions pushed to a repository.
 
 ```js
-octokit.repos.getCodeFrequencyStats(owner, repo);
+octokit.repos.getCodeFrequencyStats({
+  owner,
+  repo
+});
 ```
 
 ## Parameters

@@ -3,7 +3,9 @@
 You must use a [JWT](https://developer.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint.
 
 ```js
-octokit.apps.getInstallation(installation_id);
+octokit.apps.getInstallation({
+  installation_id
+});
 ```
 
 ## Parameters

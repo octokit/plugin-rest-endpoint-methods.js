@@ -5,7 +5,12 @@ Repositories can have multiple webhooks installed. Each webhook should have a un
 Here's how you can create a hook that posts payloads in JSON format:
 
 ```js
-octokit.repos.createHook(owner, repo, config, config.url);
+octokit.repos.createHook({
+        owner,
+repo,
+config,
+config.url
+      })
 ```
 
 ## Parameters

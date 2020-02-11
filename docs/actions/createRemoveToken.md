@@ -5,7 +5,10 @@ Returns a token that you can pass to remove a self-hosted runner from a reposito
 Remove your self-hosted runner from a repository, replacing TOKEN with the remove token provided by this endpoint.
 
 ```js
-octokit.actions.createRemoveToken(owner, repo);
+octokit.actions.createRemoveToken({
+  owner,
+  repo
+});
 ```
 
 ## Parameters

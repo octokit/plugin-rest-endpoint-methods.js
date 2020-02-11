@@ -5,7 +5,11 @@ To edit a team, the authenticated user must either be an organization owner or a
 **Note:** You can also specify a team by `org_id` and `team_id` using the route `PATCH /organizations/:org_id/team/:team_id`.
 
 ```js
-octokit.teams.updateInOrg(org, team_slug, name);
+octokit.teams.updateInOrg({
+  org,
+  team_slug,
+  name
+});
 ```
 
 ## Parameters

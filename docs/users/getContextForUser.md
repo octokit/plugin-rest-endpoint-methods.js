@@ -5,7 +5,9 @@ Provides hovercard information when authenticated through basic auth or OAuth wi
 The `subject_type` and `subject_id` parameters provide context for the person's hovercard, which returns more information than without the parameters. For example, if you wanted to find out more about `octocat` who owns the `Spoon-Knife` repository via cURL, it would look like this:
 
 ```js
-octokit.users.getContextForUser(username);
+octokit.users.getContextForUser({
+  username
+});
 ```
 
 ## Parameters

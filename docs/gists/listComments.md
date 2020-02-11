@@ -1,7 +1,9 @@
 # List comments on a gist
 
 ```js
-octokit.gists.listComments(gist_id);
+octokit.gists.listComments({
+  gist_id
+});
 ```
 
 ## Parameters

@@ -1,7 +1,9 @@
 # List repositories being watched by a user
 
 ```js
-octokit.activity.listReposWatchedByUser(username);
+octokit.activity.listReposWatchedByUser({
+  username
+});
 ```
 
 ## Parameters

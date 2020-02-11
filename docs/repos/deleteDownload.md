@@ -1,7 +1,11 @@
 # Delete a download
 
 ```js
-octokit.repos.deleteDownload(owner, repo, download_id);
+octokit.repos.deleteDownload({
+  owner,
+  repo,
+  download_id
+});
 ```
 
 ## Parameters

@@ -5,7 +5,10 @@ Each type of source control system represents authors in a different way. For ex
 This API method and the "Map a commit author" method allow you to provide correct Git author information.
 
 ```js
-octokit.migrations.getCommitAuthors(owner, repo);
+octokit.migrations.getCommitAuthors({
+  owner,
+  repo
+});
 ```
 
 ## Parameters

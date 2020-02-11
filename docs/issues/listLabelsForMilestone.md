@@ -1,7 +1,11 @@
 # Get labels for every issue in a milestone
 
 ```js
-octokit.issues.listLabelsForMilestone(owner, repo, milestone_number);
+octokit.issues.listLabelsForMilestone({
+  owner,
+  repo,
+  milestone_number
+});
 ```
 
 ## Parameters

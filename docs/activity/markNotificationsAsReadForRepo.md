@@ -3,7 +3,10 @@
 Marks all notifications in a repository as "read" removes them from the [default view on GitHub](https://github.com/notifications). If the number of notifications is too large to complete in one request, you will receive a `202 Accepted` status and GitHub will run an asynchronous process to mark notifications as "read." To check whether any "unread" notifications remain, you can use the [List your notifications in a repository](https://developer.github.com/v3/activity/notifications/#list-your-notifications-in-a-repository) endpoint and pass the query parameter `all=false`.
 
 ```js
-octokit.activity.markNotificationsAsReadForRepo(owner, repo);
+octokit.activity.markNotificationsAsReadForRepo({
+  owner,
+  repo
+});
 ```
 
 ## Parameters

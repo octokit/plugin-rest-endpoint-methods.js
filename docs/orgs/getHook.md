@@ -1,7 +1,10 @@
 # Get single hook
 
 ```js
-octokit.orgs.getHook(org, hook_id);
+octokit.orgs.getHook({
+  org,
+  hook_id
+});
 ```
 
 ## Parameters

@@ -1,7 +1,10 @@
 # List public events for a network of repositories
 
 ```js
-octokit.activity.listPublicEventsForRepoNetwork(owner, repo);
+octokit.activity.listPublicEventsForRepoNetwork({
+  owner,
+  repo
+});
 ```
 
 ## Parameters

@@ -3,7 +3,10 @@
 In order to get a user's membership with an organization, the authenticated user must be an organization member.
 
 ```js
-octokit.orgs.getMembership(org, username);
+octokit.orgs.getMembership({
+  org,
+  username
+});
 ```
 
 ## Parameters

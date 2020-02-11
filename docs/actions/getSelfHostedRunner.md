@@ -3,7 +3,11 @@
 Gets a specific self-hosted runner. Anyone with admin access to the repository can use this endpoint. GitHub Apps must have the `administration` permission to use this endpoint.
 
 ```js
-octokit.actions.getSelfHostedRunner(owner, repo, runner_id);
+octokit.actions.getSelfHostedRunner({
+  owner,
+  repo,
+  runner_id
+});
 ```
 
 ## Parameters

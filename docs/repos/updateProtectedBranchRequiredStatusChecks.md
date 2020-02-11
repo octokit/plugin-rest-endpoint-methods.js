@@ -5,7 +5,11 @@ Protected branches are available in public repositories with GitHub Free, and in
 Updating required status checks requires admin or owner permissions to the repository and branch protection to be enabled.
 
 ```js
-octokit.repos.updateProtectedBranchRequiredStatusChecks(owner, repo, branch);
+octokit.repos.updateProtectedBranchRequiredStatusChecks({
+  owner,
+  repo,
+  branch
+});
 ```
 
 ## Parameters

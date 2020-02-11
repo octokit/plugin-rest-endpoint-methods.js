@@ -1,7 +1,9 @@
 # List who a user is following
 
 ```js
-octokit.users.listFollowingForUser(username);
+octokit.users.listFollowingForUser({
+  username
+});
 ```
 
 ## Parameters

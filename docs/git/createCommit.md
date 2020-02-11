@@ -27,7 +27,13 @@ These are the possible values for `reason` in the `verification` object:
 | `valid`                  | None of the above errors applied, so the signature is considered to be verified.                                                  |
 
 ```js
-octokit.git.createCommit(owner, repo, message, tree, parents);
+octokit.git.createCommit({
+  owner,
+  repo,
+  message,
+  tree,
+  parents
+});
 ```
 
 ## Parameters

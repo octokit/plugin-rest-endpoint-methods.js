@@ -1,7 +1,12 @@
 # Create a label
 
 ```js
-octokit.issues.createLabel(owner, repo, name, color);
+octokit.issues.createLabel({
+  owner,
+  repo,
+  name,
+  color
+});
 ```
 
 ## Parameters

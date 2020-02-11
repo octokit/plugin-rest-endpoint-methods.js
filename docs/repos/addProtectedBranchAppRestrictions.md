@@ -9,7 +9,12 @@ Grants the specified apps push access for this branch. Only installed GitHub App
 | `array` | The GitHub Apps that have push access to this branch. Use the app's `slug`. **Note**: The list of users, apps, and teams in total is limited to 100 items. |
 
 ```js
-octokit.repos.addProtectedBranchAppRestrictions(owner, repo, branch, apps);
+octokit.repos.addProtectedBranchAppRestrictions({
+  owner,
+  repo,
+  branch,
+  apps
+});
 ```
 
 ## Parameters

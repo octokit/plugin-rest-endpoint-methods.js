@@ -1,7 +1,11 @@
 # Get single hook
 
 ```js
-octokit.repos.getHook(owner, repo, hook_id);
+octokit.repos.getHook({
+  owner,
+  repo,
+  hook_id
+});
 ```
 
 ## Parameters

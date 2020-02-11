@@ -10,7 +10,9 @@ Fetches a single user migration. The response includes the `state` of the migrat
 Once the migration has been `exported` you can [download the migration archive](https://developer.github.com/v3/migrations/users/#download-a-user-migration-archive).
 
 ```js
-octokit.migrations.getStatusForAuthenticatedUser(migration_id);
+octokit.migrations.getStatusForAuthenticatedUser({
+  migration_id
+});
 ```
 
 ## Parameters

@@ -1,7 +1,10 @@
 # List watchers
 
 ```js
-octokit.activity.listWatchersForRepo(owner, repo);
+octokit.activity.listWatchersForRepo({
+  owner,
+  repo
+});
 ```
 
 ## Parameters

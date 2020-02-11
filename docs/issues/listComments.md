@@ -3,7 +3,11 @@
 Issue Comments are ordered by ascending ID.
 
 ```js
-octokit.issues.listComments(owner, repo, issue_number);
+octokit.issues.listComments({
+  owner,
+  repo,
+  issue_number
+});
 ```
 
 ## Parameters

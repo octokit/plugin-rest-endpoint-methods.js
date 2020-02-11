@@ -3,7 +3,12 @@
 Removes the specified label from the issue, and returns the remaining labels on the issue. This endpoint returns a `404 Not Found` status if the label does not exist.
 
 ```js
-octokit.issues.removeLabel(owner, repo, issue_number, name);
+octokit.issues.removeLabel({
+  owner,
+  repo,
+  issue_number,
+  name
+});
 ```
 
 ## Parameters

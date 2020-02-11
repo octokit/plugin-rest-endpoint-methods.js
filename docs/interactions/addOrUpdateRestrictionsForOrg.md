@@ -3,7 +3,10 @@
 Temporarily restricts interactions to certain GitHub users in any public repository in the given organization. You must be an organization owner to set these restrictions.
 
 ```js
-octokit.interactions.addOrUpdateRestrictionsForOrg(org, limit);
+octokit.interactions.addOrUpdateRestrictionsForOrg({
+  org,
+  limit
+});
 ```
 
 ## Parameters

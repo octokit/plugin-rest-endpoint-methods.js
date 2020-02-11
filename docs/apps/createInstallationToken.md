@@ -7,7 +7,9 @@ You must use a [JWT](https://developer.github.com/apps/building-github-apps/auth
 This example grants the token "Read and write" permission to `issues` and "Read" permission to `contents`, and restricts the token's access to the repository with an `id` of 1296269.
 
 ```js
-octokit.apps.createInstallationToken(installation_id);
+octokit.apps.createInstallationToken({
+  installation_id
+});
 ```
 
 ## Parameters

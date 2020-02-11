@@ -3,7 +3,10 @@
 Get the top 10 popular contents over the last 14 days.
 
 ```js
-octokit.repos.getTopPaths(owner, repo);
+octokit.repos.getTopPaths({
+  owner,
+  repo
+});
 ```
 
 ## Parameters

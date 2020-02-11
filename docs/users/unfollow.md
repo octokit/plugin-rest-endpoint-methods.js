@@ -3,7 +3,9 @@
 Unfollowing a user requires the user to be logged in and authenticated with basic auth or OAuth with the `user:follow` scope.
 
 ```js
-octokit.users.unfollow(username);
+octokit.users.unfollow({
+  username
+});
 ```
 
 ## Parameters

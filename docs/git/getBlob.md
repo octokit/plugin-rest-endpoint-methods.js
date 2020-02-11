@@ -5,7 +5,11 @@ The `content` in the response will always be Base64 encoded.
 _Note_: This API supports blobs up to 100 megabytes in size.
 
 ```js
-octokit.git.getBlob(owner, repo, file_sha);
+octokit.git.getBlob({
+  owner,
+  repo,
+  file_sha
+});
 ```
 
 ## Parameters

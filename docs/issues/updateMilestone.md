@@ -1,7 +1,11 @@
 # Update a milestone
 
 ```js
-octokit.issues.updateMilestone(owner, repo, milestone_number);
+octokit.issues.updateMilestone({
+  owner,
+  repo,
+  milestone_number
+});
 ```
 
 ## Parameters

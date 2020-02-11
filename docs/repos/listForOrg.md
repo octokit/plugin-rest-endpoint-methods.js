@@ -3,7 +3,9 @@
 Lists repositories for the specified organization.
 
 ```js
-octokit.repos.listForOrg(org);
+octokit.repos.listForOrg({
+  org
+});
 ```
 
 ## Parameters
