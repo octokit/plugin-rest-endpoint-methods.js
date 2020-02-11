@@ -5,7 +5,11 @@ List all workflow runs for a workflow. You can also replace `:workflow_id` with 
 Anyone with read access to the repository can use this endpoint.
 
 ```js
-octokit.actions.listWorkflowRuns(owner, repo, workflow_id);
+octokit.actions.listWorkflowRuns({
+  owner,
+  repo,
+  workflow_id
+});
 ```
 
 ## Parameters

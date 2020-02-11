@@ -1,7 +1,9 @@
 # Update a project card
 
 ```js
-octokit.projects.updateCard(card_id);
+octokit.projects.updateCard({
+  card_id
+});
 ```
 
 ## Parameters

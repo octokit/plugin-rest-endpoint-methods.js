@@ -3,7 +3,11 @@
 Users with push access to the repository can edit a release.
 
 ```js
-octokit.repos.updateRelease(owner, repo, release_id);
+octokit.repos.updateRelease({
+  owner,
+  repo,
+  release_id
+});
 ```
 
 ## Parameters

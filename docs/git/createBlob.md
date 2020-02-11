@@ -1,7 +1,11 @@
 # Create a blob
 
 ```js
-octokit.git.createBlob(owner, repo, content);
+octokit.git.createBlob({
+  owner,
+  repo,
+  content
+});
 ```
 
 ## Parameters

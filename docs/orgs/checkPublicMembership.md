@@ -1,7 +1,10 @@
 # Check public membership
 
 ```js
-octokit.orgs.checkPublicMembership(org, username);
+octokit.orgs.checkPublicMembership({
+  org,
+  username
+});
 ```
 
 ## Parameters

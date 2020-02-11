@@ -3,7 +3,9 @@
 This lets you subscribe or unsubscribe from a conversation.
 
 ```js
-octokit.activity.setThreadSubscription(thread_id);
+octokit.activity.setThreadSubscription({
+  thread_id
+});
 ```
 
 ## Parameters

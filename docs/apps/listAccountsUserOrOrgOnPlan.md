@@ -5,7 +5,9 @@ Returns any accounts associated with a plan, including free plans. For per-seat 
 GitHub Apps must use a [JWT](https://developer.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint. OAuth Apps must use [basic authentication](https://developer.github.com/v3/auth/#basic-authentication) with their client ID and client secret to access this endpoint.
 
 ```js
-octokit.apps.listAccountsUserOrOrgOnPlan(plan_id);
+octokit.apps.listAccountsUserOrOrgOnPlan({
+  plan_id
+});
 ```
 
 ## Parameters

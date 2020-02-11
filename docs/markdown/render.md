@@ -1,7 +1,9 @@
 # Render an arbitrary Markdown document
 
 ```js
-octokit.markdown.render(text);
+octokit.markdown.render({
+  text
+});
 ```
 
 ## Parameters

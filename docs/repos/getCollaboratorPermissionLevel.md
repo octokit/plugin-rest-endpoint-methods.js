@@ -3,7 +3,11 @@
 Possible values for the `permission` key: `admin`, `write`, `read`, `none`.
 
 ```js
-octokit.repos.getCollaboratorPermissionLevel(owner, repo, username);
+octokit.repos.getCollaboratorPermissionLevel({
+  owner,
+  repo,
+  username
+});
 ```
 
 ## Parameters

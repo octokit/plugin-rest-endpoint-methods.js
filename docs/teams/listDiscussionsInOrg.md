@@ -5,7 +5,10 @@ List all discussions on a team's page. OAuth access tokens require the `read:dis
 **Note:** You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/:org_id/team/:team_id/discussions`.
 
 ```js
-octokit.teams.listDiscussionsInOrg(org, team_slug);
+octokit.teams.listDiscussionsInOrg({
+  org,
+  team_slug
+});
 ```
 
 ## Parameters

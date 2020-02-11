@@ -3,7 +3,10 @@
 This endpoint should only be used to stop watching a repository. To control whether or not you wish to receive notifications from a repository, [set the repository's subscription manually](https://developer.github.com/v3/activity/watching/#set-a-repository-subscription).
 
 ```js
-octokit.activity.deleteRepoSubscription(owner, repo);
+octokit.activity.deleteRepoSubscription({
+  owner,
+  repo
+});
 ```
 
 ## Parameters

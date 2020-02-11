@@ -1,7 +1,10 @@
 # List all topics for a repository
 
 ```js
-octokit.repos.listTopics(owner, repo);
+octokit.repos.listTopics({
+  owner,
+  repo
+});
 ```
 
 ## Parameters

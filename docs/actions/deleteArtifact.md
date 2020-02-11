@@ -3,7 +3,11 @@
 Deletes an artifact for a workflow run. Anyone with write access to the repository can use this endpoint. GitHub Apps must have the `actions` permission to use this endpoint.
 
 ```js
-octokit.actions.deleteArtifact(owner, repo, artifact_id);
+octokit.actions.deleteArtifact({
+  owner,
+  repo,
+  artifact_id
+});
 ```
 
 ## Parameters

@@ -1,7 +1,11 @@
 # Remove all labels from an issue
 
 ```js
-octokit.issues.removeLabels(owner, repo, issue_number);
+octokit.issues.removeLabels({
+  owner,
+  repo,
+  issue_number
+});
 ```
 
 ## Parameters

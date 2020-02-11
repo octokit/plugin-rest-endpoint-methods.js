@@ -9,7 +9,11 @@ To remove a membership between a user and a team, the authenticated user must ha
 **Note:** You can also specify a team by `org_id` and `team_id` using the route `DELETE /organizations/:org_id/team/:team_id/memberships/:username`.
 
 ```js
-octokit.teams.removeMembershipInOrg(org, team_slug, username);
+octokit.teams.removeMembershipInOrg({
+  org,
+  team_slug,
+  username
+});
 ```
 
 ## Parameters

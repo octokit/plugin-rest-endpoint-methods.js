@@ -9,12 +9,12 @@ Replaces the list of teams that have push access to this branch. This removes al
 | `array` | The teams that can have push access. Use the team's `slug`. **Note**: The list of users, apps, and teams in total is limited to 100 items. |
 
 ```js
-octokit.repos.replaceProtectedBranchTeamRestrictions(
+octokit.repos.replaceProtectedBranchTeamRestrictions({
   owner,
   repo,
   branch,
   teams
-);
+});
 ```
 
 ## Parameters

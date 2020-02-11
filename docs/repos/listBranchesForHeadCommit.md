@@ -5,7 +5,11 @@ Protected branches are available in public repositories with GitHub Free, and in
 Returns all branches where the given commit SHA is the HEAD, or latest commit for the branch.
 
 ```js
-octokit.repos.listBranchesForHeadCommit(owner, repo, commit_sha);
+octokit.repos.listBranchesForHeadCommit({
+  owner,
+  repo,
+  commit_sha
+});
 ```
 
 ## Parameters

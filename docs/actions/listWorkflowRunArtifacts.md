@@ -3,7 +3,11 @@
 Lists artifacts for a workflow run. Anyone with read access to the repository can use this endpoint. GitHub Apps must have the `actions` permission to use this endpoint.
 
 ```js
-octokit.actions.listWorkflowRunArtifacts(owner, repo, run_id);
+octokit.actions.listWorkflowRunArtifacts({
+  owner,
+  repo,
+  run_id
+});
 ```
 
 ## Parameters

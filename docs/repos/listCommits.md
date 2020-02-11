@@ -23,7 +23,10 @@ These are the possible values for `reason` in the `verification` object:
 | `valid`                  | None of the above errors applied, so the signature is considered to be verified.                                                  |
 
 ```js
-octokit.repos.listCommits(owner, repo);
+octokit.repos.listCommits({
+  owner,
+  repo
+});
 ```
 
 ## Parameters

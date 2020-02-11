@@ -5,7 +5,11 @@ Protected branches are available in public repositories with GitHub Free, and in
 Disables the ability to restrict who can push to this branch.
 
 ```js
-octokit.repos.removeProtectedBranchRestrictions(owner, repo, branch);
+octokit.repos.removeProtectedBranchRestrictions({
+  owner,
+  repo,
+  branch
+});
 ```
 
 ## Parameters

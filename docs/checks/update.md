@@ -5,7 +5,22 @@
 Updates a check run for a specific commit in a repository. Your GitHub App must have the `checks:write` permission to edit check runs.
 
 ```js
-octokit.checks.update(owner, repo, check_run_id, output.summary, output.annotations[].path, output.annotations[].start_line, output.annotations[].end_line, output.annotations[].annotation_level, output.annotations[].message, output.images[].alt, output.images[].image_url, actions[].label, actions[].description, actions[].identifier)
+octokit.checks.update({
+        owner,
+repo,
+check_run_id,
+output.summary,
+output.annotations[].path,
+output.annotations[].start_line,
+output.annotations[].end_line,
+output.annotations[].annotation_level,
+output.annotations[].message,
+output.images[].alt,
+output.images[].image_url,
+actions[].label,
+actions[].description,
+actions[].identifier
+      })
 ```
 
 ## Parameters

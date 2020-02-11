@@ -3,7 +3,11 @@
 Users with push access can unlock an issue's conversation.
 
 ```js
-octokit.issues.unlock(owner, repo, issue_number);
+octokit.issues.unlock({
+  owner,
+  repo,
+  issue_number
+});
 ```
 
 ## Parameters

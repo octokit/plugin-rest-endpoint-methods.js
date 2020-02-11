@@ -1,7 +1,10 @@
 # List hooks
 
 ```js
-octokit.repos.listHooks(owner, repo);
+octokit.repos.listHooks({
+  owner,
+  repo
+});
 ```
 
 ## Parameters

@@ -1,7 +1,11 @@
 # Get branch
 
 ```js
-octokit.repos.getBranch(owner, repo, branch);
+octokit.repos.getBranch({
+  owner,
+  repo,
+  branch
+});
 ```
 
 ## Parameters

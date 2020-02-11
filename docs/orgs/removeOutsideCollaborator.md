@@ -3,7 +3,10 @@
 Removing a user from this list will remove them from all the organization's repositories.
 
 ```js
-octokit.orgs.removeOutsideCollaborator(org, username);
+octokit.orgs.removeOutsideCollaborator({
+  org,
+  username
+});
 ```
 
 ## Parameters

@@ -7,7 +7,12 @@ Checks whether a team has `admin`, `push`, or `pull` permission for a repository
 You can also get information about the specified repository, including what permissions the team grants on it, by passing the following custom [media type](https://developer.github.com/v3/media/) via the `Accept` header:
 
 ```js
-octokit.teams.checkManagesRepoInOrg(org, team_slug, owner, repo);
+octokit.teams.checkManagesRepoInOrg({
+  org,
+  team_slug,
+  owner,
+  repo
+});
 ```
 
 ## Parameters

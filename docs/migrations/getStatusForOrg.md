@@ -10,7 +10,10 @@ The `state` of a migration can be one of the following values:
 - `failed`, which means the migration failed.
 
 ```js
-octokit.migrations.getStatusForOrg(org, migration_id);
+octokit.migrations.getStatusForOrg({
+  org,
+  migration_id
+});
 ```
 
 ## Parameters

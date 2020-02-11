@@ -1,7 +1,12 @@
 # Edit a comment
 
 ```js
-octokit.issues.updateComment(owner, repo, comment_id, body);
+octokit.issues.updateComment({
+  owner,
+  repo,
+  comment_id,
+  body
+});
 ```
 
 ## Parameters

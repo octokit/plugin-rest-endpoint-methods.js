@@ -1,7 +1,11 @@
 # Remove user as a collaborator
 
 ```js
-octokit.repos.removeCollaborator(owner, repo, username);
+octokit.repos.removeCollaborator({
+  owner,
+  repo,
+  username
+});
 ```
 
 ## Parameters

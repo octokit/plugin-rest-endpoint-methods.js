@@ -3,12 +3,12 @@
 Protected branches are available in public repositories with GitHub Free, and in public and private repositories with GitHub Pro, GitHub Team, and GitHub Enterprise Cloud. For more information, see [GitHub's products](https://help.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
 
 ```js
-octokit.repos.removeProtectedBranchRequiredStatusChecksContexts(
+octokit.repos.removeProtectedBranchRequiredStatusChecksContexts({
   owner,
   repo,
   branch,
   contexts
-);
+});
 ```
 
 ## Parameters

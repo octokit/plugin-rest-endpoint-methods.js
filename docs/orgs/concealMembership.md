@@ -1,7 +1,10 @@
 # Conceal a user's membership
 
 ```js
-octokit.orgs.concealMembership(org, username);
+octokit.orgs.concealMembership({
+  org,
+  username
+});
 ```
 
 ## Parameters

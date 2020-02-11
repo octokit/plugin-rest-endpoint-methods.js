@@ -10,7 +10,10 @@ Weekly Hash (`weeks` array):
 - `c` - Number of commits
 
 ```js
-octokit.repos.getContributorsStats(owner, repo);
+octokit.repos.getContributorsStats({
+  owner,
+  repo
+});
 ```
 
 ## Parameters

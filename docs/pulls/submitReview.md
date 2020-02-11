@@ -1,7 +1,13 @@
 # Submit a pull request review
 
 ```js
-octokit.pulls.submitReview(owner, repo, pull_number, review_id, event);
+octokit.pulls.submitReview({
+  owner,
+  repo,
+  pull_number,
+  review_id,
+  event
+});
 ```
 
 ## Parameters

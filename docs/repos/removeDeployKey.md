@@ -1,7 +1,11 @@
 # Remove a deploy key
 
 ```js
-octokit.repos.removeDeployKey(owner, repo, key_id);
+octokit.repos.removeDeployKey({
+  owner,
+  repo,
+  key_id
+});
 ```
 
 ## Parameters

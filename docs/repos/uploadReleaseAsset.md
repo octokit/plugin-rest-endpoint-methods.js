@@ -18,7 +18,12 @@ GitHub expects the asset data in its raw binary form, rather than JSON. You will
 This may leave an empty asset with a state of `starter`. It can be safely deleted.
 
 ```js
-octokit.repos.uploadReleaseAsset(owner, repo, release_id, data);
+octokit.repos.uploadReleaseAsset({
+  owner,
+  repo,
+  release_id,
+  data
+});
 ```
 
 ## Parameters

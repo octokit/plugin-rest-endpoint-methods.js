@@ -3,7 +3,10 @@
 Lists binaries for the self-hosted runner application that you can download and run. Anyone with admin access to the repository can use this endpoint. GitHub Apps must have the `administration` permission to use this endpoint.
 
 ```js
-octokit.actions.listDownloadsForSelfHostedRunnerApplication(owner, repo);
+octokit.actions.listDownloadsForSelfHostedRunnerApplication({
+  owner,
+  repo
+});
 ```
 
 ## Parameters

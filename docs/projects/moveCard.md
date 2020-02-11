@@ -1,7 +1,10 @@
 # Move a project card
 
 ```js
-octokit.projects.moveCard(card_id, position);
+octokit.projects.moveCard({
+  card_id,
+  position
+});
 ```
 
 ## Parameters

@@ -1,7 +1,11 @@
 # Get if a pull request has been merged
 
 ```js
-octokit.pulls.checkIfMerged(owner, repo, pull_number);
+octokit.pulls.checkIfMerged({
+  owner,
+  repo,
+  pull_number
+});
 ```
 
 ## Parameters

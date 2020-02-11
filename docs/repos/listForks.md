@@ -1,7 +1,10 @@
 # List forks
 
 ```js
-octokit.repos.listForks(owner, repo);
+octokit.repos.listForks({
+  owner,
+  repo
+});
 ```
 
 ## Parameters

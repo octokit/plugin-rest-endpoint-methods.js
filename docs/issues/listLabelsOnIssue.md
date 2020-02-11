@@ -1,7 +1,11 @@
 # List labels on an issue
 
 ```js
-octokit.issues.listLabelsOnIssue(owner, repo, issue_number);
+octokit.issues.listLabelsOnIssue({
+  owner,
+  repo,
+  issue_number
+});
 ```
 
 ## Parameters

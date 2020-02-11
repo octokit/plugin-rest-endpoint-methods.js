@@ -3,7 +3,11 @@
 Gets a specific artifact for a workflow run. Anyone with read access to the repository can use this endpoint. GitHub Apps must have the `actions` permission to use this endpoint.
 
 ```js
-octokit.actions.getArtifact(owner, repo, artifact_id);
+octokit.actions.getArtifact({
+  owner,
+  repo,
+  artifact_id
+});
 ```
 
 ## Parameters

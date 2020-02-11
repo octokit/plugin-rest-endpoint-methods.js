@@ -1,7 +1,11 @@
 # Update a repository invitation
 
 ```js
-octokit.repos.updateInvitation(owner, repo, invitation_id);
+octokit.repos.updateInvitation({
+  owner,
+  repo,
+  invitation_id
+});
 ```
 
 ## Parameters

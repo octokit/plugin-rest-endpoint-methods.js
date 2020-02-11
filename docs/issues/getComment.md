@@ -1,7 +1,11 @@
 # Get a single comment
 
 ```js
-octokit.issues.getComment(owner, repo, comment_id);
+octokit.issues.getComment({
+  owner,
+  repo,
+  comment_id
+});
 ```
 
 ## Parameters

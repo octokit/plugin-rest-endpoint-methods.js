@@ -3,7 +3,11 @@
 Update an author's identity for the import. Your application can continue updating authors any time before you push new commits to the repository.
 
 ```js
-octokit.migrations.mapCommitAuthor(owner, repo, author_id);
+octokit.migrations.mapCommitAuthor({
+  owner,
+  repo,
+  author_id
+});
 ```
 
 ## Parameters

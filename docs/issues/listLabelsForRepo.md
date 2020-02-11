@@ -1,7 +1,10 @@
 # List all labels for this repository
 
 ```js
-octokit.issues.listLabelsForRepo(owner, repo);
+octokit.issues.listLabelsForRepo({
+  owner,
+  repo
+});
 ```
 
 ## Parameters

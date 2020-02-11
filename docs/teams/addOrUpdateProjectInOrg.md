@@ -5,7 +5,11 @@ Adds an organization project to a team. To add a project to a team or update the
 **Note:** You can also specify a team by `org_id` and `team_id` using the route `PUT /organizations/:org_id/team/:team_id/projects/:project_id`.
 
 ```js
-octokit.teams.addOrUpdateProjectInOrg(org, team_slug, project_id);
+octokit.teams.addOrUpdateProjectInOrg({
+  org,
+  team_slug,
+  project_id
+});
 ```
 
 ## Parameters

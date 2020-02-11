@@ -5,7 +5,11 @@ Protected branches are available in public repositories with GitHub Free, and in
 Adding admin enforcement requires admin or owner permissions to the repository and branch protection to be enabled.
 
 ```js
-octokit.repos.addProtectedBranchAdminEnforcement(owner, repo, branch);
+octokit.repos.addProtectedBranchAdminEnforcement({
+  owner,
+  repo,
+  branch
+});
 ```
 
 ## Parameters

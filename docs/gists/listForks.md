@@ -1,7 +1,9 @@
 # List gist forks
 
 ```js
-octokit.gists.listForks(gist_id);
+octokit.gists.listForks({
+  gist_id
+});
 ```
 
 ## Parameters

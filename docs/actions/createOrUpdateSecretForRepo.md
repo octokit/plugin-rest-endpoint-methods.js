@@ -11,7 +11,11 @@ Encrypt your secret using the [Sodium.Core](https://www.nuget.org/packages/Sodiu
 Encrypt your secret using the [rbnacl](https://github.com/RubyCrypto/rbnacl) gem.
 
 ```js
-octokit.actions.createOrUpdateSecretForRepo(owner, repo, name);
+octokit.actions.createOrUpdateSecretForRepo({
+  owner,
+  repo,
+  name
+});
 ```
 
 ## Parameters

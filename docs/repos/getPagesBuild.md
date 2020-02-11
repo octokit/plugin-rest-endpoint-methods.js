@@ -1,7 +1,11 @@
 # Get a specific Pages build
 
 ```js
-octokit.repos.getPagesBuild(owner, repo, build_id);
+octokit.repos.getPagesBuild({
+  owner,
+  repo,
+  build_id
+});
 ```
 
 ## Parameters

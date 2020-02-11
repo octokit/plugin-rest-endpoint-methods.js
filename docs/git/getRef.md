@@ -7,7 +7,11 @@ Returns a single reference from your Git database. The `:ref` in the URL must be
 To get the reference for a branch named `skunkworkz/featureA`, the endpoint route is:
 
 ```js
-octokit.git.getRef(owner, repo, ref);
+octokit.git.getRef({
+  owner,
+  repo,
+  ref
+});
 ```
 
 ## Parameters

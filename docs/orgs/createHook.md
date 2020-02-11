@@ -3,7 +3,12 @@
 Here's how you can create a hook that posts payloads in JSON format:
 
 ```js
-octokit.orgs.createHook(org, name, config, config.url);
+octokit.orgs.createHook({
+        org,
+name,
+config,
+config.url
+      })
 ```
 
 ## Parameters

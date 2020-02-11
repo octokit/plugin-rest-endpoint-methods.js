@@ -5,12 +5,12 @@ Create a reaction to a [team discussion](https://developer.github.com/v3/teams/d
 **Note:** You can also specify a team by `org_id` and `team_id` using the route `POST /organizations/:org_id/team/:team_id/discussions/:discussion_number/reactions`.
 
 ```js
-octokit.reactions.createForTeamDiscussionInOrg(
+octokit.reactions.createForTeamDiscussionInOrg({
   org,
   team_slug,
   discussion_number,
   content
-);
+});
 ```
 
 ## Parameters

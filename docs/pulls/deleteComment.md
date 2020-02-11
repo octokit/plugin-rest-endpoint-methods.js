@@ -3,7 +3,11 @@
 Deletes a review comment.
 
 ```js
-octokit.pulls.deleteComment(owner, repo, comment_id);
+octokit.pulls.deleteComment({
+  owner,
+  repo,
+  comment_id
+});
 ```
 
 ## Parameters

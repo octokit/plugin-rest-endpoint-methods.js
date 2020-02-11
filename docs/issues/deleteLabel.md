@@ -1,7 +1,11 @@
 # Delete a label
 
 ```js
-octokit.issues.deleteLabel(owner, repo, name);
+octokit.issues.deleteLabel({
+  owner,
+  repo,
+  name
+});
 ```
 
 ## Parameters

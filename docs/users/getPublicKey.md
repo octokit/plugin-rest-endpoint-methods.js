@@ -3,7 +3,9 @@
 View extended details for a single public SSH key. Requires that you are authenticated via Basic Auth or via OAuth with at least `read:public_key` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
 
 ```js
-octokit.users.getPublicKey(key_id);
+octokit.users.getPublicKey({
+  key_id
+});
 ```
 
 ## Parameters

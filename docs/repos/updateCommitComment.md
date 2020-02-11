@@ -1,7 +1,12 @@
 # Update a commit comment
 
 ```js
-octokit.repos.updateCommitComment(owner, repo, comment_id, body);
+octokit.repos.updateCommitComment({
+  owner,
+  repo,
+  comment_id,
+  body
+});
 ```
 
 ## Parameters

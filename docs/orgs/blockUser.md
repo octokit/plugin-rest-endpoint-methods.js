@@ -1,7 +1,10 @@
 # Block a user
 
 ```js
-octokit.orgs.blockUser(org, username);
+octokit.orgs.blockUser({
+  org,
+  username
+});
 ```
 
 ## Parameters

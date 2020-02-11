@@ -9,7 +9,11 @@ When you use this endpoint without providing a `:ref`, it will return an array o
 If you request matching references for a branch named `feature` but the branch `feature` doesn't exist, the response can still include other matching head refs that start with the word `feature`, such as `featureA` and `featureB`.
 
 ```js
-octokit.git.listMatchingRefs(owner, repo, ref);
+octokit.git.listMatchingRefs({
+  owner,
+  repo,
+  ref
+});
 ```
 
 ## Parameters
