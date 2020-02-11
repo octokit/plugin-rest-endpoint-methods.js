@@ -7,7 +7,11 @@ Protected branches are available in public repositories with GitHub Free, and in
 Lists the GitHub Apps that have push access to this branch. Only installed GitHub Apps with `write` access to the `contents` permission can be added as authorized actors on a protected branch.
 
 ```js
-octokit.repos.listAppsWithAccessToProtectedBranch(owner, repo, branch);
+octokit.repos.listAppsWithAccessToProtectedBranch({
+  owner,
+  repo,
+  branch
+});
 ```
 
 ## Parameters

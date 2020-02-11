@@ -3,7 +3,10 @@
 Shows which group of GitHub users can interact with this repository and when the restriction expires. If there are no restrictions, you will see an empty response.
 
 ```js
-octokit.interactions.getRestrictionsForRepo(owner, repo);
+octokit.interactions.getRestrictionsForRepo({
+  owner,
+  repo
+});
 ```
 
 ## Parameters

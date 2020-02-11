@@ -1,7 +1,10 @@
 # Get latest Pages build
 
 ```js
-octokit.repos.getLatestPagesBuild(owner, repo);
+octokit.repos.getLatestPagesBuild({
+  owner,
+  repo
+});
 ```
 
 ## Parameters

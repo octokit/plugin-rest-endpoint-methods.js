@@ -9,7 +9,9 @@ If you have two-factor authentication setup, Basic Authentication for this endpo
 You can only send one of these scope keys at a time.
 
 ```js
-octokit.oauthAuthorizations.updateAuthorization(authorization_id);
+octokit.oauthAuthorizations.updateAuthorization({
+  authorization_id
+});
 ```
 
 ## Parameters

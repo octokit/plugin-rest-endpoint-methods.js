@@ -3,7 +3,11 @@
 List the reactions to a [pull request review comment](https://developer.github.com/v3/pulls/comments/).
 
 ```js
-octokit.reactions.listForPullRequestReviewComment(owner, repo, comment_id);
+octokit.reactions.listForPullRequestReviewComment({
+  owner,
+  repo,
+  comment_id
+});
 ```
 
 ## Parameters

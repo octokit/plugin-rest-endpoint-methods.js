@@ -1,7 +1,9 @@
 # List gist commits
 
 ```js
-octokit.gists.listCommits(gist_id);
+octokit.gists.listCommits({
+  gist_id
+});
 ```
 
 ## Parameters

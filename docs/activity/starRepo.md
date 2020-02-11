@@ -5,7 +5,10 @@ Requires for the user to be authenticated.
 Note that you'll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see "[HTTP verbs](https://developer.github.com/v3/#http-verbs)."
 
 ```js
-octokit.activity.starRepo(owner, repo);
+octokit.activity.starRepo({
+  owner,
+  repo
+});
 ```
 
 ## Parameters

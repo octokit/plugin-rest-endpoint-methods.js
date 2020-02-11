@@ -11,7 +11,9 @@ To delete a team, the authenticated user must be an organization owner or team m
 If you are an organization owner, deleting a parent team will delete all of its child teams as well.
 
 ```js
-octokit.teams.delete(team_id);
+octokit.teams.delete({
+  team_id
+});
 ```
 
 ## Parameters

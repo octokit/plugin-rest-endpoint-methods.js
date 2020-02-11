@@ -7,7 +7,11 @@ Protected branches are available in public repositories with GitHub Free, and in
 Lists the people who have push access to this branch.
 
 ```js
-octokit.repos.listProtectedBranchUserRestrictions(owner, repo, branch);
+octokit.repos.listProtectedBranchUserRestrictions({
+  owner,
+  repo,
+  branch
+});
 ```
 
 ## Parameters

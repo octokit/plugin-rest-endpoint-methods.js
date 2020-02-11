@@ -3,7 +3,10 @@
 Initiates the generation of a migration archive.
 
 ```js
-octokit.migrations.startForOrg(org, repositories);
+octokit.migrations.startForOrg({
+  org,
+  repositories
+});
 ```
 
 ## Parameters

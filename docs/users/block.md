@@ -1,7 +1,9 @@
 # Block a user
 
 ```js
-octokit.users.block(username);
+octokit.users.block({
+  username
+});
 ```
 
 ## Parameters

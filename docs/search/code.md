@@ -19,7 +19,9 @@ Suppose you want to find the definition of the `addClass` function inside [jQuer
 Here, we're searching for the keyword `addClass` within a file's contents. We're making sure that we're only looking in files where the language is JavaScript. And we're scoping the search to the `repo:jquery/jquery` repository.
 
 ```js
-octokit.search.code(q);
+octokit.search.code({
+  q
+});
 ```
 
 ## Parameters

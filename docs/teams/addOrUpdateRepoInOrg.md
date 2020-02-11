@@ -5,7 +5,12 @@ To add a repository to a team or update the team's permission on a repository, t
 **Note:** You can also specify a team by `org_id` and `team_id` using the route `PUT /organizations/:org_id/team/:team_id/repos/:owner/:repo`.
 
 ```js
-octokit.teams.addOrUpdateRepoInOrg(org, team_slug, owner, repo);
+octokit.teams.addOrUpdateRepoInOrg({
+  org,
+  team_slug,
+  owner,
+  repo
+});
 ```
 
 ## Parameters

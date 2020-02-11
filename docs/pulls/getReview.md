@@ -1,7 +1,12 @@
 # Get a single review
 
 ```js
-octokit.pulls.getReview(owner, repo, pull_number, review_id);
+octokit.pulls.getReview({
+  owner,
+  repo,
+  pull_number,
+  review_id
+});
 ```
 
 ## Parameters

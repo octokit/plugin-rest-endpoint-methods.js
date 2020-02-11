@@ -1,7 +1,9 @@
 # List user projects
 
 ```js
-octokit.projects.listForUser(username);
+octokit.projects.listForUser({
+  username
+});
 ```
 
 ## Parameters

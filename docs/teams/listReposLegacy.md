@@ -5,7 +5,9 @@
 **Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [`List team repos`](https://developer.github.com/v3/teams/#list-team-repos) endpoint.
 
 ```js
-octokit.teams.listReposLegacy(team_id);
+octokit.teams.listReposLegacy({
+  team_id
+});
 ```
 
 ## Parameters

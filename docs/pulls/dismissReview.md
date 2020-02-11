@@ -3,7 +3,13 @@
 **Note:** To dismiss a pull request review on a [protected branch](https://developer.github.com/v3/repos/branches/), you must be a repository administrator or be included in the list of people or teams who can dismiss pull request reviews.
 
 ```js
-octokit.pulls.dismissReview(owner, repo, pull_number, review_id, message);
+octokit.pulls.dismissReview({
+  owner,
+  repo,
+  pull_number,
+  review_id,
+  message
+});
 ```
 
 ## Parameters

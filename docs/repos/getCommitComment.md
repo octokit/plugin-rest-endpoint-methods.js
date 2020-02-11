@@ -1,7 +1,11 @@
 # Get a single commit comment
 
 ```js
-octokit.repos.getCommitComment(owner, repo, comment_id);
+octokit.repos.getCommitComment({
+  owner,
+  repo,
+  comment_id
+});
 ```
 
 ## Parameters

@@ -1,7 +1,9 @@
 # Check if a gist is starred
 
 ```js
-octokit.gists.checkIsStarred(gist_id);
+octokit.gists.checkIsStarred({
+  gist_id
+});
 ```
 
 ## Parameters

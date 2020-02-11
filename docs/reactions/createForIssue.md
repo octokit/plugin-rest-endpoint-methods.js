@@ -3,7 +3,12 @@
 Create a reaction to an [issue](https://developer.github.com/v3/issues/). A response with a `Status: 200 OK` means that you already added the reaction type to this issue.
 
 ```js
-octokit.reactions.createForIssue(owner, repo, issue_number, content);
+octokit.reactions.createForIssue({
+  owner,
+  repo,
+  issue_number,
+  content
+});
 ```
 
 ## Parameters

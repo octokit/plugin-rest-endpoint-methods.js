@@ -11,7 +11,11 @@ Additionally, a combined `state` is returned. The `state` is one of:
 - **success** if the latest status for all contexts is `success`
 
 ```js
-octokit.repos.getCombinedStatusForRef(owner, repo, ref);
+octokit.repos.getCombinedStatusForRef({
+  owner,
+  repo,
+  ref
+});
 ```
 
 ## Parameters

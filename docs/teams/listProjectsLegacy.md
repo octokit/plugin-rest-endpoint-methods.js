@@ -7,7 +7,9 @@
 Lists the organization projects for a team.
 
 ```js
-octokit.teams.listProjectsLegacy(team_id);
+octokit.teams.listProjectsLegacy({
+  team_id
+});
 ```
 
 ## Parameters

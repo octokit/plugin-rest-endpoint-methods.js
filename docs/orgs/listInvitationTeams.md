@@ -3,7 +3,10 @@
 List all teams associated with an invitation. In order to see invitations in an organization, the authenticated user must be an organization owner.
 
 ```js
-octokit.orgs.listInvitationTeams(org, invitation_id);
+octokit.orgs.listInvitationTeams({
+  org,
+  invitation_id
+});
 ```
 
 ## Parameters

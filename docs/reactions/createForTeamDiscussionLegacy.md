@@ -7,11 +7,11 @@
 Create a reaction to a [team discussion](https://developer.github.com/v3/teams/discussions/). OAuth access tokens require the `write:discussion` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/). A response with a `Status: 200 OK` means that you already added the reaction type to this team discussion.
 
 ```js
-octokit.reactions.createForTeamDiscussionLegacy(
+octokit.reactions.createForTeamDiscussionLegacy({
   team_id,
   discussion_number,
   content
-);
+});
 ```
 
 ## Parameters

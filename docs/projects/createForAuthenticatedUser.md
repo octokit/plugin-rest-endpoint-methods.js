@@ -1,7 +1,9 @@
 # Create a user project
 
 ```js
-octokit.projects.createForAuthenticatedUser(name);
+octokit.projects.createForAuthenticatedUser({
+  name
+});
 ```
 
 ## Parameters

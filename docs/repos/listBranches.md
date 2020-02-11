@@ -1,7 +1,10 @@
 # List branches
 
 ```js
-octokit.repos.listBranches(owner, repo);
+octokit.repos.listBranches({
+  owner,
+  repo
+});
 ```
 
 ## Parameters

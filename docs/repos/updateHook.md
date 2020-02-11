@@ -1,7 +1,12 @@
 # Edit a hook
 
 ```js
-octokit.repos.updateHook(owner, repo, hook_id, config.url);
+octokit.repos.updateHook({
+        owner,
+repo,
+hook_id,
+config.url
+      })
 ```
 
 ## Parameters

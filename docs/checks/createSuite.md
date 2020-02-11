@@ -5,7 +5,11 @@
 By default, check suites are automatically created when you create a [check run](https://developer.github.com/v3/checks/runs/). You only need to use this endpoint for manually creating check suites when you've disabled automatic creation using "[Set preferences for check suites on a repository](https://developer.github.com/v3/checks/suites/#set-preferences-for-check-suites-on-a-repository)". Your GitHub App must have the `checks:write` permission to create check suites.
 
 ```js
-octokit.checks.createSuite(owner, repo, head_sha);
+octokit.checks.createSuite({
+  owner,
+  repo,
+  head_sha
+});
 ```
 
 ## Parameters

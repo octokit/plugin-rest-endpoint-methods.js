@@ -15,7 +15,9 @@ You can also create tokens on GitHub from the [personal access tokens settings](
 Organizations that enforce SAML SSO require personal access tokens to be whitelisted. Read more about whitelisting tokens in [the GitHub Help documentation](https://help.github.com/articles/about-identity-and-access-management-with-saml-single-sign-on).
 
 ```js
-octokit.oauthAuthorizations.createAuthorization(note);
+octokit.oauthAuthorizations.createAuthorization({
+  note
+});
 ```
 
 ## Parameters

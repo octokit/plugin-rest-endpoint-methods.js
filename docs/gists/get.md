@@ -1,7 +1,9 @@
 # Get a single gist
 
 ```js
-octokit.gists.get(gist_id);
+octokit.gists.get({
+  gist_id
+});
 ```
 
 ## Parameters

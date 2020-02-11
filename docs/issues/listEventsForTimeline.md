@@ -1,7 +1,11 @@
 # List events for an issue
 
 ```js
-octokit.issues.listEventsForTimeline(owner, repo, issue_number);
+octokit.issues.listEventsForTimeline({
+  owner,
+  repo,
+  issue_number
+});
 ```
 
 ## Parameters

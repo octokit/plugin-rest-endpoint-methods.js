@@ -29,14 +29,14 @@ If you don't use the `comfort-fade` preview header, multi-line and single-line c
 - For single-line comments, the diff-positioned way of referencing comments for the `position` attribute. For more information, see `position` in the [input parameters](https://developer.github.com/v3/pulls/comments/#parameters-2) table.
 
 ```js
-octokit.pulls.createCommentReply(
+octokit.pulls.createCommentReply({
   owner,
   repo,
   pull_number,
   body,
   commit_id,
   path
-);
+});
 ```
 
 ## Parameters

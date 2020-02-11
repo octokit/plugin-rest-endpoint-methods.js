@@ -1,7 +1,10 @@
 # Update a project column
 
 ```js
-octokit.projects.updateColumn(column_id, name);
+octokit.projects.updateColumn({
+  column_id,
+  name
+});
 ```
 
 ## Parameters

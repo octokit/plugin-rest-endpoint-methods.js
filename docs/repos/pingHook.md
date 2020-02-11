@@ -3,7 +3,11 @@
 This will trigger a [ping event](https://developer.github.com/webhooks/#ping-event) to be sent to the hook.
 
 ```js
-octokit.repos.pingHook(owner, repo, hook_id);
+octokit.repos.pingHook({
+  owner,
+  repo,
+  hook_id
+});
 ```
 
 ## Parameters

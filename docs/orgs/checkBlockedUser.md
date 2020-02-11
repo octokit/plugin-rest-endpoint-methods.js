@@ -5,7 +5,10 @@ If the user is blocked:
 If the user is not blocked:
 
 ```js
-octokit.orgs.checkBlockedUser(org, username);
+octokit.orgs.checkBlockedUser({
+  org,
+  username
+});
 ```
 
 ## Parameters

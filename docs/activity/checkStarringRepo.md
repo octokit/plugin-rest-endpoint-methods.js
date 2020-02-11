@@ -3,7 +3,10 @@
 Requires for the user to be authenticated.
 
 ```js
-octokit.activity.checkStarringRepo(owner, repo);
+octokit.activity.checkStarringRepo({
+  owner,
+  repo
+});
 ```
 
 ## Parameters

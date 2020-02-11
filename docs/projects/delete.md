@@ -3,7 +3,9 @@
 Deletes a project board. Returns a `404 Not Found` status if projects are disabled.
 
 ```js
-octokit.projects.delete(project_id);
+octokit.projects.delete({
+  project_id
+});
 ```
 
 ## Parameters

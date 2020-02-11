@@ -17,7 +17,10 @@ If the user is unaffiliated with the team's organization, this endpoint will sen
 If the user is already a member of the team, this endpoint will update the role of the team member's role. To update the membership of a team member, the authenticated user must be an organization owner or a team maintainer.
 
 ```js
-octokit.teams.addOrUpdateMembership(team_id, username);
+octokit.teams.addOrUpdateMembership({
+  team_id,
+  username
+});
 ```
 
 ## Parameters

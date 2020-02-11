@@ -1,7 +1,9 @@
 # List project columns
 
 ```js
-octokit.projects.listColumns(project_id);
+octokit.projects.listColumns({
+  project_id
+});
 ```
 
 ## Parameters

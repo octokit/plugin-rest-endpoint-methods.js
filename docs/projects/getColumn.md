@@ -1,7 +1,9 @@
 # Get a project column
 
 ```js
-octokit.projects.getColumn(column_id);
+octokit.projects.getColumn({
+  column_id
+});
 ```
 
 ## Parameters

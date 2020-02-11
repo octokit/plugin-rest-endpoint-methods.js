@@ -3,7 +3,10 @@
 Get the total number of views and breakdown per day or week for the last 14 days. Timestamps are aligned to UTC midnight of the beginning of the day or week. Week begins on Monday.
 
 ```js
-octokit.repos.getViews(owner, repo);
+octokit.repos.getViews({
+  owner,
+  repo
+});
 ```
 
 ## Parameters

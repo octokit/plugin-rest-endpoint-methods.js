@@ -3,7 +3,11 @@
 Lists jobs for a workflow run. Anyone with read access to the repository can use this endpoint. GitHub Apps must have the `actions` permission to use this endpoint.
 
 ```js
-octokit.actions.listJobsForWorkflowRun(owner, repo, run_id);
+octokit.actions.listJobsForWorkflowRun({
+  owner,
+  repo,
+  run_id
+});
 ```
 
 ## Parameters

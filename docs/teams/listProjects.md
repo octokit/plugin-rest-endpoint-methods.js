@@ -9,7 +9,9 @@
 Lists the organization projects for a team.
 
 ```js
-octokit.teams.listProjects(team_id);
+octokit.teams.listProjects({
+  team_id
+});
 ```
 
 ## Parameters

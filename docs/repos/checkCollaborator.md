@@ -5,7 +5,11 @@ For organization-owned repositories, the list of collaborators includes outside 
 Team members will include the members of child teams.
 
 ```js
-octokit.repos.checkCollaborator(owner, repo, username);
+octokit.repos.checkCollaborator({
+  owner,
+  repo,
+  username
+});
 ```
 
 ## Parameters

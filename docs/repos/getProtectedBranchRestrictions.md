@@ -7,7 +7,11 @@ Lists who has access to this protected branch. {{#note}}
 **Note**: Users, apps, and teams `restrictions` are only available for organization-owned repositories.
 
 ```js
-octokit.repos.getProtectedBranchRestrictions(owner, repo, branch);
+octokit.repos.getProtectedBranchRestrictions({
+  owner,
+  repo,
+  branch
+});
 ```
 
 ## Parameters

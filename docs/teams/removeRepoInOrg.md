@@ -5,7 +5,12 @@ If the authenticated user is an organization owner or a team maintainer, they ca
 **Note:** You can also specify a team by `org_id` and `team_id` using the route `DELETE /organizations/:org_id/team/:team_id/repos/:owner/:repo`.
 
 ```js
-octokit.teams.removeRepoInOrg(org, team_slug, owner, repo);
+octokit.teams.removeRepoInOrg({
+  org,
+  team_slug,
+  owner,
+  repo
+});
 ```
 
 ## Parameters

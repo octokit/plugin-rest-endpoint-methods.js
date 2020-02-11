@@ -3,7 +3,9 @@
 You can also find out _when_ stars were created by passing the following custom [media type](https://developer.github.com/v3/media/) via the `Accept` header:
 
 ```js
-octokit.activity.listReposStarredByUser(username);
+octokit.activity.listReposStarredByUser({
+  username
+});
 ```
 
 ## Parameters

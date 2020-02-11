@@ -9,7 +9,12 @@ Removes the ability of a user to push to this branch.
 | `array` | Usernames of the people who should no longer have push access. **Note**: The list of users, apps, and teams in total is limited to 100 items. |
 
 ```js
-octokit.repos.removeProtectedBranchUserRestrictions(owner, repo, branch, users);
+octokit.repos.removeProtectedBranchUserRestrictions({
+  owner,
+  repo,
+  branch,
+  users
+});
 ```
 
 ## Parameters

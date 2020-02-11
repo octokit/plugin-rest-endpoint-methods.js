@@ -3,7 +3,11 @@
 Start a source import to a GitHub repository using GitHub Importer.
 
 ```js
-octokit.migrations.startImport(owner, repo, vcs_url);
+octokit.migrations.startImport({
+  owner,
+  repo,
+  vcs_url
+});
 ```
 
 ## Parameters

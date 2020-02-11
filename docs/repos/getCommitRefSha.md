@@ -11,7 +11,11 @@ application/vnd.github.VERSION.sha
 Returns the SHA-1 of the commit reference. You must have `read` access for the repository to get the SHA-1 of a commit reference. You can use this endpoint to check if a remote reference's SHA-1 is the same as your local reference's SHA-1 by providing the local SHA-1 reference as the ETag.
 
 ```js
-octokit.repos.getCommitRefSha(owner, ref, repo);
+octokit.repos.getCommitRefSha({
+  owner,
+  ref,
+  repo
+});
 ```
 
 ## Parameters

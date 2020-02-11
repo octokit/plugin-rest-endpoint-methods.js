@@ -1,7 +1,11 @@
 # Get a single label
 
 ```js
-octokit.issues.getLabel(owner, repo, name);
+octokit.issues.getLabel({
+  owner,
+  repo,
+  name
+});
 ```
 
 ## Parameters

@@ -1,7 +1,10 @@
 # Delete a comment
 
 ```js
-octokit.gists.deleteComment(gist_id, comment_id);
+octokit.gists.deleteComment({
+  gist_id,
+  comment_id
+});
 ```
 
 ## Parameters

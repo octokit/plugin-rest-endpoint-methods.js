@@ -3,7 +3,10 @@
 Removes all interaction restrictions from the given repository. You must have owner or admin access to remove restrictions.
 
 ```js
-octokit.interactions.removeRestrictionsForRepo(owner, repo);
+octokit.interactions.removeRestrictionsForRepo({
+  owner,
+  repo
+});
 ```
 
 ## Parameters

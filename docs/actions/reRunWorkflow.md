@@ -3,7 +3,11 @@
 Re-runs your workflow run using its `id`. Anyone with write access to the repository can use this endpoint. GitHub Apps must have the `actions` permission to use this endpoint.
 
 ```js
-octokit.actions.reRunWorkflow(owner, repo, run_id);
+octokit.actions.reRunWorkflow({
+  owner,
+  repo,
+  run_id
+});
 ```
 
 ## Parameters

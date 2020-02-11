@@ -1,7 +1,10 @@
 # List milestones for a repository
 
 ```js
-octokit.issues.listMilestonesForRepo(owner, repo);
+octokit.issues.listMilestonesForRepo({
+  owner,
+  repo
+});
 ```
 
 ## Parameters

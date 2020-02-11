@@ -1,7 +1,12 @@
 # Add labels to an issue
 
 ```js
-octokit.issues.addLabels(owner, repo, issue_number, labels);
+octokit.issues.addLabels({
+  owner,
+  repo,
+  issue_number,
+  labels
+});
 ```
 
 ## Parameters

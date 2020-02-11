@@ -5,7 +5,9 @@
 **Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the [`Get team by name`](https://developer.github.com/v3/teams/#get-team-by-name) endpoint.
 
 ```js
-octokit.teams.getLegacy(team_id);
+octokit.teams.getLegacy({
+  team_id
+});
 ```
 
 ## Parameters

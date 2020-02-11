@@ -11,7 +11,10 @@ To get a user's membership with a team, the team must be visible to the authenti
 **Note:** The `role` for organization owners returns as `maintainer`. For more information about `maintainer` roles, see [Create team](https://developer.github.com/v3/teams#create-team).
 
 ```js
-octokit.teams.getMembershipLegacy(team_id, username);
+octokit.teams.getMembershipLegacy({
+  team_id,
+  username
+});
 ```
 
 ## Parameters

@@ -5,7 +5,10 @@ The return hash contains a `role` field which refers to the Organization Invitat
 **Note:** You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/:org_id/team/:team_id/invitations`.
 
 ```js
-octokit.teams.listPendingInvitationsInOrg(org, team_slug);
+octokit.teams.listPendingInvitationsInOrg({
+  org,
+  team_slug
+});
 ```
 
 ## Parameters

@@ -3,7 +3,11 @@
 Gets a single secret without revealing its encrypted value. Anyone with write access to the repository can use this endpoint. GitHub Apps must have the `secrets` permission to use this endpoint.
 
 ```js
-octokit.actions.getSecret(owner, repo, name);
+octokit.actions.getSecret({
+  owner,
+  repo,
+  name
+});
 ```
 
 ## Parameters

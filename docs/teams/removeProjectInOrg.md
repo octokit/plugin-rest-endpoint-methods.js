@@ -5,7 +5,11 @@ Removes an organization project from a team. An organization owner or a team mai
 **Note:** You can also specify a team by `org_id` and `team_id` using the route `DELETE /organizations/:org_id/team/:team_id/projects/:project_id`.
 
 ```js
-octokit.teams.removeProjectInOrg(org, team_slug, project_id);
+octokit.teams.removeProjectInOrg({
+  org,
+  team_slug,
+  project_id
+});
 ```
 
 ## Parameters

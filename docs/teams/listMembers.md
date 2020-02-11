@@ -9,7 +9,9 @@
 Team members will include the members of child teams.
 
 ```js
-octokit.teams.listMembers(team_id);
+octokit.teams.listMembers({
+  team_id
+});
 ```
 
 ## Parameters

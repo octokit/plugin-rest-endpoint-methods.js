@@ -9,7 +9,10 @@
 Delete a discussion from a team's page. OAuth access tokens require the `write:discussion` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
 
 ```js
-octokit.teams.deleteDiscussion(team_id, discussion_number);
+octokit.teams.deleteDiscussion({
+  team_id,
+  discussion_number
+});
 ```
 
 ## Parameters

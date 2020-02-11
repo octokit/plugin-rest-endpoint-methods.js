@@ -11,7 +11,10 @@ To edit a team, the authenticated user must either be an organization owner or a
 **Note:** With nested teams, the `privacy` for parent teams cannot be `secret`.
 
 ```js
-octokit.teams.update(team_id, name);
+octokit.teams.update({
+  team_id,
+  name
+});
 ```
 
 ## Parameters

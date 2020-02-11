@@ -1,7 +1,9 @@
 # List public events that a user has received
 
 ```js
-octokit.activity.listReceivedPublicEventsForUser(username);
+octokit.activity.listReceivedPublicEventsForUser({
+  username
+});
 ```
 
 ## Parameters

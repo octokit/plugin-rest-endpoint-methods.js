@@ -1,7 +1,9 @@
 # Delete a gist
 
 ```js
-octokit.gists.delete(gist_id);
+octokit.gists.delete({
+  gist_id
+});
 ```
 
 ## Parameters

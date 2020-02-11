@@ -5,7 +5,10 @@
 Fetches the URL to a migration archive.
 
 ```js
-octokit.migrations.getArchiveForOrg(org, migration_id);
+octokit.migrations.getArchiveForOrg({
+  org,
+  migration_id
+});
 ```
 
 ## Parameters

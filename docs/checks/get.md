@@ -5,7 +5,11 @@
 Gets a single check run using its `id`. GitHub Apps must have the `checks:read` permission on a private repository or pull access to a public repository to get check runs. OAuth Apps and authenticated users must have the `repo` scope to get check runs in a private repository.
 
 ```js
-octokit.checks.get(owner, repo, check_run_id);
+octokit.checks.get({
+  owner,
+  repo,
+  check_run_id
+});
 ```
 
 ## Parameters

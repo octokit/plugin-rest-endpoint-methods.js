@@ -5,7 +5,11 @@ Delete a discussion from a team's page. OAuth access tokens require the `write:d
 **Note:** You can also specify a team by `org_id` and `team_id` using the route `DELETE /organizations/:org_id/team/:team_id/discussions/:discussion_number`.
 
 ```js
-octokit.teams.deleteDiscussionInOrg(org, team_slug, discussion_number);
+octokit.teams.deleteDiscussionInOrg({
+  org,
+  team_slug,
+  discussion_number
+});
 ```
 
 ## Parameters

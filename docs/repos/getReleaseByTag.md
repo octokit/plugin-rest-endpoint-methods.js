@@ -3,7 +3,11 @@
 Get a published release with the specified tag.
 
 ```js
-octokit.repos.getReleaseByTag(owner, repo, tag);
+octokit.repos.getReleaseByTag({
+  owner,
+  repo,
+  tag
+});
 ```
 
 ## Parameters

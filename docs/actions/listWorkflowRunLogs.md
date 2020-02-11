@@ -5,7 +5,11 @@ Gets a redirect URL to download an archive of log files for a workflow run. This
 Call this endpoint using the `-v` flag, which enables verbose output and allows you to see the download URL in the header. To download the file into the current working directory, specify the filename using the `-o` flag.
 
 ```js
-octokit.actions.listWorkflowRunLogs(owner, repo, run_id);
+octokit.actions.listWorkflowRunLogs({
+  owner,
+  repo,
+  run_id
+});
 ```
 
 ## Parameters

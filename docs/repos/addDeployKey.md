@@ -3,7 +3,11 @@
 Here's how you can create a read-only deploy key:
 
 ```js
-octokit.repos.addDeployKey(owner, repo, key);
+octokit.repos.addDeployKey({
+  owner,
+  repo,
+  key
+});
 ```
 
 ## Parameters

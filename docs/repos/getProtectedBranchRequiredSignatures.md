@@ -7,7 +7,11 @@ When authenticated with admin or owner permissions to the repository, you can us
 **Note**: You must enable branch protection to require signed commits.
 
 ```js
-octokit.repos.getProtectedBranchRequiredSignatures(owner, repo, branch);
+octokit.repos.getProtectedBranchRequiredSignatures({
+  owner,
+  repo,
+  branch
+});
 ```
 
 ## Parameters

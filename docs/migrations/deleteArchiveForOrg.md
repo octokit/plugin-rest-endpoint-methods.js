@@ -3,7 +3,10 @@
 Deletes a previous migration archive. Migration archives are automatically deleted after seven days.
 
 ```js
-octokit.migrations.deleteArchiveForOrg(org, migration_id);
+octokit.migrations.deleteArchiveForOrg({
+  org,
+  migration_id
+});
 ```
 
 ## Parameters

@@ -3,7 +3,11 @@
 Users with push access to the repository can delete a release.
 
 ```js
-octokit.repos.deleteRelease(owner, repo, release_id);
+octokit.repos.deleteRelease({
+  owner,
+  repo,
+  release_id
+});
 ```
 
 ## Parameters

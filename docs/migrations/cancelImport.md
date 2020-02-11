@@ -3,7 +3,10 @@
 Stop an import for a repository.
 
 ```js
-octokit.migrations.cancelImport(owner, repo);
+octokit.migrations.cancelImport({
+  owner,
+  repo
+});
 ```
 
 ## Parameters

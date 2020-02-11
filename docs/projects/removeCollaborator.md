@@ -3,7 +3,10 @@
 Removes a collaborator from an organization project. You must be an organization owner or a project `admin` to remove a collaborator.
 
 ```js
-octokit.projects.removeCollaborator(project_id, username);
+octokit.projects.removeCollaborator({
+  project_id,
+  username
+});
 ```
 
 ## Parameters

@@ -9,19 +9,19 @@ Protecting a branch requires admin or owner permissions to the repository.
 **Note**: The list of users, apps, and teams in total is limited to 100 items.
 
 ```js
-octokit.repos.updateBranchProtection(
-  owner,
-  repo,
-  branch,
-  required_status_checks,
-  required_status_checks.strict,
-  required_status_checks.contexts,
-  enforce_admins,
-  required_pull_request_reviews,
-  restrictions,
-  restrictions.users,
-  restrictions.teams
-);
+octokit.repos.updateBranchProtection({
+        owner,
+repo,
+branch,
+required_status_checks,
+required_status_checks.strict,
+required_status_checks.contexts,
+enforce_admins,
+required_pull_request_reviews,
+restrictions,
+restrictions.users,
+restrictions.teams
+      })
 ```
 
 ## Parameters

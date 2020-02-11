@@ -5,7 +5,24 @@
 Creates a new check run for a specific commit in a repository. Your GitHub App must have the `checks:write` permission to create check runs.
 
 ```js
-octokit.checks.create(owner, repo, name, head_sha, output.title, output.summary, output.annotations[].path, output.annotations[].start_line, output.annotations[].end_line, output.annotations[].annotation_level, output.annotations[].message, output.images[].alt, output.images[].image_url, actions[].label, actions[].description, actions[].identifier)
+octokit.checks.create({
+        owner,
+repo,
+name,
+head_sha,
+output.title,
+output.summary,
+output.annotations[].path,
+output.annotations[].start_line,
+output.annotations[].end_line,
+output.annotations[].annotation_level,
+output.annotations[].message,
+output.images[].alt,
+output.images[].image_url,
+actions[].label,
+actions[].description,
+actions[].identifier
+      })
 ```
 
 ## Parameters

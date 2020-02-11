@@ -5,7 +5,9 @@
 Find users by keyword.
 
 ```js
-octokit.search.usersLegacy(keyword);
+octokit.search.usersLegacy({
+  keyword
+});
 ```
 
 ## Parameters

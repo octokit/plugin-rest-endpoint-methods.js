@@ -11,7 +11,11 @@
 You can also get information about the specified repository, including what permissions the team grants on it, by passing the following custom [media type](https://developer.github.com/v3/media/) via the `Accept` header:
 
 ```js
-octokit.teams.checkManagesRepo(team_id, owner, repo);
+octokit.teams.checkManagesRepo({
+  team_id,
+  owner,
+  repo
+});
 ```
 
 ## Parameters

@@ -1,7 +1,11 @@
 # Edit a comment
 
 ```js
-octokit.gists.updateComment(gist_id, comment_id, body);
+octokit.gists.updateComment({
+  gist_id,
+  comment_id,
+  body
+});
 ```
 
 ## Parameters

@@ -13,7 +13,11 @@ If the user is already a member of the team, this endpoint will update the role 
 **Note:** You can also specify a team by `org_id` and `team_id` using the route `PUT /organizations/:org_id/team/:team_id/memberships/:username`.
 
 ```js
-octokit.teams.addOrUpdateMembershipInOrg(org, team_slug, username);
+octokit.teams.addOrUpdateMembershipInOrg({
+  org,
+  team_slug,
+  username
+});
 ```
 
 ## Parameters

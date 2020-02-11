@@ -5,7 +5,9 @@
 Enables an authenticated organization owner with the `admin:org` scope to update the organization's profile and member privileges.
 
 ```js
-octokit.orgs.update(org);
+octokit.orgs.update({
+  org
+});
 ```
 
 ## Parameters

@@ -7,7 +7,11 @@ If the `assignee` can be assigned to issues in the repository, a `204` header wi
 Otherwise a `404` status code is returned.
 
 ```js
-octokit.issues.checkAssignee(owner, repo, assignee);
+octokit.issues.checkAssignee({
+  owner,
+  repo,
+  assignee
+});
 ```
 
 ## Parameters

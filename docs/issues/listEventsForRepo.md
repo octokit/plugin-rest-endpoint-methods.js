@@ -1,7 +1,10 @@
 # List events for a repository
 
 ```js
-octokit.issues.listEventsForRepo(owner, repo);
+octokit.issues.listEventsForRepo({
+  owner,
+  repo
+});
 ```
 
 ## Parameters

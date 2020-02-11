@@ -1,7 +1,11 @@
 # Delete a comment
 
 ```js
-octokit.issues.deleteComment(owner, repo, comment_id);
+octokit.issues.deleteComment({
+  owner,
+  repo,
+  comment_id
+});
 ```
 
 ## Parameters

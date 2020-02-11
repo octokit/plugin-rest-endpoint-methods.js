@@ -33,7 +33,11 @@ This error happens when the `auto_merge` option is enabled and when the default 
 This error happens when the `required_contexts` parameter indicates that one or more contexts need to have a `success` status for the commit to be deployed, but one or more of the required contexts do not have a state of `success`.
 
 ```js
-octokit.repos.createDeployment(owner, repo, ref);
+octokit.repos.createDeployment({
+  owner,
+  repo,
+  ref
+});
 ```
 
 ## Parameters

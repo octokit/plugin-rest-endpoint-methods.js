@@ -1,7 +1,10 @@
 # List deploy keys
 
 ```js
-octokit.repos.listDeployKeys(owner, repo);
+octokit.repos.listDeployKeys({
+  owner,
+  repo
+});
 ```
 
 ## Parameters

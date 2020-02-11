@@ -1,7 +1,10 @@
 # Create a comment
 
 ```js
-octokit.gists.createComment(gist_id, body);
+octokit.gists.createComment({
+  gist_id,
+  body
+});
 ```
 
 ## Parameters

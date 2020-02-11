@@ -5,7 +5,9 @@ Note that you'll need to set `Content-Length` to zero when calling out to this e
 Following a user requires the user to be logged in and authenticated with basic auth or OAuth with the `user:follow` scope.
 
 ```js
-octokit.users.follow(username);
+octokit.users.follow({
+  username
+});
 ```
 
 ## Parameters

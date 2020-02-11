@@ -1,7 +1,9 @@
 # Accept a repository invitation
 
 ```js
-octokit.repos.acceptInvitation(invitation_id);
+octokit.repos.acceptInvitation({
+  invitation_id
+});
 ```
 
 ## Parameters

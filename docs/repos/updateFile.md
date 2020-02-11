@@ -5,17 +5,17 @@
 Creates a new file or updates an existing file in a repository.
 
 ```js
-octokit.repos.updateFile(
-  owner,
-  repo,
-  path,
-  message,
-  content,
-  committer.name,
-  committer.email,
-  author.name,
-  author.email
-);
+octokit.repos.updateFile({
+        owner,
+repo,
+path,
+message,
+content,
+committer.name,
+committer.email,
+author.name,
+author.email
+      })
 ```
 
 ## Parameters

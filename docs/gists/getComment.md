@@ -1,7 +1,10 @@
 # Get a single comment
 
 ```js
-octokit.gists.getComment(gist_id, comment_id);
+octokit.gists.getComment({
+  gist_id,
+  comment_id
+});
 ```
 
 ## Parameters

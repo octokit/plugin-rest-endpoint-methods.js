@@ -1,7 +1,11 @@
 # Delete a commit comment
 
 ```js
-octokit.repos.deleteCommitComment(owner, repo, comment_id);
+octokit.repos.deleteCommitComment({
+  owner,
+  repo,
+  comment_id
+});
 ```
 
 ## Parameters

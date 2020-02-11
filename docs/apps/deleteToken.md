@@ -3,7 +3,9 @@
 OAuth application owners can revoke a single token for an OAuth application. You must use [Basic Authentication](https://developer.github.com/v3/auth#basic-authentication) when accessing this endpoint, using the OAuth application's `client_id` and `client_secret` as the username and password.
 
 ```js
-octokit.apps.deleteToken(client_id);
+octokit.apps.deleteToken({
+  client_id
+});
 ```
 
 ## Parameters

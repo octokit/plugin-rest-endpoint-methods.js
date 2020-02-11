@@ -1,7 +1,9 @@
 # Delete a project column
 
 ```js
-octokit.projects.deleteColumn(column_id);
+octokit.projects.deleteColumn({
+  column_id
+});
 ```
 
 ## Parameters

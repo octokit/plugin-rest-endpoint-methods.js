@@ -1,7 +1,11 @@
 # Delete a release asset
 
 ```js
-octokit.repos.deleteReleaseAsset(owner, repo, asset_id);
+octokit.repos.deleteReleaseAsset({
+  owner,
+  repo,
+  asset_id
+});
 ```
 
 ## Parameters

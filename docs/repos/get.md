@@ -3,7 +3,10 @@
 The `parent` and `source` objects are present when the repository is a fork. `parent` is the repository this repository was forked from, `source` is the ultimate source for the network.
 
 ```js
-octokit.repos.get(owner, repo);
+octokit.repos.get({
+  owner,
+  repo
+});
 ```
 
 ## Parameters
