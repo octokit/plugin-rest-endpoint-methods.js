@@ -18,17 +18,6 @@ octokit.activity.listFeeds();
 
 ## Parameters
 
-<table>
-  <thead>
-    <tr>
-      <th>name</th>
-      <th>required</th>
-      <th>description</th>
-    </tr>
-  </thead>
-  <tbody>
-    
-  </tbody>
-</table>
+This endpoint has no parameters
 
 See also: [GitHub Developer Guide documentation](endpoint.documentationUrl).
