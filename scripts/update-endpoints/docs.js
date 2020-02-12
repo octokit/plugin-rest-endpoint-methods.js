@@ -51,6 +51,24 @@ ${param.description}
       })`
       : "()");
 
+  const parametersTable = `
+<table>
+  <thead>
+    <tr>
+      <th>name</th>
+      <th>required</th>
+      <th>description</th>
+    </tr>
+  </thead>
+  <tbody>
+    ${parameterRows.join("\n")}
+  </tbody>
+</table>`;
+
+  const parameters = endpoint.parameters.length
+    ? parametersTable
+    : `This endpoint has no parameters`;
+
   const content = `
 # ${endpoint.name}
 
@@ -66,18 +84,7 @@ ${example}
 
 ## Parameters
 
-<table>
-  <thead>
-    <tr>
-      <th>name</th>
-      <th>required</th>
-      <th>description</th>
-    </tr>
-  </thead>
-  <tbody>
-    ${parameterRows.join("\n")}
-  </tbody>
-</table>
+${parameters}
 
 See also: [GitHub Developer Guide documentation](endpoint.documentationUrl).`;
 
