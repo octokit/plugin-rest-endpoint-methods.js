@@ -45,6 +45,16 @@ Either `asc` or `desc`. Ignored without the `sort` parameter.
 Only comments updated at or after this time are returned. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.
 
 </td></tr>
+<tr><td>per_page</td><td>no</td><td>
+
+Results per page (max 100)
+
+</td></tr>
+<tr><td>page</td><td>no</td><td>
+
+Page number of the results to fetch.
+
+</td></tr>
   </tbody>
 </table>
 
