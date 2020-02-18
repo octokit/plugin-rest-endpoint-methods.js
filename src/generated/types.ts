@@ -24928,6 +24928,11 @@ export type ReposDeleteCommitCommentParams = {
   owner: string;
   repo: string;
 };
+export type ReposDeleteDeploymentParams = {
+  deployment_id: number;
+  owner: string;
+  repo: string;
+};
 export type ReposDeleteDownloadParams = {
   download_id: number;
   owner: string;
@@ -31088,7 +31093,7 @@ export type RestEndpointMethods = {
      * You will see this response when GitHub automatically merges the base branch into the topic branch instead of creating a deployment. This auto-merge happens when:
      *
      * *   Auto-merge option is enabled in the repository
-     * *   Topic branch does not include the latest changes on the base branch, which is `master`in the response example
+     * *   Topic branch does not include the latest changes on the base branch, which is `master` in the response example
      * *   There are no merge conflicts
      *
      * If there are no new commits in the base branch, a new request to create a deployment should give a successful response.
@@ -31266,6 +31271,23 @@ export type RestEndpointMethods = {
 
     deleteCommitComment: {
       (params?: RequestParameters & ReposDeleteCommitCommentParams): Promise<
+        AnyResponse
+      >;
+
+      endpoint: EndpointInterface;
+    };
+    /**
+     * To ensure there can always be an active deployment, you can only delete an _inactive_ deployment. Anyone with `repo` or `repo_deployment` scopes can delete an inactive deployment.
+     *
+     * To set a deployment as inactive, you must:
+     *
+     * *   Create a new deployment that is active so that the system has a record of the current state, then delete the previously active deployment.
+     * *   Mark the active deployment as inactive by adding any non-successful deployment status.
+     *
+     * For more information, see "[Create a deployment](https://developer.github.com/v3/repos/deployments/#create-a-deployment)" and "[Create a deployment status](https://developer.github.com/v3/repos/deployments/#create-a-deployment-status)."
+     */
+    deleteDeployment: {
+      (params?: RequestParameters & ReposDeleteDeploymentParams): Promise<
         AnyResponse
       >;
 

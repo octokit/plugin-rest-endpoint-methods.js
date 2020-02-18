@@ -23,7 +23,7 @@ A more advanced example specifying required commit statuses and bypassing auto-m
 You will see this response when GitHub automatically merges the base branch into the topic branch instead of creating a deployment. This auto-merge happens when:
 
 - Auto-merge option is enabled in the repository
-- Topic branch does not include the latest changes on the base branch, which is `master`in the response example
+- Topic branch does not include the latest changes on the base branch, which is `master` in the response example
 - There are no merge conflicts
 
 If there are no new commits in the base branch, a new request to create a deployment should give a successful response.
