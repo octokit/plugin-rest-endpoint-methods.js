@@ -20074,7 +20074,7 @@ type ActionsListWorkflowRunsResponseWorkflowRunsItemHeadCommit = {
 type ActionsListWorkflowRunsResponseWorkflowRunsItem = {
   artifacts_url: string;
   cancel_url: string;
-  check_suite_id: number;
+  check_suite_url: string;
   conclusion: null;
   created_at: string;
   event: string;
@@ -20301,7 +20301,7 @@ type ActionsListRepoWorkflowRunsResponseWorkflowRunsItemHeadCommit = {
 type ActionsListRepoWorkflowRunsResponseWorkflowRunsItem = {
   artifacts_url: string;
   cancel_url: string;
-  check_suite_id: number;
+  check_suite_url: string;
   conclusion: null;
   created_at: string;
   event: string;
@@ -20517,7 +20517,7 @@ type ActionsGetWorkflowRunResponseHeadCommit = {
 type ActionsGetWorkflowRunResponse = {
   artifacts_url: string;
   cancel_url: string;
-  check_suite_id: number;
+  check_suite_url: string;
   conclusion: null;
   created_at: string;
   event: string;
