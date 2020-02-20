@@ -20109,6 +20109,7 @@ type ActionsListWorkflowRunArtifactsResponseArtifactsItem = {
   name: string;
   node_id: string;
   size_in_bytes: number;
+  url: string;
 };
 type ActionsListWorkflowRunArtifactsResponse = {
   artifacts: Array<ActionsListWorkflowRunArtifactsResponseArtifactsItem>;
@@ -20361,6 +20362,21 @@ type ActionsListDownloadsForSelfHostedRunnerApplicationResponseItem = {
   filename: string;
   os: string;
 };
+type ActionsListArtifactsForRepoResponseArtifactsItem = {
+  archive_download_url: string;
+  created_at: string;
+  expired: string;
+  expires_at: string;
+  id: number;
+  name: string;
+  node_id: string;
+  size_in_bytes: number;
+  url: string;
+};
+type ActionsListArtifactsForRepoResponse = {
+  artifacts: Array<ActionsListArtifactsForRepoResponseArtifactsItem>;
+  total_count: number;
+};
 type ActionsGetWorkflowRunResponseRepositoryOwner = {
   avatar_url: string;
   events_url: string;
@@ -20596,6 +20612,7 @@ type ActionsGetArtifactResponse = {
   name: string;
   node_id: string;
   size_in_bytes: number;
+  url: string;
 };
 type ActionsCreateRemoveTokenResponse = { expires_at: string; token: string };
 type ActionsCreateRegistrationTokenResponse = {
@@ -20965,14 +20982,6 @@ export type ActionsGetPublicKeyParams = {
 export type ActionsGetSecretParams = {
   name: string;
   owner: string;
-  /**
-   * Page number of the results to fetch.
-   */
-  page?: number;
-  /**
-   * Results per page (max 100)
-   */
-  per_page?: number;
   repo: string;
 };
 export type ActionsGetSelfHostedRunnerParams = {
@@ -20994,6 +21003,18 @@ export type ActionsGetWorkflowRunParams = {
   owner: string;
   repo: string;
   run_id: number;
+};
+export type ActionsListArtifactsForRepoParams = {
+  owner: string;
+  /**
+   * Page number of the results to fetch.
+   */
+  page?: number;
+  /**
+   * Results per page (max 100)
+   */
+  per_page?: number;
+  repo: string;
 };
 export type ActionsListDownloadsForSelfHostedRunnerApplicationParams = {
   owner: string;
@@ -27437,6 +27458,16 @@ export type RestEndpointMethods = {
     getWorkflowRun: {
       (params?: RequestParameters & ActionsGetWorkflowRunParams): Promise<
         OctokitResponse<ActionsGetWorkflowRunResponse>
+      >;
+
+      endpoint: EndpointInterface;
+    };
+    /**
+     * Lists all artifacts for a repository. Anyone with read access to the repository can use this endpoint. GitHub Apps must have the `actions` permission to use this endpoint.
+     */
+    listArtifactsForRepo: {
+      (params?: RequestParameters & ActionsListArtifactsForRepoParams): Promise<
+        OctokitResponse<ActionsListArtifactsForRepoResponse>
       >;
 
       endpoint: EndpointInterface;

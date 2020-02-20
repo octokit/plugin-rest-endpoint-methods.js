@@ -10793,6 +10793,85 @@
     "renamed": null
   },
   {
+    "name": "List artifacts for a repository",
+    "scope": "actions",
+    "id": "listArtifactsForRepo",
+    "method": "GET",
+    "url": "/repos/{owner}/{repo}/actions/artifacts",
+    "isDeprecated": false,
+    "isLegacy": false,
+    "description": "Lists all artifacts for a repository. Anyone with read access to the repository can use this endpoint. GitHub Apps must have the `actions` permission to use this endpoint.",
+    "documentationUrl": "https://developer.github.com/v3/actions/artifacts/#list-artifacts-for-a-repository",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "owner",
+        "description": "owner parameter",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "repo",
+        "description": "repo parameter",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "per_page",
+        "description": "Results per page (max 100)",
+        "in": "QUERY",
+        "type": "integer",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "page",
+        "description": "Page number of the results to fetch.",
+        "in": "QUERY",
+        "type": "integer",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "examples": [
+          {
+            "data": "{\"total_count\":2,\"artifacts\":[{\"id\":11,\"node_id\":\"MDg6QXJ0aWZhY3QxMQ==\",\"name\":\"Rails\",\"size_in_bytes\":556,\"url\":\"https://api.github.com/repos/octo-org/octo-docs/actions/artifacts/11\",\"archive_download_url\":\"https://api.github.com/repos/octo-org/octo-docs/actions/artifacts/11/zip\",\"expired\":\"false\",\"created_at\":\"2020-01-10T14:59:22Z\",\"expires_at\":\"2020-01-21T14:59:22Z\"},{\"id\":13,\"node_id\":\"MDg6QXJ0aWZhY3QxMw==\",\"name\":\"\",\"size_in_bytes\":453,\"url\":\"https://api.github.com/repos/octo-org/octo-docs/actions/artifacts/13\",\"archive_download_url\":\"https://api.github.com/repos/octo-org/octo-docs/actions/artifacts/13/zip\",\"expired\":\"false\",\"created_at\":\"2020-01-10T14:59:22Z\",\"expires_at\":\"2020-01-21T14:59:22Z\"}]}"
+          }
+        ]
+      }
+    ],
+    "renamed": null
+  },
+  {
     "name": "Get an artifact",
     "scope": "actions",
     "id": "getArtifact",
@@ -10851,7 +10930,7 @@
         "description": "response",
         "examples": [
           {
-            "data": "{\"id\":11,\"node_id\":\"MDg6QXJ0aWZhY3QxMQ==\",\"name\":\"Rails\",\"size_in_bytes\":556,\"archive_download_url\":\"https://api.github.com/repos/octo-org/octo-docs/actions/artifacts/5/zip\",\"expired\":\"false\",\"created_at\":\"2020-01-10T14:59:22Z\",\"expires_at\":\"2020-01-21T14:59:22Z\"}"
+            "data": "{\"id\":11,\"node_id\":\"MDg6QXJ0aWZhY3QxMQ==\",\"name\":\"Rails\",\"size_in_bytes\":556,\"url\":\"https://api.github.com/repos/octo-org/octo-docs/actions/artifacts/11\",\"archive_download_url\":\"https://api.github.com/repos/octo-org/octo-docs/actions/artifacts/11/zip\",\"expired\":\"false\",\"created_at\":\"2020-01-10T14:59:22Z\",\"expires_at\":\"2020-01-21T14:59:22Z\"}"
           }
         ]
       }
@@ -11773,7 +11852,7 @@
         "description": "response",
         "examples": [
           {
-            "data": "{\"total_count\":2,\"artifacts\":[{\"id\":11,\"node_id\":\"MDg6QXJ0aWZhY3QxMQ==\",\"name\":\"Rails\",\"size_in_bytes\":556,\"archive_download_url\":\"https://api.github.com/repos/octo-org/octo-docs/actions/artifacts/5/zip\",\"expired\":\"false\",\"created_at\":\"2020-01-10T14:59:22Z\",\"expires_at\":\"2020-01-21T14:59:22Z\"},{\"id\":13,\"node_id\":\"MDg6QXJ0aWZhY3QxMw==\",\"name\":\"\",\"size_in_bytes\":453,\"archive_download_url\":\"https://api.github.com/repos/octo-org/octo-docs/actions/artifacts/5/zip\",\"expired\":\"false\",\"created_at\":\"2020-01-10T14:59:22Z\",\"expires_at\":\"2020-01-21T14:59:22Z\"}]}"
+            "data": "{\"total_count\":2,\"artifacts\":[{\"id\":11,\"node_id\":\"MDg6QXJ0aWZhY3QxMQ==\",\"name\":\"Rails\",\"size_in_bytes\":556,\"url\":\"https://api.github.com/repos/octo-org/octo-docs/actions/artifacts/11\",\"archive_download_url\":\"https://api.github.com/repos/octo-org/octo-docs/actions/artifacts/11/zip\",\"expired\":\"false\",\"created_at\":\"2020-01-10T14:59:22Z\",\"expires_at\":\"2020-01-21T14:59:22Z\"},{\"id\":13,\"node_id\":\"MDg6QXJ0aWZhY3QxMw==\",\"name\":\"\",\"size_in_bytes\":453,\"url\":\"https://api.github.com/repos/octo-org/octo-docs/actions/artifacts/13\",\"archive_download_url\":\"https://api.github.com/repos/octo-org/octo-docs/actions/artifacts/13/zip\",\"expired\":\"false\",\"created_at\":\"2020-01-10T14:59:22Z\",\"expires_at\":\"2020-01-21T14:59:22Z\"}]}"
           }
         ]
       }
@@ -12243,32 +12322,6 @@
         "in": "PATH",
         "type": "string",
         "required": true,
-        "enum": null,
-        "allowNull": false,
-        "mapToData": null,
-        "validation": null,
-        "alias": null,
-        "deprecated": null
-      },
-      {
-        "name": "per_page",
-        "description": "Results per page (max 100)",
-        "in": "QUERY",
-        "type": "integer",
-        "required": false,
-        "enum": null,
-        "allowNull": false,
-        "mapToData": null,
-        "validation": null,
-        "alias": null,
-        "deprecated": null
-      },
-      {
-        "name": "page",
-        "description": "Page number of the results to fetch.",
-        "in": "QUERY",
-        "type": "integer",
-        "required": false,
         "enum": null,
         "allowNull": false,
         "mapToData": null,
