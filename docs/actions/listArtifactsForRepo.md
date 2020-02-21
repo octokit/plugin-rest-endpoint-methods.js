@@ -1,12 +1,11 @@
-# Get a secret
+# List artifacts for a repository
 
-Gets a single secret without revealing its encrypted value. Anyone with write access to the repository can use this endpoint. GitHub Apps must have the `secrets` permission to use this endpoint.
+Lists all artifacts for a repository. Anyone with read access to the repository can use this endpoint. GitHub Apps must have the `actions` permission to use this endpoint.
 
 ```js
-octokit.actions.getSecret({
+octokit.actions.listArtifactsForRepo({
   owner,
-  repo,
-  name
+  repo
 });
 ```
 
@@ -31,9 +30,14 @@ owner parameter
 repo parameter
 
 </td></tr>
-<tr><td>name</td><td>yes</td><td>
+<tr><td>per_page</td><td>no</td><td>
 
-name parameter
+Results per page (max 100)
+
+</td></tr>
+<tr><td>page</td><td>no</td><td>
+
+Page number of the results to fetch.
 
 </td></tr>
   </tbody>
