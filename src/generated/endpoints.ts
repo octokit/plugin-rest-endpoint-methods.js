@@ -695,7 +695,8 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     ],
     delete: [
       "DELETE /reactions/{reaction_id}",
-      { mediaType: { previews: ["squirrel-girl"] } }
+      { mediaType: { previews: ["squirrel-girl"] } },
+      { renamed: ["reactions", "deleteLegacy"] }
     ],
     listForCommitComment: [
       "GET /repos/{owner}/{repo}/comments/{comment_id}/reactions",
