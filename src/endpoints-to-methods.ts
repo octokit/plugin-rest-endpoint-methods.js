@@ -68,7 +68,6 @@ function decorate(
     let options = requestWithDefaults.endpoint.merge(...args);
 
     // There are currently no other decorations than `.mapToData`
-    /* istanbul ignore else */
     if (decorations.mapToData) {
       options = Object.assign({}, options, {
         data: options[decorations.mapToData],
@@ -79,15 +78,17 @@ function decorate(
 
     // NOTE: there are currently no deprecations. But we keep the code
     //       below for future reference
-    // if (decorations.renamed) {
-    //   const [newScope, newMethodName] = decorations.renamed;
-    //   octokit.log.warn(
-    //     `octokit.${scope}.${methodName}() has been renamed to octokit.${newScope}.${newMethodName}()`
-    //   );
-    // }
-    // if (decorations.deprecated) {
-    //   octokit.log.warn(decorations.deprecated);
-    // }
+    if (decorations.renamed) {
+      const [newScope, newMethodName] = decorations.renamed;
+      octokit.log.warn(
+        `octokit.${scope}.${methodName}() has been renamed to octokit.${newScope}.${newMethodName}()`
+      );
+    }
+    if (decorations.deprecated) {
+      octokit.log.warn(decorations.deprecated);
+    }
+
+    // There currently are no renamed parameters
     // if (decorations.renamedParameters) {
     //   // @ts-ignore https://github.com/microsoft/TypeScript/issues/25488
     //   const options = requestWithDefaults.endpoint.merge(...args);
@@ -106,8 +107,9 @@ function decorate(
     //   }
     //   return requestWithDefaults(options);
     // }
+
     // @ts-ignore https://github.com/microsoft/TypeScript/issues/25488
-    // return requestWithDefaults(...args);
+    return requestWithDefaults(...args);
   }
   return Object.assign(withDecorations, requestWithDefaults);
 }

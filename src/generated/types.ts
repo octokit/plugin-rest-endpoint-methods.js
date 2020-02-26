@@ -24296,6 +24296,46 @@ export type ReactionsCreateForTeamDiscussionInOrgParams = {
 export type ReactionsDeleteParams = {
   reaction_id: number;
 };
+export type ReactionsDeleteForCommitCommentParams = {
+  comment_id: number;
+  owner: string;
+  reaction_id: number;
+  repo: string;
+};
+export type ReactionsDeleteForIssueParams = {
+  issue_number: number;
+  owner: string;
+  reaction_id: number;
+  repo: string;
+};
+export type ReactionsDeleteForIssueCommentParams = {
+  comment_id: number;
+  owner: string;
+  reaction_id: number;
+  repo: string;
+};
+export type ReactionsDeleteForPullRequestCommentParams = {
+  comment_id: number;
+  owner: string;
+  reaction_id: number;
+  repo: string;
+};
+export type ReactionsDeleteForTeamDiscussionParams = {
+  discussion_number: number;
+  org: string;
+  reaction_id: number;
+  team_slug: string;
+};
+export type ReactionsDeleteForTeamDiscussionCommentParams = {
+  comment_number: number;
+  discussion_number: number;
+  org: string;
+  reaction_id: number;
+  team_slug: string;
+};
+export type ReactionsDeleteLegacyParams = {
+  reaction_id: number;
+};
 export type ReactionsListForCommitCommentParams = {
   comment_id: number;
   /**
@@ -24457,8 +24497,10 @@ export type ReposAddCollaboratorParams = {
    * \* `pull` - can pull, but not push to or administer this repository.
    * \* `push` - can pull and push, but not administer this repository.
    * \* `admin` - can pull, push and administer this repository.
+   * \* `maintain` - Recommended for project managers who need to manage the repository without access to sensitive or destructive actions.
+   * \* `triage` - Recommended for contributors who need to proactively manage issues and pull requests without write access.
    */
-  permission?: "pull" | "push" | "admin";
+  permission?: "pull" | "push" | "admin" | "maintain" | "triage";
   repo: string;
   username: string;
 };
@@ -28225,7 +28267,7 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface;
     };
     /**
-     * Returns only active subscriptions. You must use a [user-to-server OAuth access token](https://developer.github.com/apps/building-github-apps/identifying-and-authorizing-users-for-github-apps/#identifying-users-on-your-site), created for a user who has authorized your GitHub App, to access this endpoint. OAuth Apps must authenticate using an [OAuth token](https://developer.github.com/apps/building-github-apps/authenticating-with-github-apps/).
+     * Returns only active subscriptions. You must use a [user-to-server OAuth access token](https://developer.github.com/apps/building-github-apps/identifying-and-authorizing-users-for-github-apps/#identifying-users-on-your-site), created for a user who has authorized your GitHub App, to access this endpoint. . OAuth Apps must authenticate using an [OAuth token](https://developer.github.com/apps/building-github-apps/authenticating-with-github-apps/).
      */
     listMarketplacePurchasesForAuthenticatedUser: {
       (
@@ -28240,7 +28282,7 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface;
     };
     /**
-     * Returns only active subscriptions. You must use a [user-to-server OAuth access token](https://developer.github.com/apps/building-github-apps/identifying-and-authorizing-users-for-github-apps/#identifying-users-on-your-site), created for a user who has authorized your GitHub App, to access this endpoint. OAuth Apps must authenticate using an [OAuth token](https://developer.github.com/apps/building-github-apps/authenticating-with-github-apps/).
+     * Returns only active subscriptions. You must use a [user-to-server OAuth access token](https://developer.github.com/apps/building-github-apps/identifying-and-authorizing-users-for-github-apps/#identifying-users-on-your-site), created for a user who has authorized your GitHub App, to access this endpoint. . OAuth Apps must authenticate using an [OAuth token](https://developer.github.com/apps/building-github-apps/authenticating-with-github-apps/).
      */
     listMarketplacePurchasesForAuthenticatedUserStubbed: {
       (
@@ -30802,10 +30844,99 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface;
     };
     /**
+     * **Deprecation Notice:** This endpoint route is deprecated and will be removed from the Reactions API. We recommend migrating your existing code to use the new delete reactions endpoints. For more information, see this [blog post](https://developer.github.com/changes/2020-02-26-new-delete-reactions-endpoints/).
+     *
      * OAuth access tokens require the `write:discussion` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/), when deleting a [team discussion](https://developer.github.com/v3/teams/discussions/) or [team discussion comment](https://developer.github.com/v3/teams/discussion_comments/).
+     * @deprecated octokit.reactions.delete() is deprecated, see https://developer.github.com/v3/reactions/#delete-a-reaction-legacy
      */
     delete: {
       (params?: RequestParameters & ReactionsDeleteParams): Promise<
+        AnyResponse
+      >;
+
+      endpoint: EndpointInterface;
+    };
+    /**
+     * **Note:** You can also specify a repository by `repository_id` using the route `DELETE /repositories/:repository_id/comments/:comment_id/reactions/:reaction_id`.
+     *
+     * Delete a reaction to a [commit comment](https://developer.github.com/v3/repos/comments/).
+     */
+    deleteForCommitComment: {
+      (
+        params?: RequestParameters & ReactionsDeleteForCommitCommentParams
+      ): Promise<AnyResponse>;
+
+      endpoint: EndpointInterface;
+    };
+    /**
+     * **Note:** You can also specify a repository by `repository_id` using the route `DELETE /repositories/:repository_id/issues/:issue_number/reactions/:reaction_id`.
+     *
+     * Delete a reaction to an [issue](https://developer.github.com/v3/issues/).
+     */
+    deleteForIssue: {
+      (params?: RequestParameters & ReactionsDeleteForIssueParams): Promise<
+        AnyResponse
+      >;
+
+      endpoint: EndpointInterface;
+    };
+    /**
+     * **Note:** You can also specify a repository by `repository_id` using the route `DELETE delete /repositories/:repository_id/issues/comments/:comment_id/reactions/:reaction_id`.
+     *
+     * Delete a reaction to an [issue comment](https://developer.github.com/v3/issues/comments/).
+     */
+    deleteForIssueComment: {
+      (
+        params?: RequestParameters & ReactionsDeleteForIssueCommentParams
+      ): Promise<AnyResponse>;
+
+      endpoint: EndpointInterface;
+    };
+    /**
+     * **Note:** You can also specify a repository by `repository_id` using the route `DELETE /repositories/:repository_id/pulls/comments/:comment_id/reactions/:reaction_id.`
+     *
+     * Delete a reaction to a [pull request review comment](https://developer.github.com/v3/pulls/comments/).
+     */
+    deleteForPullRequestComment: {
+      (
+        params?: RequestParameters & ReactionsDeleteForPullRequestCommentParams
+      ): Promise<AnyResponse>;
+
+      endpoint: EndpointInterface;
+    };
+    /**
+     * **Note:** You can also specify a team or organization with `team_id` and `org_id` using the route `DELETE /organizations/:org_id/team/:team_id/discussions/:discussion_number/reactions/:reaction_id`.
+     *
+     * Delete a reaction to a [team discussion](https://developer.github.com/v3/teams/discussions/). OAuth access tokens require the `write:discussion` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
+     */
+    deleteForTeamDiscussion: {
+      (
+        params?: RequestParameters & ReactionsDeleteForTeamDiscussionParams
+      ): Promise<AnyResponse>;
+
+      endpoint: EndpointInterface;
+    };
+    /**
+     * **Note:** You can also specify a team or organization with `team_id` and `org_id` using the route `DELETE /organizations/:org_id/team/:team_id/discussions/:discussion_number/comments/:comment_number/reactions/:reaction_id`.
+     *
+     * Delete a reaction to a [team discussion comment](https://developer.github.com/v3/teams/discussion_comments/). OAuth access tokens require the `write:discussion` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
+     */
+    deleteForTeamDiscussionComment: {
+      (
+        params?: RequestParameters &
+          ReactionsDeleteForTeamDiscussionCommentParams
+      ): Promise<AnyResponse>;
+
+      endpoint: EndpointInterface;
+    };
+    /**
+     * **Deprecation Notice:** This endpoint route is deprecated and will be removed from the Reactions API. We recommend migrating your existing code to use the new delete reactions endpoints. For more information, see this [blog post](https://developer.github.com/changes/2020-02-26-new-delete-reactions-endpoints/).
+     *
+     * OAuth access tokens require the `write:discussion` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/), when deleting a [team discussion](https://developer.github.com/v3/teams/discussions/) or [team discussion comment](https://developer.github.com/v3/teams/discussion_comments/).
+     * @deprecated octokit.reactions.deleteLegacy() is deprecated, see https://developer.github.com/v3/reactions/#delete-a-reaction-legacy
+     */
+    deleteLegacy: {
+      (params?: RequestParameters & ReactionsDeleteLegacyParams): Promise<
         AnyResponse
       >;
 
@@ -30892,6 +31023,8 @@ export type RestEndpointMethods = {
     };
     /**
      * This endpoint triggers [notifications](https://help.github.com/articles/about-notifications/). Creating content too quickly using this endpoint may result in abuse rate limiting. See "[Abuse rate limits](https://developer.github.com/v3/#abuse-rate-limits)" and "[Dealing with abuse rate limits](https://developer.github.com/v3/guides/best-practices-for-integrators/#dealing-with-abuse-rate-limits)" for details.
+     *
+     * For more information the permission levels, see "[Repository permission levels for an organization](https://help.github.com/en/github/setting-up-and-managing-organizations-and-teams/repository-permission-levels-for-an-organization#permission-levels-for-repositories-owned-by-an-organization)" in the GitHub Help documentation.
      *
      * Note that, if you choose not to pass any parameters, you'll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see "[HTTP verbs](https://developer.github.com/v3/#http-verbs)."
      *

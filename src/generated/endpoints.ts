@@ -695,7 +695,40 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     ],
     delete: [
       "DELETE /reactions/{reaction_id}",
+      { mediaType: { previews: ["squirrel-girl"] } },
+      { renamed: ["reactions", "deleteLegacy"] }
+    ],
+    deleteForCommitComment: [
+      "DELETE /repos/{owner}/{repo}/comments/{comment_id}/reactions/{reaction_id}",
       { mediaType: { previews: ["squirrel-girl"] } }
+    ],
+    deleteForIssue: [
+      "DELETE /repos/{owner}/{repo}/issues/{issue_number}/reactions/{reaction_id}",
+      { mediaType: { previews: ["squirrel-girl"] } }
+    ],
+    deleteForIssueComment: [
+      "DELETE /repos/{owner}/{repo}/issues/comments/{comment_id}/reactions/{reaction_id}",
+      { mediaType: { previews: ["squirrel-girl"] } }
+    ],
+    deleteForPullRequestComment: [
+      "DELETE /repos/{owner}/{repo}/pulls/comments/{comment_id}/reactions/{reaction_id}",
+      { mediaType: { previews: ["squirrel-girl"] } }
+    ],
+    deleteForTeamDiscussion: [
+      "DELETE /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/reactions/{reaction_id}",
+      { mediaType: { previews: ["squirrel-girl"] } }
+    ],
+    deleteForTeamDiscussionComment: [
+      "DELETE /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}/reactions/{reaction_id}",
+      { mediaType: { previews: ["squirrel-girl"] } }
+    ],
+    deleteLegacy: [
+      "DELETE /reactions/{reaction_id}",
+      { mediaType: { previews: ["squirrel-girl"] } },
+      {
+        deprecated:
+          "octokit.reactions.deleteLegacy() is deprecated, see https://developer.github.com/v3/reactions/#delete-a-reaction-legacy"
+      }
     ],
     listForCommitComment: [
       "GET /repos/{owner}/{repo}/comments/{comment_id}/reactions",
