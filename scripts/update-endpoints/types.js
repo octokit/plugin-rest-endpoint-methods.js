@@ -10,6 +10,7 @@ const { stringToJsdocComment } = require("string-to-jsdoc-comment");
 const sortKeys = require("sort-keys");
 
 const ENDPOINTS = require("./generated/endpoints.json");
+const { isDeprecated } = require("./util");
 
 const typeMap = {
   integer: "number",
@@ -323,6 +324,8 @@ async function getRoutes() {
   const newRoutes = {};
 
   ENDPOINTS.forEach(endpoint => {
+    if (isDeprecated(endpoint)) return;
+
     const scope = endpoint.scope;
 
     if (!newRoutes[scope]) {

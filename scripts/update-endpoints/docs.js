@@ -2,15 +2,13 @@ const { outputFileSync } = require("fs-extra");
 const prettier = require("prettier");
 
 const ENDPOINTS = require("./generated/endpoints.json");
+const { isDeprecated } = require("./util");
 
 generateRoutes();
 
 async function generateRoutes() {
   const endpoints = ENDPOINTS.filter(endpoint => {
-    if (endpoint.isLegacy && !/^\/teams\/\{team_id\}/.test(endpoint.url)) {
-      // ignore legacy endpoints with the exception of the new teams legacy methods
-      return false;
-    }
+    if (isDeprecated(endpoint)) return false;
 
     return true;
   });

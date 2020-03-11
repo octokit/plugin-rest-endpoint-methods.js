@@ -5,6 +5,7 @@ const prettier = require("prettier");
 const sortKeys = require("sort-keys");
 
 const ENDPOINTS = require("./generated/endpoints.json");
+const { isDeprecated } = require("./util");
 
 const ROUTES_PATH = join(
   __dirname,
@@ -21,12 +22,9 @@ generateRoutes();
 
 async function generateRoutes() {
   ENDPOINTS.forEach(endpoint => {
-    const scope = endpoint.scope;
+    if (isDeprecated(endpoint)) return false;
 
-    if (endpoint.isLegacy && !/^\/teams\/\{team_id\}/.test(endpoint.url)) {
-      // ignore legacy endpoints with the exception of the new teams legacy methods
-      return;
-    }
+    const scope = endpoint.scope;
 
     const isUploadReleaseAssetUrl = /^\{origin\}/.test(endpoint.url);
     if (isUploadReleaseAssetUrl) {
