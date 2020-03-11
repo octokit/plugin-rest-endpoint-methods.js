@@ -106,10 +106,14 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
       { mediaType: { previews: ["machine-man"] } }
     ],
     checkAccountIsAssociatedWithAny: [
-      "GET /marketplace_listing/accounts/{account_id}"
+      "GET /marketplace_listing/accounts/{account_id}",
+      {},
+      { renamed: ["apps", "getSubscriptionPlanForAccount"] }
     ],
     checkAccountIsAssociatedWithAnyStubbed: [
-      "GET /marketplace_listing/stubbed/accounts/{account_id}"
+      "GET /marketplace_listing/stubbed/accounts/{account_id}",
+      {},
+      { renamed: ["apps", "getSubscriptionPlanForAccountStubbed"] }
     ],
     checkToken: [
       "POST /applications/{client_id}/token",
@@ -159,15 +163,29 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
       "GET /repos/{owner}/{repo}/installation",
       { mediaType: { previews: ["machine-man"] } }
     ],
+    getSubscriptionPlanForAccount: [
+      "GET /marketplace_listing/accounts/{account_id}"
+    ],
+    getSubscriptionPlanForAccountStubbed: [
+      "GET /marketplace_listing/stubbed/accounts/{account_id}"
+    ],
     getUserInstallation: [
       "GET /users/{username}/installation",
       { mediaType: { previews: ["machine-man"] } }
     ],
+    listAccountsForPlan: ["GET /marketplace_listing/plans/{plan_id}/accounts"],
+    listAccountsForPlanStubbed: [
+      "GET /marketplace_listing/stubbed/plans/{plan_id}/accounts"
+    ],
     listAccountsUserOrOrgOnPlan: [
-      "GET /marketplace_listing/plans/{plan_id}/accounts"
+      "GET /marketplace_listing/plans/{plan_id}/accounts",
+      {},
+      { renamed: ["apps", "listAccountsForPlan"] }
     ],
     listAccountsUserOrOrgOnPlanStubbed: [
-      "GET /marketplace_listing/stubbed/plans/{plan_id}/accounts"
+      "GET /marketplace_listing/stubbed/plans/{plan_id}/accounts",
+      {},
+      { renamed: ["apps", "listAccountsForPlanStubbed"] }
     ],
     listInstallationReposForAuthenticatedUser: [
       "GET /user/installations/{installation_id}/repositories",
@@ -182,16 +200,24 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
       { mediaType: { previews: ["machine-man"] } }
     ],
     listMarketplacePurchasesForAuthenticatedUser: [
-      "GET /user/marketplace_purchases"
+      "GET /user/marketplace_purchases",
+      {},
+      { renamed: ["apps", "listSubscriptionsForAuthenticatedUser"] }
     ],
     listMarketplacePurchasesForAuthenticatedUserStubbed: [
-      "GET /user/marketplace_purchases/stubbed"
+      "GET /user/marketplace_purchases/stubbed",
+      {},
+      { renamed: ["apps", "listSubscriptionsForAuthenticatedUserStubbed"] }
     ],
     listPlans: ["GET /marketplace_listing/plans"],
     listPlansStubbed: ["GET /marketplace_listing/stubbed/plans"],
     listRepos: [
       "GET /installation/repositories",
       { mediaType: { previews: ["machine-man"] } }
+    ],
+    listSubscriptionsForAuthenticatedUser: ["GET /user/marketplace_purchases"],
+    listSubscriptionsForAuthenticatedUserStubbed: [
+      "GET /user/marketplace_purchases/stubbed"
     ],
     removeRepoFromInstallation: [
       "DELETE /user/installations/{installation_id}/repositories/{repository_id}",
@@ -253,6 +279,10 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     ]
   },
   codesOfConduct: {
+    getAllCodesOfConduct: [
+      "GET /codes_of_conduct",
+      { mediaType: { previews: ["scarlet-witch"] } }
+    ],
     getConductCode: [
       "GET /codes_of_conduct/{key}",
       { mediaType: { previews: ["scarlet-witch"] } }
@@ -263,7 +293,8 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     ],
     listConductCodes: [
       "GET /codes_of_conduct",
-      { mediaType: { previews: ["scarlet-witch"] } }
+      { mediaType: { previews: ["scarlet-witch"] } },
+      { renamed: ["codesOfConduct", "getAllCodesOfConduct"] }
     ]
   },
   emojis: { get: ["GET /emojis"] },
@@ -280,9 +311,14 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     list: ["GET /gists"],
     listComments: ["GET /gists/{gist_id}/comments"],
     listCommits: ["GET /gists/{gist_id}/commits"],
+    listForUser: ["GET /users/{username}/gists"],
     listForks: ["GET /gists/{gist_id}/forks"],
     listPublic: ["GET /gists/public"],
-    listPublicForUser: ["GET /users/{username}/gists"],
+    listPublicForUser: [
+      "GET /users/{username}/gists",
+      {},
+      { renamed: ["gists", "listForUser"] }
+    ],
     listStarred: ["GET /gists/starred"],
     star: ["PUT /gists/{gist_id}/star"],
     unstar: ["DELETE /gists/{gist_id}/star"],
@@ -380,14 +416,28 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     ],
     listMilestonesForRepo: ["GET /repos/{owner}/{repo}/milestones"],
     lock: ["PUT /repos/{owner}/{repo}/issues/{issue_number}/lock"],
+    removeAllLabels: [
+      "DELETE /repos/{owner}/{repo}/issues/{issue_number}/labels"
+    ],
     removeAssignees: [
       "DELETE /repos/{owner}/{repo}/issues/{issue_number}/assignees"
     ],
     removeLabel: [
       "DELETE /repos/{owner}/{repo}/issues/{issue_number}/labels/{name}"
     ],
-    removeLabels: ["DELETE /repos/{owner}/{repo}/issues/{issue_number}/labels"],
-    replaceLabels: ["PUT /repos/{owner}/{repo}/issues/{issue_number}/labels"],
+    removeLabels: [
+      "DELETE /repos/{owner}/{repo}/issues/{issue_number}/labels",
+      {},
+      { renamed: ["issues", "removeAllLabels"] }
+    ],
+    replaceAllLabels: [
+      "PUT /repos/{owner}/{repo}/issues/{issue_number}/labels"
+    ],
+    replaceLabels: [
+      "PUT /repos/{owner}/{repo}/issues/{issue_number}/labels",
+      {},
+      { renamed: ["issues", "replaceAllLabels"] }
+    ],
     unlock: ["DELETE /repos/{owner}/{repo}/issues/{issue_number}/lock"],
     update: ["PATCH /repos/{owner}/{repo}/issues/{issue_number}"],
     updateComment: ["PATCH /repos/{owner}/{repo}/issues/comments/{comment_id}"],
@@ -852,6 +902,10 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
       { mediaType: { previews: ["dorian"] } }
     ],
     get: ["GET /repos/{owner}/{repo}"],
+    getAllTopics: [
+      "GET /repos/{owner}/{repo}/topics",
+      { mediaType: { previews: ["mercy"] } }
+    ],
     getAppsWithAccessToProtectedBranch: [
       "GET /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/apps"
     ],
@@ -913,7 +967,11 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
       "GET /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users"
     ],
     getViews: ["GET /repos/{owner}/{repo}/traffic/views"],
-    list: ["GET /user/repos"],
+    list: [
+      "GET /user/repos",
+      {},
+      { renamed: ["repos", "listForAuthenticatedUser"] }
+    ],
     listAssetsForRelease: [
       "GET /repos/{owner}/{repo}/releases/{release_id}/assets"
     ],
@@ -935,6 +993,7 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     ],
     listDeployments: ["GET /repos/{owner}/{repo}/deployments"],
     listDownloads: ["GET /repos/{owner}/{repo}/downloads"],
+    listForAuthenticatedUser: ["GET /user/repos"],
     listForOrg: ["GET /orgs/{org}/repos"],
     listForUser: ["GET /users/{username}/repos"],
     listForks: ["GET /repos/{owner}/{repo}/forks"],
@@ -957,7 +1016,8 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     listTeams: ["GET /repos/{owner}/{repo}/teams"],
     listTopics: [
       "GET /repos/{owner}/{repo}/topics",
-      { mediaType: { previews: ["mercy"] } }
+      { mediaType: { previews: ["mercy"] } },
+      { renamed: ["repos", "getAllTopics"] }
     ],
     merge: ["POST /repos/{owner}/{repo}/merges"],
     pingHook: ["POST /repos/{owner}/{repo}/hooks/{hook_id}/pings"],
@@ -1004,6 +1064,10 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
       {},
       { mapToData: "users" }
     ],
+    replaceAllTopics: [
+      "PUT /repos/{owner}/{repo}/topics",
+      { mediaType: { previews: ["mercy"] } }
+    ],
     replaceProtectedBranchAppRestrictions: [
       "PUT /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/apps",
       {},
@@ -1026,7 +1090,8 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     ],
     replaceTopics: [
       "PUT /repos/{owner}/{repo}/topics",
-      { mediaType: { previews: ["mercy"] } }
+      { mediaType: { previews: ["mercy"] } },
+      { renamed: ["repos", "replaceAllTopics"] }
     ],
     requestPageBuild: ["POST /repos/{owner}/{repo}/pages/builds"],
     retrieveCommunityProfileMetrics: [
@@ -1161,9 +1226,14 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     list: ["GET /users"],
     listBlocked: ["GET /user/blocks"],
     listEmails: ["GET /user/emails"],
+    listFollowedByAuthenticated: ["GET /user/following"],
     listFollowersForAuthenticatedUser: ["GET /user/followers"],
     listFollowersForUser: ["GET /users/{username}/followers"],
-    listFollowingForAuthenticatedUser: ["GET /user/following"],
+    listFollowingForAuthenticatedUser: [
+      "GET /user/following",
+      {},
+      { renamed: ["users", "listFollowedByAuthenticated"] }
+    ],
     listFollowingForUser: ["GET /users/{username}/following"],
     listGpgKeys: ["GET /user/gpg_keys"],
     listGpgKeysForUser: ["GET /users/{username}/gpg_keys"],

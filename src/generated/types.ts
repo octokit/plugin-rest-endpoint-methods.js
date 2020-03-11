@@ -212,6 +212,26 @@ type UsersListFollowersForAuthenticatedUserResponseItem = {
   type: string;
   url: string;
 };
+type UsersListFollowedByAuthenticatedResponseItem = {
+  avatar_url: string;
+  events_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  gravatar_id: string;
+  html_url: string;
+  id: number;
+  login: string;
+  node_id: string;
+  organizations_url: string;
+  received_events_url: string;
+  repos_url: string;
+  site_admin: boolean;
+  starred_url: string;
+  subscriptions_url: string;
+  type: string;
+  url: string;
+};
 type UsersListEmailsResponseItem = {
   email: string;
   primary: boolean;
@@ -2881,6 +2901,7 @@ type ReposReplaceProtectedBranchAppRestrictionsResponseItem = {
   slug: string;
   updated_at: string;
 };
+type ReposReplaceAllTopicsResponse = { names: Array<string> };
 type ReposRemoveProtectedBranchUserRestrictionsResponseItem = {
   avatar_url: string;
   events_url: string;
@@ -5830,6 +5851,8 @@ type ReposGetAppsWithAccessToProtectedBranchResponseItem = {
   slug: string;
   updated_at: string;
 };
+type ReposGetAllTopicsResponse = { names: Array<string> };
+type ReposGetResponseCodeOfConduct = { key: string; name: string; url: string };
 type ReposGetResponseSourcePermissions = {
   admin: boolean;
   pull: boolean;
@@ -6097,11 +6120,11 @@ type ReposGetResponseLicense = {
   url: string;
 };
 type ReposGetResponse = {
-  allow_merge_commit: boolean;
-  allow_rebase_merge: boolean;
-  allow_squash_merge: boolean;
+  allow_merge_commit?: boolean;
+  allow_rebase_merge?: boolean;
+  allow_squash_merge?: boolean;
   archive_url: string;
-  archived: boolean;
+  archived?: boolean;
   assignees_url: string;
   blobs_url: string;
   branches_url: string;
@@ -6115,8 +6138,8 @@ type ReposGetResponse = {
   created_at: string;
   default_branch: string;
   deployments_url: string;
-  description: string;
-  disabled: boolean;
+  description: string | null;
+  disabled?: boolean;
   downloads_url: string;
   events_url: string;
   fork: boolean;
@@ -6132,11 +6155,11 @@ type ReposGetResponse = {
   has_pages: boolean;
   has_projects: boolean;
   has_wiki: boolean;
-  homepage: string;
+  homepage: string | null;
   hooks_url: string;
   html_url: string;
   id: number;
-  is_template: boolean;
+  is_template?: boolean;
   issue_comment_url: string;
   issue_events_url: string;
   issues_url: string;
@@ -6144,25 +6167,25 @@ type ReposGetResponse = {
   labels_url: string;
   language: null;
   languages_url: string;
-  license: ReposGetResponseLicense;
+  license?: ReposGetResponseLicense;
   merges_url: string;
   milestones_url: string;
-  mirror_url: string;
+  mirror_url: string | null;
   name: string;
   network_count: number;
   node_id: string;
   notifications_url: string;
   open_issues_count: number;
-  organization: ReposGetResponseOrganization;
+  organization?: ReposGetResponseOrganization;
   owner: ReposGetResponseOwner;
-  parent: ReposGetResponseParent;
-  permissions: ReposGetResponsePermissions;
+  parent?: ReposGetResponseParent;
+  permissions?: ReposGetResponsePermissions;
   private: boolean;
   pulls_url: string;
   pushed_at: string;
   releases_url: string;
   size: number;
-  source: ReposGetResponseSource;
+  source?: ReposGetResponseSource;
   ssh_url: string;
   stargazers_count: number;
   stargazers_url: string;
@@ -6173,14 +6196,18 @@ type ReposGetResponse = {
   svn_url: string;
   tags_url: string;
   teams_url: string;
-  temp_clone_token: string;
-  template_repository: null;
-  topics: Array<string>;
+  temp_clone_token?: string;
+  template_repository?: null;
+  topics?: Array<string>;
   trees_url: string;
   updated_at: string;
   url: string;
-  visibility: string;
+  visibility?: string;
   watchers_count: number;
+  code_of_conduct?: ReposGetResponseCodeOfConduct;
+  forks?: number;
+  open_issues?: number;
+  watchers?: number;
 };
 type ReposEnablePagesSiteResponseSource = { branch: string; directory: string };
 type ReposEnablePagesSiteResponse = {
@@ -13599,6 +13626,15 @@ type IssuesReplaceLabelsResponseItem = {
   node_id: string;
   url: string;
 };
+type IssuesReplaceAllLabelsResponseItem = {
+  color: string;
+  default: boolean;
+  description: string;
+  id: number;
+  name: string;
+  node_id: string;
+  url: string;
+};
 type IssuesRemoveLabelResponseItem = {
   color: string;
   default: boolean;
@@ -16320,6 +16356,56 @@ type GistsListForksResponseItem = {
   url: string;
   user: GistsListForksResponseItemUser;
 };
+type GistsListForUserResponseItemOwner = {
+  avatar_url: string;
+  events_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  gravatar_id: string;
+  html_url: string;
+  id: number;
+  login: string;
+  node_id: string;
+  organizations_url: string;
+  received_events_url: string;
+  repos_url: string;
+  site_admin: boolean;
+  starred_url: string;
+  subscriptions_url: string;
+  type: string;
+  url: string;
+};
+type GistsListForUserResponseItemFilesHelloWorldRb = {
+  filename: string;
+  language: string;
+  raw_url: string;
+  size: number;
+  type: string;
+};
+type GistsListForUserResponseItemFiles = {
+  "hello_world.rb": GistsListForUserResponseItemFilesHelloWorldRb;
+};
+type GistsListForUserResponseItem = {
+  comments: number;
+  comments_url: string;
+  commits_url: string;
+  created_at: string;
+  description: string;
+  files: GistsListForUserResponseItemFiles;
+  forks_url: string;
+  git_pull_url: string;
+  git_push_url: string;
+  html_url: string;
+  id: string;
+  node_id: string;
+  owner: GistsListForUserResponseItemOwner;
+  public: boolean;
+  truncated: boolean;
+  updated_at: string;
+  url: string;
+  user: null;
+};
 type GistsListCommitsResponseItemUser = {
   avatar_url: string;
   events_url: string;
@@ -16981,6 +17067,11 @@ type CodesOfConductGetForRepoResponse = {
 };
 type CodesOfConductGetConductCodeResponse = {
   body: string;
+  key: string;
+  name: string;
+  url: string;
+};
+type CodesOfConductGetAllCodesOfConductResponseItem = {
   key: string;
   name: string;
   url: string;
@@ -18068,6 +18159,72 @@ type AppsResetTokenResponse = {
   url: string;
   user: AppsResetTokenResponseUser;
 };
+type AppsListSubscriptionsForAuthenticatedUserStubbedResponseItemPlan = {
+  accounts_url: string;
+  bullets: Array<string>;
+  description: string;
+  has_free_trial: boolean;
+  id: number;
+  monthly_price_in_cents: number;
+  name: string;
+  number: number;
+  price_model: string;
+  state: string;
+  unit_name: null;
+  url: string;
+  yearly_price_in_cents: number;
+};
+type AppsListSubscriptionsForAuthenticatedUserStubbedResponseItemAccount = {
+  email: null;
+  id: number;
+  login: string;
+  organization_billing_email: string;
+  type: string;
+  url: string;
+};
+type AppsListSubscriptionsForAuthenticatedUserStubbedResponseItem = {
+  account: AppsListSubscriptionsForAuthenticatedUserStubbedResponseItemAccount;
+  billing_cycle: string;
+  free_trial_ends_on: string;
+  next_billing_date: string;
+  on_free_trial: boolean;
+  plan: AppsListSubscriptionsForAuthenticatedUserStubbedResponseItemPlan;
+  unit_count: null;
+  updated_at: string;
+};
+type AppsListSubscriptionsForAuthenticatedUserResponseItemPlan = {
+  accounts_url: string;
+  bullets: Array<string>;
+  description: string;
+  has_free_trial: boolean;
+  id: number;
+  monthly_price_in_cents: number;
+  name: string;
+  number: number;
+  price_model: string;
+  state: string;
+  unit_name: null;
+  url: string;
+  yearly_price_in_cents: number;
+};
+type AppsListSubscriptionsForAuthenticatedUserResponseItemAccount = {
+  email: null;
+  id: number;
+  login: string;
+  organization_billing_email: string;
+  type: string;
+  url: string;
+};
+type AppsListSubscriptionsForAuthenticatedUserResponseItem = {
+  account: AppsListSubscriptionsForAuthenticatedUserResponseItemAccount;
+  billing_cycle: string;
+  free_trial_ends_on: string;
+  next_billing_date: string;
+  on_free_trial: boolean;
+  plan: AppsListSubscriptionsForAuthenticatedUserResponseItemPlan;
+  unit_count: null;
+  updated_at: string;
+};
 type AppsListReposResponseRepositoriesItemOwner = {
   avatar_url: string;
   events_url: string;
@@ -18576,6 +18733,116 @@ type AppsListAccountsUserOrOrgOnPlanResponseItem = {
   type: string;
   url: string;
 };
+type AppsListAccountsForPlanStubbedResponseItemMarketplacePurchasePlan = {
+  accounts_url: string;
+  bullets: Array<string>;
+  description: string;
+  has_free_trial: boolean;
+  id: number;
+  monthly_price_in_cents: number;
+  name: string;
+  number: number;
+  price_model: string;
+  state: string;
+  unit_name: null;
+  url: string;
+  yearly_price_in_cents: number;
+};
+type AppsListAccountsForPlanStubbedResponseItemMarketplacePurchase = {
+  billing_cycle: string;
+  free_trial_ends_on: string;
+  next_billing_date: string;
+  on_free_trial: boolean;
+  plan: AppsListAccountsForPlanStubbedResponseItemMarketplacePurchasePlan;
+  unit_count: null;
+  updated_at: string;
+};
+type AppsListAccountsForPlanStubbedResponseItemMarketplacePendingChangePlan = {
+  accounts_url: string;
+  bullets: Array<string>;
+  description: string;
+  has_free_trial: boolean;
+  id: number;
+  monthly_price_in_cents: number;
+  name: string;
+  number: number;
+  price_model: string;
+  state: string;
+  unit_name: null;
+  url: string;
+  yearly_price_in_cents: number;
+};
+type AppsListAccountsForPlanStubbedResponseItemMarketplacePendingChange = {
+  effective_date: string;
+  id: number;
+  plan: AppsListAccountsForPlanStubbedResponseItemMarketplacePendingChangePlan;
+  unit_count: null;
+};
+type AppsListAccountsForPlanStubbedResponseItem = {
+  email: null;
+  id: number;
+  login: string;
+  marketplace_pending_change: AppsListAccountsForPlanStubbedResponseItemMarketplacePendingChange;
+  marketplace_purchase: AppsListAccountsForPlanStubbedResponseItemMarketplacePurchase;
+  organization_billing_email: string;
+  type: string;
+  url: string;
+};
+type AppsListAccountsForPlanResponseItemMarketplacePurchasePlan = {
+  accounts_url: string;
+  bullets: Array<string>;
+  description: string;
+  has_free_trial: boolean;
+  id: number;
+  monthly_price_in_cents: number;
+  name: string;
+  number: number;
+  price_model: string;
+  state: string;
+  unit_name: null;
+  url: string;
+  yearly_price_in_cents: number;
+};
+type AppsListAccountsForPlanResponseItemMarketplacePurchase = {
+  billing_cycle: string;
+  free_trial_ends_on: string;
+  next_billing_date: string;
+  on_free_trial: boolean;
+  plan: AppsListAccountsForPlanResponseItemMarketplacePurchasePlan;
+  unit_count: null;
+  updated_at: string;
+};
+type AppsListAccountsForPlanResponseItemMarketplacePendingChangePlan = {
+  accounts_url: string;
+  bullets: Array<string>;
+  description: string;
+  has_free_trial: boolean;
+  id: number;
+  monthly_price_in_cents: number;
+  name: string;
+  number: number;
+  price_model: string;
+  state: string;
+  unit_name: null;
+  url: string;
+  yearly_price_in_cents: number;
+};
+type AppsListAccountsForPlanResponseItemMarketplacePendingChange = {
+  effective_date: string;
+  id: number;
+  plan: AppsListAccountsForPlanResponseItemMarketplacePendingChangePlan;
+  unit_count: null;
+};
+type AppsListAccountsForPlanResponseItem = {
+  email: null;
+  id: number;
+  login: string;
+  marketplace_pending_change: AppsListAccountsForPlanResponseItemMarketplacePendingChange;
+  marketplace_purchase: AppsListAccountsForPlanResponseItemMarketplacePurchase;
+  organization_billing_email: string;
+  type: string;
+  url: string;
+};
 type AppsGetUserInstallationResponsePermissions = {
   checks: string;
   contents: string;
@@ -18616,6 +18883,116 @@ type AppsGetUserInstallationResponse = {
   target_id: number;
   target_type: string;
   updated_at: string;
+};
+type AppsGetSubscriptionPlanForAccountStubbedResponseMarketplacePurchasePlan = {
+  accounts_url: string;
+  bullets: Array<string>;
+  description: string;
+  has_free_trial: boolean;
+  id: number;
+  monthly_price_in_cents: number;
+  name: string;
+  number: number;
+  price_model: string;
+  state: string;
+  unit_name: null;
+  url: string;
+  yearly_price_in_cents: number;
+};
+type AppsGetSubscriptionPlanForAccountStubbedResponseMarketplacePurchase = {
+  billing_cycle: string;
+  free_trial_ends_on: string;
+  next_billing_date: string;
+  on_free_trial: boolean;
+  plan: AppsGetSubscriptionPlanForAccountStubbedResponseMarketplacePurchasePlan;
+  unit_count: null;
+  updated_at: string;
+};
+type AppsGetSubscriptionPlanForAccountStubbedResponseMarketplacePendingChangePlan = {
+  accounts_url: string;
+  bullets: Array<string>;
+  description: string;
+  has_free_trial: boolean;
+  id: number;
+  monthly_price_in_cents: number;
+  name: string;
+  number: number;
+  price_model: string;
+  state: string;
+  unit_name: null;
+  url: string;
+  yearly_price_in_cents: number;
+};
+type AppsGetSubscriptionPlanForAccountStubbedResponseMarketplacePendingChange = {
+  effective_date: string;
+  id: number;
+  plan: AppsGetSubscriptionPlanForAccountStubbedResponseMarketplacePendingChangePlan;
+  unit_count: null;
+};
+type AppsGetSubscriptionPlanForAccountStubbedResponse = {
+  email: null;
+  id: number;
+  login: string;
+  marketplace_pending_change: AppsGetSubscriptionPlanForAccountStubbedResponseMarketplacePendingChange;
+  marketplace_purchase: AppsGetSubscriptionPlanForAccountStubbedResponseMarketplacePurchase;
+  organization_billing_email: string;
+  type: string;
+  url: string;
+};
+type AppsGetSubscriptionPlanForAccountResponseMarketplacePurchasePlan = {
+  accounts_url: string;
+  bullets: Array<string>;
+  description: string;
+  has_free_trial: boolean;
+  id: number;
+  monthly_price_in_cents: number;
+  name: string;
+  number: number;
+  price_model: string;
+  state: string;
+  unit_name: null;
+  url: string;
+  yearly_price_in_cents: number;
+};
+type AppsGetSubscriptionPlanForAccountResponseMarketplacePurchase = {
+  billing_cycle: string;
+  free_trial_ends_on: string;
+  next_billing_date: string;
+  on_free_trial: boolean;
+  plan: AppsGetSubscriptionPlanForAccountResponseMarketplacePurchasePlan;
+  unit_count: null;
+  updated_at: string;
+};
+type AppsGetSubscriptionPlanForAccountResponseMarketplacePendingChangePlan = {
+  accounts_url: string;
+  bullets: Array<string>;
+  description: string;
+  has_free_trial: boolean;
+  id: number;
+  monthly_price_in_cents: number;
+  name: string;
+  number: number;
+  price_model: string;
+  state: string;
+  unit_name: null;
+  url: string;
+  yearly_price_in_cents: number;
+};
+type AppsGetSubscriptionPlanForAccountResponseMarketplacePendingChange = {
+  effective_date: string;
+  id: number;
+  plan: AppsGetSubscriptionPlanForAccountResponseMarketplacePendingChangePlan;
+  unit_count: null;
+};
+type AppsGetSubscriptionPlanForAccountResponse = {
+  email: null;
+  id: number;
+  login: string;
+  marketplace_pending_change: AppsGetSubscriptionPlanForAccountResponseMarketplacePendingChange;
+  marketplace_purchase: AppsGetSubscriptionPlanForAccountResponseMarketplacePurchase;
+  organization_billing_email: string;
+  type: string;
+  url: string;
 };
 type AppsGetRepoInstallationResponsePermissions = {
   checks: string;
@@ -20115,7 +20492,7 @@ type ActionsListWorkflowRunArtifactsResponse = {
   artifacts: Array<ActionsListWorkflowRunArtifactsResponseArtifactsItem>;
   total_count: number;
 };
-type ActionsListSelfHostedRunnersForRepoResponseItemItem = {
+type ActionsListSelfHostedRunnersForRepoResponseItem = {
   id: number;
   name: string;
   os: string;
@@ -20623,7 +21000,7 @@ type ActionsListDownloadsForSelfHostedRunnerApplicationResponse = Array<
   ActionsListDownloadsForSelfHostedRunnerApplicationResponseItem
 >;
 type ActionsListSelfHostedRunnersForRepoResponse = Array<
-  Array<ActionsListSelfHostedRunnersForRepoResponseItemItem>
+  ActionsListSelfHostedRunnersForRepoResponseItem
 >;
 type ActivityListNotificationsResponse = Array<
   ActivityListNotificationsResponseItem
@@ -20649,6 +21026,12 @@ type ActivityListWatchedReposForAuthenticatedUserResponse = Array<
 type ActivityListWatchersForRepoResponse = Array<
   ActivityListWatchersForRepoResponseItem
 >;
+type AppsListAccountsForPlanResponse = Array<
+  AppsListAccountsForPlanResponseItem
+>;
+type AppsListAccountsForPlanStubbedResponse = Array<
+  AppsListAccountsForPlanStubbedResponseItem
+>;
 type AppsListAccountsUserOrOrgOnPlanResponse = Array<
   AppsListAccountsUserOrOrgOnPlanResponseItem
 >;
@@ -20664,13 +21047,23 @@ type AppsListMarketplacePurchasesForAuthenticatedUserStubbedResponse = Array<
 >;
 type AppsListPlansResponse = Array<AppsListPlansResponseItem>;
 type AppsListPlansStubbedResponse = Array<AppsListPlansStubbedResponseItem>;
+type AppsListSubscriptionsForAuthenticatedUserResponse = Array<
+  AppsListSubscriptionsForAuthenticatedUserResponseItem
+>;
+type AppsListSubscriptionsForAuthenticatedUserStubbedResponse = Array<
+  AppsListSubscriptionsForAuthenticatedUserStubbedResponseItem
+>;
 type ChecksListAnnotationsResponse = Array<ChecksListAnnotationsResponseItem>;
+type CodesOfConductGetAllCodesOfConductResponse = Array<
+  CodesOfConductGetAllCodesOfConductResponseItem
+>;
 type CodesOfConductListConductCodesResponse = Array<
   CodesOfConductListConductCodesResponseItem
 >;
 type GistsListResponse = Array<GistsListResponseItem>;
 type GistsListCommentsResponse = Array<GistsListCommentsResponseItem>;
 type GistsListCommitsResponse = Array<GistsListCommitsResponseItem>;
+type GistsListForUserResponse = Array<GistsListForUserResponseItem>;
 type GistsListForksResponse = Array<GistsListForksResponseItem>;
 type GistsListPublicResponse = Array<GistsListPublicResponseItem>;
 type GistsListPublicForUserResponse = Array<GistsListPublicForUserResponseItem>;
@@ -20709,6 +21102,7 @@ type IssuesListMilestonesForRepoResponse = Array<
   IssuesListMilestonesForRepoResponseItem
 >;
 type IssuesRemoveLabelResponse = Array<IssuesRemoveLabelResponseItem>;
+type IssuesReplaceAllLabelsResponse = Array<IssuesReplaceAllLabelsResponseItem>;
 type IssuesReplaceLabelsResponse = Array<IssuesReplaceLabelsResponseItem>;
 type LicensesListCommonlyUsedResponse = Array<
   LicensesListCommonlyUsedResponseItem
@@ -20902,6 +21296,9 @@ type UsersAddEmailsResponse = Array<UsersAddEmailsResponseItem>;
 type UsersListResponse = Array<UsersListResponseItem>;
 type UsersListBlockedResponse = Array<UsersListBlockedResponseItem>;
 type UsersListEmailsResponse = Array<UsersListEmailsResponseItem>;
+type UsersListFollowedByAuthenticatedResponse = Array<
+  UsersListFollowedByAuthenticatedResponseItem
+>;
 type UsersListFollowersForAuthenticatedUserResponse = Array<
   UsersListFollowersForAuthenticatedUserResponseItem
 >;
@@ -21021,6 +21418,12 @@ export type ActionsListDownloadsForSelfHostedRunnerApplicationParams = {
   repo: string;
 };
 export type ActionsListJobsForWorkflowRunParams = {
+  /**
+   * Filters jobs by their `completed_at` timestamp. Can be one of:
+   * \* `latest`: Returns jobs from the most recent execution of the workflow run.
+   * \* `all`: Returns all jobs for a workflow run, including from old executions of the workflow run.
+   */
+  filter?: "latest" | "all";
   owner: string;
   /**
    * Page number of the results to fetch.
@@ -21549,8 +21952,52 @@ export type AppsGetRepoInstallationParams = {
   owner: string;
   repo: string;
 };
+export type AppsGetSubscriptionPlanForAccountParams = {
+  account_id: number;
+};
+export type AppsGetSubscriptionPlanForAccountStubbedParams = {
+  account_id: number;
+};
 export type AppsGetUserInstallationParams = {
   username: string;
+};
+export type AppsListAccountsForPlanParams = {
+  /**
+   * To return the oldest accounts first, set to `asc`. Can be one of `asc` or `desc`. Ignored without the `sort` parameter.
+   */
+  direction?: "asc" | "desc";
+  /**
+   * Page number of the results to fetch.
+   */
+  page?: number;
+  /**
+   * Results per page (max 100)
+   */
+  per_page?: number;
+  plan_id: number;
+  /**
+   * Sorts the GitHub accounts by the date they were created or last updated. Can be one of `created` or `updated`.
+   */
+  sort?: "created" | "updated";
+};
+export type AppsListAccountsForPlanStubbedParams = {
+  /**
+   * To return the oldest accounts first, set to `asc`. Can be one of `asc` or `desc`. Ignored without the `sort` parameter.
+   */
+  direction?: "asc" | "desc";
+  /**
+   * Page number of the results to fetch.
+   */
+  page?: number;
+  /**
+   * Results per page (max 100)
+   */
+  per_page?: number;
+  plan_id: number;
+  /**
+   * Sorts the GitHub accounts by the date they were created or last updated. Can be one of `created` or `updated`.
+   */
+  sort?: "created" | "updated";
 };
 export type AppsListAccountsUserOrOrgOnPlanParams = {
   /**
@@ -21671,6 +22118,26 @@ export type AppsListReposParams = {
    */
   per_page?: number;
 };
+export type AppsListSubscriptionsForAuthenticatedUserParams = {
+  /**
+   * Page number of the results to fetch.
+   */
+  page?: number;
+  /**
+   * Results per page (max 100)
+   */
+  per_page?: number;
+};
+export type AppsListSubscriptionsForAuthenticatedUserStubbedParams = {
+  /**
+   * Page number of the results to fetch.
+   */
+  page?: number;
+  /**
+   * Results per page (max 100)
+   */
+  per_page?: number;
+};
 export type AppsRemoveRepoFromInstallationParams = {
   installation_id: number;
   repository_id: number;
@@ -21703,7 +22170,7 @@ export type ChecksCreateParams = {
     | "timed_out"
     | "action_required";
   /**
-   * The URL of the integrator's site that has the full details of the check.
+   * The URL of the integrator's site that has the full details of the check. If the integrator does not provide this, then the homepage of the GitHub app is used.
    */
   details_url?: string;
   /**
@@ -21983,6 +22450,21 @@ export type GistsListCommitsParams = {
    * Results per page (max 100)
    */
   per_page?: number;
+};
+export type GistsListForUserParams = {
+  /**
+   * Page number of the results to fetch.
+   */
+  page?: number;
+  /**
+   * Results per page (max 100)
+   */
+  per_page?: number;
+  /**
+   * This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`. Only gists updated at or after this time are returned.
+   */
+  since?: string;
+  username: string;
 };
 export type GistsListForksParams = {
   gist_id: string;
@@ -22733,6 +23215,11 @@ export type IssuesLockParams = {
   owner: string;
   repo: string;
 };
+export type IssuesRemoveAllLabelsParams = {
+  issue_number: number;
+  owner: string;
+  repo: string;
+};
 export type IssuesRemoveAssigneesParams = {
   /**
    * Usernames of assignees to remove from an issue. _NOTE: Only users with push access can remove assignees from an issue. Assignees are silently ignored otherwise._
@@ -22750,6 +23237,15 @@ export type IssuesRemoveLabelParams = {
 };
 export type IssuesRemoveLabelsParams = {
   issue_number: number;
+  owner: string;
+  repo: string;
+};
+export type IssuesReplaceAllLabelsParams = {
+  issue_number: number;
+  /**
+   * The names of the labels to add to the issue. You can pass an empty array to remove all labels. **Note:** Alternatively, you can pass a single label as a `string` or an `array` of labels directly, but GitHub recommends passing an object with the `labels` key.
+   */
+  labels?: string[];
   owner: string;
   repo: string;
 };
@@ -23539,7 +24035,7 @@ export type ProjectsAddCollaboratorParams = {
 export type ProjectsCreateCardParams = {
   column_id: number;
   /**
-   * The issue or pull request id you want to associate with this card. You can use the [List issues for a repository](https://developer.github.com/v3/issues/#list-issues-for-a-repository) and [List pull requests](https://developer.github.com/v3/pulls/#list-pull-requests) endpoints to find this id.
+   * The issue or pull request id you want to associate with this card. You can use the [List repository issues](https://developer.github.com/v3/issues/#list-repository-issues) and [List pull requests](https://developer.github.com/v3/pulls/#list-pull-requests) endpoints to find this id.
    * **Note:** Depending on whether you use the issue id or pull request id, you will need to specify `Issue` or `PullRequest` as the `content_type`.
    */
   content_id?: number;
@@ -24762,7 +25258,7 @@ export type ReposCreateForAuthenticatedUserParams = {
    */
   team_id?: number;
   /**
-   * Can be `public` or `private`. If your organization is associated with an enterprise account using GitHub Enterprise Cloud or GitHub Enterprise Server 2.20+, `visibility` can also be `internal`. For more information, see "[Creating an internal repository](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/about-repository-visibility#about-internal-repositories)" in the GitHub Help documentation.
+   * Can be `public` or `private`. If your organization is associated with an enterprise account using GitHub Enterprise Cloud or GitHub Enterprise Server 2.20+, `visibility` can also be `internal`. For more information, see "[Creating an internal repository](https://help.github.com/github/creating-cloning-and-archiving-repositories/creating-an-internal-repository)" in the GitHub Help documentation.
    * The `visibility` parameter overrides the `private` parameter when you use both parameters with the `nebula-preview` preview header.
    */
   visibility?: "public" | "private" | "visibility" | "internal";
@@ -25060,6 +25556,10 @@ export type ReposEnableVulnerabilityAlertsParams = {
   repo: string;
 };
 export type ReposGetParams = {
+  owner: string;
+  repo: string;
+};
+export type ReposGetAllTopicsParams = {
   owner: string;
   repo: string;
 };
@@ -25484,6 +25984,41 @@ export type ReposListDownloadsParams = {
   per_page?: number;
   repo: string;
 };
+export type ReposListForAuthenticatedUserParams = {
+  /**
+   * Comma-separated list of values. Can include:
+   * \* `owner`: Repositories that are owned by the authenticated user.
+   * \* `collaborator`: Repositories that the user has been added to as a collaborator.
+   * \* `organization_member`: Repositories that the user has access to through being a member of an organization. This includes every repository on every team that the user is on.
+   */
+  affiliation?: string;
+  /**
+   * Can be one of `asc` or `desc`. Default: `asc` when using `full_name`, otherwise `desc`
+   */
+  direction?: "asc" | "desc";
+  /**
+   * Page number of the results to fetch.
+   */
+  page?: number;
+  /**
+   * Results per page (max 100)
+   */
+  per_page?: number;
+  /**
+   * Can be one of `created`, `updated`, `pushed`, `full_name`.
+   */
+  sort?: "created" | "updated" | "pushed" | "full_name";
+  /**
+   * Can be one of `all`, `owner`, `public`, `private`, `member`. Default: `all`
+   *
+   * Will cause a `422` error if used in the same request as **visibility** or **affiliation**. Will cause a `422` error if used in the same request as **visibility** or **affiliation**.
+   */
+  type?: "all" | "owner" | "public" | "private" | "member";
+  /**
+   * Can be one of `all`, `public`, or `private`.
+   */
+  visibility?: "all" | "public" | "private";
+};
 export type ReposListForOrgParams = {
   /**
    * Can be one of `asc` or `desc`. Default: when using `full_name`: `asc`, otherwise `desc`
@@ -25772,6 +26307,14 @@ export type ReposRemoveProtectedBranchUserRestrictionsParams = {
   owner: string;
   repo: string;
   users: string[];
+};
+export type ReposReplaceAllTopicsParams = {
+  /**
+   * An array of topics to add to the repository. Pass one or more topics to _replace_ the set of existing topics. Send an empty array (`[]`) to clear all topics from the repository. **Note:** Topic `names` cannot contain uppercase letters.
+   */
+  names: string[];
+  owner: string;
+  repo: string;
 };
 export type ReposReplaceProtectedBranchAppRestrictionsParams = {
   apps: string[];
@@ -26714,6 +27257,16 @@ export type UsersListEmailsParams = {
    */
   per_page?: number;
 };
+export type UsersListFollowedByAuthenticatedParams = {
+  /**
+   * Page number of the results to fetch.
+   */
+  page?: number;
+  /**
+   * Results per page (max 100)
+   */
+  per_page?: number;
+};
 export type UsersListFollowersForAuthenticatedUserParams = {
   /**
    * Page number of the results to fetch.
@@ -27518,7 +28071,7 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface;
     };
     /**
-     * Lists jobs for a workflow run. Anyone with read access to the repository can use this endpoint. GitHub Apps must have the `actions` permission to use this endpoint.
+     * Lists jobs for a workflow run. Anyone with read access to the repository can use this endpoint. GitHub Apps must have the `actions` permission to use this endpoint. You can use parameters to narrow the list of results. For more information about using parameters, see [Parameters](https://developer.github.com/v3/#parameters).
      */
     listJobsForWorkflowRun: {
       (
@@ -27820,6 +28373,8 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface;
     };
     /**
+     * Lists repositories the authenticated user has starred.
+     *
      * You can also find out _when_ stars were created by passing the following custom [media type](https://developer.github.com/v3/media/) via the `Accept` header:
      */
     listReposStarredByAuthenticatedUser: {
@@ -27833,6 +28388,8 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface;
     };
     /**
+     * Lists repositories a user has starred.
+     *
      * You can also find out _when_ stars were created by passing the following custom [media type](https://developer.github.com/v3/media/) via the `Accept` header:
      */
     listReposStarredByUser: {
@@ -27842,7 +28399,9 @@ export type RestEndpointMethods = {
 
       endpoint: EndpointInterface;
     };
-
+    /**
+     * Lists repositories a user is watching.
+     */
     listReposWatchedByUser: {
       (
         params?: RequestParameters & ActivityListReposWatchedByUserParams
@@ -27860,7 +28419,9 @@ export type RestEndpointMethods = {
 
       endpoint: EndpointInterface;
     };
-
+    /**
+     * Lists repositories the authenticated user is watching.
+     */
     listWatchedReposForAuthenticatedUser: {
       (
         params?: RequestParameters &
@@ -27871,7 +28432,9 @@ export type RestEndpointMethods = {
 
       endpoint: EndpointInterface;
     };
-
+    /**
+     * Lists the people watching the specified repository.
+     */
     listWatchersForRepo: {
       (params?: RequestParameters & ActivityListWatchersForRepoParams): Promise<
         OctokitResponse<ActivityListWatchersForRepoResponse>
@@ -27968,6 +28531,7 @@ export type RestEndpointMethods = {
      * Shows whether the user or organization account actively subscribes to a plan listed by the authenticated GitHub App. When someone submits a plan change that won't be processed until the end of their billing cycle, you will also see the upcoming pending change.
      *
      * GitHub Apps must use a [JWT](https://developer.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint. OAuth Apps must use [basic authentication](https://developer.github.com/v3/auth/#basic-authentication) with their client ID and client secret to access this endpoint.
+     * @deprecated octokit.apps.checkAccountIsAssociatedWithAny() has been renamed to octokit.apps.getSubscriptionPlanForAccount() (2020-03-08)
      */
     checkAccountIsAssociatedWithAny: {
       (
@@ -27980,6 +28544,7 @@ export type RestEndpointMethods = {
      * Shows whether the user or organization account actively subscribes to a plan listed by the authenticated GitHub App. When someone submits a plan change that won't be processed until the end of their billing cycle, you will also see the upcoming pending change.
      *
      * GitHub Apps must use a [JWT](https://developer.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint. OAuth Apps must use [basic authentication](https://developer.github.com/v3/auth/#basic-authentication) with their client ID and client secret to access this endpoint.
+     * @deprecated octokit.apps.checkAccountIsAssociatedWithAnyStubbed() has been renamed to octokit.apps.getSubscriptionPlanForAccountStubbed() (2020-03-08)
      */
     checkAccountIsAssociatedWithAnyStubbed: {
       (
@@ -28134,6 +28699,33 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface;
     };
     /**
+     * Shows whether the user or organization account actively subscribes to a plan listed by the authenticated GitHub App. When someone submits a plan change that won't be processed until the end of their billing cycle, you will also see the upcoming pending change.
+     *
+     * GitHub Apps must use a [JWT](https://developer.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint. OAuth Apps must use [basic authentication](https://developer.github.com/v3/auth/#basic-authentication) with their client ID and client secret to access this endpoint.
+     */
+    getSubscriptionPlanForAccount: {
+      (
+        params?: RequestParameters & AppsGetSubscriptionPlanForAccountParams
+      ): Promise<OctokitResponse<AppsGetSubscriptionPlanForAccountResponse>>;
+
+      endpoint: EndpointInterface;
+    };
+    /**
+     * Shows whether the user or organization account actively subscribes to a plan listed by the authenticated GitHub App. When someone submits a plan change that won't be processed until the end of their billing cycle, you will also see the upcoming pending change.
+     *
+     * GitHub Apps must use a [JWT](https://developer.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint. OAuth Apps must use [basic authentication](https://developer.github.com/v3/auth/#basic-authentication) with their client ID and client secret to access this endpoint.
+     */
+    getSubscriptionPlanForAccountStubbed: {
+      (
+        params?: RequestParameters &
+          AppsGetSubscriptionPlanForAccountStubbedParams
+      ): Promise<
+        OctokitResponse<AppsGetSubscriptionPlanForAccountStubbedResponse>
+      >;
+
+      endpoint: EndpointInterface;
+    };
+    /**
      * Enables an authenticated GitHub App to find the user’s installation information.
      *
      * You must use a [JWT](https://developer.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint.
@@ -28146,9 +28738,34 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface;
     };
     /**
-     * Returns any accounts associated with a plan, including free plans. For per-seat pricing, you see the list of accounts that have purchased the plan, including the number of seats purchased. When someone submits a plan change that won't be processed until the end of their billing cycle, you will also see the upcoming pending change.
+     * Returns user and organization accounts associated with the specified plan, including free plans. For per-seat pricing, you see the list of accounts that have purchased the plan, including the number of seats purchased. When someone submits a plan change that won't be processed until the end of their billing cycle, you will also see the upcoming pending change.
      *
      * GitHub Apps must use a [JWT](https://developer.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint. OAuth Apps must use [basic authentication](https://developer.github.com/v3/auth/#basic-authentication) with their client ID and client secret to access this endpoint.
+     */
+    listAccountsForPlan: {
+      (params?: RequestParameters & AppsListAccountsForPlanParams): Promise<
+        OctokitResponse<AppsListAccountsForPlanResponse>
+      >;
+
+      endpoint: EndpointInterface;
+    };
+    /**
+     * Returns repository and organization accounts associated with the specified plan, including free plans. For per-seat pricing, you see the list of accounts that have purchased the plan, including the number of seats purchased. When someone submits a plan change that won't be processed until the end of their billing cycle, you will also see the upcoming pending change.
+     *
+     * GitHub Apps must use a [JWT](https://developer.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint. OAuth Apps must use [basic authentication](https://developer.github.com/v3/auth/#basic-authentication) with their client ID and client secret to access this endpoint.
+     */
+    listAccountsForPlanStubbed: {
+      (
+        params?: RequestParameters & AppsListAccountsForPlanStubbedParams
+      ): Promise<OctokitResponse<AppsListAccountsForPlanStubbedResponse>>;
+
+      endpoint: EndpointInterface;
+    };
+    /**
+     * Returns user and organization accounts associated with the specified plan, including free plans. For per-seat pricing, you see the list of accounts that have purchased the plan, including the number of seats purchased. When someone submits a plan change that won't be processed until the end of their billing cycle, you will also see the upcoming pending change.
+     *
+     * GitHub Apps must use a [JWT](https://developer.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint. OAuth Apps must use [basic authentication](https://developer.github.com/v3/auth/#basic-authentication) with their client ID and client secret to access this endpoint.
+     * @deprecated octokit.apps.listAccountsUserOrOrgOnPlan() has been renamed to octokit.apps.listAccountsForPlan() (2020-03-04)
      */
     listAccountsUserOrOrgOnPlan: {
       (
@@ -28158,9 +28775,10 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface;
     };
     /**
-     * Returns any accounts associated with a plan, including free plans. For per-seat pricing, you see the list of accounts that have purchased the plan, including the number of seats purchased. When someone submits a plan change that won't be processed until the end of their billing cycle, you will also see the upcoming pending change.
+     * Returns repository and organization accounts associated with the specified plan, including free plans. For per-seat pricing, you see the list of accounts that have purchased the plan, including the number of seats purchased. When someone submits a plan change that won't be processed until the end of their billing cycle, you will also see the upcoming pending change.
      *
      * GitHub Apps must use a [JWT](https://developer.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint. OAuth Apps must use [basic authentication](https://developer.github.com/v3/auth/#basic-authentication) with their client ID and client secret to access this endpoint.
+     * @deprecated octokit.apps.listAccountsUserOrOrgOnPlanStubbed() has been renamed to octokit.apps.listAccountsForPlanStubbed() (2020-03-04)
      */
     listAccountsUserOrOrgOnPlanStubbed: {
       (
@@ -28223,7 +28841,8 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface;
     };
     /**
-     * Returns only active subscriptions. You must use a [user-to-server OAuth access token](https://developer.github.com/apps/building-github-apps/identifying-and-authorizing-users-for-github-apps/#identifying-users-on-your-site), created for a user who has authorized your GitHub App, to access this endpoint. . OAuth Apps must authenticate using an [OAuth token](https://developer.github.com/apps/building-github-apps/authenticating-with-github-apps/).
+     * Lists the active subscriptions for the authenticated user. You must use a [user-to-server OAuth access token](https://developer.github.com/apps/building-github-apps/identifying-and-authorizing-users-for-github-apps/#identifying-users-on-your-site), created for a user who has authorized your GitHub App, to access this endpoint. . OAuth Apps must authenticate using an [OAuth token](https://developer.github.com/apps/building-github-apps/authenticating-with-github-apps/).
+     * @deprecated octokit.apps.listMarketplacePurchasesForAuthenticatedUser() has been renamed to octokit.apps.listSubscriptionsForAuthenticatedUser() (2020-03-08)
      */
     listMarketplacePurchasesForAuthenticatedUser: {
       (
@@ -28238,7 +28857,8 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface;
     };
     /**
-     * Returns only active subscriptions. You must use a [user-to-server OAuth access token](https://developer.github.com/apps/building-github-apps/identifying-and-authorizing-users-for-github-apps/#identifying-users-on-your-site), created for a user who has authorized your GitHub App, to access this endpoint. . OAuth Apps must authenticate using an [OAuth token](https://developer.github.com/apps/building-github-apps/authenticating-with-github-apps/).
+     * Lists the active subscriptions for the authenticated user. You must use a [user-to-server OAuth access token](https://developer.github.com/apps/building-github-apps/identifying-and-authorizing-users-for-github-apps/#identifying-users-on-your-site), created for a user who has authorized your GitHub App, to access this endpoint. . OAuth Apps must authenticate using an [OAuth token](https://developer.github.com/apps/building-github-apps/authenticating-with-github-apps/).
+     * @deprecated octokit.apps.listMarketplacePurchasesForAuthenticatedUserStubbed() has been renamed to octokit.apps.listSubscriptionsForAuthenticatedUserStubbed() (2020-03-08)
      */
     listMarketplacePurchasesForAuthenticatedUserStubbed: {
       (
@@ -28253,6 +28873,8 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface;
     };
     /**
+     * Lists all plans that are part of your GitHub Marketplace listing.
+     *
      * GitHub Apps must use a [JWT](https://developer.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint. OAuth Apps must use [basic authentication](https://developer.github.com/v3/auth/#basic-authentication) with their client ID and client secret to access this endpoint.
      */
     listPlans: {
@@ -28263,6 +28885,8 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface;
     };
     /**
+     * Lists all plans that are part of your GitHub Marketplace listing.
+     *
      * GitHub Apps must use a [JWT](https://developer.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint. OAuth Apps must use [basic authentication](https://developer.github.com/v3/auth/#basic-authentication) with their client ID and client secret to access this endpoint.
      */
     listPlansStubbed: {
@@ -28280,6 +28904,34 @@ export type RestEndpointMethods = {
     listRepos: {
       (params?: RequestParameters & AppsListReposParams): Promise<
         OctokitResponse<AppsListReposResponse>
+      >;
+
+      endpoint: EndpointInterface;
+    };
+    /**
+     * Lists the active subscriptions for the authenticated user. You must use a [user-to-server OAuth access token](https://developer.github.com/apps/building-github-apps/identifying-and-authorizing-users-for-github-apps/#identifying-users-on-your-site), created for a user who has authorized your GitHub App, to access this endpoint. . OAuth Apps must authenticate using an [OAuth token](https://developer.github.com/apps/building-github-apps/authenticating-with-github-apps/).
+     */
+    listSubscriptionsForAuthenticatedUser: {
+      (
+        params?: RequestParameters &
+          AppsListSubscriptionsForAuthenticatedUserParams
+      ): Promise<
+        OctokitResponse<AppsListSubscriptionsForAuthenticatedUserResponse>
+      >;
+
+      endpoint: EndpointInterface;
+    };
+    /**
+     * Lists the active subscriptions for the authenticated user. You must use a [user-to-server OAuth access token](https://developer.github.com/apps/building-github-apps/identifying-and-authorizing-users-for-github-apps/#identifying-users-on-your-site), created for a user who has authorized your GitHub App, to access this endpoint. . OAuth Apps must authenticate using an [OAuth token](https://developer.github.com/apps/building-github-apps/authenticating-with-github-apps/).
+     */
+    listSubscriptionsForAuthenticatedUserStubbed: {
+      (
+        params?: RequestParameters &
+          AppsListSubscriptionsForAuthenticatedUserStubbedParams
+      ): Promise<
+        OctokitResponse<
+          AppsListSubscriptionsForAuthenticatedUserStubbedResponse
+        >
       >;
 
       endpoint: EndpointInterface;
@@ -28450,6 +29102,14 @@ export type RestEndpointMethods = {
     };
   };
   codesOfConduct: {
+    getAllCodesOfConduct: {
+      (params?: RequestParameters & EmptyParams): Promise<
+        OctokitResponse<CodesOfConductGetAllCodesOfConductResponse>
+      >;
+
+      endpoint: EndpointInterface;
+    };
+
     getConductCode: {
       (
         params?: RequestParameters & CodesOfConductGetConductCodeParams
@@ -28467,7 +29127,9 @@ export type RestEndpointMethods = {
 
       endpoint: EndpointInterface;
     };
-
+    /**
+     * @deprecated octokit.codesOfConduct.listConductCodes() has been renamed to octokit.codesOfConduct.getAllCodesOfConduct() (2020-03-04)
+     */
     listConductCodes: {
       (params?: RequestParameters & EmptyParams): Promise<
         OctokitResponse<CodesOfConductListConductCodesResponse>
@@ -28562,7 +29224,9 @@ export type RestEndpointMethods = {
 
       endpoint: EndpointInterface;
     };
-
+    /**
+     * Lists the authenticated user's gists or if called anonymously, this endpoint returns all public gists:
+     */
     list: {
       (params?: RequestParameters & GistsListParams): Promise<
         OctokitResponse<GistsListResponse>
@@ -28586,6 +29250,16 @@ export type RestEndpointMethods = {
 
       endpoint: EndpointInterface;
     };
+    /**
+     * Lists public gists for the specified user:
+     */
+    listForUser: {
+      (params?: RequestParameters & GistsListForUserParams): Promise<
+        OctokitResponse<GistsListForUserResponse>
+      >;
+
+      endpoint: EndpointInterface;
+    };
 
     listForks: {
       (params?: RequestParameters & GistsListForksParams): Promise<
@@ -28595,7 +29269,7 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface;
     };
     /**
-     * List all public gists sorted by most recently updated to least recently updated.
+     * List public gists sorted by most recently updated to least recently updated.
      *
      * Note: With [pagination](https://developer.github.com/v3/#pagination), you can fetch up to 3000 gists. For example, you can fetch 100 pages with 30 gists per page or 30 pages with 100 gists per page.
      */
@@ -28606,7 +29280,10 @@ export type RestEndpointMethods = {
 
       endpoint: EndpointInterface;
     };
-
+    /**
+     * Lists public gists for the specified user:
+     * @deprecated octokit.gists.listPublicForUser() has been renamed to octokit.gists.listForUser() (2020-03-04)
+     */
     listPublicForUser: {
       (params?: RequestParameters & GistsListPublicForUserParams): Promise<
         OctokitResponse<GistsListPublicForUserResponse>
@@ -28755,15 +29432,7 @@ export type RestEndpointMethods = {
 
       endpoint: EndpointInterface;
     };
-    /**
-     * ```
-     * DELETE /repos/octocat/Hello-World/git/refs/heads/feature-a
-     * ```
-     *
-     * ```
-     * DELETE /repos/octocat/Hello-World/git/refs/tags/v1.0
-     * ```
-     */
+
     deleteRef: {
       (params?: RequestParameters & GitDeleteRefParams): Promise<AnyResponse>;
 
@@ -28908,7 +29577,7 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface;
     };
     /**
-     * List all templates available to pass as an option when [creating a repository](https://developer.github.com/v3/repos/#create).
+     * List all templates available to pass as an option when [creating a repository](https://developer.github.com/v3/repos/#create-a-repository-for-the-authenticated-user).
      */
     listTemplates: {
       (params?: RequestParameters & EmptyParams): Promise<
@@ -29133,6 +29802,8 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface;
     };
     /**
+     * List issues assigned to the authenticated user across all visible repositories including owned repositories, member repositories, and organization repositories. You can use the `filter` query parameter to fetch issues that are not necessarily assigned to you. See the [Parameters table](https://developer.github.com/v3/issues/#parameters) for more information.
+     *
      * **Note**: GitHub's REST API v3 considers every pull request an issue, but not every issue is a pull request. For this reason, "Issues" endpoints may return both issues and pull requests in the response. You can identify pull requests by the `pull_request` key.
      *
      * Be aware that the `id` of a pull request returned from "Issues" endpoints will be an _issue id_. To find out the pull request id, use the "[List pull requests](https://developer.github.com/v3/pulls/#list-pull-requests)" endpoint.
@@ -29199,6 +29870,8 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface;
     };
     /**
+     * List issues across owned and member repositories assigned to the authenticated user:
+     *
      * **Note**: GitHub's REST API v3 considers every pull request an issue, but not every issue is a pull request. For this reason, "Issues" endpoints may return both issues and pull requests in the response. You can identify pull requests by the `pull_request` key.
      *
      * Be aware that the `id` of a pull request returned from "Issues" endpoints will be an _issue id_. To find out the pull request id, use the "[List pull requests](https://developer.github.com/v3/pulls/#list-pull-requests)" endpoint.
@@ -29211,6 +29884,8 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface;
     };
     /**
+     * List issues in an organization assigned to the authenticated user.
+     *
      * **Note**: GitHub's REST API v3 considers every pull request an issue, but not every issue is a pull request. For this reason, "Issues" endpoints may return both issues and pull requests in the response. You can identify pull requests by the `pull_request` key.
      *
      * Be aware that the `id` of a pull request returned from "Issues" endpoints will be an _issue id_. To find out the pull request id, use the "[List pull requests](https://developer.github.com/v3/pulls/#list-pull-requests)" endpoint.
@@ -29223,6 +29898,8 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface;
     };
     /**
+     * List issues in a repository.
+     *
      * **Note**: GitHub's REST API v3 considers every pull request an issue, but not every issue is a pull request. For this reason, "Issues" endpoints may return both issues and pull requests in the response. You can identify pull requests by the `pull_request` key.
      *
      * Be aware that the `id` of a pull request returned from "Issues" endpoints will be an _issue id_. To find out the pull request id, use the "[List pull requests](https://developer.github.com/v3/pulls/#list-pull-requests)" endpoint.
@@ -29276,6 +29953,14 @@ export type RestEndpointMethods = {
 
       endpoint: EndpointInterface;
     };
+
+    removeAllLabels: {
+      (params?: RequestParameters & IssuesRemoveAllLabelsParams): Promise<
+        AnyResponse
+      >;
+
+      endpoint: EndpointInterface;
+    };
     /**
      * Removes one or more assignees from an issue.
      *
@@ -29298,7 +29983,9 @@ export type RestEndpointMethods = {
 
       endpoint: EndpointInterface;
     };
-
+    /**
+     * @deprecated octokit.issues.removeLabels() has been renamed to octokit.issues.removeAllLabels() (2020-03-04)
+     */
     removeLabels: {
       (params?: RequestParameters & IssuesRemoveLabelsParams): Promise<
         AnyResponse
@@ -29307,6 +29994,16 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface;
     };
 
+    replaceAllLabels: {
+      (params?: RequestParameters & IssuesReplaceAllLabelsParams): Promise<
+        OctokitResponse<IssuesReplaceAllLabelsResponse>
+      >;
+
+      endpoint: EndpointInterface;
+    };
+    /**
+     * @deprecated octokit.issues.replaceLabels() has been renamed to octokit.issues.replaceAllLabels() (2020-03-04)
+     */
     replaceLabels: {
       (params?: RequestParameters & IssuesReplaceLabelsParams): Promise<
         OctokitResponse<IssuesReplaceLabelsResponse>
@@ -31299,7 +31996,7 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface;
     };
     /**
-     * Creates a new repository for the authenticated user.
+     * Creates a new repository in the specified organization. The authenticated user must be a member of the organization.
      *
      * **OAuth scope requirements**
      *
@@ -31350,7 +32047,7 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface;
     };
     /**
-     * Creates a new repository using a repository template. Use the `template_owner` and `template_repo` route parameters to specify the repository to use as the template. The authenticated user must own or be a member of an organization that owns the repository. To check if a repository is available to use as a template, get the repository's information using the [`GET /repos/:owner/:repo`](https://developer.github.com/v3/repos/#get) endpoint and check that the `is_template` key is `true`.
+     * Creates a new repository using a repository template. Use the `template_owner` and `template_repo` route parameters to specify the repository to use as the template. The authenticated user must own or be a member of an organization that owns the repository. To check if a repository is available to use as a template, get the repository's information using the [Get a repository](https://developer.github.com/v3/repos/#get-a-repository) endpoint and check that the `is_template` key is `true`.
      *
      * **OAuth scope requirements**
      *
@@ -31528,11 +32225,21 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface;
     };
     /**
+     * When you pass the `scarlet-witch-preview` media type, requests to get a repository will also return the repository's code of conduct if it can be detected from the repository's code of conduct file.
+     *
      * The `parent` and `source` objects are present when the repository is a fork. `parent` is the repository this repository was forked from, `source` is the ultimate source for the network.
      */
     get: {
       (params?: RequestParameters & ReposGetParams): Promise<
         OctokitResponse<ReposGetResponse>
+      >;
+
+      endpoint: EndpointInterface;
+    };
+
+    getAllTopics: {
+      (params?: RequestParameters & ReposGetAllTopicsParams): Promise<
+        OctokitResponse<ReposGetAllTopicsResponse>
       >;
 
       endpoint: EndpointInterface;
@@ -32017,6 +32724,7 @@ export type RestEndpointMethods = {
      * Lists repositories that the authenticated user has explicit permission (`:read`, `:write`, or `:admin`) to access.
      *
      * The authenticated user has explicit permission to access repositories they own, repositories where they are a collaborator, and repositories that they can access through an organization membership.
+     * @deprecated octokit.repos.list() has been renamed to octokit.repos.listForAuthenticatedUser() (2020-03-04)
      */
     list: {
       (params?: RequestParameters & ReposListParams): Promise<AnyResponse>;
@@ -32160,6 +32868,18 @@ export type RestEndpointMethods = {
       (params?: RequestParameters & ReposListDownloadsParams): Promise<
         OctokitResponse<ReposListDownloadsResponse>
       >;
+
+      endpoint: EndpointInterface;
+    };
+    /**
+     * Lists repositories that the authenticated user has explicit permission (`:read`, `:write`, or `:admin`) to access.
+     *
+     * The authenticated user has explicit permission to access repositories they own, repositories where they are a collaborator, and repositories that they can access through an organization membership.
+     */
+    listForAuthenticatedUser: {
+      (
+        params?: RequestParameters & ReposListForAuthenticatedUserParams
+      ): Promise<AnyResponse>;
 
       endpoint: EndpointInterface;
     };
@@ -32320,7 +33040,9 @@ export type RestEndpointMethods = {
 
       endpoint: EndpointInterface;
     };
-
+    /**
+     * @deprecated octokit.repos.listTopics() has been renamed to octokit.repos.getAllTopics() (2020-03-04)
+     */
     listTopics: {
       (params?: RequestParameters & ReposListTopicsParams): Promise<
         OctokitResponse<ReposListTopicsResponse>
@@ -32503,6 +33225,14 @@ export type RestEndpointMethods = {
 
       endpoint: EndpointInterface;
     };
+
+    replaceAllTopics: {
+      (params?: RequestParameters & ReposReplaceAllTopicsParams): Promise<
+        OctokitResponse<ReposReplaceAllTopicsResponse>
+      >;
+
+      endpoint: EndpointInterface;
+    };
     /**
      * Protected branches are available in public repositories with GitHub Free, and in public and private repositories with GitHub Pro, GitHub Team, and GitHub Enterprise Cloud. For more information, see [GitHub's products](https://help.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
      *
@@ -32575,7 +33305,9 @@ export type RestEndpointMethods = {
 
       endpoint: EndpointInterface;
     };
-
+    /**
+     * @deprecated octokit.repos.replaceTopics() has been renamed to octokit.repos.replaceAllTopics() (2020-03-04)
+     */
     replaceTopics: {
       (params?: RequestParameters & ReposReplaceTopicsParams): Promise<
         OctokitResponse<ReposReplaceTopicsResponse>
@@ -32628,7 +33360,7 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface;
     };
     /**
-     * **Note**: To edit a repository's topics, use the [`topics` endpoint](https://developer.github.com/v3/repos/#replace-all-topics-for-a-repository).
+     * **Note**: To edit a repository's topics, use the [Replace all repository topics](https://developer.github.com/v3/repos/#replace-all-repository-topics) endpoint.
      */
     update: {
       (params?: RequestParameters & ReposUpdateParams): Promise<
@@ -33482,7 +34214,19 @@ export type RestEndpointMethods = {
 
       endpoint: EndpointInterface;
     };
+    /**
+     * Lists the people who the authenticated user follows.
+     */
+    listFollowedByAuthenticated: {
+      (
+        params?: RequestParameters & UsersListFollowedByAuthenticatedParams
+      ): Promise<OctokitResponse<UsersListFollowedByAuthenticatedResponse>>;
 
+      endpoint: EndpointInterface;
+    };
+    /**
+     * Lists the people following the authenticated user.
+     */
     listFollowersForAuthenticatedUser: {
       (
         params?: RequestParameters &
@@ -33493,7 +34237,9 @@ export type RestEndpointMethods = {
 
       endpoint: EndpointInterface;
     };
-
+    /**
+     * Lists the people following the specified user.
+     */
     listFollowersForUser: {
       (params?: RequestParameters & UsersListFollowersForUserParams): Promise<
         OctokitResponse<UsersListFollowersForUserResponse>
@@ -33501,7 +34247,10 @@ export type RestEndpointMethods = {
 
       endpoint: EndpointInterface;
     };
-
+    /**
+     * Lists the people who the authenticated user follows.
+     * @deprecated octokit.users.listFollowingForAuthenticatedUser() has been renamed to octokit.users.listFollowedByAuthenticated() (2020-03-04)
+     */
     listFollowingForAuthenticatedUser: {
       (
         params?: RequestParameters &
@@ -33512,7 +34261,9 @@ export type RestEndpointMethods = {
 
       endpoint: EndpointInterface;
     };
-
+    /**
+     * Lists the people who the specified user follows.
+     */
     listFollowingForUser: {
       (params?: RequestParameters & UsersListFollowingForUserParams): Promise<
         OctokitResponse<UsersListFollowingForUserResponse>
