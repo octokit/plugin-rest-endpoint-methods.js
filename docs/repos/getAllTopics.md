@@ -1,7 +1,7 @@
-# Get a repository subscription
+# Get all repository topics
 
 ```js
-octokit.activity.getRepoSubscription({
+octokit.repos.getAllTopics({
   owner,
   repo
 });

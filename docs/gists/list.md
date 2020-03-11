@@ -1,4 +1,6 @@
-# List the authenticated user's gists or if called anonymously, this will return all public gists
+# List gists for the authenticated user
+
+Lists the authenticated user's gists or if called anonymously, this endpoint returns all public gists:
 
 ```js
 octokit.gists.list();

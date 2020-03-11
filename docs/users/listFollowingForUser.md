@@ -1,4 +1,6 @@
-# List who a user is following
+# List users followed by another user
+
+Lists the people who the specified user follows.
 
 ```js
 octokit.users.listFollowingForUser({

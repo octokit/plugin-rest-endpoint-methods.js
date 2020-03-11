@@ -1,13 +1,5 @@
 # Delete a reference
 
-```
-DELETE /repos/octocat/Hello-World/git/refs/heads/feature-a
-```
-
-```
-DELETE /repos/octocat/Hello-World/git/refs/tags/v1.0
-```
-
 ```js
 octokit.git.deleteRef({
   owner,

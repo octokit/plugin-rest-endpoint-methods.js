@@ -1,4 +1,4 @@
-# List user repositories
+# List repositories for a user
 
 Lists public repositories for the specified user.
 

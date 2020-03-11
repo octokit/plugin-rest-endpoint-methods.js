@@ -1,6 +1,6 @@
 # Listing available templates
 
-List all templates available to pass as an option when [creating a repository](https://developer.github.com/v3/repos/#create).
+List all templates available to pass as an option when [creating a repository](https://developer.github.com/v3/repos/#create-a-repository-for-the-authenticated-user).
 
 ```js
 octokit.gitignore.listTemplates();

@@ -1,4 +1,6 @@
-# List repositories being watched by the authenticated user
+# List repositories watched by the authenticated user
+
+Lists repositories the authenticated user is watching.
 
 ```js
 octokit.activity.listWatchedReposForAuthenticatedUser();

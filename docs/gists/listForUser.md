@@ -1,9 +1,9 @@
-# List repositories watched by a user
+# List gists for a user
 
-Lists repositories a user is watching.
+Lists public gists for the specified user:
 
 ```js
-octokit.activity.listReposWatchedByUser({
+octokit.gists.listForUser({
   username
 });
 ```
@@ -22,6 +22,11 @@ octokit.activity.listReposWatchedByUser({
     <tr><td>username</td><td>yes</td><td>
 
 username parameter
+
+</td></tr>
+<tr><td>since</td><td>no</td><td>
+
+This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`. Only gists updated at or after this time are returned.
 
 </td></tr>
 <tr><td>per_page</td><td>no</td><td>

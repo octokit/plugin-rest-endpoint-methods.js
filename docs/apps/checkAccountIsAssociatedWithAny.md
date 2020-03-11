@@ -1,4 +1,6 @@
-# Check if a GitHub account is associated with any Marketplace listing
+# Get a subscription plan for an account
+
+**Deprecated:** This method has been renamed to apps.getSubscriptionPlanForAccount
 
 Shows whether the user or organization account actively subscribes to a plan listed by the authenticated GitHub App. When someone submits a plan change that won't be processed until the end of their billing cycle, you will also see the upcoming pending change.
 

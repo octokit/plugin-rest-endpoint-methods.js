@@ -1,9 +1,10 @@
-# Get a repository subscription
+# Remove all labels from an issue
 
 ```js
-octokit.activity.getRepoSubscription({
+octokit.issues.removeAllLabels({
   owner,
-  repo
+  repo,
+  issue_number
 });
 ```
 
@@ -26,6 +27,11 @@ owner parameter
 <tr><td>repo</td><td>yes</td><td>
 
 repo parameter
+
+</td></tr>
+<tr><td>issue_number</td><td>yes</td><td>
+
+issue_number parameter
 
 </td></tr>
   </tbody>

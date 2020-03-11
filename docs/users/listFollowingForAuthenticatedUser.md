@@ -1,4 +1,8 @@
-# List who the authenticated user is following
+# List users followed by the authenticated user
+
+**Deprecated:** This method has been renamed to users.listFollowedByAuthenticated
+
+Lists the people who the authenticated user follows.
 
 ```js
 octokit.users.listFollowingForAuthenticatedUser();

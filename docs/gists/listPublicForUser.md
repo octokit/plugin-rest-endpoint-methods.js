@@ -1,4 +1,8 @@
-# List public gists for the specified user
+# List gists for a user
+
+**Deprecated:** This method has been renamed to gists.listForUser
+
+Lists public gists for the specified user:
 
 ```js
 octokit.gists.listPublicForUser({

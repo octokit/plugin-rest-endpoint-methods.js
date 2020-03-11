@@ -1,9 +1,10 @@
-# Get a repository subscription
+# Replace all repository topics
 
 ```js
-octokit.activity.getRepoSubscription({
+octokit.repos.replaceAllTopics({
   owner,
-  repo
+  repo,
+  names
 });
 ```
 
@@ -26,6 +27,11 @@ owner parameter
 <tr><td>repo</td><td>yes</td><td>
 
 repo parameter
+
+</td></tr>
+<tr><td>names</td><td>yes</td><td>
+
+An array of topics to add to the repository. Pass one or more topics to _replace_ the set of existing topics. Send an empty array (`[]`) to clear all topics from the repository. **Note:** Topic `names` cannot contain uppercase letters.
 
 </td></tr>
   </tbody>
