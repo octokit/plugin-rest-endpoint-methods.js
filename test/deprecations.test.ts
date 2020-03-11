@@ -6,56 +6,52 @@ import { restEndpointMethods } from "../src";
 // All the commented out tests are no longer valid as the methods/parameters
 // have been removed. We keep them here for future reference
 describe("Deprecations", () => {
-  it("There are no deprecations", () => {
-    expect("ok").toBeTruthy();
+  it("renamed method", async () => {
+    const mock = fetchMock.sandbox().deleteOnce("path:/reactions/1", 204);
+    const MyOctokit = Octokit.plugin(restEndpointMethods);
+    let warnCalledCount = 0;
+    const octokit = new MyOctokit({
+      request: {
+        fetch: mock
+      },
+      log: {
+        warn: (deprecation: Error) => {
+          warnCalledCount++;
+          expect(deprecation).toMatch(
+            "octokit.reactions.delete() has been renamed to octokit.reactions.deleteLegacy()"
+          );
+        }
+      }
+    });
+    // See https://developer.github.com/v3/reactions/#delete-a-reaction-legacy
+    await octokit.reactions.delete({ reaction_id: 1 });
+
+    expect(warnCalledCount).toEqual(1);
   });
 
-  // it("renamed method", async () => {
-  //   const mock = fetchMock.sandbox().get("path:/licenses", []);
-  //   const MyOctokit = Octokit.plugin(restEndpointMethods);
-  //   let warnCalledCount = 0;
-  //   const octokit = new MyOctokit({
-  //     request: {
-  //       fetch: mock
-  //     },
-  //     log: {
-  //       warn: (deprecation: Error) => {
-  //         warnCalledCount++;
-  //         expect(deprecation).toMatch(
-  //           "octokit.licenses.list() has been renamed to octokit.licenses.listCommonlyUsed()"
-  //         );
-  //       }
-  //     }
-  //   });
-  //   // See https://developer.github.com/v3/licenses/#list-commonly-used-licenses
-  //   const { data } = await octokit.licenses.list();
-  //   expect(data).toStrictEqual([]);
-  //   expect(warnCalledCount).toEqual(1);
-  // });
-  // it("deprecated method", async () => {
-  //   const mock = fetchMock
-  //     .sandbox()
-  //     .postOnce("path:/authorizations", { ok: true });
-  //   const MyOctokit = Octokit.plugin(restEndpointMethods);
-  //   let warnCalledCount = 0;
-  //   const octokit = new MyOctokit({
-  //     request: {
-  //       fetch: mock
-  //     },
-  //     log: {
-  //       warn: (deprecation: Error) => {
-  //         warnCalledCount++;
-  //         expect(deprecation).toMatch(
-  //           "octokit.oauthAuthorizations.createAuthorization() is deprecated, see https://developer.github.com/v3/oauth_authorizations/#create-a-new-authorization"
-  //         );
-  //       }
-  //     }
-  //   });
-  //   // See https://developer.github.com/v3/licenses/#list-commonly-used-licenses
-  //   const { data } = await octokit.oauthAuthorizations.createAuthorization();
-  //   expect(data).toStrictEqual({ ok: true });
-  //   expect(warnCalledCount).toEqual(1);
-  // });
+  it("deprecated method", async () => {
+    const mock = fetchMock.sandbox().deleteOnce("path:/reactions/1", 204);
+    const MyOctokit = Octokit.plugin(restEndpointMethods);
+    let warnCalledCount = 0;
+    const octokit = new MyOctokit({
+      request: {
+        fetch: mock
+      },
+      log: {
+        warn: (deprecation: Error) => {
+          warnCalledCount++;
+          expect(deprecation).toMatch(
+            "octokit.reactions.deleteLegacy() is deprecated, see https://developer.github.com/v3/reactions/#delete-a-reaction-legacy"
+          );
+        }
+      }
+    });
+    // See https://developer.github.com/v3/reactions/#delete-a-reaction-legacy
+    await octokit.reactions.deleteLegacy({ reaction_id: 1 });
+
+    expect(warnCalledCount).toEqual(1);
+  });
+
   // it("deprecated parameter", async () => {
   //   const mock = fetchMock
   //     .sandbox()
