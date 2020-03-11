@@ -1,6 +1,6 @@
 # List jobs for a workflow run
 
-Lists jobs for a workflow run. Anyone with read access to the repository can use this endpoint. GitHub Apps must have the `actions` permission to use this endpoint.
+Lists jobs for a workflow run. Anyone with read access to the repository can use this endpoint. GitHub Apps must have the `actions` permission to use this endpoint. You can use parameters to narrow the list of results. For more information about using parameters, see [Parameters](https://developer.github.com/v3/#parameters).
 
 ```js
 octokit.actions.listJobsForWorkflowRun({
@@ -34,6 +34,13 @@ repo parameter
 <tr><td>run_id</td><td>yes</td><td>
 
 run_id parameter
+
+</td></tr>
+<tr><td>filter</td><td>no</td><td>
+
+Filters jobs by their `completed_at` timestamp. Can be one of:  
+\* `latest`: Returns jobs from the most recent execution of the workflow run.  
+\* `all`: Returns all jobs for a workflow run, including from old executions of the workflow run.
 
 </td></tr>
 <tr><td>per_page</td><td>no</td><td>

@@ -1,4 +1,6 @@
-# List the authenticated user's followers
+# List followers of the authenticated user
+
+Lists the people following the authenticated user.
 
 ```js
 octokit.users.listFollowersForAuthenticatedUser();

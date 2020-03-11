@@ -1,4 +1,6 @@
-# List all topics for a repository
+# Get all repository topics
+
+**Deprecated:** This method has been renamed to repos.getAllTopics
 
 ```js
 octokit.repos.listTopics({

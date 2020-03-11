@@ -1,6 +1,6 @@
-# Creates a new repository in the specified organization
+# Create an organization repository
 
-Creates a new repository for the authenticated user.
+Creates a new repository in the specified organization. The authenticated user must be a member of the organization.
 
 **OAuth scope requirements**
 

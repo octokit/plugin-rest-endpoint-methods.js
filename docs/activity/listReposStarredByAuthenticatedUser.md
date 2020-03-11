@@ -1,4 +1,6 @@
-# List repositories being starred by the authenticated user
+# List repositories starred by the authenticated user
+
+Lists repositories the authenticated user has starred.
 
 You can also find out _when_ stars were created by passing the following custom [media type](https://developer.github.com/v3/media/) via the `Accept` header:
 

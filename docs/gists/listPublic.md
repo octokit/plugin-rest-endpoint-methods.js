@@ -1,6 +1,6 @@
-# List all public gists
+# List public gists
 
-List all public gists sorted by most recently updated to least recently updated.
+List public gists sorted by most recently updated to least recently updated.
 
 Note: With [pagination](https://developer.github.com/v3/#pagination), you can fetch up to 3000 gists. For example, you can fetch 100 pages with 30 gists per page or 30 pages with 100 gists per page.
 

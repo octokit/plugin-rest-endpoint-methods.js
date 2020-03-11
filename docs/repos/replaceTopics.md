@@ -1,4 +1,6 @@
-# Replace all topics for a repository
+# Replace all repository topics
+
+**Deprecated:** This method has been renamed to repos.replaceAllTopics
 
 ```js
 octokit.repos.replaceTopics({

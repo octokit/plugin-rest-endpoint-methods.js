@@ -1,9 +1,7 @@
 # List all codes of conduct
 
-**Deprecated:** This method has been renamed to codesOfConduct.getAllCodesOfConduct
-
 ```js
-octokit.codesOfConduct.listConductCodes();
+octokit.codesOfConduct.getAllCodesOfConduct();
 ```
 
 ## Parameters

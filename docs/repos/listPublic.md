@@ -1,4 +1,4 @@
-# List all public repositories
+# List public repositories
 
 Lists all public repositories in the order that they were created.
 

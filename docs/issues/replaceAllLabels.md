@@ -1,9 +1,7 @@
-# Remove all labels from an issue
-
-**Deprecated:** This method has been renamed to issues.removeAllLabels
+# Replace all labels for an issue
 
 ```js
-octokit.issues.removeLabels({
+octokit.issues.replaceAllLabels({
   owner,
   repo,
   issue_number
@@ -34,6 +32,11 @@ repo parameter
 <tr><td>issue_number</td><td>yes</td><td>
 
 issue_number parameter
+
+</td></tr>
+<tr><td>labels</td><td>no</td><td>
+
+The names of the labels to add to the issue. You can pass an empty array to remove all labels. **Note:** Alternatively, you can pass a single label as a `string` or an `array` of labels directly, but GitHub recommends passing an object with the `labels` key.
 
 </td></tr>
   </tbody>

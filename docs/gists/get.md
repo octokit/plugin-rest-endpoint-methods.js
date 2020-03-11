@@ -1,4 +1,4 @@
-# Get a single gist
+# Get a gist
 
 ```js
 octokit.gists.get({

@@ -1,11 +1,13 @@
-# List plans
+# Get a subscription plan for an account (stubbed)
 
-Lists all plans that are part of your GitHub Marketplace listing.
+Shows whether the user or organization account actively subscribes to a plan listed by the authenticated GitHub App. When someone submits a plan change that won't be processed until the end of their billing cycle, you will also see the upcoming pending change.
 
 GitHub Apps must use a [JWT](https://developer.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint. OAuth Apps must use [basic authentication](https://developer.github.com/v3/auth/#basic-authentication) with their client ID and client secret to access this endpoint.
 
 ```js
-octokit.apps.listPlans();
+octokit.apps.getSubscriptionPlanForAccountStubbed({
+  account_id
+});
 ```
 
 ## Parameters
@@ -19,14 +21,9 @@ octokit.apps.listPlans();
     </tr>
   </thead>
   <tbody>
-    <tr><td>per_page</td><td>no</td><td>
+    <tr><td>account_id</td><td>yes</td><td>
 
-Results per page (max 100)
-
-</td></tr>
-<tr><td>page</td><td>no</td><td>
-
-Page number of the results to fetch.
+account_id parameter
 
 </td></tr>
   </tbody>

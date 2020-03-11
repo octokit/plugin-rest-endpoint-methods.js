@@ -58,7 +58,7 @@ The SHA of the commit.
 </td></tr>
 <tr><td>details_url</td><td>no</td><td>
 
-The URL of the integrator's site that has the full details of the check.
+The URL of the integrator's site that has the full details of the check. If the integrator does not provide this, then the homepage of the GitHub app is used.
 
 </td></tr>
 <tr><td>external_id</td><td>no</td><td>

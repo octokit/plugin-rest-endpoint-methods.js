@@ -1,6 +1,6 @@
-# Edit
+# Update a repository
 
-**Note**: To edit a repository's topics, use the [`topics` endpoint](https://developer.github.com/v3/repos/#replace-all-topics-for-a-repository).
+**Note**: To edit a repository's topics, use the [Replace all repository topics](https://developer.github.com/v3/repos/#replace-all-repository-topics) endpoint.
 
 ```js
 octokit.repos.update({

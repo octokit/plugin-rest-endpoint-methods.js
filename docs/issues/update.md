@@ -1,4 +1,4 @@
-# Edit an issue
+# Update an issue
 
 Issue owners and users with push access can edit an issue.
 

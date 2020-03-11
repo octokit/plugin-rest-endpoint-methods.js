@@ -1,4 +1,6 @@
-# List all issues across owned and member repositories assigned to the authenticated user
+# List user account issues assigned to the authenticated user
+
+List issues across owned and member repositories assigned to the authenticated user:
 
 **Note**: GitHub's REST API v3 considers every pull request an issue, but not every issue is a pull request. For this reason, "Issues" endpoints may return both issues and pull requests in the response. You can identify pull requests by the `pull_request` key.
 

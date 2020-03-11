@@ -1,5 +1,7 @@
 # Replace all labels for an issue
 
+**Deprecated:** This method has been renamed to issues.replaceAllLabels
+
 ```js
 octokit.issues.replaceLabels({
   owner,

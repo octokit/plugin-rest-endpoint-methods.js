@@ -1,11 +1,9 @@
-# List repositories watched by a user
+# List users followed by the authenticated user
 
-Lists repositories a user is watching.
+Lists the people who the authenticated user follows.
 
 ```js
-octokit.activity.listReposWatchedByUser({
-  username
-});
+octokit.users.listFollowedByAuthenticated();
 ```
 
 ## Parameters
@@ -19,12 +17,7 @@ octokit.activity.listReposWatchedByUser({
     </tr>
   </thead>
   <tbody>
-    <tr><td>username</td><td>yes</td><td>
-
-username parameter
-
-</td></tr>
-<tr><td>per_page</td><td>no</td><td>
+    <tr><td>per_page</td><td>no</td><td>
 
 Results per page (max 100)
 

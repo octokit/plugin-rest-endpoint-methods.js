@@ -1,6 +1,6 @@
-# Create repository using a repository template
+# Create a repository using a template
 
-Creates a new repository using a repository template. Use the `template_owner` and `template_repo` route parameters to specify the repository to use as the template. The authenticated user must own or be a member of an organization that owns the repository. To check if a repository is available to use as a template, get the repository's information using the [`GET /repos/:owner/:repo`](https://developer.github.com/v3/repos/#get) endpoint and check that the `is_template` key is `true`.
+Creates a new repository using a repository template. Use the `template_owner` and `template_repo` route parameters to specify the repository to use as the template. The authenticated user must own or be a member of an organization that owns the repository. To check if a repository is available to use as a template, get the repository's information using the [Get a repository](https://developer.github.com/v3/repos/#get-a-repository) endpoint and check that the `is_template` key is `true`.
 
 **OAuth scope requirements**
 
