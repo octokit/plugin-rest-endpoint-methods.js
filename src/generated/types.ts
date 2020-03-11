@@ -21179,10 +21179,6 @@ export type ActivityCheckStarringRepoParams = {
   owner: string;
   repo: string;
 };
-export type ActivityCheckWatchingRepoLegacyParams = {
-  owner: string;
-  repo: string;
-};
 export type ActivityDeleteRepoSubscriptionParams = {
   owner: string;
   repo: string;
@@ -21477,15 +21473,7 @@ export type ActivityStarRepoParams = {
   owner: string;
   repo: string;
 };
-export type ActivityStopWatchingRepoLegacyParams = {
-  owner: string;
-  repo: string;
-};
 export type ActivityUnstarRepoParams = {
-  owner: string;
-  repo: string;
-};
-export type ActivityWatchRepoLegacyParams = {
   owner: string;
   repo: string;
 };
@@ -27660,16 +27648,6 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface;
     };
     /**
-     * Requires for the user to be authenticated.
-     */
-    checkWatchingRepoLegacy: {
-      (
-        params?: RequestParameters & ActivityCheckWatchingRepoLegacyParams
-      ): Promise<AnyResponse>;
-
-      endpoint: EndpointInterface;
-    };
-    /**
      * This endpoint should only be used to stop watching a repository. To control whether or not you wish to receive notifications from a repository, [set the repository's subscription manually](https://developer.github.com/v3/activity/watching/#set-a-repository-subscription).
      */
     deleteRepoSubscription: {
@@ -27965,30 +27943,8 @@ export type RestEndpointMethods = {
     /**
      * Requires for the user to be authenticated.
      */
-    stopWatchingRepoLegacy: {
-      (
-        params?: RequestParameters & ActivityStopWatchingRepoLegacyParams
-      ): Promise<AnyResponse>;
-
-      endpoint: EndpointInterface;
-    };
-    /**
-     * Requires for the user to be authenticated.
-     */
     unstarRepo: {
       (params?: RequestParameters & ActivityUnstarRepoParams): Promise<
-        AnyResponse
-      >;
-
-      endpoint: EndpointInterface;
-    };
-    /**
-     * Requires the user to be authenticated.
-     *
-     * Note that you'll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see "[HTTP verbs](https://developer.github.com/v3/#http-verbs)."
-     */
-    watchRepoLegacy: {
-      (params?: RequestParameters & ActivityWatchRepoLegacyParams): Promise<
         AnyResponse
       >;
 
