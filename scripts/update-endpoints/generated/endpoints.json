@@ -1444,7 +1444,7 @@
   {
     "name": "List all codes of conduct",
     "scope": "codesOfConduct",
-    "id": "listConductCodes",
+    "id": "getAllCodesOfConduct",
     "method": "GET",
     "url": "/codes_of_conduct",
     "isDeprecated": false,
@@ -1472,6 +1472,43 @@
       }
     ],
     "renamed": null
+  },
+  {
+    "name": "List all codes of conduct",
+    "scope": "codesOfConduct",
+    "id": "listConductCodes",
+    "method": "GET",
+    "url": "/codes_of_conduct",
+    "isDeprecated": false,
+    "isLegacy": false,
+    "description": "",
+    "documentationUrl": "https://developer.github.com/v3/codes_of_conduct/#list-all-codes-of-conduct",
+    "previews": [{ "name": "scarlet-witch" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.scarlet-witch-preview+json",
+        "required": true
+      }
+    ],
+    "parameters": [],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "examples": [
+          {
+            "data": "[{\"key\":\"citizen_code_of_conduct\",\"name\":\"Citizen Code of Conduct\",\"url\":\"https://api.github.com/codes_of_conduct/citizen_code_of_conduct\"},{\"key\":\"contributor_covenant\",\"name\":\"Contributor Covenant\",\"url\":\"https://api.github.com/codes_of_conduct/contributor_covenant\"}]"
+          }
+        ]
+      }
+    ],
+    "renamed": {
+      "before": { "scope": "codesOfConduct", "id": "listConductCodes" },
+      "after": { "scope": "codesOfConduct", "id": "getAllCodesOfConduct" },
+      "date": "2020-03-04",
+      "note": "\"codes-of-conduct/list-conduct-codes\" operation ID is now \"codes-of-conduct/get-all-codes-of-conduct\""
+    }
   },
   {
     "name": "Get an individual code of conduct",
@@ -1677,15 +1714,15 @@
     "renamed": null
   },
   {
-    "name": "List the authenticated user's gists or if called anonymously, this will return all public gists",
+    "name": "List gists for the authenticated user",
     "scope": "gists",
     "id": "list",
     "method": "GET",
     "url": "/gists",
     "isDeprecated": false,
     "isLegacy": false,
-    "description": "",
-    "documentationUrl": "https://developer.github.com/v3/gists/#list-a-users-gists",
+    "description": "Lists the authenticated user's gists or if called anonymously, this endpoint returns all public gists:",
+    "documentationUrl": "https://developer.github.com/v3/gists/#list-gists-for-the-authenticated-user",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -1822,15 +1859,15 @@
     "renamed": null
   },
   {
-    "name": "List all public gists",
+    "name": "List public gists",
     "scope": "gists",
     "id": "listPublic",
     "method": "GET",
     "url": "/gists/public",
     "isDeprecated": false,
     "isLegacy": false,
-    "description": "List all public gists sorted by most recently updated to least recently updated.\n\nNote: With [pagination](https://developer.github.com/v3/#pagination), you can fetch up to 3000 gists. For example, you can fetch 100 pages with 30 gists per page or 30 pages with 100 gists per page.",
-    "documentationUrl": "https://developer.github.com/v3/gists/#list-all-public-gists",
+    "description": "List public gists sorted by most recently updated to least recently updated.\n\nNote: With [pagination](https://developer.github.com/v3/#pagination), you can fetch up to 3000 gists. For example, you can fetch 100 pages with 30 gists per page or 30 pages with 100 gists per page.",
+    "documentationUrl": "https://developer.github.com/v3/gists/#list-public-gists",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -1954,7 +1991,7 @@
     "renamed": null
   },
   {
-    "name": "Get a single gist",
+    "name": "Get a gist",
     "scope": "gists",
     "id": "get",
     "method": "GET",
@@ -1962,7 +1999,7 @@
     "isDeprecated": false,
     "isLegacy": false,
     "description": "",
-    "documentationUrl": "https://developer.github.com/v3/gists/#get-a-single-gist",
+    "documentationUrl": "https://developer.github.com/v3/gists/#get-a-gist",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -1994,7 +2031,7 @@
     "renamed": null
   },
   {
-    "name": "Edit a gist",
+    "name": "Update a gist",
     "scope": "gists",
     "id": "update",
     "method": "PATCH",
@@ -2002,7 +2039,7 @@
     "isDeprecated": false,
     "isLegacy": false,
     "description": "Allows you to update or delete a gist file and rename gist files. Files from the previous version of the gist that aren't explicitly changed during an edit are unchanged.",
-    "documentationUrl": "https://developer.github.com/v3/gists/#edit-a-gist",
+    "documentationUrl": "https://developer.github.com/v3/gists/#update-a-gist",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -2719,7 +2756,7 @@
     "url": "/gitignore/templates",
     "isDeprecated": false,
     "isLegacy": false,
-    "description": "List all templates available to pass as an option when [creating a repository](https://developer.github.com/v3/repos/#create).",
+    "description": "List all templates available to pass as an option when [creating a repository](https://developer.github.com/v3/repos/#create-a-repository-for-the-authenticated-user).",
     "documentationUrl": "https://developer.github.com/v3/gitignore/#listing-available-templates",
     "previews": [],
     "headers": [],
@@ -2859,15 +2896,15 @@
     "renamed": null
   },
   {
-    "name": "List all issues assigned to the authenticated user across all visible repositories including owned repositories, member repositories, and organization repositories",
+    "name": "List issues assigned to the authenticated user",
     "scope": "issues",
     "id": "list",
     "method": "GET",
     "url": "/issues",
     "isDeprecated": false,
     "isLegacy": false,
-    "description": "**Note**: GitHub's REST API v3 considers every pull request an issue, but not every issue is a pull request. For this reason, \"Issues\" endpoints may return both issues and pull requests in the response. You can identify pull requests by the `pull_request` key.\n\nBe aware that the `id` of a pull request returned from \"Issues\" endpoints will be an _issue id_. To find out the pull request id, use the \"[List pull requests](https://developer.github.com/v3/pulls/#list-pull-requests)\" endpoint.\n\n",
-    "documentationUrl": "https://developer.github.com/v3/issues/#list-issues",
+    "description": "List issues assigned to the authenticated user across all visible repositories including owned repositories, member repositories, and organization repositories. You can use the `filter` query parameter to fetch issues that are not necessarily assigned to you. See the [Parameters table](https://developer.github.com/v3/issues/#parameters) for more information.\n\n**Note**: GitHub's REST API v3 considers every pull request an issue, but not every issue is a pull request. For this reason, \"Issues\" endpoints may return both issues and pull requests in the response. You can identify pull requests by the `pull_request` key.\n\nBe aware that the `id` of a pull request returned from \"Issues\" endpoints will be an _issue id_. To find out the pull request id, use the \"[List pull requests](https://developer.github.com/v3/pulls/#list-pull-requests)\" endpoint.\n\n",
+    "documentationUrl": "https://developer.github.com/v3/issues/#list-issues-assigned-to-the-authenticated-user",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -3438,7 +3475,47 @@
     "renamed": null
   },
   {
-    "name": "Check if a GitHub account is associated with any Marketplace listing",
+    "name": "Get a subscription plan for an account",
+    "scope": "apps",
+    "id": "getSubscriptionPlanForAccount",
+    "method": "GET",
+    "url": "/marketplace_listing/accounts/{account_id}",
+    "isDeprecated": false,
+    "isLegacy": false,
+    "description": "Shows whether the user or organization account actively subscribes to a plan listed by the authenticated GitHub App. When someone submits a plan change that won't be processed until the end of their billing cycle, you will also see the upcoming pending change.\n\nGitHub Apps must use a [JWT](https://developer.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint. OAuth Apps must use [basic authentication](https://developer.github.com/v3/auth/#basic-authentication) with their client ID and client secret to access this endpoint.",
+    "documentationUrl": "https://developer.github.com/v3/apps/marketplace/#get-a-subscription-plan-for-an-account",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "account_id",
+        "description": "account_id parameter",
+        "in": "PATH",
+        "type": "integer",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "examples": [
+          {
+            "data": "{\"url\":\"https://api.github.com/orgs/github\",\"type\":\"Organization\",\"id\":4,\"login\":\"github\",\"email\":null,\"organization_billing_email\":\"billing@github.com\",\"marketplace_pending_change\":{\"effective_date\":\"2017-11-11T00:00:00Z\",\"unit_count\":null,\"id\":77,\"plan\":{\"url\":\"https://api.github.com/marketplace_listing/plans/1111\",\"accounts_url\":\"https://api.github.com/marketplace_listing/plans/1111/accounts\",\"id\":1111,\"number\":2,\"name\":\"Startup\",\"description\":\"A professional-grade CI solution\",\"monthly_price_in_cents\":699,\"yearly_price_in_cents\":7870,\"price_model\":\"flat-rate\",\"has_free_trial\":true,\"state\":\"published\",\"unit_name\":null,\"bullets\":[\"Up to 10 private repositories\",\"3 concurrent builds\"]}},\"marketplace_purchase\":{\"billing_cycle\":\"monthly\",\"next_billing_date\":\"2017-11-11T00:00:00Z\",\"unit_count\":null,\"on_free_trial\":true,\"free_trial_ends_on\":\"2017-11-11T00:00:00Z\",\"updated_at\":\"2017-11-02T01:12:12Z\",\"plan\":{\"url\":\"https://api.github.com/marketplace_listing/plans/1313\",\"accounts_url\":\"https://api.github.com/marketplace_listing/plans/1313/accounts\",\"id\":1313,\"number\":3,\"name\":\"Pro\",\"description\":\"A professional-grade CI solution\",\"monthly_price_in_cents\":1099,\"yearly_price_in_cents\":11870,\"price_model\":\"flat-rate\",\"has_free_trial\":true,\"unit_name\":null,\"state\":\"published\",\"bullets\":[\"Up to 25 private repositories\",\"11 concurrent builds\"]}}}"
+          }
+        ]
+      }
+    ],
+    "renamed": null
+  },
+  {
+    "name": "Get a subscription plan for an account",
     "scope": "apps",
     "id": "checkAccountIsAssociatedWithAny",
     "method": "GET",
@@ -3446,7 +3523,7 @@
     "isDeprecated": false,
     "isLegacy": false,
     "description": "Shows whether the user or organization account actively subscribes to a plan listed by the authenticated GitHub App. When someone submits a plan change that won't be processed until the end of their billing cycle, you will also see the upcoming pending change.\n\nGitHub Apps must use a [JWT](https://developer.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint. OAuth Apps must use [basic authentication](https://developer.github.com/v3/auth/#basic-authentication) with their client ID and client secret to access this endpoint.",
-    "documentationUrl": "https://developer.github.com/v3/apps/marketplace/#check-if-a-github-account-is-associated-with-any-marketplace-listing",
+    "documentationUrl": "https://developer.github.com/v3/apps/marketplace/#get-a-subscription-plan-for-an-account",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -3475,18 +3552,23 @@
         ]
       }
     ],
-    "renamed": null
+    "renamed": {
+      "before": { "scope": "apps", "id": "checkAccountIsAssociatedWithAny" },
+      "after": { "scope": "apps", "id": "getSubscriptionPlanForAccount" },
+      "date": "2020-03-08",
+      "note": "\"apps/check-account-is-associated-with-any\" operation ID is now \"apps/get-subscription-plan-for-account\""
+    }
   },
   {
-    "name": "List all plans for your Marketplace listing",
+    "name": "List plans",
     "scope": "apps",
     "id": "listPlans",
     "method": "GET",
     "url": "/marketplace_listing/plans",
     "isDeprecated": false,
     "isLegacy": false,
-    "description": "GitHub Apps must use a [JWT](https://developer.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint. OAuth Apps must use [basic authentication](https://developer.github.com/v3/auth/#basic-authentication) with their client ID and client secret to access this endpoint.",
-    "documentationUrl": "https://developer.github.com/v3/apps/marketplace/#list-all-plans-for-your-marketplace-listing",
+    "description": "Lists all plans that are part of your GitHub Marketplace listing.\n\nGitHub Apps must use a [JWT](https://developer.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint. OAuth Apps must use [basic authentication](https://developer.github.com/v3/auth/#basic-authentication) with their client ID and client secret to access this endpoint.",
+    "documentationUrl": "https://developer.github.com/v3/apps/marketplace/#list-plans",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -3531,15 +3613,15 @@
     "renamed": null
   },
   {
-    "name": "List all GitHub accounts (user or organization) on a specific plan",
+    "name": "List accounts for a plan",
     "scope": "apps",
-    "id": "listAccountsUserOrOrgOnPlan",
+    "id": "listAccountsForPlan",
     "method": "GET",
     "url": "/marketplace_listing/plans/{plan_id}/accounts",
     "isDeprecated": false,
     "isLegacy": false,
-    "description": "Returns any accounts associated with a plan, including free plans. For per-seat pricing, you see the list of accounts that have purchased the plan, including the number of seats purchased. When someone submits a plan change that won't be processed until the end of their billing cycle, you will also see the upcoming pending change.\n\nGitHub Apps must use a [JWT](https://developer.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint. OAuth Apps must use [basic authentication](https://developer.github.com/v3/auth/#basic-authentication) with their client ID and client secret to access this endpoint.",
-    "documentationUrl": "https://developer.github.com/v3/apps/marketplace/#list-all-github-accounts-user-or-organization-on-a-specific-plan",
+    "description": "Returns user and organization accounts associated with the specified plan, including free plans. For per-seat pricing, you see the list of accounts that have purchased the plan, including the number of seats purchased. When someone submits a plan change that won't be processed until the end of their billing cycle, you will also see the upcoming pending change.\n\nGitHub Apps must use a [JWT](https://developer.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint. OAuth Apps must use [basic authentication](https://developer.github.com/v3/auth/#basic-authentication) with their client ID and client secret to access this endpoint.",
+    "documentationUrl": "https://developer.github.com/v3/apps/marketplace/#list-accounts-for-a-plan",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -3623,7 +3705,144 @@
     "renamed": null
   },
   {
-    "name": "Check if a GitHub account is associated with any Marketplace listing (stubbed)",
+    "name": "List accounts for a plan",
+    "scope": "apps",
+    "id": "listAccountsUserOrOrgOnPlan",
+    "method": "GET",
+    "url": "/marketplace_listing/plans/{plan_id}/accounts",
+    "isDeprecated": false,
+    "isLegacy": false,
+    "description": "Returns user and organization accounts associated with the specified plan, including free plans. For per-seat pricing, you see the list of accounts that have purchased the plan, including the number of seats purchased. When someone submits a plan change that won't be processed until the end of their billing cycle, you will also see the upcoming pending change.\n\nGitHub Apps must use a [JWT](https://developer.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint. OAuth Apps must use [basic authentication](https://developer.github.com/v3/auth/#basic-authentication) with their client ID and client secret to access this endpoint.",
+    "documentationUrl": "https://developer.github.com/v3/apps/marketplace/#list-accounts-for-a-plan",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "plan_id",
+        "description": "plan_id parameter",
+        "in": "PATH",
+        "type": "integer",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "sort",
+        "description": "Sorts the GitHub accounts by the date they were created or last updated. Can be one of `created` or `updated`.",
+        "in": "QUERY",
+        "type": "string",
+        "required": false,
+        "enum": ["created", "updated"],
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "direction",
+        "description": "To return the oldest accounts first, set to `asc`. Can be one of `asc` or `desc`. Ignored without the `sort` parameter.",
+        "in": "QUERY",
+        "type": "string",
+        "required": false,
+        "enum": ["asc", "desc"],
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "per_page",
+        "description": "Results per page (max 100)",
+        "in": "QUERY",
+        "type": "integer",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "page",
+        "description": "Page number of the results to fetch.",
+        "in": "QUERY",
+        "type": "integer",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "examples": [
+          {
+            "data": "[{\"url\":\"https://api.github.com/orgs/github\",\"type\":\"Organization\",\"id\":4,\"login\":\"github\",\"email\":null,\"organization_billing_email\":\"billing@github.com\",\"marketplace_pending_change\":{\"effective_date\":\"2017-11-11T00:00:00Z\",\"unit_count\":null,\"id\":77,\"plan\":{\"url\":\"https://api.github.com/marketplace_listing/plans/1111\",\"accounts_url\":\"https://api.github.com/marketplace_listing/plans/1111/accounts\",\"id\":1111,\"number\":2,\"name\":\"Startup\",\"description\":\"A professional-grade CI solution\",\"monthly_price_in_cents\":699,\"yearly_price_in_cents\":7870,\"price_model\":\"flat-rate\",\"has_free_trial\":true,\"state\":\"published\",\"unit_name\":null,\"bullets\":[\"Up to 10 private repositories\",\"3 concurrent builds\"]}},\"marketplace_purchase\":{\"billing_cycle\":\"monthly\",\"next_billing_date\":\"2017-11-11T00:00:00Z\",\"unit_count\":null,\"on_free_trial\":true,\"free_trial_ends_on\":\"2017-11-11T00:00:00Z\",\"updated_at\":\"2017-11-02T01:12:12Z\",\"plan\":{\"url\":\"https://api.github.com/marketplace_listing/plans/1313\",\"accounts_url\":\"https://api.github.com/marketplace_listing/plans/1313/accounts\",\"id\":1313,\"number\":3,\"name\":\"Pro\",\"description\":\"A professional-grade CI solution\",\"monthly_price_in_cents\":1099,\"yearly_price_in_cents\":11870,\"price_model\":\"flat-rate\",\"has_free_trial\":true,\"unit_name\":null,\"state\":\"published\",\"bullets\":[\"Up to 25 private repositories\",\"11 concurrent builds\"]}}}]"
+          }
+        ]
+      }
+    ],
+    "renamed": {
+      "before": { "scope": "apps", "id": "listAccountsUserOrOrgOnPlan" },
+      "after": { "scope": "apps", "id": "listAccountsForPlan" },
+      "date": "2020-03-04",
+      "note": "\"apps/list-accounts-user-or-org-on-plan\" operation ID is now \"apps/list-accounts-for-plan\""
+    }
+  },
+  {
+    "name": "Get a subscription plan for an account (stubbed)",
+    "scope": "apps",
+    "id": "getSubscriptionPlanForAccountStubbed",
+    "method": "GET",
+    "url": "/marketplace_listing/stubbed/accounts/{account_id}",
+    "isDeprecated": false,
+    "isLegacy": false,
+    "description": "Shows whether the user or organization account actively subscribes to a plan listed by the authenticated GitHub App. When someone submits a plan change that won't be processed until the end of their billing cycle, you will also see the upcoming pending change.\n\nGitHub Apps must use a [JWT](https://developer.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint. OAuth Apps must use [basic authentication](https://developer.github.com/v3/auth/#basic-authentication) with their client ID and client secret to access this endpoint.",
+    "documentationUrl": "https://developer.github.com/v3/apps/marketplace/#get-a-subscription-plan-for-an-account-stubbed",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "account_id",
+        "description": "account_id parameter",
+        "in": "PATH",
+        "type": "integer",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "examples": [
+          {
+            "data": "{\"url\":\"https://api.github.com/orgs/github\",\"type\":\"Organization\",\"id\":4,\"login\":\"github\",\"email\":null,\"organization_billing_email\":\"billing@github.com\",\"marketplace_pending_change\":{\"effective_date\":\"2017-11-11T00:00:00Z\",\"unit_count\":null,\"id\":77,\"plan\":{\"url\":\"https://api.github.com/marketplace_listing/plans/1111\",\"accounts_url\":\"https://api.github.com/marketplace_listing/plans/1111/accounts\",\"id\":1111,\"number\":2,\"name\":\"Startup\",\"description\":\"A professional-grade CI solution\",\"monthly_price_in_cents\":699,\"yearly_price_in_cents\":7870,\"price_model\":\"flat-rate\",\"has_free_trial\":true,\"state\":\"published\",\"unit_name\":null,\"bullets\":[\"Up to 10 private repositories\",\"3 concurrent builds\"]}},\"marketplace_purchase\":{\"billing_cycle\":\"monthly\",\"next_billing_date\":\"2017-11-11T00:00:00Z\",\"unit_count\":null,\"on_free_trial\":true,\"free_trial_ends_on\":\"2017-11-11T00:00:00Z\",\"updated_at\":\"2017-11-02T01:12:12Z\",\"plan\":{\"url\":\"https://api.github.com/marketplace_listing/plans/1313\",\"accounts_url\":\"https://api.github.com/marketplace_listing/plans/1313/accounts\",\"id\":1313,\"number\":3,\"name\":\"Pro\",\"description\":\"A professional-grade CI solution\",\"monthly_price_in_cents\":1099,\"yearly_price_in_cents\":11870,\"price_model\":\"flat-rate\",\"has_free_trial\":true,\"unit_name\":null,\"state\":\"published\",\"bullets\":[\"Up to 25 private repositories\",\"11 concurrent builds\"]}}}"
+          }
+        ]
+      }
+    ],
+    "renamed": null
+  },
+  {
+    "name": "Get a subscription plan for an account (stubbed)",
     "scope": "apps",
     "id": "checkAccountIsAssociatedWithAnyStubbed",
     "method": "GET",
@@ -3631,7 +3850,7 @@
     "isDeprecated": false,
     "isLegacy": false,
     "description": "Shows whether the user or organization account actively subscribes to a plan listed by the authenticated GitHub App. When someone submits a plan change that won't be processed until the end of their billing cycle, you will also see the upcoming pending change.\n\nGitHub Apps must use a [JWT](https://developer.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint. OAuth Apps must use [basic authentication](https://developer.github.com/v3/auth/#basic-authentication) with their client ID and client secret to access this endpoint.",
-    "documentationUrl": "https://developer.github.com/v3/apps/marketplace/#check-if-a-github-account-is-associated-with-any-marketplace-listing",
+    "documentationUrl": "https://developer.github.com/v3/apps/marketplace/#get-a-subscription-plan-for-an-account-stubbed",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -3660,18 +3879,29 @@
         ]
       }
     ],
-    "renamed": null
+    "renamed": {
+      "before": {
+        "scope": "apps",
+        "id": "checkAccountIsAssociatedWithAnyStubbed"
+      },
+      "after": {
+        "scope": "apps",
+        "id": "getSubscriptionPlanForAccountStubbed"
+      },
+      "date": "2020-03-08",
+      "note": "\"apps/check-account-is-associated-with-any-stubbed\" operation ID is now \"apps/get-subscription-plan-for-account-stubbed\""
+    }
   },
   {
-    "name": "List all plans for your Marketplace listing (stubbed)",
+    "name": "List plans (stubbed)",
     "scope": "apps",
     "id": "listPlansStubbed",
     "method": "GET",
     "url": "/marketplace_listing/stubbed/plans",
     "isDeprecated": false,
     "isLegacy": false,
-    "description": "GitHub Apps must use a [JWT](https://developer.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint. OAuth Apps must use [basic authentication](https://developer.github.com/v3/auth/#basic-authentication) with their client ID and client secret to access this endpoint.",
-    "documentationUrl": "https://developer.github.com/v3/apps/marketplace/#list-all-plans-for-your-marketplace-listing",
+    "description": "Lists all plans that are part of your GitHub Marketplace listing.\n\nGitHub Apps must use a [JWT](https://developer.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint. OAuth Apps must use [basic authentication](https://developer.github.com/v3/auth/#basic-authentication) with their client ID and client secret to access this endpoint.",
+    "documentationUrl": "https://developer.github.com/v3/apps/marketplace/#list-plans-stubbed",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -3716,15 +3946,15 @@
     "renamed": null
   },
   {
-    "name": "List all GitHub accounts (user or organization) on a specific plan (stubbed)",
+    "name": "List accounts for a plan (stubbed)",
     "scope": "apps",
-    "id": "listAccountsUserOrOrgOnPlanStubbed",
+    "id": "listAccountsForPlanStubbed",
     "method": "GET",
     "url": "/marketplace_listing/stubbed/plans/{plan_id}/accounts",
     "isDeprecated": false,
     "isLegacy": false,
-    "description": "Returns any accounts associated with a plan, including free plans. For per-seat pricing, you see the list of accounts that have purchased the plan, including the number of seats purchased. When someone submits a plan change that won't be processed until the end of their billing cycle, you will also see the upcoming pending change.\n\nGitHub Apps must use a [JWT](https://developer.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint. OAuth Apps must use [basic authentication](https://developer.github.com/v3/auth/#basic-authentication) with their client ID and client secret to access this endpoint.",
-    "documentationUrl": "https://developer.github.com/v3/apps/marketplace/#list-all-github-accounts-user-or-organization-on-a-specific-plan",
+    "description": "Returns repository and organization accounts associated with the specified plan, including free plans. For per-seat pricing, you see the list of accounts that have purchased the plan, including the number of seats purchased. When someone submits a plan change that won't be processed until the end of their billing cycle, you will also see the upcoming pending change.\n\nGitHub Apps must use a [JWT](https://developer.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint. OAuth Apps must use [basic authentication](https://developer.github.com/v3/auth/#basic-authentication) with their client ID and client secret to access this endpoint.",
+    "documentationUrl": "https://developer.github.com/v3/apps/marketplace/#list-accounts-for-a-plan-stubbed",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -3806,6 +4036,103 @@
       }
     ],
     "renamed": null
+  },
+  {
+    "name": "List accounts for a plan (stubbed)",
+    "scope": "apps",
+    "id": "listAccountsUserOrOrgOnPlanStubbed",
+    "method": "GET",
+    "url": "/marketplace_listing/stubbed/plans/{plan_id}/accounts",
+    "isDeprecated": false,
+    "isLegacy": false,
+    "description": "Returns repository and organization accounts associated with the specified plan, including free plans. For per-seat pricing, you see the list of accounts that have purchased the plan, including the number of seats purchased. When someone submits a plan change that won't be processed until the end of their billing cycle, you will also see the upcoming pending change.\n\nGitHub Apps must use a [JWT](https://developer.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint. OAuth Apps must use [basic authentication](https://developer.github.com/v3/auth/#basic-authentication) with their client ID and client secret to access this endpoint.",
+    "documentationUrl": "https://developer.github.com/v3/apps/marketplace/#list-accounts-for-a-plan-stubbed",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "plan_id",
+        "description": "plan_id parameter",
+        "in": "PATH",
+        "type": "integer",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "sort",
+        "description": "Sorts the GitHub accounts by the date they were created or last updated. Can be one of `created` or `updated`.",
+        "in": "QUERY",
+        "type": "string",
+        "required": false,
+        "enum": ["created", "updated"],
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "direction",
+        "description": "To return the oldest accounts first, set to `asc`. Can be one of `asc` or `desc`. Ignored without the `sort` parameter.",
+        "in": "QUERY",
+        "type": "string",
+        "required": false,
+        "enum": ["asc", "desc"],
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "per_page",
+        "description": "Results per page (max 100)",
+        "in": "QUERY",
+        "type": "integer",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "page",
+        "description": "Page number of the results to fetch.",
+        "in": "QUERY",
+        "type": "integer",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "examples": [
+          {
+            "data": "[{\"url\":\"https://api.github.com/orgs/github\",\"type\":\"Organization\",\"id\":4,\"login\":\"github\",\"email\":null,\"organization_billing_email\":\"billing@github.com\",\"marketplace_pending_change\":{\"effective_date\":\"2017-11-11T00:00:00Z\",\"unit_count\":null,\"id\":77,\"plan\":{\"url\":\"https://api.github.com/marketplace_listing/plans/1111\",\"accounts_url\":\"https://api.github.com/marketplace_listing/plans/1111/accounts\",\"id\":1111,\"number\":2,\"name\":\"Startup\",\"description\":\"A professional-grade CI solution\",\"monthly_price_in_cents\":699,\"yearly_price_in_cents\":7870,\"price_model\":\"flat-rate\",\"has_free_trial\":true,\"state\":\"published\",\"unit_name\":null,\"bullets\":[\"Up to 10 private repositories\",\"3 concurrent builds\"]}},\"marketplace_purchase\":{\"billing_cycle\":\"monthly\",\"next_billing_date\":\"2017-11-11T00:00:00Z\",\"unit_count\":null,\"on_free_trial\":true,\"free_trial_ends_on\":\"2017-11-11T00:00:00Z\",\"updated_at\":\"2017-11-02T01:12:12Z\",\"plan\":{\"url\":\"https://api.github.com/marketplace_listing/plans/1313\",\"accounts_url\":\"https://api.github.com/marketplace_listing/plans/1313/accounts\",\"id\":1313,\"number\":3,\"name\":\"Pro\",\"description\":\"A professional-grade CI solution\",\"monthly_price_in_cents\":1099,\"yearly_price_in_cents\":11870,\"price_model\":\"flat-rate\",\"has_free_trial\":true,\"unit_name\":null,\"state\":\"published\",\"bullets\":[\"Up to 25 private repositories\",\"11 concurrent builds\"]}}}]"
+          }
+        ]
+      }
+    ],
+    "renamed": {
+      "before": { "scope": "apps", "id": "listAccountsUserOrOrgOnPlanStubbed" },
+      "after": { "scope": "apps", "id": "listAccountsForPlanStubbed" },
+      "date": "2020-03-04",
+      "note": "\"apps/list-accounts-user-or-org-on-plan-stubbed\" operation ID is now \"apps/list-accounts-for-plan-stubbed\""
+    }
   },
   {
     "name": "Get",
@@ -5776,15 +6103,15 @@
     "renamed": null
   },
   {
-    "name": "List all issues for a given organization assigned to the authenticated user",
+    "name": "List organization issues assigned to the authenticated user",
     "scope": "issues",
     "id": "listForOrg",
     "method": "GET",
     "url": "/orgs/{org}/issues",
     "isDeprecated": false,
     "isLegacy": false,
-    "description": "**Note**: GitHub's REST API v3 considers every pull request an issue, but not every issue is a pull request. For this reason, \"Issues\" endpoints may return both issues and pull requests in the response. You can identify pull requests by the `pull_request` key.\n\nBe aware that the `id` of a pull request returned from \"Issues\" endpoints will be an _issue id_. To find out the pull request id, use the \"[List pull requests](https://developer.github.com/v3/pulls/#list-pull-requests)\" endpoint.\n\n",
-    "documentationUrl": "https://developer.github.com/v3/issues/#list-issues",
+    "description": "List issues in an organization assigned to the authenticated user.\n\n**Note**: GitHub's REST API v3 considers every pull request an issue, but not every issue is a pull request. For this reason, \"Issues\" endpoints may return both issues and pull requests in the response. You can identify pull requests by the `pull_request` key.\n\nBe aware that the `id` of a pull request returned from \"Issues\" endpoints will be an _issue id_. To find out the pull request id, use the \"[List pull requests](https://developer.github.com/v3/pulls/#list-pull-requests)\" endpoint.\n\n",
+    "documentationUrl": "https://developer.github.com/v3/issues/#list-organization-issues-assigned-to-the-authenticated-user",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -7377,15 +7704,15 @@
     "renamed": null
   },
   {
-    "name": "Creates a new repository in the specified organization",
+    "name": "Create an organization repository",
     "scope": "repos",
     "id": "createInOrg",
     "method": "POST",
     "url": "/orgs/{org}/repos",
     "isDeprecated": false,
     "isLegacy": false,
-    "description": "Creates a new repository for the authenticated user.\n\n**OAuth scope requirements**\n\nWhen using [OAuth](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/), authorizations must include:\n\n*   `public_repo` scope or `repo` scope to create a public repository\n*   `repo` scope to create a private repository",
-    "documentationUrl": "https://developer.github.com/v3/repos/#create",
+    "description": "Creates a new repository in the specified organization. The authenticated user must be a member of the organization.\n\n**OAuth scope requirements**\n\nWhen using [OAuth](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/), authorizations must include:\n\n*   `public_repo` scope or `repo` scope to create a public repository\n*   `repo` scope to create a private repository",
+    "documentationUrl": "https://developer.github.com/v3/repos/#create-an-organization-repository",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -11052,7 +11379,7 @@
       },
       {
         "name": "content_id",
-        "description": "The issue or pull request id you want to associate with this card. You can use the [List issues for a repository](https://developer.github.com/v3/issues/#list-issues-for-a-repository) and [List pull requests](https://developer.github.com/v3/pulls/#list-pull-requests) endpoints to find this id.  \n**Note:** Depending on whether you use the issue id or pull request id, you will need to specify `Issue` or `PullRequest` as the `content_type`.",
+        "description": "The issue or pull request id you want to associate with this card. You can use the [List repository issues](https://developer.github.com/v3/issues/#list-repository-issues) and [List pull requests](https://developer.github.com/v3/pulls/#list-pull-requests) endpoints to find this id.  \n**Note:** Depending on whether you use the issue id or pull request id, you will need to specify `Issue` or `PullRequest` as the `content_type`.",
         "in": "BODY",
         "type": "integer",
         "required": false,
@@ -11822,15 +12149,15 @@
     }
   },
   {
-    "name": "Get",
+    "name": "Get a repository",
     "scope": "repos",
     "id": "get",
     "method": "GET",
     "url": "/repos/{owner}/{repo}",
     "isDeprecated": false,
     "isLegacy": false,
-    "description": "The `parent` and `source` objects are present when the repository is a fork. `parent` is the repository this repository was forked from, `source` is the ultimate source for the network.",
-    "documentationUrl": "https://developer.github.com/v3/repos/#get",
+    "description": "When you pass the `scarlet-witch-preview` media type, requests to get a repository will also return the repository's code of conduct if it can be detected from the repository's code of conduct file.\n\nThe `parent` and `source` objects are present when the repository is a fork. `parent` is the repository this repository was forked from, `source` is the ultimate source for the network.",
+    "documentationUrl": "https://developer.github.com/v3/repos/#get-a-repository",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -11864,10 +12191,13 @@
     "responses": [
       {
         "code": 200,
-        "description": "The `parent` and `source` objects are present when the repository is a fork. `parent` is the repository this repository was forked from, `source` is the ultimate source for the network.",
+        "description": "response",
         "examples": [
           {
             "data": "{\"id\":1296269,\"node_id\":\"MDEwOlJlcG9zaXRvcnkxMjk2MjY5\",\"name\":\"Hello-World\",\"full_name\":\"octocat/Hello-World\",\"owner\":{\"login\":\"octocat\",\"id\":1,\"node_id\":\"MDQ6VXNlcjE=\",\"avatar_url\":\"https://github.com/images/error/octocat_happy.gif\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/octocat\",\"html_url\":\"https://github.com/octocat\",\"followers_url\":\"https://api.github.com/users/octocat/followers\",\"following_url\":\"https://api.github.com/users/octocat/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/octocat/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/octocat/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/octocat/subscriptions\",\"organizations_url\":\"https://api.github.com/users/octocat/orgs\",\"repos_url\":\"https://api.github.com/users/octocat/repos\",\"events_url\":\"https://api.github.com/users/octocat/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/octocat/received_events\",\"type\":\"User\",\"site_admin\":false},\"private\":false,\"html_url\":\"https://github.com/octocat/Hello-World\",\"description\":\"This your first repo!\",\"fork\":false,\"url\":\"https://api.github.com/repos/octocat/Hello-World\",\"archive_url\":\"http://api.github.com/repos/octocat/Hello-World/{archive_format}{/ref}\",\"assignees_url\":\"http://api.github.com/repos/octocat/Hello-World/assignees{/user}\",\"blobs_url\":\"http://api.github.com/repos/octocat/Hello-World/git/blobs{/sha}\",\"branches_url\":\"http://api.github.com/repos/octocat/Hello-World/branches{/branch}\",\"collaborators_url\":\"http://api.github.com/repos/octocat/Hello-World/collaborators{/collaborator}\",\"comments_url\":\"http://api.github.com/repos/octocat/Hello-World/comments{/number}\",\"commits_url\":\"http://api.github.com/repos/octocat/Hello-World/commits{/sha}\",\"compare_url\":\"http://api.github.com/repos/octocat/Hello-World/compare/{base}...{head}\",\"contents_url\":\"http://api.github.com/repos/octocat/Hello-World/contents/{+path}\",\"contributors_url\":\"http://api.github.com/repos/octocat/Hello-World/contributors\",\"deployments_url\":\"http://api.github.com/repos/octocat/Hello-World/deployments\",\"downloads_url\":\"http://api.github.com/repos/octocat/Hello-World/downloads\",\"events_url\":\"http://api.github.com/repos/octocat/Hello-World/events\",\"forks_url\":\"http://api.github.com/repos/octocat/Hello-World/forks\",\"git_commits_url\":\"http://api.github.com/repos/octocat/Hello-World/git/commits{/sha}\",\"git_refs_url\":\"http://api.github.com/repos/octocat/Hello-World/git/refs{/sha}\",\"git_tags_url\":\"http://api.github.com/repos/octocat/Hello-World/git/tags{/sha}\",\"git_url\":\"git:github.com/octocat/Hello-World.git\",\"issue_comment_url\":\"http://api.github.com/repos/octocat/Hello-World/issues/comments{/number}\",\"issue_events_url\":\"http://api.github.com/repos/octocat/Hello-World/issues/events{/number}\",\"issues_url\":\"http://api.github.com/repos/octocat/Hello-World/issues{/number}\",\"keys_url\":\"http://api.github.com/repos/octocat/Hello-World/keys{/key_id}\",\"labels_url\":\"http://api.github.com/repos/octocat/Hello-World/labels{/name}\",\"languages_url\":\"http://api.github.com/repos/octocat/Hello-World/languages\",\"merges_url\":\"http://api.github.com/repos/octocat/Hello-World/merges\",\"milestones_url\":\"http://api.github.com/repos/octocat/Hello-World/milestones{/number}\",\"notifications_url\":\"http://api.github.com/repos/octocat/Hello-World/notifications{?since,all,participating}\",\"pulls_url\":\"http://api.github.com/repos/octocat/Hello-World/pulls{/number}\",\"releases_url\":\"http://api.github.com/repos/octocat/Hello-World/releases{/id}\",\"ssh_url\":\"git@github.com:octocat/Hello-World.git\",\"stargazers_url\":\"http://api.github.com/repos/octocat/Hello-World/stargazers\",\"statuses_url\":\"http://api.github.com/repos/octocat/Hello-World/statuses/{sha}\",\"subscribers_url\":\"http://api.github.com/repos/octocat/Hello-World/subscribers\",\"subscription_url\":\"http://api.github.com/repos/octocat/Hello-World/subscription\",\"tags_url\":\"http://api.github.com/repos/octocat/Hello-World/tags\",\"teams_url\":\"http://api.github.com/repos/octocat/Hello-World/teams\",\"trees_url\":\"http://api.github.com/repos/octocat/Hello-World/git/trees{/sha}\",\"clone_url\":\"https://github.com/octocat/Hello-World.git\",\"mirror_url\":\"git:git.example.com/octocat/Hello-World\",\"hooks_url\":\"http://api.github.com/repos/octocat/Hello-World/hooks\",\"svn_url\":\"https://svn.github.com/octocat/Hello-World\",\"homepage\":\"https://github.com\",\"language\":null,\"forks_count\":9,\"stargazers_count\":80,\"watchers_count\":80,\"size\":108,\"default_branch\":\"master\",\"open_issues_count\":0,\"is_template\":true,\"topics\":[\"octocat\",\"atom\",\"electron\",\"api\"],\"has_issues\":true,\"has_projects\":true,\"has_wiki\":true,\"has_pages\":false,\"has_downloads\":true,\"archived\":false,\"disabled\":false,\"visibility\":\"public\",\"pushed_at\":\"2011-01-26T19:06:43Z\",\"created_at\":\"2011-01-26T19:01:12Z\",\"updated_at\":\"2011-01-26T19:14:43Z\",\"permissions\":{\"admin\":false,\"push\":false,\"pull\":true},\"allow_rebase_merge\":true,\"template_repository\":null,\"temp_clone_token\":\"ABTLWHOULUVAXGTRYU7OC2876QJ2O\",\"allow_squash_merge\":true,\"allow_merge_commit\":true,\"subscribers_count\":42,\"network_count\":0,\"license\":{\"key\":\"mit\",\"name\":\"MIT License\",\"spdx_id\":\"MIT\",\"url\":\"https://api.github.com/licenses/mit\",\"node_id\":\"MDc6TGljZW5zZW1pdA==\"},\"organization\":{\"login\":\"octocat\",\"id\":1,\"node_id\":\"MDQ6VXNlcjE=\",\"avatar_url\":\"https://github.com/images/error/octocat_happy.gif\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/octocat\",\"html_url\":\"https://github.com/octocat\",\"followers_url\":\"https://api.github.com/users/octocat/followers\",\"following_url\":\"https://api.github.com/users/octocat/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/octocat/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/octocat/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/octocat/subscriptions\",\"organizations_url\":\"https://api.github.com/users/octocat/orgs\",\"repos_url\":\"https://api.github.com/users/octocat/repos\",\"events_url\":\"https://api.github.com/users/octocat/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/octocat/received_events\",\"type\":\"Organization\",\"site_admin\":false},\"parent\":{\"id\":1296269,\"node_id\":\"MDEwOlJlcG9zaXRvcnkxMjk2MjY5\",\"name\":\"Hello-World\",\"full_name\":\"octocat/Hello-World\",\"owner\":{\"login\":\"octocat\",\"id\":1,\"node_id\":\"MDQ6VXNlcjE=\",\"avatar_url\":\"https://github.com/images/error/octocat_happy.gif\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/octocat\",\"html_url\":\"https://github.com/octocat\",\"followers_url\":\"https://api.github.com/users/octocat/followers\",\"following_url\":\"https://api.github.com/users/octocat/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/octocat/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/octocat/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/octocat/subscriptions\",\"organizations_url\":\"https://api.github.com/users/octocat/orgs\",\"repos_url\":\"https://api.github.com/users/octocat/repos\",\"events_url\":\"https://api.github.com/users/octocat/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/octocat/received_events\",\"type\":\"User\",\"site_admin\":false},\"private\":false,\"html_url\":\"https://github.com/octocat/Hello-World\",\"description\":\"This your first repo!\",\"fork\":false,\"url\":\"https://api.github.com/repos/octocat/Hello-World\",\"archive_url\":\"http://api.github.com/repos/octocat/Hello-World/{archive_format}{/ref}\",\"assignees_url\":\"http://api.github.com/repos/octocat/Hello-World/assignees{/user}\",\"blobs_url\":\"http://api.github.com/repos/octocat/Hello-World/git/blobs{/sha}\",\"branches_url\":\"http://api.github.com/repos/octocat/Hello-World/branches{/branch}\",\"collaborators_url\":\"http://api.github.com/repos/octocat/Hello-World/collaborators{/collaborator}\",\"comments_url\":\"http://api.github.com/repos/octocat/Hello-World/comments{/number}\",\"commits_url\":\"http://api.github.com/repos/octocat/Hello-World/commits{/sha}\",\"compare_url\":\"http://api.github.com/repos/octocat/Hello-World/compare/{base}...{head}\",\"contents_url\":\"http://api.github.com/repos/octocat/Hello-World/contents/{+path}\",\"contributors_url\":\"http://api.github.com/repos/octocat/Hello-World/contributors\",\"deployments_url\":\"http://api.github.com/repos/octocat/Hello-World/deployments\",\"downloads_url\":\"http://api.github.com/repos/octocat/Hello-World/downloads\",\"events_url\":\"http://api.github.com/repos/octocat/Hello-World/events\",\"forks_url\":\"http://api.github.com/repos/octocat/Hello-World/forks\",\"git_commits_url\":\"http://api.github.com/repos/octocat/Hello-World/git/commits{/sha}\",\"git_refs_url\":\"http://api.github.com/repos/octocat/Hello-World/git/refs{/sha}\",\"git_tags_url\":\"http://api.github.com/repos/octocat/Hello-World/git/tags{/sha}\",\"git_url\":\"git:github.com/octocat/Hello-World.git\",\"issue_comment_url\":\"http://api.github.com/repos/octocat/Hello-World/issues/comments{/number}\",\"issue_events_url\":\"http://api.github.com/repos/octocat/Hello-World/issues/events{/number}\",\"issues_url\":\"http://api.github.com/repos/octocat/Hello-World/issues{/number}\",\"keys_url\":\"http://api.github.com/repos/octocat/Hello-World/keys{/key_id}\",\"labels_url\":\"http://api.github.com/repos/octocat/Hello-World/labels{/name}\",\"languages_url\":\"http://api.github.com/repos/octocat/Hello-World/languages\",\"merges_url\":\"http://api.github.com/repos/octocat/Hello-World/merges\",\"milestones_url\":\"http://api.github.com/repos/octocat/Hello-World/milestones{/number}\",\"notifications_url\":\"http://api.github.com/repos/octocat/Hello-World/notifications{?since,all,participating}\",\"pulls_url\":\"http://api.github.com/repos/octocat/Hello-World/pulls{/number}\",\"releases_url\":\"http://api.github.com/repos/octocat/Hello-World/releases{/id}\",\"ssh_url\":\"git@github.com:octocat/Hello-World.git\",\"stargazers_url\":\"http://api.github.com/repos/octocat/Hello-World/stargazers\",\"statuses_url\":\"http://api.github.com/repos/octocat/Hello-World/statuses/{sha}\",\"subscribers_url\":\"http://api.github.com/repos/octocat/Hello-World/subscribers\",\"subscription_url\":\"http://api.github.com/repos/octocat/Hello-World/subscription\",\"tags_url\":\"http://api.github.com/repos/octocat/Hello-World/tags\",\"teams_url\":\"http://api.github.com/repos/octocat/Hello-World/teams\",\"trees_url\":\"http://api.github.com/repos/octocat/Hello-World/git/trees{/sha}\",\"clone_url\":\"https://github.com/octocat/Hello-World.git\",\"mirror_url\":\"git:git.example.com/octocat/Hello-World\",\"hooks_url\":\"http://api.github.com/repos/octocat/Hello-World/hooks\",\"svn_url\":\"https://svn.github.com/octocat/Hello-World\",\"homepage\":\"https://github.com\",\"language\":null,\"forks_count\":9,\"stargazers_count\":80,\"watchers_count\":80,\"size\":108,\"default_branch\":\"master\",\"open_issues_count\":0,\"is_template\":true,\"topics\":[\"octocat\",\"atom\",\"electron\",\"api\"],\"has_issues\":true,\"has_projects\":true,\"has_wiki\":true,\"has_pages\":false,\"has_downloads\":true,\"archived\":false,\"disabled\":false,\"visibility\":\"public\",\"pushed_at\":\"2011-01-26T19:06:43Z\",\"created_at\":\"2011-01-26T19:01:12Z\",\"updated_at\":\"2011-01-26T19:14:43Z\",\"permissions\":{\"admin\":false,\"push\":false,\"pull\":true},\"allow_rebase_merge\":true,\"template_repository\":null,\"temp_clone_token\":\"ABTLWHOULUVAXGTRYU7OC2876QJ2O\",\"allow_squash_merge\":true,\"allow_merge_commit\":true,\"subscribers_count\":42,\"network_count\":0},\"source\":{\"id\":1296269,\"node_id\":\"MDEwOlJlcG9zaXRvcnkxMjk2MjY5\",\"name\":\"Hello-World\",\"full_name\":\"octocat/Hello-World\",\"owner\":{\"login\":\"octocat\",\"id\":1,\"node_id\":\"MDQ6VXNlcjE=\",\"avatar_url\":\"https://github.com/images/error/octocat_happy.gif\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/octocat\",\"html_url\":\"https://github.com/octocat\",\"followers_url\":\"https://api.github.com/users/octocat/followers\",\"following_url\":\"https://api.github.com/users/octocat/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/octocat/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/octocat/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/octocat/subscriptions\",\"organizations_url\":\"https://api.github.com/users/octocat/orgs\",\"repos_url\":\"https://api.github.com/users/octocat/repos\",\"events_url\":\"https://api.github.com/users/octocat/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/octocat/received_events\",\"type\":\"User\",\"site_admin\":false},\"private\":false,\"html_url\":\"https://github.com/octocat/Hello-World\",\"description\":\"This your first repo!\",\"fork\":false,\"url\":\"https://api.github.com/repos/octocat/Hello-World\",\"archive_url\":\"http://api.github.com/repos/octocat/Hello-World/{archive_format}{/ref}\",\"assignees_url\":\"http://api.github.com/repos/octocat/Hello-World/assignees{/user}\",\"blobs_url\":\"http://api.github.com/repos/octocat/Hello-World/git/blobs{/sha}\",\"branches_url\":\"http://api.github.com/repos/octocat/Hello-World/branches{/branch}\",\"collaborators_url\":\"http://api.github.com/repos/octocat/Hello-World/collaborators{/collaborator}\",\"comments_url\":\"http://api.github.com/repos/octocat/Hello-World/comments{/number}\",\"commits_url\":\"http://api.github.com/repos/octocat/Hello-World/commits{/sha}\",\"compare_url\":\"http://api.github.com/repos/octocat/Hello-World/compare/{base}...{head}\",\"contents_url\":\"http://api.github.com/repos/octocat/Hello-World/contents/{+path}\",\"contributors_url\":\"http://api.github.com/repos/octocat/Hello-World/contributors\",\"deployments_url\":\"http://api.github.com/repos/octocat/Hello-World/deployments\",\"downloads_url\":\"http://api.github.com/repos/octocat/Hello-World/downloads\",\"events_url\":\"http://api.github.com/repos/octocat/Hello-World/events\",\"forks_url\":\"http://api.github.com/repos/octocat/Hello-World/forks\",\"git_commits_url\":\"http://api.github.com/repos/octocat/Hello-World/git/commits{/sha}\",\"git_refs_url\":\"http://api.github.com/repos/octocat/Hello-World/git/refs{/sha}\",\"git_tags_url\":\"http://api.github.com/repos/octocat/Hello-World/git/tags{/sha}\",\"git_url\":\"git:github.com/octocat/Hello-World.git\",\"issue_comment_url\":\"http://api.github.com/repos/octocat/Hello-World/issues/comments{/number}\",\"issue_events_url\":\"http://api.github.com/repos/octocat/Hello-World/issues/events{/number}\",\"issues_url\":\"http://api.github.com/repos/octocat/Hello-World/issues{/number}\",\"keys_url\":\"http://api.github.com/repos/octocat/Hello-World/keys{/key_id}\",\"labels_url\":\"http://api.github.com/repos/octocat/Hello-World/labels{/name}\",\"languages_url\":\"http://api.github.com/repos/octocat/Hello-World/languages\",\"merges_url\":\"http://api.github.com/repos/octocat/Hello-World/merges\",\"milestones_url\":\"http://api.github.com/repos/octocat/Hello-World/milestones{/number}\",\"notifications_url\":\"http://api.github.com/repos/octocat/Hello-World/notifications{?since,all,participating}\",\"pulls_url\":\"http://api.github.com/repos/octocat/Hello-World/pulls{/number}\",\"releases_url\":\"http://api.github.com/repos/octocat/Hello-World/releases{/id}\",\"ssh_url\":\"git@github.com:octocat/Hello-World.git\",\"stargazers_url\":\"http://api.github.com/repos/octocat/Hello-World/stargazers\",\"statuses_url\":\"http://api.github.com/repos/octocat/Hello-World/statuses/{sha}\",\"subscribers_url\":\"http://api.github.com/repos/octocat/Hello-World/subscribers\",\"subscription_url\":\"http://api.github.com/repos/octocat/Hello-World/subscription\",\"tags_url\":\"http://api.github.com/repos/octocat/Hello-World/tags\",\"teams_url\":\"http://api.github.com/repos/octocat/Hello-World/teams\",\"trees_url\":\"http://api.github.com/repos/octocat/Hello-World/git/trees{/sha}\",\"clone_url\":\"https://github.com/octocat/Hello-World.git\",\"mirror_url\":\"git:git.example.com/octocat/Hello-World\",\"hooks_url\":\"http://api.github.com/repos/octocat/Hello-World/hooks\",\"svn_url\":\"https://svn.github.com/octocat/Hello-World\",\"homepage\":\"https://github.com\",\"language\":null,\"forks_count\":9,\"stargazers_count\":80,\"watchers_count\":80,\"size\":108,\"default_branch\":\"master\",\"open_issues_count\":0,\"is_template\":true,\"topics\":[\"octocat\",\"atom\",\"electron\",\"api\"],\"has_issues\":true,\"has_projects\":true,\"has_wiki\":true,\"has_pages\":false,\"has_downloads\":true,\"archived\":false,\"disabled\":false,\"visibility\":\"public\",\"pushed_at\":\"2011-01-26T19:06:43Z\",\"created_at\":\"2011-01-26T19:01:12Z\",\"updated_at\":\"2011-01-26T19:14:43Z\",\"permissions\":{\"admin\":false,\"push\":false,\"pull\":true},\"allow_rebase_merge\":true,\"template_repository\":null,\"temp_clone_token\":\"ABTLWHOULUVAXGTRYU7OC2876QJ2O\",\"allow_squash_merge\":true,\"allow_merge_commit\":true,\"subscribers_count\":42,\"network_count\":0}}"
+          },
+          {
+            "data": "{\"id\":88760408,\"node_id\":\"MDEwOlJlcG9zaXRvcnk4ODc2MDQwOA==\",\"name\":\"cosee\",\"full_name\":\"LindseyB/cosee\",\"owner\":{\"login\":\"LindseyB\",\"id\":33750,\"node_id\":\"MDQ6VXNlcjMzNzUw\",\"avatar_url\":\"https://avatars2.githubusercontent.com/u/33750?v=3\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/LindseyB\",\"html_url\":\"https://github.com/LindseyB\",\"followers_url\":\"https://api.github.com/users/LindseyB/followers\",\"following_url\":\"https://api.github.com/users/LindseyB/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/LindseyB/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/LindseyB/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/LindseyB/subscriptions\",\"organizations_url\":\"https://api.github.com/users/LindseyB/orgs\",\"repos_url\":\"https://api.github.com/users/LindseyB/repos\",\"events_url\":\"https://api.github.com/users/LindseyB/events{/privacy}\",\"received_events_url\":\"https=>//api.github.com/users/LindseyB/received_events\",\"type\":\"User\",\"site_admin\":true},\"private\":false,\"html_url\":\"https://github.com/LindseyB/cosee\",\"description\":null,\"fork\":false,\"url\":\"https://api.github.com/repos/LindseyB/cosee\",\"forks_url\":\"https://api.github.com/repos/LindseyB/cosee/forks\",\"keys_url\":\"https://api.github.com/repos/LindseyB/cosee/keys{/key_id}\",\"collaborators_url\":\"https://api.github.com/repos/LindseyB/cosee/collaborators{/collaborator}\",\"teams_url\":\"https://api.github.com/repos/LindseyB/cosee/teams\",\"hooks_url\":\"https://api.github.com/repos/LindseyB/cosee/hooks\",\"issue_events_url\":\"https://api.github.com/repos/LindseyB/cosee/issues/events{/number}\",\"events_url\":\"https://api.github.com/repos/LindseyB/cosee/events\",\"assignees_url\":\"https://api.github.com/repos/LindseyB/cosee/assignees{/user}\",\"branches_url\":\"https://api.github.com/repos/LindseyB/cosee/branches{/branch}\",\"tags_url\":\"https://api.github.com/repos/LindseyB/cosee/tags\",\"blobs_url\":\"https://api.github.com/repos/LindseyB/cosee/git/blobs{/sha}\",\"git_tags_url\":\"https://api.github.com/repos/LindseyB/cosee/git/tags{/sha}\",\"git_refs_url\":\"https://api.github.com/repos/LindseyB/cosee/git/refs{/sha}\",\"trees_url\":\"https://api.github.com/repos/LindseyB/cosee/git/trees{/sha}\",\"statuses_url\":\"https://api.github.com/repos/LindseyB/cosee/statuses/{sha}\",\"languages_url\":\"https://api.github.com/repos/LindseyB/cosee/languages\",\"stargazers_url\":\"https://api.github.com/repos/LindseyB/cosee/stargazers\",\"contributors_url\":\"https://api.github.com/repos/LindseyB/cosee/contributors\",\"subscribers_url\":\"https://api.github.com/repos/LindseyB/cosee/subscribers\",\"subscription_url\":\"https://api.github.com/repos/LindseyB/cosee/subscription\",\"commits_url\":\"https://api.github.com/repos/LindseyB/cosee/commits{/sha}\",\"git_commits_url\":\"https://api.github.com/repos/LindseyB/cosee/git/commits{/sha}\",\"comments_url\":\"https://api.github.com/repos/LindseyB/cosee/comments{/number}\",\"issue_comment_url\":\"https://api.github.com/repos/LindseyB/cosee/issues/comments{/number}\",\"contents_url\":\"https://api.github.com/repos/LindseyB/cosee/contents/{+path}\",\"compare_url\":\"https://api.github.com/repos/LindseyB/cosee/compare/{base}...{head}\",\"merges_url\":\"https://api.github.com/repos/LindseyB/cosee/merges\",\"archive_url\":\"https://api.github.com/repos/LindseyB/cosee/{archive_format}{/ref}\",\"downloads_url\":\"https://api.github.com/repos/LindseyB/cosee/downloads\",\"issues_url\":\"https://api.github.com/repos/LindseyB/cosee/issues{/number}\",\"pulls_url\":\"https://api.github.com/repos/LindseyB/cosee/pulls{/number}\",\"milestones_url\":\"https://api.github.com/repos/LindseyB/cosee/milestones{/number}\",\"notifications_url\":\"https://api.github.com/repos/LindseyB/cosee/notifications{?since,all,participating}\",\"labels_url\":\"https://api.github.com/repos/LindseyB/cosee/labels{/name}\",\"releases_url\":\"https://api.github.com/repos/LindseyB/cosee/releases{/id}\",\"deployments_url\":\"https://api.github.com/repos/LindseyB/cosee/deployments\",\"created_at\":\"2017-04-19T15=>23=>26Z\",\"updated_at\":\"2017-04-19T15=>23=>26Z\",\"pushed_at\":\"2017-04-19T15=>34=>03Z\",\"git_url\":\"git://github.com/LindseyB/cosee.git\",\"ssh_url\":\"git@github.com=>LindseyB/cosee.git\",\"clone_url\":\"https://github.com/LindseyB/cosee.git\",\"svn_url\":\"https://github.com/LindseyB/cosee\",\"homepage\":null,\"size\":1,\"stargazers_count\":0,\"watchers_count\":0,\"language\":null,\"has_issues\":true,\"has_projects\":true,\"has_downloads\":true,\"has_wiki\":true,\"has_pages\":false,\"forks_count\":0,\"mirror_url\":null,\"open_issues_count\":0,\"forks\":0,\"open_issues\":0,\"watchers\":0,\"default_branch\":\"master\",\"code_of_conduct\":{\"key\":\"contributor_covenant\",\"name\":\"Contributor Covenant\",\"url\":\"https://github.com/LindseyB/cosee/blob/master/CODE_OF_CONDUCT.md\"},\"network_count\":0,\"subscribers_count\":0}"
           }
         ]
       }
@@ -11875,15 +12205,15 @@
     "renamed": null
   },
   {
-    "name": "Edit",
+    "name": "Update a repository",
     "scope": "repos",
     "id": "update",
     "method": "PATCH",
     "url": "/repos/{owner}/{repo}",
     "isDeprecated": false,
     "isLegacy": false,
-    "description": "**Note**: To edit a repository's topics, use the [`topics` endpoint](https://developer.github.com/v3/repos/#replace-all-topics-for-a-repository).",
-    "documentationUrl": "https://developer.github.com/v3/repos/#edit",
+    "description": "**Note**: To edit a repository's topics, use the [Replace all repository topics](https://developer.github.com/v3/repos/#replace-all-repository-topics) endpoint.",
+    "documentationUrl": "https://developer.github.com/v3/repos/#update-a-repository",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -12665,7 +12995,7 @@
         "description": "response",
         "examples": [
           {
-            "data": "[[{\"id\":23,\"name\":\"MBP\",\"os\":\"macos\",\"status\":\"online\"},{\"id\":24,\"name\":\"iMac\",\"os\":\"macos\",\"status\":\"offline\"}]]"
+            "data": "[{\"id\":23,\"name\":\"MBP\",\"os\":\"macos\",\"status\":\"online\"},{\"id\":24,\"name\":\"iMac\",\"os\":\"macos\",\"status\":\"offline\"}]"
           }
         ]
       }
@@ -13306,7 +13636,7 @@
     "url": "/repos/{owner}/{repo}/actions/runs/{run_id}/jobs",
     "isDeprecated": false,
     "isLegacy": false,
-    "description": "Lists jobs for a workflow run. Anyone with read access to the repository can use this endpoint. GitHub Apps must have the `actions` permission to use this endpoint.",
+    "description": "Lists jobs for a workflow run. Anyone with read access to the repository can use this endpoint. GitHub Apps must have the `actions` permission to use this endpoint. You can use parameters to narrow the list of results. For more information about using parameters, see [Parameters](https://developer.github.com/v3/#parameters).",
     "documentationUrl": "https://developer.github.com/v3/actions/workflow_jobs/#list-jobs-for-a-workflow-run",
     "previews": [],
     "headers": [],
@@ -13344,6 +13674,19 @@
         "type": "integer",
         "required": true,
         "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "filter",
+        "description": "Filters jobs by their `completed_at` timestamp. Can be one of:  \n\\* `latest`: Returns jobs from the most recent execution of the workflow run.  \n\\* `all`: Returns all jobs for a workflow run, including from old executions of the workflow run.",
+        "in": "QUERY",
+        "type": "string",
+        "required": false,
+        "enum": ["latest", "all"],
         "allowNull": false,
         "mapToData": null,
         "validation": null,
@@ -17235,7 +17578,7 @@
       },
       {
         "name": "details_url",
-        "description": "The URL of the integrator's site that has the full details of the check.",
+        "description": "The URL of the integrator's site that has the full details of the check. If the integrator does not provide this, then the homepage of the GitHub app is used.",
         "in": "BODY",
         "type": "string",
         "required": false,
@@ -23411,7 +23754,7 @@
     "url": "/repos/{owner}/{repo}/git/refs/{ref}",
     "isDeprecated": false,
     "isLegacy": false,
-    "description": "```\nDELETE /repos/octocat/Hello-World/git/refs/heads/feature-a\n```\n\n```\nDELETE /repos/octocat/Hello-World/git/refs/tags/v1.0\n```",
+    "description": "",
     "documentationUrl": "https://developer.github.com/v3/git/refs/#delete-a-reference",
     "previews": [],
     "headers": [],
@@ -25588,15 +25931,15 @@
     "renamed": null
   },
   {
-    "name": "List issues for a repository",
+    "name": "List repository issues",
     "scope": "issues",
     "id": "listForRepo",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/issues",
     "isDeprecated": false,
     "isLegacy": false,
-    "description": "**Note**: GitHub's REST API v3 considers every pull request an issue, but not every issue is a pull request. For this reason, \"Issues\" endpoints may return both issues and pull requests in the response. You can identify pull requests by the `pull_request` key.\n\nBe aware that the `id` of a pull request returned from \"Issues\" endpoints will be an _issue id_. To find out the pull request id, use the \"[List pull requests](https://developer.github.com/v3/pulls/#list-pull-requests)\" endpoint.\n\n",
-    "documentationUrl": "https://developer.github.com/v3/issues/#list-issues-for-a-repository",
+    "description": "List issues in a repository.\n\n**Note**: GitHub's REST API v3 considers every pull request an issue, but not every issue is a pull request. For this reason, \"Issues\" endpoints may return both issues and pull requests in the response. You can identify pull requests by the `pull_request` key.\n\nBe aware that the `id` of a pull request returned from \"Issues\" endpoints will be an _issue id_. To find out the pull request id, use the \"[List pull requests](https://developer.github.com/v3/pulls/#list-pull-requests)\" endpoint.\n\n",
+    "documentationUrl": "https://developer.github.com/v3/issues/#list-repository-issues",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -26668,7 +27011,7 @@
     "renamed": null
   },
   {
-    "name": "Get a single issue",
+    "name": "Get an issue",
     "scope": "issues",
     "id": "get",
     "method": "GET",
@@ -26676,7 +27019,7 @@
     "isDeprecated": false,
     "isLegacy": false,
     "description": "The API returns a [`301 Moved Permanently` status](https://developer.github.com/v3/#http-redirects) if the issue was [transferred](https://help.github.com/articles/transferring-an-issue-to-another-repository/) to another repository. If the issue was transferred to or deleted from a repository where the authenticated user lacks read access, the API returns a `404 Not Found` status. If the issue was deleted from a repository where the authenticated user has read access, the API returns a `410 Gone` status. To receive webhook events for transferred and deleted issues, subscribe to the [`issues`](https://developer.github.com/v3/activity/events/types/#issuesevent) webhook.\n\n**Note**: GitHub's REST API v3 considers every pull request an issue, but not every issue is a pull request. For this reason, \"Issues\" endpoints may return both issues and pull requests in the response. You can identify pull requests by the `pull_request` key.\n\nBe aware that the `id` of a pull request returned from \"Issues\" endpoints will be an _issue id_. To find out the pull request id, use the \"[List pull requests](https://developer.github.com/v3/pulls/#list-pull-requests)\" endpoint.\n\n",
-    "documentationUrl": "https://developer.github.com/v3/issues/#get-a-single-issue",
+    "documentationUrl": "https://developer.github.com/v3/issues/#get-an-issue",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -26734,7 +27077,7 @@
     "renamed": null
   },
   {
-    "name": "Edit an issue",
+    "name": "Update an issue",
     "scope": "issues",
     "id": "update",
     "method": "PATCH",
@@ -26742,7 +27085,7 @@
     "isDeprecated": false,
     "isLegacy": false,
     "description": "Issue owners and users with push access can edit an issue.",
-    "documentationUrl": "https://developer.github.com/v3/issues/#edit-an-issue",
+    "documentationUrl": "https://developer.github.com/v3/issues/#update-an-issue",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -27498,7 +27841,7 @@
   {
     "name": "Replace all labels for an issue",
     "scope": "issues",
-    "id": "replaceLabels",
+    "id": "replaceAllLabels",
     "method": "PUT",
     "url": "/repos/{owner}/{repo}/issues/{issue_number}/labels",
     "isDeprecated": false,
@@ -27575,6 +27918,146 @@
     "renamed": null
   },
   {
+    "name": "Replace all labels for an issue",
+    "scope": "issues",
+    "id": "replaceLabels",
+    "method": "PUT",
+    "url": "/repos/{owner}/{repo}/issues/{issue_number}/labels",
+    "isDeprecated": false,
+    "isLegacy": false,
+    "description": "",
+    "documentationUrl": "https://developer.github.com/v3/issues/labels/#replace-all-labels-for-an-issue",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "owner",
+        "description": "owner parameter",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "repo",
+        "description": "repo parameter",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "issue_number",
+        "description": "issue_number parameter",
+        "in": "PATH",
+        "type": "integer",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "labels",
+        "description": "The names of the labels to add to the issue. You can pass an empty array to remove all labels. **Note:** Alternatively, you can pass a single label as a `string` or an `array` of labels directly, but GitHub recommends passing an object with the `labels` key.",
+        "in": "BODY",
+        "type": "string[]",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "examples": [
+          {
+            "data": "[{\"id\":208045946,\"node_id\":\"MDU6TGFiZWwyMDgwNDU5NDY=\",\"url\":\"https://api.github.com/repos/octocat/Hello-World/labels/bug\",\"name\":\"bug\",\"description\":\"Something isn't working\",\"color\":\"f29513\",\"default\":true},{\"id\":208045947,\"node_id\":\"MDU6TGFiZWwyMDgwNDU5NDc=\",\"url\":\"https://api.github.com/repos/octocat/Hello-World/labels/enhancement\",\"name\":\"enhancement\",\"description\":\"New feature or request\",\"color\":\"a2eeef\",\"default\":false}]"
+          }
+        ]
+      }
+    ],
+    "renamed": {
+      "before": { "scope": "issues", "id": "replaceLabels" },
+      "after": { "scope": "issues", "id": "replaceAllLabels" },
+      "date": "2020-03-04",
+      "note": "\"issues/replace-labels\" operation ID is now \"issues/replace-all-labels\""
+    }
+  },
+  {
+    "name": "Remove all labels from an issue",
+    "scope": "issues",
+    "id": "removeAllLabels",
+    "method": "DELETE",
+    "url": "/repos/{owner}/{repo}/issues/{issue_number}/labels",
+    "isDeprecated": false,
+    "isLegacy": false,
+    "description": "",
+    "documentationUrl": "https://developer.github.com/v3/issues/labels/#remove-all-labels-from-an-issue",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "owner",
+        "description": "owner parameter",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "repo",
+        "description": "repo parameter",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "issue_number",
+        "description": "issue_number parameter",
+        "in": "PATH",
+        "type": "integer",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [],
+    "renamed": null
+  },
+  {
     "name": "Remove all labels from an issue",
     "scope": "issues",
     "id": "removeLabels",
@@ -27628,7 +28111,12 @@
       }
     ],
     "responses": [],
-    "renamed": null
+    "renamed": {
+      "before": { "scope": "issues", "id": "removeLabels" },
+      "after": { "scope": "issues", "id": "removeAllLabels" },
+      "date": "2020-03-04",
+      "note": "\"issues/remove-labels\" operation ID is now \"issues/remove-all-labels\""
+    }
   },
   {
     "name": "Remove a label from an issue",
@@ -35124,7 +35612,7 @@
     "url": "/repos/{owner}/{repo}/subscribers",
     "isDeprecated": false,
     "isLegacy": false,
-    "description": "",
+    "description": "Lists the people watching the specified repository.",
     "documentationUrl": "https://developer.github.com/v3/activity/watching/#list-watchers",
     "previews": [],
     "headers": [],
@@ -35196,7 +35684,7 @@
     "renamed": null
   },
   {
-    "name": "Get a Repository Subscription",
+    "name": "Get a repository subscription",
     "scope": "activity",
     "id": "getRepoSubscription",
     "method": "GET",
@@ -35238,7 +35726,7 @@
     "responses": [
       {
         "code": 200,
-        "description": "Response if you are subscribed to the repository",
+        "description": "Response if you subscribe to the repository",
         "examples": [
           {
             "data": "{\"subscribed\":true,\"ignored\":false,\"reason\":null,\"created_at\":\"2012-10-06T21:34:12Z\",\"url\":\"https://api.github.com/repos/octocat/example/subscription\",\"repository_url\":\"https://api.github.com/repos/octocat/example\"}"
@@ -35249,7 +35737,7 @@
     "renamed": null
   },
   {
-    "name": "Set a Repository Subscription",
+    "name": "Set a repository subscription",
     "scope": "activity",
     "id": "setRepoSubscription",
     "method": "PUT",
@@ -35328,7 +35816,7 @@
     "renamed": null
   },
   {
-    "name": "Delete a Repository Subscription",
+    "name": "Delete a repository subscription",
     "scope": "activity",
     "id": "deleteRepoSubscription",
     "method": "DELETE",
@@ -35529,15 +36017,15 @@
     "renamed": null
   },
   {
-    "name": "List all topics for a repository",
+    "name": "Get all repository topics",
     "scope": "repos",
-    "id": "listTopics",
+    "id": "getAllTopics",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/topics",
     "isDeprecated": false,
     "isLegacy": false,
     "description": "",
-    "documentationUrl": "https://developer.github.com/v3/repos/#list-all-topics-for-a-repository",
+    "documentationUrl": "https://developer.github.com/v3/repos/#get-all-repository-topics",
     "previews": [{ "name": "mercy" }],
     "headers": [
       {
@@ -35586,15 +36074,77 @@
     "renamed": null
   },
   {
-    "name": "Replace all topics for a repository",
+    "name": "Get all repository topics",
     "scope": "repos",
-    "id": "replaceTopics",
+    "id": "listTopics",
+    "method": "GET",
+    "url": "/repos/{owner}/{repo}/topics",
+    "isDeprecated": false,
+    "isLegacy": false,
+    "description": "",
+    "documentationUrl": "https://developer.github.com/v3/repos/#get-all-repository-topics",
+    "previews": [{ "name": "mercy" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.mercy-preview+json",
+        "required": true
+      }
+    ],
+    "parameters": [
+      {
+        "name": "owner",
+        "description": "owner parameter",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "repo",
+        "description": "repo parameter",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "examples": [
+          { "data": "{\"names\":[\"octocat\",\"atom\",\"electron\",\"api\"]}" }
+        ]
+      }
+    ],
+    "renamed": {
+      "before": { "scope": "repos", "id": "listTopics" },
+      "after": { "scope": "repos", "id": "getAllTopics" },
+      "date": "2020-03-04",
+      "note": "\"repos/list-topics\" operation ID is now \"repos/get-all-topics\""
+    }
+  },
+  {
+    "name": "Replace all repository topics",
+    "scope": "repos",
+    "id": "replaceAllTopics",
     "method": "PUT",
     "url": "/repos/{owner}/{repo}/topics",
     "isDeprecated": false,
     "isLegacy": false,
     "description": "",
-    "documentationUrl": "https://developer.github.com/v3/repos/#replace-all-topics-for-a-repository",
+    "documentationUrl": "https://developer.github.com/v3/repos/#replace-all-repository-topics",
     "previews": [{ "name": "mercy" }],
     "headers": [
       {
@@ -35654,6 +36204,81 @@
       }
     ],
     "renamed": null
+  },
+  {
+    "name": "Replace all repository topics",
+    "scope": "repos",
+    "id": "replaceTopics",
+    "method": "PUT",
+    "url": "/repos/{owner}/{repo}/topics",
+    "isDeprecated": false,
+    "isLegacy": false,
+    "description": "",
+    "documentationUrl": "https://developer.github.com/v3/repos/#replace-all-repository-topics",
+    "previews": [{ "name": "mercy" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.mercy-preview+json",
+        "required": true
+      }
+    ],
+    "parameters": [
+      {
+        "name": "owner",
+        "description": "owner parameter",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "repo",
+        "description": "repo parameter",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "names",
+        "description": "An array of topics to add to the repository. Pass one or more topics to _replace_ the set of existing topics. Send an empty array (`[]`) to clear all topics from the repository. **Note:** Topic `names` cannot contain uppercase letters.",
+        "in": "BODY",
+        "type": "string[]",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "examples": [
+          { "data": "{\"names\":[\"octocat\",\"atom\",\"electron\",\"api\"]}" }
+        ]
+      }
+    ],
+    "renamed": {
+      "before": { "scope": "repos", "id": "replaceTopics" },
+      "after": { "scope": "repos", "id": "replaceAllTopics" },
+      "date": "2020-03-04",
+      "note": "\"repos/replace-topics\" operation ID is now \"repos/replace-all-topics\""
+    }
   },
   {
     "name": "Clones",
@@ -36189,15 +36814,15 @@
     "renamed": null
   },
   {
-    "name": "Create repository using a repository template",
+    "name": "Create a repository using a template",
     "scope": "repos",
     "id": "createUsingTemplate",
     "method": "POST",
     "url": "/repos/{template_owner}/{template_repo}/generate",
     "isDeprecated": false,
     "isLegacy": false,
-    "description": "Creates a new repository using a repository template. Use the `template_owner` and `template_repo` route parameters to specify the repository to use as the template. The authenticated user must own or be a member of an organization that owns the repository. To check if a repository is available to use as a template, get the repository's information using the [`GET /repos/:owner/:repo`](https://developer.github.com/v3/repos/#get) endpoint and check that the `is_template` key is `true`.\n\n**OAuth scope requirements**\n\nWhen using [OAuth](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/), authorizations must include:\n\n*   `public_repo` scope or `repo` scope to create a public repository\n*   `repo` scope to create a private repository\n\n\\`",
-    "documentationUrl": "https://developer.github.com/v3/repos/#create-repository-using-a-repository-template",
+    "description": "Creates a new repository using a repository template. Use the `template_owner` and `template_repo` route parameters to specify the repository to use as the template. The authenticated user must own or be a member of an organization that owns the repository. To check if a repository is available to use as a template, get the repository's information using the [Get a repository](https://developer.github.com/v3/repos/#get-a-repository) endpoint and check that the `is_template` key is `true`.\n\n**OAuth scope requirements**\n\nWhen using [OAuth](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/), authorizations must include:\n\n*   `public_repo` scope or `repo` scope to create a public repository\n*   `repo` scope to create a private repository\n\n\\`",
+    "documentationUrl": "https://developer.github.com/v3/repos/#create-a-repository-using-a-template",
     "previews": [{ "name": "baptiste" }],
     "headers": [
       {
@@ -36300,7 +36925,7 @@
     "renamed": null
   },
   {
-    "name": "List all public repositories",
+    "name": "List public repositories",
     "scope": "repos",
     "id": "listPublic",
     "method": "GET",
@@ -36308,7 +36933,7 @@
     "isDeprecated": false,
     "isLegacy": false,
     "description": "Lists all public repositories in the order that they were created.\n\nNote: Pagination is powered exclusively by the `since` parameter. Use the [Link header](https://developer.github.com/v3/#link-header) to get the URL for the next page of repositories.",
-    "documentationUrl": "https://developer.github.com/v3/repos/#list-all-public-repositories",
+    "documentationUrl": "https://developer.github.com/v3/repos/#list-public-repositories",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -39707,15 +40332,15 @@
     "renamed": null
   },
   {
-    "name": "List the authenticated user's followers",
+    "name": "List followers of the authenticated user",
     "scope": "users",
     "id": "listFollowersForAuthenticatedUser",
     "method": "GET",
     "url": "/user/followers",
     "isDeprecated": false,
     "isLegacy": false,
-    "description": "",
-    "documentationUrl": "https://developer.github.com/v3/users/followers/#list-followers-of-a-user",
+    "description": "Lists the people following the authenticated user.",
+    "documentationUrl": "https://developer.github.com/v3/users/followers/#list-followers-of-the-authenticated-user",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -39760,15 +40385,15 @@
     "renamed": null
   },
   {
-    "name": "List who the authenticated user is following",
+    "name": "List users followed by the authenticated user",
     "scope": "users",
-    "id": "listFollowingForAuthenticatedUser",
+    "id": "listFollowedByAuthenticated",
     "method": "GET",
     "url": "/user/following",
     "isDeprecated": false,
     "isLegacy": false,
-    "description": "",
-    "documentationUrl": "https://developer.github.com/v3/users/followers/#list-users-followed-by-another-user",
+    "description": "Lists the people who the authenticated user follows.",
+    "documentationUrl": "https://developer.github.com/v3/users/followers/#list-users-followed-by-the-authenticated-user",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -39811,6 +40436,64 @@
       }
     ],
     "renamed": null
+  },
+  {
+    "name": "List users followed by the authenticated user",
+    "scope": "users",
+    "id": "listFollowingForAuthenticatedUser",
+    "method": "GET",
+    "url": "/user/following",
+    "isDeprecated": false,
+    "isLegacy": false,
+    "description": "Lists the people who the authenticated user follows.",
+    "documentationUrl": "https://developer.github.com/v3/users/followers/#list-users-followed-by-the-authenticated-user",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "per_page",
+        "description": "Results per page (max 100)",
+        "in": "QUERY",
+        "type": "integer",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "page",
+        "description": "Page number of the results to fetch.",
+        "in": "QUERY",
+        "type": "integer",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "examples": [
+          {
+            "data": "[{\"login\":\"octocat\",\"id\":1,\"node_id\":\"MDQ6VXNlcjE=\",\"avatar_url\":\"https://github.com/images/error/octocat_happy.gif\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/octocat\",\"html_url\":\"https://github.com/octocat\",\"followers_url\":\"https://api.github.com/users/octocat/followers\",\"following_url\":\"https://api.github.com/users/octocat/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/octocat/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/octocat/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/octocat/subscriptions\",\"organizations_url\":\"https://api.github.com/users/octocat/orgs\",\"repos_url\":\"https://api.github.com/users/octocat/repos\",\"events_url\":\"https://api.github.com/users/octocat/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/octocat/received_events\",\"type\":\"User\",\"site_admin\":false}]"
+          }
+        ]
+      }
+    ],
+    "renamed": {
+      "before": { "scope": "users", "id": "listFollowingForAuthenticatedUser" },
+      "after": { "scope": "users", "id": "listFollowedByAuthenticated" },
+      "date": "2020-03-04",
+      "note": "\"users/list-following-for-authenticated-user\" operation ID is now \"users/list-followed-by-authenticated\""
+    }
   },
   {
     "name": "Check if you are following a user",
@@ -40295,15 +40978,15 @@
     "renamed": null
   },
   {
-    "name": "List all issues across owned and member repositories assigned to the authenticated user",
+    "name": "List user account issues assigned to the authenticated user",
     "scope": "issues",
     "id": "listForAuthenticatedUser",
     "method": "GET",
     "url": "/user/issues",
     "isDeprecated": false,
     "isLegacy": false,
-    "description": "**Note**: GitHub's REST API v3 considers every pull request an issue, but not every issue is a pull request. For this reason, \"Issues\" endpoints may return both issues and pull requests in the response. You can identify pull requests by the `pull_request` key.\n\nBe aware that the `id` of a pull request returned from \"Issues\" endpoints will be an _issue id_. To find out the pull request id, use the \"[List pull requests](https://developer.github.com/v3/pulls/#list-pull-requests)\" endpoint.\n\n",
-    "documentationUrl": "https://developer.github.com/v3/issues/#list-issues",
+    "description": "List issues across owned and member repositories assigned to the authenticated user:\n\n**Note**: GitHub's REST API v3 considers every pull request an issue, but not every issue is a pull request. For this reason, \"Issues\" endpoints may return both issues and pull requests in the response. You can identify pull requests by the `pull_request` key.\n\nBe aware that the `id` of a pull request returned from \"Issues\" endpoints will be an _issue id_. To find out the pull request id, use the \"[List pull requests](https://developer.github.com/v3/pulls/#list-pull-requests)\" endpoint.\n\n",
+    "documentationUrl": "https://developer.github.com/v3/issues/#list-user-account-issues-assigned-to-the-authenticated-user",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -40602,15 +41285,15 @@
     "renamed": null
   },
   {
-    "name": "Get a user's Marketplace purchases",
+    "name": "List subscriptions for the authenticated user",
     "scope": "apps",
-    "id": "listMarketplacePurchasesForAuthenticatedUser",
+    "id": "listSubscriptionsForAuthenticatedUser",
     "method": "GET",
     "url": "/user/marketplace_purchases",
     "isDeprecated": false,
     "isLegacy": false,
-    "description": "Returns only active subscriptions. You must use a [user-to-server OAuth access token](https://developer.github.com/apps/building-github-apps/identifying-and-authorizing-users-for-github-apps/#identifying-users-on-your-site), created for a user who has authorized your GitHub App, to access this endpoint. . OAuth Apps must authenticate using an [OAuth token](https://developer.github.com/apps/building-github-apps/authenticating-with-github-apps/).",
-    "documentationUrl": "https://developer.github.com/v3/apps/marketplace/#get-a-users-marketplace-purchases",
+    "description": "Lists the active subscriptions for the authenticated user. You must use a [user-to-server OAuth access token](https://developer.github.com/apps/building-github-apps/identifying-and-authorizing-users-for-github-apps/#identifying-users-on-your-site), created for a user who has authorized your GitHub App, to access this endpoint. . OAuth Apps must authenticate using an [OAuth token](https://developer.github.com/apps/building-github-apps/authenticating-with-github-apps/).",
+    "documentationUrl": "https://developer.github.com/v3/apps/marketplace/#list-subscriptions-for-the-authenticated-user",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -40655,15 +41338,79 @@
     "renamed": null
   },
   {
-    "name": "Get a user's Marketplace purchases (stubbed)",
+    "name": "List subscriptions for the authenticated user",
     "scope": "apps",
-    "id": "listMarketplacePurchasesForAuthenticatedUserStubbed",
+    "id": "listMarketplacePurchasesForAuthenticatedUser",
+    "method": "GET",
+    "url": "/user/marketplace_purchases",
+    "isDeprecated": false,
+    "isLegacy": false,
+    "description": "Lists the active subscriptions for the authenticated user. You must use a [user-to-server OAuth access token](https://developer.github.com/apps/building-github-apps/identifying-and-authorizing-users-for-github-apps/#identifying-users-on-your-site), created for a user who has authorized your GitHub App, to access this endpoint. . OAuth Apps must authenticate using an [OAuth token](https://developer.github.com/apps/building-github-apps/authenticating-with-github-apps/).",
+    "documentationUrl": "https://developer.github.com/v3/apps/marketplace/#list-subscriptions-for-the-authenticated-user",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "per_page",
+        "description": "Results per page (max 100)",
+        "in": "QUERY",
+        "type": "integer",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "page",
+        "description": "Page number of the results to fetch.",
+        "in": "QUERY",
+        "type": "integer",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "examples": [
+          {
+            "data": "[{\"billing_cycle\":\"monthly\",\"next_billing_date\":\"2017-11-11T00:00:00Z\",\"unit_count\":null,\"on_free_trial\":true,\"free_trial_ends_on\":\"2017-11-11T00:00:00Z\",\"updated_at\":\"2017-11-02T01:12:12Z\",\"account\":{\"login\":\"github\",\"id\":4,\"url\":\"https://api.github.com/orgs/github\",\"email\":null,\"organization_billing_email\":\"billing@github.com\",\"type\":\"Organization\"},\"plan\":{\"url\":\"https://api.github.com/marketplace_listing/plans/1313\",\"accounts_url\":\"https://api.github.com/marketplace_listing/plans/1313/accounts\",\"id\":1313,\"number\":3,\"name\":\"Pro\",\"description\":\"A professional-grade CI solution\",\"monthly_price_in_cents\":1099,\"yearly_price_in_cents\":11870,\"price_model\":\"flat-rate\",\"has_free_trial\":true,\"unit_name\":null,\"state\":\"published\",\"bullets\":[\"Up to 25 private repositories\",\"11 concurrent builds\"]}}]"
+          }
+        ]
+      }
+    ],
+    "renamed": {
+      "before": {
+        "scope": "apps",
+        "id": "listMarketplacePurchasesForAuthenticatedUser"
+      },
+      "after": {
+        "scope": "apps",
+        "id": "listSubscriptionsForAuthenticatedUser"
+      },
+      "date": "2020-03-08",
+      "note": "\"apps/list-marketplace-purchases-for-authenticated-user\" operation ID is now \"apps/list-subscriptions-for-authenticated-user\""
+    }
+  },
+  {
+    "name": "List subscriptions for the authenticated user (stubbed)",
+    "scope": "apps",
+    "id": "listSubscriptionsForAuthenticatedUserStubbed",
     "method": "GET",
     "url": "/user/marketplace_purchases/stubbed",
     "isDeprecated": false,
     "isLegacy": false,
-    "description": "Returns only active subscriptions. You must use a [user-to-server OAuth access token](https://developer.github.com/apps/building-github-apps/identifying-and-authorizing-users-for-github-apps/#identifying-users-on-your-site), created for a user who has authorized your GitHub App, to access this endpoint. . OAuth Apps must authenticate using an [OAuth token](https://developer.github.com/apps/building-github-apps/authenticating-with-github-apps/).",
-    "documentationUrl": "https://developer.github.com/v3/apps/marketplace/#get-a-users-marketplace-purchases",
+    "description": "Lists the active subscriptions for the authenticated user. You must use a [user-to-server OAuth access token](https://developer.github.com/apps/building-github-apps/identifying-and-authorizing-users-for-github-apps/#identifying-users-on-your-site), created for a user who has authorized your GitHub App, to access this endpoint. . OAuth Apps must authenticate using an [OAuth token](https://developer.github.com/apps/building-github-apps/authenticating-with-github-apps/).",
+    "documentationUrl": "https://developer.github.com/v3/apps/marketplace/#list-subscriptions-for-the-authenticated-user-stubbed",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -40706,6 +41453,70 @@
       }
     ],
     "renamed": null
+  },
+  {
+    "name": "List subscriptions for the authenticated user (stubbed)",
+    "scope": "apps",
+    "id": "listMarketplacePurchasesForAuthenticatedUserStubbed",
+    "method": "GET",
+    "url": "/user/marketplace_purchases/stubbed",
+    "isDeprecated": false,
+    "isLegacy": false,
+    "description": "Lists the active subscriptions for the authenticated user. You must use a [user-to-server OAuth access token](https://developer.github.com/apps/building-github-apps/identifying-and-authorizing-users-for-github-apps/#identifying-users-on-your-site), created for a user who has authorized your GitHub App, to access this endpoint. . OAuth Apps must authenticate using an [OAuth token](https://developer.github.com/apps/building-github-apps/authenticating-with-github-apps/).",
+    "documentationUrl": "https://developer.github.com/v3/apps/marketplace/#list-subscriptions-for-the-authenticated-user-stubbed",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "per_page",
+        "description": "Results per page (max 100)",
+        "in": "QUERY",
+        "type": "integer",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "page",
+        "description": "Page number of the results to fetch.",
+        "in": "QUERY",
+        "type": "integer",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "examples": [
+          {
+            "data": "[{\"billing_cycle\":\"monthly\",\"next_billing_date\":\"2017-11-11T00:00:00Z\",\"unit_count\":null,\"on_free_trial\":true,\"free_trial_ends_on\":\"2017-11-11T00:00:00Z\",\"updated_at\":\"2017-11-02T01:12:12Z\",\"account\":{\"login\":\"github\",\"id\":4,\"url\":\"https://api.github.com/orgs/github\",\"email\":null,\"organization_billing_email\":\"billing@github.com\",\"type\":\"Organization\"},\"plan\":{\"url\":\"https://api.github.com/marketplace_listing/plans/1313\",\"accounts_url\":\"https://api.github.com/marketplace_listing/plans/1313/accounts\",\"id\":1313,\"number\":3,\"name\":\"Pro\",\"description\":\"A professional-grade CI solution\",\"monthly_price_in_cents\":1099,\"yearly_price_in_cents\":11870,\"price_model\":\"flat-rate\",\"has_free_trial\":true,\"unit_name\":null,\"state\":\"published\",\"bullets\":[\"Up to 25 private repositories\",\"11 concurrent builds\"]}}]"
+          }
+        ]
+      }
+    ],
+    "renamed": {
+      "before": {
+        "scope": "apps",
+        "id": "listMarketplacePurchasesForAuthenticatedUserStubbed"
+      },
+      "after": {
+        "scope": "apps",
+        "id": "listSubscriptionsForAuthenticatedUserStubbed"
+      },
+      "date": "2020-03-08",
+      "note": "\"apps/list-marketplace-purchases-for-authenticated-user-stubbed\" operation ID is now \"apps/list-subscriptions-for-authenticated-user-stubbed\""
+    }
   },
   {
     "name": "List your organization memberships",
@@ -41324,15 +42135,15 @@
     "renamed": null
   },
   {
-    "name": "List your repositories",
+    "name": "List repositories for the authenticated user",
     "scope": "repos",
-    "id": "list",
+    "id": "listForAuthenticatedUser",
     "method": "GET",
     "url": "/user/repos",
     "isDeprecated": false,
     "isLegacy": false,
     "description": "Lists repositories that the authenticated user has explicit permission (`:read`, `:write`, or `:admin`) to access.\n\nThe authenticated user has explicit permission to access repositories they own, repositories where they are a collaborator, and repositories that they can access through an organization membership.",
-    "documentationUrl": "https://developer.github.com/v3/repos/#list-your-repositories",
+    "documentationUrl": "https://developer.github.com/v3/repos/#list-repositories-for-the-authenticated-user",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -41432,7 +42243,120 @@
     "renamed": null
   },
   {
-    "name": "Creates a new repository for the authenticated user",
+    "name": "List repositories for the authenticated user",
+    "scope": "repos",
+    "id": "list",
+    "method": "GET",
+    "url": "/user/repos",
+    "isDeprecated": false,
+    "isLegacy": false,
+    "description": "Lists repositories that the authenticated user has explicit permission (`:read`, `:write`, or `:admin`) to access.\n\nThe authenticated user has explicit permission to access repositories they own, repositories where they are a collaborator, and repositories that they can access through an organization membership.",
+    "documentationUrl": "https://developer.github.com/v3/repos/#list-repositories-for-the-authenticated-user",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "visibility",
+        "description": "Can be one of `all`, `public`, or `private`.",
+        "in": "QUERY",
+        "type": "string",
+        "required": false,
+        "enum": ["all", "public", "private"],
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "affiliation",
+        "description": "Comma-separated list of values. Can include:  \n\\* `owner`: Repositories that are owned by the authenticated user.  \n\\* `collaborator`: Repositories that the user has been added to as a collaborator.  \n\\* `organization_member`: Repositories that the user has access to through being a member of an organization. This includes every repository on every team that the user is on.",
+        "in": "QUERY",
+        "type": "string",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "type",
+        "description": "Can be one of `all`, `owner`, `public`, `private`, `member`. Default: `all`  \n  \nWill cause a `422` error if used in the same request as **visibility** or **affiliation**. Will cause a `422` error if used in the same request as **visibility** or **affiliation**.",
+        "in": "QUERY",
+        "type": "string",
+        "required": false,
+        "enum": ["all", "owner", "public", "private", "member"],
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "sort",
+        "description": "Can be one of `created`, `updated`, `pushed`, `full_name`.",
+        "in": "QUERY",
+        "type": "string",
+        "required": false,
+        "enum": ["created", "updated", "pushed", "full_name"],
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "direction",
+        "description": "Can be one of `asc` or `desc`. Default: `asc` when using `full_name`, otherwise `desc`",
+        "in": "QUERY",
+        "type": "string",
+        "required": false,
+        "enum": ["asc", "desc"],
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "per_page",
+        "description": "Results per page (max 100)",
+        "in": "QUERY",
+        "type": "integer",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "page",
+        "description": "Page number of the results to fetch.",
+        "in": "QUERY",
+        "type": "integer",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [],
+    "renamed": {
+      "before": { "scope": "repos", "id": "list" },
+      "after": { "scope": "repos", "id": "listForAuthenticatedUser" },
+      "date": "2020-03-04",
+      "note": "\"repos/list\" operation ID is now \"repos/list-for-authenticated-user\""
+    }
+  },
+  {
+    "name": "Create a repository for the authenticated user",
     "scope": "repos",
     "id": "createForAuthenticatedUser",
     "method": "POST",
@@ -41440,7 +42364,7 @@
     "isDeprecated": false,
     "isLegacy": false,
     "description": "Creates a new repository for the authenticated user.\n\n**OAuth scope requirements**\n\nWhen using [OAuth](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/), authorizations must include:\n\n*   `public_repo` scope or `repo` scope to create a public repository\n*   `repo` scope to create a private repository",
-    "documentationUrl": "https://developer.github.com/v3/repos/#create",
+    "documentationUrl": "https://developer.github.com/v3/repos/#create-a-repository-for-the-authenticated-user",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -41498,7 +42422,7 @@
       },
       {
         "name": "visibility",
-        "description": "Can be `public` or `private`. If your organization is associated with an enterprise account using GitHub Enterprise Cloud or GitHub Enterprise Server 2.20+, `visibility` can also be `internal`. For more information, see \"[Creating an internal repository](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/about-repository-visibility#about-internal-repositories)\" in the GitHub Help documentation.  \nThe `visibility` parameter overrides the `private` parameter when you use both parameters with the `nebula-preview` preview header.",
+        "description": "Can be `public` or `private`. If your organization is associated with an enterprise account using GitHub Enterprise Cloud or GitHub Enterprise Server 2.20+, `visibility` can also be `internal`. For more information, see \"[Creating an internal repository](https://help.github.com/github/creating-cloning-and-archiving-repositories/creating-an-internal-repository)\" in the GitHub Help documentation.  \nThe `visibility` parameter overrides the `private` parameter when you use both parameters with the `nebula-preview` preview header.",
         "in": "BODY",
         "type": "string",
         "required": false,
@@ -41793,15 +42717,15 @@
     "renamed": null
   },
   {
-    "name": "List repositories being starred by the authenticated user",
+    "name": "List repositories starred by the authenticated user",
     "scope": "activity",
     "id": "listReposStarredByAuthenticatedUser",
     "method": "GET",
     "url": "/user/starred",
     "isDeprecated": false,
     "isLegacy": false,
-    "description": "You can also find out _when_ stars were created by passing the following custom [media type](https://developer.github.com/v3/media/) via the `Accept` header:",
-    "documentationUrl": "https://developer.github.com/v3/activity/starring/#list-repositories-being-starred",
+    "description": "Lists repositories the authenticated user has starred.\n\nYou can also find out _when_ stars were created by passing the following custom [media type](https://developer.github.com/v3/media/) via the `Accept` header:",
+    "documentationUrl": "https://developer.github.com/v3/activity/starring/#list-repositories-starred-by-the-authenticated-user",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -42010,15 +42934,15 @@
     "renamed": null
   },
   {
-    "name": "List repositories being watched by the authenticated user",
+    "name": "List repositories watched by the authenticated user",
     "scope": "activity",
     "id": "listWatchedReposForAuthenticatedUser",
     "method": "GET",
     "url": "/user/subscriptions",
     "isDeprecated": false,
     "isLegacy": false,
-    "description": "",
-    "documentationUrl": "https://developer.github.com/v3/activity/watching/#list-repositories-being-watched",
+    "description": "Lists repositories the authenticated user is watching.",
+    "documentationUrl": "https://developer.github.com/v3/activity/watching/#list-repositories-watched-by-the-authenticated-user",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -42607,14 +43531,14 @@
     "renamed": null
   },
   {
-    "name": "List a user's followers",
+    "name": "List followers of a user",
     "scope": "users",
     "id": "listFollowersForUser",
     "method": "GET",
     "url": "/users/{username}/followers",
     "isDeprecated": false,
     "isLegacy": false,
-    "description": "",
+    "description": "Lists the people following the specified user.",
     "documentationUrl": "https://developer.github.com/v3/users/followers/#list-followers-of-a-user",
     "previews": [],
     "headers": [],
@@ -42673,14 +43597,14 @@
     "renamed": null
   },
   {
-    "name": "List who a user is following",
+    "name": "List users followed by another user",
     "scope": "users",
     "id": "listFollowingForUser",
     "method": "GET",
     "url": "/users/{username}/following",
     "isDeprecated": false,
     "isLegacy": false,
-    "description": "",
+    "description": "Lists the people who the specified user follows.",
     "documentationUrl": "https://developer.github.com/v3/users/followers/#list-users-followed-by-another-user",
     "previews": [],
     "headers": [],
@@ -42782,15 +43706,15 @@
     "renamed": null
   },
   {
-    "name": "List public gists for the specified user",
+    "name": "List gists for a user",
     "scope": "gists",
-    "id": "listPublicForUser",
+    "id": "listForUser",
     "method": "GET",
     "url": "/users/{username}/gists",
     "isDeprecated": false,
     "isLegacy": false,
-    "description": "",
-    "documentationUrl": "https://developer.github.com/v3/gists/#list-a-users-gists",
+    "description": "Lists public gists for the specified user:",
+    "documentationUrl": "https://developer.github.com/v3/gists/#list-gists-for-a-user",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -42859,6 +43783,90 @@
       }
     ],
     "renamed": null
+  },
+  {
+    "name": "List gists for a user",
+    "scope": "gists",
+    "id": "listPublicForUser",
+    "method": "GET",
+    "url": "/users/{username}/gists",
+    "isDeprecated": false,
+    "isLegacy": false,
+    "description": "Lists public gists for the specified user:",
+    "documentationUrl": "https://developer.github.com/v3/gists/#list-gists-for-a-user",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "username",
+        "description": "username parameter",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "since",
+        "description": "This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`. Only gists updated at or after this time are returned.",
+        "in": "QUERY",
+        "type": "string",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "per_page",
+        "description": "Results per page (max 100)",
+        "in": "QUERY",
+        "type": "integer",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "page",
+        "description": "Page number of the results to fetch.",
+        "in": "QUERY",
+        "type": "integer",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "examples": [
+          {
+            "data": "[{\"url\":\"https://api.github.com/gists/aa5a315d61ae9438b18d\",\"forks_url\":\"https://api.github.com/gists/aa5a315d61ae9438b18d/forks\",\"commits_url\":\"https://api.github.com/gists/aa5a315d61ae9438b18d/commits\",\"id\":\"aa5a315d61ae9438b18d\",\"node_id\":\"MDQ6R2lzdGFhNWEzMTVkNjFhZTk0MzhiMThk\",\"git_pull_url\":\"https://gist.github.com/aa5a315d61ae9438b18d.git\",\"git_push_url\":\"https://gist.github.com/aa5a315d61ae9438b18d.git\",\"html_url\":\"https://gist.github.com/aa5a315d61ae9438b18d\",\"files\":{\"hello_world.rb\":{\"filename\":\"hello_world.rb\",\"type\":\"application/x-ruby\",\"language\":\"Ruby\",\"raw_url\":\"https://gist.githubusercontent.com/octocat/6cad326836d38bd3a7ae/raw/db9c55113504e46fa076e7df3a04ce592e2e86d8/hello_world.rb\",\"size\":167}},\"public\":true,\"created_at\":\"2010-04-14T02:15:15Z\",\"updated_at\":\"2011-06-20T11:34:15Z\",\"description\":\"Hello World Examples\",\"comments\":0,\"user\":null,\"comments_url\":\"https://api.github.com/gists/aa5a315d61ae9438b18d/comments/\",\"owner\":{\"login\":\"octocat\",\"id\":1,\"node_id\":\"MDQ6VXNlcjE=\",\"avatar_url\":\"https://github.com/images/error/octocat_happy.gif\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/octocat\",\"html_url\":\"https://github.com/octocat\",\"followers_url\":\"https://api.github.com/users/octocat/followers\",\"following_url\":\"https://api.github.com/users/octocat/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/octocat/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/octocat/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/octocat/subscriptions\",\"organizations_url\":\"https://api.github.com/users/octocat/orgs\",\"repos_url\":\"https://api.github.com/users/octocat/repos\",\"events_url\":\"https://api.github.com/users/octocat/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/octocat/received_events\",\"type\":\"User\",\"site_admin\":false},\"truncated\":false}]"
+          }
+        ]
+      }
+    ],
+    "renamed": {
+      "before": { "scope": "gists", "id": "listPublicForUser" },
+      "after": { "scope": "gists", "id": "listForUser" },
+      "date": "2020-03-04",
+      "note": "\"gists/list-public-for-user\" operation ID is now \"gists/list-for-user\""
+    }
   },
   {
     "name": "List GPG keys for a user",
@@ -43364,7 +44372,7 @@
     "renamed": null
   },
   {
-    "name": "List user repositories",
+    "name": "List repositories for a user",
     "scope": "repos",
     "id": "listForUser",
     "method": "GET",
@@ -43372,7 +44380,7 @@
     "isDeprecated": false,
     "isLegacy": false,
     "description": "Lists public repositories for the specified user.",
-    "documentationUrl": "https://developer.github.com/v3/repos/#list-user-repositories",
+    "documentationUrl": "https://developer.github.com/v3/repos/#list-repositories-for-a-user",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -43459,15 +44467,15 @@
     "renamed": null
   },
   {
-    "name": "List repositories being starred by a user",
+    "name": "List repositories starred by a user",
     "scope": "activity",
     "id": "listReposStarredByUser",
     "method": "GET",
     "url": "/users/{username}/starred",
     "isDeprecated": false,
     "isLegacy": false,
-    "description": "You can also find out _when_ stars were created by passing the following custom [media type](https://developer.github.com/v3/media/) via the `Accept` header:",
-    "documentationUrl": "https://developer.github.com/v3/activity/starring/#list-repositories-being-starred",
+    "description": "Lists repositories a user has starred.\n\nYou can also find out _when_ stars were created by passing the following custom [media type](https://developer.github.com/v3/media/) via the `Accept` header:",
+    "documentationUrl": "https://developer.github.com/v3/activity/starring/#list-repositories-starred-by-a-user",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -43560,15 +44568,15 @@
     "renamed": null
   },
   {
-    "name": "List repositories being watched by a user",
+    "name": "List repositories watched by a user",
     "scope": "activity",
     "id": "listReposWatchedByUser",
     "method": "GET",
     "url": "/users/{username}/subscriptions",
     "isDeprecated": false,
     "isLegacy": false,
-    "description": "",
-    "documentationUrl": "https://developer.github.com/v3/activity/watching/#list-repositories-being-watched",
+    "description": "Lists repositories a user is watching.",
+    "documentationUrl": "https://developer.github.com/v3/activity/watching/#list-repositories-watched-by-a-user",
     "previews": [],
     "headers": [],
     "parameters": [
