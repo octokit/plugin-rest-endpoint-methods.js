@@ -41,14 +41,8 @@
     "isLegacy": false,
     "description": "Use this endpoint to complete the handshake necessary when implementing the [GitHub App Manifest flow](https://developer.github.com/apps/building-github-apps/creating-github-apps-from-a-manifest/). When you create a GitHub App with the manifest flow, you receive a temporary `code` used to retrieve the GitHub App's `id`, `pem` (private key), and `webhook_secret`.",
     "documentationUrl": "https://developer.github.com/v3/apps/#create-a-github-app-from-a-manifest",
-    "previews": [{ "name": "fury" }],
-    "headers": [
-      {
-        "name": "accept",
-        "value": "application/vnd.github.fury-preview+json",
-        "required": true
-      }
-    ],
+    "previews": [],
+    "headers": [],
     "parameters": [
       {
         "name": "code",

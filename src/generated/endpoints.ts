@@ -123,10 +123,7 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
       "POST /content_references/{content_reference_id}/attachments",
       { mediaType: { previews: ["corsair"] } }
     ],
-    createFromManifest: [
-      "POST /app-manifests/{code}/conversions",
-      { mediaType: { previews: ["fury"] } }
-    ],
+    createFromManifest: ["POST /app-manifests/{code}/conversions"],
     createInstallationToken: [
       "POST /app/installations/{installation_id}/access_tokens",
       { mediaType: { previews: ["machine-man"] } }
