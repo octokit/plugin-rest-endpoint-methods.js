@@ -28,7 +28,7 @@
     "deprecation": "^2.3.1"
   },
   "devDependencies": {
-    "@gimenete/type-writer": "^0.1.4",
+    "@gimenete/type-writer": "^0.1.5",
     "@octokit/core": "^2.1.2",
     "@octokit/graphql": "^4.3.1",
     "@pika/pack": "^0.5.0",
