@@ -39,7 +39,7 @@
     "@types/jest": "^25.1.0",
     "@types/node": "^13.1.0",
     "fetch-mock": "^9.0.0",
-    "fs-extra": "^8.1.0",
+    "fs-extra": "^9.0.0",
     "jest": "^25.1.0",
     "lodash.camelcase": "^4.3.0",
     "lodash.set": "^4.3.2",
