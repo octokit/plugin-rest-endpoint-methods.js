@@ -4,7 +4,7 @@ import {
   RequestParameters,
   RequestMethod,
   Route,
-  Url
+  Url,
 } from "@octokit/types";
 import { EndpointsDefaultsAndDecorations, EndpointDecorations } from "./types";
 import { RestEndpointMethods } from "./generated/types";
@@ -71,7 +71,7 @@ function decorate(
     if (decorations.mapToData) {
       options = Object.assign({}, options, {
         data: options[decorations.mapToData],
-        [decorations.mapToData]: undefined
+        [decorations.mapToData]: undefined,
       });
       return requestWithDefaults(options);
     }

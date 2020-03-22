@@ -12,7 +12,7 @@ describe("Deprecations", () => {
     let warnCalledCount = 0;
     const octokit = new MyOctokit({
       request: {
-        fetch: mock
+        fetch: mock,
       },
       log: {
         warn: (deprecation: Error) => {
@@ -20,8 +20,8 @@ describe("Deprecations", () => {
           expect(deprecation).toMatch(
             "octokit.reactions.delete() has been renamed to octokit.reactions.deleteLegacy()"
           );
-        }
-      }
+        },
+      },
     });
     // See https://developer.github.com/v3/reactions/#delete-a-reaction-legacy
     await octokit.reactions.delete({ reaction_id: 1 });
@@ -35,7 +35,7 @@ describe("Deprecations", () => {
     let warnCalledCount = 0;
     const octokit = new MyOctokit({
       request: {
-        fetch: mock
+        fetch: mock,
       },
       log: {
         warn: (deprecation: Error) => {
@@ -43,8 +43,8 @@ describe("Deprecations", () => {
           expect(deprecation).toMatch(
             "octokit.reactions.deleteLegacy() is deprecated, see https://developer.github.com/v3/reactions/#delete-a-reaction-legacy"
           );
-        }
-      }
+        },
+      },
     });
     // See https://developer.github.com/v3/reactions/#delete-a-reaction-legacy
     await octokit.reactions.deleteLegacy({ reaction_id: 1 });

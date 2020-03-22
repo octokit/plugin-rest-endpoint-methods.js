@@ -10,8 +10,8 @@ describe("REST API endpoint methods", () => {
       { ok: true },
       {
         body: {
-          name: "my-new-repo"
-        }
+          name: "my-new-repo",
+        },
       }
     );
 
@@ -19,13 +19,13 @@ describe("REST API endpoint methods", () => {
     const octokit = new MyOctokit({
       auth: "secret123",
       request: {
-        fetch: mock
-      }
+        fetch: mock,
+      },
     });
 
     // See https://developer.github.com/v3/repos/#create
     const { data } = await octokit.repos.createForAuthenticatedUser({
-      name: "my-new-repo"
+      name: "my-new-repo",
     });
 
     expect(data).toStrictEqual({ ok: true });
@@ -38,8 +38,8 @@ describe("REST API endpoint methods", () => {
       {
         body: {
           event_type: "greeting",
-          client_payload: { name: "Mona" }
-        }
+          client_payload: { name: "Mona" },
+        },
       }
     );
 
@@ -47,8 +47,8 @@ describe("REST API endpoint methods", () => {
     const octokit = new MyOctokit({
       auth: "secret123",
       request: {
-        fetch: mock
-      }
+        fetch: mock,
+      },
     });
 
     // See https://developer.github.com/v3/repos/#create
@@ -56,7 +56,7 @@ describe("REST API endpoint methods", () => {
       owner: "octocat",
       repo: "hello-world",
       event_type: "greeting",
-      client_payload: { name: "Mona" }
+      client_payload: { name: "Mona" },
     });
 
     expect(data).toStrictEqual({ ok: true });
@@ -68,16 +68,16 @@ describe("REST API endpoint methods", () => {
       { ok: true },
       {
         headers: {
-          "content-type": "text/plain"
+          "content-type": "text/plain",
         },
         query: {
           name: "test.txt",
-          label: "test"
+          label: "test",
         },
         matcher: (url, { body }) => {
           expect(body).toEqual("test 1, 2");
           return true;
-        }
+        },
       }
     );
 
@@ -85,23 +85,23 @@ describe("REST API endpoint methods", () => {
     const octokit = new MyOctokit({
       auth: "secret123",
       request: {
-        fetch: mock
-      }
+        fetch: mock,
+      },
     });
 
     return octokit.repos
       .uploadReleaseAsset({
         headers: {
-          "content-type": "text/plain"
+          "content-type": "text/plain",
         },
         owner: "octocat",
         repo: "hello-world",
         release_id: 123,
         data: "test 1, 2",
         name: "test.txt",
-        label: "test"
+        label: "test",
       })
-      .catch(error => {
+      .catch((error) => {
         console.log(error);
 
         throw error;
@@ -113,7 +113,7 @@ describe("REST API endpoint methods", () => {
       "https://api.github.com/repos/octocat/hello-world/branches/latest/protection/required_status_checks/contexts",
       { ok: true },
       {
-        body: ["myci1", "myci2"]
+        body: ["myci1", "myci2"],
       }
     );
 
@@ -121,8 +121,8 @@ describe("REST API endpoint methods", () => {
     const octokit = new MyOctokit({
       auth: "secret123",
       request: {
-        fetch: mock
-      }
+        fetch: mock,
+      },
     });
 
     return octokit.repos
@@ -130,9 +130,9 @@ describe("REST API endpoint methods", () => {
         owner: "octocat",
         repo: "hello-world",
         branch: "latest",
-        contexts: ["myci1", "myci2"]
+        contexts: ["myci1", "myci2"],
       })
-      .catch(error => {
+      .catch((error) => {
         console.log(error);
 
         throw error;
@@ -148,8 +148,8 @@ describe("REST API endpoint methods", () => {
     const octokit = new MyOctokit({
       auth: "secret123",
       request: {
-        fetch: mock
-      }
+        fetch: mock,
+      },
     });
 
     return octokit.apps.listInstallations();

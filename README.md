@@ -33,7 +33,7 @@ Install with `npm install @octokit/core @octokit/plugin-rest-endpoint-methods`. 
 ```js
 const { Octokit } = require("@octokit/core");
 const {
-  restEndpointMethods
+  restEndpointMethods,
 } = require("@octokit/plugin-rest-endpoint-methods");
 ```
 
