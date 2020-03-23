@@ -8,7 +8,7 @@ Call this endpoint using the `-v` flag, which enables verbose output and allows 
 octokit.actions.listWorkflowRunLogs({
   owner,
   repo,
-  run_id
+  run_id,
 });
 ```
 

@@ -9,7 +9,7 @@ Be aware that the `id` of a pull request returned from "Issues" endpoints will b
 ```js
 octokit.issues.listForRepo({
   owner,
-  repo
+  repo,
 });
 ```
 

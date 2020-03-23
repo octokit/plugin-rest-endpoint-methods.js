@@ -12,7 +12,7 @@ This example creates a content attachment for the domain `https://errors.ai/`.
 octokit.apps.createContentAttachment({
   content_reference_id,
   title,
-  body
+  body,
 });
 ```
 

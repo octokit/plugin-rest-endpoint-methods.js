@@ -7,7 +7,7 @@ Note that you'll need to set `Content-Length` to zero when calling out to this e
 ```js
 octokit.activity.starRepo({
   owner,
-  repo
+  repo,
 });
 ```
 

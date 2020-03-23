@@ -7,7 +7,7 @@ The latest release is the most recent non-prerelease, non-draft release, sorted 
 ```js
 octokit.repos.getLatestRelease({
   owner,
-  repo
+  repo,
 });
 ```
 

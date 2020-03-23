@@ -26,7 +26,7 @@ If the submodule repository is not hosted on github.com, the Git URLs (`git_url`
 octokit.repos.getContents({
   owner,
   repo,
-  path
+  path,
 });
 ```
 

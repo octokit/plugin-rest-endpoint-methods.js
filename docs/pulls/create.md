@@ -14,7 +14,7 @@ octokit.pulls.create({
   repo,
   title,
   head,
-  base
+  base,
 });
 ```
 

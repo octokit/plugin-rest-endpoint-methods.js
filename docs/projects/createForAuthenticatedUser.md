@@ -2,7 +2,7 @@
 
 ```js
 octokit.projects.createForAuthenticatedUser({
-  name
+  name,
 });
 ```
 

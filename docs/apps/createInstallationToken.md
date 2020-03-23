@@ -8,7 +8,7 @@ This example grants the token "Read and write" permission to `issues` and "Read"
 
 ```js
 octokit.apps.createInstallationToken({
-  installation_id
+  installation_id,
 });
 ```
 

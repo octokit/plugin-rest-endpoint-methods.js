@@ -12,7 +12,7 @@ When using [OAuth](https://developer.github.com/apps/building-oauth-apps/underst
 ```js
 octokit.repos.createInOrg({
   org,
-  name
+  name,
 });
 ```
 

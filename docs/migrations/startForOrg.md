@@ -5,7 +5,7 @@ Initiates the generation of a migration archive.
 ```js
 octokit.migrations.startForOrg({
   org,
-  repositories
+  repositories,
 });
 ```
 

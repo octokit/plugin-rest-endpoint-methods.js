@@ -4,7 +4,7 @@
 octokit.repos.replaceAllTopics({
   owner,
   repo,
-  names
+  names,
 });
 ```
 

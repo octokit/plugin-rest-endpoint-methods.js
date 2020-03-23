@@ -6,7 +6,7 @@ Issue owners and users with push access can edit an issue.
 octokit.issues.update({
   owner,
   repo,
-  issue_number
+  issue_number,
 });
 ```
 

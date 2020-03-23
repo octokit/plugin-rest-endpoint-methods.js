@@ -9,7 +9,7 @@ octokit.repos.createStatus({
   owner,
   repo,
   sha,
-  state
+  state,
 });
 ```
 

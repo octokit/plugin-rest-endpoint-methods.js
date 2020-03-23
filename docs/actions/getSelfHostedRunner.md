@@ -6,7 +6,7 @@ Gets a specific self-hosted runner. Anyone with admin access to the repository c
 octokit.actions.getSelfHostedRunner({
   owner,
   repo,
-  runner_id
+  runner_id,
 });
 ```
 

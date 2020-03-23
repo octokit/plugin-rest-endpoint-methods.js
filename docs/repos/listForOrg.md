@@ -4,7 +4,7 @@ Lists repositories for the specified organization.
 
 ```js
 octokit.repos.listForOrg({
-  org
+  org,
 });
 ```
 

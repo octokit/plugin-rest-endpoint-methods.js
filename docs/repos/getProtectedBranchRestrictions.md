@@ -10,7 +10,7 @@ Lists who has access to this protected branch. {{#note}}
 octokit.repos.getProtectedBranchRestrictions({
   owner,
   repo,
-  branch
+  branch,
 });
 ```
 

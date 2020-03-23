@@ -13,7 +13,7 @@ For more information, see "[Create a deployment](https://developer.github.com/v3
 octokit.repos.deleteDeployment({
   owner,
   repo,
-  deployment_id
+  deployment_id,
 });
 ```
 

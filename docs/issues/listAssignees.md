@@ -5,7 +5,7 @@ Lists the [available assignees](https://help.github.com/articles/assigning-issue
 ```js
 octokit.issues.listAssignees({
   owner,
-  repo
+  repo,
 });
 ```
 

@@ -4,7 +4,7 @@
 octokit.repos.removeDeployKey({
   owner,
   repo,
-  key_id
+  key_id,
 });
 ```
 

@@ -5,7 +5,7 @@ This endpoint will return all community profile metrics, including an overall he
 ```js
 octokit.repos.retrieveCommunityProfileMetrics({
   owner,
-  repo
+  repo,
 });
 ```
 

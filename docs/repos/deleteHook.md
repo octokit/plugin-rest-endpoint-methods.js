@@ -4,7 +4,7 @@
 octokit.repos.deleteHook({
   owner,
   repo,
-  hook_id
+  hook_id,
 });
 ```
 

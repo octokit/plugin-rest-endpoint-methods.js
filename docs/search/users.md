@@ -10,7 +10,7 @@ Here, we're looking at users with the name Tom. We're only interested in those w
 
 ```js
 octokit.search.users({
-  q
+  q,
 });
 ```
 

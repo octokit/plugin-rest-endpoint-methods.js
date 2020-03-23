@@ -3,7 +3,7 @@
 ```js
 octokit.repos.listTags({
   owner,
-  repo
+  repo,
 });
 ```
 

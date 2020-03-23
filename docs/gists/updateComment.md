@@ -4,7 +4,7 @@
 octokit.gists.updateComment({
   gist_id,
   comment_id,
-  body
+  body,
 });
 ```
 

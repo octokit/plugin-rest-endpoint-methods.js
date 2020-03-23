@@ -7,7 +7,7 @@ You must use a personal access token (which you can create via the [command line
 ```js
 octokit.apps.addRepoToInstallation({
   installation_id,
-  repository_id
+  repository_id,
 });
 ```
 

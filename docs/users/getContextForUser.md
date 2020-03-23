@@ -6,7 +6,7 @@ The `subject_type` and `subject_id` parameters provide context for the person's 
 
 ```js
 octokit.users.getContextForUser({
-  username
+  username,
 });
 ```
 

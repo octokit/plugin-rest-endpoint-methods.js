@@ -6,7 +6,7 @@ Get a published release with the specified tag.
 octokit.repos.getReleaseByTag({
   owner,
   repo,
-  tag
+  tag,
 });
 ```
 

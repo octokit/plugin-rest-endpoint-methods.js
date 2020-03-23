@@ -4,7 +4,7 @@
 octokit.issues.deleteComment({
   owner,
   repo,
-  comment_id
+  comment_id,
 });
 ```
 

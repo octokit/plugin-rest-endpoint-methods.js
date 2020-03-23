@@ -8,7 +8,7 @@ Lists check runs for a check suite using its `id`. GitHub Apps must have the `ch
 octokit.checks.listForSuite({
   owner,
   repo,
-  check_suite_id
+  check_suite_id,
 });
 ```
 

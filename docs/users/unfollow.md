@@ -4,7 +4,7 @@ Unfollowing a user requires the user to be logged in and authenticated with basi
 
 ```js
 octokit.users.unfollow({
-  username
+  username,
 });
 ```
 

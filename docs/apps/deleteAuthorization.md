@@ -6,7 +6,7 @@ Deleting an OAuth application's grant will also delete all OAuth tokens associat
 
 ```js
 octokit.apps.deleteAuthorization({
-  client_id
+  client_id,
 });
 ```
 

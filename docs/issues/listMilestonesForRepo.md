@@ -3,7 +3,7 @@
 ```js
 octokit.issues.listMilestonesForRepo({
   owner,
-  repo
+  repo,
 });
 ```
 

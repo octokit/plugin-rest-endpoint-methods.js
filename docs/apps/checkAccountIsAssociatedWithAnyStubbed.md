@@ -8,7 +8,7 @@ GitHub Apps must use a [JWT](https://developer.github.com/apps/building-github-a
 
 ```js
 octokit.apps.checkAccountIsAssociatedWithAnyStubbed({
-  account_id
+  account_id,
 });
 ```
 

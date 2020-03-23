@@ -6,7 +6,7 @@ Protected branches are available in public repositories with GitHub Free, and in
 octokit.repos.getProtectedBranchAdminEnforcement({
   owner,
   repo,
-  branch
+  branch,
 });
 ```
 

@@ -6,7 +6,7 @@ Here's how you can create a read-only deploy key:
 octokit.repos.addDeployKey({
   owner,
   repo,
-  key
+  key,
 });
 ```
 

@@ -4,7 +4,7 @@ Initiates the generation of a user migration archive.
 
 ```js
 octokit.migrations.startForAuthenticatedUser({
-  repositories
+  repositories,
 });
 ```
 

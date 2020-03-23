@@ -3,7 +3,7 @@
 ```js
 octokit.repos.getAllTopics({
   owner,
-  repo
+  repo,
 });
 ```
 

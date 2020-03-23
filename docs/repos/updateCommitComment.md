@@ -5,7 +5,7 @@ octokit.repos.updateCommitComment({
   owner,
   repo,
   comment_id,
-  body
+  body,
 });
 ```
 

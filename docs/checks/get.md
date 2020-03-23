@@ -8,7 +8,7 @@ Gets a single check run using its `id`. GitHub Apps must have the `checks:read` 
 octokit.checks.get({
   owner,
   repo,
-  check_run_id
+  check_run_id,
 });
 ```
 

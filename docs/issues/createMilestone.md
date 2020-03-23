@@ -4,7 +4,7 @@
 octokit.issues.createMilestone({
   owner,
   repo,
-  title
+  title,
 });
 ```
 

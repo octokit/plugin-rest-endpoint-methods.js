@@ -6,7 +6,7 @@ Gets a specific artifact for a workflow run. Anyone with read access to the repo
 octokit.actions.getArtifact({
   owner,
   repo,
-  artifact_id
+  artifact_id,
 });
 ```
 

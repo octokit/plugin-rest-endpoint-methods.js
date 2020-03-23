@@ -4,7 +4,7 @@ Deletes a previous migration archive. Downloadable migration archives are automa
 
 ```js
 octokit.migrations.deleteArchiveForAuthenticatedUser({
-  migration_id
+  migration_id,
 });
 ```
 

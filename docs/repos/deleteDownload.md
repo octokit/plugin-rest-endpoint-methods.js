@@ -4,7 +4,7 @@
 octokit.repos.deleteDownload({
   owner,
   repo,
-  download_id
+  download_id,
 });
 ```
 

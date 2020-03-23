@@ -12,7 +12,7 @@ Weekly Hash (`weeks` array):
 ```js
 octokit.repos.getContributorsStats({
   owner,
-  repo
+  repo,
 });
 ```
 

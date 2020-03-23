@@ -7,7 +7,7 @@ This API method and the "Map a commit author" method allow you to provide correc
 ```js
 octokit.migrations.getCommitAuthors({
   owner,
-  repo
+  repo,
 });
 ```
 

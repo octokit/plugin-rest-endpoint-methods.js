@@ -28,7 +28,7 @@ These are the possible values for `reason` in the `verification` object:
 octokit.git.getCommit({
   owner,
   repo,
-  commit_sha
+  commit_sha,
 });
 ```
 

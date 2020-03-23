@@ -4,7 +4,7 @@
 octokit.issues.deleteLabel({
   owner,
   repo,
-  name
+  name,
 });
 ```
 

@@ -8,7 +8,7 @@ Adding admin enforcement requires admin or owner permissions to the repository a
 octokit.repos.addProtectedBranchAdminEnforcement({
   owner,
   repo,
-  branch
+  branch,
 });
 ```
 

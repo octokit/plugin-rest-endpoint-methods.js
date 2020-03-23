@@ -4,7 +4,7 @@ View extended details for a single GPG key. Requires that you are authenticated 
 
 ```js
 octokit.users.getGpgKey({
-  gpg_key_id
+  gpg_key_id,
 });
 ```
 

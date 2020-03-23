@@ -6,7 +6,7 @@ Lists all pull requests containing the provided commit SHA, which can be from an
 octokit.repos.listPullRequestsAssociatedWithCommit({
   owner,
   repo,
-  commit_sha
+  commit_sha,
 });
 ```
 

@@ -5,7 +5,7 @@ Lists binaries for the self-hosted runner application that you can download and 
 ```js
 octokit.actions.listDownloadsForSelfHostedRunnerApplication({
   owner,
-  repo
+  repo,
 });
 ```
 

@@ -8,7 +8,7 @@ Lists the GitHub Apps that have push access to this branch. Only installed GitHu
 octokit.repos.getAppsWithAccessToProtectedBranch({
   owner,
   repo,
-  branch
+  branch,
 });
 ```
 

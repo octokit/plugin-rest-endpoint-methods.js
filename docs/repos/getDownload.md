@@ -4,7 +4,7 @@
 octokit.repos.getDownload({
   owner,
   repo,
-  download_id
+  download_id,
 });
 ```
 

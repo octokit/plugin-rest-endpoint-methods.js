@@ -7,7 +7,7 @@ To list members in a team, the team must be visible to the authenticated user.
 ```js
 octokit.teams.listMembersInOrg({
   org,
-  team_slug
+  team_slug,
 });
 ```
 

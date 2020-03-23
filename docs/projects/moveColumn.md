@@ -3,7 +3,7 @@
 ```js
 octokit.projects.moveColumn({
   column_id,
-  position
+  position,
 });
 ```
 

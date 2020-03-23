@@ -8,7 +8,7 @@ Lists check runs for a commit ref. The `ref` can be a SHA, branch name, or a tag
 octokit.checks.listForRef({
   owner,
   repo,
-  ref
+  ref,
 });
 ```
 

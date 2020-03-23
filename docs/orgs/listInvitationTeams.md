@@ -5,7 +5,7 @@ List all teams associated with an invitation. In order to see invitations in an 
 ```js
 octokit.orgs.listInvitationTeams({
   org,
-  invitation_id
+  invitation_id,
 });
 ```
 

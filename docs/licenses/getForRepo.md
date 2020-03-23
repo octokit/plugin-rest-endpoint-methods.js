@@ -7,7 +7,7 @@ Similar to [the repository contents API](https://developer.github.com/v3/repos/c
 ```js
 octokit.licenses.getForRepo({
   owner,
-  repo
+  repo,
 });
 ```
 

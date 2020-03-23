@@ -11,7 +11,7 @@ octokit.repos.getArchiveLink({
   owner,
   repo,
   archive_format,
-  ref
+  ref,
 });
 ```
 

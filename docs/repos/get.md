@@ -7,7 +7,7 @@ The `parent` and `source` objects are present when the repository is a fork. `pa
 ```js
 octokit.repos.get({
   owner,
-  repo
+  repo,
 });
 ```
 

@@ -8,7 +8,7 @@ Lists the people who have push access to this branch.
 octokit.repos.getUsersWithAccessToProtectedBranch({
   owner,
   repo,
-  branch
+  branch,
 });
 ```
 

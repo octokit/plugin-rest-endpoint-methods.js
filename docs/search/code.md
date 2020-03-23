@@ -20,7 +20,7 @@ Here, we're searching for the keyword `addClass` within a file's contents. We're
 
 ```js
 octokit.search.code({
-  q
+  q,
 });
 ```
 

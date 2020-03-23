@@ -6,7 +6,7 @@ Deletes a secret in a repository using the secret name. Anyone with write access
 octokit.actions.deleteSecretFromRepo({
   owner,
   repo,
-  name
+  name,
 });
 ```
 

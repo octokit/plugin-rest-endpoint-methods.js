@@ -33,7 +33,7 @@ octokit.pulls.createComment({
   pull_number,
   body,
   commit_id,
-  path
+  path,
 });
 ```
 

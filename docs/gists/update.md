@@ -4,7 +4,7 @@ Allows you to update or delete a gist file and rename gist files. Files from the
 
 ```js
 octokit.gists.update({
-  gist_id
+  gist_id,
 });
 ```
 

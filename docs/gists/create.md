@@ -6,7 +6,7 @@ Allows you to add a new gist with one or more files.
 
 ```js
 octokit.gists.create({
-  files
+  files,
 });
 ```
 

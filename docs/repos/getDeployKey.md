@@ -4,7 +4,7 @@
 octokit.repos.getDeployKey({
   owner,
   repo,
-  key_id
+  key_id,
 });
 ```
 

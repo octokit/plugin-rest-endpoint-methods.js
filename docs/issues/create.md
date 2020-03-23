@@ -8,7 +8,7 @@ This endpoint triggers [notifications](https://help.github.com/articles/about-no
 octokit.issues.create({
   owner,
   repo,
-  title
+  title,
 });
 ```
 

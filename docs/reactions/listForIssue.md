@@ -6,7 +6,7 @@ List the reactions to an [issue](https://developer.github.com/v3/issues/).
 octokit.reactions.listForIssue({
   owner,
   repo,
-  issue_number
+  issue_number,
 });
 ```
 

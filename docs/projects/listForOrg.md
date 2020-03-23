@@ -6,7 +6,7 @@ s
 
 ```js
 octokit.projects.listForOrg({
-  org
+  org,
 });
 ```
 

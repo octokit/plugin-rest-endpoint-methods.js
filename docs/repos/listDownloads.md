@@ -3,7 +3,7 @@
 ```js
 octokit.repos.listDownloads({
   owner,
-  repo
+  repo,
 });
 ```
 

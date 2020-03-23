@@ -11,7 +11,7 @@ This input example shows how you can use the `client_payload` as a test to debug
 ```js
 octokit.repos.createDispatchEvent({
   owner,
-  repo
+  repo,
 });
 ```
 

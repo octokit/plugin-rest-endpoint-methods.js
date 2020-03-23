@@ -4,7 +4,7 @@
 octokit.issues.getEvent({
   owner,
   repo,
-  event_id
+  event_id,
 });
 ```
 

@@ -5,7 +5,7 @@ Lists the projects in a repository. Returns a `404 Not Found` status if projects
 ```js
 octokit.projects.listForRepo({
   owner,
-  repo
+  repo,
 });
 ```
 

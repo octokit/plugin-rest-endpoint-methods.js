@@ -6,7 +6,7 @@ Note that subscriptions are only generated if a user is participating in a conve
 
 ```js
 octokit.activity.getThreadSubscription({
-  thread_id
+  thread_id,
 });
 ```
 

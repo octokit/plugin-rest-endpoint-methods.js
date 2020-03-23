@@ -5,7 +5,7 @@ Removes a collaborator from an organization project. You must be an organization
 ```js
 octokit.projects.removeCollaborator({
   project_id,
-  username
+  username,
 });
 ```
 

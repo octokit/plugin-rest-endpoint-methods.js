@@ -6,7 +6,7 @@ This will trigger a [ping event](https://developer.github.com/webhooks/#ping-eve
 octokit.repos.pingHook({
   owner,
   repo,
-  hook_id
+  hook_id,
 });
 ```
 

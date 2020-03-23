@@ -8,7 +8,7 @@ OAuth access tokens require the `write:discussion` [scope](https://developer.git
 
 ```js
 octokit.reactions.deleteLegacy({
-  reaction_id
+  reaction_id,
 });
 ```
 

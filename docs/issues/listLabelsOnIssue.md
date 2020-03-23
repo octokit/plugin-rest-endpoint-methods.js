@@ -4,7 +4,7 @@
 octokit.issues.listLabelsOnIssue({
   owner,
   repo,
-  issue_number
+  issue_number,
 });
 ```
 

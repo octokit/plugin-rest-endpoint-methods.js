@@ -4,7 +4,7 @@ Lists repositories a user is watching.
 
 ```js
 octokit.activity.listReposWatchedByUser({
-  username
+  username,
 });
 ```
 

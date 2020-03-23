@@ -7,7 +7,7 @@ Anyone with read access to the repository can use this endpoint. GitHub Apps mus
 ```js
 octokit.actions.listRepoWorkflowRuns({
   owner,
-  repo
+  repo,
 });
 ```
 

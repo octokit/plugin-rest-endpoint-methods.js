@@ -8,7 +8,7 @@ This will trigger the hook with the latest push to the current repository if the
 octokit.repos.testPushHook({
   owner,
   repo,
-  hook_id
+  hook_id,
 });
 ```
 

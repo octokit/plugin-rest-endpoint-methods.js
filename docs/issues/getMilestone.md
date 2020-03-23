@@ -4,7 +4,7 @@
 octokit.issues.getMilestone({
   owner,
   repo,
-  milestone_number
+  milestone_number,
 });
 ```
 

@@ -4,7 +4,7 @@
 
 ```js
 octokit.gists.fork({
-  gist_id
+  gist_id,
 });
 ```
 

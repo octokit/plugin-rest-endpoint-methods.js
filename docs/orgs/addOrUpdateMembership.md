@@ -13,7 +13,7 @@ To prevent abuse, the authenticated user is limited to 50 organization invitatio
 ```js
 octokit.orgs.addOrUpdateMembership({
   org,
-  username
+  username,
 });
 ```
 

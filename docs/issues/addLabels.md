@@ -5,7 +5,7 @@ octokit.issues.addLabels({
   owner,
   repo,
   issue_number,
-  labels
+  labels,
 });
 ```
 

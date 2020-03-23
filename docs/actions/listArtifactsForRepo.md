@@ -5,7 +5,7 @@ Lists all artifacts for a repository. Anyone with read access to the repository 
 ```js
 octokit.actions.listArtifactsForRepo({
   owner,
-  repo
+  repo,
 });
 ```
 

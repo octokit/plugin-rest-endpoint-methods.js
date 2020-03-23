@@ -4,7 +4,7 @@
 octokit.repos.getHook({
   owner,
   repo,
-  hook_id
+  hook_id,
 });
 ```
 

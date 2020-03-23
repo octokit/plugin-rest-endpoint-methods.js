@@ -5,7 +5,7 @@ When an organization member is converted to an outside collaborator, they'll onl
 ```js
 octokit.orgs.convertMemberToOutsideCollaborator({
   org,
-  username
+  username,
 });
 ```
 

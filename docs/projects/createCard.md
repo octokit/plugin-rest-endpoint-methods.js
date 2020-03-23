@@ -6,7 +6,7 @@ Be aware that the `id` of a pull request returned from "Issues" endpoints will b
 
 ```js
 octokit.projects.createCard({
-  column_id
+  column_id,
 });
 ```
 

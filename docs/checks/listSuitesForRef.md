@@ -8,7 +8,7 @@ Lists check suites for a commit `ref`. The `ref` can be a SHA, branch name, or a
 octokit.checks.listSuitesForRef({
   owner,
   repo,
-  ref
+  ref,
 });
 ```
 

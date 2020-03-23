@@ -3,7 +3,7 @@
 ```js
 octokit.gists.getRevision({
   gist_id,
-  sha
+  sha,
 });
 ```
 

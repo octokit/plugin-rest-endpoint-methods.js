@@ -5,7 +5,7 @@ This will trigger a [ping event](https://developer.github.com/webhooks/#ping-eve
 ```js
 octokit.orgs.pingHook({
   org,
-  hook_id
+  hook_id,
 });
 ```
 

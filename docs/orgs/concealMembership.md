@@ -3,7 +3,7 @@
 ```js
 octokit.orgs.concealMembership({
   org,
-  username
+  username,
 });
 ```
 

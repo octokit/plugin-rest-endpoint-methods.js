@@ -7,7 +7,7 @@ octokit.reactions.createForIssueComment({
   owner,
   repo,
   comment_id,
-  content
+  content,
 });
 ```
 

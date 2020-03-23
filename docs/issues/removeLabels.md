@@ -6,7 +6,7 @@
 octokit.issues.removeLabels({
   owner,
   repo,
-  issue_number
+  issue_number,
 });
 ```
 

@@ -8,7 +8,7 @@ _Note_: This API supports blobs up to 100 megabytes in size.
 octokit.git.getBlob({
   owner,
   repo,
-  file_sha
+  file_sha,
 });
 ```
 

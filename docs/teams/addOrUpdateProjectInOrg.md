@@ -8,7 +8,7 @@ Adds an organization project to a team. To add a project to a team or update the
 octokit.teams.addOrUpdateProjectInOrg({
   org,
   team_slug,
-  project_id
+  project_id,
 });
 ```
 

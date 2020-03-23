@@ -2,7 +2,7 @@
 
 ```js
 octokit.projects.deleteCard({
-  card_id
+  card_id,
 });
 ```
 

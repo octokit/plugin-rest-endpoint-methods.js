@@ -12,7 +12,7 @@ To get a user's membership with a team, the team must be visible to the authenti
 octokit.teams.getMembershipInOrg({
   org,
   team_slug,
-  username
+  username,
 });
 ```
 

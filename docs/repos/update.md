@@ -5,7 +5,7 @@
 ```js
 octokit.repos.update({
   owner,
-  repo
+  repo,
 });
 ```
 

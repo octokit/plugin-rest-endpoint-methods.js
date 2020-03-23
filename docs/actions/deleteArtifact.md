@@ -6,7 +6,7 @@ Deletes an artifact for a workflow run. Anyone with write access to the reposito
 octokit.actions.deleteArtifact({
   owner,
   repo,
-  artifact_id
+  artifact_id,
 });
 ```
 

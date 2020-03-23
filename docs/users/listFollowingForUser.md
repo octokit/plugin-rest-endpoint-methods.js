@@ -4,7 +4,7 @@ Lists the people who the specified user follows.
 
 ```js
 octokit.users.listFollowingForUser({
-  username
+  username,
 });
 ```
 

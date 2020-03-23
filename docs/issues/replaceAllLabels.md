@@ -4,7 +4,7 @@
 octokit.issues.replaceAllLabels({
   owner,
   repo,
-  issue_number
+  issue_number,
 });
 ```
 

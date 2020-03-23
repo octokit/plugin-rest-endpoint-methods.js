@@ -5,7 +5,7 @@ Get the top 10 referrers over the last 14 days.
 ```js
 octokit.repos.getTopReferrers({
   owner,
-  repo
+  repo,
 });
 ```
 

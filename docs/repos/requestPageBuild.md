@@ -7,7 +7,7 @@ Build requests are limited to one concurrent build per repository and one concur
 ```js
 octokit.repos.requestPageBuild({
   owner,
-  repo
+  repo,
 });
 ```
 

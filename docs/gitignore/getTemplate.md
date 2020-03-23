@@ -6,7 +6,7 @@ Use the raw [media type](https://developer.github.com/v3/media/) to get the raw 
 
 ```js
 octokit.gitignore.getTemplate({
-  name
+  name,
 });
 ```
 

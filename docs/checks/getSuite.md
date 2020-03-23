@@ -8,7 +8,7 @@ Gets a single check suite using its `id`. GitHub Apps must have the `checks:read
 octokit.checks.getSuite({
   owner,
   repo,
-  check_suite_id
+  check_suite_id,
 });
 ```
 

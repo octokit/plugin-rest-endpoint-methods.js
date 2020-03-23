@@ -6,7 +6,7 @@ Following a user requires the user to be logged in and authenticated with basic 
 
 ```js
 octokit.users.follow({
-  username
+  username,
 });
 ```
 

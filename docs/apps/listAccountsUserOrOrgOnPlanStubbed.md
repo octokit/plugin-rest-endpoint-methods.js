@@ -8,7 +8,7 @@ GitHub Apps must use a [JWT](https://developer.github.com/apps/building-github-a
 
 ```js
 octokit.apps.listAccountsUserOrOrgOnPlanStubbed({
-  plan_id
+  plan_id,
 });
 ```
 

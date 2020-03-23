@@ -2,7 +2,7 @@
 
 ```js
 octokit.gists.listForks({
-  gist_id
+  gist_id,
 });
 ```
 

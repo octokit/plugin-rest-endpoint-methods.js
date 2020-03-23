@@ -5,7 +5,7 @@ Creates an organization project board. Returns a `404 Not Found` status if proje
 ```js
 octokit.projects.createForOrg({
   org,
-  name
+  name,
 });
 ```
 

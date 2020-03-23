@@ -5,7 +5,7 @@ Temporarily restricts interactions to certain GitHub users in any public reposit
 ```js
 octokit.interactions.addOrUpdateRestrictionsForOrg({
   org,
-  limit
+  limit,
 });
 ```
 

@@ -4,7 +4,7 @@
 octokit.repos.getBranch({
   owner,
   repo,
-  branch
+  branch,
 });
 ```
 

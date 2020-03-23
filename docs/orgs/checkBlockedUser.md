@@ -7,7 +7,7 @@ If the user is not blocked:
 ```js
 octokit.orgs.checkBlockedUser({
   org,
-  username
+  username,
 });
 ```
 

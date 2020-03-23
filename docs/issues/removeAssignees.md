@@ -8,7 +8,7 @@ This example removes two of three assignees, leaving the `octocat` assignee.
 octokit.issues.removeAssignees({
   owner,
   repo,
-  issue_number
+  issue_number,
 });
 ```
 

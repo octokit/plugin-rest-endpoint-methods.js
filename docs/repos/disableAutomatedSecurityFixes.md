@@ -5,7 +5,7 @@ Disables automated security fixes for a repository. The authenticated user must 
 ```js
 octokit.repos.disableAutomatedSecurityFixes({
   owner,
-  repo
+  repo,
 });
 ```
 

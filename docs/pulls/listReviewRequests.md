@@ -4,7 +4,7 @@
 octokit.pulls.listReviewRequests({
   owner,
   repo,
-  pull_number
+  pull_number,
 });
 ```
 

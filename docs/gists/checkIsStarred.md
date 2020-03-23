@@ -2,7 +2,7 @@
 
 ```js
 octokit.gists.checkIsStarred({
-  gist_id
+  gist_id,
 });
 ```
 

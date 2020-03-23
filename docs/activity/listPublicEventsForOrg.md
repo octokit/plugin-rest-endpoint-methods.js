@@ -2,7 +2,7 @@
 
 ```js
 octokit.activity.listPublicEventsForOrg({
-  org
+  org,
 });
 ```
 

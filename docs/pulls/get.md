@@ -20,7 +20,7 @@ Pass the appropriate [media type](https://developer.github.com/v3/media/#commits
 octokit.pulls.get({
   owner,
   repo,
-  pull_number
+  pull_number,
 });
 ```
 
