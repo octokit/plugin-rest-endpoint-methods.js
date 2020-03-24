@@ -9,7 +9,7 @@ octokit.teams.addOrUpdateRepoInOrg({
   org,
   team_slug,
   owner,
-  repo
+  repo,
 });
 ```
 

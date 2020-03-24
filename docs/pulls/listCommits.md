@@ -6,7 +6,7 @@ Lists a maximum of 250 commits for a pull request. To receive a complete commit 
 octokit.pulls.listCommits({
   owner,
   repo,
-  pull_number
+  pull_number,
 });
 ```
 

@@ -13,7 +13,7 @@ octokit.repos.replaceProtectedBranchAppRestrictions({
   owner,
   repo,
   branch,
-  apps
+  apps,
 });
 ```
 

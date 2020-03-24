@@ -8,7 +8,7 @@ This resource is also available via a legacy route: `GET /repos/:owner/:repo/sta
 octokit.repos.listStatusesForRef({
   owner,
   repo,
-  ref
+  ref,
 });
 ```
 

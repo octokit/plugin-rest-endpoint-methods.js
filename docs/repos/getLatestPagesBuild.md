@@ -3,7 +3,7 @@
 ```js
 octokit.repos.getLatestPagesBuild({
   owner,
-  repo
+  repo,
 });
 ```
 

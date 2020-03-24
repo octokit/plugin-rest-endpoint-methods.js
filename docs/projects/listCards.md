@@ -2,7 +2,7 @@
 
 ```js
 octokit.projects.listCards({
-  column_id
+  column_id,
 });
 ```
 

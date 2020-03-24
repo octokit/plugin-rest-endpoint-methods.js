@@ -22,7 +22,7 @@ octokit.repos.uploadReleaseAsset({
   owner,
   repo,
   release_id,
-  data
+  data,
 });
 ```
 

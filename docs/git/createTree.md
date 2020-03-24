@@ -8,7 +8,7 @@ If you use this endpoint to add, delete, or modify the file contents in a tree, 
 octokit.git.createTree({
   owner,
   repo,
-  tree
+  tree,
 });
 ```
 

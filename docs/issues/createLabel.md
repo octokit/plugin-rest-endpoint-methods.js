@@ -5,7 +5,7 @@ octokit.issues.createLabel({
   owner,
   repo,
   name,
-  color
+  color,
 });
 ```
 

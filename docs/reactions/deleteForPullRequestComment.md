@@ -9,7 +9,7 @@ octokit.reactions.deleteForPullRequestComment({
   owner,
   repo,
   comment_id,
-  reaction_id
+  reaction_id,
 });
 ```
 

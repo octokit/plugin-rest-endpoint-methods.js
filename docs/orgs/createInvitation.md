@@ -6,7 +6,7 @@ This endpoint triggers [notifications](https://help.github.com/articles/about-no
 
 ```js
 octokit.orgs.createInvitation({
-  org
+  org,
 });
 ```
 

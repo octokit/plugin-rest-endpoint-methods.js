@@ -14,7 +14,7 @@ Encrypt your secret using the [rbnacl](https://github.com/RubyCrypto/rbnacl) gem
 octokit.actions.createOrUpdateSecretForRepo({
   owner,
   repo,
-  name
+  name,
 });
 ```
 

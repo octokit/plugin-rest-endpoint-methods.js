@@ -11,7 +11,7 @@ For example, `[2, 14, 25]` indicates that there were 25 total commits, during th
 ```js
 octokit.repos.getPunchCardStats({
   owner,
-  repo
+  repo,
 });
 ```
 

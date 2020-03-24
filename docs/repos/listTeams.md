@@ -3,7 +3,7 @@
 ```js
 octokit.repos.listTeams({
   owner,
-  repo
+  repo,
 });
 ```
 

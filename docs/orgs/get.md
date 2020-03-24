@@ -6,7 +6,7 @@ GitHub Apps with the `Organization plan` permission can use this endpoint to ret
 
 ```js
 octokit.orgs.get({
-  org
+  org,
 });
 ```
 

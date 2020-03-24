@@ -3,7 +3,7 @@
 ```js
 octokit.activity.getRepoSubscription({
   owner,
-  repo
+  repo,
 });
 ```
 

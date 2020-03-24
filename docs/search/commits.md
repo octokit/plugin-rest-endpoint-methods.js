@@ -12,7 +12,7 @@ Suppose you want to find commits related to CSS in the [octocat/Spoon-Knife](htt
 
 ```js
 octokit.search.commits({
-  q
+  q,
 });
 ```
 

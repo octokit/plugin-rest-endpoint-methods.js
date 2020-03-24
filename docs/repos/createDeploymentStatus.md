@@ -9,7 +9,7 @@ octokit.repos.createDeploymentStatus({
   owner,
   repo,
   deployment_id,
-  state
+  state,
 });
 ```
 

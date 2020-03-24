@@ -6,7 +6,7 @@ Gets a single secret without revealing its encrypted value. Anyone with write ac
 octokit.actions.getSecret({
   owner,
   repo,
-  name
+  name,
 });
 ```
 

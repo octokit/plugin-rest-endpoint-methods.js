@@ -5,7 +5,7 @@ Adds a collaborator to a an organization project and sets their permission level
 ```js
 octokit.projects.addCollaborator({
   project_id,
-  username
+  username,
 });
 ```
 

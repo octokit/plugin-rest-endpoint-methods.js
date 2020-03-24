@@ -5,7 +5,7 @@ When authenticating as a user with admin rights to a repository, this endpoint w
 ```js
 octokit.repos.listInvitations({
   owner,
-  repo
+  repo,
 });
 ```
 

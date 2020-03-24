@@ -3,7 +3,7 @@
 ```js
 octokit.repos.listForks({
   owner,
-  repo
+  repo,
 });
 ```
 

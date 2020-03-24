@@ -4,7 +4,7 @@ Lists all the repositories for this user migration.
 
 ```js
 octokit.migrations.listReposForUser({
-  migration_id
+  migration_id,
 });
 ```
 

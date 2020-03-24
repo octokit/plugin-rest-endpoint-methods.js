@@ -7,7 +7,7 @@ octokit.repos.replaceProtectedBranchRequiredStatusChecksContexts({
   owner,
   repo,
   branch,
-  contexts
+  contexts,
 });
 ```
 

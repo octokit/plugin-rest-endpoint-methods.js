@@ -4,7 +4,7 @@
 octokit.repos.updateInvitation({
   owner,
   repo,
-  invitation_id
+  invitation_id,
 });
 ```
 

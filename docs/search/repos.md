@@ -12,7 +12,7 @@ In this request, we're searching for repositories with the word `tetris` in the 
 
 ```js
 octokit.search.repos({
-  q
+  q,
 });
 ```
 

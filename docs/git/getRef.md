@@ -10,7 +10,7 @@ To get the reference for a branch named `skunkworkz/featureA`, the endpoint rout
 octokit.git.getRef({
   owner,
   repo,
-  ref
+  ref,
 });
 ```
 

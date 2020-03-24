@@ -5,7 +5,7 @@ Shows which group of GitHub users can interact with this repository and when the
 ```js
 octokit.interactions.getRestrictionsForRepo({
   owner,
-  repo
+  repo,
 });
 ```
 

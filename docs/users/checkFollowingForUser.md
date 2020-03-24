@@ -3,7 +3,7 @@
 ```js
 octokit.users.checkFollowingForUser({
   username,
-  target_user
+  target_user,
 });
 ```
 

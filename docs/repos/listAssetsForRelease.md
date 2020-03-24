@@ -4,7 +4,7 @@
 octokit.repos.listAssetsForRelease({
   owner,
   repo,
-  release_id
+  release_id,
 });
 ```
 

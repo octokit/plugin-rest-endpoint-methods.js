@@ -5,7 +5,7 @@
 ```js
 octokit.repos.listTopics({
   owner,
-  repo
+  repo,
 });
 ```
 

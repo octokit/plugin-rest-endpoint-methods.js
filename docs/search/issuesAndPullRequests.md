@@ -10,7 +10,7 @@ In this query, we're searching for the keyword `windows`, within any open issue 
 
 ```js
 octokit.search.issuesAndPullRequests({
-  q
+  q,
 });
 ```
 

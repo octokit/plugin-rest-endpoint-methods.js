@@ -15,7 +15,7 @@ When using [OAuth](https://developer.github.com/apps/building-oauth-apps/underst
 octokit.repos.createUsingTemplate({
   template_owner,
   template_repo,
-  name
+  name,
 });
 ```
 

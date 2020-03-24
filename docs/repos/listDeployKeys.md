@@ -3,7 +3,7 @@
 ```js
 octokit.repos.listDeployKeys({
   owner,
-  repo
+  repo,
 });
 ```
 

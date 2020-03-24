@@ -2,7 +2,7 @@
 
 ```js
 octokit.users.unblock({
-  username
+  username,
 });
 ```
 

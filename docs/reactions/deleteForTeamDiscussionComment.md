@@ -10,7 +10,7 @@ octokit.reactions.deleteForTeamDiscussionComment({
   team_slug,
   discussion_number,
   comment_number,
-  reaction_id
+  reaction_id,
 });
 ```
 

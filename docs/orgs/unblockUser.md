@@ -3,7 +3,7 @@
 ```js
 octokit.orgs.unblockUser({
   org,
-  username
+  username,
 });
 ```
 

@@ -5,7 +5,7 @@ Lists all self-hosted runners for a repository. Anyone with admin access to the 
 ```js
 octokit.actions.listSelfHostedRunnersForRepo({
   owner,
-  repo
+  repo,
 });
 ```
 

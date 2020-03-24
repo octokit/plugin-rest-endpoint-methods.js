@@ -8,7 +8,7 @@ By default, check suites are automatically created when you create a [check run]
 octokit.checks.createSuite({
   owner,
   repo,
-  head_sha
+  head_sha,
 });
 ```
 

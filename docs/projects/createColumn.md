@@ -3,7 +3,7 @@
 ```js
 octokit.projects.createColumn({
   project_id,
-  name
+  name,
 });
 ```
 

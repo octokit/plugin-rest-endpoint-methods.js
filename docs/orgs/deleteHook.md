@@ -3,7 +3,7 @@
 ```js
 octokit.orgs.deleteHook({
   org,
-  hook_id
+  hook_id,
 });
 ```
 

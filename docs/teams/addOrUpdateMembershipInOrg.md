@@ -16,7 +16,7 @@ If the user is already a member of the team, this endpoint will update the role 
 octokit.teams.addOrUpdateMembershipInOrg({
   org,
   team_slug,
-  username
+  username,
 });
 ```
 

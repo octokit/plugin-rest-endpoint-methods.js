@@ -11,7 +11,7 @@ octokit.teams.checkManagesRepoInOrg({
   org,
   team_slug,
   owner,
-  repo
+  repo,
 });
 ```
 

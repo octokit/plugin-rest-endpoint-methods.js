@@ -5,7 +5,7 @@ Sets the visibility for your primary email addresses.
 ```js
 octokit.users.togglePrimaryEmailVisibility({
   email,
-  visibility
+  visibility,
 });
 ```
 

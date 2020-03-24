@@ -6,7 +6,7 @@ Gets a specific job in a workflow run. Anyone with read access to the repository
 octokit.actions.getWorkflowJob({
   owner,
   repo,
-  job_id
+  job_id,
 });
 ```
 

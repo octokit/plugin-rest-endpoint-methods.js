@@ -2,7 +2,7 @@
 
 ```js
 octokit.licenses.get({
-  license
+  license,
 });
 ```
 

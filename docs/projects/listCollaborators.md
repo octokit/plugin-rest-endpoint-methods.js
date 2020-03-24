@@ -4,7 +4,7 @@ Lists the collaborators for an organization project. For a project, the list of 
 
 ```js
 octokit.projects.listCollaborators({
-  project_id
+  project_id,
 });
 ```
 

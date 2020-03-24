@@ -14,7 +14,7 @@ In this request, we're searching for topics with the keyword `ruby`, and we're l
 
 ```js
 octokit.search.topics({
-  q
+  q,
 });
 ```
 

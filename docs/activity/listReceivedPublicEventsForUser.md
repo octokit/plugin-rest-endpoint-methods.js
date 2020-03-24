@@ -2,7 +2,7 @@
 
 ```js
 octokit.activity.listReceivedPublicEventsForUser({
-  username
+  username,
 });
 ```
 

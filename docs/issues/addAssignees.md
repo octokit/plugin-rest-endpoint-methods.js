@@ -8,7 +8,7 @@ This example adds two assignees to the existing `octocat` assignee.
 octokit.issues.addAssignees({
   owner,
   repo,
-  issue_number
+  issue_number,
 });
 ```
 

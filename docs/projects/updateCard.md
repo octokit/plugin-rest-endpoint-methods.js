@@ -2,7 +2,7 @@
 
 ```js
 octokit.projects.updateCard({
-  card_id
+  card_id,
 });
 ```
 

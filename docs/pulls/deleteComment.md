@@ -6,7 +6,7 @@ Deletes a review comment.
 octokit.pulls.deleteComment({
   owner,
   repo,
-  comment_id
+  comment_id,
 });
 ```
 

@@ -13,7 +13,7 @@ octokit.repos.replaceProtectedBranchUserRestrictions({
   owner,
   repo,
   branch,
-  users
+  users,
 });
 ```
 

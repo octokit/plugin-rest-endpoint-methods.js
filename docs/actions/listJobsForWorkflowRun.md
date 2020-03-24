@@ -6,7 +6,7 @@ Lists jobs for a workflow run. Anyone with read access to the repository can use
 octokit.actions.listJobsForWorkflowRun({
   owner,
   repo,
-  run_id
+  run_id,
 });
 ```
 

@@ -6,7 +6,7 @@ Users with pull access can view deployment statuses for a deployment:
 octokit.repos.listDeploymentStatuses({
   owner,
   repo,
-  deployment_id
+  deployment_id,
 });
 ```
 

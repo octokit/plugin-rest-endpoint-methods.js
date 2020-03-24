@@ -5,7 +5,7 @@ Gets your public key, which you must store. You need your public key to use othe
 ```js
 octokit.actions.getPublicKey({
   owner,
-  repo
+  repo,
 });
 ```
 

@@ -1,7 +1,7 @@
 import {
   EndpointInterface,
   RequestParameters,
-  OctokitResponse
+  OctokitResponse,
 } from "@octokit/types";
 
 type AnyResponse = OctokitResponse<any>;
@@ -20480,7 +20480,7 @@ type ActionsListWorkflowRunsResponse = {
 type ActionsListWorkflowRunArtifactsResponseArtifactsItem = {
   archive_download_url: string;
   created_at: string;
-  expired: string;
+  expired: boolean;
   expires_at: string;
   id: number;
   name: string;
@@ -20492,11 +20492,15 @@ type ActionsListWorkflowRunArtifactsResponse = {
   artifacts: Array<ActionsListWorkflowRunArtifactsResponseArtifactsItem>;
   total_count: number;
 };
-type ActionsListSelfHostedRunnersForRepoResponseItem = {
+type ActionsListSelfHostedRunnersForRepoResponseRunnersItem = {
   id: number;
   name: string;
   os: string;
   status: string;
+};
+type ActionsListSelfHostedRunnersForRepoResponse = {
+  runners: Array<ActionsListSelfHostedRunnersForRepoResponseRunnersItem>;
+  total_count: number;
 };
 type ActionsListSecretsForRepoResponseSecretsItem = {
   created_at: string;
@@ -20742,7 +20746,7 @@ type ActionsListDownloadsForSelfHostedRunnerApplicationResponseItem = {
 type ActionsListArtifactsForRepoResponseArtifactsItem = {
   archive_download_url: string;
   created_at: string;
-  expired: string;
+  expired: boolean;
   expires_at: string;
   id: number;
   name: string;
@@ -20983,7 +20987,7 @@ type ActionsGetPublicKeyResponse = { key: string; key_id: string };
 type ActionsGetArtifactResponse = {
   archive_download_url: string;
   created_at: string;
-  expired: string;
+  expired: boolean;
   expires_at: string;
   id: number;
   name: string;
@@ -20998,9 +21002,6 @@ type ActionsCreateRegistrationTokenResponse = {
 };
 type ActionsListDownloadsForSelfHostedRunnerApplicationResponse = Array<
   ActionsListDownloadsForSelfHostedRunnerApplicationResponseItem
->;
-type ActionsListSelfHostedRunnersForRepoResponse = Array<
-  ActionsListSelfHostedRunnersForRepoResponseItem
 >;
 type ActivityListNotificationsResponse = Array<
   ActivityListNotificationsResponseItem

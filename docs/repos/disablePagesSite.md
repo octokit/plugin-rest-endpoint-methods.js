@@ -3,7 +3,7 @@
 ```js
 octokit.repos.disablePagesSite({
   owner,
-  repo
+  repo,
 });
 ```
 

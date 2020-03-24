@@ -6,7 +6,7 @@
 octokit.repos.getRelease({
   owner,
   repo,
-  release_id
+  release_id,
 });
 ```
 

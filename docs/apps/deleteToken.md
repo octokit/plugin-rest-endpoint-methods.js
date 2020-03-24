@@ -4,7 +4,7 @@ OAuth application owners can revoke a single token for an OAuth application. You
 
 ```js
 octokit.apps.deleteToken({
-  client_id
+  client_id,
 });
 ```
 

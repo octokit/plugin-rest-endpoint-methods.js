@@ -5,7 +5,7 @@ You can also find out _when_ stars were created by passing the following custom 
 ```js
 octokit.activity.listStargazersForRepo({
   owner,
-  repo
+  repo,
 });
 ```
 

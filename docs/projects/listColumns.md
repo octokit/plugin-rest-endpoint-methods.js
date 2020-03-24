@@ -2,7 +2,7 @@
 
 ```js
 octokit.projects.listColumns({
-  project_id
+  project_id,
 });
 ```
 

@@ -6,7 +6,7 @@ This endpoint triggers [notifications](https://help.github.com/articles/about-no
 octokit.pulls.createReviewRequest({
   owner,
   repo,
-  pull_number
+  pull_number,
 });
 ```
 

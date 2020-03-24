@@ -3,7 +3,7 @@
 ```js
 octokit.orgs.checkPublicMembership({
   org,
-  username
+  username,
 });
 ```
 

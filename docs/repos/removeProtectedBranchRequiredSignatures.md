@@ -8,7 +8,7 @@ When authenticated with admin or owner permissions to the repository, you can us
 octokit.repos.removeProtectedBranchRequiredSignatures({
   owner,
   repo,
-  branch
+  branch,
 });
 ```
 

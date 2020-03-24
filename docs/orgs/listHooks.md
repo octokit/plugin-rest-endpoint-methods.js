@@ -2,7 +2,7 @@
 
 ```js
 octokit.orgs.listHooks({
-  org
+  org,
 });
 ```
 

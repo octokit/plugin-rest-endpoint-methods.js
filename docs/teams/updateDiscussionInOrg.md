@@ -8,7 +8,7 @@ Edits the title and body text of a discussion post. Only the parameters you prov
 octokit.teams.updateDiscussionInOrg({
   org,
   team_slug,
-  discussion_number
+  discussion_number,
 });
 ```
 

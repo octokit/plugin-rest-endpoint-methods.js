@@ -7,7 +7,7 @@ READMEs support [custom media types](https://developer.github.com/v3/repos/conte
 ```js
 octokit.repos.getReadme({
   owner,
-  repo
+  repo,
 });
 ```
 

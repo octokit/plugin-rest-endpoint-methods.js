@@ -3,7 +3,7 @@
 ```js
 octokit.orgs.getHook({
   org,
-  hook_id
+  hook_id,
 });
 ```
 

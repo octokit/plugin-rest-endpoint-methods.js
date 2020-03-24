@@ -4,7 +4,7 @@ Updates a project board's information. Returns a `404 Not Found` status if proje
 
 ```js
 octokit.projects.update({
-  project_id
+  project_id,
 });
 ```
 

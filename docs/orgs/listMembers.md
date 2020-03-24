@@ -4,7 +4,7 @@ List all users who are members of an organization. If the authenticated user is 
 
 ```js
 octokit.orgs.listMembers({
-  org
+  org,
 });
 ```
 

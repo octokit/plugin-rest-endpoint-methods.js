@@ -5,7 +5,7 @@ Lists the people watching the specified repository.
 ```js
 octokit.activity.listWatchersForRepo({
   owner,
-  repo
+  repo,
 });
 ```
 

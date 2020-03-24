@@ -4,7 +4,7 @@ Shows which group of GitHub users can interact with this organization and when t
 
 ```js
 octokit.interactions.getRestrictionsForOrg({
-  org
+  org,
 });
 ```
 

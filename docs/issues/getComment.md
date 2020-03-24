@@ -4,7 +4,7 @@
 octokit.issues.getComment({
   owner,
   repo,
-  comment_id
+  comment_id,
 });
 ```
 

@@ -4,7 +4,7 @@ Mutes all future notifications for a conversation until you comment on the threa
 
 ```js
 octokit.activity.deleteThreadSubscription({
-  thread_id
+  thread_id,
 });
 ```
 

@@ -3,7 +3,7 @@
 ```js
 octokit.projects.moveCard({
   card_id,
-  position
+  position,
 });
 ```
 

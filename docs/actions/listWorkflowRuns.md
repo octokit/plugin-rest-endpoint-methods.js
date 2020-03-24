@@ -8,7 +8,7 @@ Anyone with read access to the repository can use this endpoint.
 octokit.actions.listWorkflowRuns({
   owner,
   repo,
-  workflow_id
+  workflow_id,
 });
 ```
 

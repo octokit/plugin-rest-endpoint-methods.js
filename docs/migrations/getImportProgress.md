@@ -38,7 +38,7 @@ This section includes details about Git LFS related fields that may be present i
 ```js
 octokit.migrations.getImportProgress({
   owner,
-  repo
+  repo,
 });
 ```
 

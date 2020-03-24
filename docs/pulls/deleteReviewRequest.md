@@ -4,7 +4,7 @@
 octokit.pulls.deleteReviewRequest({
   owner,
   repo,
-  pull_number
+  pull_number,
 });
 ```
 

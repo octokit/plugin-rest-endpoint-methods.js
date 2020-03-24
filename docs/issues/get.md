@@ -10,7 +10,7 @@ Be aware that the `id` of a pull request returned from "Issues" endpoints will b
 octokit.issues.get({
   owner,
   repo,
-  issue_number
+  issue_number,
 });
 ```
 

@@ -36,7 +36,7 @@ This error happens when the `required_contexts` parameter indicates that one or 
 octokit.repos.createDeployment({
   owner,
   repo,
-  ref
+  ref,
 });
 ```
 

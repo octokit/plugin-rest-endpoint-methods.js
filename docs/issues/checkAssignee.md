@@ -10,7 +10,7 @@ Otherwise a `404` status code is returned.
 octokit.issues.checkAssignee({
   owner,
   repo,
-  assignee
+  assignee,
 });
 ```
 

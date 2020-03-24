@@ -11,7 +11,7 @@ To restart an import, no parameters are provided in the update request.
 ```js
 octokit.migrations.updateImport({
   owner,
-  repo
+  repo,
 });
 ```
 

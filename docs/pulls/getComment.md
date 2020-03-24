@@ -26,7 +26,7 @@ The `reactions` key will have the following payload where `url` can be used to c
 octokit.pulls.getComment({
   owner,
   repo,
-  comment_id
+  comment_id,
 });
 ```
 

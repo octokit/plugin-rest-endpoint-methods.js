@@ -417,14 +417,8 @@
     "isLegacy": false,
     "description": "OAuth application owners can revoke a grant for their OAuth application and a specific user. You must use [Basic Authentication](https://developer.github.com/v3/auth#basic-authentication) when accessing this endpoint, using the OAuth application's `client_id` and `client_secret` as the username and password. You must also provide a valid OAuth `access_token` as an input parameter and the grant for the token's owner will be deleted.\n\nDeleting an OAuth application's grant will also delete all OAuth tokens associated with the application for the user. Once deleted, the application will have no access to the user's account and will no longer be listed on [the application authorizations settings screen within GitHub](https://github.com/settings/applications#authorized).",
     "documentationUrl": "https://developer.github.com/v3/apps/oauth_applications/#delete-an-app-authorization",
-    "previews": [{ "name": "doctor-strange" }],
-    "headers": [
-      {
-        "name": "accept",
-        "value": "application/vnd.github.doctor-strange-preview+json",
-        "required": true
-      }
-    ],
+    "previews": [],
+    "headers": [],
     "parameters": [
       {
         "name": "client_id",
@@ -509,14 +503,8 @@
     "isLegacy": false,
     "description": "OAuth applications can use a special API method for checking OAuth token validity without exceeding the normal rate limits for failed login attempts. Authentication works differently with this particular endpoint. You must use [Basic Authentication](https://developer.github.com/v3/auth#basic-authentication) to use this endpoint, where the username is the OAuth application `client_id` and the password is its `client_secret`. Invalid tokens will return `404 NOT FOUND`.",
     "documentationUrl": "https://developer.github.com/v3/apps/oauth_applications/#check-a-token",
-    "previews": [{ "name": "doctor-strange" }],
-    "headers": [
-      {
-        "name": "accept",
-        "value": "application/vnd.github.doctor-strange-preview+json",
-        "required": true
-      }
-    ],
+    "previews": [],
+    "headers": [],
     "parameters": [
       {
         "name": "client_id",
@@ -568,14 +556,8 @@
     "isLegacy": false,
     "description": "OAuth applications can use this API method to reset a valid OAuth token without end-user involvement. Applications must save the \"token\" property in the response because changes take effect immediately. You must use [Basic Authentication](https://developer.github.com/v3/auth#basic-authentication) when accessing this endpoint, using the OAuth application's `client_id` and `client_secret` as the username and password. Invalid tokens will return `404 NOT FOUND`.",
     "documentationUrl": "https://developer.github.com/v3/apps/oauth_applications/#reset-a-token",
-    "previews": [{ "name": "doctor-strange" }],
-    "headers": [
-      {
-        "name": "accept",
-        "value": "application/vnd.github.doctor-strange-preview+json",
-        "required": true
-      }
-    ],
+    "previews": [],
+    "headers": [],
     "parameters": [
       {
         "name": "client_id",
@@ -627,14 +609,8 @@
     "isLegacy": false,
     "description": "OAuth application owners can revoke a single token for an OAuth application. You must use [Basic Authentication](https://developer.github.com/v3/auth#basic-authentication) when accessing this endpoint, using the OAuth application's `client_id` and `client_secret` as the username and password.",
     "documentationUrl": "https://developer.github.com/v3/apps/oauth_applications/#delete-an-app-token",
-    "previews": [{ "name": "doctor-strange" }],
-    "headers": [
-      {
-        "name": "accept",
-        "value": "application/vnd.github.doctor-strange-preview+json",
-        "required": true
-      }
-    ],
+    "previews": [],
+    "headers": [],
     "parameters": [
       {
         "name": "client_id",
@@ -12571,7 +12547,7 @@
         "description": "response",
         "examples": [
           {
-            "data": "{\"total_count\":2,\"artifacts\":[{\"id\":11,\"node_id\":\"MDg6QXJ0aWZhY3QxMQ==\",\"name\":\"Rails\",\"size_in_bytes\":556,\"url\":\"https://api.github.com/repos/octo-org/octo-docs/actions/artifacts/11\",\"archive_download_url\":\"https://api.github.com/repos/octo-org/octo-docs/actions/artifacts/11/zip\",\"expired\":\"false\",\"created_at\":\"2020-01-10T14:59:22Z\",\"expires_at\":\"2020-01-21T14:59:22Z\"},{\"id\":13,\"node_id\":\"MDg6QXJ0aWZhY3QxMw==\",\"name\":\"\",\"size_in_bytes\":453,\"url\":\"https://api.github.com/repos/octo-org/octo-docs/actions/artifacts/13\",\"archive_download_url\":\"https://api.github.com/repos/octo-org/octo-docs/actions/artifacts/13/zip\",\"expired\":\"false\",\"created_at\":\"2020-01-10T14:59:22Z\",\"expires_at\":\"2020-01-21T14:59:22Z\"}]}"
+            "data": "{\"total_count\":2,\"artifacts\":[{\"id\":11,\"node_id\":\"MDg6QXJ0aWZhY3QxMQ==\",\"name\":\"Rails\",\"size_in_bytes\":556,\"url\":\"https://api.github.com/repos/octo-org/octo-docs/actions/artifacts/11\",\"archive_download_url\":\"https://api.github.com/repos/octo-org/octo-docs/actions/artifacts/11/zip\",\"expired\":false,\"created_at\":\"2020-01-10T14:59:22Z\",\"expires_at\":\"2020-01-21T14:59:22Z\"},{\"id\":13,\"node_id\":\"MDg6QXJ0aWZhY3QxMw==\",\"name\":\"\",\"size_in_bytes\":453,\"url\":\"https://api.github.com/repos/octo-org/octo-docs/actions/artifacts/13\",\"archive_download_url\":\"https://api.github.com/repos/octo-org/octo-docs/actions/artifacts/13/zip\",\"expired\":false,\"created_at\":\"2020-01-10T14:59:22Z\",\"expires_at\":\"2020-01-21T14:59:22Z\"}]}"
           }
         ]
       }
@@ -12637,7 +12613,7 @@
         "description": "response",
         "examples": [
           {
-            "data": "{\"id\":11,\"node_id\":\"MDg6QXJ0aWZhY3QxMQ==\",\"name\":\"Rails\",\"size_in_bytes\":556,\"url\":\"https://api.github.com/repos/octo-org/octo-docs/actions/artifacts/11\",\"archive_download_url\":\"https://api.github.com/repos/octo-org/octo-docs/actions/artifacts/11/zip\",\"expired\":\"false\",\"created_at\":\"2020-01-10T14:59:22Z\",\"expires_at\":\"2020-01-21T14:59:22Z\"}"
+            "data": "{\"id\":11,\"node_id\":\"MDg6QXJ0aWZhY3QxMQ==\",\"name\":\"Rails\",\"size_in_bytes\":556,\"url\":\"https://api.github.com/repos/octo-org/octo-docs/actions/artifacts/11\",\"archive_download_url\":\"https://api.github.com/repos/octo-org/octo-docs/actions/artifacts/11/zip\",\"expired\":false,\"created_at\":\"2020-01-10T14:59:22Z\",\"expires_at\":\"2020-01-21T14:59:22Z\"}"
           }
         ]
       }
@@ -12989,7 +12965,7 @@
         "description": "response",
         "examples": [
           {
-            "data": "[{\"id\":23,\"name\":\"MBP\",\"os\":\"macos\",\"status\":\"online\"},{\"id\":24,\"name\":\"iMac\",\"os\":\"macos\",\"status\":\"offline\"}]"
+            "data": "{\"total_count\":2,\"runners\":[{\"id\":23,\"name\":\"MBP\",\"os\":\"macos\",\"status\":\"online\"},{\"id\":24,\"name\":\"iMac\",\"os\":\"macos\",\"status\":\"offline\"}]}"
           }
         ]
       }
@@ -13559,7 +13535,7 @@
         "description": "response",
         "examples": [
           {
-            "data": "{\"total_count\":2,\"artifacts\":[{\"id\":11,\"node_id\":\"MDg6QXJ0aWZhY3QxMQ==\",\"name\":\"Rails\",\"size_in_bytes\":556,\"url\":\"https://api.github.com/repos/octo-org/octo-docs/actions/artifacts/11\",\"archive_download_url\":\"https://api.github.com/repos/octo-org/octo-docs/actions/artifacts/11/zip\",\"expired\":\"false\",\"created_at\":\"2020-01-10T14:59:22Z\",\"expires_at\":\"2020-01-21T14:59:22Z\"},{\"id\":13,\"node_id\":\"MDg6QXJ0aWZhY3QxMw==\",\"name\":\"\",\"size_in_bytes\":453,\"url\":\"https://api.github.com/repos/octo-org/octo-docs/actions/artifacts/13\",\"archive_download_url\":\"https://api.github.com/repos/octo-org/octo-docs/actions/artifacts/13/zip\",\"expired\":\"false\",\"created_at\":\"2020-01-10T14:59:22Z\",\"expires_at\":\"2020-01-21T14:59:22Z\"}]}"
+            "data": "{\"total_count\":2,\"artifacts\":[{\"id\":11,\"node_id\":\"MDg6QXJ0aWZhY3QxMQ==\",\"name\":\"Rails\",\"size_in_bytes\":556,\"url\":\"https://api.github.com/repos/octo-org/octo-docs/actions/artifacts/11\",\"archive_download_url\":\"https://api.github.com/repos/octo-org/octo-docs/actions/artifacts/11/zip\",\"expired\":false,\"created_at\":\"2020-01-10T14:59:22Z\",\"expires_at\":\"2020-01-21T14:59:22Z\"},{\"id\":13,\"node_id\":\"MDg6QXJ0aWZhY3QxMw==\",\"name\":\"\",\"size_in_bytes\":453,\"url\":\"https://api.github.com/repos/octo-org/octo-docs/actions/artifacts/13\",\"archive_download_url\":\"https://api.github.com/repos/octo-org/octo-docs/actions/artifacts/13/zip\",\"expired\":false,\"created_at\":\"2020-01-10T14:59:22Z\",\"expires_at\":\"2020-01-21T14:59:22Z\"}]}"
           }
         ]
       }

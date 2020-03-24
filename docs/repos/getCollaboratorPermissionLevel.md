@@ -6,7 +6,7 @@ Possible values for the `permission` key: `admin`, `write`, `read`, `none`.
 octokit.repos.getCollaboratorPermissionLevel({
   owner,
   repo,
-  username
+  username,
 });
 ```
 

@@ -6,7 +6,7 @@ This method only lists _public_ memberships, regardless of authentication. If yo
 
 ```js
 octokit.orgs.listForUser({
-  username
+  username,
 });
 ```
 

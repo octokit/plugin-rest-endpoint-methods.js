@@ -5,7 +5,7 @@ In order to get a user's membership with an organization, the authenticated user
 ```js
 octokit.orgs.getMembership({
   org,
-  username
+  username,
 });
 ```
 

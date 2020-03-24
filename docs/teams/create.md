@@ -7,7 +7,7 @@ When you create a new team, you automatically become a team maintainer without e
 ```js
 octokit.teams.create({
   org,
-  name
+  name,
 });
 ```
 

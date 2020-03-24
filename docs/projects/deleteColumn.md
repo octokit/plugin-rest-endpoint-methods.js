@@ -2,7 +2,7 @@
 
 ```js
 octokit.projects.deleteColumn({
-  column_id
+  column_id,
 });
 ```
 

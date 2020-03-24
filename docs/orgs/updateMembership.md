@@ -3,7 +3,7 @@
 ```js
 octokit.orgs.updateMembership({
   org,
-  state
+  state,
 });
 ```
 

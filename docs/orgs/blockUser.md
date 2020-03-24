@@ -3,7 +3,7 @@
 ```js
 octokit.orgs.blockUser({
   org,
-  username
+  username,
 });
 ```
 

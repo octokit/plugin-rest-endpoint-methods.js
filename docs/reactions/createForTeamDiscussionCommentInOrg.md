@@ -10,7 +10,7 @@ octokit.reactions.createForTeamDiscussionCommentInOrg({
   team_slug,
   discussion_number,
   comment_number,
-  content
+  content,
 });
 ```
 

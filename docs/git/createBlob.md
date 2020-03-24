@@ -4,7 +4,7 @@
 octokit.git.createBlob({
   owner,
   repo,
-  content
+  content,
 });
 ```
 

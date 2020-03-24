@@ -2,7 +2,7 @@
 
 ```js
 octokit.projects.listForUser({
-  username
+  username,
 });
 ```
 

@@ -2,7 +2,7 @@
 
 ```js
 octokit.orgs.getMembershipForAuthenticatedUser({
-  org
+  org,
 });
 ```
 

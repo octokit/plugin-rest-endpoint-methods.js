@@ -7,7 +7,7 @@ octokit.reactions.createForIssue({
   owner,
   repo,
   issue_number,
-  content
+  content,
 });
 ```
 

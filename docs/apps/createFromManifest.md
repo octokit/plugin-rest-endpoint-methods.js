@@ -4,7 +4,7 @@ Use this endpoint to complete the handshake necessary when implementing the [Git
 
 ```js
 octokit.apps.createFromManifest({
-  code
+  code,
 });
 ```
 

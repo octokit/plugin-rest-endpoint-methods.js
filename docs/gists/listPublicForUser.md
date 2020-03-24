@@ -6,7 +6,7 @@ Lists public gists for the specified user:
 
 ```js
 octokit.gists.listPublicForUser({
-  username
+  username,
 });
 ```
 

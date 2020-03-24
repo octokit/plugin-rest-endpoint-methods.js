@@ -5,7 +5,7 @@ Get the total number of clones and breakdown per day or week for the last 14 day
 ```js
 octokit.repos.getClones({
   owner,
-  repo
+  repo,
 });
 ```
 

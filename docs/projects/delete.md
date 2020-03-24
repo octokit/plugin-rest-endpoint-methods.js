@@ -4,7 +4,7 @@ Deletes a project board. Returns a `404 Not Found` status if projects are disabl
 
 ```js
 octokit.projects.delete({
-  project_id
+  project_id,
 });
 ```
 

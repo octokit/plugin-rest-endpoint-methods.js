@@ -5,7 +5,7 @@ Requires for the user to be authenticated.
 ```js
 octokit.activity.checkStarringRepo({
   owner,
-  repo
+  repo,
 });
 ```
 

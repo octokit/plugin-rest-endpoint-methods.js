@@ -2,7 +2,7 @@
 
 ```js
 octokit.users.checkFollowing({
-  username
+  username,
 });
 ```
 

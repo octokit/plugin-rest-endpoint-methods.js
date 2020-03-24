@@ -10,7 +10,7 @@ octokit.teams.updateDiscussionCommentInOrg({
   team_slug,
   discussion_number,
   comment_number,
-  body
+  body,
 });
 ```
 

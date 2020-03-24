@@ -5,7 +5,7 @@ Returns the collaborator's permission level for an organization project. Possibl
 ```js
 octokit.projects.reviewUserPermissionLevel({
   project_id,
-  username
+  username,
 });
 ```
 

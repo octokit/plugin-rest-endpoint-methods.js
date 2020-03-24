@@ -4,7 +4,7 @@ You must send Markdown as plain text (using a `Content-Type` header of `text/pla
 
 ```js
 octokit.markdown.renderRaw({
-  data
+  data,
 });
 ```
 

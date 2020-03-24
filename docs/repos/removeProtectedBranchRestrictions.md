@@ -8,7 +8,7 @@ Disables the ability to restrict who can push to this branch.
 octokit.repos.removeProtectedBranchRestrictions({
   owner,
   repo,
-  branch
+  branch,
 });
 ```
 

@@ -2,7 +2,7 @@
 
 ```js
 octokit.codesOfConduct.getConductCode({
-  key
+  key,
 });
 ```
 

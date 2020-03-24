@@ -6,7 +6,7 @@ Cancels a workflow run using its `id`. Anyone with write access to the repositor
 octokit.actions.cancelWorkflowRun({
   owner,
   repo,
-  run_id
+  run_id,
 });
 ```
 

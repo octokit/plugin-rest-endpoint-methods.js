@@ -4,7 +4,7 @@
 octokit.repos.removeCollaborator({
   owner,
   repo,
-  username
+  username,
 });
 ```
 

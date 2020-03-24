@@ -6,7 +6,7 @@ GitHub Apps must use a [JWT](https://developer.github.com/apps/building-github-a
 
 ```js
 octokit.apps.getSubscriptionPlanForAccount({
-  account_id
+  account_id,
 });
 ```
 

@@ -5,7 +5,7 @@ octokit.git.updateRef({
   owner,
   repo,
   ref,
-  sha
+  sha,
 });
 ```
 

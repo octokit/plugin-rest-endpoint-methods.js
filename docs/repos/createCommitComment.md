@@ -9,7 +9,7 @@ octokit.repos.createCommitComment({
   owner,
   repo,
   commit_sha,
-  body
+  body,
 });
 ```
 

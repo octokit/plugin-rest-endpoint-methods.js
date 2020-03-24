@@ -2,7 +2,7 @@
 
 ```js
 octokit.gists.listCommits({
-  gist_id
+  gist_id,
 });
 ```
 

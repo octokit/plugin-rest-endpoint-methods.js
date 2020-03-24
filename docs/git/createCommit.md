@@ -32,7 +32,7 @@ octokit.git.createCommit({
   repo,
   message,
   tree,
-  parents
+  parents,
 });
 ```
 

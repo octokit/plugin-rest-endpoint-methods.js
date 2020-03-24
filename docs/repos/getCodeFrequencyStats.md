@@ -5,7 +5,7 @@ Returns a weekly aggregate of the number of additions and deletions pushed to a 
 ```js
 octokit.repos.getCodeFrequencyStats({
   owner,
-  repo
+  repo,
 });
 ```
 

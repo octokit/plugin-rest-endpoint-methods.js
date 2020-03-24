@@ -6,7 +6,7 @@ Gets a specific workflow. You can also replace `:workflow_id` with `:workflow_fi
 octokit.actions.getWorkflow({
   owner,
   repo,
-  workflow_id
+  workflow_id,
 });
 ```
 

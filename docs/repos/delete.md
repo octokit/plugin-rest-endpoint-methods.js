@@ -7,7 +7,7 @@ If an organization owner has configured the organization to prevent members from
 ```js
 octokit.repos.delete({
   owner,
-  repo
+  repo,
 });
 ```
 

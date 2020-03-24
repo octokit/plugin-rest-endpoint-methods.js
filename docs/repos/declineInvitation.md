@@ -2,7 +2,7 @@
 
 ```js
 octokit.repos.declineInvitation({
-  invitation_id
+  invitation_id,
 });
 ```
 

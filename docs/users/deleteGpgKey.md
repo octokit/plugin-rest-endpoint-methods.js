@@ -4,7 +4,7 @@ Removes a GPG key from the authenticated user's GitHub account. Requires that yo
 
 ```js
 octokit.users.deleteGpgKey({
-  gpg_key_id
+  gpg_key_id,
 });
 ```
 

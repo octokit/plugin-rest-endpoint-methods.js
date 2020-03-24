@@ -6,7 +6,7 @@ Gets a specific workflow run. Anyone with read access to the repository can use 
 octokit.actions.getWorkflowRun({
   owner,
   repo,
-  run_id
+  run_id,
 });
 ```
 

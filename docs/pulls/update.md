@@ -8,7 +8,7 @@ To open or update a pull request in a public repository, you must have write acc
 octokit.pulls.update({
   owner,
   repo,
-  pull_number
+  pull_number,
 });
 ```
 

@@ -2,7 +2,7 @@
 
 ```js
 octokit.gists.get({
-  gist_id
+  gist_id,
 });
 ```
 

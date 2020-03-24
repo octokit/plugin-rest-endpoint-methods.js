@@ -7,7 +7,7 @@ octokit.repos.getDeploymentStatus({
   owner,
   repo,
   deployment_id,
-  status_id
+  status_id,
 });
 ```
 

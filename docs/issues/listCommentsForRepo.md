@@ -5,7 +5,7 @@ By default, Issue Comments are ordered by ascending ID.
 ```js
 octokit.issues.listCommentsForRepo({
   owner,
-  repo
+  repo,
 });
 ```
 

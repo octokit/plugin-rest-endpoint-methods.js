@@ -6,7 +6,7 @@ Forces the removal of a self-hosted runner from a repository. You can use this e
 octokit.actions.removeSelfHostedRunner({
   owner,
   repo,
-  runner_id
+  runner_id,
 });
 ```
 

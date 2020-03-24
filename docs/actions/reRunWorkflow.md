@@ -6,7 +6,7 @@ Re-runs your workflow run using its `id`. Anyone with write access to the reposi
 octokit.actions.reRunWorkflow({
   owner,
   repo,
-  run_id
+  run_id,
 });
 ```
 

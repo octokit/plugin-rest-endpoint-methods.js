@@ -13,7 +13,7 @@ octokit.repos.addProtectedBranchTeamRestrictions({
   owner,
   repo,
   branch,
-  teams
+  teams,
 });
 ```
 

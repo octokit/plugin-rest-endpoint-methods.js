@@ -7,7 +7,7 @@ Configure your self-hosted runner, replacing TOKEN with the registration token p
 ```js
 octokit.actions.createRegistrationToken({
   owner,
-  repo
+  repo,
 });
 ```
 

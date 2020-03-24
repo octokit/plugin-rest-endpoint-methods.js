@@ -7,7 +7,7 @@ Gets a team using the team's `slug`. GitHub generates the `slug` from the team `
 ```js
 octokit.teams.getByName({
   org,
-  team_slug
+  team_slug,
 });
 ```
 

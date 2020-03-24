@@ -4,7 +4,7 @@ Lists the GPG keys for a user. This information is accessible by anyone.
 
 ```js
 octokit.users.listGpgKeysForUser({
-  username
+  username,
 });
 ```
 

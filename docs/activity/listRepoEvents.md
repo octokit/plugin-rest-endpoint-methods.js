@@ -3,7 +3,7 @@
 ```js
 octokit.activity.listRepoEvents({
   owner,
-  repo
+  repo,
 });
 ```
 

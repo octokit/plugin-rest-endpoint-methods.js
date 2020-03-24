@@ -4,7 +4,7 @@ Removes a public SSH key from the authenticated user's GitHub account. Requires 
 
 ```js
 octokit.users.deletePublicKey({
-  key_id
+  key_id,
 });
 ```
 

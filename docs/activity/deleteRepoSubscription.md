@@ -5,7 +5,7 @@ This endpoint should only be used to stop watching a repository. To control whet
 ```js
 octokit.activity.deleteRepoSubscription({
   owner,
-  repo
+  repo,
 });
 ```
 

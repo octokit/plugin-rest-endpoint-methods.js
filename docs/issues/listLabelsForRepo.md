@@ -3,7 +3,7 @@
 ```js
 octokit.issues.listLabelsForRepo({
   owner,
-  repo
+  repo,
 });
 ```
 

@@ -9,7 +9,7 @@ octokit.reactions.deleteForIssue({
   owner,
   repo,
   issue_number,
-  reaction_id
+  reaction_id,
 });
 ```
 
