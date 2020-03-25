@@ -1,4 +1,4 @@
-# List check runs for a specific ref
+# List check runs for a Git reference
 
 **Note:** The Checks API only looks for pushes in the repository where the check suite or check run were created. Pushes to a branch in a forked repository are not detected and return an empty `pull_requests` array.
 
@@ -66,4 +66,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/checks/runs/#list-check-runs-for-a-specific-ref).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/checks/runs/#list-check-runs-for-a-git-reference).

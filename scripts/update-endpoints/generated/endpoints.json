@@ -18391,7 +18391,7 @@
     "renamed": null
   },
   {
-    "name": "Get a single check run",
+    "name": "Get a check run",
     "scope": "checks",
     "id": "get",
     "method": "GET",
@@ -18399,7 +18399,7 @@
     "isDeprecated": false,
     "isLegacy": false,
     "description": "**Note:** The Checks API only looks for pushes in the repository where the check suite or check run were created. Pushes to a branch in a forked repository are not detected and return an empty `pull_requests` array.\n\nGets a single check run using its `id`. GitHub Apps must have the `checks:read` permission on a private repository or pull access to a public repository to get check runs. OAuth Apps and authenticated users must have the `repo` scope to get check runs in a private repository.",
-    "documentationUrl": "https://developer.github.com/v3/checks/runs/#get-a-single-check-run",
+    "documentationUrl": "https://developer.github.com/v3/checks/runs/#get-a-check-run",
     "previews": [{ "name": "antiope" }],
     "headers": [
       {
@@ -18463,7 +18463,7 @@
     "renamed": null
   },
   {
-    "name": "List annotations for a check run",
+    "name": "List check run annotations",
     "scope": "checks",
     "id": "listAnnotations",
     "method": "GET",
@@ -18471,7 +18471,7 @@
     "isDeprecated": false,
     "isLegacy": false,
     "description": "Lists annotations for a check run using the annotation `id`. GitHub Apps must have the `checks:read` permission on a private repository or pull access to a public repository to get annotations for a check run. OAuth Apps and authenticated users must have the `repo` scope to get annotations for a check run in a private repository.",
-    "documentationUrl": "https://developer.github.com/v3/checks/runs/#list-annotations-for-a-check-run",
+    "documentationUrl": "https://developer.github.com/v3/checks/runs/#list-check-run-annotations",
     "previews": [{ "name": "antiope" }],
     "headers": [
       {
@@ -18568,7 +18568,7 @@
     "url": "/repos/{owner}/{repo}/check-suites",
     "isDeprecated": false,
     "isLegacy": false,
-    "description": "**Note:** The Checks API only looks for pushes in the repository where the check suite or check run were created. Pushes to a branch in a forked repository are not detected and return an empty `pull_requests` array and a `null` value for `head_branch`.\n\nBy default, check suites are automatically created when you create a [check run](https://developer.github.com/v3/checks/runs/). You only need to use this endpoint for manually creating check suites when you've disabled automatic creation using \"[Set preferences for check suites on a repository](https://developer.github.com/v3/checks/suites/#set-preferences-for-check-suites-on-a-repository)\". Your GitHub App must have the `checks:write` permission to create check suites.",
+    "description": "**Note:** The Checks API only looks for pushes in the repository where the check suite or check run were created. Pushes to a branch in a forked repository are not detected and return an empty `pull_requests` array and a `null` value for `head_branch`.\n\nBy default, check suites are automatically created when you create a [check run](https://developer.github.com/v3/checks/runs/). You only need to use this endpoint for manually creating check suites when you've disabled automatic creation using \"[Update repository preferences for check suites](https://developer.github.com/v3/checks/suites/#update-repository-preferences-for-check-suites)\". Your GitHub App must have the `checks:write` permission to create check suites.",
     "documentationUrl": "https://developer.github.com/v3/checks/suites/#create-a-check-suite",
     "previews": [{ "name": "antiope" }],
     "headers": [
@@ -18633,7 +18633,7 @@
     "renamed": null
   },
   {
-    "name": "Set preferences for check suites on a repository",
+    "name": "Update repository preferences for check suites",
     "scope": "checks",
     "id": "setSuitesPreferences",
     "method": "PATCH",
@@ -18641,7 +18641,7 @@
     "isDeprecated": false,
     "isLegacy": false,
     "description": "Changes the default automatic flow when creating check suites. By default, the CheckSuiteEvent is automatically created each time code is pushed to a repository. When you disable the automatic creation of check suites, you can manually [Create a check suite](https://developer.github.com/v3/checks/suites/#create-a-check-suite). You must have admin permissions in the repository to set preferences for check suites.",
-    "documentationUrl": "https://developer.github.com/v3/checks/suites/#set-preferences-for-check-suites-on-a-repository",
+    "documentationUrl": "https://developer.github.com/v3/checks/suites/#update-repository-preferences-for-check-suites",
     "previews": [{ "name": "antiope" }],
     "headers": [
       {
@@ -18731,7 +18731,7 @@
     "renamed": null
   },
   {
-    "name": "Get a single check suite",
+    "name": "Get a check suite",
     "scope": "checks",
     "id": "getSuite",
     "method": "GET",
@@ -18739,7 +18739,7 @@
     "isDeprecated": false,
     "isLegacy": false,
     "description": "**Note:** The Checks API only looks for pushes in the repository where the check suite or check run were created. Pushes to a branch in a forked repository are not detected and return an empty `pull_requests` array and a `null` value for `head_branch`.\n\nGets a single check suite using its `id`. GitHub Apps must have the `checks:read` permission on a private repository or pull access to a public repository to get check suites. OAuth Apps and authenticated users must have the `repo` scope to get check suites in a private repository.",
-    "documentationUrl": "https://developer.github.com/v3/checks/suites/#get-a-single-check-suite",
+    "documentationUrl": "https://developer.github.com/v3/checks/suites/#get-a-check-suite",
     "previews": [{ "name": "antiope" }],
     "headers": [
       {
@@ -18940,7 +18940,7 @@
     "renamed": null
   },
   {
-    "name": "Rerequest check suite",
+    "name": "Rerequest a check suite",
     "scope": "checks",
     "id": "rerequestSuite",
     "method": "POST",
@@ -18948,7 +18948,7 @@
     "isDeprecated": false,
     "isLegacy": false,
     "description": "Triggers GitHub to rerequest an existing check suite, without pushing new code to a repository. This endpoint will trigger the [`check_suite` webhook](https://developer.github.com/v3/activity/events/types/#checksuiteevent) event with the action `rerequested`. When a check suite is `rerequested`, its `status` is reset to `queued` and the `conclusion` is cleared.\n\nTo rerequest a check suite, your GitHub App must have the `checks:read` permission on a private repository or pull access to a public repository.",
-    "documentationUrl": "https://developer.github.com/v3/checks/suites/#rerequest-check-suite",
+    "documentationUrl": "https://developer.github.com/v3/checks/suites/#rerequest-a-check-suite",
     "previews": [{ "name": "antiope" }],
     "headers": [
       {
@@ -20510,7 +20510,7 @@
     "renamed": null
   },
   {
-    "name": "List check runs for a specific ref",
+    "name": "List check runs for a Git reference",
     "scope": "checks",
     "id": "listForRef",
     "method": "GET",
@@ -20518,7 +20518,7 @@
     "isDeprecated": false,
     "isLegacy": false,
     "description": "**Note:** The Checks API only looks for pushes in the repository where the check suite or check run were created. Pushes to a branch in a forked repository are not detected and return an empty `pull_requests` array.\n\nLists check runs for a commit ref. The `ref` can be a SHA, branch name, or a tag name. GitHub Apps must have the `checks:read` permission on a private repository or pull access to a public repository to get check runs. OAuth Apps and authenticated users must have the `repo` scope to get check runs in a private repository.",
-    "documentationUrl": "https://developer.github.com/v3/checks/runs/#list-check-runs-for-a-specific-ref",
+    "documentationUrl": "https://developer.github.com/v3/checks/runs/#list-check-runs-for-a-git-reference",
     "previews": [{ "name": "antiope" }],
     "headers": [
       {
@@ -20647,7 +20647,7 @@
     "renamed": null
   },
   {
-    "name": "List check suites for a specific ref",
+    "name": "List check suites for a Git reference",
     "scope": "checks",
     "id": "listSuitesForRef",
     "method": "GET",
@@ -20655,7 +20655,7 @@
     "isDeprecated": false,
     "isLegacy": false,
     "description": "**Note:** The Checks API only looks for pushes in the repository where the check suite or check run were created. Pushes to a branch in a forked repository are not detected and return an empty `pull_requests` array and a `null` value for `head_branch`.\n\nLists check suites for a commit `ref`. The `ref` can be a SHA, branch name, or a tag name. GitHub Apps must have the `checks:read` permission on a private repository or pull access to a public repository to list check suites. OAuth Apps and authenticated users must have the `repo` scope to get check suites in a private repository.",
-    "documentationUrl": "https://developer.github.com/v3/checks/suites/#list-check-suites-for-a-specific-ref",
+    "documentationUrl": "https://developer.github.com/v3/checks/suites/#list-check-suites-for-a-git-reference",
     "previews": [{ "name": "antiope" }],
     "headers": [
       {
