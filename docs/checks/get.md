@@ -1,4 +1,4 @@
-# Get a single check run
+# Get a check run
 
 **Note:** The Checks API only looks for pushes in the repository where the check suite or check run were created. Pushes to a branch in a forked repository are not detected and return an empty `pull_requests` array.
 
@@ -41,4 +41,4 @@ check_run_id parameter
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/checks/runs/#get-a-single-check-run).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/checks/runs/#get-a-check-run).

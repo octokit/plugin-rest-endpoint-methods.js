@@ -1,4 +1,4 @@
-# Set preferences for check suites on a repository
+# Update repository preferences for check suites
 
 Changes the default automatic flow when creating check suites. By default, the CheckSuiteEvent is automatically created each time code is pushed to a repository. When you disable the automatic creation of check suites, you can manually [Create a check suite](https://developer.github.com/v3/checks/suites/#create-a-check-suite). You must have admin permissions in the repository to set preferences for check suites.
 
@@ -50,4 +50,4 @@ Set to `true` to enable automatic creation of CheckSuite events upon pushes to t
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/checks/suites/#set-preferences-for-check-suites-on-a-repository).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/checks/suites/#update-repository-preferences-for-check-suites).
