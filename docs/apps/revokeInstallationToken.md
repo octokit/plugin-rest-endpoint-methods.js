@@ -14,4 +14,4 @@ octokit.apps.revokeInstallationToken();
 
 This endpoint has no parameters
 
-See also: [GitHub Developer Guide documentation](endpoint.documentationUrl).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/apps/installations/#revoke-an-installation-token).

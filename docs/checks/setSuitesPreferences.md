@@ -50,4 +50,4 @@ Set to `true` to enable automatic creation of CheckSuite events upon pushes to t
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](endpoint.documentationUrl).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/checks/suites/#set-preferences-for-check-suites-on-a-repository).

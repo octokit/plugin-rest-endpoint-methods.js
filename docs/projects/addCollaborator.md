@@ -41,4 +41,4 @@ The permission to grant the collaborator. Note that, if you choose not to pass a
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](endpoint.documentationUrl).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/projects/collaborators/#add-user-as-a-collaborator).

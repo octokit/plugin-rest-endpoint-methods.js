@@ -39,4 +39,4 @@ tag parameter
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](endpoint.documentationUrl).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/releases/#get-a-release-by-tag-name).

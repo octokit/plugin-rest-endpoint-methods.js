@@ -27,4 +27,4 @@ code parameter
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](endpoint.documentationUrl).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/apps/#create-a-github-app-from-a-manifest).

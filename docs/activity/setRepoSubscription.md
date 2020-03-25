@@ -43,4 +43,4 @@ Determines if all notifications should be blocked from this repository.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](endpoint.documentationUrl).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/activity/watching/#set-a-repository-subscription).

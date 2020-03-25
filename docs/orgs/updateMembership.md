@@ -31,4 +31,4 @@ The state that the membership should be in. Only `"active"` will be accepted.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](endpoint.documentationUrl).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/orgs/members/#edit-your-organization-membership).

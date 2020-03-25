@@ -31,4 +31,4 @@ account_id parameter
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](endpoint.documentationUrl).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/apps/marketplace/#get-a-subscription-plan-for-an-account-stubbed).

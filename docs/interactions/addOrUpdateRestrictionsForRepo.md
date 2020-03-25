@@ -39,4 +39,4 @@ Specifies the group of GitHub users who can comment, open issues, or create pull
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](endpoint.documentationUrl).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/interactions/repos/#add-or-update-interaction-restrictions-for-a-repository).

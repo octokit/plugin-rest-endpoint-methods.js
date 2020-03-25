@@ -12,4 +12,4 @@ octokit.apps.getAuthenticated();
 
 This endpoint has no parameters
 
-See also: [GitHub Developer Guide documentation](endpoint.documentationUrl).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/apps/#get-the-authenticated-github-app).

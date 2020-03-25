@@ -37,4 +37,4 @@ The repository context to use when creating references in `gfm` mode. Omit this 
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](endpoint.documentationUrl).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/markdown/#render-an-arbitrary-markdown-document).

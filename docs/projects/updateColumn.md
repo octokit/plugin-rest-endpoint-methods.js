@@ -31,4 +31,4 @@ The new name of the column.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](endpoint.documentationUrl).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/projects/columns/#update-a-project-column).

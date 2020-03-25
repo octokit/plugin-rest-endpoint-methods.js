@@ -39,4 +39,4 @@ repo_name parameter
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](endpoint.documentationUrl).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/migrations/orgs/#unlock-an-organization-repository).

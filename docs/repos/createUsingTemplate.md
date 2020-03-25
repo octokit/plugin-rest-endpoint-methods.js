@@ -63,4 +63,4 @@ Either `true` to create a new private repository or `false` to create a new publ
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](endpoint.documentationUrl).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/#create-a-repository-using-a-template).

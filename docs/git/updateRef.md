@@ -48,4 +48,4 @@ Indicates whether to force the update or to make sure the update is a fast-forwa
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](endpoint.documentationUrl).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/git/refs/#update-a-reference).

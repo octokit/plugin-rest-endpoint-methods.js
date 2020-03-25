@@ -50,4 +50,4 @@ Default: the team's `permission` attribute will be used to determine what permis
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](endpoint.documentationUrl).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/teams/#add-or-update-team-project).

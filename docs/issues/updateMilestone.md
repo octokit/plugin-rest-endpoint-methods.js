@@ -57,4 +57,4 @@ The milestone due date. This is a timestamp in [ISO 8601](https://en.wikipedia.o
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](endpoint.documentationUrl).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/issues/milestones/#update-a-milestone).

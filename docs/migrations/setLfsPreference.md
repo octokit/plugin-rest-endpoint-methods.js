@@ -39,4 +39,4 @@ Can be one of `opt_in` (large files will be stored using Git LFS) or `opt_out` (
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](endpoint.documentationUrl).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/migrations/source_imports/#set-git-lfs-preference).

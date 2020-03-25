@@ -49,4 +49,4 @@ An alternate short description of the asset. Used in place of the filename.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](endpoint.documentationUrl).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/releases/#edit-a-release-asset).

@@ -43,4 +43,4 @@ ID of the team or teams to add to the repository. Teams can only be added to org
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](endpoint.documentationUrl).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/#transfer-a-repository).

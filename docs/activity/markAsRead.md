@@ -25,4 +25,4 @@ Describes the last point that notifications were checked. Anything updated since
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](endpoint.documentationUrl).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/activity/notifications/#mark-as-read).

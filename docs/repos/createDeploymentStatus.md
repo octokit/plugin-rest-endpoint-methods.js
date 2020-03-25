@@ -81,4 +81,4 @@ Adds a new `inactive` status to all prior non-transient, non-production environm
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](endpoint.documentationUrl).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/deployments/#create-a-deployment-status).

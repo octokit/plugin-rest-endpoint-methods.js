@@ -59,4 +59,4 @@ Merge method to use. Possible values are `merge`, `squash` or `rebase`. Default 
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](endpoint.documentationUrl).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/pulls/#merge-a-pull-request-merge-button).

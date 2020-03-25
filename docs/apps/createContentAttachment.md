@@ -45,4 +45,4 @@ The body text of the content attachment displayed in the body or comment of an i
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](endpoint.documentationUrl).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/apps/installations/#create-a-content-attachment).

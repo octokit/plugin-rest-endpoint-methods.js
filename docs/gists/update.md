@@ -47,4 +47,4 @@ The new name for this file. To delete a file, set the value of the filename to `
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](endpoint.documentationUrl).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/gists/#update-a-gist).

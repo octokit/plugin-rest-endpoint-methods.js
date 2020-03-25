@@ -41,4 +41,4 @@ hook_id parameter
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](endpoint.documentationUrl).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/hooks/#test-a-push-hook).

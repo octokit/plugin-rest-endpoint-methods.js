@@ -120,4 +120,4 @@ The [PGP signature](https://en.wikipedia.org/wiki/Pretty_Good_Privacy) of the co
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](endpoint.documentationUrl).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/git/commits/#create-a-commit).

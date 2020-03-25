@@ -39,4 +39,4 @@ repo parameter
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](endpoint.documentationUrl).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/statistics/#get-the-number-of-commits-per-hour-in-each-day).

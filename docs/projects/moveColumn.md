@@ -31,4 +31,4 @@ Can be one of `first`, `last`, or `after:<column_id>`, where `<column_id>` is th
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](endpoint.documentationUrl).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/projects/columns/#move-a-project-column).

@@ -43,4 +43,4 @@ The name of the label to add to the issue. Must contain at least one label. **No
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](endpoint.documentationUrl).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/issues/labels/#add-labels-to-an-issue).

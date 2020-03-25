@@ -45,4 +45,4 @@ The contents of the comment.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](endpoint.documentationUrl).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/issues/comments/#create-a-comment).

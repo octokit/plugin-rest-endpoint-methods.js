@@ -69,4 +69,4 @@ The ID of a team to set as the parent team.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](endpoint.documentationUrl).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/teams/#edit-team).
