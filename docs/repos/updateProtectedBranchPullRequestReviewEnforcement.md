@@ -73,4 +73,4 @@ Specifies the number of reviewers required to approve pull requests. Use a numbe
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](endpoint.documentationUrl).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/branches/#update-pull-request-review-enforcement-of-protected-branch).

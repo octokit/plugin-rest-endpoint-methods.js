@@ -39,4 +39,4 @@ branch parameter
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](endpoint.documentationUrl).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/branches/#list-required-status-checks-contexts-of-protected-branch).

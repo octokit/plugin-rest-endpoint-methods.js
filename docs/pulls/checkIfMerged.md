@@ -37,4 +37,4 @@ pull_number parameter
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](endpoint.documentationUrl).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/pulls/#get-if-a-pull-request-has-been-merged).

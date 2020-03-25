@@ -120,4 +120,4 @@ Specifies which types of repositories non-admin organization members can create.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](endpoint.documentationUrl).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/orgs/#edit-an-organization).

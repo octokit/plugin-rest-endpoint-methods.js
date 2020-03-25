@@ -66,4 +66,4 @@ Logins for Users to assign to this issue. _NOTE: Only users with push access can
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](endpoint.documentationUrl).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/issues/#create-an-issue).

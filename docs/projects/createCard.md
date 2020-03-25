@@ -45,4 +45,4 @@ The issue or pull request id you want to associate with this card. You can use t
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](endpoint.documentationUrl).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/projects/cards/#create-a-project-card).

@@ -57,4 +57,4 @@ ID of the key you used to encrypt the secret.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](endpoint.documentationUrl).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/actions/secrets/#create-or-update-a-secret-for-a-repository).

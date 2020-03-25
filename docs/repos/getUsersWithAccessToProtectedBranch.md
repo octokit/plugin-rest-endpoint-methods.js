@@ -41,4 +41,4 @@ branch parameter
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](endpoint.documentationUrl).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/branches/#list-users-with-access-to-protected-branch).

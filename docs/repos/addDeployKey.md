@@ -51,4 +51,4 @@ Deploy keys with write access can perform the same actions as an organization me
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](endpoint.documentationUrl).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/keys/#add-a-new-deploy-key).

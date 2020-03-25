@@ -33,4 +33,4 @@ Use `public` to enable an authenticated user to view the specified email address
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](endpoint.documentationUrl).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/users/emails/#toggle-primary-email-visibility).

@@ -50,4 +50,4 @@ The reason for locking the issue or pull request conversation. Lock will fail if
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](endpoint.documentationUrl).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/issues/#lock-an-issue).

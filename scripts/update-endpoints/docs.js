@@ -83,7 +83,7 @@ ${example}
 
 ${parameters}
 
-See also: [GitHub Developer Guide documentation](endpoint.documentationUrl).`;
+See also: [GitHub Developer Guide documentation](${endpoint.documentationUrl}).`;
 
   return prettier.format(content, {
     parser: "markdown"

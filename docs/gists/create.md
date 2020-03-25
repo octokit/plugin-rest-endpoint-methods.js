@@ -44,4 +44,4 @@ When `true`, the gist will be public and available for anyone to see.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](endpoint.documentationUrl).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/gists/#create-a-gist).

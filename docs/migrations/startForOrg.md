@@ -43,4 +43,4 @@ Indicates whether attachments should be excluded from the migration (to reduce m
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](endpoint.documentationUrl).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/migrations/orgs/#start-an-organization-migration).

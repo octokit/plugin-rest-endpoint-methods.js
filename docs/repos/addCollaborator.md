@@ -59,4 +59,4 @@ The permission to grant the collaborator. **Only valid on organization-owned rep
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](endpoint.documentationUrl).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/collaborators/#add-user-as-a-collaborator).

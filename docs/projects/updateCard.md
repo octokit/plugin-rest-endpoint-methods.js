@@ -35,4 +35,4 @@ Use `true` to archive a project card. Specify `false` if you need to restore a p
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](endpoint.documentationUrl).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/projects/cards/#update-a-project-card).

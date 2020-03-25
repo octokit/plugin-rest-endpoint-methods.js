@@ -46,4 +46,4 @@ Usernames of assignees to remove from an issue. _NOTE: Only users with push acce
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](endpoint.documentationUrl).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/issues/assignees/#remove-assignees-from-an-issue).

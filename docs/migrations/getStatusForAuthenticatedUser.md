@@ -34,4 +34,4 @@ migration_id parameter
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](endpoint.documentationUrl).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/migrations/users/#get-the-status-of-a-user-migration).

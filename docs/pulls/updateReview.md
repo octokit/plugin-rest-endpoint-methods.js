@@ -51,4 +51,4 @@ The body text of the pull request review.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](endpoint.documentationUrl).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/pulls/reviews/#update-a-pull-request-review).

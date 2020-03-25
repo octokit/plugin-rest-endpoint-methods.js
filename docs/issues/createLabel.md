@@ -48,4 +48,4 @@ A short description of the label.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](endpoint.documentationUrl).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/issues/labels/#create-a-label).

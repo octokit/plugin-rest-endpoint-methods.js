@@ -46,4 +46,4 @@ The repository directory that includes the source files for the Pages site. When
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](endpoint.documentationUrl).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/pages/#enable-a-pages-site).

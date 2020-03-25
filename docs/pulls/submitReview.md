@@ -54,4 +54,4 @@ The review action you want to perform. The review actions include: `APPROVE`, `R
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](endpoint.documentationUrl).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/pulls/reviews/#submit-a-pull-request-review).

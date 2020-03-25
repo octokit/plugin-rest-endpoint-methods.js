@@ -47,4 +47,4 @@ ref parameter
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](endpoint.documentationUrl).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/statuses/#get-the-combined-status-for-a-specific-ref).

@@ -49,4 +49,4 @@ repo parameter
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](endpoint.documentationUrl).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/teams/#check-if-a-team-manages-a-repository).

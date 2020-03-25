@@ -121,4 +121,4 @@ Either `true` to allow automatically deleting head branches when pull requests a
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](endpoint.documentationUrl).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/#create-an-organization-repository).

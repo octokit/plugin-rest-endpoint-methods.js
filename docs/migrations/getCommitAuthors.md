@@ -40,4 +40,4 @@ Only authors found after this id are returned. Provide the highest author ID you
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](endpoint.documentationUrl).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/migrations/source_imports/#get-commit-authors).

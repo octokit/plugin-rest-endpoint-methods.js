@@ -44,4 +44,4 @@ The description of the project.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](endpoint.documentationUrl).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/projects/#create-a-repository-project).

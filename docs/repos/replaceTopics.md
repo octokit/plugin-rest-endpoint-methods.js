@@ -39,4 +39,4 @@ An array of topics to add to the repository. Pass one or more topics to _replace
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](endpoint.documentationUrl).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/#replace-all-repository-topics).

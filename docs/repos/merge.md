@@ -48,4 +48,4 @@ Commit message to use for the merge commit. If omitted, a default message will b
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](endpoint.documentationUrl).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/merging/#perform-a-merge).

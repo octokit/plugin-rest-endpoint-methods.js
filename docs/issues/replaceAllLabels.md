@@ -42,4 +42,4 @@ The names of the labels to add to the issue. You can pass an empty array to remo
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](endpoint.documentationUrl).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/issues/labels/#replace-all-labels-for-an-issue).

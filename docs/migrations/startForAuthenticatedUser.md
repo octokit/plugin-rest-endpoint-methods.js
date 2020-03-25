@@ -37,4 +37,4 @@ Does not include attachments uploaded to GitHub.com in the migration data when s
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](endpoint.documentationUrl).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/migrations/users/#start-a-user-migration).

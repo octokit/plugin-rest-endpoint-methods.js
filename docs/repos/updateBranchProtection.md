@@ -143,4 +143,4 @@ Allows deletion of the protected branch by anyone with write access to the repos
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](endpoint.documentationUrl).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/branches/#update-branch-protection).

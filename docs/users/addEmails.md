@@ -27,4 +27,4 @@ Adds one or more email addresses to your GitHub account. Must contain at least o
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](endpoint.documentationUrl).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/users/emails/#add-email-addresses).

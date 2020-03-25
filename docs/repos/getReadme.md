@@ -40,4 +40,4 @@ The name of the commit/branch/tag. Default: the repository’s default branch (u
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](endpoint.documentationUrl).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/contents/#get-the-readme).

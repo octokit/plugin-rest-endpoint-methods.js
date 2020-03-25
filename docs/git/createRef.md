@@ -45,4 +45,4 @@ The SHA1 value for this reference.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](endpoint.documentationUrl).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/git/refs/#create-a-reference).

@@ -75,4 +75,4 @@ The SHA1 of the tree you want to update with new data. If you don't set this, th
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](endpoint.documentationUrl).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/git/trees/#create-a-tree).

@@ -51,4 +51,4 @@ The list of status checks to require in order to merge into this branch
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](endpoint.documentationUrl).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/branches/#update-required-status-checks-of-protected-branch).

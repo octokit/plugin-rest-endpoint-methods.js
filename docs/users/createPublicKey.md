@@ -30,4 +30,4 @@ The public SSH key to add to your GitHub account. See "[Generating a new SSH key
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](endpoint.documentationUrl).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/users/keys/#create-a-public-key).

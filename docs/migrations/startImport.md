@@ -59,4 +59,4 @@ For a tfvc import, the name of the project that is being imported.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](endpoint.documentationUrl).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/migrations/source_imports/#start-an-import).

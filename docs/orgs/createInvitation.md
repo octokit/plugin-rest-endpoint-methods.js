@@ -52,4 +52,4 @@ Specify IDs for the teams you want to invite new members to.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](endpoint.documentationUrl).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/orgs/members/#create-organization-invitation).

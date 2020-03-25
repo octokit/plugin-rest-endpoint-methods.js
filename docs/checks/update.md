@@ -198,4 +198,4 @@ A reference for the action on the integrator's system. The maximum size is 20 ch
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](endpoint.documentationUrl).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/checks/runs/#update-a-check-run).

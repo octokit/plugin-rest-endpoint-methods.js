@@ -51,4 +51,4 @@ The message for the pull request review dismissal
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](endpoint.documentationUrl).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/pulls/reviews/#dismiss-a-pull-request-review).

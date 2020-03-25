@@ -27,4 +27,4 @@ octokit.rateLimit.get();
 
 This endpoint has no parameters
 
-See also: [GitHub Developer Guide documentation](endpoint.documentationUrl).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/rate_limit/#get-your-current-rate-limit-status).

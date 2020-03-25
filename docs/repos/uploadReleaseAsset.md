@@ -75,4 +75,4 @@ The URL origin (protocol + host name + port) is included in `upload_url` returne
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](endpoint.documentationUrl).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/releases/#upload-a-release-asset).

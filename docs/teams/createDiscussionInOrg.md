@@ -54,4 +54,4 @@ Private posts are only visible to team members, organization owners, and team ma
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](endpoint.documentationUrl).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/teams/discussions/#create-a-discussion).

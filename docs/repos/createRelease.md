@@ -66,4 +66,4 @@ Text describing the contents of the tag.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](endpoint.documentationUrl).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/releases/#create-a-release).

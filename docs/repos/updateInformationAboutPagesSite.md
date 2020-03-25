@@ -41,4 +41,4 @@ Update the source for the repository. Must include the branch name, and may opti
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](endpoint.documentationUrl).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/pages/#update-information-about-a-pages-site).
