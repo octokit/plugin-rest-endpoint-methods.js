@@ -1,9 +1,7 @@
 # Unstar a repository for the authenticated user
 
-**Deprecated:** This method has been renamed to activity.unstarRepoForAuthenticatedUser
-
 ```js
-octokit.activity.unstarRepo({
+octokit.activity.unstarRepoForAuthenticatedUser({
   owner,
   repo,
 });

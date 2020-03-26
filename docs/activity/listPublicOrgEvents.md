@@ -1,8 +1,8 @@
-# List public events received by a user
+# List public organization events
 
 ```js
-octokit.activity.listReceivedPublicEventsForUser({
-  username,
+octokit.activity.listPublicOrgEvents({
+  org,
 });
 ```
 
@@ -17,9 +17,9 @@ octokit.activity.listReceivedPublicEventsForUser({
     </tr>
   </thead>
   <tbody>
-    <tr><td>username</td><td>yes</td><td>
+    <tr><td>org</td><td>yes</td><td>
 
-username parameter
+org parameter
 
 </td></tr>
 <tr><td>per_page</td><td>no</td><td>
@@ -35,4 +35,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/activity/events/#list-public-events-received-by-a-user).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/activity/events/#list-public-organization-events).

@@ -1,13 +1,11 @@
 # List notifications for the authenticated user
 
-**Deprecated:** This method has been renamed to activity.listNotificationsForAuthenticatedUser
-
 List all notifications for the current user, sorted by most recently updated.
 
 The following example uses the `since` parameter to list notifications that have been updated after the specified time.
 
 ```js
-octokit.activity.listNotifications();
+octokit.activity.listNotificationsForAuthenticatedUser();
 ```
 
 ## Parameters

@@ -1,4 +1,4 @@
-# List public events performed by a user
+# List public events for a user
 
 ```js
 octokit.activity.listPublicEventsForUser({
@@ -35,4 +35,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/activity/events/#list-public-events-performed-by-a-user).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/activity/events/#list-public-events-for-a-user).

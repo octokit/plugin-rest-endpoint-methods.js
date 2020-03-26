@@ -1,4 +1,6 @@
-# List public events for an organization
+# List public organization events
+
+**Deprecated:** This method has been renamed to activity.listPublicOrgEvents
 
 ```js
 octokit.activity.listPublicEventsForOrg({
@@ -35,4 +37,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/activity/events/#list-public-events-for-an-organization).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/activity/events/#list-public-organization-events).

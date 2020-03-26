@@ -19978,6 +19978,91 @@ type ActivityListReposStarredByAuthenticatedUserResponseItem = {
   visibility: string;
   watchers_count: number;
 };
+type ActivityListRepoNotificationsForAuthenticatedUserResponseItemSubject = {
+  latest_comment_url: string;
+  title: string;
+  type: string;
+  url: string;
+};
+type ActivityListRepoNotificationsForAuthenticatedUserResponseItemRepositoryOwner = {
+  avatar_url: string;
+  events_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  gravatar_id: string;
+  html_url: string;
+  id: number;
+  login: string;
+  node_id: string;
+  organizations_url: string;
+  received_events_url: string;
+  repos_url: string;
+  site_admin: boolean;
+  starred_url: string;
+  subscriptions_url: string;
+  type: string;
+  url: string;
+};
+type ActivityListRepoNotificationsForAuthenticatedUserResponseItemRepository = {
+  archive_url: string;
+  assignees_url: string;
+  blobs_url: string;
+  branches_url: string;
+  collaborators_url: string;
+  comments_url: string;
+  commits_url: string;
+  compare_url: string;
+  contents_url: string;
+  contributors_url: string;
+  deployments_url: string;
+  description: string;
+  downloads_url: string;
+  events_url: string;
+  fork: boolean;
+  forks_url: string;
+  full_name: string;
+  git_commits_url: string;
+  git_refs_url: string;
+  git_tags_url: string;
+  git_url: string;
+  html_url: string;
+  id: number;
+  issue_comment_url: string;
+  issue_events_url: string;
+  issues_url: string;
+  keys_url: string;
+  labels_url: string;
+  languages_url: string;
+  merges_url: string;
+  milestones_url: string;
+  name: string;
+  node_id: string;
+  notifications_url: string;
+  owner: ActivityListRepoNotificationsForAuthenticatedUserResponseItemRepositoryOwner;
+  private: boolean;
+  pulls_url: string;
+  releases_url: string;
+  ssh_url: string;
+  stargazers_url: string;
+  statuses_url: string;
+  subscribers_url: string;
+  subscription_url: string;
+  tags_url: string;
+  teams_url: string;
+  trees_url: string;
+  url: string;
+};
+type ActivityListRepoNotificationsForAuthenticatedUserResponseItem = {
+  id: string;
+  last_read_at: string;
+  reason: string;
+  repository: ActivityListRepoNotificationsForAuthenticatedUserResponseItemRepository;
+  subject: ActivityListRepoNotificationsForAuthenticatedUserResponseItemSubject;
+  unread: boolean;
+  updated_at: string;
+  url: string;
+};
 type ActivityListNotificationsForRepoResponseItemSubject = {
   latest_comment_url: string;
   title: string;
@@ -20059,6 +20144,91 @@ type ActivityListNotificationsForRepoResponseItem = {
   reason: string;
   repository: ActivityListNotificationsForRepoResponseItemRepository;
   subject: ActivityListNotificationsForRepoResponseItemSubject;
+  unread: boolean;
+  updated_at: string;
+  url: string;
+};
+type ActivityListNotificationsForAuthenticatedUserResponseItemSubject = {
+  latest_comment_url: string;
+  title: string;
+  type: string;
+  url: string;
+};
+type ActivityListNotificationsForAuthenticatedUserResponseItemRepositoryOwner = {
+  avatar_url: string;
+  events_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  gravatar_id: string;
+  html_url: string;
+  id: number;
+  login: string;
+  node_id: string;
+  organizations_url: string;
+  received_events_url: string;
+  repos_url: string;
+  site_admin: boolean;
+  starred_url: string;
+  subscriptions_url: string;
+  type: string;
+  url: string;
+};
+type ActivityListNotificationsForAuthenticatedUserResponseItemRepository = {
+  archive_url: string;
+  assignees_url: string;
+  blobs_url: string;
+  branches_url: string;
+  collaborators_url: string;
+  comments_url: string;
+  commits_url: string;
+  compare_url: string;
+  contents_url: string;
+  contributors_url: string;
+  deployments_url: string;
+  description: string;
+  downloads_url: string;
+  events_url: string;
+  fork: boolean;
+  forks_url: string;
+  full_name: string;
+  git_commits_url: string;
+  git_refs_url: string;
+  git_tags_url: string;
+  git_url: string;
+  html_url: string;
+  id: number;
+  issue_comment_url: string;
+  issue_events_url: string;
+  issues_url: string;
+  keys_url: string;
+  labels_url: string;
+  languages_url: string;
+  merges_url: string;
+  milestones_url: string;
+  name: string;
+  node_id: string;
+  notifications_url: string;
+  owner: ActivityListNotificationsForAuthenticatedUserResponseItemRepositoryOwner;
+  private: boolean;
+  pulls_url: string;
+  releases_url: string;
+  ssh_url: string;
+  stargazers_url: string;
+  statuses_url: string;
+  subscribers_url: string;
+  subscription_url: string;
+  tags_url: string;
+  teams_url: string;
+  trees_url: string;
+  url: string;
+};
+type ActivityListNotificationsForAuthenticatedUserResponseItem = {
+  id: string;
+  last_read_at: string;
+  reason: string;
+  repository: ActivityListNotificationsForAuthenticatedUserResponseItemRepository;
+  subject: ActivityListNotificationsForAuthenticatedUserResponseItemSubject;
   unread: boolean;
   updated_at: string;
   url: string;
@@ -20194,7 +20364,7 @@ type ActivityListFeedsResponse = {
   timeline_url: string;
   user_url: string;
 };
-type ActivityGetThreadSubscriptionResponse = {
+type ActivityGetThreadSubscriptionForAuthenticatedUserResponse = {
   created_at: string;
   ignored: boolean;
   reason: null;
@@ -20294,6 +20464,52 @@ type ActivityGetRepoSubscriptionResponse = {
   repository_url: string;
   subscribed: boolean;
   url: string;
+};
+type ActivityGetFeedsResponseLinksUser = { href: string; type: string };
+type ActivityGetFeedsResponseLinksTimeline = { href: string; type: string };
+type ActivityGetFeedsResponseLinksSecurityAdvisories = {
+  href: string;
+  type: string;
+};
+type ActivityGetFeedsResponseLinksCurrentUserPublic = {
+  href: string;
+  type: string;
+};
+type ActivityGetFeedsResponseLinksCurrentUserOrganizationsItem = {
+  href: string;
+  type: string;
+};
+type ActivityGetFeedsResponseLinksCurrentUserOrganization = {
+  href: string;
+  type: string;
+};
+type ActivityGetFeedsResponseLinksCurrentUserActor = {
+  href: string;
+  type: string;
+};
+type ActivityGetFeedsResponseLinksCurrentUser = { href: string; type: string };
+type ActivityGetFeedsResponseLinks = {
+  current_user: ActivityGetFeedsResponseLinksCurrentUser;
+  current_user_actor: ActivityGetFeedsResponseLinksCurrentUserActor;
+  current_user_organization: ActivityGetFeedsResponseLinksCurrentUserOrganization;
+  current_user_organizations: Array<
+    ActivityGetFeedsResponseLinksCurrentUserOrganizationsItem
+  >;
+  current_user_public: ActivityGetFeedsResponseLinksCurrentUserPublic;
+  security_advisories: ActivityGetFeedsResponseLinksSecurityAdvisories;
+  timeline: ActivityGetFeedsResponseLinksTimeline;
+  user: ActivityGetFeedsResponseLinksUser;
+};
+type ActivityGetFeedsResponse = {
+  _links: ActivityGetFeedsResponseLinks;
+  current_user_actor_url: string;
+  current_user_organization_url: string;
+  current_user_organization_urls: Array<string>;
+  current_user_public_url: string;
+  current_user_url: string;
+  security_advisories_url: string;
+  timeline_url: string;
+  user_url: string;
 };
 type ActionsListWorkflowRunsResponseWorkflowRunsItemRepositoryOwner = {
   avatar_url: string;
@@ -21006,8 +21222,14 @@ type ActionsListDownloadsForSelfHostedRunnerApplicationResponse = Array<
 type ActivityListNotificationsResponse = Array<
   ActivityListNotificationsResponseItem
 >;
+type ActivityListNotificationsForAuthenticatedUserResponse = Array<
+  ActivityListNotificationsForAuthenticatedUserResponseItem
+>;
 type ActivityListNotificationsForRepoResponse = Array<
   ActivityListNotificationsForRepoResponseItem
+>;
+type ActivityListRepoNotificationsForAuthenticatedUserResponse = Array<
+  ActivityListRepoNotificationsForAuthenticatedUserResponseItem
 >;
 type ActivityListReposStarredByAuthenticatedUserResponse = Array<
   ActivityListReposStarredByAuthenticatedUserResponseItem
@@ -21579,6 +21801,10 @@ export type ActionsRemoveSelfHostedRunnerParams = {
   repo: string;
   runner_id: number;
 };
+export type ActivityCheckRepoIsStarredByAuthenticatedUserParams = {
+  owner: string;
+  repo: string;
+};
 export type ActivityCheckStarringRepoParams = {
   owner: string;
   repo: string;
@@ -21598,7 +21824,24 @@ export type ActivityGetThreadParams = {
   thread_id: number;
 };
 export type ActivityGetThreadSubscriptionParams = {
+  /**
+   * Describes the last point that notifications were checked. Anything updated since this time will not be marked as read. If you omit this parameter, all notifications are marked as read. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`. Default: The current timestamp.
+   */
+  last_read_at?: string;
+};
+export type ActivityGetThreadSubscriptionForAuthenticatedUserParams = {
   thread_id: number;
+};
+export type ActivityListEventsForAuthenticatedUserParams = {
+  /**
+   * Page number of the results to fetch.
+   */
+  page?: number;
+  /**
+   * Results per page (max 100)
+   */
+  per_page?: number;
+  username: string;
 };
 export type ActivityListEventsForOrgParams = {
   org: string;
@@ -21624,6 +21867,32 @@ export type ActivityListEventsForUserParams = {
   username: string;
 };
 export type ActivityListNotificationsParams = {
+  /**
+   * If `true`, show notifications marked as read.
+   */
+  all?: boolean;
+  /**
+   * Only show notifications updated before the given time. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.
+   */
+  before?: string;
+  /**
+   * Page number of the results to fetch.
+   */
+  page?: number;
+  /**
+   * If `true`, only shows notifications in which the user is directly participating or mentioned.
+   */
+  participating?: boolean;
+  /**
+   * Results per page (max 100)
+   */
+  per_page?: number;
+  /**
+   * Only show notifications updated after the given time. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.
+   */
+  since?: string;
+};
+export type ActivityListNotificationsForAuthenticatedUserParams = {
   /**
    * If `true`, show notifications marked as read.
    */
@@ -21677,6 +21946,18 @@ export type ActivityListNotificationsForRepoParams = {
    */
   since?: string;
 };
+export type ActivityListOrgEventsForAuthenticatedUserParams = {
+  org: string;
+  /**
+   * Page number of the results to fetch.
+   */
+  page?: number;
+  /**
+   * Results per page (max 100)
+   */
+  per_page?: number;
+  username: string;
+};
 export type ActivityListPublicEventsParams = {
   /**
    * Page number of the results to fetch.
@@ -21721,6 +22002,17 @@ export type ActivityListPublicEventsForUserParams = {
   per_page?: number;
   username: string;
 };
+export type ActivityListPublicOrgEventsParams = {
+  org: string;
+  /**
+   * Page number of the results to fetch.
+   */
+  page?: number;
+  /**
+   * Results per page (max 100)
+   */
+  per_page?: number;
+};
 export type ActivityListReceivedEventsForUserParams = {
   /**
    * Page number of the results to fetch.
@@ -21754,6 +22046,34 @@ export type ActivityListRepoEventsParams = {
    */
   per_page?: number;
   repo: string;
+};
+export type ActivityListRepoNotificationsForAuthenticatedUserParams = {
+  /**
+   * If `true`, show notifications marked as read.
+   */
+  all?: boolean;
+  /**
+   * Only show notifications updated before the given time. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.
+   */
+  before?: string;
+  owner: string;
+  /**
+   * Page number of the results to fetch.
+   */
+  page?: number;
+  /**
+   * If `true`, only shows notifications in which the user is directly participating or mentioned.
+   */
+  participating?: boolean;
+  /**
+   * Results per page (max 100)
+   */
+  per_page?: number;
+  repo: string;
+  /**
+   * Only show notifications updated after the given time. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.
+   */
+  since?: string;
 };
 export type ActivityListReposStarredByAuthenticatedUserParams = {
   /**
@@ -21839,13 +22159,27 @@ export type ActivityListWatchersForRepoParams = {
 };
 export type ActivityMarkAsReadParams = {
   /**
-   * Describes the last point that notifications were checked. Anything updated since this time will not be updated. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`. Default: The current timestamp.
+   * Describes the last point that notifications were checked. Anything updated since this time will not be marked as read. If you omit this parameter, all notifications are marked as read. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`. Default: The current timestamp.
+   */
+  last_read_at?: string;
+};
+export type ActivityMarkNotificationsAsReadParams = {
+  /**
+   * Describes the last point that notifications were checked. Anything updated since this time will not be marked as read. If you omit this parameter, all notifications are marked as read. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`. Default: The current timestamp.
    */
   last_read_at?: string;
 };
 export type ActivityMarkNotificationsAsReadForRepoParams = {
   /**
-   * Describes the last point that notifications were checked. Anything updated since this time will not be updated. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`. Default: The current timestamp.
+   * Describes the last point that notifications were checked. Anything updated since this time will not be marked as read. If you omit this parameter, all notifications are marked as read. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`. Default: The current timestamp.
+   */
+  last_read_at?: string;
+  owner: string;
+  repo: string;
+};
+export type ActivityMarkRepoNotificationsAsReadParams = {
+  /**
+   * Describes the last point that notifications were checked. Anything updated since this time will not be marked as read. If you omit this parameter, all notifications are marked as read. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`. Default: The current timestamp.
    */
   last_read_at?: string;
   owner: string;
@@ -21877,7 +22211,15 @@ export type ActivityStarRepoParams = {
   owner: string;
   repo: string;
 };
+export type ActivityStarRepoForAuthenticatedUserParams = {
+  owner: string;
+  repo: string;
+};
 export type ActivityUnstarRepoParams = {
+  owner: string;
+  repo: string;
+};
+export type ActivityUnstarRepoForAuthenticatedUserParams = {
   owner: string;
   repo: string;
 };
@@ -28191,8 +28533,16 @@ export type RestEndpointMethods = {
     };
   };
   activity: {
+    checkRepoIsStarredByAuthenticatedUser: {
+      (
+        params?: RequestParameters &
+          ActivityCheckRepoIsStarredByAuthenticatedUserParams
+      ): Promise<AnyResponse>;
+
+      endpoint: EndpointInterface;
+    };
     /**
-     * Requires for the user to be authenticated.
+     * @deprecated octokit.activity.checkStarringRepo() has been renamed to octokit.activity.checkRepoIsStarredByAuthenticatedUser() (2020-03-25)
      */
     checkStarringRepo: {
       (params?: RequestParameters & ActivityCheckStarringRepoParams): Promise<
@@ -28212,12 +28562,32 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface;
     };
     /**
-     * Mutes all future notifications for a conversation until you comment on the thread or get **@mention**ed.
+     * Mutes all future notifications for a conversation until you comment on the thread or get an **@mention**. If you are watching the repository of the thread, you will still receive notifications. To ignore future notifications for a repository you are watching, use the [Set a thread subscription](https://developer.github.com/v3/activity/notifications/#set-a-thread-subscription) endpoint and set `ignore` to `true`.
      */
     deleteThreadSubscription: {
       (
         params?: RequestParameters & ActivityDeleteThreadSubscriptionParams
       ): Promise<AnyResponse>;
+
+      endpoint: EndpointInterface;
+    };
+    /**
+     * GitHub provides several timeline resources in [Atom](http://en.wikipedia.org/wiki/Atom_(standard)) format. The Feeds API lists all the feeds available to the authenticated user:
+     *
+     * *   **Timeline**: The GitHub global public timeline
+     * *   **User**: The public timeline for any user, using [URI template](https://developer.github.com/v3/#hypermedia)
+     * *   **Current user public**: The public timeline for the authenticated user
+     * *   **Current user**: The private timeline for the authenticated user
+     * *   **Current user actor**: The private timeline for activity created by the authenticated user
+     * *   **Current user organizations**: The private timeline for the organizations the authenticated user is a member of.
+     * *   **Security advisories**: A collection of public announcements that provide information about security-related vulnerabilities in software on GitHub.
+     *
+     * **Note**: Private feeds are only returned when [authenticating via Basic Auth](https://developer.github.com/v3/#basic-authentication) since current feed URIs use the older, non revocable auth tokens.
+     */
+    getFeeds: {
+      (params?: RequestParameters & EmptyParams): Promise<
+        OctokitResponse<ActivityGetFeedsResponse>
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -28238,19 +28608,47 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface;
     };
     /**
-     * This checks to see if the current user is subscribed to a thread. You can also [get a repository subscription](https://developer.github.com/v3/activity/watching/#get-a-repository-subscription).
-     *
-     * Note that subscriptions are only generated if a user is participating in a conversation--for example, they've replied to the thread, were **@mentioned**, or manually subscribe to a thread.
+     * Marks all notifications as "read" removes it from the [default view on GitHub](https://github.com/notifications). If the number of notifications is too large to complete in one request, you will receive a `202 Accepted` status and GitHub will run an asynchronous process to mark notifications as "read." To check whether any "unread" notifications remain, you can use the [List notifications for the authenticated user](https://developer.github.com/v3/activity/notifications/#list-notifications-for-the-authenticated-user) endpoint and pass the query parameter `all=false`.
+     * @deprecated octokit.activity.getThreadSubscription() has been renamed to octokit.activity.getThreadSubscriptionForAuthenticatedUser() (2020-03-25)
      */
     getThreadSubscription: {
       (
         params?: RequestParameters & ActivityGetThreadSubscriptionParams
-      ): Promise<OctokitResponse<ActivityGetThreadSubscriptionResponse>>;
+      ): Promise<AnyResponse>;
+
+      endpoint: EndpointInterface;
+    };
+    /**
+     * This checks to see if the current user is subscribed to a thread. You can also [get a repository subscription](https://developer.github.com/v3/activity/watching/#get-a-repository-subscription).
+     *
+     * Note that subscriptions are only generated if a user is participating in a conversation--for example, they've replied to the thread, were **@mentioned**, or manually subscribe to a thread.
+     */
+    getThreadSubscriptionForAuthenticatedUser: {
+      (
+        params?: RequestParameters &
+          ActivityGetThreadSubscriptionForAuthenticatedUserParams
+      ): Promise<
+        OctokitResponse<
+          ActivityGetThreadSubscriptionForAuthenticatedUserResponse
+        >
+      >;
+
+      endpoint: EndpointInterface;
+    };
+    /**
+     * If you are authenticated as the given user, you will see your private events. Otherwise, you'll only see public events.
+     */
+    listEventsForAuthenticatedUser: {
+      (
+        params?: RequestParameters &
+          ActivityListEventsForAuthenticatedUserParams
+      ): Promise<AnyResponse>;
 
       endpoint: EndpointInterface;
     };
     /**
      * This is the user's organization dashboard. You must be authenticated as the user to view this.
+     * @deprecated octokit.activity.listEventsForOrg() has been renamed to octokit.activity.listOrgEventsForAuthenticatedUser() (2020-03-25)
      */
     listEventsForOrg: {
       (params?: RequestParameters & ActivityListEventsForOrgParams): Promise<
@@ -28261,6 +28659,7 @@ export type RestEndpointMethods = {
     };
     /**
      * If you are authenticated as the given user, you will see your private events. Otherwise, you'll only see public events.
+     * @deprecated octokit.activity.listEventsForUser() has been renamed to octokit.activity.listEventsForAuthenticatedUser() (2020-03-25)
      */
     listEventsForUser: {
       (params?: RequestParameters & ActivityListEventsForUserParams): Promise<
@@ -28281,6 +28680,7 @@ export type RestEndpointMethods = {
      * *   **Security advisories**: A collection of public announcements that provide information about security-related vulnerabilities in software on GitHub.
      *
      * **Note**: Private feeds are only returned when [authenticating via Basic Auth](https://developer.github.com/v3/#basic-authentication) since current feed URIs use the older, non revocable auth tokens.
+     * @deprecated octokit.activity.listFeeds() has been renamed to octokit.activity.getFeeds() (2020-03-25)
      */
     listFeeds: {
       (params?: RequestParameters & EmptyParams): Promise<
@@ -28293,6 +28693,7 @@ export type RestEndpointMethods = {
      * List all notifications for the current user, sorted by most recently updated.
      *
      * The following example uses the `since` parameter to list notifications that have been updated after the specified time.
+     * @deprecated octokit.activity.listNotifications() has been renamed to octokit.activity.listNotificationsForAuthenticatedUser() (2020-03-25)
      */
     listNotifications: {
       (params?: RequestParameters & ActivityListNotificationsParams): Promise<
@@ -28302,12 +28703,39 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface;
     };
     /**
+     * List all notifications for the current user, sorted by most recently updated.
+     *
+     * The following example uses the `since` parameter to list notifications that have been updated after the specified time.
+     */
+    listNotificationsForAuthenticatedUser: {
+      (
+        params?: RequestParameters &
+          ActivityListNotificationsForAuthenticatedUserParams
+      ): Promise<
+        OctokitResponse<ActivityListNotificationsForAuthenticatedUserResponse>
+      >;
+
+      endpoint: EndpointInterface;
+    };
+    /**
      * List all notifications for the current user.
+     * @deprecated octokit.activity.listNotificationsForRepo() has been renamed to octokit.activity.listRepoNotificationsForAuthenticatedUser() (2020-03-25)
      */
     listNotificationsForRepo: {
       (
         params?: RequestParameters & ActivityListNotificationsForRepoParams
       ): Promise<OctokitResponse<ActivityListNotificationsForRepoResponse>>;
+
+      endpoint: EndpointInterface;
+    };
+    /**
+     * This is the user's organization dashboard. You must be authenticated as the user to view this.
+     */
+    listOrgEventsForAuthenticatedUser: {
+      (
+        params?: RequestParameters &
+          ActivityListOrgEventsForAuthenticatedUserParams
+      ): Promise<AnyResponse>;
 
       endpoint: EndpointInterface;
     };
@@ -28321,7 +28749,9 @@ export type RestEndpointMethods = {
 
       endpoint: EndpointInterface;
     };
-
+    /**
+     * @deprecated octokit.activity.listPublicEventsForOrg() has been renamed to octokit.activity.listPublicOrgEvents() (2020-03-25)
+     */
     listPublicEventsForOrg: {
       (
         params?: RequestParameters & ActivityListPublicEventsForOrgParams
@@ -28343,6 +28773,14 @@ export type RestEndpointMethods = {
       (
         params?: RequestParameters & ActivityListPublicEventsForUserParams
       ): Promise<AnyResponse>;
+
+      endpoint: EndpointInterface;
+    };
+
+    listPublicOrgEvents: {
+      (params?: RequestParameters & ActivityListPublicOrgEventsParams): Promise<
+        AnyResponse
+      >;
 
       endpoint: EndpointInterface;
     };
@@ -28369,6 +28807,21 @@ export type RestEndpointMethods = {
     listRepoEvents: {
       (params?: RequestParameters & ActivityListRepoEventsParams): Promise<
         AnyResponse
+      >;
+
+      endpoint: EndpointInterface;
+    };
+    /**
+     * List all notifications for the current user.
+     */
+    listRepoNotificationsForAuthenticatedUser: {
+      (
+        params?: RequestParameters &
+          ActivityListRepoNotificationsForAuthenticatedUserParams
+      ): Promise<
+        OctokitResponse<
+          ActivityListRepoNotificationsForAuthenticatedUserResponse
+        >
       >;
 
       endpoint: EndpointInterface;
@@ -28411,6 +28864,8 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface;
     };
     /**
+     * Lists the people that have starred the repository.
+     *
      * You can also find out _when_ stars were created by passing the following custom [media type](https://developer.github.com/v3/media/) via the `Accept` header:
      */
     listStargazersForRepo: {
@@ -28444,7 +28899,8 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface;
     };
     /**
-     * Marks a notification as "read" removes it from the [default view on GitHub](https://github.com/notifications). If the number of notifications is too large to complete in one request, you will receive a `202 Accepted` status and GitHub will run an asynchronous process to mark notifications as "read." To check whether any "unread" notifications remain, you can use the [List your notifications](https://developer.github.com/v3/activity/notifications/#list-your-notifications) endpoint and pass the query parameter `all=false`.
+     * Marks all notifications as "read" removes it from the [default view on GitHub](https://github.com/notifications). If the number of notifications is too large to complete in one request, you will receive a `202 Accepted` status and GitHub will run an asynchronous process to mark notifications as "read." To check whether any "unread" notifications remain, you can use the [List notifications for the authenticated user](https://developer.github.com/v3/activity/notifications/#list-notifications-for-the-authenticated-user) endpoint and pass the query parameter `all=false`.
+     * @deprecated octokit.activity.markAsRead() has been renamed to octokit.activity.markNotificationsAsRead() (2020-03-25)
      */
     markAsRead: {
       (params?: RequestParameters & ActivityMarkAsReadParams): Promise<
@@ -28454,12 +28910,33 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface;
     };
     /**
-     * Marks all notifications in a repository as "read" removes them from the [default view on GitHub](https://github.com/notifications). If the number of notifications is too large to complete in one request, you will receive a `202 Accepted` status and GitHub will run an asynchronous process to mark notifications as "read." To check whether any "unread" notifications remain, you can use the [List your notifications in a repository](https://developer.github.com/v3/activity/notifications/#list-your-notifications-in-a-repository) endpoint and pass the query parameter `all=false`.
+     * Marks all notifications as "read" removes it from the [default view on GitHub](https://github.com/notifications). If the number of notifications is too large to complete in one request, you will receive a `202 Accepted` status and GitHub will run an asynchronous process to mark notifications as "read." To check whether any "unread" notifications remain, you can use the [List notifications for the authenticated user](https://developer.github.com/v3/activity/notifications/#list-notifications-for-the-authenticated-user) endpoint and pass the query parameter `all=false`.
+     */
+    markNotificationsAsRead: {
+      (
+        params?: RequestParameters & ActivityMarkNotificationsAsReadParams
+      ): Promise<AnyResponse>;
+
+      endpoint: EndpointInterface;
+    };
+    /**
+     * Marks all notifications in a repository as "read" removes them from the [default view on GitHub](https://github.com/notifications). If the number of notifications is too large to complete in one request, you will receive a `202 Accepted` status and GitHub will run an asynchronous process to mark notifications as "read." To check whether any "unread" notifications remain, you can use the [List repository notifications for the authenticated user](https://developer.github.com/v3/activity/notifications/#list-repository-notifications-for-the-authenticated-user) endpoint and pass the query parameter `all=false`.
+     * @deprecated octokit.activity.markNotificationsAsReadForRepo() has been renamed to octokit.activity.markRepoNotificationsAsRead() (2020-03-25)
      */
     markNotificationsAsReadForRepo: {
       (
         params?: RequestParameters &
           ActivityMarkNotificationsAsReadForRepoParams
+      ): Promise<AnyResponse>;
+
+      endpoint: EndpointInterface;
+    };
+    /**
+     * Marks all notifications in a repository as "read" removes them from the [default view on GitHub](https://github.com/notifications). If the number of notifications is too large to complete in one request, you will receive a `202 Accepted` status and GitHub will run an asynchronous process to mark notifications as "read." To check whether any "unread" notifications remain, you can use the [List repository notifications for the authenticated user](https://developer.github.com/v3/activity/notifications/#list-repository-notifications-for-the-authenticated-user) endpoint and pass the query parameter `all=false`.
+     */
+    markRepoNotificationsAsRead: {
+      (
+        params?: RequestParameters & ActivityMarkRepoNotificationsAsReadParams
       ): Promise<AnyResponse>;
 
       endpoint: EndpointInterface;
@@ -28483,7 +28960,11 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface;
     };
     /**
-     * This lets you subscribe or unsubscribe from a conversation.
+     * If you are watching a repository, you receive notifications for all threads by default. Use this endpoint to ignore future notifications for threads until you comment on the thread or get an **@mention**.
+     *
+     * You can also use this endpoint to subscribe to threads that you are currently not receiving notifications for or to subscribed to threads that you have previously ignored.
+     *
+     * Unsubscribing from a conversation in a repository that you are not watching is functionally equivalent to the [Delete a thread subscription](https://developer.github.com/v3/activity/notifications/#delete-a-thread-subscription) endpoint.
      */
     setThreadSubscription: {
       (
@@ -28493,9 +28974,8 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface;
     };
     /**
-     * Requires for the user to be authenticated.
-     *
      * Note that you'll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see "[HTTP verbs](https://developer.github.com/v3/#http-verbs)."
+     * @deprecated octokit.activity.starRepo() has been renamed to octokit.activity.starRepoForAuthenticatedUser() (2020-03-25)
      */
     starRepo: {
       (params?: RequestParameters & ActivityStarRepoParams): Promise<
@@ -28505,12 +28985,31 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface;
     };
     /**
-     * Requires for the user to be authenticated.
+     * Note that you'll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see "[HTTP verbs](https://developer.github.com/v3/#http-verbs)."
+     */
+    starRepoForAuthenticatedUser: {
+      (
+        params?: RequestParameters & ActivityStarRepoForAuthenticatedUserParams
+      ): Promise<AnyResponse>;
+
+      endpoint: EndpointInterface;
+    };
+    /**
+     * @deprecated octokit.activity.unstarRepo() has been renamed to octokit.activity.unstarRepoForAuthenticatedUser() (2020-03-25)
      */
     unstarRepo: {
       (params?: RequestParameters & ActivityUnstarRepoParams): Promise<
         AnyResponse
       >;
+
+      endpoint: EndpointInterface;
+    };
+
+    unstarRepoForAuthenticatedUser: {
+      (
+        params?: RequestParameters &
+          ActivityUnstarRepoForAuthenticatedUserParams
+      ): Promise<AnyResponse>;
 
       endpoint: EndpointInterface;
     };

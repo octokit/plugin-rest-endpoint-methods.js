@@ -1,4 +1,4 @@
-# View a single thread
+# Get a thread
 
 ```js
 octokit.activity.getThread({
@@ -25,4 +25,4 @@ thread_id parameter
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/activity/notifications/#view-a-single-thread).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/activity/notifications/#get-a-thread).

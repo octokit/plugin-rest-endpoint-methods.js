@@ -1,9 +1,7 @@
-# Unstar a repository for the authenticated user
-
-**Deprecated:** This method has been renamed to activity.unstarRepoForAuthenticatedUser
+# Check if a repository is starred by the authenticated user
 
 ```js
-octokit.activity.unstarRepo({
+octokit.activity.checkRepoIsStarredByAuthenticatedUser({
   owner,
   repo,
 });
@@ -33,4 +31,4 @@ repo parameter
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/activity/starring/#unstar-a-repository-for-the-authenticated-user).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/activity/starring/#check-if-a-repository-is-starred-by-the-authenticated-user).

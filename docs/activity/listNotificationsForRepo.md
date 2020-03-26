@@ -1,4 +1,6 @@
-# List your notifications in a repository
+# List repository notifications for the authenticated user
+
+**Deprecated:** This method has been renamed to activity.listRepoNotificationsForAuthenticatedUser
 
 List all notifications for the current user.
 
@@ -63,4 +65,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/activity/notifications/#list-your-notifications-in-a-repository).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/activity/notifications/#list-repository-notifications-for-the-authenticated-user).

@@ -1,7 +1,5 @@
 # Get feeds
 
-**Deprecated:** This method has been renamed to activity.getFeeds
-
 GitHub provides several timeline resources in [Atom](<http://en.wikipedia.org/wiki/Atom_(standard)>) format. The Feeds API lists all the feeds available to the authenticated user:
 
 - **Timeline**: The GitHub global public timeline
@@ -15,7 +13,7 @@ GitHub provides several timeline resources in [Atom](<http://en.wikipedia.org/wi
 **Note**: Private feeds are only returned when [authenticating via Basic Auth](https://developer.github.com/v3/#basic-authentication) since current feed URIs use the older, non revocable auth tokens.
 
 ```js
-octokit.activity.listFeeds();
+octokit.activity.getFeeds();
 ```
 
 ## Parameters

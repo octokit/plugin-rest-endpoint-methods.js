@@ -1,13 +1,12 @@
-# List notifications for the authenticated user
+# List repository notifications for the authenticated user
 
-**Deprecated:** This method has been renamed to activity.listNotificationsForAuthenticatedUser
-
-List all notifications for the current user, sorted by most recently updated.
-
-The following example uses the `since` parameter to list notifications that have been updated after the specified time.
+List all notifications for the current user.
 
 ```js
-octokit.activity.listNotifications();
+octokit.activity.listRepoNotificationsForAuthenticatedUser({
+  owner,
+  repo,
+});
 ```
 
 ## Parameters
@@ -21,7 +20,17 @@ octokit.activity.listNotifications();
     </tr>
   </thead>
   <tbody>
-    <tr><td>all</td><td>no</td><td>
+    <tr><td>owner</td><td>yes</td><td>
+
+owner parameter
+
+</td></tr>
+<tr><td>repo</td><td>yes</td><td>
+
+repo parameter
+
+</td></tr>
+<tr><td>all</td><td>no</td><td>
 
 If `true`, show notifications marked as read.
 
@@ -54,4 +63,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/activity/notifications/#list-notifications-for-the-authenticated-user).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/activity/notifications/#list-repository-notifications-for-the-authenticated-user).

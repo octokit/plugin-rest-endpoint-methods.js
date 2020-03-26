@@ -1658,15 +1658,15 @@
     "renamed": null
   },
   {
-    "name": "List feeds",
+    "name": "Get feeds",
     "scope": "activity",
-    "id": "listFeeds",
+    "id": "getFeeds",
     "method": "GET",
     "url": "/feeds",
     "isDeprecated": false,
     "isLegacy": false,
     "description": "GitHub provides several timeline resources in [Atom](http://en.wikipedia.org/wiki/Atom_(standard)) format. The Feeds API lists all the feeds available to the authenticated user:\n\n*   **Timeline**: The GitHub global public timeline\n*   **User**: The public timeline for any user, using [URI template](https://developer.github.com/v3/#hypermedia)\n*   **Current user public**: The public timeline for the authenticated user\n*   **Current user**: The private timeline for the authenticated user\n*   **Current user actor**: The private timeline for activity created by the authenticated user\n*   **Current user organizations**: The private timeline for the organizations the authenticated user is a member of.\n*   **Security advisories**: A collection of public announcements that provide information about security-related vulnerabilities in software on GitHub.\n\n**Note**: Private feeds are only returned when [authenticating via Basic Auth](https://developer.github.com/v3/#basic-authentication) since current feed URIs use the older, non revocable auth tokens.",
-    "documentationUrl": "https://developer.github.com/v3/activity/feeds/#list-feeds",
+    "documentationUrl": "https://developer.github.com/v3/activity/feeds/#get-feeds",
     "previews": [],
     "headers": [],
     "parameters": [],
@@ -1682,6 +1682,37 @@
       }
     ],
     "renamed": null
+  },
+  {
+    "name": "Get feeds",
+    "scope": "activity",
+    "id": "listFeeds",
+    "method": "GET",
+    "url": "/feeds",
+    "isDeprecated": false,
+    "isLegacy": false,
+    "description": "GitHub provides several timeline resources in [Atom](http://en.wikipedia.org/wiki/Atom_(standard)) format. The Feeds API lists all the feeds available to the authenticated user:\n\n*   **Timeline**: The GitHub global public timeline\n*   **User**: The public timeline for any user, using [URI template](https://developer.github.com/v3/#hypermedia)\n*   **Current user public**: The public timeline for the authenticated user\n*   **Current user**: The private timeline for the authenticated user\n*   **Current user actor**: The private timeline for activity created by the authenticated user\n*   **Current user organizations**: The private timeline for the organizations the authenticated user is a member of.\n*   **Security advisories**: A collection of public announcements that provide information about security-related vulnerabilities in software on GitHub.\n\n**Note**: Private feeds are only returned when [authenticating via Basic Auth](https://developer.github.com/v3/#basic-authentication) since current feed URIs use the older, non revocable auth tokens.",
+    "documentationUrl": "https://developer.github.com/v3/activity/feeds/#get-feeds",
+    "previews": [],
+    "headers": [],
+    "parameters": [],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "examples": [
+          {
+            "data": "{\"timeline_url\":\"https://github.com/timeline\",\"user_url\":\"https://github.com/{user}\",\"current_user_public_url\":\"https://github.com/octocat\",\"current_user_url\":\"https://github.com/octocat.private?token=abc123\",\"current_user_actor_url\":\"https://github.com/octocat.private.actor?token=abc123\",\"current_user_organization_url\":\"\",\"current_user_organization_urls\":[\"https://github.com/organizations/github/octocat.private.atom?token=abc123\"],\"security_advisories_url\":\"https://github.com/security-advisories\",\"_links\":{\"timeline\":{\"href\":\"https://github.com/timeline\",\"type\":\"application/atom+xml\"},\"user\":{\"href\":\"https://github.com/{user}\",\"type\":\"application/atom+xml\"},\"current_user_public\":{\"href\":\"https://github.com/octocat\",\"type\":\"application/atom+xml\"},\"current_user\":{\"href\":\"https://github.com/octocat.private?token=abc123\",\"type\":\"application/atom+xml\"},\"current_user_actor\":{\"href\":\"https://github.com/octocat.private.actor?token=abc123\",\"type\":\"application/atom+xml\"},\"current_user_organization\":{\"href\":\"\",\"type\":\"\"},\"current_user_organizations\":[{\"href\":\"https://github.com/organizations/github/octocat.private.atom?token=abc123\",\"type\":\"application/atom+xml\"}],\"security_advisories\":{\"href\":\"https://github.com/security-advisories\",\"type\":\"application/atom+xml\"}}}"
+          }
+        ]
+      }
+    ],
+    "renamed": {
+      "before": { "scope": "activity", "id": "listFeeds" },
+      "after": { "scope": "activity", "id": "getFeeds" },
+      "date": "2020-03-25",
+      "note": "\"activity/list-feeds\" operation ID is now \"activity/get-feeds\""
+    }
   },
   {
     "name": "List gists for the authenticated user",
@@ -4200,15 +4231,15 @@
     "renamed": null
   },
   {
-    "name": "List your notifications",
+    "name": "List notifications for the authenticated user",
     "scope": "activity",
-    "id": "listNotifications",
+    "id": "listNotificationsForAuthenticatedUser",
     "method": "GET",
     "url": "/notifications",
     "isDeprecated": false,
     "isLegacy": false,
     "description": "List all notifications for the current user, sorted by most recently updated.\n\nThe following example uses the `since` parameter to list notifications that have been updated after the specified time.",
-    "documentationUrl": "https://developer.github.com/v3/activity/notifications/#list-your-notifications",
+    "documentationUrl": "https://developer.github.com/v3/activity/notifications/#list-notifications-for-the-authenticated-user",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -4305,21 +4336,134 @@
     "renamed": null
   },
   {
-    "name": "Mark as read",
+    "name": "List notifications for the authenticated user",
     "scope": "activity",
-    "id": "markAsRead",
+    "id": "listNotifications",
+    "method": "GET",
+    "url": "/notifications",
+    "isDeprecated": false,
+    "isLegacy": false,
+    "description": "List all notifications for the current user, sorted by most recently updated.\n\nThe following example uses the `since` parameter to list notifications that have been updated after the specified time.",
+    "documentationUrl": "https://developer.github.com/v3/activity/notifications/#list-notifications-for-the-authenticated-user",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "all",
+        "description": "If `true`, show notifications marked as read.",
+        "in": "QUERY",
+        "type": "boolean",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "participating",
+        "description": "If `true`, only shows notifications in which the user is directly participating or mentioned.",
+        "in": "QUERY",
+        "type": "boolean",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "since",
+        "description": "Only show notifications updated after the given time. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.",
+        "in": "QUERY",
+        "type": "string",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "before",
+        "description": "Only show notifications updated before the given time. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.",
+        "in": "QUERY",
+        "type": "string",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "per_page",
+        "description": "Results per page (max 100)",
+        "in": "QUERY",
+        "type": "integer",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "page",
+        "description": "Page number of the results to fetch.",
+        "in": "QUERY",
+        "type": "integer",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "examples": [
+          {
+            "data": "[{\"id\":\"1\",\"repository\":{\"id\":1296269,\"node_id\":\"MDEwOlJlcG9zaXRvcnkxMjk2MjY5\",\"name\":\"Hello-World\",\"full_name\":\"octocat/Hello-World\",\"owner\":{\"login\":\"octocat\",\"id\":1,\"node_id\":\"MDQ6VXNlcjE=\",\"avatar_url\":\"https://github.com/images/error/octocat_happy.gif\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/octocat\",\"html_url\":\"https://github.com/octocat\",\"followers_url\":\"https://api.github.com/users/octocat/followers\",\"following_url\":\"https://api.github.com/users/octocat/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/octocat/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/octocat/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/octocat/subscriptions\",\"organizations_url\":\"https://api.github.com/users/octocat/orgs\",\"repos_url\":\"https://api.github.com/users/octocat/repos\",\"events_url\":\"https://api.github.com/users/octocat/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/octocat/received_events\",\"type\":\"User\",\"site_admin\":false},\"private\":false,\"html_url\":\"https://github.com/octocat/Hello-World\",\"description\":\"This your first repo!\",\"fork\":false,\"url\":\"https://api.github.com/repos/octocat/Hello-World\",\"archive_url\":\"http://api.github.com/repos/octocat/Hello-World/{archive_format}{/ref}\",\"assignees_url\":\"http://api.github.com/repos/octocat/Hello-World/assignees{/user}\",\"blobs_url\":\"http://api.github.com/repos/octocat/Hello-World/git/blobs{/sha}\",\"branches_url\":\"http://api.github.com/repos/octocat/Hello-World/branches{/branch}\",\"collaborators_url\":\"http://api.github.com/repos/octocat/Hello-World/collaborators{/collaborator}\",\"comments_url\":\"http://api.github.com/repos/octocat/Hello-World/comments{/number}\",\"commits_url\":\"http://api.github.com/repos/octocat/Hello-World/commits{/sha}\",\"compare_url\":\"http://api.github.com/repos/octocat/Hello-World/compare/{base}...{head}\",\"contents_url\":\"http://api.github.com/repos/octocat/Hello-World/contents/{+path}\",\"contributors_url\":\"http://api.github.com/repos/octocat/Hello-World/contributors\",\"deployments_url\":\"http://api.github.com/repos/octocat/Hello-World/deployments\",\"downloads_url\":\"http://api.github.com/repos/octocat/Hello-World/downloads\",\"events_url\":\"http://api.github.com/repos/octocat/Hello-World/events\",\"forks_url\":\"http://api.github.com/repos/octocat/Hello-World/forks\",\"git_commits_url\":\"http://api.github.com/repos/octocat/Hello-World/git/commits{/sha}\",\"git_refs_url\":\"http://api.github.com/repos/octocat/Hello-World/git/refs{/sha}\",\"git_tags_url\":\"http://api.github.com/repos/octocat/Hello-World/git/tags{/sha}\",\"git_url\":\"git:github.com/octocat/Hello-World.git\",\"issue_comment_url\":\"http://api.github.com/repos/octocat/Hello-World/issues/comments{/number}\",\"issue_events_url\":\"http://api.github.com/repos/octocat/Hello-World/issues/events{/number}\",\"issues_url\":\"http://api.github.com/repos/octocat/Hello-World/issues{/number}\",\"keys_url\":\"http://api.github.com/repos/octocat/Hello-World/keys{/key_id}\",\"labels_url\":\"http://api.github.com/repos/octocat/Hello-World/labels{/name}\",\"languages_url\":\"http://api.github.com/repos/octocat/Hello-World/languages\",\"merges_url\":\"http://api.github.com/repos/octocat/Hello-World/merges\",\"milestones_url\":\"http://api.github.com/repos/octocat/Hello-World/milestones{/number}\",\"notifications_url\":\"http://api.github.com/repos/octocat/Hello-World/notifications{?since,all,participating}\",\"pulls_url\":\"http://api.github.com/repos/octocat/Hello-World/pulls{/number}\",\"releases_url\":\"http://api.github.com/repos/octocat/Hello-World/releases{/id}\",\"ssh_url\":\"git@github.com:octocat/Hello-World.git\",\"stargazers_url\":\"http://api.github.com/repos/octocat/Hello-World/stargazers\",\"statuses_url\":\"http://api.github.com/repos/octocat/Hello-World/statuses/{sha}\",\"subscribers_url\":\"http://api.github.com/repos/octocat/Hello-World/subscribers\",\"subscription_url\":\"http://api.github.com/repos/octocat/Hello-World/subscription\",\"tags_url\":\"http://api.github.com/repos/octocat/Hello-World/tags\",\"teams_url\":\"http://api.github.com/repos/octocat/Hello-World/teams\",\"trees_url\":\"http://api.github.com/repos/octocat/Hello-World/git/trees{/sha}\"},\"subject\":{\"title\":\"Greetings\",\"url\":\"https://api.github.com/repos/octokit/octokit.rb/issues/123\",\"latest_comment_url\":\"https://api.github.com/repos/octokit/octokit.rb/issues/comments/123\",\"type\":\"Issue\"},\"reason\":\"subscribed\",\"unread\":true,\"updated_at\":\"2014-11-07T22:01:45Z\",\"last_read_at\":\"2014-11-07T22:01:45Z\",\"url\":\"https://api.github.com/notifications/threads/1\"}]"
+          }
+        ]
+      }
+    ],
+    "renamed": {
+      "before": { "scope": "activity", "id": "listNotifications" },
+      "after": {
+        "scope": "activity",
+        "id": "listNotificationsForAuthenticatedUser"
+      },
+      "date": "2020-03-25",
+      "note": "\"activity/list-notifications\" operation ID is now \"activity/list-notifications-for-authenticated-user\""
+    }
+  },
+  {
+    "name": "Mark notifications as read",
+    "scope": "activity",
+    "id": "markNotificationsAsRead",
     "method": "PUT",
     "url": "/notifications",
     "isDeprecated": false,
     "isLegacy": false,
-    "description": "Marks a notification as \"read\" removes it from the [default view on GitHub](https://github.com/notifications). If the number of notifications is too large to complete in one request, you will receive a `202 Accepted` status and GitHub will run an asynchronous process to mark notifications as \"read.\" To check whether any \"unread\" notifications remain, you can use the [List your notifications](https://developer.github.com/v3/activity/notifications/#list-your-notifications) endpoint and pass the query parameter `all=false`.",
-    "documentationUrl": "https://developer.github.com/v3/activity/notifications/#mark-as-read",
+    "description": "Marks all notifications as \"read\" removes it from the [default view on GitHub](https://github.com/notifications). If the number of notifications is too large to complete in one request, you will receive a `202 Accepted` status and GitHub will run an asynchronous process to mark notifications as \"read.\" To check whether any \"unread\" notifications remain, you can use the [List notifications for the authenticated user](https://developer.github.com/v3/activity/notifications/#list-notifications-for-the-authenticated-user) endpoint and pass the query parameter `all=false`.",
+    "documentationUrl": "https://developer.github.com/v3/activity/notifications/#mark-notifications-as-read",
     "previews": [],
     "headers": [],
     "parameters": [
       {
         "name": "last_read_at",
-        "description": "Describes the last point that notifications were checked. Anything updated since this time will not be updated. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`. Default: The current timestamp.",
+        "description": "Describes the last point that notifications were checked. Anything updated since this time will not be marked as read. If you omit this parameter, all notifications are marked as read. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`. Default: The current timestamp.",
         "in": "BODY",
         "type": "string",
         "required": false,
@@ -4335,7 +4479,80 @@
     "renamed": null
   },
   {
-    "name": "View a single thread",
+    "name": "Mark notifications as read",
+    "scope": "activity",
+    "id": "markAsRead",
+    "method": "PUT",
+    "url": "/notifications",
+    "isDeprecated": false,
+    "isLegacy": false,
+    "description": "Marks all notifications as \"read\" removes it from the [default view on GitHub](https://github.com/notifications). If the number of notifications is too large to complete in one request, you will receive a `202 Accepted` status and GitHub will run an asynchronous process to mark notifications as \"read.\" To check whether any \"unread\" notifications remain, you can use the [List notifications for the authenticated user](https://developer.github.com/v3/activity/notifications/#list-notifications-for-the-authenticated-user) endpoint and pass the query parameter `all=false`.",
+    "documentationUrl": "https://developer.github.com/v3/activity/notifications/#mark-notifications-as-read",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "last_read_at",
+        "description": "Describes the last point that notifications were checked. Anything updated since this time will not be marked as read. If you omit this parameter, all notifications are marked as read. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`. Default: The current timestamp.",
+        "in": "BODY",
+        "type": "string",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [],
+    "renamed": {
+      "before": { "scope": "activity", "id": "markAsRead" },
+      "after": { "scope": "activity", "id": "markNotificationsAsRead" },
+      "date": "2020-03-25",
+      "note": "\"activity/mark-as-read\" operation ID is now \"activity/mark-notifications-as-read\""
+    }
+  },
+  {
+    "name": "Mark notifications as read",
+    "scope": "activity",
+    "id": "getThreadSubscription",
+    "method": "PUT",
+    "url": "/notifications",
+    "isDeprecated": false,
+    "isLegacy": false,
+    "description": "Marks all notifications as \"read\" removes it from the [default view on GitHub](https://github.com/notifications). If the number of notifications is too large to complete in one request, you will receive a `202 Accepted` status and GitHub will run an asynchronous process to mark notifications as \"read.\" To check whether any \"unread\" notifications remain, you can use the [List notifications for the authenticated user](https://developer.github.com/v3/activity/notifications/#list-notifications-for-the-authenticated-user) endpoint and pass the query parameter `all=false`.",
+    "documentationUrl": "https://developer.github.com/v3/activity/notifications/#mark-notifications-as-read",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "last_read_at",
+        "description": "Describes the last point that notifications were checked. Anything updated since this time will not be marked as read. If you omit this parameter, all notifications are marked as read. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`. Default: The current timestamp.",
+        "in": "BODY",
+        "type": "string",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [],
+    "renamed": {
+      "before": { "scope": "activity", "id": "getThreadSubscription" },
+      "after": {
+        "scope": "activity",
+        "id": "getThreadSubscriptionForAuthenticatedUser"
+      },
+      "date": "2020-03-25",
+      "note": "\"activity/get-thread-subscription\" operation ID is now \"activity/get-thread-subscription-for-authenticated-user\""
+    }
+  },
+  {
+    "name": "Get a thread",
     "scope": "activity",
     "id": "getThread",
     "method": "GET",
@@ -4343,7 +4560,7 @@
     "isDeprecated": false,
     "isLegacy": false,
     "description": "",
-    "documentationUrl": "https://developer.github.com/v3/activity/notifications/#view-a-single-thread",
+    "documentationUrl": "https://developer.github.com/v3/activity/notifications/#get-a-thread",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -4405,15 +4622,15 @@
     "renamed": null
   },
   {
-    "name": "Get a thread subscription",
+    "name": "Get a thread subscription for the authenticated user",
     "scope": "activity",
-    "id": "getThreadSubscription",
+    "id": "getThreadSubscriptionForAuthenticatedUser",
     "method": "GET",
     "url": "/notifications/threads/{thread_id}/subscription",
     "isDeprecated": false,
     "isLegacy": false,
     "description": "This checks to see if the current user is subscribed to a thread. You can also [get a repository subscription](https://developer.github.com/v3/activity/watching/#get-a-repository-subscription).\n\nNote that subscriptions are only generated if a user is participating in a conversation--for example, they've replied to the thread, were **@mentioned**, or manually subscribe to a thread.",
-    "documentationUrl": "https://developer.github.com/v3/activity/notifications/#get-a-thread-subscription",
+    "documentationUrl": "https://developer.github.com/v3/activity/notifications/#get-a-thread-subscription-for-the-authenticated-user",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -4452,7 +4669,7 @@
     "url": "/notifications/threads/{thread_id}/subscription",
     "isDeprecated": false,
     "isLegacy": false,
-    "description": "This lets you subscribe or unsubscribe from a conversation.",
+    "description": "If you are watching a repository, you receive notifications for all threads by default. Use this endpoint to ignore future notifications for threads until you comment on the thread or get an **@mention**.\n\nYou can also use this endpoint to subscribe to threads that you are currently not receiving notifications for or to subscribed to threads that you have previously ignored.\n\nUnsubscribing from a conversation in a repository that you are not watching is functionally equivalent to the [Delete a thread subscription](https://developer.github.com/v3/activity/notifications/#delete-a-thread-subscription) endpoint.",
     "documentationUrl": "https://developer.github.com/v3/activity/notifications/#set-a-thread-subscription",
     "previews": [],
     "headers": [],
@@ -4505,7 +4722,7 @@
     "url": "/notifications/threads/{thread_id}/subscription",
     "isDeprecated": false,
     "isLegacy": false,
-    "description": "Mutes all future notifications for a conversation until you comment on the thread or get **@mention**ed.",
+    "description": "Mutes all future notifications for a conversation until you comment on the thread or get an **@mention**. If you are watching the repository of the thread, you will still receive notifications. To ignore future notifications for a repository you are watching, use the [Set a thread subscription](https://developer.github.com/v3/activity/notifications/#set-a-thread-subscription) endpoint and set `ignore` to `true`.",
     "documentationUrl": "https://developer.github.com/v3/activity/notifications/#delete-a-thread-subscription",
     "previews": [],
     "headers": [],
@@ -5028,15 +5245,15 @@
     "renamed": null
   },
   {
-    "name": "List public events for an organization",
+    "name": "List public organization events",
     "scope": "activity",
-    "id": "listPublicEventsForOrg",
+    "id": "listPublicOrgEvents",
     "method": "GET",
     "url": "/orgs/{org}/events",
     "isDeprecated": false,
     "isLegacy": false,
     "description": "",
-    "documentationUrl": "https://developer.github.com/v3/activity/events/#list-public-events-for-an-organization",
+    "documentationUrl": "https://developer.github.com/v3/activity/events/#list-public-organization-events",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -5082,6 +5299,67 @@
     ],
     "responses": [],
     "renamed": null
+  },
+  {
+    "name": "List public organization events",
+    "scope": "activity",
+    "id": "listPublicEventsForOrg",
+    "method": "GET",
+    "url": "/orgs/{org}/events",
+    "isDeprecated": false,
+    "isLegacy": false,
+    "description": "",
+    "documentationUrl": "https://developer.github.com/v3/activity/events/#list-public-organization-events",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "org",
+        "description": "org parameter",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "per_page",
+        "description": "Results per page (max 100)",
+        "in": "QUERY",
+        "type": "integer",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "page",
+        "description": "Page number of the results to fetch.",
+        "in": "QUERY",
+        "type": "integer",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [],
+    "renamed": {
+      "before": { "scope": "activity", "id": "listPublicEventsForOrg" },
+      "after": { "scope": "activity", "id": "listPublicOrgEvents" },
+      "date": "2020-03-25",
+      "note": "\"activity/list-public-events-for-org\" operation ID is now \"activity/list-public-org-events\""
+    }
   },
   {
     "name": "List hooks",
@@ -30133,15 +30411,15 @@
     "renamed": null
   },
   {
-    "name": "List your notifications in a repository",
+    "name": "List repository notifications for the authenticated user",
     "scope": "activity",
-    "id": "listNotificationsForRepo",
+    "id": "listRepoNotificationsForAuthenticatedUser",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/notifications",
     "isDeprecated": false,
     "isLegacy": false,
     "description": "List all notifications for the current user.",
-    "documentationUrl": "https://developer.github.com/v3/activity/notifications/#list-your-notifications-in-a-repository",
+    "documentationUrl": "https://developer.github.com/v3/activity/notifications/#list-repository-notifications-for-the-authenticated-user",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -30264,15 +30542,154 @@
     "renamed": null
   },
   {
-    "name": "Mark notifications as read in a repository",
+    "name": "List repository notifications for the authenticated user",
     "scope": "activity",
-    "id": "markNotificationsAsReadForRepo",
+    "id": "listNotificationsForRepo",
+    "method": "GET",
+    "url": "/repos/{owner}/{repo}/notifications",
+    "isDeprecated": false,
+    "isLegacy": false,
+    "description": "List all notifications for the current user.",
+    "documentationUrl": "https://developer.github.com/v3/activity/notifications/#list-repository-notifications-for-the-authenticated-user",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "owner",
+        "description": "owner parameter",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "repo",
+        "description": "repo parameter",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "all",
+        "description": "If `true`, show notifications marked as read.",
+        "in": "QUERY",
+        "type": "boolean",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "participating",
+        "description": "If `true`, only shows notifications in which the user is directly participating or mentioned.",
+        "in": "QUERY",
+        "type": "boolean",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "since",
+        "description": "Only show notifications updated after the given time. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.",
+        "in": "QUERY",
+        "type": "string",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "before",
+        "description": "Only show notifications updated before the given time. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.",
+        "in": "QUERY",
+        "type": "string",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "per_page",
+        "description": "Results per page (max 100)",
+        "in": "QUERY",
+        "type": "integer",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "page",
+        "description": "Page number of the results to fetch.",
+        "in": "QUERY",
+        "type": "integer",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "examples": [
+          {
+            "data": "[{\"id\":\"1\",\"repository\":{\"id\":1296269,\"node_id\":\"MDEwOlJlcG9zaXRvcnkxMjk2MjY5\",\"name\":\"Hello-World\",\"full_name\":\"octocat/Hello-World\",\"owner\":{\"login\":\"octocat\",\"id\":1,\"node_id\":\"MDQ6VXNlcjE=\",\"avatar_url\":\"https://github.com/images/error/octocat_happy.gif\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/octocat\",\"html_url\":\"https://github.com/octocat\",\"followers_url\":\"https://api.github.com/users/octocat/followers\",\"following_url\":\"https://api.github.com/users/octocat/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/octocat/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/octocat/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/octocat/subscriptions\",\"organizations_url\":\"https://api.github.com/users/octocat/orgs\",\"repos_url\":\"https://api.github.com/users/octocat/repos\",\"events_url\":\"https://api.github.com/users/octocat/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/octocat/received_events\",\"type\":\"User\",\"site_admin\":false},\"private\":false,\"html_url\":\"https://github.com/octocat/Hello-World\",\"description\":\"This your first repo!\",\"fork\":false,\"url\":\"https://api.github.com/repos/octocat/Hello-World\",\"archive_url\":\"http://api.github.com/repos/octocat/Hello-World/{archive_format}{/ref}\",\"assignees_url\":\"http://api.github.com/repos/octocat/Hello-World/assignees{/user}\",\"blobs_url\":\"http://api.github.com/repos/octocat/Hello-World/git/blobs{/sha}\",\"branches_url\":\"http://api.github.com/repos/octocat/Hello-World/branches{/branch}\",\"collaborators_url\":\"http://api.github.com/repos/octocat/Hello-World/collaborators{/collaborator}\",\"comments_url\":\"http://api.github.com/repos/octocat/Hello-World/comments{/number}\",\"commits_url\":\"http://api.github.com/repos/octocat/Hello-World/commits{/sha}\",\"compare_url\":\"http://api.github.com/repos/octocat/Hello-World/compare/{base}...{head}\",\"contents_url\":\"http://api.github.com/repos/octocat/Hello-World/contents/{+path}\",\"contributors_url\":\"http://api.github.com/repos/octocat/Hello-World/contributors\",\"deployments_url\":\"http://api.github.com/repos/octocat/Hello-World/deployments\",\"downloads_url\":\"http://api.github.com/repos/octocat/Hello-World/downloads\",\"events_url\":\"http://api.github.com/repos/octocat/Hello-World/events\",\"forks_url\":\"http://api.github.com/repos/octocat/Hello-World/forks\",\"git_commits_url\":\"http://api.github.com/repos/octocat/Hello-World/git/commits{/sha}\",\"git_refs_url\":\"http://api.github.com/repos/octocat/Hello-World/git/refs{/sha}\",\"git_tags_url\":\"http://api.github.com/repos/octocat/Hello-World/git/tags{/sha}\",\"git_url\":\"git:github.com/octocat/Hello-World.git\",\"issue_comment_url\":\"http://api.github.com/repos/octocat/Hello-World/issues/comments{/number}\",\"issue_events_url\":\"http://api.github.com/repos/octocat/Hello-World/issues/events{/number}\",\"issues_url\":\"http://api.github.com/repos/octocat/Hello-World/issues{/number}\",\"keys_url\":\"http://api.github.com/repos/octocat/Hello-World/keys{/key_id}\",\"labels_url\":\"http://api.github.com/repos/octocat/Hello-World/labels{/name}\",\"languages_url\":\"http://api.github.com/repos/octocat/Hello-World/languages\",\"merges_url\":\"http://api.github.com/repos/octocat/Hello-World/merges\",\"milestones_url\":\"http://api.github.com/repos/octocat/Hello-World/milestones{/number}\",\"notifications_url\":\"http://api.github.com/repos/octocat/Hello-World/notifications{?since,all,participating}\",\"pulls_url\":\"http://api.github.com/repos/octocat/Hello-World/pulls{/number}\",\"releases_url\":\"http://api.github.com/repos/octocat/Hello-World/releases{/id}\",\"ssh_url\":\"git@github.com:octocat/Hello-World.git\",\"stargazers_url\":\"http://api.github.com/repos/octocat/Hello-World/stargazers\",\"statuses_url\":\"http://api.github.com/repos/octocat/Hello-World/statuses/{sha}\",\"subscribers_url\":\"http://api.github.com/repos/octocat/Hello-World/subscribers\",\"subscription_url\":\"http://api.github.com/repos/octocat/Hello-World/subscription\",\"tags_url\":\"http://api.github.com/repos/octocat/Hello-World/tags\",\"teams_url\":\"http://api.github.com/repos/octocat/Hello-World/teams\",\"trees_url\":\"http://api.github.com/repos/octocat/Hello-World/git/trees{/sha}\"},\"subject\":{\"title\":\"Greetings\",\"url\":\"https://api.github.com/repos/octokit/octokit.rb/issues/123\",\"latest_comment_url\":\"https://api.github.com/repos/octokit/octokit.rb/issues/comments/123\",\"type\":\"Issue\"},\"reason\":\"subscribed\",\"unread\":true,\"updated_at\":\"2014-11-07T22:01:45Z\",\"last_read_at\":\"2014-11-07T22:01:45Z\",\"url\":\"https://api.github.com/notifications/threads/1\"}]"
+          }
+        ]
+      }
+    ],
+    "renamed": {
+      "before": { "scope": "activity", "id": "listNotificationsForRepo" },
+      "after": {
+        "scope": "activity",
+        "id": "listRepoNotificationsForAuthenticatedUser"
+      },
+      "date": "2020-03-25",
+      "note": "\"activity/list-notifications-for-repo\" operation ID is now \"activity/list-repo-notifications-for-authenticated-user\""
+    }
+  },
+  {
+    "name": "Mark repository notifications as read",
+    "scope": "activity",
+    "id": "markRepoNotificationsAsRead",
     "method": "PUT",
     "url": "/repos/{owner}/{repo}/notifications",
     "isDeprecated": false,
     "isLegacy": false,
-    "description": "Marks all notifications in a repository as \"read\" removes them from the [default view on GitHub](https://github.com/notifications). If the number of notifications is too large to complete in one request, you will receive a `202 Accepted` status and GitHub will run an asynchronous process to mark notifications as \"read.\" To check whether any \"unread\" notifications remain, you can use the [List your notifications in a repository](https://developer.github.com/v3/activity/notifications/#list-your-notifications-in-a-repository) endpoint and pass the query parameter `all=false`.",
-    "documentationUrl": "https://developer.github.com/v3/activity/notifications/#mark-notifications-as-read-in-a-repository",
+    "description": "Marks all notifications in a repository as \"read\" removes them from the [default view on GitHub](https://github.com/notifications). If the number of notifications is too large to complete in one request, you will receive a `202 Accepted` status and GitHub will run an asynchronous process to mark notifications as \"read.\" To check whether any \"unread\" notifications remain, you can use the [List repository notifications for the authenticated user](https://developer.github.com/v3/activity/notifications/#list-repository-notifications-for-the-authenticated-user) endpoint and pass the query parameter `all=false`.",
+    "documentationUrl": "https://developer.github.com/v3/activity/notifications/#mark-repository-notifications-as-read",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -30304,7 +30721,7 @@
       },
       {
         "name": "last_read_at",
-        "description": "Describes the last point that notifications were checked. Anything updated since this time will not be updated. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`. Default: The current timestamp.",
+        "description": "Describes the last point that notifications were checked. Anything updated since this time will not be marked as read. If you omit this parameter, all notifications are marked as read. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`. Default: The current timestamp.",
         "in": "BODY",
         "type": "string",
         "required": false,
@@ -30318,6 +30735,67 @@
     ],
     "responses": [],
     "renamed": null
+  },
+  {
+    "name": "Mark repository notifications as read",
+    "scope": "activity",
+    "id": "markNotificationsAsReadForRepo",
+    "method": "PUT",
+    "url": "/repos/{owner}/{repo}/notifications",
+    "isDeprecated": false,
+    "isLegacy": false,
+    "description": "Marks all notifications in a repository as \"read\" removes them from the [default view on GitHub](https://github.com/notifications). If the number of notifications is too large to complete in one request, you will receive a `202 Accepted` status and GitHub will run an asynchronous process to mark notifications as \"read.\" To check whether any \"unread\" notifications remain, you can use the [List repository notifications for the authenticated user](https://developer.github.com/v3/activity/notifications/#list-repository-notifications-for-the-authenticated-user) endpoint and pass the query parameter `all=false`.",
+    "documentationUrl": "https://developer.github.com/v3/activity/notifications/#mark-repository-notifications-as-read",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "owner",
+        "description": "owner parameter",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "repo",
+        "description": "repo parameter",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "last_read_at",
+        "description": "Describes the last point that notifications were checked. Anything updated since this time will not be marked as read. If you omit this parameter, all notifications are marked as read. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`. Default: The current timestamp.",
+        "in": "BODY",
+        "type": "string",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [],
+    "renamed": {
+      "before": { "scope": "activity", "id": "markNotificationsAsReadForRepo" },
+      "after": { "scope": "activity", "id": "markRepoNotificationsAsRead" },
+      "date": "2020-03-25",
+      "note": "\"activity/mark-notifications-as-read-for-repo\" operation ID is now \"activity/mark-repo-notifications-as-read\""
+    }
   },
   {
     "name": "Get information about a Pages site",
@@ -35112,14 +35590,14 @@
     "renamed": null
   },
   {
-    "name": "List Stargazers",
+    "name": "List stargazers",
     "scope": "activity",
     "id": "listStargazersForRepo",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/stargazers",
     "isDeprecated": false,
     "isLegacy": false,
-    "description": "You can also find out _when_ stars were created by passing the following custom [media type](https://developer.github.com/v3/media/) via the `Accept` header:",
+    "description": "Lists the people that have starred the repository.\n\nYou can also find out _when_ stars were created by passing the following custom [media type](https://developer.github.com/v3/media/) via the `Accept` header:",
     "documentationUrl": "https://developer.github.com/v3/activity/starring/#list-stargazers",
     "previews": [],
     "headers": [],
@@ -42775,15 +43253,109 @@
     "renamed": null
   },
   {
-    "name": "Check if you are starring a repository",
+    "name": "Check if a repository is starred by the authenticated user",
+    "scope": "activity",
+    "id": "checkRepoIsStarredByAuthenticatedUser",
+    "method": "GET",
+    "url": "/user/starred/{owner}/{repo}",
+    "isDeprecated": false,
+    "isLegacy": false,
+    "description": "",
+    "documentationUrl": "https://developer.github.com/v3/activity/starring/#check-if-a-repository-is-starred-by-the-authenticated-user",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "owner",
+        "description": "owner parameter",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "repo",
+        "description": "repo parameter",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [],
+    "renamed": null
+  },
+  {
+    "name": "Check if a repository is starred by the authenticated user",
     "scope": "activity",
     "id": "checkStarringRepo",
     "method": "GET",
     "url": "/user/starred/{owner}/{repo}",
     "isDeprecated": false,
     "isLegacy": false,
-    "description": "Requires for the user to be authenticated.",
-    "documentationUrl": "https://developer.github.com/v3/activity/starring/#check-if-you-are-starring-a-repository",
+    "description": "",
+    "documentationUrl": "https://developer.github.com/v3/activity/starring/#check-if-a-repository-is-starred-by-the-authenticated-user",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "owner",
+        "description": "owner parameter",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "repo",
+        "description": "repo parameter",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [],
+    "renamed": {
+      "before": { "scope": "activity", "id": "checkStarringRepo" },
+      "after": {
+        "scope": "activity",
+        "id": "checkRepoIsStarredByAuthenticatedUser"
+      },
+      "date": "2020-03-25",
+      "note": "\"activity/check-starring-repo\" operation ID is now \"activity/check-repo-is-starred-by-authenticated-user\""
+    }
+  },
+  {
+    "name": "Star a repository for the authenticated user",
+    "scope": "activity",
+    "id": "starRepoForAuthenticatedUser",
+    "method": "PUT",
+    "url": "/user/starred/{owner}/{repo}",
+    "isDeprecated": false,
+    "isLegacy": false,
+    "description": "Note that you'll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see \"[HTTP verbs](https://developer.github.com/v3/#http-verbs).\"",
+    "documentationUrl": "https://developer.github.com/v3/activity/starring/#star-a-repository-for-the-authenticated-user",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -42818,15 +43390,63 @@
     "renamed": null
   },
   {
-    "name": "Star a repository",
+    "name": "Star a repository for the authenticated user",
     "scope": "activity",
     "id": "starRepo",
     "method": "PUT",
     "url": "/user/starred/{owner}/{repo}",
     "isDeprecated": false,
     "isLegacy": false,
-    "description": "Requires for the user to be authenticated.\n\nNote that you'll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see \"[HTTP verbs](https://developer.github.com/v3/#http-verbs).\"",
-    "documentationUrl": "https://developer.github.com/v3/activity/starring/#star-a-repository",
+    "description": "Note that you'll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see \"[HTTP verbs](https://developer.github.com/v3/#http-verbs).\"",
+    "documentationUrl": "https://developer.github.com/v3/activity/starring/#star-a-repository-for-the-authenticated-user",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "owner",
+        "description": "owner parameter",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "repo",
+        "description": "repo parameter",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [],
+    "renamed": {
+      "before": { "scope": "activity", "id": "starRepo" },
+      "after": { "scope": "activity", "id": "starRepoForAuthenticatedUser" },
+      "date": "2020-03-25",
+      "note": "\"activity/star-repo\" operation ID is now \"activity/star-repo-for-authenticated-user\""
+    }
+  },
+  {
+    "name": "Unstar a repository for the authenticated user",
+    "scope": "activity",
+    "id": "unstarRepoForAuthenticatedUser",
+    "method": "DELETE",
+    "url": "/user/starred/{owner}/{repo}",
+    "isDeprecated": false,
+    "isLegacy": false,
+    "description": "",
+    "documentationUrl": "https://developer.github.com/v3/activity/starring/#unstar-a-repository-for-the-authenticated-user",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -42861,15 +43481,15 @@
     "renamed": null
   },
   {
-    "name": "Unstar a repository",
+    "name": "Unstar a repository for the authenticated user",
     "scope": "activity",
     "id": "unstarRepo",
     "method": "DELETE",
     "url": "/user/starred/{owner}/{repo}",
     "isDeprecated": false,
     "isLegacy": false,
-    "description": "Requires for the user to be authenticated.",
-    "documentationUrl": "https://developer.github.com/v3/activity/starring/#unstar-a-repository",
+    "description": "",
+    "documentationUrl": "https://developer.github.com/v3/activity/starring/#unstar-a-repository-for-the-authenticated-user",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -42901,7 +43521,12 @@
       }
     ],
     "responses": [],
-    "renamed": null
+    "renamed": {
+      "before": { "scope": "activity", "id": "unstarRepo" },
+      "after": { "scope": "activity", "id": "unstarRepoForAuthenticatedUser" },
+      "date": "2020-03-25",
+      "note": "\"activity/unstar-repo\" operation ID is now \"activity/unstar-repo-for-authenticated-user\""
+    }
   },
   {
     "name": "List repositories watched by the authenticated user",
@@ -43320,15 +43945,15 @@
     "renamed": null
   },
   {
-    "name": "List events performed by a user",
+    "name": "List events for the authenticated user",
     "scope": "activity",
-    "id": "listEventsForUser",
+    "id": "listEventsForAuthenticatedUser",
     "method": "GET",
     "url": "/users/{username}/events",
     "isDeprecated": false,
     "isLegacy": false,
     "description": "If you are authenticated as the given user, you will see your private events. Otherwise, you'll only see public events.",
-    "documentationUrl": "https://developer.github.com/v3/activity/events/#list-events-performed-by-a-user",
+    "documentationUrl": "https://developer.github.com/v3/activity/events/#list-events-for-the-authenticated-user",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -43376,15 +44001,76 @@
     "renamed": null
   },
   {
-    "name": "List events for an organization",
+    "name": "List events for the authenticated user",
     "scope": "activity",
-    "id": "listEventsForOrg",
+    "id": "listEventsForUser",
+    "method": "GET",
+    "url": "/users/{username}/events",
+    "isDeprecated": false,
+    "isLegacy": false,
+    "description": "If you are authenticated as the given user, you will see your private events. Otherwise, you'll only see public events.",
+    "documentationUrl": "https://developer.github.com/v3/activity/events/#list-events-for-the-authenticated-user",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "username",
+        "description": "username parameter",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "per_page",
+        "description": "Results per page (max 100)",
+        "in": "QUERY",
+        "type": "integer",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "page",
+        "description": "Page number of the results to fetch.",
+        "in": "QUERY",
+        "type": "integer",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [],
+    "renamed": {
+      "before": { "scope": "activity", "id": "listEventsForUser" },
+      "after": { "scope": "activity", "id": "listEventsForAuthenticatedUser" },
+      "date": "2020-03-25",
+      "note": "\"activity/list-events-for-user\" operation ID is now \"activity/list-events-for-authenticated-user\""
+    }
+  },
+  {
+    "name": "List organization events for the authenticated user",
+    "scope": "activity",
+    "id": "listOrgEventsForAuthenticatedUser",
     "method": "GET",
     "url": "/users/{username}/events/orgs/{org}",
     "isDeprecated": false,
     "isLegacy": false,
     "description": "This is the user's organization dashboard. You must be authenticated as the user to view this.",
-    "documentationUrl": "https://developer.github.com/v3/activity/events/#list-events-for-an-organization",
+    "documentationUrl": "https://developer.github.com/v3/activity/events/#list-organization-events-for-the-authenticated-user",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -43445,7 +44131,84 @@
     "renamed": null
   },
   {
-    "name": "List public events performed by a user",
+    "name": "List organization events for the authenticated user",
+    "scope": "activity",
+    "id": "listEventsForOrg",
+    "method": "GET",
+    "url": "/users/{username}/events/orgs/{org}",
+    "isDeprecated": false,
+    "isLegacy": false,
+    "description": "This is the user's organization dashboard. You must be authenticated as the user to view this.",
+    "documentationUrl": "https://developer.github.com/v3/activity/events/#list-organization-events-for-the-authenticated-user",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "username",
+        "description": "username parameter",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "org",
+        "description": "org parameter",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "per_page",
+        "description": "Results per page (max 100)",
+        "in": "QUERY",
+        "type": "integer",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "page",
+        "description": "Page number of the results to fetch.",
+        "in": "QUERY",
+        "type": "integer",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [],
+    "renamed": {
+      "before": { "scope": "activity", "id": "listEventsForOrg" },
+      "after": {
+        "scope": "activity",
+        "id": "listOrgEventsForAuthenticatedUser"
+      },
+      "date": "2020-03-25",
+      "note": "\"activity/list-events-for-org\" operation ID is now \"activity/list-org-events-for-authenticated-user\""
+    }
+  },
+  {
+    "name": "List public events for a user",
     "scope": "activity",
     "id": "listPublicEventsForUser",
     "method": "GET",
@@ -43453,7 +44216,7 @@
     "isDeprecated": false,
     "isLegacy": false,
     "description": "",
-    "documentationUrl": "https://developer.github.com/v3/activity/events/#list-public-events-performed-by-a-user",
+    "documentationUrl": "https://developer.github.com/v3/activity/events/#list-public-events-for-a-user",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -44230,7 +44993,7 @@
     "renamed": null
   },
   {
-    "name": "List events that a user has received",
+    "name": "List events received by the authenticated user",
     "scope": "activity",
     "id": "listReceivedEventsForUser",
     "method": "GET",
@@ -44238,7 +45001,7 @@
     "isDeprecated": false,
     "isLegacy": false,
     "description": "These are events that you've received by watching repos and following users. If you are authenticated as the given user, you will see private events. Otherwise, you'll only see public events.",
-    "documentationUrl": "https://developer.github.com/v3/activity/events/#list-events-that-a-user-has-received",
+    "documentationUrl": "https://developer.github.com/v3/activity/events/#list-events-received-by-the-authenticated-user",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -44286,7 +45049,7 @@
     "renamed": null
   },
   {
-    "name": "List public events that a user has received",
+    "name": "List public events received by a user",
     "scope": "activity",
     "id": "listReceivedPublicEventsForUser",
     "method": "GET",
@@ -44294,7 +45057,7 @@
     "isDeprecated": false,
     "isLegacy": false,
     "description": "",
-    "documentationUrl": "https://developer.github.com/v3/activity/events/#list-public-events-that-a-user-has-received",
+    "documentationUrl": "https://developer.github.com/v3/activity/events/#list-public-events-received-by-a-user",
     "previews": [],
     "headers": [],
     "parameters": [

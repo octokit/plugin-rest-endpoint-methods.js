@@ -1,12 +1,11 @@
-# List events for the authenticated user
+# List organization events for the authenticated user
 
-**Deprecated:** This method has been renamed to activity.listEventsForAuthenticatedUser
-
-If you are authenticated as the given user, you will see your private events. Otherwise, you'll only see public events.
+This is the user's organization dashboard. You must be authenticated as the user to view this.
 
 ```js
-octokit.activity.listEventsForUser({
+octokit.activity.listOrgEventsForAuthenticatedUser({
   username,
+  org,
 });
 ```
 
@@ -26,6 +25,11 @@ octokit.activity.listEventsForUser({
 username parameter
 
 </td></tr>
+<tr><td>org</td><td>yes</td><td>
+
+org parameter
+
+</td></tr>
 <tr><td>per_page</td><td>no</td><td>
 
 Results per page (max 100)
@@ -39,4 +43,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/activity/events/#list-events-for-the-authenticated-user).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/activity/events/#list-organization-events-for-the-authenticated-user).
