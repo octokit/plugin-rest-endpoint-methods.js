@@ -1,4 +1,6 @@
-# List events for an organization
+# List organization events for the authenticated user
+
+**Deprecated:** This method has been renamed to activity.listOrgEventsForAuthenticatedUser
 
 This is the user's organization dashboard. You must be authenticated as the user to view this.
 
@@ -43,4 +45,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/activity/events/#list-events-for-an-organization).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/activity/events/#list-organization-events-for-the-authenticated-user).

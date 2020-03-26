@@ -1,6 +1,6 @@
-# Check if you are starring a repository
+# Check if a repository is starred by the authenticated user
 
-Requires for the user to be authenticated.
+**Deprecated:** This method has been renamed to activity.checkRepoIsStarredByAuthenticatedUser
 
 ```js
 octokit.activity.checkStarringRepo({
@@ -33,4 +33,4 @@ repo parameter
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/activity/starring/#check-if-you-are-starring-a-repository).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/activity/starring/#check-if-a-repository-is-starred-by-the-authenticated-user).

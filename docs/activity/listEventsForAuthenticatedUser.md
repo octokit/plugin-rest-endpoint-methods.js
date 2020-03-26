@@ -1,11 +1,9 @@
 # List events for the authenticated user
 
-**Deprecated:** This method has been renamed to activity.listEventsForAuthenticatedUser
-
 If you are authenticated as the given user, you will see your private events. Otherwise, you'll only see public events.
 
 ```js
-octokit.activity.listEventsForUser({
+octokit.activity.listEventsForAuthenticatedUser({
   username,
 });
 ```

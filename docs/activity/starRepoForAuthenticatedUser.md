@@ -1,11 +1,9 @@
 # Star a repository for the authenticated user
 
-**Deprecated:** This method has been renamed to activity.starRepoForAuthenticatedUser
-
 Note that you'll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see "[HTTP verbs](https://developer.github.com/v3/#http-verbs)."
 
 ```js
-octokit.activity.starRepo({
+octokit.activity.starRepoForAuthenticatedUser({
   owner,
   repo,
 });
