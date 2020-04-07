@@ -36,7 +36,7 @@ invitation_id parameter
 </td></tr>
 <tr><td>permissions</td><td>no</td><td>
 
-The permissions that the associated user will have on the repository. Valid values are `read`, `write`, and `admin`.
+The permissions that the associated user will have on the repository. Valid values are `read`, `write`, `maintain`, `triage`, and `admin`.
 
 </td></tr>
   </tbody>

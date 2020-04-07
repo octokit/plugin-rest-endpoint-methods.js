@@ -1302,12 +1302,12 @@ type TeamsCreateResponse = {
   updated_at: string;
   url: string;
 };
-type TeamsCheckManagesRepoInOrgResponsePermissions = {
+type TeamsCheckManagesRepoInOrgResponseSourcePermissions = {
   admin: boolean;
   pull: boolean;
   push: boolean;
 };
-type TeamsCheckManagesRepoInOrgResponseOwner = {
+type TeamsCheckManagesRepoInOrgResponseSourceOwner = {
   avatar_url: string;
   events_url: string;
   followers_url: string;
@@ -1327,7 +1327,7 @@ type TeamsCheckManagesRepoInOrgResponseOwner = {
   type: string;
   url: string;
 };
-type TeamsCheckManagesRepoInOrgResponse = {
+type TeamsCheckManagesRepoInOrgResponseSource = {
   allow_merge_commit: boolean;
   allow_rebase_merge: boolean;
   allow_squash_merge: boolean;
@@ -1383,8 +1383,8 @@ type TeamsCheckManagesRepoInOrgResponse = {
   node_id: string;
   notifications_url: string;
   open_issues_count: number;
-  owner: TeamsCheckManagesRepoInOrgResponseOwner;
-  permissions: TeamsCheckManagesRepoInOrgResponsePermissions;
+  owner: TeamsCheckManagesRepoInOrgResponseSourceOwner;
+  permissions: TeamsCheckManagesRepoInOrgResponseSourcePermissions;
   private: boolean;
   pulls_url: string;
   pushed_at: string;
@@ -1408,6 +1408,146 @@ type TeamsCheckManagesRepoInOrgResponse = {
   url: string;
   visibility: string;
   watchers_count: number;
+};
+type TeamsCheckManagesRepoInOrgResponsePermissions = {
+  admin: boolean;
+  maintain: boolean;
+  pull: boolean;
+  push: boolean;
+  triage: boolean;
+};
+type TeamsCheckManagesRepoInOrgResponseParentPermissions = {
+  admin: boolean;
+  pull: boolean;
+  push: boolean;
+};
+type TeamsCheckManagesRepoInOrgResponseParentOwner = {
+  avatar_url: string;
+  events_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  gravatar_id: string;
+  html_url: string;
+  id: number;
+  login: string;
+  node_id: string;
+  organizations_url: string;
+  received_events_url: string;
+  repos_url: string;
+  site_admin: boolean;
+  starred_url: string;
+  subscriptions_url: string;
+  type: string;
+  url: string;
+};
+type TeamsCheckManagesRepoInOrgResponseParent = {
+  allow_merge_commit: boolean;
+  allow_rebase_merge: boolean;
+  allow_squash_merge: boolean;
+  archive_url: string;
+  archived: boolean;
+  assignees_url: string;
+  blobs_url: string;
+  branches_url: string;
+  clone_url: string;
+  collaborators_url: string;
+  comments_url: string;
+  commits_url: string;
+  compare_url: string;
+  contents_url: string;
+  contributors_url: string;
+  created_at: string;
+  default_branch: string;
+  deployments_url: string;
+  description: string;
+  disabled: boolean;
+  downloads_url: string;
+  events_url: string;
+  fork: boolean;
+  forks_count: number;
+  forks_url: string;
+  full_name: string;
+  git_commits_url: string;
+  git_refs_url: string;
+  git_tags_url: string;
+  git_url: string;
+  has_downloads: boolean;
+  has_issues: boolean;
+  has_pages: boolean;
+  has_projects: boolean;
+  has_wiki: boolean;
+  homepage: string;
+  hooks_url: string;
+  html_url: string;
+  id: number;
+  is_template: boolean;
+  issue_comment_url: string;
+  issue_events_url: string;
+  issues_url: string;
+  keys_url: string;
+  labels_url: string;
+  language: null;
+  languages_url: string;
+  merges_url: string;
+  milestones_url: string;
+  mirror_url: string;
+  name: string;
+  network_count: number;
+  node_id: string;
+  notifications_url: string;
+  open_issues_count: number;
+  owner: TeamsCheckManagesRepoInOrgResponseParentOwner;
+  permissions: TeamsCheckManagesRepoInOrgResponseParentPermissions;
+  private: boolean;
+  pulls_url: string;
+  pushed_at: string;
+  releases_url: string;
+  size: number;
+  ssh_url: string;
+  stargazers_count: number;
+  stargazers_url: string;
+  statuses_url: string;
+  subscribers_count: number;
+  subscribers_url: string;
+  subscription_url: string;
+  svn_url: string;
+  tags_url: string;
+  teams_url: string;
+  temp_clone_token: string;
+  template_repository: null;
+  topics: Array<string>;
+  trees_url: string;
+  updated_at: string;
+  url: string;
+  visibility: string;
+  watchers_count: number;
+};
+type TeamsCheckManagesRepoInOrgResponseOrganization = {
+  avatar_url: string;
+  events_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  gravatar_id: string;
+  html_url: string;
+  id: number;
+  login: string;
+  node_id: string;
+  organizations_url: string;
+  received_events_url: string;
+  repos_url: string;
+  site_admin: boolean;
+  starred_url: string;
+  subscriptions_url: string;
+  type: string;
+  url: string;
+};
+type TeamsCheckManagesRepoInOrgResponse = {
+  organization: TeamsCheckManagesRepoInOrgResponseOrganization;
+  parent: TeamsCheckManagesRepoInOrgResponseParent;
+  permissions: TeamsCheckManagesRepoInOrgResponsePermissions;
+  source: TeamsCheckManagesRepoInOrgResponseSource;
 };
 type TeamsAddOrUpdateProjectInOrgResponse = {
   documentation_url: string;
@@ -2445,8 +2585,10 @@ type ReposUpdateResponseSource = {
 };
 type ReposUpdateResponsePermissions = {
   admin: boolean;
+  maintain: boolean;
   pull: boolean;
   push: boolean;
+  triage: boolean;
 };
 type ReposUpdateResponseParentPermissions = {
   admin: boolean;
@@ -5962,8 +6104,10 @@ type ReposGetResponseSource = {
 };
 type ReposGetResponsePermissions = {
   admin: boolean;
+  maintain: boolean;
   pull: boolean;
   push: boolean;
+  triage: boolean;
 };
 type ReposGetResponseParentPermissions = {
   admin: boolean;
@@ -26864,9 +27008,9 @@ export type ReposUpdateInvitationParams = {
   invitation_id: number;
   owner: string;
   /**
-   * The permissions that the associated user will have on the repository. Valid values are `read`, `write`, and `admin`.
+   * The permissions that the associated user will have on the repository. Valid values are `read`, `write`, `maintain`, `triage`, and `admin`.
    */
-  permissions?: "read" | "write" | "admin";
+  permissions?: "read" | "write" | "maintain" | "triage" | "admin";
   repo: string;
 };
 export type ReposUpdateProtectedBranchPullRequestReviewEnforcementParams = {
@@ -27134,10 +27278,12 @@ export type TeamsAddOrUpdateRepoInOrgParams = {
    * \* `pull` - team members can pull, but not push to or administer this repository.
    * \* `push` - team members can pull and push, but not administer this repository.
    * \* `admin` - team members can pull, push and administer this repository.
+   * \* `maintain` - team members can manage the repository without access to sensitive or destructive actions. Recommended for project managers. Only applies to repositories owned by organizations.
+   * \* `triage` - team members can proactively manage issues and pull requests without write access. Recommended for contributors who triage a repository. Only applies to repositories owned by organizations.
    *
    * If no permission is specified, the team's `permission` attribute will be used to determine what permission to grant the team on this repository.
    */
-  permission?: "pull" | "push" | "admin";
+  permission?: "pull" | "push" | "admin" | "maintain" | "triage";
   repo: string;
   team_slug: string;
 };
@@ -32812,7 +32958,7 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface;
     };
     /**
-     * Possible values for the `permission` key: `admin`, `write`, `read`, `none`.
+     * Checks the repository permission of a collaborator. The possible repository permissions are `admin`, `write`, `read`, and `none`.
      */
     getCollaboratorPermissionLevel: {
       (
@@ -34166,6 +34312,8 @@ export type RestEndpointMethods = {
      * To add a repository to a team or update the team's permission on a repository, the authenticated user must have admin access to the repository, and must be able to see the team. The repository must be owned by the organization, or a direct fork of a repository owned by the organization. You will get a `422 Unprocessable Entity` status if you attempt to add a repository to a team that is not owned by the organization. Note that, if you choose not to pass any parameters, you'll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see "[HTTP verbs](https://developer.github.com/v3/#http-verbs)."
      *
      * **Note:** You can also specify a team by `org_id` and `team_id` using the route `PUT /organizations/:org_id/team/:team_id/repos/:owner/:repo`.
+     *
+     * For more information about the permission levels, see "[Repository permission levels for an organization](https://help.github.com/en/github/setting-up-and-managing-organizations-and-teams/repository-permission-levels-for-an-organization#permission-levels-for-repositories-owned-by-an-organization)" in the GitHub Help documentation.
      */
     addOrUpdateRepoInOrg: {
       (params?: RequestParameters & TeamsAddOrUpdateRepoInOrgParams): Promise<
@@ -34175,7 +34323,7 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface;
     };
     /**
-     * Checks whether a team has `admin`, `push`, or `pull` permission for a repository. Repositories inherited through a parent team will also be checked.
+     * Checks whether a team has `admin`, `push`, `maintain`, `triage`, or `pull` permission for a repository. Repositories inherited through a parent team will also be checked.
      *
      * **Note:** You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/:org_id/team/:team_id/repos/:owner/:repo`.
      *
