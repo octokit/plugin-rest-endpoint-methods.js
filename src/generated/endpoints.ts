@@ -188,7 +188,7 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     deleteAuthorization: ["DELETE /applications/{client_id}/grant"],
     deleteInstallation: [
       "DELETE /app/installations/{installation_id}",
-      { mediaType: { previews: ["gambit", "machine-man"] } },
+      { mediaType: { previews: ["machine-man"] } },
     ],
     deleteToken: ["DELETE /applications/{client_id}/token"],
     getAuthenticated: [
@@ -272,10 +272,7 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
       { mediaType: { previews: ["machine-man"] } },
     ],
     resetToken: ["PATCH /applications/{client_id}/token"],
-    revokeInstallationToken: [
-      "DELETE /installation/token",
-      { mediaType: { previews: ["gambit"] } },
-    ],
+    revokeInstallationToken: ["DELETE /installation/token"],
   },
   checks: {
     create: [

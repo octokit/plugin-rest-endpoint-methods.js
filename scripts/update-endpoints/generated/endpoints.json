@@ -186,11 +186,11 @@
     "isLegacy": false,
     "description": "Uninstalls a GitHub App on a user, organization, or business account.\n\nYou must use a [JWT](https://developer.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint.",
     "documentationUrl": "https://developer.github.com/v3/apps/#delete-an-installation",
-    "previews": [{ "name": "gambit" }, { "name": "machine-man" }],
+    "previews": [{ "name": "machine-man" }],
     "headers": [
       {
         "name": "accept",
-        "value": "application/vnd.github.gambit-preview+json,application/vnd.github.machine-man-preview+json",
+        "value": "application/vnd.github.machine-man-preview+json",
         "required": true
       }
     ],
@@ -2884,14 +2884,8 @@
     "isLegacy": false,
     "description": "Revokes the installation token you're using to authenticate as an installation and access this endpoint.\n\nOnce an installation token is revoked, the token is invalidated and cannot be used. Other endpoints that require the revoked installation token must have a new installation token to work. You can create a new token using the \"[Create a new installation token](https://developer.github.com/v3/apps/#create-a-new-installation-token)\" endpoint.\n\nYou must use an [installation access token](https://developer.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-an-installation) to access this endpoint.",
     "documentationUrl": "https://developer.github.com/v3/apps/installations/#revoke-an-installation-token",
-    "previews": [{ "name": "gambit" }],
-    "headers": [
-      {
-        "name": "accept",
-        "value": "application/vnd.github.gambit-preview+json",
-        "required": true
-      }
-    ],
+    "previews": [],
+    "headers": [],
     "parameters": [],
     "responses": [],
     "renamed": null
