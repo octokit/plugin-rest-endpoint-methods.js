@@ -1,6 +1,6 @@
 # Check if a team manages a repository
 
-Checks whether a team has `admin`, `push`, or `pull` permission for a repository. Repositories inherited through a parent team will also be checked.
+Checks whether a team has `admin`, `push`, `maintain`, `triage`, or `pull` permission for a repository. Repositories inherited through a parent team will also be checked.
 
 **Note:** You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/:org_id/team/:team_id/repos/:owner/:repo`.
 

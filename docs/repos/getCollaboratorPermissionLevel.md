@@ -1,6 +1,6 @@
 # Review a user's permission level
 
-Possible values for the `permission` key: `admin`, `write`, `read`, `none`.
+Checks the repository permission of a collaborator. The possible repository permissions are `admin`, `write`, `read`, and `none`.
 
 ```js
 octokit.repos.getCollaboratorPermissionLevel({
