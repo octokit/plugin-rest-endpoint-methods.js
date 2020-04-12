@@ -47,7 +47,7 @@ A URL with more information about the repository.
 </td></tr>
 <tr><td>private</td><td>no</td><td>
 
-Either `true` to make the repository private or `false` to make it public. Creating private repositories requires a paid GitHub account. Default: `false`.  
+Either `true` to make the repository private or `false` to make it public. Default: `false`.  
 **Note**: You will get a `422` error if the organization restricts [changing repository visibility](https://help.github.com/articles/repository-permission-levels-for-an-organization#changing-the-visibility-of-repositories) to organization owners and a non-owner tries to change the value of private. **Note**: You will get a `422` error if the organization restricts [changing repository visibility](https://help.github.com/articles/repository-permission-levels-for-an-organization#changing-the-visibility-of-repositories) to organization owners and a non-owner tries to change the value of private.
 
 </td></tr>

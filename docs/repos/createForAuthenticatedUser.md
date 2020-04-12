@@ -43,7 +43,7 @@ A URL with more information about the repository.
 </td></tr>
 <tr><td>private</td><td>no</td><td>
 
-Either `true` to create a private repository or `false` to create a public one. Creating private repositories requires a paid GitHub account.
+Either `true` to create a private repository or `false` to create a public one.
 
 </td></tr>
 <tr><td>visibility</td><td>no</td><td>

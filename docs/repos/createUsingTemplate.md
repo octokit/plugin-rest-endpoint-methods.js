@@ -9,8 +9,6 @@ When using [OAuth](https://developer.github.com/apps/building-oauth-apps/underst
 - `public_repo` scope or `repo` scope to create a public repository
 - `repo` scope to create a private repository
 
-\`
-
 ```js
 octokit.repos.createUsingTemplate({
   template_owner,
