@@ -25737,7 +25737,7 @@ export type ReposCreateForAuthenticatedUserParams = {
    */
   name: string;
   /**
-   * Either `true` to create a private repository or `false` to create a public one. Creating private repositories requires a paid GitHub account.
+   * Either `true` to create a private repository or `false` to create a public one.
    */
   private?: boolean;
   /**
@@ -25837,7 +25837,7 @@ export type ReposCreateInOrgParams = {
   name: string;
   org: string;
   /**
-   * Either `true` to create a private repository or `false` to create a public one. Creating private repositories requires a paid GitHub account.
+   * Either `true` to create a private repository or `false` to create a public one.
    */
   private?: boolean;
   /**
@@ -26915,7 +26915,7 @@ export type ReposUpdateParams = {
   name?: string;
   owner: string;
   /**
-   * Either `true` to make the repository private or `false` to make it public. Creating private repositories requires a paid GitHub account. Default: `false`.
+   * Either `true` to make the repository private or `false` to make it public. Default: `false`.
    * **Note**: You will get a `422` error if the organization restricts [changing repository visibility](https://help.github.com/articles/repository-permission-levels-for-an-organization#changing-the-visibility-of-repositories) to organization owners and a non-owner tries to change the value of private. **Note**: You will get a `422` error if the organization restricts [changing repository visibility](https://help.github.com/articles/repository-permission-levels-for-an-organization#changing-the-visibility-of-repositories) to organization owners and a non-owner tries to change the value of private.
    */
   private?: boolean;
@@ -32701,8 +32701,6 @@ export type RestEndpointMethods = {
      *
      * *   `public_repo` scope or `repo` scope to create a public repository
      * *   `repo` scope to create a private repository
-     *
-     * \`
      */
     createUsingTemplate: {
       (params?: RequestParameters & ReposCreateUsingTemplateParams): Promise<
