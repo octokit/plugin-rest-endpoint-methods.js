@@ -19,6 +19,9 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     deleteSecretFromRepo: [
       "DELETE /repos/{owner}/{repo}/actions/secrets/{name}",
     ],
+    deleteWorkflowRunLogs: [
+      "DELETE /repos/{owner}/{repo}/actions/runs/{run_id}/logs",
+    ],
     downloadArtifact: [
       "GET /repos/{owner}/{repo}/actions/artifacts/{artifact_id}/{archive_format}",
     ],
