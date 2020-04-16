@@ -14058,6 +14058,62 @@
     "renamed": null
   },
   {
+    "name": "Delete workflow run logs",
+    "scope": "actions",
+    "id": "deleteWorkflowRunLogs",
+    "method": "DELETE",
+    "url": "/repos/{owner}/{repo}/actions/runs/{run_id}/logs",
+    "isDeprecated": false,
+    "isLegacy": false,
+    "description": "Deletes all logs for a workflow run. Anyone with write access to the repository can use this endpoint. GitHub Apps must have the `actions` permission to use this endpoint.",
+    "documentationUrl": "https://developer.github.com/v3/actions/workflow_runs/#delete-workflow-run-logs",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "owner",
+        "description": "owner parameter",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "repo",
+        "description": "repo parameter",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "run_id",
+        "description": "run_id parameter",
+        "in": "PATH",
+        "type": "integer",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [],
+    "renamed": null
+  },
+  {
     "name": "Re-run a workflow",
     "scope": "actions",
     "id": "reRunWorkflow",

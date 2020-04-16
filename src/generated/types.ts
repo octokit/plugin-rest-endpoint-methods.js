@@ -21728,6 +21728,11 @@ export type ActionsDeleteSecretFromRepoParams = {
   owner: string;
   repo: string;
 };
+export type ActionsDeleteWorkflowRunLogsParams = {
+  owner: string;
+  repo: string;
+  run_id: number;
+};
 export type ActionsDownloadArtifactParams = {
   archive_format: string;
   artifact_id: number;
@@ -28449,6 +28454,16 @@ export type RestEndpointMethods = {
       (params?: RequestParameters & ActionsDeleteSecretFromRepoParams): Promise<
         AnyResponse
       >;
+
+      endpoint: EndpointInterface;
+    };
+    /**
+     * Deletes all logs for a workflow run. Anyone with write access to the repository can use this endpoint. GitHub Apps must have the `actions` permission to use this endpoint.
+     */
+    deleteWorkflowRunLogs: {
+      (
+        params?: RequestParameters & ActionsDeleteWorkflowRunLogsParams
+      ): Promise<AnyResponse>;
 
       endpoint: EndpointInterface;
     };
