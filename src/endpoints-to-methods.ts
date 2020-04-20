@@ -7,7 +7,7 @@ import {
   Url,
 } from "@octokit/types";
 import { EndpointsDefaultsAndDecorations, EndpointDecorations } from "./types";
-import { RestEndpointMethods } from "./generated/parameters-and-response-types";
+import { RestEndpointMethods } from "./generated/method-types";
 
 type EndpointMethods = {
   [methodName: string]: typeof Octokit.prototype.request;

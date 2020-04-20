@@ -1,4 +1,5 @@
-import { RestEndpointMethodTypes } from "../src";
+import { Octokit } from "@octokit/core";
+import { RestEndpointMethodTypes, restEndpointMethods } from "../src";
 
 describe("Smoke test", () => {
   it("Get parameters type for octokit.issues.updateLabel()", async () => {
@@ -29,5 +30,24 @@ describe("Smoke test", () => {
         url: "",
       };
     }
+  });
+
+  it("Should accept .endpoint(options) without options.url being set", async () => {
+    const MyOctokit = Octokit.plugin(restEndpointMethods);
+    const octokit = new MyOctokit();
+
+    const requestOptions = octokit.repos.getContents.endpoint({
+      owner: "foo",
+      repo: "bar",
+      path: "path/to/binary/file",
+      mediaType: {
+        format: "raw",
+      },
+    });
+
+    expect(requestOptions.method).toEqual("GET");
+    expect(requestOptions.url).toEqual(
+      "https://api.github.com/repos/foo/bar/contents/path%2Fto%2Fbinary%2Ffile"
+    );
   });
 });
