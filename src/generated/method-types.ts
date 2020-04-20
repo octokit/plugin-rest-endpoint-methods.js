@@ -1,5 +1,5 @@
-import { EndpointInterface } from "@octokit/types";
-import { RestEndpointMethodTypes } from "./parameters-and-response-types";
+import { EndpointInterface, RequestInterface } from "@octokit/types";
+import { RestEndpointMethodTypes } from "./method-types";
 
 export type RestEndpointMethods = {
   actions: {
@@ -12,7 +12,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["actions"]["cancelWorkflowRun"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -38,7 +38,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["actions"]["createOrUpdateSecretForRepo"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -52,7 +52,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["actions"]["createRegistrationToken"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -66,7 +66,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["actions"]["createRemoveToken"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -78,7 +78,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["actions"]["deleteArtifact"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -90,7 +90,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["actions"]["deleteSecretFromRepo"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -102,7 +102,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["actions"]["deleteWorkflowRunLogs"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -116,7 +116,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["actions"]["downloadArtifact"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -126,7 +126,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["actions"]["getArtifact"]["parameters"]
       ): Promise<RestEndpointMethodTypes["actions"]["getArtifact"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -138,7 +138,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["actions"]["getPublicKey"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -148,7 +148,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["actions"]["getSecret"]["parameters"]
       ): Promise<RestEndpointMethodTypes["actions"]["getSecret"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -160,7 +160,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["actions"]["getSelfHostedRunner"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -170,7 +170,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["actions"]["getWorkflow"]["parameters"]
       ): Promise<RestEndpointMethodTypes["actions"]["getWorkflow"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -182,7 +182,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["actions"]["getWorkflowJob"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -194,7 +194,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["actions"]["getWorkflowRun"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -206,7 +206,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["actions"]["listArtifactsForRepo"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -218,7 +218,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["actions"]["listDownloadsForSelfHostedRunnerApplication"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -230,7 +230,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["actions"]["listJobsForWorkflowRun"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -244,7 +244,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["actions"]["listRepoWorkflowRuns"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -256,7 +256,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["actions"]["listRepoWorkflows"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -268,7 +268,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["actions"]["listSecretsForRepo"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -280,7 +280,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["actions"]["listSelfHostedRunnersForRepo"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -294,7 +294,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["actions"]["listWorkflowJobLogs"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -306,7 +306,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["actions"]["listWorkflowRunArtifacts"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -320,7 +320,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["actions"]["listWorkflowRunLogs"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -334,7 +334,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["actions"]["listWorkflowRuns"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -346,7 +346,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["actions"]["reRunWorkflow"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -358,7 +358,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["actions"]["removeSelfHostedRunner"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
   };
@@ -369,7 +369,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["activity"]["checkRepoIsStarredByAuthenticatedUser"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -381,7 +381,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["activity"]["checkStarringRepo"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -393,7 +393,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["activity"]["deleteRepoSubscription"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -405,7 +405,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["activity"]["deleteThreadSubscription"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -425,7 +425,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["activity"]["getFeeds"]["parameters"]
       ): Promise<RestEndpointMethodTypes["activity"]["getFeeds"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
 
@@ -435,7 +435,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["activity"]["getRepoSubscription"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
 
@@ -443,7 +443,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["activity"]["getThread"]["parameters"]
       ): Promise<RestEndpointMethodTypes["activity"]["getThread"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -456,7 +456,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["activity"]["getThreadSubscription"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -470,7 +470,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["activity"]["getThreadSubscriptionForAuthenticatedUser"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -482,7 +482,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["activity"]["listEventsForAuthenticatedUser"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -495,7 +495,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["activity"]["listEventsForOrg"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -508,7 +508,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["activity"]["listEventsForUser"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -529,7 +529,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["activity"]["listFeeds"]["parameters"]
       ): Promise<RestEndpointMethodTypes["activity"]["listFeeds"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -544,7 +544,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["activity"]["listNotifications"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -558,7 +558,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["activity"]["listNotificationsForAuthenticatedUser"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -571,7 +571,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["activity"]["listNotificationsForRepo"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -583,7 +583,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["activity"]["listOrgEventsForAuthenticatedUser"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -595,7 +595,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["activity"]["listPublicEvents"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -607,7 +607,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["activity"]["listPublicEventsForOrg"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
 
@@ -617,7 +617,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["activity"]["listPublicEventsForRepoNetwork"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
 
@@ -627,7 +627,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["activity"]["listPublicEventsForUser"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
 
@@ -637,7 +637,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["activity"]["listPublicOrgEvents"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -649,7 +649,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["activity"]["listReceivedEventsForUser"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
 
@@ -659,7 +659,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["activity"]["listReceivedPublicEventsForUser"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
 
@@ -669,7 +669,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["activity"]["listRepoEvents"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -681,7 +681,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["activity"]["listRepoNotificationsForAuthenticatedUser"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -695,7 +695,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["activity"]["listReposStarredByAuthenticatedUser"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -709,7 +709,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["activity"]["listReposStarredByUser"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -721,7 +721,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["activity"]["listReposWatchedByUser"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -735,7 +735,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["activity"]["listStargazersForRepo"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -747,7 +747,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["activity"]["listWatchedReposForAuthenticatedUser"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -759,7 +759,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["activity"]["listWatchersForRepo"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -770,7 +770,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["activity"]["markAsRead"]["parameters"]
       ): Promise<RestEndpointMethodTypes["activity"]["markAsRead"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -782,7 +782,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["activity"]["markNotificationsAsRead"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -795,7 +795,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["activity"]["markNotificationsAsReadForRepo"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -807,7 +807,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["activity"]["markRepoNotificationsAsRead"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
 
@@ -817,7 +817,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["activity"]["markThreadAsRead"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -829,7 +829,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["activity"]["setRepoSubscription"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -845,7 +845,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["activity"]["setThreadSubscription"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -856,7 +856,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["activity"]["starRepo"]["parameters"]
       ): Promise<RestEndpointMethodTypes["activity"]["starRepo"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -868,7 +868,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["activity"]["starRepoForAuthenticatedUser"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -878,7 +878,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["activity"]["unstarRepo"]["parameters"]
       ): Promise<RestEndpointMethodTypes["activity"]["unstarRepo"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
 
@@ -888,7 +888,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["activity"]["unstarRepoForAuthenticatedUser"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
   };
@@ -904,7 +904,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["apps"]["addRepoToInstallation"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -919,7 +919,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["apps"]["checkAccountIsAssociatedWithAny"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -934,7 +934,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["apps"]["checkAccountIsAssociatedWithAnyStubbed"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -944,7 +944,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["apps"]["checkToken"]["parameters"]
       ): Promise<RestEndpointMethodTypes["apps"]["checkToken"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -962,7 +962,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["apps"]["createContentAttachment"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -974,7 +974,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["apps"]["createFromManifest"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -990,7 +990,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["apps"]["createInstallationToken"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -1004,7 +1004,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["apps"]["deleteAuthorization"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -1018,7 +1018,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["apps"]["deleteInstallation"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -1028,7 +1028,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["apps"]["deleteToken"]["parameters"]
       ): Promise<RestEndpointMethodTypes["apps"]["deleteToken"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -1042,7 +1042,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["apps"]["getAuthenticated"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -1054,7 +1054,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["apps"]["getBySlug"]["parameters"]
       ): Promise<RestEndpointMethodTypes["apps"]["getBySlug"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -1066,7 +1066,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["apps"]["getInstallation"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -1080,7 +1080,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["apps"]["getOrgInstallation"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -1094,7 +1094,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["apps"]["getRepoInstallation"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -1108,7 +1108,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["apps"]["getSubscriptionPlanForAccount"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -1122,7 +1122,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["apps"]["getSubscriptionPlanForAccountStubbed"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -1136,7 +1136,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["apps"]["getUserInstallation"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -1150,7 +1150,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["apps"]["listAccountsForPlan"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -1164,7 +1164,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["apps"]["listAccountsForPlanStubbed"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -1179,7 +1179,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["apps"]["listAccountsUserOrOrgOnPlan"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -1194,7 +1194,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["apps"]["listAccountsUserOrOrgOnPlanStubbed"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -1212,7 +1212,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["apps"]["listInstallationReposForAuthenticatedUser"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -1226,7 +1226,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["apps"]["listInstallations"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -1244,7 +1244,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["apps"]["listInstallationsForAuthenticatedUser"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -1257,7 +1257,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["apps"]["listMarketplacePurchasesForAuthenticatedUser"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -1270,7 +1270,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["apps"]["listMarketplacePurchasesForAuthenticatedUserStubbed"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -1282,7 +1282,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["apps"]["listPlans"]["parameters"]
       ): Promise<RestEndpointMethodTypes["apps"]["listPlans"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -1296,7 +1296,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["apps"]["listPlansStubbed"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -1308,7 +1308,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["apps"]["listRepos"]["parameters"]
       ): Promise<RestEndpointMethodTypes["apps"]["listRepos"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -1320,7 +1320,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["apps"]["listSubscriptionsForAuthenticatedUser"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -1332,7 +1332,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["apps"]["listSubscriptionsForAuthenticatedUserStubbed"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -1346,7 +1346,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["apps"]["removeRepoFromInstallation"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -1356,7 +1356,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["apps"]["resetToken"]["parameters"]
       ): Promise<RestEndpointMethodTypes["apps"]["resetToken"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -1372,7 +1372,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["apps"]["revokeInstallationToken"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
   };
@@ -1386,7 +1386,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["checks"]["create"]["parameters"]
       ): Promise<RestEndpointMethodTypes["checks"]["create"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -1398,7 +1398,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["checks"]["createSuite"]["parameters"]
       ): Promise<RestEndpointMethodTypes["checks"]["createSuite"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -1410,7 +1410,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["checks"]["get"]["parameters"]
       ): Promise<RestEndpointMethodTypes["checks"]["get"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -1422,7 +1422,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["checks"]["getSuite"]["parameters"]
       ): Promise<RestEndpointMethodTypes["checks"]["getSuite"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -1434,7 +1434,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["checks"]["listAnnotations"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -1446,7 +1446,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["checks"]["listForRef"]["parameters"]
       ): Promise<RestEndpointMethodTypes["checks"]["listForRef"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -1458,7 +1458,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["checks"]["listForSuite"]["parameters"]
       ): Promise<RestEndpointMethodTypes["checks"]["listForSuite"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -1472,7 +1472,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["checks"]["listSuitesForRef"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -1486,7 +1486,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["checks"]["rerequestSuite"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -1498,7 +1498,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["checks"]["setSuitesPreferences"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -1510,7 +1510,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["checks"]["update"]["parameters"]
       ): Promise<RestEndpointMethodTypes["checks"]["update"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
   };
@@ -1521,7 +1521,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["codesOfConduct"]["getAllCodesOfConduct"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
 
@@ -1531,7 +1531,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["codesOfConduct"]["getConductCode"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -1543,7 +1543,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["codesOfConduct"]["getForRepo"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -1555,7 +1555,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["codesOfConduct"]["listConductCodes"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
   };
@@ -1567,7 +1567,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["emojis"]["get"]["parameters"]
       ): Promise<RestEndpointMethodTypes["emojis"]["get"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
   };
@@ -1578,7 +1578,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["gists"]["checkIsStarred"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -1590,7 +1590,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["gists"]["create"]["parameters"]
       ): Promise<RestEndpointMethodTypes["gists"]["create"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
 
@@ -1598,7 +1598,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["gists"]["createComment"]["parameters"]
       ): Promise<RestEndpointMethodTypes["gists"]["createComment"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
 
@@ -1606,7 +1606,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["gists"]["delete"]["parameters"]
       ): Promise<RestEndpointMethodTypes["gists"]["delete"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
 
@@ -1614,7 +1614,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["gists"]["deleteComment"]["parameters"]
       ): Promise<RestEndpointMethodTypes["gists"]["deleteComment"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -1624,7 +1624,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["gists"]["fork"]["parameters"]
       ): Promise<RestEndpointMethodTypes["gists"]["fork"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
 
@@ -1632,7 +1632,7 @@ export type RestEndpointMethods = {
       (params?: RestEndpointMethodTypes["gists"]["get"]["parameters"]): Promise<
         RestEndpointMethodTypes["gists"]["get"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
 
@@ -1640,7 +1640,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["gists"]["getComment"]["parameters"]
       ): Promise<RestEndpointMethodTypes["gists"]["getComment"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
 
@@ -1648,7 +1648,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["gists"]["getRevision"]["parameters"]
       ): Promise<RestEndpointMethodTypes["gists"]["getRevision"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -1658,7 +1658,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["gists"]["list"]["parameters"]
       ): Promise<RestEndpointMethodTypes["gists"]["list"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
 
@@ -1666,7 +1666,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["gists"]["listComments"]["parameters"]
       ): Promise<RestEndpointMethodTypes["gists"]["listComments"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
 
@@ -1674,7 +1674,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["gists"]["listCommits"]["parameters"]
       ): Promise<RestEndpointMethodTypes["gists"]["listCommits"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -1684,7 +1684,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["gists"]["listForUser"]["parameters"]
       ): Promise<RestEndpointMethodTypes["gists"]["listForUser"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
 
@@ -1692,7 +1692,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["gists"]["listForks"]["parameters"]
       ): Promise<RestEndpointMethodTypes["gists"]["listForks"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -1704,7 +1704,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["gists"]["listPublic"]["parameters"]
       ): Promise<RestEndpointMethodTypes["gists"]["listPublic"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -1717,7 +1717,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["gists"]["listPublicForUser"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -1727,7 +1727,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["gists"]["listStarred"]["parameters"]
       ): Promise<RestEndpointMethodTypes["gists"]["listStarred"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -1737,7 +1737,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["gists"]["star"]["parameters"]
       ): Promise<RestEndpointMethodTypes["gists"]["star"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
 
@@ -1745,7 +1745,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["gists"]["unstar"]["parameters"]
       ): Promise<RestEndpointMethodTypes["gists"]["unstar"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -1755,7 +1755,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["gists"]["update"]["parameters"]
       ): Promise<RestEndpointMethodTypes["gists"]["update"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
 
@@ -1763,7 +1763,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["gists"]["updateComment"]["parameters"]
       ): Promise<RestEndpointMethodTypes["gists"]["updateComment"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
   };
@@ -1772,7 +1772,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["git"]["createBlob"]["parameters"]
       ): Promise<RestEndpointMethodTypes["git"]["createBlob"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -1808,7 +1808,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["git"]["createCommit"]["parameters"]
       ): Promise<RestEndpointMethodTypes["git"]["createCommit"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -1818,7 +1818,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["git"]["createRef"]["parameters"]
       ): Promise<RestEndpointMethodTypes["git"]["createRef"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -1850,7 +1850,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["git"]["createTag"]["parameters"]
       ): Promise<RestEndpointMethodTypes["git"]["createTag"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -1862,7 +1862,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["git"]["createTree"]["parameters"]
       ): Promise<RestEndpointMethodTypes["git"]["createTree"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
 
@@ -1870,7 +1870,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["git"]["deleteRef"]["parameters"]
       ): Promise<RestEndpointMethodTypes["git"]["deleteRef"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -1882,7 +1882,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["git"]["getBlob"]["parameters"]
       ): Promise<RestEndpointMethodTypes["git"]["getBlob"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -1914,7 +1914,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["git"]["getCommit"]["parameters"]
       ): Promise<RestEndpointMethodTypes["git"]["getCommit"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -1928,7 +1928,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["git"]["getRef"]["parameters"]
       ): Promise<RestEndpointMethodTypes["git"]["getRef"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -1958,7 +1958,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["git"]["getTag"]["parameters"]
       ): Promise<RestEndpointMethodTypes["git"]["getTag"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -1970,7 +1970,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["git"]["getTree"]["parameters"]
       ): Promise<RestEndpointMethodTypes["git"]["getTree"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -1988,7 +1988,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["git"]["listMatchingRefs"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
 
@@ -1996,7 +1996,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["git"]["updateRef"]["parameters"]
       ): Promise<RestEndpointMethodTypes["git"]["updateRef"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
   };
@@ -2012,7 +2012,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["gitignore"]["getTemplate"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -2024,7 +2024,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["gitignore"]["listTemplates"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
   };
@@ -2038,7 +2038,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["interactions"]["addOrUpdateRestrictionsForOrg"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -2050,7 +2050,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["interactions"]["addOrUpdateRestrictionsForRepo"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -2062,7 +2062,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["interactions"]["getRestrictionsForOrg"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -2074,7 +2074,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["interactions"]["getRestrictionsForRepo"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -2086,7 +2086,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["interactions"]["removeRestrictionsForOrg"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -2098,7 +2098,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["interactions"]["removeRestrictionsForRepo"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
   };
@@ -2112,7 +2112,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["issues"]["addAssignees"]["parameters"]
       ): Promise<RestEndpointMethodTypes["issues"]["addAssignees"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
 
@@ -2120,7 +2120,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["issues"]["addLabels"]["parameters"]
       ): Promise<RestEndpointMethodTypes["issues"]["addLabels"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -2136,7 +2136,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["issues"]["checkAssignee"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -2148,7 +2148,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["issues"]["create"]["parameters"]
       ): Promise<RestEndpointMethodTypes["issues"]["create"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -2160,7 +2160,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["issues"]["createComment"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
 
@@ -2168,7 +2168,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["issues"]["createLabel"]["parameters"]
       ): Promise<RestEndpointMethodTypes["issues"]["createLabel"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
 
@@ -2178,7 +2178,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["issues"]["createMilestone"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
 
@@ -2188,7 +2188,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["issues"]["deleteComment"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
 
@@ -2196,7 +2196,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["issues"]["deleteLabel"]["parameters"]
       ): Promise<RestEndpointMethodTypes["issues"]["deleteLabel"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
 
@@ -2206,7 +2206,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["issues"]["deleteMilestone"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -2220,7 +2220,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["issues"]["get"]["parameters"]
       ): Promise<RestEndpointMethodTypes["issues"]["get"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
 
@@ -2228,7 +2228,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["issues"]["getComment"]["parameters"]
       ): Promise<RestEndpointMethodTypes["issues"]["getComment"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
 
@@ -2236,7 +2236,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["issues"]["getEvent"]["parameters"]
       ): Promise<RestEndpointMethodTypes["issues"]["getEvent"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
 
@@ -2244,7 +2244,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["issues"]["getLabel"]["parameters"]
       ): Promise<RestEndpointMethodTypes["issues"]["getLabel"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
 
@@ -2252,7 +2252,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["issues"]["getMilestone"]["parameters"]
       ): Promise<RestEndpointMethodTypes["issues"]["getMilestone"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -2266,7 +2266,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["issues"]["list"]["parameters"]
       ): Promise<RestEndpointMethodTypes["issues"]["list"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -2278,7 +2278,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["issues"]["listAssignees"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -2288,7 +2288,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["issues"]["listComments"]["parameters"]
       ): Promise<RestEndpointMethodTypes["issues"]["listComments"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -2300,7 +2300,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["issues"]["listCommentsForRepo"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
 
@@ -2308,7 +2308,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["issues"]["listEvents"]["parameters"]
       ): Promise<RestEndpointMethodTypes["issues"]["listEvents"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
 
@@ -2318,7 +2318,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["issues"]["listEventsForRepo"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
 
@@ -2328,7 +2328,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["issues"]["listEventsForTimeline"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -2344,7 +2344,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["issues"]["listForAuthenticatedUser"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -2358,7 +2358,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["issues"]["listForOrg"]["parameters"]
       ): Promise<RestEndpointMethodTypes["issues"]["listForOrg"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -2372,7 +2372,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["issues"]["listForRepo"]["parameters"]
       ): Promise<RestEndpointMethodTypes["issues"]["listForRepo"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
 
@@ -2382,7 +2382,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["issues"]["listLabelsForMilestone"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
 
@@ -2392,7 +2392,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["issues"]["listLabelsForRepo"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
 
@@ -2402,7 +2402,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["issues"]["listLabelsOnIssue"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
 
@@ -2412,7 +2412,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["issues"]["listMilestonesForRepo"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -2424,7 +2424,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["issues"]["lock"]["parameters"]
       ): Promise<RestEndpointMethodTypes["issues"]["lock"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
 
@@ -2434,7 +2434,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["issues"]["removeAllLabels"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -2448,7 +2448,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["issues"]["removeAssignees"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -2458,7 +2458,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["issues"]["removeLabel"]["parameters"]
       ): Promise<RestEndpointMethodTypes["issues"]["removeLabel"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -2468,7 +2468,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["issues"]["removeLabels"]["parameters"]
       ): Promise<RestEndpointMethodTypes["issues"]["removeLabels"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
 
@@ -2478,7 +2478,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["issues"]["replaceAllLabels"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -2490,7 +2490,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["issues"]["replaceLabels"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -2500,7 +2500,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["issues"]["unlock"]["parameters"]
       ): Promise<RestEndpointMethodTypes["issues"]["unlock"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -2510,7 +2510,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["issues"]["update"]["parameters"]
       ): Promise<RestEndpointMethodTypes["issues"]["update"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
 
@@ -2520,7 +2520,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["issues"]["updateComment"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
 
@@ -2528,7 +2528,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["issues"]["updateLabel"]["parameters"]
       ): Promise<RestEndpointMethodTypes["issues"]["updateLabel"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
 
@@ -2538,7 +2538,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["issues"]["updateMilestone"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
   };
@@ -2547,7 +2547,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["licenses"]["get"]["parameters"]
       ): Promise<RestEndpointMethodTypes["licenses"]["get"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -2559,7 +2559,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["licenses"]["getForRepo"]["parameters"]
       ): Promise<RestEndpointMethodTypes["licenses"]["getForRepo"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
 
@@ -2569,7 +2569,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["licenses"]["listCommonlyUsed"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
   };
@@ -2578,7 +2578,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["markdown"]["render"]["parameters"]
       ): Promise<RestEndpointMethodTypes["markdown"]["render"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -2588,7 +2588,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["markdown"]["renderRaw"]["parameters"]
       ): Promise<RestEndpointMethodTypes["markdown"]["renderRaw"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
   };
@@ -2600,7 +2600,7 @@ export type RestEndpointMethods = {
       (params?: RestEndpointMethodTypes["meta"]["get"]["parameters"]): Promise<
         RestEndpointMethodTypes["meta"]["get"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
   };
@@ -2614,7 +2614,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["migrations"]["cancelImport"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -2626,7 +2626,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["migrations"]["deleteArchiveForAuthenticatedUser"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -2638,7 +2638,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["migrations"]["deleteArchiveForOrg"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -2650,7 +2650,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["migrations"]["downloadArchiveForOrg"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -2682,7 +2682,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["migrations"]["getArchiveForAuthenticatedUser"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -2696,7 +2696,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["migrations"]["getCommitAuthors"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -2741,7 +2741,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["migrations"]["getImportProgress"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -2753,7 +2753,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["migrations"]["getLargeFiles"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -2772,7 +2772,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["migrations"]["getStatusForAuthenticatedUser"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -2791,7 +2791,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["migrations"]["getStatusForOrg"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -2803,7 +2803,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["migrations"]["listForAuthenticatedUser"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -2815,7 +2815,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["migrations"]["listForOrg"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -2827,7 +2827,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["migrations"]["listReposForOrg"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -2839,7 +2839,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["migrations"]["listReposForUser"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -2851,7 +2851,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["migrations"]["mapCommitAuthor"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -2863,7 +2863,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["migrations"]["setLfsPreference"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -2875,7 +2875,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["migrations"]["startForAuthenticatedUser"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -2887,7 +2887,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["migrations"]["startForOrg"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -2899,7 +2899,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["migrations"]["startImport"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -2911,7 +2911,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["migrations"]["unlockRepoForAuthenticatedUser"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -2923,7 +2923,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["migrations"]["unlockRepoForOrg"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -2941,7 +2941,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["migrations"]["updateImport"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
   };
@@ -2963,7 +2963,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["orgs"]["addOrUpdateMembership"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
 
@@ -2971,7 +2971,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["orgs"]["blockUser"]["parameters"]
       ): Promise<RestEndpointMethodTypes["orgs"]["blockUser"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -2985,7 +2985,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["orgs"]["checkBlockedUser"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -2997,7 +2997,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["orgs"]["checkMembership"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
 
@@ -3007,7 +3007,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["orgs"]["checkPublicMembership"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
 
@@ -3017,7 +3017,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["orgs"]["concealMembership"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -3029,7 +3029,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["orgs"]["convertMemberToOutsideCollaborator"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -3039,7 +3039,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["orgs"]["createHook"]["parameters"]
       ): Promise<RestEndpointMethodTypes["orgs"]["createHook"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -3053,7 +3053,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["orgs"]["createInvitation"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
 
@@ -3061,7 +3061,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["orgs"]["deleteHook"]["parameters"]
       ): Promise<RestEndpointMethodTypes["orgs"]["deleteHook"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -3073,7 +3073,7 @@ export type RestEndpointMethods = {
       (params?: RestEndpointMethodTypes["orgs"]["get"]["parameters"]): Promise<
         RestEndpointMethodTypes["orgs"]["get"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
 
@@ -3081,7 +3081,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["orgs"]["getHook"]["parameters"]
       ): Promise<RestEndpointMethodTypes["orgs"]["getHook"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -3091,7 +3091,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["orgs"]["getMembership"]["parameters"]
       ): Promise<RestEndpointMethodTypes["orgs"]["getMembership"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
 
@@ -3101,7 +3101,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["orgs"]["getMembershipForAuthenticatedUser"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -3113,7 +3113,7 @@ export type RestEndpointMethods = {
       (params?: RestEndpointMethodTypes["orgs"]["list"]["parameters"]): Promise<
         RestEndpointMethodTypes["orgs"]["list"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -3125,7 +3125,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["orgs"]["listBlockedUsers"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -3141,7 +3141,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["orgs"]["listForAuthenticatedUser"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -3153,7 +3153,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["orgs"]["listForUser"]["parameters"]
       ): Promise<RestEndpointMethodTypes["orgs"]["listForUser"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
 
@@ -3161,7 +3161,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["orgs"]["listHooks"]["parameters"]
       ): Promise<RestEndpointMethodTypes["orgs"]["listHooks"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -3173,7 +3173,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["orgs"]["listInstallations"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -3185,7 +3185,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["orgs"]["listInvitationTeams"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -3195,7 +3195,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["orgs"]["listMembers"]["parameters"]
       ): Promise<RestEndpointMethodTypes["orgs"]["listMembers"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
 
@@ -3205,7 +3205,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["orgs"]["listMemberships"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -3217,7 +3217,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["orgs"]["listOutsideCollaborators"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -3229,7 +3229,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["orgs"]["listPendingInvitations"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -3241,7 +3241,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["orgs"]["listPublicMembers"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -3251,7 +3251,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["orgs"]["pingHook"]["parameters"]
       ): Promise<RestEndpointMethodTypes["orgs"]["pingHook"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -3265,7 +3265,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["orgs"]["publicizeMembership"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -3275,7 +3275,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["orgs"]["removeMember"]["parameters"]
       ): Promise<RestEndpointMethodTypes["orgs"]["removeMember"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -3289,7 +3289,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["orgs"]["removeMembership"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -3301,7 +3301,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["orgs"]["removeOutsideCollaborator"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
 
@@ -3309,7 +3309,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["orgs"]["unblockUser"]["parameters"]
       ): Promise<RestEndpointMethodTypes["orgs"]["unblockUser"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -3321,7 +3321,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["orgs"]["update"]["parameters"]
       ): Promise<RestEndpointMethodTypes["orgs"]["update"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
 
@@ -3329,7 +3329,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["orgs"]["updateHook"]["parameters"]
       ): Promise<RestEndpointMethodTypes["orgs"]["updateHook"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
 
@@ -3339,7 +3339,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["orgs"]["updateMembership"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
   };
@@ -3353,7 +3353,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["projects"]["addCollaborator"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -3365,7 +3365,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["projects"]["createCard"]["parameters"]
       ): Promise<RestEndpointMethodTypes["projects"]["createCard"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
 
@@ -3375,7 +3375,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["projects"]["createColumn"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
 
@@ -3385,7 +3385,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["projects"]["createForAuthenticatedUser"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -3397,7 +3397,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["projects"]["createForOrg"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -3409,7 +3409,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["projects"]["createForRepo"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -3419,7 +3419,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["projects"]["delete"]["parameters"]
       ): Promise<RestEndpointMethodTypes["projects"]["delete"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
 
@@ -3427,7 +3427,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["projects"]["deleteCard"]["parameters"]
       ): Promise<RestEndpointMethodTypes["projects"]["deleteCard"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
 
@@ -3437,7 +3437,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["projects"]["deleteColumn"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -3447,7 +3447,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["projects"]["get"]["parameters"]
       ): Promise<RestEndpointMethodTypes["projects"]["get"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
 
@@ -3455,7 +3455,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["projects"]["getCard"]["parameters"]
       ): Promise<RestEndpointMethodTypes["projects"]["getCard"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
 
@@ -3463,7 +3463,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["projects"]["getColumn"]["parameters"]
       ): Promise<RestEndpointMethodTypes["projects"]["getColumn"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
 
@@ -3471,7 +3471,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["projects"]["listCards"]["parameters"]
       ): Promise<RestEndpointMethodTypes["projects"]["listCards"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -3483,7 +3483,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["projects"]["listCollaborators"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
 
@@ -3493,7 +3493,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["projects"]["listColumns"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -3505,7 +3505,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["projects"]["listForOrg"]["parameters"]
       ): Promise<RestEndpointMethodTypes["projects"]["listForOrg"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -3517,7 +3517,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["projects"]["listForRepo"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
 
@@ -3527,7 +3527,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["projects"]["listForUser"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
 
@@ -3535,7 +3535,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["projects"]["moveCard"]["parameters"]
       ): Promise<RestEndpointMethodTypes["projects"]["moveCard"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
 
@@ -3543,7 +3543,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["projects"]["moveColumn"]["parameters"]
       ): Promise<RestEndpointMethodTypes["projects"]["moveColumn"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -3555,7 +3555,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["projects"]["removeCollaborator"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -3567,7 +3567,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["projects"]["reviewUserPermissionLevel"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -3577,7 +3577,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["projects"]["update"]["parameters"]
       ): Promise<RestEndpointMethodTypes["projects"]["update"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
 
@@ -3585,7 +3585,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["projects"]["updateCard"]["parameters"]
       ): Promise<RestEndpointMethodTypes["projects"]["updateCard"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
 
@@ -3595,7 +3595,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["projects"]["updateColumn"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
   };
@@ -3604,7 +3604,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["pulls"]["checkIfMerged"]["parameters"]
       ): Promise<RestEndpointMethodTypes["pulls"]["checkIfMerged"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -3620,7 +3620,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["pulls"]["create"]["parameters"]
       ): Promise<RestEndpointMethodTypes["pulls"]["create"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -3654,7 +3654,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["pulls"]["createComment"]["parameters"]
       ): Promise<RestEndpointMethodTypes["pulls"]["createComment"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -3668,7 +3668,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["pulls"]["createReview"]["parameters"]
       ): Promise<RestEndpointMethodTypes["pulls"]["createReview"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -3682,7 +3682,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["pulls"]["createReviewCommentReply"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -3694,7 +3694,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["pulls"]["createReviewRequest"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -3704,7 +3704,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["pulls"]["deleteComment"]["parameters"]
       ): Promise<RestEndpointMethodTypes["pulls"]["deleteComment"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
 
@@ -3714,7 +3714,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["pulls"]["deletePendingReview"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
 
@@ -3724,7 +3724,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["pulls"]["deleteReviewRequest"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -3734,7 +3734,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["pulls"]["dismissReview"]["parameters"]
       ): Promise<RestEndpointMethodTypes["pulls"]["dismissReview"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -3758,7 +3758,7 @@ export type RestEndpointMethods = {
       (params?: RestEndpointMethodTypes["pulls"]["get"]["parameters"]): Promise<
         RestEndpointMethodTypes["pulls"]["get"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -3788,7 +3788,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["pulls"]["getComment"]["parameters"]
       ): Promise<RestEndpointMethodTypes["pulls"]["getComment"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
 
@@ -3798,7 +3798,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["pulls"]["getCommentsForReview"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
 
@@ -3806,7 +3806,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["pulls"]["getReview"]["parameters"]
       ): Promise<RestEndpointMethodTypes["pulls"]["getReview"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -3816,7 +3816,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["pulls"]["list"]["parameters"]
       ): Promise<RestEndpointMethodTypes["pulls"]["list"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -3846,7 +3846,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["pulls"]["listComments"]["parameters"]
       ): Promise<RestEndpointMethodTypes["pulls"]["listComments"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -3878,7 +3878,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["pulls"]["listCommentsForRepo"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -3888,7 +3888,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["pulls"]["listCommits"]["parameters"]
       ): Promise<RestEndpointMethodTypes["pulls"]["listCommits"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -3898,7 +3898,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["pulls"]["listFiles"]["parameters"]
       ): Promise<RestEndpointMethodTypes["pulls"]["listFiles"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
 
@@ -3908,7 +3908,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["pulls"]["listReviewRequests"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -3918,7 +3918,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["pulls"]["listReviews"]["parameters"]
       ): Promise<RestEndpointMethodTypes["pulls"]["listReviews"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -3928,7 +3928,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["pulls"]["merge"]["parameters"]
       ): Promise<RestEndpointMethodTypes["pulls"]["merge"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
 
@@ -3936,7 +3936,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["pulls"]["submitReview"]["parameters"]
       ): Promise<RestEndpointMethodTypes["pulls"]["submitReview"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -3948,7 +3948,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["pulls"]["update"]["parameters"]
       ): Promise<RestEndpointMethodTypes["pulls"]["update"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -3958,7 +3958,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["pulls"]["updateBranch"]["parameters"]
       ): Promise<RestEndpointMethodTypes["pulls"]["updateBranch"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -3986,7 +3986,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["pulls"]["updateComment"]["parameters"]
       ): Promise<RestEndpointMethodTypes["pulls"]["updateComment"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -3996,7 +3996,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["pulls"]["updateReview"]["parameters"]
       ): Promise<RestEndpointMethodTypes["pulls"]["updateReview"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
   };
@@ -4025,7 +4025,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["rateLimit"]["get"]["parameters"]
       ): Promise<RestEndpointMethodTypes["rateLimit"]["get"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
   };
@@ -4039,7 +4039,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["reactions"]["createForCommitComment"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -4051,7 +4051,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["reactions"]["createForIssue"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -4063,7 +4063,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["reactions"]["createForIssueComment"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -4075,7 +4075,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["reactions"]["createForPullRequestReviewComment"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -4089,7 +4089,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["reactions"]["createForTeamDiscussionCommentInOrg"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -4103,7 +4103,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["reactions"]["createForTeamDiscussionInOrg"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -4116,7 +4116,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["reactions"]["delete"]["parameters"]
       ): Promise<RestEndpointMethodTypes["reactions"]["delete"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -4130,7 +4130,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["reactions"]["deleteForCommitComment"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -4144,7 +4144,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["reactions"]["deleteForIssue"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -4158,7 +4158,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["reactions"]["deleteForIssueComment"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -4172,7 +4172,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["reactions"]["deleteForPullRequestComment"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -4186,7 +4186,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["reactions"]["deleteForTeamDiscussion"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -4200,7 +4200,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["reactions"]["deleteForTeamDiscussionComment"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -4215,7 +4215,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["reactions"]["deleteLegacy"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -4227,7 +4227,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["reactions"]["listForCommitComment"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -4239,7 +4239,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["reactions"]["listForIssue"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -4251,7 +4251,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["reactions"]["listForIssueComment"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -4263,7 +4263,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["reactions"]["listForPullRequestReviewComment"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -4277,7 +4277,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["reactions"]["listForTeamDiscussionCommentInOrg"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -4291,7 +4291,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["reactions"]["listForTeamDiscussionInOrg"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
   };
@@ -4302,7 +4302,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["repos"]["acceptInvitation"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -4324,7 +4324,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["repos"]["addCollaborator"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -4334,7 +4334,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["repos"]["addDeployKey"]["parameters"]
       ): Promise<RestEndpointMethodTypes["repos"]["addDeployKey"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -4348,7 +4348,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["repos"]["addProtectedBranchAdminEnforcement"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -4366,7 +4366,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["repos"]["addProtectedBranchAppRestrictions"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -4380,7 +4380,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["repos"]["addProtectedBranchRequiredSignatures"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -4392,7 +4392,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["repos"]["addProtectedBranchRequiredStatusChecksContexts"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -4410,7 +4410,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["repos"]["addProtectedBranchTeamRestrictions"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -4428,7 +4428,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["repos"]["addProtectedBranchUserRestrictions"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -4442,7 +4442,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["repos"]["checkCollaborator"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -4454,7 +4454,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["repos"]["checkVulnerabilityAlerts"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -4498,7 +4498,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["repos"]["compareCommits"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -4512,7 +4512,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["repos"]["createCommitComment"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -4554,7 +4554,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["repos"]["createDeployment"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -4568,7 +4568,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["repos"]["createDeploymentStatus"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -4586,7 +4586,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["repos"]["createDispatchEvent"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -4605,7 +4605,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["repos"]["createForAuthenticatedUser"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -4617,7 +4617,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["repos"]["createFork"]["parameters"]
       ): Promise<RestEndpointMethodTypes["repos"]["createFork"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -4629,7 +4629,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["repos"]["createHook"]["parameters"]
       ): Promise<RestEndpointMethodTypes["repos"]["createHook"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -4646,7 +4646,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["repos"]["createInOrg"]["parameters"]
       ): Promise<RestEndpointMethodTypes["repos"]["createInOrg"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -4658,7 +4658,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["repos"]["createOrUpdateFile"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -4670,7 +4670,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["repos"]["createRelease"]["parameters"]
       ): Promise<RestEndpointMethodTypes["repos"]["createRelease"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -4682,7 +4682,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["repos"]["createStatus"]["parameters"]
       ): Promise<RestEndpointMethodTypes["repos"]["createStatus"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -4701,7 +4701,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["repos"]["createUsingTemplate"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
 
@@ -4711,7 +4711,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["repos"]["declineInvitation"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -4723,7 +4723,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["repos"]["delete"]["parameters"]
       ): Promise<RestEndpointMethodTypes["repos"]["delete"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
 
@@ -4733,7 +4733,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["repos"]["deleteCommitComment"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -4752,7 +4752,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["repos"]["deleteDeployment"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
 
@@ -4762,7 +4762,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["repos"]["deleteDownload"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -4778,7 +4778,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["repos"]["deleteFile"]["parameters"]
       ): Promise<RestEndpointMethodTypes["repos"]["deleteFile"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
 
@@ -4786,7 +4786,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["repos"]["deleteHook"]["parameters"]
       ): Promise<RestEndpointMethodTypes["repos"]["deleteHook"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
 
@@ -4796,7 +4796,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["repos"]["deleteInvitation"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -4806,7 +4806,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["repos"]["deleteRelease"]["parameters"]
       ): Promise<RestEndpointMethodTypes["repos"]["deleteRelease"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
 
@@ -4816,7 +4816,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["repos"]["deleteReleaseAsset"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -4828,7 +4828,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["repos"]["disableAutomatedSecurityFixes"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
 
@@ -4838,7 +4838,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["repos"]["disablePagesSite"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -4850,7 +4850,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["repos"]["disableVulnerabilityAlerts"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -4862,7 +4862,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["repos"]["enableAutomatedSecurityFixes"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
 
@@ -4872,7 +4872,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["repos"]["enablePagesSite"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -4884,7 +4884,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["repos"]["enableVulnerabilityAlerts"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -4896,7 +4896,7 @@ export type RestEndpointMethods = {
       (params?: RestEndpointMethodTypes["repos"]["get"]["parameters"]): Promise<
         RestEndpointMethodTypes["repos"]["get"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
 
@@ -4904,7 +4904,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["repos"]["getAllTopics"]["parameters"]
       ): Promise<RestEndpointMethodTypes["repos"]["getAllTopics"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -4918,7 +4918,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["repos"]["getAppsWithAccessToProtectedBranch"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -4934,7 +4934,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["repos"]["getArchiveLink"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
 
@@ -4942,7 +4942,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["repos"]["getBranch"]["parameters"]
       ): Promise<RestEndpointMethodTypes["repos"]["getBranch"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -4954,7 +4954,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["repos"]["getBranchProtection"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -4964,7 +4964,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["repos"]["getClones"]["parameters"]
       ): Promise<RestEndpointMethodTypes["repos"]["getClones"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -4976,7 +4976,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["repos"]["getCodeFrequencyStats"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -4988,7 +4988,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["repos"]["getCollaboratorPermissionLevel"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -5008,7 +5008,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["repos"]["getCombinedStatusForRef"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -5044,7 +5044,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["repos"]["getCommit"]["parameters"]
       ): Promise<RestEndpointMethodTypes["repos"]["getCommit"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -5056,7 +5056,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["repos"]["getCommitActivityStats"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
 
@@ -5066,7 +5066,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["repos"]["getCommitComment"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -5096,7 +5096,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["repos"]["getContents"]["parameters"]
       ): Promise<RestEndpointMethodTypes["repos"]["getContents"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -5115,7 +5115,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["repos"]["getContributorsStats"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
 
@@ -5123,7 +5123,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["repos"]["getDeployKey"]["parameters"]
       ): Promise<RestEndpointMethodTypes["repos"]["getDeployKey"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
 
@@ -5131,7 +5131,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["repos"]["getDeployment"]["parameters"]
       ): Promise<RestEndpointMethodTypes["repos"]["getDeployment"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -5143,7 +5143,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["repos"]["getDeploymentStatus"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
 
@@ -5151,7 +5151,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["repos"]["getDownload"]["parameters"]
       ): Promise<RestEndpointMethodTypes["repos"]["getDownload"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
 
@@ -5159,7 +5159,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["repos"]["getHook"]["parameters"]
       ): Promise<RestEndpointMethodTypes["repos"]["getHook"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
 
@@ -5169,7 +5169,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["repos"]["getLatestPagesBuild"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -5183,7 +5183,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["repos"]["getLatestRelease"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
 
@@ -5191,7 +5191,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["repos"]["getPages"]["parameters"]
       ): Promise<RestEndpointMethodTypes["repos"]["getPages"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
 
@@ -5199,7 +5199,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["repos"]["getPagesBuild"]["parameters"]
       ): Promise<RestEndpointMethodTypes["repos"]["getPagesBuild"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -5213,7 +5213,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["repos"]["getParticipationStats"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -5225,7 +5225,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["repos"]["getProtectedBranchAdminEnforcement"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -5237,7 +5237,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["repos"]["getProtectedBranchPullRequestReviewEnforcement"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -5253,7 +5253,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["repos"]["getProtectedBranchRequiredSignatures"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -5265,7 +5265,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["repos"]["getProtectedBranchRequiredStatusChecks"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -5281,7 +5281,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["repos"]["getProtectedBranchRestrictions"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -5299,7 +5299,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["repos"]["getPunchCardStats"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -5311,7 +5311,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["repos"]["getReadme"]["parameters"]
       ): Promise<RestEndpointMethodTypes["repos"]["getReadme"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -5321,7 +5321,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["repos"]["getRelease"]["parameters"]
       ): Promise<RestEndpointMethodTypes["repos"]["getRelease"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -5333,7 +5333,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["repos"]["getReleaseAsset"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -5345,7 +5345,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["repos"]["getReleaseByTag"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -5359,7 +5359,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["repos"]["getTeamsWithAccessToProtectedBranch"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -5369,7 +5369,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["repos"]["getTopPaths"]["parameters"]
       ): Promise<RestEndpointMethodTypes["repos"]["getTopPaths"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -5381,7 +5381,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["repos"]["getTopReferrers"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -5395,7 +5395,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["repos"]["getUsersWithAccessToProtectedBranch"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -5405,7 +5405,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["repos"]["getViews"]["parameters"]
       ): Promise<RestEndpointMethodTypes["repos"]["getViews"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -5418,7 +5418,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["repos"]["list"]["parameters"]
       ): Promise<RestEndpointMethodTypes["repos"]["list"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
 
@@ -5428,7 +5428,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["repos"]["listAssetsForRelease"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
 
@@ -5436,7 +5436,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["repos"]["listBranches"]["parameters"]
       ): Promise<RestEndpointMethodTypes["repos"]["listBranches"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -5450,7 +5450,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["repos"]["listBranchesForHeadCommit"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -5464,7 +5464,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["repos"]["listCollaborators"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -5476,7 +5476,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["repos"]["listCommentsForCommit"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -5490,7 +5490,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["repos"]["listCommitComments"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -5520,7 +5520,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["repos"]["listCommits"]["parameters"]
       ): Promise<RestEndpointMethodTypes["repos"]["listCommits"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -5534,7 +5534,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["repos"]["listContributors"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
 
@@ -5544,7 +5544,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["repos"]["listDeployKeys"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -5556,7 +5556,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["repos"]["listDeploymentStatuses"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -5568,7 +5568,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["repos"]["listDeployments"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
 
@@ -5576,7 +5576,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["repos"]["listDownloads"]["parameters"]
       ): Promise<RestEndpointMethodTypes["repos"]["listDownloads"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -5590,7 +5590,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["repos"]["listForAuthenticatedUser"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -5600,7 +5600,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["repos"]["listForOrg"]["parameters"]
       ): Promise<RestEndpointMethodTypes["repos"]["listForOrg"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -5610,7 +5610,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["repos"]["listForUser"]["parameters"]
       ): Promise<RestEndpointMethodTypes["repos"]["listForUser"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
 
@@ -5618,7 +5618,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["repos"]["listForks"]["parameters"]
       ): Promise<RestEndpointMethodTypes["repos"]["listForks"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
 
@@ -5626,7 +5626,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["repos"]["listHooks"]["parameters"]
       ): Promise<RestEndpointMethodTypes["repos"]["listHooks"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -5638,7 +5638,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["repos"]["listInvitations"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -5650,7 +5650,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["repos"]["listInvitationsForAuthenticatedUser"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -5660,7 +5660,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["repos"]["listLanguages"]["parameters"]
       ): Promise<RestEndpointMethodTypes["repos"]["listLanguages"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
 
@@ -5670,7 +5670,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["repos"]["listPagesBuilds"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -5682,7 +5682,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["repos"]["listProtectedBranchRequiredStatusChecksContexts"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -5694,7 +5694,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["repos"]["listPublic"]["parameters"]
       ): Promise<RestEndpointMethodTypes["repos"]["listPublic"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -5706,7 +5706,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["repos"]["listPullRequestsAssociatedWithCommit"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -5718,7 +5718,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["repos"]["listReleases"]["parameters"]
       ): Promise<RestEndpointMethodTypes["repos"]["listReleases"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -5732,7 +5732,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["repos"]["listStatusesForRef"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
 
@@ -5740,7 +5740,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["repos"]["listTags"]["parameters"]
       ): Promise<RestEndpointMethodTypes["repos"]["listTags"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
 
@@ -5748,7 +5748,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["repos"]["listTeams"]["parameters"]
       ): Promise<RestEndpointMethodTypes["repos"]["listTeams"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -5758,7 +5758,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["repos"]["listTopics"]["parameters"]
       ): Promise<RestEndpointMethodTypes["repos"]["listTopics"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
 
@@ -5766,7 +5766,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["repos"]["merge"]["parameters"]
       ): Promise<RestEndpointMethodTypes["repos"]["merge"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -5776,7 +5776,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["repos"]["pingHook"]["parameters"]
       ): Promise<RestEndpointMethodTypes["repos"]["pingHook"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -5788,7 +5788,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["repos"]["removeBranchProtection"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
 
@@ -5798,7 +5798,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["repos"]["removeCollaborator"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
 
@@ -5808,7 +5808,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["repos"]["removeDeployKey"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -5822,7 +5822,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["repos"]["removeProtectedBranchAdminEnforcement"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -5840,7 +5840,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["repos"]["removeProtectedBranchAppRestrictions"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -5852,7 +5852,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["repos"]["removeProtectedBranchPullRequestReviewEnforcement"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -5866,7 +5866,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["repos"]["removeProtectedBranchRequiredSignatures"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -5878,7 +5878,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["repos"]["removeProtectedBranchRequiredStatusChecks"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -5890,7 +5890,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["repos"]["removeProtectedBranchRequiredStatusChecksContexts"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -5904,7 +5904,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["repos"]["removeProtectedBranchRestrictions"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -5922,7 +5922,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["repos"]["removeProtectedBranchTeamRestrictions"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -5940,7 +5940,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["repos"]["removeProtectedBranchUserRestrictions"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
 
@@ -5950,7 +5950,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["repos"]["replaceAllTopics"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -5968,7 +5968,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["repos"]["replaceProtectedBranchAppRestrictions"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -5980,7 +5980,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["repos"]["replaceProtectedBranchRequiredStatusChecksContexts"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -5998,7 +5998,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["repos"]["replaceProtectedBranchTeamRestrictions"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -6016,7 +6016,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["repos"]["replaceProtectedBranchUserRestrictions"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -6026,7 +6026,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["repos"]["replaceTopics"]["parameters"]
       ): Promise<RestEndpointMethodTypes["repos"]["replaceTopics"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -6040,7 +6040,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["repos"]["requestPageBuild"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -6052,7 +6052,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["repos"]["retrieveCommunityProfileMetrics"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -6064,7 +6064,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["repos"]["testPushHook"]["parameters"]
       ): Promise<RestEndpointMethodTypes["repos"]["testPushHook"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -6074,7 +6074,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["repos"]["transfer"]["parameters"]
       ): Promise<RestEndpointMethodTypes["repos"]["transfer"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -6084,7 +6084,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["repos"]["update"]["parameters"]
       ): Promise<RestEndpointMethodTypes["repos"]["update"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -6102,7 +6102,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["repos"]["updateBranchProtection"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
 
@@ -6112,7 +6112,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["repos"]["updateCommitComment"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
 
@@ -6120,7 +6120,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["repos"]["updateHook"]["parameters"]
       ): Promise<RestEndpointMethodTypes["repos"]["updateHook"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
 
@@ -6130,7 +6130,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["repos"]["updateInformationAboutPagesSite"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
 
@@ -6140,7 +6140,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["repos"]["updateInvitation"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -6156,7 +6156,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["repos"]["updateProtectedBranchPullRequestReviewEnforcement"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -6170,7 +6170,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["repos"]["updateProtectedBranchRequiredStatusChecks"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -6180,7 +6180,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["repos"]["updateRelease"]["parameters"]
       ): Promise<RestEndpointMethodTypes["repos"]["updateRelease"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -6192,7 +6192,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["repos"]["updateReleaseAsset"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -6219,7 +6219,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["repos"]["uploadReleaseAsset"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
   };
@@ -6247,7 +6247,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["search"]["code"]["parameters"]
       ): Promise<RestEndpointMethodTypes["search"]["code"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -6265,7 +6265,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["search"]["commits"]["parameters"]
       ): Promise<RestEndpointMethodTypes["search"]["commits"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -6283,7 +6283,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["search"]["issuesAndPullRequests"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -6299,7 +6299,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["search"]["labels"]["parameters"]
       ): Promise<RestEndpointMethodTypes["search"]["labels"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -6317,7 +6317,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["search"]["repos"]["parameters"]
       ): Promise<RestEndpointMethodTypes["search"]["repos"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -6337,7 +6337,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["search"]["topics"]["parameters"]
       ): Promise<RestEndpointMethodTypes["search"]["topics"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -6353,7 +6353,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["search"]["users"]["parameters"]
       ): Promise<RestEndpointMethodTypes["search"]["users"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
   };
@@ -6377,7 +6377,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["teams"]["addOrUpdateMembershipInOrg"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -6391,7 +6391,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["teams"]["addOrUpdateProjectInOrg"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -6407,7 +6407,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["teams"]["addOrUpdateRepoInOrg"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -6423,7 +6423,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["teams"]["checkManagesRepoInOrg"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -6435,7 +6435,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["teams"]["create"]["parameters"]
       ): Promise<RestEndpointMethodTypes["teams"]["create"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -6451,7 +6451,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["teams"]["createDiscussionCommentInOrg"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -6467,7 +6467,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["teams"]["createDiscussionInOrg"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -6481,7 +6481,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["teams"]["deleteDiscussionCommentInOrg"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -6495,7 +6495,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["teams"]["deleteDiscussionInOrg"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -6509,7 +6509,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["teams"]["deleteInOrg"]["parameters"]
       ): Promise<RestEndpointMethodTypes["teams"]["deleteInOrg"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -6521,7 +6521,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["teams"]["getByName"]["parameters"]
       ): Promise<RestEndpointMethodTypes["teams"]["getByName"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -6535,7 +6535,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["teams"]["getDiscussionCommentInOrg"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -6549,7 +6549,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["teams"]["getDiscussionInOrg"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -6567,7 +6567,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["teams"]["getMembershipInOrg"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -6577,7 +6577,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["teams"]["list"]["parameters"]
       ): Promise<RestEndpointMethodTypes["teams"]["list"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -6591,7 +6591,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["teams"]["listChildInOrg"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -6605,7 +6605,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["teams"]["listDiscussionCommentsInOrg"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -6619,7 +6619,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["teams"]["listDiscussionsInOrg"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -6631,7 +6631,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["teams"]["listForAuthenticatedUser"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -6645,7 +6645,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["teams"]["listMembersInOrg"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -6659,7 +6659,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["teams"]["listPendingInvitationsInOrg"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -6673,7 +6673,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["teams"]["listProjectsInOrg"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -6687,7 +6687,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["teams"]["listReposInOrg"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -6705,7 +6705,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["teams"]["removeMembershipInOrg"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -6719,7 +6719,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["teams"]["removeProjectInOrg"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -6733,7 +6733,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["teams"]["removeRepoInOrg"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -6747,7 +6747,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["teams"]["reviewProjectInOrg"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -6761,7 +6761,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["teams"]["updateDiscussionCommentInOrg"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -6775,7 +6775,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["teams"]["updateDiscussionInOrg"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -6787,7 +6787,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["teams"]["updateInOrg"]["parameters"]
       ): Promise<RestEndpointMethodTypes["teams"]["updateInOrg"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
   };
@@ -6799,7 +6799,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["users"]["addEmails"]["parameters"]
       ): Promise<RestEndpointMethodTypes["users"]["addEmails"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
 
@@ -6807,7 +6807,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["users"]["block"]["parameters"]
       ): Promise<RestEndpointMethodTypes["users"]["block"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -6819,7 +6819,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["users"]["checkBlocked"]["parameters"]
       ): Promise<RestEndpointMethodTypes["users"]["checkBlocked"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
 
@@ -6829,7 +6829,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["users"]["checkFollowing"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
 
@@ -6839,7 +6839,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["users"]["checkFollowingForUser"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -6849,7 +6849,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["users"]["createGpgKey"]["parameters"]
       ): Promise<RestEndpointMethodTypes["users"]["createGpgKey"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -6861,7 +6861,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["users"]["createPublicKey"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -6871,7 +6871,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["users"]["deleteEmails"]["parameters"]
       ): Promise<RestEndpointMethodTypes["users"]["deleteEmails"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -6881,7 +6881,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["users"]["deleteGpgKey"]["parameters"]
       ): Promise<RestEndpointMethodTypes["users"]["deleteGpgKey"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -6893,7 +6893,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["users"]["deletePublicKey"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -6905,7 +6905,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["users"]["follow"]["parameters"]
       ): Promise<RestEndpointMethodTypes["users"]["follow"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -6919,7 +6919,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["users"]["getAuthenticated"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -6935,7 +6935,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["users"]["getByUsername"]["parameters"]
       ): Promise<RestEndpointMethodTypes["users"]["getByUsername"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -6949,7 +6949,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["users"]["getContextForUser"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -6959,7 +6959,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["users"]["getGpgKey"]["parameters"]
       ): Promise<RestEndpointMethodTypes["users"]["getGpgKey"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -6969,7 +6969,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["users"]["getPublicKey"]["parameters"]
       ): Promise<RestEndpointMethodTypes["users"]["getPublicKey"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -6981,7 +6981,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["users"]["list"]["parameters"]
       ): Promise<RestEndpointMethodTypes["users"]["list"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -6991,7 +6991,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["users"]["listBlocked"]["parameters"]
       ): Promise<RestEndpointMethodTypes["users"]["listBlocked"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -7001,7 +7001,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["users"]["listEmails"]["parameters"]
       ): Promise<RestEndpointMethodTypes["users"]["listEmails"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -7013,7 +7013,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["users"]["listFollowedByAuthenticated"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -7025,7 +7025,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["users"]["listFollowersForAuthenticatedUser"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -7037,7 +7037,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["users"]["listFollowersForUser"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -7050,7 +7050,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["users"]["listFollowingForAuthenticatedUser"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -7062,7 +7062,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["users"]["listFollowingForUser"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -7072,7 +7072,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["users"]["listGpgKeys"]["parameters"]
       ): Promise<RestEndpointMethodTypes["users"]["listGpgKeys"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -7084,7 +7084,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["users"]["listGpgKeysForUser"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -7096,7 +7096,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["users"]["listPublicEmails"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -7108,7 +7108,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["users"]["listPublicKeys"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -7120,7 +7120,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["users"]["listPublicKeysForUser"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -7132,7 +7132,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["users"]["togglePrimaryEmailVisibility"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
 
@@ -7140,7 +7140,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["users"]["unblock"]["parameters"]
       ): Promise<RestEndpointMethodTypes["users"]["unblock"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -7150,7 +7150,7 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["users"]["unfollow"]["parameters"]
       ): Promise<RestEndpointMethodTypes["users"]["unfollow"]["response"]>;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
@@ -7162,7 +7162,7 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["users"]["updateAuthenticated"]["response"]
       >;
-
+      defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
   };

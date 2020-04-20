@@ -68,7 +68,7 @@ async function generateTypes() {
           method.jsdoc,
           `${method.name}: {
           (params?: RestEndpointMethodTypes["${namespace.namespace}"]["${method.name}"]["parameters"]): Promise<RestEndpointMethodTypes["${namespace.namespace}"]["${method.name}"]["response"]>
-
+          defaults: RequestInterface["defaults"];
           endpoint: EndpointInterface<{ url: string }>;
         }`,
         ].join("\n")
@@ -82,7 +82,7 @@ async function generateTypes() {
 
   const methodTypesSource = prettier.format(
     [
-      `import { EndpointInterface } from "@octokit/types";`,
+      `import { EndpointInterface, RequestInterface } from "@octokit/types";`,
       `import { RestEndpointMethodTypes } from "./method-types";`,
       "",
       `export type RestEndpointMethods = {
