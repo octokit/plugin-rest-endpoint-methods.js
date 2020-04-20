@@ -32,34 +32,60 @@ describe("REST API endpoint methods", () => {
   });
 
   it("Required preview header", async () => {
-    const mock = fetchMock.sandbox().post(
-      "path:/repos/octocat/hello-world/dispatches",
+    const mock = fetchMock.sandbox().getOnce(
+      "path:/app",
       { ok: true },
       {
-        body: {
-          event_type: "greeting",
-          client_payload: { name: "Mona" },
+        headers: {
+          accept: "application/vnd.github.machine-man-preview+json",
         },
       }
     );
 
     const MyOctokit = Octokit.plugin(restEndpointMethods);
     const octokit = new MyOctokit({
-      auth: "secret123",
       request: {
         fetch: mock,
       },
     });
 
-    // See https://developer.github.com/v3/repos/#create
-    const { data } = await octokit.repos.createDispatchEvent({
-      owner: "octocat",
-      repo: "hello-world",
-      event_type: "greeting",
-      client_payload: { name: "Mona" },
-    });
+    // See https://developer.github.com/v3/repos/#create-a-repository-dispatch-event
+    const { data } = await octokit.apps.getAuthenticated();
 
     expect(data).toStrictEqual({ ok: true });
+  });
+
+  it("octokit.markdown.renderRaw()", async () => {
+    const mock = fetchMock.sandbox().postOnce(
+      "path:/markdown/raw",
+      { ok: true },
+      {
+        headers: {
+          "content-type": "text/plain; charset=utf-8",
+        },
+        matcher: (url, { body, headers }) => {
+          expect(body).toEqual("# Hello, world!");
+          return true;
+        },
+      }
+    );
+
+    const MyOctokit = Octokit.plugin(restEndpointMethods);
+    const octokit = new MyOctokit({
+      request: {
+        fetch: mock,
+      },
+    });
+
+    return octokit.markdown
+      .renderRaw({
+        data: "# Hello, world!",
+      })
+      .catch((error) => {
+        console.log(error);
+
+        throw error;
+      });
   });
 
   it("octokit.repos.uploadReleaseAsset()", async () => {

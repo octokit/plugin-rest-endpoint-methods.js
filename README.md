@@ -51,6 +51,19 @@ octokit.users.getAuthenticated();
 
 There is one method for each REST API endpoint documented at [https://developer.github.com/v3](https://developer.github.com/v3). All endpoint methods are documented in the [docs/](docs/) folder, e.g. [docs/users/getAuthenticated.md](docs/users/getAuthenticated.md)
 
+## TypeScript
+
+Parameter and response types for all endpoint methods exported as `{ RestEndpointMethodTypes }`.
+
+Example
+
+```ts
+import { RestEndpointMethodTypes } from "@octokit/rest-endpoint-methods";
+
+type UpdateLabelParameters = RestEndpointMethodTypes["issues"]["updateLabel"]["parameters"];
+type UpdateLabelResponse = RestEndpointMethodTypes["issues"]["updateLabel"]["response"];
+```
+
 ## Contributing
 
 See [CONTRIBUTING.md](CONTRIBUTING.md)
