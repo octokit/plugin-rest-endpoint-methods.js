@@ -50,4 +50,13 @@ describe("Smoke test", () => {
       "https://api.github.com/repos/foo/bar/contents/path%2Fto%2Fbinary%2Ffile"
     );
   });
+
+  it(".defaults()", async () => {
+    const MyOctokit = Octokit.plugin(restEndpointMethods);
+    const octokit = new MyOctokit();
+
+    const myRequest = octokit.repos.getContents.defaults({ method: "HEAD" });
+
+    expect(myRequest.endpoint.DEFAULTS.method).toEqual("HEAD");
+  });
 });
