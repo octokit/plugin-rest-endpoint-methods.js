@@ -26,7 +26,39 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["POST /repos/:owner/:repo/actions/runners/registration-token"]["response"];
     };
+    createRegistrationTokenForOrg: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["POST /orgs/:org/actions/runners/registration-token"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["POST /orgs/:org/actions/runners/registration-token"]["response"];
+    };
+    createRegistrationTokenForRepo: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["POST /repos/:owner/:repo/actions/runners/registration-token"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["POST /repos/:owner/:repo/actions/runners/registration-token"]["response"];
+    };
     createRemoveToken: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["POST /repos/:owner/:repo/actions/runners/remove-token"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["POST /repos/:owner/:repo/actions/runners/remove-token"]["response"];
+    };
+    createRemoveTokenForOrg: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["POST /orgs/:org/actions/runners/remove-token"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["POST /orgs/:org/actions/runners/remove-token"]["response"];
+    };
+    createRemoveTokenForRepo: {
       parameters: RequestParameters &
         Omit<
           Endpoints["POST /repos/:owner/:repo/actions/runners/remove-token"]["parameters"],
@@ -49,6 +81,22 @@ export type RestEndpointMethodTypes = {
           "baseUrl" | "headers" | "mediaType"
         >;
       response: Endpoints["DELETE /repos/:owner/:repo/actions/secrets/:name"]["response"];
+    };
+    deleteSelfHostedRunnerFromOrg: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["DELETE /orgs/:org/actions/runners/:runner_id"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["DELETE /orgs/:org/actions/runners/:runner_id"]["response"];
+    };
+    deleteSelfHostedRunnerFromRepo: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["DELETE /repos/:owner/:repo/actions/runners/:runner_id"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["DELETE /repos/:owner/:repo/actions/runners/:runner_id"]["response"];
     };
     deleteWorkflowRunLogs: {
       parameters: RequestParameters &
@@ -91,6 +139,22 @@ export type RestEndpointMethodTypes = {
       response: Endpoints["GET /repos/:owner/:repo/actions/secrets/:name"]["response"];
     };
     getSelfHostedRunner: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /repos/:owner/:repo/actions/runners/:runner_id"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /repos/:owner/:repo/actions/runners/:runner_id"]["response"];
+    };
+    getSelfHostedRunnerForOrg: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /orgs/:org/actions/runners/:runner_id"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /orgs/:org/actions/runners/:runner_id"]["response"];
+    };
+    getSelfHostedRunnerForRepo: {
       parameters: RequestParameters &
         Omit<
           Endpoints["GET /repos/:owner/:repo/actions/runners/:runner_id"]["parameters"],
@@ -162,6 +226,22 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["GET /repos/:owner/:repo/actions/workflows"]["response"];
     };
+    listRunnerApplicationsForOrg: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /orgs/:org/actions/runners/downloads"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /orgs/:org/actions/runners/downloads"]["response"];
+    };
+    listRunnerApplicationsForRepo: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /repos/:owner/:repo/actions/runners/downloads"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /repos/:owner/:repo/actions/runners/downloads"]["response"];
+    };
     listSecretsForRepo: {
       parameters: RequestParameters &
         Omit<
@@ -169,6 +249,14 @@ export type RestEndpointMethodTypes = {
           "baseUrl" | "headers" | "mediaType"
         >;
       response: Endpoints["GET /repos/:owner/:repo/actions/secrets"]["response"];
+    };
+    listSelfHostedRunnersForOrg: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /orgs/:org/actions/runners"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /orgs/:org/actions/runners"]["response"];
     };
     listSelfHostedRunnersForRepo: {
       parameters: RequestParameters &

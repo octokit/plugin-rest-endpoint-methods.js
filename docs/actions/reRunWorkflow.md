@@ -39,4 +39,4 @@ run_id parameter
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/actions/workflow_runs/#re-run-a-workflow).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/actions/workflow-runs/#re-run-a-workflow).

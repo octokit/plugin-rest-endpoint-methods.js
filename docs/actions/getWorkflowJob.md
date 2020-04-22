@@ -39,4 +39,4 @@ job_id parameter
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/actions/workflow_jobs/#get-a-workflow-job).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/actions/workflow-jobs/#get-a-workflow-job).

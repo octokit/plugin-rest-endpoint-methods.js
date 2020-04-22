@@ -9,8 +9,22 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     ],
     createRegistrationToken: [
       "POST /repos/{owner}/{repo}/actions/runners/registration-token",
+      {},
+      { renamed: ["actions", "createRegistrationTokenForRepo"] },
+    ],
+    createRegistrationTokenForOrg: [
+      "POST /orgs/{org}/actions/runners/registration-token",
+    ],
+    createRegistrationTokenForRepo: [
+      "POST /repos/{owner}/{repo}/actions/runners/registration-token",
     ],
     createRemoveToken: [
+      "POST /repos/{owner}/{repo}/actions/runners/remove-token",
+      {},
+      { renamed: ["actions", "createRemoveTokenForRepo"] },
+    ],
+    createRemoveTokenForOrg: ["POST /orgs/{org}/actions/runners/remove-token"],
+    createRemoveTokenForRepo: [
       "POST /repos/{owner}/{repo}/actions/runners/remove-token",
     ],
     deleteArtifact: [
@@ -18,6 +32,12 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     ],
     deleteSecretFromRepo: [
       "DELETE /repos/{owner}/{repo}/actions/secrets/{name}",
+    ],
+    deleteSelfHostedRunnerFromOrg: [
+      "DELETE /orgs/{org}/actions/runners/{runner_id}",
+    ],
+    deleteSelfHostedRunnerFromRepo: [
+      "DELETE /repos/{owner}/{repo}/actions/runners/{runner_id}",
     ],
     deleteWorkflowRunLogs: [
       "DELETE /repos/{owner}/{repo}/actions/runs/{run_id}/logs",
@@ -30,6 +50,12 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     getSecret: ["GET /repos/{owner}/{repo}/actions/secrets/{name}"],
     getSelfHostedRunner: [
       "GET /repos/{owner}/{repo}/actions/runners/{runner_id}",
+      {},
+      { renamed: ["actions", "getSelfHostedRunnerForRepo"] },
+    ],
+    getSelfHostedRunnerForOrg: ["GET /orgs/{org}/actions/runners/{runner_id}"],
+    getSelfHostedRunnerForRepo: [
+      "GET /repos/{owner}/{repo}/actions/runners/{runner_id}",
     ],
     getWorkflow: ["GET /repos/{owner}/{repo}/actions/workflows/{workflow_id}"],
     getWorkflowJob: ["GET /repos/{owner}/{repo}/actions/jobs/{job_id}"],
@@ -37,13 +63,20 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     listArtifactsForRepo: ["GET /repos/{owner}/{repo}/actions/artifacts"],
     listDownloadsForSelfHostedRunnerApplication: [
       "GET /repos/{owner}/{repo}/actions/runners/downloads",
+      {},
+      { renamed: ["actions", "listRunnerApplicationsForRepo"] },
     ],
     listJobsForWorkflowRun: [
       "GET /repos/{owner}/{repo}/actions/runs/{run_id}/jobs",
     ],
     listRepoWorkflowRuns: ["GET /repos/{owner}/{repo}/actions/runs"],
     listRepoWorkflows: ["GET /repos/{owner}/{repo}/actions/workflows"],
+    listRunnerApplicationsForOrg: ["GET /orgs/{org}/actions/runners/downloads"],
+    listRunnerApplicationsForRepo: [
+      "GET /repos/{owner}/{repo}/actions/runners/downloads",
+    ],
     listSecretsForRepo: ["GET /repos/{owner}/{repo}/actions/secrets"],
+    listSelfHostedRunnersForOrg: ["GET /orgs/{org}/actions/runners"],
     listSelfHostedRunnersForRepo: ["GET /repos/{owner}/{repo}/actions/runners"],
     listWorkflowJobLogs: [
       "GET /repos/{owner}/{repo}/actions/jobs/{job_id}/logs",
@@ -60,6 +93,8 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     reRunWorkflow: ["POST /repos/{owner}/{repo}/actions/runs/{run_id}/rerun"],
     removeSelfHostedRunner: [
       "DELETE /repos/{owner}/{repo}/actions/runners/{runner_id}",
+      {},
+      { renamed: ["actions", "deleteSelfHostedRunnerFromRepo"] },
     ],
   },
   activity: {

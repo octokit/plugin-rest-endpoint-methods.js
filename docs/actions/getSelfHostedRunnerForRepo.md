@@ -1,11 +1,9 @@
 # Get a self-hosted runner for a repository
 
-**Deprecated:** This method has been renamed to actions.getSelfHostedRunnerForRepo
-
 Gets a specific self-hosted runner. Anyone with admin access to the repository can use this endpoint. GitHub Apps must have the `administration:read` repository permission to use this endpoint.
 
 ```js
-octokit.actions.getSelfHostedRunner({
+octokit.actions.getSelfHostedRunnerForRepo({
   owner,
   repo,
   runner_id,

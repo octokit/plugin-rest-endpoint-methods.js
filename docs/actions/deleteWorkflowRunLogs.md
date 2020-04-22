@@ -39,4 +39,4 @@ run_id parameter
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/actions/workflow_runs/#delete-workflow-run-logs).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/actions/workflow-runs/#delete-workflow-run-logs).

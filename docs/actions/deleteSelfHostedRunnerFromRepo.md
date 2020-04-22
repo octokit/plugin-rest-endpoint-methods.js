@@ -1,11 +1,9 @@
 # Delete a self-hosted runner from a repository
 
-**Deprecated:** This method has been renamed to actions.deleteSelfHostedRunnerFromRepo
-
 Forces the removal of a self-hosted runner from a repository. You can use this endpoint to completely remove the runner when the machine you were using no longer exists. Anyone with admin access to the repository can use this endpoint. GitHub Apps must have the `administration:write` repository permission to use this endpoint.
 
 ```js
-octokit.actions.removeSelfHostedRunner({
+octokit.actions.deleteSelfHostedRunnerFromRepo({
   owner,
   repo,
   runner_id,
