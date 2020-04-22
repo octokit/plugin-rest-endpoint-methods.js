@@ -71,4 +71,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/actions/workflow_runs/#list-workflow-runs).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/actions/workflow-runs/#list-workflow-runs).

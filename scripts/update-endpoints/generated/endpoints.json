@@ -5070,6 +5070,288 @@
     "renamed": null
   },
   {
+    "name": "List self-hosted runners for an organization",
+    "scope": "actions",
+    "id": "listSelfHostedRunnersForOrg",
+    "method": "GET",
+    "url": "/orgs/{org}/actions/runners",
+    "isDeprecated": false,
+    "isLegacy": false,
+    "description": "**Warning:** The self-hosted runners API for organizations is currently in public beta and subject to change.\n\nLists all self-hosted runners for an organization. Anyone with admin access to the organization can use this endpoint. GitHub Apps must have the `self-hosted runners:read` organization permission to use this endpoint.",
+    "documentationUrl": "https://developer.github.com/v3/actions/self-hosted-runners/#list-self-hosted-runners-for-an-organization",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "org",
+        "description": "org parameter",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "per_page",
+        "description": "Results per page (max 100)",
+        "in": "QUERY",
+        "type": "integer",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "page",
+        "description": "Page number of the results to fetch.",
+        "in": "QUERY",
+        "type": "integer",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "examples": [
+          {
+            "data": "{\"total_count\":2,\"runners\":[{\"id\":23,\"name\":\"MBP\",\"os\":\"macos\",\"status\":\"online\"},{\"id\":24,\"name\":\"iMac\",\"os\":\"macos\",\"status\":\"offline\"}]}"
+          }
+        ]
+      }
+    ],
+    "renamed": null
+  },
+  {
+    "name": "List runner applications for an organization",
+    "scope": "actions",
+    "id": "listRunnerApplicationsForOrg",
+    "method": "GET",
+    "url": "/orgs/{org}/actions/runners/downloads",
+    "isDeprecated": false,
+    "isLegacy": false,
+    "description": "**Warning:** The self-hosted runners API for organizations is currently in public beta and subject to change.\n\nLists binaries for the runner application that you can download and run. Anyone with admin access to the organization can use this endpoint. GitHub Apps must have the `self-hosted runners:read` organization permission to use this endpoint.",
+    "documentationUrl": "https://developer.github.com/v3/actions/self-hosted-runners/#list-runner-applications-for-an-organization",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "org",
+        "description": "org parameter",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "examples": [
+          {
+            "data": "[{\"os\":\"osx\",\"architecture\":\"x64\",\"download_url\":\"https://github.com/actions/runner/releases/download/v2.164.0/actions-runner-osx-x64-2.164.0.tar.gz\",\"filename\":\"actions-runner-osx-x64-2.164.0.tar.gz\"},{\"os\":\"linux\",\"architecture\":\"x64\",\"download_url\":\"https://github.com/actions/runner/releases/download/v2.164.0/actions-runner-linux-x64-2.164.0.tar.gz\",\"filename\":\"actions-runner-linux-x64-2.164.0.tar.gz\"},{\"os\":\"linux\",\"architecture\":\"arm\",\"download_url\":\"https://github.com/actions/runner/releases/download/v2.164.0/actions-runner-linux-arm-2.164.0.tar.gz\",\"filename\":\"actions-runner-linux-arm-2.164.0.tar.gz\"},{\"os\":\"win\",\"architecture\":\"x64\",\"download_url\":\"https://github.com/actions/runner/releases/download/v2.164.0/actions-runner-win-x64-2.164.0.zip\",\"filename\":\"actions-runner-win-x64-2.164.0.zip\"},{\"os\":\"linux\",\"architecture\":\"arm64\",\"download_url\":\"https://github.com/actions/runner/releases/download/v2.164.0/actions-runner-linux-arm64-2.164.0.tar.gz\",\"filename\":\"actions-runner-linux-arm64-2.164.0.tar.gz\"}]"
+          }
+        ]
+      }
+    ],
+    "renamed": null
+  },
+  {
+    "name": "Create a registration token for an organization",
+    "scope": "actions",
+    "id": "createRegistrationTokenForOrg",
+    "method": "POST",
+    "url": "/orgs/{org}/actions/runners/registration-token",
+    "isDeprecated": false,
+    "isLegacy": false,
+    "description": "**Warning:** The self-hosted runners API for organizations is currently in public beta and subject to change.\n\nReturns a token that you can pass to the `config` script. The token expires after one hour. Anyone with admin access to the organization can use this endpoint. GitHub Apps must have the `self-hosted runners:write` organization permission to use this endpoint.\n\nConfigure your self-hosted runner, replacing `TOKEN` with the registration token provided by this endpoint.\n\n",
+    "documentationUrl": "https://developer.github.com/v3/actions/self-hosted-runners/#create-a-registration-token-for-an-organization",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "org",
+        "description": "org parameter",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      {
+        "code": 201,
+        "description": "response",
+        "examples": [
+          {
+            "data": "{\"token\":\"LLBF3JGZDX3P5PMEXLND6TS6FCWO6\",\"expires_at\":\"2020-01-22T12:13:35.123-08:00\"}"
+          }
+        ]
+      }
+    ],
+    "renamed": null
+  },
+  {
+    "name": "Create a remove token for an organization",
+    "scope": "actions",
+    "id": "createRemoveTokenForOrg",
+    "method": "POST",
+    "url": "/orgs/{org}/actions/runners/remove-token",
+    "isDeprecated": false,
+    "isLegacy": false,
+    "description": "**Warning:** The self-hosted runners API for organizations is currently in public beta and subject to change.\n\nReturns a token that you can pass to the `config` script to remove a self-hosted runner from an organization. The token expires after one hour. Anyone with admin access to the organization can use this endpoint. GitHub Apps must have the `self-hosted runners:write` organization permission to use this endpoint.\n\nTo remove your self-hosted runner from an organization, replace `TOKEN` with the remove token provided by this endpoint.\n\n",
+    "documentationUrl": "https://developer.github.com/v3/actions/self-hosted-runners/#create-a-remove-token-for-an-organization",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "org",
+        "description": "org parameter",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      {
+        "code": 201,
+        "description": "response",
+        "examples": [
+          {
+            "data": "{\"token\":\"AABF3JGZDX3P5PMEXLND6TS6FCWO6\",\"expires_at\":\"2020-01-29T12:13:35.123-08:00\"}"
+          }
+        ]
+      }
+    ],
+    "renamed": null
+  },
+  {
+    "name": "Get a self-hosted runner for an organization",
+    "scope": "actions",
+    "id": "getSelfHostedRunnerForOrg",
+    "method": "GET",
+    "url": "/orgs/{org}/actions/runners/{runner_id}",
+    "isDeprecated": false,
+    "isLegacy": false,
+    "description": "**Warning:** The self-hosted runners API for organizations is currently in public beta and subject to change.\n\nGets a specific self-hosted runner for an organization. Anyone with admin access to the organization can use this endpoint. GitHub Apps must have the `self-hosted runners:read` organization permission to use this endpoint.",
+    "documentationUrl": "https://developer.github.com/v3/actions/self-hosted-runners/#get-a-self-hosted-runner-for-an-organization",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "org",
+        "description": "org parameter",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "runner_id",
+        "description": "runner_id parameter",
+        "in": "PATH",
+        "type": "integer",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "examples": [
+          {
+            "data": "{\"id\":23,\"name\":\"MBP\",\"os\":\"macos\",\"status\":\"online\"}"
+          }
+        ]
+      }
+    ],
+    "renamed": null
+  },
+  {
+    "name": "Delete a self-hosted runner from an organization",
+    "scope": "actions",
+    "id": "deleteSelfHostedRunnerFromOrg",
+    "method": "DELETE",
+    "url": "/orgs/{org}/actions/runners/{runner_id}",
+    "isDeprecated": false,
+    "isLegacy": false,
+    "description": "**Warning:** The self-hosted runners API for organizations is currently in public beta and subject to change.\n\nForces the removal of a self-hosted runner from an organization. You can use this endpoint to completely remove the runner when the machine you were using no longer exists. Anyone with admin access to the organization can use this endpoint. GitHub Apps must have the `self-hosted runners:write` organization permission to use this endpoint.",
+    "documentationUrl": "https://developer.github.com/v3/actions/self-hosted-runners/#delete-a-self-hosted-runner-from-an-organization",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "org",
+        "description": "org parameter",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "runner_id",
+        "description": "runner_id parameter",
+        "in": "PATH",
+        "type": "integer",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [],
+    "renamed": null
+  },
+  {
     "name": "List blocked users",
     "scope": "orgs",
     "id": "listBlockedUsers",
@@ -13026,7 +13308,7 @@
     "isDeprecated": false,
     "isLegacy": false,
     "description": "Gets a specific job in a workflow run. Anyone with read access to the repository can use this endpoint. GitHub Apps must have the `actions` permission to use this endpoint.",
-    "documentationUrl": "https://developer.github.com/v3/actions/workflow_jobs/#get-a-workflow-job",
+    "documentationUrl": "https://developer.github.com/v3/actions/workflow-jobs/#get-a-workflow-job",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -13092,7 +13374,7 @@
     "isDeprecated": false,
     "isLegacy": false,
     "description": "Gets a redirect URL to download a plain text file of logs for a workflow job. This link expires after 1 minute. Look for `Location:` in the response header to find the URL for the download. Anyone with read access to the repository can use this endpoint. GitHub Apps must have the `actions` permission to use this endpoint.\n\nCall this endpoint using the `-v` flag, which enables verbose output and allows you to see the download URL in the header. To download the file into the current working directory, specify the filename using the `-o` flag.",
-    "documentationUrl": "https://developer.github.com/v3/actions/workflow_jobs/#list-workflow-job-logs",
+    "documentationUrl": "https://developer.github.com/v3/actions/workflow-jobs/#list-workflow-job-logs",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -13173,8 +13455,8 @@
     "url": "/repos/{owner}/{repo}/actions/runners",
     "isDeprecated": false,
     "isLegacy": false,
-    "description": "Lists all self-hosted runners for a repository. Anyone with admin access to the repository can use this endpoint. GitHub Apps must have the `administration` permission to use this endpoint.",
-    "documentationUrl": "https://developer.github.com/v3/actions/self_hosted_runners/#list-self-hosted-runners-for-a-repository",
+    "description": "Lists all self-hosted runners for a repository. Anyone with admin access to the repository can use this endpoint. GitHub Apps must have the `administration:read` repository permission to use this endpoint.",
+    "documentationUrl": "https://developer.github.com/v3/actions/self-hosted-runners/#list-self-hosted-runners-for-a-repository",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -13245,15 +13527,15 @@
     "renamed": null
   },
   {
-    "name": "List downloads for the self-hosted runner application",
+    "name": "List runner applications for a repository",
     "scope": "actions",
-    "id": "listDownloadsForSelfHostedRunnerApplication",
+    "id": "listRunnerApplicationsForRepo",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/actions/runners/downloads",
     "isDeprecated": false,
     "isLegacy": false,
-    "description": "Lists binaries for the self-hosted runner application that you can download and run. Anyone with admin access to the repository can use this endpoint. GitHub Apps must have the `administration` permission to use this endpoint.",
-    "documentationUrl": "https://developer.github.com/v3/actions/self_hosted_runners/#list-downloads-for-the-self-hosted-runner-application",
+    "description": "Lists binaries for the runner application that you can download and run. Anyone with admin access to the repository can use this endpoint. GitHub Apps must have the `administration:read` repository permission to use this endpoint.",
+    "documentationUrl": "https://developer.github.com/v3/actions/self-hosted-runners/#list-runner-applications-for-a-repository",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -13298,15 +13580,76 @@
     "renamed": null
   },
   {
-    "name": "Create a registration token",
+    "name": "List runner applications for a repository",
     "scope": "actions",
-    "id": "createRegistrationToken",
+    "id": "listDownloadsForSelfHostedRunnerApplication",
+    "method": "GET",
+    "url": "/repos/{owner}/{repo}/actions/runners/downloads",
+    "isDeprecated": false,
+    "isLegacy": false,
+    "description": "Lists binaries for the runner application that you can download and run. Anyone with admin access to the repository can use this endpoint. GitHub Apps must have the `administration:read` repository permission to use this endpoint.",
+    "documentationUrl": "https://developer.github.com/v3/actions/self-hosted-runners/#list-runner-applications-for-a-repository",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "owner",
+        "description": "owner parameter",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "repo",
+        "description": "repo parameter",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "examples": [
+          {
+            "data": "[{\"os\":\"osx\",\"architecture\":\"x64\",\"download_url\":\"https://github.com/actions/runner/releases/download/v2.164.0/actions-runner-osx-x64-2.164.0.tar.gz\",\"filename\":\"actions-runner-osx-x64-2.164.0.tar.gz\"},{\"os\":\"linux\",\"architecture\":\"x64\",\"download_url\":\"https://github.com/actions/runner/releases/download/v2.164.0/actions-runner-linux-x64-2.164.0.tar.gz\",\"filename\":\"actions-runner-linux-x64-2.164.0.tar.gz\"},{\"os\":\"linux\",\"architecture\":\"arm\",\"download_url\":\"https://github.com/actions/runner/releases/download/v2.164.0/actions-runner-linux-arm-2.164.0.tar.gz\",\"filename\":\"actions-runner-linux-arm-2.164.0.tar.gz\"},{\"os\":\"win\",\"architecture\":\"x64\",\"download_url\":\"https://github.com/actions/runner/releases/download/v2.164.0/actions-runner-win-x64-2.164.0.zip\",\"filename\":\"actions-runner-win-x64-2.164.0.zip\"},{\"os\":\"linux\",\"architecture\":\"arm64\",\"download_url\":\"https://github.com/actions/runner/releases/download/v2.164.0/actions-runner-linux-arm64-2.164.0.tar.gz\",\"filename\":\"actions-runner-linux-arm64-2.164.0.tar.gz\"}]"
+          }
+        ]
+      }
+    ],
+    "renamed": {
+      "before": {
+        "scope": "actions",
+        "id": "listDownloadsForSelfHostedRunnerApplication"
+      },
+      "after": { "scope": "actions", "id": "listRunnerApplicationsForRepo" },
+      "date": "2020-04-22",
+      "note": "\"actions/list-downloads-for-self-hosted-runner-application\" operation ID is now \"actions/list-runner-applications-for-repo\""
+    }
+  },
+  {
+    "name": "Create a registration token for a repository",
+    "scope": "actions",
+    "id": "createRegistrationTokenForRepo",
     "method": "POST",
     "url": "/repos/{owner}/{repo}/actions/runners/registration-token",
     "isDeprecated": false,
     "isLegacy": false,
-    "description": "Returns a token that you can pass to the `config` script. The token expires after one hour. Anyone with admin access to the repository can use this endpoint. GitHub Apps must have the `administration` permission to use this endpoint.\n\nConfigure your self-hosted runner, replacing TOKEN with the registration token provided by this endpoint.\n\n",
-    "documentationUrl": "https://developer.github.com/v3/actions/self_hosted_runners/#create-a-registration-token",
+    "description": "Returns a token that you can pass to the `config` script. The token expires after one hour. Anyone with admin access to the repository can use this endpoint. GitHub Apps must have the `administration:write` repository permission to use this endpoint.\n\nConfigure your self-hosted runner, replacing TOKEN with the registration token provided by this endpoint.\n\n",
+    "documentationUrl": "https://developer.github.com/v3/actions/self-hosted-runners/#create-a-registration-token-for-a-repository",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -13351,15 +13694,73 @@
     "renamed": null
   },
   {
-    "name": "Create a remove token",
+    "name": "Create a registration token for a repository",
     "scope": "actions",
-    "id": "createRemoveToken",
+    "id": "createRegistrationToken",
+    "method": "POST",
+    "url": "/repos/{owner}/{repo}/actions/runners/registration-token",
+    "isDeprecated": false,
+    "isLegacy": false,
+    "description": "Returns a token that you can pass to the `config` script. The token expires after one hour. Anyone with admin access to the repository can use this endpoint. GitHub Apps must have the `administration:write` repository permission to use this endpoint.\n\nConfigure your self-hosted runner, replacing TOKEN with the registration token provided by this endpoint.\n\n",
+    "documentationUrl": "https://developer.github.com/v3/actions/self-hosted-runners/#create-a-registration-token-for-a-repository",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "owner",
+        "description": "owner parameter",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "repo",
+        "description": "repo parameter",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      {
+        "code": 201,
+        "description": "response",
+        "examples": [
+          {
+            "data": "{\"token\":\"LLBF3JGZDX3P5PMEXLND6TS6FCWO6\",\"expires_at\":\"2020-01-22T12:13:35.123-08:00\"}"
+          }
+        ]
+      }
+    ],
+    "renamed": {
+      "before": { "scope": "actions", "id": "createRegistrationToken" },
+      "after": { "scope": "actions", "id": "createRegistrationTokenForRepo" },
+      "date": "2020-04-22",
+      "note": "\"actions/create-registration-token\" operation ID is now \"actions/create-registration-token-for-repo\""
+    }
+  },
+  {
+    "name": "Create a remove token for a repository",
+    "scope": "actions",
+    "id": "createRemoveTokenForRepo",
     "method": "POST",
     "url": "/repos/{owner}/{repo}/actions/runners/remove-token",
     "isDeprecated": false,
     "isLegacy": false,
-    "description": "Returns a token that you can pass to remove a self-hosted runner from a repository. The token expires after one hour. Anyone with admin access to the repository can use this endpoint. GitHub Apps must have the `administration` permission to use this endpoint.\n\nRemove your self-hosted runner from a repository, replacing TOKEN with the remove token provided by this endpoint.\n\n",
-    "documentationUrl": "https://developer.github.com/v3/actions/self_hosted_runners/#create-a-remove-token",
+    "description": "Returns a token that you can pass to remove a self-hosted runner from a repository. The token expires after one hour. Anyone with admin access to the repository can use this endpoint. GitHub Apps must have the `administration:write` repository permission to use this endpoint.\n\nRemove your self-hosted runner from a repository, replacing TOKEN with the remove token provided by this endpoint.\n\n",
+    "documentationUrl": "https://developer.github.com/v3/actions/self-hosted-runners/#create-a-remove-token-for-a-repository",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -13404,15 +13805,73 @@
     "renamed": null
   },
   {
-    "name": "Get a self-hosted runner",
+    "name": "Create a remove token for a repository",
     "scope": "actions",
-    "id": "getSelfHostedRunner",
+    "id": "createRemoveToken",
+    "method": "POST",
+    "url": "/repos/{owner}/{repo}/actions/runners/remove-token",
+    "isDeprecated": false,
+    "isLegacy": false,
+    "description": "Returns a token that you can pass to remove a self-hosted runner from a repository. The token expires after one hour. Anyone with admin access to the repository can use this endpoint. GitHub Apps must have the `administration:write` repository permission to use this endpoint.\n\nRemove your self-hosted runner from a repository, replacing TOKEN with the remove token provided by this endpoint.\n\n",
+    "documentationUrl": "https://developer.github.com/v3/actions/self-hosted-runners/#create-a-remove-token-for-a-repository",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "owner",
+        "description": "owner parameter",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "repo",
+        "description": "repo parameter",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      {
+        "code": 201,
+        "description": "response",
+        "examples": [
+          {
+            "data": "{\"token\":\"AABF3JGZDX3P5PMEXLND6TS6FCWO6\",\"expires_at\":\"2020-01-29T12:13:35.123-08:00\"}"
+          }
+        ]
+      }
+    ],
+    "renamed": {
+      "before": { "scope": "actions", "id": "createRemoveToken" },
+      "after": { "scope": "actions", "id": "createRemoveTokenForRepo" },
+      "date": "2020-04-22",
+      "note": "\"actions/create-remove-token\" operation ID is now \"actions/create-remove-token-for-repo\""
+    }
+  },
+  {
+    "name": "Get a self-hosted runner for a repository",
+    "scope": "actions",
+    "id": "getSelfHostedRunnerForRepo",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/actions/runners/{runner_id}",
     "isDeprecated": false,
     "isLegacy": false,
-    "description": "Gets a specific self-hosted runner. Anyone with admin access to the repository can use this endpoint. GitHub Apps must have the `administration` permission to use this endpoint.",
-    "documentationUrl": "https://developer.github.com/v3/actions/self_hosted_runners/#get-a-self-hosted-runner",
+    "description": "Gets a specific self-hosted runner. Anyone with admin access to the repository can use this endpoint. GitHub Apps must have the `administration:read` repository permission to use this endpoint.",
+    "documentationUrl": "https://developer.github.com/v3/actions/self-hosted-runners/#get-a-self-hosted-runner-for-a-repository",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -13470,15 +13929,86 @@
     "renamed": null
   },
   {
-    "name": "Remove a self-hosted runner",
+    "name": "Get a self-hosted runner for a repository",
     "scope": "actions",
-    "id": "removeSelfHostedRunner",
+    "id": "getSelfHostedRunner",
+    "method": "GET",
+    "url": "/repos/{owner}/{repo}/actions/runners/{runner_id}",
+    "isDeprecated": false,
+    "isLegacy": false,
+    "description": "Gets a specific self-hosted runner. Anyone with admin access to the repository can use this endpoint. GitHub Apps must have the `administration:read` repository permission to use this endpoint.",
+    "documentationUrl": "https://developer.github.com/v3/actions/self-hosted-runners/#get-a-self-hosted-runner-for-a-repository",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "owner",
+        "description": "owner parameter",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "repo",
+        "description": "repo parameter",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "runner_id",
+        "description": "runner_id parameter",
+        "in": "PATH",
+        "type": "integer",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "examples": [
+          {
+            "data": "{\"id\":23,\"name\":\"MBP\",\"os\":\"macos\",\"status\":\"online\"}"
+          }
+        ]
+      }
+    ],
+    "renamed": {
+      "before": { "scope": "actions", "id": "getSelfHostedRunner" },
+      "after": { "scope": "actions", "id": "getSelfHostedRunnerForRepo" },
+      "date": "2020-04-22",
+      "note": "\"actions/get-self-hosted-runner\" operation ID is now \"actions/get-self-hosted-runner-for-repo\""
+    }
+  },
+  {
+    "name": "Delete a self-hosted runner from a repository",
+    "scope": "actions",
+    "id": "deleteSelfHostedRunnerFromRepo",
     "method": "DELETE",
     "url": "/repos/{owner}/{repo}/actions/runners/{runner_id}",
     "isDeprecated": false,
     "isLegacy": false,
-    "description": "Forces the removal of a self-hosted runner from a repository. You can use this endpoint to completely remove the runner when the machine you were using no longer exists. Anyone with admin access to the repository can use this endpoint. GitHub Apps must have the `administration` permission to use this endpoint.",
-    "documentationUrl": "https://developer.github.com/v3/actions/self_hosted_runners/#remove-a-self-hosted-runner",
+    "description": "Forces the removal of a self-hosted runner from a repository. You can use this endpoint to completely remove the runner when the machine you were using no longer exists. Anyone with admin access to the repository can use this endpoint. GitHub Apps must have the `administration:write` repository permission to use this endpoint.",
+    "documentationUrl": "https://developer.github.com/v3/actions/self-hosted-runners/#delete-a-self-hosted-runner-from-a-repository",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -13526,6 +14056,67 @@
     "renamed": null
   },
   {
+    "name": "Delete a self-hosted runner from a repository",
+    "scope": "actions",
+    "id": "removeSelfHostedRunner",
+    "method": "DELETE",
+    "url": "/repos/{owner}/{repo}/actions/runners/{runner_id}",
+    "isDeprecated": false,
+    "isLegacy": false,
+    "description": "Forces the removal of a self-hosted runner from a repository. You can use this endpoint to completely remove the runner when the machine you were using no longer exists. Anyone with admin access to the repository can use this endpoint. GitHub Apps must have the `administration:write` repository permission to use this endpoint.",
+    "documentationUrl": "https://developer.github.com/v3/actions/self-hosted-runners/#delete-a-self-hosted-runner-from-a-repository",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "owner",
+        "description": "owner parameter",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "repo",
+        "description": "repo parameter",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "runner_id",
+        "description": "runner_id parameter",
+        "in": "PATH",
+        "type": "integer",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [],
+    "renamed": {
+      "before": { "scope": "actions", "id": "removeSelfHostedRunner" },
+      "after": { "scope": "actions", "id": "deleteSelfHostedRunnerFromRepo" },
+      "date": "2020-04-22",
+      "note": "\"actions/remove-self-hosted-runner\" operation ID is now \"actions/delete-self-hosted-runner-from-repo\""
+    }
+  },
+  {
     "name": "List repository workflow runs",
     "scope": "actions",
     "id": "listRepoWorkflowRuns",
@@ -13534,7 +14125,7 @@
     "isDeprecated": false,
     "isLegacy": false,
     "description": "Lists all workflow runs for a repository. You can use parameters to narrow the list of results. For more information about using parameters, see [Parameters](https://developer.github.com/v3/#parameters).\n\nAnyone with read access to the repository can use this endpoint. GitHub Apps must have the `actions` permission to use this endpoint.",
-    "documentationUrl": "https://developer.github.com/v3/actions/workflow_runs/#list-repository-workflow-runs",
+    "documentationUrl": "https://developer.github.com/v3/actions/workflow-runs/#list-repository-workflow-runs",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -13665,7 +14256,7 @@
     "isDeprecated": false,
     "isLegacy": false,
     "description": "Gets a specific workflow run. Anyone with read access to the repository can use this endpoint. GitHub Apps must have the `actions` permission to use this endpoint.",
-    "documentationUrl": "https://developer.github.com/v3/actions/workflow_runs/#get-a-workflow-run",
+    "documentationUrl": "https://developer.github.com/v3/actions/workflow-runs/#get-a-workflow-run",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -13823,7 +14414,7 @@
     "isDeprecated": false,
     "isLegacy": false,
     "description": "Cancels a workflow run using its `id`. Anyone with write access to the repository can use this endpoint. GitHub Apps must have the `actions` permission to use this endpoint.",
-    "documentationUrl": "https://developer.github.com/v3/actions/workflow_runs/#cancel-a-workflow-run",
+    "documentationUrl": "https://developer.github.com/v3/actions/workflow-runs/#cancel-a-workflow-run",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -13879,7 +14470,7 @@
     "isDeprecated": false,
     "isLegacy": false,
     "description": "Lists jobs for a workflow run. Anyone with read access to the repository can use this endpoint. GitHub Apps must have the `actions` permission to use this endpoint. You can use parameters to narrow the list of results. For more information about using parameters, see [Parameters](https://developer.github.com/v3/#parameters).",
-    "documentationUrl": "https://developer.github.com/v3/actions/workflow_jobs/#list-jobs-for-a-workflow-run",
+    "documentationUrl": "https://developer.github.com/v3/actions/workflow-jobs/#list-jobs-for-a-workflow-run",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -13984,7 +14575,7 @@
     "isDeprecated": false,
     "isLegacy": false,
     "description": "Gets a redirect URL to download an archive of log files for a workflow run. This link expires after 1 minute. Look for `Location:` in the response header to find the URL for the download. Anyone with read access to the repository can use this endpoint. GitHub Apps must have the `actions` permission to use this endpoint.\n\nCall this endpoint using the `-v` flag, which enables verbose output and allows you to see the download URL in the header. To download the file into the current working directory, specify the filename using the `-o` flag.",
-    "documentationUrl": "https://developer.github.com/v3/actions/workflow_runs/#list-workflow-run-logs",
+    "documentationUrl": "https://developer.github.com/v3/actions/workflow-runs/#list-workflow-run-logs",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -14066,7 +14657,7 @@
     "isDeprecated": false,
     "isLegacy": false,
     "description": "Deletes all logs for a workflow run. Anyone with write access to the repository can use this endpoint. GitHub Apps must have the `actions` permission to use this endpoint.",
-    "documentationUrl": "https://developer.github.com/v3/actions/workflow_runs/#delete-workflow-run-logs",
+    "documentationUrl": "https://developer.github.com/v3/actions/workflow-runs/#delete-workflow-run-logs",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -14122,7 +14713,7 @@
     "isDeprecated": false,
     "isLegacy": false,
     "description": "Re-runs your workflow run using its `id`. Anyone with write access to the repository can use this endpoint. GitHub Apps must have the `actions` permission to use this endpoint.",
-    "documentationUrl": "https://developer.github.com/v3/actions/workflow_runs/#re-run-a-workflow",
+    "documentationUrl": "https://developer.github.com/v3/actions/workflow-runs/#re-run-a-workflow",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -14659,7 +15250,7 @@
     "isDeprecated": false,
     "isLegacy": false,
     "description": "List all workflow runs for a workflow. You can also replace `:workflow_id` with `:workflow_file_name`. For example, you could use `main.yml`. You can use parameters to narrow the list of results. For more information about using parameters, see [Parameters](https://developer.github.com/v3/#parameters).\n\nAnyone with read access to the repository can use this endpoint.",
-    "documentationUrl": "https://developer.github.com/v3/actions/workflow_runs/#list-workflow-runs",
+    "documentationUrl": "https://developer.github.com/v3/actions/workflow-runs/#list-workflow-runs",
     "previews": [],
     "headers": [],
     "parameters": [

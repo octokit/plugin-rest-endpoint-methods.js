@@ -51,4 +51,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/actions/workflow_jobs/#list-workflow-job-logs).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/actions/workflow-jobs/#list-workflow-job-logs).

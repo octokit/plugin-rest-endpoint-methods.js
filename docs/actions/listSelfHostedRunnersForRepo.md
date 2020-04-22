@@ -1,6 +1,6 @@
 # List self-hosted runners for a repository
 
-Lists all self-hosted runners for a repository. Anyone with admin access to the repository can use this endpoint. GitHub Apps must have the `administration` permission to use this endpoint.
+Lists all self-hosted runners for a repository. Anyone with admin access to the repository can use this endpoint. GitHub Apps must have the `administration:read` repository permission to use this endpoint.
 
 ```js
 octokit.actions.listSelfHostedRunnersForRepo({
@@ -43,4 +43,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/actions/self_hosted_runners/#list-self-hosted-runners-for-a-repository).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/actions/self-hosted-runners/#list-self-hosted-runners-for-a-repository).

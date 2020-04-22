@@ -1,5 +1,5 @@
 import { EndpointInterface, RequestInterface } from "@octokit/types";
-import { RestEndpointMethodTypes } from "./parameters-and-response-types";
+import { RestEndpointMethodTypes } from "./method-types";
 
 export type RestEndpointMethods = {
   actions: {
@@ -42,9 +42,12 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Returns a token that you can pass to the `config` script. The token expires after one hour. Anyone with admin access to the repository can use this endpoint. GitHub Apps must have the `administration` permission to use this endpoint.
+     * Returns a token that you can pass to the `config` script. The token expires after one hour. Anyone with admin access to the repository can use this endpoint. GitHub Apps must have the `administration:write` repository permission to use this endpoint.
      *
      * Configure your self-hosted runner, replacing TOKEN with the registration token provided by this endpoint.
+     *
+     *
+     * @deprecated octokit.actions.createRegistrationToken() has been renamed to octokit.actions.createRegistrationTokenForRepo() (2020-04-22)
      */
     createRegistrationToken: {
       (
@@ -56,15 +59,78 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Returns a token that you can pass to remove a self-hosted runner from a repository. The token expires after one hour. Anyone with admin access to the repository can use this endpoint. GitHub Apps must have the `administration` permission to use this endpoint.
+     * **Warning:** The self-hosted runners API for organizations is currently in public beta and subject to change.
+     *
+     * Returns a token that you can pass to the `config` script. The token expires after one hour. Anyone with admin access to the organization can use this endpoint. GitHub Apps must have the `self-hosted runners:write` organization permission to use this endpoint.
+     *
+     * Configure your self-hosted runner, replacing `TOKEN` with the registration token provided by this endpoint.
+     */
+    createRegistrationTokenForOrg: {
+      (
+        params?: RestEndpointMethodTypes["actions"]["createRegistrationTokenForOrg"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["actions"]["createRegistrationTokenForOrg"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Returns a token that you can pass to the `config` script. The token expires after one hour. Anyone with admin access to the repository can use this endpoint. GitHub Apps must have the `administration:write` repository permission to use this endpoint.
+     *
+     * Configure your self-hosted runner, replacing TOKEN with the registration token provided by this endpoint.
+     */
+    createRegistrationTokenForRepo: {
+      (
+        params?: RestEndpointMethodTypes["actions"]["createRegistrationTokenForRepo"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["actions"]["createRegistrationTokenForRepo"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Returns a token that you can pass to remove a self-hosted runner from a repository. The token expires after one hour. Anyone with admin access to the repository can use this endpoint. GitHub Apps must have the `administration:write` repository permission to use this endpoint.
      *
      * Remove your self-hosted runner from a repository, replacing TOKEN with the remove token provided by this endpoint.
+     *
+     *
+     * @deprecated octokit.actions.createRemoveToken() has been renamed to octokit.actions.createRemoveTokenForRepo() (2020-04-22)
      */
     createRemoveToken: {
       (
         params?: RestEndpointMethodTypes["actions"]["createRemoveToken"]["parameters"]
       ): Promise<
         RestEndpointMethodTypes["actions"]["createRemoveToken"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * **Warning:** The self-hosted runners API for organizations is currently in public beta and subject to change.
+     *
+     * Returns a token that you can pass to the `config` script to remove a self-hosted runner from an organization. The token expires after one hour. Anyone with admin access to the organization can use this endpoint. GitHub Apps must have the `self-hosted runners:write` organization permission to use this endpoint.
+     *
+     * To remove your self-hosted runner from an organization, replace `TOKEN` with the remove token provided by this endpoint.
+     */
+    createRemoveTokenForOrg: {
+      (
+        params?: RestEndpointMethodTypes["actions"]["createRemoveTokenForOrg"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["actions"]["createRemoveTokenForOrg"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Returns a token that you can pass to remove a self-hosted runner from a repository. The token expires after one hour. Anyone with admin access to the repository can use this endpoint. GitHub Apps must have the `administration:write` repository permission to use this endpoint.
+     *
+     * Remove your self-hosted runner from a repository, replacing TOKEN with the remove token provided by this endpoint.
+     */
+    createRemoveTokenForRepo: {
+      (
+        params?: RestEndpointMethodTypes["actions"]["createRemoveTokenForRepo"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["actions"]["createRemoveTokenForRepo"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -89,6 +155,32 @@ export type RestEndpointMethods = {
         params?: RestEndpointMethodTypes["actions"]["deleteSecretFromRepo"]["parameters"]
       ): Promise<
         RestEndpointMethodTypes["actions"]["deleteSecretFromRepo"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * **Warning:** The self-hosted runners API for organizations is currently in public beta and subject to change.
+     *
+     * Forces the removal of a self-hosted runner from an organization. You can use this endpoint to completely remove the runner when the machine you were using no longer exists. Anyone with admin access to the organization can use this endpoint. GitHub Apps must have the `self-hosted runners:write` organization permission to use this endpoint.
+     */
+    deleteSelfHostedRunnerFromOrg: {
+      (
+        params?: RestEndpointMethodTypes["actions"]["deleteSelfHostedRunnerFromOrg"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["actions"]["deleteSelfHostedRunnerFromOrg"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Forces the removal of a self-hosted runner from a repository. You can use this endpoint to completely remove the runner when the machine you were using no longer exists. Anyone with admin access to the repository can use this endpoint. GitHub Apps must have the `administration:write` repository permission to use this endpoint.
+     */
+    deleteSelfHostedRunnerFromRepo: {
+      (
+        params?: RestEndpointMethodTypes["actions"]["deleteSelfHostedRunnerFromRepo"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["actions"]["deleteSelfHostedRunnerFromRepo"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -152,13 +244,40 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Gets a specific self-hosted runner. Anyone with admin access to the repository can use this endpoint. GitHub Apps must have the `administration` permission to use this endpoint.
+     * Gets a specific self-hosted runner. Anyone with admin access to the repository can use this endpoint. GitHub Apps must have the `administration:read` repository permission to use this endpoint.
+     * @deprecated octokit.actions.getSelfHostedRunner() has been renamed to octokit.actions.getSelfHostedRunnerForRepo() (2020-04-22)
      */
     getSelfHostedRunner: {
       (
         params?: RestEndpointMethodTypes["actions"]["getSelfHostedRunner"]["parameters"]
       ): Promise<
         RestEndpointMethodTypes["actions"]["getSelfHostedRunner"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * **Warning:** The self-hosted runners API for organizations is currently in public beta and subject to change.
+     *
+     * Gets a specific self-hosted runner for an organization. Anyone with admin access to the organization can use this endpoint. GitHub Apps must have the `self-hosted runners:read` organization permission to use this endpoint.
+     */
+    getSelfHostedRunnerForOrg: {
+      (
+        params?: RestEndpointMethodTypes["actions"]["getSelfHostedRunnerForOrg"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["actions"]["getSelfHostedRunnerForOrg"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Gets a specific self-hosted runner. Anyone with admin access to the repository can use this endpoint. GitHub Apps must have the `administration:read` repository permission to use this endpoint.
+     */
+    getSelfHostedRunnerForRepo: {
+      (
+        params?: RestEndpointMethodTypes["actions"]["getSelfHostedRunnerForRepo"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["actions"]["getSelfHostedRunnerForRepo"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -210,7 +329,8 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Lists binaries for the self-hosted runner application that you can download and run. Anyone with admin access to the repository can use this endpoint. GitHub Apps must have the `administration` permission to use this endpoint.
+     * Lists binaries for the runner application that you can download and run. Anyone with admin access to the repository can use this endpoint. GitHub Apps must have the `administration:read` repository permission to use this endpoint.
+     * @deprecated octokit.actions.listDownloadsForSelfHostedRunnerApplication() has been renamed to octokit.actions.listRunnerApplicationsForRepo() (2020-04-22)
      */
     listDownloadsForSelfHostedRunnerApplication: {
       (
@@ -260,6 +380,32 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
+     * **Warning:** The self-hosted runners API for organizations is currently in public beta and subject to change.
+     *
+     * Lists binaries for the runner application that you can download and run. Anyone with admin access to the organization can use this endpoint. GitHub Apps must have the `self-hosted runners:read` organization permission to use this endpoint.
+     */
+    listRunnerApplicationsForOrg: {
+      (
+        params?: RestEndpointMethodTypes["actions"]["listRunnerApplicationsForOrg"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["actions"]["listRunnerApplicationsForOrg"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Lists binaries for the runner application that you can download and run. Anyone with admin access to the repository can use this endpoint. GitHub Apps must have the `administration:read` repository permission to use this endpoint.
+     */
+    listRunnerApplicationsForRepo: {
+      (
+        params?: RestEndpointMethodTypes["actions"]["listRunnerApplicationsForRepo"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["actions"]["listRunnerApplicationsForRepo"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
      * Lists all secrets available in a repository without revealing their encrypted values. Anyone with write access to the repository can use this endpoint. GitHub Apps must have the `secrets` permission to use this endpoint.
      */
     listSecretsForRepo: {
@@ -272,7 +418,21 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Lists all self-hosted runners for a repository. Anyone with admin access to the repository can use this endpoint. GitHub Apps must have the `administration` permission to use this endpoint.
+     * **Warning:** The self-hosted runners API for organizations is currently in public beta and subject to change.
+     *
+     * Lists all self-hosted runners for an organization. Anyone with admin access to the organization can use this endpoint. GitHub Apps must have the `self-hosted runners:read` organization permission to use this endpoint.
+     */
+    listSelfHostedRunnersForOrg: {
+      (
+        params?: RestEndpointMethodTypes["actions"]["listSelfHostedRunnersForOrg"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["actions"]["listSelfHostedRunnersForOrg"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Lists all self-hosted runners for a repository. Anyone with admin access to the repository can use this endpoint. GitHub Apps must have the `administration:read` repository permission to use this endpoint.
      */
     listSelfHostedRunnersForRepo: {
       (
@@ -350,7 +510,8 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Forces the removal of a self-hosted runner from a repository. You can use this endpoint to completely remove the runner when the machine you were using no longer exists. Anyone with admin access to the repository can use this endpoint. GitHub Apps must have the `administration` permission to use this endpoint.
+     * Forces the removal of a self-hosted runner from a repository. You can use this endpoint to completely remove the runner when the machine you were using no longer exists. Anyone with admin access to the repository can use this endpoint. GitHub Apps must have the `administration:write` repository permission to use this endpoint.
+     * @deprecated octokit.actions.removeSelfHostedRunner() has been renamed to octokit.actions.deleteSelfHostedRunnerFromRepo() (2020-04-22)
      */
     removeSelfHostedRunner: {
       (
