@@ -1,5 +1,5 @@
 import { EndpointInterface, RequestInterface } from "@octokit/types";
-import { RestEndpointMethodTypes } from "./method-types";
+import { RestEndpointMethodTypes } from "./parameters-and-response-types";
 
 export type RestEndpointMethods = {
   actions: {
@@ -45,8 +45,6 @@ export type RestEndpointMethods = {
      * Returns a token that you can pass to the `config` script. The token expires after one hour. Anyone with admin access to the repository can use this endpoint. GitHub Apps must have the `administration:write` repository permission to use this endpoint.
      *
      * Configure your self-hosted runner, replacing TOKEN with the registration token provided by this endpoint.
-     *
-     *
      * @deprecated octokit.actions.createRegistrationToken() has been renamed to octokit.actions.createRegistrationTokenForRepo() (2020-04-22)
      */
     createRegistrationToken: {
@@ -92,8 +90,6 @@ export type RestEndpointMethods = {
      * Returns a token that you can pass to remove a self-hosted runner from a repository. The token expires after one hour. Anyone with admin access to the repository can use this endpoint. GitHub Apps must have the `administration:write` repository permission to use this endpoint.
      *
      * Remove your self-hosted runner from a repository, replacing TOKEN with the remove token provided by this endpoint.
-     *
-     *
      * @deprecated octokit.actions.createRemoveToken() has been renamed to octokit.actions.createRemoveTokenForRepo() (2020-04-22)
      */
     createRemoveToken: {

@@ -24,16 +24,6 @@ octokit.repos.listPublic();
 The integer ID of the last repository that you've seen.
 
 </td></tr>
-<tr><td>per_page</td><td>no</td><td>
-
-Results per page (max 100)
-
-</td></tr>
-<tr><td>page</td><td>no</td><td>
-
-Page number of the results to fetch.
-
-</td></tr>
   </tbody>
 </table>
 
