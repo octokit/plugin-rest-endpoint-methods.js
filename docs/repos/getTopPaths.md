@@ -1,3 +1,11 @@
+---
+name: List paths
+example: octokit.repos.getTopPaths({ owner, repo })
+route: GET /repos/{owner}/{repo}/traffic/popular/paths
+scope: repos
+type: API method
+---
+
 # List paths
 
 Get the top 10 popular contents over the last 14 days.

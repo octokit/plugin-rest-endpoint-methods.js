@@ -1,3 +1,11 @@
+---
+name: List accounts for a plan (stubbed)
+example: octokit.apps.listAccountsUserOrOrgOnPlanStubbed({ plan_id })
+route: GET /marketplace_listing/stubbed/plans/{plan_id}/accounts
+scope: apps
+type: API method
+---
+
 # List accounts for a plan (stubbed)
 
 **Deprecated:** This method has been renamed to apps.listAccountsForPlanStubbed

@@ -1,3 +1,11 @@
+---
+name: Create organization invitation
+example: octokit.orgs.createInvitation({ org })
+route: POST /orgs/{org}/invitations
+scope: orgs
+type: API method
+---
+
 # Create organization invitation
 
 Invite people to an organization by using their GitHub user ID or their email address. In order to create invitations in an organization, the authenticated user must be an organization owner.

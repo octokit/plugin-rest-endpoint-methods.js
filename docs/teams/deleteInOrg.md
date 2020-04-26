@@ -1,3 +1,11 @@
+---
+name: Delete team
+example: octokit.teams.deleteInOrg({ org, team_slug })
+route: DELETE /orgs/{org}/teams/{team_slug}
+scope: teams
+type: API method
+---
+
 # Delete team
 
 To delete a team, the authenticated user must be an organization owner or team maintainer.

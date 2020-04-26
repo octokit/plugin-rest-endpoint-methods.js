@@ -1,3 +1,11 @@
+---
+name: Get contextual information about a user
+example: octokit.users.getContextForUser({ username })
+route: GET /users/{username}/hovercard
+scope: users
+type: API method
+---
+
 # Get contextual information about a user
 
 Provides hovercard information when authenticated through basic auth or OAuth with the `repo` scope. You can find out more about someone in relation to their pull requests, issues, repositories, and organizations.

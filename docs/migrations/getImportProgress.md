@@ -1,3 +1,11 @@
+---
+name: Get import progress
+example: octokit.migrations.getImportProgress({ owner, repo })
+route: GET /repos/{owner}/{repo}/import
+scope: migrations
+type: API method
+---
+
 # Get import progress
 
 View the progress of an import.

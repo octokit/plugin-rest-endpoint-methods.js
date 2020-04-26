@@ -1,3 +1,11 @@
+---
+name: List organization events for the authenticated user
+example: octokit.activity.listOrgEventsForAuthenticatedUser({ username, org })
+route: GET /users/{username}/events/orgs/{org}
+scope: activity
+type: API method
+---
+
 # List organization events for the authenticated user
 
 This is the user's organization dashboard. You must be authenticated as the user to view this.

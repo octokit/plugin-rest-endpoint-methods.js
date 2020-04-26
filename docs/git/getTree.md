@@ -1,3 +1,11 @@
+---
+name: Get a tree
+example: octokit.git.getTree({ owner, repo, tree_sha })
+route: GET /repos/{owner}/{repo}/git/trees/{tree_sha}
+scope: git
+type: API method
+---
+
 # Get a tree
 
 Returns a single tree using the SHA1 value for that tree.

@@ -1,3 +1,11 @@
+---
+name: List events for the authenticated user
+example: octokit.activity.listEventsForAuthenticatedUser({ username })
+route: GET /users/{username}/events
+scope: activity
+type: API method
+---
+
 # List events for the authenticated user
 
 If you are authenticated as the given user, you will see your private events. Otherwise, you'll only see public events.

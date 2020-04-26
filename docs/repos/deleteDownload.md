@@ -1,3 +1,11 @@
+---
+name: Delete a download
+example: octokit.repos.deleteDownload({ owner, repo, download_id })
+route: DELETE /repos/{owner}/{repo}/downloads/{download_id}
+scope: repos
+type: API method
+---
+
 # Delete a download
 
 ```js

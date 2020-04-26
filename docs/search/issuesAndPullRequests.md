@@ -1,3 +1,11 @@
+---
+name: Search issues and pull requests
+example: octokit.search.issuesAndPullRequests({ q })
+route: GET /search/issues
+scope: search
+type: API method
+---
+
 # Search issues and pull requests
 
 Find issues by state and keyword. This method returns up to 100 results [per page](https://developer.github.com/v3/#pagination).

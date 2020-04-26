@@ -1,3 +1,11 @@
+---
+name: Mark a thread as read
+example: octokit.activity.markThreadAsRead({ thread_id })
+route: PATCH /notifications/threads/{thread_id}
+scope: activity
+type: API method
+---
+
 # Mark a thread as read
 
 ```js

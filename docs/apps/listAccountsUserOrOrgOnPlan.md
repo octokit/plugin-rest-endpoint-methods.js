@@ -1,3 +1,11 @@
+---
+name: List accounts for a plan
+example: octokit.apps.listAccountsUserOrOrgOnPlan({ plan_id })
+route: GET /marketplace_listing/plans/{plan_id}/accounts
+scope: apps
+type: API method
+---
+
 # List accounts for a plan
 
 **Deprecated:** This method has been renamed to apps.listAccountsForPlan

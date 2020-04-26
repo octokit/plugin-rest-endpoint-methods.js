@@ -1,3 +1,11 @@
+---
+name: Create a release
+example: octokit.repos.createRelease({ owner, repo, tag_name })
+route: POST /repos/{owner}/{repo}/releases
+scope: repos
+type: API method
+---
+
 # Create a release
 
 Users with push access to the repository can create a release.

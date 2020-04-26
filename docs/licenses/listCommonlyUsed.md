@@ -1,3 +1,11 @@
+---
+name: List commonly used licenses
+example: octokit.licenses.listCommonlyUsed()
+route: GET /licenses
+scope: licenses
+type: API method
+---
+
 # List commonly used licenses
 
 ```js

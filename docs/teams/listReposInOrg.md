@@ -1,3 +1,11 @@
+---
+name: List team repos
+example: octokit.teams.listReposInOrg({ org, team_slug })
+route: GET /orgs/{org}/teams/{team_slug}/repos
+scope: teams
+type: API method
+---
+
 # List team repos
 
 Lists a team's repositories visible to the authenticated user.

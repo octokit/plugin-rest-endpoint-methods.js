@@ -1,3 +1,11 @@
+---
+name: Create a GPG key
+example: octokit.users.createGpgKey()
+route: POST /user/gpg_keys
+scope: users
+type: API method
+---
+
 # Create a GPG key
 
 Adds a GPG key to the authenticated user's GitHub account. Requires that you are authenticated via Basic Auth, or OAuth with at least `write:gpg_key` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).

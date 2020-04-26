@@ -1,3 +1,11 @@
+---
+name: List repositories for a user
+example: octokit.repos.listForUser({ username })
+route: GET /users/{username}/repos
+scope: repos
+type: API method
+---
+
 # List repositories for a user
 
 Lists public repositories for the specified user.

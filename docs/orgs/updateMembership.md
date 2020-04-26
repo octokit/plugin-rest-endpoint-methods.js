@@ -1,3 +1,11 @@
+---
+name: Edit your organization membership
+example: octokit.orgs.updateMembership({ org, state })
+route: PATCH /user/memberships/orgs/{org}
+scope: orgs
+type: API method
+---
+
 # Edit your organization membership
 
 ```js

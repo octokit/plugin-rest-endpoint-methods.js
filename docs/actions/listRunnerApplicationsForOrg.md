@@ -1,3 +1,11 @@
+---
+name: List runner applications for an organization
+example: octokit.actions.listRunnerApplicationsForOrg({ org })
+route: GET /orgs/{org}/actions/runners/downloads
+scope: actions
+type: API method
+---
+
 # List runner applications for an organization
 
 **Warning:** The self-hosted runners API for organizations is currently in public beta and subject to change.

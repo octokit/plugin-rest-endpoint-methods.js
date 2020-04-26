@@ -1,3 +1,11 @@
+---
+name: Delete a pending review
+example: octokit.pulls.deletePendingReview({ owner, repo, pull_number, review_id })
+route: DELETE /repos/{owner}/{repo}/pulls/{pull_number}/reviews/{review_id}
+scope: pulls
+type: API method
+---
+
 # Delete a pending review
 
 ```js

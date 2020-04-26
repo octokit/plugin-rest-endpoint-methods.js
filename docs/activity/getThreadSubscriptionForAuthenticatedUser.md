@@ -1,3 +1,11 @@
+---
+name: Get a thread subscription for the authenticated user
+example: octokit.activity.getThreadSubscriptionForAuthenticatedUser({ thread_id })
+route: GET /notifications/threads/{thread_id}/subscription
+scope: activity
+type: API method
+---
+
 # Get a thread subscription for the authenticated user
 
 This checks to see if the current user is subscribed to a thread. You can also [get a repository subscription](https://developer.github.com/v3/activity/watching/#get-a-repository-subscription).

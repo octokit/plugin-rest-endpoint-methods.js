@@ -1,3 +1,11 @@
+---
+name: Edit a comment
+example: octokit.pulls.updateComment({ owner, repo, comment_id, body })
+route: PATCH /repos/{owner}/{repo}/pulls/comments/{comment_id}
+scope: pulls
+type: API method
+---
+
 # Edit a comment
 
 **Note:** Multi-line comments on pull requests are currently in public beta and subject to change.

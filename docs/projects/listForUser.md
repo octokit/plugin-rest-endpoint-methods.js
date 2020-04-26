@@ -1,3 +1,11 @@
+---
+name: List user projects
+example: octokit.projects.listForUser({ username })
+route: GET /users/{username}/projects
+scope: projects
+type: API method
+---
+
 # List user projects
 
 ```js

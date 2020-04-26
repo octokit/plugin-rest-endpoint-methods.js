@@ -1,3 +1,11 @@
+---
+name: Get the status of an organization migration
+example: octokit.migrations.getStatusForOrg({ org, migration_id })
+route: GET /orgs/{org}/migrations/{migration_id}
+scope: migrations
+type: API method
+---
+
 # Get the status of an organization migration
 
 Fetches the status of a migration.

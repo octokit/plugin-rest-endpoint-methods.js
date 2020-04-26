@@ -1,3 +1,11 @@
+---
+name: List runner applications for a repository
+example: octokit.actions.listDownloadsForSelfHostedRunnerApplication({ owner, repo })
+route: GET /repos/{owner}/{repo}/actions/runners/downloads
+scope: actions
+type: API method
+---
+
 # List runner applications for a repository
 
 **Deprecated:** This method has been renamed to actions.listRunnerApplicationsForRepo

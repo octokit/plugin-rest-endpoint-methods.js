@@ -1,3 +1,11 @@
+---
+name: List repositories for the authenticated user
+example: octokit.repos.listForAuthenticatedUser()
+route: GET /user/repos
+scope: repos
+type: API method
+---
+
 # List repositories for the authenticated user
 
 Lists repositories that the authenticated user has explicit permission (`:read`, `:write`, or `:admin`) to access.

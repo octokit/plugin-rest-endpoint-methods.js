@@ -1,3 +1,11 @@
+---
+name: Create a comment
+example: octokit.pulls.createComment({ owner, repo, pull_number, body, commit_id, path })
+route: POST /repos/{owner}/{repo}/pulls/{pull_number}/comments
+scope: pulls
+type: API method
+---
+
 # Create a comment
 
 **Note:** Multi-line comments on pull requests are currently in public beta and subject to change.

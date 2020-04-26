@@ -1,3 +1,11 @@
+---
+name: List gists for the authenticated user
+example: octokit.gists.list()
+route: GET /gists
+scope: gists
+type: API method
+---
+
 # List gists for the authenticated user
 
 Lists the authenticated user's gists or if called anonymously, this endpoint returns all public gists:

@@ -1,3 +1,11 @@
+---
+name: List gists for a user
+example: octokit.gists.listPublicForUser({ username })
+route: GET /users/{username}/gists
+scope: gists
+type: API method
+---
+
 # List gists for a user
 
 **Deprecated:** This method has been renamed to gists.listForUser

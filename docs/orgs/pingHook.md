@@ -1,3 +1,11 @@
+---
+name: Ping a hook
+example: octokit.orgs.pingHook({ org, hook_id })
+route: POST /orgs/{org}/hooks/{hook_id}/pings
+scope: orgs
+type: API method
+---
+
 # Ping a hook
 
 This will trigger a [ping event](https://developer.github.com/webhooks/#ping-event) to be sent to the hook.

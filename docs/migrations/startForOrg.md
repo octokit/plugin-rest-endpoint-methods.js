@@ -1,3 +1,11 @@
+---
+name: Start an organization migration
+example: octokit.migrations.startForOrg({ org, repositories })
+route: POST /orgs/{org}/migrations
+scope: migrations
+type: API method
+---
+
 # Start an organization migration
 
 Initiates the generation of a migration archive.

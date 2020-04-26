@@ -1,3 +1,11 @@
+---
+name: Get the README
+example: octokit.repos.getReadme({ owner, repo })
+route: GET /repos/{owner}/{repo}/readme
+scope: repos
+type: API method
+---
+
 # Get the README
 
 Gets the preferred README for a repository.

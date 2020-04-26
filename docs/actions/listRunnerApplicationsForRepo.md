@@ -1,3 +1,11 @@
+---
+name: List runner applications for a repository
+example: octokit.actions.listRunnerApplicationsForRepo({ owner, repo })
+route: GET /repos/{owner}/{repo}/actions/runners/downloads
+scope: actions
+type: API method
+---
+
 # List runner applications for a repository
 
 Lists binaries for the runner application that you can download and run. Anyone with admin access to the repository can use this endpoint. GitHub Apps must have the `administration:read` repository permission to use this endpoint.

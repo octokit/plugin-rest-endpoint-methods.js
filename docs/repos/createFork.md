@@ -1,3 +1,11 @@
+---
+name: Create a fork
+example: octokit.repos.createFork({ owner, repo })
+route: POST /repos/{owner}/{repo}/forks
+scope: repos
+type: API method
+---
+
 # Create a fork
 
 Create a fork for the authenticated user.

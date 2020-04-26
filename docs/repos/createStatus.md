@@ -1,3 +1,11 @@
+---
+name: Create a status
+example: octokit.repos.createStatus({ owner, repo, sha, state })
+route: POST /repos/{owner}/{repo}/statuses/{sha}
+scope: repos
+type: API method
+---
+
 # Create a status
 
 Users with push access in a repository can create commit statuses for a given SHA.

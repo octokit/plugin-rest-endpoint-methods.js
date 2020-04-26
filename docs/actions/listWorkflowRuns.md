@@ -1,3 +1,11 @@
+---
+name: List workflow runs
+example: octokit.actions.listWorkflowRuns({ owner, repo, workflow_id })
+route: GET /repos/{owner}/{repo}/actions/workflows/{workflow_id}/runs
+scope: actions
+type: API method
+---
+
 # List workflow runs
 
 List all workflow runs for a workflow. You can also replace `:workflow_id` with `:workflow_file_name`. For example, you could use `main.yml`. You can use parameters to narrow the list of results. For more information about using parameters, see [Parameters](https://developer.github.com/v3/#parameters).

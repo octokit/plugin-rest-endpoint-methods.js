@@ -1,3 +1,11 @@
+---
+name: List user organizations
+example: octokit.orgs.listForUser({ username })
+route: GET /users/{username}/orgs
+scope: orgs
+type: API method
+---
+
 # List user organizations
 
 List [public organization memberships](https://help.github.com/articles/publicizing-or-concealing-organization-membership) for the specified user.

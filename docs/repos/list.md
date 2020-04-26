@@ -1,3 +1,11 @@
+---
+name: List repositories for the authenticated user
+example: octokit.repos.list()
+route: GET /user/repos
+scope: repos
+type: API method
+---
+
 # List repositories for the authenticated user
 
 **Deprecated:** This method has been renamed to repos.listForAuthenticatedUser

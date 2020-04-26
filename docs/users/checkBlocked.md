@@ -1,3 +1,11 @@
+---
+name: Check whether you've blocked a user
+example: octokit.users.checkBlocked({ username })
+route: GET /user/blocks/{username}
+scope: users
+type: API method
+---
+
 # Check whether you've blocked a user
 
 If the user is blocked:

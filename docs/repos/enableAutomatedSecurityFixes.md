@@ -1,3 +1,11 @@
+---
+name: Enable automated security fixes
+example: octokit.repos.enableAutomatedSecurityFixes({ owner, repo })
+route: PUT /repos/{owner}/{repo}/automated-security-fixes
+scope: repos
+type: API method
+---
+
 # Enable automated security fixes
 
 Enables automated security fixes for a repository. The authenticated user must have admin access to the repository. For more information, see "[Configuring automated security fixes](https://help.github.com/en/articles/configuring-automated-security-fixes)" in the GitHub Help documentation.

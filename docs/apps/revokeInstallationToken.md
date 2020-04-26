@@ -1,3 +1,11 @@
+---
+name: Revoke an installation token
+example: octokit.apps.revokeInstallationToken()
+route: DELETE /installation/token
+scope: apps
+type: API method
+---
+
 # Revoke an installation token
 
 Revokes the installation token you're using to authenticate as an installation and access this endpoint.

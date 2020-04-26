@@ -1,3 +1,11 @@
+---
+name: Get feeds
+example: octokit.activity.getFeeds()
+route: GET /feeds
+scope: activity
+type: API method
+---
+
 # Get feeds
 
 GitHub provides several timeline resources in [Atom](<http://en.wikipedia.org/wiki/Atom_(standard)>) format. The Feeds API lists all the feeds available to the authenticated user:

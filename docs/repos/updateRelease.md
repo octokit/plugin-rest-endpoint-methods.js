@@ -1,3 +1,11 @@
+---
+name: Edit a release
+example: octokit.repos.updateRelease({ owner, repo, release_id })
+route: PATCH /repos/{owner}/{repo}/releases/{release_id}
+scope: repos
+type: API method
+---
+
 # Edit a release
 
 Users with push access to the repository can edit a release.

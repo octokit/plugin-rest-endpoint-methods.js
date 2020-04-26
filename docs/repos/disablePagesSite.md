@@ -1,3 +1,11 @@
+---
+name: Disable a Pages site
+example: octokit.repos.disablePagesSite({ owner, repo })
+route: DELETE /repos/{owner}/{repo}/pages
+scope: repos
+type: API method
+---
+
 # Disable a Pages site
 
 ```js

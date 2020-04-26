@@ -1,3 +1,11 @@
+---
+name: Create a remove token for an organization
+example: octokit.actions.createRemoveTokenForOrg({ org })
+route: POST /orgs/{org}/actions/runners/remove-token
+scope: actions
+type: API method
+---
+
 # Create a remove token for an organization
 
 **Warning:** The self-hosted runners API for organizations is currently in public beta and subject to change.

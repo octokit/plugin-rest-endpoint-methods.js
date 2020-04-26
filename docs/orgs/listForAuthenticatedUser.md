@@ -1,3 +1,11 @@
+---
+name: List your organizations
+example: octokit.orgs.listForAuthenticatedUser()
+route: GET /user/orgs
+scope: orgs
+type: API method
+---
+
 # List your organizations
 
 List organizations for the authenticated user.

@@ -1,3 +1,11 @@
+---
+name: Get a single GPG key
+example: octokit.users.getGpgKey({ gpg_key_id })
+route: GET /user/gpg_keys/{gpg_key_id}
+scope: users
+type: API method
+---
+
 # Get a single GPG key
 
 View extended details for a single GPG key. Requires that you are authenticated via Basic Auth or via OAuth with at least `read:gpg_key` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).

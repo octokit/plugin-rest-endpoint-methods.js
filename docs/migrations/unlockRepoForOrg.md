@@ -1,3 +1,11 @@
+---
+name: Unlock an organization repository
+example: octokit.migrations.unlockRepoForOrg({ org, migration_id, repo_name })
+route: DELETE /orgs/{org}/migrations/{migration_id}/repos/{repo_name}/lock
+scope: migrations
+type: API method
+---
+
 # Unlock an organization repository
 
 Unlocks a repository that was locked for migration. You should unlock each migrated repository and [delete them](https://developer.github.com/v3/repos/#delete-a-repository) when the migration is complete and you no longer need the source data.

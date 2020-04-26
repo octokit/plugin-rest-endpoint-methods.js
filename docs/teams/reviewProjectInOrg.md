@@ -1,3 +1,11 @@
+---
+name: Review a team project
+example: octokit.teams.reviewProjectInOrg({ org, team_slug, project_id })
+route: GET /orgs/{org}/teams/{team_slug}/projects/{project_id}
+scope: teams
+type: API method
+---
+
 # Review a team project
 
 Checks whether a team has `read`, `write`, or `admin` permissions for an organization project. The response includes projects inherited from a parent team.

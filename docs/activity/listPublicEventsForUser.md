@@ -1,3 +1,11 @@
+---
+name: List public events for a user
+example: octokit.activity.listPublicEventsForUser({ username })
+route: GET /users/{username}/events/public
+scope: activity
+type: API method
+---
+
 # List public events for a user
 
 ```js

@@ -1,3 +1,11 @@
+---
+name: List repository workflow runs
+example: octokit.actions.listRepoWorkflowRuns({ owner, repo })
+route: GET /repos/{owner}/{repo}/actions/runs
+scope: actions
+type: API method
+---
+
 # List repository workflow runs
 
 Lists all workflow runs for a repository. You can use parameters to narrow the list of results. For more information about using parameters, see [Parameters](https://developer.github.com/v3/#parameters).

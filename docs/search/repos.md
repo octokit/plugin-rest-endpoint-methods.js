@@ -1,3 +1,11 @@
+---
+name: Search repositories
+example: octokit.search.repos({ q })
+route: GET /search/repositories
+scope: search
+type: API method
+---
+
 # Search repositories
 
 Find repositories via various criteria. This method returns up to 100 results [per page](https://developer.github.com/v3/#pagination).

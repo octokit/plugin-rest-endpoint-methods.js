@@ -1,3 +1,11 @@
+---
+name: List installations
+example: octokit.apps.listInstallations()
+route: GET /app/installations
+scope: apps
+type: API method
+---
+
 # List installations
 
 You must use a [JWT](https://developer.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint.

@@ -1,3 +1,11 @@
+---
+name: Create a label
+example: octokit.issues.createLabel({ owner, repo, name, color })
+route: POST /repos/{owner}/{repo}/labels
+scope: issues
+type: API method
+---
+
 # Create a label
 
 ```js

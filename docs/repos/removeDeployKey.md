@@ -1,3 +1,11 @@
+---
+name: Remove a deploy key
+example: octokit.repos.removeDeployKey({ owner, repo, key_id })
+route: DELETE /repos/{owner}/{repo}/keys/{key_id}
+scope: repos
+type: API method
+---
+
 # Remove a deploy key
 
 ```js

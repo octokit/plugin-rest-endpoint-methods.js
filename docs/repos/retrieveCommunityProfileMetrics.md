@@ -1,3 +1,11 @@
+---
+name: Retrieve community profile metrics
+example: octokit.repos.retrieveCommunityProfileMetrics({ owner, repo })
+route: GET /repos/{owner}/{repo}/community/profile
+scope: repos
+type: API method
+---
+
 # Retrieve community profile metrics
 
 This endpoint will return all community profile metrics, including an overall health score, repository description, the presence of documentation, detected code of conduct, detected license, and the presence of ISSUE_TEMPLATE, PULL_REQUEST_TEMPLATE, README, and CONTRIBUTING files.

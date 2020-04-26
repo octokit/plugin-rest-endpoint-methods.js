@@ -1,3 +1,11 @@
+---
+name: Lock an issue
+example: octokit.issues.lock({ owner, repo, issue_number })
+route: PUT /repos/{owner}/{repo}/issues/{issue_number}/lock
+scope: issues
+type: API method
+---
+
 # Lock an issue
 
 Users with push access can lock an issue or pull request's conversation.

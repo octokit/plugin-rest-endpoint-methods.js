@@ -1,3 +1,11 @@
+---
+name: Replace all labels for an issue
+example: octokit.issues.replaceAllLabels({ owner, repo, issue_number })
+route: PUT /repos/{owner}/{repo}/issues/{issue_number}/labels
+scope: issues
+type: API method
+---
+
 # Replace all labels for an issue
 
 ```js

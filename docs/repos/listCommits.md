@@ -1,3 +1,11 @@
+---
+name: List commits on a repository
+example: octokit.repos.listCommits({ owner, repo })
+route: GET /repos/{owner}/{repo}/commits
+scope: repos
+type: API method
+---
+
 # List commits on a repository
 
 **Signature verification object**

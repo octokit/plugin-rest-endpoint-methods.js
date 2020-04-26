@@ -1,3 +1,11 @@
+---
+name: List hooks
+example: octokit.orgs.listHooks({ org })
+route: GET /orgs/{org}/hooks
+scope: orgs
+type: API method
+---
+
 # List hooks
 
 ```js

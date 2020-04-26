@@ -1,3 +1,11 @@
+---
+name: Create a commit
+example: octokit.git.createCommit({ owner, repo, message, tree, parents })
+route: POST /repos/{owner}/{repo}/git/commits
+scope: git
+type: API method
+---
+
 # Create a commit
 
 Creates a new Git [commit object](https://git-scm.com/book/en/v1/Git-Internals-Git-Objects#Commit-Objects).

@@ -1,3 +1,11 @@
+---
+name: Star a repository for the authenticated user
+example: octokit.activity.starRepo({ owner, repo })
+route: PUT /user/starred/{owner}/{repo}
+scope: activity
+type: API method
+---
+
 # Star a repository for the authenticated user
 
 **Deprecated:** This method has been renamed to activity.starRepoForAuthenticatedUser

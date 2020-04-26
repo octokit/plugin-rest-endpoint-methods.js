@@ -1,3 +1,11 @@
+---
+name: Get team membership
+example: octokit.teams.getMembershipInOrg({ org, team_slug, username })
+route: GET /orgs/{org}/teams/{team_slug}/memberships/{username}
+scope: teams
+type: API method
+---
+
 # Get team membership
 
 Team members will include the members of child teams.

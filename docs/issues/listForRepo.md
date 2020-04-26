@@ -1,3 +1,11 @@
+---
+name: List repository issues
+example: octokit.issues.listForRepo({ owner, repo })
+route: GET /repos/{owner}/{repo}/issues
+scope: issues
+type: API method
+---
+
 # List repository issues
 
 List issues in a repository.

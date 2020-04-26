@@ -1,3 +1,11 @@
+---
+name: List forks
+example: octokit.repos.listForks({ owner, repo })
+route: GET /repos/{owner}/{repo}/forks
+scope: repos
+type: API method
+---
+
 # List forks
 
 ```js

@@ -1,3 +1,11 @@
+---
+name: Get
+example: octokit.meta.get()
+route: GET /meta
+scope: meta
+type: API method
+---
+
 # Get
 
 This endpoint provides a list of GitHub's IP addresses. For more information, see "[About GitHub's IP addresses](https://help.github.com/articles/about-github-s-ip-addresses/)."

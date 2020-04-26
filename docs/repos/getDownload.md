@@ -1,3 +1,11 @@
+---
+name: Get a single download
+example: octokit.repos.getDownload({ owner, repo, download_id })
+route: GET /repos/{owner}/{repo}/downloads/{download_id}
+scope: repos
+type: API method
+---
+
 # Get a single download
 
 ```js

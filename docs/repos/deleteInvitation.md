@@ -1,3 +1,11 @@
+---
+name: Delete a repository invitation
+example: octokit.repos.deleteInvitation({ owner, repo, invitation_id })
+route: DELETE /repos/{owner}/{repo}/invitations/{invitation_id}
+scope: repos
+type: API method
+---
+
 # Delete a repository invitation
 
 ```js

@@ -1,3 +1,11 @@
+---
+name: Create reaction for a commit comment
+example: octokit.reactions.createForCommitComment({ owner, repo, comment_id, content })
+route: POST /repos/{owner}/{repo}/comments/{comment_id}/reactions
+scope: reactions
+type: API method
+---
+
 # Create reaction for a commit comment
 
 Create a reaction to a [commit comment](https://developer.github.com/v3/repos/comments/). A response with a `Status: 200 OK` means that you already added the reaction type to this commit comment.

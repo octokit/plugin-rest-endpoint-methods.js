@@ -1,3 +1,11 @@
+---
+name: List gist commits
+example: octokit.gists.listCommits({ gist_id })
+route: GET /gists/{gist_id}/commits
+scope: gists
+type: API method
+---
+
 # List gist commits
 
 ```js

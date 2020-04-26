@@ -1,3 +1,11 @@
+---
+name: List plans
+example: octokit.apps.listPlans()
+route: GET /marketplace_listing/plans
+scope: apps
+type: API method
+---
+
 # List plans
 
 Lists all plans that are part of your GitHub Marketplace listing.

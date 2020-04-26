@@ -1,3 +1,11 @@
+---
+name: List events for the authenticated user
+example: octokit.activity.listEventsForUser({ username })
+route: GET /users/{username}/events
+scope: activity
+type: API method
+---
+
 # List events for the authenticated user
 
 **Deprecated:** This method has been renamed to activity.listEventsForAuthenticatedUser

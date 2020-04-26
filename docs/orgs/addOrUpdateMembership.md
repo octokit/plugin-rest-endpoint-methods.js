@@ -1,3 +1,11 @@
+---
+name: Add or update organization membership
+example: octokit.orgs.addOrUpdateMembership({ org, username })
+route: PUT /orgs/{org}/memberships/{username}
+scope: orgs
+type: API method
+---
+
 # Add or update organization membership
 
 Only authenticated organization owners can add a member to the organization or update the member's role.

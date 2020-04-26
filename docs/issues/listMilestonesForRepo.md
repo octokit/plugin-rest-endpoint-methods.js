@@ -1,3 +1,11 @@
+---
+name: List milestones for a repository
+example: octokit.issues.listMilestonesForRepo({ owner, repo })
+route: GET /repos/{owner}/{repo}/milestones
+scope: issues
+type: API method
+---
+
 # List milestones for a repository
 
 ```js

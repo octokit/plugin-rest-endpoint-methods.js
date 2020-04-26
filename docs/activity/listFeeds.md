@@ -1,3 +1,11 @@
+---
+name: Get feeds
+example: octokit.activity.listFeeds()
+route: GET /feeds
+scope: activity
+type: API method
+---
+
 # Get feeds
 
 **Deprecated:** This method has been renamed to activity.getFeeds

@@ -1,3 +1,11 @@
+---
+name: Delete an issue comment reaction
+example: octokit.reactions.deleteForIssueComment({ owner, repo, comment_id, reaction_id })
+route: DELETE /repos/{owner}/{repo}/issues/comments/{comment_id}/reactions/{reaction_id}
+scope: reactions
+type: API method
+---
+
 # Delete an issue comment reaction
 
 **Note:** You can also specify a repository by `repository_id` using the route `DELETE delete /repositories/:repository_id/issues/comments/:comment_id/reactions/:reaction_id`.

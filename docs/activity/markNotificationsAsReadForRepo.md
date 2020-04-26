@@ -1,3 +1,11 @@
+---
+name: Mark repository notifications as read
+example: octokit.activity.markNotificationsAsReadForRepo({ owner, repo })
+route: PUT /repos/{owner}/{repo}/notifications
+scope: activity
+type: API method
+---
+
 # Mark repository notifications as read
 
 **Deprecated:** This method has been renamed to activity.markRepoNotificationsAsRead

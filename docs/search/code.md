@@ -1,3 +1,11 @@
+---
+name: Search code
+example: octokit.search.code({ q })
+route: GET /search/code
+scope: search
+type: API method
+---
+
 # Search code
 
 Find file contents via various criteria. This method returns up to 100 results [per page](https://developer.github.com/v3/#pagination).

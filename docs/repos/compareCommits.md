@@ -1,3 +1,11 @@
+---
+name: Compare two commits
+example: octokit.repos.compareCommits({ owner, repo, base, head })
+route: GET /repos/{owner}/{repo}/compare/{base}...{head}
+scope: repos
+type: API method
+---
+
 # Compare two commits
 
 Both `:base` and `:head` must be branch names in `:repo`. To compare branches across other repositories in the same network as `:repo`, use the format `<USERNAME>:branch`.

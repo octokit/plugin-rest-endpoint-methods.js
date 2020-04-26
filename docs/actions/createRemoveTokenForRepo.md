@@ -1,3 +1,11 @@
+---
+name: Create a remove token for a repository
+example: octokit.actions.createRemoveTokenForRepo({ owner, repo })
+route: POST /repos/{owner}/{repo}/actions/runners/remove-token
+scope: actions
+type: API method
+---
+
 # Create a remove token for a repository
 
 Returns a token that you can pass to remove a self-hosted runner from a repository. The token expires after one hour. Anyone with admin access to the repository can use this endpoint. GitHub Apps must have the `administration:write` repository permission to use this endpoint.

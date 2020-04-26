@@ -1,3 +1,11 @@
+---
+name: List team projects
+example: octokit.teams.listProjectsInOrg({ org, team_slug })
+route: GET /orgs/{org}/teams/{team_slug}/projects
+scope: teams
+type: API method
+---
+
 # List team projects
 
 Lists the organization projects for a team.

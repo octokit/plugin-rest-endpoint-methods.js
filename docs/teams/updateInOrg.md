@@ -1,3 +1,11 @@
+---
+name: Edit team
+example: octokit.teams.updateInOrg({ org, team_slug, name })
+route: PATCH /orgs/{org}/teams/{team_slug}
+scope: teams
+type: API method
+---
+
 # Edit team
 
 To edit a team, the authenticated user must either be an organization owner or a team maintainer.

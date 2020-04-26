@@ -1,3 +1,11 @@
+---
+name: List blocked users
+example: octokit.users.listBlocked()
+route: GET /user/blocks
+scope: users
+type: API method
+---
+
 # List blocked users
 
 List the users you've blocked on your personal account.

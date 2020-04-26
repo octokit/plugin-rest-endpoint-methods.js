@@ -1,3 +1,11 @@
+---
+name: Replace all repository topics
+example: octokit.repos.replaceAllTopics({ owner, repo, names })
+route: PUT /repos/{owner}/{repo}/topics
+scope: repos
+type: API method
+---
+
 # Replace all repository topics
 
 ```js

@@ -1,3 +1,11 @@
+---
+name: Unfollow a user
+example: octokit.users.unfollow({ username })
+route: DELETE /user/following/{username}
+scope: users
+type: API method
+---
+
 # Unfollow a user
 
 Unfollowing a user requires the user to be logged in and authenticated with basic auth or OAuth with the `user:follow` scope.

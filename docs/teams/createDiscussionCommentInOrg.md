@@ -1,3 +1,11 @@
+---
+name: Create a comment
+example: octokit.teams.createDiscussionCommentInOrg({ org, team_slug, discussion_number, body })
+route: POST /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments
+scope: teams
+type: API method
+---
+
 # Create a comment
 
 Creates a new comment on a team discussion. OAuth access tokens require the `write:discussion` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).

@@ -1,3 +1,11 @@
+---
+name: Delete a hook
+example: octokit.orgs.deleteHook({ org, hook_id })
+route: DELETE /orgs/{org}/hooks/{hook_id}
+scope: orgs
+type: API method
+---
+
 # Delete a hook
 
 ```js

@@ -1,3 +1,11 @@
+---
+name: Create or update a secret for a repository
+example: octokit.actions.createOrUpdateSecretForRepo({ owner, repo, name })
+route: PUT /repos/{owner}/{repo}/actions/secrets/{name}
+scope: actions
+type: API method
+---
+
 # Create or update a secret for a repository
 
 Creates or updates a secret with an encrypted value. Encrypt your secret using [LibSodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages). Anyone with write access to the repository can use this endpoint. GitHub Apps must have the `secrets` permission to use this endpoint.

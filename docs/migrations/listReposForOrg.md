@@ -1,3 +1,11 @@
+---
+name: List repositories in an organization migration
+example: octokit.migrations.listReposForOrg({ org, migration_id })
+route: GET /orgs/{org}/migrations/{migration_id}/repositories
+scope: migrations
+type: API method
+---
+
 # List repositories in an organization migration
 
 List all the repositories for this organization migration.

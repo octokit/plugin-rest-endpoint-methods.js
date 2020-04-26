@@ -1,3 +1,11 @@
+---
+name: Create a deployment status
+example: octokit.repos.createDeploymentStatus({ owner, repo, deployment_id, state })
+route: POST /repos/{owner}/{repo}/deployments/{deployment_id}/statuses
+scope: repos
+type: API method
+---
+
 # Create a deployment status
 
 Users with `push` access can create deployment statuses for a given deployment.

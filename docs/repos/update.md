@@ -1,3 +1,11 @@
+---
+name: Update a repository
+example: octokit.repos.update({ owner, repo })
+route: PATCH /repos/{owner}/{repo}
+scope: repos
+type: API method
+---
+
 # Update a repository
 
 **Note**: To edit a repository's topics, use the [Replace all repository topics](https://developer.github.com/v3/repos/#replace-all-repository-topics) endpoint.

@@ -1,3 +1,11 @@
+---
+name: Delete an installation
+example: octokit.apps.deleteInstallation({ installation_id })
+route: DELETE /app/installations/{installation_id}
+scope: apps
+type: API method
+---
+
 # Delete an installation
 
 Uninstalls a GitHub App on a user, organization, or business account.

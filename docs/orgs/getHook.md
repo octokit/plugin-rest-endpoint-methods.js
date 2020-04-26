@@ -1,3 +1,11 @@
+---
+name: Get single hook
+example: octokit.orgs.getHook({ org, hook_id })
+route: GET /orgs/{org}/hooks/{hook_id}
+scope: orgs
+type: API method
+---
+
 # Get single hook
 
 ```js

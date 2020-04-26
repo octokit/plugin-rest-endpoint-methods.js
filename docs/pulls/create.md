@@ -1,3 +1,11 @@
+---
+name: Create a pull request
+example: octokit.pulls.create({ owner, repo, title, head, base })
+route: POST /repos/{owner}/{repo}/pulls
+scope: pulls
+type: API method
+---
+
 # Create a pull request
 
 Draft pull requests are available in public repositories with GitHub Free and GitHub Free for organizations, GitHub Pro, and legacy per-repository billing plans, and in public and private repositories with GitHub Team and GitHub Enterprise Cloud. For more information, see [GitHub's products](https://help.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.

@@ -1,3 +1,11 @@
+---
+name: Download a user migration archive
+example: octokit.migrations.getArchiveForAuthenticatedUser({ migration_id })
+route: GET /user/migrations/{migration_id}/archive
+scope: migrations
+type: API method
+---
+
 # Download a user migration archive
 
 Fetches the URL to download the migration archive as a `tar.gz` file. Depending on the resources your repository uses, the migration archive can contain JSON files with data for these objects:

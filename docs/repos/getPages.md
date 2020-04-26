@@ -1,3 +1,11 @@
+---
+name: Get information about a Pages site
+example: octokit.repos.getPages({ owner, repo })
+route: GET /repos/{owner}/{repo}/pages
+scope: repos
+type: API method
+---
+
 # Get information about a Pages site
 
 ```js

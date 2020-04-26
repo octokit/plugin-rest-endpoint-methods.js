@@ -1,3 +1,11 @@
+---
+name: List comments
+example: octokit.teams.listDiscussionCommentsInOrg({ org, team_slug, discussion_number })
+route: GET /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments
+scope: teams
+type: API method
+---
+
 # List comments
 
 List all comments on a team discussion. OAuth access tokens require the `read:discussion` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).

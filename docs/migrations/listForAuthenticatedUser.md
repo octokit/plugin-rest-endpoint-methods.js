@@ -1,3 +1,11 @@
+---
+name: List user migrations
+example: octokit.migrations.listForAuthenticatedUser()
+route: GET /user/migrations
+scope: migrations
+type: API method
+---
+
 # List user migrations
 
 Lists all migrations a user has started.

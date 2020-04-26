@@ -1,3 +1,11 @@
+---
+name: Search topics
+example: octokit.search.topics({ q })
+route: GET /search/topics
+scope: search
+type: API method
+---
+
 # Search topics
 
 Find topics via various criteria. Results are sorted by best match. This method returns up to 100 results [per page](https://developer.github.com/v3/#pagination).

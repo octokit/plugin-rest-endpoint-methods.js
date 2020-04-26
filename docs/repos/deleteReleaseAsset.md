@@ -1,3 +1,11 @@
+---
+name: Delete a release asset
+example: octokit.repos.deleteReleaseAsset({ owner, repo, asset_id })
+route: DELETE /repos/{owner}/{repo}/releases/assets/{asset_id}
+scope: repos
+type: API method
+---
+
 # Delete a release asset
 
 ```js

@@ -1,3 +1,11 @@
+---
+name: Update existing import
+example: octokit.migrations.updateImport({ owner, repo })
+route: PATCH /repos/{owner}/{repo}/import
+scope: migrations
+type: API method
+---
+
 # Update existing import
 
 An import can be updated with credentials or a project choice by passing in the appropriate parameters in this API request. If no parameters are provided, the import will be restarted.

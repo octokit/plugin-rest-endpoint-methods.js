@@ -1,3 +1,11 @@
+---
+name: List email addresses for a user
+example: octokit.users.listEmails()
+route: GET /user/emails
+scope: users
+type: API method
+---
+
 # List email addresses for a user
 
 Lists all of your email addresses, and specifies which one is visible to the public. This endpoint is accessible with the `user:email` scope.

@@ -1,3 +1,11 @@
+---
+name: Get an individual license
+example: octokit.licenses.get({ license })
+route: GET /licenses/{license}
+scope: licenses
+type: API method
+---
+
 # Get an individual license
 
 ```js

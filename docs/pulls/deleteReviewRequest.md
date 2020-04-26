@@ -1,3 +1,11 @@
+---
+name: Delete a review request
+example: octokit.pulls.deleteReviewRequest({ owner, repo, pull_number })
+route: DELETE /repos/{owner}/{repo}/pulls/{pull_number}/requested_reviewers
+scope: pulls
+type: API method
+---
+
 # Delete a review request
 
 ```js

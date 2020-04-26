@@ -1,3 +1,11 @@
+---
+name: Create a hook
+example: octokit.orgs.createHook({ org, name, config, config.url })
+route: POST /orgs/{org}/hooks
+scope: orgs
+type: API method
+---
+
 # Create a hook
 
 Here's how you can create a hook that posts payloads in JSON format:

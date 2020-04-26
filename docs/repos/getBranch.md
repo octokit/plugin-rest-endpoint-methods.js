@@ -1,3 +1,11 @@
+---
+name: Get branch
+example: octokit.repos.getBranch({ owner, repo, branch })
+route: GET /repos/{owner}/{repo}/branches/{branch}
+scope: repos
+type: API method
+---
+
 # Get branch
 
 ```js

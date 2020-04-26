@@ -1,3 +1,11 @@
+---
+name: Check whether a user is blocked from an organization
+example: octokit.orgs.checkBlockedUser({ org, username })
+route: GET /orgs/{org}/blocks/{username}
+scope: orgs
+type: API method
+---
+
 # Check whether a user is blocked from an organization
 
 If the user is blocked:

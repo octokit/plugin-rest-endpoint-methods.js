@@ -1,3 +1,11 @@
+---
+name: Get a secret
+example: octokit.actions.getSecret({ owner, repo, name })
+route: GET /repos/{owner}/{repo}/actions/secrets/{name}
+scope: actions
+type: API method
+---
+
 # Get a secret
 
 Gets a single secret without revealing its encrypted value. Anyone with write access to the repository can use this endpoint. GitHub Apps must have the `secrets` permission to use this endpoint.

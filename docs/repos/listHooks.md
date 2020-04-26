@@ -1,3 +1,11 @@
+---
+name: List hooks
+example: octokit.repos.listHooks({ owner, repo })
+route: GET /repos/{owner}/{repo}/hooks
+scope: repos
+type: API method
+---
+
 # List hooks
 
 ```js

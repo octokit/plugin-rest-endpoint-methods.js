@@ -1,3 +1,11 @@
+---
+name: Download an organization migration archive
+example: octokit.migrations.downloadArchiveForOrg({ org, migration_id })
+route: GET /orgs/{org}/migrations/{migration_id}/archive
+scope: migrations
+type: API method
+---
+
 # Download an organization migration archive
 
 Fetches the URL to a migration archive.

@@ -1,3 +1,11 @@
+---
+name: Create a content attachment
+example: octokit.apps.createContentAttachment({ content_reference_id, title, body })
+route: POST /content_references/{content_reference_id}/attachments
+scope: apps
+type: API method
+---
+
 # Create a content attachment
 
 Creates an attachment under a content reference URL in the body or comment of an issue or pull request. Use the `id` of the content reference from the [`content_reference` event](https://developer.github.com/v3/activity/events/types/#contentreferenceevent) to create an attachment.

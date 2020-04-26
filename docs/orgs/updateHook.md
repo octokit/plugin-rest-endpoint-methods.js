@@ -1,3 +1,11 @@
+---
+name: Edit a hook
+example: octokit.orgs.updateHook({ org, hook_id, config.url })
+route: PATCH /orgs/{org}/hooks/{hook_id}
+scope: orgs
+type: API method
+---
+
 # Edit a hook
 
 ```js

@@ -1,3 +1,11 @@
+---
+name: Remove assignees from an issue
+example: octokit.issues.removeAssignees({ owner, repo, issue_number })
+route: DELETE /repos/{owner}/{repo}/issues/{issue_number}/assignees
+scope: issues
+type: API method
+---
+
 # Remove assignees from an issue
 
 Removes one or more assignees from an issue.

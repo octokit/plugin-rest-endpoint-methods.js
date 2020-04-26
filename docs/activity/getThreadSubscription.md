@@ -1,3 +1,11 @@
+---
+name: Mark notifications as read
+example: octokit.activity.getThreadSubscription()
+route: PUT /notifications
+scope: activity
+type: API method
+---
+
 # Mark notifications as read
 
 **Deprecated:** This method has been renamed to activity.getThreadSubscriptionForAuthenticatedUser

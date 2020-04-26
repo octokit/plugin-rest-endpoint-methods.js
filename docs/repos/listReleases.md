@@ -1,3 +1,11 @@
+---
+name: List releases for a repository
+example: octokit.repos.listReleases({ owner, repo })
+route: GET /repos/{owner}/{repo}/releases
+scope: repos
+type: API method
+---
+
 # List releases for a repository
 
 This returns a list of releases, which does not include regular Git tags that have not been associated with a release. To get a list of Git tags, use the [Repository Tags API](https://developer.github.com/v3/repos/#list-tags).

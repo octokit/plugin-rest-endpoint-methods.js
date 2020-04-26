@@ -1,3 +1,11 @@
+---
+name: List blocked users
+example: octokit.orgs.listBlockedUsers({ org })
+route: GET /orgs/{org}/blocks
+scope: orgs
+type: API method
+---
+
 # List blocked users
 
 List the users blocked by an organization.

@@ -1,3 +1,11 @@
+---
+name: List Pages builds
+example: octokit.repos.listPagesBuilds({ owner, repo })
+route: GET /repos/{owner}/{repo}/pages/builds
+scope: repos
+type: API method
+---
+
 # List Pages builds
 
 ```js

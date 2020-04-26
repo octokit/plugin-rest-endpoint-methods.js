@@ -1,3 +1,11 @@
+---
+name: Create reaction for an issue
+example: octokit.reactions.createForIssue({ owner, repo, issue_number, content })
+route: POST /repos/{owner}/{repo}/issues/{issue_number}/reactions
+scope: reactions
+type: API method
+---
+
 # Create reaction for an issue
 
 Create a reaction to an [issue](https://developer.github.com/v3/issues/). A response with a `Status: 200 OK` means that you already added the reaction type to this issue.

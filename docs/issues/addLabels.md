@@ -1,3 +1,11 @@
+---
+name: Add labels to an issue
+example: octokit.issues.addLabels({ owner, repo, issue_number, labels })
+route: POST /repos/{owner}/{repo}/issues/{issue_number}/labels
+scope: issues
+type: API method
+---
+
 # Add labels to an issue
 
 ```js

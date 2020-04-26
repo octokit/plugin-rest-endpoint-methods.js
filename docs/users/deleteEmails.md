@@ -1,3 +1,11 @@
+---
+name: Delete email address(es)
+example: octokit.users.deleteEmails({ emails })
+route: DELETE /user/emails
+scope: users
+type: API method
+---
+
 # Delete email address(es)
 
 This endpoint is accessible with the `user` scope.

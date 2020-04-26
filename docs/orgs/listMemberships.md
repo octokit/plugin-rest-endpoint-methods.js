@@ -1,3 +1,11 @@
+---
+name: List your organization memberships
+example: octokit.orgs.listMemberships()
+route: GET /user/memberships/orgs
+scope: orgs
+type: API method
+---
+
 # List your organization memberships
 
 ```js

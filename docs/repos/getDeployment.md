@@ -1,3 +1,11 @@
+---
+name: Get a single deployment
+example: octokit.repos.getDeployment({ owner, repo, deployment_id })
+route: GET /repos/{owner}/{repo}/deployments/{deployment_id}
+scope: repos
+type: API method
+---
+
 # Get a single deployment
 
 ```js

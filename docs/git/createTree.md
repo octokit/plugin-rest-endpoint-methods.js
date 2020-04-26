@@ -1,3 +1,11 @@
+---
+name: Create a tree
+example: octokit.git.createTree({ owner, repo, tree })
+route: POST /repos/{owner}/{repo}/git/trees
+scope: git
+type: API method
+---
+
 # Create a tree
 
 The tree creation API accepts nested entries. If you specify both a tree and a nested path modifying that tree, this endpoint will overwrite the contents of the tree with the new path contents, and create a new tree structure.

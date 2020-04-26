@@ -1,3 +1,11 @@
+---
+name: Delete a file
+example: octokit.repos.deleteFile({ owner, repo, path, message, sha })
+route: DELETE /repos/{owner}/{repo}/contents/{path}
+scope: repos
+type: API method
+---
+
 # Delete a file
 
 Deletes a file in a repository.

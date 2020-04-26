@@ -1,3 +1,11 @@
+---
+name: Create a repository for the authenticated user
+example: octokit.repos.createForAuthenticatedUser({ name })
+route: POST /user/repos
+scope: repos
+type: API method
+---
+
 # Create a repository for the authenticated user
 
 Creates a new repository for the authenticated user.

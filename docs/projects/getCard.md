@@ -1,3 +1,11 @@
+---
+name: Get a project card
+example: octokit.projects.getCard({ card_id })
+route: GET /projects/columns/cards/{card_id}
+scope: projects
+type: API method
+---
+
 # Get a project card
 
 ```js

@@ -1,3 +1,11 @@
+---
+name: Create or update a file
+example: octokit.repos.createOrUpdateFile({ owner, repo, path, message, content, committer.name, committer.email, author.name, author.email })
+route: PUT /repos/{owner}/{repo}/contents/{path}
+scope: repos
+type: API method
+---
+
 # Create or update a file
 
 Creates a new file or updates an existing file in a repository.

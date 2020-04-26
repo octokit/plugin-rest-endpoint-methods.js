@@ -1,3 +1,11 @@
+---
+name: List pull requests files
+example: octokit.pulls.listFiles({ owner, repo, pull_number })
+route: GET /repos/{owner}/{repo}/pulls/{pull_number}/files
+scope: pulls
+type: API method
+---
+
 # List pull requests files
 
 **Note:** Responses include a maximum of 3000 files. The paginated response returns 30 files per page by default.

@@ -1,3 +1,11 @@
+---
+name: List tags
+example: octokit.repos.listTags({ owner, repo })
+route: GET /repos/{owner}/{repo}/tags
+scope: repos
+type: API method
+---
+
 # List tags
 
 ```js

@@ -1,3 +1,11 @@
+---
+name: Get interaction restrictions for an organization
+example: octokit.interactions.getRestrictionsForOrg({ org })
+route: GET /orgs/{org}/interaction-limits
+scope: interactions
+type: API method
+---
+
 # Get interaction restrictions for an organization
 
 Shows which group of GitHub users can interact with this organization and when the restriction expires. If there are no restrictions, you will see an empty response.

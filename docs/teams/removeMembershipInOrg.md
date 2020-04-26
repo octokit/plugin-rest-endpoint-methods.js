@@ -1,3 +1,11 @@
+---
+name: Remove team membership
+example: octokit.teams.removeMembershipInOrg({ org, team_slug, username })
+route: DELETE /orgs/{org}/teams/{team_slug}/memberships/{username}
+scope: teams
+type: API method
+---
+
 # Remove team membership
 
 Team synchronization is available for organizations using GitHub Enterprise Cloud. For more information, see [GitHub's products](https://help.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.

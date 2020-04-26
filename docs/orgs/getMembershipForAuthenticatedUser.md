@@ -1,3 +1,11 @@
+---
+name: Get your organization membership
+example: octokit.orgs.getMembershipForAuthenticatedUser({ org })
+route: GET /user/memberships/orgs/{org}
+scope: orgs
+type: API method
+---
+
 # Get your organization membership
 
 ```js

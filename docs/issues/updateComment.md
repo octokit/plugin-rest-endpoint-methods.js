@@ -1,3 +1,11 @@
+---
+name: Edit a comment
+example: octokit.issues.updateComment({ owner, repo, comment_id, body })
+route: PATCH /repos/{owner}/{repo}/issues/comments/{comment_id}
+scope: issues
+type: API method
+---
+
 # Edit a comment
 
 ```js

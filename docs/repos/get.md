@@ -1,3 +1,11 @@
+---
+name: Get a repository
+example: octokit.repos.get({ owner, repo })
+route: GET /repos/{owner}/{repo}
+scope: repos
+type: API method
+---
+
 # Get a repository
 
 When you pass the `scarlet-witch-preview` media type, requests to get a repository will also return the repository's code of conduct if it can be detected from the repository's code of conduct file.

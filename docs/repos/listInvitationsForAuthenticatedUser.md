@@ -1,3 +1,11 @@
+---
+name: List a user's repository invitations
+example: octokit.repos.listInvitationsForAuthenticatedUser()
+route: GET /user/repository_invitations
+scope: repos
+type: API method
+---
+
 # List a user's repository invitations
 
 When authenticating as a user, this endpoint will list all currently open repository invitations for that user.

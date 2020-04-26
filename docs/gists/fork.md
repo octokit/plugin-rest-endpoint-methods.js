@@ -1,3 +1,11 @@
+---
+name: Fork a gist
+example: octokit.gists.fork({ gist_id })
+route: POST /gists/{gist_id}/forks
+scope: gists
+type: API method
+---
+
 # Fork a gist
 
 **Note**: This was previously `/gists/:gist_id/fork`.

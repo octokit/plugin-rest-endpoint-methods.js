@@ -1,3 +1,11 @@
+---
+name: Get a self-hosted runner for an organization
+example: octokit.actions.getSelfHostedRunnerForOrg({ org, runner_id })
+route: GET /orgs/{org}/actions/runners/{runner_id}
+scope: actions
+type: API method
+---
+
 # Get a self-hosted runner for an organization
 
 **Warning:** The self-hosted runners API for organizations is currently in public beta and subject to change.

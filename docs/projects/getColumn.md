@@ -1,3 +1,11 @@
+---
+name: Get a project column
+example: octokit.projects.getColumn({ column_id })
+route: GET /projects/columns/{column_id}
+scope: projects
+type: API method
+---
+
 # Get a project column
 
 ```js

@@ -1,3 +1,11 @@
+---
+name: Get a workflow run
+example: octokit.actions.getWorkflowRun({ owner, repo, run_id })
+route: GET /repos/{owner}/{repo}/actions/runs/{run_id}
+scope: actions
+type: API method
+---
+
 # Get a workflow run
 
 Gets a specific workflow run. Anyone with read access to the repository can use this endpoint. GitHub Apps must have the `actions` permission to use this endpoint.

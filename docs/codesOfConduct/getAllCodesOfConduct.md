@@ -1,3 +1,11 @@
+---
+name: List all codes of conduct
+example: octokit.codesOfConduct.getAllCodesOfConduct()
+route: GET /codes_of_conduct
+scope: codesOfConduct
+type: API method
+---
+
 # List all codes of conduct
 
 ```js

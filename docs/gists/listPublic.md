@@ -1,3 +1,11 @@
+---
+name: List public gists
+example: octokit.gists.listPublic()
+route: GET /gists/public
+scope: gists
+type: API method
+---
+
 # List public gists
 
 List public gists sorted by most recently updated to least recently updated.

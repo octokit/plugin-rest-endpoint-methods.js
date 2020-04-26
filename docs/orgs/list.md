@@ -1,3 +1,11 @@
+---
+name: List all organizations
+example: octokit.orgs.list()
+route: GET /organizations
+scope: orgs
+type: API method
+---
+
 # List all organizations
 
 Lists all organizations, in the order that they were created on GitHub.

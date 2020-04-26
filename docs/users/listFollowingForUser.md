@@ -1,3 +1,11 @@
+---
+name: List users followed by another user
+example: octokit.users.listFollowingForUser({ username })
+route: GET /users/{username}/following
+scope: users
+type: API method
+---
+
 # List users followed by another user
 
 Lists the people who the specified user follows.

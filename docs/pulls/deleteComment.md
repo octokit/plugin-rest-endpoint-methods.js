@@ -1,3 +1,11 @@
+---
+name: Delete a comment
+example: octokit.pulls.deleteComment({ owner, repo, comment_id })
+route: DELETE /repos/{owner}/{repo}/pulls/comments/{comment_id}
+scope: pulls
+type: API method
+---
+
 # Delete a comment
 
 Deletes a review comment.

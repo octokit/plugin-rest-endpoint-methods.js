@@ -1,3 +1,11 @@
+---
+name: Get labels for every issue in a milestone
+example: octokit.issues.listLabelsForMilestone({ owner, repo, milestone_number })
+route: GET /repos/{owner}/{repo}/milestones/{milestone_number}/labels
+scope: issues
+type: API method
+---
+
 # Get labels for every issue in a milestone
 
 ```js

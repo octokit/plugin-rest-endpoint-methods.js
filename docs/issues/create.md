@@ -1,3 +1,11 @@
+---
+name: Create an issue
+example: octokit.issues.create({ owner, repo, title })
+route: POST /repos/{owner}/{repo}/issues
+scope: issues
+type: API method
+---
+
 # Create an issue
 
 Any user with pull access to a repository can create an issue. If [issues are disabled in the repository](https://help.github.com/articles/disabling-issues/), the API returns a `410 Gone` status.

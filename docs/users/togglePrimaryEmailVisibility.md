@@ -1,3 +1,11 @@
+---
+name: Toggle primary email visibility
+example: octokit.users.togglePrimaryEmailVisibility({ email, visibility })
+route: PATCH /user/email/visibility
+scope: users
+type: API method
+---
+
 # Toggle primary email visibility
 
 Sets the visibility for your primary email addresses.

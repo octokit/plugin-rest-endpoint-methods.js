@@ -1,3 +1,11 @@
+---
+name: Get a check run
+example: octokit.checks.get({ owner, repo, check_run_id })
+route: GET /repos/{owner}/{repo}/check-runs/{check_run_id}
+scope: checks
+type: API method
+---
+
 # Get a check run
 
 **Note:** The Checks API only looks for pushes in the repository where the check suite or check run were created. Pushes to a branch in a forked repository are not detected and return an empty `pull_requests` array.

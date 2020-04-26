@@ -1,3 +1,11 @@
+---
+name: List repositories for a user migration
+example: octokit.migrations.listReposForUser({ migration_id })
+route: GET /user/{migration_id}/repositories
+scope: migrations
+type: API method
+---
+
 # List repositories for a user migration
 
 Lists all the repositories for this user migration.

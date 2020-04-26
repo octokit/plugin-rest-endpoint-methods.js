@@ -1,3 +1,11 @@
+---
+name: Unlock an issue
+example: octokit.issues.unlock({ owner, repo, issue_number })
+route: DELETE /repos/{owner}/{repo}/issues/{issue_number}/lock
+scope: issues
+type: API method
+---
+
 # Unlock an issue
 
 Users with push access can unlock an issue's conversation.

@@ -66,7 +66,17 @@ ${param.description || ""}
     ? parametersTable
     : `This endpoint has no parameters`;
 
+const frontmatterExample = example.replace(/\s\s+/g, ' ')
+                                  .replace(/,\n}/g,' }')
+                                  .replace(/\n/g, ' ')
   const content = `
+---
+name: ${endpoint.name}
+example: ${frontmatterExample}
+route: ${endpoint.method} ${endpoint.url}
+scope: ${endpoint.scope}
+type: API method
+---
 # ${endpoint.name}
 
 ${deprecationNotice}
