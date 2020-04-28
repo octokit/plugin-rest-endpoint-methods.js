@@ -1,3 +1,11 @@
+---
+name: Get a single label
+example: octokit.issues.getLabel({ owner, repo, name })
+route: GET /repos/{owner}/{repo}/labels/{name}
+scope: issues
+type: API method
+---
+
 # Get a single label
 
 ```js

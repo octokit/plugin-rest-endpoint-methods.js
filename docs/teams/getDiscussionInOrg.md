@@ -1,3 +1,11 @@
+---
+name: Get a single discussion
+example: octokit.teams.getDiscussionInOrg({ org, team_slug, discussion_number })
+route: GET /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}
+scope: teams
+type: API method
+---
+
 # Get a single discussion
 
 Get a specific discussion on a team's page. OAuth access tokens require the `read:discussion` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).

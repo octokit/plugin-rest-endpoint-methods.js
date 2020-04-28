@@ -1,3 +1,11 @@
+---
+name: Delete workflow run logs
+example: octokit.actions.deleteWorkflowRunLogs({ owner, repo, run_id })
+route: DELETE /repos/{owner}/{repo}/actions/runs/{run_id}/logs
+scope: actions
+type: API method
+---
+
 # Delete workflow run logs
 
 Deletes all logs for a workflow run. Anyone with write access to the repository can use this endpoint. GitHub Apps must have the `actions` permission to use this endpoint.

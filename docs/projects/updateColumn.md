@@ -1,3 +1,11 @@
+---
+name: Update a project column
+example: octokit.projects.updateColumn({ column_id, name })
+route: PATCH /projects/columns/{column_id}
+scope: projects
+type: API method
+---
+
 # Update a project column
 
 ```js

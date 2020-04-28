@@ -1,3 +1,11 @@
+---
+name: Delete an organization migration archive
+example: octokit.migrations.deleteArchiveForOrg({ org, migration_id })
+route: DELETE /orgs/{org}/migrations/{migration_id}/archive
+scope: migrations
+type: API method
+---
+
 # Delete an organization migration archive
 
 Deletes a previous migration archive. Migration archives are automatically deleted after seven days.

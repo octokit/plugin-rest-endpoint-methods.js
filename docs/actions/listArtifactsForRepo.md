@@ -1,3 +1,11 @@
+---
+name: List artifacts for a repository
+example: octokit.actions.listArtifactsForRepo({ owner, repo })
+route: GET /repos/{owner}/{repo}/actions/artifacts
+scope: actions
+type: API method
+---
+
 # List artifacts for a repository
 
 Lists all artifacts for a repository. Anyone with read access to the repository can use this endpoint. GitHub Apps must have the `actions` permission to use this endpoint.

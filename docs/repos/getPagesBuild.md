@@ -1,3 +1,11 @@
+---
+name: Get a specific Pages build
+example: octokit.repos.getPagesBuild({ owner, repo, build_id })
+route: GET /repos/{owner}/{repo}/pages/builds/{build_id}
+scope: repos
+type: API method
+---
+
 # Get a specific Pages build
 
 ```js

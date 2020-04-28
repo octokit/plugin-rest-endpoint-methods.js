@@ -1,3 +1,11 @@
+---
+name: Create team
+example: octokit.teams.create({ org, name })
+route: POST /orgs/{org}/teams
+scope: teams
+type: API method
+---
+
 # Create team
 
 To create a team, the authenticated user must be a member or owner of `:org`. By default, organization members can create teams. Organization owners can limit team creation to organization owners. For more information, see "[Setting team creation permissions](https://help.github.com/en/articles/setting-team-creation-permissions-in-your-organization)."

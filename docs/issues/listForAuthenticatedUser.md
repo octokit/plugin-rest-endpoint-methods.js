@@ -1,3 +1,11 @@
+---
+name: List user account issues assigned to the authenticated user
+example: octokit.issues.listForAuthenticatedUser()
+route: GET /user/issues
+scope: issues
+type: API method
+---
+
 # List user account issues assigned to the authenticated user
 
 List issues across owned and member repositories assigned to the authenticated user:

@@ -1,3 +1,11 @@
+---
+name: List child teams
+example: octokit.teams.listChildInOrg({ org, team_slug })
+route: GET /orgs/{org}/teams/{team_slug}/teams
+scope: teams
+type: API method
+---
+
 # List child teams
 
 Lists the child teams of the team requested by `:team_slug`.

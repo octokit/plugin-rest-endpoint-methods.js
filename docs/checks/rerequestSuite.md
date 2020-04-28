@@ -1,3 +1,11 @@
+---
+name: Rerequest a check suite
+example: octokit.checks.rerequestSuite({ owner, repo, check_suite_id })
+route: POST /repos/{owner}/{repo}/check-suites/{check_suite_id}/rerequest
+scope: checks
+type: API method
+---
+
 # Rerequest a check suite
 
 Triggers GitHub to rerequest an existing check suite, without pushing new code to a repository. This endpoint will trigger the [`check_suite` webhook](https://developer.github.com/v3/activity/events/types/#checksuiteevent) event with the action `rerequested`. When a check suite is `rerequested`, its `status` is reset to `queued` and the `conclusion` is cleared.

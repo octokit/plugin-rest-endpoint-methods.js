@@ -1,3 +1,11 @@
+---
+name: Get a single user
+example: octokit.users.getByUsername({ username })
+route: GET /users/{username}
+scope: users
+type: API method
+---
+
 # Get a single user
 
 Provides publicly available information about someone with a GitHub account.

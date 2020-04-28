@@ -1,3 +1,11 @@
+---
+name: Get a subscription plan for an account (stubbed)
+example: octokit.apps.checkAccountIsAssociatedWithAnyStubbed({ account_id })
+route: GET /marketplace_listing/stubbed/accounts/{account_id}
+scope: apps
+type: API method
+---
+
 # Get a subscription plan for an account (stubbed)
 
 **Deprecated:** This method has been renamed to apps.getSubscriptionPlanForAccountStubbed

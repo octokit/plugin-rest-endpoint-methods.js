@@ -1,3 +1,11 @@
+---
+name: List repositories starred by the authenticated user
+example: octokit.activity.listReposStarredByAuthenticatedUser()
+route: GET /user/starred
+scope: activity
+type: API method
+---
+
 # List repositories starred by the authenticated user
 
 Lists repositories the authenticated user has starred.

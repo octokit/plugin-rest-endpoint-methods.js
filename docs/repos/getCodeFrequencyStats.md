@@ -1,3 +1,11 @@
+---
+name: Get the number of additions and deletions per week
+example: octokit.repos.getCodeFrequencyStats({ owner, repo })
+route: GET /repos/{owner}/{repo}/stats/code_frequency
+scope: repos
+type: API method
+---
+
 # Get the number of additions and deletions per week
 
 Returns a weekly aggregate of the number of additions and deletions pushed to a repository.

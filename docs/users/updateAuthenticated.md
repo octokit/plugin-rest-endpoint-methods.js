@@ -1,3 +1,11 @@
+---
+name: Update the authenticated user
+example: octokit.users.updateAuthenticated()
+route: PATCH /user
+scope: users
+type: API method
+---
+
 # Update the authenticated user
 
 **Note:** If your email is set to private and you send an `email` parameter as part of this request to update your profile, your privacy settings are still enforced: the email address will not be displayed on your public profile or via the API.

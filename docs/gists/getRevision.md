@@ -1,3 +1,11 @@
+---
+name: Get a specific revision of a gist
+example: octokit.gists.getRevision({ gist_id, sha })
+route: GET /gists/{gist_id}/{sha}
+scope: gists
+type: API method
+---
+
 # Get a specific revision of a gist
 
 ```js

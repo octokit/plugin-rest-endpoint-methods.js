@@ -1,3 +1,11 @@
+---
+name: List watchers
+example: octokit.activity.listWatchersForRepo({ owner, repo })
+route: GET /repos/{owner}/{repo}/subscribers
+scope: activity
+type: API method
+---
+
 # List watchers
 
 Lists the people watching the specified repository.

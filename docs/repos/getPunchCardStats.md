@@ -1,3 +1,11 @@
+---
+name: Get the number of commits per hour in each day
+example: octokit.repos.getPunchCardStats({ owner, repo })
+route: GET /repos/{owner}/{repo}/stats/punch_card
+scope: repos
+type: API method
+---
+
 # Get the number of commits per hour in each day
 
 Each array contains the day number, hour number, and number of commits:

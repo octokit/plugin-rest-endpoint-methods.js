@@ -1,3 +1,11 @@
+---
+name: Get a self-hosted runner for a repository
+example: octokit.actions.getSelfHostedRunner({ owner, repo, runner_id })
+route: GET /repos/{owner}/{repo}/actions/runners/{runner_id}
+scope: actions
+type: API method
+---
+
 # Get a self-hosted runner for a repository
 
 **Deprecated:** This method has been renamed to actions.getSelfHostedRunnerForRepo

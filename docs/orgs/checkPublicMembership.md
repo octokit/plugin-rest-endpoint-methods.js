@@ -1,3 +1,11 @@
+---
+name: Check public membership
+example: octokit.orgs.checkPublicMembership({ org, username })
+route: GET /orgs/{org}/public_members/{username}
+scope: orgs
+type: API method
+---
+
 # Check public membership
 
 ```js

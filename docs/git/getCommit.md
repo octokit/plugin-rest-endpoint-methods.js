@@ -1,3 +1,11 @@
+---
+name: Get a commit
+example: octokit.git.getCommit({ owner, repo, commit_sha })
+route: GET /repos/{owner}/{repo}/git/commits/{commit_sha}
+scope: git
+type: API method
+---
+
 # Get a commit
 
 Gets a Git [commit object](https://git-scm.com/book/en/v1/Git-Internals-Git-Objects#Commit-Objects).

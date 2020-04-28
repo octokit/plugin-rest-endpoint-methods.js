@@ -1,3 +1,11 @@
+---
+name: List followers of the authenticated user
+example: octokit.users.listFollowersForAuthenticatedUser()
+route: GET /user/followers
+scope: users
+type: API method
+---
+
 # List followers of the authenticated user
 
 Lists the people following the authenticated user.

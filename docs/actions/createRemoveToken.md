@@ -1,3 +1,11 @@
+---
+name: Create a remove token for a repository
+example: octokit.actions.createRemoveToken({ owner, repo })
+route: POST /repos/{owner}/{repo}/actions/runners/remove-token
+scope: actions
+type: API method
+---
+
 # Create a remove token for a repository
 
 **Deprecated:** This method has been renamed to actions.createRemoveTokenForRepo

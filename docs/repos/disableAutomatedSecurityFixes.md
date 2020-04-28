@@ -1,3 +1,11 @@
+---
+name: Disable automated security fixes
+example: octokit.repos.disableAutomatedSecurityFixes({ owner, repo })
+route: DELETE /repos/{owner}/{repo}/automated-security-fixes
+scope: repos
+type: API method
+---
+
 # Disable automated security fixes
 
 Disables automated security fixes for a repository. The authenticated user must have admin access to the repository. For more information, see "[Configuring automated security fixes](https://help.github.com/en/articles/configuring-automated-security-fixes)" in the GitHub Help documentation.

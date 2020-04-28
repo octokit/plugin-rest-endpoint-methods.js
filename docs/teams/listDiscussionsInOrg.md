@@ -1,3 +1,11 @@
+---
+name: List discussions
+example: octokit.teams.listDiscussionsInOrg({ org, team_slug })
+route: GET /orgs/{org}/teams/{team_slug}/discussions
+scope: teams
+type: API method
+---
+
 # List discussions
 
 List all discussions on a team's page. OAuth access tokens require the `read:discussion` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).

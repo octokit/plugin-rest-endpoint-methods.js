@@ -1,3 +1,11 @@
+---
+name: Start a user migration
+example: octokit.migrations.startForAuthenticatedUser({ repositories })
+route: POST /user/migrations
+scope: migrations
+type: API method
+---
+
 # Start a user migration
 
 Initiates the generation of a user migration archive.

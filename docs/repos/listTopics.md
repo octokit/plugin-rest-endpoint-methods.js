@@ -1,3 +1,11 @@
+---
+name: Get all repository topics
+example: octokit.repos.listTopics({ owner, repo })
+route: GET /repos/{owner}/{repo}/topics
+scope: repos
+type: API method
+---
+
 # Get all repository topics
 
 **Deprecated:** This method has been renamed to repos.getAllTopics

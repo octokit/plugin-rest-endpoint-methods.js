@@ -1,3 +1,11 @@
+---
+name: List comments on a pull request
+example: octokit.pulls.listComments({ owner, repo, pull_number })
+route: GET /repos/{owner}/{repo}/pulls/{pull_number}/comments
+scope: pulls
+type: API method
+---
+
 # List comments on a pull request
 
 **Note:** Multi-line comments on pull requests are currently in public beta and subject to change.

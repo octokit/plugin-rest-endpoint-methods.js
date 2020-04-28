@@ -1,3 +1,11 @@
+---
+name: Unstar a repository for the authenticated user
+example: octokit.activity.unstarRepo({ owner, repo })
+route: DELETE /user/starred/{owner}/{repo}
+scope: activity
+type: API method
+---
+
 # Unstar a repository for the authenticated user
 
 **Deprecated:** This method has been renamed to activity.unstarRepoForAuthenticatedUser

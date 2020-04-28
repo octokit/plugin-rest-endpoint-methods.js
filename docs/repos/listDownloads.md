@@ -1,3 +1,11 @@
+---
+name: List downloads for a repository
+example: octokit.repos.listDownloads({ owner, repo })
+route: GET /repos/{owner}/{repo}/downloads
+scope: repos
+type: API method
+---
+
 # List downloads for a repository
 
 ```js

@@ -1,3 +1,11 @@
+---
+name: List check runs for a Git reference
+example: octokit.checks.listForRef({ owner, repo, ref })
+route: GET /repos/{owner}/{repo}/commits/{ref}/check-runs
+scope: checks
+type: API method
+---
+
 # List check runs for a Git reference
 
 **Note:** The Checks API only looks for pushes in the repository where the check suite or check run were created. Pushes to a branch in a forked repository are not detected and return an empty `pull_requests` array.

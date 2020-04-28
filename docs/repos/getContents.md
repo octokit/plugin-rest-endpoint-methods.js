@@ -1,3 +1,11 @@
+---
+name: Get contents
+example: octokit.repos.getContents({ owner, repo, path })
+route: GET /repos/{owner}/{repo}/contents/{path}
+scope: repos
+type: API method
+---
+
 # Get contents
 
 Gets the contents of a file or directory in a repository. Specify the file path or directory in `:path`. If you omit `:path`, you will receive the contents of all files in the repository.

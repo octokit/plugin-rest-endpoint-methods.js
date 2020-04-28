@@ -1,3 +1,11 @@
+---
+name: List subscriptions for the authenticated user
+example: octokit.apps.listMarketplacePurchasesForAuthenticatedUser()
+route: GET /user/marketplace_purchases
+scope: apps
+type: API method
+---
+
 # List subscriptions for the authenticated user
 
 **Deprecated:** This method has been renamed to apps.listSubscriptionsForAuthenticatedUser

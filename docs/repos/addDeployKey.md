@@ -1,3 +1,11 @@
+---
+name: Add a new deploy key
+example: octokit.repos.addDeployKey({ owner, repo, key })
+route: POST /repos/{owner}/{repo}/keys
+scope: repos
+type: API method
+---
+
 # Add a new deploy key
 
 Here's how you can create a read-only deploy key:

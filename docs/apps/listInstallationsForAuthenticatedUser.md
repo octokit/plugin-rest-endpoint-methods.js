@@ -1,3 +1,11 @@
+---
+name: List installations for a user
+example: octokit.apps.listInstallationsForAuthenticatedUser()
+route: GET /user/installations
+scope: apps
+type: API method
+---
+
 # List installations for a user
 
 Lists installations of your GitHub App that the authenticated user has explicit permission (`:read`, `:write`, or `:admin`) to access.

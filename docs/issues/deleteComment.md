@@ -1,3 +1,11 @@
+---
+name: Delete a comment
+example: octokit.issues.deleteComment({ owner, repo, comment_id })
+route: DELETE /repos/{owner}/{repo}/issues/comments/{comment_id}
+scope: issues
+type: API method
+---
+
 # Delete a comment
 
 ```js

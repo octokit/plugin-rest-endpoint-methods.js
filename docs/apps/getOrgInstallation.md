@@ -1,3 +1,11 @@
+---
+name: Get an organization installation
+example: octokit.apps.getOrgInstallation({ org })
+route: GET /orgs/{org}/installation
+scope: apps
+type: API method
+---
+
 # Get an organization installation
 
 Enables an authenticated GitHub App to find the organization's installation information.

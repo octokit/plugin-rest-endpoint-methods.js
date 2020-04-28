@@ -1,3 +1,11 @@
+---
+name: Delete a repository subscription
+example: octokit.activity.deleteRepoSubscription({ owner, repo })
+route: DELETE /repos/{owner}/{repo}/subscription
+scope: activity
+type: API method
+---
+
 # Delete a repository subscription
 
 This endpoint should only be used to stop watching a repository. To control whether or not you wish to receive notifications from a repository, [set the repository's subscription manually](https://developer.github.com/v3/activity/watching/#set-a-repository-subscription).

@@ -1,3 +1,11 @@
+---
+name: Delete a reference
+example: octokit.git.deleteRef({ owner, repo, ref })
+route: DELETE /repos/{owner}/{repo}/git/refs/{ref}
+scope: git
+type: API method
+---
+
 # Delete a reference
 
 ```js

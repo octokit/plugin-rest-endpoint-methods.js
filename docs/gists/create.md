@@ -1,3 +1,11 @@
+---
+name: Create a gist
+example: octokit.gists.create({ files })
+route: POST /gists
+scope: gists
+type: API method
+---
+
 # Create a gist
 
 Allows you to add a new gist with one or more files.

@@ -1,3 +1,11 @@
+---
+name: Get a single comment
+example: octokit.gists.getComment({ gist_id, comment_id })
+route: GET /gists/{gist_id}/comments/{comment_id}
+scope: gists
+type: API method
+---
+
 # Get a single comment
 
 ```js

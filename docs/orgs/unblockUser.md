@@ -1,3 +1,11 @@
+---
+name: Unblock a user
+example: octokit.orgs.unblockUser({ org, username })
+route: DELETE /orgs/{org}/blocks/{username}
+scope: orgs
+type: API method
+---
+
 # Unblock a user
 
 ```js

@@ -1,3 +1,11 @@
+---
+name: Set Git LFS preference
+example: octokit.migrations.setLfsPreference({ owner, repo, use_lfs })
+route: PATCH /repos/{owner}/{repo}/import/lfs
+scope: migrations
+type: API method
+---
+
 # Set Git LFS preference
 
 You can import repositories from Subversion, Mercurial, and TFS that include files larger than 100MB. This ability is powered by [Git LFS](https://git-lfs.github.com). You can learn more about our LFS feature and working with large files [on our help site](https://help.github.com/articles/versioning-large-files/).

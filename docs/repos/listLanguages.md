@@ -1,3 +1,11 @@
+---
+name: List languages
+example: octokit.repos.listLanguages({ owner, repo })
+route: GET /repos/{owner}/{repo}/languages
+scope: repos
+type: API method
+---
+
 # List languages
 
 Lists languages for the specified repository. The value shown for each language is the number of bytes of code written in that language.

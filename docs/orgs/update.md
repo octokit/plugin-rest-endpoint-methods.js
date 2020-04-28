@@ -1,3 +1,11 @@
+---
+name: Edit an organization
+example: octokit.orgs.update({ org })
+route: PATCH /orgs/{org}
+scope: orgs
+type: API method
+---
+
 # Edit an organization
 
 **Parameter Deprecation Notice:** GitHub will replace and discontinue `members_allowed_repository_creation_type` in favor of more granular permissions. The new input parameters are `members_can_create_public_repositories`, `members_can_create_private_repositories` for all organizations and `members_can_create_internal_repositories` for organizations associated with an enterprise account using GitHub Enterprise Cloud or GitHub Enterprise Server 2.20+. For more information, see the [blog post](https://developer.github.com/changes/2019-12-03-internal-visibility-changes).

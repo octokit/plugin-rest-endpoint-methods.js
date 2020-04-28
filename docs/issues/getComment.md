@@ -1,3 +1,11 @@
+---
+name: Get a single comment
+example: octokit.issues.getComment({ owner, repo, comment_id })
+route: GET /repos/{owner}/{repo}/issues/comments/{comment_id}
+scope: issues
+type: API method
+---
+
 # Get a single comment
 
 ```js

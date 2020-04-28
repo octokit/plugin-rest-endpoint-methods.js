@@ -1,3 +1,11 @@
+---
+name: List notifications for the authenticated user
+example: octokit.activity.listNotifications()
+route: GET /notifications
+scope: activity
+type: API method
+---
+
 # List notifications for the authenticated user
 
 **Deprecated:** This method has been renamed to activity.listNotificationsForAuthenticatedUser

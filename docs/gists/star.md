@@ -1,3 +1,11 @@
+---
+name: Star a gist
+example: octokit.gists.star({ gist_id })
+route: PUT /gists/{gist_id}/star
+scope: gists
+type: API method
+---
+
 # Star a gist
 
 Note that you'll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see "[HTTP verbs](https://developer.github.com/v3/#http-verbs)."

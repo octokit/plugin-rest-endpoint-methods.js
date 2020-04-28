@@ -1,3 +1,11 @@
+---
+name: List public organization events
+example: octokit.activity.listPublicEventsForOrg({ org })
+route: GET /orgs/{org}/events
+scope: activity
+type: API method
+---
+
 # List public organization events
 
 **Deprecated:** This method has been renamed to activity.listPublicOrgEvents

@@ -1,3 +1,11 @@
+---
+name: Create reaction for a team discussion
+example: octokit.reactions.createForTeamDiscussionInOrg({ org, team_slug, discussion_number, content })
+route: POST /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/reactions
+scope: reactions
+type: API method
+---
+
 # Create reaction for a team discussion
 
 Create a reaction to a [team discussion](https://developer.github.com/v3/teams/discussions/). OAuth access tokens require the `write:discussion` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/). A response with a `Status: 200 OK` means that you already added the reaction type to this team discussion.

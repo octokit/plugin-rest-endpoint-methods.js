@@ -1,3 +1,11 @@
+---
+name: Get a gist
+example: octokit.gists.get({ gist_id })
+route: GET /gists/{gist_id}
+scope: gists
+type: API method
+---
+
 # Get a gist
 
 ```js

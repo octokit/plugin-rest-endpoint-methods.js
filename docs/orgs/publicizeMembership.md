@@ -1,3 +1,11 @@
+---
+name: Publicize a user's membership
+example: octokit.orgs.publicizeMembership({ org, username })
+route: PUT /orgs/{org}/public_members/{username}
+scope: orgs
+type: API method
+---
+
 # Publicize a user's membership
 
 The user can publicize their own membership. (A user cannot publicize the membership for another user.)

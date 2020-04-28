@@ -1,3 +1,11 @@
+---
+name: Search commits
+example: octokit.search.commits({ q })
+route: GET /search/commits
+scope: search
+type: API method
+---
+
 # Search commits
 
 Find commits via various criteria. This method returns up to 100 results [per page](https://developer.github.com/v3/#pagination).

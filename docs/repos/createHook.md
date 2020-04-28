@@ -1,3 +1,11 @@
+---
+name: Create a hook
+example: octokit.repos.createHook({ owner, repo, config, config.url })
+route: POST /repos/{owner}/{repo}/hooks
+scope: repos
+type: API method
+---
+
 # Create a hook
 
 Repositories can have multiple webhooks installed. Each webhook should have a unique `config`. Multiple webhooks can share the same `config` as long as those webhooks do not have any `events` that overlap.

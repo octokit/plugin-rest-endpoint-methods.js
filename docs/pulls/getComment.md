@@ -1,3 +1,11 @@
+---
+name: Get a single comment
+example: octokit.pulls.getComment({ owner, repo, comment_id })
+route: GET /repos/{owner}/{repo}/pulls/comments/{comment_id}
+scope: pulls
+type: API method
+---
+
 # Get a single comment
 
 **Note:** Multi-line comments on pull requests are currently in public beta and subject to change.

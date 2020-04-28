@@ -1,3 +1,11 @@
+---
+name: Delete a pull request comment reaction
+example: octokit.reactions.deleteForPullRequestComment({ owner, repo, comment_id, reaction_id })
+route: DELETE /repos/{owner}/{repo}/pulls/comments/{comment_id}/reactions/{reaction_id}
+scope: reactions
+type: API method
+---
+
 # Delete a pull request comment reaction
 
 **Note:** You can also specify a repository by `repository_id` using the route `DELETE /repositories/:repository_id/pulls/comments/:comment_id/reactions/:reaction_id.`

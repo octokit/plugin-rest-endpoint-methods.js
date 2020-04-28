@@ -1,3 +1,11 @@
+---
+name: Update a pull request branch
+example: octokit.pulls.updateBranch({ owner, repo, pull_number })
+route: PUT /repos/{owner}/{repo}/pulls/{pull_number}/update-branch
+scope: pulls
+type: API method
+---
+
 # Update a pull request branch
 
 Updates the pull request branch with the latest upstream changes by merging HEAD from the base branch into the pull request branch.

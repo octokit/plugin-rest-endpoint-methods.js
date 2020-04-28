@@ -1,3 +1,11 @@
+---
+name: Get a single commit comment
+example: octokit.repos.getCommitComment({ owner, repo, comment_id })
+route: GET /repos/{owner}/{repo}/comments/{comment_id}
+scope: repos
+type: API method
+---
+
 # Get a single commit comment
 
 ```js

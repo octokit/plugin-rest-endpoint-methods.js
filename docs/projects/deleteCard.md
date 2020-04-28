@@ -1,3 +1,11 @@
+---
+name: Delete a project card
+example: octokit.projects.deleteCard({ card_id })
+route: DELETE /projects/columns/cards/{card_id}
+scope: projects
+type: API method
+---
+
 # Delete a project card
 
 ```js

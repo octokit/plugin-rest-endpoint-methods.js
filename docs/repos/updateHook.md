@@ -1,3 +1,11 @@
+---
+name: Edit a hook
+example: octokit.repos.updateHook({ owner, repo, hook_id, config.url })
+route: PATCH /repos/{owner}/{repo}/hooks/{hook_id}
+scope: repos
+type: API method
+---
+
 # Edit a hook
 
 ```js

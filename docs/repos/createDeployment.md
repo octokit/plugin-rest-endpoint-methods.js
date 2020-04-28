@@ -1,3 +1,11 @@
+---
+name: Create a deployment
+example: octokit.repos.createDeployment({ owner, repo, ref })
+route: POST /repos/{owner}/{repo}/deployments
+scope: repos
+type: API method
+---
+
 # Create a deployment
 
 Deployments offer a few configurable parameters with sane defaults.

@@ -1,3 +1,11 @@
+---
+name: Update information about a Pages site
+example: octokit.repos.updateInformationAboutPagesSite({ owner, repo })
+route: PUT /repos/{owner}/{repo}/pages
+scope: repos
+type: API method
+---
+
 # Update information about a Pages site
 
 ```js

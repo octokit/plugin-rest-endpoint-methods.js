@@ -1,3 +1,11 @@
+---
+name: Map a commit author
+example: octokit.migrations.mapCommitAuthor({ owner, repo, author_id })
+route: PATCH /repos/{owner}/{repo}/import/authors/{author_id}
+scope: migrations
+type: API method
+---
+
 # Map a commit author
 
 Update an author's identity for the import. Your application can continue updating authors any time before you push new commits to the repository.

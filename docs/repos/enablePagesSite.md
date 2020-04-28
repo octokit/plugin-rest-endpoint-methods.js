@@ -1,3 +1,11 @@
+---
+name: Enable a Pages site
+example: octokit.repos.enablePagesSite({ owner, repo })
+route: POST /repos/{owner}/{repo}/pages
+scope: repos
+type: API method
+---
+
 # Enable a Pages site
 
 ```js

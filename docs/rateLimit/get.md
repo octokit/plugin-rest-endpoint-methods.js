@@ -1,3 +1,11 @@
+---
+name: Get your current rate limit status
+example: octokit.rateLimit.get()
+route: GET /rate_limit
+scope: rateLimit
+type: API method
+---
+
 # Get your current rate limit status
 
 **Note:** Accessing this endpoint does not count against your REST API rate limit.

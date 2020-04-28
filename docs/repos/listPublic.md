@@ -1,3 +1,11 @@
+---
+name: List public repositories
+example: octokit.repos.listPublic()
+route: GET /repositories
+scope: repos
+type: API method
+---
+
 # List public repositories
 
 Lists all public repositories in the order that they were created.

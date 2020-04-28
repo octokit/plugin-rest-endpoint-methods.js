@@ -1,3 +1,11 @@
+---
+name: Get a deploy key
+example: octokit.repos.getDeployKey({ owner, repo, key_id })
+route: GET /repos/{owner}/{repo}/keys/{key_id}
+scope: repos
+type: API method
+---
+
 # Get a deploy key
 
 ```js

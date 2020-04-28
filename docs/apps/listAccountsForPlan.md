@@ -1,3 +1,11 @@
+---
+name: List accounts for a plan
+example: octokit.apps.listAccountsForPlan({ plan_id })
+route: GET /marketplace_listing/plans/{plan_id}/accounts
+scope: apps
+type: API method
+---
+
 # List accounts for a plan
 
 Returns user and organization accounts associated with the specified plan, including free plans. For per-seat pricing, you see the list of accounts that have purchased the plan, including the number of seats purchased. When someone submits a plan change that won't be processed until the end of their billing cycle, you will also see the upcoming pending change.

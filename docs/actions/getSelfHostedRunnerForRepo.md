@@ -1,3 +1,11 @@
+---
+name: Get a self-hosted runner for a repository
+example: octokit.actions.getSelfHostedRunnerForRepo({ owner, repo, runner_id })
+route: GET /repos/{owner}/{repo}/actions/runners/{runner_id}
+scope: actions
+type: API method
+---
+
 # Get a self-hosted runner for a repository
 
 Gets a specific self-hosted runner. Anyone with admin access to the repository can use this endpoint. GitHub Apps must have the `administration:read` repository permission to use this endpoint.

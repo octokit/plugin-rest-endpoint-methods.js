@@ -1,3 +1,11 @@
+---
+name: Delete a milestone
+example: octokit.issues.deleteMilestone({ owner, repo, milestone_number })
+route: DELETE /repos/{owner}/{repo}/milestones/{milestone_number}
+scope: issues
+type: API method
+---
+
 # Delete a milestone
 
 ```js

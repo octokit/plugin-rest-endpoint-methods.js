@@ -1,3 +1,11 @@
+---
+name: Check if a team manages a repository
+example: octokit.teams.checkManagesRepoInOrg({ org, team_slug, owner, repo })
+route: GET /orgs/{org}/teams/{team_slug}/repos/{owner}/{repo}
+scope: teams
+type: API method
+---
+
 # Check if a team manages a repository
 
 Checks whether a team has `admin`, `push`, `maintain`, `triage`, or `pull` permission for a repository. Repositories inherited through a parent team will also be checked.

@@ -1,3 +1,11 @@
+---
+name: Create a pull request review
+example: octokit.pulls.createReview({ owner, repo, pull_number, comments[].path, comments[].position, comments[].body })
+route: POST /repos/{owner}/{repo}/pulls/{pull_number}/reviews
+scope: pulls
+type: API method
+---
+
 # Create a pull request review
 
 This endpoint triggers [notifications](https://help.github.com/articles/about-notifications/). Creating content too quickly using this endpoint may result in abuse rate limiting. See "[Abuse rate limits](https://developer.github.com/v3/#abuse-rate-limits)" and "[Dealing with abuse rate limits](https://developer.github.com/v3/guides/best-practices-for-integrators/#dealing-with-abuse-rate-limits)" for details.

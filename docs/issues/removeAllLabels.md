@@ -1,3 +1,11 @@
+---
+name: Remove all labels from an issue
+example: octokit.issues.removeAllLabels({ owner, repo, issue_number })
+route: DELETE /repos/{owner}/{repo}/issues/{issue_number}/labels
+scope: issues
+type: API method
+---
+
 # Remove all labels from an issue
 
 ```js

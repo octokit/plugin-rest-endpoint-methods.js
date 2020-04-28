@@ -1,3 +1,11 @@
+---
+name: Get a tag
+example: octokit.git.getTag({ owner, repo, tag_sha })
+route: GET /repos/{owner}/{repo}/git/tags/{tag_sha}
+scope: git
+type: API method
+---
+
 # Get a tag
 
 **Signature verification object**

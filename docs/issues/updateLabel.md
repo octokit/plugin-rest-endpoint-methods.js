@@ -1,3 +1,11 @@
+---
+name: Update a label
+example: octokit.issues.updateLabel({ owner, repo, name })
+route: PATCH /repos/{owner}/{repo}/labels/{name}
+scope: issues
+type: API method
+---
+
 # Update a label
 
 ```js

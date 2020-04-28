@@ -1,3 +1,11 @@
+---
+name: Render an arbitrary Markdown document
+example: octokit.markdown.render({ text })
+route: POST /markdown
+scope: markdown
+type: API method
+---
+
 # Render an arbitrary Markdown document
 
 ```js

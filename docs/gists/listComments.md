@@ -1,3 +1,11 @@
+---
+name: List comments on a gist
+example: octokit.gists.listComments({ gist_id })
+route: GET /gists/{gist_id}/comments
+scope: gists
+type: API method
+---
+
 # List comments on a gist
 
 ```js

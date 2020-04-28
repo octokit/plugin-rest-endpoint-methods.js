@@ -1,3 +1,11 @@
+---
+name: Check assignee
+example: octokit.issues.checkAssignee({ owner, repo, assignee })
+route: GET /repos/{owner}/{repo}/assignees/{assignee}
+scope: issues
+type: API method
+---
+
 # Check assignee
 
 Checks if a user has permission to be assigned to an issue in this repository.

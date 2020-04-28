@@ -1,3 +1,11 @@
+---
+name: Delete an app authorization
+example: octokit.apps.deleteAuthorization({ client_id })
+route: DELETE /applications/{client_id}/grant
+scope: apps
+type: API method
+---
+
 # Delete an app authorization
 
 OAuth application owners can revoke a grant for their OAuth application and a specific user. You must use [Basic Authentication](https://developer.github.com/v3/auth#basic-authentication) when accessing this endpoint, using the OAuth application's `client_id` and `client_secret` as the username and password. You must also provide a valid OAuth `access_token` as an input parameter and the grant for the token's owner will be deleted.

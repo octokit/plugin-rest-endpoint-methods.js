@@ -1,3 +1,11 @@
+---
+name: Get organization membership
+example: octokit.orgs.getMembership({ org, username })
+route: GET /orgs/{org}/memberships/{username}
+scope: orgs
+type: API method
+---
+
 # Get organization membership
 
 In order to get a user's membership with an organization, the authenticated user must be an organization member.

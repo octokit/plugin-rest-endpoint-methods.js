@@ -1,3 +1,11 @@
+---
+name: Get comments for a single review
+example: octokit.pulls.getCommentsForReview({ owner, repo, pull_number, review_id })
+route: GET /repos/{owner}/{repo}/pulls/{pull_number}/reviews/{review_id}/comments
+scope: pulls
+type: API method
+---
+
 # Get comments for a single review
 
 ```js

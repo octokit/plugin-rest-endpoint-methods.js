@@ -1,3 +1,11 @@
+---
+name: Create an organization repository
+example: octokit.repos.createInOrg({ org, name })
+route: POST /orgs/{org}/repos
+scope: repos
+type: API method
+---
+
 # Create an organization repository
 
 Creates a new repository in the specified organization. The authenticated user must be a member of the organization.

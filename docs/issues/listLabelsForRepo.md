@@ -1,3 +1,11 @@
+---
+name: List all labels for this repository
+example: octokit.issues.listLabelsForRepo({ owner, repo })
+route: GET /repos/{owner}/{repo}/labels
+scope: issues
+type: API method
+---
+
 # List all labels for this repository
 
 ```js

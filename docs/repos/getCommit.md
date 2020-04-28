@@ -1,3 +1,11 @@
+---
+name: Get a single commit
+example: octokit.repos.getCommit({ owner, repo, ref })
+route: GET /repos/{owner}/{repo}/commits/{ref}
+scope: repos
+type: API method
+---
+
 # Get a single commit
 
 Returns the contents of a single commit reference. You must have `read` access for the repository to use this endpoint.

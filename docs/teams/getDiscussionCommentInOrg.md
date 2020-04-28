@@ -1,3 +1,11 @@
+---
+name: Get a single comment
+example: octokit.teams.getDiscussionCommentInOrg({ org, team_slug, discussion_number, comment_number })
+route: GET /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}
+scope: teams
+type: API method
+---
+
 # Get a single comment
 
 Get a specific comment on a team discussion. OAuth access tokens require the `read:discussion` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).

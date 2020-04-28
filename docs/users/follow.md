@@ -1,3 +1,11 @@
+---
+name: Follow a user
+example: octokit.users.follow({ username })
+route: PUT /user/following/{username}
+scope: users
+type: API method
+---
+
 # Follow a user
 
 Note that you'll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see "[HTTP verbs](https://developer.github.com/v3/#http-verbs)."

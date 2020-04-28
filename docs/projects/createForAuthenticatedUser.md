@@ -1,3 +1,11 @@
+---
+name: Create a user project
+example: octokit.projects.createForAuthenticatedUser({ name })
+route: POST /user/projects
+scope: projects
+type: API method
+---
+
 # Create a user project
 
 ```js

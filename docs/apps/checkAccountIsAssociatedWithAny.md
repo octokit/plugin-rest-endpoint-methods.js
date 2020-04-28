@@ -1,3 +1,11 @@
+---
+name: Get a subscription plan for an account
+example: octokit.apps.checkAccountIsAssociatedWithAny({ account_id })
+route: GET /marketplace_listing/accounts/{account_id}
+scope: apps
+type: API method
+---
+
 # Get a subscription plan for an account
 
 **Deprecated:** This method has been renamed to apps.getSubscriptionPlanForAccount

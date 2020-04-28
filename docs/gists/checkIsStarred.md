@@ -1,3 +1,11 @@
+---
+name: Check if a gist is starred
+example: octokit.gists.checkIsStarred({ gist_id })
+route: GET /gists/{gist_id}/star
+scope: gists
+type: API method
+---
+
 # Check if a gist is starred
 
 ```js

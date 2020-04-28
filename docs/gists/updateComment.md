@@ -1,3 +1,11 @@
+---
+name: Edit a comment
+example: octokit.gists.updateComment({ gist_id, comment_id, body })
+route: PATCH /gists/{gist_id}/comments/{comment_id}
+scope: gists
+type: API method
+---
+
 # Edit a comment
 
 ```js

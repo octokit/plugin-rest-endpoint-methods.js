@@ -1,3 +1,11 @@
+---
+name: List reactions for a team discussion comment
+example: octokit.reactions.listForTeamDiscussionCommentInOrg({ org, team_slug, discussion_number, comment_number })
+route: GET /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}/reactions
+scope: reactions
+type: API method
+---
+
 # List reactions for a team discussion comment
 
 List the reactions to a [team discussion comment](https://developer.github.com/v3/teams/discussion_comments/). OAuth access tokens require the `read:discussion` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).

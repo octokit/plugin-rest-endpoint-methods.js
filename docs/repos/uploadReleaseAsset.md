@@ -1,3 +1,11 @@
+---
+name: Upload a release asset
+example: octokit.repos.uploadReleaseAsset({ owner, repo, release_id, data })
+route: POST {origin}/repos/{owner}/{repo}/releases/{release_id}/assets{?name,label}
+scope: repos
+type: API method
+---
+
 # Upload a release asset
 
 This endpoint makes use of [a Hypermedia relation](https://developer.github.com/v3/#hypermedia) to determine which URL to access. The endpoint you call to upload release assets is specific to your release. Use the `upload_url` returned in the response of the [Create a release endpoint](https://developer.github.com/v3/repos/releases/#create-a-release) to upload a release asset.

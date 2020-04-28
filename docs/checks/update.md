@@ -1,3 +1,11 @@
+---
+name: Update a check run
+example: octokit.checks.update({ owner, repo, check_run_id, output.summary, output.annotations[].path, output.annotations[].start_line, output.annotations[].end_line, output.annotations[].annotation_level, output.annotations[].message, output.images[].alt, output.images[].image_url, actions[].label, actions[].description, actions[].identifier })
+route: PATCH /repos/{owner}/{repo}/check-runs/{check_run_id}
+scope: checks
+type: API method
+---
+
 # Update a check run
 
 **Note:** The Checks API only looks for pushes in the repository where the check suite or check run were created. Pushes to a branch in a forked repository are not detected and return an empty `pull_requests` array.

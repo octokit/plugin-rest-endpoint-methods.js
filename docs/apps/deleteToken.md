@@ -1,3 +1,11 @@
+---
+name: Delete an app token
+example: octokit.apps.deleteToken({ client_id })
+route: DELETE /applications/{client_id}/token
+scope: apps
+type: API method
+---
+
 # Delete an app token
 
 OAuth application owners can revoke a single token for an OAuth application. You must use [Basic Authentication](https://developer.github.com/v3/auth#basic-authentication) when accessing this endpoint, using the OAuth application's `client_id` and `client_secret` as the username and password.

@@ -1,3 +1,11 @@
+---
+name: Delete a reaction (Legacy)
+example: octokit.reactions.delete({ reaction_id })
+route: DELETE /reactions/{reaction_id}
+scope: reactions
+type: API method
+---
+
 # Delete a reaction (Legacy)
 
 **This method is deprecated.**

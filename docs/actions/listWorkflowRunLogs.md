@@ -1,3 +1,11 @@
+---
+name: List workflow run logs
+example: octokit.actions.listWorkflowRunLogs({ owner, repo, run_id })
+route: GET /repos/{owner}/{repo}/actions/runs/{run_id}/logs
+scope: actions
+type: API method
+---
+
 # List workflow run logs
 
 Gets a redirect URL to download an archive of log files for a workflow run. This link expires after 1 minute. Look for `Location:` in the response header to find the URL for the download. Anyone with read access to the repository can use this endpoint. GitHub Apps must have the `actions` permission to use this endpoint.

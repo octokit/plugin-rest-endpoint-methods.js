@@ -1,3 +1,11 @@
+---
+name: Perform a merge
+example: octokit.repos.merge({ owner, repo, base, head })
+route: POST /repos/{owner}/{repo}/merges
+scope: repos
+type: API method
+---
+
 # Perform a merge
 
 ```js

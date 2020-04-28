@@ -1,3 +1,11 @@
+---
+name: Delete a self-hosted runner from an organization
+example: octokit.actions.deleteSelfHostedRunnerFromOrg({ org, runner_id })
+route: DELETE /orgs/{org}/actions/runners/{runner_id}
+scope: actions
+type: API method
+---
+
 # Delete a self-hosted runner from an organization
 
 **Warning:** The self-hosted runners API for organizations is currently in public beta and subject to change.

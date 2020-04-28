@@ -1,3 +1,11 @@
+---
+name: Edit a release asset
+example: octokit.repos.updateReleaseAsset({ owner, repo, asset_id })
+route: PATCH /repos/{owner}/{repo}/releases/assets/{asset_id}
+scope: repos
+type: API method
+---
+
 # Edit a release asset
 
 Users with push access to the repository can edit a release asset.

@@ -1,3 +1,11 @@
+---
+name: Download an artifact
+example: octokit.actions.downloadArtifact({ owner, repo, artifact_id, archive_format })
+route: GET /repos/{owner}/{repo}/actions/artifacts/{artifact_id}/{archive_format}
+scope: actions
+type: API method
+---
+
 # Download an artifact
 
 Gets a redirect URL to download an archive for a repository. This URL expires after 1 minute. Look for `Location:` in the response header to find the URL for the download. The `:archive_format` must be `zip`. Anyone with read access to the repository can use this endpoint. GitHub Apps must have the `actions` permission to use this endpoint.

@@ -1,3 +1,11 @@
+---
+name: Add email address(es)
+example: octokit.users.addEmails({ emails })
+route: POST /user/emails
+scope: users
+type: API method
+---
+
 # Add email address(es)
 
 This endpoint is accessible with the `user` scope.

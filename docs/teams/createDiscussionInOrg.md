@@ -1,3 +1,11 @@
+---
+name: Create a discussion
+example: octokit.teams.createDiscussionInOrg({ org, team_slug, title, body })
+route: POST /orgs/{org}/teams/{team_slug}/discussions
+scope: teams
+type: API method
+---
+
 # Create a discussion
 
 Creates a new discussion post on a team's page. OAuth access tokens require the `write:discussion` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).

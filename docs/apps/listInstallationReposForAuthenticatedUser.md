@@ -1,3 +1,11 @@
+---
+name: List repositories accessible to the user for an installation
+example: octokit.apps.listInstallationReposForAuthenticatedUser({ installation_id })
+route: GET /user/installations/{installation_id}/repositories
+scope: apps
+type: API method
+---
+
 # List repositories accessible to the user for an installation
 
 List repositories that the authenticated user has explicit permission (`:read`, `:write`, or `:admin`) to access for an installation.

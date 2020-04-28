@@ -1,3 +1,11 @@
+---
+name: List repositories
+example: octokit.apps.listRepos()
+route: GET /installation/repositories
+scope: apps
+type: API method
+---
+
 # List repositories
 
 List repositories that an installation can access.

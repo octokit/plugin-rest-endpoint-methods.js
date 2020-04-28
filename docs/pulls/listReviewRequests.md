@@ -1,3 +1,11 @@
+---
+name: List review requests
+example: octokit.pulls.listReviewRequests({ owner, repo, pull_number })
+route: GET /repos/{owner}/{repo}/pulls/{pull_number}/requested_reviewers
+scope: pulls
+type: API method
+---
+
 # List review requests
 
 ```js

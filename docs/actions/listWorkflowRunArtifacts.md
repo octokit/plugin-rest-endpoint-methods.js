@@ -1,3 +1,11 @@
+---
+name: List workflow run artifacts
+example: octokit.actions.listWorkflowRunArtifacts({ owner, repo, run_id })
+route: GET /repos/{owner}/{repo}/actions/runs/{run_id}/artifacts
+scope: actions
+type: API method
+---
+
 # List workflow run artifacts
 
 Lists artifacts for a workflow run. Anyone with read access to the repository can use this endpoint. GitHub Apps must have the `actions` permission to use this endpoint.

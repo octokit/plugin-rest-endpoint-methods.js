@@ -1,3 +1,11 @@
+---
+name: List plans (stubbed)
+example: octokit.apps.listPlansStubbed()
+route: GET /marketplace_listing/stubbed/plans
+scope: apps
+type: API method
+---
+
 # List plans (stubbed)
 
 Lists all plans that are part of your GitHub Marketplace listing.

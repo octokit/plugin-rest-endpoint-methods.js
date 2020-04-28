@@ -1,3 +1,11 @@
+---
+name: Add or update team repository
+example: octokit.teams.addOrUpdateRepoInOrg({ org, team_slug, owner, repo })
+route: PUT /orgs/{org}/teams/{team_slug}/repos/{owner}/{repo}
+scope: teams
+type: API method
+---
+
 # Add or update team repository
 
 To add a repository to a team or update the team's permission on a repository, the authenticated user must have admin access to the repository, and must be able to see the team. The repository must be owned by the organization, or a direct fork of a repository owned by the organization. You will get a `422 Unprocessable Entity` status if you attempt to add a repository to a team that is not owned by the organization. Note that, if you choose not to pass any parameters, you'll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see "[HTTP verbs](https://developer.github.com/v3/#http-verbs)."

@@ -1,3 +1,11 @@
+---
+name: Get an artifact
+example: octokit.actions.getArtifact({ owner, repo, artifact_id })
+route: GET /repos/{owner}/{repo}/actions/artifacts/{artifact_id}
+scope: actions
+type: API method
+---
+
 # Get an artifact
 
 Gets a specific artifact for a workflow run. Anyone with read access to the repository can use this endpoint. GitHub Apps must have the `actions` permission to use this endpoint.

@@ -1,3 +1,11 @@
+---
+name: List starred gists
+example: octokit.gists.listStarred()
+route: GET /gists/starred
+scope: gists
+type: API method
+---
+
 # List starred gists
 
 List the authenticated user's starred gists:

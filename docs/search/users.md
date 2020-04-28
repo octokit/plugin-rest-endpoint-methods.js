@@ -1,3 +1,11 @@
+---
+name: Search users
+example: octokit.search.users({ q })
+route: GET /search/users
+scope: search
+type: API method
+---
+
 # Search users
 
 Find users via various criteria. This method returns up to 100 results [per page](https://developer.github.com/v3/#pagination).

@@ -1,3 +1,11 @@
+---
+name: Delete a deployment
+example: octokit.repos.deleteDeployment({ owner, repo, deployment_id })
+route: DELETE /repos/{owner}/{repo}/deployments/{deployment_id}
+scope: repos
+type: API method
+---
+
 # Delete a deployment
 
 To ensure there can always be an active deployment, you can only delete an _inactive_ deployment. Anyone with `repo` or `repo_deployment` scopes can delete an inactive deployment.

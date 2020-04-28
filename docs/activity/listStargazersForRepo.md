@@ -1,3 +1,11 @@
+---
+name: List stargazers
+example: octokit.activity.listStargazersForRepo({ owner, repo })
+route: GET /repos/{owner}/{repo}/stargazers
+scope: activity
+type: API method
+---
+
 # List stargazers
 
 Lists the people that have starred the repository.

@@ -1,3 +1,11 @@
+---
+name: Get a single event
+example: octokit.issues.getEvent({ owner, repo, event_id })
+route: GET /repos/{owner}/{repo}/issues/events/{event_id}
+scope: issues
+type: API method
+---
+
 # Get a single event
 
 ```js

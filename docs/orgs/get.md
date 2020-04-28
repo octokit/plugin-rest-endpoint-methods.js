@@ -1,3 +1,11 @@
+---
+name: Get an organization
+example: octokit.orgs.get({ org })
+route: GET /orgs/{org}
+scope: orgs
+type: API method
+---
+
 # Get an organization
 
 To see many of the organization response values, you need to be an authenticated organization owner with the `admin:org` scope. When the value of `two_factor_requirement_enabled` is `true`, the organization requires all members, billing managers, and outside collaborators to enable [two-factor authentication](https://help.github.com/articles/securing-your-account-with-two-factor-authentication-2fa/).

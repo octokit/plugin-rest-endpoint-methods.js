@@ -1,3 +1,11 @@
+---
+name: Get the latest release
+example: octokit.repos.getLatestRelease({ owner, repo })
+route: GET /repos/{owner}/{repo}/releases/latest
+scope: repos
+type: API method
+---
+
 # Get the latest release
 
 View the latest published full release for the repository.

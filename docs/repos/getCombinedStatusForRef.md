@@ -1,3 +1,11 @@
+---
+name: Get the combined status for a specific ref
+example: octokit.repos.getCombinedStatusForRef({ owner, repo, ref })
+route: GET /repos/{owner}/{repo}/commits/{ref}/status
+scope: repos
+type: API method
+---
+
 # Get the combined status for a specific ref
 
 Users with pull access in a repository can access a combined view of commit statuses for a given ref. The ref can be a SHA, a branch name, or a tag name.

@@ -1,3 +1,11 @@
+---
+name: Create a milestone
+example: octokit.issues.createMilestone({ owner, repo, title })
+route: POST /repos/{owner}/{repo}/milestones
+scope: issues
+type: API method
+---
+
 # Create a milestone
 
 ```js

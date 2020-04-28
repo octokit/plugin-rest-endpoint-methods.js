@@ -1,3 +1,11 @@
+---
+name: List deployments
+example: octokit.repos.listDeployments({ owner, repo })
+route: GET /repos/{owner}/{repo}/deployments
+scope: repos
+type: API method
+---
+
 # List deployments
 
 Simple filtering of deployments is available via query parameters:

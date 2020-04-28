@@ -1,3 +1,11 @@
+---
+name: Star a repository for the authenticated user
+example: octokit.activity.starRepoForAuthenticatedUser({ owner, repo })
+route: PUT /user/starred/{owner}/{repo}
+scope: activity
+type: API method
+---
+
 # Star a repository for the authenticated user
 
 Note that you'll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see "[HTTP verbs](https://developer.github.com/v3/#http-verbs)."

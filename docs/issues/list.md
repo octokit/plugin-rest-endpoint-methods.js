@@ -1,3 +1,11 @@
+---
+name: List issues assigned to the authenticated user
+example: octokit.issues.list()
+route: GET /issues
+scope: issues
+type: API method
+---
+
 # List issues assigned to the authenticated user
 
 List issues assigned to the authenticated user across all visible repositories including owned repositories, member repositories, and organization repositories. You can use the `filter` query parameter to fetch issues that are not necessarily assigned to you. See the [Parameters table](https://developer.github.com/v3/issues/#parameters) for more information.

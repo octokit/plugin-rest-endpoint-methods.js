@@ -1,3 +1,11 @@
+---
+name: Public members list
+example: octokit.orgs.listPublicMembers({ org })
+route: GET /orgs/{org}/public_members
+scope: orgs
+type: API method
+---
+
 # Public members list
 
 Members of an organization can choose to have their membership publicized or not.

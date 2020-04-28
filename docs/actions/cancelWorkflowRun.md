@@ -1,3 +1,11 @@
+---
+name: Cancel a workflow run
+example: octokit.actions.cancelWorkflowRun({ owner, repo, run_id })
+route: POST /repos/{owner}/{repo}/actions/runs/{run_id}/cancel
+scope: actions
+type: API method
+---
+
 # Cancel a workflow run
 
 Cancels a workflow run using its `id`. Anyone with write access to the repository can use this endpoint. GitHub Apps must have the `actions` permission to use this endpoint.

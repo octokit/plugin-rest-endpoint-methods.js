@@ -1,3 +1,11 @@
+---
+name: Get a single pull request
+example: octokit.pulls.get({ owner, repo, pull_number })
+route: GET /repos/{owner}/{repo}/pulls/{pull_number}
+scope: pulls
+type: API method
+---
+
 # Get a single pull request
 
 Draft pull requests are available in public repositories with GitHub Free and GitHub Free for organizations, GitHub Pro, and legacy per-repository billing plans, and in public and private repositories with GitHub Team and GitHub Enterprise Cloud. For more information, see [GitHub's products](https://help.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.

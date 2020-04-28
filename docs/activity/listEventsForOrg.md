@@ -1,3 +1,11 @@
+---
+name: List organization events for the authenticated user
+example: octokit.activity.listEventsForOrg({ username, org })
+route: GET /users/{username}/events/orgs/{org}
+scope: activity
+type: API method
+---
+
 # List organization events for the authenticated user
 
 **Deprecated:** This method has been renamed to activity.listOrgEventsForAuthenticatedUser

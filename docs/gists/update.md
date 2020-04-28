@@ -1,3 +1,11 @@
+---
+name: Update a gist
+example: octokit.gists.update({ gist_id })
+route: PATCH /gists/{gist_id}
+scope: gists
+type: API method
+---
+
 # Update a gist
 
 Allows you to update or delete a gist file and rename gist files. Files from the previous version of the gist that aren't explicitly changed during an edit are unchanged.

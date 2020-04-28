@@ -1,3 +1,11 @@
+---
+name: Check if a repository is starred by the authenticated user
+example: octokit.activity.checkStarringRepo({ owner, repo })
+route: GET /user/starred/{owner}/{repo}
+scope: activity
+type: API method
+---
+
 # Check if a repository is starred by the authenticated user
 
 **Deprecated:** This method has been renamed to activity.checkRepoIsStarredByAuthenticatedUser

@@ -1,3 +1,11 @@
+---
+name: Get an individual code of conduct
+example: octokit.codesOfConduct.getConductCode({ key })
+route: GET /codes_of_conduct/{key}
+scope: codesOfConduct
+type: API method
+---
+
 # Get an individual code of conduct
 
 ```js

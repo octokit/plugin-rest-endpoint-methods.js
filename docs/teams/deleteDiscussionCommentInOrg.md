@@ -1,3 +1,11 @@
+---
+name: Delete a comment
+example: octokit.teams.deleteDiscussionCommentInOrg({ org, team_slug, discussion_number, comment_number })
+route: DELETE /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}
+scope: teams
+type: API method
+---
+
 # Delete a comment
 
 Deletes a comment on a team discussion. OAuth access tokens require the `write:discussion` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).

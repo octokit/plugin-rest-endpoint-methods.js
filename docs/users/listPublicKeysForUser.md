@@ -1,3 +1,11 @@
+---
+name: List public keys for a user
+example: octokit.users.listPublicKeysForUser({ username })
+route: GET /users/{username}/keys
+scope: users
+type: API method
+---
+
 # List public keys for a user
 
 Lists the _verified_ public SSH keys for a user. This is accessible by anyone.

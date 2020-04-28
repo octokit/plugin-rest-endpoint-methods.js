@@ -1,3 +1,11 @@
+---
+name: Create a registration token for an organization
+example: octokit.actions.createRegistrationTokenForOrg({ org })
+route: POST /orgs/{org}/actions/runners/registration-token
+scope: actions
+type: API method
+---
+
 # Create a registration token for an organization
 
 **Warning:** The self-hosted runners API for organizations is currently in public beta and subject to change.

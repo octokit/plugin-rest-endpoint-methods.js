@@ -1,3 +1,11 @@
+---
+name: List reactions for an issue comment
+example: octokit.reactions.listForIssueComment({ owner, repo, comment_id })
+route: GET /repos/{owner}/{repo}/issues/comments/{comment_id}/reactions
+scope: reactions
+type: API method
+---
+
 # List reactions for an issue comment
 
 List the reactions to an [issue comment](https://developer.github.com/v3/issues/comments/).

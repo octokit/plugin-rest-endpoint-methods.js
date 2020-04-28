@@ -1,3 +1,11 @@
+---
+name: Update a milestone
+example: octokit.issues.updateMilestone({ owner, repo, milestone_number })
+route: PATCH /repos/{owner}/{repo}/milestones/{milestone_number}
+scope: issues
+type: API method
+---
+
 # Update a milestone
 
 ```js

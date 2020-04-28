@@ -1,3 +1,11 @@
+---
+name: Create a commit comment
+example: octokit.repos.createCommitComment({ owner, repo, commit_sha, body })
+route: POST /repos/{owner}/{repo}/commits/{commit_sha}/comments
+scope: repos
+type: API method
+---
+
 # Create a commit comment
 
 Create a comment for a commit using its `:commit_sha`.

@@ -1,3 +1,11 @@
+---
+name: Conceal a user's membership
+example: octokit.orgs.concealMembership({ org, username })
+route: DELETE /orgs/{org}/public_members/{username}
+scope: orgs
+type: API method
+---
+
 # Conceal a user's membership
 
 ```js

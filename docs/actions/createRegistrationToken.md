@@ -1,3 +1,11 @@
+---
+name: Create a registration token for a repository
+example: octokit.actions.createRegistrationToken({ owner, repo })
+route: POST /repos/{owner}/{repo}/actions/runners/registration-token
+scope: actions
+type: API method
+---
+
 # Create a registration token for a repository
 
 **Deprecated:** This method has been renamed to actions.createRegistrationTokenForRepo

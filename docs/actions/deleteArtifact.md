@@ -1,3 +1,11 @@
+---
+name: Delete an artifact
+example: octokit.actions.deleteArtifact({ owner, repo, artifact_id })
+route: DELETE /repos/{owner}/{repo}/actions/artifacts/{artifact_id}
+scope: actions
+type: API method
+---
+
 # Delete an artifact
 
 Deletes an artifact for a workflow run. Anyone with write access to the repository can use this endpoint. GitHub Apps must have the `actions` permission to use this endpoint.

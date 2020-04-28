@@ -1,3 +1,11 @@
+---
+name: List check runs in a check suite
+example: octokit.checks.listForSuite({ owner, repo, check_suite_id })
+route: GET /repos/{owner}/{repo}/check-suites/{check_suite_id}/check-runs
+scope: checks
+type: API method
+---
+
 # List check runs in a check suite
 
 **Note:** The Checks API only looks for pushes in the repository where the check suite or check run were created. Pushes to a branch in a forked repository are not detected and return an empty `pull_requests` array.

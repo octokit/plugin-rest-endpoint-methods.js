@@ -1,3 +1,11 @@
+---
+name: List organization issues assigned to the authenticated user
+example: octokit.issues.listForOrg({ org })
+route: GET /orgs/{org}/issues
+scope: issues
+type: API method
+---
+
 # List organization issues assigned to the authenticated user
 
 List issues in an organization assigned to the authenticated user.
