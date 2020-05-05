@@ -8,7 +8,7 @@ type: API method
 
 # Delete an installation
 
-Uninstalls a GitHub App on a user, organization, or business account.
+Uninstalls a GitHub App on a user, organization, or business account. If you prefer to temporarily suspend an app's access to your account's resources, then we recommend the "[Suspend an installation](https://developer.github.com/v3/apps/#suspend-an-installation)" endpoint.
 
 You must use a [JWT](https://developer.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint.
 

@@ -114,6 +114,22 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["GET /repos/:owner/:repo/actions/artifacts/:artifact_id/:archive_format"]["response"];
     };
+    downloadWorkflowJobLogs: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /repos/:owner/:repo/actions/jobs/:job_id/logs"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /repos/:owner/:repo/actions/jobs/:job_id/logs"]["response"];
+    };
+    downloadWorkflowRunLogs: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /repos/:owner/:repo/actions/runs/:run_id/logs"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /repos/:owner/:repo/actions/runs/:run_id/logs"]["response"];
+    };
     getArtifact: {
       parameters: RequestParameters &
         Omit<
@@ -941,6 +957,22 @@ export type RestEndpointMethodTypes = {
           "baseUrl" | "headers" | "mediaType"
         >;
       response: Endpoints["DELETE /installation/token"]["response"];
+    };
+    suspendInstallation: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["PUT /app/installations/:installation_id/suspended"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["PUT /app/installations/:installation_id/suspended"]["response"];
+    };
+    unsuspendInstallation: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["DELETE /app/installations/:installation_id/suspended"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["DELETE /app/installations/:installation_id/suspended"]["response"];
     };
   };
   checks: {

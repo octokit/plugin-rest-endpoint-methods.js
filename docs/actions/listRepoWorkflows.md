@@ -8,7 +8,7 @@ type: API method
 
 # List repository workflows
 
-Lists the workflows in a repository. Anyone with read access to the repository can use this endpoint. GitHub Apps must have the `actions` permission to use this endpoint.
+Lists the workflows in a repository. Anyone with read access to the repository can use this endpoint. If the repository is private you must use an access token with the `repo` scope. GitHub Apps must have the `actions` permission to use this endpoint.
 
 ```js
 octokit.actions.listRepoWorkflows({

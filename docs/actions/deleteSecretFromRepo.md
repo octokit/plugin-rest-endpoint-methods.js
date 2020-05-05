@@ -8,7 +8,7 @@ type: API method
 
 # Delete a secret from a repository
 
-Deletes a secret in a repository using the secret name. Anyone with write access to the repository can use this endpoint. GitHub Apps must have the `secrets` permission to use this endpoint.
+Deletes a secret in a repository using the secret name. Anyone with write access to the repository and an access token with the `repo` scope can use this endpoint. GitHub Apps must have the `secrets` permission to use this endpoint.
 
 ```js
 octokit.actions.deleteSecretFromRepo({

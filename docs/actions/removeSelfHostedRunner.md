@@ -10,7 +10,7 @@ type: API method
 
 **Deprecated:** This method has been renamed to actions.deleteSelfHostedRunnerFromRepo
 
-Forces the removal of a self-hosted runner from a repository. You can use this endpoint to completely remove the runner when the machine you were using no longer exists. Anyone with admin access to the repository can use this endpoint. GitHub Apps must have the `administration:write` repository permission to use this endpoint.
+Forces the removal of a self-hosted runner from a repository. You can use this endpoint to completely remove the runner when the machine you were using no longer exists. Anyone with admin access to the repository and an access token with the `repo` scope can use this endpoint.
 
 ```js
 octokit.actions.removeSelfHostedRunner({

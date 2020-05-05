@@ -4,7 +4,7 @@ import { RestEndpointMethodTypes } from "./parameters-and-response-types";
 export type RestEndpointMethods = {
   actions: {
     /**
-     * Cancels a workflow run using its `id`. Anyone with write access to the repository can use this endpoint. GitHub Apps must have the `actions` permission to use this endpoint.
+     * Cancels a workflow run using its `id`. Anyone with write access to the repository and an access token with the `repo` scope can use this endpoint. GitHub Apps must have the `actions` permission to use this endpoint.
      */
     cancelWorkflowRun: {
       (
@@ -16,7 +16,7 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Creates or updates a secret with an encrypted value. Encrypt your secret using [LibSodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages). Anyone with write access to the repository can use this endpoint. GitHub Apps must have the `secrets` permission to use this endpoint.
+     * Creates or updates a secret with an encrypted value. Encrypt your secret using [LibSodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages). Anyone with write access to the repository and an access token with the `repo` scope can use this endpoint. GitHub Apps must have the `secrets` permission to use this endpoint.
      *
      * Encrypt your secret using the [tweetsodium](https://github.com/mastahyeti/tweetsodium) library.
      *
@@ -42,7 +42,7 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Returns a token that you can pass to the `config` script. The token expires after one hour. Anyone with admin access to the repository can use this endpoint. GitHub Apps must have the `administration:write` repository permission to use this endpoint.
+     * Returns a token that you can pass to the `config` script. The token expires after one hour. Anyone with admin access to the repository and an access token with the `repo` scope can use this endpoint.
      *
      * Configure your self-hosted runner, replacing TOKEN with the registration token provided by this endpoint.
      * @deprecated octokit.actions.createRegistrationToken() has been renamed to octokit.actions.createRegistrationTokenForRepo() (2020-04-22)
@@ -59,7 +59,7 @@ export type RestEndpointMethods = {
     /**
      * **Warning:** The self-hosted runners API for organizations is currently in public beta and subject to change.
      *
-     * Returns a token that you can pass to the `config` script. The token expires after one hour. Anyone with admin access to the organization can use this endpoint. GitHub Apps must have the `self-hosted runners:write` organization permission to use this endpoint.
+     * Returns a token that you can pass to the `config` script. The token expires after one hour. Anyone with admin access to the organization can use this endpoint.
      *
      * Configure your self-hosted runner, replacing `TOKEN` with the registration token provided by this endpoint.
      */
@@ -73,7 +73,7 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Returns a token that you can pass to the `config` script. The token expires after one hour. Anyone with admin access to the repository can use this endpoint. GitHub Apps must have the `administration:write` repository permission to use this endpoint.
+     * Returns a token that you can pass to the `config` script. The token expires after one hour. Anyone with admin access to the repository and an access token with the `repo` scope can use this endpoint.
      *
      * Configure your self-hosted runner, replacing TOKEN with the registration token provided by this endpoint.
      */
@@ -87,7 +87,7 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Returns a token that you can pass to remove a self-hosted runner from a repository. The token expires after one hour. Anyone with admin access to the repository can use this endpoint. GitHub Apps must have the `administration:write` repository permission to use this endpoint.
+     * Returns a token that you can pass to remove a self-hosted runner from a repository. The token expires after one hour. Anyone with admin access to the repository and an access token with the `repo` scope can use this endpoint.
      *
      * Remove your self-hosted runner from a repository, replacing TOKEN with the remove token provided by this endpoint.
      * @deprecated octokit.actions.createRemoveToken() has been renamed to octokit.actions.createRemoveTokenForRepo() (2020-04-22)
@@ -104,7 +104,7 @@ export type RestEndpointMethods = {
     /**
      * **Warning:** The self-hosted runners API for organizations is currently in public beta and subject to change.
      *
-     * Returns a token that you can pass to the `config` script to remove a self-hosted runner from an organization. The token expires after one hour. Anyone with admin access to the organization can use this endpoint. GitHub Apps must have the `self-hosted runners:write` organization permission to use this endpoint.
+     * Returns a token that you can pass to the `config` script to remove a self-hosted runner from an organization. The token expires after one hour. Anyone with admin access to the organization can use this endpoint.
      *
      * To remove your self-hosted runner from an organization, replace `TOKEN` with the remove token provided by this endpoint.
      */
@@ -118,7 +118,7 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Returns a token that you can pass to remove a self-hosted runner from a repository. The token expires after one hour. Anyone with admin access to the repository can use this endpoint. GitHub Apps must have the `administration:write` repository permission to use this endpoint.
+     * Returns a token that you can pass to remove a self-hosted runner from a repository. The token expires after one hour. Anyone with admin access to the repository and an access token with the `repo` scope can use this endpoint.
      *
      * Remove your self-hosted runner from a repository, replacing TOKEN with the remove token provided by this endpoint.
      */
@@ -132,7 +132,7 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Deletes an artifact for a workflow run. Anyone with write access to the repository can use this endpoint. GitHub Apps must have the `actions` permission to use this endpoint.
+     * Deletes an artifact for a workflow run. Anyone with write access to the repository and an access token with the `repo` scope can use this endpoint. GitHub Apps must have the `actions` permission to use this endpoint.
      */
     deleteArtifact: {
       (
@@ -144,7 +144,7 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Deletes a secret in a repository using the secret name. Anyone with write access to the repository can use this endpoint. GitHub Apps must have the `secrets` permission to use this endpoint.
+     * Deletes a secret in a repository using the secret name. Anyone with write access to the repository and an access token with the `repo` scope can use this endpoint. GitHub Apps must have the `secrets` permission to use this endpoint.
      */
     deleteSecretFromRepo: {
       (
@@ -158,7 +158,7 @@ export type RestEndpointMethods = {
     /**
      * **Warning:** The self-hosted runners API for organizations is currently in public beta and subject to change.
      *
-     * Forces the removal of a self-hosted runner from an organization. You can use this endpoint to completely remove the runner when the machine you were using no longer exists. Anyone with admin access to the organization can use this endpoint. GitHub Apps must have the `self-hosted runners:write` organization permission to use this endpoint.
+     * Forces the removal of a self-hosted runner from an organization. You can use this endpoint to completely remove the runner when the machine you were using no longer exists. Anyone with admin access to the organization can use this endpoint.
      */
     deleteSelfHostedRunnerFromOrg: {
       (
@@ -170,7 +170,7 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Forces the removal of a self-hosted runner from a repository. You can use this endpoint to completely remove the runner when the machine you were using no longer exists. Anyone with admin access to the repository can use this endpoint. GitHub Apps must have the `administration:write` repository permission to use this endpoint.
+     * Forces the removal of a self-hosted runner from a repository. You can use this endpoint to completely remove the runner when the machine you were using no longer exists. Anyone with admin access to the repository and an access token with the `repo` scope can use this endpoint.
      */
     deleteSelfHostedRunnerFromRepo: {
       (
@@ -182,7 +182,7 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Deletes all logs for a workflow run. Anyone with write access to the repository can use this endpoint. GitHub Apps must have the `actions` permission to use this endpoint.
+     * Deletes all logs for a workflow run. Anyone with write access to the repository and an access token with the `repo` scope can use this endpoint. GitHub Apps must have the `actions` permission to use this endpoint.
      */
     deleteWorkflowRunLogs: {
       (
@@ -194,7 +194,7 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Gets a redirect URL to download an archive for a repository. This URL expires after 1 minute. Look for `Location:` in the response header to find the URL for the download. The `:archive_format` must be `zip`. Anyone with read access to the repository can use this endpoint. GitHub Apps must have the `actions` permission to use this endpoint.
+     * Gets a redirect URL to download an archive for a repository. This URL expires after 1 minute. Look for `Location:` in the response header to find the URL for the download. The `:archive_format` must be `zip`. Anyone with read access to the repository can use this endpoint. If the repository is private you must use an access token with the `repo` scope. GitHub Apps must have the `actions` permission to use this endpoint.
      *
      * Call this endpoint using the `-v` flag, which enables verbose output and allows you to see the download URL in the header. To download the file into the current working directory, specify the filename using the `-o` flag.
      */
@@ -208,7 +208,35 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Gets a specific artifact for a workflow run. Anyone with read access to the repository can use this endpoint. GitHub Apps must have the `actions` permission to use this endpoint.
+     * Gets a redirect URL to download a plain text file of logs for a workflow job. This link expires after 1 minute. Look for `Location:` in the response header to find the URL for the download. Anyone with read access to the repository can use this endpoint. If the repository is private you must use an access token with the `repo` scope. GitHub Apps must have the `actions` permission to use this endpoint.
+     *
+     * Call this endpoint using the `-v` flag, which enables verbose output and allows you to see the download URL in the header. To download the file into the current working directory, specify the filename using the `-o` flag.
+     */
+    downloadWorkflowJobLogs: {
+      (
+        params?: RestEndpointMethodTypes["actions"]["downloadWorkflowJobLogs"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["actions"]["downloadWorkflowJobLogs"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Gets a redirect URL to download an archive of log files for a workflow run. This link expires after 1 minute. Look for `Location:` in the response header to find the URL for the download. Anyone with read access to the repository can use this endpoint. If the repository is private you must use an access token with the `repo` scope. GitHub Apps must have the `actions` permission to use this endpoint.
+     *
+     * Call this endpoint using the `-v` flag, which enables verbose output and allows you to see the download URL in the header. To download the file into the current working directory, specify the filename using the `-o` flag.
+     */
+    downloadWorkflowRunLogs: {
+      (
+        params?: RestEndpointMethodTypes["actions"]["downloadWorkflowRunLogs"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["actions"]["downloadWorkflowRunLogs"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Gets a specific artifact for a workflow run. Anyone with read access to the repository can use this endpoint. If the repository is private you must use an access token with the `repo` scope. GitHub Apps must have the `actions` permission to use this endpoint.
      */
     getArtifact: {
       (
@@ -218,7 +246,7 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Gets your public key, which you must store. You need your public key to use other secrets endpoints. Use the returned `key` to encrypt your secrets. Anyone with read access to the repository can use this endpoint. GitHub Apps must have the `secrets` permission to use this endpoint.
+     * Gets your public key, which you must store. You need your public key to use other secrets endpoints. Use the returned `key` to encrypt your secrets. Anyone with read access to the repository can use this endpoint. If the repository is private you must use an access token with the `repo` scope. GitHub Apps must have the `secrets` permission to use this endpoint.
      */
     getPublicKey: {
       (
@@ -230,7 +258,7 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Gets a single secret without revealing its encrypted value. Anyone with write access to the repository can use this endpoint. GitHub Apps must have the `secrets` permission to use this endpoint.
+     * Gets a single secret without revealing its encrypted value. Anyone with write access to the repository and an access token with the `repo` scope can use this endpoint. GitHub Apps must have the `secrets` permission to use this endpoint.
      */
     getSecret: {
       (
@@ -240,7 +268,7 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Gets a specific self-hosted runner. Anyone with admin access to the repository can use this endpoint. GitHub Apps must have the `administration:read` repository permission to use this endpoint.
+     * Gets a specific self-hosted runner. Anyone with admin access to the repository and an access token with the `repo` scope can use this endpoint.
      * @deprecated octokit.actions.getSelfHostedRunner() has been renamed to octokit.actions.getSelfHostedRunnerForRepo() (2020-04-22)
      */
     getSelfHostedRunner: {
@@ -255,7 +283,7 @@ export type RestEndpointMethods = {
     /**
      * **Warning:** The self-hosted runners API for organizations is currently in public beta and subject to change.
      *
-     * Gets a specific self-hosted runner for an organization. Anyone with admin access to the organization can use this endpoint. GitHub Apps must have the `self-hosted runners:read` organization permission to use this endpoint.
+     * Gets a specific self-hosted runner for an organization. Anyone with admin access to the organization can use this endpoint.
      */
     getSelfHostedRunnerForOrg: {
       (
@@ -267,7 +295,7 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Gets a specific self-hosted runner. Anyone with admin access to the repository can use this endpoint. GitHub Apps must have the `administration:read` repository permission to use this endpoint.
+     * Gets a specific self-hosted runner. Anyone with admin access to the repository and an access token with the `repo` scope can use this endpoint.
      */
     getSelfHostedRunnerForRepo: {
       (
@@ -279,7 +307,7 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Gets a specific workflow. You can also replace `:workflow_id` with `:workflow_file_name`. For example, you could use `main.yml`. Anyone with read access to the repository can use this endpoint. GitHub Apps must have the `actions` permission to use this endpoint.
+     * Gets a specific workflow. You can also replace `:workflow_id` with `:workflow_file_name`. For example, you could use `main.yml`. Anyone with read access to the repository can use this endpoint. If the repository is private you must use an access token with the `repo` scope. GitHub Apps must have the `actions` permission to use this endpoint.
      */
     getWorkflow: {
       (
@@ -289,7 +317,7 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Gets a specific job in a workflow run. Anyone with read access to the repository can use this endpoint. GitHub Apps must have the `actions` permission to use this endpoint.
+     * Gets a specific job in a workflow run. Anyone with read access to the repository can use this endpoint. If the repository is private you must use an access token with the `repo` scope. GitHub Apps must have the `actions` permission to use this endpoint.
      */
     getWorkflowJob: {
       (
@@ -301,7 +329,7 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Gets a specific workflow run. Anyone with read access to the repository can use this endpoint. GitHub Apps must have the `actions` permission to use this endpoint.
+     * Gets a specific workflow run. Anyone with read access to the repository can use this endpoint. If the repository is private you must use an access token with the `repo` scope. GitHub Apps must have the `actions` permission to use this endpoint.
      */
     getWorkflowRun: {
       (
@@ -313,7 +341,7 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Lists all artifacts for a repository. Anyone with read access to the repository can use this endpoint. GitHub Apps must have the `actions` permission to use this endpoint.
+     * Lists all artifacts for a repository. Anyone with read access to the repository can use this endpoint. If the repository is private you must use an access token with the `repo` scope. GitHub Apps must have the `actions` permission to use this endpoint.
      */
     listArtifactsForRepo: {
       (
@@ -325,7 +353,7 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Lists binaries for the runner application that you can download and run. Anyone with admin access to the repository can use this endpoint. GitHub Apps must have the `administration:read` repository permission to use this endpoint.
+     * Lists binaries for the runner application that you can download and run. Anyone with admin access to the repository and an access token with the `repo` scope can use this endpoint.
      * @deprecated octokit.actions.listDownloadsForSelfHostedRunnerApplication() has been renamed to octokit.actions.listRunnerApplicationsForRepo() (2020-04-22)
      */
     listDownloadsForSelfHostedRunnerApplication: {
@@ -338,7 +366,7 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Lists jobs for a workflow run. Anyone with read access to the repository can use this endpoint. GitHub Apps must have the `actions` permission to use this endpoint. You can use parameters to narrow the list of results. For more information about using parameters, see [Parameters](https://developer.github.com/v3/#parameters).
+     * Lists jobs for a workflow run. Anyone with read access to the repository can use this endpoint. If the repository is private you must use an access token with the `repo` scope. GitHub Apps must have the `actions` permission to use this endpoint. You can use parameters to narrow the list of results. For more information about using parameters, see [Parameters](https://developer.github.com/v3/#parameters).
      */
     listJobsForWorkflowRun: {
       (
@@ -352,7 +380,7 @@ export type RestEndpointMethods = {
     /**
      * Lists all workflow runs for a repository. You can use parameters to narrow the list of results. For more information about using parameters, see [Parameters](https://developer.github.com/v3/#parameters).
      *
-     * Anyone with read access to the repository can use this endpoint. GitHub Apps must have the `actions` permission to use this endpoint.
+     * Anyone with read access to the repository can use this endpoint. If the repository is private you must use an access token with the `repo` scope. GitHub Apps must have the `actions` permission to use this endpoint.
      */
     listRepoWorkflowRuns: {
       (
@@ -364,7 +392,7 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Lists the workflows in a repository. Anyone with read access to the repository can use this endpoint. GitHub Apps must have the `actions` permission to use this endpoint.
+     * Lists the workflows in a repository. Anyone with read access to the repository can use this endpoint. If the repository is private you must use an access token with the `repo` scope. GitHub Apps must have the `actions` permission to use this endpoint.
      */
     listRepoWorkflows: {
       (
@@ -378,7 +406,7 @@ export type RestEndpointMethods = {
     /**
      * **Warning:** The self-hosted runners API for organizations is currently in public beta and subject to change.
      *
-     * Lists binaries for the runner application that you can download and run. Anyone with admin access to the organization can use this endpoint. GitHub Apps must have the `self-hosted runners:read` organization permission to use this endpoint.
+     * Lists binaries for the runner application that you can download and run. Anyone with admin access to the organization can use this endpoint.
      */
     listRunnerApplicationsForOrg: {
       (
@@ -390,7 +418,7 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Lists binaries for the runner application that you can download and run. Anyone with admin access to the repository can use this endpoint. GitHub Apps must have the `administration:read` repository permission to use this endpoint.
+     * Lists binaries for the runner application that you can download and run. Anyone with admin access to the repository and an access token with the `repo` scope can use this endpoint.
      */
     listRunnerApplicationsForRepo: {
       (
@@ -402,7 +430,7 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Lists all secrets available in a repository without revealing their encrypted values. Anyone with write access to the repository can use this endpoint. GitHub Apps must have the `secrets` permission to use this endpoint.
+     * Lists all secrets available in a repository without revealing their encrypted values. Anyone with write access to the repository and an access token with the `repo` scope can use this endpoint. GitHub Apps must have the `secrets` permission to use this endpoint.
      */
     listSecretsForRepo: {
       (
@@ -416,7 +444,7 @@ export type RestEndpointMethods = {
     /**
      * **Warning:** The self-hosted runners API for organizations is currently in public beta and subject to change.
      *
-     * Lists all self-hosted runners for an organization. Anyone with admin access to the organization can use this endpoint. GitHub Apps must have the `self-hosted runners:read` organization permission to use this endpoint.
+     * Lists all self-hosted runners for an organization. Anyone with admin access to the organization can use this endpoint.
      */
     listSelfHostedRunnersForOrg: {
       (
@@ -428,7 +456,7 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Lists all self-hosted runners for a repository. Anyone with admin access to the repository can use this endpoint. GitHub Apps must have the `administration:read` repository permission to use this endpoint.
+     * Lists all self-hosted runners for a repository. Anyone with admin access to the repository and an access token with the `repo` scope can use this endpoint.
      */
     listSelfHostedRunnersForRepo: {
       (
@@ -440,9 +468,10 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Gets a redirect URL to download a plain text file of logs for a workflow job. This link expires after 1 minute. Look for `Location:` in the response header to find the URL for the download. Anyone with read access to the repository can use this endpoint. GitHub Apps must have the `actions` permission to use this endpoint.
+     * Gets a redirect URL to download a plain text file of logs for a workflow job. This link expires after 1 minute. Look for `Location:` in the response header to find the URL for the download. Anyone with read access to the repository can use this endpoint. If the repository is private you must use an access token with the `repo` scope. GitHub Apps must have the `actions` permission to use this endpoint.
      *
      * Call this endpoint using the `-v` flag, which enables verbose output and allows you to see the download URL in the header. To download the file into the current working directory, specify the filename using the `-o` flag.
+     * @deprecated octokit.actions.listWorkflowJobLogs() has been renamed to octokit.actions.downloadWorkflowJobLogs() (2020-05-04)
      */
     listWorkflowJobLogs: {
       (
@@ -454,7 +483,7 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Lists artifacts for a workflow run. Anyone with read access to the repository can use this endpoint. GitHub Apps must have the `actions` permission to use this endpoint.
+     * Lists artifacts for a workflow run. Anyone with read access to the repository can use this endpoint. If the repository is private you must use an access token with the `repo` scope. GitHub Apps must have the `actions` permission to use this endpoint.
      */
     listWorkflowRunArtifacts: {
       (
@@ -466,9 +495,10 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Gets a redirect URL to download an archive of log files for a workflow run. This link expires after 1 minute. Look for `Location:` in the response header to find the URL for the download. Anyone with read access to the repository can use this endpoint. GitHub Apps must have the `actions` permission to use this endpoint.
+     * Gets a redirect URL to download an archive of log files for a workflow run. This link expires after 1 minute. Look for `Location:` in the response header to find the URL for the download. Anyone with read access to the repository can use this endpoint. If the repository is private you must use an access token with the `repo` scope. GitHub Apps must have the `actions` permission to use this endpoint.
      *
      * Call this endpoint using the `-v` flag, which enables verbose output and allows you to see the download URL in the header. To download the file into the current working directory, specify the filename using the `-o` flag.
+     * @deprecated octokit.actions.listWorkflowRunLogs() has been renamed to octokit.actions.downloadWorkflowRunLogs() (2020-05-04)
      */
     listWorkflowRunLogs: {
       (
@@ -482,7 +512,7 @@ export type RestEndpointMethods = {
     /**
      * List all workflow runs for a workflow. You can also replace `:workflow_id` with `:workflow_file_name`. For example, you could use `main.yml`. You can use parameters to narrow the list of results. For more information about using parameters, see [Parameters](https://developer.github.com/v3/#parameters).
      *
-     * Anyone with read access to the repository can use this endpoint.
+     * Anyone with read access to the repository can use this endpoint. If the repository is private you must use an access token with the `repo` scope.
      */
     listWorkflowRuns: {
       (
@@ -494,7 +524,7 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Re-runs your workflow run using its `id`. Anyone with write access to the repository can use this endpoint. GitHub Apps must have the `actions` permission to use this endpoint.
+     * Re-runs your workflow run using its `id`. Anyone with write access to the repository and an access token with the `repo` scope can use this endpoint. GitHub Apps must have the `actions` permission to use this endpoint.
      */
     reRunWorkflow: {
       (
@@ -506,7 +536,7 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Forces the removal of a self-hosted runner from a repository. You can use this endpoint to completely remove the runner when the machine you were using no longer exists. Anyone with admin access to the repository can use this endpoint. GitHub Apps must have the `administration:write` repository permission to use this endpoint.
+     * Forces the removal of a self-hosted runner from a repository. You can use this endpoint to completely remove the runner when the machine you were using no longer exists. Anyone with admin access to the repository and an access token with the `repo` scope can use this endpoint.
      * @deprecated octokit.actions.removeSelfHostedRunner() has been renamed to octokit.actions.deleteSelfHostedRunnerFromRepo() (2020-04-22)
      */
     removeSelfHostedRunner: {
@@ -1165,7 +1195,7 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Uninstalls a GitHub App on a user, organization, or business account.
+     * Uninstalls a GitHub App on a user, organization, or business account. If you prefer to temporarily suspend an app's access to your account's resources, then we recommend the "[Suspend an installation](https://developer.github.com/v3/apps/#suspend-an-installation)" endpoint.
      *
      * You must use a [JWT](https://developer.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint.
      */
@@ -1528,6 +1558,42 @@ export type RestEndpointMethods = {
         params?: RestEndpointMethodTypes["apps"]["revokeInstallationToken"]["parameters"]
       ): Promise<
         RestEndpointMethodTypes["apps"]["revokeInstallationToken"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * **Note:** Suspending a GitHub App installation is currently in beta and subject to change. Before you can suspend a GitHub App, the app owner must enable suspending installations for the app by opting-in to the beta. For more information, see "[Suspending a GitHub App installation](https://developer.github.com/apps/managing-github-apps/suspending-a-github-app-installation/)."
+     *
+     * Suspends a GitHub App on a user, organization, or business account, which blocks the app from accessing the account's resources. When a GitHub App is suspended, the app's access to the GitHub API or webhook events is blocked for that account.
+     *
+     * To suspend a GitHub App, you must be an account owner or have admin permissions in the repository or organization where the app is installed.
+     *
+     * You must use a [JWT](https://developer.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint.
+     */
+    suspendInstallation: {
+      (
+        params?: RestEndpointMethodTypes["apps"]["suspendInstallation"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["apps"]["suspendInstallation"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * **Note:** Suspending a GitHub App installation is currently in beta and subject to change. Before you can suspend a GitHub App, the app owner must enable suspending installations for the app by opting-in to the beta. For more information, see "[Suspending a GitHub App installation](https://developer.github.com/apps/managing-github-apps/suspending-a-github-app-installation/)."
+     *
+     * Removes a GitHub App installation suspension.
+     *
+     * To unsuspend a GitHub App, you must be an account owner or have admin permissions in the repository or organization where the app is installed and suspended.
+     *
+     * You must use a [JWT](https://developer.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint.
+     */
+    unsuspendInstallation: {
+      (
+        params?: RestEndpointMethodTypes["apps"]["unsuspendInstallation"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["apps"]["unsuspendInstallation"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
