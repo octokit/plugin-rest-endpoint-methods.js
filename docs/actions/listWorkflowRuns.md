@@ -10,7 +10,7 @@ type: API method
 
 List all workflow runs for a workflow. You can also replace `:workflow_id` with `:workflow_file_name`. For example, you could use `main.yml`. You can use parameters to narrow the list of results. For more information about using parameters, see [Parameters](https://developer.github.com/v3/#parameters).
 
-Anyone with read access to the repository can use this endpoint.
+Anyone with read access to the repository can use this endpoint. If the repository is private you must use an access token with the `repo` scope.
 
 ```js
 octokit.actions.listWorkflowRuns({

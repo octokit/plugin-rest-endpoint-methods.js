@@ -8,7 +8,7 @@ type: API method
 
 # Create or update a secret for a repository
 
-Creates or updates a secret with an encrypted value. Encrypt your secret using [LibSodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages). Anyone with write access to the repository can use this endpoint. GitHub Apps must have the `secrets` permission to use this endpoint.
+Creates or updates a secret with an encrypted value. Encrypt your secret using [LibSodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages). Anyone with write access to the repository and an access token with the `repo` scope can use this endpoint. GitHub Apps must have the `secrets` permission to use this endpoint.
 
 Encrypt your secret using the [tweetsodium](https://github.com/mastahyeti/tweetsodium) library.
 

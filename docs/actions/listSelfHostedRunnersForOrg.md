@@ -10,7 +10,7 @@ type: API method
 
 **Warning:** The self-hosted runners API for organizations is currently in public beta and subject to change.
 
-Lists all self-hosted runners for an organization. Anyone with admin access to the organization can use this endpoint. GitHub Apps must have the `self-hosted runners:read` organization permission to use this endpoint.
+Lists all self-hosted runners for an organization. Anyone with admin access to the organization can use this endpoint.
 
 ```js
 octokit.actions.listSelfHostedRunnersForOrg({

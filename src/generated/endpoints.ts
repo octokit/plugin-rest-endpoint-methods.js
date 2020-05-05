@@ -45,6 +45,12 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     downloadArtifact: [
       "GET /repos/{owner}/{repo}/actions/artifacts/{artifact_id}/{archive_format}",
     ],
+    downloadWorkflowJobLogs: [
+      "GET /repos/{owner}/{repo}/actions/jobs/{job_id}/logs",
+    ],
+    downloadWorkflowRunLogs: [
+      "GET /repos/{owner}/{repo}/actions/runs/{run_id}/logs",
+    ],
     getArtifact: ["GET /repos/{owner}/{repo}/actions/artifacts/{artifact_id}"],
     getPublicKey: ["GET /repos/{owner}/{repo}/actions/secrets/public-key"],
     getSecret: ["GET /repos/{owner}/{repo}/actions/secrets/{name}"],
@@ -80,12 +86,16 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     listSelfHostedRunnersForRepo: ["GET /repos/{owner}/{repo}/actions/runners"],
     listWorkflowJobLogs: [
       "GET /repos/{owner}/{repo}/actions/jobs/{job_id}/logs",
+      {},
+      { renamed: ["actions", "downloadWorkflowJobLogs"] },
     ],
     listWorkflowRunArtifacts: [
       "GET /repos/{owner}/{repo}/actions/runs/{run_id}/artifacts",
     ],
     listWorkflowRunLogs: [
       "GET /repos/{owner}/{repo}/actions/runs/{run_id}/logs",
+      {},
+      { renamed: ["actions", "downloadWorkflowRunLogs"] },
     ],
     listWorkflowRuns: [
       "GET /repos/{owner}/{repo}/actions/workflows/{workflow_id}/runs",
@@ -311,6 +321,10 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     ],
     resetToken: ["PATCH /applications/{client_id}/token"],
     revokeInstallationToken: ["DELETE /installation/token"],
+    suspendInstallation: ["PUT /app/installations/{installation_id}/suspended"],
+    unsuspendInstallation: [
+      "DELETE /app/installations/{installation_id}/suspended",
+    ],
   },
   checks: {
     create: [

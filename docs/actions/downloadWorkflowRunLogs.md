@@ -1,6 +1,6 @@
 ---
 name: Download workflow run logs
-example: octokit.actions.listWorkflowRunLogs({ owner, repo, run_id })
+example: octokit.actions.downloadWorkflowRunLogs({ owner, repo, run_id })
 route: GET /repos/{owner}/{repo}/actions/runs/{run_id}/logs
 scope: actions
 type: API method
@@ -8,14 +8,12 @@ type: API method
 
 # Download workflow run logs
 
-**Deprecated:** This method has been renamed to actions.downloadWorkflowRunLogs
-
 Gets a redirect URL to download an archive of log files for a workflow run. This link expires after 1 minute. Look for `Location:` in the response header to find the URL for the download. Anyone with read access to the repository can use this endpoint. If the repository is private you must use an access token with the `repo` scope. GitHub Apps must have the `actions` permission to use this endpoint.
 
 Call this endpoint using the `-v` flag, which enables verbose output and allows you to see the download URL in the header. To download the file into the current working directory, specify the filename using the `-o` flag.
 
 ```js
-octokit.actions.listWorkflowRunLogs({
+octokit.actions.downloadWorkflowRunLogs({
   owner,
   repo,
   run_id,
