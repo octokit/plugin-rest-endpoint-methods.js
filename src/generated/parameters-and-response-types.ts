@@ -1065,6 +1065,24 @@ export type RestEndpointMethodTypes = {
       response: Endpoints["PATCH /repos/:owner/:repo/check-runs/:check_run_id"]["response"];
     };
   };
+  codeScanning: {
+    getAlert: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /repos/:owner/:repo/code-scanning/alerts/:alert_id"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /repos/:owner/:repo/code-scanning/alerts/:alert_id"]["response"];
+    };
+    listAlertsForRepo: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /repos/:owner/:repo/code-scanning/alerts"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /repos/:owner/:repo/code-scanning/alerts"]["response"];
+    };
+  };
   codesOfConduct: {
     getAllCodesOfConduct: {
       parameters: RequestParameters &

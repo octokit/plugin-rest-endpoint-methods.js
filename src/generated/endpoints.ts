@@ -372,6 +372,10 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
       { mediaType: { previews: ["antiope"] } },
     ],
   },
+  codeScanning: {
+    getAlert: ["GET /repos/{owner}/{repo}/code-scanning/alerts/{alert_id}"],
+    listAlertsForRepo: ["GET /repos/{owner}/{repo}/code-scanning/alerts"],
+  },
   codesOfConduct: {
     getAllCodesOfConduct: [
       "GET /codes_of_conduct",
