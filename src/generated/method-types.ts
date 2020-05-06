@@ -1737,6 +1737,34 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
   };
+  codeScanning: {
+    /**
+     * Gets a single code scanning alert. You must use an access token with the `security_events` scope to use this endpoint. GitHub Apps must have the `security_events` read permission to use this endpoint.
+     *
+     * The security `alert_id` is found at the end of the security alert's URL. For example, the security alert ID for `https://github.com/Octo-org/octo-repo/security/code-scanning/88` is `88`.
+     */
+    getAlert: {
+      (
+        params?: RestEndpointMethodTypes["codeScanning"]["getAlert"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["codeScanning"]["getAlert"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Lists all open code scanning alerts for a repository. You must use an access token with the `security_events` scope to use this endpoint. GitHub Apps must have the `security_events` read permission to use this endpoint.
+     */
+    listAlertsForRepo: {
+      (
+        params?: RestEndpointMethodTypes["codeScanning"]["listAlertsForRepo"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["codeScanning"]["listAlertsForRepo"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+  };
   codesOfConduct: {
     getAllCodesOfConduct: {
       (
