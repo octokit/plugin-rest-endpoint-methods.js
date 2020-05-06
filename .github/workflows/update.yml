@@ -28,7 +28,7 @@ jobs:
           body: |
             See what changed at https://github.com/octokit/routes/releases/latest.
 
-            If there are any new endpoints, then the code changes will likely required an update of [`@octokit/types`](https://github.com/octokit/types.ts/pulls). It should have received a pull request as well, merge & release it first.
+            If there are any new endpoints, then the code changes will likely required an update of [`@octokit/types`](https://github.com/octokit/types.ts/pulls). It should have received a pull request as well, merge & release it first, then update the `@octokit/types` version in package.json in this pull request.
 
             Make sure to update the commits so that the merge results in helpful release notes, see [Merging the Pull Request & releasing a new version](https://github.com/octokit/rest.js/blob/master/CONTRIBUTING.md#merging-the-pull-request--releasing-a-new-version).
 
