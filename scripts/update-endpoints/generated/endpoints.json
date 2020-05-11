@@ -20034,7 +20034,7 @@
     "url": "/repos/{owner}/{repo}/code-scanning/alerts",
     "isDeprecated": false,
     "isLegacy": false,
-    "description": "Lists all open code scanning alerts for a repository. You must use an access token with the `security_events` scope to use this endpoint. GitHub Apps must have the `security_events` read permission to use this endpoint.",
+    "description": "Lists all open code scanning alerts for the default branch (usually `master`) and protected branches in a repository. You must use an access token with the `security_events` scope to use this endpoint. GitHub Apps must have the `security_events` read permission to use this endpoint.",
     "documentationUrl": "https://developer.github.com/v3/code-scanning/#list-code-scanning-alerts-for-a-repository",
     "previews": [],
     "headers": [],
@@ -20068,6 +20068,19 @@
       {
         "name": "state",
         "description": "Set to `closed` to list only closed code scanning alerts.",
+        "in": "QUERY",
+        "type": "string",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "ref",
+        "description": "Returns a list of code scanning alerts for a specific brach reference. The `ref` must be formatted as `heads/<branch name>`.",
         "in": "QUERY",
         "type": "string",
         "required": false,
