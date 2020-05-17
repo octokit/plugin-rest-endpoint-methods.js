@@ -1,11 +1,25 @@
 import { EndpointsDefaultsAndDecorations } from "../types";
 const Endpoints: EndpointsDefaultsAndDecorations = {
   actions: {
+    addSelectedRepoToOrgSecret: [
+      "PUT /orgs/{org}/actions/secrets/{secret_name}/repositories/{repository_id}",
+    ],
     cancelWorkflowRun: [
       "POST /repos/{owner}/{repo}/actions/runs/{run_id}/cancel",
     ],
+    createOrUpdateOrgSecret: ["PUT /orgs/{org}/actions/secrets/{secret_name}"],
+    createOrUpdateRepoSecret: [
+      "PUT /repos/{owner}/{repo}/actions/secrets/{secret_name}",
+      {},
+      { renamedParameters: { name: "secret_name" } },
+    ],
     createOrUpdateSecretForRepo: [
-      "PUT /repos/{owner}/{repo}/actions/secrets/{name}",
+      "DELETE /repos/{owner}/{repo}/actions/secrets/{secret_name}",
+      {},
+      {
+        renamed: ["actions", "createOrUpdateRepoSecret"],
+        renamedParameters: { name: "secret_name" },
+      },
     ],
     createRegistrationToken: [
       "POST /repos/{owner}/{repo}/actions/runners/registration-token",
@@ -30,8 +44,11 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     deleteArtifact: [
       "DELETE /repos/{owner}/{repo}/actions/artifacts/{artifact_id}",
     ],
-    deleteSecretFromRepo: [
-      "DELETE /repos/{owner}/{repo}/actions/secrets/{name}",
+    deleteOrgSecret: ["DELETE /orgs/{org}/actions/secrets/{secret_name}"],
+    deleteRepoSecret: [
+      "DELETE /repos/{owner}/{repo}/actions/secrets/{secret_name}",
+      {},
+      { renamedParameters: { name: "secret_name" } },
     ],
     deleteSelfHostedRunnerFromOrg: [
       "DELETE /orgs/{org}/actions/runners/{runner_id}",
@@ -52,8 +69,27 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
       "GET /repos/{owner}/{repo}/actions/runs/{run_id}/logs",
     ],
     getArtifact: ["GET /repos/{owner}/{repo}/actions/artifacts/{artifact_id}"],
-    getPublicKey: ["GET /repos/{owner}/{repo}/actions/secrets/public-key"],
-    getSecret: ["GET /repos/{owner}/{repo}/actions/secrets/{name}"],
+    getOrgPublicKey: ["GET /orgs/{org}/actions/secrets/public-key"],
+    getOrgSecret: ["GET /orgs/{org}/actions/secrets/{secret_name}"],
+    getPublicKey: [
+      "GET /repos/{owner}/{repo}/actions/secrets/public-key",
+      {},
+      { renamed: ["actions", "getRepoPublicKey"] },
+    ],
+    getRepoPublicKey: ["GET /repos/{owner}/{repo}/actions/secrets/public-key"],
+    getRepoSecret: [
+      "GET /repos/{owner}/{repo}/actions/secrets/{secret_name}",
+      {},
+      { renamedParameters: { name: "secret_name" } },
+    ],
+    getSecret: [
+      "GET /repos/{owner}/{repo}/actions/secrets/{secret_name}",
+      {},
+      {
+        renamed: ["actions", "getRepoSecret"],
+        renamedParameters: { name: "secret_name" },
+      },
+    ],
     getSelfHostedRunner: [
       "GET /repos/{owner}/{repo}/actions/runners/{runner_id}",
       {},
@@ -66,6 +102,12 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     getWorkflow: ["GET /repos/{owner}/{repo}/actions/workflows/{workflow_id}"],
     getWorkflowJob: ["GET /repos/{owner}/{repo}/actions/jobs/{job_id}"],
     getWorkflowRun: ["GET /repos/{owner}/{repo}/actions/runs/{run_id}"],
+    getWorkflowRunUsage: [
+      "GET /repos/{owner}/{repo}/actions/runs/{run_id}/timing",
+    ],
+    getWorkflowUsage: [
+      "GET /repos/{owner}/{repo}/actions/workflows/{workflow_id}/timing",
+    ],
     listArtifactsForRepo: ["GET /repos/{owner}/{repo}/actions/artifacts"],
     listDownloadsForSelfHostedRunnerApplication: [
       "GET /repos/{owner}/{repo}/actions/runners/downloads",
@@ -75,13 +117,22 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     listJobsForWorkflowRun: [
       "GET /repos/{owner}/{repo}/actions/runs/{run_id}/jobs",
     ],
+    listOrgSecrets: ["GET /orgs/{org}/actions/secrets"],
+    listRepoSecrets: ["GET /repos/{owner}/{repo}/actions/secrets"],
     listRepoWorkflowRuns: ["GET /repos/{owner}/{repo}/actions/runs"],
     listRepoWorkflows: ["GET /repos/{owner}/{repo}/actions/workflows"],
     listRunnerApplicationsForOrg: ["GET /orgs/{org}/actions/runners/downloads"],
     listRunnerApplicationsForRepo: [
       "GET /repos/{owner}/{repo}/actions/runners/downloads",
     ],
-    listSecretsForRepo: ["GET /repos/{owner}/{repo}/actions/secrets"],
+    listSecretsForRepo: [
+      "GET /repos/{owner}/{repo}/actions/secrets",
+      {},
+      { renamed: ["actions", "listRepoSecrets"] },
+    ],
+    listSelectedReposForOrgSecret: [
+      "GET /orgs/{org}/actions/secrets/{secret_name}/repositories",
+    ],
     listSelfHostedRunnersForOrg: ["GET /orgs/{org}/actions/runners"],
     listSelfHostedRunnersForRepo: ["GET /repos/{owner}/{repo}/actions/runners"],
     listWorkflowJobLogs: [
@@ -101,10 +152,16 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
       "GET /repos/{owner}/{repo}/actions/workflows/{workflow_id}/runs",
     ],
     reRunWorkflow: ["POST /repos/{owner}/{repo}/actions/runs/{run_id}/rerun"],
+    removeSelectedRepoFromOrgSecret: [
+      "DELETE /orgs/{org}/actions/secrets/{secret_name}/repositories/{repository_id}",
+    ],
     removeSelfHostedRunner: [
       "DELETE /repos/{owner}/{repo}/actions/runners/{runner_id}",
       {},
       { renamed: ["actions", "deleteSelfHostedRunnerFromRepo"] },
+    ],
+    setSelectedReposForOrgSecret: [
+      "PUT /orgs/{org}/actions/secrets/{secret_name}/repositories",
     ],
   },
   activity: {

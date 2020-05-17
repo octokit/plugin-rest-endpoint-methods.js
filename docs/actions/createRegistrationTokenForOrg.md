@@ -10,7 +10,7 @@ type: API method
 
 **Warning:** The self-hosted runners API for organizations is currently in public beta and subject to change.
 
-Returns a token that you can pass to the `config` script. The token expires after one hour. Anyone with admin access to the organization can use this endpoint.
+Returns a token that you can pass to the `config` script. The token expires after one hour. You must authenticate using an access token with the `admin:org` scope to use this endpoint.
 
 Configure your self-hosted runner, replacing `TOKEN` with the registration token provided by this endpoint.
 

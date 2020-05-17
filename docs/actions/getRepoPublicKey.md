@@ -1,6 +1,6 @@
 ---
 name: Get a repository public key
-example: octokit.actions.getPublicKey({ owner, repo })
+example: octokit.actions.getRepoPublicKey({ owner, repo })
 route: GET /repos/{owner}/{repo}/actions/secrets/public-key
 scope: actions
 type: API method
@@ -8,12 +8,10 @@ type: API method
 
 # Get a repository public key
 
-**Deprecated:** This method has been renamed to actions.getRepoPublicKey
-
 Gets your public key, which you need to encrypt secrets. You need to encrypt a secret before you can create or update secrets. Anyone with read access to the repository can use this endpoint. If the repository is private you must use an access token with the `repo` scope. GitHub Apps must have the `secrets` repository permission to use this endpoint.
 
 ```js
-octokit.actions.getPublicKey({
+octokit.actions.getRepoPublicKey({
   owner,
   repo,
 });

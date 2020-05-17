@@ -10,7 +10,7 @@ type: API method
 
 **Warning:** The self-hosted runners API for organizations is currently in public beta and subject to change.
 
-Lists binaries for the runner application that you can download and run. Anyone with admin access to the organization can use this endpoint.
+Lists binaries for the runner application that you can download and run. You must authenticate using an access token with the `admin:org` scope to use this endpoint.
 
 ```js
 octokit.actions.listRunnerApplicationsForOrg({

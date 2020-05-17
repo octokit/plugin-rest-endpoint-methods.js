@@ -10,7 +10,7 @@ type: API method
 
 **Deprecated:** This method has been renamed to actions.createRegistrationTokenForRepo
 
-Returns a token that you can pass to the `config` script. The token expires after one hour. Anyone with admin access to the repository and an access token with the `repo` scope can use this endpoint.
+Returns a token that you can pass to the `config` script. The token expires after one hour. You must authenticate using an access token with the `repo` scope to use this endpoint.
 
 Configure your self-hosted runner, replacing TOKEN with the registration token provided by this endpoint.
 

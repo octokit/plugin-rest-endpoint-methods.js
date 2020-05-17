@@ -50,7 +50,7 @@ The media type used to serialize the payloads. Supported values include `json` a
 </td></tr>
 <tr><td>config.secret</td><td>no</td><td>
 
-If provided, the `secret` will be used as the `key` to generate the HMAC hex digest value in the [`X-Hub-Signature`](https://developer.github.com/webhooks/#delivery-headers) header.
+If provided, the `secret` will be used as the `key` to generate the HMAC hex digest value in the [`X-Hub-Signature`](https://developer.github.com/webhooks/event-payloads/#delivery-headers) header.
 
 </td></tr>
 <tr><td>config.insecure_ssl</td><td>no</td><td>
@@ -60,7 +60,7 @@ Determines whether the SSL certificate of the host for `url` will be verified wh
 </td></tr>
 <tr><td>events</td><td>no</td><td>
 
-Determines what [events](https://developer.github.com/v3/activity/events/types/) the hook is triggered for.
+Determines what [events](https://developer.github.com/webhooks/event-payloads) the hook is triggered for.
 
 </td></tr>
 <tr><td>active</td><td>no</td><td>

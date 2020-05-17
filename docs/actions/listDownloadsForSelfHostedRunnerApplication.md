@@ -10,7 +10,7 @@ type: API method
 
 **Deprecated:** This method has been renamed to actions.listRunnerApplicationsForRepo
 
-Lists binaries for the runner application that you can download and run. Anyone with admin access to the repository and an access token with the `repo` scope can use this endpoint.
+Lists binaries for the runner application that you can download and run. You must authenticate using an access token with the `repo` scope to use this endpoint.
 
 ```js
 octokit.actions.listDownloadsForSelfHostedRunnerApplication({

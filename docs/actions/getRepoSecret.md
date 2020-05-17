@@ -1,6 +1,6 @@
 ---
 name: Get a repository secret
-example: octokit.actions.getSecret({ owner, repo, secret_name })
+example: octokit.actions.getRepoSecret({ owner, repo, secret_name })
 route: GET /repos/{owner}/{repo}/actions/secrets/{secret_name}
 scope: actions
 type: API method
@@ -8,12 +8,10 @@ type: API method
 
 # Get a repository secret
 
-**Deprecated:** This method has been renamed to actions.getRepoSecret
-
 Gets a single repository secret without revealing its encrypted value. You must authenticate using an access token with the `repo` scope to use this endpoint. GitHub Apps must have the `secrets` repository permission to use this endpoint.
 
 ```js
-octokit.actions.getSecret({
+octokit.actions.getRepoSecret({
   owner,
   repo,
   secret_name,
