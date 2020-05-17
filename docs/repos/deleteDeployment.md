@@ -38,17 +38,11 @@ octokit.repos.deleteDeployment({
   <tbody>
     <tr><td>owner</td><td>yes</td><td>
 
-owner parameter
-
 </td></tr>
 <tr><td>repo</td><td>yes</td><td>
 
-repo parameter
-
 </td></tr>
 <tr><td>deployment_id</td><td>yes</td><td>
-
-deployment_id parameter
 
 </td></tr>
   </tbody>

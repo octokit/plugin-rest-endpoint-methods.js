@@ -29,8 +29,6 @@ octokit.projects.delete({
   <tbody>
     <tr><td>project_id</td><td>yes</td><td>
 
-project_id parameter
-
 </td></tr>
   </tbody>
 </table>

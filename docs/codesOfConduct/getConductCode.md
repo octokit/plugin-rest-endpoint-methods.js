@@ -27,8 +27,6 @@ octokit.codesOfConduct.getConductCode({
   <tbody>
     <tr><td>key</td><td>yes</td><td>
 
-key parameter
-
 </td></tr>
   </tbody>
 </table>

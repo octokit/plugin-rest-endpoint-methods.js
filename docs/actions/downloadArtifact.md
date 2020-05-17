@@ -34,22 +34,14 @@ octokit.actions.downloadArtifact({
   <tbody>
     <tr><td>owner</td><td>yes</td><td>
 
-owner parameter
-
 </td></tr>
 <tr><td>repo</td><td>yes</td><td>
-
-repo parameter
 
 </td></tr>
 <tr><td>artifact_id</td><td>yes</td><td>
 
-artifact_id parameter
-
 </td></tr>
 <tr><td>archive_format</td><td>yes</td><td>
-
-archive_format parameter
 
 </td></tr>
   </tbody>

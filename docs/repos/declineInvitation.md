@@ -27,8 +27,6 @@ octokit.repos.declineInvitation({
   <tbody>
     <tr><td>invitation_id</td><td>yes</td><td>
 
-invitation_id parameter
-
 </td></tr>
   </tbody>
 </table>

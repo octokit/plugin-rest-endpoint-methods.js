@@ -33,17 +33,11 @@ octokit.teams.addOrUpdateProjectInOrg({
   <tbody>
     <tr><td>org</td><td>yes</td><td>
 
-org parameter
-
 </td></tr>
 <tr><td>team_slug</td><td>yes</td><td>
 
-team_slug parameter
-
 </td></tr>
 <tr><td>project_id</td><td>yes</td><td>
-
-project_id parameter
 
 </td></tr>
 <tr><td>permission</td><td>no</td><td>

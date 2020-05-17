@@ -28,17 +28,11 @@ octokit.repos.enablePagesSite({
   <tbody>
     <tr><td>owner</td><td>yes</td><td>
 
-owner parameter
-
 </td></tr>
 <tr><td>repo</td><td>yes</td><td>
 
-repo parameter
-
 </td></tr>
 <tr><td>source</td><td>no</td><td>
-
-source parameter
 
 </td></tr>
 <tr><td>source.branch</td><td>no</td><td>

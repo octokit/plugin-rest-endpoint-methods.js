@@ -37,8 +37,6 @@ octokit.repos.createInOrg({
   <tbody>
     <tr><td>org</td><td>yes</td><td>
 
-org parameter
-
 </td></tr>
 <tr><td>name</td><td>yes</td><td>
 

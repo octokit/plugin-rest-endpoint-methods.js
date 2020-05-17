@@ -33,17 +33,11 @@ octokit.codeScanning.getAlert({
   <tbody>
     <tr><td>owner</td><td>yes</td><td>
 
-owner parameter
-
 </td></tr>
 <tr><td>repo</td><td>yes</td><td>
 
-repo parameter
-
 </td></tr>
 <tr><td>alert_id</td><td>yes</td><td>
-
-alert_id parameter
 
 </td></tr>
   </tbody>

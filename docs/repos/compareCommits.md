@@ -64,22 +64,14 @@ octokit.repos.compareCommits({
   <tbody>
     <tr><td>owner</td><td>yes</td><td>
 
-owner parameter
-
 </td></tr>
 <tr><td>repo</td><td>yes</td><td>
-
-repo parameter
 
 </td></tr>
 <tr><td>base</td><td>yes</td><td>
 
-base parameter
-
 </td></tr>
 <tr><td>head</td><td>yes</td><td>
-
-head parameter
 
 </td></tr>
   </tbody>

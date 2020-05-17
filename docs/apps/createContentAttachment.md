@@ -37,8 +37,6 @@ octokit.apps.createContentAttachment({
   <tbody>
     <tr><td>content_reference_id</td><td>yes</td><td>
 
-content_reference_id parameter
-
 </td></tr>
 <tr><td>title</td><td>yes</td><td>
 

@@ -28,8 +28,6 @@ octokit.projects.createColumn({
   <tbody>
     <tr><td>project_id</td><td>yes</td><td>
 
-project_id parameter
-
 </td></tr>
 <tr><td>name</td><td>yes</td><td>
 

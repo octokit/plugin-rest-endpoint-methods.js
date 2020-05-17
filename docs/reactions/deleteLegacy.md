@@ -33,8 +33,6 @@ octokit.reactions.deleteLegacy({
   <tbody>
     <tr><td>reaction_id</td><td>yes</td><td>
 
-reaction_id parameter
-
 </td></tr>
   </tbody>
 </table>

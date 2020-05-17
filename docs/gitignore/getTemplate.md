@@ -31,8 +31,6 @@ octokit.gitignore.getTemplate({
   <tbody>
     <tr><td>name</td><td>yes</td><td>
 
-name parameter
-
 </td></tr>
   </tbody>
 </table>

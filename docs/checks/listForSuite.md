@@ -33,17 +33,11 @@ octokit.checks.listForSuite({
   <tbody>
     <tr><td>owner</td><td>yes</td><td>
 
-owner parameter
-
 </td></tr>
 <tr><td>repo</td><td>yes</td><td>
 
-repo parameter
-
 </td></tr>
 <tr><td>check_suite_id</td><td>yes</td><td>
-
-check_suite_id parameter
 
 </td></tr>
 <tr><td>check_name</td><td>no</td><td>

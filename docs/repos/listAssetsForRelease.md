@@ -29,17 +29,11 @@ octokit.repos.listAssetsForRelease({
   <tbody>
     <tr><td>owner</td><td>yes</td><td>
 
-owner parameter
-
 </td></tr>
 <tr><td>repo</td><td>yes</td><td>
 
-repo parameter
-
 </td></tr>
 <tr><td>release_id</td><td>yes</td><td>
-
-release_id parameter
 
 </td></tr>
 <tr><td>per_page</td><td>no</td><td>

@@ -29,8 +29,6 @@ octokit.apps.getInstallation({
   <tbody>
     <tr><td>installation_id</td><td>yes</td><td>
 
-installation_id parameter
-
 </td></tr>
   </tbody>
 </table>

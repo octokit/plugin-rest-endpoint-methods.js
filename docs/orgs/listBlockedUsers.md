@@ -29,8 +29,6 @@ octokit.orgs.listBlockedUsers({
   <tbody>
     <tr><td>org</td><td>yes</td><td>
 
-org parameter
-
 </td></tr>
   </tbody>
 </table>

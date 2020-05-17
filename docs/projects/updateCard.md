@@ -27,8 +27,6 @@ octokit.projects.updateCard({
   <tbody>
     <tr><td>card_id</td><td>yes</td><td>
 
-card_id parameter
-
 </td></tr>
 <tr><td>note</td><td>no</td><td>
 

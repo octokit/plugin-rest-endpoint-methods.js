@@ -28,12 +28,8 @@ octokit.gists.getRevision({
   <tbody>
     <tr><td>gist_id</td><td>yes</td><td>
 
-gist_id parameter
-
 </td></tr>
 <tr><td>sha</td><td>yes</td><td>
-
-sha parameter
 
 </td></tr>
   </tbody>

@@ -29,8 +29,6 @@ octokit.gists.listForUser({
   <tbody>
     <tr><td>username</td><td>yes</td><td>
 
-username parameter
-
 </td></tr>
 <tr><td>since</td><td>no</td><td>
 

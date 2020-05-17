@@ -29,8 +29,6 @@ octokit.migrations.listReposForUser({
   <tbody>
     <tr><td>migration_id</td><td>yes</td><td>
 
-migration_id parameter
-
 </td></tr>
 <tr><td>per_page</td><td>no</td><td>
 

@@ -31,8 +31,6 @@ octokit.orgs.createInvitation({
   <tbody>
     <tr><td>org</td><td>yes</td><td>
 
-org parameter
-
 </td></tr>
 <tr><td>invitee_id</td><td>no</td><td>
 

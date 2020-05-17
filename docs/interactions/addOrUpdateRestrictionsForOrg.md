@@ -30,8 +30,6 @@ octokit.interactions.addOrUpdateRestrictionsForOrg({
   <tbody>
     <tr><td>org</td><td>yes</td><td>
 
-org parameter
-
 </td></tr>
 <tr><td>limit</td><td>yes</td><td>
 

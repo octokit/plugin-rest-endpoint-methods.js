@@ -27,8 +27,6 @@ octokit.orgs.listHooks({
   <tbody>
     <tr><td>org</td><td>yes</td><td>
 
-org parameter
-
 </td></tr>
 <tr><td>per_page</td><td>no</td><td>
 

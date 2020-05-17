@@ -27,8 +27,6 @@ octokit.projects.listColumns({
   <tbody>
     <tr><td>project_id</td><td>yes</td><td>
 
-project_id parameter
-
 </td></tr>
 <tr><td>per_page</td><td>no</td><td>
 

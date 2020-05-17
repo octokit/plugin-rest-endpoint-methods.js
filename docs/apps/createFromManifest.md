@@ -29,8 +29,6 @@ octokit.apps.createFromManifest({
   <tbody>
     <tr><td>code</td><td>yes</td><td>
 
-code parameter
-
 </td></tr>
   </tbody>
 </table>

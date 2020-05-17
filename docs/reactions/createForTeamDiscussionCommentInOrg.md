@@ -35,22 +35,14 @@ octokit.reactions.createForTeamDiscussionCommentInOrg({
   <tbody>
     <tr><td>org</td><td>yes</td><td>
 
-org parameter
-
 </td></tr>
 <tr><td>team_slug</td><td>yes</td><td>
-
-team_slug parameter
 
 </td></tr>
 <tr><td>discussion_number</td><td>yes</td><td>
 
-discussion_number parameter
-
 </td></tr>
 <tr><td>comment_number</td><td>yes</td><td>
-
-comment_number parameter
 
 </td></tr>
 <tr><td>content</td><td>yes</td><td>

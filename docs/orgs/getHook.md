@@ -28,12 +28,8 @@ octokit.orgs.getHook({
   <tbody>
     <tr><td>org</td><td>yes</td><td>
 
-org parameter
-
 </td></tr>
 <tr><td>hook_id</td><td>yes</td><td>
-
-hook_id parameter
 
 </td></tr>
   </tbody>

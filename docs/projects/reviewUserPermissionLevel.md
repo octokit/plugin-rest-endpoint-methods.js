@@ -30,12 +30,8 @@ octokit.projects.reviewUserPermissionLevel({
   <tbody>
     <tr><td>project_id</td><td>yes</td><td>
 
-project_id parameter
-
 </td></tr>
 <tr><td>username</td><td>yes</td><td>
-
-username parameter
 
 </td></tr>
   </tbody>

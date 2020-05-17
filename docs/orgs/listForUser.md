@@ -31,8 +31,6 @@ octokit.orgs.listForUser({
   <tbody>
     <tr><td>username</td><td>yes</td><td>
 
-username parameter
-
 </td></tr>
 <tr><td>per_page</td><td>no</td><td>
 

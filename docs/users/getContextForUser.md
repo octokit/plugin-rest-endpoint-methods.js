@@ -31,8 +31,6 @@ octokit.users.getContextForUser({
   <tbody>
     <tr><td>username</td><td>yes</td><td>
 
-username parameter
-
 </td></tr>
 <tr><td>subject_type</td><td>no</td><td>
 

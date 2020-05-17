@@ -31,17 +31,11 @@ octokit.issues.replaceLabels({
   <tbody>
     <tr><td>owner</td><td>yes</td><td>
 
-owner parameter
-
 </td></tr>
 <tr><td>repo</td><td>yes</td><td>
 
-repo parameter
-
 </td></tr>
 <tr><td>issue_number</td><td>yes</td><td>
-
-issue_number parameter
 
 </td></tr>
 <tr><td>labels</td><td>no</td><td>

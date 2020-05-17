@@ -29,8 +29,6 @@ octokit.projects.update({
   <tbody>
     <tr><td>project_id</td><td>yes</td><td>
 
-project_id parameter
-
 </td></tr>
 <tr><td>name</td><td>no</td><td>
 

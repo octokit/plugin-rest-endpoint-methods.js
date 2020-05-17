@@ -32,12 +32,8 @@ octokit.teams.listMembersInOrg({
   <tbody>
     <tr><td>org</td><td>yes</td><td>
 
-org parameter
-
 </td></tr>
 <tr><td>team_slug</td><td>yes</td><td>
-
-team_slug parameter
 
 </td></tr>
 <tr><td>role</td><td>no</td><td>

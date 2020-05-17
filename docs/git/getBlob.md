@@ -33,17 +33,11 @@ octokit.git.getBlob({
   <tbody>
     <tr><td>owner</td><td>yes</td><td>
 
-owner parameter
-
 </td></tr>
 <tr><td>repo</td><td>yes</td><td>
 
-repo parameter
-
 </td></tr>
 <tr><td>file_sha</td><td>yes</td><td>
-
-file_sha parameter
 
 </td></tr>
   </tbody>

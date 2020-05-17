@@ -29,8 +29,6 @@ octokit.activity.deleteThreadSubscription({
   <tbody>
     <tr><td>thread_id</td><td>yes</td><td>
 
-thread_id parameter
-
 </td></tr>
   </tbody>
 </table>

@@ -28,12 +28,8 @@ octokit.gists.getComment({
   <tbody>
     <tr><td>gist_id</td><td>yes</td><td>
 
-gist_id parameter
-
 </td></tr>
 <tr><td>comment_id</td><td>yes</td><td>
-
-comment_id parameter
 
 </td></tr>
   </tbody>

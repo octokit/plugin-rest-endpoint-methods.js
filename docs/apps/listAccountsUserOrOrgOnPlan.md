@@ -33,8 +33,6 @@ octokit.apps.listAccountsUserOrOrgOnPlan({
   <tbody>
     <tr><td>plan_id</td><td>yes</td><td>
 
-plan_id parameter
-
 </td></tr>
 <tr><td>sort</td><td>no</td><td>
 

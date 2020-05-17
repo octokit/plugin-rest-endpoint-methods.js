@@ -28,8 +28,6 @@ octokit.projects.moveCard({
   <tbody>
     <tr><td>card_id</td><td>yes</td><td>
 
-card_id parameter
-
 </td></tr>
 <tr><td>position</td><td>yes</td><td>
 

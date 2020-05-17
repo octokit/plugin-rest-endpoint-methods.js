@@ -29,8 +29,6 @@ octokit.users.deletePublicKey({
   <tbody>
     <tr><td>key_id</td><td>yes</td><td>
 
-key_id parameter
-
 </td></tr>
   </tbody>
 </table>
