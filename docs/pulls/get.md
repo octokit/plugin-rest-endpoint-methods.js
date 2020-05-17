@@ -45,17 +45,11 @@ octokit.pulls.get({
   <tbody>
     <tr><td>owner</td><td>yes</td><td>
 
-owner parameter
-
 </td></tr>
 <tr><td>repo</td><td>yes</td><td>
 
-repo parameter
-
 </td></tr>
 <tr><td>pull_number</td><td>yes</td><td>
-
-pull_number parameter
 
 </td></tr>
   </tbody>

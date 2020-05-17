@@ -32,12 +32,8 @@ octokit.activity.listEventsForOrg({
   <tbody>
     <tr><td>username</td><td>yes</td><td>
 
-username parameter
-
 </td></tr>
 <tr><td>org</td><td>yes</td><td>
-
-org parameter
 
 </td></tr>
 <tr><td>per_page</td><td>no</td><td>

@@ -32,12 +32,8 @@ octokit.apps.addRepoToInstallation({
   <tbody>
     <tr><td>installation_id</td><td>yes</td><td>
 
-installation_id parameter
-
 </td></tr>
 <tr><td>repository_id</td><td>yes</td><td>
-
-repository_id parameter
 
 </td></tr>
   </tbody>

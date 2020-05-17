@@ -27,8 +27,6 @@ octokit.projects.listForUser({
   <tbody>
     <tr><td>username</td><td>yes</td><td>
 
-username parameter
-
 </td></tr>
 <tr><td>state</td><td>no</td><td>
 

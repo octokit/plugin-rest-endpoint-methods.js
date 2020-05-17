@@ -35,8 +35,6 @@ octokit.apps.listInstallationReposForAuthenticatedUser({
   <tbody>
     <tr><td>installation_id</td><td>yes</td><td>
 
-installation_id parameter
-
 </td></tr>
 <tr><td>per_page</td><td>no</td><td>
 

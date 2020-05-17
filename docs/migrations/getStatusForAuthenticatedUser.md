@@ -36,8 +36,6 @@ octokit.migrations.getStatusForAuthenticatedUser({
   <tbody>
     <tr><td>migration_id</td><td>yes</td><td>
 
-migration_id parameter
-
 </td></tr>
   </tbody>
 </table>

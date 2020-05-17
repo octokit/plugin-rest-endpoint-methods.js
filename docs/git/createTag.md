@@ -56,12 +56,8 @@ octokit.git.createTag({
   <tbody>
     <tr><td>owner</td><td>yes</td><td>
 
-owner parameter
-
 </td></tr>
 <tr><td>repo</td><td>yes</td><td>
-
-repo parameter
 
 </td></tr>
 <tr><td>tag</td><td>yes</td><td>

@@ -38,12 +38,8 @@ octokit.repos.createUsingTemplate({
   <tbody>
     <tr><td>template_owner</td><td>yes</td><td>
 
-template_owner parameter
-
 </td></tr>
 <tr><td>template_repo</td><td>yes</td><td>
-
-template_repo parameter
 
 </td></tr>
 <tr><td>owner</td><td>no</td><td>

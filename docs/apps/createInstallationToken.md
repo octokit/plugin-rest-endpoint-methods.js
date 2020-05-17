@@ -33,8 +33,6 @@ octokit.apps.createInstallationToken({
   <tbody>
     <tr><td>installation_id</td><td>yes</td><td>
 
-installation_id parameter
-
 </td></tr>
 <tr><td>repository_ids</td><td>no</td><td>
 

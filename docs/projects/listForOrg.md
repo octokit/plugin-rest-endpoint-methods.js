@@ -31,8 +31,6 @@ octokit.projects.listForOrg({
   <tbody>
     <tr><td>org</td><td>yes</td><td>
 
-org parameter
-
 </td></tr>
 <tr><td>state</td><td>no</td><td>
 

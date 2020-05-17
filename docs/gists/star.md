@@ -29,8 +29,6 @@ octokit.gists.star({
   <tbody>
     <tr><td>gist_id</td><td>yes</td><td>
 
-gist_id parameter
-
 </td></tr>
   </tbody>
 </table>

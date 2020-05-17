@@ -27,8 +27,6 @@ octokit.projects.deleteCard({
   <tbody>
     <tr><td>card_id</td><td>yes</td><td>
 
-card_id parameter
-
 </td></tr>
   </tbody>
 </table>

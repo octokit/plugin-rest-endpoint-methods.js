@@ -27,8 +27,6 @@ octokit.gists.listCommits({
   <tbody>
     <tr><td>gist_id</td><td>yes</td><td>
 
-gist_id parameter
-
 </td></tr>
 <tr><td>per_page</td><td>no</td><td>
 

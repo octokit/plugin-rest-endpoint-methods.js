@@ -29,8 +29,6 @@ octokit.users.unfollow({
   <tbody>
     <tr><td>username</td><td>yes</td><td>
 
-username parameter
-
 </td></tr>
   </tbody>
 </table>

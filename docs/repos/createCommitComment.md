@@ -34,17 +34,11 @@ octokit.repos.createCommitComment({
   <tbody>
     <tr><td>owner</td><td>yes</td><td>
 
-owner parameter
-
 </td></tr>
 <tr><td>repo</td><td>yes</td><td>
 
-repo parameter
-
 </td></tr>
 <tr><td>commit_sha</td><td>yes</td><td>
-
-commit_sha parameter
 
 </td></tr>
 <tr><td>body</td><td>yes</td><td>

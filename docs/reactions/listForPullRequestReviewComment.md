@@ -31,17 +31,11 @@ octokit.reactions.listForPullRequestReviewComment({
   <tbody>
     <tr><td>owner</td><td>yes</td><td>
 
-owner parameter
-
 </td></tr>
 <tr><td>repo</td><td>yes</td><td>
 
-repo parameter
-
 </td></tr>
 <tr><td>comment_id</td><td>yes</td><td>
-
-comment_id parameter
 
 </td></tr>
 <tr><td>content</td><td>no</td><td>

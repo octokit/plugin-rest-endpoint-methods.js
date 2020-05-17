@@ -33,17 +33,11 @@ octokit.issues.removeAssignees({
   <tbody>
     <tr><td>owner</td><td>yes</td><td>
 
-owner parameter
-
 </td></tr>
 <tr><td>repo</td><td>yes</td><td>
 
-repo parameter
-
 </td></tr>
 <tr><td>issue_number</td><td>yes</td><td>
-
-issue_number parameter
 
 </td></tr>
 <tr><td>assignees</td><td>no</td><td>

@@ -27,8 +27,6 @@ octokit.licenses.get({
   <tbody>
     <tr><td>license</td><td>yes</td><td>
 
-license parameter
-
 </td></tr>
   </tbody>
 </table>

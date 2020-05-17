@@ -30,12 +30,8 @@ octokit.projects.addCollaborator({
   <tbody>
     <tr><td>project_id</td><td>yes</td><td>
 
-project_id parameter
-
 </td></tr>
 <tr><td>username</td><td>yes</td><td>
-
-username parameter
 
 </td></tr>
 <tr><td>permission</td><td>no</td><td>

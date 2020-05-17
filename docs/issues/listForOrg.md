@@ -33,8 +33,6 @@ octokit.issues.listForOrg({
   <tbody>
     <tr><td>org</td><td>yes</td><td>
 
-org parameter
-
 </td></tr>
 <tr><td>filter</td><td>no</td><td>
 

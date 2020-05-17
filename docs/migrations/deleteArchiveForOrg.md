@@ -30,12 +30,8 @@ octokit.migrations.deleteArchiveForOrg({
   <tbody>
     <tr><td>org</td><td>yes</td><td>
 
-org parameter
-
 </td></tr>
 <tr><td>migration_id</td><td>yes</td><td>
-
-migration_id parameter
 
 </td></tr>
   </tbody>

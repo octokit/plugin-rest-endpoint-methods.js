@@ -28,12 +28,8 @@ octokit.users.checkFollowingForUser({
   <tbody>
     <tr><td>username</td><td>yes</td><td>
 
-username parameter
-
 </td></tr>
 <tr><td>target_user</td><td>yes</td><td>
-
-target_user parameter
 
 </td></tr>
   </tbody>

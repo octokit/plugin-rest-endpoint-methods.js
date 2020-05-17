@@ -31,8 +31,6 @@ octokit.apps.getBySlug({
   <tbody>
     <tr><td>app_slug</td><td>yes</td><td>
 
-app_slug parameter
-
 </td></tr>
   </tbody>
 </table>

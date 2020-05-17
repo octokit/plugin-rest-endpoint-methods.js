@@ -29,17 +29,11 @@ octokit.issues.getEvent({
   <tbody>
     <tr><td>owner</td><td>yes</td><td>
 
-owner parameter
-
 </td></tr>
 <tr><td>repo</td><td>yes</td><td>
 
-repo parameter
-
 </td></tr>
 <tr><td>event_id</td><td>yes</td><td>
-
-event_id parameter
 
 </td></tr>
   </tbody>

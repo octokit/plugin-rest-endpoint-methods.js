@@ -35,8 +35,6 @@ octokit.apps.suspendInstallation({
   <tbody>
     <tr><td>installation_id</td><td>yes</td><td>
 
-installation_id parameter
-
 </td></tr>
   </tbody>
 </table>

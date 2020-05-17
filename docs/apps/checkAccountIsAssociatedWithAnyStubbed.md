@@ -33,8 +33,6 @@ octokit.apps.checkAccountIsAssociatedWithAnyStubbed({
   <tbody>
     <tr><td>account_id</td><td>yes</td><td>
 
-account_id parameter
-
 </td></tr>
   </tbody>
 </table>

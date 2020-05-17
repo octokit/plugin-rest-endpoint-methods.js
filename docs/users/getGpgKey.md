@@ -29,8 +29,6 @@ octokit.users.getGpgKey({
   <tbody>
     <tr><td>gpg_key_id</td><td>yes</td><td>
 
-gpg_key_id parameter
-
 </td></tr>
   </tbody>
 </table>

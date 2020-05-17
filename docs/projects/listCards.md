@@ -27,8 +27,6 @@ octokit.projects.listCards({
   <tbody>
     <tr><td>column_id</td><td>yes</td><td>
 
-column_id parameter
-
 </td></tr>
 <tr><td>archived_state</td><td>no</td><td>
 

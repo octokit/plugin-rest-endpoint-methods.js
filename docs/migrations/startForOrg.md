@@ -30,8 +30,6 @@ octokit.migrations.startForOrg({
   <tbody>
     <tr><td>org</td><td>yes</td><td>
 
-org parameter
-
 </td></tr>
 <tr><td>repositories</td><td>yes</td><td>
 

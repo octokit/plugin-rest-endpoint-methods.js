@@ -36,22 +36,14 @@ octokit.repos.getArchiveLink({
   <tbody>
     <tr><td>owner</td><td>yes</td><td>
 
-owner parameter
-
 </td></tr>
 <tr><td>repo</td><td>yes</td><td>
-
-repo parameter
 
 </td></tr>
 <tr><td>archive_format</td><td>yes</td><td>
 
-archive_format parameter
-
 </td></tr>
 <tr><td>ref</td><td>yes</td><td>
-
-ref parameter
 
 </td></tr>
   </tbody>

@@ -29,8 +29,6 @@ octokit.gists.update({
   <tbody>
     <tr><td>gist_id</td><td>yes</td><td>
 
-gist_id parameter
-
 </td></tr>
 <tr><td>description</td><td>no</td><td>
 

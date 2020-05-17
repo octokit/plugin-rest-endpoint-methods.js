@@ -34,17 +34,11 @@ octokit.repos.createStatus({
   <tbody>
     <tr><td>owner</td><td>yes</td><td>
 
-owner parameter
-
 </td></tr>
 <tr><td>repo</td><td>yes</td><td>
 
-repo parameter
-
 </td></tr>
 <tr><td>sha</td><td>yes</td><td>
-
-sha parameter
 
 </td></tr>
 <tr><td>state</td><td>yes</td><td>

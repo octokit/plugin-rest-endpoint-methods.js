@@ -31,17 +31,11 @@ octokit.migrations.unlockRepoForOrg({
   <tbody>
     <tr><td>org</td><td>yes</td><td>
 
-org parameter
-
 </td></tr>
 <tr><td>migration_id</td><td>yes</td><td>
 
-migration_id parameter
-
 </td></tr>
 <tr><td>repo_name</td><td>yes</td><td>
-
-repo_name parameter
 
 </td></tr>
   </tbody>

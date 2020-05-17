@@ -31,8 +31,6 @@ octokit.apps.deleteAuthorization({
   <tbody>
     <tr><td>client_id</td><td>yes</td><td>
 
-client_id parameter
-
 </td></tr>
 <tr><td>access_token</td><td>no</td><td>
 
