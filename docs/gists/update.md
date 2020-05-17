@@ -40,12 +40,15 @@ A descriptive name for this gist.
 The filenames and content that make up this gist.
 
 </td></tr>
-<tr><td>files.content</td><td>no</td><td>
+<tr><td>files.*</td><td>no</td><td>
+
+</td></tr>
+<tr><td>files.*.content</td><td>no</td><td>
 
 The updated content of the file.
 
 </td></tr>
-<tr><td>files.filename</td><td>no</td><td>
+<tr><td>files.*.filename</td><td>no</td><td>
 
 The new name for this file. To delete a file, set the value of the filename to `null`.
 

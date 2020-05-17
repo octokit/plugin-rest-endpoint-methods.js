@@ -2,6 +2,14 @@ import { Endpoints, RequestParameters } from "@octokit/types";
 
 export type RestEndpointMethodTypes = {
   actions: {
+    addSelectedRepoToOrgSecret: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["PUT /orgs/:org/actions/secrets/:secret_name/repositories/:repository_id"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["PUT /orgs/:org/actions/secrets/:secret_name/repositories/:repository_id"]["response"];
+    };
     cancelWorkflowRun: {
       parameters: RequestParameters &
         Omit<
@@ -10,13 +18,29 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["POST /repos/:owner/:repo/actions/runs/:run_id/cancel"]["response"];
     };
+    createOrUpdateOrgSecret: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["PUT /orgs/:org/actions/secrets/:secret_name"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["PUT /orgs/:org/actions/secrets/:secret_name"]["response"];
+    };
+    createOrUpdateRepoSecret: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["PUT /repos/:owner/:repo/actions/secrets/:secret_name"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["PUT /repos/:owner/:repo/actions/secrets/:secret_name"]["response"];
+    };
     createOrUpdateSecretForRepo: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["PUT /repos/:owner/:repo/actions/secrets/:name"]["parameters"],
+          Endpoints["DELETE /repos/:owner/:repo/actions/secrets/:secret_name"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["PUT /repos/:owner/:repo/actions/secrets/:name"]["response"];
+      response: Endpoints["DELETE /repos/:owner/:repo/actions/secrets/:secret_name"]["response"];
     };
     createRegistrationToken: {
       parameters: RequestParameters &
@@ -74,13 +98,21 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["DELETE /repos/:owner/:repo/actions/artifacts/:artifact_id"]["response"];
     };
-    deleteSecretFromRepo: {
+    deleteOrgSecret: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["DELETE /repos/:owner/:repo/actions/secrets/:name"]["parameters"],
+          Endpoints["DELETE /orgs/:org/actions/secrets/:secret_name"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["DELETE /repos/:owner/:repo/actions/secrets/:name"]["response"];
+      response: Endpoints["DELETE /orgs/:org/actions/secrets/:secret_name"]["response"];
+    };
+    deleteRepoSecret: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["DELETE /repos/:owner/:repo/actions/secrets/:secret_name"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["DELETE /repos/:owner/:repo/actions/secrets/:secret_name"]["response"];
     };
     deleteSelfHostedRunnerFromOrg: {
       parameters: RequestParameters &
@@ -138,6 +170,22 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["GET /repos/:owner/:repo/actions/artifacts/:artifact_id"]["response"];
     };
+    getOrgPublicKey: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /orgs/:org/actions/secrets/public-key"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /orgs/:org/actions/secrets/public-key"]["response"];
+    };
+    getOrgSecret: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /orgs/:org/actions/secrets/:secret_name"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /orgs/:org/actions/secrets/:secret_name"]["response"];
+    };
     getPublicKey: {
       parameters: RequestParameters &
         Omit<
@@ -146,13 +194,29 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["GET /repos/:owner/:repo/actions/secrets/public-key"]["response"];
     };
+    getRepoPublicKey: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /repos/:owner/:repo/actions/secrets/public-key"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /repos/:owner/:repo/actions/secrets/public-key"]["response"];
+    };
+    getRepoSecret: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /repos/:owner/:repo/actions/secrets/:secret_name"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /repos/:owner/:repo/actions/secrets/:secret_name"]["response"];
+    };
     getSecret: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/actions/secrets/:name"]["parameters"],
+          Endpoints["GET /repos/:owner/:repo/actions/secrets/:secret_name"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/actions/secrets/:name"]["response"];
+      response: Endpoints["GET /repos/:owner/:repo/actions/secrets/:secret_name"]["response"];
     };
     getSelfHostedRunner: {
       parameters: RequestParameters &
@@ -202,6 +266,22 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["GET /repos/:owner/:repo/actions/runs/:run_id"]["response"];
     };
+    getWorkflowRunUsage: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /repos/:owner/:repo/actions/runs/:run_id/timing"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /repos/:owner/:repo/actions/runs/:run_id/timing"]["response"];
+    };
+    getWorkflowUsage: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /repos/:owner/:repo/actions/workflows/:workflow_id/timing"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /repos/:owner/:repo/actions/workflows/:workflow_id/timing"]["response"];
+    };
     listArtifactsForRepo: {
       parameters: RequestParameters &
         Omit<
@@ -225,6 +305,22 @@ export type RestEndpointMethodTypes = {
           "baseUrl" | "headers" | "mediaType"
         >;
       response: Endpoints["GET /repos/:owner/:repo/actions/runs/:run_id/jobs"]["response"];
+    };
+    listOrgSecrets: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /orgs/:org/actions/secrets"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /orgs/:org/actions/secrets"]["response"];
+    };
+    listRepoSecrets: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /repos/:owner/:repo/actions/secrets"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /repos/:owner/:repo/actions/secrets"]["response"];
     };
     listRepoWorkflowRuns: {
       parameters: RequestParameters &
@@ -265,6 +361,14 @@ export type RestEndpointMethodTypes = {
           "baseUrl" | "headers" | "mediaType"
         >;
       response: Endpoints["GET /repos/:owner/:repo/actions/secrets"]["response"];
+    };
+    listSelectedReposForOrgSecret: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /orgs/:org/actions/secrets/:secret_name/repositories"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /orgs/:org/actions/secrets/:secret_name/repositories"]["response"];
     };
     listSelfHostedRunnersForOrg: {
       parameters: RequestParameters &
@@ -322,6 +426,14 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["POST /repos/:owner/:repo/actions/runs/:run_id/rerun"]["response"];
     };
+    removeSelectedRepoFromOrgSecret: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["DELETE /orgs/:org/actions/secrets/:secret_name/repositories/:repository_id"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["DELETE /orgs/:org/actions/secrets/:secret_name/repositories/:repository_id"]["response"];
+    };
     removeSelfHostedRunner: {
       parameters: RequestParameters &
         Omit<
@@ -329,6 +441,14 @@ export type RestEndpointMethodTypes = {
           "baseUrl" | "headers" | "mediaType"
         >;
       response: Endpoints["DELETE /repos/:owner/:repo/actions/runners/:runner_id"]["response"];
+    };
+    setSelectedReposForOrgSecret: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["PUT /orgs/:org/actions/secrets/:secret_name/repositories"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["PUT /orgs/:org/actions/secrets/:secret_name/repositories"]["response"];
     };
   };
   activity: {

@@ -1,6 +1,6 @@
 ---
 name: List repository secrets
-example: octokit.actions.listSecretsForRepo({ owner, repo })
+example: octokit.actions.listRepoSecrets({ owner, repo })
 route: GET /repos/{owner}/{repo}/actions/secrets
 scope: actions
 type: API method
@@ -8,12 +8,10 @@ type: API method
 
 # List repository secrets
 
-**Deprecated:** This method has been renamed to actions.listRepoSecrets
-
 Lists all secrets available in a repository without revealing their encrypted values. You must authenticate using an access token with the `repo` scope to use this endpoint. GitHub Apps must have the `secrets` repository permission to use this endpoint.
 
 ```js
-octokit.actions.listSecretsForRepo({
+octokit.actions.listRepoSecrets({
   owner,
   repo,
 });

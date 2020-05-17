@@ -1,6 +1,6 @@
 ---
 name: Delete a repository secret
-example: octokit.actions.createOrUpdateSecretForRepo({ owner, repo, secret_name })
+example: octokit.actions.deleteRepoSecret({ owner, repo, secret_name })
 route: DELETE /repos/{owner}/{repo}/actions/secrets/{secret_name}
 scope: actions
 type: API method
@@ -8,12 +8,10 @@ type: API method
 
 # Delete a repository secret
 
-**Deprecated:** This method has been renamed to actions.createOrUpdateRepoSecret
-
 Deletes a secret in a repository using the secret name. You must authenticate using an access token with the `repo` scope to use this endpoint. GitHub Apps must have the `secrets` repository permission to use this endpoint.
 
 ```js
-octokit.actions.createOrUpdateSecretForRepo({
+octokit.actions.deleteRepoSecret({
   owner,
   repo,
   secret_name,

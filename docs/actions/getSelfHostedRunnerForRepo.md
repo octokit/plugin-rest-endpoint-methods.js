@@ -8,7 +8,7 @@ type: API method
 
 # Get a self-hosted runner for a repository
 
-Gets a specific self-hosted runner. Anyone with admin access to the repository and an access token with the `repo` scope can use this endpoint.
+Gets a specific self-hosted runner. You must authenticate using an access token with the `repo` scope to use this endpoint.
 
 ```js
 octokit.actions.getSelfHostedRunnerForRepo({

@@ -34,7 +34,10 @@ octokit.gists.create({
 The filenames and content of each file in the gist. The keys in the `files` object represent the filename and have the type `string`.
 
 </td></tr>
-<tr><td>files.content</td><td>no</td><td>
+<tr><td>files.*</td><td>no</td><td>
+
+</td></tr>
+<tr><td>files.*.content</td><td>no</td><td>
 
 The content of the file.
 

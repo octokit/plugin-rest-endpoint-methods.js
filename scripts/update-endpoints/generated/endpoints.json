@@ -1594,7 +1594,7 @@
     "url": "/content_references/{content_reference_id}/attachments",
     "isDeprecated": false,
     "isLegacy": false,
-    "description": "Creates an attachment under a content reference URL in the body or comment of an issue or pull request. Use the `id` of the content reference from the [`content_reference` event](https://developer.github.com/v3/activity/events/types/#contentreferenceevent) to create an attachment.\n\nThe app must create a content attachment within six hours of the content reference URL being posted. See \"[Using content attachments](https://developer.github.com/apps/using-content-attachments/)\" for details about content attachments.\n\nYou must use an [installation access token](https://developer.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-an-installation) to access this endpoint.\n\nThis example creates a content attachment for the domain `https://errors.ai/`.",
+    "description": "Creates an attachment under a content reference URL in the body or comment of an issue or pull request. Use the `id` of the content reference from the [`content_reference` event](https://developer.github.com/webhooks/event-payloads/#content_reference) to create an attachment.\n\nThe app must create a content attachment within six hours of the content reference URL being posted. See \"[Using content attachments](https://developer.github.com/apps/using-content-attachments/)\" for details about content attachments.\n\nYou must use an [installation access token](https://developer.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-an-installation) to access this endpoint.\n\nThis example creates a content attachment for the domain `https://errors.ai/`.",
     "documentationUrl": "https://developer.github.com/v3/apps/installations/#create-a-content-attachment",
     "previews": [{ "name": "corsair" }],
     "headers": [
@@ -1867,7 +1867,20 @@
         "deprecated": null
       },
       {
-        "name": "files.content",
+        "name": "files.*",
+        "description": "",
+        "in": "BODY",
+        "type": "object",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "files.*.content",
         "description": "The content of the file.",
         "in": "BODY",
         "type": "string",
@@ -2144,7 +2157,20 @@
         "deprecated": null
       },
       {
-        "name": "files.content",
+        "name": "files.*",
+        "description": "",
+        "in": "BODY",
+        "type": "object",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "files.*.content",
         "description": "The updated content of the file.",
         "in": "BODY",
         "type": "string",
@@ -2157,7 +2183,7 @@
         "deprecated": null
       },
       {
-        "name": "files.filename",
+        "name": "files.*.filename",
         "description": "The new name for this file. To delete a file, set the value of the filename to `null`.",
         "in": "BODY",
         "type": "string",
@@ -4821,7 +4847,7 @@
     "url": "/orgs/{org}/actions/runners",
     "isDeprecated": false,
     "isLegacy": false,
-    "description": "**Warning:** The self-hosted runners API for organizations is currently in public beta and subject to change.\n\nLists all self-hosted runners for an organization. Anyone with admin access to the organization can use this endpoint.",
+    "description": "**Warning:** The self-hosted runners API for organizations is currently in public beta and subject to change.\n\nLists all self-hosted runners for an organization. You must authenticate using an access token with the `admin:org` scope to use this endpoint.",
     "documentationUrl": "https://developer.github.com/v3/actions/self-hosted-runners/#list-self-hosted-runners-for-an-organization",
     "previews": [],
     "headers": [],
@@ -4887,7 +4913,7 @@
     "url": "/orgs/{org}/actions/runners/downloads",
     "isDeprecated": false,
     "isLegacy": false,
-    "description": "**Warning:** The self-hosted runners API for organizations is currently in public beta and subject to change.\n\nLists binaries for the runner application that you can download and run. Anyone with admin access to the organization can use this endpoint.",
+    "description": "**Warning:** The self-hosted runners API for organizations is currently in public beta and subject to change.\n\nLists binaries for the runner application that you can download and run. You must authenticate using an access token with the `admin:org` scope to use this endpoint.",
     "documentationUrl": "https://developer.github.com/v3/actions/self-hosted-runners/#list-runner-applications-for-an-organization",
     "previews": [],
     "headers": [],
@@ -4927,7 +4953,7 @@
     "url": "/orgs/{org}/actions/runners/registration-token",
     "isDeprecated": false,
     "isLegacy": false,
-    "description": "**Warning:** The self-hosted runners API for organizations is currently in public beta and subject to change.\n\nReturns a token that you can pass to the `config` script. The token expires after one hour. Anyone with admin access to the organization can use this endpoint.\n\nConfigure your self-hosted runner, replacing `TOKEN` with the registration token provided by this endpoint.",
+    "description": "**Warning:** The self-hosted runners API for organizations is currently in public beta and subject to change.\n\nReturns a token that you can pass to the `config` script. The token expires after one hour. You must authenticate using an access token with the `admin:org` scope to use this endpoint.\n\nConfigure your self-hosted runner, replacing `TOKEN` with the registration token provided by this endpoint.",
     "documentationUrl": "https://developer.github.com/v3/actions/self-hosted-runners/#create-a-registration-token-for-an-organization",
     "previews": [],
     "headers": [],
@@ -4967,7 +4993,7 @@
     "url": "/orgs/{org}/actions/runners/remove-token",
     "isDeprecated": false,
     "isLegacy": false,
-    "description": "**Warning:** The self-hosted runners API for organizations is currently in public beta and subject to change.\n\nReturns a token that you can pass to the `config` script to remove a self-hosted runner from an organization. The token expires after one hour. Anyone with admin access to the organization can use this endpoint.\n\nTo remove your self-hosted runner from an organization, replace `TOKEN` with the remove token provided by this endpoint.",
+    "description": "**Warning:** The self-hosted runners API for organizations is currently in public beta and subject to change.\n\nReturns a token that you can pass to the `config` script to remove a self-hosted runner from an organization. The token expires after one hour. You must authenticate using an access token with the `admin:org` scope to use this endpoint.\n\nTo remove your self-hosted runner from an organization, replace `TOKEN` with the remove token provided by this endpoint.",
     "documentationUrl": "https://developer.github.com/v3/actions/self-hosted-runners/#create-a-remove-token-for-an-organization",
     "previews": [],
     "headers": [],
@@ -5007,7 +5033,7 @@
     "url": "/orgs/{org}/actions/runners/{runner_id}",
     "isDeprecated": false,
     "isLegacy": false,
-    "description": "**Warning:** The self-hosted runners API for organizations is currently in public beta and subject to change.\n\nGets a specific self-hosted runner for an organization. Anyone with admin access to the organization can use this endpoint.",
+    "description": "**Warning:** The self-hosted runners API for organizations is currently in public beta and subject to change.\n\nGets a specific self-hosted runner for an organization. You must authenticate using an access token with the `admin:org` scope to use this endpoint.",
     "documentationUrl": "https://developer.github.com/v3/actions/self-hosted-runners/#get-a-self-hosted-runner-for-an-organization",
     "previews": [],
     "headers": [],
@@ -5060,7 +5086,7 @@
     "url": "/orgs/{org}/actions/runners/{runner_id}",
     "isDeprecated": false,
     "isLegacy": false,
-    "description": "**Warning:** The self-hosted runners API for organizations is currently in public beta and subject to change.\n\nForces the removal of a self-hosted runner from an organization. You can use this endpoint to completely remove the runner when the machine you were using no longer exists. Anyone with admin access to the organization can use this endpoint.",
+    "description": "**Warning:** The self-hosted runners API for organizations is currently in public beta and subject to change.\n\nForces the removal of a self-hosted runner from an organization. You can use this endpoint to completely remove the runner when the machine you were using no longer exists. You must authenticate using an access token with the `admin:org` scope to use this endpoint.",
     "documentationUrl": "https://developer.github.com/v3/actions/self-hosted-runners/#delete-a-self-hosted-runner-from-an-organization",
     "previews": [],
     "headers": [],
@@ -5080,6 +5106,524 @@
       },
       {
         "name": "runner_id",
+        "description": "",
+        "in": "PATH",
+        "type": "integer",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [],
+    "renamed": null
+  },
+  {
+    "name": "List organization secrets",
+    "scope": "actions",
+    "id": "listOrgSecrets",
+    "method": "GET",
+    "url": "/orgs/{org}/actions/secrets",
+    "isDeprecated": false,
+    "isLegacy": false,
+    "description": "Lists all secrets available in an organization without revealing their encrypted values. You must authenticate using an access token with the `admin:org` scope to use this endpoint. GitHub Apps must have the `secrets` organization permission to use this endpoint.",
+    "documentationUrl": "https://developer.github.com/v3/actions/secrets/#list-organization-secrets",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "org",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "per_page",
+        "description": "Results per page (max 100)",
+        "in": "QUERY",
+        "type": "integer",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "page",
+        "description": "Page number of the results to fetch.",
+        "in": "QUERY",
+        "type": "integer",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "examples": [
+          {
+            "data": "{\"total_count\":3,\"secrets\":[{\"name\":\"GIST_ID\",\"created_at\":\"2019-08-10T14:59:22Z\",\"updated_at\":\"2020-01-10T14:59:22Z\",\"visibility\":\"private\"},{\"name\":\"DEPLOY_TOKEN\",\"created_at\":\"2019-08-10T14:59:22Z\",\"updated_at\":\"2020-01-10T14:59:22Z\",\"visibility\":\"all\"},{\"name\":\"GH_TOKEN\",\"created_at\":\"2019-08-10T14:59:22Z\",\"updated_at\":\"2020-01-10T14:59:22Z\",\"visibility\":\"selected\",\"selected_repositories_url\":\"https://api.github.com/orgs/octo-org/actions/secrets/SUPER_SECRET/repositories\"}]}"
+          }
+        ]
+      }
+    ],
+    "renamed": null
+  },
+  {
+    "name": "Get an organization public key",
+    "scope": "actions",
+    "id": "getOrgPublicKey",
+    "method": "GET",
+    "url": "/orgs/{org}/actions/secrets/public-key",
+    "isDeprecated": false,
+    "isLegacy": false,
+    "description": "Gets your public key, which you need to encrypt secrets. You need to encrypt a secret before you can create or update secrets. You must authenticate using an access token with the `admin:org` scope to use this endpoint. GitHub Apps must have the `secrets` organization permission to use this endpoint.",
+    "documentationUrl": "https://developer.github.com/v3/actions/secrets/#get-an-organization-public-key",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "org",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "examples": [
+          {
+            "data": "{\"key_id\":\"012345678912345678\",\"key\":\"2Sg8iYjAxxmI2LvUXpJjkYrMxURPc8r+dB7TJyvv1234\"}"
+          }
+        ]
+      }
+    ],
+    "renamed": null
+  },
+  {
+    "name": "Get an organization secret",
+    "scope": "actions",
+    "id": "getOrgSecret",
+    "method": "GET",
+    "url": "/orgs/{org}/actions/secrets/{secret_name}",
+    "isDeprecated": false,
+    "isLegacy": false,
+    "description": "Gets a single organization secret without revealing its encrypted value. You must authenticate using an access token with the `admin:org` scope to use this endpoint. GitHub Apps must have the `secrets` organization permission to use this endpoint.",
+    "documentationUrl": "https://developer.github.com/v3/actions/secrets/#get-an-organization-secret",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "org",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "secret_name",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "examples": [
+          {
+            "data": "{\"name\":\"GH_TOKEN\",\"created_at\":\"2019-08-10T14:59:22Z\",\"updated_at\":\"2020-01-10T14:59:22Z\",\"visibility\":\"selected\",\"selected_repositories_url\":\"https://api.github.com/orgs/octo-org/actions/secrets/SUPER_SECRET/repositories\"}"
+          }
+        ]
+      }
+    ],
+    "renamed": null
+  },
+  {
+    "name": "Create or update an organization secret",
+    "scope": "actions",
+    "id": "createOrUpdateOrgSecret",
+    "method": "PUT",
+    "url": "/orgs/{org}/actions/secrets/{secret_name}",
+    "isDeprecated": false,
+    "isLegacy": false,
+    "description": "Creates or updates an organization secret with an encrypted value. Encrypt your secret using [LibSodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages). You must authenticate using an access token with the `admin:org` scope to use this endpoint. GitHub Apps must have the `secrets` organization permission to use this endpoint.\n\nEncrypt your secret using the [tweetsodium](https://github.com/github/tweetsodium) library.\n\n\n\nEncrypt your secret using [pynacl](https://pynacl.readthedocs.io/en/stable/public/#nacl-public-sealedbox) with Python 3.\n\n\n\nEncrypt your secret using the [Sodium.Core](https://www.nuget.org/packages/Sodium.Core/) package.\n\n\n\nEncrypt your secret using the [rbnacl](https://github.com/RubyCrypto/rbnacl) gem.",
+    "documentationUrl": "https://developer.github.com/v3/actions/secrets/#create-or-update-an-organization-secret",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "org",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "secret_name",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "encrypted_value",
+        "description": "Value for your secret, encrypted with [LibSodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages) using the public key retrieved from the [Get an organization public key](https://developer.github.com/v3/actions/secrets/#get-an-organization-public-key) endpoint.",
+        "in": "BODY",
+        "type": "string",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "key_id",
+        "description": "ID of the key you used to encrypt the secret.",
+        "in": "BODY",
+        "type": "string",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "visibility",
+        "description": "Configures the access that repositories have to the organization secret. Can be one of:  \n\\- `all` - All repositories in an organization can access the secret.  \n\\- `private` - Private repositories in an organization can access the secret.  \n\\- `selected` - Only specific repositories can access the secret.",
+        "in": "BODY",
+        "type": "string",
+        "required": false,
+        "enum": ["all", "private", "selected"],
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "selected_repository_ids",
+        "description": "An array of repository ids that can access the organization secret. You can only provide a list of repository ids when the `visibility` is set to `selected`. You can manage the list of selected repositories using the [List selected repositories for an organization secret](https://developer.github.com/v3/actions/secrets/#list-selected-repositories-for-an-organization-secret), [Set selected repositories for an organization secret](https://developer.github.com/v3/actions/secrets/#set-selected-repositories-for-an-organization-secret), and [Remove selected repository from an organization secret](https://developer.github.com/v3/actions/secrets/#remove-selected-repository-from-an-organization-secret) endpoints.",
+        "in": "BODY",
+        "type": "string[]",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [],
+    "renamed": null
+  },
+  {
+    "name": "Delete an organization secret",
+    "scope": "actions",
+    "id": "deleteOrgSecret",
+    "method": "DELETE",
+    "url": "/orgs/{org}/actions/secrets/{secret_name}",
+    "isDeprecated": false,
+    "isLegacy": false,
+    "description": "Deletes a secret in an organization using the secret name. You must authenticate using an access token with the `admin:org` scope to use this endpoint. GitHub Apps must have the `secrets` organization permission to use this endpoint.",
+    "documentationUrl": "https://developer.github.com/v3/actions/secrets/#delete-an-organization-secret",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "org",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "secret_name",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [],
+    "renamed": null
+  },
+  {
+    "name": "List selected repositories for an organization secret",
+    "scope": "actions",
+    "id": "listSelectedReposForOrgSecret",
+    "method": "GET",
+    "url": "/orgs/{org}/actions/secrets/{secret_name}/repositories",
+    "isDeprecated": false,
+    "isLegacy": false,
+    "description": "Lists all repositories that have been selected when the `visibility` for repository access to a secret is set to `selected`. You must authenticate using an access token with the `admin:org` scope to use this endpoint. GitHub Apps must have the `secrets` organization permission to use this endpoint.",
+    "documentationUrl": "https://developer.github.com/v3/actions/secrets/#list-selected-repositories-for-an-organization-secret",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "org",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "secret_name",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "examples": [
+          {
+            "data": "{\"total_count\":1,\"repositories\":[{\"id\":1296269,\"node_id\":\"MDEwOlJlcG9zaXRvcnkxMjk2MjY5\",\"name\":\"Hello-World\",\"full_name\":\"octocat/Hello-World\",\"owner\":{\"login\":\"octocat\",\"id\":1,\"node_id\":\"MDQ6VXNlcjE=\",\"avatar_url\":\"https://github.com/images/error/octocat_happy.gif\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/octocat\",\"html_url\":\"https://github.com/octocat\",\"followers_url\":\"https://api.github.com/users/octocat/followers\",\"following_url\":\"https://api.github.com/users/octocat/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/octocat/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/octocat/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/octocat/subscriptions\",\"organizations_url\":\"https://api.github.com/users/octocat/orgs\",\"repos_url\":\"https://api.github.com/users/octocat/repos\",\"events_url\":\"https://api.github.com/users/octocat/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/octocat/received_events\",\"type\":\"User\",\"site_admin\":false},\"private\":false,\"html_url\":\"https://github.com/octocat/Hello-World\",\"description\":\"This your first repo!\",\"fork\":false,\"url\":\"https://api.github.com/repos/octocat/Hello-World\",\"archive_url\":\"http://api.github.com/repos/octocat/Hello-World/{archive_format}{/ref}\",\"assignees_url\":\"http://api.github.com/repos/octocat/Hello-World/assignees{/user}\",\"blobs_url\":\"http://api.github.com/repos/octocat/Hello-World/git/blobs{/sha}\",\"branches_url\":\"http://api.github.com/repos/octocat/Hello-World/branches{/branch}\",\"collaborators_url\":\"http://api.github.com/repos/octocat/Hello-World/collaborators{/collaborator}\",\"comments_url\":\"http://api.github.com/repos/octocat/Hello-World/comments{/number}\",\"commits_url\":\"http://api.github.com/repos/octocat/Hello-World/commits{/sha}\",\"compare_url\":\"http://api.github.com/repos/octocat/Hello-World/compare/{base}...{head}\",\"contents_url\":\"http://api.github.com/repos/octocat/Hello-World/contents/{+path}\",\"contributors_url\":\"http://api.github.com/repos/octocat/Hello-World/contributors\",\"deployments_url\":\"http://api.github.com/repos/octocat/Hello-World/deployments\",\"downloads_url\":\"http://api.github.com/repos/octocat/Hello-World/downloads\",\"events_url\":\"http://api.github.com/repos/octocat/Hello-World/events\",\"forks_url\":\"http://api.github.com/repos/octocat/Hello-World/forks\",\"git_commits_url\":\"http://api.github.com/repos/octocat/Hello-World/git/commits{/sha}\",\"git_refs_url\":\"http://api.github.com/repos/octocat/Hello-World/git/refs{/sha}\",\"git_tags_url\":\"http://api.github.com/repos/octocat/Hello-World/git/tags{/sha}\",\"git_url\":\"git:github.com/octocat/Hello-World.git\",\"issue_comment_url\":\"http://api.github.com/repos/octocat/Hello-World/issues/comments{/number}\",\"issue_events_url\":\"http://api.github.com/repos/octocat/Hello-World/issues/events{/number}\",\"issues_url\":\"http://api.github.com/repos/octocat/Hello-World/issues{/number}\",\"keys_url\":\"http://api.github.com/repos/octocat/Hello-World/keys{/key_id}\",\"labels_url\":\"http://api.github.com/repos/octocat/Hello-World/labels{/name}\",\"languages_url\":\"http://api.github.com/repos/octocat/Hello-World/languages\",\"merges_url\":\"http://api.github.com/repos/octocat/Hello-World/merges\",\"milestones_url\":\"http://api.github.com/repos/octocat/Hello-World/milestones{/number}\",\"notifications_url\":\"http://api.github.com/repos/octocat/Hello-World/notifications{?since,all,participating}\",\"pulls_url\":\"http://api.github.com/repos/octocat/Hello-World/pulls{/number}\",\"releases_url\":\"http://api.github.com/repos/octocat/Hello-World/releases{/id}\",\"ssh_url\":\"git@github.com:octocat/Hello-World.git\",\"stargazers_url\":\"http://api.github.com/repos/octocat/Hello-World/stargazers\",\"statuses_url\":\"http://api.github.com/repos/octocat/Hello-World/statuses/{sha}\",\"subscribers_url\":\"http://api.github.com/repos/octocat/Hello-World/subscribers\",\"subscription_url\":\"http://api.github.com/repos/octocat/Hello-World/subscription\",\"tags_url\":\"http://api.github.com/repos/octocat/Hello-World/tags\",\"teams_url\":\"http://api.github.com/repos/octocat/Hello-World/teams\",\"trees_url\":\"http://api.github.com/repos/octocat/Hello-World/git/trees{/sha}\"}]}"
+          }
+        ]
+      }
+    ],
+    "renamed": null
+  },
+  {
+    "name": "Set selected repositories for an organization secret",
+    "scope": "actions",
+    "id": "setSelectedReposForOrgSecret",
+    "method": "PUT",
+    "url": "/orgs/{org}/actions/secrets/{secret_name}/repositories",
+    "isDeprecated": false,
+    "isLegacy": false,
+    "description": "Replaces all repositories for an organization secret when the `visibility` for repository access is set to `selected`. The visibility is set when you [Create or update an organization secret](https://developer.github.com/v3/actions/secrets/#create-or-update-an-organization-secret). You must authenticate using an access token with the `admin:org` scope to use this endpoint. GitHub Apps must have the `secrets` organization permission to use this endpoint.",
+    "documentationUrl": "https://developer.github.com/v3/actions/secrets/#set-selected-repositories-for-an-organization-secret",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "org",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "secret_name",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "selected_repository_ids",
+        "description": "An array of repository ids that can access the organization secret. You can only provide a list of repository ids when the `visibility` is set to `selected`. You can add and remove individual repositories using the [Set selected repositories for an organization secret](https://developer.github.com/v3/actions/secrets/#set-selected-repositories-for-an-organization-secret) and [Remove selected repository from an organization secret](https://developer.github.com/v3/actions/secrets/#remove-selected-repository-from-an-organization-secret) endpoints.",
+        "in": "BODY",
+        "type": "integer[]",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [],
+    "renamed": null
+  },
+  {
+    "name": "Add selected repository to an organization secret",
+    "scope": "actions",
+    "id": "addSelectedRepoToOrgSecret",
+    "method": "PUT",
+    "url": "/orgs/{org}/actions/secrets/{secret_name}/repositories/{repository_id}",
+    "isDeprecated": false,
+    "isLegacy": false,
+    "description": "Adds a repository to an organization secret when the `visibility` for repository access is set to `selected`. The visibility is set when you [Create or update an organization secret](https://developer.github.com/v3/actions/secrets/#create-or-update-an-organization-secret). You must authenticate using an access token with the `admin:org` scope to use this endpoint. GitHub Apps must have the `secrets` organization permission to use this endpoint.",
+    "documentationUrl": "https://developer.github.com/v3/actions/secrets/#add-selected-repository-to-an-organization-secret",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "org",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "secret_name",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "repository_id",
+        "description": "",
+        "in": "PATH",
+        "type": "integer",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [],
+    "renamed": null
+  },
+  {
+    "name": "Remove selected repository from an organization secret",
+    "scope": "actions",
+    "id": "removeSelectedRepoFromOrgSecret",
+    "method": "DELETE",
+    "url": "/orgs/{org}/actions/secrets/{secret_name}/repositories/{repository_id}",
+    "isDeprecated": false,
+    "isLegacy": false,
+    "description": "Removes a repository from an organization secret when the `visibility` for repository access is set to `selected`. The visibility is set when you [Create or update an organization secret](https://developer.github.com/v3/actions/secrets/#create-or-update-an-organization-secret). You must authenticate using an access token with the `admin:org` scope to use this endpoint. GitHub Apps must have the `secrets` organization permission to use this endpoint.",
+    "documentationUrl": "https://developer.github.com/v3/actions/secrets/#remove-selected-repository-from-an-organization-secret",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "org",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "secret_name",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "repository_id",
         "description": "",
         "in": "PATH",
         "type": "integer",
@@ -5527,7 +6071,7 @@
       },
       {
         "name": "config.secret",
-        "description": "If provided, the `secret` will be used as the `key` to generate the HMAC hex digest value in the [`X-Hub-Signature`](https://developer.github.com/webhooks/#delivery-headers) header.",
+        "description": "If provided, the `secret` will be used as the `key` to generate the HMAC hex digest value in the [`X-Hub-Signature`](https://developer.github.com/webhooks/event-payloads/#delivery-headers) header.",
         "in": "BODY",
         "type": "string",
         "required": false,
@@ -5553,7 +6097,7 @@
       },
       {
         "name": "events",
-        "description": "Determines what [events](https://developer.github.com/v3/activity/events/types/) the hook is triggered for.",
+        "description": "Determines what [events](https://developer.github.com/webhooks/event-payloads) the hook is triggered for.",
         "in": "BODY",
         "type": "string[]",
         "required": false,
@@ -5724,7 +6268,7 @@
       },
       {
         "name": "config.secret",
-        "description": "If provided, the `secret` will be used as the `key` to generate the HMAC hex digest value in the [`X-Hub-Signature`](https://developer.github.com/webhooks/#delivery-headers) header.",
+        "description": "If provided, the `secret` will be used as the `key` to generate the HMAC hex digest value in the [`X-Hub-Signature`](https://developer.github.com/webhooks/event-payloads/#delivery-headers) header.",
         "in": "BODY",
         "type": "string",
         "required": false,
@@ -5750,7 +6294,7 @@
       },
       {
         "name": "events",
-        "description": "Determines what [events](https://developer.github.com/v3/activity/events/types/) the hook is triggered for.",
+        "description": "Determines what [events](https://developer.github.com/webhooks/event-payloads) the hook is triggered for.",
         "in": "BODY",
         "type": "string[]",
         "required": false,
@@ -12781,7 +13325,7 @@
     "url": "/repos/{owner}/{repo}/actions/artifacts",
     "isDeprecated": false,
     "isLegacy": false,
-    "description": "Lists all artifacts for a repository. Anyone with read access to the repository can use this endpoint. If the repository is private you must use an access token with the `repo` scope. GitHub Apps must have the `actions` permission to use this endpoint.",
+    "description": "Lists all artifacts for a repository. Anyone with read access to the repository can use this endpoint. If the repository is private you must use an access token with the `repo` scope. GitHub Apps must have the `actions:read` permission to use this endpoint.",
     "documentationUrl": "https://developer.github.com/v3/actions/artifacts/#list-artifacts-for-a-repository",
     "previews": [],
     "headers": [],
@@ -12860,7 +13404,7 @@
     "url": "/repos/{owner}/{repo}/actions/artifacts/{artifact_id}",
     "isDeprecated": false,
     "isLegacy": false,
-    "description": "Gets a specific artifact for a workflow run. Anyone with read access to the repository can use this endpoint. If the repository is private you must use an access token with the `repo` scope. GitHub Apps must have the `actions` permission to use this endpoint.",
+    "description": "Gets a specific artifact for a workflow run. Anyone with read access to the repository can use this endpoint. If the repository is private you must use an access token with the `repo` scope. GitHub Apps must have the `actions:read` permission to use this endpoint.",
     "documentationUrl": "https://developer.github.com/v3/actions/artifacts/#get-an-artifact",
     "previews": [],
     "headers": [],
@@ -12926,7 +13470,7 @@
     "url": "/repos/{owner}/{repo}/actions/artifacts/{artifact_id}",
     "isDeprecated": false,
     "isLegacy": false,
-    "description": "Deletes an artifact for a workflow run. Anyone with write access to the repository and an access token with the `repo` scope can use this endpoint. GitHub Apps must have the `actions` permission to use this endpoint.",
+    "description": "Deletes an artifact for a workflow run. You must authenticate using an access token with the `repo` scope to use this endpoint. GitHub Apps must have the `actions:write` permission to use this endpoint.",
     "documentationUrl": "https://developer.github.com/v3/actions/artifacts/#delete-an-artifact",
     "previews": [],
     "headers": [],
@@ -12982,7 +13526,7 @@
     "url": "/repos/{owner}/{repo}/actions/artifacts/{artifact_id}/{archive_format}",
     "isDeprecated": false,
     "isLegacy": false,
-    "description": "Gets a redirect URL to download an archive for a repository. This URL expires after 1 minute. Look for `Location:` in the response header to find the URL for the download. The `:archive_format` must be `zip`. Anyone with read access to the repository can use this endpoint. If the repository is private you must use an access token with the `repo` scope. GitHub Apps must have the `actions` permission to use this endpoint.\n\nCall this endpoint using the `-v` flag, which enables verbose output and allows you to see the download URL in the header. To download the file into the current working directory, specify the filename using the `-o` flag.",
+    "description": "Gets a redirect URL to download an archive for a repository. This URL expires after 1 minute. Look for `Location:` in the response header to find the URL for the download. The `:archive_format` must be `zip`. Anyone with read access to the repository can use this endpoint. If the repository is private you must use an access token with the `repo` scope. GitHub Apps must have the `actions:read` permission to use this endpoint.\n\nCall this endpoint using the `-v` flag, which enables verbose output and allows you to see the download URL in the header. To download the file into the current working directory, specify the filename using the `-o` flag.",
     "documentationUrl": "https://developer.github.com/v3/actions/artifacts/#download-an-artifact",
     "previews": [],
     "headers": [],
@@ -13051,7 +13595,7 @@
     "url": "/repos/{owner}/{repo}/actions/jobs/{job_id}",
     "isDeprecated": false,
     "isLegacy": false,
-    "description": "Gets a specific job in a workflow run. Anyone with read access to the repository can use this endpoint. If the repository is private you must use an access token with the `repo` scope. GitHub Apps must have the `actions` permission to use this endpoint.",
+    "description": "Gets a specific job in a workflow run. Anyone with read access to the repository can use this endpoint. If the repository is private you must use an access token with the `repo` scope. GitHub Apps must have the `actions:read` permission to use this endpoint.",
     "documentationUrl": "https://developer.github.com/v3/actions/workflow-jobs/#get-a-workflow-job",
     "previews": [],
     "headers": [],
@@ -13117,7 +13661,7 @@
     "url": "/repos/{owner}/{repo}/actions/jobs/{job_id}/logs",
     "isDeprecated": false,
     "isLegacy": false,
-    "description": "Gets a redirect URL to download a plain text file of logs for a workflow job. This link expires after 1 minute. Look for `Location:` in the response header to find the URL for the download. Anyone with read access to the repository can use this endpoint. If the repository is private you must use an access token with the `repo` scope. GitHub Apps must have the `actions` permission to use this endpoint.\n\nCall this endpoint using the `-v` flag, which enables verbose output and allows you to see the download URL in the header. To download the file into the current working directory, specify the filename using the `-o` flag.",
+    "description": "Gets a redirect URL to download a plain text file of logs for a workflow job. This link expires after 1 minute. Look for `Location:` in the response header to find the URL for the download. Anyone with read access to the repository can use this endpoint. If the repository is private you must use an access token with the `repo` scope. GitHub Apps must have the `actions:read` permission to use this endpoint.\n\nCall this endpoint using the `-v` flag, which enables verbose output and allows you to see the download URL in the header. To download the file into the current working directory, specify the filename using the `-o` flag.",
     "documentationUrl": "https://developer.github.com/v3/actions/workflow-jobs/#download-workflow-job-logs",
     "previews": [],
     "headers": [],
@@ -13173,7 +13717,7 @@
     "url": "/repos/{owner}/{repo}/actions/jobs/{job_id}/logs",
     "isDeprecated": false,
     "isLegacy": false,
-    "description": "Gets a redirect URL to download a plain text file of logs for a workflow job. This link expires after 1 minute. Look for `Location:` in the response header to find the URL for the download. Anyone with read access to the repository can use this endpoint. If the repository is private you must use an access token with the `repo` scope. GitHub Apps must have the `actions` permission to use this endpoint.\n\nCall this endpoint using the `-v` flag, which enables verbose output and allows you to see the download URL in the header. To download the file into the current working directory, specify the filename using the `-o` flag.",
+    "description": "Gets a redirect URL to download a plain text file of logs for a workflow job. This link expires after 1 minute. Look for `Location:` in the response header to find the URL for the download. Anyone with read access to the repository can use this endpoint. If the repository is private you must use an access token with the `repo` scope. GitHub Apps must have the `actions:read` permission to use this endpoint.\n\nCall this endpoint using the `-v` flag, which enables verbose output and allows you to see the download URL in the header. To download the file into the current working directory, specify the filename using the `-o` flag.",
     "documentationUrl": "https://developer.github.com/v3/actions/workflow-jobs/#download-workflow-job-logs",
     "previews": [],
     "headers": [],
@@ -13234,7 +13778,7 @@
     "url": "/repos/{owner}/{repo}/actions/runners",
     "isDeprecated": false,
     "isLegacy": false,
-    "description": "Lists all self-hosted runners for a repository. Anyone with admin access to the repository and an access token with the `repo` scope can use this endpoint.",
+    "description": "Lists all self-hosted runners for a repository. You must authenticate using an access token with the `repo` scope to use this endpoint.",
     "documentationUrl": "https://developer.github.com/v3/actions/self-hosted-runners/#list-self-hosted-runners-for-a-repository",
     "previews": [],
     "headers": [],
@@ -13313,7 +13857,7 @@
     "url": "/repos/{owner}/{repo}/actions/runners/downloads",
     "isDeprecated": false,
     "isLegacy": false,
-    "description": "Lists binaries for the runner application that you can download and run. Anyone with admin access to the repository and an access token with the `repo` scope can use this endpoint.",
+    "description": "Lists binaries for the runner application that you can download and run. You must authenticate using an access token with the `repo` scope to use this endpoint.",
     "documentationUrl": "https://developer.github.com/v3/actions/self-hosted-runners/#list-runner-applications-for-a-repository",
     "previews": [],
     "headers": [],
@@ -13366,7 +13910,7 @@
     "url": "/repos/{owner}/{repo}/actions/runners/downloads",
     "isDeprecated": false,
     "isLegacy": false,
-    "description": "Lists binaries for the runner application that you can download and run. Anyone with admin access to the repository and an access token with the `repo` scope can use this endpoint.",
+    "description": "Lists binaries for the runner application that you can download and run. You must authenticate using an access token with the `repo` scope to use this endpoint.",
     "documentationUrl": "https://developer.github.com/v3/actions/self-hosted-runners/#list-runner-applications-for-a-repository",
     "previews": [],
     "headers": [],
@@ -13427,7 +13971,7 @@
     "url": "/repos/{owner}/{repo}/actions/runners/registration-token",
     "isDeprecated": false,
     "isLegacy": false,
-    "description": "Returns a token that you can pass to the `config` script. The token expires after one hour. Anyone with admin access to the repository and an access token with the `repo` scope can use this endpoint.\n\nConfigure your self-hosted runner, replacing TOKEN with the registration token provided by this endpoint.",
+    "description": "Returns a token that you can pass to the `config` script. The token expires after one hour. You must authenticate using an access token with the `repo` scope to use this endpoint.\n\nConfigure your self-hosted runner, replacing TOKEN with the registration token provided by this endpoint.",
     "documentationUrl": "https://developer.github.com/v3/actions/self-hosted-runners/#create-a-registration-token-for-a-repository",
     "previews": [],
     "headers": [],
@@ -13480,7 +14024,7 @@
     "url": "/repos/{owner}/{repo}/actions/runners/registration-token",
     "isDeprecated": false,
     "isLegacy": false,
-    "description": "Returns a token that you can pass to the `config` script. The token expires after one hour. Anyone with admin access to the repository and an access token with the `repo` scope can use this endpoint.\n\nConfigure your self-hosted runner, replacing TOKEN with the registration token provided by this endpoint.",
+    "description": "Returns a token that you can pass to the `config` script. The token expires after one hour. You must authenticate using an access token with the `repo` scope to use this endpoint.\n\nConfigure your self-hosted runner, replacing TOKEN with the registration token provided by this endpoint.",
     "documentationUrl": "https://developer.github.com/v3/actions/self-hosted-runners/#create-a-registration-token-for-a-repository",
     "previews": [],
     "headers": [],
@@ -13538,7 +14082,7 @@
     "url": "/repos/{owner}/{repo}/actions/runners/remove-token",
     "isDeprecated": false,
     "isLegacy": false,
-    "description": "Returns a token that you can pass to remove a self-hosted runner from a repository. The token expires after one hour. Anyone with admin access to the repository and an access token with the `repo` scope can use this endpoint.\n\nRemove your self-hosted runner from a repository, replacing TOKEN with the remove token provided by this endpoint.",
+    "description": "Returns a token that you can pass to remove a self-hosted runner from a repository. The token expires after one hour. You must authenticate using an access token with the `repo` scope to use this endpoint.\n\nRemove your self-hosted runner from a repository, replacing TOKEN with the remove token provided by this endpoint.",
     "documentationUrl": "https://developer.github.com/v3/actions/self-hosted-runners/#create-a-remove-token-for-a-repository",
     "previews": [],
     "headers": [],
@@ -13591,7 +14135,7 @@
     "url": "/repos/{owner}/{repo}/actions/runners/remove-token",
     "isDeprecated": false,
     "isLegacy": false,
-    "description": "Returns a token that you can pass to remove a self-hosted runner from a repository. The token expires after one hour. Anyone with admin access to the repository and an access token with the `repo` scope can use this endpoint.\n\nRemove your self-hosted runner from a repository, replacing TOKEN with the remove token provided by this endpoint.",
+    "description": "Returns a token that you can pass to remove a self-hosted runner from a repository. The token expires after one hour. You must authenticate using an access token with the `repo` scope to use this endpoint.\n\nRemove your self-hosted runner from a repository, replacing TOKEN with the remove token provided by this endpoint.",
     "documentationUrl": "https://developer.github.com/v3/actions/self-hosted-runners/#create-a-remove-token-for-a-repository",
     "previews": [],
     "headers": [],
@@ -13649,7 +14193,7 @@
     "url": "/repos/{owner}/{repo}/actions/runners/{runner_id}",
     "isDeprecated": false,
     "isLegacy": false,
-    "description": "Gets a specific self-hosted runner. Anyone with admin access to the repository and an access token with the `repo` scope can use this endpoint.",
+    "description": "Gets a specific self-hosted runner. You must authenticate using an access token with the `repo` scope to use this endpoint.",
     "documentationUrl": "https://developer.github.com/v3/actions/self-hosted-runners/#get-a-self-hosted-runner-for-a-repository",
     "previews": [],
     "headers": [],
@@ -13715,7 +14259,7 @@
     "url": "/repos/{owner}/{repo}/actions/runners/{runner_id}",
     "isDeprecated": false,
     "isLegacy": false,
-    "description": "Gets a specific self-hosted runner. Anyone with admin access to the repository and an access token with the `repo` scope can use this endpoint.",
+    "description": "Gets a specific self-hosted runner. You must authenticate using an access token with the `repo` scope to use this endpoint.",
     "documentationUrl": "https://developer.github.com/v3/actions/self-hosted-runners/#get-a-self-hosted-runner-for-a-repository",
     "previews": [],
     "headers": [],
@@ -13786,7 +14330,7 @@
     "url": "/repos/{owner}/{repo}/actions/runners/{runner_id}",
     "isDeprecated": false,
     "isLegacy": false,
-    "description": "Forces the removal of a self-hosted runner from a repository. You can use this endpoint to completely remove the runner when the machine you were using no longer exists. Anyone with admin access to the repository and an access token with the `repo` scope can use this endpoint.",
+    "description": "Forces the removal of a self-hosted runner from a repository. You can use this endpoint to completely remove the runner when the machine you were using no longer exists. You must authenticate using an access token with the `repo` scope to use this endpoint.",
     "documentationUrl": "https://developer.github.com/v3/actions/self-hosted-runners/#delete-a-self-hosted-runner-from-a-repository",
     "previews": [],
     "headers": [],
@@ -13842,7 +14386,7 @@
     "url": "/repos/{owner}/{repo}/actions/runners/{runner_id}",
     "isDeprecated": false,
     "isLegacy": false,
-    "description": "Forces the removal of a self-hosted runner from a repository. You can use this endpoint to completely remove the runner when the machine you were using no longer exists. Anyone with admin access to the repository and an access token with the `repo` scope can use this endpoint.",
+    "description": "Forces the removal of a self-hosted runner from a repository. You can use this endpoint to completely remove the runner when the machine you were using no longer exists. You must authenticate using an access token with the `repo` scope to use this endpoint.",
     "documentationUrl": "https://developer.github.com/v3/actions/self-hosted-runners/#delete-a-self-hosted-runner-from-a-repository",
     "previews": [],
     "headers": [],
@@ -13903,7 +14447,7 @@
     "url": "/repos/{owner}/{repo}/actions/runs",
     "isDeprecated": false,
     "isLegacy": false,
-    "description": "Lists all workflow runs for a repository. You can use parameters to narrow the list of results. For more information about using parameters, see [Parameters](https://developer.github.com/v3/#parameters).\n\nAnyone with read access to the repository can use this endpoint. If the repository is private you must use an access token with the `repo` scope. GitHub Apps must have the `actions` permission to use this endpoint.",
+    "description": "Lists all workflow runs for a repository. You can use parameters to narrow the list of results. For more information about using parameters, see [Parameters](https://developer.github.com/v3/#parameters).\n\nAnyone with read access to the repository can use this endpoint. If the repository is private you must use an access token with the `repo` scope. GitHub Apps must have the `actions:read` permission to use this endpoint.",
     "documentationUrl": "https://developer.github.com/v3/actions/workflow-runs/#list-repository-workflow-runs",
     "previews": [],
     "headers": [],
@@ -14034,7 +14578,7 @@
     "url": "/repos/{owner}/{repo}/actions/runs/{run_id}",
     "isDeprecated": false,
     "isLegacy": false,
-    "description": "Gets a specific workflow run. Anyone with read access to the repository can use this endpoint. If the repository is private you must use an access token with the `repo` scope. GitHub Apps must have the `actions` permission to use this endpoint.",
+    "description": "Gets a specific workflow run. Anyone with read access to the repository can use this endpoint. If the repository is private you must use an access token with the `repo` scope. GitHub Apps must have the `actions:read` permission to use this endpoint.",
     "documentationUrl": "https://developer.github.com/v3/actions/workflow-runs/#get-a-workflow-run",
     "previews": [],
     "headers": [],
@@ -14100,7 +14644,7 @@
     "url": "/repos/{owner}/{repo}/actions/runs/{run_id}/artifacts",
     "isDeprecated": false,
     "isLegacy": false,
-    "description": "Lists artifacts for a workflow run. Anyone with read access to the repository can use this endpoint. If the repository is private you must use an access token with the `repo` scope. GitHub Apps must have the `actions` permission to use this endpoint.",
+    "description": "Lists artifacts for a workflow run. Anyone with read access to the repository can use this endpoint. If the repository is private you must use an access token with the `repo` scope. GitHub Apps must have the `actions:read` permission to use this endpoint.",
     "documentationUrl": "https://developer.github.com/v3/actions/artifacts/#list-workflow-run-artifacts",
     "previews": [],
     "headers": [],
@@ -14192,7 +14736,7 @@
     "url": "/repos/{owner}/{repo}/actions/runs/{run_id}/cancel",
     "isDeprecated": false,
     "isLegacy": false,
-    "description": "Cancels a workflow run using its `id`. Anyone with write access to the repository and an access token with the `repo` scope can use this endpoint. GitHub Apps must have the `actions` permission to use this endpoint.",
+    "description": "Cancels a workflow run using its `id`. You must authenticate using an access token with the `repo` scope to use this endpoint. GitHub Apps must have the `actions:write` permission to use this endpoint.",
     "documentationUrl": "https://developer.github.com/v3/actions/workflow-runs/#cancel-a-workflow-run",
     "previews": [],
     "headers": [],
@@ -14248,7 +14792,7 @@
     "url": "/repos/{owner}/{repo}/actions/runs/{run_id}/jobs",
     "isDeprecated": false,
     "isLegacy": false,
-    "description": "Lists jobs for a workflow run. Anyone with read access to the repository can use this endpoint. If the repository is private you must use an access token with the `repo` scope. GitHub Apps must have the `actions` permission to use this endpoint. You can use parameters to narrow the list of results. For more information about using parameters, see [Parameters](https://developer.github.com/v3/#parameters).",
+    "description": "Lists jobs for a workflow run. Anyone with read access to the repository can use this endpoint. If the repository is private you must use an access token with the `repo` scope. GitHub Apps must have the `actions:read` permission to use this endpoint. You can use parameters to narrow the list of results. For more information about using parameters, see [Parameters](https://developer.github.com/v3/#parameters).",
     "documentationUrl": "https://developer.github.com/v3/actions/workflow-jobs/#list-jobs-for-a-workflow-run",
     "previews": [],
     "headers": [],
@@ -14353,7 +14897,7 @@
     "url": "/repos/{owner}/{repo}/actions/runs/{run_id}/logs",
     "isDeprecated": false,
     "isLegacy": false,
-    "description": "Gets a redirect URL to download an archive of log files for a workflow run. This link expires after 1 minute. Look for `Location:` in the response header to find the URL for the download. Anyone with read access to the repository can use this endpoint. If the repository is private you must use an access token with the `repo` scope. GitHub Apps must have the `actions` permission to use this endpoint.\n\nCall this endpoint using the `-v` flag, which enables verbose output and allows you to see the download URL in the header. To download the file into the current working directory, specify the filename using the `-o` flag.",
+    "description": "Gets a redirect URL to download an archive of log files for a workflow run. This link expires after 1 minute. Look for `Location:` in the response header to find the URL for the download. Anyone with read access to the repository can use this endpoint. If the repository is private you must use an access token with the `repo` scope. GitHub Apps must have the `actions:read` permission to use this endpoint.\n\nCall this endpoint using the `-v` flag, which enables verbose output and allows you to see the download URL in the header. To download the file into the current working directory, specify the filename using the `-o` flag.",
     "documentationUrl": "https://developer.github.com/v3/actions/workflow-runs/#download-workflow-run-logs",
     "previews": [],
     "headers": [],
@@ -14409,7 +14953,7 @@
     "url": "/repos/{owner}/{repo}/actions/runs/{run_id}/logs",
     "isDeprecated": false,
     "isLegacy": false,
-    "description": "Gets a redirect URL to download an archive of log files for a workflow run. This link expires after 1 minute. Look for `Location:` in the response header to find the URL for the download. Anyone with read access to the repository can use this endpoint. If the repository is private you must use an access token with the `repo` scope. GitHub Apps must have the `actions` permission to use this endpoint.\n\nCall this endpoint using the `-v` flag, which enables verbose output and allows you to see the download URL in the header. To download the file into the current working directory, specify the filename using the `-o` flag.",
+    "description": "Gets a redirect URL to download an archive of log files for a workflow run. This link expires after 1 minute. Look for `Location:` in the response header to find the URL for the download. Anyone with read access to the repository can use this endpoint. If the repository is private you must use an access token with the `repo` scope. GitHub Apps must have the `actions:read` permission to use this endpoint.\n\nCall this endpoint using the `-v` flag, which enables verbose output and allows you to see the download URL in the header. To download the file into the current working directory, specify the filename using the `-o` flag.",
     "documentationUrl": "https://developer.github.com/v3/actions/workflow-runs/#download-workflow-run-logs",
     "previews": [],
     "headers": [],
@@ -14470,7 +15014,7 @@
     "url": "/repos/{owner}/{repo}/actions/runs/{run_id}/logs",
     "isDeprecated": false,
     "isLegacy": false,
-    "description": "Deletes all logs for a workflow run. Anyone with write access to the repository and an access token with the `repo` scope can use this endpoint. GitHub Apps must have the `actions` permission to use this endpoint.",
+    "description": "Deletes all logs for a workflow run. You must authenticate using an access token with the `repo` scope to use this endpoint. GitHub Apps must have the `actions:write` permission to use this endpoint.",
     "documentationUrl": "https://developer.github.com/v3/actions/workflow-runs/#delete-workflow-run-logs",
     "previews": [],
     "headers": [],
@@ -14526,7 +15070,7 @@
     "url": "/repos/{owner}/{repo}/actions/runs/{run_id}/rerun",
     "isDeprecated": false,
     "isLegacy": false,
-    "description": "Re-runs your workflow run using its `id`. Anyone with write access to the repository and an access token with the `repo` scope can use this endpoint. GitHub Apps must have the `actions` permission to use this endpoint.",
+    "description": "Re-runs your workflow run using its `id`. You must authenticate using an access token with the `repo` scope to use this endpoint. GitHub Apps must have the `actions:write` permission to use this endpoint.",
     "documentationUrl": "https://developer.github.com/v3/actions/workflow-runs/#re-run-a-workflow",
     "previews": [],
     "headers": [],
@@ -14575,15 +15119,81 @@
     "renamed": null
   },
   {
-    "name": "List secrets for a repository",
+    "name": "Get workflow run usage",
     "scope": "actions",
-    "id": "listSecretsForRepo",
+    "id": "getWorkflowRunUsage",
+    "method": "GET",
+    "url": "/repos/{owner}/{repo}/actions/runs/{run_id}/timing",
+    "isDeprecated": false,
+    "isLegacy": false,
+    "description": "**Warning:** This GitHub Actions usage endpoint is currently in public beta and subject to change. For more information, see \"[GitHub Actions API workflow usage](https://developer.github.com/changes/2020-05-15-actions-api-workflow-usage).\"\n\nGets the number of billable minutes and total run time for a specific workflow run. Billable minutes only apply to workflows in private repositories that use GitHub-hosted runners. Usage is listed for each GitHub-hosted runner operating system in milliseconds. The usage does not include the multiplier for macOS and Windows runners and is not rounded up to the nearest whole minute. For more information, see \"[Managing billing for GitHub Actions](https://help.github.com/github/setting-up-and-managing-billing-and-payments-on-github/managing-billing-for-github-actions)\" in the GitHub Help documentation.\n\nAnyone with read access to the repository can use this endpoint. If the repository is private you must use an access token with the `repo` scope. GitHub Apps must have the `actions:read` permission to use this endpoint.",
+    "documentationUrl": "https://developer.github.com/v3/actions/workflow-runs/#get-workflow-run-usage",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "owner",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "repo",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "run_id",
+        "description": "",
+        "in": "PATH",
+        "type": "integer",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "examples": [
+          {
+            "data": "{\"billable\":{\"UBUNTU\":{\"total_ms\":180000,\"jobs\":1},\"MACOS\":{\"total_ms\":240000,\"jobs\":4},\"WINDOWS\":{\"total_ms\":300000,\"jobs\":2}},\"run_duration_ms\":500000}"
+          }
+        ]
+      }
+    ],
+    "renamed": null
+  },
+  {
+    "name": "List repository secrets",
+    "scope": "actions",
+    "id": "listRepoSecrets",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/actions/secrets",
     "isDeprecated": false,
     "isLegacy": false,
-    "description": "Lists all secrets available in a repository without revealing their encrypted values. Anyone with write access to the repository and an access token with the `repo` scope can use this endpoint. GitHub Apps must have the `secrets` permission to use this endpoint.",
-    "documentationUrl": "https://developer.github.com/v3/actions/secrets/#list-secrets-for-a-repository",
+    "description": "Lists all secrets available in a repository without revealing their encrypted values. You must authenticate using an access token with the `repo` scope to use this endpoint. GitHub Apps must have the `secrets` repository permission to use this endpoint.",
+    "documentationUrl": "https://developer.github.com/v3/actions/secrets/#list-repository-secrets",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -14654,15 +15264,99 @@
     "renamed": null
   },
   {
-    "name": "Get your public key",
+    "name": "List repository secrets",
     "scope": "actions",
-    "id": "getPublicKey",
+    "id": "listSecretsForRepo",
+    "method": "GET",
+    "url": "/repos/{owner}/{repo}/actions/secrets",
+    "isDeprecated": false,
+    "isLegacy": false,
+    "description": "Lists all secrets available in a repository without revealing their encrypted values. You must authenticate using an access token with the `repo` scope to use this endpoint. GitHub Apps must have the `secrets` repository permission to use this endpoint.",
+    "documentationUrl": "https://developer.github.com/v3/actions/secrets/#list-repository-secrets",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "owner",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "repo",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "per_page",
+        "description": "Results per page (max 100)",
+        "in": "QUERY",
+        "type": "integer",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "page",
+        "description": "Page number of the results to fetch.",
+        "in": "QUERY",
+        "type": "integer",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "examples": [
+          {
+            "data": "{\"total_count\":2,\"secrets\":[{\"name\":\"GH_TOKEN\",\"created_at\":\"2019-08-10T14:59:22Z\",\"updated_at\":\"2020-01-10T14:59:22Z\"},{\"name\":\"GIST_ID\",\"created_at\":\"2020-01-10T10:59:22Z\",\"updated_at\":\"2020-01-11T11:59:22Z\"}]}"
+          }
+        ]
+      }
+    ],
+    "renamed": {
+      "before": { "scope": "actions", "id": "listSecretsForRepo" },
+      "after": { "scope": "actions", "id": "listRepoSecrets" },
+      "date": "2020-05-14",
+      "note": "\"actions/list-secrets-for-repo\" operation ID is now \"actions/list-repo-secrets\""
+    }
+  },
+  {
+    "name": "Get a repository public key",
+    "scope": "actions",
+    "id": "getRepoPublicKey",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/actions/secrets/public-key",
     "isDeprecated": false,
     "isLegacy": false,
-    "description": "Gets your public key, which you must store. You need your public key to use other secrets endpoints. Use the returned `key` to encrypt your secrets. Anyone with read access to the repository can use this endpoint. If the repository is private you must use an access token with the `repo` scope. GitHub Apps must have the `secrets` permission to use this endpoint.",
-    "documentationUrl": "https://developer.github.com/v3/actions/secrets/#get-your-public-key",
+    "description": "Gets your public key, which you need to encrypt secrets. You need to encrypt a secret before you can create or update secrets. Anyone with read access to the repository can use this endpoint. If the repository is private you must use an access token with the `repo` scope. GitHub Apps must have the `secrets` repository permission to use this endpoint.",
+    "documentationUrl": "https://developer.github.com/v3/actions/secrets/#get-a-repository-public-key",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -14699,7 +15393,7 @@
         "description": "response",
         "examples": [
           {
-            "data": "{\"key_id\":\"1234\",\"key\":\"2Sg8iYjAxxmI2LvUXpJjkYrMxURPc8r+dB7TJyvv1234\"}"
+            "data": "{\"key_id\":\"012345678912345678\",\"key\":\"2Sg8iYjAxxmI2LvUXpJjkYrMxURPc8r+dB7TJyvv1234\"}"
           }
         ]
       }
@@ -14707,15 +15401,73 @@
     "renamed": null
   },
   {
-    "name": "Get a secret",
+    "name": "Get a repository public key",
     "scope": "actions",
-    "id": "getSecret",
+    "id": "getPublicKey",
     "method": "GET",
-    "url": "/repos/{owner}/{repo}/actions/secrets/{name}",
+    "url": "/repos/{owner}/{repo}/actions/secrets/public-key",
     "isDeprecated": false,
     "isLegacy": false,
-    "description": "Gets a single secret without revealing its encrypted value. Anyone with write access to the repository and an access token with the `repo` scope can use this endpoint. GitHub Apps must have the `secrets` permission to use this endpoint.",
-    "documentationUrl": "https://developer.github.com/v3/actions/secrets/#get-a-secret",
+    "description": "Gets your public key, which you need to encrypt secrets. You need to encrypt a secret before you can create or update secrets. Anyone with read access to the repository can use this endpoint. If the repository is private you must use an access token with the `repo` scope. GitHub Apps must have the `secrets` repository permission to use this endpoint.",
+    "documentationUrl": "https://developer.github.com/v3/actions/secrets/#get-a-repository-public-key",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "owner",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "repo",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "examples": [
+          {
+            "data": "{\"key_id\":\"012345678912345678\",\"key\":\"2Sg8iYjAxxmI2LvUXpJjkYrMxURPc8r+dB7TJyvv1234\"}"
+          }
+        ]
+      }
+    ],
+    "renamed": {
+      "before": { "scope": "actions", "id": "getPublicKey" },
+      "after": { "scope": "actions", "id": "getRepoPublicKey" },
+      "date": "2020-05-14",
+      "note": "\"actions/get-public-key\" operation ID is now \"actions/get-repo-public-key\""
+    }
+  },
+  {
+    "name": "Get a repository secret",
+    "scope": "actions",
+    "id": "getRepoSecret",
+    "method": "GET",
+    "url": "/repos/{owner}/{repo}/actions/secrets/{secret_name}",
+    "isDeprecated": false,
+    "isLegacy": false,
+    "description": "Gets a single repository secret without revealing its encrypted value. You must authenticate using an access token with the `repo` scope to use this endpoint. GitHub Apps must have the `secrets` repository permission to use this endpoint.",
+    "documentationUrl": "https://developer.github.com/v3/actions/secrets/#get-a-repository-secret",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -14746,7 +15498,7 @@
         "deprecated": null
       },
       {
-        "name": "name",
+        "name": "secret_name",
         "description": "",
         "in": "PATH",
         "type": "string",
@@ -14757,6 +15509,19 @@
         "validation": null,
         "alias": null,
         "deprecated": null
+      },
+      {
+        "name": "name",
+        "description": null,
+        "in": null,
+        "type": null,
+        "required": null,
+        "enum": null,
+        "allowNull": null,
+        "mapToData": null,
+        "validation": null,
+        "alias": "secret_name",
+        "deprecated": true
       }
     ],
     "responses": [
@@ -14773,15 +15538,15 @@
     "renamed": null
   },
   {
-    "name": "Create or update a secret for a repository",
+    "name": "Get a repository secret",
     "scope": "actions",
-    "id": "createOrUpdateSecretForRepo",
-    "method": "PUT",
-    "url": "/repos/{owner}/{repo}/actions/secrets/{name}",
+    "id": "getSecret",
+    "method": "GET",
+    "url": "/repos/{owner}/{repo}/actions/secrets/{secret_name}",
     "isDeprecated": false,
     "isLegacy": false,
-    "description": "Creates or updates a secret with an encrypted value. Encrypt your secret using [LibSodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages). Anyone with write access to the repository and an access token with the `repo` scope can use this endpoint. GitHub Apps must have the `secrets` permission to use this endpoint.\n\nEncrypt your secret using the [tweetsodium](https://github.com/mastahyeti/tweetsodium) library.\n\n\n\nEncrypt your secret using [pynacl](https://pynacl.readthedocs.io/en/stable/public/#nacl-public-sealedbox) with Python 3.\n\n\n\nEncrypt your secret using the [Sodium.Core](https://www.nuget.org/packages/Sodium.Core/) package.\n\n\n\nEncrypt your secret using the [rbnacl](https://github.com/RubyCrypto/rbnacl) gem.",
-    "documentationUrl": "https://developer.github.com/v3/actions/secrets/#create-or-update-a-secret-for-a-repository",
+    "description": "Gets a single repository secret without revealing its encrypted value. You must authenticate using an access token with the `repo` scope to use this endpoint. GitHub Apps must have the `secrets` repository permission to use this endpoint.",
+    "documentationUrl": "https://developer.github.com/v3/actions/secrets/#get-a-repository-secret",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -14812,7 +15577,91 @@
         "deprecated": null
       },
       {
+        "name": "secret_name",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
         "name": "name",
+        "description": null,
+        "in": null,
+        "type": null,
+        "required": null,
+        "enum": null,
+        "allowNull": null,
+        "mapToData": null,
+        "validation": null,
+        "alias": "secret_name",
+        "deprecated": true
+      }
+    ],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "examples": [
+          {
+            "data": "{\"name\":\"GH_TOKEN\",\"created_at\":\"2019-08-10T14:59:22Z\",\"updated_at\":\"2020-01-10T14:59:22Z\"}"
+          }
+        ]
+      }
+    ],
+    "renamed": {
+      "before": { "scope": "actions", "id": "getSecret" },
+      "after": { "scope": "actions", "id": "getRepoSecret" },
+      "date": "2020-05-14",
+      "note": "\"actions/get-secret\" operation ID is now \"actions/get-repo-secret\""
+    }
+  },
+  {
+    "name": "Create or update a repository secret",
+    "scope": "actions",
+    "id": "createOrUpdateRepoSecret",
+    "method": "PUT",
+    "url": "/repos/{owner}/{repo}/actions/secrets/{secret_name}",
+    "isDeprecated": false,
+    "isLegacy": false,
+    "description": "Creates or updates a repository secret with an encrypted value. Encrypt your secret using [LibSodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages). You must authenticate using an access token with the `repo` scope to use this endpoint. GitHub Apps must have the `secrets` repository permission to use this endpoint.\n\nEncrypt your secret using the [tweetsodium](https://github.com/github/tweetsodium) library.\n\n\n\nEncrypt your secret using [pynacl](https://pynacl.readthedocs.io/en/stable/public/#nacl-public-sealedbox) with Python 3.\n\n\n\nEncrypt your secret using the [Sodium.Core](https://www.nuget.org/packages/Sodium.Core/) package.\n\n\n\nEncrypt your secret using the [rbnacl](https://github.com/RubyCrypto/rbnacl) gem.",
+    "documentationUrl": "https://developer.github.com/v3/actions/secrets/#create-or-update-a-repository-secret",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "owner",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "repo",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "secret_name",
         "description": "",
         "in": "PATH",
         "type": "string",
@@ -14826,7 +15675,7 @@
       },
       {
         "name": "encrypted_value",
-        "description": "Value for your secret, encrypted with [LibSodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages) using the public key retrieved from the [Get your public key](https://developer.github.com/v3/actions/secrets/#get-your-public-key) endpoint.",
+        "description": "Value for your secret, encrypted with [LibSodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages) using the public key retrieved from the [Get a repository public key](https://developer.github.com/v3/actions/secrets/#get-a-repository-public-key) endpoint.",
         "in": "BODY",
         "type": "string",
         "required": false,
@@ -14849,21 +15698,34 @@
         "validation": null,
         "alias": null,
         "deprecated": null
+      },
+      {
+        "name": "name",
+        "description": null,
+        "in": null,
+        "type": null,
+        "required": null,
+        "enum": null,
+        "allowNull": null,
+        "mapToData": null,
+        "validation": null,
+        "alias": "secret_name",
+        "deprecated": true
       }
     ],
     "responses": [],
     "renamed": null
   },
   {
-    "name": "Delete a secret from a repository",
+    "name": "Create or update a repository secret",
     "scope": "actions",
-    "id": "deleteSecretFromRepo",
-    "method": "DELETE",
-    "url": "/repos/{owner}/{repo}/actions/secrets/{name}",
+    "id": "createOrUpdateSecretForRepo",
+    "method": "PUT",
+    "url": "/repos/{owner}/{repo}/actions/secrets/{secret_name}",
     "isDeprecated": false,
     "isLegacy": false,
-    "description": "Deletes a secret in a repository using the secret name. Anyone with write access to the repository and an access token with the `repo` scope can use this endpoint. GitHub Apps must have the `secrets` permission to use this endpoint.",
-    "documentationUrl": "https://developer.github.com/v3/actions/secrets/#delete-a-secret-from-a-repository",
+    "description": "Creates or updates a repository secret with an encrypted value. Encrypt your secret using [LibSodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages). You must authenticate using an access token with the `repo` scope to use this endpoint. GitHub Apps must have the `secrets` repository permission to use this endpoint.\n\nEncrypt your secret using the [tweetsodium](https://github.com/github/tweetsodium) library.\n\n\n\nEncrypt your secret using [pynacl](https://pynacl.readthedocs.io/en/stable/public/#nacl-public-sealedbox) with Python 3.\n\n\n\nEncrypt your secret using the [Sodium.Core](https://www.nuget.org/packages/Sodium.Core/) package.\n\n\n\nEncrypt your secret using the [rbnacl](https://github.com/RubyCrypto/rbnacl) gem.",
+    "documentationUrl": "https://developer.github.com/v3/actions/secrets/#create-or-update-a-repository-secret",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -14894,7 +15756,7 @@
         "deprecated": null
       },
       {
-        "name": "name",
+        "name": "secret_name",
         "description": "",
         "in": "PATH",
         "type": "string",
@@ -14905,10 +15767,197 @@
         "validation": null,
         "alias": null,
         "deprecated": null
+      },
+      {
+        "name": "encrypted_value",
+        "description": "Value for your secret, encrypted with [LibSodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages) using the public key retrieved from the [Get a repository public key](https://developer.github.com/v3/actions/secrets/#get-a-repository-public-key) endpoint.",
+        "in": "BODY",
+        "type": "string",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "key_id",
+        "description": "ID of the key you used to encrypt the secret.",
+        "in": "BODY",
+        "type": "string",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "name",
+        "description": null,
+        "in": null,
+        "type": null,
+        "required": null,
+        "enum": null,
+        "allowNull": null,
+        "mapToData": null,
+        "validation": null,
+        "alias": "secret_name",
+        "deprecated": true
+      }
+    ],
+    "responses": [],
+    "renamed": {
+      "before": { "scope": "actions", "id": "createOrUpdateSecretForRepo" },
+      "after": { "scope": "actions", "id": "createOrUpdateRepoSecret" },
+      "date": "2020-05-14",
+      "note": "\"actions/create-or-update-secret-for-repo\" operation ID is now \"actions/create-or-update-repo-secret\""
+    }
+  },
+  {
+    "name": "Delete a repository secret",
+    "scope": "actions",
+    "id": "deleteRepoSecret",
+    "method": "DELETE",
+    "url": "/repos/{owner}/{repo}/actions/secrets/{secret_name}",
+    "isDeprecated": false,
+    "isLegacy": false,
+    "description": "Deletes a secret in a repository using the secret name. You must authenticate using an access token with the `repo` scope to use this endpoint. GitHub Apps must have the `secrets` repository permission to use this endpoint.",
+    "documentationUrl": "https://developer.github.com/v3/actions/secrets/#delete-a-repository-secret",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "owner",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "repo",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "secret_name",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "name",
+        "description": null,
+        "in": null,
+        "type": null,
+        "required": null,
+        "enum": null,
+        "allowNull": null,
+        "mapToData": null,
+        "validation": null,
+        "alias": "secret_name",
+        "deprecated": true
       }
     ],
     "responses": [],
     "renamed": null
+  },
+  {
+    "name": "Delete a repository secret",
+    "scope": "actions",
+    "id": "createOrUpdateSecretForRepo",
+    "method": "DELETE",
+    "url": "/repos/{owner}/{repo}/actions/secrets/{secret_name}",
+    "isDeprecated": false,
+    "isLegacy": false,
+    "description": "Deletes a secret in a repository using the secret name. You must authenticate using an access token with the `repo` scope to use this endpoint. GitHub Apps must have the `secrets` repository permission to use this endpoint.",
+    "documentationUrl": "https://developer.github.com/v3/actions/secrets/#delete-a-repository-secret",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "owner",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "repo",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "secret_name",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "name",
+        "description": null,
+        "in": null,
+        "type": null,
+        "required": null,
+        "enum": null,
+        "allowNull": null,
+        "mapToData": null,
+        "validation": null,
+        "alias": "secret_name",
+        "deprecated": true
+      }
+    ],
+    "responses": [],
+    "renamed": {
+      "before": { "scope": "actions", "id": "createOrUpdateSecretForRepo" },
+      "after": { "scope": "actions", "id": "createOrUpdateRepoSecret" },
+      "date": "2020-05-14",
+      "note": "\"actions/create-or-update-secret-for-repo\" operation ID is now \"actions/create-or-update-repo-secret\""
+    }
   },
   {
     "name": "List repository workflows",
@@ -14918,7 +15967,7 @@
     "url": "/repos/{owner}/{repo}/actions/workflows",
     "isDeprecated": false,
     "isLegacy": false,
-    "description": "Lists the workflows in a repository. Anyone with read access to the repository can use this endpoint. If the repository is private you must use an access token with the `repo` scope. GitHub Apps must have the `actions` permission to use this endpoint.",
+    "description": "Lists the workflows in a repository. Anyone with read access to the repository can use this endpoint. If the repository is private you must use an access token with the `repo` scope. GitHub Apps must have the `actions:read` permission to use this endpoint.",
     "documentationUrl": "https://developer.github.com/v3/actions/workflows/#list-repository-workflows",
     "previews": [],
     "headers": [],
@@ -14997,7 +16046,7 @@
     "url": "/repos/{owner}/{repo}/actions/workflows/{workflow_id}",
     "isDeprecated": false,
     "isLegacy": false,
-    "description": "Gets a specific workflow. You can also replace `:workflow_id` with `:workflow_file_name`. For example, you could use `main.yml`. Anyone with read access to the repository can use this endpoint. If the repository is private you must use an access token with the `repo` scope. GitHub Apps must have the `actions` permission to use this endpoint.",
+    "description": "Gets a specific workflow. You can also replace `:workflow_id` with `:workflow_file_name`. For example, you could use `main.yml`. Anyone with read access to the repository can use this endpoint. If the repository is private you must use an access token with the `repo` scope. GitHub Apps must have the `actions:read` permission to use this endpoint.",
     "documentationUrl": "https://developer.github.com/v3/actions/workflows/#get-a-workflow",
     "previews": [],
     "headers": [],
@@ -15193,6 +16242,72 @@
         "examples": [
           {
             "data": "{\"total_count\":1,\"workflow_runs\":[{\"id\":30433642,\"node_id\":\"MDEyOldvcmtmbG93IFJ1bjI2OTI4OQ==\",\"head_branch\":\"master\",\"head_sha\":\"acb5820ced9479c074f688cc328bf03f341a511d\",\"run_number\":562,\"event\":\"push\",\"status\":\"queued\",\"conclusion\":null,\"url\":\"https://api.github.com/repos/octo-org/octo-repo/actions/runs/30433642\",\"html_url\":\"https://github.com/octo-org/octo-repo/actions/runs/30433642\",\"pull_requests\":[],\"created_at\":\"2020-01-22T19:33:08Z\",\"updated_at\":\"2020-01-22T19:33:08Z\",\"jobs_url\":\"https://api.github.com/repos/octo-org/octo-repo/actions/runs/30433642/jobs\",\"logs_url\":\"https://api.github.com/repos/octo-org/octo-repo/actions/runs/30433642/logs\",\"check_suite_url\":\"https://api.github.com/repos/octo-org/octo-repo/check-suites/414944374\",\"artifacts_url\":\"https://api.github.com/repos/octo-org/octo-repo/actions/runs/30433642/artifacts\",\"cancel_url\":\"https://api.github.com/repos/octo-org/octo-repo/actions/runs/30433642/cancel\",\"rerun_url\":\"https://api.github.com/repos/octo-org/octo-repo/actions/runs/30433642/rerun\",\"workflow_url\":\"https://api.github.com/repos/octo-org/octo-repo/actions/workflows/30433642\",\"head_commit\":{\"id\":\"acb5820ced9479c074f688cc328bf03f341a511d\",\"tree_id\":\"d23f6eedb1e1b9610bbc754ddb5197bfe7271223\",\"message\":\"Create linter.yml\",\"timestamp\":\"2020-01-22T19:33:05Z\",\"author\":{\"name\":\"Octo Cat\",\"email\":\"octocat@github.com\"},\"committer\":{\"name\":\"GitHub\",\"email\":\"noreply@github.com\"}},\"repository\":{\"id\":1296269,\"node_id\":\"MDEwOlJlcG9zaXRvcnkxMjk2MjY5\",\"name\":\"Hello-World\",\"full_name\":\"octocat/Hello-World\",\"owner\":{\"login\":\"octocat\",\"id\":1,\"node_id\":\"MDQ6VXNlcjE=\",\"avatar_url\":\"https://github.com/images/error/octocat_happy.gif\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/octocat\",\"html_url\":\"https://github.com/octocat\",\"followers_url\":\"https://api.github.com/users/octocat/followers\",\"following_url\":\"https://api.github.com/users/octocat/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/octocat/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/octocat/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/octocat/subscriptions\",\"organizations_url\":\"https://api.github.com/users/octocat/orgs\",\"repos_url\":\"https://api.github.com/users/octocat/repos\",\"events_url\":\"https://api.github.com/users/octocat/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/octocat/received_events\",\"type\":\"User\",\"site_admin\":false},\"private\":false,\"html_url\":\"https://github.com/octocat/Hello-World\",\"description\":\"This your first repo!\",\"fork\":false,\"url\":\"https://api.github.com/repos/octocat/Hello-World\",\"archive_url\":\"http://api.github.com/repos/octocat/Hello-World/{archive_format}{/ref}\",\"assignees_url\":\"http://api.github.com/repos/octocat/Hello-World/assignees{/user}\",\"blobs_url\":\"http://api.github.com/repos/octocat/Hello-World/git/blobs{/sha}\",\"branches_url\":\"http://api.github.com/repos/octocat/Hello-World/branches{/branch}\",\"collaborators_url\":\"http://api.github.com/repos/octocat/Hello-World/collaborators{/collaborator}\",\"comments_url\":\"http://api.github.com/repos/octocat/Hello-World/comments{/number}\",\"commits_url\":\"http://api.github.com/repos/octocat/Hello-World/commits{/sha}\",\"compare_url\":\"http://api.github.com/repos/octocat/Hello-World/compare/{base}...{head}\",\"contents_url\":\"http://api.github.com/repos/octocat/Hello-World/contents/{+path}\",\"contributors_url\":\"http://api.github.com/repos/octocat/Hello-World/contributors\",\"deployments_url\":\"http://api.github.com/repos/octocat/Hello-World/deployments\",\"downloads_url\":\"http://api.github.com/repos/octocat/Hello-World/downloads\",\"events_url\":\"http://api.github.com/repos/octocat/Hello-World/events\",\"forks_url\":\"http://api.github.com/repos/octocat/Hello-World/forks\",\"git_commits_url\":\"http://api.github.com/repos/octocat/Hello-World/git/commits{/sha}\",\"git_refs_url\":\"http://api.github.com/repos/octocat/Hello-World/git/refs{/sha}\",\"git_tags_url\":\"http://api.github.com/repos/octocat/Hello-World/git/tags{/sha}\",\"git_url\":\"git:github.com/octocat/Hello-World.git\",\"issue_comment_url\":\"http://api.github.com/repos/octocat/Hello-World/issues/comments{/number}\",\"issue_events_url\":\"http://api.github.com/repos/octocat/Hello-World/issues/events{/number}\",\"issues_url\":\"http://api.github.com/repos/octocat/Hello-World/issues{/number}\",\"keys_url\":\"http://api.github.com/repos/octocat/Hello-World/keys{/key_id}\",\"labels_url\":\"http://api.github.com/repos/octocat/Hello-World/labels{/name}\",\"languages_url\":\"http://api.github.com/repos/octocat/Hello-World/languages\",\"merges_url\":\"http://api.github.com/repos/octocat/Hello-World/merges\",\"milestones_url\":\"http://api.github.com/repos/octocat/Hello-World/milestones{/number}\",\"notifications_url\":\"http://api.github.com/repos/octocat/Hello-World/notifications{?since,all,participating}\",\"pulls_url\":\"http://api.github.com/repos/octocat/Hello-World/pulls{/number}\",\"releases_url\":\"http://api.github.com/repos/octocat/Hello-World/releases{/id}\",\"ssh_url\":\"git@github.com:octocat/Hello-World.git\",\"stargazers_url\":\"http://api.github.com/repos/octocat/Hello-World/stargazers\",\"statuses_url\":\"http://api.github.com/repos/octocat/Hello-World/statuses/{sha}\",\"subscribers_url\":\"http://api.github.com/repos/octocat/Hello-World/subscribers\",\"subscription_url\":\"http://api.github.com/repos/octocat/Hello-World/subscription\",\"tags_url\":\"http://api.github.com/repos/octocat/Hello-World/tags\",\"teams_url\":\"http://api.github.com/repos/octocat/Hello-World/teams\",\"trees_url\":\"http://api.github.com/repos/octocat/Hello-World/git/trees{/sha}\"},\"head_repository\":{\"id\":217723378,\"node_id\":\"MDEwOlJlcG9zaXRvcnkyMTc3MjMzNzg=\",\"name\":\"octo-repo\",\"full_name\":\"octo-org/octo-repo\",\"private\":true,\"owner\":{\"login\":\"octocat\",\"id\":1,\"node_id\":\"MDQ6VXNlcjE=\",\"avatar_url\":\"https://github.com/images/error/octocat_happy.gif\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/octocat\",\"html_url\":\"https://github.com/octocat\",\"followers_url\":\"https://api.github.com/users/octocat/followers\",\"following_url\":\"https://api.github.com/users/octocat/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/octocat/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/octocat/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/octocat/subscriptions\",\"organizations_url\":\"https://api.github.com/users/octocat/orgs\",\"repos_url\":\"https://api.github.com/users/octocat/repos\",\"events_url\":\"https://api.github.com/users/octocat/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/octocat/received_events\",\"type\":\"User\",\"site_admin\":false},\"html_url\":\"https://github.com/octo-org/octo-repo\",\"description\":null,\"fork\":false,\"url\":\"https://api.github.com/repos/octo-org/octo-repo\",\"forks_url\":\"https://api.github.com/repos/octo-org/octo-repo/forks\",\"keys_url\":\"https://api.github.com/repos/octo-org/octo-repo/keys{/key_id}\",\"collaborators_url\":\"https://api.github.com/repos/octo-org/octo-repo/collaborators{/collaborator}\",\"teams_url\":\"https://api.github.com/repos/octo-org/octo-repo/teams\",\"hooks_url\":\"https://api.github.com/repos/octo-org/octo-repo/hooks\",\"issue_events_url\":\"https://api.github.com/repos/octo-org/octo-repo/issues/events{/number}\",\"events_url\":\"https://api.github.com/repos/octo-org/octo-repo/events\",\"assignees_url\":\"https://api.github.com/repos/octo-org/octo-repo/assignees{/user}\",\"branches_url\":\"https://api.github.com/repos/octo-org/octo-repo/branches{/branch}\",\"tags_url\":\"https://api.github.com/repos/octo-org/octo-repo/tags\",\"blobs_url\":\"https://api.github.com/repos/octo-org/octo-repo/git/blobs{/sha}\",\"git_tags_url\":\"https://api.github.com/repos/octo-org/octo-repo/git/tags{/sha}\",\"git_refs_url\":\"https://api.github.com/repos/octo-org/octo-repo/git/refs{/sha}\",\"trees_url\":\"https://api.github.com/repos/octo-org/octo-repo/git/trees{/sha}\",\"statuses_url\":\"https://api.github.com/repos/octo-org/octo-repo/statuses/{sha}\",\"languages_url\":\"https://api.github.com/repos/octo-org/octo-repo/languages\",\"stargazers_url\":\"https://api.github.com/repos/octo-org/octo-repo/stargazers\",\"contributors_url\":\"https://api.github.com/repos/octo-org/octo-repo/contributors\",\"subscribers_url\":\"https://api.github.com/repos/octo-org/octo-repo/subscribers\",\"subscription_url\":\"https://api.github.com/repos/octo-org/octo-repo/subscription\",\"commits_url\":\"https://api.github.com/repos/octo-org/octo-repo/commits{/sha}\",\"git_commits_url\":\"https://api.github.com/repos/octo-org/octo-repo/git/commits{/sha}\",\"comments_url\":\"https://api.github.com/repos/octo-org/octo-repo/comments{/number}\",\"issue_comment_url\":\"https://api.github.com/repos/octo-org/octo-repo/issues/comments{/number}\",\"contents_url\":\"https://api.github.com/repos/octo-org/octo-repo/contents/{+path}\",\"compare_url\":\"https://api.github.com/repos/octo-org/octo-repo/compare/{base}...{head}\",\"merges_url\":\"https://api.github.com/repos/octo-org/octo-repo/merges\",\"archive_url\":\"https://api.github.com/repos/octo-org/octo-repo/{archive_format}{/ref}\",\"downloads_url\":\"https://api.github.com/repos/octo-org/octo-repo/downloads\",\"issues_url\":\"https://api.github.com/repos/octo-org/octo-repo/issues{/number}\",\"pulls_url\":\"https://api.github.com/repos/octo-org/octo-repo/pulls{/number}\",\"milestones_url\":\"https://api.github.com/repos/octo-org/octo-repo/milestones{/number}\",\"notifications_url\":\"https://api.github.com/repos/octo-org/octo-repo/notifications{?since,all,participating}\",\"labels_url\":\"https://api.github.com/repos/octo-org/octo-repo/labels{/name}\",\"releases_url\":\"https://api.github.com/repos/octo-org/octo-repo/releases{/id}\",\"deployments_url\":\"https://api.github.com/repos/octo-org/octo-repo/deployments\"}}]}"
+          }
+        ]
+      }
+    ],
+    "renamed": null
+  },
+  {
+    "name": "Get workflow usage",
+    "scope": "actions",
+    "id": "getWorkflowUsage",
+    "method": "GET",
+    "url": "/repos/{owner}/{repo}/actions/workflows/{workflow_id}/timing",
+    "isDeprecated": false,
+    "isLegacy": false,
+    "description": "**Warning:** This GitHub Actions usage endpoint is currently in public beta and subject to change. For more information, see \"[GitHub Actions API workflow usage](https://developer.github.com/changes/2020-05-15-actions-api-workflow-usage).\"\n\nGets the number of billable minutes used by a specific workflow during the current billing cycle. Billable minutes only apply to workflows in private repositories that use GitHub-hosted runners. Usage is listed for each GitHub-hosted runner operating system in milliseconds. The usage does not include the multiplier for macOS and Windows runners and is not rounded up to the nearest whole minute. For more information, see \"[Managing billing for GitHub Actions](https://help.github.com/github/setting-up-and-managing-billing-and-payments-on-github/managing-billing-for-github-actions)\" in the GitHub Help documentation.\n\nYou can also replace `:workflow_id` with `:workflow_file_name`. For example, you could use `main.yml`. Anyone with read access to the repository can use this endpoint. If the repository is private you must use an access token with the `repo` scope. GitHub Apps must have the `actions:read` permission to use this endpoint.",
+    "documentationUrl": "https://developer.github.com/v3/actions/workflows/#get-workflow-usage",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "owner",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "repo",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "workflow_id",
+        "description": "",
+        "in": "PATH",
+        "type": "integer",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "examples": [
+          {
+            "data": "{\"billable\":{\"UBUNTU\":{\"total_ms\":180000},\"MACOS\":{\"total_ms\":240000},\"WINDOWS\":{\"total_ms\":300000}}}"
           }
         ]
       }
@@ -18601,7 +19716,7 @@
       },
       {
         "name": "actions",
-        "description": "Displays a button on GitHub that can be clicked to alert your app to do additional tasks. For example, a code linting app can display a button that automatically fixes detected errors. The button created in this object is displayed after the check run completes. When a user clicks the button, GitHub sends the [`check_run.requested_action` webhook](https://developer.github.com/v3/activity/events/types/#checkrunevent) to your app. Each action includes a `label`, `identifier` and `description`. A maximum of three actions are accepted. See the [`actions` object](https://developer.github.com/v3/checks/runs/#actions-object) description. To learn more about check runs and requested actions, see \"[Check runs and requested actions](https://developer.github.com/v3/checks/runs/#check-runs-and-requested-actions).\" To learn more about check runs and requested actions, see \"[Check runs and requested actions](https://developer.github.com/v3/checks/runs/#check-runs-and-requested-actions).\"",
+        "description": "Displays a button on GitHub that can be clicked to alert your app to do additional tasks. For example, a code linting app can display a button that automatically fixes detected errors. The button created in this object is displayed after the check run completes. When a user clicks the button, GitHub sends the [`check_run.requested_action` webhook](https://developer.github.com/webhooks/event-payloads/#check_run) to your app. Each action includes a `label`, `identifier` and `description`. A maximum of three actions are accepted. See the [`actions` object](https://developer.github.com/v3/checks/runs/#actions-object) description. To learn more about check runs and requested actions, see \"[Check runs and requested actions](https://developer.github.com/v3/checks/runs/#check-runs-and-requested-actions).\" To learn more about check runs and requested actions, see \"[Check runs and requested actions](https://developer.github.com/v3/checks/runs/#check-runs-and-requested-actions).\"",
         "in": "BODY",
         "type": "object[]",
         "required": false,
@@ -19375,7 +20490,7 @@
     "url": "/repos/{owner}/{repo}/check-suites/preferences",
     "isDeprecated": false,
     "isLegacy": false,
-    "description": "Changes the default automatic flow when creating check suites. By default, the CheckSuiteEvent is automatically created each time code is pushed to a repository. When you disable the automatic creation of check suites, you can manually [Create a check suite](https://developer.github.com/v3/checks/suites/#create-a-check-suite). You must have admin permissions in the repository to set preferences for check suites.",
+    "description": "Changes the default automatic flow when creating check suites. By default, a check suite is automatically created each time code is pushed to a repository. When you disable the automatic creation of check suites, you can manually [Create a check suite](https://developer.github.com/v3/checks/suites/#create-a-check-suite). You must have admin permissions in the repository to set preferences for check suites.",
     "documentationUrl": "https://developer.github.com/v3/checks/suites/#update-repository-preferences-for-check-suites",
     "previews": [{ "name": "antiope" }],
     "headers": [
@@ -19682,7 +20797,7 @@
     "url": "/repos/{owner}/{repo}/check-suites/{check_suite_id}/rerequest",
     "isDeprecated": false,
     "isLegacy": false,
-    "description": "Triggers GitHub to rerequest an existing check suite, without pushing new code to a repository. This endpoint will trigger the [`check_suite` webhook](https://developer.github.com/v3/activity/events/types/#checksuiteevent) event with the action `rerequested`. When a check suite is `rerequested`, its `status` is reset to `queued` and the `conclusion` is cleared.\n\nTo rerequest a check suite, your GitHub App must have the `checks:read` permission on a private repository or pull access to a public repository.",
+    "description": "Triggers GitHub to rerequest an existing check suite, without pushing new code to a repository. This endpoint will trigger the [`check_suite` webhook](https://developer.github.com/webhooks/event-payloads/#check_suite) event with the action `rerequested`. When a check suite is `rerequested`, its `status` is reset to `queued` and the `conclusion` is cleared.\n\nTo rerequest a check suite, your GitHub App must have the `checks:read` permission on a private repository or pull access to a public repository.",
     "documentationUrl": "https://developer.github.com/v3/checks/suites/#rerequest-a-check-suite",
     "previews": [{ "name": "antiope" }],
     "headers": [
@@ -23358,7 +24473,7 @@
     "url": "/repos/{owner}/{repo}/dispatches",
     "isDeprecated": false,
     "isLegacy": false,
-    "description": "You can use this endpoint to trigger a webhook event called `repository_dispatch` when you want activity that happens outside of GitHub to trigger a GitHub Actions workflow or GitHub App webhook. You must configure your GitHub Actions workflow or GitHub App to run when the `repository_dispatch` event occurs. For an example `repository_dispatch` webhook payload, see \"[RepositoryDispatchEvent](https://developer.github.com/v3/activity/events/types/#repositorydispatchevent).\"\n\nThe `client_payload` parameter is available for any extra information that your workflow might need. This parameter is a JSON payload that will be passed on when the webhook event is dispatched. For example, the `client_payload` can include a message that a user would like to send using a GitHub Actions workflow. Or the `client_payload` can be used as a test to debug your workflow. For a test example, see the [input example](https://developer.github.com/v3/repos/#example-4).\n\nTo give you write access to the repository, you must use a personal access token with the `repo` scope. For more information, see \"[Creating a personal access token for the command line](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line)\" in the GitHub Help documentation.\n\nThis input example shows how you can use the `client_payload` as a test to debug your workflow.",
+    "description": "You can use this endpoint to trigger a webhook event called `repository_dispatch` when you want activity that happens outside of GitHub to trigger a GitHub Actions workflow or GitHub App webhook. You must configure your GitHub Actions workflow or GitHub App to run when the `repository_dispatch` event occurs. For an example `repository_dispatch` webhook payload, see \"[RepositoryDispatchEvent](https://developer.github.com/webhooks/event-payloads/#repository_dispatch).\"\n\nThe `client_payload` parameter is available for any extra information that your workflow might need. This parameter is a JSON payload that will be passed on when the webhook event is dispatched. For example, the `client_payload` can include a message that a user would like to send using a GitHub Actions workflow. Or the `client_payload` can be used as a test to debug your workflow. For a test example, see the [input example](https://developer.github.com/v3/repos/#example-4).\n\nTo give you write access to the repository, you must use a personal access token with the `repo` scope. For more information, see \"[Creating a personal access token for the command line](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line)\" in the GitHub Help documentation.\n\nThis input example shows how you can use the `client_payload` as a test to debug your workflow.",
     "documentationUrl": "https://developer.github.com/v3/repos/#create-a-repository-dispatch-event",
     "previews": [],
     "headers": [],
@@ -25270,7 +26385,7 @@
       },
       {
         "name": "config.secret",
-        "description": "If provided, the `secret` will be used as the `key` to generate the HMAC hex digest value in the [`X-Hub-Signature`](https://developer.github.com/webhooks/#delivery-headers) header.",
+        "description": "If provided, the `secret` will be used as the `key` to generate the HMAC hex digest value in the [`X-Hub-Signature`](https://developer.github.com/webhooks/event-payloads/#delivery-headers) header.",
         "in": "BODY",
         "type": "string",
         "required": false,
@@ -25296,7 +26411,7 @@
       },
       {
         "name": "events",
-        "description": "Determines what [events](https://developer.github.com/v3/activity/events/types/) the hook is triggered for.",
+        "description": "Determines what [events](https://developer.github.com/webhooks/event-payloads) the hook is triggered for.",
         "in": "BODY",
         "type": "string[]",
         "required": false,
@@ -25493,7 +26608,7 @@
       },
       {
         "name": "config.secret",
-        "description": "If provided, the `secret` will be used as the `key` to generate the HMAC hex digest value in the [`X-Hub-Signature`](https://developer.github.com/webhooks/#delivery-headers) header.",
+        "description": "If provided, the `secret` will be used as the `key` to generate the HMAC hex digest value in the [`X-Hub-Signature`](https://developer.github.com/webhooks/event-payloads/#delivery-headers) header.",
         "in": "BODY",
         "type": "string",
         "required": false,
@@ -25519,7 +26634,7 @@
       },
       {
         "name": "events",
-        "description": "Determines what [events](https://developer.github.com/v3/activity/events/types/) the hook is triggered for. This replaces the entire array of events.",
+        "description": "Determines what [events](https://developer.github.com/webhooks/event-payloads) the hook is triggered for. This replaces the entire array of events.",
         "in": "BODY",
         "type": "string[]",
         "required": false,
@@ -27868,7 +28983,7 @@
     "url": "/repos/{owner}/{repo}/issues/{issue_number}",
     "isDeprecated": false,
     "isLegacy": false,
-    "description": "The API returns a [`301 Moved Permanently` status](https://developer.github.com/v3/#http-redirects) if the issue was [transferred](https://help.github.com/articles/transferring-an-issue-to-another-repository/) to another repository. If the issue was transferred to or deleted from a repository where the authenticated user lacks read access, the API returns a `404 Not Found` status. If the issue was deleted from a repository where the authenticated user has read access, the API returns a `410 Gone` status. To receive webhook events for transferred and deleted issues, subscribe to the [`issues`](https://developer.github.com/v3/activity/events/types/#issuesevent) webhook.\n\n**Note**: GitHub's REST API v3 considers every pull request an issue, but not every issue is a pull request. For this reason, \"Issues\" endpoints may return both issues and pull requests in the response. You can identify pull requests by the `pull_request` key.\n\nBe aware that the `id` of a pull request returned from \"Issues\" endpoints will be an _issue id_. To find out the pull request id, use the \"[List pull requests](https://developer.github.com/v3/pulls/#list-pull-requests)\" endpoint.",
+    "description": "The API returns a [`301 Moved Permanently` status](https://developer.github.com/v3/#http-redirects) if the issue was [transferred](https://help.github.com/articles/transferring-an-issue-to-another-repository/) to another repository. If the issue was transferred to or deleted from a repository where the authenticated user lacks read access, the API returns a `404 Not Found` status. If the issue was deleted from a repository where the authenticated user has read access, the API returns a `410 Gone` status. To receive webhook events for transferred and deleted issues, subscribe to the [`issues`](https://developer.github.com/webhooks/event-payloads/#issues) webhook.\n\n**Note**: GitHub's REST API v3 considers every pull request an issue, but not every issue is a pull request. For this reason, \"Issues\" endpoints may return both issues and pull requests in the response. You can identify pull requests by the `pull_request` key.\n\nBe aware that the `id` of a pull request returned from \"Issues\" endpoints will be an _issue id_. To find out the pull request id, use the \"[List pull requests](https://developer.github.com/v3/pulls/#list-pull-requests)\" endpoint.",
     "documentationUrl": "https://developer.github.com/v3/issues/#get-an-issue",
     "previews": [],
     "headers": [],
@@ -42178,7 +43293,7 @@
         "description": "response",
         "examples": [
           {
-            "data": "[{\"key_id\":\"1234\",\"key\":\"2Sg8iYjAxxmI2LvUXpJjkYrMxURPc8r+dB7TJyvv1234\"}]"
+            "data": "[{\"key_id\":\"012345678912345678\",\"key\":\"2Sg8iYjAxxmI2LvUXpJjkYrMxURPc8r+dB7TJyvv1234\"}]"
           }
         ]
       }
@@ -42231,7 +43346,7 @@
         "description": "response",
         "examples": [
           {
-            "data": "{\"key_id\":\"1234\",\"key\":\"2Sg8iYjAxxmI2LvUXpJjkYrMxURPc8r+dB7TJyvv1234\"}"
+            "data": "{\"key_id\":\"012345678912345678\",\"key\":\"2Sg8iYjAxxmI2LvUXpJjkYrMxURPc8r+dB7TJyvv1234\"}"
           }
         ]
       }
@@ -42271,7 +43386,7 @@
         "description": "response",
         "examples": [
           {
-            "data": "{\"key_id\":\"1234\",\"key\":\"2Sg8iYjAxxmI2LvUXpJjkYrMxURPc8r+dB7TJyvv1234\"}"
+            "data": "{\"key_id\":\"012345678912345678\",\"key\":\"2Sg8iYjAxxmI2LvUXpJjkYrMxURPc8r+dB7TJyvv1234\"}"
           }
         ]
       }
