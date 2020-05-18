@@ -14,7 +14,7 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
       { renamedParameters: { name: "secret_name" } },
     ],
     createOrUpdateSecretForRepo: [
-      "DELETE /repos/{owner}/{repo}/actions/secrets/{secret_name}",
+      "PUT /repos/{owner}/{repo}/actions/secrets/{secret_name}",
       {},
       {
         renamed: ["actions", "createOrUpdateRepoSecret"],
@@ -49,6 +49,14 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
       "DELETE /repos/{owner}/{repo}/actions/secrets/{secret_name}",
       {},
       { renamedParameters: { name: "secret_name" } },
+    ],
+    deleteSecretFromRepo: [
+      "DELETE /repos/{owner}/{repo}/actions/secrets/{secret_name}",
+      {},
+      {
+        renamed: ["actions", "deleteRepoSecret"],
+        renamedParameters: { name: "secret_name" },
+      },
     ],
     deleteSelfHostedRunnerFromOrg: [
       "DELETE /orgs/{org}/actions/runners/{runner_id}",

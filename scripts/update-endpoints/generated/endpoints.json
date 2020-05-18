@@ -15888,7 +15888,7 @@
   {
     "name": "Delete a repository secret",
     "scope": "actions",
-    "id": "createOrUpdateSecretForRepo",
+    "id": "deleteSecretFromRepo",
     "method": "DELETE",
     "url": "/repos/{owner}/{repo}/actions/secrets/{secret_name}",
     "isDeprecated": false,
@@ -15953,10 +15953,10 @@
     ],
     "responses": [],
     "renamed": {
-      "before": { "scope": "actions", "id": "createOrUpdateSecretForRepo" },
-      "after": { "scope": "actions", "id": "createOrUpdateRepoSecret" },
+      "before": { "scope": "actions", "id": "deleteSecretFromRepo" },
+      "after": { "scope": "actions", "id": "deleteRepoSecret" },
       "date": "2020-05-14",
-      "note": "\"actions/create-or-update-secret-for-repo\" operation ID is now \"actions/create-or-update-repo-secret\""
+      "note": "\"actions/delete-secret-from-repo\" operation ID is now \"actions/delete-repo-secret\""
     }
   },
   {
