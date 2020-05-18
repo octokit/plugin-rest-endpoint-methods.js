@@ -37,10 +37,10 @@ export type RestEndpointMethodTypes = {
     createOrUpdateSecretForRepo: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["DELETE /repos/:owner/:repo/actions/secrets/:secret_name"]["parameters"],
+          Endpoints["PUT /repos/:owner/:repo/actions/secrets/:secret_name"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["DELETE /repos/:owner/:repo/actions/secrets/:secret_name"]["response"];
+      response: Endpoints["PUT /repos/:owner/:repo/actions/secrets/:secret_name"]["response"];
     };
     createRegistrationToken: {
       parameters: RequestParameters &
@@ -107,6 +107,14 @@ export type RestEndpointMethodTypes = {
       response: Endpoints["DELETE /orgs/:org/actions/secrets/:secret_name"]["response"];
     };
     deleteRepoSecret: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["DELETE /repos/:owner/:repo/actions/secrets/:secret_name"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["DELETE /repos/:owner/:repo/actions/secrets/:secret_name"]["response"];
+    };
+    deleteSecretFromRepo: {
       parameters: RequestParameters &
         Omit<
           Endpoints["DELETE /repos/:owner/:repo/actions/secrets/:secret_name"]["parameters"],

@@ -80,7 +80,21 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Deletes a secret in a repository using the secret name. You must authenticate using an access token with the `repo` scope to use this endpoint. GitHub Apps must have the `secrets` repository permission to use this endpoint.
+     * Creates or updates a repository secret with an encrypted value. Encrypt your secret using [LibSodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages). You must authenticate using an access token with the `repo` scope to use this endpoint. GitHub Apps must have the `secrets` repository permission to use this endpoint.
+     *
+     * Encrypt your secret using the [tweetsodium](https://github.com/github/tweetsodium) library.
+     *
+     *
+     *
+     * Encrypt your secret using [pynacl](https://pynacl.readthedocs.io/en/stable/public/#nacl-public-sealedbox) with Python 3.
+     *
+     *
+     *
+     * Encrypt your secret using the [Sodium.Core](https://www.nuget.org/packages/Sodium.Core/) package.
+     *
+     *
+     *
+     * Encrypt your secret using the [rbnacl](https://github.com/RubyCrypto/rbnacl) gem.
      * @deprecated octokit.actions.createOrUpdateSecretForRepo() has been renamed to octokit.actions.createOrUpdateRepoSecret() (2020-05-14)
      */
     createOrUpdateSecretForRepo: {
@@ -214,6 +228,19 @@ export type RestEndpointMethods = {
         params?: RestEndpointMethodTypes["actions"]["deleteRepoSecret"]["parameters"]
       ): Promise<
         RestEndpointMethodTypes["actions"]["deleteRepoSecret"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Deletes a secret in a repository using the secret name. You must authenticate using an access token with the `repo` scope to use this endpoint. GitHub Apps must have the `secrets` repository permission to use this endpoint.
+     * @deprecated octokit.actions.deleteSecretFromRepo() has been renamed to octokit.actions.deleteRepoSecret() (2020-05-14)
+     */
+    deleteSecretFromRepo: {
+      (
+        params?: RestEndpointMethodTypes["actions"]["deleteSecretFromRepo"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["actions"]["deleteSecretFromRepo"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
