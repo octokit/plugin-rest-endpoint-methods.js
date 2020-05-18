@@ -81,6 +81,8 @@ describe("Deprecations", () => {
       owner: "octocat",
       repo: "hello-world",
       name: "MY_SECRET",
+      encrypted_value: "encrypted value 123",
+      key_id: "key id 123",
     });
     expect(data).toStrictEqual({ ok: true });
     expect(warnCalledCount).toEqual(1);
@@ -116,6 +118,8 @@ describe("Deprecations", () => {
       repo: "hello-world",
       name: "MY_SECRET1",
       secret_name: "MY_SECRET2",
+      encrypted_value: "encrypted value 123",
+      key_id: "key id 123",
     });
     expect(data).toStrictEqual({ ok: true });
     expect(warnCalledCount).toEqual(1);
@@ -147,6 +151,8 @@ describe("Deprecations", () => {
       owner: "octocat",
       repo: "hello-world",
       name: "MY_SECRET",
+      encrypted_value: "encrypted value 123",
+      key_id: "key id 123",
     });
     expect(data).toStrictEqual({ ok: true });
     expect(deprecations.length).toEqual(2);

@@ -95,6 +95,9 @@ function decorate(
       for (const [name, alias] of Object.entries(
         decorations.renamedParameters
       )) {
+        // There is currently no deprecated parameter that is optional,
+        // so we never hit the else branch below at this point.
+        /* istanbul ignore else */
         if (name in options) {
           octokit.log.warn(
             `"${name}" parameter is deprecated for "octokit.${scope}.${methodName}()". Use "${alias}" instead`
