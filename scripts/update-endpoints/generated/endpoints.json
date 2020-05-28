@@ -38770,7 +38770,7 @@
     "url": "/repos/{owner}/{repo}/vulnerability-alerts",
     "isDeprecated": false,
     "isLegacy": false,
-    "description": "Shows whether vulnerability alerts are enabled or disabled for a repository. The authenticated user must have admin access to the repository. For more information, see \"[About security alerts for vulnerable dependencies](https://help.github.com/en/articles/about-security-alerts-for-vulnerable-dependencies)\" in the GitHub Help documentation.",
+    "description": "Shows whether dependency alerts are enabled or disabled for a repository. The authenticated user must have admin access to the repository. For more information, see \"[About security alerts for vulnerable dependencies](https://help.github.com/en/articles/about-security-alerts-for-vulnerable-dependencies)\" in the GitHub Help documentation.",
     "documentationUrl": "https://developer.github.com/v3/repos/#check-if-vulnerability-alerts-are-enabled-for-a-repository",
     "previews": [{ "name": "dorian" }],
     "headers": [
@@ -38819,7 +38819,7 @@
     "url": "/repos/{owner}/{repo}/vulnerability-alerts",
     "isDeprecated": false,
     "isLegacy": false,
-    "description": "Enables vulnerability alerts and the dependency graph for a repository. The authenticated user must have admin access to the repository. For more information, see \"[About security alerts for vulnerable dependencies](https://help.github.com/en/articles/about-security-alerts-for-vulnerable-dependencies)\" in the GitHub Help documentation.",
+    "description": "Enables dependency alerts and the dependency graph for a repository. The authenticated user must have admin access to the repository. For more information, see \"[About security alerts for vulnerable dependencies](https://help.github.com/en/articles/about-security-alerts-for-vulnerable-dependencies)\" in the GitHub Help documentation.",
     "documentationUrl": "https://developer.github.com/v3/repos/#enable-vulnerability-alerts",
     "previews": [{ "name": "dorian" }],
     "headers": [
@@ -38868,7 +38868,7 @@
     "url": "/repos/{owner}/{repo}/vulnerability-alerts",
     "isDeprecated": false,
     "isLegacy": false,
-    "description": "Disables vulnerability alerts and the dependency graph for a repository. The authenticated user must have admin access to the repository. For more information, see \"[About security alerts for vulnerable dependencies](https://help.github.com/en/articles/about-security-alerts-for-vulnerable-dependencies)\" in the GitHub Help documentation.",
+    "description": "Disables dependency alerts and the dependency graph for a repository. The authenticated user must have admin access to the repository. For more information, see \"[About security alerts for vulnerable dependencies](https://help.github.com/en/articles/about-security-alerts-for-vulnerable-dependencies)\" in the GitHub Help documentation.",
     "documentationUrl": "https://developer.github.com/v3/repos/#disable-vulnerability-alerts",
     "previews": [{ "name": "dorian" }],
     "headers": [
