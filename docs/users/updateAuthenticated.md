@@ -60,6 +60,11 @@ The new hiring availability of the user.
 The new short biography of the user.
 
 </td></tr>
+<tr><td>twitter_username</td><td>no</td><td>
+
+The new Twitter username of the user.
+
+</td></tr>
   </tbody>
 </table>
 
