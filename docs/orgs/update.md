@@ -47,6 +47,11 @@ The company name.
 The publicly visible email address.
 
 </td></tr>
+<tr><td>twitter_username</td><td>no</td><td>
+
+The Twitter username of the company.
+
+</td></tr>
 <tr><td>location</td><td>no</td><td>
 
 The location.
