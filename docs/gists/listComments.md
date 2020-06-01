@@ -1,12 +1,12 @@
 ---
-name: List comments on a gist
+name: List gist comments
 example: octokit.gists.listComments({ gist_id })
 route: GET /gists/{gist_id}/comments
 scope: gists
 type: API method
 ---
 
-# List comments on a gist
+# List gist comments
 
 ```js
 octokit.gists.listComments({
@@ -41,4 +41,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/gists/comments/#list-comments-on-a-gist).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/gists/comments/#list-gist-comments).

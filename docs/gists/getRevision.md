@@ -1,12 +1,12 @@
 ---
-name: Get a specific revision of a gist
+name: Get a gist revision
 example: octokit.gists.getRevision({ gist_id, sha })
 route: GET /gists/{gist_id}/{sha}
 scope: gists
 type: API method
 ---
 
-# Get a specific revision of a gist
+# Get a gist revision
 
 ```js
 octokit.gists.getRevision({
@@ -35,4 +35,4 @@ octokit.gists.getRevision({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/gists/#get-a-specific-revision-of-a-gist).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/gists/#get-a-gist-revision).
