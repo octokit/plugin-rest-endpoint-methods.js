@@ -1,12 +1,12 @@
 ---
-name: Create a comment
+name: Create a gist comment
 example: octokit.gists.createComment({ gist_id, body })
 route: POST /gists/{gist_id}/comments
 scope: gists
 type: API method
 ---
 
-# Create a comment
+# Create a gist comment
 
 ```js
 octokit.gists.createComment({
@@ -37,4 +37,4 @@ The comment text.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/gists/comments/#create-a-comment).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/gists/comments/#create-a-gist-comment).

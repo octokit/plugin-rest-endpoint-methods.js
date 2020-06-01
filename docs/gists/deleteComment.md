@@ -1,12 +1,12 @@
 ---
-name: Delete a comment
+name: Delete a gist comment
 example: octokit.gists.deleteComment({ gist_id, comment_id })
 route: DELETE /gists/{gist_id}/comments/{comment_id}
 scope: gists
 type: API method
 ---
 
-# Delete a comment
+# Delete a gist comment
 
 ```js
 octokit.gists.deleteComment({
@@ -35,4 +35,4 @@ octokit.gists.deleteComment({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/gists/comments/#delete-a-comment).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/gists/comments/#delete-a-gist-comment).

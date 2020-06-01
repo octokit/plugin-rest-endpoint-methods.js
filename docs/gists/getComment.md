@@ -1,12 +1,12 @@
 ---
-name: Get a single comment
+name: Get a gist comment
 example: octokit.gists.getComment({ gist_id, comment_id })
 route: GET /gists/{gist_id}/comments/{comment_id}
 scope: gists
 type: API method
 ---
 
-# Get a single comment
+# Get a gist comment
 
 ```js
 octokit.gists.getComment({
@@ -35,4 +35,4 @@ octokit.gists.getComment({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/gists/comments/#get-a-single-comment).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/gists/comments/#get-a-gist-comment).

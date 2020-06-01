@@ -1,12 +1,12 @@
 ---
-name: Edit a comment
+name: Update a gist comment
 example: octokit.gists.updateComment({ gist_id, comment_id, body })
 route: PATCH /gists/{gist_id}/comments/{comment_id}
 scope: gists
 type: API method
 ---
 
-# Edit a comment
+# Update a gist comment
 
 ```js
 octokit.gists.updateComment({
@@ -41,4 +41,4 @@ The comment text.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/gists/comments/#edit-a-comment).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/gists/comments/#update-a-gist-comment).

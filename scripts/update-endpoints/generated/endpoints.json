@@ -2240,7 +2240,7 @@
     "renamed": null
   },
   {
-    "name": "List comments on a gist",
+    "name": "List gist comments",
     "scope": "gists",
     "id": "listComments",
     "method": "GET",
@@ -2248,7 +2248,7 @@
     "isDeprecated": false,
     "isLegacy": false,
     "description": "",
-    "documentationUrl": "https://developer.github.com/v3/gists/comments/#list-comments-on-a-gist",
+    "documentationUrl": "https://developer.github.com/v3/gists/comments/#list-gist-comments",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -2306,7 +2306,7 @@
     "renamed": null
   },
   {
-    "name": "Create a comment",
+    "name": "Create a gist comment",
     "scope": "gists",
     "id": "createComment",
     "method": "POST",
@@ -2314,7 +2314,7 @@
     "isDeprecated": false,
     "isLegacy": false,
     "description": "",
-    "documentationUrl": "https://developer.github.com/v3/gists/comments/#create-a-comment",
+    "documentationUrl": "https://developer.github.com/v3/gists/comments/#create-a-gist-comment",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -2359,7 +2359,7 @@
     "renamed": null
   },
   {
-    "name": "Get a single comment",
+    "name": "Get a gist comment",
     "scope": "gists",
     "id": "getComment",
     "method": "GET",
@@ -2367,7 +2367,7 @@
     "isDeprecated": false,
     "isLegacy": false,
     "description": "",
-    "documentationUrl": "https://developer.github.com/v3/gists/comments/#get-a-single-comment",
+    "documentationUrl": "https://developer.github.com/v3/gists/comments/#get-a-gist-comment",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -2412,7 +2412,7 @@
     "renamed": null
   },
   {
-    "name": "Edit a comment",
+    "name": "Update a gist comment",
     "scope": "gists",
     "id": "updateComment",
     "method": "PATCH",
@@ -2420,7 +2420,7 @@
     "isDeprecated": false,
     "isLegacy": false,
     "description": "",
-    "documentationUrl": "https://developer.github.com/v3/gists/comments/#edit-a-comment",
+    "documentationUrl": "https://developer.github.com/v3/gists/comments/#update-a-gist-comment",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -2478,7 +2478,7 @@
     "renamed": null
   },
   {
-    "name": "Delete a comment",
+    "name": "Delete a gist comment",
     "scope": "gists",
     "id": "deleteComment",
     "method": "DELETE",
@@ -2486,7 +2486,7 @@
     "isDeprecated": false,
     "isLegacy": false,
     "description": "",
-    "documentationUrl": "https://developer.github.com/v3/gists/comments/#delete-a-comment",
+    "documentationUrl": "https://developer.github.com/v3/gists/comments/#delete-a-gist-comment",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -2783,7 +2783,7 @@
     "renamed": null
   },
   {
-    "name": "Get a specific revision of a gist",
+    "name": "Get a gist revision",
     "scope": "gists",
     "id": "getRevision",
     "method": "GET",
@@ -2791,7 +2791,7 @@
     "isDeprecated": false,
     "isLegacy": false,
     "description": "",
-    "documentationUrl": "https://developer.github.com/v3/gists/#get-a-specific-revision-of-a-gist",
+    "documentationUrl": "https://developer.github.com/v3/gists/#get-a-gist-revision",
     "previews": [],
     "headers": [],
     "parameters": [
