@@ -1,14 +1,12 @@
 ---
 name: Add or update team membership for a user
-example: octokit.teams.addOrUpdateMembershipInOrg({ org, team_slug, username })
+example: octokit.teams.addOrUpdateMembershipForUserInOrg({ org, team_slug, username })
 route: PUT /orgs/{org}/teams/{team_slug}/memberships/{username}
 scope: teams
 type: API method
 ---
 
 # Add or update team membership for a user
-
-**Deprecated:** This method has been renamed to teams.addOrUpdateMembershipForUserInOrg
 
 Team synchronization is available for organizations using GitHub Enterprise Cloud. For more information, see [GitHub's products](https://help.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
 
@@ -23,7 +21,7 @@ If the user is already a member of the team, this endpoint will update the role 
 **Note:** You can also specify a team by `org_id` and `team_id` using the route `PUT /organizations/:org_id/team/:team_id/memberships/:username`.
 
 ```js
-octokit.teams.addOrUpdateMembershipInOrg({
+octokit.teams.addOrUpdateMembershipForUserInOrg({
   org,
   team_slug,
   username,

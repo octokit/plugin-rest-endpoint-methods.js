@@ -1,12 +1,12 @@
 ---
-name: Edit team
+name: Update a team
 example: octokit.teams.updateInOrg({ org, team_slug, name })
 route: PATCH /orgs/{org}/teams/{team_slug}
 scope: teams
 type: API method
 ---
 
-# Edit team
+# Update a team
 
 To edit a team, the authenticated user must either be an organization owner or a team maintainer.
 
@@ -73,4 +73,4 @@ The ID of a team to set as the parent team.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/teams/#edit-team).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/teams/#update-a-team).

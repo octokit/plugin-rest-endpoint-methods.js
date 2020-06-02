@@ -10,7 +10,7 @@ type: API method
 
 Returns a single tree using the SHA1 value for that tree.
 
-If `truncated` is `true` in the response then the number of items in the `tree` array exceeded our maximum limit. If you need to fetch more items, you can clone the repository and iterate over the Git data locally.
+If `truncated` is `true` in the response then the number of items in the `tree` array exceeded our maximum limit. If you need to fetch more items, use the non-recursive method of fetching trees, and fetch one sub-tree at a time.
 
 ```js
 octokit.git.getTree({
@@ -33,22 +33,16 @@ octokit.git.getTree({
   <tbody>
     <tr><td>owner</td><td>yes</td><td>
 
-owner parameter
-
 </td></tr>
 <tr><td>repo</td><td>yes</td><td>
-
-repo parameter
 
 </td></tr>
 <tr><td>tree_sha</td><td>yes</td><td>
 
-tree_sha parameter
-
 </td></tr>
 <tr><td>recursive</td><td>no</td><td>
 
-recursive parameter
+Setting this parameter to any value returns the objects or subtrees referenced by the tree specified in `:tree_sha`. For example, setting `recursive` to any of the following will enable returning objects or subtrees: `0`, `1`, `"true"`, and `"false"`. Omit this parameter to prevent recursively returning objects or subtrees.
 
 </td></tr>
   </tbody>

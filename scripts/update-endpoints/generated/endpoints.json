@@ -7572,7 +7572,7 @@
     "renamed": null
   },
   {
-    "name": "Get the status of an organization migration",
+    "name": "Get an organization migration status",
     "scope": "migrations",
     "id": "getStatusForOrg",
     "method": "GET",
@@ -7580,7 +7580,7 @@
     "isDeprecated": false,
     "isLegacy": false,
     "description": "Fetches the status of a migration.\n\nThe `state` of a migration can be one of the following values:\n\n*   `pending`, which means the migration hasn't started yet.\n*   `exporting`, which means the migration is in progress.\n*   `exported`, which means the migration finished successfully.\n*   `failed`, which means the migration failed.",
-    "documentationUrl": "https://developer.github.com/v3/migrations/orgs/#get-the-status-of-an-organization-migration",
+    "documentationUrl": "https://developer.github.com/v3/migrations/orgs/#get-an-organization-migration-status",
     "previews": [{ "name": "wyandotte" }],
     "headers": [
       {
@@ -8856,7 +8856,7 @@
     "renamed": null
   },
   {
-    "name": "Create team",
+    "name": "Create a team",
     "scope": "teams",
     "id": "create",
     "method": "POST",
@@ -8864,7 +8864,7 @@
     "isDeprecated": false,
     "isLegacy": false,
     "description": "To create a team, the authenticated user must be a member or owner of `:org`. By default, organization members can create teams. Organization owners can limit team creation to organization owners. For more information, see \"[Setting team creation permissions](https://help.github.com/en/articles/setting-team-creation-permissions-in-your-organization).\"\n\nWhen you create a new team, you automatically become a team maintainer without explicitly adding yourself to the optional array of `maintainers`. For more information, see \"[About teams](https://help.github.com/en/github/setting-up-and-managing-organizations-and-teams/about-teams)\" in the GitHub Help documentation.",
-    "documentationUrl": "https://developer.github.com/v3/teams/#create-team",
+    "documentationUrl": "https://developer.github.com/v3/teams/#create-a-team",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -8987,7 +8987,7 @@
     "renamed": null
   },
   {
-    "name": "Get team by name",
+    "name": "Get a team by name",
     "scope": "teams",
     "id": "getByName",
     "method": "GET",
@@ -8995,7 +8995,7 @@
     "isDeprecated": false,
     "isLegacy": false,
     "description": "Gets a team using the team's `slug`. GitHub generates the `slug` from the team `name`.\n\n**Note:** You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/:org_id/team/:team_id`.",
-    "documentationUrl": "https://developer.github.com/v3/teams/#get-team-by-name",
+    "documentationUrl": "https://developer.github.com/v3/teams/#get-a-team-by-name",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -9040,7 +9040,7 @@
     "renamed": null
   },
   {
-    "name": "Edit team",
+    "name": "Update a team",
     "scope": "teams",
     "id": "updateInOrg",
     "method": "PATCH",
@@ -9048,7 +9048,7 @@
     "isDeprecated": false,
     "isLegacy": false,
     "description": "To edit a team, the authenticated user must either be an organization owner or a team maintainer.\n\n**Note:** You can also specify a team by `org_id` and `team_id` using the route `PATCH /organizations/:org_id/team/:team_id`.",
-    "documentationUrl": "https://developer.github.com/v3/teams/#edit-team",
+    "documentationUrl": "https://developer.github.com/v3/teams/#update-a-team",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -9158,7 +9158,7 @@
     "renamed": null
   },
   {
-    "name": "Delete team",
+    "name": "Delete a team",
     "scope": "teams",
     "id": "deleteInOrg",
     "method": "DELETE",
@@ -9166,7 +9166,7 @@
     "isDeprecated": false,
     "isLegacy": false,
     "description": "To delete a team, the authenticated user must be an organization owner or team maintainer.\n\n**Note:** You can also specify a team by `org_id` and `team_id` using the route `DELETE /organizations/:org_id/team/:team_id`.\n\nIf you are an organization owner, deleting a parent team will delete all of its child teams as well.",
-    "documentationUrl": "https://developer.github.com/v3/teams/#delete-team",
+    "documentationUrl": "https://developer.github.com/v3/teams/#delete-a-team",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -9385,7 +9385,7 @@
     "renamed": null
   },
   {
-    "name": "Get a single discussion",
+    "name": "Get a discussion",
     "scope": "teams",
     "id": "getDiscussionInOrg",
     "method": "GET",
@@ -9393,7 +9393,7 @@
     "isDeprecated": false,
     "isLegacy": false,
     "description": "Get a specific discussion on a team's page. OAuth access tokens require the `read:discussion` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).\n\n**Note:** You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/:org_id/team/:team_id/discussions/:discussion_number`.",
-    "documentationUrl": "https://developer.github.com/v3/teams/discussions/#get-a-single-discussion",
+    "documentationUrl": "https://developer.github.com/v3/teams/discussions/#get-a-discussion",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -9451,7 +9451,7 @@
     "renamed": null
   },
   {
-    "name": "Edit a discussion",
+    "name": "Update a discussion",
     "scope": "teams",
     "id": "updateDiscussionInOrg",
     "method": "PATCH",
@@ -9459,7 +9459,7 @@
     "isDeprecated": false,
     "isLegacy": false,
     "description": "Edits the title and body text of a discussion post. Only the parameters you provide are updated. OAuth access tokens require the `write:discussion` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).\n\n**Note:** You can also specify a team by `org_id` and `team_id` using the route `PATCH /organizations/:org_id/team/:team_id/discussions/:discussion_number`.",
-    "documentationUrl": "https://developer.github.com/v3/teams/discussions/#edit-a-discussion",
+    "documentationUrl": "https://developer.github.com/v3/teams/discussions/#update-a-discussion",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -9599,7 +9599,7 @@
     "renamed": null
   },
   {
-    "name": "List comments",
+    "name": "List discussion comments",
     "scope": "teams",
     "id": "listDiscussionCommentsInOrg",
     "method": "GET",
@@ -9607,7 +9607,7 @@
     "isDeprecated": false,
     "isLegacy": false,
     "description": "List all comments on a team discussion. OAuth access tokens require the `read:discussion` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).\n\n**Note:** You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/:org_id/team/:team_id/discussions/:discussion_number/comments`.",
-    "documentationUrl": "https://developer.github.com/v3/teams/discussion_comments/#list-comments",
+    "documentationUrl": "https://developer.github.com/v3/teams/discussion_comments/#list-discussion-comments",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -9704,7 +9704,7 @@
     "renamed": null
   },
   {
-    "name": "Create a comment",
+    "name": "Create a discussion comment",
     "scope": "teams",
     "id": "createDiscussionCommentInOrg",
     "method": "POST",
@@ -9712,7 +9712,7 @@
     "isDeprecated": false,
     "isLegacy": false,
     "description": "Creates a new comment on a team discussion. OAuth access tokens require the `write:discussion` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).\n\nThis endpoint triggers [notifications](https://help.github.com/articles/about-notifications/). Creating content too quickly using this endpoint may result in abuse rate limiting. See \"[Abuse rate limits](https://developer.github.com/v3/#abuse-rate-limits)\" and \"[Dealing with abuse rate limits](https://developer.github.com/v3/guides/best-practices-for-integrators/#dealing-with-abuse-rate-limits)\" for details.\n\n**Note:** You can also specify a team by `org_id` and `team_id` using the route `POST /organizations/:org_id/team/:team_id/discussions/:discussion_number/comments`.",
-    "documentationUrl": "https://developer.github.com/v3/teams/discussion_comments/#create-a-comment",
+    "documentationUrl": "https://developer.github.com/v3/teams/discussion_comments/#create-a-discussion-comment",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -9783,7 +9783,7 @@
     "renamed": null
   },
   {
-    "name": "Get a single comment",
+    "name": "Get a discussion comment",
     "scope": "teams",
     "id": "getDiscussionCommentInOrg",
     "method": "GET",
@@ -9791,7 +9791,7 @@
     "isDeprecated": false,
     "isLegacy": false,
     "description": "Get a specific comment on a team discussion. OAuth access tokens require the `read:discussion` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).\n\n**Note:** You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/:org_id/team/:team_id/discussions/:discussion_number/comments/:comment_number`.",
-    "documentationUrl": "https://developer.github.com/v3/teams/discussion_comments/#get-a-single-comment",
+    "documentationUrl": "https://developer.github.com/v3/teams/discussion_comments/#get-a-discussion-comment",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -9862,7 +9862,7 @@
     "renamed": null
   },
   {
-    "name": "Edit a comment",
+    "name": "Update a discussion comment",
     "scope": "teams",
     "id": "updateDiscussionCommentInOrg",
     "method": "PATCH",
@@ -9870,7 +9870,7 @@
     "isDeprecated": false,
     "isLegacy": false,
     "description": "Edits the body text of a discussion comment. OAuth access tokens require the `write:discussion` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).\n\n**Note:** You can also specify a team by `org_id` and `team_id` using the route `PATCH /organizations/:org_id/team/:team_id/discussions/:discussion_number/comments/:comment_number`.",
-    "documentationUrl": "https://developer.github.com/v3/teams/discussion_comments/#edit-a-comment",
+    "documentationUrl": "https://developer.github.com/v3/teams/discussion_comments/#update-a-discussion-comment",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -9954,7 +9954,7 @@
     "renamed": null
   },
   {
-    "name": "Delete a comment",
+    "name": "Delete a discussion comment",
     "scope": "teams",
     "id": "deleteDiscussionCommentInOrg",
     "method": "DELETE",
@@ -9962,7 +9962,7 @@
     "isDeprecated": false,
     "isLegacy": false,
     "description": "Deletes a comment on a team discussion. OAuth access tokens require the `write:discussion` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).\n\n**Note:** You can also specify a team by `org_id` and `team_id` using the route `DELETE /organizations/:org_id/team/:team_id/discussions/:discussion_number/comments/:comment_number`.",
-    "documentationUrl": "https://developer.github.com/v3/teams/discussion_comments/#delete-a-comment",
+    "documentationUrl": "https://developer.github.com/v3/teams/discussion_comments/#delete-a-discussion-comment",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -10811,15 +10811,15 @@
     "renamed": null
   },
   {
-    "name": "Get team membership",
+    "name": "Get team membership for a user",
     "scope": "teams",
-    "id": "getMembershipInOrg",
+    "id": "getMembershipForUserInOrg",
     "method": "GET",
     "url": "/orgs/{org}/teams/{team_slug}/memberships/{username}",
     "isDeprecated": false,
     "isLegacy": false,
-    "description": "Team members will include the members of child teams.\n\nTo get a user's membership with a team, the team must be visible to the authenticated user.\n\n**Note:** You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/:org_id/team/:team_id/memberships/:username`.\n\n**Note:** The `role` for organization owners returns as `maintainer`. For more information about `maintainer` roles, see [Create team](https://developer.github.com/v3/teams#create-team).",
-    "documentationUrl": "https://developer.github.com/v3/teams/members/#get-team-membership",
+    "description": "Team members will include the members of child teams.\n\nTo get a user's membership with a team, the team must be visible to the authenticated user.\n\n**Note:** You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/:org_id/team/:team_id/memberships/:username`.\n\n**Note:** The `role` for organization owners returns as `maintainer`. For more information about `maintainer` roles, see [Create a team](https://developer.github.com/v3/teams/#create-a-team).",
+    "documentationUrl": "https://developer.github.com/v3/teams/members/#get-team-membership-for-a-user",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -10880,18 +10880,23 @@
         ]
       }
     ],
-    "renamed": null
+    "renamed": {
+      "before": { "scope": "teams", "id": "getMembershipInOrg" },
+      "after": { "scope": "teams", "id": "getMembershipForUserInOrg" },
+      "date": "2020-06-01",
+      "note": "\"teams/get-membership-in-org\" operation ID is now \"teams/get-membership-for-user-in-org\""
+    }
   },
   {
-    "name": "Add or update team membership",
+    "name": "Add or update team membership for a user",
     "scope": "teams",
-    "id": "addOrUpdateMembershipInOrg",
+    "id": "addOrUpdateMembershipForUserInOrg",
     "method": "PUT",
     "url": "/orgs/{org}/teams/{team_slug}/memberships/{username}",
     "isDeprecated": false,
     "isLegacy": false,
     "description": "Team synchronization is available for organizations using GitHub Enterprise Cloud. For more information, see [GitHub's products](https://help.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.\n\nAdds an organization member to a team. An authenticated organization owner or team maintainer can add organization members to a team.\n\n**Note:** When you have team synchronization set up for a team with your organization's identity provider (IdP), you will see an error if you attempt to use the API for making changes to the team's membership. If you have access to manage group membership in your IdP, you can manage GitHub team membership through your identity provider, which automatically adds and removes team members in an organization. For more information, see \"[Synchronizing teams between your identity provider and GitHub](https://help.github.com/articles/synchronizing-teams-between-your-identity-provider-and-github/).\"\n\nAn organization owner can add someone who is not part of the team's organization to a team. When an organization owner adds someone to a team who is not an organization member, this endpoint will send an invitation to the person via email. This newly-created membership will be in the \"pending\" state until the person accepts the invitation, at which point the membership will transition to the \"active\" state and the user will be added as a member of the team.\n\nIf the user is already a member of the team, this endpoint will update the role of the team member's role. To update the membership of a team member, the authenticated user must be an organization owner or a team maintainer.\n\n**Note:** You can also specify a team by `org_id` and `team_id` using the route `PUT /organizations/:org_id/team/:team_id/memberships/:username`.",
-    "documentationUrl": "https://developer.github.com/v3/teams/members/#add-or-update-team-membership",
+    "documentationUrl": "https://developer.github.com/v3/teams/members/#add-or-update-team-membership-for-a-user",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -10974,15 +10979,188 @@
     "renamed": null
   },
   {
-    "name": "Remove team membership",
+    "name": "Get team membership for a user",
     "scope": "teams",
-    "id": "removeMembershipInOrg",
+    "id": "getMembershipInOrg",
+    "method": "GET",
+    "url": "/orgs/{org}/teams/{team_slug}/memberships/{username}",
+    "isDeprecated": false,
+    "isLegacy": false,
+    "description": "Team members will include the members of child teams.\n\nTo get a user's membership with a team, the team must be visible to the authenticated user.\n\n**Note:** You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/:org_id/team/:team_id/memberships/:username`.\n\n**Note:** The `role` for organization owners returns as `maintainer`. For more information about `maintainer` roles, see [Create a team](https://developer.github.com/v3/teams/#create-a-team).",
+    "documentationUrl": "https://developer.github.com/v3/teams/members/#get-team-membership-for-a-user",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "org",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "team_slug",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "username",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "examples": [
+          {
+            "data": "{\"url\":\"https://api.github.com/teams/1/memberships/octocat\",\"role\":\"member\",\"state\":\"active\"}"
+          },
+          {
+            "data": "{\"url\":\"https://api.github.com/teams/1/memberships/octocat\",\"role\":\"maintainer\",\"state\":\"active\"}"
+          },
+          {
+            "data": "{\"url\":\"https://api.github.com/teams/1/memberships/octocat\",\"role\":\"member\",\"state\":\"pending\"}"
+          }
+        ]
+      }
+    ],
+    "renamed": {
+      "before": { "scope": "teams", "id": "getMembershipInOrg" },
+      "after": { "scope": "teams", "id": "getMembershipForUserInOrg" },
+      "date": "2020-06-01",
+      "note": "\"teams/get-membership-in-org\" operation ID is now \"teams/get-membership-for-user-in-org\""
+    }
+  },
+  {
+    "name": "Add or update team membership for a user",
+    "scope": "teams",
+    "id": "addOrUpdateMembershipForUserInOrg",
+    "method": "PUT",
+    "url": "/orgs/{org}/teams/{team_slug}/memberships/{username}",
+    "isDeprecated": false,
+    "isLegacy": false,
+    "description": "Team synchronization is available for organizations using GitHub Enterprise Cloud. For more information, see [GitHub's products](https://help.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.\n\nAdds an organization member to a team. An authenticated organization owner or team maintainer can add organization members to a team.\n\n**Note:** When you have team synchronization set up for a team with your organization's identity provider (IdP), you will see an error if you attempt to use the API for making changes to the team's membership. If you have access to manage group membership in your IdP, you can manage GitHub team membership through your identity provider, which automatically adds and removes team members in an organization. For more information, see \"[Synchronizing teams between your identity provider and GitHub](https://help.github.com/articles/synchronizing-teams-between-your-identity-provider-and-github/).\"\n\nAn organization owner can add someone who is not part of the team's organization to a team. When an organization owner adds someone to a team who is not an organization member, this endpoint will send an invitation to the person via email. This newly-created membership will be in the \"pending\" state until the person accepts the invitation, at which point the membership will transition to the \"active\" state and the user will be added as a member of the team.\n\nIf the user is already a member of the team, this endpoint will update the role of the team member's role. To update the membership of a team member, the authenticated user must be an organization owner or a team maintainer.\n\n**Note:** You can also specify a team by `org_id` and `team_id` using the route `PUT /organizations/:org_id/team/:team_id/memberships/:username`.",
+    "documentationUrl": "https://developer.github.com/v3/teams/members/#add-or-update-team-membership-for-a-user",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "org",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "team_slug",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "username",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "role",
+        "description": "The role that this user should have in the team. Can be one of:  \n\\* `member` - a normal member of the team.  \n\\* `maintainer` - a team maintainer. Able to add/remove other team members, promote other team members to team maintainer, and edit the team's name and description.",
+        "in": "BODY",
+        "type": "string",
+        "required": false,
+        "enum": ["member", "maintainer"],
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "examples": [
+          {
+            "data": "{\"url\":\"https://api.github.com/teams/1/memberships/octocat\",\"role\":\"member\",\"state\":\"active\"}"
+          },
+          {
+            "data": "{\"url\":\"https://api.github.com/teams/1/memberships/octocat\",\"role\":\"member\",\"state\":\"pending\"}"
+          }
+        ]
+      },
+      {
+        "code": 422,
+        "description": "Response if you attempt to add an organization to a team",
+        "examples": [
+          {
+            "data": "{\"message\":\"Cannot add an organization as a member.\",\"errors\":[{\"code\":\"org\",\"field\":\"user\",\"resource\":\"TeamMember\"}]}"
+          }
+        ]
+      }
+    ],
+    "renamed": {
+      "before": { "scope": "teams", "id": "addOrUpdateMembershipInOrg" },
+      "after": { "scope": "teams", "id": "addOrUpdateMembershipForUserInOrg" },
+      "date": "2020-06-01",
+      "note": "\"teams/add-or-update-membership-in-org\" operation ID is now \"teams/add-or-update-membership-for-user-in-org\""
+    }
+  },
+  {
+    "name": "Remove team membership for a user",
+    "scope": "teams",
+    "id": "removeMembershipForUserInOrg",
     "method": "DELETE",
     "url": "/orgs/{org}/teams/{team_slug}/memberships/{username}",
     "isDeprecated": false,
     "isLegacy": false,
     "description": "Team synchronization is available for organizations using GitHub Enterprise Cloud. For more information, see [GitHub's products](https://help.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.\n\nTo remove a membership between a user and a team, the authenticated user must have 'admin' permissions to the team or be an owner of the organization that the team is associated with. Removing team membership does not delete the user, it just removes their membership from the team.\n\n**Note:** When you have team synchronization set up for a team with your organization's identity provider (IdP), you will see an error if you attempt to use the API for making changes to the team's membership. If you have access to manage group membership in your IdP, you can manage GitHub team membership through your identity provider, which automatically adds and removes team members in an organization. For more information, see \"[Synchronizing teams between your identity provider and GitHub](https://help.github.com/articles/synchronizing-teams-between-your-identity-provider-and-github/).\"\n\n**Note:** You can also specify a team by `org_id` and `team_id` using the route `DELETE /organizations/:org_id/team/:team_id/memberships/:username`.",
-    "documentationUrl": "https://developer.github.com/v3/teams/members/#remove-team-membership",
+    "documentationUrl": "https://developer.github.com/v3/teams/members/#remove-team-membership-for-a-user",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -11030,6 +11208,219 @@
     "renamed": null
   },
   {
+    "name": "Add or update team membership for a user",
+    "scope": "teams",
+    "id": "addOrUpdateMembershipInOrg",
+    "method": "PUT",
+    "url": "/orgs/{org}/teams/{team_slug}/memberships/{username}",
+    "isDeprecated": false,
+    "isLegacy": false,
+    "description": "Team synchronization is available for organizations using GitHub Enterprise Cloud. For more information, see [GitHub's products](https://help.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.\n\nAdds an organization member to a team. An authenticated organization owner or team maintainer can add organization members to a team.\n\n**Note:** When you have team synchronization set up for a team with your organization's identity provider (IdP), you will see an error if you attempt to use the API for making changes to the team's membership. If you have access to manage group membership in your IdP, you can manage GitHub team membership through your identity provider, which automatically adds and removes team members in an organization. For more information, see \"[Synchronizing teams between your identity provider and GitHub](https://help.github.com/articles/synchronizing-teams-between-your-identity-provider-and-github/).\"\n\nAn organization owner can add someone who is not part of the team's organization to a team. When an organization owner adds someone to a team who is not an organization member, this endpoint will send an invitation to the person via email. This newly-created membership will be in the \"pending\" state until the person accepts the invitation, at which point the membership will transition to the \"active\" state and the user will be added as a member of the team.\n\nIf the user is already a member of the team, this endpoint will update the role of the team member's role. To update the membership of a team member, the authenticated user must be an organization owner or a team maintainer.\n\n**Note:** You can also specify a team by `org_id` and `team_id` using the route `PUT /organizations/:org_id/team/:team_id/memberships/:username`.",
+    "documentationUrl": "https://developer.github.com/v3/teams/members/#add-or-update-team-membership-for-a-user",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "org",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "team_slug",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "username",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "role",
+        "description": "The role that this user should have in the team. Can be one of:  \n\\* `member` - a normal member of the team.  \n\\* `maintainer` - a team maintainer. Able to add/remove other team members, promote other team members to team maintainer, and edit the team's name and description.",
+        "in": "BODY",
+        "type": "string",
+        "required": false,
+        "enum": ["member", "maintainer"],
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "examples": [
+          {
+            "data": "{\"url\":\"https://api.github.com/teams/1/memberships/octocat\",\"role\":\"member\",\"state\":\"active\"}"
+          },
+          {
+            "data": "{\"url\":\"https://api.github.com/teams/1/memberships/octocat\",\"role\":\"member\",\"state\":\"pending\"}"
+          }
+        ]
+      },
+      {
+        "code": 422,
+        "description": "Response if you attempt to add an organization to a team",
+        "examples": [
+          {
+            "data": "{\"message\":\"Cannot add an organization as a member.\",\"errors\":[{\"code\":\"org\",\"field\":\"user\",\"resource\":\"TeamMember\"}]}"
+          }
+        ]
+      }
+    ],
+    "renamed": {
+      "before": { "scope": "teams", "id": "addOrUpdateMembershipInOrg" },
+      "after": { "scope": "teams", "id": "addOrUpdateMembershipForUserInOrg" },
+      "date": "2020-06-01",
+      "note": "\"teams/add-or-update-membership-in-org\" operation ID is now \"teams/add-or-update-membership-for-user-in-org\""
+    }
+  },
+  {
+    "name": "Remove team membership for a user",
+    "scope": "teams",
+    "id": "removeMembershipForUserInOrg",
+    "method": "DELETE",
+    "url": "/orgs/{org}/teams/{team_slug}/memberships/{username}",
+    "isDeprecated": false,
+    "isLegacy": false,
+    "description": "Team synchronization is available for organizations using GitHub Enterprise Cloud. For more information, see [GitHub's products](https://help.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.\n\nTo remove a membership between a user and a team, the authenticated user must have 'admin' permissions to the team or be an owner of the organization that the team is associated with. Removing team membership does not delete the user, it just removes their membership from the team.\n\n**Note:** When you have team synchronization set up for a team with your organization's identity provider (IdP), you will see an error if you attempt to use the API for making changes to the team's membership. If you have access to manage group membership in your IdP, you can manage GitHub team membership through your identity provider, which automatically adds and removes team members in an organization. For more information, see \"[Synchronizing teams between your identity provider and GitHub](https://help.github.com/articles/synchronizing-teams-between-your-identity-provider-and-github/).\"\n\n**Note:** You can also specify a team by `org_id` and `team_id` using the route `DELETE /organizations/:org_id/team/:team_id/memberships/:username`.",
+    "documentationUrl": "https://developer.github.com/v3/teams/members/#remove-team-membership-for-a-user",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "org",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "team_slug",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "username",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [],
+    "renamed": null
+  },
+  {
+    "name": "Remove team membership for a user",
+    "scope": "teams",
+    "id": "removeMembershipInOrg",
+    "method": "DELETE",
+    "url": "/orgs/{org}/teams/{team_slug}/memberships/{username}",
+    "isDeprecated": false,
+    "isLegacy": false,
+    "description": "Team synchronization is available for organizations using GitHub Enterprise Cloud. For more information, see [GitHub's products](https://help.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.\n\nTo remove a membership between a user and a team, the authenticated user must have 'admin' permissions to the team or be an owner of the organization that the team is associated with. Removing team membership does not delete the user, it just removes their membership from the team.\n\n**Note:** When you have team synchronization set up for a team with your organization's identity provider (IdP), you will see an error if you attempt to use the API for making changes to the team's membership. If you have access to manage group membership in your IdP, you can manage GitHub team membership through your identity provider, which automatically adds and removes team members in an organization. For more information, see \"[Synchronizing teams between your identity provider and GitHub](https://help.github.com/articles/synchronizing-teams-between-your-identity-provider-and-github/).\"\n\n**Note:** You can also specify a team by `org_id` and `team_id` using the route `DELETE /organizations/:org_id/team/:team_id/memberships/:username`.",
+    "documentationUrl": "https://developer.github.com/v3/teams/members/#remove-team-membership-for-a-user",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "org",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "team_slug",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "username",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [],
+    "renamed": {
+      "before": { "scope": "teams", "id": "removeMembershipInOrg" },
+      "after": { "scope": "teams", "id": "removeMembershipForUserInOrg" },
+      "date": "2020-06-01",
+      "note": "\"teams/remove-membership-in-org\" operation ID is now \"teams/remove-membership-for-user-in-org\""
+    }
+  },
+  {
     "name": "List team projects",
     "scope": "teams",
     "id": "listProjectsInOrg",
@@ -11062,7 +11453,7 @@
         "deprecated": null
       },
       {
-        "name": "team_slug",
+        "name": "repo",
         "description": "",
         "in": "PATH",
         "type": "string",
@@ -11115,15 +11506,15 @@
     "renamed": null
   },
   {
-    "name": "Review a team project",
+    "name": "Check team permissions for a project",
     "scope": "teams",
-    "id": "reviewProjectInOrg",
+    "id": "checkPermissionsForProjectInOrg",
     "method": "GET",
     "url": "/orgs/{org}/teams/{team_slug}/projects/{project_id}",
     "isDeprecated": false,
     "isLegacy": false,
     "description": "Checks whether a team has `read`, `write`, or `admin` permissions for an organization project. The response includes projects inherited from a parent team.\n\n**Note:** You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/:org_id/team/:team_id/projects/:project_id`.",
-    "documentationUrl": "https://developer.github.com/v3/teams/#review-a-team-project",
+    "documentationUrl": "https://developer.github.com/v3/teams/#check-team-permissions-for-a-project",
     "previews": [{ "name": "inertia" }],
     "headers": [
       {
@@ -11187,15 +11578,92 @@
     "renamed": null
   },
   {
-    "name": "Add or update team project",
+    "name": "Check team permissions for a project",
     "scope": "teams",
-    "id": "addOrUpdateProjectInOrg",
+    "id": "reviewProjectInOrg",
+    "method": "GET",
+    "url": "/orgs/{org}/teams/{team_slug}/projects/{project_id}",
+    "isDeprecated": false,
+    "isLegacy": false,
+    "description": "Checks whether a team has `read`, `write`, or `admin` permissions for an organization project. The response includes projects inherited from a parent team.\n\n**Note:** You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/:org_id/team/:team_id/projects/:project_id`.",
+    "documentationUrl": "https://developer.github.com/v3/teams/#check-team-permissions-for-a-project",
+    "previews": [{ "name": "inertia" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.inertia-preview+json",
+        "required": true
+      }
+    ],
+    "parameters": [
+      {
+        "name": "org",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "team_slug",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "project_id",
+        "description": "",
+        "in": "PATH",
+        "type": "integer",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "examples": [
+          {
+            "data": "{\"owner_url\":\"https://api.github.com/orgs/octocat\",\"url\":\"https://api.github.com/projects/1002605\",\"html_url\":\"https://github.com/orgs/api-playground/projects/1\",\"columns_url\":\"https://api.github.com/projects/1002605/columns\",\"id\":1002605,\"node_id\":\"MDc6UHJvamVjdDEwMDI2MDU=\",\"name\":\"Organization Roadmap\",\"body\":\"High-level roadmap for the upcoming year.\",\"number\":1,\"state\":\"open\",\"creator\":{\"login\":\"octocat\",\"id\":1,\"node_id\":\"MDQ6VXNlcjE=\",\"avatar_url\":\"https://github.com/images/error/octocat_happy.gif\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/octocat\",\"html_url\":\"https://github.com/octocat\",\"followers_url\":\"https://api.github.com/users/octocat/followers\",\"following_url\":\"https://api.github.com/users/octocat/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/octocat/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/octocat/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/octocat/subscriptions\",\"organizations_url\":\"https://api.github.com/users/octocat/orgs\",\"repos_url\":\"https://api.github.com/users/octocat/repos\",\"events_url\":\"https://api.github.com/users/octocat/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/octocat/received_events\",\"type\":\"User\",\"site_admin\":false},\"created_at\":\"2011-04-11T20:09:31Z\",\"updated_at\":\"2014-03-04T18:58:10Z\",\"organization_permission\":\"write\",\"private\":false,\"permissions\":{\"read\":true,\"write\":true,\"admin\":false}}"
+          }
+        ]
+      }
+    ],
+    "renamed": {
+      "before": { "scope": "teams", "id": "reviewProjectInOrg" },
+      "after": { "scope": "teams", "id": "checkPermissionsForProjectInOrg" },
+      "date": "2020-06-01",
+      "note": "\"teams/review-project-in-org\" operation ID is now \"teams/check-permissions-for-project-in-org\""
+    }
+  },
+  {
+    "name": "Add or update team project permissions",
+    "scope": "teams",
+    "id": "addOrUpdateProjectPermissionsInOrg",
     "method": "PUT",
     "url": "/orgs/{org}/teams/{team_slug}/projects/{project_id}",
     "isDeprecated": false,
     "isLegacy": false,
     "description": "Adds an organization project to a team. To add a project to a team or update the team's permission on a project, the authenticated user must have `admin` permissions for the project. The project and team must be part of the same organization.\n\n**Note:** You can also specify a team by `org_id` and `team_id` using the route `PUT /organizations/:org_id/team/:team_id/projects/:project_id`.",
-    "documentationUrl": "https://developer.github.com/v3/teams/#add-or-update-team-project",
+    "documentationUrl": "https://developer.github.com/v3/teams/#add-or-update-team-project-permissions",
     "previews": [{ "name": "inertia" }],
     "headers": [
       {
@@ -11264,7 +11732,7 @@
         "description": "Response if the project is not owned by the organization",
         "examples": [
           {
-            "data": "{\"message\":\"Must have admin rights to Repository.\",\"documentation_url\":\"https://developer.github.com/v3/teams/#add-or-update-team-project\"}"
+            "data": "{\"message\":\"Must have admin rights to Repository.\",\"documentation_url\":\"https://developer.github.com/v3/teams/#add-or-update-team-project-permissions\"}"
           }
         ]
       }
@@ -11272,7 +11740,97 @@
     "renamed": null
   },
   {
-    "name": "Remove team project",
+    "name": "Add or update team project permissions",
+    "scope": "teams",
+    "id": "addOrUpdateProjectInOrg",
+    "method": "PUT",
+    "url": "/orgs/{org}/teams/{team_slug}/projects/{project_id}",
+    "isDeprecated": false,
+    "isLegacy": false,
+    "description": "Adds an organization project to a team. To add a project to a team or update the team's permission on a project, the authenticated user must have `admin` permissions for the project. The project and team must be part of the same organization.\n\n**Note:** You can also specify a team by `org_id` and `team_id` using the route `PUT /organizations/:org_id/team/:team_id/projects/:project_id`.",
+    "documentationUrl": "https://developer.github.com/v3/teams/#add-or-update-team-project-permissions",
+    "previews": [{ "name": "inertia" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.inertia-preview+json",
+        "required": true
+      }
+    ],
+    "parameters": [
+      {
+        "name": "org",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "team_slug",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "project_id",
+        "description": "",
+        "in": "PATH",
+        "type": "integer",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "permission",
+        "description": "The permission to grant to the team for this project. Can be one of:  \n\\* `read` - team members can read, but not write to or administer this project.  \n\\* `write` - team members can read and write, but not administer this project.  \n\\* `admin` - team members can read, write and administer this project.  \nDefault: the team's `permission` attribute will be used to determine what permission to grant the team on this project. Note that, if you choose not to pass any parameters, you'll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see \"[HTTP verbs](https://developer.github.com/v3/#http-verbs).\"",
+        "in": "BODY",
+        "type": "string",
+        "required": false,
+        "enum": ["read", "write", "admin"],
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      {
+        "code": 403,
+        "description": "Response if the project is not owned by the organization",
+        "examples": [
+          {
+            "data": "{\"message\":\"Must have admin rights to Repository.\",\"documentation_url\":\"https://developer.github.com/v3/teams/#add-or-update-team-project-permissions\"}"
+          }
+        ]
+      }
+    ],
+    "renamed": {
+      "before": { "scope": "teams", "id": "addOrUpdateProjectInOrg" },
+      "after": { "scope": "teams", "id": "addOrUpdateProjectPermissionsInOrg" },
+      "date": "2020-06-01",
+      "note": "\"teams/add-or-update-project-in-org\" operation ID is now \"teams/add-or-update-project-permissions-in-org\""
+    }
+  },
+  {
+    "name": "Remove a project from a team",
     "scope": "teams",
     "id": "removeProjectInOrg",
     "method": "DELETE",
@@ -11280,7 +11838,7 @@
     "isDeprecated": false,
     "isLegacy": false,
     "description": "Removes an organization project from a team. An organization owner or a team maintainer can remove any project from the team. To remove a project from a team as an organization member, the authenticated user must have `read` access to both the team and project, or `admin` access to the team or project. This endpoint removes the project from the team, but does not delete the project.\n\n**Note:** You can also specify a team by `org_id` and `team_id` using the route `DELETE /organizations/:org_id/team/:team_id/projects/:project_id`.",
-    "documentationUrl": "https://developer.github.com/v3/teams/#remove-team-project",
+    "documentationUrl": "https://developer.github.com/v3/teams/#remove-a-project-from-a-team",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -11328,7 +11886,7 @@
     "renamed": null
   },
   {
-    "name": "List team repos",
+    "name": "List team repositories",
     "scope": "teams",
     "id": "listReposInOrg",
     "method": "GET",
@@ -11336,7 +11894,7 @@
     "isDeprecated": false,
     "isLegacy": false,
     "description": "Lists a team's repositories visible to the authenticated user.\n\n**Note:** You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/:org_id/team/:team_id/repos`.",
-    "documentationUrl": "https://developer.github.com/v3/teams/#list-team-repos",
+    "documentationUrl": "https://developer.github.com/v3/teams/#list-team-repositories",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -11354,37 +11912,11 @@
         "deprecated": null
       },
       {
-        "name": "team_slug",
+        "name": "repo",
         "description": "",
         "in": "PATH",
         "type": "string",
         "required": true,
-        "enum": null,
-        "allowNull": false,
-        "mapToData": null,
-        "validation": null,
-        "alias": null,
-        "deprecated": null
-      },
-      {
-        "name": "per_page",
-        "description": "Results per page (max 100)",
-        "in": "QUERY",
-        "type": "integer",
-        "required": false,
-        "enum": null,
-        "allowNull": false,
-        "mapToData": null,
-        "validation": null,
-        "alias": null,
-        "deprecated": null
-      },
-      {
-        "name": "page",
-        "description": "Page number of the results to fetch.",
-        "in": "QUERY",
-        "type": "integer",
-        "required": false,
         "enum": null,
         "allowNull": false,
         "mapToData": null,
@@ -11396,26 +11928,31 @@
     "responses": [
       {
         "code": 200,
-        "description": "response",
+        "description": "Alternative response with repository permissions",
         "examples": [
           {
-            "data": "[{\"id\":1296269,\"node_id\":\"MDEwOlJlcG9zaXRvcnkxMjk2MjY5\",\"name\":\"Hello-World\",\"full_name\":\"octocat/Hello-World\",\"owner\":{\"login\":\"octocat\",\"id\":1,\"node_id\":\"MDQ6VXNlcjE=\",\"avatar_url\":\"https://github.com/images/error/octocat_happy.gif\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/octocat\",\"html_url\":\"https://github.com/octocat\",\"followers_url\":\"https://api.github.com/users/octocat/followers\",\"following_url\":\"https://api.github.com/users/octocat/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/octocat/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/octocat/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/octocat/subscriptions\",\"organizations_url\":\"https://api.github.com/users/octocat/orgs\",\"repos_url\":\"https://api.github.com/users/octocat/repos\",\"events_url\":\"https://api.github.com/users/octocat/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/octocat/received_events\",\"type\":\"User\",\"site_admin\":false},\"private\":false,\"html_url\":\"https://github.com/octocat/Hello-World\",\"description\":\"This your first repo!\",\"fork\":false,\"url\":\"https://api.github.com/repos/octocat/Hello-World\",\"archive_url\":\"http://api.github.com/repos/octocat/Hello-World/{archive_format}{/ref}\",\"assignees_url\":\"http://api.github.com/repos/octocat/Hello-World/assignees{/user}\",\"blobs_url\":\"http://api.github.com/repos/octocat/Hello-World/git/blobs{/sha}\",\"branches_url\":\"http://api.github.com/repos/octocat/Hello-World/branches{/branch}\",\"collaborators_url\":\"http://api.github.com/repos/octocat/Hello-World/collaborators{/collaborator}\",\"comments_url\":\"http://api.github.com/repos/octocat/Hello-World/comments{/number}\",\"commits_url\":\"http://api.github.com/repos/octocat/Hello-World/commits{/sha}\",\"compare_url\":\"http://api.github.com/repos/octocat/Hello-World/compare/{base}...{head}\",\"contents_url\":\"http://api.github.com/repos/octocat/Hello-World/contents/{+path}\",\"contributors_url\":\"http://api.github.com/repos/octocat/Hello-World/contributors\",\"deployments_url\":\"http://api.github.com/repos/octocat/Hello-World/deployments\",\"downloads_url\":\"http://api.github.com/repos/octocat/Hello-World/downloads\",\"events_url\":\"http://api.github.com/repos/octocat/Hello-World/events\",\"forks_url\":\"http://api.github.com/repos/octocat/Hello-World/forks\",\"git_commits_url\":\"http://api.github.com/repos/octocat/Hello-World/git/commits{/sha}\",\"git_refs_url\":\"http://api.github.com/repos/octocat/Hello-World/git/refs{/sha}\",\"git_tags_url\":\"http://api.github.com/repos/octocat/Hello-World/git/tags{/sha}\",\"git_url\":\"git:github.com/octocat/Hello-World.git\",\"issue_comment_url\":\"http://api.github.com/repos/octocat/Hello-World/issues/comments{/number}\",\"issue_events_url\":\"http://api.github.com/repos/octocat/Hello-World/issues/events{/number}\",\"issues_url\":\"http://api.github.com/repos/octocat/Hello-World/issues{/number}\",\"keys_url\":\"http://api.github.com/repos/octocat/Hello-World/keys{/key_id}\",\"labels_url\":\"http://api.github.com/repos/octocat/Hello-World/labels{/name}\",\"languages_url\":\"http://api.github.com/repos/octocat/Hello-World/languages\",\"merges_url\":\"http://api.github.com/repos/octocat/Hello-World/merges\",\"milestones_url\":\"http://api.github.com/repos/octocat/Hello-World/milestones{/number}\",\"notifications_url\":\"http://api.github.com/repos/octocat/Hello-World/notifications{?since,all,participating}\",\"pulls_url\":\"http://api.github.com/repos/octocat/Hello-World/pulls{/number}\",\"releases_url\":\"http://api.github.com/repos/octocat/Hello-World/releases{/id}\",\"ssh_url\":\"git@github.com:octocat/Hello-World.git\",\"stargazers_url\":\"http://api.github.com/repos/octocat/Hello-World/stargazers\",\"statuses_url\":\"http://api.github.com/repos/octocat/Hello-World/statuses/{sha}\",\"subscribers_url\":\"http://api.github.com/repos/octocat/Hello-World/subscribers\",\"subscription_url\":\"http://api.github.com/repos/octocat/Hello-World/subscription\",\"tags_url\":\"http://api.github.com/repos/octocat/Hello-World/tags\",\"teams_url\":\"http://api.github.com/repos/octocat/Hello-World/teams\",\"trees_url\":\"http://api.github.com/repos/octocat/Hello-World/git/trees{/sha}\",\"clone_url\":\"https://github.com/octocat/Hello-World.git\",\"mirror_url\":\"git:git.example.com/octocat/Hello-World\",\"hooks_url\":\"http://api.github.com/repos/octocat/Hello-World/hooks\",\"svn_url\":\"https://svn.github.com/octocat/Hello-World\",\"homepage\":\"https://github.com\",\"language\":null,\"forks_count\":9,\"stargazers_count\":80,\"watchers_count\":80,\"size\":108,\"default_branch\":\"master\",\"open_issues_count\":0,\"is_template\":true,\"topics\":[\"octocat\",\"atom\",\"electron\",\"api\"],\"has_issues\":true,\"has_projects\":true,\"has_wiki\":true,\"has_pages\":false,\"has_downloads\":true,\"archived\":false,\"disabled\":false,\"visibility\":\"public\",\"pushed_at\":\"2011-01-26T19:06:43Z\",\"created_at\":\"2011-01-26T19:01:12Z\",\"updated_at\":\"2011-01-26T19:14:43Z\",\"permissions\":{\"admin\":false,\"push\":false,\"pull\":true},\"template_repository\":null,\"temp_clone_token\":\"ABTLWHOULUVAXGTRYU7OC2876QJ2O\",\"subscribers_count\":42,\"network_count\":0,\"license\":{\"key\":\"mit\",\"name\":\"MIT License\",\"spdx_id\":\"MIT\",\"url\":\"https://api.github.com/licenses/mit\",\"node_id\":\"MDc6TGljZW5zZW1pdA==\"}}]"
+            "data": "{\"organization\":{\"login\":\"octocat\",\"id\":1,\"node_id\":\"MDQ6VXNlcjE=\",\"avatar_url\":\"https://github.com/images/error/octocat_happy.gif\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/octocat\",\"html_url\":\"https://github.com/octocat\",\"followers_url\":\"https://api.github.com/users/octocat/followers\",\"following_url\":\"https://api.github.com/users/octocat/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/octocat/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/octocat/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/octocat/subscriptions\",\"organizations_url\":\"https://api.github.com/users/octocat/orgs\",\"repos_url\":\"https://api.github.com/users/octocat/repos\",\"events_url\":\"https://api.github.com/users/octocat/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/octocat/received_events\",\"type\":\"Organization\",\"site_admin\":false},\"parent\":{\"id\":1296269,\"node_id\":\"MDEwOlJlcG9zaXRvcnkxMjk2MjY5\",\"name\":\"Hello-World\",\"full_name\":\"octocat/Hello-World\",\"owner\":{\"login\":\"octocat\",\"id\":1,\"node_id\":\"MDQ6VXNlcjE=\",\"avatar_url\":\"https://github.com/images/error/octocat_happy.gif\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/octocat\",\"html_url\":\"https://github.com/octocat\",\"followers_url\":\"https://api.github.com/users/octocat/followers\",\"following_url\":\"https://api.github.com/users/octocat/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/octocat/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/octocat/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/octocat/subscriptions\",\"organizations_url\":\"https://api.github.com/users/octocat/orgs\",\"repos_url\":\"https://api.github.com/users/octocat/repos\",\"events_url\":\"https://api.github.com/users/octocat/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/octocat/received_events\",\"type\":\"User\",\"site_admin\":false},\"private\":false,\"html_url\":\"https://github.com/octocat/Hello-World\",\"description\":\"This your first repo!\",\"fork\":false,\"url\":\"https://api.github.com/repos/octocat/Hello-World\",\"archive_url\":\"http://api.github.com/repos/octocat/Hello-World/{archive_format}{/ref}\",\"assignees_url\":\"http://api.github.com/repos/octocat/Hello-World/assignees{/user}\",\"blobs_url\":\"http://api.github.com/repos/octocat/Hello-World/git/blobs{/sha}\",\"branches_url\":\"http://api.github.com/repos/octocat/Hello-World/branches{/branch}\",\"collaborators_url\":\"http://api.github.com/repos/octocat/Hello-World/collaborators{/collaborator}\",\"comments_url\":\"http://api.github.com/repos/octocat/Hello-World/comments{/number}\",\"commits_url\":\"http://api.github.com/repos/octocat/Hello-World/commits{/sha}\",\"compare_url\":\"http://api.github.com/repos/octocat/Hello-World/compare/{base}...{head}\",\"contents_url\":\"http://api.github.com/repos/octocat/Hello-World/contents/{+path}\",\"contributors_url\":\"http://api.github.com/repos/octocat/Hello-World/contributors\",\"deployments_url\":\"http://api.github.com/repos/octocat/Hello-World/deployments\",\"downloads_url\":\"http://api.github.com/repos/octocat/Hello-World/downloads\",\"events_url\":\"http://api.github.com/repos/octocat/Hello-World/events\",\"forks_url\":\"http://api.github.com/repos/octocat/Hello-World/forks\",\"git_commits_url\":\"http://api.github.com/repos/octocat/Hello-World/git/commits{/sha}\",\"git_refs_url\":\"http://api.github.com/repos/octocat/Hello-World/git/refs{/sha}\",\"git_tags_url\":\"http://api.github.com/repos/octocat/Hello-World/git/tags{/sha}\",\"git_url\":\"git:github.com/octocat/Hello-World.git\",\"issue_comment_url\":\"http://api.github.com/repos/octocat/Hello-World/issues/comments{/number}\",\"issue_events_url\":\"http://api.github.com/repos/octocat/Hello-World/issues/events{/number}\",\"issues_url\":\"http://api.github.com/repos/octocat/Hello-World/issues{/number}\",\"keys_url\":\"http://api.github.com/repos/octocat/Hello-World/keys{/key_id}\",\"labels_url\":\"http://api.github.com/repos/octocat/Hello-World/labels{/name}\",\"languages_url\":\"http://api.github.com/repos/octocat/Hello-World/languages\",\"merges_url\":\"http://api.github.com/repos/octocat/Hello-World/merges\",\"milestones_url\":\"http://api.github.com/repos/octocat/Hello-World/milestones{/number}\",\"notifications_url\":\"http://api.github.com/repos/octocat/Hello-World/notifications{?since,all,participating}\",\"pulls_url\":\"http://api.github.com/repos/octocat/Hello-World/pulls{/number}\",\"releases_url\":\"http://api.github.com/repos/octocat/Hello-World/releases{/id}\",\"ssh_url\":\"git@github.com:octocat/Hello-World.git\",\"stargazers_url\":\"http://api.github.com/repos/octocat/Hello-World/stargazers\",\"statuses_url\":\"http://api.github.com/repos/octocat/Hello-World/statuses/{sha}\",\"subscribers_url\":\"http://api.github.com/repos/octocat/Hello-World/subscribers\",\"subscription_url\":\"http://api.github.com/repos/octocat/Hello-World/subscription\",\"tags_url\":\"http://api.github.com/repos/octocat/Hello-World/tags\",\"teams_url\":\"http://api.github.com/repos/octocat/Hello-World/teams\",\"trees_url\":\"http://api.github.com/repos/octocat/Hello-World/git/trees{/sha}\",\"clone_url\":\"https://github.com/octocat/Hello-World.git\",\"mirror_url\":\"git:git.example.com/octocat/Hello-World\",\"hooks_url\":\"http://api.github.com/repos/octocat/Hello-World/hooks\",\"svn_url\":\"https://svn.github.com/octocat/Hello-World\",\"homepage\":\"https://github.com\",\"language\":null,\"forks_count\":9,\"stargazers_count\":80,\"watchers_count\":80,\"size\":108,\"default_branch\":\"master\",\"open_issues_count\":0,\"is_template\":true,\"topics\":[\"octocat\",\"atom\",\"electron\",\"api\"],\"has_issues\":true,\"has_projects\":true,\"has_wiki\":true,\"has_pages\":false,\"has_downloads\":true,\"archived\":false,\"disabled\":false,\"visibility\":\"public\",\"pushed_at\":\"2011-01-26T19:06:43Z\",\"created_at\":\"2011-01-26T19:01:12Z\",\"updated_at\":\"2011-01-26T19:14:43Z\",\"permissions\":{\"admin\":false,\"push\":false,\"pull\":true},\"allow_rebase_merge\":true,\"template_repository\":null,\"temp_clone_token\":\"ABTLWHOULUVAXGTRYU7OC2876QJ2O\",\"allow_squash_merge\":true,\"allow_merge_commit\":true,\"subscribers_count\":42,\"network_count\":0},\"source\":{\"id\":1296269,\"node_id\":\"MDEwOlJlcG9zaXRvcnkxMjk2MjY5\",\"name\":\"Hello-World\",\"full_name\":\"octocat/Hello-World\",\"owner\":{\"login\":\"octocat\",\"id\":1,\"node_id\":\"MDQ6VXNlcjE=\",\"avatar_url\":\"https://github.com/images/error/octocat_happy.gif\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/octocat\",\"html_url\":\"https://github.com/octocat\",\"followers_url\":\"https://api.github.com/users/octocat/followers\",\"following_url\":\"https://api.github.com/users/octocat/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/octocat/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/octocat/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/octocat/subscriptions\",\"organizations_url\":\"https://api.github.com/users/octocat/orgs\",\"repos_url\":\"https://api.github.com/users/octocat/repos\",\"events_url\":\"https://api.github.com/users/octocat/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/octocat/received_events\",\"type\":\"User\",\"site_admin\":false},\"private\":false,\"html_url\":\"https://github.com/octocat/Hello-World\",\"description\":\"This your first repo!\",\"fork\":false,\"url\":\"https://api.github.com/repos/octocat/Hello-World\",\"archive_url\":\"http://api.github.com/repos/octocat/Hello-World/{archive_format}{/ref}\",\"assignees_url\":\"http://api.github.com/repos/octocat/Hello-World/assignees{/user}\",\"blobs_url\":\"http://api.github.com/repos/octocat/Hello-World/git/blobs{/sha}\",\"branches_url\":\"http://api.github.com/repos/octocat/Hello-World/branches{/branch}\",\"collaborators_url\":\"http://api.github.com/repos/octocat/Hello-World/collaborators{/collaborator}\",\"comments_url\":\"http://api.github.com/repos/octocat/Hello-World/comments{/number}\",\"commits_url\":\"http://api.github.com/repos/octocat/Hello-World/commits{/sha}\",\"compare_url\":\"http://api.github.com/repos/octocat/Hello-World/compare/{base}...{head}\",\"contents_url\":\"http://api.github.com/repos/octocat/Hello-World/contents/{+path}\",\"contributors_url\":\"http://api.github.com/repos/octocat/Hello-World/contributors\",\"deployments_url\":\"http://api.github.com/repos/octocat/Hello-World/deployments\",\"downloads_url\":\"http://api.github.com/repos/octocat/Hello-World/downloads\",\"events_url\":\"http://api.github.com/repos/octocat/Hello-World/events\",\"forks_url\":\"http://api.github.com/repos/octocat/Hello-World/forks\",\"git_commits_url\":\"http://api.github.com/repos/octocat/Hello-World/git/commits{/sha}\",\"git_refs_url\":\"http://api.github.com/repos/octocat/Hello-World/git/refs{/sha}\",\"git_tags_url\":\"http://api.github.com/repos/octocat/Hello-World/git/tags{/sha}\",\"git_url\":\"git:github.com/octocat/Hello-World.git\",\"issue_comment_url\":\"http://api.github.com/repos/octocat/Hello-World/issues/comments{/number}\",\"issue_events_url\":\"http://api.github.com/repos/octocat/Hello-World/issues/events{/number}\",\"issues_url\":\"http://api.github.com/repos/octocat/Hello-World/issues{/number}\",\"keys_url\":\"http://api.github.com/repos/octocat/Hello-World/keys{/key_id}\",\"labels_url\":\"http://api.github.com/repos/octocat/Hello-World/labels{/name}\",\"languages_url\":\"http://api.github.com/repos/octocat/Hello-World/languages\",\"merges_url\":\"http://api.github.com/repos/octocat/Hello-World/merges\",\"milestones_url\":\"http://api.github.com/repos/octocat/Hello-World/milestones{/number}\",\"notifications_url\":\"http://api.github.com/repos/octocat/Hello-World/notifications{?since,all,participating}\",\"pulls_url\":\"http://api.github.com/repos/octocat/Hello-World/pulls{/number}\",\"releases_url\":\"http://api.github.com/repos/octocat/Hello-World/releases{/id}\",\"ssh_url\":\"git@github.com:octocat/Hello-World.git\",\"stargazers_url\":\"http://api.github.com/repos/octocat/Hello-World/stargazers\",\"statuses_url\":\"http://api.github.com/repos/octocat/Hello-World/statuses/{sha}\",\"subscribers_url\":\"http://api.github.com/repos/octocat/Hello-World/subscribers\",\"subscription_url\":\"http://api.github.com/repos/octocat/Hello-World/subscription\",\"tags_url\":\"http://api.github.com/repos/octocat/Hello-World/tags\",\"teams_url\":\"http://api.github.com/repos/octocat/Hello-World/teams\",\"trees_url\":\"http://api.github.com/repos/octocat/Hello-World/git/trees{/sha}\",\"clone_url\":\"https://github.com/octocat/Hello-World.git\",\"mirror_url\":\"git:git.example.com/octocat/Hello-World\",\"hooks_url\":\"http://api.github.com/repos/octocat/Hello-World/hooks\",\"svn_url\":\"https://svn.github.com/octocat/Hello-World\",\"homepage\":\"https://github.com\",\"language\":null,\"forks_count\":9,\"stargazers_count\":80,\"watchers_count\":80,\"size\":108,\"default_branch\":\"master\",\"open_issues_count\":0,\"is_template\":true,\"topics\":[\"octocat\",\"atom\",\"electron\",\"api\"],\"has_issues\":true,\"has_projects\":true,\"has_wiki\":true,\"has_pages\":false,\"has_downloads\":true,\"archived\":false,\"disabled\":false,\"visibility\":\"public\",\"pushed_at\":\"2011-01-26T19:06:43Z\",\"created_at\":\"2011-01-26T19:01:12Z\",\"updated_at\":\"2011-01-26T19:14:43Z\",\"permissions\":{\"admin\":false,\"push\":false,\"pull\":true},\"allow_rebase_merge\":true,\"template_repository\":null,\"temp_clone_token\":\"ABTLWHOULUVAXGTRYU7OC2876QJ2O\",\"allow_squash_merge\":true,\"allow_merge_commit\":true,\"subscribers_count\":42,\"network_count\":0},\"permissions\":{\"pull\":true,\"triage\":true,\"push\":false,\"maintain\":false,\"admin\":false}}"
           }
         ]
       }
     ],
-    "renamed": null
+    "renamed": {
+      "before": { "scope": "teams", "id": "checkManagesRepoInOrg" },
+      "after": { "scope": "teams", "id": "checkPermissionsForRepoInOrg" },
+      "date": "2020-06-01",
+      "note": "\"teams/check-manages-repo-in-org\" operation ID is now \"teams/check-permissions-for-repo-in-org\""
+    }
   },
   {
-    "name": "Check if a team manages a repository",
+    "name": "Check team permissions for a repository",
     "scope": "teams",
-    "id": "checkManagesRepoInOrg",
+    "id": "checkPermissionsForRepoInOrg",
     "method": "GET",
     "url": "/orgs/{org}/teams/{team_slug}/repos/{owner}/{repo}",
     "isDeprecated": false,
     "isLegacy": false,
     "description": "Checks whether a team has `admin`, `push`, `maintain`, `triage`, or `pull` permission for a repository. Repositories inherited through a parent team will also be checked.\n\n**Note:** You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/:org_id/team/:team_id/repos/:owner/:repo`.\n\nYou can also get information about the specified repository, including what permissions the team grants on it, by passing the following custom [media type](https://developer.github.com/v3/media/) via the `Accept` header:",
-    "documentationUrl": "https://developer.github.com/v3/teams/#check-if-a-team-manages-a-repository",
+    "documentationUrl": "https://developer.github.com/v3/teams/#check-team-permissions-for-a-repository",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -11486,15 +12023,101 @@
     "renamed": null
   },
   {
-    "name": "Add or update team repository",
+    "name": "Check team permissions for a repository",
     "scope": "teams",
-    "id": "addOrUpdateRepoInOrg",
+    "id": "addOrUpdateRepoPermissionsInOrg",
+    "method": "PUT",
+    "url": "/orgs/{org}/teams/{team_slug}/repos/{owner}/{repo}",
+    "isDeprecated": false,
+    "isLegacy": false,
+    "description": "Checks whether a team has `admin`, `push`, `maintain`, `triage`, or `pull` permission for a repository. Repositories inherited through a parent team will also be checked.\n\n**Note:** You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/:org_id/team/:team_id/repos/:owner/:repo`.\n\nYou can also get information about the specified repository, including what permissions the team grants on it, by passing the following custom [media type](https://developer.github.com/v3/media/) via the `Accept` header:",
+    "documentationUrl": "https://developer.github.com/v3/teams/#check-team-permissions-for-a-repository",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "org",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "team_slug",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "owner",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "repo",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "permission",
+        "description": "The permission to grant the team on this repository. Can be one of:  \n\\* `pull` - team members can pull, but not push to or administer this repository.  \n\\* `push` - team members can pull and push, but not administer this repository.  \n\\* `admin` - team members can pull, push and administer this repository.  \n\\* `maintain` - team members can manage the repository without access to sensitive or destructive actions. Recommended for project managers. Only applies to repositories owned by organizations.  \n\\* `triage` - team members can proactively manage issues and pull requests without write access. Recommended for contributors who triage a repository. Only applies to repositories owned by organizations.  \n  \nIf no permission is specified, the team's `permission` attribute will be used to determine what permission to grant the team on this repository.",
+        "in": "BODY",
+        "type": "string",
+        "required": false,
+        "enum": ["pull", "push", "admin", "maintain", "triage"],
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "renamed": {
+      "before": { "scope": "teams", "id": "checkManagesRepoInOrg" },
+      "after": { "scope": "teams", "id": "checkPermissionsForRepoInOrg" },
+      "date": "2020-06-01",
+      "note": "\"teams/check-manages-repo-in-org\" operation ID is now \"teams/check-permissions-for-repo-in-org\""
+    }
+  },
+  {
+    "name": "Add or update team repository permissions",
+    "scope": "teams",
+    "id": "addOrUpdateRepoPermissionsInOrg",
     "method": "PUT",
     "url": "/orgs/{org}/teams/{team_slug}/repos/{owner}/{repo}",
     "isDeprecated": false,
     "isLegacy": false,
     "description": "To add a repository to a team or update the team's permission on a repository, the authenticated user must have admin access to the repository, and must be able to see the team. The repository must be owned by the organization, or a direct fork of a repository owned by the organization. You will get a `422 Unprocessable Entity` status if you attempt to add a repository to a team that is not owned by the organization. Note that, if you choose not to pass any parameters, you'll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see \"[HTTP verbs](https://developer.github.com/v3/#http-verbs).\"\n\n**Note:** You can also specify a team by `org_id` and `team_id` using the route `PUT /organizations/:org_id/team/:team_id/repos/:owner/:repo`.\n\nFor more information about the permission levels, see \"[Repository permission levels for an organization](https://help.github.com/en/github/setting-up-and-managing-organizations-and-teams/repository-permission-levels-for-an-organization#permission-levels-for-repositories-owned-by-an-organization)\" in the GitHub Help documentation.",
-    "documentationUrl": "https://developer.github.com/v3/teams/#add-or-update-team-repository",
+    "documentationUrl": "https://developer.github.com/v3/teams/#add-or-update-team-repository-permissions",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -11568,7 +12191,94 @@
     "renamed": null
   },
   {
-    "name": "Remove team repository",
+    "name": "Add or update team repository permissions",
+    "scope": "teams",
+    "id": "addOrUpdateRepoInOrg",
+    "method": "PUT",
+    "url": "/orgs/{org}/teams/{team_slug}/repos/{owner}/{repo}",
+    "isDeprecated": false,
+    "isLegacy": false,
+    "description": "To add a repository to a team or update the team's permission on a repository, the authenticated user must have admin access to the repository, and must be able to see the team. The repository must be owned by the organization, or a direct fork of a repository owned by the organization. You will get a `422 Unprocessable Entity` status if you attempt to add a repository to a team that is not owned by the organization. Note that, if you choose not to pass any parameters, you'll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see \"[HTTP verbs](https://developer.github.com/v3/#http-verbs).\"\n\n**Note:** You can also specify a team by `org_id` and `team_id` using the route `PUT /organizations/:org_id/team/:team_id/repos/:owner/:repo`.\n\nFor more information about the permission levels, see \"[Repository permission levels for an organization](https://help.github.com/en/github/setting-up-and-managing-organizations-and-teams/repository-permission-levels-for-an-organization#permission-levels-for-repositories-owned-by-an-organization)\" in the GitHub Help documentation.",
+    "documentationUrl": "https://developer.github.com/v3/teams/#add-or-update-team-repository-permissions",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "org",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "team_slug",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "owner",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "repo",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "permission",
+        "description": "The permission to grant the team on this repository. Can be one of:  \n\\* `pull` - team members can pull, but not push to or administer this repository.  \n\\* `push` - team members can pull and push, but not administer this repository.  \n\\* `admin` - team members can pull, push and administer this repository.  \n\\* `maintain` - team members can manage the repository without access to sensitive or destructive actions. Recommended for project managers. Only applies to repositories owned by organizations.  \n\\* `triage` - team members can proactively manage issues and pull requests without write access. Recommended for contributors who triage a repository. Only applies to repositories owned by organizations.  \n  \nIf no permission is specified, the team's `permission` attribute will be used to determine what permission to grant the team on this repository.",
+        "in": "BODY",
+        "type": "string",
+        "required": false,
+        "enum": ["pull", "push", "admin", "maintain", "triage"],
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [],
+    "renamed": {
+      "before": { "scope": "teams", "id": "addOrUpdateRepoInOrg" },
+      "after": { "scope": "teams", "id": "addOrUpdateRepoPermissionsInOrg" },
+      "date": "2020-06-01",
+      "note": "\"teams/add-or-update-repo-in-org\" operation ID is now \"teams/add-or-update-repo-permissions-in-org\""
+    }
+  },
+  {
+    "name": "Remove a repository from a team",
     "scope": "teams",
     "id": "removeRepoInOrg",
     "method": "DELETE",
@@ -11576,7 +12286,7 @@
     "isDeprecated": false,
     "isLegacy": false,
     "description": "If the authenticated user is an organization owner or a team maintainer, they can remove any repositories from the team. To remove a repository from a team as an organization member, the authenticated user must have admin access to the repository and must be able to see the team. This does not delete the repository, it just removes it from the team.\n\n**Note:** You can also specify a team by `org_id` and `team_id` using the route `DELETE /organizations/:org_id/team/:team_id/repos/:owner/:repo`.",
-    "documentationUrl": "https://developer.github.com/v3/teams/#remove-team-repository",
+    "documentationUrl": "https://developer.github.com/v3/teams/#remove-a-repository-from-a-team",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -12410,7 +13120,7 @@
       },
       {
         "name": "organization_permission",
-        "description": "The permission level that determines whether all members of the project's organization can see and/or make changes to the project. Setting `organization_permission` is only available for organization projects. If an organization member belongs to a team with a higher level of access or is a collaborator with a higher level of access, their permission level is not lowered by `organization_permission`. For information on changing access for a team or collaborator, see [Add or update team project](https://developer.github.com/v3/teams/#add-or-update-team-project) or [Add user as a collaborator](https://developer.github.com/v3/projects/collaborators/#add-user-as-a-collaborator).  \n  \n**Note:** Updating a project's `organization_permission` requires `admin` access to the project.  \n  \nCan be one of:  \n\\* `read` - Organization members can read, but not write to or administer this project.  \n\\* `write` - Organization members can read and write, but not administer this project.  \n\\* `admin` - Organization members can read, write and administer this project.  \n\\* `none` - Organization members can only see this project if it is public.",
+        "description": "The permission level that determines whether all members of the project's organization can see and/or make changes to the project. Setting `organization_permission` is only available for organization projects. If an organization member belongs to a team with a higher level of access or is a collaborator with a higher level of access, their permission level is not lowered by `organization_permission`. For information on changing access for a team or collaborator, see [Add or update team project permissions](https://developer.github.com/v3/teams/#add-or-update-team-project-permissions) or [Add user as a collaborator](https://developer.github.com/v3/projects/collaborators/#add-user-as-a-collaborator).  \n  \n**Note:** Updating a project's `organization_permission` requires `admin` access to the project.  \n  \nCan be one of:  \n\\* `read` - Organization members can read, but not write to or administer this project.  \n\\* `write` - Organization members can read and write, but not administer this project.  \n\\* `admin` - Organization members can read, write and administer this project.  \n\\* `none` - Organization members can only see this project if it is public.",
         "in": "BODY",
         "type": "string",
         "required": false,
@@ -16407,15 +17117,15 @@
     "renamed": null
   },
   {
-    "name": "Check assignee",
+    "name": "Check if a user can be assigned",
     "scope": "issues",
-    "id": "checkAssignee",
+    "id": "checkUserCanBeAssigned",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/assignees/{assignee}",
     "isDeprecated": false,
     "isLegacy": false,
     "description": "Checks if a user has permission to be assigned to an issue in this repository.\n\nIf the `assignee` can be assigned to issues in the repository, a `204` header with no content is returned.\n\nOtherwise a `404` status code is returned.",
-    "documentationUrl": "https://developer.github.com/v3/issues/assignees/#check-assignee",
+    "documentationUrl": "https://developer.github.com/v3/issues/assignees/#check-if-a-user-can-be-assigned",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -16461,6 +17171,128 @@
     ],
     "responses": [],
     "renamed": null
+  },
+  {
+    "name": "Check if a user can be assigned",
+    "scope": "issues",
+    "id": "checkUserCanBeAssigned",
+    "method": "GET",
+    "url": "/repos/{owner}/{repo}/assignees/{assignee}",
+    "isDeprecated": false,
+    "isLegacy": false,
+    "description": "Checks if a user has permission to be assigned to an issue in this repository.\n\nIf the `assignee` can be assigned to issues in the repository, a `204` header with no content is returned.\n\nOtherwise a `404` status code is returned.",
+    "documentationUrl": "https://developer.github.com/v3/issues/assignees/#check-if-a-user-can-be-assigned",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "owner",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "repo",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "assignee",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [],
+    "renamed": {
+      "before": { "scope": "issues", "id": "checkAssignee" },
+      "after": { "scope": "issues", "id": "checkUserCanBeAssigned" },
+      "date": "2020-06-01",
+      "note": "\"issues/check-assignee\" operation ID is now \"issues/check-user-can-be-assigned\""
+    }
+  },
+  {
+    "name": "Check if a user can be assigned",
+    "scope": "issues",
+    "id": "checkAssignee",
+    "method": "GET",
+    "url": "/repos/{owner}/{repo}/assignees/{assignee}",
+    "isDeprecated": false,
+    "isLegacy": false,
+    "description": "Checks if a user has permission to be assigned to an issue in this repository.\n\nIf the `assignee` can be assigned to issues in the repository, a `204` header with no content is returned.\n\nOtherwise a `404` status code is returned.",
+    "documentationUrl": "https://developer.github.com/v3/issues/assignees/#check-if-a-user-can-be-assigned",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "owner",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "repo",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "assignee",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [],
+    "renamed": {
+      "before": { "scope": "issues", "id": "checkAssignee" },
+      "after": { "scope": "issues", "id": "checkUserCanBeAssigned" },
+      "date": "2020-06-01",
+      "note": "\"issues/check-assignee\" operation ID is now \"issues/check-user-can-be-assigned\""
+    }
   },
   {
     "name": "Enable automated security fixes",
@@ -25488,7 +26320,7 @@
     "renamed": null
   },
   {
-    "name": "Get a single reference",
+    "name": "Get a reference",
     "scope": "git",
     "id": "getRef",
     "method": "GET",
@@ -25496,7 +26328,7 @@
     "isDeprecated": false,
     "isLegacy": false,
     "description": "Returns a single reference from your Git database. The `:ref` in the URL must be formatted as `heads/<branch name>` for branches and `tags/<tag name>` for tags. If the `:ref` doesn't match an existing ref, a `404` is returned.\n\n**Note:** You need to explicitly [request a pull request](https://developer.github.com/v3/pulls/#get-a-single-pull-request) to trigger a test merge commit, which checks the mergeability of pull requests. For more information, see \"[Checking mergeability of pull requests](https://developer.github.com/v3/git/#checking-mergeability-of-pull-requests)\".\n\nTo get the reference for a branch named `skunkworkz/featureA`, the endpoint route is:",
-    "documentationUrl": "https://developer.github.com/v3/git/refs/#get-a-single-reference",
+    "documentationUrl": "https://developer.github.com/v3/git/refs/#get-a-reference",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -26155,14 +26987,14 @@
     "url": "/repos/{owner}/{repo}/git/trees/{tree_sha}",
     "isDeprecated": false,
     "isLegacy": false,
-    "description": "Returns a single tree using the SHA1 value for that tree.\n\nIf `truncated` is `true` in the response then the number of items in the `tree` array exceeded our maximum limit. If you need to fetch more items, you can clone the repository and iterate over the Git data locally.",
+    "description": "Returns a single tree using the SHA1 value for that tree.\n\nIf `truncated` is `true` in the response then the number of items in the `tree` array exceeded our maximum limit. If you need to fetch more items, use the non-recursive method of fetching trees, and fetch one sub-tree at a time.",
     "documentationUrl": "https://developer.github.com/v3/git/trees/#get-a-tree",
     "previews": [],
     "headers": [],
     "parameters": [
       {
         "name": "owner",
-        "description": "owner parameter",
+        "description": "",
         "in": "PATH",
         "type": "string",
         "required": true,
@@ -26175,7 +27007,7 @@
       },
       {
         "name": "repo",
-        "description": "repo parameter",
+        "description": "",
         "in": "PATH",
         "type": "string",
         "required": true,
@@ -26188,7 +27020,7 @@
       },
       {
         "name": "tree_sha",
-        "description": "tree_sha parameter",
+        "description": "",
         "in": "PATH",
         "type": "string",
         "required": true,
@@ -26201,11 +27033,11 @@
       },
       {
         "name": "recursive",
-        "description": "recursive parameter",
+        "description": "Setting this parameter to any value returns the objects or subtrees referenced by the tree specified in `:tree_sha`. For example, setting `recursive` to any of the following will enable returning objects or subtrees: `0`, `1`, `\"true\"`, and `\"false\"`. Omit this parameter to prevent recursively returning objects or subtrees.",
         "in": "QUERY",
-        "type": "integer",
+        "type": "string",
         "required": false,
-        "enum": ["1"],
+        "enum": null,
         "allowNull": false,
         "mapToData": null,
         "validation": null,
@@ -26216,10 +27048,13 @@
     "responses": [
       {
         "code": 200,
-        "description": "If `truncated` is `true` in the response then the number of items in the `tree` array exceeded our maximum limit. If you need to fetch more items, you can clone the repository and iterate over the Git data locally.",
+        "description": "response",
         "examples": [
           {
             "data": "{\"sha\":\"9fb037999f264ba9a7fc6274d15fa3ae2ab98312\",\"url\":\"https://api.github.com/repos/octocat/Hello-World/trees/9fb037999f264ba9a7fc6274d15fa3ae2ab98312\",\"tree\":[{\"path\":\"file.rb\",\"mode\":\"100644\",\"type\":\"blob\",\"size\":30,\"sha\":\"44b4fc6d56897b048c772eb4087f854f46256132\",\"url\":\"https://api.github.com/repos/octocat/Hello-World/git/blobs/44b4fc6d56897b048c772eb4087f854f46256132\"},{\"path\":\"subdir\",\"mode\":\"040000\",\"type\":\"tree\",\"sha\":\"f484d249c660418515fb01c2b9662073663c242e\",\"url\":\"https://api.github.com/repos/octocat/Hello-World/git/blobs/f484d249c660418515fb01c2b9662073663c242e\"},{\"path\":\"exec_file\",\"mode\":\"100755\",\"type\":\"blob\",\"size\":75,\"sha\":\"45b983be36b73c0788dc9cbcb76cbb80fc7bb057\",\"url\":\"https://api.github.com/repos/octocat/Hello-World/git/blobs/45b983be36b73c0788dc9cbcb76cbb80fc7bb057\"}],\"truncated\":false}"
+          },
+          {
+            "data": "{\"sha\":\"fc6274d15fa3ae2ab983129fb037999f264ba9a7\",\"url\":\"https://api.github.com/repos/octocat/Hello-World/trees/fc6274d15fa3ae2ab983129fb037999f264ba9a7\",\"tree\":[{\"path\":\"subdir/file.txt\",\"mode\":\"100644\",\"type\":\"blob\",\"size\":132,\"sha\":\"7c258a9869f33c1e1e1f74fbb32f07c86cb5a75b\",\"url\":\"https://api.github.com/repos/octocat/Hello-World/git/7c258a9869f33c1e1e1f74fbb32f07c86cb5a75b\"}],\"truncated\":false}"
           }
         ]
       }
@@ -26998,15 +27833,15 @@
     "renamed": null
   },
   {
-    "name": "Get import progress",
+    "name": "Get an import status",
     "scope": "migrations",
-    "id": "getImportProgress",
+    "id": "getImportStatus",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/import",
     "isDeprecated": false,
     "isLegacy": false,
-    "description": "View the progress of an import.\n\n**Import status**\n\nThis section includes details about the possible values of the `status` field of the Import Progress response.\n\nAn import that does not have errors will progress through these steps:\n\n*   `detecting` - the \"detection\" step of the import is in progress because the request did not include a `vcs` parameter. The import is identifying the type of source control present at the URL.\n*   `importing` - the \"raw\" step of the import is in progress. This is where commit data is fetched from the original repository. The import progress response will include `commit_count` (the total number of raw commits that will be imported) and `percent` (0 - 100, the current progress through the import).\n*   `mapping` - the \"rewrite\" step of the import is in progress. This is where SVN branches are converted to Git branches, and where author updates are applied. The import progress response does not include progress information.\n*   `pushing` - the \"push\" step of the import is in progress. This is where the importer updates the repository on GitHub. The import progress response will include `push_percent`, which is the percent value reported by `git push` when it is \"Writing objects\".\n*   `complete` - the import is complete, and the repository is ready on GitHub.\n\nIf there are problems, you will see one of these in the `status` field:\n\n*   `auth_failed` - the import requires authentication in order to connect to the original repository. To update authentication for the import, please see the [Update Existing Import](https://developer.github.com/v3/migrations/source_imports/#update-existing-import) section.\n*   `error` - the import encountered an error. The import progress response will include the `failed_step` and an error message. Contact [GitHub Support](https://github.com/contact) or [GitHub Premium Support](https://premium.githubsupport.com) for more information.\n*   `detection_needs_auth` - the importer requires authentication for the originating repository to continue detection. To update authentication for the import, please see the [Update Existing Import](https://developer.github.com/v3/migrations/source_imports/#update-existing-import) section.\n*   `detection_found_nothing` - the importer didn't recognize any source control at the URL. To resolve, [Cancel the import](https://developer.github.com/v3/migrations/source_imports/#cancel-an-import) and [retry](https://developer.github.com/v3/migrations/source_imports/#start-an-import) with the correct URL.\n*   `detection_found_multiple` - the importer found several projects or repositories at the provided URL. When this is the case, the Import Progress response will also include a `project_choices` field with the possible project choices as values. To update project choice, please see the [Update Existing Import](https://developer.github.com/v3/migrations/source_imports/#update-existing-import) section.\n\n**The project_choices field**\n\nWhen multiple projects are found at the provided URL, the response hash will include a `project_choices` field, the value of which is an array of hashes each representing a project choice. The exact key/value pairs of the project hashes will differ depending on the version control type.\n\n**Git LFS related fields**\n\nThis section includes details about Git LFS related fields that may be present in the Import Progress response.\n\n*   `use_lfs` - describes whether the import has been opted in or out of using Git LFS. The value can be `opt_in`, `opt_out`, or `undecided` if no action has been taken.\n*   `has_large_files` - the boolean value describing whether files larger than 100MB were found during the `importing` step.\n*   `large_files_size` - the total size in gigabytes of files larger than 100MB found in the originating repository.\n*   `large_files_count` - the total number of files larger than 100MB found in the originating repository. To see a list of these files, make a \"Get Large Files\" request.",
-    "documentationUrl": "https://developer.github.com/v3/migrations/source_imports/#get-import-progress",
+    "description": "View the progress of an import.\n\n**Import status**\n\nThis section includes details about the possible values of the `status` field of the Import Progress response.\n\nAn import that does not have errors will progress through these steps:\n\n*   `detecting` - the \"detection\" step of the import is in progress because the request did not include a `vcs` parameter. The import is identifying the type of source control present at the URL.\n*   `importing` - the \"raw\" step of the import is in progress. This is where commit data is fetched from the original repository. The import progress response will include `commit_count` (the total number of raw commits that will be imported) and `percent` (0 - 100, the current progress through the import).\n*   `mapping` - the \"rewrite\" step of the import is in progress. This is where SVN branches are converted to Git branches, and where author updates are applied. The import progress response does not include progress information.\n*   `pushing` - the \"push\" step of the import is in progress. This is where the importer updates the repository on GitHub. The import progress response will include `push_percent`, which is the percent value reported by `git push` when it is \"Writing objects\".\n*   `complete` - the import is complete, and the repository is ready on GitHub.\n\nIf there are problems, you will see one of these in the `status` field:\n\n*   `auth_failed` - the import requires authentication in order to connect to the original repository. To update authentication for the import, please see the [Update an import](https://developer.github.com/v3/migrations/source_imports/#update-an-import) section.\n*   `error` - the import encountered an error. The import progress response will include the `failed_step` and an error message. Contact [GitHub Support](https://github.com/contact) or [GitHub Premium Support](https://premium.githubsupport.com) for more information.\n*   `detection_needs_auth` - the importer requires authentication for the originating repository to continue detection. To update authentication for the import, please see the [Update an import](https://developer.github.com/v3/migrations/source_imports/#update-an-import) section.\n*   `detection_found_nothing` - the importer didn't recognize any source control at the URL. To resolve, [Cancel the import](https://developer.github.com/v3/migrations/source_imports/#cancel-an-import) and [retry](https://developer.github.com/v3/migrations/source_imports/#start-an-import) with the correct URL.\n*   `detection_found_multiple` - the importer found several projects or repositories at the provided URL. When this is the case, the Import Progress response will also include a `project_choices` field with the possible project choices as values. To update project choice, please see the [Update an import](https://developer.github.com/v3/migrations/source_imports/#update-an-import) section.\n\n**The project_choices field**\n\nWhen multiple projects are found at the provided URL, the response hash will include a `project_choices` field, the value of which is an array of hashes each representing a project choice. The exact key/value pairs of the project hashes will differ depending on the version control type.\n\n**Git LFS related fields**\n\nThis section includes details about Git LFS related fields that may be present in the Import Progress response.\n\n*   `use_lfs` - describes whether the import has been opted in or out of using Git LFS. The value can be `opt_in`, `opt_out`, or `undecided` if no action has been taken.\n*   `has_large_files` - the boolean value describing whether files larger than 100MB were found during the `importing` step.\n*   `large_files_size` - the total size in gigabytes of files larger than 100MB found in the originating repository.\n*   `large_files_count` - the total number of files larger than 100MB found in the originating repository. To see a list of these files, make a \"Get Large Files\" request.",
+    "documentationUrl": "https://developer.github.com/v3/migrations/source_imports/#get-an-import-status",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -27051,7 +27886,65 @@
     "renamed": null
   },
   {
-    "name": "Update existing import",
+    "name": "Get an import status",
+    "scope": "migrations",
+    "id": "getImportProgress",
+    "method": "GET",
+    "url": "/repos/{owner}/{repo}/import",
+    "isDeprecated": false,
+    "isLegacy": false,
+    "description": "View the progress of an import.\n\n**Import status**\n\nThis section includes details about the possible values of the `status` field of the Import Progress response.\n\nAn import that does not have errors will progress through these steps:\n\n*   `detecting` - the \"detection\" step of the import is in progress because the request did not include a `vcs` parameter. The import is identifying the type of source control present at the URL.\n*   `importing` - the \"raw\" step of the import is in progress. This is where commit data is fetched from the original repository. The import progress response will include `commit_count` (the total number of raw commits that will be imported) and `percent` (0 - 100, the current progress through the import).\n*   `mapping` - the \"rewrite\" step of the import is in progress. This is where SVN branches are converted to Git branches, and where author updates are applied. The import progress response does not include progress information.\n*   `pushing` - the \"push\" step of the import is in progress. This is where the importer updates the repository on GitHub. The import progress response will include `push_percent`, which is the percent value reported by `git push` when it is \"Writing objects\".\n*   `complete` - the import is complete, and the repository is ready on GitHub.\n\nIf there are problems, you will see one of these in the `status` field:\n\n*   `auth_failed` - the import requires authentication in order to connect to the original repository. To update authentication for the import, please see the [Update an import](https://developer.github.com/v3/migrations/source_imports/#update-an-import) section.\n*   `error` - the import encountered an error. The import progress response will include the `failed_step` and an error message. Contact [GitHub Support](https://github.com/contact) or [GitHub Premium Support](https://premium.githubsupport.com) for more information.\n*   `detection_needs_auth` - the importer requires authentication for the originating repository to continue detection. To update authentication for the import, please see the [Update an import](https://developer.github.com/v3/migrations/source_imports/#update-an-import) section.\n*   `detection_found_nothing` - the importer didn't recognize any source control at the URL. To resolve, [Cancel the import](https://developer.github.com/v3/migrations/source_imports/#cancel-an-import) and [retry](https://developer.github.com/v3/migrations/source_imports/#start-an-import) with the correct URL.\n*   `detection_found_multiple` - the importer found several projects or repositories at the provided URL. When this is the case, the Import Progress response will also include a `project_choices` field with the possible project choices as values. To update project choice, please see the [Update an import](https://developer.github.com/v3/migrations/source_imports/#update-an-import) section.\n\n**The project_choices field**\n\nWhen multiple projects are found at the provided URL, the response hash will include a `project_choices` field, the value of which is an array of hashes each representing a project choice. The exact key/value pairs of the project hashes will differ depending on the version control type.\n\n**Git LFS related fields**\n\nThis section includes details about Git LFS related fields that may be present in the Import Progress response.\n\n*   `use_lfs` - describes whether the import has been opted in or out of using Git LFS. The value can be `opt_in`, `opt_out`, or `undecided` if no action has been taken.\n*   `has_large_files` - the boolean value describing whether files larger than 100MB were found during the `importing` step.\n*   `large_files_size` - the total size in gigabytes of files larger than 100MB found in the originating repository.\n*   `large_files_count` - the total number of files larger than 100MB found in the originating repository. To see a list of these files, make a \"Get Large Files\" request.",
+    "documentationUrl": "https://developer.github.com/v3/migrations/source_imports/#get-an-import-status",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "owner",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "repo",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "examples": [
+          {
+            "data": "{\"vcs\":\"subversion\",\"use_lfs\":\"opt_in\",\"vcs_url\":\"http://svn.mycompany.com/svn/myproject\",\"status\":\"complete\",\"status_text\":\"Done\",\"has_large_files\":true,\"large_files_size\":132331036,\"large_files_count\":1,\"authors_count\":4,\"url\":\"https://api.github.com/repos/octocat/socm/import\",\"html_url\":\"https://import.github.com/octocat/socm/import\",\"authors_url\":\"https://api.github.com/repos/octocat/socm/import/authors\",\"repository_url\":\"https://api.github.com/repos/octocat/socm\"}"
+          }
+        ]
+      }
+    ],
+    "renamed": {
+      "before": { "scope": "migrations", "id": "getImportProgress" },
+      "after": { "scope": "migrations", "id": "getImportStatus" },
+      "date": "2020-06-01",
+      "note": "\"migrations/get-import-progress\" operation ID is now \"migrations/get-import-status\""
+    }
+  },
+  {
+    "name": "Update an import",
     "scope": "migrations",
     "id": "updateImport",
     "method": "PATCH",
@@ -27059,7 +27952,7 @@
     "isDeprecated": false,
     "isLegacy": false,
     "description": "An import can be updated with credentials or a project choice by passing in the appropriate parameters in this API request. If no parameters are provided, the import will be restarted.\n\nSome servers (e.g. TFS servers) can have several projects at a single URL. In those cases the import progress will have the status `detection_found_multiple` and the Import Progress response will include a `project_choices` array. You can select the project to import by providing one of the objects in the `project_choices` array in the update request.\n\nThe following example demonstrates the workflow for updating an import with \"project1\" as the project choice. Given a `project_choices` array like such:\n\nTo restart an import, no parameters are provided in the update request.",
-    "documentationUrl": "https://developer.github.com/v3/migrations/source_imports/#update-existing-import",
+    "documentationUrl": "https://developer.github.com/v3/migrations/source_imports/#update-an-import",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -27186,7 +28079,7 @@
     "url": "/repos/{owner}/{repo}/import/authors",
     "isDeprecated": false,
     "isLegacy": false,
-    "description": "Each type of source control system represents authors in a different way. For example, a Git commit author has a display name and an email address, but a Subversion commit author just has a username. The GitHub Importer will make the author information valid, but the author might not be correct. For example, it will change the bare Subversion username `hubot` into something like `hubot <hubot@12341234-abab-fefe-8787-fedcba987654>`.\n\nThis API method and the \"Map a commit author\" method allow you to provide correct Git author information.",
+    "description": "Each type of source control system represents authors in a different way. For example, a Git commit author has a display name and an email address, but a Subversion commit author just has a username. The GitHub Importer will make the author information valid, but the author might not be correct. For example, it will change the bare Subversion username `hubot` into something like `hubot <hubot@12341234-abab-fefe-8787-fedcba987654>`.\n\nThis endpoint and the [Map a commit author](https://developer.github.com/v3/migrations/source_imports/#map-a-commit-author) endpoint allow you to provide correct Git author information.",
     "documentationUrl": "https://developer.github.com/v3/migrations/source_imports/#get-commit-authors",
     "previews": [],
     "headers": [],
@@ -27390,7 +28283,7 @@
     "renamed": null
   },
   {
-    "name": "Set Git LFS preference",
+    "name": "Update Git LFS preference",
     "scope": "migrations",
     "id": "setLfsPreference",
     "method": "PATCH",
@@ -27398,7 +28291,7 @@
     "isDeprecated": false,
     "isLegacy": false,
     "description": "You can import repositories from Subversion, Mercurial, and TFS that include files larger than 100MB. This ability is powered by [Git LFS](https://git-lfs.github.com). You can learn more about our LFS feature and working with large files [on our help site](https://help.github.com/articles/versioning-large-files/).",
-    "documentationUrl": "https://developer.github.com/v3/migrations/source_imports/#set-git-lfs-preference",
+    "documentationUrl": "https://developer.github.com/v3/migrations/source_imports/#update-git-lfs-preference",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -28236,7 +29129,7 @@
     "renamed": null
   },
   {
-    "name": "List comments in a repository",
+    "name": "List issue comments for a repository",
     "scope": "issues",
     "id": "listCommentsForRepo",
     "method": "GET",
@@ -28244,7 +29137,7 @@
     "isDeprecated": false,
     "isLegacy": false,
     "description": "By default, Issue Comments are ordered by ascending ID.",
-    "documentationUrl": "https://developer.github.com/v3/issues/comments/#list-comments-in-a-repository",
+    "documentationUrl": "https://developer.github.com/v3/issues/comments/#list-issue-comments-for-a-repository",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -28354,7 +29247,7 @@
     "renamed": null
   },
   {
-    "name": "Get a single comment",
+    "name": "Get an issue comment",
     "scope": "issues",
     "id": "getComment",
     "method": "GET",
@@ -28362,7 +29255,7 @@
     "isDeprecated": false,
     "isLegacy": false,
     "description": "",
-    "documentationUrl": "https://developer.github.com/v3/issues/comments/#get-a-single-comment",
+    "documentationUrl": "https://developer.github.com/v3/issues/comments/#get-an-issue-comment",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -28420,7 +29313,7 @@
     "renamed": null
   },
   {
-    "name": "Edit a comment",
+    "name": "Update an issue comment",
     "scope": "issues",
     "id": "updateComment",
     "method": "PATCH",
@@ -28428,7 +29321,7 @@
     "isDeprecated": false,
     "isLegacy": false,
     "description": "",
-    "documentationUrl": "https://developer.github.com/v3/issues/comments/#edit-a-comment",
+    "documentationUrl": "https://developer.github.com/v3/issues/comments/#update-an-issue-comment",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -28499,7 +29392,7 @@
     "renamed": null
   },
   {
-    "name": "Delete a comment",
+    "name": "Delete an issue comment",
     "scope": "issues",
     "id": "deleteComment",
     "method": "DELETE",
@@ -28507,7 +29400,7 @@
     "isDeprecated": false,
     "isLegacy": false,
     "description": "",
-    "documentationUrl": "https://developer.github.com/v3/issues/comments/#delete-a-comment",
+    "documentationUrl": "https://developer.github.com/v3/issues/comments/#delete-an-issue-comment",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -28844,7 +29737,7 @@
     "renamed": null
   },
   {
-    "name": "List events for a repository",
+    "name": "List issue events for a repository",
     "scope": "issues",
     "id": "listEventsForRepo",
     "method": "GET",
@@ -28852,7 +29745,7 @@
     "isDeprecated": false,
     "isLegacy": false,
     "description": "",
-    "documentationUrl": "https://developer.github.com/v3/issues/events/#list-events-for-a-repository",
+    "documentationUrl": "https://developer.github.com/v3/issues/events/#list-issue-events-for-a-repository",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -28923,7 +29816,7 @@
     "renamed": null
   },
   {
-    "name": "Get a single event",
+    "name": "Get an issue event",
     "scope": "issues",
     "id": "getEvent",
     "method": "GET",
@@ -28931,7 +29824,7 @@
     "isDeprecated": false,
     "isLegacy": false,
     "description": "",
-    "documentationUrl": "https://developer.github.com/v3/issues/events/#get-a-single-event",
+    "documentationUrl": "https://developer.github.com/v3/issues/events/#get-an-issue-event",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -29370,7 +30263,7 @@
     "renamed": null
   },
   {
-    "name": "List comments on an issue",
+    "name": "List issue comments",
     "scope": "issues",
     "id": "listComments",
     "method": "GET",
@@ -29378,7 +30271,7 @@
     "isDeprecated": false,
     "isLegacy": false,
     "description": "Issue Comments are ordered by ascending ID.",
-    "documentationUrl": "https://developer.github.com/v3/issues/comments/#list-comments-on-an-issue",
+    "documentationUrl": "https://developer.github.com/v3/issues/comments/#list-issue-comments",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -29475,7 +30368,7 @@
     "renamed": null
   },
   {
-    "name": "Create a comment",
+    "name": "Create an issue comment",
     "scope": "issues",
     "id": "createComment",
     "method": "POST",
@@ -29483,7 +30376,7 @@
     "isDeprecated": false,
     "isLegacy": false,
     "description": "This endpoint triggers [notifications](https://help.github.com/articles/about-notifications/). Creating content too quickly using this endpoint may result in abuse rate limiting. See \"[Abuse rate limits](https://developer.github.com/v3/#abuse-rate-limits)\" and \"[Dealing with abuse rate limits](https://developer.github.com/v3/guides/best-practices-for-integrators/#dealing-with-abuse-rate-limits)\" for details.",
-    "documentationUrl": "https://developer.github.com/v3/issues/comments/#create-a-comment",
+    "documentationUrl": "https://developer.github.com/v3/issues/comments/#create-an-issue-comment",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -29554,7 +30447,7 @@
     "renamed": null
   },
   {
-    "name": "List events for an issue",
+    "name": "List issue events",
     "scope": "issues",
     "id": "listEvents",
     "method": "GET",
@@ -29562,7 +30455,7 @@
     "isDeprecated": false,
     "isLegacy": false,
     "description": "",
-    "documentationUrl": "https://developer.github.com/v3/issues/events/#list-events-for-an-issue",
+    "documentationUrl": "https://developer.github.com/v3/issues/events/#list-issue-events",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -29646,7 +30539,7 @@
     "renamed": null
   },
   {
-    "name": "List labels on an issue",
+    "name": "List labels for an issue",
     "scope": "issues",
     "id": "listLabelsOnIssue",
     "method": "GET",
@@ -29654,7 +30547,7 @@
     "isDeprecated": false,
     "isLegacy": false,
     "description": "",
-    "documentationUrl": "https://developer.github.com/v3/issues/labels/#list-labels-on-an-issue",
+    "documentationUrl": "https://developer.github.com/v3/issues/labels/#list-labels-for-an-issue",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -29817,15 +30710,15 @@
     "renamed": null
   },
   {
-    "name": "Replace all labels for an issue",
+    "name": "Set labels for an issue",
     "scope": "issues",
-    "id": "replaceAllLabels",
+    "id": "setLabels",
     "method": "PUT",
     "url": "/repos/{owner}/{repo}/issues/{issue_number}/labels",
     "isDeprecated": false,
     "isLegacy": false,
-    "description": "",
-    "documentationUrl": "https://developer.github.com/v3/issues/labels/#replace-all-labels-for-an-issue",
+    "description": "Removes any previous labels and sets the new labels for an issue.",
+    "documentationUrl": "https://developer.github.com/v3/issues/labels/#set-labels-for-an-issue",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -29896,15 +30789,15 @@
     "renamed": null
   },
   {
-    "name": "Replace all labels for an issue",
+    "name": "Set labels for an issue",
     "scope": "issues",
     "id": "replaceLabels",
     "method": "PUT",
     "url": "/repos/{owner}/{repo}/issues/{issue_number}/labels",
     "isDeprecated": false,
     "isLegacy": false,
-    "description": "",
-    "documentationUrl": "https://developer.github.com/v3/issues/labels/#replace-all-labels-for-an-issue",
+    "description": "Removes any previous labels and sets the new labels for an issue.",
+    "documentationUrl": "https://developer.github.com/v3/issues/labels/#set-labels-for-an-issue",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -30590,7 +31483,7 @@
     "renamed": null
   },
   {
-    "name": "List events for an issue",
+    "name": "List timeline events for an issue",
     "scope": "issues",
     "id": "listEventsForTimeline",
     "method": "GET",
@@ -30598,7 +31491,7 @@
     "isDeprecated": false,
     "isLegacy": false,
     "description": "",
-    "documentationUrl": "https://developer.github.com/v3/issues/timeline/#list-events-for-an-issue",
+    "documentationUrl": "https://developer.github.com/v3/issues/timeline/#list-timeline-events-for-an-issue",
     "previews": [{ "name": "mockingbird" }],
     "headers": [
       {
@@ -30981,7 +31874,7 @@
     "renamed": null
   },
   {
-    "name": "List all labels for this repository",
+    "name": "List labels for a repository",
     "scope": "issues",
     "id": "listLabelsForRepo",
     "method": "GET",
@@ -30989,7 +31882,7 @@
     "isDeprecated": false,
     "isLegacy": false,
     "description": "",
-    "documentationUrl": "https://developer.github.com/v3/issues/labels/#list-all-labels-for-this-repository",
+    "documentationUrl": "https://developer.github.com/v3/issues/labels/#list-labels-for-a-repository",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -31152,7 +32045,7 @@
     "renamed": null
   },
   {
-    "name": "Get a single label",
+    "name": "Get a label",
     "scope": "issues",
     "id": "getLabel",
     "method": "GET",
@@ -31160,7 +32053,7 @@
     "isDeprecated": false,
     "isLegacy": false,
     "description": "",
-    "documentationUrl": "https://developer.github.com/v3/issues/labels/#get-a-single-label",
+    "documentationUrl": "https://developer.github.com/v3/issues/labels/#get-a-label",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -31586,15 +32479,15 @@
     "renamed": null
   },
   {
-    "name": "List milestones for a repository",
+    "name": "List milestones",
     "scope": "issues",
-    "id": "listMilestonesForRepo",
+    "id": "listMilestones",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/milestones",
     "isDeprecated": false,
     "isLegacy": false,
     "description": "",
-    "documentationUrl": "https://developer.github.com/v3/issues/milestones/#list-milestones-for-a-repository",
+    "documentationUrl": "https://developer.github.com/v3/issues/milestones/#list-milestones",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -31704,6 +32597,129 @@
     "renamed": null
   },
   {
+    "name": "List milestones",
+    "scope": "issues",
+    "id": "listMilestonesForRepo",
+    "method": "GET",
+    "url": "/repos/{owner}/{repo}/milestones",
+    "isDeprecated": false,
+    "isLegacy": false,
+    "description": "",
+    "documentationUrl": "https://developer.github.com/v3/issues/milestones/#list-milestones",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "owner",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "repo",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "state",
+        "description": "The state of the milestone. Either `open`, `closed`, or `all`.",
+        "in": "QUERY",
+        "type": "string",
+        "required": false,
+        "enum": ["open", "closed", "all"],
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "sort",
+        "description": "What to sort results by. Either `due_on` or `completeness`.",
+        "in": "QUERY",
+        "type": "string",
+        "required": false,
+        "enum": ["due_on", "completeness"],
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "direction",
+        "description": "The direction of the sort. Either `asc` or `desc`.",
+        "in": "QUERY",
+        "type": "string",
+        "required": false,
+        "enum": ["asc", "desc"],
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "per_page",
+        "description": "Results per page (max 100)",
+        "in": "QUERY",
+        "type": "integer",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "page",
+        "description": "Page number of the results to fetch.",
+        "in": "QUERY",
+        "type": "integer",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "examples": [
+          {
+            "data": "[{\"url\":\"https://api.github.com/repos/octocat/Hello-World/milestones/1\",\"html_url\":\"https://github.com/octocat/Hello-World/milestones/v1.0\",\"labels_url\":\"https://api.github.com/repos/octocat/Hello-World/milestones/1/labels\",\"id\":1002604,\"node_id\":\"MDk6TWlsZXN0b25lMTAwMjYwNA==\",\"number\":1,\"state\":\"open\",\"title\":\"v1.0\",\"description\":\"Tracking milestone for version 1.0\",\"creator\":{\"login\":\"octocat\",\"id\":1,\"node_id\":\"MDQ6VXNlcjE=\",\"avatar_url\":\"https://github.com/images/error/octocat_happy.gif\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/octocat\",\"html_url\":\"https://github.com/octocat\",\"followers_url\":\"https://api.github.com/users/octocat/followers\",\"following_url\":\"https://api.github.com/users/octocat/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/octocat/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/octocat/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/octocat/subscriptions\",\"organizations_url\":\"https://api.github.com/users/octocat/orgs\",\"repos_url\":\"https://api.github.com/users/octocat/repos\",\"events_url\":\"https://api.github.com/users/octocat/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/octocat/received_events\",\"type\":\"User\",\"site_admin\":false},\"open_issues\":4,\"closed_issues\":8,\"created_at\":\"2011-04-10T20:09:31Z\",\"updated_at\":\"2014-03-03T18:58:10Z\",\"closed_at\":\"2013-02-12T13:22:01Z\",\"due_on\":\"2012-10-09T23:39:01Z\"}]"
+          }
+        ]
+      }
+    ],
+    "renamed": {
+      "before": { "scope": "issues", "id": "listMilestonesForRepo" },
+      "after": { "scope": "issues", "id": "listMilestones" },
+      "date": "2020-06-01",
+      "note": "\"issues/list-milestones-for-repo\" operation ID is now \"issues/list-milestones\""
+    }
+  },
+  {
     "name": "Create a milestone",
     "scope": "issues",
     "id": "createMilestone",
@@ -31809,7 +32825,7 @@
     "renamed": null
   },
   {
-    "name": "Get a single milestone",
+    "name": "Get a milestone",
     "scope": "issues",
     "id": "getMilestone",
     "method": "GET",
@@ -31817,7 +32833,7 @@
     "isDeprecated": false,
     "isLegacy": false,
     "description": "",
-    "documentationUrl": "https://developer.github.com/v3/issues/milestones/#get-a-single-milestone",
+    "documentationUrl": "https://developer.github.com/v3/issues/milestones/#get-a-milestone",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -32049,7 +33065,7 @@
     "renamed": null
   },
   {
-    "name": "Get labels for every issue in a milestone",
+    "name": "List labels for issues in a milestone",
     "scope": "issues",
     "id": "listLabelsForMilestone",
     "method": "GET",
@@ -32057,7 +33073,7 @@
     "isDeprecated": false,
     "isLegacy": false,
     "description": "",
-    "documentationUrl": "https://developer.github.com/v3/issues/labels/#get-labels-for-every-issue-in-a-milestone",
+    "documentationUrl": "https://developer.github.com/v3/issues/labels/#list-labels-for-issues-in-a-milestone",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -34449,7 +35465,7 @@
     "url": "/repos/{owner}/{repo}/pulls/{pull_number}/comments",
     "isDeprecated": false,
     "isLegacy": false,
-    "description": "**Note:** Multi-line comments on pull requests are currently in public beta and subject to change.\n\nCreates a review comment in the pull request diff. To add a regular comment to a pull request timeline, see \"[Comments](https://developer.github.com/v3/issues/comments/#create-a-comment).\" We recommend creating a review comment using `line`, `side`, and optionally `start_line` and `start_side` if your comment applies to more than one line in the pull request diff.\n\nYou can still create a review comment using the `position` parameter. When you use `position`, the `line`, `side`, `start_line`, and `start_side` parameters are not required. For more information, see [Multi-line comment summary](https://developer.github.com/v3/pulls/comments/#multi-line-comment-summary-3).\n\n**Note:** The position value equals the number of lines down from the first \"@@\" hunk header in the file you want to add a comment. The line just below the \"@@\" line is position 1, the next line is position 2, and so on. The position in the diff continues to increase through lines of whitespace and additional hunks until the beginning of a new file.\n\nThis endpoint triggers [notifications](https://help.github.com/articles/about-notifications/). Creating content too quickly using this endpoint may result in abuse rate limiting. See \"[Abuse rate limits](https://developer.github.com/v3/#abuse-rate-limits)\" and \"[Dealing with abuse rate limits](https://developer.github.com/v3/guides/best-practices-for-integrators/#dealing-with-abuse-rate-limits)\" for details.\n\n**Multi-line comment summary**\n\n**Note:** New parameters and response fields are available for developers to preview. During the preview period, these response fields may change without advance notice. Please see the [blog post](https://developer.github.com/changes/2019-10-03-multi-line-comments) for full details.\n\nUse the `comfort-fade` preview header and the `line` parameter to show multi-line comment-supported fields in the response.\n\nIf you use the `comfort-fade` preview header, your response will show:\n\n*   For multi-line comments, values for `start_line`, `original_start_line`, `start_side`, `line`, `original_line`, and `side`.\n*   For single-line comments, values for `line`, `original_line`, and `side` and a `null` value for `start_line`, `original_start_line`, and `start_side`.\n\nIf you don't use the `comfort-fade` preview header, multi-line and single-line comments will appear the same way in the response with a single `position` attribute. Your response will show:\n\n*   For multi-line comments, the last line of the comment range for the `position` attribute.\n*   For single-line comments, the diff-positioned way of referencing comments for the `position` attribute. For more information, see `position` in the [input parameters](https://developer.github.com/v3/pulls/comments/#parameters-2) table.",
+    "description": "**Note:** Multi-line comments on pull requests are currently in public beta and subject to change.\n\nCreates a review comment in the pull request diff. To add a regular comment to a pull request timeline, see \"[Create an issue comment](https://developer.github.com/v3/issues/comments/#create-an-issue-comment).\" We recommend creating a review comment using `line`, `side`, and optionally `start_line` and `start_side` if your comment applies to more than one line in the pull request diff.\n\nYou can still create a review comment using the `position` parameter. When you use `position`, the `line`, `side`, `start_line`, and `start_side` parameters are not required. For more information, see [Multi-line comment summary](https://developer.github.com/v3/pulls/comments/#multi-line-comment-summary-3).\n\n**Note:** The position value equals the number of lines down from the first \"@@\" hunk header in the file you want to add a comment. The line just below the \"@@\" line is position 1, the next line is position 2, and so on. The position in the diff continues to increase through lines of whitespace and additional hunks until the beginning of a new file.\n\nThis endpoint triggers [notifications](https://help.github.com/articles/about-notifications/). Creating content too quickly using this endpoint may result in abuse rate limiting. See \"[Abuse rate limits](https://developer.github.com/v3/#abuse-rate-limits)\" and \"[Dealing with abuse rate limits](https://developer.github.com/v3/guides/best-practices-for-integrators/#dealing-with-abuse-rate-limits)\" for details.\n\n**Multi-line comment summary**\n\n**Note:** New parameters and response fields are available for developers to preview. During the preview period, these response fields may change without advance notice. Please see the [blog post](https://developer.github.com/changes/2019-10-03-multi-line-comments) for full details.\n\nUse the `comfort-fade` preview header and the `line` parameter to show multi-line comment-supported fields in the response.\n\nIf you use the `comfort-fade` preview header, your response will show:\n\n*   For multi-line comments, values for `start_line`, `original_start_line`, `start_side`, `line`, `original_line`, and `side`.\n*   For single-line comments, values for `line`, `original_line`, and `side` and a `null` value for `start_line`, `original_start_line`, and `start_side`.\n\nIf you don't use the `comfort-fade` preview header, multi-line and single-line comments will appear the same way in the response with a single `position` attribute. Your response will show:\n\n*   For multi-line comments, the last line of the comment range for the `position` attribute.\n*   For single-line comments, the diff-positioned way of referencing comments for the `position` attribute. For more information, see `position` in the [input parameters](https://developer.github.com/v3/pulls/comments/#parameters-2) table.",
     "documentationUrl": "https://developer.github.com/v3/pulls/comments/#create-a-comment",
     "previews": [],
     "headers": [],
@@ -39747,7 +40763,7 @@
     "url": "/teams/{team_id}",
     "isDeprecated": true,
     "isLegacy": true,
-    "description": "**Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the [`Get team by name`](https://developer.github.com/v3/teams/#get-team-by-name) endpoint.",
+    "description": "**Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the [Get a team by name](https://developer.github.com/v3/teams/#get-a-team-by-name) endpoint.",
     "documentationUrl": "https://developer.github.com/v3/teams/#get-team-legacy",
     "previews": [],
     "headers": [],
@@ -39787,7 +40803,7 @@
     "url": "/teams/{team_id}",
     "isDeprecated": true,
     "isLegacy": true,
-    "description": "**Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [`Edit team`](https://developer.github.com/v3/teams/#edit-team) endpoint.\n\nTo edit a team, the authenticated user must either be an organization owner or a team maintainer.\n\n**Note:** With nested teams, the `privacy` for parent teams cannot be `secret`.",
+    "description": "**Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [Update a team](https://developer.github.com/v3/teams/#update-a-team) endpoint.\n\nTo edit a team, the authenticated user must either be an organization owner or a team maintainer.\n\n**Note:** With nested teams, the `privacy` for parent teams cannot be `secret`.",
     "documentationUrl": "https://developer.github.com/v3/teams/#edit-team-legacy",
     "previews": [],
     "headers": [],
@@ -39892,7 +40908,7 @@
     "url": "/teams/{team_id}",
     "isDeprecated": true,
     "isLegacy": true,
-    "description": "**Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [`Delete team`](https://developer.github.com/v3/teams/#delete-team) endpoint.\n\nTo delete a team, the authenticated user must be an organization owner or team maintainer.\n\nIf you are an organization owner, deleting a parent team will delete all of its child teams as well.",
+    "description": "**Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [Delete a team](https://developer.github.com/v3/teams/#delete-a-team) endpoint.\n\nTo delete a team, the authenticated user must be an organization owner or team maintainer.\n\nIf you are an organization owner, deleting a parent team will delete all of its child teams as well.",
     "documentationUrl": "https://developer.github.com/v3/teams/#delete-team-legacy",
     "previews": [],
     "headers": [],
@@ -40080,7 +41096,7 @@
     "url": "/teams/{team_id}/discussions/{discussion_number}",
     "isDeprecated": true,
     "isLegacy": true,
-    "description": "**Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [`Get a single discussion`](https://developer.github.com/v3/teams/discussions/#get-a-single-discussion) endpoint.\n\nGet a specific discussion on a team's page. OAuth access tokens require the `read:discussion` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).",
+    "description": "**Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [Get a discussion](https://developer.github.com/v3/teams/discussions/#get-a-discussion) endpoint.\n\nGet a specific discussion on a team's page. OAuth access tokens require the `read:discussion` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).",
     "documentationUrl": "https://developer.github.com/v3/teams/discussions/#get-a-single-discussion-legacy",
     "previews": [],
     "headers": [],
@@ -40133,7 +41149,7 @@
     "url": "/teams/{team_id}/discussions/{discussion_number}",
     "isDeprecated": true,
     "isLegacy": true,
-    "description": "**Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [`Edit a discussion`](https://developer.github.com/v3/teams/discussions/#edit-a-discussion) endpoint.\n\nEdits the title and body text of a discussion post. Only the parameters you provide are updated. OAuth access tokens require the `write:discussion` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).",
+    "description": "**Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [Update a discussion](https://developer.github.com/v3/teams/discussions/#update-a-discussion) endpoint.\n\nEdits the title and body text of a discussion post. Only the parameters you provide are updated. OAuth access tokens require the `write:discussion` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).",
     "documentationUrl": "https://developer.github.com/v3/teams/discussions/#edit-a-discussion-legacy",
     "previews": [],
     "headers": [],
@@ -40255,7 +41271,7 @@
     "url": "/teams/{team_id}/discussions/{discussion_number}/comments",
     "isDeprecated": true,
     "isLegacy": true,
-    "description": "**Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [`List comments`](https://developer.github.com/v3/teams/discussion_comments/#list-comments) endpoint.\n\nList all comments on a team discussion. OAuth access tokens require the `read:discussion` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).",
+    "description": "**Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [List discussion comments](https://developer.github.com/v3/teams/discussion_comments/#list-discussion-comments) endpoint.\n\nList all comments on a team discussion. OAuth access tokens require the `read:discussion` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).",
     "documentationUrl": "https://developer.github.com/v3/teams/discussion_comments/#list-comments-legacy",
     "previews": [],
     "headers": [],
@@ -40347,7 +41363,7 @@
     "url": "/teams/{team_id}/discussions/{discussion_number}/comments",
     "isDeprecated": true,
     "isLegacy": true,
-    "description": "**Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [`Create a comment`](https://developer.github.com/v3/teams/discussion_comments/#create-a-comment) endpoint.\n\nCreates a new comment on a team discussion. OAuth access tokens require the `write:discussion` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).\n\nThis endpoint triggers [notifications](https://help.github.com/articles/about-notifications/). Creating content too quickly using this endpoint may result in abuse rate limiting. See \"[Abuse rate limits](https://developer.github.com/v3/#abuse-rate-limits)\" and \"[Dealing with abuse rate limits](https://developer.github.com/v3/guides/best-practices-for-integrators/#dealing-with-abuse-rate-limits)\" for details.",
+    "description": "**Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [Create a discussion comment](https://developer.github.com/v3/teams/discussion_comments/#create-a-discussion-comment) endpoint.\n\nCreates a new comment on a team discussion. OAuth access tokens require the `write:discussion` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).\n\nThis endpoint triggers [notifications](https://help.github.com/articles/about-notifications/). Creating content too quickly using this endpoint may result in abuse rate limiting. See \"[Abuse rate limits](https://developer.github.com/v3/#abuse-rate-limits)\" and \"[Dealing with abuse rate limits](https://developer.github.com/v3/guides/best-practices-for-integrators/#dealing-with-abuse-rate-limits)\" for details.",
     "documentationUrl": "https://developer.github.com/v3/teams/discussion_comments/#create-a-comment-legacy",
     "previews": [],
     "headers": [],
@@ -40413,7 +41429,7 @@
     "url": "/teams/{team_id}/discussions/{discussion_number}/comments/{comment_number}",
     "isDeprecated": true,
     "isLegacy": true,
-    "description": "**Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [`Get a single comment`](https://developer.github.com/v3/teams/discussion_comments/#get-a-single-comment) endpoint.\n\nGet a specific comment on a team discussion. OAuth access tokens require the `read:discussion` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).",
+    "description": "**Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [Get a discussion comment](https://developer.github.com/v3/teams/discussion_comments/#get-a-discussion-comment) endpoint.\n\nGet a specific comment on a team discussion. OAuth access tokens require the `read:discussion` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).",
     "documentationUrl": "https://developer.github.com/v3/teams/discussion_comments/#get-a-single-comment-legacy",
     "previews": [],
     "headers": [],
@@ -40479,7 +41495,7 @@
     "url": "/teams/{team_id}/discussions/{discussion_number}/comments/{comment_number}",
     "isDeprecated": true,
     "isLegacy": true,
-    "description": "**Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [`Edit a comment`](https://developer.github.com/v3/teams/discussion_comments/#edit-a-comment) endpoint.\n\nEdits the body text of a discussion comment. OAuth access tokens require the `write:discussion` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).",
+    "description": "**Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [Update a discussion comment](https://developer.github.com/v3/teams/discussion_comments/#update-a-discussion-comment) endpoint.\n\nEdits the body text of a discussion comment. OAuth access tokens require the `write:discussion` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).",
     "documentationUrl": "https://developer.github.com/v3/teams/discussion_comments/#edit-a-comment-legacy",
     "previews": [],
     "headers": [],
@@ -40558,7 +41574,7 @@
     "url": "/teams/{team_id}/discussions/{discussion_number}/comments/{comment_number}",
     "isDeprecated": true,
     "isLegacy": true,
-    "description": "**Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [`Delete a comment`](https://developer.github.com/v3/teams/discussion_comments/#delete-a-comment) endpoint.\n\nDeletes a comment on a team discussion. OAuth access tokens require the `write:discussion` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).",
+    "description": "**Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [Delete a discussion comment](https://developer.github.com/v3/teams/discussion_comments/#delete-a-discussion-comment) endpoint.\n\nDeletes a comment on a team discussion. OAuth access tokens require the `write:discussion` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).",
     "documentationUrl": "https://developer.github.com/v3/teams/discussion_comments/#delete-a-comment-legacy",
     "previews": [],
     "headers": [],
@@ -41161,7 +42177,7 @@
     "url": "/teams/{team_id}/members/{username}",
     "isDeprecated": true,
     "isLegacy": true,
-    "description": "The \"Get team member\" endpoint (described below) is deprecated.\n\nWe recommend using the [Get team membership](https://developer.github.com/v3/teams/members/#get-team-membership) endpoint instead. It allows you to get both active and pending memberships.\n\nTo list members in a team, the team must be visible to the authenticated user.",
+    "description": "The \"Get team member\" endpoint (described below) is deprecated.\n\nWe recommend using the [Get team membership for a user](https://developer.github.com/v3/teams/members/#get-team-membership-for-a-user) endpoint instead. It allows you to get both active and pending memberships.\n\nTo list members in a team, the team must be visible to the authenticated user.",
     "documentationUrl": "https://developer.github.com/v3/teams/members/#get-team-member-legacy",
     "previews": [],
     "headers": [],
@@ -41204,7 +42220,7 @@
     "url": "/teams/{team_id}/members/{username}",
     "isDeprecated": true,
     "isLegacy": true,
-    "description": "The \"Add team member\" endpoint (described below) is deprecated.\n\nWe recommend using the [Add team membership](https://developer.github.com/v3/teams/members/#add-or-update-team-membership) endpoint instead. It allows you to invite new organization members to your teams.\n\nTeam synchronization is available for organizations using GitHub Enterprise Cloud. For more information, see [GitHub's products](https://help.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.\n\nTo add someone to a team, the authenticated user must be an organization owner or a team maintainer in the team they're changing. The person being added to the team must be a member of the team's organization.\n\n**Note:** When you have team synchronization set up for a team with your organization's identity provider (IdP), you will see an error if you attempt to use the API for making changes to the team's membership. If you have access to manage group membership in your IdP, you can manage GitHub team membership through your identity provider, which automatically adds and removes team members in an organization. For more information, see \"[Synchronizing teams between your identity provider and GitHub](https://help.github.com/articles/synchronizing-teams-between-your-identity-provider-and-github/).\"\n\nNote that you'll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see \"[HTTP verbs](https://developer.github.com/v3/#http-verbs).\"",
+    "description": "The \"Add team member\" endpoint (described below) is deprecated.\n\nWe recommend using the [Add or update team membership for a user](https://developer.github.com/v3/teams/members/#add-or-update-team-membership-for-a-user) endpoint instead. It allows you to invite new organization members to your teams.\n\nTeam synchronization is available for organizations using GitHub Enterprise Cloud. For more information, see [GitHub's products](https://help.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.\n\nTo add someone to a team, the authenticated user must be an organization owner or a team maintainer in the team they're changing. The person being added to the team must be a member of the team's organization.\n\n**Note:** When you have team synchronization set up for a team with your organization's identity provider (IdP), you will see an error if you attempt to use the API for making changes to the team's membership. If you have access to manage group membership in your IdP, you can manage GitHub team membership through your identity provider, which automatically adds and removes team members in an organization. For more information, see \"[Synchronizing teams between your identity provider and GitHub](https://help.github.com/articles/synchronizing-teams-between-your-identity-provider-and-github/).\"\n\nNote that you'll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see \"[HTTP verbs](https://developer.github.com/v3/#http-verbs).\"",
     "documentationUrl": "https://developer.github.com/v3/teams/members/#add-team-member-legacy",
     "previews": [],
     "headers": [],
@@ -41260,7 +42276,7 @@
     "url": "/teams/{team_id}/members/{username}",
     "isDeprecated": true,
     "isLegacy": true,
-    "description": "The \"Remove team member\" endpoint (described below) is deprecated.\n\nWe recommend using the [Remove team membership](https://developer.github.com/v3/teams/members/#remove-team-membership) endpoint instead. It allows you to remove both active and pending memberships.\n\nTeam synchronization is available for organizations using GitHub Enterprise Cloud. For more information, see [GitHub's products](https://help.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.\n\nTo remove a team member, the authenticated user must have 'admin' permissions to the team or be an owner of the org that the team is associated with. Removing a team member does not delete the user, it just removes them from the team.\n\n**Note:** When you have team synchronization set up for a team with your organization's identity provider (IdP), you will see an error if you attempt to use the API for making changes to the team's membership. If you have access to manage group membership in your IdP, you can manage GitHub team membership through your identity provider, which automatically adds and removes team members in an organization. For more information, see \"[Synchronizing teams between your identity provider and GitHub](https://help.github.com/articles/synchronizing-teams-between-your-identity-provider-and-github/).\"",
+    "description": "The \"Remove team member\" endpoint (described below) is deprecated.\n\nWe recommend using the [Remove team membership for a user](https://developer.github.com/v3/teams/members/#remove-team-membership-for-a-user) endpoint instead. It allows you to remove both active and pending memberships.\n\nTeam synchronization is available for organizations using GitHub Enterprise Cloud. For more information, see [GitHub's products](https://help.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.\n\nTo remove a team member, the authenticated user must have 'admin' permissions to the team or be an owner of the org that the team is associated with. Removing a team member does not delete the user, it just removes them from the team.\n\n**Note:** When you have team synchronization set up for a team with your organization's identity provider (IdP), you will see an error if you attempt to use the API for making changes to the team's membership. If you have access to manage group membership in your IdP, you can manage GitHub team membership through your identity provider, which automatically adds and removes team members in an organization. For more information, see \"[Synchronizing teams between your identity provider and GitHub](https://help.github.com/articles/synchronizing-teams-between-your-identity-provider-and-github/).\"",
     "documentationUrl": "https://developer.github.com/v3/teams/members/#remove-team-member-legacy",
     "previews": [],
     "headers": [],
@@ -41303,7 +42319,7 @@
     "url": "/teams/{team_id}/memberships/{username}",
     "isDeprecated": true,
     "isLegacy": true,
-    "description": "**Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [`Get team membership`](https://developer.github.com/v3/teams/members/#get-team-membership) endpoint.\n\nTeam members will include the members of child teams.\n\nTo get a user's membership with a team, the team must be visible to the authenticated user.\n\n**Note:** The `role` for organization owners returns as `maintainer`. For more information about `maintainer` roles, see [Create team](https://developer.github.com/v3/teams#create-team).",
+    "description": "**Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [Get team membership for a user](https://developer.github.com/v3/teams/members/#get-team-membership-for-a-user) endpoint.\n\nTeam members will include the members of child teams.\n\nTo get a user's membership with a team, the team must be visible to the authenticated user.\n\n**Note:** The `role` for organization owners returns as `maintainer`. For more information about `maintainer` roles, see [Create a team](https://developer.github.com/v3/teams/#create-a-team).",
     "documentationUrl": "https://developer.github.com/v3/teams/members/#get-team-membership-legacy",
     "previews": [],
     "headers": [],
@@ -41362,7 +42378,7 @@
     "url": "/teams/{team_id}/memberships/{username}",
     "isDeprecated": true,
     "isLegacy": true,
-    "description": "**Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [`Add or update team membership`](https://developer.github.com/v3/teams/members/#add-or-update-team-membership) endpoint.\n\nTeam synchronization is available for organizations using GitHub Enterprise Cloud. For more information, see [GitHub's products](https://help.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.\n\nIf the user is already a member of the team's organization, this endpoint will add the user to the team. To add a membership between an organization member and a team, the authenticated user must be an organization owner or a team maintainer.\n\n**Note:** When you have team synchronization set up for a team with your organization's identity provider (IdP), you will see an error if you attempt to use the API for making changes to the team's membership. If you have access to manage group membership in your IdP, you can manage GitHub team membership through your identity provider, which automatically adds and removes team members in an organization. For more information, see \"[Synchronizing teams between your identity provider and GitHub](https://help.github.com/articles/synchronizing-teams-between-your-identity-provider-and-github/).\"\n\nIf the user is unaffiliated with the team's organization, this endpoint will send an invitation to the user via email. This newly-created membership will be in the \"pending\" state until the user accepts the invitation, at which point the membership will transition to the \"active\" state and the user will be added as a member of the team. To add a membership between an unaffiliated user and a team, the authenticated user must be an organization owner.\n\nIf the user is already a member of the team, this endpoint will update the role of the team member's role. To update the membership of a team member, the authenticated user must be an organization owner or a team maintainer.",
+    "description": "**Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [Add or update team membership for a user](https://developer.github.com/v3/teams/members/#add-or-update-team-membership-for-a-user) endpoint.\n\nTeam synchronization is available for organizations using GitHub Enterprise Cloud. For more information, see [GitHub's products](https://help.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.\n\nIf the user is already a member of the team's organization, this endpoint will add the user to the team. To add a membership between an organization member and a team, the authenticated user must be an organization owner or a team maintainer.\n\n**Note:** When you have team synchronization set up for a team with your organization's identity provider (IdP), you will see an error if you attempt to use the API for making changes to the team's membership. If you have access to manage group membership in your IdP, you can manage GitHub team membership through your identity provider, which automatically adds and removes team members in an organization. For more information, see \"[Synchronizing teams between your identity provider and GitHub](https://help.github.com/articles/synchronizing-teams-between-your-identity-provider-and-github/).\"\n\nIf the user is unaffiliated with the team's organization, this endpoint will send an invitation to the user via email. This newly-created membership will be in the \"pending\" state until the user accepts the invitation, at which point the membership will transition to the \"active\" state and the user will be added as a member of the team. To add a membership between an unaffiliated user and a team, the authenticated user must be an organization owner.\n\nIf the user is already a member of the team, this endpoint will update the role of the team member's role. To update the membership of a team member, the authenticated user must be an organization owner or a team maintainer.",
     "documentationUrl": "https://developer.github.com/v3/teams/members/#add-or-update-team-membership-legacy",
     "previews": [],
     "headers": [],
@@ -41440,7 +42456,7 @@
     "url": "/teams/{team_id}/memberships/{username}",
     "isDeprecated": true,
     "isLegacy": true,
-    "description": "**Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [`Remove team membership`](https://developer.github.com/v3/teams/members/#remove-team-membership) endpoint.\n\nTeam synchronization is available for organizations using GitHub Enterprise Cloud. For more information, see [GitHub's products](https://help.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.\n\nTo remove a membership between a user and a team, the authenticated user must have 'admin' permissions to the team or be an owner of the organization that the team is associated with. Removing team membership does not delete the user, it just removes their membership from the team.\n\n**Note:** When you have team synchronization set up for a team with your organization's identity provider (IdP), you will see an error if you attempt to use the API for making changes to the team's membership. If you have access to manage group membership in your IdP, you can manage GitHub team membership through your identity provider, which automatically adds and removes team members in an organization. For more information, see \"[Synchronizing teams between your identity provider and GitHub](https://help.github.com/articles/synchronizing-teams-between-your-identity-provider-and-github/).\"",
+    "description": "**Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [Remove team membership for a user](https://developer.github.com/v3/teams/members/#remove-team-membership-for-a-user) endpoint.\n\nTeam synchronization is available for organizations using GitHub Enterprise Cloud. For more information, see [GitHub's products](https://help.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.\n\nTo remove a membership between a user and a team, the authenticated user must have 'admin' permissions to the team or be an owner of the organization that the team is associated with. Removing team membership does not delete the user, it just removes their membership from the team.\n\n**Note:** When you have team synchronization set up for a team with your organization's identity provider (IdP), you will see an error if you attempt to use the API for making changes to the team's membership. If you have access to manage group membership in your IdP, you can manage GitHub team membership through your identity provider, which automatically adds and removes team members in an organization. For more information, see \"[Synchronizing teams between your identity provider and GitHub](https://help.github.com/articles/synchronizing-teams-between-your-identity-provider-and-github/).\"",
     "documentationUrl": "https://developer.github.com/v3/teams/members/#remove-team-membership-legacy",
     "previews": [],
     "headers": [],
@@ -41555,7 +42571,7 @@
     "url": "/teams/{team_id}/projects/{project_id}",
     "isDeprecated": true,
     "isLegacy": true,
-    "description": "**Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [`Review a team project`](https://developer.github.com/v3/teams/#review-a-team-project) endpoint.\n\nChecks whether a team has `read`, `write`, or `admin` permissions for an organization project. The response includes projects inherited from a parent team.",
+    "description": "**Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [Check team permissions for a project](https://developer.github.com/v3/teams/#check-team-permissions-for-a-project) endpoint.\n\nChecks whether a team has `read`, `write`, or `admin` permissions for an organization project. The response includes projects inherited from a parent team.",
     "documentationUrl": "https://developer.github.com/v3/teams/#review-a-team-project-legacy",
     "previews": [{ "name": "inertia" }],
     "headers": [
@@ -41614,7 +42630,7 @@
     "url": "/teams/{team_id}/projects/{project_id}",
     "isDeprecated": true,
     "isLegacy": true,
-    "description": "**Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [`Add or update team project`](https://developer.github.com/v3/teams/#add-or-update-team-project) endpoint.\n\nAdds an organization project to a team. To add a project to a team or update the team's permission on a project, the authenticated user must have `admin` permissions for the project. The project and team must be part of the same organization.",
+    "description": "**Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [Add or update team project permissions](https://developer.github.com/v3/teams/#add-or-update-team-project-permissions) endpoint.\n\nAdds an organization project to a team. To add a project to a team or update the team's permission on a project, the authenticated user must have `admin` permissions for the project. The project and team must be part of the same organization.",
     "documentationUrl": "https://developer.github.com/v3/teams/#add-or-update-team-project-legacy",
     "previews": [{ "name": "inertia" }],
     "headers": [
@@ -41671,7 +42687,7 @@
         "description": "Response if the project is not owned by the organization",
         "examples": [
           {
-            "data": "{\"message\":\"Must have admin rights to Repository.\",\"documentation_url\":\"https://developer.github.com/v3/teams/#add-or-update-team-project\"}"
+            "data": "{\"message\":\"Must have admin rights to Repository.\",\"documentation_url\":\"https://developer.github.com/v3/teams/#add-or-update-team-project-permissions\"}"
           }
         ]
       }
@@ -41686,7 +42702,7 @@
     "url": "/teams/{team_id}/projects/{project_id}",
     "isDeprecated": true,
     "isLegacy": true,
-    "description": "**Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [`Remove team project`](https://developer.github.com/v3/teams/#remove-team-project) endpoint.\n\nRemoves an organization project from a team. An organization owner or a team maintainer can remove any project from the team. To remove a project from a team as an organization member, the authenticated user must have `read` access to both the team and project, or `admin` access to the team or project. **Note:** This endpoint removes the project from the team, but does not delete it.",
+    "description": "**Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [Remove a project from a team](https://developer.github.com/v3/teams/#remove-a-project-from-a-team) endpoint.\n\nRemoves an organization project from a team. An organization owner or a team maintainer can remove any project from the team. To remove a project from a team as an organization member, the authenticated user must have `read` access to both the team and project, or `admin` access to the team or project. **Note:** This endpoint removes the project from the team, but does not delete it.",
     "documentationUrl": "https://developer.github.com/v3/teams/#remove-team-project-legacy",
     "previews": [],
     "headers": [],
@@ -41729,7 +42745,7 @@
     "url": "/teams/{team_id}/repos",
     "isDeprecated": true,
     "isLegacy": true,
-    "description": "**Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [`List team repos`](https://developer.github.com/v3/teams/#list-team-repos) endpoint.",
+    "description": "**Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [List team repositories](https://developer.github.com/v3/teams/#list-team-repositories) endpoint.",
     "documentationUrl": "https://developer.github.com/v3/teams/#list-team-repos-legacy",
     "previews": [],
     "headers": [],
@@ -41795,7 +42811,7 @@
     "url": "/teams/{team_id}/repos/{owner}/{repo}",
     "isDeprecated": true,
     "isLegacy": true,
-    "description": "**Note**: Repositories inherited through a parent team will also be checked.\n\n**Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [`Check if a team manages a repository`](https://developer.github.com/v3/teams/#check-if-a-team-manages-a-repository) endpoint.\n\nYou can also get information about the specified repository, including what permissions the team grants on it, by passing the following custom [media type](https://developer.github.com/v3/media/) via the `Accept` header:",
+    "description": "**Note**: Repositories inherited through a parent team will also be checked.\n\n**Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [Check team permissions for a repository](https://developer.github.com/v3/teams/#check-team-permissions-for-a-repository) endpoint.\n\nYou can also get information about the specified repository, including what permissions the team grants on it, by passing the following custom [media type](https://developer.github.com/v3/media/) via the `Accept` header:",
     "documentationUrl": "https://developer.github.com/v3/teams/#check-if-a-team-manages-a-repository-legacy",
     "previews": [],
     "headers": [],
@@ -41861,7 +42877,7 @@
     "url": "/teams/{team_id}/repos/{owner}/{repo}",
     "isDeprecated": true,
     "isLegacy": true,
-    "description": "**Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [`Add or update team repository`](https://developer.github.com/v3/teams/#add-or-update-team-repository) endpoint.\n\nTo add a repository to a team or update the team's permission on a repository, the authenticated user must have admin access to the repository, and must be able to see the team. The repository must be owned by the organization, or a direct fork of a repository owned by the organization. You will get a `422 Unprocessable Entity` status if you attempt to add a repository to a team that is not owned by the organization.\n\nNote that, if you choose not to pass any parameters, you'll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see \"[HTTP verbs](https://developer.github.com/v3/#http-verbs).\"",
+    "description": "**Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [Add or update team repository permissions](https://developer.github.com/v3/teams/#add-or-update-team-repository-permissions) endpoint.\n\nTo add a repository to a team or update the team's permission on a repository, the authenticated user must have admin access to the repository, and must be able to see the team. The repository must be owned by the organization, or a direct fork of a repository owned by the organization. You will get a `422 Unprocessable Entity` status if you attempt to add a repository to a team that is not owned by the organization.\n\nNote that, if you choose not to pass any parameters, you'll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see \"[HTTP verbs](https://developer.github.com/v3/#http-verbs).\"",
     "documentationUrl": "https://developer.github.com/v3/teams/#add-or-update-team-repository-legacy",
     "previews": [],
     "headers": [],
@@ -41930,7 +42946,7 @@
     "url": "/teams/{team_id}/repos/{owner}/{repo}",
     "isDeprecated": true,
     "isLegacy": true,
-    "description": "**Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [`Remove team repository`](https://developer.github.com/v3/teams/#remove-team-repository) endpoint.\n\nIf the authenticated user is an organization owner or a team maintainer, they can remove any repositories from the team. To remove a repository from a team as an organization member, the authenticated user must have admin access to the repository and must be able to see the team. NOTE: This does not delete the repository, it just removes it from the team.",
+    "description": "**Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [Remove a repository from a team](https://developer.github.com/v3/teams/#remove-a-repository-from-a-team) endpoint.\n\nIf the authenticated user is an organization owner or a team maintainer, they can remove any repositories from the team. To remove a repository from a team as an organization member, the authenticated user must have admin access to the repository and must be able to see the team. NOTE: This does not delete the repository, it just removes it from the team.",
     "documentationUrl": "https://developer.github.com/v3/teams/#remove-team-repository-legacy",
     "previews": [],
     "headers": [],
@@ -43968,7 +44984,7 @@
     "renamed": null
   },
   {
-    "name": "Get the status of a user migration",
+    "name": "Get a user migration status",
     "scope": "migrations",
     "id": "getStatusForAuthenticatedUser",
     "method": "GET",
@@ -43976,7 +44992,7 @@
     "isDeprecated": false,
     "isLegacy": false,
     "description": "Fetches a single user migration. The response includes the `state` of the migration, which can be one of the following values:\n\n*   `pending` - the migration hasn't started yet.\n*   `exporting` - the migration is in progress.\n*   `exported` - the migration finished successfully.\n*   `failed` - the migration failed.\n\nOnce the migration has been `exported` you can [download the migration archive](https://developer.github.com/v3/migrations/users/#download-a-user-migration-archive).",
-    "documentationUrl": "https://developer.github.com/v3/migrations/users/#get-the-status-of-a-user-migration",
+    "documentationUrl": "https://developer.github.com/v3/migrations/users/#get-a-user-migration-status",
     "previews": [{ "name": "wyandotte" }],
     "headers": [
       {
@@ -44057,7 +45073,7 @@
     "url": "/user/migrations/{migration_id}/archive",
     "isDeprecated": false,
     "isLegacy": false,
-    "description": "Deletes a previous migration archive. Downloadable migration archives are automatically deleted after seven days. Migration metadata, which is returned in the [List user migrations](https://developer.github.com/v3/migrations/users/#list-user-migrations) and [Get the status of a user migration](https://developer.github.com/v3/migrations/users/#get-the-status-of-a-user-migration) endpoints, will continue to be available even after an archive is deleted.",
+    "description": "Deletes a previous migration archive. Downloadable migration archives are automatically deleted after seven days. Migration metadata, which is returned in the [List user migrations](https://developer.github.com/v3/migrations/users/#list-user-migrations) and [Get a user migration status](https://developer.github.com/v3/migrations/users/#get-a-user-migration-status) endpoints, will continue to be available even after an archive is deleted.",
     "documentationUrl": "https://developer.github.com/v3/migrations/users/#delete-a-user-migration-archive",
     "previews": [{ "name": "wyandotte" }],
     "headers": [
@@ -45299,7 +46315,7 @@
     "renamed": null
   },
   {
-    "name": "List user teams",
+    "name": "List teams for the authenticated user",
     "scope": "teams",
     "id": "listForAuthenticatedUser",
     "method": "GET",
@@ -45307,7 +46323,7 @@
     "isDeprecated": false,
     "isLegacy": false,
     "description": "List all of the teams across all of the organizations to which the authenticated user belongs. This method requires `user`, `repo`, or `read:org` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/) when authenticating via [OAuth](https://developer.github.com/apps/building-oauth-apps/).",
-    "documentationUrl": "https://developer.github.com/v3/teams/#list-user-teams",
+    "documentationUrl": "https://developer.github.com/v3/teams/#list-teams-for-the-authenticated-user",
     "previews": [],
     "headers": [],
     "parameters": [

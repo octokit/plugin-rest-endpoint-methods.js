@@ -1,12 +1,12 @@
 ---
-name: Get a single milestone
+name: Get a milestone
 example: octokit.issues.getMilestone({ owner, repo, milestone_number })
 route: GET /repos/{owner}/{repo}/milestones/{milestone_number}
 scope: issues
 type: API method
 ---
 
-# Get a single milestone
+# Get a milestone
 
 ```js
 octokit.issues.getMilestone({
@@ -39,4 +39,4 @@ octokit.issues.getMilestone({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/issues/milestones/#get-a-single-milestone).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/issues/milestones/#get-a-milestone).

@@ -2448,7 +2448,7 @@ export type RestEndpointMethods = {
     /**
      * Returns a single tree using the SHA1 value for that tree.
      *
-     * If `truncated` is `true` in the response then the number of items in the `tree` array exceeded our maximum limit. If you need to fetch more items, you can clone the repository and iterate over the Git data locally.
+     * If `truncated` is `true` in the response then the number of items in the `tree` array exceeded our maximum limit. If you need to fetch more items, use the non-recursive method of fetching trees, and fetch one sub-tree at a time.
      */
     getTree: {
       (
@@ -2613,12 +2613,29 @@ export type RestEndpointMethods = {
      * If the `assignee` can be assigned to issues in the repository, a `204` header with no content is returned.
      *
      * Otherwise a `404` status code is returned.
+     * @deprecated octokit.issues.checkAssignee() has been renamed to octokit.issues.checkUserCanBeAssigned() (2020-06-01)
      */
     checkAssignee: {
       (
         params?: RestEndpointMethodTypes["issues"]["checkAssignee"]["parameters"]
       ): Promise<
         RestEndpointMethodTypes["issues"]["checkAssignee"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Checks if a user has permission to be assigned to an issue in this repository.
+     *
+     * If the `assignee` can be assigned to issues in the repository, a `204` header with no content is returned.
+     *
+     * Otherwise a `404` status code is returned.
+     */
+    checkUserCanBeAssigned: {
+      (
+        params?: RestEndpointMethodTypes["issues"]["checkUserCanBeAssigned"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["issues"]["checkUserCanBeAssigned"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -2890,11 +2907,23 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
 
+    listMilestones: {
+      (
+        params?: RestEndpointMethodTypes["issues"]["listMilestones"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["issues"]["listMilestones"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * @deprecated octokit.issues.listMilestonesForRepo() has been renamed to octokit.issues.listMilestones() (2020-06-01)
+     */
     listMilestonesForRepo: {
       (
-        params?: RestEndpointMethodTypes["issues"]["listMilestonesForRepo"]["parameters"]
+        params?: RestEndpointMethodTypes["issues"]["listMilestones"]["parameters"]
       ): Promise<
-        RestEndpointMethodTypes["issues"]["listMilestonesForRepo"]["response"]
+        RestEndpointMethodTypes["issues"]["listMilestones"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -2955,17 +2984,8 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
-
-    replaceAllLabels: {
-      (
-        params?: RestEndpointMethodTypes["issues"]["replaceAllLabels"]["parameters"]
-      ): Promise<
-        RestEndpointMethodTypes["issues"]["replaceAllLabels"]["response"]
-      >;
-      defaults: RequestInterface["defaults"];
-      endpoint: EndpointInterface<{ url: string }>;
-    };
     /**
+     * Removes any previous labels and sets the new labels for an issue.
      * @deprecated octokit.issues.replaceLabels() has been renamed to octokit.issues.replaceAllLabels() (2020-03-04)
      */
     replaceLabels: {
@@ -2974,6 +2994,16 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["issues"]["replaceLabels"]["response"]
       >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Removes any previous labels and sets the new labels for an issue.
+     */
+    setLabels: {
+      (
+        params?: RestEndpointMethodTypes["issues"]["setLabels"]["parameters"]
+      ): Promise<RestEndpointMethodTypes["issues"]["setLabels"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
@@ -3102,7 +3132,7 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Deletes a previous migration archive. Downloadable migration archives are automatically deleted after seven days. Migration metadata, which is returned in the [List user migrations](https://developer.github.com/v3/migrations/users/#list-user-migrations) and [Get the status of a user migration](https://developer.github.com/v3/migrations/users/#get-the-status-of-a-user-migration) endpoints, will continue to be available even after an archive is deleted.
+     * Deletes a previous migration archive. Downloadable migration archives are automatically deleted after seven days. Migration metadata, which is returned in the [List user migrations](https://developer.github.com/v3/migrations/users/#list-user-migrations) and [Get a user migration status](https://developer.github.com/v3/migrations/users/#get-a-user-migration-status) endpoints, will continue to be available even after an archive is deleted.
      */
     deleteArchiveForAuthenticatedUser: {
       (
@@ -3172,7 +3202,7 @@ export type RestEndpointMethods = {
     /**
      * Each type of source control system represents authors in a different way. For example, a Git commit author has a display name and an email address, but a Subversion commit author just has a username. The GitHub Importer will make the author information valid, but the author might not be correct. For example, it will change the bare Subversion username `hubot` into something like `hubot <hubot@12341234-abab-fefe-8787-fedcba987654>`.
      *
-     * This API method and the "Map a commit author" method allow you to provide correct Git author information.
+     * This endpoint and the [Map a commit author](https://developer.github.com/v3/migrations/source_imports/#map-a-commit-author) endpoint allow you to provide correct Git author information.
      */
     getCommitAuthors: {
       (
@@ -3200,11 +3230,57 @@ export type RestEndpointMethods = {
      *
      * If there are problems, you will see one of these in the `status` field:
      *
-     * *   `auth_failed` - the import requires authentication in order to connect to the original repository. To update authentication for the import, please see the [Update Existing Import](https://developer.github.com/v3/migrations/source_imports/#update-existing-import) section.
+     * *   `auth_failed` - the import requires authentication in order to connect to the original repository. To update authentication for the import, please see the [Update an import](https://developer.github.com/v3/migrations/source_imports/#update-an-import) section.
      * *   `error` - the import encountered an error. The import progress response will include the `failed_step` and an error message. Contact [GitHub Support](https://github.com/contact) or [GitHub Premium Support](https://premium.githubsupport.com) for more information.
-     * *   `detection_needs_auth` - the importer requires authentication for the originating repository to continue detection. To update authentication for the import, please see the [Update Existing Import](https://developer.github.com/v3/migrations/source_imports/#update-existing-import) section.
+     * *   `detection_needs_auth` - the importer requires authentication for the originating repository to continue detection. To update authentication for the import, please see the [Update an import](https://developer.github.com/v3/migrations/source_imports/#update-an-import) section.
      * *   `detection_found_nothing` - the importer didn't recognize any source control at the URL. To resolve, [Cancel the import](https://developer.github.com/v3/migrations/source_imports/#cancel-an-import) and [retry](https://developer.github.com/v3/migrations/source_imports/#start-an-import) with the correct URL.
-     * *   `detection_found_multiple` - the importer found several projects or repositories at the provided URL. When this is the case, the Import Progress response will also include a `project_choices` field with the possible project choices as values. To update project choice, please see the [Update Existing Import](https://developer.github.com/v3/migrations/source_imports/#update-existing-import) section.
+     * *   `detection_found_multiple` - the importer found several projects or repositories at the provided URL. When this is the case, the Import Progress response will also include a `project_choices` field with the possible project choices as values. To update project choice, please see the [Update an import](https://developer.github.com/v3/migrations/source_imports/#update-an-import) section.
+     *
+     * **The project_choices field**
+     *
+     * When multiple projects are found at the provided URL, the response hash will include a `project_choices` field, the value of which is an array of hashes each representing a project choice. The exact key/value pairs of the project hashes will differ depending on the version control type.
+     *
+     * **Git LFS related fields**
+     *
+     * This section includes details about Git LFS related fields that may be present in the Import Progress response.
+     *
+     * *   `use_lfs` - describes whether the import has been opted in or out of using Git LFS. The value can be `opt_in`, `opt_out`, or `undecided` if no action has been taken.
+     * *   `has_large_files` - the boolean value describing whether files larger than 100MB were found during the `importing` step.
+     * *   `large_files_size` - the total size in gigabytes of files larger than 100MB found in the originating repository.
+     * *   `large_files_count` - the total number of files larger than 100MB found in the originating repository. To see a list of these files, make a "Get Large Files" request.
+     * @deprecated octokit.migrations.getImportProgress() has been renamed to octokit.migrations.getImportStatus() (2020-06-01)
+     */
+    getImportStatus: {
+      (
+        params?: RestEndpointMethodTypes["migrations"]["getImportStatus"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["migrations"]["getImportStatus"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * View the progress of an import.
+     *
+     * **Import status**
+     *
+     * This section includes details about the possible values of the `status` field of the Import Progress response.
+     *
+     * An import that does not have errors will progress through these steps:
+     *
+     * *   `detecting` - the "detection" step of the import is in progress because the request did not include a `vcs` parameter. The import is identifying the type of source control present at the URL.
+     * *   `importing` - the "raw" step of the import is in progress. This is where commit data is fetched from the original repository. The import progress response will include `commit_count` (the total number of raw commits that will be imported) and `percent` (0 - 100, the current progress through the import).
+     * *   `mapping` - the "rewrite" step of the import is in progress. This is where SVN branches are converted to Git branches, and where author updates are applied. The import progress response does not include progress information.
+     * *   `pushing` - the "push" step of the import is in progress. This is where the importer updates the repository on GitHub. The import progress response will include `push_percent`, which is the percent value reported by `git push` when it is "Writing objects".
+     * *   `complete` - the import is complete, and the repository is ready on GitHub.
+     *
+     * If there are problems, you will see one of these in the `status` field:
+     *
+     * *   `auth_failed` - the import requires authentication in order to connect to the original repository. To update authentication for the import, please see the [Update an import](https://developer.github.com/v3/migrations/source_imports/#update-an-import) section.
+     * *   `error` - the import encountered an error. The import progress response will include the `failed_step` and an error message. Contact [GitHub Support](https://github.com/contact) or [GitHub Premium Support](https://premium.githubsupport.com) for more information.
+     * *   `detection_needs_auth` - the importer requires authentication for the originating repository to continue detection. To update authentication for the import, please see the [Update an import](https://developer.github.com/v3/migrations/source_imports/#update-an-import) section.
+     * *   `detection_found_nothing` - the importer didn't recognize any source control at the URL. To resolve, [Cancel the import](https://developer.github.com/v3/migrations/source_imports/#cancel-an-import) and [retry](https://developer.github.com/v3/migrations/source_imports/#start-an-import) with the correct URL.
+     * *   `detection_found_multiple` - the importer found several projects or repositories at the provided URL. When this is the case, the Import Progress response will also include a `project_choices` field with the possible project choices as values. To update project choice, please see the [Update an import](https://developer.github.com/v3/migrations/source_imports/#update-an-import) section.
      *
      * **The project_choices field**
      *
@@ -3219,11 +3295,11 @@ export type RestEndpointMethods = {
      * *   `large_files_size` - the total size in gigabytes of files larger than 100MB found in the originating repository.
      * *   `large_files_count` - the total number of files larger than 100MB found in the originating repository. To see a list of these files, make a "Get Large Files" request.
      */
-    getImportProgress: {
+    getImportStatus: {
       (
-        params?: RestEndpointMethodTypes["migrations"]["getImportProgress"]["parameters"]
+        params?: RestEndpointMethodTypes["migrations"]["getImportStatus"]["parameters"]
       ): Promise<
-        RestEndpointMethodTypes["migrations"]["getImportProgress"]["response"]
+        RestEndpointMethodTypes["migrations"]["getImportStatus"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -4110,7 +4186,7 @@ export type RestEndpointMethods = {
     /**
      * **Note:** Multi-line comments on pull requests are currently in public beta and subject to change.
      *
-     * Creates a review comment in the pull request diff. To add a regular comment to a pull request timeline, see "[Comments](https://developer.github.com/v3/issues/comments/#create-a-comment)." We recommend creating a review comment using `line`, `side`, and optionally `start_line` and `start_side` if your comment applies to more than one line in the pull request diff.
+     * Creates a review comment in the pull request diff. To add a regular comment to a pull request timeline, see "[Create an issue comment](https://developer.github.com/v3/issues/comments/#create-an-issue-comment)." We recommend creating a review comment using `line`, `side`, and optionally `start_line` and `start_side` if your comment applies to more than one line in the pull request diff.
      *
      * You can still create a review comment using the `position` parameter. When you use `position`, the `line`, `side`, `start_line`, and `start_side` parameters are not required. For more information, see [Multi-line comment summary](https://developer.github.com/v3/pulls/comments/#multi-line-comment-summary-3).
      *
@@ -6857,6 +6933,29 @@ export type RestEndpointMethods = {
      *
      * **Note:** You can also specify a team by `org_id` and `team_id` using the route `PUT /organizations/:org_id/team/:team_id/memberships/:username`.
      */
+    addOrUpdateMembershipForUserInOrg: {
+      (
+        params?: RestEndpointMethodTypes["teams"]["addOrUpdateMembershipForUserInOrg"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["teams"]["addOrUpdateMembershipForUserInOrg"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Team synchronization is available for organizations using GitHub Enterprise Cloud. For more information, see [GitHub's products](https://help.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
+     *
+     * Adds an organization member to a team. An authenticated organization owner or team maintainer can add organization members to a team.
+     *
+     * **Note:** When you have team synchronization set up for a team with your organization's identity provider (IdP), you will see an error if you attempt to use the API for making changes to the team's membership. If you have access to manage group membership in your IdP, you can manage GitHub team membership through your identity provider, which automatically adds and removes team members in an organization. For more information, see "[Synchronizing teams between your identity provider and GitHub](https://help.github.com/articles/synchronizing-teams-between-your-identity-provider-and-github/)."
+     *
+     * An organization owner can add someone who is not part of the team's organization to a team. When an organization owner adds someone to a team who is not an organization member, this endpoint will send an invitation to the person via email. This newly-created membership will be in the "pending" state until the person accepts the invitation, at which point the membership will transition to the "active" state and the user will be added as a member of the team.
+     *
+     * If the user is already a member of the team, this endpoint will update the role of the team member's role. To update the membership of a team member, the authenticated user must be an organization owner or a team maintainer.
+     *
+     * **Note:** You can also specify a team by `org_id` and `team_id` using the route `PUT /organizations/:org_id/team/:team_id/memberships/:username`.
+     * @deprecated octokit.teams.addOrUpdateMembershipInOrg() has been renamed to octokit.teams.addOrUpdateMembershipForUserInOrg() (2020-06-01)
+     */
     addOrUpdateMembershipInOrg: {
       (
         params?: RestEndpointMethodTypes["teams"]["addOrUpdateMembershipInOrg"]["parameters"]
@@ -6870,6 +6969,7 @@ export type RestEndpointMethods = {
      * Adds an organization project to a team. To add a project to a team or update the team's permission on a project, the authenticated user must have `admin` permissions for the project. The project and team must be part of the same organization.
      *
      * **Note:** You can also specify a team by `org_id` and `team_id` using the route `PUT /organizations/:org_id/team/:team_id/projects/:project_id`.
+     * @deprecated octokit.teams.addOrUpdateProjectInOrg() has been renamed to octokit.teams.addOrUpdateProjectPermissionsInOrg() (2020-06-01)
      */
     addOrUpdateProjectInOrg: {
       (
@@ -6881,11 +6981,26 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
+     * Adds an organization project to a team. To add a project to a team or update the team's permission on a project, the authenticated user must have `admin` permissions for the project. The project and team must be part of the same organization.
+     *
+     * **Note:** You can also specify a team by `org_id` and `team_id` using the route `PUT /organizations/:org_id/team/:team_id/projects/:project_id`.
+     */
+    addOrUpdateProjectPermissionsInOrg: {
+      (
+        params?: RestEndpointMethodTypes["teams"]["addOrUpdateProjectPermissionsInOrg"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["teams"]["addOrUpdateProjectPermissionsInOrg"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
      * To add a repository to a team or update the team's permission on a repository, the authenticated user must have admin access to the repository, and must be able to see the team. The repository must be owned by the organization, or a direct fork of a repository owned by the organization. You will get a `422 Unprocessable Entity` status if you attempt to add a repository to a team that is not owned by the organization. Note that, if you choose not to pass any parameters, you'll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see "[HTTP verbs](https://developer.github.com/v3/#http-verbs)."
      *
      * **Note:** You can also specify a team by `org_id` and `team_id` using the route `PUT /organizations/:org_id/team/:team_id/repos/:owner/:repo`.
      *
      * For more information about the permission levels, see "[Repository permission levels for an organization](https://help.github.com/en/github/setting-up-and-managing-organizations-and-teams/repository-permission-levels-for-an-organization#permission-levels-for-repositories-owned-by-an-organization)" in the GitHub Help documentation.
+     * @deprecated octokit.teams.addOrUpdateRepoInOrg() has been renamed to octokit.teams.addOrUpdateRepoPermissionsInOrg() (2020-06-01)
      */
     addOrUpdateRepoInOrg: {
       (
@@ -6897,17 +7012,64 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
+     * To add a repository to a team or update the team's permission on a repository, the authenticated user must have admin access to the repository, and must be able to see the team. The repository must be owned by the organization, or a direct fork of a repository owned by the organization. You will get a `422 Unprocessable Entity` status if you attempt to add a repository to a team that is not owned by the organization. Note that, if you choose not to pass any parameters, you'll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see "[HTTP verbs](https://developer.github.com/v3/#http-verbs)."
+     *
+     * **Note:** You can also specify a team by `org_id` and `team_id` using the route `PUT /organizations/:org_id/team/:team_id/repos/:owner/:repo`.
+     *
+     * For more information about the permission levels, see "[Repository permission levels for an organization](https://help.github.com/en/github/setting-up-and-managing-organizations-and-teams/repository-permission-levels-for-an-organization#permission-levels-for-repositories-owned-by-an-organization)" in the GitHub Help documentation.
+     */
+    addOrUpdateRepoPermissionsInOrg: {
+      (
+        params?: RestEndpointMethodTypes["teams"]["addOrUpdateRepoPermissionsInOrg"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["teams"]["addOrUpdateRepoPermissionsInOrg"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
      * Checks whether a team has `admin`, `push`, `maintain`, `triage`, or `pull` permission for a repository. Repositories inherited through a parent team will also be checked.
      *
      * **Note:** You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/:org_id/team/:team_id/repos/:owner/:repo`.
      *
      * You can also get information about the specified repository, including what permissions the team grants on it, by passing the following custom [media type](https://developer.github.com/v3/media/) via the `Accept` header:
+     * @deprecated octokit.teams.checkManagesRepoInOrg() has been renamed to octokit.teams.checkPermissionsForRepoInOrg() (2020-06-01)
      */
     checkManagesRepoInOrg: {
       (
         params?: RestEndpointMethodTypes["teams"]["checkManagesRepoInOrg"]["parameters"]
       ): Promise<
         RestEndpointMethodTypes["teams"]["checkManagesRepoInOrg"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Checks whether a team has `read`, `write`, or `admin` permissions for an organization project. The response includes projects inherited from a parent team.
+     *
+     * **Note:** You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/:org_id/team/:team_id/projects/:project_id`.
+     */
+    checkPermissionsForProjectInOrg: {
+      (
+        params?: RestEndpointMethodTypes["teams"]["checkPermissionsForProjectInOrg"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["teams"]["checkPermissionsForProjectInOrg"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Checks whether a team has `admin`, `push`, `maintain`, `triage`, or `pull` permission for a repository. Repositories inherited through a parent team will also be checked.
+     *
+     * **Note:** You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/:org_id/team/:team_id/repos/:owner/:repo`.
+     *
+     * You can also get information about the specified repository, including what permissions the team grants on it, by passing the following custom [media type](https://developer.github.com/v3/media/) via the `Accept` header:
+     */
+    checkPermissionsForRepoInOrg: {
+      (
+        params?: RestEndpointMethodTypes["teams"]["checkPermissionsForRepoInOrg"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["teams"]["checkPermissionsForRepoInOrg"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -7045,7 +7207,26 @@ export type RestEndpointMethods = {
      *
      * **Note:** You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/:org_id/team/:team_id/memberships/:username`.
      *
-     * **Note:** The `role` for organization owners returns as `maintainer`. For more information about `maintainer` roles, see [Create team](https://developer.github.com/v3/teams#create-team).
+     * **Note:** The `role` for organization owners returns as `maintainer`. For more information about `maintainer` roles, see [Create a team](https://developer.github.com/v3/teams/#create-a-team).
+     */
+    getMembershipForUserInOrg: {
+      (
+        params?: RestEndpointMethodTypes["teams"]["getMembershipForUserInOrg"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["teams"]["getMembershipForUserInOrg"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Team members will include the members of child teams.
+     *
+     * To get a user's membership with a team, the team must be visible to the authenticated user.
+     *
+     * **Note:** You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/:org_id/team/:team_id/memberships/:username`.
+     *
+     * **Note:** The `role` for organization owners returns as `maintainer`. For more information about `maintainer` roles, see [Create a team](https://developer.github.com/v3/teams/#create-a-team).
+     * @deprecated octokit.teams.getMembershipInOrg() has been renamed to octokit.teams.getMembershipForUserInOrg() (2020-06-01)
      */
     getMembershipInOrg: {
       (
@@ -7185,6 +7366,25 @@ export type RestEndpointMethods = {
      *
      * **Note:** You can also specify a team by `org_id` and `team_id` using the route `DELETE /organizations/:org_id/team/:team_id/memberships/:username`.
      */
+    removeMembershipForUserInOrg: {
+      (
+        params?: RestEndpointMethodTypes["teams"]["removeMembershipForUserInOrg"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["teams"]["removeMembershipForUserInOrg"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Team synchronization is available for organizations using GitHub Enterprise Cloud. For more information, see [GitHub's products](https://help.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
+     *
+     * To remove a membership between a user and a team, the authenticated user must have 'admin' permissions to the team or be an owner of the organization that the team is associated with. Removing team membership does not delete the user, it just removes their membership from the team.
+     *
+     * **Note:** When you have team synchronization set up for a team with your organization's identity provider (IdP), you will see an error if you attempt to use the API for making changes to the team's membership. If you have access to manage group membership in your IdP, you can manage GitHub team membership through your identity provider, which automatically adds and removes team members in an organization. For more information, see "[Synchronizing teams between your identity provider and GitHub](https://help.github.com/articles/synchronizing-teams-between-your-identity-provider-and-github/)."
+     *
+     * **Note:** You can also specify a team by `org_id` and `team_id` using the route `DELETE /organizations/:org_id/team/:team_id/memberships/:username`.
+     * @deprecated octokit.teams.removeMembershipInOrg() has been renamed to octokit.teams.removeMembershipForUserInOrg() (2020-06-01)
+     */
     removeMembershipInOrg: {
       (
         params?: RestEndpointMethodTypes["teams"]["removeMembershipInOrg"]["parameters"]
@@ -7226,6 +7426,7 @@ export type RestEndpointMethods = {
      * Checks whether a team has `read`, `write`, or `admin` permissions for an organization project. The response includes projects inherited from a parent team.
      *
      * **Note:** You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/:org_id/team/:team_id/projects/:project_id`.
+     * @deprecated octokit.teams.reviewProjectInOrg() has been renamed to octokit.teams.checkPermissionsForProjectInOrg() (2020-06-01)
      */
     reviewProjectInOrg: {
       (

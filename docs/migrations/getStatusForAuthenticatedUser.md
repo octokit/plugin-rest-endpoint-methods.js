@@ -1,12 +1,12 @@
 ---
-name: Get the status of a user migration
+name: Get a user migration status
 example: octokit.migrations.getStatusForAuthenticatedUser({ migration_id })
 route: GET /user/migrations/{migration_id}
 scope: migrations
 type: API method
 ---
 
-# Get the status of a user migration
+# Get a user migration status
 
 Fetches a single user migration. The response includes the `state` of the migration, which can be one of the following values:
 
@@ -40,4 +40,4 @@ octokit.migrations.getStatusForAuthenticatedUser({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/migrations/users/#get-the-status-of-a-user-migration).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/migrations/users/#get-a-user-migration-status).

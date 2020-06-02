@@ -1,12 +1,12 @@
 ---
-name: List labels on an issue
+name: List labels for an issue
 example: octokit.issues.listLabelsOnIssue({ owner, repo, issue_number })
 route: GET /repos/{owner}/{repo}/issues/{issue_number}/labels
 scope: issues
 type: API method
 ---
 
-# List labels on an issue
+# List labels for an issue
 
 ```js
 octokit.issues.listLabelsOnIssue({
@@ -49,4 +49,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/issues/labels/#list-labels-on-an-issue).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/issues/labels/#list-labels-for-an-issue).

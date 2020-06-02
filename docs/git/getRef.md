@@ -1,12 +1,12 @@
 ---
-name: Get a single reference
+name: Get a reference
 example: octokit.git.getRef({ owner, repo, ref })
 route: GET /repos/{owner}/{repo}/git/ref/{ref}
 scope: git
 type: API method
 ---
 
-# Get a single reference
+# Get a reference
 
 Returns a single reference from your Git database. The `:ref` in the URL must be formatted as `heads/<branch name>` for branches and `tags/<tag name>` for tags. If the `:ref` doesn't match an existing ref, a `404` is returned.
 
@@ -45,4 +45,4 @@ octokit.git.getRef({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/git/refs/#get-a-single-reference).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/git/refs/#get-a-reference).

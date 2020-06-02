@@ -1,14 +1,12 @@
 ---
 name: Check team permissions for a repository
-example: octokit.teams.checkManagesRepoInOrg({ org, team_slug, owner, repo })
+example: octokit.teams.checkPermissionsForRepoInOrg({ org, team_slug, owner, repo })
 route: GET /orgs/{org}/teams/{team_slug}/repos/{owner}/{repo}
 scope: teams
 type: API method
 ---
 
 # Check team permissions for a repository
-
-**Deprecated:** This method has been renamed to teams.checkPermissionsForRepoInOrg
 
 Checks whether a team has `admin`, `push`, `maintain`, `triage`, or `pull` permission for a repository. Repositories inherited through a parent team will also be checked.
 
@@ -17,7 +15,7 @@ Checks whether a team has `admin`, `push`, `maintain`, `triage`, or `pull` permi
 You can also get information about the specified repository, including what permissions the team grants on it, by passing the following custom [media type](https://developer.github.com/v3/media/) via the `Accept` header:
 
 ```js
-octokit.teams.checkManagesRepoInOrg({
+octokit.teams.checkPermissionsForRepoInOrg({
   org,
   team_slug,
   owner,

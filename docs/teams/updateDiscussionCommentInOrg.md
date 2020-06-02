@@ -1,12 +1,12 @@
 ---
-name: Edit a comment
+name: Update a discussion comment
 example: octokit.teams.updateDiscussionCommentInOrg({ org, team_slug, discussion_number, comment_number, body })
 route: PATCH /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}
 scope: teams
 type: API method
 ---
 
-# Edit a comment
+# Update a discussion comment
 
 Edits the body text of a discussion comment. OAuth access tokens require the `write:discussion` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
 
@@ -53,4 +53,4 @@ The discussion comment's body text.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/teams/discussion_comments/#edit-a-comment).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/teams/discussion_comments/#update-a-discussion-comment).

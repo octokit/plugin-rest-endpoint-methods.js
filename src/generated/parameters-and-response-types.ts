@@ -1624,6 +1624,14 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["GET /repos/:owner/:repo/assignees/:assignee"]["response"];
     };
+    checkUserCanBeAssigned: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /repos/:owner/:repo/assignees/:assignee"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /repos/:owner/:repo/assignees/:assignee"]["response"];
+    };
     create: {
       parameters: RequestParameters &
         Omit<
@@ -1824,6 +1832,14 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["GET /repos/:owner/:repo/issues/:issue_number/labels"]["response"];
     };
+    listMilestones: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /repos/:owner/:repo/milestones"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /repos/:owner/:repo/milestones"]["response"];
+    };
     listMilestonesForRepo: {
       parameters: RequestParameters &
         Omit<
@@ -1872,7 +1888,7 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["DELETE /repos/:owner/:repo/issues/:issue_number/labels"]["response"];
     };
-    replaceAllLabels: {
+    replaceLabels: {
       parameters: RequestParameters &
         Omit<
           Endpoints["PUT /repos/:owner/:repo/issues/:issue_number/labels"]["parameters"],
@@ -1880,7 +1896,7 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["PUT /repos/:owner/:repo/issues/:issue_number/labels"]["response"];
     };
-    replaceLabels: {
+    setLabels: {
       parameters: RequestParameters &
         Omit<
           Endpoints["PUT /repos/:owner/:repo/issues/:issue_number/labels"]["parameters"],
@@ -2032,7 +2048,15 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["GET /repos/:owner/:repo/import/authors"]["response"];
     };
-    getImportProgress: {
+    getImportStatus: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /repos/:owner/:repo/import"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /repos/:owner/:repo/import"]["response"];
+    };
+    getImportStatus: {
       parameters: RequestParameters &
         Omit<
           Endpoints["GET /repos/:owner/:repo/import"]["parameters"],
@@ -4256,6 +4280,14 @@ export type RestEndpointMethodTypes = {
     };
   };
   teams: {
+    addOrUpdateMembershipForUserInOrg: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["PUT /orgs/:org/teams/:team_slug/memberships/:username"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["PUT /orgs/:org/teams/:team_slug/memberships/:username"]["response"];
+    };
     addOrUpdateMembershipInOrg: {
       parameters: RequestParameters &
         Omit<
@@ -4272,6 +4304,14 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["PUT /orgs/:org/teams/:team_slug/projects/:project_id"]["response"];
     };
+    addOrUpdateProjectPermissionsInOrg: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["PUT /orgs/:org/teams/:team_slug/projects/:project_id"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["PUT /orgs/:org/teams/:team_slug/projects/:project_id"]["response"];
+    };
     addOrUpdateRepoInOrg: {
       parameters: RequestParameters &
         Omit<
@@ -4280,7 +4320,31 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["PUT /orgs/:org/teams/:team_slug/repos/:owner/:repo"]["response"];
     };
+    addOrUpdateRepoPermissionsInOrg: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["PUT /orgs/:org/teams/:team_slug/repos/:owner/:repo"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["PUT /orgs/:org/teams/:team_slug/repos/:owner/:repo"]["response"];
+    };
     checkManagesRepoInOrg: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /orgs/:org/teams/:team_slug/repos/:owner/:repo"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /orgs/:org/teams/:team_slug/repos/:owner/:repo"]["response"];
+    };
+    checkPermissionsForProjectInOrg: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /orgs/:org/teams/:team_slug/projects/:project_id"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /orgs/:org/teams/:team_slug/projects/:project_id"]["response"];
+    };
+    checkPermissionsForRepoInOrg: {
       parameters: RequestParameters &
         Omit<
           Endpoints["GET /orgs/:org/teams/:team_slug/repos/:owner/:repo"]["parameters"],
@@ -4359,6 +4423,14 @@ export type RestEndpointMethodTypes = {
           "baseUrl" | "headers" | "mediaType"
         >;
       response: Endpoints["GET /orgs/:org/teams/:team_slug/discussions/:discussion_number"]["response"];
+    };
+    getMembershipForUserInOrg: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /orgs/:org/teams/:team_slug/memberships/:username"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /orgs/:org/teams/:team_slug/memberships/:username"]["response"];
     };
     getMembershipInOrg: {
       parameters: RequestParameters &
@@ -4439,6 +4511,14 @@ export type RestEndpointMethodTypes = {
           "baseUrl" | "headers" | "mediaType"
         >;
       response: Endpoints["GET /orgs/:org/teams/:team_slug/repos"]["response"];
+    };
+    removeMembershipForUserInOrg: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["DELETE /orgs/:org/teams/:team_slug/memberships/:username"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["DELETE /orgs/:org/teams/:team_slug/memberships/:username"]["response"];
     };
     removeMembershipInOrg: {
       parameters: RequestParameters &

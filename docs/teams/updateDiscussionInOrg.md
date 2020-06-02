@@ -1,12 +1,12 @@
 ---
-name: Edit a discussion
+name: Update a discussion
 example: octokit.teams.updateDiscussionInOrg({ org, team_slug, discussion_number })
 route: PATCH /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}
 scope: teams
 type: API method
 ---
 
-# Edit a discussion
+# Update a discussion
 
 Edits the title and body text of a discussion post. Only the parameters you provide are updated. OAuth access tokens require the `write:discussion` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
 
@@ -53,4 +53,4 @@ The discussion post's body text.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/teams/discussions/#edit-a-discussion).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/teams/discussions/#update-a-discussion).

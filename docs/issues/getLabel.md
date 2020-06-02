@@ -1,12 +1,12 @@
 ---
-name: Get a single label
+name: Get a label
 example: octokit.issues.getLabel({ owner, repo, name })
 route: GET /repos/{owner}/{repo}/labels/{name}
 scope: issues
 type: API method
 ---
 
-# Get a single label
+# Get a label
 
 ```js
 octokit.issues.getLabel({
@@ -39,4 +39,4 @@ octokit.issues.getLabel({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/issues/labels/#get-a-single-label).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/issues/labels/#get-a-label).

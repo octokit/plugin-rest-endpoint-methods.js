@@ -1,12 +1,12 @@
 ---
-name: List comments in a repository
+name: List issue comments for a repository
 example: octokit.issues.listCommentsForRepo({ owner, repo })
 route: GET /repos/{owner}/{repo}/issues/comments
 scope: issues
 type: API method
 ---
 
-# List comments in a repository
+# List issue comments for a repository
 
 By default, Issue Comments are ordered by ascending ID.
 
@@ -62,4 +62,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/issues/comments/#list-comments-in-a-repository).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/issues/comments/#list-issue-comments-for-a-repository).

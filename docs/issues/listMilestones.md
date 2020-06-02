@@ -1,15 +1,15 @@
 ---
-name: List milestones for a repository
-example: octokit.issues.listMilestonesForRepo({ owner, repo })
+name: List milestones
+example: octokit.issues.listMilestones({ owner, repo })
 route: GET /repos/{owner}/{repo}/milestones
 scope: issues
 type: API method
 ---
 
-# List milestones for a repository
+# List milestones
 
 ```js
-octokit.issues.listMilestonesForRepo({
+octokit.issues.listMilestones({
   owner,
   repo,
 });
@@ -60,4 +60,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/issues/milestones/#list-milestones-for-a-repository).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/issues/milestones/#list-milestones).
