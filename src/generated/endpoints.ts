@@ -583,6 +583,11 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
       "GET /repos/{owner}/{repo}/issues/{issue_number}/labels",
     ],
     listMilestones: ["GET /repos/{owner}/{repo}/milestones"],
+    listMilestonesForRepo: [
+      "GET /repos/{owner}/{repo}/milestones",
+      {},
+      { renamed: ["issues", "listMilestones"] },
+    ],
     lock: ["PUT /repos/{owner}/{repo}/issues/{issue_number}/lock"],
     removeAllLabels: [
       "DELETE /repos/{owner}/{repo}/issues/{issue_number}/labels",
@@ -644,6 +649,11 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
       { mediaType: { previews: ["wyandotte"] } },
     ],
     getCommitAuthors: ["GET /repos/{owner}/{repo}/import/authors"],
+    getImportProgress: [
+      "GET /repos/{owner}/{repo}/import",
+      {},
+      { renamed: ["migrations", "getImportStatus"] },
+    ],
     getImportStatus: ["GET /repos/{owner}/{repo}/import"],
     getLargeFiles: ["GET /repos/{owner}/{repo}/import/large_files"],
     getStatusForAuthenticatedUser: [

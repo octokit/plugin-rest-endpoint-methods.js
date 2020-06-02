@@ -1840,6 +1840,14 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["GET /repos/:owner/:repo/milestones"]["response"];
     };
+    listMilestonesForRepo: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /repos/:owner/:repo/milestones"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /repos/:owner/:repo/milestones"]["response"];
+    };
     lock: {
       parameters: RequestParameters &
         Omit<
@@ -2039,6 +2047,14 @@ export type RestEndpointMethodTypes = {
           "baseUrl" | "headers" | "mediaType"
         >;
       response: Endpoints["GET /repos/:owner/:repo/import/authors"]["response"];
+    };
+    getImportStatus: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /repos/:owner/:repo/import"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /repos/:owner/:repo/import"]["response"];
     };
     getImportStatus: {
       parameters: RequestParameters &
