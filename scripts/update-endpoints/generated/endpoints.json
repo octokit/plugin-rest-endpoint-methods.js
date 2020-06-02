@@ -10880,102 +10880,6 @@
         ]
       }
     ],
-    "renamed": {
-      "before": { "scope": "teams", "id": "getMembershipInOrg" },
-      "after": { "scope": "teams", "id": "getMembershipForUserInOrg" },
-      "date": "2020-06-01",
-      "note": "\"teams/get-membership-in-org\" operation ID is now \"teams/get-membership-for-user-in-org\""
-    }
-  },
-  {
-    "name": "Add or update team membership for a user",
-    "scope": "teams",
-    "id": "addOrUpdateMembershipForUserInOrg",
-    "method": "PUT",
-    "url": "/orgs/{org}/teams/{team_slug}/memberships/{username}",
-    "isDeprecated": false,
-    "isLegacy": false,
-    "description": "Team synchronization is available for organizations using GitHub Enterprise Cloud. For more information, see [GitHub's products](https://help.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.\n\nAdds an organization member to a team. An authenticated organization owner or team maintainer can add organization members to a team.\n\n**Note:** When you have team synchronization set up for a team with your organization's identity provider (IdP), you will see an error if you attempt to use the API for making changes to the team's membership. If you have access to manage group membership in your IdP, you can manage GitHub team membership through your identity provider, which automatically adds and removes team members in an organization. For more information, see \"[Synchronizing teams between your identity provider and GitHub](https://help.github.com/articles/synchronizing-teams-between-your-identity-provider-and-github/).\"\n\nAn organization owner can add someone who is not part of the team's organization to a team. When an organization owner adds someone to a team who is not an organization member, this endpoint will send an invitation to the person via email. This newly-created membership will be in the \"pending\" state until the person accepts the invitation, at which point the membership will transition to the \"active\" state and the user will be added as a member of the team.\n\nIf the user is already a member of the team, this endpoint will update the role of the team member's role. To update the membership of a team member, the authenticated user must be an organization owner or a team maintainer.\n\n**Note:** You can also specify a team by `org_id` and `team_id` using the route `PUT /organizations/:org_id/team/:team_id/memberships/:username`.",
-    "documentationUrl": "https://developer.github.com/v3/teams/members/#add-or-update-team-membership-for-a-user",
-    "previews": [],
-    "headers": [],
-    "parameters": [
-      {
-        "name": "org",
-        "description": "",
-        "in": "PATH",
-        "type": "string",
-        "required": true,
-        "enum": null,
-        "allowNull": false,
-        "mapToData": null,
-        "validation": null,
-        "alias": null,
-        "deprecated": null
-      },
-      {
-        "name": "team_slug",
-        "description": "",
-        "in": "PATH",
-        "type": "string",
-        "required": true,
-        "enum": null,
-        "allowNull": false,
-        "mapToData": null,
-        "validation": null,
-        "alias": null,
-        "deprecated": null
-      },
-      {
-        "name": "username",
-        "description": "",
-        "in": "PATH",
-        "type": "string",
-        "required": true,
-        "enum": null,
-        "allowNull": false,
-        "mapToData": null,
-        "validation": null,
-        "alias": null,
-        "deprecated": null
-      },
-      {
-        "name": "role",
-        "description": "The role that this user should have in the team. Can be one of:  \n\\* `member` - a normal member of the team.  \n\\* `maintainer` - a team maintainer. Able to add/remove other team members, promote other team members to team maintainer, and edit the team's name and description.",
-        "in": "BODY",
-        "type": "string",
-        "required": false,
-        "enum": ["member", "maintainer"],
-        "allowNull": false,
-        "mapToData": null,
-        "validation": null,
-        "alias": null,
-        "deprecated": null
-      }
-    ],
-    "responses": [
-      {
-        "code": 200,
-        "description": "response",
-        "examples": [
-          {
-            "data": "{\"url\":\"https://api.github.com/teams/1/memberships/octocat\",\"role\":\"member\",\"state\":\"active\"}"
-          },
-          {
-            "data": "{\"url\":\"https://api.github.com/teams/1/memberships/octocat\",\"role\":\"member\",\"state\":\"pending\"}"
-          }
-        ]
-      },
-      {
-        "code": 422,
-        "description": "Response if you attempt to add an organization to a team",
-        "examples": [
-          {
-            "data": "{\"message\":\"Cannot add an organization as a member.\",\"errors\":[{\"code\":\"org\",\"field\":\"user\",\"resource\":\"TeamMember\"}]}"
-          }
-        ]
-      }
-    ],
     "renamed": null
   },
   {
@@ -11144,67 +11048,6 @@
         ]
       }
     ],
-    "renamed": {
-      "before": { "scope": "teams", "id": "addOrUpdateMembershipInOrg" },
-      "after": { "scope": "teams", "id": "addOrUpdateMembershipForUserInOrg" },
-      "date": "2020-06-01",
-      "note": "\"teams/add-or-update-membership-in-org\" operation ID is now \"teams/add-or-update-membership-for-user-in-org\""
-    }
-  },
-  {
-    "name": "Remove team membership for a user",
-    "scope": "teams",
-    "id": "removeMembershipForUserInOrg",
-    "method": "DELETE",
-    "url": "/orgs/{org}/teams/{team_slug}/memberships/{username}",
-    "isDeprecated": false,
-    "isLegacy": false,
-    "description": "Team synchronization is available for organizations using GitHub Enterprise Cloud. For more information, see [GitHub's products](https://help.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.\n\nTo remove a membership between a user and a team, the authenticated user must have 'admin' permissions to the team or be an owner of the organization that the team is associated with. Removing team membership does not delete the user, it just removes their membership from the team.\n\n**Note:** When you have team synchronization set up for a team with your organization's identity provider (IdP), you will see an error if you attempt to use the API for making changes to the team's membership. If you have access to manage group membership in your IdP, you can manage GitHub team membership through your identity provider, which automatically adds and removes team members in an organization. For more information, see \"[Synchronizing teams between your identity provider and GitHub](https://help.github.com/articles/synchronizing-teams-between-your-identity-provider-and-github/).\"\n\n**Note:** You can also specify a team by `org_id` and `team_id` using the route `DELETE /organizations/:org_id/team/:team_id/memberships/:username`.",
-    "documentationUrl": "https://developer.github.com/v3/teams/members/#remove-team-membership-for-a-user",
-    "previews": [],
-    "headers": [],
-    "parameters": [
-      {
-        "name": "org",
-        "description": "",
-        "in": "PATH",
-        "type": "string",
-        "required": true,
-        "enum": null,
-        "allowNull": false,
-        "mapToData": null,
-        "validation": null,
-        "alias": null,
-        "deprecated": null
-      },
-      {
-        "name": "team_slug",
-        "description": "",
-        "in": "PATH",
-        "type": "string",
-        "required": true,
-        "enum": null,
-        "allowNull": false,
-        "mapToData": null,
-        "validation": null,
-        "alias": null,
-        "deprecated": null
-      },
-      {
-        "name": "username",
-        "description": "",
-        "in": "PATH",
-        "type": "string",
-        "required": true,
-        "enum": null,
-        "allowNull": false,
-        "mapToData": null,
-        "validation": null,
-        "alias": null,
-        "deprecated": null
-      }
-    ],
-    "responses": [],
     "renamed": null
   },
   {
@@ -11453,7 +11296,7 @@
         "deprecated": null
       },
       {
-        "name": "repo",
+        "name": "team_slug",
         "description": "",
         "in": "PATH",
         "type": "string",
@@ -11912,11 +11755,37 @@
         "deprecated": null
       },
       {
-        "name": "repo",
+        "name": "team_slug",
         "description": "",
         "in": "PATH",
         "type": "string",
         "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "per_page",
+        "description": "Results per page (max 100)",
+        "in": "QUERY",
+        "type": "integer",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "page",
+        "description": "Page number of the results to fetch.",
+        "in": "QUERY",
+        "type": "integer",
+        "required": false,
         "enum": null,
         "allowNull": false,
         "mapToData": null,
@@ -11928,20 +11797,15 @@
     "responses": [
       {
         "code": 200,
-        "description": "Alternative response with repository permissions",
+        "description": "response",
         "examples": [
           {
-            "data": "{\"organization\":{\"login\":\"octocat\",\"id\":1,\"node_id\":\"MDQ6VXNlcjE=\",\"avatar_url\":\"https://github.com/images/error/octocat_happy.gif\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/octocat\",\"html_url\":\"https://github.com/octocat\",\"followers_url\":\"https://api.github.com/users/octocat/followers\",\"following_url\":\"https://api.github.com/users/octocat/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/octocat/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/octocat/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/octocat/subscriptions\",\"organizations_url\":\"https://api.github.com/users/octocat/orgs\",\"repos_url\":\"https://api.github.com/users/octocat/repos\",\"events_url\":\"https://api.github.com/users/octocat/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/octocat/received_events\",\"type\":\"Organization\",\"site_admin\":false},\"parent\":{\"id\":1296269,\"node_id\":\"MDEwOlJlcG9zaXRvcnkxMjk2MjY5\",\"name\":\"Hello-World\",\"full_name\":\"octocat/Hello-World\",\"owner\":{\"login\":\"octocat\",\"id\":1,\"node_id\":\"MDQ6VXNlcjE=\",\"avatar_url\":\"https://github.com/images/error/octocat_happy.gif\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/octocat\",\"html_url\":\"https://github.com/octocat\",\"followers_url\":\"https://api.github.com/users/octocat/followers\",\"following_url\":\"https://api.github.com/users/octocat/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/octocat/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/octocat/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/octocat/subscriptions\",\"organizations_url\":\"https://api.github.com/users/octocat/orgs\",\"repos_url\":\"https://api.github.com/users/octocat/repos\",\"events_url\":\"https://api.github.com/users/octocat/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/octocat/received_events\",\"type\":\"User\",\"site_admin\":false},\"private\":false,\"html_url\":\"https://github.com/octocat/Hello-World\",\"description\":\"This your first repo!\",\"fork\":false,\"url\":\"https://api.github.com/repos/octocat/Hello-World\",\"archive_url\":\"http://api.github.com/repos/octocat/Hello-World/{archive_format}{/ref}\",\"assignees_url\":\"http://api.github.com/repos/octocat/Hello-World/assignees{/user}\",\"blobs_url\":\"http://api.github.com/repos/octocat/Hello-World/git/blobs{/sha}\",\"branches_url\":\"http://api.github.com/repos/octocat/Hello-World/branches{/branch}\",\"collaborators_url\":\"http://api.github.com/repos/octocat/Hello-World/collaborators{/collaborator}\",\"comments_url\":\"http://api.github.com/repos/octocat/Hello-World/comments{/number}\",\"commits_url\":\"http://api.github.com/repos/octocat/Hello-World/commits{/sha}\",\"compare_url\":\"http://api.github.com/repos/octocat/Hello-World/compare/{base}...{head}\",\"contents_url\":\"http://api.github.com/repos/octocat/Hello-World/contents/{+path}\",\"contributors_url\":\"http://api.github.com/repos/octocat/Hello-World/contributors\",\"deployments_url\":\"http://api.github.com/repos/octocat/Hello-World/deployments\",\"downloads_url\":\"http://api.github.com/repos/octocat/Hello-World/downloads\",\"events_url\":\"http://api.github.com/repos/octocat/Hello-World/events\",\"forks_url\":\"http://api.github.com/repos/octocat/Hello-World/forks\",\"git_commits_url\":\"http://api.github.com/repos/octocat/Hello-World/git/commits{/sha}\",\"git_refs_url\":\"http://api.github.com/repos/octocat/Hello-World/git/refs{/sha}\",\"git_tags_url\":\"http://api.github.com/repos/octocat/Hello-World/git/tags{/sha}\",\"git_url\":\"git:github.com/octocat/Hello-World.git\",\"issue_comment_url\":\"http://api.github.com/repos/octocat/Hello-World/issues/comments{/number}\",\"issue_events_url\":\"http://api.github.com/repos/octocat/Hello-World/issues/events{/number}\",\"issues_url\":\"http://api.github.com/repos/octocat/Hello-World/issues{/number}\",\"keys_url\":\"http://api.github.com/repos/octocat/Hello-World/keys{/key_id}\",\"labels_url\":\"http://api.github.com/repos/octocat/Hello-World/labels{/name}\",\"languages_url\":\"http://api.github.com/repos/octocat/Hello-World/languages\",\"merges_url\":\"http://api.github.com/repos/octocat/Hello-World/merges\",\"milestones_url\":\"http://api.github.com/repos/octocat/Hello-World/milestones{/number}\",\"notifications_url\":\"http://api.github.com/repos/octocat/Hello-World/notifications{?since,all,participating}\",\"pulls_url\":\"http://api.github.com/repos/octocat/Hello-World/pulls{/number}\",\"releases_url\":\"http://api.github.com/repos/octocat/Hello-World/releases{/id}\",\"ssh_url\":\"git@github.com:octocat/Hello-World.git\",\"stargazers_url\":\"http://api.github.com/repos/octocat/Hello-World/stargazers\",\"statuses_url\":\"http://api.github.com/repos/octocat/Hello-World/statuses/{sha}\",\"subscribers_url\":\"http://api.github.com/repos/octocat/Hello-World/subscribers\",\"subscription_url\":\"http://api.github.com/repos/octocat/Hello-World/subscription\",\"tags_url\":\"http://api.github.com/repos/octocat/Hello-World/tags\",\"teams_url\":\"http://api.github.com/repos/octocat/Hello-World/teams\",\"trees_url\":\"http://api.github.com/repos/octocat/Hello-World/git/trees{/sha}\",\"clone_url\":\"https://github.com/octocat/Hello-World.git\",\"mirror_url\":\"git:git.example.com/octocat/Hello-World\",\"hooks_url\":\"http://api.github.com/repos/octocat/Hello-World/hooks\",\"svn_url\":\"https://svn.github.com/octocat/Hello-World\",\"homepage\":\"https://github.com\",\"language\":null,\"forks_count\":9,\"stargazers_count\":80,\"watchers_count\":80,\"size\":108,\"default_branch\":\"master\",\"open_issues_count\":0,\"is_template\":true,\"topics\":[\"octocat\",\"atom\",\"electron\",\"api\"],\"has_issues\":true,\"has_projects\":true,\"has_wiki\":true,\"has_pages\":false,\"has_downloads\":true,\"archived\":false,\"disabled\":false,\"visibility\":\"public\",\"pushed_at\":\"2011-01-26T19:06:43Z\",\"created_at\":\"2011-01-26T19:01:12Z\",\"updated_at\":\"2011-01-26T19:14:43Z\",\"permissions\":{\"admin\":false,\"push\":false,\"pull\":true},\"allow_rebase_merge\":true,\"template_repository\":null,\"temp_clone_token\":\"ABTLWHOULUVAXGTRYU7OC2876QJ2O\",\"allow_squash_merge\":true,\"allow_merge_commit\":true,\"subscribers_count\":42,\"network_count\":0},\"source\":{\"id\":1296269,\"node_id\":\"MDEwOlJlcG9zaXRvcnkxMjk2MjY5\",\"name\":\"Hello-World\",\"full_name\":\"octocat/Hello-World\",\"owner\":{\"login\":\"octocat\",\"id\":1,\"node_id\":\"MDQ6VXNlcjE=\",\"avatar_url\":\"https://github.com/images/error/octocat_happy.gif\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/octocat\",\"html_url\":\"https://github.com/octocat\",\"followers_url\":\"https://api.github.com/users/octocat/followers\",\"following_url\":\"https://api.github.com/users/octocat/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/octocat/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/octocat/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/octocat/subscriptions\",\"organizations_url\":\"https://api.github.com/users/octocat/orgs\",\"repos_url\":\"https://api.github.com/users/octocat/repos\",\"events_url\":\"https://api.github.com/users/octocat/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/octocat/received_events\",\"type\":\"User\",\"site_admin\":false},\"private\":false,\"html_url\":\"https://github.com/octocat/Hello-World\",\"description\":\"This your first repo!\",\"fork\":false,\"url\":\"https://api.github.com/repos/octocat/Hello-World\",\"archive_url\":\"http://api.github.com/repos/octocat/Hello-World/{archive_format}{/ref}\",\"assignees_url\":\"http://api.github.com/repos/octocat/Hello-World/assignees{/user}\",\"blobs_url\":\"http://api.github.com/repos/octocat/Hello-World/git/blobs{/sha}\",\"branches_url\":\"http://api.github.com/repos/octocat/Hello-World/branches{/branch}\",\"collaborators_url\":\"http://api.github.com/repos/octocat/Hello-World/collaborators{/collaborator}\",\"comments_url\":\"http://api.github.com/repos/octocat/Hello-World/comments{/number}\",\"commits_url\":\"http://api.github.com/repos/octocat/Hello-World/commits{/sha}\",\"compare_url\":\"http://api.github.com/repos/octocat/Hello-World/compare/{base}...{head}\",\"contents_url\":\"http://api.github.com/repos/octocat/Hello-World/contents/{+path}\",\"contributors_url\":\"http://api.github.com/repos/octocat/Hello-World/contributors\",\"deployments_url\":\"http://api.github.com/repos/octocat/Hello-World/deployments\",\"downloads_url\":\"http://api.github.com/repos/octocat/Hello-World/downloads\",\"events_url\":\"http://api.github.com/repos/octocat/Hello-World/events\",\"forks_url\":\"http://api.github.com/repos/octocat/Hello-World/forks\",\"git_commits_url\":\"http://api.github.com/repos/octocat/Hello-World/git/commits{/sha}\",\"git_refs_url\":\"http://api.github.com/repos/octocat/Hello-World/git/refs{/sha}\",\"git_tags_url\":\"http://api.github.com/repos/octocat/Hello-World/git/tags{/sha}\",\"git_url\":\"git:github.com/octocat/Hello-World.git\",\"issue_comment_url\":\"http://api.github.com/repos/octocat/Hello-World/issues/comments{/number}\",\"issue_events_url\":\"http://api.github.com/repos/octocat/Hello-World/issues/events{/number}\",\"issues_url\":\"http://api.github.com/repos/octocat/Hello-World/issues{/number}\",\"keys_url\":\"http://api.github.com/repos/octocat/Hello-World/keys{/key_id}\",\"labels_url\":\"http://api.github.com/repos/octocat/Hello-World/labels{/name}\",\"languages_url\":\"http://api.github.com/repos/octocat/Hello-World/languages\",\"merges_url\":\"http://api.github.com/repos/octocat/Hello-World/merges\",\"milestones_url\":\"http://api.github.com/repos/octocat/Hello-World/milestones{/number}\",\"notifications_url\":\"http://api.github.com/repos/octocat/Hello-World/notifications{?since,all,participating}\",\"pulls_url\":\"http://api.github.com/repos/octocat/Hello-World/pulls{/number}\",\"releases_url\":\"http://api.github.com/repos/octocat/Hello-World/releases{/id}\",\"ssh_url\":\"git@github.com:octocat/Hello-World.git\",\"stargazers_url\":\"http://api.github.com/repos/octocat/Hello-World/stargazers\",\"statuses_url\":\"http://api.github.com/repos/octocat/Hello-World/statuses/{sha}\",\"subscribers_url\":\"http://api.github.com/repos/octocat/Hello-World/subscribers\",\"subscription_url\":\"http://api.github.com/repos/octocat/Hello-World/subscription\",\"tags_url\":\"http://api.github.com/repos/octocat/Hello-World/tags\",\"teams_url\":\"http://api.github.com/repos/octocat/Hello-World/teams\",\"trees_url\":\"http://api.github.com/repos/octocat/Hello-World/git/trees{/sha}\",\"clone_url\":\"https://github.com/octocat/Hello-World.git\",\"mirror_url\":\"git:git.example.com/octocat/Hello-World\",\"hooks_url\":\"http://api.github.com/repos/octocat/Hello-World/hooks\",\"svn_url\":\"https://svn.github.com/octocat/Hello-World\",\"homepage\":\"https://github.com\",\"language\":null,\"forks_count\":9,\"stargazers_count\":80,\"watchers_count\":80,\"size\":108,\"default_branch\":\"master\",\"open_issues_count\":0,\"is_template\":true,\"topics\":[\"octocat\",\"atom\",\"electron\",\"api\"],\"has_issues\":true,\"has_projects\":true,\"has_wiki\":true,\"has_pages\":false,\"has_downloads\":true,\"archived\":false,\"disabled\":false,\"visibility\":\"public\",\"pushed_at\":\"2011-01-26T19:06:43Z\",\"created_at\":\"2011-01-26T19:01:12Z\",\"updated_at\":\"2011-01-26T19:14:43Z\",\"permissions\":{\"admin\":false,\"push\":false,\"pull\":true},\"allow_rebase_merge\":true,\"template_repository\":null,\"temp_clone_token\":\"ABTLWHOULUVAXGTRYU7OC2876QJ2O\",\"allow_squash_merge\":true,\"allow_merge_commit\":true,\"subscribers_count\":42,\"network_count\":0},\"permissions\":{\"pull\":true,\"triage\":true,\"push\":false,\"maintain\":false,\"admin\":false}}"
+            "data": "[{\"id\":1296269,\"node_id\":\"MDEwOlJlcG9zaXRvcnkxMjk2MjY5\",\"name\":\"Hello-World\",\"full_name\":\"octocat/Hello-World\",\"owner\":{\"login\":\"octocat\",\"id\":1,\"node_id\":\"MDQ6VXNlcjE=\",\"avatar_url\":\"https://github.com/images/error/octocat_happy.gif\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/octocat\",\"html_url\":\"https://github.com/octocat\",\"followers_url\":\"https://api.github.com/users/octocat/followers\",\"following_url\":\"https://api.github.com/users/octocat/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/octocat/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/octocat/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/octocat/subscriptions\",\"organizations_url\":\"https://api.github.com/users/octocat/orgs\",\"repos_url\":\"https://api.github.com/users/octocat/repos\",\"events_url\":\"https://api.github.com/users/octocat/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/octocat/received_events\",\"type\":\"User\",\"site_admin\":false},\"private\":false,\"html_url\":\"https://github.com/octocat/Hello-World\",\"description\":\"This your first repo!\",\"fork\":false,\"url\":\"https://api.github.com/repos/octocat/Hello-World\",\"archive_url\":\"http://api.github.com/repos/octocat/Hello-World/{archive_format}{/ref}\",\"assignees_url\":\"http://api.github.com/repos/octocat/Hello-World/assignees{/user}\",\"blobs_url\":\"http://api.github.com/repos/octocat/Hello-World/git/blobs{/sha}\",\"branches_url\":\"http://api.github.com/repos/octocat/Hello-World/branches{/branch}\",\"collaborators_url\":\"http://api.github.com/repos/octocat/Hello-World/collaborators{/collaborator}\",\"comments_url\":\"http://api.github.com/repos/octocat/Hello-World/comments{/number}\",\"commits_url\":\"http://api.github.com/repos/octocat/Hello-World/commits{/sha}\",\"compare_url\":\"http://api.github.com/repos/octocat/Hello-World/compare/{base}...{head}\",\"contents_url\":\"http://api.github.com/repos/octocat/Hello-World/contents/{+path}\",\"contributors_url\":\"http://api.github.com/repos/octocat/Hello-World/contributors\",\"deployments_url\":\"http://api.github.com/repos/octocat/Hello-World/deployments\",\"downloads_url\":\"http://api.github.com/repos/octocat/Hello-World/downloads\",\"events_url\":\"http://api.github.com/repos/octocat/Hello-World/events\",\"forks_url\":\"http://api.github.com/repos/octocat/Hello-World/forks\",\"git_commits_url\":\"http://api.github.com/repos/octocat/Hello-World/git/commits{/sha}\",\"git_refs_url\":\"http://api.github.com/repos/octocat/Hello-World/git/refs{/sha}\",\"git_tags_url\":\"http://api.github.com/repos/octocat/Hello-World/git/tags{/sha}\",\"git_url\":\"git:github.com/octocat/Hello-World.git\",\"issue_comment_url\":\"http://api.github.com/repos/octocat/Hello-World/issues/comments{/number}\",\"issue_events_url\":\"http://api.github.com/repos/octocat/Hello-World/issues/events{/number}\",\"issues_url\":\"http://api.github.com/repos/octocat/Hello-World/issues{/number}\",\"keys_url\":\"http://api.github.com/repos/octocat/Hello-World/keys{/key_id}\",\"labels_url\":\"http://api.github.com/repos/octocat/Hello-World/labels{/name}\",\"languages_url\":\"http://api.github.com/repos/octocat/Hello-World/languages\",\"merges_url\":\"http://api.github.com/repos/octocat/Hello-World/merges\",\"milestones_url\":\"http://api.github.com/repos/octocat/Hello-World/milestones{/number}\",\"notifications_url\":\"http://api.github.com/repos/octocat/Hello-World/notifications{?since,all,participating}\",\"pulls_url\":\"http://api.github.com/repos/octocat/Hello-World/pulls{/number}\",\"releases_url\":\"http://api.github.com/repos/octocat/Hello-World/releases{/id}\",\"ssh_url\":\"git@github.com:octocat/Hello-World.git\",\"stargazers_url\":\"http://api.github.com/repos/octocat/Hello-World/stargazers\",\"statuses_url\":\"http://api.github.com/repos/octocat/Hello-World/statuses/{sha}\",\"subscribers_url\":\"http://api.github.com/repos/octocat/Hello-World/subscribers\",\"subscription_url\":\"http://api.github.com/repos/octocat/Hello-World/subscription\",\"tags_url\":\"http://api.github.com/repos/octocat/Hello-World/tags\",\"teams_url\":\"http://api.github.com/repos/octocat/Hello-World/teams\",\"trees_url\":\"http://api.github.com/repos/octocat/Hello-World/git/trees{/sha}\",\"clone_url\":\"https://github.com/octocat/Hello-World.git\",\"mirror_url\":\"git:git.example.com/octocat/Hello-World\",\"hooks_url\":\"http://api.github.com/repos/octocat/Hello-World/hooks\",\"svn_url\":\"https://svn.github.com/octocat/Hello-World\",\"homepage\":\"https://github.com\",\"language\":null,\"forks_count\":9,\"stargazers_count\":80,\"watchers_count\":80,\"size\":108,\"default_branch\":\"master\",\"open_issues_count\":0,\"is_template\":true,\"topics\":[\"octocat\",\"atom\",\"electron\",\"api\"],\"has_issues\":true,\"has_projects\":true,\"has_wiki\":true,\"has_pages\":false,\"has_downloads\":true,\"archived\":false,\"disabled\":false,\"visibility\":\"public\",\"pushed_at\":\"2011-01-26T19:06:43Z\",\"created_at\":\"2011-01-26T19:01:12Z\",\"updated_at\":\"2011-01-26T19:14:43Z\",\"permissions\":{\"admin\":false,\"push\":false,\"pull\":true},\"template_repository\":null,\"temp_clone_token\":\"ABTLWHOULUVAXGTRYU7OC2876QJ2O\",\"subscribers_count\":42,\"network_count\":0,\"license\":{\"key\":\"mit\",\"name\":\"MIT License\",\"spdx_id\":\"MIT\",\"url\":\"https://api.github.com/licenses/mit\",\"node_id\":\"MDc6TGljZW5zZW1pdA==\"}}]"
           }
         ]
       }
     ],
-    "renamed": {
-      "before": { "scope": "teams", "id": "checkManagesRepoInOrg" },
-      "after": { "scope": "teams", "id": "checkPermissionsForRepoInOrg" },
-      "date": "2020-06-01",
-      "note": "\"teams/check-manages-repo-in-org\" operation ID is now \"teams/check-permissions-for-repo-in-org\""
-    }
+    "renamed": null
   },
   {
     "name": "Check team permissions for a repository",
@@ -12025,8 +11889,8 @@
   {
     "name": "Check team permissions for a repository",
     "scope": "teams",
-    "id": "addOrUpdateRepoPermissionsInOrg",
-    "method": "PUT",
+    "id": "checkManagesRepoInOrg",
+    "method": "GET",
     "url": "/orgs/{org}/teams/{team_slug}/repos/{owner}/{repo}",
     "isDeprecated": false,
     "isLegacy": false,
@@ -12086,19 +11950,17 @@
         "validation": null,
         "alias": null,
         "deprecated": null
-      },
+      }
+    ],
+    "responses": [
       {
-        "name": "permission",
-        "description": "The permission to grant the team on this repository. Can be one of:  \n\\* `pull` - team members can pull, but not push to or administer this repository.  \n\\* `push` - team members can pull and push, but not administer this repository.  \n\\* `admin` - team members can pull, push and administer this repository.  \n\\* `maintain` - team members can manage the repository without access to sensitive or destructive actions. Recommended for project managers. Only applies to repositories owned by organizations.  \n\\* `triage` - team members can proactively manage issues and pull requests without write access. Recommended for contributors who triage a repository. Only applies to repositories owned by organizations.  \n  \nIf no permission is specified, the team's `permission` attribute will be used to determine what permission to grant the team on this repository.",
-        "in": "BODY",
-        "type": "string",
-        "required": false,
-        "enum": ["pull", "push", "admin", "maintain", "triage"],
-        "allowNull": false,
-        "mapToData": null,
-        "validation": null,
-        "alias": null,
-        "deprecated": null
+        "code": 200,
+        "description": "Alternative response with repository permissions",
+        "examples": [
+          {
+            "data": "{\"organization\":{\"login\":\"octocat\",\"id\":1,\"node_id\":\"MDQ6VXNlcjE=\",\"avatar_url\":\"https://github.com/images/error/octocat_happy.gif\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/octocat\",\"html_url\":\"https://github.com/octocat\",\"followers_url\":\"https://api.github.com/users/octocat/followers\",\"following_url\":\"https://api.github.com/users/octocat/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/octocat/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/octocat/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/octocat/subscriptions\",\"organizations_url\":\"https://api.github.com/users/octocat/orgs\",\"repos_url\":\"https://api.github.com/users/octocat/repos\",\"events_url\":\"https://api.github.com/users/octocat/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/octocat/received_events\",\"type\":\"Organization\",\"site_admin\":false},\"parent\":{\"id\":1296269,\"node_id\":\"MDEwOlJlcG9zaXRvcnkxMjk2MjY5\",\"name\":\"Hello-World\",\"full_name\":\"octocat/Hello-World\",\"owner\":{\"login\":\"octocat\",\"id\":1,\"node_id\":\"MDQ6VXNlcjE=\",\"avatar_url\":\"https://github.com/images/error/octocat_happy.gif\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/octocat\",\"html_url\":\"https://github.com/octocat\",\"followers_url\":\"https://api.github.com/users/octocat/followers\",\"following_url\":\"https://api.github.com/users/octocat/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/octocat/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/octocat/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/octocat/subscriptions\",\"organizations_url\":\"https://api.github.com/users/octocat/orgs\",\"repos_url\":\"https://api.github.com/users/octocat/repos\",\"events_url\":\"https://api.github.com/users/octocat/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/octocat/received_events\",\"type\":\"User\",\"site_admin\":false},\"private\":false,\"html_url\":\"https://github.com/octocat/Hello-World\",\"description\":\"This your first repo!\",\"fork\":false,\"url\":\"https://api.github.com/repos/octocat/Hello-World\",\"archive_url\":\"http://api.github.com/repos/octocat/Hello-World/{archive_format}{/ref}\",\"assignees_url\":\"http://api.github.com/repos/octocat/Hello-World/assignees{/user}\",\"blobs_url\":\"http://api.github.com/repos/octocat/Hello-World/git/blobs{/sha}\",\"branches_url\":\"http://api.github.com/repos/octocat/Hello-World/branches{/branch}\",\"collaborators_url\":\"http://api.github.com/repos/octocat/Hello-World/collaborators{/collaborator}\",\"comments_url\":\"http://api.github.com/repos/octocat/Hello-World/comments{/number}\",\"commits_url\":\"http://api.github.com/repos/octocat/Hello-World/commits{/sha}\",\"compare_url\":\"http://api.github.com/repos/octocat/Hello-World/compare/{base}...{head}\",\"contents_url\":\"http://api.github.com/repos/octocat/Hello-World/contents/{+path}\",\"contributors_url\":\"http://api.github.com/repos/octocat/Hello-World/contributors\",\"deployments_url\":\"http://api.github.com/repos/octocat/Hello-World/deployments\",\"downloads_url\":\"http://api.github.com/repos/octocat/Hello-World/downloads\",\"events_url\":\"http://api.github.com/repos/octocat/Hello-World/events\",\"forks_url\":\"http://api.github.com/repos/octocat/Hello-World/forks\",\"git_commits_url\":\"http://api.github.com/repos/octocat/Hello-World/git/commits{/sha}\",\"git_refs_url\":\"http://api.github.com/repos/octocat/Hello-World/git/refs{/sha}\",\"git_tags_url\":\"http://api.github.com/repos/octocat/Hello-World/git/tags{/sha}\",\"git_url\":\"git:github.com/octocat/Hello-World.git\",\"issue_comment_url\":\"http://api.github.com/repos/octocat/Hello-World/issues/comments{/number}\",\"issue_events_url\":\"http://api.github.com/repos/octocat/Hello-World/issues/events{/number}\",\"issues_url\":\"http://api.github.com/repos/octocat/Hello-World/issues{/number}\",\"keys_url\":\"http://api.github.com/repos/octocat/Hello-World/keys{/key_id}\",\"labels_url\":\"http://api.github.com/repos/octocat/Hello-World/labels{/name}\",\"languages_url\":\"http://api.github.com/repos/octocat/Hello-World/languages\",\"merges_url\":\"http://api.github.com/repos/octocat/Hello-World/merges\",\"milestones_url\":\"http://api.github.com/repos/octocat/Hello-World/milestones{/number}\",\"notifications_url\":\"http://api.github.com/repos/octocat/Hello-World/notifications{?since,all,participating}\",\"pulls_url\":\"http://api.github.com/repos/octocat/Hello-World/pulls{/number}\",\"releases_url\":\"http://api.github.com/repos/octocat/Hello-World/releases{/id}\",\"ssh_url\":\"git@github.com:octocat/Hello-World.git\",\"stargazers_url\":\"http://api.github.com/repos/octocat/Hello-World/stargazers\",\"statuses_url\":\"http://api.github.com/repos/octocat/Hello-World/statuses/{sha}\",\"subscribers_url\":\"http://api.github.com/repos/octocat/Hello-World/subscribers\",\"subscription_url\":\"http://api.github.com/repos/octocat/Hello-World/subscription\",\"tags_url\":\"http://api.github.com/repos/octocat/Hello-World/tags\",\"teams_url\":\"http://api.github.com/repos/octocat/Hello-World/teams\",\"trees_url\":\"http://api.github.com/repos/octocat/Hello-World/git/trees{/sha}\",\"clone_url\":\"https://github.com/octocat/Hello-World.git\",\"mirror_url\":\"git:git.example.com/octocat/Hello-World\",\"hooks_url\":\"http://api.github.com/repos/octocat/Hello-World/hooks\",\"svn_url\":\"https://svn.github.com/octocat/Hello-World\",\"homepage\":\"https://github.com\",\"language\":null,\"forks_count\":9,\"stargazers_count\":80,\"watchers_count\":80,\"size\":108,\"default_branch\":\"master\",\"open_issues_count\":0,\"is_template\":true,\"topics\":[\"octocat\",\"atom\",\"electron\",\"api\"],\"has_issues\":true,\"has_projects\":true,\"has_wiki\":true,\"has_pages\":false,\"has_downloads\":true,\"archived\":false,\"disabled\":false,\"visibility\":\"public\",\"pushed_at\":\"2011-01-26T19:06:43Z\",\"created_at\":\"2011-01-26T19:01:12Z\",\"updated_at\":\"2011-01-26T19:14:43Z\",\"permissions\":{\"admin\":false,\"push\":false,\"pull\":true},\"allow_rebase_merge\":true,\"template_repository\":null,\"temp_clone_token\":\"ABTLWHOULUVAXGTRYU7OC2876QJ2O\",\"allow_squash_merge\":true,\"allow_merge_commit\":true,\"subscribers_count\":42,\"network_count\":0},\"source\":{\"id\":1296269,\"node_id\":\"MDEwOlJlcG9zaXRvcnkxMjk2MjY5\",\"name\":\"Hello-World\",\"full_name\":\"octocat/Hello-World\",\"owner\":{\"login\":\"octocat\",\"id\":1,\"node_id\":\"MDQ6VXNlcjE=\",\"avatar_url\":\"https://github.com/images/error/octocat_happy.gif\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/octocat\",\"html_url\":\"https://github.com/octocat\",\"followers_url\":\"https://api.github.com/users/octocat/followers\",\"following_url\":\"https://api.github.com/users/octocat/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/octocat/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/octocat/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/octocat/subscriptions\",\"organizations_url\":\"https://api.github.com/users/octocat/orgs\",\"repos_url\":\"https://api.github.com/users/octocat/repos\",\"events_url\":\"https://api.github.com/users/octocat/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/octocat/received_events\",\"type\":\"User\",\"site_admin\":false},\"private\":false,\"html_url\":\"https://github.com/octocat/Hello-World\",\"description\":\"This your first repo!\",\"fork\":false,\"url\":\"https://api.github.com/repos/octocat/Hello-World\",\"archive_url\":\"http://api.github.com/repos/octocat/Hello-World/{archive_format}{/ref}\",\"assignees_url\":\"http://api.github.com/repos/octocat/Hello-World/assignees{/user}\",\"blobs_url\":\"http://api.github.com/repos/octocat/Hello-World/git/blobs{/sha}\",\"branches_url\":\"http://api.github.com/repos/octocat/Hello-World/branches{/branch}\",\"collaborators_url\":\"http://api.github.com/repos/octocat/Hello-World/collaborators{/collaborator}\",\"comments_url\":\"http://api.github.com/repos/octocat/Hello-World/comments{/number}\",\"commits_url\":\"http://api.github.com/repos/octocat/Hello-World/commits{/sha}\",\"compare_url\":\"http://api.github.com/repos/octocat/Hello-World/compare/{base}...{head}\",\"contents_url\":\"http://api.github.com/repos/octocat/Hello-World/contents/{+path}\",\"contributors_url\":\"http://api.github.com/repos/octocat/Hello-World/contributors\",\"deployments_url\":\"http://api.github.com/repos/octocat/Hello-World/deployments\",\"downloads_url\":\"http://api.github.com/repos/octocat/Hello-World/downloads\",\"events_url\":\"http://api.github.com/repos/octocat/Hello-World/events\",\"forks_url\":\"http://api.github.com/repos/octocat/Hello-World/forks\",\"git_commits_url\":\"http://api.github.com/repos/octocat/Hello-World/git/commits{/sha}\",\"git_refs_url\":\"http://api.github.com/repos/octocat/Hello-World/git/refs{/sha}\",\"git_tags_url\":\"http://api.github.com/repos/octocat/Hello-World/git/tags{/sha}\",\"git_url\":\"git:github.com/octocat/Hello-World.git\",\"issue_comment_url\":\"http://api.github.com/repos/octocat/Hello-World/issues/comments{/number}\",\"issue_events_url\":\"http://api.github.com/repos/octocat/Hello-World/issues/events{/number}\",\"issues_url\":\"http://api.github.com/repos/octocat/Hello-World/issues{/number}\",\"keys_url\":\"http://api.github.com/repos/octocat/Hello-World/keys{/key_id}\",\"labels_url\":\"http://api.github.com/repos/octocat/Hello-World/labels{/name}\",\"languages_url\":\"http://api.github.com/repos/octocat/Hello-World/languages\",\"merges_url\":\"http://api.github.com/repos/octocat/Hello-World/merges\",\"milestones_url\":\"http://api.github.com/repos/octocat/Hello-World/milestones{/number}\",\"notifications_url\":\"http://api.github.com/repos/octocat/Hello-World/notifications{?since,all,participating}\",\"pulls_url\":\"http://api.github.com/repos/octocat/Hello-World/pulls{/number}\",\"releases_url\":\"http://api.github.com/repos/octocat/Hello-World/releases{/id}\",\"ssh_url\":\"git@github.com:octocat/Hello-World.git\",\"stargazers_url\":\"http://api.github.com/repos/octocat/Hello-World/stargazers\",\"statuses_url\":\"http://api.github.com/repos/octocat/Hello-World/statuses/{sha}\",\"subscribers_url\":\"http://api.github.com/repos/octocat/Hello-World/subscribers\",\"subscription_url\":\"http://api.github.com/repos/octocat/Hello-World/subscription\",\"tags_url\":\"http://api.github.com/repos/octocat/Hello-World/tags\",\"teams_url\":\"http://api.github.com/repos/octocat/Hello-World/teams\",\"trees_url\":\"http://api.github.com/repos/octocat/Hello-World/git/trees{/sha}\",\"clone_url\":\"https://github.com/octocat/Hello-World.git\",\"mirror_url\":\"git:git.example.com/octocat/Hello-World\",\"hooks_url\":\"http://api.github.com/repos/octocat/Hello-World/hooks\",\"svn_url\":\"https://svn.github.com/octocat/Hello-World\",\"homepage\":\"https://github.com\",\"language\":null,\"forks_count\":9,\"stargazers_count\":80,\"watchers_count\":80,\"size\":108,\"default_branch\":\"master\",\"open_issues_count\":0,\"is_template\":true,\"topics\":[\"octocat\",\"atom\",\"electron\",\"api\"],\"has_issues\":true,\"has_projects\":true,\"has_wiki\":true,\"has_pages\":false,\"has_downloads\":true,\"archived\":false,\"disabled\":false,\"visibility\":\"public\",\"pushed_at\":\"2011-01-26T19:06:43Z\",\"created_at\":\"2011-01-26T19:01:12Z\",\"updated_at\":\"2011-01-26T19:14:43Z\",\"permissions\":{\"admin\":false,\"push\":false,\"pull\":true},\"allow_rebase_merge\":true,\"template_repository\":null,\"temp_clone_token\":\"ABTLWHOULUVAXGTRYU7OC2876QJ2O\",\"allow_squash_merge\":true,\"allow_merge_commit\":true,\"subscribers_count\":42,\"network_count\":0},\"permissions\":{\"pull\":true,\"triage\":true,\"push\":false,\"maintain\":false,\"admin\":false}}"
+          }
+        ]
       }
     ],
     "renamed": {
@@ -17171,67 +17033,6 @@
     ],
     "responses": [],
     "renamed": null
-  },
-  {
-    "name": "Check if a user can be assigned",
-    "scope": "issues",
-    "id": "checkUserCanBeAssigned",
-    "method": "GET",
-    "url": "/repos/{owner}/{repo}/assignees/{assignee}",
-    "isDeprecated": false,
-    "isLegacy": false,
-    "description": "Checks if a user has permission to be assigned to an issue in this repository.\n\nIf the `assignee` can be assigned to issues in the repository, a `204` header with no content is returned.\n\nOtherwise a `404` status code is returned.",
-    "documentationUrl": "https://developer.github.com/v3/issues/assignees/#check-if-a-user-can-be-assigned",
-    "previews": [],
-    "headers": [],
-    "parameters": [
-      {
-        "name": "owner",
-        "description": "",
-        "in": "PATH",
-        "type": "string",
-        "required": true,
-        "enum": null,
-        "allowNull": false,
-        "mapToData": null,
-        "validation": null,
-        "alias": null,
-        "deprecated": null
-      },
-      {
-        "name": "repo",
-        "description": "",
-        "in": "PATH",
-        "type": "string",
-        "required": true,
-        "enum": null,
-        "allowNull": false,
-        "mapToData": null,
-        "validation": null,
-        "alias": null,
-        "deprecated": null
-      },
-      {
-        "name": "assignee",
-        "description": "",
-        "in": "PATH",
-        "type": "string",
-        "required": true,
-        "enum": null,
-        "allowNull": false,
-        "mapToData": null,
-        "validation": null,
-        "alias": null,
-        "deprecated": null
-      }
-    ],
-    "responses": [],
-    "renamed": {
-      "before": { "scope": "issues", "id": "checkAssignee" },
-      "after": { "scope": "issues", "id": "checkUserCanBeAssigned" },
-      "date": "2020-06-01",
-      "note": "\"issues/check-assignee\" operation ID is now \"issues/check-user-can-be-assigned\""
-    }
   },
   {
     "name": "Check if a user can be assigned",
