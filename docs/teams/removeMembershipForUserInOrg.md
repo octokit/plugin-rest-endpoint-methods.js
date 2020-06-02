@@ -1,14 +1,12 @@
 ---
 name: Remove team membership for a user
-example: octokit.teams.removeMembershipInOrg({ org, team_slug, username })
+example: octokit.teams.removeMembershipForUserInOrg({ org, team_slug, username })
 route: DELETE /orgs/{org}/teams/{team_slug}/memberships/{username}
 scope: teams
 type: API method
 ---
 
 # Remove team membership for a user
-
-**Deprecated:** This method has been renamed to teams.removeMembershipForUserInOrg
 
 Team synchronization is available for organizations using GitHub Enterprise Cloud. For more information, see [GitHub's products](https://help.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
 
@@ -19,7 +17,7 @@ To remove a membership between a user and a team, the authenticated user must ha
 **Note:** You can also specify a team by `org_id` and `team_id` using the route `DELETE /organizations/:org_id/team/:team_id/memberships/:username`.
 
 ```js
-octokit.teams.removeMembershipInOrg({
+octokit.teams.removeMembershipForUserInOrg({
   org,
   team_slug,
   username,

@@ -1,14 +1,16 @@
 ---
-name: Replace all labels for an issue
+name: Set labels for an issue
 example: octokit.issues.replaceLabels({ owner, repo, issue_number })
 route: PUT /repos/{owner}/{repo}/issues/{issue_number}/labels
 scope: issues
 type: API method
 ---
 
-# Replace all labels for an issue
+# Set labels for an issue
 
 **Deprecated:** This method has been renamed to issues.replaceAllLabels
+
+Removes any previous labels and sets the new labels for an issue.
 
 ```js
 octokit.issues.replaceLabels({
@@ -46,4 +48,4 @@ The names of the labels to add to the issue. You can pass an empty array to remo
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/issues/labels/#replace-all-labels-for-an-issue).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/issues/labels/#set-labels-for-an-issue).

@@ -1,12 +1,12 @@
 ---
-name: List events for an issue
+name: List issue events
 example: octokit.issues.listEvents({ owner, repo, issue_number })
 route: GET /repos/{owner}/{repo}/issues/{issue_number}/events
 scope: issues
 type: API method
 ---
 
-# List events for an issue
+# List issue events
 
 ```js
 octokit.issues.listEvents({
@@ -49,4 +49,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/issues/events/#list-events-for-an-issue).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/issues/events/#list-issue-events).

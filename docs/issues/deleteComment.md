@@ -1,12 +1,12 @@
 ---
-name: Delete a comment
+name: Delete an issue comment
 example: octokit.issues.deleteComment({ owner, repo, comment_id })
 route: DELETE /repos/{owner}/{repo}/issues/comments/{comment_id}
 scope: issues
 type: API method
 ---
 
-# Delete a comment
+# Delete an issue comment
 
 ```js
 octokit.issues.deleteComment({
@@ -39,4 +39,4 @@ octokit.issues.deleteComment({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/issues/comments/#delete-a-comment).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/issues/comments/#delete-an-issue-comment).

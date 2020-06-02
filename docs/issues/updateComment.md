@@ -1,12 +1,12 @@
 ---
-name: Edit a comment
+name: Update an issue comment
 example: octokit.issues.updateComment({ owner, repo, comment_id, body })
 route: PATCH /repos/{owner}/{repo}/issues/comments/{comment_id}
 scope: issues
 type: API method
 ---
 
-# Edit a comment
+# Update an issue comment
 
 ```js
 octokit.issues.updateComment({
@@ -45,4 +45,4 @@ The contents of the comment.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/issues/comments/#edit-a-comment).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/issues/comments/#update-an-issue-comment).

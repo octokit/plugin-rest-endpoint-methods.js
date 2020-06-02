@@ -1,12 +1,12 @@
 ---
-name: Get the status of an organization migration
+name: Get an organization migration status
 example: octokit.migrations.getStatusForOrg({ org, migration_id })
 route: GET /orgs/{org}/migrations/{migration_id}
 scope: migrations
 type: API method
 ---
 
-# Get the status of an organization migration
+# Get an organization migration status
 
 Fetches the status of a migration.
 
@@ -44,4 +44,4 @@ octokit.migrations.getStatusForOrg({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/migrations/orgs/#get-the-status-of-an-organization-migration).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/migrations/orgs/#get-an-organization-migration-status).

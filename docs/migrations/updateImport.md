@@ -1,12 +1,12 @@
 ---
-name: Update existing import
+name: Update an import
 example: octokit.migrations.updateImport({ owner, repo })
 route: PATCH /repos/{owner}/{repo}/import
 scope: migrations
 type: API method
 ---
 
-# Update existing import
+# Update an import
 
 An import can be updated with credentials or a project choice by passing in the appropriate parameters in this API request. If no parameters are provided, the import will be restarted.
 
@@ -53,4 +53,4 @@ The password to provide to the originating repository.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/migrations/source_imports/#update-existing-import).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/migrations/source_imports/#update-an-import).

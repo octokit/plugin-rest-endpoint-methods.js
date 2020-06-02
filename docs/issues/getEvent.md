@@ -1,12 +1,12 @@
 ---
-name: Get a single event
+name: Get an issue event
 example: octokit.issues.getEvent({ owner, repo, event_id })
 route: GET /repos/{owner}/{repo}/issues/events/{event_id}
 scope: issues
 type: API method
 ---
 
-# Get a single event
+# Get an issue event
 
 ```js
 octokit.issues.getEvent({
@@ -39,4 +39,4 @@ octokit.issues.getEvent({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/issues/events/#get-a-single-event).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/issues/events/#get-an-issue-event).

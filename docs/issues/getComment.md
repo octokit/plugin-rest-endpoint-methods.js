@@ -1,12 +1,12 @@
 ---
-name: Get a single comment
+name: Get an issue comment
 example: octokit.issues.getComment({ owner, repo, comment_id })
 route: GET /repos/{owner}/{repo}/issues/comments/{comment_id}
 scope: issues
 type: API method
 ---
 
-# Get a single comment
+# Get an issue comment
 
 ```js
 octokit.issues.getComment({
@@ -39,4 +39,4 @@ octokit.issues.getComment({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/issues/comments/#get-a-single-comment).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/issues/comments/#get-an-issue-comment).

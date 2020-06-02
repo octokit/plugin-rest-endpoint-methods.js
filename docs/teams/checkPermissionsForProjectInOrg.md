@@ -1,6 +1,6 @@
 ---
 name: Check team permissions for a project
-example: octokit.teams.reviewProjectInOrg({ org, team_slug, project_id })
+example: octokit.teams.checkPermissionsForProjectInOrg({ org, team_slug, project_id })
 route: GET /orgs/{org}/teams/{team_slug}/projects/{project_id}
 scope: teams
 type: API method
@@ -8,14 +8,12 @@ type: API method
 
 # Check team permissions for a project
 
-**Deprecated:** This method has been renamed to teams.checkPermissionsForProjectInOrg
-
 Checks whether a team has `read`, `write`, or `admin` permissions for an organization project. The response includes projects inherited from a parent team.
 
 **Note:** You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/:org_id/team/:team_id/projects/:project_id`.
 
 ```js
-octokit.teams.reviewProjectInOrg({
+octokit.teams.checkPermissionsForProjectInOrg({
   org,
   team_slug,
   project_id,
