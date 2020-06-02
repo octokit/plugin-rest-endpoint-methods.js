@@ -2921,9 +2921,9 @@ export type RestEndpointMethods = {
      */
     listMilestonesForRepo: {
       (
-        params?: RestEndpointMethodTypes["issues"]["listMilestones"]["parameters"]
+        params?: RestEndpointMethodTypes["issues"]["listMilestonesForRepo"]["parameters"]
       ): Promise<
-        RestEndpointMethodTypes["issues"]["listMilestones"]["response"]
+        RestEndpointMethodTypes["issues"]["listMilestonesForRepo"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -3252,9 +3252,9 @@ export type RestEndpointMethods = {
      */
     getImportProgress: {
       (
-        params?: RestEndpointMethodTypes["migrations"]["getImportStatus"]["parameters"]
+        params?: RestEndpointMethodTypes["migrations"]["getImportProgress"]["parameters"]
       ): Promise<
-        RestEndpointMethodTypes["migrations"]["getImportStatus"]["response"]
+        RestEndpointMethodTypes["migrations"]["getImportProgress"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;

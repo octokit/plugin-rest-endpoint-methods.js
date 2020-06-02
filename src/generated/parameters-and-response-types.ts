@@ -2048,7 +2048,7 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["GET /repos/:owner/:repo/import/authors"]["response"];
     };
-    getImportStatus: {
+    getImportProgress: {
       parameters: RequestParameters &
         Omit<
           Endpoints["GET /repos/:owner/:repo/import"]["parameters"],
@@ -2056,7 +2056,7 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["GET /repos/:owner/:repo/import"]["response"];
     };
-    getImportProgress: {
+    getImportStatus: {
       parameters: RequestParameters &
         Omit<
           Endpoints["GET /repos/:owner/:repo/import"]["parameters"],
