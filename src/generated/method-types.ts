@@ -3250,7 +3250,7 @@ export type RestEndpointMethods = {
      * *   `large_files_count` - the total number of files larger than 100MB found in the originating repository. To see a list of these files, make a "Get Large Files" request.
      * @deprecated octokit.migrations.getImportProgress() has been renamed to octokit.migrations.getImportStatus() (2020-06-01)
      */
-    getImportStatus: {
+    getImportProgress: {
       (
         params?: RestEndpointMethodTypes["migrations"]["getImportStatus"]["parameters"]
       ): Promise<

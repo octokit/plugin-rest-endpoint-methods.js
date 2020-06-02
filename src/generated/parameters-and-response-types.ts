@@ -2056,7 +2056,7 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["GET /repos/:owner/:repo/import"]["response"];
     };
-    getImportStatus: {
+    getImportProgress: {
       parameters: RequestParameters &
         Omit<
           Endpoints["GET /repos/:owner/:repo/import"]["parameters"],
