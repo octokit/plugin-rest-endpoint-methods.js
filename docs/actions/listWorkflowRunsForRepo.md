@@ -1,6 +1,6 @@
 ---
 name: List workflow runs for a repository
-example: octokit.actions.listRepoWorkflowRuns({ owner, repo })
+example: octokit.actions.listWorkflowRunsForRepo({ owner, repo })
 route: GET /repos/{owner}/{repo}/actions/runs
 scope: actions
 type: API method
@@ -8,14 +8,12 @@ type: API method
 
 # List workflow runs for a repository
 
-**Deprecated:** This method has been renamed to actions.listWorkflowRunsForRepo
-
 Lists all workflow runs for a repository. You can use parameters to narrow the list of results. For more information about using parameters, see [Parameters](https://developer.github.com/v3/#parameters).
 
 Anyone with read access to the repository can use this endpoint. If the repository is private you must use an access token with the `repo` scope. GitHub Apps must have the `actions:read` permission to use this endpoint.
 
 ```js
-octokit.actions.listRepoWorkflowRuns({
+octokit.actions.listWorkflowRunsForRepo({
   owner,
   repo,
 });

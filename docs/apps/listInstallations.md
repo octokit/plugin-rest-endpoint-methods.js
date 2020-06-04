@@ -1,12 +1,12 @@
 ---
-name: List installations
+name: List installations for the authenticated app
 example: octokit.apps.listInstallations()
 route: GET /app/installations
 scope: apps
 type: API method
 ---
 
-# List installations
+# List installations for the authenticated app
 
 You must use a [JWT](https://developer.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint.
 
@@ -40,4 +40,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/apps/#list-installations).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/apps/#list-installations-for-the-authenticated-app).

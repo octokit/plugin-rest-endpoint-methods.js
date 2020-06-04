@@ -1,12 +1,12 @@
 ---
-name: Add repository to installation
+name: Add a repository to an app installation
 example: octokit.apps.addRepoToInstallation({ installation_id, repository_id })
 route: PUT /user/installations/{installation_id}/repositories/{repository_id}
 scope: apps
 type: API method
 ---
 
-# Add repository to installation
+# Add a repository to an app installation
 
 Add a single repository to an installation. The authenticated user must have admin access to the repository.
 
@@ -39,4 +39,4 @@ octokit.apps.addRepoToInstallation({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/apps/installations/#add-repository-to-installation).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/apps/installations/#add-a-repository-to-an-app-installation).

@@ -1,12 +1,12 @@
 ---
-name: Get a user installation
+name: Get a user installation for the authenticated app
 example: octokit.apps.getUserInstallation({ username })
 route: GET /users/{username}/installation
 scope: apps
 type: API method
 ---
 
-# Get a user installation
+# Get a user installation for the authenticated app
 
 Enables an authenticated GitHub App to find the user’s installation information.
 
@@ -35,4 +35,4 @@ octokit.apps.getUserInstallation({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/apps/#get-a-user-installation).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/apps/#get-a-user-installation-for-the-authenticated-app).

@@ -302,6 +302,21 @@ export type RestEndpointMethods = {
      *
      * Call this endpoint using the `-v` flag, which enables verbose output and allows you to see the download URL in the header. To download the file into the current working directory, specify the filename using the `-o` flag.
      */
+    downloadJobLogsForWorkflowRun: {
+      (
+        params?: RestEndpointMethodTypes["actions"]["downloadJobLogsForWorkflowRun"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["actions"]["downloadJobLogsForWorkflowRun"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Gets a redirect URL to download a plain text file of logs for a workflow job. This link expires after 1 minute. Look for `Location:` in the response header to find the URL for the download. Anyone with read access to the repository can use this endpoint. If the repository is private you must use an access token with the `repo` scope. GitHub Apps must have the `actions:read` permission to use this endpoint.
+     *
+     * Call this endpoint using the `-v` flag, which enables verbose output and allows you to see the download URL in the header. To download the file into the current working directory, specify the filename using the `-o` flag.
+     * @deprecated octokit.actions.downloadWorkflowJobLogs() has been renamed to octokit.actions.downloadJobLogsForWorkflowRun() (2020-06-04)
+     */
     downloadWorkflowJobLogs: {
       (
         params?: RestEndpointMethodTypes["actions"]["downloadWorkflowJobLogs"]["parameters"]
@@ -332,6 +347,18 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["actions"]["getArtifact"]["parameters"]
       ): Promise<RestEndpointMethodTypes["actions"]["getArtifact"]["response"]>;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Gets a specific job in a workflow run. Anyone with read access to the repository can use this endpoint. If the repository is private you must use an access token with the `repo` scope. GitHub Apps must have the `actions:read` permission to use this endpoint.
+     */
+    getJobForWorkflowRun: {
+      (
+        params?: RestEndpointMethodTypes["actions"]["getJobForWorkflowRun"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["actions"]["getJobForWorkflowRun"]["response"]
+      >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
@@ -458,6 +485,7 @@ export type RestEndpointMethods = {
     };
     /**
      * Gets a specific job in a workflow run. Anyone with read access to the repository can use this endpoint. If the repository is private you must use an access token with the `repo` scope. GitHub Apps must have the `actions:read` permission to use this endpoint.
+     * @deprecated octokit.actions.getWorkflowJob() has been renamed to octokit.actions.getJobForWorkflowRun() (2020-06-04)
      */
     getWorkflowJob: {
       (
@@ -577,6 +605,7 @@ export type RestEndpointMethods = {
      * Lists all workflow runs for a repository. You can use parameters to narrow the list of results. For more information about using parameters, see [Parameters](https://developer.github.com/v3/#parameters).
      *
      * Anyone with read access to the repository can use this endpoint. If the repository is private you must use an access token with the `repo` scope. GitHub Apps must have the `actions:read` permission to use this endpoint.
+     * @deprecated octokit.actions.listRepoWorkflowRuns() has been renamed to octokit.actions.listWorkflowRunsForRepo() (2020-05-04)
      */
     listRepoWorkflowRuns: {
       (
@@ -728,6 +757,20 @@ export type RestEndpointMethods = {
         params?: RestEndpointMethodTypes["actions"]["listWorkflowRuns"]["parameters"]
       ): Promise<
         RestEndpointMethodTypes["actions"]["listWorkflowRuns"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Lists all workflow runs for a repository. You can use parameters to narrow the list of results. For more information about using parameters, see [Parameters](https://developer.github.com/v3/#parameters).
+     *
+     * Anyone with read access to the repository can use this endpoint. If the repository is private you must use an access token with the `repo` scope. GitHub Apps must have the `actions:read` permission to use this endpoint.
+     */
+    listWorkflowRunsForRepo: {
+      (
+        params?: RestEndpointMethodTypes["actions"]["listWorkflowRunsForRepo"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["actions"]["listWorkflowRunsForRepo"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -1404,6 +1447,23 @@ export type RestEndpointMethods = {
      *
      * This example grants the token "Read and write" permission to `issues` and "Read" permission to `contents`, and restricts the token's access to the repository with an `id` of 1296269.
      */
+    createInstallationAccessToken: {
+      (
+        params?: RestEndpointMethodTypes["apps"]["createInstallationAccessToken"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["apps"]["createInstallationAccessToken"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Creates an installation access token that enables a GitHub App to make authenticated API requests for the app's installation on an organization or individual account. Installation tokens expire one hour from the time you create them. Using an expired token produces a status code of `401 - Unauthorized`, and requires creating a new installation token. By default the installation token has access to all repositories that the installation can access. To restrict the access to specific repositories, you can provide the `repository_ids` when creating the token. When you omit `repository_ids`, the response does not contain the `repositories` key.
+     *
+     * You must use a [JWT](https://developer.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint.
+     *
+     * This example grants the token "Read and write" permission to `issues` and "Read" permission to `contents`, and restricts the token's access to the repository with an `id` of 1296269.
+     * @deprecated octokit.apps.createInstallationToken() has been renamed to octokit.apps.createInstallationAccessToken() (2020-06-04)
+     */
     createInstallationToken: {
       (
         params?: RestEndpointMethodTypes["apps"]["createInstallationToken"]["parameters"]
@@ -1428,7 +1488,7 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Uninstalls a GitHub App on a user, organization, or business account. If you prefer to temporarily suspend an app's access to your account's resources, then we recommend the "[Suspend an installation](https://developer.github.com/v3/apps/#suspend-an-installation)" endpoint.
+     * Uninstalls a GitHub App on a user, organization, or business account. If you prefer to temporarily suspend an app's access to your account's resources, then we recommend the "[Suspend an app installation](https://developer.github.com/v3/apps/#suspend-an-app-installation)" endpoint.
      *
      * You must use a [JWT](https://developer.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint.
      */
@@ -1452,7 +1512,7 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Returns the GitHub App associated with the authentication credentials used. To see how many app installations are associated with this GitHub App, see the `installations_count` in the response. For more details about your app's installations, see the "[List installations](https://developer.github.com/v3/apps/#list-installations)" endpoint.
+     * Returns the GitHub App associated with the authentication credentials used. To see how many app installations are associated with this GitHub App, see the `installations_count` in the response. For more details about your app's installations, see the "[List installations for the authenticated app](https://developer.github.com/v3/apps/#list-installations-for-the-authenticated-app)" endpoint.
      *
      * You must use a [JWT](https://developer.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint.
      */
@@ -1478,6 +1538,8 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
+     * Enables an authenticated GitHub App to find an installation's information using the installation id. The installation's account type (`target_type`) will be either an organization or a user account, depending which account the repository belongs to.
+     *
      * You must use a [JWT](https://developer.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint.
      */
     getInstallation: {
@@ -1720,14 +1782,29 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * List repositories that an installation can access.
+     * List repositories that an app installation can access.
      *
      * You must use an [installation access token](https://developer.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-an-installation) to access this endpoint.
+     * @deprecated octokit.apps.listRepos() has been renamed to octokit.apps.listReposAccessibleToInstallation() (2020-06-04)
      */
     listRepos: {
       (
         params?: RestEndpointMethodTypes["apps"]["listRepos"]["parameters"]
       ): Promise<RestEndpointMethodTypes["apps"]["listRepos"]["response"]>;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * List repositories that an app installation can access.
+     *
+     * You must use an [installation access token](https://developer.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-an-installation) to access this endpoint.
+     */
+    listReposAccessibleToInstallation: {
+      (
+        params?: RestEndpointMethodTypes["apps"]["listReposAccessibleToInstallation"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["apps"]["listReposAccessibleToInstallation"]["response"]
+      >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
@@ -1782,9 +1859,26 @@ export type RestEndpointMethods = {
     /**
      * Revokes the installation token you're using to authenticate as an installation and access this endpoint.
      *
-     * Once an installation token is revoked, the token is invalidated and cannot be used. Other endpoints that require the revoked installation token must have a new installation token to work. You can create a new token using the "[Create a new installation token](https://developer.github.com/v3/apps/#create-a-new-installation-token)" endpoint.
+     * Once an installation token is revoked, the token is invalidated and cannot be used. Other endpoints that require the revoked installation token must have a new installation token to work. You can create a new token using the "[Create an installation access token for an app](https://developer.github.com/v3/apps/#create-an-installation-access-token-for-an-app)" endpoint.
      *
      * You must use an [installation access token](https://developer.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-an-installation) to access this endpoint.
+     */
+    revokeInstallationAccessToken: {
+      (
+        params?: RestEndpointMethodTypes["apps"]["revokeInstallationAccessToken"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["apps"]["revokeInstallationAccessToken"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Revokes the installation token you're using to authenticate as an installation and access this endpoint.
+     *
+     * Once an installation token is revoked, the token is invalidated and cannot be used. Other endpoints that require the revoked installation token must have a new installation token to work. You can create a new token using the "[Create an installation access token for an app](https://developer.github.com/v3/apps/#create-an-installation-access-token-for-an-app)" endpoint.
+     *
+     * You must use an [installation access token](https://developer.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-an-installation) to access this endpoint.
+     * @deprecated octokit.apps.revokeInstallationToken() has been renamed to octokit.apps.revokeInstallationAccessToken() (2020-06-04)
      */
     revokeInstallationToken: {
       (
@@ -2515,6 +2609,7 @@ export type RestEndpointMethods = {
   interactions: {
     /**
      * Temporarily restricts interactions to certain GitHub users in any public repository in the given organization. You must be an organization owner to set these restrictions.
+     * @deprecated octokit.interactions.addOrUpdateRestrictionsForOrg() has been renamed to octokit.interactions.setRestrictionsForOrg() (2020-06-04)
      */
     addOrUpdateRestrictionsForOrg: {
       (
@@ -2527,6 +2622,7 @@ export type RestEndpointMethods = {
     };
     /**
      * Temporarily restricts interactions to certain GitHub users within the given repository. You must have owner or admin access to set restrictions.
+     * @deprecated octokit.interactions.addOrUpdateRestrictionsForRepo() has been renamed to octokit.interactions.setRestrictionsForRepo() (2020-06-04)
      */
     addOrUpdateRestrictionsForRepo: {
       (
@@ -2581,6 +2677,30 @@ export type RestEndpointMethods = {
         params?: RestEndpointMethodTypes["interactions"]["removeRestrictionsForRepo"]["parameters"]
       ): Promise<
         RestEndpointMethodTypes["interactions"]["removeRestrictionsForRepo"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Temporarily restricts interactions to certain GitHub users in any public repository in the given organization. You must be an organization owner to set these restrictions.
+     */
+    setRestrictionsForOrg: {
+      (
+        params?: RestEndpointMethodTypes["interactions"]["setRestrictionsForOrg"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["interactions"]["setRestrictionsForOrg"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Temporarily restricts interactions to certain GitHub users within the given repository. You must have owner or admin access to set restrictions.
+     */
+    setRestrictionsForRepo: {
+      (
+        params?: RestEndpointMethodTypes["interactions"]["setRestrictionsForRepo"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["interactions"]["setRestrictionsForRepo"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -2981,6 +3101,19 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["issues"]["removeLabels"]["parameters"]
       ): Promise<RestEndpointMethodTypes["issues"]["removeLabels"]["response"]>;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Removes any previous labels and sets the new labels for an issue.
+     * @deprecated octokit.issues.replaceAllLabels() has been renamed to octokit.issues.setLabels() (2020-06-04)
+     */
+    replaceAllLabels: {
+      (
+        params?: RestEndpointMethodTypes["issues"]["replaceAllLabels"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["issues"]["replaceAllLabels"]["response"]
+      >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };

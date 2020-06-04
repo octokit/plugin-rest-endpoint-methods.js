@@ -1,6 +1,6 @@
 ---
 name: Set interaction restrictions for a repository
-example: octokit.interactions.addOrUpdateRestrictionsForRepo({ owner, repo, limit })
+example: octokit.interactions.setRestrictionsForRepo({ owner, repo, limit })
 route: PUT /repos/{owner}/{repo}/interaction-limits
 scope: interactions
 type: API method
@@ -8,12 +8,10 @@ type: API method
 
 # Set interaction restrictions for a repository
 
-**Deprecated:** This method has been renamed to interactions.setRestrictionsForRepo
-
 Temporarily restricts interactions to certain GitHub users within the given repository. You must have owner or admin access to set restrictions.
 
 ```js
-octokit.interactions.addOrUpdateRestrictionsForRepo({
+octokit.interactions.setRestrictionsForRepo({
   owner,
   repo,
   limit,
