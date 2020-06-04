@@ -1,6 +1,6 @@
 ---
 name: List repositories accessible to the app installation
-example: octokit.apps.listRepos()
+example: octokit.apps.listReposAccessibleToInstallation()
 route: GET /installation/repositories
 scope: apps
 type: API method
@@ -8,14 +8,12 @@ type: API method
 
 # List repositories accessible to the app installation
 
-**Deprecated:** This method has been renamed to apps.listReposAccessibleToInstallation
-
 List repositories that an app installation can access.
 
 You must use an [installation access token](https://developer.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-an-installation) to access this endpoint.
 
 ```js
-octokit.apps.listRepos();
+octokit.apps.listReposAccessibleToInstallation();
 ```
 
 ## Parameters

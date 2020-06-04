@@ -154,6 +154,14 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["GET /repos/:owner/:repo/actions/artifacts/:artifact_id/:archive_format"]["response"];
     };
+    downloadJobLogsForWorkflowRun: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /repos/:owner/:repo/actions/jobs/:job_id/logs"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /repos/:owner/:repo/actions/jobs/:job_id/logs"]["response"];
+    };
     downloadWorkflowJobLogs: {
       parameters: RequestParameters &
         Omit<
@@ -177,6 +185,14 @@ export type RestEndpointMethodTypes = {
           "baseUrl" | "headers" | "mediaType"
         >;
       response: Endpoints["GET /repos/:owner/:repo/actions/artifacts/:artifact_id"]["response"];
+    };
+    getJobForWorkflowRun: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /repos/:owner/:repo/actions/jobs/:job_id"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /repos/:owner/:repo/actions/jobs/:job_id"]["response"];
     };
     getOrgPublicKey: {
       parameters: RequestParameters &
@@ -330,14 +346,6 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["GET /repos/:owner/:repo/actions/secrets"]["response"];
     };
-    listRepoWorkflowRuns: {
-      parameters: RequestParameters &
-        Omit<
-          Endpoints["GET /repos/:owner/:repo/actions/runs"]["parameters"],
-          "baseUrl" | "headers" | "mediaType"
-        >;
-      response: Endpoints["GET /repos/:owner/:repo/actions/runs"]["response"];
-    };
     listRepoWorkflows: {
       parameters: RequestParameters &
         Omit<
@@ -425,6 +433,14 @@ export type RestEndpointMethodTypes = {
           "baseUrl" | "headers" | "mediaType"
         >;
       response: Endpoints["GET /repos/:owner/:repo/actions/workflows/:workflow_id/runs"]["response"];
+    };
+    listWorkflowRunsForRepo: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /repos/:owner/:repo/actions/runs"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /repos/:owner/:repo/actions/runs"]["response"];
     };
     reRunWorkflow: {
       parameters: RequestParameters &
@@ -854,6 +870,14 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["POST /app-manifests/:code/conversions"]["response"];
     };
+    createInstallationAccessToken: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["POST /app/installations/:installation_id/access_tokens"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["POST /app/installations/:installation_id/access_tokens"]["response"];
+    };
     createInstallationToken: {
       parameters: RequestParameters &
         Omit<
@@ -1046,6 +1070,14 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["GET /installation/repositories"]["response"];
     };
+    listReposAccessibleToInstallation: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /installation/repositories"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /installation/repositories"]["response"];
+    };
     listSubscriptionsForAuthenticatedUser: {
       parameters: RequestParameters &
         Omit<
@@ -1077,6 +1109,14 @@ export type RestEndpointMethodTypes = {
           "baseUrl" | "headers" | "mediaType"
         >;
       response: Endpoints["PATCH /applications/:client_id/token"]["response"];
+    };
+    revokeInstallationAccessToken: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["DELETE /installation/token"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["DELETE /installation/token"]["response"];
     };
     revokeInstallationToken: {
       parameters: RequestParameters &
@@ -1598,6 +1638,22 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["DELETE /repos/:owner/:repo/interaction-limits"]["response"];
     };
+    setRestrictionsForOrg: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["PUT /orgs/:org/interaction-limits"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["PUT /orgs/:org/interaction-limits"]["response"];
+    };
+    setRestrictionsForRepo: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["PUT /repos/:owner/:repo/interaction-limits"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["PUT /repos/:owner/:repo/interaction-limits"]["response"];
+    };
   };
   issues: {
     addAssignees: {
@@ -1887,6 +1943,14 @@ export type RestEndpointMethodTypes = {
           "baseUrl" | "headers" | "mediaType"
         >;
       response: Endpoints["DELETE /repos/:owner/:repo/issues/:issue_number/labels"]["response"];
+    };
+    replaceAllLabels: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["PUT /repos/:owner/:repo/issues/:issue_number/labels"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["PUT /repos/:owner/:repo/issues/:issue_number/labels"]["response"];
     };
     replaceLabels: {
       parameters: RequestParameters &

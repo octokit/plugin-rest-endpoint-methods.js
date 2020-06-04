@@ -1,14 +1,12 @@
 ---
 name: Create an installation access token for an app
-example: octokit.apps.createInstallationToken({ installation_id })
+example: octokit.apps.createInstallationAccessToken({ installation_id })
 route: POST /app/installations/{installation_id}/access_tokens
 scope: apps
 type: API method
 ---
 
 # Create an installation access token for an app
-
-**Deprecated:** This method has been renamed to apps.createInstallationAccessToken
 
 Creates an installation access token that enables a GitHub App to make authenticated API requests for the app's installation on an organization or individual account. Installation tokens expire one hour from the time you create them. Using an expired token produces a status code of `401 - Unauthorized`, and requires creating a new installation token. By default the installation token has access to all repositories that the installation can access. To restrict the access to specific repositories, you can provide the `repository_ids` when creating the token. When you omit `repository_ids`, the response does not contain the `repositories` key.
 
@@ -17,7 +15,7 @@ You must use a [JWT](https://developer.github.com/apps/building-github-apps/auth
 This example grants the token "Read and write" permission to `issues` and "Read" permission to `contents`, and restricts the token's access to the repository with an `id` of 1296269.
 
 ```js
-octokit.apps.createInstallationToken({
+octokit.apps.createInstallationAccessToken({
   installation_id,
 });
 ```

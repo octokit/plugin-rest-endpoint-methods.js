@@ -1,12 +1,12 @@
 ---
-name: Remove repository from installation
+name: Remove a repository from an app installation
 example: octokit.apps.removeRepoFromInstallation({ installation_id, repository_id })
 route: DELETE /user/installations/{installation_id}/repositories/{repository_id}
 scope: apps
 type: API method
 ---
 
-# Remove repository from installation
+# Remove a repository from an app installation
 
 Remove a single repository from an installation. The authenticated user must have admin access to the repository.
 
@@ -39,4 +39,4 @@ octokit.apps.removeRepoFromInstallation({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/apps/installations/#remove-repository-from-installation).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/apps/installations/#remove-a-repository-from-an-app-installation).
