@@ -1,12 +1,12 @@
 ---
-name: Download workflow job logs
+name: Download job logs for a workflow run
 example: octokit.actions.listWorkflowJobLogs({ owner, repo, job_id })
 route: GET /repos/{owner}/{repo}/actions/jobs/{job_id}/logs
 scope: actions
 type: API method
 ---
 
-# Download workflow job logs
+# Download job logs for a workflow run
 
 **Deprecated:** This method has been renamed to actions.downloadWorkflowJobLogs
 
@@ -45,4 +45,4 @@ octokit.actions.listWorkflowJobLogs({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/actions/workflow-jobs/#download-workflow-job-logs).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/actions/workflow-jobs/#download-job-logs-for-a-workflow-run).

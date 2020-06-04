@@ -1,12 +1,12 @@
 ---
-name: Get a single GitHub App
+name: Get an app
 example: octokit.apps.getBySlug({ app_slug })
 route: GET /apps/{app_slug}
 scope: apps
 type: API method
 ---
 
-# Get a single GitHub App
+# Get an app
 
 **Note**: The `:app_slug` is just the URL-friendly name of your GitHub App. You can find this on the settings page for your GitHub App (e.g., `https://github.com/settings/apps/:app_slug`).
 
@@ -35,4 +35,4 @@ octokit.apps.getBySlug({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/apps/#get-a-single-github-app).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/apps/#get-an-app).

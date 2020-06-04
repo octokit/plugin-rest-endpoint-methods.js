@@ -154,7 +154,7 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["GET /repos/:owner/:repo/actions/artifacts/:artifact_id/:archive_format"]["response"];
     };
-    downloadWorkflowJobLogs: {
+    downloadJobLogsForWorkflowRun: {
       parameters: RequestParameters &
         Omit<
           Endpoints["GET /repos/:owner/:repo/actions/jobs/:job_id/logs"]["parameters"],
@@ -177,6 +177,14 @@ export type RestEndpointMethodTypes = {
           "baseUrl" | "headers" | "mediaType"
         >;
       response: Endpoints["GET /repos/:owner/:repo/actions/artifacts/:artifact_id"]["response"];
+    };
+    getJobForWorkflowRun: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /repos/:owner/:repo/actions/jobs/:job_id"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /repos/:owner/:repo/actions/jobs/:job_id"]["response"];
     };
     getOrgPublicKey: {
       parameters: RequestParameters &
@@ -258,14 +266,6 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["GET /repos/:owner/:repo/actions/workflows/:workflow_id"]["response"];
     };
-    getWorkflowJob: {
-      parameters: RequestParameters &
-        Omit<
-          Endpoints["GET /repos/:owner/:repo/actions/jobs/:job_id"]["parameters"],
-          "baseUrl" | "headers" | "mediaType"
-        >;
-      response: Endpoints["GET /repos/:owner/:repo/actions/jobs/:job_id"]["response"];
-    };
     getWorkflowRun: {
       parameters: RequestParameters &
         Omit<
@@ -329,14 +329,6 @@ export type RestEndpointMethodTypes = {
           "baseUrl" | "headers" | "mediaType"
         >;
       response: Endpoints["GET /repos/:owner/:repo/actions/secrets"]["response"];
-    };
-    listRepoWorkflowRuns: {
-      parameters: RequestParameters &
-        Omit<
-          Endpoints["GET /repos/:owner/:repo/actions/runs"]["parameters"],
-          "baseUrl" | "headers" | "mediaType"
-        >;
-      response: Endpoints["GET /repos/:owner/:repo/actions/runs"]["response"];
     };
     listRepoWorkflows: {
       parameters: RequestParameters &
@@ -425,6 +417,14 @@ export type RestEndpointMethodTypes = {
           "baseUrl" | "headers" | "mediaType"
         >;
       response: Endpoints["GET /repos/:owner/:repo/actions/workflows/:workflow_id/runs"]["response"];
+    };
+    listWorkflowRunsForRepo: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /repos/:owner/:repo/actions/runs"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /repos/:owner/:repo/actions/runs"]["response"];
     };
     reRunWorkflow: {
       parameters: RequestParameters &
@@ -854,7 +854,7 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["POST /app-manifests/:code/conversions"]["response"];
     };
-    createInstallationToken: {
+    createInstallationAccessToken: {
       parameters: RequestParameters &
         Omit<
           Endpoints["POST /app/installations/:installation_id/access_tokens"]["parameters"],
@@ -1038,7 +1038,7 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["GET /marketplace_listing/stubbed/plans"]["response"];
     };
-    listRepos: {
+    listReposAccessibleToInstallation: {
       parameters: RequestParameters &
         Omit<
           Endpoints["GET /installation/repositories"]["parameters"],
@@ -1078,7 +1078,7 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["PATCH /applications/:client_id/token"]["response"];
     };
-    revokeInstallationToken: {
+    revokeInstallationAccessToken: {
       parameters: RequestParameters &
         Omit<
           Endpoints["DELETE /installation/token"]["parameters"],
@@ -1550,22 +1550,6 @@ export type RestEndpointMethodTypes = {
     };
   };
   interactions: {
-    addOrUpdateRestrictionsForOrg: {
-      parameters: RequestParameters &
-        Omit<
-          Endpoints["PUT /orgs/:org/interaction-limits"]["parameters"],
-          "baseUrl" | "headers" | "mediaType"
-        >;
-      response: Endpoints["PUT /orgs/:org/interaction-limits"]["response"];
-    };
-    addOrUpdateRestrictionsForRepo: {
-      parameters: RequestParameters &
-        Omit<
-          Endpoints["PUT /repos/:owner/:repo/interaction-limits"]["parameters"],
-          "baseUrl" | "headers" | "mediaType"
-        >;
-      response: Endpoints["PUT /repos/:owner/:repo/interaction-limits"]["response"];
-    };
     getRestrictionsForOrg: {
       parameters: RequestParameters &
         Omit<
@@ -1597,6 +1581,22 @@ export type RestEndpointMethodTypes = {
           "baseUrl" | "headers" | "mediaType"
         >;
       response: Endpoints["DELETE /repos/:owner/:repo/interaction-limits"]["response"];
+    };
+    setRestrictionsForOrg: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["PUT /orgs/:org/interaction-limits"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["PUT /orgs/:org/interaction-limits"]["response"];
+    };
+    setRestrictionsForRepo: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["PUT /repos/:owner/:repo/interaction-limits"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["PUT /repos/:owner/:repo/interaction-limits"]["response"];
     };
   };
   issues: {
@@ -1887,6 +1887,14 @@ export type RestEndpointMethodTypes = {
           "baseUrl" | "headers" | "mediaType"
         >;
       response: Endpoints["DELETE /repos/:owner/:repo/issues/:issue_number/labels"]["response"];
+    };
+    replaceAllLabels: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["PUT /repos/:owner/:repo/issues/:issue_number/labels"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["PUT /repos/:owner/:repo/issues/:issue_number/labels"]["response"];
     };
     replaceLabels: {
       parameters: RequestParameters &

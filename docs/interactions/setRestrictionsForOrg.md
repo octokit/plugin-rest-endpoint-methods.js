@@ -1,17 +1,17 @@
 ---
-name: Add or update interaction restrictions for an organization
-example: octokit.interactions.addOrUpdateRestrictionsForOrg({ org, limit })
+name: Set interaction restrictions for an organization
+example: octokit.interactions.setRestrictionsForOrg({ org, limit })
 route: PUT /orgs/{org}/interaction-limits
 scope: interactions
 type: API method
 ---
 
-# Add or update interaction restrictions for an organization
+# Set interaction restrictions for an organization
 
 Temporarily restricts interactions to certain GitHub users in any public repository in the given organization. You must be an organization owner to set these restrictions.
 
 ```js
-octokit.interactions.addOrUpdateRestrictionsForOrg({
+octokit.interactions.setRestrictionsForOrg({
   org,
   limit,
 });
@@ -39,4 +39,4 @@ Specifies the group of GitHub users who can comment, open issues, or create pull
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/interactions/orgs/#add-or-update-interaction-restrictions-for-an-organization).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/interactions/orgs/#set-interaction-restrictions-for-an-organization).

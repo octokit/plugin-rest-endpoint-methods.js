@@ -1,12 +1,12 @@
 ---
-name: Unsuspend an installation
+name: Unsuspend an app installation
 example: octokit.apps.unsuspendInstallation({ installation_id })
 route: DELETE /app/installations/{installation_id}/suspended
 scope: apps
 type: API method
 ---
 
-# Unsuspend an installation
+# Unsuspend an app installation
 
 **Note:** Suspending a GitHub App installation is currently in beta and subject to change. Before you can suspend a GitHub App, the app owner must enable suspending installations for the app by opting-in to the beta. For more information, see "[Suspending a GitHub App installation](https://developer.github.com/apps/managing-github-apps/suspending-a-github-app-installation/)."
 
@@ -39,4 +39,4 @@ octokit.apps.unsuspendInstallation({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/apps/#unsuspend-an-installation).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/apps/#unsuspend-an-app-installation).
