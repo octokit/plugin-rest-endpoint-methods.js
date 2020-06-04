@@ -1,12 +1,12 @@
 ---
-name: Get a repository installation
+name: Get a repository installation for the authenticated app
 example: octokit.apps.getRepoInstallation({ owner, repo })
 route: GET /repos/{owner}/{repo}/installation
 scope: apps
 type: API method
 ---
 
-# Get a repository installation
+# Get a repository installation for the authenticated app
 
 Enables an authenticated GitHub App to find the repository's installation information. The installation's account type will be either an organization or a user account, depending which account the repository belongs to.
 
@@ -39,4 +39,4 @@ octokit.apps.getRepoInstallation({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/apps/#get-a-repository-installation).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/apps/#get-a-repository-installation-for-the-authenticated-app).

@@ -1,6 +1,6 @@
 ---
 name: Set interaction restrictions for an organization
-example: octokit.interactions.addOrUpdateRestrictionsForOrg({ org, limit })
+example: octokit.interactions.setRestrictionsForOrg({ org, limit })
 route: PUT /orgs/{org}/interaction-limits
 scope: interactions
 type: API method
@@ -8,12 +8,10 @@ type: API method
 
 # Set interaction restrictions for an organization
 
-**Deprecated:** This method has been renamed to interactions.setRestrictionsForOrg
-
 Temporarily restricts interactions to certain GitHub users in any public repository in the given organization. You must be an organization owner to set these restrictions.
 
 ```js
-octokit.interactions.addOrUpdateRestrictionsForOrg({
+octokit.interactions.setRestrictionsForOrg({
   org,
   limit,
 });

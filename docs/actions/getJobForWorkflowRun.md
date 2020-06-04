@@ -1,6 +1,6 @@
 ---
 name: Get a job for a workflow run
-example: octokit.actions.getWorkflowJob({ owner, repo, job_id })
+example: octokit.actions.getJobForWorkflowRun({ owner, repo, job_id })
 route: GET /repos/{owner}/{repo}/actions/jobs/{job_id}
 scope: actions
 type: API method
@@ -8,12 +8,10 @@ type: API method
 
 # Get a job for a workflow run
 
-**Deprecated:** This method has been renamed to actions.getJobForWorkflowRun
-
 Gets a specific job in a workflow run. Anyone with read access to the repository can use this endpoint. If the repository is private you must use an access token with the `repo` scope. GitHub Apps must have the `actions:read` permission to use this endpoint.
 
 ```js
-octokit.actions.getWorkflowJob({
+octokit.actions.getJobForWorkflowRun({
   owner,
   repo,
   job_id,
