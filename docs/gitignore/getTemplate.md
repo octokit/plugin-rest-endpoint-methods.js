@@ -1,12 +1,12 @@
 ---
-name: Get a single template
+name: Get a gitignore template
 example: octokit.gitignore.getTemplate({ name })
 route: GET /gitignore/templates/{name}
 scope: gitignore
 type: API method
 ---
 
-# Get a single template
+# Get a gitignore template
 
 The API also allows fetching the source of a single template.
 
@@ -35,4 +35,4 @@ octokit.gitignore.getTemplate({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/gitignore/#get-a-single-template).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/gitignore/#get-a-gitignore-template).

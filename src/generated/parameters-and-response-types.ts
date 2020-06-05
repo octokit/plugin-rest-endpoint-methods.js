@@ -1580,6 +1580,14 @@ export type RestEndpointMethodTypes = {
     };
   };
   gitignore: {
+    getAllTemplates: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /gitignore/templates"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /gitignore/templates"]["response"];
+    };
     getTemplate: {
       parameters: RequestParameters &
         Omit<
@@ -2025,6 +2033,14 @@ export type RestEndpointMethodTypes = {
           "baseUrl" | "headers" | "mediaType"
         >;
       response: Endpoints["GET /licenses/:license"]["response"];
+    };
+    getAllCommonlyUsed: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /licenses"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /licenses"]["response"];
     };
     getForRepo: {
       parameters: RequestParameters &

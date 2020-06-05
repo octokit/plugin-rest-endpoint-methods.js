@@ -2580,6 +2580,18 @@ export type RestEndpointMethods = {
   };
   gitignore: {
     /**
+     * List all templates available to pass as an option when [creating a repository](https://developer.github.com/v3/repos/#create-a-repository-for-the-authenticated-user).
+     */
+    getAllTemplates: {
+      (
+        params?: RestEndpointMethodTypes["gitignore"]["getAllTemplates"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["gitignore"]["getAllTemplates"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
      * The API also allows fetching the source of a single template.
      *
      * Use the raw [media type](https://developer.github.com/v3/media/) to get the raw contents.
@@ -2595,6 +2607,7 @@ export type RestEndpointMethods = {
     };
     /**
      * List all templates available to pass as an option when [creating a repository](https://developer.github.com/v3/repos/#create-a-repository-for-the-authenticated-user).
+     * @deprecated octokit.gitignore.listTemplates() has been renamed to octokit.gitignore.getAllTemplates() (2020-05-04)
      */
     listTemplates: {
       (
@@ -3197,6 +3210,16 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
+
+    getAllCommonlyUsed: {
+      (
+        params?: RestEndpointMethodTypes["licenses"]["getAllCommonlyUsed"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["licenses"]["getAllCommonlyUsed"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
     /**
      * This method returns the contents of the repository's license file, if one is detected.
      *
@@ -3209,7 +3232,9 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
-
+    /**
+     * @deprecated octokit.licenses.listCommonlyUsed() has been renamed to octokit.licenses.getAllCommonlyUsed() (2020-05-04)
+     */
     listCommonlyUsed: {
       (
         params?: RestEndpointMethodTypes["licenses"]["listCommonlyUsed"]["parameters"]

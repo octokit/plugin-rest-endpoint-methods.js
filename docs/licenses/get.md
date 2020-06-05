@@ -1,12 +1,12 @@
 ---
-name: Get an individual license
+name: Get a license
 example: octokit.licenses.get({ license })
 route: GET /licenses/{license}
 scope: licenses
 type: API method
 ---
 
-# Get an individual license
+# Get a license
 
 ```js
 octokit.licenses.get({
@@ -31,4 +31,4 @@ octokit.licenses.get({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/licenses/#get-an-individual-license).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/licenses/#get-a-license).

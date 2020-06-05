@@ -1,12 +1,12 @@
 ---
-name: Get
+name: Get emojis
 example: octokit.emojis.get()
 route: GET /emojis
 scope: emojis
 type: API method
 ---
 
-# Get
+# Get emojis
 
 Lists all the emojis available to use on GitHub.
 
@@ -18,4 +18,4 @@ octokit.emojis.get();
 
 This endpoint has no parameters
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/emojis/#emojis).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/emojis/#get-emojis).

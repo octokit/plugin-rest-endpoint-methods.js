@@ -1,12 +1,12 @@
 ---
-name: Render an arbitrary Markdown document
+name: Render a Markdown document
 example: octokit.markdown.render({ text })
 route: POST /markdown
 scope: markdown
 type: API method
 ---
 
-# Render an arbitrary Markdown document
+# Render a Markdown document
 
 ```js
 octokit.markdown.render({
@@ -45,4 +45,4 @@ The repository context to use when creating references in `gfm` mode. Omit this 
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/markdown/#render-an-arbitrary-markdown-document).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/markdown/#render-a-markdown-document).

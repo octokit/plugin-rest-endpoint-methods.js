@@ -1549,7 +1549,7 @@
     "renamed": null
   },
   {
-    "name": "List all codes of conduct",
+    "name": "Get all codes of conduct",
     "scope": "codesOfConduct",
     "id": "getAllCodesOfConduct",
     "method": "GET",
@@ -1557,7 +1557,7 @@
     "isDeprecated": false,
     "isLegacy": false,
     "description": "",
-    "documentationUrl": "https://developer.github.com/v3/codes_of_conduct/#list-all-codes-of-conduct",
+    "documentationUrl": "https://developer.github.com/v3/codes_of_conduct/#get-all-codes-of-conduct",
     "previews": [{ "name": "scarlet-witch" }],
     "headers": [
       {
@@ -1581,7 +1581,7 @@
     "renamed": null
   },
   {
-    "name": "List all codes of conduct",
+    "name": "Get all codes of conduct",
     "scope": "codesOfConduct",
     "id": "listConductCodes",
     "method": "GET",
@@ -1589,7 +1589,7 @@
     "isDeprecated": false,
     "isLegacy": false,
     "description": "",
-    "documentationUrl": "https://developer.github.com/v3/codes_of_conduct/#list-all-codes-of-conduct",
+    "documentationUrl": "https://developer.github.com/v3/codes_of_conduct/#get-all-codes-of-conduct",
     "previews": [{ "name": "scarlet-witch" }],
     "headers": [
       {
@@ -1618,7 +1618,7 @@
     }
   },
   {
-    "name": "Get an individual code of conduct",
+    "name": "Get a code of conduct",
     "scope": "codesOfConduct",
     "id": "getConductCode",
     "method": "GET",
@@ -1626,7 +1626,7 @@
     "isDeprecated": false,
     "isLegacy": false,
     "description": "",
-    "documentationUrl": "https://developer.github.com/v3/codes_of_conduct/#get-an-individual-code-of-conduct",
+    "documentationUrl": "https://developer.github.com/v3/codes_of_conduct/#get-a-code-of-conduct",
     "previews": [{ "name": "scarlet-witch" }],
     "headers": [
       {
@@ -1736,7 +1736,7 @@
     "renamed": null
   },
   {
-    "name": "Get",
+    "name": "Get emojis",
     "scope": "emojis",
     "id": "get",
     "method": "GET",
@@ -1744,7 +1744,7 @@
     "isDeprecated": false,
     "isLegacy": false,
     "description": "Lists all the emojis available to use on GitHub.",
-    "documentationUrl": "https://developer.github.com/v3/emojis/#emojis",
+    "documentationUrl": "https://developer.github.com/v3/emojis/#get-emojis",
     "previews": [],
     "headers": [],
     "parameters": [],
@@ -2913,15 +2913,15 @@
     "renamed": null
   },
   {
-    "name": "Listing available templates",
+    "name": "Get all gitignore templates",
     "scope": "gitignore",
-    "id": "listTemplates",
+    "id": "getAllTemplates",
     "method": "GET",
     "url": "/gitignore/templates",
     "isDeprecated": false,
     "isLegacy": false,
     "description": "List all templates available to pass as an option when [creating a repository](https://developer.github.com/v3/repos/#create-a-repository-for-the-authenticated-user).",
-    "documentationUrl": "https://developer.github.com/v3/gitignore/#listing-available-templates",
+    "documentationUrl": "https://developer.github.com/v3/gitignore/#get-all-gitignore-templates",
     "previews": [],
     "headers": [],
     "parameters": [],
@@ -2939,7 +2939,38 @@
     "renamed": null
   },
   {
-    "name": "Get a single template",
+    "name": "Get all gitignore templates",
+    "scope": "gitignore",
+    "id": "listTemplates",
+    "method": "GET",
+    "url": "/gitignore/templates",
+    "isDeprecated": false,
+    "isLegacy": false,
+    "description": "List all templates available to pass as an option when [creating a repository](https://developer.github.com/v3/repos/#create-a-repository-for-the-authenticated-user).",
+    "documentationUrl": "https://developer.github.com/v3/gitignore/#get-all-gitignore-templates",
+    "previews": [],
+    "headers": [],
+    "parameters": [],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "examples": [
+          {
+            "data": "[\"Actionscript\",\"Android\",\"AppceleratorTitanium\",\"Autotools\",\"Bancha\",\"C\",\"C++\"]"
+          }
+        ]
+      }
+    ],
+    "renamed": {
+      "before": { "scope": "gitignore", "id": "listTemplates" },
+      "after": { "scope": "gitignore", "id": "getAllTemplates" },
+      "date": "2020-05-04",
+      "note": "\"gitignore/list-templates\" operation ID is now \"gitignore/get-all-templates\""
+    }
+  },
+  {
+    "name": "Get a gitignore template",
     "scope": "gitignore",
     "id": "getTemplate",
     "method": "GET",
@@ -2947,7 +2978,7 @@
     "isDeprecated": false,
     "isLegacy": false,
     "description": "The API also allows fetching the source of a single template.\n\nUse the raw [media type](https://developer.github.com/v3/media/) to get the raw contents.",
-    "documentationUrl": "https://developer.github.com/v3/gitignore/#get-a-single-template",
+    "documentationUrl": "https://developer.github.com/v3/gitignore/#get-a-gitignore-template",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -3270,15 +3301,15 @@
     "renamed": null
   },
   {
-    "name": "List commonly used licenses",
+    "name": "Get all commonly used licenses",
     "scope": "licenses",
-    "id": "listCommonlyUsed",
+    "id": "getAllCommonlyUsed",
     "method": "GET",
     "url": "/licenses",
     "isDeprecated": false,
     "isLegacy": false,
     "description": "",
-    "documentationUrl": "https://developer.github.com/v3/licenses/#list-commonly-used-licenses",
+    "documentationUrl": "https://developer.github.com/v3/licenses/#get-all-commonly-used-licenses",
     "previews": [],
     "headers": [],
     "parameters": [],
@@ -3296,7 +3327,38 @@
     "renamed": null
   },
   {
-    "name": "Get an individual license",
+    "name": "Get all commonly used licenses",
+    "scope": "licenses",
+    "id": "listCommonlyUsed",
+    "method": "GET",
+    "url": "/licenses",
+    "isDeprecated": false,
+    "isLegacy": false,
+    "description": "",
+    "documentationUrl": "https://developer.github.com/v3/licenses/#get-all-commonly-used-licenses",
+    "previews": [],
+    "headers": [],
+    "parameters": [],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "examples": [
+          {
+            "data": "[{\"key\":\"mit\",\"name\":\"MIT License\",\"spdx_id\":\"MIT\",\"url\":\"https://api.github.com/licenses/mit\",\"node_id\":\"MDc6TGljZW5zZW1pdA==\"},{\"key\":\"lgpl-3.0\",\"name\":\"GNU Lesser General Public License v3.0\",\"spdx_id\":\"LGPL-3.0\",\"url\":\"https://api.github.com/licenses/lgpl-3.0\"},{\"key\":\"mpl-2.0\",\"name\":\"Mozilla Public License 2.0\",\"spdx_id\":\"MPL-2.0\",\"url\":\"https://api.github.com/licenses/mpl-2.0\"},{\"key\":\"agpl-3.0\",\"name\":\"GNU Affero General Public License v3.0\",\"spdx_id\":\"AGPL-3.0\",\"url\":\"https://api.github.com/licenses/agpl-3.0\"},{\"key\":\"unlicense\",\"name\":\"The Unlicense\",\"spdx_id\":\"Unlicense\",\"url\":\"https://api.github.com/licenses/unlicense\"},{\"key\":\"apache-2.0\",\"name\":\"Apache License 2.0\",\"spdx_id\":\"Apache-2.0\",\"url\":\"https://api.github.com/licenses/apache-2.0\"},{\"key\":\"gpl-3.0\",\"name\":\"GNU General Public License v3.0\",\"spdx_id\":\"GPL-3.0\",\"url\":\"https://api.github.com/licenses/gpl-3.0\"}]"
+          }
+        ]
+      }
+    ],
+    "renamed": {
+      "before": { "scope": "licenses", "id": "listCommonlyUsed" },
+      "after": { "scope": "licenses", "id": "getAllCommonlyUsed" },
+      "date": "2020-05-04",
+      "note": "\"licenses/list-commonly-used\" operation ID is now \"licenses/get-all-commonly-used\""
+    }
+  },
+  {
+    "name": "Get a license",
     "scope": "licenses",
     "id": "get",
     "method": "GET",
@@ -3304,7 +3366,7 @@
     "isDeprecated": false,
     "isLegacy": false,
     "description": "",
-    "documentationUrl": "https://developer.github.com/v3/licenses/#get-an-individual-license",
+    "documentationUrl": "https://developer.github.com/v3/licenses/#get-a-license",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -3336,7 +3398,7 @@
     "renamed": null
   },
   {
-    "name": "Render an arbitrary Markdown document",
+    "name": "Render a Markdown document",
     "scope": "markdown",
     "id": "render",
     "method": "POST",
@@ -3344,7 +3406,7 @@
     "isDeprecated": false,
     "isLegacy": false,
     "description": "",
-    "documentationUrl": "https://developer.github.com/v3/markdown/#render-an-arbitrary-markdown-document",
+    "documentationUrl": "https://developer.github.com/v3/markdown/#render-a-markdown-document",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -4088,7 +4150,7 @@
     }
   },
   {
-    "name": "Get",
+    "name": "Get GitHub meta information",
     "scope": "meta",
     "id": "get",
     "method": "GET",
@@ -4096,7 +4158,7 @@
     "isDeprecated": false,
     "isLegacy": false,
     "description": "This endpoint provides a list of GitHub's IP addresses. For more information, see \"[About GitHub's IP addresses](https://help.github.com/articles/about-github-s-ip-addresses/).\"",
-    "documentationUrl": "https://developer.github.com/v3/meta/#meta",
+    "documentationUrl": "https://developer.github.com/v3/meta/#get-github-meta-information",
     "previews": [],
     "headers": [],
     "parameters": [],
@@ -13672,7 +13734,7 @@
     "renamed": null
   },
   {
-    "name": "Get your current rate limit status",
+    "name": "Get rate limit status for the authenticated user",
     "scope": "rateLimit",
     "id": "get",
     "method": "GET",
@@ -13680,7 +13742,7 @@
     "isDeprecated": false,
     "isLegacy": false,
     "description": "**Note:** Accessing this endpoint does not count against your REST API rate limit.\n\n**Understanding your rate limit status**\n\nThe Search API has a [custom rate limit](https://developer.github.com/v3/search/#rate-limit), separate from the rate limit governing the rest of the REST API. The GraphQL API also has a [custom rate limit](https://developer.github.com/v4/guides/resource-limitations/#rate-limit) that is separate from and calculated differently than rate limits in the REST API.\n\nFor these reasons, the Rate Limit API response categorizes your rate limit. Under `resources`, you'll see four objects:\n\n*   The `core` object provides your rate limit status for all non-search-related resources in the REST API.\n*   The `search` object provides your rate limit status for the [Search API](https://developer.github.com/v3/search/).\n*   The `graphql` object provides your rate limit status for the [GraphQL API](https://developer.github.com/v4/).\n*   The `integration_manifest` object provides your rate limit status for the [GitHub App Manifest code conversion](https://developer.github.com/apps/building-github-apps/creating-github-apps-from-a-manifest/#3-you-exchange-the-temporary-code-to-retrieve-the-app-configuration) endpoint.\n\nFor more information on the headers and values in the rate limit response, see \"[Rate limiting](https://developer.github.com/v3/#rate-limiting).\"\n\nThe `rate` object (shown at the bottom of the response above) is deprecated.\n\nIf you're writing new API client code or updating existing code, you should use the `core` object instead of the `rate` object. The `core` object contains the same information that is present in the `rate` object.",
-    "documentationUrl": "https://developer.github.com/v3/rate_limit/#get-your-current-rate-limit-status",
+    "documentationUrl": "https://developer.github.com/v3/rate_limit/#get-rate-limit-status-for-the-authenticated-user",
     "previews": [],
     "headers": [],
     "parameters": [],
@@ -24067,7 +24129,7 @@
     "renamed": null
   },
   {
-    "name": "Get the contents of a repository's code of conduct",
+    "name": "Get the code of conduct for a repository",
     "scope": "codesOfConduct",
     "id": "getForRepo",
     "method": "GET",
@@ -24075,7 +24137,7 @@
     "isDeprecated": false,
     "isLegacy": false,
     "description": "This method returns the contents of the repository's code of conduct file, if one is detected.",
-    "documentationUrl": "https://developer.github.com/v3/codes_of_conduct/#get-the-contents-of-a-repositorys-code-of-conduct",
+    "documentationUrl": "https://developer.github.com/v3/codes_of_conduct/#get-the-code-of-conduct-for-a-repository",
     "previews": [{ "name": "scarlet-witch" }],
     "headers": [
       {
@@ -32783,7 +32845,7 @@
     "renamed": null
   },
   {
-    "name": "Get the contents of a repository's license",
+    "name": "Get the license for a repository",
     "scope": "licenses",
     "id": "getForRepo",
     "method": "GET",
@@ -32791,7 +32853,7 @@
     "isDeprecated": false,
     "isLegacy": false,
     "description": "This method returns the contents of the repository's license file, if one is detected.\n\nSimilar to [the repository contents API](https://developer.github.com/v3/repos/contents/#get-contents), this method also supports [custom media types](https://developer.github.com/v3/repos/contents/#custom-media-types) for retrieving the raw license content or rendered license HTML.",
-    "documentationUrl": "https://developer.github.com/v3/licenses/#get-the-contents-of-a-repositorys-license",
+    "documentationUrl": "https://developer.github.com/v3/licenses/#get-the-license-for-a-repository",
     "previews": [],
     "headers": [],
     "parameters": [

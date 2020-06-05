@@ -534,8 +534,13 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     updateRef: ["PATCH /repos/{owner}/{repo}/git/refs/{ref}"],
   },
   gitignore: {
+    getAllTemplates: ["GET /gitignore/templates"],
     getTemplate: ["GET /gitignore/templates/{name}"],
-    listTemplates: ["GET /gitignore/templates"],
+    listTemplates: [
+      "GET /gitignore/templates",
+      {},
+      { renamed: ["gitignore", "getAllTemplates"] },
+    ],
   },
   interactions: {
     addOrUpdateRestrictionsForOrg: [
@@ -664,8 +669,13 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
   },
   licenses: {
     get: ["GET /licenses/{license}"],
+    getAllCommonlyUsed: ["GET /licenses"],
     getForRepo: ["GET /repos/{owner}/{repo}/license"],
-    listCommonlyUsed: ["GET /licenses"],
+    listCommonlyUsed: [
+      "GET /licenses",
+      {},
+      { renamed: ["licenses", "getAllCommonlyUsed"] },
+    ],
   },
   markdown: {
     render: ["POST /markdown"],

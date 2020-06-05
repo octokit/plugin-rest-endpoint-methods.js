@@ -1,12 +1,12 @@
 ---
-name: Get your current rate limit status
+name: Get rate limit status for the authenticated user
 example: octokit.rateLimit.get()
 route: GET /rate_limit
 scope: rateLimit
 type: API method
 ---
 
-# Get your current rate limit status
+# Get rate limit status for the authenticated user
 
 **Note:** Accessing this endpoint does not count against your REST API rate limit.
 
@@ -35,4 +35,4 @@ octokit.rateLimit.get();
 
 This endpoint has no parameters
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/rate_limit/#get-your-current-rate-limit-status).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/rate_limit/#get-rate-limit-status-for-the-authenticated-user).
