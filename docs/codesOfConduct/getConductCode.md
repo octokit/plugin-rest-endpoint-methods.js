@@ -1,12 +1,12 @@
 ---
-name: Get an individual code of conduct
+name: Get a code of conduct
 example: octokit.codesOfConduct.getConductCode({ key })
 route: GET /codes_of_conduct/{key}
 scope: codesOfConduct
 type: API method
 ---
 
-# Get an individual code of conduct
+# Get a code of conduct
 
 ```js
 octokit.codesOfConduct.getConductCode({
@@ -31,4 +31,4 @@ octokit.codesOfConduct.getConductCode({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/codes_of_conduct/#get-an-individual-code-of-conduct).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/codes_of_conduct/#get-a-code-of-conduct).

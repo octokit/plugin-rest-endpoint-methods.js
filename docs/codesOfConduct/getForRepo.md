@@ -1,12 +1,12 @@
 ---
-name: Get the contents of a repository's code of conduct
+name: Get the code of conduct for a repository
 example: octokit.codesOfConduct.getForRepo({ owner, repo })
 route: GET /repos/{owner}/{repo}/community/code_of_conduct
 scope: codesOfConduct
 type: API method
 ---
 
-# Get the contents of a repository's code of conduct
+# Get the code of conduct for a repository
 
 This method returns the contents of the repository's code of conduct file, if one is detected.
 
@@ -37,4 +37,4 @@ octokit.codesOfConduct.getForRepo({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/codes_of_conduct/#get-the-contents-of-a-repositorys-code-of-conduct).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/codes_of_conduct/#get-the-code-of-conduct-for-a-repository).

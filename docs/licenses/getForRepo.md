@@ -1,12 +1,12 @@
 ---
-name: Get the contents of a repository's license
+name: Get the license for a repository
 example: octokit.licenses.getForRepo({ owner, repo })
 route: GET /repos/{owner}/{repo}/license
 scope: licenses
 type: API method
 ---
 
-# Get the contents of a repository's license
+# Get the license for a repository
 
 This method returns the contents of the repository's license file, if one is detected.
 
@@ -39,4 +39,4 @@ octokit.licenses.getForRepo({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/licenses/#get-the-contents-of-a-repositorys-license).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/licenses/#get-the-license-for-a-repository).

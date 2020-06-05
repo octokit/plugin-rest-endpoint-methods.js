@@ -1,12 +1,12 @@
 ---
-name: List all codes of conduct
+name: Get all codes of conduct
 example: octokit.codesOfConduct.listConductCodes()
 route: GET /codes_of_conduct
 scope: codesOfConduct
 type: API method
 ---
 
-# List all codes of conduct
+# Get all codes of conduct
 
 **Deprecated:** This method has been renamed to codesOfConduct.getAllCodesOfConduct
 
@@ -18,4 +18,4 @@ octokit.codesOfConduct.listConductCodes();
 
 This endpoint has no parameters
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/codes_of_conduct/#list-all-codes-of-conduct).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/codes_of_conduct/#get-all-codes-of-conduct).
