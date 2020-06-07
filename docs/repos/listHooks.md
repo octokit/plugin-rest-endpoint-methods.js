@@ -1,12 +1,14 @@
 ---
-name: List hooks
+name: List repository webhooks
 example: octokit.repos.listHooks({ owner, repo })
 route: GET /repos/{owner}/{repo}/hooks
 scope: repos
 type: API method
 ---
 
-# List hooks
+# List repository webhooks
+
+**Deprecated:** This method has been renamed to repos.listWebhooks
 
 ```js
 octokit.repos.listHooks({
@@ -45,4 +47,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/hooks/#list-hooks).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/hooks/#list-repository-webhooks).

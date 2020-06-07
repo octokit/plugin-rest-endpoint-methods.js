@@ -1,12 +1,14 @@
 ---
-name: Ping a hook
+name: Ping a repository webhook
 example: octokit.repos.pingHook({ owner, repo, hook_id })
 route: POST /repos/{owner}/{repo}/hooks/{hook_id}/pings
 scope: repos
 type: API method
 ---
 
-# Ping a hook
+# Ping a repository webhook
+
+**Deprecated:** This method has been renamed to repos.pingWebhook
 
 This will trigger a [ping event](https://developer.github.com/webhooks/#ping-event) to be sent to the hook.
 
@@ -41,4 +43,4 @@ octokit.repos.pingHook({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/hooks/#ping-a-hook).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/hooks/#ping-a-repository-webhook).

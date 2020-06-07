@@ -1,12 +1,12 @@
 ---
-name: List your organizations
+name: List organizations for the authenticated user
 example: octokit.orgs.listForAuthenticatedUser()
 route: GET /user/orgs
 scope: orgs
 type: API method
 ---
 
-# List your organizations
+# List organizations for the authenticated user
 
 List organizations for the authenticated user.
 
@@ -42,4 +42,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/orgs/#list-your-organizations).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/orgs/#list-organizations-for-the-authenticated-user).

@@ -1,12 +1,14 @@
 ---
-name: Delete a hook
+name: Delete a repository webhook
 example: octokit.repos.deleteHook({ owner, repo, hook_id })
 route: DELETE /repos/{owner}/{repo}/hooks/{hook_id}
 scope: repos
 type: API method
 ---
 
-# Delete a hook
+# Delete a repository webhook
+
+**Deprecated:** This method has been renamed to repos.deleteWebhook
 
 ```js
 octokit.repos.deleteHook({
@@ -39,4 +41,4 @@ octokit.repos.deleteHook({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/hooks/#delete-a-hook).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/hooks/#delete-a-repository-webhook).

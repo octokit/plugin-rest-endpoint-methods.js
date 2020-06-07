@@ -1,12 +1,12 @@
 ---
-name: Update a pull request review
+name: Update a review for a pull request
 example: octokit.pulls.updateReview({ owner, repo, pull_number, review_id, body })
 route: PUT /repos/{owner}/{repo}/pulls/{pull_number}/reviews/{review_id}
 scope: pulls
 type: API method
 ---
 
-# Update a pull request review
+# Update a review for a pull request
 
 Update the review summary comment with new text.
 
@@ -51,4 +51,4 @@ The body text of the pull request review.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/pulls/reviews/#update-a-pull-request-review).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/pulls/reviews/#update-a-review-for-a-pull-request).

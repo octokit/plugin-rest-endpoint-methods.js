@@ -1,12 +1,14 @@
 ---
-name: Update pull request review enforcement of protected branch
+name: Update pull request review protection
 example: octokit.repos.updateProtectedBranchPullRequestReviewEnforcement({ owner, repo, branch })
 route: PATCH /repos/{owner}/{repo}/branches/{branch}/protection/required_pull_request_reviews
 scope: repos
 type: API method
 ---
 
-# Update pull request review enforcement of protected branch
+# Update pull request review protection
+
+**Deprecated:** This method has been renamed to repos.updatePullRequestReviewProtection
 
 Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://help.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
 
@@ -75,4 +77,4 @@ Specifies the number of reviewers required to approve pull requests. Use a numbe
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/branches/#update-pull-request-review-enforcement-of-protected-branch).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/branches/#update-pull-request-review-protection).

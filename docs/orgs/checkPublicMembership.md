@@ -1,12 +1,14 @@
 ---
-name: Check public membership
+name: Check public organization membership for a user
 example: octokit.orgs.checkPublicMembership({ org, username })
 route: GET /orgs/{org}/public_members/{username}
 scope: orgs
 type: API method
 ---
 
-# Check public membership
+# Check public organization membership for a user
+
+**Deprecated:** This method has been renamed to orgs.checkPublicMembershipForUser
 
 ```js
 octokit.orgs.checkPublicMembership({
@@ -35,4 +37,4 @@ octokit.orgs.checkPublicMembership({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/orgs/members/#check-public-membership).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/orgs/members/#check-public-organization-membership-for-a-user).

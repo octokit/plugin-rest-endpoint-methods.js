@@ -1,12 +1,14 @@
 ---
-name: List comments in a repository
+name: List review comments in a repository
 example: octokit.pulls.listCommentsForRepo({ owner, repo })
 route: GET /repos/{owner}/{repo}/pulls/comments
 scope: pulls
 type: API method
 ---
 
-# List comments in a repository
+# List review comments in a repository
+
+**Deprecated:** This method has been renamed to pulls.listReviewCommentsForRepo
 
 **Note:** Multi-line comments on pull requests are currently in public beta and subject to change.
 
@@ -82,4 +84,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/pulls/comments/#list-comments-in-a-repository).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/pulls/comments/#list-review-comments-in-a-repository).

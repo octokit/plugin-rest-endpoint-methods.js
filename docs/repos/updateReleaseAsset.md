@@ -1,12 +1,12 @@
 ---
-name: Edit a release asset
+name: Update a release asset
 example: octokit.repos.updateReleaseAsset({ owner, repo, asset_id })
 route: PATCH /repos/{owner}/{repo}/releases/assets/{asset_id}
 scope: repos
 type: API method
 ---
 
-# Edit a release asset
+# Update a release asset
 
 Users with push access to the repository can edit a release asset.
 
@@ -51,4 +51,4 @@ An alternate short description of the asset. Used in place of the filename.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/releases/#edit-a-release-asset).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/releases/#update-a-release-asset).

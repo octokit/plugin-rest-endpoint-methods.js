@@ -1,12 +1,12 @@
 ---
-name: List commits on a repository
+name: List commits
 example: octokit.repos.listCommits({ owner, repo })
 route: GET /repos/{owner}/{repo}/commits
 scope: repos
 type: API method
 ---
 
-# List commits on a repository
+# List commits
 
 **Signature verification object**
 
@@ -92,4 +92,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/commits/#list-commits-on-a-repository).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/commits/#list-commits).

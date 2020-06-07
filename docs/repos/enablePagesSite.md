@@ -1,12 +1,14 @@
 ---
-name: Enable a Pages site
+name: Create a GitHub Pages site
 example: octokit.repos.enablePagesSite({ owner, repo })
 route: POST /repos/{owner}/{repo}/pages
 scope: repos
 type: API method
 ---
 
-# Enable a Pages site
+# Create a GitHub Pages site
+
+**Deprecated:** This method has been renamed to repos.createPagesSite
 
 ```js
 octokit.repos.enablePagesSite({
@@ -48,4 +50,4 @@ The repository directory that includes the source files for the Pages site. When
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/pages/#enable-a-pages-site).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/pages/#create-a-github-pages-site).

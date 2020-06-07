@@ -1,12 +1,12 @@
 ---
-name: Submit a pull request review
+name: Submit a review for a pull request
 example: octokit.pulls.submitReview({ owner, repo, pull_number, review_id, event })
 route: POST /repos/{owner}/{repo}/pulls/{pull_number}/reviews/{review_id}/events
 scope: pulls
 type: API method
 ---
 
-# Submit a pull request review
+# Submit a review for a pull request
 
 ```js
 octokit.pulls.submitReview({
@@ -54,4 +54,4 @@ The review action you want to perform. The review actions include: `APPROVE`, `R
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/pulls/reviews/#submit-a-pull-request-review).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/pulls/reviews/#submit-a-review-for-a-pull-request).

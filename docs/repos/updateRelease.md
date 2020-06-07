@@ -1,12 +1,12 @@
 ---
-name: Edit a release
+name: Update a release
 example: octokit.repos.updateRelease({ owner, repo, release_id })
 route: PATCH /repos/{owner}/{repo}/releases/{release_id}
 scope: repos
 type: API method
 ---
 
-# Edit a release
+# Update a release
 
 Users with push access to the repository can edit a release.
 
@@ -71,4 +71,4 @@ Text describing the contents of the tag.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/releases/#edit-a-release).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/releases/#update-a-release).

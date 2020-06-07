@@ -1,12 +1,12 @@
 ---
-name: Unblock a user
+name: Unblock a user from an organization
 example: octokit.orgs.unblockUser({ org, username })
 route: DELETE /orgs/{org}/blocks/{username}
 scope: orgs
 type: API method
 ---
 
-# Unblock a user
+# Unblock a user from an organization
 
 ```js
 octokit.orgs.unblockUser({
@@ -35,4 +35,4 @@ octokit.orgs.unblockUser({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/orgs/blocking/#unblock-a-user).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/orgs/blocking/#unblock-a-user-from-an-organization).

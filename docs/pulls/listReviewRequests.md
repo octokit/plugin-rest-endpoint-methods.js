@@ -1,12 +1,14 @@
 ---
-name: List review requests
+name: List requested reviewers for a pull request
 example: octokit.pulls.listReviewRequests({ owner, repo, pull_number })
 route: GET /repos/{owner}/{repo}/pulls/{pull_number}/requested_reviewers
 scope: pulls
 type: API method
 ---
 
-# List review requests
+# List requested reviewers for a pull request
+
+**Deprecated:** This method has been renamed to pulls.listRequestedReviewers
 
 ```js
 octokit.pulls.listReviewRequests({
@@ -49,4 +51,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/pulls/review_requests/#list-review-requests).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/pulls/review_requests/#list-requested-reviewers-for-a-pull-request).

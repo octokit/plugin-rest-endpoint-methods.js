@@ -1,12 +1,14 @@
 ---
-name: Conceal a user's membership
+name: Remove public organization membership for the authenticated user
 example: octokit.orgs.concealMembership({ org, username })
 route: DELETE /orgs/{org}/public_members/{username}
 scope: orgs
 type: API method
 ---
 
-# Conceal a user's membership
+# Remove public organization membership for the authenticated user
+
+**Deprecated:** This method has been renamed to orgs.removePublicMembershipForAuthenticatedUser
 
 ```js
 octokit.orgs.concealMembership({
@@ -35,4 +37,4 @@ octokit.orgs.concealMembership({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/orgs/members/#conceal-a-users-membership).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/orgs/members/#remove-public-organization-membership-for-the-authenticated-user).

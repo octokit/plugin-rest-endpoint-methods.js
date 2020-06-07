@@ -1,12 +1,14 @@
 ---
-name: Get organization membership
+name: Get organization membership for a user
 example: octokit.orgs.getMembership({ org, username })
 route: GET /orgs/{org}/memberships/{username}
 scope: orgs
 type: API method
 ---
 
-# Get organization membership
+# Get organization membership for a user
+
+**Deprecated:** This method has been renamed to orgs.getMembershipForUser
 
 In order to get a user's membership with an organization, the authenticated user must be an organization member.
 
@@ -37,4 +39,4 @@ octokit.orgs.getMembership({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/orgs/members/#get-organization-membership).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/orgs/members/#get-organization-membership-for-a-user).

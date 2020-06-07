@@ -1,12 +1,12 @@
 ---
-name: List teams
+name: List repository teams
 example: octokit.repos.listTeams({ owner, repo })
 route: GET /repos/{owner}/{repo}/teams
 scope: repos
 type: API method
 ---
 
-# List teams
+# List repository teams
 
 ```js
 octokit.repos.listTeams({
@@ -45,4 +45,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/#list-teams).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/#list-repository-teams).

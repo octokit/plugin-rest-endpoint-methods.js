@@ -1,12 +1,14 @@
 ---
-name: Disable a Pages site
+name: Delete a GitHub Pages site
 example: octokit.repos.disablePagesSite({ owner, repo })
 route: DELETE /repos/{owner}/{repo}/pages
 scope: repos
 type: API method
 ---
 
-# Disable a Pages site
+# Delete a GitHub Pages site
+
+**Deprecated:** This method has been renamed to repos.deletePagesSite
 
 ```js
 octokit.repos.disablePagesSite({
@@ -35,4 +37,4 @@ octokit.repos.disablePagesSite({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/pages/#disable-a-pages-site).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/pages/#delete-a-github-pages-site).

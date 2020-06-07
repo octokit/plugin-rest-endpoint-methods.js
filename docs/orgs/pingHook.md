@@ -1,12 +1,14 @@
 ---
-name: Ping a hook
+name: Ping an organization webhook
 example: octokit.orgs.pingHook({ org, hook_id })
 route: POST /orgs/{org}/hooks/{hook_id}/pings
 scope: orgs
 type: API method
 ---
 
-# Ping a hook
+# Ping an organization webhook
+
+**Deprecated:** This method has been renamed to orgs.pingWebhook
 
 This will trigger a [ping event](https://developer.github.com/webhooks/#ping-event) to be sent to the hook.
 
@@ -37,4 +39,4 @@ octokit.orgs.pingHook({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/orgs/hooks/#ping-a-hook).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/orgs/hooks/#ping-an-organization-webhook).

@@ -1,12 +1,14 @@
 ---
-name: Delete a hook
+name: Delete an organization webhook
 example: octokit.orgs.deleteHook({ org, hook_id })
 route: DELETE /orgs/{org}/hooks/{hook_id}
 scope: orgs
 type: API method
 ---
 
-# Delete a hook
+# Delete an organization webhook
+
+**Deprecated:** This method has been renamed to orgs.deleteWebhook
 
 ```js
 octokit.orgs.deleteHook({
@@ -35,4 +37,4 @@ octokit.orgs.deleteHook({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/orgs/hooks/#delete-a-hook).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/orgs/hooks/#delete-an-organization-webhook).

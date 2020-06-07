@@ -1,12 +1,12 @@
 ---
-name: List contributors
+name: List repository contributors
 example: octokit.repos.listContributors({ owner, repo })
 route: GET /repos/{owner}/{repo}/contributors
 scope: repos
 type: API method
 ---
 
-# List contributors
+# List repository contributors
 
 Lists contributors to the specified repository and sorts them by the number of commits per contributor in descending order. This endpoint may return information that is a few hours old because the GitHub REST API v3 caches contributor data to improve performance.
 
@@ -54,4 +54,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/#list-contributors).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/#list-repository-contributors).

@@ -1,12 +1,12 @@
 ---
-name: Views
+name: Get page views
 example: octokit.repos.getViews({ owner, repo })
 route: GET /repos/{owner}/{repo}/traffic/views
 scope: repos
 type: API method
 ---
 
-# Views
+# Get page views
 
 Get the total number of views and breakdown per day or week for the last 14 days. Timestamps are aligned to UTC midnight of the beginning of the day or week. Week begins on Monday.
 
@@ -42,4 +42,4 @@ Must be one of: `day`, `week`.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/traffic/#views).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/traffic/#get-page-views).

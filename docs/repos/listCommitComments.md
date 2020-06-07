@@ -8,6 +8,8 @@ type: API method
 
 # List commit comments for a repository
 
+**Deprecated:** This method has been renamed to repos.listCommitCommentsForRepo
+
 Commit Comments use [these custom media types](https://developer.github.com/v3/repos/comments/#custom-media-types). You can read more about the use of media types in the API [here](https://developer.github.com/v3/media/).
 
 Comments are ordered by ascending ID.

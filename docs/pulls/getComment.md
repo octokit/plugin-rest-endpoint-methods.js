@@ -1,12 +1,14 @@
 ---
-name: Get a single comment
+name: Get a review comment for a pull request
 example: octokit.pulls.getComment({ owner, repo, comment_id })
 route: GET /repos/{owner}/{repo}/pulls/comments/{comment_id}
 scope: pulls
 type: API method
 ---
 
-# Get a single comment
+# Get a review comment for a pull request
+
+**Deprecated:** This method has been renamed to pulls.getReviewComment
 
 **Note:** Multi-line comments on pull requests are currently in public beta and subject to change.
 
@@ -61,4 +63,4 @@ octokit.pulls.getComment({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/pulls/comments/#get-a-single-comment).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/pulls/comments/#get-a-review-comment-for-a-pull-request).

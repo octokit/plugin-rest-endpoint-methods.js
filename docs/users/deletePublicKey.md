@@ -1,12 +1,14 @@
 ---
-name: Delete a public key
+name: Delete a public SSH key for the authenticated user
 example: octokit.users.deletePublicKey({ key_id })
 route: DELETE /user/keys/{key_id}
 scope: users
 type: API method
 ---
 
-# Delete a public key
+# Delete a public SSH key for the authenticated user
+
+**Deprecated:** This method has been renamed to users.deletePublicSshKeyForAuthenticated
 
 Removes a public SSH key from the authenticated user's GitHub account. Requires that you are authenticated via Basic Auth or via OAuth with at least `admin:public_key` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
 
@@ -33,4 +35,4 @@ octokit.users.deletePublicKey({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/users/keys/#delete-a-public-key).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/users/keys/#delete-a-public-ssh-key-for-the-authenticated-user).

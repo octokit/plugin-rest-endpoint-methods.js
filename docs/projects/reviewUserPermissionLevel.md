@@ -1,12 +1,14 @@
 ---
-name: Review a user's permission level
+name: Get project permission for a user
 example: octokit.projects.reviewUserPermissionLevel({ project_id, username })
 route: GET /projects/{project_id}/collaborators/{username}/permission
 scope: projects
 type: API method
 ---
 
-# Review a user's permission level
+# Get project permission for a user
+
+**Deprecated:** This method has been renamed to projects.getPermissionForUser
 
 Returns the collaborator's permission level for an organization project. Possible values for the `permission` key: `admin`, `write`, `read`, `none`. You must be an organization owner or a project `admin` to review a user's permission level.
 
@@ -37,4 +39,4 @@ octokit.projects.reviewUserPermissionLevel({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/projects/collaborators/#review-a-users-permission-level).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/projects/collaborators/#get-project-permission-for-a-user).

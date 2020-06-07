@@ -1,12 +1,14 @@
 ---
-name: Replace app restrictions of protected branch
+name: Set app access restrictions
 example: octokit.repos.replaceProtectedBranchAppRestrictions({ owner, repo, branch, apps })
 route: PUT /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/apps
 scope: repos
 type: API method
 ---
 
-# Replace app restrictions of protected branch
+# Set app access restrictions
+
+**Deprecated:** This method has been renamed to repos.setAppAccessRestrictions
 
 Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://help.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
 
@@ -53,4 +55,4 @@ apps parameter
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/branches/#replace-app-restrictions-of-protected-branch).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/branches/#set-app-access-restrictions).

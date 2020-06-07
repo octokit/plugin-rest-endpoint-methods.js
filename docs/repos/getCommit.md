@@ -1,12 +1,12 @@
 ---
-name: Get a single commit
+name: Get a commit
 example: octokit.repos.getCommit({ owner, repo, ref })
 route: GET /repos/{owner}/{repo}/commits/{ref}
 scope: repos
 type: API method
 ---
 
-# Get a single commit
+# Get a commit
 
 Returns the contents of a single commit reference. You must have `read` access for the repository to use this endpoint.
 
@@ -67,4 +67,4 @@ octokit.repos.getCommit({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/commits/#get-a-single-commit).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/commits/#get-a-commit).

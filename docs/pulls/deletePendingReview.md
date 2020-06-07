@@ -1,12 +1,12 @@
 ---
-name: Delete a pending review
+name: Delete a pending review for a pull request
 example: octokit.pulls.deletePendingReview({ owner, repo, pull_number, review_id })
 route: DELETE /repos/{owner}/{repo}/pulls/{pull_number}/reviews/{review_id}
 scope: pulls
 type: API method
 ---
 
-# Delete a pending review
+# Delete a pending review for a pull request
 
 ```js
 octokit.pulls.deletePendingReview({
@@ -43,4 +43,4 @@ octokit.pulls.deletePendingReview({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/pulls/reviews/#delete-a-pending-review).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/pulls/reviews/#delete-a-pending-review-for-a-pull-request).

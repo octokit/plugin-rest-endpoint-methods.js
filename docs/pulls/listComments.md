@@ -1,16 +1,18 @@
 ---
-name: List comments on a pull request
+name: List review comments on a pull request
 example: octokit.pulls.listComments({ owner, repo, pull_number })
 route: GET /repos/{owner}/{repo}/pulls/{pull_number}/comments
 scope: pulls
 type: API method
 ---
 
-# List comments on a pull request
+# List review comments on a pull request
+
+**Deprecated:** This method has been renamed to pulls.listReviewComments
 
 **Note:** Multi-line comments on pull requests are currently in public beta and subject to change.
 
-Lists review comments for a pull request. By default, review comments are in ascending order by ID.
+Lists all review comments for a pull request. By default, review comments are in ascending order by ID.
 
 **Multi-line comment summary**
 
@@ -86,4 +88,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/pulls/comments/#list-comments-on-a-pull-request).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/pulls/comments/#list-review-comments-on-a-pull-request).

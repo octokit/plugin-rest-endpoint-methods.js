@@ -1,12 +1,12 @@
 ---
-name: Remove a member
+name: Remove an organization member
 example: octokit.orgs.removeMember({ org, username })
 route: DELETE /orgs/{org}/members/{username}
 scope: orgs
 type: API method
 ---
 
-# Remove a member
+# Remove an organization member
 
 Removing a user from this list will remove them from all teams and they will no longer have any access to the organization's repositories.
 
@@ -37,4 +37,4 @@ octokit.orgs.removeMember({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/orgs/members/#remove-a-member).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/orgs/members/#remove-an-organization-member).

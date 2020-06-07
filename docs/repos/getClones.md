@@ -1,12 +1,12 @@
 ---
-name: Clones
+name: Get repository clones
 example: octokit.repos.getClones({ owner, repo })
 route: GET /repos/{owner}/{repo}/traffic/clones
 scope: repos
 type: API method
 ---
 
-# Clones
+# Get repository clones
 
 Get the total number of clones and breakdown per day or week for the last 14 days. Timestamps are aligned to UTC midnight of the beginning of the day or week. Week begins on Monday.
 
@@ -42,4 +42,4 @@ Must be one of: `day`, `week`.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/traffic/#clones).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/traffic/#get-repository-clones).
