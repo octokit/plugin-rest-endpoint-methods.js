@@ -1,12 +1,12 @@
 ---
-name: List collaborators
+name: List repository collaborators
 example: octokit.repos.listCollaborators({ owner, repo })
 route: GET /repos/{owner}/{repo}/collaborators
 scope: repos
 type: API method
 ---
 
-# List collaborators
+# List repository collaborators
 
 For organization-owned repositories, the list of collaborators includes outside collaborators, organization members that are direct collaborators, organization members with access through team memberships, organization members with access through default organization permissions, and organization owners.
 
@@ -57,4 +57,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/collaborators/#list-collaborators).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/collaborators/#list-repository-collaborators).

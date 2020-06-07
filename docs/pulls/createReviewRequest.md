@@ -1,12 +1,14 @@
 ---
-name: Create a review request
+name: Request reviewers for a pull request
 example: octokit.pulls.createReviewRequest({ owner, repo, pull_number })
 route: POST /repos/{owner}/{repo}/pulls/{pull_number}/requested_reviewers
 scope: pulls
 type: API method
 ---
 
-# Create a review request
+# Request reviewers for a pull request
+
+**Deprecated:** This method has been renamed to pulls.requestReviewers
 
 This endpoint triggers [notifications](https://help.github.com/articles/about-notifications/). Creating content too quickly using this endpoint may result in abuse rate limiting. See "[Abuse rate limits](https://developer.github.com/v3/#abuse-rate-limits)" and "[Dealing with abuse rate limits](https://developer.github.com/v3/guides/best-practices-for-integrators/#dealing-with-abuse-rate-limits)" for details.
 
@@ -51,4 +53,4 @@ An array of team `slug`s that will be requested.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/pulls/review_requests/#create-a-review-request).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/pulls/review_requests/#request-reviewers-for-a-pull-request).

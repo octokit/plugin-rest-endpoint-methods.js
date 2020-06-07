@@ -1,14 +1,14 @@
 ---
-name: Add user as a collaborator
+name: Add project collaborator
 example: octokit.projects.addCollaborator({ project_id, username })
 route: PUT /projects/{project_id}/collaborators/{username}
 scope: projects
 type: API method
 ---
 
-# Add user as a collaborator
+# Add project collaborator
 
-Adds a collaborator to a an organization project and sets their permission level. You must be an organization owner or a project `admin` to add a collaborator.
+Adds a collaborator to an organization project and sets their permission level. You must be an organization owner or a project `admin` to add a collaborator.
 
 ```js
 octokit.projects.addCollaborator({
@@ -45,4 +45,4 @@ The permission to grant the collaborator. Note that, if you choose not to pass a
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/projects/collaborators/#add-user-as-a-collaborator).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/projects/collaborators/#add-project-collaborator).

@@ -1,12 +1,14 @@
 ---
-name: Toggle primary email visibility
+name: Set primary email visibility for the authenticated user
 example: octokit.users.togglePrimaryEmailVisibility({ email, visibility })
 route: PATCH /user/email/visibility
 scope: users
 type: API method
 ---
 
-# Toggle primary email visibility
+# Set primary email visibility for the authenticated user
+
+**Deprecated:** This method has been renamed to users.setPrimaryEmailVisibilityForAuthenticated
 
 Sets the visibility for your primary email addresses.
 
@@ -41,4 +43,4 @@ Use `public` to enable an authenticated user to view the specified email address
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/users/emails/#toggle-primary-email-visibility).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/users/emails/#set-primary-email-visibility-for-the-authenticated-user).

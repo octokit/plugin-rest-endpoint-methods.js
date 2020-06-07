@@ -1,16 +1,18 @@
 ---
-name: Get restrictions of protected branch
+name: Get access restrictions
 example: octokit.repos.getProtectedBranchRestrictions({ owner, repo, branch })
 route: GET /repos/{owner}/{repo}/branches/{branch}/protection/restrictions
 scope: repos
 type: API method
 ---
 
-# Get restrictions of protected branch
+# Get access restrictions
+
+**Deprecated:** This method has been renamed to repos.getAccessRestrictions
 
 Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://help.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
 
-Lists who has access to this protected branch. {{#note}}
+Lists who has access to this protected branch.
 
 **Note**: Users, apps, and teams `restrictions` are only available for organization-owned repositories.
 
@@ -45,4 +47,4 @@ octokit.repos.getProtectedBranchRestrictions({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/branches/#get-restrictions-of-protected-branch).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/branches/#get-access-restrictions).

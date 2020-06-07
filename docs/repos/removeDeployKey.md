@@ -1,12 +1,14 @@
 ---
-name: Remove a deploy key
+name: Delete a deploy key
 example: octokit.repos.removeDeployKey({ owner, repo, key_id })
 route: DELETE /repos/{owner}/{repo}/keys/{key_id}
 scope: repos
 type: API method
 ---
 
-# Remove a deploy key
+# Delete a deploy key
+
+**Deprecated:** This method has been renamed to repos.deleteDeployKey
 
 ```js
 octokit.repos.removeDeployKey({
@@ -39,4 +41,4 @@ octokit.repos.removeDeployKey({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/keys/#remove-a-deploy-key).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/keys/#delete-a-deploy-key).

@@ -1,14 +1,14 @@
 ---
-name: List releases for a repository
+name: List releases
 example: octokit.repos.listReleases({ owner, repo })
 route: GET /repos/{owner}/{repo}/releases
 scope: repos
 type: API method
 ---
 
-# List releases for a repository
+# List releases
 
-This returns a list of releases, which does not include regular Git tags that have not been associated with a release. To get a list of Git tags, use the [Repository Tags API](https://developer.github.com/v3/repos/#list-tags).
+This returns a list of releases, which does not include regular Git tags that have not been associated with a release. To get a list of Git tags, use the [Repository Tags API](https://developer.github.com/v3/repos/#list-repository-tags).
 
 Information about published releases are available to everyone. Only users with push access will receive listings for draft releases.
 
@@ -49,4 +49,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/releases/#list-releases-for-a-repository).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/releases/#list-releases).

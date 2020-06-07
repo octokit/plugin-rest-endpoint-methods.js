@@ -1,12 +1,12 @@
 ---
-name: Get information about a Pages site
+name: Get a GitHub Pages site
 example: octokit.repos.getPages({ owner, repo })
 route: GET /repos/{owner}/{repo}/pages
 scope: repos
 type: API method
 ---
 
-# Get information about a Pages site
+# Get a GitHub Pages site
 
 ```js
 octokit.repos.getPages({
@@ -35,4 +35,4 @@ octokit.repos.getPages({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/pages/#get-information-about-a-pages-site).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/pages/#get-a-github-pages-site).

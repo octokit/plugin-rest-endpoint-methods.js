@@ -1,12 +1,14 @@
 ---
-name: Update required status checks of protected branch
+name: Update status check potection
 example: octokit.repos.updateProtectedBranchRequiredStatusChecks({ owner, repo, branch })
 route: PATCH /repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks
 scope: repos
 type: API method
 ---
 
-# Update required status checks of protected branch
+# Update status check potection
+
+**Deprecated:** This method has been renamed to repos.updateStatusChecksProtection
 
 Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://help.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
 
@@ -53,4 +55,4 @@ The list of status checks to require in order to merge into this branch
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/branches/#update-required-status-checks-of-protected-branch).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/branches/#update-status-check-potection).

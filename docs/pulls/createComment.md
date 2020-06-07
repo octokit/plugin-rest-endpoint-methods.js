@@ -1,12 +1,14 @@
 ---
-name: Create a comment
+name: Create a review comment for a pull request
 example: octokit.pulls.createComment({ owner, repo, pull_number, body, commit_id, path })
 route: POST /repos/{owner}/{repo}/pulls/{pull_number}/comments
 scope: pulls
 type: API method
 ---
 
-# Create a comment
+# Create a review comment for a pull request
+
+**Deprecated:** This method has been renamed to pulls.createReviewComment
 
 **Note:** Multi-line comments on pull requests are currently in public beta and subject to change.
 
@@ -108,4 +110,4 @@ The relative path to the file that necessitates a comment.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/pulls/comments/#create-a-comment).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/pulls/comments/#create-a-review-comment-for-a-pull-request).

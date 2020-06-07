@@ -1,12 +1,14 @@
 ---
-name: Remove required signatures of protected branch
+name: Delete commit signature protection
 example: octokit.repos.removeProtectedBranchRequiredSignatures({ owner, repo, branch })
 route: DELETE /repos/{owner}/{repo}/branches/{branch}/protection/required_signatures
 scope: repos
 type: API method
 ---
 
-# Remove required signatures of protected branch
+# Delete commit signature protection
+
+**Deprecated:** This method has been renamed to repos.deleteCommitSignatureProtection
 
 Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://help.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
 
@@ -43,4 +45,4 @@ octokit.repos.removeProtectedBranchRequiredSignatures({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/branches/#remove-required-signatures-of-protected-branch).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/branches/#delete-commit-signature-protection).

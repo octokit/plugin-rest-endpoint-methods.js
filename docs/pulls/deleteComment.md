@@ -1,12 +1,14 @@
 ---
-name: Delete a comment
+name: Delete a review comment for a pull request
 example: octokit.pulls.deleteComment({ owner, repo, comment_id })
 route: DELETE /repos/{owner}/{repo}/pulls/comments/{comment_id}
 scope: pulls
 type: API method
 ---
 
-# Delete a comment
+# Delete a review comment for a pull request
+
+**Deprecated:** This method has been renamed to pulls.deleteReviewComment
 
 Deletes a review comment.
 
@@ -41,4 +43,4 @@ octokit.pulls.deleteComment({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/pulls/comments/#delete-a-comment).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/pulls/comments/#delete-a-review-comment-for-a-pull-request).

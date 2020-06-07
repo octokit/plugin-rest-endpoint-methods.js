@@ -1,12 +1,14 @@
 ---
-name: Publicize a user's membership
+name: Set public organization membership for the authenticated user
 example: octokit.orgs.publicizeMembership({ org, username })
 route: PUT /orgs/{org}/public_members/{username}
 scope: orgs
 type: API method
 ---
 
-# Publicize a user's membership
+# Set public organization membership for the authenticated user
+
+**Deprecated:** This method has been renamed to orgs.setPublicMembershipForAuthenticatedUser
 
 The user can publicize their own membership. (A user cannot publicize the membership for another user.)
 
@@ -39,4 +41,4 @@ octokit.orgs.publicizeMembership({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/orgs/members/#publicize-a-users-membership).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/orgs/members/#set-public-organization-membership-for-the-authenticated-user).

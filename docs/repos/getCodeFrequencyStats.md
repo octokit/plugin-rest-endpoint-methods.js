@@ -1,12 +1,12 @@
 ---
-name: Get the number of additions and deletions per week
+name: Get the weekly commit activity
 example: octokit.repos.getCodeFrequencyStats({ owner, repo })
 route: GET /repos/{owner}/{repo}/stats/code_frequency
 scope: repos
 type: API method
 ---
 
-# Get the number of additions and deletions per week
+# Get the weekly commit activity
 
 Returns a weekly aggregate of the number of additions and deletions pushed to a repository.
 
@@ -37,4 +37,4 @@ octokit.repos.getCodeFrequencyStats({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/statistics/#get-the-number-of-additions-and-deletions-per-week).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/statistics/#get-the-weekly-commit-activity).

@@ -1,12 +1,14 @@
 ---
-name: Create a hook
+name: Create a repository webhook
 example: octokit.repos.createHook({ owner, repo, config, config.url })
 route: POST /repos/{owner}/{repo}/hooks
 scope: repos
 type: API method
 ---
 
-# Create a hook
+# Create a repository webhook
+
+**Deprecated:** This method has been renamed to repos.createWebhook
 
 Repositories can have multiple webhooks installed. Each webhook should have a unique `config`. Multiple webhooks can share the same `config` as long as those webhooks do not have any `events` that overlap.
 
@@ -81,4 +83,4 @@ Determines if notifications are sent when the webhook is triggered. Set to `true
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/hooks/#create-a-hook).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/hooks/#create-a-repository-webhook).

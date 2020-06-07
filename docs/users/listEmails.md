@@ -1,12 +1,14 @@
 ---
-name: List email addresses for a user
+name: List email addresses for the authenticated user
 example: octokit.users.listEmails()
 route: GET /user/emails
 scope: users
 type: API method
 ---
 
-# List email addresses for a user
+# List email addresses for the authenticated user
+
+**Deprecated:** This method has been renamed to users.listEmailsForAuthenticated
 
 Lists all of your email addresses, and specifies which one is visible to the public. This endpoint is accessible with the `user:email` scope.
 
@@ -38,4 +40,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/users/emails/#list-email-addresses-for-a-user).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/users/emails/#list-email-addresses-for-the-authenticated-user).

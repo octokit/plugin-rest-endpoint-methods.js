@@ -1,12 +1,14 @@
 ---
-name: Get archive link
+name: Download a repository archive
 example: octokit.repos.getArchiveLink({ owner, repo, archive_format, ref })
 route: GET /repos/{owner}/{repo}/{archive_format}/{ref}
 scope: repos
 type: API method
 ---
 
-# Get archive link
+# Download a repository archive
+
+**Deprecated:** This method has been renamed to repos.downloadArchive
 
 Gets a redirect URL to download an archive for a repository. The `:archive_format` can be either `tarball` or `zipball`. The `:ref` must be a valid Git reference. If you omit `:ref`, the repository’s default branch (usually `master`) will be used. Please make sure your HTTP framework is configured to follow redirects or you will need to use the `Location` header to make a second `GET` request.
 
@@ -49,4 +51,4 @@ octokit.repos.getArchiveLink({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/contents/#get-archive-link).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/contents/#download-a-repository-archive).

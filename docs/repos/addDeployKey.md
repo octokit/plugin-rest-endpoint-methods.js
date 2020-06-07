@@ -1,12 +1,14 @@
 ---
-name: Add a new deploy key
+name: Create a deploy key
 example: octokit.repos.addDeployKey({ owner, repo, key })
 route: POST /repos/{owner}/{repo}/keys
 scope: repos
 type: API method
 ---
 
-# Add a new deploy key
+# Create a deploy key
+
+**Deprecated:** This method has been renamed to repos.createDeployKey
 
 Here's how you can create a read-only deploy key:
 
@@ -55,4 +57,4 @@ Deploy keys with write access can perform the same actions as an organization me
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/keys/#add-a-new-deploy-key).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/keys/#create-a-deploy-key).

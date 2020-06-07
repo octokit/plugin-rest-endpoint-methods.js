@@ -1,12 +1,12 @@
 ---
-name: List referrers
+name: Get top referral sources
 example: octokit.repos.getTopReferrers({ owner, repo })
 route: GET /repos/{owner}/{repo}/traffic/popular/referrers
 scope: repos
 type: API method
 ---
 
-# List referrers
+# Get top referral sources
 
 Get the top 10 referrers over the last 14 days.
 
@@ -37,4 +37,4 @@ octokit.repos.getTopReferrers({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/traffic/#list-referrers).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/traffic/#get-top-referral-sources).

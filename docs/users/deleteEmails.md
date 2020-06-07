@@ -1,12 +1,14 @@
 ---
-name: Delete email address(es)
+name: Delete an email address for the authenticated user
 example: octokit.users.deleteEmails({ emails })
 route: DELETE /user/emails
 scope: users
 type: API method
 ---
 
-# Delete email address(es)
+# Delete an email address for the authenticated user
+
+**Deprecated:** This method has been renamed to users.deleteEmailsForAuthenticated
 
 This endpoint is accessible with the `user` scope.
 
@@ -35,4 +37,4 @@ Deletes one or more email addresses from your GitHub account. Must contain at le
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/users/emails/#delete-email-addresses).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/users/emails/#delete-an-email-address-for-the-authenticated-user).

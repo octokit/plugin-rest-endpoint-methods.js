@@ -1,12 +1,14 @@
 ---
-name: Check if you are following a user
+name: Check if a person is followed by the authenticated user
 example: octokit.users.checkFollowing({ username })
 route: GET /user/following/{username}
 scope: users
 type: API method
 ---
 
-# Check if you are following a user
+# Check if a person is followed by the authenticated user
+
+**Deprecated:** This method has been renamed to users.checkPersonIsFollowedByAuthenticated
 
 ```js
 octokit.users.checkFollowing({
@@ -31,4 +33,4 @@ octokit.users.checkFollowing({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/users/followers/#check-if-you-are-following-a-user).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/users/followers/#check-if-a-person-is-followed-by-the-authenticated-user).

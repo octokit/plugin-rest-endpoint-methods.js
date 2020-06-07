@@ -1,12 +1,14 @@
 ---
-name: Get single hook
+name: Get an organization webhook
 example: octokit.orgs.getHook({ org, hook_id })
 route: GET /orgs/{org}/hooks/{hook_id}
 scope: orgs
 type: API method
 ---
 
-# Get single hook
+# Get an organization webhook
+
+**Deprecated:** This method has been renamed to orgs.getWebhook
 
 ```js
 octokit.orgs.getHook({
@@ -35,4 +37,4 @@ octokit.orgs.getHook({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/orgs/hooks/#get-single-hook).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/orgs/hooks/#get-an-organization-webhook).

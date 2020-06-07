@@ -1,12 +1,12 @@
 ---
-name: Get contributors list with additions, deletions, and commit counts
+name: Get all contributor commit activity
 example: octokit.repos.getContributorsStats({ owner, repo })
 route: GET /repos/{owner}/{repo}/stats/contributors
 scope: repos
 type: API method
 ---
 
-# Get contributors list with additions, deletions, and commit counts
+# Get all contributor commit activity
 
 - `total` - The Total number of commits authored by the contributor.
 
@@ -44,4 +44,4 @@ octokit.repos.getContributorsStats({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/statistics/#get-contributors-list-with-additions-deletions-and-commit-counts).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/statistics/#get-all-contributor-commit-activity).

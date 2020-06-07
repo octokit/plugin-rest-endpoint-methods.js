@@ -1,12 +1,14 @@
 ---
-name: Remove branch protection
+name: Delete branch protection
 example: octokit.repos.removeBranchProtection({ owner, repo, branch })
 route: DELETE /repos/{owner}/{repo}/branches/{branch}/protection
 scope: repos
 type: API method
 ---
 
-# Remove branch protection
+# Delete branch protection
+
+**Deprecated:** This method has been renamed to repos.deleteBranchProtection
 
 Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://help.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
 
@@ -41,4 +43,4 @@ octokit.repos.removeBranchProtection({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/branches/#remove-branch-protection).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/branches/#delete-branch-protection).

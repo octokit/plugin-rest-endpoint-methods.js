@@ -1,12 +1,12 @@
 ---
-name: Get the README
+name: Get a repository README
 example: octokit.repos.getReadme({ owner, repo })
 route: GET /repos/{owner}/{repo}/readme
 scope: repos
 type: API method
 ---
 
-# Get the README
+# Get a repository README
 
 Gets the preferred README for a repository.
 
@@ -44,4 +44,4 @@ The name of the commit/branch/tag. Default: the repository’s default branch (u
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/contents/#get-the-readme).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/contents/#get-a-repository-readme).

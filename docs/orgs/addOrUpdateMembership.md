@@ -1,16 +1,18 @@
 ---
-name: Add or update organization membership
+name: Set organization membership for a user
 example: octokit.orgs.addOrUpdateMembership({ org, username })
 route: PUT /orgs/{org}/memberships/{username}
 scope: orgs
 type: API method
 ---
 
-# Add or update organization membership
+# Set organization membership for a user
+
+**Deprecated:** This method has been renamed to orgs.setMembershipForUser
 
 Only authenticated organization owners can add a member to the organization or update the member's role.
 
-- If the authenticated user is _adding_ a member to the organization, the invited user will receive an email inviting them to the organization. The user's [membership status](https://developer.github.com/v3/orgs/members/#get-organization-membership) will be `pending` until they accept the invitation.
+- If the authenticated user is _adding_ a member to the organization, the invited user will receive an email inviting them to the organization. The user's [membership status](https://developer.github.com/v3/orgs/members/#get-organization-membership-for-a-user) will be `pending` until they accept the invitation.
 
 - Authenticated users can _update_ a user's membership by passing the `role` parameter. If the authenticated user changes a member's role to `admin`, the affected user will receive an email notifying them that they've been made an organization owner. If the authenticated user changes an owner's role to `member`, no email will be sent.
 
@@ -52,4 +54,4 @@ The role to give the user in the organization. Can be one of:
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/orgs/members/#add-or-update-organization-membership).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/orgs/members/#set-organization-membership-for-a-user).

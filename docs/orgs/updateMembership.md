@@ -1,12 +1,14 @@
 ---
-name: Edit your organization membership
+name: Update an organization membership for the authenticated user
 example: octokit.orgs.updateMembership({ org, state })
 route: PATCH /user/memberships/orgs/{org}
 scope: orgs
 type: API method
 ---
 
-# Edit your organization membership
+# Update an organization membership for the authenticated user
+
+**Deprecated:** This method has been renamed to orgs.updateMembershipForAuthenticatedUser
 
 ```js
 octokit.orgs.updateMembership({
@@ -37,4 +39,4 @@ The state that the membership should be in. Only `"active"` will be accepted.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/orgs/members/#edit-your-organization-membership).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/orgs/members/#update-an-organization-membership-for-the-authenticated-user).

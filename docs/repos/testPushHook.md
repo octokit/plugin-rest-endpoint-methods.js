@@ -1,12 +1,14 @@
 ---
-name: Test a push hook
+name: Test the push repository webhook
 example: octokit.repos.testPushHook({ owner, repo, hook_id })
 route: POST /repos/{owner}/{repo}/hooks/{hook_id}/tests
 scope: repos
 type: API method
 ---
 
-# Test a push hook
+# Test the push repository webhook
+
+**Deprecated:** This method has been renamed to repos.testPushWebhook
 
 This will trigger the hook with the latest push to the current repository if the hook is subscribed to `push` events. If the hook is not subscribed to `push` events, the server will respond with 204 but no test POST will be generated.
 
@@ -43,4 +45,4 @@ octokit.repos.testPushHook({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/hooks/#test-a-push-hook).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/hooks/#test-the-push-repository-webhook).

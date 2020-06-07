@@ -1,12 +1,12 @@
 ---
-name: Get a single commit comment
+name: Get a commit comment
 example: octokit.repos.getCommitComment({ owner, repo, comment_id })
 route: GET /repos/{owner}/{repo}/comments/{comment_id}
 scope: repos
 type: API method
 ---
 
-# Get a single commit comment
+# Get a commit comment
 
 ```js
 octokit.repos.getCommitComment({
@@ -39,4 +39,4 @@ octokit.repos.getCommitComment({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/comments/#get-a-single-commit-comment).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/comments/#get-a-commit-comment).

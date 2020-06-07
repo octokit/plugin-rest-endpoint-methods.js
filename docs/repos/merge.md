@@ -1,12 +1,12 @@
 ---
-name: Perform a merge
+name: Merge a branch
 example: octokit.repos.merge({ owner, repo, base, head })
 route: POST /repos/{owner}/{repo}/merges
 scope: repos
 type: API method
 ---
 
-# Perform a merge
+# Merge a branch
 
 ```js
 octokit.repos.merge({
@@ -52,4 +52,4 @@ Commit message to use for the merge commit. If omitted, a default message will b
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/merging/#perform-a-merge).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/merging/#merge-a-branch).

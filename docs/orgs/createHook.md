@@ -1,12 +1,14 @@
 ---
-name: Create a hook
+name: Create an organization webhook
 example: octokit.orgs.createHook({ org, name, config, config.url })
 route: POST /orgs/{org}/hooks
 scope: orgs
 type: API method
 ---
 
-# Create a hook
+# Create an organization webhook
+
+**Deprecated:** This method has been renamed to orgs.createWebhook
 
 Here's how you can create a hook that posts payloads in JSON format:
 
@@ -76,4 +78,4 @@ Determines if notifications are sent when the webhook is triggered. Set to `true
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/orgs/hooks/#create-a-hook).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/orgs/hooks/#create-an-organization-webhook).

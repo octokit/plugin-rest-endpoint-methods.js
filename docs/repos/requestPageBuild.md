@@ -1,12 +1,14 @@
 ---
-name: Request a page build
+name: Request a GitHub Pages build
 example: octokit.repos.requestPageBuild({ owner, repo })
 route: POST /repos/{owner}/{repo}/pages/builds
 scope: repos
 type: API method
 ---
 
-# Request a page build
+# Request a GitHub Pages build
+
+**Deprecated:** This method has been renamed to repos.requestPagesBuild
 
 You can request that your site be built from the latest revision on the default branch. This has the same effect as pushing a commit to your default branch, but does not require an additional commit. Manually triggering page builds can be helpful when diagnosing build warnings and failures.
 
@@ -39,4 +41,4 @@ octokit.repos.requestPageBuild({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/pages/#request-a-page-build).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/pages/#request-a-github-pages-build).

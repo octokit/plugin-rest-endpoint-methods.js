@@ -1,12 +1,12 @@
 ---
-name: Edit an organization
+name: Update an organization
 example: octokit.orgs.update({ org })
 route: PATCH /orgs/{org}
 scope: orgs
 type: API method
 ---
 
-# Edit an organization
+# Update an organization
 
 **Parameter Deprecation Notice:** GitHub will replace and discontinue `members_allowed_repository_creation_type` in favor of more granular permissions. The new input parameters are `members_can_create_public_repositories`, `members_can_create_private_repositories` for all organizations and `members_can_create_internal_repositories` for organizations associated with an enterprise account using GitHub Enterprise Cloud or GitHub Enterprise Server 2.20+. For more information, see the [blog post](https://developer.github.com/changes/2019-12-03-internal-visibility-changes).
 
@@ -131,4 +131,4 @@ Specifies which types of repositories non-admin organization members can create.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/orgs/#edit-an-organization).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/orgs/#update-an-organization).

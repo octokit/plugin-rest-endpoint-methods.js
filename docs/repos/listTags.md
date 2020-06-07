@@ -1,12 +1,12 @@
 ---
-name: List tags
+name: List repository tags
 example: octokit.repos.listTags({ owner, repo })
 route: GET /repos/{owner}/{repo}/tags
 scope: repos
 type: API method
 ---
 
-# List tags
+# List repository tags
 
 ```js
 octokit.repos.listTags({
@@ -45,4 +45,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/#list-tags).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/#list-repository-tags).

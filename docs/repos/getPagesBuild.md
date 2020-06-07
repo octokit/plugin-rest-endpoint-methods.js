@@ -1,12 +1,12 @@
 ---
-name: Get a specific Pages build
+name: Get GitHub Pages build
 example: octokit.repos.getPagesBuild({ owner, repo, build_id })
 route: GET /repos/{owner}/{repo}/pages/builds/{build_id}
 scope: repos
 type: API method
 ---
 
-# Get a specific Pages build
+# Get GitHub Pages build
 
 ```js
 octokit.repos.getPagesBuild({
@@ -39,4 +39,4 @@ octokit.repos.getPagesBuild({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/pages/#get-a-specific-pages-build).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/pages/#get-github-pages-build).

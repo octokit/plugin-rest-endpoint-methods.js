@@ -1,12 +1,14 @@
 ---
-name: Add admin enforcement of protected branch
+name: Set admin branch protection
 example: octokit.repos.addProtectedBranchAdminEnforcement({ owner, repo, branch })
 route: POST /repos/{owner}/{repo}/branches/{branch}/protection/enforce_admins
 scope: repos
 type: API method
 ---
 
-# Add admin enforcement of protected branch
+# Set admin branch protection
+
+**Deprecated:** This method has been renamed to repos.setAdminBranchProtection
 
 Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://help.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
 
@@ -43,4 +45,4 @@ octokit.repos.addProtectedBranchAdminEnforcement({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/branches/#add-admin-enforcement-of-protected-branch).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/branches/#set-admin-branch-protection).
