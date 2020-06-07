@@ -1,12 +1,14 @@
 ---
-name: Remove pull request review enforcement of protected branch
+name: Delete pull request review protection
 example: octokit.repos.removeProtectedBranchPullRequestReviewEnforcement({ owner, repo, branch })
 route: DELETE /repos/{owner}/{repo}/branches/{branch}/protection/required_pull_request_reviews
 scope: repos
 type: API method
 ---
 
-# Remove pull request review enforcement of protected branch
+# Delete pull request review protection
+
+**Deprecated:** This method has been renamed to repos.deletePullRequestReviewProtection
 
 Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://help.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
 
@@ -41,4 +43,4 @@ octokit.repos.removeProtectedBranchPullRequestReviewEnforcement({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/branches/#remove-pull-request-review-enforcement-of-protected-branch).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/branches/#delete-pull-request-review-protection).

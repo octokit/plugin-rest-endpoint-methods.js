@@ -1,12 +1,14 @@
 ---
-name: Remove organization membership
+name: Remove organization membership for a user
 example: octokit.orgs.removeMembership({ org, username })
 route: DELETE /orgs/{org}/memberships/{username}
 scope: orgs
 type: API method
 ---
 
-# Remove organization membership
+# Remove organization membership for a user
+
+**Deprecated:** This method has been renamed to orgs.removeMembershipForUser
 
 In order to remove a user's membership with an organization, the authenticated user must be an organization owner.
 
@@ -39,4 +41,4 @@ octokit.orgs.removeMembership({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/orgs/members/#remove-organization-membership).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/orgs/members/#remove-organization-membership-for-a-user).

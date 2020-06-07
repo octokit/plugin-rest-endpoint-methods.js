@@ -1,12 +1,14 @@
 ---
-name: List assets for a release
+name: List release assets
 example: octokit.repos.listAssetsForRelease({ owner, repo, release_id })
 route: GET /repos/{owner}/{repo}/releases/{release_id}/assets
 scope: repos
 type: API method
 ---
 
-# List assets for a release
+# List release assets
+
+**Deprecated:** This method has been renamed to repos.listReleaseAssets
 
 ```js
 octokit.repos.listAssetsForRelease({
@@ -49,4 +51,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/releases/#list-assets-for-a-release).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/releases/#list-release-assets).

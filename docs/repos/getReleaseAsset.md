@@ -1,12 +1,12 @@
 ---
-name: Get a single release asset
+name: Get a release asset
 example: octokit.repos.getReleaseAsset({ owner, repo, asset_id })
 route: GET /repos/{owner}/{repo}/releases/assets/{asset_id}
 scope: repos
 type: API method
 ---
 
-# Get a single release asset
+# Get a release asset
 
 To download the asset's binary content, set the `Accept` header of the request to [`application/octet-stream`](https://developer.github.com/v3/media/#media-types). The API will either redirect the client to the location, or stream it directly if possible. API clients should handle both a `200` or `302` response.
 
@@ -41,4 +41,4 @@ octokit.repos.getReleaseAsset({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/releases/#get-a-single-release-asset).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/releases/#get-a-release-asset).

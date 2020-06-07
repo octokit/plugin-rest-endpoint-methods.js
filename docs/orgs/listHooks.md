@@ -1,12 +1,14 @@
 ---
-name: List hooks
+name: List organization webhooks
 example: octokit.orgs.listHooks({ org })
 route: GET /orgs/{org}/hooks
 scope: orgs
 type: API method
 ---
 
-# List hooks
+# List organization webhooks
+
+**Deprecated:** This method has been renamed to orgs.listWebhooks
 
 ```js
 octokit.orgs.listHooks({
@@ -41,4 +43,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/orgs/hooks/#list-hooks).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/orgs/hooks/#list-organization-webhooks).

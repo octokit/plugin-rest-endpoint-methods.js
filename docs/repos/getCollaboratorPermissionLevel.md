@@ -1,12 +1,12 @@
 ---
-name: Review a user's permission level
+name: Get repository permissions for a user
 example: octokit.repos.getCollaboratorPermissionLevel({ owner, repo, username })
 route: GET /repos/{owner}/{repo}/collaborators/{username}/permission
 scope: repos
 type: API method
 ---
 
-# Review a user's permission level
+# Get repository permissions for a user
 
 Checks the repository permission of a collaborator. The possible repository permissions are `admin`, `write`, `read`, and `none`.
 
@@ -41,4 +41,4 @@ octokit.repos.getCollaboratorPermissionLevel({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/collaborators/#review-a-users-permission-level).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/collaborators/#get-repository-permissions-for-a-user).

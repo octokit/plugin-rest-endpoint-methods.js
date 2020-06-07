@@ -1,12 +1,12 @@
 ---
-name: Get your organization membership
+name: Get an organization membership for the authenticated user
 example: octokit.orgs.getMembershipForAuthenticatedUser({ org })
 route: GET /user/memberships/orgs/{org}
 scope: orgs
 type: API method
 ---
 
-# Get your organization membership
+# Get an organization membership for the authenticated user
 
 ```js
 octokit.orgs.getMembershipForAuthenticatedUser({
@@ -31,4 +31,4 @@ octokit.orgs.getMembershipForAuthenticatedUser({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/orgs/members/#get-your-organization-membership).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/orgs/members/#get-an-organization-membership-for-the-authenticated-user).

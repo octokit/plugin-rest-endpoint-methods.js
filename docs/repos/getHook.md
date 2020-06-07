@@ -1,12 +1,14 @@
 ---
-name: Get single hook
+name: Get a repository webhook
 example: octokit.repos.getHook({ owner, repo, hook_id })
 route: GET /repos/{owner}/{repo}/hooks/{hook_id}
 scope: repos
 type: API method
 ---
 
-# Get single hook
+# Get a repository webhook
+
+**Deprecated:** This method has been renamed to repos.getWebhook
 
 ```js
 octokit.repos.getHook({
@@ -39,4 +41,4 @@ octokit.repos.getHook({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/hooks/#get-single-hook).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/hooks/#get-a-repository-webhook).

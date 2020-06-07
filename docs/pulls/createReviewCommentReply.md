@@ -1,12 +1,14 @@
 ---
-name: Create a review comment reply
+name: Create a reply for a review comment
 example: octokit.pulls.createReviewCommentReply({ owner, repo, pull_number, comment_id, body })
 route: POST /repos/{owner}/{repo}/pulls/{pull_number}/comments/{comment_id}/replies
 scope: pulls
 type: API method
 ---
 
-# Create a review comment reply
+# Create a reply for a review comment
+
+**Deprecated:** This method has been renamed to pulls.createReplyForReviewComment
 
 Creates a reply to a review comment for a pull request. For the `comment_id`, provide the ID of the review comment you are replying to. This must be the ID of a _top-level review comment_, not a reply to that comment. Replies to replies are not supported.
 
@@ -53,4 +55,4 @@ The text of the review comment.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/pulls/comments/#create-a-review-comment-reply).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/pulls/comments/#create-a-reply-for-a-review-comment).

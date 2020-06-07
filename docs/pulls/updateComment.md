@@ -1,12 +1,14 @@
 ---
-name: Edit a comment
+name: Update a review comment for a pull request
 example: octokit.pulls.updateComment({ owner, repo, comment_id, body })
 route: PATCH /repos/{owner}/{repo}/pulls/comments/{comment_id}
 scope: pulls
 type: API method
 ---
 
-# Edit a comment
+# Update a review comment for a pull request
+
+**Deprecated:** This method has been renamed to pulls.updateReviewComment
 
 **Note:** Multi-line comments on pull requests are currently in public beta and subject to change.
 
@@ -65,4 +67,4 @@ The text of the reply to the review comment.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/pulls/comments/#edit-a-comment).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/pulls/comments/#update-a-review-comment-for-a-pull-request).

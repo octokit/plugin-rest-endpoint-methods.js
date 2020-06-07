@@ -605,7 +605,7 @@ export type RestEndpointMethods = {
      * Lists all workflow runs for a repository. You can use parameters to narrow the list of results. For more information about using parameters, see [Parameters](https://developer.github.com/v3/#parameters).
      *
      * Anyone with read access to the repository can use this endpoint. If the repository is private you must use an access token with the `repo` scope. GitHub Apps must have the `actions:read` permission to use this endpoint.
-     * @deprecated octokit.actions.listRepoWorkflowRuns() has been renamed to octokit.actions.listWorkflowRunsForRepo() (2020-05-04)
+     * @deprecated octokit.actions.listRepoWorkflowRuns() has been renamed to octokit.actions.listWorkflowRunsForRepo() (2020-06-04)
      */
     listRepoWorkflowRuns: {
       (
@@ -2498,7 +2498,7 @@ export type RestEndpointMethods = {
     /**
      * Returns a single reference from your Git database. The `:ref` in the URL must be formatted as `heads/<branch name>` for branches and `tags/<tag name>` for tags. If the `:ref` doesn't match an existing ref, a `404` is returned.
      *
-     * **Note:** You need to explicitly [request a pull request](https://developer.github.com/v3/pulls/#get-a-single-pull-request) to trigger a test merge commit, which checks the mergeability of pull requests. For more information, see "[Checking mergeability of pull requests](https://developer.github.com/v3/git/#checking-mergeability-of-pull-requests)".
+     * **Note:** You need to explicitly [request a pull request](https://developer.github.com/v3/pulls/#get-a-pull-request) to trigger a test merge commit, which checks the mergeability of pull requests. For more information, see "[Checking mergeability of pull requests](https://developer.github.com/v3/git/#checking-mergeability-of-pull-requests)".
      *
      * To get the reference for a branch named `skunkworkz/featureA`, the endpoint route is:
      */
@@ -2556,7 +2556,7 @@ export type RestEndpointMethods = {
      *
      * When you use this endpoint without providing a `:ref`, it will return an array of all the references from your Git database, including notes and stashes if they exist on the server. Anything in the namespace is returned, not just `heads` and `tags`.
      *
-     * **Note:** You need to explicitly [request a pull request](https://developer.github.com/v3/pulls/#get-a-single-pull-request) to trigger a test merge commit, which checks the mergeability of pull requests. For more information, see "[Checking mergeability of pull requests](https://developer.github.com/v3/git/#checking-mergeability-of-pull-requests)".
+     * **Note:** You need to explicitly [request a pull request](https://developer.github.com/v3/pulls/#get-a-pull-request) to trigger a test merge commit, which checks the mergeability of pull requests. For more information, see "[Checking mergeability of pull requests](https://developer.github.com/v3/git/#checking-mergeability-of-pull-requests)".
      *
      * If you request matching references for a branch named `feature` but the branch `feature` doesn't exist, the response can still include other matching head refs that start with the word `feature`, such as `featureA` and `featureB`.
      */
@@ -2607,7 +2607,7 @@ export type RestEndpointMethods = {
     };
     /**
      * List all templates available to pass as an option when [creating a repository](https://developer.github.com/v3/repos/#create-a-repository-for-the-authenticated-user).
-     * @deprecated octokit.gitignore.listTemplates() has been renamed to octokit.gitignore.getAllTemplates() (2020-05-04)
+     * @deprecated octokit.gitignore.listTemplates() has been renamed to octokit.gitignore.getAllTemplates() (2020-06-04)
      */
     listTemplates: {
       (
@@ -3223,7 +3223,7 @@ export type RestEndpointMethods = {
     /**
      * This method returns the contents of the repository's license file, if one is detected.
      *
-     * Similar to [the repository contents API](https://developer.github.com/v3/repos/contents/#get-contents), this method also supports [custom media types](https://developer.github.com/v3/repos/contents/#custom-media-types) for retrieving the raw license content or rendered license HTML.
+     * Similar to [Get repository content](https://developer.github.com/v3/repos/contents/#get-repository-content), this method also supports [custom media types](https://developer.github.com/v3/repos/contents/#custom-media-types) for retrieving the raw license content or rendered license HTML.
      */
     getForRepo: {
       (
@@ -3233,7 +3233,7 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * @deprecated octokit.licenses.listCommonlyUsed() has been renamed to octokit.licenses.getAllCommonlyUsed() (2020-05-04)
+     * @deprecated octokit.licenses.listCommonlyUsed() has been renamed to octokit.licenses.getAllCommonlyUsed() (2020-06-04)
      */
     listCommonlyUsed: {
       (
@@ -3667,13 +3667,14 @@ export type RestEndpointMethods = {
     /**
      * Only authenticated organization owners can add a member to the organization or update the member's role.
      *
-     * *   If the authenticated user is _adding_ a member to the organization, the invited user will receive an email inviting them to the organization. The user's [membership status](https://developer.github.com/v3/orgs/members/#get-organization-membership) will be `pending` until they accept the invitation.
+     * *   If the authenticated user is _adding_ a member to the organization, the invited user will receive an email inviting them to the organization. The user's [membership status](https://developer.github.com/v3/orgs/members/#get-organization-membership-for-a-user) will be `pending` until they accept the invitation.
      *
      * *   Authenticated users can _update_ a user's membership by passing the `role` parameter. If the authenticated user changes a member's role to `admin`, the affected user will receive an email notifying them that they've been made an organization owner. If the authenticated user changes an owner's role to `member`, no email will be sent.
      *
      * **Rate limits**
      *
      * To prevent abuse, the authenticated user is limited to 50 organization invitations per 24 hour period. If the organization is more than one month old or on a paid plan, the limit is 500 invitations per 24 hour period.
+     * @deprecated octokit.orgs.addOrUpdateMembership() has been renamed to octokit.orgs.setMembershipForUser() (2020-06-04)
      */
     addOrUpdateMembership: {
       (
@@ -3708,6 +3709,7 @@ export type RestEndpointMethods = {
     };
     /**
      * Check if a user is, publicly or privately, a member of the organization.
+     * @deprecated octokit.orgs.checkMembership() has been renamed to octokit.orgs.checkMembershipForUser() (2020-06-04)
      */
     checkMembership: {
       (
@@ -3718,7 +3720,21 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
-
+    /**
+     * Check if a user is, publicly or privately, a member of the organization.
+     */
+    checkMembershipForUser: {
+      (
+        params?: RestEndpointMethodTypes["orgs"]["checkMembershipForUser"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["orgs"]["checkMembershipForUser"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * @deprecated octokit.orgs.checkPublicMembership() has been renamed to octokit.orgs.checkPublicMembershipForUser() (2020-06-04)
+     */
     checkPublicMembership: {
       (
         params?: RestEndpointMethodTypes["orgs"]["checkPublicMembership"]["parameters"]
@@ -3729,6 +3745,18 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
 
+    checkPublicMembershipForUser: {
+      (
+        params?: RestEndpointMethodTypes["orgs"]["checkPublicMembershipForUser"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["orgs"]["checkPublicMembershipForUser"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * @deprecated octokit.orgs.concealMembership() has been renamed to octokit.orgs.removePublicMembershipForAuthenticatedUser() (2020-06-04)
+     */
     concealMembership: {
       (
         params?: RestEndpointMethodTypes["orgs"]["concealMembership"]["parameters"]
@@ -3752,6 +3780,7 @@ export type RestEndpointMethods = {
     };
     /**
      * Here's how you can create a hook that posts payloads in JSON format:
+     * @deprecated octokit.orgs.createHook() has been renamed to octokit.orgs.createWebhook() (2020-06-04)
      */
     createHook: {
       (
@@ -3774,11 +3803,31 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
-
+    /**
+     * Here's how you can create a hook that posts payloads in JSON format:
+     */
+    createWebhook: {
+      (
+        params?: RestEndpointMethodTypes["orgs"]["createWebhook"]["parameters"]
+      ): Promise<RestEndpointMethodTypes["orgs"]["createWebhook"]["response"]>;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * @deprecated octokit.orgs.deleteHook() has been renamed to octokit.orgs.deleteWebhook() (2020-06-04)
+     */
     deleteHook: {
       (
         params?: RestEndpointMethodTypes["orgs"]["deleteHook"]["parameters"]
       ): Promise<RestEndpointMethodTypes["orgs"]["deleteHook"]["response"]>;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+
+    deleteWebhook: {
+      (
+        params?: RestEndpointMethodTypes["orgs"]["deleteWebhook"]["parameters"]
+      ): Promise<RestEndpointMethodTypes["orgs"]["deleteWebhook"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
@@ -3794,7 +3843,9 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
-
+    /**
+     * @deprecated octokit.orgs.getHook() has been renamed to octokit.orgs.getWebhook() (2020-06-04)
+     */
     getHook: {
       (
         params?: RestEndpointMethodTypes["orgs"]["getHook"]["parameters"]
@@ -3804,6 +3855,7 @@ export type RestEndpointMethods = {
     };
     /**
      * In order to get a user's membership with an organization, the authenticated user must be an organization member.
+     * @deprecated octokit.orgs.getMembership() has been renamed to octokit.orgs.getMembershipForUser() (2020-06-04)
      */
     getMembership: {
       (
@@ -3823,6 +3875,26 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
+     * In order to get a user's membership with an organization, the authenticated user must be an organization member.
+     */
+    getMembershipForUser: {
+      (
+        params?: RestEndpointMethodTypes["orgs"]["getMembershipForUser"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["orgs"]["getMembershipForUser"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+
+    getWebhook: {
+      (
+        params?: RestEndpointMethodTypes["orgs"]["getWebhook"]["parameters"]
+      ): Promise<RestEndpointMethodTypes["orgs"]["getWebhook"]["response"]>;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
      * Lists all organizations, in the order that they were created on GitHub.
      *
      * **Note:** Pagination is powered exclusively by the `since` parameter. Use the [Link header](https://developer.github.com/v3/#link-header) to get the URL for the next page of organizations.
@@ -3830,6 +3902,18 @@ export type RestEndpointMethods = {
     list: {
       (params?: RestEndpointMethodTypes["orgs"]["list"]["parameters"]): Promise<
         RestEndpointMethodTypes["orgs"]["list"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Lists all GitHub Apps in an organization. The installation count includes all GitHub Apps installed on repositories in the organization. You must be an organization owner with `admin:read` scope to use this endpoint.
+     */
+    listAppInstallations: {
+      (
+        params?: RestEndpointMethodTypes["orgs"]["listAppInstallations"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["orgs"]["listAppInstallations"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -3865,7 +3949,7 @@ export type RestEndpointMethods = {
     /**
      * List [public organization memberships](https://help.github.com/articles/publicizing-or-concealing-organization-membership) for the specified user.
      *
-     * This method only lists _public_ memberships, regardless of authentication. If you need to fetch all of the organization memberships (public and private) for the authenticated user, use the [List your organizations](https://developer.github.com/v3/orgs/#list-your-organizations) API instead.
+     * This method only lists _public_ memberships, regardless of authentication. If you need to fetch all of the organization memberships (public and private) for the authenticated user, use the [List organizations for the authenticated user](https://developer.github.com/v3/orgs/#list-organizations-for-the-authenticated-user) API instead.
      */
     listForUser: {
       (
@@ -3874,7 +3958,9 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
-
+    /**
+     * @deprecated octokit.orgs.listHooks() has been renamed to octokit.orgs.listWebhooks() (2020-06-04)
+     */
     listHooks: {
       (
         params?: RestEndpointMethodTypes["orgs"]["listHooks"]["parameters"]
@@ -3884,6 +3970,7 @@ export type RestEndpointMethods = {
     };
     /**
      * Lists all GitHub Apps in an organization. The installation count includes all GitHub Apps installed on repositories in the organization. You must be an organization owner with `admin:read` scope to use this endpoint.
+     * @deprecated octokit.orgs.listInstallations() has been renamed to octokit.orgs.listAppInstallations() (2020-06-04)
      */
     listInstallations: {
       (
@@ -3916,12 +4003,24 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
-
+    /**
+     * @deprecated octokit.orgs.listMemberships() has been renamed to octokit.orgs.listMembershipsForAuthenticatedUser() (2020-06-04)
+     */
     listMemberships: {
       (
         params?: RestEndpointMethodTypes["orgs"]["listMemberships"]["parameters"]
       ): Promise<
         RestEndpointMethodTypes["orgs"]["listMemberships"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+
+    listMembershipsForAuthenticatedUser: {
+      (
+        params?: RestEndpointMethodTypes["orgs"]["listMembershipsForAuthenticatedUser"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["orgs"]["listMembershipsForAuthenticatedUser"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -3962,8 +4061,17 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
+
+    listWebhooks: {
+      (
+        params?: RestEndpointMethodTypes["orgs"]["listWebhooks"]["parameters"]
+      ): Promise<RestEndpointMethodTypes["orgs"]["listWebhooks"]["response"]>;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
     /**
      * This will trigger a [ping event](https://developer.github.com/webhooks/#ping-event) to be sent to the hook.
+     * @deprecated octokit.orgs.pingHook() has been renamed to octokit.orgs.pingWebhook() (2020-06-04)
      */
     pingHook: {
       (
@@ -3973,9 +4081,20 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
+     * This will trigger a [ping event](https://developer.github.com/webhooks/#ping-event) to be sent to the hook.
+     */
+    pingWebhook: {
+      (
+        params?: RestEndpointMethodTypes["orgs"]["pingWebhook"]["parameters"]
+      ): Promise<RestEndpointMethodTypes["orgs"]["pingWebhook"]["response"]>;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
      * The user can publicize their own membership. (A user cannot publicize the membership for another user.)
      *
      * Note that you'll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see "[HTTP verbs](https://developer.github.com/v3/#http-verbs)."
+     * @deprecated octokit.orgs.publicizeMembership() has been renamed to octokit.orgs.setPublicMembershipForAuthenticatedUser() (2020-06-04)
      */
     publicizeMembership: {
       (
@@ -4000,12 +4119,27 @@ export type RestEndpointMethods = {
      * In order to remove a user's membership with an organization, the authenticated user must be an organization owner.
      *
      * If the specified user is an active member of the organization, this will remove them from the organization. If the specified user has been invited to the organization, this will cancel their invitation. The specified user will receive an email notification in both cases.
+     * @deprecated octokit.orgs.removeMembership() has been renamed to octokit.orgs.removeMembershipForUser() (2020-06-04)
      */
     removeMembership: {
       (
         params?: RestEndpointMethodTypes["orgs"]["removeMembership"]["parameters"]
       ): Promise<
         RestEndpointMethodTypes["orgs"]["removeMembership"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * In order to remove a user's membership with an organization, the authenticated user must be an organization owner.
+     *
+     * If the specified user is an active member of the organization, this will remove them from the organization. If the specified user has been invited to the organization, this will cancel their invitation. The specified user will receive an email notification in both cases.
+     */
+    removeMembershipForUser: {
+      (
+        params?: RestEndpointMethodTypes["orgs"]["removeMembershipForUser"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["orgs"]["removeMembershipForUser"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -4018,6 +4152,50 @@ export type RestEndpointMethods = {
         params?: RestEndpointMethodTypes["orgs"]["removeOutsideCollaborator"]["parameters"]
       ): Promise<
         RestEndpointMethodTypes["orgs"]["removeOutsideCollaborator"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+
+    removePublicMembershipForAuthenticatedUser: {
+      (
+        params?: RestEndpointMethodTypes["orgs"]["removePublicMembershipForAuthenticatedUser"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["orgs"]["removePublicMembershipForAuthenticatedUser"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Only authenticated organization owners can add a member to the organization or update the member's role.
+     *
+     * *   If the authenticated user is _adding_ a member to the organization, the invited user will receive an email inviting them to the organization. The user's [membership status](https://developer.github.com/v3/orgs/members/#get-organization-membership-for-a-user) will be `pending` until they accept the invitation.
+     *
+     * *   Authenticated users can _update_ a user's membership by passing the `role` parameter. If the authenticated user changes a member's role to `admin`, the affected user will receive an email notifying them that they've been made an organization owner. If the authenticated user changes an owner's role to `member`, no email will be sent.
+     *
+     * **Rate limits**
+     *
+     * To prevent abuse, the authenticated user is limited to 50 organization invitations per 24 hour period. If the organization is more than one month old or on a paid plan, the limit is 500 invitations per 24 hour period.
+     */
+    setMembershipForUser: {
+      (
+        params?: RestEndpointMethodTypes["orgs"]["setMembershipForUser"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["orgs"]["setMembershipForUser"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * The user can publicize their own membership. (A user cannot publicize the membership for another user.)
+     *
+     * Note that you'll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see "[HTTP verbs](https://developer.github.com/v3/#http-verbs)."
+     */
+    setPublicMembershipForAuthenticatedUser: {
+      (
+        params?: RestEndpointMethodTypes["orgs"]["setPublicMembershipForAuthenticatedUser"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["orgs"]["setPublicMembershipForAuthenticatedUser"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -4042,7 +4220,9 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
-
+    /**
+     * @deprecated octokit.orgs.updateHook() has been renamed to octokit.orgs.updateWebhook() (2020-06-04)
+     */
     updateHook: {
       (
         params?: RestEndpointMethodTypes["orgs"]["updateHook"]["parameters"]
@@ -4050,7 +4230,9 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
-
+    /**
+     * @deprecated octokit.orgs.updateMembership() has been renamed to octokit.orgs.updateMembershipForAuthenticatedUser() (2020-06-04)
+     */
     updateMembership: {
       (
         params?: RestEndpointMethodTypes["orgs"]["updateMembership"]["parameters"]
@@ -4060,10 +4242,28 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
+
+    updateMembershipForAuthenticatedUser: {
+      (
+        params?: RestEndpointMethodTypes["orgs"]["updateMembershipForAuthenticatedUser"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["orgs"]["updateMembershipForAuthenticatedUser"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+
+    updateWebhook: {
+      (
+        params?: RestEndpointMethodTypes["orgs"]["updateWebhook"]["parameters"]
+      ): Promise<RestEndpointMethodTypes["orgs"]["updateWebhook"]["response"]>;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
   };
   projects: {
     /**
-     * Adds a collaborator to a an organization project and sets their permission level. You must be an organization owner or a project `admin` to add a collaborator.
+     * Adds a collaborator to an organization project and sets their permission level. You must be an organization owner or a project `admin` to add a collaborator.
      */
     addCollaborator: {
       (
@@ -4184,6 +4384,18 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
+    /**
+     * Returns the collaborator's permission level for an organization project. Possible values for the `permission` key: `admin`, `write`, `read`, `none`. You must be an organization owner or a project `admin` to review a user's permission level.
+     */
+    getPermissionForUser: {
+      (
+        params?: RestEndpointMethodTypes["projects"]["getPermissionForUser"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["projects"]["getPermissionForUser"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
 
     listCards: {
       (
@@ -4278,6 +4490,7 @@ export type RestEndpointMethods = {
     };
     /**
      * Returns the collaborator's permission level for an organization project. Possible values for the `permission` key: `admin`, `write`, `read`, `none`. You must be an organization owner or a project `admin` to review a user's permission level.
+     * @deprecated octokit.projects.reviewUserPermissionLevel() has been renamed to octokit.projects.getPermissionForUser() (2020-06-05)
      */
     reviewUserPermissionLevel: {
       (
@@ -4367,6 +4580,7 @@ export type RestEndpointMethods = {
      *
      * *   For multi-line comments, the last line of the comment range for the `position` attribute.
      * *   For single-line comments, the diff-positioned way of referencing comments for the `position` attribute. For more information, see `position` in the [input parameters](https://developer.github.com/v3/pulls/comments/#parameters-2) table.
+     * @deprecated octokit.pulls.createComment() has been renamed to octokit.pulls.createReviewComment() (2020-06-05)
      */
     createComment: {
       (
@@ -4376,11 +4590,25 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
+     * Creates a reply to a review comment for a pull request. For the `comment_id`, provide the ID of the review comment you are replying to. This must be the ID of a _top-level review comment_, not a reply to that comment. Replies to replies are not supported.
+     *
+     * This endpoint triggers [notifications](https://help.github.com/articles/about-notifications/). Creating content too quickly using this endpoint may result in abuse rate limiting. See "[Abuse rate limits](https://developer.github.com/v3/#abuse-rate-limits)" and "[Dealing with abuse rate limits](https://developer.github.com/v3/guides/best-practices-for-integrators/#dealing-with-abuse-rate-limits)" for details.
+     */
+    createReplyForReviewComment: {
+      (
+        params?: RestEndpointMethodTypes["pulls"]["createReplyForReviewComment"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["pulls"]["createReplyForReviewComment"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
      * This endpoint triggers [notifications](https://help.github.com/articles/about-notifications/). Creating content too quickly using this endpoint may result in abuse rate limiting. See "[Abuse rate limits](https://developer.github.com/v3/#abuse-rate-limits)" and "[Dealing with abuse rate limits](https://developer.github.com/v3/guides/best-practices-for-integrators/#dealing-with-abuse-rate-limits)" for details.
      *
      * Pull request reviews created in the `PENDING` state do not include the `submitted_at` property in the response.
      *
-     * **Note:** To comment on a specific line in a file, you need to first determine the _position_ of that line in the diff. The GitHub REST API v3 offers the `application/vnd.github.v3.diff` [media type](https://developer.github.com/v3/media/#commits-commit-comparison-and-pull-requests). To see a pull request diff, add this media type to the `Accept` header of a call to the [single pull request](https://developer.github.com/v3/pulls/#get-a-single-pull-request) endpoint.
+     * **Note:** To comment on a specific line in a file, you need to first determine the _position_ of that line in the diff. The GitHub REST API v3 offers the `application/vnd.github.v3.diff` [media type](https://developer.github.com/v3/media/#commits-commit-comparison-and-pull-requests). To see a pull request diff, add this media type to the `Accept` header of a call to the [single pull request](https://developer.github.com/v3/pulls/#get-a-pull-request) endpoint.
      *
      * The `position` value equals the number of lines down from the first "@@" hunk header in the file you want to add a comment. The line just below the "@@" line is position 1, the next line is position 2, and so on. The position in the diff continues to increase through lines of whitespace and additional hunks until the beginning of a new file.
      */
@@ -4392,9 +4620,46 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
+     * **Note:** Multi-line comments on pull requests are currently in public beta and subject to change.
+     *
+     * Creates a review comment in the pull request diff. To add a regular comment to a pull request timeline, see "[Create an issue comment](https://developer.github.com/v3/issues/comments/#create-an-issue-comment)." We recommend creating a review comment using `line`, `side`, and optionally `start_line` and `start_side` if your comment applies to more than one line in the pull request diff.
+     *
+     * You can still create a review comment using the `position` parameter. When you use `position`, the `line`, `side`, `start_line`, and `start_side` parameters are not required. For more information, see [Multi-line comment summary](https://developer.github.com/v3/pulls/comments/#multi-line-comment-summary-3).
+     *
+     * **Note:** The position value equals the number of lines down from the first "@@" hunk header in the file you want to add a comment. The line just below the "@@" line is position 1, the next line is position 2, and so on. The position in the diff continues to increase through lines of whitespace and additional hunks until the beginning of a new file.
+     *
+     * This endpoint triggers [notifications](https://help.github.com/articles/about-notifications/). Creating content too quickly using this endpoint may result in abuse rate limiting. See "[Abuse rate limits](https://developer.github.com/v3/#abuse-rate-limits)" and "[Dealing with abuse rate limits](https://developer.github.com/v3/guides/best-practices-for-integrators/#dealing-with-abuse-rate-limits)" for details.
+     *
+     * **Multi-line comment summary**
+     *
+     * **Note:** New parameters and response fields are available for developers to preview. During the preview period, these response fields may change without advance notice. Please see the [blog post](https://developer.github.com/changes/2019-10-03-multi-line-comments) for full details.
+     *
+     * Use the `comfort-fade` preview header and the `line` parameter to show multi-line comment-supported fields in the response.
+     *
+     * If you use the `comfort-fade` preview header, your response will show:
+     *
+     * *   For multi-line comments, values for `start_line`, `original_start_line`, `start_side`, `line`, `original_line`, and `side`.
+     * *   For single-line comments, values for `line`, `original_line`, and `side` and a `null` value for `start_line`, `original_start_line`, and `start_side`.
+     *
+     * If you don't use the `comfort-fade` preview header, multi-line and single-line comments will appear the same way in the response with a single `position` attribute. Your response will show:
+     *
+     * *   For multi-line comments, the last line of the comment range for the `position` attribute.
+     * *   For single-line comments, the diff-positioned way of referencing comments for the `position` attribute. For more information, see `position` in the [input parameters](https://developer.github.com/v3/pulls/comments/#parameters-2) table.
+     */
+    createReviewComment: {
+      (
+        params?: RestEndpointMethodTypes["pulls"]["createReviewComment"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["pulls"]["createReviewComment"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
      * Creates a reply to a review comment for a pull request. For the `comment_id`, provide the ID of the review comment you are replying to. This must be the ID of a _top-level review comment_, not a reply to that comment. Replies to replies are not supported.
      *
      * This endpoint triggers [notifications](https://help.github.com/articles/about-notifications/). Creating content too quickly using this endpoint may result in abuse rate limiting. See "[Abuse rate limits](https://developer.github.com/v3/#abuse-rate-limits)" and "[Dealing with abuse rate limits](https://developer.github.com/v3/guides/best-practices-for-integrators/#dealing-with-abuse-rate-limits)" for details.
+     * @deprecated octokit.pulls.createReviewCommentReply() has been renamed to octokit.pulls.createReplyForReviewComment() (2020-06-05)
      */
     createReviewCommentReply: {
       (
@@ -4407,6 +4672,7 @@ export type RestEndpointMethods = {
     };
     /**
      * This endpoint triggers [notifications](https://help.github.com/articles/about-notifications/). Creating content too quickly using this endpoint may result in abuse rate limiting. See "[Abuse rate limits](https://developer.github.com/v3/#abuse-rate-limits)" and "[Dealing with abuse rate limits](https://developer.github.com/v3/guides/best-practices-for-integrators/#dealing-with-abuse-rate-limits)" for details.
+     * @deprecated octokit.pulls.createReviewRequest() has been renamed to octokit.pulls.requestReviewers() (2020-06-05)
      */
     createReviewRequest: {
       (
@@ -4419,6 +4685,7 @@ export type RestEndpointMethods = {
     };
     /**
      * Deletes a review comment.
+     * @deprecated octokit.pulls.deleteComment() has been renamed to octokit.pulls.deleteReviewComment() (2020-06-05)
      */
     deleteComment: {
       (
@@ -4437,7 +4704,21 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
-
+    /**
+     * Deletes a review comment.
+     */
+    deleteReviewComment: {
+      (
+        params?: RestEndpointMethodTypes["pulls"]["deleteReviewComment"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["pulls"]["deleteReviewComment"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * @deprecated octokit.pulls.deleteReviewRequest() has been renamed to octokit.pulls.removeRequestedReviewers() (2020-06-05)
+     */
     deleteReviewRequest: {
       (
         params?: RestEndpointMethodTypes["pulls"]["deleteReviewRequest"]["parameters"]
@@ -4503,6 +4784,7 @@ export type RestEndpointMethods = {
      * *   For single-line comments, the diff-positioned way of referencing comments for the `position` attribute. For more information, see `position` in the [input parameters](https://developer.github.com/v3/pulls/comments/#parameters-2) table.
      *
      * The `reactions` key will have the following payload where `url` can be used to construct the API location for [listing and creating](https://developer.github.com/v3/reactions) reactions.
+     * @deprecated octokit.pulls.getComment() has been renamed to octokit.pulls.getReviewComment() (2020-06-05)
      */
     getComment: {
       (
@@ -4511,7 +4793,10 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
-
+    /**
+     * List comments for a specific pull request review.
+     * @deprecated octokit.pulls.getCommentsForReview() has been renamed to octokit.pulls.listCommentsForReview() (2020-06-05)
+     */
     getCommentsForReview: {
       (
         params?: RestEndpointMethodTypes["pulls"]["getCommentsForReview"]["parameters"]
@@ -4530,19 +4815,9 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Draft pull requests are available in public repositories with GitHub Free and GitHub Free for organizations, GitHub Pro, and legacy per-repository billing plans, and in public and private repositories with GitHub Team and GitHub Enterprise Cloud. For more information, see [GitHub's products](https://help.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
-     */
-    list: {
-      (
-        params?: RestEndpointMethodTypes["pulls"]["list"]["parameters"]
-      ): Promise<RestEndpointMethodTypes["pulls"]["list"]["response"]>;
-      defaults: RequestInterface["defaults"];
-      endpoint: EndpointInterface<{ url: string }>;
-    };
-    /**
      * **Note:** Multi-line comments on pull requests are currently in public beta and subject to change.
      *
-     * Lists review comments for a pull request. By default, review comments are in ascending order by ID.
+     * Provides details for a review comment.
      *
      * **Multi-line comment summary**
      *
@@ -4561,6 +4836,49 @@ export type RestEndpointMethods = {
      * *   For single-line comments, the diff-positioned way of referencing comments for the `position` attribute. For more information, see `position` in the [input parameters](https://developer.github.com/v3/pulls/comments/#parameters-2) table.
      *
      * The `reactions` key will have the following payload where `url` can be used to construct the API location for [listing and creating](https://developer.github.com/v3/reactions) reactions.
+     */
+    getReviewComment: {
+      (
+        params?: RestEndpointMethodTypes["pulls"]["getReviewComment"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["pulls"]["getReviewComment"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Draft pull requests are available in public repositories with GitHub Free and GitHub Free for organizations, GitHub Pro, and legacy per-repository billing plans, and in public and private repositories with GitHub Team and GitHub Enterprise Cloud. For more information, see [GitHub's products](https://help.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
+     */
+    list: {
+      (
+        params?: RestEndpointMethodTypes["pulls"]["list"]["parameters"]
+      ): Promise<RestEndpointMethodTypes["pulls"]["list"]["response"]>;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * **Note:** Multi-line comments on pull requests are currently in public beta and subject to change.
+     *
+     * Lists all review comments for a pull request. By default, review comments are in ascending order by ID.
+     *
+     * **Multi-line comment summary**
+     *
+     * **Note:** New parameters and response fields are available for developers to preview. During the preview period, these response fields may change without advance notice. Please see the [blog post](https://developer.github.com/changes/2019-10-03-multi-line-comments) for full details.
+     *
+     * Use the `comfort-fade` preview header and the `line` parameter to show multi-line comment-supported fields in the response.
+     *
+     * If you use the `comfort-fade` preview header, your response will show:
+     *
+     * *   For multi-line comments, values for `start_line`, `original_start_line`, `start_side`, `line`, `original_line`, and `side`.
+     * *   For single-line comments, values for `line`, `original_line`, and `side` and a `null` value for `start_line`, `original_start_line`, and `start_side`.
+     *
+     * If you don't use the `comfort-fade` preview header, multi-line and single-line comments will appear the same way in the response with a single `position` attribute. Your response will show:
+     *
+     * *   For multi-line comments, the last line of the comment range for the `position` attribute.
+     * *   For single-line comments, the diff-positioned way of referencing comments for the `position` attribute. For more information, see `position` in the [input parameters](https://developer.github.com/v3/pulls/comments/#parameters-2) table.
+     *
+     * The `reactions` key will have the following payload where `url` can be used to construct the API location for [listing and creating](https://developer.github.com/v3/reactions) reactions.
+     * @deprecated octokit.pulls.listComments() has been renamed to octokit.pulls.listReviewComments() (2020-06-05)
      */
     listComments: {
       (
@@ -4591,6 +4909,7 @@ export type RestEndpointMethods = {
      * *   For single-line comments, the diff-positioned way of referencing comments for the `position` attribute. For more information, see `position` in the [input parameters](https://developer.github.com/v3/pulls/comments/#parameters-2) table.
      *
      * The `reactions` key will have the following payload where `url` can be used to construct the API location for [listing and creating](https://developer.github.com/v3/reactions) reactions.
+     * @deprecated octokit.pulls.listCommentsForRepo() has been renamed to octokit.pulls.listReviewCommentsForRepo() (2020-06-05)
      */
     listCommentsForRepo: {
       (
@@ -4602,7 +4921,19 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Lists a maximum of 250 commits for a pull request. To receive a complete commit list for pull requests with more than 250 commits, use the [Commit List API](https://developer.github.com/v3/repos/commits/#list-commits-on-a-repository).
+     * List comments for a specific pull request review.
+     */
+    listCommentsForReview: {
+      (
+        params?: RestEndpointMethodTypes["pulls"]["listCommentsForReview"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["pulls"]["listCommentsForReview"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Lists a maximum of 250 commits for a pull request. To receive a complete commit list for pull requests with more than 250 commits, use the [List commits](https://developer.github.com/v3/repos/commits/#list-commits) endpoint.
      */
     listCommits: {
       (
@@ -4622,6 +4953,82 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
 
+    listRequestedReviewers: {
+      (
+        params?: RestEndpointMethodTypes["pulls"]["listRequestedReviewers"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["pulls"]["listRequestedReviewers"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * **Note:** Multi-line comments on pull requests are currently in public beta and subject to change.
+     *
+     * Lists all review comments for a pull request. By default, review comments are in ascending order by ID.
+     *
+     * **Multi-line comment summary**
+     *
+     * **Note:** New parameters and response fields are available for developers to preview. During the preview period, these response fields may change without advance notice. Please see the [blog post](https://developer.github.com/changes/2019-10-03-multi-line-comments) for full details.
+     *
+     * Use the `comfort-fade` preview header and the `line` parameter to show multi-line comment-supported fields in the response.
+     *
+     * If you use the `comfort-fade` preview header, your response will show:
+     *
+     * *   For multi-line comments, values for `start_line`, `original_start_line`, `start_side`, `line`, `original_line`, and `side`.
+     * *   For single-line comments, values for `line`, `original_line`, and `side` and a `null` value for `start_line`, `original_start_line`, and `start_side`.
+     *
+     * If you don't use the `comfort-fade` preview header, multi-line and single-line comments will appear the same way in the response with a single `position` attribute. Your response will show:
+     *
+     * *   For multi-line comments, the last line of the comment range for the `position` attribute.
+     * *   For single-line comments, the diff-positioned way of referencing comments for the `position` attribute. For more information, see `position` in the [input parameters](https://developer.github.com/v3/pulls/comments/#parameters-2) table.
+     *
+     * The `reactions` key will have the following payload where `url` can be used to construct the API location for [listing and creating](https://developer.github.com/v3/reactions) reactions.
+     */
+    listReviewComments: {
+      (
+        params?: RestEndpointMethodTypes["pulls"]["listReviewComments"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["pulls"]["listReviewComments"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * **Note:** Multi-line comments on pull requests are currently in public beta and subject to change.
+     *
+     * Lists review comments for all pull requests in a repository. By default, review comments are in ascending order by ID.
+     *
+     * **Multi-line comment summary**
+     *
+     * **Note:** New parameters and response fields are available for developers to preview. During the preview period, these response fields may change without advance notice. Please see the [blog post](https://developer.github.com/changes/2019-10-03-multi-line-comments) for full details.
+     *
+     * Use the `comfort-fade` preview header and the `line` parameter to show multi-line comment-supported fields in the response.
+     *
+     * If you use the `comfort-fade` preview header, your response will show:
+     *
+     * *   For multi-line comments, values for `start_line`, `original_start_line`, `start_side`, `line`, `original_line`, and `side`.
+     * *   For single-line comments, values for `line`, `original_line`, and `side` and a `null` value for `start_line`, `original_start_line`, and `start_side`.
+     *
+     * If you don't use the `comfort-fade` preview header, multi-line and single-line comments will appear the same way in the response with a single `position` attribute. Your response will show:
+     *
+     * *   For multi-line comments, the last line of the comment range for the `position` attribute.
+     * *   For single-line comments, the diff-positioned way of referencing comments for the `position` attribute. For more information, see `position` in the [input parameters](https://developer.github.com/v3/pulls/comments/#parameters-2) table.
+     *
+     * The `reactions` key will have the following payload where `url` can be used to construct the API location for [listing and creating](https://developer.github.com/v3/reactions) reactions.
+     */
+    listReviewCommentsForRepo: {
+      (
+        params?: RestEndpointMethodTypes["pulls"]["listReviewCommentsForRepo"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["pulls"]["listReviewCommentsForRepo"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * @deprecated octokit.pulls.listReviewRequests() has been renamed to octokit.pulls.listRequestedReviewers() (2020-06-05)
+     */
     listReviewRequests: {
       (
         params?: RestEndpointMethodTypes["pulls"]["listReviewRequests"]["parameters"]
@@ -4648,6 +5055,28 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["pulls"]["merge"]["parameters"]
       ): Promise<RestEndpointMethodTypes["pulls"]["merge"]["response"]>;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+
+    removeRequestedReviewers: {
+      (
+        params?: RestEndpointMethodTypes["pulls"]["removeRequestedReviewers"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["pulls"]["removeRequestedReviewers"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * This endpoint triggers [notifications](https://help.github.com/articles/about-notifications/). Creating content too quickly using this endpoint may result in abuse rate limiting. See "[Abuse rate limits](https://developer.github.com/v3/#abuse-rate-limits)" and "[Dealing with abuse rate limits](https://developer.github.com/v3/guides/best-practices-for-integrators/#dealing-with-abuse-rate-limits)" for details.
+     */
+    requestReviewers: {
+      (
+        params?: RestEndpointMethodTypes["pulls"]["requestReviewers"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["pulls"]["requestReviewers"]["response"]
+      >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
@@ -4701,6 +5130,7 @@ export type RestEndpointMethods = {
      *
      * *   For multi-line comments, the last line of the comment range for the `position` attribute.
      * *   For single-line comments, the diff-positioned way of referencing comments for the `position` attribute. For more information, see `position` in the [input parameters](https://developer.github.com/v3/pulls/comments/#parameters-2) table.
+     * @deprecated octokit.pulls.updateComment() has been renamed to octokit.pulls.updateReviewComment() (2020-06-05)
      */
     updateComment: {
       (
@@ -4716,6 +5146,36 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["pulls"]["updateReview"]["parameters"]
       ): Promise<RestEndpointMethodTypes["pulls"]["updateReview"]["response"]>;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * **Note:** Multi-line comments on pull requests are currently in public beta and subject to change.
+     *
+     * Enables you to edit a review comment.
+     *
+     * **Multi-line comment summary**
+     *
+     * **Note:** New parameters and response fields are available for developers to preview. During the preview period, these response fields may change without advance notice. Please see the [blog post](https://developer.github.com/changes/2019-10-03-multi-line-comments) for full details.
+     *
+     * Use the `comfort-fade` preview header and the `line` parameter to show multi-line comment-supported fields in the response.
+     *
+     * If you use the `comfort-fade` preview header, your response will show:
+     *
+     * *   For multi-line comments, values for `start_line`, `original_start_line`, `start_side`, `line`, `original_line`, and `side`.
+     * *   For single-line comments, values for `line`, `original_line`, and `side` and a `null` value for `start_line`, `original_start_line`, and `start_side`.
+     *
+     * If you don't use the `comfort-fade` preview header, multi-line and single-line comments will appear the same way in the response with a single `position` attribute. Your response will show:
+     *
+     * *   For multi-line comments, the last line of the comment range for the `position` attribute.
+     * *   For single-line comments, the diff-positioned way of referencing comments for the `position` attribute. For more information, see `position` in the [input parameters](https://developer.github.com/v3/pulls/comments/#parameters-2) table.
+     */
+    updateReviewComment: {
+      (
+        params?: RestEndpointMethodTypes["pulls"]["updateReviewComment"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["pulls"]["updateReviewComment"]["response"]
+      >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
@@ -5026,6 +5486,24 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://help.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
+     *
+     * Grants the specified apps push access for this branch. Only installed GitHub Apps with `write` access to the `contents` permission can be added as authorized actors on a protected branch.
+     *
+     * | Type    | Description                                                                                                                                                |
+     * | ------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
+     * | `array` | The GitHub Apps that have push access to this branch. Use the app's `slug`. **Note**: The list of users, apps, and teams in total is limited to 100 items. |
+     */
+    addAppAccessRestrictions: {
+      (
+        params?: RestEndpointMethodTypes["repos"]["addAppAccessRestrictions"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["repos"]["addAppAccessRestrictions"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
      * This endpoint triggers [notifications](https://help.github.com/articles/about-notifications/). Creating content too quickly using this endpoint may result in abuse rate limiting. See "[Abuse rate limits](https://developer.github.com/v3/#abuse-rate-limits)" and "[Dealing with abuse rate limits](https://developer.github.com/v3/guides/best-practices-for-integrators/#dealing-with-abuse-rate-limits)" for details.
      *
      * For more information the permission levels, see "[Repository permission levels for an organization](https://help.github.com/en/github/setting-up-and-managing-organizations-and-teams/repository-permission-levels-for-an-organization#permission-levels-for-repositories-owned-by-an-organization)" in the GitHub Help documentation.
@@ -5049,6 +5527,7 @@ export type RestEndpointMethods = {
     };
     /**
      * Here's how you can create a read-only deploy key:
+     * @deprecated octokit.repos.addDeployKey() has been renamed to octokit.repos.createDeployKey() (2020-06-04)
      */
     addDeployKey: {
       (
@@ -5061,6 +5540,7 @@ export type RestEndpointMethods = {
      * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://help.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
      *
      * Adding admin enforcement requires admin or owner permissions to the repository and branch protection to be enabled.
+     * @deprecated octokit.repos.addProtectedBranchAdminEnforcement() has been renamed to octokit.repos.setAdminBranchProtection() (2020-06-04)
      */
     addProtectedBranchAdminEnforcement: {
       (
@@ -5079,6 +5559,7 @@ export type RestEndpointMethods = {
      * | Type    | Description                                                                                                                                                |
      * | ------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
      * | `array` | The GitHub Apps that have push access to this branch. Use the app's `slug`. **Note**: The list of users, apps, and teams in total is limited to 100 items. |
+     * @deprecated octokit.repos.addProtectedBranchAppRestrictions() has been renamed to octokit.repos.addAppAccessRestrictions() (2020-06-04)
      */
     addProtectedBranchAppRestrictions: {
       (
@@ -5093,6 +5574,7 @@ export type RestEndpointMethods = {
      * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://help.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
      *
      * When authenticated with admin or owner permissions to the repository, you can use this endpoint to require signed commits on a branch. You must enable branch protection to require signed commits.
+     * @deprecated octokit.repos.addProtectedBranchRequiredSignatures() has been renamed to octokit.repos.createCommitSignatureProtection() (2020-06-04)
      */
     addProtectedBranchRequiredSignatures: {
       (
@@ -5105,6 +5587,7 @@ export type RestEndpointMethods = {
     };
     /**
      * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://help.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
+     * @deprecated octokit.repos.addProtectedBranchRequiredStatusChecksContexts() has been renamed to octokit.repos.addStatusCheckContexts() (2020-06-04)
      */
     addProtectedBranchRequiredStatusChecksContexts: {
       (
@@ -5123,6 +5606,7 @@ export type RestEndpointMethods = {
      * | Type    | Description                                                                                                                                |
      * | ------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
      * | `array` | The teams that can have push access. Use the team's `slug`. **Note**: The list of users, apps, and teams in total is limited to 100 items. |
+     * @deprecated octokit.repos.addProtectedBranchTeamRestrictions() has been renamed to octokit.repos.addTeamAccessRestrictions() (2020-06-04)
      */
     addProtectedBranchTeamRestrictions: {
       (
@@ -5141,12 +5625,61 @@ export type RestEndpointMethods = {
      * | Type    | Description                                                                                                                   |
      * | ------- | ----------------------------------------------------------------------------------------------------------------------------- |
      * | `array` | Usernames for people who can have push access. **Note**: The list of users, apps, and teams in total is limited to 100 items. |
+     * @deprecated octokit.repos.addProtectedBranchUserRestrictions() has been renamed to octokit.repos.addUserAccessRestrictions() (2020-06-04)
      */
     addProtectedBranchUserRestrictions: {
       (
         params?: RestEndpointMethodTypes["repos"]["addProtectedBranchUserRestrictions"]["parameters"]
       ): Promise<
         RestEndpointMethodTypes["repos"]["addProtectedBranchUserRestrictions"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://help.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
+     */
+    addStatusCheckContexts: {
+      (
+        params?: RestEndpointMethodTypes["repos"]["addStatusCheckContexts"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["repos"]["addStatusCheckContexts"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://help.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
+     *
+     * Grants the specified teams push access for this branch. You can also give push access to child teams.
+     *
+     * | Type    | Description                                                                                                                                |
+     * | ------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+     * | `array` | The teams that can have push access. Use the team's `slug`. **Note**: The list of users, apps, and teams in total is limited to 100 items. |
+     */
+    addTeamAccessRestrictions: {
+      (
+        params?: RestEndpointMethodTypes["repos"]["addTeamAccessRestrictions"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["repos"]["addTeamAccessRestrictions"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://help.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
+     *
+     * Grants the specified people push access for this branch.
+     *
+     * | Type    | Description                                                                                                                   |
+     * | ------- | ----------------------------------------------------------------------------------------------------------------------------- |
+     * | `array` | Usernames for people who can have push access. **Note**: The list of users, apps, and teams in total is limited to 100 items. |
+     */
+    addUserAccessRestrictions: {
+      (
+        params?: RestEndpointMethodTypes["repos"]["addUserAccessRestrictions"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["repos"]["addUserAccessRestrictions"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -5186,7 +5719,7 @@ export type RestEndpointMethods = {
      *
      * **Working with large comparisons**
      *
-     * The response will include a comparison of up to 250 commits. If you are working with a larger commit range, you can use the [Commit List API](https://developer.github.com/v3/repos/commits/#list-commits-on-a-repository) to enumerate all commits in the range.
+     * The response will include a comparison of up to 250 commits. If you are working with a larger commit range, you can use the [List commits](https://developer.github.com/v3/repos/commits/#list-commits) to enumerate all commits in the range.
      *
      * For comparisons with extremely large diffs, you may receive an error response indicating that the diff took too long to generate. You can typically resolve this error by using a smaller commit range.
      *
@@ -5231,6 +5764,46 @@ export type RestEndpointMethods = {
         params?: RestEndpointMethodTypes["repos"]["createCommitComment"]["parameters"]
       ): Promise<
         RestEndpointMethodTypes["repos"]["createCommitComment"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://help.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
+     *
+     * When authenticated with admin or owner permissions to the repository, you can use this endpoint to require signed commits on a branch. You must enable branch protection to require signed commits.
+     */
+    createCommitSignatureProtection: {
+      (
+        params?: RestEndpointMethodTypes["repos"]["createCommitSignatureProtection"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["repos"]["createCommitSignatureProtection"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Users with push access in a repository can create commit statuses for a given SHA.
+     *
+     * Note: there is a limit of 1000 statuses per `sha` and `context` within a repository. Attempts to create more than 1000 statuses will result in a validation error.
+     */
+    createCommitStatus: {
+      (
+        params?: RestEndpointMethodTypes["repos"]["createCommitStatus"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["repos"]["createCommitStatus"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Here's how you can create a read-only deploy key:
+     */
+    createDeployKey: {
+      (
+        params?: RestEndpointMethodTypes["repos"]["createDeployKey"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["repos"]["createDeployKey"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -5344,6 +5917,7 @@ export type RestEndpointMethods = {
      * Repositories can have multiple webhooks installed. Each webhook should have a unique `config`. Multiple webhooks can share the same `config` as long as those webhooks do not have any `events` that overlap.
      *
      * Here's how you can create a hook that posts payloads in JSON format:
+     * @deprecated octokit.repos.createHook() has been renamed to octokit.repos.createWebhook() (2020-06-04)
      */
     createHook: {
       (
@@ -5370,13 +5944,36 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Creates a new file or updates an existing file in a repository.
+     * Creates a new file or replaces an existing file in a repository.
+     * @deprecated octokit.repos.createOrUpdateFile() has been renamed to octokit.repos.createOrUpdateFileContents() (2020-06-04)
      */
     createOrUpdateFile: {
       (
         params?: RestEndpointMethodTypes["repos"]["createOrUpdateFile"]["parameters"]
       ): Promise<
         RestEndpointMethodTypes["repos"]["createOrUpdateFile"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Creates a new file or replaces an existing file in a repository.
+     */
+    createOrUpdateFileContents: {
+      (
+        params?: RestEndpointMethodTypes["repos"]["createOrUpdateFileContents"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["repos"]["createOrUpdateFileContents"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+
+    createPagesSite: {
+      (
+        params?: RestEndpointMethodTypes["repos"]["createPagesSite"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["repos"]["createPagesSite"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -5397,6 +5994,7 @@ export type RestEndpointMethods = {
      * Users with push access in a repository can create commit statuses for a given SHA.
      *
      * Note: there is a limit of 1000 statuses per `sha` and `context` within a repository. Attempts to create more than 1000 statuses will result in a validation error.
+     * @deprecated octokit.repos.createStatus() has been renamed to octokit.repos.createCommitStatus() (2020-06-04)
      */
     createStatus: {
       (
@@ -5424,6 +6022,18 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
+    /**
+     * Repositories can have multiple webhooks installed. Each webhook should have a unique `config`. Multiple webhooks can share the same `config` as long as those webhooks do not have any `events` that overlap.
+     *
+     * Here's how you can create a hook that posts payloads in JSON format:
+     */
+    createWebhook: {
+      (
+        params?: RestEndpointMethodTypes["repos"]["createWebhook"]["parameters"]
+      ): Promise<RestEndpointMethodTypes["repos"]["createWebhook"]["response"]>;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
 
     declineInvitation: {
       (
@@ -5446,12 +6056,76 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://help.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
+     *
+     * Disables the ability to restrict who can push to this branch.
+     */
+    deleteAccessRestrictions: {
+      (
+        params?: RestEndpointMethodTypes["repos"]["deleteAccessRestrictions"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["repos"]["deleteAccessRestrictions"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://help.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
+     *
+     * Removing admin enforcement requires admin or owner permissions to the repository and branch protection to be enabled.
+     */
+    deleteAdminBranchProtection: {
+      (
+        params?: RestEndpointMethodTypes["repos"]["deleteAdminBranchProtection"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["repos"]["deleteAdminBranchProtection"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://help.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
+     */
+    deleteBranchProtection: {
+      (
+        params?: RestEndpointMethodTypes["repos"]["deleteBranchProtection"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["repos"]["deleteBranchProtection"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
 
     deleteCommitComment: {
       (
         params?: RestEndpointMethodTypes["repos"]["deleteCommitComment"]["parameters"]
       ): Promise<
         RestEndpointMethodTypes["repos"]["deleteCommitComment"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://help.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
+     *
+     * When authenticated with admin or owner permissions to the repository, you can use this endpoint to disable required signed commits on a branch. You must enable branch protection to require signed commits.
+     */
+    deleteCommitSignatureProtection: {
+      (
+        params?: RestEndpointMethodTypes["repos"]["deleteCommitSignatureProtection"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["repos"]["deleteCommitSignatureProtection"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+
+    deleteDeployKey: {
+      (
+        params?: RestEndpointMethodTypes["repos"]["deleteDeployKey"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["repos"]["deleteDeployKey"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -5501,7 +6175,9 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
-
+    /**
+     * @deprecated octokit.repos.deleteHook() has been renamed to octokit.repos.deleteWebhook() (2020-06-04)
+     */
     deleteHook: {
       (
         params?: RestEndpointMethodTypes["repos"]["deleteHook"]["parameters"]
@@ -5515,6 +6191,28 @@ export type RestEndpointMethods = {
         params?: RestEndpointMethodTypes["repos"]["deleteInvitation"]["parameters"]
       ): Promise<
         RestEndpointMethodTypes["repos"]["deleteInvitation"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+
+    deletePagesSite: {
+      (
+        params?: RestEndpointMethodTypes["repos"]["deletePagesSite"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["repos"]["deletePagesSite"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://help.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
+     */
+    deletePullRequestReviewProtection: {
+      (
+        params?: RestEndpointMethodTypes["repos"]["deletePullRequestReviewProtection"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["repos"]["deletePullRequestReviewProtection"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -5539,6 +6237,14 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
+
+    deleteWebhook: {
+      (
+        params?: RestEndpointMethodTypes["repos"]["deleteWebhook"]["parameters"]
+      ): Promise<RestEndpointMethodTypes["repos"]["deleteWebhook"]["response"]>;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
     /**
      * Disables automated security fixes for a repository. The authenticated user must have admin access to the repository. For more information, see "[Configuring automated security fixes](https://help.github.com/en/articles/configuring-automated-security-fixes)" in the GitHub Help documentation.
      */
@@ -5551,7 +6257,9 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
-
+    /**
+     * @deprecated octokit.repos.disablePagesSite() has been renamed to octokit.repos.deletePagesSite() (2020-06-04)
+     */
     disablePagesSite: {
       (
         params?: RestEndpointMethodTypes["repos"]["disablePagesSite"]["parameters"]
@@ -5574,6 +6282,22 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
+     * Gets a redirect URL to download an archive for a repository. The `:archive_format` can be either `tarball` or `zipball`. The `:ref` must be a valid Git reference. If you omit `:ref`, the repository’s default branch (usually `master`) will be used. Please make sure your HTTP framework is configured to follow redirects or you will need to use the `Location` header to make a second `GET` request.
+     *
+     * _Note_: For private repositories, these links are temporary and expire after five minutes.
+     *
+     * To follow redirects with curl, use the `-L` switch:
+     */
+    downloadArchive: {
+      (
+        params?: RestEndpointMethodTypes["repos"]["downloadArchive"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["repos"]["downloadArchive"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
      * Enables automated security fixes for a repository. The authenticated user must have admin access to the repository. For more information, see "[Configuring automated security fixes](https://help.github.com/en/articles/configuring-automated-security-fixes)" in the GitHub Help documentation.
      */
     enableAutomatedSecurityFixes: {
@@ -5585,7 +6309,9 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
-
+    /**
+     * @deprecated octokit.repos.enablePagesSite() has been renamed to octokit.repos.createPagesSite() (2020-06-04)
+     */
     enablePagesSite: {
       (
         params?: RestEndpointMethodTypes["repos"]["enablePagesSite"]["parameters"]
@@ -5619,6 +6345,46 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://help.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
+     *
+     * Lists who has access to this protected branch.
+     *
+     * **Note**: Users, apps, and teams `restrictions` are only available for organization-owned repositories.
+     */
+    getAccessRestrictions: {
+      (
+        params?: RestEndpointMethodTypes["repos"]["getAccessRestrictions"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["repos"]["getAccessRestrictions"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://help.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
+     */
+    getAdminBranchProtection: {
+      (
+        params?: RestEndpointMethodTypes["repos"]["getAdminBranchProtection"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["repos"]["getAdminBranchProtection"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://help.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
+     */
+    getAllStatusCheckContexts: {
+      (
+        params?: RestEndpointMethodTypes["repos"]["getAllStatusCheckContexts"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["repos"]["getAllStatusCheckContexts"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
 
     getAllTopics: {
       (
@@ -5647,6 +6413,7 @@ export type RestEndpointMethods = {
      * _Note_: For private repositories, these links are temporary and expire after five minutes.
      *
      * To follow redirects with curl, use the `-L` switch:
+     * @deprecated octokit.repos.getArchiveLink() has been renamed to octokit.repos.downloadArchive() (2020-06-04)
      */
     getArchiveLink: {
       (
@@ -5790,6 +6557,34 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://help.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
+     *
+     * When authenticated with admin or owner permissions to the repository, you can use this endpoint to check whether a branch requires signed commits. An enabled status of `true` indicates you must sign commits on this branch. For more information, see [Signing commits with GPG](https://help.github.com/articles/signing-commits-with-gpg) in GitHub Help.
+     *
+     * **Note**: You must enable branch protection to require signed commits.
+     */
+    getCommitSignatureProtection: {
+      (
+        params?: RestEndpointMethodTypes["repos"]["getCommitSignatureProtection"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["repos"]["getCommitSignatureProtection"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * This endpoint will return all community profile metrics, including an overall health score, repository description, the presence of documentation, detected code of conduct, detected license, and the presence of ISSUE\_TEMPLATE, PULL\_REQUEST\_TEMPLATE, README, and CONTRIBUTING files.
+     */
+    getCommunityProfileMetrics: {
+      (
+        params?: RestEndpointMethodTypes["repos"]["getCommunityProfileMetrics"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["repos"]["getCommunityProfileMetrics"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
      * Gets the contents of a file or directory in a repository. Specify the file path or directory in `:path`. If you omit `:path`, you will receive the contents of all files in the repository.
      *
      * Files and symlinks support [a custom media type](https://developer.github.com/v3/repos/contents/#custom-media-types) for retrieving the raw content or rendered HTML (when supported). All content types support [a custom media type](https://developer.github.com/v3/repos/contents/#custom-media-types) to ensure the content is returned in a consistent object format.
@@ -5811,6 +6606,37 @@ export type RestEndpointMethods = {
      * The `submodule_git_url` identifies the location of the submodule repository, and the `sha` identifies a specific commit within the submodule repository. Git uses the given URL when cloning the submodule repository, and checks out the submodule at that specific commit.
      *
      * If the submodule repository is not hosted on github.com, the Git URLs (`git_url` and `_links["git"]`) and the github.com URLs (`html_url` and `_links["html"]`) will have null values.
+     */
+    getContent: {
+      (
+        params?: RestEndpointMethodTypes["repos"]["getContent"]["parameters"]
+      ): Promise<RestEndpointMethodTypes["repos"]["getContent"]["response"]>;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Gets the contents of a file or directory in a repository. Specify the file path or directory in `:path`. If you omit `:path`, you will receive the contents of all files in the repository.
+     *
+     * Files and symlinks support [a custom media type](https://developer.github.com/v3/repos/contents/#custom-media-types) for retrieving the raw content or rendered HTML (when supported). All content types support [a custom media type](https://developer.github.com/v3/repos/contents/#custom-media-types) to ensure the content is returned in a consistent object format.
+     *
+     * **Note**:
+     *
+     * *   To get a repository's contents recursively, you can [recursively get the tree](https://developer.github.com/v3/git/trees/).
+     * *   This API has an upper limit of 1,000 files for a directory. If you need to retrieve more files, use the [Git Trees API](https://developer.github.com/v3/git/trees/#get-a-tree).
+     * *   This API supports files up to 1 megabyte in size.
+     *
+     * The response will be an array of objects, one object for each item in the directory.
+     *
+     * When listing the contents of a directory, submodules have their "type" specified as "file". Logically, the value _should_ be "submodule". This behavior exists in API v3 [for backwards compatibility purposes](https://git.io/v1YCW). In the next major version of the API, the type will be returned as "submodule".
+     *
+     * If the requested `:path` points to a symlink, and the symlink's target is a normal file in the repository, then the API responds with the content of the file (in the [format shown above](https://developer.github.com/v3/repos/contents/#response-if-content-is-a-file)).
+     *
+     * Otherwise, the API responds with an object describing the symlink itself:
+     *
+     * The `submodule_git_url` identifies the location of the submodule repository, and the `sha` identifies a specific commit within the submodule repository. Git uses the given URL when cloning the submodule repository, and checks out the submodule at that specific commit.
+     *
+     * If the submodule repository is not hosted on github.com, the Git URLs (`git_url` and `_links["git"]`) and the github.com URLs (`html_url` and `_links["html"]`) will have null values.
+     * @deprecated octokit.repos.getContents() has been renamed to octokit.repos.getContent() (2020-06-04)
      */
     getContents: {
       (
@@ -5874,7 +6700,9 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
-
+    /**
+     * @deprecated octokit.repos.getHook() has been renamed to octokit.repos.getWebhook() (2020-06-04)
+     */
     getHook: {
       (
         params?: RestEndpointMethodTypes["repos"]["getHook"]["parameters"]
@@ -5938,6 +6766,7 @@ export type RestEndpointMethods = {
     };
     /**
      * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://help.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
+     * @deprecated octokit.repos.getProtectedBranchAdminEnforcement() has been renamed to octokit.repos.getAdminBranchProtection() (2020-06-04)
      */
     getProtectedBranchAdminEnforcement: {
       (
@@ -5950,6 +6779,7 @@ export type RestEndpointMethods = {
     };
     /**
      * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://help.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
+     * @deprecated octokit.repos.getProtectedBranchPullRequestReviewEnforcement() has been renamed to octokit.repos.getPullRequestReviewProtection() (2020-06-04)
      */
     getProtectedBranchPullRequestReviewEnforcement: {
       (
@@ -5966,6 +6796,7 @@ export type RestEndpointMethods = {
      * When authenticated with admin or owner permissions to the repository, you can use this endpoint to check whether a branch requires signed commits. An enabled status of `true` indicates you must sign commits on this branch. For more information, see [Signing commits with GPG](https://help.github.com/articles/signing-commits-with-gpg) in GitHub Help.
      *
      * **Note**: You must enable branch protection to require signed commits.
+     * @deprecated octokit.repos.getProtectedBranchRequiredSignatures() has been renamed to octokit.repos.getCommitSignatureProtection() (2020-06-04)
      */
     getProtectedBranchRequiredSignatures: {
       (
@@ -5978,6 +6809,7 @@ export type RestEndpointMethods = {
     };
     /**
      * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://help.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
+     * @deprecated octokit.repos.getProtectedBranchRequiredStatusChecks() has been renamed to octokit.repos.getStatusChecksProtection() (2020-06-04)
      */
     getProtectedBranchRequiredStatusChecks: {
       (
@@ -5991,15 +6823,28 @@ export type RestEndpointMethods = {
     /**
      * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://help.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
      *
-     * Lists who has access to this protected branch. {{#note}}
+     * Lists who has access to this protected branch.
      *
      * **Note**: Users, apps, and teams `restrictions` are only available for organization-owned repositories.
+     * @deprecated octokit.repos.getProtectedBranchRestrictions() has been renamed to octokit.repos.getAccessRestrictions() (2020-06-04)
      */
     getProtectedBranchRestrictions: {
       (
         params?: RestEndpointMethodTypes["repos"]["getProtectedBranchRestrictions"]["parameters"]
       ): Promise<
         RestEndpointMethodTypes["repos"]["getProtectedBranchRestrictions"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://help.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
+     */
+    getPullRequestReviewProtection: {
+      (
+        params?: RestEndpointMethodTypes["repos"]["getPullRequestReviewProtection"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["repos"]["getPullRequestReviewProtection"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -6070,6 +6915,18 @@ export type RestEndpointMethods = {
     };
     /**
      * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://help.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
+     */
+    getStatusChecksProtection: {
+      (
+        params?: RestEndpointMethodTypes["repos"]["getStatusChecksProtection"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["repos"]["getStatusChecksProtection"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://help.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
      *
      * Lists the teams who have push access to this branch. The list includes child teams.
      */
@@ -6128,6 +6985,14 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
+
+    getWebhook: {
+      (
+        params?: RestEndpointMethodTypes["repos"]["getWebhook"]["parameters"]
+      ): Promise<RestEndpointMethodTypes["repos"]["getWebhook"]["response"]>;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
     /**
      * Lists repositories that the authenticated user has explicit permission (`:read`, `:write`, or `:admin`) to access.
      *
@@ -6141,7 +7006,9 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
-
+    /**
+     * @deprecated octokit.repos.listAssetsForRelease() has been renamed to octokit.repos.listReleaseAssets() (2020-06-04)
+     */
     listAssetsForRelease: {
       (
         params?: RestEndpointMethodTypes["repos"]["listAssetsForRelease"]["parameters"]
@@ -6204,11 +7071,25 @@ export type RestEndpointMethods = {
      *
      * Comments are ordered by ascending ID.
      */
-    listCommitComments: {
+    listCommitCommentsForRepo: {
       (
-        params?: RestEndpointMethodTypes["repos"]["listCommitComments"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["listCommitCommentsForRepo"]["parameters"]
       ): Promise<
-        RestEndpointMethodTypes["repos"]["listCommitComments"]["response"]
+        RestEndpointMethodTypes["repos"]["listCommitCommentsForRepo"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Users with pull access in a repository can view commit statuses for a given ref. The ref can be a SHA, a branch name, or a tag name. Statuses are returned in reverse chronological order. The first status in the list will be the latest one.
+     *
+     * This resource is also available via a legacy route: `GET /repos/:owner/:repo/statuses/:ref`.
+     */
+    listCommitStatusesForRef: {
+      (
+        params?: RestEndpointMethodTypes["repos"]["listCommitStatusesForRef"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["repos"]["listCommitStatusesForRef"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -6341,7 +7222,9 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
-
+    /**
+     * @deprecated octokit.repos.listHooks() has been renamed to octokit.repos.listWebhooks() (2020-06-04)
+     */
     listHooks: {
       (
         params?: RestEndpointMethodTypes["repos"]["listHooks"]["parameters"]
@@ -6395,6 +7278,7 @@ export type RestEndpointMethods = {
     };
     /**
      * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://help.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
+     * @deprecated octokit.repos.listProtectedBranchRequiredStatusChecksContexts() has been renamed to octokit.repos.getAllStatusCheckContexts() (2020-06-04)
      */
     listProtectedBranchRequiredStatusChecksContexts: {
       (
@@ -6429,8 +7313,18 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
+
+    listReleaseAssets: {
+      (
+        params?: RestEndpointMethodTypes["repos"]["listReleaseAssets"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["repos"]["listReleaseAssets"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
     /**
-     * This returns a list of releases, which does not include regular Git tags that have not been associated with a release. To get a list of Git tags, use the [Repository Tags API](https://developer.github.com/v3/repos/#list-tags).
+     * This returns a list of releases, which does not include regular Git tags that have not been associated with a release. To get a list of Git tags, use the [Repository Tags API](https://developer.github.com/v3/repos/#list-repository-tags).
      *
      * Information about published releases are available to everyone. Only users with push access will receive listings for draft releases.
      */
@@ -6445,6 +7339,7 @@ export type RestEndpointMethods = {
      * Users with pull access in a repository can view commit statuses for a given ref. The ref can be a SHA, a branch name, or a tag name. Statuses are returned in reverse chronological order. The first status in the list will be the latest one.
      *
      * This resource is also available via a legacy route: `GET /repos/:owner/:repo/statuses/:ref`.
+     * @deprecated octokit.repos.listStatusesForRef() has been renamed to octokit.repos.listCommitStatusesForRef() (2020-06-04)
      */
     listStatusesForRef: {
       (
@@ -6482,6 +7377,14 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
 
+    listWebhooks: {
+      (
+        params?: RestEndpointMethodTypes["repos"]["listWebhooks"]["parameters"]
+      ): Promise<RestEndpointMethodTypes["repos"]["listWebhooks"]["response"]>;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+
     merge: {
       (
         params?: RestEndpointMethodTypes["repos"]["merge"]["parameters"]
@@ -6491,6 +7394,7 @@ export type RestEndpointMethods = {
     };
     /**
      * This will trigger a [ping event](https://developer.github.com/webhooks/#ping-event) to be sent to the hook.
+     * @deprecated octokit.repos.pingHook() has been renamed to octokit.repos.pingWebhook() (2020-06-04)
      */
     pingHook: {
       (
@@ -6500,7 +7404,36 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
+     * This will trigger a [ping event](https://developer.github.com/webhooks/#ping-event) to be sent to the hook.
+     */
+    pingWebhook: {
+      (
+        params?: RestEndpointMethodTypes["repos"]["pingWebhook"]["parameters"]
+      ): Promise<RestEndpointMethodTypes["repos"]["pingWebhook"]["response"]>;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
      * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://help.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
+     *
+     * Removes the ability of an app to push to this branch. Only installed GitHub Apps with `write` access to the `contents` permission can be added as authorized actors on a protected branch.
+     *
+     * | Type    | Description                                                                                                                                                |
+     * | ------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
+     * | `array` | The GitHub Apps that have push access to this branch. Use the app's `slug`. **Note**: The list of users, apps, and teams in total is limited to 100 items. |
+     */
+    removeAppAccessRestrictions: {
+      (
+        params?: RestEndpointMethodTypes["repos"]["removeAppAccessRestrictions"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["repos"]["removeAppAccessRestrictions"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://help.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
+     * @deprecated octokit.repos.removeBranchProtection() has been renamed to octokit.repos.deleteBranchProtection() (2020-06-04)
      */
     removeBranchProtection: {
       (
@@ -6521,7 +7454,9 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
-
+    /**
+     * @deprecated octokit.repos.removeDeployKey() has been renamed to octokit.repos.deleteDeployKey() (2020-06-04)
+     */
     removeDeployKey: {
       (
         params?: RestEndpointMethodTypes["repos"]["removeDeployKey"]["parameters"]
@@ -6535,6 +7470,7 @@ export type RestEndpointMethods = {
      * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://help.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
      *
      * Removing admin enforcement requires admin or owner permissions to the repository and branch protection to be enabled.
+     * @deprecated octokit.repos.removeProtectedBranchAdminEnforcement() has been renamed to octokit.repos.deleteAdminBranchProtection() (2020-06-04)
      */
     removeProtectedBranchAdminEnforcement: {
       (
@@ -6553,6 +7489,7 @@ export type RestEndpointMethods = {
      * | Type    | Description                                                                                                                                                |
      * | ------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
      * | `array` | The GitHub Apps that have push access to this branch. Use the app's `slug`. **Note**: The list of users, apps, and teams in total is limited to 100 items. |
+     * @deprecated octokit.repos.removeProtectedBranchAppRestrictions() has been renamed to octokit.repos.removeAppAccessRestrictions() (2020-06-04)
      */
     removeProtectedBranchAppRestrictions: {
       (
@@ -6565,6 +7502,7 @@ export type RestEndpointMethods = {
     };
     /**
      * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://help.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
+     * @deprecated octokit.repos.removeProtectedBranchPullRequestReviewEnforcement() has been renamed to octokit.repos.deletePullRequestReviewProtection() (2020-06-04)
      */
     removeProtectedBranchPullRequestReviewEnforcement: {
       (
@@ -6579,6 +7517,7 @@ export type RestEndpointMethods = {
      * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://help.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
      *
      * When authenticated with admin or owner permissions to the repository, you can use this endpoint to disable required signed commits on a branch. You must enable branch protection to require signed commits.
+     * @deprecated octokit.repos.removeProtectedBranchRequiredSignatures() has been renamed to octokit.repos.deleteCommitSignatureProtection() (2020-06-04)
      */
     removeProtectedBranchRequiredSignatures: {
       (
@@ -6591,6 +7530,7 @@ export type RestEndpointMethods = {
     };
     /**
      * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://help.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
+     * @deprecated octokit.repos.removeProtectedBranchRequiredStatusChecks() has been renamed to octokit.repos.removeStatusChecksProtection() (2020-06-04)
      */
     removeProtectedBranchRequiredStatusChecks: {
       (
@@ -6603,6 +7543,7 @@ export type RestEndpointMethods = {
     };
     /**
      * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://help.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
+     * @deprecated octokit.repos.removeProtectedBranchRequiredStatusChecksContexts() has been renamed to octokit.repos.removeStatusCheckContexts() (2020-06-04)
      */
     removeProtectedBranchRequiredStatusChecksContexts: {
       (
@@ -6617,6 +7558,7 @@ export type RestEndpointMethods = {
      * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://help.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
      *
      * Disables the ability to restrict who can push to this branch.
+     * @deprecated octokit.repos.removeProtectedBranchRestrictions() has been renamed to octokit.repos.deleteAccessRestrictions() (2020-06-04)
      */
     removeProtectedBranchRestrictions: {
       (
@@ -6635,6 +7577,7 @@ export type RestEndpointMethods = {
      * | Type    | Description                                                                                                                                         |
      * | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
      * | `array` | Teams that should no longer have push access. Use the team's `slug`. **Note**: The list of users, apps, and teams in total is limited to 100 items. |
+     * @deprecated octokit.repos.removeProtectedBranchTeamRestrictions() has been renamed to octokit.repos.removeTeamAccessRestrictions() (2020-06-04)
      */
     removeProtectedBranchTeamRestrictions: {
       (
@@ -6653,12 +7596,73 @@ export type RestEndpointMethods = {
      * | Type    | Description                                                                                                                                   |
      * | ------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
      * | `array` | Usernames of the people who should no longer have push access. **Note**: The list of users, apps, and teams in total is limited to 100 items. |
+     * @deprecated octokit.repos.removeProtectedBranchUserRestrictions() has been renamed to octokit.repos.removeUserAccessRestrictions() (2020-06-04)
      */
     removeProtectedBranchUserRestrictions: {
       (
         params?: RestEndpointMethodTypes["repos"]["removeProtectedBranchUserRestrictions"]["parameters"]
       ): Promise<
         RestEndpointMethodTypes["repos"]["removeProtectedBranchUserRestrictions"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://help.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
+     */
+    removeStatusCheckContexts: {
+      (
+        params?: RestEndpointMethodTypes["repos"]["removeStatusCheckContexts"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["repos"]["removeStatusCheckContexts"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://help.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
+     */
+    removeStatusCheckProtection: {
+      (
+        params?: RestEndpointMethodTypes["repos"]["removeStatusCheckProtection"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["repos"]["removeStatusCheckProtection"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://help.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
+     *
+     * Removes the ability of a team to push to this branch. You can also remove push access for child teams.
+     *
+     * | Type    | Description                                                                                                                                         |
+     * | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+     * | `array` | Teams that should no longer have push access. Use the team's `slug`. **Note**: The list of users, apps, and teams in total is limited to 100 items. |
+     */
+    removeTeamAccessRestrictions: {
+      (
+        params?: RestEndpointMethodTypes["repos"]["removeTeamAccessRestrictions"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["repos"]["removeTeamAccessRestrictions"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://help.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
+     *
+     * Removes the ability of a user to push to this branch.
+     *
+     * | Type    | Description                                                                                                                                   |
+     * | ------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
+     * | `array` | Usernames of the people who should no longer have push access. **Note**: The list of users, apps, and teams in total is limited to 100 items. |
+     */
+    removeUserAccessRestrictions: {
+      (
+        params?: RestEndpointMethodTypes["repos"]["removeUserAccessRestrictions"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["repos"]["removeUserAccessRestrictions"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -6681,6 +7685,7 @@ export type RestEndpointMethods = {
      * | Type    | Description                                                                                                                                                |
      * | ------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
      * | `array` | The GitHub Apps that have push access to this branch. Use the app's `slug`. **Note**: The list of users, apps, and teams in total is limited to 100 items. |
+     * @deprecated octokit.repos.replaceProtectedBranchAppRestrictions() has been renamed to octokit.repos.setAppAccessRestrictions() (2020-06-04)
      */
     replaceProtectedBranchAppRestrictions: {
       (
@@ -6693,6 +7698,7 @@ export type RestEndpointMethods = {
     };
     /**
      * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://help.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
+     * @deprecated octokit.repos.replaceProtectedBranchRequiredStatusChecksContexts() has been renamed to octokit.repos.setStatusCheckContexts() (2020-06-04)
      */
     replaceProtectedBranchRequiredStatusChecksContexts: {
       (
@@ -6711,6 +7717,7 @@ export type RestEndpointMethods = {
      * | Type    | Description                                                                                                                                |
      * | ------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
      * | `array` | The teams that can have push access. Use the team's `slug`. **Note**: The list of users, apps, and teams in total is limited to 100 items. |
+     * @deprecated octokit.repos.replaceProtectedBranchTeamRestrictions() has been renamed to octokit.repos.setTeamAccessRestrictions() (2020-06-04)
      */
     replaceProtectedBranchTeamRestrictions: {
       (
@@ -6729,6 +7736,7 @@ export type RestEndpointMethods = {
      * | Type    | Description                                                                                                                   |
      * | ------- | ----------------------------------------------------------------------------------------------------------------------------- |
      * | `array` | Usernames for people who can have push access. **Note**: The list of users, apps, and teams in total is limited to 100 items. |
+     * @deprecated octokit.repos.replaceProtectedBranchUserRestrictions() has been renamed to octokit.repos.setUserAccessRestrictions() (2020-06-04)
      */
     replaceProtectedBranchUserRestrictions: {
       (
@@ -6753,6 +7761,7 @@ export type RestEndpointMethods = {
      * You can request that your site be built from the latest revision on the default branch. This has the same effect as pushing a commit to your default branch, but does not require an additional commit. Manually triggering page builds can be helpful when diagnosing build warnings and failures.
      *
      * Build requests are limited to one concurrent build per repository and one concurrent build per requester. If you request a build while another is still in progress, the second request will be queued until the first completes.
+     * @deprecated octokit.repos.requestPageBuild() has been renamed to octokit.repos.requestPagesBuild() (2020-06-04)
      */
     requestPageBuild: {
       (
@@ -6764,7 +7773,22 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
+     * You can request that your site be built from the latest revision on the default branch. This has the same effect as pushing a commit to your default branch, but does not require an additional commit. Manually triggering page builds can be helpful when diagnosing build warnings and failures.
+     *
+     * Build requests are limited to one concurrent build per repository and one concurrent build per requester. If you request a build while another is still in progress, the second request will be queued until the first completes.
+     */
+    requestPagesBuild: {
+      (
+        params?: RestEndpointMethodTypes["repos"]["requestPagesBuild"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["repos"]["requestPagesBuild"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
      * This endpoint will return all community profile metrics, including an overall health score, repository description, the presence of documentation, detected code of conduct, detected license, and the presence of ISSUE\_TEMPLATE, PULL\_REQUEST\_TEMPLATE, README, and CONTRIBUTING files.
+     * @deprecated octokit.repos.retrieveCommunityProfileMetrics() has been renamed to octokit.repos.getCommunityProfileMetrics() (2020-06-04)
      */
     retrieveCommunityProfileMetrics: {
       (
@@ -6776,14 +7800,109 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://help.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
+     *
+     * Adding admin enforcement requires admin or owner permissions to the repository and branch protection to be enabled.
+     */
+    setAdminBranchProtection: {
+      (
+        params?: RestEndpointMethodTypes["repos"]["setAdminBranchProtection"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["repos"]["setAdminBranchProtection"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://help.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
+     *
+     * Replaces the list of apps that have push access to this branch. This removes all apps that previously had push access and grants push access to the new list of apps. Only installed GitHub Apps with `write` access to the `contents` permission can be added as authorized actors on a protected branch.
+     *
+     * | Type    | Description                                                                                                                                                |
+     * | ------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
+     * | `array` | The GitHub Apps that have push access to this branch. Use the app's `slug`. **Note**: The list of users, apps, and teams in total is limited to 100 items. |
+     */
+    setAppAccessRestrictions: {
+      (
+        params?: RestEndpointMethodTypes["repos"]["setAppAccessRestrictions"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["repos"]["setAppAccessRestrictions"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://help.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
+     */
+    setStatusCheckContexts: {
+      (
+        params?: RestEndpointMethodTypes["repos"]["setStatusCheckContexts"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["repos"]["setStatusCheckContexts"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://help.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
+     *
+     * Replaces the list of teams that have push access to this branch. This removes all teams that previously had push access and grants push access to the new list of teams. Team restrictions include child teams.
+     *
+     * | Type    | Description                                                                                                                                |
+     * | ------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+     * | `array` | The teams that can have push access. Use the team's `slug`. **Note**: The list of users, apps, and teams in total is limited to 100 items. |
+     */
+    setTeamAccessRestrictions: {
+      (
+        params?: RestEndpointMethodTypes["repos"]["setTeamAccessRestrictions"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["repos"]["setTeamAccessRestrictions"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://help.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
+     *
+     * Replaces the list of people that have push access to this branch. This removes all people that previously had push access and grants push access to the new list of people.
+     *
+     * | Type    | Description                                                                                                                   |
+     * | ------- | ----------------------------------------------------------------------------------------------------------------------------- |
+     * | `array` | Usernames for people who can have push access. **Note**: The list of users, apps, and teams in total is limited to 100 items. |
+     */
+    setUserAccessRestrictions: {
+      (
+        params?: RestEndpointMethodTypes["repos"]["setUserAccessRestrictions"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["repos"]["setUserAccessRestrictions"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
      * This will trigger the hook with the latest push to the current repository if the hook is subscribed to `push` events. If the hook is not subscribed to `push` events, the server will respond with 204 but no test POST will be generated.
      *
      * **Note**: Previously `/repos/:owner/:repo/hooks/:hook_id/test`
+     * @deprecated octokit.repos.testPushHook() has been renamed to octokit.repos.testPushWebhook() (2020-06-04)
      */
     testPushHook: {
       (
         params?: RestEndpointMethodTypes["repos"]["testPushHook"]["parameters"]
       ): Promise<RestEndpointMethodTypes["repos"]["testPushHook"]["response"]>;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * This will trigger the hook with the latest push to the current repository if the hook is subscribed to `push` events. If the hook is not subscribed to `push` events, the server will respond with 204 but no test POST will be generated.
+     *
+     * **Note**: Previously `/repos/:owner/:repo/hooks/:hook_id/test`
+     */
+    testPushWebhook: {
+      (
+        params?: RestEndpointMethodTypes["repos"]["testPushWebhook"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["repos"]["testPushWebhook"]["response"]
+      >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
@@ -6835,7 +7954,9 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
-
+    /**
+     * @deprecated octokit.repos.updateHook() has been renamed to octokit.repos.updateWebhook() (2020-06-04)
+     */
     updateHook: {
       (
         params?: RestEndpointMethodTypes["repos"]["updateHook"]["parameters"]
@@ -6869,6 +7990,7 @@ export type RestEndpointMethods = {
      * Updating pull request review enforcement requires admin or owner permissions to the repository and branch protection to be enabled.
      *
      * **Note**: Passing new arrays of `users` and `teams` replaces their previous values.
+     * @deprecated octokit.repos.updateProtectedBranchPullRequestReviewEnforcement() has been renamed to octokit.repos.updatePullRequestReviewProtection() (2020-06-04)
      */
     updateProtectedBranchPullRequestReviewEnforcement: {
       (
@@ -6883,12 +8005,29 @@ export type RestEndpointMethods = {
      * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://help.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
      *
      * Updating required status checks requires admin or owner permissions to the repository and branch protection to be enabled.
+     * @deprecated octokit.repos.updateProtectedBranchRequiredStatusChecks() has been renamed to octokit.repos.updateStatusChecksProtection() (2020-06-04)
      */
     updateProtectedBranchRequiredStatusChecks: {
       (
         params?: RestEndpointMethodTypes["repos"]["updateProtectedBranchRequiredStatusChecks"]["parameters"]
       ): Promise<
         RestEndpointMethodTypes["repos"]["updateProtectedBranchRequiredStatusChecks"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://help.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
+     *
+     * Updating pull request review enforcement requires admin or owner permissions to the repository and branch protection to be enabled.
+     *
+     * **Note**: Passing new arrays of `users` and `teams` replaces their previous values.
+     */
+    updatePullRequestReviewProtection: {
+      (
+        params?: RestEndpointMethodTypes["repos"]["updatePullRequestReviewProtection"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["repos"]["updatePullRequestReviewProtection"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -6912,6 +8051,28 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["repos"]["updateReleaseAsset"]["response"]
       >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://help.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
+     *
+     * Updating required status checks requires admin or owner permissions to the repository and branch protection to be enabled.
+     */
+    updateStatusCheckPotection: {
+      (
+        params?: RestEndpointMethodTypes["repos"]["updateStatusCheckPotection"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["repos"]["updateStatusCheckPotection"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+
+    updateWebhook: {
+      (
+        params?: RestEndpointMethodTypes["repos"]["updateWebhook"]["parameters"]
+      ): Promise<RestEndpointMethodTypes["repos"]["updateWebhook"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
@@ -7640,6 +8801,19 @@ export type RestEndpointMethods = {
     /**
      * This endpoint is accessible with the `user` scope.
      */
+    addEmailForAuthenticated: {
+      (
+        params?: RestEndpointMethodTypes["users"]["addEmailForAuthenticated"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["users"]["addEmailForAuthenticated"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * This endpoint is accessible with the `user` scope.
+     * @deprecated octokit.users.addEmails() has been renamed to octokit.users.addEmailsForAuthenticated() (2020-06-04)
+     */
     addEmails: {
       (
         params?: RestEndpointMethodTypes["users"]["addEmails"]["parameters"]
@@ -7667,7 +8841,9 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
-
+    /**
+     * @deprecated octokit.users.checkFollowing() has been renamed to octokit.users.checkPersonIsFollowedByAuthenticated() (2020-06-04)
+     */
     checkFollowing: {
       (
         params?: RestEndpointMethodTypes["users"]["checkFollowing"]["parameters"]
@@ -7687,8 +8863,19 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
+
+    checkPersonIsFollowedByAuthenticated: {
+      (
+        params?: RestEndpointMethodTypes["users"]["checkPersonIsFollowedByAuthenticated"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["users"]["checkPersonIsFollowedByAuthenticated"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
     /**
      * Adds a GPG key to the authenticated user's GitHub account. Requires that you are authenticated via Basic Auth, or OAuth with at least `write:gpg_key` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
+     * @deprecated octokit.users.createGpgKey() has been renamed to octokit.users.createGpgKeyForAuthenticated() (2020-06-04)
      */
     createGpgKey: {
       (
@@ -7698,7 +8885,20 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
+     * Adds a GPG key to the authenticated user's GitHub account. Requires that you are authenticated via Basic Auth, or OAuth with at least `write:gpg_key` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
+     */
+    createGpgKeyForAuthenticated: {
+      (
+        params?: RestEndpointMethodTypes["users"]["createGpgKeyForAuthenticated"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["users"]["createGpgKeyForAuthenticated"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
      * Adds a public SSH key to the authenticated user's GitHub account. Requires that you are authenticated via Basic Auth, or OAuth with at least `write:public_key` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
+     * @deprecated octokit.users.createPublicKey() has been renamed to octokit.users.createPublicSshKeyForAuthenticated() (2020-06-04)
      */
     createPublicKey: {
       (
@@ -7710,7 +8910,32 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
+     * Adds a public SSH key to the authenticated user's GitHub account. Requires that you are authenticated via Basic Auth, or OAuth with at least `write:public_key` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
+     */
+    createPublicSshKeyForAuthenticated: {
+      (
+        params?: RestEndpointMethodTypes["users"]["createPublicSshKeyForAuthenticated"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["users"]["createPublicSshKeyForAuthenticated"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
      * This endpoint is accessible with the `user` scope.
+     */
+    deleteEmailForAuthenticated: {
+      (
+        params?: RestEndpointMethodTypes["users"]["deleteEmailForAuthenticated"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["users"]["deleteEmailForAuthenticated"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * This endpoint is accessible with the `user` scope.
+     * @deprecated octokit.users.deleteEmails() has been renamed to octokit.users.deleteEmailsForAuthenticated() (2020-06-04)
      */
     deleteEmails: {
       (
@@ -7721,6 +8946,7 @@ export type RestEndpointMethods = {
     };
     /**
      * Removes a GPG key from the authenticated user's GitHub account. Requires that you are authenticated via Basic Auth or via OAuth with at least `admin:gpg_key` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
+     * @deprecated octokit.users.deleteGpgKey() has been renamed to octokit.users.deleteGpgKeyForAuthenticated() (2020-06-04)
      */
     deleteGpgKey: {
       (
@@ -7730,13 +8956,38 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
+     * Removes a GPG key from the authenticated user's GitHub account. Requires that you are authenticated via Basic Auth or via OAuth with at least `admin:gpg_key` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
+     */
+    deleteGpgKeyForAuthenticated: {
+      (
+        params?: RestEndpointMethodTypes["users"]["deleteGpgKeyForAuthenticated"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["users"]["deleteGpgKeyForAuthenticated"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
      * Removes a public SSH key from the authenticated user's GitHub account. Requires that you are authenticated via Basic Auth or via OAuth with at least `admin:public_key` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
+     * @deprecated octokit.users.deletePublicKey() has been renamed to octokit.users.deletePublicSshKeyForAuthenticated() (2020-06-04)
      */
     deletePublicKey: {
       (
         params?: RestEndpointMethodTypes["users"]["deletePublicKey"]["parameters"]
       ): Promise<
         RestEndpointMethodTypes["users"]["deletePublicKey"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Removes a public SSH key from the authenticated user's GitHub account. Requires that you are authenticated via Basic Auth or via OAuth with at least `admin:public_key` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
+     */
+    deletePublicSshKeyForAuthenticated: {
+      (
+        params?: RestEndpointMethodTypes["users"]["deletePublicSshKeyForAuthenticated"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["users"]["deletePublicSshKeyForAuthenticated"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -7799,6 +9050,7 @@ export type RestEndpointMethods = {
     };
     /**
      * View extended details for a single GPG key. Requires that you are authenticated via Basic Auth or via OAuth with at least `read:gpg_key` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
+     * @deprecated octokit.users.getGpgKey() has been renamed to octokit.users.getGpgKeyForAuthenticated() (2020-06-04)
      */
     getGpgKey: {
       (
@@ -7808,12 +9060,37 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
+     * View extended details for a single GPG key. Requires that you are authenticated via Basic Auth or via OAuth with at least `read:gpg_key` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
+     */
+    getGpgKeyForAuthenticated: {
+      (
+        params?: RestEndpointMethodTypes["users"]["getGpgKeyForAuthenticated"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["users"]["getGpgKeyForAuthenticated"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
      * View extended details for a single public SSH key. Requires that you are authenticated via Basic Auth or via OAuth with at least `read:public_key` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
+     * @deprecated octokit.users.getPublicKey() has been renamed to octokit.users.getPublicSshKeyForAuthenticated() (2020-06-04)
      */
     getPublicKey: {
       (
         params?: RestEndpointMethodTypes["users"]["getPublicKey"]["parameters"]
       ): Promise<RestEndpointMethodTypes["users"]["getPublicKey"]["response"]>;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * View extended details for a single public SSH key. Requires that you are authenticated via Basic Auth or via OAuth with at least `read:public_key` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
+     */
+    getPublicSshKeyForAuthenticated: {
+      (
+        params?: RestEndpointMethodTypes["users"]["getPublicSshKeyForAuthenticated"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["users"]["getPublicSshKeyForAuthenticated"]["response"]
+      >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
@@ -7831,6 +9108,7 @@ export type RestEndpointMethods = {
     };
     /**
      * List the users you've blocked on your personal account.
+     * @deprecated octokit.users.listBlocked() has been renamed to octokit.users.listBlockedByAuthenticated() (2020-06-04)
      */
     listBlocked: {
       (
@@ -7840,12 +9118,37 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
+     * List the users you've blocked on your personal account.
+     */
+    listBlockedByAuthenticated: {
+      (
+        params?: RestEndpointMethodTypes["users"]["listBlockedByAuthenticated"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["users"]["listBlockedByAuthenticated"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
      * Lists all of your email addresses, and specifies which one is visible to the public. This endpoint is accessible with the `user:email` scope.
+     * @deprecated octokit.users.listEmails() has been renamed to octokit.users.listEmailsForAuthenticated() (2020-06-04)
      */
     listEmails: {
       (
         params?: RestEndpointMethodTypes["users"]["listEmails"]["parameters"]
       ): Promise<RestEndpointMethodTypes["users"]["listEmails"]["response"]>;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Lists all of your email addresses, and specifies which one is visible to the public. This endpoint is accessible with the `user:email` scope.
+     */
+    listEmailsForAuthenticated: {
+      (
+        params?: RestEndpointMethodTypes["users"]["listEmailsForAuthenticated"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["users"]["listEmailsForAuthenticated"]["response"]
+      >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
@@ -7912,11 +9215,24 @@ export type RestEndpointMethods = {
     };
     /**
      * Lists the current user's GPG keys. Requires that you are authenticated via Basic Auth or via OAuth with at least `read:gpg_key` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
+     * @deprecated octokit.users.listGpgKeys() has been renamed to octokit.users.listGpgKeysForAuthenticated() (2020-06-04)
      */
     listGpgKeys: {
       (
         params?: RestEndpointMethodTypes["users"]["listGpgKeys"]["parameters"]
       ): Promise<RestEndpointMethodTypes["users"]["listGpgKeys"]["response"]>;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Lists the current user's GPG keys. Requires that you are authenticated via Basic Auth or via OAuth with at least `read:gpg_key` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
+     */
+    listGpgKeysForAuthenticated: {
+      (
+        params?: RestEndpointMethodTypes["users"]["listGpgKeysForAuthenticated"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["users"]["listGpgKeysForAuthenticated"]["response"]
+      >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
@@ -7933,7 +9249,8 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Lists your publicly visible email address, which you can set with the [Toggle primary email visibility](https://developer.github.com/v3/users/emails/#toggle-primary-email-visibility) endpoint. This endpoint is accessible with the `user:email` scope.
+     * Lists your publicly visible email address, which you can set with the [Set primary email visibility for the authenticated user](https://developer.github.com/v3/users/emails/#set-primary-email-visibility-for-the-authenticated-user) endpoint. This endpoint is accessible with the `user:email` scope.
+     * @deprecated octokit.users.listPublicEmails() has been renamed to octokit.users.listPublicEmailsForAuthenticatedUser() (2020-06-04)
      */
     listPublicEmails: {
       (
@@ -7945,7 +9262,20 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
+     * Lists your publicly visible email address, which you can set with the [Set primary email visibility for the authenticated user](https://developer.github.com/v3/users/emails/#set-primary-email-visibility-for-the-authenticated-user) endpoint. This endpoint is accessible with the `user:email` scope.
+     */
+    listPublicEmailsForAuthenticated: {
+      (
+        params?: RestEndpointMethodTypes["users"]["listPublicEmailsForAuthenticated"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["users"]["listPublicEmailsForAuthenticated"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
      * Lists the public SSH keys for the authenticated user's GitHub account. Requires that you are authenticated via Basic Auth or via OAuth with at least `read:public_key` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
+     * @deprecated octokit.users.listPublicKeys() has been renamed to octokit.users.listPublicSshKeysForAuthenticated() (2020-06-04)
      */
     listPublicKeys: {
       (
@@ -7969,7 +9299,32 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
+     * Lists the public SSH keys for the authenticated user's GitHub account. Requires that you are authenticated via Basic Auth or via OAuth with at least `read:public_key` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
+     */
+    listPublicSshKeysForAuthenticated: {
+      (
+        params?: RestEndpointMethodTypes["users"]["listPublicSshKeysForAuthenticated"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["users"]["listPublicSshKeysForAuthenticated"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
      * Sets the visibility for your primary email addresses.
+     */
+    setPrimaryEmailVisibilityForAuthenticated: {
+      (
+        params?: RestEndpointMethodTypes["users"]["setPrimaryEmailVisibilityForAuthenticated"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["users"]["setPrimaryEmailVisibilityForAuthenticated"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Sets the visibility for your primary email addresses.
+     * @deprecated octokit.users.togglePrimaryEmailVisibility() has been renamed to octokit.users.setPrimaryEmailVisibilityForAuthenticated() (2020-06-04)
      */
     togglePrimaryEmailVisibility: {
       (

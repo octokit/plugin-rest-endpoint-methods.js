@@ -1,12 +1,12 @@
 ---
-name: Remove user as a collaborator
+name: Remove a repository collaborator
 example: octokit.repos.removeCollaborator({ owner, repo, username })
 route: DELETE /repos/{owner}/{repo}/collaborators/{username}
 scope: repos
 type: API method
 ---
 
-# Remove user as a collaborator
+# Remove a repository collaborator
 
 ```js
 octokit.repos.removeCollaborator({
@@ -39,4 +39,4 @@ octokit.repos.removeCollaborator({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/collaborators/#remove-user-as-a-collaborator).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/collaborators/#remove-a-repository-collaborator).

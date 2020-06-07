@@ -1,12 +1,14 @@
 ---
-name: List required status checks contexts of protected branch
+name: Get all status check contexts
 example: octokit.repos.listProtectedBranchRequiredStatusChecksContexts({ owner, repo, branch })
 route: GET /repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks/contexts
 scope: repos
 type: API method
 ---
 
-# List required status checks contexts of protected branch
+# Get all status check contexts
+
+**Deprecated:** This method has been renamed to repos.getAllStatusCheckContexts
 
 Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://help.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
 
@@ -41,4 +43,4 @@ octokit.repos.listProtectedBranchRequiredStatusChecksContexts({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/branches/#list-required-status-checks-contexts-of-protected-branch).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/branches/#get-all-status-check-contexts).

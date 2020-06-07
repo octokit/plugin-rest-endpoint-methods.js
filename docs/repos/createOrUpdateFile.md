@@ -1,14 +1,16 @@
 ---
-name: Create or update a file
+name: Create or update file contents
 example: octokit.repos.createOrUpdateFile({ owner, repo, path, message, content, committer.name, committer.email, author.name, author.email })
 route: PUT /repos/{owner}/{repo}/contents/{path}
 scope: repos
 type: API method
 ---
 
-# Create or update a file
+# Create or update file contents
 
-Creates a new file or updates an existing file in a repository.
+**Deprecated:** This method has been renamed to repos.createOrUpdateFileContents
+
+Creates a new file or replaces an existing file in a repository.
 
 ```js
 octokit.repos.createOrUpdateFile({
@@ -97,4 +99,4 @@ The email of the author or committer of the commit. You'll receive a `422` statu
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/contents/#create-or-update-a-file).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/contents/#create-or-update-file-contents).

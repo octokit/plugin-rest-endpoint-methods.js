@@ -1,16 +1,16 @@
 ---
-name: List user organizations
+name: List organizations for a user
 example: octokit.orgs.listForUser({ username })
 route: GET /users/{username}/orgs
 scope: orgs
 type: API method
 ---
 
-# List user organizations
+# List organizations for a user
 
 List [public organization memberships](https://help.github.com/articles/publicizing-or-concealing-organization-membership) for the specified user.
 
-This method only lists _public_ memberships, regardless of authentication. If you need to fetch all of the organization memberships (public and private) for the authenticated user, use the [List your organizations](https://developer.github.com/v3/orgs/#list-your-organizations) API instead.
+This method only lists _public_ memberships, regardless of authentication. If you need to fetch all of the organization memberships (public and private) for the authenticated user, use the [List organizations for the authenticated user](https://developer.github.com/v3/orgs/#list-organizations-for-the-authenticated-user) API instead.
 
 ```js
 octokit.orgs.listForUser({
@@ -45,4 +45,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/orgs/#list-user-organizations).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/orgs/#list-organizations-for-a-user).

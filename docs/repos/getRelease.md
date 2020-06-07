@@ -1,12 +1,12 @@
 ---
-name: Get a single release
+name: Get a release
 example: octokit.repos.getRelease({ owner, repo, release_id })
 route: GET /repos/{owner}/{repo}/releases/{release_id}
 scope: repos
 type: API method
 ---
 
-# Get a single release
+# Get a release
 
 **Note:** This returns an `upload_url` key corresponding to the endpoint for uploading release assets. This key is a [hypermedia resource](https://developer.github.com/v3/#hypermedia).
 
@@ -41,4 +41,4 @@ octokit.repos.getRelease({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/releases/#get-a-single-release).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/releases/#get-a-release).

@@ -1,12 +1,12 @@
 ---
-name: List Pages builds
+name: List GitHub Pages builds
 example: octokit.repos.listPagesBuilds({ owner, repo })
 route: GET /repos/{owner}/{repo}/pages/builds
 scope: repos
 type: API method
 ---
 
-# List Pages builds
+# List GitHub Pages builds
 
 ```js
 octokit.repos.listPagesBuilds({
@@ -45,4 +45,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/pages/#list-pages-builds).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/pages/#list-github-pages-builds).

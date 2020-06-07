@@ -1,12 +1,14 @@
 ---
-name: Edit a hook
+name: Update an organization webhook
 example: octokit.orgs.updateHook({ org, hook_id, config.url })
 route: PATCH /orgs/{org}/hooks/{hook_id}
 scope: orgs
 type: API method
 ---
 
-# Edit a hook
+# Update an organization webhook
+
+**Deprecated:** This method has been renamed to orgs.updateWebhook
 
 ```js
 octokit.orgs.updateHook({
@@ -71,4 +73,4 @@ Determines if notifications are sent when the webhook is triggered. Set to `true
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/orgs/hooks/#edit-a-hook).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/orgs/hooks/#update-an-organization-webhook).

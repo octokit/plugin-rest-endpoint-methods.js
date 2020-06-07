@@ -1,12 +1,12 @@
 ---
-name: Block a user
+name: Block a user from an organization
 example: octokit.orgs.blockUser({ org, username })
 route: PUT /orgs/{org}/blocks/{username}
 scope: orgs
 type: API method
 ---
 
-# Block a user
+# Block a user from an organization
 
 ```js
 octokit.orgs.blockUser({
@@ -35,4 +35,4 @@ octokit.orgs.blockUser({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/orgs/blocking/#block-a-user).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/orgs/blocking/#block-a-user-from-an-organization).

@@ -1,12 +1,14 @@
 ---
-name: Create a status
+name: Create a commit status
 example: octokit.repos.createStatus({ owner, repo, sha, state })
 route: POST /repos/{owner}/{repo}/statuses/{sha}
 scope: repos
 type: API method
 ---
 
-# Create a status
+# Create a commit status
+
+**Deprecated:** This method has been renamed to repos.createCommitStatus
 
 Users with push access in a repository can create commit statuses for a given SHA.
 
@@ -66,4 +68,4 @@ A string label to differentiate this status from the status of other systems.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/statuses/#create-a-status).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/statuses/#create-a-commit-status).

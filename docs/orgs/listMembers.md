@@ -1,12 +1,12 @@
 ---
-name: Members list
+name: List organization members
 example: octokit.orgs.listMembers({ org })
 route: GET /orgs/{org}/members
 scope: orgs
 type: API method
 ---
 
-# Members list
+# List organization members
 
 List all users who are members of an organization. If the authenticated user is also a member of this organization then both concealed and public members will be returned.
 
@@ -58,4 +58,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/orgs/members/#members-list).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/orgs/members/#list-organization-members).

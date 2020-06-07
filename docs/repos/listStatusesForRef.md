@@ -1,12 +1,14 @@
 ---
-name: List statuses for a specific ref
+name: List commit statuses for a reference
 example: octokit.repos.listStatusesForRef({ owner, repo, ref })
 route: GET /repos/{owner}/{repo}/commits/{ref}/statuses
 scope: repos
 type: API method
 ---
 
-# List statuses for a specific ref
+# List commit statuses for a reference
+
+**Deprecated:** This method has been renamed to repos.listCommitStatusesForRef
 
 Users with pull access in a repository can view commit statuses for a given ref. The ref can be a SHA, a branch name, or a tag name. Statuses are returned in reverse chronological order. The first status in the list will be the latest one.
 
@@ -53,4 +55,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/statuses/#list-statuses-for-a-specific-ref).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/statuses/#list-commit-statuses-for-a-reference).

@@ -1,12 +1,12 @@
 ---
-name: Get a single review
+name: Get a review for a pull request
 example: octokit.pulls.getReview({ owner, repo, pull_number, review_id })
 route: GET /repos/{owner}/{repo}/pulls/{pull_number}/reviews/{review_id}
 scope: pulls
 type: API method
 ---
 
-# Get a single review
+# Get a review for a pull request
 
 ```js
 octokit.pulls.getReview({
@@ -43,4 +43,4 @@ octokit.pulls.getReview({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/pulls/reviews/#get-a-single-review).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/pulls/reviews/#get-a-review-for-a-pull-request).

@@ -1,14 +1,16 @@
 ---
-name: List public email addresses for a user
+name: List public email addresses for the authenticated user
 example: octokit.users.listPublicEmails()
 route: GET /user/public_emails
 scope: users
 type: API method
 ---
 
-# List public email addresses for a user
+# List public email addresses for the authenticated user
 
-Lists your publicly visible email address, which you can set with the [Toggle primary email visibility](https://developer.github.com/v3/users/emails/#toggle-primary-email-visibility) endpoint. This endpoint is accessible with the `user:email` scope.
+**Deprecated:** This method has been renamed to users.listPublicEmailsForAuthenticatedUser
+
+Lists your publicly visible email address, which you can set with the [Set primary email visibility for the authenticated user](https://developer.github.com/v3/users/emails/#set-primary-email-visibility-for-the-authenticated-user) endpoint. This endpoint is accessible with the `user:email` scope.
 
 ```js
 octokit.users.listPublicEmails();
@@ -38,4 +40,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/users/emails/#list-public-email-addresses-for-a-user).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/users/emails/#list-public-email-addresses-for-the-authenticated-user).

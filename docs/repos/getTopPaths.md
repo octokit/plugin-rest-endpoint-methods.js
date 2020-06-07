@@ -1,12 +1,12 @@
 ---
-name: List paths
+name: Get top referral paths
 example: octokit.repos.getTopPaths({ owner, repo })
 route: GET /repos/{owner}/{repo}/traffic/popular/paths
 scope: repos
 type: API method
 ---
 
-# List paths
+# Get top referral paths
 
 Get the top 10 popular contents over the last 14 days.
 
@@ -37,4 +37,4 @@ octokit.repos.getTopPaths({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/traffic/#list-paths).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/traffic/#get-top-referral-paths).

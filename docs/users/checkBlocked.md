@@ -1,12 +1,12 @@
 ---
-name: Check whether you've blocked a user
+name: Check if a user is blocked by the authenticated user
 example: octokit.users.checkBlocked({ username })
 route: GET /user/blocks/{username}
 scope: users
 type: API method
 ---
 
-# Check whether you've blocked a user
+# Check if a user is blocked by the authenticated user
 
 If the user is blocked:
 
@@ -35,4 +35,4 @@ octokit.users.checkBlocked({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/users/blocking/#check-whether-youve-blocked-a-user).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/users/blocking/#check-if-a-user-is-blocked-by-the-authenticated-user).

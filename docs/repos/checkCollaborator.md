@@ -1,12 +1,12 @@
 ---
-name: Check if a user is a collaborator
+name: Check if a user is a repository collaborator
 example: octokit.repos.checkCollaborator({ owner, repo, username })
 route: GET /repos/{owner}/{repo}/collaborators/{username}
 scope: repos
 type: API method
 ---
 
-# Check if a user is a collaborator
+# Check if a user is a repository collaborator
 
 For organization-owned repositories, the list of collaborators includes outside collaborators, organization members that are direct collaborators, organization members with access through team memberships, organization members with access through default organization permissions, and organization owners.
 
@@ -43,4 +43,4 @@ octokit.repos.checkCollaborator({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/collaborators/#check-if-a-user-is-a-collaborator).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/collaborators/#check-if-a-user-is-a-repository-collaborator).

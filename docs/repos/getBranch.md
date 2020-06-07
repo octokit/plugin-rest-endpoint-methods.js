@@ -1,12 +1,12 @@
 ---
-name: Get branch
+name: Get a branch
 example: octokit.repos.getBranch({ owner, repo, branch })
 route: GET /repos/{owner}/{repo}/branches/{branch}
 scope: repos
 type: API method
 ---
 
-# Get branch
+# Get a branch
 
 ```js
 octokit.repos.getBranch({
@@ -39,4 +39,4 @@ octokit.repos.getBranch({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/branches/#get-branch).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/branches/#get-a-branch).

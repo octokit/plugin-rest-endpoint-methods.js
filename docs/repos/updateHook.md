@@ -1,12 +1,14 @@
 ---
-name: Edit a hook
+name: Update a repository webhook
 example: octokit.repos.updateHook({ owner, repo, hook_id, config.url })
 route: PATCH /repos/{owner}/{repo}/hooks/{hook_id}
 scope: repos
 type: API method
 ---
 
-# Edit a hook
+# Update a repository webhook
+
+**Deprecated:** This method has been renamed to repos.updateWebhook
 
 ```js
 octokit.repos.updateHook({
@@ -85,4 +87,4 @@ Determines if notifications are sent when the webhook is triggered. Set to `true
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/hooks/#edit-a-hook).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/hooks/#update-a-repository-webhook).

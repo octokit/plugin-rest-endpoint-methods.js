@@ -1,12 +1,14 @@
 ---
-name: Add email address(es)
+name: Add an email address for the authenticated user
 example: octokit.users.addEmails({ emails })
 route: POST /user/emails
 scope: users
 type: API method
 ---
 
-# Add email address(es)
+# Add an email address for the authenticated user
+
+**Deprecated:** This method has been renamed to users.addEmailsForAuthenticated
 
 This endpoint is accessible with the `user` scope.
 
@@ -35,4 +37,4 @@ Adds one or more email addresses to your GitHub account. Must contain at least o
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/users/emails/#add-email-addresses).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/users/emails/#add-an-email-address-for-the-authenticated-user).

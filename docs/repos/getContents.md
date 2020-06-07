@@ -1,12 +1,14 @@
 ---
-name: Get contents
+name: Get repository content
 example: octokit.repos.getContents({ owner, repo, path })
 route: GET /repos/{owner}/{repo}/contents/{path}
 scope: repos
 type: API method
 ---
 
-# Get contents
+# Get repository content
+
+**Deprecated:** This method has been renamed to repos.getContent
 
 Gets the contents of a file or directory in a repository. Specify the file path or directory in `:path`. If you omit `:path`, you will receive the contents of all files in the repository.
 
@@ -66,4 +68,4 @@ The name of the commit/branch/tag. Default: the repository’s default branch (u
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/contents/#get-contents).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/contents/#get-repository-content).

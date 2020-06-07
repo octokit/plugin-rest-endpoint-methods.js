@@ -1,12 +1,12 @@
 ---
-name: List users followed by the authenticated user
+name: List the people the authenticated user follows
 example: octokit.users.listFollowingForAuthenticatedUser()
 route: GET /user/following
 scope: users
 type: API method
 ---
 
-# List users followed by the authenticated user
+# List the people the authenticated user follows
 
 **Deprecated:** This method has been renamed to users.listFollowedByAuthenticated
 
@@ -40,4 +40,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/users/followers/#list-users-followed-by-the-authenticated-user).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/users/followers/#list-the-people-the-authenticated-user-follows).

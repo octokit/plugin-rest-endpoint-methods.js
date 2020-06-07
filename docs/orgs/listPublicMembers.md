@@ -1,12 +1,12 @@
 ---
-name: Public members list
+name: List public organization members
 example: octokit.orgs.listPublicMembers({ org })
 route: GET /orgs/{org}/public_members
 scope: orgs
 type: API method
 ---
 
-# Public members list
+# List public organization members
 
 Members of an organization can choose to have their membership publicized or not.
 
@@ -43,4 +43,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/orgs/members/#public-members-list).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/orgs/members/#list-public-organization-members).

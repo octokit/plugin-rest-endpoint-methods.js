@@ -1,12 +1,14 @@
 ---
-name: Remove required status checks of protected branch
+name: Remove status check protection
 example: octokit.repos.removeProtectedBranchRequiredStatusChecks({ owner, repo, branch })
 route: DELETE /repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks
 scope: repos
 type: API method
 ---
 
-# Remove required status checks of protected branch
+# Remove status check protection
+
+**Deprecated:** This method has been renamed to repos.removeStatusChecksProtection
 
 Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://help.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
 
@@ -41,4 +43,4 @@ octokit.repos.removeProtectedBranchRequiredStatusChecks({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/branches/#remove-required-status-checks-of-protected-branch).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/branches/#remove-status-check-protection).

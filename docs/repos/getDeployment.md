@@ -1,12 +1,12 @@
 ---
-name: Get a single deployment
+name: Get a deployment
 example: octokit.repos.getDeployment({ owner, repo, deployment_id })
 route: GET /repos/{owner}/{repo}/deployments/{deployment_id}
 scope: repos
 type: API method
 ---
 
-# Get a single deployment
+# Get a deployment
 
 ```js
 octokit.repos.getDeployment({
@@ -39,4 +39,4 @@ octokit.repos.getDeployment({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/deployments/#get-a-single-deployment).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/deployments/#get-a-deployment).

@@ -1,12 +1,12 @@
 ---
-name: Get all users
+name: List users
 example: octokit.users.list()
 route: GET /users
 scope: users
 type: API method
 ---
 
-# Get all users
+# List users
 
 Lists all users, in the order that they signed up on GitHub. This list includes personal user accounts and organization accounts.
 
@@ -35,4 +35,4 @@ The integer ID of the last User that you've seen.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/users/#get-all-users).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/users/#list-users).

@@ -1,12 +1,14 @@
 ---
-name: Create a GPG key
+name: Create a GPG key for the authenticated user
 example: octokit.users.createGpgKey()
 route: POST /user/gpg_keys
 scope: users
 type: API method
 ---
 
-# Create a GPG key
+# Create a GPG key for the authenticated user
+
+**Deprecated:** This method has been renamed to users.createGpgKeyForAuthenticated
 
 Adds a GPG key to the authenticated user's GitHub account. Requires that you are authenticated via Basic Auth, or OAuth with at least `write:gpg_key` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
 
@@ -33,4 +35,4 @@ Your GPG key, generated in ASCII-armored format. See "[Generating a new GPG key]
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/users/gpg_keys/#create-a-gpg-key).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/users/gpg_keys/#create-a-gpg-key-for-the-authenticated-user).

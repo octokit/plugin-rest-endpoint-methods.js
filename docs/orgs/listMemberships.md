@@ -1,12 +1,14 @@
 ---
-name: List your organization memberships
+name: List organization memberships for the authenticated user
 example: octokit.orgs.listMemberships()
 route: GET /user/memberships/orgs
 scope: orgs
 type: API method
 ---
 
-# List your organization memberships
+# List organization memberships for the authenticated user
+
+**Deprecated:** This method has been renamed to orgs.listMembershipsForAuthenticatedUser
 
 ```js
 octokit.orgs.listMemberships();
@@ -41,4 +43,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/orgs/members/#list-your-organization-memberships).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/orgs/members/#list-organization-memberships-for-the-authenticated-user).

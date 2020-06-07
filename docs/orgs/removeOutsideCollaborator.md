@@ -1,12 +1,12 @@
 ---
-name: Remove outside collaborator
+name: Remove outside collaborator from an organization
 example: octokit.orgs.removeOutsideCollaborator({ org, username })
 route: DELETE /orgs/{org}/outside_collaborators/{username}
 scope: orgs
 type: API method
 ---
 
-# Remove outside collaborator
+# Remove outside collaborator from an organization
 
 Removing a user from this list will remove them from all the organization's repositories.
 
@@ -37,4 +37,4 @@ octokit.orgs.removeOutsideCollaborator({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/orgs/outside_collaborators/#remove-outside-collaborator).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/orgs/outside_collaborators/#remove-outside-collaborator-from-an-organization).

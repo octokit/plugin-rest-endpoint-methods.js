@@ -1,12 +1,14 @@
 ---
-name: List your public keys
+name: List public SSH keys for the authenticated user
 example: octokit.users.listPublicKeys()
 route: GET /user/keys
 scope: users
 type: API method
 ---
 
-# List your public keys
+# List public SSH keys for the authenticated user
+
+**Deprecated:** This method has been renamed to users.listPublicSshKeysForAuthenticated
 
 Lists the public SSH keys for the authenticated user's GitHub account. Requires that you are authenticated via Basic Auth or via OAuth with at least `read:public_key` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
 
@@ -38,4 +40,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/users/keys/#list-your-public-keys).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/users/keys/#list-public-ssh-keys-for-the-authenticated-user).

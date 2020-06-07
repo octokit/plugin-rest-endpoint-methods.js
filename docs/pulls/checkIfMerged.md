@@ -1,12 +1,12 @@
 ---
-name: Get if a pull request has been merged
+name: Check if a pull request has been merged
 example: octokit.pulls.checkIfMerged({ owner, repo, pull_number })
 route: GET /repos/{owner}/{repo}/pulls/{pull_number}/merge
 scope: pulls
 type: API method
 ---
 
-# Get if a pull request has been merged
+# Check if a pull request has been merged
 
 ```js
 octokit.pulls.checkIfMerged({
@@ -39,4 +39,4 @@ octokit.pulls.checkIfMerged({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/pulls/#get-if-a-pull-request-has-been-merged).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/pulls/#check-if-a-pull-request-has-been-merged).

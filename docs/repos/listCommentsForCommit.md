@@ -1,12 +1,12 @@
 ---
-name: List comments for a single commit
+name: List commit comments
 example: octokit.repos.listCommentsForCommit({ owner, repo, commit_sha })
 route: GET /repos/{owner}/{repo}/commits/{commit_sha}/comments
 scope: repos
 type: API method
 ---
 
-# List comments for a single commit
+# List commit comments
 
 Use the `:commit_sha` to specify the commit that will have its comments listed.
 
@@ -51,4 +51,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/comments/#list-comments-for-a-single-commit).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/comments/#list-commit-comments).

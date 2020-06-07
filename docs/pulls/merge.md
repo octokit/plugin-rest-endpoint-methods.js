@@ -1,12 +1,12 @@
 ---
-name: Merge a pull request (Merge Button)
+name: Merge a pull request
 example: octokit.pulls.merge({ owner, repo, pull_number })
 route: PUT /repos/{owner}/{repo}/pulls/{pull_number}/merge
 scope: pulls
 type: API method
 ---
 
-# Merge a pull request (Merge Button)
+# Merge a pull request
 
 This endpoint triggers [notifications](https://help.github.com/articles/about-notifications/). Creating content too quickly using this endpoint may result in abuse rate limiting. See "[Abuse rate limits](https://developer.github.com/v3/#abuse-rate-limits)" and "[Dealing with abuse rate limits](https://developer.github.com/v3/guides/best-practices-for-integrators/#dealing-with-abuse-rate-limits)" for details.
 
@@ -61,4 +61,4 @@ Merge method to use. Possible values are `merge`, `squash` or `rebase`. Default 
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/pulls/#merge-a-pull-request-merge-button).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/pulls/#merge-a-pull-request).

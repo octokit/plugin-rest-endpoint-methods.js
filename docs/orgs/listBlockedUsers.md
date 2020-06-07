@@ -1,12 +1,12 @@
 ---
-name: List blocked users
+name: List users blocked by an organization
 example: octokit.orgs.listBlockedUsers({ org })
 route: GET /orgs/{org}/blocks
 scope: orgs
 type: API method
 ---
 
-# List blocked users
+# List users blocked by an organization
 
 List the users blocked by an organization.
 
@@ -33,4 +33,4 @@ octokit.orgs.listBlockedUsers({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/orgs/blocking/#list-blocked-users).
+See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/orgs/blocking/#list-users-blocked-by-an-organization).
