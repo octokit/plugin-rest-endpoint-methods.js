@@ -1317,7 +1317,6 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     deleteDeployment: [
       "DELETE /repos/{owner}/{repo}/deployments/{deployment_id}",
     ],
-    deleteDownload: ["DELETE /repos/{owner}/{repo}/downloads/{download_id}"],
     deleteFile: ["DELETE /repos/{owner}/{repo}/contents/{path}"],
     deleteHook: [
       "DELETE /repos/{owner}/{repo}/hooks/{hook_id}",
@@ -1418,7 +1417,6 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     getDeploymentStatus: [
       "GET /repos/{owner}/{repo}/deployments/{deployment_id}/statuses/{status_id}",
     ],
-    getDownload: ["GET /repos/{owner}/{repo}/downloads/{download_id}"],
     getHook: [
       "GET /repos/{owner}/{repo}/hooks/{hook_id}",
       {},
@@ -1510,7 +1508,6 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
       "GET /repos/{owner}/{repo}/deployments/{deployment_id}/statuses",
     ],
     listDeployments: ["GET /repos/{owner}/{repo}/deployments"],
-    listDownloads: ["GET /repos/{owner}/{repo}/downloads"],
     listForAuthenticatedUser: ["GET /user/repos"],
     listForOrg: ["GET /orgs/{org}/repos"],
     listForUser: ["GET /users/{username}/repos"],

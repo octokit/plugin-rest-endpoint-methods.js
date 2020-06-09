@@ -3716,14 +3716,6 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["DELETE /repos/:owner/:repo/deployments/:deployment_id"]["response"];
     };
-    deleteDownload: {
-      parameters: RequestParameters &
-        Omit<
-          Endpoints["DELETE /repos/:owner/:repo/downloads/:download_id"]["parameters"],
-          "baseUrl" | "headers" | "mediaType"
-        >;
-      response: Endpoints["DELETE /repos/:owner/:repo/downloads/:download_id"]["response"];
-    };
     deleteFile: {
       parameters: RequestParameters &
         Omit<
@@ -4036,14 +4028,6 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["GET /repos/:owner/:repo/deployments/:deployment_id/statuses/:status_id"]["response"];
     };
-    getDownload: {
-      parameters: RequestParameters &
-        Omit<
-          Endpoints["GET /repos/:owner/:repo/downloads/:download_id"]["parameters"],
-          "baseUrl" | "headers" | "mediaType"
-        >;
-      response: Endpoints["GET /repos/:owner/:repo/downloads/:download_id"]["response"];
-    };
     getHook: {
       parameters: RequestParameters &
         Omit<
@@ -4347,14 +4331,6 @@ export type RestEndpointMethodTypes = {
           "baseUrl" | "headers" | "mediaType"
         >;
       response: Endpoints["GET /repos/:owner/:repo/deployments"]["response"];
-    };
-    listDownloads: {
-      parameters: RequestParameters &
-        Omit<
-          Endpoints["GET /repos/:owner/:repo/downloads"]["parameters"],
-          "baseUrl" | "headers" | "mediaType"
-        >;
-      response: Endpoints["GET /repos/:owner/:repo/downloads"]["response"];
     };
     listForAuthenticatedUser: {
       parameters: RequestParameters &

@@ -6149,16 +6149,6 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
-
-    deleteDownload: {
-      (
-        params?: RestEndpointMethodTypes["repos"]["deleteDownload"]["parameters"]
-      ): Promise<
-        RestEndpointMethodTypes["repos"]["deleteDownload"]["response"]
-      >;
-      defaults: RequestInterface["defaults"];
-      endpoint: EndpointInterface<{ url: string }>;
-    };
     /**
      * Deletes a file in a repository.
      *
@@ -6692,14 +6682,6 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
-
-    getDownload: {
-      (
-        params?: RestEndpointMethodTypes["repos"]["getDownload"]["parameters"]
-      ): Promise<RestEndpointMethodTypes["repos"]["getDownload"]["response"]>;
-      defaults: RequestInterface["defaults"];
-      endpoint: EndpointInterface<{ url: string }>;
-    };
     /**
      * @deprecated octokit.repos.getHook() has been renamed to octokit.repos.getWebhook() (2020-06-04)
      */
@@ -7184,14 +7166,6 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["repos"]["listDeployments"]["response"]
       >;
-      defaults: RequestInterface["defaults"];
-      endpoint: EndpointInterface<{ url: string }>;
-    };
-
-    listDownloads: {
-      (
-        params?: RestEndpointMethodTypes["repos"]["listDownloads"]["parameters"]
-      ): Promise<RestEndpointMethodTypes["repos"]["listDownloads"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
