@@ -152,7 +152,7 @@ describe("REST API endpoint methods", () => {
     });
 
     return octokit.repos
-      .addProtectedBranchRequiredStatusChecksContexts({
+      .addStatusCheckContexts({
         owner: "octocat",
         repo: "hello-world",
         branch: "latest",

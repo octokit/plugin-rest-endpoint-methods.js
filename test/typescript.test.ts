@@ -36,7 +36,7 @@ describe("Smoke test", () => {
     const MyOctokit = Octokit.plugin(restEndpointMethods);
     const octokit = new MyOctokit();
 
-    const requestOptions = octokit.repos.getContents.endpoint({
+    const requestOptions = octokit.repos.getContent.endpoint({
       owner: "foo",
       repo: "bar",
       path: "path/to/binary/file",
@@ -55,7 +55,7 @@ describe("Smoke test", () => {
     const MyOctokit = Octokit.plugin(restEndpointMethods);
     const octokit = new MyOctokit();
 
-    const myRequest = octokit.repos.getContents.defaults({ method: "HEAD" });
+    const myRequest = octokit.repos.getContent.defaults({ method: "HEAD" });
 
     expect(myRequest.endpoint.DEFAULTS.method).toEqual("HEAD");
   });
