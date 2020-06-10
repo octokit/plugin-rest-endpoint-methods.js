@@ -61,6 +61,7 @@ function decorate(
 ) {
   const requestWithDefaults = octokit.request.defaults(defaults);
 
+  /* istanbul ignore next */
   function withDecorations(
     ...args: [Route, RequestParameters?] | [EndpointOptions]
   ) {
@@ -76,8 +77,6 @@ function decorate(
       return requestWithDefaults(options);
     }
 
-    // NOTE: there are currently no deprecations. But we keep the code
-    //       below for future reference
     if (decorations.renamed) {
       const [newScope, newMethodName] = decorations.renamed;
       octokit.log.warn(
@@ -95,9 +94,6 @@ function decorate(
       for (const [name, alias] of Object.entries(
         decorations.renamedParameters
       )) {
-        // There is currently no deprecated parameter that is optional,
-        // so we never hit the else branch below at this point.
-        /* istanbul ignore else */
         if (name in options) {
           octokit.log.warn(
             `"${name}" parameter is deprecated for "octokit.${scope}.${methodName}()". Use "${alias}" instead`

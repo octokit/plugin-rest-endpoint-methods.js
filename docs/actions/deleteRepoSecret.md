@@ -38,9 +38,6 @@ octokit.actions.deleteRepoSecret({
 <tr><td>secret_name</td><td>yes</td><td>
 
 </td></tr>
-<tr><td>name</td><td>no</td><td>
-
-</td></tr>
   </tbody>
 </table>
 

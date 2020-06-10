@@ -56,9 +56,6 @@ Value for your secret, encrypted with [LibSodium](https://libsodium.gitbook.io/d
 ID of the key you used to encrypt the secret.
 
 </td></tr>
-<tr><td>name</td><td>no</td><td>
-
-</td></tr>
   </tbody>
 </table>
 
