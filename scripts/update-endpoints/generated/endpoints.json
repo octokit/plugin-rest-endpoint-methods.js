@@ -30690,7 +30690,7 @@
         "in": "BODY",
         "type": "string",
         "required": false,
-        "enum": ["\"gh-pages\"", "\"master\"", "\"master /docs\""],
+        "enum": ["gh-pages", "master", "master /docs"],
         "allowNull": false,
         "mapToData": null,
         "validation": null,
