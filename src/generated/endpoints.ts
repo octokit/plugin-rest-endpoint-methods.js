@@ -956,7 +956,10 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
       "GET /repos/{owner}/{repo}/branches/{branch}/protection/required_signatures",
       { mediaType: { previews: ["zzzax"] } },
     ],
-    getCommunityProfileMetrics: ["GET /repos/{owner}/{repo}/community/profile"],
+    getCommunityProfileMetrics: [
+      "GET /repos/{owner}/{repo}/community/profile",
+      { mediaType: { previews: ["black-panther"] } },
+    ],
     getContent: ["GET /repos/{owner}/{repo}/contents/{path}"],
     getContributorsStats: ["GET /repos/{owner}/{repo}/stats/contributors"],
     getDeployKey: ["GET /repos/{owner}/{repo}/keys/{key_id}"],
@@ -1119,7 +1122,7 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     issuesAndPullRequests: ["GET /search/issues"],
     labels: ["GET /search/labels"],
     repos: ["GET /search/repositories"],
-    topics: ["GET /search/topics"],
+    topics: ["GET /search/topics", { mediaType: { previews: ["mercy"] } }],
     users: ["GET /search/users"],
   },
   teams: {
