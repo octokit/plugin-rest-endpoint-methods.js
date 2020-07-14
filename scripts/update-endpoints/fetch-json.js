@@ -10,14 +10,14 @@ if (!process.env.VERSION) {
 
 const QUERY = `
   query ($version: String!, $ignoreChangesBefore: String!) {
-    endpoints(version: $version, ignoreChangesBefore: $ignoreChangesBefore, filter: { isLegacy: false, isGithubCloudOnly: false }) {
+    endpoints(version: $version, ignoreChangesBefore: $ignoreChangesBefore, filter: { isGithubCloudOnly: false }) {
       name
       scope(format: CAMELCASE)
       id(format: CAMELCASE)
       method
       url
       isDeprecated
-      isLegacy
+      deprecationDate
       description
       documentationUrl
       previews(required: true) {
@@ -67,7 +67,8 @@ main();
 
 async function main() {
   const { endpoints } = await graphql(QUERY, {
-    url: "https://octokit-routes-graphql-server.now.sh/",
+    // url: "https://octokit-routes-graphql-server.now.sh/",
+    url: "http://localhost:4000/",
     version: process.env.VERSION,
     ignoreChangesBefore: "2020-06-10",
   });
