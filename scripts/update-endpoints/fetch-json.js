@@ -8,6 +8,8 @@ if (!process.env.VERSION) {
   throw new Error(`VERSION environment variable must be set`);
 }
 
+const version = process.env.VERSION.replace(/^v/, "");
+
 const QUERY = `
   query ($version: String!, $ignoreChangesBefore: String!) {
     endpoints(version: $version, ignoreChangesBefore: $ignoreChangesBefore, filter: { isGithubCloudOnly: false }) {
@@ -69,7 +71,7 @@ async function main() {
   const { endpoints } = await graphql(QUERY, {
     // url: "https://octokit-routes-graphql-server.now.sh/",
     url: "http://localhost:4000/",
-    version: process.env.VERSION,
+    version,
     ignoreChangesBefore: "2020-06-10",
   });
 
