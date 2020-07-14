@@ -21,6 +21,9 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     createRemoveTokenForRepo: [
       "POST /repos/{owner}/{repo}/actions/runners/remove-token",
     ],
+    createWorkflowDispatch: [
+      "POST /repos/{owner}/{repo}/actions/workflows/{workflow_id}/dispatches",
+    ],
     deleteArtifact: [
       "DELETE /repos/{owner}/{repo}/actions/artifacts/{artifact_id}",
     ],
@@ -34,6 +37,7 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     deleteSelfHostedRunnerFromRepo: [
       "DELETE /repos/{owner}/{repo}/actions/runners/{runner_id}",
     ],
+    deleteWorkflowRun: ["DELETE /repos/{owner}/{repo}/actions/runs/{run_id}"],
     deleteWorkflowRunLogs: [
       "DELETE /repos/{owner}/{repo}/actions/runs/{run_id}/logs",
     ],
@@ -226,6 +230,22 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     suspendInstallation: ["PUT /app/installations/{installation_id}/suspended"],
     unsuspendInstallation: [
       "DELETE /app/installations/{installation_id}/suspended",
+    ],
+  },
+  billing: {
+    getGithubActionsBillingOrg: ["GET /orgs/{org}/settings/billing/actions"],
+    getGithubActionsBillingUser: [
+      "GET /users/{username}/settings/billing/actions",
+    ],
+    getGithubPackagesBillingOrg: ["GET /orgs/{org}/settings/billing/packages"],
+    getGithubPackagesBillingUser: [
+      "GET /users/{username}/settings/billing/packages",
+    ],
+    getSharedStorageBillingOrg: [
+      "GET /orgs/{org}/settings/billing/shared-storage",
+    ],
+    getSharedStorageBillingUser: [
+      "GET /users/{username}/settings/billing/shared-storage",
     ],
   },
   checks: {
@@ -758,6 +778,14 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     deleteForTeamDiscussionComment: [
       "DELETE /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}/reactions/{reaction_id}",
       { mediaType: { previews: ["squirrel-girl"] } },
+    ],
+    deleteLegacy: [
+      "DELETE /reactions/{reaction_id}",
+      { mediaType: { previews: ["squirrel-girl"] } },
+      {
+        deprecated:
+          "octokit.reactions.deleteLegacy() is deprecated, see https://developer.github.com/v3/reactions/#delete-a-reaction-legacy",
+      },
     ],
     listForCommitComment: [
       "GET /repos/{owner}/{repo}/comments/{comment_id}/reactions",
