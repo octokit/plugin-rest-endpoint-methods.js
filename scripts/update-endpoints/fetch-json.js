@@ -69,8 +69,7 @@ main();
 
 async function main() {
   const { endpoints } = await graphql(QUERY, {
-    // url: "https://octokit-routes-graphql-server.now.sh/",
-    url: "http://localhost:4000/",
+    url: "https://github-openapi-graphql-server.vercel.app/api/graphql",
     version,
     ignoreChangesBefore: "2020-06-10",
   });
