@@ -8,7 +8,7 @@ type: API method
 
 # Create a deploy key
 
-Here's how you can create a read-only deploy key:
+You can create a read-only deploy key.
 
 ```js
 octokit.repos.createDeployKey({

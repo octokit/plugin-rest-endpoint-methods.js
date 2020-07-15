@@ -1,6 +1,6 @@
 ---
 name: Create a repository dispatch event
-example: octokit.repos.createDispatchEvent({ owner, repo })
+example: octokit.repos.createDispatchEvent({ owner, repo, event_type })
 route: POST /repos/{owner}/{repo}/dispatches
 scope: repos
 type: API method
@@ -20,6 +20,7 @@ This input example shows how you can use the `client_payload` as a test to debug
 octokit.repos.createDispatchEvent({
   owner,
   repo,
+  event_type,
 });
 ```
 
@@ -40,7 +41,7 @@ octokit.repos.createDispatchEvent({
 <tr><td>repo</td><td>yes</td><td>
 
 </td></tr>
-<tr><td>event_type</td><td>no</td><td>
+<tr><td>event_type</td><td>yes</td><td>
 
 **Required:** A custom webhook event name.
 
@@ -48,6 +49,9 @@ octokit.repos.createDispatchEvent({
 <tr><td>client_payload</td><td>no</td><td>
 
 JSON payload with extra information about the webhook event that your action or worklow may use.
+
+</td></tr>
+<tr><td>client_payload.*</td><td>no</td><td>
 
 </td></tr>
   </tbody>

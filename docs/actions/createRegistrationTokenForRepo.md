@@ -8,9 +8,16 @@ type: API method
 
 # Create a registration token for a repository
 
-Returns a token that you can pass to the `config` script. The token expires after one hour. You must authenticate using an access token with the `repo` scope to use this endpoint.
+Returns a token that you can pass to the `config` script. The token expires after one hour. You must authenticate
+using an access token with the `repo` scope to use this endpoint.
 
-Configure your self-hosted runner, replacing TOKEN with the registration token provided by this endpoint.
+#### Example using registration token
+
+Configure your self-hosted runner, replacing `TOKEN` with the registration token provided by this endpoint.
+
+```
+./config.sh --url https://github.com/octo-org/octo-repo-artifacts --token TOKEN
+```
 
 ```js
 octokit.actions.createRegistrationTokenForRepo({

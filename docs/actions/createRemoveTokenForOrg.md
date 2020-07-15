@@ -10,9 +10,18 @@ type: API method
 
 **Warning:** The self-hosted runners API for organizations is currently in public beta and subject to change.
 
-Returns a token that you can pass to the `config` script to remove a self-hosted runner from an organization. The token expires after one hour. You must authenticate using an access token with the `admin:org` scope to use this endpoint.
+Returns a token that you can pass to the `config` script to remove a self-hosted runner from an organization. The
+token expires after one hour. You must authenticate using an access token with the `admin:org` scope to use this
+endpoint.
 
-To remove your self-hosted runner from an organization, replace `TOKEN` with the remove token provided by this endpoint.
+#### Example using remove token
+
+To remove your self-hosted runner from an organization, replace `TOKEN` with the remove token provided by this
+endpoint.
+
+```
+./config.sh remove --token TOKEN
+```
 
 ```js
 octokit.actions.createRemoveTokenForOrg({

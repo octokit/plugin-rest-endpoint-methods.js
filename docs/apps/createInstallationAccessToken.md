@@ -12,8 +12,6 @@ Creates an installation access token that enables a GitHub App to make authentic
 
 You must use a [JWT](https://developer.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint.
 
-This example grants the token "Read and write" permission to `issues` and "Read" permission to `contents`, and restricts the token's access to the repository with an `id` of 1296269.
-
 ```js
 octokit.apps.createInstallationAccessToken({
   installation_id,
@@ -42,6 +40,9 @@ The `id`s of the repositories that the installation token can access. Providing 
 <tr><td>permissions</td><td>no</td><td>
 
 The permissions granted to the access token. The permissions object includes the permission names and their access type. For a complete list of permissions and allowable values, see "[GitHub App permissions](https://developer.github.com/apps/building-github-apps/creating-github-apps-using-url-parameters/#github-app-permissions)."
+
+</td></tr>
+<tr><td>permissions.*</td><td>no</td><td>
 
 </td></tr>
   </tbody>

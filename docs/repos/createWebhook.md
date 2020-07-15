@@ -8,9 +8,8 @@ type: API method
 
 # Create a repository webhook
 
-Repositories can have multiple webhooks installed. Each webhook should have a unique `config`. Multiple webhooks can share the same `config` as long as those webhooks do not have any `events` that overlap.
-
-Here's how you can create a hook that posts payloads in JSON format:
+Repositories can have multiple webhooks installed. Each webhook should have a unique `config`. Multiple webhooks can
+share the same `config` as long as those webhooks do not have any `events` that overlap.
 
 ```js
 octokit.repos.createWebhook({

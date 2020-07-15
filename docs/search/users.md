@@ -12,9 +12,11 @@ Find users via various criteria. This method returns up to 100 results [per page
 
 When searching for users, you can get text match metadata for the issue **login**, **email**, and **name** fields when you pass the `text-match` media type. For more details about highlighting search results, see [Text match metadata](https://developer.github.com/v3/search/#text-match-metadata). For more details about how to receive highlighted search results, see [Text match metadata](https://developer.github.com/v3/search/#text-match-metadata).
 
-Imagine you're looking for a list of popular users. You might try out this query:
+For example, if you're looking for a list of popular users, you might try this query:
 
-Here, we're looking at users with the name Tom. We're only interested in those with more than 42 repositories, and only if they have over 1,000 followers.
+`q=tom+repos:%3E42+followers:%3E1000`
+
+This query searches for users with the name `tom`. The results are restricted to users with more than 42 repositories and over 1,000 followers.
 
 ```js
 octokit.search.users({

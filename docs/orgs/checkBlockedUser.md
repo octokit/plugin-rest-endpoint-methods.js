@@ -8,10 +8,6 @@ type: API method
 
 # Check if a user is blocked by an organization
 
-If the user is blocked:
-
-If the user is not blocked:
-
 ```js
 octokit.orgs.checkBlockedUser({
   org,
