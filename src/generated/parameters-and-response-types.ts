@@ -66,6 +66,14 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["POST /repos/:owner/:repo/actions/runners/remove-token"]["response"];
     };
+    createWorkflowDispatch: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["POST /repos/:owner/:repo/actions/workflows/:workflow_id/dispatches"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["POST /repos/:owner/:repo/actions/workflows/:workflow_id/dispatches"]["response"];
+    };
     deleteArtifact: {
       parameters: RequestParameters &
         Omit<
@@ -105,6 +113,14 @@ export type RestEndpointMethodTypes = {
           "baseUrl" | "headers" | "mediaType"
         >;
       response: Endpoints["DELETE /repos/:owner/:repo/actions/runners/:runner_id"]["response"];
+    };
+    deleteWorkflowRun: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["DELETE /repos/:owner/:repo/actions/runs/:run_id"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["DELETE /repos/:owner/:repo/actions/runs/:run_id"]["response"];
     };
     deleteWorkflowRunLogs: {
       parameters: RequestParameters &
@@ -861,6 +877,56 @@ export type RestEndpointMethodTypes = {
           "baseUrl" | "headers" | "mediaType"
         >;
       response: Endpoints["DELETE /app/installations/:installation_id/suspended"]["response"];
+    };
+  };
+  billing: {
+    getGithubActionsBillingOrg: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /orgs/:org/settings/billing/actions"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /orgs/:org/settings/billing/actions"]["response"];
+    };
+    getGithubActionsBillingUser: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /users/:username/settings/billing/actions"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /users/:username/settings/billing/actions"]["response"];
+    };
+    getGithubPackagesBillingOrg: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /orgs/:org/settings/billing/packages"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /orgs/:org/settings/billing/packages"]["response"];
+    };
+    getGithubPackagesBillingUser: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /users/:username/settings/billing/packages"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /users/:username/settings/billing/packages"]["response"];
+    };
+    getSharedStorageBillingOrg: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /orgs/:org/settings/billing/shared-storage"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /orgs/:org/settings/billing/shared-storage"]["response"];
+    };
+    getSharedStorageBillingUser: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /users/:username/settings/billing/shared-storage"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /users/:username/settings/billing/shared-storage"]["response"];
     };
   };
   checks: {
@@ -2697,6 +2763,14 @@ export type RestEndpointMethodTypes = {
           "baseUrl" | "headers" | "mediaType"
         >;
       response: Endpoints["DELETE /orgs/:org/teams/:team_slug/discussions/:discussion_number/comments/:comment_number/reactions/:reaction_id"]["response"];
+    };
+    deleteLegacy: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["DELETE /reactions/:reaction_id"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["DELETE /reactions/:reaction_id"]["response"];
     };
     listForCommitComment: {
       parameters: RequestParameters &
