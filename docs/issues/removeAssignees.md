@@ -10,8 +10,6 @@ type: API method
 
 Removes one or more assignees from an issue.
 
-This example removes two of three assignees, leaving the `octocat` assignee.
-
 ```js
 octokit.issues.removeAssignees({
   owner,

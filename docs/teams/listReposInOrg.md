@@ -10,7 +10,7 @@ type: API method
 
 Lists a team's repositories visible to the authenticated user.
 
-**Note:** You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/:org_id/team/:team_id/repos`.
+**Note:** You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/{org_id}/team/{team_id}/repos`.
 
 ```js
 octokit.teams.listReposInOrg({

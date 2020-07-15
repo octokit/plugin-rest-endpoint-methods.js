@@ -10,8 +10,6 @@ type: API method
 
 List all notifications for the current user, sorted by most recently updated.
 
-The following example uses the `since` parameter to list notifications that have been updated after the specified time.
-
 ```js
 octokit.activity.listNotificationsForAuthenticatedUser();
 ```

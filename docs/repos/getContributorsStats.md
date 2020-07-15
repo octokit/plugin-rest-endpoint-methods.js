@@ -8,9 +8,7 @@ type: API method
 
 # Get all contributor commit activity
 
-- `total` - The Total number of commits authored by the contributor.
-
-Weekly Hash (`weeks` array):
+Returns the `total` number of commits authored by the contributor. In addition, the response includes a Weekly Hash (`weeks` array) with the following information:
 
 - `w` - Start of the week, given as a [Unix timestamp](http://en.wikipedia.org/wiki/Unix_time).
 - `a` - Number of additions

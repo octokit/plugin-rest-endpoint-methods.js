@@ -8,11 +8,12 @@ type: API method
 
 # Download a repository archive
 
-Gets a redirect URL to download an archive for a repository. The `:archive_format` can be either `tarball` or `zipball`. The `:ref` must be a valid Git reference. If you omit `:ref`, the repository’s default branch (usually `master`) will be used. Please make sure your HTTP framework is configured to follow redirects or you will need to use the `Location` header to make a second `GET` request.
+Gets a redirect URL to download an archive for a repository. The `:archive_format` can be either `tarball` or
+`zipball`. The `:ref` must be a valid Git reference. If you omit `:ref`, the repository’s default branch (usually
+`master`) will be used. Please make sure your HTTP framework is configured to follow redirects or you will need to use
+the `Location` header to make a second `GET` request.
 
-_Note_: For private repositories, these links are temporary and expire after five minutes.
-
-To follow redirects with curl, use the `-L` switch:
+**Note**: For private repositories, these links are temporary and expire after five minutes.
 
 ```js
 octokit.repos.downloadArchive({

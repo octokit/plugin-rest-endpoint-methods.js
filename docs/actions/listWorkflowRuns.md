@@ -52,7 +52,7 @@ Returns workflow runs associated with a branch. Use the name of the branch of th
 </td></tr>
 <tr><td>event</td><td>no</td><td>
 
-Returns workflow run triggered by the event you specify. For example, `push`, `pull_request` or `issue`. For more information, see "[Events that trigger workflows](https://help.github.com/en/actions/automating-your-workflow-with-github-actions/events-that-trigger-workflows)" in the GitHub Help documentation.
+Returns workflow run triggered by the event you specify. For example, `push`, `pull_request` or `issue`. For more information, see "[Events that trigger workflows](https://help.github.com/en/actions/automating-your-workflow-with-github-actions/events-that-trigger-workflows)."
 
 </td></tr>
 <tr><td>status</td><td>no</td><td>

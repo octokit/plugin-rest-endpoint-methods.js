@@ -8,13 +8,8 @@ type: API method
 
 # Update an import
 
-An import can be updated with credentials or a project choice by passing in the appropriate parameters in this API request. If no parameters are provided, the import will be restarted.
-
-Some servers (e.g. TFS servers) can have several projects at a single URL. In those cases the import progress will have the status `detection_found_multiple` and the Import Progress response will include a `project_choices` array. You can select the project to import by providing one of the objects in the `project_choices` array in the update request.
-
-The following example demonstrates the workflow for updating an import with "project1" as the project choice. Given a `project_choices` array like such:
-
-To restart an import, no parameters are provided in the update request.
+An import can be updated with credentials or a project choice by passing in the appropriate parameters in this API
+request. If no parameters are provided, the import will be restarted.
 
 ```js
 octokit.migrations.updateImport({

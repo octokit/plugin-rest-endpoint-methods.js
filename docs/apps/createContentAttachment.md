@@ -14,8 +14,6 @@ The app must create a content attachment within six hours of the content referen
 
 You must use an [installation access token](https://developer.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-an-installation) to access this endpoint.
 
-This example creates a content attachment for the domain `https://errors.ai/`.
-
 ```js
 octokit.apps.createContentAttachment({
   content_reference_id,

@@ -10,7 +10,7 @@ type: API method
 
 Gets a team using the team's `slug`. GitHub generates the `slug` from the team `name`.
 
-**Note:** You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/:org_id/team/:team_id`.
+**Note:** You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/{org_id}/team/{team_id}`.
 
 ```js
 octokit.teams.getByName({

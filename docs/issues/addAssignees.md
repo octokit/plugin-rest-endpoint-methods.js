@@ -10,8 +10,6 @@ type: API method
 
 Adds up to 10 assignees to an issue. Users already assigned to an issue are not replaced.
 
-This example adds two assignees to the existing `octocat` assignee.
-
 ```js
 octokit.issues.addAssignees({
   owner,

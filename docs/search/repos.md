@@ -12,11 +12,15 @@ Find repositories via various criteria. This method returns up to 100 results [p
 
 When searching for repositories, you can get text match metadata for the **name** and **description** fields when you pass the `text-match` media type. For more details about how to receive highlighted search results, see [Text match metadata](https://developer.github.com/v3/search/#text-match-metadata).
 
-Suppose you want to search for popular Tetris repositories written in Assembly. Your query might look like this.
+For example, if you want to search for popular Tetris repositories written in assembly code, your query might look like this:
 
-You can search for multiple topics by adding more `topic:` instances, and including the `mercy-preview` header. For example:
+`q=tetris+language:assembly&sort=stars&order=desc`
 
-In this request, we're searching for repositories with the word `tetris` in the name, the description, or the README. We're limiting the results to only find repositories where the primary language is Assembly. We're sorting by stars in descending order, so that the most popular repositories appear first in the search results.
+This query searches for repositories with the word `tetris` in the name, the description, or the README. The results are limited to repositories where the primary language is assembly. The results are sorted by stars in descending order, so that the most popular repositories appear first in the search results.
+
+When you include the `mercy` preview header, you can also search for multiple topics by adding more `topic:` instances. For example, your query might look like this:
+
+`q=topic:ruby+topic:rails`
 
 ```js
 octokit.search.repos({

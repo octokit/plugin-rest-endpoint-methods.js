@@ -18,7 +18,7 @@ An organization owner can add someone who is not part of the team's organization
 
 If the user is already a member of the team, this endpoint will update the role of the team member's role. To update the membership of a team member, the authenticated user must be an organization owner or a team maintainer.
 
-**Note:** You can also specify a team by `org_id` and `team_id` using the route `PUT /organizations/:org_id/team/:team_id/memberships/:username`.
+**Note:** You can also specify a team by `org_id` and `team_id` using the route `PUT /organizations/{org_id}/team/{team_id}/memberships/{username}`.
 
 ```js
 octokit.teams.addOrUpdateMembershipForUserInOrg({

@@ -12,9 +12,11 @@ Find labels in a repository with names or descriptions that match search keyword
 
 When searching for labels, you can get text match metadata for the label **name** and **description** fields when you pass the `text-match` media type. For more details about how to receive highlighted search results, see [Text match metadata](https://developer.github.com/v3/search/#text-match-metadata).
 
-Suppose you want to find labels in the `linguist` repository that match `bug`, `defect`, or `enhancement`. Your query might look like this:
+For example, if you want to find labels in the `linguist` repository that match `bug`, `defect`, or `enhancement`. Your query might look like this:
 
-The labels that best match for the query appear first in the search results.
+`q=bug+defect+enhancement&repository_id=64778136`
+
+The labels that best match the query appear first in the search results.
 
 ```js
 octokit.search.labels({

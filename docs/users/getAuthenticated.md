@@ -8,9 +8,9 @@ type: API method
 
 # Get the authenticated user
 
-Lists public and private profile information when authenticated through basic auth or OAuth with the `user` scope.
+If the authenticated user is authenticated through basic authentication or OAuth with the `user` scope, then the response lists public and private profile information.
 
-Lists public profile information when authenticated through OAuth without the `user` scope.
+If the authenticated user is authenticated through OAuth without the `user` scope, then the response lists only public profile information.
 
 ```js
 octokit.users.getAuthenticated();
