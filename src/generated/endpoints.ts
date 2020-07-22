@@ -499,7 +499,7 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
       { mediaType: { previews: ["wyandotte"] } },
     ],
     listReposForUser: [
-      "GET /user/{migration_id}/repositories",
+      "GET /user/migrations/{migration_id}/repositories",
       { mediaType: { previews: ["wyandotte"] } },
     ],
     mapCommitAuthor: ["PATCH /repos/{owner}/{repo}/import/authors/{author_id}"],

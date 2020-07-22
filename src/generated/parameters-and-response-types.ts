@@ -1885,10 +1885,10 @@ export type RestEndpointMethodTypes = {
     listReposForUser: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /user/:migration_id/repositories"]["parameters"],
+          Endpoints["GET /user/migrations/:migration_id/repositories"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /user/:migration_id/repositories"]["response"];
+      response: Endpoints["GET /user/migrations/:migration_id/repositories"]["response"];
     };
     mapCommitAuthor: {
       parameters: RequestParameters &

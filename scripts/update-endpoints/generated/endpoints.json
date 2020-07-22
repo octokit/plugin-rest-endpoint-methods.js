@@ -16324,7 +16324,7 @@
     "scope": "migrations",
     "id": "listReposForUser",
     "method": "GET",
-    "url": "/user/{migration_id}/repositories",
+    "url": "/user/migrations/{migration_id}/repositories",
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "Lists all the repositories for this user migration.",
