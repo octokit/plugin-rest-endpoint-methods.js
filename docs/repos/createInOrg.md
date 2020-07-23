@@ -60,7 +60,7 @@ Either `true` to create a private repository or `false` to create a public one.
 </td></tr>
 <tr><td>visibility</td><td>no</td><td>
 
-Can be `public` or `private`. If your organization is associated with an enterprise account using GitHub Enterprise Cloud or GitHub Enterprise Server 2.20+, `visibility` can also be `internal`. For more information, see "[Creating an internal repository](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/about-repository-visibility#about-internal-repositories)".  
+Can be `public` or `private`. If your organization is associated with an enterprise account using GitHub Enterprise Cloud or GitHub Enterprise Server 2.20+, `visibility` can also be `internal`. For more information, see "[Creating an internal repository](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/about-repository-visibility#about-internal-repositories)".  
 The `visibility` parameter overrides the `private` parameter when you use both parameters with the `nebula-preview` preview header.
 
 </td></tr>
@@ -101,7 +101,7 @@ Desired language or platform [.gitignore template](https://github.com/github/git
 </td></tr>
 <tr><td>license_template</td><td>no</td><td>
 
-Choose an [open source license template](https://choosealicense.com/) that best suits your needs, and then use the [license keyword](https://help.github.com/articles/licensing-a-repository/#searching-github-by-license-type) as the `license_template` string. For example, "mit" or "mpl-2.0".
+Choose an [open source license template](https://choosealicense.com/) that best suits your needs, and then use the [license keyword](https://docs.github.com/articles/licensing-a-repository/#searching-github-by-license-type) as the `license_template` string. For example, "mit" or "mpl-2.0".
 
 </td></tr>
 <tr><td>allow_squash_merge</td><td>no</td><td>

@@ -8,7 +8,7 @@ type: API method
 
 # Update pull request review protection
 
-Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://help.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
+Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
 
 Updating pull request review enforcement requires admin or owner permissions to the repository and branch protection to be enabled.
 
@@ -64,7 +64,7 @@ Set to `true` if you want to automatically dismiss approving reviews when someon
 </td></tr>
 <tr><td>require_code_owner_reviews</td><td>no</td><td>
 
-Blocks merging pull requests until [code owners](https://help.github.com/articles/about-code-owners/) have reviewed.
+Blocks merging pull requests until [code owners](https://docs.github.com/articles/about-code-owners/) have reviewed.
 
 </td></tr>
 <tr><td>required_approving_review_count</td><td>no</td><td>

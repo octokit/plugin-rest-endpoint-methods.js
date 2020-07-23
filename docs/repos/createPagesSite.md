@@ -37,7 +37,7 @@ octokit.repos.createPagesSite({
 </td></tr>
 <tr><td>source.branch</td><td>no</td><td>
 
-The repository branch used to publish your [site's source files](https://help.github.com/articles/configuring-a-publishing-source-for-github-pages/). Can be either `master` or `gh-pages`.
+The repository branch used to publish your [site's source files](https://docs.github.com/articles/configuring-a-publishing-source-for-github-pages/). Can be either `master` or `gh-pages`.
 
 </td></tr>
 <tr><td>source.path</td><td>no</td><td>

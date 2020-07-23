@@ -9,7 +9,7 @@ type: API method
 # Get an issue
 
 The API returns a [`301 Moved Permanently` status](https://developer.github.com/v3/#http-redirects) if the issue was
-[transferred](https://help.github.com/articles/transferring-an-issue-to-another-repository/) to another repository. If
+[transferred](https://docs.github.com/articles/transferring-an-issue-to-another-repository/) to another repository. If
 the issue was transferred to or deleted from a repository where the authenticated user lacks read access, the API
 returns a `404 Not Found` status. If the issue was deleted from a repository where the authenticated user has read
 access, the API returns a `410 Gone` status. To receive webhook events for transferred and deleted issues, subscribe
