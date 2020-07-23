@@ -32,7 +32,7 @@ A descriptive name for the new key. Use a name that will help you recognize this
 </td></tr>
 <tr><td>key</td><td>no</td><td>
 
-The public SSH key to add to your GitHub account. See "[Generating a new SSH key](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/)" for guidance on how to create a public SSH key.
+The public SSH key to add to your GitHub account. See "[Generating a new SSH key](https://docs.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/)" for guidance on how to create a public SSH key.
 
 </td></tr>
   </tbody>

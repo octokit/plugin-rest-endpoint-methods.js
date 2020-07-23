@@ -27,7 +27,7 @@ octokit.users.createGpgKeyForAuthenticated();
   <tbody>
     <tr><td>armored_public_key</td><td>no</td><td>
 
-Your GPG key, generated in ASCII-armored format. See "[Generating a new GPG key](https://help.github.com/articles/generating-a-new-gpg-key/)" for help creating a GPG key.
+Your GPG key, generated in ASCII-armored format. See "[Generating a new GPG key](https://docs.github.com/articles/generating-a-new-gpg-key/)" for help creating a GPG key.
 
 </td></tr>
   </tbody>

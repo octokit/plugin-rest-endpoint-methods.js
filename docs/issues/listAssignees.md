@@ -8,7 +8,7 @@ type: API method
 
 # List assignees
 
-Lists the [available assignees](https://help.github.com/articles/assigning-issues-and-pull-requests-to-other-github-users/) for issues in a repository.
+Lists the [available assignees](https://docs.github.com/articles/assigning-issues-and-pull-requests-to-other-github-users/) for issues in a repository.
 
 ```js
 octokit.issues.listAssignees({

@@ -100,7 +100,7 @@ Default: `true`
 Toggles whether organization members can create internal repositories, which are visible to all enterprise members. You can only allow members to create internal repositories if your organization is associated with an enterprise account using GitHub Enterprise Cloud or GitHub Enterprise Server 2.20+. Can be one of:  
 \* `true` - all organization members can create internal repositories.  
 \* `false` - only organization owners can create internal repositories.  
-Default: `true`. For more information, see "[Restricting repository creation in your organization](https://help.github.com/github/setting-up-and-managing-organizations-and-teams/restricting-repository-creation-in-your-organization)".
+Default: `true`. For more information, see "[Restricting repository creation in your organization](https://docs.github.com/github/setting-up-and-managing-organizations-and-teams/restricting-repository-creation-in-your-organization)".
 
 </td></tr>
 <tr><td>members_can_create_private_repositories</td><td>no</td><td>
@@ -108,7 +108,7 @@ Default: `true`. For more information, see "[Restricting repository creation in 
 Toggles whether organization members can create private repositories, which are visible to organization members with permission. Can be one of:  
 \* `true` - all organization members can create private repositories.  
 \* `false` - only organization owners can create private repositories.  
-Default: `true`. For more information, see "[Restricting repository creation in your organization](https://help.github.com/github/setting-up-and-managing-organizations-and-teams/restricting-repository-creation-in-your-organization)".
+Default: `true`. For more information, see "[Restricting repository creation in your organization](https://docs.github.com/github/setting-up-and-managing-organizations-and-teams/restricting-repository-creation-in-your-organization)".
 
 </td></tr>
 <tr><td>members_can_create_public_repositories</td><td>no</td><td>
@@ -116,7 +116,7 @@ Default: `true`. For more information, see "[Restricting repository creation in 
 Toggles whether organization members can create public repositories, which are visible to anyone. Can be one of:  
 \* `true` - all organization members can create public repositories.  
 \* `false` - only organization owners can create public repositories.  
-Default: `true`. For more information, see "[Restricting repository creation in your organization](https://help.github.com/github/setting-up-and-managing-organizations-and-teams/restricting-repository-creation-in-your-organization)".
+Default: `true`. For more information, see "[Restricting repository creation in your organization](https://docs.github.com/github/setting-up-and-managing-organizations-and-teams/restricting-repository-creation-in-your-organization)".
 
 </td></tr>
 <tr><td>members_allowed_repository_creation_type</td><td>no</td><td>

@@ -8,7 +8,7 @@ type: API method
 
 # Update branch protection
 
-Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://help.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
+Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
 
 Protecting a branch requires admin or owner permissions to the repository.
 
@@ -99,7 +99,7 @@ Set to `true` if you want to automatically dismiss approving reviews when someon
 </td></tr>
 <tr><td>required_pull_request_reviews.require_code_owner_reviews</td><td>no</td><td>
 
-Blocks merging pull requests until [code owners](https://help.github.com/articles/about-code-owners/) review them.
+Blocks merging pull requests until [code owners](https://docs.github.com/articles/about-code-owners/) review them.
 
 </td></tr>
 <tr><td>required_pull_request_reviews.required_approving_review_count</td><td>no</td><td>
@@ -129,17 +129,17 @@ The list of app `slug`s with push access
 </td></tr>
 <tr><td>required_linear_history</td><td>no</td><td>
 
-Enforces a linear commit Git history, which prevents anyone from pushing merge commits to a branch. Set to `true` to enforce a linear commit history. Set to `false` to disable a linear commit Git history. Your repository must allow squash merging or rebase merging before you can enable a linear commit history. Default: `false`. For more information, see "[Requiring a linear commit history](https://help.github.com/github/administering-a-repository/requiring-a-linear-commit-history)".
+Enforces a linear commit Git history, which prevents anyone from pushing merge commits to a branch. Set to `true` to enforce a linear commit history. Set to `false` to disable a linear commit Git history. Your repository must allow squash merging or rebase merging before you can enable a linear commit history. Default: `false`. For more information, see "[Requiring a linear commit history](https://docs.github.com/github/administering-a-repository/requiring-a-linear-commit-history)".
 
 </td></tr>
 <tr><td>allow_force_pushes</td><td>no</td><td>
 
-Permits force pushes to the protected branch by anyone with write access to the repository. Set to `true` to allow force pushes. Set to `false` or `null` to block force pushes. Default: `false`. For more information, see "[Enabling force pushes to a protected branch](https://help.github.com/en/github/administering-a-repository/enabling-force-pushes-to-a-protected-branch)".
+Permits force pushes to the protected branch by anyone with write access to the repository. Set to `true` to allow force pushes. Set to `false` or `null` to block force pushes. Default: `false`. For more information, see "[Enabling force pushes to a protected branch](https://docs.github.com/en/github/administering-a-repository/enabling-force-pushes-to-a-protected-branch)".
 
 </td></tr>
 <tr><td>allow_deletions</td><td>no</td><td>
 
-Allows deletion of the protected branch by anyone with write access to the repository. Set to `false` to prevent deletion of the protected branch. Default: `false`. For more information, see "[Enabling force pushes to a protected branch](https://help.github.com/en/github/administering-a-repository/enabling-force-pushes-to-a-protected-branch)".
+Allows deletion of the protected branch by anyone with write access to the repository. Set to `false` to prevent deletion of the protected branch. Default: `false`. For more information, see "[Enabling force pushes to a protected branch](https://docs.github.com/en/github/administering-a-repository/enabling-force-pushes-to-a-protected-branch)".
 
 </td></tr>
   </tbody>
