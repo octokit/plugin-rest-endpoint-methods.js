@@ -1,6 +1,6 @@
 ---
 name: Create a GitHub Pages site
-example: octokit.repos.createPagesSite({ owner, repo })
+example: octokit.repos.createPagesSite({ owner, repo, source, source.branch })
 route: POST /repos/{owner}/{repo}/pages
 scope: repos
 type: API method
@@ -8,11 +8,15 @@ type: API method
 
 # Create a GitHub Pages site
 
+Configures a GitHub Pages site. For more information, see "[About GitHub Pages](/github/working-with-github-pages/about-github-pages)."
+
 ```js
 octokit.repos.createPagesSite({
-  owner,
-  repo,
-});
+        owner,
+repo,
+source,
+source.branch
+      })
 ```
 
 ## Parameters
@@ -32,17 +36,19 @@ octokit.repos.createPagesSite({
 <tr><td>repo</td><td>yes</td><td>
 
 </td></tr>
-<tr><td>source</td><td>no</td><td>
+<tr><td>source</td><td>yes</td><td>
+
+The source branch and directory used to publish your Pages site.
 
 </td></tr>
-<tr><td>source.branch</td><td>no</td><td>
+<tr><td>source.branch</td><td>yes</td><td>
 
-The repository branch used to publish your [site's source files](https://docs.github.com/articles/configuring-a-publishing-source-for-github-pages/). Can be either `master` or `gh-pages`.
+The repository branch used to publish your site's source files.
 
 </td></tr>
 <tr><td>source.path</td><td>no</td><td>
 
-The repository directory that includes the source files for the Pages site. When `branch` is `master`, you can change `path` to `/docs`. When `branch` is `gh-pages`, you are unable to specify a `path` other than `/`.
+The repository directory that includes the source files for the Pages site. Allowed paths are `/` or `/docs`. Default: `/`
 
 </td></tr>
   </tbody>

@@ -4960,7 +4960,9 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
-
+    /**
+     * Configures a GitHub Pages site. For more information, see "[About GitHub Pages](/github/working-with-github-pages/about-github-pages)."
+     */
     createPagesSite: {
       (
         params?: RestEndpointMethodTypes["repos"]["createPagesSite"]["parameters"]
@@ -6383,7 +6385,9 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
-
+    /**
+     * Updates information for a GitHub Pages site. For more information, see "[About GitHub Pages](/github/working-with-github-pages/about-github-pages).
+     */
     updateInformationAboutPagesSite: {
       (
         params?: RestEndpointMethodTypes["repos"]["updateInformationAboutPagesSite"]["parameters"]
