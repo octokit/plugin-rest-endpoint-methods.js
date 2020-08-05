@@ -16,6 +16,25 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
+     * **Warning:** The self-hosted runner group API is currently in public beta and subject to change.
+     *
+     * The self-hosted runner groups REST API is available with GitHub Enterprise Cloud and GitHub Enterprise Server. For more information, see "[GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products)."
+     *
+     * Adds a self-hosted runner to a runner group configured in an organization.
+     *
+     * You must authenticate using an access token with the `admin:org`
+     * scope to use this endpoint.
+     */
+    addSelfHostedRunnerToGroupForOrg: {
+      (
+        params?: RestEndpointMethodTypes["actions"]["addSelfHostedRunnerToGroupForOrg"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["actions"]["addSelfHostedRunnerToGroupForOrg"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
      * Cancels a workflow run using its `id`. You must authenticate using an access token with the `repo` scope to use this endpoint. GitHub Apps must have the `actions:write` permission to use this endpoint.
      */
     cancelWorkflowRun: {
@@ -202,9 +221,9 @@ export type RestEndpointMethods = {
     /**
      * **Warning:** The self-hosted runners API for organizations is currently in public beta and subject to change.
      *
+     * Returns a token that you can pass to the `config` script. The token expires after one hour.
      *
-     * Returns a token that you can pass to the `config` script. The token expires after one hour. You must authenticate
-     * using an access token with the `admin:org` scope to use this endpoint.
+     * You must authenticate using an access token with the `admin:org` scope to use this endpoint.
      *
      * #### Example using registration token
      *
@@ -247,10 +266,9 @@ export type RestEndpointMethods = {
     /**
      * **Warning:** The self-hosted runners API for organizations is currently in public beta and subject to change.
      *
+     * Returns a token that you can pass to the `config` script to remove a self-hosted runner from an organization. The token expires after one hour.
      *
-     * Returns a token that you can pass to the `config` script to remove a self-hosted runner from an organization. The
-     * token expires after one hour. You must authenticate using an access token with the `admin:org` scope to use this
-     * endpoint.
+     * You must authenticate using an access token with the `admin:org` scope to use this endpoint.
      *
      * #### Example using remove token
      *
@@ -287,6 +305,24 @@ export type RestEndpointMethods = {
         params?: RestEndpointMethodTypes["actions"]["createRemoveTokenForRepo"]["parameters"]
       ): Promise<
         RestEndpointMethodTypes["actions"]["createRemoveTokenForRepo"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * **Warning:** The self-hosted runner group API is currently in public beta and subject to change.
+     *
+     * The self-hosted runner groups REST API is available with GitHub Enterprise Cloud and GitHub Enterprise Server. For more information, see "[GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products)."
+     *
+     * Creates a new self-hosted runner group for an organization.
+     *
+     * You must authenticate using an access token with the `admin:org` scope to use this endpoint.
+     */
+    createSelfHostedRunnerGroupForOrg: {
+      (
+        params?: RestEndpointMethodTypes["actions"]["createSelfHostedRunnerGroupForOrg"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["actions"]["createSelfHostedRunnerGroupForOrg"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -346,7 +382,9 @@ export type RestEndpointMethods = {
     /**
      * **Warning:** The self-hosted runners API for organizations is currently in public beta and subject to change.
      *
-     * Forces the removal of a self-hosted runner from an organization. You can use this endpoint to completely remove the runner when the machine you were using no longer exists. You must authenticate using an access token with the `admin:org` scope to use this endpoint.
+     * Forces the removal of a self-hosted runner from an organization. You can use this endpoint to completely remove the runner when the machine you were using no longer exists.
+     *
+     * You must authenticate using an access token with the `admin:org` scope to use this endpoint.
      */
     deleteSelfHostedRunnerFromOrg: {
       (
@@ -358,13 +396,34 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Forces the removal of a self-hosted runner from a repository. You can use this endpoint to completely remove the runner when the machine you were using no longer exists. You must authenticate using an access token with the `repo` scope to use this endpoint.
+     * Forces the removal of a self-hosted runner from a repository. You can use this endpoint to completely remove the runner when the machine you were using no longer exists.
+     *
+     * You must authenticate using an access token with the `repo`
+     * scope to use this endpoint.
      */
     deleteSelfHostedRunnerFromRepo: {
       (
         params?: RestEndpointMethodTypes["actions"]["deleteSelfHostedRunnerFromRepo"]["parameters"]
       ): Promise<
         RestEndpointMethodTypes["actions"]["deleteSelfHostedRunnerFromRepo"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * **Warning:** The self-hosted runner group API is currently in public beta and subject to change.
+     *
+     * The self-hosted runner groups REST API is available with GitHub Enterprise Cloud and GitHub Enterprise Server. For more information, see "[GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products)."
+     *
+     * Deletes a self-hosted runner group for an organization.
+     *
+     * You must authenticate using an access token with the `admin:org` scope to use this endpoint.
+     */
+    deleteSelfHostedRunnerGroupFromOrg: {
+      (
+        params?: RestEndpointMethodTypes["actions"]["deleteSelfHostedRunnerGroupFromOrg"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["actions"]["deleteSelfHostedRunnerGroupFromOrg"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -513,7 +572,9 @@ export type RestEndpointMethods = {
     /**
      * **Warning:** The self-hosted runners API for organizations is currently in public beta and subject to change.
      *
-     * Gets a specific self-hosted runner for an organization. You must authenticate using an access token with the `admin:org` scope to use this endpoint.
+     * Gets a specific self-hosted runner configured in an organization.
+     *
+     * You must authenticate using an access token with the `admin:org` scope to use this endpoint.
      */
     getSelfHostedRunnerForOrg: {
       (
@@ -525,13 +586,34 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Gets a specific self-hosted runner. You must authenticate using an access token with the `repo` scope to use this endpoint.
+     * Gets a specific self-hosted runner configured in a repository.
+     *
+     * You must authenticate using an access token with the `repo` scope to use this
+     * endpoint.
      */
     getSelfHostedRunnerForRepo: {
       (
         params?: RestEndpointMethodTypes["actions"]["getSelfHostedRunnerForRepo"]["parameters"]
       ): Promise<
         RestEndpointMethodTypes["actions"]["getSelfHostedRunnerForRepo"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * **Warning:** The self-hosted runner group API is currently in public beta and subject to change.
+     *
+     * The self-hosted runner groups REST API is available with GitHub Enterprise Cloud and GitHub Enterprise Server. For more information, see "[GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products)."
+     *
+     * Gets a specific self-hosted runner group for an organization.
+     *
+     * You must authenticate using an access token with the `admin:org` scope to use this endpoint.
+     */
+    getSelfHostedRunnerGroupForOrg: {
+      (
+        params?: RestEndpointMethodTypes["actions"]["getSelfHostedRunnerGroupForOrg"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["actions"]["getSelfHostedRunnerGroupForOrg"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -627,6 +709,24 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
+     * **Warning:** The self-hosted runners API for organizations is currently in public beta and subject to change.
+     *
+     * The self-hosted runner groups REST API is available with GitHub Enterprise Cloud and GitHub Enterprise Server. For more information, see "[GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products)."
+     *
+     * Lists the repositories with access to a self-hosted runner group configured in an organization.
+     *
+     * You must authenticate using an access token with the `admin:org` scope to use this endpoint.
+     */
+    listRepoAccessToSelfHostedRunnerGroupInOrg: {
+      (
+        params?: RestEndpointMethodTypes["actions"]["listRepoAccessToSelfHostedRunnerGroupInOrg"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["actions"]["listRepoAccessToSelfHostedRunnerGroupInOrg"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
      * Lists all secrets available in a repository without revealing their encrypted values. You must authenticate using an access token with the `repo` scope to use this endpoint. GitHub Apps must have the `secrets` repository permission to use this endpoint.
      */
     listRepoSecrets: {
@@ -653,7 +753,9 @@ export type RestEndpointMethods = {
     /**
      * **Warning:** The self-hosted runners API for organizations is currently in public beta and subject to change.
      *
-     * Lists binaries for the runner application that you can download and run. You must authenticate using an access token with the `admin:org` scope to use this endpoint.
+     * Lists binaries for the runner application that you can download and run.
+     *
+     * You must authenticate using an access token with the `admin:org` scope to use this endpoint.
      */
     listRunnerApplicationsForOrg: {
       (
@@ -665,7 +767,9 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Lists binaries for the runner application that you can download and run. You must authenticate using an access token with the `repo` scope to use this endpoint.
+     * Lists binaries for the runner application that you can download and run.
+     *
+     * You must authenticate using an access token with the `repo` scope to use this endpoint.
      */
     listRunnerApplicationsForRepo: {
       (
@@ -689,9 +793,29 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
+     * **Warning:** The self-hosted runner group API is currently in public beta and subject to change.
+     *
+     * The self-hosted runner groups REST API is available with GitHub Enterprise Cloud and GitHub Enterprise Server. For more information, see "[GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products)."
+     *
+     * Lists all self-hosted runner groups configured in an organization and inherited from an enterprise.
+     *
+     * You must authenticate using an access token with the `admin:org` scope to use this endpoint.
+     */
+    listSelfHostedRunnerGroupsForOrg: {
+      (
+        params?: RestEndpointMethodTypes["actions"]["listSelfHostedRunnerGroupsForOrg"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["actions"]["listSelfHostedRunnerGroupsForOrg"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
      * **Warning:** The self-hosted runners API for organizations is currently in public beta and subject to change.
      *
-     * Lists all self-hosted runners for an organization. You must authenticate using an access token with the `admin:org` scope to use this endpoint.
+     * Lists all self-hosted runners configured in an organization.
+     *
+     * You must authenticate using an access token with the `admin:org` scope to use this endpoint.
      */
     listSelfHostedRunnersForOrg: {
       (
@@ -703,13 +827,32 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Lists all self-hosted runners for a repository. You must authenticate using an access token with the `repo` scope to use this endpoint.
+     * Lists all self-hosted runners configured in a repository.
+     * You must authenticate using an access token with the `repo` scope to use this endpoint.
      */
     listSelfHostedRunnersForRepo: {
       (
         params?: RestEndpointMethodTypes["actions"]["listSelfHostedRunnersForRepo"]["parameters"]
       ): Promise<
         RestEndpointMethodTypes["actions"]["listSelfHostedRunnersForRepo"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * **Warning:** The self-hosted runner group API is currently in public beta and subject to change.
+     *
+     * The self-hosted runner groups REST API is available with GitHub Enterprise Cloud and GitHub Enterprise Server. For more information, see "[GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products)."
+     *
+     * Lists self-hosted runners that are in a specific organization group.
+     *
+     * You must authenticate using an access token with the `admin:org` scope to use this endpoint.
+     */
+    listSelfHostedRunnersInGroupForOrg: {
+      (
+        params?: RestEndpointMethodTypes["actions"]["listSelfHostedRunnersInGroupForOrg"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["actions"]["listSelfHostedRunnersInGroupForOrg"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -767,6 +910,24 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
+     * **Warning:** The self-hosted runners API for organizations is currently in public beta and subject to change.
+     *
+     * The self-hosted runner groups REST API is available with GitHub Enterprise Cloud and GitHub Enterprise Server. For more information, see "[GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products)."
+     *
+     * Removes a repository from the list of selected repositories that can access a self-hosted runner group. The runner group must have `visibility` set to `selected`. For more information, see "[Create a self-hosted runner group for an organization](#create-a-self-hosted-runner-group-for-an-organization)."
+     *
+     * You must authenticate using an access token with the `admin:org` scope to use this endpoint.
+     */
+    removeRepoAccessToSelfHostedRunnerGroupInOrg: {
+      (
+        params?: RestEndpointMethodTypes["actions"]["removeRepoAccessToSelfHostedRunnerGroupInOrg"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["actions"]["removeRepoAccessToSelfHostedRunnerGroupInOrg"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
      * Removes a repository from an organization secret when the `visibility` for repository access is set to `selected`. The visibility is set when you [Create or update an organization secret](https://developer.github.com/v3/actions/secrets/#create-or-update-an-organization-secret). You must authenticate using an access token with the `admin:org` scope to use this endpoint. GitHub Apps must have the `secrets` organization permission to use this endpoint.
      */
     removeSelectedRepoFromOrgSecret: {
@@ -779,6 +940,42 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
+     * **Warning:** The self-hosted runner group API is currently in public beta and subject to change.
+     *
+     * The self-hosted runner groups REST API is available with GitHub Enterprise Cloud and GitHub Enterprise Server. For more information, see "[GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products)."
+     *
+     * Removes a self-hosted runner from a group configured in an organization. The runner is then returned to the default group.
+     *
+     * You must authenticate using an access token with the `admin:org` scope to use this endpoint.
+     */
+    removeSelfHostedRunnerFromGroupForOrg: {
+      (
+        params?: RestEndpointMethodTypes["actions"]["removeSelfHostedRunnerFromGroupForOrg"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["actions"]["removeSelfHostedRunnerFromGroupForOrg"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * **Warning:** The self-hosted runners API for organizations is currently in public beta and subject to change.
+     *
+     * The self-hosted runner groups REST API is available with GitHub Enterprise Cloud and GitHub Enterprise Server. For more information, see "[GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products)."
+     *
+     * Replaces the list of repositories that have access to a self-hosted runner group configured in an organization.
+     *
+     * You must authenticate using an access token with the `admin:org` scope to use this endpoint.
+     */
+    setRepoAccessToSelfHostedRunnerGroupInOrg: {
+      (
+        params?: RestEndpointMethodTypes["actions"]["setRepoAccessToSelfHostedRunnerGroupInOrg"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["actions"]["setRepoAccessToSelfHostedRunnerGroupInOrg"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
      * Replaces all repositories for an organization secret when the `visibility` for repository access is set to `selected`. The visibility is set when you [Create or update an organization secret](https://developer.github.com/v3/actions/secrets/#create-or-update-an-organization-secret). You must authenticate using an access token with the `admin:org` scope to use this endpoint. GitHub Apps must have the `secrets` organization permission to use this endpoint.
      */
     setSelectedReposForOrgSecret: {
@@ -786,6 +983,42 @@ export type RestEndpointMethods = {
         params?: RestEndpointMethodTypes["actions"]["setSelectedReposForOrgSecret"]["parameters"]
       ): Promise<
         RestEndpointMethodTypes["actions"]["setSelectedReposForOrgSecret"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * **Warning:** The self-hosted runner group API is currently in public beta and subject to change.
+     *
+     * The self-hosted runner groups REST API is available with GitHub Enterprise Cloud and GitHub Enterprise Server. For more information, see "[GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products)."
+     *
+     * Replaces the list of self-hosted runners that are part of an organization runner group.
+     *
+     * You must authenticate using an access token with the `admin:org` scope to use this endpoint.
+     */
+    setSelfHostedRunnersInGroupForOrg: {
+      (
+        params?: RestEndpointMethodTypes["actions"]["setSelfHostedRunnersInGroupForOrg"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["actions"]["setSelfHostedRunnersInGroupForOrg"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * **Warning:** The self-hosted runner group API is currently in public beta and subject to change.
+     *
+     * The self-hosted runner groups REST API is available with GitHub Enterprise Cloud and GitHub Enterprise Server. For more information, see "[GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products)."
+     *
+     * Updates the `name` and `visibility` of a self-hosted runner group in an organization.
+     *
+     * You must authenticate using an access token with the `admin:org` scope to use this endpoint.
+     */
+    updateSelfHostedRunnerGroupForOrg: {
+      (
+        params?: RestEndpointMethodTypes["actions"]["updateSelfHostedRunnerGroupForOrg"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["actions"]["updateSelfHostedRunnerGroupForOrg"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -1913,6 +2146,330 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["emojis"]["get"]["parameters"]
       ): Promise<RestEndpointMethodTypes["emojis"]["get"]["response"]>;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+  };
+  enterpriseAdmin: {
+    /**
+     * **Warning:** The self-hosted runners API for enterprises is currently in public beta and subject to change.
+     *
+     * Adds an organization to the list of selected organizations that can access a self-hosted runner group. The runner group must have `visibility` set to `selected`. For more information, see "[Create a self-hosted runner group for an enterprise](#create-a-self-hosted-runner-group-for-an-enterprise)."
+     *
+     * You must authenticate using an access token with the `admin:enterprise` scope to use this endpoint.
+     */
+    addOrgAccessToSelfHostedRunnerGroupInEnterprise: {
+      (
+        params?: RestEndpointMethodTypes["enterpriseAdmin"]["addOrgAccessToSelfHostedRunnerGroupInEnterprise"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["enterpriseAdmin"]["addOrgAccessToSelfHostedRunnerGroupInEnterprise"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * **Warning:** The self-hosted runner API for enterprise accounts is currently in public beta and subject to change.
+     *
+     * Adds a self-hosted runner to a runner group configured in an enterprise.
+     *
+     * You must authenticate using an access token with the `admin:enterprise`
+     * scope to use this endpoint.
+     */
+    addSelfHostedRunnerToRunnerGroupForEnterprise: {
+      (
+        params?: RestEndpointMethodTypes["enterpriseAdmin"]["addSelfHostedRunnerToRunnerGroupForEnterprise"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["enterpriseAdmin"]["addSelfHostedRunnerToRunnerGroupForEnterprise"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * **Warning:** The self-hosted runners API for enterprise accounts is currently in public beta and subject to change.
+     *
+     * Returns a token that you can pass to the `config` script. The token expires after one hour.
+     *
+     * You must authenticate using an access token with the `admin:enterprise` scope to use this endpoint.
+     *
+     * #### Example using registration token
+     *
+     * Configure your self-hosted runner, replacing `TOKEN` with the registration token provided by this endpoint.
+     *
+     * ```
+     * ./config.sh --url https://github.com/enterpises/octo-enterprise --token TOKEN
+     * ```
+     */
+    createRegistrationTokenForEnterprise: {
+      (
+        params?: RestEndpointMethodTypes["enterpriseAdmin"]["createRegistrationTokenForEnterprise"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["enterpriseAdmin"]["createRegistrationTokenForEnterprise"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * **Warning:** The self-hosted runners API for enterprise accounts is currently in public beta and subject to change.
+     *
+     * Returns a token that you can pass to the `config` script to remove a self-hosted runner from an enterprise. The token expires after one hour.
+     *
+     * You must authenticate using an access token with the `admin:enterprise` scope to use this endpoint.
+     *
+     * #### Example using remove token
+     *
+     * To remove your self-hosted runner from an enterprise, replace `TOKEN` with the remove token provided by this
+     * endpoint.
+     *
+     * ```
+     * ./config.sh remove --token TOKEN
+     * ```
+     */
+    createRemoveTokenForEnterprise: {
+      (
+        params?: RestEndpointMethodTypes["enterpriseAdmin"]["createRemoveTokenForEnterprise"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["enterpriseAdmin"]["createRemoveTokenForEnterprise"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * **Warning:** The self-hosted runners API for enterprise accounts is currently in public beta and subject to change.
+     *
+     * Creates a new self-hosted runner group for an enterprise.
+     *
+     * You must authenticate using an access token with the `admin:enterprise` scope to use this endpoint.
+     */
+    createSelfHostedRunnerGroupForEnterprise: {
+      (
+        params?: RestEndpointMethodTypes["enterpriseAdmin"]["createSelfHostedRunnerGroupForEnterprise"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["enterpriseAdmin"]["createSelfHostedRunnerGroupForEnterprise"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * **Warning:** The self-hosted runners API for enterprise accounts is currently in public beta and subject to change.
+     *
+     * Forces the removal of a self-hosted runner from an enterprise. You can use this endpoint to completely remove the runner when the machine you were using no longer exists.
+     *
+     * You must authenticate using an access token with the `admin:enterprise` scope to use this endpoint.
+     */
+    deleteSelfHostedRunnerFromEnterprise: {
+      (
+        params?: RestEndpointMethodTypes["enterpriseAdmin"]["deleteSelfHostedRunnerFromEnterprise"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["enterpriseAdmin"]["deleteSelfHostedRunnerFromEnterprise"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * **Warning:** The self-hosted runners API for enterprise accounts is currently in public beta and subject to change.
+     *
+     * Deletes a self-hosted runner group for an enterprise.
+     *
+     * You must authenticate using an access token with the `admin:enterprise` scope to use this endpoint.
+     */
+    deleteSelfHostedRunnerGroupFromEnterprise: {
+      (
+        params?: RestEndpointMethodTypes["enterpriseAdmin"]["deleteSelfHostedRunnerGroupFromEnterprise"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["enterpriseAdmin"]["deleteSelfHostedRunnerGroupFromEnterprise"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * **Warning:** The self-hosted runners API for enterprise accounts is currently in public beta and subject to change.
+     *
+     * Gets a specific self-hosted runner configured in an enterprise.
+     *
+     * You must authenticate using an access token with the `admin:enterprise` scope to use this endpoint.
+     */
+    getSelfHostedRunnerForEnterprise: {
+      (
+        params?: RestEndpointMethodTypes["enterpriseAdmin"]["getSelfHostedRunnerForEnterprise"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["enterpriseAdmin"]["getSelfHostedRunnerForEnterprise"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * **Warning:** The self-hosted runners API for enterprise accounts is currently in public beta and subject to change.
+     *
+     * Gets a specific self-hosted runner group for an enterprise.
+     *
+     * You must authenticate using an access token with the `admin:enterprise` scope to use this endpoint.
+     */
+    getSelfHostedRunnerGroupForEnterprise: {
+      (
+        params?: RestEndpointMethodTypes["enterpriseAdmin"]["getSelfHostedRunnerGroupForEnterprise"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["enterpriseAdmin"]["getSelfHostedRunnerGroupForEnterprise"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * **Warning:** The self-hosted runners API for enterprises is currently in public beta and subject to change.
+     *
+     * Lists the organizations with access to a self-hosted runner group.
+     *
+     * You must authenticate using an access token with the `admin:enterprise` scope to use this endpoint.
+     */
+    listOrgAccessToSelfHostedRunnerGroupInEnterprise: {
+      (
+        params?: RestEndpointMethodTypes["enterpriseAdmin"]["listOrgAccessToSelfHostedRunnerGroupInEnterprise"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["enterpriseAdmin"]["listOrgAccessToSelfHostedRunnerGroupInEnterprise"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * **Warning:** The self-hosted runners API for enterprise accounts is currently in public beta and subject to change.
+     *
+     * Lists binaries for the runner application that you can download and run.
+     *
+     * You must authenticate using an access token with the `admin:enterprise` scope to use this endpoint.
+     */
+    listRunnerApplicationsForEnterprise: {
+      (
+        params?: RestEndpointMethodTypes["enterpriseAdmin"]["listRunnerApplicationsForEnterprise"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["enterpriseAdmin"]["listRunnerApplicationsForEnterprise"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * **Warning:** The self-hosted runners API for enterprise accounts is currently in public beta and subject to change.
+     *
+     * Lists all self-hosted runner groups for an enterprise.
+     *
+     * You must authenticate using an access token with the `admin:enterprise` scope to use this endpoint.
+     */
+    listSelfHostedRunnerGroupsForEnterprise: {
+      (
+        params?: RestEndpointMethodTypes["enterpriseAdmin"]["listSelfHostedRunnerGroupsForEnterprise"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["enterpriseAdmin"]["listSelfHostedRunnerGroupsForEnterprise"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * **Warning:** The self-hosted runners API for enterprise accounts is currently in public beta and subject to change.
+     *
+     * Lists all self-hosted runners configured for an enterprise.
+     *
+     * You must authenticate using an access token with the `admin:enterprise` scope to use this endpoint.
+     */
+    listSelfHostedRunnersForEnterprise: {
+      (
+        params?: RestEndpointMethodTypes["enterpriseAdmin"]["listSelfHostedRunnersForEnterprise"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["enterpriseAdmin"]["listSelfHostedRunnersForEnterprise"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * **Warning:** The self-hosted runners API for enterprise accounts is currently in public beta and subject to change.
+     *
+     * Lists the self-hosted runners that are in a specific enterprise group.
+     *
+     * You must authenticate using an access token with the `admin:enterprise` scope to use this endpoint.
+     */
+    listSelfHostedRunnersInGroupForEnterprise: {
+      (
+        params?: RestEndpointMethodTypes["enterpriseAdmin"]["listSelfHostedRunnersInGroupForEnterprise"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["enterpriseAdmin"]["listSelfHostedRunnersInGroupForEnterprise"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * **Warning:** The self-hosted runners API for enterprises is currently in public beta and subject to change.
+     *
+     * Removes an organization from the list of selected organizations that can access a self-hosted runner group. The runner group must have `visibility` set to `selected`. For more information, see "[Create a self-hosted runner group for an enterprise](#create-a-self-hosted-runner-group-for-an-enterprise)."
+     *
+     * You must authenticate using an access token with the `admin:enterprise` scope to use this endpoint.
+     */
+    removeOrgAccessToSelfHostedRunnerGroupInEnterprise: {
+      (
+        params?: RestEndpointMethodTypes["enterpriseAdmin"]["removeOrgAccessToSelfHostedRunnerGroupInEnterprise"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["enterpriseAdmin"]["removeOrgAccessToSelfHostedRunnerGroupInEnterprise"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * **Warning:** The self-hosted runners API for enterprise accounts is currently in public beta and subject to change.
+     *
+     * Removes a self-hosted runner from a group configured in an enterprise. The runner is then returned to the default group.
+     *
+     * You must authenticate using an access token with the `admin:enterprise` scope to use this endpoint.
+     */
+    removeSelfHostedRunnerFromGroupForEnterprise: {
+      (
+        params?: RestEndpointMethodTypes["enterpriseAdmin"]["removeSelfHostedRunnerFromGroupForEnterprise"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["enterpriseAdmin"]["removeSelfHostedRunnerFromGroupForEnterprise"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * **Warning:** The self-hosted runners API for enterprises is currently in public beta and subject to change.
+     *
+     * Replaces the list of organizations that have access to a self-hosted runner group configured in an enterprise.
+     *
+     * You must authenticate using an access token with the `admin:enterprise` scope to use this endpoint.
+     */
+    setOrgAccessToSelfHostedRunnerGroupInEnterprise: {
+      (
+        params?: RestEndpointMethodTypes["enterpriseAdmin"]["setOrgAccessToSelfHostedRunnerGroupInEnterprise"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["enterpriseAdmin"]["setOrgAccessToSelfHostedRunnerGroupInEnterprise"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * **Warning:** The self-hosted runners API for enterprise accounts is currently in public beta and subject to change.
+     *
+     * Replaces the list of self-hosted runners that that are part of an enterprise runner group.
+     *
+     * You must authenticate using an access token with the `admin:enterprise` scope to use this endpoint.
+     */
+    setSelfHostedInGroupForEnterprise: {
+      (
+        params?: RestEndpointMethodTypes["enterpriseAdmin"]["setSelfHostedInGroupForEnterprise"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["enterpriseAdmin"]["setSelfHostedInGroupForEnterprise"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * **Warning:** The self-hosted runners API for enterprise accounts is currently in public beta and subject to change.
+     *
+     * Updates the `name` and `visibility` of a self-hosted runner group in an enterprise.
+     *
+     * You must authenticate using an access token with the `admin:enterprise` scope to use this endpoint.
+     */
+    updateSelfHostedRunnerGroupForEnterprise: {
+      (
+        params?: RestEndpointMethodTypes["enterpriseAdmin"]["updateSelfHostedRunnerGroupForEnterprise"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["enterpriseAdmin"]["updateSelfHostedRunnerGroupForEnterprise"]["response"]
+      >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };

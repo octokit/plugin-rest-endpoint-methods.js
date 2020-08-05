@@ -10,6 +10,14 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["PUT /orgs/:org/actions/secrets/:secret_name/repositories/:repository_id"]["response"];
     };
+    addSelfHostedRunnerToGroupForOrg: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["PUT /orgs/:org/actions/runner-groups/:runner_group_id/runners/:runner_id"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["PUT /orgs/:org/actions/runner-groups/:runner_group_id/runners/:runner_id"]["response"];
+    };
     cancelWorkflowRun: {
       parameters: RequestParameters &
         Omit<
@@ -66,6 +74,14 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["POST /repos/:owner/:repo/actions/runners/remove-token"]["response"];
     };
+    createSelfHostedRunnerGroupForOrg: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["POST /orgs/:org/actions/runner-groups"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["POST /orgs/:org/actions/runner-groups"]["response"];
+    };
     createWorkflowDispatch: {
       parameters: RequestParameters &
         Omit<
@@ -113,6 +129,14 @@ export type RestEndpointMethodTypes = {
           "baseUrl" | "headers" | "mediaType"
         >;
       response: Endpoints["DELETE /repos/:owner/:repo/actions/runners/:runner_id"]["response"];
+    };
+    deleteSelfHostedRunnerGroupFromOrg: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["DELETE /orgs/:org/actions/runner-groups/:runner_group_id"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["DELETE /orgs/:org/actions/runner-groups/:runner_group_id"]["response"];
     };
     deleteWorkflowRun: {
       parameters: RequestParameters &
@@ -218,6 +242,14 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["GET /repos/:owner/:repo/actions/runners/:runner_id"]["response"];
     };
+    getSelfHostedRunnerGroupForOrg: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /orgs/:org/actions/runner-groups/:runner_group_id"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /orgs/:org/actions/runner-groups/:runner_group_id"]["response"];
+    };
     getWorkflow: {
       parameters: RequestParameters &
         Omit<
@@ -274,6 +306,14 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["GET /orgs/:org/actions/secrets"]["response"];
     };
+    listRepoAccessToSelfHostedRunnerGroupInOrg: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /orgs/:org/actions/runner-groups/:runner_group_id/repositories"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /orgs/:org/actions/runner-groups/:runner_group_id/repositories"]["response"];
+    };
     listRepoSecrets: {
       parameters: RequestParameters &
         Omit<
@@ -314,6 +354,14 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["GET /orgs/:org/actions/secrets/:secret_name/repositories"]["response"];
     };
+    listSelfHostedRunnerGroupsForOrg: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /orgs/:org/actions/runner-groups"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /orgs/:org/actions/runner-groups"]["response"];
+    };
     listSelfHostedRunnersForOrg: {
       parameters: RequestParameters &
         Omit<
@@ -329,6 +377,14 @@ export type RestEndpointMethodTypes = {
           "baseUrl" | "headers" | "mediaType"
         >;
       response: Endpoints["GET /repos/:owner/:repo/actions/runners"]["response"];
+    };
+    listSelfHostedRunnersInGroupForOrg: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /orgs/:org/actions/runner-groups/:runner_group_id/runners"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /orgs/:org/actions/runner-groups/:runner_group_id/runners"]["response"];
     };
     listWorkflowRunArtifacts: {
       parameters: RequestParameters &
@@ -362,6 +418,14 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["POST /repos/:owner/:repo/actions/runs/:run_id/rerun"]["response"];
     };
+    removeRepoAccessToSelfHostedRunnerGroupInOrg: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["DELETE /orgs/:org/actions/runner-groups/:runner_group_id/repositories/:repository_id"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["DELETE /orgs/:org/actions/runner-groups/:runner_group_id/repositories/:repository_id"]["response"];
+    };
     removeSelectedRepoFromOrgSecret: {
       parameters: RequestParameters &
         Omit<
@@ -370,6 +434,22 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["DELETE /orgs/:org/actions/secrets/:secret_name/repositories/:repository_id"]["response"];
     };
+    removeSelfHostedRunnerFromGroupForOrg: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["DELETE /orgs/:org/actions/runner-groups/:runner_group_id/runners/:runner_id"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["DELETE /orgs/:org/actions/runner-groups/:runner_group_id/runners/:runner_id"]["response"];
+    };
+    setRepoAccessToSelfHostedRunnerGroupInOrg: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["PUT /orgs/:org/actions/runner-groups/:runner_group_id/repositories"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["PUT /orgs/:org/actions/runner-groups/:runner_group_id/repositories"]["response"];
+    };
     setSelectedReposForOrgSecret: {
       parameters: RequestParameters &
         Omit<
@@ -377,6 +457,22 @@ export type RestEndpointMethodTypes = {
           "baseUrl" | "headers" | "mediaType"
         >;
       response: Endpoints["PUT /orgs/:org/actions/secrets/:secret_name/repositories"]["response"];
+    };
+    setSelfHostedRunnersInGroupForOrg: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["PUT /orgs/:org/actions/runner-groups/:runner_group_id/runners"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["PUT /orgs/:org/actions/runner-groups/:runner_group_id/runners"]["response"];
+    };
+    updateSelfHostedRunnerGroupForOrg: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["PATCH /orgs/:org/actions/runner-groups/:runner_group_id"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["PATCH /orgs/:org/actions/runner-groups/:runner_group_id"]["response"];
     };
   };
   activity: {
@@ -1071,6 +1167,160 @@ export type RestEndpointMethodTypes = {
           "baseUrl" | "headers" | "mediaType"
         >;
       response: Endpoints["GET /emojis"]["response"];
+    };
+  };
+  enterpriseAdmin: {
+    addOrgAccessToSelfHostedRunnerGroupInEnterprise: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["PUT /enterprises/:enterprise/actions/runner-groups/:runner_group_id/organizations/:org_id"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["PUT /enterprises/:enterprise/actions/runner-groups/:runner_group_id/organizations/:org_id"]["response"];
+    };
+    addSelfHostedRunnerToRunnerGroupForEnterprise: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["PUT /enterprises/:enterprise/actions/runner-groups/:runner_group_id/runners/:runner_id"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["PUT /enterprises/:enterprise/actions/runner-groups/:runner_group_id/runners/:runner_id"]["response"];
+    };
+    createRegistrationTokenForEnterprise: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["POST /enterprises/:enterprise/actions/runners/registration-token"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["POST /enterprises/:enterprise/actions/runners/registration-token"]["response"];
+    };
+    createRemoveTokenForEnterprise: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["POST /enterprises/:enterprise/actions/runners/remove-token"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["POST /enterprises/:enterprise/actions/runners/remove-token"]["response"];
+    };
+    createSelfHostedRunnerGroupForEnterprise: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["POST /enterprises/:enterprise/actions/runner-groups"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["POST /enterprises/:enterprise/actions/runner-groups"]["response"];
+    };
+    deleteSelfHostedRunnerFromEnterprise: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["DELETE /enterprises/:enterprise/actions/runners/:runner_id"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["DELETE /enterprises/:enterprise/actions/runners/:runner_id"]["response"];
+    };
+    deleteSelfHostedRunnerGroupFromEnterprise: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["DELETE /enterprises/:enterprise/actions/runner-groups/:runner_group_id"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["DELETE /enterprises/:enterprise/actions/runner-groups/:runner_group_id"]["response"];
+    };
+    getSelfHostedRunnerForEnterprise: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /enterprises/:enterprise/actions/runners/:runner_id"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /enterprises/:enterprise/actions/runners/:runner_id"]["response"];
+    };
+    getSelfHostedRunnerGroupForEnterprise: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /enterprises/:enterprise/actions/runner-groups/:runner_group_id"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /enterprises/:enterprise/actions/runner-groups/:runner_group_id"]["response"];
+    };
+    listOrgAccessToSelfHostedRunnerGroupInEnterprise: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /enterprises/:enterprise/actions/runner-groups/:runner_group_id/organizations"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /enterprises/:enterprise/actions/runner-groups/:runner_group_id/organizations"]["response"];
+    };
+    listRunnerApplicationsForEnterprise: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /enterprises/:enterprise/actions/runners/downloads"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /enterprises/:enterprise/actions/runners/downloads"]["response"];
+    };
+    listSelfHostedRunnerGroupsForEnterprise: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /enterprises/:enterprise/actions/runner-groups"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /enterprises/:enterprise/actions/runner-groups"]["response"];
+    };
+    listSelfHostedRunnersForEnterprise: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /enterprises/:enterprise/actions/runners"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /enterprises/:enterprise/actions/runners"]["response"];
+    };
+    listSelfHostedRunnersInGroupForEnterprise: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /enterprises/:enterprise/actions/runner-groups/:runner_group_id/runners"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /enterprises/:enterprise/actions/runner-groups/:runner_group_id/runners"]["response"];
+    };
+    removeOrgAccessToSelfHostedRunnerGroupInEnterprise: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["DELETE /enterprises/:enterprise/actions/runner-groups/:runner_group_id/organizations/:org_id"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["DELETE /enterprises/:enterprise/actions/runner-groups/:runner_group_id/organizations/:org_id"]["response"];
+    };
+    removeSelfHostedRunnerFromGroupForEnterprise: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["DELETE /enterprises/:enterprise/actions/runner-groups/:runner_group_id/runners/:runner_id"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["DELETE /enterprises/:enterprise/actions/runner-groups/:runner_group_id/runners/:runner_id"]["response"];
+    };
+    setOrgAccessToSelfHostedRunnerGroupInEnterprise: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["PUT /enterprises/:enterprise/actions/runner-groups/:runner_group_id/organizations"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["PUT /enterprises/:enterprise/actions/runner-groups/:runner_group_id/organizations"]["response"];
+    };
+    setSelfHostedInGroupForEnterprise: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["PUT /enterprises/:enterprise/actions/runner-groups/:runner_group_id/runners"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["PUT /enterprises/:enterprise/actions/runner-groups/:runner_group_id/runners"]["response"];
+    };
+    updateSelfHostedRunnerGroupForEnterprise: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["PATCH /enterprises/:enterprise/actions/runner-groups/:runner_group_id"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["PATCH /enterprises/:enterprise/actions/runner-groups/:runner_group_id"]["response"];
     };
   };
   gists: {

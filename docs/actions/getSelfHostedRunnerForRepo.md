@@ -8,7 +8,10 @@ type: API method
 
 # Get a self-hosted runner for a repository
 
-Gets a specific self-hosted runner. You must authenticate using an access token with the `repo` scope to use this endpoint.
+Gets a specific self-hosted runner configured in a repository.
+
+You must authenticate using an access token with the `repo` scope to use this
+endpoint.
 
 ```js
 octokit.actions.getSelfHostedRunnerForRepo({
@@ -36,6 +39,8 @@ octokit.actions.getSelfHostedRunnerForRepo({
 
 </td></tr>
 <tr><td>runner_id</td><td>yes</td><td>
+
+Unique identifier of the self-hosted runner.
 
 </td></tr>
   </tbody>

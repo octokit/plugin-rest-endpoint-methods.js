@@ -10,7 +10,9 @@ type: API method
 
 **Warning:** The self-hosted runners API for organizations is currently in public beta and subject to change.
 
-Gets a specific self-hosted runner for an organization. You must authenticate using an access token with the `admin:org` scope to use this endpoint.
+Gets a specific self-hosted runner configured in an organization.
+
+You must authenticate using an access token with the `admin:org` scope to use this endpoint.
 
 ```js
 octokit.actions.getSelfHostedRunnerForOrg({
@@ -34,6 +36,8 @@ octokit.actions.getSelfHostedRunnerForOrg({
 
 </td></tr>
 <tr><td>runner_id</td><td>yes</td><td>
+
+Unique identifier of the self-hosted runner.
 
 </td></tr>
   </tbody>

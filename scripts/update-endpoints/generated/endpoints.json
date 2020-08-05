@@ -56,6 +56,62 @@
     "renamed": null
   },
   {
+    "name": "Add a self-hosted runner to a group for an organization",
+    "scope": "actions",
+    "id": "addSelfHostedRunnerToGroupForOrg",
+    "method": "PUT",
+    "url": "/orgs/{org}/actions/runner-groups/{runner_group_id}/runners/{runner_id}",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "description": "**Warning:** The self-hosted runner group API is currently in public beta and subject to change.\n\nThe self-hosted runner groups REST API is available with GitHub Enterprise Cloud and GitHub Enterprise Server. For more information, see \"[GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products).\"\n\nAdds a self-hosted runner to a runner group configured in an organization. \n\nYou must authenticate using an access token with the `admin:org`\nscope to use this endpoint.",
+    "documentationUrl": "https://developer.github.com/v3/actions/self-hosted-runner-groups/#add-a-self-hosted-runner-to-a-group-for-an-organization",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "org",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "runner_group_id",
+        "description": "Unique identifier of the self-hosted runner group.",
+        "in": "PATH",
+        "type": "integer",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "runner_id",
+        "description": "Unique identifier of the self-hosted runner.",
+        "in": "PATH",
+        "type": "integer",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [],
+    "renamed": null
+  },
+  {
     "name": "Cancel a workflow run",
     "scope": "actions",
     "id": "cancelWorkflowRun",
@@ -296,7 +352,7 @@
     "url": "/orgs/{org}/actions/runners/registration-token",
     "isDeprecated": false,
     "deprecationDate": null,
-    "description": "**Warning:** The self-hosted runners API for organizations is currently in public beta and subject to change.\n\n\nReturns a token that you can pass to the `config` script. The token expires after one hour. You must authenticate\nusing an access token with the `admin:org` scope to use this endpoint.\n\n#### Example using registration token\n\nConfigure your self-hosted runner, replacing `TOKEN` with the registration token provided by this endpoint.\n\n```\n./config.sh --url https://github.com/octo-org --token TOKEN\n```",
+    "description": "**Warning:** The self-hosted runners API for organizations is currently in public beta and subject to change.\n\nReturns a token that you can pass to the `config` script. The token expires after one hour. \n\nYou must authenticate using an access token with the `admin:org` scope to use this endpoint.\n\n#### Example using registration token\n\nConfigure your self-hosted runner, replacing `TOKEN` with the registration token provided by this endpoint.\n\n```\n./config.sh --url https://github.com/octo-org --token TOKEN\n```",
     "documentationUrl": "https://developer.github.com/v3/actions/self-hosted-runners/#create-a-registration-token-for-an-organization",
     "previews": [],
     "headers": [],
@@ -389,7 +445,7 @@
     "url": "/orgs/{org}/actions/runners/remove-token",
     "isDeprecated": false,
     "deprecationDate": null,
-    "description": "**Warning:** The self-hosted runners API for organizations is currently in public beta and subject to change.\n\n\nReturns a token that you can pass to the `config` script to remove a self-hosted runner from an organization. The\ntoken expires after one hour. You must authenticate using an access token with the `admin:org` scope to use this\nendpoint.\n\n#### Example using remove token\n\nTo remove your self-hosted runner from an organization, replace `TOKEN` with the remove token provided by this\nendpoint.\n\n```\n./config.sh remove --token TOKEN\n```",
+    "description": "**Warning:** The self-hosted runners API for organizations is currently in public beta and subject to change.\n\nReturns a token that you can pass to the `config` script to remove a self-hosted runner from an organization. The token expires after one hour. \n\nYou must authenticate using an access token with the `admin:org` scope to use this endpoint.\n\n#### Example using remove token\n\nTo remove your self-hosted runner from an organization, replace `TOKEN` with the remove token provided by this\nendpoint.\n\n```\n./config.sh remove --token TOKEN\n```",
     "documentationUrl": "https://developer.github.com/v3/actions/self-hosted-runners/#create-a-remove-token-for-an-organization",
     "previews": [],
     "headers": [],
@@ -468,6 +524,98 @@
         "examples": [
           {
             "data": "{\"token\":\"AABF3JGZDX3P5PMEXLND6TS6FCWO6\",\"expires_at\":\"2020-01-29T12:13:35.123-08:00\"}"
+          }
+        ]
+      }
+    ],
+    "renamed": null
+  },
+  {
+    "name": "Create a self-hosted runner group for an organization",
+    "scope": "actions",
+    "id": "createSelfHostedRunnerGroupForOrg",
+    "method": "POST",
+    "url": "/orgs/{org}/actions/runner-groups",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "description": "**Warning:** The self-hosted runner group API is currently in public beta and subject to change.\n\nThe self-hosted runner groups REST API is available with GitHub Enterprise Cloud and GitHub Enterprise Server. For more information, see \"[GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products).\"\n\nCreates a new self-hosted runner group for an organization. \n\nYou must authenticate using an access token with the `admin:org` scope to use this endpoint.",
+    "documentationUrl": "https://developer.github.com/v3/actions/self-hosted-runner-groups/#create-a-self-hosted-runner-group-for-an-organization",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "org",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "name",
+        "description": "Name of the runner group.",
+        "in": "BODY",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "visibility",
+        "description": "Visibility of a runner group. You can select all repositories, select individual repositories, or limit access to private repositories. Can be one of: `all`, `selected`, or `private`.",
+        "in": "BODY",
+        "type": "string",
+        "required": false,
+        "enum": ["selected", "all", "private"],
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "selected_repository_ids",
+        "description": "List of repository IDs that can access the runner group.",
+        "in": "BODY",
+        "type": "integer[]",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "runners",
+        "description": "List of runner IDs to add to the runner group.",
+        "in": "BODY",
+        "type": "integer[]",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      {
+        "code": 201,
+        "description": "response",
+        "examples": [
+          {
+            "data": "{\"id\":2,\"name\":\"octo-runner-group\",\"visibility\":\"selected\",\"default\":false,\"selected_repositories_url\":\"https://api.github.com/orgs/octo-org/actions/runner-groups/2/repositories\",\"runners_url\":\"https://api.github.com/orgs/octo-org/actions/runner_groups/2/runners\",\"inherited\":false}"
           }
         ]
       }
@@ -732,7 +880,7 @@
     "url": "/orgs/{org}/actions/runners/{runner_id}",
     "isDeprecated": false,
     "deprecationDate": null,
-    "description": "**Warning:** The self-hosted runners API for organizations is currently in public beta and subject to change.\n\nForces the removal of a self-hosted runner from an organization. You can use this endpoint to completely remove the runner when the machine you were using no longer exists. You must authenticate using an access token with the `admin:org` scope to use this endpoint.",
+    "description": "**Warning:** The self-hosted runners API for organizations is currently in public beta and subject to change.\n\nForces the removal of a self-hosted runner from an organization. You can use this endpoint to completely remove the runner when the machine you were using no longer exists. \n\nYou must authenticate using an access token with the `admin:org` scope to use this endpoint.",
     "documentationUrl": "https://developer.github.com/v3/actions/self-hosted-runners/#delete-a-self-hosted-runner-from-an-organization",
     "previews": [],
     "headers": [],
@@ -752,7 +900,7 @@
       },
       {
         "name": "runner_id",
-        "description": "",
+        "description": "Unique identifier of the self-hosted runner.",
         "in": "PATH",
         "type": "integer",
         "required": true,
@@ -775,7 +923,7 @@
     "url": "/repos/{owner}/{repo}/actions/runners/{runner_id}",
     "isDeprecated": false,
     "deprecationDate": null,
-    "description": "Forces the removal of a self-hosted runner from a repository. You can use this endpoint to completely remove the runner when the machine you were using no longer exists. You must authenticate using an access token with the `repo` scope to use this endpoint.",
+    "description": "Forces the removal of a self-hosted runner from a repository. You can use this endpoint to completely remove the runner when the machine you were using no longer exists. \n\nYou must authenticate using an access token with the `repo`\nscope to use this endpoint.",
     "documentationUrl": "https://developer.github.com/v3/actions/self-hosted-runners/#delete-a-self-hosted-runner-from-a-repository",
     "previews": [],
     "headers": [],
@@ -808,7 +956,50 @@
       },
       {
         "name": "runner_id",
+        "description": "Unique identifier of the self-hosted runner.",
+        "in": "PATH",
+        "type": "integer",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [],
+    "renamed": null
+  },
+  {
+    "name": "Delete a self-hosted runner group from an organization",
+    "scope": "actions",
+    "id": "deleteSelfHostedRunnerGroupFromOrg",
+    "method": "DELETE",
+    "url": "/orgs/{org}/actions/runner-groups/{runner_group_id}",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "description": "**Warning:** The self-hosted runner group API is currently in public beta and subject to change.\n\nThe self-hosted runner groups REST API is available with GitHub Enterprise Cloud and GitHub Enterprise Server. For more information, see \"[GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products).\"\n\nDeletes a self-hosted runner group for an organization. \n\nYou must authenticate using an access token with the `admin:org` scope to use this endpoint.",
+    "documentationUrl": "https://developer.github.com/v3/actions/self-hosted-runner-groups/#delete-a-self-hosted-runner-group-from-an-organization",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "org",
         "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "runner_group_id",
+        "description": "Unique identifier of the self-hosted runner group.",
         "in": "PATH",
         "type": "integer",
         "required": true,
@@ -1468,7 +1659,7 @@
     "url": "/orgs/{org}/actions/runners/{runner_id}",
     "isDeprecated": false,
     "deprecationDate": null,
-    "description": "**Warning:** The self-hosted runners API for organizations is currently in public beta and subject to change.\n\nGets a specific self-hosted runner for an organization. You must authenticate using an access token with the `admin:org` scope to use this endpoint.",
+    "description": "**Warning:** The self-hosted runners API for organizations is currently in public beta and subject to change.\n\nGets a specific self-hosted runner configured in an organization. \n\nYou must authenticate using an access token with the `admin:org` scope to use this endpoint.",
     "documentationUrl": "https://developer.github.com/v3/actions/self-hosted-runners/#get-a-self-hosted-runner-for-an-organization",
     "previews": [],
     "headers": [],
@@ -1488,7 +1679,7 @@
       },
       {
         "name": "runner_id",
-        "description": "",
+        "description": "Unique identifier of the self-hosted runner.",
         "in": "PATH",
         "type": "integer",
         "required": true,
@@ -1506,7 +1697,7 @@
         "description": "response",
         "examples": [
           {
-            "data": "{\"id\":23,\"name\":\"MBP\",\"os\":\"macos\",\"status\":\"online\",\"busy\":false}"
+            "data": "{\"id\":23,\"name\":\"mac_runner\",\"os\":\"macos\",\"status\":\"online\",\"busy\":true}"
           }
         ]
       }
@@ -1521,7 +1712,7 @@
     "url": "/repos/{owner}/{repo}/actions/runners/{runner_id}",
     "isDeprecated": false,
     "deprecationDate": null,
-    "description": "Gets a specific self-hosted runner. You must authenticate using an access token with the `repo` scope to use this endpoint.",
+    "description": "Gets a specific self-hosted runner configured in a repository. \n\nYou must authenticate using an access token with the `repo` scope to use this\nendpoint.",
     "documentationUrl": "https://developer.github.com/v3/actions/self-hosted-runners/#get-a-self-hosted-runner-for-a-repository",
     "previews": [],
     "headers": [],
@@ -1554,7 +1745,7 @@
       },
       {
         "name": "runner_id",
-        "description": "",
+        "description": "Unique identifier of the self-hosted runner.",
         "in": "PATH",
         "type": "integer",
         "required": true,
@@ -1572,7 +1763,60 @@
         "description": "response",
         "examples": [
           {
-            "data": "{\"id\":23,\"name\":\"MBP\",\"os\":\"macos\",\"status\":\"online\",\"busy\":false}"
+            "data": "{\"id\":23,\"name\":\"mac_runner\",\"os\":\"macos\",\"status\":\"online\",\"busy\":true}"
+          }
+        ]
+      }
+    ],
+    "renamed": null
+  },
+  {
+    "name": "Get a self-hosted runner group for an organization",
+    "scope": "actions",
+    "id": "getSelfHostedRunnerGroupForOrg",
+    "method": "GET",
+    "url": "/orgs/{org}/actions/runner-groups/{runner_group_id}",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "description": "**Warning:** The self-hosted runner group API is currently in public beta and subject to change.\n\nThe self-hosted runner groups REST API is available with GitHub Enterprise Cloud and GitHub Enterprise Server. For more information, see \"[GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products).\"\n\nGets a specific self-hosted runner group for an organization. \n\nYou must authenticate using an access token with the `admin:org` scope to use this endpoint.",
+    "documentationUrl": "https://developer.github.com/v3/actions/self-hosted-runner-groups/#get-a-self-hosted-runner-group-for-an-organization",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "org",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "runner_group_id",
+        "description": "Unique identifier of the self-hosted runner group.",
+        "in": "PATH",
+        "type": "integer",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "examples": [
+          {
+            "data": "{\"id\":2,\"name\":\"octo-runner-group\",\"visibility\":\"selected\",\"default\":false,\"selected_repositories_url\":\"https://api.github.com/orgs/octo-org/actions/runner_groups/2/repositories\",\"runners_url\":\"https://api.github.com/orgs/octo-org/actions/runner_groups/2/runners\",\"inherited\":false}"
           }
         ]
       }
@@ -2094,6 +2338,59 @@
     "renamed": null
   },
   {
+    "name": "List repository access to a self-hosted runner group in an organization",
+    "scope": "actions",
+    "id": "listRepoAccessToSelfHostedRunnerGroupInOrg",
+    "method": "GET",
+    "url": "/orgs/{org}/actions/runner-groups/{runner_group_id}/repositories",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "description": "**Warning:** The self-hosted runners API for organizations is currently in public beta and subject to change.\n\nThe self-hosted runner groups REST API is available with GitHub Enterprise Cloud and GitHub Enterprise Server. For more information, see \"[GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products).\"\n\nLists the repositories with access to a self-hosted runner group configured in an organization.  \n\nYou must authenticate using an access token with the `admin:org` scope to use this endpoint.",
+    "documentationUrl": "https://developer.github.com/v3/actions/self-hosted-runner-groups/#list-repository-access-to-a-self-hosted-runner-group-in-an-organization",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "org",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "runner_group_id",
+        "description": "Unique identifier of the self-hosted runner group.",
+        "in": "PATH",
+        "type": "integer",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "examples": [
+          {
+            "data": "{\"total_count\":1,\"repositories\":[{\"id\":1296269,\"node_id\":\"MDEwOlJlcG9zaXRvcnkxMjk2MjY5\",\"name\":\"Hello-World\",\"full_name\":\"octocat/Hello-World\",\"owner\":{\"login\":\"octocat\",\"id\":1,\"node_id\":\"MDQ6VXNlcjE=\",\"avatar_url\":\"https://github.com/images/error/octocat_happy.gif\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/octocat\",\"html_url\":\"https://github.com/octocat\",\"followers_url\":\"https://api.github.com/users/octocat/followers\",\"following_url\":\"https://api.github.com/users/octocat/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/octocat/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/octocat/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/octocat/subscriptions\",\"organizations_url\":\"https://api.github.com/users/octocat/orgs\",\"repos_url\":\"https://api.github.com/users/octocat/repos\",\"events_url\":\"https://api.github.com/users/octocat/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/octocat/received_events\",\"type\":\"User\",\"site_admin\":false},\"private\":false,\"html_url\":\"https://github.com/octocat/Hello-World\",\"description\":\"This your first repo!\",\"fork\":false,\"url\":\"https://api.github.com/repos/octocat/Hello-World\",\"archive_url\":\"http://api.github.com/repos/octocat/Hello-World/{archive_format}{/ref}\",\"assignees_url\":\"http://api.github.com/repos/octocat/Hello-World/assignees{/user}\",\"blobs_url\":\"http://api.github.com/repos/octocat/Hello-World/git/blobs{/sha}\",\"branches_url\":\"http://api.github.com/repos/octocat/Hello-World/branches{/branch}\",\"collaborators_url\":\"http://api.github.com/repos/octocat/Hello-World/collaborators{/collaborator}\",\"comments_url\":\"http://api.github.com/repos/octocat/Hello-World/comments{/number}\",\"commits_url\":\"http://api.github.com/repos/octocat/Hello-World/commits{/sha}\",\"compare_url\":\"http://api.github.com/repos/octocat/Hello-World/compare/{base}...{head}\",\"contents_url\":\"http://api.github.com/repos/octocat/Hello-World/contents/{+path}\",\"contributors_url\":\"http://api.github.com/repos/octocat/Hello-World/contributors\",\"deployments_url\":\"http://api.github.com/repos/octocat/Hello-World/deployments\",\"downloads_url\":\"http://api.github.com/repos/octocat/Hello-World/downloads\",\"events_url\":\"http://api.github.com/repos/octocat/Hello-World/events\",\"forks_url\":\"http://api.github.com/repos/octocat/Hello-World/forks\",\"git_commits_url\":\"http://api.github.com/repos/octocat/Hello-World/git/commits{/sha}\",\"git_refs_url\":\"http://api.github.com/repos/octocat/Hello-World/git/refs{/sha}\",\"git_tags_url\":\"http://api.github.com/repos/octocat/Hello-World/git/tags{/sha}\",\"git_url\":\"git:github.com/octocat/Hello-World.git\",\"issue_comment_url\":\"http://api.github.com/repos/octocat/Hello-World/issues/comments{/number}\",\"issue_events_url\":\"http://api.github.com/repos/octocat/Hello-World/issues/events{/number}\",\"issues_url\":\"http://api.github.com/repos/octocat/Hello-World/issues{/number}\",\"keys_url\":\"http://api.github.com/repos/octocat/Hello-World/keys{/key_id}\",\"labels_url\":\"http://api.github.com/repos/octocat/Hello-World/labels{/name}\",\"languages_url\":\"http://api.github.com/repos/octocat/Hello-World/languages\",\"merges_url\":\"http://api.github.com/repos/octocat/Hello-World/merges\",\"milestones_url\":\"http://api.github.com/repos/octocat/Hello-World/milestones{/number}\",\"notifications_url\":\"http://api.github.com/repos/octocat/Hello-World/notifications{?since,all,participating}\",\"pulls_url\":\"http://api.github.com/repos/octocat/Hello-World/pulls{/number}\",\"releases_url\":\"http://api.github.com/repos/octocat/Hello-World/releases{/id}\",\"ssh_url\":\"git@github.com:octocat/Hello-World.git\",\"stargazers_url\":\"http://api.github.com/repos/octocat/Hello-World/stargazers\",\"statuses_url\":\"http://api.github.com/repos/octocat/Hello-World/statuses/{sha}\",\"subscribers_url\":\"http://api.github.com/repos/octocat/Hello-World/subscribers\",\"subscription_url\":\"http://api.github.com/repos/octocat/Hello-World/subscription\",\"tags_url\":\"http://api.github.com/repos/octocat/Hello-World/tags\",\"teams_url\":\"http://api.github.com/repos/octocat/Hello-World/teams\",\"trees_url\":\"http://api.github.com/repos/octocat/Hello-World/git/trees{/sha}\",\"clone_url\":\"https://github.com/octocat/Hello-World.git\",\"mirror_url\":\"git:git.example.com/octocat/Hello-World\",\"hooks_url\":\"http://api.github.com/repos/octocat/Hello-World/hooks\",\"svn_url\":\"https://svn.github.com/octocat/Hello-World\",\"homepage\":\"https://github.com\",\"language\":null,\"forks_count\":9,\"stargazers_count\":80,\"watchers_count\":80,\"size\":108,\"default_branch\":\"master\",\"open_issues_count\":0,\"is_template\":true,\"topics\":[\"octocat\",\"atom\",\"electron\",\"api\"],\"has_issues\":true,\"has_projects\":true,\"has_wiki\":true,\"has_pages\":false,\"has_downloads\":true,\"archived\":false,\"disabled\":false,\"visibility\":\"public\",\"pushed_at\":\"2011-01-26T19:06:43Z\",\"created_at\":\"2011-01-26T19:01:12Z\",\"updated_at\":\"2011-01-26T19:14:43Z\",\"permissions\":{\"admin\":false,\"push\":false,\"pull\":true},\"allow_rebase_merge\":true,\"template_repository\":null,\"temp_clone_token\":\"ABTLWHOULUVAXGTRYU7OC2876QJ2O\",\"allow_squash_merge\":true,\"delete_branch_on_merge\":true,\"allow_merge_commit\":true,\"subscribers_count\":42,\"network_count\":0}]}"
+          }
+        ]
+      }
+    ],
+    "renamed": null
+  },
+  {
     "name": "List repository secrets",
     "scope": "actions",
     "id": "listRepoSecrets",
@@ -2259,7 +2556,7 @@
     "url": "/orgs/{org}/actions/runners/downloads",
     "isDeprecated": false,
     "deprecationDate": null,
-    "description": "**Warning:** The self-hosted runners API for organizations is currently in public beta and subject to change.\n\nLists binaries for the runner application that you can download and run. You must authenticate using an access token with the `admin:org` scope to use this endpoint.",
+    "description": "**Warning:** The self-hosted runners API for organizations is currently in public beta and subject to change.\n\nLists binaries for the runner application that you can download and run. \n\nYou must authenticate using an access token with the `admin:org` scope to use this endpoint.",
     "documentationUrl": "https://developer.github.com/v3/actions/self-hosted-runners/#list-runner-applications-for-an-organization",
     "previews": [],
     "headers": [],
@@ -2299,7 +2596,7 @@
     "url": "/repos/{owner}/{repo}/actions/runners/downloads",
     "isDeprecated": false,
     "deprecationDate": null,
-    "description": "Lists binaries for the runner application that you can download and run. You must authenticate using an access token with the `repo` scope to use this endpoint.",
+    "description": "Lists binaries for the runner application that you can download and run. \n\nYou must authenticate using an access token with the `repo` scope to use this endpoint.",
     "documentationUrl": "https://developer.github.com/v3/actions/self-hosted-runners/#list-runner-applications-for-a-repository",
     "previews": [],
     "headers": [],
@@ -2398,6 +2695,72 @@
     "renamed": null
   },
   {
+    "name": "List self-hosted runner groups for an organization",
+    "scope": "actions",
+    "id": "listSelfHostedRunnerGroupsForOrg",
+    "method": "GET",
+    "url": "/orgs/{org}/actions/runner-groups",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "description": "**Warning:** The self-hosted runner group API is currently in public beta and subject to change.\n\nThe self-hosted runner groups REST API is available with GitHub Enterprise Cloud and GitHub Enterprise Server. For more information, see \"[GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products).\"\n\nLists all self-hosted runner groups configured in an organization and inherited from an enterprise.\n\nYou must authenticate using an access token with the `admin:org` scope to use this endpoint.",
+    "documentationUrl": "https://developer.github.com/v3/actions/self-hosted-runner-groups/#list-self-hosted-runner-groups-for-an-organization",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "org",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "per_page",
+        "description": "Results per page (max 100)",
+        "in": "QUERY",
+        "type": "integer",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "page",
+        "description": "Page number of the results to fetch.",
+        "in": "QUERY",
+        "type": "integer",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "examples": [
+          {
+            "data": "{\"total_count\":3,\"runner_groups\":[{\"id\":1,\"name\":\"Default\",\"visibility\":\"all\",\"default\":true,\"runners_url\":\"https://api.github.com/orgs/octo-org/actions/runner_groups/1/runners\",\"inherited\":false},{\"id\":2,\"name\":\"octo-runner-group\",\"visibility\":\"selected\",\"default\":false,\"selected_repositories_url\":\"https://api.github.com/orgs/octo-org/actions/runner_groups/2/repositories\",\"runners_url\":\"https://api.github.com/orgs/octo-org/actions/runner_groups/2/runners\",\"inherited\":true},{\"id\":3,\"name\":\"expensive-hardware\",\"visibility\":\"private\",\"default\":false,\"runners_url\":\"https://api.github.com/orgs/octo-org/actions/runner_groups/3/runners\",\"inherited\":false}]}"
+          }
+        ]
+      }
+    ],
+    "renamed": null
+  },
+  {
     "name": "List self-hosted runners for an organization",
     "scope": "actions",
     "id": "listSelfHostedRunnersForOrg",
@@ -2405,7 +2768,7 @@
     "url": "/orgs/{org}/actions/runners",
     "isDeprecated": false,
     "deprecationDate": null,
-    "description": "**Warning:** The self-hosted runners API for organizations is currently in public beta and subject to change.\n\nLists all self-hosted runners for an organization. You must authenticate using an access token with the `admin:org` scope to use this endpoint.",
+    "description": "**Warning:** The self-hosted runners API for organizations is currently in public beta and subject to change.\n\nLists all self-hosted runners configured in an organization.\n\nYou must authenticate using an access token with the `admin:org` scope to use this endpoint.",
     "documentationUrl": "https://developer.github.com/v3/actions/self-hosted-runners/#list-self-hosted-runners-for-an-organization",
     "previews": [],
     "headers": [],
@@ -2456,7 +2819,7 @@
         "description": "response",
         "examples": [
           {
-            "data": "{\"total_count\":2,\"runners\":[{\"id\":23,\"name\":\"MBP\",\"os\":\"macos\",\"status\":\"online\",\"busy\":true},{\"id\":24,\"name\":\"iMac\",\"os\":\"macos\",\"status\":\"offline\",\"busy\":false}]}"
+            "data": "{\"total_count\":2,\"runners\":[{\"id\":23,\"name\":\"linux_runner\",\"os\":\"linux\",\"status\":\"online\",\"busy\":true},{\"id\":24,\"name\":\"mac_runner\",\"os\":\"macos\",\"status\":\"offline\",\"busy\":false}]}"
           }
         ]
       }
@@ -2471,7 +2834,7 @@
     "url": "/repos/{owner}/{repo}/actions/runners",
     "isDeprecated": false,
     "deprecationDate": null,
-    "description": "Lists all self-hosted runners for a repository. You must authenticate using an access token with the `repo` scope to use this endpoint.",
+    "description": "Lists all self-hosted runners configured in a repository. \nYou must authenticate using an access token with the `repo` scope to use this endpoint.",
     "documentationUrl": "https://developer.github.com/v3/actions/self-hosted-runners/#list-self-hosted-runners-for-a-repository",
     "previews": [],
     "headers": [],
@@ -2535,7 +2898,86 @@
         "description": "response",
         "examples": [
           {
-            "data": "{\"total_count\":2,\"runners\":[{\"id\":23,\"name\":\"MBP\",\"os\":\"macos\",\"status\":\"online\",\"busy\":true},{\"id\":24,\"name\":\"iMac\",\"os\":\"macos\",\"status\":\"offline\",\"busy\":false}]}"
+            "data": "{\"total_count\":2,\"runners\":[{\"id\":23,\"name\":\"linux_runner\",\"os\":\"linux\",\"status\":\"online\",\"busy\":true},{\"id\":24,\"name\":\"mac_runner\",\"os\":\"macos\",\"status\":\"offline\",\"busy\":false}]}"
+          }
+        ]
+      }
+    ],
+    "renamed": null
+  },
+  {
+    "name": "List self-hosted runners in a group for an organization",
+    "scope": "actions",
+    "id": "listSelfHostedRunnersInGroupForOrg",
+    "method": "GET",
+    "url": "/orgs/{org}/actions/runner-groups/{runner_group_id}/runners",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "description": "**Warning:** The self-hosted runner group API is currently in public beta and subject to change.\n\nThe self-hosted runner groups REST API is available with GitHub Enterprise Cloud and GitHub Enterprise Server. For more information, see \"[GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products).\"\n\nLists self-hosted runners that are in a specific organization group.\n\nYou must authenticate using an access token with the `admin:org` scope to use this endpoint.",
+    "documentationUrl": "https://developer.github.com/v3/actions/self-hosted-runner-groups/#list-self-hosted-runners-in-a-group-for-an-organization",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "org",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "runner_group_id",
+        "description": "Unique identifier of the self-hosted runner group.",
+        "in": "PATH",
+        "type": "integer",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "per_page",
+        "description": "Results per page (max 100)",
+        "in": "QUERY",
+        "type": "integer",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "page",
+        "description": "Page number of the results to fetch.",
+        "in": "QUERY",
+        "type": "integer",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "examples": [
+          {
+            "data": "{\"total_count\":2,\"runners\":[{\"id\":23,\"name\":\"linux_runner\",\"os\":\"linux\",\"status\":\"online\",\"busy\":true},{\"id\":24,\"name\":\"mac_runner\",\"os\":\"macos\",\"status\":\"offline\",\"busy\":false}]}"
           }
         ]
       }
@@ -2966,6 +3408,62 @@
     "renamed": null
   },
   {
+    "name": "Remove repository access to a self-hosted runner group in an organization",
+    "scope": "actions",
+    "id": "removeRepoAccessToSelfHostedRunnerGroupInOrg",
+    "method": "DELETE",
+    "url": "/orgs/{org}/actions/runner-groups/{runner_group_id}/repositories/{repository_id}",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "description": "**Warning:** The self-hosted runners API for organizations is currently in public beta and subject to change.\n\nThe self-hosted runner groups REST API is available with GitHub Enterprise Cloud and GitHub Enterprise Server. For more information, see \"[GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products).\"\n\nRemoves a repository from the list of selected repositories that can access a self-hosted runner group. The runner group must have `visibility` set to `selected`. For more information, see \"[Create a self-hosted runner group for an organization](#create-a-self-hosted-runner-group-for-an-organization).\"\n\nYou must authenticate using an access token with the `admin:org` scope to use this endpoint.",
+    "documentationUrl": "https://developer.github.com/v3/actions/self-hosted-runner-groups/#remove-repository-access-to-a-self-hosted-runner-group-in-an-organization",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "org",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "runner_group_id",
+        "description": "Unique identifier of the self-hosted runner group.",
+        "in": "PATH",
+        "type": "integer",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "repository_id",
+        "description": "",
+        "in": "PATH",
+        "type": "integer",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [],
+    "renamed": null
+  },
+  {
     "name": "Remove selected repository from an organization secret",
     "scope": "actions",
     "id": "removeSelectedRepoFromOrgSecret",
@@ -3009,6 +3507,118 @@
         "description": "",
         "in": "PATH",
         "type": "integer",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [],
+    "renamed": null
+  },
+  {
+    "name": "Remove a self-hosted runner from a group for an organization",
+    "scope": "actions",
+    "id": "removeSelfHostedRunnerFromGroupForOrg",
+    "method": "DELETE",
+    "url": "/orgs/{org}/actions/runner-groups/{runner_group_id}/runners/{runner_id}",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "description": "**Warning:** The self-hosted runner group API is currently in public beta and subject to change.\n\nThe self-hosted runner groups REST API is available with GitHub Enterprise Cloud and GitHub Enterprise Server. For more information, see \"[GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products).\"\n\nRemoves a self-hosted runner from a group configured in an organization. The runner is then returned to the default group.\n\nYou must authenticate using an access token with the `admin:org` scope to use this endpoint.",
+    "documentationUrl": "https://developer.github.com/v3/actions/self-hosted-runner-groups/#remove-a-self-hosted-runner-from-a-group-for-an-organization",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "org",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "runner_group_id",
+        "description": "Unique identifier of the self-hosted runner group.",
+        "in": "PATH",
+        "type": "integer",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "runner_id",
+        "description": "Unique identifier of the self-hosted runner.",
+        "in": "PATH",
+        "type": "integer",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [],
+    "renamed": null
+  },
+  {
+    "name": "Set repository access for a self-hosted runner group in an organization",
+    "scope": "actions",
+    "id": "setRepoAccessToSelfHostedRunnerGroupInOrg",
+    "method": "PUT",
+    "url": "/orgs/{org}/actions/runner-groups/{runner_group_id}/repositories",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "description": "**Warning:** The self-hosted runners API for organizations is currently in public beta and subject to change.\n\nThe self-hosted runner groups REST API is available with GitHub Enterprise Cloud and GitHub Enterprise Server. For more information, see \"[GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products).\"\n\nReplaces the list of repositories that have access to a self-hosted runner group configured in an organization.\n\nYou must authenticate using an access token with the `admin:org` scope to use this endpoint.",
+    "documentationUrl": "https://developer.github.com/v3/actions/self-hosted-runner-groups/#set-repository-access-to-a-self-hosted-runner-group-in-an-organization",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "org",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "runner_group_id",
+        "description": "Unique identifier of the self-hosted runner group.",
+        "in": "PATH",
+        "type": "integer",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "selected_repository_ids",
+        "description": "List of repository IDs that can access the runner group.",
+        "in": "BODY",
+        "type": "integer[]",
         "required": true,
         "enum": null,
         "allowNull": false,
@@ -3075,6 +3685,141 @@
       }
     ],
     "responses": [],
+    "renamed": null
+  },
+  {
+    "name": "Set self-hosted runners in a group for an organization",
+    "scope": "actions",
+    "id": "setSelfHostedRunnersInGroupForOrg",
+    "method": "PUT",
+    "url": "/orgs/{org}/actions/runner-groups/{runner_group_id}/runners",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "description": "**Warning:** The self-hosted runner group API is currently in public beta and subject to change.\n\nThe self-hosted runner groups REST API is available with GitHub Enterprise Cloud and GitHub Enterprise Server. For more information, see \"[GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products).\"\n\nReplaces the list of self-hosted runners that are part of an organization runner group. \n\nYou must authenticate using an access token with the `admin:org` scope to use this endpoint.",
+    "documentationUrl": "https://developer.github.com/v3/actions/sef-hosted-runner-groups/#set-self-hosted-runners-in-a-group-for-an-organization",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "org",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "runner_group_id",
+        "description": "Unique identifier of the self-hosted runner group.",
+        "in": "PATH",
+        "type": "integer",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "runners",
+        "description": "List of runner IDs to add to the runner group.",
+        "in": "BODY",
+        "type": "integer[]",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [],
+    "renamed": null
+  },
+  {
+    "name": "Update a self-hosted runner group for an organization",
+    "scope": "actions",
+    "id": "updateSelfHostedRunnerGroupForOrg",
+    "method": "PATCH",
+    "url": "/orgs/{org}/actions/runner-groups/{runner_group_id}",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "description": "**Warning:** The self-hosted runner group API is currently in public beta and subject to change.\n\nThe self-hosted runner groups REST API is available with GitHub Enterprise Cloud and GitHub Enterprise Server. For more information, see \"[GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products).\"\n\nUpdates the `name` and `visibility` of a self-hosted runner group in an organization. \n\nYou must authenticate using an access token with the `admin:org` scope to use this endpoint.",
+    "documentationUrl": "https://developer.github.com/v3/actions/self-hosted-runner-groups/#update-a-self-hosted-runner-group-for-an-organization",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "org",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "runner_group_id",
+        "description": "Unique identifier of the self-hosted runner group.",
+        "in": "PATH",
+        "type": "integer",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "name",
+        "description": "Name of the runner group.",
+        "in": "BODY",
+        "type": "string",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "visibility",
+        "description": "Visibility of a runner group. You can select all repositories, select individual repositories, or all private repositories. Can be one of: `all`, `selected`, or `private`.",
+        "in": "BODY",
+        "type": "string",
+        "required": false,
+        "enum": ["selected", "all", "private"],
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "examples": [
+          {
+            "data": "{\"id\":2,\"name\":\"octo-runner-group\",\"visibility\":\"selected\",\"default\":false,\"selected_repositories_url\":\"https://api.github.com/orgs/octo-org/actions/runner-groups/2/repositories\",\"runners_url\":\"https://api.github.com/orgs/octo-org/actions/runner_groups/2/runners\",\"inherited\":false}"
+          }
+        ]
+      }
+    ],
     "renamed": null
   },
   {
@@ -9043,6 +9788,1115 @@
     "headers": [],
     "parameters": [],
     "responses": [],
+    "renamed": null
+  },
+  {
+    "name": "Add organization access to a self-hosted runner group in an enterprise",
+    "scope": "enterpriseAdmin",
+    "id": "addOrgAccessToSelfHostedRunnerGroupInEnterprise",
+    "method": "PUT",
+    "url": "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/organizations/{org_id}",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "description": "**Warning:** The self-hosted runners API for enterprises is currently in public beta and subject to change.\n\nAdds an organization to the list of selected organizations that can access a self-hosted runner group. The runner group must have `visibility` set to `selected`. For more information, see \"[Create a self-hosted runner group for an enterprise](#create-a-self-hosted-runner-group-for-an-enterprise).\"\n\nYou must authenticate using an access token with the `admin:enterprise` scope to use this endpoint.",
+    "documentationUrl": "https://developer.github.com/v3/enterprise-admin/actions/#add-organization-access-to-a-self-hosted-runner-group-in-an-enterprise",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "enterprise",
+        "description": "The slug version of the enterprise name. You can also substitute this value with the enterprise id.",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "runner_group_id",
+        "description": "Unique identifier of the self-hosted runner group.",
+        "in": "PATH",
+        "type": "integer",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "org_id",
+        "description": "Unique identifier of an organization.",
+        "in": "PATH",
+        "type": "integer",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [],
+    "renamed": null
+  },
+  {
+    "name": "Add a self-hosted runner to a group for an enterprise",
+    "scope": "enterpriseAdmin",
+    "id": "addSelfHostedRunnerToRunnerGroupForEnterprise",
+    "method": "PUT",
+    "url": "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/runners/{runner_id}",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "description": "**Warning:** The self-hosted runner API for enterprise accounts is currently in public beta and subject to change.\n\nAdds a self-hosted runner to a runner group configured in an enterprise. \n\nYou must authenticate using an access token with the `admin:enterprise`\nscope to use this endpoint.",
+    "documentationUrl": "https://developer.github.com/v3/enterprise-admin/actions/#add-a-self-hosted-runner-to-a-group-for-an-enterprise",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "enterprise",
+        "description": "The slug version of the enterprise name. You can also substitute this value with the enterprise id.",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "runner_group_id",
+        "description": "Unique identifier of the self-hosted runner group.",
+        "in": "PATH",
+        "type": "integer",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "runner_id",
+        "description": "Unique identifier of the self-hosted runner.",
+        "in": "PATH",
+        "type": "integer",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [],
+    "renamed": null
+  },
+  {
+    "name": "Create a registration token for an enterprise",
+    "scope": "enterpriseAdmin",
+    "id": "createRegistrationTokenForEnterprise",
+    "method": "POST",
+    "url": "/enterprises/{enterprise}/actions/runners/registration-token",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "description": "**Warning:** The self-hosted runners API for enterprise accounts is currently in public beta and subject to change.\n\nReturns a token that you can pass to the `config` script. The token expires after one hour. \n\nYou must authenticate using an access token with the `admin:enterprise` scope to use this endpoint.\n\n#### Example using registration token\n\nConfigure your self-hosted runner, replacing `TOKEN` with the registration token provided by this endpoint.\n\n```\n./config.sh --url https://github.com/enterpises/octo-enterprise --token TOKEN\n```",
+    "documentationUrl": "https://developer.github.com/v3/enterprise-admin/actions/#create-a-registration-token-for-an-enterprise",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "enterprise",
+        "description": "The slug version of the enterprise name. You can also substitute this value with the enterprise id.",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      {
+        "code": 201,
+        "description": "response",
+        "examples": [
+          {
+            "data": "{\"token\":\"LLBF3JGZDX3P5PMEXLND6TS6FCWO6\",\"expires_at\":\"2020-01-22T12:13:35.123-08:00\"}"
+          }
+        ]
+      }
+    ],
+    "renamed": null
+  },
+  {
+    "name": "Create a remove token for an enterprise",
+    "scope": "enterpriseAdmin",
+    "id": "createRemoveTokenForEnterprise",
+    "method": "POST",
+    "url": "/enterprises/{enterprise}/actions/runners/remove-token",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "description": "**Warning:** The self-hosted runners API for enterprise accounts is currently in public beta and subject to change.\n\nReturns a token that you can pass to the `config` script to remove a self-hosted runner from an enterprise. The token expires after one hour. \n\nYou must authenticate using an access token with the `admin:enterprise` scope to use this endpoint.\n\n#### Example using remove token\n\nTo remove your self-hosted runner from an enterprise, replace `TOKEN` with the remove token provided by this\nendpoint.\n\n```\n./config.sh remove --token TOKEN\n```",
+    "documentationUrl": "https://developer.github.com/v3/enterprise-admin/actions/#create-a-remove-token-for-an-enterprise",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "enterprise",
+        "description": "The slug version of the enterprise name. You can also substitute this value with the enterprise id.",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      {
+        "code": 201,
+        "description": "response",
+        "examples": [
+          {
+            "data": "{\"token\":\"AABF3JGZDX3P5PMEXLND6TS6FCWO6\",\"expires_at\":\"2020-01-29T12:13:35.123-08:00\"}"
+          }
+        ]
+      }
+    ],
+    "renamed": null
+  },
+  {
+    "name": "Create a self-hosted runner group for an enterprise",
+    "scope": "enterpriseAdmin",
+    "id": "createSelfHostedRunnerGroupForEnterprise",
+    "method": "POST",
+    "url": "/enterprises/{enterprise}/actions/runner-groups",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "description": "**Warning:** The self-hosted runners API for enterprise accounts is currently in public beta and subject to change.\n\nCreates a new self-hosted runner group for an enterprise. \n\nYou must authenticate using an access token with the `admin:enterprise` scope to use this endpoint.",
+    "documentationUrl": "https://developer.github.com/v3/enterprise-admin/actions/#create-self-hosted-runner-group-for-an-enterprise",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "enterprise",
+        "description": "The slug version of the enterprise name. You can also substitute this value with the enterprise id.",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "name",
+        "description": "Name of the runner group.",
+        "in": "BODY",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "visibility",
+        "description": "Visibility of a runner group. You can select all organizations or select individual organization. Can be one of: `all` or `selected`",
+        "in": "BODY",
+        "type": "string",
+        "required": false,
+        "enum": ["selected", "all"],
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "selected_organization_ids",
+        "description": "List of organization IDs that can access the runner group.",
+        "in": "BODY",
+        "type": "integer[]",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "runners",
+        "description": "List of runner IDs to add to the runner group.",
+        "in": "BODY",
+        "type": "integer[]",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      {
+        "code": 201,
+        "description": "response",
+        "examples": [
+          {
+            "data": "{\"id\":2,\"name\":\"octo-runner-group\",\"visibility\":\"selected\",\"default\":false,\"selected_organizations_url\":\"https://api.github.com/enterprises/octo-corp/actions/runner-groups/2/organizations\",\"runners_url\":\"https://api.github.com/enterprises/octo-corp/actions/runner-groups/2/runners\"}"
+          }
+        ]
+      }
+    ],
+    "renamed": null
+  },
+  {
+    "name": "Delete a self-hosted runner from an enterprise",
+    "scope": "enterpriseAdmin",
+    "id": "deleteSelfHostedRunnerFromEnterprise",
+    "method": "DELETE",
+    "url": "/enterprises/{enterprise}/actions/runners/{runner_id}",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "description": "**Warning:** The self-hosted runners API for enterprise accounts is currently in public beta and subject to change.\n\nForces the removal of a self-hosted runner from an enterprise. You can use this endpoint to completely remove the runner when the machine you were using no longer exists.\n\nYou must authenticate using an access token with the `admin:enterprise` scope to use this endpoint.",
+    "documentationUrl": "https://developer.github.com/v3/enterprise-admin/actions/#delete-self-hosted-runner-from-an-enterprise",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "enterprise",
+        "description": "The slug version of the enterprise name. You can also substitute this value with the enterprise id.",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "runner_id",
+        "description": "Unique identifier of the self-hosted runner.",
+        "in": "PATH",
+        "type": "integer",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [],
+    "renamed": null
+  },
+  {
+    "name": "Delete a self-hosted runner group from an enterprise",
+    "scope": "enterpriseAdmin",
+    "id": "deleteSelfHostedRunnerGroupFromEnterprise",
+    "method": "DELETE",
+    "url": "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "description": "**Warning:** The self-hosted runners API for enterprise accounts is currently in public beta and subject to change.\n\nDeletes a self-hosted runner group for an enterprise. \n\nYou must authenticate using an access token with the `admin:enterprise` scope to use this endpoint.",
+    "documentationUrl": "https://developer.github.com/v3/enterprise-admin/actions/#delete-a-self-hosted-runner-group-from-an-enterprise",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "enterprise",
+        "description": "The slug version of the enterprise name. You can also substitute this value with the enterprise id.",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "runner_group_id",
+        "description": "Unique identifier of the self-hosted runner group.",
+        "in": "PATH",
+        "type": "integer",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [],
+    "renamed": null
+  },
+  {
+    "name": "Get a self-hosted runner for an enterprise",
+    "scope": "enterpriseAdmin",
+    "id": "getSelfHostedRunnerForEnterprise",
+    "method": "GET",
+    "url": "/enterprises/{enterprise}/actions/runners/{runner_id}",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "description": "**Warning:** The self-hosted runners API for enterprise accounts is currently in public beta and subject to change.\n\nGets a specific self-hosted runner configured in an enterprise. \n\nYou must authenticate using an access token with the `admin:enterprise` scope to use this endpoint.",
+    "documentationUrl": "https://developer.github.com/v3/enterprise-admin/actions/#get-a-self-hosted-runner-for-an-enterprise",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "enterprise",
+        "description": "The slug version of the enterprise name. You can also substitute this value with the enterprise id.",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "runner_id",
+        "description": "Unique identifier of the self-hosted runner.",
+        "in": "PATH",
+        "type": "integer",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "examples": [
+          {
+            "data": "{\"id\":23,\"name\":\"mac_runner\",\"os\":\"macos\",\"status\":\"online\",\"busy\":true}"
+          }
+        ]
+      }
+    ],
+    "renamed": null
+  },
+  {
+    "name": "Get a self-hosted runner group for an enterprise",
+    "scope": "enterpriseAdmin",
+    "id": "getSelfHostedRunnerGroupForEnterprise",
+    "method": "GET",
+    "url": "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "description": "**Warning:** The self-hosted runners API for enterprise accounts is currently in public beta and subject to change.\n\nGets a specific self-hosted runner group for an enterprise. \n\nYou must authenticate using an access token with the `admin:enterprise` scope to use this endpoint.",
+    "documentationUrl": "https://developer.github.com/v3/enterprise-admin/actions/#get-a-self-hosted-runner-group-for-an-enterprise",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "enterprise",
+        "description": "The slug version of the enterprise name. You can also substitute this value with the enterprise id.",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "runner_group_id",
+        "description": "Unique identifier of the self-hosted runner group.",
+        "in": "PATH",
+        "type": "integer",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "examples": [
+          {
+            "data": "{\"id\":2,\"name\":\"octo-runner-group\",\"visibility\":\"selected\",\"default\":false,\"selected_organizations_url\":\"https://api.github.com/enterprises/octo-corp/actions/runner-groups/2/organizations\",\"runners_url\":\"https://api.github.com/enterprises/octo-corp/actions/runner-groups/2/runners\"}"
+          }
+        ]
+      }
+    ],
+    "renamed": null
+  },
+  {
+    "name": "List organization access to a self-hosted runner group in an enterprise",
+    "scope": "enterpriseAdmin",
+    "id": "listOrgAccessToSelfHostedRunnerGroupInEnterprise",
+    "method": "GET",
+    "url": "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/organizations",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "description": "**Warning:** The self-hosted runners API for enterprises is currently in public beta and subject to change.\n\nLists the organizations with access to a self-hosted runner group. \n\nYou must authenticate using an access token with the `admin:enterprise` scope to use this endpoint.",
+    "documentationUrl": "https://developer.github.com/v3/enterprise-admin/actions/#list-organization-access-to-a-self-hosted-runner-group-in-a-enterprise",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "enterprise",
+        "description": "The slug version of the enterprise name. You can also substitute this value with the enterprise id.",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "runner_group_id",
+        "description": "Unique identifier of the self-hosted runner group.",
+        "in": "PATH",
+        "type": "integer",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "per_page",
+        "description": "Results per page (max 100)",
+        "in": "QUERY",
+        "type": "integer",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "page",
+        "description": "Page number of the results to fetch.",
+        "in": "QUERY",
+        "type": "integer",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "examples": [
+          {
+            "data": "{\"total_count\":1,\"organizations\":[{\"login\":\"octocat\",\"id\":161335,\"node_id\":\"MDEwOlJlcG9zaXRvcnkxMjk2MjY5\",\"url\":\"https://api.github.com/orgs/octo-org\",\"repos_url\":\"https://api.github.com/orgs/octo-org/repos\",\"events_url\":\"https://api.github.com/orgs/octo-org/events\",\"hooks_url\":\"https://api.github.com/orgs/octo-org/hooks\",\"issues_url\":\"https://api.github.com/orgs/octo-org/issues\",\"members_url\":\"https://api.github.com/orgs/octo-org/members{/member}\",\"public_members_url\":\"https://api.github.com/orgs/octo-org/public_members{/member}\",\"avatar_url\":\"https://github.com/images/error/octocat_happy.gif\",\"description\":\"A great organization\"}]}"
+          }
+        ]
+      }
+    ],
+    "renamed": null
+  },
+  {
+    "name": "List runner applications for an enterprise",
+    "scope": "enterpriseAdmin",
+    "id": "listRunnerApplicationsForEnterprise",
+    "method": "GET",
+    "url": "/enterprises/{enterprise}/actions/runners/downloads",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "description": "**Warning:** The self-hosted runners API for enterprise accounts is currently in public beta and subject to change.\n\nLists binaries for the runner application that you can download and run. \n\nYou must authenticate using an access token with the `admin:enterprise` scope to use this endpoint.",
+    "documentationUrl": "https://developer.github.com/v3/enterprise-admin/actions/#list-runner-applications-for-an-enterprise",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "enterprise",
+        "description": "The slug version of the enterprise name. You can also substitute this value with the enterprise id.",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "examples": [
+          {
+            "data": "[{\"os\":\"osx\",\"architecture\":\"x64\",\"download_url\":\"https://github.com/actions/runner/releases/download/v2.164.0/actions-runner-osx-x64-2.164.0.tar.gz\",\"filename\":\"actions-runner-osx-x64-2.164.0.tar.gz\"},{\"os\":\"linux\",\"architecture\":\"x64\",\"download_url\":\"https://github.com/actions/runner/releases/download/v2.164.0/actions-runner-linux-x64-2.164.0.tar.gz\",\"filename\":\"actions-runner-linux-x64-2.164.0.tar.gz\"},{\"os\":\"linux\",\"architecture\":\"arm\",\"download_url\":\"https://github.com/actions/runner/releases/download/v2.164.0/actions-runner-linux-arm-2.164.0.tar.gz\",\"filename\":\"actions-runner-linux-arm-2.164.0.tar.gz\"},{\"os\":\"win\",\"architecture\":\"x64\",\"download_url\":\"https://github.com/actions/runner/releases/download/v2.164.0/actions-runner-win-x64-2.164.0.zip\",\"filename\":\"actions-runner-win-x64-2.164.0.zip\"},{\"os\":\"linux\",\"architecture\":\"arm64\",\"download_url\":\"https://github.com/actions/runner/releases/download/v2.164.0/actions-runner-linux-arm64-2.164.0.tar.gz\",\"filename\":\"actions-runner-linux-arm64-2.164.0.tar.gz\"}]"
+          }
+        ]
+      }
+    ],
+    "renamed": null
+  },
+  {
+    "name": "List self-hosted runner groups for an enterprise",
+    "scope": "enterpriseAdmin",
+    "id": "listSelfHostedRunnerGroupsForEnterprise",
+    "method": "GET",
+    "url": "/enterprises/{enterprise}/actions/runner-groups",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "description": "**Warning:** The self-hosted runners API for enterprise accounts is currently in public beta and subject to change.\n\nLists all self-hosted runner groups for an enterprise. \n\nYou must authenticate using an access token with the `admin:enterprise` scope to use this endpoint.",
+    "documentationUrl": "https://developer.github.com/v3/enterprise-admin/actions/#list-self-hosted-runner-groups-for-an-enterprise",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "enterprise",
+        "description": "The slug version of the enterprise name. You can also substitute this value with the enterprise id.",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "per_page",
+        "description": "Results per page (max 100)",
+        "in": "QUERY",
+        "type": "integer",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "page",
+        "description": "Page number of the results to fetch.",
+        "in": "QUERY",
+        "type": "integer",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "examples": [
+          {
+            "data": "{\"total_count\":3,\"runner_groups\":[{\"id\":1,\"name\":\"Default\",\"visibility\":\"all\",\"default\":true,\"runners_url\":\"https://api.github.com/enterprises/octo-corp/actions/runner_groups/1/runners\"},{\"id\":2,\"name\":\"octo-runner-group\",\"visibility\":\"selected\",\"default\":false,\"selected_organizations_url\":\"https://api.github.com/enterprises/octo-corp/actions/runner_groups/2/organizations\",\"runners_url\":\"https://api.github.com/enterprises/octo-corp/actions/runner_groups/2/runners\"},{\"id\":3,\"name\":\"expensive-hardware\",\"visibility\":\"private\",\"default\":false,\"runners_url\":\"https://api.github.com/enterprises/octo-corp/actions/runner_groups/3/runners\"}]}"
+          }
+        ]
+      }
+    ],
+    "renamed": null
+  },
+  {
+    "name": "List self-hosted runners for an enterprise",
+    "scope": "enterpriseAdmin",
+    "id": "listSelfHostedRunnersForEnterprise",
+    "method": "GET",
+    "url": "/enterprises/{enterprise}/actions/runners",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "description": "**Warning:** The self-hosted runners API for enterprise accounts is currently in public beta and subject to change.\n\nLists all self-hosted runners configured for an enterprise. \n\nYou must authenticate using an access token with the `admin:enterprise` scope to use this endpoint.",
+    "documentationUrl": "https://developer.github.com/v3/enterprise-admin/actions/#list-self-hosted-runners-for-an-enterprise",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "enterprise",
+        "description": "The slug version of the enterprise name. You can also substitute this value with the enterprise id.",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "per_page",
+        "description": "Results per page (max 100)",
+        "in": "QUERY",
+        "type": "integer",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "page",
+        "description": "Page number of the results to fetch.",
+        "in": "QUERY",
+        "type": "integer",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "examples": [
+          {
+            "data": "{\"total_count\":2,\"runners\":[{\"id\":23,\"name\":\"linux_runner\",\"os\":\"linux\",\"status\":\"online\",\"busy\":true},{\"id\":24,\"name\":\"mac_runner\",\"os\":\"macos\",\"status\":\"offline\",\"busy\":false}]}"
+          }
+        ]
+      }
+    ],
+    "renamed": null
+  },
+  {
+    "name": "List self-hosted runners in a group for an enterprise",
+    "scope": "enterpriseAdmin",
+    "id": "listSelfHostedRunnersInGroupForEnterprise",
+    "method": "GET",
+    "url": "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/runners",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "description": "**Warning:** The self-hosted runners API for enterprise accounts is currently in public beta and subject to change.\n\nLists the self-hosted runners that are in a specific enterprise group. \n\nYou must authenticate using an access token with the `admin:enterprise` scope to use this endpoint.",
+    "documentationUrl": "https://developer.github.com/v3/enterprise-admin/actions/#list-self-hosted-runners-in-a-group-for-an-enterprise",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "enterprise",
+        "description": "The slug version of the enterprise name. You can also substitute this value with the enterprise id.",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "runner_group_id",
+        "description": "Unique identifier of the self-hosted runner group.",
+        "in": "PATH",
+        "type": "integer",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "per_page",
+        "description": "Results per page (max 100)",
+        "in": "QUERY",
+        "type": "integer",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "page",
+        "description": "Page number of the results to fetch.",
+        "in": "QUERY",
+        "type": "integer",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "examples": [
+          {
+            "data": "{\"total_count\":2,\"runners\":[{\"id\":23,\"name\":\"linux_runner\",\"os\":\"linux\",\"status\":\"online\",\"busy\":true},{\"id\":24,\"name\":\"mac_runner\",\"os\":\"macos\",\"status\":\"offline\",\"busy\":false}]}"
+          }
+        ]
+      }
+    ],
+    "renamed": null
+  },
+  {
+    "name": "Remove organization access to a self-hosted runner group in an enterprise",
+    "scope": "enterpriseAdmin",
+    "id": "removeOrgAccessToSelfHostedRunnerGroupInEnterprise",
+    "method": "DELETE",
+    "url": "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/organizations/{org_id}",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "description": "**Warning:** The self-hosted runners API for enterprises is currently in public beta and subject to change.\n\nRemoves an organization from the list of selected organizations that can access a self-hosted runner group. The runner group must have `visibility` set to `selected`. For more information, see \"[Create a self-hosted runner group for an enterprise](#create-a-self-hosted-runner-group-for-an-enterprise).\"\n\nYou must authenticate using an access token with the `admin:enterprise` scope to use this endpoint.",
+    "documentationUrl": "https://developer.github.com/v3/enterprise-admin/actions/#remove-organization-access-to-a-self-hosted-runner-group-in-an-enterprise",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "enterprise",
+        "description": "The slug version of the enterprise name. You can also substitute this value with the enterprise id.",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "runner_group_id",
+        "description": "Unique identifier of the self-hosted runner group.",
+        "in": "PATH",
+        "type": "integer",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "org_id",
+        "description": "Unique identifier of an organization.",
+        "in": "PATH",
+        "type": "integer",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [],
+    "renamed": null
+  },
+  {
+    "name": "Remove a self-hosted runner from a group for an enterprise",
+    "scope": "enterpriseAdmin",
+    "id": "removeSelfHostedRunnerFromGroupForEnterprise",
+    "method": "DELETE",
+    "url": "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/runners/{runner_id}",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "description": "**Warning:** The self-hosted runners API for enterprise accounts is currently in public beta and subject to change.\n\nRemoves a self-hosted runner from a group configured in an enterprise. The runner is then returned to the default group.\n\nYou must authenticate using an access token with the `admin:enterprise` scope to use this endpoint.",
+    "documentationUrl": "https://developer.github.com/v3/enterprise-admin/actions/#remove-a-self-hosted-runner-from-a-group-for-an-enterprise",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "enterprise",
+        "description": "The slug version of the enterprise name. You can also substitute this value with the enterprise id.",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "runner_group_id",
+        "description": "Unique identifier of the self-hosted runner group.",
+        "in": "PATH",
+        "type": "integer",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "runner_id",
+        "description": "Unique identifier of the self-hosted runner.",
+        "in": "PATH",
+        "type": "integer",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [],
+    "renamed": null
+  },
+  {
+    "name": "Set organization access for a self-hosted runner group in an enterprise",
+    "scope": "enterpriseAdmin",
+    "id": "setOrgAccessToSelfHostedRunnerGroupInEnterprise",
+    "method": "PUT",
+    "url": "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/organizations",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "description": "**Warning:** The self-hosted runners API for enterprises is currently in public beta and subject to change.\n\nReplaces the list of organizations that have access to a self-hosted runner group configured in an enterprise.\n\nYou must authenticate using an access token with the `admin:enterprise` scope to use this endpoint.",
+    "documentationUrl": "https://developer.github.com/v3/enterprise-admin/actions/#set-organization-access-to-a-self-hosted-runner-group-in-an-enterprise",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "enterprise",
+        "description": "The slug version of the enterprise name. You can also substitute this value with the enterprise id.",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "runner_group_id",
+        "description": "Unique identifier of the self-hosted runner group.",
+        "in": "PATH",
+        "type": "integer",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "selected_organization_ids",
+        "description": "List of organization IDs that can access the runner group.",
+        "in": "BODY",
+        "type": "integer[]",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [],
+    "renamed": null
+  },
+  {
+    "name": "Set self-hosted runners in a group for an enterprise",
+    "scope": "enterpriseAdmin",
+    "id": "setSelfHostedInGroupForEnterprise",
+    "method": "PUT",
+    "url": "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/runners",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "description": "**Warning:** The self-hosted runners API for enterprise accounts is currently in public beta and subject to change.\n\nReplaces the list of self-hosted runners that that are part of an enterprise runner group.\n\nYou must authenticate using an access token with the `admin:enterprise` scope to use this endpoint.",
+    "documentationUrl": "https://developer.github.com/v3/enterprise-admin/actions/#set-self-hosted-runners-in-a-group-for-an-enterprise",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "enterprise",
+        "description": "The slug version of the enterprise name. You can also substitute this value with the enterprise id.",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "runner_group_id",
+        "description": "Unique identifier of the self-hosted runner group.",
+        "in": "PATH",
+        "type": "integer",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "runners",
+        "description": "List of runner IDs to add to the runner group.",
+        "in": "BODY",
+        "type": "integer[]",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [],
+    "renamed": null
+  },
+  {
+    "name": "Update a self-hosted runner group for an enterprise",
+    "scope": "enterpriseAdmin",
+    "id": "updateSelfHostedRunnerGroupForEnterprise",
+    "method": "PATCH",
+    "url": "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "description": "**Warning:** The self-hosted runners API for enterprise accounts is currently in public beta and subject to change.\n\nUpdates the `name` and `visibility` of a self-hosted runner group in an enterprise. \n\nYou must authenticate using an access token with the `admin:enterprise` scope to use this endpoint.",
+    "documentationUrl": "https://developer.github.com/v3/enterprise-admin/actions/#update-a-self-hosted-runner-group-for-an-enterprise",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "enterprise",
+        "description": "The slug version of the enterprise name. You can also substitute this value with the enterprise id.",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "runner_group_id",
+        "description": "Unique identifier of the self-hosted runner group.",
+        "in": "PATH",
+        "type": "integer",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "name",
+        "description": "Name of the runner group.",
+        "in": "BODY",
+        "type": "string",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "visibility",
+        "description": "Visibility of a runner group. You can select all organizations or select individual organizations. Can be one of: `all` or `selected`",
+        "in": "BODY",
+        "type": "string",
+        "required": false,
+        "enum": ["selected", "all"],
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "examples": [
+          {
+            "data": "{\"id\":2,\"name\":\"Expensive hardware runners\",\"visibility\":\"selected\",\"default\":false,\"selected_organizations_url\":\"https://api.github.com/enterprises/octo-corp/actions/runner-groups/2/organizations\",\"runners_url\":\"https://api.github.com/enterprises/octo-corp/actions/runner-groups/2/runners\"}"
+          }
+        ]
+      }
+    ],
     "renamed": null
   },
   {

@@ -8,7 +8,9 @@ type: API method
 
 # List runner applications for a repository
 
-Lists binaries for the runner application that you can download and run. You must authenticate using an access token with the `repo` scope to use this endpoint.
+Lists binaries for the runner application that you can download and run.
+
+You must authenticate using an access token with the `repo` scope to use this endpoint.
 
 ```js
 octokit.actions.listRunnerApplicationsForRepo({
