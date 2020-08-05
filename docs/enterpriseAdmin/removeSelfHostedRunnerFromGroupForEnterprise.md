@@ -8,8 +8,6 @@ type: API method
 
 # Remove a self-hosted runner from a group for an enterprise
 
-**Warning:** The self-hosted runners API for enterprise accounts is currently in public beta and subject to change.
-
 Removes a self-hosted runner from a group configured in an enterprise. The runner is then returned to the default group.
 
 You must authenticate using an access token with the `admin:enterprise` scope to use this endpoint.

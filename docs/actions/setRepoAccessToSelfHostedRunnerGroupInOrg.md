@@ -8,8 +8,6 @@ type: API method
 
 # Set repository access for a self-hosted runner group in an organization
 
-**Warning:** The self-hosted runners API for organizations is currently in public beta and subject to change.
-
 The self-hosted runner groups REST API is available with GitHub Enterprise Cloud and GitHub Enterprise Server. For more information, see "[GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products)."
 
 Replaces the list of repositories that have access to a self-hosted runner group configured in an organization.

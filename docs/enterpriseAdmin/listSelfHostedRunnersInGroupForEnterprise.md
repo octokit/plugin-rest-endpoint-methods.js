@@ -8,8 +8,6 @@ type: API method
 
 # List self-hosted runners in a group for an enterprise
 
-**Warning:** The self-hosted runners API for enterprise accounts is currently in public beta and subject to change.
-
 Lists the self-hosted runners that are in a specific enterprise group.
 
 You must authenticate using an access token with the `admin:enterprise` scope to use this endpoint.

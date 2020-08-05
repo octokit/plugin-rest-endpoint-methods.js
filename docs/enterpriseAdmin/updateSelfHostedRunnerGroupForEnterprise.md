@@ -8,8 +8,6 @@ type: API method
 
 # Update a self-hosted runner group for an enterprise
 
-**Warning:** The self-hosted runners API for enterprise accounts is currently in public beta and subject to change.
-
 Updates the `name` and `visibility` of a self-hosted runner group in an enterprise.
 
 You must authenticate using an access token with the `admin:enterprise` scope to use this endpoint.

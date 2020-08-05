@@ -8,8 +8,6 @@ type: API method
 
 # Create a remove token for an enterprise
 
-**Warning:** The self-hosted runners API for enterprise accounts is currently in public beta and subject to change.
-
 Returns a token that you can pass to the `config` script to remove a self-hosted runner from an enterprise. The token expires after one hour.
 
 You must authenticate using an access token with the `admin:enterprise` scope to use this endpoint.

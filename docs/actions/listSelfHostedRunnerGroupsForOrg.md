@@ -8,8 +8,6 @@ type: API method
 
 # List self-hosted runner groups for an organization
 
-**Warning:** The self-hosted runner group API is currently in public beta and subject to change.
-
 The self-hosted runner groups REST API is available with GitHub Enterprise Cloud and GitHub Enterprise Server. For more information, see "[GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products)."
 
 Lists all self-hosted runner groups configured in an organization and inherited from an enterprise.

@@ -8,8 +8,6 @@ type: API method
 
 # Add organization access to a self-hosted runner group in an enterprise
 
-**Warning:** The self-hosted runners API for enterprises is currently in public beta and subject to change.
-
 Adds an organization to the list of selected organizations that can access a self-hosted runner group. The runner group must have `visibility` set to `selected`. For more information, see "[Create a self-hosted runner group for an enterprise](#create-a-self-hosted-runner-group-for-an-enterprise)."
 
 You must authenticate using an access token with the `admin:enterprise` scope to use this endpoint.

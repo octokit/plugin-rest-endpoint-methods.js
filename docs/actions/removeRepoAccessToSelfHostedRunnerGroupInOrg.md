@@ -8,8 +8,6 @@ type: API method
 
 # Remove repository access to a self-hosted runner group in an organization
 
-**Warning:** The self-hosted runners API for organizations is currently in public beta and subject to change.
-
 The self-hosted runner groups REST API is available with GitHub Enterprise Cloud and GitHub Enterprise Server. For more information, see "[GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products)."
 
 Removes a repository from the list of selected repositories that can access a self-hosted runner group. The runner group must have `visibility` set to `selected`. For more information, see "[Create a self-hosted runner group for an organization](#create-a-self-hosted-runner-group-for-an-organization)."

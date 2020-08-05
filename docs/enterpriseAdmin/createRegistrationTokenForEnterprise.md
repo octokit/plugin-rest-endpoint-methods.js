@@ -8,8 +8,6 @@ type: API method
 
 # Create a registration token for an enterprise
 
-**Warning:** The self-hosted runners API for enterprise accounts is currently in public beta and subject to change.
-
 Returns a token that you can pass to the `config` script. The token expires after one hour.
 
 You must authenticate using an access token with the `admin:enterprise` scope to use this endpoint.

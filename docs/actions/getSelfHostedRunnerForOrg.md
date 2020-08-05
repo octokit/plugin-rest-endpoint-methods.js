@@ -8,8 +8,6 @@ type: API method
 
 # Get a self-hosted runner for an organization
 
-**Warning:** The self-hosted runners API for organizations is currently in public beta and subject to change.
-
 Gets a specific self-hosted runner configured in an organization.
 
 You must authenticate using an access token with the `admin:org` scope to use this endpoint.

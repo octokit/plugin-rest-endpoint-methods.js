@@ -8,8 +8,6 @@ type: API method
 
 # Create a self-hosted runner group for an enterprise
 
-**Warning:** The self-hosted runners API for enterprise accounts is currently in public beta and subject to change.
-
 Creates a new self-hosted runner group for an enterprise.
 
 You must authenticate using an access token with the `admin:enterprise` scope to use this endpoint.
