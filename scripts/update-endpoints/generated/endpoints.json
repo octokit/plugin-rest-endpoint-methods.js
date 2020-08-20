@@ -5682,14 +5682,8 @@
     "deprecationDate": null,
     "description": "Add a single repository to an installation. The authenticated user must have admin access to the repository.\n\nYou must use a personal access token (which you can create via the [command line](https://docs.github.com/articles/creating-a-personal-access-token-for-the-command-line/) or the [OAuth Authorizations API](https://developer.github.com/v3/oauth_authorizations/#create-a-new-authorization)) or [Basic Authentication](https://developer.github.com/v3/auth/#basic-authentication) to access this endpoint.",
     "documentationUrl": "https://developer.github.com/v3/apps/installations/#add-a-repository-to-an-app-installation",
-    "previews": [{ "name": "machine-man" }],
-    "headers": [
-      {
-        "name": "accept",
-        "value": "application/vnd.github.machine-man-preview+json",
-        "required": true
-      }
-    ],
+    "previews": [],
+    "headers": [],
     "parameters": [
       {
         "name": "installation_id",
@@ -5949,14 +5943,8 @@
     "deprecationDate": null,
     "description": "Creates an installation access token that enables a GitHub App to make authenticated API requests for the app's installation on an organization or individual account. Installation tokens expire one hour from the time you create them. Using an expired token produces a status code of `401 - Unauthorized`, and requires creating a new installation token. By default the installation token has access to all repositories that the installation can access. To restrict the access to specific repositories, you can provide the `repository_ids` when creating the token. When you omit `repository_ids`, the response does not contain the `repositories` key.\n\nYou must use a [JWT](https://developer.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint.",
     "documentationUrl": "https://developer.github.com/v3/apps/#create-an-installation-access-token-for-an-app",
-    "previews": [{ "name": "machine-man" }],
-    "headers": [
-      {
-        "name": "accept",
-        "value": "application/vnd.github.machine-man-preview+json",
-        "required": true
-      }
-    ],
+    "previews": [],
+    "headers": [],
     "parameters": [
       {
         "name": "installation_id",
@@ -6077,14 +6065,8 @@
     "deprecationDate": null,
     "description": "Uninstalls a GitHub App on a user, organization, or business account. If you prefer to temporarily suspend an app's access to your account's resources, then we recommend the \"[Suspend an app installation](https://developer.github.com/v3/apps/#suspend-an-app-installation)\" endpoint.\n\nYou must use a [JWT](https://developer.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint.",
     "documentationUrl": "https://developer.github.com/v3/apps/#delete-an-installation-for-the-authenticated-app",
-    "previews": [{ "name": "machine-man" }],
-    "headers": [
-      {
-        "name": "accept",
-        "value": "application/vnd.github.machine-man-preview+json",
-        "required": true
-      }
-    ],
+    "previews": [],
+    "headers": [],
     "parameters": [
       {
         "name": "installation_id",
@@ -6156,14 +6138,8 @@
     "deprecationDate": null,
     "description": "Returns the GitHub App associated with the authentication credentials used. To see how many app installations are associated with this GitHub App, see the `installations_count` in the response. For more details about your app's installations, see the \"[List installations for the authenticated app](https://developer.github.com/v3/apps/#list-installations-for-the-authenticated-app)\" endpoint.\n\nYou must use a [JWT](https://developer.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint.",
     "documentationUrl": "https://developer.github.com/v3/apps/#get-the-authenticated-app",
-    "previews": [{ "name": "machine-man" }],
-    "headers": [
-      {
-        "name": "accept",
-        "value": "application/vnd.github.machine-man-preview+json",
-        "required": true
-      }
-    ],
+    "previews": [],
+    "headers": [],
     "parameters": [],
     "responses": [
       {
@@ -6188,14 +6164,8 @@
     "deprecationDate": null,
     "description": "**Note**: The `:app_slug` is just the URL-friendly name of your GitHub App. You can find this on the settings page for your GitHub App (e.g., `https://github.com/settings/apps/:app_slug`).\n\nIf the GitHub App you specify is public, you can access this endpoint without authenticating. If the GitHub App you specify is private, you must authenticate with a [personal access token](https://docs.github.com/articles/creating-a-personal-access-token-for-the-command-line/) or an [installation access token](https://developer.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-an-installation) to access this endpoint.",
     "documentationUrl": "https://developer.github.com/v3/apps/#get-an-app",
-    "previews": [{ "name": "machine-man" }],
-    "headers": [
-      {
-        "name": "accept",
-        "value": "application/vnd.github.machine-man-preview+json",
-        "required": true
-      }
-    ],
+    "previews": [],
+    "headers": [],
     "parameters": [
       {
         "name": "app_slug",
@@ -6234,14 +6204,8 @@
     "deprecationDate": null,
     "description": "Enables an authenticated GitHub App to find an installation's information using the installation id. The installation's account type (`target_type`) will be either an organization or a user account, depending which account the repository belongs to.\n\nYou must use a [JWT](https://developer.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint.",
     "documentationUrl": "https://developer.github.com/v3/apps/#get-an-installation-for-the-authenticated-app",
-    "previews": [{ "name": "machine-man" }],
-    "headers": [
-      {
-        "name": "accept",
-        "value": "application/vnd.github.machine-man-preview+json",
-        "required": true
-      }
-    ],
+    "previews": [],
+    "headers": [],
     "parameters": [
       {
         "name": "installation_id",
@@ -6280,14 +6244,8 @@
     "deprecationDate": null,
     "description": "Enables an authenticated GitHub App to find the organization's installation information.\n\nYou must use a [JWT](https://developer.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint.",
     "documentationUrl": "https://developer.github.com/v3/apps/#get-an-organization-installation-for-the-authenticated-app",
-    "previews": [{ "name": "machine-man" }],
-    "headers": [
-      {
-        "name": "accept",
-        "value": "application/vnd.github.machine-man-preview+json",
-        "required": true
-      }
-    ],
+    "previews": [],
+    "headers": [],
     "parameters": [
       {
         "name": "org",
@@ -6326,14 +6284,8 @@
     "deprecationDate": null,
     "description": "Enables an authenticated GitHub App to find the repository's installation information. The installation's account type will be either an organization or a user account, depending which account the repository belongs to.\n\nYou must use a [JWT](https://developer.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint.",
     "documentationUrl": "https://developer.github.com/v3/apps/#get-a-repository-installation-for-the-authenticated-app",
-    "previews": [{ "name": "machine-man" }],
-    "headers": [
-      {
-        "name": "accept",
-        "value": "application/vnd.github.machine-man-preview+json",
-        "required": true
-      }
-    ],
+    "previews": [],
+    "headers": [],
     "parameters": [
       {
         "name": "owner",
@@ -6465,14 +6417,8 @@
     "deprecationDate": null,
     "description": "Enables an authenticated GitHub App to find the user’s installation information.\n\nYou must use a [JWT](https://developer.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint.",
     "documentationUrl": "https://developer.github.com/v3/apps/#get-a-user-installation-for-the-authenticated-app",
-    "previews": [{ "name": "machine-man" }],
-    "headers": [
-      {
-        "name": "accept",
-        "value": "application/vnd.github.machine-man-preview+json",
-        "required": true
-      }
-    ],
+    "previews": [],
+    "headers": [],
     "parameters": [
       {
         "name": "username",
@@ -6695,14 +6641,8 @@
     "deprecationDate": null,
     "description": "List repositories that the authenticated user has explicit permission (`:read`, `:write`, or `:admin`) to access for an installation.\n\nThe authenticated user has explicit permission to access repositories they own, repositories where they are a collaborator, and repositories that they can access through an organization membership.\n\nYou must use a [user-to-server OAuth access token](https://developer.github.com/apps/building-github-apps/identifying-and-authorizing-users-for-github-apps/#identifying-users-on-your-site), created for a user who has authorized your GitHub App, to access this endpoint.\n\nThe access the user has to each repository is included in the hash under the `permissions` key.",
     "documentationUrl": "https://developer.github.com/v3/apps/installations/#list-repositories-accessible-to-the-user-access-token",
-    "previews": [{ "name": "machine-man" }],
-    "headers": [
-      {
-        "name": "accept",
-        "value": "application/vnd.github.machine-man-preview+json",
-        "required": true
-      }
-    ],
+    "previews": [],
+    "headers": [],
     "parameters": [
       {
         "name": "installation_id",
@@ -6767,14 +6707,8 @@
     "deprecationDate": null,
     "description": "You must use a [JWT](https://developer.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint.\n\nThe permissions the installation has are included under the `permissions` key.",
     "documentationUrl": "https://developer.github.com/v3/apps/#list-installations-for-the-authenticated-app",
-    "previews": [{ "name": "machine-man" }],
-    "headers": [
-      {
-        "name": "accept",
-        "value": "application/vnd.github.machine-man-preview+json",
-        "required": true
-      }
-    ],
+    "previews": [],
+    "headers": [],
     "parameters": [
       {
         "name": "per_page",
@@ -6826,14 +6760,8 @@
     "deprecationDate": null,
     "description": "Lists installations of your GitHub App that the authenticated user has explicit permission (`:read`, `:write`, or `:admin`) to access.\n\nYou must use a [user-to-server OAuth access token](https://developer.github.com/apps/building-github-apps/identifying-and-authorizing-users-for-github-apps/#identifying-users-on-your-site), created for a user who has authorized your GitHub App, to access this endpoint.\n\nThe authenticated user has explicit permission to access repositories they own, repositories where they are a collaborator, and repositories that they can access through an organization membership.\n\nYou can find the permissions for the installation under the `permissions` key.",
     "documentationUrl": "https://developer.github.com/v3/apps/installations/#list-app-installations-accessible-to-the-user-access-token",
-    "previews": [{ "name": "machine-man" }],
-    "headers": [
-      {
-        "name": "accept",
-        "value": "application/vnd.github.machine-man-preview+json",
-        "required": true
-      }
-    ],
+    "previews": [],
+    "headers": [],
     "parameters": [
       {
         "name": "per_page",
@@ -6991,14 +6919,8 @@
     "deprecationDate": null,
     "description": "List repositories that an app installation can access.\n\nYou must use an [installation access token](https://developer.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-an-installation) to access this endpoint.",
     "documentationUrl": "https://developer.github.com/v3/apps/installations/#list-repositories-accessible-to-the-app-installation",
-    "previews": [{ "name": "machine-man" }],
-    "headers": [
-      {
-        "name": "accept",
-        "value": "application/vnd.github.machine-man-preview+json",
-        "required": true
-      }
-    ],
+    "previews": [],
+    "headers": [],
     "parameters": [
       {
         "name": "per_page",
@@ -7156,14 +7078,8 @@
     "deprecationDate": null,
     "description": "Remove a single repository from an installation. The authenticated user must have admin access to the repository.\n\nYou must use a personal access token (which you can create via the [command line](https://docs.github.com/articles/creating-a-personal-access-token-for-the-command-line/) or the [OAuth Authorizations API](https://developer.github.com/v3/oauth_authorizations/#create-a-new-authorization)) or [Basic Authentication](https://developer.github.com/v3/auth/#basic-authentication) to access this endpoint.",
     "documentationUrl": "https://developer.github.com/v3/apps/installations/#remove-a-repository-from-an-app-installation",
-    "previews": [{ "name": "machine-man" }],
-    "headers": [
-      {
-        "name": "accept",
-        "value": "application/vnd.github.machine-man-preview+json",
-        "required": true
-      }
-    ],
+    "previews": [],
+    "headers": [],
     "parameters": [
       {
         "name": "installation_id",
@@ -20311,14 +20227,8 @@
     "deprecationDate": null,
     "description": "Lists all GitHub Apps in an organization. The installation count includes all GitHub Apps installed on repositories in the organization. You must be an organization owner with `admin:read` scope to use this endpoint.",
     "documentationUrl": "https://developer.github.com/v3/orgs/#list-app-installations-for-an-organization",
-    "previews": [{ "name": "machine-man" }],
-    "headers": [
-      {
-        "name": "accept",
-        "value": "application/vnd.github.machine-man-preview+json",
-        "required": true
-      }
-    ],
+    "previews": [],
+    "headers": [],
     "parameters": [
       {
         "name": "org",
