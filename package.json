@@ -52,7 +52,7 @@
     "sort-keys": "^4.0.0",
     "string-to-jsdoc-comment": "^1.0.0",
     "ts-jest": "^26.1.3",
-    "typescript": "^3.7.2"
+    "typescript": "^4.0.2"
   },
   "jest": {
     "preset": "ts-jest",
