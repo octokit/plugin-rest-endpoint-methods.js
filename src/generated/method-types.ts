@@ -200,11 +200,9 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * **Warning:** The self-hosted runners API for organizations is currently in public beta and subject to change.
+     * Returns a token that you can pass to the `config` script. The token expires after one hour.
      *
-     *
-     * Returns a token that you can pass to the `config` script. The token expires after one hour. You must authenticate
-     * using an access token with the `admin:org` scope to use this endpoint.
+     * You must authenticate using an access token with the `admin:org` scope to use this endpoint.
      *
      * #### Example using registration token
      *
@@ -245,12 +243,9 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * **Warning:** The self-hosted runners API for organizations is currently in public beta and subject to change.
+     * Returns a token that you can pass to the `config` script to remove a self-hosted runner from an organization. The token expires after one hour.
      *
-     *
-     * Returns a token that you can pass to the `config` script to remove a self-hosted runner from an organization. The
-     * token expires after one hour. You must authenticate using an access token with the `admin:org` scope to use this
-     * endpoint.
+     * You must authenticate using an access token with the `admin:org` scope to use this endpoint.
      *
      * #### Example using remove token
      *
@@ -344,9 +339,9 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * **Warning:** The self-hosted runners API for organizations is currently in public beta and subject to change.
+     * Forces the removal of a self-hosted runner from an organization. You can use this endpoint to completely remove the runner when the machine you were using no longer exists.
      *
-     * Forces the removal of a self-hosted runner from an organization. You can use this endpoint to completely remove the runner when the machine you were using no longer exists. You must authenticate using an access token with the `admin:org` scope to use this endpoint.
+     * You must authenticate using an access token with the `admin:org` scope to use this endpoint.
      */
     deleteSelfHostedRunnerFromOrg: {
       (
@@ -358,7 +353,10 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Forces the removal of a self-hosted runner from a repository. You can use this endpoint to completely remove the runner when the machine you were using no longer exists. You must authenticate using an access token with the `repo` scope to use this endpoint.
+     * Forces the removal of a self-hosted runner from a repository. You can use this endpoint to completely remove the runner when the machine you were using no longer exists.
+     *
+     * You must authenticate using an access token with the `repo`
+     * scope to use this endpoint.
      */
     deleteSelfHostedRunnerFromRepo: {
       (
@@ -511,9 +509,9 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * **Warning:** The self-hosted runners API for organizations is currently in public beta and subject to change.
+     * Gets a specific self-hosted runner configured in an organization.
      *
-     * Gets a specific self-hosted runner for an organization. You must authenticate using an access token with the `admin:org` scope to use this endpoint.
+     * You must authenticate using an access token with the `admin:org` scope to use this endpoint.
      */
     getSelfHostedRunnerForOrg: {
       (
@@ -525,7 +523,10 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Gets a specific self-hosted runner. You must authenticate using an access token with the `repo` scope to use this endpoint.
+     * Gets a specific self-hosted runner configured in a repository.
+     *
+     * You must authenticate using an access token with the `repo` scope to use this
+     * endpoint.
      */
     getSelfHostedRunnerForRepo: {
       (
@@ -651,9 +652,9 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * **Warning:** The self-hosted runners API for organizations is currently in public beta and subject to change.
+     * Lists binaries for the runner application that you can download and run.
      *
-     * Lists binaries for the runner application that you can download and run. You must authenticate using an access token with the `admin:org` scope to use this endpoint.
+     * You must authenticate using an access token with the `admin:org` scope to use this endpoint.
      */
     listRunnerApplicationsForOrg: {
       (
@@ -665,7 +666,9 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Lists binaries for the runner application that you can download and run. You must authenticate using an access token with the `repo` scope to use this endpoint.
+     * Lists binaries for the runner application that you can download and run.
+     *
+     * You must authenticate using an access token with the `repo` scope to use this endpoint.
      */
     listRunnerApplicationsForRepo: {
       (
@@ -689,9 +692,9 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * **Warning:** The self-hosted runners API for organizations is currently in public beta and subject to change.
+     * Lists all self-hosted runners configured in an organization.
      *
-     * Lists all self-hosted runners for an organization. You must authenticate using an access token with the `admin:org` scope to use this endpoint.
+     * You must authenticate using an access token with the `admin:org` scope to use this endpoint.
      */
     listSelfHostedRunnersForOrg: {
       (
@@ -703,7 +706,8 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Lists all self-hosted runners for a repository. You must authenticate using an access token with the `repo` scope to use this endpoint.
+     * Lists all self-hosted runners configured in a repository.
+     * You must authenticate using an access token with the `repo` scope to use this endpoint.
      */
     listSelfHostedRunnersForRepo: {
       (
@@ -4960,7 +4964,9 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
-
+    /**
+     * Configures a GitHub Pages site. For more information, see "[About GitHub Pages](/github/working-with-github-pages/about-github-pages)."
+     */
     createPagesSite: {
       (
         params?: RestEndpointMethodTypes["repos"]["createPagesSite"]["parameters"]
@@ -5420,33 +5426,77 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Returns the contents of a single commit reference. You must have `read` access for the repository to use this endpoint.
+     * Returns the contents of a single commit reference. You must have `read` access for the repository to use this
+     * endpoint.
      *
-     * You can pass the appropriate [media type](https://developer.github.com/v3/media/#commits-commit-comparison-and-pull-requests) to fetch `diff` and `patch` formats. Diffs with binary data will have no `patch` property.
+     * **Note:** If there are more than 300 files in the commit diff, the response will include pagination link headers for the remaining files, up to a limit of 3000 files. Each page contains the static commit information, and the only changes are to the file listing.
      *
-     * To return only the SHA-1 hash of the commit reference, you can provide the `sha` custom [media type](https://developer.github.com/v3/media/#commits-commit-comparison-and-pull-requests) in the `Accept` header. You can use this endpoint to check if a remote reference's SHA-1 hash is the same as your local reference's SHA-1 hash by providing the local SHA-1 reference as the ETag.
+     * You can pass the appropriate [media type](https://developer.github.com/v3/media/#commits-commit-comparison-and-pull-requests) to
+     * fetch `diff` and `patch` formats. Diffs with binary data will have no `patch` property.
+     *
+     *
+     * To return only the SHA-1 hash of the commit reference, you can provide the `sha` custom [media
+     * type](https://developer.github.com/v3/media/#commits-commit-comparison-and-pull-requests) in the `Accept` header. You can use
+     * this endpoint to check if a remote reference's SHA-1 hash is the same as your local reference's SHA-1 hash by
+     * providing the local SHA-1 reference as the ETag.
+     *
      *
      * **Signature verification object**
      *
-     * The response will include a `verification` object that describes the result of verifying the commit's signature. The following fields are included in the `verification` object:
+     *
+     * The response will include a `verification` object that describes the result of verifying the commit's signature. The
+     * following fields are included in the `verification` object:
+     *
      *
      * These are the possible values for `reason` in the `verification` object:
      *
-     * | Value                    | Description                                                                                                                       |
-     * | ------------------------ | --------------------------------------------------------------------------------------------------------------------------------- |
-     * | `expired_key`            | The key that made the signature is expired.                                                                                       |
-     * | `not_signing_key`        | The "signing" flag is not among the usage flags in the GPG key that made the signature.                                           |
-     * | `gpgverify_error`        | There was an error communicating with the signature verification service.                                                         |
-     * | `gpgverify_unavailable`  | The signature verification service is currently unavailable.                                                                      |
-     * | `unsigned`               | The object does not include a signature.                                                                                          |
-     * | `unknown_signature_type` | A non-PGP signature was found in the commit.                                                                                      |
-     * | `no_user`                | No user was associated with the `committer` email address in the commit.                                                          |
-     * | `unverified_email`       | The `committer` email address in the commit was associated with a user, but the email address is not verified on her/his account. |
-     * | `bad_email`              | The `committer` email address in the commit is not included in the identities of the PGP key that made the signature.             |
-     * | `unknown_key`            | The key that made the signature has not been registered with any user's account.                                                  |
-     * | `malformed_signature`    | There was an error parsing the signature.                                                                                         |
-     * | `invalid`                | The signature could not be cryptographically verified using the key whose key-id was found in the signature.                      |
-     * | `valid`                  | None of the above errors applied, so the signature is considered to be verified.                                                  |
+     *
+     * | Value                    |
+     * Description
+     * |
+     *
+     * | ------------------------ |
+     * ---------------------------------------------------------------------------------------------------------------------------------
+     * |
+     *
+     * | `expired_key`            | The key that made the signature is
+     * expired.                                                                                       |
+     *
+     * | `not_signing_key`        | The "signing" flag is not among the usage flags in the GPG key that made the
+     * signature.                                           |
+     *
+     * | `gpgverify_error`        | There was an error communicating with the signature verification
+     * service.                                                         |
+     *
+     * | `gpgverify_unavailable`  | The signature verification service is currently
+     * unavailable.                                                                      |
+     *
+     * | `unsigned`               | The object does not include a
+     * signature.                                                                                          |
+     *
+     * | `unknown_signature_type` | A non-PGP signature was found in the
+     * commit.                                                                                      |
+     *
+     * | `no_user`                | No user was associated with the `committer` email address in the
+     * commit.                                                          |
+     *
+     * | `unverified_email`       | The `committer` email address in the commit was associated with a user, but the email
+     * address is not verified on her/his account. |
+     *
+     * | `bad_email`              | The `committer` email address in the commit is not included in the identities of the PGP
+     * key that made the signature.             |
+     *
+     * | `unknown_key`            | The key that made the signature has not been registered with any user's
+     * account.                                                  |
+     *
+     * | `malformed_signature`    | There was an error parsing the
+     * signature.                                                                                         |
+     *
+     * | `invalid`                | The signature could not be cryptographically verified using the key whose key-id was
+     * found in the signature.                      |
+     *
+     * | `valid`                  | None of the above errors applied, so the signature is considered to be
+     * verified.                                                  |
      */
     getCommit: {
       (
@@ -6383,7 +6433,9 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
-
+    /**
+     * Updates information for a GitHub Pages site. For more information, see "[About GitHub Pages](/github/working-with-github-pages/about-github-pages).
+     */
     updateInformationAboutPagesSite: {
       (
         params?: RestEndpointMethodTypes["repos"]["updateInformationAboutPagesSite"]["parameters"]

@@ -296,7 +296,7 @@
     "url": "/orgs/{org}/actions/runners/registration-token",
     "isDeprecated": false,
     "deprecationDate": null,
-    "description": "**Warning:** The self-hosted runners API for organizations is currently in public beta and subject to change.\n\n\nReturns a token that you can pass to the `config` script. The token expires after one hour. You must authenticate\nusing an access token with the `admin:org` scope to use this endpoint.\n\n#### Example using registration token\n\nConfigure your self-hosted runner, replacing `TOKEN` with the registration token provided by this endpoint.\n\n```\n./config.sh --url https://github.com/octo-org --token TOKEN\n```",
+    "description": "Returns a token that you can pass to the `config` script. The token expires after one hour. \n\nYou must authenticate using an access token with the `admin:org` scope to use this endpoint.\n\n#### Example using registration token\n\nConfigure your self-hosted runner, replacing `TOKEN` with the registration token provided by this endpoint.\n\n```\n./config.sh --url https://github.com/octo-org --token TOKEN\n```",
     "documentationUrl": "https://developer.github.com/v3/actions/self-hosted-runners/#create-a-registration-token-for-an-organization",
     "previews": [],
     "headers": [],
@@ -389,7 +389,7 @@
     "url": "/orgs/{org}/actions/runners/remove-token",
     "isDeprecated": false,
     "deprecationDate": null,
-    "description": "**Warning:** The self-hosted runners API for organizations is currently in public beta and subject to change.\n\n\nReturns a token that you can pass to the `config` script to remove a self-hosted runner from an organization. The\ntoken expires after one hour. You must authenticate using an access token with the `admin:org` scope to use this\nendpoint.\n\n#### Example using remove token\n\nTo remove your self-hosted runner from an organization, replace `TOKEN` with the remove token provided by this\nendpoint.\n\n```\n./config.sh remove --token TOKEN\n```",
+    "description": "Returns a token that you can pass to the `config` script to remove a self-hosted runner from an organization. The token expires after one hour. \n\nYou must authenticate using an access token with the `admin:org` scope to use this endpoint.\n\n#### Example using remove token\n\nTo remove your self-hosted runner from an organization, replace `TOKEN` with the remove token provided by this\nendpoint.\n\n```\n./config.sh remove --token TOKEN\n```",
     "documentationUrl": "https://developer.github.com/v3/actions/self-hosted-runners/#create-a-remove-token-for-an-organization",
     "previews": [],
     "headers": [],
@@ -732,7 +732,7 @@
     "url": "/orgs/{org}/actions/runners/{runner_id}",
     "isDeprecated": false,
     "deprecationDate": null,
-    "description": "**Warning:** The self-hosted runners API for organizations is currently in public beta and subject to change.\n\nForces the removal of a self-hosted runner from an organization. You can use this endpoint to completely remove the runner when the machine you were using no longer exists. You must authenticate using an access token with the `admin:org` scope to use this endpoint.",
+    "description": "Forces the removal of a self-hosted runner from an organization. You can use this endpoint to completely remove the runner when the machine you were using no longer exists. \n\nYou must authenticate using an access token with the `admin:org` scope to use this endpoint.",
     "documentationUrl": "https://developer.github.com/v3/actions/self-hosted-runners/#delete-a-self-hosted-runner-from-an-organization",
     "previews": [],
     "headers": [],
@@ -752,7 +752,7 @@
       },
       {
         "name": "runner_id",
-        "description": "",
+        "description": "Unique identifier of the self-hosted runner.",
         "in": "PATH",
         "type": "integer",
         "required": true,
@@ -775,7 +775,7 @@
     "url": "/repos/{owner}/{repo}/actions/runners/{runner_id}",
     "isDeprecated": false,
     "deprecationDate": null,
-    "description": "Forces the removal of a self-hosted runner from a repository. You can use this endpoint to completely remove the runner when the machine you were using no longer exists. You must authenticate using an access token with the `repo` scope to use this endpoint.",
+    "description": "Forces the removal of a self-hosted runner from a repository. You can use this endpoint to completely remove the runner when the machine you were using no longer exists. \n\nYou must authenticate using an access token with the `repo`\nscope to use this endpoint.",
     "documentationUrl": "https://developer.github.com/v3/actions/self-hosted-runners/#delete-a-self-hosted-runner-from-a-repository",
     "previews": [],
     "headers": [],
@@ -808,7 +808,7 @@
       },
       {
         "name": "runner_id",
-        "description": "",
+        "description": "Unique identifier of the self-hosted runner.",
         "in": "PATH",
         "type": "integer",
         "required": true,
@@ -1468,7 +1468,7 @@
     "url": "/orgs/{org}/actions/runners/{runner_id}",
     "isDeprecated": false,
     "deprecationDate": null,
-    "description": "**Warning:** The self-hosted runners API for organizations is currently in public beta and subject to change.\n\nGets a specific self-hosted runner for an organization. You must authenticate using an access token with the `admin:org` scope to use this endpoint.",
+    "description": "Gets a specific self-hosted runner configured in an organization. \n\nYou must authenticate using an access token with the `admin:org` scope to use this endpoint.",
     "documentationUrl": "https://developer.github.com/v3/actions/self-hosted-runners/#get-a-self-hosted-runner-for-an-organization",
     "previews": [],
     "headers": [],
@@ -1488,7 +1488,7 @@
       },
       {
         "name": "runner_id",
-        "description": "",
+        "description": "Unique identifier of the self-hosted runner.",
         "in": "PATH",
         "type": "integer",
         "required": true,
@@ -1506,7 +1506,7 @@
         "description": "response",
         "examples": [
           {
-            "data": "{\"id\":23,\"name\":\"MBP\",\"os\":\"macos\",\"status\":\"online\",\"busy\":false}"
+            "data": "{\"id\":23,\"name\":\"mac_runner\",\"os\":\"macos\",\"status\":\"online\",\"busy\":true,\"labels\":[{\"id\":5,\"name\":\"self-hosted\",\"type\":\"read-only\"},{\"id\":7,\"name\":\"X64\",\"type\":\"read-only\"},{\"id\":20,\"name\":\"macOS\",\"type\":\"read-only\"},{\"id\":21,\"name\":\"no-gpu\",\"type\":\"custom\"}]}"
           }
         ]
       }
@@ -1521,7 +1521,7 @@
     "url": "/repos/{owner}/{repo}/actions/runners/{runner_id}",
     "isDeprecated": false,
     "deprecationDate": null,
-    "description": "Gets a specific self-hosted runner. You must authenticate using an access token with the `repo` scope to use this endpoint.",
+    "description": "Gets a specific self-hosted runner configured in a repository. \n\nYou must authenticate using an access token with the `repo` scope to use this\nendpoint.",
     "documentationUrl": "https://developer.github.com/v3/actions/self-hosted-runners/#get-a-self-hosted-runner-for-a-repository",
     "previews": [],
     "headers": [],
@@ -1554,7 +1554,7 @@
       },
       {
         "name": "runner_id",
-        "description": "",
+        "description": "Unique identifier of the self-hosted runner.",
         "in": "PATH",
         "type": "integer",
         "required": true,
@@ -1572,7 +1572,7 @@
         "description": "response",
         "examples": [
           {
-            "data": "{\"id\":23,\"name\":\"MBP\",\"os\":\"macos\",\"status\":\"online\",\"busy\":false}"
+            "data": "{\"id\":23,\"name\":\"mac_runner\",\"os\":\"macos\",\"status\":\"online\",\"busy\":true,\"labels\":[{\"id\":5,\"name\":\"self-hosted\",\"type\":\"read-only\"},{\"id\":7,\"name\":\"X64\",\"type\":\"read-only\"},{\"id\":20,\"name\":\"macOS\",\"type\":\"read-only\"},{\"id\":21,\"name\":\"no-gpu\",\"type\":\"custom\"}]}"
           }
         ]
       }
@@ -2259,7 +2259,7 @@
     "url": "/orgs/{org}/actions/runners/downloads",
     "isDeprecated": false,
     "deprecationDate": null,
-    "description": "**Warning:** The self-hosted runners API for organizations is currently in public beta and subject to change.\n\nLists binaries for the runner application that you can download and run. You must authenticate using an access token with the `admin:org` scope to use this endpoint.",
+    "description": "Lists binaries for the runner application that you can download and run. \n\nYou must authenticate using an access token with the `admin:org` scope to use this endpoint.",
     "documentationUrl": "https://developer.github.com/v3/actions/self-hosted-runners/#list-runner-applications-for-an-organization",
     "previews": [],
     "headers": [],
@@ -2299,7 +2299,7 @@
     "url": "/repos/{owner}/{repo}/actions/runners/downloads",
     "isDeprecated": false,
     "deprecationDate": null,
-    "description": "Lists binaries for the runner application that you can download and run. You must authenticate using an access token with the `repo` scope to use this endpoint.",
+    "description": "Lists binaries for the runner application that you can download and run. \n\nYou must authenticate using an access token with the `repo` scope to use this endpoint.",
     "documentationUrl": "https://developer.github.com/v3/actions/self-hosted-runners/#list-runner-applications-for-a-repository",
     "previews": [],
     "headers": [],
@@ -2405,7 +2405,7 @@
     "url": "/orgs/{org}/actions/runners",
     "isDeprecated": false,
     "deprecationDate": null,
-    "description": "**Warning:** The self-hosted runners API for organizations is currently in public beta and subject to change.\n\nLists all self-hosted runners for an organization. You must authenticate using an access token with the `admin:org` scope to use this endpoint.",
+    "description": "Lists all self-hosted runners configured in an organization.\n\nYou must authenticate using an access token with the `admin:org` scope to use this endpoint.",
     "documentationUrl": "https://developer.github.com/v3/actions/self-hosted-runners/#list-self-hosted-runners-for-an-organization",
     "previews": [],
     "headers": [],
@@ -2456,7 +2456,7 @@
         "description": "response",
         "examples": [
           {
-            "data": "{\"total_count\":2,\"runners\":[{\"id\":23,\"name\":\"MBP\",\"os\":\"macos\",\"status\":\"online\",\"busy\":true},{\"id\":24,\"name\":\"iMac\",\"os\":\"macos\",\"status\":\"offline\",\"busy\":false}]}"
+            "data": "{\"total_count\":2,\"runners\":[{\"id\":23,\"name\":\"linux_runner\",\"os\":\"linux\",\"status\":\"online\",\"busy\":true,\"labels\":[{\"id\":5,\"name\":\"self-hosted\",\"type\":\"read-only\"},{\"id\":7,\"name\":\"X64\",\"type\":\"read-only\"},{\"id\":11,\"name\":\"Linux\",\"type\":\"read-only\"}]},{\"id\":24,\"name\":\"mac_runner\",\"os\":\"macos\",\"status\":\"offline\",\"busy\":false,\"labels\":[{\"id\":5,\"name\":\"self-hosted\",\"type\":\"read-only\"},{\"id\":7,\"name\":\"X64\",\"type\":\"read-only\"},{\"id\":20,\"name\":\"macOS\",\"type\":\"read-only\"},{\"id\":21,\"name\":\"no-gpu\",\"type\":\"custom\"}]}]}"
           }
         ]
       }
@@ -2471,7 +2471,7 @@
     "url": "/repos/{owner}/{repo}/actions/runners",
     "isDeprecated": false,
     "deprecationDate": null,
-    "description": "Lists all self-hosted runners for a repository. You must authenticate using an access token with the `repo` scope to use this endpoint.",
+    "description": "Lists all self-hosted runners configured in a repository. \nYou must authenticate using an access token with the `repo` scope to use this endpoint.",
     "documentationUrl": "https://developer.github.com/v3/actions/self-hosted-runners/#list-self-hosted-runners-for-a-repository",
     "previews": [],
     "headers": [],
@@ -2535,7 +2535,7 @@
         "description": "response",
         "examples": [
           {
-            "data": "{\"total_count\":2,\"runners\":[{\"id\":23,\"name\":\"MBP\",\"os\":\"macos\",\"status\":\"online\",\"busy\":true},{\"id\":24,\"name\":\"iMac\",\"os\":\"macos\",\"status\":\"offline\",\"busy\":false}]}"
+            "data": "{\"total_count\":2,\"runners\":[{\"id\":23,\"name\":\"linux_runner\",\"os\":\"linux\",\"status\":\"online\",\"busy\":true,\"labels\":[{\"id\":5,\"name\":\"self-hosted\",\"type\":\"read-only\"},{\"id\":7,\"name\":\"X64\",\"type\":\"read-only\"},{\"id\":11,\"name\":\"Linux\",\"type\":\"read-only\"}]},{\"id\":24,\"name\":\"mac_runner\",\"os\":\"macos\",\"status\":\"offline\",\"busy\":false,\"labels\":[{\"id\":5,\"name\":\"self-hosted\",\"type\":\"read-only\"},{\"id\":7,\"name\":\"X64\",\"type\":\"read-only\"},{\"id\":20,\"name\":\"macOS\",\"type\":\"read-only\"},{\"id\":21,\"name\":\"no-gpu\",\"type\":\"custom\"}]}]}"
           }
         ]
       }
@@ -4937,14 +4937,8 @@
     "deprecationDate": null,
     "description": "Add a single repository to an installation. The authenticated user must have admin access to the repository.\n\nYou must use a personal access token (which you can create via the [command line](https://docs.github.com/articles/creating-a-personal-access-token-for-the-command-line/) or the [OAuth Authorizations API](https://developer.github.com/v3/oauth_authorizations/#create-a-new-authorization)) or [Basic Authentication](https://developer.github.com/v3/auth/#basic-authentication) to access this endpoint.",
     "documentationUrl": "https://developer.github.com/v3/apps/installations/#add-a-repository-to-an-app-installation",
-    "previews": [{ "name": "machine-man" }],
-    "headers": [
-      {
-        "name": "accept",
-        "value": "application/vnd.github.machine-man-preview+json",
-        "required": true
-      }
-    ],
+    "previews": [],
+    "headers": [],
     "parameters": [
       {
         "name": "installation_id",
@@ -5204,14 +5198,8 @@
     "deprecationDate": null,
     "description": "Creates an installation access token that enables a GitHub App to make authenticated API requests for the app's installation on an organization or individual account. Installation tokens expire one hour from the time you create them. Using an expired token produces a status code of `401 - Unauthorized`, and requires creating a new installation token. By default the installation token has access to all repositories that the installation can access. To restrict the access to specific repositories, you can provide the `repository_ids` when creating the token. When you omit `repository_ids`, the response does not contain the `repositories` key.\n\nYou must use a [JWT](https://developer.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint.",
     "documentationUrl": "https://developer.github.com/v3/apps/#create-an-installation-access-token-for-an-app",
-    "previews": [{ "name": "machine-man" }],
-    "headers": [
-      {
-        "name": "accept",
-        "value": "application/vnd.github.machine-man-preview+json",
-        "required": true
-      }
-    ],
+    "previews": [],
+    "headers": [],
     "parameters": [
       {
         "name": "installation_id",
@@ -5332,14 +5320,8 @@
     "deprecationDate": null,
     "description": "Uninstalls a GitHub App on a user, organization, or business account. If you prefer to temporarily suspend an app's access to your account's resources, then we recommend the \"[Suspend an app installation](https://developer.github.com/v3/apps/#suspend-an-app-installation)\" endpoint.\n\nYou must use a [JWT](https://developer.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint.",
     "documentationUrl": "https://developer.github.com/v3/apps/#delete-an-installation-for-the-authenticated-app",
-    "previews": [{ "name": "machine-man" }],
-    "headers": [
-      {
-        "name": "accept",
-        "value": "application/vnd.github.machine-man-preview+json",
-        "required": true
-      }
-    ],
+    "previews": [],
+    "headers": [],
     "parameters": [
       {
         "name": "installation_id",
@@ -5411,14 +5393,8 @@
     "deprecationDate": null,
     "description": "Returns the GitHub App associated with the authentication credentials used. To see how many app installations are associated with this GitHub App, see the `installations_count` in the response. For more details about your app's installations, see the \"[List installations for the authenticated app](https://developer.github.com/v3/apps/#list-installations-for-the-authenticated-app)\" endpoint.\n\nYou must use a [JWT](https://developer.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint.",
     "documentationUrl": "https://developer.github.com/v3/apps/#get-the-authenticated-app",
-    "previews": [{ "name": "machine-man" }],
-    "headers": [
-      {
-        "name": "accept",
-        "value": "application/vnd.github.machine-man-preview+json",
-        "required": true
-      }
-    ],
+    "previews": [],
+    "headers": [],
     "parameters": [],
     "responses": [
       {
@@ -5443,14 +5419,8 @@
     "deprecationDate": null,
     "description": "**Note**: The `:app_slug` is just the URL-friendly name of your GitHub App. You can find this on the settings page for your GitHub App (e.g., `https://github.com/settings/apps/:app_slug`).\n\nIf the GitHub App you specify is public, you can access this endpoint without authenticating. If the GitHub App you specify is private, you must authenticate with a [personal access token](https://docs.github.com/articles/creating-a-personal-access-token-for-the-command-line/) or an [installation access token](https://developer.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-an-installation) to access this endpoint.",
     "documentationUrl": "https://developer.github.com/v3/apps/#get-an-app",
-    "previews": [{ "name": "machine-man" }],
-    "headers": [
-      {
-        "name": "accept",
-        "value": "application/vnd.github.machine-man-preview+json",
-        "required": true
-      }
-    ],
+    "previews": [],
+    "headers": [],
     "parameters": [
       {
         "name": "app_slug",
@@ -5489,14 +5459,8 @@
     "deprecationDate": null,
     "description": "Enables an authenticated GitHub App to find an installation's information using the installation id. The installation's account type (`target_type`) will be either an organization or a user account, depending which account the repository belongs to.\n\nYou must use a [JWT](https://developer.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint.",
     "documentationUrl": "https://developer.github.com/v3/apps/#get-an-installation-for-the-authenticated-app",
-    "previews": [{ "name": "machine-man" }],
-    "headers": [
-      {
-        "name": "accept",
-        "value": "application/vnd.github.machine-man-preview+json",
-        "required": true
-      }
-    ],
+    "previews": [],
+    "headers": [],
     "parameters": [
       {
         "name": "installation_id",
@@ -5535,14 +5499,8 @@
     "deprecationDate": null,
     "description": "Enables an authenticated GitHub App to find the organization's installation information.\n\nYou must use a [JWT](https://developer.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint.",
     "documentationUrl": "https://developer.github.com/v3/apps/#get-an-organization-installation-for-the-authenticated-app",
-    "previews": [{ "name": "machine-man" }],
-    "headers": [
-      {
-        "name": "accept",
-        "value": "application/vnd.github.machine-man-preview+json",
-        "required": true
-      }
-    ],
+    "previews": [],
+    "headers": [],
     "parameters": [
       {
         "name": "org",
@@ -5581,14 +5539,8 @@
     "deprecationDate": null,
     "description": "Enables an authenticated GitHub App to find the repository's installation information. The installation's account type will be either an organization or a user account, depending which account the repository belongs to.\n\nYou must use a [JWT](https://developer.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint.",
     "documentationUrl": "https://developer.github.com/v3/apps/#get-a-repository-installation-for-the-authenticated-app",
-    "previews": [{ "name": "machine-man" }],
-    "headers": [
-      {
-        "name": "accept",
-        "value": "application/vnd.github.machine-man-preview+json",
-        "required": true
-      }
-    ],
+    "previews": [],
+    "headers": [],
     "parameters": [
       {
         "name": "owner",
@@ -5720,14 +5672,8 @@
     "deprecationDate": null,
     "description": "Enables an authenticated GitHub App to find the user’s installation information.\n\nYou must use a [JWT](https://developer.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint.",
     "documentationUrl": "https://developer.github.com/v3/apps/#get-a-user-installation-for-the-authenticated-app",
-    "previews": [{ "name": "machine-man" }],
-    "headers": [
-      {
-        "name": "accept",
-        "value": "application/vnd.github.machine-man-preview+json",
-        "required": true
-      }
-    ],
+    "previews": [],
+    "headers": [],
     "parameters": [
       {
         "name": "username",
@@ -5950,14 +5896,8 @@
     "deprecationDate": null,
     "description": "List repositories that the authenticated user has explicit permission (`:read`, `:write`, or `:admin`) to access for an installation.\n\nThe authenticated user has explicit permission to access repositories they own, repositories where they are a collaborator, and repositories that they can access through an organization membership.\n\nYou must use a [user-to-server OAuth access token](https://developer.github.com/apps/building-github-apps/identifying-and-authorizing-users-for-github-apps/#identifying-users-on-your-site), created for a user who has authorized your GitHub App, to access this endpoint.\n\nThe access the user has to each repository is included in the hash under the `permissions` key.",
     "documentationUrl": "https://developer.github.com/v3/apps/installations/#list-repositories-accessible-to-the-user-access-token",
-    "previews": [{ "name": "machine-man" }],
-    "headers": [
-      {
-        "name": "accept",
-        "value": "application/vnd.github.machine-man-preview+json",
-        "required": true
-      }
-    ],
+    "previews": [],
+    "headers": [],
     "parameters": [
       {
         "name": "installation_id",
@@ -6022,14 +5962,8 @@
     "deprecationDate": null,
     "description": "You must use a [JWT](https://developer.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint.\n\nThe permissions the installation has are included under the `permissions` key.",
     "documentationUrl": "https://developer.github.com/v3/apps/#list-installations-for-the-authenticated-app",
-    "previews": [{ "name": "machine-man" }],
-    "headers": [
-      {
-        "name": "accept",
-        "value": "application/vnd.github.machine-man-preview+json",
-        "required": true
-      }
-    ],
+    "previews": [],
+    "headers": [],
     "parameters": [
       {
         "name": "per_page",
@@ -6081,14 +6015,8 @@
     "deprecationDate": null,
     "description": "Lists installations of your GitHub App that the authenticated user has explicit permission (`:read`, `:write`, or `:admin`) to access.\n\nYou must use a [user-to-server OAuth access token](https://developer.github.com/apps/building-github-apps/identifying-and-authorizing-users-for-github-apps/#identifying-users-on-your-site), created for a user who has authorized your GitHub App, to access this endpoint.\n\nThe authenticated user has explicit permission to access repositories they own, repositories where they are a collaborator, and repositories that they can access through an organization membership.\n\nYou can find the permissions for the installation under the `permissions` key.",
     "documentationUrl": "https://developer.github.com/v3/apps/installations/#list-app-installations-accessible-to-the-user-access-token",
-    "previews": [{ "name": "machine-man" }],
-    "headers": [
-      {
-        "name": "accept",
-        "value": "application/vnd.github.machine-man-preview+json",
-        "required": true
-      }
-    ],
+    "previews": [],
+    "headers": [],
     "parameters": [
       {
         "name": "per_page",
@@ -6246,14 +6174,8 @@
     "deprecationDate": null,
     "description": "List repositories that an app installation can access.\n\nYou must use an [installation access token](https://developer.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-an-installation) to access this endpoint.",
     "documentationUrl": "https://developer.github.com/v3/apps/installations/#list-repositories-accessible-to-the-app-installation",
-    "previews": [{ "name": "machine-man" }],
-    "headers": [
-      {
-        "name": "accept",
-        "value": "application/vnd.github.machine-man-preview+json",
-        "required": true
-      }
-    ],
+    "previews": [],
+    "headers": [],
     "parameters": [
       {
         "name": "per_page",
@@ -6411,14 +6333,8 @@
     "deprecationDate": null,
     "description": "Remove a single repository from an installation. The authenticated user must have admin access to the repository.\n\nYou must use a personal access token (which you can create via the [command line](https://docs.github.com/articles/creating-a-personal-access-token-for-the-command-line/) or the [OAuth Authorizations API](https://developer.github.com/v3/oauth_authorizations/#create-a-new-authorization)) or [Basic Authentication](https://developer.github.com/v3/auth/#basic-authentication) to access this endpoint.",
     "documentationUrl": "https://developer.github.com/v3/apps/installations/#remove-a-repository-from-an-app-installation",
-    "previews": [{ "name": "machine-man" }],
-    "headers": [
-      {
-        "name": "accept",
-        "value": "application/vnd.github.machine-man-preview+json",
-        "required": true
-      }
-    ],
+    "previews": [],
+    "headers": [],
     "parameters": [
       {
         "name": "installation_id",
@@ -18457,14 +18373,8 @@
     "deprecationDate": null,
     "description": "Lists all GitHub Apps in an organization. The installation count includes all GitHub Apps installed on repositories in the organization. You must be an organization owner with `admin:read` scope to use this endpoint.",
     "documentationUrl": "https://developer.github.com/v3/orgs/#list-app-installations-for-an-organization",
-    "previews": [{ "name": "machine-man" }],
-    "headers": [
-      {
-        "name": "accept",
-        "value": "application/vnd.github.machine-man-preview+json",
-        "required": true
-      }
-    ],
+    "previews": [],
+    "headers": [],
     "parameters": [
       {
         "name": "org",
@@ -28830,7 +28740,7 @@
     "url": "/repos/{owner}/{repo}/pages",
     "isDeprecated": false,
     "deprecationDate": null,
-    "description": "",
+    "description": "Configures a GitHub Pages site. For more information, see \"[About GitHub Pages](/github/working-with-github-pages/about-github-pages).\"",
     "documentationUrl": "https://developer.github.com/v3/repos/pages/#create-a-github-pages-site",
     "previews": [{ "name": "switcheroo" }],
     "headers": [
@@ -28869,10 +28779,10 @@
       },
       {
         "name": "source",
-        "description": "",
+        "description": "The source branch and directory used to publish your Pages site.",
         "in": "BODY",
         "type": "object",
-        "required": false,
+        "required": true,
         "enum": null,
         "allowNull": false,
         "mapToData": null,
@@ -28882,11 +28792,11 @@
       },
       {
         "name": "source.branch",
-        "description": "The repository branch used to publish your [site's source files](https://docs.github.com/articles/configuring-a-publishing-source-for-github-pages/). Can be either `master` or `gh-pages`.",
+        "description": "The repository branch used to publish your site's source files.",
         "in": "BODY",
         "type": "string",
-        "required": false,
-        "enum": ["master", "gh-pages"],
+        "required": true,
+        "enum": null,
         "allowNull": false,
         "mapToData": null,
         "validation": null,
@@ -28895,11 +28805,11 @@
       },
       {
         "name": "source.path",
-        "description": "The repository directory that includes the source files for the Pages site. When `branch` is `master`, you can change `path` to `/docs`. When `branch` is `gh-pages`, you are unable to specify a `path` other than `/`.",
+        "description": "The repository directory that includes the source files for the Pages site. Allowed paths are `/` or `/docs`. Default: `/`",
         "in": "BODY",
         "type": "string",
         "required": false,
-        "enum": null,
+        "enum": ["/", "/docs"],
         "allowNull": false,
         "mapToData": null,
         "validation": null,
@@ -31337,7 +31247,7 @@
     "url": "/repos/{owner}/{repo}/commits/{ref}",
     "isDeprecated": false,
     "deprecationDate": null,
-    "description": "Returns the contents of a single commit reference. You must have `read` access for the repository to use this endpoint.\n\nYou can pass the appropriate [media type](https://developer.github.com/v3/media/#commits-commit-comparison-and-pull-requests) to fetch `diff` and `patch` formats. Diffs with binary data will have no `patch` property.\n\nTo return only the SHA-1 hash of the commit reference, you can provide the `sha` custom [media type](https://developer.github.com/v3/media/#commits-commit-comparison-and-pull-requests) in the `Accept` header. You can use this endpoint to check if a remote reference's SHA-1 hash is the same as your local reference's SHA-1 hash by providing the local SHA-1 reference as the ETag.\n\n**Signature verification object**\n\nThe response will include a `verification` object that describes the result of verifying the commit's signature. The following fields are included in the `verification` object:\n\nThese are the possible values for `reason` in the `verification` object:\n\n| Value                    | Description                                                                                                                       |\n| ------------------------ | --------------------------------------------------------------------------------------------------------------------------------- |\n| `expired_key`            | The key that made the signature is expired.                                                                                       |\n| `not_signing_key`        | The \"signing\" flag is not among the usage flags in the GPG key that made the signature.                                           |\n| `gpgverify_error`        | There was an error communicating with the signature verification service.                                                         |\n| `gpgverify_unavailable`  | The signature verification service is currently unavailable.                                                                      |\n| `unsigned`               | The object does not include a signature.                                                                                          |\n| `unknown_signature_type` | A non-PGP signature was found in the commit.                                                                                      |\n| `no_user`                | No user was associated with the `committer` email address in the commit.                                                          |\n| `unverified_email`       | The `committer` email address in the commit was associated with a user, but the email address is not verified on her/his account. |\n| `bad_email`              | The `committer` email address in the commit is not included in the identities of the PGP key that made the signature.             |\n| `unknown_key`            | The key that made the signature has not been registered with any user's account.                                                  |\n| `malformed_signature`    | There was an error parsing the signature.                                                                                         |\n| `invalid`                | The signature could not be cryptographically verified using the key whose key-id was found in the signature.                      |\n| `valid`                  | None of the above errors applied, so the signature is considered to be verified.                                                  |",
+    "description": "Returns the contents of a single commit reference. You must have `read` access for the repository to use this\nendpoint.\n\n**Note:** If there are more than 300 files in the commit diff, the response will include pagination link headers for the remaining files, up to a limit of 3000 files. Each page contains the static commit information, and the only changes are to the file listing.\n\nYou can pass the appropriate [media type](https://developer.github.com/v3/media/#commits-commit-comparison-and-pull-requests) to\nfetch `diff` and `patch` formats. Diffs with binary data will have no `patch` property.\n\n\nTo return only the SHA-1 hash of the commit reference, you can provide the `sha` custom [media\ntype](https://developer.github.com/v3/media/#commits-commit-comparison-and-pull-requests) in the `Accept` header. You can use\nthis endpoint to check if a remote reference's SHA-1 hash is the same as your local reference's SHA-1 hash by\nproviding the local SHA-1 reference as the ETag.\n\n\n**Signature verification object**\n\n\nThe response will include a `verification` object that describes the result of verifying the commit's signature. The\nfollowing fields are included in the `verification` object:\n\n\nThese are the possible values for `reason` in the `verification` object:\n\n\n| Value                    |\nDescription                                                                                                                      \n|\n\n| ------------------------ |\n---------------------------------------------------------------------------------------------------------------------------------\n|\n\n| `expired_key`            | The key that made the signature is\nexpired.                                                                                       |\n\n| `not_signing_key`        | The \"signing\" flag is not among the usage flags in the GPG key that made the\nsignature.                                           |\n\n| `gpgverify_error`        | There was an error communicating with the signature verification\nservice.                                                         |\n\n| `gpgverify_unavailable`  | The signature verification service is currently\nunavailable.                                                                      |\n\n| `unsigned`               | The object does not include a\nsignature.                                                                                          |\n\n| `unknown_signature_type` | A non-PGP signature was found in the\ncommit.                                                                                      |\n\n| `no_user`                | No user was associated with the `committer` email address in the\ncommit.                                                          |\n\n| `unverified_email`       | The `committer` email address in the commit was associated with a user, but the email\naddress is not verified on her/his account. |\n\n| `bad_email`              | The `committer` email address in the commit is not included in the identities of the PGP\nkey that made the signature.             |\n\n| `unknown_key`            | The key that made the signature has not been registered with any user's\naccount.                                                  |\n\n| `malformed_signature`    | There was an error parsing the\nsignature.                                                                                         |\n\n| `invalid`                | The signature could not be cryptographically verified using the key whose key-id was\nfound in the signature.                      |\n\n| `valid`                  | None of the above errors applied, so the signature is considered to be\nverified.                                                  |",
     "documentationUrl": "https://developer.github.com/v3/repos/commits/#get-a-commit",
     "previews": [],
     "headers": [],
@@ -37217,7 +37127,7 @@
     "url": "/repos/{owner}/{repo}/pages",
     "isDeprecated": false,
     "deprecationDate": null,
-    "description": "",
+    "description": "Updates information for a GitHub Pages site. For more information, see \"[About GitHub Pages](/github/working-with-github-pages/about-github-pages).",
     "documentationUrl": "https://developer.github.com/v3/repos/pages/#update-information-about-a-github-pages-site",
     "previews": [],
     "headers": [],
@@ -37263,11 +37173,37 @@
       },
       {
         "name": "source",
-        "description": "Update the source for the repository. Must include the branch name, and may optionally specify the subdirectory `/docs`. Possible values are `\"gh-pages\"`, `\"master\"`, and `\"master /docs\"`.",
+        "description": "Update the source for the repository. Must include the branch name and path.",
+        "in": "BODY",
+        "type": "object",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "source.branch",
+        "description": "The repository branch used to publish your site's source files.",
         "in": "BODY",
         "type": "string",
-        "required": false,
-        "enum": ["gh-pages", "master", "master /docs"],
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "source.path",
+        "description": "The repository directory that includes the source files for the Pages site. Allowed paths are `/` or `/docs`.",
+        "in": "BODY",
+        "type": "string",
+        "required": true,
+        "enum": ["/", "/docs"],
         "allowNull": false,
         "mapToData": null,
         "validation": null,

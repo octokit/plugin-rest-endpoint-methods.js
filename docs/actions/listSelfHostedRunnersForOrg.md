@@ -8,9 +8,9 @@ type: API method
 
 # List self-hosted runners for an organization
 
-**Warning:** The self-hosted runners API for organizations is currently in public beta and subject to change.
+Lists all self-hosted runners configured in an organization.
 
-Lists all self-hosted runners for an organization. You must authenticate using an access token with the `admin:org` scope to use this endpoint.
+You must authenticate using an access token with the `admin:org` scope to use this endpoint.
 
 ```js
 octokit.actions.listSelfHostedRunnersForOrg({

@@ -8,7 +8,10 @@ type: API method
 
 # Delete a self-hosted runner from a repository
 
-Forces the removal of a self-hosted runner from a repository. You can use this endpoint to completely remove the runner when the machine you were using no longer exists. You must authenticate using an access token with the `repo` scope to use this endpoint.
+Forces the removal of a self-hosted runner from a repository. You can use this endpoint to completely remove the runner when the machine you were using no longer exists.
+
+You must authenticate using an access token with the `repo`
+scope to use this endpoint.
 
 ```js
 octokit.actions.deleteSelfHostedRunnerFromRepo({
@@ -36,6 +39,8 @@ octokit.actions.deleteSelfHostedRunnerFromRepo({
 
 </td></tr>
 <tr><td>runner_id</td><td>yes</td><td>
+
+Unique identifier of the self-hosted runner.
 
 </td></tr>
   </tbody>
