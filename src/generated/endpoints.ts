@@ -4,9 +4,6 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     addSelectedRepoToOrgSecret: [
       "PUT /orgs/{org}/actions/secrets/{secret_name}/repositories/{repository_id}",
     ],
-    addSelfHostedRunnerToGroupForOrg: [
-      "PUT /orgs/{org}/actions/runner-groups/{runner_group_id}/runners/{runner_id}",
-    ],
     cancelWorkflowRun: [
       "POST /repos/{owner}/{repo}/actions/runs/{run_id}/cancel",
     ],
@@ -24,9 +21,6 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     createRemoveTokenForRepo: [
       "POST /repos/{owner}/{repo}/actions/runners/remove-token",
     ],
-    createSelfHostedRunnerGroupForOrg: [
-      "POST /orgs/{org}/actions/runner-groups",
-    ],
     createWorkflowDispatch: [
       "POST /repos/{owner}/{repo}/actions/workflows/{workflow_id}/dispatches",
     ],
@@ -42,9 +36,6 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     ],
     deleteSelfHostedRunnerFromRepo: [
       "DELETE /repos/{owner}/{repo}/actions/runners/{runner_id}",
-    ],
-    deleteSelfHostedRunnerGroupFromOrg: [
-      "DELETE /orgs/{org}/actions/runner-groups/{runner_group_id}",
     ],
     deleteWorkflowRun: ["DELETE /repos/{owner}/{repo}/actions/runs/{run_id}"],
     deleteWorkflowRunLogs: [
@@ -69,9 +60,6 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     getSelfHostedRunnerForRepo: [
       "GET /repos/{owner}/{repo}/actions/runners/{runner_id}",
     ],
-    getSelfHostedRunnerGroupForOrg: [
-      "GET /orgs/{org}/actions/runner-groups/{runner_group_id}",
-    ],
     getWorkflow: ["GET /repos/{owner}/{repo}/actions/workflows/{workflow_id}"],
     getWorkflowRun: ["GET /repos/{owner}/{repo}/actions/runs/{run_id}"],
     getWorkflowRunUsage: [
@@ -85,9 +73,6 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
       "GET /repos/{owner}/{repo}/actions/runs/{run_id}/jobs",
     ],
     listOrgSecrets: ["GET /orgs/{org}/actions/secrets"],
-    listRepoAccessToSelfHostedRunnerGroupInOrg: [
-      "GET /orgs/{org}/actions/runner-groups/{runner_group_id}/repositories",
-    ],
     listRepoSecrets: ["GET /repos/{owner}/{repo}/actions/secrets"],
     listRepoWorkflows: ["GET /repos/{owner}/{repo}/actions/workflows"],
     listRunnerApplicationsForOrg: ["GET /orgs/{org}/actions/runners/downloads"],
@@ -97,12 +82,8 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     listSelectedReposForOrgSecret: [
       "GET /orgs/{org}/actions/secrets/{secret_name}/repositories",
     ],
-    listSelfHostedRunnerGroupsForOrg: ["GET /orgs/{org}/actions/runner-groups"],
     listSelfHostedRunnersForOrg: ["GET /orgs/{org}/actions/runners"],
     listSelfHostedRunnersForRepo: ["GET /repos/{owner}/{repo}/actions/runners"],
-    listSelfHostedRunnersInGroupForOrg: [
-      "GET /orgs/{org}/actions/runner-groups/{runner_group_id}/runners",
-    ],
     listWorkflowRunArtifacts: [
       "GET /repos/{owner}/{repo}/actions/runs/{run_id}/artifacts",
     ],
@@ -111,26 +92,11 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     ],
     listWorkflowRunsForRepo: ["GET /repos/{owner}/{repo}/actions/runs"],
     reRunWorkflow: ["POST /repos/{owner}/{repo}/actions/runs/{run_id}/rerun"],
-    removeRepoAccessToSelfHostedRunnerGroupInOrg: [
-      "DELETE /orgs/{org}/actions/runner-groups/{runner_group_id}/repositories/{repository_id}",
-    ],
     removeSelectedRepoFromOrgSecret: [
       "DELETE /orgs/{org}/actions/secrets/{secret_name}/repositories/{repository_id}",
     ],
-    removeSelfHostedRunnerFromGroupForOrg: [
-      "DELETE /orgs/{org}/actions/runner-groups/{runner_group_id}/runners/{runner_id}",
-    ],
-    setRepoAccessToSelfHostedRunnerGroupInOrg: [
-      "PUT /orgs/{org}/actions/runner-groups/{runner_group_id}/repositories",
-    ],
     setSelectedReposForOrgSecret: [
       "PUT /orgs/{org}/actions/secrets/{secret_name}/repositories",
-    ],
-    setSelfHostedRunnersInGroupForOrg: [
-      "PUT /orgs/{org}/actions/runner-groups/{runner_group_id}/runners",
-    ],
-    updateSelfHostedRunnerGroupForOrg: [
-      "PATCH /orgs/{org}/actions/runner-groups/{runner_group_id}",
     ],
   },
   activity: {
@@ -313,65 +279,6 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     ],
   },
   emojis: { get: ["GET /emojis"] },
-  enterpriseAdmin: {
-    addOrgAccessToSelfHostedRunnerGroupInEnterprise: [
-      "PUT /enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/organizations/{org_id}",
-    ],
-    addSelfHostedRunnerToRunnerGroupForEnterprise: [
-      "PUT /enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/runners/{runner_id}",
-    ],
-    createRegistrationTokenForEnterprise: [
-      "POST /enterprises/{enterprise}/actions/runners/registration-token",
-    ],
-    createRemoveTokenForEnterprise: [
-      "POST /enterprises/{enterprise}/actions/runners/remove-token",
-    ],
-    createSelfHostedRunnerGroupForEnterprise: [
-      "POST /enterprises/{enterprise}/actions/runner-groups",
-    ],
-    deleteSelfHostedRunnerFromEnterprise: [
-      "DELETE /enterprises/{enterprise}/actions/runners/{runner_id}",
-    ],
-    deleteSelfHostedRunnerGroupFromEnterprise: [
-      "DELETE /enterprises/{enterprise}/actions/runner-groups/{runner_group_id}",
-    ],
-    getSelfHostedRunnerForEnterprise: [
-      "GET /enterprises/{enterprise}/actions/runners/{runner_id}",
-    ],
-    getSelfHostedRunnerGroupForEnterprise: [
-      "GET /enterprises/{enterprise}/actions/runner-groups/{runner_group_id}",
-    ],
-    listOrgAccessToSelfHostedRunnerGroupInEnterprise: [
-      "GET /enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/organizations",
-    ],
-    listRunnerApplicationsForEnterprise: [
-      "GET /enterprises/{enterprise}/actions/runners/downloads",
-    ],
-    listSelfHostedRunnerGroupsForEnterprise: [
-      "GET /enterprises/{enterprise}/actions/runner-groups",
-    ],
-    listSelfHostedRunnersForEnterprise: [
-      "GET /enterprises/{enterprise}/actions/runners",
-    ],
-    listSelfHostedRunnersInGroupForEnterprise: [
-      "GET /enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/runners",
-    ],
-    removeOrgAccessToSelfHostedRunnerGroupInEnterprise: [
-      "DELETE /enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/organizations/{org_id}",
-    ],
-    removeSelfHostedRunnerFromGroupForEnterprise: [
-      "DELETE /enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/runners/{runner_id}",
-    ],
-    setOrgAccessToSelfHostedRunnerGroupInEnterprise: [
-      "PUT /enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/organizations",
-    ],
-    setSelfHostedInGroupForEnterprise: [
-      "PUT /enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/runners",
-    ],
-    updateSelfHostedRunnerGroupForEnterprise: [
-      "PATCH /enterprises/{enterprise}/actions/runner-groups/{runner_group_id}",
-    ],
-  },
   gists: {
     checkIsStarred: ["GET /gists/{gist_id}/star"],
     create: ["POST /gists"],
