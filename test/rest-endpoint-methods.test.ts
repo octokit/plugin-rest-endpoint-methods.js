@@ -33,11 +33,11 @@ describe("REST API endpoint methods", () => {
 
   it("Required preview header", async () => {
     const mock = fetchMock.sandbox().getOnce(
-      "path:/app",
+      "path:/repos/octocat/hello-world/check-runs/123",
       { ok: true },
       {
         headers: {
-          accept: "application/vnd.github.machine-man-preview+json",
+          accept: "application/vnd.github.antiope-preview+json",
         },
       }
     );
@@ -50,7 +50,11 @@ describe("REST API endpoint methods", () => {
     });
 
     // See https://developer.github.com/v3/repos/#create-a-repository-dispatch-event
-    const { data } = await octokit.apps.getAuthenticated();
+    const { data } = await octokit.checks.get({
+      owner: "octocat",
+      repo: "hello-world",
+      check_run_id: 123,
+    });
 
     expect(data).toStrictEqual({ ok: true });
   });
