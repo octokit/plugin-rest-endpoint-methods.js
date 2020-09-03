@@ -958,36 +958,6 @@
         "name": "runner_id",
         "description": "Unique identifier of the self-hosted runner.",
         "in": "PATH",
-        "type": "integer",
-        "required": true,
-        "enum": null,
-        "allowNull": false,
-        "mapToData": null,
-        "validation": null,
-        "alias": null,
-        "deprecated": null
-      }
-    ],
-    "responses": [],
-    "renamed": null
-  },
-  {
-    "name": "Delete a self-hosted runner group from an organization",
-    "scope": "actions",
-    "id": "deleteSelfHostedRunnerGroupFromOrg",
-    "method": "DELETE",
-    "url": "/orgs/{org}/actions/runner-groups/{runner_group_id}",
-    "isDeprecated": false,
-    "deprecationDate": null,
-    "description": "The self-hosted runner groups REST API is available with GitHub Enterprise Cloud and GitHub Enterprise Server. For more information, see \"[GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products).\"\n\nDeletes a self-hosted runner group for an organization. \n\nYou must authenticate using an access token with the `admin:org` scope to use this endpoint.",
-    "documentationUrl": "https://developer.github.com/v3/actions/self-hosted-runner-groups/#delete-a-self-hosted-runner-group-from-an-organization",
-    "previews": [],
-    "headers": [],
-    "parameters": [
-      {
-        "name": "org",
-        "description": "",
-        "in": "PATH",
         "type": "string",
         "required": true,
         "enum": null,
@@ -1747,46 +1717,6 @@
         "name": "runner_id",
         "description": "Unique identifier of the self-hosted runner.",
         "in": "PATH",
-        "type": "integer",
-        "required": true,
-        "enum": null,
-        "allowNull": false,
-        "mapToData": null,
-        "validation": null,
-        "alias": null,
-        "deprecated": null
-      }
-    ],
-    "responses": [
-      {
-        "code": 200,
-        "description": "response",
-        "examples": [
-          {
-            "data": "{\"id\":23,\"name\":\"mac_runner\",\"os\":\"macos\",\"status\":\"online\",\"busy\":true,\"labels\":[{\"id\":5,\"name\":\"self-hosted\",\"type\":\"read-only\"},{\"id\":7,\"name\":\"X64\",\"type\":\"read-only\"},{\"id\":20,\"name\":\"macOS\",\"type\":\"read-only\"},{\"id\":21,\"name\":\"no-gpu\",\"type\":\"custom\"}]}"
-          }
-        ]
-      }
-    ],
-    "renamed": null
-  },
-  {
-    "name": "Get a self-hosted runner group for an organization",
-    "scope": "actions",
-    "id": "getSelfHostedRunnerGroupForOrg",
-    "method": "GET",
-    "url": "/orgs/{org}/actions/runner-groups/{runner_group_id}",
-    "isDeprecated": false,
-    "deprecationDate": null,
-    "description": "The self-hosted runner groups REST API is available with GitHub Enterprise Cloud and GitHub Enterprise Server. For more information, see \"[GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products).\"\n\nGets a specific self-hosted runner group for an organization. \n\nYou must authenticate using an access token with the `admin:org` scope to use this endpoint.",
-    "documentationUrl": "https://developer.github.com/v3/actions/self-hosted-runner-groups/#get-a-self-hosted-runner-group-for-an-organization",
-    "previews": [],
-    "headers": [],
-    "parameters": [
-      {
-        "name": "org",
-        "description": "",
-        "in": "PATH",
         "type": "string",
         "required": true,
         "enum": null,
@@ -1816,7 +1746,7 @@
         "description": "response",
         "examples": [
           {
-            "data": "{\"id\":2,\"name\":\"octo-runner-group\",\"visibility\":\"selected\",\"default\":false,\"selected_repositories_url\":\"https://api.github.com/orgs/octo-org/actions/runner_groups/2/repositories\",\"runners_url\":\"https://api.github.com/orgs/octo-org/actions/runner_groups/2/runners\",\"inherited\":false}"
+            "data": "{\"id\":23,\"name\":\"mac_runner\",\"os\":\"macos\",\"status\":\"online\",\"busy\":true,\"labels\":[{\"id\":5,\"name\":\"self-hosted\",\"type\":\"read-only\"},{\"id\":7,\"name\":\"X64\",\"type\":\"read-only\"},{\"id\":20,\"name\":\"macOS\",\"type\":\"read-only\"},{\"id\":21,\"name\":\"no-gpu\",\"type\":\"custom\"}]}"
           }
         ]
       }
@@ -2857,85 +2787,6 @@
         "description": "",
         "in": "PATH",
         "type": "string",
-        "required": true,
-        "enum": null,
-        "allowNull": false,
-        "mapToData": null,
-        "validation": null,
-        "alias": null,
-        "deprecated": null
-      },
-      {
-        "name": "per_page",
-        "description": "Results per page (max 100)",
-        "in": "QUERY",
-        "type": "integer",
-        "required": false,
-        "enum": null,
-        "allowNull": false,
-        "mapToData": null,
-        "validation": null,
-        "alias": null,
-        "deprecated": null
-      },
-      {
-        "name": "page",
-        "description": "Page number of the results to fetch.",
-        "in": "QUERY",
-        "type": "integer",
-        "required": false,
-        "enum": null,
-        "allowNull": false,
-        "mapToData": null,
-        "validation": null,
-        "alias": null,
-        "deprecated": null
-      }
-    ],
-    "responses": [
-      {
-        "code": 200,
-        "description": "response",
-        "examples": [
-          {
-            "data": "{\"total_count\":2,\"runners\":[{\"id\":23,\"name\":\"linux_runner\",\"os\":\"linux\",\"status\":\"online\",\"busy\":true,\"labels\":[{\"id\":5,\"name\":\"self-hosted\",\"type\":\"read-only\"},{\"id\":7,\"name\":\"X64\",\"type\":\"read-only\"},{\"id\":11,\"name\":\"Linux\",\"type\":\"read-only\"}]},{\"id\":24,\"name\":\"mac_runner\",\"os\":\"macos\",\"status\":\"offline\",\"busy\":false,\"labels\":[{\"id\":5,\"name\":\"self-hosted\",\"type\":\"read-only\"},{\"id\":7,\"name\":\"X64\",\"type\":\"read-only\"},{\"id\":20,\"name\":\"macOS\",\"type\":\"read-only\"},{\"id\":21,\"name\":\"no-gpu\",\"type\":\"custom\"}]}]}"
-          }
-        ]
-      }
-    ],
-    "renamed": null
-  },
-  {
-    "name": "List self-hosted runners in a group for an organization",
-    "scope": "actions",
-    "id": "listSelfHostedRunnersInGroupForOrg",
-    "method": "GET",
-    "url": "/orgs/{org}/actions/runner-groups/{runner_group_id}/runners",
-    "isDeprecated": false,
-    "deprecationDate": null,
-    "description": "The self-hosted runner groups REST API is available with GitHub Enterprise Cloud and GitHub Enterprise Server. For more information, see \"[GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products).\"\n\nLists self-hosted runners that are in a specific organization group.\n\nYou must authenticate using an access token with the `admin:org` scope to use this endpoint.",
-    "documentationUrl": "https://developer.github.com/v3/actions/self-hosted-runner-groups/#list-self-hosted-runners-in-a-group-for-an-organization",
-    "previews": [],
-    "headers": [],
-    "parameters": [
-      {
-        "name": "org",
-        "description": "",
-        "in": "PATH",
-        "type": "string",
-        "required": true,
-        "enum": null,
-        "allowNull": false,
-        "mapToData": null,
-        "validation": null,
-        "alias": null,
-        "deprecated": null
-      },
-      {
-        "name": "runner_group_id",
-        "description": "Unique identifier of the self-hosted runner group.",
-        "in": "PATH",
-        "type": "integer",
         "required": true,
         "enum": null,
         "allowNull": false,

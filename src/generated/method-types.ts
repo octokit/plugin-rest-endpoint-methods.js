@@ -773,22 +773,6 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * The self-hosted runner groups REST API is available with GitHub Enterprise Cloud and GitHub Enterprise Server. For more information, see "[GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products)."
-     *
-     * Lists all self-hosted runner groups configured in an organization and inherited from an enterprise.
-     *
-     * You must authenticate using an access token with the `admin:org` scope to use this endpoint.
-     */
-    listSelfHostedRunnerGroupsForOrg: {
-      (
-        params?: RestEndpointMethodTypes["actions"]["listSelfHostedRunnerGroupsForOrg"]["parameters"]
-      ): Promise<
-        RestEndpointMethodTypes["actions"]["listSelfHostedRunnerGroupsForOrg"]["response"]
-      >;
-      defaults: RequestInterface["defaults"];
-      endpoint: EndpointInterface<{ url: string }>;
-    };
-    /**
      * Lists all self-hosted runners configured in an organization.
      *
      * You must authenticate using an access token with the `admin:org` scope to use this endpoint.
