@@ -1023,10 +1023,10 @@ export type RestEndpointMethodTypes = {
     getAlert: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/code-scanning/alerts/:alert_id"]["parameters"],
+          Endpoints["GET /repos/:owner/:repo/code-scanning/alerts/:alert_number"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/code-scanning/alerts/:alert_id"]["response"];
+      response: Endpoints["GET /repos/:owner/:repo/code-scanning/alerts/:alert_number"]["response"];
     };
     listAlertsForRepo: {
       parameters: RequestParameters &
@@ -1035,6 +1035,30 @@ export type RestEndpointMethodTypes = {
           "baseUrl" | "headers" | "mediaType"
         >;
       response: Endpoints["GET /repos/:owner/:repo/code-scanning/alerts"]["response"];
+    };
+    listRecentAnalyses: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /repos/:owner/:repo/code-scanning/analyses"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /repos/:owner/:repo/code-scanning/analyses"]["response"];
+    };
+    updateAlert: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["PATCH /repos/:owner/:repo/code-scanning/alerts/:alert_number"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["PATCH /repos/:owner/:repo/code-scanning/alerts/:alert_number"]["response"];
+    };
+    uploadSarif: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["POST /repos/:owner/:repo/code-scanning/sarifs"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["POST /repos/:owner/:repo/code-scanning/sarifs"]["response"];
     };
   };
   codesOfConduct: {

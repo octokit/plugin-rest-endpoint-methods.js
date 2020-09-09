@@ -8,7 +8,7 @@ type: API method
 
 # List code scanning alerts for a repository
 
-Lists all open code scanning alerts for the default branch (usually `master`) and protected branches in a repository. You must use an access token with the `security_events` scope to use this endpoint. GitHub Apps must have the `security_events` read permission to use this endpoint.
+Lists all open code scanning alerts for the default branch (usually `master`) and protected branches in a repository. For private repos, you must use an access token with the `repo` scope. For public repos, you must use an access token with `public_repo` and `repo:security_events` scopes. GitHub Apps must have the `security_events` read permission to use this endpoint.
 
 ```js
 octokit.codeScanning.listAlertsForRepo({
@@ -36,12 +36,12 @@ octokit.codeScanning.listAlertsForRepo({
 </td></tr>
 <tr><td>state</td><td>no</td><td>
 
-Set to `closed` to list only closed code scanning alerts.
+Set to `open`, `fixed`, or `dismissed` to list code scanning alerts in a specific state.
 
 </td></tr>
 <tr><td>ref</td><td>no</td><td>
 
-Returns a list of code scanning alerts for a specific brach reference. The `ref` must be formatted as `heads/<branch name>`.
+Set a full Git reference to list alerts for a specific branch. The `ref` must be formatted as `refs/heads/<branch name>`.
 
 </td></tr>
   </tbody>

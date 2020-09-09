@@ -1850,9 +1850,8 @@ export type RestEndpointMethods = {
   };
   codeScanning: {
     /**
-     * Gets a single code scanning alert. You must use an access token with the `security_events` scope to use this endpoint. GitHub Apps must have the `security_events` read permission to use this endpoint.
-     *
-     * The security `alert_id` is found at the end of the security alert's URL. For example, the security alert ID for `https://github.com/Octo-org/octo-repo/security/code-scanning/88` is `88`.
+     * Gets a single code scanning alert. For private repos, you must use an access token with the `repo` scope. For public repos, you must use an access token with `public_repo` and `repo:security_events` scopes.
+     * GitHub Apps must have the `security_events` read permission to use this endpoint.
      */
     getAlert: {
       (
@@ -1864,13 +1863,51 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Lists all open code scanning alerts for the default branch (usually `master`) and protected branches in a repository. You must use an access token with the `security_events` scope to use this endpoint. GitHub Apps must have the `security_events` read permission to use this endpoint.
+     * Lists all open code scanning alerts for the default branch (usually `master`) and protected branches in a repository. For private repos, you must use an access token with the `repo` scope. For public repos, you must use an access token with `public_repo` and `repo:security_events` scopes. GitHub Apps must have the `security_events` read permission to use this endpoint.
      */
     listAlertsForRepo: {
       (
         params?: RestEndpointMethodTypes["codeScanning"]["listAlertsForRepo"]["parameters"]
       ): Promise<
         RestEndpointMethodTypes["codeScanning"]["listAlertsForRepo"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * List the details of recent code scanning analyses for a repository. For private repos, you must use an access token with the `repo` scope. For public repos, you must use an access token with `public_repo` and `repo:security_events` scopes. GitHub Apps must have the `security_events` read permission to use this endpoint.
+     */
+    listRecentAnalyses: {
+      (
+        params?: RestEndpointMethodTypes["codeScanning"]["listRecentAnalyses"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["codeScanning"]["listRecentAnalyses"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Updates the status of a single code scanning alert. For private repos, you must use an access token with the `repo` scope. For public repos, you must use an access token with `public_repo` and `repo:security_events` scopes.
+     * GitHub Apps must have the `security_events` write permission to use this endpoint.
+     */
+    updateAlert: {
+      (
+        params?: RestEndpointMethodTypes["codeScanning"]["updateAlert"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["codeScanning"]["updateAlert"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Upload a SARIF file containing the results of a code scanning analysis to make the results available in a repository.
+     * For private repos, you must use an access token with the `repo` scope. For public repos, you must use an access token with `public_repo` and `repo:security_events` scopes. GitHub Apps must have the `security_events` write permission to use this endpoint.
+     */
+    uploadSarif: {
+      (
+        params?: RestEndpointMethodTypes["codeScanning"]["uploadSarif"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["codeScanning"]["uploadSarif"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
