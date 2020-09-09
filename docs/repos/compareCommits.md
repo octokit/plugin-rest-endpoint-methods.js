@@ -18,11 +18,19 @@ The response also includes details on the files that were changed between the tw
 
 The response will include a comparison of up to 250 commits. If you are working with a larger commit range, you can use the [List commits](https://developer.github.com/v3/repos/commits/#list-commits) to enumerate all commits in the range.
 
-For comparisons with extremely large diffs, you may receive an error response indicating that the diff took too long to generate. You can typically resolve this error by using a smaller commit range.
+For comparisons with extremely large diffs, you may receive an error response indicating that the diff took too long
+to generate. You can typically resolve this error by using a smaller commit range.
 
 **Signature verification object**
 
 The response will include a `verification` object that describes the result of verifying the commit's signature. The following fields are included in the `verification` object:
+
+| Name        | Type      | Description                                                                                      |
+| ----------- | --------- | ------------------------------------------------------------------------------------------------ |
+| `verified`  | `boolean` | Indicates whether GitHub considers the signature in this commit to be verified.                  |
+| `reason`    | `string`  | The reason for verified value. Possible values and their meanings are enumerated in table below. |
+| `signature` | `string`  | The signature that was extracted from the commit.                                                |
+| `payload`   | `string`  | The value that was signed.                                                                       |
 
 These are the possible values for `reason` in the `verification` object:
 
