@@ -8714,6 +8714,19 @@
         "validation": null,
         "alias": null,
         "deprecated": null
+      },
+      {
+        "name": "alert_id",
+        "description": null,
+        "in": null,
+        "type": null,
+        "required": null,
+        "enum": null,
+        "allowNull": null,
+        "mapToData": null,
+        "validation": null,
+        "alias": "alert_number",
+        "deprecated": true
       }
     ],
     "responses": [

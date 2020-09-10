@@ -40,6 +40,9 @@ octokit.codeScanning.getAlert({
 The code scanning alert number.
 
 </td></tr>
+<tr><td>alert_id</td><td>no</td><td>
+
+</td></tr>
   </tbody>
 </table>
 

@@ -261,7 +261,11 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     ],
   },
   codeScanning: {
-    getAlert: ["GET /repos/{owner}/{repo}/code-scanning/alerts/{alert_number}"],
+    getAlert: [
+      "GET /repos/{owner}/{repo}/code-scanning/alerts/{alert_number}",
+      {},
+      { renamedParameters: { alert_id: "alert_number" } },
+    ],
     listAlertsForRepo: ["GET /repos/{owner}/{repo}/code-scanning/alerts"],
     listRecentAnalyses: ["GET /repos/{owner}/{repo}/code-scanning/analyses"],
     updateAlert: [
