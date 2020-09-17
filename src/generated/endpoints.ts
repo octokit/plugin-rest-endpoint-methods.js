@@ -54,6 +54,7 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     getJobForWorkflowRun: ["GET /repos/{owner}/{repo}/actions/jobs/{job_id}"],
     getOrgPublicKey: ["GET /orgs/{org}/actions/secrets/public-key"],
     getOrgSecret: ["GET /orgs/{org}/actions/secrets/{secret_name}"],
+    getRepoPermissions: ["GET /repos/{owner}/{repo}/actions/permissions"],
     getRepoPublicKey: ["GET /repos/{owner}/{repo}/actions/secrets/public-key"],
     getRepoSecret: ["GET /repos/{owner}/{repo}/actions/secrets/{secret_name}"],
     getSelfHostedRunnerForOrg: ["GET /orgs/{org}/actions/runners/{runner_id}"],
@@ -431,7 +432,12 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
       { headers: { "content-type": "text/plain; charset=utf-8" } },
     ],
   },
-  meta: { get: ["GET /meta"] },
+  meta: {
+    get: ["GET /meta"],
+    getOctocat: ["GET /octocat"],
+    getZen: ["GET /zen"],
+    root: ["GET /"],
+  },
   migrations: {
     cancelImport: ["DELETE /repos/{owner}/{repo}/import"],
     deleteArchiveForAuthenticatedUser: [
@@ -885,7 +891,13 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
       "DELETE /repos/{owner}/{repo}/vulnerability-alerts",
       { mediaType: { previews: ["dorian"] } },
     ],
-    downloadArchive: ["GET /repos/{owner}/{repo}/{archive_format}/{ref}"],
+    downloadArchive: [
+      "GET /repos/{owner}/{repo}/zipball/{ref}",
+      {},
+      { renamed: ["repos", "downloadZipballArchive"] },
+    ],
+    downloadTarballArchive: ["GET /repos/{owner}/{repo}/tarball/{ref}"],
+    downloadZipballArchive: ["GET /repos/{owner}/{repo}/zipball/{ref}"],
     enableAutomatedSecurityFixes: [
       "PUT /repos/{owner}/{repo}/automated-security-fixes",
       { mediaType: { previews: ["london"] } },
@@ -1080,6 +1092,11 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
       "PATCH /repos/{owner}/{repo}/releases/assets/{asset_id}",
     ],
     updateStatusCheckPotection: [
+      "PATCH /repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks",
+      {},
+      { renamed: ["repos", "updateStatusCheckProtection"] },
+    ],
+    updateStatusCheckProtection: [
       "PATCH /repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks",
     ],
     updateWebhook: ["PATCH /repos/{owner}/{repo}/hooks/{hook_id}"],
