@@ -169,4 +169,33 @@ describe("Deprecations", () => {
     });
     expect(warnCalledCount).toEqual(1);
   });
+
+  it("octokit.git.listRefs()", () => {
+    const mock = fetchMock
+      .sandbox()
+      .getOnce("path:/repos/octocat/hello-world/git/refs/heads/", {
+        ok: true
+      });
+    const MyOctokit = Octokit.plugin(restEndpointMethods);
+    let warnCalledCount = 0;
+    const octokit = new MyOctokit({
+      log: {
+        warn: (deprecation: Error) => {
+          warnCalledCount++;
+          expect(deprecation.message).toMatch(
+            `[@octokit/plugin-rest-endpoint-methods] "octokit.git.listRefs({ owner, repo, namespace })" is deprecated. Use "octokit.git.listMatchingRefs({ owner, repo, ref })" instead`
+          );
+        }
+      },
+      request: {
+        fetch: mock
+      }
+    });
+    octokit.git.listRefs({
+      owner: "octocat",
+      repo: "hello-world",
+      namespace: "heads/"
+    });
+    expect(warnCalledCount).toEqual(1);
+  });
 });

@@ -1349,7 +1349,8 @@ export default {
         per_page: { type: "integer" },
         repo: { required: true, type: "string" }
       },
-      url: "/repos/:owner/:repo/git/refs/:namespace"
+      url: "/repos/:owner/:repo/git/refs/:namespace",
+      deprecated: "`[@octokit/plugin-rest-endpoint-methods] \"octokit.git.listRefs({ owner, repo, namespace })\" is deprecated. Use \"octokit.git.listMatchingRefs({ owner, repo, ref })\" instead"
     },
     updateRef: {
       method: "PATCH",
