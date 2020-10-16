@@ -13,12 +13,12 @@
 Browsers
 </th><td width=100%>
 
-Load `@octokit/plugin-request-log` and [`@octokit/core`](https://github.com/octokit/core.js) (or core-compatible module) directly from [cdn.skypack.dev](https://cdn.skypack.dev)
+Load `@octokit/plugin-rest-endpoint-methods` and [`@octokit/core`](https://github.com/octokit/core.js) (or core-compatible module) directly from [cdn.skypack.dev](https://cdn.skypack.dev)
 
 ```html
 <script type="module">
   import { Octokit } from "https://cdn.skypack.dev/@octokit/core";
-  import { requestLog } from "https://cdn.skypack.dev/@octokit/plugin-request-log";
+  import { restEndpointMethods } from "https://cdn.skypack.dev/@octokit/plugin-rest-endpoint-methods";
 </script>
 ```
 
