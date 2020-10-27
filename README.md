@@ -12,16 +12,13 @@
 <tr><th>
 Browsers
 </th><td width=100%>
-
 Load `@octokit/plugin-rest-endpoint-methods` and [`@octokit/core`](https://github.com/octokit/core.js) (or core-compatible module) directly from [cdn.pika.dev](https://cdn.pika.dev)
-
 ```html
 <script type="module">
   import { Octokit } from "https://cdn.pika.dev/@octokit/core";
   import { restEndpointMethods } from "https://cdn.pika.dev/@octokit/plugin-rest-endpoint-methods";
 </script>
 ```
-
 </td></tr>
 <tr><th>
 Node
