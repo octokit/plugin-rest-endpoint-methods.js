@@ -12,7 +12,7 @@ type: API method
 octokit.issues.deleteComment({
   owner,
   repo,
-  comment_id,
+  comment_id
 });
 ```
 
@@ -35,8 +35,10 @@ octokit.issues.deleteComment({
 </td></tr>
 <tr><td>comment_id</td><td>yes</td><td>
 
+comment_id parameter
+
 </td></tr>
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/issues/comments/#delete-an-issue-comment).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/issues#delete-an-issue-comment).

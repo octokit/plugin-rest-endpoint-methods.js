@@ -26,15 +26,15 @@ If you use the `comfort-fade` preview header, your response will show:
 If you don't use the `comfort-fade` preview header, multi-line and single-line comments will appear the same way in the response with a single `position` attribute. Your response will show:
 
 - For multi-line comments, the last line of the comment range for the `position` attribute.
-- For single-line comments, the diff-positioned way of referencing comments for the `position` attribute. For more information, see `position` in the [input parameters](https://developer.github.com/v3/pulls/comments/#parameters-2) table.
+- For single-line comments, the diff-positioned way of referencing comments for the `position` attribute. For more information, see `position` in the [input parameters](https://docs.github.com/rest/reference/pulls#parameters-2) table.
 
-The `reactions` key will have the following payload where `url` can be used to construct the API location for [listing and creating](https://developer.github.com/v3/reactions) reactions.
+The `reactions` key will have the following payload where `url` can be used to construct the API location for [listing and creating](https://docs.github.com/rest/reference/reactions) reactions.
 
 ```js
 octokit.pulls.listReviewComments({
   owner,
   repo,
-  pull_number,
+  pull_number
 });
 ```
 
@@ -60,7 +60,7 @@ octokit.pulls.listReviewComments({
 </td></tr>
 <tr><td>sort</td><td>no</td><td>
 
-Can be either `created` or `updated` comments.
+One of `created` (when the repository was starred) or `updated` (when it was last pushed to).
 
 </td></tr>
 <tr><td>direction</td><td>no</td><td>
@@ -70,7 +70,7 @@ Can be either `asc` or `desc`. Ignored without `sort` parameter.
 </td></tr>
 <tr><td>since</td><td>no</td><td>
 
-This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`. Only returns comments `updated` at or after this time.
+Only show notifications updated after the given time. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.
 
 </td></tr>
 <tr><td>per_page</td><td>no</td><td>
@@ -86,4 +86,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/pulls/comments/#list-review-comments-on-a-pull-request).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/pulls#list-review-comments-on-a-pull-request).

@@ -15,7 +15,7 @@ The `parent` and `source` objects are present when the repository is a fork. `pa
 ```js
 octokit.repos.get({
   owner,
-  repo,
+  repo
 });
 ```
 
@@ -39,4 +39,4 @@ octokit.repos.get({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/#get-a-repository).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/v3/repos/#get-a-repository).

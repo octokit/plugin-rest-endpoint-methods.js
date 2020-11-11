@@ -10,7 +10,7 @@ type: API method
 
 Lists repositories the authenticated user has starred.
 
-You can also find out _when_ stars were created by passing the following custom [media type](https://developer.github.com/v3/media/) via the `Accept` header:
+You can also find out _when_ stars were created by passing the following custom [media type](https://docs.github.com/rest/overview/media-types/) via the `Accept` header:
 
 ```js
 octokit.activity.listReposStarredByAuthenticatedUser();
@@ -50,4 +50,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/activity/starring/#list-repositories-starred-by-the-authenticated-user).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/activity#list-repositories-starred-by-the-authenticated-user).

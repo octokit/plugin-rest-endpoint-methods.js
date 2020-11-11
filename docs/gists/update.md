@@ -12,7 +12,7 @@ Allows you to update or delete a gist file and rename gist files. Files from the
 
 ```js
 octokit.gists.update({
-  gist_id,
+  gist_id
 });
 ```
 
@@ -29,15 +29,17 @@ octokit.gists.update({
   <tbody>
     <tr><td>gist_id</td><td>yes</td><td>
 
+gist_id parameter
+
 </td></tr>
 <tr><td>description</td><td>no</td><td>
 
-A descriptive name for this gist.
+Description of the gist
 
 </td></tr>
 <tr><td>files</td><td>no</td><td>
 
-The filenames and content that make up this gist.
+Names of files to be updated
 
 </td></tr>
 <tr><td>files.*</td><td>no</td><td>
@@ -45,15 +47,15 @@ The filenames and content that make up this gist.
 </td></tr>
 <tr><td>files.*.content</td><td>no</td><td>
 
-The updated content of the file.
+The new content of the file
 
 </td></tr>
 <tr><td>files.*.filename</td><td>no</td><td>
 
-The new name for this file. To delete a file, set the value of the filename to `null`.
+The new filename for the file
 
 </td></tr>
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/gists/#update-a-gist).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/v3/gists/#update-a-gist).

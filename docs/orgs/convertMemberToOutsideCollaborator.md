@@ -8,12 +8,12 @@ type: API method
 
 # Convert an organization member to outside collaborator
 
-When an organization member is converted to an outside collaborator, they'll only have access to the repositories that their current team membership allows. The user will no longer be a member of the organization. For more information, see "[Converting an organization member to an outside collaborator](https://docs.github.com/articles/converting-an-organization-member-to-an-outside-collaborator/)".
+When an organization member is converted to an outside collaborator, they'll only have access to the repositories that their current team membership allows. The user will no longer be a member of the organization. For more information, see "[Converting an organization member to an outside collaborator](https://help.github.com/articles/converting-an-organization-member-to-an-outside-collaborator/)".
 
 ```js
 octokit.orgs.convertMemberToOutsideCollaborator({
   org,
-  username,
+  username
 });
 ```
 
@@ -37,4 +37,4 @@ octokit.orgs.convertMemberToOutsideCollaborator({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/orgs/outside_collaborators/#convert-an-organization-member-to-outside-collaborator).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/orgs#convert-an-organization-member-to-outside-collaborator).

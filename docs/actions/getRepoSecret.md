@@ -14,7 +14,7 @@ Gets a single repository secret without revealing its encrypted value. You must 
 octokit.actions.getRepoSecret({
   owner,
   repo,
-  secret_name,
+  secret_name
 });
 ```
 
@@ -37,8 +37,10 @@ octokit.actions.getRepoSecret({
 </td></tr>
 <tr><td>secret_name</td><td>yes</td><td>
 
+secret_name parameter
+
 </td></tr>
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/actions/secrets/#get-a-repository-secret).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/actions#get-a-repository-secret).

@@ -10,7 +10,7 @@ type: API method
 
 **Note:** You can also specify a team or organization with `team_id` and `org_id` using the route `DELETE /organizations/:org_id/team/:team_id/discussions/:discussion_number/comments/:comment_number/reactions/:reaction_id`.
 
-Delete a reaction to a [team discussion comment](https://developer.github.com/v3/teams/discussion_comments/). OAuth access tokens require the `write:discussion` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
+Delete a reaction to a [team discussion comment](https://docs.github.com/rest/reference/teams#discussion-comments). OAuth access tokens require the `write:discussion` [scope](https://docs.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
 
 ```js
 octokit.reactions.deleteForTeamDiscussionComment({
@@ -18,7 +18,7 @@ octokit.reactions.deleteForTeamDiscussionComment({
   team_slug,
   discussion_number,
   comment_number,
-  reaction_id,
+  reaction_id
 });
 ```
 
@@ -38,6 +38,8 @@ octokit.reactions.deleteForTeamDiscussionComment({
 </td></tr>
 <tr><td>team_slug</td><td>yes</td><td>
 
+team_slug parameter
+
 </td></tr>
 <tr><td>discussion_number</td><td>yes</td><td>
 
@@ -51,4 +53,4 @@ octokit.reactions.deleteForTeamDiscussionComment({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/reactions/#delete-team-discussion-comment-reaction).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/v3/reactions/#delete-team-discussion-comment-reaction).

@@ -11,7 +11,7 @@ type: API method
 ```js
 octokit.orgs.checkPublicMembershipForUser({
   org,
-  username,
+  username
 });
 ```
 
@@ -35,4 +35,4 @@ octokit.orgs.checkPublicMembershipForUser({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/orgs/members/#check-public-organization-membership-for-a-user).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/orgs#check-public-organization-membership-for-a-user).

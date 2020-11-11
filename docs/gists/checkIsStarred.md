@@ -10,7 +10,7 @@ type: API method
 
 ```js
 octokit.gists.checkIsStarred({
-  gist_id,
+  gist_id
 });
 ```
 
@@ -27,8 +27,10 @@ octokit.gists.checkIsStarred({
   <tbody>
     <tr><td>gist_id</td><td>yes</td><td>
 
+gist_id parameter
+
 </td></tr>
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/gists/#check-if-a-gist-is-starred).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/v3/gists/#check-if-a-gist-is-starred).

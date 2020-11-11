@@ -40,6 +40,11 @@ The publicly visible email address of the user.
 The new blog URL of the user.
 
 </td></tr>
+<tr><td>twitter_username</td><td>no</td><td>
+
+The new Twitter username of the user.
+
+</td></tr>
 <tr><td>company</td><td>no</td><td>
 
 The new company of the user.
@@ -60,12 +65,7 @@ The new hiring availability of the user.
 The new short biography of the user.
 
 </td></tr>
-<tr><td>twitter_username</td><td>no</td><td>
-
-The new Twitter username of the user.
-
-</td></tr>
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/users/#update-the-authenticated-user).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/v3/users/#update-the-authenticated-user).

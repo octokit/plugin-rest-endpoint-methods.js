@@ -16,7 +16,7 @@ Gets a single check run using its `id`. GitHub Apps must have the `checks:read` 
 octokit.checks.get({
   owner,
   repo,
-  check_run_id,
+  check_run_id
 });
 ```
 
@@ -39,8 +39,10 @@ octokit.checks.get({
 </td></tr>
 <tr><td>check_run_id</td><td>yes</td><td>
 
+check_run_id parameter
+
 </td></tr>
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/checks/runs/#get-a-check-run).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/checks#get-a-check-run).

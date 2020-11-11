@@ -15,7 +15,7 @@ GitHub identifies contributors by author email address. This endpoint groups con
 ```js
 octokit.repos.listContributors({
   owner,
-  repo,
+  repo
 });
 ```
 
@@ -54,4 +54,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/#list-repository-contributors).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/v3/repos/#list-repository-contributors).

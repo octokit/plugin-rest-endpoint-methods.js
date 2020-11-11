@@ -12,7 +12,7 @@ Lists the people following the specified user.
 
 ```js
 octokit.users.listFollowersForUser({
-  username,
+  username
 });
 ```
 
@@ -43,4 +43,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/users/followers/#list-followers-of-a-user).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/users#list-followers-of-a-user).

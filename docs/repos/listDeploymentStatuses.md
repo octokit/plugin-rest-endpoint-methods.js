@@ -14,7 +14,7 @@ Users with pull access can view deployment statuses for a deployment:
 octokit.repos.listDeploymentStatuses({
   owner,
   repo,
-  deployment_id,
+  deployment_id
 });
 ```
 
@@ -37,6 +37,8 @@ octokit.repos.listDeploymentStatuses({
 </td></tr>
 <tr><td>deployment_id</td><td>yes</td><td>
 
+deployment_id parameter
+
 </td></tr>
 <tr><td>per_page</td><td>no</td><td>
 
@@ -51,4 +53,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/deployments/#list-deployment-statuses).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#list-deployment-statuses).

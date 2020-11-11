@@ -13,7 +13,7 @@ Removes all interaction restrictions from the given repository. You must have ow
 ```js
 octokit.interactions.removeRestrictionsForRepo({
   owner,
-  repo,
+  repo
 });
 ```
 
@@ -37,4 +37,4 @@ octokit.interactions.removeRestrictionsForRepo({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/interactions/repos/#remove-interaction-restrictions-for-a-repository).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/interactions#remove-interaction-restrictions-for-a-repository).

@@ -14,7 +14,7 @@ You must authenticate using an access token with the `admin:org` scope to use th
 
 ```js
 octokit.actions.listRunnerApplicationsForOrg({
-  org,
+  org
 });
 ```
 
@@ -35,4 +35,4 @@ octokit.actions.listRunnerApplicationsForOrg({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/actions/self-hosted-runners/#list-runner-applications-for-an-organization).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/actions#list-runner-applications-for-an-organization).

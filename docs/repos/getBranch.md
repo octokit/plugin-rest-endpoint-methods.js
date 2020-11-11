@@ -12,7 +12,7 @@ type: API method
 octokit.repos.getBranch({
   owner,
   repo,
-  branch,
+  branch
 });
 ```
 
@@ -35,8 +35,10 @@ octokit.repos.getBranch({
 </td></tr>
 <tr><td>branch</td><td>yes</td><td>
 
+branch+ parameter
+
 </td></tr>
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/branches/#get-a-branch).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#get-a-branch).

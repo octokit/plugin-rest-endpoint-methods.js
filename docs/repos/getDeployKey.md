@@ -12,7 +12,7 @@ type: API method
 octokit.repos.getDeployKey({
   owner,
   repo,
-  key_id,
+  key_id
 });
 ```
 
@@ -35,8 +35,10 @@ octokit.repos.getDeployKey({
 </td></tr>
 <tr><td>key_id</td><td>yes</td><td>
 
+key_id parameter
+
 </td></tr>
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/keys/#get-a-deploy-key).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#get-a-deploy-key).

@@ -8,7 +8,7 @@ type: API method
 
 # List workflow runs
 
-List all workflow runs for a workflow. You can also replace `:workflow_id` with `:workflow_file_name`. For example, you could use `main.yml`. You can use parameters to narrow the list of results. For more information about using parameters, see [Parameters](https://developer.github.com/v3/#parameters).
+List all workflow runs for a workflow. You can replace `workflow_id` with the workflow file name. For example, you could use `main.yaml`. You can use parameters to narrow the list of results. For more information about using parameters, see [Parameters](https://docs.github.com/rest/overview/resources-in-the-rest-api#parameters).
 
 Anyone with read access to the repository can use this endpoint. If the repository is private you must use an access token with the `repo` scope.
 
@@ -16,7 +16,7 @@ Anyone with read access to the repository can use this endpoint. If the reposito
 octokit.actions.listWorkflowRuns({
   owner,
   repo,
-  workflow_id,
+  workflow_id
 });
 ```
 
@@ -39,6 +39,8 @@ octokit.actions.listWorkflowRuns({
 </td></tr>
 <tr><td>workflow_id</td><td>yes</td><td>
 
+The ID of the workflow. You can also pass the workflow file name as a string.
+
 </td></tr>
 <tr><td>actor</td><td>no</td><td>
 
@@ -52,12 +54,12 @@ Returns workflow runs associated with a branch. Use the name of the branch of th
 </td></tr>
 <tr><td>event</td><td>no</td><td>
 
-Returns workflow run triggered by the event you specify. For example, `push`, `pull_request` or `issue`. For more information, see "[Events that trigger workflows](https://docs.github.com/en/actions/automating-your-workflow-with-github-actions/events-that-trigger-workflows)."
+Returns workflow run triggered by the event you specify. For example, `push`, `pull_request` or `issue`. For more information, see "[Events that trigger workflows](https://help.github.com/en/actions/automating-your-workflow-with-github-actions/events-that-trigger-workflows)."
 
 </td></tr>
 <tr><td>status</td><td>no</td><td>
 
-Returns workflow runs associated with the check run `status` or `conclusion` you specify. For example, a conclusion can be `success` or a status can be `completed`. For more information, see the `status` and `conclusion` options available in "[Create a check run](https://developer.github.com/v3/checks/runs/#create-a-check-run)."
+Returns workflow runs associated with the check run `status` or `conclusion` you specify. For example, a conclusion can be `success` or a status can be `completed`. For more information, see the `status` and `conclusion` options available in "[Create a check run](https://docs.github.com/rest/reference/checks#create-a-check-run)."
 
 </td></tr>
 <tr><td>per_page</td><td>no</td><td>
@@ -73,4 +75,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/actions/workflow-runs/#list-workflow-runs).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/actions#list-workflow-runs).

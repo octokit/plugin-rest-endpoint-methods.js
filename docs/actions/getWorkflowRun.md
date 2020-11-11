@@ -14,7 +14,7 @@ Gets a specific workflow run. Anyone with read access to the repository can use 
 octokit.actions.getWorkflowRun({
   owner,
   repo,
-  run_id,
+  run_id
 });
 ```
 
@@ -41,4 +41,4 @@ octokit.actions.getWorkflowRun({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/actions/workflow-runs/#get-a-workflow-run).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/actions#get-a-workflow-run).

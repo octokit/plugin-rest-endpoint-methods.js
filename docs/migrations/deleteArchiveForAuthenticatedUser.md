@@ -8,11 +8,11 @@ type: API method
 
 # Delete a user migration archive
 
-Deletes a previous migration archive. Downloadable migration archives are automatically deleted after seven days. Migration metadata, which is returned in the [List user migrations](https://developer.github.com/v3/migrations/users/#list-user-migrations) and [Get a user migration status](https://developer.github.com/v3/migrations/users/#get-a-user-migration-status) endpoints, will continue to be available even after an archive is deleted.
+Deletes a previous migration archive. Downloadable migration archives are automatically deleted after seven days. Migration metadata, which is returned in the [List user migrations](https://docs.github.com/rest/reference/migrations#list-user-migrations) and [Get a user migration status](https://docs.github.com/rest/reference/migrations#get-a-user-migration-status) endpoints, will continue to be available even after an archive is deleted.
 
 ```js
 octokit.migrations.deleteArchiveForAuthenticatedUser({
-  migration_id,
+  migration_id
 });
 ```
 
@@ -29,8 +29,10 @@ octokit.migrations.deleteArchiveForAuthenticatedUser({
   <tbody>
     <tr><td>migration_id</td><td>yes</td><td>
 
+migration_id parameter
+
 </td></tr>
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/migrations/users/#delete-a-user-migration-archive).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/migrations#delete-a-user-migration-archive).

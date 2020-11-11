@@ -14,7 +14,7 @@ Creates a repository project board. Returns a `404 Not Found` status if projects
 octokit.projects.createForRepo({
   owner,
   repo,
-  name,
+  name
 });
 ```
 
@@ -48,4 +48,4 @@ The description of the project.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/projects/#create-a-repository-project).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/v3/projects/#create-a-repository-project).

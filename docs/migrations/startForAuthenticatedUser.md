@@ -12,7 +12,7 @@ Initiates the generation of a user migration archive.
 
 ```js
 octokit.migrations.startForAuthenticatedUser({
-  repositories,
+  repositories
 });
 ```
 
@@ -27,22 +27,25 @@ octokit.migrations.startForAuthenticatedUser({
     </tr>
   </thead>
   <tbody>
-    <tr><td>repositories</td><td>yes</td><td>
+    <tr><td>lock_repositories</td><td>no</td><td>
 
-An array of repositories to include in the migration.
-
-</td></tr>
-<tr><td>lock_repositories</td><td>no</td><td>
-
-Locks the `repositories` to prevent changes during the migration when set to `true`.
+Lock the repositories being migrated at the start of the migration
 
 </td></tr>
 <tr><td>exclude_attachments</td><td>no</td><td>
 
-Does not include attachments uploaded to GitHub.com in the migration data when set to `true`. Excluding attachments will reduce the migration archive file size.
+Do not include attachments in the migration
+
+</td></tr>
+<tr><td>exclude</td><td>no</td><td>
+
+Exclude attributes from the API response to improve performance
+
+</td></tr>
+<tr><td>repositories</td><td>yes</td><td>
 
 </td></tr>
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/migrations/users/#start-a-user-migration).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/migrations#start-a-user-migration).

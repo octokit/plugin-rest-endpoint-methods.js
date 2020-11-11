@@ -13,7 +13,7 @@ Creates an organization project board. Returns a `404 Not Found` status if proje
 ```js
 octokit.projects.createForOrg({
   org,
-  name,
+  name
 });
 ```
 
@@ -44,4 +44,4 @@ The description of the project.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/projects/#create-an-organization-project).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/v3/projects/#create-an-organization-project).

@@ -13,7 +13,7 @@ Get the total number of views and breakdown per day or week for the last 14 days
 ```js
 octokit.repos.getViews({
   owner,
-  repo,
+  repo
 });
 ```
 
@@ -42,4 +42,4 @@ Must be one of: `day`, `week`.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/traffic/#get-page-views).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#get-page-views).

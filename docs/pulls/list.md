@@ -8,12 +8,12 @@ type: API method
 
 # List pull requests
 
-Draft pull requests are available in public repositories with GitHub Free and GitHub Free for organizations, GitHub Pro, and legacy per-repository billing plans, and in public and private repositories with GitHub Team and GitHub Enterprise Cloud. For more information, see [GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
+Draft pull requests are available in public repositories with GitHub Free and GitHub Free for organizations, GitHub Pro, and legacy per-repository billing plans, and in public and private repositories with GitHub Team and GitHub Enterprise Cloud. For more information, see [GitHub's products](https://help.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
 
 ```js
 octokit.pulls.list({
   owner,
-  repo,
+  repo
 });
 ```
 
@@ -72,4 +72,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/pulls/#list-pull-requests).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/v3/pulls/#list-pull-requests).

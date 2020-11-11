@@ -15,7 +15,7 @@ The array order is oldest week (index 0) to most recent week.
 ```js
 octokit.repos.getParticipationStats({
   owner,
-  repo,
+  repo
 });
 ```
 
@@ -39,4 +39,4 @@ octokit.repos.getParticipationStats({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/statistics/#get-the-weekly-commit-count).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#get-the-weekly-commit-count).

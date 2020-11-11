@@ -12,7 +12,7 @@ Lists the projects in an organization. Returns a `404 Not Found` status if proje
 
 ```js
 octokit.projects.listForOrg({
-  org,
+  org
 });
 ```
 
@@ -48,4 +48,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/projects/#list-organization-projects).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/v3/projects/#list-organization-projects).

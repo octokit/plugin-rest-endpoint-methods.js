@@ -13,7 +13,7 @@ octokit.repos.merge({
   owner,
   repo,
   base,
-  head,
+  head
 });
 ```
 
@@ -52,4 +52,4 @@ Commit message to use for the merge commit. If omitted, a default message will b
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/merging/#merge-a-branch).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#merge-a-branch).

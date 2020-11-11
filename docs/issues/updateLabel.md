@@ -12,7 +12,7 @@ type: API method
 octokit.issues.updateLabel({
   owner,
   repo,
-  name,
+  name
 });
 ```
 
@@ -54,4 +54,4 @@ A short description of the label.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/issues/labels/#update-a-label).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/issues#update-a-label).

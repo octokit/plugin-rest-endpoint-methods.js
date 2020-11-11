@@ -14,7 +14,7 @@ Deletes all logs for a workflow run. You must authenticate using an access token
 octokit.actions.deleteWorkflowRunLogs({
   owner,
   repo,
-  run_id,
+  run_id
 });
 ```
 
@@ -41,4 +41,4 @@ octokit.actions.deleteWorkflowRunLogs({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/actions/workflow-runs/#delete-workflow-run-logs).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/actions#delete-workflow-run-logs).

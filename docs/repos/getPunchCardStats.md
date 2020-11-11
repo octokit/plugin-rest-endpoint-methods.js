@@ -19,7 +19,7 @@ For example, `[2, 14, 25]` indicates that there were 25 total commits, during th
 ```js
 octokit.repos.getPunchCardStats({
   owner,
-  repo,
+  repo
 });
 ```
 
@@ -43,4 +43,4 @@ octokit.repos.getPunchCardStats({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/statistics/#get-the-hourly-commit-count-for-each-day).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#get-the-hourly-commit-count-for-each-day).

@@ -12,7 +12,7 @@ Gets a project by its `id`. Returns a `404 Not Found` status if projects are dis
 
 ```js
 octokit.projects.get({
-  project_id,
+  project_id
 });
 ```
 
@@ -33,4 +33,4 @@ octokit.projects.get({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/projects/#get-a-project).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/v3/projects/#get-a-project).

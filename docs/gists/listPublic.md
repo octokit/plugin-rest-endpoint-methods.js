@@ -10,7 +10,7 @@ type: API method
 
 List public gists sorted by most recently updated to least recently updated.
 
-Note: With [pagination](https://developer.github.com/v3/#pagination), you can fetch up to 3000 gists. For example, you can fetch 100 pages with 30 gists per page or 30 pages with 100 gists per page.
+Note: With [pagination](https://docs.github.com/rest/overview/resources-in-the-rest-api#pagination), you can fetch up to 3000 gists. For example, you can fetch 100 pages with 30 gists per page or 30 pages with 100 gists per page.
 
 ```js
 octokit.gists.listPublic();
@@ -29,7 +29,7 @@ octokit.gists.listPublic();
   <tbody>
     <tr><td>since</td><td>no</td><td>
 
-This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`. Only gists updated at or after this time are returned.
+Only show notifications updated after the given time. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.
 
 </td></tr>
 <tr><td>per_page</td><td>no</td><td>
@@ -45,4 +45,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/gists/#list-public-gists).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/v3/gists/#list-public-gists).

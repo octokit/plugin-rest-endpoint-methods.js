@@ -8,7 +8,7 @@ type: API method
 
 # Remove team access restrictions
 
-Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
+Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://help.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
 
 Removes the ability of a team to push to this branch. You can also remove push access for child teams.
 
@@ -21,7 +21,7 @@ octokit.repos.removeTeamAccessRestrictions({
   owner,
   repo,
   branch,
-  teams,
+  teams
 });
 ```
 
@@ -44,6 +44,8 @@ octokit.repos.removeTeamAccessRestrictions({
 </td></tr>
 <tr><td>branch</td><td>yes</td><td>
 
+branch+ parameter
+
 </td></tr>
 <tr><td>teams</td><td>yes</td><td>
 
@@ -53,4 +55,4 @@ teams parameter
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/branches/#remove-team-access-restrictions).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#remove-team-access-restrictions).

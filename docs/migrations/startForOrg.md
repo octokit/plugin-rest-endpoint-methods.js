@@ -13,7 +13,7 @@ Initiates the generation of a migration archive.
 ```js
 octokit.migrations.startForOrg({
   org,
-  repositories,
+  repositories
 });
 ```
 
@@ -46,7 +46,10 @@ Indicates whether repositories should be locked (to prevent manipulation) while 
 Indicates whether attachments should be excluded from the migration (to reduce migration archive file size).
 
 </td></tr>
+<tr><td>exclude</td><td>no</td><td>
+
+</td></tr>
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/migrations/orgs/#start-an-organization-migration).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/migrations#start-an-organization-migration).

@@ -12,7 +12,7 @@ Gets your public key, which you need to encrypt secrets. You need to encrypt a s
 
 ```js
 octokit.actions.getOrgPublicKey({
-  org,
+  org
 });
 ```
 
@@ -33,4 +33,4 @@ octokit.actions.getOrgPublicKey({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/actions/secrets/#get-an-organization-public-key).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/actions#get-an-organization-public-key).

@@ -12,7 +12,7 @@ type: API method
 octokit.repos.updateInvitation({
   owner,
   repo,
-  invitation_id,
+  invitation_id
 });
 ```
 
@@ -35,6 +35,8 @@ octokit.repos.updateInvitation({
 </td></tr>
 <tr><td>invitation_id</td><td>yes</td><td>
 
+invitation_id parameter
+
 </td></tr>
 <tr><td>permissions</td><td>no</td><td>
 
@@ -44,4 +46,4 @@ The permissions that the associated user will have on the repository. Valid valu
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/invitations/#update-a-repository-invitation).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#update-a-repository-invitation).

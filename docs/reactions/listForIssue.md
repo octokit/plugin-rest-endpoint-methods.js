@@ -8,13 +8,13 @@ type: API method
 
 # List reactions for an issue
 
-List the reactions to an [issue](https://developer.github.com/v3/issues/).
+List the reactions to an [issue](https://docs.github.com/rest/reference/issues).
 
 ```js
 octokit.reactions.listForIssue({
   owner,
   repo,
-  issue_number,
+  issue_number
 });
 ```
 
@@ -37,10 +37,12 @@ octokit.reactions.listForIssue({
 </td></tr>
 <tr><td>issue_number</td><td>yes</td><td>
 
+issue_number parameter
+
 </td></tr>
 <tr><td>content</td><td>no</td><td>
 
-Returns a single [reaction type](https://developer.github.com/v3/reactions/#reaction-types). Omit this parameter to list all reactions to an issue.
+Returns a single [reaction type](https://docs.github.com/rest/reference/reactions#reaction-types). Omit this parameter to list all reactions to an issue.
 
 </td></tr>
 <tr><td>per_page</td><td>no</td><td>
@@ -56,4 +58,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/reactions/#list-reactions-for-an-issue).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/v3/reactions/#list-reactions-for-an-issue).

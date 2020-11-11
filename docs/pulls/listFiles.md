@@ -14,7 +14,7 @@ type: API method
 octokit.pulls.listFiles({
   owner,
   repo,
-  pull_number,
+  pull_number
 });
 ```
 
@@ -51,4 +51,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/pulls/#list-pull-requests-files).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/v3/pulls/#list-pull-requests-files).

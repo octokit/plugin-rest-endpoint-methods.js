@@ -14,7 +14,7 @@ Updates the pull request branch with the latest upstream changes by merging HEAD
 octokit.pulls.updateBranch({
   owner,
   repo,
-  pull_number,
+  pull_number
 });
 ```
 
@@ -40,10 +40,10 @@ octokit.pulls.updateBranch({
 </td></tr>
 <tr><td>expected_head_sha</td><td>no</td><td>
 
-The expected SHA of the pull request's HEAD ref. This is the most recent commit on the pull request's branch. If the expected SHA does not match the pull request's HEAD, you will receive a `422 Unprocessable Entity` status. You can use the "[List commits](https://developer.github.com/v3/repos/commits/#list-commits)" endpoint to find the most recent commit SHA. Default: SHA of the pull request's current HEAD ref.
+The expected SHA of the pull request's HEAD ref. This is the most recent commit on the pull request's branch. If the expected SHA does not match the pull request's HEAD, you will receive a `422 Unprocessable Entity` status. You can use the "[List commits](https://docs.github.com/rest/reference/repos#list-commits)" endpoint to find the most recent commit SHA. Default: SHA of the pull request's current HEAD ref.
 
 </td></tr>
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/pulls/#update-a-pull-request-branch).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/v3/pulls/#update-a-pull-request-branch).

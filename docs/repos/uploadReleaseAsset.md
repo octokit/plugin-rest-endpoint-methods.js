@@ -8,8 +8,8 @@ type: API method
 
 # Upload a release asset
 
-This endpoint makes use of [a Hypermedia relation](https://developer.github.com/v3/#hypermedia) to determine which URL to access. The endpoint you call to upload release assets is specific to your release. Use the `upload_url` returned in
-the response of the [Create a release endpoint](https://developer.github.com/v3/repos/releases/#create-a-release) to upload a release asset.
+This endpoint makes use of [a Hypermedia relation](https://docs.github.com/rest/overview/resources-in-the-rest-api#hypermedia) to determine which URL to access. The endpoint you call to upload release assets is specific to your release. Use the `upload_url` returned in
+the response of the [Create a release endpoint](https://docs.github.com/rest/reference/repos#create-a-release) to upload a release asset.
 
 You need to use an HTTP client which supports [SNI](http://en.wikipedia.org/wiki/Server_Name_Indication) to make calls to this endpoint.
 
@@ -24,7 +24,7 @@ When an upstream failure occurs, you will receive a `502 Bad Gateway` status. Th
 
 **Notes:**
 
-- GitHub renames asset filenames that have special characters, non-alphanumeric characters, and leading or trailing periods. The "[List assets for a release](https://developer.github.com/v3/repos/releases/#list-assets-for-a-release)"
+- GitHub renames asset filenames that have special characters, non-alphanumeric characters, and leading or trailing periods. The "[List assets for a release](https://docs.github.com/rest/reference/repos#list-assets-for-a-release)"
   endpoint lists the renamed filenames. For more information and help, contact [GitHub Support](https://github.com/contact).
 - If you upload an asset with the same filename as another uploaded asset, you'll receive an error and must delete the old file before you can re-upload the new asset.
 
@@ -33,7 +33,7 @@ octokit.repos.uploadReleaseAsset({
   owner,
   repo,
   release_id,
-  data,
+  data
 });
 ```
 
@@ -50,12 +50,8 @@ octokit.repos.uploadReleaseAsset({
   <tbody>
     <tr><td>owner</td><td>yes</td><td>
 
-owner parameter
-
 </td></tr>
 <tr><td>repo</td><td>yes</td><td>
-
-repo parameter
 
 </td></tr>
 <tr><td>release_id</td><td>yes</td><td>
@@ -65,12 +61,8 @@ release_id parameter
 </td></tr>
 <tr><td>name</td><td>no</td><td>
 
-name parameter
-
 </td></tr>
 <tr><td>label</td><td>no</td><td>
-
-label parameter
 
 </td></tr>
 <tr><td>data</td><td>yes</td><td>
@@ -86,4 +78,4 @@ The URL origin (protocol + host name + port) is included in `upload_url` returne
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/releases/#upload-a-release-asset).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#upload-a-release-asset).

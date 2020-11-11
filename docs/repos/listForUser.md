@@ -12,7 +12,7 @@ Lists public repositories for the specified user.
 
 ```js
 octokit.repos.listForUser({
-  username,
+  username
 });
 ```
 
@@ -58,4 +58,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/#list-repositories-for-a-user).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/v3/repos/#list-repositories-for-a-user).

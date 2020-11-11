@@ -12,7 +12,7 @@ Lists the most recent migrations.
 
 ```js
 octokit.migrations.listForOrg({
-  org,
+  org
 });
 ```
 
@@ -43,4 +43,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/migrations/orgs/#list-organization-migrations).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/migrations#list-organization-migrations).

@@ -10,7 +10,7 @@ type: API method
 
 List repositories that an app installation can access.
 
-You must use an [installation access token](https://developer.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-an-installation) to access this endpoint.
+You must use an [installation access token](https://docs.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-an-installation) to access this endpoint.
 
 ```js
 octokit.apps.listReposAccessibleToInstallation();
@@ -40,4 +40,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/apps/installations/#list-repositories-accessible-to-the-app-installation).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/apps#list-repositories-accessible-to-the-app-installation).

@@ -12,7 +12,7 @@ type: API method
 octokit.gists.updateComment({
   gist_id,
   comment_id,
-  body,
+  body
 });
 ```
 
@@ -29,8 +29,12 @@ octokit.gists.updateComment({
   <tbody>
     <tr><td>gist_id</td><td>yes</td><td>
 
+gist_id parameter
+
 </td></tr>
 <tr><td>comment_id</td><td>yes</td><td>
+
+comment_id parameter
 
 </td></tr>
 <tr><td>body</td><td>yes</td><td>
@@ -41,4 +45,4 @@ The comment text.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/gists/comments/#update-a-gist-comment).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/gists#update-a-gist-comment).

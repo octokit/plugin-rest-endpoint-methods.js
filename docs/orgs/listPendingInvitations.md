@@ -12,7 +12,7 @@ The return hash contains a `role` field which refers to the Organization Invitat
 
 ```js
 octokit.orgs.listPendingInvitations({
-  org,
+  org
 });
 ```
 
@@ -43,4 +43,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/orgs/members/#list-pending-organization-invitations).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/orgs#list-pending-organization-invitations).

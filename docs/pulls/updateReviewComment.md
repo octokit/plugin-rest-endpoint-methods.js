@@ -26,14 +26,14 @@ If you use the `comfort-fade` preview header, your response will show:
 If you don't use the `comfort-fade` preview header, multi-line and single-line comments will appear the same way in the response with a single `position` attribute. Your response will show:
 
 - For multi-line comments, the last line of the comment range for the `position` attribute.
-- For single-line comments, the diff-positioned way of referencing comments for the `position` attribute. For more information, see `position` in the [input parameters](https://developer.github.com/v3/pulls/comments/#parameters-2) table.
+- For single-line comments, the diff-positioned way of referencing comments for the `position` attribute. For more information, see `position` in the [input parameters](https://docs.github.com/rest/reference/pulls#parameters-2) table.
 
 ```js
 octokit.pulls.updateReviewComment({
   owner,
   repo,
   comment_id,
-  body,
+  body
 });
 ```
 
@@ -56,6 +56,8 @@ octokit.pulls.updateReviewComment({
 </td></tr>
 <tr><td>comment_id</td><td>yes</td><td>
 
+comment_id parameter
+
 </td></tr>
 <tr><td>body</td><td>yes</td><td>
 
@@ -65,4 +67,4 @@ The text of the reply to the review comment.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/pulls/comments/#update-a-review-comment-for-a-pull-request).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/pulls#update-a-review-comment-for-a-pull-request).

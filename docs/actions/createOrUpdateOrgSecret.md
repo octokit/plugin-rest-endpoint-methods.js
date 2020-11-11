@@ -52,7 +52,7 @@ def encrypt(public_key: str, secret_value: str) -> str:
   return b64encode(encrypted).decode("utf-8")
 ```
 
-#### Example encrypting a secret using C#
+#### Example encrypting a secret using C
 
 Encrypt your secret using the [Sodium.Core](https://www.nuget.org/packages/Sodium.Core/) package.
 
@@ -86,7 +86,7 @@ puts Base64.strict_encode64(encrypted_secret)
 ```js
 octokit.actions.createOrUpdateOrgSecret({
   org,
-  secret_name,
+  secret_name
 });
 ```
 
@@ -106,10 +106,12 @@ octokit.actions.createOrUpdateOrgSecret({
 </td></tr>
 <tr><td>secret_name</td><td>yes</td><td>
 
+secret_name parameter
+
 </td></tr>
 <tr><td>encrypted_value</td><td>no</td><td>
 
-Value for your secret, encrypted with [LibSodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages) using the public key retrieved from the [Get an organization public key](https://developer.github.com/v3/actions/secrets/#get-an-organization-public-key) endpoint.
+Value for your secret, encrypted with [LibSodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages) using the public key retrieved from the [Get an organization public key](https://docs.github.com/rest/reference/actions#get-an-organization-public-key) endpoint.
 
 </td></tr>
 <tr><td>key_id</td><td>no</td><td>
@@ -119,18 +121,18 @@ ID of the key you used to encrypt the secret.
 </td></tr>
 <tr><td>visibility</td><td>no</td><td>
 
-Configures the access that repositories have to the organization secret. Can be one of:
-\- `all` - All repositories in an organization can access the secret.
-\- `private` - Private repositories in an organization can access the secret.
+Configures the access that repositories have to the organization secret. Can be one of:  
+\- `all` - All repositories in an organization can access the secret.  
+\- `private` - Private repositories in an organization can access the secret.  
 \- `selected` - Only specific repositories can access the secret.
 
 </td></tr>
 <tr><td>selected_repository_ids</td><td>no</td><td>
 
-An array of repository ids that can access the organization secret. You can only provide a list of repository ids when the `visibility` is set to `selected`. You can manage the list of selected repositories using the [List selected repositories for an organization secret](https://developer.github.com/v3/actions/secrets/#list-selected-repositories-for-an-organization-secret), [Set selected repositories for an organization secret](https://developer.github.com/v3/actions/secrets/#set-selected-repositories-for-an-organization-secret), and [Remove selected repository from an organization secret](https://developer.github.com/v3/actions/secrets/#remove-selected-repository-from-an-organization-secret) endpoints.
+An array of repository ids that can access the organization secret. You can only provide a list of repository ids when the `visibility` is set to `selected`. You can manage the list of selected repositories using the [List selected repositories for an organization secret](https://docs.github.com/rest/reference/actions#list-selected-repositories-for-an-organization-secret), [Set selected repositories for an organization secret](https://docs.github.com/rest/reference/actions#set-selected-repositories-for-an-organization-secret), and [Remove selected repository from an organization secret](https://docs.github.com/rest/reference/actions#remove-selected-repository-from-an-organization-secret) endpoints.
 
 </td></tr>
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/actions/secrets/#create-or-update-an-organization-secret).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/actions#create-or-update-an-organization-secret).

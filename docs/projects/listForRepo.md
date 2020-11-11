@@ -13,7 +13,7 @@ Lists the projects in a repository. Returns a `404 Not Found` status if projects
 ```js
 octokit.projects.listForRepo({
   owner,
-  repo,
+  repo
 });
 ```
 
@@ -52,4 +52,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/projects/#list-repository-projects).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/v3/projects/#list-repository-projects).

@@ -11,7 +11,7 @@ type: API method
 ```js
 octokit.activity.getRepoSubscription({
   owner,
-  repo,
+  repo
 });
 ```
 
@@ -35,4 +35,4 @@ octokit.activity.getRepoSubscription({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/activity/watching/#get-a-repository-subscription).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/activity#get-a-repository-subscription).

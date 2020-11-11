@@ -12,7 +12,7 @@ Lists the _verified_ public SSH keys for a user. This is accessible by anyone.
 
 ```js
 octokit.users.listPublicKeysForUser({
-  username,
+  username
 });
 ```
 
@@ -43,4 +43,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/users/keys/#list-public-keys-for-a-user).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/users#list-public-keys-for-a-user).

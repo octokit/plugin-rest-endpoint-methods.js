@@ -17,7 +17,7 @@ scope to use this endpoint.
 octokit.actions.deleteSelfHostedRunnerFromRepo({
   owner,
   repo,
-  runner_id,
+  runner_id
 });
 ```
 
@@ -46,4 +46,4 @@ Unique identifier of the self-hosted runner.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/actions/self-hosted-runners/#delete-a-self-hosted-runner-from-a-repository).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/actions#delete-a-self-hosted-runner-from-a-repository).

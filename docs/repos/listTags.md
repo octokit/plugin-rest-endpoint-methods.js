@@ -11,7 +11,7 @@ type: API method
 ```js
 octokit.repos.listTags({
   owner,
-  repo,
+  repo
 });
 ```
 
@@ -45,4 +45,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/#list-repository-tags).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/v3/repos/#list-repository-tags).

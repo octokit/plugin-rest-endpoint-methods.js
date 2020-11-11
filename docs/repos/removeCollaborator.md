@@ -12,7 +12,7 @@ type: API method
 octokit.repos.removeCollaborator({
   owner,
   repo,
-  username,
+  username
 });
 ```
 
@@ -39,4 +39,4 @@ octokit.repos.removeCollaborator({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/collaborators/#remove-a-repository-collaborator).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#remove-a-repository-collaborator).

@@ -12,7 +12,7 @@ type: API method
 octokit.issues.removeAllLabels({
   owner,
   repo,
-  issue_number,
+  issue_number
 });
 ```
 
@@ -35,8 +35,10 @@ octokit.issues.removeAllLabels({
 </td></tr>
 <tr><td>issue_number</td><td>yes</td><td>
 
+issue_number parameter
+
 </td></tr>
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/issues/labels/#remove-all-labels-from-an-issue).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/issues#remove-all-labels-from-an-issue).

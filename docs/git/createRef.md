@@ -15,7 +15,7 @@ octokit.git.createRef({
   owner,
   repo,
   ref,
-  sha,
+  sha
 });
 ```
 
@@ -46,7 +46,10 @@ The name of the fully qualified reference (ie: `refs/heads/master`). If it doesn
 The SHA1 value for this reference.
 
 </td></tr>
+<tr><td>key</td><td>no</td><td>
+
+</td></tr>
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/git/refs/#create-a-reference).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/git#create-a-reference).

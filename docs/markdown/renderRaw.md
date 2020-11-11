@@ -12,7 +12,7 @@ You must send Markdown as plain text (using a `Content-Type` header of `text/pla
 
 ```js
 octokit.markdown.renderRaw({
-  data,
+  data
 });
 ```
 
@@ -29,10 +29,10 @@ octokit.markdown.renderRaw({
   <tbody>
     <tr><td>data</td><td>yes</td><td>
 
-data parameter
+raw markdown text
 
 </td></tr>
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/markdown/#render-a-markdown-document-in-raw-mode).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/v3/markdown/#render-a-markdown-document-in-raw-mode).

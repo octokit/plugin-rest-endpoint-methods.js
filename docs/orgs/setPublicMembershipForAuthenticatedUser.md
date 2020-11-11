@@ -10,12 +10,12 @@ type: API method
 
 The user can publicize their own membership. (A user cannot publicize the membership for another user.)
 
-Note that you'll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see "[HTTP verbs](https://developer.github.com/v3/#http-verbs)."
+Note that you'll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see "[HTTP verbs](https://docs.github.com/rest/overview/resources-in-the-rest-api#http-verbs)."
 
 ```js
 octokit.orgs.setPublicMembershipForAuthenticatedUser({
   org,
-  username,
+  username
 });
 ```
 
@@ -39,4 +39,4 @@ octokit.orgs.setPublicMembershipForAuthenticatedUser({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/orgs/members/#set-public-organization-membership-for-the-authenticated-user).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/orgs#set-public-organization-membership-for-the-authenticated-user).

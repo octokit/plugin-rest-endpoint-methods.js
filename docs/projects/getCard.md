@@ -10,7 +10,7 @@ type: API method
 
 ```js
 octokit.projects.getCard({
-  card_id,
+  card_id
 });
 ```
 
@@ -27,8 +27,10 @@ octokit.projects.getCard({
   <tbody>
     <tr><td>card_id</td><td>yes</td><td>
 
+card_id parameter
+
 </td></tr>
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/projects/cards/#get-a-project-card).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/projects#get-a-project-card).

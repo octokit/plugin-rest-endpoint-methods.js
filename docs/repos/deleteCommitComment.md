@@ -12,7 +12,7 @@ type: API method
 octokit.repos.deleteCommitComment({
   owner,
   repo,
-  comment_id,
+  comment_id
 });
 ```
 
@@ -35,8 +35,10 @@ octokit.repos.deleteCommitComment({
 </td></tr>
 <tr><td>comment_id</td><td>yes</td><td>
 
+comment_id parameter
+
 </td></tr>
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/comments/#delete-a-commit-comment).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#delete-a-commit-comment).

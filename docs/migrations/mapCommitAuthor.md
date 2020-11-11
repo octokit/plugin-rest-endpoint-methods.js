@@ -14,7 +14,7 @@ Update an author's identity for the import. Your application can continue updati
 octokit.migrations.mapCommitAuthor({
   owner,
   repo,
-  author_id,
+  author_id
 });
 ```
 
@@ -48,7 +48,10 @@ The new Git author email.
 The new Git author name.
 
 </td></tr>
+<tr><td>remote_id</td><td>no</td><td>
+
+</td></tr>
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/migrations/source_imports/#map-a-commit-author).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/migrations#map-a-commit-author).

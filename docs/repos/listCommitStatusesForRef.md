@@ -16,7 +16,7 @@ This resource is also available via a legacy route: `GET /repos/:owner/:repo/sta
 octokit.repos.listCommitStatusesForRef({
   owner,
   repo,
-  ref,
+  ref
 });
 ```
 
@@ -39,6 +39,8 @@ octokit.repos.listCommitStatusesForRef({
 </td></tr>
 <tr><td>ref</td><td>yes</td><td>
 
+ref+ parameter
+
 </td></tr>
 <tr><td>per_page</td><td>no</td><td>
 
@@ -53,4 +55,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/statuses/#list-commit-statuses-for-a-reference).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#list-commit-statuses-for-a-reference).

@@ -12,7 +12,7 @@ List all users who are members of an organization. If the authenticated user is 
 
 ```js
 octokit.orgs.listMembers({
-  org,
+  org
 });
 ```
 
@@ -58,4 +58,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/orgs/members/#list-organization-members).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/orgs#list-organization-members).

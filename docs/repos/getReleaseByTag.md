@@ -14,7 +14,7 @@ Get a published release with the specified tag.
 octokit.repos.getReleaseByTag({
   owner,
   repo,
-  tag,
+  tag
 });
 ```
 
@@ -37,8 +37,10 @@ octokit.repos.getReleaseByTag({
 </td></tr>
 <tr><td>tag</td><td>yes</td><td>
 
+tag+ parameter
+
 </td></tr>
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/releases/#get-a-release-by-tag-name).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#get-a-release-by-tag-name).

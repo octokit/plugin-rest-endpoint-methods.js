@@ -12,7 +12,7 @@ Lists all the repositories for this user migration.
 
 ```js
 octokit.migrations.listReposForUser({
-  migration_id,
+  migration_id
 });
 ```
 
@@ -29,6 +29,8 @@ octokit.migrations.listReposForUser({
   <tbody>
     <tr><td>migration_id</td><td>yes</td><td>
 
+migration_id parameter
+
 </td></tr>
 <tr><td>per_page</td><td>no</td><td>
 
@@ -43,4 +45,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/migrations/users/#list-repositories-for-a-user-migration).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/migrations#list-repositories-for-a-user-migration).

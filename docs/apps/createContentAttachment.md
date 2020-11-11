@@ -8,17 +8,17 @@ type: API method
 
 # Create a content attachment
 
-Creates an attachment under a content reference URL in the body or comment of an issue or pull request. Use the `id` of the content reference from the [`content_reference` event](https://developer.github.com/webhooks/event-payloads/#content_reference) to create an attachment.
+Creates an attachment under a content reference URL in the body or comment of an issue or pull request. Use the `id` of the content reference from the [`content_reference` event](https://docs.github.com/webhooks/event-payloads/#content_reference) to create an attachment.
 
-The app must create a content attachment within six hours of the content reference URL being posted. See "[Using content attachments](https://developer.github.com/apps/using-content-attachments/)" for details about content attachments.
+The app must create a content attachment within six hours of the content reference URL being posted. See "[Using content attachments](https://docs.github.com/apps/using-content-attachments/)" for details about content attachments.
 
-You must use an [installation access token](https://developer.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-an-installation) to access this endpoint.
+You must use an [installation access token](https://docs.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-an-installation) to access this endpoint.
 
 ```js
 octokit.apps.createContentAttachment({
   content_reference_id,
   title,
-  body,
+  body
 });
 ```
 
@@ -38,15 +38,15 @@ octokit.apps.createContentAttachment({
 </td></tr>
 <tr><td>title</td><td>yes</td><td>
 
-The title of the content attachment displayed in the body or comment of an issue or pull request.
+The title of the attachment
 
 </td></tr>
 <tr><td>body</td><td>yes</td><td>
 
-The body text of the content attachment displayed in the body or comment of an issue or pull request. This parameter supports markdown.
+The body of the attachment
 
 </td></tr>
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/apps/installations/#create-a-content-attachment).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/apps#create-a-content-attachment).

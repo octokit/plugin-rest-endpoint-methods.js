@@ -12,7 +12,7 @@ type: API method
 
 ```js
 octokit.gists.fork({
-  gist_id,
+  gist_id
 });
 ```
 
@@ -29,8 +29,10 @@ octokit.gists.fork({
   <tbody>
     <tr><td>gist_id</td><td>yes</td><td>
 
+gist_id parameter
+
 </td></tr>
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/gists/#fork-a-gist).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/v3/gists/#fork-a-gist).

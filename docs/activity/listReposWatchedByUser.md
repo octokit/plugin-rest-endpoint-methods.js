@@ -12,7 +12,7 @@ Lists repositories a user is watching.
 
 ```js
 octokit.activity.listReposWatchedByUser({
-  username,
+  username
 });
 ```
 
@@ -43,4 +43,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/activity/watching/#list-repositories-watched-by-a-user).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/activity#list-repositories-watched-by-a-user).

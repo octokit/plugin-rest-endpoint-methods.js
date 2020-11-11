@@ -1,6 +1,6 @@
 ---
 name: Create a commit
-example: octokit.git.createCommit({ owner, repo, message, tree, parents })
+example: octokit.git.createCommit({ owner, repo, message, tree })
 route: POST /repos/{owner}/{repo}/git/commits
 scope: git
 type: API method
@@ -44,8 +44,7 @@ octokit.git.createCommit({
   owner,
   repo,
   message,
-  tree,
-  parents,
+  tree
 });
 ```
 
@@ -76,7 +75,7 @@ The commit message
 The SHA of the tree object this commit points to
 
 </td></tr>
-<tr><td>parents</td><td>yes</td><td>
+<tr><td>parents</td><td>no</td><td>
 
 The SHAs of the commits that were the parents of this commit. If omitted or empty, the commit will be written as a root commit. For a single parent, an array of one SHA should be provided; for a merge commit, an array of more than one should be provided.
 
@@ -129,4 +128,4 @@ The [PGP signature](https://en.wikipedia.org/wiki/Pretty_Good_Privacy) of the co
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/git/commits/#create-a-commit).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/git#create-a-commit).

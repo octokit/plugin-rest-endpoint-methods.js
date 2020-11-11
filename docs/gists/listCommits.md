@@ -10,7 +10,7 @@ type: API method
 
 ```js
 octokit.gists.listCommits({
-  gist_id,
+  gist_id
 });
 ```
 
@@ -27,6 +27,8 @@ octokit.gists.listCommits({
   <tbody>
     <tr><td>gist_id</td><td>yes</td><td>
 
+gist_id parameter
+
 </td></tr>
 <tr><td>per_page</td><td>no</td><td>
 
@@ -41,4 +43,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/gists/#list-gist-commits).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/v3/gists/#list-gist-commits).

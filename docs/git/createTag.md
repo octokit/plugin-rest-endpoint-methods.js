@@ -8,7 +8,7 @@ type: API method
 
 # Create a tag object
 
-Note that creating a tag object does not create the reference that makes a tag in Git. If you want to create an annotated tag in Git, you have to do this call to create the tag object, and then [create](https://developer.github.com/v3/git/refs/#create-a-reference) the `refs/tags/[tag]` reference. If you want to create a lightweight tag, you only have to [create](https://developer.github.com/v3/git/refs/#create-a-reference) the tag reference - this call would be unnecessary.
+Note that creating a tag object does not create the reference that makes a tag in Git. If you want to create an annotated tag in Git, you have to do this call to create the tag object, and then [create](https://docs.github.com/rest/reference/git#create-a-reference) the `refs/tags/[tag]` reference. If you want to create a lightweight tag, you only have to [create](https://docs.github.com/rest/reference/git#create-a-reference) the tag reference - this call would be unnecessary.
 
 **Signature verification object**
 
@@ -46,7 +46,7 @@ octokit.git.createTag({
   tag,
   message,
   object,
-  type,
+  type
 });
 ```
 
@@ -110,4 +110,4 @@ When this object was tagged. This is a timestamp in [ISO 8601](https://en.wikipe
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/git/tags/#create-a-tag-object).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/git#create-a-tag-object).

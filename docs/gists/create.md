@@ -1,6 +1,6 @@
 ---
 name: Create a gist
-example: octokit.gists.create({ files })
+example: octokit.gists.create({ files, files.*.content })
 route: POST /gists
 scope: gists
 type: API method
@@ -14,8 +14,9 @@ Allows you to add a new gist with one or more files.
 
 ```js
 octokit.gists.create({
-  files,
-});
+        files,
+files.*.content
+      })
 ```
 
 ## Parameters
@@ -29,30 +30,28 @@ octokit.gists.create({
     </tr>
   </thead>
   <tbody>
-    <tr><td>files</td><td>yes</td><td>
+    <tr><td>description</td><td>no</td><td>
 
-The filenames and content of each file in the gist. The keys in the `files` object represent the filename and have the type `string`.
+Description of the gist
+
+</td></tr>
+<tr><td>files</td><td>yes</td><td>
+
+Names and content for the files that make up the gist
 
 </td></tr>
 <tr><td>files.*</td><td>no</td><td>
 
 </td></tr>
-<tr><td>files.*.content</td><td>no</td><td>
+<tr><td>files.*.content</td><td>yes</td><td>
 
-The content of the file.
-
-</td></tr>
-<tr><td>description</td><td>no</td><td>
-
-A descriptive name for this gist.
+Content of the file
 
 </td></tr>
 <tr><td>public</td><td>no</td><td>
-
-When `true`, the gist will be public and available for anyone to see.
 
 </td></tr>
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/gists/#create-a-gist).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/v3/gists/#create-a-gist).

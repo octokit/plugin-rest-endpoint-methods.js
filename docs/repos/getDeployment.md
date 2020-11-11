@@ -12,7 +12,7 @@ type: API method
 octokit.repos.getDeployment({
   owner,
   repo,
-  deployment_id,
+  deployment_id
 });
 ```
 
@@ -35,8 +35,10 @@ octokit.repos.getDeployment({
 </td></tr>
 <tr><td>deployment_id</td><td>yes</td><td>
 
+deployment_id parameter
+
 </td></tr>
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/deployments/#get-a-deployment).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#get-a-deployment).

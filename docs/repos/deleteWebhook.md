@@ -12,7 +12,7 @@ type: API method
 octokit.repos.deleteWebhook({
   owner,
   repo,
-  hook_id,
+  hook_id
 });
 ```
 
@@ -39,4 +39,4 @@ octokit.repos.deleteWebhook({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/hooks/#delete-a-repository-webhook).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#delete-a-repository-webhook).

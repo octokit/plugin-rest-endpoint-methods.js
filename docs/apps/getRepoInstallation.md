@@ -10,12 +10,12 @@ type: API method
 
 Enables an authenticated GitHub App to find the repository's installation information. The installation's account type will be either an organization or a user account, depending which account the repository belongs to.
 
-You must use a [JWT](https://developer.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint.
+You must use a [JWT](https://docs.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint.
 
 ```js
 octokit.apps.getRepoInstallation({
   owner,
-  repo,
+  repo
 });
 ```
 
@@ -39,4 +39,4 @@ octokit.apps.getRepoInstallation({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/apps/#get-a-repository-installation-for-the-authenticated-app).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/v3/apps/#get-a-repository-installation-for-the-authenticated-app).

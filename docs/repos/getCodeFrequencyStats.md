@@ -13,7 +13,7 @@ Returns a weekly aggregate of the number of additions and deletions pushed to a 
 ```js
 octokit.repos.getCodeFrequencyStats({
   owner,
-  repo,
+  repo
 });
 ```
 
@@ -37,4 +37,4 @@ octokit.repos.getCodeFrequencyStats({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/statistics/#get-the-weekly-commit-activity).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#get-the-weekly-commit-activity).

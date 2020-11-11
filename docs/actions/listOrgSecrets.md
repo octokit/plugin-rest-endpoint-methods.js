@@ -12,7 +12,7 @@ Lists all secrets available in an organization without revealing their encrypted
 
 ```js
 octokit.actions.listOrgSecrets({
-  org,
+  org
 });
 ```
 
@@ -43,4 +43,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/actions/secrets/#list-organization-secrets).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/actions#list-organization-secrets).

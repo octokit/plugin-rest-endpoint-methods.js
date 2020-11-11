@@ -11,7 +11,7 @@ type: API method
 ```js
 octokit.projects.moveCard({
   card_id,
-  position,
+  position
 });
 ```
 
@@ -28,18 +28,20 @@ octokit.projects.moveCard({
   <tbody>
     <tr><td>card_id</td><td>yes</td><td>
 
+card_id parameter
+
 </td></tr>
 <tr><td>position</td><td>yes</td><td>
 
-Can be one of `top`, `bottom`, or `after:<card_id>`, where `<card_id>` is the `id` value of a card in the same column, or in the new column specified by `column_id`.
+The position of the card in a column
 
 </td></tr>
 <tr><td>column_id</td><td>no</td><td>
 
-The `id` value of a column in the same project.
+The unique identifier of the column the card should be moved to
 
 </td></tr>
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/projects/cards/#move-a-project-card).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/projects#move-a-project-card).

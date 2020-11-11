@@ -10,14 +10,14 @@ type: API method
 
 **Note:** You can also specify a repository by `repository_id` using the route `DELETE delete /repositories/:repository_id/issues/comments/:comment_id/reactions/:reaction_id`.
 
-Delete a reaction to an [issue comment](https://developer.github.com/v3/issues/comments/).
+Delete a reaction to an [issue comment](https://docs.github.com/rest/reference/issues#comments).
 
 ```js
 octokit.reactions.deleteForIssueComment({
   owner,
   repo,
   comment_id,
-  reaction_id,
+  reaction_id
 });
 ```
 
@@ -40,6 +40,8 @@ octokit.reactions.deleteForIssueComment({
 </td></tr>
 <tr><td>comment_id</td><td>yes</td><td>
 
+comment_id parameter
+
 </td></tr>
 <tr><td>reaction_id</td><td>yes</td><td>
 
@@ -47,4 +49,4 @@ octokit.reactions.deleteForIssueComment({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/reactions/#delete-an-issue-comment-reaction).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/v3/reactions/#delete-an-issue-comment-reaction).

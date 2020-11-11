@@ -18,7 +18,7 @@ Otherwise a `404` status code is returned.
 octokit.issues.checkUserCanBeAssigned({
   owner,
   repo,
-  assignee,
+  assignee
 });
 ```
 
@@ -45,4 +45,4 @@ octokit.issues.checkUserCanBeAssigned({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/issues/assignees/#check-if-a-user-can-be-assigned).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/issues#check-if-a-user-can-be-assigned).

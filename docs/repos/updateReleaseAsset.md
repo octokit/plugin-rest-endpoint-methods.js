@@ -14,7 +14,7 @@ Users with push access to the repository can edit a release asset.
 octokit.repos.updateReleaseAsset({
   owner,
   repo,
-  asset_id,
+  asset_id
 });
 ```
 
@@ -37,6 +37,8 @@ octokit.repos.updateReleaseAsset({
 </td></tr>
 <tr><td>asset_id</td><td>yes</td><td>
 
+asset_id parameter
+
 </td></tr>
 <tr><td>name</td><td>no</td><td>
 
@@ -48,7 +50,10 @@ The file name of the asset.
 An alternate short description of the asset. Used in place of the filename.
 
 </td></tr>
+<tr><td>state</td><td>no</td><td>
+
+</td></tr>
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/releases/#update-a-release-asset).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#update-a-release-asset).

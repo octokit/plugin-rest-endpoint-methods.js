@@ -8,13 +8,13 @@ type: API method
 
 # Add selected repository to an organization secret
 
-Adds a repository to an organization secret when the `visibility` for repository access is set to `selected`. The visibility is set when you [Create or update an organization secret](https://developer.github.com/v3/actions/secrets/#create-or-update-an-organization-secret). You must authenticate using an access token with the `admin:org` scope to use this endpoint. GitHub Apps must have the `secrets` organization permission to use this endpoint.
+Adds a repository to an organization secret when the `visibility` for repository access is set to `selected`. The visibility is set when you [Create or update an organization secret](https://docs.github.com/rest/reference/actions#create-or-update-an-organization-secret). You must authenticate using an access token with the `admin:org` scope to use this endpoint. GitHub Apps must have the `secrets` organization permission to use this endpoint.
 
 ```js
 octokit.actions.addSelectedRepoToOrgSecret({
   org,
   secret_name,
-  repository_id,
+  repository_id
 });
 ```
 
@@ -34,6 +34,8 @@ octokit.actions.addSelectedRepoToOrgSecret({
 </td></tr>
 <tr><td>secret_name</td><td>yes</td><td>
 
+secret_name parameter
+
 </td></tr>
 <tr><td>repository_id</td><td>yes</td><td>
 
@@ -41,4 +43,4 @@ octokit.actions.addSelectedRepoToOrgSecret({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/actions/secrets/#add-selected-repository-to-an-organization-secret).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/actions#add-selected-repository-to-an-organization-secret).

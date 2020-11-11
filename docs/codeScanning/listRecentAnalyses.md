@@ -13,7 +13,7 @@ List the details of recent code scanning analyses for a repository. For private 
 ```js
 octokit.codeScanning.listRecentAnalyses({
   owner,
-  repo,
+  repo
 });
 ```
 
@@ -47,4 +47,4 @@ Set a single code scanning tool name to filter alerts by tool.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/code-scanning/#list-recent-analyses).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/v3/code-scanning/#list-recent-analyses).

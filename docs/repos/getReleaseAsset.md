@@ -8,13 +8,13 @@ type: API method
 
 # Get a release asset
 
-To download the asset's binary content, set the `Accept` header of the request to [`application/octet-stream`](https://developer.github.com/v3/media/#media-types). The API will either redirect the client to the location, or stream it directly if possible. API clients should handle both a `200` or `302` response.
+To download the asset's binary content, set the `Accept` header of the request to [`application/octet-stream`](https://docs.github.com/rest/overview/media-types). The API will either redirect the client to the location, or stream it directly if possible. API clients should handle both a `200` or `302` response.
 
 ```js
 octokit.repos.getReleaseAsset({
   owner,
   repo,
-  asset_id,
+  asset_id
 });
 ```
 
@@ -37,8 +37,10 @@ octokit.repos.getReleaseAsset({
 </td></tr>
 <tr><td>asset_id</td><td>yes</td><td>
 
+asset_id parameter
+
 </td></tr>
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/releases/#get-a-release-asset).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#get-a-release-asset).

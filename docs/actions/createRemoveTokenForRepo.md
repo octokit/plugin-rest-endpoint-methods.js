@@ -22,7 +22,7 @@ To remove your self-hosted runner from a repository, replace TOKEN with the remo
 ```js
 octokit.actions.createRemoveTokenForRepo({
   owner,
-  repo,
+  repo
 });
 ```
 
@@ -46,4 +46,4 @@ octokit.actions.createRemoveTokenForRepo({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/actions/self-hosted-runners/#create-a-remove-token-for-a-repository).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/actions#create-a-remove-token-for-a-repository).

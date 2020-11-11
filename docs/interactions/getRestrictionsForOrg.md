@@ -12,7 +12,7 @@ Shows which group of GitHub users can interact with this organization and when t
 
 ```js
 octokit.interactions.getRestrictionsForOrg({
-  org,
+  org
 });
 ```
 
@@ -33,4 +33,4 @@ octokit.interactions.getRestrictionsForOrg({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/interactions/orgs/#get-interaction-restrictions-for-an-organization).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/interactions#get-interaction-restrictions-for-an-organization).

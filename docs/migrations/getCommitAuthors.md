@@ -10,12 +10,12 @@ type: API method
 
 Each type of source control system represents authors in a different way. For example, a Git commit author has a display name and an email address, but a Subversion commit author just has a username. The GitHub Importer will make the author information valid, but the author might not be correct. For example, it will change the bare Subversion username `hubot` into something like `hubot <hubot@12341234-abab-fefe-8787-fedcba987654>`.
 
-This endpoint and the [Map a commit author](https://developer.github.com/v3/migrations/source_imports/#map-a-commit-author) endpoint allow you to provide correct Git author information.
+This endpoint and the [Map a commit author](https://docs.github.com/rest/reference/migrations#map-a-commit-author) endpoint allow you to provide correct Git author information.
 
 ```js
 octokit.migrations.getCommitAuthors({
   owner,
-  repo,
+  repo
 });
 ```
 
@@ -38,10 +38,10 @@ octokit.migrations.getCommitAuthors({
 </td></tr>
 <tr><td>since</td><td>no</td><td>
 
-Only authors found after this id are returned. Provide the highest author ID you've seen so far. New authors may be added to the list at any point while the importer is performing the `raw` step.
+A user ID. Only return users with an ID greater than this ID.
 
 </td></tr>
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/migrations/source_imports/#get-commit-authors).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/migrations#get-commit-authors).

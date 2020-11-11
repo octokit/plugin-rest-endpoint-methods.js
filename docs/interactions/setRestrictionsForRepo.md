@@ -14,7 +14,7 @@ Temporarily restricts interactions to certain GitHub users within the given repo
 octokit.interactions.setRestrictionsForRepo({
   owner,
   repo,
-  limit,
+  limit
 });
 ```
 
@@ -43,4 +43,4 @@ Specifies the group of GitHub users who can comment, open issues, or create pull
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/interactions/repos/#set-interaction-restrictions-for-a-repository).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/interactions#set-interaction-restrictions-for-a-repository).

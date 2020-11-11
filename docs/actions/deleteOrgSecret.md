@@ -13,7 +13,7 @@ Deletes a secret in an organization using the secret name. You must authenticate
 ```js
 octokit.actions.deleteOrgSecret({
   org,
-  secret_name,
+  secret_name
 });
 ```
 
@@ -33,8 +33,10 @@ octokit.actions.deleteOrgSecret({
 </td></tr>
 <tr><td>secret_name</td><td>yes</td><td>
 
+secret_name parameter
+
 </td></tr>
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/actions/secrets/#delete-an-organization-secret).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/actions#delete-an-organization-secret).

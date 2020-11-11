@@ -8,13 +8,13 @@ type: API method
 
 # Follow a user
 
-Note that you'll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see "[HTTP verbs](https://developer.github.com/v3/#http-verbs)."
+Note that you'll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see "[HTTP verbs](https://docs.github.com/rest/overview/resources-in-the-rest-api#http-verbs)."
 
 Following a user requires the user to be logged in and authenticated with basic auth or OAuth with the `user:follow` scope.
 
 ```js
 octokit.users.follow({
-  username,
+  username
 });
 ```
 
@@ -35,4 +35,4 @@ octokit.users.follow({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/users/followers/#follow-a-user).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/users#follow-a-user).

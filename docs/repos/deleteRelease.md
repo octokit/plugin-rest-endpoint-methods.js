@@ -14,7 +14,7 @@ Users with push access to the repository can delete a release.
 octokit.repos.deleteRelease({
   owner,
   repo,
-  release_id,
+  release_id
 });
 ```
 
@@ -37,8 +37,10 @@ octokit.repos.deleteRelease({
 </td></tr>
 <tr><td>release_id</td><td>yes</td><td>
 
+release_id parameter
+
 </td></tr>
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/releases/#delete-a-release).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#delete-a-release).

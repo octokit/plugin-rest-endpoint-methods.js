@@ -8,7 +8,7 @@ type: API method
 
 # List reactions for a team discussion comment
 
-List the reactions to a [team discussion comment](https://developer.github.com/v3/teams/discussion_comments/). OAuth access tokens require the `read:discussion` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
+List the reactions to a [team discussion comment](https://docs.github.com/rest/reference/teams#discussion-comments/). OAuth access tokens require the `read:discussion` [scope](https://docs.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
 
 **Note:** You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/:org_id/team/:team_id/discussions/:discussion_number/comments/:comment_number/reactions`.
 
@@ -17,7 +17,7 @@ octokit.reactions.listForTeamDiscussionCommentInOrg({
   org,
   team_slug,
   discussion_number,
-  comment_number,
+  comment_number
 });
 ```
 
@@ -37,6 +37,8 @@ octokit.reactions.listForTeamDiscussionCommentInOrg({
 </td></tr>
 <tr><td>team_slug</td><td>yes</td><td>
 
+team_slug parameter
+
 </td></tr>
 <tr><td>discussion_number</td><td>yes</td><td>
 
@@ -46,7 +48,7 @@ octokit.reactions.listForTeamDiscussionCommentInOrg({
 </td></tr>
 <tr><td>content</td><td>no</td><td>
 
-Returns a single [reaction type](https://developer.github.com/v3/reactions/#reaction-types). Omit this parameter to list all reactions to a team discussion comment.
+Returns a single [reaction type](https://docs.github.com/rest/reference/reactions#reaction-types). Omit this parameter to list all reactions to a team discussion comment.
 
 </td></tr>
 <tr><td>per_page</td><td>no</td><td>
@@ -62,4 +64,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/reactions/#list-reactions-for-a-team-discussion-comment).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/v3/reactions/#list-reactions-for-a-team-discussion-comment).

@@ -12,7 +12,7 @@ type: API method
 octokit.repos.listReleaseAssets({
   owner,
   repo,
-  release_id,
+  release_id
 });
 ```
 
@@ -35,6 +35,8 @@ octokit.repos.listReleaseAssets({
 </td></tr>
 <tr><td>release_id</td><td>yes</td><td>
 
+release_id parameter
+
 </td></tr>
 <tr><td>per_page</td><td>no</td><td>
 
@@ -49,4 +51,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/releases/#list-release-assets).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#list-release-assets).

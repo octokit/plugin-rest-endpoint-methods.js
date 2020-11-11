@@ -8,7 +8,7 @@ type: API method
 
 # Set admin branch protection
 
-Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
+Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://help.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
 
 Adding admin enforcement requires admin or owner permissions to the repository and branch protection to be enabled.
 
@@ -16,7 +16,7 @@ Adding admin enforcement requires admin or owner permissions to the repository a
 octokit.repos.setAdminBranchProtection({
   owner,
   repo,
-  branch,
+  branch
 });
 ```
 
@@ -39,8 +39,10 @@ octokit.repos.setAdminBranchProtection({
 </td></tr>
 <tr><td>branch</td><td>yes</td><td>
 
+branch+ parameter
+
 </td></tr>
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/branches/#set-admin-branch-protection).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#set-admin-branch-protection).

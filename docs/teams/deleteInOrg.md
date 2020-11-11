@@ -17,7 +17,7 @@ If you are an organization owner, deleting a parent team will delete all of its 
 ```js
 octokit.teams.deleteInOrg({
   org,
-  team_slug,
+  team_slug
 });
 ```
 
@@ -37,8 +37,10 @@ octokit.teams.deleteInOrg({
 </td></tr>
 <tr><td>team_slug</td><td>yes</td><td>
 
+team_slug parameter
+
 </td></tr>
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/teams/#delete-a-team).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/v3/teams/#delete-a-team).

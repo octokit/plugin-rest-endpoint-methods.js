@@ -14,7 +14,7 @@ Start a source import to a GitHub repository using GitHub Importer.
 octokit.migrations.startImport({
   owner,
   repo,
-  vcs_url,
+  vcs_url
 });
 ```
 
@@ -63,4 +63,4 @@ For a tfvc import, the name of the project that is being imported.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/migrations/source_imports/#start-an-import).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/migrations#start-an-import).

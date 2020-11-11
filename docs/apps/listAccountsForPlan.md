@@ -10,11 +10,11 @@ type: API method
 
 Returns user and organization accounts associated with the specified plan, including free plans. For per-seat pricing, you see the list of accounts that have purchased the plan, including the number of seats purchased. When someone submits a plan change that won't be processed until the end of their billing cycle, you will also see the upcoming pending change.
 
-GitHub Apps must use a [JWT](https://developer.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint. OAuth Apps must use [basic authentication](https://developer.github.com/v3/auth/#basic-authentication) with their client ID and client secret to access this endpoint.
+GitHub Apps must use a [JWT](https://docs.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint. OAuth Apps must use [basic authentication](https://docs.github.com/rest/overview/other-authentication-methods#basic-authentication) with their client ID and client secret to access this endpoint.
 
 ```js
 octokit.apps.listAccountsForPlan({
-  plan_id,
+  plan_id
 });
 ```
 
@@ -31,10 +31,12 @@ octokit.apps.listAccountsForPlan({
   <tbody>
     <tr><td>plan_id</td><td>yes</td><td>
 
+plan_id parameter
+
 </td></tr>
 <tr><td>sort</td><td>no</td><td>
 
-Sorts the GitHub accounts by the date they were created or last updated. Can be one of `created` or `updated`.
+One of `created` (when the repository was starred) or `updated` (when it was last pushed to).
 
 </td></tr>
 <tr><td>direction</td><td>no</td><td>
@@ -55,4 +57,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/apps/marketplace/#list-accounts-for-a-plan).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/apps#list-accounts-for-a-plan).

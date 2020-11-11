@@ -10,7 +10,7 @@ type: API method
 
 Lists all organizations, in the order that they were created on GitHub.
 
-**Note:** Pagination is powered exclusively by the `since` parameter. Use the [Link header](https://developer.github.com/v3/#link-header) to get the URL for the next page of organizations.
+**Note:** Pagination is powered exclusively by the `since` parameter. Use the [Link header](https://docs.github.com/rest/overview/resources-in-the-rest-api#link-header) to get the URL for the next page of organizations.
 
 ```js
 octokit.orgs.list();
@@ -29,10 +29,15 @@ octokit.orgs.list();
   <tbody>
     <tr><td>since</td><td>no</td><td>
 
-The integer ID of the last organization that you've seen.
+An organization ID. Only return organizations with an ID greater than this ID.
+
+</td></tr>
+<tr><td>per_page</td><td>no</td><td>
+
+Results per page (max 100)
 
 </td></tr>
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/orgs/#list-organizations).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/v3/orgs/#list-organizations).

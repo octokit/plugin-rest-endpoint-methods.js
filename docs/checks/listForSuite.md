@@ -16,7 +16,7 @@ Lists check runs for a check suite using its `id`. GitHub Apps must have the `ch
 octokit.checks.listForSuite({
   owner,
   repo,
-  check_suite_id,
+  check_suite_id
 });
 ```
 
@@ -38,6 +38,8 @@ octokit.checks.listForSuite({
 
 </td></tr>
 <tr><td>check_suite_id</td><td>yes</td><td>
+
+check_suite_id parameter
 
 </td></tr>
 <tr><td>check_name</td><td>no</td><td>
@@ -68,4 +70,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/checks/runs/#list-check-runs-in-a-check-suite).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/checks#list-check-runs-in-a-check-suite).

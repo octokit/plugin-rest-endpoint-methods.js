@@ -13,7 +13,7 @@ Lists all secrets available in a repository without revealing their encrypted va
 ```js
 octokit.actions.listRepoSecrets({
   owner,
-  repo,
+  repo
 });
 ```
 
@@ -47,4 +47,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/actions/secrets/#list-repository-secrets).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/actions#list-repository-secrets).

@@ -16,7 +16,7 @@ Lists check runs for a commit ref. The `ref` can be a SHA, branch name, or a tag
 octokit.checks.listForRef({
   owner,
   repo,
-  ref,
+  ref
 });
 ```
 
@@ -38,6 +38,8 @@ octokit.checks.listForRef({
 
 </td></tr>
 <tr><td>ref</td><td>yes</td><td>
+
+ref+ parameter
 
 </td></tr>
 <tr><td>check_name</td><td>no</td><td>
@@ -68,4 +70,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/checks/runs/#list-check-runs-for-a-git-reference).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/checks#list-check-runs-for-a-git-reference).

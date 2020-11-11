@@ -52,7 +52,7 @@ def encrypt(public_key: str, secret_value: str) -> str:
   return b64encode(encrypted).decode("utf-8")
 ```
 
-#### Example encrypting a secret using C#
+#### Example encrypting a secret using C
 
 Encrypt your secret using the [Sodium.Core](https://www.nuget.org/packages/Sodium.Core/) package.
 
@@ -87,7 +87,7 @@ puts Base64.strict_encode64(encrypted_secret)
 octokit.actions.createOrUpdateRepoSecret({
   owner,
   repo,
-  secret_name,
+  secret_name
 });
 ```
 
@@ -110,10 +110,12 @@ octokit.actions.createOrUpdateRepoSecret({
 </td></tr>
 <tr><td>secret_name</td><td>yes</td><td>
 
+secret_name parameter
+
 </td></tr>
 <tr><td>encrypted_value</td><td>no</td><td>
 
-Value for your secret, encrypted with [LibSodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages) using the public key retrieved from the [Get a repository public key](https://developer.github.com/v3/actions/secrets/#get-a-repository-public-key) endpoint.
+Value for your secret, encrypted with [LibSodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages) using the public key retrieved from the [Get a repository public key](https://docs.github.com/rest/reference/actions#get-a-repository-public-key) endpoint.
 
 </td></tr>
 <tr><td>key_id</td><td>no</td><td>
@@ -124,4 +126,4 @@ ID of the key you used to encrypt the secret.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/actions/secrets/#create-or-update-a-repository-secret).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/actions#create-or-update-a-repository-secret).

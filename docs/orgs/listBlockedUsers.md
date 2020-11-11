@@ -12,7 +12,7 @@ List the users blocked by an organization.
 
 ```js
 octokit.orgs.listBlockedUsers({
-  org,
+  org
 });
 ```
 
@@ -33,4 +33,4 @@ octokit.orgs.listBlockedUsers({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/orgs/blocking/#list-users-blocked-by-an-organization).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/orgs#list-users-blocked-by-an-organization).

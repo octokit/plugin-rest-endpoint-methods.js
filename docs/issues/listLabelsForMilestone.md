@@ -12,7 +12,7 @@ type: API method
 octokit.issues.listLabelsForMilestone({
   owner,
   repo,
-  milestone_number,
+  milestone_number
 });
 ```
 
@@ -35,6 +35,8 @@ octokit.issues.listLabelsForMilestone({
 </td></tr>
 <tr><td>milestone_number</td><td>yes</td><td>
 
+milestone_number parameter
+
 </td></tr>
 <tr><td>per_page</td><td>no</td><td>
 
@@ -49,4 +51,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/issues/labels/#list-labels-for-issues-in-a-milestone).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/issues#list-labels-for-issues-in-a-milestone).

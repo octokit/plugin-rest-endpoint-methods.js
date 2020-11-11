@@ -17,7 +17,7 @@ have the `actions:read` permission to use this endpoint.
 octokit.actions.downloadJobLogsForWorkflowRun({
   owner,
   repo,
-  job_id,
+  job_id
 });
 ```
 
@@ -40,8 +40,10 @@ octokit.actions.downloadJobLogsForWorkflowRun({
 </td></tr>
 <tr><td>job_id</td><td>yes</td><td>
 
+job_id parameter
+
 </td></tr>
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/actions/workflow-jobs/#download-job-logs-for-a-workflow-run).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/actions#download-job-logs-for-a-workflow-run).

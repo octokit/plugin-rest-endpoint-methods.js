@@ -10,7 +10,7 @@ type: API method
 
 ```js
 octokit.activity.markThreadAsRead({
-  thread_id,
+  thread_id
 });
 ```
 
@@ -27,8 +27,10 @@ octokit.activity.markThreadAsRead({
   <tbody>
     <tr><td>thread_id</td><td>yes</td><td>
 
+thread_id parameter
+
 </td></tr>
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/activity/notifications/#mark-a-thread-as-read).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/activity#mark-a-thread-as-read).

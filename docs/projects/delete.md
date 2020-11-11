@@ -12,7 +12,7 @@ Deletes a project board. Returns a `404 Not Found` status if projects are disabl
 
 ```js
 octokit.projects.delete({
-  project_id,
+  project_id
 });
 ```
 
@@ -33,4 +33,4 @@ octokit.projects.delete({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/projects/#delete-a-project).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/v3/projects/#delete-a-project).

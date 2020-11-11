@@ -14,7 +14,7 @@ If the user is not blocked:
 
 ```js
 octokit.users.checkBlocked({
-  username,
+  username
 });
 ```
 
@@ -35,4 +35,4 @@ octokit.users.checkBlocked({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/users/blocking/#check-if-a-user-is-blocked-by-the-authenticated-user).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/users#check-if-a-user-is-blocked-by-the-authenticated-user).

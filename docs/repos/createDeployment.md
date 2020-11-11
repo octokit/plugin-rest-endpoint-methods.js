@@ -22,7 +22,7 @@ the ref _is_ behind the default branch for the repository, we will attempt to me
 the API will return a successful merge commit. If merge conflicts prevent the merge from succeeding, the API will
 return a failure response.
 
-By default, [commit statuses](https://developer.github.com/v3/repos/statuses) for every submitted context must be in a `success`
+By default, [commit statuses](https://docs.github.com/rest/reference/repos#statuses) for every submitted context must be in a `success`
 state. The `required_contexts` parameter allows you to specify a subset of contexts that must be `success`, or to
 specify contexts that have not yet been submitted. You are not required to use commit statuses to deploy. If you do
 not require any contexts or create any commit statuses, the deployment will always succeed.
@@ -62,7 +62,7 @@ status for the commit to be deployed, but one or more of the required contexts d
 octokit.repos.createDeployment({
   owner,
   repo,
-  ref,
+  ref
 });
 ```
 
@@ -100,7 +100,7 @@ Attempts to automatically merge the default branch into the requested ref, if it
 </td></tr>
 <tr><td>required_contexts</td><td>no</td><td>
 
-The [status](https://developer.github.com/v3/repos/statuses/) contexts to verify against commit status checks. If you omit this parameter, GitHub verifies all unique contexts before creating a deployment. To bypass checking entirely, pass an empty array. Defaults to all unique contexts.
+The [status](https://docs.github.com/rest/reference/repos#statuses) contexts to verify against commit status checks. If you omit this parameter, GitHub verifies all unique contexts before creating a deployment. To bypass checking entirely, pass an empty array. Defaults to all unique contexts.
 
 </td></tr>
 <tr><td>payload</td><td>no</td><td>
@@ -120,17 +120,20 @@ Short description of the deployment.
 </td></tr>
 <tr><td>transient_environment</td><td>no</td><td>
 
-Specifies if the given environment is specific to the deployment and will no longer exist at some point in the future. Default: `false`
-**Note:** This parameter requires you to use the [`application/vnd.github.ant-man-preview+json`](https://developer.github.com/v3/previews/#enhanced-deployments) custom media type. **Note:** This parameter requires you to use the [`application/vnd.github.ant-man-preview+json`](https://developer.github.com/v3/previews/#enhanced-deployments) custom media type.
+Specifies if the given environment is specific to the deployment and will no longer exist at some point in the future. Default: `false`  
+**Note:** This parameter requires you to use the [`application/vnd.github.ant-man-preview+json`](https://docs.github.com/rest/overview/api-previews#enhanced-deployments) custom media type. **Note:** This parameter requires you to use the [`application/vnd.github.ant-man-preview+json`](https://docs.github.com/rest/overview/api-previews#enhanced-deployments) custom media type.
 
 </td></tr>
 <tr><td>production_environment</td><td>no</td><td>
 
-Specifies if the given environment is one that end-users directly interact with. Default: `true` when `environment` is `production` and `false` otherwise.
-**Note:** This parameter requires you to use the [`application/vnd.github.ant-man-preview+json`](https://developer.github.com/v3/previews/#enhanced-deployments) custom media type.
+Specifies if the given environment is one that end-users directly interact with. Default: `true` when `environment` is `production` and `false` otherwise.  
+**Note:** This parameter requires you to use the [`application/vnd.github.ant-man-preview+json`](https://docs.github.com/rest/overview/api-previews#enhanced-deployments) custom media type.
+
+</td></tr>
+<tr><td>created_at</td><td>no</td><td>
 
 </td></tr>
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/deployments/#create-a-deployment).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#create-a-deployment).

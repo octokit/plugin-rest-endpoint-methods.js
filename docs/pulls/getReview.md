@@ -13,7 +13,7 @@ octokit.pulls.getReview({
   owner,
   repo,
   pull_number,
-  review_id,
+  review_id
 });
 ```
 
@@ -39,8 +39,10 @@ octokit.pulls.getReview({
 </td></tr>
 <tr><td>review_id</td><td>yes</td><td>
 
+review_id parameter
+
 </td></tr>
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/pulls/reviews/#get-a-review-for-a-pull-request).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/pulls#get-a-review-for-a-pull-request).

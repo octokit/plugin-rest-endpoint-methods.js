@@ -12,7 +12,7 @@ Removes all interaction restrictions from public repositories in the given organ
 
 ```js
 octokit.interactions.removeRestrictionsForOrg({
-  org,
+  org
 });
 ```
 
@@ -33,4 +33,4 @@ octokit.interactions.removeRestrictionsForOrg({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/interactions/orgs/#remove-interaction-restrictions-for-an-organization).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/interactions#remove-interaction-restrictions-for-an-organization).

@@ -15,7 +15,7 @@ Create a fork for the authenticated user.
 ```js
 octokit.repos.createFork({
   owner,
-  repo,
+  repo
 });
 ```
 
@@ -44,4 +44,4 @@ Optional parameter to specify the organization name if forking into an organizat
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/forks/#create-a-fork).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#create-a-fork).

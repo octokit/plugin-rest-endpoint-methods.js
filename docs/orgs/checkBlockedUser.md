@@ -11,7 +11,7 @@ type: API method
 ```js
 octokit.orgs.checkBlockedUser({
   org,
-  username,
+  username
 });
 ```
 
@@ -35,4 +35,4 @@ octokit.orgs.checkBlockedUser({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/orgs/blocking/#check-if-a-user-is-blocked-by-an-organization).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/orgs#check-if-a-user-is-blocked-by-an-organization).

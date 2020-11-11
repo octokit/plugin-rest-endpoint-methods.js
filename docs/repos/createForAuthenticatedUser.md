@@ -12,14 +12,14 @@ Creates a new repository for the authenticated user.
 
 **OAuth scope requirements**
 
-When using [OAuth](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/), authorizations must include:
+When using [OAuth](https://docs.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/), authorizations must include:
 
 - `public_repo` scope or `repo` scope to create a public repository
 - `repo` scope to create a private repository
 
 ```js
 octokit.repos.createForAuthenticatedUser({
-  name,
+  name
 });
 ```
 
@@ -51,33 +51,22 @@ A URL with more information about the repository.
 </td></tr>
 <tr><td>private</td><td>no</td><td>
 
-Either `true` to create a private repository or `false` to create a public one.
-
-</td></tr>
-<tr><td>visibility</td><td>no</td><td>
-
-Can be `public` or `private`. If your organization is associated with an enterprise account using GitHub Enterprise Cloud or GitHub Enterprise Server 2.20+, `visibility` can also be `internal`. For more information, see "[Creating an internal repository](https://docs.github.com/github/creating-cloning-and-archiving-repositories/creating-an-internal-repository)".  
-The `visibility` parameter overrides the `private` parameter when you use both parameters with the `nebula-preview` preview header.
+Whether the repository is private or public.
 
 </td></tr>
 <tr><td>has_issues</td><td>no</td><td>
 
-Either `true` to enable issues for this repository or `false` to disable them.
+Whether issues are enabled.
 
 </td></tr>
 <tr><td>has_projects</td><td>no</td><td>
 
-Either `true` to enable projects for this repository or `false` to disable them. **Note:** If you're creating a repository in an organization that has disabled repository projects, the default is `false`, and if you pass `true`, the API returns an error.
+Whether projects are enabled.
 
 </td></tr>
 <tr><td>has_wiki</td><td>no</td><td>
 
-Either `true` to enable the wiki for this repository or `false` to disable it.
-
-</td></tr>
-<tr><td>is_template</td><td>no</td><td>
-
-Either `true` to make this repo available as a template repository or `false` to prevent it.
+Whether the wiki is enabled.
 
 </td></tr>
 <tr><td>team_id</td><td>no</td><td>
@@ -87,40 +76,50 @@ The id of the team that will be granted access to this repository. This is only 
 </td></tr>
 <tr><td>auto_init</td><td>no</td><td>
 
-Pass `true` to create an initial commit with empty README.
+Whether the repository is initialized with a minimal README.
 
 </td></tr>
 <tr><td>gitignore_template</td><td>no</td><td>
 
-Desired language or platform [.gitignore template](https://github.com/github/gitignore) to apply. Use the name of the template without the extension. For example, "Haskell".
+The desired language or platform to apply to the .gitignore.
 
 </td></tr>
 <tr><td>license_template</td><td>no</td><td>
 
-Choose an [open source license template](https://choosealicense.com/) that best suits your needs, and then use the [license keyword](https://docs.github.com/articles/licensing-a-repository/#searching-github-by-license-type) as the `license_template` string. For example, "mit" or "mpl-2.0".
+The license keyword of the open source license for this repository.
 
 </td></tr>
 <tr><td>allow_squash_merge</td><td>no</td><td>
 
-Either `true` to allow squash-merging pull requests, or `false` to prevent squash-merging.
+Whether to allow squash merges for pull requests.
 
 </td></tr>
 <tr><td>allow_merge_commit</td><td>no</td><td>
 
-Either `true` to allow merging pull requests with a merge commit, or `false` to prevent merging pull requests with merge commits.
+Whether to allow merge commits for pull requests.
 
 </td></tr>
 <tr><td>allow_rebase_merge</td><td>no</td><td>
 
-Either `true` to allow rebase-merging pull requests, or `false` to prevent rebase-merging.
+Whether to allow rebase merges for pull requests.
 
 </td></tr>
 <tr><td>delete_branch_on_merge</td><td>no</td><td>
 
-Either `true` to allow automatically deleting head branches when pull requests are merged, or `false` to prevent automatic deletion.
+Whether to delete head branches when pull requests are merged
+
+</td></tr>
+<tr><td>has_downloads</td><td>no</td><td>
+
+Whether downloads are enabled.
+
+</td></tr>
+<tr><td>is_template</td><td>no</td><td>
+
+Whether this repository acts as a template that can be used to generate new repositories.
 
 </td></tr>
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/#create-a-repository-for-the-authenticated-user).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/v3/repos/#create-a-repository-for-the-authenticated-user).

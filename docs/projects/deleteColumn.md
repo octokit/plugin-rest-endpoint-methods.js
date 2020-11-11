@@ -10,7 +10,7 @@ type: API method
 
 ```js
 octokit.projects.deleteColumn({
-  column_id,
+  column_id
 });
 ```
 
@@ -27,8 +27,10 @@ octokit.projects.deleteColumn({
   <tbody>
     <tr><td>column_id</td><td>yes</td><td>
 
+column_id parameter
+
 </td></tr>
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/projects/columns/#delete-a-project-column).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/projects#delete-a-project-column).

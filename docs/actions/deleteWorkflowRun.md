@@ -16,7 +16,7 @@ this endpoint.
 octokit.actions.deleteWorkflowRun({
   owner,
   repo,
-  run_id,
+  run_id
 });
 ```
 
@@ -43,4 +43,4 @@ octokit.actions.deleteWorkflowRun({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/actions/workflow-runs/#delete-a-workflow-run).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/actions#delete-a-workflow-run).

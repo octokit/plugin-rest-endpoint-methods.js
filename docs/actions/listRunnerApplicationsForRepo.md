@@ -15,7 +15,7 @@ You must authenticate using an access token with the `repo` scope to use this en
 ```js
 octokit.actions.listRunnerApplicationsForRepo({
   owner,
-  repo,
+  repo
 });
 ```
 
@@ -39,4 +39,4 @@ octokit.actions.listRunnerApplicationsForRepo({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/actions/self-hosted-runners/#list-runner-applications-for-a-repository).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/actions#list-runner-applications-for-a-repository).

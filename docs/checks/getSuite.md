@@ -16,7 +16,7 @@ Gets a single check suite using its `id`. GitHub Apps must have the `checks:read
 octokit.checks.getSuite({
   owner,
   repo,
-  check_suite_id,
+  check_suite_id
 });
 ```
 
@@ -39,8 +39,10 @@ octokit.checks.getSuite({
 </td></tr>
 <tr><td>check_suite_id</td><td>yes</td><td>
 
+check_suite_id parameter
+
 </td></tr>
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/checks/suites/#get-a-check-suite).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/checks#get-a-check-suite).

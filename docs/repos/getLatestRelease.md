@@ -15,7 +15,7 @@ The latest release is the most recent non-prerelease, non-draft release, sorted 
 ```js
 octokit.repos.getLatestRelease({
   owner,
-  repo,
+  repo
 });
 ```
 
@@ -39,4 +39,4 @@ octokit.repos.getLatestRelease({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/releases/#get-the-latest-release).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#get-the-latest-release).

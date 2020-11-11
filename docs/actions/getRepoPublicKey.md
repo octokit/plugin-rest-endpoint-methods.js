@@ -13,7 +13,7 @@ Gets your public key, which you need to encrypt secrets. You need to encrypt a s
 ```js
 octokit.actions.getRepoPublicKey({
   owner,
-  repo,
+  repo
 });
 ```
 
@@ -37,4 +37,4 @@ octokit.actions.getRepoPublicKey({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/actions/secrets/#get-a-repository-public-key).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/actions#get-a-repository-public-key).

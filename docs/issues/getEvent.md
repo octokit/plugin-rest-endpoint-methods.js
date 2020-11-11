@@ -12,7 +12,7 @@ type: API method
 octokit.issues.getEvent({
   owner,
   repo,
-  event_id,
+  event_id
 });
 ```
 
@@ -39,4 +39,4 @@ octokit.issues.getEvent({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/issues/events/#get-an-issue-event).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/issues#get-an-issue-event).

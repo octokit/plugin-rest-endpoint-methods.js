@@ -8,7 +8,7 @@ type: API method
 
 # Get a discussion comment
 
-Get a specific comment on a team discussion. OAuth access tokens require the `read:discussion` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
+Get a specific comment on a team discussion. OAuth access tokens require the `read:discussion` [scope](https://docs.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
 
 **Note:** You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/{org_id}/team/{team_id}/discussions/{discussion_number}/comments/{comment_number}`.
 
@@ -17,7 +17,7 @@ octokit.teams.getDiscussionCommentInOrg({
   org,
   team_slug,
   discussion_number,
-  comment_number,
+  comment_number
 });
 ```
 
@@ -37,6 +37,8 @@ octokit.teams.getDiscussionCommentInOrg({
 </td></tr>
 <tr><td>team_slug</td><td>yes</td><td>
 
+team_slug parameter
+
 </td></tr>
 <tr><td>discussion_number</td><td>yes</td><td>
 
@@ -47,4 +49,4 @@ octokit.teams.getDiscussionCommentInOrg({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/teams/discussion_comments/#get-a-discussion-comment).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/teams#get-a-discussion-comment).

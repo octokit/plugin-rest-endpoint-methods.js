@@ -13,7 +13,7 @@ Removing a user from this list will remove them from all teams and they will no 
 ```js
 octokit.orgs.removeMember({
   org,
-  username,
+  username
 });
 ```
 
@@ -37,4 +37,4 @@ octokit.orgs.removeMember({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/orgs/members/#remove-an-organization-member).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/orgs#remove-an-organization-member).

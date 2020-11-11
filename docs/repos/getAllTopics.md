@@ -11,7 +11,7 @@ type: API method
 ```js
 octokit.repos.getAllTopics({
   owner,
-  repo,
+  repo
 });
 ```
 
@@ -35,4 +35,4 @@ octokit.repos.getAllTopics({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/#get-all-repository-topics).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/v3/repos/#get-all-repository-topics).

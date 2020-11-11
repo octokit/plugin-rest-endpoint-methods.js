@@ -10,7 +10,7 @@ type: API method
 
 ```js
 octokit.activity.listPublicEventsForUser({
-  username,
+  username
 });
 ```
 
@@ -41,4 +41,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/activity/events/#list-public-events-for-a-user).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/activity#list-public-events-for-a-user).

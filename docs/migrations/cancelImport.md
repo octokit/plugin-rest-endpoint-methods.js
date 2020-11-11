@@ -13,7 +13,7 @@ Stop an import for a repository.
 ```js
 octokit.migrations.cancelImport({
   owner,
-  repo,
+  repo
 });
 ```
 
@@ -37,4 +37,4 @@ octokit.migrations.cancelImport({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/migrations/source_imports/#cancel-an-import).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/migrations#cancel-an-import).

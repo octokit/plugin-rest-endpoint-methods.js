@@ -12,7 +12,7 @@ Lists all GitHub Apps in an organization. The installation count includes all Gi
 
 ```js
 octokit.orgs.listAppInstallations({
-  org,
+  org
 });
 ```
 
@@ -43,4 +43,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/orgs/#list-app-installations-for-an-organization).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/v3/orgs/#list-app-installations-for-an-organization).

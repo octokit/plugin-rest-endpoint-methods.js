@@ -13,7 +13,7 @@ Lists the workflows in a repository. Anyone with read access to the repository c
 ```js
 octokit.actions.listRepoWorkflows({
   owner,
-  repo,
+  repo
 });
 ```
 
@@ -47,4 +47,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/actions/workflows/#list-repository-workflows).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/actions#list-repository-workflows).

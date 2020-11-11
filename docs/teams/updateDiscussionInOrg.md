@@ -8,7 +8,7 @@ type: API method
 
 # Update a discussion
 
-Edits the title and body text of a discussion post. Only the parameters you provide are updated. OAuth access tokens require the `write:discussion` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
+Edits the title and body text of a discussion post. Only the parameters you provide are updated. OAuth access tokens require the `write:discussion` [scope](https://docs.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
 
 **Note:** You can also specify a team by `org_id` and `team_id` using the route `PATCH /organizations/{org_id}/team/{team_id}/discussions/{discussion_number}`.
 
@@ -16,7 +16,7 @@ Edits the title and body text of a discussion post. Only the parameters you prov
 octokit.teams.updateDiscussionInOrg({
   org,
   team_slug,
-  discussion_number,
+  discussion_number
 });
 ```
 
@@ -36,6 +36,8 @@ octokit.teams.updateDiscussionInOrg({
 </td></tr>
 <tr><td>team_slug</td><td>yes</td><td>
 
+team_slug parameter
+
 </td></tr>
 <tr><td>discussion_number</td><td>yes</td><td>
 
@@ -53,4 +55,4 @@ The discussion post's body text.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/teams/discussions/#update-a-discussion).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/teams#update-a-discussion).

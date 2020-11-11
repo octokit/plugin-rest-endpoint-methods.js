@@ -8,14 +8,14 @@ type: API method
 
 # List commit comments for a repository
 
-Commit Comments use [these custom media types](https://developer.github.com/v3/repos/comments/#custom-media-types). You can read more about the use of media types in the API [here](https://developer.github.com/v3/media/).
+Commit Comments use [these custom media types](https://docs.github.com/rest/reference/repos#custom-media-types). You can read more about the use of media types in the API [here](https://docs.github.com/rest/overview/media-types/).
 
 Comments are ordered by ascending ID.
 
 ```js
 octokit.repos.listCommitCommentsForRepo({
   owner,
-  repo,
+  repo
 });
 ```
 
@@ -49,4 +49,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/comments/#list-commit-comments-for-a-repository).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#list-commit-comments-for-a-repository).

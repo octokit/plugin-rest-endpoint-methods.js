@@ -1,26 +1,25 @@
 ---
-name: Download a repository archive
-example: octokit.repos.downloadArchive({ owner, repo, archive_format, ref })
-route: GET /repos/{owner}/{repo}/{archive_format}/{ref}
+name: Download a repository archive (zip)
+example: octokit.repos.downloadArchive({ owner, repo, ref })
+route: GET /repos/{owner}/{repo}/zipball/{ref}
 scope: repos
 type: API method
 ---
 
-# Download a repository archive
+# Download a repository archive (zip)
 
-Gets a redirect URL to download an archive for a repository. The `:archive_format` can be either `tarball` or
-`zipball`. The `:ref` must be a valid Git reference. If you omit `:ref`, the repository’s default branch (usually
+**Deprecated:** This method has been renamed to repos.downloadZipballArchive
+
+Gets a redirect URL to download a zip archive for a repository. If you omit `:ref`, the repository’s default branch (usually
 `master`) will be used. Please make sure your HTTP framework is configured to follow redirects or you will need to use
 the `Location` header to make a second `GET` request.
-
 **Note**: For private repositories, these links are temporary and expire after five minutes.
 
 ```js
 octokit.repos.downloadArchive({
   owner,
   repo,
-  archive_format,
-  ref,
+  ref
 });
 ```
 
@@ -41,13 +40,10 @@ octokit.repos.downloadArchive({
 <tr><td>repo</td><td>yes</td><td>
 
 </td></tr>
-<tr><td>archive_format</td><td>yes</td><td>
-
-</td></tr>
 <tr><td>ref</td><td>yes</td><td>
 
 </td></tr>
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/contents/#download-a-repository-archive).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#download-a-repository-archive).

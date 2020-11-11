@@ -12,7 +12,7 @@ Members of an organization can choose to have their membership publicized or not
 
 ```js
 octokit.orgs.listPublicMembers({
-  org,
+  org
 });
 ```
 
@@ -43,4 +43,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/orgs/members/#list-public-organization-members).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/orgs#list-public-organization-members).

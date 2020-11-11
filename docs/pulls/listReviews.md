@@ -14,7 +14,7 @@ The list of reviews returns in chronological order.
 octokit.pulls.listReviews({
   owner,
   repo,
-  pull_number,
+  pull_number
 });
 ```
 
@@ -51,4 +51,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/pulls/reviews/#list-reviews-for-a-pull-request).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/pulls#list-reviews-for-a-pull-request).

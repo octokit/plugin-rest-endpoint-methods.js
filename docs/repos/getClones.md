@@ -13,7 +13,7 @@ Get the total number of clones and breakdown per day or week for the last 14 day
 ```js
 octokit.repos.getClones({
   owner,
-  repo,
+  repo
 });
 ```
 
@@ -42,4 +42,4 @@ Must be one of: `day`, `week`.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/traffic/#get-repository-clones).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#get-repository-clones).

@@ -15,7 +15,7 @@ If the specified user is an active member of the organization, this will remove 
 ```js
 octokit.orgs.removeMembershipForUser({
   org,
-  username,
+  username
 });
 ```
 
@@ -39,4 +39,4 @@ octokit.orgs.removeMembershipForUser({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/orgs/members/#remove-organization-membership-for-a-user).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/orgs#remove-organization-membership-for-a-user).

@@ -8,11 +8,11 @@ type: API method
 
 # Delete an app token
 
-OAuth application owners can revoke a single token for an OAuth application. You must use [Basic Authentication](https://developer.github.com/v3/auth#basic-authentication) when accessing this endpoint, using the OAuth application's `client_id` and `client_secret` as the username and password.
+OAuth application owners can revoke a single token for an OAuth application. You must use [Basic Authentication](https://docs.github.com/rest/overview/other-authentication-methods#basic-authentication) when accessing this endpoint, using the OAuth application's `client_id` and `client_secret` as the username and password.
 
 ```js
 octokit.apps.deleteToken({
-  client_id,
+  client_id
 });
 ```
 
@@ -38,4 +38,4 @@ The OAuth access token used to authenticate to the GitHub API.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/apps/oauth_applications/#delete-an-app-token).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/apps#delete-an-app-token).

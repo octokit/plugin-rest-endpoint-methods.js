@@ -1,14 +1,16 @@
 ---
-name: Update status check potection
+name: Update status check protection
 example: octokit.repos.updateStatusCheckPotection({ owner, repo, branch })
 route: PATCH /repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks
 scope: repos
 type: API method
 ---
 
-# Update status check potection
+# Update status check protection
 
-Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
+**Deprecated:** This method has been renamed to repos.updateStatusCheckProtection
+
+Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://help.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
 
 Updating required status checks requires admin or owner permissions to the repository and branch protection to be enabled.
 
@@ -16,7 +18,7 @@ Updating required status checks requires admin or owner permissions to the repos
 octokit.repos.updateStatusCheckPotection({
   owner,
   repo,
-  branch,
+  branch
 });
 ```
 
@@ -39,6 +41,8 @@ octokit.repos.updateStatusCheckPotection({
 </td></tr>
 <tr><td>branch</td><td>yes</td><td>
 
+branch+ parameter
+
 </td></tr>
 <tr><td>strict</td><td>no</td><td>
 
@@ -53,4 +57,4 @@ The list of status checks to require in order to merge into this branch
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/branches/#update-status-check-potection).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#update-status-check-potection).

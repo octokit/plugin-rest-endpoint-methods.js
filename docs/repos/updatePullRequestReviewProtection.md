@@ -8,7 +8,7 @@ type: API method
 
 # Update pull request review protection
 
-Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
+Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://help.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
 
 Updating pull request review enforcement requires admin or owner permissions to the repository and branch protection to be enabled.
 
@@ -18,7 +18,7 @@ Updating pull request review enforcement requires admin or owner permissions to 
 octokit.repos.updatePullRequestReviewProtection({
   owner,
   repo,
-  branch,
+  branch
 });
 ```
 
@@ -40,6 +40,8 @@ octokit.repos.updatePullRequestReviewProtection({
 
 </td></tr>
 <tr><td>branch</td><td>yes</td><td>
+
+branch+ parameter
 
 </td></tr>
 <tr><td>dismissal_restrictions</td><td>no</td><td>
@@ -64,7 +66,7 @@ Set to `true` if you want to automatically dismiss approving reviews when someon
 </td></tr>
 <tr><td>require_code_owner_reviews</td><td>no</td><td>
 
-Blocks merging pull requests until [code owners](https://docs.github.com/articles/about-code-owners/) have reviewed.
+Blocks merging pull requests until [code owners](https://help.github.com/articles/about-code-owners/) have reviewed.
 
 </td></tr>
 <tr><td>required_approving_review_count</td><td>no</td><td>
@@ -75,4 +77,4 @@ Specifies the number of reviewers required to approve pull requests. Use a numbe
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/branches/#update-pull-request-review-protection).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#update-pull-request-review-protection).

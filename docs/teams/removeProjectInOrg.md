@@ -16,7 +16,7 @@ Removes an organization project from a team. An organization owner or a team mai
 octokit.teams.removeProjectInOrg({
   org,
   team_slug,
-  project_id,
+  project_id
 });
 ```
 
@@ -36,6 +36,8 @@ octokit.teams.removeProjectInOrg({
 </td></tr>
 <tr><td>team_slug</td><td>yes</td><td>
 
+team_slug parameter
+
 </td></tr>
 <tr><td>project_id</td><td>yes</td><td>
 
@@ -43,4 +45,4 @@ octokit.teams.removeProjectInOrg({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/teams/#remove-a-project-from-a-team).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/v3/teams/#remove-a-project-from-a-team).

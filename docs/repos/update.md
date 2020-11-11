@@ -8,12 +8,12 @@ type: API method
 
 # Update a repository
 
-**Note**: To edit a repository's topics, use the [Replace all repository topics](https://developer.github.com/v3/repos/#replace-all-repository-topics) endpoint.
+**Note**: To edit a repository's topics, use the [Replace all repository topics](https://docs.github.com/rest/reference/repos#replace-all-repository-topics) endpoint.
 
 ```js
 octokit.repos.update({
   owner,
-  repo,
+  repo
 });
 ```
 
@@ -52,7 +52,7 @@ A URL with more information about the repository.
 <tr><td>private</td><td>no</td><td>
 
 Either `true` to make the repository private or `false` to make it public. Default: `false`.  
-**Note**: You will get a `422` error if the organization restricts [changing repository visibility](https://docs.github.com/articles/repository-permission-levels-for-an-organization#changing-the-visibility-of-repositories) to organization owners and a non-owner tries to change the value of private. **Note**: You will get a `422` error if the organization restricts [changing repository visibility](https://docs.github.com/articles/repository-permission-levels-for-an-organization#changing-the-visibility-of-repositories) to organization owners and a non-owner tries to change the value of private.
+**Note**: You will get a `422` error if the organization restricts [changing repository visibility](https://help.github.com/articles/repository-permission-levels-for-an-organization#changing-the-visibility-of-repositories) to organization owners and a non-owner tries to change the value of private. **Note**: You will get a `422` error if the organization restricts [changing repository visibility](https://help.github.com/articles/repository-permission-levels-for-an-organization#changing-the-visibility-of-repositories) to organization owners and a non-owner tries to change the value of private.
 
 </td></tr>
 <tr><td>visibility</td><td>no</td><td>
@@ -113,4 +113,4 @@ Either `true` to allow automatically deleting head branches when pull requests a
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/#update-a-repository).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/v3/repos/#update-a-repository).

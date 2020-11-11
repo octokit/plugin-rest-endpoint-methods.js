@@ -11,7 +11,7 @@ type: API method
 ```js
 octokit.gists.getRevision({
   gist_id,
-  sha,
+  sha
 });
 ```
 
@@ -28,6 +28,8 @@ octokit.gists.getRevision({
   <tbody>
     <tr><td>gist_id</td><td>yes</td><td>
 
+gist_id parameter
+
 </td></tr>
 <tr><td>sha</td><td>yes</td><td>
 
@@ -35,4 +37,4 @@ octokit.gists.getRevision({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/gists/#get-a-gist-revision).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/v3/gists/#get-a-gist-revision).

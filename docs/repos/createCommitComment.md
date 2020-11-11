@@ -10,14 +10,14 @@ type: API method
 
 Create a comment for a commit using its `:commit_sha`.
 
-This endpoint triggers [notifications](https://docs.github.com/articles/about-notifications/). Creating content too quickly using this endpoint may result in abuse rate limiting. See "[Abuse rate limits](https://developer.github.com/v3/#abuse-rate-limits)" and "[Dealing with abuse rate limits](https://developer.github.com/v3/guides/best-practices-for-integrators/#dealing-with-abuse-rate-limits)" for details.
+This endpoint triggers [notifications](https://help.github.com/articles/about-notifications/). Creating content too quickly using this endpoint may result in abuse rate limiting. See "[Abuse rate limits](https://docs.github.com/rest/overview/resources-in-the-rest-api#abuse-rate-limits)" and "[Dealing with abuse rate limits](https://docs.github.com/rest/guides/best-practices-for-integrators#dealing-with-rate-limits)" for details.
 
 ```js
 octokit.repos.createCommitComment({
   owner,
   repo,
   commit_sha,
-  body,
+  body
 });
 ```
 
@@ -39,6 +39,8 @@ octokit.repos.createCommitComment({
 
 </td></tr>
 <tr><td>commit_sha</td><td>yes</td><td>
+
+commit_sha+ parameter
 
 </td></tr>
 <tr><td>body</td><td>yes</td><td>
@@ -64,4 +66,4 @@ Line index in the diff to comment on.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/comments/#create-a-commit-comment).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#create-a-commit-comment).

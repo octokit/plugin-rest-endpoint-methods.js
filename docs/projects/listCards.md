@@ -10,7 +10,7 @@ type: API method
 
 ```js
 octokit.projects.listCards({
-  column_id,
+  column_id
 });
 ```
 
@@ -26,6 +26,8 @@ octokit.projects.listCards({
   </thead>
   <tbody>
     <tr><td>column_id</td><td>yes</td><td>
+
+column_id parameter
 
 </td></tr>
 <tr><td>archived_state</td><td>no</td><td>
@@ -46,4 +48,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/projects/cards/#list-project-cards).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/projects#list-project-cards).

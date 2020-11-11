@@ -12,7 +12,7 @@ type: API method
 octokit.issues.deleteMilestone({
   owner,
   repo,
-  milestone_number,
+  milestone_number
 });
 ```
 
@@ -35,8 +35,10 @@ octokit.issues.deleteMilestone({
 </td></tr>
 <tr><td>milestone_number</td><td>yes</td><td>
 
+milestone_number parameter
+
 </td></tr>
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/issues/milestones/#delete-a-milestone).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/issues#delete-a-milestone).

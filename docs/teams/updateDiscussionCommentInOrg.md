@@ -8,7 +8,7 @@ type: API method
 
 # Update a discussion comment
 
-Edits the body text of a discussion comment. OAuth access tokens require the `write:discussion` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
+Edits the body text of a discussion comment. OAuth access tokens require the `write:discussion` [scope](https://docs.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
 
 **Note:** You can also specify a team by `org_id` and `team_id` using the route `PATCH /organizations/{org_id}/team/{team_id}/discussions/{discussion_number}/comments/{comment_number}`.
 
@@ -18,7 +18,7 @@ octokit.teams.updateDiscussionCommentInOrg({
   team_slug,
   discussion_number,
   comment_number,
-  body,
+  body
 });
 ```
 
@@ -38,6 +38,8 @@ octokit.teams.updateDiscussionCommentInOrg({
 </td></tr>
 <tr><td>team_slug</td><td>yes</td><td>
 
+team_slug parameter
+
 </td></tr>
 <tr><td>discussion_number</td><td>yes</td><td>
 
@@ -53,4 +55,4 @@ The discussion comment's body text.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/teams/discussion_comments/#update-a-discussion-comment).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/teams#update-a-discussion-comment).

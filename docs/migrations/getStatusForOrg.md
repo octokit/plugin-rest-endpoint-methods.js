@@ -20,7 +20,7 @@ The `state` of a migration can be one of the following values:
 ```js
 octokit.migrations.getStatusForOrg({
   org,
-  migration_id,
+  migration_id
 });
 ```
 
@@ -40,8 +40,10 @@ octokit.migrations.getStatusForOrg({
 </td></tr>
 <tr><td>migration_id</td><td>yes</td><td>
 
+migration_id parameter
+
 </td></tr>
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/migrations/orgs/#get-an-organization-migration-status).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/migrations#get-an-organization-migration-status).
