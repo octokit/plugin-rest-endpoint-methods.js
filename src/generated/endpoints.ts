@@ -41,6 +41,12 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     deleteWorkflowRunLogs: [
       "DELETE /repos/{owner}/{repo}/actions/runs/{run_id}/logs",
     ],
+    disableSelectedRepositoryGithubActionsOrganization: [
+      "DELETE /orgs/{org}/actions/permissions/repositories/{repository_id}",
+    ],
+    disableWorkflow: [
+      "PUT /repos/{owner}/{repo}/actions/workflows/{workflow_id}/disable",
+    ],
     downloadArtifact: [
       "GET /repos/{owner}/{repo}/actions/artifacts/{artifact_id}/{archive_format}",
     ],
@@ -50,11 +56,33 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     downloadWorkflowRunLogs: [
       "GET /repos/{owner}/{repo}/actions/runs/{run_id}/logs",
     ],
+    enableSelectedRepositoryGithubActionsOrganization: [
+      "PUT /orgs/{org}/actions/permissions/repositories/{repository_id}",
+    ],
+    enableWorkflow: [
+      "PUT /repos/{owner}/{repo}/actions/workflows/{workflow_id}/enable",
+    ],
+    getAllowedActionsOrganization: [
+      "GET /orgs/{org}/actions/permissions/selected-actions",
+    ],
+    getAllowedActionsRepository: [
+      "GET /repos/{owner}/{repo}/actions/permissions/selected-actions",
+    ],
     getArtifact: ["GET /repos/{owner}/{repo}/actions/artifacts/{artifact_id}"],
+    getGithubActionsPermissionsOrganization: [
+      "GET /orgs/{org}/actions/permissions",
+    ],
+    getGithubActionsPermissionsRepository: [
+      "GET /repos/{owner}/{repo}/actions/permissions",
+    ],
     getJobForWorkflowRun: ["GET /repos/{owner}/{repo}/actions/jobs/{job_id}"],
     getOrgPublicKey: ["GET /orgs/{org}/actions/secrets/public-key"],
     getOrgSecret: ["GET /orgs/{org}/actions/secrets/{secret_name}"],
-    getRepoPermissions: ["GET /repos/{owner}/{repo}/actions/permissions"],
+    getRepoPermissions: [
+      "GET /repos/{owner}/{repo}/actions/permissions",
+      {},
+      { renamed: ["actions", "getGithubActionsPermissionsRepository"] },
+    ],
     getRepoPublicKey: ["GET /repos/{owner}/{repo}/actions/secrets/public-key"],
     getRepoSecret: ["GET /repos/{owner}/{repo}/actions/secrets/{secret_name}"],
     getSelfHostedRunnerForOrg: ["GET /orgs/{org}/actions/runners/{runner_id}"],
@@ -83,6 +111,9 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     listSelectedReposForOrgSecret: [
       "GET /orgs/{org}/actions/secrets/{secret_name}/repositories",
     ],
+    listSelectedRepositoriesEnabledGithubActionsOrganization: [
+      "GET /orgs/{org}/actions/permissions/repositories",
+    ],
     listSelfHostedRunnersForOrg: ["GET /orgs/{org}/actions/runners"],
     listSelfHostedRunnersForRepo: ["GET /repos/{owner}/{repo}/actions/runners"],
     listWorkflowRunArtifacts: [
@@ -96,8 +127,23 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     removeSelectedRepoFromOrgSecret: [
       "DELETE /orgs/{org}/actions/secrets/{secret_name}/repositories/{repository_id}",
     ],
+    setAllowedActionsOrganization: [
+      "PUT /orgs/{org}/actions/permissions/selected-actions",
+    ],
+    setAllowedActionsRepository: [
+      "PUT /repos/{owner}/{repo}/actions/permissions/selected-actions",
+    ],
+    setGithubActionsPermissionsOrganization: [
+      "PUT /orgs/{org}/actions/permissions",
+    ],
+    setGithubActionsPermissionsRepository: [
+      "PUT /repos/{owner}/{repo}/actions/permissions",
+    ],
     setSelectedReposForOrgSecret: [
       "PUT /orgs/{org}/actions/secrets/{secret_name}/repositories",
+    ],
+    setSelectedRepositoriesEnabledGithubActionsOrganization: [
+      "PUT /orgs/{org}/actions/permissions/repositories",
     ],
   },
   activity: {
@@ -173,6 +219,7 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
       "GET /marketplace_listing/stubbed/accounts/{account_id}",
     ],
     getUserInstallation: ["GET /users/{username}/installation"],
+    getWebhookConfigForApp: ["GET /app/hook/config"],
     listAccountsForPlan: ["GET /marketplace_listing/plans/{plan_id}/accounts"],
     listAccountsForPlanStubbed: [
       "GET /marketplace_listing/stubbed/plans/{plan_id}/accounts",
@@ -198,6 +245,7 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     unsuspendInstallation: [
       "DELETE /app/installations/{installation_id}/suspended",
     ],
+    updateWebhookConfigForApp: ["PATCH /app/hook/config"],
   },
   billing: {
     getGithubActionsBillingOrg: ["GET /orgs/{org}/settings/billing/actions"],
@@ -216,50 +264,25 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     ],
   },
   checks: {
-    create: [
-      "POST /repos/{owner}/{repo}/check-runs",
-      { mediaType: { previews: ["antiope"] } },
-    ],
-    createSuite: [
-      "POST /repos/{owner}/{repo}/check-suites",
-      { mediaType: { previews: ["antiope"] } },
-    ],
-    get: [
-      "GET /repos/{owner}/{repo}/check-runs/{check_run_id}",
-      { mediaType: { previews: ["antiope"] } },
-    ],
-    getSuite: [
-      "GET /repos/{owner}/{repo}/check-suites/{check_suite_id}",
-      { mediaType: { previews: ["antiope"] } },
-    ],
+    create: ["POST /repos/{owner}/{repo}/check-runs"],
+    createSuite: ["POST /repos/{owner}/{repo}/check-suites"],
+    get: ["GET /repos/{owner}/{repo}/check-runs/{check_run_id}"],
+    getSuite: ["GET /repos/{owner}/{repo}/check-suites/{check_suite_id}"],
     listAnnotations: [
       "GET /repos/{owner}/{repo}/check-runs/{check_run_id}/annotations",
-      { mediaType: { previews: ["antiope"] } },
     ],
-    listForRef: [
-      "GET /repos/{owner}/{repo}/commits/{ref}/check-runs",
-      { mediaType: { previews: ["antiope"] } },
-    ],
+    listForRef: ["GET /repos/{owner}/{repo}/commits/{ref}/check-runs"],
     listForSuite: [
       "GET /repos/{owner}/{repo}/check-suites/{check_suite_id}/check-runs",
-      { mediaType: { previews: ["antiope"] } },
     ],
-    listSuitesForRef: [
-      "GET /repos/{owner}/{repo}/commits/{ref}/check-suites",
-      { mediaType: { previews: ["antiope"] } },
-    ],
+    listSuitesForRef: ["GET /repos/{owner}/{repo}/commits/{ref}/check-suites"],
     rerequestSuite: [
       "POST /repos/{owner}/{repo}/check-suites/{check_suite_id}/rerequest",
-      { mediaType: { previews: ["antiope"] } },
     ],
     setSuitesPreferences: [
       "PATCH /repos/{owner}/{repo}/check-suites/preferences",
-      { mediaType: { previews: ["antiope"] } },
     ],
-    update: [
-      "PATCH /repos/{owner}/{repo}/check-runs/{check_run_id}",
-      { mediaType: { previews: ["antiope"] } },
-    ],
+    update: ["PATCH /repos/{owner}/{repo}/check-runs/{check_run_id}"],
   },
   codeScanning: {
     getAlert: [
@@ -289,6 +312,32 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     ],
   },
   emojis: { get: ["GET /emojis"] },
+  enterpriseAdmin: {
+    disableSelectedOrganizationGithubActionsEnterprise: [
+      "DELETE /enterprises/{enterprise}/actions/permissions/organizations/{org_id}",
+    ],
+    enableSelectedOrganizationGithubActionsEnterprise: [
+      "PUT /enterprises/{enterprise}/actions/permissions/organizations/{org_id}",
+    ],
+    getAllowedActionsEnterprise: [
+      "GET /enterprises/{enterprise}/actions/permissions/selected-actions",
+    ],
+    getGithubActionsPermissionsEnterprise: [
+      "GET /enterprises/{enterprise}/actions/permissions",
+    ],
+    listSelectedOrganizationsEnabledGithubActionsEnterprise: [
+      "GET /enterprises/{enterprise}/actions/permissions/organizations",
+    ],
+    setAllowedActionsEnterprise: [
+      "PUT /enterprises/{enterprise}/actions/permissions/selected-actions",
+    ],
+    setGithubActionsPermissionsEnterprise: [
+      "PUT /enterprises/{enterprise}/actions/permissions",
+    ],
+    setSelectedOrganizationsEnabledGithubActionsEnterprise: [
+      "PUT /enterprises/{enterprise}/actions/permissions/organizations",
+    ],
+  },
   gists: {
     checkIsStarred: ["GET /gists/{gist_id}/star"],
     create: ["POST /gists"],
@@ -331,30 +380,14 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     getTemplate: ["GET /gitignore/templates/{name}"],
   },
   interactions: {
-    getRestrictionsForOrg: [
-      "GET /orgs/{org}/interaction-limits",
-      { mediaType: { previews: ["sombra"] } },
-    ],
-    getRestrictionsForRepo: [
-      "GET /repos/{owner}/{repo}/interaction-limits",
-      { mediaType: { previews: ["sombra"] } },
-    ],
-    removeRestrictionsForOrg: [
-      "DELETE /orgs/{org}/interaction-limits",
-      { mediaType: { previews: ["sombra"] } },
-    ],
+    getRestrictionsForOrg: ["GET /orgs/{org}/interaction-limits"],
+    getRestrictionsForRepo: ["GET /repos/{owner}/{repo}/interaction-limits"],
+    removeRestrictionsForOrg: ["DELETE /orgs/{org}/interaction-limits"],
     removeRestrictionsForRepo: [
       "DELETE /repos/{owner}/{repo}/interaction-limits",
-      { mediaType: { previews: ["sombra"] } },
     ],
-    setRestrictionsForOrg: [
-      "PUT /orgs/{org}/interaction-limits",
-      { mediaType: { previews: ["sombra"] } },
-    ],
-    setRestrictionsForRepo: [
-      "PUT /repos/{owner}/{repo}/interaction-limits",
-      { mediaType: { previews: ["sombra"] } },
-    ],
+    setRestrictionsForOrg: ["PUT /orgs/{org}/interaction-limits"],
+    setRestrictionsForRepo: ["PUT /repos/{owner}/{repo}/interaction-limits"],
   },
   issues: {
     addAssignees: [
@@ -513,6 +546,7 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     getMembershipForAuthenticatedUser: ["GET /user/memberships/orgs/{org}"],
     getMembershipForUser: ["GET /orgs/{org}/memberships/{username}"],
     getWebhook: ["GET /orgs/{org}/hooks/{hook_id}"],
+    getWebhookConfigForOrg: ["GET /orgs/{org}/hooks/{hook_id}/config"],
     list: ["GET /organizations"],
     listAppInstallations: ["GET /orgs/{org}/installations"],
     listBlockedUsers: ["GET /orgs/{org}/blocks"],
@@ -544,6 +578,7 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
       "PATCH /user/memberships/orgs/{org}",
     ],
     updateWebhook: ["PATCH /orgs/{org}/hooks/{hook_id}"],
+    updateWebhookConfigForOrg: ["PATCH /orgs/{org}/hooks/{hook_id}/config"],
   },
   projects: {
     addCollaborator: [
@@ -762,7 +797,7 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
       { mediaType: { previews: ["squirrel-girl"] } },
       {
         deprecated:
-          "octokit.reactions.deleteLegacy() is deprecated, see https://developer.github.com/v3/reactions/#delete-a-reaction-legacy",
+          "octokit.reactions.deleteLegacy() is deprecated, see https://docs.github.com/v3/reactions/#delete-a-reaction-legacy",
       },
     ],
     listForCommitComment: [
@@ -940,10 +975,7 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
       "GET /repos/{owner}/{repo}/branches/{branch}/protection/required_signatures",
       { mediaType: { previews: ["zzzax"] } },
     ],
-    getCommunityProfileMetrics: [
-      "GET /repos/{owner}/{repo}/community/profile",
-      { mediaType: { previews: ["black-panther"] } },
-    ],
+    getCommunityProfileMetrics: ["GET /repos/{owner}/{repo}/community/profile"],
     getContent: ["GET /repos/{owner}/{repo}/contents/{path}"],
     getContributorsStats: ["GET /repos/{owner}/{repo}/stats/contributors"],
     getDeployKey: ["GET /repos/{owner}/{repo}/keys/{key_id}"],
@@ -977,6 +1009,9 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     ],
     getViews: ["GET /repos/{owner}/{repo}/traffic/views"],
     getWebhook: ["GET /repos/{owner}/{repo}/hooks/{hook_id}"],
+    getWebhookConfigForRepo: [
+      "GET /repos/{owner}/{repo}/hooks/{hook_id}/config",
+    ],
     listBranches: ["GET /repos/{owner}/{repo}/branches"],
     listBranchesForHeadCommit: [
       "GET /repos/{owner}/{repo}/commits/{commit_sha}/branches-where-head",
@@ -1100,6 +1135,9 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
       "PATCH /repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks",
     ],
     updateWebhook: ["PATCH /repos/{owner}/{repo}/hooks/{hook_id}"],
+    updateWebhookConfigForRepo: [
+      "PATCH /repos/{owner}/{repo}/hooks/{hook_id}/config",
+    ],
     uploadReleaseAsset: [
       "POST /repos/{owner}/{repo}/releases/{release_id}/assets{?name,label}",
       { baseUrl: "https://uploads.github.com" },

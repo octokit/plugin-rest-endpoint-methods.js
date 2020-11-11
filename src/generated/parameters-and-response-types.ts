@@ -5,404 +5,524 @@ export type RestEndpointMethodTypes = {
     addSelectedRepoToOrgSecret: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["PUT /orgs/:org/actions/secrets/:secret_name/repositories/:repository_id"]["parameters"],
+          Endpoints["PUT /orgs/{org}/actions/secrets/{secret_name}/repositories/{repository_id}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["PUT /orgs/:org/actions/secrets/:secret_name/repositories/:repository_id"]["response"];
+      response: Endpoints["PUT /orgs/{org}/actions/secrets/{secret_name}/repositories/{repository_id}"]["response"];
     };
     cancelWorkflowRun: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["POST /repos/:owner/:repo/actions/runs/:run_id/cancel"]["parameters"],
+          Endpoints["POST /repos/{owner}/{repo}/actions/runs/{run_id}/cancel"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["POST /repos/:owner/:repo/actions/runs/:run_id/cancel"]["response"];
+      response: Endpoints["POST /repos/{owner}/{repo}/actions/runs/{run_id}/cancel"]["response"];
     };
     createOrUpdateOrgSecret: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["PUT /orgs/:org/actions/secrets/:secret_name"]["parameters"],
+          Endpoints["PUT /orgs/{org}/actions/secrets/{secret_name}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["PUT /orgs/:org/actions/secrets/:secret_name"]["response"];
+      response: Endpoints["PUT /orgs/{org}/actions/secrets/{secret_name}"]["response"];
     };
     createOrUpdateRepoSecret: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["PUT /repos/:owner/:repo/actions/secrets/:secret_name"]["parameters"],
+          Endpoints["PUT /repos/{owner}/{repo}/actions/secrets/{secret_name}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["PUT /repos/:owner/:repo/actions/secrets/:secret_name"]["response"];
+      response: Endpoints["PUT /repos/{owner}/{repo}/actions/secrets/{secret_name}"]["response"];
     };
     createRegistrationTokenForOrg: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["POST /orgs/:org/actions/runners/registration-token"]["parameters"],
+          Endpoints["POST /orgs/{org}/actions/runners/registration-token"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["POST /orgs/:org/actions/runners/registration-token"]["response"];
+      response: Endpoints["POST /orgs/{org}/actions/runners/registration-token"]["response"];
     };
     createRegistrationTokenForRepo: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["POST /repos/:owner/:repo/actions/runners/registration-token"]["parameters"],
+          Endpoints["POST /repos/{owner}/{repo}/actions/runners/registration-token"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["POST /repos/:owner/:repo/actions/runners/registration-token"]["response"];
+      response: Endpoints["POST /repos/{owner}/{repo}/actions/runners/registration-token"]["response"];
     };
     createRemoveTokenForOrg: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["POST /orgs/:org/actions/runners/remove-token"]["parameters"],
+          Endpoints["POST /orgs/{org}/actions/runners/remove-token"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["POST /orgs/:org/actions/runners/remove-token"]["response"];
+      response: Endpoints["POST /orgs/{org}/actions/runners/remove-token"]["response"];
     };
     createRemoveTokenForRepo: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["POST /repos/:owner/:repo/actions/runners/remove-token"]["parameters"],
+          Endpoints["POST /repos/{owner}/{repo}/actions/runners/remove-token"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["POST /repos/:owner/:repo/actions/runners/remove-token"]["response"];
+      response: Endpoints["POST /repos/{owner}/{repo}/actions/runners/remove-token"]["response"];
     };
     createWorkflowDispatch: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["POST /repos/:owner/:repo/actions/workflows/:workflow_id/dispatches"]["parameters"],
+          Endpoints["POST /repos/{owner}/{repo}/actions/workflows/{workflow_id}/dispatches"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["POST /repos/:owner/:repo/actions/workflows/:workflow_id/dispatches"]["response"];
+      response: Endpoints["POST /repos/{owner}/{repo}/actions/workflows/{workflow_id}/dispatches"]["response"];
     };
     deleteArtifact: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["DELETE /repos/:owner/:repo/actions/artifacts/:artifact_id"]["parameters"],
+          Endpoints["DELETE /repos/{owner}/{repo}/actions/artifacts/{artifact_id}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["DELETE /repos/:owner/:repo/actions/artifacts/:artifact_id"]["response"];
+      response: Endpoints["DELETE /repos/{owner}/{repo}/actions/artifacts/{artifact_id}"]["response"];
     };
     deleteOrgSecret: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["DELETE /orgs/:org/actions/secrets/:secret_name"]["parameters"],
+          Endpoints["DELETE /orgs/{org}/actions/secrets/{secret_name}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["DELETE /orgs/:org/actions/secrets/:secret_name"]["response"];
+      response: Endpoints["DELETE /orgs/{org}/actions/secrets/{secret_name}"]["response"];
     };
     deleteRepoSecret: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["DELETE /repos/:owner/:repo/actions/secrets/:secret_name"]["parameters"],
+          Endpoints["DELETE /repos/{owner}/{repo}/actions/secrets/{secret_name}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["DELETE /repos/:owner/:repo/actions/secrets/:secret_name"]["response"];
+      response: Endpoints["DELETE /repos/{owner}/{repo}/actions/secrets/{secret_name}"]["response"];
     };
     deleteSelfHostedRunnerFromOrg: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["DELETE /orgs/:org/actions/runners/:runner_id"]["parameters"],
+          Endpoints["DELETE /orgs/{org}/actions/runners/{runner_id}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["DELETE /orgs/:org/actions/runners/:runner_id"]["response"];
+      response: Endpoints["DELETE /orgs/{org}/actions/runners/{runner_id}"]["response"];
     };
     deleteSelfHostedRunnerFromRepo: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["DELETE /repos/:owner/:repo/actions/runners/:runner_id"]["parameters"],
+          Endpoints["DELETE /repos/{owner}/{repo}/actions/runners/{runner_id}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["DELETE /repos/:owner/:repo/actions/runners/:runner_id"]["response"];
+      response: Endpoints["DELETE /repos/{owner}/{repo}/actions/runners/{runner_id}"]["response"];
     };
     deleteWorkflowRun: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["DELETE /repos/:owner/:repo/actions/runs/:run_id"]["parameters"],
+          Endpoints["DELETE /repos/{owner}/{repo}/actions/runs/{run_id}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["DELETE /repos/:owner/:repo/actions/runs/:run_id"]["response"];
+      response: Endpoints["DELETE /repos/{owner}/{repo}/actions/runs/{run_id}"]["response"];
     };
     deleteWorkflowRunLogs: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["DELETE /repos/:owner/:repo/actions/runs/:run_id/logs"]["parameters"],
+          Endpoints["DELETE /repos/{owner}/{repo}/actions/runs/{run_id}/logs"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["DELETE /repos/:owner/:repo/actions/runs/:run_id/logs"]["response"];
+      response: Endpoints["DELETE /repos/{owner}/{repo}/actions/runs/{run_id}/logs"]["response"];
+    };
+    disableSelectedRepositoryGithubActionsOrganization: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["DELETE /orgs/{org}/actions/permissions/repositories/{repository_id}"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["DELETE /orgs/{org}/actions/permissions/repositories/{repository_id}"]["response"];
+    };
+    disableWorkflow: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["PUT /repos/{owner}/{repo}/actions/workflows/{workflow_id}/disable"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["PUT /repos/{owner}/{repo}/actions/workflows/{workflow_id}/disable"]["response"];
     };
     downloadArtifact: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/actions/artifacts/:artifact_id/:archive_format"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/actions/artifacts/{artifact_id}/{archive_format}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/actions/artifacts/:artifact_id/:archive_format"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/actions/artifacts/{artifact_id}/{archive_format}"]["response"];
     };
     downloadJobLogsForWorkflowRun: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/actions/jobs/:job_id/logs"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/actions/jobs/{job_id}/logs"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/actions/jobs/:job_id/logs"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/actions/jobs/{job_id}/logs"]["response"];
     };
     downloadWorkflowRunLogs: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/actions/runs/:run_id/logs"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/actions/runs/{run_id}/logs"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/actions/runs/:run_id/logs"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/actions/runs/{run_id}/logs"]["response"];
+    };
+    enableSelectedRepositoryGithubActionsOrganization: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["PUT /orgs/{org}/actions/permissions/repositories/{repository_id}"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["PUT /orgs/{org}/actions/permissions/repositories/{repository_id}"]["response"];
+    };
+    enableWorkflow: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["PUT /repos/{owner}/{repo}/actions/workflows/{workflow_id}/enable"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["PUT /repos/{owner}/{repo}/actions/workflows/{workflow_id}/enable"]["response"];
+    };
+    getAllowedActionsOrganization: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /orgs/{org}/actions/permissions/selected-actions"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /orgs/{org}/actions/permissions/selected-actions"]["response"];
+    };
+    getAllowedActionsRepository: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /repos/{owner}/{repo}/actions/permissions/selected-actions"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /repos/{owner}/{repo}/actions/permissions/selected-actions"]["response"];
     };
     getArtifact: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/actions/artifacts/:artifact_id"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/actions/artifacts/{artifact_id}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/actions/artifacts/:artifact_id"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/actions/artifacts/{artifact_id}"]["response"];
+    };
+    getGithubActionsPermissionsOrganization: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /orgs/{org}/actions/permissions"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /orgs/{org}/actions/permissions"]["response"];
+    };
+    getGithubActionsPermissionsRepository: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /repos/{owner}/{repo}/actions/permissions"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /repos/{owner}/{repo}/actions/permissions"]["response"];
     };
     getJobForWorkflowRun: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/actions/jobs/:job_id"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/actions/jobs/{job_id}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/actions/jobs/:job_id"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/actions/jobs/{job_id}"]["response"];
     };
     getOrgPublicKey: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /orgs/:org/actions/secrets/public-key"]["parameters"],
+          Endpoints["GET /orgs/{org}/actions/secrets/public-key"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /orgs/:org/actions/secrets/public-key"]["response"];
+      response: Endpoints["GET /orgs/{org}/actions/secrets/public-key"]["response"];
     };
     getOrgSecret: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /orgs/:org/actions/secrets/:secret_name"]["parameters"],
+          Endpoints["GET /orgs/{org}/actions/secrets/{secret_name}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /orgs/:org/actions/secrets/:secret_name"]["response"];
+      response: Endpoints["GET /orgs/{org}/actions/secrets/{secret_name}"]["response"];
+    };
+    getRepoPermissions: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /repos/{owner}/{repo}/actions/permissions"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /repos/{owner}/{repo}/actions/permissions"]["response"];
     };
     getRepoPublicKey: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/actions/secrets/public-key"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/actions/secrets/public-key"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/actions/secrets/public-key"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/actions/secrets/public-key"]["response"];
     };
     getRepoSecret: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/actions/secrets/:secret_name"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/actions/secrets/{secret_name}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/actions/secrets/:secret_name"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/actions/secrets/{secret_name}"]["response"];
     };
     getSelfHostedRunnerForOrg: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /orgs/:org/actions/runners/:runner_id"]["parameters"],
+          Endpoints["GET /orgs/{org}/actions/runners/{runner_id}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /orgs/:org/actions/runners/:runner_id"]["response"];
+      response: Endpoints["GET /orgs/{org}/actions/runners/{runner_id}"]["response"];
     };
     getSelfHostedRunnerForRepo: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/actions/runners/:runner_id"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/actions/runners/{runner_id}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/actions/runners/:runner_id"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/actions/runners/{runner_id}"]["response"];
     };
     getWorkflow: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/actions/workflows/:workflow_id"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/actions/workflows/{workflow_id}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/actions/workflows/:workflow_id"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/actions/workflows/{workflow_id}"]["response"];
     };
     getWorkflowRun: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/actions/runs/:run_id"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/actions/runs/{run_id}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/actions/runs/:run_id"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/actions/runs/{run_id}"]["response"];
     };
     getWorkflowRunUsage: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/actions/runs/:run_id/timing"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/actions/runs/{run_id}/timing"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/actions/runs/:run_id/timing"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/actions/runs/{run_id}/timing"]["response"];
     };
     getWorkflowUsage: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/actions/workflows/:workflow_id/timing"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/actions/workflows/{workflow_id}/timing"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/actions/workflows/:workflow_id/timing"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/actions/workflows/{workflow_id}/timing"]["response"];
     };
     listArtifactsForRepo: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/actions/artifacts"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/actions/artifacts"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/actions/artifacts"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/actions/artifacts"]["response"];
     };
     listJobsForWorkflowRun: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/actions/runs/:run_id/jobs"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/actions/runs/{run_id}/jobs"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/actions/runs/:run_id/jobs"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/actions/runs/{run_id}/jobs"]["response"];
     };
     listOrgSecrets: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /orgs/:org/actions/secrets"]["parameters"],
+          Endpoints["GET /orgs/{org}/actions/secrets"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /orgs/:org/actions/secrets"]["response"];
+      response: Endpoints["GET /orgs/{org}/actions/secrets"]["response"];
     };
     listRepoSecrets: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/actions/secrets"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/actions/secrets"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/actions/secrets"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/actions/secrets"]["response"];
     };
     listRepoWorkflows: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/actions/workflows"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/actions/workflows"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/actions/workflows"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/actions/workflows"]["response"];
     };
     listRunnerApplicationsForOrg: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /orgs/:org/actions/runners/downloads"]["parameters"],
+          Endpoints["GET /orgs/{org}/actions/runners/downloads"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /orgs/:org/actions/runners/downloads"]["response"];
+      response: Endpoints["GET /orgs/{org}/actions/runners/downloads"]["response"];
     };
     listRunnerApplicationsForRepo: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/actions/runners/downloads"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/actions/runners/downloads"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/actions/runners/downloads"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/actions/runners/downloads"]["response"];
     };
     listSelectedReposForOrgSecret: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /orgs/:org/actions/secrets/:secret_name/repositories"]["parameters"],
+          Endpoints["GET /orgs/{org}/actions/secrets/{secret_name}/repositories"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /orgs/:org/actions/secrets/:secret_name/repositories"]["response"];
+      response: Endpoints["GET /orgs/{org}/actions/secrets/{secret_name}/repositories"]["response"];
+    };
+    listSelectedRepositoriesEnabledGithubActionsOrganization: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /orgs/{org}/actions/permissions/repositories"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /orgs/{org}/actions/permissions/repositories"]["response"];
     };
     listSelfHostedRunnersForOrg: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /orgs/:org/actions/runners"]["parameters"],
+          Endpoints["GET /orgs/{org}/actions/runners"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /orgs/:org/actions/runners"]["response"];
+      response: Endpoints["GET /orgs/{org}/actions/runners"]["response"];
     };
     listSelfHostedRunnersForRepo: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/actions/runners"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/actions/runners"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/actions/runners"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/actions/runners"]["response"];
     };
     listWorkflowRunArtifacts: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/actions/runs/:run_id/artifacts"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/actions/runs/{run_id}/artifacts"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/actions/runs/:run_id/artifacts"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/actions/runs/{run_id}/artifacts"]["response"];
     };
     listWorkflowRuns: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/actions/workflows/:workflow_id/runs"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/actions/workflows/{workflow_id}/runs"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/actions/workflows/:workflow_id/runs"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/actions/workflows/{workflow_id}/runs"]["response"];
     };
     listWorkflowRunsForRepo: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/actions/runs"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/actions/runs"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/actions/runs"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/actions/runs"]["response"];
     };
     reRunWorkflow: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["POST /repos/:owner/:repo/actions/runs/:run_id/rerun"]["parameters"],
+          Endpoints["POST /repos/{owner}/{repo}/actions/runs/{run_id}/rerun"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["POST /repos/:owner/:repo/actions/runs/:run_id/rerun"]["response"];
+      response: Endpoints["POST /repos/{owner}/{repo}/actions/runs/{run_id}/rerun"]["response"];
     };
     removeSelectedRepoFromOrgSecret: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["DELETE /orgs/:org/actions/secrets/:secret_name/repositories/:repository_id"]["parameters"],
+          Endpoints["DELETE /orgs/{org}/actions/secrets/{secret_name}/repositories/{repository_id}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["DELETE /orgs/:org/actions/secrets/:secret_name/repositories/:repository_id"]["response"];
+      response: Endpoints["DELETE /orgs/{org}/actions/secrets/{secret_name}/repositories/{repository_id}"]["response"];
+    };
+    setAllowedActionsOrganization: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["PUT /orgs/{org}/actions/permissions/selected-actions"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["PUT /orgs/{org}/actions/permissions/selected-actions"]["response"];
+    };
+    setAllowedActionsRepository: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["PUT /repos/{owner}/{repo}/actions/permissions/selected-actions"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["PUT /repos/{owner}/{repo}/actions/permissions/selected-actions"]["response"];
+    };
+    setGithubActionsPermissionsOrganization: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["PUT /orgs/{org}/actions/permissions"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["PUT /orgs/{org}/actions/permissions"]["response"];
+    };
+    setGithubActionsPermissionsRepository: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["PUT /repos/{owner}/{repo}/actions/permissions"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["PUT /repos/{owner}/{repo}/actions/permissions"]["response"];
     };
     setSelectedReposForOrgSecret: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["PUT /orgs/:org/actions/secrets/:secret_name/repositories"]["parameters"],
+          Endpoints["PUT /orgs/{org}/actions/secrets/{secret_name}/repositories"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["PUT /orgs/:org/actions/secrets/:secret_name/repositories"]["response"];
+      response: Endpoints["PUT /orgs/{org}/actions/secrets/{secret_name}/repositories"]["response"];
+    };
+    setSelectedRepositoriesEnabledGithubActionsOrganization: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["PUT /orgs/{org}/actions/permissions/repositories"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["PUT /orgs/{org}/actions/permissions/repositories"]["response"];
     };
   };
   activity: {
     checkRepoIsStarredByAuthenticatedUser: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /user/starred/:owner/:repo"]["parameters"],
+          Endpoints["GET /user/starred/{owner}/{repo}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /user/starred/:owner/:repo"]["response"];
+      response: Endpoints["GET /user/starred/{owner}/{repo}"]["response"];
     };
     deleteRepoSubscription: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["DELETE /repos/:owner/:repo/subscription"]["parameters"],
+          Endpoints["DELETE /repos/{owner}/{repo}/subscription"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["DELETE /repos/:owner/:repo/subscription"]["response"];
+      response: Endpoints["DELETE /repos/{owner}/{repo}/subscription"]["response"];
     };
     deleteThreadSubscription: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["DELETE /notifications/threads/:thread_id/subscription"]["parameters"],
+          Endpoints["DELETE /notifications/threads/{thread_id}/subscription"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["DELETE /notifications/threads/:thread_id/subscription"]["response"];
+      response: Endpoints["DELETE /notifications/threads/{thread_id}/subscription"]["response"];
     };
     getFeeds: {
       parameters: RequestParameters &
@@ -415,34 +535,34 @@ export type RestEndpointMethodTypes = {
     getRepoSubscription: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/subscription"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/subscription"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/subscription"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/subscription"]["response"];
     };
     getThread: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /notifications/threads/:thread_id"]["parameters"],
+          Endpoints["GET /notifications/threads/{thread_id}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /notifications/threads/:thread_id"]["response"];
+      response: Endpoints["GET /notifications/threads/{thread_id}"]["response"];
     };
     getThreadSubscriptionForAuthenticatedUser: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /notifications/threads/:thread_id/subscription"]["parameters"],
+          Endpoints["GET /notifications/threads/{thread_id}/subscription"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /notifications/threads/:thread_id/subscription"]["response"];
+      response: Endpoints["GET /notifications/threads/{thread_id}/subscription"]["response"];
     };
     listEventsForAuthenticatedUser: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /users/:username/events"]["parameters"],
+          Endpoints["GET /users/{username}/events"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /users/:username/events"]["response"];
+      response: Endpoints["GET /users/{username}/events"]["response"];
     };
     listNotificationsForAuthenticatedUser: {
       parameters: RequestParameters &
@@ -455,10 +575,10 @@ export type RestEndpointMethodTypes = {
     listOrgEventsForAuthenticatedUser: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /users/:username/events/orgs/:org"]["parameters"],
+          Endpoints["GET /users/{username}/events/orgs/{org}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /users/:username/events/orgs/:org"]["response"];
+      response: Endpoints["GET /users/{username}/events/orgs/{org}"]["response"];
     };
     listPublicEvents: {
       parameters: RequestParameters &
@@ -471,58 +591,58 @@ export type RestEndpointMethodTypes = {
     listPublicEventsForRepoNetwork: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /networks/:owner/:repo/events"]["parameters"],
+          Endpoints["GET /networks/{owner}/{repo}/events"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /networks/:owner/:repo/events"]["response"];
+      response: Endpoints["GET /networks/{owner}/{repo}/events"]["response"];
     };
     listPublicEventsForUser: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /users/:username/events/public"]["parameters"],
+          Endpoints["GET /users/{username}/events/public"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /users/:username/events/public"]["response"];
+      response: Endpoints["GET /users/{username}/events/public"]["response"];
     };
     listPublicOrgEvents: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /orgs/:org/events"]["parameters"],
+          Endpoints["GET /orgs/{org}/events"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /orgs/:org/events"]["response"];
+      response: Endpoints["GET /orgs/{org}/events"]["response"];
     };
     listReceivedEventsForUser: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /users/:username/received_events"]["parameters"],
+          Endpoints["GET /users/{username}/received_events"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /users/:username/received_events"]["response"];
+      response: Endpoints["GET /users/{username}/received_events"]["response"];
     };
     listReceivedPublicEventsForUser: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /users/:username/received_events/public"]["parameters"],
+          Endpoints["GET /users/{username}/received_events/public"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /users/:username/received_events/public"]["response"];
+      response: Endpoints["GET /users/{username}/received_events/public"]["response"];
     };
     listRepoEvents: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/events"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/events"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/events"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/events"]["response"];
     };
     listRepoNotificationsForAuthenticatedUser: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/notifications"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/notifications"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/notifications"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/notifications"]["response"];
     };
     listReposStarredByAuthenticatedUser: {
       parameters: RequestParameters &
@@ -535,26 +655,26 @@ export type RestEndpointMethodTypes = {
     listReposStarredByUser: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /users/:username/starred"]["parameters"],
+          Endpoints["GET /users/{username}/starred"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /users/:username/starred"]["response"];
+      response: Endpoints["GET /users/{username}/starred"]["response"];
     };
     listReposWatchedByUser: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /users/:username/subscriptions"]["parameters"],
+          Endpoints["GET /users/{username}/subscriptions"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /users/:username/subscriptions"]["response"];
+      response: Endpoints["GET /users/{username}/subscriptions"]["response"];
     };
     listStargazersForRepo: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/stargazers"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/stargazers"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/stargazers"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/stargazers"]["response"];
     };
     listWatchedReposForAuthenticatedUser: {
       parameters: RequestParameters &
@@ -567,10 +687,10 @@ export type RestEndpointMethodTypes = {
     listWatchersForRepo: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/subscribers"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/subscribers"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/subscribers"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/subscribers"]["response"];
     };
     markNotificationsAsRead: {
       parameters: RequestParameters &
@@ -583,116 +703,116 @@ export type RestEndpointMethodTypes = {
     markRepoNotificationsAsRead: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["PUT /repos/:owner/:repo/notifications"]["parameters"],
+          Endpoints["PUT /repos/{owner}/{repo}/notifications"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["PUT /repos/:owner/:repo/notifications"]["response"];
+      response: Endpoints["PUT /repos/{owner}/{repo}/notifications"]["response"];
     };
     markThreadAsRead: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["PATCH /notifications/threads/:thread_id"]["parameters"],
+          Endpoints["PATCH /notifications/threads/{thread_id}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["PATCH /notifications/threads/:thread_id"]["response"];
+      response: Endpoints["PATCH /notifications/threads/{thread_id}"]["response"];
     };
     setRepoSubscription: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["PUT /repos/:owner/:repo/subscription"]["parameters"],
+          Endpoints["PUT /repos/{owner}/{repo}/subscription"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["PUT /repos/:owner/:repo/subscription"]["response"];
+      response: Endpoints["PUT /repos/{owner}/{repo}/subscription"]["response"];
     };
     setThreadSubscription: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["PUT /notifications/threads/:thread_id/subscription"]["parameters"],
+          Endpoints["PUT /notifications/threads/{thread_id}/subscription"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["PUT /notifications/threads/:thread_id/subscription"]["response"];
+      response: Endpoints["PUT /notifications/threads/{thread_id}/subscription"]["response"];
     };
     starRepoForAuthenticatedUser: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["PUT /user/starred/:owner/:repo"]["parameters"],
+          Endpoints["PUT /user/starred/{owner}/{repo}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["PUT /user/starred/:owner/:repo"]["response"];
+      response: Endpoints["PUT /user/starred/{owner}/{repo}"]["response"];
     };
     unstarRepoForAuthenticatedUser: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["DELETE /user/starred/:owner/:repo"]["parameters"],
+          Endpoints["DELETE /user/starred/{owner}/{repo}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["DELETE /user/starred/:owner/:repo"]["response"];
+      response: Endpoints["DELETE /user/starred/{owner}/{repo}"]["response"];
     };
   };
   apps: {
     addRepoToInstallation: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["PUT /user/installations/:installation_id/repositories/:repository_id"]["parameters"],
+          Endpoints["PUT /user/installations/{installation_id}/repositories/{repository_id}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["PUT /user/installations/:installation_id/repositories/:repository_id"]["response"];
+      response: Endpoints["PUT /user/installations/{installation_id}/repositories/{repository_id}"]["response"];
     };
     checkToken: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["POST /applications/:client_id/token"]["parameters"],
+          Endpoints["POST /applications/{client_id}/token"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["POST /applications/:client_id/token"]["response"];
+      response: Endpoints["POST /applications/{client_id}/token"]["response"];
     };
     createContentAttachment: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["POST /content_references/:content_reference_id/attachments"]["parameters"],
+          Endpoints["POST /content_references/{content_reference_id}/attachments"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["POST /content_references/:content_reference_id/attachments"]["response"];
+      response: Endpoints["POST /content_references/{content_reference_id}/attachments"]["response"];
     };
     createFromManifest: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["POST /app-manifests/:code/conversions"]["parameters"],
+          Endpoints["POST /app-manifests/{code}/conversions"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["POST /app-manifests/:code/conversions"]["response"];
+      response: Endpoints["POST /app-manifests/{code}/conversions"]["response"];
     };
     createInstallationAccessToken: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["POST /app/installations/:installation_id/access_tokens"]["parameters"],
+          Endpoints["POST /app/installations/{installation_id}/access_tokens"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["POST /app/installations/:installation_id/access_tokens"]["response"];
+      response: Endpoints["POST /app/installations/{installation_id}/access_tokens"]["response"];
     };
     deleteAuthorization: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["DELETE /applications/:client_id/grant"]["parameters"],
+          Endpoints["DELETE /applications/{client_id}/grant"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["DELETE /applications/:client_id/grant"]["response"];
+      response: Endpoints["DELETE /applications/{client_id}/grant"]["response"];
     };
     deleteInstallation: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["DELETE /app/installations/:installation_id"]["parameters"],
+          Endpoints["DELETE /app/installations/{installation_id}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["DELETE /app/installations/:installation_id"]["response"];
+      response: Endpoints["DELETE /app/installations/{installation_id}"]["response"];
     };
     deleteToken: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["DELETE /applications/:client_id/token"]["parameters"],
+          Endpoints["DELETE /applications/{client_id}/token"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["DELETE /applications/:client_id/token"]["response"];
+      response: Endpoints["DELETE /applications/{client_id}/token"]["response"];
     };
     getAuthenticated: {
       parameters: RequestParameters &
@@ -705,82 +825,90 @@ export type RestEndpointMethodTypes = {
     getBySlug: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /apps/:app_slug"]["parameters"],
+          Endpoints["GET /apps/{app_slug}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /apps/:app_slug"]["response"];
+      response: Endpoints["GET /apps/{app_slug}"]["response"];
     };
     getInstallation: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /app/installations/:installation_id"]["parameters"],
+          Endpoints["GET /app/installations/{installation_id}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /app/installations/:installation_id"]["response"];
+      response: Endpoints["GET /app/installations/{installation_id}"]["response"];
     };
     getOrgInstallation: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /orgs/:org/installation"]["parameters"],
+          Endpoints["GET /orgs/{org}/installation"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /orgs/:org/installation"]["response"];
+      response: Endpoints["GET /orgs/{org}/installation"]["response"];
     };
     getRepoInstallation: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/installation"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/installation"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/installation"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/installation"]["response"];
     };
     getSubscriptionPlanForAccount: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /marketplace_listing/accounts/:account_id"]["parameters"],
+          Endpoints["GET /marketplace_listing/accounts/{account_id}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /marketplace_listing/accounts/:account_id"]["response"];
+      response: Endpoints["GET /marketplace_listing/accounts/{account_id}"]["response"];
     };
     getSubscriptionPlanForAccountStubbed: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /marketplace_listing/stubbed/accounts/:account_id"]["parameters"],
+          Endpoints["GET /marketplace_listing/stubbed/accounts/{account_id}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /marketplace_listing/stubbed/accounts/:account_id"]["response"];
+      response: Endpoints["GET /marketplace_listing/stubbed/accounts/{account_id}"]["response"];
     };
     getUserInstallation: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /users/:username/installation"]["parameters"],
+          Endpoints["GET /users/{username}/installation"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /users/:username/installation"]["response"];
+      response: Endpoints["GET /users/{username}/installation"]["response"];
+    };
+    getWebhookConfigForApp: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /app/hook/config"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /app/hook/config"]["response"];
     };
     listAccountsForPlan: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /marketplace_listing/plans/:plan_id/accounts"]["parameters"],
+          Endpoints["GET /marketplace_listing/plans/{plan_id}/accounts"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /marketplace_listing/plans/:plan_id/accounts"]["response"];
+      response: Endpoints["GET /marketplace_listing/plans/{plan_id}/accounts"]["response"];
     };
     listAccountsForPlanStubbed: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /marketplace_listing/stubbed/plans/:plan_id/accounts"]["parameters"],
+          Endpoints["GET /marketplace_listing/stubbed/plans/{plan_id}/accounts"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /marketplace_listing/stubbed/plans/:plan_id/accounts"]["response"];
+      response: Endpoints["GET /marketplace_listing/stubbed/plans/{plan_id}/accounts"]["response"];
     };
     listInstallationReposForAuthenticatedUser: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /user/installations/:installation_id/repositories"]["parameters"],
+          Endpoints["GET /user/installations/{installation_id}/repositories"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /user/installations/:installation_id/repositories"]["response"];
+      response: Endpoints["GET /user/installations/{installation_id}/repositories"]["response"];
     };
     listInstallations: {
       parameters: RequestParameters &
@@ -841,18 +969,18 @@ export type RestEndpointMethodTypes = {
     removeRepoFromInstallation: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["DELETE /user/installations/:installation_id/repositories/:repository_id"]["parameters"],
+          Endpoints["DELETE /user/installations/{installation_id}/repositories/{repository_id}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["DELETE /user/installations/:installation_id/repositories/:repository_id"]["response"];
+      response: Endpoints["DELETE /user/installations/{installation_id}/repositories/{repository_id}"]["response"];
     };
     resetToken: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["PATCH /applications/:client_id/token"]["parameters"],
+          Endpoints["PATCH /applications/{client_id}/token"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["PATCH /applications/:client_id/token"]["response"];
+      response: Endpoints["PATCH /applications/{client_id}/token"]["response"];
     };
     revokeInstallationAccessToken: {
       parameters: RequestParameters &
@@ -865,200 +993,208 @@ export type RestEndpointMethodTypes = {
     suspendInstallation: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["PUT /app/installations/:installation_id/suspended"]["parameters"],
+          Endpoints["PUT /app/installations/{installation_id}/suspended"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["PUT /app/installations/:installation_id/suspended"]["response"];
+      response: Endpoints["PUT /app/installations/{installation_id}/suspended"]["response"];
     };
     unsuspendInstallation: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["DELETE /app/installations/:installation_id/suspended"]["parameters"],
+          Endpoints["DELETE /app/installations/{installation_id}/suspended"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["DELETE /app/installations/:installation_id/suspended"]["response"];
+      response: Endpoints["DELETE /app/installations/{installation_id}/suspended"]["response"];
+    };
+    updateWebhookConfigForApp: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["PATCH /app/hook/config"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["PATCH /app/hook/config"]["response"];
     };
   };
   billing: {
     getGithubActionsBillingOrg: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /orgs/:org/settings/billing/actions"]["parameters"],
+          Endpoints["GET /orgs/{org}/settings/billing/actions"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /orgs/:org/settings/billing/actions"]["response"];
+      response: Endpoints["GET /orgs/{org}/settings/billing/actions"]["response"];
     };
     getGithubActionsBillingUser: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /users/:username/settings/billing/actions"]["parameters"],
+          Endpoints["GET /users/{username}/settings/billing/actions"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /users/:username/settings/billing/actions"]["response"];
+      response: Endpoints["GET /users/{username}/settings/billing/actions"]["response"];
     };
     getGithubPackagesBillingOrg: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /orgs/:org/settings/billing/packages"]["parameters"],
+          Endpoints["GET /orgs/{org}/settings/billing/packages"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /orgs/:org/settings/billing/packages"]["response"];
+      response: Endpoints["GET /orgs/{org}/settings/billing/packages"]["response"];
     };
     getGithubPackagesBillingUser: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /users/:username/settings/billing/packages"]["parameters"],
+          Endpoints["GET /users/{username}/settings/billing/packages"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /users/:username/settings/billing/packages"]["response"];
+      response: Endpoints["GET /users/{username}/settings/billing/packages"]["response"];
     };
     getSharedStorageBillingOrg: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /orgs/:org/settings/billing/shared-storage"]["parameters"],
+          Endpoints["GET /orgs/{org}/settings/billing/shared-storage"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /orgs/:org/settings/billing/shared-storage"]["response"];
+      response: Endpoints["GET /orgs/{org}/settings/billing/shared-storage"]["response"];
     };
     getSharedStorageBillingUser: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /users/:username/settings/billing/shared-storage"]["parameters"],
+          Endpoints["GET /users/{username}/settings/billing/shared-storage"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /users/:username/settings/billing/shared-storage"]["response"];
+      response: Endpoints["GET /users/{username}/settings/billing/shared-storage"]["response"];
     };
   };
   checks: {
     create: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["POST /repos/:owner/:repo/check-runs"]["parameters"],
+          Endpoints["POST /repos/{owner}/{repo}/check-runs"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["POST /repos/:owner/:repo/check-runs"]["response"];
+      response: Endpoints["POST /repos/{owner}/{repo}/check-runs"]["response"];
     };
     createSuite: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["POST /repos/:owner/:repo/check-suites"]["parameters"],
+          Endpoints["POST /repos/{owner}/{repo}/check-suites"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["POST /repos/:owner/:repo/check-suites"]["response"];
+      response: Endpoints["POST /repos/{owner}/{repo}/check-suites"]["response"];
     };
     get: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/check-runs/:check_run_id"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/check-runs/{check_run_id}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/check-runs/:check_run_id"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/check-runs/{check_run_id}"]["response"];
     };
     getSuite: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/check-suites/:check_suite_id"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/check-suites/{check_suite_id}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/check-suites/:check_suite_id"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/check-suites/{check_suite_id}"]["response"];
     };
     listAnnotations: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/check-runs/:check_run_id/annotations"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/check-runs/{check_run_id}/annotations"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/check-runs/:check_run_id/annotations"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/check-runs/{check_run_id}/annotations"]["response"];
     };
     listForRef: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/commits/:ref/check-runs"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/commits/{ref}/check-runs"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/commits/:ref/check-runs"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/commits/{ref}/check-runs"]["response"];
     };
     listForSuite: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/check-suites/:check_suite_id/check-runs"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/check-suites/{check_suite_id}/check-runs"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/check-suites/:check_suite_id/check-runs"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/check-suites/{check_suite_id}/check-runs"]["response"];
     };
     listSuitesForRef: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/commits/:ref/check-suites"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/commits/{ref}/check-suites"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/commits/:ref/check-suites"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/commits/{ref}/check-suites"]["response"];
     };
     rerequestSuite: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["POST /repos/:owner/:repo/check-suites/:check_suite_id/rerequest"]["parameters"],
+          Endpoints["POST /repos/{owner}/{repo}/check-suites/{check_suite_id}/rerequest"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["POST /repos/:owner/:repo/check-suites/:check_suite_id/rerequest"]["response"];
+      response: Endpoints["POST /repos/{owner}/{repo}/check-suites/{check_suite_id}/rerequest"]["response"];
     };
     setSuitesPreferences: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["PATCH /repos/:owner/:repo/check-suites/preferences"]["parameters"],
+          Endpoints["PATCH /repos/{owner}/{repo}/check-suites/preferences"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["PATCH /repos/:owner/:repo/check-suites/preferences"]["response"];
+      response: Endpoints["PATCH /repos/{owner}/{repo}/check-suites/preferences"]["response"];
     };
     update: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["PATCH /repos/:owner/:repo/check-runs/:check_run_id"]["parameters"],
+          Endpoints["PATCH /repos/{owner}/{repo}/check-runs/{check_run_id}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["PATCH /repos/:owner/:repo/check-runs/:check_run_id"]["response"];
+      response: Endpoints["PATCH /repos/{owner}/{repo}/check-runs/{check_run_id}"]["response"];
     };
   };
   codeScanning: {
     getAlert: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/code-scanning/alerts/:alert_number"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/code-scanning/alerts/{alert_number}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/code-scanning/alerts/:alert_number"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/code-scanning/alerts/{alert_number}"]["response"];
     };
     listAlertsForRepo: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/code-scanning/alerts"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/code-scanning/alerts"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/code-scanning/alerts"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/code-scanning/alerts"]["response"];
     };
     listRecentAnalyses: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/code-scanning/analyses"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/code-scanning/analyses"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/code-scanning/analyses"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/code-scanning/analyses"]["response"];
     };
     updateAlert: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["PATCH /repos/:owner/:repo/code-scanning/alerts/:alert_number"]["parameters"],
+          Endpoints["PATCH /repos/{owner}/{repo}/code-scanning/alerts/{alert_number}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["PATCH /repos/:owner/:repo/code-scanning/alerts/:alert_number"]["response"];
+      response: Endpoints["PATCH /repos/{owner}/{repo}/code-scanning/alerts/{alert_number}"]["response"];
     };
     uploadSarif: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["POST /repos/:owner/:repo/code-scanning/sarifs"]["parameters"],
+          Endpoints["POST /repos/{owner}/{repo}/code-scanning/sarifs"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["POST /repos/:owner/:repo/code-scanning/sarifs"]["response"];
+      response: Endpoints["POST /repos/{owner}/{repo}/code-scanning/sarifs"]["response"];
     };
   };
   codesOfConduct: {
@@ -1073,18 +1209,18 @@ export type RestEndpointMethodTypes = {
     getConductCode: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /codes_of_conduct/:key"]["parameters"],
+          Endpoints["GET /codes_of_conduct/{key}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /codes_of_conduct/:key"]["response"];
+      response: Endpoints["GET /codes_of_conduct/{key}"]["response"];
     };
     getForRepo: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/community/code_of_conduct"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/community/code_of_conduct"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/community/code_of_conduct"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/community/code_of_conduct"]["response"];
     };
   };
   emojis: {
@@ -1097,14 +1233,80 @@ export type RestEndpointMethodTypes = {
       response: Endpoints["GET /emojis"]["response"];
     };
   };
+  enterpriseAdmin: {
+    disableSelectedOrganizationGithubActionsEnterprise: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["DELETE /enterprises/{enterprise}/actions/permissions/organizations/{org_id}"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["DELETE /enterprises/{enterprise}/actions/permissions/organizations/{org_id}"]["response"];
+    };
+    enableSelectedOrganizationGithubActionsEnterprise: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["PUT /enterprises/{enterprise}/actions/permissions/organizations/{org_id}"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["PUT /enterprises/{enterprise}/actions/permissions/organizations/{org_id}"]["response"];
+    };
+    getAllowedActionsEnterprise: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /enterprises/{enterprise}/actions/permissions/selected-actions"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /enterprises/{enterprise}/actions/permissions/selected-actions"]["response"];
+    };
+    getGithubActionsPermissionsEnterprise: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /enterprises/{enterprise}/actions/permissions"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /enterprises/{enterprise}/actions/permissions"]["response"];
+    };
+    listSelectedOrganizationsEnabledGithubActionsEnterprise: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /enterprises/{enterprise}/actions/permissions/organizations"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /enterprises/{enterprise}/actions/permissions/organizations"]["response"];
+    };
+    setAllowedActionsEnterprise: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["PUT /enterprises/{enterprise}/actions/permissions/selected-actions"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["PUT /enterprises/{enterprise}/actions/permissions/selected-actions"]["response"];
+    };
+    setGithubActionsPermissionsEnterprise: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["PUT /enterprises/{enterprise}/actions/permissions"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["PUT /enterprises/{enterprise}/actions/permissions"]["response"];
+    };
+    setSelectedOrganizationsEnabledGithubActionsEnterprise: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["PUT /enterprises/{enterprise}/actions/permissions/organizations"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["PUT /enterprises/{enterprise}/actions/permissions/organizations"]["response"];
+    };
+  };
   gists: {
     checkIsStarred: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /gists/:gist_id/star"]["parameters"],
+          Endpoints["GET /gists/{gist_id}/star"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /gists/:gist_id/star"]["response"];
+      response: Endpoints["GET /gists/{gist_id}/star"]["response"];
     };
     create: {
       parameters: RequestParameters &
@@ -1117,58 +1319,58 @@ export type RestEndpointMethodTypes = {
     createComment: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["POST /gists/:gist_id/comments"]["parameters"],
+          Endpoints["POST /gists/{gist_id}/comments"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["POST /gists/:gist_id/comments"]["response"];
+      response: Endpoints["POST /gists/{gist_id}/comments"]["response"];
     };
     delete: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["DELETE /gists/:gist_id"]["parameters"],
+          Endpoints["DELETE /gists/{gist_id}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["DELETE /gists/:gist_id"]["response"];
+      response: Endpoints["DELETE /gists/{gist_id}"]["response"];
     };
     deleteComment: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["DELETE /gists/:gist_id/comments/:comment_id"]["parameters"],
+          Endpoints["DELETE /gists/{gist_id}/comments/{comment_id}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["DELETE /gists/:gist_id/comments/:comment_id"]["response"];
+      response: Endpoints["DELETE /gists/{gist_id}/comments/{comment_id}"]["response"];
     };
     fork: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["POST /gists/:gist_id/forks"]["parameters"],
+          Endpoints["POST /gists/{gist_id}/forks"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["POST /gists/:gist_id/forks"]["response"];
+      response: Endpoints["POST /gists/{gist_id}/forks"]["response"];
     };
     get: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /gists/:gist_id"]["parameters"],
+          Endpoints["GET /gists/{gist_id}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /gists/:gist_id"]["response"];
+      response: Endpoints["GET /gists/{gist_id}"]["response"];
     };
     getComment: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /gists/:gist_id/comments/:comment_id"]["parameters"],
+          Endpoints["GET /gists/{gist_id}/comments/{comment_id}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /gists/:gist_id/comments/:comment_id"]["response"];
+      response: Endpoints["GET /gists/{gist_id}/comments/{comment_id}"]["response"];
     };
     getRevision: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /gists/:gist_id/:sha"]["parameters"],
+          Endpoints["GET /gists/{gist_id}/{sha}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /gists/:gist_id/:sha"]["response"];
+      response: Endpoints["GET /gists/{gist_id}/{sha}"]["response"];
     };
     list: {
       parameters: RequestParameters &
@@ -1181,34 +1383,34 @@ export type RestEndpointMethodTypes = {
     listComments: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /gists/:gist_id/comments"]["parameters"],
+          Endpoints["GET /gists/{gist_id}/comments"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /gists/:gist_id/comments"]["response"];
+      response: Endpoints["GET /gists/{gist_id}/comments"]["response"];
     };
     listCommits: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /gists/:gist_id/commits"]["parameters"],
+          Endpoints["GET /gists/{gist_id}/commits"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /gists/:gist_id/commits"]["response"];
+      response: Endpoints["GET /gists/{gist_id}/commits"]["response"];
     };
     listForUser: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /users/:username/gists"]["parameters"],
+          Endpoints["GET /users/{username}/gists"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /users/:username/gists"]["response"];
+      response: Endpoints["GET /users/{username}/gists"]["response"];
     };
     listForks: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /gists/:gist_id/forks"]["parameters"],
+          Endpoints["GET /gists/{gist_id}/forks"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /gists/:gist_id/forks"]["response"];
+      response: Endpoints["GET /gists/{gist_id}/forks"]["response"];
     };
     listPublic: {
       parameters: RequestParameters &
@@ -1229,140 +1431,140 @@ export type RestEndpointMethodTypes = {
     star: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["PUT /gists/:gist_id/star"]["parameters"],
+          Endpoints["PUT /gists/{gist_id}/star"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["PUT /gists/:gist_id/star"]["response"];
+      response: Endpoints["PUT /gists/{gist_id}/star"]["response"];
     };
     unstar: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["DELETE /gists/:gist_id/star"]["parameters"],
+          Endpoints["DELETE /gists/{gist_id}/star"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["DELETE /gists/:gist_id/star"]["response"];
+      response: Endpoints["DELETE /gists/{gist_id}/star"]["response"];
     };
     update: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["PATCH /gists/:gist_id"]["parameters"],
+          Endpoints["PATCH /gists/{gist_id}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["PATCH /gists/:gist_id"]["response"];
+      response: Endpoints["PATCH /gists/{gist_id}"]["response"];
     };
     updateComment: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["PATCH /gists/:gist_id/comments/:comment_id"]["parameters"],
+          Endpoints["PATCH /gists/{gist_id}/comments/{comment_id}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["PATCH /gists/:gist_id/comments/:comment_id"]["response"];
+      response: Endpoints["PATCH /gists/{gist_id}/comments/{comment_id}"]["response"];
     };
   };
   git: {
     createBlob: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["POST /repos/:owner/:repo/git/blobs"]["parameters"],
+          Endpoints["POST /repos/{owner}/{repo}/git/blobs"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["POST /repos/:owner/:repo/git/blobs"]["response"];
+      response: Endpoints["POST /repos/{owner}/{repo}/git/blobs"]["response"];
     };
     createCommit: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["POST /repos/:owner/:repo/git/commits"]["parameters"],
+          Endpoints["POST /repos/{owner}/{repo}/git/commits"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["POST /repos/:owner/:repo/git/commits"]["response"];
+      response: Endpoints["POST /repos/{owner}/{repo}/git/commits"]["response"];
     };
     createRef: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["POST /repos/:owner/:repo/git/refs"]["parameters"],
+          Endpoints["POST /repos/{owner}/{repo}/git/refs"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["POST /repos/:owner/:repo/git/refs"]["response"];
+      response: Endpoints["POST /repos/{owner}/{repo}/git/refs"]["response"];
     };
     createTag: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["POST /repos/:owner/:repo/git/tags"]["parameters"],
+          Endpoints["POST /repos/{owner}/{repo}/git/tags"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["POST /repos/:owner/:repo/git/tags"]["response"];
+      response: Endpoints["POST /repos/{owner}/{repo}/git/tags"]["response"];
     };
     createTree: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["POST /repos/:owner/:repo/git/trees"]["parameters"],
+          Endpoints["POST /repos/{owner}/{repo}/git/trees"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["POST /repos/:owner/:repo/git/trees"]["response"];
+      response: Endpoints["POST /repos/{owner}/{repo}/git/trees"]["response"];
     };
     deleteRef: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["DELETE /repos/:owner/:repo/git/refs/:ref"]["parameters"],
+          Endpoints["DELETE /repos/{owner}/{repo}/git/refs/{ref}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["DELETE /repos/:owner/:repo/git/refs/:ref"]["response"];
+      response: Endpoints["DELETE /repos/{owner}/{repo}/git/refs/{ref}"]["response"];
     };
     getBlob: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/git/blobs/:file_sha"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/git/blobs/{file_sha}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/git/blobs/:file_sha"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/git/blobs/{file_sha}"]["response"];
     };
     getCommit: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/git/commits/:commit_sha"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/git/commits/{commit_sha}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/git/commits/:commit_sha"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/git/commits/{commit_sha}"]["response"];
     };
     getRef: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/git/ref/:ref"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/git/ref/{ref}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/git/ref/:ref"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/git/ref/{ref}"]["response"];
     };
     getTag: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/git/tags/:tag_sha"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/git/tags/{tag_sha}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/git/tags/:tag_sha"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/git/tags/{tag_sha}"]["response"];
     };
     getTree: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/git/trees/:tree_sha"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/git/trees/{tree_sha}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/git/trees/:tree_sha"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/git/trees/{tree_sha}"]["response"];
     };
     listMatchingRefs: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/git/matching-refs/:ref"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/git/matching-refs/{ref}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/git/matching-refs/:ref"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/git/matching-refs/{ref}"]["response"];
     };
     updateRef: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["PATCH /repos/:owner/:repo/git/refs/:ref"]["parameters"],
+          Endpoints["PATCH /repos/{owner}/{repo}/git/refs/{ref}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["PATCH /repos/:owner/:repo/git/refs/:ref"]["response"];
+      response: Endpoints["PATCH /repos/{owner}/{repo}/git/refs/{ref}"]["response"];
     };
   };
   gitignore: {
@@ -1377,182 +1579,182 @@ export type RestEndpointMethodTypes = {
     getTemplate: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /gitignore/templates/:name"]["parameters"],
+          Endpoints["GET /gitignore/templates/{name}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /gitignore/templates/:name"]["response"];
+      response: Endpoints["GET /gitignore/templates/{name}"]["response"];
     };
   };
   interactions: {
     getRestrictionsForOrg: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /orgs/:org/interaction-limits"]["parameters"],
+          Endpoints["GET /orgs/{org}/interaction-limits"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /orgs/:org/interaction-limits"]["response"];
+      response: Endpoints["GET /orgs/{org}/interaction-limits"]["response"];
     };
     getRestrictionsForRepo: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/interaction-limits"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/interaction-limits"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/interaction-limits"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/interaction-limits"]["response"];
     };
     removeRestrictionsForOrg: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["DELETE /orgs/:org/interaction-limits"]["parameters"],
+          Endpoints["DELETE /orgs/{org}/interaction-limits"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["DELETE /orgs/:org/interaction-limits"]["response"];
+      response: Endpoints["DELETE /orgs/{org}/interaction-limits"]["response"];
     };
     removeRestrictionsForRepo: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["DELETE /repos/:owner/:repo/interaction-limits"]["parameters"],
+          Endpoints["DELETE /repos/{owner}/{repo}/interaction-limits"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["DELETE /repos/:owner/:repo/interaction-limits"]["response"];
+      response: Endpoints["DELETE /repos/{owner}/{repo}/interaction-limits"]["response"];
     };
     setRestrictionsForOrg: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["PUT /orgs/:org/interaction-limits"]["parameters"],
+          Endpoints["PUT /orgs/{org}/interaction-limits"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["PUT /orgs/:org/interaction-limits"]["response"];
+      response: Endpoints["PUT /orgs/{org}/interaction-limits"]["response"];
     };
     setRestrictionsForRepo: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["PUT /repos/:owner/:repo/interaction-limits"]["parameters"],
+          Endpoints["PUT /repos/{owner}/{repo}/interaction-limits"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["PUT /repos/:owner/:repo/interaction-limits"]["response"];
+      response: Endpoints["PUT /repos/{owner}/{repo}/interaction-limits"]["response"];
     };
   };
   issues: {
     addAssignees: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["POST /repos/:owner/:repo/issues/:issue_number/assignees"]["parameters"],
+          Endpoints["POST /repos/{owner}/{repo}/issues/{issue_number}/assignees"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["POST /repos/:owner/:repo/issues/:issue_number/assignees"]["response"];
+      response: Endpoints["POST /repos/{owner}/{repo}/issues/{issue_number}/assignees"]["response"];
     };
     addLabels: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["POST /repos/:owner/:repo/issues/:issue_number/labels"]["parameters"],
+          Endpoints["POST /repos/{owner}/{repo}/issues/{issue_number}/labels"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["POST /repos/:owner/:repo/issues/:issue_number/labels"]["response"];
+      response: Endpoints["POST /repos/{owner}/{repo}/issues/{issue_number}/labels"]["response"];
     };
     checkUserCanBeAssigned: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/assignees/:assignee"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/assignees/{assignee}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/assignees/:assignee"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/assignees/{assignee}"]["response"];
     };
     create: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["POST /repos/:owner/:repo/issues"]["parameters"],
+          Endpoints["POST /repos/{owner}/{repo}/issues"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["POST /repos/:owner/:repo/issues"]["response"];
+      response: Endpoints["POST /repos/{owner}/{repo}/issues"]["response"];
     };
     createComment: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["POST /repos/:owner/:repo/issues/:issue_number/comments"]["parameters"],
+          Endpoints["POST /repos/{owner}/{repo}/issues/{issue_number}/comments"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["POST /repos/:owner/:repo/issues/:issue_number/comments"]["response"];
+      response: Endpoints["POST /repos/{owner}/{repo}/issues/{issue_number}/comments"]["response"];
     };
     createLabel: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["POST /repos/:owner/:repo/labels"]["parameters"],
+          Endpoints["POST /repos/{owner}/{repo}/labels"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["POST /repos/:owner/:repo/labels"]["response"];
+      response: Endpoints["POST /repos/{owner}/{repo}/labels"]["response"];
     };
     createMilestone: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["POST /repos/:owner/:repo/milestones"]["parameters"],
+          Endpoints["POST /repos/{owner}/{repo}/milestones"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["POST /repos/:owner/:repo/milestones"]["response"];
+      response: Endpoints["POST /repos/{owner}/{repo}/milestones"]["response"];
     };
     deleteComment: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["DELETE /repos/:owner/:repo/issues/comments/:comment_id"]["parameters"],
+          Endpoints["DELETE /repos/{owner}/{repo}/issues/comments/{comment_id}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["DELETE /repos/:owner/:repo/issues/comments/:comment_id"]["response"];
+      response: Endpoints["DELETE /repos/{owner}/{repo}/issues/comments/{comment_id}"]["response"];
     };
     deleteLabel: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["DELETE /repos/:owner/:repo/labels/:name"]["parameters"],
+          Endpoints["DELETE /repos/{owner}/{repo}/labels/{name}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["DELETE /repos/:owner/:repo/labels/:name"]["response"];
+      response: Endpoints["DELETE /repos/{owner}/{repo}/labels/{name}"]["response"];
     };
     deleteMilestone: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["DELETE /repos/:owner/:repo/milestones/:milestone_number"]["parameters"],
+          Endpoints["DELETE /repos/{owner}/{repo}/milestones/{milestone_number}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["DELETE /repos/:owner/:repo/milestones/:milestone_number"]["response"];
+      response: Endpoints["DELETE /repos/{owner}/{repo}/milestones/{milestone_number}"]["response"];
     };
     get: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/issues/:issue_number"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/issues/{issue_number}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/issues/:issue_number"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/issues/{issue_number}"]["response"];
     };
     getComment: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/issues/comments/:comment_id"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/issues/comments/{comment_id}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/issues/comments/:comment_id"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/issues/comments/{comment_id}"]["response"];
     };
     getEvent: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/issues/events/:event_id"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/issues/events/{event_id}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/issues/events/:event_id"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/issues/events/{event_id}"]["response"];
     };
     getLabel: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/labels/:name"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/labels/{name}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/labels/:name"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/labels/{name}"]["response"];
     };
     getMilestone: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/milestones/:milestone_number"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/milestones/{milestone_number}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/milestones/:milestone_number"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/milestones/{milestone_number}"]["response"];
     };
     list: {
       parameters: RequestParameters &
@@ -1565,50 +1767,50 @@ export type RestEndpointMethodTypes = {
     listAssignees: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/assignees"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/assignees"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/assignees"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/assignees"]["response"];
     };
     listComments: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/issues/:issue_number/comments"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/issues/{issue_number}/comments"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/issues/:issue_number/comments"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/issues/{issue_number}/comments"]["response"];
     };
     listCommentsForRepo: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/issues/comments"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/issues/comments"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/issues/comments"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/issues/comments"]["response"];
     };
     listEvents: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/issues/:issue_number/events"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/issues/{issue_number}/events"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/issues/:issue_number/events"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/issues/{issue_number}/events"]["response"];
     };
     listEventsForRepo: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/issues/events"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/issues/events"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/issues/events"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/issues/events"]["response"];
     };
     listEventsForTimeline: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/issues/:issue_number/timeline"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/issues/{issue_number}/timeline"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/issues/:issue_number/timeline"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/issues/{issue_number}/timeline"]["response"];
     };
     listForAuthenticatedUser: {
       parameters: RequestParameters &
@@ -1621,140 +1823,140 @@ export type RestEndpointMethodTypes = {
     listForOrg: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /orgs/:org/issues"]["parameters"],
+          Endpoints["GET /orgs/{org}/issues"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /orgs/:org/issues"]["response"];
+      response: Endpoints["GET /orgs/{org}/issues"]["response"];
     };
     listForRepo: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/issues"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/issues"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/issues"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/issues"]["response"];
     };
     listLabelsForMilestone: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/milestones/:milestone_number/labels"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/milestones/{milestone_number}/labels"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/milestones/:milestone_number/labels"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/milestones/{milestone_number}/labels"]["response"];
     };
     listLabelsForRepo: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/labels"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/labels"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/labels"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/labels"]["response"];
     };
     listLabelsOnIssue: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/issues/:issue_number/labels"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/issues/{issue_number}/labels"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/issues/:issue_number/labels"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/issues/{issue_number}/labels"]["response"];
     };
     listMilestones: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/milestones"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/milestones"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/milestones"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/milestones"]["response"];
     };
     lock: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["PUT /repos/:owner/:repo/issues/:issue_number/lock"]["parameters"],
+          Endpoints["PUT /repos/{owner}/{repo}/issues/{issue_number}/lock"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["PUT /repos/:owner/:repo/issues/:issue_number/lock"]["response"];
+      response: Endpoints["PUT /repos/{owner}/{repo}/issues/{issue_number}/lock"]["response"];
     };
     removeAllLabels: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["DELETE /repos/:owner/:repo/issues/:issue_number/labels"]["parameters"],
+          Endpoints["DELETE /repos/{owner}/{repo}/issues/{issue_number}/labels"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["DELETE /repos/:owner/:repo/issues/:issue_number/labels"]["response"];
+      response: Endpoints["DELETE /repos/{owner}/{repo}/issues/{issue_number}/labels"]["response"];
     };
     removeAssignees: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["DELETE /repos/:owner/:repo/issues/:issue_number/assignees"]["parameters"],
+          Endpoints["DELETE /repos/{owner}/{repo}/issues/{issue_number}/assignees"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["DELETE /repos/:owner/:repo/issues/:issue_number/assignees"]["response"];
+      response: Endpoints["DELETE /repos/{owner}/{repo}/issues/{issue_number}/assignees"]["response"];
     };
     removeLabel: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["DELETE /repos/:owner/:repo/issues/:issue_number/labels/:name"]["parameters"],
+          Endpoints["DELETE /repos/{owner}/{repo}/issues/{issue_number}/labels/{name}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["DELETE /repos/:owner/:repo/issues/:issue_number/labels/:name"]["response"];
+      response: Endpoints["DELETE /repos/{owner}/{repo}/issues/{issue_number}/labels/{name}"]["response"];
     };
     setLabels: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["PUT /repos/:owner/:repo/issues/:issue_number/labels"]["parameters"],
+          Endpoints["PUT /repos/{owner}/{repo}/issues/{issue_number}/labels"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["PUT /repos/:owner/:repo/issues/:issue_number/labels"]["response"];
+      response: Endpoints["PUT /repos/{owner}/{repo}/issues/{issue_number}/labels"]["response"];
     };
     unlock: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["DELETE /repos/:owner/:repo/issues/:issue_number/lock"]["parameters"],
+          Endpoints["DELETE /repos/{owner}/{repo}/issues/{issue_number}/lock"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["DELETE /repos/:owner/:repo/issues/:issue_number/lock"]["response"];
+      response: Endpoints["DELETE /repos/{owner}/{repo}/issues/{issue_number}/lock"]["response"];
     };
     update: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["PATCH /repos/:owner/:repo/issues/:issue_number"]["parameters"],
+          Endpoints["PATCH /repos/{owner}/{repo}/issues/{issue_number}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["PATCH /repos/:owner/:repo/issues/:issue_number"]["response"];
+      response: Endpoints["PATCH /repos/{owner}/{repo}/issues/{issue_number}"]["response"];
     };
     updateComment: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["PATCH /repos/:owner/:repo/issues/comments/:comment_id"]["parameters"],
+          Endpoints["PATCH /repos/{owner}/{repo}/issues/comments/{comment_id}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["PATCH /repos/:owner/:repo/issues/comments/:comment_id"]["response"];
+      response: Endpoints["PATCH /repos/{owner}/{repo}/issues/comments/{comment_id}"]["response"];
     };
     updateLabel: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["PATCH /repos/:owner/:repo/labels/:name"]["parameters"],
+          Endpoints["PATCH /repos/{owner}/{repo}/labels/{name}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["PATCH /repos/:owner/:repo/labels/:name"]["response"];
+      response: Endpoints["PATCH /repos/{owner}/{repo}/labels/{name}"]["response"];
     };
     updateMilestone: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["PATCH /repos/:owner/:repo/milestones/:milestone_number"]["parameters"],
+          Endpoints["PATCH /repos/{owner}/{repo}/milestones/{milestone_number}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["PATCH /repos/:owner/:repo/milestones/:milestone_number"]["response"];
+      response: Endpoints["PATCH /repos/{owner}/{repo}/milestones/{milestone_number}"]["response"];
     };
   };
   licenses: {
     get: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /licenses/:license"]["parameters"],
+          Endpoints["GET /licenses/{license}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /licenses/:license"]["response"];
+      response: Endpoints["GET /licenses/{license}"]["response"];
     };
     getAllCommonlyUsed: {
       parameters: RequestParameters &
@@ -1767,10 +1969,10 @@ export type RestEndpointMethodTypes = {
     getForRepo: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/license"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/license"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/license"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/license"]["response"];
     };
   };
   markdown: {
@@ -1800,87 +2002,111 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["GET /meta"]["response"];
     };
+    getOctocat: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /octocat"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /octocat"]["response"];
+    };
+    getZen: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /zen"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /zen"]["response"];
+    };
+    root: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /"]["response"];
+    };
   };
   migrations: {
     cancelImport: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["DELETE /repos/:owner/:repo/import"]["parameters"],
+          Endpoints["DELETE /repos/{owner}/{repo}/import"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["DELETE /repos/:owner/:repo/import"]["response"];
+      response: Endpoints["DELETE /repos/{owner}/{repo}/import"]["response"];
     };
     deleteArchiveForAuthenticatedUser: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["DELETE /user/migrations/:migration_id/archive"]["parameters"],
+          Endpoints["DELETE /user/migrations/{migration_id}/archive"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["DELETE /user/migrations/:migration_id/archive"]["response"];
+      response: Endpoints["DELETE /user/migrations/{migration_id}/archive"]["response"];
     };
     deleteArchiveForOrg: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["DELETE /orgs/:org/migrations/:migration_id/archive"]["parameters"],
+          Endpoints["DELETE /orgs/{org}/migrations/{migration_id}/archive"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["DELETE /orgs/:org/migrations/:migration_id/archive"]["response"];
+      response: Endpoints["DELETE /orgs/{org}/migrations/{migration_id}/archive"]["response"];
     };
     downloadArchiveForOrg: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /orgs/:org/migrations/:migration_id/archive"]["parameters"],
+          Endpoints["GET /orgs/{org}/migrations/{migration_id}/archive"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /orgs/:org/migrations/:migration_id/archive"]["response"];
+      response: Endpoints["GET /orgs/{org}/migrations/{migration_id}/archive"]["response"];
     };
     getArchiveForAuthenticatedUser: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /user/migrations/:migration_id/archive"]["parameters"],
+          Endpoints["GET /user/migrations/{migration_id}/archive"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /user/migrations/:migration_id/archive"]["response"];
+      response: Endpoints["GET /user/migrations/{migration_id}/archive"]["response"];
     };
     getCommitAuthors: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/import/authors"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/import/authors"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/import/authors"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/import/authors"]["response"];
     };
     getImportStatus: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/import"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/import"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/import"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/import"]["response"];
     };
     getLargeFiles: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/import/large_files"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/import/large_files"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/import/large_files"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/import/large_files"]["response"];
     };
     getStatusForAuthenticatedUser: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /user/migrations/:migration_id"]["parameters"],
+          Endpoints["GET /user/migrations/{migration_id}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /user/migrations/:migration_id"]["response"];
+      response: Endpoints["GET /user/migrations/{migration_id}"]["response"];
     };
     getStatusForOrg: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /orgs/:org/migrations/:migration_id"]["parameters"],
+          Endpoints["GET /orgs/{org}/migrations/{migration_id}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /orgs/:org/migrations/:migration_id"]["response"];
+      response: Endpoints["GET /orgs/{org}/migrations/{migration_id}"]["response"];
     };
     listForAuthenticatedUser: {
       parameters: RequestParameters &
@@ -1893,42 +2119,42 @@ export type RestEndpointMethodTypes = {
     listForOrg: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /orgs/:org/migrations"]["parameters"],
+          Endpoints["GET /orgs/{org}/migrations"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /orgs/:org/migrations"]["response"];
+      response: Endpoints["GET /orgs/{org}/migrations"]["response"];
     };
     listReposForOrg: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /orgs/:org/migrations/:migration_id/repositories"]["parameters"],
+          Endpoints["GET /orgs/{org}/migrations/{migration_id}/repositories"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /orgs/:org/migrations/:migration_id/repositories"]["response"];
+      response: Endpoints["GET /orgs/{org}/migrations/{migration_id}/repositories"]["response"];
     };
     listReposForUser: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /user/migrations/:migration_id/repositories"]["parameters"],
+          Endpoints["GET /user/migrations/{migration_id}/repositories"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /user/migrations/:migration_id/repositories"]["response"];
+      response: Endpoints["GET /user/migrations/{migration_id}/repositories"]["response"];
     };
     mapCommitAuthor: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["PATCH /repos/:owner/:repo/import/authors/:author_id"]["parameters"],
+          Endpoints["PATCH /repos/{owner}/{repo}/import/authors/{author_id}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["PATCH /repos/:owner/:repo/import/authors/:author_id"]["response"];
+      response: Endpoints["PATCH /repos/{owner}/{repo}/import/authors/{author_id}"]["response"];
     };
     setLfsPreference: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["PATCH /repos/:owner/:repo/import/lfs"]["parameters"],
+          Endpoints["PATCH /repos/{owner}/{repo}/import/lfs"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["PATCH /repos/:owner/:repo/import/lfs"]["response"];
+      response: Endpoints["PATCH /repos/{owner}/{repo}/import/lfs"]["response"];
     };
     startForAuthenticatedUser: {
       parameters: RequestParameters &
@@ -1941,140 +2167,148 @@ export type RestEndpointMethodTypes = {
     startForOrg: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["POST /orgs/:org/migrations"]["parameters"],
+          Endpoints["POST /orgs/{org}/migrations"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["POST /orgs/:org/migrations"]["response"];
+      response: Endpoints["POST /orgs/{org}/migrations"]["response"];
     };
     startImport: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["PUT /repos/:owner/:repo/import"]["parameters"],
+          Endpoints["PUT /repos/{owner}/{repo}/import"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["PUT /repos/:owner/:repo/import"]["response"];
+      response: Endpoints["PUT /repos/{owner}/{repo}/import"]["response"];
     };
     unlockRepoForAuthenticatedUser: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["DELETE /user/migrations/:migration_id/repos/:repo_name/lock"]["parameters"],
+          Endpoints["DELETE /user/migrations/{migration_id}/repos/{repo_name}/lock"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["DELETE /user/migrations/:migration_id/repos/:repo_name/lock"]["response"];
+      response: Endpoints["DELETE /user/migrations/{migration_id}/repos/{repo_name}/lock"]["response"];
     };
     unlockRepoForOrg: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["DELETE /orgs/:org/migrations/:migration_id/repos/:repo_name/lock"]["parameters"],
+          Endpoints["DELETE /orgs/{org}/migrations/{migration_id}/repos/{repo_name}/lock"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["DELETE /orgs/:org/migrations/:migration_id/repos/:repo_name/lock"]["response"];
+      response: Endpoints["DELETE /orgs/{org}/migrations/{migration_id}/repos/{repo_name}/lock"]["response"];
     };
     updateImport: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["PATCH /repos/:owner/:repo/import"]["parameters"],
+          Endpoints["PATCH /repos/{owner}/{repo}/import"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["PATCH /repos/:owner/:repo/import"]["response"];
+      response: Endpoints["PATCH /repos/{owner}/{repo}/import"]["response"];
     };
   };
   orgs: {
     blockUser: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["PUT /orgs/:org/blocks/:username"]["parameters"],
+          Endpoints["PUT /orgs/{org}/blocks/{username}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["PUT /orgs/:org/blocks/:username"]["response"];
+      response: Endpoints["PUT /orgs/{org}/blocks/{username}"]["response"];
     };
     checkBlockedUser: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /orgs/:org/blocks/:username"]["parameters"],
+          Endpoints["GET /orgs/{org}/blocks/{username}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /orgs/:org/blocks/:username"]["response"];
+      response: Endpoints["GET /orgs/{org}/blocks/{username}"]["response"];
     };
     checkMembershipForUser: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /orgs/:org/members/:username"]["parameters"],
+          Endpoints["GET /orgs/{org}/members/{username}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /orgs/:org/members/:username"]["response"];
+      response: Endpoints["GET /orgs/{org}/members/{username}"]["response"];
     };
     checkPublicMembershipForUser: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /orgs/:org/public_members/:username"]["parameters"],
+          Endpoints["GET /orgs/{org}/public_members/{username}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /orgs/:org/public_members/:username"]["response"];
+      response: Endpoints["GET /orgs/{org}/public_members/{username}"]["response"];
     };
     convertMemberToOutsideCollaborator: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["PUT /orgs/:org/outside_collaborators/:username"]["parameters"],
+          Endpoints["PUT /orgs/{org}/outside_collaborators/{username}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["PUT /orgs/:org/outside_collaborators/:username"]["response"];
+      response: Endpoints["PUT /orgs/{org}/outside_collaborators/{username}"]["response"];
     };
     createInvitation: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["POST /orgs/:org/invitations"]["parameters"],
+          Endpoints["POST /orgs/{org}/invitations"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["POST /orgs/:org/invitations"]["response"];
+      response: Endpoints["POST /orgs/{org}/invitations"]["response"];
     };
     createWebhook: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["POST /orgs/:org/hooks"]["parameters"],
+          Endpoints["POST /orgs/{org}/hooks"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["POST /orgs/:org/hooks"]["response"];
+      response: Endpoints["POST /orgs/{org}/hooks"]["response"];
     };
     deleteWebhook: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["DELETE /orgs/:org/hooks/:hook_id"]["parameters"],
+          Endpoints["DELETE /orgs/{org}/hooks/{hook_id}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["DELETE /orgs/:org/hooks/:hook_id"]["response"];
+      response: Endpoints["DELETE /orgs/{org}/hooks/{hook_id}"]["response"];
     };
     get: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /orgs/:org"]["parameters"],
+          Endpoints["GET /orgs/{org}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /orgs/:org"]["response"];
+      response: Endpoints["GET /orgs/{org}"]["response"];
     };
     getMembershipForAuthenticatedUser: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /user/memberships/orgs/:org"]["parameters"],
+          Endpoints["GET /user/memberships/orgs/{org}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /user/memberships/orgs/:org"]["response"];
+      response: Endpoints["GET /user/memberships/orgs/{org}"]["response"];
     };
     getMembershipForUser: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /orgs/:org/memberships/:username"]["parameters"],
+          Endpoints["GET /orgs/{org}/memberships/{username}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /orgs/:org/memberships/:username"]["response"];
+      response: Endpoints["GET /orgs/{org}/memberships/{username}"]["response"];
     };
     getWebhook: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /orgs/:org/hooks/:hook_id"]["parameters"],
+          Endpoints["GET /orgs/{org}/hooks/{hook_id}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /orgs/:org/hooks/:hook_id"]["response"];
+      response: Endpoints["GET /orgs/{org}/hooks/{hook_id}"]["response"];
+    };
+    getWebhookConfigForOrg: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /orgs/{org}/hooks/{hook_id}/config"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /orgs/{org}/hooks/{hook_id}/config"]["response"];
     };
     list: {
       parameters: RequestParameters &
@@ -2087,18 +2321,18 @@ export type RestEndpointMethodTypes = {
     listAppInstallations: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /orgs/:org/installations"]["parameters"],
+          Endpoints["GET /orgs/{org}/installations"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /orgs/:org/installations"]["response"];
+      response: Endpoints["GET /orgs/{org}/installations"]["response"];
     };
     listBlockedUsers: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /orgs/:org/blocks"]["parameters"],
+          Endpoints["GET /orgs/{org}/blocks"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /orgs/:org/blocks"]["response"];
+      response: Endpoints["GET /orgs/{org}/blocks"]["response"];
     };
     listForAuthenticatedUser: {
       parameters: RequestParameters &
@@ -2111,26 +2345,26 @@ export type RestEndpointMethodTypes = {
     listForUser: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /users/:username/orgs"]["parameters"],
+          Endpoints["GET /users/{username}/orgs"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /users/:username/orgs"]["response"];
+      response: Endpoints["GET /users/{username}/orgs"]["response"];
     };
     listInvitationTeams: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /orgs/:org/invitations/:invitation_id/teams"]["parameters"],
+          Endpoints["GET /orgs/{org}/invitations/{invitation_id}/teams"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /orgs/:org/invitations/:invitation_id/teams"]["response"];
+      response: Endpoints["GET /orgs/{org}/invitations/{invitation_id}/teams"]["response"];
     };
     listMembers: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /orgs/:org/members"]["parameters"],
+          Endpoints["GET /orgs/{org}/members"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /orgs/:org/members"]["response"];
+      response: Endpoints["GET /orgs/{org}/members"]["response"];
     };
     listMembershipsForAuthenticatedUser: {
       parameters: RequestParameters &
@@ -2143,148 +2377,156 @@ export type RestEndpointMethodTypes = {
     listOutsideCollaborators: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /orgs/:org/outside_collaborators"]["parameters"],
+          Endpoints["GET /orgs/{org}/outside_collaborators"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /orgs/:org/outside_collaborators"]["response"];
+      response: Endpoints["GET /orgs/{org}/outside_collaborators"]["response"];
     };
     listPendingInvitations: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /orgs/:org/invitations"]["parameters"],
+          Endpoints["GET /orgs/{org}/invitations"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /orgs/:org/invitations"]["response"];
+      response: Endpoints["GET /orgs/{org}/invitations"]["response"];
     };
     listPublicMembers: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /orgs/:org/public_members"]["parameters"],
+          Endpoints["GET /orgs/{org}/public_members"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /orgs/:org/public_members"]["response"];
+      response: Endpoints["GET /orgs/{org}/public_members"]["response"];
     };
     listWebhooks: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /orgs/:org/hooks"]["parameters"],
+          Endpoints["GET /orgs/{org}/hooks"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /orgs/:org/hooks"]["response"];
+      response: Endpoints["GET /orgs/{org}/hooks"]["response"];
     };
     pingWebhook: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["POST /orgs/:org/hooks/:hook_id/pings"]["parameters"],
+          Endpoints["POST /orgs/{org}/hooks/{hook_id}/pings"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["POST /orgs/:org/hooks/:hook_id/pings"]["response"];
+      response: Endpoints["POST /orgs/{org}/hooks/{hook_id}/pings"]["response"];
     };
     removeMember: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["DELETE /orgs/:org/members/:username"]["parameters"],
+          Endpoints["DELETE /orgs/{org}/members/{username}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["DELETE /orgs/:org/members/:username"]["response"];
+      response: Endpoints["DELETE /orgs/{org}/members/{username}"]["response"];
     };
     removeMembershipForUser: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["DELETE /orgs/:org/memberships/:username"]["parameters"],
+          Endpoints["DELETE /orgs/{org}/memberships/{username}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["DELETE /orgs/:org/memberships/:username"]["response"];
+      response: Endpoints["DELETE /orgs/{org}/memberships/{username}"]["response"];
     };
     removeOutsideCollaborator: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["DELETE /orgs/:org/outside_collaborators/:username"]["parameters"],
+          Endpoints["DELETE /orgs/{org}/outside_collaborators/{username}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["DELETE /orgs/:org/outside_collaborators/:username"]["response"];
+      response: Endpoints["DELETE /orgs/{org}/outside_collaborators/{username}"]["response"];
     };
     removePublicMembershipForAuthenticatedUser: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["DELETE /orgs/:org/public_members/:username"]["parameters"],
+          Endpoints["DELETE /orgs/{org}/public_members/{username}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["DELETE /orgs/:org/public_members/:username"]["response"];
+      response: Endpoints["DELETE /orgs/{org}/public_members/{username}"]["response"];
     };
     setMembershipForUser: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["PUT /orgs/:org/memberships/:username"]["parameters"],
+          Endpoints["PUT /orgs/{org}/memberships/{username}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["PUT /orgs/:org/memberships/:username"]["response"];
+      response: Endpoints["PUT /orgs/{org}/memberships/{username}"]["response"];
     };
     setPublicMembershipForAuthenticatedUser: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["PUT /orgs/:org/public_members/:username"]["parameters"],
+          Endpoints["PUT /orgs/{org}/public_members/{username}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["PUT /orgs/:org/public_members/:username"]["response"];
+      response: Endpoints["PUT /orgs/{org}/public_members/{username}"]["response"];
     };
     unblockUser: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["DELETE /orgs/:org/blocks/:username"]["parameters"],
+          Endpoints["DELETE /orgs/{org}/blocks/{username}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["DELETE /orgs/:org/blocks/:username"]["response"];
+      response: Endpoints["DELETE /orgs/{org}/blocks/{username}"]["response"];
     };
     update: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["PATCH /orgs/:org"]["parameters"],
+          Endpoints["PATCH /orgs/{org}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["PATCH /orgs/:org"]["response"];
+      response: Endpoints["PATCH /orgs/{org}"]["response"];
     };
     updateMembershipForAuthenticatedUser: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["PATCH /user/memberships/orgs/:org"]["parameters"],
+          Endpoints["PATCH /user/memberships/orgs/{org}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["PATCH /user/memberships/orgs/:org"]["response"];
+      response: Endpoints["PATCH /user/memberships/orgs/{org}"]["response"];
     };
     updateWebhook: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["PATCH /orgs/:org/hooks/:hook_id"]["parameters"],
+          Endpoints["PATCH /orgs/{org}/hooks/{hook_id}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["PATCH /orgs/:org/hooks/:hook_id"]["response"];
+      response: Endpoints["PATCH /orgs/{org}/hooks/{hook_id}"]["response"];
+    };
+    updateWebhookConfigForOrg: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["PATCH /orgs/{org}/hooks/{hook_id}/config"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["PATCH /orgs/{org}/hooks/{hook_id}/config"]["response"];
     };
   };
   projects: {
     addCollaborator: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["PUT /projects/:project_id/collaborators/:username"]["parameters"],
+          Endpoints["PUT /projects/{project_id}/collaborators/{username}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["PUT /projects/:project_id/collaborators/:username"]["response"];
+      response: Endpoints["PUT /projects/{project_id}/collaborators/{username}"]["response"];
     };
     createCard: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["POST /projects/columns/:column_id/cards"]["parameters"],
+          Endpoints["POST /projects/columns/{column_id}/cards"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["POST /projects/columns/:column_id/cards"]["response"];
+      response: Endpoints["POST /projects/columns/{column_id}/cards"]["response"];
     };
     createColumn: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["POST /projects/:project_id/columns"]["parameters"],
+          Endpoints["POST /projects/{project_id}/columns"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["POST /projects/:project_id/columns"]["response"];
+      response: Endpoints["POST /projects/{project_id}/columns"]["response"];
     };
     createForAuthenticatedUser: {
       parameters: RequestParameters &
@@ -2297,388 +2539,388 @@ export type RestEndpointMethodTypes = {
     createForOrg: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["POST /orgs/:org/projects"]["parameters"],
+          Endpoints["POST /orgs/{org}/projects"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["POST /orgs/:org/projects"]["response"];
+      response: Endpoints["POST /orgs/{org}/projects"]["response"];
     };
     createForRepo: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["POST /repos/:owner/:repo/projects"]["parameters"],
+          Endpoints["POST /repos/{owner}/{repo}/projects"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["POST /repos/:owner/:repo/projects"]["response"];
+      response: Endpoints["POST /repos/{owner}/{repo}/projects"]["response"];
     };
     delete: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["DELETE /projects/:project_id"]["parameters"],
+          Endpoints["DELETE /projects/{project_id}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["DELETE /projects/:project_id"]["response"];
+      response: Endpoints["DELETE /projects/{project_id}"]["response"];
     };
     deleteCard: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["DELETE /projects/columns/cards/:card_id"]["parameters"],
+          Endpoints["DELETE /projects/columns/cards/{card_id}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["DELETE /projects/columns/cards/:card_id"]["response"];
+      response: Endpoints["DELETE /projects/columns/cards/{card_id}"]["response"];
     };
     deleteColumn: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["DELETE /projects/columns/:column_id"]["parameters"],
+          Endpoints["DELETE /projects/columns/{column_id}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["DELETE /projects/columns/:column_id"]["response"];
+      response: Endpoints["DELETE /projects/columns/{column_id}"]["response"];
     };
     get: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /projects/:project_id"]["parameters"],
+          Endpoints["GET /projects/{project_id}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /projects/:project_id"]["response"];
+      response: Endpoints["GET /projects/{project_id}"]["response"];
     };
     getCard: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /projects/columns/cards/:card_id"]["parameters"],
+          Endpoints["GET /projects/columns/cards/{card_id}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /projects/columns/cards/:card_id"]["response"];
+      response: Endpoints["GET /projects/columns/cards/{card_id}"]["response"];
     };
     getColumn: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /projects/columns/:column_id"]["parameters"],
+          Endpoints["GET /projects/columns/{column_id}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /projects/columns/:column_id"]["response"];
+      response: Endpoints["GET /projects/columns/{column_id}"]["response"];
     };
     getPermissionForUser: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /projects/:project_id/collaborators/:username/permission"]["parameters"],
+          Endpoints["GET /projects/{project_id}/collaborators/{username}/permission"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /projects/:project_id/collaborators/:username/permission"]["response"];
+      response: Endpoints["GET /projects/{project_id}/collaborators/{username}/permission"]["response"];
     };
     listCards: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /projects/columns/:column_id/cards"]["parameters"],
+          Endpoints["GET /projects/columns/{column_id}/cards"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /projects/columns/:column_id/cards"]["response"];
+      response: Endpoints["GET /projects/columns/{column_id}/cards"]["response"];
     };
     listCollaborators: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /projects/:project_id/collaborators"]["parameters"],
+          Endpoints["GET /projects/{project_id}/collaborators"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /projects/:project_id/collaborators"]["response"];
+      response: Endpoints["GET /projects/{project_id}/collaborators"]["response"];
     };
     listColumns: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /projects/:project_id/columns"]["parameters"],
+          Endpoints["GET /projects/{project_id}/columns"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /projects/:project_id/columns"]["response"];
+      response: Endpoints["GET /projects/{project_id}/columns"]["response"];
     };
     listForOrg: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /orgs/:org/projects"]["parameters"],
+          Endpoints["GET /orgs/{org}/projects"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /orgs/:org/projects"]["response"];
+      response: Endpoints["GET /orgs/{org}/projects"]["response"];
     };
     listForRepo: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/projects"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/projects"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/projects"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/projects"]["response"];
     };
     listForUser: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /users/:username/projects"]["parameters"],
+          Endpoints["GET /users/{username}/projects"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /users/:username/projects"]["response"];
+      response: Endpoints["GET /users/{username}/projects"]["response"];
     };
     moveCard: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["POST /projects/columns/cards/:card_id/moves"]["parameters"],
+          Endpoints["POST /projects/columns/cards/{card_id}/moves"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["POST /projects/columns/cards/:card_id/moves"]["response"];
+      response: Endpoints["POST /projects/columns/cards/{card_id}/moves"]["response"];
     };
     moveColumn: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["POST /projects/columns/:column_id/moves"]["parameters"],
+          Endpoints["POST /projects/columns/{column_id}/moves"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["POST /projects/columns/:column_id/moves"]["response"];
+      response: Endpoints["POST /projects/columns/{column_id}/moves"]["response"];
     };
     removeCollaborator: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["DELETE /projects/:project_id/collaborators/:username"]["parameters"],
+          Endpoints["DELETE /projects/{project_id}/collaborators/{username}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["DELETE /projects/:project_id/collaborators/:username"]["response"];
+      response: Endpoints["DELETE /projects/{project_id}/collaborators/{username}"]["response"];
     };
     update: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["PATCH /projects/:project_id"]["parameters"],
+          Endpoints["PATCH /projects/{project_id}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["PATCH /projects/:project_id"]["response"];
+      response: Endpoints["PATCH /projects/{project_id}"]["response"];
     };
     updateCard: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["PATCH /projects/columns/cards/:card_id"]["parameters"],
+          Endpoints["PATCH /projects/columns/cards/{card_id}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["PATCH /projects/columns/cards/:card_id"]["response"];
+      response: Endpoints["PATCH /projects/columns/cards/{card_id}"]["response"];
     };
     updateColumn: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["PATCH /projects/columns/:column_id"]["parameters"],
+          Endpoints["PATCH /projects/columns/{column_id}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["PATCH /projects/columns/:column_id"]["response"];
+      response: Endpoints["PATCH /projects/columns/{column_id}"]["response"];
     };
   };
   pulls: {
     checkIfMerged: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/pulls/:pull_number/merge"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/pulls/{pull_number}/merge"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/pulls/:pull_number/merge"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/pulls/{pull_number}/merge"]["response"];
     };
     create: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["POST /repos/:owner/:repo/pulls"]["parameters"],
+          Endpoints["POST /repos/{owner}/{repo}/pulls"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["POST /repos/:owner/:repo/pulls"]["response"];
+      response: Endpoints["POST /repos/{owner}/{repo}/pulls"]["response"];
     };
     createReplyForReviewComment: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["POST /repos/:owner/:repo/pulls/:pull_number/comments/:comment_id/replies"]["parameters"],
+          Endpoints["POST /repos/{owner}/{repo}/pulls/{pull_number}/comments/{comment_id}/replies"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["POST /repos/:owner/:repo/pulls/:pull_number/comments/:comment_id/replies"]["response"];
+      response: Endpoints["POST /repos/{owner}/{repo}/pulls/{pull_number}/comments/{comment_id}/replies"]["response"];
     };
     createReview: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["POST /repos/:owner/:repo/pulls/:pull_number/reviews"]["parameters"],
+          Endpoints["POST /repos/{owner}/{repo}/pulls/{pull_number}/reviews"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["POST /repos/:owner/:repo/pulls/:pull_number/reviews"]["response"];
+      response: Endpoints["POST /repos/{owner}/{repo}/pulls/{pull_number}/reviews"]["response"];
     };
     createReviewComment: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["POST /repos/:owner/:repo/pulls/:pull_number/comments"]["parameters"],
+          Endpoints["POST /repos/{owner}/{repo}/pulls/{pull_number}/comments"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["POST /repos/:owner/:repo/pulls/:pull_number/comments"]["response"];
+      response: Endpoints["POST /repos/{owner}/{repo}/pulls/{pull_number}/comments"]["response"];
     };
     deletePendingReview: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["DELETE /repos/:owner/:repo/pulls/:pull_number/reviews/:review_id"]["parameters"],
+          Endpoints["DELETE /repos/{owner}/{repo}/pulls/{pull_number}/reviews/{review_id}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["DELETE /repos/:owner/:repo/pulls/:pull_number/reviews/:review_id"]["response"];
+      response: Endpoints["DELETE /repos/{owner}/{repo}/pulls/{pull_number}/reviews/{review_id}"]["response"];
     };
     deleteReviewComment: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["DELETE /repos/:owner/:repo/pulls/comments/:comment_id"]["parameters"],
+          Endpoints["DELETE /repos/{owner}/{repo}/pulls/comments/{comment_id}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["DELETE /repos/:owner/:repo/pulls/comments/:comment_id"]["response"];
+      response: Endpoints["DELETE /repos/{owner}/{repo}/pulls/comments/{comment_id}"]["response"];
     };
     dismissReview: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["PUT /repos/:owner/:repo/pulls/:pull_number/reviews/:review_id/dismissals"]["parameters"],
+          Endpoints["PUT /repos/{owner}/{repo}/pulls/{pull_number}/reviews/{review_id}/dismissals"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["PUT /repos/:owner/:repo/pulls/:pull_number/reviews/:review_id/dismissals"]["response"];
+      response: Endpoints["PUT /repos/{owner}/{repo}/pulls/{pull_number}/reviews/{review_id}/dismissals"]["response"];
     };
     get: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/pulls/:pull_number"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/pulls/{pull_number}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/pulls/:pull_number"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/pulls/{pull_number}"]["response"];
     };
     getReview: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/pulls/:pull_number/reviews/:review_id"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/pulls/{pull_number}/reviews/{review_id}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/pulls/:pull_number/reviews/:review_id"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/pulls/{pull_number}/reviews/{review_id}"]["response"];
     };
     getReviewComment: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/pulls/comments/:comment_id"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/pulls/comments/{comment_id}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/pulls/comments/:comment_id"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/pulls/comments/{comment_id}"]["response"];
     };
     list: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/pulls"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/pulls"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/pulls"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/pulls"]["response"];
     };
     listCommentsForReview: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/pulls/:pull_number/reviews/:review_id/comments"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/pulls/{pull_number}/reviews/{review_id}/comments"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/pulls/:pull_number/reviews/:review_id/comments"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/pulls/{pull_number}/reviews/{review_id}/comments"]["response"];
     };
     listCommits: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/pulls/:pull_number/commits"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/pulls/{pull_number}/commits"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/pulls/:pull_number/commits"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/pulls/{pull_number}/commits"]["response"];
     };
     listFiles: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/pulls/:pull_number/files"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/pulls/{pull_number}/files"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/pulls/:pull_number/files"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/pulls/{pull_number}/files"]["response"];
     };
     listRequestedReviewers: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/pulls/:pull_number/requested_reviewers"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/pulls/{pull_number}/requested_reviewers"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/pulls/:pull_number/requested_reviewers"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/pulls/{pull_number}/requested_reviewers"]["response"];
     };
     listReviewComments: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/pulls/:pull_number/comments"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/pulls/{pull_number}/comments"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/pulls/:pull_number/comments"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/pulls/{pull_number}/comments"]["response"];
     };
     listReviewCommentsForRepo: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/pulls/comments"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/pulls/comments"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/pulls/comments"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/pulls/comments"]["response"];
     };
     listReviews: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/pulls/:pull_number/reviews"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/pulls/{pull_number}/reviews"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/pulls/:pull_number/reviews"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/pulls/{pull_number}/reviews"]["response"];
     };
     merge: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["PUT /repos/:owner/:repo/pulls/:pull_number/merge"]["parameters"],
+          Endpoints["PUT /repos/{owner}/{repo}/pulls/{pull_number}/merge"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["PUT /repos/:owner/:repo/pulls/:pull_number/merge"]["response"];
+      response: Endpoints["PUT /repos/{owner}/{repo}/pulls/{pull_number}/merge"]["response"];
     };
     removeRequestedReviewers: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["DELETE /repos/:owner/:repo/pulls/:pull_number/requested_reviewers"]["parameters"],
+          Endpoints["DELETE /repos/{owner}/{repo}/pulls/{pull_number}/requested_reviewers"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["DELETE /repos/:owner/:repo/pulls/:pull_number/requested_reviewers"]["response"];
+      response: Endpoints["DELETE /repos/{owner}/{repo}/pulls/{pull_number}/requested_reviewers"]["response"];
     };
     requestReviewers: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["POST /repos/:owner/:repo/pulls/:pull_number/requested_reviewers"]["parameters"],
+          Endpoints["POST /repos/{owner}/{repo}/pulls/{pull_number}/requested_reviewers"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["POST /repos/:owner/:repo/pulls/:pull_number/requested_reviewers"]["response"];
+      response: Endpoints["POST /repos/{owner}/{repo}/pulls/{pull_number}/requested_reviewers"]["response"];
     };
     submitReview: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["POST /repos/:owner/:repo/pulls/:pull_number/reviews/:review_id/events"]["parameters"],
+          Endpoints["POST /repos/{owner}/{repo}/pulls/{pull_number}/reviews/{review_id}/events"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["POST /repos/:owner/:repo/pulls/:pull_number/reviews/:review_id/events"]["response"];
+      response: Endpoints["POST /repos/{owner}/{repo}/pulls/{pull_number}/reviews/{review_id}/events"]["response"];
     };
     update: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["PATCH /repos/:owner/:repo/pulls/:pull_number"]["parameters"],
+          Endpoints["PATCH /repos/{owner}/{repo}/pulls/{pull_number}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["PATCH /repos/:owner/:repo/pulls/:pull_number"]["response"];
+      response: Endpoints["PATCH /repos/{owner}/{repo}/pulls/{pull_number}"]["response"];
     };
     updateBranch: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["PUT /repos/:owner/:repo/pulls/:pull_number/update-branch"]["parameters"],
+          Endpoints["PUT /repos/{owner}/{repo}/pulls/{pull_number}/update-branch"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["PUT /repos/:owner/:repo/pulls/:pull_number/update-branch"]["response"];
+      response: Endpoints["PUT /repos/{owner}/{repo}/pulls/{pull_number}/update-branch"]["response"];
     };
     updateReview: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["PUT /repos/:owner/:repo/pulls/:pull_number/reviews/:review_id"]["parameters"],
+          Endpoints["PUT /repos/{owner}/{repo}/pulls/{pull_number}/reviews/{review_id}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["PUT /repos/:owner/:repo/pulls/:pull_number/reviews/:review_id"]["response"];
+      response: Endpoints["PUT /repos/{owner}/{repo}/pulls/{pull_number}/reviews/{review_id}"]["response"];
     };
     updateReviewComment: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["PATCH /repos/:owner/:repo/pulls/comments/:comment_id"]["parameters"],
+          Endpoints["PATCH /repos/{owner}/{repo}/pulls/comments/{comment_id}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["PATCH /repos/:owner/:repo/pulls/comments/:comment_id"]["response"];
+      response: Endpoints["PATCH /repos/{owner}/{repo}/pulls/comments/{comment_id}"]["response"];
     };
   };
   rateLimit: {
@@ -2695,284 +2937,284 @@ export type RestEndpointMethodTypes = {
     createForCommitComment: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["POST /repos/:owner/:repo/comments/:comment_id/reactions"]["parameters"],
+          Endpoints["POST /repos/{owner}/{repo}/comments/{comment_id}/reactions"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["POST /repos/:owner/:repo/comments/:comment_id/reactions"]["response"];
+      response: Endpoints["POST /repos/{owner}/{repo}/comments/{comment_id}/reactions"]["response"];
     };
     createForIssue: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["POST /repos/:owner/:repo/issues/:issue_number/reactions"]["parameters"],
+          Endpoints["POST /repos/{owner}/{repo}/issues/{issue_number}/reactions"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["POST /repos/:owner/:repo/issues/:issue_number/reactions"]["response"];
+      response: Endpoints["POST /repos/{owner}/{repo}/issues/{issue_number}/reactions"]["response"];
     };
     createForIssueComment: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["POST /repos/:owner/:repo/issues/comments/:comment_id/reactions"]["parameters"],
+          Endpoints["POST /repos/{owner}/{repo}/issues/comments/{comment_id}/reactions"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["POST /repos/:owner/:repo/issues/comments/:comment_id/reactions"]["response"];
+      response: Endpoints["POST /repos/{owner}/{repo}/issues/comments/{comment_id}/reactions"]["response"];
     };
     createForPullRequestReviewComment: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["POST /repos/:owner/:repo/pulls/comments/:comment_id/reactions"]["parameters"],
+          Endpoints["POST /repos/{owner}/{repo}/pulls/comments/{comment_id}/reactions"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["POST /repos/:owner/:repo/pulls/comments/:comment_id/reactions"]["response"];
+      response: Endpoints["POST /repos/{owner}/{repo}/pulls/comments/{comment_id}/reactions"]["response"];
     };
     createForTeamDiscussionCommentInOrg: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["POST /orgs/:org/teams/:team_slug/discussions/:discussion_number/comments/:comment_number/reactions"]["parameters"],
+          Endpoints["POST /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}/reactions"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["POST /orgs/:org/teams/:team_slug/discussions/:discussion_number/comments/:comment_number/reactions"]["response"];
+      response: Endpoints["POST /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}/reactions"]["response"];
     };
     createForTeamDiscussionInOrg: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["POST /orgs/:org/teams/:team_slug/discussions/:discussion_number/reactions"]["parameters"],
+          Endpoints["POST /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/reactions"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["POST /orgs/:org/teams/:team_slug/discussions/:discussion_number/reactions"]["response"];
+      response: Endpoints["POST /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/reactions"]["response"];
     };
     deleteForCommitComment: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["DELETE /repos/:owner/:repo/comments/:comment_id/reactions/:reaction_id"]["parameters"],
+          Endpoints["DELETE /repos/{owner}/{repo}/comments/{comment_id}/reactions/{reaction_id}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["DELETE /repos/:owner/:repo/comments/:comment_id/reactions/:reaction_id"]["response"];
+      response: Endpoints["DELETE /repos/{owner}/{repo}/comments/{comment_id}/reactions/{reaction_id}"]["response"];
     };
     deleteForIssue: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["DELETE /repos/:owner/:repo/issues/:issue_number/reactions/:reaction_id"]["parameters"],
+          Endpoints["DELETE /repos/{owner}/{repo}/issues/{issue_number}/reactions/{reaction_id}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["DELETE /repos/:owner/:repo/issues/:issue_number/reactions/:reaction_id"]["response"];
+      response: Endpoints["DELETE /repos/{owner}/{repo}/issues/{issue_number}/reactions/{reaction_id}"]["response"];
     };
     deleteForIssueComment: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["DELETE /repos/:owner/:repo/issues/comments/:comment_id/reactions/:reaction_id"]["parameters"],
+          Endpoints["DELETE /repos/{owner}/{repo}/issues/comments/{comment_id}/reactions/{reaction_id}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["DELETE /repos/:owner/:repo/issues/comments/:comment_id/reactions/:reaction_id"]["response"];
+      response: Endpoints["DELETE /repos/{owner}/{repo}/issues/comments/{comment_id}/reactions/{reaction_id}"]["response"];
     };
     deleteForPullRequestComment: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["DELETE /repos/:owner/:repo/pulls/comments/:comment_id/reactions/:reaction_id"]["parameters"],
+          Endpoints["DELETE /repos/{owner}/{repo}/pulls/comments/{comment_id}/reactions/{reaction_id}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["DELETE /repos/:owner/:repo/pulls/comments/:comment_id/reactions/:reaction_id"]["response"];
+      response: Endpoints["DELETE /repos/{owner}/{repo}/pulls/comments/{comment_id}/reactions/{reaction_id}"]["response"];
     };
     deleteForTeamDiscussion: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["DELETE /orgs/:org/teams/:team_slug/discussions/:discussion_number/reactions/:reaction_id"]["parameters"],
+          Endpoints["DELETE /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/reactions/{reaction_id}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["DELETE /orgs/:org/teams/:team_slug/discussions/:discussion_number/reactions/:reaction_id"]["response"];
+      response: Endpoints["DELETE /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/reactions/{reaction_id}"]["response"];
     };
     deleteForTeamDiscussionComment: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["DELETE /orgs/:org/teams/:team_slug/discussions/:discussion_number/comments/:comment_number/reactions/:reaction_id"]["parameters"],
+          Endpoints["DELETE /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}/reactions/{reaction_id}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["DELETE /orgs/:org/teams/:team_slug/discussions/:discussion_number/comments/:comment_number/reactions/:reaction_id"]["response"];
+      response: Endpoints["DELETE /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}/reactions/{reaction_id}"]["response"];
     };
     deleteLegacy: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["DELETE /reactions/:reaction_id"]["parameters"],
+          Endpoints["DELETE /reactions/{reaction_id}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["DELETE /reactions/:reaction_id"]["response"];
+      response: Endpoints["DELETE /reactions/{reaction_id}"]["response"];
     };
     listForCommitComment: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/comments/:comment_id/reactions"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/comments/{comment_id}/reactions"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/comments/:comment_id/reactions"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/comments/{comment_id}/reactions"]["response"];
     };
     listForIssue: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/issues/:issue_number/reactions"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/issues/{issue_number}/reactions"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/issues/:issue_number/reactions"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/issues/{issue_number}/reactions"]["response"];
     };
     listForIssueComment: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/issues/comments/:comment_id/reactions"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/issues/comments/{comment_id}/reactions"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/issues/comments/:comment_id/reactions"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/issues/comments/{comment_id}/reactions"]["response"];
     };
     listForPullRequestReviewComment: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/pulls/comments/:comment_id/reactions"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/pulls/comments/{comment_id}/reactions"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/pulls/comments/:comment_id/reactions"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/pulls/comments/{comment_id}/reactions"]["response"];
     };
     listForTeamDiscussionCommentInOrg: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /orgs/:org/teams/:team_slug/discussions/:discussion_number/comments/:comment_number/reactions"]["parameters"],
+          Endpoints["GET /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}/reactions"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /orgs/:org/teams/:team_slug/discussions/:discussion_number/comments/:comment_number/reactions"]["response"];
+      response: Endpoints["GET /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}/reactions"]["response"];
     };
     listForTeamDiscussionInOrg: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /orgs/:org/teams/:team_slug/discussions/:discussion_number/reactions"]["parameters"],
+          Endpoints["GET /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/reactions"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /orgs/:org/teams/:team_slug/discussions/:discussion_number/reactions"]["response"];
+      response: Endpoints["GET /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/reactions"]["response"];
     };
   };
   repos: {
     acceptInvitation: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["PATCH /user/repository_invitations/:invitation_id"]["parameters"],
+          Endpoints["PATCH /user/repository_invitations/{invitation_id}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["PATCH /user/repository_invitations/:invitation_id"]["response"];
+      response: Endpoints["PATCH /user/repository_invitations/{invitation_id}"]["response"];
     };
     addAppAccessRestrictions: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["POST /repos/:owner/:repo/branches/:branch/protection/restrictions/apps"]["parameters"],
+          Endpoints["POST /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/apps"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["POST /repos/:owner/:repo/branches/:branch/protection/restrictions/apps"]["response"];
+      response: Endpoints["POST /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/apps"]["response"];
     };
     addCollaborator: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["PUT /repos/:owner/:repo/collaborators/:username"]["parameters"],
+          Endpoints["PUT /repos/{owner}/{repo}/collaborators/{username}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["PUT /repos/:owner/:repo/collaborators/:username"]["response"];
+      response: Endpoints["PUT /repos/{owner}/{repo}/collaborators/{username}"]["response"];
     };
     addStatusCheckContexts: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["POST /repos/:owner/:repo/branches/:branch/protection/required_status_checks/contexts"]["parameters"],
+          Endpoints["POST /repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks/contexts"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["POST /repos/:owner/:repo/branches/:branch/protection/required_status_checks/contexts"]["response"];
+      response: Endpoints["POST /repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks/contexts"]["response"];
     };
     addTeamAccessRestrictions: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["POST /repos/:owner/:repo/branches/:branch/protection/restrictions/teams"]["parameters"],
+          Endpoints["POST /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["POST /repos/:owner/:repo/branches/:branch/protection/restrictions/teams"]["response"];
+      response: Endpoints["POST /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams"]["response"];
     };
     addUserAccessRestrictions: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["POST /repos/:owner/:repo/branches/:branch/protection/restrictions/users"]["parameters"],
+          Endpoints["POST /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["POST /repos/:owner/:repo/branches/:branch/protection/restrictions/users"]["response"];
+      response: Endpoints["POST /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users"]["response"];
     };
     checkCollaborator: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/collaborators/:username"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/collaborators/{username}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/collaborators/:username"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/collaborators/{username}"]["response"];
     };
     checkVulnerabilityAlerts: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/vulnerability-alerts"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/vulnerability-alerts"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/vulnerability-alerts"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/vulnerability-alerts"]["response"];
     };
     compareCommits: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/compare/:base...:head"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/compare/{base}...{head}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/compare/:base...:head"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/compare/{base}...{head}"]["response"];
     };
     createCommitComment: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["POST /repos/:owner/:repo/commits/:commit_sha/comments"]["parameters"],
+          Endpoints["POST /repos/{owner}/{repo}/commits/{commit_sha}/comments"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["POST /repos/:owner/:repo/commits/:commit_sha/comments"]["response"];
+      response: Endpoints["POST /repos/{owner}/{repo}/commits/{commit_sha}/comments"]["response"];
     };
     createCommitSignatureProtection: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["POST /repos/:owner/:repo/branches/:branch/protection/required_signatures"]["parameters"],
+          Endpoints["POST /repos/{owner}/{repo}/branches/{branch}/protection/required_signatures"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["POST /repos/:owner/:repo/branches/:branch/protection/required_signatures"]["response"];
+      response: Endpoints["POST /repos/{owner}/{repo}/branches/{branch}/protection/required_signatures"]["response"];
     };
     createCommitStatus: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["POST /repos/:owner/:repo/statuses/:sha"]["parameters"],
+          Endpoints["POST /repos/{owner}/{repo}/statuses/{sha}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["POST /repos/:owner/:repo/statuses/:sha"]["response"];
+      response: Endpoints["POST /repos/{owner}/{repo}/statuses/{sha}"]["response"];
     };
     createDeployKey: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["POST /repos/:owner/:repo/keys"]["parameters"],
+          Endpoints["POST /repos/{owner}/{repo}/keys"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["POST /repos/:owner/:repo/keys"]["response"];
+      response: Endpoints["POST /repos/{owner}/{repo}/keys"]["response"];
     };
     createDeployment: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["POST /repos/:owner/:repo/deployments"]["parameters"],
+          Endpoints["POST /repos/{owner}/{repo}/deployments"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["POST /repos/:owner/:repo/deployments"]["response"];
+      response: Endpoints["POST /repos/{owner}/{repo}/deployments"]["response"];
     };
     createDeploymentStatus: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["POST /repos/:owner/:repo/deployments/:deployment_id/statuses"]["parameters"],
+          Endpoints["POST /repos/{owner}/{repo}/deployments/{deployment_id}/statuses"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["POST /repos/:owner/:repo/deployments/:deployment_id/statuses"]["response"];
+      response: Endpoints["POST /repos/{owner}/{repo}/deployments/{deployment_id}/statuses"]["response"];
     };
     createDispatchEvent: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["POST /repos/:owner/:repo/dispatches"]["parameters"],
+          Endpoints["POST /repos/{owner}/{repo}/dispatches"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["POST /repos/:owner/:repo/dispatches"]["response"];
+      response: Endpoints["POST /repos/{owner}/{repo}/dispatches"]["response"];
     };
     createForAuthenticatedUser: {
       parameters: RequestParameters &
@@ -2985,634 +3227,658 @@ export type RestEndpointMethodTypes = {
     createFork: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["POST /repos/:owner/:repo/forks"]["parameters"],
+          Endpoints["POST /repos/{owner}/{repo}/forks"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["POST /repos/:owner/:repo/forks"]["response"];
+      response: Endpoints["POST /repos/{owner}/{repo}/forks"]["response"];
     };
     createInOrg: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["POST /orgs/:org/repos"]["parameters"],
+          Endpoints["POST /orgs/{org}/repos"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["POST /orgs/:org/repos"]["response"];
+      response: Endpoints["POST /orgs/{org}/repos"]["response"];
     };
     createOrUpdateFileContents: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["PUT /repos/:owner/:repo/contents/:path"]["parameters"],
+          Endpoints["PUT /repos/{owner}/{repo}/contents/{path}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["PUT /repos/:owner/:repo/contents/:path"]["response"];
+      response: Endpoints["PUT /repos/{owner}/{repo}/contents/{path}"]["response"];
     };
     createPagesSite: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["POST /repos/:owner/:repo/pages"]["parameters"],
+          Endpoints["POST /repos/{owner}/{repo}/pages"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["POST /repos/:owner/:repo/pages"]["response"];
+      response: Endpoints["POST /repos/{owner}/{repo}/pages"]["response"];
     };
     createRelease: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["POST /repos/:owner/:repo/releases"]["parameters"],
+          Endpoints["POST /repos/{owner}/{repo}/releases"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["POST /repos/:owner/:repo/releases"]["response"];
+      response: Endpoints["POST /repos/{owner}/{repo}/releases"]["response"];
     };
     createUsingTemplate: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["POST /repos/:template_owner/:template_repo/generate"]["parameters"],
+          Endpoints["POST /repos/{template_owner}/{template_repo}/generate"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["POST /repos/:template_owner/:template_repo/generate"]["response"];
+      response: Endpoints["POST /repos/{template_owner}/{template_repo}/generate"]["response"];
     };
     createWebhook: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["POST /repos/:owner/:repo/hooks"]["parameters"],
+          Endpoints["POST /repos/{owner}/{repo}/hooks"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["POST /repos/:owner/:repo/hooks"]["response"];
+      response: Endpoints["POST /repos/{owner}/{repo}/hooks"]["response"];
     };
     declineInvitation: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["DELETE /user/repository_invitations/:invitation_id"]["parameters"],
+          Endpoints["DELETE /user/repository_invitations/{invitation_id}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["DELETE /user/repository_invitations/:invitation_id"]["response"];
+      response: Endpoints["DELETE /user/repository_invitations/{invitation_id}"]["response"];
     };
     delete: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["DELETE /repos/:owner/:repo"]["parameters"],
+          Endpoints["DELETE /repos/{owner}/{repo}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["DELETE /repos/:owner/:repo"]["response"];
+      response: Endpoints["DELETE /repos/{owner}/{repo}"]["response"];
     };
     deleteAccessRestrictions: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["DELETE /repos/:owner/:repo/branches/:branch/protection/restrictions"]["parameters"],
+          Endpoints["DELETE /repos/{owner}/{repo}/branches/{branch}/protection/restrictions"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["DELETE /repos/:owner/:repo/branches/:branch/protection/restrictions"]["response"];
+      response: Endpoints["DELETE /repos/{owner}/{repo}/branches/{branch}/protection/restrictions"]["response"];
     };
     deleteAdminBranchProtection: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["DELETE /repos/:owner/:repo/branches/:branch/protection/enforce_admins"]["parameters"],
+          Endpoints["DELETE /repos/{owner}/{repo}/branches/{branch}/protection/enforce_admins"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["DELETE /repos/:owner/:repo/branches/:branch/protection/enforce_admins"]["response"];
+      response: Endpoints["DELETE /repos/{owner}/{repo}/branches/{branch}/protection/enforce_admins"]["response"];
     };
     deleteBranchProtection: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["DELETE /repos/:owner/:repo/branches/:branch/protection"]["parameters"],
+          Endpoints["DELETE /repos/{owner}/{repo}/branches/{branch}/protection"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["DELETE /repos/:owner/:repo/branches/:branch/protection"]["response"];
+      response: Endpoints["DELETE /repos/{owner}/{repo}/branches/{branch}/protection"]["response"];
     };
     deleteCommitComment: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["DELETE /repos/:owner/:repo/comments/:comment_id"]["parameters"],
+          Endpoints["DELETE /repos/{owner}/{repo}/comments/{comment_id}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["DELETE /repos/:owner/:repo/comments/:comment_id"]["response"];
+      response: Endpoints["DELETE /repos/{owner}/{repo}/comments/{comment_id}"]["response"];
     };
     deleteCommitSignatureProtection: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["DELETE /repos/:owner/:repo/branches/:branch/protection/required_signatures"]["parameters"],
+          Endpoints["DELETE /repos/{owner}/{repo}/branches/{branch}/protection/required_signatures"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["DELETE /repos/:owner/:repo/branches/:branch/protection/required_signatures"]["response"];
+      response: Endpoints["DELETE /repos/{owner}/{repo}/branches/{branch}/protection/required_signatures"]["response"];
     };
     deleteDeployKey: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["DELETE /repos/:owner/:repo/keys/:key_id"]["parameters"],
+          Endpoints["DELETE /repos/{owner}/{repo}/keys/{key_id}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["DELETE /repos/:owner/:repo/keys/:key_id"]["response"];
+      response: Endpoints["DELETE /repos/{owner}/{repo}/keys/{key_id}"]["response"];
     };
     deleteDeployment: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["DELETE /repos/:owner/:repo/deployments/:deployment_id"]["parameters"],
+          Endpoints["DELETE /repos/{owner}/{repo}/deployments/{deployment_id}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["DELETE /repos/:owner/:repo/deployments/:deployment_id"]["response"];
+      response: Endpoints["DELETE /repos/{owner}/{repo}/deployments/{deployment_id}"]["response"];
     };
     deleteFile: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["DELETE /repos/:owner/:repo/contents/:path"]["parameters"],
+          Endpoints["DELETE /repos/{owner}/{repo}/contents/{path}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["DELETE /repos/:owner/:repo/contents/:path"]["response"];
+      response: Endpoints["DELETE /repos/{owner}/{repo}/contents/{path}"]["response"];
     };
     deleteInvitation: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["DELETE /repos/:owner/:repo/invitations/:invitation_id"]["parameters"],
+          Endpoints["DELETE /repos/{owner}/{repo}/invitations/{invitation_id}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["DELETE /repos/:owner/:repo/invitations/:invitation_id"]["response"];
+      response: Endpoints["DELETE /repos/{owner}/{repo}/invitations/{invitation_id}"]["response"];
     };
     deletePagesSite: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["DELETE /repos/:owner/:repo/pages"]["parameters"],
+          Endpoints["DELETE /repos/{owner}/{repo}/pages"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["DELETE /repos/:owner/:repo/pages"]["response"];
+      response: Endpoints["DELETE /repos/{owner}/{repo}/pages"]["response"];
     };
     deletePullRequestReviewProtection: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["DELETE /repos/:owner/:repo/branches/:branch/protection/required_pull_request_reviews"]["parameters"],
+          Endpoints["DELETE /repos/{owner}/{repo}/branches/{branch}/protection/required_pull_request_reviews"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["DELETE /repos/:owner/:repo/branches/:branch/protection/required_pull_request_reviews"]["response"];
+      response: Endpoints["DELETE /repos/{owner}/{repo}/branches/{branch}/protection/required_pull_request_reviews"]["response"];
     };
     deleteRelease: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["DELETE /repos/:owner/:repo/releases/:release_id"]["parameters"],
+          Endpoints["DELETE /repos/{owner}/{repo}/releases/{release_id}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["DELETE /repos/:owner/:repo/releases/:release_id"]["response"];
+      response: Endpoints["DELETE /repos/{owner}/{repo}/releases/{release_id}"]["response"];
     };
     deleteReleaseAsset: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["DELETE /repos/:owner/:repo/releases/assets/:asset_id"]["parameters"],
+          Endpoints["DELETE /repos/{owner}/{repo}/releases/assets/{asset_id}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["DELETE /repos/:owner/:repo/releases/assets/:asset_id"]["response"];
+      response: Endpoints["DELETE /repos/{owner}/{repo}/releases/assets/{asset_id}"]["response"];
     };
     deleteWebhook: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["DELETE /repos/:owner/:repo/hooks/:hook_id"]["parameters"],
+          Endpoints["DELETE /repos/{owner}/{repo}/hooks/{hook_id}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["DELETE /repos/:owner/:repo/hooks/:hook_id"]["response"];
+      response: Endpoints["DELETE /repos/{owner}/{repo}/hooks/{hook_id}"]["response"];
     };
     disableAutomatedSecurityFixes: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["DELETE /repos/:owner/:repo/automated-security-fixes"]["parameters"],
+          Endpoints["DELETE /repos/{owner}/{repo}/automated-security-fixes"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["DELETE /repos/:owner/:repo/automated-security-fixes"]["response"];
+      response: Endpoints["DELETE /repos/{owner}/{repo}/automated-security-fixes"]["response"];
     };
     disableVulnerabilityAlerts: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["DELETE /repos/:owner/:repo/vulnerability-alerts"]["parameters"],
+          Endpoints["DELETE /repos/{owner}/{repo}/vulnerability-alerts"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["DELETE /repos/:owner/:repo/vulnerability-alerts"]["response"];
+      response: Endpoints["DELETE /repos/{owner}/{repo}/vulnerability-alerts"]["response"];
     };
     downloadArchive: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/:archive_format/:ref"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/zipball/{ref}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/:archive_format/:ref"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/zipball/{ref}"]["response"];
+    };
+    downloadTarballArchive: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /repos/{owner}/{repo}/tarball/{ref}"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /repos/{owner}/{repo}/tarball/{ref}"]["response"];
+    };
+    downloadZipballArchive: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /repos/{owner}/{repo}/zipball/{ref}"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /repos/{owner}/{repo}/zipball/{ref}"]["response"];
     };
     enableAutomatedSecurityFixes: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["PUT /repos/:owner/:repo/automated-security-fixes"]["parameters"],
+          Endpoints["PUT /repos/{owner}/{repo}/automated-security-fixes"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["PUT /repos/:owner/:repo/automated-security-fixes"]["response"];
+      response: Endpoints["PUT /repos/{owner}/{repo}/automated-security-fixes"]["response"];
     };
     enableVulnerabilityAlerts: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["PUT /repos/:owner/:repo/vulnerability-alerts"]["parameters"],
+          Endpoints["PUT /repos/{owner}/{repo}/vulnerability-alerts"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["PUT /repos/:owner/:repo/vulnerability-alerts"]["response"];
+      response: Endpoints["PUT /repos/{owner}/{repo}/vulnerability-alerts"]["response"];
     };
     get: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}"]["response"];
     };
     getAccessRestrictions: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/branches/:branch/protection/restrictions"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/branches/{branch}/protection/restrictions"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/branches/:branch/protection/restrictions"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/branches/{branch}/protection/restrictions"]["response"];
     };
     getAdminBranchProtection: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/branches/:branch/protection/enforce_admins"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/branches/{branch}/protection/enforce_admins"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/branches/:branch/protection/enforce_admins"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/branches/{branch}/protection/enforce_admins"]["response"];
     };
     getAllStatusCheckContexts: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/branches/:branch/protection/required_status_checks/contexts"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks/contexts"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/branches/:branch/protection/required_status_checks/contexts"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks/contexts"]["response"];
     };
     getAllTopics: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/topics"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/topics"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/topics"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/topics"]["response"];
     };
     getAppsWithAccessToProtectedBranch: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/branches/:branch/protection/restrictions/apps"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/apps"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/branches/:branch/protection/restrictions/apps"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/apps"]["response"];
     };
     getBranch: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/branches/:branch"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/branches/{branch}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/branches/:branch"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/branches/{branch}"]["response"];
     };
     getBranchProtection: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/branches/:branch/protection"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/branches/{branch}/protection"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/branches/:branch/protection"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/branches/{branch}/protection"]["response"];
     };
     getClones: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/traffic/clones"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/traffic/clones"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/traffic/clones"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/traffic/clones"]["response"];
     };
     getCodeFrequencyStats: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/stats/code_frequency"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/stats/code_frequency"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/stats/code_frequency"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/stats/code_frequency"]["response"];
     };
     getCollaboratorPermissionLevel: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/collaborators/:username/permission"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/collaborators/{username}/permission"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/collaborators/:username/permission"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/collaborators/{username}/permission"]["response"];
     };
     getCombinedStatusForRef: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/commits/:ref/status"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/commits/{ref}/status"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/commits/:ref/status"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/commits/{ref}/status"]["response"];
     };
     getCommit: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/commits/:ref"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/commits/{ref}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/commits/:ref"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/commits/{ref}"]["response"];
     };
     getCommitActivityStats: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/stats/commit_activity"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/stats/commit_activity"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/stats/commit_activity"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/stats/commit_activity"]["response"];
     };
     getCommitComment: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/comments/:comment_id"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/comments/{comment_id}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/comments/:comment_id"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/comments/{comment_id}"]["response"];
     };
     getCommitSignatureProtection: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/branches/:branch/protection/required_signatures"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/branches/{branch}/protection/required_signatures"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/branches/:branch/protection/required_signatures"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/branches/{branch}/protection/required_signatures"]["response"];
     };
     getCommunityProfileMetrics: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/community/profile"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/community/profile"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/community/profile"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/community/profile"]["response"];
     };
     getContent: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/contents/:path"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/contents/{path}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/contents/:path"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/contents/{path}"]["response"];
     };
     getContributorsStats: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/stats/contributors"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/stats/contributors"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/stats/contributors"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/stats/contributors"]["response"];
     };
     getDeployKey: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/keys/:key_id"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/keys/{key_id}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/keys/:key_id"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/keys/{key_id}"]["response"];
     };
     getDeployment: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/deployments/:deployment_id"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/deployments/{deployment_id}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/deployments/:deployment_id"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/deployments/{deployment_id}"]["response"];
     };
     getDeploymentStatus: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/deployments/:deployment_id/statuses/:status_id"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/deployments/{deployment_id}/statuses/{status_id}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/deployments/:deployment_id/statuses/:status_id"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/deployments/{deployment_id}/statuses/{status_id}"]["response"];
     };
     getLatestPagesBuild: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/pages/builds/latest"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/pages/builds/latest"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/pages/builds/latest"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/pages/builds/latest"]["response"];
     };
     getLatestRelease: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/releases/latest"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/releases/latest"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/releases/latest"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/releases/latest"]["response"];
     };
     getPages: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/pages"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/pages"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/pages"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/pages"]["response"];
     };
     getPagesBuild: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/pages/builds/:build_id"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/pages/builds/{build_id}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/pages/builds/:build_id"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/pages/builds/{build_id}"]["response"];
     };
     getParticipationStats: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/stats/participation"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/stats/participation"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/stats/participation"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/stats/participation"]["response"];
     };
     getPullRequestReviewProtection: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/branches/:branch/protection/required_pull_request_reviews"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/branches/{branch}/protection/required_pull_request_reviews"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/branches/:branch/protection/required_pull_request_reviews"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/branches/{branch}/protection/required_pull_request_reviews"]["response"];
     };
     getPunchCardStats: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/stats/punch_card"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/stats/punch_card"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/stats/punch_card"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/stats/punch_card"]["response"];
     };
     getReadme: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/readme"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/readme"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/readme"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/readme"]["response"];
     };
     getRelease: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/releases/:release_id"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/releases/{release_id}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/releases/:release_id"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/releases/{release_id}"]["response"];
     };
     getReleaseAsset: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/releases/assets/:asset_id"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/releases/assets/{asset_id}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/releases/assets/:asset_id"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/releases/assets/{asset_id}"]["response"];
     };
     getReleaseByTag: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/releases/tags/:tag"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/releases/tags/{tag}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/releases/tags/:tag"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/releases/tags/{tag}"]["response"];
     };
     getStatusChecksProtection: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/branches/:branch/protection/required_status_checks"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/branches/:branch/protection/required_status_checks"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks"]["response"];
     };
     getTeamsWithAccessToProtectedBranch: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/branches/:branch/protection/restrictions/teams"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/branches/:branch/protection/restrictions/teams"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams"]["response"];
     };
     getTopPaths: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/traffic/popular/paths"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/traffic/popular/paths"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/traffic/popular/paths"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/traffic/popular/paths"]["response"];
     };
     getTopReferrers: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/traffic/popular/referrers"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/traffic/popular/referrers"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/traffic/popular/referrers"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/traffic/popular/referrers"]["response"];
     };
     getUsersWithAccessToProtectedBranch: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/branches/:branch/protection/restrictions/users"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/branches/:branch/protection/restrictions/users"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users"]["response"];
     };
     getViews: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/traffic/views"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/traffic/views"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/traffic/views"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/traffic/views"]["response"];
     };
     getWebhook: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/hooks/:hook_id"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/hooks/{hook_id}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/hooks/:hook_id"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/hooks/{hook_id}"]["response"];
+    };
+    getWebhookConfigForRepo: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /repos/{owner}/{repo}/hooks/{hook_id}/config"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /repos/{owner}/{repo}/hooks/{hook_id}/config"]["response"];
     };
     listBranches: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/branches"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/branches"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/branches"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/branches"]["response"];
     };
     listBranchesForHeadCommit: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/commits/:commit_sha/branches-where-head"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/commits/{commit_sha}/branches-where-head"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/commits/:commit_sha/branches-where-head"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/commits/{commit_sha}/branches-where-head"]["response"];
     };
     listCollaborators: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/collaborators"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/collaborators"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/collaborators"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/collaborators"]["response"];
     };
     listCommentsForCommit: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/commits/:commit_sha/comments"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/commits/{commit_sha}/comments"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/commits/:commit_sha/comments"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/commits/{commit_sha}/comments"]["response"];
     };
     listCommitCommentsForRepo: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/comments"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/comments"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/comments"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/comments"]["response"];
     };
     listCommitStatusesForRef: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/commits/:ref/statuses"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/commits/{ref}/statuses"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/commits/:ref/statuses"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/commits/{ref}/statuses"]["response"];
     };
     listCommits: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/commits"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/commits"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/commits"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/commits"]["response"];
     };
     listContributors: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/contributors"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/contributors"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/contributors"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/contributors"]["response"];
     };
     listDeployKeys: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/keys"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/keys"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/keys"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/keys"]["response"];
     };
     listDeploymentStatuses: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/deployments/:deployment_id/statuses"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/deployments/{deployment_id}/statuses"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/deployments/:deployment_id/statuses"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/deployments/{deployment_id}/statuses"]["response"];
     };
     listDeployments: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/deployments"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/deployments"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/deployments"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/deployments"]["response"];
     };
     listForAuthenticatedUser: {
       parameters: RequestParameters &
@@ -3625,34 +3891,34 @@ export type RestEndpointMethodTypes = {
     listForOrg: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /orgs/:org/repos"]["parameters"],
+          Endpoints["GET /orgs/{org}/repos"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /orgs/:org/repos"]["response"];
+      response: Endpoints["GET /orgs/{org}/repos"]["response"];
     };
     listForUser: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /users/:username/repos"]["parameters"],
+          Endpoints["GET /users/{username}/repos"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /users/:username/repos"]["response"];
+      response: Endpoints["GET /users/{username}/repos"]["response"];
     };
     listForks: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/forks"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/forks"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/forks"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/forks"]["response"];
     };
     listInvitations: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/invitations"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/invitations"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/invitations"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/invitations"]["response"];
     };
     listInvitationsForAuthenticatedUser: {
       parameters: RequestParameters &
@@ -3665,18 +3931,18 @@ export type RestEndpointMethodTypes = {
     listLanguages: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/languages"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/languages"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/languages"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/languages"]["response"];
     };
     listPagesBuilds: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/pages/builds"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/pages/builds"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/pages/builds"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/pages/builds"]["response"];
     };
     listPublic: {
       parameters: RequestParameters &
@@ -3689,274 +3955,290 @@ export type RestEndpointMethodTypes = {
     listPullRequestsAssociatedWithCommit: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/commits/:commit_sha/pulls"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/commits/{commit_sha}/pulls"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/commits/:commit_sha/pulls"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/commits/{commit_sha}/pulls"]["response"];
     };
     listReleaseAssets: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/releases/:release_id/assets"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/releases/{release_id}/assets"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/releases/:release_id/assets"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/releases/{release_id}/assets"]["response"];
     };
     listReleases: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/releases"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/releases"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/releases"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/releases"]["response"];
     };
     listTags: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/tags"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/tags"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/tags"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/tags"]["response"];
     };
     listTeams: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/teams"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/teams"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/teams"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/teams"]["response"];
     };
     listWebhooks: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/:owner/:repo/hooks"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/hooks"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/:owner/:repo/hooks"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/hooks"]["response"];
     };
     merge: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["POST /repos/:owner/:repo/merges"]["parameters"],
+          Endpoints["POST /repos/{owner}/{repo}/merges"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["POST /repos/:owner/:repo/merges"]["response"];
+      response: Endpoints["POST /repos/{owner}/{repo}/merges"]["response"];
     };
     pingWebhook: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["POST /repos/:owner/:repo/hooks/:hook_id/pings"]["parameters"],
+          Endpoints["POST /repos/{owner}/{repo}/hooks/{hook_id}/pings"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["POST /repos/:owner/:repo/hooks/:hook_id/pings"]["response"];
+      response: Endpoints["POST /repos/{owner}/{repo}/hooks/{hook_id}/pings"]["response"];
     };
     removeAppAccessRestrictions: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["DELETE /repos/:owner/:repo/branches/:branch/protection/restrictions/apps"]["parameters"],
+          Endpoints["DELETE /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/apps"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["DELETE /repos/:owner/:repo/branches/:branch/protection/restrictions/apps"]["response"];
+      response: Endpoints["DELETE /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/apps"]["response"];
     };
     removeCollaborator: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["DELETE /repos/:owner/:repo/collaborators/:username"]["parameters"],
+          Endpoints["DELETE /repos/{owner}/{repo}/collaborators/{username}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["DELETE /repos/:owner/:repo/collaborators/:username"]["response"];
+      response: Endpoints["DELETE /repos/{owner}/{repo}/collaborators/{username}"]["response"];
     };
     removeStatusCheckContexts: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["DELETE /repos/:owner/:repo/branches/:branch/protection/required_status_checks/contexts"]["parameters"],
+          Endpoints["DELETE /repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks/contexts"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["DELETE /repos/:owner/:repo/branches/:branch/protection/required_status_checks/contexts"]["response"];
+      response: Endpoints["DELETE /repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks/contexts"]["response"];
     };
     removeStatusCheckProtection: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["DELETE /repos/:owner/:repo/branches/:branch/protection/required_status_checks"]["parameters"],
+          Endpoints["DELETE /repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["DELETE /repos/:owner/:repo/branches/:branch/protection/required_status_checks"]["response"];
+      response: Endpoints["DELETE /repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks"]["response"];
     };
     removeTeamAccessRestrictions: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["DELETE /repos/:owner/:repo/branches/:branch/protection/restrictions/teams"]["parameters"],
+          Endpoints["DELETE /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["DELETE /repos/:owner/:repo/branches/:branch/protection/restrictions/teams"]["response"];
+      response: Endpoints["DELETE /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams"]["response"];
     };
     removeUserAccessRestrictions: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["DELETE /repos/:owner/:repo/branches/:branch/protection/restrictions/users"]["parameters"],
+          Endpoints["DELETE /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["DELETE /repos/:owner/:repo/branches/:branch/protection/restrictions/users"]["response"];
+      response: Endpoints["DELETE /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users"]["response"];
     };
     replaceAllTopics: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["PUT /repos/:owner/:repo/topics"]["parameters"],
+          Endpoints["PUT /repos/{owner}/{repo}/topics"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["PUT /repos/:owner/:repo/topics"]["response"];
+      response: Endpoints["PUT /repos/{owner}/{repo}/topics"]["response"];
     };
     requestPagesBuild: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["POST /repos/:owner/:repo/pages/builds"]["parameters"],
+          Endpoints["POST /repos/{owner}/{repo}/pages/builds"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["POST /repos/:owner/:repo/pages/builds"]["response"];
+      response: Endpoints["POST /repos/{owner}/{repo}/pages/builds"]["response"];
     };
     setAdminBranchProtection: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["POST /repos/:owner/:repo/branches/:branch/protection/enforce_admins"]["parameters"],
+          Endpoints["POST /repos/{owner}/{repo}/branches/{branch}/protection/enforce_admins"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["POST /repos/:owner/:repo/branches/:branch/protection/enforce_admins"]["response"];
+      response: Endpoints["POST /repos/{owner}/{repo}/branches/{branch}/protection/enforce_admins"]["response"];
     };
     setAppAccessRestrictions: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["PUT /repos/:owner/:repo/branches/:branch/protection/restrictions/apps"]["parameters"],
+          Endpoints["PUT /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/apps"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["PUT /repos/:owner/:repo/branches/:branch/protection/restrictions/apps"]["response"];
+      response: Endpoints["PUT /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/apps"]["response"];
     };
     setStatusCheckContexts: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["PUT /repos/:owner/:repo/branches/:branch/protection/required_status_checks/contexts"]["parameters"],
+          Endpoints["PUT /repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks/contexts"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["PUT /repos/:owner/:repo/branches/:branch/protection/required_status_checks/contexts"]["response"];
+      response: Endpoints["PUT /repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks/contexts"]["response"];
     };
     setTeamAccessRestrictions: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["PUT /repos/:owner/:repo/branches/:branch/protection/restrictions/teams"]["parameters"],
+          Endpoints["PUT /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["PUT /repos/:owner/:repo/branches/:branch/protection/restrictions/teams"]["response"];
+      response: Endpoints["PUT /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams"]["response"];
     };
     setUserAccessRestrictions: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["PUT /repos/:owner/:repo/branches/:branch/protection/restrictions/users"]["parameters"],
+          Endpoints["PUT /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["PUT /repos/:owner/:repo/branches/:branch/protection/restrictions/users"]["response"];
+      response: Endpoints["PUT /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users"]["response"];
     };
     testPushWebhook: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["POST /repos/:owner/:repo/hooks/:hook_id/tests"]["parameters"],
+          Endpoints["POST /repos/{owner}/{repo}/hooks/{hook_id}/tests"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["POST /repos/:owner/:repo/hooks/:hook_id/tests"]["response"];
+      response: Endpoints["POST /repos/{owner}/{repo}/hooks/{hook_id}/tests"]["response"];
     };
     transfer: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["POST /repos/:owner/:repo/transfer"]["parameters"],
+          Endpoints["POST /repos/{owner}/{repo}/transfer"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["POST /repos/:owner/:repo/transfer"]["response"];
+      response: Endpoints["POST /repos/{owner}/{repo}/transfer"]["response"];
     };
     update: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["PATCH /repos/:owner/:repo"]["parameters"],
+          Endpoints["PATCH /repos/{owner}/{repo}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["PATCH /repos/:owner/:repo"]["response"];
+      response: Endpoints["PATCH /repos/{owner}/{repo}"]["response"];
     };
     updateBranchProtection: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["PUT /repos/:owner/:repo/branches/:branch/protection"]["parameters"],
+          Endpoints["PUT /repos/{owner}/{repo}/branches/{branch}/protection"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["PUT /repos/:owner/:repo/branches/:branch/protection"]["response"];
+      response: Endpoints["PUT /repos/{owner}/{repo}/branches/{branch}/protection"]["response"];
     };
     updateCommitComment: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["PATCH /repos/:owner/:repo/comments/:comment_id"]["parameters"],
+          Endpoints["PATCH /repos/{owner}/{repo}/comments/{comment_id}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["PATCH /repos/:owner/:repo/comments/:comment_id"]["response"];
+      response: Endpoints["PATCH /repos/{owner}/{repo}/comments/{comment_id}"]["response"];
     };
     updateInformationAboutPagesSite: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["PUT /repos/:owner/:repo/pages"]["parameters"],
+          Endpoints["PUT /repos/{owner}/{repo}/pages"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["PUT /repos/:owner/:repo/pages"]["response"];
+      response: Endpoints["PUT /repos/{owner}/{repo}/pages"]["response"];
     };
     updateInvitation: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["PATCH /repos/:owner/:repo/invitations/:invitation_id"]["parameters"],
+          Endpoints["PATCH /repos/{owner}/{repo}/invitations/{invitation_id}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["PATCH /repos/:owner/:repo/invitations/:invitation_id"]["response"];
+      response: Endpoints["PATCH /repos/{owner}/{repo}/invitations/{invitation_id}"]["response"];
     };
     updatePullRequestReviewProtection: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["PATCH /repos/:owner/:repo/branches/:branch/protection/required_pull_request_reviews"]["parameters"],
+          Endpoints["PATCH /repos/{owner}/{repo}/branches/{branch}/protection/required_pull_request_reviews"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["PATCH /repos/:owner/:repo/branches/:branch/protection/required_pull_request_reviews"]["response"];
+      response: Endpoints["PATCH /repos/{owner}/{repo}/branches/{branch}/protection/required_pull_request_reviews"]["response"];
     };
     updateRelease: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["PATCH /repos/:owner/:repo/releases/:release_id"]["parameters"],
+          Endpoints["PATCH /repos/{owner}/{repo}/releases/{release_id}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["PATCH /repos/:owner/:repo/releases/:release_id"]["response"];
+      response: Endpoints["PATCH /repos/{owner}/{repo}/releases/{release_id}"]["response"];
     };
     updateReleaseAsset: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["PATCH /repos/:owner/:repo/releases/assets/:asset_id"]["parameters"],
+          Endpoints["PATCH /repos/{owner}/{repo}/releases/assets/{asset_id}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["PATCH /repos/:owner/:repo/releases/assets/:asset_id"]["response"];
+      response: Endpoints["PATCH /repos/{owner}/{repo}/releases/assets/{asset_id}"]["response"];
     };
     updateStatusCheckPotection: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["PATCH /repos/:owner/:repo/branches/:branch/protection/required_status_checks"]["parameters"],
+          Endpoints["PATCH /repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["PATCH /repos/:owner/:repo/branches/:branch/protection/required_status_checks"]["response"];
+      response: Endpoints["PATCH /repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks"]["response"];
+    };
+    updateStatusCheckProtection: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["PATCH /repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["PATCH /repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks"]["response"];
     };
     updateWebhook: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["PATCH /repos/:owner/:repo/hooks/:hook_id"]["parameters"],
+          Endpoints["PATCH /repos/{owner}/{repo}/hooks/{hook_id}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["PATCH /repos/:owner/:repo/hooks/:hook_id"]["response"];
+      response: Endpoints["PATCH /repos/{owner}/{repo}/hooks/{hook_id}"]["response"];
+    };
+    updateWebhookConfigForRepo: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["PATCH /repos/{owner}/{repo}/hooks/{hook_id}/config"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["PATCH /repos/{owner}/{repo}/hooks/{hook_id}/config"]["response"];
     };
     uploadReleaseAsset: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["POST /repos/:owner/:repo/releases/:release_id/assets{?name,label}"]["parameters"],
+          Endpoints["POST {origin}/repos/{owner}/{repo}/releases/{release_id}/assets{?name,label}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["POST /repos/:owner/:repo/releases/:release_id/assets{?name,label}"]["response"];
+      response: Endpoints["POST {origin}/repos/{owner}/{repo}/releases/{release_id}/assets{?name,label}"]["response"];
     };
   };
   search: {
@@ -4021,154 +4303,154 @@ export type RestEndpointMethodTypes = {
     addOrUpdateMembershipForUserInOrg: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["PUT /orgs/:org/teams/:team_slug/memberships/:username"]["parameters"],
+          Endpoints["PUT /orgs/{org}/teams/{team_slug}/memberships/{username}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["PUT /orgs/:org/teams/:team_slug/memberships/:username"]["response"];
+      response: Endpoints["PUT /orgs/{org}/teams/{team_slug}/memberships/{username}"]["response"];
     };
     addOrUpdateProjectPermissionsInOrg: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["PUT /orgs/:org/teams/:team_slug/projects/:project_id"]["parameters"],
+          Endpoints["PUT /orgs/{org}/teams/{team_slug}/projects/{project_id}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["PUT /orgs/:org/teams/:team_slug/projects/:project_id"]["response"];
+      response: Endpoints["PUT /orgs/{org}/teams/{team_slug}/projects/{project_id}"]["response"];
     };
     addOrUpdateRepoPermissionsInOrg: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["PUT /orgs/:org/teams/:team_slug/repos/:owner/:repo"]["parameters"],
+          Endpoints["PUT /orgs/{org}/teams/{team_slug}/repos/{owner}/{repo}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["PUT /orgs/:org/teams/:team_slug/repos/:owner/:repo"]["response"];
+      response: Endpoints["PUT /orgs/{org}/teams/{team_slug}/repos/{owner}/{repo}"]["response"];
     };
     checkPermissionsForProjectInOrg: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /orgs/:org/teams/:team_slug/projects/:project_id"]["parameters"],
+          Endpoints["GET /orgs/{org}/teams/{team_slug}/projects/{project_id}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /orgs/:org/teams/:team_slug/projects/:project_id"]["response"];
+      response: Endpoints["GET /orgs/{org}/teams/{team_slug}/projects/{project_id}"]["response"];
     };
     checkPermissionsForRepoInOrg: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /orgs/:org/teams/:team_slug/repos/:owner/:repo"]["parameters"],
+          Endpoints["GET /orgs/{org}/teams/{team_slug}/repos/{owner}/{repo}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /orgs/:org/teams/:team_slug/repos/:owner/:repo"]["response"];
+      response: Endpoints["GET /orgs/{org}/teams/{team_slug}/repos/{owner}/{repo}"]["response"];
     };
     create: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["POST /orgs/:org/teams"]["parameters"],
+          Endpoints["POST /orgs/{org}/teams"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["POST /orgs/:org/teams"]["response"];
+      response: Endpoints["POST /orgs/{org}/teams"]["response"];
     };
     createDiscussionCommentInOrg: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["POST /orgs/:org/teams/:team_slug/discussions/:discussion_number/comments"]["parameters"],
+          Endpoints["POST /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["POST /orgs/:org/teams/:team_slug/discussions/:discussion_number/comments"]["response"];
+      response: Endpoints["POST /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments"]["response"];
     };
     createDiscussionInOrg: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["POST /orgs/:org/teams/:team_slug/discussions"]["parameters"],
+          Endpoints["POST /orgs/{org}/teams/{team_slug}/discussions"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["POST /orgs/:org/teams/:team_slug/discussions"]["response"];
+      response: Endpoints["POST /orgs/{org}/teams/{team_slug}/discussions"]["response"];
     };
     deleteDiscussionCommentInOrg: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["DELETE /orgs/:org/teams/:team_slug/discussions/:discussion_number/comments/:comment_number"]["parameters"],
+          Endpoints["DELETE /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["DELETE /orgs/:org/teams/:team_slug/discussions/:discussion_number/comments/:comment_number"]["response"];
+      response: Endpoints["DELETE /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}"]["response"];
     };
     deleteDiscussionInOrg: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["DELETE /orgs/:org/teams/:team_slug/discussions/:discussion_number"]["parameters"],
+          Endpoints["DELETE /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["DELETE /orgs/:org/teams/:team_slug/discussions/:discussion_number"]["response"];
+      response: Endpoints["DELETE /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}"]["response"];
     };
     deleteInOrg: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["DELETE /orgs/:org/teams/:team_slug"]["parameters"],
+          Endpoints["DELETE /orgs/{org}/teams/{team_slug}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["DELETE /orgs/:org/teams/:team_slug"]["response"];
+      response: Endpoints["DELETE /orgs/{org}/teams/{team_slug}"]["response"];
     };
     getByName: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /orgs/:org/teams/:team_slug"]["parameters"],
+          Endpoints["GET /orgs/{org}/teams/{team_slug}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /orgs/:org/teams/:team_slug"]["response"];
+      response: Endpoints["GET /orgs/{org}/teams/{team_slug}"]["response"];
     };
     getDiscussionCommentInOrg: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /orgs/:org/teams/:team_slug/discussions/:discussion_number/comments/:comment_number"]["parameters"],
+          Endpoints["GET /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /orgs/:org/teams/:team_slug/discussions/:discussion_number/comments/:comment_number"]["response"];
+      response: Endpoints["GET /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}"]["response"];
     };
     getDiscussionInOrg: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /orgs/:org/teams/:team_slug/discussions/:discussion_number"]["parameters"],
+          Endpoints["GET /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /orgs/:org/teams/:team_slug/discussions/:discussion_number"]["response"];
+      response: Endpoints["GET /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}"]["response"];
     };
     getMembershipForUserInOrg: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /orgs/:org/teams/:team_slug/memberships/:username"]["parameters"],
+          Endpoints["GET /orgs/{org}/teams/{team_slug}/memberships/{username}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /orgs/:org/teams/:team_slug/memberships/:username"]["response"];
+      response: Endpoints["GET /orgs/{org}/teams/{team_slug}/memberships/{username}"]["response"];
     };
     list: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /orgs/:org/teams"]["parameters"],
+          Endpoints["GET /orgs/{org}/teams"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /orgs/:org/teams"]["response"];
+      response: Endpoints["GET /orgs/{org}/teams"]["response"];
     };
     listChildInOrg: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /orgs/:org/teams/:team_slug/teams"]["parameters"],
+          Endpoints["GET /orgs/{org}/teams/{team_slug}/teams"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /orgs/:org/teams/:team_slug/teams"]["response"];
+      response: Endpoints["GET /orgs/{org}/teams/{team_slug}/teams"]["response"];
     };
     listDiscussionCommentsInOrg: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /orgs/:org/teams/:team_slug/discussions/:discussion_number/comments"]["parameters"],
+          Endpoints["GET /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /orgs/:org/teams/:team_slug/discussions/:discussion_number/comments"]["response"];
+      response: Endpoints["GET /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments"]["response"];
     };
     listDiscussionsInOrg: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /orgs/:org/teams/:team_slug/discussions"]["parameters"],
+          Endpoints["GET /orgs/{org}/teams/{team_slug}/discussions"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /orgs/:org/teams/:team_slug/discussions"]["response"];
+      response: Endpoints["GET /orgs/{org}/teams/{team_slug}/discussions"]["response"];
     };
     listForAuthenticatedUser: {
       parameters: RequestParameters &
@@ -4181,82 +4463,82 @@ export type RestEndpointMethodTypes = {
     listMembersInOrg: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /orgs/:org/teams/:team_slug/members"]["parameters"],
+          Endpoints["GET /orgs/{org}/teams/{team_slug}/members"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /orgs/:org/teams/:team_slug/members"]["response"];
+      response: Endpoints["GET /orgs/{org}/teams/{team_slug}/members"]["response"];
     };
     listPendingInvitationsInOrg: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /orgs/:org/teams/:team_slug/invitations"]["parameters"],
+          Endpoints["GET /orgs/{org}/teams/{team_slug}/invitations"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /orgs/:org/teams/:team_slug/invitations"]["response"];
+      response: Endpoints["GET /orgs/{org}/teams/{team_slug}/invitations"]["response"];
     };
     listProjectsInOrg: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /orgs/:org/teams/:team_slug/projects"]["parameters"],
+          Endpoints["GET /orgs/{org}/teams/{team_slug}/projects"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /orgs/:org/teams/:team_slug/projects"]["response"];
+      response: Endpoints["GET /orgs/{org}/teams/{team_slug}/projects"]["response"];
     };
     listReposInOrg: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /orgs/:org/teams/:team_slug/repos"]["parameters"],
+          Endpoints["GET /orgs/{org}/teams/{team_slug}/repos"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /orgs/:org/teams/:team_slug/repos"]["response"];
+      response: Endpoints["GET /orgs/{org}/teams/{team_slug}/repos"]["response"];
     };
     removeMembershipForUserInOrg: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["DELETE /orgs/:org/teams/:team_slug/memberships/:username"]["parameters"],
+          Endpoints["DELETE /orgs/{org}/teams/{team_slug}/memberships/{username}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["DELETE /orgs/:org/teams/:team_slug/memberships/:username"]["response"];
+      response: Endpoints["DELETE /orgs/{org}/teams/{team_slug}/memberships/{username}"]["response"];
     };
     removeProjectInOrg: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["DELETE /orgs/:org/teams/:team_slug/projects/:project_id"]["parameters"],
+          Endpoints["DELETE /orgs/{org}/teams/{team_slug}/projects/{project_id}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["DELETE /orgs/:org/teams/:team_slug/projects/:project_id"]["response"];
+      response: Endpoints["DELETE /orgs/{org}/teams/{team_slug}/projects/{project_id}"]["response"];
     };
     removeRepoInOrg: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["DELETE /orgs/:org/teams/:team_slug/repos/:owner/:repo"]["parameters"],
+          Endpoints["DELETE /orgs/{org}/teams/{team_slug}/repos/{owner}/{repo}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["DELETE /orgs/:org/teams/:team_slug/repos/:owner/:repo"]["response"];
+      response: Endpoints["DELETE /orgs/{org}/teams/{team_slug}/repos/{owner}/{repo}"]["response"];
     };
     updateDiscussionCommentInOrg: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["PATCH /orgs/:org/teams/:team_slug/discussions/:discussion_number/comments/:comment_number"]["parameters"],
+          Endpoints["PATCH /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["PATCH /orgs/:org/teams/:team_slug/discussions/:discussion_number/comments/:comment_number"]["response"];
+      response: Endpoints["PATCH /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}"]["response"];
     };
     updateDiscussionInOrg: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["PATCH /orgs/:org/teams/:team_slug/discussions/:discussion_number"]["parameters"],
+          Endpoints["PATCH /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["PATCH /orgs/:org/teams/:team_slug/discussions/:discussion_number"]["response"];
+      response: Endpoints["PATCH /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}"]["response"];
     };
     updateInOrg: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["PATCH /orgs/:org/teams/:team_slug"]["parameters"],
+          Endpoints["PATCH /orgs/{org}/teams/{team_slug}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["PATCH /orgs/:org/teams/:team_slug"]["response"];
+      response: Endpoints["PATCH /orgs/{org}/teams/{team_slug}"]["response"];
     };
   };
   users: {
@@ -4271,34 +4553,34 @@ export type RestEndpointMethodTypes = {
     block: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["PUT /user/blocks/:username"]["parameters"],
+          Endpoints["PUT /user/blocks/{username}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["PUT /user/blocks/:username"]["response"];
+      response: Endpoints["PUT /user/blocks/{username}"]["response"];
     };
     checkBlocked: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /user/blocks/:username"]["parameters"],
+          Endpoints["GET /user/blocks/{username}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /user/blocks/:username"]["response"];
+      response: Endpoints["GET /user/blocks/{username}"]["response"];
     };
     checkFollowingForUser: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /users/:username/following/:target_user"]["parameters"],
+          Endpoints["GET /users/{username}/following/{target_user}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /users/:username/following/:target_user"]["response"];
+      response: Endpoints["GET /users/{username}/following/{target_user}"]["response"];
     };
     checkPersonIsFollowedByAuthenticated: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /user/following/:username"]["parameters"],
+          Endpoints["GET /user/following/{username}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /user/following/:username"]["response"];
+      response: Endpoints["GET /user/following/{username}"]["response"];
     };
     createGpgKeyForAuthenticated: {
       parameters: RequestParameters &
@@ -4327,26 +4609,26 @@ export type RestEndpointMethodTypes = {
     deleteGpgKeyForAuthenticated: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["DELETE /user/gpg_keys/:gpg_key_id"]["parameters"],
+          Endpoints["DELETE /user/gpg_keys/{gpg_key_id}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["DELETE /user/gpg_keys/:gpg_key_id"]["response"];
+      response: Endpoints["DELETE /user/gpg_keys/{gpg_key_id}"]["response"];
     };
     deletePublicSshKeyForAuthenticated: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["DELETE /user/keys/:key_id"]["parameters"],
+          Endpoints["DELETE /user/keys/{key_id}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["DELETE /user/keys/:key_id"]["response"];
+      response: Endpoints["DELETE /user/keys/{key_id}"]["response"];
     };
     follow: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["PUT /user/following/:username"]["parameters"],
+          Endpoints["PUT /user/following/{username}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["PUT /user/following/:username"]["response"];
+      response: Endpoints["PUT /user/following/{username}"]["response"];
     };
     getAuthenticated: {
       parameters: RequestParameters &
@@ -4359,34 +4641,34 @@ export type RestEndpointMethodTypes = {
     getByUsername: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /users/:username"]["parameters"],
+          Endpoints["GET /users/{username}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /users/:username"]["response"];
+      response: Endpoints["GET /users/{username}"]["response"];
     };
     getContextForUser: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /users/:username/hovercard"]["parameters"],
+          Endpoints["GET /users/{username}/hovercard"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /users/:username/hovercard"]["response"];
+      response: Endpoints["GET /users/{username}/hovercard"]["response"];
     };
     getGpgKeyForAuthenticated: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /user/gpg_keys/:gpg_key_id"]["parameters"],
+          Endpoints["GET /user/gpg_keys/{gpg_key_id}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /user/gpg_keys/:gpg_key_id"]["response"];
+      response: Endpoints["GET /user/gpg_keys/{gpg_key_id}"]["response"];
     };
     getPublicSshKeyForAuthenticated: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /user/keys/:key_id"]["parameters"],
+          Endpoints["GET /user/keys/{key_id}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /user/keys/:key_id"]["response"];
+      response: Endpoints["GET /user/keys/{key_id}"]["response"];
     };
     list: {
       parameters: RequestParameters &
@@ -4431,18 +4713,18 @@ export type RestEndpointMethodTypes = {
     listFollowersForUser: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /users/:username/followers"]["parameters"],
+          Endpoints["GET /users/{username}/followers"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /users/:username/followers"]["response"];
+      response: Endpoints["GET /users/{username}/followers"]["response"];
     };
     listFollowingForUser: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /users/:username/following"]["parameters"],
+          Endpoints["GET /users/{username}/following"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /users/:username/following"]["response"];
+      response: Endpoints["GET /users/{username}/following"]["response"];
     };
     listGpgKeysForAuthenticated: {
       parameters: RequestParameters &
@@ -4455,10 +4737,10 @@ export type RestEndpointMethodTypes = {
     listGpgKeysForUser: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /users/:username/gpg_keys"]["parameters"],
+          Endpoints["GET /users/{username}/gpg_keys"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /users/:username/gpg_keys"]["response"];
+      response: Endpoints["GET /users/{username}/gpg_keys"]["response"];
     };
     listPublicEmailsForAuthenticated: {
       parameters: RequestParameters &
@@ -4471,10 +4753,10 @@ export type RestEndpointMethodTypes = {
     listPublicKeysForUser: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /users/:username/keys"]["parameters"],
+          Endpoints["GET /users/{username}/keys"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /users/:username/keys"]["response"];
+      response: Endpoints["GET /users/{username}/keys"]["response"];
     };
     listPublicSshKeysForAuthenticated: {
       parameters: RequestParameters &
@@ -4495,18 +4777,18 @@ export type RestEndpointMethodTypes = {
     unblock: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["DELETE /user/blocks/:username"]["parameters"],
+          Endpoints["DELETE /user/blocks/{username}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["DELETE /user/blocks/:username"]["response"];
+      response: Endpoints["DELETE /user/blocks/{username}"]["response"];
     };
     unfollow: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["DELETE /user/following/:username"]["parameters"],
+          Endpoints["DELETE /user/following/{username}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["DELETE /user/following/:username"]["response"];
+      response: Endpoints["DELETE /user/following/{username}"]["response"];
     };
     updateAuthenticated: {
       parameters: RequestParameters &
