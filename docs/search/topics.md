@@ -20,7 +20,7 @@ This query searches for topics with the keyword `ruby` and limits the results to
 
 ```js
 octokit.search.topics({
-  q
+  q,
 });
 ```
 

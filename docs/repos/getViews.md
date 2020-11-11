@@ -13,7 +13,7 @@ Get the total number of views and breakdown per day or week for the last 14 days
 ```js
 octokit.repos.getViews({
   owner,
-  repo
+  repo,
 });
 ```
 

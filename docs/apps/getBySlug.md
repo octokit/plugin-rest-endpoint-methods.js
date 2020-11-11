@@ -14,7 +14,7 @@ If the GitHub App you specify is public, you can access this endpoint without au
 
 ```js
 octokit.apps.getBySlug({
-  app_slug
+  app_slug,
 });
 ```
 

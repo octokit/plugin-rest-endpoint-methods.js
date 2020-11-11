@@ -11,7 +11,7 @@ type: API method
 ```js
 octokit.repos.getPages({
   owner,
-  repo
+  repo,
 });
 ```
 

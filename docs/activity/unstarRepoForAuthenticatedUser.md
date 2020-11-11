@@ -11,7 +11,7 @@ type: API method
 ```js
 octokit.activity.unstarRepoForAuthenticatedUser({
   owner,
-  repo
+  repo,
 });
 ```
 

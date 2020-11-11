@@ -12,7 +12,7 @@ type: API method
 octokit.repos.getCommitComment({
   owner,
   repo,
-  comment_id
+  comment_id,
 });
 ```
 

@@ -13,7 +13,7 @@ Marks all notifications in a repository as "read" removes them from the [default
 ```js
 octokit.activity.markRepoNotificationsAsRead({
   owner,
-  repo
+  repo,
 });
 ```
 

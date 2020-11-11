@@ -10,7 +10,7 @@ type: API method
 
 ```js
 octokit.projects.deleteColumn({
-  column_id
+  column_id,
 });
 ```
 

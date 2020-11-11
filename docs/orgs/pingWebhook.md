@@ -13,7 +13,7 @@ This will trigger a [ping event](https://docs.github.com/webhooks/#ping-event) t
 ```js
 octokit.orgs.pingWebhook({
   org,
-  hook_id
+  hook_id,
 });
 ```
 

@@ -14,7 +14,7 @@ Updates information for a GitHub Pages site. For more information, see "[About G
 octokit.repos.updateInformationAboutPagesSite({
   owner,
   repo,
-  source
+  source,
 });
 ```
 

@@ -15,7 +15,7 @@ GitHub identifies contributors by author email address. This endpoint groups con
 ```js
 octokit.repos.listContributors({
   owner,
-  repo
+  repo,
 });
 ```
 

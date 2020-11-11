@@ -18,7 +18,7 @@ Returns the `total` number of commits authored by the contributor. In addition, 
 ```js
 octokit.repos.getContributorsStats({
   owner,
-  repo
+  repo,
 });
 ```
 

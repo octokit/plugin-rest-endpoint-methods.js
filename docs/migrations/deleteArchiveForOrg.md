@@ -13,7 +13,7 @@ Deletes a previous migration archive. Migration archives are automatically delet
 ```js
 octokit.migrations.deleteArchiveForOrg({
   org,
-  migration_id
+  migration_id,
 });
 ```
 

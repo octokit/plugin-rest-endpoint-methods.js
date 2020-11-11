@@ -17,7 +17,7 @@ have the `actions:read` permission to use this endpoint.
 octokit.actions.downloadJobLogsForWorkflowRun({
   owner,
   repo,
-  job_id
+  job_id,
 });
 ```
 

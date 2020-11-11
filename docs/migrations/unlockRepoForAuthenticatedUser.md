@@ -13,7 +13,7 @@ Unlocks a repository. You can lock repositories when you [start a user migration
 ```js
 octokit.migrations.unlockRepoForAuthenticatedUser({
   migration_id,
-  repo_name
+  repo_name,
 });
 ```
 

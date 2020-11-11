@@ -13,7 +13,7 @@ Deletes a secret in an organization using the secret name. You must authenticate
 ```js
 octokit.actions.deleteOrgSecret({
   org,
-  secret_name
+  secret_name,
 });
 ```
 

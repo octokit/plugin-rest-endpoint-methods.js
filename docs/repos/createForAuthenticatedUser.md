@@ -19,7 +19,7 @@ When using [OAuth](https://docs.github.com/apps/building-oauth-apps/understandin
 
 ```js
 octokit.repos.createForAuthenticatedUser({
-  name
+  name,
 });
 ```
 

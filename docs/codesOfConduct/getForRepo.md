@@ -13,7 +13,7 @@ This method returns the contents of the repository's code of conduct file, if on
 ```js
 octokit.codesOfConduct.getForRepo({
   owner,
-  repo
+  repo,
 });
 ```
 

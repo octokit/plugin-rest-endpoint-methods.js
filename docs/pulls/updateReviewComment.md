@@ -33,7 +33,7 @@ octokit.pulls.updateReviewComment({
   owner,
   repo,
   comment_id,
-  body
+  body,
 });
 ```
 

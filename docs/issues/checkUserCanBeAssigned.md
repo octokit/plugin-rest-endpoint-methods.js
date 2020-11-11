@@ -18,7 +18,7 @@ Otherwise a `404` status code is returned.
 octokit.issues.checkUserCanBeAssigned({
   owner,
   repo,
-  assignee
+  assignee,
 });
 ```
 

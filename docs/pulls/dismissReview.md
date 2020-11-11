@@ -16,7 +16,7 @@ octokit.pulls.dismissReview({
   repo,
   pull_number,
   review_id,
-  message
+  message,
 });
 ```
 

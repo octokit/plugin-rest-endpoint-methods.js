@@ -14,7 +14,7 @@ You must use a [JWT](https://docs.github.com/apps/building-github-apps/authentic
 
 ```js
 octokit.apps.getInstallation({
-  installation_id
+  installation_id,
 });
 ```
 

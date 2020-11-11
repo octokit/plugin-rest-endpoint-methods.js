@@ -18,7 +18,7 @@ Lists who has access to this protected branch.
 octokit.repos.getAccessRestrictions({
   owner,
   repo,
-  branch
+  branch,
 });
 ```
 

@@ -52,7 +52,7 @@ def encrypt(public_key: str, secret_value: str) -> str:
   return b64encode(encrypted).decode("utf-8")
 ```
 
-#### Example encrypting a secret using C
+#### Example encrypting a secret using C#
 
 Encrypt your secret using the [Sodium.Core](https://www.nuget.org/packages/Sodium.Core/) package.
 
@@ -87,7 +87,7 @@ puts Base64.strict_encode64(encrypted_secret)
 octokit.actions.createOrUpdateRepoSecret({
   owner,
   repo,
-  secret_name
+  secret_name,
 });
 ```
 

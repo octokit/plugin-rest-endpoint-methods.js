@@ -14,7 +14,7 @@ Deletes all logs for a workflow run. You must authenticate using an access token
 octokit.actions.deleteWorkflowRunLogs({
   owner,
   repo,
-  run_id
+  run_id,
 });
 ```
 

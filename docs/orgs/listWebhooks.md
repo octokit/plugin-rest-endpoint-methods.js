@@ -10,7 +10,7 @@ type: API method
 
 ```js
 octokit.orgs.listWebhooks({
-  org
+  org,
 });
 ```
 

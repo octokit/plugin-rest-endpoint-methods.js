@@ -12,7 +12,7 @@ Note that you'll need to set `Content-Length` to zero when calling out to this e
 
 ```js
 octokit.gists.star({
-  gist_id
+  gist_id,
 });
 ```
 

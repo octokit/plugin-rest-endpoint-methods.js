@@ -24,7 +24,7 @@ To prevent abuse, you are limited to sending 50 invitations to a repository per 
 octokit.repos.addCollaborator({
   owner,
   repo,
-  username
+  username,
 });
 ```
 

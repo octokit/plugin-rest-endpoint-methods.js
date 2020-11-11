@@ -19,7 +19,7 @@ octokit.teams.addOrUpdateRepoPermissionsInOrg({
   org,
   team_slug,
   owner,
-  repo
+  repo,
 });
 ```
 

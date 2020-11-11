@@ -12,7 +12,7 @@ These are events that you've received by watching repos and following users. If 
 
 ```js
 octokit.activity.listReceivedEventsForUser({
-  username
+  username,
 });
 ```
 

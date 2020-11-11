@@ -12,7 +12,7 @@ type: API method
 octokit.repos.removeCollaborator({
   owner,
   repo,
-  username
+  username,
 });
 ```
 

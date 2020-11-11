@@ -11,7 +11,7 @@ type: API method
 ```js
 octokit.repos.listTeams({
   owner,
-  repo
+  repo,
 });
 ```
 

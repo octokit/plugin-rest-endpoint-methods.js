@@ -14,7 +14,7 @@ Updates the pull request branch with the latest upstream changes by merging HEAD
 octokit.pulls.updateBranch({
   owner,
   repo,
-  pull_number
+  pull_number,
 });
 ```
 

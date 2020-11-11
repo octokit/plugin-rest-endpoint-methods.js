@@ -62,7 +62,7 @@ status for the commit to be deployed, but one or more of the required contexts d
 octokit.repos.createDeployment({
   owner,
   repo,
-  ref
+  ref,
 });
 ```
 

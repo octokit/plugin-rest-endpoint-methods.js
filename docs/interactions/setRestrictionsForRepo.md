@@ -14,7 +14,7 @@ Temporarily restricts interactions to certain GitHub users within the given repo
 octokit.interactions.setRestrictionsForRepo({
   owner,
   repo,
-  limit
+  limit,
 });
 ```
 

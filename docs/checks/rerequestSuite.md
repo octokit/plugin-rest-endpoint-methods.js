@@ -16,7 +16,7 @@ To rerequest a check suite, your GitHub App must have the `checks:read` permissi
 octokit.checks.rerequestSuite({
   owner,
   repo,
-  check_suite_id
+  check_suite_id,
 });
 ```
 

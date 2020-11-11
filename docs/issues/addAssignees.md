@@ -14,7 +14,7 @@ Adds up to 10 assignees to an issue. Users already assigned to an issue are not 
 octokit.issues.addAssignees({
   owner,
   repo,
-  issue_number
+  issue_number,
 });
 ```
 

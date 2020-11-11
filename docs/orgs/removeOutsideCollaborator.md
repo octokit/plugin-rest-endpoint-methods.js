@@ -13,7 +13,7 @@ Removing a user from this list will remove them from all the organization's repo
 ```js
 octokit.orgs.removeOutsideCollaborator({
   org,
-  username
+  username,
 });
 ```
 

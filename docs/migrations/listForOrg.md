@@ -12,7 +12,7 @@ Lists the most recent migrations.
 
 ```js
 octokit.migrations.listForOrg({
-  org
+  org,
 });
 ```
 

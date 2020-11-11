@@ -14,7 +14,7 @@ Lists artifacts for a workflow run. Anyone with read access to the repository ca
 octokit.actions.listWorkflowRunArtifacts({
   owner,
   repo,
-  run_id
+  run_id,
 });
 ```
 

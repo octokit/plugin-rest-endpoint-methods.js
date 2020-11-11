@@ -13,7 +13,7 @@ Temporarily restricts interactions to certain GitHub users in any public reposit
 ```js
 octokit.interactions.setRestrictionsForOrg({
   org,
-  limit
+  limit,
 });
 ```
 

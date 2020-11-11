@@ -15,7 +15,7 @@ Create a fork for the authenticated user.
 ```js
 octokit.repos.createFork({
   owner,
-  repo
+  repo,
 });
 ```
 

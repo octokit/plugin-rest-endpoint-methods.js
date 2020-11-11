@@ -13,7 +13,7 @@ In order to get a user's membership with an organization, the authenticated user
 ```js
 octokit.orgs.getMembershipForUser({
   org,
-  username
+  username,
 });
 ```
 

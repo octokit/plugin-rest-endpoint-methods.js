@@ -15,7 +15,7 @@ Anyone with read access to the repository can use this endpoint. If the reposito
 ```js
 octokit.actions.listWorkflowRunsForRepo({
   owner,
-  repo
+  repo,
 });
 ```
 

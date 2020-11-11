@@ -14,7 +14,7 @@ Adds a repository to an organization secret when the `visibility` for repository
 octokit.actions.addSelectedRepoToOrgSecret({
   org,
   secret_name,
-  repository_id
+  repository_id,
 });
 ```
 

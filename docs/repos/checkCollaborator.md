@@ -16,7 +16,7 @@ Team members will include the members of child teams.
 octokit.repos.checkCollaborator({
   owner,
   repo,
-  username
+  username,
 });
 ```
 

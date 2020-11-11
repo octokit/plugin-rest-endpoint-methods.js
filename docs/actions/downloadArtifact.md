@@ -18,7 +18,7 @@ octokit.actions.downloadArtifact({
   owner,
   repo,
   artifact_id,
-  archive_format
+  archive_format,
 });
 ```
 

@@ -17,7 +17,7 @@ octokit.teams.removeRepoInOrg({
   org,
   team_slug,
   owner,
-  repo
+  repo,
 });
 ```
 

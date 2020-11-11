@@ -12,7 +12,7 @@ Lists the _verified_ public SSH keys for a user. This is accessible by anyone.
 
 ```js
 octokit.users.listPublicKeysForUser({
-  username
+  username,
 });
 ```
 

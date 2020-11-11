@@ -24,7 +24,7 @@ request id, use the "[List pull requests](https://docs.github.com/rest/reference
 octokit.issues.get({
   owner,
   repo,
-  issue_number
+  issue_number,
 });
 ```
 

@@ -10,7 +10,7 @@ type: API method
 
 ```js
 octokit.gists.listComments({
-  gist_id
+  gist_id,
 });
 ```
 

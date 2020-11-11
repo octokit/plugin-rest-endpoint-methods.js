@@ -15,7 +15,7 @@ Team members will include the members of child teams.
 ```js
 octokit.repos.listCollaborators({
   owner,
-  repo
+  repo,
 });
 ```
 

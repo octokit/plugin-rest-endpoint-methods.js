@@ -15,7 +15,7 @@ List all discussions on a team's page. OAuth access tokens require the `read:dis
 ```js
 octokit.teams.listDiscussionsInOrg({
   org,
-  team_slug
+  team_slug,
 });
 ```
 

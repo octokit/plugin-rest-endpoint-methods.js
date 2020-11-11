@@ -13,7 +13,7 @@ List files larger than 100MB found during the import
 ```js
 octokit.migrations.getLargeFiles({
   owner,
-  repo
+  repo,
 });
 ```
 

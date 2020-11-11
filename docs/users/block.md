@@ -10,7 +10,7 @@ type: API method
 
 ```js
 octokit.users.block({
-  username
+  username,
 });
 ```
 

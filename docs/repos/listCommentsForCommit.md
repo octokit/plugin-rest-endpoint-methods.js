@@ -14,7 +14,7 @@ Use the `:commit_sha` to specify the commit that will have its comments listed.
 octokit.repos.listCommentsForCommit({
   owner,
   repo,
-  commit_sha
+  commit_sha,
 });
 ```
 

@@ -19,7 +19,7 @@ Once the migration has been `exported` you can [download the migration archive](
 
 ```js
 octokit.migrations.getStatusForAuthenticatedUser({
-  migration_id
+  migration_id,
 });
 ```
 

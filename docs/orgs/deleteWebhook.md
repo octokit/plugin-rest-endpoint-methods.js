@@ -11,7 +11,7 @@ type: API method
 ```js
 octokit.orgs.deleteWebhook({
   org,
-  hook_id
+  hook_id,
 });
 ```
 

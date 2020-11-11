@@ -16,7 +16,7 @@ Note that, if you choose not to pass any parameters, you'll need to set `Content
 octokit.issues.lock({
   owner,
   repo,
-  issue_number
+  issue_number,
 });
 ```
 

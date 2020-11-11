@@ -10,7 +10,7 @@ type: API method
 
 ```js
 octokit.projects.getColumn({
-  column_id
+  column_id,
 });
 ```
 

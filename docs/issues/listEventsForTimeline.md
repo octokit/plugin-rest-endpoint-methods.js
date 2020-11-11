@@ -12,7 +12,7 @@ type: API method
 octokit.issues.listEventsForTimeline({
   owner,
   repo,
-  issue_number
+  issue_number,
 });
 ```
 

@@ -16,7 +16,7 @@ If `truncated` is `true` in the response then the number of items in the `tree` 
 octokit.git.getTree({
   owner,
   repo,
-  tree_sha
+  tree_sha,
 });
 ```
 

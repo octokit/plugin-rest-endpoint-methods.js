@@ -14,7 +14,7 @@ List the reactions to a [pull request review comment](https://docs.github.com/re
 octokit.reactions.listForPullRequestReviewComment({
   owner,
   repo,
-  comment_id
+  comment_id,
 });
 ```
 

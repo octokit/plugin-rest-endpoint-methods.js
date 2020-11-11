@@ -12,7 +12,7 @@ Removes all interaction restrictions from public repositories in the given organ
 
 ```js
 octokit.interactions.removeRestrictionsForOrg({
-  org
+  org,
 });
 ```
 

@@ -12,7 +12,7 @@ type: API method
 octokit.repos.getDeployment({
   owner,
   repo,
-  deployment_id
+  deployment_id,
 });
 ```
 

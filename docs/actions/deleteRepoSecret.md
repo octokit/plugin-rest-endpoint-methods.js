@@ -14,7 +14,7 @@ Deletes a secret in a repository using the secret name. You must authenticate us
 octokit.actions.deleteRepoSecret({
   owner,
   repo,
-  secret_name
+  secret_name,
 });
 ```
 

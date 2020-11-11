@@ -15,7 +15,7 @@ Information about published releases are available to everyone. Only users with 
 ```js
 octokit.repos.listReleases({
   owner,
-  repo
+  repo,
 });
 ```
 

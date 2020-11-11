@@ -14,7 +14,7 @@ Protected branches are available in public repositories with GitHub Free and Git
 octokit.repos.getAllStatusCheckContexts({
   owner,
   repo,
-  branch
+  branch,
 });
 ```
 

@@ -14,7 +14,7 @@ You must authenticate using an access token with the `admin:enterprise` scope to
 
 ```js
 octokit.enterpriseAdmin.getAllowedActionsEnterprise({
-  enterprise
+  enterprise,
 });
 ```
 

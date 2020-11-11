@@ -15,7 +15,7 @@ octokit.repos.removeStatusCheckContexts({
   owner,
   repo,
   branch,
-  contexts
+  contexts,
 });
 ```
 

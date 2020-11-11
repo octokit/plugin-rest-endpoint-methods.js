@@ -13,7 +13,7 @@ Removing a user from this list will remove them from all teams and they will no 
 ```js
 octokit.orgs.removeMember({
   org,
-  username
+  username,
 });
 ```
 

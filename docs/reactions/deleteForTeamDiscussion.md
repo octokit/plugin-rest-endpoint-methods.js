@@ -17,7 +17,7 @@ octokit.reactions.deleteForTeamDiscussion({
   org,
   team_slug,
   discussion_number,
-  reaction_id
+  reaction_id,
 });
 ```
 

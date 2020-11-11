@@ -12,7 +12,7 @@ List all users who are outside collaborators of an organization.
 
 ```js
 octokit.orgs.listOutsideCollaborators({
-  org
+  org,
 });
 ```
 

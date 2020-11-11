@@ -16,7 +16,7 @@ endpoint. GitHub Apps must have the `administration` repository permission to us
 ```js
 octokit.actions.getGithubActionsPermissionsRepository({
   owner,
-  repo
+  repo,
 });
 ```
 

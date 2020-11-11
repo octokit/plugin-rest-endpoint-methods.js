@@ -11,7 +11,7 @@ type: API method
 ```js
 octokit.gists.deleteComment({
   gist_id,
-  comment_id
+  comment_id,
 });
 ```
 

@@ -28,7 +28,7 @@ Pass the appropriate [media type](https://docs.github.com/rest/overview/media-ty
 octokit.pulls.get({
   owner,
   repo,
-  pull_number
+  pull_number,
 });
 ```
 

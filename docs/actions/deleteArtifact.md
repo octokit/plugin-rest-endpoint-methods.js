@@ -14,7 +14,7 @@ Deletes an artifact for a workflow run. You must authenticate using an access to
 octokit.actions.deleteArtifact({
   owner,
   repo,
-  artifact_id
+  artifact_id,
 });
 ```
 

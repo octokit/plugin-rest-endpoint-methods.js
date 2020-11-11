@@ -13,7 +13,7 @@ Lists languages for the specified repository. The value shown for each language 
 ```js
 octokit.repos.listLanguages({
   owner,
-  repo
+  repo,
 });
 ```
 

@@ -12,7 +12,7 @@ type: API method
 octokit.gists.updateComment({
   gist_id,
   comment_id,
-  body
+  body,
 });
 ```
 

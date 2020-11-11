@@ -15,7 +15,7 @@ Access tokens must have the `admin:org_hook` scope, and GitHub Apps must have th
 ```js
 octokit.orgs.getWebhookConfigForOrg({
   org,
-  hook_id
+  hook_id,
 });
 ```
 

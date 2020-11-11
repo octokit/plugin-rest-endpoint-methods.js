@@ -16,7 +16,7 @@ List all comments on a team discussion. OAuth access tokens require the `read:di
 octokit.teams.listDiscussionCommentsInOrg({
   org,
   team_slug,
-  discussion_number
+  discussion_number,
 });
 ```
 

@@ -14,7 +14,7 @@ Users with push access can unlock an issue's conversation.
 octokit.issues.unlock({
   owner,
   repo,
-  issue_number
+  issue_number,
 });
 ```
 

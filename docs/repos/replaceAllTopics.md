@@ -12,7 +12,7 @@ type: API method
 octokit.repos.replaceAllTopics({
   owner,
   repo,
-  names
+  names,
 });
 ```
 

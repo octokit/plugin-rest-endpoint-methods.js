@@ -16,7 +16,7 @@ this endpoint.
 octokit.actions.deleteWorkflowRun({
   owner,
   repo,
-  run_id
+  run_id,
 });
 ```
 

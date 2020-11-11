@@ -11,7 +11,7 @@ type: API method
 ```js
 octokit.orgs.unblockUser({
   org,
-  username
+  username,
 });
 ```
 

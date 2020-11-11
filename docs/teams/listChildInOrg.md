@@ -15,7 +15,7 @@ Lists the child teams of the team specified by `{team_slug}`.
 ```js
 octokit.teams.listChildInOrg({
   org,
-  team_slug
+  team_slug,
 });
 ```
 

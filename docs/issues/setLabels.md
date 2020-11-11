@@ -14,7 +14,7 @@ Removes any previous labels and sets the new labels for an issue.
 octokit.issues.setLabels({
   owner,
   repo,
-  issue_number
+  issue_number,
 });
 ```
 

@@ -12,7 +12,7 @@ View extended details for a single public SSH key. Requires that you are authent
 
 ```js
 octokit.users.getPublicSshKeyForAuthenticated({
-  key_id
+  key_id,
 });
 ```
 

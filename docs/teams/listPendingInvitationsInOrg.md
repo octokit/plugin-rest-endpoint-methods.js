@@ -15,7 +15,7 @@ The return hash contains a `role` field which refers to the Organization Invitat
 ```js
 octokit.teams.listPendingInvitationsInOrg({
   org,
-  team_slug
+  team_slug,
 });
 ```
 

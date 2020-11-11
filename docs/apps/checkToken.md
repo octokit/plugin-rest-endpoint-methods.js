@@ -13,7 +13,7 @@ OAuth applications can use a special API method for checking OAuth token validit
 ```js
 octokit.apps.checkToken({
   client_id,
-  access_token
+  access_token,
 });
 ```
 

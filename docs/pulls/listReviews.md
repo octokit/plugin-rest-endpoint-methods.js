@@ -14,7 +14,7 @@ The list of reviews returns in chronological order.
 octokit.pulls.listReviews({
   owner,
   repo,
-  pull_number
+  pull_number,
 });
 ```
 

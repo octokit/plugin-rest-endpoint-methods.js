@@ -16,7 +16,7 @@ Removes an organization project from a team. An organization owner or a team mai
 octokit.teams.removeProjectInOrg({
   org,
   team_slug,
-  project_id
+  project_id,
 });
 ```
 

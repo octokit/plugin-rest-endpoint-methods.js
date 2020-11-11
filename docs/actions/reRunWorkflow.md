@@ -14,7 +14,7 @@ Re-runs your workflow run using its `id`. You must authenticate using an access 
 octokit.actions.reRunWorkflow({
   owner,
   repo,
-  run_id
+  run_id,
 });
 ```
 

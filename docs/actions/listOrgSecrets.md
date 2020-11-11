@@ -12,7 +12,7 @@ Lists all secrets available in an organization without revealing their encrypted
 
 ```js
 octokit.actions.listOrgSecrets({
-  org
+  org,
 });
 ```
 

@@ -17,7 +17,7 @@ octokit.reactions.listForTeamDiscussionCommentInOrg({
   org,
   team_slug,
   discussion_number,
-  comment_number
+  comment_number,
 });
 ```
 

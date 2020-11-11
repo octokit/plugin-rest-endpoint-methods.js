@@ -21,7 +21,7 @@ octokit.repos.setUserAccessRestrictions({
   owner,
   repo,
   branch,
-  users
+  users,
 });
 ```
 

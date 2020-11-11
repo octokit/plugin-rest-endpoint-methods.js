@@ -10,7 +10,7 @@ type: API method
 
 ```js
 octokit.projects.createForAuthenticatedUser({
-  name
+  name,
 });
 ```
 

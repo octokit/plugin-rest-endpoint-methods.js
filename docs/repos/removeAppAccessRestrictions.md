@@ -21,7 +21,7 @@ octokit.repos.removeAppAccessRestrictions({
   owner,
   repo,
   branch,
-  apps
+  apps,
 });
 ```
 

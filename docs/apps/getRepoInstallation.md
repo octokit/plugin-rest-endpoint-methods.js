@@ -15,7 +15,7 @@ You must use a [JWT](https://docs.github.com/apps/building-github-apps/authentic
 ```js
 octokit.apps.getRepoInstallation({
   owner,
-  repo
+  repo,
 });
 ```
 

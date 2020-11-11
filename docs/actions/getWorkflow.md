@@ -14,7 +14,7 @@ Gets a specific workflow. You can replace `workflow_id` with the workflow file n
 octokit.actions.getWorkflow({
   owner,
   repo,
-  workflow_id
+  workflow_id,
 });
 ```
 

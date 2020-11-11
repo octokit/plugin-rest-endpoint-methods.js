@@ -15,7 +15,7 @@ octokit.git.createRef({
   owner,
   repo,
   ref,
-  sha
+  sha,
 });
 ```
 

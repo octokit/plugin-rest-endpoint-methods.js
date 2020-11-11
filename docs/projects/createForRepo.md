@@ -14,7 +14,7 @@ Creates a repository project board. Returns a `404 Not Found` status if projects
 octokit.projects.createForRepo({
   owner,
   repo,
-  name
+  name,
 });
 ```
 

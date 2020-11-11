@@ -10,7 +10,7 @@ type: API method
 
 ```js
 octokit.gists.delete({
-  gist_id
+  gist_id,
 });
 ```
 

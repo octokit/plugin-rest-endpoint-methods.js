@@ -16,7 +16,7 @@ Disables the ability to restrict who can push to this branch.
 octokit.repos.deleteAccessRestrictions({
   owner,
   repo,
-  branch
+  branch,
 });
 ```
 

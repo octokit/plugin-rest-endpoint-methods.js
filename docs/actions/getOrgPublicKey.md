@@ -12,7 +12,7 @@ Gets your public key, which you need to encrypt secrets. You need to encrypt a s
 
 ```js
 octokit.actions.getOrgPublicKey({
-  org
+  org,
 });
 ```
 

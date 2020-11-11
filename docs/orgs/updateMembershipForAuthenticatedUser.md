@@ -11,7 +11,7 @@ type: API method
 ```js
 octokit.orgs.updateMembershipForAuthenticatedUser({
   org,
-  state
+  state,
 });
 ```
 

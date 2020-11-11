@@ -17,7 +17,7 @@ scope to use this endpoint.
 octokit.actions.deleteSelfHostedRunnerFromRepo({
   owner,
   repo,
-  runner_id
+  runner_id,
 });
 ```
 

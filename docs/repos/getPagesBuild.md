@@ -12,7 +12,7 @@ type: API method
 octokit.repos.getPagesBuild({
   owner,
   repo,
-  build_id
+  build_id,
 });
 ```
 

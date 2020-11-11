@@ -18,7 +18,7 @@ You must use an [installation access token](https://docs.github.com/apps/buildin
 octokit.apps.createContentAttachment({
   content_reference_id,
   title,
-  body
+  body,
 });
 ```
 

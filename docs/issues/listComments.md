@@ -14,7 +14,7 @@ Issue Comments are ordered by ascending ID.
 octokit.issues.listComments({
   owner,
   repo,
-  issue_number
+  issue_number,
 });
 ```
 

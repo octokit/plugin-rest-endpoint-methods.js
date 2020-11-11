@@ -11,7 +11,7 @@ type: API method
 ```js
 octokit.repos.listDeployKeys({
   owner,
-  repo
+  repo,
 });
 ```
 

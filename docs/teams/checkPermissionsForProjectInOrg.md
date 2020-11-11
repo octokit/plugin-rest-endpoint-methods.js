@@ -16,7 +16,7 @@ Checks whether a team has `read`, `write`, or `admin` permissions for an organiz
 octokit.teams.checkPermissionsForProjectInOrg({
   org,
   team_slug,
-  project_id
+  project_id,
 });
 ```
 

@@ -17,7 +17,7 @@ the `Location` header to make a second `GET` request.
 octokit.repos.downloadTarballArchive({
   owner,
   repo,
-  ref
+  ref,
 });
 ```
 

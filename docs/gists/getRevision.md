@@ -11,7 +11,7 @@ type: API method
 ```js
 octokit.gists.getRevision({
   gist_id,
-  sha
+  sha,
 });
 ```
 

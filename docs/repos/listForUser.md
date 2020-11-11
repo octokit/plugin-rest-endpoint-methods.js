@@ -12,7 +12,7 @@ Lists public repositories for the specified user.
 
 ```js
 octokit.repos.listForUser({
-  username
+  username,
 });
 ```
 

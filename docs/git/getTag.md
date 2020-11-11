@@ -41,7 +41,7 @@ These are the possible values for `reason` in the `verification` object:
 octokit.git.getTag({
   owner,
   repo,
-  tag_sha
+  tag_sha,
 });
 ```
 

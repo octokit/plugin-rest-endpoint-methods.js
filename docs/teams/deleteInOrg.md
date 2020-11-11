@@ -17,7 +17,7 @@ If you are an organization owner, deleting a parent team will delete all of its 
 ```js
 octokit.teams.deleteInOrg({
   org,
-  team_slug
+  team_slug,
 });
 ```
 

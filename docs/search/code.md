@@ -28,7 +28,7 @@ Due to the complexity of searching code, there are a few restrictions on how sea
 
 ```js
 octokit.search.code({
-  q
+  q,
 });
 ```
 

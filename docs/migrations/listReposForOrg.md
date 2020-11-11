@@ -13,7 +13,7 @@ List all the repositories for this organization migration.
 ```js
 octokit.migrations.listReposForOrg({
   org,
-  migration_id
+  migration_id,
 });
 ```
 

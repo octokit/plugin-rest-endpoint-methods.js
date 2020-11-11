@@ -14,7 +14,7 @@ Users with push access to the repository can delete a release.
 octokit.repos.deleteRelease({
   owner,
   repo,
-  release_id
+  release_id,
 });
 ```
 

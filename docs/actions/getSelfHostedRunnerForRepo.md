@@ -17,7 +17,7 @@ endpoint.
 octokit.actions.getSelfHostedRunnerForRepo({
   owner,
   repo,
-  runner_id
+  runner_id,
 });
 ```
 

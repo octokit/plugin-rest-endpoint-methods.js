@@ -13,7 +13,7 @@ Simple filtering of deployments is available via query parameters:
 ```js
 octokit.repos.listDeployments({
   owner,
-  repo
+  repo,
 });
 ```
 

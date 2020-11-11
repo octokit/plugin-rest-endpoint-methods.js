@@ -21,7 +21,7 @@ octokit.repos.setTeamAccessRestrictions({
   owner,
   repo,
   branch,
-  teams
+  teams,
 });
 ```
 

@@ -12,7 +12,7 @@ Lists public gists for the specified user:
 
 ```js
 octokit.gists.listForUser({
-  username
+  username,
 });
 ```
 

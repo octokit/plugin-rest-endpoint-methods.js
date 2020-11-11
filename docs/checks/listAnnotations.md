@@ -14,7 +14,7 @@ Lists annotations for a check run using the annotation `id`. GitHub Apps must ha
 octokit.checks.listAnnotations({
   owner,
   repo,
-  check_run_id
+  check_run_id,
 });
 ```
 

@@ -15,7 +15,7 @@ You must authenticate using an access token with the `repo` scope to use this en
 ```js
 octokit.actions.getAllowedActionsRepository({
   owner,
-  repo
+  repo,
 });
 ```
 

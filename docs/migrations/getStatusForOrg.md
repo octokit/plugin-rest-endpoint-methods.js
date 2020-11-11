@@ -20,7 +20,7 @@ The `state` of a migration can be one of the following values:
 ```js
 octokit.migrations.getStatusForOrg({
   org,
-  migration_id
+  migration_id,
 });
 ```
 

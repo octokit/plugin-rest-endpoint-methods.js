@@ -13,7 +13,7 @@ List the details of recent code scanning analyses for a repository. For private 
 ```js
 octokit.codeScanning.listRecentAnalyses({
   owner,
-  repo
+  repo,
 });
 ```
 

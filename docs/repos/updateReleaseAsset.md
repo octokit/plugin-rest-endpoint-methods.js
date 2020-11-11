@@ -14,7 +14,7 @@ Users with push access to the repository can edit a release asset.
 octokit.repos.updateReleaseAsset({
   owner,
   repo,
-  asset_id
+  asset_id,
 });
 ```
 

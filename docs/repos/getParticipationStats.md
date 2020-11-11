@@ -15,7 +15,7 @@ The array order is oldest week (index 0) to most recent week.
 ```js
 octokit.repos.getParticipationStats({
   owner,
-  repo
+  repo,
 });
 ```
 

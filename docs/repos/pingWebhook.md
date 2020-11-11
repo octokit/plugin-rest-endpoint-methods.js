@@ -14,7 +14,7 @@ This will trigger a [ping event](https://docs.github.com/webhooks/#ping-event) t
 octokit.repos.pingWebhook({
   owner,
   repo,
-  hook_id
+  hook_id,
 });
 ```
 

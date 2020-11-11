@@ -11,7 +11,7 @@ type: API method
 ```js
 octokit.activity.checkRepoIsStarredByAuthenticatedUser({
   owner,
-  repo
+  repo,
 });
 ```
 

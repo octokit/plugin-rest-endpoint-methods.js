@@ -12,7 +12,7 @@ type: API method
 octokit.repos.getBranch({
   owner,
   repo,
-  branch
+  branch,
 });
 ```
 

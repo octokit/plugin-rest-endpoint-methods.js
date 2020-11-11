@@ -15,7 +15,7 @@ READMEs support [custom media types](https://docs.github.com/rest/reference/repo
 ```js
 octokit.repos.getReadme({
   owner,
-  repo
+  repo,
 });
 ```
 

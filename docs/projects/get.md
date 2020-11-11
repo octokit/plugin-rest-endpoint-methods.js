@@ -12,7 +12,7 @@ Gets a project by its `id`. Returns a `404 Not Found` status if projects are dis
 
 ```js
 octokit.projects.get({
-  project_id
+  project_id,
 });
 ```
 

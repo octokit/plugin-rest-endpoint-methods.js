@@ -13,7 +13,7 @@ octokit.repos.merge({
   owner,
   repo,
   base,
-  head
+  head,
 });
 ```
 

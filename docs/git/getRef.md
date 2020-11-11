@@ -16,7 +16,7 @@ Returns a single reference from your Git database. The `:ref` in the URL must be
 octokit.git.getRef({
   owner,
   repo,
-  ref
+  ref,
 });
 ```
 

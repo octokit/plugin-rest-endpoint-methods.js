@@ -14,7 +14,7 @@ Returns a webhook configured in a repository. To get only the webhook `config` p
 octokit.repos.getWebhook({
   owner,
   repo,
-  hook_id
+  hook_id,
 });
 ```
 

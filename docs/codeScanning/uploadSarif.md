@@ -18,7 +18,7 @@ octokit.codeScanning.uploadSarif({
   commit_sha,
   ref,
   sarif,
-  tool_name
+  tool_name,
 });
 ```
 

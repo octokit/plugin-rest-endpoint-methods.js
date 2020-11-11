@@ -13,7 +13,7 @@ A transfer request will need to be accepted by the new owner when transferring a
 ```js
 octokit.repos.transfer({
   owner,
-  repo
+  repo,
 });
 ```
 

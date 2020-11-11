@@ -40,7 +40,7 @@ octokit.pulls.createReviewComment({
   repo,
   pull_number,
   body,
-  path
+  path,
 });
 ```
 

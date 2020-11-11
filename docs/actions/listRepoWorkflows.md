@@ -13,7 +13,7 @@ Lists the workflows in a repository. Anyone with read access to the repository c
 ```js
 octokit.actions.listRepoWorkflows({
   owner,
-  repo
+  repo,
 });
 ```
 

@@ -33,7 +33,7 @@ The `reactions` key will have the following payload where `url` can be used to c
 ```js
 octokit.pulls.listReviewCommentsForRepo({
   owner,
-  repo
+  repo,
 });
 ```
 
