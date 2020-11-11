@@ -11,7 +11,7 @@ type: API method
 ```js
 octokit.projects.updateColumn({
   column_id,
-  name
+  name,
 });
 ```
 

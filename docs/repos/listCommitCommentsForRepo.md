@@ -15,7 +15,7 @@ Comments are ordered by ascending ID.
 ```js
 octokit.repos.listCommitCommentsForRepo({
   owner,
-  repo
+  repo,
 });
 ```
 

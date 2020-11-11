@@ -11,7 +11,7 @@ type: API method
 ```js
 octokit.issues.listEventsForRepo({
   owner,
-  repo
+  repo,
 });
 ```
 

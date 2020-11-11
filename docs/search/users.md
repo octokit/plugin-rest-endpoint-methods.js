@@ -20,7 +20,7 @@ This query searches for users with the name `tom`. The results are restricted to
 
 ```js
 octokit.search.users({
-  q
+  q,
 });
 ```
 

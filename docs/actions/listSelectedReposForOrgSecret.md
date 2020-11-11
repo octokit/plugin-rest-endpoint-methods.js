@@ -13,7 +13,7 @@ Lists all repositories that have been selected when the `visibility` for reposit
 ```js
 octokit.actions.listSelectedReposForOrgSecret({
   org,
-  secret_name
+  secret_name,
 });
 ```
 

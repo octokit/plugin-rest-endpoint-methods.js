@@ -12,7 +12,7 @@ Adds a public SSH key to the authenticated user's GitHub account. Requires that 
 
 ```js
 octokit.users.createPublicSshKeyForAuthenticated({
-  key
+  key,
 });
 ```
 

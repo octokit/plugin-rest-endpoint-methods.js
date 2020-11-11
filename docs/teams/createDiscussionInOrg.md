@@ -19,7 +19,7 @@ octokit.teams.createDiscussionInOrg({
   org,
   team_slug,
   title,
-  body
+  body,
 });
 ```
 

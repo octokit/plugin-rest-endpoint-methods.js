@@ -15,7 +15,7 @@ You must use a personal access token (which you can create via the [command line
 ```js
 octokit.apps.removeRepoFromInstallation({
   installation_id,
-  repository_id
+  repository_id,
 });
 ```
 

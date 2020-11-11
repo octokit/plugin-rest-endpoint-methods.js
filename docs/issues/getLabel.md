@@ -12,7 +12,7 @@ type: API method
 octokit.issues.getLabel({
   owner,
   repo,
-  name
+  name,
 });
 ```
 

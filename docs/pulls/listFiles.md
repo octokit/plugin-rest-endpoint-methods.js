@@ -14,7 +14,7 @@ type: API method
 octokit.pulls.listFiles({
   owner,
   repo,
-  pull_number
+  pull_number,
 });
 ```
 

@@ -16,7 +16,7 @@ repositories, you will get a `403 Forbidden` response.
 ```js
 octokit.repos.delete({
   owner,
-  repo
+  repo,
 });
 ```
 

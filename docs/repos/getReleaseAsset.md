@@ -14,7 +14,7 @@ To download the asset's binary content, set the `Accept` header of the request t
 octokit.repos.getReleaseAsset({
   owner,
   repo,
-  asset_id
+  asset_id,
 });
 ```
 

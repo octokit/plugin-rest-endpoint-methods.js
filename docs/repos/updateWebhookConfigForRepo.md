@@ -16,7 +16,7 @@ Access tokens must have the `write:repo_hook` or `repo` scope, and GitHub Apps m
 octokit.repos.updateWebhookConfigForRepo({
   owner,
   repo,
-  hook_id
+  hook_id,
 });
 ```
 

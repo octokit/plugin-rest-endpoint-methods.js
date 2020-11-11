@@ -13,7 +13,7 @@ type: API method
 ```js
 octokit.repos.update({
   owner,
-  repo
+  repo,
 });
 ```
 

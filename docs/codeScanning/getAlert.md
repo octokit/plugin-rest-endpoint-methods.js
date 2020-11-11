@@ -16,7 +16,7 @@ The security `alert_number` is found at the end of the security alert's URL. For
 octokit.codeScanning.getAlert({
   owner,
   repo,
-  alert_number
+  alert_number,
 });
 ```
 

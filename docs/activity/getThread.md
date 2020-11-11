@@ -10,7 +10,7 @@ type: API method
 
 ```js
 octokit.activity.getThread({
-  thread_id
+  thread_id,
 });
 ```
 

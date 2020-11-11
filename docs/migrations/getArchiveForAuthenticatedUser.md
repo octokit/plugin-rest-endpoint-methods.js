@@ -32,7 +32,7 @@ The archive will also contain an `attachments` directory that includes all attac
 
 ```js
 octokit.migrations.getArchiveForAuthenticatedUser({
-  migration_id
+  migration_id,
 });
 ```
 

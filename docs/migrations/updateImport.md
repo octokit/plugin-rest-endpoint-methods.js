@@ -14,7 +14,7 @@ request. If no parameters are provided, the import will be restarted.
 ```js
 octokit.migrations.updateImport({
   owner,
-  repo
+  repo,
 });
 ```
 

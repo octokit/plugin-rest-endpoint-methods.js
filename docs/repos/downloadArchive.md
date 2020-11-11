@@ -19,7 +19,7 @@ the `Location` header to make a second `GET` request.
 octokit.repos.downloadArchive({
   owner,
   repo,
-  ref
+  ref,
 });
 ```
 

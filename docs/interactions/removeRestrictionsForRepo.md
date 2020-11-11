@@ -13,7 +13,7 @@ Removes all interaction restrictions from the given repository. You must have ow
 ```js
 octokit.interactions.removeRestrictionsForRepo({
   owner,
-  repo
+  repo,
 });
 ```
 

@@ -18,7 +18,7 @@ The access the user has to each repository is included in the hash under the `pe
 
 ```js
 octokit.apps.listInstallationReposForAuthenticatedUser({
-  installation_id
+  installation_id,
 });
 ```
 

@@ -14,7 +14,7 @@ Cancels a workflow run using its `id`. You must authenticate using an access tok
 octokit.actions.cancelWorkflowRun({
   owner,
   repo,
-  run_id
+  run_id,
 });
 ```
 

@@ -16,7 +16,7 @@ Returns all branches where the given commit SHA is the HEAD, or latest commit fo
 octokit.repos.listBranchesForHeadCommit({
   owner,
   repo,
-  commit_sha
+  commit_sha,
 });
 ```
 

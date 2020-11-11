@@ -12,7 +12,7 @@ List the users blocked by an organization.
 
 ```js
 octokit.orgs.listBlockedUsers({
-  org
+  org,
 });
 ```
 

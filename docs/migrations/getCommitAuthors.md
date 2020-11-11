@@ -15,7 +15,7 @@ This endpoint and the [Map a commit author](https://docs.github.com/rest/referen
 ```js
 octokit.migrations.getCommitAuthors({
   owner,
-  repo
+  repo,
 });
 ```
 

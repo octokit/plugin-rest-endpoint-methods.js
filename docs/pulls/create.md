@@ -21,7 +21,7 @@ octokit.pulls.create({
   owner,
   repo,
   head,
-  base
+  base,
 });
 ```
 

@@ -14,7 +14,7 @@ octokit.pulls.submitReview({
   repo,
   pull_number,
   review_id,
-  event
+  event,
 });
 ```
 

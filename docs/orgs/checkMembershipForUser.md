@@ -13,7 +13,7 @@ Check if a user is, publicly or privately, a member of the organization.
 ```js
 octokit.orgs.checkMembershipForUser({
   org,
-  username
+  username,
 });
 ```
 

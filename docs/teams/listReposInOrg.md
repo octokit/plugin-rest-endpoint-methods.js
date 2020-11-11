@@ -15,7 +15,7 @@ Lists a team's repositories visible to the authenticated user.
 ```js
 octokit.teams.listReposInOrg({
   org,
-  team_slug
+  team_slug,
 });
 ```
 

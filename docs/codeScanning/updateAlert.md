@@ -16,7 +16,7 @@ octokit.codeScanning.updateAlert({
   owner,
   repo,
   alert_number,
-  state
+  state,
 });
 ```
 

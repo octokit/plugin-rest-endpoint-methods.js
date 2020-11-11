@@ -14,7 +14,7 @@ Removes a repository from an organization secret when the `visibility` for repos
 octokit.actions.removeSelectedRepoFromOrgSecret({
   org,
   secret_name,
-  repository_id
+  repository_id,
 });
 ```
 

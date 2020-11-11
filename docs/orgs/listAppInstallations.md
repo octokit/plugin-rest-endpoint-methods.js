@@ -12,7 +12,7 @@ Lists all GitHub Apps in an organization. The installation count includes all Gi
 
 ```js
 octokit.orgs.listAppInstallations({
-  org
+  org,
 });
 ```
 

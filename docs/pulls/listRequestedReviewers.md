@@ -12,7 +12,7 @@ type: API method
 octokit.pulls.listRequestedReviewers({
   owner,
   repo,
-  pull_number
+  pull_number,
 });
 ```
 

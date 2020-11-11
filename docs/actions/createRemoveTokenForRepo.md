@@ -22,7 +22,7 @@ To remove your self-hosted runner from a repository, replace TOKEN with the remo
 ```js
 octokit.actions.createRemoveTokenForRepo({
   owner,
-  repo
+  repo,
 });
 ```
 

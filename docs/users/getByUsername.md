@@ -18,7 +18,7 @@ The Emails API enables you to list all of your email addresses, and toggle a pri
 
 ```js
 octokit.users.getByUsername({
-  username
+  username,
 });
 ```
 

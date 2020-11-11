@@ -13,7 +13,7 @@ List all notifications for the current user.
 ```js
 octokit.activity.listRepoNotificationsForAuthenticatedUser({
   owner,
-  repo
+  repo,
 });
 ```
 

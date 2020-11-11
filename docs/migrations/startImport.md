@@ -14,7 +14,7 @@ Start a source import to a GitHub repository using GitHub Importer.
 octokit.migrations.startImport({
   owner,
   repo,
-  vcs_url
+  vcs_url,
 });
 ```
 

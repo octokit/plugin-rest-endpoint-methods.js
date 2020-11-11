@@ -13,7 +13,7 @@ Enables automated security fixes for a repository. The authenticated user must h
 ```js
 octokit.repos.enableAutomatedSecurityFixes({
   owner,
-  repo
+  repo,
 });
 ```
 

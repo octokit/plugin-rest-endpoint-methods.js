@@ -14,7 +14,7 @@ You can import repositories from Subversion, Mercurial, and TFS that include fil
 octokit.migrations.setLfsPreference({
   owner,
   repo,
-  use_lfs
+  use_lfs,
 });
 ```
 

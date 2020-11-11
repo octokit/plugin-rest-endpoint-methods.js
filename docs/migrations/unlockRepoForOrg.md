@@ -14,7 +14,7 @@ Unlocks a repository that was locked for migration. You should unlock each migra
 octokit.migrations.unlockRepoForOrg({
   org,
   migration_id,
-  repo_name
+  repo_name,
 });
 ```
 

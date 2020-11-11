@@ -12,7 +12,7 @@ type: API method
 octokit.issues.deleteComment({
   owner,
   repo,
-  comment_id
+  comment_id,
 });
 ```
 

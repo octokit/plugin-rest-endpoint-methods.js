@@ -23,7 +23,7 @@ This query searches for the keyword `windows`, within any open issue that is lab
 
 ```js
 octokit.search.issuesAndPullRequests({
-  q
+  q,
 });
 ```
 

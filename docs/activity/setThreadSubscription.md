@@ -16,7 +16,7 @@ Unsubscribing from a conversation in a repository that you are not watching is f
 
 ```js
 octokit.activity.setThreadSubscription({
-  thread_id
+  thread_id,
 });
 ```
 

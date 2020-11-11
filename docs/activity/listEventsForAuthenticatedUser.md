@@ -12,7 +12,7 @@ If you are authenticated as the given user, you will see your private events. Ot
 
 ```js
 octokit.activity.listEventsForAuthenticatedUser({
-  username
+  username,
 });
 ```
 

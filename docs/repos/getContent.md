@@ -49,7 +49,7 @@ github.com URLs (`html_url` and `_links["html"]`) will have null values.
 octokit.repos.getContent({
   owner,
   repo,
-  path
+  path,
 });
 ```
 

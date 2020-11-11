@@ -20,7 +20,7 @@ This input example shows how you can use the `client_payload` as a test to debug
 octokit.repos.createDispatchEvent({
   owner,
   repo,
-  event_type
+  event_type,
 });
 ```
 

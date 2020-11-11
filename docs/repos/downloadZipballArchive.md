@@ -17,7 +17,7 @@ the `Location` header to make a second `GET` request.
 octokit.repos.downloadZipballArchive({
   owner,
   repo,
-  ref
+  ref,
 });
 ```
 

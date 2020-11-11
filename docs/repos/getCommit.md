@@ -49,7 +49,7 @@ These are the possible values for `reason` in the `verification` object:
 octokit.repos.getCommit({
   owner,
   repo,
-  ref
+  ref,
 });
 ```
 

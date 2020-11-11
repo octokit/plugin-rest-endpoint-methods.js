@@ -13,7 +13,7 @@ Returns the last year of commit activity grouped by week. The `days` array is a 
 ```js
 octokit.repos.getCommitActivityStats({
   owner,
-  repo
+  repo,
 });
 ```
 

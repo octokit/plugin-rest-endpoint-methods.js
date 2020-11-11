@@ -10,7 +10,7 @@ type: API method
 
 ```js
 octokit.activity.markThreadAsRead({
-  thread_id
+  thread_id,
 });
 ```
 

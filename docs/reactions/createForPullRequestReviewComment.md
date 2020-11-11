@@ -15,7 +15,7 @@ octokit.reactions.createForPullRequestReviewComment({
   owner,
   repo,
   comment_id,
-  content
+  content,
 });
 ```
 

@@ -21,7 +21,7 @@ The labels that best match the query appear first in the search results.
 ```js
 octokit.search.labels({
   repository_id,
-  q
+  q,
 });
 ```
 

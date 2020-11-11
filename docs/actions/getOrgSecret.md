@@ -13,7 +13,7 @@ Gets a single organization secret without revealing its encrypted value. You mus
 ```js
 octokit.actions.getOrgSecret({
   org,
-  secret_name
+  secret_name,
 });
 ```
 

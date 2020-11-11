@@ -12,7 +12,7 @@ type: API method
 octokit.git.createBlob({
   owner,
   repo,
-  content
+  content,
 });
 ```
 

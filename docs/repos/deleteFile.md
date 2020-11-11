@@ -22,7 +22,7 @@ octokit.repos.deleteFile({
   repo,
   path,
   message,
-  sha
+  sha,
 });
 ```
 

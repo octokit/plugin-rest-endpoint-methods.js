@@ -17,7 +17,7 @@ octokit.projects.createCard({
   column_id,
   note,
   content_id,
-  content_type
+  content_type,
 });
 ```
 

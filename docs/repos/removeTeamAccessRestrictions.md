@@ -21,7 +21,7 @@ octokit.repos.removeTeamAccessRestrictions({
   owner,
   repo,
   branch,
-  teams
+  teams,
 });
 ```
 

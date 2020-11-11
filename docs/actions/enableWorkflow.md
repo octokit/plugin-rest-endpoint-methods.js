@@ -16,7 +16,7 @@ You must authenticate using an access token with the `repo` scope to use this en
 octokit.actions.enableWorkflow({
   owner,
   repo,
-  workflow_id
+  workflow_id,
 });
 ```
 

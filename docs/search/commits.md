@@ -19,7 +19,7 @@ For example, if you want to find commits related to CSS in the [octocat/Spoon-Kn
 
 ```js
 octokit.search.commits({
-  q
+  q,
 });
 ```
 

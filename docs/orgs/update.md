@@ -14,7 +14,7 @@ Enables an authenticated organization owner with the `admin:org` scope to update
 
 ```js
 octokit.orgs.update({
-  org
+  org,
 });
 ```
 

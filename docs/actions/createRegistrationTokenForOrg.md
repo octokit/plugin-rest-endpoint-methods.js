@@ -22,7 +22,7 @@ Configure your self-hosted runner, replacing `TOKEN` with the registration token
 
 ```js
 octokit.actions.createRegistrationTokenForOrg({
-  org
+  org,
 });
 ```
 

@@ -16,7 +16,7 @@ Access tokens must have the `user` scope.
 
 ```js
 octokit.billing.getGithubPackagesBillingUser({
-  username
+  username,
 });
 ```
 

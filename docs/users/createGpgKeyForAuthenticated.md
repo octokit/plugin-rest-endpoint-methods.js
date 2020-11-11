@@ -12,7 +12,7 @@ Adds a GPG key to the authenticated user's GitHub account. Requires that you are
 
 ```js
 octokit.users.createGpgKeyForAuthenticated({
-  armored_public_key
+  armored_public_key,
 });
 ```
 

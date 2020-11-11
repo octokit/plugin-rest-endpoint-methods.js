@@ -14,7 +14,7 @@ Gets a single repository secret without revealing its encrypted value. You must 
 octokit.actions.getRepoSecret({
   owner,
   repo,
-  secret_name
+  secret_name,
 });
 ```
 

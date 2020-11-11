@@ -15,7 +15,7 @@ Lists the organization projects for a team.
 ```js
 octokit.teams.listProjectsInOrg({
   org,
-  team_slug
+  team_slug,
 });
 ```
 

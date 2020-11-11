@@ -16,7 +16,7 @@ Lists the teams who have push access to this branch. The list includes child tea
 octokit.repos.getTeamsWithAccessToProtectedBranch({
   owner,
   repo,
-  branch
+  branch,
 });
 ```
 

@@ -14,7 +14,7 @@ List the reactions to a [commit comment](https://docs.github.com/rest/reference/
 octokit.reactions.listForCommitComment({
   owner,
   repo,
-  comment_id
+  comment_id,
 });
 ```
 

@@ -21,7 +21,7 @@ octokit.repos.addAppAccessRestrictions({
   owner,
   repo,
   branch,
-  apps
+  apps,
 });
 ```
 

@@ -13,7 +13,7 @@ If you would like to watch a repository, set `subscribed` to `true`. If you woul
 ```js
 octokit.activity.setRepoSubscription({
   owner,
-  repo
+  repo,
 });
 ```
 

@@ -16,7 +16,7 @@ Get a specific discussion on a team's page. OAuth access tokens require the `rea
 octokit.teams.getDiscussionInOrg({
   org,
   team_slug,
-  discussion_number
+  discussion_number,
 });
 ```
 

@@ -13,7 +13,7 @@ Returns the collaborator's permission level for an organization project. Possibl
 ```js
 octokit.projects.getPermissionForUser({
   project_id,
-  username
+  username,
 });
 ```
 

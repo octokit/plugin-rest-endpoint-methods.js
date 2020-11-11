@@ -11,7 +11,7 @@ type: API method
 ```js
 octokit.gists.createComment({
   gist_id,
-  body
+  body,
 });
 ```
 

@@ -12,7 +12,7 @@ type: API method
 octokit.repos.deleteInvitation({
   owner,
   repo,
-  invitation_id
+  invitation_id,
 });
 ```
 

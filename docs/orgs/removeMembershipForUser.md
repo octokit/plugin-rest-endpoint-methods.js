@@ -15,7 +15,7 @@ If the specified user is an active member of the organization, this will remove 
 ```js
 octokit.orgs.removeMembershipForUser({
   org,
-  username
+  username,
 });
 ```
 

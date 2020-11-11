@@ -40,7 +40,7 @@ These are the possible values for `reason` in the `verification` object:
 ```js
 octokit.repos.listCommits({
   owner,
-  repo
+  repo,
 });
 ```
 

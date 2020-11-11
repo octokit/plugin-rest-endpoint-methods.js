@@ -20,7 +20,7 @@ If you request matching references for a branch named `feature` but the branch `
 octokit.git.listMatchingRefs({
   owner,
   repo,
-  ref
+  ref,
 });
 ```
 

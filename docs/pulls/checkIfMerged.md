@@ -12,7 +12,7 @@ type: API method
 octokit.pulls.checkIfMerged({
   owner,
   repo,
-  pull_number
+  pull_number,
 });
 ```
 

@@ -16,7 +16,7 @@ Access tokens must have the `read:org` scope.
 
 ```js
 octokit.billing.getGithubPackagesBillingOrg({
-  org
+  org,
 });
 ```
 

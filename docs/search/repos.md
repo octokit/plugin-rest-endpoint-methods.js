@@ -24,7 +24,7 @@ When you include the `mercy` preview header, you can also search for multiple to
 
 ```js
 octokit.search.repos({
-  q
+  q,
 });
 ```
 

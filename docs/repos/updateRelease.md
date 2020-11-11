@@ -14,7 +14,7 @@ Users with push access to the repository can edit a release.
 octokit.repos.updateRelease({
   owner,
   repo,
-  release_id
+  release_id,
 });
 ```
 

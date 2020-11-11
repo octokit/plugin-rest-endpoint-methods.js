@@ -15,7 +15,7 @@ octokit.repos.setStatusCheckContexts({
   owner,
   repo,
   branch,
-  contexts
+  contexts,
 });
 ```
 

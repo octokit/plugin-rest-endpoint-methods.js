@@ -16,7 +16,7 @@ To edit a team, the authenticated user must either be an organization owner or a
 octokit.teams.updateInOrg({
   org,
   team_slug,
-  name
+  name,
 });
 ```
 

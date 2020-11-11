@@ -12,7 +12,7 @@ type: API method
 octokit.git.deleteRef({
   owner,
   repo,
-  ref
+  ref,
 });
 ```
 

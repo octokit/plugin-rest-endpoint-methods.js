@@ -19,7 +19,7 @@ octokit.actions.createWorkflowDispatch({
   owner,
   repo,
   workflow_id,
-  ref
+  ref,
 });
 ```
 

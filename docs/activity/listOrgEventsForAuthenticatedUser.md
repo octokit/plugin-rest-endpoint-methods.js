@@ -13,7 +13,7 @@ This is the user's organization dashboard. You must be authenticated as the user
 ```js
 octokit.activity.listOrgEventsForAuthenticatedUser({
   username,
-  org
+  org,
 });
 ```
 

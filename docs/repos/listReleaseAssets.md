@@ -12,7 +12,7 @@ type: API method
 octokit.repos.listReleaseAssets({
   owner,
   repo,
-  release_id
+  release_id,
 });
 ```
 

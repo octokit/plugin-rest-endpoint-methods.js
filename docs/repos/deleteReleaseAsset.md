@@ -12,7 +12,7 @@ type: API method
 octokit.repos.deleteReleaseAsset({
   owner,
   repo,
-  asset_id
+  asset_id,
 });
 ```
 

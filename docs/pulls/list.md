@@ -13,7 +13,7 @@ Draft pull requests are available in public repositories with GitHub Free and Gi
 ```js
 octokit.pulls.list({
   owner,
-  repo
+  repo,
 });
 ```
 

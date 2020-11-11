@@ -21,7 +21,7 @@ octokit.teams.checkPermissionsForRepoInOrg({
   org,
   team_slug,
   owner,
-  repo
+  repo,
 });
 ```
 

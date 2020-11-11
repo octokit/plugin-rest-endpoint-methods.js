@@ -55,7 +55,7 @@ octokit.repos.compareCommits({
   owner,
   repo,
   base,
-  head
+  head,
 });
 ```
 

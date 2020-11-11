@@ -15,7 +15,7 @@ Similar to [Get repository content](https://docs.github.com/rest/reference/repos
 ```js
 octokit.licenses.getForRepo({
   owner,
-  repo
+  repo,
 });
 ```
 

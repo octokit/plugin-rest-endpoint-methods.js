@@ -15,7 +15,7 @@ You must authenticate using an access token with the `admin:org` scope to use th
 ```js
 octokit.actions.setSelectedRepositoriesEnabledGithubActionsOrganization({
   org,
-  selected_repository_ids
+  selected_repository_ids,
 });
 ```
 

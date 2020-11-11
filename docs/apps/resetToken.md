@@ -13,7 +13,7 @@ OAuth applications can use this API method to reset a valid OAuth token without 
 ```js
 octokit.apps.resetToken({
   client_id,
-  access_token
+  access_token,
 });
 ```
 

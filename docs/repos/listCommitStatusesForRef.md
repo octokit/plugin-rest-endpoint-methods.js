@@ -16,7 +16,7 @@ This resource is also available via a legacy route: `GET /repos/:owner/:repo/sta
 octokit.repos.listCommitStatusesForRef({
   owner,
   repo,
-  ref
+  ref,
 });
 ```
 

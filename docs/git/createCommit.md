@@ -44,7 +44,7 @@ octokit.git.createCommit({
   owner,
   repo,
   message,
-  tree
+  tree,
 });
 ```
 

@@ -18,7 +18,7 @@ Updating pull request review enforcement requires admin or owner permissions to 
 octokit.repos.updatePullRequestReviewProtection({
   owner,
   repo,
-  branch
+  branch,
 });
 ```
 

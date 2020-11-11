@@ -13,7 +13,7 @@ Lists all open code scanning alerts for the default branch (usually `master`) an
 ```js
 octokit.codeScanning.listAlertsForRepo({
   owner,
-  repo
+  repo,
 });
 ```
 

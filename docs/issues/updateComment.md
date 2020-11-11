@@ -13,7 +13,7 @@ octokit.issues.updateComment({
   owner,
   repo,
   comment_id,
-  body
+  body,
 });
 ```
 

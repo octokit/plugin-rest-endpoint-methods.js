@@ -13,7 +13,7 @@ Stop an import for a repository.
 ```js
 octokit.migrations.cancelImport({
   owner,
-  repo
+  repo,
 });
 ```
 

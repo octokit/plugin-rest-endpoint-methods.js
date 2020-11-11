@@ -13,7 +13,7 @@ Replaces all repositories for an organization secret when the `visibility` for r
 ```js
 octokit.actions.setSelectedReposForOrgSecret({
   org,
-  secret_name
+  secret_name,
 });
 ```
 

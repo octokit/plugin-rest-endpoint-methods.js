@@ -13,7 +13,7 @@ Returns a webhook configured in an organization. To get only the webhook `config
 ```js
 octokit.orgs.getWebhook({
   org,
-  hook_id
+  hook_id,
 });
 ```
 

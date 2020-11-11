@@ -13,7 +13,7 @@ Lists all secrets available in a repository without revealing their encrypted va
 ```js
 octokit.actions.listRepoSecrets({
   owner,
-  repo
+  repo,
 });
 ```
 

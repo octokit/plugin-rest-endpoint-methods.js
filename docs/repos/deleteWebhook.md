@@ -12,7 +12,7 @@ type: API method
 octokit.repos.deleteWebhook({
   owner,
   repo,
-  hook_id
+  hook_id,
 });
 ```
 

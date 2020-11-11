@@ -18,7 +18,7 @@ Updating required status checks requires admin or owner permissions to the repos
 octokit.repos.updateStatusCheckPotection({
   owner,
   repo,
-  branch
+  branch,
 });
 ```
 

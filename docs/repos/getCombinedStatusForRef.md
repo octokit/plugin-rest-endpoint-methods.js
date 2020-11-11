@@ -22,7 +22,7 @@ Additionally, a combined `state` is returned. The `state` is one of:
 octokit.repos.getCombinedStatusForRef({
   owner,
   repo,
-  ref
+  ref,
 });
 ```
 

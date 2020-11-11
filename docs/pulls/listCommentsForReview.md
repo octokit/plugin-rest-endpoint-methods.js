@@ -15,7 +15,7 @@ octokit.pulls.listCommentsForReview({
   owner,
   repo,
   pull_number,
-  review_id
+  review_id,
 });
 ```
 

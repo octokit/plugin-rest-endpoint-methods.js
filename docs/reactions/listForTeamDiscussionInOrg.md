@@ -16,7 +16,7 @@ List the reactions to a [team discussion](https://docs.github.com/rest/reference
 octokit.reactions.listForTeamDiscussionInOrg({
   org,
   team_slug,
-  discussion_number
+  discussion_number,
 });
 ```
 

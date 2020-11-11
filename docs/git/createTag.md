@@ -46,7 +46,7 @@ octokit.git.createTag({
   tag,
   message,
   object,
-  type
+  type,
 });
 ```
 

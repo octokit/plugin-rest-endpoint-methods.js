@@ -18,7 +18,7 @@ You can replace `workflow_id` with the workflow file name. For example, you coul
 octokit.actions.getWorkflowUsage({
   owner,
   repo,
-  workflow_id
+  workflow_id,
 });
 ```
 

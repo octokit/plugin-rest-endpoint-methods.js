@@ -23,7 +23,7 @@ endpoint.
 
 ```js
 octokit.actions.createRemoveTokenForOrg({
-  org
+  org,
 });
 ```
 

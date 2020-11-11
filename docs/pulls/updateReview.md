@@ -16,7 +16,7 @@ octokit.pulls.updateReview({
   repo,
   pull_number,
   review_id,
-  body
+  body,
 });
 ```
 

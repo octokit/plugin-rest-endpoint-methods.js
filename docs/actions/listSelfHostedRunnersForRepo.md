@@ -13,7 +13,7 @@ Lists all self-hosted runners configured in a repository. You must authenticate 
 ```js
 octokit.actions.listSelfHostedRunnersForRepo({
   owner,
-  repo
+  repo,
 });
 ```
 

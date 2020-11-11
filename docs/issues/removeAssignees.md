@@ -14,7 +14,7 @@ Removes one or more assignees from an issue.
 octokit.issues.removeAssignees({
   owner,
   repo,
-  issue_number
+  issue_number,
 });
 ```
 

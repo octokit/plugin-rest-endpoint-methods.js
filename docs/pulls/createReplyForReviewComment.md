@@ -18,7 +18,7 @@ octokit.pulls.createReplyForReviewComment({
   repo,
   pull_number,
   comment_id,
-  body
+  body,
 });
 ```
 

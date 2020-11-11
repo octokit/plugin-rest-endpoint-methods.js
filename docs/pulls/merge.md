@@ -14,7 +14,7 @@ This endpoint triggers [notifications](https://help.github.com/articles/about-no
 octokit.pulls.merge({
   owner,
   repo,
-  pull_number
+  pull_number,
 });
 ```
 

@@ -13,7 +13,7 @@ Sets the visibility for your primary email addresses.
 ```js
 octokit.users.setPrimaryEmailVisibilityForAuthenticated({
   email,
-  visibility
+  visibility,
 });
 ```
 

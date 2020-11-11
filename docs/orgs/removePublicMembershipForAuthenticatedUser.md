@@ -11,7 +11,7 @@ type: API method
 ```js
 octokit.orgs.removePublicMembershipForAuthenticatedUser({
   org,
-  username
+  username,
 });
 ```
 

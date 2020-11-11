@@ -12,7 +12,7 @@ Lists the projects in an organization. Returns a `404 Not Found` status if proje
 
 ```js
 octokit.projects.listForOrg({
-  org
+  org,
 });
 ```
 

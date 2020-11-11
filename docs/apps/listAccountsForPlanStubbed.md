@@ -14,7 +14,7 @@ GitHub Apps must use a [JWT](https://docs.github.com/apps/building-github-apps/a
 
 ```js
 octokit.apps.listAccountsForPlanStubbed({
-  plan_id
+  plan_id,
 });
 ```
 

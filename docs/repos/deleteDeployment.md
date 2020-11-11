@@ -21,7 +21,7 @@ For more information, see "[Create a deployment](https://docs.github.com/rest/re
 octokit.repos.deleteDeployment({
   owner,
   repo,
-  deployment_id
+  deployment_id,
 });
 ```
 

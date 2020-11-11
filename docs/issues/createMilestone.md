@@ -12,7 +12,7 @@ type: API method
 octokit.issues.createMilestone({
   owner,
   repo,
-  title
+  title,
 });
 ```
 

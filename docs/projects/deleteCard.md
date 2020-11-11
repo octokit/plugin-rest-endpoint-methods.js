@@ -10,7 +10,7 @@ type: API method
 
 ```js
 octokit.projects.deleteCard({
-  card_id
+  card_id,
 });
 ```
 

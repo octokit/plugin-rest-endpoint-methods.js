@@ -20,7 +20,7 @@ To remove a membership between a user and a team, the authenticated user must ha
 octokit.teams.removeMembershipForUserInOrg({
   org,
   team_slug,
-  username
+  username,
 });
 ```
 

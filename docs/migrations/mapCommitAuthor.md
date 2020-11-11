@@ -14,7 +14,7 @@ Update an author's identity for the import. Your application can continue updati
 octokit.migrations.mapCommitAuthor({
   owner,
   repo,
-  author_id
+  author_id,
 });
 ```
 

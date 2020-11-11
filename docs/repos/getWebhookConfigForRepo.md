@@ -16,7 +16,7 @@ Access tokens must have the `read:repo_hook` or `repo` scope, and GitHub Apps mu
 octokit.repos.getWebhookConfigForRepo({
   owner,
   repo,
-  hook_id
+  hook_id,
 });
 ```
 

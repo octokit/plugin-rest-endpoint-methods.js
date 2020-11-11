@@ -13,7 +13,7 @@ octokit.pulls.deletePendingReview({
   owner,
   repo,
   pull_number,
-  review_id
+  review_id,
 });
 ```
 

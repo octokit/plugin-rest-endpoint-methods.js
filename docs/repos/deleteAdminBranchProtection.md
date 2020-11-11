@@ -16,7 +16,7 @@ Removing admin enforcement requires admin or owner permissions to the repository
 octokit.repos.deleteAdminBranchProtection({
   owner,
   repo,
-  branch
+  branch,
 });
 ```
 

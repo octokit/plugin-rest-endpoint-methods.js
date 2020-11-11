@@ -17,7 +17,7 @@ octokit.repos.createCommitStatus({
   owner,
   repo,
   sha,
-  state
+  state,
 });
 ```
 

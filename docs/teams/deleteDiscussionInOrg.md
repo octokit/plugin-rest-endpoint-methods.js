@@ -16,7 +16,7 @@ Delete a discussion from a team's page. OAuth access tokens require the `write:d
 octokit.teams.deleteDiscussionInOrg({
   org,
   team_slug,
-  discussion_number
+  discussion_number,
 });
 ```
 

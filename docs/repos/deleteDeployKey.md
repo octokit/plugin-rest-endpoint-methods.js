@@ -14,7 +14,7 @@ Deploy keys are immutable. If you need to update a key, remove the key and creat
 octokit.repos.deleteDeployKey({
   owner,
   repo,
-  key_id
+  key_id,
 });
 ```
 

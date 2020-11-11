@@ -15,7 +15,7 @@ You must authenticate using an access token with the `admin:enterprise` scope to
 ```js
 octokit.enterpriseAdmin.setSelectedOrganizationsEnabledGithubActionsEnterprise({
   enterprise,
-  selected_organization_ids
+  selected_organization_ids,
 });
 ```
 
