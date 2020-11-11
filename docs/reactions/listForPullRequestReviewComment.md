@@ -8,13 +8,13 @@ type: API method
 
 # List reactions for a pull request review comment
 
-List the reactions to a [pull request review comment](https://developer.github.com/v3/pulls/comments/).
+List the reactions to a [pull request review comment](https://docs.github.com/rest/reference/pulls#review-comments).
 
 ```js
 octokit.reactions.listForPullRequestReviewComment({
   owner,
   repo,
-  comment_id,
+  comment_id
 });
 ```
 
@@ -37,10 +37,12 @@ octokit.reactions.listForPullRequestReviewComment({
 </td></tr>
 <tr><td>comment_id</td><td>yes</td><td>
 
+comment_id parameter
+
 </td></tr>
 <tr><td>content</td><td>no</td><td>
 
-Returns a single [reaction type](https://developer.github.com/v3/reactions/#reaction-types). Omit this parameter to list all reactions to a pull request review comment.
+Returns a single [reaction type](https://docs.github.com/rest/reference/reactions#reaction-types). Omit this parameter to list all reactions to a pull request review comment.
 
 </td></tr>
 <tr><td>per_page</td><td>no</td><td>
@@ -56,4 +58,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/reactions/#list-reactions-for-a-pull-request-review-comment).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/v3/reactions/#list-reactions-for-a-pull-request-review-comment).

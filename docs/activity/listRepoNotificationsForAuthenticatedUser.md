@@ -13,7 +13,7 @@ List all notifications for the current user.
 ```js
 octokit.activity.listRepoNotificationsForAuthenticatedUser({
   owner,
-  repo,
+  repo
 });
 ```
 
@@ -67,4 +67,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/activity/notifications/#list-repository-notifications-for-the-authenticated-user).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/activity#list-repository-notifications-for-the-authenticated-user).

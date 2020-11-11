@@ -13,7 +13,7 @@ Removing a user from this list will remove them from all the organization's repo
 ```js
 octokit.orgs.removeOutsideCollaborator({
   org,
-  username,
+  username
 });
 ```
 
@@ -37,4 +37,4 @@ octokit.orgs.removeOutsideCollaborator({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/orgs/outside_collaborators/#remove-outside-collaborator-from-an-organization).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/orgs#remove-outside-collaborator-from-an-organization).

@@ -13,7 +13,7 @@ This endpoint will return all community profile metrics, including an overall he
 ```js
 octokit.repos.getCommunityProfileMetrics({
   owner,
-  repo,
+  repo
 });
 ```
 
@@ -37,4 +37,4 @@ octokit.repos.getCommunityProfileMetrics({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/community/#get-community-profile-metrics).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#get-community-profile-metrics).

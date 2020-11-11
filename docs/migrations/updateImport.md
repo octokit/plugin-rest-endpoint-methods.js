@@ -14,7 +14,7 @@ request. If no parameters are provided, the import will be restarted.
 ```js
 octokit.migrations.updateImport({
   owner,
-  repo,
+  repo
 });
 ```
 
@@ -45,7 +45,13 @@ The username to provide to the originating repository.
 The password to provide to the originating repository.
 
 </td></tr>
+<tr><td>vcs</td><td>no</td><td>
+
+</td></tr>
+<tr><td>tfvc_project</td><td>no</td><td>
+
+</td></tr>
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/migrations/source_imports/#update-an-import).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/migrations#update-an-import).

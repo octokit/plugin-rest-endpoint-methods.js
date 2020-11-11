@@ -14,7 +14,7 @@ Lists artifacts for a workflow run. Anyone with read access to the repository ca
 octokit.actions.listWorkflowRunArtifacts({
   owner,
   repo,
-  run_id,
+  run_id
 });
 ```
 
@@ -51,4 +51,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/actions/artifacts/#list-workflow-run-artifacts).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/actions#list-workflow-run-artifacts).

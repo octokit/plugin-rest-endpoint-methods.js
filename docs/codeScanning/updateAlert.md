@@ -1,6 +1,6 @@
 ---
 name: Update a code scanning alert
-example: octokit.codeScanning.updateAlert({ owner, repo, state })
+example: octokit.codeScanning.updateAlert({ owner, repo, alert_number, state })
 route: PATCH /repos/{owner}/{repo}/code-scanning/alerts/{alert_number}
 scope: codeScanning
 type: API method
@@ -15,7 +15,8 @@ GitHub Apps must have the `security_events` write permission to use this endpoin
 octokit.codeScanning.updateAlert({
   owner,
   repo,
-  state,
+  alert_number,
+  state
 });
 ```
 
@@ -36,7 +37,7 @@ octokit.codeScanning.updateAlert({
 <tr><td>repo</td><td>yes</td><td>
 
 </td></tr>
-<tr><td>alert_number</td><td>no</td><td>
+<tr><td>alert_number</td><td>yes</td><td>
 
 The code scanning alert number.
 
@@ -54,4 +55,4 @@ Sets the state of the code scanning alert. Can be one of `open` or `dismissed`. 
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/code-scanning/#upload-a-code-scanning-alert).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/v3/code-scanning/#upload-a-code-scanning-alert).

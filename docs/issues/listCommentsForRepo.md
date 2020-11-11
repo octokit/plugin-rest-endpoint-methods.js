@@ -13,7 +13,7 @@ By default, Issue Comments are ordered by ascending ID.
 ```js
 octokit.issues.listCommentsForRepo({
   owner,
-  repo,
+  repo
 });
 ```
 
@@ -36,7 +36,7 @@ octokit.issues.listCommentsForRepo({
 </td></tr>
 <tr><td>sort</td><td>no</td><td>
 
-Either `created` or `updated`.
+One of `created` (when the repository was starred) or `updated` (when it was last pushed to).
 
 </td></tr>
 <tr><td>direction</td><td>no</td><td>
@@ -46,7 +46,7 @@ Either `asc` or `desc`. Ignored without the `sort` parameter.
 </td></tr>
 <tr><td>since</td><td>no</td><td>
 
-Only comments updated at or after this time are returned. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.
+Only show notifications updated after the given time. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.
 
 </td></tr>
 <tr><td>per_page</td><td>no</td><td>
@@ -62,4 +62,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/issues/comments/#list-issue-comments-for-a-repository).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/issues#list-issue-comments-for-a-repository).

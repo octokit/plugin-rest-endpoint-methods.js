@@ -1,6 +1,6 @@
 ---
 name: Create a label
-example: octokit.issues.createLabel({ owner, repo, name, color })
+example: octokit.issues.createLabel({ owner, repo, name })
 route: POST /repos/{owner}/{repo}/labels
 scope: issues
 type: API method
@@ -12,8 +12,7 @@ type: API method
 octokit.issues.createLabel({
   owner,
   repo,
-  name,
-  color,
+  name
 });
 ```
 
@@ -39,7 +38,7 @@ octokit.issues.createLabel({
 The name of the label. Emoji can be added to label names, using either native emoji or colon-style markup. For example, typing `:strawberry:` will render the emoji ![:strawberry:](https://github.githubassets.com/images/icons/emoji/unicode/1f353.png ":strawberry:"). For a full list of available emoji and codes, see [emoji-cheat-sheet.com](http://emoji-cheat-sheet.com/).
 
 </td></tr>
-<tr><td>color</td><td>yes</td><td>
+<tr><td>color</td><td>no</td><td>
 
 The [hexadecimal color code](http://www.color-hex.com/) for the label, without the leading `#`.
 
@@ -52,4 +51,4 @@ A short description of the label.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/issues/labels/#create-a-label).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/issues#create-a-label).

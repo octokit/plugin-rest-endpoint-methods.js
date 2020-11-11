@@ -12,7 +12,7 @@ type: API method
 octokit.git.deleteRef({
   owner,
   repo,
-  ref,
+  ref
 });
 ```
 
@@ -35,8 +35,10 @@ octokit.git.deleteRef({
 </td></tr>
 <tr><td>ref</td><td>yes</td><td>
 
+ref+ parameter
+
 </td></tr>
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/git/refs/#delete-a-reference).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/git#delete-a-reference).

@@ -12,7 +12,7 @@ type: API method
 octokit.repos.deleteInvitation({
   owner,
   repo,
-  invitation_id,
+  invitation_id
 });
 ```
 
@@ -35,8 +35,10 @@ octokit.repos.deleteInvitation({
 </td></tr>
 <tr><td>invitation_id</td><td>yes</td><td>
 
+invitation_id parameter
+
 </td></tr>
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/invitations/#delete-a-repository-invitation).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#delete-a-repository-invitation).

@@ -11,7 +11,7 @@ type: API method
 ```js
 octokit.projects.moveColumn({
   column_id,
-  position,
+  position
 });
 ```
 
@@ -28,13 +28,15 @@ octokit.projects.moveColumn({
   <tbody>
     <tr><td>column_id</td><td>yes</td><td>
 
+column_id parameter
+
 </td></tr>
 <tr><td>position</td><td>yes</td><td>
 
-Can be one of `first`, `last`, or `after:<column_id>`, where `<column_id>` is the `id` value of a column in the same project.
+The position of the column in a project
 
 </td></tr>
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/projects/columns/#move-a-project-column).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/projects#move-a-project-column).

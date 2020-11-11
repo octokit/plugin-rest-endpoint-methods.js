@@ -16,7 +16,7 @@ _Note_: This API supports blobs up to 100 megabytes in size.
 octokit.git.getBlob({
   owner,
   repo,
-  file_sha,
+  file_sha
 });
 ```
 
@@ -43,4 +43,4 @@ octokit.git.getBlob({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/git/blobs/#get-a-blob).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/git#get-a-blob).

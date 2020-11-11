@@ -13,7 +13,7 @@ Fetches the URL to a migration archive.
 ```js
 octokit.migrations.downloadArchiveForOrg({
   org,
-  migration_id,
+  migration_id
 });
 ```
 
@@ -33,8 +33,10 @@ octokit.migrations.downloadArchiveForOrg({
 </td></tr>
 <tr><td>migration_id</td><td>yes</td><td>
 
+migration_id parameter
+
 </td></tr>
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/migrations/orgs/#download-an-organization-migration-archive).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/migrations#download-an-organization-migration-archive).

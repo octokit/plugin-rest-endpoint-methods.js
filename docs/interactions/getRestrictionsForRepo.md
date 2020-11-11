@@ -13,7 +13,7 @@ Shows which group of GitHub users can interact with this repository and when the
 ```js
 octokit.interactions.getRestrictionsForRepo({
   owner,
-  repo,
+  repo
 });
 ```
 
@@ -37,4 +37,4 @@ octokit.interactions.getRestrictionsForRepo({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/interactions/repos/#get-interaction-restrictions-for-a-repository).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/interactions#get-interaction-restrictions-for-a-repository).

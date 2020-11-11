@@ -13,7 +13,7 @@ Lists the people watching the specified repository.
 ```js
 octokit.activity.listWatchersForRepo({
   owner,
-  repo,
+  repo
 });
 ```
 
@@ -47,4 +47,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/activity/watching/#list-watchers).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/activity#list-watchers).

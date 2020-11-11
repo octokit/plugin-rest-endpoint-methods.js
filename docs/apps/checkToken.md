@@ -1,6 +1,6 @@
 ---
 name: Check a token
-example: octokit.apps.checkToken({ client_id })
+example: octokit.apps.checkToken({ client_id, access_token })
 route: POST /applications/{client_id}/token
 scope: apps
 type: API method
@@ -8,11 +8,12 @@ type: API method
 
 # Check a token
 
-OAuth applications can use a special API method for checking OAuth token validity without exceeding the normal rate limits for failed login attempts. Authentication works differently with this particular endpoint. You must use [Basic Authentication](https://developer.github.com/v3/auth#basic-authentication) to use this endpoint, where the username is the OAuth application `client_id` and the password is its `client_secret`. Invalid tokens will return `404 NOT FOUND`.
+OAuth applications can use a special API method for checking OAuth token validity without exceeding the normal rate limits for failed login attempts. Authentication works differently with this particular endpoint. You must use [Basic Authentication](https://docs.github.com/rest/overview/other-authentication-methods#basic-authentication) to use this endpoint, where the username is the OAuth application `client_id` and the password is its `client_secret`. Invalid tokens will return `404 NOT FOUND`.
 
 ```js
 octokit.apps.checkToken({
   client_id,
+  access_token
 });
 ```
 
@@ -30,12 +31,12 @@ octokit.apps.checkToken({
     <tr><td>client_id</td><td>yes</td><td>
 
 </td></tr>
-<tr><td>access_token</td><td>no</td><td>
+<tr><td>access_token</td><td>yes</td><td>
 
-The OAuth access token used to authenticate to the GitHub API.
+The access_token of the OAuth application.
 
 </td></tr>
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/apps/oauth_applications/#check-a-token).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/apps#check-a-token).

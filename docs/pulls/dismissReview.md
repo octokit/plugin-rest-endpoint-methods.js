@@ -8,7 +8,7 @@ type: API method
 
 # Dismiss a review for a pull request
 
-**Note:** To dismiss a pull request review on a [protected branch](https://developer.github.com/v3/repos/branches/), you must be a repository administrator or be included in the list of people or teams who can dismiss pull request reviews.
+**Note:** To dismiss a pull request review on a [protected branch](https://docs.github.com/rest/reference/repos#branches), you must be a repository administrator or be included in the list of people or teams who can dismiss pull request reviews.
 
 ```js
 octokit.pulls.dismissReview({
@@ -16,7 +16,7 @@ octokit.pulls.dismissReview({
   repo,
   pull_number,
   review_id,
-  message,
+  message
 });
 ```
 
@@ -42,13 +42,18 @@ octokit.pulls.dismissReview({
 </td></tr>
 <tr><td>review_id</td><td>yes</td><td>
 
+review_id parameter
+
 </td></tr>
 <tr><td>message</td><td>yes</td><td>
 
 The message for the pull request review dismissal
 
 </td></tr>
+<tr><td>event</td><td>no</td><td>
+
+</td></tr>
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/pulls/reviews/#dismiss-a-review-for-a-pull-request).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/pulls#dismiss-a-review-for-a-pull-request).

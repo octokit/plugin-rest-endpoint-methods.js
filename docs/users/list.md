@@ -10,7 +10,7 @@ type: API method
 
 Lists all users, in the order that they signed up on GitHub. This list includes personal user accounts and organization accounts.
 
-Note: Pagination is powered exclusively by the `since` parameter. Use the [Link header](https://developer.github.com/v3/#link-header) to get the URL for the next page of users.
+Note: Pagination is powered exclusively by the `since` parameter. Use the [Link header](https://docs.github.com/rest/overview/resources-in-the-rest-api#link-header) to get the URL for the next page of users.
 
 ```js
 octokit.users.list();
@@ -29,10 +29,15 @@ octokit.users.list();
   <tbody>
     <tr><td>since</td><td>no</td><td>
 
-The integer ID of the last User that you've seen.
+A user ID. Only return users with an ID greater than this ID.
+
+</td></tr>
+<tr><td>per_page</td><td>no</td><td>
+
+Results per page (max 100)
 
 </td></tr>
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/users/#list-users).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/v3/users/#list-users).

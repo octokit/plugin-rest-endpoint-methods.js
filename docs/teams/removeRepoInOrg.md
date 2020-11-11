@@ -17,7 +17,7 @@ octokit.teams.removeRepoInOrg({
   org,
   team_slug,
   owner,
-  repo,
+  repo
 });
 ```
 
@@ -37,6 +37,8 @@ octokit.teams.removeRepoInOrg({
 </td></tr>
 <tr><td>team_slug</td><td>yes</td><td>
 
+team_slug parameter
+
 </td></tr>
 <tr><td>owner</td><td>yes</td><td>
 
@@ -47,4 +49,4 @@ octokit.teams.removeRepoInOrg({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/teams/#remove-a-repository-from-a-team).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/v3/teams/#remove-a-repository-from-a-team).

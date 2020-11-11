@@ -10,7 +10,7 @@ type: API method
 
 ```js
 octokit.projects.listForUser({
-  username,
+  username
 });
 ```
 
@@ -46,4 +46,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/projects/#list-user-projects).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/v3/projects/#list-user-projects).

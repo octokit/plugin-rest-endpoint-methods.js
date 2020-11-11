@@ -19,7 +19,7 @@ The `subject_type` and `subject_id` parameters provide context for the person's 
 
 ```js
 octokit.users.getContextForUser({
-  username,
+  username
 });
 ```
 
@@ -50,4 +50,4 @@ Uses the ID for the `subject_type` you specified. **Required** when using `subje
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/users/#get-contextual-information-for-a-user).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/v3/users/#get-contextual-information-for-a-user).

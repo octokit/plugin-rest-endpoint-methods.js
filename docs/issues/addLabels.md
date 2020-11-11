@@ -13,7 +13,7 @@ octokit.issues.addLabels({
   owner,
   repo,
   issue_number,
-  labels,
+  labels
 });
 ```
 
@@ -36,6 +36,8 @@ octokit.issues.addLabels({
 </td></tr>
 <tr><td>issue_number</td><td>yes</td><td>
 
+issue_number parameter
+
 </td></tr>
 <tr><td>labels</td><td>yes</td><td>
 
@@ -45,4 +47,4 @@ The name of the label to add to the issue. Must contain at least one label. **No
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/issues/labels/#add-labels-to-an-issue).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/issues#add-labels-to-an-issue).

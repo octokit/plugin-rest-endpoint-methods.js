@@ -13,7 +13,7 @@ Lists all open code scanning alerts for the default branch (usually `master`) an
 ```js
 octokit.codeScanning.listAlertsForRepo({
   owner,
-  repo,
+  repo
 });
 ```
 
@@ -47,4 +47,4 @@ Set a full Git reference to list alerts for a specific branch. The `ref` must be
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/code-scanning/#list-code-scanning-alerts-for-a-repository).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/v3/code-scanning/#list-code-scanning-alerts-for-a-repository).

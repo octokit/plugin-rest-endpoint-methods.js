@@ -15,7 +15,7 @@ Gets a team using the team's `slug`. GitHub generates the `slug` from the team `
 ```js
 octokit.teams.getByName({
   org,
-  team_slug,
+  team_slug
 });
 ```
 
@@ -35,8 +35,10 @@ octokit.teams.getByName({
 </td></tr>
 <tr><td>team_slug</td><td>yes</td><td>
 
+team_slug parameter
+
 </td></tr>
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/teams/#get-a-team-by-name).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/v3/teams/#get-a-team-by-name).

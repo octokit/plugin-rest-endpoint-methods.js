@@ -32,7 +32,7 @@ The archive will also contain an `attachments` directory that includes all attac
 
 ```js
 octokit.migrations.getArchiveForAuthenticatedUser({
-  migration_id,
+  migration_id
 });
 ```
 
@@ -49,8 +49,10 @@ octokit.migrations.getArchiveForAuthenticatedUser({
   <tbody>
     <tr><td>migration_id</td><td>yes</td><td>
 
+migration_id parameter
+
 </td></tr>
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/migrations/users/#download-a-user-migration-archive).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/migrations#download-a-user-migration-archive).

@@ -10,7 +10,7 @@ type: API method
 
 ```js
 octokit.orgs.getMembershipForAuthenticatedUser({
-  org,
+  org
 });
 ```
 
@@ -31,4 +31,4 @@ octokit.orgs.getMembershipForAuthenticatedUser({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/orgs/members/#get-an-organization-membership-for-the-authenticated-user).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/orgs#get-an-organization-membership-for-the-authenticated-user).

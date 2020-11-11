@@ -13,7 +13,7 @@ Gets a single organization secret without revealing its encrypted value. You mus
 ```js
 octokit.actions.getOrgSecret({
   org,
-  secret_name,
+  secret_name
 });
 ```
 
@@ -33,8 +33,10 @@ octokit.actions.getOrgSecret({
 </td></tr>
 <tr><td>secret_name</td><td>yes</td><td>
 
+secret_name parameter
+
 </td></tr>
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/actions/secrets/#get-an-organization-secret).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/actions#get-an-organization-secret).

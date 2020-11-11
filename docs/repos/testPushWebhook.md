@@ -16,7 +16,7 @@ This will trigger the hook with the latest push to the current repository if the
 octokit.repos.testPushWebhook({
   owner,
   repo,
-  hook_id,
+  hook_id
 });
 ```
 
@@ -43,4 +43,4 @@ octokit.repos.testPushWebhook({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/hooks/#test-the-push-repository-webhook).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#test-the-push-repository-webhook).

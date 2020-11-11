@@ -12,7 +12,7 @@ type: API method
 octokit.issues.updateMilestone({
   owner,
   repo,
-  milestone_number,
+  milestone_number
 });
 ```
 
@@ -34,6 +34,8 @@ octokit.issues.updateMilestone({
 
 </td></tr>
 <tr><td>milestone_number</td><td>yes</td><td>
+
+milestone_number parameter
 
 </td></tr>
 <tr><td>title</td><td>no</td><td>
@@ -59,4 +61,4 @@ The milestone due date. This is a timestamp in [ISO 8601](https://en.wikipedia.o
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/issues/milestones/#update-a-milestone).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/issues#update-a-milestone).

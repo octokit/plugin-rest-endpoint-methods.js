@@ -11,7 +11,7 @@ type: API method
 ```js
 octokit.activity.checkRepoIsStarredByAuthenticatedUser({
   owner,
-  repo,
+  repo
 });
 ```
 
@@ -35,4 +35,4 @@ octokit.activity.checkRepoIsStarredByAuthenticatedUser({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/activity/starring/#check-if-a-repository-is-starred-by-the-authenticated-user).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/activity#check-if-a-repository-is-starred-by-the-authenticated-user).

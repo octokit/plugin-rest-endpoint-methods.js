@@ -11,7 +11,7 @@ type: API method
 ```js
 octokit.gists.createComment({
   gist_id,
-  body,
+  body
 });
 ```
 
@@ -28,6 +28,8 @@ octokit.gists.createComment({
   <tbody>
     <tr><td>gist_id</td><td>yes</td><td>
 
+gist_id parameter
+
 </td></tr>
 <tr><td>body</td><td>yes</td><td>
 
@@ -37,4 +39,4 @@ The comment text.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/gists/comments/#create-a-gist-comment).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/gists#create-a-gist-comment).

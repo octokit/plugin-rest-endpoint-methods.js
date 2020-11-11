@@ -15,13 +15,13 @@ To set a deployment as inactive, you must:
 - Create a new deployment that is active so that the system has a record of the current state, then delete the previously active deployment.
 - Mark the active deployment as inactive by adding any non-successful deployment status.
 
-For more information, see "[Create a deployment](https://developer.github.com/v3/repos/deployments/#create-a-deployment)" and "[Create a deployment status](https://developer.github.com/v3/repos/deployments/#create-a-deployment-status)."
+For more information, see "[Create a deployment](https://docs.github.com/rest/reference/repos/deployments/#create-a-deployment)" and "[Create a deployment status](https://docs.github.com/rest/reference/repos#create-a-deployment-status)."
 
 ```js
 octokit.repos.deleteDeployment({
   owner,
   repo,
-  deployment_id,
+  deployment_id
 });
 ```
 
@@ -44,8 +44,10 @@ octokit.repos.deleteDeployment({
 </td></tr>
 <tr><td>deployment_id</td><td>yes</td><td>
 
+deployment_id parameter
+
 </td></tr>
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/deployments/#delete-a-deployment).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#delete-a-deployment).

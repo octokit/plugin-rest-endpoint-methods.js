@@ -13,7 +13,7 @@ List all teams associated with an invitation. In order to see invitations in an 
 ```js
 octokit.orgs.listInvitationTeams({
   org,
-  invitation_id,
+  invitation_id
 });
 ```
 
@@ -33,6 +33,8 @@ octokit.orgs.listInvitationTeams({
 </td></tr>
 <tr><td>invitation_id</td><td>yes</td><td>
 
+invitation_id parameter
+
 </td></tr>
 <tr><td>per_page</td><td>no</td><td>
 
@@ -47,4 +49,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/orgs/members/#list-organization-invitation-teams).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/orgs#list-organization-invitation-teams).

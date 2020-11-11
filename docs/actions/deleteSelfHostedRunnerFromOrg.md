@@ -15,7 +15,7 @@ You must authenticate using an access token with the `admin:org` scope to use th
 ```js
 octokit.actions.deleteSelfHostedRunnerFromOrg({
   org,
-  runner_id,
+  runner_id
 });
 ```
 
@@ -41,4 +41,4 @@ Unique identifier of the self-hosted runner.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/actions/self-hosted-runners/#delete-a-self-hosted-runner-from-an-organization).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/actions#delete-a-self-hosted-runner-from-an-organization).

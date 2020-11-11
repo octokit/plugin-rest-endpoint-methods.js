@@ -16,7 +16,7 @@ If `truncated` is `true` in the response then the number of items in the `tree` 
 octokit.git.getTree({
   owner,
   repo,
-  tree_sha,
+  tree_sha
 });
 ```
 
@@ -48,4 +48,4 @@ Setting this parameter to any value returns the objects or subtrees referenced b
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/git/trees/#get-a-tree).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/git#get-a-tree).

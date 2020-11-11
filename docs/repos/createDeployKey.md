@@ -14,7 +14,7 @@ You can create a read-only deploy key.
 octokit.repos.createDeployKey({
   owner,
   repo,
-  key,
+  key
 });
 ```
 
@@ -49,10 +49,10 @@ The contents of the key.
 
 If `true`, the key will only be able to read repository contents. Otherwise, the key will be able to read and write.
 
-Deploy keys with write access can perform the same actions as an organization member with admin access, or a collaborator on a personal repository. For more information, see "[Repository permission levels for an organization](https://docs.github.com/articles/repository-permission-levels-for-an-organization/)" and "[Permission levels for a user account repository](https://docs.github.com/articles/permission-levels-for-a-user-account-repository/)."
+Deploy keys with write access can perform the same actions as an organization member with admin access, or a collaborator on a personal repository. For more information, see "[Repository permission levels for an organization](https://help.github.com/articles/repository-permission-levels-for-an-organization/)" and "[Permission levels for a user account repository](https://help.github.com/articles/permission-levels-for-a-user-account-repository/)."
 
 </td></tr>
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/keys/#create-a-deploy-key).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#create-a-deploy-key).

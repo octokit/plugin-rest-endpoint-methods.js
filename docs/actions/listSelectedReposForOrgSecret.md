@@ -13,7 +13,7 @@ Lists all repositories that have been selected when the `visibility` for reposit
 ```js
 octokit.actions.listSelectedReposForOrgSecret({
   org,
-  secret_name,
+  secret_name
 });
 ```
 
@@ -33,8 +33,10 @@ octokit.actions.listSelectedReposForOrgSecret({
 </td></tr>
 <tr><td>secret_name</td><td>yes</td><td>
 
+secret_name parameter
+
 </td></tr>
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/actions/secrets/#list-selected-repositories-for-an-organization-secret).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/actions#list-selected-repositories-for-an-organization-secret).

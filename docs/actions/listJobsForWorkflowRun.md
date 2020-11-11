@@ -8,13 +8,13 @@ type: API method
 
 # List jobs for a workflow run
 
-Lists jobs for a workflow run. Anyone with read access to the repository can use this endpoint. If the repository is private you must use an access token with the `repo` scope. GitHub Apps must have the `actions:read` permission to use this endpoint. You can use parameters to narrow the list of results. For more information about using parameters, see [Parameters](https://developer.github.com/v3/#parameters).
+Lists jobs for a workflow run. Anyone with read access to the repository can use this endpoint. If the repository is private you must use an access token with the `repo` scope. GitHub Apps must have the `actions:read` permission to use this endpoint. You can use parameters to narrow the list of results. For more information about using parameters, see [Parameters](https://docs.github.com/rest/overview/resources-in-the-rest-api#parameters).
 
 ```js
 octokit.actions.listJobsForWorkflowRun({
   owner,
   repo,
-  run_id,
+  run_id
 });
 ```
 
@@ -58,4 +58,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/actions/workflow-jobs/#list-jobs-for-a-workflow-run).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/actions#list-jobs-for-a-workflow-run).

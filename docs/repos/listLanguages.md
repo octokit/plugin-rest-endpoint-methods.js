@@ -13,7 +13,7 @@ Lists languages for the specified repository. The value shown for each language 
 ```js
 octokit.repos.listLanguages({
   owner,
-  repo,
+  repo
 });
 ```
 
@@ -37,4 +37,4 @@ octokit.repos.listLanguages({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/#list-repository-languages).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/v3/repos/#list-repository-languages).

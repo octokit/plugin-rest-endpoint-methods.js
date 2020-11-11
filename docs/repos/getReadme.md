@@ -10,12 +10,12 @@ type: API method
 
 Gets the preferred README for a repository.
 
-READMEs support [custom media types](https://developer.github.com/v3/repos/contents/#custom-media-types) for retrieving the raw content or rendered HTML.
+READMEs support [custom media types](https://docs.github.com/rest/reference/repos#custom-media-types) for retrieving the raw content or rendered HTML.
 
 ```js
 octokit.repos.getReadme({
   owner,
-  repo,
+  repo
 });
 ```
 
@@ -44,4 +44,4 @@ The name of the commit/branch/tag. Default: the repository’s default branch (u
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/contents/#get-a-repository-readme).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#get-a-repository-readme).

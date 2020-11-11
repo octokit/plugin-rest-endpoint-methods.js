@@ -1,6 +1,6 @@
 ---
 name: Create a pull request
-example: octokit.pulls.create({ owner, repo, title, head, base })
+example: octokit.pulls.create({ owner, repo, head, base })
 route: POST /repos/{owner}/{repo}/pulls
 scope: pulls
 type: API method
@@ -8,21 +8,20 @@ type: API method
 
 # Create a pull request
 
-Draft pull requests are available in public repositories with GitHub Free and GitHub Free for organizations, GitHub Pro, and legacy per-repository billing plans, and in public and private repositories with GitHub Team and GitHub Enterprise Cloud. For more information, see [GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
+Draft pull requests are available in public repositories with GitHub Free and GitHub Free for organizations, GitHub Pro, and legacy per-repository billing plans, and in public and private repositories with GitHub Team and GitHub Enterprise Cloud. For more information, see [GitHub's products](https://help.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
 
 To open or update a pull request in a public repository, you must have write access to the head or the source branch. For organization-owned repositories, you must be a member of the organization that owns the repository to open or update a pull request.
 
 You can create a new pull request.
 
-This endpoint triggers [notifications](https://docs.github.com/articles/about-notifications/). Creating content too quickly using this endpoint may result in abuse rate limiting. See "[Abuse rate limits](https://developer.github.com/v3/#abuse-rate-limits)" and "[Dealing with abuse rate limits](https://developer.github.com/v3/guides/best-practices-for-integrators/#dealing-with-abuse-rate-limits)" for details.
+This endpoint triggers [notifications](https://help.github.com/articles/about-notifications/). Creating content too quickly using this endpoint may result in abuse rate limiting. See "[Abuse rate limits](https://docs.github.com/rest/overview/resources-in-the-rest-api#abuse-rate-limits)" and "[Dealing with abuse rate limits](https://docs.github.com/rest/guides/best-practices-for-integrators#dealing-with-rate-limits)" for details.
 
 ```js
 octokit.pulls.create({
   owner,
   repo,
-  title,
   head,
-  base,
+  base
 });
 ```
 
@@ -43,7 +42,7 @@ octokit.pulls.create({
 <tr><td>repo</td><td>yes</td><td>
 
 </td></tr>
-<tr><td>title</td><td>yes</td><td>
+<tr><td>title</td><td>no</td><td>
 
 The title of the new pull request.
 
@@ -65,15 +64,18 @@ The contents of the pull request.
 </td></tr>
 <tr><td>maintainer_can_modify</td><td>no</td><td>
 
-Indicates whether [maintainers can modify](https://docs.github.com/articles/allowing-changes-to-a-pull-request-branch-created-from-a-fork/) the pull request.
+Indicates whether [maintainers can modify](https://help.github.com/articles/allowing-changes-to-a-pull-request-branch-created-from-a-fork/) the pull request.
 
 </td></tr>
 <tr><td>draft</td><td>no</td><td>
 
-Indicates whether the pull request is a draft. See "[Draft Pull Requests](https://docs.github.com/en/articles/about-pull-requests#draft-pull-requests)" in the GitHub Help documentation to learn more.
+Indicates whether the pull request is a draft. See "[Draft Pull Requests](https://help.github.com/en/articles/about-pull-requests#draft-pull-requests)" in the GitHub Help documentation to learn more.
+
+</td></tr>
+<tr><td>issue</td><td>no</td><td>
 
 </td></tr>
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/pulls/#create-a-pull-request).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/v3/pulls/#create-a-pull-request).

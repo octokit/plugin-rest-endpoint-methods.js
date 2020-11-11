@@ -13,7 +13,7 @@ In order to get a user's membership with an organization, the authenticated user
 ```js
 octokit.orgs.getMembershipForUser({
   org,
-  username,
+  username
 });
 ```
 
@@ -37,4 +37,4 @@ octokit.orgs.getMembershipForUser({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/orgs/members/#get-organization-membership-for-a-user).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/orgs#get-organization-membership-for-a-user).

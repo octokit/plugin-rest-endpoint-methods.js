@@ -11,7 +11,7 @@ type: API method
 ```js
 octokit.issues.listMilestones({
   owner,
-  repo,
+  repo
 });
 ```
 
@@ -60,4 +60,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/issues/milestones/#list-milestones).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/issues#list-milestones).

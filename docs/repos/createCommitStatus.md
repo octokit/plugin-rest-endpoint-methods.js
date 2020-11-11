@@ -17,7 +17,7 @@ octokit.repos.createCommitStatus({
   owner,
   repo,
   sha,
-  state,
+  state
 });
 ```
 
@@ -66,4 +66,4 @@ A string label to differentiate this status from the status of other systems.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/statuses/#create-a-commit-status).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#create-a-commit-status).

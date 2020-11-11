@@ -8,7 +8,7 @@ type: API method
 
 # Add app access restrictions
 
-Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
+Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://help.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
 
 Grants the specified apps push access for this branch. Only installed GitHub Apps with `write` access to the `contents` permission can be added as authorized actors on a protected branch.
 
@@ -21,7 +21,7 @@ octokit.repos.addAppAccessRestrictions({
   owner,
   repo,
   branch,
-  apps,
+  apps
 });
 ```
 
@@ -44,6 +44,8 @@ octokit.repos.addAppAccessRestrictions({
 </td></tr>
 <tr><td>branch</td><td>yes</td><td>
 
+branch+ parameter
+
 </td></tr>
 <tr><td>apps</td><td>yes</td><td>
 
@@ -53,4 +55,4 @@ apps parameter
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/branches/#add-app-access-restrictions).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#add-app-access-restrictions).

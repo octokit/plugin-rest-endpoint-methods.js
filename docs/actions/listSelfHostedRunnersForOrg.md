@@ -14,7 +14,7 @@ You must authenticate using an access token with the `admin:org` scope to use th
 
 ```js
 octokit.actions.listSelfHostedRunnersForOrg({
-  org,
+  org
 });
 ```
 
@@ -45,4 +45,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/actions/self-hosted-runners/#list-self-hosted-runners-for-an-organization).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/actions#list-self-hosted-runners-for-an-organization).

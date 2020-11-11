@@ -11,7 +11,7 @@ type: API method
 ```js
 octokit.issues.listLabelsForRepo({
   owner,
-  repo,
+  repo
 });
 ```
 
@@ -45,4 +45,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/issues/labels/#list-labels-for-a-repository).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/issues#list-labels-for-a-repository).

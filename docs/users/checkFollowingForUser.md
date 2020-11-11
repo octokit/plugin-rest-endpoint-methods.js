@@ -11,7 +11,7 @@ type: API method
 ```js
 octokit.users.checkFollowingForUser({
   username,
-  target_user,
+  target_user
 });
 ```
 
@@ -35,4 +35,4 @@ octokit.users.checkFollowingForUser({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/users/followers/#check-if-a-user-follows-another-user).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/users#check-if-a-user-follows-another-user).

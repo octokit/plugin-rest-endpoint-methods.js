@@ -8,14 +8,14 @@ type: API method
 
 # List releases
 
-This returns a list of releases, which does not include regular Git tags that have not been associated with a release. To get a list of Git tags, use the [Repository Tags API](https://developer.github.com/v3/repos/#list-repository-tags).
+This returns a list of releases, which does not include regular Git tags that have not been associated with a release. To get a list of Git tags, use the [Repository Tags API](https://docs.github.com/rest/reference/repos#list-repository-tags).
 
 Information about published releases are available to everyone. Only users with push access will receive listings for draft releases.
 
 ```js
 octokit.repos.listReleases({
   owner,
-  repo,
+  repo
 });
 ```
 
@@ -49,4 +49,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/releases/#list-releases).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#list-releases).

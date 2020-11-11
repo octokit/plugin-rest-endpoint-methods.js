@@ -10,7 +10,7 @@ type: API method
 
 ```js
 octokit.licenses.get({
-  license,
+  license
 });
 ```
 
@@ -31,4 +31,4 @@ octokit.licenses.get({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/licenses/#get-a-license).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/v3/licenses/#get-a-license).

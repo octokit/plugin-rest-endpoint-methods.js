@@ -16,7 +16,7 @@ octokit.pulls.updateReview({
   repo,
   pull_number,
   review_id,
-  body,
+  body
 });
 ```
 
@@ -42,6 +42,8 @@ octokit.pulls.updateReview({
 </td></tr>
 <tr><td>review_id</td><td>yes</td><td>
 
+review_id parameter
+
 </td></tr>
 <tr><td>body</td><td>yes</td><td>
 
@@ -51,4 +53,4 @@ The body text of the pull request review.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/pulls/reviews/#update-a-review-for-a-pull-request).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/pulls#update-a-review-for-a-pull-request).

@@ -12,7 +12,7 @@ Unfollowing a user requires the user to be logged in and authenticated with basi
 
 ```js
 octokit.users.unfollow({
-  username,
+  username
 });
 ```
 
@@ -33,4 +33,4 @@ octokit.users.unfollow({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/users/followers/#unfollow-a-user).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/users#unfollow-a-user).

@@ -12,7 +12,7 @@ type: API method
 octokit.issues.createMilestone({
   owner,
   repo,
-  title,
+  title
 });
 ```
 
@@ -56,4 +56,4 @@ The milestone due date. This is a timestamp in [ISO 8601](https://en.wikipedia.o
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/issues/milestones/#create-a-milestone).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/issues#create-a-milestone).

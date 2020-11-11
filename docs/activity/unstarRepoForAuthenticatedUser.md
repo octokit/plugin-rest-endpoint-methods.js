@@ -11,7 +11,7 @@ type: API method
 ```js
 octokit.activity.unstarRepoForAuthenticatedUser({
   owner,
-  repo,
+  repo
 });
 ```
 
@@ -35,4 +35,4 @@ octokit.activity.unstarRepoForAuthenticatedUser({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/activity/starring/#unstar-a-repository-for-the-authenticated-user).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/activity#unstar-a-repository-for-the-authenticated-user).

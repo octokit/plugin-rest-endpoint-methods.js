@@ -22,7 +22,7 @@ octokit.repos.deleteFile({
   repo,
   path,
   message,
-  sha,
+  sha
 });
 ```
 
@@ -44,6 +44,8 @@ octokit.repos.deleteFile({
 
 </td></tr>
 <tr><td>path</td><td>yes</td><td>
+
+path+ parameter
 
 </td></tr>
 <tr><td>message</td><td>yes</td><td>
@@ -94,4 +96,4 @@ The email of the author (or committer) of the commit
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/contents/#delete-a-file).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#delete-a-file).

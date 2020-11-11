@@ -43,6 +43,8 @@ author.email
 </td></tr>
 <tr><td>path</td><td>yes</td><td>
 
+path+ parameter
+
 </td></tr>
 <tr><td>message</td><td>yes</td><td>
 
@@ -79,6 +81,9 @@ The name of the author or committer of the commit. You'll receive a `422` status
 The email of the author or committer of the commit. You'll receive a `422` status code if `email` is omitted.
 
 </td></tr>
+<tr><td>committer.date</td><td>no</td><td>
+
+</td></tr>
 <tr><td>author</td><td>no</td><td>
 
 The author of the file. Default: The `committer` or the authenticated user if you omit `committer`.
@@ -94,7 +99,10 @@ The name of the author or committer of the commit. You'll receive a `422` status
 The email of the author or committer of the commit. You'll receive a `422` status code if `email` is omitted.
 
 </td></tr>
+<tr><td>author.date</td><td>no</td><td>
+
+</td></tr>
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/contents/#create-or-update-file-contents).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#create-or-update-file-contents).

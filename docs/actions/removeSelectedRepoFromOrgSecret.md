@@ -8,13 +8,13 @@ type: API method
 
 # Remove selected repository from an organization secret
 
-Removes a repository from an organization secret when the `visibility` for repository access is set to `selected`. The visibility is set when you [Create or update an organization secret](https://developer.github.com/v3/actions/secrets/#create-or-update-an-organization-secret). You must authenticate using an access token with the `admin:org` scope to use this endpoint. GitHub Apps must have the `secrets` organization permission to use this endpoint.
+Removes a repository from an organization secret when the `visibility` for repository access is set to `selected`. The visibility is set when you [Create or update an organization secret](https://docs.github.com/rest/reference/actions#create-or-update-an-organization-secret). You must authenticate using an access token with the `admin:org` scope to use this endpoint. GitHub Apps must have the `secrets` organization permission to use this endpoint.
 
 ```js
 octokit.actions.removeSelectedRepoFromOrgSecret({
   org,
   secret_name,
-  repository_id,
+  repository_id
 });
 ```
 
@@ -34,6 +34,8 @@ octokit.actions.removeSelectedRepoFromOrgSecret({
 </td></tr>
 <tr><td>secret_name</td><td>yes</td><td>
 
+secret_name parameter
+
 </td></tr>
 <tr><td>repository_id</td><td>yes</td><td>
 
@@ -41,4 +43,4 @@ octokit.actions.removeSelectedRepoFromOrgSecret({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/actions/secrets/#remove-selected-repository-from-an-organization-secret).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/actions#remove-selected-repository-from-an-organization-secret).

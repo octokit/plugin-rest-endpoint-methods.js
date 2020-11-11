@@ -10,7 +10,7 @@ type: API method
 
 ```js
 octokit.users.block({
-  username,
+  username
 });
 ```
 
@@ -31,4 +31,4 @@ octokit.users.block({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/users/blocking/#block-a-user).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/users#block-a-user).

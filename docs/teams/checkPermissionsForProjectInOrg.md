@@ -16,7 +16,7 @@ Checks whether a team has `read`, `write`, or `admin` permissions for an organiz
 octokit.teams.checkPermissionsForProjectInOrg({
   org,
   team_slug,
-  project_id,
+  project_id
 });
 ```
 
@@ -36,6 +36,8 @@ octokit.teams.checkPermissionsForProjectInOrg({
 </td></tr>
 <tr><td>team_slug</td><td>yes</td><td>
 
+team_slug parameter
+
 </td></tr>
 <tr><td>project_id</td><td>yes</td><td>
 
@@ -43,4 +45,4 @@ octokit.teams.checkPermissionsForProjectInOrg({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/teams/#check-team-permissions-for-a-project).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/v3/teams/#check-team-permissions-for-a-project).

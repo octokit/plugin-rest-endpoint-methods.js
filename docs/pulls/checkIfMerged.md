@@ -12,7 +12,7 @@ type: API method
 octokit.pulls.checkIfMerged({
   owner,
   repo,
-  pull_number,
+  pull_number
 });
 ```
 
@@ -39,4 +39,4 @@ octokit.pulls.checkIfMerged({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/pulls/#check-if-a-pull-request-has-been-merged).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/v3/pulls/#check-if-a-pull-request-has-been-merged).

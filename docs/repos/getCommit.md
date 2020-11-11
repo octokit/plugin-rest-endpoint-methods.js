@@ -12,9 +12,9 @@ Returns the contents of a single commit reference. You must have `read` access f
 
 **Note:** If there are more than 300 files in the commit diff, the response will include pagination link headers for the remaining files, up to a limit of 3000 files. Each page contains the static commit information, and the only changes are to the file listing.
 
-You can pass the appropriate [media type](https://developer.github.com/v3/media/#commits-commit-comparison-and-pull-requests) to fetch `diff` and `patch` formats. Diffs with binary data will have no `patch` property.
+You can pass the appropriate [media type](https://docs.github.com/rest/overview/media-types/#commits-commit-comparison-and-pull-requests) to fetch `diff` and `patch` formats. Diffs with binary data will have no `patch` property.
 
-To return only the SHA-1 hash of the commit reference, you can provide the `sha` custom [media type](https://developer.github.com/v3/media/#commits-commit-comparison-and-pull-requests) in the `Accept` header. You can use this endpoint to check if a remote reference's SHA-1 hash is the same as your local reference's SHA-1 hash by providing the local SHA-1 reference as the ETag.
+To return only the SHA-1 hash of the commit reference, you can provide the `sha` custom [media type](https://docs.github.com/rest/overview/media-types/#commits-commit-comparison-and-pull-requests) in the `Accept` header. You can use this endpoint to check if a remote reference's SHA-1 hash is the same as your local reference's SHA-1 hash by providing the local SHA-1 reference as the ETag.
 
 **Signature verification object**
 
@@ -49,7 +49,7 @@ These are the possible values for `reason` in the `verification` object:
 octokit.repos.getCommit({
   owner,
   repo,
-  ref,
+  ref
 });
 ```
 
@@ -72,8 +72,10 @@ octokit.repos.getCommit({
 </td></tr>
 <tr><td>ref</td><td>yes</td><td>
 
+ref+ parameter
+
 </td></tr>
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/commits/#get-a-commit).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#get-a-commit).

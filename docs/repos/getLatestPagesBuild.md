@@ -11,7 +11,7 @@ type: API method
 ```js
 octokit.repos.getLatestPagesBuild({
   owner,
-  repo,
+  repo
 });
 ```
 
@@ -35,4 +35,4 @@ octokit.repos.getLatestPagesBuild({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/pages/#get-latest-pages-build).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#get-latest-pages-build).

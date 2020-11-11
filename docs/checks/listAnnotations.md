@@ -14,7 +14,7 @@ Lists annotations for a check run using the annotation `id`. GitHub Apps must ha
 octokit.checks.listAnnotations({
   owner,
   repo,
-  check_run_id,
+  check_run_id
 });
 ```
 
@@ -37,6 +37,8 @@ octokit.checks.listAnnotations({
 </td></tr>
 <tr><td>check_run_id</td><td>yes</td><td>
 
+check_run_id parameter
+
 </td></tr>
 <tr><td>per_page</td><td>no</td><td>
 
@@ -51,4 +53,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/checks/runs/#list-check-run-annotations).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/checks#list-check-run-annotations).

@@ -18,7 +18,7 @@ octokit.codeScanning.uploadSarif({
   commit_sha,
   ref,
   sarif,
-  tool_name,
+  tool_name
 });
 ```
 
@@ -73,4 +73,4 @@ The name of the tool used to generate the code scanning analysis alert.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/code-scanning/#upload-a-sarif-analysis).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/v3/code-scanning/#upload-a-sarif-analysis).

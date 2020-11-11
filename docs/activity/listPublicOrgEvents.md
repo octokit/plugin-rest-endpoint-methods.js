@@ -10,7 +10,7 @@ type: API method
 
 ```js
 octokit.activity.listPublicOrgEvents({
-  org,
+  org
 });
 ```
 
@@ -41,4 +41,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/activity/events/#list-public-organization-events).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/activity#list-public-organization-events).

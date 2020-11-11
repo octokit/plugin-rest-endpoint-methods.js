@@ -12,7 +12,7 @@ type: API method
 octokit.issues.getLabel({
   owner,
   repo,
-  name,
+  name
 });
 ```
 
@@ -39,4 +39,4 @@ octokit.issues.getLabel({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/issues/labels/#get-a-label).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/issues#get-a-label).

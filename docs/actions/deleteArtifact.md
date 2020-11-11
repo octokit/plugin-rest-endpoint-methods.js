@@ -14,7 +14,7 @@ Deletes an artifact for a workflow run. You must authenticate using an access to
 octokit.actions.deleteArtifact({
   owner,
   repo,
-  artifact_id,
+  artifact_id
 });
 ```
 
@@ -37,8 +37,10 @@ octokit.actions.deleteArtifact({
 </td></tr>
 <tr><td>artifact_id</td><td>yes</td><td>
 
+artifact_id parameter
+
 </td></tr>
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/actions/artifacts/#delete-an-artifact).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/actions#delete-an-artifact).

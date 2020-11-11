@@ -15,7 +15,7 @@ octokit.issues.removeLabel({
   owner,
   repo,
   issue_number,
-  name,
+  name
 });
 ```
 
@@ -38,6 +38,8 @@ octokit.issues.removeLabel({
 </td></tr>
 <tr><td>issue_number</td><td>yes</td><td>
 
+issue_number parameter
+
 </td></tr>
 <tr><td>name</td><td>yes</td><td>
 
@@ -45,4 +47,4 @@ octokit.issues.removeLabel({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/issues/labels/#remove-a-label-from-an-issue).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/issues#remove-a-label-from-an-issue).

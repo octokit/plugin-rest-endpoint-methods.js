@@ -10,7 +10,7 @@ type: API method
 
 ```js
 octokit.projects.createForAuthenticatedUser({
-  name,
+  name
 });
 ```
 
@@ -27,15 +27,15 @@ octokit.projects.createForAuthenticatedUser({
   <tbody>
     <tr><td>name</td><td>yes</td><td>
 
-The name of the project.
+Name of the project
 
 </td></tr>
 <tr><td>body</td><td>no</td><td>
 
-The description of the project.
+Body of the project
 
 </td></tr>
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/projects/#create-a-user-project).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/v3/projects/#create-a-user-project).

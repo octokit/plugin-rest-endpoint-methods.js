@@ -54,4 +54,4 @@ The repository directory that includes the source files for the Pages site. Allo
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/pages/#create-a-github-pages-site).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#create-a-github-pages-site).

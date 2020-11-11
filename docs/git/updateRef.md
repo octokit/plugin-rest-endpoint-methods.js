@@ -13,7 +13,7 @@ octokit.git.updateRef({
   owner,
   repo,
   ref,
-  sha,
+  sha
 });
 ```
 
@@ -36,6 +36,8 @@ octokit.git.updateRef({
 </td></tr>
 <tr><td>ref</td><td>yes</td><td>
 
+ref+ parameter
+
 </td></tr>
 <tr><td>sha</td><td>yes</td><td>
 
@@ -50,4 +52,4 @@ Indicates whether to force the update or to make sure the update is a fast-forwa
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/git/refs/#update-a-reference).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/git#update-a-reference).

@@ -13,7 +13,7 @@ This method returns the contents of the repository's code of conduct file, if on
 ```js
 octokit.codesOfConduct.getForRepo({
   owner,
-  repo,
+  repo
 });
 ```
 
@@ -37,4 +37,4 @@ octokit.codesOfConduct.getForRepo({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/codes_of_conduct/#get-the-code-of-conduct-for-a-repository).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/v3/codes_of_conduct/#get-the-code-of-conduct-for-a-repository).

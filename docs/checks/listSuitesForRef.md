@@ -16,7 +16,7 @@ Lists check suites for a commit `ref`. The `ref` can be a SHA, branch name, or a
 octokit.checks.listSuitesForRef({
   owner,
   repo,
-  ref,
+  ref
 });
 ```
 
@@ -39,6 +39,8 @@ octokit.checks.listSuitesForRef({
 </td></tr>
 <tr><td>ref</td><td>yes</td><td>
 
+ref+ parameter
+
 </td></tr>
 <tr><td>app_id</td><td>no</td><td>
 
@@ -47,7 +49,7 @@ Filters check suites by GitHub App `id`.
 </td></tr>
 <tr><td>check_name</td><td>no</td><td>
 
-Filters checks suites by the name of the [check run](https://developer.github.com/v3/checks/runs/).
+Returns check runs with the specified `name`.
 
 </td></tr>
 <tr><td>per_page</td><td>no</td><td>
@@ -63,4 +65,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/checks/suites/#list-check-suites-for-a-git-reference).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/checks#list-check-suites-for-a-git-reference).

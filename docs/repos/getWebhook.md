@@ -8,11 +8,13 @@ type: API method
 
 # Get a repository webhook
 
+Returns a webhook configured in a repository. To get only the webhook `config` properties, see "[Get a webhook configuration for a repository](/rest/reference/repos#get-a-webhook-configuration-for-a-repository)."
+
 ```js
 octokit.repos.getWebhook({
   owner,
   repo,
-  hook_id,
+  hook_id
 });
 ```
 
@@ -39,4 +41,4 @@ octokit.repos.getWebhook({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/hooks/#get-a-repository-webhook).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#get-a-repository-webhook).

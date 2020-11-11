@@ -12,7 +12,7 @@ type: API method
 octokit.pulls.listRequestedReviewers({
   owner,
   repo,
-  pull_number,
+  pull_number
 });
 ```
 
@@ -49,4 +49,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/pulls/review_requests/#list-requested-reviewers-for-a-pull-request).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/pulls#list-requested-reviewers-for-a-pull-request).

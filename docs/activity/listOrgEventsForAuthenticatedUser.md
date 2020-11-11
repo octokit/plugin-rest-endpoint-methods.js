@@ -13,7 +13,7 @@ This is the user's organization dashboard. You must be authenticated as the user
 ```js
 octokit.activity.listOrgEventsForAuthenticatedUser({
   username,
-  org,
+  org
 });
 ```
 
@@ -47,4 +47,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/activity/events/#list-organization-events-for-the-authenticated-user).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/activity#list-organization-events-for-the-authenticated-user).

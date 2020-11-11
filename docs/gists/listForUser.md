@@ -12,7 +12,7 @@ Lists public gists for the specified user:
 
 ```js
 octokit.gists.listForUser({
-  username,
+  username
 });
 ```
 
@@ -32,7 +32,7 @@ octokit.gists.listForUser({
 </td></tr>
 <tr><td>since</td><td>no</td><td>
 
-This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`. Only gists updated at or after this time are returned.
+Only show notifications updated after the given time. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.
 
 </td></tr>
 <tr><td>per_page</td><td>no</td><td>
@@ -48,4 +48,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/gists/#list-gists-for-a-user).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/v3/gists/#list-gists-for-a-user).

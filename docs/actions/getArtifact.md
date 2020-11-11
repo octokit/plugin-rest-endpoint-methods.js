@@ -14,7 +14,7 @@ Gets a specific artifact for a workflow run. Anyone with read access to the repo
 octokit.actions.getArtifact({
   owner,
   repo,
-  artifact_id,
+  artifact_id
 });
 ```
 
@@ -37,8 +37,10 @@ octokit.actions.getArtifact({
 </td></tr>
 <tr><td>artifact_id</td><td>yes</td><td>
 
+artifact_id parameter
+
 </td></tr>
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/actions/artifacts/#get-an-artifact).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/actions#get-an-artifact).

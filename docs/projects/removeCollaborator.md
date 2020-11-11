@@ -1,19 +1,19 @@
 ---
-name: Remove project collaborator
+name: Remove user as a collaborator
 example: octokit.projects.removeCollaborator({ project_id, username })
 route: DELETE /projects/{project_id}/collaborators/{username}
 scope: projects
 type: API method
 ---
 
-# Remove project collaborator
+# Remove user as a collaborator
 
 Removes a collaborator from an organization project. You must be an organization owner or a project `admin` to remove a collaborator.
 
 ```js
 octokit.projects.removeCollaborator({
   project_id,
-  username,
+  username
 });
 ```
 
@@ -37,4 +37,4 @@ octokit.projects.removeCollaborator({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/projects/collaborators/#remove-project-collaborator).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/projects#remove-project-collaborator).

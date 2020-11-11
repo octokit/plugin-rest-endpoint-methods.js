@@ -13,7 +13,7 @@ Simple filtering of deployments is available via query parameters:
 ```js
 octokit.repos.listDeployments({
   owner,
-  repo,
+  repo
 });
 ```
 
@@ -67,4 +67,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/deployments/#list-deployments).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#list-deployments).

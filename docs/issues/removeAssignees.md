@@ -14,7 +14,7 @@ Removes one or more assignees from an issue.
 octokit.issues.removeAssignees({
   owner,
   repo,
-  issue_number,
+  issue_number
 });
 ```
 
@@ -37,6 +37,8 @@ octokit.issues.removeAssignees({
 </td></tr>
 <tr><td>issue_number</td><td>yes</td><td>
 
+issue_number parameter
+
 </td></tr>
 <tr><td>assignees</td><td>no</td><td>
 
@@ -46,4 +48,4 @@ Usernames of assignees to remove from an issue. _NOTE: Only users with push acce
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/issues/assignees/#remove-assignees-from-an-issue).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/issues#remove-assignees-from-an-issue).

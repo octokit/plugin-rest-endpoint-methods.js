@@ -11,7 +11,7 @@ type: API method
 ```js
 octokit.orgs.blockUser({
   org,
-  username,
+  username
 });
 ```
 
@@ -35,4 +35,4 @@ octokit.orgs.blockUser({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/orgs/blocking/#block-a-user-from-an-organization).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/orgs#block-a-user-from-an-organization).

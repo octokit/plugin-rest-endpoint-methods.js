@@ -8,12 +8,12 @@ type: API method
 
 # Enable automated security fixes
 
-Enables automated security fixes for a repository. The authenticated user must have admin access to the repository. For more information, see "[Configuring automated security fixes](https://docs.github.com/en/articles/configuring-automated-security-fixes)".
+Enables automated security fixes for a repository. The authenticated user must have admin access to the repository. For more information, see "[Configuring automated security fixes](https://help.github.com/en/articles/configuring-automated-security-fixes)".
 
 ```js
 octokit.repos.enableAutomatedSecurityFixes({
   owner,
-  repo,
+  repo
 });
 ```
 
@@ -37,4 +37,4 @@ octokit.repos.enableAutomatedSecurityFixes({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/#enable-automated-security-fixes).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/v3/repos/#enable-automated-security-fixes).

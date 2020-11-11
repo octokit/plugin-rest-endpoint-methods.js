@@ -12,7 +12,7 @@ type: API method
 octokit.repos.getCommitComment({
   owner,
   repo,
-  comment_id,
+  comment_id
 });
 ```
 
@@ -35,8 +35,10 @@ octokit.repos.getCommitComment({
 </td></tr>
 <tr><td>comment_id</td><td>yes</td><td>
 
+comment_id parameter
+
 </td></tr>
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/comments/#get-a-commit-comment).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#get-a-commit-comment).

@@ -17,7 +17,7 @@ the `actions:read` permission to use this endpoint.
 octokit.actions.downloadWorkflowRunLogs({
   owner,
   repo,
-  run_id,
+  run_id
 });
 ```
 
@@ -44,4 +44,4 @@ octokit.actions.downloadWorkflowRunLogs({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/actions/workflow-runs/#download-workflow-run-logs).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/actions#download-workflow-run-logs).

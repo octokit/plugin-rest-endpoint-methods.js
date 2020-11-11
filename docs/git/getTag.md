@@ -41,7 +41,7 @@ These are the possible values for `reason` in the `verification` object:
 octokit.git.getTag({
   owner,
   repo,
-  tag_sha,
+  tag_sha
 });
 ```
 
@@ -68,4 +68,4 @@ octokit.git.getTag({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/git/tags/#get-a-tag).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/git#get-a-tag).

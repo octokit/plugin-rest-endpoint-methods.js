@@ -12,7 +12,7 @@ Creates a new repository in the specified organization. The authenticated user m
 
 **OAuth scope requirements**
 
-When using [OAuth](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/), authorizations must include:
+When using [OAuth](https://docs.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/), authorizations must include:
 
 - `public_repo` scope or `repo` scope to create a public repository
 - `repo` scope to create a private repository
@@ -20,7 +20,7 @@ When using [OAuth](https://developer.github.com/apps/building-oauth-apps/underst
 ```js
 octokit.repos.createInOrg({
   org,
-  name,
+  name
 });
 ```
 
@@ -60,7 +60,7 @@ Either `true` to create a private repository or `false` to create a public one.
 </td></tr>
 <tr><td>visibility</td><td>no</td><td>
 
-Can be `public` or `private`. If your organization is associated with an enterprise account using GitHub Enterprise Cloud or GitHub Enterprise Server 2.20+, `visibility` can also be `internal`. For more information, see "[Creating an internal repository](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/about-repository-visibility#about-internal-repositories)".  
+Can be `public` or `private`. If your organization is associated with an enterprise account using GitHub Enterprise Cloud or GitHub Enterprise Server 2.20+, `visibility` can also be `internal`. For more information, see "[Creating an internal repository](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/about-repository-visibility#about-internal-repositories)" in the GitHub Help documentation.  
 The `visibility` parameter overrides the `private` parameter when you use both parameters with the `nebula-preview` preview header.
 
 </td></tr>
@@ -101,7 +101,7 @@ Desired language or platform [.gitignore template](https://github.com/github/git
 </td></tr>
 <tr><td>license_template</td><td>no</td><td>
 
-Choose an [open source license template](https://choosealicense.com/) that best suits your needs, and then use the [license keyword](https://docs.github.com/articles/licensing-a-repository/#searching-github-by-license-type) as the `license_template` string. For example, "mit" or "mpl-2.0".
+Choose an [open source license template](https://choosealicense.com/) that best suits your needs, and then use the [license keyword](https://help.github.com/articles/licensing-a-repository/#searching-github-by-license-type) as the `license_template` string. For example, "mit" or "mpl-2.0".
 
 </td></tr>
 <tr><td>allow_squash_merge</td><td>no</td><td>
@@ -127,4 +127,4 @@ Either `true` to allow automatically deleting head branches when pull requests a
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/#create-an-organization-repository).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/v3/repos/#create-an-organization-repository).

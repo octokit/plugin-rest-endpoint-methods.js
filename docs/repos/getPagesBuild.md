@@ -12,7 +12,7 @@ type: API method
 octokit.repos.getPagesBuild({
   owner,
   repo,
-  build_id,
+  build_id
 });
 ```
 
@@ -39,4 +39,4 @@ octokit.repos.getPagesBuild({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/pages/#get-github-pages-build).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#get-github-pages-build).

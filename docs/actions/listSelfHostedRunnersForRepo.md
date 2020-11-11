@@ -8,13 +8,12 @@ type: API method
 
 # List self-hosted runners for a repository
 
-Lists all self-hosted runners configured in a repository.
-You must authenticate using an access token with the `repo` scope to use this endpoint.
+Lists all self-hosted runners configured in a repository. You must authenticate using an access token with the `repo` scope to use this endpoint.
 
 ```js
 octokit.actions.listSelfHostedRunnersForRepo({
   owner,
-  repo,
+  repo
 });
 ```
 
@@ -48,4 +47,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/actions/self-hosted-runners/#list-self-hosted-runners-for-a-repository).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/actions#list-self-hosted-runners-for-a-repository).

@@ -22,7 +22,7 @@ Configure your self-hosted runner, replacing `TOKEN` with the registration token
 
 ```js
 octokit.actions.createRegistrationTokenForOrg({
-  org,
+  org
 });
 ```
 
@@ -43,4 +43,4 @@ octokit.actions.createRegistrationTokenForOrg({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/actions/self-hosted-runners/#create-a-registration-token-for-an-organization).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/actions#create-a-registration-token-for-an-organization).

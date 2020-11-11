@@ -15,7 +15,7 @@ Build requests are limited to one concurrent build per repository and one concur
 ```js
 octokit.repos.requestPagesBuild({
   owner,
-  repo,
+  repo
 });
 ```
 
@@ -39,4 +39,4 @@ octokit.repos.requestPagesBuild({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/pages/#request-a-github-pages-build).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#request-a-github-pages-build).

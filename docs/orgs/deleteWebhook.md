@@ -11,7 +11,7 @@ type: API method
 ```js
 octokit.orgs.deleteWebhook({
   org,
-  hook_id,
+  hook_id
 });
 ```
 
@@ -35,4 +35,4 @@ octokit.orgs.deleteWebhook({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/orgs/hooks/#delete-an-organization-webhook).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/orgs#delete-an-organization-webhook).

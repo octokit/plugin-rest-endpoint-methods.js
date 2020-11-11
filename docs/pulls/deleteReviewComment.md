@@ -14,7 +14,7 @@ Deletes a review comment.
 octokit.pulls.deleteReviewComment({
   owner,
   repo,
-  comment_id,
+  comment_id
 });
 ```
 
@@ -37,8 +37,10 @@ octokit.pulls.deleteReviewComment({
 </td></tr>
 <tr><td>comment_id</td><td>yes</td><td>
 
+comment_id parameter
+
 </td></tr>
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/pulls/comments/#delete-a-review-comment-for-a-pull-request).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/pulls#delete-a-review-comment-for-a-pull-request).

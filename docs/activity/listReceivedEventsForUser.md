@@ -12,7 +12,7 @@ These are events that you've received by watching repos and following users. If 
 
 ```js
 octokit.activity.listReceivedEventsForUser({
-  username,
+  username
 });
 ```
 
@@ -43,4 +43,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/activity/events/#list-events-received-by-the-authenticated-user).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/activity#list-events-received-by-the-authenticated-user).

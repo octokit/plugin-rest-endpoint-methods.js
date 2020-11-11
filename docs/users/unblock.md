@@ -10,7 +10,7 @@ type: API method
 
 ```js
 octokit.users.unblock({
-  username,
+  username
 });
 ```
 
@@ -31,4 +31,4 @@ octokit.users.unblock({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/users/blocking/#unblock-a-user).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/users#unblock-a-user).

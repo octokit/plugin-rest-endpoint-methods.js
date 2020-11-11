@@ -8,11 +8,11 @@ type: API method
 
 # Get a GPG key for the authenticated user
 
-View extended details for a single GPG key. Requires that you are authenticated via Basic Auth or via OAuth with at least `read:gpg_key` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
+View extended details for a single GPG key. Requires that you are authenticated via Basic Auth or via OAuth with at least `read:gpg_key` [scope](https://docs.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
 
 ```js
 octokit.users.getGpgKeyForAuthenticated({
-  gpg_key_id,
+  gpg_key_id
 });
 ```
 
@@ -29,8 +29,10 @@ octokit.users.getGpgKeyForAuthenticated({
   <tbody>
     <tr><td>gpg_key_id</td><td>yes</td><td>
 
+gpg_key_id parameter
+
 </td></tr>
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/users/gpg_keys/#get-a-gpg-key-for-the-authenticated-user).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/users#get-a-gpg-key-for-the-authenticated-user).

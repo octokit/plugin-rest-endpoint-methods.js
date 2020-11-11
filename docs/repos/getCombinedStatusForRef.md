@@ -10,7 +10,7 @@ type: API method
 
 Users with pull access in a repository can access a combined view of commit statuses for a given ref. The ref can be a SHA, a branch name, or a tag name.
 
-The most recent status for each context is returned, up to 100. This field [paginates](https://developer.github.com/v3/#pagination) if there are over 100 contexts.
+The most recent status for each context is returned, up to 100. This field [paginates](https://docs.github.com/rest/overview/resources-in-the-rest-api#pagination) if there are over 100 contexts.
 
 Additionally, a combined `state` is returned. The `state` is one of:
 
@@ -22,7 +22,7 @@ Additionally, a combined `state` is returned. The `state` is one of:
 octokit.repos.getCombinedStatusForRef({
   owner,
   repo,
-  ref,
+  ref
 });
 ```
 
@@ -45,8 +45,10 @@ octokit.repos.getCombinedStatusForRef({
 </td></tr>
 <tr><td>ref</td><td>yes</td><td>
 
+ref+ parameter
+
 </td></tr>
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/statuses/#get-the-combined-status-for-a-specific-reference).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#get-the-combined-status-for-a-specific-reference).

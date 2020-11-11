@@ -11,7 +11,7 @@ type: API method
 ```js
 octokit.repos.deletePagesSite({
   owner,
-  repo,
+  repo
 });
 ```
 
@@ -35,4 +35,4 @@ octokit.repos.deletePagesSite({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/pages/#delete-a-github-pages-site).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#delete-a-github-pages-site).

@@ -14,7 +14,7 @@ Users with push access to the repository can edit a release.
 octokit.repos.updateRelease({
   owner,
   repo,
-  release_id,
+  release_id
 });
 ```
 
@@ -36,6 +36,8 @@ octokit.repos.updateRelease({
 
 </td></tr>
 <tr><td>release_id</td><td>yes</td><td>
+
+release_id parameter
 
 </td></tr>
 <tr><td>tag_name</td><td>no</td><td>
@@ -71,4 +73,4 @@ Text describing the contents of the tag.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/releases/#update-a-release).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#update-a-release).

@@ -14,7 +14,7 @@ Adds up to 10 assignees to an issue. Users already assigned to an issue are not 
 octokit.issues.addAssignees({
   owner,
   repo,
-  issue_number,
+  issue_number
 });
 ```
 
@@ -37,6 +37,8 @@ octokit.issues.addAssignees({
 </td></tr>
 <tr><td>issue_number</td><td>yes</td><td>
 
+issue_number parameter
+
 </td></tr>
 <tr><td>assignees</td><td>no</td><td>
 
@@ -46,4 +48,4 @@ Usernames of people to assign this issue to. _NOTE: Only users with push access 
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/issues/assignees/#add-assignees-to-an-issue).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/issues#add-assignees-to-an-issue).

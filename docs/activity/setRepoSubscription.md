@@ -8,12 +8,12 @@ type: API method
 
 # Set a repository subscription
 
-If you would like to watch a repository, set `subscribed` to `true`. If you would like to ignore notifications made within a repository, set `ignored` to `true`. If you would like to stop watching a repository, [delete the repository's subscription](https://developer.github.com/v3/activity/watching/#delete-a-repository-subscription) completely.
+If you would like to watch a repository, set `subscribed` to `true`. If you would like to ignore notifications made within a repository, set `ignored` to `true`. If you would like to stop watching a repository, [delete the repository's subscription](https://docs.github.com/rest/reference/activity#delete-a-repository-subscription) completely.
 
 ```js
 octokit.activity.setRepoSubscription({
   owner,
-  repo,
+  repo
 });
 ```
 
@@ -47,4 +47,4 @@ Determines if all notifications should be blocked from this repository.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/activity/watching/#set-a-repository-subscription).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/activity#set-a-repository-subscription).

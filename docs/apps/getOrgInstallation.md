@@ -10,11 +10,11 @@ type: API method
 
 Enables an authenticated GitHub App to find the organization's installation information.
 
-You must use a [JWT](https://developer.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint.
+You must use a [JWT](https://docs.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint.
 
 ```js
 octokit.apps.getOrgInstallation({
-  org,
+  org
 });
 ```
 
@@ -35,4 +35,4 @@ octokit.apps.getOrgInstallation({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/apps/#get-an-organization-installation-for-the-authenticated-app).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/v3/apps/#get-an-organization-installation-for-the-authenticated-app).

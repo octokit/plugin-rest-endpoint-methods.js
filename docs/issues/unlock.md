@@ -14,7 +14,7 @@ Users with push access can unlock an issue's conversation.
 octokit.issues.unlock({
   owner,
   repo,
-  issue_number,
+  issue_number
 });
 ```
 
@@ -37,8 +37,10 @@ octokit.issues.unlock({
 </td></tr>
 <tr><td>issue_number</td><td>yes</td><td>
 
+issue_number parameter
+
 </td></tr>
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/issues/#unlock-an-issue).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/v3/issues/#unlock-an-issue).

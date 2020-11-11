@@ -13,7 +13,7 @@ Lists all artifacts for a repository. Anyone with read access to the repository 
 ```js
 octokit.actions.listArtifactsForRepo({
   owner,
-  repo,
+  repo
 });
 ```
 
@@ -47,4 +47,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/actions/artifacts/#list-artifacts-for-a-repository).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/actions#list-artifacts-for-a-repository).

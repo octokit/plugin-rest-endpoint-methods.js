@@ -8,7 +8,7 @@ type: API method
 
 # Delete access restrictions
 
-Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
+Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://help.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
 
 Disables the ability to restrict who can push to this branch.
 
@@ -16,7 +16,7 @@ Disables the ability to restrict who can push to this branch.
 octokit.repos.deleteAccessRestrictions({
   owner,
   repo,
-  branch,
+  branch
 });
 ```
 
@@ -39,8 +39,10 @@ octokit.repos.deleteAccessRestrictions({
 </td></tr>
 <tr><td>branch</td><td>yes</td><td>
 
+branch+ parameter
+
 </td></tr>
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/branches/#delete-access-restrictions).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#delete-access-restrictions).

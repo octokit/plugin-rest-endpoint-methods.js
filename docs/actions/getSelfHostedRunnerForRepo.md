@@ -17,7 +17,7 @@ endpoint.
 octokit.actions.getSelfHostedRunnerForRepo({
   owner,
   repo,
-  runner_id,
+  runner_id
 });
 ```
 
@@ -46,4 +46,4 @@ Unique identifier of the self-hosted runner.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/actions/self-hosted-runners/#get-a-self-hosted-runner-for-a-repository).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/actions#get-a-self-hosted-runner-for-a-repository).

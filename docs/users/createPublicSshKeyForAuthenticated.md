@@ -1,6 +1,6 @@
 ---
 name: Create a public SSH key for the authenticated user
-example: octokit.users.createPublicSshKeyForAuthenticated()
+example: octokit.users.createPublicSshKeyForAuthenticated({ key })
 route: POST /user/keys
 scope: users
 type: API method
@@ -8,10 +8,12 @@ type: API method
 
 # Create a public SSH key for the authenticated user
 
-Adds a public SSH key to the authenticated user's GitHub account. Requires that you are authenticated via Basic Auth, or OAuth with at least `write:public_key` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
+Adds a public SSH key to the authenticated user's GitHub account. Requires that you are authenticated via Basic Auth, or OAuth with at least `write:public_key` [scope](https://docs.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
 
 ```js
-octokit.users.createPublicSshKeyForAuthenticated();
+octokit.users.createPublicSshKeyForAuthenticated({
+  key
+});
 ```
 
 ## Parameters
@@ -27,15 +29,15 @@ octokit.users.createPublicSshKeyForAuthenticated();
   <tbody>
     <tr><td>title</td><td>no</td><td>
 
-A descriptive name for the new key. Use a name that will help you recognize this key in your GitHub account. For example, if you're using a personal Mac, you might call this key "Personal MacBook Air".
+A descriptive name for the new key.
 
 </td></tr>
-<tr><td>key</td><td>no</td><td>
+<tr><td>key</td><td>yes</td><td>
 
-The public SSH key to add to your GitHub account. See "[Generating a new SSH key](https://docs.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/)" for guidance on how to create a public SSH key.
+The public SSH key to add to your GitHub account.
 
 </td></tr>
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/users/keys/#create-a-public-ssh-key-for-the-authenticated-user).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/users#create-a-public-ssh-key-for-the-authenticated-user).

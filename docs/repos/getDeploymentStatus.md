@@ -15,7 +15,7 @@ octokit.repos.getDeploymentStatus({
   owner,
   repo,
   deployment_id,
-  status_id,
+  status_id
 });
 ```
 
@@ -38,6 +38,8 @@ octokit.repos.getDeploymentStatus({
 </td></tr>
 <tr><td>deployment_id</td><td>yes</td><td>
 
+deployment_id parameter
+
 </td></tr>
 <tr><td>status_id</td><td>yes</td><td>
 
@@ -45,4 +47,4 @@ octokit.repos.getDeploymentStatus({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/deployments/#get-a-deployment-status).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#get-a-deployment-status).

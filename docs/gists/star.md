@@ -8,11 +8,11 @@ type: API method
 
 # Star a gist
 
-Note that you'll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see "[HTTP verbs](https://developer.github.com/v3/#http-verbs)."
+Note that you'll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see "[HTTP verbs](https://docs.github.com/rest/overview/resources-in-the-rest-api#http-verbs)."
 
 ```js
 octokit.gists.star({
-  gist_id,
+  gist_id
 });
 ```
 
@@ -29,8 +29,10 @@ octokit.gists.star({
   <tbody>
     <tr><td>gist_id</td><td>yes</td><td>
 
+gist_id parameter
+
 </td></tr>
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/gists/#star-a-gist).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/v3/gists/#star-a-gist).

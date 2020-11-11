@@ -13,7 +13,7 @@ List all the repositories for this organization migration.
 ```js
 octokit.migrations.listReposForOrg({
   org,
-  migration_id,
+  migration_id
 });
 ```
 
@@ -33,6 +33,8 @@ octokit.migrations.listReposForOrg({
 </td></tr>
 <tr><td>migration_id</td><td>yes</td><td>
 
+migration_id parameter
+
 </td></tr>
 <tr><td>per_page</td><td>no</td><td>
 
@@ -47,4 +49,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/migrations/orgs/#list-repositories-in-an-organization-migration).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/migrations#list-repositories-in-an-organization-migration).

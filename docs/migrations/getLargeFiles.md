@@ -13,7 +13,7 @@ List files larger than 100MB found during the import
 ```js
 octokit.migrations.getLargeFiles({
   owner,
-  repo,
+  repo
 });
 ```
 
@@ -37,4 +37,4 @@ octokit.migrations.getLargeFiles({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/migrations/source_imports/#get-large-files).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/migrations#get-large-files).

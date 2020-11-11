@@ -13,7 +13,7 @@ Temporarily restricts interactions to certain GitHub users in any public reposit
 ```js
 octokit.interactions.setRestrictionsForOrg({
   org,
-  limit,
+  limit
 });
 ```
 
@@ -39,4 +39,4 @@ Specifies the group of GitHub users who can comment, open issues, or create pull
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/interactions/orgs/#set-interaction-restrictions-for-an-organization).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/interactions#set-interaction-restrictions-for-an-organization).

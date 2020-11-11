@@ -15,11 +15,11 @@ Fetches a single user migration. The response includes the `state` of the migrat
 - `exported` - the migration finished successfully.
 - `failed` - the migration failed.
 
-Once the migration has been `exported` you can [download the migration archive](https://developer.github.com/v3/migrations/users/#download-a-user-migration-archive).
+Once the migration has been `exported` you can [download the migration archive](https://docs.github.com/rest/reference/migrations#download-a-user-migration-archive).
 
 ```js
 octokit.migrations.getStatusForAuthenticatedUser({
-  migration_id,
+  migration_id
 });
 ```
 
@@ -36,8 +36,13 @@ octokit.migrations.getStatusForAuthenticatedUser({
   <tbody>
     <tr><td>migration_id</td><td>yes</td><td>
 
+migration_id parameter
+
+</td></tr>
+<tr><td>exclude</td><td>no</td><td>
+
 </td></tr>
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/migrations/users/#get-a-user-migration-status).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/migrations#get-a-user-migration-status).

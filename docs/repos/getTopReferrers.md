@@ -13,7 +13,7 @@ Get the top 10 referrers over the last 14 days.
 ```js
 octokit.repos.getTopReferrers({
   owner,
-  repo,
+  repo
 });
 ```
 
@@ -37,4 +37,4 @@ octokit.repos.getTopReferrers({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/traffic/#get-top-referral-sources).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#get-top-referral-sources).

@@ -11,16 +11,16 @@ type: API method
 Gets the contents of a file or directory in a repository. Specify the file path or directory in `:path`. If you omit
 `:path`, you will receive the contents of all files in the repository.
 
-Files and symlinks support [a custom media type](https://developer.github.com/v3/repos/contents/#custom-media-types) for
+Files and symlinks support [a custom media type](https://docs.github.com/rest/reference/repos#custom-media-types) for
 retrieving the raw content or rendered HTML (when supported). All content types support [a custom media
-type](https://developer.github.com/v3/repos/contents/#custom-media-types) to ensure the content is returned in a consistent
+type](https://docs.github.com/rest/reference/repos#custom-media-types) to ensure the content is returned in a consistent
 object format.
 
 **Note**:
 
-- To get a repository's contents recursively, you can [recursively get the tree](https://developer.github.com/v3/git/trees/).
+- To get a repository's contents recursively, you can [recursively get the tree](https://docs.github.com/rest/reference/git#trees).
 - This API has an upper limit of 1,000 files for a directory. If you need to retrieve more files, use the [Git Trees
-  API](https://developer.github.com/v3/git/trees/#get-a-tree).
+  API](https://docs.github.com/rest/reference/git#get-a-tree).
 - This API supports files up to 1 megabyte in size.
 
 #### If the content is a directory
@@ -49,7 +49,7 @@ github.com URLs (`html_url` and `_links["html"]`) will have null values.
 octokit.repos.getContent({
   owner,
   repo,
-  path,
+  path
 });
 ```
 
@@ -72,6 +72,8 @@ octokit.repos.getContent({
 </td></tr>
 <tr><td>path</td><td>yes</td><td>
 
+path+ parameter
+
 </td></tr>
 <tr><td>ref</td><td>no</td><td>
 
@@ -81,4 +83,4 @@ The name of the commit/branch/tag. Default: the repository’s default branch (u
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/contents/#get-repository-content).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#get-repository-content).

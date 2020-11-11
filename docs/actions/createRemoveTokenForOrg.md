@@ -23,7 +23,7 @@ endpoint.
 
 ```js
 octokit.actions.createRemoveTokenForOrg({
-  org,
+  org
 });
 ```
 
@@ -44,4 +44,4 @@ octokit.actions.createRemoveTokenForOrg({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/actions/self-hosted-runners/#create-a-remove-token-for-an-organization).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/actions#create-a-remove-token-for-an-organization).

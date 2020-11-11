@@ -11,7 +11,7 @@ type: API method
 ```js
 octokit.orgs.updateMembershipForAuthenticatedUser({
   org,
-  state,
+  state
 });
 ```
 
@@ -37,4 +37,4 @@ The state that the membership should be in. Only `"active"` will be accepted.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/orgs/members/#update-an-organization-membership-for-the-authenticated-user).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/orgs#update-an-organization-membership-for-the-authenticated-user).

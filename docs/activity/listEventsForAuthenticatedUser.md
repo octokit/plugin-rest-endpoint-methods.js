@@ -12,7 +12,7 @@ If you are authenticated as the given user, you will see your private events. Ot
 
 ```js
 octokit.activity.listEventsForAuthenticatedUser({
-  username,
+  username
 });
 ```
 
@@ -43,4 +43,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/activity/events/#list-events-for-the-authenticated-user).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/activity#list-events-for-the-authenticated-user).

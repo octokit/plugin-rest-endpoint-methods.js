@@ -40,7 +40,7 @@ These are the possible values for `reason` in the `verification` object:
 ```js
 octokit.repos.listCommits({
   owner,
-  repo,
+  repo
 });
 ```
 
@@ -78,7 +78,7 @@ GitHub login or email address by which to filter by commit author.
 </td></tr>
 <tr><td>since</td><td>no</td><td>
 
-Only commits after this date will be returned. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.
+Only show notifications updated after the given time. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.
 
 </td></tr>
 <tr><td>until</td><td>no</td><td>
@@ -99,4 +99,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/commits/#list-commits).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#list-commits).

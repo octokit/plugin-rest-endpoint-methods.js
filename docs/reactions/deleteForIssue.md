@@ -10,14 +10,14 @@ type: API method
 
 **Note:** You can also specify a repository by `repository_id` using the route `DELETE /repositories/:repository_id/issues/:issue_number/reactions/:reaction_id`.
 
-Delete a reaction to an [issue](https://developer.github.com/v3/issues/).
+Delete a reaction to an [issue](https://docs.github.com/rest/reference/issues/).
 
 ```js
 octokit.reactions.deleteForIssue({
   owner,
   repo,
   issue_number,
-  reaction_id,
+  reaction_id
 });
 ```
 
@@ -40,6 +40,8 @@ octokit.reactions.deleteForIssue({
 </td></tr>
 <tr><td>issue_number</td><td>yes</td><td>
 
+issue_number parameter
+
 </td></tr>
 <tr><td>reaction_id</td><td>yes</td><td>
 
@@ -47,4 +49,4 @@ octokit.reactions.deleteForIssue({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/reactions/#delete-an-issue-reaction).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/v3/reactions/#delete-an-issue-reaction).

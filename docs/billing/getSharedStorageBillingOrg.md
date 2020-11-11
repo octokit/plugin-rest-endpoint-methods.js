@@ -8,17 +8,15 @@ type: API method
 
 # Get shared storage billing for an organization
 
-**Warning:** The Billing API is currently in public beta and subject to change.
-
 Gets the estimated paid and estimated total storage used for GitHub Actions and Github Packages.
 
-Paid minutes only apply to packages stored for private repositories. For more information, see "[Managing billing for GitHub Packages](https://docs.github.com/github/setting-up-and-managing-billing-and-payments-on-github/managing-billing-for-github-packages)."
+Paid minutes only apply to packages stored for private repositories. For more information, see "[Managing billing for GitHub Packages](https://help.github.com/github/setting-up-and-managing-billing-and-payments-on-github/managing-billing-for-github-packages)."
 
 Access tokens must have the `read:org` scope.
 
 ```js
 octokit.billing.getSharedStorageBillingOrg({
-  org,
+  org
 });
 ```
 
@@ -39,4 +37,4 @@ octokit.billing.getSharedStorageBillingOrg({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/billing/#get-shared-storage-billing-for-an-organization).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/v3/billing/#get-shared-storage-billing-for-an-organization).

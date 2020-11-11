@@ -12,7 +12,7 @@ type: API method
 octokit.repos.deleteReleaseAsset({
   owner,
   repo,
-  asset_id,
+  asset_id
 });
 ```
 
@@ -35,8 +35,10 @@ octokit.repos.deleteReleaseAsset({
 </td></tr>
 <tr><td>asset_id</td><td>yes</td><td>
 
+asset_id parameter
+
 </td></tr>
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/releases/#delete-a-release-asset).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#delete-a-release-asset).

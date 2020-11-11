@@ -43,7 +43,7 @@ These are the possible values for `reason` in the `verification` object:
 octokit.git.getCommit({
   owner,
   repo,
-  commit_sha,
+  commit_sha
 });
 ```
 
@@ -66,8 +66,10 @@ octokit.git.getCommit({
 </td></tr>
 <tr><td>commit_sha</td><td>yes</td><td>
 
+commit_sha+ parameter
+
 </td></tr>
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/git/commits/#get-a-commit).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/git#get-a-commit).

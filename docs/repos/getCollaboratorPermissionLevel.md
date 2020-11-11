@@ -14,7 +14,7 @@ Checks the repository permission of a collaborator. The possible repository perm
 octokit.repos.getCollaboratorPermissionLevel({
   owner,
   repo,
-  username,
+  username
 });
 ```
 
@@ -41,4 +41,4 @@ octokit.repos.getCollaboratorPermissionLevel({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/collaborators/#get-repository-permissions-for-a-user).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#get-repository-permissions-for-a-user).

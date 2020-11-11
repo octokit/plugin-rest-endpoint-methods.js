@@ -1,6 +1,6 @@
 ---
 name: Create a GPG key for the authenticated user
-example: octokit.users.createGpgKeyForAuthenticated()
+example: octokit.users.createGpgKeyForAuthenticated({ armored_public_key })
 route: POST /user/gpg_keys
 scope: users
 type: API method
@@ -8,10 +8,12 @@ type: API method
 
 # Create a GPG key for the authenticated user
 
-Adds a GPG key to the authenticated user's GitHub account. Requires that you are authenticated via Basic Auth, or OAuth with at least `write:gpg_key` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
+Adds a GPG key to the authenticated user's GitHub account. Requires that you are authenticated via Basic Auth, or OAuth with at least `write:gpg_key` [scope](https://docs.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
 
 ```js
-octokit.users.createGpgKeyForAuthenticated();
+octokit.users.createGpgKeyForAuthenticated({
+  armored_public_key
+});
 ```
 
 ## Parameters
@@ -25,12 +27,12 @@ octokit.users.createGpgKeyForAuthenticated();
     </tr>
   </thead>
   <tbody>
-    <tr><td>armored_public_key</td><td>no</td><td>
+    <tr><td>armored_public_key</td><td>yes</td><td>
 
-Your GPG key, generated in ASCII-armored format. See "[Generating a new GPG key](https://docs.github.com/articles/generating-a-new-gpg-key/)" for help creating a GPG key.
+A GPG key in ASCII-armored format.
 
 </td></tr>
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/users/gpg_keys/#create-a-gpg-key-for-the-authenticated-user).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/users#create-a-gpg-key-for-the-authenticated-user).

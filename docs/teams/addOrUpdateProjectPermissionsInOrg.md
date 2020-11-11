@@ -16,7 +16,7 @@ Adds an organization project to a team. To add a project to a team or update the
 octokit.teams.addOrUpdateProjectPermissionsInOrg({
   org,
   team_slug,
-  project_id,
+  project_id
 });
 ```
 
@@ -36,6 +36,8 @@ octokit.teams.addOrUpdateProjectPermissionsInOrg({
 </td></tr>
 <tr><td>team_slug</td><td>yes</td><td>
 
+team_slug parameter
+
 </td></tr>
 <tr><td>project_id</td><td>yes</td><td>
 
@@ -46,10 +48,10 @@ The permission to grant to the team for this project. Can be one of:
 \* `read` - team members can read, but not write to or administer this project.  
 \* `write` - team members can read and write, but not administer this project.  
 \* `admin` - team members can read, write and administer this project.  
-Default: the team's `permission` attribute will be used to determine what permission to grant the team on this project. Note that, if you choose not to pass any parameters, you'll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see "[HTTP verbs](https://developer.github.com/v3/#http-verbs)."
+Default: the team's `permission` attribute will be used to determine what permission to grant the team on this project. Note that, if you choose not to pass any parameters, you'll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see "[HTTP verbs](https://docs.github.com/rest/overview/resources-in-the-rest-api#http-verbs)."
 
 </td></tr>
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/teams/#add-or-update-team-project-permissions).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/v3/teams/#add-or-update-team-project-permissions).

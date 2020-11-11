@@ -14,7 +14,7 @@ Deploy keys are immutable. If you need to update a key, remove the key and creat
 octokit.repos.deleteDeployKey({
   owner,
   repo,
-  key_id,
+  key_id
 });
 ```
 
@@ -37,8 +37,10 @@ octokit.repos.deleteDeployKey({
 </td></tr>
 <tr><td>key_id</td><td>yes</td><td>
 
+key_id parameter
+
 </td></tr>
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/keys/#delete-a-deploy-key).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#delete-a-deploy-key).

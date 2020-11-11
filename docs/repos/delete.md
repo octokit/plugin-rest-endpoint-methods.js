@@ -16,7 +16,7 @@ repositories, you will get a `403 Forbidden` response.
 ```js
 octokit.repos.delete({
   owner,
-  repo,
+  repo
 });
 ```
 
@@ -40,4 +40,4 @@ octokit.repos.delete({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/#delete-a-repository).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/v3/repos/#delete-a-repository).

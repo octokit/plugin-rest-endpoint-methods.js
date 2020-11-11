@@ -18,7 +18,7 @@ octokit.actions.downloadArtifact({
   owner,
   repo,
   artifact_id,
-  archive_format,
+  archive_format
 });
 ```
 
@@ -41,6 +41,8 @@ octokit.actions.downloadArtifact({
 </td></tr>
 <tr><td>artifact_id</td><td>yes</td><td>
 
+artifact_id parameter
+
 </td></tr>
 <tr><td>archive_format</td><td>yes</td><td>
 
@@ -48,4 +50,4 @@ octokit.actions.downloadArtifact({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/actions/artifacts/#download-an-artifact).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/actions#download-an-artifact).

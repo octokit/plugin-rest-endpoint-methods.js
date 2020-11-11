@@ -10,7 +10,7 @@ type: API method
 
 ```js
 octokit.projects.listColumns({
-  project_id,
+  project_id
 });
 ```
 
@@ -41,4 +41,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/projects/columns/#list-project-columns).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/projects#list-project-columns).

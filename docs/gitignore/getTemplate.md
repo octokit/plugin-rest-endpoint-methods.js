@@ -9,12 +9,11 @@ type: API method
 # Get a gitignore template
 
 The API also allows fetching the source of a single template.
-
-Use the raw [media type](https://developer.github.com/v3/media/) to get the raw contents.
+Use the raw [media type](https://docs.github.com/rest/overview/media-types/) to get the raw contents.
 
 ```js
 octokit.gitignore.getTemplate({
-  name,
+  name
 });
 ```
 
@@ -35,4 +34,4 @@ octokit.gitignore.getTemplate({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/gitignore/#get-a-gitignore-template).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/v3/gitignore/#get-a-gitignore-template).

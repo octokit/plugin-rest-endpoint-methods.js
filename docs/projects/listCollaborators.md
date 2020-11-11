@@ -12,7 +12,7 @@ Lists the collaborators for an organization project. For a project, the list of 
 
 ```js
 octokit.projects.listCollaborators({
-  project_id,
+  project_id
 });
 ```
 
@@ -51,4 +51,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/projects/collaborators/#list-project-collaborators).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/projects#list-project-collaborators).

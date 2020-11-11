@@ -14,6 +14,24 @@ octokit.licenses.getAllCommonlyUsed();
 
 ## Parameters
 
-This endpoint has no parameters
+<table>
+  <thead>
+    <tr>
+      <th>name</th>
+      <th>required</th>
+      <th>description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>featured</td><td>no</td><td>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/licenses/#get-all-commonly-used-licenses).
+</td></tr>
+<tr><td>per_page</td><td>no</td><td>
+
+Results per page (max 100)
+
+</td></tr>
+  </tbody>
+</table>
+
+See also: [GitHub Developer Guide documentation](https://docs.github.com/v3/licenses/#get-all-commonly-used-licenses).

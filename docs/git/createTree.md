@@ -10,13 +10,13 @@ type: API method
 
 The tree creation API accepts nested entries. If you specify both a tree and a nested path modifying that tree, this endpoint will overwrite the contents of the tree with the new path contents, and create a new tree structure.
 
-If you use this endpoint to add, delete, or modify the file contents in a tree, you will need to commit the tree and then update a branch to point to the commit. For more information see "[Create a commit](https://developer.github.com/v3/git/commits/#create-a-commit)" and "[Update a reference](https://developer.github.com/v3/git/refs/#update-a-reference)."
+If you use this endpoint to add, delete, or modify the file contents in a tree, you will need to commit the tree and then update a branch to point to the commit. For more information see "[Create a commit](https://docs.github.com/rest/reference/git#create-a-commit)" and "[Update a reference](https://docs.github.com/rest/reference/git#update-a-reference)."
 
 ```js
 octokit.git.createTree({
   owner,
   repo,
-  tree,
+  tree
 });
 ```
 
@@ -79,4 +79,4 @@ The SHA1 of the tree you want to update with new data. If you don't set this, th
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/git/trees/#create-a-tree).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/git#create-a-tree).

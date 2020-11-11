@@ -12,7 +12,7 @@ type: API method
 octokit.pulls.removeRequestedReviewers({
   owner,
   repo,
-  pull_number,
+  pull_number
 });
 ```
 
@@ -49,4 +49,4 @@ An array of team `slug`s that will be removed.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/pulls/review_requests/#remove-requested-reviewers-from-a-pull-request).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/pulls#remove-requested-reviewers-from-a-pull-request).

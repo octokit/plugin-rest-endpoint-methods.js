@@ -12,7 +12,7 @@ Lists the GPG keys for a user. This information is accessible by anyone.
 
 ```js
 octokit.users.listGpgKeysForUser({
-  username,
+  username
 });
 ```
 
@@ -43,4 +43,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/users/gpg_keys/#list-gpg-keys-for-a-user).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/users#list-gpg-keys-for-a-user).

@@ -10,7 +10,7 @@ type: API method
 
 ```js
 octokit.users.checkPersonIsFollowedByAuthenticated({
-  username,
+  username
 });
 ```
 
@@ -31,4 +31,4 @@ octokit.users.checkPersonIsFollowedByAuthenticated({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/users/followers/#check-if-a-person-is-followed-by-the-authenticated-user).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/users#check-if-a-person-is-followed-by-the-authenticated-user).

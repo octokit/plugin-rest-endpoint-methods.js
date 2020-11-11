@@ -12,7 +12,7 @@ type: API method
 octokit.git.createBlob({
   owner,
   repo,
-  content,
+  content
 });
 ```
 
@@ -46,4 +46,4 @@ The encoding used for `content`. Currently, `"utf-8"` and `"base64"` are support
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/git/blobs/#create-a-blob).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/git#create-a-blob).

@@ -14,7 +14,7 @@ Cancels a workflow run using its `id`. You must authenticate using an access tok
 octokit.actions.cancelWorkflowRun({
   owner,
   repo,
-  run_id,
+  run_id
 });
 ```
 
@@ -41,4 +41,4 @@ octokit.actions.cancelWorkflowRun({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/actions/workflow-runs/#cancel-a-workflow-run).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/actions#cancel-a-workflow-run).

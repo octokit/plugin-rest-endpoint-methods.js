@@ -14,7 +14,7 @@ Gets a specific job in a workflow run. Anyone with read access to the repository
 octokit.actions.getJobForWorkflowRun({
   owner,
   repo,
-  job_id,
+  job_id
 });
 ```
 
@@ -37,8 +37,10 @@ octokit.actions.getJobForWorkflowRun({
 </td></tr>
 <tr><td>job_id</td><td>yes</td><td>
 
+job_id parameter
+
 </td></tr>
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/actions/workflow-jobs/#get-a-job-for-a-workflow-run).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/actions#get-a-job-for-a-workflow-run).

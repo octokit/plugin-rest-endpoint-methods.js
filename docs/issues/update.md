@@ -14,7 +14,7 @@ Issue owners and users with push access can edit an issue.
 octokit.issues.update({
   owner,
   repo,
-  issue_number,
+  issue_number
 });
 ```
 
@@ -36,6 +36,8 @@ octokit.issues.update({
 
 </td></tr>
 <tr><td>issue_number</td><td>yes</td><td>
+
+issue_number parameter
 
 </td></tr>
 <tr><td>title</td><td>no</td><td>
@@ -76,4 +78,4 @@ Logins for Users to assign to this issue. Pass one or more user logins to _repla
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/issues/#update-an-issue).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/v3/issues/#update-an-issue).

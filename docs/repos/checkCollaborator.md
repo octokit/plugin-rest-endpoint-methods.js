@@ -16,7 +16,7 @@ Team members will include the members of child teams.
 octokit.repos.checkCollaborator({
   owner,
   repo,
-  username,
+  username
 });
 ```
 
@@ -43,4 +43,4 @@ octokit.repos.checkCollaborator({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/collaborators/#check-if-a-user-is-a-repository-collaborator).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#check-if-a-user-is-a-repository-collaborator).

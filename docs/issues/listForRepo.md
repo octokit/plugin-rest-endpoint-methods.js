@@ -13,12 +13,12 @@ List issues in a repository.
 **Note**: GitHub's REST API v3 considers every pull request an issue, but not every issue is a pull request. For this
 reason, "Issues" endpoints may return both issues and pull requests in the response. You can identify pull requests by
 the `pull_request` key. Be aware that the `id` of a pull request returned from "Issues" endpoints will be an _issue id_. To find out the pull
-request id, use the "[List pull requests](https://developer.github.com/v3/pulls/#list-pull-requests)" endpoint.
+request id, use the "[List pull requests](https://docs.github.com/rest/reference/pulls#list-pull-requests)" endpoint.
 
 ```js
 octokit.issues.listForRepo({
   owner,
-  repo,
+  repo
 });
 ```
 
@@ -76,12 +76,12 @@ What to sort results by. Can be either `created`, `updated`, `comments`.
 </td></tr>
 <tr><td>direction</td><td>no</td><td>
 
-The direction of the sort. Can be either `asc` or `desc`.
+One of `asc` (ascending) or `desc` (descending).
 
 </td></tr>
 <tr><td>since</td><td>no</td><td>
 
-Only issues updated at or after this time are returned. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.
+Only show notifications updated after the given time. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.
 
 </td></tr>
 <tr><td>per_page</td><td>no</td><td>
@@ -97,4 +97,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/issues/#list-repository-issues).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/v3/issues/#list-repository-issues).

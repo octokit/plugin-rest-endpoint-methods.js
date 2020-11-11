@@ -13,7 +13,7 @@ Check if a user is, publicly or privately, a member of the organization.
 ```js
 octokit.orgs.checkMembershipForUser({
   org,
-  username,
+  username
 });
 ```
 
@@ -37,4 +37,4 @@ octokit.orgs.checkMembershipForUser({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/orgs/members/#check-organization-membership-for-a-user).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/orgs#check-organization-membership-for-a-user).

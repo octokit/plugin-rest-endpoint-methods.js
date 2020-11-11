@@ -11,7 +11,7 @@ type: API method
 ```js
 octokit.projects.createColumn({
   project_id,
-  name,
+  name
 });
 ```
 
@@ -31,10 +31,10 @@ octokit.projects.createColumn({
 </td></tr>
 <tr><td>name</td><td>yes</td><td>
 
-The name of the column.
+Name of the project column
 
 </td></tr>
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/projects/columns/#create-a-project-column).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/projects#create-a-project-column).

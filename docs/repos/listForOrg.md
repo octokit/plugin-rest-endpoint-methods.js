@@ -12,7 +12,7 @@ Lists repositories for the specified organization.
 
 ```js
 octokit.repos.listForOrg({
-  org,
+  org
 });
 ```
 
@@ -58,4 +58,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/#list-organization-repositories).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/v3/repos/#list-organization-repositories).

@@ -11,7 +11,7 @@ type: API method
 ```js
 octokit.repos.listBranches({
   owner,
-  repo,
+  repo
 });
 ```
 
@@ -50,4 +50,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/branches/#list-branches).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#list-branches).

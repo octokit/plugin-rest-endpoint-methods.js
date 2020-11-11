@@ -13,7 +13,7 @@ octokit.issues.updateComment({
   owner,
   repo,
   comment_id,
-  body,
+  body
 });
 ```
 
@@ -36,6 +36,8 @@ octokit.issues.updateComment({
 </td></tr>
 <tr><td>comment_id</td><td>yes</td><td>
 
+comment_id parameter
+
 </td></tr>
 <tr><td>body</td><td>yes</td><td>
 
@@ -45,4 +47,4 @@ The contents of the comment.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/issues/comments/#update-an-issue-comment).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/issues#update-an-issue-comment).

@@ -8,10 +8,12 @@ type: API method
 
 # Get an organization webhook
 
+Returns a webhook configured in an organization. To get only the webhook `config` properties, see "[Get a webhook configuration for an organization](/rest/reference/orgs#get-a-webhook-configuration-for-an-organization)."
+
 ```js
 octokit.orgs.getWebhook({
   org,
-  hook_id,
+  hook_id
 });
 ```
 
@@ -35,4 +37,4 @@ octokit.orgs.getWebhook({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/orgs/hooks/#get-an-organization-webhook).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/orgs#get-an-organization-webhook).

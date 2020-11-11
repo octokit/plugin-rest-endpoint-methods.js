@@ -10,7 +10,7 @@ type: API method
 
 Checks whether a team has `admin`, `push`, `maintain`, `triage`, or `pull` permission for a repository. Repositories inherited through a parent team will also be checked.
 
-You can also get information about the specified repository, including what permissions the team grants on it, by passing the following custom [media type](https://developer.github.com/v3/media/) via the `application/vnd.github.v3.repository+json` accept header.
+You can also get information about the specified repository, including what permissions the team grants on it, by passing the following custom [media type](https://docs.github.com/rest/overview/media-types/) via the `application/vnd.github.v3.repository+json` accept header.
 
 If a team doesn't have permission for the repository, you will receive a `404 Not Found` response status.
 
@@ -21,7 +21,7 @@ octokit.teams.checkPermissionsForRepoInOrg({
   org,
   team_slug,
   owner,
-  repo,
+  repo
 });
 ```
 
@@ -41,6 +41,8 @@ octokit.teams.checkPermissionsForRepoInOrg({
 </td></tr>
 <tr><td>team_slug</td><td>yes</td><td>
 
+team_slug parameter
+
 </td></tr>
 <tr><td>owner</td><td>yes</td><td>
 
@@ -51,4 +53,4 @@ octokit.teams.checkPermissionsForRepoInOrg({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/teams/#check-team-permissions-for-a-repository).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/v3/teams/#check-team-permissions-for-a-repository).

@@ -14,7 +14,7 @@ Use the `:commit_sha` to specify the commit that will have its comments listed.
 octokit.repos.listCommentsForCommit({
   owner,
   repo,
-  commit_sha,
+  commit_sha
 });
 ```
 
@@ -37,6 +37,8 @@ octokit.repos.listCommentsForCommit({
 </td></tr>
 <tr><td>commit_sha</td><td>yes</td><td>
 
+commit_sha+ parameter
+
 </td></tr>
 <tr><td>per_page</td><td>no</td><td>
 
@@ -51,4 +53,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/repos/comments/#list-commit-comments).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#list-commit-comments).

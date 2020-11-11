@@ -10,7 +10,7 @@ type: API method
 
 ```js
 octokit.codesOfConduct.getConductCode({
-  key,
+  key
 });
 ```
 
@@ -31,4 +31,4 @@ octokit.codesOfConduct.getConductCode({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://developer.github.com/v3/codes_of_conduct/#get-a-code-of-conduct).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/v3/codes_of_conduct/#get-a-code-of-conduct).
