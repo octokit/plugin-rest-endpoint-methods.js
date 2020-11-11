@@ -26,7 +26,7 @@ describe("Smoke test", () => {
           name: "bug",
           url: "",
         },
-        status: 201,
+        status: 200,
         url: "",
       };
     }
