@@ -49,8 +49,6 @@ branch+ parameter
 </td></tr>
 <tr><td>users</td><td>yes</td><td>
 
-users parameter
-
 </td></tr>
   </tbody>
 </table>

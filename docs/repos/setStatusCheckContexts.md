@@ -43,8 +43,6 @@ branch+ parameter
 </td></tr>
 <tr><td>contexts</td><td>yes</td><td>
 
-contexts parameter
-
 </td></tr>
   </tbody>
 </table>

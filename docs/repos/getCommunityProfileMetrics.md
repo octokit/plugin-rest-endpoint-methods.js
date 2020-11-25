@@ -8,7 +8,12 @@ type: API method
 
 # Get community profile metrics
 
-This endpoint will return all community profile metrics, including an overall health score, repository description, the presence of documentation, detected code of conduct, detected license, and the presence of ISSUE_TEMPLATE, PULL_REQUEST_TEMPLATE, README, and CONTRIBUTING files.
+This endpoint will return all community profile metrics, including an
+overall health score, repository description, the presence of documentation, detected
+code of conduct, detected license, and the presence of ISSUE_TEMPLATE, PULL_REQUEST_TEMPLATE,
+README, and CONTRIBUTING files.
+
+`content_reports_enabled` is only returned for organization-owned repositories.
 
 ```js
 octokit.repos.getCommunityProfileMetrics({
