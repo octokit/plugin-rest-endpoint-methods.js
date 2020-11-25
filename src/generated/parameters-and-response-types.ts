@@ -1602,6 +1602,14 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["GET /repos/{owner}/{repo}/interaction-limits"]["response"];
     };
+    getRestrictionsForYourPublicRepos: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /user/interaction-limits"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /user/interaction-limits"]["response"];
+    };
     removeRestrictionsForOrg: {
       parameters: RequestParameters &
         Omit<
@@ -1618,6 +1626,14 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["DELETE /repos/{owner}/{repo}/interaction-limits"]["response"];
     };
+    removeRestrictionsForYourPublicRepos: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["DELETE /user/interaction-limits"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["DELETE /user/interaction-limits"]["response"];
+    };
     setRestrictionsForOrg: {
       parameters: RequestParameters &
         Omit<
@@ -1633,6 +1649,14 @@ export type RestEndpointMethodTypes = {
           "baseUrl" | "headers" | "mediaType"
         >;
       response: Endpoints["PUT /repos/{owner}/{repo}/interaction-limits"]["response"];
+    };
+    setRestrictionsForYourPublicRepos: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["PUT /user/interaction-limits"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["PUT /user/interaction-limits"]["response"];
     };
   };
   issues: {

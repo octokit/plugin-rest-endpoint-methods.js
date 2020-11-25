@@ -382,12 +382,15 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
   interactions: {
     getRestrictionsForOrg: ["GET /orgs/{org}/interaction-limits"],
     getRestrictionsForRepo: ["GET /repos/{owner}/{repo}/interaction-limits"],
+    getRestrictionsForYourPublicRepos: ["GET /user/interaction-limits"],
     removeRestrictionsForOrg: ["DELETE /orgs/{org}/interaction-limits"],
     removeRestrictionsForRepo: [
       "DELETE /repos/{owner}/{repo}/interaction-limits",
     ],
+    removeRestrictionsForYourPublicRepos: ["DELETE /user/interaction-limits"],
     setRestrictionsForOrg: ["PUT /orgs/{org}/interaction-limits"],
     setRestrictionsForRepo: ["PUT /repos/{owner}/{repo}/interaction-limits"],
+    setRestrictionsForYourPublicRepos: ["PUT /user/interaction-limits"],
   },
   issues: {
     addAssignees: [

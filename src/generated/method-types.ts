@@ -2105,7 +2105,7 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Lists all open code scanning alerts for the default branch (usually `master`) and protected branches in a repository. For private repos, you must use an access token with the `repo` scope. For public repos, you must use an access token with `public_repo` and `repo:security_events` scopes. GitHub Apps must have the `security_events` read permission to use this endpoint.
+     * Lists all open code scanning alerts for the default branch (usually `main` or `master`). For private repos, you must use an access token with the `repo` scope. For public repos, you must use an access token with `public_repo` and `repo:security_events` scopes. GitHub Apps must have the `security_events` read permission to use this endpoint.
      */
     listAlertsForRepo: {
       (
@@ -2781,7 +2781,7 @@ export type RestEndpointMethods = {
   };
   interactions: {
     /**
-     * Shows which group of GitHub users can interact with this organization and when the restriction expires. If there are no restrictions, you will see an empty response.
+     * Shows which type of GitHub user can interact with this organization and when the restriction expires. If there is no restrictions, you will see an empty response.
      */
     getRestrictionsForOrg: {
       (
@@ -2793,13 +2793,25 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Shows which group of GitHub users can interact with this repository and when the restriction expires. If there are no restrictions, you will see an empty response.
+     * Shows which type of GitHub user can interact with this repository and when the restriction expires. If there are no restrictions, you will see an empty response.
      */
     getRestrictionsForRepo: {
       (
         params?: RestEndpointMethodTypes["interactions"]["getRestrictionsForRepo"]["parameters"]
       ): Promise<
         RestEndpointMethodTypes["interactions"]["getRestrictionsForRepo"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Shows which type of GitHub user can interact with your public repositories and when the restriction expires. If there are no restrictions, you will see an empty response.
+     */
+    getRestrictionsForYourPublicRepos: {
+      (
+        params?: RestEndpointMethodTypes["interactions"]["getRestrictionsForYourPublicRepos"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["interactions"]["getRestrictionsForYourPublicRepos"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -2817,7 +2829,7 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Removes all interaction restrictions from the given repository. You must have owner or admin access to remove restrictions.
+     * Removes all interaction restrictions from the given repository. You must have owner or admin access to remove restrictions. If the interaction limit is set for the user or organization that owns this repository, you will receive a `409 Conflict` response and will not be able to use this endpoint to change the interaction limit for a single repository.
      */
     removeRestrictionsForRepo: {
       (
@@ -2829,7 +2841,19 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Temporarily restricts interactions to certain GitHub users in any public repository in the given organization. You must be an organization owner to set these restrictions.
+     * Removes any interaction restrictions from your public repositories.
+     */
+    removeRestrictionsForYourPublicRepos: {
+      (
+        params?: RestEndpointMethodTypes["interactions"]["removeRestrictionsForYourPublicRepos"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["interactions"]["removeRestrictionsForYourPublicRepos"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Temporarily restricts interactions to a certain type of GitHub user in any public repository in the given organization. You must be an organization owner to set these restrictions. Setting the interaction limit at the organization level will overwrite any interaction limits that are set for individual repositories owned by the organization.
      */
     setRestrictionsForOrg: {
       (
@@ -2841,13 +2865,25 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Temporarily restricts interactions to certain GitHub users within the given repository. You must have owner or admin access to set restrictions.
+     * Temporarily restricts interactions to a certain type of GitHub user within the given repository. You must have owner or admin access to set these restrictions. If an interaction limit is set for the user or organization that owns this repository, you will receive a `409 Conflict` response and will not be able to use this endpoint to change the interaction limit for a single repository.
      */
     setRestrictionsForRepo: {
       (
         params?: RestEndpointMethodTypes["interactions"]["setRestrictionsForRepo"]["parameters"]
       ): Promise<
         RestEndpointMethodTypes["interactions"]["setRestrictionsForRepo"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Temporarily restricts which type of GitHub user can interact with your public repositories. Setting the interaction limit at the user level will overwrite any interaction limits that are set for individual repositories owned by the user.
+     */
+    setRestrictionsForYourPublicRepos: {
+      (
+        params?: RestEndpointMethodTypes["interactions"]["setRestrictionsForYourPublicRepos"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["interactions"]["setRestrictionsForYourPublicRepos"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -6023,7 +6059,12 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * This endpoint will return all community profile metrics, including an overall health score, repository description, the presence of documentation, detected code of conduct, detected license, and the presence of ISSUE\_TEMPLATE, PULL\_REQUEST\_TEMPLATE, README, and CONTRIBUTING files.
+     * This endpoint will return all community profile metrics, including an
+     * overall health score, repository description, the presence of documentation, detected
+     * code of conduct, detected license, and the presence of ISSUE\_TEMPLATE, PULL\_REQUEST\_TEMPLATE,
+     * README, and CONTRIBUTING files.
+     *
+     * `content_reports_enabled` is only returned for organization-owned repositories.
      */
     getCommunityProfileMetrics: {
       (
@@ -7133,7 +7174,7 @@ export type RestEndpointMethods = {
      *
      * `q=windows+label:bug+language:python+state:open&sort=created&order=asc`
      *
-     * This query searches for the keyword `windows`, within any open issue that is labeled as `bug`. The search runs across repositories whose primary language is Python. The results are sorted by creation date in ascending order, whick means the oldest issues appear first in the search results.
+     * This query searches for the keyword `windows`, within any open issue that is labeled as `bug`. The search runs across repositories whose primary language is Python. The results are sorted by creation date in ascending order, which means the oldest issues appear first in the search results.
      *
      * **Note:** For [user-to-server](https://docs.github.com/developers/apps/identifying-and-authorizing-users-for-github-apps#user-to-server-requests) GitHub App requests, you can't retrieve a combination of issues and pull requests in a single query. Requests that don't include the `is:issue` or `is:pull-request` qualifier will receive an HTTP `422 Unprocessable Entity` response. To get results for both issues and pull requests, you must send separate queries for issues and pull requests. For more information about the `is` qualifier, see "[Searching only issues or pull requests](https://docs.github.com/github/searching-for-information-on-github/searching-issues-and-pull-requests#search-only-issues-or-pull-requests)."
      */
