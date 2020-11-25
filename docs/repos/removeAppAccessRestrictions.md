@@ -49,8 +49,6 @@ branch+ parameter
 </td></tr>
 <tr><td>apps</td><td>yes</td><td>
 
-apps parameter
-
 </td></tr>
   </tbody>
 </table>

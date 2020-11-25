@@ -8,7 +8,7 @@ type: API method
 
 # Get interaction restrictions for an organization
 
-Shows which group of GitHub users can interact with this organization and when the restriction expires. If there are no restrictions, you will see an empty response.
+Shows which type of GitHub user can interact with this organization and when the restriction expires. If there is no restrictions, you will see an empty response.
 
 ```js
 octokit.interactions.getRestrictionsForOrg({

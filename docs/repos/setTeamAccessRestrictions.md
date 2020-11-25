@@ -49,8 +49,6 @@ branch+ parameter
 </td></tr>
 <tr><td>teams</td><td>yes</td><td>
 
-teams parameter
-
 </td></tr>
   </tbody>
 </table>

@@ -8,7 +8,7 @@ type: API method
 
 # Set interaction restrictions for an organization
 
-Temporarily restricts interactions to certain GitHub users in any public repository in the given organization. You must be an organization owner to set these restrictions.
+Temporarily restricts interactions to a certain type of GitHub user in any public repository in the given organization. You must be an organization owner to set these restrictions. Setting the interaction limit at the organization level will overwrite any interaction limits that are set for individual repositories owned by the organization.
 
 ```js
 octokit.interactions.setRestrictionsForOrg({
@@ -33,7 +33,12 @@ octokit.interactions.setRestrictionsForOrg({
 </td></tr>
 <tr><td>limit</td><td>yes</td><td>
 
-Specifies the group of GitHub users who can comment, open issues, or create pull requests in public repositories for the given organization. Must be one of: `existing_users`, `contributors_only`, or `collaborators_only`.
+The type of GitHub user that can comment, open issues, or create pull requests while the interaction limit is in effect. Can be one of: `existing_users`, `contributors_only`, `collaborators_only`.
+
+</td></tr>
+<tr><td>expiry</td><td>no</td><td>
+
+The duration of the interaction restriction. Can be one of: `one_day`, `three_days`, `one_week`, `one_month`, `six_months`. Default: `one_day`.
 
 </td></tr>
   </tbody>
