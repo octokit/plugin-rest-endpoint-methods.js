@@ -134,37 +134,36 @@ describe("REST API endpoint methods", () => {
       });
   });
 
-  // TODO: will be resolved by https://github.com/github/rest-api-description/issues/88
-  // it("octokit.repos.addProtectedBranchRequiredStatusChecksContexts(): `contexts` option value is sent as request body without namespace", async () => {
-  //   const mock = fetchMock.sandbox().postOnce(
-  //     "https://api.github.com/repos/octocat/hello-world/branches/latest/protection/required_status_checks/contexts",
-  //     { ok: true },
-  //     {
-  //       body: ["myci1", "myci2"],
-  //     }
-  //   );
+  it("octokit.repos.addProtectedBranchRequiredStatusChecksContexts(): `contexts` option value is sent as request body without namespace", async () => {
+    const mock = fetchMock.sandbox().postOnce(
+      "https://api.github.com/repos/octocat/hello-world/branches/latest/protection/required_status_checks/contexts",
+      { ok: true },
+      {
+        body: ["myci1", "myci2"],
+      }
+    );
 
-  //   const MyOctokit = Octokit.plugin(restEndpointMethods);
-  //   const octokit = new MyOctokit({
-  //     auth: "secret123",
-  //     request: {
-  //       fetch: mock,
-  //     },
-  //   });
+    const MyOctokit = Octokit.plugin(restEndpointMethods);
+    const octokit = new MyOctokit({
+      auth: "secret123",
+      request: {
+        fetch: mock,
+      },
+    });
 
-  //   return octokit.repos
-  //     .addStatusCheckContexts({
-  //       owner: "octocat",
-  //       repo: "hello-world",
-  //       branch: "latest",
-  //       // data: ["myci1", "myci2"],
-  //     })
-  //     .catch((error) => {
-  //       console.log(error);
+    return octokit.repos
+      .addStatusCheckContexts({
+        owner: "octocat",
+        repo: "hello-world",
+        branch: "latest",
+        contexts: ["myci1", "myci2"],
+      })
+      .catch((error) => {
+        console.log(error);
 
-  //       throw error;
-  //     });
-  // });
+        throw error;
+      });
+  });
 
   it("octokit.apps.listInstallations(): method without options (octokit/rest.js#818)", async () => {
     const mock = fetchMock
