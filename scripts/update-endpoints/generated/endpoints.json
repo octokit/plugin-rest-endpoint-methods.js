@@ -1783,6 +1783,67 @@
     "renamed": null
   },
   {
+    "name": "Get GitHub Actions permissions for a repository",
+    "scope": "actions",
+    "id": "getRepoPermissions",
+    "method": "GET",
+    "url": "/repos/{owner}/{repo}/actions/permissions",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "description": "Gets the GitHub Actions permissions policy for a repository, including whether GitHub Actions is enabled and the actions allowed to run in the repository.\n\nYou must authenticate using an access token with the `repo` scope to use this\nendpoint. GitHub Apps must have the `administration` repository permission to use this API.",
+    "documentationUrl": "https://docs.github.com/rest/reference/actions#get-github-actions-permissions-for-a-repository",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "owner",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "repo",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "examples": [
+          {
+            "data": "{\"enabled\":true,\"allowed_actions\":\"selected\",\"selected_actions_url\":\"https://api.github.com/repositories/42/actions/permissions/selected-actions\"}"
+          }
+        ]
+      }
+    ],
+    "renamed": {
+      "before": { "scope": "actions", "id": "getRepoPermissions" },
+      "after": {
+        "scope": "actions",
+        "id": "getGithubActionsPermissionsRepository"
+      },
+      "date": "2020-11-10",
+      "note": null
+    }
+  },
+  {
     "name": "Get a repository public key",
     "scope": "actions",
     "id": "getRepoPublicKey",
@@ -2283,67 +2344,6 @@
       }
     ],
     "renamed": null
-  },
-  {
-    "name": "Get GitHub Actions permissions for a repository",
-    "scope": "actions",
-    "id": "getRepoPermissions",
-    "method": "GET",
-    "url": "/repos/{owner}/{repo}/actions/permissions",
-    "isDeprecated": false,
-    "deprecationDate": null,
-    "description": "Gets the GitHub Actions permissions policy for a repository, including whether GitHub Actions is enabled and the actions allowed to run in the repository.\n\nYou must authenticate using an access token with the `repo` scope to use this\nendpoint. GitHub Apps must have the `administration` repository permission to use this API.",
-    "documentationUrl": "https://docs.github.com/rest/reference/actions#get-github-actions-permissions-for-a-repository",
-    "previews": [],
-    "headers": [],
-    "parameters": [
-      {
-        "name": "owner",
-        "description": "",
-        "in": "PATH",
-        "type": "string",
-        "required": true,
-        "enum": null,
-        "allowNull": false,
-        "mapToData": null,
-        "validation": null,
-        "alias": null,
-        "deprecated": null
-      },
-      {
-        "name": "repo",
-        "description": "",
-        "in": "PATH",
-        "type": "string",
-        "required": true,
-        "enum": null,
-        "allowNull": false,
-        "mapToData": null,
-        "validation": null,
-        "alias": null,
-        "deprecated": null
-      }
-    ],
-    "responses": [
-      {
-        "code": 200,
-        "description": "response",
-        "examples": [
-          {
-            "data": "{\"enabled\":true,\"allowed_actions\":\"selected\",\"selected_actions_url\":\"https://api.github.com/repositories/42/actions/permissions/selected-actions\"}"
-          }
-        ]
-      }
-    ],
-    "renamed": {
-      "before": { "scope": "actions", "id": "getRepoPermissions" },
-      "after": {
-        "scope": "actions",
-        "id": "getGithubActionsPermissionsRepository"
-      },
-      "date": "2020-11-10",
-      "note": "\"actions/getRepoPermissions\" operation ID is now \"actions/getGithubActionsPermissionsRepository\""
-    }
   },
   {
     "name": "List artifacts for a repository",
@@ -33703,6 +33703,128 @@
   {
     "name": "Download a repository archive (tar)",
     "scope": "repos",
+    "id": "downloadArchive",
+    "method": "GET",
+    "url": "/repos/{owner}/{repo}/tarball/{ref}",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "description": "Gets a redirect URL to download a tar archive for a repository. If you omit `:ref`, the repository’s default branch (usually\n`master`) will be used. Please make sure your HTTP framework is configured to follow redirects or you will need to use\nthe `Location` header to make a second `GET` request.\n**Note**: For private repositories, these links are temporary and expire after five minutes.",
+    "documentationUrl": "https://docs.github.com/rest/reference/repos#download-a-repository-archive",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "owner",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "repo",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "ref",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [{ "code": 302, "description": "response", "examples": null }],
+    "renamed": {
+      "before": { "scope": "repos", "id": "downloadArchive" },
+      "after": { "scope": "repos", "id": "downloadTarballArchive" },
+      "date": "2020-09-17",
+      "note": null
+    }
+  },
+  {
+    "name": "Download a repository archive (zip)",
+    "scope": "repos",
+    "id": "downloadArchive",
+    "method": "GET",
+    "url": "/repos/{owner}/{repo}/zipball/{ref}",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "description": "Gets a redirect URL to download a zip archive for a repository. If you omit `:ref`, the repository’s default branch (usually\n`master`) will be used. Please make sure your HTTP framework is configured to follow redirects or you will need to use\nthe `Location` header to make a second `GET` request.\n**Note**: For private repositories, these links are temporary and expire after five minutes.",
+    "documentationUrl": "https://docs.github.com/rest/reference/repos#download-a-repository-archive",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "owner",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "repo",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "ref",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [{ "code": 302, "description": "response", "examples": null }],
+    "renamed": {
+      "before": { "scope": "repos", "id": "downloadArchive" },
+      "after": { "scope": "repos", "id": "downloadZipballArchive" },
+      "date": "2020-09-17",
+      "note": null
+    }
+  },
+  {
+    "name": "Download a repository archive (tar)",
+    "scope": "repos",
     "id": "downloadTarballArchive",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/tarball/{ref}",
@@ -33811,128 +33933,6 @@
     ],
     "responses": [{ "code": 302, "description": "response", "examples": null }],
     "renamed": null
-  },
-  {
-    "name": "Download a repository archive (tar)",
-    "scope": "repos",
-    "id": "downloadArchive",
-    "method": "GET",
-    "url": "/repos/{owner}/{repo}/tarball/{ref}",
-    "isDeprecated": false,
-    "deprecationDate": null,
-    "description": "Gets a redirect URL to download a tar archive for a repository. If you omit `:ref`, the repository’s default branch (usually\n`master`) will be used. Please make sure your HTTP framework is configured to follow redirects or you will need to use\nthe `Location` header to make a second `GET` request.\n**Note**: For private repositories, these links are temporary and expire after five minutes.",
-    "documentationUrl": "https://docs.github.com/rest/reference/repos#download-a-repository-archive",
-    "previews": [],
-    "headers": [],
-    "parameters": [
-      {
-        "name": "owner",
-        "description": "",
-        "in": "PATH",
-        "type": "string",
-        "required": true,
-        "enum": null,
-        "allowNull": false,
-        "mapToData": null,
-        "validation": null,
-        "alias": null,
-        "deprecated": null
-      },
-      {
-        "name": "repo",
-        "description": "",
-        "in": "PATH",
-        "type": "string",
-        "required": true,
-        "enum": null,
-        "allowNull": false,
-        "mapToData": null,
-        "validation": null,
-        "alias": null,
-        "deprecated": null
-      },
-      {
-        "name": "ref",
-        "description": "",
-        "in": "PATH",
-        "type": "string",
-        "required": true,
-        "enum": null,
-        "allowNull": false,
-        "mapToData": null,
-        "validation": null,
-        "alias": null,
-        "deprecated": null
-      }
-    ],
-    "responses": [{ "code": 302, "description": "response", "examples": null }],
-    "renamed": {
-      "before": { "scope": "repos", "id": "downloadArchive" },
-      "after": { "scope": "repos", "id": "downloadTarballArchive" },
-      "date": "2020-09-17",
-      "note": "\"repos/downloadArchive\" operation ID is now \"repos/downloadTarballArchive\""
-    }
-  },
-  {
-    "name": "Download a repository archive (zip)",
-    "scope": "repos",
-    "id": "downloadArchive",
-    "method": "GET",
-    "url": "/repos/{owner}/{repo}/zipball/{ref}",
-    "isDeprecated": false,
-    "deprecationDate": null,
-    "description": "Gets a redirect URL to download a zip archive for a repository. If you omit `:ref`, the repository’s default branch (usually\n`master`) will be used. Please make sure your HTTP framework is configured to follow redirects or you will need to use\nthe `Location` header to make a second `GET` request.\n**Note**: For private repositories, these links are temporary and expire after five minutes.",
-    "documentationUrl": "https://docs.github.com/rest/reference/repos#download-a-repository-archive",
-    "previews": [],
-    "headers": [],
-    "parameters": [
-      {
-        "name": "owner",
-        "description": "",
-        "in": "PATH",
-        "type": "string",
-        "required": true,
-        "enum": null,
-        "allowNull": false,
-        "mapToData": null,
-        "validation": null,
-        "alias": null,
-        "deprecated": null
-      },
-      {
-        "name": "repo",
-        "description": "",
-        "in": "PATH",
-        "type": "string",
-        "required": true,
-        "enum": null,
-        "allowNull": false,
-        "mapToData": null,
-        "validation": null,
-        "alias": null,
-        "deprecated": null
-      },
-      {
-        "name": "ref",
-        "description": "",
-        "in": "PATH",
-        "type": "string",
-        "required": true,
-        "enum": null,
-        "allowNull": false,
-        "mapToData": null,
-        "validation": null,
-        "alias": null,
-        "deprecated": null
-      }
-    ],
-    "responses": [{ "code": 302, "description": "response", "examples": null }],
-    "renamed": {
-      "before": { "scope": "repos", "id": "downloadArchive" },
-      "after": { "scope": "repos", "id": "downloadZipballArchive" },
-      "date": "2020-09-17",
-      "note": "\"repos/downloadArchive\" operation ID is now \"repos/downloadZipballArchive\""
-    }
   },
   {
     "name": "Enable automated security fixes",
@@ -41411,6 +41411,105 @@
   {
     "name": "Update status check protection",
     "scope": "repos",
+    "id": "updateStatusCheckPotection",
+    "method": "PATCH",
+    "url": "/repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "description": "Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://help.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.\n\nUpdating required status checks requires admin or owner permissions to the repository and branch protection to be enabled.",
+    "documentationUrl": "https://docs.github.com/rest/reference/repos#update-status-check-potection",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "owner",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "repo",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "branch",
+        "description": "branch+ parameter",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "strict",
+        "description": "Require branches to be up to date before merging.",
+        "in": "BODY",
+        "type": "boolean",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "contexts",
+        "description": "The list of status checks to require in order to merge into this branch",
+        "in": "BODY",
+        "type": "string[]",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "examples": [
+          {
+            "data": "{\"url\":\"https://api.github.com/repos/octocat/Hello-World/branches/master/protection/required_status_checks\",\"strict\":true,\"contexts\":[\"continuous-integration/travis-ci\"],\"contexts_url\":\"https://api.github.com/repos/octocat/Hello-World/branches/master/protection/required_status_checks/contexts\"}"
+          }
+        ]
+      },
+      { "code": 404, "description": "Resource Not Found", "examples": null },
+      { "code": 422, "description": "Validation Failed", "examples": null }
+    ],
+    "renamed": {
+      "before": { "scope": "repos", "id": "updateStatusCheckPotection" },
+      "after": { "scope": "repos", "id": "updateStatusCheckProtection" },
+      "date": "2020-09-17",
+      "note": null
+    }
+  },
+  {
+    "name": "Update status check protection",
+    "scope": "repos",
     "id": "updateStatusCheckProtection",
     "method": "PATCH",
     "url": "/repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks",
@@ -41830,105 +41929,6 @@
       }
     ],
     "renamed": null
-  },
-  {
-    "name": "Update status check protection",
-    "scope": "repos",
-    "id": "updateStatusCheckPotection",
-    "method": "PATCH",
-    "url": "/repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks",
-    "isDeprecated": false,
-    "deprecationDate": null,
-    "description": "Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://help.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.\n\nUpdating required status checks requires admin or owner permissions to the repository and branch protection to be enabled.",
-    "documentationUrl": "https://docs.github.com/rest/reference/repos#update-status-check-potection",
-    "previews": [],
-    "headers": [],
-    "parameters": [
-      {
-        "name": "owner",
-        "description": "",
-        "in": "PATH",
-        "type": "string",
-        "required": true,
-        "enum": null,
-        "allowNull": false,
-        "mapToData": null,
-        "validation": null,
-        "alias": null,
-        "deprecated": null
-      },
-      {
-        "name": "repo",
-        "description": "",
-        "in": "PATH",
-        "type": "string",
-        "required": true,
-        "enum": null,
-        "allowNull": false,
-        "mapToData": null,
-        "validation": null,
-        "alias": null,
-        "deprecated": null
-      },
-      {
-        "name": "branch",
-        "description": "branch+ parameter",
-        "in": "PATH",
-        "type": "string",
-        "required": true,
-        "enum": null,
-        "allowNull": false,
-        "mapToData": null,
-        "validation": null,
-        "alias": null,
-        "deprecated": null
-      },
-      {
-        "name": "strict",
-        "description": "Require branches to be up to date before merging.",
-        "in": "BODY",
-        "type": "boolean",
-        "required": false,
-        "enum": null,
-        "allowNull": false,
-        "mapToData": null,
-        "validation": null,
-        "alias": null,
-        "deprecated": null
-      },
-      {
-        "name": "contexts",
-        "description": "The list of status checks to require in order to merge into this branch",
-        "in": "BODY",
-        "type": "string[]",
-        "required": false,
-        "enum": null,
-        "allowNull": false,
-        "mapToData": null,
-        "validation": null,
-        "alias": null,
-        "deprecated": null
-      }
-    ],
-    "responses": [
-      {
-        "code": 200,
-        "description": "response",
-        "examples": [
-          {
-            "data": "{\"url\":\"https://api.github.com/repos/octocat/Hello-World/branches/master/protection/required_status_checks\",\"strict\":true,\"contexts\":[\"continuous-integration/travis-ci\"],\"contexts_url\":\"https://api.github.com/repos/octocat/Hello-World/branches/master/protection/required_status_checks/contexts\"}"
-          }
-        ]
-      },
-      { "code": 404, "description": "Resource Not Found", "examples": null },
-      { "code": 422, "description": "Validation Failed", "examples": null }
-    ],
-    "renamed": {
-      "before": { "scope": "repos", "id": "updateStatusCheckPotection" },
-      "after": { "scope": "repos", "id": "updateStatusCheckProtection" },
-      "date": "2020-09-17",
-      "note": "\"repos/updateStatusCheckPotection\" operation ID is now \"repos/updateStatusCheckProtection\""
-    }
   },
   {
     "name": "Upload a release asset",
