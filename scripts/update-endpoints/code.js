@@ -21,7 +21,7 @@ const newRoutes = {};
 generateRoutes();
 
 async function generateRoutes() {
-  ENDPOINTS.forEach(endpoint => {
+  ENDPOINTS.forEach((endpoint) => {
     if (isDeprecated(endpoint)) return false;
 
     const scope = endpoint.scope;
@@ -68,14 +68,14 @@ async function generateRoutes() {
 
     if (endpoint.previews.length) {
       endpointDefaults.mediaType = {
-        previews: endpoint.previews.map(preview => preview.name)
+        previews: endpoint.previews.map((preview) => preview.name),
       };
     }
 
     if (endpoint.renamed) {
       endpointDecorations.renamed = [
         endpoint.renamed.after.scope,
-        endpoint.renamed.after.id
+        endpoint.renamed.after.id,
       ];
     }
 
@@ -84,7 +84,7 @@ async function generateRoutes() {
     }
 
     const renamedParameters = endpoint.parameters.filter(
-      parameter => !!parameter.alias
+      (parameter) => !!parameter.alias
     );
 
     if (renamedParameters.length) {
@@ -95,7 +95,7 @@ async function generateRoutes() {
       }
     }
 
-    const mapToDataParameter = endpoint.parameters.find(parameter => {
+    const mapToDataParameter = endpoint.parameters.find((parameter) => {
       return parameter.mapToData && parameter.name !== "data";
     });
 
