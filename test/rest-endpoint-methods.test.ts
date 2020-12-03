@@ -7,7 +7,7 @@ describe("REST API endpoint methods", () => {
   it("README example", async () => {
     const mock = fetchMock.sandbox().post(
       "path:/user/repos",
-      { ok: true },
+      { id: 1 },
       {
         body: {
           name: "my-new-repo",
@@ -28,19 +28,17 @@ describe("REST API endpoint methods", () => {
       name: "my-new-repo",
     });
 
-    expect(data).toStrictEqual({ ok: true });
+    expect(data.id).toStrictEqual(1);
   });
 
   it("Required preview header", async () => {
-    const mock = fetchMock.sandbox().getOnce(
-      "path:/codes_of_conduct",
-      { ok: true },
-      {
+    const mock = fetchMock
+      .sandbox()
+      .getOnce("path:/codes_of_conduct", [{ key: "mit" }], {
         headers: {
           accept: "application/vnd.github.scarlet-witch-preview+json",
         },
-      }
-    );
+      });
 
     const MyOctokit = Octokit.plugin(restEndpointMethods);
     const octokit = new MyOctokit({
@@ -52,7 +50,7 @@ describe("REST API endpoint methods", () => {
     // See https://developer.github.com/v3/repos/#create-a-repository-dispatch-event
     const { data } = await octokit.codesOfConduct.getAllCodesOfConduct();
 
-    expect(data).toStrictEqual({ ok: true });
+    expect(data[0].key).toStrictEqual("mit");
   });
 
   it("octokit.markdown.renderRaw()", async () => {
