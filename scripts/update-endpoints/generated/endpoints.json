@@ -2221,7 +2221,7 @@
     "url": "/repos/{owner}/{repo}/actions/runs/{run_id}/timing",
     "isDeprecated": false,
     "deprecationDate": null,
-    "description": "**Warning:** This GitHub Actions usage endpoint is currently in public beta and subject to change. For more information, see \"[GitHub Actions API workflow usage](https://developer.github.com/changes/2020-05-15-actions-api-workflow-usage).\"\n\nGets the number of billable minutes and total run time for a specific workflow run. Billable minutes only apply to workflows in private repositories that use GitHub-hosted runners. Usage is listed for each GitHub-hosted runner operating system in milliseconds. Any job re-runs are also included in the usage. The usage does not include the multiplier for macOS and Windows runners and is not rounded up to the nearest whole minute. For more information, see \"[Managing billing for GitHub Actions](https://help.github.com/github/setting-up-and-managing-billing-and-payments-on-github/managing-billing-for-github-actions)\".\n\nAnyone with read access to the repository can use this endpoint. If the repository is private you must use an access token with the `repo` scope. GitHub Apps must have the `actions:read` permission to use this endpoint.",
+    "description": "Gets the number of billable minutes and total run time for a specific workflow run. Billable minutes only apply to workflows in private repositories that use GitHub-hosted runners. Usage is listed for each GitHub-hosted runner operating system in milliseconds. Any job re-runs are also included in the usage. The usage does not include the multiplier for macOS and Windows runners and is not rounded up to the nearest whole minute. For more information, see \"[Managing billing for GitHub Actions](https://help.github.com/github/setting-up-and-managing-billing-and-payments-on-github/managing-billing-for-github-actions)\".\n\nAnyone with read access to the repository can use this endpoint. If the repository is private you must use an access token with the `repo` scope. GitHub Apps must have the `actions:read` permission to use this endpoint.",
     "documentationUrl": "https://docs.github.com/rest/reference/actions#get-workflow-run-usage",
     "previews": [],
     "headers": [],
@@ -2287,7 +2287,7 @@
     "url": "/repos/{owner}/{repo}/actions/workflows/{workflow_id}/timing",
     "isDeprecated": false,
     "deprecationDate": null,
-    "description": "**Warning:** This GitHub Actions usage endpoint is currently in public beta and subject to change. For more information, see \"[GitHub Actions API workflow usage](https://developer.github.com/changes/2020-05-15-actions-api-workflow-usage).\"\n\nGets the number of billable minutes used by a specific workflow during the current billing cycle. Billable minutes only apply to workflows in private repositories that use GitHub-hosted runners. Usage is listed for each GitHub-hosted runner operating system in milliseconds. Any job re-runs are also included in the usage. The usage does not include the multiplier for macOS and Windows runners and is not rounded up to the nearest whole minute. For more information, see \"[Managing billing for GitHub Actions](https://help.github.com/github/setting-up-and-managing-billing-and-payments-on-github/managing-billing-for-github-actions)\".\n\nYou can replace `workflow_id` with the workflow file name. For example, you could use `main.yaml`. Anyone with read access to the repository can use this endpoint. If the repository is private you must use an access token with the `repo` scope. GitHub Apps must have the `actions:read` permission to use this endpoint.",
+    "description": "Gets the number of billable minutes used by a specific workflow during the current billing cycle. Billable minutes only apply to workflows in private repositories that use GitHub-hosted runners. Usage is listed for each GitHub-hosted runner operating system in milliseconds. Any job re-runs are also included in the usage. The usage does not include the multiplier for macOS and Windows runners and is not rounded up to the nearest whole minute. For more information, see \"[Managing billing for GitHub Actions](https://help.github.com/github/setting-up-and-managing-billing-and-payments-on-github/managing-billing-for-github-actions)\".\n\nYou can replace `workflow_id` with the workflow file name. For example, you could use `main.yaml`. Anyone with read access to the repository can use this endpoint. If the repository is private you must use an access token with the `repo` scope. GitHub Apps must have the `actions:read` permission to use this endpoint.",
     "documentationUrl": "https://docs.github.com/rest/reference/actions#get-workflow-usage",
     "previews": [],
     "headers": [],
@@ -10261,7 +10261,7 @@
       },
       {
         "name": "alert_number",
-        "description": "The code scanning alert number.",
+        "description": "The security alert number, found at the end of the security alert's URL.",
         "in": "PATH",
         "type": "integer",
         "required": true,
@@ -10443,6 +10443,11 @@
     "responses": [
       { "code": 202, "description": "response", "examples": null },
       {
+        "code": 400,
+        "description": "Response if the `sarif` field is invalid",
+        "examples": null
+      },
+      {
         "code": 403,
         "description": "Response if the repository is archived",
         "examples": null
@@ -10450,6 +10455,11 @@
       {
         "code": 404,
         "description": "Response if `commit_sha` or `ref` cannot be found",
+        "examples": null
+      },
+      {
+        "code": 413,
+        "description": "Response if the `sarif` field is too large",
         "examples": null
       }
     ],
@@ -17970,7 +17980,7 @@
         "description": "response",
         "examples": [
           {
-            "data": "{\"verifiable_password_authentication\":true,\"ssh_key_fingerprints\":{\"MD5_RSA\":\"16:27:ac:a5:76:28:2d:36:63:1b:56:4d:eb:df:a6:48\",\"MD5_DSA\":\"ad:1c:08:a4:40:e3:6f:9c:f5:66:26:5d:4b:33:5d:8c\",\"SHA256_RSA\":\"nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8\",\"SHA256_DSA\":\"br9IjFspm1vxR3iA35FWE+4VTyz1hYVLIE2t1/CeyWQ\"},\"hooks\":[\"192.30.252.0/22\"],\"web\":[\"192.30.252.0/22\",\"185.199.108.0/22\"],\"api\":[\"192.30.252.0/22\",\"185.199.108.0/22\"],\"git\":[\"192.30.252.0/22\"],\"pages\":[\"192.30.252.153/32\",\"192.30.252.154/32\"],\"importer\":[\"54.158.161.132\",\"54.226.70.38\"]}"
+            "data": "{\"verifiable_password_authentication\":true,\"ssh_key_fingerprints\":{\"SHA256_RSA\":\"nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8\",\"SHA256_DSA\":\"br9IjFspm1vxR3iA35FWE+4VTyz1hYVLIE2t1/CeyWQ\"},\"hooks\":[\"192.30.252.0/22\"],\"web\":[\"192.30.252.0/22\",\"185.199.108.0/22\"],\"api\":[\"192.30.252.0/22\",\"185.199.108.0/22\"],\"git\":[\"192.30.252.0/22\"],\"pages\":[\"192.30.252.153/32\",\"192.30.252.154/32\"],\"importer\":[\"54.158.161.132\",\"54.226.70.38\"]}"
           }
         ]
       },
@@ -42657,6 +42667,279 @@
       },
       { "code": 304, "description": "Not Modified", "examples": null },
       { "code": 422, "description": "Validation Failed", "examples": null },
+      { "code": 503, "description": "Service Unavailable", "examples": null }
+    ],
+    "renamed": null
+  },
+  {
+    "name": "Get a secret scanning alert",
+    "scope": "secretScanning",
+    "id": "getAlert",
+    "method": "GET",
+    "url": "/repos/{owner}/{repo}/secret-scanning/alerts/{alert_number}",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "description": "Gets a single secret scanning alert detected in a private repository. To use this endpoint, you must be an administrator for the repository or organization, and you must use an access token with the `repo` scope or `security_events` scope.\n\nGitHub Apps must have the `secret_scanning_alerts` read permission to use this endpoint.",
+    "documentationUrl": "https://docs.github.com/rest/reference/secret-scanning#get-a-secret-scanning-alert",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "owner",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "repo",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "alert_number",
+        "description": "The security alert number, found at the end of the security alert's URL.",
+        "in": "PATH",
+        "type": "integer",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      {
+        "code": 200,
+        "description": "Default response",
+        "examples": [
+          {
+            "data": "{\"number\":42,\"created_at\":\"2020-11-06T18:18:30Z\",\"url\":\"https://api.github.com/repos/owner/private-repo/secret-scanning/alerts/42\",\"html_url\":\"https://github.com/owner/private-repo/security/secret-scanning/42\",\"state\":\"open\",\"resolution\":null,\"resolved_at\":null,\"resolved_by\":null,\"secret_type\":\"mailchimp_api_key\",\"secret\":\"XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-us2\"}"
+          }
+        ]
+      },
+      {
+        "code": 404,
+        "description": "Repository is public, or secret scanning is disabled for the repository, or the resource is not found",
+        "examples": null
+      },
+      { "code": 503, "description": "Service Unavailable", "examples": null }
+    ],
+    "renamed": null
+  },
+  {
+    "name": "List secret scanning alerts for a repository",
+    "scope": "secretScanning",
+    "id": "listAlertsForRepo",
+    "method": "GET",
+    "url": "/repos/{owner}/{repo}/secret-scanning/alerts",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "description": "Lists all secret scanning alerts for a private repository, from newest to oldest. To use this endpoint, you must be an administrator for the repository or organization, and you must use an access token with the `repo` scope or `security_events` scope.\n\nGitHub Apps must have the `secret_scanning_alerts` read permission to use this endpoint.",
+    "documentationUrl": "https://docs.github.com/rest/reference/secret-scanning#list-secret-scanning-alerts-for-a-repository",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "owner",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "repo",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "state",
+        "description": "Set to `open` or `resolved` to only list secret scanning alerts in a specific state.",
+        "in": "QUERY",
+        "type": "string",
+        "required": false,
+        "enum": ["open", "resolved"],
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "page",
+        "description": "Page number of the results to fetch.",
+        "in": "QUERY",
+        "type": "integer",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "per_page",
+        "description": "Results per page (max 100)",
+        "in": "QUERY",
+        "type": "integer",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      {
+        "code": 200,
+        "description": "Response",
+        "examples": [
+          {
+            "data": "[{\"number\":2,\"created_at\":\"2020-11-06T18:48:51Z\",\"url\":\"https://api.github.com/repos/owner/private-repo/secret-scanning/alerts/2\",\"html_url\":\"https://github.com/owner/private-repo/security/secret-scanning/2\",\"state\":\"resolved\",\"resolution\":\"false_positive\",\"resolved_at\":\"2020-11-07T02:47:13Z\",\"resolved_by\":{\"login\":\"monalisa\",\"id\":2,\"node_id\":\"MDQ6VXNlcjI=\",\"avatar_url\":\"https://alambic.github.com/avatars/u/2?\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/monalisa\",\"html_url\":\"https://github.com/monalisa\",\"followers_url\":\"https://api.github.com/users/monalisa/followers\",\"following_url\":\"https://api.github.com/users/monalisa/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/monalisa/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/monalisa/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/monalisa/subscriptions\",\"organizations_url\":\"https://api.github.com/users/monalisa/orgs\",\"repos_url\":\"https://api.github.com/users/monalisa/repos\",\"events_url\":\"https://api.github.com/users/monalisa/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/monalisa/received_events\",\"type\":\"User\",\"site_admin\":true},\"secret_type\":\"adafruit_io_key\",\"secret\":\"aio_XXXXXXXXXXXXXXXXXXXXXXXXXXXX\"},{\"number\":1,\"created_at\":\"2020-11-06T18:18:30Z\",\"url\":\"https://api.github.com/repos/owner/repo/secret-scanning/alerts/1\",\"html_url\":\"https://github.com/owner/repo/security/secret-scanning/1\",\"state\":\"open\",\"resolution\":null,\"resolved_at\":null,\"resolved_by\":null,\"secret_type\":\"mailchimp_api_key\",\"secret\":\"XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-us2\"}]"
+          }
+        ]
+      },
+      {
+        "code": 404,
+        "description": "Repository is public or secret scanning is disabled for the repository",
+        "examples": null
+      },
+      { "code": 503, "description": "Service Unavailable", "examples": null }
+    ],
+    "renamed": null
+  },
+  {
+    "name": "Update a secret scanning alert",
+    "scope": "secretScanning",
+    "id": "updateAlert",
+    "method": "PATCH",
+    "url": "/repos/{owner}/{repo}/secret-scanning/alerts/{alert_number}",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "description": "Updates the status of a secret scanning alert in a private repository. To use this endpoint, you must be an administrator for the repository or organization, and you must use an access token with the `repo` scope or `security_events` scope.\n\nGitHub Apps must have the `secret_scanning_alerts` write permission to use this endpoint.",
+    "documentationUrl": "https://docs.github.com/rest/reference/secret-scanning#update-a-secret-scanning-alert",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "owner",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "repo",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "alert_number",
+        "description": "The security alert number, found at the end of the security alert's URL.",
+        "in": "PATH",
+        "type": "integer",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "state",
+        "description": "Sets the state of the secret scanning alert. Can be either `open` or `resolved`. You must provide `resolution` when you set the state to `resolved`.",
+        "in": "BODY",
+        "type": "string",
+        "required": true,
+        "enum": ["open", "resolved"],
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "resolution",
+        "description": "**Required when the `state` is `resolved`.** The reason for resolving the alert. Can be one of `false_positive`, `wont_fix`, `revoked`, or `used_in_tests`.",
+        "in": "BODY",
+        "type": "string",
+        "required": false,
+        "enum": null,
+        "allowNull": true,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      {
+        "code": 200,
+        "description": "Default response",
+        "examples": [
+          {
+            "data": "{\"number\":42,\"created_at\":\"2020-11-06T18:18:30Z\",\"url\":\"https://api.github.com/repos/owner/private-repo/secret-scanning/alerts/42\",\"html_url\":\"https://github.com/owner/private-repo/security/secret-scanning/42\",\"state\":\"resolved\",\"resolution\":\"used_in_tests\",\"resolved_at\":\"2020-11-16T22:42:07Z\",\"resolved_by\":{\"login\":\"monalisa\",\"id\":2,\"node_id\":\"MDQ6VXNlcjI=\",\"avatar_url\":\"https://alambic.github.com/avatars/u/2?\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/monalisa\",\"html_url\":\"https://github.com/monalisa\",\"followers_url\":\"https://api.github.com/users/monalisa/followers\",\"following_url\":\"https://api.github.com/users/monalisa/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/monalisa/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/monalisa/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/monalisa/subscriptions\",\"organizations_url\":\"https://api.github.com/users/monalisa/orgs\",\"repos_url\":\"https://api.github.com/users/monalisa/repos\",\"events_url\":\"https://api.github.com/users/monalisa/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/monalisa/received_events\",\"type\":\"User\",\"site_admin\":true},\"secret_type\":\"mailchimp_api_key\",\"secret\":\"XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-us2\"}"
+          }
+        ]
+      },
+      {
+        "code": 404,
+        "description": "Repository is public, or secret scanning is disabled for the repository, or the resource is not found",
+        "examples": null
+      },
+      {
+        "code": 422,
+        "description": "State does not match the resolution",
+        "examples": null
+      },
       { "code": 503, "description": "Service Unavailable", "examples": null }
     ],
     "renamed": null
