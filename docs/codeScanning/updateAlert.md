@@ -39,7 +39,7 @@ octokit.codeScanning.updateAlert({
 </td></tr>
 <tr><td>alert_number</td><td>yes</td><td>
 
-The code scanning alert number.
+The security alert number, found at the end of the security alert's URL.
 
 </td></tr>
 <tr><td>state</td><td>yes</td><td>

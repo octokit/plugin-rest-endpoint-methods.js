@@ -1155,6 +1155,15 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     topics: ["GET /search/topics", { mediaType: { previews: ["mercy"] } }],
     users: ["GET /search/users"],
   },
+  secretScanning: {
+    getAlert: [
+      "GET /repos/{owner}/{repo}/secret-scanning/alerts/{alert_number}",
+    ],
+    listAlertsForRepo: ["GET /repos/{owner}/{repo}/secret-scanning/alerts"],
+    updateAlert: [
+      "PATCH /repos/{owner}/{repo}/secret-scanning/alerts/{alert_number}",
+    ],
+  },
   teams: {
     addOrUpdateMembershipForUserInOrg: [
       "PUT /orgs/{org}/teams/{team_slug}/memberships/{username}",

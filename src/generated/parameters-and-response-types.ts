@@ -4323,6 +4323,32 @@ export type RestEndpointMethodTypes = {
       response: Endpoints["GET /search/users"]["response"];
     };
   };
+  secretScanning: {
+    getAlert: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /repos/{owner}/{repo}/secret-scanning/alerts/{alert_number}"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /repos/{owner}/{repo}/secret-scanning/alerts/{alert_number}"]["response"];
+    };
+    listAlertsForRepo: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /repos/{owner}/{repo}/secret-scanning/alerts"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /repos/{owner}/{repo}/secret-scanning/alerts"]["response"];
+    };
+    updateAlert: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["PATCH /repos/{owner}/{repo}/secret-scanning/alerts/{alert_number}"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["PATCH /repos/{owner}/{repo}/secret-scanning/alerts/{alert_number}"]["response"];
+    };
+  };
   teams: {
     addOrUpdateMembershipForUserInOrg: {
       parameters: RequestParameters &
