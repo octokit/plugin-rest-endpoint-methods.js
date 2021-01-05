@@ -8,8 +8,7 @@ type: API method
 
 # Upload a SARIF file
 
-Upload a SARIF file containing the results of a code scanning analysis to make the results available in a repository.
-For private repos, you must use an access token with the `repo` scope. For public repos, you must use an access token with `public_repo` and `repo:security_events` scopes. GitHub Apps must have the `security_events` write permission to use this endpoint.
+Upload a SARIF file containing the results of a code scanning analysis to make the results available in a repository. You must use an access token with the `security_events` scope to use this endpoint. GitHub Apps must have the `security_events` write permission to use this endpoint.
 
 ```js
 octokit.codeScanning.uploadSarif({

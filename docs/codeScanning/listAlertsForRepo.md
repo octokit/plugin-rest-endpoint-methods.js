@@ -8,7 +8,7 @@ type: API method
 
 # List code scanning alerts for a repository
 
-Lists all open code scanning alerts for the default branch (usually `main` or `master`). For private repos, you must use an access token with the `repo` scope. For public repos, you must use an access token with `public_repo` and `repo:security_events` scopes. GitHub Apps must have the `security_events` read permission to use this endpoint.
+Lists all open code scanning alerts for the default branch (usually `main` or `master`). You must use an access token with the `security_events` scope to use this endpoint. GitHub Apps must have the `security_events` read permission to use this endpoint.
 
 ```js
 octokit.codeScanning.listAlertsForRepo({

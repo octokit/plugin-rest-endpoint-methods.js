@@ -8,10 +8,6 @@ type: API method
 
 # Check if a user is blocked by the authenticated user
 
-If the user is blocked:
-
-If the user is not blocked:
-
 ```js
 octokit.users.checkBlocked({
   username,
