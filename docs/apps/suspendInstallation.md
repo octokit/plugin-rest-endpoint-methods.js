@@ -12,8 +12,6 @@ type: API method
 
 Suspends a GitHub App on a user, organization, or business account, which blocks the app from accessing the account's resources. When a GitHub App is suspended, the app's access to the GitHub API or webhook events is blocked for that account.
 
-To suspend a GitHub App, you must be an account owner or have admin permissions in the repository or organization where the app is installed.
-
 You must use a [JWT](https://docs.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint.
 
 ```js

@@ -9,7 +9,7 @@ type: API method
 # Get repository content
 
 Gets the contents of a file or directory in a repository. Specify the file path or directory in `:path`. If you omit
-`:path`, you will receive the contents of all files in the repository.
+`:path`, you will receive the contents of the repository's root directory. See the description below regarding what the API response includes for directories.
 
 Files and symlinks support [a custom media type](https://docs.github.com/rest/reference/repos#custom-media-types) for
 retrieving the raw content or rendered HTML (when supported). All content types support [a custom media

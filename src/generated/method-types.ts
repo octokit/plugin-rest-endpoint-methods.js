@@ -1801,8 +1801,6 @@ export type RestEndpointMethods = {
      *
      * Suspends a GitHub App on a user, organization, or business account, which blocks the app from accessing the account's resources. When a GitHub App is suspended, the app's access to the GitHub API or webhook events is blocked for that account.
      *
-     * To suspend a GitHub App, you must be an account owner or have admin permissions in the repository or organization where the app is installed.
-     *
      * You must use a [JWT](https://docs.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint.
      */
     suspendInstallation: {
@@ -1818,8 +1816,6 @@ export type RestEndpointMethods = {
      * **Note:** Suspending a GitHub App installation is currently in beta and subject to change. Before you can suspend a GitHub App, the app owner must enable suspending installations for the app by opting-in to the beta. For more information, see "[Suspending a GitHub App installation](https://docs.github.com/apps/managing-github-apps/suspending-a-github-app-installation/)."
      *
      * Removes a GitHub App installation suspension.
-     *
-     * To unsuspend a GitHub App, you must be an account owner or have admin permissions in the repository or organization where the app is installed and suspended.
      *
      * You must use a [JWT](https://docs.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint.
      */
@@ -1853,7 +1849,7 @@ export type RestEndpointMethods = {
      *
      * Paid minutes only apply to workflows in private repositories that use GitHub-hosted runners. Minutes used is listed for each GitHub-hosted runner operating system. Any job re-runs are also included in the usage. The usage does not include the multiplier for macOS and Windows runners and is not rounded up to the nearest whole minute. For more information, see "[Managing billing for GitHub Actions](https://help.github.com/github/setting-up-and-managing-billing-and-payments-on-github/managing-billing-for-github-actions)".
      *
-     * Access tokens must have the `read:org` scope.
+     * Access tokens must have the `repo` or `admin:org` scope.
      */
     getGithubActionsBillingOrg: {
       (
@@ -1885,7 +1881,7 @@ export type RestEndpointMethods = {
      *
      * Paid minutes only apply to packages stored for private repositories. For more information, see "[Managing billing for GitHub Packages](https://help.github.com/github/setting-up-and-managing-billing-and-payments-on-github/managing-billing-for-github-packages)."
      *
-     * Access tokens must have the `read:org` scope.
+     * Access tokens must have the `repo` or `admin:org` scope.
      */
     getGithubPackagesBillingOrg: {
       (
@@ -1917,7 +1913,7 @@ export type RestEndpointMethods = {
      *
      * Paid minutes only apply to packages stored for private repositories. For more information, see "[Managing billing for GitHub Packages](https://help.github.com/github/setting-up-and-managing-billing-and-payments-on-github/managing-billing-for-github-packages)."
      *
-     * Access tokens must have the `read:org` scope.
+     * Access tokens must have the `repo` or `admin:org` scope.
      */
     getSharedStorageBillingOrg: {
       (
@@ -2101,7 +2097,7 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Lists all open code scanning alerts for the default branch (usually `main` or `master`). For private repos, you must use an access token with the `repo` scope. For public repos, you must use an access token with `public_repo` and `repo:security_events` scopes. GitHub Apps must have the `security_events` read permission to use this endpoint.
+     * Lists all open code scanning alerts for the default branch (usually `main` or `master`). You must use an access token with the `security_events` scope to use this endpoint. GitHub Apps must have the `security_events` read permission to use this endpoint.
      */
     listAlertsForRepo: {
       (
@@ -2113,7 +2109,7 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * List the details of recent code scanning analyses for a repository. For private repos, you must use an access token with the `repo` scope. For public repos, you must use an access token with `public_repo` and `repo:security_events` scopes. GitHub Apps must have the `security_events` read permission to use this endpoint.
+     * List the details of recent code scanning analyses for a repository. You must use an access token with the `security_events` scope to use this endpoint. GitHub Apps must have the `security_events` read permission to use this endpoint.
      */
     listRecentAnalyses: {
       (
@@ -2125,8 +2121,7 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Updates the status of a single code scanning alert. For private repos, you must use an access token with the `repo` scope. For public repos, you must use an access token with `public_repo` and `repo:security_events` scopes.
-     * GitHub Apps must have the `security_events` write permission to use this endpoint.
+     * Updates the status of a single code scanning alert. You must use an access token with the `security_events` scope to use this endpoint. GitHub Apps must have the `security_events` write permission to use this endpoint.
      */
     updateAlert: {
       (
@@ -2138,8 +2133,7 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Upload a SARIF file containing the results of a code scanning analysis to make the results available in a repository.
-     * For private repos, you must use an access token with the `repo` scope. For public repos, you must use an access token with `public_repo` and `repo:security_events` scopes. GitHub Apps must have the `security_events` write permission to use this endpoint.
+     * Upload a SARIF file containing the results of a code scanning analysis to make the results available in a repository. You must use an access token with the `security_events` scope to use this endpoint. GitHub Apps must have the `security_events` write permission to use this endpoint.
      */
     uploadSarif: {
       (
@@ -4476,31 +4470,13 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * **Note:** Multi-line comments on pull requests are currently in public beta and subject to change.
-     *
      * Creates a review comment in the pull request diff. To add a regular comment to a pull request timeline, see "[Create an issue comment](https://docs.github.com/rest/reference/issues#create-an-issue-comment)." We recommend creating a review comment using `line`, `side`, and optionally `start_line` and `start_side` if your comment applies to more than one line in the pull request diff.
      *
-     * You can still create a review comment using the `position` parameter. When you use `position`, the `line`, `side`, `start_line`, and `start_side` parameters are not required. For more information, see [Multi-line comment summary](https://docs.github.com/rest/reference/pulls#multi-line-comment-summary-3).
+     * You can still create a review comment using the `position` parameter. When you use `position`, the `line`, `side`, `start_line`, and `start_side` parameters are not required. For more information, see the [`comfort-fade` preview notice](https://docs.github.com/rest/reference/pulls#create-a-review-comment-for-a-pull-request-preview-notices).
      *
      * **Note:** The position value equals the number of lines down from the first "@@" hunk header in the file you want to add a comment. The line just below the "@@" line is position 1, the next line is position 2, and so on. The position in the diff continues to increase through lines of whitespace and additional hunks until the beginning of a new file.
      *
      * This endpoint triggers [notifications](https://help.github.com/articles/about-notifications/). Creating content too quickly using this endpoint may result in abuse rate limiting. See "[Abuse rate limits](https://docs.github.com/rest/overview/resources-in-the-rest-api#abuse-rate-limits)" and "[Dealing with abuse rate limits](https://docs.github.com/rest/guides/best-practices-for-integrators#dealing-with-rate-limits)" for details.
-     *
-     * **Multi-line comment summary**
-     *
-     * **Note:** New parameters and response fields are available for developers to preview. During the preview period, these response fields may change without advance notice. Please see the [blog post](https://developer.github.com/changes/2019-10-03-multi-line-comments) for full details.
-     *
-     * Use the `comfort-fade` preview header and the `line` parameter to show multi-line comment-supported fields in the response.
-     *
-     * If you use the `comfort-fade` preview header, your response will show:
-     *
-     * *   For multi-line comments, values for `start_line`, `original_start_line`, `start_side`, `line`, `original_line`, and `side`.
-     * *   For single-line comments, values for `line`, `original_line`, and `side` and a `null` value for `start_line`, `original_start_line`, and `start_side`.
-     *
-     * If you don't use the `comfort-fade` preview header, multi-line and single-line comments will appear the same way in the response with a single `position` attribute. Your response will show:
-     *
-     * *   For multi-line comments, the last line of the comment range for the `position` attribute.
-     * *   For single-line comments, the diff-positioned way of referencing comments for the `position` attribute. For more information, see `position` in the [input parameters](https://docs.github.com/rest/reference/pulls#parameters-2) table.
      */
     createReviewComment: {
       (
@@ -4576,27 +4552,7 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * **Note:** Multi-line comments on pull requests are currently in public beta and subject to change.
-     *
      * Provides details for a review comment.
-     *
-     * **Multi-line comment summary**
-     *
-     * **Note:** New parameters and response fields are available for developers to preview. During the preview period, these response fields may change without advance notice. Please see the [blog post](https://developer.github.com/changes/2019-10-03-multi-line-comments) for full details.
-     *
-     * Use the `comfort-fade` preview header and the `line` parameter to show multi-line comment-supported fields in the response.
-     *
-     * If you use the `comfort-fade` preview header, your response will show:
-     *
-     * *   For multi-line comments, values for `start_line`, `original_start_line`, `start_side`, `line`, `original_line`, and `side`.
-     * *   For single-line comments, values for `line`, `original_line`, and `side` and a `null` value for `start_line`, `original_start_line`, and `start_side`.
-     *
-     * If you don't use the `comfort-fade` preview header, multi-line and single-line comments will appear the same way in the response with a single `position` attribute. Your response will show:
-     *
-     * *   For multi-line comments, the last line of the comment range for the `position` attribute.
-     * *   For single-line comments, the diff-positioned way of referencing comments for the `position` attribute. For more information, see `position` in the [input parameters](https://docs.github.com/rest/reference/pulls#parameters-2) table.
-     *
-     * The `reactions` key will have the following payload where `url` can be used to construct the API location for [listing and creating](https://docs.github.com/rest/reference/reactions) reactions.
      */
     getReviewComment: {
       (
@@ -4660,27 +4616,7 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * **Note:** Multi-line comments on pull requests are currently in public beta and subject to change.
-     *
      * Lists all review comments for a pull request. By default, review comments are in ascending order by ID.
-     *
-     * **Multi-line comment summary**
-     *
-     * **Note:** New parameters and response fields are available for developers to preview. During the preview period, these response fields may change without advance notice. Please see the [blog post](https://developer.github.com/changes/2019-10-03-multi-line-comments) for full details.
-     *
-     * Use the `comfort-fade` preview header and the `line` parameter to show multi-line comment-supported fields in the response.
-     *
-     * If you use the `comfort-fade` preview header, your response will show:
-     *
-     * *   For multi-line comments, values for `start_line`, `original_start_line`, `start_side`, `line`, `original_line`, and `side`.
-     * *   For single-line comments, values for `line`, `original_line`, and `side` and a `null` value for `start_line`, `original_start_line`, and `start_side`.
-     *
-     * If you don't use the `comfort-fade` preview header, multi-line and single-line comments will appear the same way in the response with a single `position` attribute. Your response will show:
-     *
-     * *   For multi-line comments, the last line of the comment range for the `position` attribute.
-     * *   For single-line comments, the diff-positioned way of referencing comments for the `position` attribute. For more information, see `position` in the [input parameters](https://docs.github.com/rest/reference/pulls#parameters-2) table.
-     *
-     * The `reactions` key will have the following payload where `url` can be used to construct the API location for [listing and creating](https://docs.github.com/rest/reference/reactions) reactions.
      */
     listReviewComments: {
       (
@@ -4692,27 +4628,7 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * **Note:** Multi-line comments on pull requests are currently in public beta and subject to change.
-     *
      * Lists review comments for all pull requests in a repository. By default, review comments are in ascending order by ID.
-     *
-     * **Multi-line comment summary**
-     *
-     * **Note:** New parameters and response fields are available for developers to preview. During the preview period, these response fields may change without advance notice. Please see the [blog post](https://developer.github.com/changes/2019-10-03-multi-line-comments) for full details.
-     *
-     * Use the `comfort-fade` preview header and the `line` parameter to show multi-line comment-supported fields in the response.
-     *
-     * If you use the `comfort-fade` preview header, your response will show:
-     *
-     * *   For multi-line comments, values for `start_line`, `original_start_line`, `start_side`, `line`, `original_line`, and `side`.
-     * *   For single-line comments, values for `line`, `original_line`, and `side` and a `null` value for `start_line`, `original_start_line`, and `start_side`.
-     *
-     * If you don't use the `comfort-fade` preview header, multi-line and single-line comments will appear the same way in the response with a single `position` attribute. Your response will show:
-     *
-     * *   For multi-line comments, the last line of the comment range for the `position` attribute.
-     * *   For single-line comments, the diff-positioned way of referencing comments for the `position` attribute. For more information, see `position` in the [input parameters](https://docs.github.com/rest/reference/pulls#parameters-2) table.
-     *
-     * The `reactions` key will have the following payload where `url` can be used to construct the API location for [listing and creating](https://docs.github.com/rest/reference/reactions) reactions.
      */
     listReviewCommentsForRepo: {
       (
@@ -4806,25 +4722,7 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * **Note:** Multi-line comments on pull requests are currently in public beta and subject to change.
-     *
      * Enables you to edit a review comment.
-     *
-     * **Multi-line comment summary**
-     *
-     * **Note:** New parameters and response fields are available for developers to preview. During the preview period, these response fields may change without advance notice. Please see the [blog post](https://developer.github.com/changes/2019-10-03-multi-line-comments) for full details.
-     *
-     * Use the `comfort-fade` preview header and the `line` parameter to show multi-line comment-supported fields in the response.
-     *
-     * If you use the `comfort-fade` preview header, your response will show:
-     *
-     * *   For multi-line comments, values for `start_line`, `original_start_line`, `start_side`, `line`, `original_line`, and `side`.
-     * *   For single-line comments, values for `line`, `original_line`, and `side` and a `null` value for `start_line`, `original_start_line`, and `start_side`.
-     *
-     * If you don't use the `comfort-fade` preview header, multi-line and single-line comments will appear the same way in the response with a single `position` attribute. Your response will show:
-     *
-     * *   For multi-line comments, the last line of the comment range for the `position` attribute.
-     * *   For single-line comments, the diff-positioned way of referencing comments for the `position` attribute. For more information, see `position` in the [input parameters](https://docs.github.com/rest/reference/pulls#parameters-2) table.
      */
     updateReviewComment: {
       (
@@ -6073,7 +5971,7 @@ export type RestEndpointMethods = {
     };
     /**
      * Gets the contents of a file or directory in a repository. Specify the file path or directory in `:path`. If you omit
-     * `:path`, you will receive the contents of all files in the repository.
+     * `:path`, you will receive the contents of the repository's root directory. See the description below regarding what the API response includes for directories.
      *
      * Files and symlinks support [a custom media type](https://docs.github.com/rest/reference/repos#custom-media-types) for
      * retrieving the raw content or rendered HTML (when supported). All content types support [a custom media
@@ -7761,11 +7659,7 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
-    /**
-     * If the user is blocked:
-     *
-     * If the user is not blocked:
-     */
+
     checkBlocked: {
       (
         params?: RestEndpointMethodTypes["users"]["checkBlocked"]["parameters"]
