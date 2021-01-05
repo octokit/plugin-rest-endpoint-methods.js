@@ -8,7 +8,9 @@ type: API method
 
 # Get the code of conduct for a repository
 
-This method returns the contents of the repository's code of conduct file, if one is detected.
+Returns the contents of the repository's code of conduct file, if one is detected.
+
+A code of conduct is detected if there is a file named `CODE_OF_CONDUCT` in the root directory of the repository. GitHub detects which code of conduct it is using fuzzy matching.
 
 ```js
 octokit.codesOfConduct.getForRepo({

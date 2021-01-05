@@ -2166,7 +2166,9 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * This method returns the contents of the repository's code of conduct file, if one is detected.
+     * Returns the contents of the repository's code of conduct file, if one is detected.
+     *
+     * A code of conduct is detected if there is a file named `CODE_OF_CONDUCT` in the root directory of the repository. GitHub detects which code of conduct it is using fuzzy matching.
      */
     getForRepo: {
       (
@@ -5957,6 +5959,12 @@ export type RestEndpointMethods = {
      * overall health score, repository description, the presence of documentation, detected
      * code of conduct, detected license, and the presence of ISSUE\_TEMPLATE, PULL\_REQUEST\_TEMPLATE,
      * README, and CONTRIBUTING files.
+     *
+     * The `health_percentage` score is defined as a percentage of how many of
+     * these four documents are present: README, CONTRIBUTING, LICENSE, and
+     * CODE_OF_CONDUCT. For example, if all four documents are present, then
+     * the `health_percentage` is `100`. If only one is present, then the
+     * `health_percentage` is `25`.
      *
      * `content_reports_enabled` is only returned for organization-owned repositories.
      */
