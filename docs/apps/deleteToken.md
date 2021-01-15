@@ -29,6 +29,8 @@ octokit.apps.deleteToken({
   <tbody>
     <tr><td>client_id</td><td>yes</td><td>
 
+The client ID of your GitHub app.
+
 </td></tr>
 <tr><td>access_token</td><td>no</td><td>
 
