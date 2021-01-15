@@ -990,6 +990,14 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["DELETE /installation/token"]["response"];
     };
+    scopeToken: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["POST /applications/{client_id}/token/scoped"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["POST /applications/{client_id}/token/scoped"]["response"];
+    };
     suspendInstallation: {
       parameters: RequestParameters &
         Omit<

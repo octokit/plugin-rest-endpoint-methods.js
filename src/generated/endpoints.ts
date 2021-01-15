@@ -241,6 +241,7 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     ],
     resetToken: ["PATCH /applications/{client_id}/token"],
     revokeInstallationAccessToken: ["DELETE /installation/token"],
+    scopeToken: ["POST /applications/{client_id}/token/scoped"],
     suspendInstallation: ["PUT /app/installations/{installation_id}/suspended"],
     unsuspendInstallation: [
       "DELETE /app/installations/{installation_id}/suspended",
@@ -535,14 +536,8 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     updateImport: ["PATCH /repos/{owner}/{repo}/import"],
   },
   orgs: {
-    blockUser: [
-      "PUT /orgs/{org}/blocks/{username}",
-      { mediaType: { previews: ["giant-sentry-fist"] } },
-    ],
-    checkBlockedUser: [
-      "GET /orgs/{org}/blocks/{username}",
-      { mediaType: { previews: ["giant-sentry-fist"] } },
-    ],
+    blockUser: ["PUT /orgs/{org}/blocks/{username}"],
+    checkBlockedUser: ["GET /orgs/{org}/blocks/{username}"],
     checkMembershipForUser: ["GET /orgs/{org}/members/{username}"],
     checkPublicMembershipForUser: ["GET /orgs/{org}/public_members/{username}"],
     convertMemberToOutsideCollaborator: [
@@ -558,10 +553,7 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     getWebhookConfigForOrg: ["GET /orgs/{org}/hooks/{hook_id}/config"],
     list: ["GET /organizations"],
     listAppInstallations: ["GET /orgs/{org}/installations"],
-    listBlockedUsers: [
-      "GET /orgs/{org}/blocks",
-      { mediaType: { previews: ["giant-sentry-fist"] } },
-    ],
+    listBlockedUsers: ["GET /orgs/{org}/blocks"],
     listForAuthenticatedUser: ["GET /user/orgs"],
     listForUser: ["GET /users/{username}/orgs"],
     listInvitationTeams: ["GET /orgs/{org}/invitations/{invitation_id}/teams"],
@@ -584,10 +576,7 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     setPublicMembershipForAuthenticatedUser: [
       "PUT /orgs/{org}/public_members/{username}",
     ],
-    unblockUser: [
-      "DELETE /orgs/{org}/blocks/{username}",
-      { mediaType: { previews: ["giant-sentry-fist"] } },
-    ],
+    unblockUser: ["DELETE /orgs/{org}/blocks/{username}"],
     update: ["PATCH /orgs/{org}"],
     updateMembershipForAuthenticatedUser: [
       "PATCH /user/memberships/orgs/{org}",
@@ -1251,14 +1240,8 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
   },
   users: {
     addEmailForAuthenticated: ["POST /user/emails"],
-    block: [
-      "PUT /user/blocks/{username}",
-      { mediaType: { previews: ["giant-sentry-fist"] } },
-    ],
-    checkBlocked: [
-      "GET /user/blocks/{username}",
-      { mediaType: { previews: ["giant-sentry-fist"] } },
-    ],
+    block: ["PUT /user/blocks/{username}"],
+    checkBlocked: ["GET /user/blocks/{username}"],
     checkFollowingForUser: ["GET /users/{username}/following/{target_user}"],
     checkPersonIsFollowedByAuthenticated: ["GET /user/following/{username}"],
     createGpgKeyForAuthenticated: ["POST /user/gpg_keys"],
@@ -1273,10 +1256,7 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     getGpgKeyForAuthenticated: ["GET /user/gpg_keys/{gpg_key_id}"],
     getPublicSshKeyForAuthenticated: ["GET /user/keys/{key_id}"],
     list: ["GET /users"],
-    listBlockedByAuthenticated: [
-      "GET /user/blocks",
-      { mediaType: { previews: ["giant-sentry-fist"] } },
-    ],
+    listBlockedByAuthenticated: ["GET /user/blocks"],
     listEmailsForAuthenticated: ["GET /user/emails"],
     listFollowedByAuthenticated: ["GET /user/following"],
     listFollowersForAuthenticatedUser: ["GET /user/followers"],
@@ -1288,10 +1268,7 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     listPublicKeysForUser: ["GET /users/{username}/keys"],
     listPublicSshKeysForAuthenticated: ["GET /user/keys"],
     setPrimaryEmailVisibilityForAuthenticated: ["PATCH /user/email/visibility"],
-    unblock: [
-      "DELETE /user/blocks/{username}",
-      { mediaType: { previews: ["giant-sentry-fist"] } },
-    ],
+    unblock: ["DELETE /user/blocks/{username}"],
     unfollow: ["DELETE /user/following/{username}"],
     updateAuthenticated: ["PATCH /user"],
   },

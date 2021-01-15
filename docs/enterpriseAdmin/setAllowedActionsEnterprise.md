@@ -1,6 +1,6 @@
 ---
 name: Set allowed actions for an enterprise
-example: octokit.enterpriseAdmin.setAllowedActionsEnterprise({ enterprise })
+example: octokit.enterpriseAdmin.setAllowedActionsEnterprise({ enterprise, github_owned_allowed, verified_allowed, patterns_allowed })
 route: PUT /enterprises/{enterprise}/actions/permissions/selected-actions
 scope: enterpriseAdmin
 type: API method
@@ -15,6 +15,9 @@ You must authenticate using an access token with the `admin:enterprise` scope to
 ```js
 octokit.enterpriseAdmin.setAllowedActionsEnterprise({
   enterprise,
+  github_owned_allowed,
+  verified_allowed,
+  patterns_allowed,
 });
 ```
 
@@ -34,17 +37,17 @@ octokit.enterpriseAdmin.setAllowedActionsEnterprise({
 The slug version of the enterprise name. You can also substitute this value with the enterprise id.
 
 </td></tr>
-<tr><td>github_owned_allowed</td><td>no</td><td>
+<tr><td>github_owned_allowed</td><td>yes</td><td>
 
 Whether GitHub-owned actions are allowed. For example, this includes the actions in the `actions` organization.
 
 </td></tr>
-<tr><td>verified_allowed</td><td>no</td><td>
+<tr><td>verified_allowed</td><td>yes</td><td>
 
 Whether actions in GitHub Marketplace from verified creators are allowed. Set to `true` to allow all GitHub Marketplace actions by verified creators.
 
 </td></tr>
-<tr><td>patterns_allowed</td><td>no</td><td>
+<tr><td>patterns_allowed</td><td>yes</td><td>
 
 Specifies a list of string-matching patterns to allow specific action(s). Wildcards, tags, and SHAs are allowed. For example, `monalisa/octocat@*`, `monalisa/octocat@v2`, `monalisa/*`."
 
