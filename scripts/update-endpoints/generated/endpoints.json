@@ -4250,7 +4250,7 @@
         "description": "response",
         "examples": [
           {
-            "data": "{\"id\":\"1\",\"repository\":{\"id\":1296269,\"node_id\":\"MDEwOlJlcG9zaXRvcnkxMjk2MjY5\",\"name\":\"Hello-World\",\"full_name\":\"octocat/Hello-World\",\"owner\":{\"login\":\"octocat\",\"id\":1,\"node_id\":\"MDQ6VXNlcjE=\",\"avatar_url\":\"https://github.com/images/error/octocat_happy.gif\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/octocat\",\"html_url\":\"https://github.com/octocat\",\"followers_url\":\"https://api.github.com/users/octocat/followers\",\"following_url\":\"https://api.github.com/users/octocat/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/octocat/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/octocat/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/octocat/subscriptions\",\"organizations_url\":\"https://api.github.com/users/octocat/orgs\",\"repos_url\":\"https://api.github.com/users/octocat/repos\",\"events_url\":\"https://api.github.com/users/octocat/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/octocat/received_events\",\"type\":\"User\",\"site_admin\":false},\"private\":false,\"html_url\":\"https://github.com/octocat/Hello-World\",\"description\":\"This your first repo!\",\"fork\":false,\"url\":\"https://api.github.com/repos/octocat/Hello-World\",\"archive_url\":\"https://api.github.com/repos/octocat/Hello-World/{archive_format}{/ref}\",\"assignees_url\":\"https://api.github.com/repos/octocat/Hello-World/assignees{/user}\",\"blobs_url\":\"https://api.github.com/repos/octocat/Hello-World/git/blobs{/sha}\",\"branches_url\":\"https://api.github.com/repos/octocat/Hello-World/branches{/branch}\",\"collaborators_url\":\"https://api.github.com/repos/octocat/Hello-World/collaborators{/collaborator}\",\"comments_url\":\"https://api.github.com/repos/octocat/Hello-World/comments{/number}\",\"commits_url\":\"https://api.github.com/repos/octocat/Hello-World/commits{/sha}\",\"compare_url\":\"https://api.github.com/repos/octocat/Hello-World/compare/{base}...{head}\",\"contents_url\":\"https://api.github.com/repos/octocat/Hello-World/contents/{+path}\",\"contributors_url\":\"https://api.github.com/repos/octocat/Hello-World/contributors\",\"deployments_url\":\"https://api.github.com/repos/octocat/Hello-World/deployments\",\"downloads_url\":\"https://api.github.com/repos/octocat/Hello-World/downloads\",\"events_url\":\"https://api.github.com/repos/octocat/Hello-World/events\",\"forks_url\":\"https://api.github.com/repos/octocat/Hello-World/forks\",\"git_commits_url\":\"https://api.github.com/repos/octocat/Hello-World/git/commits{/sha}\",\"git_refs_url\":\"https://api.github.com/repos/octocat/Hello-World/git/refs{/sha}\",\"git_tags_url\":\"https://api.github.com/repos/octocat/Hello-World/git/tags{/sha}\",\"git_url\":\"git:github.com/octocat/Hello-World.git\",\"issue_comment_url\":\"https://api.github.com/repos/octocat/Hello-World/issues/comments{/number}\",\"issue_events_url\":\"https://api.github.com/repos/octocat/Hello-World/issues/events{/number}\",\"issues_url\":\"https://api.github.com/repos/octocat/Hello-World/issues{/number}\",\"keys_url\":\"https://api.github.com/repos/octocat/Hello-World/keys{/key_id}\",\"labels_url\":\"https://api.github.com/repos/octocat/Hello-World/labels{/name}\",\"languages_url\":\"https://api.github.com/repos/octocat/Hello-World/languages\",\"merges_url\":\"https://api.github.com/repos/octocat/Hello-World/merges\",\"milestones_url\":\"https://api.github.com/repos/octocat/Hello-World/milestones{/number}\",\"notifications_url\":\"https://api.github.com/repos/octocat/Hello-World/notifications{?since,all,participating}\",\"pulls_url\":\"https://api.github.com/repos/octocat/Hello-World/pulls{/number}\",\"releases_url\":\"https://api.github.com/repos/octocat/Hello-World/releases{/id}\",\"ssh_url\":\"git@github.com:octocat/Hello-World.git\",\"stargazers_url\":\"https://api.github.com/repos/octocat/Hello-World/stargazers\",\"statuses_url\":\"https://api.github.com/repos/octocat/Hello-World/statuses/{sha}\",\"subscribers_url\":\"https://api.github.com/repos/octocat/Hello-World/subscribers\",\"subscription_url\":\"https://api.github.com/repos/octocat/Hello-World/subscription\",\"tags_url\":\"https://api.github.com/repos/octocat/Hello-World/tags\",\"teams_url\":\"https://api.github.com/repos/octocat/Hello-World/teams\",\"trees_url\":\"https://api.github.com/repos/octocat/Hello-World/git/trees{/sha}\",\"hooks_url\":\"http://api.github.com/repos/octocat/Hello-World/hooks\"},\"subject\":{\"title\":\"Greetings\",\"url\":\"https://api.github.com/repos/octokit/octokit.rb/issues/123\",\"latest_comment_url\":\"https://api.github.com/repos/octokit/octokit.rb/issues/comments/123\",\"type\":\"Issue\"},\"reason\":\"subscribed\",\"unread\":true,\"updated_at\":\"2014-11-07T22:01:45Z\",\"last_read_at\":\"2014-11-07T22:01:45Z\",\"url\":\"https://api.github.com/notifications/threads/1\"}"
+            "data": "{\"id\":\"1\",\"repository\":{\"id\":1296269,\"node_id\":\"MDEwOlJlcG9zaXRvcnkxMjk2MjY5\",\"name\":\"Hello-World\",\"full_name\":\"octocat/Hello-World\",\"owner\":{\"login\":\"octocat\",\"id\":1,\"node_id\":\"MDQ6VXNlcjE=\",\"avatar_url\":\"https://github.com/images/error/octocat_happy.gif\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/octocat\",\"html_url\":\"https://github.com/octocat\",\"followers_url\":\"https://api.github.com/users/octocat/followers\",\"following_url\":\"https://api.github.com/users/octocat/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/octocat/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/octocat/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/octocat/subscriptions\",\"organizations_url\":\"https://api.github.com/users/octocat/orgs\",\"repos_url\":\"https://api.github.com/users/octocat/repos\",\"events_url\":\"https://api.github.com/users/octocat/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/octocat/received_events\",\"type\":\"User\",\"site_admin\":false},\"private\":false,\"html_url\":\"https://github.com/octocat/Hello-World\",\"description\":\"This your first repo!\",\"fork\":false,\"url\":\"https://api.github.com/repos/octocat/Hello-World\",\"archive_url\":\"https://api.github.com/repos/octocat/Hello-World/{archive_format}{/ref}\",\"assignees_url\":\"https://api.github.com/repos/octocat/Hello-World/assignees{/user}\",\"blobs_url\":\"https://api.github.com/repos/octocat/Hello-World/git/blobs{/sha}\",\"branches_url\":\"https://api.github.com/repos/octocat/Hello-World/branches{/branch}\",\"collaborators_url\":\"https://api.github.com/repos/octocat/Hello-World/collaborators{/collaborator}\",\"comments_url\":\"https://api.github.com/repos/octocat/Hello-World/comments{/number}\",\"commits_url\":\"https://api.github.com/repos/octocat/Hello-World/commits{/sha}\",\"compare_url\":\"https://api.github.com/repos/octocat/Hello-World/compare/{base}...{head}\",\"contents_url\":\"https://api.github.com/repos/octocat/Hello-World/contents/{+path}\",\"contributors_url\":\"https://api.github.com/repos/octocat/Hello-World/contributors\",\"deployments_url\":\"https://api.github.com/repos/octocat/Hello-World/deployments\",\"downloads_url\":\"https://api.github.com/repos/octocat/Hello-World/downloads\",\"events_url\":\"https://api.github.com/repos/octocat/Hello-World/events\",\"forks_url\":\"https://api.github.com/repos/octocat/Hello-World/forks\",\"git_commits_url\":\"https://api.github.com/repos/octocat/Hello-World/git/commits{/sha}\",\"git_refs_url\":\"https://api.github.com/repos/octocat/Hello-World/git/refs{/sha}\",\"git_tags_url\":\"https://api.github.com/repos/octocat/Hello-World/git/tags{/sha}\",\"git_url\":\"git:github.com/octocat/Hello-World.git\",\"issue_comment_url\":\"https://api.github.com/repos/octocat/Hello-World/issues/comments{/number}\",\"issue_events_url\":\"https://api.github.com/repos/octocat/Hello-World/issues/events{/number}\",\"issues_url\":\"https://api.github.com/repos/octocat/Hello-World/issues{/number}\",\"keys_url\":\"https://api.github.com/repos/octocat/Hello-World/keys{/key_id}\",\"labels_url\":\"https://api.github.com/repos/octocat/Hello-World/labels{/name}\",\"languages_url\":\"https://api.github.com/repos/octocat/Hello-World/languages\",\"merges_url\":\"https://api.github.com/repos/octocat/Hello-World/merges\",\"milestones_url\":\"https://api.github.com/repos/octocat/Hello-World/milestones{/number}\",\"notifications_url\":\"https://api.github.com/repos/octocat/Hello-World/notifications{?since,all,participating}\",\"pulls_url\":\"https://api.github.com/repos/octocat/Hello-World/pulls{/number}\",\"releases_url\":\"https://api.github.com/repos/octocat/Hello-World/releases{/id}\",\"ssh_url\":\"git@github.com:octocat/Hello-World.git\",\"stargazers_url\":\"https://api.github.com/repos/octocat/Hello-World/stargazers\",\"statuses_url\":\"https://api.github.com/repos/octocat/Hello-World/statuses/{sha}\",\"subscribers_url\":\"https://api.github.com/repos/octocat/Hello-World/subscribers\",\"subscription_url\":\"https://api.github.com/repos/octocat/Hello-World/subscription\",\"tags_url\":\"https://api.github.com/repos/octocat/Hello-World/tags\",\"teams_url\":\"https://api.github.com/repos/octocat/Hello-World/teams\",\"trees_url\":\"https://api.github.com/repos/octocat/Hello-World/git/trees{/sha}\",\"hooks_url\":\"http://api.github.com/repos/octocat/Hello-World/hooks\"},\"subject\":{\"title\":\"Greetings\",\"url\":\"https://api.github.com/repos/octokit/octokit.rb/issues/123\",\"latest_comment_url\":\"https://api.github.com/repos/octokit/octokit.rb/issues/comments/123\",\"type\":\"Issue\"},\"reason\":\"subscribed\",\"unread\":true,\"updated_at\":\"2014-11-07T22:01:45Z\",\"last_read_at\":\"2014-11-07T22:01:45Z\",\"url\":\"https://api.github.com/notifications/threads/1\",\"subscription_url\":\"https://api.github.com/notifications/threads/1/subscription\"}"
           }
         ]
       },
@@ -4465,7 +4465,7 @@
         "description": "response",
         "examples": [
           {
-            "data": "[{\"id\":\"1\",\"repository\":{\"id\":1296269,\"node_id\":\"MDEwOlJlcG9zaXRvcnkxMjk2MjY5\",\"name\":\"Hello-World\",\"full_name\":\"octocat/Hello-World\",\"owner\":{\"login\":\"octocat\",\"id\":1,\"node_id\":\"MDQ6VXNlcjE=\",\"avatar_url\":\"https://github.com/images/error/octocat_happy.gif\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/octocat\",\"html_url\":\"https://github.com/octocat\",\"followers_url\":\"https://api.github.com/users/octocat/followers\",\"following_url\":\"https://api.github.com/users/octocat/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/octocat/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/octocat/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/octocat/subscriptions\",\"organizations_url\":\"https://api.github.com/users/octocat/orgs\",\"repos_url\":\"https://api.github.com/users/octocat/repos\",\"events_url\":\"https://api.github.com/users/octocat/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/octocat/received_events\",\"type\":\"User\",\"site_admin\":false},\"private\":false,\"html_url\":\"https://github.com/octocat/Hello-World\",\"description\":\"This your first repo!\",\"fork\":false,\"url\":\"https://api.github.com/repos/octocat/Hello-World\",\"archive_url\":\"https://api.github.com/repos/octocat/Hello-World/{archive_format}{/ref}\",\"assignees_url\":\"https://api.github.com/repos/octocat/Hello-World/assignees{/user}\",\"blobs_url\":\"https://api.github.com/repos/octocat/Hello-World/git/blobs{/sha}\",\"branches_url\":\"https://api.github.com/repos/octocat/Hello-World/branches{/branch}\",\"collaborators_url\":\"https://api.github.com/repos/octocat/Hello-World/collaborators{/collaborator}\",\"comments_url\":\"https://api.github.com/repos/octocat/Hello-World/comments{/number}\",\"commits_url\":\"https://api.github.com/repos/octocat/Hello-World/commits{/sha}\",\"compare_url\":\"https://api.github.com/repos/octocat/Hello-World/compare/{base}...{head}\",\"contents_url\":\"https://api.github.com/repos/octocat/Hello-World/contents/{+path}\",\"contributors_url\":\"https://api.github.com/repos/octocat/Hello-World/contributors\",\"deployments_url\":\"https://api.github.com/repos/octocat/Hello-World/deployments\",\"downloads_url\":\"https://api.github.com/repos/octocat/Hello-World/downloads\",\"events_url\":\"https://api.github.com/repos/octocat/Hello-World/events\",\"forks_url\":\"https://api.github.com/repos/octocat/Hello-World/forks\",\"git_commits_url\":\"https://api.github.com/repos/octocat/Hello-World/git/commits{/sha}\",\"git_refs_url\":\"https://api.github.com/repos/octocat/Hello-World/git/refs{/sha}\",\"git_tags_url\":\"https://api.github.com/repos/octocat/Hello-World/git/tags{/sha}\",\"git_url\":\"git:github.com/octocat/Hello-World.git\",\"issue_comment_url\":\"https://api.github.com/repos/octocat/Hello-World/issues/comments{/number}\",\"issue_events_url\":\"https://api.github.com/repos/octocat/Hello-World/issues/events{/number}\",\"issues_url\":\"https://api.github.com/repos/octocat/Hello-World/issues{/number}\",\"keys_url\":\"https://api.github.com/repos/octocat/Hello-World/keys{/key_id}\",\"labels_url\":\"https://api.github.com/repos/octocat/Hello-World/labels{/name}\",\"languages_url\":\"https://api.github.com/repos/octocat/Hello-World/languages\",\"merges_url\":\"https://api.github.com/repos/octocat/Hello-World/merges\",\"milestones_url\":\"https://api.github.com/repos/octocat/Hello-World/milestones{/number}\",\"notifications_url\":\"https://api.github.com/repos/octocat/Hello-World/notifications{?since,all,participating}\",\"pulls_url\":\"https://api.github.com/repos/octocat/Hello-World/pulls{/number}\",\"releases_url\":\"https://api.github.com/repos/octocat/Hello-World/releases{/id}\",\"ssh_url\":\"git@github.com:octocat/Hello-World.git\",\"stargazers_url\":\"https://api.github.com/repos/octocat/Hello-World/stargazers\",\"statuses_url\":\"https://api.github.com/repos/octocat/Hello-World/statuses/{sha}\",\"subscribers_url\":\"https://api.github.com/repos/octocat/Hello-World/subscribers\",\"subscription_url\":\"https://api.github.com/repos/octocat/Hello-World/subscription\",\"tags_url\":\"https://api.github.com/repos/octocat/Hello-World/tags\",\"teams_url\":\"https://api.github.com/repos/octocat/Hello-World/teams\",\"trees_url\":\"https://api.github.com/repos/octocat/Hello-World/git/trees{/sha}\",\"hooks_url\":\"http://api.github.com/repos/octocat/Hello-World/hooks\"},\"subject\":{\"title\":\"Greetings\",\"url\":\"https://api.github.com/repos/octokit/octokit.rb/issues/123\",\"latest_comment_url\":\"https://api.github.com/repos/octokit/octokit.rb/issues/comments/123\",\"type\":\"Issue\"},\"reason\":\"subscribed\",\"unread\":true,\"updated_at\":\"2014-11-07T22:01:45Z\",\"last_read_at\":\"2014-11-07T22:01:45Z\",\"url\":\"https://api.github.com/notifications/threads/1\"}]"
+            "data": "[{\"id\":\"1\",\"repository\":{\"id\":1296269,\"node_id\":\"MDEwOlJlcG9zaXRvcnkxMjk2MjY5\",\"name\":\"Hello-World\",\"full_name\":\"octocat/Hello-World\",\"owner\":{\"login\":\"octocat\",\"id\":1,\"node_id\":\"MDQ6VXNlcjE=\",\"avatar_url\":\"https://github.com/images/error/octocat_happy.gif\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/octocat\",\"html_url\":\"https://github.com/octocat\",\"followers_url\":\"https://api.github.com/users/octocat/followers\",\"following_url\":\"https://api.github.com/users/octocat/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/octocat/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/octocat/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/octocat/subscriptions\",\"organizations_url\":\"https://api.github.com/users/octocat/orgs\",\"repos_url\":\"https://api.github.com/users/octocat/repos\",\"events_url\":\"https://api.github.com/users/octocat/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/octocat/received_events\",\"type\":\"User\",\"site_admin\":false},\"private\":false,\"html_url\":\"https://github.com/octocat/Hello-World\",\"description\":\"This your first repo!\",\"fork\":false,\"url\":\"https://api.github.com/repos/octocat/Hello-World\",\"archive_url\":\"https://api.github.com/repos/octocat/Hello-World/{archive_format}{/ref}\",\"assignees_url\":\"https://api.github.com/repos/octocat/Hello-World/assignees{/user}\",\"blobs_url\":\"https://api.github.com/repos/octocat/Hello-World/git/blobs{/sha}\",\"branches_url\":\"https://api.github.com/repos/octocat/Hello-World/branches{/branch}\",\"collaborators_url\":\"https://api.github.com/repos/octocat/Hello-World/collaborators{/collaborator}\",\"comments_url\":\"https://api.github.com/repos/octocat/Hello-World/comments{/number}\",\"commits_url\":\"https://api.github.com/repos/octocat/Hello-World/commits{/sha}\",\"compare_url\":\"https://api.github.com/repos/octocat/Hello-World/compare/{base}...{head}\",\"contents_url\":\"https://api.github.com/repos/octocat/Hello-World/contents/{+path}\",\"contributors_url\":\"https://api.github.com/repos/octocat/Hello-World/contributors\",\"deployments_url\":\"https://api.github.com/repos/octocat/Hello-World/deployments\",\"downloads_url\":\"https://api.github.com/repos/octocat/Hello-World/downloads\",\"events_url\":\"https://api.github.com/repos/octocat/Hello-World/events\",\"forks_url\":\"https://api.github.com/repos/octocat/Hello-World/forks\",\"git_commits_url\":\"https://api.github.com/repos/octocat/Hello-World/git/commits{/sha}\",\"git_refs_url\":\"https://api.github.com/repos/octocat/Hello-World/git/refs{/sha}\",\"git_tags_url\":\"https://api.github.com/repos/octocat/Hello-World/git/tags{/sha}\",\"git_url\":\"git:github.com/octocat/Hello-World.git\",\"issue_comment_url\":\"https://api.github.com/repos/octocat/Hello-World/issues/comments{/number}\",\"issue_events_url\":\"https://api.github.com/repos/octocat/Hello-World/issues/events{/number}\",\"issues_url\":\"https://api.github.com/repos/octocat/Hello-World/issues{/number}\",\"keys_url\":\"https://api.github.com/repos/octocat/Hello-World/keys{/key_id}\",\"labels_url\":\"https://api.github.com/repos/octocat/Hello-World/labels{/name}\",\"languages_url\":\"https://api.github.com/repos/octocat/Hello-World/languages\",\"merges_url\":\"https://api.github.com/repos/octocat/Hello-World/merges\",\"milestones_url\":\"https://api.github.com/repos/octocat/Hello-World/milestones{/number}\",\"notifications_url\":\"https://api.github.com/repos/octocat/Hello-World/notifications{?since,all,participating}\",\"pulls_url\":\"https://api.github.com/repos/octocat/Hello-World/pulls{/number}\",\"releases_url\":\"https://api.github.com/repos/octocat/Hello-World/releases{/id}\",\"ssh_url\":\"git@github.com:octocat/Hello-World.git\",\"stargazers_url\":\"https://api.github.com/repos/octocat/Hello-World/stargazers\",\"statuses_url\":\"https://api.github.com/repos/octocat/Hello-World/statuses/{sha}\",\"subscribers_url\":\"https://api.github.com/repos/octocat/Hello-World/subscribers\",\"subscription_url\":\"https://api.github.com/repos/octocat/Hello-World/subscription\",\"tags_url\":\"https://api.github.com/repos/octocat/Hello-World/tags\",\"teams_url\":\"https://api.github.com/repos/octocat/Hello-World/teams\",\"trees_url\":\"https://api.github.com/repos/octocat/Hello-World/git/trees{/sha}\",\"hooks_url\":\"http://api.github.com/repos/octocat/Hello-World/hooks\"},\"subject\":{\"title\":\"Greetings\",\"url\":\"https://api.github.com/repos/octokit/octokit.rb/issues/123\",\"latest_comment_url\":\"https://api.github.com/repos/octokit/octokit.rb/issues/comments/123\",\"type\":\"Issue\"},\"reason\":\"subscribed\",\"unread\":true,\"updated_at\":\"2014-11-07T22:01:45Z\",\"last_read_at\":\"2014-11-07T22:01:45Z\",\"url\":\"https://api.github.com/notifications/threads/1\",\"subscription_url\":\"https://api.github.com/notifications/threads/1/subscription\"}]"
           }
         ]
       },
@@ -5089,7 +5089,7 @@
         "description": "response",
         "examples": [
           {
-            "data": "[{\"id\":\"1\",\"repository\":{\"id\":1296269,\"node_id\":\"MDEwOlJlcG9zaXRvcnkxMjk2MjY5\",\"name\":\"Hello-World\",\"full_name\":\"octocat/Hello-World\",\"owner\":{\"login\":\"octocat\",\"id\":1,\"node_id\":\"MDQ6VXNlcjE=\",\"avatar_url\":\"https://github.com/images/error/octocat_happy.gif\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/octocat\",\"html_url\":\"https://github.com/octocat\",\"followers_url\":\"https://api.github.com/users/octocat/followers\",\"following_url\":\"https://api.github.com/users/octocat/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/octocat/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/octocat/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/octocat/subscriptions\",\"organizations_url\":\"https://api.github.com/users/octocat/orgs\",\"repos_url\":\"https://api.github.com/users/octocat/repos\",\"events_url\":\"https://api.github.com/users/octocat/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/octocat/received_events\",\"type\":\"User\",\"site_admin\":false},\"private\":false,\"html_url\":\"https://github.com/octocat/Hello-World\",\"description\":\"This your first repo!\",\"fork\":false,\"url\":\"https://api.github.com/repos/octocat/Hello-World\",\"archive_url\":\"https://api.github.com/repos/octocat/Hello-World/{archive_format}{/ref}\",\"assignees_url\":\"https://api.github.com/repos/octocat/Hello-World/assignees{/user}\",\"blobs_url\":\"https://api.github.com/repos/octocat/Hello-World/git/blobs{/sha}\",\"branches_url\":\"https://api.github.com/repos/octocat/Hello-World/branches{/branch}\",\"collaborators_url\":\"https://api.github.com/repos/octocat/Hello-World/collaborators{/collaborator}\",\"comments_url\":\"https://api.github.com/repos/octocat/Hello-World/comments{/number}\",\"commits_url\":\"https://api.github.com/repos/octocat/Hello-World/commits{/sha}\",\"compare_url\":\"https://api.github.com/repos/octocat/Hello-World/compare/{base}...{head}\",\"contents_url\":\"https://api.github.com/repos/octocat/Hello-World/contents/{+path}\",\"contributors_url\":\"https://api.github.com/repos/octocat/Hello-World/contributors\",\"deployments_url\":\"https://api.github.com/repos/octocat/Hello-World/deployments\",\"downloads_url\":\"https://api.github.com/repos/octocat/Hello-World/downloads\",\"events_url\":\"https://api.github.com/repos/octocat/Hello-World/events\",\"forks_url\":\"https://api.github.com/repos/octocat/Hello-World/forks\",\"git_commits_url\":\"https://api.github.com/repos/octocat/Hello-World/git/commits{/sha}\",\"git_refs_url\":\"https://api.github.com/repos/octocat/Hello-World/git/refs{/sha}\",\"git_tags_url\":\"https://api.github.com/repos/octocat/Hello-World/git/tags{/sha}\",\"git_url\":\"git:github.com/octocat/Hello-World.git\",\"issue_comment_url\":\"https://api.github.com/repos/octocat/Hello-World/issues/comments{/number}\",\"issue_events_url\":\"https://api.github.com/repos/octocat/Hello-World/issues/events{/number}\",\"issues_url\":\"https://api.github.com/repos/octocat/Hello-World/issues{/number}\",\"keys_url\":\"https://api.github.com/repos/octocat/Hello-World/keys{/key_id}\",\"labels_url\":\"https://api.github.com/repos/octocat/Hello-World/labels{/name}\",\"languages_url\":\"https://api.github.com/repos/octocat/Hello-World/languages\",\"merges_url\":\"https://api.github.com/repos/octocat/Hello-World/merges\",\"milestones_url\":\"https://api.github.com/repos/octocat/Hello-World/milestones{/number}\",\"notifications_url\":\"https://api.github.com/repos/octocat/Hello-World/notifications{?since,all,participating}\",\"pulls_url\":\"https://api.github.com/repos/octocat/Hello-World/pulls{/number}\",\"releases_url\":\"https://api.github.com/repos/octocat/Hello-World/releases{/id}\",\"ssh_url\":\"git@github.com:octocat/Hello-World.git\",\"stargazers_url\":\"https://api.github.com/repos/octocat/Hello-World/stargazers\",\"statuses_url\":\"https://api.github.com/repos/octocat/Hello-World/statuses/{sha}\",\"subscribers_url\":\"https://api.github.com/repos/octocat/Hello-World/subscribers\",\"subscription_url\":\"https://api.github.com/repos/octocat/Hello-World/subscription\",\"tags_url\":\"https://api.github.com/repos/octocat/Hello-World/tags\",\"teams_url\":\"https://api.github.com/repos/octocat/Hello-World/teams\",\"trees_url\":\"https://api.github.com/repos/octocat/Hello-World/git/trees{/sha}\",\"hooks_url\":\"http://api.github.com/repos/octocat/Hello-World/hooks\"},\"subject\":{\"title\":\"Greetings\",\"url\":\"https://api.github.com/repos/octokit/octokit.rb/issues/123\",\"latest_comment_url\":\"https://api.github.com/repos/octokit/octokit.rb/issues/comments/123\",\"type\":\"Issue\"},\"reason\":\"subscribed\",\"unread\":true,\"updated_at\":\"2014-11-07T22:01:45Z\",\"last_read_at\":\"2014-11-07T22:01:45Z\",\"url\":\"https://api.github.com/notifications/threads/1\"}]"
+            "data": "[{\"id\":\"1\",\"repository\":{\"id\":1296269,\"node_id\":\"MDEwOlJlcG9zaXRvcnkxMjk2MjY5\",\"name\":\"Hello-World\",\"full_name\":\"octocat/Hello-World\",\"owner\":{\"login\":\"octocat\",\"id\":1,\"node_id\":\"MDQ6VXNlcjE=\",\"avatar_url\":\"https://github.com/images/error/octocat_happy.gif\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/octocat\",\"html_url\":\"https://github.com/octocat\",\"followers_url\":\"https://api.github.com/users/octocat/followers\",\"following_url\":\"https://api.github.com/users/octocat/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/octocat/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/octocat/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/octocat/subscriptions\",\"organizations_url\":\"https://api.github.com/users/octocat/orgs\",\"repos_url\":\"https://api.github.com/users/octocat/repos\",\"events_url\":\"https://api.github.com/users/octocat/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/octocat/received_events\",\"type\":\"User\",\"site_admin\":false},\"private\":false,\"html_url\":\"https://github.com/octocat/Hello-World\",\"description\":\"This your first repo!\",\"fork\":false,\"url\":\"https://api.github.com/repos/octocat/Hello-World\",\"archive_url\":\"https://api.github.com/repos/octocat/Hello-World/{archive_format}{/ref}\",\"assignees_url\":\"https://api.github.com/repos/octocat/Hello-World/assignees{/user}\",\"blobs_url\":\"https://api.github.com/repos/octocat/Hello-World/git/blobs{/sha}\",\"branches_url\":\"https://api.github.com/repos/octocat/Hello-World/branches{/branch}\",\"collaborators_url\":\"https://api.github.com/repos/octocat/Hello-World/collaborators{/collaborator}\",\"comments_url\":\"https://api.github.com/repos/octocat/Hello-World/comments{/number}\",\"commits_url\":\"https://api.github.com/repos/octocat/Hello-World/commits{/sha}\",\"compare_url\":\"https://api.github.com/repos/octocat/Hello-World/compare/{base}...{head}\",\"contents_url\":\"https://api.github.com/repos/octocat/Hello-World/contents/{+path}\",\"contributors_url\":\"https://api.github.com/repos/octocat/Hello-World/contributors\",\"deployments_url\":\"https://api.github.com/repos/octocat/Hello-World/deployments\",\"downloads_url\":\"https://api.github.com/repos/octocat/Hello-World/downloads\",\"events_url\":\"https://api.github.com/repos/octocat/Hello-World/events\",\"forks_url\":\"https://api.github.com/repos/octocat/Hello-World/forks\",\"git_commits_url\":\"https://api.github.com/repos/octocat/Hello-World/git/commits{/sha}\",\"git_refs_url\":\"https://api.github.com/repos/octocat/Hello-World/git/refs{/sha}\",\"git_tags_url\":\"https://api.github.com/repos/octocat/Hello-World/git/tags{/sha}\",\"git_url\":\"git:github.com/octocat/Hello-World.git\",\"issue_comment_url\":\"https://api.github.com/repos/octocat/Hello-World/issues/comments{/number}\",\"issue_events_url\":\"https://api.github.com/repos/octocat/Hello-World/issues/events{/number}\",\"issues_url\":\"https://api.github.com/repos/octocat/Hello-World/issues{/number}\",\"keys_url\":\"https://api.github.com/repos/octocat/Hello-World/keys{/key_id}\",\"labels_url\":\"https://api.github.com/repos/octocat/Hello-World/labels{/name}\",\"languages_url\":\"https://api.github.com/repos/octocat/Hello-World/languages\",\"merges_url\":\"https://api.github.com/repos/octocat/Hello-World/merges\",\"milestones_url\":\"https://api.github.com/repos/octocat/Hello-World/milestones{/number}\",\"notifications_url\":\"https://api.github.com/repos/octocat/Hello-World/notifications{?since,all,participating}\",\"pulls_url\":\"https://api.github.com/repos/octocat/Hello-World/pulls{/number}\",\"releases_url\":\"https://api.github.com/repos/octocat/Hello-World/releases{/id}\",\"ssh_url\":\"git@github.com:octocat/Hello-World.git\",\"stargazers_url\":\"https://api.github.com/repos/octocat/Hello-World/stargazers\",\"statuses_url\":\"https://api.github.com/repos/octocat/Hello-World/statuses/{sha}\",\"subscribers_url\":\"https://api.github.com/repos/octocat/Hello-World/subscribers\",\"subscription_url\":\"https://api.github.com/repos/octocat/Hello-World/subscription\",\"tags_url\":\"https://api.github.com/repos/octocat/Hello-World/tags\",\"teams_url\":\"https://api.github.com/repos/octocat/Hello-World/teams\",\"trees_url\":\"https://api.github.com/repos/octocat/Hello-World/git/trees{/sha}\",\"hooks_url\":\"http://api.github.com/repos/octocat/Hello-World/hooks\"},\"subject\":{\"title\":\"Greetings\",\"url\":\"https://api.github.com/repos/octokit/octokit.rb/issues/123\",\"latest_comment_url\":\"https://api.github.com/repos/octokit/octokit.rb/issues/comments/123\",\"type\":\"Issue\"},\"reason\":\"subscribed\",\"unread\":true,\"updated_at\":\"2014-11-07T22:01:45Z\",\"last_read_at\":\"2014-11-07T22:01:45Z\",\"url\":\"https://api.github.com/notifications/threads/1\",\"subscription_url\":\"https://api.github.com/notifications/threads/1/subscription\"}]"
           }
         ]
       }
@@ -6303,7 +6303,7 @@
       },
       {
         "name": "permissions",
-        "description": "",
+        "description": "The permissions granted to the user-to-server access token.",
         "in": "BODY",
         "type": "object",
         "required": false,
@@ -6315,12 +6315,12 @@
         "deprecated": null
       },
       {
-        "name": "permissions.contents",
-        "description": "",
+        "name": "permissions.actions",
+        "description": "The level of permission to grant the access token for GitHub Actions workflows, workflow runs, and artifacts. Can be one of: `read` or `write`.",
         "in": "BODY",
         "type": "string",
         "required": false,
-        "enum": null,
+        "enum": ["read", "write"],
         "allowNull": false,
         "mapToData": null,
         "validation": null,
@@ -6328,12 +6328,51 @@
         "deprecated": null
       },
       {
-        "name": "permissions.issues",
-        "description": "",
+        "name": "permissions.administration",
+        "description": "The level of permission to grant the access token for repository creation, deletion, settings, teams, and collaborators creation. Can be one of: `read` or `write`.",
         "in": "BODY",
         "type": "string",
         "required": false,
-        "enum": null,
+        "enum": ["read", "write"],
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "permissions.checks",
+        "description": "The level of permission to grant the access token for checks on code. Can be one of: `read` or `write`.",
+        "in": "BODY",
+        "type": "string",
+        "required": false,
+        "enum": ["read", "write"],
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "permissions.content_references",
+        "description": "The level of permission to grant the access token for notification of content references and creation content attachments. Can be one of: `read` or `write`.",
+        "in": "BODY",
+        "type": "string",
+        "required": false,
+        "enum": ["read", "write"],
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "permissions.contents",
+        "description": "The level of permission to grant the access token for repository contents, commits, branches, downloads, releases, and merges. Can be one of: `read` or `write`.",
+        "in": "BODY",
+        "type": "string",
+        "required": false,
+        "enum": ["read", "write"],
         "allowNull": false,
         "mapToData": null,
         "validation": null,
@@ -6342,11 +6381,154 @@
       },
       {
         "name": "permissions.deployments",
-        "description": "",
+        "description": "The level of permission to grant the access token for deployments and deployment statuses. Can be one of: `read` or `write`.",
         "in": "BODY",
         "type": "string",
         "required": false,
-        "enum": null,
+        "enum": ["read", "write"],
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "permissions.environments",
+        "description": "The level of permission to grant the access token for managing repository environments. Can be one of: `read` or `write`.",
+        "in": "BODY",
+        "type": "string",
+        "required": false,
+        "enum": ["read", "write"],
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "permissions.issues",
+        "description": "The level of permission to grant the access token for issues and related comments, assignees, labels, and milestones. Can be one of: `read` or `write`.",
+        "in": "BODY",
+        "type": "string",
+        "required": false,
+        "enum": ["read", "write"],
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "permissions.metadata",
+        "description": "The level of permission to grant the access token to search repositories, list collaborators, and access repository metadata. Can be one of: `read` or `write`.",
+        "in": "BODY",
+        "type": "string",
+        "required": false,
+        "enum": ["read", "write"],
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "permissions.packages",
+        "description": "The level of permission to grant the access token for packages published to GitHub Packages. Can be one of: `read` or `write`.",
+        "in": "BODY",
+        "type": "string",
+        "required": false,
+        "enum": ["read", "write"],
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "permissions.pages",
+        "description": "The level of permission to grant the access token to retrieve Pages statuses, configuration, and builds, as well as create new builds. Can be one of: `read` or `write`.",
+        "in": "BODY",
+        "type": "string",
+        "required": false,
+        "enum": ["read", "write"],
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "permissions.pull_requests",
+        "description": "The level of permission to grant the access token for pull requests and related comments, assignees, labels, milestones, and merges. Can be one of: `read` or `write`.",
+        "in": "BODY",
+        "type": "string",
+        "required": false,
+        "enum": ["read", "write"],
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "permissions.repository_hooks",
+        "description": "The level of permission to grant the access token to manage the post-receive hooks for a repository. Can be one of: `read` or `write`.",
+        "in": "BODY",
+        "type": "string",
+        "required": false,
+        "enum": ["read", "write"],
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "permissions.repository_projects",
+        "description": "The level of permission to grant the access token to manage repository projects, columns, and cards. Can be one of: `read`, `write`, or `admin`.",
+        "in": "BODY",
+        "type": "string",
+        "required": false,
+        "enum": ["read", "write", "admin"],
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "permissions.secret_scanning_alerts",
+        "description": "The level of permission to grant the access token to view and manage secret scanning alerts. Can be one of: `read` or `write`.",
+        "in": "BODY",
+        "type": "string",
+        "required": false,
+        "enum": ["read", "write"],
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "permissions.secrets",
+        "description": "The level of permission to grant the access token to manage repository secrets. Can be one of: `read` or `write`.",
+        "in": "BODY",
+        "type": "string",
+        "required": false,
+        "enum": ["read", "write"],
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "permissions.security_events",
+        "description": "The level of permission to grant the access token to view and manage security events like code scanning alerts. Can be one of: `read` or `write`.",
+        "in": "BODY",
+        "type": "string",
+        "required": false,
+        "enum": ["read", "write"],
         "allowNull": false,
         "mapToData": null,
         "validation": null,
@@ -6355,11 +6537,11 @@
       },
       {
         "name": "permissions.single_file",
-        "description": "",
+        "description": "The level of permission to grant the access token to manage just a single file. Can be one of: `read` or `write`.",
         "in": "BODY",
         "type": "string",
         "required": false,
-        "enum": null,
+        "enum": ["read", "write"],
         "allowNull": false,
         "mapToData": null,
         "validation": null,
@@ -6367,12 +6549,155 @@
         "deprecated": null
       },
       {
-        "name": "permissions.def_not_a_repo",
-        "description": "",
+        "name": "permissions.statuses",
+        "description": "The level of permission to grant the access token for commit statuses. Can be one of: `read` or `write`.",
         "in": "BODY",
         "type": "string",
         "required": false,
-        "enum": null,
+        "enum": ["read", "write"],
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "permissions.vulnerability_alerts",
+        "description": "The level of permission to grant the access token to retrieve Dependabot alerts. Can be one of: `read`.",
+        "in": "BODY",
+        "type": "string",
+        "required": false,
+        "enum": ["read"],
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "permissions.workflows",
+        "description": "The level of permission to grant the access token to update GitHub Actions workflow files. Can be one of: `write`.",
+        "in": "BODY",
+        "type": "string",
+        "required": false,
+        "enum": ["write"],
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "permissions.members",
+        "description": "The level of permission to grant the access token for organization teams and members. Can be one of: `read` or `write`.",
+        "in": "BODY",
+        "type": "string",
+        "required": false,
+        "enum": ["read", "write"],
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "permissions.organization_administration",
+        "description": "The level of permission to grant the access token to manage access to an organization. Can be one of: `read` or `write`.",
+        "in": "BODY",
+        "type": "string",
+        "required": false,
+        "enum": ["read", "write"],
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "permissions.organization_hooks",
+        "description": "The level of permission to grant the access token to manage the post-receive hooks for an organization. Can be one of: `read` or `write`.",
+        "in": "BODY",
+        "type": "string",
+        "required": false,
+        "enum": ["read", "write"],
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "permissions.organization_plan",
+        "description": "The level of permission to grant the access token for viewing an organization's plan. Can be one of: `read`.",
+        "in": "BODY",
+        "type": "string",
+        "required": false,
+        "enum": ["read"],
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "permissions.organization_projects",
+        "description": "The level of permission to grant the access token to manage organization projects, columns, and cards. Can be one of: `read`, `write`, or `admin`.",
+        "in": "BODY",
+        "type": "string",
+        "required": false,
+        "enum": ["read", "write", "admin"],
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "permissions.organization_secrets",
+        "description": "The level of permission to grant the access token to manage organization secrets. Can be one of: `read` or `write`.",
+        "in": "BODY",
+        "type": "string",
+        "required": false,
+        "enum": ["read", "write"],
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "permissions.organization_self_hosted_runners",
+        "description": "The level of permission to grant the access token to view and manage GitHub Actions self-hosted runners available to an organization. Can be one of: `read` or `write`.",
+        "in": "BODY",
+        "type": "string",
+        "required": false,
+        "enum": ["read", "write"],
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "permissions.organization_user_blocking",
+        "description": "The level of permission to grant the access token to view and manage users blocked by the organization. Can be one of: `read` or `write`.",
+        "in": "BODY",
+        "type": "string",
+        "required": false,
+        "enum": ["read", "write"],
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "permissions.team_discussions",
+        "description": "The level of permission to grant the access token to manage team discussions and related comments. Can be one of: `read` or `write`.",
+        "in": "BODY",
+        "type": "string",
+        "required": false,
+        "enum": ["read", "write"],
         "allowNull": false,
         "mapToData": null,
         "validation": null,
@@ -13052,7 +13377,7 @@
         "description": "response",
         "examples": [
           {
-            "data": "{\"sha\":\"7638417db6d59f3c431d3e1f261cc637155684cd\",\"node_id\":\"MDY6Q29tbWl0NzYzODQxN2RiNmQ1OWYzYzQzMWQzZTFmMjYxY2M2MzcxNTU2ODRjZA==\",\"url\":\"https://api.github.com/repos/octocat/Hello-World/git/commits/7638417db6d59f3c431d3e1f261cc637155684cd\",\"author\":{\"date\":\"2014-11-07T22:01:45Z\",\"name\":\"Monalisa Octocat\",\"email\":\"octocat@github.com\"},\"committer\":{\"date\":\"2014-11-07T22:01:45Z\",\"name\":\"Monalisa Octocat\",\"email\":\"octocat@github.com\"},\"message\":\"my commit message\",\"tree\":{\"url\":\"https://api.github.com/repos/octocat/Hello-World/git/trees/827efc6d56897b048c772eb4087f854f46256132\",\"sha\":\"827efc6d56897b048c772eb4087f854f46256132\"},\"parents\":[{\"url\":\"https://api.github.com/repos/octocat/Hello-World/git/commits/7d1b31e74ee336d15cbd21741bc88a537ed063a0\",\"sha\":\"7d1b31e74ee336d15cbd21741bc88a537ed063a0\"}],\"verification\":{\"verified\":false,\"reason\":\"unsigned\",\"signature\":null,\"payload\":null}}"
+            "data": "{\"sha\":\"7638417db6d59f3c431d3e1f261cc637155684cd\",\"node_id\":\"MDY6Q29tbWl0NzYzODQxN2RiNmQ1OWYzYzQzMWQzZTFmMjYxY2M2MzcxNTU2ODRjZA==\",\"url\":\"https://api.github.com/repos/octocat/Hello-World/git/commits/7638417db6d59f3c431d3e1f261cc637155684cd\",\"author\":{\"date\":\"2014-11-07T22:01:45Z\",\"name\":\"Monalisa Octocat\",\"email\":\"octocat@github.com\"},\"committer\":{\"date\":\"2014-11-07T22:01:45Z\",\"name\":\"Monalisa Octocat\",\"email\":\"octocat@github.com\"},\"message\":\"my commit message\",\"tree\":{\"url\":\"https://api.github.com/repos/octocat/Hello-World/git/trees/827efc6d56897b048c772eb4087f854f46256132\",\"sha\":\"827efc6d56897b048c772eb4087f854f46256132\"},\"parents\":[{\"url\":\"https://api.github.com/repos/octocat/Hello-World/git/commits/7d1b31e74ee336d15cbd21741bc88a537ed063a0\",\"sha\":\"7d1b31e74ee336d15cbd21741bc88a537ed063a0\",\"html_url\":\"https://github.com/octocat/Hello-World/commit/7d1b31e74ee336d15cbd21741bc88a537ed063a0\"}],\"verification\":{\"verified\":false,\"reason\":\"unsigned\",\"signature\":null,\"payload\":null},\"html_url\":\"https://github.com/octocat/Hello-World/commit/7638417db6d59f3c431d3e1f261cc637155684cd\"}"
           }
         ]
       },
@@ -13646,7 +13971,7 @@
         "description": "response",
         "examples": [
           {
-            "data": "{\"sha\":\"7638417db6d59f3c431d3e1f261cc637155684cd\",\"node_id\":\"MDY6Q29tbWl0NmRjYjA5YjViNTc4NzVmMzM0ZjYxYWViZWQ2OTVlMmU0MTkzZGI1ZQ==\",\"url\":\"https://api.github.com/repos/octocat/Hello-World/git/commits/7638417db6d59f3c431d3e1f261cc637155684cd\",\"author\":{\"date\":\"2014-11-07T22:01:45Z\",\"name\":\"Monalisa Octocat\",\"email\":\"octocat@github.com\"},\"committer\":{\"date\":\"2014-11-07T22:01:45Z\",\"name\":\"Monalisa Octocat\",\"email\":\"octocat@github.com\"},\"message\":\"added readme, because im a good github citizen\",\"tree\":{\"url\":\"https://api.github.com/repos/octocat/Hello-World/git/trees/691272480426f78a0138979dd3ce63b77f706feb\",\"sha\":\"691272480426f78a0138979dd3ce63b77f706feb\"},\"parents\":[{\"url\":\"https://api.github.com/repos/octocat/Hello-World/git/commits/1acc419d4d6a9ce985db7be48c6349a0475975b5\",\"sha\":\"1acc419d4d6a9ce985db7be48c6349a0475975b5\"}],\"verification\":{\"verified\":false,\"reason\":\"unsigned\",\"signature\":null,\"payload\":null}}"
+            "data": "{\"sha\":\"7638417db6d59f3c431d3e1f261cc637155684cd\",\"node_id\":\"MDY6Q29tbWl0NmRjYjA5YjViNTc4NzVmMzM0ZjYxYWViZWQ2OTVlMmU0MTkzZGI1ZQ==\",\"url\":\"https://api.github.com/repos/octocat/Hello-World/git/commits/7638417db6d59f3c431d3e1f261cc637155684cd\",\"html_url\":\"https://github.com/octocat/Hello-World/commit/7638417db6d59f3c431d3e1f261cc637155684cd\",\"author\":{\"date\":\"2014-11-07T22:01:45Z\",\"name\":\"Monalisa Octocat\",\"email\":\"octocat@github.com\"},\"committer\":{\"date\":\"2014-11-07T22:01:45Z\",\"name\":\"Monalisa Octocat\",\"email\":\"octocat@github.com\"},\"message\":\"added readme, because im a good github citizen\",\"tree\":{\"url\":\"https://api.github.com/repos/octocat/Hello-World/git/trees/691272480426f78a0138979dd3ce63b77f706feb\",\"sha\":\"691272480426f78a0138979dd3ce63b77f706feb\"},\"parents\":[{\"url\":\"https://api.github.com/repos/octocat/Hello-World/git/commits/1acc419d4d6a9ce985db7be48c6349a0475975b5\",\"sha\":\"1acc419d4d6a9ce985db7be48c6349a0475975b5\",\"html_url\":\"https://github.com/octocat/Hello-World/commit/7638417db6d59f3c431d3e1f261cc637155684cd\"}],\"verification\":{\"verified\":false,\"reason\":\"unsigned\",\"signature\":null,\"payload\":null}}"
           }
         ]
       },
@@ -18500,7 +18825,7 @@
     "url": "/meta",
     "isDeprecated": false,
     "deprecationDate": null,
-    "description": "This endpoint provides a list of GitHub's IP addresses. For more information, see \"[About GitHub's IP addresses](https://help.github.com/articles/about-github-s-ip-addresses/).\"",
+    "description": "Returns meta information about GitHub, including a list of GitHub's IP addresses. For more information, see \"[About GitHub's IP addresses](https://help.github.com/articles/about-github-s-ip-addresses/).\"\n\n**Note:** The IP addresses shown in the documentation's response are only example values. You must always query the API directly to get the latest list of IP addresses.",
     "documentationUrl": "https://docs.github.com/v3/meta/#get-github-meta-information",
     "previews": [],
     "headers": [],
@@ -18511,7 +18836,7 @@
         "description": "response",
         "examples": [
           {
-            "data": "{\"verifiable_password_authentication\":true,\"ssh_key_fingerprints\":{\"SHA256_RSA\":\"nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8\",\"SHA256_DSA\":\"br9IjFspm1vxR3iA35FWE+4VTyz1hYVLIE2t1/CeyWQ\"},\"hooks\":[\"192.30.252.0/22\"],\"web\":[\"192.30.252.0/22\",\"185.199.108.0/22\"],\"api\":[\"192.30.252.0/22\",\"185.199.108.0/22\"],\"git\":[\"192.30.252.0/22\"],\"pages\":[\"192.30.252.153/32\",\"192.30.252.154/32\"],\"importer\":[\"54.158.161.132\",\"54.226.70.38\"]}"
+            "data": "{\"verifiable_password_authentication\":true,\"ssh_key_fingerprints\":{\"SHA256_RSA\":\"nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8\",\"SHA256_DSA\":\"br9IjFspm1vxR3iA35FWE+4VTyz1hYVLIE2t1/CeyWQ\"},\"hooks\":[\"192.30.252.0/22\"],\"web\":[\"192.30.252.0/22\",\"185.199.108.0/22\"],\"api\":[\"192.30.252.0/22\",\"185.199.108.0/22\"],\"git\":[\"192.30.252.0/22\"],\"pages\":[\"192.30.252.153/32\",\"192.30.252.154/32\"],\"importer\":[\"54.158.161.132\",\"54.226.70.38\"],\"actions\":[\"13.64.0.0/16\",\"13.65.0.0/16\"]}"
           }
         ]
       },
@@ -18872,7 +19197,7 @@
     "url": "/repos/{owner}/{repo}/import",
     "isDeprecated": false,
     "deprecationDate": null,
-    "description": "View the progress of an import.\n\n**Import status**\n\nThis section includes details about the possible values of the `status` field of the Import Progress response.\n\nAn import that does not have errors will progress through these steps:\n\n*   `detecting` - the \"detection\" step of the import is in progress because the request did not include a `vcs` parameter. The import is identifying the type of source control present at the URL.\n*   `importing` - the \"raw\" step of the import is in progress. This is where commit data is fetched from the original repository. The import progress response will include `commit_count` (the total number of raw commits that will be imported) and `percent` (0 - 100, the current progress through the import).\n*   `mapping` - the \"rewrite\" step of the import is in progress. This is where SVN branches are converted to Git branches, and where author updates are applied. The import progress response does not include progress information.\n*   `pushing` - the \"push\" step of the import is in progress. This is where the importer updates the repository on GitHub. The import progress response will include `push_percent`, which is the percent value reported by `git push` when it is \"Writing objects\".\n*   `complete` - the import is complete, and the repository is ready on GitHub.\n\nIf there are problems, you will see one of these in the `status` field:\n\n*   `auth_failed` - the import requires authentication in order to connect to the original repository. To update authentication for the import, please see the [Update an import](https://docs.github.com/rest/reference/migrations#update-an-import) section.\n*   `error` - the import encountered an error. The import progress response will include the `failed_step` and an error message. Contact [GitHub Support](https://github.com/contact) or [GitHub Premium Support](https://premium.githubsupport.com) for more information.\n*   `detection_needs_auth` - the importer requires authentication for the originating repository to continue detection. To update authentication for the import, please see the [Update an import](https://docs.github.com/rest/reference/migrations#update-an-import) section.\n*   `detection_found_nothing` - the importer didn't recognize any source control at the URL. To resolve, [Cancel the import](https://docs.github.com/rest/reference/migrations#cancel-an-import) and [retry](https://docs.github.com/rest/reference/migrations#start-an-import) with the correct URL.\n*   `detection_found_multiple` - the importer found several projects or repositories at the provided URL. When this is the case, the Import Progress response will also include a `project_choices` field with the possible project choices as values. To update project choice, please see the [Update an import](https://docs.github.com/rest/reference/migrations#update-an-import) section.\n\n**The project_choices field**\n\nWhen multiple projects are found at the provided URL, the response hash will include a `project_choices` field, the value of which is an array of hashes each representing a project choice. The exact key/value pairs of the project hashes will differ depending on the version control type.\n\n**Git LFS related fields**\n\nThis section includes details about Git LFS related fields that may be present in the Import Progress response.\n\n*   `use_lfs` - describes whether the import has been opted in or out of using Git LFS. The value can be `opt_in`, `opt_out`, or `undecided` if no action has been taken.\n*   `has_large_files` - the boolean value describing whether files larger than 100MB were found during the `importing` step.\n*   `large_files_size` - the total size in gigabytes of files larger than 100MB found in the originating repository.\n*   `large_files_count` - the total number of files larger than 100MB found in the originating repository. To see a list of these files, make a \"Get Large Files\" request.",
+    "description": "View the progress of an import.\n\n**Import status**\n\nThis section includes details about the possible values of the `status` field of the Import Progress response.\n\nAn import that does not have errors will progress through these steps:\n\n*   `detecting` - the \"detection\" step of the import is in progress because the request did not include a `vcs` parameter. The import is identifying the type of source control present at the URL.\n*   `importing` - the \"raw\" step of the import is in progress. This is where commit data is fetched from the original repository. The import progress response will include `commit_count` (the total number of raw commits that will be imported) and `percent` (0 - 100, the current progress through the import).\n*   `mapping` - the \"rewrite\" step of the import is in progress. This is where SVN branches are converted to Git branches, and where author updates are applied. The import progress response does not include progress information.\n*   `pushing` - the \"push\" step of the import is in progress. This is where the importer updates the repository on GitHub. The import progress response will include `push_percent`, which is the percent value reported by `git push` when it is \"Writing objects\".\n*   `complete` - the import is complete, and the repository is ready on GitHub.\n\nIf there are problems, you will see one of these in the `status` field:\n\n*   `auth_failed` - the import requires authentication in order to connect to the original repository. To update authentication for the import, please see the [Update an import](https://docs.github.com/rest/reference/migrations#update-an-import) section.\n*   `error` - the import encountered an error. The import progress response will include the `failed_step` and an error message. Contact [GitHub Support](https://support.github.com/contact) or [GitHub Premium Support](https://premium.githubsupport.com) for more information.\n*   `detection_needs_auth` - the importer requires authentication for the originating repository to continue detection. To update authentication for the import, please see the [Update an import](https://docs.github.com/rest/reference/migrations#update-an-import) section.\n*   `detection_found_nothing` - the importer didn't recognize any source control at the URL. To resolve, [Cancel the import](https://docs.github.com/rest/reference/migrations#cancel-an-import) and [retry](https://docs.github.com/rest/reference/migrations#start-an-import) with the correct URL.\n*   `detection_found_multiple` - the importer found several projects or repositories at the provided URL. When this is the case, the Import Progress response will also include a `project_choices` field with the possible project choices as values. To update project choice, please see the [Update an import](https://docs.github.com/rest/reference/migrations#update-an-import) section.\n\n**The project_choices field**\n\nWhen multiple projects are found at the provided URL, the response hash will include a `project_choices` field, the value of which is an array of hashes each representing a project choice. The exact key/value pairs of the project hashes will differ depending on the version control type.\n\n**Git LFS related fields**\n\nThis section includes details about Git LFS related fields that may be present in the Import Progress response.\n\n*   `use_lfs` - describes whether the import has been opted in or out of using Git LFS. The value can be `opt_in`, `opt_out`, or `undecided` if no action has been taken.\n*   `has_large_files` - the boolean value describing whether files larger than 100MB were found during the `importing` step.\n*   `large_files_size` - the total size in gigabytes of files larger than 100MB found in the originating repository.\n*   `large_files_count` - the total number of files larger than 100MB found in the originating repository. To see a list of these files, make a \"Get Large Files\" request.",
     "documentationUrl": "https://docs.github.com/rest/reference/migrations#get-an-import-status",
     "previews": [],
     "headers": [],
@@ -21182,7 +21507,7 @@
         "description": "response",
         "examples": [
           {
-            "data": "{\"id\":1,\"login\":\"monalisa\",\"email\":\"octocat@github.com\",\"role\":\"direct_member\",\"created_at\":\"2016-11-30T06:46:10-08:00\",\"inviter\":{\"login\":\"other_user\",\"id\":1,\"node_id\":\"MDQ6VXNlcjE=\",\"avatar_url\":\"https://github.com/images/error/other_user_happy.gif\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/other_user\",\"html_url\":\"https://github.com/other_user\",\"followers_url\":\"https://api.github.com/users/other_user/followers\",\"following_url\":\"https://api.github.com/users/other_user/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/other_user/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/other_user/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/other_user/subscriptions\",\"organizations_url\":\"https://api.github.com/users/other_user/orgs\",\"repos_url\":\"https://api.github.com/users/other_user/repos\",\"events_url\":\"https://api.github.com/users/other_user/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/other_user/received_events\",\"type\":\"User\",\"site_admin\":false},\"team_count\":2,\"invitation_team_url\":\"https://api.github.com/organizations/2/invitations/1/teams\"}"
+            "data": "{\"id\":1,\"login\":\"monalisa\",\"node_id\":\"MDQ6VXNlcjE=\",\"email\":\"octocat@github.com\",\"role\":\"direct_member\",\"created_at\":\"2016-11-30T06:46:10-08:00\",\"inviter\":{\"login\":\"other_user\",\"id\":1,\"node_id\":\"MDQ6VXNlcjE=\",\"avatar_url\":\"https://github.com/images/error/other_user_happy.gif\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/other_user\",\"html_url\":\"https://github.com/other_user\",\"followers_url\":\"https://api.github.com/users/other_user/followers\",\"following_url\":\"https://api.github.com/users/other_user/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/other_user/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/other_user/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/other_user/subscriptions\",\"organizations_url\":\"https://api.github.com/users/other_user/orgs\",\"repos_url\":\"https://api.github.com/users/other_user/repos\",\"events_url\":\"https://api.github.com/users/other_user/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/other_user/received_events\",\"type\":\"User\",\"site_admin\":false},\"team_count\":2,\"invitation_team_url\":\"https://api.github.com/organizations/2/invitations/1/teams\"}"
           }
         ]
       },
@@ -22340,7 +22665,7 @@
         "description": "response",
         "examples": [
           {
-            "data": "[{\"id\":1,\"login\":\"monalisa\",\"email\":\"octocat@github.com\",\"role\":\"direct_member\",\"created_at\":\"2016-11-30T06:46:10-08:00\",\"inviter\":{\"login\":\"other_user\",\"id\":1,\"node_id\":\"MDQ6VXNlcjE=\",\"avatar_url\":\"https://github.com/images/error/other_user_happy.gif\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/other_user\",\"html_url\":\"https://github.com/other_user\",\"followers_url\":\"https://api.github.com/users/other_user/followers\",\"following_url\":\"https://api.github.com/users/other_user/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/other_user/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/other_user/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/other_user/subscriptions\",\"organizations_url\":\"https://api.github.com/users/other_user/orgs\",\"repos_url\":\"https://api.github.com/users/other_user/repos\",\"events_url\":\"https://api.github.com/users/other_user/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/other_user/received_events\",\"type\":\"User\",\"site_admin\":false},\"team_count\":2,\"invitation_team_url\":\"https://api.github.com/organizations/2/invitations/1/teams\"}]"
+            "data": "[{\"id\":1,\"login\":\"monalisa\",\"node_id\":\"MDQ6VXNlcjE=\",\"email\":\"octocat@github.com\",\"role\":\"direct_member\",\"created_at\":\"2016-11-30T06:46:10-08:00\",\"inviter\":{\"login\":\"other_user\",\"id\":1,\"node_id\":\"MDQ6VXNlcjE=\",\"avatar_url\":\"https://github.com/images/error/other_user_happy.gif\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/other_user\",\"html_url\":\"https://github.com/other_user\",\"followers_url\":\"https://api.github.com/users/other_user/followers\",\"following_url\":\"https://api.github.com/users/other_user/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/other_user/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/other_user/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/other_user/subscriptions\",\"organizations_url\":\"https://api.github.com/users/other_user/orgs\",\"repos_url\":\"https://api.github.com/users/other_user/repos\",\"events_url\":\"https://api.github.com/users/other_user/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/other_user/received_events\",\"type\":\"User\",\"site_admin\":false},\"team_count\":2,\"invitation_team_url\":\"https://api.github.com/organizations/2/invitations/1/teams\"}]"
           }
         ]
       },
@@ -26888,7 +27213,7 @@
         "description": "response",
         "examples": [
           {
-            "data": "{\"users\":[{\"login\":\"octocat\",\"id\":1,\"node_id\":\"MDQ6VXNlcjE=\",\"avatar_url\":\"https://github.com/images/error/octocat_happy.gif\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/octocat\",\"html_url\":\"https://github.com/octocat\",\"followers_url\":\"https://api.github.com/users/octocat/followers\",\"following_url\":\"https://api.github.com/users/octocat/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/octocat/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/octocat/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/octocat/subscriptions\",\"organizations_url\":\"https://api.github.com/users/octocat/orgs\",\"repos_url\":\"https://api.github.com/users/octocat/repos\",\"events_url\":\"https://api.github.com/users/octocat/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/octocat/received_events\",\"type\":\"User\",\"site_admin\":false}],\"teams\":[{\"id\":1,\"node_id\":\"MDQ6VGVhbTE=\",\"url\":\"https://api.github.com/teams/1\",\"html_url\":\"https://github.com/orgs/github/teams/justice-league\",\"name\":\"Justice League\",\"slug\":\"justice-league\",\"description\":\"A great team.\",\"privacy\":\"closed\",\"permission\":\"admin\",\"members_url\":\"https://api.github.com/teams/1/members{/member}\",\"repositories_url\":\"https://api.github.com/teams/1/repos\",\"parent\":null}]}"
+            "data": "{\"users\":[{\"login\":\"octocat\",\"id\":1,\"node_id\":\"MDQ6VXNlcjE=\",\"avatar_url\":\"https://github.com/images/error/octocat_happy.gif\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/octocat\",\"html_url\":\"https://github.com/octocat\",\"followers_url\":\"https://api.github.com/users/octocat/followers\",\"following_url\":\"https://api.github.com/users/octocat/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/octocat/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/octocat/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/octocat/subscriptions\",\"organizations_url\":\"https://api.github.com/users/octocat/orgs\",\"repos_url\":\"https://api.github.com/users/octocat/repos\",\"events_url\":\"https://api.github.com/users/octocat/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/octocat/received_events\",\"type\":\"User\",\"site_admin\":false}],\"teams\":[{\"id\":1,\"node_id\":\"MDQ6VGVhbTE=\",\"url\":\"https://api.github.com/teams/1\",\"html_url\":\"https://github.com/orgs/github/teams/justice-league\",\"name\":\"Justice League\",\"slug\":\"justice-league\",\"description\":\"A great team.\",\"privacy\":\"closed\",\"permission\":\"admin\",\"members_url\":\"https://api.github.com/teams/1/members{/member}\",\"repositories_url\":\"https://api.github.com/teams/1/repos\"}]}"
           }
         ]
       }
@@ -32022,7 +32347,7 @@
     "url": "/repos/{owner}/{repo}/forks",
     "isDeprecated": false,
     "deprecationDate": null,
-    "description": "Create a fork for the authenticated user.\n\n**Note**: Forking a Repository happens asynchronously. You may have to wait a short period of time before you can access the git objects. If this takes longer than 5 minutes, be sure to contact [GitHub Support](https://github.com/contact) or [GitHub Premium Support](https://premium.githubsupport.com).",
+    "description": "Create a fork for the authenticated user.\n\n**Note**: Forking a Repository happens asynchronously. You may have to wait a short period of time before you can access the git objects. If this takes longer than 5 minutes, be sure to contact [GitHub Support](https://support.github.com/contact) or [GitHub Premium Support](https://premium.githubsupport.com).",
     "documentationUrl": "https://docs.github.com/rest/reference/repos#create-a-fork",
     "previews": [],
     "headers": [],
@@ -42474,7 +42799,7 @@
     "url": "{origin}/repos/{owner}/{repo}/releases/{release_id}/assets{?name,label}",
     "isDeprecated": false,
     "deprecationDate": null,
-    "description": "This endpoint makes use of [a Hypermedia relation](https://docs.github.com/rest/overview/resources-in-the-rest-api#hypermedia) to determine which URL to access. The endpoint you call to upload release assets is specific to your release. Use the `upload_url` returned in\nthe response of the [Create a release endpoint](https://docs.github.com/rest/reference/repos#create-a-release) to upload a release asset.\n\nYou need to use an HTTP client which supports [SNI](http://en.wikipedia.org/wiki/Server_Name_Indication) to make calls to this endpoint.\n\nMost libraries will set the required `Content-Length` header automatically. Use the required `Content-Type` header to provide the media type of the asset. For a list of media types, see [Media Types](https://www.iana.org/assignments/media-types/media-types.xhtml). For example: \n\n`application/zip`\n\nGitHub expects the asset data in its raw binary form, rather than JSON. You will send the raw binary content of the asset as the request body. Everything else about the endpoint is the same as the rest of the API. For example,\nyou'll still need to pass your authentication to be able to upload an asset.\n\nWhen an upstream failure occurs, you will receive a `502 Bad Gateway` status. This may leave an empty asset with a state of `starter`. It can be safely deleted.\n\n**Notes:**\n*   GitHub renames asset filenames that have special characters, non-alphanumeric characters, and leading or trailing periods. The \"[List assets for a release](https://docs.github.com/rest/reference/repos#list-assets-for-a-release)\"\nendpoint lists the renamed filenames. For more information and help, contact [GitHub Support](https://github.com/contact).\n*   If you upload an asset with the same filename as another uploaded asset, you'll receive an error and must delete the old file before you can re-upload the new asset.",
+    "description": "This endpoint makes use of [a Hypermedia relation](https://docs.github.com/rest/overview/resources-in-the-rest-api#hypermedia) to determine which URL to access. The endpoint you call to upload release assets is specific to your release. Use the `upload_url` returned in\nthe response of the [Create a release endpoint](https://docs.github.com/rest/reference/repos#create-a-release) to upload a release asset.\n\nYou need to use an HTTP client which supports [SNI](http://en.wikipedia.org/wiki/Server_Name_Indication) to make calls to this endpoint.\n\nMost libraries will set the required `Content-Length` header automatically. Use the required `Content-Type` header to provide the media type of the asset. For a list of media types, see [Media Types](https://www.iana.org/assignments/media-types/media-types.xhtml). For example: \n\n`application/zip`\n\nGitHub expects the asset data in its raw binary form, rather than JSON. You will send the raw binary content of the asset as the request body. Everything else about the endpoint is the same as the rest of the API. For example,\nyou'll still need to pass your authentication to be able to upload an asset.\n\nWhen an upstream failure occurs, you will receive a `502 Bad Gateway` status. This may leave an empty asset with a state of `starter`. It can be safely deleted.\n\n**Notes:**\n*   GitHub renames asset filenames that have special characters, non-alphanumeric characters, and leading or trailing periods. The \"[List assets for a release](https://docs.github.com/rest/reference/repos#list-assets-for-a-release)\"\nendpoint lists the renamed filenames. For more information and help, contact [GitHub Support](https://support.github.com/contact).\n*   If you upload an asset with the same filename as another uploaded asset, you'll receive an error and must delete the old file before you can re-upload the new asset.",
     "documentationUrl": "https://docs.github.com/rest/reference/repos#upload-a-release-asset",
     "previews": [],
     "headers": [],
@@ -46512,7 +46837,7 @@
         "description": "response",
         "examples": [
           {
-            "data": "[{\"id\":1,\"login\":\"monalisa\",\"email\":\"octocat@github.com\",\"role\":\"direct_member\",\"created_at\":\"2016-11-30T06:46:10-08:00\",\"inviter\":{\"login\":\"other_user\",\"id\":1,\"node_id\":\"MDQ6VXNlcjE=\",\"avatar_url\":\"https://github.com/images/error/other_user_happy.gif\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/other_user\",\"html_url\":\"https://github.com/other_user\",\"followers_url\":\"https://api.github.com/users/other_user/followers\",\"following_url\":\"https://api.github.com/users/other_user/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/other_user/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/other_user/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/other_user/subscriptions\",\"organizations_url\":\"https://api.github.com/users/other_user/orgs\",\"repos_url\":\"https://api.github.com/users/other_user/repos\",\"events_url\":\"https://api.github.com/users/other_user/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/other_user/received_events\",\"type\":\"User\",\"site_admin\":false},\"team_count\":2,\"invitation_team_url\":\"https://api.github.com/organizations/2/invitations/1/teams\"}]"
+            "data": "[{\"id\":1,\"login\":\"monalisa\",\"node_id\":\"MDQ6VXNlcjE=\",\"email\":\"octocat@github.com\",\"role\":\"direct_member\",\"created_at\":\"2016-11-30T06:46:10-08:00\",\"inviter\":{\"login\":\"other_user\",\"id\":1,\"node_id\":\"MDQ6VXNlcjE=\",\"avatar_url\":\"https://github.com/images/error/other_user_happy.gif\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/other_user\",\"html_url\":\"https://github.com/other_user\",\"followers_url\":\"https://api.github.com/users/other_user/followers\",\"following_url\":\"https://api.github.com/users/other_user/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/other_user/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/other_user/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/other_user/subscriptions\",\"organizations_url\":\"https://api.github.com/users/other_user/orgs\",\"repos_url\":\"https://api.github.com/users/other_user/repos\",\"events_url\":\"https://api.github.com/users/other_user/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/other_user/received_events\",\"type\":\"User\",\"site_admin\":false},\"team_count\":2,\"invitation_team_url\":\"https://api.github.com/organizations/2/invitations/1/teams\"}]"
           }
         ]
       }
@@ -46578,7 +46903,7 @@
         "description": "response",
         "examples": [
           {
-            "data": "[{\"id\":1,\"login\":\"monalisa\",\"email\":\"octocat@github.com\",\"role\":\"direct_member\",\"created_at\":\"2016-11-30T06:46:10-08:00\",\"inviter\":{\"login\":\"other_user\",\"id\":1,\"node_id\":\"MDQ6VXNlcjE=\",\"avatar_url\":\"https://github.com/images/error/other_user_happy.gif\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/other_user\",\"html_url\":\"https://github.com/other_user\",\"followers_url\":\"https://api.github.com/users/other_user/followers\",\"following_url\":\"https://api.github.com/users/other_user/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/other_user/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/other_user/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/other_user/subscriptions\",\"organizations_url\":\"https://api.github.com/users/other_user/orgs\",\"repos_url\":\"https://api.github.com/users/other_user/repos\",\"events_url\":\"https://api.github.com/users/other_user/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/other_user/received_events\",\"type\":\"User\",\"site_admin\":false},\"team_count\":2,\"invitation_team_url\":\"https://api.github.com/organizations/2/invitations/1/teams\"}]"
+            "data": "[{\"id\":1,\"login\":\"monalisa\",\"node_id\":\"MDQ6VXNlcjE=\",\"email\":\"octocat@github.com\",\"role\":\"direct_member\",\"created_at\":\"2016-11-30T06:46:10-08:00\",\"inviter\":{\"login\":\"other_user\",\"id\":1,\"node_id\":\"MDQ6VXNlcjE=\",\"avatar_url\":\"https://github.com/images/error/other_user_happy.gif\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/other_user\",\"html_url\":\"https://github.com/other_user\",\"followers_url\":\"https://api.github.com/users/other_user/followers\",\"following_url\":\"https://api.github.com/users/other_user/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/other_user/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/other_user/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/other_user/subscriptions\",\"organizations_url\":\"https://api.github.com/users/other_user/orgs\",\"repos_url\":\"https://api.github.com/users/other_user/repos\",\"events_url\":\"https://api.github.com/users/other_user/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/other_user/received_events\",\"type\":\"User\",\"site_admin\":false},\"team_count\":2,\"invitation_team_url\":\"https://api.github.com/organizations/2/invitations/1/teams\"}]"
           }
         ]
       }
