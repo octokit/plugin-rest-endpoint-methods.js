@@ -37,7 +37,7 @@ octokit.repos.listCommentsForCommit({
 </td></tr>
 <tr><td>commit_sha</td><td>yes</td><td>
 
-commit_sha+ parameter
+commit_sha parameter
 
 </td></tr>
 <tr><td>per_page</td><td>no</td><td>

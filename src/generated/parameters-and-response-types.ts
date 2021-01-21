@@ -2246,6 +2246,14 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["PUT /orgs/{org}/blocks/{username}"]["response"];
     };
+    cancelInvitation: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["DELETE /orgs/{org}/invitations/{invitation_id}"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["DELETE /orgs/{org}/invitations/{invitation_id}"]["response"];
+    };
     checkBlockedUser: {
       parameters: RequestParameters &
         Omit<
@@ -2365,6 +2373,14 @@ export type RestEndpointMethodTypes = {
           "baseUrl" | "headers" | "mediaType"
         >;
       response: Endpoints["GET /orgs/{org}/blocks"]["response"];
+    };
+    listFailedInvitations: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /orgs/{org}/failed_invitations"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /orgs/{org}/failed_invitations"]["response"];
     };
     listForAuthenticatedUser: {
       parameters: RequestParameters &

@@ -1,6 +1,6 @@
 ---
 name: Transfer a repository
-example: octokit.repos.transfer({ owner, repo })
+example: octokit.repos.transfer({ owner, repo, new_owner })
 route: POST /repos/{owner}/{repo}/transfer
 scope: repos
 type: API method
@@ -14,6 +14,7 @@ A transfer request will need to be accepted by the new owner when transferring a
 octokit.repos.transfer({
   owner,
   repo,
+  new_owner,
 });
 ```
 
@@ -34,9 +35,9 @@ octokit.repos.transfer({
 <tr><td>repo</td><td>yes</td><td>
 
 </td></tr>
-<tr><td>new_owner</td><td>no</td><td>
+<tr><td>new_owner</td><td>yes</td><td>
 
-**Required:** The username or organization name the repository will be transferred to.
+The username or organization name the repository will be transferred to.
 
 </td></tr>
 <tr><td>team_ids</td><td>no</td><td>
