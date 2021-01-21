@@ -23555,6 +23555,32 @@
         "deprecated": null
       },
       {
+        "name": "members_can_create_public_pages",
+        "description": "",
+        "in": "BODY",
+        "type": "boolean",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "members_can_create_private_pages",
+        "description": "",
+        "in": "BODY",
+        "type": "boolean",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
         "name": "blog",
         "description": "",
         "in": "BODY",
