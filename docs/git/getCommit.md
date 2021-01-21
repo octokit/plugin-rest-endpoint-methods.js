@@ -66,7 +66,7 @@ octokit.git.getCommit({
 </td></tr>
 <tr><td>commit_sha</td><td>yes</td><td>
 
-commit_sha+ parameter
+commit_sha parameter
 
 </td></tr>
   </tbody>

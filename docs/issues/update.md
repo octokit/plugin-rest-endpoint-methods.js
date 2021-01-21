@@ -62,8 +62,6 @@ State of the issue. Either `open` or `closed`.
 </td></tr>
 <tr><td>milestone</td><td>no</td><td>
 
-The `number` of the milestone to associate this issue with or `null` to remove current. _NOTE: Only users with push access can set the milestone for issues. The milestone is silently dropped otherwise._
-
 </td></tr>
 <tr><td>labels</td><td>no</td><td>
 

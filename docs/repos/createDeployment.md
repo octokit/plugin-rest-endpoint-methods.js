@@ -105,8 +105,6 @@ The [status](https://docs.github.com/rest/reference/repos#statuses) contexts to 
 </td></tr>
 <tr><td>payload</td><td>no</td><td>
 
-JSON payload with extra information about the deployment.
-
 </td></tr>
 <tr><td>environment</td><td>no</td><td>
 

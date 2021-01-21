@@ -10,7 +10,7 @@ type: API method
 
 Create a comment for a commit using its `:commit_sha`.
 
-This endpoint triggers [notifications](https://help.github.com/articles/about-notifications/). Creating content too quickly using this endpoint may result in abuse rate limiting. See "[Abuse rate limits](https://docs.github.com/rest/overview/resources-in-the-rest-api#abuse-rate-limits)" and "[Dealing with abuse rate limits](https://docs.github.com/rest/guides/best-practices-for-integrators#dealing-with-rate-limits)" for details.
+This endpoint triggers [notifications](https://docs.github.com/en/github/managing-subscriptions-and-notifications-on-github/about-notifications). Creating content too quickly using this endpoint may result in abuse rate limiting. See "[Abuse rate limits](https://docs.github.com/rest/overview/resources-in-the-rest-api#abuse-rate-limits)" and "[Dealing with abuse rate limits](https://docs.github.com/rest/guides/best-practices-for-integrators#dealing-with-rate-limits)" for details.
 
 ```js
 octokit.repos.createCommitComment({
@@ -40,7 +40,7 @@ octokit.repos.createCommitComment({
 </td></tr>
 <tr><td>commit_sha</td><td>yes</td><td>
 
-commit_sha+ parameter
+commit_sha parameter
 
 </td></tr>
 <tr><td>body</td><td>yes</td><td>
