@@ -136,6 +136,12 @@ Toggles whether organization members can create GitHub Pages sites. Can be one o
 Default: `true`.
 
 </td></tr>
+<tr><td>members_can_create_public_pages</td><td>no</td><td>
+
+</td></tr>
+<tr><td>members_can_create_private_pages</td><td>no</td><td>
+
+</td></tr>
 <tr><td>blog</td><td>no</td><td>
 
 </td></tr>
