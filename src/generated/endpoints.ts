@@ -1086,6 +1086,7 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
       {},
       { mapToData: "users" },
     ],
+    renameBranch: ["POST /repos/{owner}/{repo}/branches/{branch}/rename"],
     replaceAllTopics: [
       "PUT /repos/{owner}/{repo}/topics",
       { mediaType: { previews: ["mercy"] } },

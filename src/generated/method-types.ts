@@ -6753,6 +6753,30 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
+    /**
+     * Renames a branch in a repository.
+     *
+     * **Note:** Although the API responds immediately, the branch rename process might take some extra time to complete in the background. You won't be able to push to the old branch name while the rename process is in progress. For more information, see "[Renaming a branch](https://docs.github.com/github/administering-a-repository/renaming-a-branch)".
+     *
+     * The permissions required to use this endpoint depends on whether you are renaming the default branch.
+     *
+     * To rename a non-default branch:
+     *
+     * * Users must have push access.
+     * * GitHub Apps must have the `contents:write` repository permission.
+     *
+     * To rename the default branch:
+     *
+     * * Users must have admin or owner permissions.
+     * * GitHub Apps must have the `administration:write` repository permission.
+     */
+    renameBranch: {
+      (
+        params?: RestEndpointMethodTypes["repos"]["renameBranch"]["parameters"]
+      ): Promise<RestEndpointMethodTypes["repos"]["renameBranch"]["response"]>;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
 
     replaceAllTopics: {
       (
