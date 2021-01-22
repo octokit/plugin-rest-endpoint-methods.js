@@ -44,7 +44,7 @@ octokit.repos.addTeamAccessRestrictions({
 </td></tr>
 <tr><td>branch</td><td>yes</td><td>
 
-branch+ parameter
+The name of the branch.
 
 </td></tr>
 <tr><td>teams</td><td>yes</td><td>

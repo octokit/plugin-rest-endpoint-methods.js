@@ -30781,7 +30781,7 @@
       },
       {
         "name": "branch",
-        "description": "branch+ parameter",
+        "description": "The name of the branch.",
         "in": "PATH",
         "type": "string",
         "required": true,
@@ -30960,7 +30960,7 @@
       },
       {
         "name": "branch",
-        "description": "branch+ parameter",
+        "description": "The name of the branch.",
         "in": "PATH",
         "type": "string",
         "required": true,
@@ -31042,7 +31042,7 @@
       },
       {
         "name": "branch",
-        "description": "branch+ parameter",
+        "description": "The name of the branch.",
         "in": "PATH",
         "type": "string",
         "required": true,
@@ -31122,7 +31122,7 @@
       },
       {
         "name": "branch",
-        "description": "branch+ parameter",
+        "description": "The name of the branch.",
         "in": "PATH",
         "type": "string",
         "required": true,
@@ -31524,7 +31524,7 @@
       },
       {
         "name": "branch",
-        "description": "branch+ parameter",
+        "description": "The name of the branch.",
         "in": "PATH",
         "type": "string",
         "required": true,
@@ -33714,7 +33714,7 @@
       },
       {
         "name": "branch",
-        "description": "branch+ parameter",
+        "description": "The name of the branch.",
         "in": "PATH",
         "type": "string",
         "required": true,
@@ -33772,7 +33772,7 @@
       },
       {
         "name": "branch",
-        "description": "branch+ parameter",
+        "description": "The name of the branch.",
         "in": "PATH",
         "type": "string",
         "required": true,
@@ -33831,7 +33831,7 @@
       },
       {
         "name": "branch",
-        "description": "branch+ parameter",
+        "description": "The name of the branch.",
         "in": "PATH",
         "type": "string",
         "required": true,
@@ -33949,7 +33949,7 @@
       },
       {
         "name": "branch",
-        "description": "branch+ parameter",
+        "description": "The name of the branch.",
         "in": "PATH",
         "type": "string",
         "required": true,
@@ -34423,7 +34423,7 @@
       },
       {
         "name": "branch",
-        "description": "branch+ parameter",
+        "description": "The name of the branch.",
         "in": "PATH",
         "type": "string",
         "required": true,
@@ -35130,7 +35130,7 @@
       },
       {
         "name": "branch",
-        "description": "branch+ parameter",
+        "description": "The name of the branch.",
         "in": "PATH",
         "type": "string",
         "required": true,
@@ -35197,7 +35197,7 @@
       },
       {
         "name": "branch",
-        "description": "branch+ parameter",
+        "description": "The name of the branch.",
         "in": "PATH",
         "type": "string",
         "required": true,
@@ -35263,7 +35263,7 @@
       },
       {
         "name": "branch",
-        "description": "branch+ parameter",
+        "description": "The name of the branch.",
         "in": "PATH",
         "type": "string",
         "required": true,
@@ -35379,7 +35379,7 @@
       },
       {
         "name": "branch",
-        "description": "branch+ parameter",
+        "description": "The name of the branch.",
         "in": "PATH",
         "type": "string",
         "required": true,
@@ -35446,7 +35446,7 @@
       },
       {
         "name": "branch",
-        "description": "branch+ parameter",
+        "description": "The name of the branch.",
         "in": "PATH",
         "type": "string",
         "required": true,
@@ -35514,7 +35514,7 @@
       },
       {
         "name": "branch",
-        "description": "branch+ parameter",
+        "description": "The name of the branch.",
         "in": "PATH",
         "type": "string",
         "required": true,
@@ -36020,7 +36020,7 @@
       },
       {
         "name": "branch",
-        "description": "branch+ parameter",
+        "description": "The name of the branch.",
         "in": "PATH",
         "type": "string",
         "required": true,
@@ -36780,7 +36780,7 @@
       },
       {
         "name": "branch",
-        "description": "branch+ parameter",
+        "description": "The name of the branch.",
         "in": "PATH",
         "type": "string",
         "required": true,
@@ -37166,7 +37166,7 @@
       },
       {
         "name": "branch",
-        "description": "branch+ parameter",
+        "description": "The name of the branch.",
         "in": "PATH",
         "type": "string",
         "required": true,
@@ -37233,7 +37233,7 @@
       },
       {
         "name": "branch",
-        "description": "branch+ parameter",
+        "description": "The name of the branch.",
         "in": "PATH",
         "type": "string",
         "required": true,
@@ -37408,7 +37408,7 @@
       },
       {
         "name": "branch",
-        "description": "branch+ parameter",
+        "description": "The name of the branch.",
         "in": "PATH",
         "type": "string",
         "required": true,
@@ -40194,7 +40194,7 @@
       },
       {
         "name": "branch",
-        "description": "branch+ parameter",
+        "description": "The name of the branch.",
         "in": "PATH",
         "type": "string",
         "required": true,
@@ -40332,7 +40332,7 @@
       },
       {
         "name": "branch",
-        "description": "branch+ parameter",
+        "description": "The name of the branch.",
         "in": "PATH",
         "type": "string",
         "required": true,
@@ -40409,7 +40409,7 @@
       },
       {
         "name": "branch",
-        "description": "branch+ parameter",
+        "description": "The name of the branch.",
         "in": "PATH",
         "type": "string",
         "required": true,
@@ -40467,7 +40467,7 @@
       },
       {
         "name": "branch",
-        "description": "branch+ parameter",
+        "description": "The name of the branch.",
         "in": "PATH",
         "type": "string",
         "required": true,
@@ -40547,7 +40547,7 @@
       },
       {
         "name": "branch",
-        "description": "branch+ parameter",
+        "description": "The name of the branch.",
         "in": "PATH",
         "type": "string",
         "required": true,
@@ -40582,6 +40582,88 @@
           }
         ]
       },
+      { "code": 422, "description": "Validation Failed", "examples": null }
+    ],
+    "renamed": null
+  },
+  {
+    "name": "Rename a branch",
+    "scope": "repos",
+    "id": "renameBranch",
+    "method": "POST",
+    "url": "/repos/{owner}/{repo}/branches/{branch}/rename",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "description": "Renames a branch in a repository.\n\n**Note:** Although the API responds immediately, the branch rename process might take some extra time to complete in the background. You won't be able to push to the old branch name while the rename process is in progress. For more information, see \"[Renaming a branch](https://docs.github.com/github/administering-a-repository/renaming-a-branch)\".\n\nThe permissions required to use this endpoint depends on whether you are renaming the default branch.\n\nTo rename a non-default branch:\n\n* Users must have push access.\n* GitHub Apps must have the `contents:write` repository permission.\n\nTo rename the default branch:\n\n* Users must have admin or owner permissions.\n* GitHub Apps must have the `administration:write` repository permission.",
+    "documentationUrl": "https://docs.github.com/rest/reference/repos#rename-a-branch",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "owner",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "repo",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "branch",
+        "description": "The name of the branch.",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "new_name",
+        "description": "The new name of the branch.",
+        "in": "BODY",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      {
+        "code": 201,
+        "description": "response",
+        "examples": [
+          {
+            "data": "{\"name\":\"master\",\"commit\":{\"sha\":\"7fd1a60b01f91b314f59955a4e4d4e80d8edf11d\",\"node_id\":\"MDY6Q29tbWl0N2ZkMWE2MGIwMWY5MWIzMTRmNTk5NTVhNGU0ZDRlODBkOGVkZjExZA==\",\"commit\":{\"author\":{\"name\":\"The Octocat\",\"date\":\"2012-03-06T15:06:50-08:00\",\"email\":\"octocat@nowhere.com\"},\"url\":\"https://api.github.com/repos/octocat/Hello-World/git/commits/7fd1a60b01f91b314f59955a4e4d4e80d8edf11d\",\"message\":\"Merge pull request #6 from Spaceghost/patch-1\\n\\nNew line at end of file.\",\"tree\":{\"sha\":\"b4eecafa9be2f2006ce1b709d6857b07069b4608\",\"url\":\"https://api.github.com/repos/octocat/Hello-World/git/trees/b4eecafa9be2f2006ce1b709d6857b07069b4608\"},\"committer\":{\"name\":\"The Octocat\",\"date\":\"2012-03-06T15:06:50-08:00\",\"email\":\"octocat@nowhere.com\"},\"verification\":{\"verified\":false,\"reason\":\"unsigned\",\"signature\":null,\"payload\":null},\"comment_count\":0},\"author\":{\"gravatar_id\":\"\",\"avatar_url\":\"https://secure.gravatar.com/avatar/7ad39074b0584bc555d0417ae3e7d974?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png\",\"url\":\"https://api.github.com/users/octocat\",\"id\":583231,\"login\":\"octocat\",\"node_id\":\"MDQ6VXNlcjE=\",\"html_url\":\"https://github.com/octocat\",\"followers_url\":\"https://api.github.com/users/octocat/followers\",\"following_url\":\"https://api.github.com/users/octocat/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/octocat/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/octocat/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/octocat/subscriptions\",\"organizations_url\":\"https://api.github.com/users/octocat/orgs\",\"repos_url\":\"https://api.github.com/users/octocat/repos\",\"events_url\":\"https://api.github.com/users/octocat/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/octocat/received_events\",\"type\":\"User\",\"site_admin\":true},\"parents\":[{\"sha\":\"553c2077f0edc3d5dc5d17262f6aa498e69d6f8e\",\"url\":\"https://api.github.com/repos/octocat/Hello-World/commits/553c2077f0edc3d5dc5d17262f6aa498e69d6f8e\"},{\"sha\":\"762941318ee16e59dabbacb1b4049eec22f0d303\",\"url\":\"https://api.github.com/repos/octocat/Hello-World/commits/762941318ee16e59dabbacb1b4049eec22f0d303\"}],\"url\":\"https://api.github.com/repos/octocat/Hello-World/commits/7fd1a60b01f91b314f59955a4e4d4e80d8edf11d\",\"committer\":{\"gravatar_id\":\"\",\"avatar_url\":\"https://secure.gravatar.com/avatar/7ad39074b0584bc555d0417ae3e7d974?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png\",\"url\":\"https://api.github.com/users/octocat\",\"id\":583231,\"login\":\"octocat\",\"node_id\":\"MDQ6VXNlcjE=\",\"html_url\":\"https://github.com/octocat\",\"followers_url\":\"https://api.github.com/users/octocat/followers\",\"following_url\":\"https://api.github.com/users/octocat/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/octocat/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/octocat/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/octocat/subscriptions\",\"organizations_url\":\"https://api.github.com/users/octocat/orgs\",\"repos_url\":\"https://api.github.com/users/octocat/repos\",\"events_url\":\"https://api.github.com/users/octocat/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/octocat/received_events\",\"type\":\"User\",\"site_admin\":true},\"html_url\":\"https://github.com/octocat/Hello-World/commit/6dcb09b5b57875f334f61aebed695e2e4193db5e\",\"comments_url\":\"https://api.github.com/repos/octocat/Hello-World/commits/6dcb09b5b57875f334f61aebed695e2e4193db5e/comments\"},\"_links\":{\"html\":\"https://github.com/octocat/Hello-World/tree/master\",\"self\":\"https://api.github.com/repos/octocat/Hello-World/branches/master\"},\"protected\":true,\"protection\":{\"enabled\":true,\"required_status_checks\":{\"enforcement_level\":\"non_admins\",\"contexts\":[\"ci-test\",\"linter\"]}},\"protection_url\":\"https://api.github.com/repos/octocat/hello-world/branches/master/protection\"}"
+          }
+        ]
+      },
+      { "code": 403, "description": "Forbidden", "examples": null },
+      { "code": 404, "description": "Resource Not Found", "examples": null },
       { "code": 422, "description": "Validation Failed", "examples": null }
     ],
     "renamed": null
@@ -40751,7 +40833,7 @@
       },
       {
         "name": "branch",
-        "description": "branch+ parameter",
+        "description": "The name of the branch.",
         "in": "PATH",
         "type": "string",
         "required": true,
@@ -40817,7 +40899,7 @@
       },
       {
         "name": "branch",
-        "description": "branch+ parameter",
+        "description": "The name of the branch.",
         "in": "PATH",
         "type": "string",
         "required": true,
@@ -40897,7 +40979,7 @@
       },
       {
         "name": "branch",
-        "description": "branch+ parameter",
+        "description": "The name of the branch.",
         "in": "PATH",
         "type": "string",
         "required": true,
@@ -40974,7 +41056,7 @@
       },
       {
         "name": "branch",
-        "description": "branch+ parameter",
+        "description": "The name of the branch.",
         "in": "PATH",
         "type": "string",
         "required": true,
@@ -41054,7 +41136,7 @@
       },
       {
         "name": "branch",
-        "description": "branch+ parameter",
+        "description": "The name of the branch.",
         "in": "PATH",
         "type": "string",
         "required": true,
@@ -41523,7 +41605,7 @@
       },
       {
         "name": "branch",
-        "description": "branch+ parameter",
+        "description": "The name of the branch.",
         "in": "PATH",
         "type": "string",
         "required": true,
@@ -42069,7 +42151,7 @@
       },
       {
         "name": "branch",
-        "description": "branch+ parameter",
+        "description": "The name of the branch.",
         "in": "PATH",
         "type": "string",
         "required": true,
@@ -42463,7 +42545,7 @@
       },
       {
         "name": "branch",
-        "description": "branch+ parameter",
+        "description": "The name of the branch.",
         "in": "PATH",
         "type": "string",
         "required": true,
@@ -42562,7 +42644,7 @@
       },
       {
         "name": "branch",
-        "description": "branch+ parameter",
+        "description": "The name of the branch.",
         "in": "PATH",
         "type": "string",
         "required": true,

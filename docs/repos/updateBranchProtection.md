@@ -51,7 +51,7 @@ restrictions.teams
 </td></tr>
 <tr><td>branch</td><td>yes</td><td>
 
-branch+ parameter
+The name of the branch.
 
 </td></tr>
 <tr><td>required_status_checks</td><td>yes</td><td>

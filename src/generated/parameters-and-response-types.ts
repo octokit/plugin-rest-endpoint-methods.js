@@ -4112,6 +4112,14 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["DELETE /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users"]["response"];
     };
+    renameBranch: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["POST /repos/{owner}/{repo}/branches/{branch}/rename"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["POST /repos/{owner}/{repo}/branches/{branch}/rename"]["response"];
+    };
     replaceAllTopics: {
       parameters: RequestParameters &
         Omit<

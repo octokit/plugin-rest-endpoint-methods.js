@@ -39,7 +39,7 @@ octokit.repos.updateStatusCheckProtection({
 </td></tr>
 <tr><td>branch</td><td>yes</td><td>
 
-branch+ parameter
+The name of the branch.
 
 </td></tr>
 <tr><td>strict</td><td>no</td><td>
