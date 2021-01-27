@@ -23543,7 +23543,7 @@
       },
       {
         "name": "members_can_create_pages",
-        "description": "Toggles whether organization members can create GitHub Pages sites. Can be one of:  \n\\* `true` - all organization members can create GitHub Pages sites.  \n\\* `false` - no organization members can create GitHub Pages sites. Existing published sites will not be impacted.  \nDefault: `true`. ",
+        "description": "Toggles whether organization members can create GitHub Pages sites. Can be one of:  \n\\* `true` - all organization members can create GitHub Pages sites.  \n\\* `false` - no organization members can create GitHub Pages sites. Existing published sites will not be impacted.",
         "in": "BODY",
         "type": "boolean",
         "required": false,
@@ -23556,7 +23556,7 @@
       },
       {
         "name": "members_can_create_public_pages",
-        "description": "",
+        "description": "Toggles whether organization members can create public GitHub Pages sites. Can be one of:  \n\\* `true` - all organization members can create public GitHub Pages sites.  \n\\* `false` - no organization members can create public GitHub Pages sites. Existing published sites will not be impacted.",
         "in": "BODY",
         "type": "boolean",
         "required": false,
@@ -23569,7 +23569,7 @@
       },
       {
         "name": "members_can_create_private_pages",
-        "description": "",
+        "description": "Toggles whether organization members can create private GitHub Pages sites. Can be one of:  \n\\* `true` - all organization members can create private GitHub Pages sites.  \n\\* `false` - no organization members can create private GitHub Pages sites. Existing published sites will not be impacted.",
         "in": "BODY",
         "type": "boolean",
         "required": false,
