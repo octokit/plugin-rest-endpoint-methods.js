@@ -132,14 +132,21 @@ Specifies which types of repositories non-admin organization members can create.
 
 Toggles whether organization members can create GitHub Pages sites. Can be one of:  
 \* `true` - all organization members can create GitHub Pages sites.  
-\* `false` - no organization members can create GitHub Pages sites. Existing published sites will not be impacted.  
-Default: `true`.
+\* `false` - no organization members can create GitHub Pages sites. Existing published sites will not be impacted.
 
 </td></tr>
 <tr><td>members_can_create_public_pages</td><td>no</td><td>
 
+Toggles whether organization members can create public GitHub Pages sites. Can be one of:  
+\* `true` - all organization members can create public GitHub Pages sites.  
+\* `false` - no organization members can create public GitHub Pages sites. Existing published sites will not be impacted.
+
 </td></tr>
 <tr><td>members_can_create_private_pages</td><td>no</td><td>
+
+Toggles whether organization members can create private GitHub Pages sites. Can be one of:  
+\* `true` - all organization members can create private GitHub Pages sites.  
+\* `false` - no organization members can create private GitHub Pages sites. Existing published sites will not be impacted.
 
 </td></tr>
 <tr><td>blog</td><td>no</td><td>
