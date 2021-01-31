@@ -60,7 +60,7 @@ A short description of the status.
 </td></tr>
 <tr><td>context</td><td>no</td><td>
 
-A string label to differentiate this status from the status of other systems.
+A string label to differentiate this status from the status of other systems. This field is case-insensitive.
 
 </td></tr>
   </tbody>
