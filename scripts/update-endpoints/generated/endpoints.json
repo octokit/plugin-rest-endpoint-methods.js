@@ -31643,7 +31643,7 @@
       },
       {
         "name": "context",
-        "description": "A string label to differentiate this status from the status of other systems.",
+        "description": "A string label to differentiate this status from the status of other systems. This field is case-insensitive.",
         "in": "BODY",
         "type": "string",
         "required": false,
