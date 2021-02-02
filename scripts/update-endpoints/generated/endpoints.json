@@ -14451,6 +14451,32 @@
     "renamed": null
   },
   {
+    "name": "Get interaction restrictions for your public repositories",
+    "scope": "interactions",
+    "id": "getRestrictionsForAuthenticatedUser",
+    "method": "GET",
+    "url": "/user/interaction-limits",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "description": "Shows which type of GitHub user can interact with your public repositories and when the restriction expires. If there are no restrictions, you will see an empty response.",
+    "documentationUrl": "https://docs.github.com/rest/reference/interactions#get-interaction-restrictions-for-your-public-repositories",
+    "previews": [],
+    "headers": [],
+    "parameters": [],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "examples": [
+          {
+            "data": "{\"limit\":\"collaborators_only\",\"origin\":\"user\",\"expires_at\":\"2018-08-17T04:18:39Z\"}"
+          }
+        ]
+      }
+    ],
+    "renamed": null
+  },
+  {
     "name": "Get interaction restrictions for an organization",
     "scope": "interactions",
     "id": "getRestrictionsForOrg",
@@ -14567,6 +14593,35 @@
         ]
       }
     ],
+    "renamed": {
+      "before": {
+        "scope": "interactions",
+        "id": "getRestrictionsForYourPublicRepos"
+      },
+      "after": {
+        "scope": "interactions",
+        "id": "getRestrictionsForAuthenticatedUser"
+      },
+      "date": "2021-02-02",
+      "note": null
+    }
+  },
+  {
+    "name": "Remove interaction restrictions from your public repositories",
+    "scope": "interactions",
+    "id": "removeRestrictionsForAuthenticatedUser",
+    "method": "DELETE",
+    "url": "/user/interaction-limits",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "description": "Removes any interaction restrictions from your public repositories.",
+    "documentationUrl": "https://docs.github.com/rest/reference/interactions#remove-interaction-restrictions-from-your-public-repositories",
+    "previews": [],
+    "headers": [],
+    "parameters": [],
+    "responses": [
+      { "code": 204, "description": "Empty response", "examples": null }
+    ],
     "renamed": null
   },
   {
@@ -14662,6 +14717,77 @@
     "parameters": [],
     "responses": [
       { "code": 204, "description": "Empty response", "examples": null }
+    ],
+    "renamed": {
+      "before": {
+        "scope": "interactions",
+        "id": "removeRestrictionsForYourPublicRepos"
+      },
+      "after": {
+        "scope": "interactions",
+        "id": "removeRestrictionsForAuthenticatedUser"
+      },
+      "date": "2021-02-02",
+      "note": null
+    }
+  },
+  {
+    "name": "Set interaction restrictions for your public repositories",
+    "scope": "interactions",
+    "id": "setRestrictionsForAuthenticatedUser",
+    "method": "PUT",
+    "url": "/user/interaction-limits",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "description": "Temporarily restricts which type of GitHub user can interact with your public repositories. Setting the interaction limit at the user level will overwrite any interaction limits that are set for individual repositories owned by the user.",
+    "documentationUrl": "https://docs.github.com/rest/reference/interactions#set-interaction-restrictions-for-your-public-repositories",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "limit",
+        "description": "The type of GitHub user that can comment, open issues, or create pull requests while the interaction limit is in effect. Can be one of: `existing_users`, `contributors_only`, `collaborators_only`.",
+        "in": "BODY",
+        "type": "string",
+        "required": true,
+        "enum": ["existing_users", "contributors_only", "collaborators_only"],
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "expiry",
+        "description": "The duration of the interaction restriction. Can be one of: `one_day`, `three_days`, `one_week`, `one_month`, `six_months`. Default: `one_day`.",
+        "in": "BODY",
+        "type": "string",
+        "required": false,
+        "enum": [
+          "one_day",
+          "three_days",
+          "one_week",
+          "one_month",
+          "six_months"
+        ],
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "examples": [
+          {
+            "data": "{\"limit\":\"collaborators_only\",\"origin\":\"user\",\"expires_at\":\"2018-08-17T04:18:39Z\"}"
+          }
+        ]
+      },
+      { "code": 422, "description": "Validation Failed", "examples": null }
     ],
     "renamed": null
   },
@@ -14882,7 +15008,18 @@
       },
       { "code": 422, "description": "Validation Failed", "examples": null }
     ],
-    "renamed": null
+    "renamed": {
+      "before": {
+        "scope": "interactions",
+        "id": "setRestrictionsForYourPublicRepos"
+      },
+      "after": {
+        "scope": "interactions",
+        "id": "setRestrictionsForAuthenticatedUser"
+      },
+      "date": "2021-02-02",
+      "note": null
+    }
   },
   {
     "name": "Add assignees to an issue",

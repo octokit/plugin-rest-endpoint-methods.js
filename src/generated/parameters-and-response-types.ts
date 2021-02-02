@@ -1594,6 +1594,14 @@ export type RestEndpointMethodTypes = {
     };
   };
   interactions: {
+    getRestrictionsForAuthenticatedUser: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /user/interaction-limits"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /user/interaction-limits"]["response"];
+    };
     getRestrictionsForOrg: {
       parameters: RequestParameters &
         Omit<
@@ -1618,6 +1626,14 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["GET /user/interaction-limits"]["response"];
     };
+    removeRestrictionsForAuthenticatedUser: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["DELETE /user/interaction-limits"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["DELETE /user/interaction-limits"]["response"];
+    };
     removeRestrictionsForOrg: {
       parameters: RequestParameters &
         Omit<
@@ -1641,6 +1657,14 @@ export type RestEndpointMethodTypes = {
           "baseUrl" | "headers" | "mediaType"
         >;
       response: Endpoints["DELETE /user/interaction-limits"]["response"];
+    };
+    setRestrictionsForAuthenticatedUser: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["PUT /user/interaction-limits"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["PUT /user/interaction-limits"]["response"];
     };
     setRestrictionsForOrg: {
       parameters: RequestParameters &

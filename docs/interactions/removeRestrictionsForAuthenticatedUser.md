@@ -1,6 +1,6 @@
 ---
 name: Remove interaction restrictions from your public repositories
-example: octokit.interactions.removeRestrictionsForYourPublicRepos()
+example: octokit.interactions.removeRestrictionsForAuthenticatedUser()
 route: DELETE /user/interaction-limits
 scope: interactions
 type: API method
@@ -8,12 +8,10 @@ type: API method
 
 # Remove interaction restrictions from your public repositories
 
-**Deprecated:** This method has been renamed to interactions.removeRestrictionsForAuthenticatedUser
-
 Removes any interaction restrictions from your public repositories.
 
 ```js
-octokit.interactions.removeRestrictionsForYourPublicRepos();
+octokit.interactions.removeRestrictionsForAuthenticatedUser();
 ```
 
 ## Parameters

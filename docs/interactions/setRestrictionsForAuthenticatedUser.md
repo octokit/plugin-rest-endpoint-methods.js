@@ -1,6 +1,6 @@
 ---
 name: Set interaction restrictions for your public repositories
-example: octokit.interactions.setRestrictionsForYourPublicRepos({ limit })
+example: octokit.interactions.setRestrictionsForAuthenticatedUser({ limit })
 route: PUT /user/interaction-limits
 scope: interactions
 type: API method
@@ -8,12 +8,10 @@ type: API method
 
 # Set interaction restrictions for your public repositories
 
-**Deprecated:** This method has been renamed to interactions.setRestrictionsForAuthenticatedUser
-
 Temporarily restricts which type of GitHub user can interact with your public repositories. Setting the interaction limit at the user level will overwrite any interaction limits that are set for individual repositories owned by the user.
 
 ```js
-octokit.interactions.setRestrictionsForYourPublicRepos({
+octokit.interactions.setRestrictionsForAuthenticatedUser({
   limit,
 });
 ```
