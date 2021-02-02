@@ -2783,6 +2783,18 @@ export type RestEndpointMethods = {
   };
   interactions: {
     /**
+     * Shows which type of GitHub user can interact with your public repositories and when the restriction expires. If there are no restrictions, you will see an empty response.
+     */
+    getRestrictionsForAuthenticatedUser: {
+      (
+        params?: RestEndpointMethodTypes["interactions"]["getRestrictionsForAuthenticatedUser"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["interactions"]["getRestrictionsForAuthenticatedUser"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
      * Shows which type of GitHub user can interact with this organization and when the restriction expires. If there is no restrictions, you will see an empty response.
      */
     getRestrictionsForOrg: {
@@ -2808,12 +2820,25 @@ export type RestEndpointMethods = {
     };
     /**
      * Shows which type of GitHub user can interact with your public repositories and when the restriction expires. If there are no restrictions, you will see an empty response.
+     * @deprecated octokit.interactions.getRestrictionsForYourPublicRepos() has been renamed to octokit.interactions.getRestrictionsForAuthenticatedUser() (2021-02-02)
      */
     getRestrictionsForYourPublicRepos: {
       (
         params?: RestEndpointMethodTypes["interactions"]["getRestrictionsForYourPublicRepos"]["parameters"]
       ): Promise<
         RestEndpointMethodTypes["interactions"]["getRestrictionsForYourPublicRepos"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Removes any interaction restrictions from your public repositories.
+     */
+    removeRestrictionsForAuthenticatedUser: {
+      (
+        params?: RestEndpointMethodTypes["interactions"]["removeRestrictionsForAuthenticatedUser"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["interactions"]["removeRestrictionsForAuthenticatedUser"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -2844,12 +2869,25 @@ export type RestEndpointMethods = {
     };
     /**
      * Removes any interaction restrictions from your public repositories.
+     * @deprecated octokit.interactions.removeRestrictionsForYourPublicRepos() has been renamed to octokit.interactions.removeRestrictionsForAuthenticatedUser() (2021-02-02)
      */
     removeRestrictionsForYourPublicRepos: {
       (
         params?: RestEndpointMethodTypes["interactions"]["removeRestrictionsForYourPublicRepos"]["parameters"]
       ): Promise<
         RestEndpointMethodTypes["interactions"]["removeRestrictionsForYourPublicRepos"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Temporarily restricts which type of GitHub user can interact with your public repositories. Setting the interaction limit at the user level will overwrite any interaction limits that are set for individual repositories owned by the user.
+     */
+    setRestrictionsForAuthenticatedUser: {
+      (
+        params?: RestEndpointMethodTypes["interactions"]["setRestrictionsForAuthenticatedUser"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["interactions"]["setRestrictionsForAuthenticatedUser"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -2880,6 +2918,7 @@ export type RestEndpointMethods = {
     };
     /**
      * Temporarily restricts which type of GitHub user can interact with your public repositories. Setting the interaction limit at the user level will overwrite any interaction limits that are set for individual repositories owned by the user.
+     * @deprecated octokit.interactions.setRestrictionsForYourPublicRepos() has been renamed to octokit.interactions.setRestrictionsForAuthenticatedUser() (2021-02-02)
      */
     setRestrictionsForYourPublicRepos: {
       (
