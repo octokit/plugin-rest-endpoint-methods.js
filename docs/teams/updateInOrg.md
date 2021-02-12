@@ -1,6 +1,6 @@
 ---
 name: Update a team
-example: octokit.teams.updateInOrg({ org, team_slug, name })
+example: octokit.teams.updateInOrg({ org, team_slug })
 route: PATCH /orgs/{org}/teams/{team_slug}
 scope: teams
 type: API method
@@ -16,7 +16,6 @@ To edit a team, the authenticated user must either be an organization owner or a
 octokit.teams.updateInOrg({
   org,
   team_slug,
-  name,
 });
 ```
 
@@ -39,7 +38,7 @@ octokit.teams.updateInOrg({
 team_slug parameter
 
 </td></tr>
-<tr><td>name</td><td>yes</td><td>
+<tr><td>name</td><td>no</td><td>
 
 The name of the team.
 

@@ -1,6 +1,6 @@
 ---
 name: Remove requested reviewers from a pull request
-example: octokit.pulls.removeRequestedReviewers({ owner, repo, pull_number })
+example: octokit.pulls.removeRequestedReviewers({ owner, repo, pull_number, reviewers })
 route: DELETE /repos/{owner}/{repo}/pulls/{pull_number}/requested_reviewers
 scope: pulls
 type: API method
@@ -13,6 +13,7 @@ octokit.pulls.removeRequestedReviewers({
   owner,
   repo,
   pull_number,
+  reviewers,
 });
 ```
 
@@ -36,7 +37,7 @@ octokit.pulls.removeRequestedReviewers({
 <tr><td>pull_number</td><td>yes</td><td>
 
 </td></tr>
-<tr><td>reviewers</td><td>no</td><td>
+<tr><td>reviewers</td><td>yes</td><td>
 
 An array of user `login`s that will be removed.
 
