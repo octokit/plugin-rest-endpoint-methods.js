@@ -1,6 +1,6 @@
 ---
 name: Create a review comment for a pull request
-example: octokit.pulls.createReviewComment({ owner, repo, pull_number, body, path })
+example: octokit.pulls.createReviewComment({ owner, repo, pull_number, body })
 route: POST /repos/{owner}/{repo}/pulls/{pull_number}/comments
 scope: pulls
 type: API method
@@ -22,7 +22,6 @@ octokit.pulls.createReviewComment({
   repo,
   pull_number,
   body,
-  path,
 });
 ```
 
@@ -56,7 +55,7 @@ The text of the review comment.
 The SHA of the commit needing a comment. Not using the latest commit SHA may render your comment outdated if a subsequent commit modifies the line you specify as the `position`.
 
 </td></tr>
-<tr><td>path</td><td>yes</td><td>
+<tr><td>path</td><td>no</td><td>
 
 The relative path to the file that necessitates a comment.
 
