@@ -10,7 +10,8 @@ type: API method
 
 Gets a single code scanning alert. You must use an access token with the `security_events` scope to use this endpoint. GitHub Apps must have the `security_events` read permission to use this endpoint.
 
-The security `alert_number` is found at the end of the security alert's URL. For example, the security alert ID for `https://github.com/Octo-org/octo-repo/security/code-scanning/88` is `88`.
+**Deprecation notice**:
+The instances field is deprecated and will, in future, not be included in the response for this endpoint. The example response reflects this change. The same information can now be retrieved via a GET request to the URL specified by `instances_url`.
 
 ```js
 octokit.codeScanning.getAlert({
@@ -39,11 +40,15 @@ octokit.codeScanning.getAlert({
 </td></tr>
 <tr><td>alert_number</td><td>yes</td><td>
 
+The number that identifies an alert. You can find this at the end of the URL for a code scanning alert within GitHub, and in the `number` field in the response from the `GET /repos/{owner}/{repo}/code-scanning/alerts` operation.
+
 </td></tr>
 <tr><td>alert_id</td><td>no</td><td>
+
+The number that identifies an alert. You can find this at the end of the URL for a code scanning alert within GitHub, and in the `number` field in the response from the `GET /repos/{owner}/{repo}/code-scanning/alerts` operation.
 
 </td></tr>
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/v3/code-scanning/#get-a-code-scanning-alert).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/code-scanning#get-a-code-scanning-alert).

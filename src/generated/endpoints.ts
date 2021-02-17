@@ -286,12 +286,22 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     update: ["PATCH /repos/{owner}/{repo}/check-runs/{check_run_id}"],
   },
   codeScanning: {
+    deleteAnalysis: [
+      "DELETE /repos/{owner}/{repo}/code-scanning/analyses/{analysis_id}{?confirm_delete}",
+    ],
     getAlert: [
       "GET /repos/{owner}/{repo}/code-scanning/alerts/{alert_number}",
       {},
       { renamedParameters: { alert_id: "alert_number" } },
     ],
+    getAnalysis: [
+      "GET /repos/{owner}/{repo}/code-scanning/analyses/{analysis_id}",
+    ],
+    getSarif: ["GET /repos/{owner}/{repo}/code-scanning/sarifs/{sarif_id}"],
     listAlertsForRepo: ["GET /repos/{owner}/{repo}/code-scanning/alerts"],
+    listAlertsInstances: [
+      "GET /repos/{owner}/{repo}/code-scanning/alerts/{alert_number}/instances",
+    ],
     listRecentAnalyses: ["GET /repos/{owner}/{repo}/code-scanning/analyses"],
     updateAlert: [
       "PATCH /repos/{owner}/{repo}/code-scanning/alerts/{alert_number}",

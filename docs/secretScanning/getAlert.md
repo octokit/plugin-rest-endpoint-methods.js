@@ -39,7 +39,7 @@ octokit.secretScanning.getAlert({
 </td></tr>
 <tr><td>alert_number</td><td>yes</td><td>
 
-The security alert number, found at the end of the security alert's URL.
+The number that identifies an alert. You can find this at the end of the URL for a code scanning alert within GitHub, and in the `number` field in the response from the `GET /repos/{owner}/{repo}/code-scanning/alerts` operation.
 
 </td></tr>
   </tbody>

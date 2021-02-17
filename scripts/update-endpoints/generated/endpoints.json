@@ -2386,7 +2386,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -2491,7 +2491,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -2557,7 +2557,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -2636,7 +2636,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -2715,7 +2715,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -2927,7 +2927,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -2993,7 +2993,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -3072,7 +3072,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -3164,7 +3164,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -3322,7 +3322,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -3467,7 +3467,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -4367,7 +4367,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -4462,7 +4462,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -4549,7 +4549,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -4592,7 +4592,7 @@
     "parameters": [
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -4666,7 +4666,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -4728,7 +4728,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -4784,7 +4784,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -4840,7 +4840,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -4896,7 +4896,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -4965,7 +4965,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -5086,7 +5086,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -5165,7 +5165,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -5273,7 +5273,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -5348,7 +5348,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -5427,7 +5427,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -5490,7 +5490,7 @@
     "parameters": [
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -5576,7 +5576,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -7310,7 +7310,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -7409,7 +7409,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -7480,7 +7480,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -7536,7 +7536,7 @@
     "parameters": [
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -7615,7 +7615,7 @@
     "parameters": [
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -7676,7 +7676,7 @@
     "parameters": [
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -7735,7 +7735,7 @@
     "parameters": [
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -7793,7 +7793,7 @@
     "parameters": [
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -7853,7 +7853,7 @@
     "parameters": [
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -7913,7 +7913,7 @@
     "parameters": [
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -9828,7 +9828,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -9959,7 +9959,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -10090,7 +10090,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -10208,7 +10208,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -10847,6 +10847,94 @@
     "renamed": null
   },
   {
+    "name": "Delete a code scanning analysis from a repository",
+    "scope": "codeScanning",
+    "id": "deleteAnalysis",
+    "method": "DELETE",
+    "url": "/repos/{owner}/{repo}/code-scanning/analyses/{analysis_id}{?confirm_delete}",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "description": "Deletes a specified code scanning analysis from a repository. For\nprivate repositories, you must use an access token with the `repo` scope. For public repositories,\nyou must use an access token with `public_repo` and `repo:security_events` scopes.\nGitHub Apps must have the `security_events` write permission to use this endpoint.\n\nYou can delete one analysis at a time.\nTo delete a series of analyses, start with the most recent analysis and work backwards.\nConceptually, the process is similar to the undo function in a text editor.\n\nWhen you list the analyses for a repository,\none or more will be identified as deletable in the response:\n\n```\n\"deletable\": true\n```\n\nAn analysis is deletable when it's the most recent in a set of analyses.\nTypically, a repository will have multiple sets of analyses\nfor each enabled code scanning tool,\nwhere a set is determined by a unique combination of analysis values:\n\n* `ref`\n* `tool`\n* `analysis_key`\n* `environment`\n\nIf you attempt to delete an analysis that is not the most recent in a set,\nyou'll get a 400 response with the message:\n\n```\nAnalysis specified is not deletable.\n```\n\nThe response from a successful `DELETE` operation provides you with\ntwo alternative URLs for deleting the next analysis in the set\n(see the example default response below).\nUse the `next_analysis_url` URL if you want to avoid accidentally deleting the final analysis\nin the set. This is a useful option if you want to preserve at least one analysis\nfor the specified tool in your repository.\nUse the `confirm_delete_url` URL if you are content to remove all analyses for a tool.\nWhen you delete the last analysis in a set the value of `next_analysis_url` and `confirm_delete_url`\nin the 200 response is `null`.\n\nAs an example of the deletion process,\nlet's imagine that you added a workflow that configured a particular code scanning tool\nto analyze the code in a repository. This tool has added 15 analyses:\n10 on the default branch, and another 5 on a topic branch.\nYou therefore have two separate sets of analyses for this tool.\nYou've now decided that you want to remove all of the analyses for the tool.\nTo do this you must make 15 separate deletion requests.\nTo start, you must find the deletable analysis for one of the sets,\nstep through deleting the analyses in that set,\nand then repeat the process for the second set.\nThe procedure therefore consists of a nested loop:\n\n**Outer loop**:\n* List the analyses for the repository, filtered by tool.\n* Parse this list to find a deletable analysis. If found:\n\n  **Inner loop**:\n  * Delete the identified analysis.\n  * Parse the response for the value of `next_analysis_url` and, if found, use this in the next iteration.\n\nThe above process assumes that you want to remove all trace of the tool's analyses from the GitHub user interface, for the specified repository, and it therefore uses the `next_analysis_url` value. Alternatively, you could use the `confirm_delete_url` value, which would leave the last analysis in each set undeleted to avoid removing a tool's analysis entirely.",
+    "documentationUrl": "https://docs.github.com/rest/reference/code-scanning#delete-a-code-scanning-analysis-from-a-repository",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "owner",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "repo",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "analysis_id",
+        "description": "The ID of the analysis, as returned from the `GET /repos/{owner}/{repo}/code-scanning/analyses` operation.",
+        "in": "PATH",
+        "type": "integer",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "confirm_delete",
+        "description": "Allow deletion if the specified analysis is the last in a set. The parameter can be used without a value as the parameter value is not considered. If you attempt to delete the final analysis in a set without using this parameter you'll get a 400 response with the message: `Analysis is last of its type and deletion may result in the loss of historical alert data. Please specify confirm_delete.`",
+        "in": "QUERY",
+        "type": "string",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "examples": [
+          {
+            "data": "{\"next_analysis_url\":\"https://api.github.com/repos/octocat/hello-world/code-scanning/analyses/41\",\"confirm_delete_url\":\"https://api.github.com/repos/octocat/hello-world/code-scanning/analyses/41?confirm_delete\"}"
+          }
+        ]
+      },
+      { "code": 400, "description": "Bad Request", "examples": null },
+      { "code": 400, "description": "Bad Request", "examples": null },
+      {
+        "code": 403,
+        "description": "Response if the repository is archived or if github advanced security is not enabled for this repository",
+        "examples": null
+      },
+      { "code": 404, "description": "Resource Not Found", "examples": null },
+      { "code": 503, "description": "Service Unavailable", "examples": null }
+    ],
+    "renamed": null
+  },
+  {
     "name": "Get a code scanning alert",
     "scope": "codeScanning",
     "id": "getAlert",
@@ -10854,8 +10942,8 @@
     "url": "/repos/{owner}/{repo}/code-scanning/alerts/{alert_number}",
     "isDeprecated": false,
     "deprecationDate": null,
-    "description": "Gets a single code scanning alert. You must use an access token with the `security_events` scope to use this endpoint. GitHub Apps must have the `security_events` read permission to use this endpoint.\n\nThe security `alert_number` is found at the end of the security alert's URL. For example, the security alert ID for `https://github.com/Octo-org/octo-repo/security/code-scanning/88` is `88`.",
-    "documentationUrl": "https://docs.github.com/v3/code-scanning/#get-a-code-scanning-alert",
+    "description": "Gets a single code scanning alert. You must use an access token with the `security_events` scope to use this endpoint. GitHub Apps must have the `security_events` read permission to use this endpoint.\n\n**Deprecation notice**:\nThe instances field is deprecated and will, in future, not be included in the response for this endpoint. The example response reflects this change. The same information can now be retrieved via a GET request to the URL specified by `instances_url`.",
+    "documentationUrl": "https://docs.github.com/rest/reference/code-scanning#get-a-code-scanning-alert",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -10887,7 +10975,7 @@
       },
       {
         "name": "alert_number",
-        "description": "",
+        "description": "The number that identifies an alert. You can find this at the end of the URL for a code scanning alert within GitHub, and in the `number` field in the response from the `GET /repos/{owner}/{repo}/code-scanning/alerts` operation.",
         "in": "PATH",
         "type": "integer",
         "required": true,
@@ -10900,7 +10988,7 @@
       },
       {
         "name": "alert_id",
-        "description": "",
+        "description": "The number that identifies an alert. You can find this at the end of the URL for a code scanning alert within GitHub, and in the `number` field in the response from the `GET /repos/{owner}/{repo}/code-scanning/alerts` operation.",
         "in": "PATH",
         "type": "integer",
         "required": false,
@@ -10918,7 +11006,7 @@
         "description": "response",
         "examples": [
           {
-            "data": "{\"number\":42,\"created_at\":\"2020-06-19T11:21:34Z\",\"url\":\"https://api.github.com/repos/github/hello-world/code-scanning/alerts/42\",\"html_url\":\"https://github.com/github/hello-world/code-scanning/42\",\"instances\":[{\"ref\":\"refs/heads/main\",\"analysis_key\":\".github/workflows/codeql-analysis.yml:CodeQL-Build\",\"environment\":\"\",\"state\":\"fixed\"},{\"ref\":\"refs/pull/3740/head\",\"analysis_key\":\".github/workflows/codeql-analysis.yml:CodeQL-Build\",\"environment\":\"\",\"state\":\"dismissed\"}],\"state\":\"dismissed\",\"dismissed_by\":{\"login\":\"octocat\",\"id\":1,\"node_id\":\"MDQ6VXNlcjE=\",\"avatar_url\":\"https://github.com/images/error/octocat_happy.gif\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/octocat\",\"html_url\":\"https://github.com/octocat\",\"followers_url\":\"https://api.github.com/users/octocat/followers\",\"following_url\":\"https://api.github.com/users/octocat/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/octocat/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/octocat/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/octocat/subscriptions\",\"organizations_url\":\"https://api.github.com/users/octocat/orgs\",\"repos_url\":\"https://api.github.com/users/octocat/repos\",\"events_url\":\"https://api.github.com/users/octocat/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/octocat/received_events\",\"type\":\"User\",\"site_admin\":false},\"dismissed_at\":\"2020-02-14T12:29:18Z\",\"dismissed_reason\":\"false positive\",\"rule\":{\"id\":\"js/polynomial-redos\",\"severity\":\"warning\",\"description\":\"Polynomial regular expression used on uncontrolled data\"},\"tool\":{\"name\":\"CodeQL command-line toolchain\",\"version\":null}}"
+            "data": "{\"number\":42,\"created_at\":\"2020-06-19T11:21:34Z\",\"url\":\"https://api.github.com/repos/octocat/hello-world/code-scanning/alerts/42\",\"html_url\":\"https://github.com/octocat/hello-world/code-scanning/42\",\"state\":\"dismissed\",\"dismissed_by\":{\"login\":\"octocat\",\"id\":54933897,\"node_id\":\"MDQ6VXNlcjE=\",\"avatar_url\":\"https://github.com/images/error/octocat_happy.gif\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/octocat\",\"html_url\":\"https://github.com/octocat\",\"followers_url\":\"https://api.github.com/users/octocat/followers\",\"following_url\":\"https://api.github.com/users/octocat/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/octocat/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/octocat/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/octocat/subscriptions\",\"organizations_url\":\"https://api.github.com/users/octocat/orgs\",\"repos_url\":\"https://api.github.com/users/octocat/repos\",\"events_url\":\"https://api.github.com/users/octocat/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/octocat/received_events\",\"type\":\"User\",\"site_admin\":false},\"dismissed_at\":\"2020-02-14T12:29:18Z\",\"dismissed_reason\":\"false positive\",\"rule\":{\"id\":\"js/zipslip\",\"severity\":\"error\",\"description\":\"Arbitrary file write during zip extraction (\\\"Zip Slip\\\")\",\"name\":\"js/zipslip\",\"full_description\":\"Extracting files from a malicious zip archive without validating that the destination file path is within the destination directory can cause files outside the destination directory to be overwritten.\",\"tags\":[\"security\",\"external/cwe/cwe-022\"],\"help\":\"# Arbitrary file write during zip extraction (\\\"Zip Slip\\\")\\\\nExtracting files from a malicious zip archive without validating that the destination file path is within the destination directory can cause files outside the destination directory to be overwritten ...\"},\"tool\":{\"name\":\"CodeQL\",\"guid\":null,\"version\":\"2.4.0\"},\"most_recent_instance\":{\"ref\":\"refs/heads/main\",\"analysis_key\":\".github/workflows/codeql-analysis.yml:CodeQL-Build\",\"environment\":\"{}\",\"state\":\"dismissed\",\"commit_sha\":\"39406e42cb832f683daa691dd652a8dc36ee8930\",\"message\":{\"text\":\"This path depends on a user-provided value.\"},\"location\":{\"path\":\"spec-main/api-session-spec.ts\",\"start_line\":917,\"end_line\":917,\"start_column\":7,\"end_column\":18},\"classifications\":[\"test\"]},\"instances_url\":\"https://api.github.com/repos/octocat/hello-world/code-scanning/alerts/42/instances\"}"
           }
         ]
       },
@@ -10933,15 +11021,15 @@
     "renamed": null
   },
   {
-    "name": "List code scanning alerts for a repository",
+    "name": "Get a code scanning analysis for a repository",
     "scope": "codeScanning",
-    "id": "listAlertsForRepo",
+    "id": "getAnalysis",
     "method": "GET",
-    "url": "/repos/{owner}/{repo}/code-scanning/alerts",
+    "url": "/repos/{owner}/{repo}/code-scanning/analyses/{analysis_id}",
     "isDeprecated": false,
     "deprecationDate": null,
-    "description": "Lists all open code scanning alerts for the default branch (usually `main` or `master`). You must use an access token with the `security_events` scope to use this endpoint. GitHub Apps must have the `security_events` read permission to use this endpoint.",
-    "documentationUrl": "https://docs.github.com/v3/code-scanning/#list-code-scanning-alerts-for-a-repository",
+    "description": "Gets a specified code scanning analysis for a repository.\nYou must use an access token with the `security_events` scope to use this endpoint.\nGitHub Apps must have the `security_events` read permission to use this endpoint.\n\nThe default JSON response contains fields that describe the analysis.\nThis includes the Git reference and commit SHA to which the analysis relates,\nthe datetime of the analysis, the name of the code scanning tool,\nand the number of alerts.\n\nThe `rules_count` field in the default response give the number of rules\nthat were run in the analysis.\nFor very old analyses this data is not available,\nand `0` is returned in this field.\n\nIf you use the Accept header `application/sarif+json`,\nthe response contains the analysis data that was uploaded.\nThis is formatted as\n[SARIF version 2.1.0](https://docs.oasis-open.org/sarif/sarif/v2.1.0/cs01/sarif-v2.1.0-cs01.html).\nFor an example response, see \"[Custom media type for code scanning](#custom-media-type-for-code-scanning).\"\n\n**Deprecation notice**:\nThe `tool_name` field is deprecated and will, in future, not be included in the response for this endpoint. The example response reflects this change. The tool name can now be found inside the `tool` field.",
+    "documentationUrl": "https://docs.github.com/rest/reference/code-scanning#get-a-code-scanning-analysis-for-a-repository",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -10964,6 +11052,221 @@
         "in": "PATH",
         "type": "string",
         "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "analysis_id",
+        "description": "The ID of the analysis, as returned from the `GET /repos/{owner}/{repo}/code-scanning/analyses` operation.",
+        "in": "PATH",
+        "type": "integer",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "examples": [
+          {
+            "data": "{\"ref\":\"refs/heads/main\",\"commit_sha\":\"c18c69115654ff0166991962832dc2bd7756e655\",\"analysis_key\":\".github/workflows/codeql-analysis.yml:analyze\",\"environment\":\"{\\\"language\\\":\\\"javascript\\\"}\",\"error\":\"\",\"created_at\":\"2021-01-13T11:55:49Z\",\"results_count\":3,\"rules_count\":67,\"id\":3602840,\"url\":\"https://api.github.com/repos/octocat/hello-world/code-scanning/analyses/201\",\"sarif_id\":\"47177e22-5596-11eb-80a1-c1e54ef945c6\",\"tool\":{\"name\":\"CodeQL\",\"guid\":null,\"version\":\"2.4.0\"},\"deletable\":true}"
+          }
+        ]
+      },
+      {
+        "code": 403,
+        "description": "Response if github advanced security is not enabled for this repository",
+        "examples": null
+      },
+      { "code": 404, "description": "Resource Not Found", "examples": null },
+      { "code": 503, "description": "Service Unavailable", "examples": null }
+    ],
+    "renamed": null
+  },
+  {
+    "name": "Get information about a SARIF upload",
+    "scope": "codeScanning",
+    "id": "getSarif",
+    "method": "GET",
+    "url": "/repos/{owner}/{repo}/code-scanning/sarifs/{sarif_id}",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "description": "Gets information about a SARIF upload, including the status and the URL of the analysis that was uploaded so that you can retrieve details of the analysis. For more information, see \"[Get a code scanning analysis for a repository](/rest/reference/code-scanning#get-a-code-scanning-analysis-for-a-repository).\" You must use an access token with the `security_events` scope to use this endpoint. GitHub Apps must have the `security_events` read permission to use this endpoint.",
+    "documentationUrl": "https://docs.github.com/rest/reference/code-scanning#get-information-about-a-sarif-upload",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "owner",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "repo",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "sarif_id",
+        "description": "The SARIF ID obtained after uploading.",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "examples": [
+          {
+            "data": "{\"processing_status\":\"complete\",\"analyses_url\":\"https://api.github.com/repos/octocat/hello-world/code-scanning/analyses?sarif_id=47177e22-5596-11eb-80a1-c1e54ef945c6\"}"
+          }
+        ]
+      },
+      {
+        "code": 403,
+        "description": "Response if github advanced security is not enabled for this repository",
+        "examples": null
+      },
+      {
+        "code": 404,
+        "description": "Response if the sarif id does not match any upload",
+        "examples": null
+      },
+      { "code": 503, "description": "Service Unavailable", "examples": null }
+    ],
+    "renamed": null
+  },
+  {
+    "name": "List code scanning alerts for a repository",
+    "scope": "codeScanning",
+    "id": "listAlertsForRepo",
+    "method": "GET",
+    "url": "/repos/{owner}/{repo}/code-scanning/alerts",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "description": "Lists all open code scanning alerts for the default branch (usually `main`\nor `master`). You must use an access token with the `security_events` scope to use\nthis endpoint. GitHub Apps must have the `security_events` read permission to use\nthis endpoint.\n\nThe response includes a `most_recent_instance` object.\nThis provides details of the most recent instance of this alert\nfor the the default branch or for the specified Git reference\n(if you used `ref` in the request).",
+    "documentationUrl": "https://docs.github.com/rest/reference/code-scanning#list-code-scanning-alerts-for-a-repository",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "owner",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "repo",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "tool_name",
+        "description": "The name of a code scanning tool. Only results by this tool will be listed. You can specify the tool by using either `tool_name` or `tool_guid`, but not both.",
+        "in": "QUERY",
+        "type": "string",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "tool_guid",
+        "description": "The GUID of a code scanning tool. Only results by this tool will be listed. Note that some code scanning tools may not include a GUID in their analysis data. You can specify the tool by using either `tool_guid` or `tool_name`, but not both.",
+        "in": "QUERY",
+        "type": "string",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "page",
+        "description": "Page number of the results to fetch.",
+        "in": "QUERY",
+        "type": "integer",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "per_page",
+        "description": "Results per page (max 100).",
+        "in": "QUERY",
+        "type": "integer",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "ref",
+        "description": "The Git reference for the results you want to list. The `ref` for a branch can be formatted either as `refs/heads/<branch name>` or simply `<branch name>`. To reference a pull request use `refs/pull/<number>/merge`.",
+        "in": "QUERY",
+        "type": "string",
+        "required": false,
         "enum": null,
         "allowNull": false,
         "mapToData": null,
@@ -10983,19 +11286,6 @@
         "validation": null,
         "alias": null,
         "deprecated": null
-      },
-      {
-        "name": "ref",
-        "description": "Set a full Git reference to list alerts for a specific branch. The `ref` must be formatted as `refs/heads/<branch name>`.",
-        "in": "QUERY",
-        "type": "string",
-        "required": false,
-        "enum": null,
-        "allowNull": false,
-        "mapToData": null,
-        "validation": null,
-        "alias": null,
-        "deprecated": null
       }
     ],
     "responses": [
@@ -11004,7 +11294,7 @@
         "description": "response",
         "examples": [
           {
-            "data": "[{\"number\":4,\"created_at\":\"2020-02-13T12:29:18Z\",\"url\":\"https://api.github.com/repos/github/hello-world/code-scanning/alerts/4\",\"html_url\":\"https://github.com/github/hello-world/code-scanning/4\",\"state\":\"open\",\"dismissed_by\":null,\"dismissed_at\":null,\"dismissed_reason\":null,\"rule\":{\"id\":\"js/zipslip\",\"severity\":\"error\",\"description\":\"Arbitrary file write during zip extraction\"},\"tool\":{\"name\":\"CodeQL command-line toolchain\",\"version\":null}},{\"number\":3,\"created_at\":\"2020-02-13T12:29:18Z\",\"url\":\"https://api.github.com/repos/github/hello-world/code-scanning/alerts/3\",\"html_url\":\"https://github.com/github/hello-world/code-scanning/3\",\"state\":\"dismissed\",\"dismissed_by\":{\"login\":\"octocat\",\"id\":1,\"node_id\":\"MDQ6VXNlcjE=\",\"avatar_url\":\"https://github.com/images/error/octocat_happy.gif\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/octocat\",\"html_url\":\"https://github.com/octocat\",\"followers_url\":\"https://api.github.com/users/octocat/followers\",\"following_url\":\"https://api.github.com/users/octocat/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/octocat/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/octocat/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/octocat/subscriptions\",\"organizations_url\":\"https://api.github.com/users/octocat/orgs\",\"repos_url\":\"https://api.github.com/users/octocat/repos\",\"events_url\":\"https://api.github.com/users/octocat/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/octocat/received_events\",\"type\":\"User\",\"site_admin\":false},\"dismissed_at\":\"2020-02-14T12:29:18Z\",\"dismissed_reason\":\"false positive\",\"rule\":{\"id\":\"js/zipslip\",\"severity\":\"error\",\"description\":\"Arbitrary file write during zip extraction\"},\"tool\":{\"name\":\"CodeQL command-line toolchain\",\"version\":null}}]"
+            "data": "[{\"number\":4,\"created_at\":\"2020-02-13T12:29:18Z\",\"url\":\"https://api.github.com/repos/octocat/hello-world/code-scanning/alerts/4\",\"html_url\":\"https://github.com/octocat/hello-world/code-scanning/4\",\"state\":\"open\",\"dismissed_by\":null,\"dismissed_at\":null,\"dismissed_reason\":null,\"rule\":{\"id\":\"js/zipslip\",\"severity\":\"error\",\"description\":\"Arbitrary file write during zip extraction\",\"name\":\"js/zipslip\"},\"tool\":{\"name\":\"CodeQL\",\"guid\":null,\"version\":\"2.4.0\"},\"most_recent_instance\":{\"ref\":\"refs/heads/main\",\"analysis_key\":\".github/workflows/codeql-analysis.yml:CodeQL-Build\",\"environment\":\"{}\",\"state\":\"open\",\"commit_sha\":\"39406e42cb832f683daa691dd652a8dc36ee8930\",\"message\":{\"text\":\"This path depends on a user-provided value.\"},\"location\":{\"path\":\"spec-main/api-session-spec.ts\",\"start_line\":917,\"end_line\":917,\"start_column\":7,\"end_column\":18},\"classifications\":[\"test\"]},\"instances_url\":\"https://api.github.com/repos/octocat/hello-world/code-scanning/alerts/4/instances\"},{\"number\":3,\"created_at\":\"2020-02-13T12:29:18Z\",\"url\":\"https://api.github.com/repos/octocat/hello-world/code-scanning/alerts/3\",\"html_url\":\"https://github.com/octocat/hello-world/code-scanning/3\",\"state\":\"dismissed\",\"dismissed_by\":{\"login\":\"octocat\",\"id\":1,\"node_id\":\"MDQ6VXNlcjE=\",\"avatar_url\":\"https://github.com/images/error/octocat_happy.gif\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/octocat\",\"html_url\":\"https://github.com/octocat\",\"followers_url\":\"https://api.github.com/users/octocat/followers\",\"following_url\":\"https://api.github.com/users/octocat/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/octocat/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/octocat/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/octocat/subscriptions\",\"organizations_url\":\"https://api.github.com/users/octocat/orgs\",\"repos_url\":\"https://api.github.com/users/octocat/repos\",\"events_url\":\"https://api.github.com/users/octocat/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/octocat/received_events\",\"type\":\"User\",\"site_admin\":false},\"dismissed_at\":\"2020-02-14T12:29:18Z\",\"dismissed_reason\":\"false positive\",\"rule\":{\"id\":\"js/zipslip\",\"severity\":\"error\",\"description\":\"Arbitrary file write during zip extraction\",\"name\":\"js/zipslip\"},\"tool\":{\"name\":\"CodeQL\",\"guid\":null,\"version\":\"2.4.0\"},\"most_recent_instance\":{\"ref\":\"refs/heads/main\",\"analysis_key\":\".github/workflows/codeql-analysis.yml:CodeQL-Build\",\"environment\":\"{}\",\"state\":\"open\",\"commit_sha\":\"39406e42cb832f683daa691dd652a8dc36ee8930\",\"message\":{\"text\":\"This path depends on a user-provided value.\"},\"location\":{\"path\":\"lib/ab12-gen.js\",\"start_line\":917,\"end_line\":917,\"start_column\":7,\"end_column\":18},\"classifications\":[]},\"instances_url\":\"https://api.github.com/repos/octocat/hello-world/code-scanning/alerts/3/instances\"}]"
           }
         ]
       },
@@ -11013,109 +11303,21 @@
         "description": "Response if github advanced security is not enabled for this repository",
         "examples": null
       },
-      {
-        "code": 404,
-        "description": "Response if the ref does not match an existing ref",
-        "examples": null
-      },
+      { "code": 404, "description": "Resource Not Found", "examples": null },
       { "code": 503, "description": "Service Unavailable", "examples": null }
     ],
     "renamed": null
   },
   {
-    "name": "List recent code scanning analyses for a repository",
+    "name": "List instances of a code scanning alert",
     "scope": "codeScanning",
-    "id": "listRecentAnalyses",
+    "id": "listAlertsInstances",
     "method": "GET",
-    "url": "/repos/{owner}/{repo}/code-scanning/analyses",
+    "url": "/repos/{owner}/{repo}/code-scanning/alerts/{alert_number}/instances",
     "isDeprecated": false,
     "deprecationDate": null,
-    "description": "List the details of recent code scanning analyses for a repository. You must use an access token with the `security_events` scope to use this endpoint. GitHub Apps must have the `security_events` read permission to use this endpoint.",
-    "documentationUrl": "https://docs.github.com/v3/code-scanning/#list-recent-analyses",
-    "previews": [],
-    "headers": [],
-    "parameters": [
-      {
-        "name": "owner",
-        "description": "",
-        "in": "PATH",
-        "type": "string",
-        "required": true,
-        "enum": null,
-        "allowNull": false,
-        "mapToData": null,
-        "validation": null,
-        "alias": null,
-        "deprecated": null
-      },
-      {
-        "name": "repo",
-        "description": "",
-        "in": "PATH",
-        "type": "string",
-        "required": true,
-        "enum": null,
-        "allowNull": false,
-        "mapToData": null,
-        "validation": null,
-        "alias": null,
-        "deprecated": null
-      },
-      {
-        "name": "ref",
-        "description": "Set a full Git reference to list alerts for a specific branch. The `ref` must be formatted as `refs/heads/<branch name>`.",
-        "in": "QUERY",
-        "type": "string",
-        "required": false,
-        "enum": null,
-        "allowNull": false,
-        "mapToData": null,
-        "validation": null,
-        "alias": null,
-        "deprecated": null
-      },
-      {
-        "name": "tool_name",
-        "description": "Set a single code scanning tool name to filter alerts by tool.",
-        "in": "QUERY",
-        "type": "string",
-        "required": false,
-        "enum": null,
-        "allowNull": false,
-        "mapToData": null,
-        "validation": null,
-        "alias": null,
-        "deprecated": null
-      }
-    ],
-    "responses": [
-      {
-        "code": 200,
-        "description": "response",
-        "examples": [
-          {
-            "data": "[{\"ref\":\"refs/heads/master\",\"commit_sha\":\"d99612c3e1f2970085cfbaeadf8f010ef69bad83\",\"analysis_key\":\".github/workflows/codeql-analysis.yml:analyze\",\"tool_name\":\"CodeQL command-line toolchain\",\"environment\":\"{}\",\"error\":\"\",\"created_at\":\"2020-08-27T15:05:21Z\"},{\"ref\":\"refs/heads/my-branch\",\"commit_sha\":\"c8cff6510d4d084fb1b4aa13b64b97ca12b07321\",\"analysis_key\":\".github/workflows/shiftleft.yml:build\",\"tool_name\":\"Python Security Analysis\",\"environment\":\"{}\",\"error\":\"\",\"created_at\":\"2020-08-31T22:46:44Z\"}]"
-          }
-        ]
-      },
-      {
-        "code": 403,
-        "description": "Response if github advanced security is not enabled for this repository",
-        "examples": null
-      }
-    ],
-    "renamed": null
-  },
-  {
-    "name": "Update a code scanning alert",
-    "scope": "codeScanning",
-    "id": "updateAlert",
-    "method": "PATCH",
-    "url": "/repos/{owner}/{repo}/code-scanning/alerts/{alert_number}",
-    "isDeprecated": false,
-    "deprecationDate": null,
-    "description": "Updates the status of a single code scanning alert. You must use an access token with the `security_events` scope to use this endpoint. GitHub Apps must have the `security_events` write permission to use this endpoint.",
-    "documentationUrl": "https://docs.github.com/v3/code-scanning/#upload-a-code-scanning-alert",
+    "description": "Lists all instances of the specified code scanning alert. You must use an access token with the `security_events` scope to use this endpoint. GitHub Apps must have the `security_events` read permission to use this endpoint.",
+    "documentationUrl": "https://docs.github.com/rest/reference/code-scanning#list-instances-of-a-code-scanning-alert",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -11147,7 +11349,257 @@
       },
       {
         "name": "alert_number",
-        "description": "The security alert number, found at the end of the security alert's URL.",
+        "description": "The number that identifies an alert. You can find this at the end of the URL for a code scanning alert within GitHub, and in the `number` field in the response from the `GET /repos/{owner}/{repo}/code-scanning/alerts` operation.",
+        "in": "PATH",
+        "type": "integer",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "page",
+        "description": "Page number of the results to fetch.",
+        "in": "QUERY",
+        "type": "integer",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "per_page",
+        "description": "Results per page (max 100).",
+        "in": "QUERY",
+        "type": "integer",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "ref",
+        "description": "The Git reference for the results you want to list. The `ref` for a branch can be formatted either as `refs/heads/<branch name>` or simply `<branch name>`. To reference a pull request use `refs/pull/<number>/merge`.",
+        "in": "QUERY",
+        "type": "string",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "examples": [
+          {
+            "data": "[{\"ref\":\"refs/heads/main\",\"analysis_key\":\".github/workflows/codeql-analysis.yml:CodeQL-Build\",\"environment\":\"\",\"state\":\"open\",\"commit_sha\":\"39406e42cb832f683daa691dd652a8dc36ee8930\",\"message\":{\"text\":\"This path depends on a user-provided value.\"},\"location\":{\"path\":\"lib/ab12-gen.js\",\"start_line\":917,\"end_line\":917,\"start_column\":7,\"end_column\":18},\"classifications\":[\"library\"]},{\"ref\":\"refs/pull/3740/merge\",\"analysis_key\":\".github/workflows/codeql-analysis.yml:CodeQL-Build\",\"environment\":\"\",\"state\":\"fixed\",\"commit_sha\":\"b09da05606e27f463a2b49287684b4ae777092f2\",\"message\":{\"text\":\"This suffix check is missing a length comparison to correctly handle lastIndexOf returning -1.\"},\"location\":{\"path\":\"app/script.js\",\"start_line\":2,\"end_line\":2,\"start_column\":10,\"end_column\":50},\"classifications\":[\"source\"]}]"
+          }
+        ]
+      },
+      {
+        "code": 403,
+        "description": "Response if github advanced security is not enabled for this repository",
+        "examples": null
+      },
+      { "code": 404, "description": "Resource Not Found", "examples": null },
+      { "code": 503, "description": "Service Unavailable", "examples": null }
+    ],
+    "renamed": null
+  },
+  {
+    "name": "List code scanning analyses for a repository",
+    "scope": "codeScanning",
+    "id": "listRecentAnalyses",
+    "method": "GET",
+    "url": "/repos/{owner}/{repo}/code-scanning/analyses",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "description": "Lists the details of all code scanning analyses for a repository,\nstarting with the most recent.\nThe response is paginated and you can use the `page` and `per_page` parameters\nto list the analyses you're interested in.\nBy default 30 analyses are listed per page.\n\nThe `rules_count` field in the response give the number of rules\nthat were run in the analysis.\nFor very old analyses this data is not available,\nand `0` is returned in this field.\n\nYou must use an access token with the `security_events` scope to use this endpoint.\nGitHub Apps must have the `security_events` read permission to use this endpoint.\n\n**Deprecation notice**:\nThe `tool_name` field is deprecated and will, in future, not be included in the response for this endpoint. The example response reflects this change. The tool name can now be found inside the `tool` field.",
+    "documentationUrl": "https://docs.github.com/rest/reference/code-scanning#list-code-scanning-analyses-for-a-repository",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "owner",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "repo",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "tool_name",
+        "description": "The name of a code scanning tool. Only results by this tool will be listed. You can specify the tool by using either `tool_name` or `tool_guid`, but not both.",
+        "in": "QUERY",
+        "type": "string",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "tool_guid",
+        "description": "The GUID of a code scanning tool. Only results by this tool will be listed. Note that some code scanning tools may not include a GUID in their analysis data. You can specify the tool by using either `tool_guid` or `tool_name`, but not both.",
+        "in": "QUERY",
+        "type": "string",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "page",
+        "description": "Page number of the results to fetch.",
+        "in": "QUERY",
+        "type": "integer",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "per_page",
+        "description": "Results per page (max 100).",
+        "in": "QUERY",
+        "type": "integer",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "ref",
+        "description": "The Git reference for the analyses you want to list. The `ref` for a branch can be formatted either as `refs/heads/<branch name>` or simply `<branch name>`. To reference a pull request use `refs/pull/<number>/merge`.",
+        "in": "QUERY",
+        "type": "string",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "sarif_id",
+        "description": "Filter analyses belonging to the same SARIF upload.",
+        "in": "QUERY",
+        "type": "string",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "examples": [
+          {
+            "data": "[{\"ref\":\"refs/heads/main\",\"commit_sha\":\"d99612c3e1f2970085cfbaeadf8f010ef69bad83\",\"analysis_key\":\".github/workflows/codeql-analysis.yml:analyze\",\"environment\":\"{\\\"language\\\":\\\"python\\\"}\",\"error\":\"\",\"created_at\":\"2020-08-27T15:05:21Z\",\"results_count\":17,\"rules_count\":49,\"id\":201,\"url\":\"https://api.github.com/repos/octocat/hello-world/code-scanning/analyses/201\",\"sarif_id\":\"6c81cd8e-b078-4ac3-a3be-1dad7dbd0b53\",\"tool\":{\"name\":\"CodeQL\",\"guid\":null,\"version\":\"2.4.0\"},\"deletable\":true},{\"ref\":\"refs/heads/my-branch\",\"commit_sha\":\"c8cff6510d4d084fb1b4aa13b64b97ca12b07321\",\"analysis_key\":\".github/workflows/shiftleft.yml:build\",\"environment\":\"{}\",\"error\":\"\",\"created_at\":\"2020-08-31T22:46:44Z\",\"results_count\":17,\"rules_count\":32,\"id\":200,\"url\":\"https://api.github.com/repos/octocat/hello-world/code-scanning/analyses/200\",\"sarif_id\":\"8981cd8e-b078-4ac3-a3be-1dad7dbd0b582\",\"tool\":{\"name\":\"Python Security Analysis\",\"guid\":null,\"version\":\"1.2.0\"},\"deletable\":true}]"
+          }
+        ]
+      },
+      {
+        "code": 403,
+        "description": "Response if github advanced security is not enabled for this repository",
+        "examples": null
+      },
+      { "code": 404, "description": "Resource Not Found", "examples": null },
+      { "code": 503, "description": "Service Unavailable", "examples": null }
+    ],
+    "renamed": null
+  },
+  {
+    "name": "Update a code scanning alert",
+    "scope": "codeScanning",
+    "id": "updateAlert",
+    "method": "PATCH",
+    "url": "/repos/{owner}/{repo}/code-scanning/alerts/{alert_number}",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "description": "Updates the status of a single code scanning alert. You must use an access token with the `security_events` scope to use this endpoint. GitHub Apps must have the `security_events` write permission to use this endpoint.",
+    "documentationUrl": "https://docs.github.com/rest/reference/code-scanning#update-a-code-scanning-alert",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "owner",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "repo",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "alert_number",
+        "description": "The number that identifies an alert. You can find this at the end of the URL for a code scanning alert within GitHub, and in the `number` field in the response from the `GET /repos/{owner}/{repo}/code-scanning/alerts` operation.",
         "in": "PATH",
         "type": "integer",
         "required": true,
@@ -11191,33 +11643,30 @@
         "description": "response",
         "examples": [
           {
-            "data": "{\"number\":42,\"created_at\":\"2020-08-25T21:28:36Z\",\"url\":\"https://api.github.com/repos/github/hello-world/code-scanning/alerts/42\",\"html_url\":\"https://github.com/github/hello-world/code-scanning/42\",\"instances\":[{\"ref\":\"refs/heads/codeql-analysis-yml\",\"analysis_key\":\".github/workflows/codeql-analysis.yml:CodeQL-Build\",\"environment\":\"\",\"state\":\"dismissed\"},{\"ref\":\"refs/pull/3740/head\",\"analysis_key\":\".github/workflows/codeql-analysis.yml:CodeQL-Build\",\"environment\":\"\",\"state\":\"dismissed\"}],\"state\":\"dismissed\",\"dismissed_by\":{\"login\":\"octocat\",\"id\":1,\"node_id\":\"MDQ6VXNlcjE=\",\"avatar_url\":\"https://github.com/images/error/octocat_happy.gif\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/octocat\",\"html_url\":\"https://github.com/octocat\",\"followers_url\":\"https://api.github.com/users/octocat/followers\",\"following_url\":\"https://api.github.com/users/octocat/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/octocat/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/octocat/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/octocat/subscriptions\",\"organizations_url\":\"https://api.github.com/users/octocat/orgs\",\"repos_url\":\"https://api.github.com/users/octocat/repos\",\"events_url\":\"https://api.github.com/users/octocat/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/octocat/received_events\",\"type\":\"User\",\"site_admin\":false},\"dismissed_at\":\"2020-09-02T22:34:56Z\",\"dismissed_reason\":\"false positive\",\"rule\":{\"id\":\"js/polynomial-redos\",\"severity\":\"warning\",\"description\":\"Polynomial regular expression used on uncontrolled data\"},\"tool\":{\"name\":\"CodeQL command-line toolchain\",\"version\":null}}"
+            "data": "{\"number\":42,\"created_at\":\"2020-08-25T21:28:36Z\",\"url\":\"https://api.github.com/repos/octocat/hello-world/code-scanning/alerts/42\",\"html_url\":\"https://github.com/octocat/hello-world/code-scanning/42\",\"state\":\"dismissed\",\"dismissed_by\":{\"login\":\"octocat\",\"id\":1,\"node_id\":\"MDQ6VXNlcjE=\",\"avatar_url\":\"https://github.com/images/error/octocat_happy.gif\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/octocat\",\"html_url\":\"https://github.com/octocat\",\"followers_url\":\"https://api.github.com/users/octocat/followers\",\"following_url\":\"https://api.github.com/users/octocat/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/octocat/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/octocat/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/octocat/subscriptions\",\"organizations_url\":\"https://api.github.com/users/octocat/orgs\",\"repos_url\":\"https://api.github.com/users/octocat/repos\",\"events_url\":\"https://api.github.com/users/octocat/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/octocat/received_events\",\"type\":\"User\",\"site_admin\":false},\"dismissed_at\":\"2020-09-02T22:34:56Z\",\"dismissed_reason\":\"false positive\",\"rule\":{\"id\":\"js/zipslip\",\"severity\":\"error\",\"description\":\"Arbitrary file write during zip extraction (\\\"Zip Slip\\\")\",\"name\":\"js/zipslip\",\"full_description\":\"Extracting files from a malicious zip archive without validating that the destination file path is within the destination directory can cause files outside the destination directory to be overwritten.\",\"tags\":[\"security\",\"external/cwe/cwe-022\"],\"help\":\"# Arbitrary file write during zip extraction (\\\"Zip Slip\\\")\\\\nExtracting files from a malicious zip archive without validating that the destination file path is within the destination directory can cause files outside the destination directory to be overwritten ...\"},\"tool\":{\"name\":\"CodeQL\",\"guid\":null,\"version\":\"2.4.0\"},\"most_recent_instance\":{\"ref\":\"refs/heads/main\",\"analysis_key\":\".github/workflows/codeql-analysis.yml:CodeQL-Build\",\"environment\":\"{}\",\"state\":\"dismissed\",\"commit_sha\":\"39406e42cb832f683daa691dd652a8dc36ee8930\",\"message\":{\"text\":\"This path depends on a user-provided value.\"},\"location\":{\"path\":\"spec-main/api-session-spec.ts\",\"start_line\":917,\"end_line\":917,\"start_column\":7,\"end_column\":18},\"classifications\":[\"test\"]},\"instances_url\":\"https://api.github.com/repos/octocat/hello-world/code-scanning/alerts/42/instances\"}"
           }
         ]
       },
       {
         "code": 403,
-        "description": "Response if the repository is archived, or if github advanced security is not enabled for this repository",
+        "description": "Response if the repository is archived or if github advanced security is not enabled for this repository",
         "examples": null
       },
-      {
-        "code": 503,
-        "description": "Response when code scanning is not available and you should try again at a later time",
-        "examples": null
-      }
+      { "code": 404, "description": "Resource Not Found", "examples": null },
+      { "code": 503, "description": "Service Unavailable", "examples": null }
     ],
     "renamed": null
   },
   {
-    "name": "Upload a SARIF file",
+    "name": "Upload an analysis as SARIF data",
     "scope": "codeScanning",
     "id": "uploadSarif",
     "method": "POST",
     "url": "/repos/{owner}/{repo}/code-scanning/sarifs",
     "isDeprecated": false,
     "deprecationDate": null,
-    "description": "Upload a SARIF file containing the results of a code scanning analysis to make the results available in a repository. You must use an access token with the `security_events` scope to use this endpoint. GitHub Apps must have the `security_events` write permission to use this endpoint.",
-    "documentationUrl": "https://docs.github.com/v3/code-scanning/#upload-a-sarif-analysis",
+    "description": "Uploads SARIF data containing the results of a code scanning analysis to make the results available in a repository. You must use an access token with the `security_events` scope to use this endpoint. GitHub Apps must have the `security_events` write permission to use this endpoint.\n\nYou must compress the SARIF-formatted analysis data that you want to upload, using `gzip`, and then encode it as a Base64 format string. For example:\n\n```\ngzip -c analysis-data.sarif | base64\n```\n\nSARIF upload supports a maximum of 1000 results per analysis run. Any results over this limit are ignored. Typically, but not necessarily, a SARIF file contains a single run of a single tool. If a code scanning tool generates too many results, you should update the analysis configuration to run only the most important rules or queries.\n\nThe `202 Accepted`, response includes an `id` value.\nYou can use this ID to check the status of the upload by using this for the `/sarifs/{sarif_id}` endpoint.\nFor more information, see \"[Get information about a SARIF upload](/rest/reference/code-scanning#get-information-about-a-sarif-upload).\"",
+    "documentationUrl": "https://docs.github.com/rest/reference/code-scanning#upload-an-analysis-as-sarif-data",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -11249,7 +11698,7 @@
       },
       {
         "name": "commit_sha",
-        "description": "The commit SHA of the code scanning analysis file.",
+        "description": "The SHA of the commit to which the analysis you are uploading relates.",
         "in": "BODY",
         "type": "string",
         "required": true,
@@ -11262,7 +11711,7 @@
       },
       {
         "name": "ref",
-        "description": "The full Git reference of the code scanning analysis file, formatted as `refs/heads/<branch name>`.",
+        "description": "The full Git reference, formatted as `refs/heads/<branch name>`.",
         "in": "BODY",
         "type": "string",
         "required": true,
@@ -11275,7 +11724,7 @@
       },
       {
         "name": "sarif",
-        "description": "A Base64 string representing the SARIF file to upload. You must first compress your SARIF file using [`gzip`](http://www.gnu.org/software/gzip/manual/gzip.html) and then translate the contents of the file into a Base64 encoding string.",
+        "description": "A Base64 string representing the SARIF file to upload. You must first compress your SARIF file using [`gzip`](http://www.gnu.org/software/gzip/manual/gzip.html) and then translate the contents of the file into a Base64 encoding string. For more information, see \"[SARIF support for code scanning](https://docs.github.com/github/finding-security-vulnerabilities-and-errors-in-your-code/sarif-support-for-code-scanning).\"",
         "in": "BODY",
         "type": "string",
         "required": true,
@@ -11314,10 +11763,10 @@
       },
       {
         "name": "tool_name",
-        "description": "The name of the tool used to generate the code scanning analysis alert.",
+        "description": "The name of the tool used to generate the code scanning analysis. If this parameter is not used, the tool name defaults to \"API\". If the uploaded SARIF contains a tool GUID, this will be available for filtering using the `tool_guid` parameter of operations such as `GET /repos/{owner}/{repo}/code-scanning/alerts`.",
         "in": "BODY",
         "type": "string",
-        "required": true,
+        "required": false,
         "enum": null,
         "allowNull": false,
         "mapToData": null,
@@ -11327,27 +11776,32 @@
       }
     ],
     "responses": [
-      { "code": 202, "description": "response", "examples": null },
+      {
+        "code": 202,
+        "description": "response",
+        "examples": [
+          {
+            "data": "{\"id\":\"47177e22-5596-11eb-80a1-c1e54ef945c6\",\"url\":\"https://api.github.com/repos/octocat/hello-world/code-scanning/sarifs/47177e22-5596-11eb-80a1-c1e54ef945c6\"}"
+          }
+        ]
+      },
       {
         "code": 400,
-        "description": "Response if the `sarif` field is invalid",
+        "description": "Response if the sarif field is invalid",
         "examples": null
       },
       {
         "code": 403,
-        "description": "Response if the repository is archived, or if github advanced security is not enabled for this repository",
+        "description": "Response if the repository is archived or if github advanced security is not enabled for this repository",
         "examples": null
       },
-      {
-        "code": 404,
-        "description": "Response if `commit_sha` or `ref` cannot be found",
-        "examples": null
-      },
+      { "code": 404, "description": "Resource Not Found", "examples": null },
       {
         "code": 413,
-        "description": "Response if the `sarif` field is too large",
+        "description": "Response if the sarif field is too large",
         "examples": null
-      }
+      },
+      { "code": 503, "description": "Service Unavailable", "examples": null }
     ],
     "renamed": null
   },
@@ -11692,7 +12146,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -12409,7 +12863,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -12477,7 +12931,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -12546,7 +13000,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -12628,7 +13082,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -12695,7 +13149,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -12764,7 +13218,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -12833,7 +13287,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -14281,7 +14735,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -16358,7 +16812,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -16440,7 +16894,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -16546,7 +17000,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -16666,7 +17120,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -16760,7 +17214,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -16840,7 +17294,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -16933,7 +17387,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -17067,7 +17521,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -17213,7 +17667,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -17410,7 +17864,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -17505,7 +17959,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -17584,7 +18038,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -17677,7 +18131,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -17796,7 +18250,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -18807,7 +19261,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -19593,7 +20047,7 @@
     "parameters": [
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -19666,7 +20120,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -19745,7 +20199,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -19812,7 +20266,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -21087,7 +21541,7 @@
     "parameters": [
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -21148,7 +21602,7 @@
     "parameters": [
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -22230,7 +22684,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -22284,7 +22738,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -22391,7 +22845,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -22445,7 +22899,7 @@
     "parameters": [
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -22518,7 +22972,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -22597,7 +23051,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -22690,7 +23144,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -22762,7 +23216,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -22849,7 +23303,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -22915,7 +23369,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -22982,7 +23436,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -23048,7 +23502,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -24922,7 +25376,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -25008,7 +25462,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -25088,7 +25542,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -25174,7 +25628,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -25267,7 +25721,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -25355,7 +25809,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -27103,7 +27557,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -27210,7 +27664,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -27303,7 +27757,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -27395,7 +27849,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -27489,7 +27943,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -27620,7 +28074,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -27738,7 +28192,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -27830,7 +28284,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -30026,7 +30480,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -30142,7 +30596,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -30259,7 +30713,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -30375,7 +30829,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -30504,7 +30958,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -30618,7 +31072,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -30732,7 +31186,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -30833,7 +31287,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -37855,7 +38309,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -38023,7 +38477,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -38116,7 +38570,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -38195,7 +38649,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -38287,7 +38741,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -38432,7 +38886,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -38529,7 +38983,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -38615,7 +39069,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -38707,7 +39161,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -38839,7 +39293,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -38957,7 +39411,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -39104,7 +39558,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -39209,7 +39663,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -39301,7 +39755,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -39382,7 +39836,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -39435,7 +39889,7 @@
     "parameters": [
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -39571,7 +40025,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -39705,7 +40159,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -39798,7 +40252,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -39877,7 +40331,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -39957,7 +40411,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -40036,7 +40490,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -40115,7 +40569,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -43365,7 +43819,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -43461,7 +43915,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -43567,7 +44021,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -43746,7 +44200,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -43883,7 +44337,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -43965,7 +44419,7 @@
       },
       {
         "name": "alert_number",
-        "description": "The security alert number, found at the end of the security alert's URL.",
+        "description": "The number that identifies an alert. You can find this at the end of the URL for a code scanning alert within GitHub, and in the `number` field in the response from the `GET /repos/{owner}/{repo}/code-scanning/alerts` operation.",
         "in": "PATH",
         "type": "integer",
         "required": true,
@@ -44063,7 +44517,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -44135,7 +44589,7 @@
       },
       {
         "name": "alert_number",
-        "description": "The security alert number, found at the end of the security alert's URL.",
+        "description": "The number that identifies an alert. You can find this at the end of the URL for a code scanning alert within GitHub, and in the `number` field in the response from the `GET /repos/{owner}/{repo}/code-scanning/alerts` operation.",
         "in": "PATH",
         "type": "integer",
         "required": true,
@@ -46384,7 +46838,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -46464,7 +46918,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -46530,7 +46984,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -46638,7 +47092,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -46730,7 +47184,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -46822,7 +47276,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -46901,7 +47355,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -46954,7 +47408,7 @@
     "parameters": [
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -47049,7 +47503,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -47128,7 +47582,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -47208,7 +47662,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -47274,7 +47728,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -47353,7 +47807,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -47419,7 +47873,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -47500,7 +47954,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -47566,7 +48020,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -49360,7 +49814,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -49436,7 +49890,7 @@
     "parameters": [
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -49497,7 +49951,7 @@
     "parameters": [
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -49557,7 +50011,7 @@
     "parameters": [
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -49630,7 +50084,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -49696,7 +50150,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -49749,7 +50203,7 @@
     "parameters": [
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -49823,7 +50277,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -49876,7 +50330,7 @@
     "parameters": [
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -49950,7 +50404,7 @@
       },
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,
@@ -49999,7 +50453,7 @@
     "parameters": [
       {
         "name": "per_page",
-        "description": "Results per page (max 100)",
+        "description": "Results per page (max 100).",
         "in": "QUERY",
         "type": "integer",
         "required": false,

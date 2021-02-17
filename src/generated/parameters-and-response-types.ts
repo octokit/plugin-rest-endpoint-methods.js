@@ -1164,6 +1164,14 @@ export type RestEndpointMethodTypes = {
     };
   };
   codeScanning: {
+    deleteAnalysis: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["DELETE /repos/{owner}/{repo}/code-scanning/analyses/{analysis_id}{?confirm_delete}"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["DELETE /repos/{owner}/{repo}/code-scanning/analyses/{analysis_id}{?confirm_delete}"]["response"];
+    };
     getAlert: {
       parameters: RequestParameters &
         Omit<
@@ -1172,6 +1180,22 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["GET /repos/{owner}/{repo}/code-scanning/alerts/{alert_number}"]["response"];
     };
+    getAnalysis: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /repos/{owner}/{repo}/code-scanning/analyses/{analysis_id}"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /repos/{owner}/{repo}/code-scanning/analyses/{analysis_id}"]["response"];
+    };
+    getSarif: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /repos/{owner}/{repo}/code-scanning/sarifs/{sarif_id}"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /repos/{owner}/{repo}/code-scanning/sarifs/{sarif_id}"]["response"];
+    };
     listAlertsForRepo: {
       parameters: RequestParameters &
         Omit<
@@ -1179,6 +1203,14 @@ export type RestEndpointMethodTypes = {
           "baseUrl" | "headers" | "mediaType"
         >;
       response: Endpoints["GET /repos/{owner}/{repo}/code-scanning/alerts"]["response"];
+    };
+    listAlertsInstances: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /repos/{owner}/{repo}/code-scanning/alerts/{alert_number}/instances"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /repos/{owner}/{repo}/code-scanning/alerts/{alert_number}/instances"]["response"];
     };
     listRecentAnalyses: {
       parameters: RequestParameters &
