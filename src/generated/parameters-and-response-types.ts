@@ -2607,6 +2607,144 @@ export type RestEndpointMethodTypes = {
       response: Endpoints["PATCH /orgs/{org}/hooks/{hook_id}/config"]["response"];
     };
   };
+  packages: {
+    deletePackageForAuthenticatedUser: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["DELETE /user/packages/{package_type}/{package_name}"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["DELETE /user/packages/{package_type}/{package_name}"]["response"];
+    };
+    deletePackageForOrg: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["DELETE /orgs/{org}/packages/{package_type}/{package_name}"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["DELETE /orgs/{org}/packages/{package_type}/{package_name}"]["response"];
+    };
+    deletePackageVersionForAuthenticatedUser: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["DELETE /user/packages/{package_type}/{package_name}/versions/{package_version_id}"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["DELETE /user/packages/{package_type}/{package_name}/versions/{package_version_id}"]["response"];
+    };
+    deletePackageVersionForOrg: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["DELETE /orgs/{org}/packages/{package_type}/{package_name}/versions/{package_version_id}"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["DELETE /orgs/{org}/packages/{package_type}/{package_name}/versions/{package_version_id}"]["response"];
+    };
+    getAllPackageVersionsForAPackageOwnedByAnOrg: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /orgs/{org}/packages/{package_type}/{package_name}/versions"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /orgs/{org}/packages/{package_type}/{package_name}/versions"]["response"];
+    };
+    getAllPackageVersionsForAPackageOwnedByTheAuthenticatedUser: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /user/packages/{package_type}/{package_name}/versions"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /user/packages/{package_type}/{package_name}/versions"]["response"];
+    };
+    getAllPackageVersionsForPackageOwnedByUser: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /users/{username}/packages/{package_type}/{package_name}/versions"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /users/{username}/packages/{package_type}/{package_name}/versions"]["response"];
+    };
+    getPackageForAuthenticatedUser: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /user/packages/{package_type}/{package_name}"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /user/packages/{package_type}/{package_name}"]["response"];
+    };
+    getPackageForOrganization: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /orgs/{org}/packages/{package_type}/{package_name}"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /orgs/{org}/packages/{package_type}/{package_name}"]["response"];
+    };
+    getPackageForUser: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /users/{username}/packages/{package_type}/{package_name}"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /users/{username}/packages/{package_type}/{package_name}"]["response"];
+    };
+    getPackageVersionForAuthenticatedUser: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /user/packages/{package_type}/{package_name}/versions/{package_version_id}"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /user/packages/{package_type}/{package_name}/versions/{package_version_id}"]["response"];
+    };
+    getPackageVersionForOrganization: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /orgs/{org}/packages/{package_type}/{package_name}/versions/{package_version_id}"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /orgs/{org}/packages/{package_type}/{package_name}/versions/{package_version_id}"]["response"];
+    };
+    getPackageVersionForUser: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /users/{username}/packages/{package_type}/{package_name}/versions/{package_version_id}"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /users/{username}/packages/{package_type}/{package_name}/versions/{package_version_id}"]["response"];
+    };
+    restorePackageForAuthenticatedUser: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["POST /user/packages/{package_type}/{package_name}/restore"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["POST /user/packages/{package_type}/{package_name}/restore"]["response"];
+    };
+    restorePackageForOrg: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["POST /orgs/{org}/packages/{package_type}/{package_name}/restore"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["POST /orgs/{org}/packages/{package_type}/{package_name}/restore"]["response"];
+    };
+    restorePackageVersionForAuthenticatedUser: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["POST /user/packages/{package_type}/{package_name}/versions/{package_version_id}/restore"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["POST /user/packages/{package_type}/{package_name}/versions/{package_version_id}/restore"]["response"];
+    };
+    restorePackageVersionForOrg: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["POST /orgs/{org}/packages/{package_type}/{package_name}/versions/{package_version_id}/restore"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["POST /orgs/{org}/packages/{package_type}/{package_name}/versions/{package_version_id}/restore"]["response"];
+    };
+  };
   projects: {
     addCollaborator: {
       parameters: RequestParameters &

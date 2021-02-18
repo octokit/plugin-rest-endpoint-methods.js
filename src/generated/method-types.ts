@@ -4404,6 +4404,281 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
   };
+  packages: {
+    /**
+     * Deletes a package owned by the authenticated user. You cannot delete a public package if any version of the package has more than 25 downloads. In this scenario, contact GitHub support for further assistance.
+     *
+     * To use this endpoint, you must authenticate using an access token with the `packages:read` and `packages:delete` scope.
+     * If `package_type` is not `container`, your token must also include the `repo` scope.
+     */
+    deletePackageForAuthenticatedUser: {
+      (
+        params?: RestEndpointMethodTypes["packages"]["deletePackageForAuthenticatedUser"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["packages"]["deletePackageForAuthenticatedUser"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Deletes an entire package in an organization. You cannot delete a public package if any version of the package has more than 25 downloads. In this scenario, contact GitHub support for further assistance.
+     *
+     * To use this endpoint, you must have admin permissions in the organization and authenticate using an access token with the `packages:read` scope. In addition:
+     * - If `package_type` is not `container`, your token must also include the `repo` scope.
+     * - If `package_type` is `container`, you must also have admin permissions to the container you want to delete.
+     */
+    deletePackageForOrg: {
+      (
+        params?: RestEndpointMethodTypes["packages"]["deletePackageForOrg"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["packages"]["deletePackageForOrg"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Deletes a specific package version for a package owned by the authenticated user.  If the package is public and the package version has more than 25 downloads, you cannot delete the package version. In this scenario, contact GitHub support for further assistance.
+     *
+     * To use this endpoint, you must have admin permissions in the organization and authenticate using an access token with the `packages:read` scope.
+     * If `package_type` is not `container`, your token must also include the `repo` scope.
+     */
+    deletePackageVersionForAuthenticatedUser: {
+      (
+        params?: RestEndpointMethodTypes["packages"]["deletePackageVersionForAuthenticatedUser"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["packages"]["deletePackageVersionForAuthenticatedUser"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Deletes a specific package version in an organization. If the package is public and the package version has more than 25 downloads, you cannot delete the package version. In this scenario, contact GitHub support for further assistance.
+     *
+     * To use this endpoint, you must have admin permissions in the organization and authenticate using an access token with the `packages:read` scope. In addition:
+     * - If `package_type` is not `container`, your token must also include the `repo` scope.
+     * - If `package_type` is `container`, you must also have admin permissions to the container you want to delete.
+     */
+    deletePackageVersionForOrg: {
+      (
+        params?: RestEndpointMethodTypes["packages"]["deletePackageVersionForOrg"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["packages"]["deletePackageVersionForOrg"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Returns all package versions for a package owned by an organization.
+     *
+     * To use this endpoint, you must authenticate using an access token with the `packages:read` scope.
+     * If `package_type` is not `container`, your token must also include the `repo` scope.
+     */
+    getAllPackageVersionsForAPackageOwnedByAnOrg: {
+      (
+        params?: RestEndpointMethodTypes["packages"]["getAllPackageVersionsForAPackageOwnedByAnOrg"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["packages"]["getAllPackageVersionsForAPackageOwnedByAnOrg"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Returns all package versions for a package owned by the authenticated user.
+     *
+     * To use this endpoint, you must authenticate using an access token with the `packages:read` scope.
+     * If `package_type` is not `container`, your token must also include the `repo` scope.
+     */
+    getAllPackageVersionsForAPackageOwnedByTheAuthenticatedUser: {
+      (
+        params?: RestEndpointMethodTypes["packages"]["getAllPackageVersionsForAPackageOwnedByTheAuthenticatedUser"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["packages"]["getAllPackageVersionsForAPackageOwnedByTheAuthenticatedUser"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Returns all package versions for a public package owned by a specified user.
+     *
+     * To use this endpoint, you must authenticate using an access token with the `packages:read` scope.
+     * If `package_type` is not `container`, your token must also include the `repo` scope.
+     */
+    getAllPackageVersionsForPackageOwnedByUser: {
+      (
+        params?: RestEndpointMethodTypes["packages"]["getAllPackageVersionsForPackageOwnedByUser"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["packages"]["getAllPackageVersionsForPackageOwnedByUser"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Gets a specific package for a package owned by the authenticated user.
+     *
+     * To use this endpoint, you must authenticate using an access token with the `packages:read` scope.
+     * If `package_type` is not `container`, your token must also include the `repo` scope.
+     */
+    getPackageForAuthenticatedUser: {
+      (
+        params?: RestEndpointMethodTypes["packages"]["getPackageForAuthenticatedUser"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["packages"]["getPackageForAuthenticatedUser"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Gets a specific package in an organization.
+     *
+     * To use this endpoint, you must authenticate using an access token with the `packages:read` scope.
+     * If `package_type` is not `container`, your token must also include the `repo` scope.
+     */
+    getPackageForOrganization: {
+      (
+        params?: RestEndpointMethodTypes["packages"]["getPackageForOrganization"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["packages"]["getPackageForOrganization"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Gets a specific package metadata for a public package owned by a user.
+     *
+     * To use this endpoint, you must authenticate using an access token with the `packages:read` scope.
+     * If `package_type` is not `container`, your token must also include the `repo` scope.
+     */
+    getPackageForUser: {
+      (
+        params?: RestEndpointMethodTypes["packages"]["getPackageForUser"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["packages"]["getPackageForUser"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Gets a specific package version for a package owned by the authenticated user.
+     *
+     * To use this endpoint, you must authenticate using an access token with the `packages:read` scope.
+     * If `package_type` is not `container`, your token must also include the `repo` scope.
+     */
+    getPackageVersionForAuthenticatedUser: {
+      (
+        params?: RestEndpointMethodTypes["packages"]["getPackageVersionForAuthenticatedUser"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["packages"]["getPackageVersionForAuthenticatedUser"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Gets a specific package version in an organization.
+     *
+     * You must authenticate using an access token with the `packages:read` scope.
+     * If `package_type` is not `container`, your token must also include the `repo` scope.
+     */
+    getPackageVersionForOrganization: {
+      (
+        params?: RestEndpointMethodTypes["packages"]["getPackageVersionForOrganization"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["packages"]["getPackageVersionForOrganization"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Gets a specific package version for a public package owned by a specified user.
+     *
+     * At this time, to use this endpoint, you must authenticate using an access token with the `packages:read` scope.
+     * If `package_type` is not `container`, your token must also include the `repo` scope.
+     */
+    getPackageVersionForUser: {
+      (
+        params?: RestEndpointMethodTypes["packages"]["getPackageVersionForUser"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["packages"]["getPackageVersionForUser"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Restores a package owned by the authenticated user.
+     *
+     * You can restore a deleted package under the following conditions:
+     *   - The package was deleted within the last 30 days.
+     *   - The same package namespace and version is still available and not reused for a new package. If the same package namespace is not available, you will not be able to restore your package. In this scenario, to restore the deleted package, you must delete the new package that uses the deleted package's namespace first.
+     *
+     * To use this endpoint, you must authenticate using an access token with the `packages:read` and `packages:write` scope. If `package_type` is not `container`, your token must also include the `repo` scope.
+     */
+    restorePackageForAuthenticatedUser: {
+      (
+        params?: RestEndpointMethodTypes["packages"]["restorePackageForAuthenticatedUser"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["packages"]["restorePackageForAuthenticatedUser"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Restores an entire package in an organization.
+     *
+     * You can restore a deleted package under the following conditions:
+     *   - The package was deleted within the last 30 days.
+     *   - The same package namespace and version is still available and not reused for a new package. If the same package namespace is not available, you will not be able to restore your package. In this scenario, to restore the deleted package, you must delete the new package that uses the deleted package's namespace first.
+     *
+     * To use this endpoint, you must have admin permissions in the organization and authenticate using an access token with the `packages:read` and `packages:write` scope. In addition:
+     * - If `package_type` is not `container`, your token must also include the `repo` scope.
+     * - If `package_type` is `container`, you must also have admin permissions to the container that you want to restore.
+     */
+    restorePackageForOrg: {
+      (
+        params?: RestEndpointMethodTypes["packages"]["restorePackageForOrg"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["packages"]["restorePackageForOrg"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Restores a package version owned by the authenticated user.
+     *
+     * You can restore a deleted package version under the following conditions:
+     *   - The package was deleted within the last 30 days.
+     *   - The same package namespace and version is still available and not reused for a new package. If the same package namespace is not available, you will not be able to restore your package. In this scenario, to restore the deleted package, you must delete the new package that uses the deleted package's namespace first.
+     *
+     * To use this endpoint, you must authenticate using an access token with the `packages:read` and `packages:write` scope. If `package_type` is not `container`, your token must also include the `repo` scope.
+     */
+    restorePackageVersionForAuthenticatedUser: {
+      (
+        params?: RestEndpointMethodTypes["packages"]["restorePackageVersionForAuthenticatedUser"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["packages"]["restorePackageVersionForAuthenticatedUser"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Restores a specific package version in an organization.
+     *
+     * You can restore a deleted package under the following conditions:
+     *   - The package was deleted within the last 30 days.
+     *   - The same package namespace and version is still available and not reused for a new package. If the same package namespace is not available, you will not be able to restore your package. In this scenario, to restore the deleted package, you must delete the new package that uses the deleted package's namespace first.
+     *
+     * To use this endpoint, you must have admin permissions in the organization and authenticate using an access token with the `packages:read` and `packages:write` scope. In addition:
+     * - If `package_type` is not `container`, your token must also include the `repo` scope.
+     * - If `package_type` is `container`, you must also have admin permissions to the container that you want to restore.
+     */
+    restorePackageVersionForOrg: {
+      (
+        params?: RestEndpointMethodTypes["packages"]["restorePackageVersionForOrg"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["packages"]["restorePackageVersionForOrg"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+  };
   projects: {
     /**
      * Adds a collaborator to an organization project and sets their permission level. You must be an organization owner or a project `admin` to add a collaborator.

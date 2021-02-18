@@ -24556,6 +24556,1141 @@
     "renamed": null
   },
   {
+    "name": "Delete a package for the authenticated user",
+    "scope": "packages",
+    "id": "deletePackageForAuthenticatedUser",
+    "method": "DELETE",
+    "url": "/user/packages/{package_type}/{package_name}",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "description": "Deletes a package owned by the authenticated user. You cannot delete a public package if any version of the package has more than 25 downloads. In this scenario, contact GitHub support for further assistance.\n\nTo use this endpoint, you must authenticate using an access token with the `packages:read` and `packages:delete` scope.\nIf `package_type` is not `container`, your token must also include the `repo` scope.",
+    "documentationUrl": "https://docs.github.com/rest/reference/packages#delete-a-package-for-the-authenticated-user",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "package_type",
+        "description": "The type of supported package. Can be one of `npm`, `maven`, `rubygems`, `nuget`, `docker`, or `container`. For Docker images that use the package namespace `https://ghcr.io/owner/package-name`, use `container`.",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": ["npm", "maven", "rubygems", "docker", "nuget", "container"],
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "package_name",
+        "description": "The name of the package.",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      { "code": 204, "description": "Empty response", "examples": null },
+      {
+        "code": 401,
+        "description": "Requires Authentication",
+        "examples": null
+      },
+      { "code": 403, "description": "Forbidden", "examples": null },
+      { "code": 404, "description": "Resource Not Found", "examples": null }
+    ],
+    "renamed": null
+  },
+  {
+    "name": "Delete a package for an organization",
+    "scope": "packages",
+    "id": "deletePackageForOrg",
+    "method": "DELETE",
+    "url": "/orgs/{org}/packages/{package_type}/{package_name}",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "description": "Deletes an entire package in an organization. You cannot delete a public package if any version of the package has more than 25 downloads. In this scenario, contact GitHub support for further assistance.\n\nTo use this endpoint, you must have admin permissions in the organization and authenticate using an access token with the `packages:read` scope. In addition:\n- If `package_type` is not `container`, your token must also include the `repo` scope.\n- If `package_type` is `container`, you must also have admin permissions to the container you want to delete.",
+    "documentationUrl": "https://docs.github.com/rest/reference/packages#delete-a-package-for-an-organization",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "package_type",
+        "description": "The type of supported package. Can be one of `npm`, `maven`, `rubygems`, `nuget`, `docker`, or `container`. For Docker images that use the package namespace `https://ghcr.io/owner/package-name`, use `container`.",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": ["npm", "maven", "rubygems", "docker", "nuget", "container"],
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "package_name",
+        "description": "The name of the package.",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "org",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      { "code": 204, "description": "Empty response", "examples": null },
+      {
+        "code": 401,
+        "description": "Requires Authentication",
+        "examples": null
+      },
+      { "code": 403, "description": "Forbidden", "examples": null },
+      { "code": 404, "description": "Resource Not Found", "examples": null }
+    ],
+    "renamed": null
+  },
+  {
+    "name": "Delete a package version for the authenticated user",
+    "scope": "packages",
+    "id": "deletePackageVersionForAuthenticatedUser",
+    "method": "DELETE",
+    "url": "/user/packages/{package_type}/{package_name}/versions/{package_version_id}",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "description": "Deletes a specific package version for a package owned by the authenticated user.  If the package is public and the package version has more than 25 downloads, you cannot delete the package version. In this scenario, contact GitHub support for further assistance.\n\nTo use this endpoint, you must have admin permissions in the organization and authenticate using an access token with the `packages:read` scope.\nIf `package_type` is not `container`, your token must also include the `repo` scope.",
+    "documentationUrl": "https://docs.github.com/rest/reference/packages#delete-a-package-version-for-the-authenticated-user",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "package_type",
+        "description": "The type of supported package. Can be one of `npm`, `maven`, `rubygems`, `nuget`, `docker`, or `container`. For Docker images that use the package namespace `https://ghcr.io/owner/package-name`, use `container`.",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": ["npm", "maven", "rubygems", "docker", "nuget", "container"],
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "package_name",
+        "description": "The name of the package.",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "package_version_id",
+        "description": "Unique identifier of the package version.",
+        "in": "PATH",
+        "type": "integer",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      { "code": 204, "description": "Empty response", "examples": null },
+      {
+        "code": 401,
+        "description": "Requires Authentication",
+        "examples": null
+      },
+      { "code": 403, "description": "Forbidden", "examples": null },
+      { "code": 404, "description": "Resource Not Found", "examples": null }
+    ],
+    "renamed": null
+  },
+  {
+    "name": "Delete package version for an organization",
+    "scope": "packages",
+    "id": "deletePackageVersionForOrg",
+    "method": "DELETE",
+    "url": "/orgs/{org}/packages/{package_type}/{package_name}/versions/{package_version_id}",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "description": "Deletes a specific package version in an organization. If the package is public and the package version has more than 25 downloads, you cannot delete the package version. In this scenario, contact GitHub support for further assistance.\n\nTo use this endpoint, you must have admin permissions in the organization and authenticate using an access token with the `packages:read` scope. In addition:\n- If `package_type` is not `container`, your token must also include the `repo` scope.\n- If `package_type` is `container`, you must also have admin permissions to the container you want to delete.",
+    "documentationUrl": "https://docs.github.com/rest/reference/packages#delete-a-package-version-for-an-organization",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "package_type",
+        "description": "The type of supported package. Can be one of `npm`, `maven`, `rubygems`, `nuget`, `docker`, or `container`. For Docker images that use the package namespace `https://ghcr.io/owner/package-name`, use `container`.",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": ["npm", "maven", "rubygems", "docker", "nuget", "container"],
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "package_name",
+        "description": "The name of the package.",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "org",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "package_version_id",
+        "description": "Unique identifier of the package version.",
+        "in": "PATH",
+        "type": "integer",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      { "code": 204, "description": "Empty response", "examples": null },
+      {
+        "code": 401,
+        "description": "Requires Authentication",
+        "examples": null
+      },
+      { "code": 403, "description": "Forbidden", "examples": null },
+      { "code": 404, "description": "Resource Not Found", "examples": null }
+    ],
+    "renamed": null
+  },
+  {
+    "name": "Get all package versions for a package owned by an organization",
+    "scope": "packages",
+    "id": "getAllPackageVersionsForAPackageOwnedByAnOrg",
+    "method": "GET",
+    "url": "/orgs/{org}/packages/{package_type}/{package_name}/versions",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "description": "Returns all package versions for a package owned by an organization.\n\nTo use this endpoint, you must authenticate using an access token with the `packages:read` scope.\nIf `package_type` is not `container`, your token must also include the `repo` scope.",
+    "documentationUrl": "https://docs.github.com/rest/reference/packages#get-all-package-versions-for-a-package-owned-by-the-authenticated-user",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "package_type",
+        "description": "The type of supported package. Can be one of `npm`, `maven`, `rubygems`, `nuget`, `docker`, or `container`. For Docker images that use the package namespace `https://ghcr.io/owner/package-name`, use `container`.",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": ["npm", "maven", "rubygems", "docker", "nuget", "container"],
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "package_name",
+        "description": "The name of the package.",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "org",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "examples": [
+          {
+            "data": "[{\"id\":245301,\"name\":\"1.0.4\",\"url\":\"https://api.github.com/orgs/octo-org/packages/npm/hello-world-npm/versions/245301\",\"package_html_url\":\"https://github.com/octo-org/hello-world-npm/packages/43752\",\"created_at\":\"2019-11-05T22:49:04Z\",\"updated_at\":\"2019-11-05T22:49:04Z\",\"html_url\":\"https://github.com/octo-org/hello-world-npm/packages/43752?version=1.0.4\",\"metadata\":{\"package_type\":\"npm\"}},{\"id\":209672,\"name\":\"1.0.3\",\"url\":\"https://api.github.com/orgs/octo-org/packages/npm/hello-world-npm/versions/209672\",\"package_html_url\":\"https://github.com/octo-org/hello-world-npm/packages/43752\",\"created_at\":\"2019-10-29T15:42:11Z\",\"updated_at\":\"2019-10-29T15:42:12Z\",\"html_url\":\"https://github.com/octo-org/hello-world-npm/packages/43752?version=1.0.3\",\"metadata\":{\"package_type\":\"npm\"}}]"
+          }
+        ]
+      },
+      {
+        "code": 401,
+        "description": "Requires Authentication",
+        "examples": null
+      },
+      { "code": 403, "description": "Forbidden", "examples": null },
+      { "code": 404, "description": "Resource Not Found", "examples": null }
+    ],
+    "renamed": null
+  },
+  {
+    "name": "Get all package versions for a package owned by the authenticated user",
+    "scope": "packages",
+    "id": "getAllPackageVersionsForAPackageOwnedByTheAuthenticatedUser",
+    "method": "GET",
+    "url": "/user/packages/{package_type}/{package_name}/versions",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "description": "Returns all package versions for a package owned by the authenticated user.\n\nTo use this endpoint, you must authenticate using an access token with the `packages:read` scope.\nIf `package_type` is not `container`, your token must also include the `repo` scope.",
+    "documentationUrl": "https://docs.github.com/rest/reference/packages#get-all-package-versions-for-a-package-owned-by-the-authenticated-user",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "package_type",
+        "description": "The type of supported package. Can be one of `npm`, `maven`, `rubygems`, `nuget`, `docker`, or `container`. For Docker images that use the package namespace `https://ghcr.io/owner/package-name`, use `container`.",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": ["npm", "maven", "rubygems", "docker", "nuget", "container"],
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "package_name",
+        "description": "The name of the package.",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "examples": [
+          {
+            "data": "[{\"id\":45763,\"name\":\"sha256:08a44bab0bddaddd8837a8b381aebc2e4b933768b981685a9e088360af0d3dd9\",\"url\":\"https://api.github.com/users/octocat/packages/container/hello_docker/versions/45763\",\"package_html_url\":\"https://github.com/users/octocat/packages/container/package/hello_docker\",\"created_at\":\"2020-09-11T21:56:40Z\",\"updated_at\":\"2021-02-05T21:32:32Z\",\"html_url\":\"https://github.com/users/octocat/packages/container/hello_docker/45763\",\"metadata\":{\"package_type\":\"container\",\"container\":{\"tags\":[\"latest\"]}}},{\"id\":881,\"name\":\"sha256:b3d3e366b55f9a54599220198b3db5da8f53592acbbb7dc7e4e9878762fc5344\",\"url\":\"https://api.github.com/users/octocat/packages/container/hello_docker/versions/881\",\"package_html_url\":\"https://github.com/users/octocat/packages/container/package/hello_docker\",\"created_at\":\"2020-05-21T22:22:20Z\",\"updated_at\":\"2021-02-05T21:32:32Z\",\"html_url\":\"https://github.com/users/octocat/packages/container/hello_docker/881\",\"metadata\":{\"package_type\":\"container\",\"container\":{\"tags\":[]}}}]"
+          }
+        ]
+      },
+      {
+        "code": 401,
+        "description": "Requires Authentication",
+        "examples": null
+      },
+      { "code": 403, "description": "Forbidden", "examples": null },
+      { "code": 404, "description": "Resource Not Found", "examples": null }
+    ],
+    "renamed": null
+  },
+  {
+    "name": "Get all package versions for a package owned by a user",
+    "scope": "packages",
+    "id": "getAllPackageVersionsForPackageOwnedByUser",
+    "method": "GET",
+    "url": "/users/{username}/packages/{package_type}/{package_name}/versions",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "description": "Returns all package versions for a public package owned by a specified user.\n\nTo use this endpoint, you must authenticate using an access token with the `packages:read` scope.\nIf `package_type` is not `container`, your token must also include the `repo` scope.",
+    "documentationUrl": "https://docs.github.com/rest/reference/packages#get-all-package-versions-for-a-package-owned-by-a-user",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "package_type",
+        "description": "The type of supported package. Can be one of `npm`, `maven`, `rubygems`, `nuget`, `docker`, or `container`. For Docker images that use the package namespace `https://ghcr.io/owner/package-name`, use `container`.",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": ["npm", "maven", "rubygems", "docker", "nuget", "container"],
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "package_name",
+        "description": "The name of the package.",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "username",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "examples": [
+          {
+            "data": "[{\"id\":3497268,\"name\":\"0.3.0\",\"url\":\"https://api.github.com/users/octocat/packages/rubygems/octo-name/versions/3497268\",\"package_html_url\":\"https://github.com/octocat/octo-name-repo/packages/40201\",\"license\":\"MIT\",\"created_at\":\"2020-08-31T15:22:11Z\",\"updated_at\":\"2020-08-31T15:22:12Z\",\"description\":\"Project for octocats\",\"html_url\":\"https://github.com/octocat/octo-name-repo/packages/40201?version=0.3.0\",\"metadata\":{\"package_type\":\"rubygems\"}},{\"id\":387039,\"name\":\"0.2.0\",\"url\":\"https://api.github.com/users/octocat/packages/rubygems/octo-name/versions/387039\",\"package_html_url\":\"https://github.com/octocat/octo-name-repo/packages/40201\",\"license\":\"MIT\",\"created_at\":\"2019-12-01T20:49:29Z\",\"updated_at\":\"2019-12-01T20:49:30Z\",\"description\":\"Project for octocats\",\"html_url\":\"https://github.com/octocat/octo-name-repo/packages/40201?version=0.2.0\",\"metadata\":{\"package_type\":\"rubygems\"}},{\"id\":169770,\"name\":\"0.1.0\",\"url\":\"https://api.github.com/users/octocat/packages/rubygems/octo-name/versions/169770\",\"package_html_url\":\"https://github.com/octocat/octo-name-repo/packages/40201\",\"license\":\"MIT\",\"created_at\":\"2019-10-20T14:17:14Z\",\"updated_at\":\"2019-10-20T14:17:15Z\",\"html_url\":\"https://github.com/octocat/octo-name-repo/packages/40201?version=0.1.0\",\"metadata\":{\"package_type\":\"rubygems\"}}]"
+          }
+        ]
+      },
+      {
+        "code": 401,
+        "description": "Requires Authentication",
+        "examples": null
+      },
+      { "code": 403, "description": "Forbidden", "examples": null },
+      { "code": 404, "description": "Resource Not Found", "examples": null }
+    ],
+    "renamed": null
+  },
+  {
+    "name": "Get a package for the authenticated user",
+    "scope": "packages",
+    "id": "getPackageForAuthenticatedUser",
+    "method": "GET",
+    "url": "/user/packages/{package_type}/{package_name}",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "description": "Gets a specific package for a package owned by the authenticated user.\n\nTo use this endpoint, you must authenticate using an access token with the `packages:read` scope.\nIf `package_type` is not `container`, your token must also include the `repo` scope.",
+    "documentationUrl": "https://docs.github.com/rest/reference/packages#get-a-package-for-the-authenticated-user",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "package_type",
+        "description": "The type of supported package. Can be one of `npm`, `maven`, `rubygems`, `nuget`, `docker`, or `container`. For Docker images that use the package namespace `https://ghcr.io/owner/package-name`, use `container`.",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": ["npm", "maven", "rubygems", "docker", "nuget", "container"],
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "package_name",
+        "description": "The name of the package.",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "examples": [
+          {
+            "data": "{\"id\":40201,\"name\":\"octo-name\",\"package_type\":\"rubygems\",\"owner\":{\"login\":\"octocat\",\"id\":209477,\"node_id\":\"MDQ6VXNlcjIwOTQ3Nw==\",\"avatar_url\":\"https://avatars.githubusercontent.com/u/209477?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/octocat\",\"html_url\":\"https://github.com/octocat\",\"followers_url\":\"https://api.github.com/users/octocat/followers\",\"following_url\":\"https://api.github.com/users/octocat/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/octocat/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/octocat/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/octocat/subscriptions\",\"organizations_url\":\"https://api.github.com/users/octocat/orgs\",\"repos_url\":\"https://api.github.com/users/octocat/repos\",\"events_url\":\"https://api.github.com/users/octocat/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/octocat/received_events\",\"type\":\"User\",\"site_admin\":true},\"version_count\":3,\"visibility\":\"public\",\"url\":\"https://api.github.com/users/octocat/packages/rubygems/octo-name\",\"created_at\":\"2019-10-20T14:17:14Z\",\"updated_at\":\"2019-10-20T14:17:14Z\",\"repository\":{\"id\":216219492,\"node_id\":\"MDEwOlJlcG9zaXRvcnkyMTYyMTk0OTI=\",\"name\":\"octo-name-repo\",\"full_name\":\"octocat/octo-name-repo\",\"private\":false,\"owner\":{\"login\":\"octocat\",\"id\":209477,\"node_id\":\"MDQ6VXNlcjIwOTQ3Nw==\",\"avatar_url\":\"https://avatars.githubusercontent.com/u/209477?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/octocat\",\"html_url\":\"https://github.com/octocat\",\"followers_url\":\"https://api.github.com/users/octocat/followers\",\"following_url\":\"https://api.github.com/users/octocat/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/octocat/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/octocat/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/octocat/subscriptions\",\"organizations_url\":\"https://api.github.com/users/octocat/orgs\",\"repos_url\":\"https://api.github.com/users/octocat/repos\",\"events_url\":\"https://api.github.com/users/octocat/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/octocat/received_events\",\"type\":\"User\",\"site_admin\":true},\"html_url\":\"https://github.com/octocat/octo-name-repo\",\"description\":\"Project for octocats\",\"fork\":false,\"url\":\"https://api.github.com/repos/octocat/octo-name-repo\",\"forks_url\":\"https://api.github.com/repos/octocat/octo-name-repo/forks\",\"keys_url\":\"https://api.github.com/repos/octocat/octo-name-repo/keys{/key_id}\",\"collaborators_url\":\"https://api.github.com/repos/octocat/octo-name-repo/collaborators{/collaborator}\",\"teams_url\":\"https://api.github.com/repos/octocat/octo-name-repo/teams\",\"hooks_url\":\"https://api.github.com/repos/octocat/octo-name-repo/hooks\",\"issue_events_url\":\"https://api.github.com/repos/octocat/octo-name-repo/issues/events{/number}\",\"events_url\":\"https://api.github.com/repos/octocat/octo-name-repo/events\",\"assignees_url\":\"https://api.github.com/repos/octocat/octo-name-repo/assignees{/user}\",\"branches_url\":\"https://api.github.com/repos/octocat/octo-name-repo/branches{/branch}\",\"tags_url\":\"https://api.github.com/repos/octocat/octo-name-repo/tags\",\"blobs_url\":\"https://api.github.com/repos/octocat/octo-name-repo/git/blobs{/sha}\",\"git_tags_url\":\"https://api.github.com/repos/octocat/octo-name-repo/git/tags{/sha}\",\"git_refs_url\":\"https://api.github.com/repos/octocat/octo-name-repo/git/refs{/sha}\",\"trees_url\":\"https://api.github.com/repos/octocat/octo-name-repo/git/trees{/sha}\",\"statuses_url\":\"https://api.github.com/repos/octocat/octo-name-repo/statuses/{sha}\",\"languages_url\":\"https://api.github.com/repos/octocat/octo-name-repo/languages\",\"stargazers_url\":\"https://api.github.com/repos/octocat/octo-name-repo/stargazers\",\"contributors_url\":\"https://api.github.com/repos/octocat/octo-name-repo/contributors\",\"subscribers_url\":\"https://api.github.com/repos/octocat/octo-name-repo/subscribers\",\"subscription_url\":\"https://api.github.com/repos/octocat/octo-name-repo/subscription\",\"commits_url\":\"https://api.github.com/repos/octocat/octo-name-repo/commits{/sha}\",\"git_commits_url\":\"https://api.github.com/repos/octocat/octo-name-repo/git/commits{/sha}\",\"comments_url\":\"https://api.github.com/repos/octocat/octo-name-repo/comments{/number}\",\"issue_comment_url\":\"https://api.github.com/repos/octocat/octo-name-repo/issues/comments{/number}\",\"contents_url\":\"https://api.github.com/repos/octocat/octo-name-repo/contents/{+path}\",\"compare_url\":\"https://api.github.com/repos/octocat/octo-name-repo/compare/{base}...{head}\",\"merges_url\":\"https://api.github.com/repos/octocat/octo-name-repo/merges\",\"archive_url\":\"https://api.github.com/repos/octocat/octo-name-repo/{archive_format}{/ref}\",\"downloads_url\":\"https://api.github.com/repos/octocat/octo-name-repo/downloads\",\"issues_url\":\"https://api.github.com/repos/octocat/octo-name-repo/issues{/number}\",\"pulls_url\":\"https://api.github.com/repos/octocat/octo-name-repo/pulls{/number}\",\"milestones_url\":\"https://api.github.com/repos/octocat/octo-name-repo/milestones{/number}\",\"notifications_url\":\"https://api.github.com/repos/octocat/octo-name-repo/notifications{?since,all,participating}\",\"labels_url\":\"https://api.github.com/repos/octocat/octo-name-repo/labels{/name}\",\"releases_url\":\"https://api.github.com/repos/octocat/octo-name-repo/releases{/id}\",\"deployments_url\":\"https://api.github.com/repos/octocat/octo-name-repo/deployments\"},\"html_url\":\"https://github.com/octocat/octo-name-repo/packages/40201\"}"
+          }
+        ]
+      }
+    ],
+    "renamed": null
+  },
+  {
+    "name": "Get a package for an organization",
+    "scope": "packages",
+    "id": "getPackageForOrganization",
+    "method": "GET",
+    "url": "/orgs/{org}/packages/{package_type}/{package_name}",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "description": "Gets a specific package in an organization.\n\nTo use this endpoint, you must authenticate using an access token with the `packages:read` scope.\nIf `package_type` is not `container`, your token must also include the `repo` scope.",
+    "documentationUrl": "https://docs.github.com/rest/reference/packages#get-a-package-for-an-organization",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "package_type",
+        "description": "The type of supported package. Can be one of `npm`, `maven`, `rubygems`, `nuget`, `docker`, or `container`. For Docker images that use the package namespace `https://ghcr.io/owner/package-name`, use `container`.",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": ["npm", "maven", "rubygems", "docker", "nuget", "container"],
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "package_name",
+        "description": "The name of the package.",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "org",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "examples": [
+          {
+            "data": "{\"id\":197,\"name\":\"hello_docker\",\"package_type\":\"container\",\"owner\":{\"login\":\"github\",\"id\":9919,\"node_id\":\"MDEyOk9yZ2FuaXphdGlvbjk5MTk=\",\"avatar_url\":\"https://avatars.githubusercontent.com/u/9919?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/github\",\"html_url\":\"https://github.com/github\",\"followers_url\":\"https://api.github.com/users/github/followers\",\"following_url\":\"https://api.github.com/users/github/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/github/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/github/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/github/subscriptions\",\"organizations_url\":\"https://api.github.com/users/github/orgs\",\"repos_url\":\"https://api.github.com/users/github/repos\",\"events_url\":\"https://api.github.com/users/github/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/github/received_events\",\"type\":\"Organization\",\"site_admin\":false},\"version_count\":1,\"visibility\":\"private\",\"url\":\"https://api.github.com/orgs/github/packages/container/hello_docker\",\"created_at\":\"2020-05-19T22:19:11Z\",\"updated_at\":\"2020-05-19T22:19:11Z\",\"html_url\":\"https://github.com/orgs/github/packages/container/package/hello_docker\"}"
+          }
+        ]
+      }
+    ],
+    "renamed": null
+  },
+  {
+    "name": "Get a package for a user",
+    "scope": "packages",
+    "id": "getPackageForUser",
+    "method": "GET",
+    "url": "/users/{username}/packages/{package_type}/{package_name}",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "description": "Gets a specific package metadata for a public package owned by a user.\n\nTo use this endpoint, you must authenticate using an access token with the `packages:read` scope.\nIf `package_type` is not `container`, your token must also include the `repo` scope.",
+    "documentationUrl": "https://docs.github.com/rest/reference/packages#get-a-package-for-a-user",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "package_type",
+        "description": "The type of supported package. Can be one of `npm`, `maven`, `rubygems`, `nuget`, `docker`, or `container`. For Docker images that use the package namespace `https://ghcr.io/owner/package-name`, use `container`.",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": ["npm", "maven", "rubygems", "docker", "nuget", "container"],
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "package_name",
+        "description": "The name of the package.",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "username",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "examples": [
+          {
+            "data": "{\"id\":40201,\"name\":\"octo-name\",\"package_type\":\"rubygems\",\"owner\":{\"login\":\"octocat\",\"id\":209477,\"node_id\":\"MDQ6VXNlcjIwOTQ3Nw==\",\"avatar_url\":\"https://avatars.githubusercontent.com/u/209477?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/octocat\",\"html_url\":\"https://github.com/octocat\",\"followers_url\":\"https://api.github.com/users/octocat/followers\",\"following_url\":\"https://api.github.com/users/octocat/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/octocat/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/octocat/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/octocat/subscriptions\",\"organizations_url\":\"https://api.github.com/users/octocat/orgs\",\"repos_url\":\"https://api.github.com/users/octocat/repos\",\"events_url\":\"https://api.github.com/users/octocat/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/octocat/received_events\",\"type\":\"User\",\"site_admin\":true},\"version_count\":3,\"visibility\":\"public\",\"url\":\"https://api.github.com/users/octocat/packages/rubygems/octo-name\",\"created_at\":\"2019-10-20T14:17:14Z\",\"updated_at\":\"2019-10-20T14:17:14Z\",\"repository\":{\"id\":216219492,\"node_id\":\"MDEwOlJlcG9zaXRvcnkyMTYyMTk0OTI=\",\"name\":\"octo-name-repo\",\"full_name\":\"octocat/octo-name-repo\",\"private\":false,\"owner\":{\"login\":\"octocat\",\"id\":209477,\"node_id\":\"MDQ6VXNlcjIwOTQ3Nw==\",\"avatar_url\":\"https://avatars.githubusercontent.com/u/209477?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/octocat\",\"html_url\":\"https://github.com/octocat\",\"followers_url\":\"https://api.github.com/users/octocat/followers\",\"following_url\":\"https://api.github.com/users/octocat/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/octocat/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/octocat/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/octocat/subscriptions\",\"organizations_url\":\"https://api.github.com/users/octocat/orgs\",\"repos_url\":\"https://api.github.com/users/octocat/repos\",\"events_url\":\"https://api.github.com/users/octocat/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/octocat/received_events\",\"type\":\"User\",\"site_admin\":true},\"html_url\":\"https://github.com/octocat/octo-name-repo\",\"description\":\"Project for octocats\",\"fork\":false,\"url\":\"https://api.github.com/repos/octocat/octo-name-repo\",\"forks_url\":\"https://api.github.com/repos/octocat/octo-name-repo/forks\",\"keys_url\":\"https://api.github.com/repos/octocat/octo-name-repo/keys{/key_id}\",\"collaborators_url\":\"https://api.github.com/repos/octocat/octo-name-repo/collaborators{/collaborator}\",\"teams_url\":\"https://api.github.com/repos/octocat/octo-name-repo/teams\",\"hooks_url\":\"https://api.github.com/repos/octocat/octo-name-repo/hooks\",\"issue_events_url\":\"https://api.github.com/repos/octocat/octo-name-repo/issues/events{/number}\",\"events_url\":\"https://api.github.com/repos/octocat/octo-name-repo/events\",\"assignees_url\":\"https://api.github.com/repos/octocat/octo-name-repo/assignees{/user}\",\"branches_url\":\"https://api.github.com/repos/octocat/octo-name-repo/branches{/branch}\",\"tags_url\":\"https://api.github.com/repos/octocat/octo-name-repo/tags\",\"blobs_url\":\"https://api.github.com/repos/octocat/octo-name-repo/git/blobs{/sha}\",\"git_tags_url\":\"https://api.github.com/repos/octocat/octo-name-repo/git/tags{/sha}\",\"git_refs_url\":\"https://api.github.com/repos/octocat/octo-name-repo/git/refs{/sha}\",\"trees_url\":\"https://api.github.com/repos/octocat/octo-name-repo/git/trees{/sha}\",\"statuses_url\":\"https://api.github.com/repos/octocat/octo-name-repo/statuses/{sha}\",\"languages_url\":\"https://api.github.com/repos/octocat/octo-name-repo/languages\",\"stargazers_url\":\"https://api.github.com/repos/octocat/octo-name-repo/stargazers\",\"contributors_url\":\"https://api.github.com/repos/octocat/octo-name-repo/contributors\",\"subscribers_url\":\"https://api.github.com/repos/octocat/octo-name-repo/subscribers\",\"subscription_url\":\"https://api.github.com/repos/octocat/octo-name-repo/subscription\",\"commits_url\":\"https://api.github.com/repos/octocat/octo-name-repo/commits{/sha}\",\"git_commits_url\":\"https://api.github.com/repos/octocat/octo-name-repo/git/commits{/sha}\",\"comments_url\":\"https://api.github.com/repos/octocat/octo-name-repo/comments{/number}\",\"issue_comment_url\":\"https://api.github.com/repos/octocat/octo-name-repo/issues/comments{/number}\",\"contents_url\":\"https://api.github.com/repos/octocat/octo-name-repo/contents/{+path}\",\"compare_url\":\"https://api.github.com/repos/octocat/octo-name-repo/compare/{base}...{head}\",\"merges_url\":\"https://api.github.com/repos/octocat/octo-name-repo/merges\",\"archive_url\":\"https://api.github.com/repos/octocat/octo-name-repo/{archive_format}{/ref}\",\"downloads_url\":\"https://api.github.com/repos/octocat/octo-name-repo/downloads\",\"issues_url\":\"https://api.github.com/repos/octocat/octo-name-repo/issues{/number}\",\"pulls_url\":\"https://api.github.com/repos/octocat/octo-name-repo/pulls{/number}\",\"milestones_url\":\"https://api.github.com/repos/octocat/octo-name-repo/milestones{/number}\",\"notifications_url\":\"https://api.github.com/repos/octocat/octo-name-repo/notifications{?since,all,participating}\",\"labels_url\":\"https://api.github.com/repos/octocat/octo-name-repo/labels{/name}\",\"releases_url\":\"https://api.github.com/repos/octocat/octo-name-repo/releases{/id}\",\"deployments_url\":\"https://api.github.com/repos/octocat/octo-name-repo/deployments\"},\"html_url\":\"https://github.com/octocat/octo-name-repo/packages/40201\"}"
+          }
+        ]
+      }
+    ],
+    "renamed": null
+  },
+  {
+    "name": "Get a package version for the authenticated user",
+    "scope": "packages",
+    "id": "getPackageVersionForAuthenticatedUser",
+    "method": "GET",
+    "url": "/user/packages/{package_type}/{package_name}/versions/{package_version_id}",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "description": "Gets a specific package version for a package owned by the authenticated user.\n\nTo use this endpoint, you must authenticate using an access token with the `packages:read` scope.\nIf `package_type` is not `container`, your token must also include the `repo` scope.",
+    "documentationUrl": "https://docs.github.com/rest/reference/packages#get-a-package-version-for-the-authenticated-user",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "package_type",
+        "description": "The type of supported package. Can be one of `npm`, `maven`, `rubygems`, `nuget`, `docker`, or `container`. For Docker images that use the package namespace `https://ghcr.io/owner/package-name`, use `container`.",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": ["npm", "maven", "rubygems", "docker", "nuget", "container"],
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "package_name",
+        "description": "The name of the package.",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "package_version_id",
+        "description": "Unique identifier of the package version.",
+        "in": "PATH",
+        "type": "integer",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "examples": [
+          {
+            "data": "{\"id\":214,\"name\":\"sha256:3561f0cff06caccddb99c93bd26e712fcc56a811de0f8ea7a17bb865f30b176a\",\"url\":\"https://api.github.com/users/octocat/packages/container/hello_docker/versions/214\",\"package_html_url\":\"https://github.com/users/octocat/packages/container/package/hello_docker\",\"created_at\":\"2020-05-15T03:46:45Z\",\"updated_at\":\"2020-05-15T03:46:45Z\",\"html_url\":\"https://github.com/users/octocat/packages/container/hello_docker/214\",\"metadata\":{\"package_type\":\"container\",\"container\":{\"tags\":[\"1.13.6\"]}}}"
+          }
+        ]
+      }
+    ],
+    "renamed": null
+  },
+  {
+    "name": "Get a package version for an organization",
+    "scope": "packages",
+    "id": "getPackageVersionForOrganization",
+    "method": "GET",
+    "url": "/orgs/{org}/packages/{package_type}/{package_name}/versions/{package_version_id}",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "description": "Gets a specific package version in an organization.\n\nYou must authenticate using an access token with the `packages:read` scope.\nIf `package_type` is not `container`, your token must also include the `repo` scope.",
+    "documentationUrl": "https://docs.github.com/rest/reference/packages#get-a-package-version-for-an-organization",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "package_type",
+        "description": "The type of supported package. Can be one of `npm`, `maven`, `rubygems`, `nuget`, `docker`, or `container`. For Docker images that use the package namespace `https://ghcr.io/owner/package-name`, use `container`.",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": ["npm", "maven", "rubygems", "docker", "nuget", "container"],
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "package_name",
+        "description": "The name of the package.",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "org",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "package_version_id",
+        "description": "Unique identifier of the package version.",
+        "in": "PATH",
+        "type": "integer",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "examples": [
+          {
+            "data": "{\"id\":836,\"name\":\"sha256:b3d3e366b55f9a54599220198b3db5da8f53592acbbb7dc7e4e9878762fc5344\",\"url\":\"https://api.github.com/orgs/github/packages/container/hello_docker/versions/836\",\"package_html_url\":\"https://github.com/orgs/github/packages/container/package/hello_docker\",\"created_at\":\"2020-05-19T22:19:11Z\",\"updated_at\":\"2020-05-19T22:19:11Z\",\"html_url\":\"https://github.com/orgs/github/packages/container/hello_docker/836\",\"metadata\":{\"package_type\":\"container\",\"container\":{\"tags\":[\"latest\"]}}}"
+          }
+        ]
+      }
+    ],
+    "renamed": null
+  },
+  {
+    "name": "Get a package version for a user",
+    "scope": "packages",
+    "id": "getPackageVersionForUser",
+    "method": "GET",
+    "url": "/users/{username}/packages/{package_type}/{package_name}/versions/{package_version_id}",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "description": "Gets a specific package version for a public package owned by a specified user.\n\nAt this time, to use this endpoint, you must authenticate using an access token with the `packages:read` scope.\nIf `package_type` is not `container`, your token must also include the `repo` scope.",
+    "documentationUrl": "https://docs.github.com/rest/reference/packages#get-a-package-version-for-a-user",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "package_type",
+        "description": "The type of supported package. Can be one of `npm`, `maven`, `rubygems`, `nuget`, `docker`, or `container`. For Docker images that use the package namespace `https://ghcr.io/owner/package-name`, use `container`.",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": ["npm", "maven", "rubygems", "docker", "nuget", "container"],
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "package_name",
+        "description": "The name of the package.",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "package_version_id",
+        "description": "Unique identifier of the package version.",
+        "in": "PATH",
+        "type": "integer",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "username",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "examples": [
+          {
+            "data": "{\"id\":387039,\"name\":\"0.2.0\",\"url\":\"https://api.github.com/users/octocat/packages/rubygems/octo-name/versions/387039\",\"package_html_url\":\"https://github.com/octocat/octo-name-repo/packages/40201\",\"license\":\"MIT\",\"created_at\":\"2019-12-01T20:49:29Z\",\"updated_at\":\"2019-12-01T20:49:30Z\",\"description\":\"Octo-name client for Ruby\",\"html_url\":\"https://github.com/octocat/octo-name-repo/packages/40201?version=0.2.0\",\"metadata\":{\"package_type\":\"rubygems\"}}"
+          }
+        ]
+      }
+    ],
+    "renamed": null
+  },
+  {
+    "name": "Restore a package for the authenticated user",
+    "scope": "packages",
+    "id": "restorePackageForAuthenticatedUser",
+    "method": "POST",
+    "url": "/user/packages/{package_type}/{package_name}/restore",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "description": "Restores a package owned by the authenticated user.\n\nYou can restore a deleted package under the following conditions:\n  - The package was deleted within the last 30 days.\n  - The same package namespace and version is still available and not reused for a new package. If the same package namespace is not available, you will not be able to restore your package. In this scenario, to restore the deleted package, you must delete the new package that uses the deleted package's namespace first.\n\nTo use this endpoint, you must authenticate using an access token with the `packages:read` and `packages:write` scope. If `package_type` is not `container`, your token must also include the `repo` scope.",
+    "documentationUrl": "https://docs.github.com/rest/reference/packages#restore-a-package-for-the-authenticated-user",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "package_type",
+        "description": "The type of supported package. Can be one of `npm`, `maven`, `rubygems`, `nuget`, `docker`, or `container`. For Docker images that use the package namespace `https://ghcr.io/owner/package-name`, use `container`.",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": ["npm", "maven", "rubygems", "docker", "nuget", "container"],
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "package_name",
+        "description": "The name of the package.",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      { "code": 204, "description": "Empty response", "examples": null },
+      {
+        "code": 401,
+        "description": "Requires Authentication",
+        "examples": null
+      },
+      { "code": 403, "description": "Forbidden", "examples": null },
+      { "code": 404, "description": "Resource Not Found", "examples": null }
+    ],
+    "renamed": null
+  },
+  {
+    "name": "Restore a package for an organization",
+    "scope": "packages",
+    "id": "restorePackageForOrg",
+    "method": "POST",
+    "url": "/orgs/{org}/packages/{package_type}/{package_name}/restore",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "description": "Restores an entire package in an organization.\n\nYou can restore a deleted package under the following conditions:\n  - The package was deleted within the last 30 days.\n  - The same package namespace and version is still available and not reused for a new package. If the same package namespace is not available, you will not be able to restore your package. In this scenario, to restore the deleted package, you must delete the new package that uses the deleted package's namespace first.\n\nTo use this endpoint, you must have admin permissions in the organization and authenticate using an access token with the `packages:read` and `packages:write` scope. In addition:\n- If `package_type` is not `container`, your token must also include the `repo` scope.\n- If `package_type` is `container`, you must also have admin permissions to the container that you want to restore.",
+    "documentationUrl": "https://docs.github.com/rest/reference/packages#restore-a-package-for-an-organization",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "package_type",
+        "description": "The type of supported package. Can be one of `npm`, `maven`, `rubygems`, `nuget`, `docker`, or `container`. For Docker images that use the package namespace `https://ghcr.io/owner/package-name`, use `container`.",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": ["npm", "maven", "rubygems", "docker", "nuget", "container"],
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "package_name",
+        "description": "The name of the package.",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "org",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      { "code": 204, "description": "Empty response", "examples": null },
+      {
+        "code": 401,
+        "description": "Requires Authentication",
+        "examples": null
+      },
+      { "code": 403, "description": "Forbidden", "examples": null },
+      { "code": 404, "description": "Resource Not Found", "examples": null }
+    ],
+    "renamed": null
+  },
+  {
+    "name": "Restore a package version for the authenticated user",
+    "scope": "packages",
+    "id": "restorePackageVersionForAuthenticatedUser",
+    "method": "POST",
+    "url": "/user/packages/{package_type}/{package_name}/versions/{package_version_id}/restore",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "description": "Restores a package version owned by the authenticated user.\n\nYou can restore a deleted package version under the following conditions:\n  - The package was deleted within the last 30 days.\n  - The same package namespace and version is still available and not reused for a new package. If the same package namespace is not available, you will not be able to restore your package. In this scenario, to restore the deleted package, you must delete the new package that uses the deleted package's namespace first.\n\nTo use this endpoint, you must authenticate using an access token with the `packages:read` and `packages:write` scope. If `package_type` is not `container`, your token must also include the `repo` scope.",
+    "documentationUrl": "https://docs.github.com/rest/reference/packages#restore-a-package-version-for-the-authenticated-user",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "package_type",
+        "description": "The type of supported package. Can be one of `npm`, `maven`, `rubygems`, `nuget`, `docker`, or `container`. For Docker images that use the package namespace `https://ghcr.io/owner/package-name`, use `container`.",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": ["npm", "maven", "rubygems", "docker", "nuget", "container"],
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "package_name",
+        "description": "The name of the package.",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "package_version_id",
+        "description": "Unique identifier of the package version.",
+        "in": "PATH",
+        "type": "integer",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      { "code": 204, "description": "Empty response", "examples": null },
+      {
+        "code": 401,
+        "description": "Requires Authentication",
+        "examples": null
+      },
+      { "code": 403, "description": "Forbidden", "examples": null },
+      { "code": 404, "description": "Resource Not Found", "examples": null }
+    ],
+    "renamed": null
+  },
+  {
+    "name": "Restore package version for an organization",
+    "scope": "packages",
+    "id": "restorePackageVersionForOrg",
+    "method": "POST",
+    "url": "/orgs/{org}/packages/{package_type}/{package_name}/versions/{package_version_id}/restore",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "description": "Restores a specific package version in an organization.\n\nYou can restore a deleted package under the following conditions:\n  - The package was deleted within the last 30 days.\n  - The same package namespace and version is still available and not reused for a new package. If the same package namespace is not available, you will not be able to restore your package. In this scenario, to restore the deleted package, you must delete the new package that uses the deleted package's namespace first.\n\nTo use this endpoint, you must have admin permissions in the organization and authenticate using an access token with the `packages:read` and `packages:write` scope. In addition:\n- If `package_type` is not `container`, your token must also include the `repo` scope.\n- If `package_type` is `container`, you must also have admin permissions to the container that you want to restore.",
+    "documentationUrl": "https://docs.github.com/rest/reference/packages#restore-a-package-version-for-an-organization",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "package_type",
+        "description": "The type of supported package. Can be one of `npm`, `maven`, `rubygems`, `nuget`, `docker`, or `container`. For Docker images that use the package namespace `https://ghcr.io/owner/package-name`, use `container`.",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": ["npm", "maven", "rubygems", "docker", "nuget", "container"],
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "package_name",
+        "description": "The name of the package.",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "org",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "package_version_id",
+        "description": "Unique identifier of the package version.",
+        "in": "PATH",
+        "type": "integer",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      { "code": 204, "description": "Empty response", "examples": null },
+      {
+        "code": 401,
+        "description": "Requires Authentication",
+        "examples": null
+      },
+      { "code": 403, "description": "Forbidden", "examples": null },
+      { "code": 404, "description": "Resource Not Found", "examples": null }
+    ],
+    "renamed": null
+  },
+  {
     "name": "Add project collaborator",
     "scope": "projects",
     "id": "addCollaborator",
