@@ -611,6 +611,59 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     updateWebhook: ["PATCH /orgs/{org}/hooks/{hook_id}"],
     updateWebhookConfigForOrg: ["PATCH /orgs/{org}/hooks/{hook_id}/config"],
   },
+  packages: {
+    deletePackageForAuthenticatedUser: [
+      "DELETE /user/packages/{package_type}/{package_name}",
+    ],
+    deletePackageForOrg: [
+      "DELETE /orgs/{org}/packages/{package_type}/{package_name}",
+    ],
+    deletePackageVersionForAuthenticatedUser: [
+      "DELETE /user/packages/{package_type}/{package_name}/versions/{package_version_id}",
+    ],
+    deletePackageVersionForOrg: [
+      "DELETE /orgs/{org}/packages/{package_type}/{package_name}/versions/{package_version_id}",
+    ],
+    getAllPackageVersionsForAPackageOwnedByAnOrg: [
+      "GET /orgs/{org}/packages/{package_type}/{package_name}/versions",
+    ],
+    getAllPackageVersionsForAPackageOwnedByTheAuthenticatedUser: [
+      "GET /user/packages/{package_type}/{package_name}/versions",
+    ],
+    getAllPackageVersionsForPackageOwnedByUser: [
+      "GET /users/{username}/packages/{package_type}/{package_name}/versions",
+    ],
+    getPackageForAuthenticatedUser: [
+      "GET /user/packages/{package_type}/{package_name}",
+    ],
+    getPackageForOrganization: [
+      "GET /orgs/{org}/packages/{package_type}/{package_name}",
+    ],
+    getPackageForUser: [
+      "GET /users/{username}/packages/{package_type}/{package_name}",
+    ],
+    getPackageVersionForAuthenticatedUser: [
+      "GET /user/packages/{package_type}/{package_name}/versions/{package_version_id}",
+    ],
+    getPackageVersionForOrganization: [
+      "GET /orgs/{org}/packages/{package_type}/{package_name}/versions/{package_version_id}",
+    ],
+    getPackageVersionForUser: [
+      "GET /users/{username}/packages/{package_type}/{package_name}/versions/{package_version_id}",
+    ],
+    restorePackageForAuthenticatedUser: [
+      "POST /user/packages/{package_type}/{package_name}/restore",
+    ],
+    restorePackageForOrg: [
+      "POST /orgs/{org}/packages/{package_type}/{package_name}/restore",
+    ],
+    restorePackageVersionForAuthenticatedUser: [
+      "POST /user/packages/{package_type}/{package_name}/versions/{package_version_id}/restore",
+    ],
+    restorePackageVersionForOrg: [
+      "POST /orgs/{org}/packages/{package_type}/{package_name}/versions/{package_version_id}/restore",
+    ],
+  },
   projects: {
     addCollaborator: [
       "PUT /projects/{project_id}/collaborators/{username}",
