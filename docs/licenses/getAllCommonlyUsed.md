@@ -34,4 +34,4 @@ Results per page (max 100).
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/licenses/#get-all-commonly-used-licenses).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/v3/licenses/#get-all-commonly-used-licenses).

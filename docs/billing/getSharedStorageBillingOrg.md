@@ -37,4 +37,4 @@ octokit.billing.getSharedStorageBillingOrg({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/billing/#get-shared-storage-billing-for-an-organization).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/v3/billing/#get-shared-storage-billing-for-an-organization).

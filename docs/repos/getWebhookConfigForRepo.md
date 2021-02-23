@@ -43,4 +43,4 @@ octokit.repos.getWebhookConfigForRepo({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#get-a-webhook-configuration-for-a-repository).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/v3/repos#get-a-webhook-configuration-for-a-repository).

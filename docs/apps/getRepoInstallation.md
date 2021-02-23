@@ -39,4 +39,4 @@ octokit.apps.getRepoInstallation({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/apps/#get-a-repository-installation-for-the-authenticated-app).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/v3/apps/#get-a-repository-installation-for-the-authenticated-app).
