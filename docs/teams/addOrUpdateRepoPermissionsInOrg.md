@@ -63,4 +63,4 @@ If no permission is specified, the team's `permission` attribute will be used to
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/teams/#add-or-update-team-repository-permissions).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/v3/teams/#add-or-update-team-repository-permissions).

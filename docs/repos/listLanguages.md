@@ -37,4 +37,4 @@ octokit.repos.listLanguages({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos/#list-repository-languages).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/v3/repos/#list-repository-languages).

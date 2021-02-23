@@ -37,4 +37,4 @@ octokit.billing.getGithubPackagesBillingUser({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/billing/#get-github-packages-billing-for-a-user).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/v3/billing/#get-github-packages-billing-for-a-user).

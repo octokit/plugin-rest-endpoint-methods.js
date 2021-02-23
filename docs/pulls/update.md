@@ -68,4 +68,4 @@ Indicates whether [maintainers can modify](https://help.github.com/articles/allo
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/pulls/#update-a-pull-request).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/v3/pulls/#update-a-pull-request).

@@ -50,4 +50,4 @@ Determines whether the SSL certificate of the host for `url` will be verified wh
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/apps#update-a-webhook-configuration-for-an-app).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/v3/apps#update-a-webhook-configuration-for-an-app).

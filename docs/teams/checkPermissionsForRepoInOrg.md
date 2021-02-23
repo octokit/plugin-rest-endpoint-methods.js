@@ -53,4 +53,4 @@ team_slug parameter
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/teams/#check-team-permissions-for-a-repository).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/v3/teams/#check-team-permissions-for-a-repository).

@@ -113,4 +113,4 @@ Either `true` to allow automatically deleting head branches when pull requests a
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos/#update-a-repository).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/v3/repos/#update-a-repository).
