@@ -59,4 +59,4 @@ Determines whether the SSL certificate of the host for `url` will be verified wh
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/v3/orgs#update-a-webhook-configuration-for-an-organization).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/orgs#update-a-webhook-configuration-for-an-organization).

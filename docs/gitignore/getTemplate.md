@@ -34,4 +34,4 @@ octokit.gitignore.getTemplate({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/v3/gitignore/#get-a-gitignore-template).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/gitignore/#get-a-gitignore-template).

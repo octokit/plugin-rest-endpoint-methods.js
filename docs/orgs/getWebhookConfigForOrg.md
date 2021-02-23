@@ -39,4 +39,4 @@ octokit.orgs.getWebhookConfigForOrg({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/v3/orgs#get-a-webhook-configuration-for-an-organization).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/orgs#get-a-webhook-configuration-for-an-organization).

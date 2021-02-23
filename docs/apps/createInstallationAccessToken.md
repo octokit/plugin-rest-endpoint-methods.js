@@ -202,4 +202,4 @@ The level of permission to grant the access token to manage team discussions and
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/v3/apps/#create-an-installation-access-token-for-an-app).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/apps/#create-an-installation-access-token-for-an-app).
