@@ -39,4 +39,4 @@ octokit.licenses.getForRepo({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/v3/licenses/#get-the-license-for-a-repository).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/licenses/#get-the-license-for-a-repository).
