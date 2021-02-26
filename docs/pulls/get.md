@@ -55,4 +55,4 @@ octokit.pulls.get({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/v3/pulls/#get-a-pull-request).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/pulls/#get-a-pull-request).

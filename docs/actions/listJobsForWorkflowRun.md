@@ -37,6 +37,8 @@ octokit.actions.listJobsForWorkflowRun({
 </td></tr>
 <tr><td>run_id</td><td>yes</td><td>
 
+The id of the workflow run
+
 </td></tr>
 <tr><td>filter</td><td>no</td><td>
 

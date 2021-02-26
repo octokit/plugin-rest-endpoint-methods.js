@@ -35,4 +35,4 @@ octokit.apps.getOrgInstallation({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/v3/apps/#get-an-organization-installation-for-the-authenticated-app).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/apps/#get-an-organization-installation-for-the-authenticated-app).

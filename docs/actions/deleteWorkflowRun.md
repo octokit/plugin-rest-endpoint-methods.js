@@ -39,6 +39,8 @@ octokit.actions.deleteWorkflowRun({
 </td></tr>
 <tr><td>run_id</td><td>yes</td><td>
 
+The id of the workflow run
+
 </td></tr>
   </tbody>
 </table>

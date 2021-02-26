@@ -7,6 +7,9 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     cancelWorkflowRun: [
       "POST /repos/{owner}/{repo}/actions/runs/{run_id}/cancel",
     ],
+    createOrUpdateEnvironmentSecret: [
+      "PUT /repositories/{repository_id}/environments/{environment_name}/secrets/{secret_name}",
+    ],
     createOrUpdateOrgSecret: ["PUT /orgs/{org}/actions/secrets/{secret_name}"],
     createOrUpdateRepoSecret: [
       "PUT /repos/{owner}/{repo}/actions/secrets/{secret_name}",
@@ -26,6 +29,9 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     ],
     deleteArtifact: [
       "DELETE /repos/{owner}/{repo}/actions/artifacts/{artifact_id}",
+    ],
+    deleteEnvironmentSecret: [
+      "DELETE /repositories/{repository_id}/environments/{environment_name}/secrets/{secret_name}",
     ],
     deleteOrgSecret: ["DELETE /orgs/{org}/actions/secrets/{secret_name}"],
     deleteRepoSecret: [
@@ -69,6 +75,12 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
       "GET /repos/{owner}/{repo}/actions/permissions/selected-actions",
     ],
     getArtifact: ["GET /repos/{owner}/{repo}/actions/artifacts/{artifact_id}"],
+    getEnvironmentPublicKey: [
+      "GET /repositories/{repository_id}/environments/{environment_name}/secrets/public-key",
+    ],
+    getEnvironmentSecret: [
+      "GET /repositories/{repository_id}/environments/{environment_name}/secrets/{secret_name}",
+    ],
     getGithubActionsPermissionsOrganization: [
       "GET /orgs/{org}/actions/permissions",
     ],
@@ -78,6 +90,9 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     getJobForWorkflowRun: ["GET /repos/{owner}/{repo}/actions/jobs/{job_id}"],
     getOrgPublicKey: ["GET /orgs/{org}/actions/secrets/public-key"],
     getOrgSecret: ["GET /orgs/{org}/actions/secrets/{secret_name}"],
+    getPendingDeploymentsForRun: [
+      "GET /repos/{owner}/{repo}/actions/runs/{run_id}/pending_deployments",
+    ],
     getRepoPermissions: [
       "GET /repos/{owner}/{repo}/actions/permissions",
       {},
@@ -85,6 +100,9 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     ],
     getRepoPublicKey: ["GET /repos/{owner}/{repo}/actions/secrets/public-key"],
     getRepoSecret: ["GET /repos/{owner}/{repo}/actions/secrets/{secret_name}"],
+    getReviewsForRun: [
+      "GET /repos/{owner}/{repo}/actions/runs/{run_id}/approvals",
+    ],
     getSelfHostedRunnerForOrg: ["GET /orgs/{org}/actions/runners/{runner_id}"],
     getSelfHostedRunnerForRepo: [
       "GET /repos/{owner}/{repo}/actions/runners/{runner_id}",
@@ -98,6 +116,9 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
       "GET /repos/{owner}/{repo}/actions/workflows/{workflow_id}/timing",
     ],
     listArtifactsForRepo: ["GET /repos/{owner}/{repo}/actions/artifacts"],
+    listEnvironmentSecrets: [
+      "GET /repositories/{repository_id}/environments/{environment_name}/secrets",
+    ],
     listJobsForWorkflowRun: [
       "GET /repos/{owner}/{repo}/actions/runs/{run_id}/jobs",
     ],
@@ -126,6 +147,9 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     reRunWorkflow: ["POST /repos/{owner}/{repo}/actions/runs/{run_id}/rerun"],
     removeSelectedRepoFromOrgSecret: [
       "DELETE /orgs/{org}/actions/secrets/{secret_name}/repositories/{repository_id}",
+    ],
+    reviewPendingDeploymentsForRun: [
+      "POST /repos/{owner}/{repo}/actions/runs/{run_id}/pending_deployments",
     ],
     setAllowedActionsOrganization: [
       "PUT /orgs/{org}/actions/permissions/selected-actions",
@@ -881,7 +905,7 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
       { mediaType: { previews: ["squirrel-girl"] } },
       {
         deprecated:
-          "octokit.reactions.deleteLegacy() is deprecated, see https://docs.github.com/v3/reactions/#delete-a-reaction-legacy",
+          "octokit.reactions.deleteLegacy() is deprecated, see https://docs.github.com/rest/reference/reactions/#delete-a-reaction-legacy",
       },
     ],
     listForCommitComment: [
@@ -938,6 +962,9 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
       { mediaType: { previews: ["dorian"] } },
     ],
     compareCommits: ["GET /repos/{owner}/{repo}/compare/{base}...{head}"],
+    createAnEnvironment: [
+      "POST /repos/{owner}/{repo}/environments/{environment_name}",
+    ],
     createCommitComment: [
       "POST /repos/{owner}/{repo}/commits/{commit_sha}/comments",
     ],
@@ -973,6 +1000,9 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     ],
     deleteAdminBranchProtection: [
       "DELETE /repos/{owner}/{repo}/branches/{branch}/protection/enforce_admins",
+    ],
+    deleteAnEnvironment: [
+      "DELETE /repos/{owner}/{repo}/environments/{environment_name}",
     ],
     deleteBranchProtection: [
       "DELETE /repos/{owner}/{repo}/branches/{branch}/protection",
@@ -1032,6 +1062,7 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     getAdminBranchProtection: [
       "GET /repos/{owner}/{repo}/branches/{branch}/protection/enforce_admins",
     ],
+    getAllEnvironments: ["GET /repos/{owner}/{repo}/environments"],
     getAllStatusCheckContexts: [
       "GET /repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks/contexts",
     ],
@@ -1066,6 +1097,9 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     getDeployment: ["GET /repos/{owner}/{repo}/deployments/{deployment_id}"],
     getDeploymentStatus: [
       "GET /repos/{owner}/{repo}/deployments/{deployment_id}/statuses/{status_id}",
+    ],
+    getEnvironment: [
+      "GET /repos/{owner}/{repo}/environments/{environment_name}",
     ],
     getLatestPagesBuild: ["GET /repos/{owner}/{repo}/pages/builds/latest"],
     getLatestRelease: ["GET /repos/{owner}/{repo}/releases/latest"],
@@ -1177,6 +1211,9 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
       "PUT /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/apps",
       {},
       { mapToData: "apps" },
+    ],
+    setEnvironmentProtectionRules: [
+      "PUT /repos/{owner}/{repo}/environments/{environment_name}",
     ],
     setStatusCheckContexts: [
       "PUT /repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks/contexts",
