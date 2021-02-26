@@ -20,4 +20,4 @@ octokit.users.getAuthenticated();
 
 This endpoint has no parameters
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/v3/users/#get-the-authenticated-user).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/users/#get-the-authenticated-user).

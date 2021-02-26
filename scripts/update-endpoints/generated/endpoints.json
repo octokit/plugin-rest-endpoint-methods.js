@@ -107,7 +107,7 @@
       },
       {
         "name": "run_id",
-        "description": "",
+        "description": "The id of the workflow run",
         "in": "PATH",
         "type": "integer",
         "required": true,
@@ -120,6 +120,99 @@
       }
     ],
     "responses": [{ "code": 202, "description": "response", "examples": null }],
+    "renamed": null
+  },
+  {
+    "name": "Create or update an environment secret",
+    "scope": "actions",
+    "id": "createOrUpdateEnvironmentSecret",
+    "method": "PUT",
+    "url": "/repositories/{repository_id}/environments/{environment_name}/secrets/{secret_name}",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "description": "Creates or updates an environment secret with an encrypted value. Encrypt your secret using\n[LibSodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages). You must authenticate using an access\ntoken with the `repo` scope to use this endpoint. GitHub Apps must have the `secrets` repository permission to use\nthis endpoint.\n\n#### Example encrypting a secret using Node.js\n\nEncrypt your secret using the [tweetsodium](https://github.com/github/tweetsodium) library.\n\n```\nconst sodium = require('tweetsodium');\n\nconst key = \"base64-encoded-public-key\";\nconst value = \"plain-text-secret\";\n\n// Convert the message and key to Uint8Array's (Buffer implements that interface)\nconst messageBytes = Buffer.from(value);\nconst keyBytes = Buffer.from(key, 'base64');\n\n// Encrypt using LibSodium.\nconst encryptedBytes = sodium.seal(messageBytes, keyBytes);\n\n// Base64 the encrypted secret\nconst encrypted = Buffer.from(encryptedBytes).toString('base64');\n\nconsole.log(encrypted);\n```\n\n\n#### Example encrypting a secret using Python\n\nEncrypt your secret using [pynacl](https://pynacl.readthedocs.io/en/stable/public/#nacl-public-sealedbox) with Python 3.\n\n```\nfrom base64 import b64encode\nfrom nacl import encoding, public\n\ndef encrypt(public_key: str, secret_value: str) -> str:\n  \"\"\"Encrypt a Unicode string using the public key.\"\"\"\n  public_key = public.PublicKey(public_key.encode(\"utf-8\"), encoding.Base64Encoder())\n  sealed_box = public.SealedBox(public_key)\n  encrypted = sealed_box.encrypt(secret_value.encode(\"utf-8\"))\n  return b64encode(encrypted).decode(\"utf-8\")\n```\n\n#### Example encrypting a secret using C#\n\nEncrypt your secret using the [Sodium.Core](https://www.nuget.org/packages/Sodium.Core/) package.\n\n```\nvar secretValue = System.Text.Encoding.UTF8.GetBytes(\"mySecret\");\nvar publicKey = Convert.FromBase64String(\"2Sg8iYjAxxmI2LvUXpJjkYrMxURPc8r+dB7TJyvvcCU=\");\n\nvar sealedPublicKeyBox = Sodium.SealedPublicKeyBox.Create(secretValue, publicKey);\n\nConsole.WriteLine(Convert.ToBase64String(sealedPublicKeyBox));\n```\n\n#### Example encrypting a secret using Ruby\n\nEncrypt your secret using the [rbnacl](https://github.com/RubyCrypto/rbnacl) gem.\n\n```ruby\nrequire \"rbnacl\"\nrequire \"base64\"\n\nkey = Base64.decode64(\"+ZYvJDZMHUfBkJdyq5Zm9SKqeuBQ4sj+6sfjlH4CgG0=\")\npublic_key = RbNaCl::PublicKey.new(key)\n\nbox = RbNaCl::Boxes::Sealed.from_public_key(public_key)\nencrypted_secret = box.encrypt(\"my_secret\")\n\n# Print the base64 encoded secret\nputs Base64.strict_encode64(encrypted_secret)\n```",
+    "documentationUrl": "https://docs.github.com/rest/reference/actions#create-or-update-an-environment-secret",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "repository_id",
+        "description": "",
+        "in": "PATH",
+        "type": "integer",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "environment_name",
+        "description": "The name of the environment",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "secret_name",
+        "description": "secret_name parameter",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "encrypted_value",
+        "description": "Value for your secret, encrypted with [LibSodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages) using the public key retrieved from the [Get an environment public key](https://docs.github.com/rest/reference/actions#get-an-environment-public-key) endpoint.",
+        "in": "BODY",
+        "type": "string",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "key_id",
+        "description": "ID of the key you used to encrypt the secret.",
+        "in": "BODY",
+        "type": "string",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      {
+        "code": 201,
+        "description": "Response when creating a secret",
+        "examples": null
+      },
+      {
+        "code": 204,
+        "description": "Response when updating a secret",
+        "examples": null
+      }
+    ],
     "renamed": null
   },
   {
@@ -663,6 +756,64 @@
     "renamed": null
   },
   {
+    "name": "Delete an environment secret",
+    "scope": "actions",
+    "id": "deleteEnvironmentSecret",
+    "method": "DELETE",
+    "url": "/repositories/{repository_id}/environments/{environment_name}/secrets/{secret_name}",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "description": "Deletes a secret in an environment using the secret name. You must authenticate using an access token with the `repo` scope to use this endpoint. GitHub Apps must have the `secrets` repository permission to use this endpoint.",
+    "documentationUrl": "https://docs.github.com/rest/reference/actions#delete-an-environment-secret",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "repository_id",
+        "description": "",
+        "in": "PATH",
+        "type": "integer",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "environment_name",
+        "description": "The name of the environment",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "secret_name",
+        "description": "secret_name parameter",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      { "code": 204, "description": "Empty response", "examples": null }
+    ],
+    "renamed": null
+  },
+  {
     "name": "Delete an organization secret",
     "scope": "actions",
     "id": "deleteOrgSecret",
@@ -909,7 +1060,7 @@
       },
       {
         "name": "run_id",
-        "description": "",
+        "description": "The id of the workflow run",
         "in": "PATH",
         "type": "integer",
         "required": true,
@@ -967,7 +1118,7 @@
       },
       {
         "name": "run_id",
-        "description": "",
+        "description": "The id of the workflow run",
         "in": "PATH",
         "type": "integer",
         "required": true,
@@ -1253,7 +1404,7 @@
       },
       {
         "name": "run_id",
-        "description": "",
+        "description": "The id of the workflow run",
         "in": "PATH",
         "type": "integer",
         "required": true,
@@ -1531,6 +1682,125 @@
     "renamed": null
   },
   {
+    "name": "Get an environment public key",
+    "scope": "actions",
+    "id": "getEnvironmentPublicKey",
+    "method": "GET",
+    "url": "/repositories/{repository_id}/environments/{environment_name}/secrets/public-key",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "description": "Get the public key for an environment, which you need to encrypt environment secrets. You need to encrypt a secret before you can create or update secrets. Anyone with read access to the repository can use this endpoint. If the repository is private you must use an access token with the `repo` scope. GitHub Apps must have the `secrets` repository permission to use this endpoint.",
+    "documentationUrl": "https://docs.github.com/rest/reference/actions#get-an-environment-public-key",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "repository_id",
+        "description": "",
+        "in": "PATH",
+        "type": "integer",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "environment_name",
+        "description": "The name of the environment",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "examples": [
+          {
+            "data": "{\"key_id\":\"012345678912345678\",\"key\":\"2Sg8iYjAxxmI2LvUXpJjkYrMxURPc8r+dB7TJyvv1234\"}"
+          }
+        ]
+      }
+    ],
+    "renamed": null
+  },
+  {
+    "name": "Get an environment secret",
+    "scope": "actions",
+    "id": "getEnvironmentSecret",
+    "method": "GET",
+    "url": "/repositories/{repository_id}/environments/{environment_name}/secrets/{secret_name}",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "description": "Gets a single environment secret without revealing its encrypted value. You must authenticate using an access token with the `repo` scope to use this endpoint. GitHub Apps must have the `secrets` repository permission to use this endpoint.",
+    "documentationUrl": "https://docs.github.com/rest/reference/actions#get-an-environment-secret",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "repository_id",
+        "description": "",
+        "in": "PATH",
+        "type": "integer",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "environment_name",
+        "description": "The name of the environment",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "secret_name",
+        "description": "secret_name parameter",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "examples": [
+          {
+            "data": "{\"name\":\"GH_TOKEN\",\"created_at\":\"2019-08-10T14:59:22Z\",\"updated_at\":\"2020-01-10T14:59:22Z\"}"
+          }
+        ]
+      }
+    ],
+    "renamed": null
+  },
+  {
     "name": "Get GitHub Actions permissions for an organization",
     "scope": "actions",
     "id": "getGithubActionsPermissionsOrganization",
@@ -1783,6 +2053,72 @@
     "renamed": null
   },
   {
+    "name": "Get pending deployments for a workflow run",
+    "scope": "actions",
+    "id": "getPendingDeploymentsForRun",
+    "method": "GET",
+    "url": "/repos/{owner}/{repo}/actions/runs/{run_id}/pending_deployments",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "description": "Get all deployment environments for a workflow run that are waiting for protection rules to pass.\n\nAnyone with read access to the repository can use this endpoint. If the repository is private, you must use an access token with the `repo` scope. GitHub Apps must have the `actions:read` permission to use this endpoint.",
+    "documentationUrl": "https://docs.github.com/rest/reference/actions#get-pending-deployments-for-a-workflow-run",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "owner",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "repo",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "run_id",
+        "description": "The id of the workflow run",
+        "in": "PATH",
+        "type": "integer",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "examples": [
+          {
+            "data": "[{\"environment\":{\"id\":161088068,\"node_id\":\"MDExOkVudmlyb25tZW50MTYxMDg4MDY4\",\"name\":\"staging\",\"url\":\"https://api.github.com/repos/github/hello-world/environments/staging\",\"html_url\":\"https://github.com/github/hello-world/deployments/activity_log?environments_filter=staging\"},\"wait_timer\":30,\"wait_timer_started_at\":\"2020-11-23T22:00:40Z\",\"current_user_can_approve\":true,\"reviewers\":[{\"type\":\"User\",\"reviewer\":{\"login\":\"octocat\",\"id\":1,\"node_id\":\"MDQ6VXNlcjE=\",\"avatar_url\":\"https://github.com/images/error/octocat_happy.gif\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/octocat\",\"html_url\":\"https://github.com/octocat\",\"followers_url\":\"https://api.github.com/users/octocat/followers\",\"following_url\":\"https://api.github.com/users/octocat/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/octocat/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/octocat/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/octocat/subscriptions\",\"organizations_url\":\"https://api.github.com/users/octocat/orgs\",\"repos_url\":\"https://api.github.com/users/octocat/repos\",\"events_url\":\"https://api.github.com/users/octocat/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/octocat/received_events\",\"type\":\"User\",\"site_admin\":false}},{\"type\":\"Team\",\"reviewer\":{\"id\":1,\"node_id\":\"MDQ6VGVhbTE=\",\"url\":\"https://api.github.com/teams/1\",\"html_url\":\"https://github.com/orgs/github/teams/justice-league\",\"name\":\"Justice League\",\"slug\":\"justice-league\",\"description\":\"A great team.\",\"privacy\":\"closed\",\"permission\":\"admin\",\"members_url\":\"https://api.github.com/teams/1/members{/member}\",\"repositories_url\":\"https://api.github.com/teams/1/repos\"}}]}]"
+          }
+        ]
+      }
+    ],
+    "renamed": null
+  },
+  {
     "name": "Get GitHub Actions permissions for a repository",
     "scope": "actions",
     "id": "getRepoPermissions",
@@ -1956,6 +2292,72 @@
         "examples": [
           {
             "data": "{\"name\":\"GH_TOKEN\",\"created_at\":\"2019-08-10T14:59:22Z\",\"updated_at\":\"2020-01-10T14:59:22Z\"}"
+          }
+        ]
+      }
+    ],
+    "renamed": null
+  },
+  {
+    "name": "Get the review history for a workflow run",
+    "scope": "actions",
+    "id": "getReviewsForRun",
+    "method": "GET",
+    "url": "/repos/{owner}/{repo}/actions/runs/{run_id}/approvals",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "description": "Anyone with read access to the repository can use this endpoint. If the repository is private, you must use an access token with the `repo` scope. GitHub Apps must have the `actions:read` permission to use this endpoint.",
+    "documentationUrl": "https://docs.github.com/rest/reference/actions#get-the-review-history-for-a-workflow-run",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "owner",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "repo",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "run_id",
+        "description": "The id of the workflow run",
+        "in": "PATH",
+        "type": "integer",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "examples": [
+          {
+            "data": "[{\"state\":\"approved\",\"comment\":\"Ship it!\",\"environments\":[{\"id\":161088068,\"node_id\":\"MDExOkVudmlyb25tZW50MTYxMDg4MDY4\",\"name\":\"staging\",\"url\":\"https://api.github.com/repos/github/hello-world/environments/staging\",\"html_url\":\"https://github.com/github/hello-world/deployments/activity_log?environments_filter=staging\",\"created_at\":\"2020-11-23T22:00:40Z\",\"updated_at\":\"2020-11-23T22:00:40Z\"}],\"user\":{\"login\":\"octocat\",\"id\":1,\"node_id\":\"MDQ6VXNlcjE=\",\"avatar_url\":\"https://github.com/images/error/octocat_happy.gif\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/octocat\",\"html_url\":\"https://github.com/octocat\",\"followers_url\":\"https://api.github.com/users/octocat/followers\",\"following_url\":\"https://api.github.com/users/octocat/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/octocat/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/octocat/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/octocat/subscriptions\",\"organizations_url\":\"https://api.github.com/users/octocat/orgs\",\"repos_url\":\"https://api.github.com/users/octocat/repos\",\"events_url\":\"https://api.github.com/users/octocat/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/octocat/received_events\",\"type\":\"User\",\"site_admin\":false}}]"
           }
         ]
       }
@@ -2188,7 +2590,7 @@
       },
       {
         "name": "run_id",
-        "description": "",
+        "description": "The id of the workflow run",
         "in": "PATH",
         "type": "integer",
         "required": true,
@@ -2254,7 +2656,7 @@
       },
       {
         "name": "run_id",
-        "description": "",
+        "description": "The id of the workflow run",
         "in": "PATH",
         "type": "integer",
         "required": true,
@@ -2425,6 +2827,85 @@
     "renamed": null
   },
   {
+    "name": "List environment secrets",
+    "scope": "actions",
+    "id": "listEnvironmentSecrets",
+    "method": "GET",
+    "url": "/repositories/{repository_id}/environments/{environment_name}/secrets",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "description": "Lists all secrets available in an environment without revealing their encrypted values. You must authenticate using an access token with the `repo` scope to use this endpoint. GitHub Apps must have the `secrets` repository permission to use this endpoint.",
+    "documentationUrl": "https://docs.github.com/rest/reference/actions#list-environment-secrets",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "repository_id",
+        "description": "",
+        "in": "PATH",
+        "type": "integer",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "environment_name",
+        "description": "The name of the environment",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "per_page",
+        "description": "Results per page (max 100).",
+        "in": "QUERY",
+        "type": "integer",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "page",
+        "description": "Page number of the results to fetch.",
+        "in": "QUERY",
+        "type": "integer",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "examples": [
+          {
+            "data": "{\"total_count\":2,\"secrets\":[{\"name\":\"GH_TOKEN\",\"created_at\":\"2019-08-10T14:59:22Z\",\"updated_at\":\"2020-01-10T14:59:22Z\"},{\"name\":\"GIST_ID\",\"created_at\":\"2020-01-10T10:59:22Z\",\"updated_at\":\"2020-01-11T11:59:22Z\"}]}"
+          }
+        ]
+      }
+    ],
+    "renamed": null
+  },
+  {
     "name": "List jobs for a workflow run",
     "scope": "actions",
     "id": "listJobsForWorkflowRun",
@@ -2465,7 +2946,7 @@
       },
       {
         "name": "run_id",
-        "description": "",
+        "description": "The id of the workflow run",
         "in": "PATH",
         "type": "integer",
         "required": true,
@@ -3151,7 +3632,7 @@
       },
       {
         "name": "run_id",
-        "description": "",
+        "description": "The id of the workflow run",
         "in": "PATH",
         "type": "integer",
         "required": true,
@@ -3546,7 +4027,7 @@
       },
       {
         "name": "run_id",
-        "description": "",
+        "description": "The id of the workflow run",
         "in": "PATH",
         "type": "integer",
         "required": true,
@@ -3624,6 +4105,111 @@
         "code": 409,
         "description": "Response when visibility type not set to selected",
         "examples": null
+      }
+    ],
+    "renamed": null
+  },
+  {
+    "name": "Review pending deployments for a workflow run",
+    "scope": "actions",
+    "id": "reviewPendingDeploymentsForRun",
+    "method": "POST",
+    "url": "/repos/{owner}/{repo}/actions/runs/{run_id}/pending_deployments",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "description": "Approve or reject pending deployments that are waiting on approval by a required reviewer.\n\nAnyone with read access to the repository contents and deployments can use this endpoint.",
+    "documentationUrl": "https://docs.github.com/rest/reference/actions#review-pending-deployments-for-a-workflow-run",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "owner",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "repo",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "run_id",
+        "description": "The id of the workflow run",
+        "in": "PATH",
+        "type": "integer",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "environment_ids",
+        "description": "The list of environment ids to approve or reject",
+        "in": "BODY",
+        "type": "integer[]",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "state",
+        "description": "Whether to approve or reject deployment to the specified environments. Must be one of: `approved` or `rejected`",
+        "in": "BODY",
+        "type": "string",
+        "required": true,
+        "enum": ["approved", "rejected"],
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "comment",
+        "description": "A comment to accompany the deployment review",
+        "in": "BODY",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "examples": [
+          {
+            "data": "[{\"url\":\"https://api.github.com/repos/octocat/example/deployments/1\",\"id\":1,\"node_id\":\"MDEwOkRlcGxveW1lbnQx\",\"sha\":\"a84d88e7554fc1fa21bcbc4efae3c782a70d2b9d\",\"ref\":\"topic-branch\",\"task\":\"deploy\",\"payload\":{},\"original_environment\":\"staging\",\"environment\":\"production\",\"description\":\"Deploy request from hubot\",\"creator\":{\"login\":\"octocat\",\"id\":1,\"node_id\":\"MDQ6VXNlcjE=\",\"avatar_url\":\"https://github.com/images/error/octocat_happy.gif\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/octocat\",\"html_url\":\"https://github.com/octocat\",\"followers_url\":\"https://api.github.com/users/octocat/followers\",\"following_url\":\"https://api.github.com/users/octocat/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/octocat/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/octocat/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/octocat/subscriptions\",\"organizations_url\":\"https://api.github.com/users/octocat/orgs\",\"repos_url\":\"https://api.github.com/users/octocat/repos\",\"events_url\":\"https://api.github.com/users/octocat/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/octocat/received_events\",\"type\":\"User\",\"site_admin\":false},\"created_at\":\"2012-07-20T01:19:13Z\",\"updated_at\":\"2012-07-20T01:19:13Z\",\"statuses_url\":\"https://api.github.com/repos/octocat/example/deployments/1/statuses\",\"repository_url\":\"https://api.github.com/repos/octocat/example\",\"transient_environment\":false,\"production_environment\":true}]"
+          }
+        ]
       }
     ],
     "renamed": null
@@ -6244,7 +6830,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "Use this endpoint to complete the handshake necessary when implementing the [GitHub App Manifest flow](https://docs.github.com/apps/building-github-apps/creating-github-apps-from-a-manifest/). When you create a GitHub App with the manifest flow, you receive a temporary `code` used to retrieve the GitHub App's `id`, `pem` (private key), and `webhook_secret`.",
-    "documentationUrl": "https://docs.github.com/v3/apps/#create-a-github-app-from-a-manifest",
+    "documentationUrl": "https://docs.github.com/rest/reference/apps/#create-a-github-app-from-a-manifest",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -6286,7 +6872,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "Creates an installation access token that enables a GitHub App to make authenticated API requests for the app's installation on an organization or individual account. Installation tokens expire one hour from the time you create them. Using an expired token produces a status code of `401 - Unauthorized`, and requires creating a new installation token. By default the installation token has access to all repositories that the installation can access. To restrict the access to specific repositories, you can provide the `repository_ids` when creating the token. When you omit `repository_ids`, the response does not contain the `repositories` key.\n\nYou must use a [JWT](https://docs.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint.",
-    "documentationUrl": "https://docs.github.com/v3/apps/#create-an-installation-access-token-for-an-app",
+    "documentationUrl": "https://docs.github.com/rest/reference/apps/#create-an-installation-access-token-for-an-app",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -6813,8 +7399,8 @@
     "url": "/app/installations/{installation_id}",
     "isDeprecated": false,
     "deprecationDate": null,
-    "description": "Uninstalls a GitHub App on a user, organization, or business account. If you prefer to temporarily suspend an app's access to your account's resources, then we recommend the \"[Suspend an app installation](https://docs.github.com/v3/apps/#suspend-an-app-installation)\" endpoint.\n\nYou must use a [JWT](https://docs.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint.",
-    "documentationUrl": "https://docs.github.com/v3/apps/#delete-an-installation-for-the-authenticated-app",
+    "description": "Uninstalls a GitHub App on a user, organization, or business account. If you prefer to temporarily suspend an app's access to your account's resources, then we recommend the \"[Suspend an app installation](https://docs.github.com/rest/reference/apps/#suspend-an-app-installation)\" endpoint.\n\nYou must use a [JWT](https://docs.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint.",
+    "documentationUrl": "https://docs.github.com/rest/reference/apps/#delete-an-installation-for-the-authenticated-app",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -6893,7 +7479,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "Returns the GitHub App associated with the authentication credentials used. To see how many app installations are associated with this GitHub App, see the `installations_count` in the response. For more details about your app's installations, see the \"[List installations for the authenticated app](https://docs.github.com/rest/reference/apps#list-installations-for-the-authenticated-app)\" endpoint.\n\nYou must use a [JWT](https://docs.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint.",
-    "documentationUrl": "https://docs.github.com/v3/apps/#get-the-authenticated-app",
+    "documentationUrl": "https://docs.github.com/rest/reference/apps/#get-the-authenticated-app",
     "previews": [],
     "headers": [],
     "parameters": [],
@@ -6919,7 +7505,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "**Note**: The `:app_slug` is just the URL-friendly name of your GitHub App. You can find this on the settings page for your GitHub App (e.g., `https://github.com/settings/apps/:app_slug`).\n\nIf the GitHub App you specify is public, you can access this endpoint without authenticating. If the GitHub App you specify is private, you must authenticate with a [personal access token](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/) or an [installation access token](https://docs.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-an-installation) to access this endpoint.",
-    "documentationUrl": "https://docs.github.com/v3/apps/#get-an-app",
+    "documentationUrl": "https://docs.github.com/rest/reference/apps/#get-an-app",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -6962,7 +7548,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "Enables an authenticated GitHub App to find an installation's information using the installation id. The installation's account type (`target_type`) will be either an organization or a user account, depending which account the repository belongs to.\n\nYou must use a [JWT](https://docs.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint.",
-    "documentationUrl": "https://docs.github.com/v3/apps/#get-an-installation-for-the-authenticated-app",
+    "documentationUrl": "https://docs.github.com/rest/reference/apps/#get-an-installation-for-the-authenticated-app",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -7004,7 +7590,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "Enables an authenticated GitHub App to find the organization's installation information.\n\nYou must use a [JWT](https://docs.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint.",
-    "documentationUrl": "https://docs.github.com/v3/apps/#get-an-organization-installation-for-the-authenticated-app",
+    "documentationUrl": "https://docs.github.com/rest/reference/apps/#get-an-organization-installation-for-the-authenticated-app",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -7044,7 +7630,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "Enables an authenticated GitHub App to find the repository's installation information. The installation's account type will be either an organization or a user account, depending which account the repository belongs to.\n\nYou must use a [JWT](https://docs.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint.",
-    "documentationUrl": "https://docs.github.com/v3/apps/#get-a-repository-installation-for-the-authenticated-app",
+    "documentationUrl": "https://docs.github.com/rest/reference/apps/#get-a-repository-installation-for-the-authenticated-app",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -7199,7 +7785,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "Enables an authenticated GitHub App to find the user’s installation information.\n\nYou must use a [JWT](https://docs.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint.",
-    "documentationUrl": "https://docs.github.com/v3/apps/#get-a-user-installation-for-the-authenticated-app",
+    "documentationUrl": "https://docs.github.com/rest/reference/apps/#get-a-user-installation-for-the-authenticated-app",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -7239,7 +7825,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "Returns the webhook configuration for a GitHub App. For more information about configuring a webhook for your app, see \"[Creating a GitHub App](/developers/apps/creating-a-github-app).\"\n\nYou must use a [JWT](https://docs.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint.",
-    "documentationUrl": "https://docs.github.com/v3/apps#get-a-webhook-configuration-for-an-app",
+    "documentationUrl": "https://docs.github.com/rest/reference/apps#get-a-webhook-configuration-for-an-app",
     "previews": [],
     "headers": [],
     "parameters": [],
@@ -7530,7 +8116,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "You must use a [JWT](https://docs.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint.\n\nThe permissions the installation has are included under the `permissions` key.",
-    "documentationUrl": "https://docs.github.com/v3/apps/#list-installations-for-the-authenticated-app",
+    "documentationUrl": "https://docs.github.com/rest/reference/apps/#list-installations-for-the-authenticated-app",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -8745,7 +9331,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "Suspends a GitHub App on a user, organization, or business account, which blocks the app from accessing the account's resources. When a GitHub App is suspended, the app's access to the GitHub API or webhook events is blocked for that account.\n\nYou must use a [JWT](https://docs.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint.",
-    "documentationUrl": "https://docs.github.com/v3/apps/#suspend-an-app-installation",
+    "documentationUrl": "https://docs.github.com/rest/reference/apps/#suspend-an-app-installation",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -8778,7 +9364,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "Removes a GitHub App installation suspension.\n\nYou must use a [JWT](https://docs.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint.",
-    "documentationUrl": "https://docs.github.com/v3/apps/#unsuspend-an-app-installation",
+    "documentationUrl": "https://docs.github.com/rest/reference/apps/#unsuspend-an-app-installation",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -8811,7 +9397,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "Updates the webhook configuration for a GitHub App. For more information about configuring a webhook for your app, see \"[Creating a GitHub App](/developers/apps/creating-a-github-app).\"\n\nYou must use a [JWT](https://docs.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint.",
-    "documentationUrl": "https://docs.github.com/v3/apps#update-a-webhook-configuration-for-an-app",
+    "documentationUrl": "https://docs.github.com/rest/reference/apps#update-a-webhook-configuration-for-an-app",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -8890,7 +9476,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "Gets the summary of the free and paid GitHub Actions minutes used.\n\nPaid minutes only apply to workflows in private repositories that use GitHub-hosted runners. Minutes used is listed for each GitHub-hosted runner operating system. Any job re-runs are also included in the usage. The usage does not include the multiplier for macOS and Windows runners and is not rounded up to the nearest whole minute. For more information, see \"[Managing billing for GitHub Actions](https://help.github.com/github/setting-up-and-managing-billing-and-payments-on-github/managing-billing-for-github-actions)\".\n\nAccess tokens must have the `repo` or `admin:org` scope.",
-    "documentationUrl": "https://docs.github.com/v3/billing/#get-github-actions-billing-for-an-organization",
+    "documentationUrl": "https://docs.github.com/rest/reference/billing/#get-github-actions-billing-for-an-organization",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -8930,7 +9516,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "Gets the summary of the free and paid GitHub Actions minutes used.\n\nPaid minutes only apply to workflows in private repositories that use GitHub-hosted runners. Minutes used is listed for each GitHub-hosted runner operating system. Any job re-runs are also included in the usage. The usage does not include the multiplier for macOS and Windows runners and is not rounded up to the nearest whole minute. For more information, see \"[Managing billing for GitHub Actions](https://help.github.com/github/setting-up-and-managing-billing-and-payments-on-github/managing-billing-for-github-actions)\".\n\nAccess tokens must have the `user` scope.",
-    "documentationUrl": "https://docs.github.com/v3/billing/#get-github-actions-billing-for-a-user",
+    "documentationUrl": "https://docs.github.com/rest/reference/billing/#get-github-actions-billing-for-a-user",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -8970,7 +9556,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "Gets the free and paid storage usued for GitHub Packages in gigabytes.\n\nPaid minutes only apply to packages stored for private repositories. For more information, see \"[Managing billing for GitHub Packages](https://help.github.com/github/setting-up-and-managing-billing-and-payments-on-github/managing-billing-for-github-packages).\"\n\nAccess tokens must have the `repo` or `admin:org` scope.",
-    "documentationUrl": "https://docs.github.com/v3/billing/#get-github-packages-billing-for-an-organization",
+    "documentationUrl": "https://docs.github.com/rest/reference/billing/#get-github-packages-billing-for-an-organization",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -9010,7 +9596,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "Gets the free and paid storage used for GitHub Packages in gigabytes.\n\nPaid minutes only apply to packages stored for private repositories. For more information, see \"[Managing billing for GitHub Packages](https://help.github.com/github/setting-up-and-managing-billing-and-payments-on-github/managing-billing-for-github-packages).\"\n\nAccess tokens must have the `user` scope.",
-    "documentationUrl": "https://docs.github.com/v3/billing/#get-github-packages-billing-for-a-user",
+    "documentationUrl": "https://docs.github.com/rest/reference/billing/#get-github-packages-billing-for-a-user",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -9050,7 +9636,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "Gets the estimated paid and estimated total storage used for GitHub Actions and Github Packages.\n\nPaid minutes only apply to packages stored for private repositories. For more information, see \"[Managing billing for GitHub Packages](https://help.github.com/github/setting-up-and-managing-billing-and-payments-on-github/managing-billing-for-github-packages).\"\n\nAccess tokens must have the `repo` or `admin:org` scope.",
-    "documentationUrl": "https://docs.github.com/v3/billing/#get-shared-storage-billing-for-an-organization",
+    "documentationUrl": "https://docs.github.com/rest/reference/billing/#get-shared-storage-billing-for-an-organization",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -9090,7 +9676,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "Gets the estimated paid and estimated total storage used for GitHub Actions and Github Packages.\n\nPaid minutes only apply to packages stored for private repositories. For more information, see \"[Managing billing for GitHub Packages](https://help.github.com/github/setting-up-and-managing-billing-and-payments-on-github/managing-billing-for-github-packages).\"\n\nAccess tokens must have the `user` scope.",
-    "documentationUrl": "https://docs.github.com/v3/billing/#get-shared-storage-billing-for-a-user",
+    "documentationUrl": "https://docs.github.com/rest/reference/billing/#get-shared-storage-billing-for-a-user",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -11814,7 +12400,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "",
-    "documentationUrl": "https://docs.github.com/v3/codes_of_conduct/#get-all-codes-of-conduct",
+    "documentationUrl": "https://docs.github.com/rest/reference/codes_of_conduct/#get-all-codes-of-conduct",
     "previews": [{ "name": "scarlet-witch" }],
     "headers": [],
     "parameters": [],
@@ -11842,7 +12428,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "",
-    "documentationUrl": "https://docs.github.com/v3/codes_of_conduct/#get-a-code-of-conduct",
+    "documentationUrl": "https://docs.github.com/rest/reference/codes_of_conduct/#get-a-code-of-conduct",
     "previews": [{ "name": "scarlet-witch" }],
     "headers": [],
     "parameters": [
@@ -11885,7 +12471,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "Returns the contents of the repository's code of conduct file, if one is detected.\n\nA code of conduct is detected if there is a file named `CODE_OF_CONDUCT` in the root directory of the repository. GitHub detects which code of conduct it is using fuzzy matching.",
-    "documentationUrl": "https://docs.github.com/v3/codes_of_conduct/#get-the-code-of-conduct-for-a-repository",
+    "documentationUrl": "https://docs.github.com/rest/reference/codes_of_conduct/#get-the-code-of-conduct-for-a-repository",
     "previews": [{ "name": "scarlet-witch" }],
     "headers": [],
     "parameters": [
@@ -11938,7 +12524,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "Lists all the emojis available to use on GitHub.",
-    "documentationUrl": "https://docs.github.com/v3/emojis/#get-emojis",
+    "documentationUrl": "https://docs.github.com/rest/reference/emojis/#get-emojis",
     "previews": [],
     "headers": [],
     "parameters": [],
@@ -12367,7 +12953,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "",
-    "documentationUrl": "https://docs.github.com/v3/gists/#check-if-a-gist-is-starred",
+    "documentationUrl": "https://docs.github.com/rest/reference/gists/#check-if-a-gist-is-starred",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -12410,7 +12996,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "Allows you to add a new gist with one or more files.\n\n**Note:** Don't name your files \"gistfile\" with a numerical suffix. This is the format of the automatic naming scheme that Gist uses internally.",
-    "documentationUrl": "https://docs.github.com/v3/gists/#create-a-gist",
+    "documentationUrl": "https://docs.github.com/rest/reference/gists/#create-a-gist",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -12562,7 +13148,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "",
-    "documentationUrl": "https://docs.github.com/v3/gists/#delete-a-gist",
+    "documentationUrl": "https://docs.github.com/rest/reference/gists/#delete-a-gist",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -12645,7 +13231,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "**Note**: This was previously `/gists/:gist_id/fork`.",
-    "documentationUrl": "https://docs.github.com/v3/gists/#fork-a-gist",
+    "documentationUrl": "https://docs.github.com/rest/reference/gists/#fork-a-gist",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -12689,7 +13275,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "",
-    "documentationUrl": "https://docs.github.com/v3/gists/#get-a-gist",
+    "documentationUrl": "https://docs.github.com/rest/reference/gists/#get-a-gist",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -12788,7 +13374,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "",
-    "documentationUrl": "https://docs.github.com/v3/gists/#get-a-gist-revision",
+    "documentationUrl": "https://docs.github.com/rest/reference/gists/#get-a-gist-revision",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -12844,7 +13430,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "Lists the authenticated user's gists or if called anonymously, this endpoint returns all public gists:",
-    "documentationUrl": "https://docs.github.com/v3/gists/#list-gists-for-the-authenticated-user",
+    "documentationUrl": "https://docs.github.com/rest/reference/gists/#list-gists-for-the-authenticated-user",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -12981,7 +13567,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "",
-    "documentationUrl": "https://docs.github.com/v3/gists/#list-gist-commits",
+    "documentationUrl": "https://docs.github.com/rest/reference/gists/#list-gist-commits",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -13050,7 +13636,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "Lists public gists for the specified user:",
-    "documentationUrl": "https://docs.github.com/v3/gists/#list-gists-for-a-user",
+    "documentationUrl": "https://docs.github.com/rest/reference/gists/#list-gists-for-a-user",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -13130,7 +13716,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "",
-    "documentationUrl": "https://docs.github.com/v3/gists/#list-gist-forks",
+    "documentationUrl": "https://docs.github.com/rest/reference/gists/#list-gist-forks",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -13199,7 +13785,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "List public gists sorted by most recently updated to least recently updated.\n\nNote: With [pagination](https://docs.github.com/rest/overview/resources-in-the-rest-api#pagination), you can fetch up to 3000 gists. For example, you can fetch 100 pages with 30 gists per page or 30 pages with 100 gists per page.",
-    "documentationUrl": "https://docs.github.com/v3/gists/#list-public-gists",
+    "documentationUrl": "https://docs.github.com/rest/reference/gists/#list-public-gists",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -13268,7 +13854,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "List the authenticated user's starred gists:",
-    "documentationUrl": "https://docs.github.com/v3/gists/#list-starred-gists",
+    "documentationUrl": "https://docs.github.com/rest/reference/gists/#list-starred-gists",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -13341,7 +13927,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "Note that you'll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see \"[HTTP verbs](https://docs.github.com/rest/overview/resources-in-the-rest-api#http-verbs).\"",
-    "documentationUrl": "https://docs.github.com/v3/gists/#star-a-gist",
+    "documentationUrl": "https://docs.github.com/rest/reference/gists/#star-a-gist",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -13376,7 +13962,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "",
-    "documentationUrl": "https://docs.github.com/v3/gists/#unstar-a-gist",
+    "documentationUrl": "https://docs.github.com/rest/reference/gists/#unstar-a-gist",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -13411,7 +13997,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "Allows you to update or delete a gist file and rename gist files. Files from the previous version of the gist that aren't explicitly changed during an edit are unchanged.",
-    "documentationUrl": "https://docs.github.com/v3/gists/#update-a-gist",
+    "documentationUrl": "https://docs.github.com/rest/reference/gists/#update-a-gist",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -14875,7 +15461,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "List all templates available to pass as an option when [creating a repository](https://docs.github.com/rest/reference/repos#create-a-repository-for-the-authenticated-user).",
-    "documentationUrl": "https://docs.github.com/v3/gitignore/#get-all-gitignore-templates",
+    "documentationUrl": "https://docs.github.com/rest/reference/gitignore/#get-all-gitignore-templates",
     "previews": [],
     "headers": [],
     "parameters": [],
@@ -14902,7 +15488,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "The API also allows fetching the source of a single template.\nUse the raw [media type](https://docs.github.com/rest/overview/media-types/) to get the raw contents.",
-    "documentationUrl": "https://docs.github.com/v3/gitignore/#get-a-gitignore-template",
+    "documentationUrl": "https://docs.github.com/rest/reference/gitignore/#get-a-gitignore-template",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -15741,7 +16327,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "Any user with pull access to a repository can create an issue. If [issues are disabled in the repository](https://help.github.com/articles/disabling-issues/), the API returns a `410 Gone` status.\n\nThis endpoint triggers [notifications](https://docs.github.com/en/github/managing-subscriptions-and-notifications-on-github/about-notifications). Creating content too quickly using this endpoint may result in abuse rate limiting. See \"[Abuse rate limits](https://docs.github.com/rest/overview/resources-in-the-rest-api#abuse-rate-limits)\" and \"[Dealing with abuse rate limits](https://docs.github.com/rest/guides/best-practices-for-integrators#dealing-with-abuse-rate-limits)\" for details.",
-    "documentationUrl": "https://docs.github.com/v3/issues/#create-an-issue",
+    "documentationUrl": "https://docs.github.com/rest/reference/issues/#create-an-issue",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -16336,7 +16922,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "The API returns a [`301 Moved Permanently` status](https://docs.github.com/rest/overview/resources-in-the-rest-api#http-redirects-redirects) if the issue was\n[transferred](https://help.github.com/articles/transferring-an-issue-to-another-repository/) to another repository. If\nthe issue was transferred to or deleted from a repository where the authenticated user lacks read access, the API\nreturns a `404 Not Found` status. If the issue was deleted from a repository where the authenticated user has read\naccess, the API returns a `410 Gone` status. To receive webhook events for transferred and deleted issues, subscribe\nto the [`issues`](https://docs.github.com/webhooks/event-payloads/#issues) webhook.\n\n**Note**: GitHub's REST API v3 considers every pull request an issue, but not every issue is a pull request. For this\nreason, \"Issues\" endpoints may return both issues and pull requests in the response. You can identify pull requests by\nthe `pull_request` key. Be aware that the `id` of a pull request returned from \"Issues\" endpoints will be an _issue id_. To find out the pull\nrequest id, use the \"[List pull requests](https://docs.github.com/rest/reference/pulls#list-pull-requests)\" endpoint.",
-    "documentationUrl": "https://docs.github.com/v3/issues/#get-an-issue",
+    "documentationUrl": "https://docs.github.com/rest/reference/issues/#get-an-issue",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -16676,7 +17262,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "List issues assigned to the authenticated user across all visible repositories including owned repositories, member\nrepositories, and organization repositories. You can use the `filter` query parameter to fetch issues that are not\nnecessarily assigned to you.\n\n\n**Note**: GitHub's REST API v3 considers every pull request an issue, but not every issue is a pull request. For this\nreason, \"Issues\" endpoints may return both issues and pull requests in the response. You can identify pull requests by\nthe `pull_request` key. Be aware that the `id` of a pull request returned from \"Issues\" endpoints will be an _issue id_. To find out the pull\nrequest id, use the \"[List pull requests](https://docs.github.com/rest/reference/pulls#list-pull-requests)\" endpoint.",
-    "documentationUrl": "https://docs.github.com/v3/issues/#list-issues-assigned-to-the-authenticated-user",
+    "documentationUrl": "https://docs.github.com/rest/reference/issues/#list-issues-assigned-to-the-authenticated-user",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -17437,7 +18023,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "List issues across owned and member repositories assigned to the authenticated user.\n\n**Note**: GitHub's REST API v3 considers every pull request an issue, but not every issue is a pull request. For this\nreason, \"Issues\" endpoints may return both issues and pull requests in the response. You can identify pull requests by\nthe `pull_request` key. Be aware that the `id` of a pull request returned from \"Issues\" endpoints will be an _issue id_. To find out the pull\nrequest id, use the \"[List pull requests](https://docs.github.com/rest/reference/pulls#list-pull-requests)\" endpoint.",
-    "documentationUrl": "https://docs.github.com/v3/issues/#list-user-account-issues-assigned-to-the-authenticated-user",
+    "documentationUrl": "https://docs.github.com/rest/reference/issues/#list-user-account-issues-assigned-to-the-authenticated-user",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -17570,7 +18156,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "List issues in an organization assigned to the authenticated user.\n\n**Note**: GitHub's REST API v3 considers every pull request an issue, but not every issue is a pull request. For this\nreason, \"Issues\" endpoints may return both issues and pull requests in the response. You can identify pull requests by\nthe `pull_request` key. Be aware that the `id` of a pull request returned from \"Issues\" endpoints will be an _issue id_. To find out the pull\nrequest id, use the \"[List pull requests](https://docs.github.com/rest/reference/pulls#list-pull-requests)\" endpoint.",
-    "documentationUrl": "https://docs.github.com/v3/issues/#list-organization-issues-assigned-to-the-authenticated-user",
+    "documentationUrl": "https://docs.github.com/rest/reference/issues/#list-organization-issues-assigned-to-the-authenticated-user",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -17715,7 +18301,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "List issues in a repository.\n\n**Note**: GitHub's REST API v3 considers every pull request an issue, but not every issue is a pull request. For this\nreason, \"Issues\" endpoints may return both issues and pull requests in the response. You can identify pull requests by\nthe `pull_request` key. Be aware that the `id` of a pull request returned from \"Issues\" endpoints will be an _issue id_. To find out the pull\nrequest id, use the \"[List pull requests](https://docs.github.com/rest/reference/pulls#list-pull-requests)\" endpoint.",
-    "documentationUrl": "https://docs.github.com/v3/issues/#list-repository-issues",
+    "documentationUrl": "https://docs.github.com/rest/reference/issues/#list-repository-issues",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -18298,7 +18884,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "Users with push access can lock an issue or pull request's conversation.\n\nNote that, if you choose not to pass any parameters, you'll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see \"[HTTP verbs](https://docs.github.com/rest/overview/resources-in-the-rest-api#http-verbs).\"",
-    "documentationUrl": "https://docs.github.com/v3/issues/#lock-an-issue",
+    "documentationUrl": "https://docs.github.com/rest/reference/issues/#lock-an-issue",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -18673,7 +19259,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "Users with push access can unlock an issue's conversation.",
-    "documentationUrl": "https://docs.github.com/v3/issues/#unlock-an-issue",
+    "documentationUrl": "https://docs.github.com/rest/reference/issues/#unlock-an-issue",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -18733,7 +19319,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "Issue owners and users with push access can edit an issue.",
-    "documentationUrl": "https://docs.github.com/v3/issues/#update-an-issue",
+    "documentationUrl": "https://docs.github.com/rest/reference/issues/#update-an-issue",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -19199,7 +19785,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "",
-    "documentationUrl": "https://docs.github.com/v3/licenses/#get-a-license",
+    "documentationUrl": "https://docs.github.com/rest/reference/licenses/#get-a-license",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -19242,7 +19828,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "",
-    "documentationUrl": "https://docs.github.com/v3/licenses/#get-all-commonly-used-licenses",
+    "documentationUrl": "https://docs.github.com/rest/reference/licenses/#get-all-commonly-used-licenses",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -19296,7 +19882,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "This method returns the contents of the repository's license file, if one is detected.\n\nSimilar to [Get repository content](https://docs.github.com/rest/reference/repos#get-repository-content), this method also supports [custom media types](https://docs.github.com/rest/overview/media-types) for retrieving the raw license content or rendered license HTML.",
-    "documentationUrl": "https://docs.github.com/v3/licenses/#get-the-license-for-a-repository",
+    "documentationUrl": "https://docs.github.com/rest/reference/licenses/#get-the-license-for-a-repository",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -19349,7 +19935,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "",
-    "documentationUrl": "https://docs.github.com/v3/markdown/#render-a-markdown-document",
+    "documentationUrl": "https://docs.github.com/rest/reference/markdown/#render-a-markdown-document",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -19408,7 +19994,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "You must send Markdown as plain text (using a `Content-Type` header of `text/plain` or `text/x-markdown`) to this endpoint, rather than using JSON format. In raw mode, [GitHub Flavored Markdown](https://github.github.com/gfm/) is not supported and Markdown will be rendered in plain format like a README.md file. Markdown content must be 400 KB or less.",
-    "documentationUrl": "https://docs.github.com/v3/markdown/#render-a-markdown-document-in-raw-mode",
+    "documentationUrl": "https://docs.github.com/rest/reference/markdown/#render-a-markdown-document-in-raw-mode",
     "previews": [],
     "headers": [
       {
@@ -19447,7 +20033,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "Returns meta information about GitHub, including a list of GitHub's IP addresses. For more information, see \"[About GitHub's IP addresses](https://help.github.com/articles/about-github-s-ip-addresses/).\"\n\n**Note:** The IP addresses shown in the documentation's response are only example values. You must always query the API directly to get the latest list of IP addresses.",
-    "documentationUrl": "https://docs.github.com/v3/meta/#get-github-meta-information",
+    "documentationUrl": "https://docs.github.com/rest/reference/meta/#get-github-meta-information",
     "previews": [],
     "headers": [],
     "parameters": [],
@@ -22411,7 +22997,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "To see many of the organization response values, you need to be an authenticated organization owner with the `admin:org` scope. When the value of `two_factor_requirement_enabled` is `true`, the organization requires all members, billing managers, and outside collaborators to enable [two-factor authentication](https://help.github.com/articles/securing-your-account-with-two-factor-authentication-2fa/).\n\nGitHub Apps with the `Organization plan` permission can use this endpoint to retrieve information about an organization's GitHub plan. See \"[Authenticating with GitHub Apps](https://docs.github.com/apps/building-github-apps/authenticating-with-github-apps/)\" for details. For an example response, see 'Response with GitHub plan information' below.\"",
-    "documentationUrl": "https://docs.github.com/v3/orgs/#get-an-organization",
+    "documentationUrl": "https://docs.github.com/rest/reference/orgs/#get-an-organization",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -22612,7 +23198,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "Returns the webhook configuration for an organization. To get more information about the webhook, including the `active` state and `events`, use \"[Get an organization webhook ](/rest/reference/orgs#get-an-organization-webhook).\"\n\nAccess tokens must have the `admin:org_hook` scope, and GitHub Apps must have the `organization_hooks:read` permission.",
-    "documentationUrl": "https://docs.github.com/v3/orgs#get-a-webhook-configuration-for-an-organization",
+    "documentationUrl": "https://docs.github.com/rest/reference/orgs#get-a-webhook-configuration-for-an-organization",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -22665,7 +23251,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "Lists all organizations, in the order that they were created on GitHub.\n\n**Note:** Pagination is powered exclusively by the `since` parameter. Use the [Link header](https://docs.github.com/rest/overview/resources-in-the-rest-api#link-header) to get the URL for the next page of organizations.",
-    "documentationUrl": "https://docs.github.com/v3/orgs/#list-organizations",
+    "documentationUrl": "https://docs.github.com/rest/reference/orgs/#list-organizations",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -22719,7 +23305,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "Lists all GitHub Apps in an organization. The installation count includes all GitHub Apps installed on repositories in the organization. You must be an organization owner with `admin:read` scope to use this endpoint.",
-    "documentationUrl": "https://docs.github.com/v3/orgs/#list-app-installations-for-an-organization",
+    "documentationUrl": "https://docs.github.com/rest/reference/orgs/#list-app-installations-for-an-organization",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -22893,7 +23479,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "List organizations for the authenticated user.\n\n**OAuth scope requirements**\n\nThis only lists organizations that your authorization allows you to operate on in some way (e.g., you can list teams with `read:org` scope, you can publicize your organization membership with `user` scope, etc.). Therefore, this API requires at least `user` or `read:org` scope. OAuth requests with insufficient scope receive a `403 Forbidden` response.",
-    "documentationUrl": "https://docs.github.com/v3/orgs/#list-organizations-for-the-authenticated-user",
+    "documentationUrl": "https://docs.github.com/rest/reference/orgs/#list-organizations-for-the-authenticated-user",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -22953,7 +23539,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "List [public organization memberships](https://help.github.com/articles/publicizing-or-concealing-organization-membership) for the specified user.\n\nThis method only lists _public_ memberships, regardless of authentication. If you need to fetch all of the organization memberships (public and private) for the authenticated user, use the [List organizations for the authenticated user](https://docs.github.com/rest/reference/orgs#list-organizations-for-the-authenticated-user) API instead.",
-    "documentationUrl": "https://docs.github.com/v3/orgs/#list-organizations-for-a-user",
+    "documentationUrl": "https://docs.github.com/rest/reference/orgs/#list-organizations-for-a-user",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -23950,7 +24536,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "**Parameter Deprecation Notice:** GitHub will replace and discontinue `members_allowed_repository_creation_type` in favor of more granular permissions. The new input parameters are `members_can_create_public_repositories`, `members_can_create_private_repositories` for all organizations and `members_can_create_internal_repositories` for organizations associated with an enterprise account using GitHub Enterprise Cloud or GitHub Enterprise Server 2.20+. For more information, see the [blog post](https://developer.github.com/changes/2019-12-03-internal-visibility-changes).\n\nEnables an authenticated organization owner with the `admin:org` scope to update the organization's profile and member privileges.",
-    "documentationUrl": "https://docs.github.com/v3/orgs/#update-an-organization",
+    "documentationUrl": "https://docs.github.com/rest/reference/orgs/#update-an-organization",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -24459,7 +25045,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "Updates the webhook configuration for an organization. To update more information about the webhook, including the `active` state and `events`, use \"[Update an organization webhook ](/rest/reference/orgs#update-an-organization-webhook).\"\n\nAccess tokens must have the `admin:org_hook` scope, and GitHub Apps must have the `organization_hooks:write` permission.",
-    "documentationUrl": "https://docs.github.com/v3/orgs#update-a-webhook-configuration-for-an-organization",
+    "documentationUrl": "https://docs.github.com/rest/reference/orgs#update-a-webhook-configuration-for-an-organization",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -25920,7 +26506,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "",
-    "documentationUrl": "https://docs.github.com/v3/projects/#create-a-user-project",
+    "documentationUrl": "https://docs.github.com/rest/reference/projects/#create-a-user-project",
     "previews": [{ "name": "inertia" }],
     "headers": [],
     "parameters": [
@@ -25986,7 +26572,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "Creates an organization project board. Returns a `404 Not Found` status if projects are disabled in the organization. If you do not have sufficient privileges to perform this action, a `401 Unauthorized` or `410 Gone` status is returned.",
-    "documentationUrl": "https://docs.github.com/v3/projects/#create-an-organization-project",
+    "documentationUrl": "https://docs.github.com/rest/reference/projects/#create-an-organization-project",
     "previews": [{ "name": "inertia" }],
     "headers": [],
     "parameters": [
@@ -26061,7 +26647,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "Creates a repository project board. Returns a `404 Not Found` status if projects are disabled in the repository. If you do not have sufficient privileges to perform this action, a `401 Unauthorized` or `410 Gone` status is returned.",
-    "documentationUrl": "https://docs.github.com/v3/projects/#create-a-repository-project",
+    "documentationUrl": "https://docs.github.com/rest/reference/projects/#create-a-repository-project",
     "previews": [{ "name": "inertia" }],
     "headers": [],
     "parameters": [
@@ -26149,7 +26735,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "Deletes a project board. Returns a `404 Not Found` status if projects are disabled.",
-    "documentationUrl": "https://docs.github.com/v3/projects/#delete-a-project",
+    "documentationUrl": "https://docs.github.com/rest/reference/projects/#delete-a-project",
     "previews": [{ "name": "inertia" }],
     "headers": [],
     "parameters": [
@@ -26269,7 +26855,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "Gets a project by its `id`. Returns a `404 Not Found` status if projects are disabled. If you do not have sufficient privileges to perform this action, a `401 Unauthorized` or `410 Gone` status is returned.",
-    "documentationUrl": "https://docs.github.com/v3/projects/#get-a-project",
+    "documentationUrl": "https://docs.github.com/rest/reference/projects/#get-a-project",
     "previews": [{ "name": "inertia" }],
     "headers": [],
     "parameters": [
@@ -26731,7 +27317,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "Lists the projects in an organization. Returns a `404 Not Found` status if projects are disabled in the organization. If you do not have sufficient privileges to perform this action, a `401 Unauthorized` or `410 Gone` status is returned.",
-    "documentationUrl": "https://docs.github.com/v3/projects/#list-organization-projects",
+    "documentationUrl": "https://docs.github.com/rest/reference/projects/#list-organization-projects",
     "previews": [{ "name": "inertia" }],
     "headers": [],
     "parameters": [
@@ -26811,7 +27397,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "Lists the projects in a repository. Returns a `404 Not Found` status if projects are disabled in the repository. If you do not have sufficient privileges to perform this action, a `401 Unauthorized` or `410 Gone` status is returned.",
-    "documentationUrl": "https://docs.github.com/v3/projects/#list-repository-projects",
+    "documentationUrl": "https://docs.github.com/rest/reference/projects/#list-repository-projects",
     "previews": [{ "name": "inertia" }],
     "headers": [],
     "parameters": [
@@ -26912,7 +27498,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "",
-    "documentationUrl": "https://docs.github.com/v3/projects/#list-user-projects",
+    "documentationUrl": "https://docs.github.com/rest/reference/projects/#list-user-projects",
     "previews": [{ "name": "inertia" }],
     "headers": [],
     "parameters": [
@@ -27176,7 +27762,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "Updates a project board's information. Returns a `404 Not Found` status if projects are disabled. If you do not have sufficient privileges to perform this action, a `401 Unauthorized` or `410 Gone` status is returned.",
-    "documentationUrl": "https://docs.github.com/v3/projects/#update-a-project",
+    "documentationUrl": "https://docs.github.com/rest/reference/projects/#update-a-project",
     "previews": [{ "name": "inertia" }],
     "headers": [],
     "parameters": [
@@ -27430,7 +28016,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "",
-    "documentationUrl": "https://docs.github.com/v3/pulls/#check-if-a-pull-request-has-been-merged",
+    "documentationUrl": "https://docs.github.com/rest/reference/pulls/#check-if-a-pull-request-has-been-merged",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -27497,7 +28083,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "Draft pull requests are available in public repositories with GitHub Free and GitHub Free for organizations, GitHub Pro, and legacy per-repository billing plans, and in public and private repositories with GitHub Team and GitHub Enterprise Cloud. For more information, see [GitHub's products](https://help.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.\n\nTo open or update a pull request in a public repository, you must have write access to the head or the source branch. For organization-owned repositories, you must be a member of the organization that owns the repository to open or update a pull request.\n\nYou can create a new pull request.\n\nThis endpoint triggers [notifications](https://docs.github.com/en/github/managing-subscriptions-and-notifications-on-github/about-notifications). Creating content too quickly using this endpoint may result in abuse rate limiting. See \"[Abuse rate limits](https://docs.github.com/rest/overview/resources-in-the-rest-api#abuse-rate-limits)\" and \"[Dealing with abuse rate limits](https://docs.github.com/rest/guides/best-practices-for-integrators#dealing-with-rate-limits)\" for details.",
-    "documentationUrl": "https://docs.github.com/v3/pulls/#create-a-pull-request",
+    "documentationUrl": "https://docs.github.com/rest/reference/pulls/#create-a-pull-request",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -28379,7 +28965,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "Draft pull requests are available in public repositories with GitHub Free and GitHub Free for organizations, GitHub Pro, and legacy per-repository billing plans, and in public and private repositories with GitHub Team and GitHub Enterprise Cloud. For more information, see [GitHub's products](https://help.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.\n\nLists details of a pull request by providing its number.\n\nWhen you get, [create](https://docs.github.com/rest/reference/pulls/#create-a-pull-request), or [edit](https://docs.github.com/rest/reference/pulls#update-a-pull-request) a pull request, GitHub creates a merge commit to test whether the pull request can be automatically merged into the base branch. This test commit is not added to the base branch or the head branch. You can review the status of the test commit using the `mergeable` key. For more information, see \"[Checking mergeability of pull requests](https://docs.github.com/rest/guides/getting-started-with-the-git-database-api#checking-mergeability-of-pull-requests)\".\n\nThe value of the `mergeable` attribute can be `true`, `false`, or `null`. If the value is `null`, then GitHub has started a background job to compute the mergeability. After giving the job time to complete, resubmit the request. When the job finishes, you will see a non-`null` value for the `mergeable` attribute in the response. If `mergeable` is `true`, then `merge_commit_sha` will be the SHA of the _test_ merge commit.\n\nThe value of the `merge_commit_sha` attribute changes depending on the state of the pull request. Before merging a pull request, the `merge_commit_sha` attribute holds the SHA of the _test_ merge commit. After merging a pull request, the `merge_commit_sha` attribute changes depending on how you merged the pull request:\n\n*   If merged as a [merge commit](https://help.github.com/articles/about-merge-methods-on-github/), `merge_commit_sha` represents the SHA of the merge commit.\n*   If merged via a [squash](https://help.github.com/articles/about-merge-methods-on-github/#squashing-your-merge-commits), `merge_commit_sha` represents the SHA of the squashed commit on the base branch.\n*   If [rebased](https://help.github.com/articles/about-merge-methods-on-github/#rebasing-and-merging-your-commits), `merge_commit_sha` represents the commit that the base branch was updated to.\n\nPass the appropriate [media type](https://docs.github.com/rest/overview/media-types/#commits-commit-comparison-and-pull-requests) to fetch diff and patch formats.",
-    "documentationUrl": "https://docs.github.com/v3/pulls/#get-a-pull-request",
+    "documentationUrl": "https://docs.github.com/rest/reference/pulls/#get-a-pull-request",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -28595,7 +29181,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "Draft pull requests are available in public repositories with GitHub Free and GitHub Free for organizations, GitHub Pro, and legacy per-repository billing plans, and in public and private repositories with GitHub Team and GitHub Enterprise Cloud. For more information, see [GitHub's products](https://help.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.",
-    "documentationUrl": "https://docs.github.com/v3/pulls/#list-pull-requests",
+    "documentationUrl": "https://docs.github.com/rest/reference/pulls/#list-pull-requests",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -28847,7 +29433,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "Lists a maximum of 250 commits for a pull request. To receive a complete commit list for pull requests with more than 250 commits, use the [List commits](https://docs.github.com/rest/reference/repos#list-commits) endpoint.",
-    "documentationUrl": "https://docs.github.com/v3/pulls/#list-commits-on-a-pull-request",
+    "documentationUrl": "https://docs.github.com/rest/reference/pulls/#list-commits-on-a-pull-request",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -28939,7 +29525,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "**Note:** Responses include a maximum of 3000 files. The paginated response returns 30 files per page by default.",
-    "documentationUrl": "https://docs.github.com/v3/pulls/#list-pull-requests-files",
+    "documentationUrl": "https://docs.github.com/rest/reference/pulls/#list-pull-requests-files",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -29466,7 +30052,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "This endpoint triggers [notifications](https://docs.github.com/github/managing-subscriptions-and-notifications-on-github/about-notifications). Creating content too quickly using this endpoint may result in abuse rate limiting. See \"[Abuse rate limits](https://docs.github.com/rest/overview/resources-in-the-rest-api#abuse-rate-limits)\" and \"[Dealing with abuse rate limits](https://docs.github.com/rest/guides/best-practices-for-integrators#dealing-with-abuse-rate-limits)\" for details.",
-    "documentationUrl": "https://docs.github.com/v3/pulls/#merge-a-pull-request",
+    "documentationUrl": "https://docs.github.com/rest/reference/pulls/#merge-a-pull-request",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -29894,7 +30480,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "Draft pull requests are available in public repositories with GitHub Free and GitHub Free for organizations, GitHub Pro, and legacy per-repository billing plans, and in public and private repositories with GitHub Team and GitHub Enterprise Cloud. For more information, see [GitHub's products](https://help.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.\n\nTo open or update a pull request in a public repository, you must have write access to the head or the source branch. For organization-owned repositories, you must be a member of the organization that owns the repository to open or update a pull request.",
-    "documentationUrl": "https://docs.github.com/v3/pulls/#update-a-pull-request",
+    "documentationUrl": "https://docs.github.com/rest/reference/pulls/#update-a-pull-request",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -30027,7 +30613,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "Updates the pull request branch with the latest upstream changes by merging HEAD from the base branch into the pull request branch.",
-    "documentationUrl": "https://docs.github.com/v3/pulls/#update-a-pull-request-branch",
+    "documentationUrl": "https://docs.github.com/rest/reference/pulls/#update-a-pull-request-branch",
     "previews": [{ "name": "lydian" }],
     "headers": [],
     "parameters": [
@@ -30285,7 +30871,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "**Note:** Accessing this endpoint does not count against your REST API rate limit.\n\n**Note:** The `rate` object is deprecated. If you're writing new API client code or updating existing code, you should use the `core` object instead of the `rate` object. The `core` object contains the same information that is present in the `rate` object.",
-    "documentationUrl": "https://docs.github.com/v3/rate_limit/#get-rate-limit-status-for-the-authenticated-user",
+    "documentationUrl": "https://docs.github.com/rest/reference/rate_limit/#get-rate-limit-status-for-the-authenticated-user",
     "previews": [],
     "headers": [],
     "parameters": [],
@@ -30313,7 +30899,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "Create a reaction to a [commit comment](https://docs.github.com/rest/reference/repos#comments). A response with a `Status: 200 OK` means that you already added the reaction type to this commit comment.",
-    "documentationUrl": "https://docs.github.com/v3/reactions/#create-reaction-for-a-commit-comment",
+    "documentationUrl": "https://docs.github.com/rest/reference/reactions/#create-reaction-for-a-commit-comment",
     "previews": [{ "name": "squirrel-girl" }],
     "headers": [],
     "parameters": [
@@ -30416,7 +31002,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "Create a reaction to an [issue](https://docs.github.com/rest/reference/issues/). A response with a `Status: 200 OK` means that you already added the reaction type to this issue.",
-    "documentationUrl": "https://docs.github.com/v3/reactions/#create-reaction-for-an-issue",
+    "documentationUrl": "https://docs.github.com/rest/reference/reactions/#create-reaction-for-an-issue",
     "previews": [{ "name": "squirrel-girl" }],
     "headers": [],
     "parameters": [
@@ -30510,7 +31096,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "Create a reaction to an [issue comment](https://docs.github.com/rest/reference/issues#comments). A response with a `Status: 200 OK` means that you already added the reaction type to this issue comment.",
-    "documentationUrl": "https://docs.github.com/v3/reactions/#create-reaction-for-an-issue-comment",
+    "documentationUrl": "https://docs.github.com/rest/reference/reactions/#create-reaction-for-an-issue-comment",
     "previews": [{ "name": "squirrel-girl" }],
     "headers": [],
     "parameters": [
@@ -30613,7 +31199,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "Create a reaction to a [pull request review comment](https://docs.github.com/rest/reference/pulls#comments). A response with a `Status: 200 OK` means that you already added the reaction type to this pull request review comment.",
-    "documentationUrl": "https://docs.github.com/v3/reactions/#create-reaction-for-a-pull-request-review-comment",
+    "documentationUrl": "https://docs.github.com/rest/reference/reactions/#create-reaction-for-a-pull-request-review-comment",
     "previews": [{ "name": "squirrel-girl" }],
     "headers": [],
     "parameters": [
@@ -30716,7 +31302,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "Create a reaction to a [team discussion comment](https://docs.github.com/rest/reference/teams#discussion-comments). OAuth access tokens require the `write:discussion` [scope](https://docs.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/). A response with a `Status: 200 OK` means that you already added the reaction type to this team discussion comment.\n\n**Note:** You can also specify a team by `org_id` and `team_id` using the route `POST /organizations/:org_id/team/:team_id/discussions/:discussion_number/comments/:comment_number/reactions`.",
-    "documentationUrl": "https://docs.github.com/v3/reactions/#create-reaction-for-a-team-discussion-comment",
+    "documentationUrl": "https://docs.github.com/rest/reference/reactions/#create-reaction-for-a-team-discussion-comment",
     "previews": [{ "name": "squirrel-girl" }],
     "headers": [],
     "parameters": [
@@ -30817,7 +31403,7 @@
     "isDeprecated": true,
     "deprecationDate": "2020-02-26",
     "description": "**Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new \"[Create reaction for a team discussion comment](https://docs.github.com/rest/reference/reactions#create-reaction-for-a-team-discussion-comment)\" endpoint.\n\nCreate a reaction to a [team discussion comment](https://docs.github.com/rest/reference/teams#discussion-comments). OAuth access tokens require the `write:discussion` [scope](https://docs.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/). A response with a `Status: 200 OK` means that you already added the reaction type to this team discussion comment.",
-    "documentationUrl": "https://docs.github.com/v3/reactions/#create-reaction-for-a-team-discussion-comment-legacy",
+    "documentationUrl": "https://docs.github.com/rest/reference/reactions/#create-reaction-for-a-team-discussion-comment-legacy",
     "previews": [{ "name": "squirrel-girl" }],
     "headers": [],
     "parameters": [
@@ -30905,7 +31491,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "Create a reaction to a [team discussion](https://docs.github.com/rest/reference/teams#discussions). OAuth access tokens require the `write:discussion` [scope](https://docs.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/). A response with a `Status: 200 OK` means that you already added the reaction type to this team discussion.\n\n**Note:** You can also specify a team by `org_id` and `team_id` using the route `POST /organizations/:org_id/team/:team_id/discussions/:discussion_number/reactions`.",
-    "documentationUrl": "https://docs.github.com/v3/reactions/#create-reaction-for-a-team-discussion",
+    "documentationUrl": "https://docs.github.com/rest/reference/reactions/#create-reaction-for-a-team-discussion",
     "previews": [{ "name": "squirrel-girl" }],
     "headers": [],
     "parameters": [
@@ -30993,7 +31579,7 @@
     "isDeprecated": true,
     "deprecationDate": "2020-02-26",
     "description": "**Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [`Create reaction for a team discussion`](https://docs.github.com/rest/reference/reactions#create-reaction-for-a-team-discussion) endpoint.\n\nCreate a reaction to a [team discussion](https://docs.github.com/rest/reference/teams#discussions). OAuth access tokens require the `write:discussion` [scope](https://docs.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/). A response with a `Status: 200 OK` means that you already added the reaction type to this team discussion.",
-    "documentationUrl": "https://docs.github.com/v3/reactions/#create-reaction-for-a-team-discussion-legacy",
+    "documentationUrl": "https://docs.github.com/rest/reference/reactions/#create-reaction-for-a-team-discussion-legacy",
     "previews": [{ "name": "squirrel-girl" }],
     "headers": [],
     "parameters": [
@@ -31068,7 +31654,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "**Note:** You can also specify a repository by `repository_id` using the route `DELETE /repositories/:repository_id/comments/:comment_id/reactions/:reaction_id`.\n\nDelete a reaction to a [commit comment](https://docs.github.com/rest/reference/repos#comments).",
-    "documentationUrl": "https://docs.github.com/v3/reactions/#delete-a-commit-comment-reaction",
+    "documentationUrl": "https://docs.github.com/rest/reference/reactions/#delete-a-commit-comment-reaction",
     "previews": [{ "name": "squirrel-girl" }],
     "headers": [],
     "parameters": [
@@ -31139,7 +31725,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "**Note:** You can also specify a repository by `repository_id` using the route `DELETE /repositories/:repository_id/issues/:issue_number/reactions/:reaction_id`.\n\nDelete a reaction to an [issue](https://docs.github.com/rest/reference/issues/).",
-    "documentationUrl": "https://docs.github.com/v3/reactions/#delete-an-issue-reaction",
+    "documentationUrl": "https://docs.github.com/rest/reference/reactions/#delete-an-issue-reaction",
     "previews": [{ "name": "squirrel-girl" }],
     "headers": [],
     "parameters": [
@@ -31210,7 +31796,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "**Note:** You can also specify a repository by `repository_id` using the route `DELETE delete /repositories/:repository_id/issues/comments/:comment_id/reactions/:reaction_id`.\n\nDelete a reaction to an [issue comment](https://docs.github.com/rest/reference/issues#comments).",
-    "documentationUrl": "https://docs.github.com/v3/reactions/#delete-an-issue-comment-reaction",
+    "documentationUrl": "https://docs.github.com/rest/reference/reactions/#delete-an-issue-comment-reaction",
     "previews": [{ "name": "squirrel-girl" }],
     "headers": [],
     "parameters": [
@@ -31281,7 +31867,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "**Note:** You can also specify a repository by `repository_id` using the route `DELETE /repositories/:repository_id/pulls/comments/:comment_id/reactions/:reaction_id.`\n\nDelete a reaction to a [pull request review comment](https://docs.github.com/rest/reference/pulls#review-comments).",
-    "documentationUrl": "https://docs.github.com/v3/reactions/#delete-a-pull-request-comment-reaction",
+    "documentationUrl": "https://docs.github.com/rest/reference/reactions/#delete-a-pull-request-comment-reaction",
     "previews": [{ "name": "squirrel-girl" }],
     "headers": [],
     "parameters": [
@@ -31352,7 +31938,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "**Note:** You can also specify a team or organization with `team_id` and `org_id` using the route `DELETE /organizations/:org_id/team/:team_id/discussions/:discussion_number/reactions/:reaction_id`.\n\nDelete a reaction to a [team discussion](https://docs.github.com/rest/reference/teams#discussions). OAuth access tokens require the `write:discussion` [scope](https://docs.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).",
-    "documentationUrl": "https://docs.github.com/v3/reactions/#delete-team-discussion-reaction",
+    "documentationUrl": "https://docs.github.com/rest/reference/reactions/#delete-team-discussion-reaction",
     "previews": [{ "name": "squirrel-girl" }],
     "headers": [],
     "parameters": [
@@ -31423,7 +32009,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "**Note:** You can also specify a team or organization with `team_id` and `org_id` using the route `DELETE /organizations/:org_id/team/:team_id/discussions/:discussion_number/comments/:comment_number/reactions/:reaction_id`.\n\nDelete a reaction to a [team discussion comment](https://docs.github.com/rest/reference/teams#discussion-comments). OAuth access tokens require the `write:discussion` [scope](https://docs.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).",
-    "documentationUrl": "https://docs.github.com/v3/reactions/#delete-team-discussion-comment-reaction",
+    "documentationUrl": "https://docs.github.com/rest/reference/reactions/#delete-team-discussion-comment-reaction",
     "previews": [{ "name": "squirrel-girl" }],
     "headers": [],
     "parameters": [
@@ -31507,7 +32093,7 @@
     "isDeprecated": true,
     "deprecationDate": "2020-02-26",
     "description": "**Deprecation Notice:** This endpoint route is deprecated and will be removed from the Reactions API. We recommend migrating your existing code to use the new delete reactions endpoints. For more information, see this [blog post](https://developer.github.com/changes/2020-02-26-new-delete-reactions-endpoints/).\n\nOAuth access tokens require the `write:discussion` [scope](https://docs.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/), when deleting a [team discussion](https://docs.github.com/rest/reference/teams#discussions) or [team discussion comment](https://docs.github.com/rest/reference/teams#discussion-comments).",
-    "documentationUrl": "https://docs.github.com/v3/reactions/#delete-a-reaction-legacy",
+    "documentationUrl": "https://docs.github.com/rest/reference/reactions/#delete-a-reaction-legacy",
     "previews": [{ "name": "squirrel-girl" }],
     "headers": [],
     "parameters": [
@@ -31548,7 +32134,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "List the reactions to a [commit comment](https://docs.github.com/rest/reference/repos#comments).",
-    "documentationUrl": "https://docs.github.com/v3/reactions/#list-reactions-for-a-commit-comment",
+    "documentationUrl": "https://docs.github.com/rest/reference/reactions/#list-reactions-for-a-commit-comment",
     "previews": [{ "name": "squirrel-girl" }],
     "headers": [],
     "parameters": [
@@ -31664,7 +32250,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "List the reactions to an [issue](https://docs.github.com/rest/reference/issues).",
-    "documentationUrl": "https://docs.github.com/v3/reactions/#list-reactions-for-an-issue",
+    "documentationUrl": "https://docs.github.com/rest/reference/reactions/#list-reactions-for-an-issue",
     "previews": [{ "name": "squirrel-girl" }],
     "headers": [],
     "parameters": [
@@ -31781,7 +32367,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "List the reactions to an [issue comment](https://docs.github.com/rest/reference/issues#comments).",
-    "documentationUrl": "https://docs.github.com/v3/reactions/#list-reactions-for-an-issue-comment",
+    "documentationUrl": "https://docs.github.com/rest/reference/reactions/#list-reactions-for-an-issue-comment",
     "previews": [{ "name": "squirrel-girl" }],
     "headers": [],
     "parameters": [
@@ -31897,7 +32483,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "List the reactions to a [pull request review comment](https://docs.github.com/rest/reference/pulls#review-comments).",
-    "documentationUrl": "https://docs.github.com/v3/reactions/#list-reactions-for-a-pull-request-review-comment",
+    "documentationUrl": "https://docs.github.com/rest/reference/reactions/#list-reactions-for-a-pull-request-review-comment",
     "previews": [{ "name": "squirrel-girl" }],
     "headers": [],
     "parameters": [
@@ -32013,7 +32599,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "List the reactions to a [team discussion comment](https://docs.github.com/rest/reference/teams#discussion-comments/). OAuth access tokens require the `read:discussion` [scope](https://docs.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).\n\n**Note:** You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/:org_id/team/:team_id/discussions/:discussion_number/comments/:comment_number/reactions`.",
-    "documentationUrl": "https://docs.github.com/v3/reactions/#list-reactions-for-a-team-discussion-comment",
+    "documentationUrl": "https://docs.github.com/rest/reference/reactions/#list-reactions-for-a-team-discussion-comment",
     "previews": [{ "name": "squirrel-girl" }],
     "headers": [],
     "parameters": [
@@ -32140,7 +32726,7 @@
     "isDeprecated": true,
     "deprecationDate": "2020-02-26",
     "description": "**Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [`List reactions for a team discussion comment`](https://docs.github.com/rest/reference/reactions#list-reactions-for-a-team-discussion-comment) endpoint.\n\nList the reactions to a [team discussion comment](https://docs.github.com/rest/reference/teams#discussion-comments). OAuth access tokens require the `read:discussion` [scope](https://docs.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).",
-    "documentationUrl": "https://docs.github.com/v3/reactions/#list-reactions-for-a-team-discussion-comment-legacy",
+    "documentationUrl": "https://docs.github.com/rest/reference/reactions/#list-reactions-for-a-team-discussion-comment-legacy",
     "previews": [{ "name": "squirrel-girl" }],
     "headers": [],
     "parameters": [
@@ -32254,7 +32840,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "List the reactions to a [team discussion](https://docs.github.com/rest/reference/teams#discussions). OAuth access tokens require the `read:discussion` [scope](https://docs.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).\n\n**Note:** You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/:org_id/team/:team_id/discussions/:discussion_number/reactions`.",
-    "documentationUrl": "https://docs.github.com/v3/reactions/#list-reactions-for-a-team-discussion",
+    "documentationUrl": "https://docs.github.com/rest/reference/reactions/#list-reactions-for-a-team-discussion",
     "previews": [{ "name": "squirrel-girl" }],
     "headers": [],
     "parameters": [
@@ -32368,7 +32954,7 @@
     "isDeprecated": true,
     "deprecationDate": "2020-02-26",
     "description": "**Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [`List reactions for a team discussion`](https://docs.github.com/rest/reference/reactions#list-reactions-for-a-team-discussion) endpoint.\n\nList the reactions to a [team discussion](https://docs.github.com/rest/reference/teams#discussions). OAuth access tokens require the `read:discussion` [scope](https://docs.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).",
-    "documentationUrl": "https://docs.github.com/v3/reactions/#list-reactions-for-a-team-discussion-legacy",
+    "documentationUrl": "https://docs.github.com/rest/reference/reactions/#list-reactions-for-a-team-discussion-legacy",
     "previews": [{ "name": "squirrel-girl" }],
     "headers": [],
     "parameters": [
@@ -32993,7 +33579,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "Shows whether dependency alerts are enabled or disabled for a repository. The authenticated user must have admin access to the repository. For more information, see \"[About security alerts for vulnerable dependencies](https://help.github.com/en/articles/about-security-alerts-for-vulnerable-dependencies)\".",
-    "documentationUrl": "https://docs.github.com/v3/repos/#check-if-vulnerability-alerts-are-enabled-for-a-repository",
+    "documentationUrl": "https://docs.github.com/rest/reference/repos/#check-if-vulnerability-alerts-are-enabled-for-a-repository",
     "previews": [{ "name": "dorian" }],
     "headers": [],
     "parameters": [
@@ -33116,6 +33702,72 @@
       },
       { "code": 404, "description": "Resource Not Found", "examples": null },
       { "code": 500, "description": "Internal Error", "examples": null }
+    ],
+    "renamed": null
+  },
+  {
+    "name": "Create an environment",
+    "scope": "repos",
+    "id": "createAnEnvironment",
+    "method": "POST",
+    "url": "/repos/{owner}/{repo}/environments/{environment_name}",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "description": "Create an environment for a repository. If an environment with the specified name already exists, the existing environment will be returned.\n\nThe created environment will not have any protection rules configured. To configure protection rules for the created environment, see \"[Set protection rules for an environment](#set-protection-rules-for-an-environment)\".\n\nYou must authenticate using an access token with the repo scope to use this endpoint.",
+    "documentationUrl": "https://docs.github.com/rest/reference/repos#create-an-environment",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "owner",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "repo",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "environment_name",
+        "description": "The name of the environment",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "examples": [
+          {
+            "data": "{\"id\":161088068,\"node_id\":\"MDExOkVudmlyb25tZW50MTYxMDg4MDY4\",\"name\":\"staging\",\"url\":\"https://api.github.com/repos/github/hello-world/environments/staging\",\"html_url\":\"https://github.com/github/hello-world/deployments/activity_log?environments_filter=staging\",\"created_at\":\"2020-11-23T22:00:40Z\",\"updated_at\":\"2020-11-23T22:00:40Z\",\"protection_rules\":[],\"deployment_branch_policy\":null}"
+          }
+        ]
+      }
     ],
     "renamed": null
   },
@@ -33900,7 +34552,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "You can use this endpoint to trigger a webhook event called `repository_dispatch` when you want activity that happens outside of GitHub to trigger a GitHub Actions workflow or GitHub App webhook. You must configure your GitHub Actions workflow or GitHub App to run when the `repository_dispatch` event occurs. For an example `repository_dispatch` webhook payload, see \"[RepositoryDispatchEvent](https://docs.github.com/webhooks/event-payloads/#repository_dispatch).\"\n\nThe `client_payload` parameter is available for any extra information that your workflow might need. This parameter is a JSON payload that will be passed on when the webhook event is dispatched. For example, the `client_payload` can include a message that a user would like to send using a GitHub Actions workflow. Or the `client_payload` can be used as a test to debug your workflow.\n\nThis endpoint requires write access to the repository by providing either:\n\n  - Personal access tokens with `repo` scope. For more information, see \"[Creating a personal access token for the command line](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line)\" in the GitHub Help documentation.\n  - GitHub Apps with both `metadata:read` and `contents:read&write` permissions.\n\nThis input example shows how you can use the `client_payload` as a test to debug your workflow.",
-    "documentationUrl": "https://docs.github.com/v3/repos/#create-a-repository-dispatch-event",
+    "documentationUrl": "https://docs.github.com/rest/reference/repos/#create-a-repository-dispatch-event",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -33985,7 +34637,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "Creates a new repository for the authenticated user.\n\n**OAuth scope requirements**\n\nWhen using [OAuth](https://docs.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/), authorizations must include:\n\n*   `public_repo` scope or `repo` scope to create a public repository\n*   `repo` scope to create a private repository",
-    "documentationUrl": "https://docs.github.com/v3/repos/#create-a-repository-for-the-authenticated-user",
+    "documentationUrl": "https://docs.github.com/rest/reference/repos/#create-a-repository-for-the-authenticated-user",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -34315,7 +34967,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "Creates a new repository in the specified organization. The authenticated user must be a member of the organization.\n\n**OAuth scope requirements**\n\nWhen using [OAuth](https://docs.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/), authorizations must include:\n\n*   `public_repo` scope or `repo` scope to create a public repository\n*   `repo` scope to create a private repository",
-    "documentationUrl": "https://docs.github.com/v3/repos/#create-an-organization-repository",
+    "documentationUrl": "https://docs.github.com/rest/reference/repos/#create-an-organization-repository",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -35043,7 +35695,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "Creates a new repository using a repository template. Use the `template_owner` and `template_repo` route parameters to specify the repository to use as the template. The authenticated user must own or be a member of an organization that owns the repository. To check if a repository is available to use as a template, get the repository's information using the [Get a repository](https://docs.github.com/rest/reference/repos#get-a-repository) endpoint and check that the `is_template` key is `true`.\n\n**OAuth scope requirements**\n\nWhen using [OAuth](https://docs.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/), authorizations must include:\n\n*   `public_repo` scope or `repo` scope to create a public repository\n*   `repo` scope to create a private repository",
-    "documentationUrl": "https://docs.github.com/v3/repos/#create-a-repository-using-a-template",
+    "documentationUrl": "https://docs.github.com/rest/reference/repos/#create-a-repository-using-a-template",
     "previews": [{ "name": "baptiste" }],
     "headers": [],
     "parameters": [
@@ -35383,7 +36035,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "Deleting a repository requires admin access. If OAuth is used, the `delete_repo` scope is required.\n\nIf an organization owner has configured the organization to prevent members from deleting organization-owned\nrepositories, you will get a `403 Forbidden` response.",
-    "documentationUrl": "https://docs.github.com/v3/repos/#delete-a-repository",
+    "documentationUrl": "https://docs.github.com/rest/reference/repos/#delete-a-repository",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -35543,6 +36195,64 @@
     "responses": [
       { "code": 204, "description": "No Content", "examples": null },
       { "code": 404, "description": "Resource Not Found", "examples": null }
+    ],
+    "renamed": null
+  },
+  {
+    "name": "Delete an environment",
+    "scope": "repos",
+    "id": "deleteAnEnvironment",
+    "method": "DELETE",
+    "url": "/repos/{owner}/{repo}/environments/{environment_name}",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "description": "You must authenticate using an access token with the repo scope to use this endpoint.",
+    "documentationUrl": "https://docs.github.com/rest/reference/repos#delete-an-environment",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "owner",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "repo",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "environment_name",
+        "description": "The name of the environment",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      { "code": 204, "description": "Empty response", "examples": null }
     ],
     "renamed": null
   },
@@ -36381,7 +37091,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "Disables automated security fixes for a repository. The authenticated user must have admin access to the repository. For more information, see \"[Configuring automated security fixes](https://help.github.com/en/articles/configuring-automated-security-fixes)\".",
-    "documentationUrl": "https://docs.github.com/v3/repos/#disable-automated-security-fixes",
+    "documentationUrl": "https://docs.github.com/rest/reference/repos/#disable-automated-security-fixes",
     "previews": [{ "name": "london" }],
     "headers": [],
     "parameters": [
@@ -36426,7 +37136,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "Disables dependency alerts and the dependency graph for a repository. The authenticated user must have admin access to the repository. For more information, see \"[About security alerts for vulnerable dependencies](https://help.github.com/en/articles/about-security-alerts-for-vulnerable-dependencies)\".",
-    "documentationUrl": "https://docs.github.com/v3/repos/#disable-vulnerability-alerts",
+    "documentationUrl": "https://docs.github.com/rest/reference/repos/#disable-vulnerability-alerts",
     "previews": [{ "name": "dorian" }],
     "headers": [],
     "parameters": [
@@ -36705,7 +37415,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "Enables automated security fixes for a repository. The authenticated user must have admin access to the repository. For more information, see \"[Configuring automated security fixes](https://help.github.com/en/articles/configuring-automated-security-fixes)\".",
-    "documentationUrl": "https://docs.github.com/v3/repos/#enable-automated-security-fixes",
+    "documentationUrl": "https://docs.github.com/rest/reference/repos/#enable-automated-security-fixes",
     "previews": [{ "name": "london" }],
     "headers": [],
     "parameters": [
@@ -36750,7 +37460,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "Enables dependency alerts and the dependency graph for a repository. The authenticated user must have admin access to the repository. For more information, see \"[About security alerts for vulnerable dependencies](https://help.github.com/en/articles/about-security-alerts-for-vulnerable-dependencies)\".",
-    "documentationUrl": "https://docs.github.com/v3/repos/#enable-vulnerability-alerts",
+    "documentationUrl": "https://docs.github.com/rest/reference/repos/#enable-vulnerability-alerts",
     "previews": [{ "name": "dorian" }],
     "headers": [],
     "parameters": [
@@ -36795,7 +37505,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "When you pass the `scarlet-witch-preview` media type, requests to get a repository will also return the repository's code of conduct if it can be detected from the repository's code of conduct file.\n\nThe `parent` and `source` objects are present when the repository is a fork. `parent` is the repository this repository was forked from, `source` is the ultimate source for the network.",
-    "documentationUrl": "https://docs.github.com/v3/repos/#get-a-repository",
+    "documentationUrl": "https://docs.github.com/rest/reference/repos/#get-a-repository",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -36979,6 +37689,59 @@
     "renamed": null
   },
   {
+    "name": "Get all environments",
+    "scope": "repos",
+    "id": "getAllEnvironments",
+    "method": "GET",
+    "url": "/repos/{owner}/{repo}/environments",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "description": "Get all environments for a repository.\n\nAnyone with read access to the repository can use this endpoint. If the repository is private, you must use an access token with the `repo` scope. GitHub Apps must have the `actions:read` permission to use this endpoint.",
+    "documentationUrl": "https://docs.github.com/rest/reference/repos#get-all-environments",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "owner",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "repo",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "examples": [
+          {
+            "data": "{\"total_count\":1,\"environments\":[{\"id\":161088068,\"node_id\":\"MDExOkVudmlyb25tZW50MTYxMDg4MDY4\",\"name\":\"staging\",\"url\":\"https://api.github.com/repos/github/hello-world/environments/staging\",\"html_url\":\"https://github.com/github/hello-world/deployments/activity_log?environments_filter=staging\",\"created_at\":\"2020-11-23T22:00:40Z\",\"updated_at\":\"2020-11-23T22:00:40Z\",\"protection_rules\":[{\"id\":3736,\"node_id\":\"MDQ6R2F0ZTM3MzY=\",\"type\":\"wait_timer\",\"wait_timer\":30},{\"id\":3755,\"node_id\":\"MDQ6R2F0ZTM3NTU=\",\"type\":\"required_reviewers\",\"reviewers\":[{\"type\":\"User\",\"reviewer\":{\"login\":\"octocat\",\"id\":1,\"node_id\":\"MDQ6VXNlcjE=\",\"avatar_url\":\"https://github.com/images/error/octocat_happy.gif\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/octocat\",\"html_url\":\"https://github.com/octocat\",\"followers_url\":\"https://api.github.com/users/octocat/followers\",\"following_url\":\"https://api.github.com/users/octocat/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/octocat/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/octocat/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/octocat/subscriptions\",\"organizations_url\":\"https://api.github.com/users/octocat/orgs\",\"repos_url\":\"https://api.github.com/users/octocat/repos\",\"events_url\":\"https://api.github.com/users/octocat/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/octocat/received_events\",\"type\":\"User\",\"site_admin\":false}},{\"type\":\"Team\",\"reviewer\":{\"id\":1,\"node_id\":\"MDQ6VGVhbTE=\",\"url\":\"https://api.github.com/teams/1\",\"html_url\":\"https://github.com/orgs/github/teams/justice-league\",\"name\":\"Justice League\",\"slug\":\"justice-league\",\"description\":\"A great team.\",\"privacy\":\"closed\",\"permission\":\"admin\",\"members_url\":\"https://api.github.com/teams/1/members{/member}\",\"repositories_url\":\"https://api.github.com/teams/1/repos\"}}]},{\"id\":3756,\"node_id\":\"MDQ6R2F0ZTM3NTY=\",\"type\":\"branch_policy\"}],\"deployment_branch_policy\":{\"protected_branches\":false,\"custom_branch_policies\":true}}]}"
+          }
+        ]
+      }
+    ],
+    "renamed": null
+  },
+  {
     "name": "Get all status check contexts",
     "scope": "repos",
     "id": "getAllStatusCheckContexts",
@@ -37050,7 +37813,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "",
-    "documentationUrl": "https://docs.github.com/v3/repos/#get-all-repository-topics",
+    "documentationUrl": "https://docs.github.com/rest/reference/repos/#get-all-repository-topics",
     "previews": [{ "name": "mercy" }],
     "headers": [],
     "parameters": [
@@ -38216,6 +38979,72 @@
     "renamed": null
   },
   {
+    "name": "Get an environment",
+    "scope": "repos",
+    "id": "getEnvironment",
+    "method": "GET",
+    "url": "/repos/{owner}/{repo}/environments/{environment_name}",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "description": "Anyone with read access to the repository can use this endpoint. If the repository is private, you must use an access token with the `repo` scope. GitHub Apps must have the `actions:read` permission to use this endpoint.",
+    "documentationUrl": "https://docs.github.com/rest/reference/repos#get-an-environment",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "owner",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "repo",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "environment_name",
+        "description": "The name of the environment",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "examples": [
+          {
+            "data": "{\"id\":161088068,\"node_id\":\"MDExOkVudmlyb25tZW50MTYxMDg4MDY4\",\"name\":\"staging\",\"url\":\"https://api.github.com/repos/github/hello-world/environments/staging\",\"html_url\":\"https://github.com/github/hello-world/deployments/activity_log?environments_filter=staging\",\"created_at\":\"2020-11-23T22:00:40Z\",\"updated_at\":\"2020-11-23T22:00:40Z\",\"protection_rules\":[{\"id\":3736,\"node_id\":\"MDQ6R2F0ZTM3MzY=\",\"type\":\"wait_timer\",\"wait_timer\":30},{\"id\":3755,\"node_id\":\"MDQ6R2F0ZTM3NTU=\",\"type\":\"required_reviewers\",\"reviewers\":[{\"type\":\"User\",\"reviewer\":{\"login\":\"octocat\",\"id\":1,\"node_id\":\"MDQ6VXNlcjE=\",\"avatar_url\":\"https://github.com/images/error/octocat_happy.gif\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/octocat\",\"html_url\":\"https://github.com/octocat\",\"followers_url\":\"https://api.github.com/users/octocat/followers\",\"following_url\":\"https://api.github.com/users/octocat/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/octocat/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/octocat/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/octocat/subscriptions\",\"organizations_url\":\"https://api.github.com/users/octocat/orgs\",\"repos_url\":\"https://api.github.com/users/octocat/repos\",\"events_url\":\"https://api.github.com/users/octocat/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/octocat/received_events\",\"type\":\"User\",\"site_admin\":false}},{\"type\":\"Team\",\"reviewer\":{\"id\":1,\"node_id\":\"MDQ6VGVhbTE=\",\"url\":\"https://api.github.com/teams/1\",\"html_url\":\"https://github.com/orgs/github/teams/justice-league\",\"name\":\"Justice League\",\"slug\":\"justice-league\",\"description\":\"A great team.\",\"privacy\":\"closed\",\"permission\":\"admin\",\"members_url\":\"https://api.github.com/teams/1/members{/member}\",\"repositories_url\":\"https://api.github.com/teams/1/repos\"}}]},{\"id\":3756,\"node_id\":\"MDQ6R2F0ZTM3NTY=\",\"type\":\"branch_policy\"}],\"deployment_branch_policy\":{\"protected_branches\":false,\"custom_branch_policies\":true}}"
+          }
+        ]
+      }
+    ],
+    "renamed": null
+  },
+  {
     "name": "Get latest Pages build",
     "scope": "repos",
     "id": "getLatestPagesBuild",
@@ -39333,7 +40162,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "Returns the webhook configuration for a repository. To get more information about the webhook, including the `active` state and `events`, use \"[Get a repository webhook](/rest/reference/orgs#get-a-repository-webhook).\"\n\nAccess tokens must have the `read:repo_hook` or `repo` scope, and GitHub Apps must have the `repository_hooks:read` permission.",
-    "documentationUrl": "https://docs.github.com/v3/repos#get-a-webhook-configuration-for-a-repository",
+    "documentationUrl": "https://docs.github.com/rest/reference/repos#get-a-webhook-configuration-for-a-repository",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -40073,7 +40902,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "Lists contributors to the specified repository and sorts them by the number of commits per contributor in descending order. This endpoint may return information that is a few hours old because the GitHub REST API v3 caches contributor data to improve performance.\n\nGitHub identifies contributors by author email address. This endpoint groups contribution counts by GitHub user, which includes all associated email addresses. To improve performance, only the first 500 author email addresses in the repository link to GitHub users. The rest will appear as anonymous contributors without associated GitHub user information.",
-    "documentationUrl": "https://docs.github.com/v3/repos/#list-repository-contributors",
+    "documentationUrl": "https://docs.github.com/rest/reference/repos/#list-repository-contributors",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -40475,7 +41304,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "Lists repositories that the authenticated user has explicit permission (`:read`, `:write`, or `:admin`) to access.\n\nThe authenticated user has explicit permission to access repositories they own, repositories where they are a collaborator, and repositories that they can access through an organization membership.",
-    "documentationUrl": "https://docs.github.com/v3/repos/#list-repositories-for-the-authenticated-user",
+    "documentationUrl": "https://docs.github.com/rest/reference/repos/#list-repositories-for-the-authenticated-user",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -40627,7 +41456,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "Lists repositories for the specified organization.",
-    "documentationUrl": "https://docs.github.com/v3/repos/#list-organization-repositories",
+    "documentationUrl": "https://docs.github.com/rest/reference/repos/#list-organization-repositories",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -40740,7 +41569,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "Lists public repositories for the specified user.",
-    "documentationUrl": "https://docs.github.com/v3/repos/#list-repositories-for-a-user",
+    "documentationUrl": "https://docs.github.com/rest/reference/repos/#list-repositories-for-a-user",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -41079,7 +41908,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "Lists languages for the specified repository. The value shown for each language is the number of bytes of code written in that language.",
-    "documentationUrl": "https://docs.github.com/v3/repos/#list-repository-languages",
+    "documentationUrl": "https://docs.github.com/rest/reference/repos/#list-repository-languages",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -41207,7 +42036,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "Lists all public repositories in the order that they were created.\n\nNote: Pagination is powered exclusively by the `since` parameter. Use the [Link header](https://docs.github.com/rest/overview/resources-in-the-rest-api#link-header) to get the URL for the next page of repositories.",
-    "documentationUrl": "https://docs.github.com/v3/repos/#list-public-repositories",
+    "documentationUrl": "https://docs.github.com/rest/reference/repos/#list-public-repositories",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -41514,7 +42343,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "",
-    "documentationUrl": "https://docs.github.com/v3/repos/#list-repository-tags",
+    "documentationUrl": "https://docs.github.com/rest/reference/repos/#list-repository-tags",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -41593,7 +42422,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "",
-    "documentationUrl": "https://docs.github.com/v3/repos/#list-repository-teams",
+    "documentationUrl": "https://docs.github.com/rest/reference/repos/#list-repository-teams",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -42433,7 +43262,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "",
-    "documentationUrl": "https://docs.github.com/v3/repos/#replace-all-repository-topics",
+    "documentationUrl": "https://docs.github.com/rest/reference/repos/#replace-all-repository-topics",
     "previews": [{ "name": "mercy" }],
     "headers": [],
     "parameters": [
@@ -42691,6 +43520,168 @@
         ]
       },
       { "code": 422, "description": "Validation Failed", "examples": null }
+    ],
+    "renamed": null
+  },
+  {
+    "name": "Set protection rules for an environment",
+    "scope": "repos",
+    "id": "setEnvironmentProtectionRules",
+    "method": "PUT",
+    "url": "/repos/{owner}/{repo}/environments/{environment_name}",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "description": "Set protection rules, such as required reviewers, for an environment. For more information about environment protection rules, see \"[Environments](/actions/reference/environments#environment-protection-rules).\"\n\n**Note:** Although you can use this operation to specify that only branches that match specified name patterns can deploy to this environment, you must use the UI to set the name patterns. For more information, see \"[Environments](/actions/reference/environments#deployment-branches).\"\n\nYou must authenticate using an access token with the repo scope to use this endpoint.",
+    "documentationUrl": "https://docs.github.com/rest/reference/repos#set-protection-rules-for-an-environment",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "owner",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "repo",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "environment_name",
+        "description": "The name of the environment",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "wait_timer",
+        "description": "The amount of time to delay a job after the job is initially triggered. The time (in minutes) must be an integer between 0 and 43,200 (30 days).",
+        "in": "BODY",
+        "type": "integer",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "reviewers",
+        "description": "The people or teams that may jobs that reference the environment. You can list up to six users or teams as reviewers. The reviewers must have at least read access to the repository. Only one of the required reviewers needs to approve the job for it to proceed.",
+        "in": "BODY",
+        "type": "object[]",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "reviewers[].type",
+        "description": "The type of reviewer. Must be one of: `User` or `Team`",
+        "in": "BODY",
+        "type": "string",
+        "required": false,
+        "enum": ["User", "Team"],
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "reviewers[].id",
+        "description": "The id of the user or team who can review the deployment",
+        "in": "BODY",
+        "type": "integer",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "deployment_branch_policy",
+        "description": "The type of deployment branch policy for this environment. To allow all branches to deploy, set to `null`.",
+        "in": "BODY",
+        "type": "object",
+        "required": false,
+        "enum": null,
+        "allowNull": true,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "deployment_branch_policy.protected_branches",
+        "description": "Whether only branches with branch protection rules can deploy to this environment. If `protected_branches` is `true`, `custom_branch_policies` must be `false`; if `protected_branches` is `false`, `custom_branch_policies` must be `true`.",
+        "in": "BODY",
+        "type": "boolean",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "deployment_branch_policy.custom_branch_policies",
+        "description": "Whether only branches that match the specified name patterns can deploy to this environment.  If `custom_branch_policies` is `true`, `protected_branches` must be `false`; if `custom_branch_policies` is `false`, `protected_branches` must be `true`.",
+        "in": "BODY",
+        "type": "boolean",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "examples": [
+          {
+            "data": "{\"id\":161088068,\"node_id\":\"MDExOkVudmlyb25tZW50MTYxMDg4MDY4\",\"name\":\"staging\",\"url\":\"https://api.github.com/repos/github/hello-world/environments/staging\",\"html_url\":\"https://github.com/github/hello-world/deployments/activity_log?environments_filter=staging\",\"created_at\":\"2020-11-23T22:00:40Z\",\"updated_at\":\"2020-11-23T22:00:40Z\",\"protection_rules\":[{\"id\":3736,\"node_id\":\"MDQ6R2F0ZTM3MzY=\",\"type\":\"wait_timer\",\"wait_timer\":30},{\"id\":3755,\"node_id\":\"MDQ6R2F0ZTM3NTU=\",\"type\":\"required_reviewers\",\"reviewers\":[{\"type\":\"User\",\"reviewer\":{\"login\":\"octocat\",\"id\":1,\"node_id\":\"MDQ6VXNlcjE=\",\"avatar_url\":\"https://github.com/images/error/octocat_happy.gif\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/octocat\",\"html_url\":\"https://github.com/octocat\",\"followers_url\":\"https://api.github.com/users/octocat/followers\",\"following_url\":\"https://api.github.com/users/octocat/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/octocat/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/octocat/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/octocat/subscriptions\",\"organizations_url\":\"https://api.github.com/users/octocat/orgs\",\"repos_url\":\"https://api.github.com/users/octocat/repos\",\"events_url\":\"https://api.github.com/users/octocat/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/octocat/received_events\",\"type\":\"User\",\"site_admin\":false}},{\"type\":\"Team\",\"reviewer\":{\"id\":1,\"node_id\":\"MDQ6VGVhbTE=\",\"url\":\"https://api.github.com/teams/1\",\"html_url\":\"https://github.com/orgs/github/teams/justice-league\",\"name\":\"Justice League\",\"slug\":\"justice-league\",\"description\":\"A great team.\",\"privacy\":\"closed\",\"permission\":\"admin\",\"members_url\":\"https://api.github.com/teams/1/members{/member}\",\"repositories_url\":\"https://api.github.com/teams/1/repos\"}}]},{\"id\":3756,\"node_id\":\"MDQ6R2F0ZTM3NTY=\",\"type\":\"branch_policy\"}],\"deployment_branch_policy\":{\"protected_branches\":false,\"custom_branch_policies\":true}}"
+          }
+        ]
+      },
+      {
+        "code": 422,
+        "description": "Response when `protected_branches` and `custom_branch_policies` in `deployment_branch_policy` are set to the same value",
+        "examples": null
+      }
     ],
     "renamed": null
   },
@@ -42999,7 +43990,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "A transfer request will need to be accepted by the new owner when transferring a personal repository to another user. The response will contain the original `owner`, and the transfer will continue asynchronously. For more details on the requirements to transfer personal and organization-owned repositories, see [about repository transfers](https://help.github.com/articles/about-repository-transfers/).",
-    "documentationUrl": "https://docs.github.com/v3/repos/#transfer-a-repository",
+    "documentationUrl": "https://docs.github.com/rest/reference/repos/#transfer-a-repository",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -43078,7 +44069,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "**Note**: To edit a repository's topics, use the [Replace all repository topics](https://docs.github.com/rest/reference/repos#replace-all-repository-topics) endpoint.",
-    "documentationUrl": "https://docs.github.com/v3/repos/#update-a-repository",
+    "documentationUrl": "https://docs.github.com/rest/reference/repos/#update-a-repository",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -44673,7 +45664,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "Updates the webhook configuration for a repository. To update more information about the webhook, including the `active` state and `events`, use \"[Update a repository webhook](/rest/reference/orgs#update-a-repository-webhook).\"\n\nAccess tokens must have the `write:repo_hook` or `repo` scope, and GitHub Apps must have the `repository_hooks:write` permission.",
-    "documentationUrl": "https://docs.github.com/v3/repos#update-a-webhook-configuration-for-a-repository",
+    "documentationUrl": "https://docs.github.com/rest/reference/repos#update-a-webhook-configuration-for-a-repository",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -44909,7 +45900,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "Searches for query terms inside of a file. This method returns up to 100 results [per page](https://docs.github.com/rest/overview/resources-in-the-rest-api#pagination).\n\nWhen searching for code, you can get text match metadata for the file **content** and file **path** fields when you pass the `text-match` media type. For more details about how to receive highlighted search results, see [Text match metadata](https://docs.github.com/rest/reference/search#text-match-metadata).\n\nFor example, if you want to find the definition of the `addClass` function inside [jQuery](https://github.com/jquery/jquery) repository, your query would look something like this:\n\n`q=addClass+in:file+language:js+repo:jquery/jquery`\n\nThis query searches for the keyword `addClass` within a file's contents. The query limits the search to files where the language is JavaScript in the `jquery/jquery` repository.\n\n#### Considerations for code search\n\nDue to the complexity of searching code, there are a few restrictions on how searches are performed:\n\n*   Only the _default branch_ is considered. In most cases, this will be the `master` branch.\n*   Only files smaller than 384 KB are searchable.\n*   You must always include at least one search term when searching source code. For example, searching for [`language:go`](https://github.com/search?utf8=%E2%9C%93&q=language%3Ago&type=Code) is not valid, while [`amazing\nlanguage:go`](https://github.com/search?utf8=%E2%9C%93&q=amazing+language%3Ago&type=Code) is.",
-    "documentationUrl": "https://docs.github.com/v3/search/#search-code",
+    "documentationUrl": "https://docs.github.com/rest/reference/search/#search-code",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -45005,7 +45996,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "Find commits via various criteria on the default branch (usually `master`). This method returns up to 100 results [per page](https://docs.github.com/rest/overview/resources-in-the-rest-api#pagination).\n\nWhen searching for commits, you can get text match metadata for the **message** field when you provide the `text-match` media type. For more details about how to receive highlighted search results, see [Text match\nmetadata](https://docs.github.com/rest/reference/search#text-match-metadata).\n\nFor example, if you want to find commits related to CSS in the [octocat/Spoon-Knife](https://github.com/octocat/Spoon-Knife) repository. Your query would look something like this:\n\n`q=repo:octocat/Spoon-Knife+css`",
-    "documentationUrl": "https://docs.github.com/v3/search/#search-commits",
+    "documentationUrl": "https://docs.github.com/rest/reference/search/#search-commits",
     "previews": [{ "name": "cloak" }],
     "headers": [],
     "parameters": [
@@ -45099,7 +46090,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "Find issues by state and keyword. This method returns up to 100 results [per page](https://docs.github.com/rest/overview/resources-in-the-rest-api#pagination).\n\nWhen searching for issues, you can get text match metadata for the issue **title**, issue **body**, and issue **comment body** fields when you pass the `text-match` media type. For more details about how to receive highlighted\nsearch results, see [Text match metadata](https://docs.github.com/rest/reference/search#text-match-metadata).\n\nFor example, if you want to find the oldest unresolved Python bugs on Windows. Your query might look something like this.\n\n`q=windows+label:bug+language:python+state:open&sort=created&order=asc`\n\nThis query searches for the keyword `windows`, within any open issue that is labeled as `bug`. The search runs across repositories whose primary language is Python. The results are sorted by creation date in ascending order, which means the oldest issues appear first in the search results.\n\n**Note:** For [user-to-server](https://docs.github.com/developers/apps/identifying-and-authorizing-users-for-github-apps#user-to-server-requests) GitHub App requests, you can't retrieve a combination of issues and pull requests in a single query. Requests that don't include the `is:issue` or `is:pull-request` qualifier will receive an HTTP `422 Unprocessable Entity` response. To get results for both issues and pull requests, you must send separate queries for issues and pull requests. For more information about the `is` qualifier, see \"[Searching only issues or pull requests](https://docs.github.com/github/searching-for-information-on-github/searching-issues-and-pull-requests#search-only-issues-or-pull-requests).\"",
-    "documentationUrl": "https://docs.github.com/v3/search/#search-issues-and-pull-requests",
+    "documentationUrl": "https://docs.github.com/rest/reference/search/#search-issues-and-pull-requests",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -45207,7 +46198,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "Find labels in a repository with names or descriptions that match search keywords. Returns up to 100 results [per page](https://docs.github.com/rest/overview/resources-in-the-rest-api#pagination).\n\nWhen searching for labels, you can get text match metadata for the label **name** and **description** fields when you pass the `text-match` media type. For more details about how to receive highlighted search results, see [Text match metadata](https://docs.github.com/rest/reference/search#text-match-metadata).\n\nFor example, if you want to find labels in the `linguist` repository that match `bug`, `defect`, or `enhancement`. Your query might look like this:\n\n`q=bug+defect+enhancement&repository_id=64778136`\n\nThe labels that best match the query appear first in the search results.",
-    "documentationUrl": "https://docs.github.com/v3/search/#search-labels",
+    "documentationUrl": "https://docs.github.com/rest/reference/search/#search-labels",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -45290,7 +46281,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "Find repositories via various criteria. This method returns up to 100 results [per page](https://docs.github.com/rest/overview/resources-in-the-rest-api#pagination).\n\nWhen searching for repositories, you can get text match metadata for the **name** and **description** fields when you pass the `text-match` media type. For more details about how to receive highlighted search results, see [Text match metadata](https://docs.github.com/rest/reference/search#text-match-metadata).\n\nFor example, if you want to search for popular Tetris repositories written in assembly code, your query might look like this:\n\n`q=tetris+language:assembly&sort=stars&order=desc`\n\nThis query searches for repositories with the word `tetris` in the name, the description, or the README. The results are limited to repositories where the primary language is assembly. The results are sorted by stars in descending order, so that the most popular repositories appear first in the search results.\n\nWhen you include the `mercy` preview header, you can also search for multiple topics by adding more `topic:` instances. For example, your query might look like this:\n\n`q=topic:ruby+topic:rails`",
-    "documentationUrl": "https://docs.github.com/v3/search/#search-repositories",
+    "documentationUrl": "https://docs.github.com/rest/reference/search/#search-repositories",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -45385,7 +46376,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "Find topics via various criteria. Results are sorted by best match. This method returns up to 100 results [per page](https://docs.github.com/rest/overview/resources-in-the-rest-api#pagination). See \"[Searching topics](https://help.github.com/articles/searching-topics/)\" for a detailed list of qualifiers.\n\nWhen searching for topics, you can get text match metadata for the topic's **short\\_description**, **description**, **name**, or **display\\_name** field when you pass the `text-match` media type. For more details about how to receive highlighted search results, see [Text match metadata](https://docs.github.com/rest/reference/search#text-match-metadata).\n\nFor example, if you want to search for topics related to Ruby that are featured on https://github.com/topics. Your query might look like this:\n\n`q=ruby+is:featured`\n\nThis query searches for topics with the keyword `ruby` and limits the results to find only topics that are featured. The topics that are the best match for the query appear first in the search results.",
-    "documentationUrl": "https://docs.github.com/v3/search/#search-topics",
+    "documentationUrl": "https://docs.github.com/rest/reference/search/#search-topics",
     "previews": [{ "name": "mercy" }],
     "headers": [],
     "parameters": [
@@ -45427,7 +46418,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "Find users via various criteria. This method returns up to 100 results [per page](https://docs.github.com/rest/overview/resources-in-the-rest-api#pagination).\n\nWhen searching for users, you can get text match metadata for the issue **login**, **email**, and **name** fields when you pass the `text-match` media type. For more details about highlighting search results, see [Text match metadata](https://docs.github.com/rest/reference/search#text-match-metadata). For more details about how to receive highlighted search results, see [Text match metadata](https://docs.github.com/rest/reference/search#text-match-metadata).\n\nFor example, if you're looking for a list of popular users, you might try this query:\n\n`q=tom+repos:%3E42+followers:%3E1000`\n\nThis query searches for users with the name `tom`. The results are restricted to users with more than 42 repositories and over 1,000 followers.",
-    "documentationUrl": "https://docs.github.com/v3/search/#search-users",
+    "documentationUrl": "https://docs.github.com/rest/reference/search/#search-users",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -46038,7 +47029,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "Adds an organization project to a team. To add a project to a team or update the team's permission on a project, the authenticated user must have `admin` permissions for the project. The project and team must be part of the same organization.\n\n**Note:** You can also specify a team by `org_id` and `team_id` using the route `PUT /organizations/{org_id}/team/{team_id}/projects/{project_id}`.",
-    "documentationUrl": "https://docs.github.com/v3/teams/#add-or-update-team-project-permissions",
+    "documentationUrl": "https://docs.github.com/rest/reference/teams/#add-or-update-team-project-permissions",
     "previews": [{ "name": "inertia" }],
     "headers": [],
     "parameters": [
@@ -46118,7 +47109,7 @@
     "isDeprecated": true,
     "deprecationDate": "2020-01-21",
     "description": "**Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [Add or update team project permissions](https://docs.github.com/rest/reference/teams#add-or-update-team-project-permissions) endpoint.\n\nAdds an organization project to a team. To add a project to a team or update the team's permission on a project, the authenticated user must have `admin` permissions for the project. The project and team must be part of the same organization.",
-    "documentationUrl": "https://docs.github.com/v3/teams/#add-or-update-team-project-permissions-legacy",
+    "documentationUrl": "https://docs.github.com/rest/reference/teams/#add-or-update-team-project-permissions-legacy",
     "previews": [{ "name": "inertia" }],
     "headers": [],
     "parameters": [
@@ -46192,7 +47183,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "To add a repository to a team or update the team's permission on a repository, the authenticated user must have admin access to the repository, and must be able to see the team. The repository must be owned by the organization, or a direct fork of a repository owned by the organization. You will get a `422 Unprocessable Entity` status if you attempt to add a repository to a team that is not owned by the organization. Note that, if you choose not to pass any parameters, you'll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see \"[HTTP verbs](https://docs.github.com/rest/overview/resources-in-the-rest-api#http-verbs).\"\n\n**Note:** You can also specify a team by `org_id` and `team_id` using the route `PUT /organizations/{org_id}/team/{team_id}/repos/{owner}/{repo}`.\n\nFor more information about the permission levels, see \"[Repository permission levels for an organization](https://help.github.com/en/github/setting-up-and-managing-organizations-and-teams/repository-permission-levels-for-an-organization#permission-levels-for-repositories-owned-by-an-organization)\".",
-    "documentationUrl": "https://docs.github.com/v3/teams/#add-or-update-team-repository-permissions",
+    "documentationUrl": "https://docs.github.com/rest/reference/teams/#add-or-update-team-repository-permissions",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -46276,7 +47267,7 @@
     "isDeprecated": true,
     "deprecationDate": "2020-01-21",
     "description": "**Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new \"[Add or update team repository permissions](https://docs.github.com/rest/reference/teams#add-or-update-team-repository-permissions)\" endpoint.\n\nTo add a repository to a team or update the team's permission on a repository, the authenticated user must have admin access to the repository, and must be able to see the team. The repository must be owned by the organization, or a direct fork of a repository owned by the organization. You will get a `422 Unprocessable Entity` status if you attempt to add a repository to a team that is not owned by the organization.\n\nNote that, if you choose not to pass any parameters, you'll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see \"[HTTP verbs](https://docs.github.com/rest/overview/resources-in-the-rest-api#http-verbs).\"",
-    "documentationUrl": "https://docs.github.com/v3/teams/#add-or-update-team-repository-permissions-legacy",
+    "documentationUrl": "https://docs.github.com/rest/reference/teams/#add-or-update-team-repository-permissions-legacy",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -46349,7 +47340,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "Checks whether a team has `read`, `write`, or `admin` permissions for an organization project. The response includes projects inherited from a parent team.\n\n**Note:** You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/{org_id}/team/{team_id}/projects/{project_id}`.",
-    "documentationUrl": "https://docs.github.com/v3/teams/#check-team-permissions-for-a-project",
+    "documentationUrl": "https://docs.github.com/rest/reference/teams/#check-team-permissions-for-a-project",
     "previews": [{ "name": "inertia" }],
     "headers": [],
     "parameters": [
@@ -46420,7 +47411,7 @@
     "isDeprecated": true,
     "deprecationDate": "2020-01-21",
     "description": "**Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [Check team permissions for a project](https://docs.github.com/rest/reference/teams#check-team-permissions-for-a-project) endpoint.\n\nChecks whether a team has `read`, `write`, or `admin` permissions for an organization project. The response includes projects inherited from a parent team.",
-    "documentationUrl": "https://docs.github.com/v3/teams/#check-team-permissions-for-a-project-legacy",
+    "documentationUrl": "https://docs.github.com/rest/reference/teams/#check-team-permissions-for-a-project-legacy",
     "previews": [{ "name": "inertia" }],
     "headers": [],
     "parameters": [
@@ -46479,7 +47470,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "Checks whether a team has `admin`, `push`, `maintain`, `triage`, or `pull` permission for a repository. Repositories inherited through a parent team will also be checked.\n\nYou can also get information about the specified repository, including what permissions the team grants on it, by passing the following custom [media type](https://docs.github.com/rest/overview/media-types/) via the `application/vnd.github.v3.repository+json` accept header.\n\nIf a team doesn't have permission for the repository, you will receive a `404 Not Found` response status.\n\n**Note:** You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/{org_id}/team/{team_id}/repos/{owner}/{repo}`.",
-    "documentationUrl": "https://docs.github.com/v3/teams/#check-team-permissions-for-a-repository",
+    "documentationUrl": "https://docs.github.com/rest/reference/teams/#check-team-permissions-for-a-repository",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -46568,7 +47559,7 @@
     "isDeprecated": true,
     "deprecationDate": "2020-01-21",
     "description": "**Note**: Repositories inherited through a parent team will also be checked.\n\n**Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [Check team permissions for a repository](https://docs.github.com/rest/reference/teams#check-team-permissions-for-a-repository) endpoint.\n\nYou can also get information about the specified repository, including what permissions the team grants on it, by passing the following custom [media type](https://docs.github.com/rest/overview/media-types/) via the `Accept` header:",
-    "documentationUrl": "https://docs.github.com/v3/teams/#check-team-permissions-for-a-repository-legacy",
+    "documentationUrl": "https://docs.github.com/rest/reference/teams/#check-team-permissions-for-a-repository-legacy",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -46644,7 +47635,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "To create a team, the authenticated user must be a member or owner of `{org}`. By default, organization members can create teams. Organization owners can limit team creation to organization owners. For more information, see \"[Setting team creation permissions](https://help.github.com/en/articles/setting-team-creation-permissions-in-your-organization).\"\n\nWhen you create a new team, you automatically become a team maintainer without explicitly adding yourself to the optional array of `maintainers`. For more information, see \"[About teams](https://help.github.com/en/github/setting-up-and-managing-organizations-and-teams/about-teams)\".",
-    "documentationUrl": "https://docs.github.com/v3/teams/#create-a-team",
+    "documentationUrl": "https://docs.github.com/rest/reference/teams/#create-a-team",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -47325,7 +48316,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "To delete a team, the authenticated user must be an organization owner or team maintainer.\n\nIf you are an organization owner, deleting a parent team will delete all of its child teams as well.\n\n**Note:** You can also specify a team by `org_id` and `team_id` using the route `DELETE /organizations/{org_id}/team/{team_id}`.",
-    "documentationUrl": "https://docs.github.com/v3/teams/#delete-a-team",
+    "documentationUrl": "https://docs.github.com/rest/reference/teams/#delete-a-team",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -47370,7 +48361,7 @@
     "isDeprecated": true,
     "deprecationDate": "2020-01-21",
     "description": "**Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [Delete a team](https://docs.github.com/rest/reference/teams#delete-a-team) endpoint.\n\nTo delete a team, the authenticated user must be an organization owner or team maintainer.\n\nIf you are an organization owner, deleting a parent team will delete all of its child teams as well.",
-    "documentationUrl": "https://docs.github.com/v3/teams/#delete-a-team-legacy",
+    "documentationUrl": "https://docs.github.com/rest/reference/teams/#delete-a-team-legacy",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -47404,7 +48395,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "Gets a team using the team's `slug`. GitHub generates the `slug` from the team `name`.\n\n**Note:** You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/{org_id}/team/{team_id}`.",
-    "documentationUrl": "https://docs.github.com/v3/teams/#get-a-team-by-name",
+    "documentationUrl": "https://docs.github.com/rest/reference/teams/#get-a-team-by-name",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -47722,7 +48713,7 @@
     "isDeprecated": true,
     "deprecationDate": "2020-01-21",
     "description": "**Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the [Get a team by name](https://docs.github.com/rest/reference/teams#get-a-team-by-name) endpoint.",
-    "documentationUrl": "https://docs.github.com/v3/teams/#get-a-team-legacy",
+    "documentationUrl": "https://docs.github.com/rest/reference/teams/#get-a-team-legacy",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -47954,7 +48945,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "Lists all teams in an organization that are visible to the authenticated user.",
-    "documentationUrl": "https://docs.github.com/v3/teams/#list-teams",
+    "documentationUrl": "https://docs.github.com/rest/reference/teams/#list-teams",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -48021,7 +49012,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "Lists the child teams of the team specified by `{team_slug}`.\n\n**Note:** You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/{org_id}/team/{team_id}/teams`.",
-    "documentationUrl": "https://docs.github.com/v3/teams/#list-child-teams",
+    "documentationUrl": "https://docs.github.com/rest/reference/teams/#list-child-teams",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -48100,7 +49091,7 @@
     "isDeprecated": true,
     "deprecationDate": "2020-01-21",
     "description": "**Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [`List child teams`](https://docs.github.com/rest/reference/teams#list-child-teams) endpoint.",
-    "documentationUrl": "https://docs.github.com/v3/teams/#list-child-teams-legacy",
+    "documentationUrl": "https://docs.github.com/rest/reference/teams/#list-child-teams-legacy",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -48537,7 +49528,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "List all of the teams across all of the organizations to which the authenticated user belongs. This method requires `user`, `repo`, or `read:org` [scope](https://docs.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/) when authenticating via [OAuth](https://docs.github.com/apps/building-oauth-apps/).",
-    "documentationUrl": "https://docs.github.com/v3/teams/#list-teams-for-the-authenticated-user",
+    "documentationUrl": "https://docs.github.com/rest/reference/teams/#list-teams-for-the-authenticated-user",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -48910,7 +49901,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "Lists the organization projects for a team.\n\n**Note:** You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/{org_id}/team/{team_id}/projects`.",
-    "documentationUrl": "https://docs.github.com/v3/teams/#list-team-projects",
+    "documentationUrl": "https://docs.github.com/rest/reference/teams/#list-team-projects",
     "previews": [{ "name": "inertia" }],
     "headers": [],
     "parameters": [
@@ -48989,7 +49980,7 @@
     "isDeprecated": true,
     "deprecationDate": "2020-01-21",
     "description": "**Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [`List team projects`](https://docs.github.com/rest/reference/teams#list-team-projects) endpoint.\n\nLists the organization projects for a team.",
-    "documentationUrl": "https://docs.github.com/v3/teams/#list-team-projects-legacy",
+    "documentationUrl": "https://docs.github.com/rest/reference/teams/#list-team-projects-legacy",
     "previews": [{ "name": "inertia" }],
     "headers": [],
     "parameters": [
@@ -49057,7 +50048,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "Lists a team's repositories visible to the authenticated user.\n\n**Note:** You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/{org_id}/team/{team_id}/repos`.",
-    "documentationUrl": "https://docs.github.com/v3/teams/#list-team-repositories",
+    "documentationUrl": "https://docs.github.com/rest/reference/teams/#list-team-repositories",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -49136,7 +50127,7 @@
     "isDeprecated": true,
     "deprecationDate": "2020-01-21",
     "description": "**Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [List team repositories](https://docs.github.com/rest/reference/teams#list-team-repositories) endpoint.",
-    "documentationUrl": "https://docs.github.com/v3/teams/#list-team-repositories-legacy",
+    "documentationUrl": "https://docs.github.com/rest/reference/teams/#list-team-repositories-legacy",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -49366,7 +50357,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "Removes an organization project from a team. An organization owner or a team maintainer can remove any project from the team. To remove a project from a team as an organization member, the authenticated user must have `read` access to both the team and project, or `admin` access to the team or project. This endpoint removes the project from the team, but does not delete the project.\n\n**Note:** You can also specify a team by `org_id` and `team_id` using the route `DELETE /organizations/{org_id}/team/{team_id}/projects/{project_id}`.",
-    "documentationUrl": "https://docs.github.com/v3/teams/#remove-a-project-from-a-team",
+    "documentationUrl": "https://docs.github.com/rest/reference/teams/#remove-a-project-from-a-team",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -49424,7 +50415,7 @@
     "isDeprecated": true,
     "deprecationDate": "2020-01-21",
     "description": "**Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [Remove a project from a team](https://docs.github.com/rest/reference/teams#remove-a-project-from-a-team) endpoint.\n\nRemoves an organization project from a team. An organization owner or a team maintainer can remove any project from the team. To remove a project from a team as an organization member, the authenticated user must have `read` access to both the team and project, or `admin` access to the team or project. **Note:** This endpoint removes the project from the team, but does not delete it.",
-    "documentationUrl": "https://docs.github.com/v3/teams/#remove-a-project-from-a-team-legacy",
+    "documentationUrl": "https://docs.github.com/rest/reference/teams/#remove-a-project-from-a-team-legacy",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -49476,7 +50467,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "If the authenticated user is an organization owner or a team maintainer, they can remove any repositories from the team. To remove a repository from a team as an organization member, the authenticated user must have admin access to the repository and must be able to see the team. This does not delete the repository, it just removes it from the team.\n\n**Note:** You can also specify a team by `org_id` and `team_id` using the route `DELETE /organizations/{org_id}/team/{team_id}/repos/{owner}/{repo}`.",
-    "documentationUrl": "https://docs.github.com/v3/teams/#remove-a-repository-from-a-team",
+    "documentationUrl": "https://docs.github.com/rest/reference/teams/#remove-a-repository-from-a-team",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -49547,7 +50538,7 @@
     "isDeprecated": true,
     "deprecationDate": "2020-01-21",
     "description": "**Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [Remove a repository from a team](https://docs.github.com/rest/reference/teams#remove-a-repository-from-a-team) endpoint.\n\nIf the authenticated user is an organization owner or a team maintainer, they can remove any repositories from the team. To remove a repository from a team as an organization member, the authenticated user must have admin access to the repository and must be able to see the team. NOTE: This does not delete the repository, it just removes it from the team.",
-    "documentationUrl": "https://docs.github.com/v3/teams/#remove-a-repository-from-a-team-legacy",
+    "documentationUrl": "https://docs.github.com/rest/reference/teams/#remove-a-repository-from-a-team-legacy",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -49947,7 +50938,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "To edit a team, the authenticated user must either be an organization owner or a team maintainer.\n\n**Note:** You can also specify a team by `org_id` and `team_id` using the route `PATCH /organizations/{org_id}/team/{team_id}`.",
-    "documentationUrl": "https://docs.github.com/v3/teams/#update-a-team",
+    "documentationUrl": "https://docs.github.com/rest/reference/teams/#update-a-team",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -50065,7 +51056,7 @@
     "isDeprecated": true,
     "deprecationDate": "2020-01-21",
     "description": "**Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [Update a team](https://docs.github.com/rest/reference/teams#update-a-team) endpoint.\n\nTo edit a team, the authenticated user must either be an organization owner or a team maintainer.\n\n**Note:** With nested teams, the `privacy` for parent teams cannot be `secret`.",
-    "documentationUrl": "https://docs.github.com/v3/teams/#update-a-team-legacy",
+    "documentationUrl": "https://docs.github.com/rest/reference/teams/#update-a-team-legacy",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -50686,7 +51677,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "If the authenticated user is authenticated through basic authentication or OAuth with the `user` scope, then the response lists public and private profile information.\n\nIf the authenticated user is authenticated through OAuth without the `user` scope, then the response lists only public profile information.",
-    "documentationUrl": "https://docs.github.com/v3/users/#get-the-authenticated-user",
+    "documentationUrl": "https://docs.github.com/rest/reference/users/#get-the-authenticated-user",
     "previews": [],
     "headers": [],
     "parameters": [],
@@ -50722,7 +51713,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "Provides publicly available information about someone with a GitHub account.\n\nGitHub Apps with the `Plan` user permission can use this endpoint to retrieve information about a user's GitHub plan. The GitHub App must be authenticated as a user. See \"[Identifying and authorizing users for GitHub Apps](https://docs.github.com/apps/building-github-apps/identifying-and-authorizing-users-for-github-apps/)\" for details about authentication. For an example response, see 'Response with GitHub plan information' below\"\n\nThe `email` key in the following response is the publicly visible email address from your GitHub [profile page](https://github.com/settings/profile). When setting up your profile, you can select a primary email address to be “public” which provides an email entry for this endpoint. If you do not set a public email address for `email`, then it will have a value of `null`. You only see publicly visible email addresses when authenticated with GitHub. For more information, see [Authentication](https://docs.github.com/rest/overview/resources-in-the-rest-api#authentication).\n\nThe Emails API enables you to list all of your email addresses, and toggle a primary email to be visible publicly. For more information, see \"[Emails API](https://docs.github.com/rest/reference/users#emails)\".",
-    "documentationUrl": "https://docs.github.com/v3/users/#get-a-user",
+    "documentationUrl": "https://docs.github.com/rest/reference/users/#get-a-user",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -50766,7 +51757,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "Provides hovercard information when authenticated through basic auth or OAuth with the `repo` scope. You can find out more about someone in relation to their pull requests, issues, repositories, and organizations.\n\nThe `subject_type` and `subject_id` parameters provide context for the person's hovercard, which returns more information than without the parameters. For example, if you wanted to find out more about `octocat` who owns the `Spoon-Knife` repository via cURL, it would look like this:\n\n```shell\n curl -u username:token\n  https://api.github.com/users/octocat/hovercard?subject_type=repository&subject_id=1300192\n```",
-    "documentationUrl": "https://docs.github.com/v3/users/#get-contextual-information-for-a-user",
+    "documentationUrl": "https://docs.github.com/rest/reference/users/#get-contextual-information-for-a-user",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -50930,7 +51921,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "Lists all users, in the order that they signed up on GitHub. This list includes personal user accounts and organization accounts.\n\nNote: Pagination is powered exclusively by the `since` parameter. Use the [Link header](https://docs.github.com/rest/overview/resources-in-the-rest-api#link-header) to get the URL for the next page of users.",
-    "documentationUrl": "https://docs.github.com/v3/users/#list-users",
+    "documentationUrl": "https://docs.github.com/rest/reference/users/#list-users",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -51785,7 +52776,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "description": "**Note:** If your email is set to private and you send an `email` parameter as part of this request to update your profile, your privacy settings are still enforced: the email address will not be displayed on your public profile or via the API.",
-    "documentationUrl": "https://docs.github.com/v3/users/#update-the-authenticated-user",
+    "documentationUrl": "https://docs.github.com/rest/reference/users/#update-the-authenticated-user",
     "previews": [],
     "headers": [],
     "parameters": [

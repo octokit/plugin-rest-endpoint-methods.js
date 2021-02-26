@@ -37,4 +37,4 @@ octokit.billing.getGithubActionsBillingOrg({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/v3/billing/#get-github-actions-billing-for-an-organization).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/billing/#get-github-actions-billing-for-an-organization).

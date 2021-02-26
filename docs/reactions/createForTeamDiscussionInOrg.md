@@ -51,4 +51,4 @@ The [reaction type](https://docs.github.com/rest/reference/reactions#reaction-ty
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/v3/reactions/#create-reaction-for-a-team-discussion).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/reactions/#create-reaction-for-a-team-discussion).

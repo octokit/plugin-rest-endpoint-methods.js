@@ -18,6 +18,14 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["POST /repos/{owner}/{repo}/actions/runs/{run_id}/cancel"]["response"];
     };
+    createOrUpdateEnvironmentSecret: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["PUT /repositories/{repository_id}/environments/{environment_name}/secrets/{secret_name}"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["PUT /repositories/{repository_id}/environments/{environment_name}/secrets/{secret_name}"]["response"];
+    };
     createOrUpdateOrgSecret: {
       parameters: RequestParameters &
         Omit<
@@ -81,6 +89,14 @@ export type RestEndpointMethodTypes = {
           "baseUrl" | "headers" | "mediaType"
         >;
       response: Endpoints["DELETE /repos/{owner}/{repo}/actions/artifacts/{artifact_id}"]["response"];
+    };
+    deleteEnvironmentSecret: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["DELETE /repositories/{repository_id}/environments/{environment_name}/secrets/{secret_name}"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["DELETE /repositories/{repository_id}/environments/{environment_name}/secrets/{secret_name}"]["response"];
     };
     deleteOrgSecret: {
       parameters: RequestParameters &
@@ -210,6 +226,22 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["GET /repos/{owner}/{repo}/actions/artifacts/{artifact_id}"]["response"];
     };
+    getEnvironmentPublicKey: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /repositories/{repository_id}/environments/{environment_name}/secrets/public-key"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /repositories/{repository_id}/environments/{environment_name}/secrets/public-key"]["response"];
+    };
+    getEnvironmentSecret: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /repositories/{repository_id}/environments/{environment_name}/secrets/{secret_name}"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /repositories/{repository_id}/environments/{environment_name}/secrets/{secret_name}"]["response"];
+    };
     getGithubActionsPermissionsOrganization: {
       parameters: RequestParameters &
         Omit<
@@ -250,6 +282,14 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["GET /orgs/{org}/actions/secrets/{secret_name}"]["response"];
     };
+    getPendingDeploymentsForRun: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /repos/{owner}/{repo}/actions/runs/{run_id}/pending_deployments"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /repos/{owner}/{repo}/actions/runs/{run_id}/pending_deployments"]["response"];
+    };
     getRepoPermissions: {
       parameters: RequestParameters &
         Omit<
@@ -273,6 +313,14 @@ export type RestEndpointMethodTypes = {
           "baseUrl" | "headers" | "mediaType"
         >;
       response: Endpoints["GET /repos/{owner}/{repo}/actions/secrets/{secret_name}"]["response"];
+    };
+    getReviewsForRun: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /repos/{owner}/{repo}/actions/runs/{run_id}/approvals"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /repos/{owner}/{repo}/actions/runs/{run_id}/approvals"]["response"];
     };
     getSelfHostedRunnerForOrg: {
       parameters: RequestParameters &
@@ -329,6 +377,14 @@ export type RestEndpointMethodTypes = {
           "baseUrl" | "headers" | "mediaType"
         >;
       response: Endpoints["GET /repos/{owner}/{repo}/actions/artifacts"]["response"];
+    };
+    listEnvironmentSecrets: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /repositories/{repository_id}/environments/{environment_name}/secrets"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /repositories/{repository_id}/environments/{environment_name}/secrets"]["response"];
     };
     listJobsForWorkflowRun: {
       parameters: RequestParameters &
@@ -449,6 +505,14 @@ export type RestEndpointMethodTypes = {
           "baseUrl" | "headers" | "mediaType"
         >;
       response: Endpoints["DELETE /orgs/{org}/actions/secrets/{secret_name}/repositories/{repository_id}"]["response"];
+    };
+    reviewPendingDeploymentsForRun: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["POST /repos/{owner}/{repo}/actions/runs/{run_id}/pending_deployments"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["POST /repos/{owner}/{repo}/actions/runs/{run_id}/pending_deployments"]["response"];
     };
     setAllowedActionsOrganization: {
       parameters: RequestParameters &
@@ -3402,6 +3466,14 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["GET /repos/{owner}/{repo}/compare/{base}...{head}"]["response"];
     };
+    createAnEnvironment: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["POST /repos/{owner}/{repo}/environments/{environment_name}"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["POST /repos/{owner}/{repo}/environments/{environment_name}"]["response"];
+    };
     createCommitComment: {
       parameters: RequestParameters &
         Omit<
@@ -3553,6 +3625,14 @@ export type RestEndpointMethodTypes = {
           "baseUrl" | "headers" | "mediaType"
         >;
       response: Endpoints["DELETE /repos/{owner}/{repo}/branches/{branch}/protection/enforce_admins"]["response"];
+    };
+    deleteAnEnvironment: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["DELETE /repos/{owner}/{repo}/environments/{environment_name}"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["DELETE /repos/{owner}/{repo}/environments/{environment_name}"]["response"];
     };
     deleteBranchProtection: {
       parameters: RequestParameters &
@@ -3730,6 +3810,14 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["GET /repos/{owner}/{repo}/branches/{branch}/protection/enforce_admins"]["response"];
     };
+    getAllEnvironments: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /repos/{owner}/{repo}/environments"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /repos/{owner}/{repo}/environments"]["response"];
+    };
     getAllStatusCheckContexts: {
       parameters: RequestParameters &
         Omit<
@@ -3881,6 +3969,14 @@ export type RestEndpointMethodTypes = {
           "baseUrl" | "headers" | "mediaType"
         >;
       response: Endpoints["GET /repos/{owner}/{repo}/deployments/{deployment_id}/statuses/{status_id}"]["response"];
+    };
+    getEnvironment: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /repos/{owner}/{repo}/environments/{environment_name}"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /repos/{owner}/{repo}/environments/{environment_name}"]["response"];
     };
     getLatestPagesBuild: {
       parameters: RequestParameters &
@@ -4345,6 +4441,14 @@ export type RestEndpointMethodTypes = {
           "baseUrl" | "headers" | "mediaType"
         >;
       response: Endpoints["PUT /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/apps"]["response"];
+    };
+    setEnvironmentProtectionRules: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["PUT /repos/{owner}/{repo}/environments/{environment_name}"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["PUT /repos/{owner}/{repo}/environments/{environment_name}"]["response"];
     };
     setStatusCheckContexts: {
       parameters: RequestParameters &

@@ -58,4 +58,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/v3/repos/#list-organization-repositories).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos/#list-organization-repositories).

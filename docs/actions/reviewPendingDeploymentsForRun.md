@@ -1,0 +1,66 @@
+---
+name: Review pending deployments for a workflow run
+example: octokit.actions.reviewPendingDeploymentsForRun({ owner, repo, run_id, environment_ids, state, comment })
+route: POST /repos/{owner}/{repo}/actions/runs/{run_id}/pending_deployments
+scope: actions
+type: API method
+---
+
+# Review pending deployments for a workflow run
+
+Approve or reject pending deployments that are waiting on approval by a required reviewer.
+
+Anyone with read access to the repository contents and deployments can use this endpoint.
+
+```js
+octokit.actions.reviewPendingDeploymentsForRun({
+  owner,
+  repo,
+  run_id,
+  environment_ids,
+  state,
+  comment,
+});
+```
+
+## Parameters
+
+<table>
+  <thead>
+    <tr>
+      <th>name</th>
+      <th>required</th>
+      <th>description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>owner</td><td>yes</td><td>
+
+</td></tr>
+<tr><td>repo</td><td>yes</td><td>
+
+</td></tr>
+<tr><td>run_id</td><td>yes</td><td>
+
+The id of the workflow run
+
+</td></tr>
+<tr><td>environment_ids</td><td>yes</td><td>
+
+The list of environment ids to approve or reject
+
+</td></tr>
+<tr><td>state</td><td>yes</td><td>
+
+Whether to approve or reject deployment to the specified environments. Must be one of: `approved` or `rejected`
+
+</td></tr>
+<tr><td>comment</td><td>yes</td><td>
+
+A comment to accompany the deployment review
+
+</td></tr>
+  </tbody>
+</table>
+
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/actions#review-pending-deployments-for-a-workflow-run).
