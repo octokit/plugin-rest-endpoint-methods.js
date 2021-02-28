@@ -5870,22 +5870,6 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Create an environment for a repository. If an environment with the specified name already exists, the existing environment will be returned.
-     *
-     * The created environment will not have any protection rules configured. To configure protection rules for the created environment, see "[Set protection rules for an environment](#set-protection-rules-for-an-environment)".
-     *
-     * You must authenticate using an access token with the repo scope to use this endpoint.
-     */
-    createAnEnvironment: {
-      (
-        params?: RestEndpointMethodTypes["repos"]["createAnEnvironment"]["parameters"]
-      ): Promise<
-        RestEndpointMethodTypes["repos"]["createAnEnvironment"]["response"]
-      >;
-      defaults: RequestInterface["defaults"];
-      endpoint: EndpointInterface<{ url: string }>;
-    };
-    /**
      * Create a comment for a commit using its `:commit_sha`.
      *
      * This endpoint triggers [notifications](https://docs.github.com/en/github/managing-subscriptions-and-notifications-on-github/about-notifications). Creating content too quickly using this endpoint may result in abuse rate limiting. See "[Abuse rate limits](https://docs.github.com/rest/overview/resources-in-the-rest-api#abuse-rate-limits)" and "[Dealing with abuse rate limits](https://docs.github.com/rest/guides/best-practices-for-integrators#dealing-with-rate-limits)" for details.
@@ -6075,6 +6059,24 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["repos"]["createInOrg"]["parameters"]
       ): Promise<RestEndpointMethodTypes["repos"]["createInOrg"]["response"]>;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Create or update an environment with protection rules, such as required reviewers. For more information about environment protection rules, see "[Environments](/actions/reference/environments#environment-protection-rules)."
+     *
+     * **Note:** Although you can use this operation to specify that only branches that match specified name patterns can deploy to this environment, you must use the UI to set the name patterns. For more information, see "[Environments](/actions/reference/environments#deployment-branches)."
+     *
+     * **Note:** To create or update secrets for an environment, see "[Secrets](/rest/reference/actions#secrets)."
+     *
+     * You must authenticate using an access token with the repo scope to use this endpoint.
+     */
+    createOrUpdateEnvironment: {
+      (
+        params?: RestEndpointMethodTypes["repos"]["createOrUpdateEnvironment"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["repos"]["createOrUpdateEnvironment"]["response"]
+      >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
@@ -7535,22 +7537,6 @@ export type RestEndpointMethods = {
         params?: RestEndpointMethodTypes["repos"]["setAppAccessRestrictions"]["parameters"]
       ): Promise<
         RestEndpointMethodTypes["repos"]["setAppAccessRestrictions"]["response"]
-      >;
-      defaults: RequestInterface["defaults"];
-      endpoint: EndpointInterface<{ url: string }>;
-    };
-    /**
-     * Set protection rules, such as required reviewers, for an environment. For more information about environment protection rules, see "[Environments](/actions/reference/environments#environment-protection-rules)."
-     *
-     * **Note:** Although you can use this operation to specify that only branches that match specified name patterns can deploy to this environment, you must use the UI to set the name patterns. For more information, see "[Environments](/actions/reference/environments#deployment-branches)."
-     *
-     * You must authenticate using an access token with the repo scope to use this endpoint.
-     */
-    setEnvironmentProtectionRules: {
-      (
-        params?: RestEndpointMethodTypes["repos"]["setEnvironmentProtectionRules"]["parameters"]
-      ): Promise<
-        RestEndpointMethodTypes["repos"]["setEnvironmentProtectionRules"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;

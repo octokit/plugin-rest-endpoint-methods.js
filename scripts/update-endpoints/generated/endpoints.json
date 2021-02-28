@@ -8873,7 +8873,7 @@
       },
       {
         "name": "repositories",
-        "description": "The list of repository IDs to scope the user-to-server access token to. `repositories` may not be specified if `repository_ids` is specified.",
+        "description": "The list of repository names to scope the user-to-server access token to. `repositories` may not be specified if `repository_ids` is specified.",
         "in": "BODY",
         "type": "string[]",
         "required": false,
@@ -8886,7 +8886,7 @@
       },
       {
         "name": "repository_ids",
-        "description": "The list of repository names to scope the user-to-server access token to. `repository_ids` may not be specified if `repositories` is specified.",
+        "description": "The list of repository IDs to scope the user-to-server access token to. `repository_ids` may not be specified if `repositories` is specified.",
         "in": "BODY",
         "type": "integer[]",
         "required": false,
@@ -33706,72 +33706,6 @@
     "renamed": null
   },
   {
-    "name": "Create an environment",
-    "scope": "repos",
-    "id": "createAnEnvironment",
-    "method": "POST",
-    "url": "/repos/{owner}/{repo}/environments/{environment_name}",
-    "isDeprecated": false,
-    "deprecationDate": null,
-    "description": "Create an environment for a repository. If an environment with the specified name already exists, the existing environment will be returned.\n\nThe created environment will not have any protection rules configured. To configure protection rules for the created environment, see \"[Set protection rules for an environment](#set-protection-rules-for-an-environment)\".\n\nYou must authenticate using an access token with the repo scope to use this endpoint.",
-    "documentationUrl": "https://docs.github.com/rest/reference/repos#create-an-environment",
-    "previews": [],
-    "headers": [],
-    "parameters": [
-      {
-        "name": "owner",
-        "description": "",
-        "in": "PATH",
-        "type": "string",
-        "required": true,
-        "enum": null,
-        "allowNull": false,
-        "mapToData": null,
-        "validation": null,
-        "alias": null,
-        "deprecated": null
-      },
-      {
-        "name": "repo",
-        "description": "",
-        "in": "PATH",
-        "type": "string",
-        "required": true,
-        "enum": null,
-        "allowNull": false,
-        "mapToData": null,
-        "validation": null,
-        "alias": null,
-        "deprecated": null
-      },
-      {
-        "name": "environment_name",
-        "description": "The name of the environment",
-        "in": "PATH",
-        "type": "string",
-        "required": true,
-        "enum": null,
-        "allowNull": false,
-        "mapToData": null,
-        "validation": null,
-        "alias": null,
-        "deprecated": null
-      }
-    ],
-    "responses": [
-      {
-        "code": 200,
-        "description": "response",
-        "examples": [
-          {
-            "data": "{\"id\":161088068,\"node_id\":\"MDExOkVudmlyb25tZW50MTYxMDg4MDY4\",\"name\":\"staging\",\"url\":\"https://api.github.com/repos/github/hello-world/environments/staging\",\"html_url\":\"https://github.com/github/hello-world/deployments/activity_log?environments_filter=staging\",\"created_at\":\"2020-11-23T22:00:40Z\",\"updated_at\":\"2020-11-23T22:00:40Z\",\"protection_rules\":[],\"deployment_branch_policy\":null}"
-          }
-        ]
-      }
-    ],
-    "renamed": null
-  },
-  {
     "name": "Create a commit comment",
     "scope": "repos",
     "id": "createCommitComment",
@@ -35218,6 +35152,168 @@
       },
       { "code": 403, "description": "Forbidden", "examples": null },
       { "code": 422, "description": "Validation Failed", "examples": null }
+    ],
+    "renamed": null
+  },
+  {
+    "name": "Create or update an environment",
+    "scope": "repos",
+    "id": "createOrUpdateEnvironment",
+    "method": "PUT",
+    "url": "/repos/{owner}/{repo}/environments/{environment_name}",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "description": "Create or update an environment with protection rules, such as required reviewers. For more information about environment protection rules, see \"[Environments](/actions/reference/environments#environment-protection-rules).\"\n\n**Note:** Although you can use this operation to specify that only branches that match specified name patterns can deploy to this environment, you must use the UI to set the name patterns. For more information, see \"[Environments](/actions/reference/environments#deployment-branches).\"\n\n**Note:** To create or update secrets for an environment, see \"[Secrets](/rest/reference/actions#secrets).\"\n\nYou must authenticate using an access token with the repo scope to use this endpoint.",
+    "documentationUrl": "https://docs.github.com/rest/reference/repos#create-or-update-an-environment",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "owner",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "repo",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "environment_name",
+        "description": "The name of the environment",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "wait_timer",
+        "description": "The amount of time to delay a job after the job is initially triggered. The time (in minutes) must be an integer between 0 and 43,200 (30 days).",
+        "in": "BODY",
+        "type": "integer",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "reviewers",
+        "description": "The people or teams that may review jobs that reference the environment. You can list up to six users or teams as reviewers. The reviewers must have at least read access to the repository. Only one of the required reviewers needs to approve the job for it to proceed.",
+        "in": "BODY",
+        "type": "object[]",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "reviewers[].type",
+        "description": "The type of reviewer. Must be one of: `User` or `Team`",
+        "in": "BODY",
+        "type": "string",
+        "required": false,
+        "enum": ["User", "Team"],
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "reviewers[].id",
+        "description": "The id of the user or team who can review the deployment",
+        "in": "BODY",
+        "type": "integer",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "deployment_branch_policy",
+        "description": "The type of deployment branch policy for this environment. To allow all branches to deploy, set to `null`.",
+        "in": "BODY",
+        "type": "object",
+        "required": false,
+        "enum": null,
+        "allowNull": true,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "deployment_branch_policy.protected_branches",
+        "description": "Whether only branches with branch protection rules can deploy to this environment. If `protected_branches` is `true`, `custom_branch_policies` must be `false`; if `protected_branches` is `false`, `custom_branch_policies` must be `true`.",
+        "in": "BODY",
+        "type": "boolean",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "deployment_branch_policy.custom_branch_policies",
+        "description": "Whether only branches that match the specified name patterns can deploy to this environment.  If `custom_branch_policies` is `true`, `protected_branches` must be `false`; if `custom_branch_policies` is `false`, `protected_branches` must be `true`.",
+        "in": "BODY",
+        "type": "boolean",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "examples": [
+          {
+            "data": "{\"id\":161088068,\"node_id\":\"MDExOkVudmlyb25tZW50MTYxMDg4MDY4\",\"name\":\"staging\",\"url\":\"https://api.github.com/repos/github/hello-world/environments/staging\",\"html_url\":\"https://github.com/github/hello-world/deployments/activity_log?environments_filter=staging\",\"created_at\":\"2020-11-23T22:00:40Z\",\"updated_at\":\"2020-11-23T22:00:40Z\",\"protection_rules\":[{\"id\":3736,\"node_id\":\"MDQ6R2F0ZTM3MzY=\",\"type\":\"wait_timer\",\"wait_timer\":30},{\"id\":3755,\"node_id\":\"MDQ6R2F0ZTM3NTU=\",\"type\":\"required_reviewers\",\"reviewers\":[{\"type\":\"User\",\"reviewer\":{\"login\":\"octocat\",\"id\":1,\"node_id\":\"MDQ6VXNlcjE=\",\"avatar_url\":\"https://github.com/images/error/octocat_happy.gif\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/octocat\",\"html_url\":\"https://github.com/octocat\",\"followers_url\":\"https://api.github.com/users/octocat/followers\",\"following_url\":\"https://api.github.com/users/octocat/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/octocat/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/octocat/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/octocat/subscriptions\",\"organizations_url\":\"https://api.github.com/users/octocat/orgs\",\"repos_url\":\"https://api.github.com/users/octocat/repos\",\"events_url\":\"https://api.github.com/users/octocat/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/octocat/received_events\",\"type\":\"User\",\"site_admin\":false}},{\"type\":\"Team\",\"reviewer\":{\"id\":1,\"node_id\":\"MDQ6VGVhbTE=\",\"url\":\"https://api.github.com/teams/1\",\"html_url\":\"https://github.com/orgs/github/teams/justice-league\",\"name\":\"Justice League\",\"slug\":\"justice-league\",\"description\":\"A great team.\",\"privacy\":\"closed\",\"permission\":\"admin\",\"members_url\":\"https://api.github.com/teams/1/members{/member}\",\"repositories_url\":\"https://api.github.com/teams/1/repos\"}}]},{\"id\":3756,\"node_id\":\"MDQ6R2F0ZTM3NTY=\",\"type\":\"branch_policy\"}],\"deployment_branch_policy\":{\"protected_branches\":false,\"custom_branch_policies\":true}}"
+          }
+        ]
+      },
+      {
+        "code": 422,
+        "description": "Validation error when the environment name is invalid or when `protected_branches` and `custom_branch_policies` in `deployment_branch_policy` are set to the same value",
+        "examples": null
+      }
     ],
     "renamed": null
   },
@@ -43520,168 +43616,6 @@
         ]
       },
       { "code": 422, "description": "Validation Failed", "examples": null }
-    ],
-    "renamed": null
-  },
-  {
-    "name": "Set protection rules for an environment",
-    "scope": "repos",
-    "id": "setEnvironmentProtectionRules",
-    "method": "PUT",
-    "url": "/repos/{owner}/{repo}/environments/{environment_name}",
-    "isDeprecated": false,
-    "deprecationDate": null,
-    "description": "Set protection rules, such as required reviewers, for an environment. For more information about environment protection rules, see \"[Environments](/actions/reference/environments#environment-protection-rules).\"\n\n**Note:** Although you can use this operation to specify that only branches that match specified name patterns can deploy to this environment, you must use the UI to set the name patterns. For more information, see \"[Environments](/actions/reference/environments#deployment-branches).\"\n\nYou must authenticate using an access token with the repo scope to use this endpoint.",
-    "documentationUrl": "https://docs.github.com/rest/reference/repos#set-protection-rules-for-an-environment",
-    "previews": [],
-    "headers": [],
-    "parameters": [
-      {
-        "name": "owner",
-        "description": "",
-        "in": "PATH",
-        "type": "string",
-        "required": true,
-        "enum": null,
-        "allowNull": false,
-        "mapToData": null,
-        "validation": null,
-        "alias": null,
-        "deprecated": null
-      },
-      {
-        "name": "repo",
-        "description": "",
-        "in": "PATH",
-        "type": "string",
-        "required": true,
-        "enum": null,
-        "allowNull": false,
-        "mapToData": null,
-        "validation": null,
-        "alias": null,
-        "deprecated": null
-      },
-      {
-        "name": "environment_name",
-        "description": "The name of the environment",
-        "in": "PATH",
-        "type": "string",
-        "required": true,
-        "enum": null,
-        "allowNull": false,
-        "mapToData": null,
-        "validation": null,
-        "alias": null,
-        "deprecated": null
-      },
-      {
-        "name": "wait_timer",
-        "description": "The amount of time to delay a job after the job is initially triggered. The time (in minutes) must be an integer between 0 and 43,200 (30 days).",
-        "in": "BODY",
-        "type": "integer",
-        "required": false,
-        "enum": null,
-        "allowNull": false,
-        "mapToData": null,
-        "validation": null,
-        "alias": null,
-        "deprecated": null
-      },
-      {
-        "name": "reviewers",
-        "description": "The people or teams that may jobs that reference the environment. You can list up to six users or teams as reviewers. The reviewers must have at least read access to the repository. Only one of the required reviewers needs to approve the job for it to proceed.",
-        "in": "BODY",
-        "type": "object[]",
-        "required": false,
-        "enum": null,
-        "allowNull": false,
-        "mapToData": null,
-        "validation": null,
-        "alias": null,
-        "deprecated": null
-      },
-      {
-        "name": "reviewers[].type",
-        "description": "The type of reviewer. Must be one of: `User` or `Team`",
-        "in": "BODY",
-        "type": "string",
-        "required": false,
-        "enum": ["User", "Team"],
-        "allowNull": false,
-        "mapToData": null,
-        "validation": null,
-        "alias": null,
-        "deprecated": null
-      },
-      {
-        "name": "reviewers[].id",
-        "description": "The id of the user or team who can review the deployment",
-        "in": "BODY",
-        "type": "integer",
-        "required": false,
-        "enum": null,
-        "allowNull": false,
-        "mapToData": null,
-        "validation": null,
-        "alias": null,
-        "deprecated": null
-      },
-      {
-        "name": "deployment_branch_policy",
-        "description": "The type of deployment branch policy for this environment. To allow all branches to deploy, set to `null`.",
-        "in": "BODY",
-        "type": "object",
-        "required": false,
-        "enum": null,
-        "allowNull": true,
-        "mapToData": null,
-        "validation": null,
-        "alias": null,
-        "deprecated": null
-      },
-      {
-        "name": "deployment_branch_policy.protected_branches",
-        "description": "Whether only branches with branch protection rules can deploy to this environment. If `protected_branches` is `true`, `custom_branch_policies` must be `false`; if `protected_branches` is `false`, `custom_branch_policies` must be `true`.",
-        "in": "BODY",
-        "type": "boolean",
-        "required": true,
-        "enum": null,
-        "allowNull": false,
-        "mapToData": null,
-        "validation": null,
-        "alias": null,
-        "deprecated": null
-      },
-      {
-        "name": "deployment_branch_policy.custom_branch_policies",
-        "description": "Whether only branches that match the specified name patterns can deploy to this environment.  If `custom_branch_policies` is `true`, `protected_branches` must be `false`; if `custom_branch_policies` is `false`, `protected_branches` must be `true`.",
-        "in": "BODY",
-        "type": "boolean",
-        "required": true,
-        "enum": null,
-        "allowNull": false,
-        "mapToData": null,
-        "validation": null,
-        "alias": null,
-        "deprecated": null
-      }
-    ],
-    "responses": [
-      {
-        "code": 200,
-        "description": "response",
-        "examples": [
-          {
-            "data": "{\"id\":161088068,\"node_id\":\"MDExOkVudmlyb25tZW50MTYxMDg4MDY4\",\"name\":\"staging\",\"url\":\"https://api.github.com/repos/github/hello-world/environments/staging\",\"html_url\":\"https://github.com/github/hello-world/deployments/activity_log?environments_filter=staging\",\"created_at\":\"2020-11-23T22:00:40Z\",\"updated_at\":\"2020-11-23T22:00:40Z\",\"protection_rules\":[{\"id\":3736,\"node_id\":\"MDQ6R2F0ZTM3MzY=\",\"type\":\"wait_timer\",\"wait_timer\":30},{\"id\":3755,\"node_id\":\"MDQ6R2F0ZTM3NTU=\",\"type\":\"required_reviewers\",\"reviewers\":[{\"type\":\"User\",\"reviewer\":{\"login\":\"octocat\",\"id\":1,\"node_id\":\"MDQ6VXNlcjE=\",\"avatar_url\":\"https://github.com/images/error/octocat_happy.gif\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/octocat\",\"html_url\":\"https://github.com/octocat\",\"followers_url\":\"https://api.github.com/users/octocat/followers\",\"following_url\":\"https://api.github.com/users/octocat/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/octocat/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/octocat/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/octocat/subscriptions\",\"organizations_url\":\"https://api.github.com/users/octocat/orgs\",\"repos_url\":\"https://api.github.com/users/octocat/repos\",\"events_url\":\"https://api.github.com/users/octocat/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/octocat/received_events\",\"type\":\"User\",\"site_admin\":false}},{\"type\":\"Team\",\"reviewer\":{\"id\":1,\"node_id\":\"MDQ6VGVhbTE=\",\"url\":\"https://api.github.com/teams/1\",\"html_url\":\"https://github.com/orgs/github/teams/justice-league\",\"name\":\"Justice League\",\"slug\":\"justice-league\",\"description\":\"A great team.\",\"privacy\":\"closed\",\"permission\":\"admin\",\"members_url\":\"https://api.github.com/teams/1/members{/member}\",\"repositories_url\":\"https://api.github.com/teams/1/repos\"}}]},{\"id\":3756,\"node_id\":\"MDQ6R2F0ZTM3NTY=\",\"type\":\"branch_policy\"}],\"deployment_branch_policy\":{\"protected_branches\":false,\"custom_branch_policies\":true}}"
-          }
-        ]
-      },
-      {
-        "code": 422,
-        "description": "Response when `protected_branches` and `custom_branch_policies` in `deployment_branch_policy` are set to the same value",
-        "examples": null
-      }
     ],
     "renamed": null
   },
