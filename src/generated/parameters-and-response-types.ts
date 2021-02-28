@@ -3466,14 +3466,6 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["GET /repos/{owner}/{repo}/compare/{base}...{head}"]["response"];
     };
-    createAnEnvironment: {
-      parameters: RequestParameters &
-        Omit<
-          Endpoints["POST /repos/{owner}/{repo}/environments/{environment_name}"]["parameters"],
-          "baseUrl" | "headers" | "mediaType"
-        >;
-      response: Endpoints["POST /repos/{owner}/{repo}/environments/{environment_name}"]["response"];
-    };
     createCommitComment: {
       parameters: RequestParameters &
         Omit<
@@ -3553,6 +3545,14 @@ export type RestEndpointMethodTypes = {
           "baseUrl" | "headers" | "mediaType"
         >;
       response: Endpoints["POST /orgs/{org}/repos"]["response"];
+    };
+    createOrUpdateEnvironment: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["PUT /repos/{owner}/{repo}/environments/{environment_name}"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["PUT /repos/{owner}/{repo}/environments/{environment_name}"]["response"];
     };
     createOrUpdateFileContents: {
       parameters: RequestParameters &
@@ -4441,14 +4441,6 @@ export type RestEndpointMethodTypes = {
           "baseUrl" | "headers" | "mediaType"
         >;
       response: Endpoints["PUT /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/apps"]["response"];
-    };
-    setEnvironmentProtectionRules: {
-      parameters: RequestParameters &
-        Omit<
-          Endpoints["PUT /repos/{owner}/{repo}/environments/{environment_name}"]["parameters"],
-          "baseUrl" | "headers" | "mediaType"
-        >;
-      response: Endpoints["PUT /repos/{owner}/{repo}/environments/{environment_name}"]["response"];
     };
     setStatusCheckContexts: {
       parameters: RequestParameters &

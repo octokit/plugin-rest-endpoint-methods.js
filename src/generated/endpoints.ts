@@ -962,9 +962,6 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
       { mediaType: { previews: ["dorian"] } },
     ],
     compareCommits: ["GET /repos/{owner}/{repo}/compare/{base}...{head}"],
-    createAnEnvironment: [
-      "POST /repos/{owner}/{repo}/environments/{environment_name}",
-    ],
     createCommitComment: [
       "POST /repos/{owner}/{repo}/commits/{commit_sha}/comments",
     ],
@@ -982,6 +979,9 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     createForAuthenticatedUser: ["POST /user/repos"],
     createFork: ["POST /repos/{owner}/{repo}/forks"],
     createInOrg: ["POST /orgs/{org}/repos"],
+    createOrUpdateEnvironment: [
+      "PUT /repos/{owner}/{repo}/environments/{environment_name}",
+    ],
     createOrUpdateFileContents: ["PUT /repos/{owner}/{repo}/contents/{path}"],
     createPagesSite: [
       "POST /repos/{owner}/{repo}/pages",
@@ -1211,9 +1211,6 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
       "PUT /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/apps",
       {},
       { mapToData: "apps" },
-    ],
-    setEnvironmentProtectionRules: [
-      "PUT /repos/{owner}/{repo}/environments/{environment_name}",
     ],
     setStatusCheckContexts: [
       "PUT /repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks/contexts",

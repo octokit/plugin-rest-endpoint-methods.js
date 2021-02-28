@@ -1,21 +1,23 @@
 ---
-name: Set protection rules for an environment
-example: octokit.repos.setEnvironmentProtectionRules({ owner, repo, environment_name, deployment_branch_policy.protected_branches, deployment_branch_policy.custom_branch_policies })
+name: Create or update an environment
+example: octokit.repos.createOrUpdateEnvironment({ owner, repo, environment_name, deployment_branch_policy.protected_branches, deployment_branch_policy.custom_branch_policies })
 route: PUT /repos/{owner}/{repo}/environments/{environment_name}
 scope: repos
 type: API method
 ---
 
-# Set protection rules for an environment
+# Create or update an environment
 
-Set protection rules, such as required reviewers, for an environment. For more information about environment protection rules, see "[Environments](/actions/reference/environments#environment-protection-rules)."
+Create or update an environment with protection rules, such as required reviewers. For more information about environment protection rules, see "[Environments](/actions/reference/environments#environment-protection-rules)."
 
 **Note:** Although you can use this operation to specify that only branches that match specified name patterns can deploy to this environment, you must use the UI to set the name patterns. For more information, see "[Environments](/actions/reference/environments#deployment-branches)."
+
+**Note:** To create or update secrets for an environment, see "[Secrets](/rest/reference/actions#secrets)."
 
 You must authenticate using an access token with the repo scope to use this endpoint.
 
 ```js
-octokit.repos.setEnvironmentProtectionRules({
+octokit.repos.createOrUpdateEnvironment({
         owner,
 repo,
 environment_name,
@@ -53,7 +55,7 @@ The amount of time to delay a job after the job is initially triggered. The time
 </td></tr>
 <tr><td>reviewers</td><td>no</td><td>
 
-The people or teams that may jobs that reference the environment. You can list up to six users or teams as reviewers. The reviewers must have at least read access to the repository. Only one of the required reviewers needs to approve the job for it to proceed.
+The people or teams that may review jobs that reference the environment. You can list up to six users or teams as reviewers. The reviewers must have at least read access to the repository. Only one of the required reviewers needs to approve the job for it to proceed.
 
 </td></tr>
 <tr><td>reviewers[].type</td><td>no</td><td>
@@ -84,4 +86,4 @@ Whether only branches that match the specified name patterns can deploy to this 
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#set-protection-rules-for-an-environment).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#create-or-update-an-environment).

@@ -49,12 +49,12 @@ The ID of the user or organization to scope the user-to-server access token to. 
 </td></tr>
 <tr><td>repositories</td><td>no</td><td>
 
-The list of repository IDs to scope the user-to-server access token to. `repositories` may not be specified if `repository_ids` is specified.
+The list of repository names to scope the user-to-server access token to. `repositories` may not be specified if `repository_ids` is specified.
 
 </td></tr>
 <tr><td>repository_ids</td><td>no</td><td>
 
-The list of repository names to scope the user-to-server access token to. `repository_ids` may not be specified if `repositories` is specified.
+The list of repository IDs to scope the user-to-server access token to. `repository_ids` may not be specified if `repositories` is specified.
 
 </td></tr>
 <tr><td>permissions</td><td>no</td><td>
