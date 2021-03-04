@@ -1,6 +1,6 @@
 ---
 name: Delete an app token
-example: octokit.apps.deleteToken({ client_id })
+example: octokit.apps.deleteToken({ client_id, access_token })
 route: DELETE /applications/{client_id}/token
 scope: apps
 type: API method
@@ -13,6 +13,7 @@ OAuth application owners can revoke a single token for an OAuth application. You
 ```js
 octokit.apps.deleteToken({
   client_id,
+  access_token,
 });
 ```
 
@@ -32,7 +33,7 @@ octokit.apps.deleteToken({
 The client ID of your GitHub app.
 
 </td></tr>
-<tr><td>access_token</td><td>no</td><td>
+<tr><td>access_token</td><td>yes</td><td>
 
 The OAuth access token used to authenticate to the GitHub API.
 
