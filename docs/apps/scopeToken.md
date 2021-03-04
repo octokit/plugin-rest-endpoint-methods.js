@@ -1,6 +1,6 @@
 ---
 name: Create a scoped access token
-example: octokit.apps.scopeToken({ client_id })
+example: octokit.apps.scopeToken({ client_id, access_token })
 route: POST /applications/{client_id}/token/scoped
 scope: apps
 type: API method
@@ -13,6 +13,7 @@ Exchanges a non-repository scoped user-to-server OAuth access token for a reposi
 ```js
 octokit.apps.scopeToken({
   client_id,
+  access_token,
 });
 ```
 
@@ -32,7 +33,7 @@ octokit.apps.scopeToken({
 The client ID of your GitHub app.
 
 </td></tr>
-<tr><td>access_token</td><td>no</td><td>
+<tr><td>access_token</td><td>yes</td><td>
 
 **Required.** The OAuth access token used to authenticate to the GitHub API.
 
