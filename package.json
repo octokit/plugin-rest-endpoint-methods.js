@@ -14,7 +14,7 @@
     "update-endpoints:docs": "node scripts/update-endpoints/docs",
     "update-endpoints:types": "node scripts/update-endpoints/types"
   },
-  "repository": "https://github.com/octokit/plugin-rest-endpoint-methods.js",
+  "repository": "github:octokit/plugin-rest-endpoint-methods.js",
   "keywords": [
     "github",
     "api",
