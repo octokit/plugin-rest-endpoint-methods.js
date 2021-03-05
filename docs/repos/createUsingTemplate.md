@@ -14,7 +14,7 @@ Creates a new repository using a repository template. Use the `template_owner` a
 
 When using [OAuth](https://docs.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/), authorizations must include:
 
-- `public_repo` scope or `repo` scope to create a public repository
+- `public_repo` scope or `repo` scope to create a public repository. Note: For GitHub AE, use `repo` scope to create an internal repository.
 - `repo` scope to create a private repository
 
 ```js
