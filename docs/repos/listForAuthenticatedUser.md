@@ -29,7 +29,7 @@ octokit.repos.listForAuthenticatedUser();
   <tbody>
     <tr><td>visibility</td><td>no</td><td>
 
-Can be one of `all`, `public`, or `private`.
+Can be one of `all`, `public`, or `private`. Note: For GitHub AE, can be one of `all`, `internal`, or `private`.
 
 </td></tr>
 <tr><td>affiliation</td><td>no</td><td>
@@ -42,7 +42,7 @@ Comma-separated list of values. Can include:
 </td></tr>
 <tr><td>type</td><td>no</td><td>
 
-Can be one of `all`, `owner`, `public`, `private`, `member`. Default: `all`
+Can be one of `all`, `owner`, `public`, `private`, `member`. Note: For GitHub AE, can be one of `all`, `owner`, `internal`, `private`, `member`. Default: `all`
 
 Will cause a `422` error if used in the same request as **visibility** or **affiliation**. Will cause a `422` error if used in the same request as **visibility** or **affiliation**.
 

@@ -6021,8 +6021,8 @@ export type RestEndpointMethods = {
      *
      * When using [OAuth](https://docs.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/), authorizations must include:
      *
-     * *   `public_repo` scope or `repo` scope to create a public repository
-     * *   `repo` scope to create a private repository
+     * *   `public_repo` scope or `repo` scope to create a public repository. Note: For GitHub AE, use `repo` scope to create an internal repository.
+     * *   `repo` scope to create a private repository.
      */
     createForAuthenticatedUser: {
       (
@@ -6052,7 +6052,7 @@ export type RestEndpointMethods = {
      *
      * When using [OAuth](https://docs.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/), authorizations must include:
      *
-     * *   `public_repo` scope or `repo` scope to create a public repository
+     * *   `public_repo` scope or `repo` scope to create a public repository. Note: For GitHub AE, use `repo` scope to create an internal repository.
      * *   `repo` scope to create a private repository
      */
     createInOrg: {
@@ -6123,7 +6123,7 @@ export type RestEndpointMethods = {
      *
      * When using [OAuth](https://docs.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/), authorizations must include:
      *
-     * *   `public_repo` scope or `repo` scope to create a public repository
+     * *   `public_repo` scope or `repo` scope to create a public repository. Note: For GitHub AE, use `repo` scope to create an internal repository.
      * *   `repo` scope to create a private repository
      */
     createUsingTemplate: {
@@ -7224,7 +7224,7 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Lists public repositories for the specified user.
+     * Lists public repositories for the specified user. Note: For GitHub AE, this endpoint will list internal repositories for the specified user.
      */
     listForUser: {
       (
@@ -7288,7 +7288,9 @@ export type RestEndpointMethods = {
     /**
      * Lists all public repositories in the order that they were created.
      *
-     * Note: Pagination is powered exclusively by the `since` parameter. Use the [Link header](https://docs.github.com/rest/overview/resources-in-the-rest-api#link-header) to get the URL for the next page of repositories.
+     * Notes:
+     * - For GitHub Enterprise Server and GitHub AE, this endpoint will only list repositories available to all users on the enterprise.
+     * - Pagination is powered exclusively by the `since` parameter. Use the [Link header](https://docs.github.com/rest/overview/resources-in-the-rest-api#link-header) to get the URL for the next page of repositories.
      */
     listPublic: {
       (

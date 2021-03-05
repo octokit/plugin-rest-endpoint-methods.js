@@ -14,7 +14,7 @@ Creates a new repository in the specified organization. The authenticated user m
 
 When using [OAuth](https://docs.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/), authorizations must include:
 
-- `public_repo` scope or `repo` scope to create a public repository
+- `public_repo` scope or `repo` scope to create a public repository. Note: For GitHub AE, use `repo` scope to create an internal repository.
 - `repo` scope to create a private repository
 
 ```js
@@ -55,12 +55,12 @@ A URL with more information about the repository.
 </td></tr>
 <tr><td>private</td><td>no</td><td>
 
-Either `true` to create a private repository or `false` to create a public one.
+Whether the repository is private.
 
 </td></tr>
 <tr><td>visibility</td><td>no</td><td>
 
-Can be `public` or `private`. If your organization is associated with an enterprise account using GitHub Enterprise Cloud or GitHub Enterprise Server 2.20+, `visibility` can also be `internal`. For more information, see "[Creating an internal repository](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/about-repository-visibility#about-internal-repositories)" in the GitHub Help documentation.  
+Can be `public` or `private`. If your organization is associated with an enterprise account using GitHub Enterprise Cloud or GitHub Enterprise Server 2.20+, `visibility` can also be `internal`. Note: For GitHub Enterprise Server and GitHub AE, this endpoint will only list repositories available to all users on the enterprise. For more information, see "[Creating an internal repository](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/about-repository-visibility#about-internal-repositories)" in the GitHub Help documentation.  
 The `visibility` parameter overrides the `private` parameter when you use both parameters with the `nebula-preview` preview header.
 
 </td></tr>
