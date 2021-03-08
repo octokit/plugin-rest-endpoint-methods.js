@@ -15,7 +15,7 @@ this endpoint.
 
 The response includes a `most_recent_instance` object.
 This provides details of the most recent instance of this alert
-for the the default branch or for the specified Git reference
+for the default branch or for the specified Git reference
 (if you used `ref` in the request).
 
 ```js
