@@ -53,6 +53,11 @@ Results per page (max 100).
 Page number of the results to fetch.
 
 </td></tr>
+<tr><td>pinned</td><td>no</td><td>
+
+Pinned discussions only filter
+
+</td></tr>
   </tbody>
 </table>
 

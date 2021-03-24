@@ -1,7 +1,7 @@
 ---
 name: Restore a package for an organization
 example: octokit.packages.restorePackageForOrg({ package_type, package_name, org })
-route: POST /orgs/{org}/packages/{package_type}/{package_name}/restore
+route: POST /orgs/{org}/packages/{package_type}/{package_name}/restore{?token}
 scope: packages
 type: API method
 ---
@@ -50,6 +50,11 @@ The name of the package.
 
 </td></tr>
 <tr><td>org</td><td>yes</td><td>
+
+</td></tr>
+<tr><td>token</td><td>no</td><td>
+
+package token
 
 </td></tr>
   </tbody>

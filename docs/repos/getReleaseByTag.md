@@ -37,7 +37,7 @@ octokit.repos.getReleaseByTag({
 </td></tr>
 <tr><td>tag</td><td>yes</td><td>
 
-tag+ parameter
+tag parameter
 
 </td></tr>
   </tbody>

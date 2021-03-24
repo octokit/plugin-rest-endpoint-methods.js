@@ -45,7 +45,17 @@ octokit.repos.getCombinedStatusForRef({
 </td></tr>
 <tr><td>ref</td><td>yes</td><td>
 
-ref+ parameter
+ref parameter
+
+</td></tr>
+<tr><td>per_page</td><td>no</td><td>
+
+Results per page (max 100).
+
+</td></tr>
+<tr><td>page</td><td>no</td><td>
+
+Page number of the results to fetch.
 
 </td></tr>
   </tbody>

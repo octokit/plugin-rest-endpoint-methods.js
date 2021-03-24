@@ -1,7 +1,7 @@
 ---
 name: Create a fork
 example: octokit.repos.createFork({ owner, repo })
-route: POST /repos/{owner}/{repo}/forks
+route: POST /repos/{owner}/{repo}/forks{?org,organization}
 scope: repos
 type: API method
 ---
@@ -34,6 +34,11 @@ octokit.repos.createFork({
 
 </td></tr>
 <tr><td>repo</td><td>yes</td><td>
+
+</td></tr>
+<tr><td>org</td><td>no</td><td>
+
+legacy query parameter for specifying the org.
 
 </td></tr>
 <tr><td>organization</td><td>no</td><td>

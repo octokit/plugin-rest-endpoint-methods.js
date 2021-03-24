@@ -1,7 +1,7 @@
 ---
 name: Restore a package for the authenticated user
 example: octokit.packages.restorePackageForAuthenticatedUser({ package_type, package_name })
-route: POST /user/packages/{package_type}/{package_name}/restore
+route: POST /user/packages/{package_type}/{package_name}/restore{?token}
 scope: packages
 type: API method
 ---
@@ -43,6 +43,11 @@ The type of supported package. Can be one of `npm`, `maven`, `rubygems`, `nuget`
 <tr><td>package_name</td><td>yes</td><td>
 
 The name of the package.
+
+</td></tr>
+<tr><td>token</td><td>no</td><td>
+
+package token
 
 </td></tr>
   </tbody>

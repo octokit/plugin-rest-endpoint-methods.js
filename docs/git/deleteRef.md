@@ -35,7 +35,7 @@ octokit.git.deleteRef({
 </td></tr>
 <tr><td>ref</td><td>yes</td><td>
 
-ref+ parameter
+ref parameter
 
 </td></tr>
   </tbody>

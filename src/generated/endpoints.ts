@@ -650,9 +650,24 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     ],
     getAllPackageVersionsForAPackageOwnedByAnOrg: [
       "GET /orgs/{org}/packages/{package_type}/{package_name}/versions",
+      {},
+      { renamed: ["packages", "getAllPackageVersionsForPackageOwnedByOrg"] },
     ],
     getAllPackageVersionsForAPackageOwnedByTheAuthenticatedUser: [
       "GET /user/packages/{package_type}/{package_name}/versions",
+      {},
+      {
+        renamed: [
+          "packages",
+          "getAllPackageVersionsForPackageOwnedByAuthenticatedUser",
+        ],
+      },
+    ],
+    getAllPackageVersionsForPackageOwnedByAuthenticatedUser: [
+      "GET /user/packages/{package_type}/{package_name}/versions",
+    ],
+    getAllPackageVersionsForPackageOwnedByOrg: [
+      "GET /orgs/{org}/packages/{package_type}/{package_name}/versions",
     ],
     getAllPackageVersionsForPackageOwnedByUser: [
       "GET /users/{username}/packages/{package_type}/{package_name}/versions",
@@ -676,10 +691,10 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
       "GET /users/{username}/packages/{package_type}/{package_name}/versions/{package_version_id}",
     ],
     restorePackageForAuthenticatedUser: [
-      "POST /user/packages/{package_type}/{package_name}/restore",
+      "POST /user/packages/{package_type}/{package_name}/restore{?token}",
     ],
     restorePackageForOrg: [
-      "POST /orgs/{org}/packages/{package_type}/{package_name}/restore",
+      "POST /orgs/{org}/packages/{package_type}/{package_name}/restore{?token}",
     ],
     restorePackageVersionForAuthenticatedUser: [
       "POST /user/packages/{package_type}/{package_name}/versions/{package_version_id}/restore",
@@ -977,7 +992,7 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     ],
     createDispatchEvent: ["POST /repos/{owner}/{repo}/dispatches"],
     createForAuthenticatedUser: ["POST /user/repos"],
-    createFork: ["POST /repos/{owner}/{repo}/forks"],
+    createFork: ["POST /repos/{owner}/{repo}/forks{?org,organization}"],
     createInOrg: ["POST /orgs/{org}/repos"],
     createOrUpdateEnvironment: [
       "PUT /repos/{owner}/{repo}/environments/{environment_name}",
@@ -1111,6 +1126,7 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     ],
     getPunchCardStats: ["GET /repos/{owner}/{repo}/stats/punch_card"],
     getReadme: ["GET /repos/{owner}/{repo}/readme"],
+    getReadmeInDirectory: ["GET /repos/{owner}/{repo}/readme/{dir}"],
     getRelease: ["GET /repos/{owner}/{repo}/releases/{release_id}"],
     getReleaseAsset: ["GET /repos/{owner}/{repo}/releases/assets/{asset_id}"],
     getReleaseByTag: ["GET /repos/{owner}/{repo}/releases/tags/{tag}"],

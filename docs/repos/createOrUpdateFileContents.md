@@ -43,7 +43,7 @@ author.email
 </td></tr>
 <tr><td>path</td><td>yes</td><td>
 
-path+ parameter
+path parameter
 
 </td></tr>
 <tr><td>message</td><td>yes</td><td>

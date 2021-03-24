@@ -47,6 +47,16 @@ Results per page (max 100).
 Page number of the results to fetch.
 
 </td></tr>
+<tr><td>org</td><td>no</td><td>
+
+legacy query parameter for specifying the org.
+
+</td></tr>
+<tr><td>organization</td><td>no</td><td>
+
+legacy query parameter for specifying the org.
+
+</td></tr>
   </tbody>
 </table>
 

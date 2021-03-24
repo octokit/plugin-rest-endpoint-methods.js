@@ -96,6 +96,16 @@ Results per page (max 100).
 Page number of the results to fetch.
 
 </td></tr>
+<tr><td>top</td><td>no</td><td>
+
+legacy parameter for pagination.
+
+</td></tr>
+<tr><td>last_sha</td><td>no</td><td>
+
+legacy parameter for pagination.
+
+</td></tr>
   </tbody>
 </table>
 

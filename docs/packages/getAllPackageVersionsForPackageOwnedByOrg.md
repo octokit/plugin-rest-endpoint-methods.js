@@ -1,24 +1,23 @@
 ---
-name: Get all package versions for a package owned by the authenticated user
-example: octokit.packages.getAllPackageVersionsForAPackageOwnedByTheAuthenticatedUser({ package_type, package_name })
-route: GET /user/packages/{package_type}/{package_name}/versions
+name: Get all package versions for a package owned by an organization
+example: octokit.packages.getAllPackageVersionsForPackageOwnedByOrg({ package_type, package_name, org })
+route: GET /orgs/{org}/packages/{package_type}/{package_name}/versions
 scope: packages
 type: API method
 ---
 
-# Get all package versions for a package owned by the authenticated user
+# Get all package versions for a package owned by an organization
 
-**Deprecated:** This method has been renamed to packages.getAllPackageVersionsForPackageOwnedByAuthenticatedUser
-
-Returns all package versions for a package owned by the authenticated user.
+Returns all package versions for a package owned by an organization.
 
 To use this endpoint, you must authenticate using an access token with the `packages:read` scope.
 If `package_type` is not `container`, your token must also include the `repo` scope.
 
 ```js
-octokit.packages.getAllPackageVersionsForAPackageOwnedByTheAuthenticatedUser({
+octokit.packages.getAllPackageVersionsForPackageOwnedByOrg({
   package_type,
   package_name,
+  org,
 });
 ```
 
@@ -41,6 +40,9 @@ The type of supported package. Can be one of `npm`, `maven`, `rubygems`, `nuget`
 <tr><td>package_name</td><td>yes</td><td>
 
 The name of the package.
+
+</td></tr>
+<tr><td>org</td><td>yes</td><td>
 
 </td></tr>
 <tr><td>page</td><td>no</td><td>

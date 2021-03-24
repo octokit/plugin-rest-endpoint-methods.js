@@ -32,6 +32,16 @@ octokit.repos.getAllTopics({
 <tr><td>repo</td><td>yes</td><td>
 
 </td></tr>
+<tr><td>page</td><td>no</td><td>
+
+Page number of the results to fetch.
+
+</td></tr>
+<tr><td>per_page</td><td>no</td><td>
+
+Results per page (max 100).
+
+</td></tr>
   </tbody>
 </table>
 

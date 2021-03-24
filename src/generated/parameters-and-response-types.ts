@@ -2720,6 +2720,22 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["GET /user/packages/{package_type}/{package_name}/versions"]["response"];
     };
+    getAllPackageVersionsForPackageOwnedByAuthenticatedUser: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /user/packages/{package_type}/{package_name}/versions"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /user/packages/{package_type}/{package_name}/versions"]["response"];
+    };
+    getAllPackageVersionsForPackageOwnedByOrg: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /orgs/{org}/packages/{package_type}/{package_name}/versions"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /orgs/{org}/packages/{package_type}/{package_name}/versions"]["response"];
+    };
     getAllPackageVersionsForPackageOwnedByUser: {
       parameters: RequestParameters &
         Omit<
@@ -2779,18 +2795,18 @@ export type RestEndpointMethodTypes = {
     restorePackageForAuthenticatedUser: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["POST /user/packages/{package_type}/{package_name}/restore"]["parameters"],
+          Endpoints["POST /user/packages/{package_type}/{package_name}/restore{?token}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["POST /user/packages/{package_type}/{package_name}/restore"]["response"];
+      response: Endpoints["POST /user/packages/{package_type}/{package_name}/restore{?token}"]["response"];
     };
     restorePackageForOrg: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["POST /orgs/{org}/packages/{package_type}/{package_name}/restore"]["parameters"],
+          Endpoints["POST /orgs/{org}/packages/{package_type}/{package_name}/restore{?token}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["POST /orgs/{org}/packages/{package_type}/{package_name}/restore"]["response"];
+      response: Endpoints["POST /orgs/{org}/packages/{package_type}/{package_name}/restore{?token}"]["response"];
     };
     restorePackageVersionForAuthenticatedUser: {
       parameters: RequestParameters &
@@ -3533,10 +3549,10 @@ export type RestEndpointMethodTypes = {
     createFork: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["POST /repos/{owner}/{repo}/forks"]["parameters"],
+          Endpoints["POST /repos/{owner}/{repo}/forks{?org,organization}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["POST /repos/{owner}/{repo}/forks"]["response"];
+      response: Endpoints["POST /repos/{owner}/{repo}/forks{?org,organization}"]["response"];
     };
     createInOrg: {
       parameters: RequestParameters &
@@ -4041,6 +4057,14 @@ export type RestEndpointMethodTypes = {
           "baseUrl" | "headers" | "mediaType"
         >;
       response: Endpoints["GET /repos/{owner}/{repo}/readme"]["response"];
+    };
+    getReadmeInDirectory: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /repos/{owner}/{repo}/readme/{dir}"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /repos/{owner}/{repo}/readme/{dir}"]["response"];
     };
     getRelease: {
       parameters: RequestParameters &

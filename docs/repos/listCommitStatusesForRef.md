@@ -39,7 +39,7 @@ octokit.repos.listCommitStatusesForRef({
 </td></tr>
 <tr><td>ref</td><td>yes</td><td>
 
-ref+ parameter
+ref parameter
 
 </td></tr>
 <tr><td>per_page</td><td>no</td><td>
