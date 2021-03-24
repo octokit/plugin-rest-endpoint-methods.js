@@ -72,7 +72,7 @@ octokit.repos.getContent({
 </td></tr>
 <tr><td>path</td><td>yes</td><td>
 
-path+ parameter
+path parameter
 
 </td></tr>
 <tr><td>ref</td><td>no</td><td>

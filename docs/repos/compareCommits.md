@@ -16,10 +16,9 @@ The response also includes details on the files that were changed between the tw
 
 **Working with large comparisons**
 
-The response will include a comparison of up to 250 commits. If you are working with a larger commit range, you can use the [List commits](https://docs.github.com/rest/reference/repos#list-commits) to enumerate all commits in the range.
+To process a response with a large number of commits, you can use (`per_page` or `page`) to paginate the results. When using paging, the list of changed files is only returned with page 1, but includes all changed files for the entire comparison. For more information on working with pagination, see "[Traversing with pagination](/rest/guides/traversing-with-pagination)."
 
-For comparisons with extremely large diffs, you may receive an error response indicating that the diff took too long
-to generate. You can typically resolve this error by using a smaller commit range.
+When calling this API without any paging parameters (`per_page` or `page`), the returned list is limited to 250 commits and the last commit in the list is the most recent of the entire comparison. When a paging parameter is specified, the first commit in the returned list of each page is the earliest.
 
 **Signature verification object**
 
@@ -80,6 +79,16 @@ octokit.repos.compareCommits({
 
 </td></tr>
 <tr><td>head</td><td>yes</td><td>
+
+</td></tr>
+<tr><td>per_page</td><td>no</td><td>
+
+Results per page.
+
+</td></tr>
+<tr><td>page</td><td>no</td><td>
+
+Page number of the results to fetch.
 
 </td></tr>
   </tbody>

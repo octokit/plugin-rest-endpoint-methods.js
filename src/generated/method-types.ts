@@ -2027,7 +2027,7 @@ export type RestEndpointMethods = {
     /**
      * Gets the summary of the free and paid GitHub Actions minutes used.
      *
-     * Paid minutes only apply to workflows in private repositories that use GitHub-hosted runners. Minutes used is listed for each GitHub-hosted runner operating system. Any job re-runs are also included in the usage. The usage does not include the multiplier for macOS and Windows runners and is not rounded up to the nearest whole minute. For more information, see "[Managing billing for GitHub Actions](https://help.github.com/github/setting-up-and-managing-billing-and-payments-on-github/managing-billing-for-github-actions)".
+     * Paid minutes only apply to workflows in private repositories that use GitHub-hosted runners. Minutes used is listed for each GitHub-hosted runner operating system. Any job re-runs are also included in the usage. The usage returned includes any minute multipliers for macOS and Windows runners, and is rounded up to the nearest whole minute. For more information, see "[Managing billing for GitHub Actions](https://help.github.com/github/setting-up-and-managing-billing-and-payments-on-github/managing-billing-for-github-actions)".
      *
      * Access tokens must have the `repo` or `admin:org` scope.
      */
@@ -2043,7 +2043,7 @@ export type RestEndpointMethods = {
     /**
      * Gets the summary of the free and paid GitHub Actions minutes used.
      *
-     * Paid minutes only apply to workflows in private repositories that use GitHub-hosted runners. Minutes used is listed for each GitHub-hosted runner operating system. Any job re-runs are also included in the usage. The usage does not include the multiplier for macOS and Windows runners and is not rounded up to the nearest whole minute. For more information, see "[Managing billing for GitHub Actions](https://help.github.com/github/setting-up-and-managing-billing-and-payments-on-github/managing-billing-for-github-actions)".
+     * Paid minutes only apply to workflows in private repositories that use GitHub-hosted runners. Minutes used is listed for each GitHub-hosted runner operating system. Any job re-runs are also included in the usage. The usage returned includes any minute multipliers for macOS and Windows runners, and is rounded up to the nearest whole minute. For more information, see "[Managing billing for GitHub Actions](https://help.github.com/github/setting-up-and-managing-billing-and-payments-on-github/managing-billing-for-github-actions)".
      *
      * Access tokens must have the `user` scope.
      */
@@ -3125,7 +3125,7 @@ export type RestEndpointMethods = {
   };
   interactions: {
     /**
-     * Shows which type of GitHub user can interact with your public repositories and when the restriction expires. If there are no restrictions, you will see an empty response.
+     * Shows which type of GitHub user can interact with your public repositories and when the restriction expires.
      */
     getRestrictionsForAuthenticatedUser: {
       (
@@ -3161,7 +3161,7 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Shows which type of GitHub user can interact with your public repositories and when the restriction expires. If there are no restrictions, you will see an empty response.
+     * Shows which type of GitHub user can interact with your public repositories and when the restriction expires.
      * @deprecated octokit.interactions.getRestrictionsForYourPublicRepos() has been renamed to octokit.interactions.getRestrictionsForAuthenticatedUser() (2021-02-02)
      */
     getRestrictionsForYourPublicRepos: {
@@ -4250,7 +4250,7 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * In order to get a user's membership with an organization, the authenticated user must be an organization member.
+     * In order to get a user's membership with an organization, the authenticated user must be an organization member. The `state` parameter in the response can be used to identify the user's membership status.
      */
     getMembershipForUser: {
       (
@@ -4650,6 +4650,7 @@ export type RestEndpointMethods = {
      *
      * To use this endpoint, you must authenticate using an access token with the `packages:read` scope.
      * If `package_type` is not `container`, your token must also include the `repo` scope.
+     * @deprecated octokit.packages.getAllPackageVersionsForAPackageOwnedByAnOrg() has been renamed to octokit.packages.getAllPackageVersionsForPackageOwnedByOrg() (2021-03-24)
      */
     getAllPackageVersionsForAPackageOwnedByAnOrg: {
       (
@@ -4665,12 +4666,43 @@ export type RestEndpointMethods = {
      *
      * To use this endpoint, you must authenticate using an access token with the `packages:read` scope.
      * If `package_type` is not `container`, your token must also include the `repo` scope.
+     * @deprecated octokit.packages.getAllPackageVersionsForAPackageOwnedByTheAuthenticatedUser() has been renamed to octokit.packages.getAllPackageVersionsForPackageOwnedByAuthenticatedUser() (2021-03-24)
      */
     getAllPackageVersionsForAPackageOwnedByTheAuthenticatedUser: {
       (
         params?: RestEndpointMethodTypes["packages"]["getAllPackageVersionsForAPackageOwnedByTheAuthenticatedUser"]["parameters"]
       ): Promise<
         RestEndpointMethodTypes["packages"]["getAllPackageVersionsForAPackageOwnedByTheAuthenticatedUser"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Returns all package versions for a package owned by the authenticated user.
+     *
+     * To use this endpoint, you must authenticate using an access token with the `packages:read` scope.
+     * If `package_type` is not `container`, your token must also include the `repo` scope.
+     */
+    getAllPackageVersionsForPackageOwnedByAuthenticatedUser: {
+      (
+        params?: RestEndpointMethodTypes["packages"]["getAllPackageVersionsForPackageOwnedByAuthenticatedUser"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["packages"]["getAllPackageVersionsForPackageOwnedByAuthenticatedUser"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Returns all package versions for a package owned by an organization.
+     *
+     * To use this endpoint, you must authenticate using an access token with the `packages:read` scope.
+     * If `package_type` is not `container`, your token must also include the `repo` scope.
+     */
+    getAllPackageVersionsForPackageOwnedByOrg: {
+      (
+        params?: RestEndpointMethodTypes["packages"]["getAllPackageVersionsForPackageOwnedByOrg"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["packages"]["getAllPackageVersionsForPackageOwnedByOrg"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -5830,10 +5862,9 @@ export type RestEndpointMethods = {
      *
      * **Working with large comparisons**
      *
-     * The response will include a comparison of up to 250 commits. If you are working with a larger commit range, you can use the [List commits](https://docs.github.com/rest/reference/repos#list-commits) to enumerate all commits in the range.
+     * To process a response with a large number of commits, you can use (`per_page` or `page`) to paginate the results. When using paging, the list of changed files is only returned with page 1, but includes all changed files for the entire comparison. For more information on working with pagination, see "[Traversing with pagination](/rest/guides/traversing-with-pagination)."
      *
-     * For comparisons with extremely large diffs, you may receive an error response indicating that the diff took too long
-     * to generate. You can typically resolve this error by using a smaller commit range.
+     * When calling this API without any paging parameters (`per_page` or `page`), the returned list is limited to 250 commits and the last commit in the list is the most recent of the entire comparison. When a paging parameter is specified, the first commit in the returned list of each page is the earliest.
      *
      * **Signature verification object**
      *
@@ -6909,6 +6940,20 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["repos"]["getReadme"]["parameters"]
       ): Promise<RestEndpointMethodTypes["repos"]["getReadme"]["response"]>;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Gets the README from a repository directory.
+     *
+     * READMEs support [custom media types](https://docs.github.com/rest/reference/repos#custom-media-types) for retrieving the raw content or rendered HTML.
+     */
+    getReadmeInDirectory: {
+      (
+        params?: RestEndpointMethodTypes["repos"]["getReadmeInDirectory"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["repos"]["getReadmeInDirectory"]["response"]
+      >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
@@ -8207,7 +8252,10 @@ export type RestEndpointMethods = {
      *
      * **Note:** You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/{org_id}/team/{team_id}/memberships/{username}`.
      *
-     * **Note:** The `role` for organization owners returns as `maintainer`. For more information about `maintainer` roles, see [Create a team](https://docs.github.com/rest/reference/teams#create-a-team).
+     * **Note:**
+     * The response contains the `state` of the membership and the member's `role`.
+     *
+     * The `role` for organization owners is set to `maintainer`. For more information about `maintainer` roles, see see [Create a team](https://docs.github.com/rest/reference/teams#create-a-team).
      */
     getMembershipForUserInOrg: {
       (

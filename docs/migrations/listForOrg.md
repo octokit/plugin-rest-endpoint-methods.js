@@ -40,6 +40,11 @@ Results per page (max 100).
 Page number of the results to fetch.
 
 </td></tr>
+<tr><td>exclude</td><td>no</td><td>
+
+Exclude attributes from the API response to improve performance
+
+</td></tr>
   </tbody>
 </table>
 

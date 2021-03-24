@@ -1,6 +1,6 @@
 ---
 name: Get all package versions for a package owned by the authenticated user
-example: octokit.packages.getAllPackageVersionsForAPackageOwnedByTheAuthenticatedUser({ package_type, package_name })
+example: octokit.packages.getAllPackageVersionsForPackageOwnedByAuthenticatedUser({ package_type, package_name })
 route: GET /user/packages/{package_type}/{package_name}/versions
 scope: packages
 type: API method
@@ -8,15 +8,13 @@ type: API method
 
 # Get all package versions for a package owned by the authenticated user
 
-**Deprecated:** This method has been renamed to packages.getAllPackageVersionsForPackageOwnedByAuthenticatedUser
-
 Returns all package versions for a package owned by the authenticated user.
 
 To use this endpoint, you must authenticate using an access token with the `packages:read` scope.
 If `package_type` is not `container`, your token must also include the `repo` scope.
 
 ```js
-octokit.packages.getAllPackageVersionsForAPackageOwnedByTheAuthenticatedUser({
+octokit.packages.getAllPackageVersionsForPackageOwnedByAuthenticatedUser({
   package_type,
   package_name,
 });

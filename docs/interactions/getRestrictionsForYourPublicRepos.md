@@ -10,7 +10,7 @@ type: API method
 
 **Deprecated:** This method has been renamed to interactions.getRestrictionsForAuthenticatedUser
 
-Shows which type of GitHub user can interact with your public repositories and when the restriction expires. If there are no restrictions, you will see an empty response.
+Shows which type of GitHub user can interact with your public repositories and when the restriction expires.
 
 ```js
 octokit.interactions.getRestrictionsForYourPublicRepos();

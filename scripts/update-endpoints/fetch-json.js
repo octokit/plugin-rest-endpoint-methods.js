@@ -69,7 +69,7 @@ main();
 
 async function main() {
   const { endpoints } = await graphql(QUERY, {
-    url: "https://github-openapi-graphql-server.vercel.app/api/graphql",
+    baseUrl: "https://github-openapi-graphql-server.vercel.app/api",
     version,
     ignoreChangesBefore: "2020-06-10",
   });

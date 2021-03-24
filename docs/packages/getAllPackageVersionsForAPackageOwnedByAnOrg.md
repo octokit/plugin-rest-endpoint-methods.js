@@ -8,6 +8,8 @@ type: API method
 
 # Get all package versions for a package owned by an organization
 
+**Deprecated:** This method has been renamed to packages.getAllPackageVersionsForPackageOwnedByOrg
+
 Returns all package versions for a package owned by an organization.
 
 To use this endpoint, you must authenticate using an access token with the `packages:read` scope.
@@ -43,6 +45,21 @@ The name of the package.
 
 </td></tr>
 <tr><td>org</td><td>yes</td><td>
+
+</td></tr>
+<tr><td>page</td><td>no</td><td>
+
+Page number of the results to fetch.
+
+</td></tr>
+<tr><td>per_page</td><td>no</td><td>
+
+Results per page (max 100).
+
+</td></tr>
+<tr><td>state</td><td>no</td><td>
+
+The state of the package, either active or deleted.
 
 </td></tr>
   </tbody>

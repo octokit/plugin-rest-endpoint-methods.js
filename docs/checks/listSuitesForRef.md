@@ -39,7 +39,7 @@ octokit.checks.listSuitesForRef({
 </td></tr>
 <tr><td>ref</td><td>yes</td><td>
 
-ref+ parameter
+ref parameter
 
 </td></tr>
 <tr><td>app_id</td><td>no</td><td>

@@ -36,8 +36,6 @@ octokit.pulls.listReviewCommentsForRepo({
 </td></tr>
 <tr><td>sort</td><td>no</td><td>
 
-One of `created` (when the repository was starred) or `updated` (when it was last pushed to).
-
 </td></tr>
 <tr><td>direction</td><td>no</td><td>
 

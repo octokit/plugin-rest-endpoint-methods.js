@@ -43,6 +43,11 @@ octokit.migrations.getStatusForOrg({
 migration_id parameter
 
 </td></tr>
+<tr><td>exclude</td><td>no</td><td>
+
+Exclude attributes from the API response to improve performance
+
+</td></tr>
   </tbody>
 </table>
 

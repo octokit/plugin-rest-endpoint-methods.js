@@ -31,6 +31,11 @@ octokit.licenses.getAllCommonlyUsed();
 Results per page (max 100).
 
 </td></tr>
+<tr><td>page</td><td>no</td><td>
+
+Page number of the results to fetch.
+
+</td></tr>
   </tbody>
 </table>
 

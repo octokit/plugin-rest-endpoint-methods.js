@@ -39,7 +39,7 @@ octokit.checks.listForRef({
 </td></tr>
 <tr><td>ref</td><td>yes</td><td>
 
-ref+ parameter
+ref parameter
 
 </td></tr>
 <tr><td>check_name</td><td>no</td><td>
@@ -65,6 +65,9 @@ Results per page (max 100).
 <tr><td>page</td><td>no</td><td>
 
 Page number of the results to fetch.
+
+</td></tr>
+<tr><td>app_id</td><td>no</td><td>
 
 </td></tr>
   </tbody>
