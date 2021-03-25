@@ -1,6 +1,6 @@
 ---
 name: Update a code scanning alert
-example: octokit.codeScanning.updateAlert({ owner, repo, alert_number, state })
+example: octokit.rest.codeScanning.updateAlert({ owner, repo, alert_number, state })
 route: PATCH /repos/{owner}/{repo}/code-scanning/alerts/{alert_number}
 scope: codeScanning
 type: API method
@@ -11,7 +11,7 @@ type: API method
 Updates the status of a single code scanning alert. You must use an access token with the `security_events` scope to use this endpoint. GitHub Apps must have the `security_events` write permission to use this endpoint.
 
 ```js
-octokit.codeScanning.updateAlert({
+octokit.rest.codeScanning.updateAlert({
   owner,
   repo,
   alert_number,

@@ -1,6 +1,6 @@
 ---
 name: Search topics
-example: octokit.search.topics({ q })
+example: octokit.rest.search.topics({ q })
 route: GET /search/topics
 scope: search
 type: API method
@@ -19,7 +19,7 @@ For example, if you want to search for topics related to Ruby that are featured 
 This query searches for topics with the keyword `ruby` and limits the results to find only topics that are featured. The topics that are the best match for the query appear first in the search results.
 
 ```js
-octokit.search.topics({
+octokit.rest.search.topics({
   q,
 });
 ```

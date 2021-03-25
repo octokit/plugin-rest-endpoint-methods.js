@@ -1,6 +1,6 @@
 ---
 name: Remove user access restrictions
-example: octokit.repos.removeUserAccessRestrictions({ owner, repo, branch, users })
+example: octokit.rest.repos.removeUserAccessRestrictions({ owner, repo, branch, users })
 route: DELETE /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users
 scope: repos
 type: API method
@@ -17,7 +17,7 @@ Removes the ability of a user to push to this branch.
 | `array` | Usernames of the people who should no longer have push access. **Note**: The list of users, apps, and teams in total is limited to 100 items. |
 
 ```js
-octokit.repos.removeUserAccessRestrictions({
+octokit.rest.repos.removeUserAccessRestrictions({
   owner,
   repo,
   branch,

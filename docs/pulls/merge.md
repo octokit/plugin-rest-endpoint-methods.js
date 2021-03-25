@@ -1,6 +1,6 @@
 ---
 name: Merge a pull request
-example: octokit.pulls.merge({ owner, repo, pull_number })
+example: octokit.rest.pulls.merge({ owner, repo, pull_number })
 route: PUT /repos/{owner}/{repo}/pulls/{pull_number}/merge
 scope: pulls
 type: API method
@@ -11,7 +11,7 @@ type: API method
 This endpoint triggers [notifications](https://docs.github.com/github/managing-subscriptions-and-notifications-on-github/about-notifications). Creating content too quickly using this endpoint may result in abuse rate limiting. See "[Abuse rate limits](https://docs.github.com/rest/overview/resources-in-the-rest-api#abuse-rate-limits)" and "[Dealing with abuse rate limits](https://docs.github.com/rest/guides/best-practices-for-integrators#dealing-with-abuse-rate-limits)" for details.
 
 ```js
-octokit.pulls.merge({
+octokit.rest.pulls.merge({
   owner,
   repo,
   pull_number,

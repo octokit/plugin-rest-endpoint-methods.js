@@ -1,6 +1,6 @@
 ---
 name: Fork a gist
-example: octokit.gists.fork({ gist_id })
+example: octokit.rest.gists.fork({ gist_id })
 route: POST /gists/{gist_id}/forks
 scope: gists
 type: API method
@@ -11,7 +11,7 @@ type: API method
 **Note**: This was previously `/gists/:gist_id/fork`.
 
 ```js
-octokit.gists.fork({
+octokit.rest.gists.fork({
   gist_id,
 });
 ```

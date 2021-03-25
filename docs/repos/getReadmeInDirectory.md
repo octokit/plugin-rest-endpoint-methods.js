@@ -1,6 +1,6 @@
 ---
 name: Get a repository README for a directory
-example: octokit.repos.getReadmeInDirectory({ owner, repo, dir })
+example: octokit.rest.repos.getReadmeInDirectory({ owner, repo, dir })
 route: GET /repos/{owner}/{repo}/readme/{dir}
 scope: repos
 type: API method
@@ -13,7 +13,7 @@ Gets the README from a repository directory.
 READMEs support [custom media types](https://docs.github.com/rest/reference/repos#custom-media-types) for retrieving the raw content or rendered HTML.
 
 ```js
-octokit.repos.getReadmeInDirectory({
+octokit.rest.repos.getReadmeInDirectory({
   owner,
   repo,
   dir,

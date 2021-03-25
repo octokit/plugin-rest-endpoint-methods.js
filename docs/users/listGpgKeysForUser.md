@@ -1,6 +1,6 @@
 ---
 name: List GPG keys for a user
-example: octokit.users.listGpgKeysForUser({ username })
+example: octokit.rest.users.listGpgKeysForUser({ username })
 route: GET /users/{username}/gpg_keys
 scope: users
 type: API method
@@ -11,7 +11,7 @@ type: API method
 Lists the GPG keys for a user. This information is accessible by anyone.
 
 ```js
-octokit.users.listGpgKeysForUser({
+octokit.rest.users.listGpgKeysForUser({
   username,
 });
 ```

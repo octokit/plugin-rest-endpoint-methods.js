@@ -1,6 +1,6 @@
 ---
 name: Create a remove token for an organization
-example: octokit.actions.createRemoveTokenForOrg({ org })
+example: octokit.rest.actions.createRemoveTokenForOrg({ org })
 route: POST /orgs/{org}/actions/runners/remove-token
 scope: actions
 type: API method
@@ -22,7 +22,7 @@ endpoint.
 ```
 
 ```js
-octokit.actions.createRemoveTokenForOrg({
+octokit.rest.actions.createRemoveTokenForOrg({
   org,
 });
 ```

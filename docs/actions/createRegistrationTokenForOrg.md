@@ -1,6 +1,6 @@
 ---
 name: Create a registration token for an organization
-example: octokit.actions.createRegistrationTokenForOrg({ org })
+example: octokit.rest.actions.createRegistrationTokenForOrg({ org })
 route: POST /orgs/{org}/actions/runners/registration-token
 scope: actions
 type: API method
@@ -21,7 +21,7 @@ Configure your self-hosted runner, replacing `TOKEN` with the registration token
 ```
 
 ```js
-octokit.actions.createRegistrationTokenForOrg({
+octokit.rest.actions.createRegistrationTokenForOrg({
   org,
 });
 ```

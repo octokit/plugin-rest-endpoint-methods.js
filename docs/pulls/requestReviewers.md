@@ -1,6 +1,6 @@
 ---
 name: Request reviewers for a pull request
-example: octokit.pulls.requestReviewers({ owner, repo, pull_number })
+example: octokit.rest.pulls.requestReviewers({ owner, repo, pull_number })
 route: POST /repos/{owner}/{repo}/pulls/{pull_number}/requested_reviewers
 scope: pulls
 type: API method
@@ -11,7 +11,7 @@ type: API method
 This endpoint triggers [notifications](https://docs.github.com/github/managing-subscriptions-and-notifications-on-github/about-notifications). Creating content too quickly using this endpoint may result in abuse rate limiting. See "[Abuse rate limits](https://docs.github.com/rest/overview/resources-in-the-rest-api#abuse-rate-limits)" and "[Dealing with abuse rate limits](https://docs.github.com/rest/guides/best-practices-for-integrators#dealing-with-abuse-rate-limits)" for details.
 
 ```js
-octokit.pulls.requestReviewers({
+octokit.rest.pulls.requestReviewers({
   owner,
   repo,
   pull_number,

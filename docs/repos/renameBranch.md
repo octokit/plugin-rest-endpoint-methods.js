@@ -1,6 +1,6 @@
 ---
 name: Rename a branch
-example: octokit.repos.renameBranch({ owner, repo, branch, new_name })
+example: octokit.rest.repos.renameBranch({ owner, repo, branch, new_name })
 route: POST /repos/{owner}/{repo}/branches/{branch}/rename
 scope: repos
 type: API method
@@ -25,7 +25,7 @@ To rename the default branch:
 - GitHub Apps must have the `administration:write` repository permission.
 
 ```js
-octokit.repos.renameBranch({
+octokit.rest.repos.renameBranch({
   owner,
   repo,
   branch,

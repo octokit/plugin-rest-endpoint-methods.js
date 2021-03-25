@@ -1,6 +1,6 @@
 ---
 name: List events received by the authenticated user
-example: octokit.activity.listReceivedEventsForUser({ username })
+example: octokit.rest.activity.listReceivedEventsForUser({ username })
 route: GET /users/{username}/received_events
 scope: activity
 type: API method
@@ -11,7 +11,7 @@ type: API method
 These are events that you've received by watching repos and following users. If you are authenticated as the given user, you will see private events. Otherwise, you'll only see public events.
 
 ```js
-octokit.activity.listReceivedEventsForUser({
+octokit.rest.activity.listReceivedEventsForUser({
   username,
 });
 ```

@@ -1,6 +1,6 @@
 ---
 name: Update branch protection
-example: octokit.repos.updateBranchProtection({ owner, repo, branch, required_status_checks, required_status_checks.strict, required_status_checks.contexts, enforce_admins, required_pull_request_reviews, restrictions, restrictions.users, restrictions.teams })
+example: octokit.rest.repos.updateBranchProtection({ owner, repo, branch, required_status_checks, required_status_checks.strict, required_status_checks.contexts, enforce_admins, required_pull_request_reviews, restrictions, restrictions.users, restrictions.teams })
 route: PUT /repos/{owner}/{repo}/branches/{branch}/protection
 scope: repos
 type: API method
@@ -17,7 +17,7 @@ Protecting a branch requires admin or owner permissions to the repository.
 **Note**: The list of users, apps, and teams in total is limited to 100 items.
 
 ```js
-octokit.repos.updateBranchProtection({
+octokit.rest.repos.updateBranchProtection({
         owner,
 repo,
 branch,

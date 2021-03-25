@@ -1,6 +1,6 @@
 ---
 name: Remove a repository collaborator
-example: octokit.repos.removeCollaborator({ owner, repo, username })
+example: octokit.rest.repos.removeCollaborator({ owner, repo, username })
 route: DELETE /repos/{owner}/{repo}/collaborators/{username}
 scope: repos
 type: API method
@@ -9,7 +9,7 @@ type: API method
 # Remove a repository collaborator
 
 ```js
-octokit.repos.removeCollaborator({
+octokit.rest.repos.removeCollaborator({
   owner,
   repo,
   username,

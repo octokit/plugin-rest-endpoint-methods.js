@@ -1,6 +1,6 @@
 ---
 name: Get GitHub meta information
-example: octokit.meta.get()
+example: octokit.rest.meta.get()
 route: GET /meta
 scope: meta
 type: API method
@@ -13,7 +13,7 @@ Returns meta information about GitHub, including a list of GitHub's IP addresses
 **Note:** The IP addresses shown in the documentation's response are only example values. You must always query the API directly to get the latest list of IP addresses.
 
 ```js
-octokit.meta.get();
+octokit.rest.meta.get();
 ```
 
 ## Parameters

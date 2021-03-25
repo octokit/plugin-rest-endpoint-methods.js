@@ -1,6 +1,6 @@
 ---
 name: List email addresses for the authenticated user
-example: octokit.users.listEmailsForAuthenticated()
+example: octokit.rest.users.listEmailsForAuthenticated()
 route: GET /user/emails
 scope: users
 type: API method
@@ -11,7 +11,7 @@ type: API method
 Lists all of your email addresses, and specifies which one is visible to the public. This endpoint is accessible with the `user:email` scope.
 
 ```js
-octokit.users.listEmailsForAuthenticated();
+octokit.rest.users.listEmailsForAuthenticated();
 ```
 
 ## Parameters

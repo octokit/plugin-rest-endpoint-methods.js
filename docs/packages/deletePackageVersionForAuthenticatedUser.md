@@ -1,6 +1,6 @@
 ---
 name: Delete a package version for the authenticated user
-example: octokit.packages.deletePackageVersionForAuthenticatedUser({ package_type, package_name, package_version_id })
+example: octokit.rest.packages.deletePackageVersionForAuthenticatedUser({ package_type, package_name, package_version_id })
 route: DELETE /user/packages/{package_type}/{package_name}/versions/{package_version_id}
 scope: packages
 type: API method
@@ -14,7 +14,7 @@ To use this endpoint, you must have admin permissions in the organization and au
 If `package_type` is not `container`, your token must also include the `repo` scope.
 
 ```js
-octokit.packages.deletePackageVersionForAuthenticatedUser({
+octokit.rest.packages.deletePackageVersionForAuthenticatedUser({
   package_type,
   package_name,
   package_version_id,

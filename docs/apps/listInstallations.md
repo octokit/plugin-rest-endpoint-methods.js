@@ -1,6 +1,6 @@
 ---
 name: List installations for the authenticated app
-example: octokit.apps.listInstallations()
+example: octokit.rest.apps.listInstallations()
 route: GET /app/installations
 scope: apps
 type: API method
@@ -13,7 +13,7 @@ You must use a [JWT](https://docs.github.com/apps/building-github-apps/authentic
 The permissions the installation has are included under the `permissions` key.
 
 ```js
-octokit.apps.listInstallations();
+octokit.rest.apps.listInstallations();
 ```
 
 ## Parameters

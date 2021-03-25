@@ -1,6 +1,6 @@
 ---
 name: Update an import
-example: octokit.migrations.updateImport({ owner, repo })
+example: octokit.rest.migrations.updateImport({ owner, repo })
 route: PATCH /repos/{owner}/{repo}/import
 scope: migrations
 type: API method
@@ -12,7 +12,7 @@ An import can be updated with credentials or a project choice by passing in the 
 request. If no parameters are provided, the import will be restarted.
 
 ```js
-octokit.migrations.updateImport({
+octokit.rest.migrations.updateImport({
   owner,
   repo,
 });

@@ -1,6 +1,6 @@
 ---
 name: Get all commonly used licenses
-example: octokit.licenses.getAllCommonlyUsed()
+example: octokit.rest.licenses.getAllCommonlyUsed()
 route: GET /licenses
 scope: licenses
 type: API method
@@ -9,7 +9,7 @@ type: API method
 # Get all commonly used licenses
 
 ```js
-octokit.licenses.getAllCommonlyUsed();
+octokit.rest.licenses.getAllCommonlyUsed();
 ```
 
 ## Parameters

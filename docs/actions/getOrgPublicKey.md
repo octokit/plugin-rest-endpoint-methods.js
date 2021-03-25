@@ -1,6 +1,6 @@
 ---
 name: Get an organization public key
-example: octokit.actions.getOrgPublicKey({ org })
+example: octokit.rest.actions.getOrgPublicKey({ org })
 route: GET /orgs/{org}/actions/secrets/public-key
 scope: actions
 type: API method
@@ -11,7 +11,7 @@ type: API method
 Gets your public key, which you need to encrypt secrets. You need to encrypt a secret before you can create or update secrets. You must authenticate using an access token with the `admin:org` scope to use this endpoint. GitHub Apps must have the `secrets` organization permission to use this endpoint.
 
 ```js
-octokit.actions.getOrgPublicKey({
+octokit.rest.actions.getOrgPublicKey({
   org,
 });
 ```

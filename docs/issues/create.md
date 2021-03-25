@@ -1,6 +1,6 @@
 ---
 name: Create an issue
-example: octokit.issues.create({ owner, repo, title })
+example: octokit.rest.issues.create({ owner, repo, title })
 route: POST /repos/{owner}/{repo}/issues
 scope: issues
 type: API method
@@ -13,7 +13,7 @@ Any user with pull access to a repository can create an issue. If [issues are di
 This endpoint triggers [notifications](https://docs.github.com/en/github/managing-subscriptions-and-notifications-on-github/about-notifications). Creating content too quickly using this endpoint may result in abuse rate limiting. See "[Abuse rate limits](https://docs.github.com/rest/overview/resources-in-the-rest-api#abuse-rate-limits)" and "[Dealing with abuse rate limits](https://docs.github.com/rest/guides/best-practices-for-integrators#dealing-with-abuse-rate-limits)" for details.
 
 ```js
-octokit.issues.create({
+octokit.rest.issues.create({
   owner,
   repo,
   title,

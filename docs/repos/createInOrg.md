@@ -1,6 +1,6 @@
 ---
 name: Create an organization repository
-example: octokit.repos.createInOrg({ org, name })
+example: octokit.rest.repos.createInOrg({ org, name })
 route: POST /orgs/{org}/repos
 scope: repos
 type: API method
@@ -18,7 +18,7 @@ When using [OAuth](https://docs.github.com/apps/building-oauth-apps/understandin
 - `repo` scope to create a private repository
 
 ```js
-octokit.repos.createInOrg({
+octokit.rest.repos.createInOrg({
   org,
   name,
 });

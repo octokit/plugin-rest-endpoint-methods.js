@@ -1,6 +1,6 @@
 ---
 name: Get a review comment for a pull request
-example: octokit.pulls.getReviewComment({ owner, repo, comment_id })
+example: octokit.rest.pulls.getReviewComment({ owner, repo, comment_id })
 route: GET /repos/{owner}/{repo}/pulls/comments/{comment_id}
 scope: pulls
 type: API method
@@ -11,7 +11,7 @@ type: API method
 Provides details for a review comment.
 
 ```js
-octokit.pulls.getReviewComment({
+octokit.rest.pulls.getReviewComment({
   owner,
   repo,
   comment_id,

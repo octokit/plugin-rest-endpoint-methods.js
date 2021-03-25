@@ -1,6 +1,6 @@
 ---
 name: Get the authenticated user
-example: octokit.users.getAuthenticated()
+example: octokit.rest.users.getAuthenticated()
 route: GET /user
 scope: users
 type: API method
@@ -13,7 +13,7 @@ If the authenticated user is authenticated through basic authentication or OAuth
 If the authenticated user is authenticated through OAuth without the `user` scope, then the response lists only public profile information.
 
 ```js
-octokit.users.getAuthenticated();
+octokit.rest.users.getAuthenticated();
 ```
 
 ## Parameters

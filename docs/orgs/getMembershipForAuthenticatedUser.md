@@ -1,6 +1,6 @@
 ---
 name: Get an organization membership for the authenticated user
-example: octokit.orgs.getMembershipForAuthenticatedUser({ org })
+example: octokit.rest.orgs.getMembershipForAuthenticatedUser({ org })
 route: GET /user/memberships/orgs/{org}
 scope: orgs
 type: API method
@@ -9,7 +9,7 @@ type: API method
 # Get an organization membership for the authenticated user
 
 ```js
-octokit.orgs.getMembershipForAuthenticatedUser({
+octokit.rest.orgs.getMembershipForAuthenticatedUser({
   org,
 });
 ```

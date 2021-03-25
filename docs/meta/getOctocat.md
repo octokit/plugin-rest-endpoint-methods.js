@@ -1,6 +1,6 @@
 ---
 name: Get Octocat
-example: octokit.meta.getOctocat()
+example: octokit.rest.meta.getOctocat()
 route: GET /octocat
 scope: meta
 type: API method
@@ -11,7 +11,7 @@ type: API method
 Get the octocat as ASCII art
 
 ```js
-octokit.meta.getOctocat();
+octokit.rest.meta.getOctocat();
 ```
 
 ## Parameters

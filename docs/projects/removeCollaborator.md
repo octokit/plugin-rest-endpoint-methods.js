@@ -1,6 +1,6 @@
 ---
 name: Remove user as a collaborator
-example: octokit.projects.removeCollaborator({ project_id, username })
+example: octokit.rest.projects.removeCollaborator({ project_id, username })
 route: DELETE /projects/{project_id}/collaborators/{username}
 scope: projects
 type: API method
@@ -11,7 +11,7 @@ type: API method
 Removes a collaborator from an organization project. You must be an organization owner or a project `admin` to remove a collaborator.
 
 ```js
-octokit.projects.removeCollaborator({
+octokit.rest.projects.removeCollaborator({
   project_id,
   username,
 });

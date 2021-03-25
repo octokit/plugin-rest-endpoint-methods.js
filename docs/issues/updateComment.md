@@ -1,6 +1,6 @@
 ---
 name: Update an issue comment
-example: octokit.issues.updateComment({ owner, repo, comment_id, body })
+example: octokit.rest.issues.updateComment({ owner, repo, comment_id, body })
 route: PATCH /repos/{owner}/{repo}/issues/comments/{comment_id}
 scope: issues
 type: API method
@@ -9,7 +9,7 @@ type: API method
 # Update an issue comment
 
 ```js
-octokit.issues.updateComment({
+octokit.rest.issues.updateComment({
   owner,
   repo,
   comment_id,

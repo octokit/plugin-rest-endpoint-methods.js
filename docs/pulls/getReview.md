@@ -1,6 +1,6 @@
 ---
 name: Get a review for a pull request
-example: octokit.pulls.getReview({ owner, repo, pull_number, review_id })
+example: octokit.rest.pulls.getReview({ owner, repo, pull_number, review_id })
 route: GET /repos/{owner}/{repo}/pulls/{pull_number}/reviews/{review_id}
 scope: pulls
 type: API method
@@ -9,7 +9,7 @@ type: API method
 # Get a review for a pull request
 
 ```js
-octokit.pulls.getReview({
+octokit.rest.pulls.getReview({
   owner,
   repo,
   pull_number,

@@ -1,6 +1,6 @@
 ---
 name: Create a review comment for a pull request
-example: octokit.pulls.createReviewComment({ owner, repo, pull_number, body })
+example: octokit.rest.pulls.createReviewComment({ owner, repo, pull_number, body })
 route: POST /repos/{owner}/{repo}/pulls/{pull_number}/comments
 scope: pulls
 type: API method
@@ -17,7 +17,7 @@ You can still create a review comment using the `position` parameter. When you u
 This endpoint triggers [notifications](https://docs.github.com/en/github/managing-subscriptions-and-notifications-on-github/about-notifications). Creating content too quickly using this endpoint may result in abuse rate limiting. See "[Abuse rate limits](https://docs.github.com/rest/overview/resources-in-the-rest-api#abuse-rate-limits)" and "[Dealing with abuse rate limits](https://docs.github.com/rest/guides/best-practices-for-integrators#dealing-with-rate-limits)" for details.
 
 ```js
-octokit.pulls.createReviewComment({
+octokit.rest.pulls.createReviewComment({
   owner,
   repo,
   pull_number,

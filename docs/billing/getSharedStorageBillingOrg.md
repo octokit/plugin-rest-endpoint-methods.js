@@ -1,6 +1,6 @@
 ---
 name: Get shared storage billing for an organization
-example: octokit.billing.getSharedStorageBillingOrg({ org })
+example: octokit.rest.billing.getSharedStorageBillingOrg({ org })
 route: GET /orgs/{org}/settings/billing/shared-storage
 scope: billing
 type: API method
@@ -15,7 +15,7 @@ Paid minutes only apply to packages stored for private repositories. For more in
 Access tokens must have the `repo` or `admin:org` scope.
 
 ```js
-octokit.billing.getSharedStorageBillingOrg({
+octokit.rest.billing.getSharedStorageBillingOrg({
   org,
 });
 ```

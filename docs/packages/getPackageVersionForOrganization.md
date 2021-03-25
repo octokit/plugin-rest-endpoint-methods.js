@@ -1,6 +1,6 @@
 ---
 name: Get a package version for an organization
-example: octokit.packages.getPackageVersionForOrganization({ package_type, package_name, org, package_version_id })
+example: octokit.rest.packages.getPackageVersionForOrganization({ package_type, package_name, org, package_version_id })
 route: GET /orgs/{org}/packages/{package_type}/{package_name}/versions/{package_version_id}
 scope: packages
 type: API method
@@ -14,7 +14,7 @@ You must authenticate using an access token with the `packages:read` scope.
 If `package_type` is not `container`, your token must also include the `repo` scope.
 
 ```js
-octokit.packages.getPackageVersionForOrganization({
+octokit.rest.packages.getPackageVersionForOrganization({
   package_type,
   package_name,
   org,

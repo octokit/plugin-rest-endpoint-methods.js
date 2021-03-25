@@ -1,6 +1,6 @@
 ---
 name: Update an existing project column
-example: octokit.projects.updateColumn({ column_id, name })
+example: octokit.rest.projects.updateColumn({ column_id, name })
 route: PATCH /projects/columns/{column_id}
 scope: projects
 type: API method
@@ -9,7 +9,7 @@ type: API method
 # Update an existing project column
 
 ```js
-octokit.projects.updateColumn({
+octokit.rest.projects.updateColumn({
   column_id,
   name,
 });

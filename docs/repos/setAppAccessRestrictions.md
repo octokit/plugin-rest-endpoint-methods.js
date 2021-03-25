@@ -1,6 +1,6 @@
 ---
 name: Set app access restrictions
-example: octokit.repos.setAppAccessRestrictions({ owner, repo, branch, apps })
+example: octokit.rest.repos.setAppAccessRestrictions({ owner, repo, branch, apps })
 route: PUT /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/apps
 scope: repos
 type: API method
@@ -17,7 +17,7 @@ Replaces the list of apps that have push access to this branch. This removes all
 | `array` | The GitHub Apps that have push access to this branch. Use the app's `slug`. **Note**: The list of users, apps, and teams in total is limited to 100 items. |
 
 ```js
-octokit.repos.setAppAccessRestrictions({
+octokit.rest.repos.setAppAccessRestrictions({
   owner,
   repo,
   branch,

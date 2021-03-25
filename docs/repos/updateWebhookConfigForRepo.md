@@ -1,6 +1,6 @@
 ---
 name: Update a webhook configuration for a repository
-example: octokit.repos.updateWebhookConfigForRepo({ owner, repo, hook_id })
+example: octokit.rest.repos.updateWebhookConfigForRepo({ owner, repo, hook_id })
 route: PATCH /repos/{owner}/{repo}/hooks/{hook_id}/config
 scope: repos
 type: API method
@@ -13,7 +13,7 @@ Updates the webhook configuration for a repository. To update more information a
 Access tokens must have the `write:repo_hook` or `repo` scope, and GitHub Apps must have the `repository_hooks:write` permission.
 
 ```js
-octokit.repos.updateWebhookConfigForRepo({
+octokit.rest.repos.updateWebhookConfigForRepo({
   owner,
   repo,
   hook_id,

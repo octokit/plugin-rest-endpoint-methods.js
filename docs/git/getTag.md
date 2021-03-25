@@ -1,6 +1,6 @@
 ---
 name: Get a tag
-example: octokit.git.getTag({ owner, repo, tag_sha })
+example: octokit.rest.git.getTag({ owner, repo, tag_sha })
 route: GET /repos/{owner}/{repo}/git/tags/{tag_sha}
 scope: git
 type: API method
@@ -38,7 +38,7 @@ These are the possible values for `reason` in the `verification` object:
 | `valid`                  | None of the above errors applied, so the signature is considered to be verified.                                                  |
 
 ```js
-octokit.git.getTag({
+octokit.rest.git.getTag({
   owner,
   repo,
   tag_sha,

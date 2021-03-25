@@ -1,6 +1,6 @@
 ---
 name: Cancel an organization invitation
-example: octokit.orgs.cancelInvitation({ org, invitation_id })
+example: octokit.rest.orgs.cancelInvitation({ org, invitation_id })
 route: DELETE /orgs/{org}/invitations/{invitation_id}
 scope: orgs
 type: API method
@@ -13,7 +13,7 @@ Cancel an organization invitation. In order to cancel an organization invitation
 This endpoint triggers [notifications](https://docs.github.com/en/github/managing-subscriptions-and-notifications-on-github/about-notifications).
 
 ```js
-octokit.orgs.cancelInvitation({
+octokit.rest.orgs.cancelInvitation({
   org,
   invitation_id,
 });

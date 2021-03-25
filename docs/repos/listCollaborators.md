@@ -1,6 +1,6 @@
 ---
 name: List repository collaborators
-example: octokit.repos.listCollaborators({ owner, repo })
+example: octokit.rest.repos.listCollaborators({ owner, repo })
 route: GET /repos/{owner}/{repo}/collaborators
 scope: repos
 type: API method
@@ -13,7 +13,7 @@ For organization-owned repositories, the list of collaborators includes outside 
 Team members will include the members of child teams.
 
 ```js
-octokit.repos.listCollaborators({
+octokit.rest.repos.listCollaborators({
   owner,
   repo,
 });

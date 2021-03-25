@@ -1,6 +1,6 @@
 ---
 name: Create or update an environment
-example: octokit.repos.createOrUpdateEnvironment({ owner, repo, environment_name, deployment_branch_policy.protected_branches, deployment_branch_policy.custom_branch_policies })
+example: octokit.rest.repos.createOrUpdateEnvironment({ owner, repo, environment_name, deployment_branch_policy.protected_branches, deployment_branch_policy.custom_branch_policies })
 route: PUT /repos/{owner}/{repo}/environments/{environment_name}
 scope: repos
 type: API method
@@ -17,7 +17,7 @@ Create or update an environment with protection rules, such as required reviewer
 You must authenticate using an access token with the repo scope to use this endpoint.
 
 ```js
-octokit.repos.createOrUpdateEnvironment({
+octokit.rest.repos.createOrUpdateEnvironment({
         owner,
 repo,
 environment_name,

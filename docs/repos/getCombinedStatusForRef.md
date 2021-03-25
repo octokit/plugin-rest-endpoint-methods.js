@@ -1,6 +1,6 @@
 ---
 name: Get the combined status for a specific reference
-example: octokit.repos.getCombinedStatusForRef({ owner, repo, ref })
+example: octokit.rest.repos.getCombinedStatusForRef({ owner, repo, ref })
 route: GET /repos/{owner}/{repo}/commits/{ref}/status
 scope: repos
 type: API method
@@ -19,7 +19,7 @@ Additionally, a combined `state` is returned. The `state` is one of:
 - **success** if the latest status for all contexts is `success`
 
 ```js
-octokit.repos.getCombinedStatusForRef({
+octokit.rest.repos.getCombinedStatusForRef({
   owner,
   repo,
   ref,

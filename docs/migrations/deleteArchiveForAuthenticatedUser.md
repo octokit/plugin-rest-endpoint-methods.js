@@ -1,6 +1,6 @@
 ---
 name: Delete a user migration archive
-example: octokit.migrations.deleteArchiveForAuthenticatedUser({ migration_id })
+example: octokit.rest.migrations.deleteArchiveForAuthenticatedUser({ migration_id })
 route: DELETE /user/migrations/{migration_id}/archive
 scope: migrations
 type: API method
@@ -11,7 +11,7 @@ type: API method
 Deletes a previous migration archive. Downloadable migration archives are automatically deleted after seven days. Migration metadata, which is returned in the [List user migrations](https://docs.github.com/rest/reference/migrations#list-user-migrations) and [Get a user migration status](https://docs.github.com/rest/reference/migrations#get-a-user-migration-status) endpoints, will continue to be available even after an archive is deleted.
 
 ```js
-octokit.migrations.deleteArchiveForAuthenticatedUser({
+octokit.rest.migrations.deleteArchiveForAuthenticatedUser({
   migration_id,
 });
 ```

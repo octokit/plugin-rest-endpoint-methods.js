@@ -1,6 +1,6 @@
 ---
 name: Update an organization webhook
-example: octokit.orgs.updateWebhook({ org, hook_id, config.url })
+example: octokit.rest.orgs.updateWebhook({ org, hook_id, config.url })
 route: PATCH /orgs/{org}/hooks/{hook_id}
 scope: orgs
 type: API method
@@ -11,7 +11,7 @@ type: API method
 Updates a webhook configured in an organization. When you update a webhook, the `secret` will be overwritten. If you previously had a `secret` set, you must provide the same `secret` or set a new `secret` or the secret will be removed. If you are only updating individual webhook `config` properties, use "[Update a webhook configuration for an organization](/rest/reference/orgs#update-a-webhook-configuration-for-an-organization)."
 
 ```js
-octokit.orgs.updateWebhook({
+octokit.rest.orgs.updateWebhook({
         org,
 hook_id,
 config.url

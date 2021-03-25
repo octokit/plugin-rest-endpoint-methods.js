@@ -1,6 +1,6 @@
 ---
 name: Get GitHub Packages billing for a user
-example: octokit.billing.getGithubPackagesBillingUser({ username })
+example: octokit.rest.billing.getGithubPackagesBillingUser({ username })
 route: GET /users/{username}/settings/billing/packages
 scope: billing
 type: API method
@@ -15,7 +15,7 @@ Paid minutes only apply to packages stored for private repositories. For more in
 Access tokens must have the `user` scope.
 
 ```js
-octokit.billing.getGithubPackagesBillingUser({
+octokit.rest.billing.getGithubPackagesBillingUser({
   username,
 });
 ```

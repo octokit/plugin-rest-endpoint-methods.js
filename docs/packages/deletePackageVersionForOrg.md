@@ -1,6 +1,6 @@
 ---
 name: Delete package version for an organization
-example: octokit.packages.deletePackageVersionForOrg({ package_type, package_name, org, package_version_id })
+example: octokit.rest.packages.deletePackageVersionForOrg({ package_type, package_name, org, package_version_id })
 route: DELETE /orgs/{org}/packages/{package_type}/{package_name}/versions/{package_version_id}
 scope: packages
 type: API method
@@ -16,7 +16,7 @@ To use this endpoint, you must have admin permissions in the organization and au
 - If `package_type` is `container`, you must also have admin permissions to the container you want to delete.
 
 ```js
-octokit.packages.deletePackageVersionForOrg({
+octokit.rest.packages.deletePackageVersionForOrg({
   package_type,
   package_name,
   org,

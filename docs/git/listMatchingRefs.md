@@ -1,6 +1,6 @@
 ---
 name: List matching references
-example: octokit.git.listMatchingRefs({ owner, repo, ref })
+example: octokit.rest.git.listMatchingRefs({ owner, repo, ref })
 route: GET /repos/{owner}/{repo}/git/matching-refs/{ref}
 scope: git
 type: API method
@@ -17,7 +17,7 @@ When you use this endpoint without providing a `:ref`, it will return an array o
 If you request matching references for a branch named `feature` but the branch `feature` doesn't exist, the response can still include other matching head refs that start with the word `feature`, such as `featureA` and `featureB`.
 
 ```js
-octokit.git.listMatchingRefs({
+octokit.rest.git.listMatchingRefs({
   owner,
   repo,
   ref,

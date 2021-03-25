@@ -1,6 +1,6 @@
 ---
 name: Set public organization membership for the authenticated user
-example: octokit.orgs.setPublicMembershipForAuthenticatedUser({ org, username })
+example: octokit.rest.orgs.setPublicMembershipForAuthenticatedUser({ org, username })
 route: PUT /orgs/{org}/public_members/{username}
 scope: orgs
 type: API method
@@ -13,7 +13,7 @@ The user can publicize their own membership. (A user cannot publicize the member
 Note that you'll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see "[HTTP verbs](https://docs.github.com/rest/overview/resources-in-the-rest-api#http-verbs)."
 
 ```js
-octokit.orgs.setPublicMembershipForAuthenticatedUser({
+octokit.rest.orgs.setPublicMembershipForAuthenticatedUser({
   org,
   username,
 });

@@ -1,6 +1,6 @@
 ---
 name: Delete a self-hosted runner from a repository
-example: octokit.actions.deleteSelfHostedRunnerFromRepo({ owner, repo, runner_id })
+example: octokit.rest.actions.deleteSelfHostedRunnerFromRepo({ owner, repo, runner_id })
 route: DELETE /repos/{owner}/{repo}/actions/runners/{runner_id}
 scope: actions
 type: API method
@@ -14,7 +14,7 @@ You must authenticate using an access token with the `repo`
 scope to use this endpoint.
 
 ```js
-octokit.actions.deleteSelfHostedRunnerFromRepo({
+octokit.rest.actions.deleteSelfHostedRunnerFromRepo({
   owner,
   repo,
   runner_id,

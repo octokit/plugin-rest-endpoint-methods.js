@@ -1,6 +1,6 @@
 ---
 name: Get the authenticated app
-example: octokit.apps.getAuthenticated()
+example: octokit.rest.apps.getAuthenticated()
 route: GET /app
 scope: apps
 type: API method
@@ -13,7 +13,7 @@ Returns the GitHub App associated with the authentication credentials used. To s
 You must use a [JWT](https://docs.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint.
 
 ```js
-octokit.apps.getAuthenticated();
+octokit.rest.apps.getAuthenticated();
 ```
 
 ## Parameters

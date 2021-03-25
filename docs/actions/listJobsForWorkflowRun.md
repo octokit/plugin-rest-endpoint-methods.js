@@ -1,6 +1,6 @@
 ---
 name: List jobs for a workflow run
-example: octokit.actions.listJobsForWorkflowRun({ owner, repo, run_id })
+example: octokit.rest.actions.listJobsForWorkflowRun({ owner, repo, run_id })
 route: GET /repos/{owner}/{repo}/actions/runs/{run_id}/jobs
 scope: actions
 type: API method
@@ -11,7 +11,7 @@ type: API method
 Lists jobs for a workflow run. Anyone with read access to the repository can use this endpoint. If the repository is private you must use an access token with the `repo` scope. GitHub Apps must have the `actions:read` permission to use this endpoint. You can use parameters to narrow the list of results. For more information about using parameters, see [Parameters](https://docs.github.com/rest/overview/resources-in-the-rest-api#parameters).
 
 ```js
-octokit.actions.listJobsForWorkflowRun({
+octokit.rest.actions.listJobsForWorkflowRun({
   owner,
   repo,
   run_id,

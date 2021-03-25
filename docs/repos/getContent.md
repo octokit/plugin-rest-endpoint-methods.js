@@ -1,6 +1,6 @@
 ---
 name: Get repository content
-example: octokit.repos.getContent({ owner, repo, path })
+example: octokit.rest.repos.getContent({ owner, repo, path })
 route: GET /repos/{owner}/{repo}/contents/{path}
 scope: repos
 type: API method
@@ -46,7 +46,7 @@ If the submodule repository is not hosted on github.com, the Git URLs (`git_url`
 github.com URLs (`html_url` and `_links["html"]`) will have null values.
 
 ```js
-octokit.repos.getContent({
+octokit.rest.repos.getContent({
   owner,
   repo,
   path,

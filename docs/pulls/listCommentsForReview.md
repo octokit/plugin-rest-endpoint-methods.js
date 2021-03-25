@@ -1,6 +1,6 @@
 ---
 name: List comments for a pull request review
-example: octokit.pulls.listCommentsForReview({ owner, repo, pull_number, review_id })
+example: octokit.rest.pulls.listCommentsForReview({ owner, repo, pull_number, review_id })
 route: GET /repos/{owner}/{repo}/pulls/{pull_number}/reviews/{review_id}/comments
 scope: pulls
 type: API method
@@ -11,7 +11,7 @@ type: API method
 List comments for a specific pull request review.
 
 ```js
-octokit.pulls.listCommentsForReview({
+octokit.rest.pulls.listCommentsForReview({
   owner,
   repo,
   pull_number,

@@ -1,6 +1,6 @@
 ---
 name: List repository workflows
-example: octokit.actions.listRepoWorkflows({ owner, repo })
+example: octokit.rest.actions.listRepoWorkflows({ owner, repo })
 route: GET /repos/{owner}/{repo}/actions/workflows
 scope: actions
 type: API method
@@ -11,7 +11,7 @@ type: API method
 Lists the workflows in a repository. Anyone with read access to the repository can use this endpoint. If the repository is private you must use an access token with the `repo` scope. GitHub Apps must have the `actions:read` permission to use this endpoint.
 
 ```js
-octokit.actions.listRepoWorkflows({
+octokit.rest.actions.listRepoWorkflows({
   owner,
   repo,
 });

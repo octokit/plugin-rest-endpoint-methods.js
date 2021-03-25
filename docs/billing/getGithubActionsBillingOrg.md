@@ -1,6 +1,6 @@
 ---
 name: Get GitHub Actions billing for an organization
-example: octokit.billing.getGithubActionsBillingOrg({ org })
+example: octokit.rest.billing.getGithubActionsBillingOrg({ org })
 route: GET /orgs/{org}/settings/billing/actions
 scope: billing
 type: API method
@@ -15,7 +15,7 @@ Paid minutes only apply to workflows in private repositories that use GitHub-hos
 Access tokens must have the `repo` or `admin:org` scope.
 
 ```js
-octokit.billing.getGithubActionsBillingOrg({
+octokit.rest.billing.getGithubActionsBillingOrg({
   org,
 });
 ```

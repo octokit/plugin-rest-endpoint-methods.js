@@ -1,6 +1,6 @@
 ---
 name: Update a pull request
-example: octokit.pulls.update({ owner, repo, pull_number })
+example: octokit.rest.pulls.update({ owner, repo, pull_number })
 route: PATCH /repos/{owner}/{repo}/pulls/{pull_number}
 scope: pulls
 type: API method
@@ -13,7 +13,7 @@ Draft pull requests are available in public repositories with GitHub Free and Gi
 To open or update a pull request in a public repository, you must have write access to the head or the source branch. For organization-owned repositories, you must be a member of the organization that owns the repository to open or update a pull request.
 
 ```js
-octokit.pulls.update({
+octokit.rest.pulls.update({
   owner,
   repo,
   pull_number,

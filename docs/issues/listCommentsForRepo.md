@@ -1,6 +1,6 @@
 ---
 name: List issue comments for a repository
-example: octokit.issues.listCommentsForRepo({ owner, repo })
+example: octokit.rest.issues.listCommentsForRepo({ owner, repo })
 route: GET /repos/{owner}/{repo}/issues/comments
 scope: issues
 type: API method
@@ -11,7 +11,7 @@ type: API method
 By default, Issue Comments are ordered by ascending ID.
 
 ```js
-octokit.issues.listCommentsForRepo({
+octokit.rest.issues.listCommentsForRepo({
   owner,
   repo,
 });

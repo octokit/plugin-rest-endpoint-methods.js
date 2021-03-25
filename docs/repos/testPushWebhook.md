@@ -1,6 +1,6 @@
 ---
 name: Test the push repository webhook
-example: octokit.repos.testPushWebhook({ owner, repo, hook_id })
+example: octokit.rest.repos.testPushWebhook({ owner, repo, hook_id })
 route: POST /repos/{owner}/{repo}/hooks/{hook_id}/tests
 scope: repos
 type: API method
@@ -13,7 +13,7 @@ This will trigger the hook with the latest push to the current repository if the
 **Note**: Previously `/repos/:owner/:repo/hooks/:hook_id/test`
 
 ```js
-octokit.repos.testPushWebhook({
+octokit.rest.repos.testPushWebhook({
   owner,
   repo,
   hook_id,

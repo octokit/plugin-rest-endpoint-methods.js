@@ -1,6 +1,6 @@
 ---
 name: Get a repository README
-example: octokit.repos.getReadme({ owner, repo })
+example: octokit.rest.repos.getReadme({ owner, repo })
 route: GET /repos/{owner}/{repo}/readme
 scope: repos
 type: API method
@@ -13,7 +13,7 @@ Gets the preferred README for a repository.
 READMEs support [custom media types](https://docs.github.com/rest/reference/repos#custom-media-types) for retrieving the raw content or rendered HTML.
 
 ```js
-octokit.repos.getReadme({
+octokit.rest.repos.getReadme({
   owner,
   repo,
 });

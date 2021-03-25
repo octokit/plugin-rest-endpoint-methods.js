@@ -172,13 +172,13 @@ async function getRoutes() {
 
       newRoutes[before.scope][
         before.id
-      ].deprecated = `octokit.${before.scope}.${before.id}() has been renamed to octokit.${after.scope}.${after.id}() (${endpoint.renamed.date})`;
+      ].deprecated = `octokit.rest.${before.scope}.${before.id}() has been renamed to octokit.rest.${after.scope}.${after.id}() (${endpoint.renamed.date})`;
     }
 
     if (endpoint.isDeprecated) {
       newRoutes[scope][
         idName
-      ].deprecated = `octokit.${scope}.${idName}() is deprecated, see ${endpoint.documentationUrl}`;
+      ].deprecated = `octokit.rest.${scope}.${idName}() is deprecated, see ${endpoint.documentationUrl}`;
     }
   });
 

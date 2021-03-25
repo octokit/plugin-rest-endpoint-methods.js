@@ -1,6 +1,6 @@
 ---
 name: Get interaction restrictions for your public repositories
-example: octokit.interactions.getRestrictionsForYourPublicRepos()
+example: octokit.rest.interactions.getRestrictionsForYourPublicRepos()
 route: GET /user/interaction-limits
 scope: interactions
 type: API method
@@ -13,7 +13,7 @@ type: API method
 Shows which type of GitHub user can interact with your public repositories and when the restriction expires.
 
 ```js
-octokit.interactions.getRestrictionsForYourPublicRepos();
+octokit.rest.interactions.getRestrictionsForYourPublicRepos();
 ```
 
 ## Parameters

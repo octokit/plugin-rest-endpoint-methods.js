@@ -1,6 +1,6 @@
 ---
 name: Get commit signature protection
-example: octokit.repos.getCommitSignatureProtection({ owner, repo, branch })
+example: octokit.rest.repos.getCommitSignatureProtection({ owner, repo, branch })
 route: GET /repos/{owner}/{repo}/branches/{branch}/protection/required_signatures
 scope: repos
 type: API method
@@ -15,7 +15,7 @@ When authenticated with admin or owner permissions to the repository, you can us
 **Note**: You must enable branch protection to require signed commits.
 
 ```js
-octokit.repos.getCommitSignatureProtection({
+octokit.rest.repos.getCommitSignatureProtection({
   owner,
   repo,
   branch,

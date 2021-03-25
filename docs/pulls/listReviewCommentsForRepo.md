@@ -1,6 +1,6 @@
 ---
 name: List review comments in a repository
-example: octokit.pulls.listReviewCommentsForRepo({ owner, repo })
+example: octokit.rest.pulls.listReviewCommentsForRepo({ owner, repo })
 route: GET /repos/{owner}/{repo}/pulls/comments
 scope: pulls
 type: API method
@@ -11,7 +11,7 @@ type: API method
 Lists review comments for all pull requests in a repository. By default, review comments are in ascending order by ID.
 
 ```js
-octokit.pulls.listReviewCommentsForRepo({
+octokit.rest.pulls.listReviewCommentsForRepo({
   owner,
   repo,
 });

@@ -1,6 +1,6 @@
 ---
 name: Delete an organization webhook
-example: octokit.orgs.deleteWebhook({ org, hook_id })
+example: octokit.rest.orgs.deleteWebhook({ org, hook_id })
 route: DELETE /orgs/{org}/hooks/{hook_id}
 scope: orgs
 type: API method
@@ -9,7 +9,7 @@ type: API method
 # Delete an organization webhook
 
 ```js
-octokit.orgs.deleteWebhook({
+octokit.rest.orgs.deleteWebhook({
   org,
   hook_id,
 });

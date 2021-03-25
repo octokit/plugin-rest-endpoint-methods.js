@@ -1,6 +1,6 @@
 ---
 name: Get a blob
-example: octokit.git.getBlob({ owner, repo, file_sha })
+example: octokit.rest.git.getBlob({ owner, repo, file_sha })
 route: GET /repos/{owner}/{repo}/git/blobs/{file_sha}
 scope: git
 type: API method
@@ -13,7 +13,7 @@ The `content` in the response will always be Base64 encoded.
 _Note_: This API supports blobs up to 100 megabytes in size.
 
 ```js
-octokit.git.getBlob({
+octokit.rest.git.getBlob({
   owner,
   repo,
   file_sha,

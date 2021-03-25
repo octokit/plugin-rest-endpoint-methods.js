@@ -1,6 +1,6 @@
 ---
 name: Get users with access to the protected branch
-example: octokit.repos.getUsersWithAccessToProtectedBranch({ owner, repo, branch })
+example: octokit.rest.repos.getUsersWithAccessToProtectedBranch({ owner, repo, branch })
 route: GET /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users
 scope: repos
 type: API method
@@ -13,7 +13,7 @@ Protected branches are available in public repositories with GitHub Free and Git
 Lists the people who have push access to this branch.
 
 ```js
-octokit.repos.getUsersWithAccessToProtectedBranch({
+octokit.rest.repos.getUsersWithAccessToProtectedBranch({
   owner,
   repo,
   branch,

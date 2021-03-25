@@ -1,6 +1,6 @@
 ---
 name: Get a public SSH key for the authenticated user
-example: octokit.users.getPublicSshKeyForAuthenticated({ key_id })
+example: octokit.rest.users.getPublicSshKeyForAuthenticated({ key_id })
 route: GET /user/keys/{key_id}
 scope: users
 type: API method
@@ -11,7 +11,7 @@ type: API method
 View extended details for a single public SSH key. Requires that you are authenticated via Basic Auth or via OAuth with at least `read:public_key` [scope](https://docs.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
 
 ```js
-octokit.users.getPublicSshKeyForAuthenticated({
+octokit.rest.users.getPublicSshKeyForAuthenticated({
   key_id,
 });
 ```

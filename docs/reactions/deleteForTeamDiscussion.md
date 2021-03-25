@@ -1,6 +1,6 @@
 ---
 name: Delete team discussion reaction
-example: octokit.reactions.deleteForTeamDiscussion({ org, team_slug, discussion_number, reaction_id })
+example: octokit.rest.reactions.deleteForTeamDiscussion({ org, team_slug, discussion_number, reaction_id })
 route: DELETE /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/reactions/{reaction_id}
 scope: reactions
 type: API method
@@ -13,7 +13,7 @@ type: API method
 Delete a reaction to a [team discussion](https://docs.github.com/rest/reference/teams#discussions). OAuth access tokens require the `write:discussion` [scope](https://docs.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
 
 ```js
-octokit.reactions.deleteForTeamDiscussion({
+octokit.rest.reactions.deleteForTeamDiscussion({
   org,
   team_slug,
   discussion_number,

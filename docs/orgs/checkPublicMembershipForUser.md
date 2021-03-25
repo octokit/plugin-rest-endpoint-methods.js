@@ -1,6 +1,6 @@
 ---
 name: Check public organization membership for a user
-example: octokit.orgs.checkPublicMembershipForUser({ org, username })
+example: octokit.rest.orgs.checkPublicMembershipForUser({ org, username })
 route: GET /orgs/{org}/public_members/{username}
 scope: orgs
 type: API method
@@ -9,7 +9,7 @@ type: API method
 # Check public organization membership for a user
 
 ```js
-octokit.orgs.checkPublicMembershipForUser({
+octokit.rest.orgs.checkPublicMembershipForUser({
   org,
   username,
 });

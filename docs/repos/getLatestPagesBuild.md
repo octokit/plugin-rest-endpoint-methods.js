@@ -1,6 +1,6 @@
 ---
 name: Get latest Pages build
-example: octokit.repos.getLatestPagesBuild({ owner, repo })
+example: octokit.rest.repos.getLatestPagesBuild({ owner, repo })
 route: GET /repos/{owner}/{repo}/pages/builds/latest
 scope: repos
 type: API method
@@ -9,7 +9,7 @@ type: API method
 # Get latest Pages build
 
 ```js
-octokit.repos.getLatestPagesBuild({
+octokit.rest.repos.getLatestPagesBuild({
   owner,
   repo,
 });

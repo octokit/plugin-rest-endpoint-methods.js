@@ -1,6 +1,6 @@
 ---
 name: Search labels
-example: octokit.search.labels({ repository_id, q })
+example: octokit.rest.search.labels({ repository_id, q })
 route: GET /search/labels
 scope: search
 type: API method
@@ -19,7 +19,7 @@ For example, if you want to find labels in the `linguist` repository that match 
 The labels that best match the query appear first in the search results.
 
 ```js
-octokit.search.labels({
+octokit.rest.search.labels({
   repository_id,
   q,
 });

@@ -1,6 +1,6 @@
 ---
 name: Get a package for an organization
-example: octokit.packages.getPackageForOrganization({ package_type, package_name, org })
+example: octokit.rest.packages.getPackageForOrganization({ package_type, package_name, org })
 route: GET /orgs/{org}/packages/{package_type}/{package_name}
 scope: packages
 type: API method
@@ -14,7 +14,7 @@ To use this endpoint, you must authenticate using an access token with the `pack
 If `package_type` is not `container`, your token must also include the `repo` scope.
 
 ```js
-octokit.packages.getPackageForOrganization({
+octokit.rest.packages.getPackageForOrganization({
   package_type,
   package_name,
   org,

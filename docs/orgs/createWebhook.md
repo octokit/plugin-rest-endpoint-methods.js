@@ -1,6 +1,6 @@
 ---
 name: Create an organization webhook
-example: octokit.orgs.createWebhook({ org, name, config, config.url })
+example: octokit.rest.orgs.createWebhook({ org, name, config, config.url })
 route: POST /orgs/{org}/hooks
 scope: orgs
 type: API method
@@ -11,7 +11,7 @@ type: API method
 Here's how you can create a hook that posts payloads in JSON format:
 
 ```js
-octokit.orgs.createWebhook({
+octokit.rest.orgs.createWebhook({
         org,
 name,
 config,

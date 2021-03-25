@@ -1,6 +1,6 @@
 ---
 name: List runner applications for a repository
-example: octokit.actions.listRunnerApplicationsForRepo({ owner, repo })
+example: octokit.rest.actions.listRunnerApplicationsForRepo({ owner, repo })
 route: GET /repos/{owner}/{repo}/actions/runners/downloads
 scope: actions
 type: API method
@@ -13,7 +13,7 @@ Lists binaries for the runner application that you can download and run.
 You must authenticate using an access token with the `repo` scope to use this endpoint.
 
 ```js
-octokit.actions.listRunnerApplicationsForRepo({
+octokit.rest.actions.listRunnerApplicationsForRepo({
   owner,
   repo,
 });

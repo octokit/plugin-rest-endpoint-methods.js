@@ -1,6 +1,6 @@
 ---
 name: Update a discussion
-example: octokit.teams.updateDiscussionInOrg({ org, team_slug, discussion_number })
+example: octokit.rest.teams.updateDiscussionInOrg({ org, team_slug, discussion_number })
 route: PATCH /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}
 scope: teams
 type: API method
@@ -13,7 +13,7 @@ Edits the title and body text of a discussion post. Only the parameters you prov
 **Note:** You can also specify a team by `org_id` and `team_id` using the route `PATCH /organizations/{org_id}/team/{team_id}/discussions/{discussion_number}`.
 
 ```js
-octokit.teams.updateDiscussionInOrg({
+octokit.rest.teams.updateDiscussionInOrg({
   org,
   team_slug,
   discussion_number,

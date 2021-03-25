@@ -1,6 +1,6 @@
 ---
 name: Get a self-hosted runner for a repository
-example: octokit.actions.getSelfHostedRunnerForRepo({ owner, repo, runner_id })
+example: octokit.rest.actions.getSelfHostedRunnerForRepo({ owner, repo, runner_id })
 route: GET /repos/{owner}/{repo}/actions/runners/{runner_id}
 scope: actions
 type: API method
@@ -14,7 +14,7 @@ You must authenticate using an access token with the `repo` scope to use this
 endpoint.
 
 ```js
-octokit.actions.getSelfHostedRunnerForRepo({
+octokit.rest.actions.getSelfHostedRunnerForRepo({
   owner,
   repo,
   runner_id,

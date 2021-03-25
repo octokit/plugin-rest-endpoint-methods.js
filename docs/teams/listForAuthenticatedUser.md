@@ -1,6 +1,6 @@
 ---
 name: List teams for the authenticated user
-example: octokit.teams.listForAuthenticatedUser()
+example: octokit.rest.teams.listForAuthenticatedUser()
 route: GET /user/teams
 scope: teams
 type: API method
@@ -11,7 +11,7 @@ type: API method
 List all of the teams across all of the organizations to which the authenticated user belongs. This method requires `user`, `repo`, or `read:org` [scope](https://docs.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/) when authenticating via [OAuth](https://docs.github.com/apps/building-oauth-apps/).
 
 ```js
-octokit.teams.listForAuthenticatedUser();
+octokit.rest.teams.listForAuthenticatedUser();
 ```
 
 ## Parameters

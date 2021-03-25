@@ -1,6 +1,6 @@
 ---
 name: Create a review for a pull request
-example: octokit.pulls.createReview({ owner, repo, pull_number, comments[].path, comments[].body })
+example: octokit.rest.pulls.createReview({ owner, repo, pull_number, comments[].path, comments[].body })
 route: POST /repos/{owner}/{repo}/pulls/{pull_number}/reviews
 scope: pulls
 type: API method
@@ -17,7 +17,7 @@ Pull request reviews created in the `PENDING` state do not include the `submitte
 The `position` value equals the number of lines down from the first "@@" hunk header in the file you want to add a comment. The line just below the "@@" line is position 1, the next line is position 2, and so on. The position in the diff continues to increase through lines of whitespace and additional hunks until the beginning of a new file.
 
 ```js
-octokit.pulls.createReview({
+octokit.rest.pulls.createReview({
         owner,
 repo,
 pull_number,

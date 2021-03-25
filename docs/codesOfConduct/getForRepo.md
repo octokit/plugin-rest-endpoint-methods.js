@@ -1,6 +1,6 @@
 ---
 name: Get the code of conduct for a repository
-example: octokit.codesOfConduct.getForRepo({ owner, repo })
+example: octokit.rest.codesOfConduct.getForRepo({ owner, repo })
 route: GET /repos/{owner}/{repo}/community/code_of_conduct
 scope: codesOfConduct
 type: API method
@@ -13,7 +13,7 @@ Returns the contents of the repository's code of conduct file, if one is detecte
 A code of conduct is detected if there is a file named `CODE_OF_CONDUCT` in the root directory of the repository. GitHub detects which code of conduct it is using fuzzy matching.
 
 ```js
-octokit.codesOfConduct.getForRepo({
+octokit.rest.codesOfConduct.getForRepo({
   owner,
   repo,
 });

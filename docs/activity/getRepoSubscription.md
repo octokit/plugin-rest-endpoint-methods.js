@@ -1,6 +1,6 @@
 ---
 name: Get a repository subscription
-example: octokit.activity.getRepoSubscription({ owner, repo })
+example: octokit.rest.activity.getRepoSubscription({ owner, repo })
 route: GET /repos/{owner}/{repo}/subscription
 scope: activity
 type: API method
@@ -9,7 +9,7 @@ type: API method
 # Get a repository subscription
 
 ```js
-octokit.activity.getRepoSubscription({
+octokit.rest.activity.getRepoSubscription({
   owner,
   repo,
 });

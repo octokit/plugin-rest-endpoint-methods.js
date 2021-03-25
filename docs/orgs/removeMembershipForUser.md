@@ -1,6 +1,6 @@
 ---
 name: Remove organization membership for a user
-example: octokit.orgs.removeMembershipForUser({ org, username })
+example: octokit.rest.orgs.removeMembershipForUser({ org, username })
 route: DELETE /orgs/{org}/memberships/{username}
 scope: orgs
 type: API method
@@ -13,7 +13,7 @@ In order to remove a user's membership with an organization, the authenticated u
 If the specified user is an active member of the organization, this will remove them from the organization. If the specified user has been invited to the organization, this will cancel their invitation. The specified user will receive an email notification in both cases.
 
 ```js
-octokit.orgs.removeMembershipForUser({
+octokit.rest.orgs.removeMembershipForUser({
   org,
   username,
 });

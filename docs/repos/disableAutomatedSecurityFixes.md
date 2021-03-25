@@ -1,6 +1,6 @@
 ---
 name: Disable automated security fixes
-example: octokit.repos.disableAutomatedSecurityFixes({ owner, repo })
+example: octokit.rest.repos.disableAutomatedSecurityFixes({ owner, repo })
 route: DELETE /repos/{owner}/{repo}/automated-security-fixes
 scope: repos
 type: API method
@@ -11,7 +11,7 @@ type: API method
 Disables automated security fixes for a repository. The authenticated user must have admin access to the repository. For more information, see "[Configuring automated security fixes](https://help.github.com/en/articles/configuring-automated-security-fixes)".
 
 ```js
-octokit.repos.disableAutomatedSecurityFixes({
+octokit.rest.repos.disableAutomatedSecurityFixes({
   owner,
   repo,
 });

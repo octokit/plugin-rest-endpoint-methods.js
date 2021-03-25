@@ -1,6 +1,6 @@
 ---
 name: Update status check protection
-example: octokit.repos.updateStatusCheckProtection({ owner, repo, branch })
+example: octokit.rest.repos.updateStatusCheckProtection({ owner, repo, branch })
 route: PATCH /repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks
 scope: repos
 type: API method
@@ -13,7 +13,7 @@ Protected branches are available in public repositories with GitHub Free and Git
 Updating required status checks requires admin or owner permissions to the repository and branch protection to be enabled.
 
 ```js
-octokit.repos.updateStatusCheckProtection({
+octokit.rest.repos.updateStatusCheckProtection({
   owner,
   repo,
   branch,

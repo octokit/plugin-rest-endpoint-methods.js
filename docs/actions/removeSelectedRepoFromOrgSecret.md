@@ -1,6 +1,6 @@
 ---
 name: Remove selected repository from an organization secret
-example: octokit.actions.removeSelectedRepoFromOrgSecret({ org, secret_name, repository_id })
+example: octokit.rest.actions.removeSelectedRepoFromOrgSecret({ org, secret_name, repository_id })
 route: DELETE /orgs/{org}/actions/secrets/{secret_name}/repositories/{repository_id}
 scope: actions
 type: API method
@@ -11,7 +11,7 @@ type: API method
 Removes a repository from an organization secret when the `visibility` for repository access is set to `selected`. The visibility is set when you [Create or update an organization secret](https://docs.github.com/rest/reference/actions#create-or-update-an-organization-secret). You must authenticate using an access token with the `admin:org` scope to use this endpoint. GitHub Apps must have the `secrets` organization permission to use this endpoint.
 
 ```js
-octokit.actions.removeSelectedRepoFromOrgSecret({
+octokit.rest.actions.removeSelectedRepoFromOrgSecret({
   org,
   secret_name,
   repository_id,

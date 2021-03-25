@@ -1,6 +1,6 @@
 ---
 name: Create a blob
-example: octokit.git.createBlob({ owner, repo, content })
+example: octokit.rest.git.createBlob({ owner, repo, content })
 route: POST /repos/{owner}/{repo}/git/blobs
 scope: git
 type: API method
@@ -9,7 +9,7 @@ type: API method
 # Create a blob
 
 ```js
-octokit.git.createBlob({
+octokit.rest.git.createBlob({
   owner,
   repo,
   content,

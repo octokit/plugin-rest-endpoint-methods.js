@@ -1,6 +1,6 @@
 ---
 name: Mark notifications as read
-example: octokit.activity.markNotificationsAsRead()
+example: octokit.rest.activity.markNotificationsAsRead()
 route: PUT /notifications
 scope: activity
 type: API method
@@ -11,7 +11,7 @@ type: API method
 Marks all notifications as "read" removes it from the [default view on GitHub](https://github.com/notifications). If the number of notifications is too large to complete in one request, you will receive a `202 Accepted` status and GitHub will run an asynchronous process to mark notifications as "read." To check whether any "unread" notifications remain, you can use the [List notifications for the authenticated user](https://docs.github.com/rest/reference/activity#list-notifications-for-the-authenticated-user) endpoint and pass the query parameter `all=false`.
 
 ```js
-octokit.activity.markNotificationsAsRead();
+octokit.rest.activity.markNotificationsAsRead();
 ```
 
 ## Parameters

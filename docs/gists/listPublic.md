@@ -1,6 +1,6 @@
 ---
 name: List public gists
-example: octokit.gists.listPublic()
+example: octokit.rest.gists.listPublic()
 route: GET /gists/public
 scope: gists
 type: API method
@@ -13,7 +13,7 @@ List public gists sorted by most recently updated to least recently updated.
 Note: With [pagination](https://docs.github.com/rest/overview/resources-in-the-rest-api#pagination), you can fetch up to 3000 gists. For example, you can fetch 100 pages with 30 gists per page or 30 pages with 100 gists per page.
 
 ```js
-octokit.gists.listPublic();
+octokit.rest.gists.listPublic();
 ```
 
 ## Parameters

@@ -1,6 +1,6 @@
 ---
 name: Update a gist comment
-example: octokit.gists.updateComment({ gist_id, comment_id, body })
+example: octokit.rest.gists.updateComment({ gist_id, comment_id, body })
 route: PATCH /gists/{gist_id}/comments/{comment_id}
 scope: gists
 type: API method
@@ -9,7 +9,7 @@ type: API method
 # Update a gist comment
 
 ```js
-octokit.gists.updateComment({
+octokit.rest.gists.updateComment({
   gist_id,
   comment_id,
   body,

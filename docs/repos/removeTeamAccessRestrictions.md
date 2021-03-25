@@ -1,6 +1,6 @@
 ---
 name: Remove team access restrictions
-example: octokit.repos.removeTeamAccessRestrictions({ owner, repo, branch, teams })
+example: octokit.rest.repos.removeTeamAccessRestrictions({ owner, repo, branch, teams })
 route: DELETE /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams
 scope: repos
 type: API method
@@ -17,7 +17,7 @@ Removes the ability of a team to push to this branch. You can also remove push a
 | `array` | Teams that should no longer have push access. Use the team's `slug`. **Note**: The list of users, apps, and teams in total is limited to 100 items. |
 
 ```js
-octokit.repos.removeTeamAccessRestrictions({
+octokit.rest.repos.removeTeamAccessRestrictions({
   owner,
   repo,
   branch,

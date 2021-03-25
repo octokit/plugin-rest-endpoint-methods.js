@@ -1,6 +1,6 @@
 ---
 name: List repository teams
-example: octokit.repos.listTeams({ owner, repo })
+example: octokit.rest.repos.listTeams({ owner, repo })
 route: GET /repos/{owner}/{repo}/teams
 scope: repos
 type: API method
@@ -9,7 +9,7 @@ type: API method
 # List repository teams
 
 ```js
-octokit.repos.listTeams({
+octokit.rest.repos.listTeams({
   owner,
   repo,
 });

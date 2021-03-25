@@ -1,6 +1,6 @@
 ---
 name: Create or update an organization secret
-example: octokit.actions.createOrUpdateOrgSecret({ org, secret_name })
+example: octokit.rest.actions.createOrUpdateOrgSecret({ org, secret_name })
 route: PUT /orgs/{org}/actions/secrets/{secret_name}
 scope: actions
 type: API method
@@ -84,7 +84,7 @@ puts Base64.strict_encode64(encrypted_secret)
 ```
 
 ```js
-octokit.actions.createOrUpdateOrgSecret({
+octokit.rest.actions.createOrUpdateOrgSecret({
   org,
   secret_name,
 });

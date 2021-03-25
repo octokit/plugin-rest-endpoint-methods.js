@@ -1,6 +1,6 @@
 ---
 name: Set organization membership for a user
-example: octokit.orgs.setMembershipForUser({ org, username })
+example: octokit.rest.orgs.setMembershipForUser({ org, username })
 route: PUT /orgs/{org}/memberships/{username}
 scope: orgs
 type: API method
@@ -18,7 +18,7 @@ Only authenticated organization owners can add a member to the organization or u
 To prevent abuse, the authenticated user is limited to 50 organization invitations per 24 hour period. If the organization is more than one month old or on a paid plan, the limit is 500 invitations per 24 hour period.
 
 ```js
-octokit.orgs.setMembershipForUser({
+octokit.rest.orgs.setMembershipForUser({
   org,
   username,
 });

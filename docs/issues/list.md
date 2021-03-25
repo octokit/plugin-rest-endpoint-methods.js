@@ -1,6 +1,6 @@
 ---
 name: List issues assigned to the authenticated user
-example: octokit.issues.list()
+example: octokit.rest.issues.list()
 route: GET /issues
 scope: issues
 type: API method
@@ -18,7 +18,7 @@ the `pull_request` key. Be aware that the `id` of a pull request returned from "
 request id, use the "[List pull requests](https://docs.github.com/rest/reference/pulls#list-pull-requests)" endpoint.
 
 ```js
-octokit.issues.list();
+octokit.rest.issues.list();
 ```
 
 ## Parameters

@@ -1,6 +1,6 @@
 ---
 name: Get GitHub Packages billing for an organization
-example: octokit.billing.getGithubPackagesBillingOrg({ org })
+example: octokit.rest.billing.getGithubPackagesBillingOrg({ org })
 route: GET /orgs/{org}/settings/billing/packages
 scope: billing
 type: API method
@@ -15,7 +15,7 @@ Paid minutes only apply to packages stored for private repositories. For more in
 Access tokens must have the `repo` or `admin:org` scope.
 
 ```js
-octokit.billing.getGithubPackagesBillingOrg({
+octokit.rest.billing.getGithubPackagesBillingOrg({
   org,
 });
 ```

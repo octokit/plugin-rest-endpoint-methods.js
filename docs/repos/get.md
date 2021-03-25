@@ -1,6 +1,6 @@
 ---
 name: Get a repository
-example: octokit.repos.get({ owner, repo })
+example: octokit.rest.repos.get({ owner, repo })
 route: GET /repos/{owner}/{repo}
 scope: repos
 type: API method
@@ -13,7 +13,7 @@ When you pass the `scarlet-witch-preview` media type, requests to get a reposito
 The `parent` and `source` objects are present when the repository is a fork. `parent` is the repository this repository was forked from, `source` is the ultimate source for the network.
 
 ```js
-octokit.repos.get({
+octokit.rest.repos.get({
   owner,
   repo,
 });

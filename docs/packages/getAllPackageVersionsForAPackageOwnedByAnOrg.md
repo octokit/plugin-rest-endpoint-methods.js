@@ -1,6 +1,6 @@
 ---
 name: Get all package versions for a package owned by an organization
-example: octokit.packages.getAllPackageVersionsForAPackageOwnedByAnOrg({ package_type, package_name, org })
+example: octokit.rest.packages.getAllPackageVersionsForAPackageOwnedByAnOrg({ package_type, package_name, org })
 route: GET /orgs/{org}/packages/{package_type}/{package_name}/versions
 scope: packages
 type: API method
@@ -16,7 +16,7 @@ To use this endpoint, you must authenticate using an access token with the `pack
 If `package_type` is not `container`, your token must also include the `repo` scope.
 
 ```js
-octokit.packages.getAllPackageVersionsForAPackageOwnedByAnOrg({
+octokit.rest.packages.getAllPackageVersionsForAPackageOwnedByAnOrg({
   package_type,
   package_name,
   org,

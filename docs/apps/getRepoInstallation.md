@@ -1,6 +1,6 @@
 ---
 name: Get a repository installation for the authenticated app
-example: octokit.apps.getRepoInstallation({ owner, repo })
+example: octokit.rest.apps.getRepoInstallation({ owner, repo })
 route: GET /repos/{owner}/{repo}/installation
 scope: apps
 type: API method
@@ -13,7 +13,7 @@ Enables an authenticated GitHub App to find the repository's installation inform
 You must use a [JWT](https://docs.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint.
 
 ```js
-octokit.apps.getRepoInstallation({
+octokit.rest.apps.getRepoInstallation({
   owner,
   repo,
 });

@@ -2,7 +2,9 @@ import { Route, RequestParameters } from "@octokit/types";
 
 import { RestEndpointMethods } from "./generated/method-types";
 
-export type Api = RestEndpointMethods;
+export type Api = RestEndpointMethods & {
+  rest: RestEndpointMethods;
+};
 
 export type EndpointDecorations = {
   mapToData?: string;

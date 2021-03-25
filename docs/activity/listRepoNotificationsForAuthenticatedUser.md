@@ -1,6 +1,6 @@
 ---
 name: List repository notifications for the authenticated user
-example: octokit.activity.listRepoNotificationsForAuthenticatedUser({ owner, repo })
+example: octokit.rest.activity.listRepoNotificationsForAuthenticatedUser({ owner, repo })
 route: GET /repos/{owner}/{repo}/notifications
 scope: activity
 type: API method
@@ -11,7 +11,7 @@ type: API method
 List all notifications for the current user.
 
 ```js
-octokit.activity.listRepoNotificationsForAuthenticatedUser({
+octokit.rest.activity.listRepoNotificationsForAuthenticatedUser({
   owner,
   repo,
 });

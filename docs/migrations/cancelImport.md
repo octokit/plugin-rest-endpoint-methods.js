@@ -1,6 +1,6 @@
 ---
 name: Cancel an import
-example: octokit.migrations.cancelImport({ owner, repo })
+example: octokit.rest.migrations.cancelImport({ owner, repo })
 route: DELETE /repos/{owner}/{repo}/import
 scope: migrations
 type: API method
@@ -11,7 +11,7 @@ type: API method
 Stop an import for a repository.
 
 ```js
-octokit.migrations.cancelImport({
+octokit.rest.migrations.cancelImport({
   owner,
   repo,
 });

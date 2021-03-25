@@ -1,6 +1,6 @@
 ---
 name: Get a team by name
-example: octokit.teams.getByName({ org, team_slug })
+example: octokit.rest.teams.getByName({ org, team_slug })
 route: GET /orgs/{org}/teams/{team_slug}
 scope: teams
 type: API method
@@ -13,7 +13,7 @@ Gets a team using the team's `slug`. GitHub generates the `slug` from the team `
 **Note:** You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/{org_id}/team/{team_id}`.
 
 ```js
-octokit.teams.getByName({
+octokit.rest.teams.getByName({
   org,
   team_slug,
 });

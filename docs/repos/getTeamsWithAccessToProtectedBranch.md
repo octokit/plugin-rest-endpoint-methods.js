@@ -1,6 +1,6 @@
 ---
 name: Get teams with access to the protected branch
-example: octokit.repos.getTeamsWithAccessToProtectedBranch({ owner, repo, branch })
+example: octokit.rest.repos.getTeamsWithAccessToProtectedBranch({ owner, repo, branch })
 route: GET /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams
 scope: repos
 type: API method
@@ -13,7 +13,7 @@ Protected branches are available in public repositories with GitHub Free and Git
 Lists the teams who have push access to this branch. The list includes child teams.
 
 ```js
-octokit.repos.getTeamsWithAccessToProtectedBranch({
+octokit.rest.repos.getTeamsWithAccessToProtectedBranch({
   owner,
   repo,
   branch,

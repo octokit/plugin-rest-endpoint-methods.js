@@ -1,6 +1,6 @@
 ---
 name: Disable a workflow
-example: octokit.actions.disableWorkflow({ owner, repo, workflow_id })
+example: octokit.rest.actions.disableWorkflow({ owner, repo, workflow_id })
 route: PUT /repos/{owner}/{repo}/actions/workflows/{workflow_id}/disable
 scope: actions
 type: API method
@@ -13,7 +13,7 @@ Disables a workflow and sets the `state` of the workflow to `disabled_manually`.
 You must authenticate using an access token with the `repo` scope to use this endpoint. GitHub Apps must have the `actions:write` permission to use this endpoint.
 
 ```js
-octokit.actions.disableWorkflow({
+octokit.rest.actions.disableWorkflow({
   owner,
   repo,
   workflow_id,

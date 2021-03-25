@@ -28,7 +28,7 @@ describe("https://github.com/octokit/plugin-rest-endpoint-methods.js/issues/83",
       },
     });
 
-    await octokit.gists.update({
+    await octokit.rest.gists.update({
       gist_id: "gist123",
       files: {
         "postcss.config.js": {

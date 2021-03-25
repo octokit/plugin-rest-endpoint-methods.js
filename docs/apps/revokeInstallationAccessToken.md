@@ -1,6 +1,6 @@
 ---
 name: Revoke an installation access token
-example: octokit.apps.revokeInstallationAccessToken()
+example: octokit.rest.apps.revokeInstallationAccessToken()
 route: DELETE /installation/token
 scope: apps
 type: API method
@@ -15,7 +15,7 @@ Once an installation token is revoked, the token is invalidated and cannot be us
 You must use an [installation access token](https://docs.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-an-installation) to access this endpoint.
 
 ```js
-octokit.apps.revokeInstallationAccessToken();
+octokit.rest.apps.revokeInstallationAccessToken();
 ```
 
 ## Parameters

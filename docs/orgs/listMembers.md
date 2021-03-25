@@ -1,6 +1,6 @@
 ---
 name: List organization members
-example: octokit.orgs.listMembers({ org })
+example: octokit.rest.orgs.listMembers({ org })
 route: GET /orgs/{org}/members
 scope: orgs
 type: API method
@@ -11,7 +11,7 @@ type: API method
 List all users who are members of an organization. If the authenticated user is also a member of this organization then both concealed and public members will be returned.
 
 ```js
-octokit.orgs.listMembers({
+octokit.rest.orgs.listMembers({
   org,
 });
 ```

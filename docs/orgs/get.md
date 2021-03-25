@@ -1,6 +1,6 @@
 ---
 name: Get an organization
-example: octokit.orgs.get({ org })
+example: octokit.rest.orgs.get({ org })
 route: GET /orgs/{org}
 scope: orgs
 type: API method
@@ -13,7 +13,7 @@ To see many of the organization response values, you need to be an authenticated
 GitHub Apps with the `Organization plan` permission can use this endpoint to retrieve information about an organization's GitHub plan. See "[Authenticating with GitHub Apps](https://docs.github.com/apps/building-github-apps/authenticating-with-github-apps/)" for details. For an example response, see 'Response with GitHub plan information' below."
 
 ```js
-octokit.orgs.get({
+octokit.rest.orgs.get({
   org,
 });
 ```

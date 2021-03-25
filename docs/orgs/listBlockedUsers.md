@@ -1,6 +1,6 @@
 ---
 name: List users blocked by an organization
-example: octokit.orgs.listBlockedUsers({ org })
+example: octokit.rest.orgs.listBlockedUsers({ org })
 route: GET /orgs/{org}/blocks
 scope: orgs
 type: API method
@@ -11,7 +11,7 @@ type: API method
 List the users blocked by an organization.
 
 ```js
-octokit.orgs.listBlockedUsers({
+octokit.rest.orgs.listBlockedUsers({
   org,
 });
 ```

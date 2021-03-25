@@ -1,6 +1,6 @@
 ---
 name: Delete a repository webhook
-example: octokit.repos.deleteWebhook({ owner, repo, hook_id })
+example: octokit.rest.repos.deleteWebhook({ owner, repo, hook_id })
 route: DELETE /repos/{owner}/{repo}/hooks/{hook_id}
 scope: repos
 type: API method
@@ -9,7 +9,7 @@ type: API method
 # Delete a repository webhook
 
 ```js
-octokit.repos.deleteWebhook({
+octokit.rest.repos.deleteWebhook({
   owner,
   repo,
   hook_id,

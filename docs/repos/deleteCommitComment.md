@@ -1,6 +1,6 @@
 ---
 name: Delete a commit comment
-example: octokit.repos.deleteCommitComment({ owner, repo, comment_id })
+example: octokit.rest.repos.deleteCommitComment({ owner, repo, comment_id })
 route: DELETE /repos/{owner}/{repo}/comments/{comment_id}
 scope: repos
 type: API method
@@ -9,7 +9,7 @@ type: API method
 # Delete a commit comment
 
 ```js
-octokit.repos.deleteCommitComment({
+octokit.rest.repos.deleteCommitComment({
   owner,
   repo,
   comment_id,

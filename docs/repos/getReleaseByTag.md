@@ -1,6 +1,6 @@
 ---
 name: Get a release by tag name
-example: octokit.repos.getReleaseByTag({ owner, repo, tag })
+example: octokit.rest.repos.getReleaseByTag({ owner, repo, tag })
 route: GET /repos/{owner}/{repo}/releases/tags/{tag}
 scope: repos
 type: API method
@@ -11,7 +11,7 @@ type: API method
 Get a published release with the specified tag.
 
 ```js
-octokit.repos.getReleaseByTag({
+octokit.rest.repos.getReleaseByTag({
   owner,
   repo,
   tag,

@@ -1,6 +1,6 @@
 ---
 name: Create reaction for a team discussion comment
-example: octokit.reactions.createForTeamDiscussionCommentInOrg({ org, team_slug, discussion_number, comment_number, content })
+example: octokit.rest.reactions.createForTeamDiscussionCommentInOrg({ org, team_slug, discussion_number, comment_number, content })
 route: POST /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}/reactions
 scope: reactions
 type: API method
@@ -13,7 +13,7 @@ Create a reaction to a [team discussion comment](https://docs.github.com/rest/re
 **Note:** You can also specify a team by `org_id` and `team_id` using the route `POST /organizations/:org_id/team/:team_id/discussions/:discussion_number/comments/:comment_number/reactions`.
 
 ```js
-octokit.reactions.createForTeamDiscussionCommentInOrg({
+octokit.rest.reactions.createForTeamDiscussionCommentInOrg({
   org,
   team_slug,
   discussion_number,

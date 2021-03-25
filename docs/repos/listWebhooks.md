@@ -1,6 +1,6 @@
 ---
 name: List repository webhooks
-example: octokit.repos.listWebhooks({ owner, repo })
+example: octokit.rest.repos.listWebhooks({ owner, repo })
 route: GET /repos/{owner}/{repo}/hooks
 scope: repos
 type: API method
@@ -9,7 +9,7 @@ type: API method
 # List repository webhooks
 
 ```js
-octokit.repos.listWebhooks({
+octokit.rest.repos.listWebhooks({
   owner,
   repo,
 });

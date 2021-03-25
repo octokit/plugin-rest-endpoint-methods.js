@@ -1,6 +1,6 @@
 ---
 name: List app installations for an organization
-example: octokit.orgs.listAppInstallations({ org })
+example: octokit.rest.orgs.listAppInstallations({ org })
 route: GET /orgs/{org}/installations
 scope: orgs
 type: API method
@@ -11,7 +11,7 @@ type: API method
 Lists all GitHub Apps in an organization. The installation count includes all GitHub Apps installed on repositories in the organization. You must be an organization owner with `admin:read` scope to use this endpoint.
 
 ```js
-octokit.orgs.listAppInstallations({
+octokit.rest.orgs.listAppInstallations({
   org,
 });
 ```

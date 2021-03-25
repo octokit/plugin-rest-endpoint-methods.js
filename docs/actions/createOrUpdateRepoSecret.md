@@ -1,6 +1,6 @@
 ---
 name: Create or update a repository secret
-example: octokit.actions.createOrUpdateRepoSecret({ owner, repo, secret_name })
+example: octokit.rest.actions.createOrUpdateRepoSecret({ owner, repo, secret_name })
 route: PUT /repos/{owner}/{repo}/actions/secrets/{secret_name}
 scope: actions
 type: API method
@@ -84,7 +84,7 @@ puts Base64.strict_encode64(encrypted_secret)
 ```
 
 ```js
-octokit.actions.createOrUpdateRepoSecret({
+octokit.rest.actions.createOrUpdateRepoSecret({
   owner,
   repo,
   secret_name,

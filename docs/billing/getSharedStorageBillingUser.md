@@ -1,6 +1,6 @@
 ---
 name: Get shared storage billing for a user
-example: octokit.billing.getSharedStorageBillingUser({ username })
+example: octokit.rest.billing.getSharedStorageBillingUser({ username })
 route: GET /users/{username}/settings/billing/shared-storage
 scope: billing
 type: API method
@@ -15,7 +15,7 @@ Paid minutes only apply to packages stored for private repositories. For more in
 Access tokens must have the `user` scope.
 
 ```js
-octokit.billing.getSharedStorageBillingUser({
+octokit.rest.billing.getSharedStorageBillingUser({
   username,
 });
 ```

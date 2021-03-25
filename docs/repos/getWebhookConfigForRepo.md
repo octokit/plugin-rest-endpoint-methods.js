@@ -1,6 +1,6 @@
 ---
 name: Get a webhook configuration for a repository
-example: octokit.repos.getWebhookConfigForRepo({ owner, repo, hook_id })
+example: octokit.rest.repos.getWebhookConfigForRepo({ owner, repo, hook_id })
 route: GET /repos/{owner}/{repo}/hooks/{hook_id}/config
 scope: repos
 type: API method
@@ -13,7 +13,7 @@ Returns the webhook configuration for a repository. To get more information abou
 Access tokens must have the `read:repo_hook` or `repo` scope, and GitHub Apps must have the `repository_hooks:read` permission.
 
 ```js
-octokit.repos.getWebhookConfigForRepo({
+octokit.rest.repos.getWebhookConfigForRepo({
   owner,
   repo,
   hook_id,

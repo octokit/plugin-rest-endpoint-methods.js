@@ -1,6 +1,6 @@
 ---
 name: Get a user migration status
-example: octokit.migrations.getStatusForAuthenticatedUser({ migration_id })
+example: octokit.rest.migrations.getStatusForAuthenticatedUser({ migration_id })
 route: GET /user/migrations/{migration_id}
 scope: migrations
 type: API method
@@ -18,7 +18,7 @@ Fetches a single user migration. The response includes the `state` of the migrat
 Once the migration has been `exported` you can [download the migration archive](https://docs.github.com/rest/reference/migrations#download-a-user-migration-archive).
 
 ```js
-octokit.migrations.getStatusForAuthenticatedUser({
+octokit.rest.migrations.getStatusForAuthenticatedUser({
   migration_id,
 });
 ```

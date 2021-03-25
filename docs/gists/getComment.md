@@ -1,6 +1,6 @@
 ---
 name: Get a gist comment
-example: octokit.gists.getComment({ gist_id, comment_id })
+example: octokit.rest.gists.getComment({ gist_id, comment_id })
 route: GET /gists/{gist_id}/comments/{comment_id}
 scope: gists
 type: API method
@@ -9,7 +9,7 @@ type: API method
 # Get a gist comment
 
 ```js
-octokit.gists.getComment({
+octokit.rest.gists.getComment({
   gist_id,
   comment_id,
 });

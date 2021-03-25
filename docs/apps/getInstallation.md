@@ -1,6 +1,6 @@
 ---
 name: Get an installation for the authenticated app
-example: octokit.apps.getInstallation({ installation_id })
+example: octokit.rest.apps.getInstallation({ installation_id })
 route: GET /app/installations/{installation_id}
 scope: apps
 type: API method
@@ -13,7 +13,7 @@ Enables an authenticated GitHub App to find an installation's information using 
 You must use a [JWT](https://docs.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint.
 
 ```js
-octokit.apps.getInstallation({
+octokit.rest.apps.getInstallation({
   installation_id,
 });
 ```

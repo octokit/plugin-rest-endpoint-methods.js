@@ -1,6 +1,6 @@
 ---
 name: List organizations for a user
-example: octokit.orgs.listForUser({ username })
+example: octokit.rest.orgs.listForUser({ username })
 route: GET /users/{username}/orgs
 scope: orgs
 type: API method
@@ -13,7 +13,7 @@ List [public organization memberships](https://help.github.com/articles/publiciz
 This method only lists _public_ memberships, regardless of authentication. If you need to fetch all of the organization memberships (public and private) for the authenticated user, use the [List organizations for the authenticated user](https://docs.github.com/rest/reference/orgs#list-organizations-for-the-authenticated-user) API instead.
 
 ```js
-octokit.orgs.listForUser({
+octokit.rest.orgs.listForUser({
   username,
 });
 ```

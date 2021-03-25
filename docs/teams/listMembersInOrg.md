@@ -1,6 +1,6 @@
 ---
 name: List team members
-example: octokit.teams.listMembersInOrg({ org, team_slug })
+example: octokit.rest.teams.listMembersInOrg({ org, team_slug })
 route: GET /orgs/{org}/teams/{team_slug}/members
 scope: teams
 type: API method
@@ -13,7 +13,7 @@ Team members will include the members of child teams.
 To list members in a team, the team must be visible to the authenticated user.
 
 ```js
-octokit.teams.listMembersInOrg({
+octokit.rest.teams.listMembersInOrg({
   org,
   team_slug,
 });

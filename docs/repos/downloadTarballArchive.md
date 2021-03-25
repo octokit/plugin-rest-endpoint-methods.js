@@ -1,6 +1,6 @@
 ---
 name: Download a repository archive (tar)
-example: octokit.repos.downloadTarballArchive({ owner, repo, ref })
+example: octokit.rest.repos.downloadTarballArchive({ owner, repo, ref })
 route: GET /repos/{owner}/{repo}/tarball/{ref}
 scope: repos
 type: API method
@@ -14,7 +14,7 @@ the `Location` header to make a second `GET` request.
 **Note**: For private repositories, these links are temporary and expire after five minutes.
 
 ```js
-octokit.repos.downloadTarballArchive({
+octokit.rest.repos.downloadTarballArchive({
   owner,
   repo,
   ref,

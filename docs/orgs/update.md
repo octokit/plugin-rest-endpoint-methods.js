@@ -1,6 +1,6 @@
 ---
 name: Update an organization
-example: octokit.orgs.update({ org })
+example: octokit.rest.orgs.update({ org })
 route: PATCH /orgs/{org}
 scope: orgs
 type: API method
@@ -13,7 +13,7 @@ type: API method
 Enables an authenticated organization owner with the `admin:org` scope to update the organization's profile and member privileges.
 
 ```js
-octokit.orgs.update({
+octokit.rest.orgs.update({
   org,
 });
 ```

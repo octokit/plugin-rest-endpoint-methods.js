@@ -1,6 +1,6 @@
 ---
 name: Create or update an environment secret
-example: octokit.actions.createOrUpdateEnvironmentSecret({ repository_id, environment_name, secret_name })
+example: octokit.rest.actions.createOrUpdateEnvironmentSecret({ repository_id, environment_name, secret_name })
 route: PUT /repositories/{repository_id}/environments/{environment_name}/secrets/{secret_name}
 scope: actions
 type: API method
@@ -84,7 +84,7 @@ puts Base64.strict_encode64(encrypted_secret)
 ```
 
 ```js
-octokit.actions.createOrUpdateEnvironmentSecret({
+octokit.rest.actions.createOrUpdateEnvironmentSecret({
   repository_id,
   environment_name,
   secret_name,

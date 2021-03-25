@@ -1,6 +1,6 @@
 ---
 name: List starred gists
-example: octokit.gists.listStarred()
+example: octokit.rest.gists.listStarred()
 route: GET /gists/starred
 scope: gists
 type: API method
@@ -11,7 +11,7 @@ type: API method
 List the authenticated user's starred gists:
 
 ```js
-octokit.gists.listStarred();
+octokit.rest.gists.listStarred();
 ```
 
 ## Parameters

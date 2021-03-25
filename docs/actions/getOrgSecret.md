@@ -1,6 +1,6 @@
 ---
 name: Get an organization secret
-example: octokit.actions.getOrgSecret({ org, secret_name })
+example: octokit.rest.actions.getOrgSecret({ org, secret_name })
 route: GET /orgs/{org}/actions/secrets/{secret_name}
 scope: actions
 type: API method
@@ -11,7 +11,7 @@ type: API method
 Gets a single organization secret without revealing its encrypted value. You must authenticate using an access token with the `admin:org` scope to use this endpoint. GitHub Apps must have the `secrets` organization permission to use this endpoint.
 
 ```js
-octokit.actions.getOrgSecret({
+octokit.rest.actions.getOrgSecret({
   org,
   secret_name,
 });

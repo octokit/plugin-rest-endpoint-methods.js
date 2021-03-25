@@ -1,6 +1,6 @@
 ---
 name: List users
-example: octokit.users.list()
+example: octokit.rest.users.list()
 route: GET /users
 scope: users
 type: API method
@@ -13,7 +13,7 @@ Lists all users, in the order that they signed up on GitHub. This list includes 
 Note: Pagination is powered exclusively by the `since` parameter. Use the [Link header](https://docs.github.com/rest/overview/resources-in-the-rest-api#link-header) to get the URL for the next page of users.
 
 ```js
-octokit.users.list();
+octokit.rest.users.list();
 ```
 
 ## Parameters

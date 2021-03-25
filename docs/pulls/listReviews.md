@@ -1,6 +1,6 @@
 ---
 name: List reviews for a pull request
-example: octokit.pulls.listReviews({ owner, repo, pull_number })
+example: octokit.rest.pulls.listReviews({ owner, repo, pull_number })
 route: GET /repos/{owner}/{repo}/pulls/{pull_number}/reviews
 scope: pulls
 type: API method
@@ -11,7 +11,7 @@ type: API method
 The list of reviews returns in chronological order.
 
 ```js
-octokit.pulls.listReviews({
+octokit.rest.pulls.listReviews({
   owner,
   repo,
   pull_number,

@@ -1,6 +1,6 @@
 ---
 name: Set GitHub Actions permissions for an enterprise
-example: octokit.enterpriseAdmin.setGithubActionsPermissionsEnterprise({ enterprise, enabled_organizations })
+example: octokit.rest.enterpriseAdmin.setGithubActionsPermissionsEnterprise({ enterprise, enabled_organizations })
 route: PUT /enterprises/{enterprise}/actions/permissions
 scope: enterpriseAdmin
 type: API method
@@ -13,7 +13,7 @@ Sets the GitHub Actions permissions policy for organizations and allowed actions
 You must authenticate using an access token with the `admin:enterprise` scope to use this endpoint.
 
 ```js
-octokit.enterpriseAdmin.setGithubActionsPermissionsEnterprise({
+octokit.rest.enterpriseAdmin.setGithubActionsPermissionsEnterprise({
   enterprise,
   enabled_organizations,
 });

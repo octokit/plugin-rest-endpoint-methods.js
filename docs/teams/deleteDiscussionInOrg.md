@@ -1,6 +1,6 @@
 ---
 name: Delete a discussion
-example: octokit.teams.deleteDiscussionInOrg({ org, team_slug, discussion_number })
+example: octokit.rest.teams.deleteDiscussionInOrg({ org, team_slug, discussion_number })
 route: DELETE /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}
 scope: teams
 type: API method
@@ -13,7 +13,7 @@ Delete a discussion from a team's page. OAuth access tokens require the `write:d
 **Note:** You can also specify a team by `org_id` and `team_id` using the route `DELETE /organizations/{org_id}/team/{team_id}/discussions/{discussion_number}`.
 
 ```js
-octokit.teams.deleteDiscussionInOrg({
+octokit.rest.teams.deleteDiscussionInOrg({
   org,
   team_slug,
   discussion_number,

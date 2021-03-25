@@ -1,6 +1,6 @@
 ---
 name: Move a project card
-example: octokit.projects.moveCard({ card_id, position })
+example: octokit.rest.projects.moveCard({ card_id, position })
 route: POST /projects/columns/cards/{card_id}/moves
 scope: projects
 type: API method
@@ -9,7 +9,7 @@ type: API method
 # Move a project card
 
 ```js
-octokit.projects.moveCard({
+octokit.rest.projects.moveCard({
   card_id,
   position,
 });

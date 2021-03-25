@@ -1,6 +1,6 @@
 ---
 name: Get a deployment status
-example: octokit.repos.getDeploymentStatus({ owner, repo, deployment_id, status_id })
+example: octokit.rest.repos.getDeploymentStatus({ owner, repo, deployment_id, status_id })
 route: GET /repos/{owner}/{repo}/deployments/{deployment_id}/statuses/{status_id}
 scope: repos
 type: API method
@@ -11,7 +11,7 @@ type: API method
 Users with pull access can view a deployment status for a deployment:
 
 ```js
-octokit.repos.getDeploymentStatus({
+octokit.rest.repos.getDeploymentStatus({
   owner,
   repo,
   deployment_id,

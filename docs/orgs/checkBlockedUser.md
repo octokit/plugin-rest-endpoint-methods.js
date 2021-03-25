@@ -1,6 +1,6 @@
 ---
 name: Check if a user is blocked by an organization
-example: octokit.orgs.checkBlockedUser({ org, username })
+example: octokit.rest.orgs.checkBlockedUser({ org, username })
 route: GET /orgs/{org}/blocks/{username}
 scope: orgs
 type: API method
@@ -9,7 +9,7 @@ type: API method
 # Check if a user is blocked by an organization
 
 ```js
-octokit.orgs.checkBlockedUser({
+octokit.rest.orgs.checkBlockedUser({
   org,
   username,
 });

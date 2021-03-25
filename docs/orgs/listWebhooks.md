@@ -1,6 +1,6 @@
 ---
 name: List organization webhooks
-example: octokit.orgs.listWebhooks({ org })
+example: octokit.rest.orgs.listWebhooks({ org })
 route: GET /orgs/{org}/hooks
 scope: orgs
 type: API method
@@ -9,7 +9,7 @@ type: API method
 # List organization webhooks
 
 ```js
-octokit.orgs.listWebhooks({
+octokit.rest.orgs.listWebhooks({
   org,
 });
 ```

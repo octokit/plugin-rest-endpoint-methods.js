@@ -1,6 +1,6 @@
 ---
 name: List public email addresses for the authenticated user
-example: octokit.users.listPublicEmailsForAuthenticated()
+example: octokit.rest.users.listPublicEmailsForAuthenticated()
 route: GET /user/public_emails
 scope: users
 type: API method
@@ -11,7 +11,7 @@ type: API method
 Lists your publicly visible email address, which you can set with the [Set primary email visibility for the authenticated user](https://docs.github.com/rest/reference/users#set-primary-email-visibility-for-the-authenticated-user) endpoint. This endpoint is accessible with the `user:email` scope.
 
 ```js
-octokit.users.listPublicEmailsForAuthenticated();
+octokit.rest.users.listPublicEmailsForAuthenticated();
 ```
 
 ## Parameters

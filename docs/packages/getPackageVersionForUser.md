@@ -1,6 +1,6 @@
 ---
 name: Get a package version for a user
-example: octokit.packages.getPackageVersionForUser({ package_type, package_name, package_version_id, username })
+example: octokit.rest.packages.getPackageVersionForUser({ package_type, package_name, package_version_id, username })
 route: GET /users/{username}/packages/{package_type}/{package_name}/versions/{package_version_id}
 scope: packages
 type: API method
@@ -14,7 +14,7 @@ At this time, to use this endpoint, you must authenticate using an access token 
 If `package_type` is not `container`, your token must also include the `repo` scope.
 
 ```js
-octokit.packages.getPackageVersionForUser({
+octokit.rest.packages.getPackageVersionForUser({
   package_type,
   package_name,
   package_version_id,

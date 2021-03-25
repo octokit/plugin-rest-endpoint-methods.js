@@ -1,6 +1,6 @@
 ---
 name: Get top referral paths
-example: octokit.repos.getTopPaths({ owner, repo })
+example: octokit.rest.repos.getTopPaths({ owner, repo })
 route: GET /repos/{owner}/{repo}/traffic/popular/paths
 scope: repos
 type: API method
@@ -11,7 +11,7 @@ type: API method
 Get the top 10 popular contents over the last 14 days.
 
 ```js
-octokit.repos.getTopPaths({
+octokit.rest.repos.getTopPaths({
   owner,
   repo,
 });

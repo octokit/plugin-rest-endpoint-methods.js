@@ -1,6 +1,6 @@
 ---
 name: Delete a reaction (Legacy)
-example: octokit.reactions.deleteLegacy({ reaction_id })
+example: octokit.rest.reactions.deleteLegacy({ reaction_id })
 route: DELETE /reactions/{reaction_id}
 scope: reactions
 type: API method
@@ -15,7 +15,7 @@ type: API method
 OAuth access tokens require the `write:discussion` [scope](https://docs.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/), when deleting a [team discussion](https://docs.github.com/rest/reference/teams#discussions) or [team discussion comment](https://docs.github.com/rest/reference/teams#discussion-comments).
 
 ```js
-octokit.reactions.deleteLegacy({
+octokit.rest.reactions.deleteLegacy({
   reaction_id,
 });
 ```

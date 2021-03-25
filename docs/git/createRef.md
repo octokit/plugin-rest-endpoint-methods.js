@@ -1,6 +1,6 @@
 ---
 name: Create a reference
-example: octokit.git.createRef({ owner, repo, ref, sha })
+example: octokit.rest.git.createRef({ owner, repo, ref, sha })
 route: POST /repos/{owner}/{repo}/git/refs
 scope: git
 type: API method
@@ -11,7 +11,7 @@ type: API method
 Creates a reference for your repository. You are unable to create new references for empty repositories, even if the commit SHA-1 hash used exists. Empty repositories are repositories without branches.
 
 ```js
-octokit.git.createRef({
+octokit.rest.git.createRef({
   owner,
   repo,
   ref,

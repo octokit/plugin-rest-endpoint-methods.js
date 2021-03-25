@@ -1,6 +1,6 @@
 ---
 name: Update a review comment for a pull request
-example: octokit.pulls.updateReviewComment({ owner, repo, comment_id, body })
+example: octokit.rest.pulls.updateReviewComment({ owner, repo, comment_id, body })
 route: PATCH /repos/{owner}/{repo}/pulls/comments/{comment_id}
 scope: pulls
 type: API method
@@ -11,7 +11,7 @@ type: API method
 Enables you to edit a review comment.
 
 ```js
-octokit.pulls.updateReviewComment({
+octokit.rest.pulls.updateReviewComment({
   owner,
   repo,
   comment_id,

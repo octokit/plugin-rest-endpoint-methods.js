@@ -1,6 +1,6 @@
 ---
 name: List commits on a pull request
-example: octokit.pulls.listCommits({ owner, repo, pull_number })
+example: octokit.rest.pulls.listCommits({ owner, repo, pull_number })
 route: GET /repos/{owner}/{repo}/pulls/{pull_number}/commits
 scope: pulls
 type: API method
@@ -11,7 +11,7 @@ type: API method
 Lists a maximum of 250 commits for a pull request. To receive a complete commit list for pull requests with more than 250 commits, use the [List commits](https://docs.github.com/rest/reference/repos#list-commits) endpoint.
 
 ```js
-octokit.pulls.listCommits({
+octokit.rest.pulls.listCommits({
   owner,
   repo,
   pull_number,

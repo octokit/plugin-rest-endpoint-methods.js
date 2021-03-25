@@ -1,6 +1,6 @@
 ---
 name: Get an import status
-example: octokit.migrations.getImportStatus({ owner, repo })
+example: octokit.rest.migrations.getImportStatus({ owner, repo })
 route: GET /repos/{owner}/{repo}/import
 scope: migrations
 type: API method
@@ -44,7 +44,7 @@ This section includes details about Git LFS related fields that may be present i
 - `large_files_count` - the total number of files larger than 100MB found in the originating repository. To see a list of these files, make a "Get Large Files" request.
 
 ```js
-octokit.migrations.getImportStatus({
+octokit.rest.migrations.getImportStatus({
   owner,
   repo,
 });

@@ -1,6 +1,6 @@
 ---
 name: Upload a release asset
-example: octokit.repos.uploadReleaseAsset({ owner, repo, release_id, data })
+example: octokit.rest.repos.uploadReleaseAsset({ owner, repo, release_id, data })
 route: POST {origin}/repos/{owner}/{repo}/releases/{release_id}/assets{?name,label}
 scope: repos
 type: API method
@@ -29,7 +29,7 @@ When an upstream failure occurs, you will receive a `502 Bad Gateway` status. Th
 - If you upload an asset with the same filename as another uploaded asset, you'll receive an error and must delete the old file before you can re-upload the new asset.
 
 ```js
-octokit.repos.uploadReleaseAsset({
+octokit.rest.repos.uploadReleaseAsset({
   owner,
   repo,
   release_id,

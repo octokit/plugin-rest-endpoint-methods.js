@@ -1,6 +1,6 @@
 ---
 name: Get a gitignore template
-example: octokit.gitignore.getTemplate({ name })
+example: octokit.rest.gitignore.getTemplate({ name })
 route: GET /gitignore/templates/{name}
 scope: gitignore
 type: API method
@@ -12,7 +12,7 @@ The API also allows fetching the source of a single template.
 Use the raw [media type](https://docs.github.com/rest/overview/media-types/) to get the raw contents.
 
 ```js
-octokit.gitignore.getTemplate({
+octokit.rest.gitignore.getTemplate({
   name,
 });
 ```

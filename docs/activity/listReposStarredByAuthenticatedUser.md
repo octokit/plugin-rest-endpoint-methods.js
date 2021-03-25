@@ -1,6 +1,6 @@
 ---
 name: List repositories starred by the authenticated user
-example: octokit.activity.listReposStarredByAuthenticatedUser()
+example: octokit.rest.activity.listReposStarredByAuthenticatedUser()
 route: GET /user/starred
 scope: activity
 type: API method
@@ -13,7 +13,7 @@ Lists repositories the authenticated user has starred.
 You can also find out _when_ stars were created by passing the following custom [media type](https://docs.github.com/rest/overview/media-types/) via the `Accept` header:
 
 ```js
-octokit.activity.listReposStarredByAuthenticatedUser();
+octokit.rest.activity.listReposStarredByAuthenticatedUser();
 ```
 
 ## Parameters

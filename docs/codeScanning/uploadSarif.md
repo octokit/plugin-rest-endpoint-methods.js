@@ -1,6 +1,6 @@
 ---
 name: Upload an analysis as SARIF data
-example: octokit.codeScanning.uploadSarif({ owner, repo, commit_sha, ref, sarif })
+example: octokit.rest.codeScanning.uploadSarif({ owner, repo, commit_sha, ref, sarif })
 route: POST /repos/{owner}/{repo}/code-scanning/sarifs
 scope: codeScanning
 type: API method
@@ -28,7 +28,7 @@ You can use this ID to check the status of the upload by using this for the `/sa
 For more information, see "[Get information about a SARIF upload](/rest/reference/code-scanning#get-information-about-a-sarif-upload)."
 
 ```js
-octokit.codeScanning.uploadSarif({
+octokit.rest.codeScanning.uploadSarif({
   owner,
   repo,
   commit_sha,

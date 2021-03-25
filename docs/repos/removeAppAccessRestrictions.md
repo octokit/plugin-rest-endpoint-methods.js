@@ -1,6 +1,6 @@
 ---
 name: Remove app access restrictions
-example: octokit.repos.removeAppAccessRestrictions({ owner, repo, branch, apps })
+example: octokit.rest.repos.removeAppAccessRestrictions({ owner, repo, branch, apps })
 route: DELETE /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/apps
 scope: repos
 type: API method
@@ -17,7 +17,7 @@ Removes the ability of an app to push to this branch. Only installed GitHub Apps
 | `array` | The GitHub Apps that have push access to this branch. Use the app's `slug`. **Note**: The list of users, apps, and teams in total is limited to 100 items. |
 
 ```js
-octokit.repos.removeAppAccessRestrictions({
+octokit.rest.repos.removeAppAccessRestrictions({
   owner,
   repo,
   branch,

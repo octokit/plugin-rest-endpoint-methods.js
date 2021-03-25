@@ -1,6 +1,6 @@
 ---
 name: List code scanning analyses for a repository
-example: octokit.codeScanning.listRecentAnalyses({ owner, repo })
+example: octokit.rest.codeScanning.listRecentAnalyses({ owner, repo })
 route: GET /repos/{owner}/{repo}/code-scanning/analyses
 scope: codeScanning
 type: API method
@@ -26,7 +26,7 @@ GitHub Apps must have the `security_events` read permission to use this endpoint
 The `tool_name` field is deprecated and will, in future, not be included in the response for this endpoint. The example response reflects this change. The tool name can now be found inside the `tool` field.
 
 ```js
-octokit.codeScanning.listRecentAnalyses({
+octokit.rest.codeScanning.listRecentAnalyses({
   owner,
   repo,
 });

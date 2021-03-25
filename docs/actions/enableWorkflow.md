@@ -1,6 +1,6 @@
 ---
 name: Enable a workflow
-example: octokit.actions.enableWorkflow({ owner, repo, workflow_id })
+example: octokit.rest.actions.enableWorkflow({ owner, repo, workflow_id })
 route: PUT /repos/{owner}/{repo}/actions/workflows/{workflow_id}/enable
 scope: actions
 type: API method
@@ -13,7 +13,7 @@ Enables a workflow and sets the `state` of the workflow to `active`. You can rep
 You must authenticate using an access token with the `repo` scope to use this endpoint. GitHub Apps must have the `actions:write` permission to use this endpoint.
 
 ```js
-octokit.actions.enableWorkflow({
+octokit.rest.actions.enableWorkflow({
   owner,
   repo,
   workflow_id,

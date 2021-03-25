@@ -1,6 +1,6 @@
 ---
 name: List public repositories
-example: octokit.repos.listPublic()
+example: octokit.rest.repos.listPublic()
 route: GET /repositories
 scope: repos
 type: API method
@@ -16,7 +16,7 @@ Notes:
 - Pagination is powered exclusively by the `since` parameter. Use the [Link header](https://docs.github.com/rest/overview/resources-in-the-rest-api#link-header) to get the URL for the next page of repositories.
 
 ```js
-octokit.repos.listPublic();
+octokit.rest.repos.listPublic();
 ```
 
 ## Parameters

@@ -1,6 +1,6 @@
 ---
 name: Compare two commits
-example: octokit.repos.compareCommits({ owner, repo, base, head })
+example: octokit.rest.repos.compareCommits({ owner, repo, base, head })
 route: GET /repos/{owner}/{repo}/compare/{base}...{head}
 scope: repos
 type: API method
@@ -50,7 +50,7 @@ These are the possible values for `reason` in the `verification` object:
 | `valid`                  | None of the above errors applied, so the signature is considered to be verified.                                                  |
 
 ```js
-octokit.repos.compareCommits({
+octokit.rest.repos.compareCommits({
   owner,
   repo,
   base,

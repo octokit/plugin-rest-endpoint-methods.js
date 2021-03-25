@@ -1,6 +1,6 @@
 ---
 name: List repositories for a user
-example: octokit.repos.listForUser({ username })
+example: octokit.rest.repos.listForUser({ username })
 route: GET /users/{username}/repos
 scope: repos
 type: API method
@@ -11,7 +11,7 @@ type: API method
 Lists public repositories for the specified user. Note: For GitHub AE, this endpoint will list internal repositories for the specified user.
 
 ```js
-octokit.repos.listForUser({
+octokit.rest.repos.listForUser({
   username,
 });
 ```

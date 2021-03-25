@@ -1,6 +1,6 @@
 ---
 name: List commit statuses for a reference
-example: octokit.repos.listCommitStatusesForRef({ owner, repo, ref })
+example: octokit.rest.repos.listCommitStatusesForRef({ owner, repo, ref })
 route: GET /repos/{owner}/{repo}/commits/{ref}/statuses
 scope: repos
 type: API method
@@ -13,7 +13,7 @@ Users with pull access in a repository can view commit statuses for a given ref.
 This resource is also available via a legacy route: `GET /repos/:owner/:repo/statuses/:ref`.
 
 ```js
-octokit.repos.listCommitStatusesForRef({
+octokit.rest.repos.listCommitStatusesForRef({
   owner,
   repo,
   ref,

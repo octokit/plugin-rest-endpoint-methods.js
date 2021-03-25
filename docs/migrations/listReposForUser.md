@@ -1,6 +1,6 @@
 ---
 name: List repositories for a user migration
-example: octokit.migrations.listReposForUser({ migration_id })
+example: octokit.rest.migrations.listReposForUser({ migration_id })
 route: GET /user/migrations/{migration_id}/repositories
 scope: migrations
 type: API method
@@ -11,7 +11,7 @@ type: API method
 Lists all the repositories for this user migration.
 
 ```js
-octokit.migrations.listReposForUser({
+octokit.rest.migrations.listReposForUser({
   migration_id,
 });
 ```

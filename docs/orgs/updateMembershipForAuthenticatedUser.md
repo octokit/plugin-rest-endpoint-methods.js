@@ -1,6 +1,6 @@
 ---
 name: Update an organization membership for the authenticated user
-example: octokit.orgs.updateMembershipForAuthenticatedUser({ org, state })
+example: octokit.rest.orgs.updateMembershipForAuthenticatedUser({ org, state })
 route: PATCH /user/memberships/orgs/{org}
 scope: orgs
 type: API method
@@ -9,7 +9,7 @@ type: API method
 # Update an organization membership for the authenticated user
 
 ```js
-octokit.orgs.updateMembershipForAuthenticatedUser({
+octokit.rest.orgs.updateMembershipForAuthenticatedUser({
   org,
   state,
 });

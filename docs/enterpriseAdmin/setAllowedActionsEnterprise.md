@@ -1,6 +1,6 @@
 ---
 name: Set allowed actions for an enterprise
-example: octokit.enterpriseAdmin.setAllowedActionsEnterprise({ enterprise, github_owned_allowed, verified_allowed, patterns_allowed })
+example: octokit.rest.enterpriseAdmin.setAllowedActionsEnterprise({ enterprise, github_owned_allowed, verified_allowed, patterns_allowed })
 route: PUT /enterprises/{enterprise}/actions/permissions/selected-actions
 scope: enterpriseAdmin
 type: API method
@@ -13,7 +13,7 @@ Sets the actions that are allowed in an enterprise. To use this endpoint, the en
 You must authenticate using an access token with the `admin:enterprise` scope to use this endpoint.
 
 ```js
-octokit.enterpriseAdmin.setAllowedActionsEnterprise({
+octokit.rest.enterpriseAdmin.setAllowedActionsEnterprise({
   enterprise,
   github_owned_allowed,
   verified_allowed,

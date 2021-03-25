@@ -1,6 +1,6 @@
 ---
 name: Accept a repository invitation
-example: octokit.repos.acceptInvitation({ invitation_id })
+example: octokit.rest.repos.acceptInvitation({ invitation_id })
 route: PATCH /user/repository_invitations/{invitation_id}
 scope: repos
 type: API method
@@ -9,7 +9,7 @@ type: API method
 # Accept a repository invitation
 
 ```js
-octokit.repos.acceptInvitation({
+octokit.rest.repos.acceptInvitation({
   invitation_id,
 });
 ```

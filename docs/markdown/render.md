@@ -1,6 +1,6 @@
 ---
 name: Render a Markdown document
-example: octokit.markdown.render({ text })
+example: octokit.rest.markdown.render({ text })
 route: POST /markdown
 scope: markdown
 type: API method
@@ -9,7 +9,7 @@ type: API method
 # Render a Markdown document
 
 ```js
-octokit.markdown.render({
+octokit.rest.markdown.render({
   text,
 });
 ```

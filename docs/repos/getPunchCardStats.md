@@ -1,6 +1,6 @@
 ---
 name: Get the hourly commit count for each day
-example: octokit.repos.getPunchCardStats({ owner, repo })
+example: octokit.rest.repos.getPunchCardStats({ owner, repo })
 route: GET /repos/{owner}/{repo}/stats/punch_card
 scope: repos
 type: API method
@@ -17,7 +17,7 @@ Each array contains the day number, hour number, and number of commits:
 For example, `[2, 14, 25]` indicates that there were 25 total commits, during the 2:00pm hour on Tuesdays. All times are based on the time zone of individual commits.
 
 ```js
-octokit.repos.getPunchCardStats({
+octokit.rest.repos.getPunchCardStats({
   owner,
   repo,
 });

@@ -1,6 +1,6 @@
 ---
 name: Update a reference
-example: octokit.git.updateRef({ owner, repo, ref, sha })
+example: octokit.rest.git.updateRef({ owner, repo, ref, sha })
 route: PATCH /repos/{owner}/{repo}/git/refs/{ref}
 scope: git
 type: API method
@@ -9,7 +9,7 @@ type: API method
 # Update a reference
 
 ```js
-octokit.git.updateRef({
+octokit.rest.git.updateRef({
   owner,
   repo,
   ref,

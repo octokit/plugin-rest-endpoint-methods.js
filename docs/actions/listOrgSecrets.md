@@ -1,6 +1,6 @@
 ---
 name: List organization secrets
-example: octokit.actions.listOrgSecrets({ org })
+example: octokit.rest.actions.listOrgSecrets({ org })
 route: GET /orgs/{org}/actions/secrets
 scope: actions
 type: API method
@@ -11,7 +11,7 @@ type: API method
 Lists all secrets available in an organization without revealing their encrypted values. You must authenticate using an access token with the `admin:org` scope to use this endpoint. GitHub Apps must have the `secrets` organization permission to use this endpoint.
 
 ```js
-octokit.actions.listOrgSecrets({
+octokit.rest.actions.listOrgSecrets({
   org,
 });
 ```

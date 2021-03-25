@@ -48,7 +48,7 @@ async function generateRoutes() {
         }
 
         // ignore headers with null values. THese can be required headers that must be set by the user,
-        // such as `headers['content-type']` for `octokit.repos.uploadReleaseAsset()`
+        // such as `headers['content-type']` for `octokit.rest.repos.uploadReleaseAsset()`
         if (header.value === null) {
           return result;
         }
@@ -80,7 +80,7 @@ async function generateRoutes() {
     }
 
     if (endpoint.isDeprecated && !endpoint.renamed) {
-      endpointDecorations.deprecated = `octokit.${scope}.${idName}() is deprecated, see ${endpoint.documentationUrl}`;
+      endpointDecorations.deprecated = `octokit.rest.${scope}.${idName}() is deprecated, see ${endpoint.documentationUrl}`;
     }
 
     const renamedParameters = endpoint.parameters.filter(

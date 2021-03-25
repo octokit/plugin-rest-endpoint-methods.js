@@ -1,6 +1,6 @@
 ---
 name: Get allowed actions for an enterprise
-example: octokit.enterpriseAdmin.getAllowedActionsEnterprise({ enterprise })
+example: octokit.rest.enterpriseAdmin.getAllowedActionsEnterprise({ enterprise })
 route: GET /enterprises/{enterprise}/actions/permissions/selected-actions
 scope: enterpriseAdmin
 type: API method
@@ -13,7 +13,7 @@ Gets the selected actions that are allowed in an enterprise. To use this endpoin
 You must authenticate using an access token with the `admin:enterprise` scope to use this endpoint.
 
 ```js
-octokit.enterpriseAdmin.getAllowedActionsEnterprise({
+octokit.rest.enterpriseAdmin.getAllowedActionsEnterprise({
   enterprise,
 });
 ```

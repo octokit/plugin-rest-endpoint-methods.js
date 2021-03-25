@@ -1,6 +1,6 @@
 ---
 name: Get an issue comment
-example: octokit.issues.getComment({ owner, repo, comment_id })
+example: octokit.rest.issues.getComment({ owner, repo, comment_id })
 route: GET /repos/{owner}/{repo}/issues/comments/{comment_id}
 scope: issues
 type: API method
@@ -9,7 +9,7 @@ type: API method
 # Get an issue comment
 
 ```js
-octokit.issues.getComment({
+octokit.rest.issues.getComment({
   owner,
   repo,
   comment_id,

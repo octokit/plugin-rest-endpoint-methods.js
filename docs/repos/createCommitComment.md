@@ -1,6 +1,6 @@
 ---
 name: Create a commit comment
-example: octokit.repos.createCommitComment({ owner, repo, commit_sha, body })
+example: octokit.rest.repos.createCommitComment({ owner, repo, commit_sha, body })
 route: POST /repos/{owner}/{repo}/commits/{commit_sha}/comments
 scope: repos
 type: API method
@@ -13,7 +13,7 @@ Create a comment for a commit using its `:commit_sha`.
 This endpoint triggers [notifications](https://docs.github.com/en/github/managing-subscriptions-and-notifications-on-github/about-notifications). Creating content too quickly using this endpoint may result in abuse rate limiting. See "[Abuse rate limits](https://docs.github.com/rest/overview/resources-in-the-rest-api#abuse-rate-limits)" and "[Dealing with abuse rate limits](https://docs.github.com/rest/guides/best-practices-for-integrators#dealing-with-rate-limits)" for details.
 
 ```js
-octokit.repos.createCommitComment({
+octokit.rest.repos.createCommitComment({
   owner,
   repo,
   commit_sha,

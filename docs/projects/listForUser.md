@@ -1,6 +1,6 @@
 ---
 name: List user projects
-example: octokit.projects.listForUser({ username })
+example: octokit.rest.projects.listForUser({ username })
 route: GET /users/{username}/projects
 scope: projects
 type: API method
@@ -9,7 +9,7 @@ type: API method
 # List user projects
 
 ```js
-octokit.projects.listForUser({
+octokit.rest.projects.listForUser({
   username,
 });
 ```

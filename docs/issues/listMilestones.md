@@ -1,6 +1,6 @@
 ---
 name: List milestones
-example: octokit.issues.listMilestones({ owner, repo })
+example: octokit.rest.issues.listMilestones({ owner, repo })
 route: GET /repos/{owner}/{repo}/milestones
 scope: issues
 type: API method
@@ -9,7 +9,7 @@ type: API method
 # List milestones
 
 ```js
-octokit.issues.listMilestones({
+octokit.rest.issues.listMilestones({
   owner,
   repo,
 });

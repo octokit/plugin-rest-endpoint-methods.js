@@ -1,6 +1,6 @@
 ---
 name: Add user access restrictions
-example: octokit.repos.addUserAccessRestrictions({ owner, repo, branch, users })
+example: octokit.rest.repos.addUserAccessRestrictions({ owner, repo, branch, users })
 route: POST /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users
 scope: repos
 type: API method
@@ -17,7 +17,7 @@ Grants the specified people push access for this branch.
 | `array` | Usernames for people who can have push access. **Note**: The list of users, apps, and teams in total is limited to 100 items. |
 
 ```js
-octokit.repos.addUserAccessRestrictions({
+octokit.rest.repos.addUserAccessRestrictions({
   owner,
   repo,
   branch,

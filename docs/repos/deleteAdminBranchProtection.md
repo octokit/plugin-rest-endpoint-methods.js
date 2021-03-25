@@ -1,6 +1,6 @@
 ---
 name: Delete admin branch protection
-example: octokit.repos.deleteAdminBranchProtection({ owner, repo, branch })
+example: octokit.rest.repos.deleteAdminBranchProtection({ owner, repo, branch })
 route: DELETE /repos/{owner}/{repo}/branches/{branch}/protection/enforce_admins
 scope: repos
 type: API method
@@ -13,7 +13,7 @@ Protected branches are available in public repositories with GitHub Free and Git
 Removing admin enforcement requires admin or owner permissions to the repository and branch protection to be enabled.
 
 ```js
-octokit.repos.deleteAdminBranchProtection({
+octokit.rest.repos.deleteAdminBranchProtection({
   owner,
   repo,
   branch,

@@ -1,6 +1,6 @@
 ---
 name: Create a check run
-example: octokit.checks.create({ owner, repo })
+example: octokit.rest.checks.create({ owner, repo })
 route: POST /repos/{owner}/{repo}/check-runs
 scope: checks
 type: API method
@@ -15,7 +15,7 @@ Creates a new check run for a specific commit in a repository. Your GitHub App m
 In a check suite, GitHub limits the number of check runs with the same name to 1000. Once these check runs exceed 1000, GitHub will start to automatically delete older check runs.
 
 ```js
-octokit.checks.create({
+octokit.rest.checks.create({
   owner,
   repo,
 });

@@ -1,6 +1,6 @@
 ---
 name: Delete a project column
-example: octokit.projects.deleteColumn({ column_id })
+example: octokit.rest.projects.deleteColumn({ column_id })
 route: DELETE /projects/columns/{column_id}
 scope: projects
 type: API method
@@ -9,7 +9,7 @@ type: API method
 # Delete a project column
 
 ```js
-octokit.projects.deleteColumn({
+octokit.rest.projects.deleteColumn({
   column_id,
 });
 ```

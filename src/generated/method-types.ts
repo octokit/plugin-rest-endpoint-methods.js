@@ -738,7 +738,7 @@ export type RestEndpointMethods = {
      *
      * You must authenticate using an access token with the `repo` scope to use this
      * endpoint. GitHub Apps must have the `administration` repository permission to use this API.
-     * @deprecated octokit.actions.getRepoPermissions() has been renamed to octokit.actions.getGithubActionsPermissionsRepository() (2020-11-10)
+     * @deprecated octokit.rest.actions.getRepoPermissions() has been renamed to octokit.rest.actions.getGithubActionsPermissionsRepository() (2020-11-10)
      */
     getRepoPermissions: {
       (
@@ -3162,7 +3162,7 @@ export type RestEndpointMethods = {
     };
     /**
      * Shows which type of GitHub user can interact with your public repositories and when the restriction expires.
-     * @deprecated octokit.interactions.getRestrictionsForYourPublicRepos() has been renamed to octokit.interactions.getRestrictionsForAuthenticatedUser() (2021-02-02)
+     * @deprecated octokit.rest.interactions.getRestrictionsForYourPublicRepos() has been renamed to octokit.rest.interactions.getRestrictionsForAuthenticatedUser() (2021-02-02)
      */
     getRestrictionsForYourPublicRepos: {
       (
@@ -3211,7 +3211,7 @@ export type RestEndpointMethods = {
     };
     /**
      * Removes any interaction restrictions from your public repositories.
-     * @deprecated octokit.interactions.removeRestrictionsForYourPublicRepos() has been renamed to octokit.interactions.removeRestrictionsForAuthenticatedUser() (2021-02-02)
+     * @deprecated octokit.rest.interactions.removeRestrictionsForYourPublicRepos() has been renamed to octokit.rest.interactions.removeRestrictionsForAuthenticatedUser() (2021-02-02)
      */
     removeRestrictionsForYourPublicRepos: {
       (
@@ -3260,7 +3260,7 @@ export type RestEndpointMethods = {
     };
     /**
      * Temporarily restricts which type of GitHub user can interact with your public repositories. Setting the interaction limit at the user level will overwrite any interaction limits that are set for individual repositories owned by the user.
-     * @deprecated octokit.interactions.setRestrictionsForYourPublicRepos() has been renamed to octokit.interactions.setRestrictionsForAuthenticatedUser() (2021-02-02)
+     * @deprecated octokit.rest.interactions.setRestrictionsForYourPublicRepos() has been renamed to octokit.rest.interactions.setRestrictionsForAuthenticatedUser() (2021-02-02)
      */
     setRestrictionsForYourPublicRepos: {
       (
@@ -4650,7 +4650,7 @@ export type RestEndpointMethods = {
      *
      * To use this endpoint, you must authenticate using an access token with the `packages:read` scope.
      * If `package_type` is not `container`, your token must also include the `repo` scope.
-     * @deprecated octokit.packages.getAllPackageVersionsForAPackageOwnedByAnOrg() has been renamed to octokit.packages.getAllPackageVersionsForPackageOwnedByOrg() (2021-03-24)
+     * @deprecated octokit.rest.packages.getAllPackageVersionsForAPackageOwnedByAnOrg() has been renamed to octokit.rest.packages.getAllPackageVersionsForPackageOwnedByOrg() (2021-03-24)
      */
     getAllPackageVersionsForAPackageOwnedByAnOrg: {
       (
@@ -4666,7 +4666,7 @@ export type RestEndpointMethods = {
      *
      * To use this endpoint, you must authenticate using an access token with the `packages:read` scope.
      * If `package_type` is not `container`, your token must also include the `repo` scope.
-     * @deprecated octokit.packages.getAllPackageVersionsForAPackageOwnedByTheAuthenticatedUser() has been renamed to octokit.packages.getAllPackageVersionsForPackageOwnedByAuthenticatedUser() (2021-03-24)
+     * @deprecated octokit.rest.packages.getAllPackageVersionsForAPackageOwnedByTheAuthenticatedUser() has been renamed to octokit.rest.packages.getAllPackageVersionsForPackageOwnedByAuthenticatedUser() (2021-03-24)
      */
     getAllPackageVersionsForAPackageOwnedByTheAuthenticatedUser: {
       (
@@ -5641,7 +5641,7 @@ export type RestEndpointMethods = {
      * **Deprecation Notice:** This endpoint route is deprecated and will be removed from the Reactions API. We recommend migrating your existing code to use the new delete reactions endpoints. For more information, see this [blog post](https://developer.github.com/changes/2020-02-26-new-delete-reactions-endpoints/).
      *
      * OAuth access tokens require the `write:discussion` [scope](https://docs.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/), when deleting a [team discussion](https://docs.github.com/rest/reference/teams#discussions) or [team discussion comment](https://docs.github.com/rest/reference/teams#discussion-comments).
-     * @deprecated octokit.reactions.deleteLegacy() is deprecated, see https://docs.github.com/rest/reference/reactions/#delete-a-reaction-legacy
+     * @deprecated octokit.rest.reactions.deleteLegacy() is deprecated, see https://docs.github.com/rest/reference/reactions/#delete-a-reaction-legacy
      */
     deleteLegacy: {
       (
@@ -6416,7 +6416,7 @@ export type RestEndpointMethods = {
      * `master`) will be used. Please make sure your HTTP framework is configured to follow redirects or you will need to use
      * the `Location` header to make a second `GET` request.
      * **Note**: For private repositories, these links are temporary and expire after five minutes.
-     * @deprecated octokit.repos.downloadArchive() has been renamed to octokit.repos.downloadZipballArchive() (2020-09-17)
+     * @deprecated octokit.rest.repos.downloadArchive() has been renamed to octokit.rest.repos.downloadZipballArchive() (2020-09-17)
      */
     downloadArchive: {
       (
@@ -7766,7 +7766,7 @@ export type RestEndpointMethods = {
      * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://help.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
      *
      * Updating required status checks requires admin or owner permissions to the repository and branch protection to be enabled.
-     * @deprecated octokit.repos.updateStatusCheckPotection() has been renamed to octokit.repos.updateStatusCheckProtection() (2020-09-17)
+     * @deprecated octokit.rest.repos.updateStatusCheckPotection() has been renamed to octokit.rest.repos.updateStatusCheckProtection() (2020-09-17)
      */
     updateStatusCheckPotection: {
       (

@@ -1,6 +1,6 @@
 ---
 name: Update a webhook configuration for an organization
-example: octokit.orgs.updateWebhookConfigForOrg({ org, hook_id })
+example: octokit.rest.orgs.updateWebhookConfigForOrg({ org, hook_id })
 route: PATCH /orgs/{org}/hooks/{hook_id}/config
 scope: orgs
 type: API method
@@ -13,7 +13,7 @@ Updates the webhook configuration for an organization. To update more informatio
 Access tokens must have the `admin:org_hook` scope, and GitHub Apps must have the `organization_hooks:write` permission.
 
 ```js
-octokit.orgs.updateWebhookConfigForOrg({
+octokit.rest.orgs.updateWebhookConfigForOrg({
   org,
   hook_id,
 });

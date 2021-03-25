@@ -1,6 +1,6 @@
 ---
 name: List followers of the authenticated user
-example: octokit.users.listFollowersForAuthenticatedUser()
+example: octokit.rest.users.listFollowersForAuthenticatedUser()
 route: GET /user/followers
 scope: users
 type: API method
@@ -11,7 +11,7 @@ type: API method
 Lists the people following the authenticated user.
 
 ```js
-octokit.users.listFollowersForAuthenticatedUser();
+octokit.rest.users.listFollowersForAuthenticatedUser();
 ```
 
 ## Parameters

@@ -1,6 +1,6 @@
 ---
 name: Block a user from an organization
-example: octokit.orgs.blockUser({ org, username })
+example: octokit.rest.orgs.blockUser({ org, username })
 route: PUT /orgs/{org}/blocks/{username}
 scope: orgs
 type: API method
@@ -9,7 +9,7 @@ type: API method
 # Block a user from an organization
 
 ```js
-octokit.orgs.blockUser({
+octokit.rest.orgs.blockUser({
   org,
   username,
 });

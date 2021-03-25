@@ -1,6 +1,6 @@
 ---
 name: Get all repository topics
-example: octokit.repos.getAllTopics({ owner, repo })
+example: octokit.rest.repos.getAllTopics({ owner, repo })
 route: GET /repos/{owner}/{repo}/topics
 scope: repos
 type: API method
@@ -9,7 +9,7 @@ type: API method
 # Get all repository topics
 
 ```js
-octokit.repos.getAllTopics({
+octokit.rest.repos.getAllTopics({
   owner,
   repo,
 });

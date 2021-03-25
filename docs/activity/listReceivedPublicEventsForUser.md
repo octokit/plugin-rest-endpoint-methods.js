@@ -1,6 +1,6 @@
 ---
 name: List public events received by a user
-example: octokit.activity.listReceivedPublicEventsForUser({ username })
+example: octokit.rest.activity.listReceivedPublicEventsForUser({ username })
 route: GET /users/{username}/received_events/public
 scope: activity
 type: API method
@@ -9,7 +9,7 @@ type: API method
 # List public events received by a user
 
 ```js
-octokit.activity.listReceivedPublicEventsForUser({
+octokit.rest.activity.listReceivedPublicEventsForUser({
   username,
 });
 ```

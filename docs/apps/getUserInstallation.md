@@ -1,6 +1,6 @@
 ---
 name: Get a user installation for the authenticated app
-example: octokit.apps.getUserInstallation({ username })
+example: octokit.rest.apps.getUserInstallation({ username })
 route: GET /users/{username}/installation
 scope: apps
 type: API method
@@ -13,7 +13,7 @@ Enables an authenticated GitHub App to find the user’s installation informatio
 You must use a [JWT](https://docs.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint.
 
 ```js
-octokit.apps.getUserInstallation({
+octokit.rest.apps.getUserInstallation({
   username,
 });
 ```

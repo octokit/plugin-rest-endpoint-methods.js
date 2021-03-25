@@ -1,6 +1,6 @@
 ---
 name: Lock an issue
-example: octokit.issues.lock({ owner, repo, issue_number })
+example: octokit.rest.issues.lock({ owner, repo, issue_number })
 route: PUT /repos/{owner}/{repo}/issues/{issue_number}/lock
 scope: issues
 type: API method
@@ -13,7 +13,7 @@ Users with push access can lock an issue or pull request's conversation.
 Note that, if you choose not to pass any parameters, you'll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see "[HTTP verbs](https://docs.github.com/rest/overview/resources-in-the-rest-api#http-verbs)."
 
 ```js
-octokit.issues.lock({
+octokit.rest.issues.lock({
   owner,
   repo,
   issue_number,

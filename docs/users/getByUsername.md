@@ -1,6 +1,6 @@
 ---
 name: Get a user
-example: octokit.users.getByUsername({ username })
+example: octokit.rest.users.getByUsername({ username })
 route: GET /users/{username}
 scope: users
 type: API method
@@ -17,7 +17,7 @@ The `email` key in the following response is the publicly visible email address 
 The Emails API enables you to list all of your email addresses, and toggle a primary email to be visible publicly. For more information, see "[Emails API](https://docs.github.com/rest/reference/users#emails)".
 
 ```js
-octokit.users.getByUsername({
+octokit.rest.users.getByUsername({
   username,
 });
 ```

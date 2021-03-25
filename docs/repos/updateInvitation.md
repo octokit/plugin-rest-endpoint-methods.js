@@ -1,6 +1,6 @@
 ---
 name: Update a repository invitation
-example: octokit.repos.updateInvitation({ owner, repo, invitation_id })
+example: octokit.rest.repos.updateInvitation({ owner, repo, invitation_id })
 route: PATCH /repos/{owner}/{repo}/invitations/{invitation_id}
 scope: repos
 type: API method
@@ -9,7 +9,7 @@ type: API method
 # Update a repository invitation
 
 ```js
-octokit.repos.updateInvitation({
+octokit.rest.repos.updateInvitation({
   owner,
   repo,
   invitation_id,

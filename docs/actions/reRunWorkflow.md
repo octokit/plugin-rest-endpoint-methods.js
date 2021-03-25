@@ -1,6 +1,6 @@
 ---
 name: Re-run a workflow
-example: octokit.actions.reRunWorkflow({ owner, repo, run_id })
+example: octokit.rest.actions.reRunWorkflow({ owner, repo, run_id })
 route: POST /repos/{owner}/{repo}/actions/runs/{run_id}/rerun
 scope: actions
 type: API method
@@ -11,7 +11,7 @@ type: API method
 Re-runs your workflow run using its `id`. You must authenticate using an access token with the `repo` scope to use this endpoint. GitHub Apps must have the `actions:write` permission to use this endpoint.
 
 ```js
-octokit.actions.reRunWorkflow({
+octokit.rest.actions.reRunWorkflow({
   owner,
   repo,
   run_id,

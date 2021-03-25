@@ -1,6 +1,6 @@
 ---
 name: Update a repository webhook
-example: octokit.repos.updateWebhook({ owner, repo, hook_id, config.url })
+example: octokit.rest.repos.updateWebhook({ owner, repo, hook_id, config.url })
 route: PATCH /repos/{owner}/{repo}/hooks/{hook_id}
 scope: repos
 type: API method
@@ -11,7 +11,7 @@ type: API method
 Updates a webhook configured in a repository. If you previously had a `secret` set, you must provide the same `secret` or set a new `secret` or the secret will be removed. If you are only updating individual webhook `config` properties, use "[Update a webhook configuration for a repository](/rest/reference/repos#update-a-webhook-configuration-for-a-repository)."
 
 ```js
-octokit.repos.updateWebhook({
+octokit.rest.repos.updateWebhook({
         owner,
 repo,
 hook_id,

@@ -1,6 +1,6 @@
 ---
 name: Delete a team
-example: octokit.teams.deleteInOrg({ org, team_slug })
+example: octokit.rest.teams.deleteInOrg({ org, team_slug })
 route: DELETE /orgs/{org}/teams/{team_slug}
 scope: teams
 type: API method
@@ -15,7 +15,7 @@ If you are an organization owner, deleting a parent team will delete all of its 
 **Note:** You can also specify a team by `org_id` and `team_id` using the route `DELETE /organizations/{org_id}/team/{team_id}`.
 
 ```js
-octokit.teams.deleteInOrg({
+octokit.rest.teams.deleteInOrg({
   org,
   team_slug,
 });

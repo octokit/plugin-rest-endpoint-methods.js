@@ -1,6 +1,6 @@
 ---
 name: Get an issue
-example: octokit.issues.get({ owner, repo, issue_number })
+example: octokit.rest.issues.get({ owner, repo, issue_number })
 route: GET /repos/{owner}/{repo}/issues/{issue_number}
 scope: issues
 type: API method
@@ -21,7 +21,7 @@ the `pull_request` key. Be aware that the `id` of a pull request returned from "
 request id, use the "[List pull requests](https://docs.github.com/rest/reference/pulls#list-pull-requests)" endpoint.
 
 ```js
-octokit.issues.get({
+octokit.rest.issues.get({
   owner,
   repo,
   issue_number,

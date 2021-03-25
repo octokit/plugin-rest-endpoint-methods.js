@@ -1,6 +1,6 @@
 ---
 name: Create a deployment
-example: octokit.repos.createDeployment({ owner, repo, ref })
+example: octokit.rest.repos.createDeployment({ owner, repo, ref })
 route: POST /repos/{owner}/{repo}/deployments
 scope: repos
 type: API method
@@ -59,7 +59,7 @@ This error happens when the `required_contexts` parameter indicates that one or 
 status for the commit to be deployed, but one or more of the required contexts do not have a state of `success`.
 
 ```js
-octokit.repos.createDeployment({
+octokit.rest.repos.createDeployment({
   owner,
   repo,
   ref,

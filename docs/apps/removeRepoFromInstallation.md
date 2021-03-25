@@ -1,6 +1,6 @@
 ---
 name: Remove a repository from an app installation
-example: octokit.apps.removeRepoFromInstallation({ installation_id, repository_id })
+example: octokit.rest.apps.removeRepoFromInstallation({ installation_id, repository_id })
 route: DELETE /user/installations/{installation_id}/repositories/{repository_id}
 scope: apps
 type: API method
@@ -13,7 +13,7 @@ Remove a single repository from an installation. The authenticated user must hav
 You must use a personal access token (which you can create via the [command line](https://docs.github.com/github/authenticating-to-github/creating-a-personal-access-token) or [Basic Authentication](https://docs.github.com/rest/overview/other-authentication-methods#basic-authentication)) to access this endpoint.
 
 ```js
-octokit.apps.removeRepoFromInstallation({
+octokit.rest.apps.removeRepoFromInstallation({
   installation_id,
   repository_id,
 });

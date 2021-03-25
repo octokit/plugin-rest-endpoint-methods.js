@@ -1,6 +1,6 @@
 ---
 name: Create a workflow dispatch event
-example: octokit.actions.createWorkflowDispatch({ owner, repo, workflow_id, ref })
+example: octokit.rest.actions.createWorkflowDispatch({ owner, repo, workflow_id, ref })
 route: POST /repos/{owner}/{repo}/actions/workflows/{workflow_id}/dispatches
 scope: actions
 type: API method
@@ -15,7 +15,7 @@ You must configure your GitHub Actions workflow to run when the [`workflow_dispa
 You must authenticate using an access token with the `repo` scope to use this endpoint. GitHub Apps must have the `actions:write` permission to use this endpoint. For more information, see "[Creating a personal access token for the command line](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line)."
 
 ```js
-octokit.actions.createWorkflowDispatch({
+octokit.rest.actions.createWorkflowDispatch({
   owner,
   repo,
   workflow_id,

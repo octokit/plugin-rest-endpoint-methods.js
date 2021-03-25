@@ -1,6 +1,6 @@
 ---
 name: Get a release
-example: octokit.repos.getRelease({ owner, repo, release_id })
+example: octokit.rest.repos.getRelease({ owner, repo, release_id })
 route: GET /repos/{owner}/{repo}/releases/{release_id}
 scope: repos
 type: API method
@@ -11,7 +11,7 @@ type: API method
 **Note:** This returns an `upload_url` key corresponding to the endpoint for uploading release assets. This key is a [hypermedia resource](https://docs.github.com/rest/overview/resources-in-the-rest-api#hypermedia).
 
 ```js
-octokit.repos.getRelease({
+octokit.rest.repos.getRelease({
   owner,
   repo,
   release_id,

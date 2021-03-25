@@ -1,6 +1,6 @@
 ---
 name: Check if a user follows another user
-example: octokit.users.checkFollowingForUser({ username, target_user })
+example: octokit.rest.users.checkFollowingForUser({ username, target_user })
 route: GET /users/{username}/following/{target_user}
 scope: users
 type: API method
@@ -9,7 +9,7 @@ type: API method
 # Check if a user follows another user
 
 ```js
-octokit.users.checkFollowingForUser({
+octokit.rest.users.checkFollowingForUser({
   username,
   target_user,
 });

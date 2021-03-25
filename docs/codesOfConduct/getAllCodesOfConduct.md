@@ -1,6 +1,6 @@
 ---
 name: Get all codes of conduct
-example: octokit.codesOfConduct.getAllCodesOfConduct()
+example: octokit.rest.codesOfConduct.getAllCodesOfConduct()
 route: GET /codes_of_conduct
 scope: codesOfConduct
 type: API method
@@ -9,7 +9,7 @@ type: API method
 # Get all codes of conduct
 
 ```js
-octokit.codesOfConduct.getAllCodesOfConduct();
+octokit.rest.codesOfConduct.getAllCodesOfConduct();
 ```
 
 ## Parameters

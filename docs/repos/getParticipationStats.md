@@ -1,6 +1,6 @@
 ---
 name: Get the weekly commit count
-example: octokit.repos.getParticipationStats({ owner, repo })
+example: octokit.rest.repos.getParticipationStats({ owner, repo })
 route: GET /repos/{owner}/{repo}/stats/participation
 scope: repos
 type: API method
@@ -13,7 +13,7 @@ Returns the total commit counts for the `owner` and total commit counts in `all`
 The array order is oldest week (index 0) to most recent week.
 
 ```js
-octokit.repos.getParticipationStats({
+octokit.rest.repos.getParticipationStats({
   owner,
   repo,
 });

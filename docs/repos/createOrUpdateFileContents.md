@@ -1,6 +1,6 @@
 ---
 name: Create or update file contents
-example: octokit.repos.createOrUpdateFileContents({ owner, repo, path, message, content, committer.name, committer.email, author.name, author.email })
+example: octokit.rest.repos.createOrUpdateFileContents({ owner, repo, path, message, content, committer.name, committer.email, author.name, author.email })
 route: PUT /repos/{owner}/{repo}/contents/{path}
 scope: repos
 type: API method
@@ -11,7 +11,7 @@ type: API method
 Creates a new file or replaces an existing file in a repository.
 
 ```js
-octokit.repos.createOrUpdateFileContents({
+octokit.rest.repos.createOrUpdateFileContents({
         owner,
 repo,
 path,

@@ -1,6 +1,6 @@
 ---
 name: Delete a file
-example: octokit.repos.deleteFile({ owner, repo, path, message, sha })
+example: octokit.rest.repos.deleteFile({ owner, repo, path, message, sha })
 route: DELETE /repos/{owner}/{repo}/contents/{path}
 scope: repos
 type: API method
@@ -17,7 +17,7 @@ The `author` section is optional and is filled in with the `committer` informati
 You must provide values for both `name` and `email`, whether you choose to use `author` or `committer`. Otherwise, you'll receive a `422` status code.
 
 ```js
-octokit.repos.deleteFile({
+octokit.rest.repos.deleteFile({
   owner,
   repo,
   path,

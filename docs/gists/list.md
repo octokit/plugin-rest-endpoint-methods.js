@@ -1,6 +1,6 @@
 ---
 name: List gists for the authenticated user
-example: octokit.gists.list()
+example: octokit.rest.gists.list()
 route: GET /gists
 scope: gists
 type: API method
@@ -11,7 +11,7 @@ type: API method
 Lists the authenticated user's gists or if called anonymously, this endpoint returns all public gists:
 
 ```js
-octokit.gists.list();
+octokit.rest.gists.list();
 ```
 
 ## Parameters

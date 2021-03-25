@@ -1,6 +1,6 @@
 ---
 name: Get a pull request
-example: octokit.pulls.get({ owner, repo, pull_number })
+example: octokit.rest.pulls.get({ owner, repo, pull_number })
 route: GET /repos/{owner}/{repo}/pulls/{pull_number}
 scope: pulls
 type: API method
@@ -25,7 +25,7 @@ The value of the `merge_commit_sha` attribute changes depending on the state of 
 Pass the appropriate [media type](https://docs.github.com/rest/overview/media-types/#commits-commit-comparison-and-pull-requests) to fetch diff and patch formats.
 
 ```js
-octokit.pulls.get({
+octokit.rest.pulls.get({
   owner,
   repo,
   pull_number,

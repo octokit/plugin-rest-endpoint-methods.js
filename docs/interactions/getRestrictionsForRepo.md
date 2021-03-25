@@ -1,6 +1,6 @@
 ---
 name: Get interaction restrictions for a repository
-example: octokit.interactions.getRestrictionsForRepo({ owner, repo })
+example: octokit.rest.interactions.getRestrictionsForRepo({ owner, repo })
 route: GET /repos/{owner}/{repo}/interaction-limits
 scope: interactions
 type: API method
@@ -11,7 +11,7 @@ type: API method
 Shows which type of GitHub user can interact with this repository and when the restriction expires. If there are no restrictions, you will see an empty response.
 
 ```js
-octokit.interactions.getRestrictionsForRepo({
+octokit.rest.interactions.getRestrictionsForRepo({
   owner,
   repo,
 });

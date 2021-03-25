@@ -1,6 +1,6 @@
 ---
 name: Get information about a SARIF upload
-example: octokit.codeScanning.getSarif({ owner, repo, sarif_id })
+example: octokit.rest.codeScanning.getSarif({ owner, repo, sarif_id })
 route: GET /repos/{owner}/{repo}/code-scanning/sarifs/{sarif_id}
 scope: codeScanning
 type: API method
@@ -11,7 +11,7 @@ type: API method
 Gets information about a SARIF upload, including the status and the URL of the analysis that was uploaded so that you can retrieve details of the analysis. For more information, see "[Get a code scanning analysis for a repository](/rest/reference/code-scanning#get-a-code-scanning-analysis-for-a-repository)." You must use an access token with the `security_events` scope to use this endpoint. GitHub Apps must have the `security_events` read permission to use this endpoint.
 
 ```js
-octokit.codeScanning.getSarif({
+octokit.rest.codeScanning.getSarif({
   owner,
   repo,
   sarif_id,

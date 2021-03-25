@@ -1,6 +1,6 @@
 ---
 name: Set allowed actions for a repository
-example: octokit.actions.setAllowedActionsRepository({ owner, repo, github_owned_allowed, verified_allowed, patterns_allowed })
+example: octokit.rest.actions.setAllowedActionsRepository({ owner, repo, github_owned_allowed, verified_allowed, patterns_allowed })
 route: PUT /repos/{owner}/{repo}/actions/permissions/selected-actions
 scope: actions
 type: API method
@@ -17,7 +17,7 @@ To use the `patterns_allowed` setting for private repositories, the repository m
 You must authenticate using an access token with the `repo` scope to use this endpoint. GitHub Apps must have the `administration` repository permission to use this API.
 
 ```js
-octokit.actions.setAllowedActionsRepository({
+octokit.rest.actions.setAllowedActionsRepository({
   owner,
   repo,
   github_owned_allowed,

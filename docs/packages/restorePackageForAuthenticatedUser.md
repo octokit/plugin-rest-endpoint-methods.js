@@ -1,6 +1,6 @@
 ---
 name: Restore a package for the authenticated user
-example: octokit.packages.restorePackageForAuthenticatedUser({ package_type, package_name })
+example: octokit.rest.packages.restorePackageForAuthenticatedUser({ package_type, package_name })
 route: POST /user/packages/{package_type}/{package_name}/restore{?token}
 scope: packages
 type: API method
@@ -18,7 +18,7 @@ You can restore a deleted package under the following conditions:
 To use this endpoint, you must authenticate using an access token with the `packages:read` and `packages:write` scope. If `package_type` is not `container`, your token must also include the `repo` scope.
 
 ```js
-octokit.packages.restorePackageForAuthenticatedUser({
+octokit.rest.packages.restorePackageForAuthenticatedUser({
   package_type,
   package_name,
 });

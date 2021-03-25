@@ -1,6 +1,6 @@
 ---
 name: Get a label
-example: octokit.issues.getLabel({ owner, repo, name })
+example: octokit.rest.issues.getLabel({ owner, repo, name })
 route: GET /repos/{owner}/{repo}/labels/{name}
 scope: issues
 type: API method
@@ -9,7 +9,7 @@ type: API method
 # Get a label
 
 ```js
-octokit.issues.getLabel({
+octokit.rest.issues.getLabel({
   owner,
   repo,
   name,

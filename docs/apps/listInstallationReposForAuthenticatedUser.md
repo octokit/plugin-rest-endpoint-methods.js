@@ -1,6 +1,6 @@
 ---
 name: List repositories accessible to the user access token
-example: octokit.apps.listInstallationReposForAuthenticatedUser({ installation_id })
+example: octokit.rest.apps.listInstallationReposForAuthenticatedUser({ installation_id })
 route: GET /user/installations/{installation_id}/repositories
 scope: apps
 type: API method
@@ -17,7 +17,7 @@ You must use a [user-to-server OAuth access token](https://docs.github.com/apps/
 The access the user has to each repository is included in the hash under the `permissions` key.
 
 ```js
-octokit.apps.listInstallationReposForAuthenticatedUser({
+octokit.rest.apps.listInstallationReposForAuthenticatedUser({
   installation_id,
 });
 ```

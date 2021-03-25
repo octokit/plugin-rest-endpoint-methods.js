@@ -1,6 +1,6 @@
 ---
 name: Download job logs for a workflow run
-example: octokit.actions.downloadJobLogsForWorkflowRun({ owner, repo, job_id })
+example: octokit.rest.actions.downloadJobLogsForWorkflowRun({ owner, repo, job_id })
 route: GET /repos/{owner}/{repo}/actions/jobs/{job_id}/logs
 scope: actions
 type: API method
@@ -14,7 +14,7 @@ use this endpoint. If the repository is private you must use an access token wit
 have the `actions:read` permission to use this endpoint.
 
 ```js
-octokit.actions.downloadJobLogsForWorkflowRun({
+octokit.rest.actions.downloadJobLogsForWorkflowRun({
   owner,
   repo,
   job_id,

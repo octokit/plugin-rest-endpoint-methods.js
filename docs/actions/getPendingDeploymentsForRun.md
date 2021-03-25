@@ -1,6 +1,6 @@
 ---
 name: Get pending deployments for a workflow run
-example: octokit.actions.getPendingDeploymentsForRun({ owner, repo, run_id })
+example: octokit.rest.actions.getPendingDeploymentsForRun({ owner, repo, run_id })
 route: GET /repos/{owner}/{repo}/actions/runs/{run_id}/pending_deployments
 scope: actions
 type: API method
@@ -13,7 +13,7 @@ Get all deployment environments for a workflow run that are waiting for protecti
 Anyone with read access to the repository can use this endpoint. If the repository is private, you must use an access token with the `repo` scope. GitHub Apps must have the `actions:read` permission to use this endpoint.
 
 ```js
-octokit.actions.getPendingDeploymentsForRun({
+octokit.rest.actions.getPendingDeploymentsForRun({
   owner,
   repo,
   run_id,
