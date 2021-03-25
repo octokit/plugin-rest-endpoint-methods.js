@@ -1,6 +1,6 @@
 ---
 name: Remove a label from an issue
-example: octokit.issues.removeLabel({ owner, repo, issue_number, name })
+example: octokit.rest.issues.removeLabel({ owner, repo, issue_number, name })
 route: DELETE /repos/{owner}/{repo}/issues/{issue_number}/labels/{name}
 scope: issues
 type: API method
@@ -11,7 +11,7 @@ type: API method
 Removes the specified label from the issue, and returns the remaining labels on the issue. This endpoint returns a `404 Not Found` status if the label does not exist.
 
 ```js
-octokit.issues.removeLabel({
+octokit.rest.issues.removeLabel({
   owner,
   repo,
   issue_number,

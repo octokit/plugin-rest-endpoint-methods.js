@@ -1,6 +1,6 @@
 ---
 name: Restore a package version for the authenticated user
-example: octokit.packages.restorePackageVersionForAuthenticatedUser({ package_type, package_name, package_version_id })
+example: octokit.rest.packages.restorePackageVersionForAuthenticatedUser({ package_type, package_name, package_version_id })
 route: POST /user/packages/{package_type}/{package_name}/versions/{package_version_id}/restore
 scope: packages
 type: API method
@@ -18,7 +18,7 @@ You can restore a deleted package version under the following conditions:
 To use this endpoint, you must authenticate using an access token with the `packages:read` and `packages:write` scope. If `package_type` is not `container`, your token must also include the `repo` scope.
 
 ```js
-octokit.packages.restorePackageVersionForAuthenticatedUser({
+octokit.rest.packages.restorePackageVersionForAuthenticatedUser({
   package_type,
   package_name,
   package_version_id,

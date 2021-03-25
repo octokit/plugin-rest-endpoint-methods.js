@@ -1,6 +1,6 @@
 ---
 name: Delete a deployment
-example: octokit.repos.deleteDeployment({ owner, repo, deployment_id })
+example: octokit.rest.repos.deleteDeployment({ owner, repo, deployment_id })
 route: DELETE /repos/{owner}/{repo}/deployments/{deployment_id}
 scope: repos
 type: API method
@@ -18,7 +18,7 @@ To set a deployment as inactive, you must:
 For more information, see "[Create a deployment](https://docs.github.com/rest/reference/repos/#create-a-deployment)" and "[Create a deployment status](https://docs.github.com/rest/reference/repos#create-a-deployment-status)."
 
 ```js
-octokit.repos.deleteDeployment({
+octokit.rest.repos.deleteDeployment({
   owner,
   repo,
   deployment_id,

@@ -1,6 +1,6 @@
 ---
 name: List gists for a user
-example: octokit.gists.listForUser({ username })
+example: octokit.rest.gists.listForUser({ username })
 route: GET /users/{username}/gists
 scope: gists
 type: API method
@@ -11,7 +11,7 @@ type: API method
 Lists public gists for the specified user:
 
 ```js
-octokit.gists.listForUser({
+octokit.rest.gists.listForUser({
   username,
 });
 ```

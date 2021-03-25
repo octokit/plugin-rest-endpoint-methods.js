@@ -1,6 +1,6 @@
 ---
 name: List organization migrations
-example: octokit.migrations.listForOrg({ org })
+example: octokit.rest.migrations.listForOrg({ org })
 route: GET /orgs/{org}/migrations
 scope: migrations
 type: API method
@@ -11,7 +11,7 @@ type: API method
 Lists the most recent migrations.
 
 ```js
-octokit.migrations.listForOrg({
+octokit.rest.migrations.listForOrg({
   org,
 });
 ```

@@ -1,6 +1,6 @@
 ---
 name: Update a repository
-example: octokit.repos.update({ owner, repo })
+example: octokit.rest.repos.update({ owner, repo })
 route: PATCH /repos/{owner}/{repo}
 scope: repos
 type: API method
@@ -11,7 +11,7 @@ type: API method
 **Note**: To edit a repository's topics, use the [Replace all repository topics](https://docs.github.com/rest/reference/repos#replace-all-repository-topics) endpoint.
 
 ```js
-octokit.repos.update({
+octokit.rest.repos.update({
   owner,
   repo,
 });

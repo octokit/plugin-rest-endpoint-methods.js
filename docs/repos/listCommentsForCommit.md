@@ -1,6 +1,6 @@
 ---
 name: List commit comments
-example: octokit.repos.listCommentsForCommit({ owner, repo, commit_sha })
+example: octokit.rest.repos.listCommentsForCommit({ owner, repo, commit_sha })
 route: GET /repos/{owner}/{repo}/commits/{commit_sha}/comments
 scope: repos
 type: API method
@@ -11,7 +11,7 @@ type: API method
 Use the `:commit_sha` to specify the commit that will have its comments listed.
 
 ```js
-octokit.repos.listCommentsForCommit({
+octokit.rest.repos.listCommentsForCommit({
   owner,
   repo,
   commit_sha,

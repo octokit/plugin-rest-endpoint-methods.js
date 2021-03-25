@@ -1,6 +1,6 @@
 ---
 name: Delete a pull request comment reaction
-example: octokit.reactions.deleteForPullRequestComment({ owner, repo, comment_id, reaction_id })
+example: octokit.rest.reactions.deleteForPullRequestComment({ owner, repo, comment_id, reaction_id })
 route: DELETE /repos/{owner}/{repo}/pulls/comments/{comment_id}/reactions/{reaction_id}
 scope: reactions
 type: API method
@@ -13,7 +13,7 @@ type: API method
 Delete a reaction to a [pull request review comment](https://docs.github.com/rest/reference/pulls#review-comments).
 
 ```js
-octokit.reactions.deleteForPullRequestComment({
+octokit.rest.reactions.deleteForPullRequestComment({
   owner,
   repo,
   comment_id,

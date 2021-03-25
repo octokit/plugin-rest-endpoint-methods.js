@@ -1,6 +1,6 @@
 ---
 name: Update an existing project card
-example: octokit.projects.updateCard({ card_id })
+example: octokit.rest.projects.updateCard({ card_id })
 route: PATCH /projects/columns/cards/{card_id}
 scope: projects
 type: API method
@@ -9,7 +9,7 @@ type: API method
 # Update an existing project card
 
 ```js
-octokit.projects.updateCard({
+octokit.rest.projects.updateCard({
   card_id,
 });
 ```

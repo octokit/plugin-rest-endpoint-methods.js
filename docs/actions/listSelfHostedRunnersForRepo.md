@@ -1,6 +1,6 @@
 ---
 name: List self-hosted runners for a repository
-example: octokit.actions.listSelfHostedRunnersForRepo({ owner, repo })
+example: octokit.rest.actions.listSelfHostedRunnersForRepo({ owner, repo })
 route: GET /repos/{owner}/{repo}/actions/runners
 scope: actions
 type: API method
@@ -11,7 +11,7 @@ type: API method
 Lists all self-hosted runners configured in a repository. You must authenticate using an access token with the `repo` scope to use this endpoint.
 
 ```js
-octokit.actions.listSelfHostedRunnersForRepo({
+octokit.rest.actions.listSelfHostedRunnersForRepo({
   owner,
   repo,
 });

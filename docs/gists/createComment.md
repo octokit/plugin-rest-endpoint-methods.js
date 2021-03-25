@@ -1,6 +1,6 @@
 ---
 name: Create a gist comment
-example: octokit.gists.createComment({ gist_id, body })
+example: octokit.rest.gists.createComment({ gist_id, body })
 route: POST /gists/{gist_id}/comments
 scope: gists
 type: API method
@@ -9,7 +9,7 @@ type: API method
 # Create a gist comment
 
 ```js
-octokit.gists.createComment({
+octokit.rest.gists.createComment({
   gist_id,
   body,
 });

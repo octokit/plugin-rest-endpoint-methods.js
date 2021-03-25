@@ -1,6 +1,6 @@
 ---
 name: List selected organizations enabled for GitHub Actions in an enterprise
-example: octokit.enterpriseAdmin.listSelectedOrganizationsEnabledGithubActionsEnterprise({ enterprise })
+example: octokit.rest.enterpriseAdmin.listSelectedOrganizationsEnabledGithubActionsEnterprise({ enterprise })
 route: GET /enterprises/{enterprise}/actions/permissions/organizations
 scope: enterpriseAdmin
 type: API method
@@ -13,7 +13,7 @@ Lists the organizations that are selected to have GitHub Actions enabled in an e
 You must authenticate using an access token with the `admin:enterprise` scope to use this endpoint.
 
 ```js
-octokit.enterpriseAdmin.listSelectedOrganizationsEnabledGithubActionsEnterprise(
+octokit.rest.enterpriseAdmin.listSelectedOrganizationsEnabledGithubActionsEnterprise(
   {
     enterprise,
   }

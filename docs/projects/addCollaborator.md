@@ -1,6 +1,6 @@
 ---
 name: Add project collaborator
-example: octokit.projects.addCollaborator({ project_id, username })
+example: octokit.rest.projects.addCollaborator({ project_id, username })
 route: PUT /projects/{project_id}/collaborators/{username}
 scope: projects
 type: API method
@@ -11,7 +11,7 @@ type: API method
 Adds a collaborator to an organization project and sets their permission level. You must be an organization owner or a project `admin` to add a collaborator.
 
 ```js
-octokit.projects.addCollaborator({
+octokit.rest.projects.addCollaborator({
   project_id,
   username,
 });

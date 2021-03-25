@@ -1,6 +1,6 @@
 ---
 name: Get feeds
-example: octokit.activity.getFeeds()
+example: octokit.rest.activity.getFeeds()
 route: GET /feeds
 scope: activity
 type: API method
@@ -21,7 +21,7 @@ GitHub provides several timeline resources in [Atom](<http://en.wikipedia.org/wi
 **Note**: Private feeds are only returned when [authenticating via Basic Auth](https://docs.github.com/rest/overview/other-authentication-methods#basic-authentication) since current feed URIs use the older, non revocable auth tokens.
 
 ```js
-octokit.activity.getFeeds();
+octokit.rest.activity.getFeeds();
 ```
 
 ## Parameters

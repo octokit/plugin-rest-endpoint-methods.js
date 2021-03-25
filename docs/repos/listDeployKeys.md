@@ -1,6 +1,6 @@
 ---
 name: List deploy keys
-example: octokit.repos.listDeployKeys({ owner, repo })
+example: octokit.rest.repos.listDeployKeys({ owner, repo })
 route: GET /repos/{owner}/{repo}/keys
 scope: repos
 type: API method
@@ -9,7 +9,7 @@ type: API method
 # List deploy keys
 
 ```js
-octokit.repos.listDeployKeys({
+octokit.rest.repos.listDeployKeys({
   owner,
   repo,
 });

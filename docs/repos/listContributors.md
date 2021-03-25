@@ -1,6 +1,6 @@
 ---
 name: List repository contributors
-example: octokit.repos.listContributors({ owner, repo })
+example: octokit.rest.repos.listContributors({ owner, repo })
 route: GET /repos/{owner}/{repo}/contributors
 scope: repos
 type: API method
@@ -13,7 +13,7 @@ Lists contributors to the specified repository and sorts them by the number of c
 GitHub identifies contributors by author email address. This endpoint groups contribution counts by GitHub user, which includes all associated email addresses. To improve performance, only the first 500 author email addresses in the repository link to GitHub users. The rest will appear as anonymous contributors without associated GitHub user information.
 
 ```js
-octokit.repos.listContributors({
+octokit.rest.repos.listContributors({
   owner,
   repo,
 });

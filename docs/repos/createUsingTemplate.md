@@ -1,6 +1,6 @@
 ---
 name: Create a repository using a template
-example: octokit.repos.createUsingTemplate({ template_owner, template_repo, name })
+example: octokit.rest.repos.createUsingTemplate({ template_owner, template_repo, name })
 route: POST /repos/{template_owner}/{template_repo}/generate
 scope: repos
 type: API method
@@ -18,7 +18,7 @@ When using [OAuth](https://docs.github.com/apps/building-oauth-apps/understandin
 - `repo` scope to create a private repository
 
 ```js
-octokit.repos.createUsingTemplate({
+octokit.rest.repos.createUsingTemplate({
   template_owner,
   template_repo,
   name,

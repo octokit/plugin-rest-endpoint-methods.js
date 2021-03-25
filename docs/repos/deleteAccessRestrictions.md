@@ -1,6 +1,6 @@
 ---
 name: Delete access restrictions
-example: octokit.repos.deleteAccessRestrictions({ owner, repo, branch })
+example: octokit.rest.repos.deleteAccessRestrictions({ owner, repo, branch })
 route: DELETE /repos/{owner}/{repo}/branches/{branch}/protection/restrictions
 scope: repos
 type: API method
@@ -13,7 +13,7 @@ Protected branches are available in public repositories with GitHub Free and Git
 Disables the ability to restrict who can push to this branch.
 
 ```js
-octokit.repos.deleteAccessRestrictions({
+octokit.rest.repos.deleteAccessRestrictions({
   owner,
   repo,
   branch,

@@ -1,6 +1,6 @@
 ---
 name: Create a registration token for a repository
-example: octokit.actions.createRegistrationTokenForRepo({ owner, repo })
+example: octokit.rest.actions.createRegistrationTokenForRepo({ owner, repo })
 route: POST /repos/{owner}/{repo}/actions/runners/registration-token
 scope: actions
 type: API method
@@ -20,7 +20,7 @@ Configure your self-hosted runner, replacing `TOKEN` with the registration token
 ```
 
 ```js
-octokit.actions.createRegistrationTokenForRepo({
+octokit.rest.actions.createRegistrationTokenForRepo({
   owner,
   repo,
 });

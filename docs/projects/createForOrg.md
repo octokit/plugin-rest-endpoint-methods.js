@@ -1,6 +1,6 @@
 ---
 name: Create an organization project
-example: octokit.projects.createForOrg({ org, name })
+example: octokit.rest.projects.createForOrg({ org, name })
 route: POST /orgs/{org}/projects
 scope: projects
 type: API method
@@ -11,7 +11,7 @@ type: API method
 Creates an organization project board. Returns a `404 Not Found` status if projects are disabled in the organization. If you do not have sufficient privileges to perform this action, a `401 Unauthorized` or `410 Gone` status is returned.
 
 ```js
-octokit.projects.createForOrg({
+octokit.rest.projects.createForOrg({
   org,
   name,
 });

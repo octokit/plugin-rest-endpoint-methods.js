@@ -1,6 +1,6 @@
 ---
 name: List check runs in a check suite
-example: octokit.checks.listForSuite({ owner, repo, check_suite_id })
+example: octokit.rest.checks.listForSuite({ owner, repo, check_suite_id })
 route: GET /repos/{owner}/{repo}/check-suites/{check_suite_id}/check-runs
 scope: checks
 type: API method
@@ -13,7 +13,7 @@ type: API method
 Lists check runs for a check suite using its `id`. GitHub Apps must have the `checks:read` permission on a private repository or pull access to a public repository to get check runs. OAuth Apps and authenticated users must have the `repo` scope to get check runs in a private repository.
 
 ```js
-octokit.checks.listForSuite({
+octokit.rest.checks.listForSuite({
   owner,
   repo,
   check_suite_id,

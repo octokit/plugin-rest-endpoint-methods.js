@@ -1,6 +1,6 @@
 ---
 name: Get GitHub Actions billing for a user
-example: octokit.billing.getGithubActionsBillingUser({ username })
+example: octokit.rest.billing.getGithubActionsBillingUser({ username })
 route: GET /users/{username}/settings/billing/actions
 scope: billing
 type: API method
@@ -15,7 +15,7 @@ Paid minutes only apply to workflows in private repositories that use GitHub-hos
 Access tokens must have the `user` scope.
 
 ```js
-octokit.billing.getGithubActionsBillingUser({
+octokit.rest.billing.getGithubActionsBillingUser({
   username,
 });
 ```

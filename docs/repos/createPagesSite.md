@@ -1,6 +1,6 @@
 ---
 name: Create a GitHub Pages site
-example: octokit.repos.createPagesSite({ owner, repo, source, source.branch })
+example: octokit.rest.repos.createPagesSite({ owner, repo, source, source.branch })
 route: POST /repos/{owner}/{repo}/pages
 scope: repos
 type: API method
@@ -11,7 +11,7 @@ type: API method
 Configures a GitHub Pages site. For more information, see "[About GitHub Pages](/github/working-with-github-pages/about-github-pages)."
 
 ```js
-octokit.repos.createPagesSite({
+octokit.rest.repos.createPagesSite({
         owner,
 repo,
 source,

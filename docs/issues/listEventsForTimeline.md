@@ -1,6 +1,6 @@
 ---
 name: List timeline events for an issue
-example: octokit.issues.listEventsForTimeline({ owner, repo, issue_number })
+example: octokit.rest.issues.listEventsForTimeline({ owner, repo, issue_number })
 route: GET /repos/{owner}/{repo}/issues/{issue_number}/timeline
 scope: issues
 type: API method
@@ -9,7 +9,7 @@ type: API method
 # List timeline events for an issue
 
 ```js
-octokit.issues.listEventsForTimeline({
+octokit.rest.issues.listEventsForTimeline({
   owner,
   repo,
   issue_number,

@@ -1,6 +1,6 @@
 ---
 name: List commit comments for a repository
-example: octokit.repos.listCommitCommentsForRepo({ owner, repo })
+example: octokit.rest.repos.listCommitCommentsForRepo({ owner, repo })
 route: GET /repos/{owner}/{repo}/comments
 scope: repos
 type: API method
@@ -13,7 +13,7 @@ Commit Comments use [these custom media types](https://docs.github.com/rest/refe
 Comments are ordered by ascending ID.
 
 ```js
-octokit.repos.listCommitCommentsForRepo({
+octokit.rest.repos.listCommitCommentsForRepo({
   owner,
   repo,
 });

@@ -1,6 +1,6 @@
 ---
 name: Suspend an app installation
-example: octokit.apps.suspendInstallation({ installation_id })
+example: octokit.rest.apps.suspendInstallation({ installation_id })
 route: PUT /app/installations/{installation_id}/suspended
 scope: apps
 type: API method
@@ -13,7 +13,7 @@ Suspends a GitHub App on a user, organization, or business account, which blocks
 You must use a [JWT](https://docs.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint.
 
 ```js
-octokit.apps.suspendInstallation({
+octokit.rest.apps.suspendInstallation({
   installation_id,
 });
 ```

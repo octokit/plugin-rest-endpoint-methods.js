@@ -1,6 +1,6 @@
 ---
 name: Get allowed actions for a repository
-example: octokit.actions.getAllowedActionsRepository({ owner, repo })
+example: octokit.rest.actions.getAllowedActionsRepository({ owner, repo })
 route: GET /repos/{owner}/{repo}/actions/permissions/selected-actions
 scope: actions
 type: API method
@@ -13,7 +13,7 @@ Gets the settings for selected actions that are allowed in a repository. To use 
 You must authenticate using an access token with the `repo` scope to use this endpoint. GitHub Apps must have the `administration` repository permission to use this API.
 
 ```js
-octokit.actions.getAllowedActionsRepository({
+octokit.rest.actions.getAllowedActionsRepository({
   owner,
   repo,
 });

@@ -1,6 +1,6 @@
 ---
 name: Set a repository subscription
-example: octokit.activity.setRepoSubscription({ owner, repo })
+example: octokit.rest.activity.setRepoSubscription({ owner, repo })
 route: PUT /repos/{owner}/{repo}/subscription
 scope: activity
 type: API method
@@ -11,7 +11,7 @@ type: API method
 If you would like to watch a repository, set `subscribed` to `true`. If you would like to ignore notifications made within a repository, set `ignored` to `true`. If you would like to stop watching a repository, [delete the repository's subscription](https://docs.github.com/rest/reference/activity#delete-a-repository-subscription) completely.
 
 ```js
-octokit.activity.setRepoSubscription({
+octokit.rest.activity.setRepoSubscription({
   owner,
   repo,
 });

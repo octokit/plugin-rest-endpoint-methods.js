@@ -1,6 +1,6 @@
 ---
 name: Delete a workflow run
-example: octokit.actions.deleteWorkflowRun({ owner, repo, run_id })
+example: octokit.rest.actions.deleteWorkflowRun({ owner, repo, run_id })
 route: DELETE /repos/{owner}/{repo}/actions/runs/{run_id}
 scope: actions
 type: API method
@@ -13,7 +13,7 @@ private you must use an access token with the `repo` scope. GitHub Apps must hav
 this endpoint.
 
 ```js
-octokit.actions.deleteWorkflowRun({
+octokit.rest.actions.deleteWorkflowRun({
   owner,
   repo,
   run_id,

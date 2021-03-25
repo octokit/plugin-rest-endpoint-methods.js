@@ -1,6 +1,6 @@
 ---
 name: Delete a project
-example: octokit.projects.delete({ project_id })
+example: octokit.rest.projects.delete({ project_id })
 route: DELETE /projects/{project_id}
 scope: projects
 type: API method
@@ -11,7 +11,7 @@ type: API method
 Deletes a project board. Returns a `404 Not Found` status if projects are disabled.
 
 ```js
-octokit.projects.delete({
+octokit.rest.projects.delete({
   project_id,
 });
 ```

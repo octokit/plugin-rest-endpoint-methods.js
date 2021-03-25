@@ -1,6 +1,6 @@
 ---
 name: Download an artifact
-example: octokit.actions.downloadArtifact({ owner, repo, artifact_id, archive_format })
+example: octokit.rest.actions.downloadArtifact({ owner, repo, artifact_id, archive_format })
 route: GET /repos/{owner}/{repo}/actions/artifacts/{artifact_id}/{archive_format}
 scope: actions
 type: API method
@@ -14,7 +14,7 @@ the repository can use this endpoint. If the repository is private you must use 
 GitHub Apps must have the `actions:read` permission to use this endpoint.
 
 ```js
-octokit.actions.downloadArtifact({
+octokit.rest.actions.downloadArtifact({
   owner,
   repo,
   artifact_id,

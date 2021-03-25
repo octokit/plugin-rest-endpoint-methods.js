@@ -1,6 +1,6 @@
 ---
 name: Create a remove token for a repository
-example: octokit.actions.createRemoveTokenForRepo({ owner, repo })
+example: octokit.rest.actions.createRemoveTokenForRepo({ owner, repo })
 route: POST /repos/{owner}/{repo}/actions/runners/remove-token
 scope: actions
 type: API method
@@ -20,7 +20,7 @@ To remove your self-hosted runner from a repository, replace TOKEN with the remo
 ```
 
 ```js
-octokit.actions.createRemoveTokenForRepo({
+octokit.rest.actions.createRemoveTokenForRepo({
   owner,
   repo,
 });

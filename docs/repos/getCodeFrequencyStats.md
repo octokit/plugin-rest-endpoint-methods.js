@@ -1,6 +1,6 @@
 ---
 name: Get the weekly commit activity
-example: octokit.repos.getCodeFrequencyStats({ owner, repo })
+example: octokit.rest.repos.getCodeFrequencyStats({ owner, repo })
 route: GET /repos/{owner}/{repo}/stats/code_frequency
 scope: repos
 type: API method
@@ -11,7 +11,7 @@ type: API method
 Returns a weekly aggregate of the number of additions and deletions pushed to a repository.
 
 ```js
-octokit.repos.getCodeFrequencyStats({
+octokit.rest.repos.getCodeFrequencyStats({
   owner,
   repo,
 });

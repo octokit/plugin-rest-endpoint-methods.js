@@ -1,6 +1,6 @@
 ---
 name: Search commits
-example: octokit.search.commits({ q })
+example: octokit.rest.search.commits({ q })
 route: GET /search/commits
 scope: search
 type: API method
@@ -18,7 +18,7 @@ For example, if you want to find commits related to CSS in the [octocat/Spoon-Kn
 `q=repo:octocat/Spoon-Knife+css`
 
 ```js
-octokit.search.commits({
+octokit.rest.search.commits({
   q,
 });
 ```

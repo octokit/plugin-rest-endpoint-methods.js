@@ -1,6 +1,6 @@
 ---
 name: Search users
-example: octokit.search.users({ q })
+example: octokit.rest.search.users({ q })
 route: GET /search/users
 scope: search
 type: API method
@@ -19,7 +19,7 @@ For example, if you're looking for a list of popular users, you might try this q
 This query searches for users with the name `tom`. The results are restricted to users with more than 42 repositories and over 1,000 followers.
 
 ```js
-octokit.search.users({
+octokit.rest.search.users({
   q,
 });
 ```

@@ -1,6 +1,6 @@
 ---
 name: List check suites for a Git reference
-example: octokit.checks.listSuitesForRef({ owner, repo, ref })
+example: octokit.rest.checks.listSuitesForRef({ owner, repo, ref })
 route: GET /repos/{owner}/{repo}/commits/{ref}/check-suites
 scope: checks
 type: API method
@@ -13,7 +13,7 @@ type: API method
 Lists check suites for a commit `ref`. The `ref` can be a SHA, branch name, or a tag name. GitHub Apps must have the `checks:read` permission on a private repository or pull access to a public repository to list check suites. OAuth Apps and authenticated users must have the `repo` scope to get check suites in a private repository.
 
 ```js
-octokit.checks.listSuitesForRef({
+octokit.rest.checks.listSuitesForRef({
   owner,
   repo,
   ref,

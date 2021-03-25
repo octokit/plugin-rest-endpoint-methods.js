@@ -1,6 +1,6 @@
 ---
 name: Create a tag object
-example: octokit.git.createTag({ owner, repo, tag, message, object, type })
+example: octokit.rest.git.createTag({ owner, repo, tag, message, object, type })
 route: POST /repos/{owner}/{repo}/git/tags
 scope: git
 type: API method
@@ -40,7 +40,7 @@ These are the possible values for `reason` in the `verification` object:
 | `valid`                  | None of the above errors applied, so the signature is considered to be verified.                                                  |
 
 ```js
-octokit.git.createTag({
+octokit.rest.git.createTag({
   owner,
   repo,
   tag,

@@ -1,6 +1,6 @@
 ---
 name: Get apps with access to the protected branch
-example: octokit.repos.getAppsWithAccessToProtectedBranch({ owner, repo, branch })
+example: octokit.rest.repos.getAppsWithAccessToProtectedBranch({ owner, repo, branch })
 route: GET /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/apps
 scope: repos
 type: API method
@@ -13,7 +13,7 @@ Protected branches are available in public repositories with GitHub Free and Git
 Lists the GitHub Apps that have push access to this branch. Only installed GitHub Apps with `write` access to the `contents` permission can be added as authorized actors on a protected branch.
 
 ```js
-octokit.repos.getAppsWithAccessToProtectedBranch({
+octokit.rest.repos.getAppsWithAccessToProtectedBranch({
   owner,
   repo,
   branch,

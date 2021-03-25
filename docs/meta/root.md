@@ -1,6 +1,6 @@
 ---
 name: GitHub API Root
-example: octokit.meta.root()
+example: octokit.rest.meta.root()
 route: GET /
 scope: meta
 type: API method
@@ -11,7 +11,7 @@ type: API method
 Get Hypermedia links to resources accessible in GitHub's REST API
 
 ```js
-octokit.meta.root();
+octokit.rest.meta.root();
 ```
 
 ## Parameters

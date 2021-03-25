@@ -1,6 +1,6 @@
 ---
 name: Update a commit comment
-example: octokit.repos.updateCommitComment({ owner, repo, comment_id, body })
+example: octokit.rest.repos.updateCommitComment({ owner, repo, comment_id, body })
 route: PATCH /repos/{owner}/{repo}/comments/{comment_id}
 scope: repos
 type: API method
@@ -9,7 +9,7 @@ type: API method
 # Update a commit comment
 
 ```js
-octokit.repos.updateCommitComment({
+octokit.rest.repos.updateCommitComment({
   owner,
   repo,
   comment_id,

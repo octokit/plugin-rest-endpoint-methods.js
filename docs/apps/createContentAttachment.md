@@ -1,6 +1,6 @@
 ---
 name: Create a content attachment
-example: octokit.apps.createContentAttachment({ content_reference_id, title, body })
+example: octokit.rest.apps.createContentAttachment({ content_reference_id, title, body })
 route: POST /content_references/{content_reference_id}/attachments
 scope: apps
 type: API method
@@ -15,7 +15,7 @@ The app must create a content attachment within six hours of the content referen
 You must use an [installation access token](https://docs.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-an-installation) to access this endpoint.
 
 ```js
-octokit.apps.createContentAttachment({
+octokit.rest.apps.createContentAttachment({
   content_reference_id,
   title,
   body,

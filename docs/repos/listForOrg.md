@@ -1,6 +1,6 @@
 ---
 name: List organization repositories
-example: octokit.repos.listForOrg({ org })
+example: octokit.rest.repos.listForOrg({ org })
 route: GET /orgs/{org}/repos
 scope: repos
 type: API method
@@ -11,7 +11,7 @@ type: API method
 Lists repositories for the specified organization.
 
 ```js
-octokit.repos.listForOrg({
+octokit.rest.repos.listForOrg({
   org,
 });
 ```

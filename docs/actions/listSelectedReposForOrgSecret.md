@@ -1,6 +1,6 @@
 ---
 name: List selected repositories for an organization secret
-example: octokit.actions.listSelectedReposForOrgSecret({ org, secret_name })
+example: octokit.rest.actions.listSelectedReposForOrgSecret({ org, secret_name })
 route: GET /orgs/{org}/actions/secrets/{secret_name}/repositories
 scope: actions
 type: API method
@@ -11,7 +11,7 @@ type: API method
 Lists all repositories that have been selected when the `visibility` for repository access to a secret is set to `selected`. You must authenticate using an access token with the `admin:org` scope to use this endpoint. GitHub Apps must have the `secrets` organization permission to use this endpoint.
 
 ```js
-octokit.actions.listSelectedReposForOrgSecret({
+octokit.rest.actions.listSelectedReposForOrgSecret({
   org,
   secret_name,
 });

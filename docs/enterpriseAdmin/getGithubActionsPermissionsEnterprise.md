@@ -1,6 +1,6 @@
 ---
 name: Get GitHub Actions permissions for an enterprise
-example: octokit.enterpriseAdmin.getGithubActionsPermissionsEnterprise({ enterprise })
+example: octokit.rest.enterpriseAdmin.getGithubActionsPermissionsEnterprise({ enterprise })
 route: GET /enterprises/{enterprise}/actions/permissions
 scope: enterpriseAdmin
 type: API method
@@ -13,7 +13,7 @@ Gets the GitHub Actions permissions policy for organizations and allowed actions
 You must authenticate using an access token with the `admin:enterprise` scope to use this endpoint.
 
 ```js
-octokit.enterpriseAdmin.getGithubActionsPermissionsEnterprise({
+octokit.rest.enterpriseAdmin.getGithubActionsPermissionsEnterprise({
   enterprise,
 });
 ```

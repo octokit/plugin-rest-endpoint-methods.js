@@ -1,6 +1,6 @@
 ---
 name: List requested reviewers for a pull request
-example: octokit.pulls.listRequestedReviewers({ owner, repo, pull_number })
+example: octokit.rest.pulls.listRequestedReviewers({ owner, repo, pull_number })
 route: GET /repos/{owner}/{repo}/pulls/{pull_number}/requested_reviewers
 scope: pulls
 type: API method
@@ -9,7 +9,7 @@ type: API method
 # List requested reviewers for a pull request
 
 ```js
-octokit.pulls.listRequestedReviewers({
+octokit.rest.pulls.listRequestedReviewers({
   owner,
   repo,
   pull_number,

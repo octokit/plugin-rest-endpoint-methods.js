@@ -7,6 +7,10 @@ import { Api } from "./types";
 import { endpointsToMethods } from "./endpoints-to-methods";
 
 export function restEndpointMethods(octokit: Octokit): Api {
-  return endpointsToMethods(octokit, ENDPOINTS);
+  const api = endpointsToMethods(octokit, ENDPOINTS);
+  return {
+    ...api,
+    rest: api,
+  };
 }
 restEndpointMethods.VERSION = VERSION;

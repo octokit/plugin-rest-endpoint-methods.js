@@ -1,6 +1,6 @@
 ---
 name: List organization memberships for the authenticated user
-example: octokit.orgs.listMembershipsForAuthenticatedUser()
+example: octokit.rest.orgs.listMembershipsForAuthenticatedUser()
 route: GET /user/memberships/orgs
 scope: orgs
 type: API method
@@ -9,7 +9,7 @@ type: API method
 # List organization memberships for the authenticated user
 
 ```js
-octokit.orgs.listMembershipsForAuthenticatedUser();
+octokit.rest.orgs.listMembershipsForAuthenticatedUser();
 ```
 
 ## Parameters

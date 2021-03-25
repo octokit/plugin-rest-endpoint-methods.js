@@ -1,6 +1,6 @@
 ---
 name: Delete a repository
-example: octokit.repos.delete({ owner, repo })
+example: octokit.rest.repos.delete({ owner, repo })
 route: DELETE /repos/{owner}/{repo}
 scope: repos
 type: API method
@@ -14,7 +14,7 @@ If an organization owner has configured the organization to prevent members from
 repositories, you will get a `403 Forbidden` response.
 
 ```js
-octokit.repos.delete({
+octokit.rest.repos.delete({
   owner,
   repo,
 });

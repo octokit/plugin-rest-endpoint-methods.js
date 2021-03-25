@@ -1,6 +1,6 @@
 ---
 name: Get a commit
-example: octokit.git.getCommit({ owner, repo, commit_sha })
+example: octokit.rest.git.getCommit({ owner, repo, commit_sha })
 route: GET /repos/{owner}/{repo}/git/commits/{commit_sha}
 scope: git
 type: API method
@@ -40,7 +40,7 @@ These are the possible values for `reason` in the `verification` object:
 | `valid`                  | None of the above errors applied, so the signature is considered to be verified.                                                  |
 
 ```js
-octokit.git.getCommit({
+octokit.rest.git.getCommit({
   owner,
   repo,
   commit_sha,

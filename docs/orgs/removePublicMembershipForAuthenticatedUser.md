@@ -1,6 +1,6 @@
 ---
 name: Remove public organization membership for the authenticated user
-example: octokit.orgs.removePublicMembershipForAuthenticatedUser({ org, username })
+example: octokit.rest.orgs.removePublicMembershipForAuthenticatedUser({ org, username })
 route: DELETE /orgs/{org}/public_members/{username}
 scope: orgs
 type: API method
@@ -9,7 +9,7 @@ type: API method
 # Remove public organization membership for the authenticated user
 
 ```js
-octokit.orgs.removePublicMembershipForAuthenticatedUser({
+octokit.rest.orgs.removePublicMembershipForAuthenticatedUser({
   org,
   username,
 });

@@ -1,6 +1,6 @@
 ---
 name: Create a team
-example: octokit.teams.create({ org, name })
+example: octokit.rest.teams.create({ org, name })
 route: POST /orgs/{org}/teams
 scope: teams
 type: API method
@@ -13,7 +13,7 @@ To create a team, the authenticated user must be a member or owner of `{org}`. B
 When you create a new team, you automatically become a team maintainer without explicitly adding yourself to the optional array of `maintainers`. For more information, see "[About teams](https://help.github.com/en/github/setting-up-and-managing-organizations-and-teams/about-teams)".
 
 ```js
-octokit.teams.create({
+octokit.rest.teams.create({
   org,
   name,
 });

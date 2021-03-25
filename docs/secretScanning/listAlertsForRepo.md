@@ -1,6 +1,6 @@
 ---
 name: List secret scanning alerts for a repository
-example: octokit.secretScanning.listAlertsForRepo({ owner, repo })
+example: octokit.rest.secretScanning.listAlertsForRepo({ owner, repo })
 route: GET /repos/{owner}/{repo}/secret-scanning/alerts
 scope: secretScanning
 type: API method
@@ -13,7 +13,7 @@ Lists all secret scanning alerts for a private repository, from newest to oldest
 GitHub Apps must have the `secret_scanning_alerts` read permission to use this endpoint.
 
 ```js
-octokit.secretScanning.listAlertsForRepo({
+octokit.rest.secretScanning.listAlertsForRepo({
   owner,
   repo,
 });

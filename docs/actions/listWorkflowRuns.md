@@ -1,6 +1,6 @@
 ---
 name: List workflow runs
-example: octokit.actions.listWorkflowRuns({ owner, repo, workflow_id })
+example: octokit.rest.actions.listWorkflowRuns({ owner, repo, workflow_id })
 route: GET /repos/{owner}/{repo}/actions/workflows/{workflow_id}/runs
 scope: actions
 type: API method
@@ -13,7 +13,7 @@ List all workflow runs for a workflow. You can replace `workflow_id` with the wo
 Anyone with read access to the repository can use this endpoint. If the repository is private you must use an access token with the `repo` scope.
 
 ```js
-octokit.actions.listWorkflowRuns({
+octokit.rest.actions.listWorkflowRuns({
   owner,
   repo,
   workflow_id,

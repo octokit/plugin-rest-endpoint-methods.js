@@ -1,6 +1,6 @@
 ---
 name: List outside collaborators for an organization
-example: octokit.orgs.listOutsideCollaborators({ org })
+example: octokit.rest.orgs.listOutsideCollaborators({ org })
 route: GET /orgs/{org}/outside_collaborators
 scope: orgs
 type: API method
@@ -11,7 +11,7 @@ type: API method
 List all users who are outside collaborators of an organization.
 
 ```js
-octokit.orgs.listOutsideCollaborators({
+octokit.rest.orgs.listOutsideCollaborators({
   org,
 });
 ```

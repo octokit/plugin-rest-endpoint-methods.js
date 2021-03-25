@@ -1,6 +1,6 @@
 ---
 name: Unblock a user
-example: octokit.users.unblock({ username })
+example: octokit.rest.users.unblock({ username })
 route: DELETE /user/blocks/{username}
 scope: users
 type: API method
@@ -9,7 +9,7 @@ type: API method
 # Unblock a user
 
 ```js
-octokit.users.unblock({
+octokit.rest.users.unblock({
   username,
 });
 ```

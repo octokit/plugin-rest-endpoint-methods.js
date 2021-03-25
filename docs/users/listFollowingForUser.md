@@ -1,6 +1,6 @@
 ---
 name: List the people a user follows
-example: octokit.users.listFollowingForUser({ username })
+example: octokit.rest.users.listFollowingForUser({ username })
 route: GET /users/{username}/following
 scope: users
 type: API method
@@ -11,7 +11,7 @@ type: API method
 Lists the people who the specified user follows.
 
 ```js
-octokit.users.listFollowingForUser({
+octokit.rest.users.listFollowingForUser({
   username,
 });
 ```

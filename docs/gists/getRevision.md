@@ -1,6 +1,6 @@
 ---
 name: Get a gist revision
-example: octokit.gists.getRevision({ gist_id, sha })
+example: octokit.rest.gists.getRevision({ gist_id, sha })
 route: GET /gists/{gist_id}/{sha}
 scope: gists
 type: API method
@@ -9,7 +9,7 @@ type: API method
 # Get a gist revision
 
 ```js
-octokit.gists.getRevision({
+octokit.rest.gists.getRevision({
   gist_id,
   sha,
 });

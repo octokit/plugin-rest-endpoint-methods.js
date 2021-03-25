@@ -1,6 +1,6 @@
 ---
 name: Set GitHub Actions permissions for an organization
-example: octokit.actions.setGithubActionsPermissionsOrganization({ org, enabled_repositories })
+example: octokit.rest.actions.setGithubActionsPermissionsOrganization({ org, enabled_repositories })
 route: PUT /orgs/{org}/actions/permissions
 scope: actions
 type: API method
@@ -15,7 +15,7 @@ If the organization belongs to an enterprise that has set restrictive permission
 You must authenticate using an access token with the `admin:org` scope to use this endpoint. GitHub Apps must have the `administration` organization permission to use this API.
 
 ```js
-octokit.actions.setGithubActionsPermissionsOrganization({
+octokit.rest.actions.setGithubActionsPermissionsOrganization({
   org,
   enabled_repositories,
 });

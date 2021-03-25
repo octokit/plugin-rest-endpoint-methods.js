@@ -1,6 +1,6 @@
 ---
 name: Get rate limit status for the authenticated user
-example: octokit.rateLimit.get()
+example: octokit.rest.rateLimit.get()
 route: GET /rate_limit
 scope: rateLimit
 type: API method
@@ -13,7 +13,7 @@ type: API method
 **Note:** The `rate` object is deprecated. If you're writing new API client code or updating existing code, you should use the `core` object instead of the `rate` object. The `core` object contains the same information that is present in the `rate` object.
 
 ```js
-octokit.rateLimit.get();
+octokit.rest.rateLimit.get();
 ```
 
 ## Parameters

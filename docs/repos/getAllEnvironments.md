@@ -1,6 +1,6 @@
 ---
 name: Get all environments
-example: octokit.repos.getAllEnvironments({ owner, repo })
+example: octokit.rest.repos.getAllEnvironments({ owner, repo })
 route: GET /repos/{owner}/{repo}/environments
 scope: repos
 type: API method
@@ -13,7 +13,7 @@ Get all environments for a repository.
 Anyone with read access to the repository can use this endpoint. If the repository is private, you must use an access token with the `repo` scope. GitHub Apps must have the `actions:read` permission to use this endpoint.
 
 ```js
-octokit.repos.getAllEnvironments({
+octokit.rest.repos.getAllEnvironments({
   owner,
   repo,
 });

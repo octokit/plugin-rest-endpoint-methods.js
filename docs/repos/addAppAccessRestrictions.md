@@ -1,6 +1,6 @@
 ---
 name: Add app access restrictions
-example: octokit.repos.addAppAccessRestrictions({ owner, repo, branch, apps })
+example: octokit.rest.repos.addAppAccessRestrictions({ owner, repo, branch, apps })
 route: POST /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/apps
 scope: repos
 type: API method
@@ -17,7 +17,7 @@ Grants the specified apps push access for this branch. Only installed GitHub App
 | `array` | The GitHub Apps that have push access to this branch. Use the app's `slug`. **Note**: The list of users, apps, and teams in total is limited to 100 items. |
 
 ```js
-octokit.repos.addAppAccessRestrictions({
+octokit.rest.repos.addAppAccessRestrictions({
   owner,
   repo,
   branch,

@@ -1,6 +1,6 @@
 ---
 name: Delete a label
-example: octokit.issues.deleteLabel({ owner, repo, name })
+example: octokit.rest.issues.deleteLabel({ owner, repo, name })
 route: DELETE /repos/{owner}/{repo}/labels/{name}
 scope: issues
 type: API method
@@ -9,7 +9,7 @@ type: API method
 # Delete a label
 
 ```js
-octokit.issues.deleteLabel({
+octokit.rest.issues.deleteLabel({
   owner,
   repo,
   name,

@@ -1,6 +1,6 @@
 ---
 name: Get access restrictions
-example: octokit.repos.getAccessRestrictions({ owner, repo, branch })
+example: octokit.rest.repos.getAccessRestrictions({ owner, repo, branch })
 route: GET /repos/{owner}/{repo}/branches/{branch}/protection/restrictions
 scope: repos
 type: API method
@@ -15,7 +15,7 @@ Lists who has access to this protected branch.
 **Note**: Users, apps, and teams `restrictions` are only available for organization-owned repositories.
 
 ```js
-octokit.repos.getAccessRestrictions({
+octokit.rest.repos.getAccessRestrictions({
   owner,
   repo,
   branch,

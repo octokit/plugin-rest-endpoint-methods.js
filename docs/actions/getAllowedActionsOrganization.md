@@ -1,6 +1,6 @@
 ---
 name: Get allowed actions for an organization
-example: octokit.actions.getAllowedActionsOrganization({ org })
+example: octokit.rest.actions.getAllowedActionsOrganization({ org })
 route: GET /orgs/{org}/actions/permissions/selected-actions
 scope: actions
 type: API method
@@ -13,7 +13,7 @@ Gets the selected actions that are allowed in an organization. To use this endpo
 You must authenticate using an access token with the `admin:org` scope to use this endpoint. GitHub Apps must have the `administration` organization permission to use this API.
 
 ```js
-octokit.actions.getAllowedActionsOrganization({
+octokit.rest.actions.getAllowedActionsOrganization({
   org,
 });
 ```

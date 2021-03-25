@@ -1,6 +1,6 @@
 ---
 name: Get a gist
-example: octokit.gists.get({ gist_id })
+example: octokit.rest.gists.get({ gist_id })
 route: GET /gists/{gist_id}
 scope: gists
 type: API method
@@ -9,7 +9,7 @@ type: API method
 # Get a gist
 
 ```js
-octokit.gists.get({
+octokit.rest.gists.get({
   gist_id,
 });
 ```

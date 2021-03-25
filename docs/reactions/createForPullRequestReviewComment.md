@@ -1,6 +1,6 @@
 ---
 name: Create reaction for a pull request review comment
-example: octokit.reactions.createForPullRequestReviewComment({ owner, repo, comment_id, content })
+example: octokit.rest.reactions.createForPullRequestReviewComment({ owner, repo, comment_id, content })
 route: POST /repos/{owner}/{repo}/pulls/comments/{comment_id}/reactions
 scope: reactions
 type: API method
@@ -11,7 +11,7 @@ type: API method
 Create a reaction to a [pull request review comment](https://docs.github.com/rest/reference/pulls#comments). A response with a `Status: 200 OK` means that you already added the reaction type to this pull request review comment.
 
 ```js
-octokit.reactions.createForPullRequestReviewComment({
+octokit.rest.reactions.createForPullRequestReviewComment({
   owner,
   repo,
   comment_id,

@@ -1,6 +1,6 @@
 ---
 name: Submit a review for a pull request
-example: octokit.pulls.submitReview({ owner, repo, pull_number, review_id, event })
+example: octokit.rest.pulls.submitReview({ owner, repo, pull_number, review_id, event })
 route: POST /repos/{owner}/{repo}/pulls/{pull_number}/reviews/{review_id}/events
 scope: pulls
 type: API method
@@ -9,7 +9,7 @@ type: API method
 # Submit a review for a pull request
 
 ```js
-octokit.pulls.submitReview({
+octokit.rest.pulls.submitReview({
   owner,
   repo,
   pull_number,

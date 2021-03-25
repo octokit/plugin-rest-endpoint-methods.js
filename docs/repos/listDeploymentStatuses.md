@@ -1,6 +1,6 @@
 ---
 name: List deployment statuses
-example: octokit.repos.listDeploymentStatuses({ owner, repo, deployment_id })
+example: octokit.rest.repos.listDeploymentStatuses({ owner, repo, deployment_id })
 route: GET /repos/{owner}/{repo}/deployments/{deployment_id}/statuses
 scope: repos
 type: API method
@@ -11,7 +11,7 @@ type: API method
 Users with pull access can view deployment statuses for a deployment:
 
 ```js
-octokit.repos.listDeploymentStatuses({
+octokit.rest.repos.listDeploymentStatuses({
   owner,
   repo,
   deployment_id,

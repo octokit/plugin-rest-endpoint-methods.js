@@ -1,6 +1,6 @@
 ---
 name: Get the Zen of GitHub
-example: octokit.meta.getZen()
+example: octokit.rest.meta.getZen()
 route: GET /zen
 scope: meta
 type: API method
@@ -11,7 +11,7 @@ type: API method
 Get a random sentence from the Zen of GitHub
 
 ```js
-octokit.meta.getZen();
+octokit.rest.meta.getZen();
 ```
 
 ## Parameters

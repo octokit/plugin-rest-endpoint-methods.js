@@ -1,6 +1,6 @@
 ---
 name: List organization issues assigned to the authenticated user
-example: octokit.issues.listForOrg({ org })
+example: octokit.rest.issues.listForOrg({ org })
 route: GET /orgs/{org}/issues
 scope: issues
 type: API method
@@ -16,7 +16,7 @@ the `pull_request` key. Be aware that the `id` of a pull request returned from "
 request id, use the "[List pull requests](https://docs.github.com/rest/reference/pulls#list-pull-requests)" endpoint.
 
 ```js
-octokit.issues.listForOrg({
+octokit.rest.issues.listForOrg({
   org,
 });
 ```

@@ -1,6 +1,6 @@
 ---
 name: Add a repository collaborator
-example: octokit.repos.addCollaborator({ owner, repo, username })
+example: octokit.rest.repos.addCollaborator({ owner, repo, username })
 route: PUT /repos/{owner}/{repo}/collaborators/{username}
 scope: repos
 type: API method
@@ -21,7 +21,7 @@ The invitee will receive a notification that they have been invited to the repos
 To prevent abuse, you are limited to sending 50 invitations to a repository per 24 hour period. Note there is no limit if you are inviting organization members to an organization repository.
 
 ```js
-octokit.repos.addCollaborator({
+octokit.rest.repos.addCollaborator({
   owner,
   repo,
   username,

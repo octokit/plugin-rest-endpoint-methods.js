@@ -1,6 +1,6 @@
 ---
 name: Create a public SSH key for the authenticated user
-example: octokit.users.createPublicSshKeyForAuthenticated({ key })
+example: octokit.rest.users.createPublicSshKeyForAuthenticated({ key })
 route: POST /user/keys
 scope: users
 type: API method
@@ -11,7 +11,7 @@ type: API method
 Adds a public SSH key to the authenticated user's GitHub account. Requires that you are authenticated via Basic Auth, or OAuth with at least `write:public_key` [scope](https://docs.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
 
 ```js
-octokit.users.createPublicSshKeyForAuthenticated({
+octokit.rest.users.createPublicSshKeyForAuthenticated({
   key,
 });
 ```

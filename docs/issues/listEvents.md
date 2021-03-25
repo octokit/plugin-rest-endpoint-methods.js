@@ -1,6 +1,6 @@
 ---
 name: List issue events
-example: octokit.issues.listEvents({ owner, repo, issue_number })
+example: octokit.rest.issues.listEvents({ owner, repo, issue_number })
 route: GET /repos/{owner}/{repo}/issues/{issue_number}/events
 scope: issues
 type: API method
@@ -9,7 +9,7 @@ type: API method
 # List issue events
 
 ```js
-octokit.issues.listEvents({
+octokit.rest.issues.listEvents({
   owner,
   repo,
   issue_number,

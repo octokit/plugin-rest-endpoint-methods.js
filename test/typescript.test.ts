@@ -2,7 +2,7 @@ import { Octokit } from "@octokit/core";
 import { RestEndpointMethodTypes, restEndpointMethods } from "../src";
 
 describe("Smoke test", () => {
-  it("Get parameters type for octokit.issues.updateLabel()", async () => {
+  it("Get parameters type for octokit.rest.issues.updateLabel()", async () => {
     const options = {
       owner: "octocat",
       repo: "hello-world",
@@ -36,7 +36,7 @@ describe("Smoke test", () => {
     const MyOctokit = Octokit.plugin(restEndpointMethods);
     const octokit = new MyOctokit();
 
-    const requestOptions = octokit.repos.getContent.endpoint({
+    const requestOptions = octokit.rest.repos.getContent.endpoint({
       owner: "foo",
       repo: "bar",
       path: "path/to/binary/file",
@@ -55,7 +55,9 @@ describe("Smoke test", () => {
     const MyOctokit = Octokit.plugin(restEndpointMethods);
     const octokit = new MyOctokit();
 
-    const myRequest = octokit.repos.getContent.defaults({ method: "HEAD" });
+    const myRequest = octokit.rest.repos.getContent.defaults({
+      method: "HEAD",
+    });
 
     expect(myRequest.endpoint.DEFAULTS.method).toEqual("HEAD");
   });

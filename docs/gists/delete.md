@@ -1,6 +1,6 @@
 ---
 name: Delete a gist
-example: octokit.gists.delete({ gist_id })
+example: octokit.rest.gists.delete({ gist_id })
 route: DELETE /gists/{gist_id}
 scope: gists
 type: API method
@@ -9,7 +9,7 @@ type: API method
 # Delete a gist
 
 ```js
-octokit.gists.delete({
+octokit.rest.gists.delete({
   gist_id,
 });
 ```

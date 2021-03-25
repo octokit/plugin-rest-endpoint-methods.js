@@ -1,6 +1,6 @@
 ---
 name: Create a release
-example: octokit.repos.createRelease({ owner, repo, tag_name })
+example: octokit.rest.repos.createRelease({ owner, repo, tag_name })
 route: POST /repos/{owner}/{repo}/releases
 scope: repos
 type: API method
@@ -13,7 +13,7 @@ Users with push access to the repository can create a release.
 This endpoint triggers [notifications](https://docs.github.com/en/github/managing-subscriptions-and-notifications-on-github/about-notifications). Creating content too quickly using this endpoint may result in abuse rate limiting. See "[Abuse rate limits](https://docs.github.com/rest/overview/resources-in-the-rest-api#abuse-rate-limits)" and "[Dealing with abuse rate limits](https://docs.github.com/rest/guides/best-practices-for-integrators#dealing-with-rate-limits)" for details.
 
 ```js
-octokit.repos.createRelease({
+octokit.rest.repos.createRelease({
   owner,
   repo,
   tag_name,

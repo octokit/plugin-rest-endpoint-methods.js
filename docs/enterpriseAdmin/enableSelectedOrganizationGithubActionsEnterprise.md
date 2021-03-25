@@ -1,6 +1,6 @@
 ---
 name: Enable a selected organization for GitHub Actions in an enterprise
-example: octokit.enterpriseAdmin.enableSelectedOrganizationGithubActionsEnterprise({ enterprise, org_id })
+example: octokit.rest.enterpriseAdmin.enableSelectedOrganizationGithubActionsEnterprise({ enterprise, org_id })
 route: PUT /enterprises/{enterprise}/actions/permissions/organizations/{org_id}
 scope: enterpriseAdmin
 type: API method
@@ -13,7 +13,7 @@ Adds an organization to the list of selected organizations that are enabled for 
 You must authenticate using an access token with the `admin:enterprise` scope to use this endpoint.
 
 ```js
-octokit.enterpriseAdmin.enableSelectedOrganizationGithubActionsEnterprise({
+octokit.rest.enterpriseAdmin.enableSelectedOrganizationGithubActionsEnterprise({
   enterprise,
   org_id,
 });

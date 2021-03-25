@@ -1,6 +1,6 @@
 ---
 name: Get commit authors
-example: octokit.migrations.getCommitAuthors({ owner, repo })
+example: octokit.rest.migrations.getCommitAuthors({ owner, repo })
 route: GET /repos/{owner}/{repo}/import/authors
 scope: migrations
 type: API method
@@ -13,7 +13,7 @@ Each type of source control system represents authors in a different way. For ex
 This endpoint and the [Map a commit author](https://docs.github.com/rest/reference/migrations#map-a-commit-author) endpoint allow you to provide correct Git author information.
 
 ```js
-octokit.migrations.getCommitAuthors({
+octokit.rest.migrations.getCommitAuthors({
   owner,
   repo,
 });

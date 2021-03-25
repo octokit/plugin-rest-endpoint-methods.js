@@ -1,6 +1,6 @@
 ---
 name: Get a discussion
-example: octokit.teams.getDiscussionInOrg({ org, team_slug, discussion_number })
+example: octokit.rest.teams.getDiscussionInOrg({ org, team_slug, discussion_number })
 route: GET /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}
 scope: teams
 type: API method
@@ -13,7 +13,7 @@ Get a specific discussion on a team's page. OAuth access tokens require the `rea
 **Note:** You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/{org_id}/team/{team_id}/discussions/{discussion_number}`.
 
 ```js
-octokit.teams.getDiscussionInOrg({
+octokit.rest.teams.getDiscussionInOrg({
   org,
   team_slug,
   discussion_number,

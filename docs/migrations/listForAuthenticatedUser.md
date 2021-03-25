@@ -1,6 +1,6 @@
 ---
 name: List user migrations
-example: octokit.migrations.listForAuthenticatedUser()
+example: octokit.rest.migrations.listForAuthenticatedUser()
 route: GET /user/migrations
 scope: migrations
 type: API method
@@ -11,7 +11,7 @@ type: API method
 Lists all migrations a user has started.
 
 ```js
-octokit.migrations.listForAuthenticatedUser();
+octokit.rest.migrations.listForAuthenticatedUser();
 ```
 
 ## Parameters

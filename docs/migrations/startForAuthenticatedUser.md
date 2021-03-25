@@ -1,6 +1,6 @@
 ---
 name: Start a user migration
-example: octokit.migrations.startForAuthenticatedUser({ repositories })
+example: octokit.rest.migrations.startForAuthenticatedUser({ repositories })
 route: POST /user/migrations
 scope: migrations
 type: API method
@@ -11,7 +11,7 @@ type: API method
 Initiates the generation of a user migration archive.
 
 ```js
-octokit.migrations.startForAuthenticatedUser({
+octokit.rest.migrations.startForAuthenticatedUser({
   repositories,
 });
 ```

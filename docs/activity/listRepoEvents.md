@@ -1,6 +1,6 @@
 ---
 name: List repository events
-example: octokit.activity.listRepoEvents({ owner, repo })
+example: octokit.rest.activity.listRepoEvents({ owner, repo })
 route: GET /repos/{owner}/{repo}/events
 scope: activity
 type: API method
@@ -9,7 +9,7 @@ type: API method
 # List repository events
 
 ```js
-octokit.activity.listRepoEvents({
+octokit.rest.activity.listRepoEvents({
   owner,
   repo,
 });

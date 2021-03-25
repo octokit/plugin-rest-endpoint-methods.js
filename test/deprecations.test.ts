@@ -25,13 +25,13 @@ describe("Deprecations", () => {
 //         warn: (deprecation: Error) => {
 //           warnCalledCount++;
 //           expect(deprecation).toMatch(
-//             "octokit.reactions.delete() has been renamed to octokit.reactions.deleteLegacy()"
+//             "octokit.rest.reactions.delete() has been renamed to octokit.rest.reactions.deleteLegacy()"
 //           );
 //         },
 //       },
 //     });
 //     // See https://developer.github.com/v3/reactions/#delete-a-reaction-legacy
-//     await octokit.reactions.delete({ reaction_id: 1 });
+//     await octokit.rest.reactions.delete({ reaction_id: 1 });
 
 //     expect(warnCalledCount).toEqual(1);
 //   });
@@ -48,13 +48,13 @@ describe("Deprecations", () => {
 //         warn: (deprecation: Error) => {
 //           warnCalledCount++;
 //           expect(deprecation).toMatch(
-//             "octokit.reactions.deleteLegacy() is deprecated, see https://developer.github.com/v3/reactions/#delete-a-reaction-legacy"
+//             "octokit.rest.reactions.deleteLegacy() is deprecated, see https://developer.github.com/v3/reactions/#delete-a-reaction-legacy"
 //           );
 //         },
 //       },
 //     });
 //     // See https://developer.github.com/v3/reactions/#delete-a-reaction-legacy
-//     await octokit.reactions.deleteLegacy({ reaction_id: 1 });
+//     await octokit.rest.reactions.deleteLegacy({ reaction_id: 1 });
 
 //     expect(warnCalledCount).toEqual(1);
 //   });
@@ -76,7 +76,7 @@ describe("Deprecations", () => {
 //         warn: (deprecation: Error) => {
 //           warnCalledCount++;
 //           expect(deprecation).toMatch(
-//             '"name" parameter is deprecated for "octokit.actions.createOrUpdateRepoSecret()". Use "secret_name" instead'
+//             '"name" parameter is deprecated for "octokit.rest.actions.createOrUpdateRepoSecret()". Use "secret_name" instead'
 //           );
 //         },
 //       },
@@ -84,7 +84,7 @@ describe("Deprecations", () => {
 //     // See https://developer.github.com/v3/actions/secrets/#create-or-update-a-repository-secret
 //     // The `:secret_name` URL parameter was `:name` until May 14, 2020
 //     // @ts-ignore
-//     const { data } = await octokit.actions.createOrUpdateRepoSecret({
+//     const { data } = await octokit.rest.actions.createOrUpdateRepoSecret({
 //       owner: "octocat",
 //       repo: "hello-world",
 //       name: "MY_SECRET",
@@ -112,7 +112,7 @@ describe("Deprecations", () => {
 //         warn: (deprecation: Error) => {
 //           warnCalledCount++;
 //           expect(deprecation).toMatch(
-//             '"name" parameter is deprecated for "octokit.actions.createOrUpdateRepoSecret()". Use "secret_name" instead'
+//             '"name" parameter is deprecated for "octokit.rest.actions.createOrUpdateRepoSecret()". Use "secret_name" instead'
 //           );
 //         },
 //       },
@@ -120,7 +120,7 @@ describe("Deprecations", () => {
 //     // See https://developer.github.com/v3/actions/secrets/#create-or-update-a-repository-secret
 //     // The `:secret_name` URL parameter was `:name` until May 14, 2020
 //     // @ts-ignore
-//     const { data } = await octokit.actions.createOrUpdateRepoSecret({
+//     const { data } = await octokit.rest.actions.createOrUpdateRepoSecret({
 //       owner: "octocat",
 //       repo: "hello-world",
 //       name: "MY_SECRET1",
@@ -154,7 +154,7 @@ describe("Deprecations", () => {
 //     // See https://developer.github.com/v3/actions/secrets/#create-or-update-a-repository-secret
 //     // The `:secret_name` URL parameter was `:name` until May 14, 2020
 //     // @ts-ignore
-//     const { data } = await octokit.actions.createOrUpdateSecretForRepo({
+//     const { data } = await octokit.rest.actions.createOrUpdateSecretForRepo({
 //       owner: "octocat",
 //       repo: "hello-world",
 //       name: "MY_SECRET",
@@ -164,8 +164,8 @@ describe("Deprecations", () => {
 //     expect(data).toStrictEqual({ ok: true });
 //     expect(deprecations.length).toEqual(2);
 //     expect(deprecations.sort()).toStrictEqual([
-//       '"name" parameter is deprecated for "octokit.actions.createOrUpdateSecretForRepo()". Use "secret_name" instead',
-//       "octokit.actions.createOrUpdateSecretForRepo() has been renamed to octokit.actions.createOrUpdateRepoSecret()",
+//       '"name" parameter is deprecated for "octokit.rest.actions.createOrUpdateSecretForRepo()". Use "secret_name" instead',
+//       "octokit.rest.actions.createOrUpdateSecretForRepo() has been renamed to octokit.rest.actions.createOrUpdateRepoSecret()",
 //     ]);
 //   });
 // });

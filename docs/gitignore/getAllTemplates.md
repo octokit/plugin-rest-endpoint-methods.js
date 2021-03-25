@@ -1,6 +1,6 @@
 ---
 name: Get all gitignore templates
-example: octokit.gitignore.getAllTemplates()
+example: octokit.rest.gitignore.getAllTemplates()
 route: GET /gitignore/templates
 scope: gitignore
 type: API method
@@ -11,7 +11,7 @@ type: API method
 List all templates available to pass as an option when [creating a repository](https://docs.github.com/rest/reference/repos#create-a-repository-for-the-authenticated-user).
 
 ```js
-octokit.gitignore.getAllTemplates();
+octokit.rest.gitignore.getAllTemplates();
 ```
 
 ## Parameters

@@ -1,6 +1,6 @@
 ---
 name: Get a GitHub Pages site
-example: octokit.repos.getPages({ owner, repo })
+example: octokit.rest.repos.getPages({ owner, repo })
 route: GET /repos/{owner}/{repo}/pages
 scope: repos
 type: API method
@@ -9,7 +9,7 @@ type: API method
 # Get a GitHub Pages site
 
 ```js
-octokit.repos.getPages({
+octokit.rest.repos.getPages({
   owner,
   repo,
 });

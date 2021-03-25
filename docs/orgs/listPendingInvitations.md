@@ -1,6 +1,6 @@
 ---
 name: List pending organization invitations
-example: octokit.orgs.listPendingInvitations({ org })
+example: octokit.rest.orgs.listPendingInvitations({ org })
 route: GET /orgs/{org}/invitations
 scope: orgs
 type: API method
@@ -11,7 +11,7 @@ type: API method
 The return hash contains a `role` field which refers to the Organization Invitation role and will be one of the following values: `direct_member`, `admin`, `billing_manager`, `hiring_manager`, or `reinstate`. If the invitee is not a GitHub member, the `login` field in the return hash will be `null`.
 
 ```js
-octokit.orgs.listPendingInvitations({
+octokit.rest.orgs.listPendingInvitations({
   org,
 });
 ```

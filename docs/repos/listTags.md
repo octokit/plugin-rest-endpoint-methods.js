@@ -1,6 +1,6 @@
 ---
 name: List repository tags
-example: octokit.repos.listTags({ owner, repo })
+example: octokit.rest.repos.listTags({ owner, repo })
 route: GET /repos/{owner}/{repo}/tags
 scope: repos
 type: API method
@@ -9,7 +9,7 @@ type: API method
 # List repository tags
 
 ```js
-octokit.repos.listTags({
+octokit.rest.repos.listTags({
   owner,
   repo,
 });

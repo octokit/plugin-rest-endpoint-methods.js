@@ -1,6 +1,6 @@
 ---
 name: Get an environment public key
-example: octokit.actions.getEnvironmentPublicKey({ repository_id, environment_name })
+example: octokit.rest.actions.getEnvironmentPublicKey({ repository_id, environment_name })
 route: GET /repositories/{repository_id}/environments/{environment_name}/secrets/public-key
 scope: actions
 type: API method
@@ -11,7 +11,7 @@ type: API method
 Get the public key for an environment, which you need to encrypt environment secrets. You need to encrypt a secret before you can create or update secrets. Anyone with read access to the repository can use this endpoint. If the repository is private you must use an access token with the `repo` scope. GitHub Apps must have the `secrets` repository permission to use this endpoint.
 
 ```js
-octokit.actions.getEnvironmentPublicKey({
+octokit.rest.actions.getEnvironmentPublicKey({
   repository_id,
   environment_name,
 });

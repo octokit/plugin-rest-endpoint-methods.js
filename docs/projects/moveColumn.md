@@ -1,6 +1,6 @@
 ---
 name: Move a project column
-example: octokit.projects.moveColumn({ column_id, position })
+example: octokit.rest.projects.moveColumn({ column_id, position })
 route: POST /projects/columns/{column_id}/moves
 scope: projects
 type: API method
@@ -9,7 +9,7 @@ type: API method
 # Move a project column
 
 ```js
-octokit.projects.moveColumn({
+octokit.rest.projects.moveColumn({
   column_id,
   position,
 });

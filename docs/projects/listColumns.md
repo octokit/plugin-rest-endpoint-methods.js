@@ -1,6 +1,6 @@
 ---
 name: List project columns
-example: octokit.projects.listColumns({ project_id })
+example: octokit.rest.projects.listColumns({ project_id })
 route: GET /projects/{project_id}/columns
 scope: projects
 type: API method
@@ -9,7 +9,7 @@ type: API method
 # List project columns
 
 ```js
-octokit.projects.listColumns({
+octokit.rest.projects.listColumns({
   project_id,
 });
 ```

@@ -1,6 +1,6 @@
 ---
 name: Get repository permissions for a user
-example: octokit.repos.getCollaboratorPermissionLevel({ owner, repo, username })
+example: octokit.rest.repos.getCollaboratorPermissionLevel({ owner, repo, username })
 route: GET /repos/{owner}/{repo}/collaborators/{username}/permission
 scope: repos
 type: API method
@@ -11,7 +11,7 @@ type: API method
 Checks the repository permission of a collaborator. The possible repository permissions are `admin`, `write`, `read`, and `none`.
 
 ```js
-octokit.repos.getCollaboratorPermissionLevel({
+octokit.rest.repos.getCollaboratorPermissionLevel({
   owner,
   repo,
   username,

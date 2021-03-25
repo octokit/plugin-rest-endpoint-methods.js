@@ -1,6 +1,6 @@
 ---
 name: Create a reply for a review comment
-example: octokit.pulls.createReplyForReviewComment({ owner, repo, pull_number, comment_id, body })
+example: octokit.rest.pulls.createReplyForReviewComment({ owner, repo, pull_number, comment_id, body })
 route: POST /repos/{owner}/{repo}/pulls/{pull_number}/comments/{comment_id}/replies
 scope: pulls
 type: API method
@@ -13,7 +13,7 @@ Creates a reply to a review comment for a pull request. For the `comment_id`, pr
 This endpoint triggers [notifications](https://docs.github.com/en/github/managing-subscriptions-and-notifications-on-github/about-notifications). Creating content too quickly using this endpoint may result in abuse rate limiting. See "[Abuse rate limits](https://docs.github.com/rest/overview/resources-in-the-rest-api#abuse-rate-limits)" and "[Dealing with abuse rate limits](https://docs.github.com/rest/guides/best-practices-for-integrators#dealing-with-rate-limits)" for details.
 
 ```js
-octokit.pulls.createReplyForReviewComment({
+octokit.rest.pulls.createReplyForReviewComment({
   owner,
   repo,
   pull_number,

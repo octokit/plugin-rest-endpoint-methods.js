@@ -1,6 +1,6 @@
 ---
 name: Create a pull request
-example: octokit.pulls.create({ owner, repo, head, base })
+example: octokit.rest.pulls.create({ owner, repo, head, base })
 route: POST /repos/{owner}/{repo}/pulls
 scope: pulls
 type: API method
@@ -17,7 +17,7 @@ You can create a new pull request.
 This endpoint triggers [notifications](https://docs.github.com/en/github/managing-subscriptions-and-notifications-on-github/about-notifications). Creating content too quickly using this endpoint may result in abuse rate limiting. See "[Abuse rate limits](https://docs.github.com/rest/overview/resources-in-the-rest-api#abuse-rate-limits)" and "[Dealing with abuse rate limits](https://docs.github.com/rest/guides/best-practices-for-integrators#dealing-with-rate-limits)" for details.
 
 ```js
-octokit.pulls.create({
+octokit.rest.pulls.create({
   owner,
   repo,
   head,

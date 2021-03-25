@@ -1,6 +1,6 @@
 ---
 name: Update a secret scanning alert
-example: octokit.secretScanning.updateAlert({ owner, repo, alert_number, state })
+example: octokit.rest.secretScanning.updateAlert({ owner, repo, alert_number, state })
 route: PATCH /repos/{owner}/{repo}/secret-scanning/alerts/{alert_number}
 scope: secretScanning
 type: API method
@@ -13,7 +13,7 @@ Updates the status of a secret scanning alert in a private repository. To use th
 GitHub Apps must have the `secret_scanning_alerts` write permission to use this endpoint.
 
 ```js
-octokit.secretScanning.updateAlert({
+octokit.rest.secretScanning.updateAlert({
   owner,
   repo,
   alert_number,

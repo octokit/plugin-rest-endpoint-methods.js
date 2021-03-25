@@ -1,6 +1,6 @@
 ---
 name: Delete a code scanning analysis from a repository
-example: octokit.codeScanning.deleteAnalysis({ owner, repo, analysis_id })
+example: octokit.rest.codeScanning.deleteAnalysis({ owner, repo, analysis_id })
 route: DELETE /repos/{owner}/{repo}/code-scanning/analyses/{analysis_id}{?confirm_delete}
 scope: codeScanning
 type: API method
@@ -76,7 +76,7 @@ The procedure therefore consists of a nested loop:
 The above process assumes that you want to remove all trace of the tool's analyses from the GitHub user interface, for the specified repository, and it therefore uses the `next_analysis_url` value. Alternatively, you could use the `confirm_delete_url` value, which would leave the last analysis in each set undeleted to avoid removing a tool's analysis entirely.
 
 ```js
-octokit.codeScanning.deleteAnalysis({
+octokit.rest.codeScanning.deleteAnalysis({
   owner,
   repo,
   analysis_id,

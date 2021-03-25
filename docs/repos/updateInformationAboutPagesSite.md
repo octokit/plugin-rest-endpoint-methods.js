@@ -1,6 +1,6 @@
 ---
 name: Update information about a GitHub Pages site
-example: octokit.repos.updateInformationAboutPagesSite({ owner, repo, source })
+example: octokit.rest.repos.updateInformationAboutPagesSite({ owner, repo, source })
 route: PUT /repos/{owner}/{repo}/pages
 scope: repos
 type: API method
@@ -11,7 +11,7 @@ type: API method
 Updates information for a GitHub Pages site. For more information, see "[About GitHub Pages](/github/working-with-github-pages/about-github-pages).
 
 ```js
-octokit.repos.updateInformationAboutPagesSite({
+octokit.rest.repos.updateInformationAboutPagesSite({
   owner,
   repo,
   source,

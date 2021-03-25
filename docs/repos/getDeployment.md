@@ -1,6 +1,6 @@
 ---
 name: Get a deployment
-example: octokit.repos.getDeployment({ owner, repo, deployment_id })
+example: octokit.rest.repos.getDeployment({ owner, repo, deployment_id })
 route: GET /repos/{owner}/{repo}/deployments/{deployment_id}
 scope: repos
 type: API method
@@ -9,7 +9,7 @@ type: API method
 # Get a deployment
 
 ```js
-octokit.repos.getDeployment({
+octokit.rest.repos.getDeployment({
   owner,
   repo,
   deployment_id,

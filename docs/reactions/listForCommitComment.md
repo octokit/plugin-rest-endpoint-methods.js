@@ -1,6 +1,6 @@
 ---
 name: List reactions for a commit comment
-example: octokit.reactions.listForCommitComment({ owner, repo, comment_id })
+example: octokit.rest.reactions.listForCommitComment({ owner, repo, comment_id })
 route: GET /repos/{owner}/{repo}/comments/{comment_id}/reactions
 scope: reactions
 type: API method
@@ -11,7 +11,7 @@ type: API method
 List the reactions to a [commit comment](https://docs.github.com/rest/reference/repos#comments).
 
 ```js
-octokit.reactions.listForCommitComment({
+octokit.rest.reactions.listForCommitComment({
   owner,
   repo,
   comment_id,

@@ -1,6 +1,6 @@
 ---
 name: Get a thread subscription for the authenticated user
-example: octokit.activity.getThreadSubscriptionForAuthenticatedUser({ thread_id })
+example: octokit.rest.activity.getThreadSubscriptionForAuthenticatedUser({ thread_id })
 route: GET /notifications/threads/{thread_id}/subscription
 scope: activity
 type: API method
@@ -13,7 +13,7 @@ This checks to see if the current user is subscribed to a thread. You can also [
 Note that subscriptions are only generated if a user is participating in a conversation--for example, they've replied to the thread, were **@mentioned**, or manually subscribe to a thread.
 
 ```js
-octokit.activity.getThreadSubscriptionForAuthenticatedUser({
+octokit.rest.activity.getThreadSubscriptionForAuthenticatedUser({
   thread_id,
 });
 ```

@@ -1,6 +1,6 @@
 ---
 name: Unblock a user from an organization
-example: octokit.orgs.unblockUser({ org, username })
+example: octokit.rest.orgs.unblockUser({ org, username })
 route: DELETE /orgs/{org}/blocks/{username}
 scope: orgs
 type: API method
@@ -9,7 +9,7 @@ type: API method
 # Unblock a user from an organization
 
 ```js
-octokit.orgs.unblockUser({
+octokit.rest.orgs.unblockUser({
   org,
   username,
 });

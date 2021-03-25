@@ -1,6 +1,6 @@
 ---
 name: Create a GPG key for the authenticated user
-example: octokit.users.createGpgKeyForAuthenticated({ armored_public_key })
+example: octokit.rest.users.createGpgKeyForAuthenticated({ armored_public_key })
 route: POST /user/gpg_keys
 scope: users
 type: API method
@@ -11,7 +11,7 @@ type: API method
 Adds a GPG key to the authenticated user's GitHub account. Requires that you are authenticated via Basic Auth, or OAuth with at least `write:gpg_key` [scope](https://docs.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
 
 ```js
-octokit.users.createGpgKeyForAuthenticated({
+octokit.rest.users.createGpgKeyForAuthenticated({
   armored_public_key,
 });
 ```

@@ -1,6 +1,6 @@
 ---
 name: List code scanning alerts for a repository
-example: octokit.codeScanning.listAlertsForRepo({ owner, repo })
+example: octokit.rest.codeScanning.listAlertsForRepo({ owner, repo })
 route: GET /repos/{owner}/{repo}/code-scanning/alerts
 scope: codeScanning
 type: API method
@@ -19,7 +19,7 @@ for the default branch or for the specified Git reference
 (if you used `ref` in the request).
 
 ```js
-octokit.codeScanning.listAlertsForRepo({
+octokit.rest.codeScanning.listAlertsForRepo({
   owner,
   repo,
 });

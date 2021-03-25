@@ -1,6 +1,6 @@
 ---
 name: List deployments
-example: octokit.repos.listDeployments({ owner, repo })
+example: octokit.rest.repos.listDeployments({ owner, repo })
 route: GET /repos/{owner}/{repo}/deployments
 scope: repos
 type: API method
@@ -11,7 +11,7 @@ type: API method
 Simple filtering of deployments is available via query parameters:
 
 ```js
-octokit.repos.listDeployments({
+octokit.rest.repos.listDeployments({
   owner,
   repo,
 });

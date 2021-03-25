@@ -1,6 +1,6 @@
 ---
 name: List repositories watched by the authenticated user
-example: octokit.activity.listWatchedReposForAuthenticatedUser()
+example: octokit.rest.activity.listWatchedReposForAuthenticatedUser()
 route: GET /user/subscriptions
 scope: activity
 type: API method
@@ -11,7 +11,7 @@ type: API method
 Lists repositories the authenticated user is watching.
 
 ```js
-octokit.activity.listWatchedReposForAuthenticatedUser();
+octokit.rest.activity.listWatchedReposForAuthenticatedUser();
 ```
 
 ## Parameters

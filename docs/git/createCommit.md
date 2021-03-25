@@ -1,6 +1,6 @@
 ---
 name: Create a commit
-example: octokit.git.createCommit({ owner, repo, message, tree })
+example: octokit.rest.git.createCommit({ owner, repo, message, tree })
 route: POST /repos/{owner}/{repo}/git/commits
 scope: git
 type: API method
@@ -40,7 +40,7 @@ These are the possible values for `reason` in the `verification` object:
 | `valid`                  | None of the above errors applied, so the signature is considered to be verified.                                                  |
 
 ```js
-octokit.git.createCommit({
+octokit.rest.git.createCommit({
   owner,
   repo,
   message,

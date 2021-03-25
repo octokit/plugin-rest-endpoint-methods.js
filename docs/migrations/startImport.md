@@ -1,6 +1,6 @@
 ---
 name: Start an import
-example: octokit.migrations.startImport({ owner, repo, vcs_url })
+example: octokit.rest.migrations.startImport({ owner, repo, vcs_url })
 route: PUT /repos/{owner}/{repo}/import
 scope: migrations
 type: API method
@@ -11,7 +11,7 @@ type: API method
 Start a source import to a GitHub repository using GitHub Importer.
 
 ```js
-octokit.migrations.startImport({
+octokit.rest.migrations.startImport({
   owner,
   repo,
   vcs_url,

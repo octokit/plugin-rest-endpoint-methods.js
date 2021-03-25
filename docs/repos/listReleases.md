@@ -1,6 +1,6 @@
 ---
 name: List releases
-example: octokit.repos.listReleases({ owner, repo })
+example: octokit.rest.repos.listReleases({ owner, repo })
 route: GET /repos/{owner}/{repo}/releases
 scope: repos
 type: API method
@@ -13,7 +13,7 @@ This returns a list of releases, which does not include regular Git tags that ha
 Information about published releases are available to everyone. Only users with push access will receive listings for draft releases.
 
 ```js
-octokit.repos.listReleases({
+octokit.rest.repos.listReleases({
   owner,
   repo,
 });

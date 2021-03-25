@@ -1,6 +1,6 @@
 ---
 name: Update an issue
-example: octokit.issues.update({ owner, repo, issue_number })
+example: octokit.rest.issues.update({ owner, repo, issue_number })
 route: PATCH /repos/{owner}/{repo}/issues/{issue_number}
 scope: issues
 type: API method
@@ -11,7 +11,7 @@ type: API method
 Issue owners and users with push access can edit an issue.
 
 ```js
-octokit.issues.update({
+octokit.rest.issues.update({
   owner,
   repo,
   issue_number,

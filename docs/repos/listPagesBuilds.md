@@ -1,6 +1,6 @@
 ---
 name: List GitHub Pages builds
-example: octokit.repos.listPagesBuilds({ owner, repo })
+example: octokit.rest.repos.listPagesBuilds({ owner, repo })
 route: GET /repos/{owner}/{repo}/pages/builds
 scope: repos
 type: API method
@@ -9,7 +9,7 @@ type: API method
 # List GitHub Pages builds
 
 ```js
-octokit.repos.listPagesBuilds({
+octokit.rest.repos.listPagesBuilds({
   owner,
   repo,
 });

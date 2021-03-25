@@ -1,6 +1,6 @@
 ---
 name: Get top referral sources
-example: octokit.repos.getTopReferrers({ owner, repo })
+example: octokit.rest.repos.getTopReferrers({ owner, repo })
 route: GET /repos/{owner}/{repo}/traffic/popular/referrers
 scope: repos
 type: API method
@@ -11,7 +11,7 @@ type: API method
 Get the top 10 referrers over the last 14 days.
 
 ```js
-octokit.repos.getTopReferrers({
+octokit.rest.repos.getTopReferrers({
   owner,
   repo,
 });

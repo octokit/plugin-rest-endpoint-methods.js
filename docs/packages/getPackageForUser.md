@@ -1,6 +1,6 @@
 ---
 name: Get a package for a user
-example: octokit.packages.getPackageForUser({ package_type, package_name, username })
+example: octokit.rest.packages.getPackageForUser({ package_type, package_name, username })
 route: GET /users/{username}/packages/{package_type}/{package_name}
 scope: packages
 type: API method
@@ -14,7 +14,7 @@ To use this endpoint, you must authenticate using an access token with the `pack
 If `package_type` is not `container`, your token must also include the `repo` scope.
 
 ```js
-octokit.packages.getPackageForUser({
+octokit.rest.packages.getPackageForUser({
   package_type,
   package_name,
   username,

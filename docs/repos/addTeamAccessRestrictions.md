@@ -1,6 +1,6 @@
 ---
 name: Add team access restrictions
-example: octokit.repos.addTeamAccessRestrictions({ owner, repo, branch, teams })
+example: octokit.rest.repos.addTeamAccessRestrictions({ owner, repo, branch, teams })
 route: POST /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams
 scope: repos
 type: API method
@@ -17,7 +17,7 @@ Grants the specified teams push access for this branch. You can also give push a
 | `array` | The teams that can have push access. Use the team's `slug`. **Note**: The list of users, apps, and teams in total is limited to 100 items. |
 
 ```js
-octokit.repos.addTeamAccessRestrictions({
+octokit.rest.repos.addTeamAccessRestrictions({
   owner,
   repo,
   branch,

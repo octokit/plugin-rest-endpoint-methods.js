@@ -1,6 +1,6 @@
 ---
 name: List release assets
-example: octokit.repos.listReleaseAssets({ owner, repo, release_id })
+example: octokit.rest.repos.listReleaseAssets({ owner, repo, release_id })
 route: GET /repos/{owner}/{repo}/releases/{release_id}/assets
 scope: repos
 type: API method
@@ -9,7 +9,7 @@ type: API method
 # List release assets
 
 ```js
-octokit.repos.listReleaseAssets({
+octokit.rest.repos.listReleaseAssets({
   owner,
   repo,
   release_id,

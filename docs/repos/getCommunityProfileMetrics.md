@@ -1,6 +1,6 @@
 ---
 name: Get community profile metrics
-example: octokit.repos.getCommunityProfileMetrics({ owner, repo })
+example: octokit.rest.repos.getCommunityProfileMetrics({ owner, repo })
 route: GET /repos/{owner}/{repo}/community/profile
 scope: repos
 type: API method
@@ -22,7 +22,7 @@ the `health_percentage` is `100`. If only one is present, then the
 `content_reports_enabled` is only returned for organization-owned repositories.
 
 ```js
-octokit.repos.getCommunityProfileMetrics({
+octokit.rest.repos.getCommunityProfileMetrics({
   owner,
   repo,
 });

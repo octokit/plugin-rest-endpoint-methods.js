@@ -1,6 +1,6 @@
 ---
 name: Create an installation access token for an app
-example: octokit.apps.createInstallationAccessToken({ installation_id })
+example: octokit.rest.apps.createInstallationAccessToken({ installation_id })
 route: POST /app/installations/{installation_id}/access_tokens
 scope: apps
 type: API method
@@ -13,7 +13,7 @@ Creates an installation access token that enables a GitHub App to make authentic
 You must use a [JWT](https://docs.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint.
 
 ```js
-octokit.apps.createInstallationAccessToken({
+octokit.rest.apps.createInstallationAccessToken({
   installation_id,
 });
 ```

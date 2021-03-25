@@ -1,6 +1,6 @@
 ---
 name: List project collaborators
-example: octokit.projects.listCollaborators({ project_id })
+example: octokit.rest.projects.listCollaborators({ project_id })
 route: GET /projects/{project_id}/collaborators
 scope: projects
 type: API method
@@ -11,7 +11,7 @@ type: API method
 Lists the collaborators for an organization project. For a project, the list of collaborators includes outside collaborators, organization members that are direct collaborators, organization members with access through team memberships, organization members with access through default organization permissions, and organization owners. You must be an organization owner or a project `admin` to list collaborators.
 
 ```js
-octokit.projects.listCollaborators({
+octokit.rest.projects.listCollaborators({
   project_id,
 });
 ```

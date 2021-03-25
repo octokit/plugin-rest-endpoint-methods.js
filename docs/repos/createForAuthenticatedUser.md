@@ -1,6 +1,6 @@
 ---
 name: Create a repository for the authenticated user
-example: octokit.repos.createForAuthenticatedUser({ name })
+example: octokit.rest.repos.createForAuthenticatedUser({ name })
 route: POST /user/repos
 scope: repos
 type: API method
@@ -18,7 +18,7 @@ When using [OAuth](https://docs.github.com/apps/building-oauth-apps/understandin
 - `repo` scope to create a private repository.
 
 ```js
-octokit.repos.createForAuthenticatedUser({
+octokit.rest.repos.createForAuthenticatedUser({
   name,
 });
 ```

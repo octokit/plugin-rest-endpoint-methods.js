@@ -1,6 +1,6 @@
 ---
 name: Add a repository to an app installation
-example: octokit.apps.addRepoToInstallation({ installation_id, repository_id })
+example: octokit.rest.apps.addRepoToInstallation({ installation_id, repository_id })
 route: PUT /user/installations/{installation_id}/repositories/{repository_id}
 scope: apps
 type: API method
@@ -13,7 +13,7 @@ Add a single repository to an installation. The authenticated user must have adm
 You must use a personal access token (which you can create via the [command line](https://docs.github.com/github/authenticating-to-github/creating-a-personal-access-token) or [Basic Authentication](https://docs.github.com/rest/overview/other-authentication-methods#basic-authentication)) to access this endpoint.
 
 ```js
-octokit.apps.addRepoToInstallation({
+octokit.rest.apps.addRepoToInstallation({
   installation_id,
   repository_id,
 });

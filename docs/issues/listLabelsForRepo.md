@@ -1,6 +1,6 @@
 ---
 name: List labels for a repository
-example: octokit.issues.listLabelsForRepo({ owner, repo })
+example: octokit.rest.issues.listLabelsForRepo({ owner, repo })
 route: GET /repos/{owner}/{repo}/labels
 scope: issues
 type: API method
@@ -9,7 +9,7 @@ type: API method
 # List labels for a repository
 
 ```js
-octokit.issues.listLabelsForRepo({
+octokit.rest.issues.listLabelsForRepo({
   owner,
   repo,
 });

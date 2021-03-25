@@ -1,6 +1,6 @@
 ---
 name: Get a webhook configuration for an organization
-example: octokit.orgs.getWebhookConfigForOrg({ org, hook_id })
+example: octokit.rest.orgs.getWebhookConfigForOrg({ org, hook_id })
 route: GET /orgs/{org}/hooks/{hook_id}/config
 scope: orgs
 type: API method
@@ -13,7 +13,7 @@ Returns the webhook configuration for an organization. To get more information a
 Access tokens must have the `admin:org_hook` scope, and GitHub Apps must have the `organization_hooks:read` permission.
 
 ```js
-octokit.orgs.getWebhookConfigForOrg({
+octokit.rest.orgs.getWebhookConfigForOrg({
   org,
   hook_id,
 });

@@ -1,6 +1,6 @@
 ---
 name: Update a discussion comment
-example: octokit.teams.updateDiscussionCommentInOrg({ org, team_slug, discussion_number, comment_number, body })
+example: octokit.rest.teams.updateDiscussionCommentInOrg({ org, team_slug, discussion_number, comment_number, body })
 route: PATCH /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}
 scope: teams
 type: API method
@@ -13,7 +13,7 @@ Edits the body text of a discussion comment. OAuth access tokens require the `wr
 **Note:** You can also specify a team by `org_id` and `team_id` using the route `PATCH /organizations/{org_id}/team/{team_id}/discussions/{discussion_number}/comments/{comment_number}`.
 
 ```js
-octokit.teams.updateDiscussionCommentInOrg({
+octokit.rest.teams.updateDiscussionCommentInOrg({
   org,
   team_slug,
   discussion_number,

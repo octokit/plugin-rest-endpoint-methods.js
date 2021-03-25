@@ -1,6 +1,6 @@
 ---
 name: List repositories starred by a user
-example: octokit.activity.listReposStarredByUser({ username })
+example: octokit.rest.activity.listReposStarredByUser({ username })
 route: GET /users/{username}/starred
 scope: activity
 type: API method
@@ -13,7 +13,7 @@ Lists repositories a user has starred.
 You can also find out _when_ stars were created by passing the following custom [media type](https://docs.github.com/rest/overview/media-types/) via the `Accept` header:
 
 ```js
-octokit.activity.listReposStarredByUser({
+octokit.rest.activity.listReposStarredByUser({
   username,
 });
 ```

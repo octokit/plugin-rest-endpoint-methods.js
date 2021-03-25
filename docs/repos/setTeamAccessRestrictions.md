@@ -1,6 +1,6 @@
 ---
 name: Set team access restrictions
-example: octokit.repos.setTeamAccessRestrictions({ owner, repo, branch, teams })
+example: octokit.rest.repos.setTeamAccessRestrictions({ owner, repo, branch, teams })
 route: PUT /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams
 scope: repos
 type: API method
@@ -17,7 +17,7 @@ Replaces the list of teams that have push access to this branch. This removes al
 | `array` | The teams that can have push access. Use the team's `slug`. **Note**: The list of users, apps, and teams in total is limited to 100 items. |
 
 ```js
-octokit.repos.setTeamAccessRestrictions({
+octokit.rest.repos.setTeamAccessRestrictions({
   owner,
   repo,
   branch,

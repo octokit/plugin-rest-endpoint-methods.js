@@ -1,6 +1,6 @@
 ---
 name: List stargazers
-example: octokit.activity.listStargazersForRepo({ owner, repo })
+example: octokit.rest.activity.listStargazersForRepo({ owner, repo })
 route: GET /repos/{owner}/{repo}/stargazers
 scope: activity
 type: API method
@@ -13,7 +13,7 @@ Lists the people that have starred the repository.
 You can also find out _when_ stars were created by passing the following custom [media type](https://docs.github.com/rest/overview/media-types/) via the `Accept` header:
 
 ```js
-octokit.activity.listStargazersForRepo({
+octokit.rest.activity.listStargazersForRepo({
   owner,
   repo,
 });

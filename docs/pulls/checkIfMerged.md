@@ -1,6 +1,6 @@
 ---
 name: Check if a pull request has been merged
-example: octokit.pulls.checkIfMerged({ owner, repo, pull_number })
+example: octokit.rest.pulls.checkIfMerged({ owner, repo, pull_number })
 route: GET /repos/{owner}/{repo}/pulls/{pull_number}/merge
 scope: pulls
 type: API method
@@ -9,7 +9,7 @@ type: API method
 # Check if a pull request has been merged
 
 ```js
-octokit.pulls.checkIfMerged({
+octokit.rest.pulls.checkIfMerged({
   owner,
   repo,
   pull_number,

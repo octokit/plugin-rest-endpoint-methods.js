@@ -1,6 +1,6 @@
 ---
 name: Check if a person is followed by the authenticated user
-example: octokit.users.checkPersonIsFollowedByAuthenticated({ username })
+example: octokit.rest.users.checkPersonIsFollowedByAuthenticated({ username })
 route: GET /user/following/{username}
 scope: users
 type: API method
@@ -9,7 +9,7 @@ type: API method
 # Check if a person is followed by the authenticated user
 
 ```js
-octokit.users.checkPersonIsFollowedByAuthenticated({
+octokit.rest.users.checkPersonIsFollowedByAuthenticated({
   username,
 });
 ```

@@ -1,6 +1,6 @@
 ---
 name: Remove team membership for a user
-example: octokit.teams.removeMembershipForUserInOrg({ org, team_slug, username })
+example: octokit.rest.teams.removeMembershipForUserInOrg({ org, team_slug, username })
 route: DELETE /orgs/{org}/teams/{team_slug}/memberships/{username}
 scope: teams
 type: API method
@@ -17,7 +17,7 @@ To remove a membership between a user and a team, the authenticated user must ha
 **Note:** You can also specify a team by `org_id` and `team_id` using the route `DELETE /organizations/{org_id}/team/{team_id}/memberships/{username}`.
 
 ```js
-octokit.teams.removeMembershipForUserInOrg({
+octokit.rest.teams.removeMembershipForUserInOrg({
   org,
   team_slug,
   username,

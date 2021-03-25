@@ -1,6 +1,6 @@
 ---
 name: Delete a GitHub Pages site
-example: octokit.repos.deletePagesSite({ owner, repo })
+example: octokit.rest.repos.deletePagesSite({ owner, repo })
 route: DELETE /repos/{owner}/{repo}/pages
 scope: repos
 type: API method
@@ -9,7 +9,7 @@ type: API method
 # Delete a GitHub Pages site
 
 ```js
-octokit.repos.deletePagesSite({
+octokit.rest.repos.deletePagesSite({
   owner,
   repo,
 });

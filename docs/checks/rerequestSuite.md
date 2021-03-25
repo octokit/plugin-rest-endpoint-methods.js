@@ -1,6 +1,6 @@
 ---
 name: Rerequest a check suite
-example: octokit.checks.rerequestSuite({ owner, repo, check_suite_id })
+example: octokit.rest.checks.rerequestSuite({ owner, repo, check_suite_id })
 route: POST /repos/{owner}/{repo}/check-suites/{check_suite_id}/rerequest
 scope: checks
 type: API method
@@ -13,7 +13,7 @@ Triggers GitHub to rerequest an existing check suite, without pushing new code t
 To rerequest a check suite, your GitHub App must have the `checks:read` permission on a private repository or pull access to a public repository.
 
 ```js
-octokit.checks.rerequestSuite({
+octokit.rest.checks.rerequestSuite({
   owner,
   repo,
   check_suite_id,

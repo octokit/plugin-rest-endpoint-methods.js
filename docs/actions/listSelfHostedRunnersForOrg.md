@@ -1,6 +1,6 @@
 ---
 name: List self-hosted runners for an organization
-example: octokit.actions.listSelfHostedRunnersForOrg({ org })
+example: octokit.rest.actions.listSelfHostedRunnersForOrg({ org })
 route: GET /orgs/{org}/actions/runners
 scope: actions
 type: API method
@@ -13,7 +13,7 @@ Lists all self-hosted runners configured in an organization.
 You must authenticate using an access token with the `admin:org` scope to use this endpoint.
 
 ```js
-octokit.actions.listSelfHostedRunnersForOrg({
+octokit.rest.actions.listSelfHostedRunnersForOrg({
   org,
 });
 ```

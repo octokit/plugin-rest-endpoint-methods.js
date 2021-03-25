@@ -1,6 +1,6 @@
 ---
 name: List discussions
-example: octokit.teams.listDiscussionsInOrg({ org, team_slug })
+example: octokit.rest.teams.listDiscussionsInOrg({ org, team_slug })
 route: GET /orgs/{org}/teams/{team_slug}/discussions
 scope: teams
 type: API method
@@ -13,7 +13,7 @@ List all discussions on a team's page. OAuth access tokens require the `read:dis
 **Note:** You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/{org_id}/team/{team_id}/discussions`.
 
 ```js
-octokit.teams.listDiscussionsInOrg({
+octokit.rest.teams.listDiscussionsInOrg({
   org,
   team_slug,
 });

@@ -1,6 +1,6 @@
 ---
 name: List public events
-example: octokit.activity.listPublicEvents()
+example: octokit.rest.activity.listPublicEvents()
 route: GET /events
 scope: activity
 type: API method
@@ -11,7 +11,7 @@ type: API method
 We delay the public events feed by five minutes, which means the most recent event returned by the public events API actually occurred at least five minutes ago.
 
 ```js
-octokit.activity.listPublicEvents();
+octokit.rest.activity.listPublicEvents();
 ```
 
 ## Parameters

@@ -1,6 +1,6 @@
 ---
 name: Create commit signature protection
-example: octokit.repos.createCommitSignatureProtection({ owner, repo, branch })
+example: octokit.rest.repos.createCommitSignatureProtection({ owner, repo, branch })
 route: POST /repos/{owner}/{repo}/branches/{branch}/protection/required_signatures
 scope: repos
 type: API method
@@ -13,7 +13,7 @@ Protected branches are available in public repositories with GitHub Free and Git
 When authenticated with admin or owner permissions to the repository, you can use this endpoint to require signed commits on a branch. You must enable branch protection to require signed commits.
 
 ```js
-octokit.repos.createCommitSignatureProtection({
+octokit.rest.repos.createCommitSignatureProtection({
   owner,
   repo,
   branch,

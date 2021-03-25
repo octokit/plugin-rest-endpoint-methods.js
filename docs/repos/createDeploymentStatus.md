@@ -1,6 +1,6 @@
 ---
 name: Create a deployment status
-example: octokit.repos.createDeploymentStatus({ owner, repo, deployment_id, state })
+example: octokit.rest.repos.createDeploymentStatus({ owner, repo, deployment_id, state })
 route: POST /repos/{owner}/{repo}/deployments/{deployment_id}/statuses
 scope: repos
 type: API method
@@ -13,7 +13,7 @@ Users with `push` access can create deployment statuses for a given deployment.
 GitHub Apps require `read & write` access to "Deployments" and `read-only` access to "Repo contents" (for private repos). OAuth Apps require the `repo_deployment` scope.
 
 ```js
-octokit.repos.createDeploymentStatus({
+octokit.rest.repos.createDeploymentStatus({
   owner,
   repo,
   deployment_id,

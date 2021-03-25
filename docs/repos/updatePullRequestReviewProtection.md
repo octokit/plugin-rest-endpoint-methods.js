@@ -1,6 +1,6 @@
 ---
 name: Update pull request review protection
-example: octokit.repos.updatePullRequestReviewProtection({ owner, repo, branch })
+example: octokit.rest.repos.updatePullRequestReviewProtection({ owner, repo, branch })
 route: PATCH /repos/{owner}/{repo}/branches/{branch}/protection/required_pull_request_reviews
 scope: repos
 type: API method
@@ -15,7 +15,7 @@ Updating pull request review enforcement requires admin or owner permissions to 
 **Note**: Passing new arrays of `users` and `teams` replaces their previous values.
 
 ```js
-octokit.repos.updatePullRequestReviewProtection({
+octokit.rest.repos.updatePullRequestReviewProtection({
   owner,
   repo,
   branch,

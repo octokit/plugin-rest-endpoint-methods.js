@@ -1,6 +1,6 @@
 ---
 name: Check if a user is blocked by the authenticated user
-example: octokit.users.checkBlocked({ username })
+example: octokit.rest.users.checkBlocked({ username })
 route: GET /user/blocks/{username}
 scope: users
 type: API method
@@ -9,7 +9,7 @@ type: API method
 # Check if a user is blocked by the authenticated user
 
 ```js
-octokit.users.checkBlocked({
+octokit.rest.users.checkBlocked({
   username,
 });
 ```

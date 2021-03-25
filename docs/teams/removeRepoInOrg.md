@@ -1,6 +1,6 @@
 ---
 name: Remove a repository from a team
-example: octokit.teams.removeRepoInOrg({ org, team_slug, owner, repo })
+example: octokit.rest.teams.removeRepoInOrg({ org, team_slug, owner, repo })
 route: DELETE /orgs/{org}/teams/{team_slug}/repos/{owner}/{repo}
 scope: teams
 type: API method
@@ -13,7 +13,7 @@ If the authenticated user is an organization owner or a team maintainer, they ca
 **Note:** You can also specify a team by `org_id` and `team_id` using the route `DELETE /organizations/{org_id}/team/{team_id}/repos/{owner}/{repo}`.
 
 ```js
-octokit.teams.removeRepoInOrg({
+octokit.rest.teams.removeRepoInOrg({
   org,
   team_slug,
   owner,

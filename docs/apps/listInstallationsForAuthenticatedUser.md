@@ -1,6 +1,6 @@
 ---
 name: List app installations accessible to the user access token
-example: octokit.apps.listInstallationsForAuthenticatedUser()
+example: octokit.rest.apps.listInstallationsForAuthenticatedUser()
 route: GET /user/installations
 scope: apps
 type: API method
@@ -17,7 +17,7 @@ The authenticated user has explicit permission to access repositories they own, 
 You can find the permissions for the installation under the `permissions` key.
 
 ```js
-octokit.apps.listInstallationsForAuthenticatedUser();
+octokit.rest.apps.listInstallationsForAuthenticatedUser();
 ```
 
 ## Parameters

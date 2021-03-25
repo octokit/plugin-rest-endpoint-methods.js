@@ -1,6 +1,6 @@
 ---
 name: Get a commit comment
-example: octokit.repos.getCommitComment({ owner, repo, comment_id })
+example: octokit.rest.repos.getCommitComment({ owner, repo, comment_id })
 route: GET /repos/{owner}/{repo}/comments/{comment_id}
 scope: repos
 type: API method
@@ -9,7 +9,7 @@ type: API method
 # Get a commit comment
 
 ```js
-octokit.repos.getCommitComment({
+octokit.rest.repos.getCommitComment({
   owner,
   repo,
   comment_id,

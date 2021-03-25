@@ -1,6 +1,6 @@
 ---
 name: Dismiss a review for a pull request
-example: octokit.pulls.dismissReview({ owner, repo, pull_number, review_id, message })
+example: octokit.rest.pulls.dismissReview({ owner, repo, pull_number, review_id, message })
 route: PUT /repos/{owner}/{repo}/pulls/{pull_number}/reviews/{review_id}/dismissals
 scope: pulls
 type: API method
@@ -11,7 +11,7 @@ type: API method
 **Note:** To dismiss a pull request review on a [protected branch](https://docs.github.com/rest/reference/repos#branches), you must be a repository administrator or be included in the list of people or teams who can dismiss pull request reviews.
 
 ```js
-octokit.pulls.dismissReview({
+octokit.rest.pulls.dismissReview({
   owner,
   repo,
   pull_number,

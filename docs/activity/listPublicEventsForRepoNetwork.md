@@ -1,6 +1,6 @@
 ---
 name: List public events for a network of repositories
-example: octokit.activity.listPublicEventsForRepoNetwork({ owner, repo })
+example: octokit.rest.activity.listPublicEventsForRepoNetwork({ owner, repo })
 route: GET /networks/{owner}/{repo}/events
 scope: activity
 type: API method
@@ -9,7 +9,7 @@ type: API method
 # List public events for a network of repositories
 
 ```js
-octokit.activity.listPublicEventsForRepoNetwork({
+octokit.rest.activity.listPublicEventsForRepoNetwork({
   owner,
   repo,
 });

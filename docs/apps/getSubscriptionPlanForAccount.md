@@ -1,6 +1,6 @@
 ---
 name: Get a subscription plan for an account
-example: octokit.apps.getSubscriptionPlanForAccount({ account_id })
+example: octokit.rest.apps.getSubscriptionPlanForAccount({ account_id })
 route: GET /marketplace_listing/accounts/{account_id}
 scope: apps
 type: API method
@@ -13,7 +13,7 @@ Shows whether the user or organization account actively subscribes to a plan lis
 GitHub Apps must use a [JWT](https://docs.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint. OAuth Apps must use [basic authentication](https://docs.github.com/rest/overview/other-authentication-methods#basic-authentication) with their client ID and client secret to access this endpoint.
 
 ```js
-octokit.apps.getSubscriptionPlanForAccount({
+octokit.rest.apps.getSubscriptionPlanForAccount({
   account_id,
 });
 ```

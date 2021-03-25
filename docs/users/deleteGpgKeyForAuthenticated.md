@@ -1,6 +1,6 @@
 ---
 name: Delete a GPG key for the authenticated user
-example: octokit.users.deleteGpgKeyForAuthenticated({ gpg_key_id })
+example: octokit.rest.users.deleteGpgKeyForAuthenticated({ gpg_key_id })
 route: DELETE /user/gpg_keys/{gpg_key_id}
 scope: users
 type: API method
@@ -11,7 +11,7 @@ type: API method
 Removes a GPG key from the authenticated user's GitHub account. Requires that you are authenticated via Basic Auth or via OAuth with at least `admin:gpg_key` [scope](https://docs.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
 
 ```js
-octokit.users.deleteGpgKeyForAuthenticated({
+octokit.rest.users.deleteGpgKeyForAuthenticated({
   gpg_key_id,
 });
 ```

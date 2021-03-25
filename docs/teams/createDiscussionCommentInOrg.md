@@ -1,6 +1,6 @@
 ---
 name: Create a discussion comment
-example: octokit.teams.createDiscussionCommentInOrg({ org, team_slug, discussion_number, body })
+example: octokit.rest.teams.createDiscussionCommentInOrg({ org, team_slug, discussion_number, body })
 route: POST /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments
 scope: teams
 type: API method
@@ -15,7 +15,7 @@ This endpoint triggers [notifications](https://docs.github.com/en/github/managin
 **Note:** You can also specify a team by `org_id` and `team_id` using the route `POST /organizations/{org_id}/team/{team_id}/discussions/{discussion_number}/comments`.
 
 ```js
-octokit.teams.createDiscussionCommentInOrg({
+octokit.rest.teams.createDiscussionCommentInOrg({
   org,
   team_slug,
   discussion_number,

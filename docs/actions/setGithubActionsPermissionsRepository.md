@@ -1,6 +1,6 @@
 ---
 name: Set GitHub Actions permissions for a repository
-example: octokit.actions.setGithubActionsPermissionsRepository({ owner, repo, enabled })
+example: octokit.rest.actions.setGithubActionsPermissionsRepository({ owner, repo, enabled })
 route: PUT /repos/{owner}/{repo}/actions/permissions
 scope: actions
 type: API method
@@ -15,7 +15,7 @@ If the repository belongs to an organization or enterprise that has set restrict
 You must authenticate using an access token with the `repo` scope to use this endpoint. GitHub Apps must have the `administration` repository permission to use this API.
 
 ```js
-octokit.actions.setGithubActionsPermissionsRepository({
+octokit.rest.actions.setGithubActionsPermissionsRepository({
   owner,
   repo,
   enabled,

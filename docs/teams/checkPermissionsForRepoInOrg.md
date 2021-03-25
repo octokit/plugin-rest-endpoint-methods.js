@@ -1,6 +1,6 @@
 ---
 name: Check team permissions for a repository
-example: octokit.teams.checkPermissionsForRepoInOrg({ org, team_slug, owner, repo })
+example: octokit.rest.teams.checkPermissionsForRepoInOrg({ org, team_slug, owner, repo })
 route: GET /orgs/{org}/teams/{team_slug}/repos/{owner}/{repo}
 scope: teams
 type: API method
@@ -17,7 +17,7 @@ If a team doesn't have permission for the repository, you will receive a `404 No
 **Note:** You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/{org_id}/team/{team_id}/repos/{owner}/{repo}`.
 
 ```js
-octokit.teams.checkPermissionsForRepoInOrg({
+octokit.rest.teams.checkPermissionsForRepoInOrg({
   org,
   team_slug,
   owner,

@@ -1,6 +1,6 @@
 ---
 name: Update a webhook configuration for an app
-example: octokit.apps.updateWebhookConfigForApp()
+example: octokit.rest.apps.updateWebhookConfigForApp()
 route: PATCH /app/hook/config
 scope: apps
 type: API method
@@ -13,7 +13,7 @@ Updates the webhook configuration for a GitHub App. For more information about c
 You must use a [JWT](https://docs.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint.
 
 ```js
-octokit.apps.updateWebhookConfigForApp();
+octokit.rest.apps.updateWebhookConfigForApp();
 ```
 
 ## Parameters

@@ -1,6 +1,6 @@
 ---
 name: Get large files
-example: octokit.migrations.getLargeFiles({ owner, repo })
+example: octokit.rest.migrations.getLargeFiles({ owner, repo })
 route: GET /repos/{owner}/{repo}/import/large_files
 scope: migrations
 type: API method
@@ -11,7 +11,7 @@ type: API method
 List files larger than 100MB found during the import
 
 ```js
-octokit.migrations.getLargeFiles({
+octokit.rest.migrations.getLargeFiles({
   owner,
   repo,
 });

@@ -1,6 +1,6 @@
 ---
 name: Add assignees to an issue
-example: octokit.issues.addAssignees({ owner, repo, issue_number })
+example: octokit.rest.issues.addAssignees({ owner, repo, issue_number })
 route: POST /repos/{owner}/{repo}/issues/{issue_number}/assignees
 scope: issues
 type: API method
@@ -11,7 +11,7 @@ type: API method
 Adds up to 10 assignees to an issue. Users already assigned to an issue are not replaced.
 
 ```js
-octokit.issues.addAssignees({
+octokit.rest.issues.addAssignees({
   owner,
   repo,
   issue_number,

@@ -7,7 +7,7 @@ const { isDeprecated } = require("./util");
 generateRoutes();
 
 async function generateRoutes() {
-  const endpoints = ENDPOINTS.filter(endpoint => {
+  const endpoints = ENDPOINTS.filter((endpoint) => {
     if (isDeprecated(endpoint)) return false;
 
     return true;
@@ -29,7 +29,7 @@ function template(endpoint) {
     : "";
 
   const parameterRows = endpoint.parameters.map(
-    param =>
+    (param) =>
       `<tr><td>${param.name}</td><td>${param.required ? "yes" : "no"}</td><td>
 
 ${param.description || ""}
@@ -38,10 +38,10 @@ ${param.description || ""}
   );
 
   const requiredParameterNames = endpoint.parameters
-    .filter(parameter => parameter.required)
-    .map(parameter => parameter.name);
+    .filter((parameter) => parameter.required)
+    .map((parameter) => parameter.name);
   const example =
-    `octokit.${endpoint.scope}.${endpoint.id}` +
+    `octokit.rest.${endpoint.scope}.${endpoint.id}` +
     (requiredParameterNames.length
       ? `({
         ${requiredParameterNames.join(",\n")}
@@ -66,9 +66,10 @@ ${param.description || ""}
     ? parametersTable
     : `This endpoint has no parameters`;
 
-const frontmatterExample = example.replace(/\s\s+/g, ' ')
-                                  .replace(/,\n}/g,' }')
-                                  .replace(/\n/g, ' ')
+  const frontmatterExample = example
+    .replace(/\s\s+/g, " ")
+    .replace(/,\n}/g, " }")
+    .replace(/\n/g, " ");
   const content = `
 ---
 name: ${endpoint.name}
@@ -96,6 +97,6 @@ ${parameters}
 See also: [GitHub Developer Guide documentation](${endpoint.documentationUrl}).`;
 
   return prettier.format(content, {
-    parser: "markdown"
+    parser: "markdown",
   });
 }

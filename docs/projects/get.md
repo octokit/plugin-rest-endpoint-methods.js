@@ -1,6 +1,6 @@
 ---
 name: Get a project
-example: octokit.projects.get({ project_id })
+example: octokit.rest.projects.get({ project_id })
 route: GET /projects/{project_id}
 scope: projects
 type: API method
@@ -11,7 +11,7 @@ type: API method
 Gets a project by its `id`. Returns a `404 Not Found` status if projects are disabled. If you do not have sufficient privileges to perform this action, a `401 Unauthorized` or `410 Gone` status is returned.
 
 ```js
-octokit.projects.get({
+octokit.rest.projects.get({
   project_id,
 });
 ```

@@ -1,6 +1,6 @@
 ---
 name: Get team membership for a user
-example: octokit.teams.getMembershipForUserInOrg({ org, team_slug, username })
+example: octokit.rest.teams.getMembershipForUserInOrg({ org, team_slug, username })
 route: GET /orgs/{org}/teams/{team_slug}/memberships/{username}
 scope: teams
 type: API method
@@ -20,7 +20,7 @@ The response contains the `state` of the membership and the member's `role`.
 The `role` for organization owners is set to `maintainer`. For more information about `maintainer` roles, see see [Create a team](https://docs.github.com/rest/reference/teams#create-a-team).
 
 ```js
-octokit.teams.getMembershipForUserInOrg({
+octokit.rest.teams.getMembershipForUserInOrg({
   org,
   team_slug,
   username,

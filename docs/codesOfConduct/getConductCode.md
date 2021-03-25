@@ -1,6 +1,6 @@
 ---
 name: Get a code of conduct
-example: octokit.codesOfConduct.getConductCode({ key })
+example: octokit.rest.codesOfConduct.getConductCode({ key })
 route: GET /codes_of_conduct/{key}
 scope: codesOfConduct
 type: API method
@@ -9,7 +9,7 @@ type: API method
 # Get a code of conduct
 
 ```js
-octokit.codesOfConduct.getConductCode({
+octokit.rest.codesOfConduct.getConductCode({
   key,
 });
 ```

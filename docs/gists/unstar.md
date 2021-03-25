@@ -1,6 +1,6 @@
 ---
 name: Unstar a gist
-example: octokit.gists.unstar({ gist_id })
+example: octokit.rest.gists.unstar({ gist_id })
 route: DELETE /gists/{gist_id}/star
 scope: gists
 type: API method
@@ -9,7 +9,7 @@ type: API method
 # Unstar a gist
 
 ```js
-octokit.gists.unstar({
+octokit.rest.gists.unstar({
   gist_id,
 });
 ```

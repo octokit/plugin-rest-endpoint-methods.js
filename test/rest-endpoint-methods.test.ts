@@ -24,7 +24,7 @@ describe("REST API endpoint methods", () => {
     });
 
     // See https://developer.github.com/v3/repos/#create
-    const { data } = await octokit.repos.createForAuthenticatedUser({
+    const { data } = await octokit.rest.repos.createForAuthenticatedUser({
       name: "my-new-repo",
     });
 
@@ -48,12 +48,12 @@ describe("REST API endpoint methods", () => {
     });
 
     // See https://developer.github.com/v3/repos/#create-a-repository-dispatch-event
-    const { data } = await octokit.codesOfConduct.getAllCodesOfConduct();
+    const { data } = await octokit.rest.codesOfConduct.getAllCodesOfConduct();
 
     expect(data[0].key).toStrictEqual("mit");
   });
 
-  it("octokit.markdown.renderRaw()", async () => {
+  it("octokit.rest.markdown.renderRaw()", async () => {
     const mock = fetchMock.sandbox().postOnce(
       "path:/markdown/raw",
       { ok: true },
@@ -75,7 +75,7 @@ describe("REST API endpoint methods", () => {
       },
     });
 
-    return octokit.markdown
+    return octokit.rest.markdown
       .renderRaw({
         data: "# Hello, world!",
       })
@@ -86,7 +86,7 @@ describe("REST API endpoint methods", () => {
       });
   });
 
-  it("octokit.repos.uploadReleaseAsset()", async () => {
+  it("octokit.rest.repos.uploadReleaseAsset()", async () => {
     const mock = fetchMock.sandbox().postOnce(
       "https://uploads.github.com/repos/octocat/hello-world/releases/123/assets",
       { ok: true },
@@ -113,7 +113,7 @@ describe("REST API endpoint methods", () => {
       },
     });
 
-    return octokit.repos
+    return octokit.rest.repos
       .uploadReleaseAsset({
         headers: {
           "content-type": "text/plain",
@@ -132,7 +132,7 @@ describe("REST API endpoint methods", () => {
       });
   });
 
-  it("octokit.repos.addProtectedBranchRequiredStatusChecksContexts(): `contexts` option value is sent as request body without namespace", async () => {
+  it("octokit.rest.repos.addProtectedBranchRequiredStatusChecksContexts(): `contexts` option value is sent as request body without namespace", async () => {
     const mock = fetchMock.sandbox().postOnce(
       "https://api.github.com/repos/octocat/hello-world/branches/latest/protection/required_status_checks/contexts",
       { ok: true },
@@ -149,7 +149,7 @@ describe("REST API endpoint methods", () => {
       },
     });
 
-    return octokit.repos
+    return octokit.rest.repos
       .addStatusCheckContexts({
         owner: "octocat",
         repo: "hello-world",
@@ -163,7 +163,7 @@ describe("REST API endpoint methods", () => {
       });
   });
 
-  it("octokit.apps.listInstallations(): method without options (octokit/rest.js#818)", async () => {
+  it("octokit.rest.apps.listInstallations(): method without options (octokit/rest.js#818)", async () => {
     const mock = fetchMock
       .sandbox()
       .getOnce("https://api.github.com/app/installations", { ok: true });
@@ -176,6 +176,37 @@ describe("REST API endpoint methods", () => {
       },
     });
 
-    return octokit.apps.listInstallations();
+    return octokit.rest.apps.listInstallations();
+  });
+
+  // besides setting `octokit.rest.*`, the plugin is also setting the same methods
+  // directly on `octokit.*` for legacy reasons. We will deprecate the `octokit.*`
+  // methods in future, but for now we just make sure they are set
+
+  it("octokit.repos.createForAuthenticatedUser()", async () => {
+    const mock = fetchMock.sandbox().post(
+      "path:/user/repos",
+      { id: 1 },
+      {
+        body: {
+          name: "my-new-repo",
+        },
+      }
+    );
+
+    const MyOctokit = Octokit.plugin(restEndpointMethods);
+    const octokit = new MyOctokit({
+      auth: "secret123",
+      request: {
+        fetch: mock,
+      },
+    });
+
+    // See https://developer.github.com/v3/repos/#create
+    const { data } = await octokit.repos.createForAuthenticatedUser({
+      name: "my-new-repo",
+    });
+
+    expect(data.id).toStrictEqual(1);
   });
 });

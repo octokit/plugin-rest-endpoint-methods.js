@@ -1,6 +1,6 @@
 ---
 name: Create a project column
-example: octokit.projects.createColumn({ project_id, name })
+example: octokit.rest.projects.createColumn({ project_id, name })
 route: POST /projects/{project_id}/columns
 scope: projects
 type: API method
@@ -9,7 +9,7 @@ type: API method
 # Create a project column
 
 ```js
-octokit.projects.createColumn({
+octokit.rest.projects.createColumn({
   project_id,
   name,
 });

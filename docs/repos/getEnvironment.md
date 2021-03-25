@@ -1,6 +1,6 @@
 ---
 name: Get an environment
-example: octokit.repos.getEnvironment({ owner, repo, environment_name })
+example: octokit.rest.repos.getEnvironment({ owner, repo, environment_name })
 route: GET /repos/{owner}/{repo}/environments/{environment_name}
 scope: repos
 type: API method
@@ -11,7 +11,7 @@ type: API method
 Anyone with read access to the repository can use this endpoint. If the repository is private, you must use an access token with the `repo` scope. GitHub Apps must have the `actions:read` permission to use this endpoint.
 
 ```js
-octokit.repos.getEnvironment({
+octokit.rest.repos.getEnvironment({
   owner,
   repo,
   environment_name,

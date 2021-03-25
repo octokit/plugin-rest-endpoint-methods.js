@@ -1,6 +1,6 @@
 ---
 name: Get repository clones
-example: octokit.repos.getClones({ owner, repo })
+example: octokit.rest.repos.getClones({ owner, repo })
 route: GET /repos/{owner}/{repo}/traffic/clones
 scope: repos
 type: API method
@@ -11,7 +11,7 @@ type: API method
 Get the total number of clones and breakdown per day or week for the last 14 days. Timestamps are aligned to UTC midnight of the beginning of the day or week. Week begins on Monday.
 
 ```js
-octokit.repos.getClones({
+octokit.rest.repos.getClones({
   owner,
   repo,
 });

@@ -1,6 +1,6 @@
 ---
 name: Get a thread
-example: octokit.activity.getThread({ thread_id })
+example: octokit.rest.activity.getThread({ thread_id })
 route: GET /notifications/threads/{thread_id}
 scope: activity
 type: API method
@@ -9,7 +9,7 @@ type: API method
 # Get a thread
 
 ```js
-octokit.activity.getThread({
+octokit.rest.activity.getThread({
   thread_id,
 });
 ```

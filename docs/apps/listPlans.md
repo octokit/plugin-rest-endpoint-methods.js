@@ -1,6 +1,6 @@
 ---
 name: List plans
-example: octokit.apps.listPlans()
+example: octokit.rest.apps.listPlans()
 route: GET /marketplace_listing/plans
 scope: apps
 type: API method
@@ -13,7 +13,7 @@ Lists all plans that are part of your GitHub Marketplace listing.
 GitHub Apps must use a [JWT](https://docs.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint. OAuth Apps must use [basic authentication](https://docs.github.com/rest/overview/other-authentication-methods#basic-authentication) with their client ID and client secret to access this endpoint.
 
 ```js
-octokit.apps.listPlans();
+octokit.rest.apps.listPlans();
 ```
 
 ## Parameters

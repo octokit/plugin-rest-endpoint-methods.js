@@ -1,6 +1,6 @@
 ---
 name: List reactions for an issue
-example: octokit.reactions.listForIssue({ owner, repo, issue_number })
+example: octokit.rest.reactions.listForIssue({ owner, repo, issue_number })
 route: GET /repos/{owner}/{repo}/issues/{issue_number}/reactions
 scope: reactions
 type: API method
@@ -11,7 +11,7 @@ type: API method
 List the reactions to an [issue](https://docs.github.com/rest/reference/issues).
 
 ```js
-octokit.reactions.listForIssue({
+octokit.rest.reactions.listForIssue({
   owner,
   repo,
   issue_number,

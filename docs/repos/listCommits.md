@@ -1,6 +1,6 @@
 ---
 name: List commits
-example: octokit.repos.listCommits({ owner, repo })
+example: octokit.rest.repos.listCommits({ owner, repo })
 route: GET /repos/{owner}/{repo}/commits
 scope: repos
 type: API method
@@ -38,7 +38,7 @@ These are the possible values for `reason` in the `verification` object:
 | `valid`                  | None of the above errors applied, so the signature is considered to be verified.                                                  |
 
 ```js
-octokit.repos.listCommits({
+octokit.rest.repos.listCommits({
   owner,
   repo,
 });

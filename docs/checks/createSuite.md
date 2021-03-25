@@ -1,6 +1,6 @@
 ---
 name: Create a check suite
-example: octokit.checks.createSuite({ owner, repo, head_sha })
+example: octokit.rest.checks.createSuite({ owner, repo, head_sha })
 route: POST /repos/{owner}/{repo}/check-suites
 scope: checks
 type: API method
@@ -13,7 +13,7 @@ type: API method
 By default, check suites are automatically created when you create a [check run](https://docs.github.com/rest/reference/checks#check-runs). You only need to use this endpoint for manually creating check suites when you've disabled automatic creation using "[Update repository preferences for check suites](https://docs.github.com/rest/reference/checks#update-repository-preferences-for-check-suites)". Your GitHub App must have the `checks:write` permission to create check suites.
 
 ```js
-octokit.checks.createSuite({
+octokit.rest.checks.createSuite({
   owner,
   repo,
   head_sha,

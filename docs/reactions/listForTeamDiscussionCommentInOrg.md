@@ -1,6 +1,6 @@
 ---
 name: List reactions for a team discussion comment
-example: octokit.reactions.listForTeamDiscussionCommentInOrg({ org, team_slug, discussion_number, comment_number })
+example: octokit.rest.reactions.listForTeamDiscussionCommentInOrg({ org, team_slug, discussion_number, comment_number })
 route: GET /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}/reactions
 scope: reactions
 type: API method
@@ -13,7 +13,7 @@ List the reactions to a [team discussion comment](https://docs.github.com/rest/r
 **Note:** You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/:org_id/team/:team_id/discussions/:discussion_number/comments/:comment_number/reactions`.
 
 ```js
-octokit.reactions.listForTeamDiscussionCommentInOrg({
+octokit.rest.reactions.listForTeamDiscussionCommentInOrg({
   org,
   team_slug,
   discussion_number,

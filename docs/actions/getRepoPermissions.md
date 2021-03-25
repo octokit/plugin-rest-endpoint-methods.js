@@ -1,6 +1,6 @@
 ---
 name: Get GitHub Actions permissions for a repository
-example: octokit.actions.getRepoPermissions({ owner, repo })
+example: octokit.rest.actions.getRepoPermissions({ owner, repo })
 route: GET /repos/{owner}/{repo}/actions/permissions
 scope: actions
 type: API method
@@ -16,7 +16,7 @@ You must authenticate using an access token with the `repo` scope to use this
 endpoint. GitHub Apps must have the `administration` repository permission to use this API.
 
 ```js
-octokit.actions.getRepoPermissions({
+octokit.rest.actions.getRepoPermissions({
   owner,
   repo,
 });

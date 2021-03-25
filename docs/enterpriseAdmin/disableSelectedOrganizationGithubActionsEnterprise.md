@@ -1,6 +1,6 @@
 ---
 name: Disable a selected organization for GitHub Actions in an enterprise
-example: octokit.enterpriseAdmin.disableSelectedOrganizationGithubActionsEnterprise({ enterprise, org_id })
+example: octokit.rest.enterpriseAdmin.disableSelectedOrganizationGithubActionsEnterprise({ enterprise, org_id })
 route: DELETE /enterprises/{enterprise}/actions/permissions/organizations/{org_id}
 scope: enterpriseAdmin
 type: API method
@@ -13,10 +13,12 @@ Removes an organization from the list of selected organizations that are enabled
 You must authenticate using an access token with the `admin:enterprise` scope to use this endpoint.
 
 ```js
-octokit.enterpriseAdmin.disableSelectedOrganizationGithubActionsEnterprise({
-  enterprise,
-  org_id,
-});
+octokit.rest.enterpriseAdmin.disableSelectedOrganizationGithubActionsEnterprise(
+  {
+    enterprise,
+    org_id,
+  }
+);
 ```
 
 ## Parameters

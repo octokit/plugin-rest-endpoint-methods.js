@@ -1,6 +1,6 @@
 ---
 name: List failed organization invitations
-example: octokit.orgs.listFailedInvitations({ org })
+example: octokit.rest.orgs.listFailedInvitations({ org })
 route: GET /orgs/{org}/failed_invitations
 scope: orgs
 type: API method
@@ -11,7 +11,7 @@ type: API method
 The return hash contains `failed_at` and `failed_reason` fields which represent the time at which the invitation failed and the reason for the failure.
 
 ```js
-octokit.orgs.listFailedInvitations({
+octokit.rest.orgs.listFailedInvitations({
   org,
 });
 ```

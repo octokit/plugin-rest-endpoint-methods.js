@@ -1,6 +1,6 @@
 ---
 name: Search code
-example: octokit.search.code({ q })
+example: octokit.rest.search.code({ q })
 route: GET /search/code
 scope: search
 type: API method
@@ -27,7 +27,7 @@ Due to the complexity of searching code, there are a few restrictions on how sea
 - You must always include at least one search term when searching source code. For example, searching for [`language:go`](https://github.com/search?utf8=%E2%9C%93&q=language%3Ago&type=Code) is not valid, while [`amazing language:go`](https://github.com/search?utf8=%E2%9C%93&q=amazing+language%3Ago&type=Code) is.
 
 ```js
-octokit.search.code({
+octokit.rest.search.code({
   q,
 });
 ```

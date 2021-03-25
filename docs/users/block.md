@@ -1,6 +1,6 @@
 ---
 name: Block a user
-example: octokit.users.block({ username })
+example: octokit.rest.users.block({ username })
 route: PUT /user/blocks/{username}
 scope: users
 type: API method
@@ -9,7 +9,7 @@ type: API method
 # Block a user
 
 ```js
-octokit.users.block({
+octokit.rest.users.block({
   username,
 });
 ```

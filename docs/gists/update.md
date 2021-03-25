@@ -1,6 +1,6 @@
 ---
 name: Update a gist
-example: octokit.gists.update({ gist_id })
+example: octokit.rest.gists.update({ gist_id })
 route: PATCH /gists/{gist_id}
 scope: gists
 type: API method
@@ -11,7 +11,7 @@ type: API method
 Allows you to update or delete a gist file and rename gist files. Files from the previous version of the gist that aren't explicitly changed during an edit are unchanged.
 
 ```js
-octokit.gists.update({
+octokit.rest.gists.update({
   gist_id,
 });
 ```

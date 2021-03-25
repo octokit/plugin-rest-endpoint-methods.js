@@ -1,6 +1,6 @@
 ---
 name: Restore a package for an organization
-example: octokit.packages.restorePackageForOrg({ package_type, package_name, org })
+example: octokit.rest.packages.restorePackageForOrg({ package_type, package_name, org })
 route: POST /orgs/{org}/packages/{package_type}/{package_name}/restore{?token}
 scope: packages
 type: API method
@@ -21,7 +21,7 @@ To use this endpoint, you must have admin permissions in the organization and au
 - If `package_type` is `container`, you must also have admin permissions to the container that you want to restore.
 
 ```js
-octokit.packages.restorePackageForOrg({
+octokit.rest.packages.restorePackageForOrg({
   package_type,
   package_name,
   org,

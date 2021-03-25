@@ -1,6 +1,6 @@
 ---
 name: Delete an environment
-example: octokit.repos.deleteAnEnvironment({ owner, repo, environment_name })
+example: octokit.rest.repos.deleteAnEnvironment({ owner, repo, environment_name })
 route: DELETE /repos/{owner}/{repo}/environments/{environment_name}
 scope: repos
 type: API method
@@ -11,7 +11,7 @@ type: API method
 You must authenticate using an access token with the repo scope to use this endpoint.
 
 ```js
-octokit.repos.deleteAnEnvironment({
+octokit.rest.repos.deleteAnEnvironment({
   owner,
   repo,
   environment_name,

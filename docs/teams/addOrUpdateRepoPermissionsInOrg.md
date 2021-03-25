@@ -1,6 +1,6 @@
 ---
 name: Add or update team repository permissions
-example: octokit.teams.addOrUpdateRepoPermissionsInOrg({ org, team_slug, owner, repo })
+example: octokit.rest.teams.addOrUpdateRepoPermissionsInOrg({ org, team_slug, owner, repo })
 route: PUT /orgs/{org}/teams/{team_slug}/repos/{owner}/{repo}
 scope: teams
 type: API method
@@ -15,7 +15,7 @@ To add a repository to a team or update the team's permission on a repository, t
 For more information about the permission levels, see "[Repository permission levels for an organization](https://help.github.com/en/github/setting-up-and-managing-organizations-and-teams/repository-permission-levels-for-an-organization#permission-levels-for-repositories-owned-by-an-organization)".
 
 ```js
-octokit.teams.addOrUpdateRepoPermissionsInOrg({
+octokit.rest.teams.addOrUpdateRepoPermissionsInOrg({
   org,
   team_slug,
   owner,

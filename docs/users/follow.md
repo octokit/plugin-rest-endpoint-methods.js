@@ -1,6 +1,6 @@
 ---
 name: Follow a user
-example: octokit.users.follow({ username })
+example: octokit.rest.users.follow({ username })
 route: PUT /user/following/{username}
 scope: users
 type: API method
@@ -13,7 +13,7 @@ Note that you'll need to set `Content-Length` to zero when calling out to this e
 Following a user requires the user to be logged in and authenticated with basic auth or OAuth with the `user:follow` scope.
 
 ```js
-octokit.users.follow({
+octokit.rest.users.follow({
   username,
 });
 ```

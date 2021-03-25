@@ -1,6 +1,6 @@
 ---
 name: Get a secret scanning alert
-example: octokit.secretScanning.getAlert({ owner, repo, alert_number })
+example: octokit.rest.secretScanning.getAlert({ owner, repo, alert_number })
 route: GET /repos/{owner}/{repo}/secret-scanning/alerts/{alert_number}
 scope: secretScanning
 type: API method
@@ -13,7 +13,7 @@ Gets a single secret scanning alert detected in a private repository. To use thi
 GitHub Apps must have the `secret_scanning_alerts` read permission to use this endpoint.
 
 ```js
-octokit.secretScanning.getAlert({
+octokit.rest.secretScanning.getAlert({
   owner,
   repo,
   alert_number,

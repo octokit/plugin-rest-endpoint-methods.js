@@ -1,6 +1,6 @@
 ---
 name: Create a deploy key
-example: octokit.repos.createDeployKey({ owner, repo, key })
+example: octokit.rest.repos.createDeployKey({ owner, repo, key })
 route: POST /repos/{owner}/{repo}/keys
 scope: repos
 type: API method
@@ -11,7 +11,7 @@ type: API method
 You can create a read-only deploy key.
 
 ```js
-octokit.repos.createDeployKey({
+octokit.rest.repos.createDeployKey({
   owner,
   repo,
   key,

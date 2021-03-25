@@ -1,6 +1,6 @@
 ---
 name: List check runs for a Git reference
-example: octokit.checks.listForRef({ owner, repo, ref })
+example: octokit.rest.checks.listForRef({ owner, repo, ref })
 route: GET /repos/{owner}/{repo}/commits/{ref}/check-runs
 scope: checks
 type: API method
@@ -13,7 +13,7 @@ type: API method
 Lists check runs for a commit ref. The `ref` can be a SHA, branch name, or a tag name. GitHub Apps must have the `checks:read` permission on a private repository or pull access to a public repository to get check runs. OAuth Apps and authenticated users must have the `repo` scope to get check runs in a private repository.
 
 ```js
-octokit.checks.listForRef({
+octokit.rest.checks.listForRef({
   owner,
   repo,
   ref,

@@ -1,6 +1,6 @@
 ---
 name: List environment secrets
-example: octokit.actions.listEnvironmentSecrets({ repository_id, environment_name })
+example: octokit.rest.actions.listEnvironmentSecrets({ repository_id, environment_name })
 route: GET /repositories/{repository_id}/environments/{environment_name}/secrets
 scope: actions
 type: API method
@@ -11,7 +11,7 @@ type: API method
 Lists all secrets available in an environment without revealing their encrypted values. You must authenticate using an access token with the `repo` scope to use this endpoint. GitHub Apps must have the `secrets` repository permission to use this endpoint.
 
 ```js
-octokit.actions.listEnvironmentSecrets({
+octokit.rest.actions.listEnvironmentSecrets({
   repository_id,
   environment_name,
 });

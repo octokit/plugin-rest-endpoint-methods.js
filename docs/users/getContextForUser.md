@@ -1,6 +1,6 @@
 ---
 name: Get contextual information for a user
-example: octokit.users.getContextForUser({ username })
+example: octokit.rest.users.getContextForUser({ username })
 route: GET /users/{username}/hovercard
 scope: users
 type: API method
@@ -18,7 +18,7 @@ The `subject_type` and `subject_id` parameters provide context for the person's 
 ```
 
 ```js
-octokit.users.getContextForUser({
+octokit.rest.users.getContextForUser({
   username,
 });
 ```

@@ -1,6 +1,6 @@
 ---
 name: Get a repository webhook
-example: octokit.repos.getWebhook({ owner, repo, hook_id })
+example: octokit.rest.repos.getWebhook({ owner, repo, hook_id })
 route: GET /repos/{owner}/{repo}/hooks/{hook_id}
 scope: repos
 type: API method
@@ -11,7 +11,7 @@ type: API method
 Returns a webhook configured in a repository. To get only the webhook `config` properties, see "[Get a webhook configuration for a repository](/rest/reference/repos#get-a-webhook-configuration-for-a-repository)."
 
 ```js
-octokit.repos.getWebhook({
+octokit.rest.repos.getWebhook({
   owner,
   repo,
   hook_id,

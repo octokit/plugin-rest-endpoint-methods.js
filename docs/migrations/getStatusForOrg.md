@@ -1,6 +1,6 @@
 ---
 name: Get an organization migration status
-example: octokit.migrations.getStatusForOrg({ org, migration_id })
+example: octokit.rest.migrations.getStatusForOrg({ org, migration_id })
 route: GET /orgs/{org}/migrations/{migration_id}
 scope: migrations
 type: API method
@@ -18,7 +18,7 @@ The `state` of a migration can be one of the following values:
 - `failed`, which means the migration failed.
 
 ```js
-octokit.migrations.getStatusForOrg({
+octokit.rest.migrations.getStatusForOrg({
   org,
   migration_id,
 });

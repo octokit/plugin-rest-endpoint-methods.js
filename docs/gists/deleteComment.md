@@ -1,6 +1,6 @@
 ---
 name: Delete a gist comment
-example: octokit.gists.deleteComment({ gist_id, comment_id })
+example: octokit.rest.gists.deleteComment({ gist_id, comment_id })
 route: DELETE /gists/{gist_id}/comments/{comment_id}
 scope: gists
 type: API method
@@ -9,7 +9,7 @@ type: API method
 # Delete a gist comment
 
 ```js
-octokit.gists.deleteComment({
+octokit.rest.gists.deleteComment({
   gist_id,
   comment_id,
 });

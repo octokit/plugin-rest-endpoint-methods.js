@@ -1,6 +1,6 @@
 ---
 name: Delete an organization secret
-example: octokit.actions.deleteOrgSecret({ org, secret_name })
+example: octokit.rest.actions.deleteOrgSecret({ org, secret_name })
 route: DELETE /orgs/{org}/actions/secrets/{secret_name}
 scope: actions
 type: API method
@@ -11,7 +11,7 @@ type: API method
 Deletes a secret in an organization using the secret name. You must authenticate using an access token with the `admin:org` scope to use this endpoint. GitHub Apps must have the `secrets` organization permission to use this endpoint.
 
 ```js
-octokit.actions.deleteOrgSecret({
+octokit.rest.actions.deleteOrgSecret({
   org,
   secret_name,
 });

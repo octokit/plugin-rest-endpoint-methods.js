@@ -1,6 +1,6 @@
 ---
 name: Get workflow run usage
-example: octokit.actions.getWorkflowRunUsage({ owner, repo, run_id })
+example: octokit.rest.actions.getWorkflowRunUsage({ owner, repo, run_id })
 route: GET /repos/{owner}/{repo}/actions/runs/{run_id}/timing
 scope: actions
 type: API method
@@ -13,7 +13,7 @@ Gets the number of billable minutes and total run time for a specific workflow r
 Anyone with read access to the repository can use this endpoint. If the repository is private you must use an access token with the `repo` scope. GitHub Apps must have the `actions:read` permission to use this endpoint.
 
 ```js
-octokit.actions.getWorkflowRunUsage({
+octokit.rest.actions.getWorkflowRunUsage({
   owner,
   repo,
   run_id,

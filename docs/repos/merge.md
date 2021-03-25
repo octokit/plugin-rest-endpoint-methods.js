@@ -1,6 +1,6 @@
 ---
 name: Merge a branch
-example: octokit.repos.merge({ owner, repo, base, head })
+example: octokit.rest.repos.merge({ owner, repo, base, head })
 route: POST /repos/{owner}/{repo}/merges
 scope: repos
 type: API method
@@ -9,7 +9,7 @@ type: API method
 # Merge a branch
 
 ```js
-octokit.repos.merge({
+octokit.rest.repos.merge({
   owner,
   repo,
   base,

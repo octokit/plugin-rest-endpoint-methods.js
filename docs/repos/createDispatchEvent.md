@@ -1,6 +1,6 @@
 ---
 name: Create a repository dispatch event
-example: octokit.repos.createDispatchEvent({ owner, repo, event_type })
+example: octokit.rest.repos.createDispatchEvent({ owner, repo, event_type })
 route: POST /repos/{owner}/{repo}/dispatches
 scope: repos
 type: API method
@@ -20,7 +20,7 @@ This endpoint requires write access to the repository by providing either:
 This input example shows how you can use the `client_payload` as a test to debug your workflow.
 
 ```js
-octokit.repos.createDispatchEvent({
+octokit.rest.repos.createDispatchEvent({
   owner,
   repo,
   event_type,

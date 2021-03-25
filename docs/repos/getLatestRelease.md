@@ -1,6 +1,6 @@
 ---
 name: Get the latest release
-example: octokit.repos.getLatestRelease({ owner, repo })
+example: octokit.rest.repos.getLatestRelease({ owner, repo })
 route: GET /repos/{owner}/{repo}/releases/latest
 scope: repos
 type: API method
@@ -13,7 +13,7 @@ View the latest published full release for the repository.
 The latest release is the most recent non-prerelease, non-draft release, sorted by the `created_at` attribute. The `created_at` attribute is the date of the commit used for the release, and not the date when the release was drafted or published.
 
 ```js
-octokit.repos.getLatestRelease({
+octokit.rest.repos.getLatestRelease({
   owner,
   repo,
 });

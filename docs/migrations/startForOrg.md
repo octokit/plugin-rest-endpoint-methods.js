@@ -1,6 +1,6 @@
 ---
 name: Start an organization migration
-example: octokit.migrations.startForOrg({ org, repositories })
+example: octokit.rest.migrations.startForOrg({ org, repositories })
 route: POST /orgs/{org}/migrations
 scope: migrations
 type: API method
@@ -11,7 +11,7 @@ type: API method
 Initiates the generation of a migration archive.
 
 ```js
-octokit.migrations.startForOrg({
+octokit.rest.migrations.startForOrg({
   org,
   repositories,
 });

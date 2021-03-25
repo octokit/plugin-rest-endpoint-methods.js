@@ -1,6 +1,6 @@
 ---
 name: List labels for issues in a milestone
-example: octokit.issues.listLabelsForMilestone({ owner, repo, milestone_number })
+example: octokit.rest.issues.listLabelsForMilestone({ owner, repo, milestone_number })
 route: GET /repos/{owner}/{repo}/milestones/{milestone_number}/labels
 scope: issues
 type: API method
@@ -9,7 +9,7 @@ type: API method
 # List labels for issues in a milestone
 
 ```js
-octokit.issues.listLabelsForMilestone({
+octokit.rest.issues.listLabelsForMilestone({
   owner,
   repo,
   milestone_number,

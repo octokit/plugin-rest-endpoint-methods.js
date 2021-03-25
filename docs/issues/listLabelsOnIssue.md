@@ -1,6 +1,6 @@
 ---
 name: List labels for an issue
-example: octokit.issues.listLabelsOnIssue({ owner, repo, issue_number })
+example: octokit.rest.issues.listLabelsOnIssue({ owner, repo, issue_number })
 route: GET /repos/{owner}/{repo}/issues/{issue_number}/labels
 scope: issues
 type: API method
@@ -9,7 +9,7 @@ type: API method
 # List labels for an issue
 
 ```js
-octokit.issues.listLabelsOnIssue({
+octokit.rest.issues.listLabelsOnIssue({
   owner,
   repo,
   issue_number,

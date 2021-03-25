@@ -1,6 +1,6 @@
 ---
 name: Star a repository for the authenticated user
-example: octokit.activity.starRepoForAuthenticatedUser({ owner, repo })
+example: octokit.rest.activity.starRepoForAuthenticatedUser({ owner, repo })
 route: PUT /user/starred/{owner}/{repo}
 scope: activity
 type: API method
@@ -11,7 +11,7 @@ type: API method
 Note that you'll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see "[HTTP verbs](https://docs.github.com/rest/overview/resources-in-the-rest-api#http-verbs)."
 
 ```js
-octokit.activity.starRepoForAuthenticatedUser({
+octokit.rest.activity.starRepoForAuthenticatedUser({
   owner,
   repo,
 });

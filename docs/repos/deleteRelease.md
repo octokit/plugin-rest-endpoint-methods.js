@@ -1,6 +1,6 @@
 ---
 name: Delete a release
-example: octokit.repos.deleteRelease({ owner, repo, release_id })
+example: octokit.rest.repos.deleteRelease({ owner, repo, release_id })
 route: DELETE /repos/{owner}/{repo}/releases/{release_id}
 scope: repos
 type: API method
@@ -11,7 +11,7 @@ type: API method
 Users with push access to the repository can delete a release.
 
 ```js
-octokit.repos.deleteRelease({
+octokit.rest.repos.deleteRelease({
   owner,
   repo,
   release_id,

@@ -1,6 +1,6 @@
 ---
 name: Search repositories
-example: octokit.search.repos({ q })
+example: octokit.rest.search.repos({ q })
 route: GET /search/repositories
 scope: search
 type: API method
@@ -23,7 +23,7 @@ When you include the `mercy` preview header, you can also search for multiple to
 `q=topic:ruby+topic:rails`
 
 ```js
-octokit.search.repos({
+octokit.rest.search.repos({
   q,
 });
 ```

@@ -1,6 +1,6 @@
 ---
 name: Delete an issue comment reaction
-example: octokit.reactions.deleteForIssueComment({ owner, repo, comment_id, reaction_id })
+example: octokit.rest.reactions.deleteForIssueComment({ owner, repo, comment_id, reaction_id })
 route: DELETE /repos/{owner}/{repo}/issues/comments/{comment_id}/reactions/{reaction_id}
 scope: reactions
 type: API method
@@ -13,7 +13,7 @@ type: API method
 Delete a reaction to an [issue comment](https://docs.github.com/rest/reference/issues#comments).
 
 ```js
-octokit.reactions.deleteForIssueComment({
+octokit.rest.reactions.deleteForIssueComment({
   owner,
   repo,
   comment_id,

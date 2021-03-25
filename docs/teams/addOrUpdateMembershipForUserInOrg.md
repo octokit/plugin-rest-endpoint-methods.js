@@ -1,6 +1,6 @@
 ---
 name: Add or update team membership for a user
-example: octokit.teams.addOrUpdateMembershipForUserInOrg({ org, team_slug, username })
+example: octokit.rest.teams.addOrUpdateMembershipForUserInOrg({ org, team_slug, username })
 route: PUT /orgs/{org}/teams/{team_slug}/memberships/{username}
 scope: teams
 type: API method
@@ -21,7 +21,7 @@ If the user is already a member of the team, this endpoint will update the role 
 **Note:** You can also specify a team by `org_id` and `team_id` using the route `PUT /organizations/{org_id}/team/{team_id}/memberships/{username}`.
 
 ```js
-octokit.teams.addOrUpdateMembershipForUserInOrg({
+octokit.rest.teams.addOrUpdateMembershipForUserInOrg({
   org,
   team_slug,
   username,

@@ -1,6 +1,6 @@
 ---
 name: Delete an app authorization
-example: octokit.apps.deleteAuthorization({ client_id })
+example: octokit.rest.apps.deleteAuthorization({ client_id })
 route: DELETE /applications/{client_id}/grant
 scope: apps
 type: API method
@@ -12,7 +12,7 @@ OAuth application owners can revoke a grant for their OAuth application and a sp
 Deleting an OAuth application's grant will also delete all OAuth tokens associated with the application for the user. Once deleted, the application will have no access to the user's account and will no longer be listed on [the application authorizations settings screen within GitHub](https://github.com/settings/applications#authorized).
 
 ```js
-octokit.apps.deleteAuthorization({
+octokit.rest.apps.deleteAuthorization({
   client_id,
 });
 ```

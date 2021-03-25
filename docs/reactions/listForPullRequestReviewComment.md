@@ -1,6 +1,6 @@
 ---
 name: List reactions for a pull request review comment
-example: octokit.reactions.listForPullRequestReviewComment({ owner, repo, comment_id })
+example: octokit.rest.reactions.listForPullRequestReviewComment({ owner, repo, comment_id })
 route: GET /repos/{owner}/{repo}/pulls/comments/{comment_id}/reactions
 scope: reactions
 type: API method
@@ -11,7 +11,7 @@ type: API method
 List the reactions to a [pull request review comment](https://docs.github.com/rest/reference/pulls#review-comments).
 
 ```js
-octokit.reactions.listForPullRequestReviewComment({
+octokit.rest.reactions.listForPullRequestReviewComment({
   owner,
   repo,
   comment_id,

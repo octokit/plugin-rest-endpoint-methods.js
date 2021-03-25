@@ -1,6 +1,6 @@
 ---
 name: Review pending deployments for a workflow run
-example: octokit.actions.reviewPendingDeploymentsForRun({ owner, repo, run_id, environment_ids, state, comment })
+example: octokit.rest.actions.reviewPendingDeploymentsForRun({ owner, repo, run_id, environment_ids, state, comment })
 route: POST /repos/{owner}/{repo}/actions/runs/{run_id}/pending_deployments
 scope: actions
 type: API method
@@ -13,7 +13,7 @@ Approve or reject pending deployments that are waiting on approval by a required
 Anyone with read access to the repository contents and deployments can use this endpoint.
 
 ```js
-octokit.actions.reviewPendingDeploymentsForRun({
+octokit.rest.actions.reviewPendingDeploymentsForRun({
   owner,
   repo,
   run_id,

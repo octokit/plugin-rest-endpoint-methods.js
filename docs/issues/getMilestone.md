@@ -1,6 +1,6 @@
 ---
 name: Get a milestone
-example: octokit.issues.getMilestone({ owner, repo, milestone_number })
+example: octokit.rest.issues.getMilestone({ owner, repo, milestone_number })
 route: GET /repos/{owner}/{repo}/milestones/{milestone_number}
 scope: issues
 type: API method
@@ -9,7 +9,7 @@ type: API method
 # Get a milestone
 
 ```js
-octokit.issues.getMilestone({
+octokit.rest.issues.getMilestone({
   owner,
   repo,
   milestone_number,

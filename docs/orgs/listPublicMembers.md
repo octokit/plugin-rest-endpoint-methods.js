@@ -1,6 +1,6 @@
 ---
 name: List public organization members
-example: octokit.orgs.listPublicMembers({ org })
+example: octokit.rest.orgs.listPublicMembers({ org })
 route: GET /orgs/{org}/public_members
 scope: orgs
 type: API method
@@ -11,7 +11,7 @@ type: API method
 Members of an organization can choose to have their membership publicized or not.
 
 ```js
-octokit.orgs.listPublicMembers({
+octokit.rest.orgs.listPublicMembers({
   org,
 });
 ```

@@ -1,6 +1,6 @@
 ---
 name: List assignees
-example: octokit.issues.listAssignees({ owner, repo })
+example: octokit.rest.issues.listAssignees({ owner, repo })
 route: GET /repos/{owner}/{repo}/assignees
 scope: issues
 type: API method
@@ -11,7 +11,7 @@ type: API method
 Lists the [available assignees](https://help.github.com/articles/assigning-issues-and-pull-requests-to-other-github-users/) for issues in a repository.
 
 ```js
-octokit.issues.listAssignees({
+octokit.rest.issues.listAssignees({
   owner,
   repo,
 });

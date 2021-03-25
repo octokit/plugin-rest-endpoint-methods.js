@@ -1,6 +1,6 @@
 ---
 name: Get GitHub Actions permissions for an organization
-example: octokit.actions.getGithubActionsPermissionsOrganization({ org })
+example: octokit.rest.actions.getGithubActionsPermissionsOrganization({ org })
 route: GET /orgs/{org}/actions/permissions
 scope: actions
 type: API method
@@ -13,7 +13,7 @@ Gets the GitHub Actions permissions policy for repositories and allowed actions 
 You must authenticate using an access token with the `admin:org` scope to use this endpoint. GitHub Apps must have the `administration` organization permission to use this API.
 
 ```js
-octokit.actions.getGithubActionsPermissionsOrganization({
+octokit.rest.actions.getGithubActionsPermissionsOrganization({
   org,
 });
 ```

@@ -1,6 +1,6 @@
 ---
 name: Download a repository archive (zip)
-example: octokit.repos.downloadZipballArchive({ owner, repo, ref })
+example: octokit.rest.repos.downloadZipballArchive({ owner, repo, ref })
 route: GET /repos/{owner}/{repo}/zipball/{ref}
 scope: repos
 type: API method
@@ -14,7 +14,7 @@ the `Location` header to make a second `GET` request.
 **Note**: For private repositories, these links are temporary and expire after five minutes.
 
 ```js
-octokit.repos.downloadZipballArchive({
+octokit.rest.repos.downloadZipballArchive({
   owner,
   repo,
   ref,

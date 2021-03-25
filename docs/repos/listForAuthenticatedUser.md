@@ -1,6 +1,6 @@
 ---
 name: List repositories for the authenticated user
-example: octokit.repos.listForAuthenticatedUser()
+example: octokit.rest.repos.listForAuthenticatedUser()
 route: GET /user/repos
 scope: repos
 type: API method
@@ -13,7 +13,7 @@ Lists repositories that the authenticated user has explicit permission (`:read`,
 The authenticated user has explicit permission to access repositories they own, repositories where they are a collaborator, and repositories that they can access through an organization membership.
 
 ```js
-octokit.repos.listForAuthenticatedUser();
+octokit.rest.repos.listForAuthenticatedUser();
 ```
 
 ## Parameters

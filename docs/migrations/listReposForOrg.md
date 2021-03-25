@@ -1,6 +1,6 @@
 ---
 name: List repositories in an organization migration
-example: octokit.migrations.listReposForOrg({ org, migration_id })
+example: octokit.rest.migrations.listReposForOrg({ org, migration_id })
 route: GET /orgs/{org}/migrations/{migration_id}/repositories
 scope: migrations
 type: API method
@@ -11,7 +11,7 @@ type: API method
 List all the repositories for this organization migration.
 
 ```js
-octokit.migrations.listReposForOrg({
+octokit.rest.migrations.listReposForOrg({
   org,
   migration_id,
 });

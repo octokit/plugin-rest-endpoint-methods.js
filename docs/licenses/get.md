@@ -1,6 +1,6 @@
 ---
 name: Get a license
-example: octokit.licenses.get({ license })
+example: octokit.rest.licenses.get({ license })
 route: GET /licenses/{license}
 scope: licenses
 type: API method
@@ -9,7 +9,7 @@ type: API method
 # Get a license
 
 ```js
-octokit.licenses.get({
+octokit.rest.licenses.get({
   license,
 });
 ```

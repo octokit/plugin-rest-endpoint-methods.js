@@ -1,6 +1,6 @@
 ---
 name: List organizations
-example: octokit.orgs.list()
+example: octokit.rest.orgs.list()
 route: GET /organizations
 scope: orgs
 type: API method
@@ -13,7 +13,7 @@ Lists all organizations, in the order that they were created on GitHub.
 **Note:** Pagination is powered exclusively by the `since` parameter. Use the [Link header](https://docs.github.com/rest/overview/resources-in-the-rest-api#link-header) to get the URL for the next page of organizations.
 
 ```js
-octokit.orgs.list();
+octokit.rest.orgs.list();
 ```
 
 ## Parameters

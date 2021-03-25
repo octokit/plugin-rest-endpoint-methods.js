@@ -1,6 +1,6 @@
 ---
 name: List artifacts for a repository
-example: octokit.actions.listArtifactsForRepo({ owner, repo })
+example: octokit.rest.actions.listArtifactsForRepo({ owner, repo })
 route: GET /repos/{owner}/{repo}/actions/artifacts
 scope: actions
 type: API method
@@ -11,7 +11,7 @@ type: API method
 Lists all artifacts for a repository. Anyone with read access to the repository can use this endpoint. If the repository is private you must use an access token with the `repo` scope. GitHub Apps must have the `actions:read` permission to use this endpoint.
 
 ```js
-octokit.actions.listArtifactsForRepo({
+octokit.rest.actions.listArtifactsForRepo({
   owner,
   repo,
 });

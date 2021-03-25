@@ -1,6 +1,6 @@
 ---
 name: Get all contributor commit activity
-example: octokit.repos.getContributorsStats({ owner, repo })
+example: octokit.rest.repos.getContributorsStats({ owner, repo })
 route: GET /repos/{owner}/{repo}/stats/contributors
 scope: repos
 type: API method
@@ -16,7 +16,7 @@ Returns the `total` number of commits authored by the contributor. In addition, 
 - `c` - Number of commits
 
 ```js
-octokit.repos.getContributorsStats({
+octokit.rest.repos.getContributorsStats({
   owner,
   repo,
 });

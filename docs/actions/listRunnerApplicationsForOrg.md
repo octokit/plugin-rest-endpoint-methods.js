@@ -1,6 +1,6 @@
 ---
 name: List runner applications for an organization
-example: octokit.actions.listRunnerApplicationsForOrg({ org })
+example: octokit.rest.actions.listRunnerApplicationsForOrg({ org })
 route: GET /orgs/{org}/actions/runners/downloads
 scope: actions
 type: API method
@@ -13,7 +13,7 @@ Lists binaries for the runner application that you can download and run.
 You must authenticate using an access token with the `admin:org` scope to use this endpoint.
 
 ```js
-octokit.actions.listRunnerApplicationsForOrg({
+octokit.rest.actions.listRunnerApplicationsForOrg({
   org,
 });
 ```

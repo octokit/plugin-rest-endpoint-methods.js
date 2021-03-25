@@ -1,6 +1,6 @@
 ---
 name: Convert an organization member to outside collaborator
-example: octokit.orgs.convertMemberToOutsideCollaborator({ org, username })
+example: octokit.rest.orgs.convertMemberToOutsideCollaborator({ org, username })
 route: PUT /orgs/{org}/outside_collaborators/{username}
 scope: orgs
 type: API method
@@ -11,7 +11,7 @@ type: API method
 When an organization member is converted to an outside collaborator, they'll only have access to the repositories that their current team membership allows. The user will no longer be a member of the organization. For more information, see "[Converting an organization member to an outside collaborator](https://help.github.com/articles/converting-an-organization-member-to-an-outside-collaborator/)".
 
 ```js
-octokit.orgs.convertMemberToOutsideCollaborator({
+octokit.rest.orgs.convertMemberToOutsideCollaborator({
   org,
   username,
 });

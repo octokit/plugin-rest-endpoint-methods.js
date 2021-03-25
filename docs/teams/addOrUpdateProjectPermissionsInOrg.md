@@ -1,6 +1,6 @@
 ---
 name: Add or update team project permissions
-example: octokit.teams.addOrUpdateProjectPermissionsInOrg({ org, team_slug, project_id })
+example: octokit.rest.teams.addOrUpdateProjectPermissionsInOrg({ org, team_slug, project_id })
 route: PUT /orgs/{org}/teams/{team_slug}/projects/{project_id}
 scope: teams
 type: API method
@@ -13,7 +13,7 @@ Adds an organization project to a team. To add a project to a team or update the
 **Note:** You can also specify a team by `org_id` and `team_id` using the route `PUT /organizations/{org_id}/team/{team_id}/projects/{project_id}`.
 
 ```js
-octokit.teams.addOrUpdateProjectPermissionsInOrg({
+octokit.rest.teams.addOrUpdateProjectPermissionsInOrg({
   org,
   team_slug,
   project_id,

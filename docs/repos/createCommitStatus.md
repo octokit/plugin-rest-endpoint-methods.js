@@ -1,6 +1,6 @@
 ---
 name: Create a commit status
-example: octokit.repos.createCommitStatus({ owner, repo, sha, state })
+example: octokit.rest.repos.createCommitStatus({ owner, repo, sha, state })
 route: POST /repos/{owner}/{repo}/statuses/{sha}
 scope: repos
 type: API method
@@ -13,7 +13,7 @@ Users with push access in a repository can create commit statuses for a given SH
 Note: there is a limit of 1000 statuses per `sha` and `context` within a repository. Attempts to create more than 1000 statuses will result in a validation error.
 
 ```js
-octokit.repos.createCommitStatus({
+octokit.rest.repos.createCommitStatus({
   owner,
   repo,
   sha,

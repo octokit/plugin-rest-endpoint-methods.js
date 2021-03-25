@@ -1,6 +1,6 @@
 ---
 name: Remove interaction restrictions for an organization
-example: octokit.interactions.removeRestrictionsForOrg({ org })
+example: octokit.rest.interactions.removeRestrictionsForOrg({ org })
 route: DELETE /orgs/{org}/interaction-limits
 scope: interactions
 type: API method
@@ -11,7 +11,7 @@ type: API method
 Removes all interaction restrictions from public repositories in the given organization. You must be an organization owner to remove restrictions.
 
 ```js
-octokit.interactions.removeRestrictionsForOrg({
+octokit.rest.interactions.removeRestrictionsForOrg({
   org,
 });
 ```

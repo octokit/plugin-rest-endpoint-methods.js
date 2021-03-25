@@ -1,6 +1,6 @@
 ---
 name: Get project permission for a user
-example: octokit.projects.getPermissionForUser({ project_id, username })
+example: octokit.rest.projects.getPermissionForUser({ project_id, username })
 route: GET /projects/{project_id}/collaborators/{username}/permission
 scope: projects
 type: API method
@@ -11,7 +11,7 @@ type: API method
 Returns the collaborator's permission level for an organization project. Possible values for the `permission` key: `admin`, `write`, `read`, `none`. You must be an organization owner or a project `admin` to review a user's permission level.
 
 ```js
-octokit.projects.getPermissionForUser({
+octokit.rest.projects.getPermissionForUser({
   project_id,
   username,
 });

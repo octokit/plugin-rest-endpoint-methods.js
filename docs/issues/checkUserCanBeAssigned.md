@@ -1,6 +1,6 @@
 ---
 name: Check if a user can be assigned
-example: octokit.issues.checkUserCanBeAssigned({ owner, repo, assignee })
+example: octokit.rest.issues.checkUserCanBeAssigned({ owner, repo, assignee })
 route: GET /repos/{owner}/{repo}/assignees/{assignee}
 scope: issues
 type: API method
@@ -15,7 +15,7 @@ If the `assignee` can be assigned to issues in the repository, a `204` header wi
 Otherwise a `404` status code is returned.
 
 ```js
-octokit.issues.checkUserCanBeAssigned({
+octokit.rest.issues.checkUserCanBeAssigned({
   owner,
   repo,
   assignee,

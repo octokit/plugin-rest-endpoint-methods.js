@@ -1,6 +1,6 @@
 ---
 name: Get the license for a repository
-example: octokit.licenses.getForRepo({ owner, repo })
+example: octokit.rest.licenses.getForRepo({ owner, repo })
 route: GET /repos/{owner}/{repo}/license
 scope: licenses
 type: API method
@@ -13,7 +13,7 @@ This method returns the contents of the repository's license file, if one is det
 Similar to [Get repository content](https://docs.github.com/rest/reference/repos#get-repository-content), this method also supports [custom media types](https://docs.github.com/rest/overview/media-types) for retrieving the raw license content or rendered license HTML.
 
 ```js
-octokit.licenses.getForRepo({
+octokit.rest.licenses.getForRepo({
   owner,
   repo,
 });

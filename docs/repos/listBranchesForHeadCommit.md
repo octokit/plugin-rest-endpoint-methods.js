@@ -1,6 +1,6 @@
 ---
 name: List branches for HEAD commit
-example: octokit.repos.listBranchesForHeadCommit({ owner, repo, commit_sha })
+example: octokit.rest.repos.listBranchesForHeadCommit({ owner, repo, commit_sha })
 route: GET /repos/{owner}/{repo}/commits/{commit_sha}/branches-where-head
 scope: repos
 type: API method
@@ -13,7 +13,7 @@ Protected branches are available in public repositories with GitHub Free and Git
 Returns all branches where the given commit SHA is the HEAD, or latest commit for the branch.
 
 ```js
-octokit.repos.listBranchesForHeadCommit({
+octokit.rest.repos.listBranchesForHeadCommit({
   owner,
   repo,
   commit_sha,

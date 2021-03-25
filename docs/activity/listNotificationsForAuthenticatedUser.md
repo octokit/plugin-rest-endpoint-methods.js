@@ -1,6 +1,6 @@
 ---
 name: List notifications for the authenticated user
-example: octokit.activity.listNotificationsForAuthenticatedUser()
+example: octokit.rest.activity.listNotificationsForAuthenticatedUser()
 route: GET /notifications
 scope: activity
 type: API method
@@ -11,7 +11,7 @@ type: API method
 List all notifications for the current user, sorted by most recently updated.
 
 ```js
-octokit.activity.listNotificationsForAuthenticatedUser();
+octokit.rest.activity.listNotificationsForAuthenticatedUser();
 ```
 
 ## Parameters

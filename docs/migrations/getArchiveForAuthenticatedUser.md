@@ -1,6 +1,6 @@
 ---
 name: Download a user migration archive
-example: octokit.migrations.getArchiveForAuthenticatedUser({ migration_id })
+example: octokit.rest.migrations.getArchiveForAuthenticatedUser({ migration_id })
 route: GET /user/migrations/{migration_id}/archive
 scope: migrations
 type: API method
@@ -31,7 +31,7 @@ Fetches the URL to download the migration archive as a `tar.gz` file. Depending 
 The archive will also contain an `attachments` directory that includes all attachment files uploaded to GitHub.com and a `repositories` directory that contains the repository's Git data.
 
 ```js
-octokit.migrations.getArchiveForAuthenticatedUser({
+octokit.rest.migrations.getArchiveForAuthenticatedUser({
   migration_id,
 });
 ```

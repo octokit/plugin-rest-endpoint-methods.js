@@ -1,6 +1,6 @@
 ---
 name: Delete a deploy key
-example: octokit.repos.deleteDeployKey({ owner, repo, key_id })
+example: octokit.rest.repos.deleteDeployKey({ owner, repo, key_id })
 route: DELETE /repos/{owner}/{repo}/keys/{key_id}
 scope: repos
 type: API method
@@ -11,7 +11,7 @@ type: API method
 Deploy keys are immutable. If you need to update a key, remove the key and create a new one instead.
 
 ```js
-octokit.repos.deleteDeployKey({
+octokit.rest.repos.deleteDeployKey({
   owner,
   repo,
   key_id,

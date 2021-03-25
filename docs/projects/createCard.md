@@ -1,6 +1,6 @@
 ---
 name: Create a project card
-example: octokit.projects.createCard({ column_id, note, content_id, content_type })
+example: octokit.rest.projects.createCard({ column_id, note, content_id, content_type })
 route: POST /projects/columns/{column_id}/cards
 scope: projects
 type: API method
@@ -13,7 +13,7 @@ type: API method
 Be aware that the `id` of a pull request returned from "Issues" endpoints will be an _issue id_. To find out the pull request id, use the "[List pull requests](https://docs.github.com/rest/reference/pulls#list-pull-requests)" endpoint.
 
 ```js
-octokit.projects.createCard({
+octokit.rest.projects.createCard({
   column_id,
   note,
   content_id,

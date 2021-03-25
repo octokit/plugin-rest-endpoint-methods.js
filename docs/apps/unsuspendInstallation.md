@@ -1,6 +1,6 @@
 ---
 name: Unsuspend an app installation
-example: octokit.apps.unsuspendInstallation({ installation_id })
+example: octokit.rest.apps.unsuspendInstallation({ installation_id })
 route: DELETE /app/installations/{installation_id}/suspended
 scope: apps
 type: API method
@@ -13,7 +13,7 @@ Removes a GitHub App installation suspension.
 You must use a [JWT](https://docs.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint.
 
 ```js
-octokit.apps.unsuspendInstallation({
+octokit.rest.apps.unsuspendInstallation({
   installation_id,
 });
 ```

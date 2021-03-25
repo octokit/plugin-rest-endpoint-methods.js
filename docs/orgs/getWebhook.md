@@ -1,6 +1,6 @@
 ---
 name: Get an organization webhook
-example: octokit.orgs.getWebhook({ org, hook_id })
+example: octokit.rest.orgs.getWebhook({ org, hook_id })
 route: GET /orgs/{org}/hooks/{hook_id}
 scope: orgs
 type: API method
@@ -11,7 +11,7 @@ type: API method
 Returns a webhook configured in an organization. To get only the webhook `config` properties, see "[Get a webhook configuration for an organization](/rest/reference/orgs#get-a-webhook-configuration-for-an-organization)."
 
 ```js
-octokit.orgs.getWebhook({
+octokit.rest.orgs.getWebhook({
   org,
   hook_id,
 });

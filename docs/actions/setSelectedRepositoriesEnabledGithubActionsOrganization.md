@@ -1,6 +1,6 @@
 ---
 name: Set selected repositories enabled for GitHub Actions in an organization
-example: octokit.actions.setSelectedRepositoriesEnabledGithubActionsOrganization({ org, selected_repository_ids })
+example: octokit.rest.actions.setSelectedRepositoriesEnabledGithubActionsOrganization({ org, selected_repository_ids })
 route: PUT /orgs/{org}/actions/permissions/repositories
 scope: actions
 type: API method
@@ -13,7 +13,7 @@ Replaces the list of selected repositories that are enabled for GitHub Actions i
 You must authenticate using an access token with the `admin:org` scope to use this endpoint. GitHub Apps must have the `administration` organization permission to use this API.
 
 ```js
-octokit.actions.setSelectedRepositoriesEnabledGithubActionsOrganization({
+octokit.rest.actions.setSelectedRepositoriesEnabledGithubActionsOrganization({
   org,
   selected_repository_ids,
 });

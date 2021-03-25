@@ -1,6 +1,6 @@
 ---
 name: Get a workflow
-example: octokit.actions.getWorkflow({ owner, repo, workflow_id })
+example: octokit.rest.actions.getWorkflow({ owner, repo, workflow_id })
 route: GET /repos/{owner}/{repo}/actions/workflows/{workflow_id}
 scope: actions
 type: API method
@@ -11,7 +11,7 @@ type: API method
 Gets a specific workflow. You can replace `workflow_id` with the workflow file name. For example, you could use `main.yaml`. Anyone with read access to the repository can use this endpoint. If the repository is private you must use an access token with the `repo` scope. GitHub Apps must have the `actions:read` permission to use this endpoint.
 
 ```js
-octokit.actions.getWorkflow({
+octokit.rest.actions.getWorkflow({
   owner,
   repo,
   workflow_id,

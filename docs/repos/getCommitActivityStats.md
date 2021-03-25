@@ -1,6 +1,6 @@
 ---
 name: Get the last year of commit activity
-example: octokit.repos.getCommitActivityStats({ owner, repo })
+example: octokit.rest.repos.getCommitActivityStats({ owner, repo })
 route: GET /repos/{owner}/{repo}/stats/commit_activity
 scope: repos
 type: API method
@@ -11,7 +11,7 @@ type: API method
 Returns the last year of commit activity grouped by week. The `days` array is a group of commits per day, starting on `Sunday`.
 
 ```js
-octokit.repos.getCommitActivityStats({
+octokit.rest.repos.getCommitActivityStats({
   owner,
   repo,
 });

@@ -1,6 +1,6 @@
 ---
 name: Set a thread subscription
-example: octokit.activity.setThreadSubscription({ thread_id })
+example: octokit.rest.activity.setThreadSubscription({ thread_id })
 route: PUT /notifications/threads/{thread_id}/subscription
 scope: activity
 type: API method
@@ -15,7 +15,7 @@ You can also use this endpoint to subscribe to threads that you are currently no
 Unsubscribing from a conversation in a repository that you are not watching is functionally equivalent to the [Delete a thread subscription](https://docs.github.com/rest/reference/activity#delete-a-thread-subscription) endpoint.
 
 ```js
-octokit.activity.setThreadSubscription({
+octokit.rest.activity.setThreadSubscription({
   thread_id,
 });
 ```

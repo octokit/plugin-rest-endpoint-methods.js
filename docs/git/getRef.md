@@ -1,6 +1,6 @@
 ---
 name: Get a reference
-example: octokit.git.getRef({ owner, repo, ref })
+example: octokit.rest.git.getRef({ owner, repo, ref })
 route: GET /repos/{owner}/{repo}/git/ref/{ref}
 scope: git
 type: API method
@@ -13,7 +13,7 @@ Returns a single reference from your Git database. The `:ref` in the URL must be
 **Note:** You need to explicitly [request a pull request](https://docs.github.com/rest/reference/pulls#get-a-pull-request) to trigger a test merge commit, which checks the mergeability of pull requests. For more information, see "[Checking mergeability of pull requests](https://docs.github.com/rest/guides/getting-started-with-the-git-database-api#checking-mergeability-of-pull-requests)".
 
 ```js
-octokit.git.getRef({
+octokit.rest.git.getRef({
   owner,
   repo,
   ref,
