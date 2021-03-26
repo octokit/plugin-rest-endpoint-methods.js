@@ -9,8 +9,16 @@ import { endpointsToMethods } from "./endpoints-to-methods";
 export function restEndpointMethods(octokit: Octokit): Api {
   const api = endpointsToMethods(octokit, ENDPOINTS);
   return {
-    ...api,
     rest: api,
   };
 }
 restEndpointMethods.VERSION = VERSION;
+
+export function legacyRestEndpointMethods(octokit: Octokit): Api["rest"] & Api {
+  const api = endpointsToMethods(octokit, ENDPOINTS);
+  return {
+    ...api,
+    rest: api,
+  };
+}
+legacyRestEndpointMethods.VERSION = VERSION;

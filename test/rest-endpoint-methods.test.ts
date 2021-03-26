@@ -1,7 +1,7 @@
 import fetchMock from "fetch-mock";
 import { Octokit } from "@octokit/core";
 
-import { restEndpointMethods } from "../src";
+import { restEndpointMethods, legacyRestEndpointMethods } from "../src";
 
 describe("REST API endpoint methods", () => {
   it("README example", async () => {
@@ -179,11 +179,11 @@ describe("REST API endpoint methods", () => {
     return octokit.rest.apps.listInstallations();
   });
 
-  // besides setting `octokit.rest.*`, the plugin is also setting the same methods
-  // directly on `octokit.*` for legacy reasons. We will deprecate the `octokit.*`
-  // methods in future, but for now we just make sure they are set
+  // besides setting `octokit.rest.*`, the plugin exports legacyRestEndpointMethods
+  // which is also setting the same methods directly on `octokit.*` for legacy reasons.
+  // We will deprecate the `octokit.*` methods in future, but for now we just make sure they are set
 
-  it("octokit.repos.createForAuthenticatedUser()", async () => {
+  it("legacyRestEndpointMethods", async () => {
     const mock = fetchMock.sandbox().post(
       "path:/user/repos",
       { id: 1 },
@@ -194,7 +194,7 @@ describe("REST API endpoint methods", () => {
       }
     );
 
-    const MyOctokit = Octokit.plugin(restEndpointMethods);
+    const MyOctokit = Octokit.plugin(legacyRestEndpointMethods);
     const octokit = new MyOctokit({
       auth: "secret123",
       request: {
@@ -203,10 +203,14 @@ describe("REST API endpoint methods", () => {
     });
 
     // See https://developer.github.com/v3/repos/#create
-    const { data } = await octokit.repos.createForAuthenticatedUser({
+    const response1 = await octokit.repos.createForAuthenticatedUser({
+      name: "my-new-repo",
+    });
+    const response2 = await octokit.rest.repos.createForAuthenticatedUser({
       name: "my-new-repo",
     });
 
-    expect(data.id).toStrictEqual(1);
+    expect(response1.data.id).toStrictEqual(1);
+    expect(response2.data.id).toStrictEqual(1);
   });
 });
