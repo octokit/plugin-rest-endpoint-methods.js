@@ -1,6 +1,6 @@
 ---
 name: Create a tag object
-example: octokit.rest.git.createTag({ owner, repo, tag, message, object, type })
+example: octokit.rest.git.createTag({ owner, repo, tag, message, object, type, tagger.name, tagger.email })
 route: POST /repos/{owner}/{repo}/git/tags
 scope: git
 type: API method
@@ -41,13 +41,15 @@ These are the possible values for `reason` in the `verification` object:
 
 ```js
 octokit.rest.git.createTag({
-  owner,
-  repo,
-  tag,
-  message,
-  object,
-  type,
-});
+        owner,
+repo,
+tag,
+message,
+object,
+type,
+tagger.name,
+tagger.email
+      })
 ```
 
 ## Parameters
@@ -92,12 +94,12 @@ The type of the object we're tagging. Normally this is a `commit` but it can als
 An object with information about the individual creating the tag.
 
 </td></tr>
-<tr><td>tagger.name</td><td>no</td><td>
+<tr><td>tagger.name</td><td>yes</td><td>
 
 The name of the author of the tag
 
 </td></tr>
-<tr><td>tagger.email</td><td>no</td><td>
+<tr><td>tagger.email</td><td>yes</td><td>
 
 The email of the author of the tag
 

@@ -1,6 +1,6 @@
 ---
 name: Create or update an organization secret
-example: octokit.rest.actions.createOrUpdateOrgSecret({ org, secret_name })
+example: octokit.rest.actions.createOrUpdateOrgSecret({ org, secret_name, visibility })
 route: PUT /orgs/{org}/actions/secrets/{secret_name}
 scope: actions
 type: API method
@@ -87,6 +87,7 @@ puts Base64.strict_encode64(encrypted_secret)
 octokit.rest.actions.createOrUpdateOrgSecret({
   org,
   secret_name,
+  visibility,
 });
 ```
 
@@ -119,7 +120,7 @@ Value for your secret, encrypted with [LibSodium](https://libsodium.gitbook.io/d
 ID of the key you used to encrypt the secret.
 
 </td></tr>
-<tr><td>visibility</td><td>no</td><td>
+<tr><td>visibility</td><td>yes</td><td>
 
 Configures the access that repositories have to the organization secret. Can be one of:  
 \- `all` - All repositories in an organization can access the secret.  

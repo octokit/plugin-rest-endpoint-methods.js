@@ -1,6 +1,6 @@
 ---
 name: Set primary email visibility for the authenticated user
-example: octokit.rest.users.setPrimaryEmailVisibilityForAuthenticated({ email, visibility })
+example: octokit.rest.users.setPrimaryEmailVisibilityForAuthenticated({ visibility })
 route: PATCH /user/email/visibility
 scope: users
 type: API method
@@ -12,7 +12,6 @@ Sets the visibility for your primary email addresses.
 
 ```js
 octokit.rest.users.setPrimaryEmailVisibilityForAuthenticated({
-  email,
   visibility,
 });
 ```
@@ -28,7 +27,7 @@ octokit.rest.users.setPrimaryEmailVisibilityForAuthenticated({
     </tr>
   </thead>
   <tbody>
-    <tr><td>email</td><td>yes</td><td>
+    <tr><td>email</td><td>no</td><td>
 
 An email address associated with the GitHub user account to manage.
 

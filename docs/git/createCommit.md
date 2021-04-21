@@ -1,6 +1,6 @@
 ---
 name: Create a commit
-example: octokit.rest.git.createCommit({ owner, repo, message, tree })
+example: octokit.rest.git.createCommit({ owner, repo, message, tree, author.name, author.email })
 route: POST /repos/{owner}/{repo}/git/commits
 scope: git
 type: API method
@@ -41,11 +41,13 @@ These are the possible values for `reason` in the `verification` object:
 
 ```js
 octokit.rest.git.createCommit({
-  owner,
-  repo,
-  message,
-  tree,
-});
+        owner,
+repo,
+message,
+tree,
+author.name,
+author.email
+      })
 ```
 
 ## Parameters
@@ -85,12 +87,12 @@ The SHAs of the commits that were the parents of this commit. If omitted or empt
 Information about the author of the commit. By default, the `author` will be the authenticated user and the current date. See the `author` and `committer` object below for details.
 
 </td></tr>
-<tr><td>author.name</td><td>no</td><td>
+<tr><td>author.name</td><td>yes</td><td>
 
 The name of the author (or committer) of the commit
 
 </td></tr>
-<tr><td>author.email</td><td>no</td><td>
+<tr><td>author.email</td><td>yes</td><td>
 
 The email of the author (or committer) of the commit
 
