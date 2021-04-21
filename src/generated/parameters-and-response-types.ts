@@ -3549,10 +3549,10 @@ export type RestEndpointMethodTypes = {
     createFork: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["POST /repos/{owner}/{repo}/forks{?org,organization}"]["parameters"],
+          Endpoints["POST /repos/{owner}/{repo}/forks"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["POST /repos/{owner}/{repo}/forks{?org,organization}"]["response"];
+      response: Endpoints["POST /repos/{owner}/{repo}/forks"]["response"];
     };
     createInOrg: {
       parameters: RequestParameters &

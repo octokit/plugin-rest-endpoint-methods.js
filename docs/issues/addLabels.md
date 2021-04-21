@@ -1,6 +1,6 @@
 ---
 name: Add labels to an issue
-example: octokit.rest.issues.addLabels({ owner, repo, issue_number, labels })
+example: octokit.rest.issues.addLabels({ owner, repo, issue_number, labels[].name })
 route: POST /repos/{owner}/{repo}/issues/{issue_number}/labels
 scope: issues
 type: API method
@@ -10,11 +10,11 @@ type: API method
 
 ```js
 octokit.rest.issues.addLabels({
-  owner,
-  repo,
-  issue_number,
-  labels,
-});
+        owner,
+repo,
+issue_number,
+labels[].name
+      })
 ```
 
 ## Parameters
@@ -39,9 +39,10 @@ octokit.rest.issues.addLabels({
 issue_number parameter
 
 </td></tr>
-<tr><td>labels</td><td>yes</td><td>
+<tr><td>labels</td><td>no</td><td>
 
-The name of the label to add to the issue. Must contain at least one label. **Note:** Alternatively, you can pass a single label as a `string` or an `array` of labels directly, but GitHub recommends passing an object with the `labels` key.
+</td></tr>
+<tr><td>labels[].name</td><td>yes</td><td>
 
 </td></tr>
   </tbody>

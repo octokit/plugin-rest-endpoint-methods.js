@@ -920,7 +920,7 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
       { mediaType: { previews: ["squirrel-girl"] } },
       {
         deprecated:
-          "octokit.reactions.deleteLegacy() is deprecated, see https://docs.github.com/rest/reference/reactions/#delete-a-reaction-legacy",
+          "octokit.rest.reactions.deleteLegacy() is deprecated, see https://docs.github.com/rest/reference/reactions/#delete-a-reaction-legacy",
       },
     ],
     listForCommitComment: [
@@ -992,7 +992,7 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     ],
     createDispatchEvent: ["POST /repos/{owner}/{repo}/dispatches"],
     createForAuthenticatedUser: ["POST /user/repos"],
-    createFork: ["POST /repos/{owner}/{repo}/forks{?org,organization}"],
+    createFork: ["POST /repos/{owner}/{repo}/forks"],
     createInOrg: ["POST /orgs/{org}/repos"],
     createOrUpdateEnvironment: [
       "PUT /repos/{owner}/{repo}/environments/{environment_name}",

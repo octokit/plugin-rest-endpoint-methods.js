@@ -48,9 +48,6 @@ The new Git author email.
 The new Git author name.
 
 </td></tr>
-<tr><td>remote_id</td><td>no</td><td>
-
-</td></tr>
   </tbody>
 </table>
 
