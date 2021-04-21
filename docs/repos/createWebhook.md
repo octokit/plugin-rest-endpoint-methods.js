@@ -1,6 +1,6 @@
 ---
 name: Create a repository webhook
-example: octokit.rest.repos.createWebhook({ owner, repo, config, config.url })
+example: octokit.rest.repos.createWebhook({ owner, repo })
 route: POST /repos/{owner}/{repo}/hooks
 scope: repos
 type: API method
@@ -13,11 +13,9 @@ share the same `config` as long as those webhooks do not have any `events` that 
 
 ```js
 octokit.rest.repos.createWebhook({
-        owner,
-repo,
-config,
-config.url
-      })
+  owner,
+  repo,
+});
 ```
 
 ## Parameters
@@ -42,12 +40,12 @@ config.url
 Use `web` to create a webhook. Default: `web`. This parameter only accepts the value `web`.
 
 </td></tr>
-<tr><td>config</td><td>yes</td><td>
+<tr><td>config</td><td>no</td><td>
 
 Key/value pairs to provide settings for this webhook. [These are defined below](https://docs.github.com/rest/reference/repos#create-hook-config-params).
 
 </td></tr>
-<tr><td>config.url</td><td>yes</td><td>
+<tr><td>config.url</td><td>no</td><td>
 
 The URL to which the payloads will be delivered.
 
@@ -63,8 +61,6 @@ If provided, the `secret` will be used as the `key` to generate the HMAC hex dig
 
 </td></tr>
 <tr><td>config.insecure_ssl</td><td>no</td><td>
-
-Determines whether the SSL certificate of the host for `url` will be verified when delivering payloads. Supported values include `0` (verification is performed) and `1` (verification is not performed). The default is `0`. **We strongly recommend not setting this to `1` as you are subject to man-in-the-middle and other attacks.**
 
 </td></tr>
 <tr><td>config.token</td><td>no</td><td>

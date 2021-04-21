@@ -71,9 +71,9 @@ The procedure therefore consists of a nested loop:
   **Inner loop**:
 
   - Delete the identified analysis.
-  - Parse the response for the value of `next_analysis_url` and, if found, use this in the next iteration.
+  - Parse the response for the value of `confirm_delete_url` and, if found, use this in the next iteration.
 
-The above process assumes that you want to remove all trace of the tool's analyses from the GitHub user interface, for the specified repository, and it therefore uses the `next_analysis_url` value. Alternatively, you could use the `confirm_delete_url` value, which would leave the last analysis in each set undeleted to avoid removing a tool's analysis entirely.
+The above process assumes that you want to remove all trace of the tool's analyses from the GitHub user interface, for the specified repository, and it therefore uses the `confirm_delete_url` value. Alternatively, you could use the `next_analysis_url` value, which would leave the last analysis in each set undeleted to avoid removing a tool's analysis entirely.
 
 ```js
 octokit.rest.codeScanning.deleteAnalysis({

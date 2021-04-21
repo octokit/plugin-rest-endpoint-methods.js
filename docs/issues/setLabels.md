@@ -40,11 +40,6 @@ octokit.rest.issues.setLabels({
 issue_number parameter
 
 </td></tr>
-<tr><td>labels</td><td>no</td><td>
-
-The names of the labels to add to the issue. You can pass an empty array to remove all labels. **Note:** Alternatively, you can pass a single label as a `string` or an `array` of labels directly, but GitHub recommends passing an object with the `labels` key.
-
-</td></tr>
   </tbody>
 </table>
 
