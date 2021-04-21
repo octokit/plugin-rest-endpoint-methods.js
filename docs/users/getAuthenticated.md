@@ -3,7 +3,7 @@ name: Get the authenticated user
 example: octokit.rest.users.getAuthenticated()
 route: GET /user
 scope: users
-type: API method
+type: API method 
 ---
 
 # Get the authenticated user
