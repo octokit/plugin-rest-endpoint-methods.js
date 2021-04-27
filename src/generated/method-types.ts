@@ -6888,6 +6888,22 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
+     * Gets a health check of the DNS settings for the `CNAME` record configured for a repository's GitHub Pages.
+     *
+     * The first request to this endpoint returns a `202 Accepted` status and starts an asynchronous background task to get the results for the domain. After the background task completes, subsequent requests to this endpoint return a `200 OK` status with the health check results in the response.
+     *
+     * Users must have admin or owner permissions. GitHub Apps must have the `pages:write` and `administration:write` permission to use this endpoint.
+     */
+    getPagesHealthCheck: {
+      (
+        params?: RestEndpointMethodTypes["repos"]["getPagesHealthCheck"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["repos"]["getPagesHealthCheck"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
      * Returns the total commit counts for the `owner` and total commit counts in `all`. `all` is everyone combined, including the `owner` in the last 52 weeks. If you'd like to get the commit counts for non-owners, you can subtract `owner` from `all`.
      *
      * The array order is oldest week (index 0) to most recent week.
