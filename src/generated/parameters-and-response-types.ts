@@ -4026,6 +4026,14 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["GET /repos/{owner}/{repo}/pages/builds/{build_id}"]["response"];
     };
+    getPagesHealthCheck: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /repos/{owner}/{repo}/pages/health"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /repos/{owner}/{repo}/pages/health"]["response"];
+    };
     getParticipationStats: {
       parameters: RequestParameters &
         Omit<
