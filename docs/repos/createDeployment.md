@@ -128,9 +128,6 @@ Specifies if the given environment is one that end-users directly interact with.
 **Note:** This parameter requires you to use the [`application/vnd.github.ant-man-preview+json`](https://docs.github.com/rest/overview/api-previews#enhanced-deployments) custom media type.
 
 </td></tr>
-<tr><td>created_at</td><td>no</td><td>
-
-</td></tr>
   </tbody>
 </table>
 
