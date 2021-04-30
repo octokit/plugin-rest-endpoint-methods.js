@@ -24,7 +24,11 @@
   "author": "Gregor Martynus (https://twitter.com/gr2m)",
   "license": "MIT",
   "dependencies": {
+<<<<<<< HEAD
     "@octokit/types": "^6.15.0",
+=======
+    "@octokit/types": "^6.14.2",
+>>>>>>> d98b60c... WIP octokit/openapi updated
     "deprecation": "^2.3.1"
   },
   "devDependencies": {
