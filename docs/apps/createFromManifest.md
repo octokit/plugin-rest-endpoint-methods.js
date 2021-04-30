@@ -33,4 +33,4 @@ octokit.rest.apps.createFromManifest({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/apps/#create-a-github-app-from-a-manifest).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/apps#create-a-github-app-from-a-manifest).

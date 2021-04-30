@@ -37,4 +37,4 @@ installation_id parameter
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/apps/#unsuspend-an-app-installation).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/apps#unsuspend-an-app-installation).

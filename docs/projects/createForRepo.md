@@ -48,4 +48,4 @@ The description of the project.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/projects/#create-a-repository-project).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/projects#create-a-repository-project).

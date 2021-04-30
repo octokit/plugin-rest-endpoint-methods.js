@@ -45,4 +45,4 @@ team_slug parameter
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/teams/#remove-a-project-from-a-team).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/teams#remove-a-project-from-a-team).

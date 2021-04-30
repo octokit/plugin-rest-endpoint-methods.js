@@ -46,4 +46,4 @@ The expected SHA of the pull request's HEAD ref. This is the most recent commit 
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/pulls/#update-a-pull-request-branch).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/pulls#update-a-pull-request-branch).

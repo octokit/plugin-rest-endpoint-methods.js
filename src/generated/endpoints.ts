@@ -322,10 +322,10 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
       "GET /repos/{owner}/{repo}/code-scanning/analyses/{analysis_id}",
     ],
     getSarif: ["GET /repos/{owner}/{repo}/code-scanning/sarifs/{sarif_id}"],
-    listAlertsForRepo: ["GET /repos/{owner}/{repo}/code-scanning/alerts"],
-    listAlertsInstances: [
+    listAlertInstances: [
       "GET /repos/{owner}/{repo}/code-scanning/alerts/{alert_number}/instances",
     ],
+    listAlertsForRepo: ["GET /repos/{owner}/{repo}/code-scanning/alerts"],
     listRecentAnalyses: ["GET /repos/{owner}/{repo}/code-scanning/analyses"],
     updateAlert: [
       "PATCH /repos/{owner}/{repo}/code-scanning/alerts/{alert_number}",

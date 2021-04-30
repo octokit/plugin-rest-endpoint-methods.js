@@ -35,4 +35,4 @@ gist_id parameter
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/gists/#fork-a-gist).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/gists#fork-a-gist).

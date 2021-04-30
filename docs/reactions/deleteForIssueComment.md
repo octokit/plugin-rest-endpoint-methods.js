@@ -49,4 +49,4 @@ comment_id parameter
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/reactions/#delete-an-issue-comment-reaction).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/reactions#delete-an-issue-comment-reaction).

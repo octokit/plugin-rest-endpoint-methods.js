@@ -89,4 +89,4 @@ The name of the tool used to generate the code scanning analysis. If this parame
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/code-scanning#upload-an-analysis-as-sarif-data).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/code-scanning#upload-a-sarif-file).

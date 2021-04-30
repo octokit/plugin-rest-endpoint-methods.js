@@ -74,4 +74,4 @@ The ID of a team to set as the parent team.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/teams/#update-a-team).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/teams#update-a-team).

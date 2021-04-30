@@ -37,4 +37,4 @@ octokit.rest.billing.getGithubPackagesBillingOrg({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/billing/#get-github-packages-billing-for-an-organization).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/billing#get-github-packages-billing-for-an-organization).

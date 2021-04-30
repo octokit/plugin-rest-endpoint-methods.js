@@ -45,4 +45,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos/#list-repository-tags).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#list-repository-tags).

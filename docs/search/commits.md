@@ -62,4 +62,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/search/#search-commits).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/search#search-commits).

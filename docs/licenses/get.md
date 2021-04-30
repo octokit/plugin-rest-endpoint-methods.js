@@ -31,4 +31,4 @@ octokit.rest.licenses.get({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/licenses/#get-a-license).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/licenses#get-a-license).

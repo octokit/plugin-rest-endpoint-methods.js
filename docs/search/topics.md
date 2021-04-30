@@ -43,4 +43,4 @@ The query contains one or more search keywords and qualifiers. Qualifiers allow 
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/search/#search-topics).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/search#search-topics).

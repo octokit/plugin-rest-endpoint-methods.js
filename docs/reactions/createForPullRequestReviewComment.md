@@ -8,7 +8,7 @@ type: API method
 
 # Create reaction for a pull request review comment
 
-Create a reaction to a [pull request review comment](https://docs.github.com/rest/reference/pulls#comments). A response with a `Status: 200 OK` means that you already added the reaction type to this pull request review comment.
+Create a reaction to a [pull request review comment](https://docs.github.com/rest/reference/pulls#comments). A response with an HTTP `200` status means that you already added the reaction type to this pull request review comment.
 
 ```js
 octokit.rest.reactions.createForPullRequestReviewComment({
@@ -49,4 +49,4 @@ The [reaction type](https://docs.github.com/rest/reference/reactions#reaction-ty
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/reactions/#create-reaction-for-a-pull-request-review-comment).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/reactions#create-reaction-for-a-pull-request-review-comment).

@@ -39,4 +39,4 @@ octokit.rest.pulls.checkIfMerged({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/pulls/#check-if-a-pull-request-has-been-merged).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/pulls#check-if-a-pull-request-has-been-merged).

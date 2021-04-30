@@ -39,4 +39,4 @@ octokit.rest.repos.get({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos/#get-a-repository).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#get-a-repository).

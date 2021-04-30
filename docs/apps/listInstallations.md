@@ -48,4 +48,4 @@ Only show notifications updated after the given time. This is a timestamp in [IS
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/apps/#list-installations-for-the-authenticated-app).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/apps#list-installations-for-the-authenticated-app).

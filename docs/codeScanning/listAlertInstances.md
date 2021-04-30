@@ -1,6 +1,6 @@
 ---
 name: List instances of a code scanning alert
-example: octokit.rest.codeScanning.listAlertsInstances({ owner, repo, alert_number })
+example: octokit.rest.codeScanning.listAlertInstances({ owner, repo, alert_number })
 route: GET /repos/{owner}/{repo}/code-scanning/alerts/{alert_number}/instances
 scope: codeScanning
 type: API method
@@ -11,7 +11,7 @@ type: API method
 Lists all instances of the specified code scanning alert. You must use an access token with the `security_events` scope to use this endpoint. GitHub Apps must have the `security_events` read permission to use this endpoint.
 
 ```js
-octokit.rest.codeScanning.listAlertsInstances({
+octokit.rest.codeScanning.listAlertInstances({
   owner,
   repo,
   alert_number,

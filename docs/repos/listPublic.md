@@ -38,4 +38,4 @@ A repository ID. Only return repositories with an ID greater than this ID.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos/#list-public-repositories).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#list-public-repositories).

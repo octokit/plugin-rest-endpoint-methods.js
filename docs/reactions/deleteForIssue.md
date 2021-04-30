@@ -49,4 +49,4 @@ issue_number parameter
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/reactions/#delete-an-issue-reaction).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/reactions#delete-an-issue-reaction).

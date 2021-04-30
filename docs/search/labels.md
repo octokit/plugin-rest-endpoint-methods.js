@@ -59,4 +59,4 @@ Determines whether the first search result returned is the highest number of mat
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/search/#search-labels).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/search#search-labels).
