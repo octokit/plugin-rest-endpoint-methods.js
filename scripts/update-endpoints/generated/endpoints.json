@@ -11819,23 +11819,18 @@
       { "code": 404, "description": "Resource not found", "examples": null },
       { "code": 503, "description": "Service unavailable", "examples": null }
     ],
-    "renamed": {
-      "before": { "scope": "codeScanning", "id": "listAlertsInstances" },
-      "after": { "scope": "codeScanning", "id": "listAlertInstances" },
-      "date": "2021-04-30",
-      "note": null
-    }
+    "renamed": null
   },
   {
     "name": "List code scanning alerts for a repository",
     "scope": "codeScanning",
-    "id": "listAlertsForRepo",
+    "id": "listAlertInstances",
     "method": "GET",
-    "url": "/repos/{owner}/{repo}/code-scanning/alerts",
+    "url": "/repos/{owner}/{repo}/code-scanning/alerts/{alert_number}/instances",
     "isDeprecated": false,
     "deprecationDate": null,
-    "description": "Lists all open code scanning alerts for the default branch (usually `main`\nor `master`). You must use an access token with the `security_events` scope to use\nthis endpoint. GitHub Apps must have the `security_events` read permission to use\nthis endpoint.\n\nThe response includes a `most_recent_instance` object.\nThis provides details of the most recent instance of this alert\nfor the default branch or for the specified Git reference\n(if you used `ref` in the request).",
-    "documentationUrl": "https://docs.github.com/rest/reference/code-scanning#list-code-scanning-alerts-for-a-repository",
+    "description": "Lists all instances of the specified code scanning alert. You must use an access token with the `security_events` scope to use this endpoint. GitHub Apps must have the `security_events` read permission to use this endpoint.",
+    "documentationUrl": "https://docs.github.com/rest/reference/code-scanning#list-instances-of-a-code-scanning-alert",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -11866,24 +11861,11 @@
         "deprecated": null
       },
       {
-        "name": "tool_name",
-        "description": "The name of a code scanning tool. Only results by this tool will be listed. You can specify the tool by using either `tool_name` or `tool_guid`, but not both.",
-        "in": "QUERY",
-        "type": "string",
-        "required": false,
-        "enum": null,
-        "allowNull": false,
-        "mapToData": null,
-        "validation": null,
-        "alias": null,
-        "deprecated": null
-      },
-      {
-        "name": "tool_guid",
-        "description": "The GUID of a code scanning tool. Only results by this tool will be listed. Note that some code scanning tools may not include a GUID in their analysis data. You can specify the tool by using either `tool_guid` or `tool_name`, but not both.",
-        "in": "QUERY",
-        "type": "string",
-        "required": false,
+        "name": "alert_number",
+        "description": "The number that identifies an alert. You can find this at the end of the URL for a code scanning alert within GitHub, and in the `number` field in the response from the `GET /repos/{owner}/{repo}/code-scanning/alerts` operation.",
+        "in": "PATH",
+        "type": "integer",
+        "required": true,
         "enum": null,
         "allowNull": false,
         "mapToData": null,
@@ -11929,19 +11911,6 @@
         "validation": null,
         "alias": null,
         "deprecated": null
-      },
-      {
-        "name": "state",
-        "description": "Set to `open`, `fixed`, or `dismissed` to list code scanning alerts in a specific state.",
-        "in": "QUERY",
-        "type": "string",
-        "required": false,
-        "enum": ["open", "closed", "dismissed", "fixed"],
-        "allowNull": false,
-        "mapToData": null,
-        "validation": null,
-        "alias": null,
-        "deprecated": null
       }
     ],
     "responses": [
@@ -11950,7 +11919,7 @@
         "description": "Response",
         "examples": [
           {
-            "data": "[{\"number\":4,\"created_at\":\"2020-02-13T12:29:18Z\",\"url\":\"https://api.github.com/repos/octocat/hello-world/code-scanning/alerts/4\",\"html_url\":\"https://github.com/octocat/hello-world/code-scanning/4\",\"state\":\"open\",\"dismissed_by\":null,\"dismissed_at\":null,\"dismissed_reason\":null,\"rule\":{\"id\":\"js/zipslip\",\"severity\":\"error\",\"description\":\"Arbitrary file write during zip extraction\",\"name\":\"js/zipslip\"},\"tool\":{\"name\":\"CodeQL\",\"guid\":null,\"version\":\"2.4.0\"},\"most_recent_instance\":{\"ref\":\"refs/heads/main\",\"analysis_key\":\".github/workflows/codeql-analysis.yml:CodeQL-Build\",\"environment\":\"{}\",\"state\":\"open\",\"commit_sha\":\"39406e42cb832f683daa691dd652a8dc36ee8930\",\"message\":{\"text\":\"This path depends on a user-provided value.\"},\"location\":{\"path\":\"spec-main/api-session-spec.ts\",\"start_line\":917,\"end_line\":917,\"start_column\":7,\"end_column\":18},\"classifications\":[\"test\"]},\"instances_url\":\"https://api.github.com/repos/octocat/hello-world/code-scanning/alerts/4/instances\"},{\"number\":3,\"created_at\":\"2020-02-13T12:29:18Z\",\"url\":\"https://api.github.com/repos/octocat/hello-world/code-scanning/alerts/3\",\"html_url\":\"https://github.com/octocat/hello-world/code-scanning/3\",\"state\":\"dismissed\",\"dismissed_by\":{\"login\":\"octocat\",\"id\":1,\"node_id\":\"MDQ6VXNlcjE=\",\"avatar_url\":\"https://github.com/images/error/octocat_happy.gif\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/octocat\",\"html_url\":\"https://github.com/octocat\",\"followers_url\":\"https://api.github.com/users/octocat/followers\",\"following_url\":\"https://api.github.com/users/octocat/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/octocat/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/octocat/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/octocat/subscriptions\",\"organizations_url\":\"https://api.github.com/users/octocat/orgs\",\"repos_url\":\"https://api.github.com/users/octocat/repos\",\"events_url\":\"https://api.github.com/users/octocat/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/octocat/received_events\",\"type\":\"User\",\"site_admin\":false},\"dismissed_at\":\"2020-02-14T12:29:18Z\",\"dismissed_reason\":\"false positive\",\"rule\":{\"id\":\"js/zipslip\",\"severity\":\"error\",\"description\":\"Arbitrary file write during zip extraction\",\"name\":\"js/zipslip\"},\"tool\":{\"name\":\"CodeQL\",\"guid\":null,\"version\":\"2.4.0\"},\"most_recent_instance\":{\"ref\":\"refs/heads/main\",\"analysis_key\":\".github/workflows/codeql-analysis.yml:CodeQL-Build\",\"environment\":\"{}\",\"state\":\"open\",\"commit_sha\":\"39406e42cb832f683daa691dd652a8dc36ee8930\",\"message\":{\"text\":\"This path depends on a user-provided value.\"},\"location\":{\"path\":\"lib/ab12-gen.js\",\"start_line\":917,\"end_line\":917,\"start_column\":7,\"end_column\":18},\"classifications\":[]},\"instances_url\":\"https://api.github.com/repos/octocat/hello-world/code-scanning/alerts/3/instances\"}]"
+            "data": "[{\"ref\":\"refs/heads/main\",\"analysis_key\":\".github/workflows/codeql-analysis.yml:CodeQL-Build\",\"environment\":\"\",\"state\":\"open\",\"commit_sha\":\"39406e42cb832f683daa691dd652a8dc36ee8930\",\"message\":{\"text\":\"This path depends on a user-provided value.\"},\"location\":{\"path\":\"lib/ab12-gen.js\",\"start_line\":917,\"end_line\":917,\"start_column\":7,\"end_column\":18},\"classifications\":[\"library\"]},{\"ref\":\"refs/pull/3740/merge\",\"analysis_key\":\".github/workflows/codeql-analysis.yml:CodeQL-Build\",\"environment\":\"\",\"state\":\"fixed\",\"commit_sha\":\"b09da05606e27f463a2b49287684b4ae777092f2\",\"message\":{\"text\":\"This suffix check is missing a length comparison to correctly handle lastIndexOf returning -1.\"},\"location\":{\"path\":\"app/script.js\",\"start_line\":2,\"end_line\":2,\"start_column\":10,\"end_column\":50},\"classifications\":[\"source\"]}]"
           }
         ]
       },
