@@ -67,6 +67,66 @@
     "renamed": null
   },
   {
+    "name": "Approve a workflow run for a fork pull request",
+    "scope": "actions",
+    "id": "approveWorkflowRun",
+    "method": "POST",
+    "url": "/repos/{owner}/{repo}/actions/runs/{run_id}/approve",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "description": "**Note:** This endpoint is currently in beta and is subject to change.\n\nApproves a workflow run for a pull request from a public fork of a first time contributor. For more information, see [\"Approving workflow runs from public forks](https://docs.github.com/actions/managing-workflow-runs/approving-workflow-runs-from-public-forks).\"\n\nYou must authenticate using an access token with the `repo` scope to use this endpoint. GitHub Apps must have the `actions:write` permission to use this endpoint.",
+    "documentationUrl": "https://docs.github.com/rest/reference/actions#approve-a-workflow-run-for-a-fork-pull-request",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "owner",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "repo",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "run_id",
+        "description": "The id of the workflow run.",
+        "in": "PATH",
+        "type": "integer",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      { "code": 201, "description": "Response", "examples": null },
+      { "code": 403, "description": "Forbidden", "examples": null },
+      { "code": 404, "description": "Resource not found", "examples": null }
+    ],
+    "renamed": null
+  },
+  {
     "name": "Cancel a workflow run",
     "scope": "actions",
     "id": "cancelWorkflowRun",
@@ -107,7 +167,7 @@
       },
       {
         "name": "run_id",
-        "description": "The id of the workflow run",
+        "description": "The id of the workflow run.",
         "in": "PATH",
         "type": "integer",
         "required": true,
@@ -1048,7 +1108,7 @@
       },
       {
         "name": "run_id",
-        "description": "The id of the workflow run",
+        "description": "The id of the workflow run.",
         "in": "PATH",
         "type": "integer",
         "required": true,
@@ -1104,7 +1164,7 @@
       },
       {
         "name": "run_id",
-        "description": "The id of the workflow run",
+        "description": "The id of the workflow run.",
         "in": "PATH",
         "type": "integer",
         "required": true,
@@ -1384,7 +1444,7 @@
       },
       {
         "name": "run_id",
-        "description": "The id of the workflow run",
+        "description": "The id of the workflow run.",
         "in": "PATH",
         "type": "integer",
         "required": true,
@@ -2069,7 +2129,7 @@
       },
       {
         "name": "run_id",
-        "description": "The id of the workflow run",
+        "description": "The id of the workflow run.",
         "in": "PATH",
         "type": "integer",
         "required": true,
@@ -2315,7 +2375,7 @@
       },
       {
         "name": "run_id",
-        "description": "The id of the workflow run",
+        "description": "The id of the workflow run.",
         "in": "PATH",
         "type": "integer",
         "required": true,
@@ -2566,7 +2626,7 @@
       },
       {
         "name": "run_id",
-        "description": "The id of the workflow run",
+        "description": "The id of the workflow run.",
         "in": "PATH",
         "type": "integer",
         "required": true,
@@ -2632,7 +2692,7 @@
       },
       {
         "name": "run_id",
-        "description": "The id of the workflow run",
+        "description": "The id of the workflow run.",
         "in": "PATH",
         "type": "integer",
         "required": true,
@@ -2922,7 +2982,7 @@
       },
       {
         "name": "run_id",
-        "description": "The id of the workflow run",
+        "description": "The id of the workflow run.",
         "in": "PATH",
         "type": "integer",
         "required": true,
@@ -3634,7 +3694,7 @@
       },
       {
         "name": "run_id",
-        "description": "The id of the workflow run",
+        "description": "The id of the workflow run.",
         "in": "PATH",
         "type": "integer",
         "required": true,
@@ -4029,7 +4089,7 @@
       },
       {
         "name": "run_id",
-        "description": "The id of the workflow run",
+        "description": "The id of the workflow run.",
         "in": "PATH",
         "type": "integer",
         "required": true,
@@ -4152,7 +4212,7 @@
       },
       {
         "name": "run_id",
-        "description": "The id of the workflow run",
+        "description": "The id of the workflow run.",
         "in": "PATH",
         "type": "integer",
         "required": true,
@@ -11820,6 +11880,123 @@
       { "code": 503, "description": "Service unavailable", "examples": null }
     ],
     "renamed": null
+  },
+  {
+    "name": "List code scanning alerts for a repository",
+    "scope": "codeScanning",
+    "id": "listAlertInstances",
+    "method": "GET",
+    "url": "/repos/{owner}/{repo}/code-scanning/alerts/{alert_number}/instances",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "description": "Lists all instances of the specified code scanning alert. You must use an access token with the `security_events` scope to use this endpoint. GitHub Apps must have the `security_events` read permission to use this endpoint.",
+    "documentationUrl": "https://docs.github.com/rest/reference/code-scanning#list-instances-of-a-code-scanning-alert",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "owner",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "repo",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "alert_number",
+        "description": "The number that identifies an alert. You can find this at the end of the URL for a code scanning alert within GitHub, and in the `number` field in the response from the `GET /repos/{owner}/{repo}/code-scanning/alerts` operation.",
+        "in": "PATH",
+        "type": "integer",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "page",
+        "description": "Page number of the results to fetch.",
+        "in": "QUERY",
+        "type": "integer",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "per_page",
+        "description": "Results per page (max 100).",
+        "in": "QUERY",
+        "type": "integer",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "ref",
+        "description": "The Git reference for the results you want to list. The `ref` for a branch can be formatted either as `refs/heads/<branch name>` or simply `<branch name>`. To reference a pull request use `refs/pull/<number>/merge`.",
+        "in": "QUERY",
+        "type": "string",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      {
+        "code": 200,
+        "description": "Response",
+        "examples": [
+          {
+            "data": "[{\"ref\":\"refs/heads/main\",\"analysis_key\":\".github/workflows/codeql-analysis.yml:CodeQL-Build\",\"environment\":\"\",\"state\":\"open\",\"commit_sha\":\"39406e42cb832f683daa691dd652a8dc36ee8930\",\"message\":{\"text\":\"This path depends on a user-provided value.\"},\"location\":{\"path\":\"lib/ab12-gen.js\",\"start_line\":917,\"end_line\":917,\"start_column\":7,\"end_column\":18},\"classifications\":[\"library\"]},{\"ref\":\"refs/pull/3740/merge\",\"analysis_key\":\".github/workflows/codeql-analysis.yml:CodeQL-Build\",\"environment\":\"\",\"state\":\"fixed\",\"commit_sha\":\"b09da05606e27f463a2b49287684b4ae777092f2\",\"message\":{\"text\":\"This suffix check is missing a length comparison to correctly handle lastIndexOf returning -1.\"},\"location\":{\"path\":\"app/script.js\",\"start_line\":2,\"end_line\":2,\"start_column\":10,\"end_column\":50},\"classifications\":[\"source\"]}]"
+          }
+        ]
+      },
+      {
+        "code": 403,
+        "description": "Response if GitHub Advanced Security is not enabled for this repository",
+        "examples": null
+      },
+      { "code": 404, "description": "Resource not found", "examples": null },
+      { "code": 503, "description": "Service unavailable", "examples": null }
+    ],
+    "renamed": {
+      "before": { "scope": "codeScanning", "id": "listAlertsInstances" },
+      "after": { "scope": "codeScanning", "id": "listAlertInstances" },
+      "date": "2021-04-30",
+      "note": null
+    }
   },
   {
     "name": "List code scanning alerts for a repository",
@@ -39232,7 +39409,7 @@
         "description": "Response",
         "examples": [
           {
-            "data": "{\"health_percentage\":100,\"description\":\"My first repository on GitHub!\",\"documentation\":null,\"files\":{\"code_of_conduct\":{\"name\":\"Contributor Covenant\",\"key\":\"contributor_covenant\",\"url\":\"https://api.github.com/codes_of_conduct/contributor_covenant\",\"html_url\":\"https://github.com/octocat/Hello-World/blob/master/CODE_OF_CONDUCT.md\"},\"contributing\":{\"url\":\"https://api.github.com/repos/octocat/Hello-World/contents/CONTRIBUTING\",\"html_url\":\"https://github.com/octocat/Hello-World/blob/master/CONTRIBUTING\"},\"issue_template\":{\"url\":\"https://api.github.com/repos/octocat/Hello-World/contents/ISSUE_TEMPLATE\",\"html_url\":\"https://github.com/octocat/Hello-World/blob/master/ISSUE_TEMPLATE\"},\"pull_request_template\":{\"url\":\"https://api.github.com/repos/octocat/Hello-World/contents/PULL_REQUEST_TEMPLATE\",\"html_url\":\"https://github.com/octocat/Hello-World/blob/master/PULL_REQUEST_TEMPLATE\"},\"license\":{\"name\":\"MIT License\",\"key\":\"mit\",\"spdx_id\":\"MIT\",\"url\":\"https://api.github.com/licenses/mit\",\"html_url\":\"https://github.com/octocat/Hello-World/blob/master/LICENSE\",\"node_id\":\"MDc6TGljZW5zZW1pdA==\"},\"readme\":{\"url\":\"https://api.github.com/repos/octocat/Hello-World/contents/README.md\",\"html_url\":\"https://github.com/octocat/Hello-World/blob/master/README.md\"}},\"updated_at\":\"2017-02-28T19:09:29Z\",\"content_reports_enabled\":true}"
+            "data": "{\"health_percentage\":100,\"description\":\"My first repository on GitHub!\",\"documentation\":null,\"files\":{\"code_of_conduct\":{\"name\":\"Contributor Covenant\",\"key\":\"contributor_covenant\",\"url\":\"https://api.github.com/codes_of_conduct/contributor_covenant\",\"html_url\":\"https://github.com/octocat/Hello-World/blob/master/CODE_OF_CONDUCT.md\"},\"code_of_conduct_file\":{\"url\":\"https://api.github.com/repos/octocat/Hello-World/contents/CODE_OF_CONDUCT.md\",\"html_url\":\"https://github.com/octocat/Hello-World/blob/master/CODE_OF_CONDUCT.md\"},\"contributing\":{\"url\":\"https://api.github.com/repos/octocat/Hello-World/contents/CONTRIBUTING\",\"html_url\":\"https://github.com/octocat/Hello-World/blob/master/CONTRIBUTING\"},\"issue_template\":{\"url\":\"https://api.github.com/repos/octocat/Hello-World/contents/ISSUE_TEMPLATE\",\"html_url\":\"https://github.com/octocat/Hello-World/blob/master/ISSUE_TEMPLATE\"},\"pull_request_template\":{\"url\":\"https://api.github.com/repos/octocat/Hello-World/contents/PULL_REQUEST_TEMPLATE\",\"html_url\":\"https://github.com/octocat/Hello-World/blob/master/PULL_REQUEST_TEMPLATE\"},\"license\":{\"name\":\"MIT License\",\"key\":\"mit\",\"spdx_id\":\"MIT\",\"url\":\"https://api.github.com/licenses/mit\",\"html_url\":\"https://github.com/octocat/Hello-World/blob/master/LICENSE\",\"node_id\":\"MDc6TGljZW5zZW1pdA==\"},\"readme\":{\"url\":\"https://api.github.com/repos/octocat/Hello-World/contents/README.md\",\"html_url\":\"https://github.com/octocat/Hello-World/blob/master/README.md\"}},\"updated_at\":\"2017-02-28T19:09:29Z\",\"content_reports_enabled\":true}"
           }
         ]
       }

@@ -16,6 +16,22 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
+     * **Note:** This endpoint is currently in beta and is subject to change.
+     *
+     * Approves a workflow run for a pull request from a public fork of a first time contributor. For more information, see ["Approving workflow runs from public forks](https://docs.github.com/actions/managing-workflow-runs/approving-workflow-runs-from-public-forks)."
+     *
+     * You must authenticate using an access token with the `repo` scope to use this endpoint. GitHub Apps must have the `actions:write` permission to use this endpoint.
+     */
+    approveWorkflowRun: {
+      (
+        params?: RestEndpointMethodTypes["actions"]["approveWorkflowRun"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["actions"]["approveWorkflowRun"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
      * Cancels a workflow run using its `id`. You must authenticate using an access token with the `repo` scope to use this endpoint. GitHub Apps must have the `actions:write` permission to use this endpoint.
      */
     cancelWorkflowRun: {

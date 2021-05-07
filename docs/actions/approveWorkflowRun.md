@@ -1,0 +1,50 @@
+---
+name: Approve a workflow run for a fork pull request
+example: octokit.rest.actions.approveWorkflowRun({ owner, repo, run_id })
+route: POST /repos/{owner}/{repo}/actions/runs/{run_id}/approve
+scope: actions
+type: API method
+---
+
+# Approve a workflow run for a fork pull request
+
+**Note:** This endpoint is currently in beta and is subject to change.
+
+Approves a workflow run for a pull request from a public fork of a first time contributor. For more information, see ["Approving workflow runs from public forks](https://docs.github.com/actions/managing-workflow-runs/approving-workflow-runs-from-public-forks)."
+
+You must authenticate using an access token with the `repo` scope to use this endpoint. GitHub Apps must have the `actions:write` permission to use this endpoint.
+
+```js
+octokit.rest.actions.approveWorkflowRun({
+  owner,
+  repo,
+  run_id,
+});
+```
+
+## Parameters
+
+<table>
+  <thead>
+    <tr>
+      <th>name</th>
+      <th>required</th>
+      <th>description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>owner</td><td>yes</td><td>
+
+</td></tr>
+<tr><td>repo</td><td>yes</td><td>
+
+</td></tr>
+<tr><td>run_id</td><td>yes</td><td>
+
+The id of the workflow run.
+
+</td></tr>
+  </tbody>
+</table>
+
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/actions#approve-a-workflow-run-for-a-fork-pull-request).

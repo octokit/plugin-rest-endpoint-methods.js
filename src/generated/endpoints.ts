@@ -4,6 +4,9 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     addSelectedRepoToOrgSecret: [
       "PUT /orgs/{org}/actions/secrets/{secret_name}/repositories/{repository_id}",
     ],
+    approveWorkflowRun: [
+      "POST /repos/{owner}/{repo}/actions/runs/{run_id}/approve",
+    ],
     cancelWorkflowRun: [
       "POST /repos/{owner}/{repo}/actions/runs/{run_id}/cancel",
     ],

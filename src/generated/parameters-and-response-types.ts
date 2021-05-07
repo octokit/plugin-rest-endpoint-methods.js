@@ -10,6 +10,14 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["PUT /orgs/{org}/actions/secrets/{secret_name}/repositories/{repository_id}"]["response"];
     };
+    approveWorkflowRun: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["POST /repos/{owner}/{repo}/actions/runs/{run_id}/approve"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["POST /repos/{owner}/{repo}/actions/runs/{run_id}/approve"]["response"];
+    };
     cancelWorkflowRun: {
       parameters: RequestParameters &
         Omit<
