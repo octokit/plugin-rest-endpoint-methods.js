@@ -334,7 +334,6 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
       {},
       { renamed: ["codeScanning", "listAlertInstances"] },
     ],
-    listAlertsForRepo: ["GET /repos/{owner}/{repo}/code-scanning/alerts"],
     listRecentAnalyses: ["GET /repos/{owner}/{repo}/code-scanning/analyses"],
     updateAlert: [
       "PATCH /repos/{owner}/{repo}/code-scanning/alerts/{alert_number}",
