@@ -1,21 +1,23 @@
 ---
 name: Create a content attachment
-example: octokit.rest.apps.createContentAttachment({ content_reference_id, title, body })
-route: POST /content_references/{content_reference_id}/attachments
+example: octokit.rest.apps.createContentAttachmentForRepo({ owner, repo, content_reference_id, title, body })
+route: POST /repos/{owner}/{repo}/content_references/{content_reference_id}/attachments
 scope: apps
 type: API method
 ---
 
 # Create a content attachment
 
-Creates an attachment under a content reference URL in the body or comment of an issue or pull request. Use the `id` of the content reference from the [`content_reference` event](https://docs.github.com/webhooks/event-payloads/#content_reference) to create an attachment.
+Creates an attachment under a content reference URL in the body or comment of an issue or pull request. Use the `id` and `repository` `full_name` of the content reference from the [`content_reference` event](https://docs.github.com/webhooks/event-payloads/#content_reference) to create an attachment.
 
 The app must create a content attachment within six hours of the content reference URL being posted. See "[Using content attachments](https://docs.github.com/apps/using-content-attachments/)" for details about content attachments.
 
 You must use an [installation access token](https://docs.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-an-installation) to access this endpoint.
 
 ```js
-octokit.rest.apps.createContentAttachment({
+octokit.rest.apps.createContentAttachmentForRepo({
+  owner,
+  repo,
   content_reference_id,
   title,
   body,
@@ -33,7 +35,19 @@ octokit.rest.apps.createContentAttachment({
     </tr>
   </thead>
   <tbody>
-    <tr><td>content_reference_id</td><td>yes</td><td>
+    <tr><td>owner</td><td>yes</td><td>
+
+The owner of the repository. Determined from the `repository` `full_name` of the `content_reference` event.
+
+</td></tr>
+<tr><td>repo</td><td>yes</td><td>
+
+The name of the repository. Determined from the `repository` `full_name` of the `content_reference` event.
+
+</td></tr>
+<tr><td>content_reference_id</td><td>yes</td><td>
+
+The `id` of the `content_reference` event.
 
 </td></tr>
 <tr><td>title</td><td>yes</td><td>

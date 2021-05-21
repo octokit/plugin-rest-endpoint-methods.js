@@ -223,8 +223,8 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
       "PUT /user/installations/{installation_id}/repositories/{repository_id}",
     ],
     checkToken: ["POST /applications/{client_id}/token"],
-    createContentAttachment: [
-      "POST /content_references/{content_reference_id}/attachments",
+    createContentAttachmentForRepo: [
+      "POST /repos/{owner}/{repo}/content_references/{content_reference_id}/attachments",
       { mediaType: { previews: ["corsair"] } },
     ],
     createFromManifest: ["POST /app-manifests/{code}/conversions"],
@@ -891,6 +891,10 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
       "POST /repos/{owner}/{repo}/pulls/comments/{comment_id}/reactions",
       { mediaType: { previews: ["squirrel-girl"] } },
     ],
+    createForRelease: [
+      "POST /repos/{owner}/{repo}/releases/{release_id}/reactions",
+      { mediaType: { previews: ["squirrel-girl"] } },
+    ],
     createForTeamDiscussionCommentInOrg: [
       "POST /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}/reactions",
       { mediaType: { previews: ["squirrel-girl"] } },
@@ -984,7 +988,9 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
       "GET /repos/{owner}/{repo}/vulnerability-alerts",
       { mediaType: { previews: ["dorian"] } },
     ],
-    compareCommits: ["GET /repos/{owner}/{repo}/compare/{base}...{head}"],
+    compareCommitsWithBasehead: [
+      "GET /repos/{owner}/{repo}/compare/{basehead}",
+    ],
     createCommitComment: [
       "POST /repos/{owner}/{repo}/commits/{commit_sha}/comments",
     ],

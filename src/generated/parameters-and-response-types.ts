@@ -838,13 +838,13 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["POST /applications/{client_id}/token"]["response"];
     };
-    createContentAttachment: {
+    createContentAttachmentForRepo: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["POST /content_references/{content_reference_id}/attachments"]["parameters"],
+          Endpoints["POST /repos/{owner}/{repo}/content_references/{content_reference_id}/attachments"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["POST /content_references/{content_reference_id}/attachments"]["response"];
+      response: Endpoints["POST /repos/{owner}/{repo}/content_references/{content_reference_id}/attachments"]["response"];
     };
     createFromManifest: {
       parameters: RequestParameters &
@@ -3304,6 +3304,14 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["POST /repos/{owner}/{repo}/pulls/comments/{comment_id}/reactions"]["response"];
     };
+    createForRelease: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["POST /repos/{owner}/{repo}/releases/{release_id}/reactions"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["POST /repos/{owner}/{repo}/releases/{release_id}/reactions"]["response"];
+    };
     createForTeamDiscussionCommentInOrg: {
       parameters: RequestParameters &
         Omit<
@@ -3490,13 +3498,13 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["GET /repos/{owner}/{repo}/vulnerability-alerts"]["response"];
     };
-    compareCommits: {
+    compareCommitsWithBasehead: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /repos/{owner}/{repo}/compare/{base}...{head}"]["parameters"],
+          Endpoints["GET /repos/{owner}/{repo}/compare/{basehead}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /repos/{owner}/{repo}/compare/{base}...{head}"]["response"];
+      response: Endpoints["GET /repos/{owner}/{repo}/compare/{basehead}"]["response"];
     };
     createCommitComment: {
       parameters: RequestParameters &

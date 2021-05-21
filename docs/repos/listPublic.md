@@ -10,9 +10,9 @@ type: API method
 
 Lists all public repositories in the order that they were created.
 
-Notes:
+Note:
 
-- For GitHub Enterprise Server and GitHub AE, this endpoint will only list repositories available to all users on the enterprise.
+- For GitHub Enterprise Server, this endpoint will only list repositories available to all users on the enterprise.
 - Pagination is powered exclusively by the `since` parameter. Use the [Link header](https://docs.github.com/rest/overview/resources-in-the-rest-api#link-header) to get the URL for the next page of repositories.
 
 ```js
