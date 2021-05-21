@@ -227,10 +227,6 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
       "POST /repos/{owner}/{repo}/content_references/{content_reference_id}/attachments",
       { mediaType: { previews: ["corsair"] } },
     ],
-    createContentAttachmentForRepo: [
-      "POST /repos/{owner}/{repo}/content_references/{content_reference_id}/attachments",
-      { mediaType: { previews: ["corsair"] } },
-    ],
     createFromManifest: ["POST /app-manifests/{code}/conversions"],
     createInstallationAccessToken: [
       "POST /app/installations/{installation_id}/access_tokens",
@@ -992,7 +988,6 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
       "GET /repos/{owner}/{repo}/vulnerability-alerts",
       { mediaType: { previews: ["dorian"] } },
     ],
-    compareCommits: ["GET /repos/{owner}/{repo}/compare/{base}...{head}"],
     compareCommitsWithBasehead: [
       "GET /repos/{owner}/{repo}/compare/{basehead}",
     ],

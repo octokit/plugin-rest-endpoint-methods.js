@@ -846,14 +846,6 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["POST /repos/{owner}/{repo}/content_references/{content_reference_id}/attachments"]["response"];
     };
-    createContentAttachmentForRepo: {
-      parameters: RequestParameters &
-        Omit<
-          Endpoints["POST /repos/{owner}/{repo}/content_references/{content_reference_id}/attachments"]["parameters"],
-          "baseUrl" | "headers" | "mediaType"
-        >;
-      response: Endpoints["POST /repos/{owner}/{repo}/content_references/{content_reference_id}/attachments"]["response"];
-    };
     createFromManifest: {
       parameters: RequestParameters &
         Omit<
@@ -3505,14 +3497,6 @@ export type RestEndpointMethodTypes = {
           "baseUrl" | "headers" | "mediaType"
         >;
       response: Endpoints["GET /repos/{owner}/{repo}/vulnerability-alerts"]["response"];
-    };
-    compareCommitsWithBasehead: {
-      parameters: RequestParameters &
-        Omit<
-          Endpoints["GET /repos/{owner}/{repo}/compare/{basehead}"]["parameters"],
-          "baseUrl" | "headers" | "mediaType"
-        >;
-      response: Endpoints["GET /repos/{owner}/{repo}/compare/{basehead}"]["response"];
     };
     compareCommitsWithBasehead: {
       parameters: RequestParameters &
