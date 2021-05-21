@@ -37,4 +37,4 @@ installation_id parameter
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/apps/#delete-an-installation-for-the-authenticated-app).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/apps#delete-an-installation-for-the-authenticated-app).

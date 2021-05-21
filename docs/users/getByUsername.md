@@ -39,4 +39,4 @@ octokit.rest.users.getByUsername({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/users/#get-a-user).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/users#get-a-user).

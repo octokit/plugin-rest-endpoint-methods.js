@@ -37,4 +37,4 @@ octokit.rest.repos.enableAutomatedSecurityFixes({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos/#enable-automated-security-fixes).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#enable-automated-security-fixes).

@@ -33,4 +33,4 @@ The words to show in Octocat's speech bubble
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation]().
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/meta#get-octocat).

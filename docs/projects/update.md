@@ -58,4 +58,4 @@ Whether or not this project can be seen by everyone.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/projects/#update-a-project).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/projects#update-a-project).

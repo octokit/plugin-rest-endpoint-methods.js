@@ -18,4 +18,4 @@ octokit.rest.gitignore.getAllTemplates();
 
 This endpoint has no parameters
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/gitignore/#get-all-gitignore-templates).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/gitignore#get-all-gitignore-templates).

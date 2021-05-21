@@ -43,4 +43,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/teams/#list-teams).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/teams#list-teams).

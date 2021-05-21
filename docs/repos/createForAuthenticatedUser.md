@@ -122,4 +122,4 @@ Whether this repository acts as a template that can be used to generate new repo
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos/#create-a-repository-for-the-authenticated-user).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#create-a-repository-for-the-authenticated-user).

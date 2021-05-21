@@ -39,7 +39,7 @@ octokit.rest.actions.getPendingDeploymentsForRun({
 </td></tr>
 <tr><td>run_id</td><td>yes</td><td>
 
-The id of the workflow run
+The id of the workflow run.
 
 </td></tr>
   </tbody>

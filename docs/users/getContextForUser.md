@@ -50,4 +50,4 @@ Uses the ID for the `subject_type` you specified. **Required** when using `subje
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/users/#get-contextual-information-for-a-user).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/users#get-contextual-information-for-a-user).

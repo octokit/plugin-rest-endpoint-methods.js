@@ -45,4 +45,4 @@ Results per page (max 100).
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos/#get-all-repository-topics).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#get-all-repository-topics).

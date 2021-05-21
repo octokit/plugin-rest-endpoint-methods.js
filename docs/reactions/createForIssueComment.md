@@ -8,7 +8,7 @@ type: API method
 
 # Create reaction for an issue comment
 
-Create a reaction to an [issue comment](https://docs.github.com/rest/reference/issues#comments). A response with a `Status: 200 OK` means that you already added the reaction type to this issue comment.
+Create a reaction to an [issue comment](https://docs.github.com/rest/reference/issues#comments). A response with an HTTP `200` status means that you already added the reaction type to this issue comment.
 
 ```js
 octokit.rest.reactions.createForIssueComment({
@@ -49,4 +49,4 @@ The [reaction type](https://docs.github.com/rest/reference/reactions#reaction-ty
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/reactions/#create-reaction-for-an-issue-comment).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/reactions#create-reaction-for-an-issue-comment).

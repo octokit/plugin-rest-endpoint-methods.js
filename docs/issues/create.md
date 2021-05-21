@@ -68,4 +68,4 @@ Logins for Users to assign to this issue. _NOTE: Only users with push access can
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/issues/#create-an-issue).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/issues#create-an-issue).

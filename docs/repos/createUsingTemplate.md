@@ -70,4 +70,4 @@ Either `true` to create a new private repository or `false` to create a new publ
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos/#create-a-repository-using-a-template).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#create-a-repository-using-a-template).

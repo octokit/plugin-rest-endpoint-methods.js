@@ -37,4 +37,4 @@ gist_id parameter
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/gists/#get-a-gist-revision).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/gists#get-a-gist-revision).

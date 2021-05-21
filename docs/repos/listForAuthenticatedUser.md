@@ -80,4 +80,4 @@ Only show notifications updated before the given time. This is a timestamp in [I
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos/#list-repositories-for-the-authenticated-user).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#list-repositories-for-the-authenticated-user).

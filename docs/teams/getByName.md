@@ -41,4 +41,4 @@ team_slug parameter
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/teams/#get-a-team-by-name).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/teams#get-a-team-by-name).

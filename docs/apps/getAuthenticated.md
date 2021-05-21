@@ -20,4 +20,4 @@ octokit.rest.apps.getAuthenticated();
 
 This endpoint has no parameters
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/apps/#get-the-authenticated-app).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/apps#get-the-authenticated-app).

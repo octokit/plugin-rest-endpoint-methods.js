@@ -43,4 +43,4 @@ The SARIF ID obtained after uploading.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/code-scanning#get-information-about-a-sarif-upload).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/code-scanning#list-recent-code-scanning-analyses-for-a-repository).

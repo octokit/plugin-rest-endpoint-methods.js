@@ -53,4 +53,4 @@ issue_number parameter
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/issues/#get-an-issue).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/issues#get-an-issue).

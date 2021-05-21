@@ -61,4 +61,4 @@ Merge method to use. Possible values are `merge`, `squash` or `rebase`. Default 
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/pulls/#merge-a-pull-request).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/pulls#merge-a-pull-request).

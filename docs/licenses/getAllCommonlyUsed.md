@@ -39,4 +39,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/licenses/#get-all-commonly-used-licenses).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/licenses#get-all-commonly-used-licenses).

@@ -78,4 +78,4 @@ Indicates whether the pull request is a draft. See "[Draft Pull Requests](https:
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/pulls/#create-a-pull-request).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/pulls#create-a-pull-request).

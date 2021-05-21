@@ -10,6 +10,14 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["PUT /orgs/{org}/actions/secrets/{secret_name}/repositories/{repository_id}"]["response"];
     };
+    approveWorkflowRun: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["POST /repos/{owner}/{repo}/actions/runs/{run_id}/approve"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["POST /repos/{owner}/{repo}/actions/runs/{run_id}/approve"]["response"];
+    };
     cancelWorkflowRun: {
       parameters: RequestParameters &
         Omit<
@@ -1259,6 +1267,14 @@ export type RestEndpointMethodTypes = {
           "baseUrl" | "headers" | "mediaType"
         >;
       response: Endpoints["GET /repos/{owner}/{repo}/code-scanning/sarifs/{sarif_id}"]["response"];
+    };
+    listAlertInstances: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /repos/{owner}/{repo}/code-scanning/alerts/{alert_number}/instances"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /repos/{owner}/{repo}/code-scanning/alerts/{alert_number}/instances"]["response"];
     };
     listAlertsForRepo: {
       parameters: RequestParameters &

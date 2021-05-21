@@ -43,4 +43,4 @@ The repository context to use when creating references in `gfm` mode.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/markdown/#render-a-markdown-document).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/markdown#render-a-markdown-document).

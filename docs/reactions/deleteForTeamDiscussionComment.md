@@ -53,4 +53,4 @@ team_slug parameter
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/reactions/#delete-team-discussion-comment-reaction).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/reactions#delete-team-discussion-comment-reaction).

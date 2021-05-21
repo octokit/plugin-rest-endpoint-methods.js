@@ -16,4 +16,4 @@ octokit.rest.codesOfConduct.getAllCodesOfConduct();
 
 This endpoint has no parameters
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/codes_of_conduct/#get-all-codes-of-conduct).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/codes-of-conduct#get-all-codes-of-conduct).

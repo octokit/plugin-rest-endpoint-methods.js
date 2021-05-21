@@ -66,4 +66,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/search/#search-issues-and-pull-requests).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/search#search-issues-and-pull-requests).
