@@ -1602,7 +1602,7 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Creates an attachment under a content reference URL in the body or comment of an issue or pull request. Use the `id` of the content reference from the [`content_reference` event](https://docs.github.com/webhooks/event-payloads/#content_reference) to create an attachment.
+     * **Deprecated:** use `apps.createContentAttachmentForRepo()` (`POST /repos/{owner}/{repo}/content_references/{content_reference_id}/attachments`) instead. Creates an attachment under a content reference URL in the body or comment of an issue or pull request. Use the `id` of the content reference from the [`content_reference` event](https://docs.github.com/webhooks/event-payloads/#content_reference) to create an attachment.
      *
      * The app must create a content attachment within six hours of the content reference URL being posted. See "[Using content attachments](https://docs.github.com/apps/using-content-attachments/)" for details about content attachments.
      *
@@ -1613,6 +1613,22 @@ export type RestEndpointMethods = {
         params?: RestEndpointMethodTypes["apps"]["createContentAttachment"]["parameters"]
       ): Promise<
         RestEndpointMethodTypes["apps"]["createContentAttachment"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Creates an attachment under a content reference URL in the body or comment of an issue or pull request. Use the `id` and `repository` `full_name` of the content reference from the [`content_reference` event](https://docs.github.com/webhooks/event-payloads/#content_reference) to create an attachment.
+     *
+     * The app must create a content attachment within six hours of the content reference URL being posted. See "[Using content attachments](https://docs.github.com/apps/using-content-attachments/)" for details about content attachments.
+     *
+     * You must use an [installation access token](https://docs.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-an-installation) to access this endpoint.
+     */
+    createContentAttachmentForRepo: {
+      (
+        params?: RestEndpointMethodTypes["apps"]["createContentAttachmentForRepo"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["apps"]["createContentAttachmentForRepo"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -2501,8 +2517,8 @@ export type RestEndpointMethods = {
      * Uploads SARIF data containing the results of a code scanning analysis to make the results available in a repository. You must use an access token with the `security_events` scope to use this endpoint. GitHub Apps must have the `security_events` write permission to use this endpoint.
      *
      * There are two places where you can upload code scanning results.
-     *  - If you upload to a pull request, for example `--ref refs/pull/42/merge` or `--ref refs/pull/42/head`, then the results appear as alerts in a pull request check. For more information, see "[Triaging code scanning alerts in pull requests](/github/finding-security-vulnerabilities-and-errors-in-your-code/triaging-code-scanning-alerts-in-pull-requests)."
-     *  - If you upload to a branch, for example `--ref refs/heads/my-branch`, then the results appear in the **Security** tab for your repository. For more information, see "[Managing code scanning alerts for your repository](/github/finding-security-vulnerabilities-and-errors-in-your-code/managing-code-scanning-alerts-for-your-repository#viewing-the-alerts-for-a-repository)."
+     *  - If you upload to a pull request, for example `--ref refs/pull/42/merge` or `--ref refs/pull/42/head`, then the results appear as alerts in a pull request check. For more information, see "[Triaging code scanning alerts in pull requests](/code-security/secure-coding/triaging-code-scanning-alerts-in-pull-requests)."
+     *  - If you upload to a branch, for example `--ref refs/heads/my-branch`, then the results appear in the **Security** tab for your repository. For more information, see "[Managing code scanning alerts for your repository](/code-security/secure-coding/managing-code-scanning-alerts-for-your-repository#viewing-the-alerts-for-a-repository)."
      *
      * You must compress the SARIF-formatted analysis data that you want to upload, using `gzip`, and then encode it as a Base64 format string. For example:
      *
@@ -4931,11 +4947,7 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
-    /**
-     * **Note**: GitHub's REST API v3 considers every pull request an issue, but not every issue is a pull request. For this reason, "Issues" endpoints may return both issues and pull requests in the response. You can identify pull requests by the `pull_request` key.
-     *
-     * Be aware that the `id` of a pull request returned from "Issues" endpoints will be an _issue id_. To find out the pull request id, use the "[List pull requests](https://docs.github.com/rest/reference/pulls#list-pull-requests)" endpoint.
-     */
+
     createCard: {
       (
         params?: RestEndpointMethodTypes["projects"]["createCard"]["parameters"]
@@ -5555,6 +5567,18 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
+     * Create a reaction to a [release](https://docs.github.com/rest/reference/repos#releases). A response with a `Status: 200 OK` means that you already added the reaction type to this release.
+     */
+    createForRelease: {
+      (
+        params?: RestEndpointMethodTypes["reactions"]["createForRelease"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["reactions"]["createForRelease"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
      * Create a reaction to a [team discussion comment](https://docs.github.com/rest/reference/teams#discussion-comments). OAuth access tokens require the `write:discussion` [scope](https://docs.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/). A response with an HTTP `200` status means that you already added the reaction type to this team discussion comment.
      *
      * **Note:** You can also specify a team by `org_id` and `team_id` using the route `POST /organizations/:org_id/team/:team_id/discussions/:discussion_number/comments/:comment_number/reactions`.
@@ -5883,7 +5907,7 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Both `:base` and `:head` must be branch names in `:repo`. To compare branches across other repositories in the same network as `:repo`, use the format `<USERNAME>:branch`.
+     * **Deprecated**: Use `repos.compareCommitsWithBasehead()` (`GET /repos/{owner}/{repo}/compare/{basehead}`) instead. Both `:base` and `:head` must be branch names in `:repo`. To compare branches across other repositories in the same network as `:repo`, use the format `<USERNAME>:branch`.
      *
      * The response from the API is equivalent to running the `git log base..head` command; however, commits are returned in chronological order. Pass the appropriate [media type](https://docs.github.com/rest/overview/media-types/#commits-commit-comparison-and-pull-requests) to fetch diff and patch formats.
      *
@@ -5929,6 +5953,57 @@ export type RestEndpointMethods = {
         params?: RestEndpointMethodTypes["repos"]["compareCommits"]["parameters"]
       ): Promise<
         RestEndpointMethodTypes["repos"]["compareCommits"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * The `basehead` param is comprised of two parts: `base` and `head`. Both must be branch names in `repo`. To compare branches across other repositories in the same network as `repo`, use the format `<USERNAME>:branch`.
+     *
+     * The response from the API is equivalent to running the `git log base..head` command; however, commits are returned in chronological order. Pass the appropriate [media type](https://docs.github.com/rest/overview/media-types/#commits-commit-comparison-and-pull-requests) to fetch diff and patch formats.
+     *
+     * The response also includes details on the files that were changed between the two commits. This includes the status of the change (for example, if a file was added, removed, modified, or renamed), and details of the change itself. For example, files with a `renamed` status have a `previous_filename` field showing the previous filename of the file, and files with a `modified` status have a `patch` field showing the changes made to the file.
+     *
+     * **Working with large comparisons**
+     *
+     * To process a response with a large number of commits, you can use (`per_page` or `page`) to paginate the results. When using paging, the list of changed files is only returned with page 1, but includes all changed files for the entire comparison. For more information on working with pagination, see "[Traversing with pagination](/rest/guides/traversing-with-pagination)."
+     *
+     * When calling this API without any paging parameters (`per_page` or `page`), the returned list is limited to 250 commits and the last commit in the list is the most recent of the entire comparison. When a paging parameter is specified, the first commit in the returned list of each page is the earliest.
+     *
+     * **Signature verification object**
+     *
+     * The response will include a `verification` object that describes the result of verifying the commit's signature. The following fields are included in the `verification` object:
+     *
+     * | Name | Type | Description |
+     * | ---- | ---- | ----------- |
+     * | `verified` | `boolean` | Indicates whether GitHub considers the signature in this commit to be verified. |
+     * | `reason` | `string` | The reason for verified value. Possible values and their meanings are enumerated in table below. |
+     * | `signature` | `string` | The signature that was extracted from the commit. |
+     * | `payload` | `string` | The value that was signed. |
+     *
+     * These are the possible values for `reason` in the `verification` object:
+     *
+     * | Value | Description |
+     * | ----- | ----------- |
+     * | `expired_key` | The key that made the signature is expired. |
+     * | `not_signing_key` | The "signing" flag is not among the usage flags in the GPG key that made the signature. |
+     * | `gpgverify_error` | There was an error communicating with the signature verification service. |
+     * | `gpgverify_unavailable` | The signature verification service is currently unavailable. |
+     * | `unsigned` | The object does not include a signature. |
+     * | `unknown_signature_type` | A non-PGP signature was found in the commit. |
+     * | `no_user` | No user was associated with the `committer` email address in the commit. |
+     * | `unverified_email` | The `committer` email address in the commit was associated with a user, but the email address is not verified on her/his account. |
+     * | `bad_email` | The `committer` email address in the commit is not included in the identities of the PGP key that made the signature. |
+     * | `unknown_key` | The key that made the signature has not been registered with any user's account. |
+     * | `malformed_signature` | There was an error parsing the signature. |
+     * | `invalid` | The signature could not be cryptographically verified using the key whose key-id was found in the signature. |
+     * | `valid` | None of the above errors applied, so the signature is considered to be verified. |
+     */
+    compareCommitsWithBasehead: {
+      (
+        params?: RestEndpointMethodTypes["repos"]["compareCommitsWithBasehead"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["repos"]["compareCommitsWithBasehead"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -7382,8 +7457,8 @@ export type RestEndpointMethods = {
     /**
      * Lists all public repositories in the order that they were created.
      *
-     * Notes:
-     * - For GitHub Enterprise Server and GitHub AE, this endpoint will only list repositories available to all users on the enterprise.
+     * Note:
+     * - For GitHub Enterprise Server, this endpoint will only list repositories available to all users on the enterprise.
      * - Pagination is powered exclusively by the `since` parameter. Use the [Link header](https://docs.github.com/rest/overview/resources-in-the-rest-api#link-header) to get the URL for the next page of repositories.
      */
     listPublic: {

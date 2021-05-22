@@ -846,6 +846,14 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["POST /content_references/{content_reference_id}/attachments"]["response"];
     };
+    createContentAttachmentForRepo: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["POST /repos/{owner}/{repo}/content_references/{content_reference_id}/attachments"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["POST /repos/{owner}/{repo}/content_references/{content_reference_id}/attachments"]["response"];
+    };
     createFromManifest: {
       parameters: RequestParameters &
         Omit<
@@ -3304,6 +3312,14 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["POST /repos/{owner}/{repo}/pulls/comments/{comment_id}/reactions"]["response"];
     };
+    createForRelease: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["POST /repos/{owner}/{repo}/releases/{release_id}/reactions"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["POST /repos/{owner}/{repo}/releases/{release_id}/reactions"]["response"];
+    };
     createForTeamDiscussionCommentInOrg: {
       parameters: RequestParameters &
         Omit<
@@ -3497,6 +3513,14 @@ export type RestEndpointMethodTypes = {
           "baseUrl" | "headers" | "mediaType"
         >;
       response: Endpoints["GET /repos/{owner}/{repo}/compare/{base}...{head}"]["response"];
+    };
+    compareCommitsWithBasehead: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /repos/{owner}/{repo}/compare/{basehead}"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /repos/{owner}/{repo}/compare/{basehead}"]["response"];
     };
     createCommitComment: {
       parameters: RequestParameters &

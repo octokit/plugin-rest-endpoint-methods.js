@@ -1,14 +1,14 @@
 ---
 name: Compare two commits
-example: octokit.rest.repos.compareCommits({ owner, repo, base, head })
-route: GET /repos/{owner}/{repo}/compare/{base}...{head}
+example: octokit.rest.repos.compareCommitsWithBasehead({ owner, repo, basehead })
+route: GET /repos/{owner}/{repo}/compare/{basehead}
 scope: repos
 type: API method
 ---
 
 # Compare two commits
 
-**Deprecated**: Use `repos.compareCommitsWithBasehead()` (`GET /repos/{owner}/{repo}/compare/{basehead}`) instead. Both `:base` and `:head` must be branch names in `:repo`. To compare branches across other repositories in the same network as `:repo`, use the format `<USERNAME>:branch`.
+The `basehead` param is comprised of two parts: `base` and `head`. Both must be branch names in `repo`. To compare branches across other repositories in the same network as `repo`, use the format `<USERNAME>:branch`.
 
 The response from the API is equivalent to running the `git log base..head` command; however, commits are returned in chronological order. Pass the appropriate [media type](https://docs.github.com/rest/overview/media-types/#commits-commit-comparison-and-pull-requests) to fetch diff and patch formats.
 
@@ -50,11 +50,10 @@ These are the possible values for `reason` in the `verification` object:
 | `valid`                  | None of the above errors applied, so the signature is considered to be verified.                                                  |
 
 ```js
-octokit.rest.repos.compareCommits({
+octokit.rest.repos.compareCommitsWithBasehead({
   owner,
   repo,
-  base,
-  head,
+  basehead,
 });
 ```
 
@@ -75,20 +74,19 @@ octokit.rest.repos.compareCommits({
 <tr><td>repo</td><td>yes</td><td>
 
 </td></tr>
-<tr><td>base</td><td>yes</td><td>
+<tr><td>page</td><td>no</td><td>
 
-</td></tr>
-<tr><td>head</td><td>yes</td><td>
+Page number of the results to fetch.
 
 </td></tr>
 <tr><td>per_page</td><td>no</td><td>
 
-Results per page.
+Results per page (max 100)
 
 </td></tr>
-<tr><td>page</td><td>no</td><td>
+<tr><td>basehead</td><td>yes</td><td>
 
-Page number of the results to fetch.
+The base branch and head branch to compare. This parameter expects the format `{base}...{head}`.
 
 </td></tr>
   </tbody>
