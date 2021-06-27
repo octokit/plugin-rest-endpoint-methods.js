@@ -35,7 +35,7 @@ octokit.rest.packages.getPackageVersionForOrganization({
   <tbody>
     <tr><td>package_type</td><td>yes</td><td>
 
-The type of supported package. Can be one of `npm`, `maven`, `rubygems`, `nuget`, `docker`, or `container`. For Docker images that use the package namespace `https://ghcr.io/owner/package-name`, use `container`.
+The type of supported package. Can be one of `npm`, `maven`, `rubygems`, `nuget`, `docker`, or `container`. Packages in GitHub's Gradle registry have the type `maven`. Docker images pushed to GitHub's Container registry (`ghcr.io`) have the type `container`. You can use the type `docker` to find images that were pushed to GitHub's Docker registry (`docker.pkg.github.com`), even if these have now been migrated to the Container registry.
 
 </td></tr>
 <tr><td>package_name</td><td>yes</td><td>

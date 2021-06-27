@@ -33,7 +33,7 @@ card_id parameter
 </td></tr>
 <tr><td>position</td><td>yes</td><td>
 
-The position of the card in a column
+The position of the card in a column. Can be one of: `top`, `bottom`, or `after:<card_id>` to place after the specified card.
 
 </td></tr>
 <tr><td>column_id</td><td>no</td><td>

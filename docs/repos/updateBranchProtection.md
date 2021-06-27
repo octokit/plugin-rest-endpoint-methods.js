@@ -144,6 +144,11 @@ Permits force pushes to the protected branch by anyone with write access to the 
 Allows deletion of the protected branch by anyone with write access to the repository. Set to `false` to prevent deletion of the protected branch. Default: `false`. For more information, see "[Enabling force pushes to a protected branch](https://help.github.com/en/github/administering-a-repository/enabling-force-pushes-to-a-protected-branch)" in the GitHub Help documentation.
 
 </td></tr>
+<tr><td>required_conversation_resolution</td><td>no</td><td>
+
+Requires all conversations on code to be resolved before a pull request can be merged into a branch that matches this rule. Set to `false` to disable. Default: `false`.
+
+</td></tr>
   </tbody>
 </table>
 

@@ -60,6 +60,31 @@ Either `true` to make the repository private or `false` to make it public. Defau
 Can be `public` or `private`. If your organization is associated with an enterprise account using GitHub Enterprise Cloud or GitHub Enterprise Server 2.20+, `visibility` can also be `internal`. The `visibility` parameter overrides the `private` parameter when you use both along with the `nebula-preview` preview header.
 
 </td></tr>
+<tr><td>security_and_analysis</td><td>no</td><td>
+
+Specify which security and analysis features to enable or disable. For example, to enable GitHub Advanced Security, use this data in the body of the PATCH request: `{"security_and_analysis": {"advanced_security": {"status": "enabled"}}}`. If you have admin permissions for a private repository covered by an Advanced Security license, you can check which security and analysis features are currently enabled by using a `GET /repos/{owner}/{repo}` request.
+
+</td></tr>
+<tr><td>security_and_analysis.advanced_security</td><td>no</td><td>
+
+Use the `status` property to enable or disable GitHub Advanced Security for this repository. For more information, see "[About GitHub Advanced Security](/github/getting-started-with-github/learning-about-github/about-github-advanced-security)."
+
+</td></tr>
+<tr><td>security_and_analysis.advanced_security.status</td><td>no</td><td>
+
+Can be `enabled` or `disabled`.
+
+</td></tr>
+<tr><td>security_and_analysis.secret_scanning</td><td>no</td><td>
+
+Use the `status` property to enable or disable secret scanning for this repository. For more information, see "[About secret scanning](/code-security/secret-security/about-secret-scanning)."
+
+</td></tr>
+<tr><td>security_and_analysis.secret_scanning.status</td><td>no</td><td>
+
+Can be `enabled` or `disabled`.
+
+</td></tr>
 <tr><td>has_issues</td><td>no</td><td>
 
 Either `true` to enable issues for this repository or `false` to disable them.
