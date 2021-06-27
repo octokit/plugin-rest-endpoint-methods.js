@@ -40,6 +40,16 @@ octokit.rest.search.topics({
 The query contains one or more search keywords and qualifiers. Qualifiers allow you to limit your search to specific areas of GitHub. The REST API supports the same qualifiers as GitHub.com. To learn more about the format of the query, see [Constructing a search query](https://docs.github.com/rest/reference/search#constructing-a-search-query).
 
 </td></tr>
+<tr><td>per_page</td><td>no</td><td>
+
+Results per page (max 100).
+
+</td></tr>
+<tr><td>page</td><td>no</td><td>
+
+Page number of the results to fetch.
+
+</td></tr>
   </tbody>
 </table>
 

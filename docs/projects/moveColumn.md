@@ -33,7 +33,7 @@ column_id parameter
 </td></tr>
 <tr><td>position</td><td>yes</td><td>
 
-The position of the column in a project
+The position of the column in a project. Can be one of: `first`, `last`, or `after:<column_id>` to place after the specified column.
 
 </td></tr>
   </tbody>

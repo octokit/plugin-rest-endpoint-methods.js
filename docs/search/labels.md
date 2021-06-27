@@ -56,6 +56,16 @@ Sorts the results of your query by when the label was `created` or `updated`. De
 Determines whether the first search result returned is the highest number of matches (`desc`) or lowest number of matches (`asc`). This parameter is ignored unless you provide `sort`.
 
 </td></tr>
+<tr><td>per_page</td><td>no</td><td>
+
+Results per page (max 100).
+
+</td></tr>
+<tr><td>page</td><td>no</td><td>
+
+Page number of the results to fetch.
+
+</td></tr>
   </tbody>
 </table>
 

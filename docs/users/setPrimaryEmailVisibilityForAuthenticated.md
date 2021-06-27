@@ -27,14 +27,9 @@ octokit.rest.users.setPrimaryEmailVisibilityForAuthenticated({
     </tr>
   </thead>
   <tbody>
-    <tr><td>email</td><td>no</td><td>
+    <tr><td>visibility</td><td>yes</td><td>
 
-An email address associated with the GitHub user account to manage.
-
-</td></tr>
-<tr><td>visibility</td><td>yes</td><td>
-
-Denotes whether an email is publically visible.
+Denotes whether an email is publicly visible.
 
 </td></tr>
   </tbody>

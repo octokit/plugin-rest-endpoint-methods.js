@@ -193,6 +193,11 @@ The level of permission to grant the access token for viewing an organization's 
 The level of permission to grant the access token to manage organization projects, columns, and cards. Can be one of: `read`, `write`, or `admin`.
 
 </td></tr>
+<tr><td>permissions.organization_packages</td><td>no</td><td>
+
+The level of permission to grant the access token for organization packages published to GitHub Packages. Can be one of: `read` or `write`.
+
+</td></tr>
 <tr><td>permissions.organization_secrets</td><td>no</td><td>
 
 The level of permission to grant the access token to manage organization secrets. Can be one of: `read` or `write`.

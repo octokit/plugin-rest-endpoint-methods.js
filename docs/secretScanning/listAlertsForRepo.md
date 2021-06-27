@@ -41,6 +41,11 @@ octokit.rest.secretScanning.listAlertsForRepo({
 Set to `open` or `resolved` to only list secret scanning alerts in a specific state.
 
 </td></tr>
+<tr><td>secret_type</td><td>no</td><td>
+
+A comma separated list of secret types to return. By default all secret types are returned.
+
+</td></tr>
 <tr><td>page</td><td>no</td><td>
 
 Page number of the results to fetch.
