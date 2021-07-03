@@ -966,6 +966,14 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["GET /app/hook/config"]["response"];
     };
+    getWebhookDelivery: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /app/hook/deliveries/{delivery_id}"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /app/hook/deliveries/{delivery_id}"]["response"];
+    };
     listAccountsForPlan: {
       parameters: RequestParameters &
         Omit<
@@ -1045,6 +1053,22 @@ export type RestEndpointMethodTypes = {
           "baseUrl" | "headers" | "mediaType"
         >;
       response: Endpoints["GET /user/marketplace_purchases/stubbed"]["response"];
+    };
+    listWebhookDeliveries: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /app/hook/deliveries"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /app/hook/deliveries"]["response"];
+    };
+    redeliverWebhookDelivery: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["POST /app/hook/deliveries/{delivery_id}/attempts"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["POST /app/hook/deliveries/{delivery_id}/attempts"]["response"];
     };
     removeRepoFromInstallation: {
       parameters: RequestParameters &
@@ -2494,6 +2518,14 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["GET /orgs/{org}/hooks/{hook_id}/config"]["response"];
     };
+    getWebhookDelivery: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /orgs/{org}/hooks/{hook_id}/deliveries/{delivery_id}"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /orgs/{org}/hooks/{hook_id}/deliveries/{delivery_id}"]["response"];
+    };
     list: {
       parameters: RequestParameters &
         Omit<
@@ -2590,6 +2622,14 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["GET /orgs/{org}/public_members"]["response"];
     };
+    listWebhookDeliveries: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /orgs/{org}/hooks/{hook_id}/deliveries"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /orgs/{org}/hooks/{hook_id}/deliveries"]["response"];
+    };
     listWebhooks: {
       parameters: RequestParameters &
         Omit<
@@ -2605,6 +2645,14 @@ export type RestEndpointMethodTypes = {
           "baseUrl" | "headers" | "mediaType"
         >;
       response: Endpoints["POST /orgs/{org}/hooks/{hook_id}/pings"]["response"];
+    };
+    redeliverWebhookDelivery: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["POST /orgs/{org}/hooks/{hook_id}/deliveries/{delivery_id}/attempts"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["POST /orgs/{org}/hooks/{hook_id}/deliveries/{delivery_id}/attempts"]["response"];
     };
     removeMember: {
       parameters: RequestParameters &
@@ -4202,6 +4250,14 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["GET /repos/{owner}/{repo}/hooks/{hook_id}/config"]["response"];
     };
+    getWebhookDelivery: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /repos/{owner}/{repo}/hooks/{hook_id}/deliveries/{delivery_id}"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /repos/{owner}/{repo}/hooks/{hook_id}/deliveries/{delivery_id}"]["response"];
+    };
     listBranches: {
       parameters: RequestParameters &
         Omit<
@@ -4402,6 +4458,14 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["GET /repos/{owner}/{repo}/teams"]["response"];
     };
+    listWebhookDeliveries: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /repos/{owner}/{repo}/hooks/{hook_id}/deliveries"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /repos/{owner}/{repo}/hooks/{hook_id}/deliveries"]["response"];
+    };
     listWebhooks: {
       parameters: RequestParameters &
         Omit<
@@ -4425,6 +4489,14 @@ export type RestEndpointMethodTypes = {
           "baseUrl" | "headers" | "mediaType"
         >;
       response: Endpoints["POST /repos/{owner}/{repo}/hooks/{hook_id}/pings"]["response"];
+    };
+    redeliverWebhookDelivery: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["POST /repos/{owner}/{repo}/hooks/{hook_id}/deliveries/{delivery_id}/attempts"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["POST /repos/{owner}/{repo}/hooks/{hook_id}/deliveries/{delivery_id}/attempts"]["response"];
     };
     removeAppAccessRestrictions: {
       parameters: RequestParameters &
