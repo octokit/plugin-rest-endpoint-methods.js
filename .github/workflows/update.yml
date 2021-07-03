@@ -16,6 +16,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+        with:
+          # make sure that other actions get triggered when using `git push` in gr2m/create-or-update-pull-request-action
+          token: ${{ secrets.OCTOKITBOT_PAT }}
       - uses: actions/setup-node@v2
         with:
           node-version: 14

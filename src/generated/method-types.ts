@@ -16,8 +16,6 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * **Note:** This endpoint is currently in beta and is subject to change.
-     *
      * Approves a workflow run for a pull request from a public fork of a first time contributor. For more information, see ["Approving workflow runs from public forks](https://docs.github.com/actions/managing-workflow-runs/approving-workflow-runs-from-public-forks)."
      *
      * You must authenticate using an access token with the `repo` scope to use this endpoint. GitHub Apps must have the `actions:write` permission to use this endpoint.
@@ -1821,6 +1819,20 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
+     * Returns a delivery for the webhook configured for a GitHub App.
+     *
+     * You must use a [JWT](https://docs.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint.
+     */
+    getWebhookDelivery: {
+      (
+        params?: RestEndpointMethodTypes["apps"]["getWebhookDelivery"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["apps"]["getWebhookDelivery"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
      * Returns user and organization accounts associated with the specified plan, including free plans. For per-seat pricing, you see the list of accounts that have purchased the plan, including the number of seats purchased. When someone submits a plan change that won't be processed until the end of their billing cycle, you will also see the upcoming pending change.
      *
      * GitHub Apps must use a [JWT](https://docs.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint. OAuth Apps must use [basic authentication](https://docs.github.com/rest/overview/other-authentication-methods#basic-authentication) with their client ID and client secret to access this endpoint.
@@ -1958,6 +1970,34 @@ export type RestEndpointMethods = {
         params?: RestEndpointMethodTypes["apps"]["listSubscriptionsForAuthenticatedUserStubbed"]["parameters"]
       ): Promise<
         RestEndpointMethodTypes["apps"]["listSubscriptionsForAuthenticatedUserStubbed"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Returns a list of webhook deliveries for the webhook configured for a GitHub App.
+     *
+     * You must use a [JWT](https://docs.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint.
+     */
+    listWebhookDeliveries: {
+      (
+        params?: RestEndpointMethodTypes["apps"]["listWebhookDeliveries"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["apps"]["listWebhookDeliveries"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Redeliver a delivery for the webhook configured for a GitHub App.
+     *
+     * You must use a [JWT](https://docs.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint.
+     */
+    redeliverWebhookDelivery: {
+      (
+        params?: RestEndpointMethodTypes["apps"]["redeliverWebhookDelivery"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["apps"]["redeliverWebhookDelivery"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -4330,6 +4370,18 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
+     * Returns a delivery for a webhook configured in an organization.
+     */
+    getWebhookDelivery: {
+      (
+        params?: RestEndpointMethodTypes["orgs"]["getWebhookDelivery"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["orgs"]["getWebhookDelivery"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
      * Lists all organizations, in the order that they were created on GitHub.
      *
      * **Note:** Pagination is powered exclusively by the `since` parameter. Use the [Link header](https://docs.github.com/rest/overview/resources-in-the-rest-api#link-header) to get the URL for the next page of organizations.
@@ -4473,6 +4525,18 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
+    /**
+     * Returns a list of webhook deliveries for a webhook configured in an organization.
+     */
+    listWebhookDeliveries: {
+      (
+        params?: RestEndpointMethodTypes["orgs"]["listWebhookDeliveries"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["orgs"]["listWebhookDeliveries"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
 
     listWebhooks: {
       (
@@ -4488,6 +4552,18 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["orgs"]["pingWebhook"]["parameters"]
       ): Promise<RestEndpointMethodTypes["orgs"]["pingWebhook"]["response"]>;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Redeliver a delivery for a webhook configured in an organization.
+     */
+    redeliverWebhookDelivery: {
+      (
+        params?: RestEndpointMethodTypes["orgs"]["redeliverWebhookDelivery"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["orgs"]["redeliverWebhookDelivery"]["response"]
+      >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
@@ -7206,6 +7282,18 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
+    /**
+     * Returns a delivery for a webhook configured in a repository.
+     */
+    getWebhookDelivery: {
+      (
+        params?: RestEndpointMethodTypes["repos"]["getWebhookDelivery"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["repos"]["getWebhookDelivery"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
 
     listBranches: {
       (
@@ -7517,6 +7605,18 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
+    /**
+     * Returns a list of webhook deliveries for a webhook configured in a repository.
+     */
+    listWebhookDeliveries: {
+      (
+        params?: RestEndpointMethodTypes["repos"]["listWebhookDeliveries"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["repos"]["listWebhookDeliveries"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
 
     listWebhooks: {
       (
@@ -7540,6 +7640,18 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["repos"]["pingWebhook"]["parameters"]
       ): Promise<RestEndpointMethodTypes["repos"]["pingWebhook"]["response"]>;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Redeliver a webhook delivery for a webhook configured in a repository.
+     */
+    redeliverWebhookDelivery: {
+      (
+        params?: RestEndpointMethodTypes["repos"]["redeliverWebhookDelivery"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["repos"]["redeliverWebhookDelivery"]["response"]
+      >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
