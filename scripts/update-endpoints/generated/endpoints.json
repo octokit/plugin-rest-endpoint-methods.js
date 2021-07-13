@@ -12457,7 +12457,7 @@
     "deprecationDate": null,
     "description": "",
     "documentationUrl": "https://docs.github.com/rest/reference/codes-of-conduct#get-all-codes-of-conduct",
-    "previews": [{ "name": "scarlet-witch" }],
+    "previews": [],
     "headers": [],
     "parameters": [],
     "responses": [
@@ -12470,8 +12470,7 @@
           }
         ]
       },
-      { "code": 304, "description": "Not modified", "examples": null },
-      { "code": 415, "description": "Preview header missing", "examples": null }
+      { "code": 304, "description": "Not modified", "examples": null }
     ],
     "renamed": null
   },
@@ -12485,7 +12484,7 @@
     "deprecationDate": null,
     "description": "",
     "documentationUrl": "https://docs.github.com/rest/reference/codes-of-conduct#get-a-code-of-conduct",
-    "previews": [{ "name": "scarlet-witch" }],
+    "previews": [],
     "headers": [],
     "parameters": [
       {
@@ -12513,8 +12512,7 @@
         ]
       },
       { "code": 304, "description": "Not modified", "examples": null },
-      { "code": 404, "description": "Resource not found", "examples": null },
-      { "code": 415, "description": "Preview header missing", "examples": null }
+      { "code": 404, "description": "Resource not found", "examples": null }
     ],
     "renamed": null
   },
