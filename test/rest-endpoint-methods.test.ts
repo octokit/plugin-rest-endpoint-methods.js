@@ -34,11 +34,7 @@ describe("REST API endpoint methods", () => {
   it("Required preview header", async () => {
     const mock = fetchMock
       .sandbox()
-      .getOnce("path:/codes_of_conduct", [{ key: "mit" }], {
-        headers: {
-          accept: "application/vnd.github.scarlet-witch-preview+json",
-        },
-      });
+      .getOnce("path:/codes_of_conduct", [{ key: "mit" }]);
 
     const MyOctokit = Octokit.plugin(restEndpointMethods);
     const octokit = new MyOctokit({
