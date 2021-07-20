@@ -47,7 +47,7 @@ Filter members returned by their role. Can be one of:
 </td></tr>
 <tr><td>per_page</td><td>no</td><td>
 
-Results per page (max 100).
+Results per page (max 100)
 
 </td></tr>
 <tr><td>page</td><td>no</td><td>
