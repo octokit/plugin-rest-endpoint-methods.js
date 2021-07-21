@@ -3888,6 +3888,19 @@
         "validation": null,
         "alias": null,
         "deprecated": null
+      },
+      {
+        "name": "created",
+        "description": "",
+        "in": "QUERY",
+        "type": "string",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
       }
     ],
     "responses": [
@@ -4026,6 +4039,19 @@
         "description": "Page number of the results to fetch.",
         "in": "QUERY",
         "type": "integer",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "created",
+        "description": "",
+        "in": "QUERY",
+        "type": "string",
         "required": false,
         "enum": null,
         "allowNull": false,
