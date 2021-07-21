@@ -59,7 +59,7 @@ octokit.rest.repos.uploadReleaseAsset({
 release_id parameter
 
 </td></tr>
-<tr><td>name</td><td>no</td><td>
+<tr><td>name</td><td>yes</td><td>
 
 </td></tr>
 <tr><td>label</td><td>no</td><td>
