@@ -47226,7 +47226,7 @@
         "description": "",
         "in": "QUERY",
         "type": "string",
-        "required": false,
+        "required": true,
         "enum": null,
         "allowNull": false,
         "mapToData": null,
