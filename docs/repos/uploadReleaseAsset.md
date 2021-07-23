@@ -1,6 +1,6 @@
 ---
 name: Upload a release asset
-example: octokit.rest.repos.uploadReleaseAsset({ owner, repo, release_id, data })
+example: octokit.rest.repos.uploadReleaseAsset({ owner, repo, release_id, name, data })
 route: POST {origin}/repos/{owner}/{repo}/releases/{release_id}/assets{?name,label}
 scope: repos
 type: API method
@@ -33,6 +33,7 @@ octokit.rest.repos.uploadReleaseAsset({
   owner,
   repo,
   release_id,
+  name,
   data,
 });
 ```
@@ -59,7 +60,7 @@ octokit.rest.repos.uploadReleaseAsset({
 release_id parameter
 
 </td></tr>
-<tr><td>name</td><td>no</td><td>
+<tr><td>name</td><td>yes</td><td>
 
 </td></tr>
 <tr><td>label</td><td>no</td><td>
