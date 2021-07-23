@@ -26,6 +26,13 @@ jobs:
 
       # try checking out routes-update branch. Ignore error if it does not exist
       - run: git checkout routes-update || true
+
+      # if event is coming from octokit/types.ts, update @octokit/types to latest version and get OpenAPI version from its package.json
+      # Do the npm install before `npm ci` to avoid ENOTEMPTY error, see:
+      # https://github.com/actions/setup-node/issues/303#issuecomment-885723049
+      - run: npm install @octokit/types@latest
+        if: github.event_name == 'repository_dispatch' && github.event.action == 'octokit/types.ts release'
+
       - run: npm ci
       - run: rm -rf docs/
 
@@ -41,9 +48,6 @@ jobs:
         env:
           VERSION: ${{ github.event.inputs.version }}
 
-      # if event is coming from octokit/types.ts, update @octokit/types to latest version and get OpenAPI version from its package.json
-      - run: npm install @octokit/types@latest
-        if: github.event_name == 'repository_dispatch' && github.event.action == 'octokit/types.ts release'
       - run: node -e "console.log('::set-output name=version::' + require('@octokit/types/package').octokit['openapi-version'])"
         if: github.event_name == 'repository_dispatch' && github.event.action == 'octokit/types.ts release'
         id: openapi_types
