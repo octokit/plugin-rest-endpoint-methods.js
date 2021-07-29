@@ -39,7 +39,7 @@ Indicates which sorts of issues to return. Can be one of:
 \* `created`: Issues created by you  
 \* `mentioned`: Issues mentioning you  
 \* `subscribed`: Issues you're subscribed to updates for  
-\* `all`: All issues the authenticated user can see, regardless of participation or creation
+\* `all` or `repos`: All issues the authenticated user can see, regardless of participation or creation
 
 </td></tr>
 <tr><td>state</td><td>no</td><td>
