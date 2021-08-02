@@ -6084,6 +6084,18 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
+     * Users with admin access to the repository can create an autolink.
+     */
+    createAutolink: {
+      (
+        params?: RestEndpointMethodTypes["repos"]["createAutolink"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["repos"]["createAutolink"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
      * Create a comment for a commit using its `:commit_sha`.
      *
      * This endpoint triggers [notifications](https://docs.github.com/en/github/managing-subscriptions-and-notifications-on-github/about-notifications). Creating content too quickly using this endpoint may result in abuse rate limiting. See "[Abuse rate limits](https://docs.github.com/rest/overview/resources-in-the-rest-api#abuse-rate-limits)" and "[Dealing with abuse rate limits](https://docs.github.com/rest/guides/best-practices-for-integrators#dealing-with-rate-limits)" for details.
@@ -6424,6 +6436,20 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
+     * This deletes a single autolink reference by ID that was configured for the given repository.
+     *
+     * Information about autolinks are only available to repository administrators.
+     */
+    deleteAutolink: {
+      (
+        params?: RestEndpointMethodTypes["repos"]["deleteAutolink"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["repos"]["deleteAutolink"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
      * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://help.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
      */
     deleteBranchProtection: {
@@ -6745,6 +6771,18 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["repos"]["getAppsWithAccessToProtectedBranch"]["response"]
       >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * This returns a single autolink reference by ID that was configured for the given repository.
+     *
+     * Information about autolinks are only available to repository administrators.
+     */
+    getAutolink: {
+      (
+        params?: RestEndpointMethodTypes["repos"]["getAutolink"]["parameters"]
+      ): Promise<RestEndpointMethodTypes["repos"]["getAutolink"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
@@ -7291,6 +7329,18 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["repos"]["getWebhookDelivery"]["response"]
       >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * This returns a list of autolinks configured for the given repository.
+     *
+     * Information about autolinks are only available to repository administrators.
+     */
+    listAutolinks: {
+      (
+        params?: RestEndpointMethodTypes["repos"]["listAutolinks"]["parameters"]
+      ): Promise<RestEndpointMethodTypes["repos"]["listAutolinks"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
