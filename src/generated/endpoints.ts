@@ -1002,6 +1002,7 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     compareCommitsWithBasehead: [
       "GET /repos/{owner}/{repo}/compare/{basehead}",
     ],
+    createAutolink: ["POST /repos/{owner}/{repo}/autolinks"],
     createCommitComment: [
       "POST /repos/{owner}/{repo}/commits/{commit_sha}/comments",
     ],
@@ -1044,6 +1045,7 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     deleteAnEnvironment: [
       "DELETE /repos/{owner}/{repo}/environments/{environment_name}",
     ],
+    deleteAutolink: ["DELETE /repos/{owner}/{repo}/autolinks/{autolink_id}"],
     deleteBranchProtection: [
       "DELETE /repos/{owner}/{repo}/branches/{branch}/protection",
     ],
@@ -1113,6 +1115,7 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     getAppsWithAccessToProtectedBranch: [
       "GET /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/apps",
     ],
+    getAutolink: ["GET /repos/{owner}/{repo}/autolinks/{autolink_id}"],
     getBranch: ["GET /repos/{owner}/{repo}/branches/{branch}"],
     getBranchProtection: [
       "GET /repos/{owner}/{repo}/branches/{branch}/protection",
@@ -1175,6 +1178,7 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     getWebhookDelivery: [
       "GET /repos/{owner}/{repo}/hooks/{hook_id}/deliveries/{delivery_id}",
     ],
+    listAutolinks: ["GET /repos/{owner}/{repo}/autolinks"],
     listBranches: ["GET /repos/{owner}/{repo}/branches"],
     listBranchesForHeadCommit: [
       "GET /repos/{owner}/{repo}/commits/{commit_sha}/branches-where-head",

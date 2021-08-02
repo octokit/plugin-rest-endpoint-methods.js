@@ -34594,6 +34594,86 @@
     "renamed": null
   },
   {
+    "name": "Create an autolink reference for a repository",
+    "scope": "repos",
+    "id": "createAutolink",
+    "method": "POST",
+    "url": "/repos/{owner}/{repo}/autolinks",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "description": "Users with admin access to the repository can create an autolink.",
+    "documentationUrl": "https://docs.github.com/v3/repos#create-an-autolink",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "owner",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "repo",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "key_prefix",
+        "description": "The prefix appended by a number will generate a link any time it is found in an issue, pull request, or commit.",
+        "in": "BODY",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "url_template",
+        "description": "The URL must contain <num> for the reference number.",
+        "in": "BODY",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      {
+        "code": 201,
+        "description": "response",
+        "examples": [
+          {
+            "data": "{\"id\":1,\"key_prefix\":\"TICKET-\",\"url_template\":\"https://example.com/TICKET?query=<num>\"}"
+          }
+        ]
+      },
+      { "code": 422, "description": "Validation failed", "examples": null }
+    ],
+    "renamed": null
+  },
+  {
     "name": "Create a commit comment",
     "scope": "repos",
     "id": "createCommitComment",
@@ -37235,6 +37315,65 @@
     "renamed": null
   },
   {
+    "name": "Delete an autolink reference from a repository",
+    "scope": "repos",
+    "id": "deleteAutolink",
+    "method": "DELETE",
+    "url": "/repos/{owner}/{repo}/autolinks/{autolink_id}",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "description": "This deletes a single autolink reference by ID that was configured for the given repository.\n\nInformation about autolinks are only available to repository administrators.",
+    "documentationUrl": "https://docs.github.com/v3/repos#delete-autolink",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "owner",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "repo",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "autolink_id",
+        "description": "autolink_id parameter",
+        "in": "PATH",
+        "type": "integer",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      { "code": 204, "description": "Response", "examples": null },
+      { "code": 404, "description": "Resource not found", "examples": null }
+    ],
+    "renamed": null
+  },
+  {
     "name": "Delete branch protection",
     "scope": "repos",
     "id": "deleteBranchProtection",
@@ -38905,6 +39044,73 @@
         "examples": [
           {
             "data": "[{\"id\":1,\"slug\":\"octoapp\",\"node_id\":\"MDExOkludGVncmF0aW9uMQ==\",\"owner\":{\"login\":\"github\",\"id\":1,\"node_id\":\"MDEyOk9yZ2FuaXphdGlvbjE=\",\"url\":\"https://api.github.com/orgs/github\",\"repos_url\":\"https://api.github.com/orgs/github/repos\",\"events_url\":\"https://api.github.com/orgs/github/events\",\"avatar_url\":\"https://github.com/images/error/octocat_happy.gif\",\"gravatar_id\":\"\",\"html_url\":\"https://github.com/octocat\",\"followers_url\":\"https://api.github.com/users/octocat/followers\",\"following_url\":\"https://api.github.com/users/octocat/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/octocat/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/octocat/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/octocat/subscriptions\",\"organizations_url\":\"https://api.github.com/users/octocat/orgs\",\"received_events_url\":\"https://api.github.com/users/octocat/received_events\",\"type\":\"User\",\"site_admin\":true},\"name\":\"Octocat App\",\"description\":\"\",\"external_url\":\"https://example.com\",\"html_url\":\"https://github.com/apps/octoapp\",\"created_at\":\"2017-07-08T16:18:44-04:00\",\"updated_at\":\"2017-07-08T16:18:44-04:00\",\"permissions\":{\"metadata\":\"read\",\"contents\":\"read\",\"issues\":\"write\",\"single_file\":\"write\"},\"events\":[\"push\",\"pull_request\"]}]"
+          }
+        ]
+      },
+      { "code": 404, "description": "Resource not found", "examples": null }
+    ],
+    "renamed": null
+  },
+  {
+    "name": "Get an autolink reference of a repository",
+    "scope": "repos",
+    "id": "getAutolink",
+    "method": "GET",
+    "url": "/repos/{owner}/{repo}/autolinks/{autolink_id}",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "description": "This returns a single autolink reference by ID that was configured for the given repository.\n\nInformation about autolinks are only available to repository administrators.",
+    "documentationUrl": "https://docs.github.com/v3/repos#get-autolink",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "owner",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "repo",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "autolink_id",
+        "description": "autolink_id parameter",
+        "in": "PATH",
+        "type": "integer",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      {
+        "code": 200,
+        "description": "Response",
+        "examples": [
+          {
+            "data": "{\"id\":1,\"key_prefix\":\"TICKET-\",\"url_template\":\"https://example.com/TICKET?query=<num>\"}"
           }
         ]
       },
@@ -41500,6 +41706,72 @@
       { "code": 400, "description": "Bad Request", "examples": null },
       { "code": 400, "description": "Bad Request", "examples": null },
       { "code": 422, "description": "Validation failed", "examples": null }
+    ],
+    "renamed": null
+  },
+  {
+    "name": "List all autolinks of a repository",
+    "scope": "repos",
+    "id": "listAutolinks",
+    "method": "GET",
+    "url": "/repos/{owner}/{repo}/autolinks",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "description": "This returns a list of autolinks configured for the given repository.\n\nInformation about autolinks are only available to repository administrators.",
+    "documentationUrl": "https://docs.github.com/v3/repos#list-autolinks",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "owner",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "repo",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "page",
+        "description": "Page number of the results to fetch.",
+        "in": "QUERY",
+        "type": "integer",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      {
+        "code": 200,
+        "description": "Response",
+        "examples": [
+          {
+            "data": "[{\"id\":1,\"key_prefix\":\"TICKET-\",\"url_template\":\"https://example.com/TICKET?query=<num>\"}]"
+          }
+        ]
+      }
     ],
     "renamed": null
   },

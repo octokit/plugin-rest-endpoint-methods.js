@@ -3570,6 +3570,14 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["GET /repos/{owner}/{repo}/compare/{basehead}"]["response"];
     };
+    createAutolink: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["POST /repos/{owner}/{repo}/autolinks"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["POST /repos/{owner}/{repo}/autolinks"]["response"];
+    };
     createCommitComment: {
       parameters: RequestParameters &
         Omit<
@@ -3737,6 +3745,14 @@ export type RestEndpointMethodTypes = {
           "baseUrl" | "headers" | "mediaType"
         >;
       response: Endpoints["DELETE /repos/{owner}/{repo}/environments/{environment_name}"]["response"];
+    };
+    deleteAutolink: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["DELETE /repos/{owner}/{repo}/autolinks/{autolink_id}"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["DELETE /repos/{owner}/{repo}/autolinks/{autolink_id}"]["response"];
     };
     deleteBranchProtection: {
       parameters: RequestParameters &
@@ -3945,6 +3961,14 @@ export type RestEndpointMethodTypes = {
           "baseUrl" | "headers" | "mediaType"
         >;
       response: Endpoints["GET /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/apps"]["response"];
+    };
+    getAutolink: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /repos/{owner}/{repo}/autolinks/{autolink_id}"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /repos/{owner}/{repo}/autolinks/{autolink_id}"]["response"];
     };
     getBranch: {
       parameters: RequestParameters &
@@ -4257,6 +4281,14 @@ export type RestEndpointMethodTypes = {
           "baseUrl" | "headers" | "mediaType"
         >;
       response: Endpoints["GET /repos/{owner}/{repo}/hooks/{hook_id}/deliveries/{delivery_id}"]["response"];
+    };
+    listAutolinks: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /repos/{owner}/{repo}/autolinks"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /repos/{owner}/{repo}/autolinks"]["response"];
     };
     listBranches: {
       parameters: RequestParameters &
