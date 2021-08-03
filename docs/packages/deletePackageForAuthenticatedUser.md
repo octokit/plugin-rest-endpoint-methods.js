@@ -10,7 +10,7 @@ type: API method
 
 Deletes a package owned by the authenticated user. You cannot delete a public package if any version of the package has more than 5,000 downloads. In this scenario, contact GitHub support for further assistance.
 
-To use this endpoint, you must authenticate using an access token with the `packages:read` and `packages:delete` scope.
+To use this endpoint, you must authenticate using an access token with the `packages:read` and `packages:delete` scopes.
 If `package_type` is not `container`, your token must also include the `repo` scope.
 
 ```js

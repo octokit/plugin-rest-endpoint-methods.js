@@ -119,6 +119,11 @@ Either `true` to allow merging pull requests with a merge commit, or `false` to 
 Either `true` to allow rebase-merging pull requests, or `false` to prevent rebase-merging.
 
 </td></tr>
+<tr><td>allow_auto_merge</td><td>no</td><td>
+
+Either `true` to allow auto-merge on pull requests, or `false to disallow auto-merge.
+
+</td></tr>
 <tr><td>delete_branch_on_merge</td><td>no</td><td>
 
 Either `true` to allow automatically deleting head branches when pull requests are merged, or `false` to prevent automatic deletion.
