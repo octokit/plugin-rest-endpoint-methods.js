@@ -104,6 +104,11 @@ Whether to allow merge commits for pull requests.
 Whether to allow rebase merges for pull requests.
 
 </td></tr>
+<tr><td>allow_auto_merge</td><td>no</td><td>
+
+Whether to allow Auto-merge to be used on pull requests.
+
+</td></tr>
 <tr><td>delete_branch_on_merge</td><td>no</td><td>
 
 Whether to delete head branches when pull requests are merged
