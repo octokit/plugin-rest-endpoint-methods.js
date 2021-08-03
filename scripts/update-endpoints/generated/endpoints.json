@@ -36086,7 +36086,7 @@
       },
       {
         "name": "allow_auto_merge",
-        "description": "Either `true` to allow auto-merge on pull requests, or `false to disallow auto-merge.",
+        "description": "Either `true` to allow auto-merge on pull requests, or `false` to disallow auto-merge.",
         "in": "BODY",
         "type": "boolean",
         "required": false,
@@ -45919,7 +45919,7 @@
       },
       {
         "name": "allow_auto_merge",
-        "description": "Either `true` to allow auto-merge on pull requests, or `false to disallow auto-merge.",
+        "description": "Either `true` to allow auto-merge on pull requests, or `false` to disallow auto-merge.",
         "in": "BODY",
         "type": "boolean",
         "required": false,

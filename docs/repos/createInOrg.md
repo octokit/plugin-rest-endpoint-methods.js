@@ -121,7 +121,7 @@ Either `true` to allow rebase-merging pull requests, or `false` to prevent rebas
 </td></tr>
 <tr><td>allow_auto_merge</td><td>no</td><td>
 
-Either `true` to allow auto-merge on pull requests, or `false to disallow auto-merge.
+Either `true` to allow auto-merge on pull requests, or `false` to disallow auto-merge.
 
 </td></tr>
 <tr><td>delete_branch_on_merge</td><td>no</td><td>
