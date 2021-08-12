@@ -25581,6 +25581,71 @@
     "renamed": null
   },
   {
+    "name": "Delete a package for a user",
+    "scope": "packages",
+    "id": "deletePackageForUser",
+    "method": "DELETE",
+    "url": "/users/{username}/packages/{package_type}/{package_name}",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "description": "Deletes an entire package for a user. You cannot delete a public package if any version of the package has more than 5,000 downloads. In this scenario, contact GitHub support for further assistance.\n\nTo use this endpoint, you must authenticate using an access token with the `packages:read` and `packages:delete` scopes. In addition:\n- If `package_type` is not `container`, your token must also include the `repo` scope.\n- If `package_type` is `container`, you must also have admin permissions to the container you want to delete.",
+    "documentationUrl": "https://docs.github.com/rest/reference/packages#delete-a-package-for-a-user",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "package_type",
+        "description": "The type of supported package. Can be one of `npm`, `maven`, `rubygems`, `nuget`, `docker`, or `container`. Packages in GitHub's Gradle registry have the type `maven`. Docker images pushed to GitHub's Container registry (`ghcr.io`) have the type `container`. You can use the type `docker` to find images that were pushed to GitHub's Docker registry (`docker.pkg.github.com`), even if these have now been migrated to the Container registry.",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": ["npm", "maven", "rubygems", "docker", "nuget", "container"],
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "package_name",
+        "description": "The name of the package.",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "username",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      { "code": 204, "description": "Response", "examples": null },
+      {
+        "code": 401,
+        "description": "Requires authentication",
+        "examples": null
+      },
+      { "code": 403, "description": "Forbidden", "examples": null },
+      { "code": 404, "description": "Resource not found", "examples": null }
+    ],
+    "renamed": null
+  },
+  {
     "name": "Delete a package version for the authenticated user",
     "scope": "packages",
     "id": "deletePackageVersionForAuthenticatedUser",
@@ -25686,6 +25751,84 @@
       },
       {
         "name": "org",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "package_version_id",
+        "description": "Unique identifier of the package version.",
+        "in": "PATH",
+        "type": "integer",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      { "code": 204, "description": "Response", "examples": null },
+      {
+        "code": 401,
+        "description": "Requires authentication",
+        "examples": null
+      },
+      { "code": 403, "description": "Forbidden", "examples": null },
+      { "code": 404, "description": "Resource not found", "examples": null }
+    ],
+    "renamed": null
+  },
+  {
+    "name": "Delete package version for a user",
+    "scope": "packages",
+    "id": "deletePackageVersionForUser",
+    "method": "DELETE",
+    "url": "/users/{username}/packages/{package_type}/{package_name}/versions/{package_version_id}",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "description": "Deletes a specific package version for a user. If the package is public and the package version has more than 5,000 downloads, you cannot delete the package version. In this scenario, contact GitHub support for further assistance.\n\nTo use this endpoint, you must authenticate using an access token with the `packages:read` and `packages:delete` scopes. In addition:\n- If `package_type` is not `container`, your token must also include the `repo` scope.\n- If `package_type` is `container`, you must also have admin permissions to the container you want to delete.",
+    "documentationUrl": "https://docs.github.com/rest/reference/packages#delete-a-package-version-for-a-user",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "package_type",
+        "description": "The type of supported package. Can be one of `npm`, `maven`, `rubygems`, `nuget`, `docker`, or `container`. Packages in GitHub's Gradle registry have the type `maven`. Docker images pushed to GitHub's Container registry (`ghcr.io`) have the type `container`. You can use the type `docker` to find images that were pushed to GitHub's Docker registry (`docker.pkg.github.com`), even if these have now been migrated to the Container registry.",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": ["npm", "maven", "rubygems", "docker", "nuget", "container"],
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "package_name",
+        "description": "The name of the package.",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "username",
         "description": "",
         "in": "PATH",
         "type": "string",
@@ -26793,6 +26936,84 @@
     "renamed": null
   },
   {
+    "name": "Restore a package for a user",
+    "scope": "packages",
+    "id": "restorePackageForUser",
+    "method": "POST",
+    "url": "/users/{username}/packages/{package_type}/{package_name}/restore{?token}",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "description": "Restores an entire package for a user.\n\nYou can restore a deleted package under the following conditions:\n  - The package was deleted within the last 30 days.\n  - The same package namespace and version is still available and not reused for a new package. If the same package namespace is not available, you will not be able to restore your package. In this scenario, to restore the deleted package, you must delete the new package that uses the deleted package's namespace first.\n\nTo use this endpoint, you must authenticate using an access token with the `packages:read` and `packages:write` scopes. In addition:\n- If `package_type` is not `container`, your token must also include the `repo` scope.\n- If `package_type` is `container`, you must also have admin permissions to the container that you want to restore.",
+    "documentationUrl": "https://docs.github.com/rest/reference/packages#restore-a-package-for-a-user",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "package_type",
+        "description": "The type of supported package. Can be one of `npm`, `maven`, `rubygems`, `nuget`, `docker`, or `container`. Packages in GitHub's Gradle registry have the type `maven`. Docker images pushed to GitHub's Container registry (`ghcr.io`) have the type `container`. You can use the type `docker` to find images that were pushed to GitHub's Docker registry (`docker.pkg.github.com`), even if these have now been migrated to the Container registry.",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": ["npm", "maven", "rubygems", "docker", "nuget", "container"],
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "package_name",
+        "description": "The name of the package.",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "username",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "token",
+        "description": "package token",
+        "in": "QUERY",
+        "type": "string",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      { "code": 204, "description": "Response", "examples": null },
+      {
+        "code": 401,
+        "description": "Requires authentication",
+        "examples": null
+      },
+      { "code": 403, "description": "Forbidden", "examples": null },
+      { "code": 404, "description": "Resource not found", "examples": null }
+    ],
+    "renamed": null
+  },
+  {
     "name": "Restore a package version for the authenticated user",
     "scope": "packages",
     "id": "restorePackageVersionForAuthenticatedUser",
@@ -26898,6 +27119,84 @@
       },
       {
         "name": "org",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "package_version_id",
+        "description": "Unique identifier of the package version.",
+        "in": "PATH",
+        "type": "integer",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      { "code": 204, "description": "Response", "examples": null },
+      {
+        "code": 401,
+        "description": "Requires authentication",
+        "examples": null
+      },
+      { "code": 403, "description": "Forbidden", "examples": null },
+      { "code": 404, "description": "Resource not found", "examples": null }
+    ],
+    "renamed": null
+  },
+  {
+    "name": "Restore package version for a user",
+    "scope": "packages",
+    "id": "restorePackageVersionForUser",
+    "method": "POST",
+    "url": "/users/{username}/packages/{package_type}/{package_name}/versions/{package_version_id}/restore",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "description": "Restores a specific package version for a user.\n\nYou can restore a deleted package under the following conditions:\n  - The package was deleted within the last 30 days.\n  - The same package namespace and version is still available and not reused for a new package. If the same package namespace is not available, you will not be able to restore your package. In this scenario, to restore the deleted package, you must delete the new package that uses the deleted package's namespace first.\n\nTo use this endpoint, you must authenticate using an access token with the `packages:read` and `packages:write` scopes. In addition:\n- If `package_type` is not `container`, your token must also include the `repo` scope.\n- If `package_type` is `container`, you must also have admin permissions to the container that you want to restore.",
+    "documentationUrl": "https://docs.github.com/rest/reference/packages#restore-a-package-version-for-a-user",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "package_type",
+        "description": "The type of supported package. Can be one of `npm`, `maven`, `rubygems`, `nuget`, `docker`, or `container`. Packages in GitHub's Gradle registry have the type `maven`. Docker images pushed to GitHub's Container registry (`ghcr.io`) have the type `container`. You can use the type `docker` to find images that were pushed to GitHub's Docker registry (`docker.pkg.github.com`), even if these have now been migrated to the Container registry.",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": ["npm", "maven", "rubygems", "docker", "nuget", "container"],
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "package_name",
+        "description": "The name of the package.",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "username",
         "description": "",
         "in": "PATH",
         "type": "string",

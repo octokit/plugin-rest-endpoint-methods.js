@@ -4735,6 +4735,22 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
+     * Deletes an entire package for a user. You cannot delete a public package if any version of the package has more than 5,000 downloads. In this scenario, contact GitHub support for further assistance.
+     *
+     * To use this endpoint, you must authenticate using an access token with the `packages:read` and `packages:delete` scopes. In addition:
+     * - If `package_type` is not `container`, your token must also include the `repo` scope.
+     * - If `package_type` is `container`, you must also have admin permissions to the container you want to delete.
+     */
+    deletePackageForUser: {
+      (
+        params?: RestEndpointMethodTypes["packages"]["deletePackageForUser"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["packages"]["deletePackageForUser"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
      * Deletes a specific package version for a package owned by the authenticated user.  If the package is public and the package version has more than 5,000 downloads, you cannot delete the package version. In this scenario, contact GitHub support for further assistance.
      *
      * To use this endpoint, you must have admin permissions in the organization and authenticate using an access token with the `packages:read` and `packages:delete` scopes.
@@ -4761,6 +4777,22 @@ export type RestEndpointMethods = {
         params?: RestEndpointMethodTypes["packages"]["deletePackageVersionForOrg"]["parameters"]
       ): Promise<
         RestEndpointMethodTypes["packages"]["deletePackageVersionForOrg"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Deletes a specific package version for a user. If the package is public and the package version has more than 5,000 downloads, you cannot delete the package version. In this scenario, contact GitHub support for further assistance.
+     *
+     * To use this endpoint, you must authenticate using an access token with the `packages:read` and `packages:delete` scopes. In addition:
+     * - If `package_type` is not `container`, your token must also include the `repo` scope.
+     * - If `package_type` is `container`, you must also have admin permissions to the container you want to delete.
+     */
+    deletePackageVersionForUser: {
+      (
+        params?: RestEndpointMethodTypes["packages"]["deletePackageVersionForUser"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["packages"]["deletePackageVersionForUser"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -4971,6 +5003,26 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
+     * Restores an entire package for a user.
+     *
+     * You can restore a deleted package under the following conditions:
+     *   - The package was deleted within the last 30 days.
+     *   - The same package namespace and version is still available and not reused for a new package. If the same package namespace is not available, you will not be able to restore your package. In this scenario, to restore the deleted package, you must delete the new package that uses the deleted package's namespace first.
+     *
+     * To use this endpoint, you must authenticate using an access token with the `packages:read` and `packages:write` scopes. In addition:
+     * - If `package_type` is not `container`, your token must also include the `repo` scope.
+     * - If `package_type` is `container`, you must also have admin permissions to the container that you want to restore.
+     */
+    restorePackageForUser: {
+      (
+        params?: RestEndpointMethodTypes["packages"]["restorePackageForUser"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["packages"]["restorePackageForUser"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
      * Restores a package version owned by the authenticated user.
      *
      * You can restore a deleted package version under the following conditions:
@@ -5004,6 +5056,26 @@ export type RestEndpointMethods = {
         params?: RestEndpointMethodTypes["packages"]["restorePackageVersionForOrg"]["parameters"]
       ): Promise<
         RestEndpointMethodTypes["packages"]["restorePackageVersionForOrg"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Restores a specific package version for a user.
+     *
+     * You can restore a deleted package under the following conditions:
+     *   - The package was deleted within the last 30 days.
+     *   - The same package namespace and version is still available and not reused for a new package. If the same package namespace is not available, you will not be able to restore your package. In this scenario, to restore the deleted package, you must delete the new package that uses the deleted package's namespace first.
+     *
+     * To use this endpoint, you must authenticate using an access token with the `packages:read` and `packages:write` scopes. In addition:
+     * - If `package_type` is not `container`, your token must also include the `repo` scope.
+     * - If `package_type` is `container`, you must also have admin permissions to the container that you want to restore.
+     */
+    restorePackageVersionForUser: {
+      (
+        params?: RestEndpointMethodTypes["packages"]["restorePackageVersionForUser"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["packages"]["restorePackageVersionForUser"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;

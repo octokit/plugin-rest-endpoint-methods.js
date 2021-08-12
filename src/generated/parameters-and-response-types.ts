@@ -2760,6 +2760,14 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["DELETE /orgs/{org}/packages/{package_type}/{package_name}"]["response"];
     };
+    deletePackageForUser: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["DELETE /users/{username}/packages/{package_type}/{package_name}"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["DELETE /users/{username}/packages/{package_type}/{package_name}"]["response"];
+    };
     deletePackageVersionForAuthenticatedUser: {
       parameters: RequestParameters &
         Omit<
@@ -2775,6 +2783,14 @@ export type RestEndpointMethodTypes = {
           "baseUrl" | "headers" | "mediaType"
         >;
       response: Endpoints["DELETE /orgs/{org}/packages/{package_type}/{package_name}/versions/{package_version_id}"]["response"];
+    };
+    deletePackageVersionForUser: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["DELETE /users/{username}/packages/{package_type}/{package_name}/versions/{package_version_id}"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["DELETE /users/{username}/packages/{package_type}/{package_name}/versions/{package_version_id}"]["response"];
     };
     getAllPackageVersionsForAPackageOwnedByAnOrg: {
       parameters: RequestParameters &
@@ -2880,6 +2896,14 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["POST /orgs/{org}/packages/{package_type}/{package_name}/restore{?token}"]["response"];
     };
+    restorePackageForUser: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["POST /users/{username}/packages/{package_type}/{package_name}/restore{?token}"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["POST /users/{username}/packages/{package_type}/{package_name}/restore{?token}"]["response"];
+    };
     restorePackageVersionForAuthenticatedUser: {
       parameters: RequestParameters &
         Omit<
@@ -2895,6 +2919,14 @@ export type RestEndpointMethodTypes = {
           "baseUrl" | "headers" | "mediaType"
         >;
       response: Endpoints["POST /orgs/{org}/packages/{package_type}/{package_name}/versions/{package_version_id}/restore"]["response"];
+    };
+    restorePackageVersionForUser: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["POST /users/{username}/packages/{package_type}/{package_name}/versions/{package_version_id}/restore"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["POST /users/{username}/packages/{package_type}/{package_name}/versions/{package_version_id}/restore"]["response"];
     };
   };
   projects: {

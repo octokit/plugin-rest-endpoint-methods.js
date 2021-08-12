@@ -660,11 +660,17 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     deletePackageForOrg: [
       "DELETE /orgs/{org}/packages/{package_type}/{package_name}",
     ],
+    deletePackageForUser: [
+      "DELETE /users/{username}/packages/{package_type}/{package_name}",
+    ],
     deletePackageVersionForAuthenticatedUser: [
       "DELETE /user/packages/{package_type}/{package_name}/versions/{package_version_id}",
     ],
     deletePackageVersionForOrg: [
       "DELETE /orgs/{org}/packages/{package_type}/{package_name}/versions/{package_version_id}",
+    ],
+    deletePackageVersionForUser: [
+      "DELETE /users/{username}/packages/{package_type}/{package_name}/versions/{package_version_id}",
     ],
     getAllPackageVersionsForAPackageOwnedByAnOrg: [
       "GET /orgs/{org}/packages/{package_type}/{package_name}/versions",
@@ -714,11 +720,17 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     restorePackageForOrg: [
       "POST /orgs/{org}/packages/{package_type}/{package_name}/restore{?token}",
     ],
+    restorePackageForUser: [
+      "POST /users/{username}/packages/{package_type}/{package_name}/restore{?token}",
+    ],
     restorePackageVersionForAuthenticatedUser: [
       "POST /user/packages/{package_type}/{package_name}/versions/{package_version_id}/restore",
     ],
     restorePackageVersionForOrg: [
       "POST /orgs/{org}/packages/{package_type}/{package_name}/versions/{package_version_id}/restore",
+    ],
+    restorePackageVersionForUser: [
+      "POST /users/{username}/packages/{package_type}/{package_name}/versions/{package_version_id}/restore",
     ],
   },
   projects: {
