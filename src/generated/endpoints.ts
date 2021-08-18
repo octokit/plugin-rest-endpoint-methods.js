@@ -714,6 +714,9 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     getPackageVersionForUser: [
       "GET /users/{username}/packages/{package_type}/{package_name}/versions/{package_version_id}",
     ],
+    listPackagesForAuthenticatedUser: ["GET /user/packages"],
+    listPackagesForOrganization: ["GET /orgs/{org}/packages"],
+    listPackagesForUser: ["GET /user/{username}/packages"],
     restorePackageForAuthenticatedUser: [
       "POST /user/packages/{package_type}/{package_name}/restore{?token}",
     ],

@@ -2880,6 +2880,30 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["GET /users/{username}/packages/{package_type}/{package_name}/versions/{package_version_id}"]["response"];
     };
+    listPackagesForAuthenticatedUser: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /user/packages"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /user/packages"]["response"];
+    };
+    listPackagesForOrganization: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /orgs/{org}/packages"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /orgs/{org}/packages"]["response"];
+    };
+    listPackagesForUser: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /user/{username}/packages"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /user/{username}/packages"]["response"];
+    };
     restorePackageForAuthenticatedUser: {
       parameters: RequestParameters &
         Omit<

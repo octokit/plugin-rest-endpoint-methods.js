@@ -4965,6 +4965,51 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
+     * Lists packages owned by the authenticated user within the user's namespace.
+     *
+     * To use this endpoint, you must authenticate using an access token with the `packages:read` scope.
+     * If `package_type` is not `container`, your token must also include the `repo` scope.
+     */
+    listPackagesForAuthenticatedUser: {
+      (
+        params?: RestEndpointMethodTypes["packages"]["listPackagesForAuthenticatedUser"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["packages"]["listPackagesForAuthenticatedUser"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Lists all packages in an organization readable by the user.
+     *
+     * To use this endpoint, you must authenticate using an access token with the `packages:read` scope.
+     * If `package_type` is not `container`, your token must also include the `repo` scope.
+     */
+    listPackagesForOrganization: {
+      (
+        params?: RestEndpointMethodTypes["packages"]["listPackagesForOrganization"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["packages"]["listPackagesForOrganization"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Lists all packages in a user's namespace for which the requesting user has access.
+     *
+     * To use this endpoint, you must authenticate using an access token with the `packages:read` scope.
+     * If `package_type` is not `container`, your token must also include the `repo` scope.
+     */
+    listPackagesForUser: {
+      (
+        params?: RestEndpointMethodTypes["packages"]["listPackagesForUser"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["packages"]["listPackagesForUser"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
      * Restores a package owned by the authenticated user.
      *
      * You can restore a deleted package under the following conditions:
