@@ -28288,6 +28288,256 @@
         "validation": null,
         "alias": null,
         "deprecated": null
+      }
+    ],
+    "responses": [
+      {
+        "code": 200,
+        "description": "Response",
+        "examples": [
+          {
+            "data": "{\"id\":387039,\"name\":\"0.2.0\",\"url\":\"https://api.github.com/users/octocat/packages/rubygems/octo-name/versions/387039\",\"package_html_url\":\"https://github.com/octocat/octo-name-repo/packages/40201\",\"license\":\"MIT\",\"created_at\":\"2019-12-01T20:49:29Z\",\"updated_at\":\"2019-12-01T20:49:30Z\",\"description\":\"Octo-name client for Ruby\",\"html_url\":\"https://github.com/octocat/octo-name-repo/packages/40201?version=0.2.0\",\"metadata\":{\"package_type\":\"rubygems\"}}"
+          }
+        ]
+      }
+    ],
+    "renamed": null
+  },
+  {
+    "name": "List packages for the authenticated user's namespace",
+    "scope": "packages",
+    "id": "listPackagesForAuthenticatedUser",
+    "method": "GET",
+    "url": "/user/packages",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "description": "Lists packages owned by the authenticated user within the user's namespace.\n\nTo use this endpoint, you must authenticate using an access token with the `packages:read` scope.\nIf `package_type` is not `container`, your token must also include the `repo` scope.",
+    "documentationUrl": "https://docs.github.com/rest/reference/packages#list-packages-for-the-authenticated-user",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "package_type",
+        "description": "The type of supported package. Can be one of `npm`, `maven`, `rubygems`, `nuget`, `docker`, or `container`. Packages in GitHub's Gradle registry have the type `maven`. Docker images pushed to GitHub's Container registry (`ghcr.io`) have the type `container`. You can use the type `docker` to find images that were pushed to GitHub's Docker registry (`docker.pkg.github.com`), even if these have now been migrated to the Container registry.",
+        "in": "QUERY",
+        "type": "string",
+        "required": true,
+        "enum": ["npm", "maven", "rubygems", "docker", "nuget", "container"],
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "visibility",
+        "description": "The selected visibility of the packages. Can be one of `public`, `private`, or `internal`. Only `container` package_types currently support `internal` visibility properly. For other ecosystems `internal` is synonymous with `private`. This parameter is optional and only filters an existing result set.",
+        "in": "QUERY",
+        "type": "string",
+        "required": false,
+        "enum": ["public", "private", "internal"],
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      {
+        "code": 200,
+        "description": "Response",
+        "examples": [
+          {
+            "data": "[{\"id\":197,\"name\":\"hello_docker\",\"package_type\":\"container\",\"owner\":{\"login\":\"monalisa\",\"id\":9919,\"node_id\":\"MDEyOk9yZ2FuaXphdGlvbjk5MTk=\",\"avatar_url\":\"https://avatars.monalisausercontent.com/u/9919?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/monalisa\",\"html_url\":\"https://github.com/github\",\"followers_url\":\"https://api.github.com/users/github/followers\",\"following_url\":\"https://api.github.com/users/github/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/github/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/github/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/github/subscriptions\",\"organizations_url\":\"https://api.github.com/users/github/orgs\",\"repos_url\":\"https://api.github.com/users/github/repos\",\"events_url\":\"https://api.github.com/users/github/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/github/received_events\",\"type\":\"User\",\"site_admin\":false},\"version_count\":1,\"visibility\":\"private\",\"url\":\"https://api.github.com/orgs/github/packages/container/hello_docker\",\"created_at\":\"2020-05-19T22:19:11Z\",\"updated_at\":\"2020-05-19T22:19:11Z\",\"html_url\":\"https://github.com/orgs/github/packages/container/package/hello_docker\"},{\"id\":198,\"name\":\"goodbye_docker\",\"package_type\":\"container\",\"owner\":{\"login\":\"github\",\"id\":9919,\"node_id\":\"MDEyOk9yZ2FuaXphdGlvbjk5MTk=\",\"avatar_url\":\"https://avatars.githubusercontent.com/u/9919?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/monalisa\",\"html_url\":\"https://github.com/github\",\"followers_url\":\"https://api.github.com/users/github/followers\",\"following_url\":\"https://api.github.com/users/github/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/github/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/github/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/github/subscriptions\",\"organizations_url\":\"https://api.github.com/users/github/orgs\",\"repos_url\":\"https://api.github.com/users/github/repos\",\"events_url\":\"https://api.github.com/users/github/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/github/received_events\",\"type\":\"User\",\"site_admin\":false},\"version_count\":2,\"visibility\":\"private\",\"url\":\"https://api.github.com/user/monalisa/packages/container/goodbye_docker\",\"created_at\":\"2020-05-20T22:19:11Z\",\"updated_at\":\"2020-05-20T22:19:11Z\",\"html_url\":\"https://github.com/user/monalisa/packages/container/package/goodbye_docker\"}]"
+          }
+        ]
+      }
+    ],
+    "renamed": null
+  },
+  {
+    "name": "List packages for an organization",
+    "scope": "packages",
+    "id": "listPackagesForOrganization",
+    "method": "GET",
+    "url": "/orgs/{org}/packages",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "description": "Lists all packages in an organization readable by the user.\n\nTo use this endpoint, you must authenticate using an access token with the `packages:read` scope.\nIf `package_type` is not `container`, your token must also include the `repo` scope.",
+    "documentationUrl": "https://docs.github.com/rest/reference/packages#list-packages-for-an-organization",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "package_type",
+        "description": "The type of supported package. Can be one of `npm`, `maven`, `rubygems`, `nuget`, `docker`, or `container`. Packages in GitHub's Gradle registry have the type `maven`. Docker images pushed to GitHub's Container registry (`ghcr.io`) have the type `container`. You can use the type `docker` to find images that were pushed to GitHub's Docker registry (`docker.pkg.github.com`), even if these have now been migrated to the Container registry.",
+        "in": "QUERY",
+        "type": "string",
+        "required": true,
+        "enum": ["npm", "maven", "rubygems", "docker", "nuget", "container"],
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "org",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "visibility",
+        "description": "The selected visibility of the packages. Can be one of `public`, `private`, or `internal`. Only `container` package_types currently support `internal` visibility properly. For other ecosystems `internal` is synonymous with `private`. This parameter is optional and only filters an existing result set.",
+        "in": "QUERY",
+        "type": "string",
+        "required": false,
+        "enum": ["public", "private", "internal"],
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      {
+        "code": 200,
+        "description": "Response",
+        "examples": [
+          {
+            "data": "[{\"id\":197,\"name\":\"hello_docker\",\"package_type\":\"container\",\"owner\":{\"login\":\"github\",\"id\":9919,\"node_id\":\"MDEyOk9yZ2FuaXphdGlvbjk5MTk=\",\"avatar_url\":\"https://avatars.githubusercontent.com/u/9919?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/github\",\"html_url\":\"https://github.com/github\",\"followers_url\":\"https://api.github.com/users/github/followers\",\"following_url\":\"https://api.github.com/users/github/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/github/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/github/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/github/subscriptions\",\"organizations_url\":\"https://api.github.com/users/github/orgs\",\"repos_url\":\"https://api.github.com/users/github/repos\",\"events_url\":\"https://api.github.com/users/github/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/github/received_events\",\"type\":\"Organization\",\"site_admin\":false},\"version_count\":1,\"visibility\":\"private\",\"url\":\"https://api.github.com/orgs/github/packages/container/hello_docker\",\"created_at\":\"2020-05-19T22:19:11Z\",\"updated_at\":\"2020-05-19T22:19:11Z\",\"html_url\":\"https://github.com/orgs/github/packages/container/package/hello_docker\"},{\"id\":198,\"name\":\"goodbye_docker\",\"package_type\":\"container\",\"owner\":{\"login\":\"github\",\"id\":9919,\"node_id\":\"MDEyOk9yZ2FuaXphdGlvbjk5MTk=\",\"avatar_url\":\"https://avatars.githubusercontent.com/u/9919?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/github\",\"html_url\":\"https://github.com/github\",\"followers_url\":\"https://api.github.com/users/github/followers\",\"following_url\":\"https://api.github.com/users/github/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/github/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/github/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/github/subscriptions\",\"organizations_url\":\"https://api.github.com/users/github/orgs\",\"repos_url\":\"https://api.github.com/users/github/repos\",\"events_url\":\"https://api.github.com/users/github/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/github/received_events\",\"type\":\"Organization\",\"site_admin\":false},\"version_count\":2,\"visibility\":\"private\",\"url\":\"https://api.github.com/orgs/github/packages/container/goodbye_docker\",\"created_at\":\"2020-05-20T22:19:11Z\",\"updated_at\":\"2020-05-20T22:19:11Z\",\"html_url\":\"https://github.com/orgs/github/packages/container/package/goodbye_docker\"}]"
+          }
+        ]
+      },
+      {
+        "code": 401,
+        "description": "Requires authentication",
+        "examples": null
+      },
+      { "code": 403, "description": "Forbidden", "examples": null }
+    ],
+    "renamed": null
+  },
+  {
+    "name": "List packages for a user",
+    "scope": "packages",
+    "id": "listPackagesForUser",
+    "method": "GET",
+    "url": "/user/{username}/packages",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "description": "Lists all packages in a user's namespace for which the requesting user has access.\n\nTo use this endpoint, you must authenticate using an access token with the `packages:read` scope.\nIf `package_type` is not `container`, your token must also include the `repo` scope.",
+    "documentationUrl": "https://docs.github.com/rest/reference/packages#list-packages-for-user",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "package_type",
+        "description": "The type of supported package. Can be one of `npm`, `maven`, `rubygems`, `nuget`, `docker`, or `container`. Packages in GitHub's Gradle registry have the type `maven`. Docker images pushed to GitHub's Container registry (`ghcr.io`) have the type `container`. You can use the type `docker` to find images that were pushed to GitHub's Docker registry (`docker.pkg.github.com`), even if these have now been migrated to the Container registry.",
+        "in": "QUERY",
+        "type": "string",
+        "required": true,
+        "enum": ["npm", "maven", "rubygems", "docker", "nuget", "container"],
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "visibility",
+        "description": "The selected visibility of the packages. Can be one of `public`, `private`, or `internal`. Only `container` package_types currently support `internal` visibility properly. For other ecosystems `internal` is synonymous with `private`. This parameter is optional and only filters an existing result set.",
+        "in": "QUERY",
+        "type": "string",
+        "required": false,
+        "enum": ["public", "private", "internal"],
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "username",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      {
+        "code": 200,
+        "description": "Response",
+        "examples": [
+          {
+            "data": "[{\"id\":197,\"name\":\"hello_docker\",\"package_type\":\"container\",\"owner\":{\"login\":\"monalisa\",\"id\":9919,\"node_id\":\"MDEyOk9yZ2FuaXphdGlvbjk5MTk=\",\"avatar_url\":\"https://avatars.monalisausercontent.com/u/9919?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/monalisa\",\"html_url\":\"https://github.com/github\",\"followers_url\":\"https://api.github.com/users/github/followers\",\"following_url\":\"https://api.github.com/users/github/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/github/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/github/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/github/subscriptions\",\"organizations_url\":\"https://api.github.com/users/github/orgs\",\"repos_url\":\"https://api.github.com/users/github/repos\",\"events_url\":\"https://api.github.com/users/github/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/github/received_events\",\"type\":\"User\",\"site_admin\":false},\"version_count\":1,\"visibility\":\"private\",\"url\":\"https://api.github.com/orgs/github/packages/container/hello_docker\",\"created_at\":\"2020-05-19T22:19:11Z\",\"updated_at\":\"2020-05-19T22:19:11Z\",\"html_url\":\"https://github.com/orgs/github/packages/container/package/hello_docker\"},{\"id\":198,\"name\":\"goodbye_docker\",\"package_type\":\"container\",\"owner\":{\"login\":\"github\",\"id\":9919,\"node_id\":\"MDEyOk9yZ2FuaXphdGlvbjk5MTk=\",\"avatar_url\":\"https://avatars.githubusercontent.com/u/9919?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/monalisa\",\"html_url\":\"https://github.com/github\",\"followers_url\":\"https://api.github.com/users/github/followers\",\"following_url\":\"https://api.github.com/users/github/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/github/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/github/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/github/subscriptions\",\"organizations_url\":\"https://api.github.com/users/github/orgs\",\"repos_url\":\"https://api.github.com/users/github/repos\",\"events_url\":\"https://api.github.com/users/github/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/github/received_events\",\"type\":\"User\",\"site_admin\":false},\"version_count\":2,\"visibility\":\"private\",\"url\":\"https://api.github.com/user/monalisa/packages/container/goodbye_docker\",\"created_at\":\"2020-05-20T22:19:11Z\",\"updated_at\":\"2020-05-20T22:19:11Z\",\"html_url\":\"https://github.com/user/monalisa/packages/container/package/goodbye_docker\"}]"
+          }
+        ]
+      },
+      {
+        "code": 401,
+        "description": "Requires authentication",
+        "examples": null
+      },
+      { "code": 403, "description": "Forbidden", "examples": null }
+    ],
+    "renamed": null
+  },
+  {
+    "name": "Restore a package for the authenticated user",
+    "scope": "packages",
+    "id": "restorePackageForAuthenticatedUser",
+    "method": "POST",
+    "url": "/user/packages/{package_type}/{package_name}/restore{?token}",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "description": "Restores a package owned by the authenticated user.\n\nYou can restore a deleted package under the following conditions:\n  - The package was deleted within the last 30 days.\n  - The same package namespace and version is still available and not reused for a new package. If the same package namespace is not available, you will not be able to restore your package. In this scenario, to restore the deleted package, you must delete the new package that uses the deleted package's namespace first.\n\nTo use this endpoint, you must authenticate using an access token with the `packages:read` and `packages:write` scopes. If `package_type` is not `container`, your token must also include the `repo` scope.",
+    "documentationUrl": "https://docs.github.com/rest/reference/packages#restore-a-package-for-the-authenticated-user",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "package_type",
+        "description": "The type of supported package. Can be one of `npm`, `maven`, `rubygems`, `nuget`, `docker`, or `container`. Packages in GitHub's Gradle registry have the type `maven`. Docker images pushed to GitHub's Container registry (`ghcr.io`) have the type `container`. You can use the type `docker` to find images that were pushed to GitHub's Docker registry (`docker.pkg.github.com`), even if these have now been migrated to the Container registry.",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": ["npm", "maven", "rubygems", "docker", "nuget", "container"],
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "package_name",
+        "description": "The name of the package.",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
       },
       {
         "name": "token",
@@ -28381,7 +28631,85 @@
     "renamed": null
   },
   {
-    "name": "Restore package version for an organization",
+    "name": "Restore a package for a user",
+    "scope": "packages",
+    "id": "restorePackageForUser",
+    "method": "POST",
+    "url": "/users/{username}/packages/{package_type}/{package_name}/restore{?token}",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "description": "Restores an entire package for a user.\n\nYou can restore a deleted package under the following conditions:\n  - The package was deleted within the last 30 days.\n  - The same package namespace and version is still available and not reused for a new package. If the same package namespace is not available, you will not be able to restore your package. In this scenario, to restore the deleted package, you must delete the new package that uses the deleted package's namespace first.\n\nTo use this endpoint, you must authenticate using an access token with the `packages:read` and `packages:write` scopes. In addition:\n- If `package_type` is not `container`, your token must also include the `repo` scope.\n- If `package_type` is `container`, you must also have admin permissions to the container that you want to restore.",
+    "documentationUrl": "https://docs.github.com/rest/reference/packages#restore-a-package-for-a-user",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "package_type",
+        "description": "The type of supported package. Can be one of `npm`, `maven`, `rubygems`, `nuget`, `docker`, or `container`. Packages in GitHub's Gradle registry have the type `maven`. Docker images pushed to GitHub's Container registry (`ghcr.io`) have the type `container`. You can use the type `docker` to find images that were pushed to GitHub's Docker registry (`docker.pkg.github.com`), even if these have now been migrated to the Container registry.",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": ["npm", "maven", "rubygems", "docker", "nuget", "container"],
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "package_name",
+        "description": "The name of the package.",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "username",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "token",
+        "description": "package token",
+        "in": "QUERY",
+        "type": "string",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      { "code": 204, "description": "Response", "examples": null },
+      {
+        "code": 401,
+        "description": "Requires authentication",
+        "examples": null
+      },
+      { "code": 403, "description": "Forbidden", "examples": null },
+      { "code": 404, "description": "Resource not found", "examples": null }
+    ],
+    "renamed": null
+  },
+  {
+    "name": "Restore a package version for the authenticated user",
     "scope": "packages",
     "id": "restorePackageVersionForOrg",
     "method": "POST",
@@ -28421,6 +28749,84 @@
       },
       {
         "name": "org",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "package_version_id",
+        "description": "Unique identifier of the package version.",
+        "in": "PATH",
+        "type": "integer",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      { "code": 204, "description": "Response", "examples": null },
+      {
+        "code": 401,
+        "description": "Requires authentication",
+        "examples": null
+      },
+      { "code": 403, "description": "Forbidden", "examples": null },
+      { "code": 404, "description": "Resource not found", "examples": null }
+    ],
+    "renamed": null
+  },
+  {
+    "name": "Restore package version for a user",
+    "scope": "packages",
+    "id": "restorePackageVersionForUser",
+    "method": "POST",
+    "url": "/users/{username}/packages/{package_type}/{package_name}/versions/{package_version_id}/restore",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "description": "Restores a specific package version for a user.\n\nYou can restore a deleted package under the following conditions:\n  - The package was deleted within the last 30 days.\n  - The same package namespace and version is still available and not reused for a new package. If the same package namespace is not available, you will not be able to restore your package. In this scenario, to restore the deleted package, you must delete the new package that uses the deleted package's namespace first.\n\nTo use this endpoint, you must authenticate using an access token with the `packages:read` and `packages:write` scopes. In addition:\n- If `package_type` is not `container`, your token must also include the `repo` scope.\n- If `package_type` is `container`, you must also have admin permissions to the container that you want to restore.",
+    "documentationUrl": "https://docs.github.com/rest/reference/packages#restore-a-package-version-for-a-user",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "package_type",
+        "description": "The type of supported package. Can be one of `npm`, `maven`, `rubygems`, `nuget`, `docker`, or `container`. Packages in GitHub's Gradle registry have the type `maven`. Docker images pushed to GitHub's Container registry (`ghcr.io`) have the type `container`. You can use the type `docker` to find images that were pushed to GitHub's Docker registry (`docker.pkg.github.com`), even if these have now been migrated to the Container registry.",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": ["npm", "maven", "rubygems", "docker", "nuget", "container"],
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "package_name",
+        "description": "The name of the package.",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "username",
         "description": "",
         "in": "PATH",
         "type": "string",
