@@ -1,6 +1,6 @@
 ---
 name: Set labels for an issue
-example: octokit.rest.issues.setLabels({ owner, repo, issue_number })
+example: octokit.rest.issues.setLabels({ owner, repo, issue_number, labels[].name })
 route: PUT /repos/{owner}/{repo}/issues/{issue_number}/labels
 scope: issues
 type: API method
@@ -12,10 +12,11 @@ Removes any previous labels and sets the new labels for an issue.
 
 ```js
 octokit.rest.issues.setLabels({
-  owner,
-  repo,
-  issue_number,
-});
+        owner,
+repo,
+issue_number,
+labels[].name
+      })
 ```
 
 ## Parameters
@@ -38,6 +39,12 @@ octokit.rest.issues.setLabels({
 <tr><td>issue_number</td><td>yes</td><td>
 
 issue_number parameter
+
+</td></tr>
+<tr><td>labels</td><td>no</td><td>
+
+</td></tr>
+<tr><td>labels[].name</td><td>yes</td><td>
 
 </td></tr>
   </tbody>

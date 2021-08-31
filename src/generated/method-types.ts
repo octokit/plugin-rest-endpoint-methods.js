@@ -8404,6 +8404,21 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
+     * Lists all secret scanning alerts for all eligible repositories in an organization, from newest to oldest.
+     * To use this endpoint, you must be an administrator for the repository or organization, and you must use an access token with the `repo` scope or `security_events` scope.
+     *
+     * GitHub Apps must have the `secret_scanning_alerts` read permission to use this endpoint.
+     */
+    listAlertsForOrg: {
+      (
+        params?: RestEndpointMethodTypes["secretScanning"]["listAlertsForOrg"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["secretScanning"]["listAlertsForOrg"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
      * Lists all secret scanning alerts for a private repository, from newest to oldest. To use this endpoint, you must be an administrator for the repository or organization, and you must use an access token with the `repo` scope or `security_events` scope.
      *
      * GitHub Apps must have the `secret_scanning_alerts` read permission to use this endpoint.

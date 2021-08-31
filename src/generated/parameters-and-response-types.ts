@@ -4886,6 +4886,14 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["GET /repos/{owner}/{repo}/secret-scanning/alerts/{alert_number}"]["response"];
     };
+    listAlertsForOrg: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /orgs/{org}/secret-scanning/alerts"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /orgs/{org}/secret-scanning/alerts"]["response"];
+    };
     listAlertsForRepo: {
       parameters: RequestParameters &
         Omit<

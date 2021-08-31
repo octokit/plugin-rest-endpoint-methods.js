@@ -1345,6 +1345,7 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     getAlert: [
       "GET /repos/{owner}/{repo}/secret-scanning/alerts/{alert_number}",
     ],
+    listAlertsForOrg: ["GET /orgs/{org}/secret-scanning/alerts"],
     listAlertsForRepo: ["GET /repos/{owner}/{repo}/secret-scanning/alerts"],
     updateAlert: [
       "PATCH /repos/{owner}/{repo}/secret-scanning/alerts/{alert_number}",
