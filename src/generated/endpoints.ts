@@ -660,11 +660,17 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     deletePackageForOrg: [
       "DELETE /orgs/{org}/packages/{package_type}/{package_name}",
     ],
+    deletePackageForUser: [
+      "DELETE /users/{username}/packages/{package_type}/{package_name}",
+    ],
     deletePackageVersionForAuthenticatedUser: [
       "DELETE /user/packages/{package_type}/{package_name}/versions/{package_version_id}",
     ],
     deletePackageVersionForOrg: [
       "DELETE /orgs/{org}/packages/{package_type}/{package_name}/versions/{package_version_id}",
+    ],
+    deletePackageVersionForUser: [
+      "DELETE /users/{username}/packages/{package_type}/{package_name}/versions/{package_version_id}",
     ],
     getAllPackageVersionsForAPackageOwnedByAnOrg: [
       "GET /orgs/{org}/packages/{package_type}/{package_name}/versions",
@@ -708,17 +714,26 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     getPackageVersionForUser: [
       "GET /users/{username}/packages/{package_type}/{package_name}/versions/{package_version_id}",
     ],
+    listPackagesForAuthenticatedUser: ["GET /user/packages"],
+    listPackagesForOrganization: ["GET /orgs/{org}/packages"],
+    listPackagesForUser: ["GET /user/{username}/packages"],
     restorePackageForAuthenticatedUser: [
       "POST /user/packages/{package_type}/{package_name}/restore{?token}",
     ],
     restorePackageForOrg: [
       "POST /orgs/{org}/packages/{package_type}/{package_name}/restore{?token}",
     ],
+    restorePackageForUser: [
+      "POST /users/{username}/packages/{package_type}/{package_name}/restore{?token}",
+    ],
     restorePackageVersionForAuthenticatedUser: [
       "POST /user/packages/{package_type}/{package_name}/versions/{package_version_id}/restore",
     ],
     restorePackageVersionForOrg: [
       "POST /orgs/{org}/packages/{package_type}/{package_name}/versions/{package_version_id}/restore",
+    ],
+    restorePackageVersionForUser: [
+      "POST /users/{username}/packages/{package_type}/{package_name}/versions/{package_version_id}/restore",
     ],
   },
   projects: {
@@ -1330,6 +1345,7 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     getAlert: [
       "GET /repos/{owner}/{repo}/secret-scanning/alerts/{alert_number}",
     ],
+    listAlertsForOrg: ["GET /orgs/{org}/secret-scanning/alerts"],
     listAlertsForRepo: ["GET /repos/{owner}/{repo}/secret-scanning/alerts"],
     updateAlert: [
       "PATCH /repos/{owner}/{repo}/secret-scanning/alerts/{alert_number}",
