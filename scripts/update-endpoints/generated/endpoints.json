@@ -44685,6 +44685,82 @@
     "renamed": null
   },
   {
+    "name": "Sync a fork branch with the upstream repository",
+    "scope": "repos",
+    "id": "mergeUpstream",
+    "method": "POST",
+    "url": "/repos/{owner}/{repo}/merge-upstream",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "description": "Sync a branch of a forked repository to keep it up-to-date with the upstream repository.",
+    "documentationUrl": "https://docs.github.com/rest/reference/repos#sync-a-fork-branch-with-the-upstream-repository",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "owner",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "repo",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "branch",
+        "description": "The name of the branch which should be updated to match upstream.",
+        "in": "BODY",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      {
+        "code": 200,
+        "description": "The branch has been successfully synced with the upstream repository",
+        "examples": [
+          {
+            "data": "{\"message\":\"Successfully fetched and fast-forwarded from upstream defunkt:main\",\"merge_type\":\"fast-forward\",\"base_branch\":\"defunkt:main\"}"
+          }
+        ]
+      },
+      {
+        "code": 409,
+        "description": "The branch could not be synced because of a merge conflict",
+        "examples": null
+      },
+      {
+        "code": 422,
+        "description": "The branch could not be synced for some other reason",
+        "examples": null
+      }
+    ],
+    "renamed": null
+  },
+  {
     "name": "Ping a repository webhook",
     "scope": "repos",
     "id": "pingWebhook",
