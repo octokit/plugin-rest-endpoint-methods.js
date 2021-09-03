@@ -4570,6 +4570,14 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["POST /repos/{owner}/{repo}/merges"]["response"];
     };
+    mergeUpstream: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["POST /repos/{owner}/{repo}/merge-upstream"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["POST /repos/{owner}/{repo}/merge-upstream"]["response"];
+    };
     pingWebhook: {
       parameters: RequestParameters &
         Omit<

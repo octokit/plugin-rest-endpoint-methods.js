@@ -7801,6 +7801,16 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
+     * Sync a branch of a forked repository to keep it up-to-date with the upstream repository.
+     */
+    mergeUpstream: {
+      (
+        params?: RestEndpointMethodTypes["repos"]["mergeUpstream"]["parameters"]
+      ): Promise<RestEndpointMethodTypes["repos"]["mergeUpstream"]["response"]>;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
      * This will trigger a [ping event](https://docs.github.com/webhooks/#ping-event) to be sent to the hook.
      */
     pingWebhook: {
