@@ -8,6 +8,8 @@ type: API method
 
 # Sync a fork branch with the upstream repository
 
+**Note:** This endpoint is currently in beta and subject to change.
+
 Sync a branch of a forked repository to keep it up-to-date with the upstream repository.
 
 ```js

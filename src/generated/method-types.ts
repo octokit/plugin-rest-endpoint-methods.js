@@ -7801,6 +7801,8 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
+     * **Note:** This endpoint is currently in beta and subject to change.
+     *
      * Sync a branch of a forked repository to keep it up-to-date with the upstream repository.
      */
     mergeUpstream: {

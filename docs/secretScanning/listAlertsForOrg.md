@@ -1,12 +1,12 @@
 ---
-name: Lists secret scanning alerts by organization
+name: List secret scanning alerts by organization
 example: octokit.rest.secretScanning.listAlertsForOrg({ org })
 route: GET /orgs/{org}/secret-scanning/alerts
 scope: secretScanning
 type: API method
 ---
 
-# Lists secret scanning alerts by organization
+# List secret scanning alerts by organization
 
 Lists all secret scanning alerts for all eligible repositories in an organization, from newest to oldest.
 To use this endpoint, you must be an administrator for the repository or organization, and you must use an access token with the `repo` scope or `security_events` scope.
