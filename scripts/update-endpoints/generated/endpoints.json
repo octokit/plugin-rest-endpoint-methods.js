@@ -44692,7 +44692,7 @@
     "url": "/repos/{owner}/{repo}/merge-upstream",
     "isDeprecated": false,
     "deprecationDate": null,
-    "description": "Sync a branch of a forked repository to keep it up-to-date with the upstream repository.",
+    "description": "**Note:** This endpoint is currently in beta and subject to change.\n\nSync a branch of a forked repository to keep it up-to-date with the upstream repository.",
     "documentationUrl": "https://docs.github.com/rest/reference/repos#sync-a-fork-branch-with-the-upstream-repository",
     "previews": [],
     "headers": [],
@@ -48741,7 +48741,7 @@
     "renamed": null
   },
   {
-    "name": "Lists secret scanning alerts by organization",
+    "name": "List secret scanning alerts by organization",
     "scope": "secretScanning",
     "id": "listAlertsForOrg",
     "method": "GET",
