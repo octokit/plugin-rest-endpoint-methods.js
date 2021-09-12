@@ -46,6 +46,16 @@ Indicates whether repositories should be locked (to prevent manipulation) while 
 Indicates whether attachments should be excluded from the migration (to reduce migration archive file size).
 
 </td></tr>
+<tr><td>exclude_releases</td><td>no</td><td>
+
+Indicates whether releases should be excluded from the migration (to reduce migration archive file size).
+
+</td></tr>
+<tr><td>exclude_owner_projects</td><td>no</td><td>
+
+Indicates whether projects owned by the organization or users should be excluded. from the migration.
+
+</td></tr>
 <tr><td>exclude</td><td>no</td><td>
 
 </td></tr>
