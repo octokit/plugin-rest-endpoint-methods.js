@@ -37,6 +37,16 @@ Lock the repositories being migrated at the start of the migration
 Do not include attachments in the migration
 
 </td></tr>
+<tr><td>exclude_releases</td><td>no</td><td>
+
+Do not include releases in the migration
+
+</td></tr>
+<tr><td>exclude_owner_projects</td><td>no</td><td>
+
+Indicates whether projects owned by the organization or users should be excluded.
+
+</td></tr>
 <tr><td>exclude</td><td>no</td><td>
 
 Exclude attributes from the API response to improve performance
