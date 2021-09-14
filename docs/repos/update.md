@@ -140,6 +140,11 @@ Either `true` to allow automatically deleting head branches when pull requests a
 `true` to archive this repository. **Note**: You cannot unarchive repositories through the API.
 
 </td></tr>
+<tr><td>allow_forking</td><td>no</td><td>
+
+Either `true` to allow private forks, or `false` to prevent private forks.
+
+</td></tr>
   </tbody>
 </table>
 

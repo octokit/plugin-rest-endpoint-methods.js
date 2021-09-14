@@ -25,7 +25,7 @@ When an upstream failure occurs, you will receive a `502 Bad Gateway` status. Th
 **Notes:**
 
 - GitHub renames asset filenames that have special characters, non-alphanumeric characters, and leading or trailing periods. The "[List assets for a release](https://docs.github.com/rest/reference/repos#list-assets-for-a-release)"
-  endpoint lists the renamed filenames. For more information and help, contact [GitHub Support](https://support.github.com/contact?tags=rest-api).
+  endpoint lists the renamed filenames. For more information and help, contact [GitHub Support](https://support.github.com/contact?tags=dotcom-rest-api).
 - If you upload an asset with the same filename as another uploaded asset, you'll receive an error and must delete the old file before you can re-upload the new asset.
 
 ```js
