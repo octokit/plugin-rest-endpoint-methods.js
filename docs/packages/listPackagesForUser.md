@@ -1,7 +1,7 @@
 ---
 name: List packages for a user
 example: octokit.rest.packages.listPackagesForUser({ package_type, username })
-route: GET /user/{username}/packages
+route: GET /users/{username}/packages
 scope: packages
 type: API method
 ---
