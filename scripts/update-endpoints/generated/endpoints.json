@@ -4082,7 +4082,7 @@
     "url": "/repos/{owner}/{repo}/actions/runs/{run_id}/rerun",
     "isDeprecated": false,
     "deprecationDate": null,
-    "description": "Re-runs your workflow run using its `id`. You must authenticate using an access token with the `repo` scope to use this endpoint. GitHub Apps must have the `actions:write` permission to use this endpoint.",
+    "description": "**Deprecation Notice:** This endpoint is deprecated.\nWe recommend migrating your existing code to use the new [retry workflow](https://docs.github.com/rest/reference/actions#retry-a-workflow) endpoint.\n\nRe-runs your workflow run using its `id`. You must authenticate using\nan access token with the `repo` scope to use this endpoint. GitHub Apps must have\nthe `actions:write` permission to use this endpoint.",
     "documentationUrl": "https://docs.github.com/rest/reference/actions#re-run-a-workflow",
     "previews": [],
     "headers": [],
@@ -4195,6 +4195,62 @@
         "examples": null
       }
     ],
+    "renamed": null
+  },
+  {
+    "name": "Retry a workflow",
+    "scope": "actions",
+    "id": "retryWorkflow",
+    "method": "POST",
+    "url": "/repos/{owner}/{repo}/actions/runs/{run_id}/retry",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "description": "Retry your workflow run using its `id`. You must authenticate using an access token with the `repo` scope to use this endpoint. GitHub Apps must have the `actions:write` permission to use this endpoint.",
+    "documentationUrl": "https://docs.github.com/rest/reference/actions#retry-a-workflow",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "owner",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "repo",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "run_id",
+        "description": "The id of the workflow run.",
+        "in": "PATH",
+        "type": "integer",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [{ "code": 201, "description": "Response", "examples": null }],
     "renamed": null
   },
   {
