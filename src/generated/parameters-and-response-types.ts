@@ -498,14 +498,6 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["GET /repos/{owner}/{repo}/actions/runs"]["response"];
     };
-    reRunWorkflow: {
-      parameters: RequestParameters &
-        Omit<
-          Endpoints["POST /repos/{owner}/{repo}/actions/runs/{run_id}/rerun"]["parameters"],
-          "baseUrl" | "headers" | "mediaType"
-        >;
-      response: Endpoints["POST /repos/{owner}/{repo}/actions/runs/{run_id}/rerun"]["response"];
-    };
     removeSelectedRepoFromOrgSecret: {
       parameters: RequestParameters &
         Omit<
@@ -2907,10 +2899,10 @@ export type RestEndpointMethodTypes = {
     listPackagesForUser: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /user/{username}/packages"]["parameters"],
+          Endpoints["GET /users/{username}/packages"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /user/{username}/packages"]["response"];
+      response: Endpoints["GET /users/{username}/packages"]["response"];
     };
     restorePackageForAuthenticatedUser: {
       parameters: RequestParameters &
@@ -3922,6 +3914,14 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["DELETE /repos/{owner}/{repo}/automated-security-fixes"]["response"];
     };
+    disableLfsForRepo: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["DELETE /repos/{owner}/{repo}/lfs"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["DELETE /repos/{owner}/{repo}/lfs"]["response"];
+    };
     disableVulnerabilityAlerts: {
       parameters: RequestParameters &
         Omit<
@@ -3961,6 +3961,14 @@ export type RestEndpointMethodTypes = {
           "baseUrl" | "headers" | "mediaType"
         >;
       response: Endpoints["PUT /repos/{owner}/{repo}/automated-security-fixes"]["response"];
+    };
+    enableLfsForRepo: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["PUT /repos/{owner}/{repo}/lfs"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["PUT /repos/{owner}/{repo}/lfs"]["response"];
     };
     enableVulnerabilityAlerts: {
       parameters: RequestParameters &

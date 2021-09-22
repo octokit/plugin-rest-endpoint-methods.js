@@ -1071,23 +1071,6 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * **Deprecation Notice:** This endpoint is deprecated.
-     * We recommend migrating your existing code to use the new [retry workflow](https://docs.github.com/rest/reference/actions#retry-a-workflow) endpoint.
-     *
-     * Re-runs your workflow run using its `id`. You must authenticate using
-     * an access token with the `repo` scope to use this endpoint. GitHub Apps must have
-     * the `actions:write` permission to use this endpoint.
-     */
-    reRunWorkflow: {
-      (
-        params?: RestEndpointMethodTypes["actions"]["reRunWorkflow"]["parameters"]
-      ): Promise<
-        RestEndpointMethodTypes["actions"]["reRunWorkflow"]["response"]
-      >;
-      defaults: RequestInterface["defaults"];
-      endpoint: EndpointInterface<{ url: string }>;
-    };
-    /**
      * Removes a repository from an organization secret when the `visibility` for repository access is set to `selected`. The visibility is set when you [Create or update an organization secret](https://docs.github.com/rest/reference/actions#create-or-update-an-organization-secret). You must authenticate using an access token with the `admin:org` scope to use this endpoint. GitHub Apps must have the `secrets` organization permission to use this endpoint.
      */
     removeSelectedRepoFromOrgSecret: {
@@ -6739,6 +6722,18 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
+     * **Note:** The Git LFS API endpoints are currently in beta and are subject to change.
+     */
+    disableLfsForRepo: {
+      (
+        params?: RestEndpointMethodTypes["repos"]["disableLfsForRepo"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["repos"]["disableLfsForRepo"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
      * Disables dependency alerts and the dependency graph for a repository. The authenticated user must have admin access to the repository. For more information, see "[About security alerts for vulnerable dependencies](https://help.github.com/en/articles/about-security-alerts-for-vulnerable-dependencies)".
      */
     disableVulnerabilityAlerts: {
@@ -6804,6 +6799,18 @@ export type RestEndpointMethods = {
         params?: RestEndpointMethodTypes["repos"]["enableAutomatedSecurityFixes"]["parameters"]
       ): Promise<
         RestEndpointMethodTypes["repos"]["enableAutomatedSecurityFixes"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * **Note:** The Git LFS API endpoints are currently in beta and are subject to change.
+     */
+    enableLfsForRepo: {
+      (
+        params?: RestEndpointMethodTypes["repos"]["enableLfsForRepo"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["repos"]["enableLfsForRepo"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;

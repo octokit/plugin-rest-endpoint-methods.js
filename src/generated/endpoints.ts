@@ -147,7 +147,6 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
       "GET /repos/{owner}/{repo}/actions/workflows/{workflow_id}/runs",
     ],
     listWorkflowRunsForRepo: ["GET /repos/{owner}/{repo}/actions/runs"],
-    reRunWorkflow: ["POST /repos/{owner}/{repo}/actions/runs/{run_id}/rerun"],
     removeSelectedRepoFromOrgSecret: [
       "DELETE /orgs/{org}/actions/secrets/{secret_name}/repositories/{repository_id}",
     ],
@@ -486,7 +485,6 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     listEventsForRepo: ["GET /repos/{owner}/{repo}/issues/events"],
     listEventsForTimeline: [
       "GET /repos/{owner}/{repo}/issues/{issue_number}/timeline",
-      { mediaType: { previews: ["mockingbird"] } },
     ],
     listForAuthenticatedUser: ["GET /user/issues"],
     listForOrg: ["GET /orgs/{org}/issues"],
@@ -717,7 +715,7 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     ],
     listPackagesForAuthenticatedUser: ["GET /user/packages"],
     listPackagesForOrganization: ["GET /orgs/{org}/packages"],
-    listPackagesForUser: ["GET /user/{username}/packages"],
+    listPackagesForUser: ["GET /users/{username}/packages"],
     restorePackageForAuthenticatedUser: [
       "POST /user/packages/{package_type}/{package_name}/restore{?token}",
     ],
@@ -1094,6 +1092,7 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
       "DELETE /repos/{owner}/{repo}/automated-security-fixes",
       { mediaType: { previews: ["london"] } },
     ],
+    disableLfsForRepo: ["DELETE /repos/{owner}/{repo}/lfs"],
     disableVulnerabilityAlerts: [
       "DELETE /repos/{owner}/{repo}/vulnerability-alerts",
       { mediaType: { previews: ["dorian"] } },
@@ -1109,6 +1108,7 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
       "PUT /repos/{owner}/{repo}/automated-security-fixes",
       { mediaType: { previews: ["london"] } },
     ],
+    enableLfsForRepo: ["PUT /repos/{owner}/{repo}/lfs"],
     enableVulnerabilityAlerts: [
       "PUT /repos/{owner}/{repo}/vulnerability-alerts",
       { mediaType: { previews: ["dorian"] } },
@@ -1198,7 +1198,6 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     listBranches: ["GET /repos/{owner}/{repo}/branches"],
     listBranchesForHeadCommit: [
       "GET /repos/{owner}/{repo}/commits/{commit_sha}/branches-where-head",
-      { mediaType: { previews: ["groot"] } },
     ],
     listCollaborators: ["GET /repos/{owner}/{repo}/collaborators"],
     listCommentsForCommit: [
@@ -1226,7 +1225,6 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     listPublic: ["GET /repositories"],
     listPullRequestsAssociatedWithCommit: [
       "GET /repos/{owner}/{repo}/commits/{commit_sha}/pulls",
-      { mediaType: { previews: ["groot"] } },
     ],
     listReleaseAssets: [
       "GET /repos/{owner}/{repo}/releases/{release_id}/assets",
