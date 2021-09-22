@@ -514,6 +514,14 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["DELETE /orgs/{org}/actions/secrets/{secret_name}/repositories/{repository_id}"]["response"];
     };
+    retryWorkflow: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["POST /repos/{owner}/{repo}/actions/runs/{run_id}/retry"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["POST /repos/{owner}/{repo}/actions/runs/{run_id}/retry"]["response"];
+    };
     reviewPendingDeploymentsForRun: {
       parameters: RequestParameters &
         Omit<

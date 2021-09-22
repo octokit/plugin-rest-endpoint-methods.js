@@ -151,6 +151,7 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     removeSelectedRepoFromOrgSecret: [
       "DELETE /orgs/{org}/actions/secrets/{secret_name}/repositories/{repository_id}",
     ],
+    retryWorkflow: ["POST /repos/{owner}/{repo}/actions/runs/{run_id}/retry"],
     reviewPendingDeploymentsForRun: [
       "POST /repos/{owner}/{repo}/actions/runs/{run_id}/pending_deployments",
     ],
