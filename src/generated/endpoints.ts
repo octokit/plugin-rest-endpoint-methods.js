@@ -538,47 +538,25 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     cancelImport: ["DELETE /repos/{owner}/{repo}/import"],
     deleteArchiveForAuthenticatedUser: [
       "DELETE /user/migrations/{migration_id}/archive",
-      { mediaType: { previews: ["wyandotte"] } },
     ],
     deleteArchiveForOrg: [
       "DELETE /orgs/{org}/migrations/{migration_id}/archive",
-      { mediaType: { previews: ["wyandotte"] } },
     ],
     downloadArchiveForOrg: [
       "GET /orgs/{org}/migrations/{migration_id}/archive",
-      { mediaType: { previews: ["wyandotte"] } },
     ],
     getArchiveForAuthenticatedUser: [
       "GET /user/migrations/{migration_id}/archive",
-      { mediaType: { previews: ["wyandotte"] } },
     ],
     getCommitAuthors: ["GET /repos/{owner}/{repo}/import/authors"],
     getImportStatus: ["GET /repos/{owner}/{repo}/import"],
     getLargeFiles: ["GET /repos/{owner}/{repo}/import/large_files"],
-    getStatusForAuthenticatedUser: [
-      "GET /user/migrations/{migration_id}",
-      { mediaType: { previews: ["wyandotte"] } },
-    ],
-    getStatusForOrg: [
-      "GET /orgs/{org}/migrations/{migration_id}",
-      { mediaType: { previews: ["wyandotte"] } },
-    ],
-    listForAuthenticatedUser: [
-      "GET /user/migrations",
-      { mediaType: { previews: ["wyandotte"] } },
-    ],
-    listForOrg: [
-      "GET /orgs/{org}/migrations",
-      { mediaType: { previews: ["wyandotte"] } },
-    ],
-    listReposForOrg: [
-      "GET /orgs/{org}/migrations/{migration_id}/repositories",
-      { mediaType: { previews: ["wyandotte"] } },
-    ],
-    listReposForUser: [
-      "GET /user/migrations/{migration_id}/repositories",
-      { mediaType: { previews: ["wyandotte"] } },
-    ],
+    getStatusForAuthenticatedUser: ["GET /user/migrations/{migration_id}"],
+    getStatusForOrg: ["GET /orgs/{org}/migrations/{migration_id}"],
+    listForAuthenticatedUser: ["GET /user/migrations"],
+    listForOrg: ["GET /orgs/{org}/migrations"],
+    listReposForOrg: ["GET /orgs/{org}/migrations/{migration_id}/repositories"],
+    listReposForUser: ["GET /user/migrations/{migration_id}/repositories"],
     mapCommitAuthor: ["PATCH /repos/{owner}/{repo}/import/authors/{author_id}"],
     setLfsPreference: ["PATCH /repos/{owner}/{repo}/import/lfs"],
     startForAuthenticatedUser: ["POST /user/migrations"],
@@ -586,11 +564,9 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     startImport: ["PUT /repos/{owner}/{repo}/import"],
     unlockRepoForAuthenticatedUser: [
       "DELETE /user/migrations/{migration_id}/repos/{repo_name}/lock",
-      { mediaType: { previews: ["wyandotte"] } },
     ],
     unlockRepoForOrg: [
       "DELETE /orgs/{org}/migrations/{migration_id}/repos/{repo_name}/lock",
-      { mediaType: { previews: ["wyandotte"] } },
     ],
     updateImport: ["PATCH /repos/{owner}/{repo}/import"],
   },
@@ -888,7 +864,6 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     update: ["PATCH /repos/{owner}/{repo}/pulls/{pull_number}"],
     updateBranch: [
       "PUT /repos/{owner}/{repo}/pulls/{pull_number}/update-branch",
-      { mediaType: { previews: ["lydian"] } },
     ],
     updateReview: [
       "PUT /repos/{owner}/{repo}/pulls/{pull_number}/reviews/{review_id}",
@@ -1010,7 +985,6 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     checkCollaborator: ["GET /repos/{owner}/{repo}/collaborators/{username}"],
     checkVulnerabilityAlerts: [
       "GET /repos/{owner}/{repo}/vulnerability-alerts",
-      { mediaType: { previews: ["dorian"] } },
     ],
     compareCommits: ["GET /repos/{owner}/{repo}/compare/{base}...{head}"],
     compareCommitsWithBasehead: [
@@ -1090,12 +1064,10 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     deleteWebhook: ["DELETE /repos/{owner}/{repo}/hooks/{hook_id}"],
     disableAutomatedSecurityFixes: [
       "DELETE /repos/{owner}/{repo}/automated-security-fixes",
-      { mediaType: { previews: ["london"] } },
     ],
     disableLfsForRepo: ["DELETE /repos/{owner}/{repo}/lfs"],
     disableVulnerabilityAlerts: [
       "DELETE /repos/{owner}/{repo}/vulnerability-alerts",
-      { mediaType: { previews: ["dorian"] } },
     ],
     downloadArchive: [
       "GET /repos/{owner}/{repo}/zipball/{ref}",
@@ -1106,12 +1078,10 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     downloadZipballArchive: ["GET /repos/{owner}/{repo}/zipball/{ref}"],
     enableAutomatedSecurityFixes: [
       "PUT /repos/{owner}/{repo}/automated-security-fixes",
-      { mediaType: { previews: ["london"] } },
     ],
     enableLfsForRepo: ["PUT /repos/{owner}/{repo}/lfs"],
     enableVulnerabilityAlerts: [
       "PUT /repos/{owner}/{repo}/vulnerability-alerts",
-      { mediaType: { previews: ["dorian"] } },
     ],
     get: ["GET /repos/{owner}/{repo}"],
     getAccessRestrictions: [
