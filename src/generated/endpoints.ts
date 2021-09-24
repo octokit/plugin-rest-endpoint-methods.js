@@ -712,106 +712,35 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     ],
   },
   projects: {
-    addCollaborator: [
-      "PUT /projects/{project_id}/collaborators/{username}",
-      { mediaType: { previews: ["inertia"] } },
-    ],
-    createCard: [
-      "POST /projects/columns/{column_id}/cards",
-      { mediaType: { previews: ["inertia"] } },
-    ],
-    createColumn: [
-      "POST /projects/{project_id}/columns",
-      { mediaType: { previews: ["inertia"] } },
-    ],
-    createForAuthenticatedUser: [
-      "POST /user/projects",
-      { mediaType: { previews: ["inertia"] } },
-    ],
-    createForOrg: [
-      "POST /orgs/{org}/projects",
-      { mediaType: { previews: ["inertia"] } },
-    ],
-    createForRepo: [
-      "POST /repos/{owner}/{repo}/projects",
-      { mediaType: { previews: ["inertia"] } },
-    ],
-    delete: [
-      "DELETE /projects/{project_id}",
-      { mediaType: { previews: ["inertia"] } },
-    ],
-    deleteCard: [
-      "DELETE /projects/columns/cards/{card_id}",
-      { mediaType: { previews: ["inertia"] } },
-    ],
-    deleteColumn: [
-      "DELETE /projects/columns/{column_id}",
-      { mediaType: { previews: ["inertia"] } },
-    ],
-    get: [
-      "GET /projects/{project_id}",
-      { mediaType: { previews: ["inertia"] } },
-    ],
-    getCard: [
-      "GET /projects/columns/cards/{card_id}",
-      { mediaType: { previews: ["inertia"] } },
-    ],
-    getColumn: [
-      "GET /projects/columns/{column_id}",
-      { mediaType: { previews: ["inertia"] } },
-    ],
+    addCollaborator: ["PUT /projects/{project_id}/collaborators/{username}"],
+    createCard: ["POST /projects/columns/{column_id}/cards"],
+    createColumn: ["POST /projects/{project_id}/columns"],
+    createForAuthenticatedUser: ["POST /user/projects"],
+    createForOrg: ["POST /orgs/{org}/projects"],
+    createForRepo: ["POST /repos/{owner}/{repo}/projects"],
+    delete: ["DELETE /projects/{project_id}"],
+    deleteCard: ["DELETE /projects/columns/cards/{card_id}"],
+    deleteColumn: ["DELETE /projects/columns/{column_id}"],
+    get: ["GET /projects/{project_id}"],
+    getCard: ["GET /projects/columns/cards/{card_id}"],
+    getColumn: ["GET /projects/columns/{column_id}"],
     getPermissionForUser: [
       "GET /projects/{project_id}/collaborators/{username}/permission",
-      { mediaType: { previews: ["inertia"] } },
     ],
-    listCards: [
-      "GET /projects/columns/{column_id}/cards",
-      { mediaType: { previews: ["inertia"] } },
-    ],
-    listCollaborators: [
-      "GET /projects/{project_id}/collaborators",
-      { mediaType: { previews: ["inertia"] } },
-    ],
-    listColumns: [
-      "GET /projects/{project_id}/columns",
-      { mediaType: { previews: ["inertia"] } },
-    ],
-    listForOrg: [
-      "GET /orgs/{org}/projects",
-      { mediaType: { previews: ["inertia"] } },
-    ],
-    listForRepo: [
-      "GET /repos/{owner}/{repo}/projects",
-      { mediaType: { previews: ["inertia"] } },
-    ],
-    listForUser: [
-      "GET /users/{username}/projects",
-      { mediaType: { previews: ["inertia"] } },
-    ],
-    moveCard: [
-      "POST /projects/columns/cards/{card_id}/moves",
-      { mediaType: { previews: ["inertia"] } },
-    ],
-    moveColumn: [
-      "POST /projects/columns/{column_id}/moves",
-      { mediaType: { previews: ["inertia"] } },
-    ],
+    listCards: ["GET /projects/columns/{column_id}/cards"],
+    listCollaborators: ["GET /projects/{project_id}/collaborators"],
+    listColumns: ["GET /projects/{project_id}/columns"],
+    listForOrg: ["GET /orgs/{org}/projects"],
+    listForRepo: ["GET /repos/{owner}/{repo}/projects"],
+    listForUser: ["GET /users/{username}/projects"],
+    moveCard: ["POST /projects/columns/cards/{card_id}/moves"],
+    moveColumn: ["POST /projects/columns/{column_id}/moves"],
     removeCollaborator: [
       "DELETE /projects/{project_id}/collaborators/{username}",
-      { mediaType: { previews: ["inertia"] } },
     ],
-    update: [
-      "PATCH /projects/{project_id}",
-      { mediaType: { previews: ["inertia"] } },
-    ],
-    updateCard: [
-      "PATCH /projects/columns/cards/{card_id}",
-      { mediaType: { previews: ["inertia"] } },
-    ],
-    updateColumn: [
-      "PATCH /projects/columns/{column_id}",
-      { mediaType: { previews: ["inertia"] } },
-    ],
+    update: ["PATCH /projects/{project_id}"],
+    updateCard: ["PATCH /projects/columns/cards/{card_id}"],
+    updateColumn: ["PATCH /projects/columns/{column_id}"],
   },
   pulls: {
     checkIfMerged: ["GET /repos/{owner}/{repo}/pulls/{pull_number}/merge"],
@@ -1327,14 +1256,12 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     ],
     addOrUpdateProjectPermissionsInOrg: [
       "PUT /orgs/{org}/teams/{team_slug}/projects/{project_id}",
-      { mediaType: { previews: ["inertia"] } },
     ],
     addOrUpdateRepoPermissionsInOrg: [
       "PUT /orgs/{org}/teams/{team_slug}/repos/{owner}/{repo}",
     ],
     checkPermissionsForProjectInOrg: [
       "GET /orgs/{org}/teams/{team_slug}/projects/{project_id}",
-      { mediaType: { previews: ["inertia"] } },
     ],
     checkPermissionsForRepoInOrg: [
       "GET /orgs/{org}/teams/{team_slug}/repos/{owner}/{repo}",
@@ -1372,10 +1299,7 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     listPendingInvitationsInOrg: [
       "GET /orgs/{org}/teams/{team_slug}/invitations",
     ],
-    listProjectsInOrg: [
-      "GET /orgs/{org}/teams/{team_slug}/projects",
-      { mediaType: { previews: ["inertia"] } },
-    ],
+    listProjectsInOrg: ["GET /orgs/{org}/teams/{team_slug}/projects"],
     listReposInOrg: ["GET /orgs/{org}/teams/{team_slug}/repos"],
     removeMembershipForUserInOrg: [
       "DELETE /orgs/{org}/teams/{team_slug}/memberships/{username}",
