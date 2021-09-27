@@ -46860,11 +46860,6 @@
       { "code": 200, "description": "Response", "examples": null },
       { "code": 403, "description": "Forbidden", "examples": null },
       { "code": 404, "description": "Resource not found", "examples": null },
-      {
-        "code": 415,
-        "description": "Preview header missing",
-        "examples": null
-      },
       { "code": 422, "description": "Validation failed", "examples": null }
     ],
     "renamed": null
