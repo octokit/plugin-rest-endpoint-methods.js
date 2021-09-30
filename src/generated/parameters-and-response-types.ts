@@ -3480,14 +3480,6 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["DELETE /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}/reactions/{reaction_id}"]["response"];
     };
-    deleteLegacy: {
-      parameters: RequestParameters &
-        Omit<
-          Endpoints["DELETE /reactions/{reaction_id}"]["parameters"],
-          "baseUrl" | "headers" | "mediaType"
-        >;
-      response: Endpoints["DELETE /reactions/{reaction_id}"]["response"];
-    };
     listForCommitComment: {
       parameters: RequestParameters &
         Omit<

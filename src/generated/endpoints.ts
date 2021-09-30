@@ -838,14 +838,6 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     deleteForTeamDiscussionComment: [
       "DELETE /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}/reactions/{reaction_id}",
     ],
-    deleteLegacy: [
-      "DELETE /reactions/{reaction_id}",
-      {},
-      {
-        deprecated:
-          "octokit.rest.reactions.deleteLegacy() is deprecated, see https://docs.github.com/rest/reference/reactions/#delete-a-reaction-legacy",
-      },
-    ],
     listForCommitComment: [
       "GET /repos/{owner}/{repo}/comments/{comment_id}/reactions",
     ],
