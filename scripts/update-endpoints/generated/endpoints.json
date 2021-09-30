@@ -25420,11 +25420,6 @@
         ]
       },
       { "code": 409, "description": "Conflict", "examples": null },
-      {
-        "code": 415,
-        "description": "Preview header missing",
-        "examples": null
-      },
       { "code": 422, "description": "Validation failed", "examples": null }
     ],
     "renamed": null
