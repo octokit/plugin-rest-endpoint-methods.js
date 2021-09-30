@@ -352,10 +352,6 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
   codesOfConduct: {
     getAllCodesOfConduct: ["GET /codes_of_conduct"],
     getConductCode: ["GET /codes_of_conduct/{key}"],
-    getForRepo: [
-      "GET /repos/{owner}/{repo}/community/code_of_conduct",
-      { mediaType: { previews: ["scarlet-witch"] } },
-    ],
   },
   emojis: { get: ["GET /emojis"] },
   enterpriseAdmin: {
@@ -805,87 +801,58 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
   reactions: {
     createForCommitComment: [
       "POST /repos/{owner}/{repo}/comments/{comment_id}/reactions",
-      { mediaType: { previews: ["squirrel-girl"] } },
     ],
     createForIssue: [
       "POST /repos/{owner}/{repo}/issues/{issue_number}/reactions",
-      { mediaType: { previews: ["squirrel-girl"] } },
     ],
     createForIssueComment: [
       "POST /repos/{owner}/{repo}/issues/comments/{comment_id}/reactions",
-      { mediaType: { previews: ["squirrel-girl"] } },
     ],
     createForPullRequestReviewComment: [
       "POST /repos/{owner}/{repo}/pulls/comments/{comment_id}/reactions",
-      { mediaType: { previews: ["squirrel-girl"] } },
     ],
     createForRelease: [
       "POST /repos/{owner}/{repo}/releases/{release_id}/reactions",
-      { mediaType: { previews: ["squirrel-girl"] } },
     ],
     createForTeamDiscussionCommentInOrg: [
       "POST /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}/reactions",
-      { mediaType: { previews: ["squirrel-girl"] } },
     ],
     createForTeamDiscussionInOrg: [
       "POST /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/reactions",
-      { mediaType: { previews: ["squirrel-girl"] } },
     ],
     deleteForCommitComment: [
       "DELETE /repos/{owner}/{repo}/comments/{comment_id}/reactions/{reaction_id}",
-      { mediaType: { previews: ["squirrel-girl"] } },
     ],
     deleteForIssue: [
       "DELETE /repos/{owner}/{repo}/issues/{issue_number}/reactions/{reaction_id}",
-      { mediaType: { previews: ["squirrel-girl"] } },
     ],
     deleteForIssueComment: [
       "DELETE /repos/{owner}/{repo}/issues/comments/{comment_id}/reactions/{reaction_id}",
-      { mediaType: { previews: ["squirrel-girl"] } },
     ],
     deleteForPullRequestComment: [
       "DELETE /repos/{owner}/{repo}/pulls/comments/{comment_id}/reactions/{reaction_id}",
-      { mediaType: { previews: ["squirrel-girl"] } },
     ],
     deleteForTeamDiscussion: [
       "DELETE /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/reactions/{reaction_id}",
-      { mediaType: { previews: ["squirrel-girl"] } },
     ],
     deleteForTeamDiscussionComment: [
       "DELETE /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}/reactions/{reaction_id}",
-      { mediaType: { previews: ["squirrel-girl"] } },
-    ],
-    deleteLegacy: [
-      "DELETE /reactions/{reaction_id}",
-      { mediaType: { previews: ["squirrel-girl"] } },
-      {
-        deprecated:
-          "octokit.rest.reactions.deleteLegacy() is deprecated, see https://docs.github.com/rest/reference/reactions/#delete-a-reaction-legacy",
-      },
     ],
     listForCommitComment: [
       "GET /repos/{owner}/{repo}/comments/{comment_id}/reactions",
-      { mediaType: { previews: ["squirrel-girl"] } },
     ],
-    listForIssue: [
-      "GET /repos/{owner}/{repo}/issues/{issue_number}/reactions",
-      { mediaType: { previews: ["squirrel-girl"] } },
-    ],
+    listForIssue: ["GET /repos/{owner}/{repo}/issues/{issue_number}/reactions"],
     listForIssueComment: [
       "GET /repos/{owner}/{repo}/issues/comments/{comment_id}/reactions",
-      { mediaType: { previews: ["squirrel-girl"] } },
     ],
     listForPullRequestReviewComment: [
       "GET /repos/{owner}/{repo}/pulls/comments/{comment_id}/reactions",
-      { mediaType: { previews: ["squirrel-girl"] } },
     ],
     listForTeamDiscussionCommentInOrg: [
       "GET /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}/reactions",
-      { mediaType: { previews: ["squirrel-girl"] } },
     ],
     listForTeamDiscussionInOrg: [
       "GET /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/reactions",
-      { mediaType: { previews: ["squirrel-girl"] } },
     ],
   },
   repos: {

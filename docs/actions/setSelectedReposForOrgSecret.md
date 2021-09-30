@@ -1,6 +1,6 @@
 ---
 name: Set selected repositories for an organization secret
-example: octokit.rest.actions.setSelectedReposForOrgSecret({ org, secret_name })
+example: octokit.rest.actions.setSelectedReposForOrgSecret({ org, secret_name, selected_repository_ids })
 route: PUT /orgs/{org}/actions/secrets/{secret_name}/repositories
 scope: actions
 type: API method
@@ -14,6 +14,7 @@ Replaces all repositories for an organization secret when the `visibility` for r
 octokit.rest.actions.setSelectedReposForOrgSecret({
   org,
   secret_name,
+  selected_repository_ids,
 });
 ```
 
@@ -36,7 +37,7 @@ octokit.rest.actions.setSelectedReposForOrgSecret({
 secret_name parameter
 
 </td></tr>
-<tr><td>selected_repository_ids</td><td>no</td><td>
+<tr><td>selected_repository_ids</td><td>yes</td><td>
 
 An array of repository ids that can access the organization secret. You can only provide a list of repository ids when the `visibility` is set to `selected`. You can add and remove individual repositories using the [Set selected repositories for an organization secret](https://docs.github.com/rest/reference/actions#set-selected-repositories-for-an-organization-secret) and [Remove selected repository from an organization secret](https://docs.github.com/rest/reference/actions#remove-selected-repository-from-an-organization-secret) endpoints.
 

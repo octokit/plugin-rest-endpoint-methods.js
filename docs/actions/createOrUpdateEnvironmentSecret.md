@@ -1,6 +1,6 @@
 ---
 name: Create or update an environment secret
-example: octokit.rest.actions.createOrUpdateEnvironmentSecret({ repository_id, environment_name, secret_name })
+example: octokit.rest.actions.createOrUpdateEnvironmentSecret({ repository_id, environment_name, secret_name, encrypted_value, key_id })
 route: PUT /repositories/{repository_id}/environments/{environment_name}/secrets/{secret_name}
 scope: actions
 type: API method
@@ -88,6 +88,8 @@ octokit.rest.actions.createOrUpdateEnvironmentSecret({
   repository_id,
   environment_name,
   secret_name,
+  encrypted_value,
+  key_id,
 });
 ```
 
@@ -115,12 +117,12 @@ The name of the environment
 secret_name parameter
 
 </td></tr>
-<tr><td>encrypted_value</td><td>no</td><td>
+<tr><td>encrypted_value</td><td>yes</td><td>
 
 Value for your secret, encrypted with [LibSodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages) using the public key retrieved from the [Get an environment public key](https://docs.github.com/rest/reference/actions#get-an-environment-public-key) endpoint.
 
 </td></tr>
-<tr><td>key_id</td><td>no</td><td>
+<tr><td>key_id</td><td>yes</td><td>
 
 ID of the key you used to encrypt the secret.
 

@@ -2601,20 +2601,6 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
-    /**
-     * Returns the contents of the repository's code of conduct file, if one is detected.
-     *
-     * A code of conduct is detected if there is a file named `CODE_OF_CONDUCT` in the root directory of the repository. GitHub detects which code of conduct it is using fuzzy matching.
-     */
-    getForRepo: {
-      (
-        params?: RestEndpointMethodTypes["codesOfConduct"]["getForRepo"]["parameters"]
-      ): Promise<
-        RestEndpointMethodTypes["codesOfConduct"]["getForRepo"]["response"]
-      >;
-      defaults: RequestInterface["defaults"];
-      endpoint: EndpointInterface<{ url: string }>;
-    };
   };
   emojis: {
     /**
@@ -5883,21 +5869,6 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * **Deprecation Notice:** This endpoint route is deprecated and will be removed from the Reactions API. We recommend migrating your existing code to use the new delete reactions endpoints. For more information, see this [blog post](https://developer.github.com/changes/2020-02-26-new-delete-reactions-endpoints/).
-     *
-     * OAuth access tokens require the `write:discussion` [scope](https://docs.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/), when deleting a [team discussion](https://docs.github.com/rest/reference/teams#discussions) or [team discussion comment](https://docs.github.com/rest/reference/teams#discussion-comments).
-     * @deprecated octokit.rest.reactions.deleteLegacy() is deprecated, see https://docs.github.com/rest/reference/reactions/#delete-a-reaction-legacy
-     */
-    deleteLegacy: {
-      (
-        params?: RestEndpointMethodTypes["reactions"]["deleteLegacy"]["parameters"]
-      ): Promise<
-        RestEndpointMethodTypes["reactions"]["deleteLegacy"]["response"]
-      >;
-      defaults: RequestInterface["defaults"];
-      endpoint: EndpointInterface<{ url: string }>;
-    };
-    /**
      * List the reactions to a [commit comment](https://docs.github.com/rest/reference/repos#comments).
      */
     listForCommitComment: {
@@ -6828,8 +6799,6 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * When you pass the `scarlet-witch-preview` media type, requests to get a repository will also return the repository's code of conduct if it can be detected from the repository's code of conduct file.
-     *
      * The `parent` and `source` objects are present when the repository is a fork. `parent` is the repository this repository was forked from, `source` is the ultimate source for the network.
      */
     get: {

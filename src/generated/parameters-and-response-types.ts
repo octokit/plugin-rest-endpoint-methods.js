@@ -1366,14 +1366,6 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["GET /codes_of_conduct/{key}"]["response"];
     };
-    getForRepo: {
-      parameters: RequestParameters &
-        Omit<
-          Endpoints["GET /repos/{owner}/{repo}/community/code_of_conduct"]["parameters"],
-          "baseUrl" | "headers" | "mediaType"
-        >;
-      response: Endpoints["GET /repos/{owner}/{repo}/community/code_of_conduct"]["response"];
-    };
   };
   emojis: {
     get: {
@@ -3487,14 +3479,6 @@ export type RestEndpointMethodTypes = {
           "baseUrl" | "headers" | "mediaType"
         >;
       response: Endpoints["DELETE /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}/reactions/{reaction_id}"]["response"];
-    };
-    deleteLegacy: {
-      parameters: RequestParameters &
-        Omit<
-          Endpoints["DELETE /reactions/{reaction_id}"]["parameters"],
-          "baseUrl" | "headers" | "mediaType"
-        >;
-      response: Endpoints["DELETE /reactions/{reaction_id}"]["response"];
     };
     listForCommitComment: {
       parameters: RequestParameters &

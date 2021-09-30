@@ -1,5 +1,5 @@
 module.exports = {
-  isDeprecated
+  isDeprecated,
 };
 
 /**
@@ -7,7 +7,15 @@ module.exports = {
  * @param { Endpoint } endpoint
  */
 function isDeprecated(endpoint) {
-  const deprecated = endpoint.isLegacy || endpoint.isDeprecated;
+  if (
+    endpoint.removalDate &&
+    endpoint.removalDate < new Date().toISOString().substr(0, 10)
+  ) {
+    return true;
+  }
+
+  const deprecated =
+    !endpoint.removalDate && (endpoint.isLegacy || endpoint.isDeprecated);
 
   if (!deprecated) {
     return false;

@@ -20,6 +20,7 @@ const QUERY = `
       url
       isDeprecated
       deprecationDate
+      removalDate
       description
       documentationUrl
       previews(required: true) {
