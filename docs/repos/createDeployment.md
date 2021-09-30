@@ -118,14 +118,12 @@ Short description of the deployment.
 </td></tr>
 <tr><td>transient_environment</td><td>no</td><td>
 
-Specifies if the given environment is specific to the deployment and will no longer exist at some point in the future. Default: `false`  
-**Note:** This parameter requires you to use the [`application/vnd.github.ant-man-preview+json`](https://docs.github.com/rest/overview/api-previews#enhanced-deployments) custom media type.
+Specifies if the given environment is specific to the deployment and will no longer exist at some point in the future. Default: `false`
 
 </td></tr>
 <tr><td>production_environment</td><td>no</td><td>
 
-Specifies if the given environment is one that end-users directly interact with. Default: `true` when `environment` is `production` and `false` otherwise.  
-**Note:** This parameter requires you to use the [`application/vnd.github.ant-man-preview+json`](https://docs.github.com/rest/overview/api-previews#enhanced-deployments) custom media type.
+Specifies if the given environment is one that end-users directly interact with. Default: `true` when `environment` is `production` and `false` otherwise.
 
 </td></tr>
   </tbody>
