@@ -1,6 +1,6 @@
 ---
 name: Delete an app authorization
-example: octokit.rest.apps.deleteAuthorization({ client_id })
+example: octokit.rest.apps.deleteAuthorization({ client_id, access_token })
 route: DELETE /applications/{client_id}/grant
 scope: apps
 type: API method
@@ -14,6 +14,7 @@ Deleting an OAuth application's grant will also delete all OAuth tokens associat
 ```js
 octokit.rest.apps.deleteAuthorization({
   client_id,
+  access_token,
 });
 ```
 
@@ -33,7 +34,7 @@ octokit.rest.apps.deleteAuthorization({
 The client ID of your GitHub app.
 
 </td></tr>
-<tr><td>access_token</td><td>no</td><td>
+<tr><td>access_token</td><td>yes</td><td>
 
 The OAuth access token used to authenticate to the GitHub API.
 

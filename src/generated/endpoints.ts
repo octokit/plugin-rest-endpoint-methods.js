@@ -352,10 +352,6 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
   codesOfConduct: {
     getAllCodesOfConduct: ["GET /codes_of_conduct"],
     getConductCode: ["GET /codes_of_conduct/{key}"],
-    getForRepo: [
-      "GET /repos/{owner}/{repo}/community/code_of_conduct",
-      { mediaType: { previews: ["scarlet-witch"] } },
-    ],
   },
   emojis: { get: ["GET /emojis"] },
   enterpriseAdmin: {

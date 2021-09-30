@@ -2601,20 +2601,6 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
-    /**
-     * Returns the contents of the repository's code of conduct file, if one is detected.
-     *
-     * A code of conduct is detected if there is a file named `CODE_OF_CONDUCT` in the root directory of the repository. GitHub detects which code of conduct it is using fuzzy matching.
-     */
-    getForRepo: {
-      (
-        params?: RestEndpointMethodTypes["codesOfConduct"]["getForRepo"]["parameters"]
-      ): Promise<
-        RestEndpointMethodTypes["codesOfConduct"]["getForRepo"]["response"]
-      >;
-      defaults: RequestInterface["defaults"];
-      endpoint: EndpointInterface<{ url: string }>;
-    };
   };
   emojis: {
     /**
@@ -6828,8 +6814,6 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * When you pass the `scarlet-witch-preview` media type, requests to get a repository will also return the repository's code of conduct if it can be detected from the repository's code of conduct file.
-     *
      * The `parent` and `source` objects are present when the repository is a fork. `parent` is the repository this repository was forked from, `source` is the ultimate source for the network.
      */
     get: {

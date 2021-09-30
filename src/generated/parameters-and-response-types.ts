@@ -1366,14 +1366,6 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["GET /codes_of_conduct/{key}"]["response"];
     };
-    getForRepo: {
-      parameters: RequestParameters &
-        Omit<
-          Endpoints["GET /repos/{owner}/{repo}/community/code_of_conduct"]["parameters"],
-          "baseUrl" | "headers" | "mediaType"
-        >;
-      response: Endpoints["GET /repos/{owner}/{repo}/community/code_of_conduct"]["response"];
-    };
   };
   emojis: {
     get: {
