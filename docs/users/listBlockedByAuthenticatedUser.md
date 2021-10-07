@@ -1,6 +1,6 @@
 ---
 name: List users blocked by the authenticated user
-example: octokit.rest.users.listBlockedByAuthenticated()
+example: octokit.rest.users.listBlockedByAuthenticatedUser()
 route: GET /user/blocks
 scope: users
 type: API method
@@ -8,12 +8,10 @@ type: API method
 
 # List users blocked by the authenticated user
 
-**Deprecated:** This method has been renamed to users.listBlockedByAuthenticatedUser
-
 List the users you've blocked on your personal account.
 
 ```js
-octokit.rest.users.listBlockedByAuthenticated();
+octokit.rest.users.listBlockedByAuthenticatedUser();
 ```
 
 ## Parameters

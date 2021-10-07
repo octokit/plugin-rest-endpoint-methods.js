@@ -1,6 +1,6 @@
 ---
 name: Decline a repository invitation
-example: octokit.rest.repos.declineInvitation({ invitation_id })
+example: octokit.rest.repos.declineInvitationForAuthenticatedUser({ invitation_id })
 route: DELETE /user/repository_invitations/{invitation_id}
 scope: repos
 type: API method
@@ -8,10 +8,8 @@ type: API method
 
 # Decline a repository invitation
 
-**Deprecated:** This method has been renamed to repos.declineInvitationForAuthenticatedUser
-
 ```js
-octokit.rest.repos.declineInvitation({
+octokit.rest.repos.declineInvitationForAuthenticatedUser({
   invitation_id,
 });
 ```

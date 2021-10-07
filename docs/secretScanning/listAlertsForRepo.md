@@ -43,7 +43,12 @@ Set to `open` or `resolved` to only list secret scanning alerts in a specific st
 </td></tr>
 <tr><td>secret_type</td><td>no</td><td>
 
-A comma separated list of secret types to return. By default all secret types are returned. See "[About secret scanning for private repositories](https://docs.github.com/code-security/secret-security/about-secret-scanning#about-secret-scanning-for-private-repositories)" for a complete list of secret types (API slug).
+A comma-separated list of secret types to return. By default all secret types are returned. See "[About secret scanning for private repositories](https://docs.github.com/code-security/secret-security/about-secret-scanning#about-secret-scanning-for-private-repositories)" for a complete list of secret types (API slug).
+
+</td></tr>
+<tr><td>resolution</td><td>no</td><td>
+
+A comma-separated list of resolutions. Only secret scanning alerts with one of these resolutions are listed. Valid resolutions are `false_positive`, `wont_fix`, `revoked`, `pattern_edited`, `pattern_deleted` or `used_in_tests`.
 
 </td></tr>
 <tr><td>page</td><td>no</td><td>

@@ -1,6 +1,6 @@
 ---
 name: Add an email address for the authenticated user
-example: octokit.rest.users.addEmailForAuthenticated({ emails })
+example: octokit.rest.users.addEmailForAuthenticatedUser({ emails })
 route: POST /user/emails
 scope: users
 type: API method
@@ -8,12 +8,10 @@ type: API method
 
 # Add an email address for the authenticated user
 
-**Deprecated:** This method has been renamed to users.addEmailForAuthenticatedUser
-
 This endpoint is accessible with the `user` scope.
 
 ```js
-octokit.rest.users.addEmailForAuthenticated({
+octokit.rest.users.addEmailForAuthenticatedUser({
   emails,
 });
 ```

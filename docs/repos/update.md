@@ -57,7 +57,7 @@ Either `true` to make the repository private or `false` to make it public. Defau
 </td></tr>
 <tr><td>visibility</td><td>no</td><td>
 
-Can be `public` or `private`. If your organization is associated with an enterprise account using GitHub Enterprise Cloud or GitHub Enterprise Server 2.20+, `visibility` can also be `internal`. The `visibility` parameter overrides the `private` parameter when you use both along with the `nebula-preview` preview header.
+Can be `public` or `private`. If your organization is associated with an enterprise account using GitHub Enterprise Cloud or GitHub Enterprise Server 2.20+, `visibility` can also be `internal`."
 
 </td></tr>
 <tr><td>security_and_analysis</td><td>no</td><td>

@@ -186,6 +186,14 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["GET /repos/{owner}/{repo}/actions/jobs/{job_id}/logs"]["response"];
     };
+    downloadWorkflowRunAttemptLogs: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /repos/{owner}/{repo}/actions/runs/{run_id}/attempts/{attempt_number}/logs"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /repos/{owner}/{repo}/actions/runs/{run_id}/attempts/{attempt_number}/logs"]["response"];
+    };
     downloadWorkflowRunLogs: {
       parameters: RequestParameters &
         Omit<
@@ -362,6 +370,14 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["GET /repos/{owner}/{repo}/actions/runs/{run_id}"]["response"];
     };
+    getWorkflowRunAttempt: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /repos/{owner}/{repo}/actions/runs/{run_id}/attempts/{attempt_number}"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /repos/{owner}/{repo}/actions/runs/{run_id}/attempts/{attempt_number}"]["response"];
+    };
     getWorkflowRunUsage: {
       parameters: RequestParameters &
         Omit<
@@ -505,14 +521,6 @@ export type RestEndpointMethodTypes = {
           "baseUrl" | "headers" | "mediaType"
         >;
       response: Endpoints["DELETE /orgs/{org}/actions/secrets/{secret_name}/repositories/{repository_id}"]["response"];
-    };
-    retryWorkflow: {
-      parameters: RequestParameters &
-        Omit<
-          Endpoints["POST /repos/{owner}/{repo}/actions/runs/{run_id}/retry"]["parameters"],
-          "baseUrl" | "headers" | "mediaType"
-        >;
-      response: Endpoints["POST /repos/{owner}/{repo}/actions/runs/{run_id}/retry"]["response"];
     };
     reviewPendingDeploymentsForRun: {
       parameters: RequestParameters &
@@ -830,6 +838,14 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["PUT /user/installations/{installation_id}/repositories/{repository_id}"]["response"];
     };
+    addRepoToInstallationForAuthenticatedUser: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["PUT /user/installations/{installation_id}/repositories/{repository_id}"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["PUT /user/installations/{installation_id}/repositories/{repository_id}"]["response"];
+    };
     checkToken: {
       parameters: RequestParameters &
         Omit<
@@ -1078,6 +1094,14 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["DELETE /user/installations/{installation_id}/repositories/{repository_id}"]["response"];
     };
+    removeRepoFromInstallationForAuthenticatedUser: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["DELETE /user/installations/{installation_id}/repositories/{repository_id}"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["DELETE /user/installations/{installation_id}/repositories/{repository_id}"]["response"];
+    };
     resetToken: {
       parameters: RequestParameters &
         Omit<
@@ -1241,6 +1265,14 @@ export type RestEndpointMethodTypes = {
           "baseUrl" | "headers" | "mediaType"
         >;
       response: Endpoints["GET /repos/{owner}/{repo}/commits/{ref}/check-suites"]["response"];
+    };
+    rerequestRun: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["POST /repos/{owner}/{repo}/check-runs/{check_run_id}/rerequest"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["POST /repos/{owner}/{repo}/check-runs/{check_run_id}/rerequest"]["response"];
     };
     rerequestSuite: {
       parameters: RequestParameters &
@@ -2315,6 +2347,14 @@ export type RestEndpointMethodTypes = {
           "baseUrl" | "headers" | "mediaType"
         >;
       response: Endpoints["GET /orgs/{org}/migrations"]["response"];
+    };
+    listReposForAuthenticatedUser: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /user/migrations/{migration_id}/repositories"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /user/migrations/{migration_id}/repositories"]["response"];
     };
     listReposForOrg: {
       parameters: RequestParameters &
@@ -3538,6 +3578,14 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["PATCH /user/repository_invitations/{invitation_id}"]["response"];
     };
+    acceptInvitationForAuthenticatedUser: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["PATCH /user/repository_invitations/{invitation_id}"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["PATCH /user/repository_invitations/{invitation_id}"]["response"];
+    };
     addAppAccessRestrictions: {
       parameters: RequestParameters &
         Omit<
@@ -3754,6 +3802,14 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["DELETE /user/repository_invitations/{invitation_id}"]["response"];
     };
+    declineInvitationForAuthenticatedUser: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["DELETE /user/repository_invitations/{invitation_id}"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["DELETE /user/repository_invitations/{invitation_id}"]["response"];
+    };
     delete: {
       parameters: RequestParameters &
         Omit<
@@ -3961,6 +4017,14 @@ export type RestEndpointMethodTypes = {
           "baseUrl" | "headers" | "mediaType"
         >;
       response: Endpoints["PUT /repos/{owner}/{repo}/vulnerability-alerts"]["response"];
+    };
+    generateReleaseNotes: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["POST /repos/{owner}/{repo}/releases/generate-notes"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["POST /repos/{owner}/{repo}/releases/generate-notes"]["response"];
     };
     get: {
       parameters: RequestParameters &
@@ -5170,6 +5234,14 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["POST /user/emails"]["response"];
     };
+    addEmailForAuthenticatedUser: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["POST /user/emails"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["POST /user/emails"]["response"];
+    };
     block: {
       parameters: RequestParameters &
         Omit<
@@ -5210,7 +5282,23 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["POST /user/gpg_keys"]["response"];
     };
+    createGpgKeyForAuthenticatedUser: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["POST /user/gpg_keys"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["POST /user/gpg_keys"]["response"];
+    };
     createPublicSshKeyForAuthenticated: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["POST /user/keys"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["POST /user/keys"]["response"];
+    };
+    createPublicSshKeyForAuthenticatedUser: {
       parameters: RequestParameters &
         Omit<
           Endpoints["POST /user/keys"]["parameters"],
@@ -5226,6 +5314,14 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["DELETE /user/emails"]["response"];
     };
+    deleteEmailForAuthenticatedUser: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["DELETE /user/emails"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["DELETE /user/emails"]["response"];
+    };
     deleteGpgKeyForAuthenticated: {
       parameters: RequestParameters &
         Omit<
@@ -5234,7 +5330,23 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["DELETE /user/gpg_keys/{gpg_key_id}"]["response"];
     };
+    deleteGpgKeyForAuthenticatedUser: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["DELETE /user/gpg_keys/{gpg_key_id}"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["DELETE /user/gpg_keys/{gpg_key_id}"]["response"];
+    };
     deletePublicSshKeyForAuthenticated: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["DELETE /user/keys/{key_id}"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["DELETE /user/keys/{key_id}"]["response"];
+    };
+    deletePublicSshKeyForAuthenticatedUser: {
       parameters: RequestParameters &
         Omit<
           Endpoints["DELETE /user/keys/{key_id}"]["parameters"],
@@ -5282,7 +5394,23 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["GET /user/gpg_keys/{gpg_key_id}"]["response"];
     };
+    getGpgKeyForAuthenticatedUser: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /user/gpg_keys/{gpg_key_id}"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /user/gpg_keys/{gpg_key_id}"]["response"];
+    };
     getPublicSshKeyForAuthenticated: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /user/keys/{key_id}"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /user/keys/{key_id}"]["response"];
+    };
+    getPublicSshKeyForAuthenticatedUser: {
       parameters: RequestParameters &
         Omit<
           Endpoints["GET /user/keys/{key_id}"]["parameters"],
@@ -5306,6 +5434,14 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["GET /user/blocks"]["response"];
     };
+    listBlockedByAuthenticatedUser: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /user/blocks"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /user/blocks"]["response"];
+    };
     listEmailsForAuthenticated: {
       parameters: RequestParameters &
         Omit<
@@ -5314,7 +5450,23 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["GET /user/emails"]["response"];
     };
+    listEmailsForAuthenticatedUser: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /user/emails"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /user/emails"]["response"];
+    };
     listFollowedByAuthenticated: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /user/following"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /user/following"]["response"];
+    };
+    listFollowedByAuthenticatedUser: {
       parameters: RequestParameters &
         Omit<
           Endpoints["GET /user/following"]["parameters"],
@@ -5354,6 +5506,14 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["GET /user/gpg_keys"]["response"];
     };
+    listGpgKeysForAuthenticatedUser: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /user/gpg_keys"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /user/gpg_keys"]["response"];
+    };
     listGpgKeysForUser: {
       parameters: RequestParameters &
         Omit<
@@ -5363,6 +5523,14 @@ export type RestEndpointMethodTypes = {
       response: Endpoints["GET /users/{username}/gpg_keys"]["response"];
     };
     listPublicEmailsForAuthenticated: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /user/public_emails"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /user/public_emails"]["response"];
+    };
+    listPublicEmailsForAuthenticatedUser: {
       parameters: RequestParameters &
         Omit<
           Endpoints["GET /user/public_emails"]["parameters"],
@@ -5386,7 +5554,23 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["GET /user/keys"]["response"];
     };
+    listPublicSshKeysForAuthenticatedUser: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /user/keys"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /user/keys"]["response"];
+    };
     setPrimaryEmailVisibilityForAuthenticated: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["PATCH /user/email/visibility"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["PATCH /user/email/visibility"]["response"];
+    };
+    setPrimaryEmailVisibilityForAuthenticatedUser: {
       parameters: RequestParameters &
         Omit<
           Endpoints["PATCH /user/email/visibility"]["parameters"],

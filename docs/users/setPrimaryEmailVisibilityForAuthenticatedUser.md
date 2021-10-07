@@ -1,6 +1,6 @@
 ---
 name: Set primary email visibility for the authenticated user
-example: octokit.rest.users.setPrimaryEmailVisibilityForAuthenticated({ visibility })
+example: octokit.rest.users.setPrimaryEmailVisibilityForAuthenticatedUser({ visibility })
 route: PATCH /user/email/visibility
 scope: users
 type: API method
@@ -8,12 +8,10 @@ type: API method
 
 # Set primary email visibility for the authenticated user
 
-**Deprecated:** This method has been renamed to users.setPrimaryEmailVisibilityForAuthenticatedUser
-
 Sets the visibility for your primary email addresses.
 
 ```js
-octokit.rest.users.setPrimaryEmailVisibilityForAuthenticated({
+octokit.rest.users.setPrimaryEmailVisibilityForAuthenticatedUser({
   visibility,
 });
 ```
