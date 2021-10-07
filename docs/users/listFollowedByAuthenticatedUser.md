@@ -1,6 +1,6 @@
 ---
 name: List the people the authenticated user follows
-example: octokit.rest.users.listFollowedByAuthenticated()
+example: octokit.rest.users.listFollowedByAuthenticatedUser()
 route: GET /user/following
 scope: users
 type: API method
@@ -8,12 +8,10 @@ type: API method
 
 # List the people the authenticated user follows
 
-**Deprecated:** This method has been renamed to users.listFollowedByAuthenticatedUser
-
 Lists the people who the authenticated user follows.
 
 ```js
-octokit.rest.users.listFollowedByAuthenticated();
+octokit.rest.users.listFollowedByAuthenticatedUser();
 ```
 
 ## Parameters

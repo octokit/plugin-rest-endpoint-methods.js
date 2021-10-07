@@ -1427,6 +1427,76 @@
     "renamed": null
   },
   {
+    "name": "Download workflow run attempt logs",
+    "scope": "actions",
+    "id": "downloadWorkflowRunAttemptLogs",
+    "method": "GET",
+    "url": "/repos/{owner}/{repo}/actions/runs/{run_id}/attempts/{attempt_number}/logs",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "removalDate": null,
+    "description": "Gets a redirect URL to download an archive of log files for a specific workflow run attempt. This link expires after\n1 minute. Look for `Location:` in the response header to find the URL for the download. Anyone with read access to\nthe repository can use this endpoint. If the repository is private you must use an access token with the `repo` scope.\nGitHub Apps must have the `actions:read` permission to use this endpoint.",
+    "documentationUrl": "https://docs.github.com/rest/reference/actions#download-workflow-run-attempt-logs",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "owner",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "repo",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "attempt_num",
+        "description": "The attempt number of the workflow run.",
+        "in": "PATH",
+        "type": "integer",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "attempt_number",
+        "description": "The attempt number of the workflow run.",
+        "in": "PATH",
+        "type": "integer",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [{ "code": 302, "description": "Response", "examples": null }],
+    "renamed": null
+  },
+  {
     "name": "Download workflow run logs",
     "scope": "actions",
     "id": "downloadWorkflowRunLogs",
@@ -2022,7 +2092,7 @@
         "description": "Response",
         "examples": [
           {
-            "data": "{\"id\":399444496,\"run_id\":29679449,\"run_url\":\"https://api.github.com/repos/octo-org/octo-repo/actions/runs/29679449\",\"node_id\":\"MDEyOldvcmtmbG93IEpvYjM5OTQ0NDQ5Ng==\",\"head_sha\":\"f83a356604ae3c5d03e1b46ef4d1ca77d64a90b0\",\"url\":\"https://api.github.com/repos/octo-org/octo-repo/actions/jobs/399444496\",\"html_url\":\"https://github.com/octo-org/octo-repo/runs/399444496\",\"status\":\"completed\",\"conclusion\":\"success\",\"started_at\":\"2020-01-20T17:42:40Z\",\"completed_at\":\"2020-01-20T17:44:39Z\",\"name\":\"build\",\"steps\":[{\"name\":\"Set up job\",\"status\":\"completed\",\"conclusion\":\"success\",\"number\":1,\"started_at\":\"2020-01-20T09:42:40.000-08:00\",\"completed_at\":\"2020-01-20T09:42:41.000-08:00\"},{\"name\":\"Run actions/checkout@v2\",\"status\":\"completed\",\"conclusion\":\"success\",\"number\":2,\"started_at\":\"2020-01-20T09:42:41.000-08:00\",\"completed_at\":\"2020-01-20T09:42:45.000-08:00\"},{\"name\":\"Set up Ruby\",\"status\":\"completed\",\"conclusion\":\"success\",\"number\":3,\"started_at\":\"2020-01-20T09:42:45.000-08:00\",\"completed_at\":\"2020-01-20T09:42:45.000-08:00\"},{\"name\":\"Run actions/cache@v2\",\"status\":\"completed\",\"conclusion\":\"success\",\"number\":4,\"started_at\":\"2020-01-20T09:42:45.000-08:00\",\"completed_at\":\"2020-01-20T09:42:48.000-08:00\"},{\"name\":\"Install Bundler\",\"status\":\"completed\",\"conclusion\":\"success\",\"number\":5,\"started_at\":\"2020-01-20T09:42:48.000-08:00\",\"completed_at\":\"2020-01-20T09:42:52.000-08:00\"},{\"name\":\"Install Gems\",\"status\":\"completed\",\"conclusion\":\"success\",\"number\":6,\"started_at\":\"2020-01-20T09:42:52.000-08:00\",\"completed_at\":\"2020-01-20T09:42:53.000-08:00\"},{\"name\":\"Run Tests\",\"status\":\"completed\",\"conclusion\":\"success\",\"number\":7,\"started_at\":\"2020-01-20T09:42:53.000-08:00\",\"completed_at\":\"2020-01-20T09:42:59.000-08:00\"},{\"name\":\"Deploy to Heroku\",\"status\":\"completed\",\"conclusion\":\"success\",\"number\":8,\"started_at\":\"2020-01-20T09:42:59.000-08:00\",\"completed_at\":\"2020-01-20T09:44:39.000-08:00\"},{\"name\":\"Post actions/cache@v2\",\"status\":\"completed\",\"conclusion\":\"success\",\"number\":16,\"started_at\":\"2020-01-20T09:44:39.000-08:00\",\"completed_at\":\"2020-01-20T09:44:39.000-08:00\"},{\"name\":\"Complete job\",\"status\":\"completed\",\"conclusion\":\"success\",\"number\":17,\"started_at\":\"2020-01-20T09:44:39.000-08:00\",\"completed_at\":\"2020-01-20T09:44:39.000-08:00\"}],\"check_run_url\":\"https://api.github.com/repos/octo-org/octo-repo/check-runs/399444496\"}"
+            "data": "{\"id\":399444496,\"run_id\":29679449,\"run_url\":\"https://api.github.com/repos/octo-org/octo-repo/actions/runs/29679449\",\"node_id\":\"MDEyOldvcmtmbG93IEpvYjM5OTQ0NDQ5Ng==\",\"head_sha\":\"f83a356604ae3c5d03e1b46ef4d1ca77d64a90b0\",\"url\":\"https://api.github.com/repos/octo-org/octo-repo/actions/jobs/399444496\",\"html_url\":\"https://github.com/octo-org/octo-repo/runs/399444496\",\"status\":\"completed\",\"conclusion\":\"success\",\"started_at\":\"2020-01-20T17:42:40Z\",\"completed_at\":\"2020-01-20T17:44:39Z\",\"name\":\"build\",\"steps\":[{\"name\":\"Set up job\",\"status\":\"completed\",\"conclusion\":\"success\",\"number\":1,\"started_at\":\"2020-01-20T09:42:40.000-08:00\",\"completed_at\":\"2020-01-20T09:42:41.000-08:00\"},{\"name\":\"Run actions/checkout@v2\",\"status\":\"completed\",\"conclusion\":\"success\",\"number\":2,\"started_at\":\"2020-01-20T09:42:41.000-08:00\",\"completed_at\":\"2020-01-20T09:42:45.000-08:00\"},{\"name\":\"Set up Ruby\",\"status\":\"completed\",\"conclusion\":\"success\",\"number\":3,\"started_at\":\"2020-01-20T09:42:45.000-08:00\",\"completed_at\":\"2020-01-20T09:42:45.000-08:00\"},{\"name\":\"Run actions/cache@v2\",\"status\":\"completed\",\"conclusion\":\"success\",\"number\":4,\"started_at\":\"2020-01-20T09:42:45.000-08:00\",\"completed_at\":\"2020-01-20T09:42:48.000-08:00\"},{\"name\":\"Install Bundler\",\"status\":\"completed\",\"conclusion\":\"success\",\"number\":5,\"started_at\":\"2020-01-20T09:42:48.000-08:00\",\"completed_at\":\"2020-01-20T09:42:52.000-08:00\"},{\"name\":\"Install Gems\",\"status\":\"completed\",\"conclusion\":\"success\",\"number\":6,\"started_at\":\"2020-01-20T09:42:52.000-08:00\",\"completed_at\":\"2020-01-20T09:42:53.000-08:00\"},{\"name\":\"Run Tests\",\"status\":\"completed\",\"conclusion\":\"success\",\"number\":7,\"started_at\":\"2020-01-20T09:42:53.000-08:00\",\"completed_at\":\"2020-01-20T09:42:59.000-08:00\"},{\"name\":\"Deploy to Heroku\",\"status\":\"completed\",\"conclusion\":\"success\",\"number\":8,\"started_at\":\"2020-01-20T09:42:59.000-08:00\",\"completed_at\":\"2020-01-20T09:44:39.000-08:00\"},{\"name\":\"Post actions/cache@v2\",\"status\":\"completed\",\"conclusion\":\"success\",\"number\":16,\"started_at\":\"2020-01-20T09:44:39.000-08:00\",\"completed_at\":\"2020-01-20T09:44:39.000-08:00\"},{\"name\":\"Complete job\",\"status\":\"completed\",\"conclusion\":\"success\",\"number\":17,\"started_at\":\"2020-01-20T09:44:39.000-08:00\",\"completed_at\":\"2020-01-20T09:44:39.000-08:00\"}],\"check_run_url\":\"https://api.github.com/repos/octo-org/octo-repo/check-runs/399444496\",\"labels\":[\"self-hosted\",\"foo\",\"bar\"],\"runner_id\":1,\"runner_name\":\"my runner\",\"runner_group_id\":2,\"runner_group_name\":\"my runner group\"}"
           }
         ]
       }
@@ -2697,6 +2767,86 @@
     "renamed": null
   },
   {
+    "name": "Get a workflow run attempt",
+    "scope": "actions",
+    "id": "getWorkflowRunAttempt",
+    "method": "GET",
+    "url": "/repos/{owner}/{repo}/actions/runs/{run_id}/attempts/{attempt_number}",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "removalDate": null,
+    "description": "Gets a specific workflow run attempt. Anyone with read access to the repository\ncan use this endpoint. If the repository is private you must use an access token\nwith the `repo` scope. GitHub Apps must have the `actions:read` permission to\nuse this endpoint.",
+    "documentationUrl": "https://docs.github.com/rest/reference/actions#get-a-workflow-run-attempt",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "owner",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "repo",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "run_id",
+        "description": "The id of the workflow run.",
+        "in": "PATH",
+        "type": "integer",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "attempt_number",
+        "description": "The attempt number of the workflow run.",
+        "in": "PATH",
+        "type": "integer",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      {
+        "code": 200,
+        "description": "Response",
+        "examples": [
+          {
+            "data": "{\"id\":30433642,\"name\":\"Build\",\"node_id\":\"MDEyOldvcmtmbG93IFJ1bjI2OTI4OQ==\",\"check_suite_id\":42,\"check_suite_node_id\":\"MDEwOkNoZWNrU3VpdGU0Mg==\",\"head_branch\":\"master\",\"head_sha\":\"acb5820ced9479c074f688cc328bf03f341a511d\",\"run_number\":562,\"event\":\"push\",\"status\":\"queued\",\"conclusion\":null,\"workflow_id\":159038,\"url\":\"https://api.github.com/repos/octo-org/octo-repo/actions/runs/30433642\",\"html_url\":\"https://github.com/octo-org/octo-repo/actions/runs/30433642\",\"pull_requests\":[],\"created_at\":\"2020-01-22T19:33:08Z\",\"updated_at\":\"2020-01-22T19:33:08Z\",\"jobs_url\":\"https://api.github.com/repos/octo-org/octo-repo/actions/runs/30433642/jobs\",\"logs_url\":\"https://api.github.com/repos/octo-org/octo-repo/actions/runs/30433642/logs\",\"check_suite_url\":\"https://api.github.com/repos/octo-org/octo-repo/check-suites/414944374\",\"artifacts_url\":\"https://api.github.com/repos/octo-org/octo-repo/actions/runs/30433642/artifacts\",\"cancel_url\":\"https://api.github.com/repos/octo-org/octo-repo/actions/runs/30433642/cancel\",\"rerun_url\":\"https://api.github.com/repos/octo-org/octo-repo/actions/runs/30433642/rerun\",\"workflow_url\":\"https://api.github.com/repos/octo-org/octo-repo/actions/workflows/159038\",\"head_commit\":{\"id\":\"acb5820ced9479c074f688cc328bf03f341a511d\",\"tree_id\":\"d23f6eedb1e1b9610bbc754ddb5197bfe7271223\",\"message\":\"Create linter.yaml\",\"timestamp\":\"2020-01-22T19:33:05Z\",\"author\":{\"name\":\"Octo Cat\",\"email\":\"octocat@github.com\"},\"committer\":{\"name\":\"GitHub\",\"email\":\"noreply@github.com\"}},\"repository\":{\"id\":1296269,\"node_id\":\"MDEwOlJlcG9zaXRvcnkxMjk2MjY5\",\"name\":\"Hello-World\",\"full_name\":\"octocat/Hello-World\",\"owner\":{\"login\":\"octocat\",\"id\":1,\"node_id\":\"MDQ6VXNlcjE=\",\"avatar_url\":\"https://github.com/images/error/octocat_happy.gif\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/octocat\",\"html_url\":\"https://github.com/octocat\",\"followers_url\":\"https://api.github.com/users/octocat/followers\",\"following_url\":\"https://api.github.com/users/octocat/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/octocat/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/octocat/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/octocat/subscriptions\",\"organizations_url\":\"https://api.github.com/users/octocat/orgs\",\"repos_url\":\"https://api.github.com/users/octocat/repos\",\"events_url\":\"https://api.github.com/users/octocat/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/octocat/received_events\",\"type\":\"User\",\"site_admin\":false},\"private\":false,\"html_url\":\"https://github.com/octocat/Hello-World\",\"description\":\"This your first repo!\",\"fork\":false,\"url\":\"https://api.github.com/repos/octocat/Hello-World\",\"archive_url\":\"https://api.github.com/repos/octocat/Hello-World/{archive_format}{/ref}\",\"assignees_url\":\"https://api.github.com/repos/octocat/Hello-World/assignees{/user}\",\"blobs_url\":\"https://api.github.com/repos/octocat/Hello-World/git/blobs{/sha}\",\"branches_url\":\"https://api.github.com/repos/octocat/Hello-World/branches{/branch}\",\"collaborators_url\":\"https://api.github.com/repos/octocat/Hello-World/collaborators{/collaborator}\",\"comments_url\":\"https://api.github.com/repos/octocat/Hello-World/comments{/number}\",\"commits_url\":\"https://api.github.com/repos/octocat/Hello-World/commits{/sha}\",\"compare_url\":\"https://api.github.com/repos/octocat/Hello-World/compare/{base}...{head}\",\"contents_url\":\"https://api.github.com/repos/octocat/Hello-World/contents/{+path}\",\"contributors_url\":\"https://api.github.com/repos/octocat/Hello-World/contributors\",\"deployments_url\":\"https://api.github.com/repos/octocat/Hello-World/deployments\",\"downloads_url\":\"https://api.github.com/repos/octocat/Hello-World/downloads\",\"events_url\":\"https://api.github.com/repos/octocat/Hello-World/events\",\"forks_url\":\"https://api.github.com/repos/octocat/Hello-World/forks\",\"git_commits_url\":\"https://api.github.com/repos/octocat/Hello-World/git/commits{/sha}\",\"git_refs_url\":\"https://api.github.com/repos/octocat/Hello-World/git/refs{/sha}\",\"git_tags_url\":\"https://api.github.com/repos/octocat/Hello-World/git/tags{/sha}\",\"git_url\":\"git:github.com/octocat/Hello-World.git\",\"issue_comment_url\":\"https://api.github.com/repos/octocat/Hello-World/issues/comments{/number}\",\"issue_events_url\":\"https://api.github.com/repos/octocat/Hello-World/issues/events{/number}\",\"issues_url\":\"https://api.github.com/repos/octocat/Hello-World/issues{/number}\",\"keys_url\":\"https://api.github.com/repos/octocat/Hello-World/keys{/key_id}\",\"labels_url\":\"https://api.github.com/repos/octocat/Hello-World/labels{/name}\",\"languages_url\":\"https://api.github.com/repos/octocat/Hello-World/languages\",\"merges_url\":\"https://api.github.com/repos/octocat/Hello-World/merges\",\"milestones_url\":\"https://api.github.com/repos/octocat/Hello-World/milestones{/number}\",\"notifications_url\":\"https://api.github.com/repos/octocat/Hello-World/notifications{?since,all,participating}\",\"pulls_url\":\"https://api.github.com/repos/octocat/Hello-World/pulls{/number}\",\"releases_url\":\"https://api.github.com/repos/octocat/Hello-World/releases{/id}\",\"ssh_url\":\"git@github.com:octocat/Hello-World.git\",\"stargazers_url\":\"https://api.github.com/repos/octocat/Hello-World/stargazers\",\"statuses_url\":\"https://api.github.com/repos/octocat/Hello-World/statuses/{sha}\",\"subscribers_url\":\"https://api.github.com/repos/octocat/Hello-World/subscribers\",\"subscription_url\":\"https://api.github.com/repos/octocat/Hello-World/subscription\",\"tags_url\":\"https://api.github.com/repos/octocat/Hello-World/tags\",\"teams_url\":\"https://api.github.com/repos/octocat/Hello-World/teams\",\"trees_url\":\"https://api.github.com/repos/octocat/Hello-World/git/trees{/sha}\",\"hooks_url\":\"http://api.github.com/repos/octocat/Hello-World/hooks\"},\"head_repository\":{\"id\":217723378,\"node_id\":\"MDEwOlJlcG9zaXRvcnkyMTc3MjMzNzg=\",\"name\":\"octo-repo\",\"full_name\":\"octo-org/octo-repo\",\"private\":true,\"owner\":{\"login\":\"octocat\",\"id\":1,\"node_id\":\"MDQ6VXNlcjE=\",\"avatar_url\":\"https://github.com/images/error/octocat_happy.gif\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/octocat\",\"html_url\":\"https://github.com/octocat\",\"followers_url\":\"https://api.github.com/users/octocat/followers\",\"following_url\":\"https://api.github.com/users/octocat/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/octocat/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/octocat/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/octocat/subscriptions\",\"organizations_url\":\"https://api.github.com/users/octocat/orgs\",\"repos_url\":\"https://api.github.com/users/octocat/repos\",\"events_url\":\"https://api.github.com/users/octocat/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/octocat/received_events\",\"type\":\"User\",\"site_admin\":false},\"html_url\":\"https://github.com/octo-org/octo-repo\",\"description\":null,\"fork\":false,\"url\":\"https://api.github.com/repos/octo-org/octo-repo\",\"forks_url\":\"https://api.github.com/repos/octo-org/octo-repo/forks\",\"keys_url\":\"https://api.github.com/repos/octo-org/octo-repo/keys{/key_id}\",\"collaborators_url\":\"https://api.github.com/repos/octo-org/octo-repo/collaborators{/collaborator}\",\"teams_url\":\"https://api.github.com/repos/octo-org/octo-repo/teams\",\"hooks_url\":\"https://api.github.com/repos/octo-org/octo-repo/hooks\",\"issue_events_url\":\"https://api.github.com/repos/octo-org/octo-repo/issues/events{/number}\",\"events_url\":\"https://api.github.com/repos/octo-org/octo-repo/events\",\"assignees_url\":\"https://api.github.com/repos/octo-org/octo-repo/assignees{/user}\",\"branches_url\":\"https://api.github.com/repos/octo-org/octo-repo/branches{/branch}\",\"tags_url\":\"https://api.github.com/repos/octo-org/octo-repo/tags\",\"blobs_url\":\"https://api.github.com/repos/octo-org/octo-repo/git/blobs{/sha}\",\"git_tags_url\":\"https://api.github.com/repos/octo-org/octo-repo/git/tags{/sha}\",\"git_refs_url\":\"https://api.github.com/repos/octo-org/octo-repo/git/refs{/sha}\",\"trees_url\":\"https://api.github.com/repos/octo-org/octo-repo/git/trees{/sha}\",\"statuses_url\":\"https://api.github.com/repos/octo-org/octo-repo/statuses/{sha}\",\"languages_url\":\"https://api.github.com/repos/octo-org/octo-repo/languages\",\"stargazers_url\":\"https://api.github.com/repos/octo-org/octo-repo/stargazers\",\"contributors_url\":\"https://api.github.com/repos/octo-org/octo-repo/contributors\",\"subscribers_url\":\"https://api.github.com/repos/octo-org/octo-repo/subscribers\",\"subscription_url\":\"https://api.github.com/repos/octo-org/octo-repo/subscription\",\"commits_url\":\"https://api.github.com/repos/octo-org/octo-repo/commits{/sha}\",\"git_commits_url\":\"https://api.github.com/repos/octo-org/octo-repo/git/commits{/sha}\",\"comments_url\":\"https://api.github.com/repos/octo-org/octo-repo/comments{/number}\",\"issue_comment_url\":\"https://api.github.com/repos/octo-org/octo-repo/issues/comments{/number}\",\"contents_url\":\"https://api.github.com/repos/octo-org/octo-repo/contents/{+path}\",\"compare_url\":\"https://api.github.com/repos/octo-org/octo-repo/compare/{base}...{head}\",\"merges_url\":\"https://api.github.com/repos/octo-org/octo-repo/merges\",\"archive_url\":\"https://api.github.com/repos/octo-org/octo-repo/{archive_format}{/ref}\",\"downloads_url\":\"https://api.github.com/repos/octo-org/octo-repo/downloads\",\"issues_url\":\"https://api.github.com/repos/octo-org/octo-repo/issues{/number}\",\"pulls_url\":\"https://api.github.com/repos/octo-org/octo-repo/pulls{/number}\",\"milestones_url\":\"https://api.github.com/repos/octo-org/octo-repo/milestones{/number}\",\"notifications_url\":\"https://api.github.com/repos/octo-org/octo-repo/notifications{?since,all,participating}\",\"labels_url\":\"https://api.github.com/repos/octo-org/octo-repo/labels{/name}\",\"releases_url\":\"https://api.github.com/repos/octo-org/octo-repo/releases{/id}\",\"deployments_url\":\"https://api.github.com/repos/octo-org/octo-repo/deployments\"}}"
+          }
+        ]
+      }
+    ],
+    "renamed": null
+  },
+  {
     "name": "Get workflow run usage",
     "scope": "actions",
     "id": "getWorkflowRunUsage",
@@ -3089,7 +3239,7 @@
         "description": "Response",
         "examples": [
           {
-            "data": "{\"total_count\":1,\"jobs\":[{\"id\":399444496,\"run_id\":29679449,\"run_url\":\"https://api.github.com/repos/octo-org/octo-repo/actions/runs/29679449\",\"node_id\":\"MDEyOldvcmtmbG93IEpvYjM5OTQ0NDQ5Ng==\",\"head_sha\":\"f83a356604ae3c5d03e1b46ef4d1ca77d64a90b0\",\"url\":\"https://api.github.com/repos/octo-org/octo-repo/actions/jobs/399444496\",\"html_url\":\"https://github.com/octo-org/octo-repo/runs/399444496\",\"status\":\"completed\",\"conclusion\":\"success\",\"started_at\":\"2020-01-20T17:42:40Z\",\"completed_at\":\"2020-01-20T17:44:39Z\",\"name\":\"build\",\"steps\":[{\"name\":\"Set up job\",\"status\":\"completed\",\"conclusion\":\"success\",\"number\":1,\"started_at\":\"2020-01-20T09:42:40.000-08:00\",\"completed_at\":\"2020-01-20T09:42:41.000-08:00\"},{\"name\":\"Run actions/checkout@v2\",\"status\":\"completed\",\"conclusion\":\"success\",\"number\":2,\"started_at\":\"2020-01-20T09:42:41.000-08:00\",\"completed_at\":\"2020-01-20T09:42:45.000-08:00\"},{\"name\":\"Set up Ruby\",\"status\":\"completed\",\"conclusion\":\"success\",\"number\":3,\"started_at\":\"2020-01-20T09:42:45.000-08:00\",\"completed_at\":\"2020-01-20T09:42:45.000-08:00\"},{\"name\":\"Run actions/cache@v2\",\"status\":\"completed\",\"conclusion\":\"success\",\"number\":4,\"started_at\":\"2020-01-20T09:42:45.000-08:00\",\"completed_at\":\"2020-01-20T09:42:48.000-08:00\"},{\"name\":\"Install Bundler\",\"status\":\"completed\",\"conclusion\":\"success\",\"number\":5,\"started_at\":\"2020-01-20T09:42:48.000-08:00\",\"completed_at\":\"2020-01-20T09:42:52.000-08:00\"},{\"name\":\"Install Gems\",\"status\":\"completed\",\"conclusion\":\"success\",\"number\":6,\"started_at\":\"2020-01-20T09:42:52.000-08:00\",\"completed_at\":\"2020-01-20T09:42:53.000-08:00\"},{\"name\":\"Run Tests\",\"status\":\"completed\",\"conclusion\":\"success\",\"number\":7,\"started_at\":\"2020-01-20T09:42:53.000-08:00\",\"completed_at\":\"2020-01-20T09:42:59.000-08:00\"},{\"name\":\"Deploy to Heroku\",\"status\":\"completed\",\"conclusion\":\"success\",\"number\":8,\"started_at\":\"2020-01-20T09:42:59.000-08:00\",\"completed_at\":\"2020-01-20T09:44:39.000-08:00\"},{\"name\":\"Post actions/cache@v2\",\"status\":\"completed\",\"conclusion\":\"success\",\"number\":16,\"started_at\":\"2020-01-20T09:44:39.000-08:00\",\"completed_at\":\"2020-01-20T09:44:39.000-08:00\"},{\"name\":\"Complete job\",\"status\":\"completed\",\"conclusion\":\"success\",\"number\":17,\"started_at\":\"2020-01-20T09:44:39.000-08:00\",\"completed_at\":\"2020-01-20T09:44:39.000-08:00\"}],\"check_run_url\":\"https://api.github.com/repos/octo-org/octo-repo/check-runs/399444496\"}]}"
+            "data": "{\"total_count\":1,\"jobs\":[{\"id\":399444496,\"run_id\":29679449,\"run_url\":\"https://api.github.com/repos/octo-org/octo-repo/actions/runs/29679449\",\"node_id\":\"MDEyOldvcmtmbG93IEpvYjM5OTQ0NDQ5Ng==\",\"head_sha\":\"f83a356604ae3c5d03e1b46ef4d1ca77d64a90b0\",\"url\":\"https://api.github.com/repos/octo-org/octo-repo/actions/jobs/399444496\",\"html_url\":\"https://github.com/octo-org/octo-repo/runs/399444496\",\"status\":\"completed\",\"conclusion\":\"success\",\"started_at\":\"2020-01-20T17:42:40Z\",\"completed_at\":\"2020-01-20T17:44:39Z\",\"name\":\"build\",\"steps\":[{\"name\":\"Set up job\",\"status\":\"completed\",\"conclusion\":\"success\",\"number\":1,\"started_at\":\"2020-01-20T09:42:40.000-08:00\",\"completed_at\":\"2020-01-20T09:42:41.000-08:00\"},{\"name\":\"Run actions/checkout@v2\",\"status\":\"completed\",\"conclusion\":\"success\",\"number\":2,\"started_at\":\"2020-01-20T09:42:41.000-08:00\",\"completed_at\":\"2020-01-20T09:42:45.000-08:00\"},{\"name\":\"Set up Ruby\",\"status\":\"completed\",\"conclusion\":\"success\",\"number\":3,\"started_at\":\"2020-01-20T09:42:45.000-08:00\",\"completed_at\":\"2020-01-20T09:42:45.000-08:00\"},{\"name\":\"Run actions/cache@v2\",\"status\":\"completed\",\"conclusion\":\"success\",\"number\":4,\"started_at\":\"2020-01-20T09:42:45.000-08:00\",\"completed_at\":\"2020-01-20T09:42:48.000-08:00\"},{\"name\":\"Install Bundler\",\"status\":\"completed\",\"conclusion\":\"success\",\"number\":5,\"started_at\":\"2020-01-20T09:42:48.000-08:00\",\"completed_at\":\"2020-01-20T09:42:52.000-08:00\"},{\"name\":\"Install Gems\",\"status\":\"completed\",\"conclusion\":\"success\",\"number\":6,\"started_at\":\"2020-01-20T09:42:52.000-08:00\",\"completed_at\":\"2020-01-20T09:42:53.000-08:00\"},{\"name\":\"Run Tests\",\"status\":\"completed\",\"conclusion\":\"success\",\"number\":7,\"started_at\":\"2020-01-20T09:42:53.000-08:00\",\"completed_at\":\"2020-01-20T09:42:59.000-08:00\"},{\"name\":\"Deploy to Heroku\",\"status\":\"completed\",\"conclusion\":\"success\",\"number\":8,\"started_at\":\"2020-01-20T09:42:59.000-08:00\",\"completed_at\":\"2020-01-20T09:44:39.000-08:00\"},{\"name\":\"Post actions/cache@v2\",\"status\":\"completed\",\"conclusion\":\"success\",\"number\":16,\"started_at\":\"2020-01-20T09:44:39.000-08:00\",\"completed_at\":\"2020-01-20T09:44:39.000-08:00\"},{\"name\":\"Complete job\",\"status\":\"completed\",\"conclusion\":\"success\",\"number\":17,\"started_at\":\"2020-01-20T09:44:39.000-08:00\",\"completed_at\":\"2020-01-20T09:44:39.000-08:00\"}],\"check_run_url\":\"https://api.github.com/repos/octo-org/octo-repo/check-runs/399444496\",\"labels\":[\"self-hosted\",\"foo\",\"bar\"],\"runner_id\":1,\"runner_name\":\"my runner\",\"runner_group_id\":2,\"runner_group_name\":\"my runner group\"}]}"
           }
         ]
       }
@@ -4145,7 +4295,7 @@
     "isDeprecated": true,
     "deprecationDate": "2021-09-14",
     "removalDate": null,
-    "description": "**Deprecation Notice:** This endpoint is deprecated.\nWe recommend migrating your existing code to use the new [retry workflow](https://docs.github.com/rest/reference/actions#retry-a-workflow) endpoint.\n\nRe-runs your workflow run using its `id`. You must authenticate using\nan access token with the `repo` scope to use this endpoint. GitHub Apps must have\nthe `actions:write` permission to use this endpoint.",
+    "description": "Re-runs your workflow run using its `id`. You must authenticate using an access token with the `repo` scope to use this endpoint. GitHub Apps must have the `actions:write` permission to use this endpoint.",
     "documentationUrl": "https://docs.github.com/rest/reference/actions#re-run-a-workflow",
     "previews": [],
     "headers": [],
@@ -4259,63 +4409,6 @@
         "examples": null
       }
     ],
-    "renamed": null
-  },
-  {
-    "name": "Retry a workflow",
-    "scope": "actions",
-    "id": "retryWorkflow",
-    "method": "POST",
-    "url": "/repos/{owner}/{repo}/actions/runs/{run_id}/retry",
-    "isDeprecated": false,
-    "deprecationDate": null,
-    "removalDate": null,
-    "description": "Retry your workflow run using its `id`. You must authenticate using an access token with the `repo` scope to use this endpoint. GitHub Apps must have the `actions:write` permission to use this endpoint.",
-    "documentationUrl": "https://docs.github.com/rest/reference/actions#retry-a-workflow",
-    "previews": [],
-    "headers": [],
-    "parameters": [
-      {
-        "name": "owner",
-        "description": "",
-        "in": "PATH",
-        "type": "string",
-        "required": true,
-        "enum": null,
-        "allowNull": false,
-        "mapToData": null,
-        "validation": null,
-        "alias": null,
-        "deprecated": null
-      },
-      {
-        "name": "repo",
-        "description": "",
-        "in": "PATH",
-        "type": "string",
-        "required": true,
-        "enum": null,
-        "allowNull": false,
-        "mapToData": null,
-        "validation": null,
-        "alias": null,
-        "deprecated": null
-      },
-      {
-        "name": "run_id",
-        "description": "The id of the workflow run.",
-        "in": "PATH",
-        "type": "integer",
-        "required": true,
-        "enum": null,
-        "allowNull": false,
-        "mapToData": null,
-        "validation": null,
-        "alias": null,
-        "deprecated": null
-      }
-    ],
-    "responses": [{ "code": 201, "description": "Response", "examples": null }],
     "renamed": null
   },
   {
@@ -6856,6 +6949,63 @@
       { "code": 403, "description": "Forbidden", "examples": null },
       { "code": 404, "description": "Resource not found", "examples": null }
     ],
+    "renamed": {
+      "before": { "scope": "apps", "id": "addRepoToInstallation" },
+      "after": {
+        "scope": "apps",
+        "id": "addRepoToInstallationForAuthenticatedUser"
+      },
+      "date": "2021-10-05",
+      "note": null
+    }
+  },
+  {
+    "name": "Add a repository to an app installation",
+    "scope": "apps",
+    "id": "addRepoToInstallationForAuthenticatedUser",
+    "method": "PUT",
+    "url": "/user/installations/{installation_id}/repositories/{repository_id}",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "removalDate": null,
+    "description": "Add a single repository to an installation. The authenticated user must have admin access to the repository.\n\nYou must use a personal access token (which you can create via the [command line](https://docs.github.com/github/authenticating-to-github/creating-a-personal-access-token) or [Basic Authentication](https://docs.github.com/rest/overview/other-authentication-methods#basic-authentication)) to access this endpoint.",
+    "documentationUrl": "https://docs.github.com/rest/reference/apps#add-a-repository-to-an-app-installation",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "installation_id",
+        "description": "installation_id parameter",
+        "in": "PATH",
+        "type": "integer",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "repository_id",
+        "description": "",
+        "in": "PATH",
+        "type": "integer",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      { "code": 204, "description": "Response", "examples": null },
+      { "code": 304, "description": "Not modified", "examples": null },
+      { "code": 403, "description": "Forbidden", "examples": null },
+      { "code": 404, "description": "Resource not found", "examples": null }
+    ],
     "renamed": null
   },
   {
@@ -9037,6 +9187,63 @@
       { "code": 403, "description": "Forbidden", "examples": null },
       { "code": 404, "description": "Resource not found", "examples": null }
     ],
+    "renamed": {
+      "before": { "scope": "apps", "id": "removeRepoFromInstallation" },
+      "after": {
+        "scope": "apps",
+        "id": "removeRepoFromInstallationForAuthenticatedUser"
+      },
+      "date": "2021-10-05",
+      "note": null
+    }
+  },
+  {
+    "name": "Remove a repository from an app installation",
+    "scope": "apps",
+    "id": "removeRepoFromInstallationForAuthenticatedUser",
+    "method": "DELETE",
+    "url": "/user/installations/{installation_id}/repositories/{repository_id}",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "removalDate": null,
+    "description": "Remove a single repository from an installation. The authenticated user must have admin access to the repository.\n\nYou must use a personal access token (which you can create via the [command line](https://docs.github.com/github/authenticating-to-github/creating-a-personal-access-token) or [Basic Authentication](https://docs.github.com/rest/overview/other-authentication-methods#basic-authentication)) to access this endpoint.",
+    "documentationUrl": "https://docs.github.com/rest/reference/apps#remove-a-repository-from-an-app-installation",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "installation_id",
+        "description": "installation_id parameter",
+        "in": "PATH",
+        "type": "integer",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "repository_id",
+        "description": "",
+        "in": "PATH",
+        "type": "integer",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      { "code": 204, "description": "Response", "examples": null },
+      { "code": 304, "description": "Not modified", "examples": null },
+      { "code": 403, "description": "Forbidden", "examples": null },
+      { "code": 404, "description": "Resource not found", "examples": null }
+    ],
     "renamed": null
   },
   {
@@ -10815,6 +11022,76 @@
     "renamed": null
   },
   {
+    "name": "Rerequest a check run",
+    "scope": "checks",
+    "id": "rerequestRun",
+    "method": "POST",
+    "url": "/repos/{owner}/{repo}/check-runs/{check_run_id}/rerequest",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "removalDate": null,
+    "description": "Triggers GitHub to rerequest an existing check run, without pushing new code to a repository. This endpoint will trigger the [`check_run` webhook](https://docs.github.com/webhooks/event-payloads/#check_run) event with the action `rerequested`. When a check run is `rerequested`, its `status` is reset to `queued` and the `conclusion` is cleared.\n\nTo rerequest a check run, your GitHub App must have the `checks:read` permission on a private repository or pull access to a public repository.",
+    "documentationUrl": "https://docs.github.com/rest/reference/checks#rerequest-a-check-run",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "owner",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "repo",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "check_run_id",
+        "description": "check_run_id parameter",
+        "in": "PATH",
+        "type": "integer",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      { "code": 201, "description": "Response", "examples": null },
+      {
+        "code": 403,
+        "description": "Forbidden if the check run is not rerequestable or doesn't belong to the authenticated GitHub App",
+        "examples": null
+      },
+      { "code": 404, "description": "Resource not found", "examples": null },
+      {
+        "code": 422,
+        "description": "Validation error if the check run is not rerequestable",
+        "examples": null
+      }
+    ],
+    "renamed": null
+  },
+  {
     "name": "Rerequest a check suite",
     "scope": "checks",
     "id": "rerequestSuite",
@@ -11579,7 +11856,7 @@
         "description": "Response",
         "examples": [
           {
-            "data": "{\"number\":42,\"created_at\":\"2020-06-19T11:21:34Z\",\"url\":\"https://api.github.com/repos/octocat/hello-world/code-scanning/alerts/42\",\"html_url\":\"https://github.com/octocat/hello-world/code-scanning/42\",\"state\":\"dismissed\",\"dismissed_by\":{\"login\":\"octocat\",\"id\":54933897,\"node_id\":\"MDQ6VXNlcjE=\",\"avatar_url\":\"https://github.com/images/error/octocat_happy.gif\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/octocat\",\"html_url\":\"https://github.com/octocat\",\"followers_url\":\"https://api.github.com/users/octocat/followers\",\"following_url\":\"https://api.github.com/users/octocat/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/octocat/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/octocat/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/octocat/subscriptions\",\"organizations_url\":\"https://api.github.com/users/octocat/orgs\",\"repos_url\":\"https://api.github.com/users/octocat/repos\",\"events_url\":\"https://api.github.com/users/octocat/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/octocat/received_events\",\"type\":\"User\",\"site_admin\":false},\"dismissed_at\":\"2020-02-14T12:29:18Z\",\"dismissed_reason\":\"false positive\",\"rule\":{\"id\":\"js/zipslip\",\"severity\":\"error\",\"security_severity_level\":\"high\",\"description\":\"Arbitrary file write during zip extraction (\\\"Zip Slip\\\")\",\"name\":\"js/zipslip\",\"full_description\":\"Extracting files from a malicious zip archive without validating that the destination file path is within the destination directory can cause files outside the destination directory to be overwritten.\",\"tags\":[\"security\",\"external/cwe/cwe-022\"],\"help\":\"# Arbitrary file write during zip extraction (\\\"Zip Slip\\\")\\\\nExtracting files from a malicious zip archive without validating that the destination file path is within the destination directory can cause files outside the destination directory to be overwritten ...\"},\"tool\":{\"name\":\"CodeQL\",\"guid\":null,\"version\":\"2.4.0\"},\"most_recent_instance\":{\"ref\":\"refs/heads/main\",\"analysis_key\":\".github/workflows/codeql-analysis.yml:CodeQL-Build\",\"environment\":\"{}\",\"state\":\"dismissed\",\"commit_sha\":\"39406e42cb832f683daa691dd652a8dc36ee8930\",\"message\":{\"text\":\"This path depends on a user-provided value.\"},\"location\":{\"path\":\"spec-main/api-session-spec.ts\",\"start_line\":917,\"end_line\":917,\"start_column\":7,\"end_column\":18},\"classifications\":[\"test\"]},\"instances_url\":\"https://api.github.com/repos/octocat/hello-world/code-scanning/alerts/42/instances\",\"instances\":null}"
+            "data": "{\"number\":42,\"created_at\":\"2020-06-19T11:21:34Z\",\"url\":\"https://api.github.com/repos/octocat/hello-world/code-scanning/alerts/42\",\"html_url\":\"https://github.com/octocat/hello-world/code-scanning/42\",\"state\":\"dismissed\",\"dismissed_by\":{\"login\":\"octocat\",\"id\":54933897,\"node_id\":\"MDQ6VXNlcjE=\",\"avatar_url\":\"https://github.com/images/error/octocat_happy.gif\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/octocat\",\"html_url\":\"https://github.com/octocat\",\"followers_url\":\"https://api.github.com/users/octocat/followers\",\"following_url\":\"https://api.github.com/users/octocat/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/octocat/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/octocat/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/octocat/subscriptions\",\"organizations_url\":\"https://api.github.com/users/octocat/orgs\",\"repos_url\":\"https://api.github.com/users/octocat/repos\",\"events_url\":\"https://api.github.com/users/octocat/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/octocat/received_events\",\"type\":\"User\",\"site_admin\":false},\"dismissed_at\":\"2020-02-14T12:29:18Z\",\"dismissed_reason\":\"false positive\",\"rule\":{\"id\":\"js/zipslip\",\"severity\":\"error\",\"security_severity_level\":\"high\",\"description\":\"Arbitrary file write during zip extraction (\\\"Zip Slip\\\")\",\"name\":\"js/zipslip\",\"full_description\":\"Extracting files from a malicious zip archive without validating that the destination file path is within the destination directory can cause files outside the destination directory to be overwritten.\",\"tags\":[\"security\",\"external/cwe/cwe-022\"],\"help\":\"# Arbitrary file write during zip extraction (\\\"Zip Slip\\\")\\\\nExtracting files from a malicious zip archive without validating that the destination file path is within the destination directory can cause files outside the destination directory to be overwritten ...\"},\"tool\":{\"name\":\"CodeQL\",\"guid\":null,\"version\":\"2.4.0\"},\"most_recent_instance\":{\"ref\":\"refs/heads/main\",\"analysis_key\":\".github/workflows/codeql-analysis.yml:CodeQL-Build\",\"environment\":\"{}\",\"state\":\"dismissed\",\"commit_sha\":\"39406e42cb832f683daa691dd652a8dc36ee8930\",\"message\":{\"text\":\"This path depends on a user-provided value.\"},\"location\":{\"path\":\"spec-main/api-session-spec.ts\",\"start_line\":917,\"end_line\":917,\"start_column\":7,\"end_column\":18},\"classifications\":[\"test\"]},\"instances_url\":\"https://api.github.com/repos/octocat/hello-world/code-scanning/alerts/42/instances\"}"
           }
         ]
       },
@@ -11602,7 +11879,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "removalDate": null,
-    "description": "Gets a specified code scanning analysis for a repository.\nYou must use an access token with the `security_events` scope to use this endpoint.\nGitHub Apps must have the `security_events` read permission to use this endpoint.\n\nThe default JSON response contains fields that describe the analysis.\nThis includes the Git reference and commit SHA to which the analysis relates,\nthe datetime of the analysis, the name of the code scanning tool,\nand the number of alerts.\n\nThe `rules_count` field in the default response give the number of rules\nthat were run in the analysis.\nFor very old analyses this data is not available,\nand `0` is returned in this field.\n\nIf you use the Accept header `application/sarif+json`,\nthe response contains the analysis data that was uploaded.\nThis is formatted as\n[SARIF version 2.1.0](https://docs.oasis-open.org/sarif/sarif/v2.1.0/cs01/sarif-v2.1.0-cs01.html).\n\n**Deprecation notice**:\nThe `tool_name` field is deprecated and will, in future, not be included in the response for this endpoint. The example response reflects this change. The tool name can now be found inside the `tool` field.",
+    "description": "Gets a specified code scanning analysis for a repository.\nYou must use an access token with the `security_events` scope to use this endpoint.\nGitHub Apps must have the `security_events` read permission to use this endpoint.\n\nThe default JSON response contains fields that describe the analysis.\nThis includes the Git reference and commit SHA to which the analysis relates,\nthe datetime of the analysis, the name of the code scanning tool,\nand the number of alerts.\n\nThe `rules_count` field in the default response give the number of rules\nthat were run in the analysis.\nFor very old analyses this data is not available,\nand `0` is returned in this field.\n\nIf you use the Accept header `application/sarif+json`,\nthe response contains the analysis data that was uploaded.\nThis is formatted as\n[SARIF version 2.1.0](https://docs.oasis-open.org/sarif/sarif/v2.1.0/cs01/sarif-v2.1.0-cs01.html).",
     "documentationUrl": "https://docs.github.com/rest/reference/code-scanning#get-a-code-scanning-analysis-for-a-repository",
     "previews": [],
     "headers": [],
@@ -21040,6 +21317,74 @@
     "renamed": null
   },
   {
+    "name": "List repositories for a user migration",
+    "scope": "migrations",
+    "id": "listReposForAuthenticatedUser",
+    "method": "GET",
+    "url": "/user/migrations/{migration_id}/repositories",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "removalDate": null,
+    "description": "Lists all the repositories for this user migration.",
+    "documentationUrl": "https://docs.github.com/rest/reference/migrations#list-repositories-for-a-user-migration",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "migration_id",
+        "description": "migration_id parameter",
+        "in": "PATH",
+        "type": "integer",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "per_page",
+        "description": "Results per page (max 100)",
+        "in": "QUERY",
+        "type": "integer",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "page",
+        "description": "Page number of the results to fetch.",
+        "in": "QUERY",
+        "type": "integer",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      {
+        "code": 200,
+        "description": "Response",
+        "examples": [
+          {
+            "data": "[{\"id\":1296269,\"node_id\":\"MDEwOlJlcG9zaXRvcnkxMjk2MjY5\",\"name\":\"Hello-World\",\"full_name\":\"octocat/Hello-World\",\"owner\":{\"login\":\"octocat\",\"id\":1,\"node_id\":\"MDQ6VXNlcjE=\",\"avatar_url\":\"https://github.com/images/error/octocat_happy.gif\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/octocat\",\"html_url\":\"https://github.com/octocat\",\"followers_url\":\"https://api.github.com/users/octocat/followers\",\"following_url\":\"https://api.github.com/users/octocat/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/octocat/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/octocat/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/octocat/subscriptions\",\"organizations_url\":\"https://api.github.com/users/octocat/orgs\",\"repos_url\":\"https://api.github.com/users/octocat/repos\",\"events_url\":\"https://api.github.com/users/octocat/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/octocat/received_events\",\"type\":\"User\",\"site_admin\":false},\"private\":false,\"html_url\":\"https://github.com/octocat/Hello-World\",\"description\":\"This your first repo!\",\"fork\":false,\"url\":\"https://api.github.com/repos/octocat/Hello-World\",\"archive_url\":\"https://api.github.com/repos/octocat/Hello-World/{archive_format}{/ref}\",\"assignees_url\":\"https://api.github.com/repos/octocat/Hello-World/assignees{/user}\",\"blobs_url\":\"https://api.github.com/repos/octocat/Hello-World/git/blobs{/sha}\",\"branches_url\":\"https://api.github.com/repos/octocat/Hello-World/branches{/branch}\",\"collaborators_url\":\"https://api.github.com/repos/octocat/Hello-World/collaborators{/collaborator}\",\"comments_url\":\"https://api.github.com/repos/octocat/Hello-World/comments{/number}\",\"commits_url\":\"https://api.github.com/repos/octocat/Hello-World/commits{/sha}\",\"compare_url\":\"https://api.github.com/repos/octocat/Hello-World/compare/{base}...{head}\",\"contents_url\":\"https://api.github.com/repos/octocat/Hello-World/contents/{+path}\",\"contributors_url\":\"https://api.github.com/repos/octocat/Hello-World/contributors\",\"deployments_url\":\"https://api.github.com/repos/octocat/Hello-World/deployments\",\"downloads_url\":\"https://api.github.com/repos/octocat/Hello-World/downloads\",\"events_url\":\"https://api.github.com/repos/octocat/Hello-World/events\",\"forks_url\":\"https://api.github.com/repos/octocat/Hello-World/forks\",\"git_commits_url\":\"https://api.github.com/repos/octocat/Hello-World/git/commits{/sha}\",\"git_refs_url\":\"https://api.github.com/repos/octocat/Hello-World/git/refs{/sha}\",\"git_tags_url\":\"https://api.github.com/repos/octocat/Hello-World/git/tags{/sha}\",\"git_url\":\"git:github.com/octocat/Hello-World.git\",\"issue_comment_url\":\"https://api.github.com/repos/octocat/Hello-World/issues/comments{/number}\",\"issue_events_url\":\"https://api.github.com/repos/octocat/Hello-World/issues/events{/number}\",\"issues_url\":\"https://api.github.com/repos/octocat/Hello-World/issues{/number}\",\"keys_url\":\"https://api.github.com/repos/octocat/Hello-World/keys{/key_id}\",\"labels_url\":\"https://api.github.com/repos/octocat/Hello-World/labels{/name}\",\"languages_url\":\"https://api.github.com/repos/octocat/Hello-World/languages\",\"merges_url\":\"https://api.github.com/repos/octocat/Hello-World/merges\",\"milestones_url\":\"https://api.github.com/repos/octocat/Hello-World/milestones{/number}\",\"notifications_url\":\"https://api.github.com/repos/octocat/Hello-World/notifications{?since,all,participating}\",\"pulls_url\":\"https://api.github.com/repos/octocat/Hello-World/pulls{/number}\",\"releases_url\":\"https://api.github.com/repos/octocat/Hello-World/releases{/id}\",\"ssh_url\":\"git@github.com:octocat/Hello-World.git\",\"stargazers_url\":\"https://api.github.com/repos/octocat/Hello-World/stargazers\",\"statuses_url\":\"https://api.github.com/repos/octocat/Hello-World/statuses/{sha}\",\"subscribers_url\":\"https://api.github.com/repos/octocat/Hello-World/subscribers\",\"subscription_url\":\"https://api.github.com/repos/octocat/Hello-World/subscription\",\"tags_url\":\"https://api.github.com/repos/octocat/Hello-World/tags\",\"teams_url\":\"https://api.github.com/repos/octocat/Hello-World/teams\",\"trees_url\":\"https://api.github.com/repos/octocat/Hello-World/git/trees{/sha}\",\"clone_url\":\"https://github.com/octocat/Hello-World.git\",\"mirror_url\":\"git:git.example.com/octocat/Hello-World\",\"hooks_url\":\"https://api.github.com/repos/octocat/Hello-World/hooks\",\"svn_url\":\"https://svn.github.com/octocat/Hello-World\",\"homepage\":\"https://github.com\",\"language\":null,\"forks_count\":9,\"stargazers_count\":80,\"watchers_count\":80,\"size\":108,\"default_branch\":\"master\",\"open_issues_count\":0,\"is_template\":false,\"topics\":[\"octocat\",\"atom\",\"electron\",\"api\"],\"has_issues\":true,\"has_projects\":true,\"has_wiki\":true,\"has_pages\":false,\"has_downloads\":true,\"archived\":false,\"disabled\":false,\"visibility\":\"public\",\"pushed_at\":\"2011-01-26T19:06:43Z\",\"created_at\":\"2011-01-26T19:01:12Z\",\"updated_at\":\"2011-01-26T19:14:43Z\",\"permissions\":{\"admin\":false,\"push\":false,\"pull\":true},\"template_repository\":{\"id\":1296269,\"node_id\":\"MDEwOlJlcG9zaXRvcnkxMjk2MjY5\",\"name\":\"Hello-World-Template\",\"full_name\":\"octocat/Hello-World-Template\",\"owner\":{\"login\":\"octocat\",\"id\":1,\"node_id\":\"MDQ6VXNlcjE=\",\"avatar_url\":\"https://github.com/images/error/octocat_happy.gif\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/octocat\",\"html_url\":\"https://github.com/octocat\",\"followers_url\":\"https://api.github.com/users/octocat/followers\",\"following_url\":\"https://api.github.com/users/octocat/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/octocat/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/octocat/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/octocat/subscriptions\",\"organizations_url\":\"https://api.github.com/users/octocat/orgs\",\"repos_url\":\"https://api.github.com/users/octocat/repos\",\"events_url\":\"https://api.github.com/users/octocat/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/octocat/received_events\",\"type\":\"User\",\"site_admin\":false},\"private\":false,\"html_url\":\"https://github.com/octocat/Hello-World-Template\",\"description\":\"This your first repo!\",\"fork\":false,\"url\":\"https://api.github.com/repos/octocat/Hello-World-Template\",\"archive_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/{archive_format}{/ref}\",\"assignees_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/assignees{/user}\",\"blobs_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/git/blobs{/sha}\",\"branches_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/branches{/branch}\",\"collaborators_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/collaborators{/collaborator}\",\"comments_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/comments{/number}\",\"commits_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/commits{/sha}\",\"compare_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/compare/{base}...{head}\",\"contents_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/contents/{+path}\",\"contributors_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/contributors\",\"deployments_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/deployments\",\"downloads_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/downloads\",\"events_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/events\",\"forks_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/forks\",\"git_commits_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/git/commits{/sha}\",\"git_refs_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/git/refs{/sha}\",\"git_tags_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/git/tags{/sha}\",\"git_url\":\"git:github.com/octocat/Hello-World-Template.git\",\"issue_comment_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/issues/comments{/number}\",\"issue_events_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/issues/events{/number}\",\"issues_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/issues{/number}\",\"keys_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/keys{/key_id}\",\"labels_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/labels{/name}\",\"languages_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/languages\",\"merges_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/merges\",\"milestones_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/milestones{/number}\",\"notifications_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/notifications{?since,all,participating}\",\"pulls_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/pulls{/number}\",\"releases_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/releases{/id}\",\"ssh_url\":\"git@github.com:octocat/Hello-World-Template.git\",\"stargazers_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/stargazers\",\"statuses_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/statuses/{sha}\",\"subscribers_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/subscribers\",\"subscription_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/subscription\",\"tags_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/tags\",\"teams_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/teams\",\"trees_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/git/trees{/sha}\",\"clone_url\":\"https://github.com/octocat/Hello-World-Template.git\",\"mirror_url\":\"git:git.example.com/octocat/Hello-World-Template\",\"hooks_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/hooks\",\"svn_url\":\"https://svn.github.com/octocat/Hello-World-Template\",\"homepage\":\"https://github.com\",\"language\":null,\"forks\":9,\"forks_count\":9,\"stargazers_count\":80,\"watchers_count\":80,\"watchers\":80,\"size\":108,\"default_branch\":\"master\",\"open_issues\":0,\"open_issues_count\":0,\"is_template\":true,\"license\":{\"key\":\"mit\",\"name\":\"MIT License\",\"url\":\"https://api.github.com/licenses/mit\",\"spdx_id\":\"MIT\",\"node_id\":\"MDc6TGljZW5zZW1pdA==\",\"html_url\":\"https://api.github.com/licenses/mit\"},\"topics\":[\"octocat\",\"atom\",\"electron\",\"api\"],\"has_issues\":true,\"has_projects\":true,\"has_wiki\":true,\"has_pages\":false,\"has_downloads\":true,\"archived\":false,\"disabled\":false,\"visibility\":\"public\",\"pushed_at\":\"2011-01-26T19:06:43Z\",\"created_at\":\"2011-01-26T19:01:12Z\",\"updated_at\":\"2011-01-26T19:14:43Z\",\"permissions\":{\"admin\":false,\"push\":false,\"pull\":true},\"allow_rebase_merge\":true,\"temp_clone_token\":\"ABTLWHOULUVAXGTRYU7OC2876QJ2O\",\"allow_squash_merge\":true,\"allow_auto_merge\":false,\"delete_branch_on_merge\":true,\"allow_merge_commit\":true,\"subscribers_count\":42,\"network_count\":0}}]"
+          }
+        ]
+      },
+      { "code": 404, "description": "Resource not found", "examples": null }
+    ],
+    "renamed": null
+  },
+  {
     "name": "List repositories in an organization migration",
     "scope": "migrations",
     "id": "listReposForOrg",
@@ -21186,7 +21531,12 @@
       },
       { "code": 404, "description": "Resource not found", "examples": null }
     ],
-    "renamed": null
+    "renamed": {
+      "before": { "scope": "migrations", "id": "listReposForUser" },
+      "after": { "scope": "migrations", "id": "listReposForAuthenticatedUser" },
+      "date": "2021-10-05",
+      "note": null
+    }
   },
   {
     "name": "Map a commit author",
@@ -34677,6 +35027,51 @@
       { "code": 404, "description": "Resource not found", "examples": null },
       { "code": 409, "description": "Conflict", "examples": null }
     ],
+    "renamed": {
+      "before": { "scope": "repos", "id": "acceptInvitation" },
+      "after": {
+        "scope": "repos",
+        "id": "acceptInvitationForAuthenticatedUser"
+      },
+      "date": "2021-10-05",
+      "note": null
+    }
+  },
+  {
+    "name": "Accept a repository invitation",
+    "scope": "repos",
+    "id": "acceptInvitationForAuthenticatedUser",
+    "method": "PATCH",
+    "url": "/user/repository_invitations/{invitation_id}",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "removalDate": null,
+    "description": "",
+    "documentationUrl": "https://docs.github.com/rest/reference/repos#accept-a-repository-invitation",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "invitation_id",
+        "description": "invitation_id parameter",
+        "in": "PATH",
+        "type": "integer",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      { "code": 204, "description": "Response", "examples": null },
+      { "code": 304, "description": "Not modified", "examples": null },
+      { "code": 403, "description": "Forbidden", "examples": null },
+      { "code": 404, "description": "Resource not found", "examples": null },
+      { "code": 409, "description": "Conflict", "examples": null }
+    ],
     "renamed": null
   },
   {
@@ -35644,7 +36039,7 @@
     "removalDate": null,
     "description": "Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://help.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.\n\nWhen authenticated with admin or owner permissions to the repository, you can use this endpoint to require signed commits on a branch. You must enable branch protection to require signed commits.",
     "documentationUrl": "https://docs.github.com/rest/reference/repos#create-commit-signature-protection",
-    "previews": [{ "name": "zzzax" }],
+    "previews": [],
     "headers": [],
     "parameters": [
       {
@@ -36779,7 +37174,7 @@
       },
       {
         "name": "visibility",
-        "description": "Can be `public` or `private`. If your organization is associated with an enterprise account using GitHub Enterprise Cloud or GitHub Enterprise Server 2.20+, `visibility` can also be `internal`. Note: For GitHub Enterprise Server and GitHub AE, this endpoint will only list repositories available to all users on the enterprise. For more information, see \"[Creating an internal repository](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/about-repository-visibility#about-internal-repositories)\" in the GitHub Help documentation.  \nThe `visibility` parameter overrides the `private` parameter when you use both parameters with the `nebula-preview` preview header.",
+        "description": "Can be `public` or `private`. If your organization is associated with an enterprise account using GitHub Enterprise Cloud or GitHub Enterprise Server 2.20+, `visibility` can also be `internal`. Note: For GitHub Enterprise Server and GitHub AE, this endpoint will only list repositories available to all users on the enterprise. For more information, see \"[Creating an internal repository](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/about-repository-visibility#about-internal-repositories)\" in the GitHub Help documentation.",
         "in": "BODY",
         "type": "string",
         "required": false,
@@ -37384,7 +37779,7 @@
     "removalDate": null,
     "description": "Configures a GitHub Pages site. For more information, see \"[About GitHub Pages](/github/working-with-github-pages/about-github-pages).\"",
     "documentationUrl": "https://docs.github.com/rest/reference/repos#create-a-github-pages-site",
-    "previews": [{ "name": "switcheroo" }],
+    "previews": [],
     "headers": [],
     "parameters": [
       {
@@ -37464,11 +37859,6 @@
         ]
       },
       { "code": 409, "description": "Conflict", "examples": null },
-      {
-        "code": 415,
-        "description": "Preview header missing",
-        "examples": null
-      },
       { "code": 422, "description": "Validation failed", "examples": null }
     ],
     "renamed": null
@@ -37603,6 +37993,19 @@
         "validation": null,
         "alias": null,
         "deprecated": null
+      },
+      {
+        "name": "generate_release_notes",
+        "description": "Whether to automatically generate the name and body for this release. If `name` is specified, the specified name will be used; otherwise, a name will be automatically generated. If `body` is specified, the body will be pre-pended to the automatically generated notes.",
+        "in": "BODY",
+        "type": "boolean",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
       }
     ],
     "responses": [
@@ -37635,7 +38038,7 @@
     "removalDate": null,
     "description": "Creates a new repository using a repository template. Use the `template_owner` and `template_repo` route parameters to specify the repository to use as the template. The authenticated user must own or be a member of an organization that owns the repository. To check if a repository is available to use as a template, get the repository's information using the [Get a repository](https://docs.github.com/rest/reference/repos#get-a-repository) endpoint and check that the `is_template` key is `true`.\n\n**OAuth scope requirements**\n\nWhen using [OAuth](https://docs.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/), authorizations must include:\n\n*   `public_repo` scope or `repo` scope to create a public repository. Note: For GitHub AE, use `repo` scope to create an internal repository.\n*   `repo` scope to create a private repository",
     "documentationUrl": "https://docs.github.com/rest/reference/repos#create-a-repository-using-a-template",
-    "previews": [{ "name": "baptiste" }],
+    "previews": [],
     "headers": [],
     "parameters": [
       {
@@ -37934,6 +38337,51 @@
     "name": "Decline a repository invitation",
     "scope": "repos",
     "id": "declineInvitation",
+    "method": "DELETE",
+    "url": "/user/repository_invitations/{invitation_id}",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "removalDate": null,
+    "description": "",
+    "documentationUrl": "https://docs.github.com/rest/reference/repos#decline-a-repository-invitation",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "invitation_id",
+        "description": "invitation_id parameter",
+        "in": "PATH",
+        "type": "integer",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      { "code": 204, "description": "Response", "examples": null },
+      { "code": 304, "description": "Not modified", "examples": null },
+      { "code": 403, "description": "Forbidden", "examples": null },
+      { "code": 404, "description": "Resource not found", "examples": null },
+      { "code": 409, "description": "Conflict", "examples": null }
+    ],
+    "renamed": {
+      "before": { "scope": "repos", "id": "declineInvitation" },
+      "after": {
+        "scope": "repos",
+        "id": "declineInvitationForAuthenticatedUser"
+      },
+      "date": "2021-10-05",
+      "note": null
+    }
+  },
+  {
+    "name": "Decline a repository invitation",
+    "scope": "repos",
+    "id": "declineInvitationForAuthenticatedUser",
     "method": "DELETE",
     "url": "/user/repository_invitations/{invitation_id}",
     "isDeprecated": false,
@@ -38391,7 +38839,7 @@
     "removalDate": null,
     "description": "Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://help.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.\n\nWhen authenticated with admin or owner permissions to the repository, you can use this endpoint to disable required signed commits on a branch. You must enable branch protection to require signed commits.",
     "documentationUrl": "https://docs.github.com/rest/reference/repos#delete-commit-signature-protection",
-    "previews": [{ "name": "zzzax" }],
+    "previews": [],
     "headers": [],
     "parameters": [
       {
@@ -38814,7 +39262,7 @@
     "removalDate": null,
     "description": "",
     "documentationUrl": "https://docs.github.com/rest/reference/repos#delete-a-github-pages-site",
-    "previews": [{ "name": "switcheroo" }],
+    "previews": [],
     "headers": [],
     "parameters": [
       {
@@ -38847,11 +39295,6 @@
     "responses": [
       { "code": 204, "description": "Response", "examples": null },
       { "code": 404, "description": "Resource not found", "examples": null },
-      {
-        "code": 415,
-        "description": "Preview header missing",
-        "examples": null
-      },
       { "code": 422, "description": "Validation failed", "examples": null }
     ],
     "renamed": null
@@ -39597,6 +40040,113 @@
       }
     ],
     "responses": [{ "code": 204, "description": "Response", "examples": null }],
+    "renamed": null
+  },
+  {
+    "name": "Generate release notes content for a release",
+    "scope": "repos",
+    "id": "generateReleaseNotes",
+    "method": "POST",
+    "url": "/repos/{owner}/{repo}/releases/generate-notes",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "removalDate": null,
+    "description": "Generate a name and body describing a [release](https://docs.github.com/rest/reference/repos#releases). The body content will be markdown formatted and contain information like the changes since last release and users who contributed. The generated release notes are not saved anywhere. They are intended to be generated and used when creating a new release.",
+    "documentationUrl": "https://docs.github.com/rest/reference/repos#generate-release-notes",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "owner",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "repo",
+        "description": "",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "tag_name",
+        "description": "The tag name for the release. This can be an existing tag or a new one.",
+        "in": "BODY",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "target_commitish",
+        "description": "Specifies the commitish value that will be the target for the release's tag. Required if the supplied tag_name does not reference an existing tag. Ignored if the tag_name already exists.",
+        "in": "BODY",
+        "type": "string",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "previous_tag_name",
+        "description": "The name of the previous tag to use as the starting point for the release notes. Use to manually specify the range for the set of changes considered as part this release.",
+        "in": "BODY",
+        "type": "string",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "configuration_file_path",
+        "description": "Specifies a path to a file in the repository containing configuration settings used for generating the release notes. If unspecified, the configuration file located in the repository at '.github/release.yml' or '.github/release.yaml' will be used. If that is not present, the default configuration will be used.",
+        "in": "BODY",
+        "type": "string",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      {
+        "code": 200,
+        "description": "Name and body of generated release notes",
+        "examples": [
+          {
+            "data": "{\"name\":\"Release v1.0.0 is now available!\",\"body\":\"##Changes in Release v1.0.0 ... ##Contributors @monalisa\"}"
+          }
+        ]
+      },
+      { "code": 404, "description": "Resource not found", "examples": null }
+    ],
     "renamed": null
   },
   {
@@ -40776,7 +41326,7 @@
     "removalDate": null,
     "description": "Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://help.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.\n\nWhen authenticated with admin or owner permissions to the repository, you can use this endpoint to check whether a branch requires signed commits. An enabled status of `true` indicates you must sign commits on this branch. For more information, see [Signing commits with GPG](https://help.github.com/articles/signing-commits-with-gpg) in GitHub Help.\n\n**Note**: You must enable branch protection to require signed commits.",
     "documentationUrl": "https://docs.github.com/rest/reference/repos#get-commit-signature-protection",
-    "previews": [{ "name": "zzzax" }],
+    "previews": [],
     "headers": [],
     "parameters": [
       {
@@ -46875,7 +47425,7 @@
       },
       {
         "name": "visibility",
-        "description": "Can be `public` or `private`. If your organization is associated with an enterprise account using GitHub Enterprise Cloud or GitHub Enterprise Server 2.20+, `visibility` can also be `internal`. The `visibility` parameter overrides the `private` parameter when you use both along with the `nebula-preview` preview header.",
+        "description": "Can be `public` or `private`. If your organization is associated with an enterprise account using GitHub Enterprise Cloud or GitHub Enterprise Server 2.20+, `visibility` can also be `internal`.\"",
         "in": "BODY",
         "type": "string",
         "required": false,
@@ -48864,7 +49414,7 @@
     "removalDate": null,
     "description": "Find commits via various criteria on the default branch (usually `master`). This method returns up to 100 results [per page](https://docs.github.com/rest/overview/resources-in-the-rest-api#pagination).\n\nWhen searching for commits, you can get text match metadata for the **message** field when you provide the `text-match` media type. For more details about how to receive highlighted search results, see [Text match\nmetadata](https://docs.github.com/rest/reference/search#text-match-metadata).\n\nFor example, if you want to find commits related to CSS in the [octocat/Spoon-Knife](https://github.com/octocat/Spoon-Knife) repository. Your query would look something like this:\n\n`q=repo:octocat/Spoon-Knife+css`",
     "documentationUrl": "https://docs.github.com/rest/reference/search#search-commits",
-    "previews": [{ "name": "cloak" }],
+    "previews": [],
     "headers": [],
     "parameters": [
       {
@@ -48943,8 +49493,7 @@
           }
         ]
       },
-      { "code": 304, "description": "Not modified", "examples": null },
-      { "code": 415, "description": "Preview header missing", "examples": null }
+      { "code": 304, "description": "Not modified", "examples": null }
     ],
     "renamed": null
   },
@@ -49253,7 +49802,7 @@
         "description": "Response",
         "examples": [
           {
-            "data": "{\"total_count\":40,\"incomplete_results\":false,\"items\":[{\"id\":3081286,\"node_id\":\"MDEwOlJlcG9zaXRvcnkzMDgxMjg2\",\"name\":\"Tetris\",\"full_name\":\"dtrupenn/Tetris\",\"owner\":{\"login\":\"dtrupenn\",\"id\":872147,\"node_id\":\"MDQ6VXNlcjg3MjE0Nw==\",\"avatar_url\":\"https://secure.gravatar.com/avatar/e7956084e75f239de85d3a31bc172ace?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/dtrupenn\",\"received_events_url\":\"https://api.github.com/users/dtrupenn/received_events\",\"type\":\"User\",\"html_url\":\"https://github.com/octocat\",\"followers_url\":\"https://api.github.com/users/octocat/followers\",\"following_url\":\"https://api.github.com/users/octocat/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/octocat/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/octocat/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/octocat/subscriptions\",\"organizations_url\":\"https://api.github.com/users/octocat/orgs\",\"repos_url\":\"https://api.github.com/users/octocat/repos\",\"events_url\":\"https://api.github.com/users/octocat/events{/privacy}\",\"site_admin\":true},\"private\":false,\"html_url\":\"https://github.com/dtrupenn/Tetris\",\"description\":\"A C implementation of Tetris using Pennsim through LC4\",\"fork\":false,\"url\":\"https://api.github.com/repos/dtrupenn/Tetris\",\"created_at\":\"2012-01-01T00:31:50Z\",\"updated_at\":\"2013-01-05T17:58:47Z\",\"pushed_at\":\"2012-01-01T00:37:02Z\",\"homepage\":\"https://github.com\",\"size\":524,\"stargazers_count\":1,\"watchers_count\":1,\"language\":\"Assembly\",\"forks_count\":0,\"open_issues_count\":0,\"master_branch\":\"master\",\"default_branch\":\"master\",\"score\":1,\"archive_url\":\"https://api.github.com/repos/dtrupenn/Tetris/{archive_format}{/ref}\",\"assignees_url\":\"https://api.github.com/repos/dtrupenn/Tetris/assignees{/user}\",\"blobs_url\":\"https://api.github.com/repos/dtrupenn/Tetris/git/blobs{/sha}\",\"branches_url\":\"https://api.github.com/repos/dtrupenn/Tetris/branches{/branch}\",\"collaborators_url\":\"https://api.github.com/repos/dtrupenn/Tetris/collaborators{/collaborator}\",\"comments_url\":\"https://api.github.com/repos/dtrupenn/Tetris/comments{/number}\",\"commits_url\":\"https://api.github.com/repos/dtrupenn/Tetris/commits{/sha}\",\"compare_url\":\"https://api.github.com/repos/dtrupenn/Tetris/compare/{base}...{head}\",\"contents_url\":\"https://api.github.com/repos/dtrupenn/Tetris/contents/{+path}\",\"contributors_url\":\"https://api.github.com/repos/dtrupenn/Tetris/contributors\",\"deployments_url\":\"https://api.github.com/repos/dtrupenn/Tetris/deployments\",\"downloads_url\":\"https://api.github.com/repos/dtrupenn/Tetris/downloads\",\"events_url\":\"https://api.github.com/repos/dtrupenn/Tetris/events\",\"forks_url\":\"https://api.github.com/repos/dtrupenn/Tetris/forks\",\"git_commits_url\":\"https://api.github.com/repos/dtrupenn/Tetris/git/commits{/sha}\",\"git_refs_url\":\"https://api.github.com/repos/dtrupenn/Tetris/git/refs{/sha}\",\"git_tags_url\":\"https://api.github.com/repos/dtrupenn/Tetris/git/tags{/sha}\",\"git_url\":\"git:github.com/dtrupenn/Tetris.git\",\"issue_comment_url\":\"https://api.github.com/repos/dtrupenn/Tetris/issues/comments{/number}\",\"issue_events_url\":\"https://api.github.com/repos/dtrupenn/Tetris/issues/events{/number}\",\"issues_url\":\"https://api.github.com/repos/dtrupenn/Tetris/issues{/number}\",\"keys_url\":\"https://api.github.com/repos/dtrupenn/Tetris/keys{/key_id}\",\"labels_url\":\"https://api.github.com/repos/dtrupenn/Tetris/labels{/name}\",\"languages_url\":\"https://api.github.com/repos/dtrupenn/Tetris/languages\",\"merges_url\":\"https://api.github.com/repos/dtrupenn/Tetris/merges\",\"milestones_url\":\"https://api.github.com/repos/dtrupenn/Tetris/milestones{/number}\",\"notifications_url\":\"https://api.github.com/repos/dtrupenn/Tetris/notifications{?since,all,participating}\",\"pulls_url\":\"https://api.github.com/repos/dtrupenn/Tetris/pulls{/number}\",\"releases_url\":\"https://api.github.com/repos/dtrupenn/Tetris/releases{/id}\",\"ssh_url\":\"git@github.com:dtrupenn/Tetris.git\",\"stargazers_url\":\"https://api.github.com/repos/dtrupenn/Tetris/stargazers\",\"statuses_url\":\"https://api.github.com/repos/dtrupenn/Tetris/statuses/{sha}\",\"subscribers_url\":\"https://api.github.com/repos/dtrupenn/Tetris/subscribers\",\"subscription_url\":\"https://api.github.com/repos/dtrupenn/Tetris/subscription\",\"tags_url\":\"https://api.github.com/repos/dtrupenn/Tetris/tags\",\"teams_url\":\"https://api.github.com/repos/dtrupenn/Tetris/teams\",\"trees_url\":\"https://api.github.com/repos/dtrupenn/Tetris/git/trees{/sha}\",\"clone_url\":\"https://github.com/dtrupenn/Tetris.git\",\"mirror_url\":\"git:git.example.com/dtrupenn/Tetris\",\"hooks_url\":\"https://api.github.com/repos/dtrupenn/Tetris/hooks\",\"svn_url\":\"https://svn.github.com/dtrupenn/Tetris\",\"forks\":1,\"open_issues\":1,\"watchers\":1,\"has_issues\":true,\"has_projects\":true,\"has_pages\":true,\"has_wiki\":true,\"has_downloads\":true,\"archived\":true,\"disabled\":true,\"license\":{\"key\":\"mit\",\"name\":\"MIT License\",\"url\":\"https://api.github.com/licenses/mit\",\"spdx_id\":\"MIT\",\"node_id\":\"MDc6TGljZW5zZW1pdA==\",\"html_url\":\"https://api.github.com/licenses/mit\"}}]}"
+            "data": "{\"total_count\":40,\"incomplete_results\":false,\"items\":[{\"id\":3081286,\"node_id\":\"MDEwOlJlcG9zaXRvcnkzMDgxMjg2\",\"name\":\"Tetris\",\"full_name\":\"dtrupenn/Tetris\",\"owner\":{\"login\":\"dtrupenn\",\"id\":872147,\"node_id\":\"MDQ6VXNlcjg3MjE0Nw==\",\"avatar_url\":\"https://secure.gravatar.com/avatar/e7956084e75f239de85d3a31bc172ace?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/dtrupenn\",\"received_events_url\":\"https://api.github.com/users/dtrupenn/received_events\",\"type\":\"User\",\"html_url\":\"https://github.com/octocat\",\"followers_url\":\"https://api.github.com/users/octocat/followers\",\"following_url\":\"https://api.github.com/users/octocat/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/octocat/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/octocat/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/octocat/subscriptions\",\"organizations_url\":\"https://api.github.com/users/octocat/orgs\",\"repos_url\":\"https://api.github.com/users/octocat/repos\",\"events_url\":\"https://api.github.com/users/octocat/events{/privacy}\",\"site_admin\":true},\"private\":false,\"html_url\":\"https://github.com/dtrupenn/Tetris\",\"description\":\"A C implementation of Tetris using Pennsim through LC4\",\"fork\":false,\"url\":\"https://api.github.com/repos/dtrupenn/Tetris\",\"created_at\":\"2012-01-01T00:31:50Z\",\"updated_at\":\"2013-01-05T17:58:47Z\",\"pushed_at\":\"2012-01-01T00:37:02Z\",\"homepage\":\"https://github.com\",\"size\":524,\"stargazers_count\":1,\"watchers_count\":1,\"language\":\"Assembly\",\"forks_count\":0,\"open_issues_count\":0,\"master_branch\":\"master\",\"default_branch\":\"master\",\"score\":1,\"archive_url\":\"https://api.github.com/repos/dtrupenn/Tetris/{archive_format}{/ref}\",\"assignees_url\":\"https://api.github.com/repos/dtrupenn/Tetris/assignees{/user}\",\"blobs_url\":\"https://api.github.com/repos/dtrupenn/Tetris/git/blobs{/sha}\",\"branches_url\":\"https://api.github.com/repos/dtrupenn/Tetris/branches{/branch}\",\"collaborators_url\":\"https://api.github.com/repos/dtrupenn/Tetris/collaborators{/collaborator}\",\"comments_url\":\"https://api.github.com/repos/dtrupenn/Tetris/comments{/number}\",\"commits_url\":\"https://api.github.com/repos/dtrupenn/Tetris/commits{/sha}\",\"compare_url\":\"https://api.github.com/repos/dtrupenn/Tetris/compare/{base}...{head}\",\"contents_url\":\"https://api.github.com/repos/dtrupenn/Tetris/contents/{+path}\",\"contributors_url\":\"https://api.github.com/repos/dtrupenn/Tetris/contributors\",\"deployments_url\":\"https://api.github.com/repos/dtrupenn/Tetris/deployments\",\"downloads_url\":\"https://api.github.com/repos/dtrupenn/Tetris/downloads\",\"events_url\":\"https://api.github.com/repos/dtrupenn/Tetris/events\",\"forks_url\":\"https://api.github.com/repos/dtrupenn/Tetris/forks\",\"git_commits_url\":\"https://api.github.com/repos/dtrupenn/Tetris/git/commits{/sha}\",\"git_refs_url\":\"https://api.github.com/repos/dtrupenn/Tetris/git/refs{/sha}\",\"git_tags_url\":\"https://api.github.com/repos/dtrupenn/Tetris/git/tags{/sha}\",\"git_url\":\"git:github.com/dtrupenn/Tetris.git\",\"issue_comment_url\":\"https://api.github.com/repos/dtrupenn/Tetris/issues/comments{/number}\",\"issue_events_url\":\"https://api.github.com/repos/dtrupenn/Tetris/issues/events{/number}\",\"issues_url\":\"https://api.github.com/repos/dtrupenn/Tetris/issues{/number}\",\"keys_url\":\"https://api.github.com/repos/dtrupenn/Tetris/keys{/key_id}\",\"labels_url\":\"https://api.github.com/repos/dtrupenn/Tetris/labels{/name}\",\"languages_url\":\"https://api.github.com/repos/dtrupenn/Tetris/languages\",\"merges_url\":\"https://api.github.com/repos/dtrupenn/Tetris/merges\",\"milestones_url\":\"https://api.github.com/repos/dtrupenn/Tetris/milestones{/number}\",\"notifications_url\":\"https://api.github.com/repos/dtrupenn/Tetris/notifications{?since,all,participating}\",\"pulls_url\":\"https://api.github.com/repos/dtrupenn/Tetris/pulls{/number}\",\"releases_url\":\"https://api.github.com/repos/dtrupenn/Tetris/releases{/id}\",\"ssh_url\":\"git@github.com:dtrupenn/Tetris.git\",\"stargazers_url\":\"https://api.github.com/repos/dtrupenn/Tetris/stargazers\",\"statuses_url\":\"https://api.github.com/repos/dtrupenn/Tetris/statuses/{sha}\",\"subscribers_url\":\"https://api.github.com/repos/dtrupenn/Tetris/subscribers\",\"subscription_url\":\"https://api.github.com/repos/dtrupenn/Tetris/subscription\",\"tags_url\":\"https://api.github.com/repos/dtrupenn/Tetris/tags\",\"teams_url\":\"https://api.github.com/repos/dtrupenn/Tetris/teams\",\"trees_url\":\"https://api.github.com/repos/dtrupenn/Tetris/git/trees{/sha}\",\"clone_url\":\"https://github.com/dtrupenn/Tetris.git\",\"mirror_url\":\"git:git.example.com/dtrupenn/Tetris\",\"hooks_url\":\"https://api.github.com/repos/dtrupenn/Tetris/hooks\",\"svn_url\":\"https://svn.github.com/dtrupenn/Tetris\",\"forks\":1,\"open_issues\":1,\"watchers\":1,\"has_issues\":true,\"has_projects\":true,\"has_pages\":true,\"has_wiki\":true,\"has_downloads\":true,\"archived\":true,\"disabled\":true,\"visibility\":\"private\",\"license\":{\"key\":\"mit\",\"name\":\"MIT License\",\"url\":\"https://api.github.com/licenses/mit\",\"spdx_id\":\"MIT\",\"node_id\":\"MDc6TGljZW5zZW1pdA==\",\"html_url\":\"https://api.github.com/licenses/mit\"}}]}"
           }
         ]
       },
@@ -49492,6 +50041,7 @@
           }
         ]
       },
+      { "code": 304, "description": "Not modified", "examples": null },
       {
         "code": 404,
         "description": "Repository is public, or secret scanning is disabled for the repository, or the resource is not found",
@@ -49543,7 +50093,20 @@
       },
       {
         "name": "secret_type",
-        "description": "A comma separated list of secret types to return. By default all secret types are returned.",
+        "description": "A comma-separated list of secret types to return. By default all secret types are returned.",
+        "in": "QUERY",
+        "type": "string",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "resolution",
+        "description": "A comma-separated list of resolutions. Only secret scanning alerts with one of these resolutions are listed. Valid resolutions are `false_positive`, `wont_fix`, `revoked`, `pattern_edited`, `pattern_deleted` or `used_in_tests`.",
         "in": "QUERY",
         "type": "string",
         "required": false,
@@ -49651,7 +50214,20 @@
       },
       {
         "name": "secret_type",
-        "description": "A comma separated list of secret types to return. By default all secret types are returned. See \"[About secret scanning for private repositories](https://docs.github.com/code-security/secret-security/about-secret-scanning#about-secret-scanning-for-private-repositories)\" for a complete list of secret types (API slug).",
+        "description": "A comma-separated list of secret types to return. By default all secret types are returned. See \"[About secret scanning for private repositories](https://docs.github.com/code-security/secret-security/about-secret-scanning#about-secret-scanning-for-private-repositories)\" for a complete list of secret types (API slug).",
+        "in": "QUERY",
+        "type": "string",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "resolution",
+        "description": "A comma-separated list of resolutions. Only secret scanning alerts with one of these resolutions are listed. Valid resolutions are `false_positive`, `wont_fix`, `revoked`, `pattern_edited`, `pattern_deleted` or `used_in_tests`.",
         "in": "QUERY",
         "type": "string",
         "required": false,
@@ -54264,6 +54840,61 @@
       { "code": 404, "description": "Resource not found", "examples": null },
       { "code": 422, "description": "Validation failed", "examples": null }
     ],
+    "renamed": {
+      "before": { "scope": "users", "id": "addEmailForAuthenticated" },
+      "after": { "scope": "users", "id": "addEmailForAuthenticatedUser" },
+      "date": "2021-10-05",
+      "note": null
+    }
+  },
+  {
+    "name": "Add an email address for the authenticated user",
+    "scope": "users",
+    "id": "addEmailForAuthenticatedUser",
+    "method": "POST",
+    "url": "/user/emails",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "removalDate": null,
+    "description": "This endpoint is accessible with the `user` scope.",
+    "documentationUrl": "https://docs.github.com/rest/reference/users#add-an-email-address-for-the-authenticated-user",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "emails",
+        "description": "Adds one or more email addresses to your GitHub account. Must contain at least one email address. **Note:** Alternatively, you can pass a single email address or an `array` of emails addresses directly, but we recommend that you pass an object using the `emails` key.",
+        "in": "BODY",
+        "type": "string[]",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      {
+        "code": 201,
+        "description": "Response",
+        "examples": [
+          {
+            "data": "[{\"email\":\"octocat@octocat.org\",\"primary\":false,\"verified\":false,\"visibility\":\"public\"},{\"email\":\"octocat@github.com\",\"primary\":false,\"verified\":false,\"visibility\":null},{\"email\":\"mona@github.com\",\"primary\":false,\"verified\":false,\"visibility\":null}]"
+          }
+        ]
+      },
+      { "code": 304, "description": "Not modified", "examples": null },
+      {
+        "code": 401,
+        "description": "Requires authentication",
+        "examples": null
+      },
+      { "code": 403, "description": "Forbidden", "examples": null },
+      { "code": 404, "description": "Resource not found", "examples": null },
+      { "code": 422, "description": "Validation failed", "examples": null }
+    ],
     "renamed": null
   },
   {
@@ -54509,12 +55140,141 @@
       { "code": 404, "description": "Resource not found", "examples": null },
       { "code": 422, "description": "Validation failed", "examples": null }
     ],
+    "renamed": {
+      "before": { "scope": "users", "id": "createGpgKeyForAuthenticated" },
+      "after": { "scope": "users", "id": "createGpgKeyForAuthenticatedUser" },
+      "date": "2021-10-05",
+      "note": null
+    }
+  },
+  {
+    "name": "Create a GPG key for the authenticated user",
+    "scope": "users",
+    "id": "createGpgKeyForAuthenticatedUser",
+    "method": "POST",
+    "url": "/user/gpg_keys",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "removalDate": null,
+    "description": "Adds a GPG key to the authenticated user's GitHub account. Requires that you are authenticated via Basic Auth, or OAuth with at least `write:gpg_key` [scope](https://docs.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).",
+    "documentationUrl": "https://docs.github.com/rest/reference/users#create-a-gpg-key-for-the-authenticated-user",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "armored_public_key",
+        "description": "A GPG key in ASCII-armored format.",
+        "in": "BODY",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      {
+        "code": 201,
+        "description": "Response",
+        "examples": [
+          {
+            "data": "{\"id\":3,\"primary_key_id\":2,\"key_id\":\"3262EFF25BA0D270\",\"public_key\":\"xsBNBFayYZ...\",\"emails\":[{\"email\":\"mastahyeti@users.noreply.github.com\",\"verified\":true}],\"subkeys\":[{\"id\":4,\"primary_key_id\":3,\"key_id\":\"4A595D4C72EE49C7\",\"public_key\":\"zsBNBFayYZ...\",\"emails\":[],\"subkeys\":[],\"can_sign\":false,\"can_encrypt_comms\":true,\"can_encrypt_storage\":true,\"can_certify\":false,\"created_at\":\"2016-03-24T11:31:04-06:00\",\"expires_at\":\"2016-03-24T11:31:04-07:00\"}],\"can_sign\":true,\"can_encrypt_comms\":false,\"can_encrypt_storage\":false,\"can_certify\":true,\"created_at\":\"2016-03-24T11:31:04-06:00\",\"expires_at\":\"2016-03-24T11:31:04-07:00\",\"raw_key\":\"\\\"-----BEGIN PGP PUBLIC KEY BLOCK-----\\\\nVersion: GnuPG v2\\\\n\\\\n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\\\\nIts/HFYRLiFgDLmTlxo=\\\\n=+OzK\\\\n-----END PGP PUBLIC KEY BLOCK-----\\\"\"}"
+          }
+        ]
+      },
+      { "code": 304, "description": "Not modified", "examples": null },
+      {
+        "code": 401,
+        "description": "Requires authentication",
+        "examples": null
+      },
+      { "code": 403, "description": "Forbidden", "examples": null },
+      { "code": 404, "description": "Resource not found", "examples": null },
+      { "code": 422, "description": "Validation failed", "examples": null }
+    ],
     "renamed": null
   },
   {
     "name": "Create a public SSH key for the authenticated user",
     "scope": "users",
     "id": "createPublicSshKeyForAuthenticated",
+    "method": "POST",
+    "url": "/user/keys",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "removalDate": null,
+    "description": "Adds a public SSH key to the authenticated user's GitHub account. Requires that you are authenticated via Basic Auth, or OAuth with at least `write:public_key` [scope](https://docs.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).",
+    "documentationUrl": "https://docs.github.com/rest/reference/users#create-a-public-ssh-key-for-the-authenticated-user",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "title",
+        "description": "A descriptive name for the new key.",
+        "in": "BODY",
+        "type": "string",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "key",
+        "description": "The public SSH key to add to your GitHub account.",
+        "in": "BODY",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": "^ssh-(rsa|dss|ed25519) |^ecdsa-sha2-nistp(256|384|521) ",
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      {
+        "code": 201,
+        "description": "Response",
+        "examples": [
+          {
+            "data": "{\"key\":\"2Sg8iYjAxxmI2LvUXpJjkYrMxURPc8r+dB7TJyvv1234\",\"id\":2,\"url\":\"https://api.github.com/user/keys/2\",\"title\":\"ssh-rsa AAAAB3NzaC1yc2EAAA\",\"created_at\":\"2020-06-11T21:31:57Z\",\"verified\":false,\"read_only\":false}"
+          }
+        ]
+      },
+      { "code": 304, "description": "Not modified", "examples": null },
+      {
+        "code": 401,
+        "description": "Requires authentication",
+        "examples": null
+      },
+      { "code": 403, "description": "Forbidden", "examples": null },
+      { "code": 404, "description": "Resource not found", "examples": null },
+      { "code": 422, "description": "Validation failed", "examples": null }
+    ],
+    "renamed": {
+      "before": {
+        "scope": "users",
+        "id": "createPublicSshKeyForAuthenticated"
+      },
+      "after": {
+        "scope": "users",
+        "id": "createPublicSshKeyForAuthenticatedUser"
+      },
+      "date": "2021-10-05",
+      "note": null
+    }
+  },
+  {
+    "name": "Create a public SSH key for the authenticated user",
+    "scope": "users",
+    "id": "createPublicSshKeyForAuthenticatedUser",
     "method": "POST",
     "url": "/user/keys",
     "isDeprecated": false,
@@ -54614,6 +55374,53 @@
       { "code": 404, "description": "Resource not found", "examples": null },
       { "code": 422, "description": "Validation failed", "examples": null }
     ],
+    "renamed": {
+      "before": { "scope": "users", "id": "deleteEmailForAuthenticated" },
+      "after": { "scope": "users", "id": "deleteEmailForAuthenticatedUser" },
+      "date": "2021-10-05",
+      "note": null
+    }
+  },
+  {
+    "name": "Delete an email address for the authenticated user",
+    "scope": "users",
+    "id": "deleteEmailForAuthenticatedUser",
+    "method": "DELETE",
+    "url": "/user/emails",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "removalDate": null,
+    "description": "This endpoint is accessible with the `user` scope.",
+    "documentationUrl": "https://docs.github.com/rest/reference/users#delete-an-email-address-for-the-authenticated-user",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "emails",
+        "description": "Email addresses associated with the GitHub user account.",
+        "in": "BODY",
+        "type": "string[]",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      { "code": 204, "description": "Response", "examples": null },
+      { "code": 304, "description": "Not modified", "examples": null },
+      {
+        "code": 401,
+        "description": "Requires authentication",
+        "examples": null
+      },
+      { "code": 403, "description": "Forbidden", "examples": null },
+      { "code": 404, "description": "Resource not found", "examples": null },
+      { "code": 422, "description": "Validation failed", "examples": null }
+    ],
     "renamed": null
   },
   {
@@ -54656,12 +55463,111 @@
       { "code": 404, "description": "Resource not found", "examples": null },
       { "code": 422, "description": "Validation failed", "examples": null }
     ],
+    "renamed": {
+      "before": { "scope": "users", "id": "deleteGpgKeyForAuthenticated" },
+      "after": { "scope": "users", "id": "deleteGpgKeyForAuthenticatedUser" },
+      "date": "2021-10-05",
+      "note": null
+    }
+  },
+  {
+    "name": "Delete a GPG key for the authenticated user",
+    "scope": "users",
+    "id": "deleteGpgKeyForAuthenticatedUser",
+    "method": "DELETE",
+    "url": "/user/gpg_keys/{gpg_key_id}",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "removalDate": null,
+    "description": "Removes a GPG key from the authenticated user's GitHub account. Requires that you are authenticated via Basic Auth or via OAuth with at least `admin:gpg_key` [scope](https://docs.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).",
+    "documentationUrl": "https://docs.github.com/rest/reference/users#delete-a-gpg-key-for-the-authenticated-user",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "gpg_key_id",
+        "description": "gpg_key_id parameter",
+        "in": "PATH",
+        "type": "integer",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      { "code": 204, "description": "Response", "examples": null },
+      { "code": 304, "description": "Not modified", "examples": null },
+      {
+        "code": 401,
+        "description": "Requires authentication",
+        "examples": null
+      },
+      { "code": 403, "description": "Forbidden", "examples": null },
+      { "code": 404, "description": "Resource not found", "examples": null },
+      { "code": 422, "description": "Validation failed", "examples": null }
+    ],
     "renamed": null
   },
   {
     "name": "Delete a public SSH key for the authenticated user",
     "scope": "users",
     "id": "deletePublicSshKeyForAuthenticated",
+    "method": "DELETE",
+    "url": "/user/keys/{key_id}",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "removalDate": null,
+    "description": "Removes a public SSH key from the authenticated user's GitHub account. Requires that you are authenticated via Basic Auth or via OAuth with at least `admin:public_key` [scope](https://docs.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).",
+    "documentationUrl": "https://docs.github.com/rest/reference/users#delete-a-public-ssh-key-for-the-authenticated-user",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "key_id",
+        "description": "key_id parameter",
+        "in": "PATH",
+        "type": "integer",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      { "code": 204, "description": "Response", "examples": null },
+      { "code": 304, "description": "Not modified", "examples": null },
+      {
+        "code": 401,
+        "description": "Requires authentication",
+        "examples": null
+      },
+      { "code": 403, "description": "Forbidden", "examples": null },
+      { "code": 404, "description": "Resource not found", "examples": null }
+    ],
+    "renamed": {
+      "before": {
+        "scope": "users",
+        "id": "deletePublicSshKeyForAuthenticated"
+      },
+      "after": {
+        "scope": "users",
+        "id": "deletePublicSshKeyForAuthenticatedUser"
+      },
+      "date": "2021-10-05",
+      "note": null
+    }
+  },
+  {
+    "name": "Delete a public SSH key for the authenticated user",
+    "scope": "users",
+    "id": "deletePublicSshKeyForAuthenticatedUser",
     "method": "DELETE",
     "url": "/user/keys/{key_id}",
     "isDeprecated": false,
@@ -54939,12 +55845,123 @@
       { "code": 403, "description": "Forbidden", "examples": null },
       { "code": 404, "description": "Resource not found", "examples": null }
     ],
+    "renamed": {
+      "before": { "scope": "users", "id": "getGpgKeyForAuthenticated" },
+      "after": { "scope": "users", "id": "getGpgKeyForAuthenticatedUser" },
+      "date": "2021-10-05",
+      "note": null
+    }
+  },
+  {
+    "name": "Get a GPG key for the authenticated user",
+    "scope": "users",
+    "id": "getGpgKeyForAuthenticatedUser",
+    "method": "GET",
+    "url": "/user/gpg_keys/{gpg_key_id}",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "removalDate": null,
+    "description": "View extended details for a single GPG key. Requires that you are authenticated via Basic Auth or via OAuth with at least `read:gpg_key` [scope](https://docs.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).",
+    "documentationUrl": "https://docs.github.com/rest/reference/users#get-a-gpg-key-for-the-authenticated-user",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "gpg_key_id",
+        "description": "gpg_key_id parameter",
+        "in": "PATH",
+        "type": "integer",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      {
+        "code": 200,
+        "description": "Response",
+        "examples": [
+          {
+            "data": "{\"id\":3,\"primary_key_id\":2,\"key_id\":\"3262EFF25BA0D270\",\"public_key\":\"xsBNBFayYZ...\",\"emails\":[{\"email\":\"mastahyeti@users.noreply.github.com\",\"verified\":true}],\"subkeys\":[{\"id\":4,\"primary_key_id\":3,\"key_id\":\"4A595D4C72EE49C7\",\"public_key\":\"zsBNBFayYZ...\",\"emails\":[],\"subkeys\":[],\"can_sign\":false,\"can_encrypt_comms\":true,\"can_encrypt_storage\":true,\"can_certify\":false,\"created_at\":\"2016-03-24T11:31:04-06:00\",\"expires_at\":\"2016-03-24T11:31:04-07:00\"}],\"can_sign\":true,\"can_encrypt_comms\":false,\"can_encrypt_storage\":false,\"can_certify\":true,\"created_at\":\"2016-03-24T11:31:04-06:00\",\"expires_at\":\"2016-03-24T11:31:04-07:00\",\"raw_key\":\"\\\"-----BEGIN PGP PUBLIC KEY BLOCK-----\\\\nVersion: GnuPG v2\\\\n\\\\n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\\\\nIts/HFYRLiFgDLmTlxo=\\\\n=+OzK\\\\n-----END PGP PUBLIC KEY BLOCK-----\\\"\"}"
+          }
+        ]
+      },
+      { "code": 304, "description": "Not modified", "examples": null },
+      {
+        "code": 401,
+        "description": "Requires authentication",
+        "examples": null
+      },
+      { "code": 403, "description": "Forbidden", "examples": null },
+      { "code": 404, "description": "Resource not found", "examples": null }
+    ],
     "renamed": null
   },
   {
     "name": "Get a public SSH key for the authenticated user",
     "scope": "users",
     "id": "getPublicSshKeyForAuthenticated",
+    "method": "GET",
+    "url": "/user/keys/{key_id}",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "removalDate": null,
+    "description": "View extended details for a single public SSH key. Requires that you are authenticated via Basic Auth or via OAuth with at least `read:public_key` [scope](https://docs.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).",
+    "documentationUrl": "https://docs.github.com/rest/reference/users#get-a-public-ssh-key-for-the-authenticated-user",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "key_id",
+        "description": "key_id parameter",
+        "in": "PATH",
+        "type": "integer",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      {
+        "code": 200,
+        "description": "Response",
+        "examples": [
+          {
+            "data": "{\"key\":\"2Sg8iYjAxxmI2LvUXpJjkYrMxURPc8r+dB7TJyvv1234\",\"id\":2,\"url\":\"https://api.github.com/user/keys/2\",\"title\":\"ssh-rsa AAAAB3NzaC1yc2EAAA\",\"created_at\":\"2020-06-11T21:31:57Z\",\"verified\":false,\"read_only\":false}"
+          }
+        ]
+      },
+      { "code": 304, "description": "Not modified", "examples": null },
+      {
+        "code": 401,
+        "description": "Requires authentication",
+        "examples": null
+      },
+      { "code": 403, "description": "Forbidden", "examples": null },
+      { "code": 404, "description": "Resource not found", "examples": null }
+    ],
+    "renamed": {
+      "before": { "scope": "users", "id": "getPublicSshKeyForAuthenticated" },
+      "after": {
+        "scope": "users",
+        "id": "getPublicSshKeyForAuthenticatedUser"
+      },
+      "date": "2021-10-05",
+      "note": null
+    }
+  },
+  {
+    "name": "Get a public SSH key for the authenticated user",
+    "scope": "users",
+    "id": "getPublicSshKeyForAuthenticatedUser",
     "method": "GET",
     "url": "/user/keys/{key_id}",
     "isDeprecated": false,
@@ -55079,6 +56096,47 @@
       { "code": 404, "description": "Resource not found", "examples": null },
       { "code": 415, "description": "Preview header missing", "examples": null }
     ],
+    "renamed": {
+      "before": { "scope": "users", "id": "listBlockedByAuthenticated" },
+      "after": { "scope": "users", "id": "listBlockedByAuthenticatedUser" },
+      "date": "2021-10-05",
+      "note": null
+    }
+  },
+  {
+    "name": "List users blocked by the authenticated user",
+    "scope": "users",
+    "id": "listBlockedByAuthenticatedUser",
+    "method": "GET",
+    "url": "/user/blocks",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "removalDate": null,
+    "description": "List the users you've blocked on your personal account.",
+    "documentationUrl": "https://docs.github.com/rest/reference/users#list-users-blocked-by-the-authenticated-user",
+    "previews": [],
+    "headers": [],
+    "parameters": [],
+    "responses": [
+      {
+        "code": 200,
+        "description": "Response",
+        "examples": [
+          {
+            "data": "[{\"login\":\"octocat\",\"id\":1,\"node_id\":\"MDQ6VXNlcjE=\",\"avatar_url\":\"https://github.com/images/error/octocat_happy.gif\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/octocat\",\"html_url\":\"https://github.com/octocat\",\"followers_url\":\"https://api.github.com/users/octocat/followers\",\"following_url\":\"https://api.github.com/users/octocat/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/octocat/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/octocat/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/octocat/subscriptions\",\"organizations_url\":\"https://api.github.com/users/octocat/orgs\",\"repos_url\":\"https://api.github.com/users/octocat/repos\",\"events_url\":\"https://api.github.com/users/octocat/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/octocat/received_events\",\"type\":\"User\",\"site_admin\":false}]"
+          }
+        ]
+      },
+      { "code": 304, "description": "Not modified", "examples": null },
+      {
+        "code": 401,
+        "description": "Requires authentication",
+        "examples": null
+      },
+      { "code": 403, "description": "Forbidden", "examples": null },
+      { "code": 404, "description": "Resource not found", "examples": null },
+      { "code": 415, "description": "Preview header missing", "examples": null }
+    ],
     "renamed": null
   },
   {
@@ -55141,12 +56199,145 @@
       { "code": 403, "description": "Forbidden", "examples": null },
       { "code": 404, "description": "Resource not found", "examples": null }
     ],
+    "renamed": {
+      "before": { "scope": "users", "id": "listEmailsForAuthenticated" },
+      "after": { "scope": "users", "id": "listEmailsForAuthenticatedUser" },
+      "date": "2021-10-05",
+      "note": null
+    }
+  },
+  {
+    "name": "List email addresses for the authenticated user",
+    "scope": "users",
+    "id": "listEmailsForAuthenticatedUser",
+    "method": "GET",
+    "url": "/user/emails",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "removalDate": null,
+    "description": "Lists all of your email addresses, and specifies which one is visible to the public. This endpoint is accessible with the `user:email` scope.",
+    "documentationUrl": "https://docs.github.com/rest/reference/users#list-email-addresses-for-the-authenticated-user",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "per_page",
+        "description": "Results per page (max 100)",
+        "in": "QUERY",
+        "type": "integer",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "page",
+        "description": "Page number of the results to fetch.",
+        "in": "QUERY",
+        "type": "integer",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      {
+        "code": 200,
+        "description": "Response",
+        "examples": [
+          {
+            "data": "[{\"email\":\"octocat@github.com\",\"verified\":true,\"primary\":true,\"visibility\":\"public\"}]"
+          }
+        ]
+      },
+      { "code": 304, "description": "Not modified", "examples": null },
+      {
+        "code": 401,
+        "description": "Requires authentication",
+        "examples": null
+      },
+      { "code": 403, "description": "Forbidden", "examples": null },
+      { "code": 404, "description": "Resource not found", "examples": null }
+    ],
     "renamed": null
   },
   {
     "name": "List the people the authenticated user follows",
     "scope": "users",
     "id": "listFollowedByAuthenticated",
+    "method": "GET",
+    "url": "/user/following",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "removalDate": null,
+    "description": "Lists the people who the authenticated user follows.",
+    "documentationUrl": "https://docs.github.com/rest/reference/users#list-the-people-the-authenticated-user-follows",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "per_page",
+        "description": "Results per page (max 100)",
+        "in": "QUERY",
+        "type": "integer",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "page",
+        "description": "Page number of the results to fetch.",
+        "in": "QUERY",
+        "type": "integer",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      {
+        "code": 200,
+        "description": "Response",
+        "examples": [
+          {
+            "data": "[{\"login\":\"octocat\",\"id\":1,\"node_id\":\"MDQ6VXNlcjE=\",\"avatar_url\":\"https://github.com/images/error/octocat_happy.gif\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/octocat\",\"html_url\":\"https://github.com/octocat\",\"followers_url\":\"https://api.github.com/users/octocat/followers\",\"following_url\":\"https://api.github.com/users/octocat/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/octocat/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/octocat/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/octocat/subscriptions\",\"organizations_url\":\"https://api.github.com/users/octocat/orgs\",\"repos_url\":\"https://api.github.com/users/octocat/repos\",\"events_url\":\"https://api.github.com/users/octocat/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/octocat/received_events\",\"type\":\"User\",\"site_admin\":false}]"
+          }
+        ]
+      },
+      { "code": 304, "description": "Not modified", "examples": null },
+      {
+        "code": 401,
+        "description": "Requires authentication",
+        "examples": null
+      },
+      { "code": 403, "description": "Forbidden", "examples": null }
+    ],
+    "renamed": {
+      "before": { "scope": "users", "id": "listFollowedByAuthenticated" },
+      "after": { "scope": "users", "id": "listFollowedByAuthenticatedUser" },
+      "date": "2021-10-05",
+      "note": null
+    }
+  },
+  {
+    "name": "List the people the authenticated user follows",
+    "scope": "users",
+    "id": "listFollowedByAuthenticatedUser",
     "method": "GET",
     "url": "/user/following",
     "isDeprecated": false,
@@ -55459,6 +56650,73 @@
       { "code": 403, "description": "Forbidden", "examples": null },
       { "code": 404, "description": "Resource not found", "examples": null }
     ],
+    "renamed": {
+      "before": { "scope": "users", "id": "listGpgKeysForAuthenticated" },
+      "after": { "scope": "users", "id": "listGpgKeysForAuthenticatedUser" },
+      "date": "2021-10-05",
+      "note": null
+    }
+  },
+  {
+    "name": "List GPG keys for the authenticated user",
+    "scope": "users",
+    "id": "listGpgKeysForAuthenticatedUser",
+    "method": "GET",
+    "url": "/user/gpg_keys",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "removalDate": null,
+    "description": "Lists the current user's GPG keys. Requires that you are authenticated via Basic Auth or via OAuth with at least `read:gpg_key` [scope](https://docs.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).",
+    "documentationUrl": "https://docs.github.com/rest/reference/users#list-gpg-keys-for-the-authenticated-user",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "per_page",
+        "description": "Results per page (max 100)",
+        "in": "QUERY",
+        "type": "integer",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "page",
+        "description": "Page number of the results to fetch.",
+        "in": "QUERY",
+        "type": "integer",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      {
+        "code": 200,
+        "description": "Response",
+        "examples": [
+          {
+            "data": "[{\"id\":3,\"primary_key_id\":2,\"key_id\":\"3262EFF25BA0D270\",\"public_key\":\"xsBNBFayYZ...\",\"emails\":[{\"email\":\"mastahyeti@users.noreply.github.com\",\"verified\":true}],\"subkeys\":[{\"id\":4,\"primary_key_id\":3,\"key_id\":\"4A595D4C72EE49C7\",\"public_key\":\"zsBNBFayYZ...\",\"emails\":[],\"subkeys\":[],\"can_sign\":false,\"can_encrypt_comms\":true,\"can_encrypt_storage\":true,\"can_certify\":false,\"created_at\":\"2016-03-24T11:31:04-06:00\",\"expires_at\":\"2016-03-24T11:31:04-07:00\"}],\"can_sign\":true,\"can_encrypt_comms\":false,\"can_encrypt_storage\":false,\"can_certify\":true,\"created_at\":\"2016-03-24T11:31:04-06:00\",\"expires_at\":\"2016-03-24T11:31:04-07:00\",\"raw_key\":\"string\"}]"
+          }
+        ]
+      },
+      { "code": 304, "description": "Not modified", "examples": null },
+      {
+        "code": 401,
+        "description": "Requires authentication",
+        "examples": null
+      },
+      { "code": 403, "description": "Forbidden", "examples": null },
+      { "code": 404, "description": "Resource not found", "examples": null }
+    ],
     "renamed": null
   },
   {
@@ -55532,6 +56790,76 @@
     "name": "List public email addresses for the authenticated user",
     "scope": "users",
     "id": "listPublicEmailsForAuthenticated",
+    "method": "GET",
+    "url": "/user/public_emails",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "removalDate": null,
+    "description": "Lists your publicly visible email address, which you can set with the [Set primary email visibility for the authenticated user](https://docs.github.com/rest/reference/users#set-primary-email-visibility-for-the-authenticated-user) endpoint. This endpoint is accessible with the `user:email` scope.",
+    "documentationUrl": "https://docs.github.com/rest/reference/users#list-public-email-addresses-for-the-authenticated-user",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "per_page",
+        "description": "Results per page (max 100)",
+        "in": "QUERY",
+        "type": "integer",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "page",
+        "description": "Page number of the results to fetch.",
+        "in": "QUERY",
+        "type": "integer",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      {
+        "code": 200,
+        "description": "Response",
+        "examples": [
+          {
+            "data": "[{\"email\":\"octocat@github.com\",\"verified\":true,\"primary\":true,\"visibility\":\"public\"}]"
+          }
+        ]
+      },
+      { "code": 304, "description": "Not modified", "examples": null },
+      {
+        "code": 401,
+        "description": "Requires authentication",
+        "examples": null
+      },
+      { "code": 403, "description": "Forbidden", "examples": null },
+      { "code": 404, "description": "Resource not found", "examples": null }
+    ],
+    "renamed": {
+      "before": { "scope": "users", "id": "listPublicEmailsForAuthenticated" },
+      "after": {
+        "scope": "users",
+        "id": "listPublicEmailsForAuthenticatedUser"
+      },
+      "date": "2021-10-05",
+      "note": null
+    }
+  },
+  {
+    "name": "List public email addresses for the authenticated user",
+    "scope": "users",
+    "id": "listPublicEmailsForAuthenticatedUser",
     "method": "GET",
     "url": "/user/public_emails",
     "isDeprecated": false,
@@ -55713,12 +57041,143 @@
       { "code": 403, "description": "Forbidden", "examples": null },
       { "code": 404, "description": "Resource not found", "examples": null }
     ],
+    "renamed": {
+      "before": { "scope": "users", "id": "listPublicSshKeysForAuthenticated" },
+      "after": {
+        "scope": "users",
+        "id": "listPublicSshKeysForAuthenticatedUser"
+      },
+      "date": "2021-10-05",
+      "note": null
+    }
+  },
+  {
+    "name": "List public SSH keys for the authenticated user",
+    "scope": "users",
+    "id": "listPublicSshKeysForAuthenticatedUser",
+    "method": "GET",
+    "url": "/user/keys",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "removalDate": null,
+    "description": "Lists the public SSH keys for the authenticated user's GitHub account. Requires that you are authenticated via Basic Auth or via OAuth with at least `read:public_key` [scope](https://docs.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).",
+    "documentationUrl": "https://docs.github.com/rest/reference/users#list-public-ssh-keys-for-the-authenticated-user",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "per_page",
+        "description": "Results per page (max 100)",
+        "in": "QUERY",
+        "type": "integer",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "page",
+        "description": "Page number of the results to fetch.",
+        "in": "QUERY",
+        "type": "integer",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      {
+        "code": 200,
+        "description": "Response",
+        "examples": [
+          {
+            "data": "[{\"key\":\"2Sg8iYjAxxmI2LvUXpJjkYrMxURPc8r+dB7TJyvv1234\",\"id\":2,\"url\":\"https://api.github.com/user/keys/2\",\"title\":\"ssh-rsa AAAAB3NzaC1yc2EAAA\",\"created_at\":\"2020-06-11T21:31:57Z\",\"verified\":false,\"read_only\":false},{\"key\":\"2Sg8iYjAxxmI2LvUXpJjkYrMxURPc8r+dB7TJy931234\",\"id\":3,\"url\":\"https://api.github.com/user/keys/3\",\"title\":\"ssh-rsa AAAAB3NzaC1yc2EAAB\",\"created_at\":\"2020-07-11T21:31:57Z\",\"verified\":false,\"read_only\":false}]"
+          }
+        ]
+      },
+      { "code": 304, "description": "Not modified", "examples": null },
+      {
+        "code": 401,
+        "description": "Requires authentication",
+        "examples": null
+      },
+      { "code": 403, "description": "Forbidden", "examples": null },
+      { "code": 404, "description": "Resource not found", "examples": null }
+    ],
     "renamed": null
   },
   {
     "name": "Set primary email visibility for the authenticated user",
     "scope": "users",
     "id": "setPrimaryEmailVisibilityForAuthenticated",
+    "method": "PATCH",
+    "url": "/user/email/visibility",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "removalDate": null,
+    "description": "Sets the visibility for your primary email addresses.",
+    "documentationUrl": "https://docs.github.com/rest/reference/users#set-primary-email-visibility-for-the-authenticated-user",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "visibility",
+        "description": "Denotes whether an email is publicly visible.",
+        "in": "BODY",
+        "type": "string",
+        "required": true,
+        "enum": ["public", "private"],
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      {
+        "code": 200,
+        "description": "Response",
+        "examples": [
+          {
+            "data": "[{\"email\":\"octocat@github.com\",\"primary\":true,\"verified\":true,\"visibility\":\"private\"}]"
+          }
+        ]
+      },
+      { "code": 304, "description": "Not modified", "examples": null },
+      {
+        "code": 401,
+        "description": "Requires authentication",
+        "examples": null
+      },
+      { "code": 403, "description": "Forbidden", "examples": null },
+      { "code": 404, "description": "Resource not found", "examples": null },
+      { "code": 422, "description": "Validation failed", "examples": null }
+    ],
+    "renamed": {
+      "before": {
+        "scope": "users",
+        "id": "setPrimaryEmailVisibilityForAuthenticated"
+      },
+      "after": {
+        "scope": "users",
+        "id": "setPrimaryEmailVisibilityForAuthenticatedUser"
+      },
+      "date": "2021-10-05",
+      "note": null
+    }
+  },
+  {
+    "name": "Set primary email visibility for the authenticated user",
+    "scope": "users",
+    "id": "setPrimaryEmailVisibilityForAuthenticatedUser",
     "method": "PATCH",
     "url": "/user/email/visibility",
     "isDeprecated": false,

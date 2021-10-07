@@ -1,6 +1,6 @@
 ---
 name: List GPG keys for the authenticated user
-example: octokit.rest.users.listGpgKeysForAuthenticated()
+example: octokit.rest.users.listGpgKeysForAuthenticatedUser()
 route: GET /user/gpg_keys
 scope: users
 type: API method
@@ -8,12 +8,10 @@ type: API method
 
 # List GPG keys for the authenticated user
 
-**Deprecated:** This method has been renamed to users.listGpgKeysForAuthenticatedUser
-
 Lists the current user's GPG keys. Requires that you are authenticated via Basic Auth or via OAuth with at least `read:gpg_key` [scope](https://docs.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
 
 ```js
-octokit.rest.users.listGpgKeysForAuthenticated();
+octokit.rest.users.listGpgKeysForAuthenticatedUser();
 ```
 
 ## Parameters

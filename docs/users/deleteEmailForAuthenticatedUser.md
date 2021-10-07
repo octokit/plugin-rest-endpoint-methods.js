@@ -1,6 +1,6 @@
 ---
 name: Delete an email address for the authenticated user
-example: octokit.rest.users.deleteEmailForAuthenticated({ emails })
+example: octokit.rest.users.deleteEmailForAuthenticatedUser({ emails })
 route: DELETE /user/emails
 scope: users
 type: API method
@@ -8,12 +8,10 @@ type: API method
 
 # Delete an email address for the authenticated user
 
-**Deprecated:** This method has been renamed to users.deleteEmailForAuthenticatedUser
-
 This endpoint is accessible with the `user` scope.
 
 ```js
-octokit.rest.users.deleteEmailForAuthenticated({
+octokit.rest.users.deleteEmailForAuthenticatedUser({
   emails,
 });
 ```

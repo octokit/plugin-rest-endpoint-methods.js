@@ -72,6 +72,11 @@ Text describing the contents of the tag.
 If specified, a discussion of the specified category is created and linked to the release. The value must be a category that already exists in the repository. For more information, see "[Managing categories for discussions in your repository](https://docs.github.com/discussions/managing-discussions-for-your-community/managing-categories-for-discussions-in-your-repository)."
 
 </td></tr>
+<tr><td>generate_release_notes</td><td>no</td><td>
+
+Whether to automatically generate the name and body for this release. If `name` is specified, the specified name will be used; otherwise, a name will be automatically generated. If `body` is specified, the body will be pre-pended to the automatically generated notes.
+
+</td></tr>
   </tbody>
 </table>
 
