@@ -75,6 +75,11 @@ Page number of the results to fetch.
 <tr><td>created</td><td>no</td><td>
 
 </td></tr>
+<tr><td>exclude_pull_requests</td><td>no</td><td>
+
+If `true` pull requests are omitted from the response (empty array).
+
+</td></tr>
   </tbody>
 </table>
 
