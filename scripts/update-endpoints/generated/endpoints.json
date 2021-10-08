@@ -1467,8 +1467,8 @@
         "deprecated": null
       },
       {
-        "name": "attempt_num",
-        "description": "The attempt number of the workflow run.",
+        "name": "run_id",
+        "description": "The id of the workflow run.",
         "in": "PATH",
         "type": "integer",
         "required": true,
@@ -2751,6 +2751,19 @@
         "validation": null,
         "alias": null,
         "deprecated": null
+      },
+      {
+        "name": "exclude_pull_requests",
+        "description": "If `true` pull requests are omitted from the response (empty array).",
+        "in": "QUERY",
+        "type": "boolean",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
       }
     ],
     "responses": [
@@ -2825,6 +2838,19 @@
         "in": "PATH",
         "type": "integer",
         "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "exclude_pull_requests",
+        "description": "If `true` pull requests are omitted from the response (empty array).",
+        "in": "QUERY",
+        "type": "boolean",
+        "required": false,
         "enum": null,
         "allowNull": false,
         "mapToData": null,
@@ -4112,6 +4138,19 @@
         "validation": null,
         "alias": null,
         "deprecated": null
+      },
+      {
+        "name": "exclude_pull_requests",
+        "description": "If `true` pull requests are omitted from the response (empty array).",
+        "in": "QUERY",
+        "type": "boolean",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
       }
     ],
     "responses": [
@@ -4264,6 +4303,19 @@
         "description": "",
         "in": "QUERY",
         "type": "string",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "exclude_pull_requests",
+        "description": "If `true` pull requests are omitted from the response (empty array).",
+        "in": "QUERY",
+        "type": "boolean",
         "required": false,
         "enum": null,
         "allowNull": false,

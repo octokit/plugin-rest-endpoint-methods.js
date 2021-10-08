@@ -1,6 +1,6 @@
 ---
 name: Download workflow run attempt logs
-example: octokit.rest.actions.downloadWorkflowRunAttemptLogs({ owner, repo, attempt_num, attempt_number })
+example: octokit.rest.actions.downloadWorkflowRunAttemptLogs({ owner, repo, run_id, attempt_number })
 route: GET /repos/{owner}/{repo}/actions/runs/{run_id}/attempts/{attempt_number}/logs
 scope: actions
 type: API method
@@ -17,7 +17,7 @@ GitHub Apps must have the `actions:read` permission to use this endpoint.
 octokit.rest.actions.downloadWorkflowRunAttemptLogs({
   owner,
   repo,
-  attempt_num,
+  run_id,
   attempt_number,
 });
 ```
@@ -39,9 +39,9 @@ octokit.rest.actions.downloadWorkflowRunAttemptLogs({
 <tr><td>repo</td><td>yes</td><td>
 
 </td></tr>
-<tr><td>attempt_num</td><td>yes</td><td>
+<tr><td>run_id</td><td>yes</td><td>
 
-The attempt number of the workflow run.
+The id of the workflow run.
 
 </td></tr>
 <tr><td>attempt_number</td><td>yes</td><td>

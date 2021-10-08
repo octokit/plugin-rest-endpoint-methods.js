@@ -49,6 +49,11 @@ The id of the workflow run.
 The attempt number of the workflow run.
 
 </td></tr>
+<tr><td>exclude_pull_requests</td><td>no</td><td>
+
+If `true` pull requests are omitted from the response (empty array).
+
+</td></tr>
   </tbody>
 </table>
 
