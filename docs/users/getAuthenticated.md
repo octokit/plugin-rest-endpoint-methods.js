@@ -13,11 +13,11 @@ If the authenticated user is authenticated through basic authentication or OAuth
 If the authenticated user is authenticated through OAuth without the `user` scope, then the response lists only public profile information.
 
 ```js
-octokit.rest.users.getAuthenticated();
+octokit.rest.users.getAuthenticated(); 
 ```
 
 ## Parameters
 
-This endpoint has no parameters
+This endpoint has no parameters 
 
 See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/users#get-the-authenticated-user).
