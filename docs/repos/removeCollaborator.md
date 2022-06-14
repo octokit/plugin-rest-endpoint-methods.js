@@ -29,11 +29,17 @@ octokit.rest.repos.removeCollaborator({
   <tbody>
     <tr><td>owner</td><td>yes</td><td>
 
+The account owner of the repository. The name is not case sensitive.
+
 </td></tr>
 <tr><td>repo</td><td>yes</td><td>
 
+The name of the repository. The name is not case sensitive.
+
 </td></tr>
 <tr><td>username</td><td>yes</td><td>
+
+The handle for the GitHub user account.
 
 </td></tr>
   </tbody>

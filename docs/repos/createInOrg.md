@@ -37,6 +37,8 @@ octokit.rest.repos.createInOrg({
   <tbody>
     <tr><td>org</td><td>yes</td><td>
 
+The organization name. The name is not case sensitive.
+
 </td></tr>
 <tr><td>name</td><td>yes</td><td>
 
@@ -60,7 +62,7 @@ Whether the repository is private.
 </td></tr>
 <tr><td>visibility</td><td>no</td><td>
 
-Can be `public` or `private`. If your organization is associated with an enterprise account using GitHub Enterprise Cloud or GitHub Enterprise Server 2.20+, `visibility` can also be `internal`. Note: For GitHub Enterprise Server and GitHub AE, this endpoint will only list repositories available to all users on the enterprise. For more information, see "[Creating an internal repository](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/about-repository-visibility#about-internal-repositories)" in the GitHub Help documentation.
+Can be `public` or `private`. If your organization is associated with an enterprise account using GitHub Enterprise Cloud or GitHub Enterprise Server 2.20+, `visibility` can also be `internal`. Note: For GitHub Enterprise Server and GitHub AE, this endpoint will only list repositories available to all users on the enterprise. For more information, see "[Creating an internal repository](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/about-repository-visibility#about-internal-repositories)" in the GitHub Help documentation.
 
 </td></tr>
 <tr><td>has_issues</td><td>no</td><td>
@@ -100,7 +102,7 @@ Desired language or platform [.gitignore template](https://github.com/github/git
 </td></tr>
 <tr><td>license_template</td><td>no</td><td>
 
-Choose an [open source license template](https://choosealicense.com/) that best suits your needs, and then use the [license keyword](https://help.github.com/articles/licensing-a-repository/#searching-github-by-license-type) as the `license_template` string. For example, "mit" or "mpl-2.0".
+Choose an [open source license template](https://choosealicense.com/) that best suits your needs, and then use the [license keyword](https://docs.github.com/articles/licensing-a-repository/#searching-github-by-license-type) as the `license_template` string. For example, "mit" or "mpl-2.0".
 
 </td></tr>
 <tr><td>allow_squash_merge</td><td>no</td><td>
@@ -126,6 +128,11 @@ Either `true` to allow auto-merge on pull requests, or `false` to disallow auto-
 <tr><td>delete_branch_on_merge</td><td>no</td><td>
 
 Either `true` to allow automatically deleting head branches when pull requests are merged, or `false` to prevent automatic deletion.
+
+</td></tr>
+<tr><td>use_squash_pr_title_as_default</td><td>no</td><td>
+
+Either `true` to allow squash-merge commits to use pull request title, or `false` to use commit message.
 
 </td></tr>
   </tbody>

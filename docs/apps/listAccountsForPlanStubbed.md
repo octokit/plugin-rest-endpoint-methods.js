@@ -31,22 +31,22 @@ octokit.rest.apps.listAccountsForPlanStubbed({
   <tbody>
     <tr><td>plan_id</td><td>yes</td><td>
 
-plan_id parameter
+The unique identifier of the plan.
 
 </td></tr>
 <tr><td>sort</td><td>no</td><td>
 
-One of `created` (when the repository was starred) or `updated` (when it was last pushed to).
+The property to sort the results by. `created` means when the repository was starred. `updated` means when the repository was last pushed to.
 
 </td></tr>
 <tr><td>direction</td><td>no</td><td>
 
-To return the oldest accounts first, set to `asc`. Can be one of `asc` or `desc`. Ignored without the `sort` parameter.
+To return the oldest accounts first, set to `asc`. Ignored without the `sort` parameter.
 
 </td></tr>
 <tr><td>per_page</td><td>no</td><td>
 
-Results per page (max 100)
+The number of results per page (max 100).
 
 </td></tr>
 <tr><td>page</td><td>no</td><td>

@@ -28,7 +28,7 @@ octokit.rest.projects.moveColumn({
   <tbody>
     <tr><td>column_id</td><td>yes</td><td>
 
-column_id parameter
+The unique identifier of the column.
 
 </td></tr>
 <tr><td>position</td><td>yes</td><td>

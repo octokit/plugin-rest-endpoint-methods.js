@@ -28,6 +28,8 @@ octokit.rest.projects.createColumn({
   <tbody>
     <tr><td>project_id</td><td>yes</td><td>
 
+The unique identifier of the project.
+
 </td></tr>
 <tr><td>name</td><td>yes</td><td>
 

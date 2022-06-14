@@ -37,10 +37,10 @@ The slug version of the enterprise name. You can also substitute this value with
 </td></tr>
 <tr><td>org_id</td><td>yes</td><td>
 
-Unique identifier of an organization.
+The unique identifier of the organization.
 
 </td></tr>
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/enterprise-admin#enable-a-selected-organization-for-github-actions-in-an-enterprise).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/actions#enable-a-selected-organization-for-github-actions-in-an-enterprise).

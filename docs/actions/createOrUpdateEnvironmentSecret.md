@@ -38,7 +38,7 @@ console.log(encrypted);
 
 #### Example encrypting a secret using Python
 
-Encrypt your secret using [pynacl](https://pynacl.readthedocs.io/en/stable/public/#nacl-public-sealedbox) with Python 3.
+Encrypt your secret using [pynacl](https://pynacl.readthedocs.io/en/latest/public/#nacl-public-sealedbox) with Python 3.
 
 ```
 from base64 import b64encode
@@ -106,6 +106,8 @@ octokit.rest.actions.createOrUpdateEnvironmentSecret({
   <tbody>
     <tr><td>repository_id</td><td>yes</td><td>
 
+The unique identifier of the repository.
+
 </td></tr>
 <tr><td>environment_name</td><td>yes</td><td>
 
@@ -114,7 +116,7 @@ The name of the environment
 </td></tr>
 <tr><td>secret_name</td><td>yes</td><td>
 
-secret_name parameter
+The name of the secret.
 
 </td></tr>
 <tr><td>encrypted_value</td><td>yes</td><td>

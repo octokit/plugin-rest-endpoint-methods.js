@@ -32,8 +32,12 @@ octokit.rest.actions.enableSelectedRepositoryGithubActionsOrganization({
   <tbody>
     <tr><td>org</td><td>yes</td><td>
 
+The organization name. The name is not case sensitive.
+
 </td></tr>
 <tr><td>repository_id</td><td>yes</td><td>
+
+The unique identifier of the repository.
 
 </td></tr>
   </tbody>

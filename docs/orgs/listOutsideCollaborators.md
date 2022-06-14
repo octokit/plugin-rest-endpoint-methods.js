@@ -29,17 +29,17 @@ octokit.rest.orgs.listOutsideCollaborators({
   <tbody>
     <tr><td>org</td><td>yes</td><td>
 
+The organization name. The name is not case sensitive.
+
 </td></tr>
 <tr><td>filter</td><td>no</td><td>
 
-Filter the list of outside collaborators. Can be one of:  
-\* `2fa_disabled`: Outside collaborators without [two-factor authentication](https://github.com/blog/1614-two-factor-authentication) enabled.  
-\* `all`: All outside collaborators.
+Filter the list of outside collaborators. `2fa_disabled` means that only outside collaborators without [two-factor authentication](https://github.com/blog/1614-two-factor-authentication) enabled will be returned.
 
 </td></tr>
 <tr><td>per_page</td><td>no</td><td>
 
-Results per page (max 100)
+The number of results per page (max 100).
 
 </td></tr>
 <tr><td>page</td><td>no</td><td>

@@ -45,7 +45,7 @@ octokit.rest.search.code({
   <tbody>
     <tr><td>q</td><td>yes</td><td>
 
-The query contains one or more search keywords and qualifiers. Qualifiers allow you to limit your search to specific areas of GitHub. The REST API supports the same qualifiers as GitHub.com. To learn more about the format of the query, see [Constructing a search query](https://docs.github.com/rest/reference/search#constructing-a-search-query). See "[Searching code](https://help.github.com/articles/searching-code/)" for a detailed list of qualifiers.
+The query contains one or more search keywords and qualifiers. Qualifiers allow you to limit your search to specific areas of GitHub. The REST API supports the same qualifiers as the web interface for GitHub. To learn more about the format of the query, see [Constructing a search query](https://docs.github.com/rest/reference/search#constructing-a-search-query). See "[Searching code](https://docs.github.com/search-github/searching-on-github/searching-code)" for a detailed list of qualifiers.
 
 </td></tr>
 <tr><td>sort</td><td>no</td><td>
@@ -60,7 +60,7 @@ Determines whether the first search result returned is the highest number of mat
 </td></tr>
 <tr><td>per_page</td><td>no</td><td>
 
-Results per page (max 100)
+The number of results per page (max 100).
 
 </td></tr>
 <tr><td>page</td><td>no</td><td>

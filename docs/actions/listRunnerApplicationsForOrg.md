@@ -31,6 +31,8 @@ octokit.rest.actions.listRunnerApplicationsForOrg({
   <tbody>
     <tr><td>org</td><td>yes</td><td>
 
+The organization name. The name is not case sensitive.
+
 </td></tr>
   </tbody>
 </table>

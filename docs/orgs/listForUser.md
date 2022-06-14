@@ -8,7 +8,7 @@ type: API method
 
 # List organizations for a user
 
-List [public organization memberships](https://help.github.com/articles/publicizing-or-concealing-organization-membership) for the specified user.
+List [public organization memberships](https://docs.github.com/articles/publicizing-or-concealing-organization-membership) for the specified user.
 
 This method only lists _public_ memberships, regardless of authentication. If you need to fetch all of the organization memberships (public and private) for the authenticated user, use the [List organizations for the authenticated user](https://docs.github.com/rest/reference/orgs#list-organizations-for-the-authenticated-user) API instead.
 
@@ -31,10 +31,12 @@ octokit.rest.orgs.listForUser({
   <tbody>
     <tr><td>username</td><td>yes</td><td>
 
+The handle for the GitHub user account.
+
 </td></tr>
 <tr><td>per_page</td><td>no</td><td>
 
-Results per page (max 100)
+The number of results per page (max 100).
 
 </td></tr>
 <tr><td>page</td><td>no</td><td>

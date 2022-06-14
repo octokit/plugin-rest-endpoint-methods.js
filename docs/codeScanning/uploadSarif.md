@@ -8,7 +8,7 @@ type: API method
 
 # Upload an analysis as SARIF data
 
-Uploads SARIF data containing the results of a code scanning analysis to make the results available in a repository. You must use an access token with the `security_events` scope to use this endpoint. GitHub Apps must have the `security_events` write permission to use this endpoint.
+Uploads SARIF data containing the results of a code scanning analysis to make the results available in a repository. You must use an access token with the `security_events` scope to use this endpoint for private repositories. You can also use tokens with the `public_repo` scope for public repositories only. GitHub Apps must have the `security_events` write permission to use this endpoint.
 
 There are two places where you can upload code scanning results.
 
@@ -50,8 +50,12 @@ octokit.rest.codeScanning.uploadSarif({
   <tbody>
     <tr><td>owner</td><td>yes</td><td>
 
+The account owner of the repository. The name is not case sensitive.
+
 </td></tr>
 <tr><td>repo</td><td>yes</td><td>
+
+The name of the repository. The name is not case sensitive.
 
 </td></tr>
 <tr><td>commit_sha</td><td>yes</td><td>

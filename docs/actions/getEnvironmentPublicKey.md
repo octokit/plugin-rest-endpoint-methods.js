@@ -30,6 +30,8 @@ octokit.rest.actions.getEnvironmentPublicKey({
   <tbody>
     <tr><td>repository_id</td><td>yes</td><td>
 
+The unique identifier of the repository.
+
 </td></tr>
 <tr><td>environment_name</td><td>yes</td><td>
 

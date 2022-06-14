@@ -22,7 +22,7 @@ the ref _is_ behind the default branch for the repository, we will attempt to me
 the API will return a successful merge commit. If merge conflicts prevent the merge from succeeding, the API will
 return a failure response.
 
-By default, [commit statuses](https://docs.github.com/rest/reference/repos#statuses) for every submitted context must be in a `success`
+By default, [commit statuses](https://docs.github.com/rest/commits/statuses) for every submitted context must be in a `success`
 state. The `required_contexts` parameter allows you to specify a subset of contexts that must be `success`, or to
 specify contexts that have not yet been submitted. You are not required to use commit statuses to deploy. If you do
 not require any contexts or create any commit statuses, the deployment will always succeed.
@@ -79,8 +79,12 @@ octokit.rest.repos.createDeployment({
   <tbody>
     <tr><td>owner</td><td>yes</td><td>
 
+The account owner of the repository. The name is not case sensitive.
+
 </td></tr>
 <tr><td>repo</td><td>yes</td><td>
+
+The name of the repository. The name is not case sensitive.
 
 </td></tr>
 <tr><td>ref</td><td>yes</td><td>
@@ -100,7 +104,7 @@ Attempts to automatically merge the default branch into the requested ref, if it
 </td></tr>
 <tr><td>required_contexts</td><td>no</td><td>
 
-The [status](https://docs.github.com/rest/reference/repos#statuses) contexts to verify against commit status checks. If you omit this parameter, GitHub verifies all unique contexts before creating a deployment. To bypass checking entirely, pass an empty array. Defaults to all unique contexts.
+The [status](https://docs.github.com/rest/commits/statuses) contexts to verify against commit status checks. If you omit this parameter, GitHub verifies all unique contexts before creating a deployment. To bypass checking entirely, pass an empty array. Defaults to all unique contexts.
 
 </td></tr>
 <tr><td>payload</td><td>no</td><td>

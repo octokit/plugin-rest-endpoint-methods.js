@@ -32,10 +32,12 @@ octokit.rest.orgs.cancelInvitation({
   <tbody>
     <tr><td>org</td><td>yes</td><td>
 
+The organization name. The name is not case sensitive.
+
 </td></tr>
 <tr><td>invitation_id</td><td>yes</td><td>
 
-invitation_id parameter
+The unique identifier of the invitation.
 
 </td></tr>
   </tbody>

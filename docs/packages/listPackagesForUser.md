@@ -33,15 +33,17 @@ octokit.rest.packages.listPackagesForUser({
   <tbody>
     <tr><td>package_type</td><td>yes</td><td>
 
-The type of supported package. Can be one of `npm`, `maven`, `rubygems`, `nuget`, `docker`, or `container`. Packages in GitHub's Gradle registry have the type `maven`. Docker images pushed to GitHub's Container registry (`ghcr.io`) have the type `container`. You can use the type `docker` to find images that were pushed to GitHub's Docker registry (`docker.pkg.github.com`), even if these have now been migrated to the Container registry.
+The type of supported package. Packages in GitHub's Gradle registry have the type `maven`. Docker images pushed to GitHub's Container registry (`ghcr.io`) have the type `container`. You can use the type `docker` to find images that were pushed to GitHub's Docker registry (`docker.pkg.github.com`), even if these have now been migrated to the Container registry.
 
 </td></tr>
 <tr><td>visibility</td><td>no</td><td>
 
-The selected visibility of the packages. Can be one of `public`, `private`, or `internal`. Only `container` package_types currently support `internal` visibility properly. For other ecosystems `internal` is synonymous with `private`. This parameter is optional and only filters an existing result set.
+The selected visibility of the packages. Only `container` package_types currently support `internal` visibility properly. For other ecosystems `internal` is synonymous with `private`. This parameter is optional and only filters an existing result set.
 
 </td></tr>
 <tr><td>username</td><td>yes</td><td>
+
+The handle for the GitHub user account.
 
 </td></tr>
   </tbody>

@@ -8,7 +8,7 @@ type: API method
 
 # Update pull request review protection
 
-Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://help.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
+Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
 
 Updating pull request review enforcement requires admin or owner permissions to the repository and branch protection to be enabled.
 
@@ -35,8 +35,12 @@ octokit.rest.repos.updatePullRequestReviewProtection({
   <tbody>
     <tr><td>owner</td><td>yes</td><td>
 
+The account owner of the repository. The name is not case sensitive.
+
 </td></tr>
 <tr><td>repo</td><td>yes</td><td>
+
+The name of the repository. The name is not case sensitive.
 
 </td></tr>
 <tr><td>branch</td><td>yes</td><td>
@@ -46,7 +50,7 @@ The name of the branch.
 </td></tr>
 <tr><td>dismissal_restrictions</td><td>no</td><td>
 
-Specify which users and teams can dismiss pull request reviews. Pass an empty `dismissal_restrictions` object to disable. User and team `dismissal_restrictions` are only available for organization-owned repositories. Omit this parameter for personal repositories.
+Specify which users, teams, and apps can dismiss pull request reviews. Pass an empty `dismissal_restrictions` object to disable. User and team `dismissal_restrictions` are only available for organization-owned repositories. Omit this parameter for personal repositories.
 
 </td></tr>
 <tr><td>dismissal_restrictions.users</td><td>no</td><td>
@@ -59,6 +63,11 @@ The list of user `login`s with dismissal access
 The list of team `slug`s with dismissal access
 
 </td></tr>
+<tr><td>dismissal_restrictions.apps</td><td>no</td><td>
+
+The list of app `slug`s with dismissal access
+
+</td></tr>
 <tr><td>dismiss_stale_reviews</td><td>no</td><td>
 
 Set to `true` if you want to automatically dismiss approving reviews when someone pushes a new commit.
@@ -66,12 +75,32 @@ Set to `true` if you want to automatically dismiss approving reviews when someon
 </td></tr>
 <tr><td>require_code_owner_reviews</td><td>no</td><td>
 
-Blocks merging pull requests until [code owners](https://help.github.com/articles/about-code-owners/) have reviewed.
+Blocks merging pull requests until [code owners](https://docs.github.com/articles/about-code-owners/) have reviewed.
 
 </td></tr>
 <tr><td>required_approving_review_count</td><td>no</td><td>
 
-Specifies the number of reviewers required to approve pull requests. Use a number between 1 and 6.
+Specifies the number of reviewers required to approve pull requests. Use a number between 1 and 6 or 0 to not require reviewers.
+
+</td></tr>
+<tr><td>bypass_pull_request_allowances</td><td>no</td><td>
+
+Allow specific users, teams, or apps to bypass pull request requirements.
+
+</td></tr>
+<tr><td>bypass_pull_request_allowances.users</td><td>no</td><td>
+
+The list of user `login`s allowed to bypass pull request requirements.
+
+</td></tr>
+<tr><td>bypass_pull_request_allowances.teams</td><td>no</td><td>
+
+The list of team `slug`s allowed to bypass pull request requirements.
+
+</td></tr>
+<tr><td>bypass_pull_request_allowances.apps</td><td>no</td><td>
+
+The list of app `slug`s allowed to bypass pull request requirements.
 
 </td></tr>
   </tbody>

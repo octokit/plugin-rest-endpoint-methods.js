@@ -33,16 +33,22 @@ octokit.rest.pulls.dismissReview({
   <tbody>
     <tr><td>owner</td><td>yes</td><td>
 
+The account owner of the repository. The name is not case sensitive.
+
 </td></tr>
 <tr><td>repo</td><td>yes</td><td>
+
+The name of the repository. The name is not case sensitive.
 
 </td></tr>
 <tr><td>pull_number</td><td>yes</td><td>
 
+The number that identifies the pull request.
+
 </td></tr>
 <tr><td>review_id</td><td>yes</td><td>
 
-review_id parameter
+The unique identifier of the review.
 
 </td></tr>
 <tr><td>message</td><td>yes</td><td>

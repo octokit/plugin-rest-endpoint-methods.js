@@ -30,6 +30,8 @@ octokit.rest.projects.createForOrg({
   <tbody>
     <tr><td>org</td><td>yes</td><td>
 
+The organization name. The name is not case sensitive.
+
 </td></tr>
 <tr><td>name</td><td>yes</td><td>
 

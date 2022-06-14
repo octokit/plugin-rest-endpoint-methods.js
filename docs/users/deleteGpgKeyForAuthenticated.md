@@ -31,7 +31,7 @@ octokit.rest.users.deleteGpgKeyForAuthenticated({
   <tbody>
     <tr><td>gpg_key_id</td><td>yes</td><td>
 
-gpg_key_id parameter
+The unique identifier of the GPG key.
 
 </td></tr>
   </tbody>

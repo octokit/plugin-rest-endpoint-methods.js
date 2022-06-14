@@ -30,7 +30,7 @@ octokit.rest.apps.deleteToken({
   <tbody>
     <tr><td>client_id</td><td>yes</td><td>
 
-The client ID of your GitHub app.
+The client ID of the GitHub app.
 
 </td></tr>
 <tr><td>access_token</td><td>yes</td><td>

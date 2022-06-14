@@ -30,6 +30,8 @@ octokit.rest.actions.listEnvironmentSecrets({
   <tbody>
     <tr><td>repository_id</td><td>yes</td><td>
 
+The unique identifier of the repository.
+
 </td></tr>
 <tr><td>environment_name</td><td>yes</td><td>
 
@@ -38,7 +40,7 @@ The name of the environment
 </td></tr>
 <tr><td>per_page</td><td>no</td><td>
 
-Results per page (max 100)
+The number of results per page (max 100).
 
 </td></tr>
 <tr><td>page</td><td>no</td><td>

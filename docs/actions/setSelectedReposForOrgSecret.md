@@ -31,10 +31,12 @@ octokit.rest.actions.setSelectedReposForOrgSecret({
   <tbody>
     <tr><td>org</td><td>yes</td><td>
 
+The organization name. The name is not case sensitive.
+
 </td></tr>
 <tr><td>secret_name</td><td>yes</td><td>
 
-secret_name parameter
+The name of the secret.
 
 </td></tr>
 <tr><td>selected_repository_ids</td><td>yes</td><td>

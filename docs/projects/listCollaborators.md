@@ -29,18 +29,17 @@ octokit.rest.projects.listCollaborators({
   <tbody>
     <tr><td>project_id</td><td>yes</td><td>
 
+The unique identifier of the project.
+
 </td></tr>
 <tr><td>affiliation</td><td>no</td><td>
 
-Filters the collaborators by their affiliation. Can be one of:  
-\* `outside`: Outside collaborators of a project that are not a member of the project's organization.  
-\* `direct`: Collaborators with permissions to a project, regardless of organization membership status.  
-\* `all`: All collaborators the authenticated user can see.
+Filters the collaborators by their affiliation. `outside` means outside collaborators of a project that are not a member of the project's organization. `direct` means collaborators with permissions to a project, regardless of organization membership status. `all` means all collaborators the authenticated user can see.
 
 </td></tr>
 <tr><td>per_page</td><td>no</td><td>
 
-Results per page (max 100)
+The number of results per page (max 100).
 
 </td></tr>
 <tr><td>page</td><td>no</td><td>

@@ -10,7 +10,7 @@ type: API method
 
 Gets the free and paid storage used for GitHub Packages in gigabytes.
 
-Paid minutes only apply to packages stored for private repositories. For more information, see "[Managing billing for GitHub Packages](https://help.github.com/github/setting-up-and-managing-billing-and-payments-on-github/managing-billing-for-github-packages)."
+Paid minutes only apply to packages stored for private repositories. For more information, see "[Managing billing for GitHub Packages](https://docs.github.com/github/setting-up-and-managing-billing-and-payments-on-github/managing-billing-for-github-packages)."
 
 Access tokens must have the `user` scope.
 
@@ -32,6 +32,8 @@ octokit.rest.billing.getGithubPackagesBillingUser({
   </thead>
   <tbody>
     <tr><td>username</td><td>yes</td><td>
+
+The handle for the GitHub user account.
 
 </td></tr>
   </tbody>

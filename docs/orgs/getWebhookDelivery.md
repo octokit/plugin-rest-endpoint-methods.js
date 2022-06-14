@@ -31,8 +31,12 @@ octokit.rest.orgs.getWebhookDelivery({
   <tbody>
     <tr><td>org</td><td>yes</td><td>
 
+The organization name. The name is not case sensitive.
+
 </td></tr>
 <tr><td>hook_id</td><td>yes</td><td>
+
+The unique identifier of the hook.
 
 </td></tr>
 <tr><td>delivery_id</td><td>yes</td><td>

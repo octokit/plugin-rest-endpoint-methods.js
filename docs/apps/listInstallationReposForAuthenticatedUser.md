@@ -35,12 +35,12 @@ octokit.rest.apps.listInstallationReposForAuthenticatedUser({
   <tbody>
     <tr><td>installation_id</td><td>yes</td><td>
 
-installation_id parameter
+The unique identifier of the installation.
 
 </td></tr>
 <tr><td>per_page</td><td>no</td><td>
 
-Results per page (max 100)
+The number of results per page (max 100).
 
 </td></tr>
 <tr><td>page</td><td>no</td><td>

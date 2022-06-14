@@ -27,7 +27,7 @@ octokit.rest.projects.updateCard({
   <tbody>
     <tr><td>card_id</td><td>yes</td><td>
 
-card_id parameter
+The unique identifier of the card.
 
 </td></tr>
 <tr><td>note</td><td>no</td><td>

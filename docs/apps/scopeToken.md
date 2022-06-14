@@ -30,7 +30,7 @@ octokit.rest.apps.scopeToken({
   <tbody>
     <tr><td>client_id</td><td>yes</td><td>
 
-The client ID of your GitHub app.
+The client ID of the GitHub app.
 
 </td></tr>
 <tr><td>access_token</td><td>yes</td><td>
@@ -65,157 +65,152 @@ The permissions granted to the user-to-server access token.
 </td></tr>
 <tr><td>permissions.actions</td><td>no</td><td>
 
-The level of permission to grant the access token for GitHub Actions workflows, workflow runs, and artifacts. Can be one of: `read` or `write`.
+The level of permission to grant the access token for GitHub Actions workflows, workflow runs, and artifacts.
 
 </td></tr>
 <tr><td>permissions.administration</td><td>no</td><td>
 
-The level of permission to grant the access token for repository creation, deletion, settings, teams, and collaborators creation. Can be one of: `read` or `write`.
+The level of permission to grant the access token for repository creation, deletion, settings, teams, and collaborators creation.
 
 </td></tr>
 <tr><td>permissions.checks</td><td>no</td><td>
 
-The level of permission to grant the access token for checks on code. Can be one of: `read` or `write`.
-
-</td></tr>
-<tr><td>permissions.content_references</td><td>no</td><td>
-
-The level of permission to grant the access token for notification of content references and creation content attachments. Can be one of: `read` or `write`.
+The level of permission to grant the access token for checks on code.
 
 </td></tr>
 <tr><td>permissions.contents</td><td>no</td><td>
 
-The level of permission to grant the access token for repository contents, commits, branches, downloads, releases, and merges. Can be one of: `read` or `write`.
+The level of permission to grant the access token for repository contents, commits, branches, downloads, releases, and merges.
 
 </td></tr>
 <tr><td>permissions.deployments</td><td>no</td><td>
 
-The level of permission to grant the access token for deployments and deployment statuses. Can be one of: `read` or `write`.
+The level of permission to grant the access token for deployments and deployment statuses.
 
 </td></tr>
 <tr><td>permissions.environments</td><td>no</td><td>
 
-The level of permission to grant the access token for managing repository environments. Can be one of: `read` or `write`.
+The level of permission to grant the access token for managing repository environments.
 
 </td></tr>
 <tr><td>permissions.issues</td><td>no</td><td>
 
-The level of permission to grant the access token for issues and related comments, assignees, labels, and milestones. Can be one of: `read` or `write`.
+The level of permission to grant the access token for issues and related comments, assignees, labels, and milestones.
 
 </td></tr>
 <tr><td>permissions.metadata</td><td>no</td><td>
 
-The level of permission to grant the access token to search repositories, list collaborators, and access repository metadata. Can be one of: `read` or `write`.
+The level of permission to grant the access token to search repositories, list collaborators, and access repository metadata.
 
 </td></tr>
 <tr><td>permissions.packages</td><td>no</td><td>
 
-The level of permission to grant the access token for packages published to GitHub Packages. Can be one of: `read` or `write`.
+The level of permission to grant the access token for packages published to GitHub Packages.
 
 </td></tr>
 <tr><td>permissions.pages</td><td>no</td><td>
 
-The level of permission to grant the access token to retrieve Pages statuses, configuration, and builds, as well as create new builds. Can be one of: `read` or `write`.
+The level of permission to grant the access token to retrieve Pages statuses, configuration, and builds, as well as create new builds.
 
 </td></tr>
 <tr><td>permissions.pull_requests</td><td>no</td><td>
 
-The level of permission to grant the access token for pull requests and related comments, assignees, labels, milestones, and merges. Can be one of: `read` or `write`.
+The level of permission to grant the access token for pull requests and related comments, assignees, labels, milestones, and merges.
 
 </td></tr>
 <tr><td>permissions.repository_hooks</td><td>no</td><td>
 
-The level of permission to grant the access token to manage the post-receive hooks for a repository. Can be one of: `read` or `write`.
+The level of permission to grant the access token to manage the post-receive hooks for a repository.
 
 </td></tr>
 <tr><td>permissions.repository_projects</td><td>no</td><td>
 
-The level of permission to grant the access token to manage repository projects, columns, and cards. Can be one of: `read`, `write`, or `admin`.
+The level of permission to grant the access token to manage repository projects, columns, and cards.
 
 </td></tr>
 <tr><td>permissions.secret_scanning_alerts</td><td>no</td><td>
 
-The level of permission to grant the access token to view and manage secret scanning alerts. Can be one of: `read` or `write`.
+The level of permission to grant the access token to view and manage secret scanning alerts.
 
 </td></tr>
 <tr><td>permissions.secrets</td><td>no</td><td>
 
-The level of permission to grant the access token to manage repository secrets. Can be one of: `read` or `write`.
+The level of permission to grant the access token to manage repository secrets.
 
 </td></tr>
 <tr><td>permissions.security_events</td><td>no</td><td>
 
-The level of permission to grant the access token to view and manage security events like code scanning alerts. Can be one of: `read` or `write`.
+The level of permission to grant the access token to view and manage security events like code scanning alerts.
 
 </td></tr>
 <tr><td>permissions.single_file</td><td>no</td><td>
 
-The level of permission to grant the access token to manage just a single file. Can be one of: `read` or `write`.
+The level of permission to grant the access token to manage just a single file.
 
 </td></tr>
 <tr><td>permissions.statuses</td><td>no</td><td>
 
-The level of permission to grant the access token for commit statuses. Can be one of: `read` or `write`.
+The level of permission to grant the access token for commit statuses.
 
 </td></tr>
 <tr><td>permissions.vulnerability_alerts</td><td>no</td><td>
 
-The level of permission to grant the access token to retrieve Dependabot alerts. Can be one of: `read`.
+The level of permission to grant the access token to manage Dependabot alerts.
 
 </td></tr>
 <tr><td>permissions.workflows</td><td>no</td><td>
 
-The level of permission to grant the access token to update GitHub Actions workflow files. Can be one of: `write`.
+The level of permission to grant the access token to update GitHub Actions workflow files.
 
 </td></tr>
 <tr><td>permissions.members</td><td>no</td><td>
 
-The level of permission to grant the access token for organization teams and members. Can be one of: `read` or `write`.
+The level of permission to grant the access token for organization teams and members.
 
 </td></tr>
 <tr><td>permissions.organization_administration</td><td>no</td><td>
 
-The level of permission to grant the access token to manage access to an organization. Can be one of: `read` or `write`.
+The level of permission to grant the access token to manage access to an organization.
 
 </td></tr>
 <tr><td>permissions.organization_hooks</td><td>no</td><td>
 
-The level of permission to grant the access token to manage the post-receive hooks for an organization. Can be one of: `read` or `write`.
+The level of permission to grant the access token to manage the post-receive hooks for an organization.
 
 </td></tr>
 <tr><td>permissions.organization_plan</td><td>no</td><td>
 
-The level of permission to grant the access token for viewing an organization's plan. Can be one of: `read`.
+The level of permission to grant the access token for viewing an organization's plan.
 
 </td></tr>
 <tr><td>permissions.organization_projects</td><td>no</td><td>
 
-The level of permission to grant the access token to manage organization projects, columns, and cards. Can be one of: `read`, `write`, or `admin`.
+The level of permission to grant the access token to manage organization projects and projects beta (where available).
 
 </td></tr>
 <tr><td>permissions.organization_packages</td><td>no</td><td>
 
-The level of permission to grant the access token for organization packages published to GitHub Packages. Can be one of: `read` or `write`.
+The level of permission to grant the access token for organization packages published to GitHub Packages.
 
 </td></tr>
 <tr><td>permissions.organization_secrets</td><td>no</td><td>
 
-The level of permission to grant the access token to manage organization secrets. Can be one of: `read` or `write`.
+The level of permission to grant the access token to manage organization secrets.
 
 </td></tr>
 <tr><td>permissions.organization_self_hosted_runners</td><td>no</td><td>
 
-The level of permission to grant the access token to view and manage GitHub Actions self-hosted runners available to an organization. Can be one of: `read` or `write`.
+The level of permission to grant the access token to view and manage GitHub Actions self-hosted runners available to an organization.
 
 </td></tr>
 <tr><td>permissions.organization_user_blocking</td><td>no</td><td>
 
-The level of permission to grant the access token to view and manage users blocked by the organization. Can be one of: `read` or `write`.
+The level of permission to grant the access token to view and manage users blocked by the organization.
 
 </td></tr>
 <tr><td>permissions.team_discussions</td><td>no</td><td>
 
-The level of permission to grant the access token to manage team discussions and related comments. Can be one of: `read` or `write`.
+The level of permission to grant the access token to manage team discussions and related comments.
 
 </td></tr>
   </tbody>

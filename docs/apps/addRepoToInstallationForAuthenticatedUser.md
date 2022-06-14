@@ -32,10 +32,12 @@ octokit.rest.apps.addRepoToInstallationForAuthenticatedUser({
   <tbody>
     <tr><td>installation_id</td><td>yes</td><td>
 
-installation_id parameter
+The unique identifier of the installation.
 
 </td></tr>
 <tr><td>repository_id</td><td>yes</td><td>
+
+The unique identifier of the repository.
 
 </td></tr>
   </tbody>

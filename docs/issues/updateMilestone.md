@@ -29,13 +29,17 @@ octokit.rest.issues.updateMilestone({
   <tbody>
     <tr><td>owner</td><td>yes</td><td>
 
+The account owner of the repository. The name is not case sensitive.
+
 </td></tr>
 <tr><td>repo</td><td>yes</td><td>
+
+The name of the repository. The name is not case sensitive.
 
 </td></tr>
 <tr><td>milestone_number</td><td>yes</td><td>
 
-milestone_number parameter
+The number that identifies the milestone.
 
 </td></tr>
 <tr><td>title</td><td>no</td><td>

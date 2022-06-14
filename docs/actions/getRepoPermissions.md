@@ -10,10 +10,9 @@ type: API method
 
 **Deprecated:** This method has been renamed to actions.getGithubActionsPermissionsRepository
 
-Gets the GitHub Actions permissions policy for a repository, including whether GitHub Actions is enabled and the actions allowed to run in the repository.
+Gets the GitHub Actions permissions policy for a repository, including whether GitHub Actions is enabled and the actions and reusable workflows allowed to run in the repository.
 
-You must authenticate using an access token with the `repo` scope to use this
-endpoint. GitHub Apps must have the `administration` repository permission to use this API.
+You must authenticate using an access token with the `repo` scope to use this endpoint. GitHub Apps must have the `administration` repository permission to use this API.
 
 ```js
 octokit.rest.actions.getRepoPermissions({
@@ -35,8 +34,12 @@ octokit.rest.actions.getRepoPermissions({
   <tbody>
     <tr><td>owner</td><td>yes</td><td>
 
+The account owner of the repository. The name is not case sensitive.
+
 </td></tr>
 <tr><td>repo</td><td>yes</td><td>
+
+The name of the repository. The name is not case sensitive.
 
 </td></tr>
   </tbody>

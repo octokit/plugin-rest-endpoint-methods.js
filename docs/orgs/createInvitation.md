@@ -31,6 +31,8 @@ octokit.rest.orgs.createInvitation({
   <tbody>
     <tr><td>org</td><td>yes</td><td>
 
+The organization name. The name is not case sensitive.
+
 </td></tr>
 <tr><td>invitee_id</td><td>no</td><td>
 
@@ -44,8 +46,7 @@ octokit.rest.orgs.createInvitation({
 </td></tr>
 <tr><td>role</td><td>no</td><td>
 
-Specify role for new member. Can be one of:  
-\* `admin` - Organization owners with full administrative rights to the organization and complete access to all repositories and teams.  
+The role for the new member. \* `admin` - Organization owners with full administrative rights to the organization and complete access to all repositories and teams.  
 \* `direct_member` - Non-owner organization members with ability to see other members and join teams by invitation.  
 \* `billing_manager` - Non-owner organization members with ability to manage the billing settings of your organization.
 

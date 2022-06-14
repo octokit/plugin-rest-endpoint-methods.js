@@ -31,8 +31,12 @@ octokit.rest.migrations.startImport({
   <tbody>
     <tr><td>owner</td><td>yes</td><td>
 
+The account owner of the repository. The name is not case sensitive.
+
 </td></tr>
 <tr><td>repo</td><td>yes</td><td>
+
+The name of the repository. The name is not case sensitive.
 
 </td></tr>
 <tr><td>vcs_url</td><td>yes</td><td>
@@ -42,7 +46,7 @@ The URL of the originating repository.
 </td></tr>
 <tr><td>vcs</td><td>no</td><td>
 
-The originating VCS type. Can be one of `subversion`, `git`, `mercurial`, or `tfvc`. Please be aware that without this parameter, the import job will take additional time to detect the VCS type before beginning the import. This detection step will be reflected in the response.
+The originating VCS type. Without this parameter, the import job will take additional time to detect the VCS type before beginning the import. This detection step will be reflected in the response.
 
 </td></tr>
 <tr><td>vcs_username</td><td>no</td><td>

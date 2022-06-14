@@ -8,7 +8,9 @@ type: API method
 
 # Get a secret scanning alert
 
-Gets a single secret scanning alert detected in a private repository. To use this endpoint, you must be an administrator for the repository or organization, and you must use an access token with the `repo` scope or `security_events` scope.
+Gets a single secret scanning alert detected in an eligible repository.
+To use this endpoint, you must be an administrator for the repository or for the organization that owns the repository, and you must use a personal access token with the `repo` scope or `security_events` scope.
+For public repositories, you may instead use the `public_repo` scope.
 
 GitHub Apps must have the `secret_scanning_alerts` read permission to use this endpoint.
 
@@ -33,8 +35,12 @@ octokit.rest.secretScanning.getAlert({
   <tbody>
     <tr><td>owner</td><td>yes</td><td>
 
+The account owner of the repository. The name is not case sensitive.
+
 </td></tr>
 <tr><td>repo</td><td>yes</td><td>
+
+The name of the repository. The name is not case sensitive.
 
 </td></tr>
 <tr><td>alert_number</td><td>yes</td><td>

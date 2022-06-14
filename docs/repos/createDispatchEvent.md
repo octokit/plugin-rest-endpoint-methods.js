@@ -14,7 +14,7 @@ The `client_payload` parameter is available for any extra information that your 
 
 This endpoint requires write access to the repository by providing either:
 
-- Personal access tokens with `repo` scope. For more information, see "[Creating a personal access token for the command line](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line)" in the GitHub Help documentation.
+- Personal access tokens with `repo` scope. For more information, see "[Creating a personal access token for the command line](https://docs.github.com/articles/creating-a-personal-access-token-for-the-command-line)" in the GitHub Help documentation.
 - GitHub Apps with both `metadata:read` and `contents:read&write` permissions.
 
 This input example shows how you can use the `client_payload` as a test to debug your workflow.
@@ -40,13 +40,17 @@ octokit.rest.repos.createDispatchEvent({
   <tbody>
     <tr><td>owner</td><td>yes</td><td>
 
+The account owner of the repository. The name is not case sensitive.
+
 </td></tr>
 <tr><td>repo</td><td>yes</td><td>
+
+The name of the repository. The name is not case sensitive.
 
 </td></tr>
 <tr><td>event_type</td><td>yes</td><td>
 
-A custom webhook event name.
+A custom webhook event name. Must be 100 characters or fewer.
 
 </td></tr>
 <tr><td>client_payload</td><td>no</td><td>

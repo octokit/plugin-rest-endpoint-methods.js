@@ -31,16 +31,22 @@ octokit.rest.pulls.listReviewComments({
   <tbody>
     <tr><td>owner</td><td>yes</td><td>
 
+The account owner of the repository. The name is not case sensitive.
+
 </td></tr>
 <tr><td>repo</td><td>yes</td><td>
+
+The name of the repository. The name is not case sensitive.
 
 </td></tr>
 <tr><td>pull_number</td><td>yes</td><td>
 
+The number that identifies the pull request.
+
 </td></tr>
 <tr><td>sort</td><td>no</td><td>
 
-One of `created` (when the repository was starred) or `updated` (when it was last pushed to).
+The property to sort the results by. `created` means when the repository was starred. `updated` means when the repository was last pushed to.
 
 </td></tr>
 <tr><td>direction</td><td>no</td><td>
@@ -55,7 +61,7 @@ Only show notifications updated after the given time. This is a timestamp in [IS
 </td></tr>
 <tr><td>per_page</td><td>no</td><td>
 
-Results per page (max 100)
+The number of results per page (max 100).
 
 </td></tr>
 <tr><td>page</td><td>no</td><td>

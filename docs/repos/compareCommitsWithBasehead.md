@@ -70,8 +70,12 @@ octokit.rest.repos.compareCommitsWithBasehead({
   <tbody>
     <tr><td>owner</td><td>yes</td><td>
 
+The account owner of the repository. The name is not case sensitive.
+
 </td></tr>
 <tr><td>repo</td><td>yes</td><td>
+
+The name of the repository. The name is not case sensitive.
 
 </td></tr>
 <tr><td>page</td><td>no</td><td>
@@ -81,7 +85,7 @@ Page number of the results to fetch.
 </td></tr>
 <tr><td>per_page</td><td>no</td><td>
 
-Results per page (max 100)
+The number of results per page (max 100).
 
 </td></tr>
 <tr><td>basehead</td><td>yes</td><td>

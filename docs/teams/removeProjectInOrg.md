@@ -33,13 +33,17 @@ octokit.rest.teams.removeProjectInOrg({
   <tbody>
     <tr><td>org</td><td>yes</td><td>
 
+The organization name. The name is not case sensitive.
+
 </td></tr>
 <tr><td>team_slug</td><td>yes</td><td>
 
-team_slug parameter
+The slug of the team name.
 
 </td></tr>
 <tr><td>project_id</td><td>yes</td><td>
+
+The unique identifier of the project.
 
 </td></tr>
   </tbody>

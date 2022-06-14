@@ -8,7 +8,7 @@ type: API method
 
 # Convert an organization member to outside collaborator
 
-When an organization member is converted to an outside collaborator, they'll only have access to the repositories that their current team membership allows. The user will no longer be a member of the organization. For more information, see "[Converting an organization member to an outside collaborator](https://help.github.com/articles/converting-an-organization-member-to-an-outside-collaborator/)".
+When an organization member is converted to an outside collaborator, they'll only have access to the repositories that their current team membership allows. The user will no longer be a member of the organization. For more information, see "[Converting an organization member to an outside collaborator](https://docs.github.com/articles/converting-an-organization-member-to-an-outside-collaborator/)". Converting an organization member to an outside collaborator may be restricted by enterprise administrators. For more information, see "[Enforcing repository management policies in your enterprise](https://docs.github.com/enterprise-cloud@latest/admin/policies/enforcing-policies-for-your-enterprise/enforcing-repository-management-policies-in-your-enterprise#enforcing-a-policy-for-inviting-outside-collaborators-to-repositories)."
 
 ```js
 octokit.rest.orgs.convertMemberToOutsideCollaborator({
@@ -30,8 +30,17 @@ octokit.rest.orgs.convertMemberToOutsideCollaborator({
   <tbody>
     <tr><td>org</td><td>yes</td><td>
 
+The organization name. The name is not case sensitive.
+
 </td></tr>
 <tr><td>username</td><td>yes</td><td>
+
+The handle for the GitHub user account.
+
+</td></tr>
+<tr><td>async</td><td>no</td><td>
+
+When set to `true`, the request will be performed asynchronously. Returns a 202 status code when the job is successfully queued.
 
 </td></tr>
   </tbody>

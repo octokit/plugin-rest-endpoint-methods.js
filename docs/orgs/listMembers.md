@@ -29,25 +29,22 @@ octokit.rest.orgs.listMembers({
   <tbody>
     <tr><td>org</td><td>yes</td><td>
 
+The organization name. The name is not case sensitive.
+
 </td></tr>
 <tr><td>filter</td><td>no</td><td>
 
-Filter members returned in the list. Can be one of:  
-\* `2fa_disabled` - Members without [two-factor authentication](https://github.com/blog/1614-two-factor-authentication) enabled. Available for organization owners.  
-\* `all` - All members the authenticated user can see.
+Filter members returned in the list. `2fa_disabled` means that only members without [two-factor authentication](https://github.com/blog/1614-two-factor-authentication) enabled will be returned. This options is only available for organization owners.
 
 </td></tr>
 <tr><td>role</td><td>no</td><td>
 
-Filter members returned by their role. Can be one of:  
-\* `all` - All members of the organization, regardless of role.  
-\* `admin` - Organization owners.  
-\* `member` - Non-owner organization members.
+Filter members returned by their role.
 
 </td></tr>
 <tr><td>per_page</td><td>no</td><td>
 
-Results per page (max 100)
+The number of results per page (max 100).
 
 </td></tr>
 <tr><td>page</td><td>no</td><td>

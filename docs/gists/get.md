@@ -27,7 +27,7 @@ octokit.rest.gists.get({
   <tbody>
     <tr><td>gist_id</td><td>yes</td><td>
 
-gist_id parameter
+The unique identifier of the gist.
 
 </td></tr>
   </tbody>

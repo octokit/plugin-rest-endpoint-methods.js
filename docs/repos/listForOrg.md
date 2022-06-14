@@ -29,25 +29,27 @@ octokit.rest.repos.listForOrg({
   <tbody>
     <tr><td>org</td><td>yes</td><td>
 
+The organization name. The name is not case sensitive.
+
 </td></tr>
 <tr><td>type</td><td>no</td><td>
 
-Specifies the types of repositories you want returned. Can be one of `all`, `public`, `private`, `forks`, `sources`, `member`, `internal`. Note: For GitHub AE, can be one of `all`, `private`, `forks`, `sources`, `member`, `internal`. Default: `all`. If your organization is associated with an enterprise account using GitHub Enterprise Cloud or GitHub Enterprise Server 2.20+, `type` can also be `internal`. However, the `internal` value is not yet supported when a GitHub App calls this API with an installation access token.
+Specifies the types of repositories you want returned. If your organization is associated with an enterprise account using GitHub Enterprise Cloud or GitHub Enterprise Server 2.20+, `type` can also be `internal`. However, the `internal` value is not yet supported when a GitHub App calls this API with an installation access token.
 
 </td></tr>
 <tr><td>sort</td><td>no</td><td>
 
-Can be one of `created`, `updated`, `pushed`, `full_name`.
+The property to sort the results by.
 
 </td></tr>
 <tr><td>direction</td><td>no</td><td>
 
-Can be one of `asc` or `desc`. Default: when using `full_name`: `asc`, otherwise `desc`
+The order to sort by. Default: `asc` when using `full_name`, otherwise `desc`.
 
 </td></tr>
 <tr><td>per_page</td><td>no</td><td>
 
-Results per page (max 100)
+The number of results per page (max 100).
 
 </td></tr>
 <tr><td>page</td><td>no</td><td>

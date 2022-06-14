@@ -31,13 +31,17 @@ octokit.rest.reactions.listForIssue({
   <tbody>
     <tr><td>owner</td><td>yes</td><td>
 
+The account owner of the repository. The name is not case sensitive.
+
 </td></tr>
 <tr><td>repo</td><td>yes</td><td>
+
+The name of the repository. The name is not case sensitive.
 
 </td></tr>
 <tr><td>issue_number</td><td>yes</td><td>
 
-issue_number parameter
+The number that identifies the issue.
 
 </td></tr>
 <tr><td>content</td><td>no</td><td>
@@ -47,7 +51,7 @@ Returns a single [reaction type](https://docs.github.com/rest/reference/reaction
 </td></tr>
 <tr><td>per_page</td><td>no</td><td>
 
-Results per page (max 100)
+The number of results per page (max 100).
 
 </td></tr>
 <tr><td>page</td><td>no</td><td>

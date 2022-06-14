@@ -29,7 +29,7 @@ octokit.rest.gists.update({
   <tbody>
     <tr><td>gist_id</td><td>yes</td><td>
 
-gist_id parameter
+The unique identifier of the gist.
 
 </td></tr>
 <tr><td>description</td><td>no</td><td>

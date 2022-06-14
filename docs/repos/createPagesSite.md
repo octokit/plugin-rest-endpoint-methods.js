@@ -1,6 +1,6 @@
 ---
 name: Create a GitHub Pages site
-example: octokit.rest.repos.createPagesSite({ owner, repo, source, source.branch })
+example: octokit.rest.repos.createPagesSite({ owner, repo, source.branch })
 route: POST /repos/{owner}/{repo}/pages
 scope: repos
 type: API method
@@ -14,7 +14,6 @@ Configures a GitHub Pages site. For more information, see "[About GitHub Pages](
 octokit.rest.repos.createPagesSite({
         owner,
 repo,
-source,
 source.branch
       })
 ```
@@ -32,11 +31,15 @@ source.branch
   <tbody>
     <tr><td>owner</td><td>yes</td><td>
 
+The account owner of the repository. The name is not case sensitive.
+
 </td></tr>
 <tr><td>repo</td><td>yes</td><td>
 
+The name of the repository. The name is not case sensitive.
+
 </td></tr>
-<tr><td>source</td><td>yes</td><td>
+<tr><td>source</td><td>no</td><td>
 
 The source branch and directory used to publish your Pages site.
 

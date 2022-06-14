@@ -8,9 +8,9 @@ type: API method
 
 # Set GitHub Actions permissions for a repository
 
-Sets the GitHub Actions permissions policy for enabling GitHub Actions and allowed actions in the repository.
+Sets the GitHub Actions permissions policy for enabling GitHub Actions and allowed actions and reusable workflows in the repository.
 
-If the repository belongs to an organization or enterprise that has set restrictive permissions at the organization or enterprise levels, such as `allowed_actions` to `selected` actions, then you cannot override them for the repository.
+If the repository belongs to an organization or enterprise that has set restrictive permissions at the organization or enterprise levels, such as `allowed_actions` to `selected` actions and reusable workflows, then you cannot override them for the repository.
 
 You must authenticate using an access token with the `repo` scope to use this endpoint. GitHub Apps must have the `administration` repository permission to use this API.
 
@@ -35,8 +35,12 @@ octokit.rest.actions.setGithubActionsPermissionsRepository({
   <tbody>
     <tr><td>owner</td><td>yes</td><td>
 
+The account owner of the repository. The name is not case sensitive.
+
 </td></tr>
 <tr><td>repo</td><td>yes</td><td>
+
+The name of the repository. The name is not case sensitive.
 
 </td></tr>
 <tr><td>enabled</td><td>yes</td><td>
@@ -46,7 +50,7 @@ Whether GitHub Actions is enabled on the repository.
 </td></tr>
 <tr><td>allowed_actions</td><td>no</td><td>
 
-The permissions policy that controls the actions that are allowed to run. Can be one of: `all`, `local_only`, or `selected`.
+The permissions policy that controls the actions and reusable workflows that are allowed to run.
 
 </td></tr>
   </tbody>

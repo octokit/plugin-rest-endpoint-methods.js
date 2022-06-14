@@ -27,7 +27,7 @@ octokit.rest.projects.deleteColumn({
   <tbody>
     <tr><td>column_id</td><td>yes</td><td>
 
-column_id parameter
+The unique identifier of the column.
 
 </td></tr>
   </tbody>

@@ -30,7 +30,7 @@ octokit.rest.migrations.unlockRepoForAuthenticatedUser({
   <tbody>
     <tr><td>migration_id</td><td>yes</td><td>
 
-migration_id parameter
+The unique identifier of the migration.
 
 </td></tr>
 <tr><td>repo_name</td><td>yes</td><td>

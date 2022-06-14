@@ -27,17 +27,17 @@ octokit.rest.projects.listCards({
   <tbody>
     <tr><td>column_id</td><td>yes</td><td>
 
-column_id parameter
+The unique identifier of the column.
 
 </td></tr>
 <tr><td>archived_state</td><td>no</td><td>
 
-Filters the project cards that are returned by the card's state. Can be one of `all`,`archived`, or `not_archived`.
+Filters the project cards that are returned by the card's state.
 
 </td></tr>
 <tr><td>per_page</td><td>no</td><td>
 
-Results per page (max 100)
+The number of results per page (max 100).
 
 </td></tr>
 <tr><td>page</td><td>no</td><td>
