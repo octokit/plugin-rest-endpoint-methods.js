@@ -31,7 +31,7 @@ octokit.rest.apps.suspendInstallation({
   <tbody>
     <tr><td>installation_id</td><td>yes</td><td>
 
-installation_id parameter
+The unique identifier of the installation.
 
 </td></tr>
   </tbody>

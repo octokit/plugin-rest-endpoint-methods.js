@@ -30,8 +30,12 @@ octokit.rest.projects.addCollaborator({
   <tbody>
     <tr><td>project_id</td><td>yes</td><td>
 
+The unique identifier of the project.
+
 </td></tr>
 <tr><td>username</td><td>yes</td><td>
+
+The handle for the GitHub user account.
 
 </td></tr>
 <tr><td>permission</td><td>no</td><td>

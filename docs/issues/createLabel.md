@@ -29,8 +29,12 @@ octokit.rest.issues.createLabel({
   <tbody>
     <tr><td>owner</td><td>yes</td><td>
 
+The account owner of the repository. The name is not case sensitive.
+
 </td></tr>
 <tr><td>repo</td><td>yes</td><td>
+
+The name of the repository. The name is not case sensitive.
 
 </td></tr>
 <tr><td>name</td><td>yes</td><td>
@@ -45,7 +49,7 @@ The [hexadecimal color code](http://www.color-hex.com/) for the label, without t
 </td></tr>
 <tr><td>description</td><td>no</td><td>
 
-A short description of the label.
+A short description of the label. Must be 100 characters or fewer.
 
 </td></tr>
   </tbody>

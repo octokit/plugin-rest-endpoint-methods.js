@@ -33,7 +33,7 @@ octokit.rest.packages.getAllPackageVersionsForPackageOwnedByAuthenticatedUser({
   <tbody>
     <tr><td>package_type</td><td>yes</td><td>
 
-The type of supported package. Can be one of `npm`, `maven`, `rubygems`, `nuget`, `docker`, or `container`. Packages in GitHub's Gradle registry have the type `maven`. Docker images pushed to GitHub's Container registry (`ghcr.io`) have the type `container`. You can use the type `docker` to find images that were pushed to GitHub's Docker registry (`docker.pkg.github.com`), even if these have now been migrated to the Container registry.
+The type of supported package. Packages in GitHub's Gradle registry have the type `maven`. Docker images pushed to GitHub's Container registry (`ghcr.io`) have the type `container`. You can use the type `docker` to find images that were pushed to GitHub's Docker registry (`docker.pkg.github.com`), even if these have now been migrated to the Container registry.
 
 </td></tr>
 <tr><td>package_name</td><td>yes</td><td>
@@ -48,7 +48,7 @@ Page number of the results to fetch.
 </td></tr>
 <tr><td>per_page</td><td>no</td><td>
 
-Results per page (max 100)
+The number of results per page (max 100).
 
 </td></tr>
 <tr><td>state</td><td>no</td><td>

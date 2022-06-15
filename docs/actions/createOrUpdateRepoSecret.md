@@ -38,7 +38,7 @@ console.log(encrypted);
 
 #### Example encrypting a secret using Python
 
-Encrypt your secret using [pynacl](https://pynacl.readthedocs.io/en/stable/public/#nacl-public-sealedbox) with Python 3.
+Encrypt your secret using [pynacl](https://pynacl.readthedocs.io/en/latest/public/#nacl-public-sealedbox) with Python 3.
 
 ```
 from base64 import b64encode
@@ -104,13 +104,17 @@ octokit.rest.actions.createOrUpdateRepoSecret({
   <tbody>
     <tr><td>owner</td><td>yes</td><td>
 
+The account owner of the repository. The name is not case sensitive.
+
 </td></tr>
 <tr><td>repo</td><td>yes</td><td>
+
+The name of the repository. The name is not case sensitive.
 
 </td></tr>
 <tr><td>secret_name</td><td>yes</td><td>
 
-secret_name parameter
+The name of the secret.
 
 </td></tr>
 <tr><td>encrypted_value</td><td>no</td><td>

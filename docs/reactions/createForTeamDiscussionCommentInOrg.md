@@ -35,16 +35,22 @@ octokit.rest.reactions.createForTeamDiscussionCommentInOrg({
   <tbody>
     <tr><td>org</td><td>yes</td><td>
 
+The organization name. The name is not case sensitive.
+
 </td></tr>
 <tr><td>team_slug</td><td>yes</td><td>
 
-team_slug parameter
+The slug of the team name.
 
 </td></tr>
 <tr><td>discussion_number</td><td>yes</td><td>
 
+The number that identifies the discussion.
+
 </td></tr>
 <tr><td>comment_number</td><td>yes</td><td>
+
+The number that identifies the comment.
 
 </td></tr>
 <tr><td>content</td><td>yes</td><td>

@@ -12,6 +12,10 @@ For organization-owned repositories, the list of collaborators includes outside 
 
 Team members will include the members of child teams.
 
+You must authenticate using an access token with the `read:org` and `repo` scopes with push access to use this
+endpoint. GitHub Apps must have the `members` organization permission and `metadata` repository permission to use this
+endpoint.
+
 ```js
 octokit.rest.repos.checkCollaborator({
   owner,
@@ -33,11 +37,17 @@ octokit.rest.repos.checkCollaborator({
   <tbody>
     <tr><td>owner</td><td>yes</td><td>
 
+The account owner of the repository. The name is not case sensitive.
+
 </td></tr>
 <tr><td>repo</td><td>yes</td><td>
 
+The name of the repository. The name is not case sensitive.
+
 </td></tr>
 <tr><td>username</td><td>yes</td><td>
+
+The handle for the GitHub user account.
 
 </td></tr>
   </tbody>

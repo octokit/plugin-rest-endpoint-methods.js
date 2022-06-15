@@ -36,13 +36,17 @@ octokit.rest.actions.reviewPendingDeploymentsForRun({
   <tbody>
     <tr><td>owner</td><td>yes</td><td>
 
+The account owner of the repository. The name is not case sensitive.
+
 </td></tr>
 <tr><td>repo</td><td>yes</td><td>
+
+The name of the repository. The name is not case sensitive.
 
 </td></tr>
 <tr><td>run_id</td><td>yes</td><td>
 
-The id of the workflow run.
+The unique identifier of the workflow run.
 
 </td></tr>
 <tr><td>environment_ids</td><td>yes</td><td>
@@ -52,7 +56,7 @@ The list of environment ids to approve or reject
 </td></tr>
 <tr><td>state</td><td>yes</td><td>
 
-Whether to approve or reject deployment to the specified environments. Must be one of: `approved` or `rejected`
+Whether to approve or reject deployment to the specified environments.
 
 </td></tr>
 <tr><td>comment</td><td>yes</td><td>

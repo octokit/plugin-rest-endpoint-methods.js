@@ -9,7 +9,8 @@ type: API method
 # Get a code scanning analysis for a repository
 
 Gets a specified code scanning analysis for a repository.
-You must use an access token with the `security_events` scope to use this endpoint.
+You must use an access token with the `security_events` scope to use this endpoint with private repos,
+the `public_repo` scope also grants permission to read security events on public repos only.
 GitHub Apps must have the `security_events` read permission to use this endpoint.
 
 The default JSON response contains fields that describe the analysis.
@@ -48,8 +49,12 @@ octokit.rest.codeScanning.getAnalysis({
   <tbody>
     <tr><td>owner</td><td>yes</td><td>
 
+The account owner of the repository. The name is not case sensitive.
+
 </td></tr>
 <tr><td>repo</td><td>yes</td><td>
+
+The name of the repository. The name is not case sensitive.
 
 </td></tr>
 <tr><td>analysis_id</td><td>yes</td><td>

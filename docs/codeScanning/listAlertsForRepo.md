@@ -10,8 +10,9 @@ type: API method
 
 Lists all open code scanning alerts for the default branch (usually `main`
 or `master`). You must use an access token with the `security_events` scope to use
-this endpoint. GitHub Apps must have the `security_events` read permission to use
-this endpoint.
+this endpoint with private repos, the `public_repo` scope also grants permission to read
+security events on public repos only. GitHub Apps must have the `security_events` read
+permission to use this endpoint.
 
 The response includes a `most_recent_instance` object.
 This provides details of the most recent instance of this alert
@@ -38,8 +39,12 @@ octokit.rest.codeScanning.listAlertsForRepo({
   <tbody>
     <tr><td>owner</td><td>yes</td><td>
 
+The account owner of the repository. The name is not case sensitive.
+
 </td></tr>
 <tr><td>repo</td><td>yes</td><td>
+
+The name of the repository. The name is not case sensitive.
 
 </td></tr>
 <tr><td>tool_name</td><td>no</td><td>
@@ -59,7 +64,7 @@ Page number of the results to fetch.
 </td></tr>
 <tr><td>per_page</td><td>no</td><td>
 
-Results per page (max 100)
+The number of results per page (max 100).
 
 </td></tr>
 <tr><td>ref</td><td>no</td><td>
@@ -67,9 +72,19 @@ Results per page (max 100)
 The Git reference for the results you want to list. The `ref` for a branch can be formatted either as `refs/heads/<branch name>` or simply `<branch name>`. To reference a pull request use `refs/pull/<number>/merge`.
 
 </td></tr>
+<tr><td>direction</td><td>no</td><td>
+
+The direction to sort the results by.
+
+</td></tr>
+<tr><td>sort</td><td>no</td><td>
+
+The property by which to sort the results.
+
+</td></tr>
 <tr><td>state</td><td>no</td><td>
 
-Set to `open`, `fixed`, or `dismissed` to list code scanning alerts in a specific state.
+Set to `open`, `closed, `fixed`, or `dismissed` to list code scanning alerts in a specific state.
 
 </td></tr>
   </tbody>

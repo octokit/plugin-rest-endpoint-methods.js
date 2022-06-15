@@ -32,12 +32,7 @@ octokit.rest.issues.listForAuthenticatedUser();
   <tbody>
     <tr><td>filter</td><td>no</td><td>
 
-Indicates which sorts of issues to return. Can be one of:  
-\* `assigned`: Issues assigned to you  
-\* `created`: Issues created by you  
-\* `mentioned`: Issues mentioning you  
-\* `subscribed`: Issues you're subscribed to updates for  
-\* `all` or `repos`: All issues the authenticated user can see, regardless of participation or creation
+Indicates which sorts of issues to return. `assigned` means issues assigned to you. `created` means issues created by you. `mentioned` means issues mentioning you. `subscribed` means issues you're subscribed to updates for. `all` or `repos` means all issues you can see, regardless of participation or creation.
 
 </td></tr>
 <tr><td>state</td><td>no</td><td>
@@ -57,7 +52,7 @@ What to sort results by. Can be either `created`, `updated`, `comments`.
 </td></tr>
 <tr><td>direction</td><td>no</td><td>
 
-One of `asc` (ascending) or `desc` (descending).
+The direction to sort the results by.
 
 </td></tr>
 <tr><td>since</td><td>no</td><td>
@@ -67,7 +62,7 @@ Only show notifications updated after the given time. This is a timestamp in [IS
 </td></tr>
 <tr><td>per_page</td><td>no</td><td>
 
-Results per page (max 100)
+The number of results per page (max 100).
 
 </td></tr>
 <tr><td>page</td><td>no</td><td>

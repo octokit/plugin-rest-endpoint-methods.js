@@ -28,7 +28,7 @@ octokit.rest.gists.createComment({
   <tbody>
     <tr><td>gist_id</td><td>yes</td><td>
 
-gist_id parameter
+The unique identifier of the gist.
 
 </td></tr>
 <tr><td>body</td><td>yes</td><td>

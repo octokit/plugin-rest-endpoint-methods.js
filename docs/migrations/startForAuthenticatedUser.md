@@ -32,6 +32,16 @@ octokit.rest.migrations.startForAuthenticatedUser({
 Lock the repositories being migrated at the start of the migration
 
 </td></tr>
+<tr><td>exclude_metadata</td><td>no</td><td>
+
+Indicates whether metadata should be excluded and only git source should be included for the migration.
+
+</td></tr>
+<tr><td>exclude_git_data</td><td>no</td><td>
+
+Indicates whether the repository git data should be excluded from the migration.
+
+</td></tr>
 <tr><td>exclude_attachments</td><td>no</td><td>
 
 Do not include attachments in the migration
@@ -45,6 +55,11 @@ Do not include releases in the migration
 <tr><td>exclude_owner_projects</td><td>no</td><td>
 
 Indicates whether projects owned by the organization or users should be excluded.
+
+</td></tr>
+<tr><td>org_metadata_only</td><td>no</td><td>
+
+Indicates whether this should only include organization metadata (repositories array should be empty and will ignore other flags).
 
 </td></tr>
 <tr><td>exclude</td><td>no</td><td>

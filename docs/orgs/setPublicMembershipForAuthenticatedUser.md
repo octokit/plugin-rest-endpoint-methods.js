@@ -32,8 +32,12 @@ octokit.rest.orgs.setPublicMembershipForAuthenticatedUser({
   <tbody>
     <tr><td>org</td><td>yes</td><td>
 
+The organization name. The name is not case sensitive.
+
 </td></tr>
 <tr><td>username</td><td>yes</td><td>
+
+The handle for the GitHub user account.
 
 </td></tr>
   </tbody>

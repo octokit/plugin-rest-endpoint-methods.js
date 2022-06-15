@@ -31,12 +31,12 @@ octokit.rest.migrations.listReposForUser({
   <tbody>
     <tr><td>migration_id</td><td>yes</td><td>
 
-migration_id parameter
+The unique identifier of the migration.
 
 </td></tr>
 <tr><td>per_page</td><td>no</td><td>
 
-Results per page (max 100)
+The number of results per page (max 100).
 
 </td></tr>
 <tr><td>page</td><td>no</td><td>

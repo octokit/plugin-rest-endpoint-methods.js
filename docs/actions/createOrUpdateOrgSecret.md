@@ -38,7 +38,7 @@ console.log(encrypted);
 
 #### Example encrypting a secret using Python
 
-Encrypt your secret using [pynacl](https://pynacl.readthedocs.io/en/stable/public/#nacl-public-sealedbox) with Python 3.
+Encrypt your secret using [pynacl](https://pynacl.readthedocs.io/en/latest/public/#nacl-public-sealedbox) with Python 3.
 
 ```
 from base64 import b64encode
@@ -104,10 +104,12 @@ octokit.rest.actions.createOrUpdateOrgSecret({
   <tbody>
     <tr><td>org</td><td>yes</td><td>
 
+The organization name. The name is not case sensitive.
+
 </td></tr>
 <tr><td>secret_name</td><td>yes</td><td>
 
-secret_name parameter
+The name of the secret.
 
 </td></tr>
 <tr><td>encrypted_value</td><td>no</td><td>
@@ -122,10 +124,7 @@ ID of the key you used to encrypt the secret.
 </td></tr>
 <tr><td>visibility</td><td>yes</td><td>
 
-Configures the access that repositories have to the organization secret. Can be one of:  
-\- `all` - All repositories in an organization can access the secret.  
-\- `private` - Private repositories in an organization can access the secret.  
-\- `selected` - Only specific repositories can access the secret.
+Which type of organization repositories have access to the organization secret. `selected` means only the repositories specified by `selected_repository_ids` can access the secret.
 
 </td></tr>
 <tr><td>selected_repository_ids</td><td>no</td><td>

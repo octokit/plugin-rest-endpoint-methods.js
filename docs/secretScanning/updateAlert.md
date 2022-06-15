@@ -8,7 +8,9 @@ type: API method
 
 # Update a secret scanning alert
 
-Updates the status of a secret scanning alert in a private repository. To use this endpoint, you must be an administrator for the repository or organization, and you must use an access token with the `repo` scope or `security_events` scope.
+Updates the status of a secret scanning alert in an eligible repository.
+To use this endpoint, you must be an administrator for the repository or for the organization that owns the repository, and you must use a personal access token with the `repo` scope or `security_events` scope.
+For public repositories, you may instead use the `public_repo` scope.
 
 GitHub Apps must have the `secret_scanning_alerts` write permission to use this endpoint.
 
@@ -34,8 +36,12 @@ octokit.rest.secretScanning.updateAlert({
   <tbody>
     <tr><td>owner</td><td>yes</td><td>
 
+The account owner of the repository. The name is not case sensitive.
+
 </td></tr>
 <tr><td>repo</td><td>yes</td><td>
+
+The name of the repository. The name is not case sensitive.
 
 </td></tr>
 <tr><td>alert_number</td><td>yes</td><td>
@@ -50,7 +56,7 @@ Sets the state of the secret scanning alert. Can be either `open` or `resolved`.
 </td></tr>
 <tr><td>resolution</td><td>no</td><td>
 
-**Required when the `state` is `resolved`.** The reason for resolving the alert. Can be one of `false_positive`, `wont_fix`, `revoked`, or `used_in_tests`.
+**Required when the `state` is `resolved`.** The reason for resolving the alert.
 
 </td></tr>
   </tbody>

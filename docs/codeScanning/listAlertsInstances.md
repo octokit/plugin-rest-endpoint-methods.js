@@ -10,7 +10,10 @@ type: API method
 
 **Deprecated:** This method has been renamed to codeScanning.listAlertInstances
 
-Lists all instances of the specified code scanning alert. You must use an access token with the `security_events` scope to use this endpoint. GitHub Apps must have the `security_events` read permission to use this endpoint.
+Lists all instances of the specified code scanning alert.
+You must use an access token with the `security_events` scope to use this endpoint with private repos,
+the `public_repo` scope also grants permission to read security events on public repos only.
+GitHub Apps must have the `security_events` read permission to use this endpoint.
 
 ```js
 octokit.rest.codeScanning.listAlertsInstances({
@@ -33,8 +36,12 @@ octokit.rest.codeScanning.listAlertsInstances({
   <tbody>
     <tr><td>owner</td><td>yes</td><td>
 
+The account owner of the repository. The name is not case sensitive.
+
 </td></tr>
 <tr><td>repo</td><td>yes</td><td>
+
+The name of the repository. The name is not case sensitive.
 
 </td></tr>
 <tr><td>alert_number</td><td>yes</td><td>
@@ -49,7 +56,7 @@ Page number of the results to fetch.
 </td></tr>
 <tr><td>per_page</td><td>no</td><td>
 
-Results per page (max 100)
+The number of results per page (max 100).
 
 </td></tr>
 <tr><td>ref</td><td>no</td><td>

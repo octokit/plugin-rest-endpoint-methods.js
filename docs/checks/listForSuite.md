@@ -33,13 +33,17 @@ octokit.rest.checks.listForSuite({
   <tbody>
     <tr><td>owner</td><td>yes</td><td>
 
+The account owner of the repository. The name is not case sensitive.
+
 </td></tr>
 <tr><td>repo</td><td>yes</td><td>
+
+The name of the repository. The name is not case sensitive.
 
 </td></tr>
 <tr><td>check_suite_id</td><td>yes</td><td>
 
-check_suite_id parameter
+The unique identifier of the check suite.
 
 </td></tr>
 <tr><td>check_name</td><td>no</td><td>
@@ -49,17 +53,17 @@ Returns check runs with the specified `name`.
 </td></tr>
 <tr><td>status</td><td>no</td><td>
 
-Returns check runs with the specified `status`. Can be one of `queued`, `in_progress`, or `completed`.
+Returns check runs with the specified `status`.
 
 </td></tr>
 <tr><td>filter</td><td>no</td><td>
 
-Filters check runs by their `completed_at` timestamp. Can be one of `latest` (returning the most recent check runs) or `all`.
+Filters check runs by their `completed_at` timestamp. `latest` returns the most recent check runs.
 
 </td></tr>
 <tr><td>per_page</td><td>no</td><td>
 
-Results per page (max 100)
+The number of results per page (max 100).
 
 </td></tr>
 <tr><td>page</td><td>no</td><td>

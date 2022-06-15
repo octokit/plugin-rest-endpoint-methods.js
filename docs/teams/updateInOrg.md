@@ -32,10 +32,12 @@ octokit.rest.teams.updateInOrg({
   <tbody>
     <tr><td>org</td><td>yes</td><td>
 
+The organization name. The name is not case sensitive.
+
 </td></tr>
 <tr><td>team_slug</td><td>yes</td><td>
 
-team_slug parameter
+The slug of the team name.
 
 </td></tr>
 <tr><td>name</td><td>no</td><td>
@@ -60,10 +62,7 @@ The level of privacy this team should have. Editing teams without specifying thi
 </td></tr>
 <tr><td>permission</td><td>no</td><td>
 
-**Deprecated**. The permission that new repositories will be added to the team with when none is specified. Can be one of:  
-\* `pull` - team members can pull, but not push to or administer newly-added repositories.  
-\* `push` - team members can pull and push, but not administer newly-added repositories.  
-\* `admin` - team members can pull, push and administer newly-added repositories.
+**Deprecated**. The permission that new repositories will be added to the team with when none is specified.
 
 </td></tr>
 <tr><td>parent_team_id</td><td>no</td><td>

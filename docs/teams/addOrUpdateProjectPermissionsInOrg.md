@@ -33,22 +33,22 @@ octokit.rest.teams.addOrUpdateProjectPermissionsInOrg({
   <tbody>
     <tr><td>org</td><td>yes</td><td>
 
+The organization name. The name is not case sensitive.
+
 </td></tr>
 <tr><td>team_slug</td><td>yes</td><td>
 
-team_slug parameter
+The slug of the team name.
 
 </td></tr>
 <tr><td>project_id</td><td>yes</td><td>
 
+The unique identifier of the project.
+
 </td></tr>
 <tr><td>permission</td><td>no</td><td>
 
-The permission to grant to the team for this project. Can be one of:  
-\* `read` - team members can read, but not write to or administer this project.  
-\* `write` - team members can read and write, but not administer this project.  
-\* `admin` - team members can read, write and administer this project.  
-Default: the team's `permission` attribute will be used to determine what permission to grant the team on this project. Note that, if you choose not to pass any parameters, you'll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see "[HTTP verbs](https://docs.github.com/rest/overview/resources-in-the-rest-api#http-verbs)."
+The permission to grant to the team for this project. Default: the team's `permission` attribute will be used to determine what permission to grant the team on this project. Note that, if you choose not to pass any parameters, you'll need to set `Content-Length` to zero when calling this endpoint. For more information, see "[HTTP verbs](https://docs.github.com/rest/overview/resources-in-the-rest-api#http-verbs)."
 
 </td></tr>
   </tbody>

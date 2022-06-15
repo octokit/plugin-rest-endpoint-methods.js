@@ -29,7 +29,7 @@ octokit.rest.repos.listForAuthenticatedUser();
   <tbody>
     <tr><td>visibility</td><td>no</td><td>
 
-Can be one of `all`, `public`, or `private`. Note: For GitHub AE, can be one of `all`, `internal`, or `private`.
+Limit results to repositories with the specified visibility.
 
 </td></tr>
 <tr><td>affiliation</td><td>no</td><td>
@@ -42,24 +42,22 @@ Comma-separated list of values. Can include:
 </td></tr>
 <tr><td>type</td><td>no</td><td>
 
-Can be one of `all`, `owner`, `public`, `private`, `member`. Note: For GitHub AE, can be one of `all`, `owner`, `internal`, `private`, `member`. Default: `all`
-
-Will cause a `422` error if used in the same request as **visibility** or **affiliation**. Will cause a `422` error if used in the same request as **visibility** or **affiliation**.
+Limit results to repositories of the specified type. Will cause a `422` error if used in the same request as **visibility** or **affiliation**.
 
 </td></tr>
 <tr><td>sort</td><td>no</td><td>
 
-Can be one of `created`, `updated`, `pushed`, `full_name`.
+The property to sort the results by.
 
 </td></tr>
 <tr><td>direction</td><td>no</td><td>
 
-Can be one of `asc` or `desc`. Default: `asc` when using `full_name`, otherwise `desc`
+The order to sort by. Default: `asc` when using `full_name`, otherwise `desc`.
 
 </td></tr>
 <tr><td>per_page</td><td>no</td><td>
 
-Results per page (max 100)
+The number of results per page (max 100).
 
 </td></tr>
 <tr><td>page</td><td>no</td><td>

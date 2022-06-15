@@ -30,7 +30,7 @@ octokit.rest.projects.createCard({
   <tbody>
     <tr><td>column_id</td><td>yes</td><td>
 
-column_id parameter
+The unique identifier of the column.
 
 </td></tr>
 <tr><td>note</td><td>yes</td><td>

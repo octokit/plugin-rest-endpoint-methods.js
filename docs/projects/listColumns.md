@@ -27,10 +27,12 @@ octokit.rest.projects.listColumns({
   <tbody>
     <tr><td>project_id</td><td>yes</td><td>
 
+The unique identifier of the project.
+
 </td></tr>
 <tr><td>per_page</td><td>no</td><td>
 
-Results per page (max 100)
+The number of results per page (max 100).
 
 </td></tr>
 <tr><td>page</td><td>no</td><td>

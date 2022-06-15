@@ -39,8 +39,12 @@ deployment_branch_policy.custom_branch_policies
   <tbody>
     <tr><td>owner</td><td>yes</td><td>
 
+The account owner of the repository. The name is not case sensitive.
+
 </td></tr>
 <tr><td>repo</td><td>yes</td><td>
+
+The name of the repository. The name is not case sensitive.
 
 </td></tr>
 <tr><td>environment_name</td><td>yes</td><td>
@@ -60,7 +64,7 @@ The people or teams that may review jobs that reference the environment. You can
 </td></tr>
 <tr><td>reviewers[].type</td><td>no</td><td>
 
-The type of reviewer. Must be one of: `User` or `Team`
+The type of reviewer.
 
 </td></tr>
 <tr><td>reviewers[].id</td><td>no</td><td>

@@ -29,6 +29,8 @@ octokit.rest.projects.update({
   <tbody>
     <tr><td>project_id</td><td>yes</td><td>
 
+The unique identifier of the project.
+
 </td></tr>
 <tr><td>name</td><td>no</td><td>
 

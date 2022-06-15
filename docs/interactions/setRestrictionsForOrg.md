@@ -30,15 +30,17 @@ octokit.rest.interactions.setRestrictionsForOrg({
   <tbody>
     <tr><td>org</td><td>yes</td><td>
 
+The organization name. The name is not case sensitive.
+
 </td></tr>
 <tr><td>limit</td><td>yes</td><td>
 
-The type of GitHub user that can comment, open issues, or create pull requests while the interaction limit is in effect. Can be one of: `existing_users`, `contributors_only`, `collaborators_only`.
+The type of GitHub user that can comment, open issues, or create pull requests while the interaction limit is in effect.
 
 </td></tr>
 <tr><td>expiry</td><td>no</td><td>
 
-The duration of the interaction restriction. Can be one of: `one_day`, `three_days`, `one_week`, `one_month`, `six_months`. Default: `one_day`.
+The duration of the interaction restriction. Default: `one_day`.
 
 </td></tr>
   </tbody>

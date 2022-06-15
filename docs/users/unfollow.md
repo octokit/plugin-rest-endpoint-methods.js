@@ -29,6 +29,8 @@ octokit.rest.users.unfollow({
   <tbody>
     <tr><td>username</td><td>yes</td><td>
 
+The handle for the GitHub user account.
+
 </td></tr>
   </tbody>
 </table>

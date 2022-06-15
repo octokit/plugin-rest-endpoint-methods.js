@@ -29,7 +29,7 @@ octokit.rest.activity.deleteThreadSubscription({
   <tbody>
     <tr><td>thread_id</td><td>yes</td><td>
 
-thread_id parameter
+The unique identifier of the thread.
 
 </td></tr>
   </tbody>

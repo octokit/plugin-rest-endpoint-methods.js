@@ -28,7 +28,7 @@ octokit.rest.projects.moveCard({
   <tbody>
     <tr><td>card_id</td><td>yes</td><td>
 
-card_id parameter
+The unique identifier of the card.
 
 </td></tr>
 <tr><td>position</td><td>yes</td><td>

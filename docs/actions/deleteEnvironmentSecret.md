@@ -31,6 +31,8 @@ octokit.rest.actions.deleteEnvironmentSecret({
   <tbody>
     <tr><td>repository_id</td><td>yes</td><td>
 
+The unique identifier of the repository.
+
 </td></tr>
 <tr><td>environment_name</td><td>yes</td><td>
 
@@ -39,7 +41,7 @@ The name of the environment
 </td></tr>
 <tr><td>secret_name</td><td>yes</td><td>
 
-secret_name parameter
+The name of the secret.
 
 </td></tr>
   </tbody>

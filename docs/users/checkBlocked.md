@@ -27,6 +27,8 @@ octokit.rest.users.checkBlocked({
   <tbody>
     <tr><td>username</td><td>yes</td><td>
 
+The handle for the GitHub user account.
+
 </td></tr>
   </tbody>
 </table>

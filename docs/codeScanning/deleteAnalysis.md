@@ -10,7 +10,7 @@ type: API method
 
 Deletes a specified code scanning analysis from a repository. For
 private repositories, you must use an access token with the `repo` scope. For public repositories,
-you must use an access token with `public_repo` and `repo:security_events` scopes.
+you must use an access token with `public_repo` scope.
 GitHub Apps must have the `security_events` write permission to use this endpoint.
 
 You can delete one analysis at a time.
@@ -42,13 +42,13 @@ Analysis specified is not deletable.
 ```
 
 The response from a successful `DELETE` operation provides you with
-two alternative URLs for deleting the next analysis in the set
-(see the example default response below).
+two alternative URLs for deleting the next analysis in the set:
+`next_analysis_url` and `confirm_delete_url`.
 Use the `next_analysis_url` URL if you want to avoid accidentally deleting the final analysis
-in the set. This is a useful option if you want to preserve at least one analysis
+in a set. This is a useful option if you want to preserve at least one analysis
 for the specified tool in your repository.
 Use the `confirm_delete_url` URL if you are content to remove all analyses for a tool.
-When you delete the last analysis in a set the value of `next_analysis_url` and `confirm_delete_url`
+When you delete the last analysis in a set, the value of `next_analysis_url` and `confirm_delete_url`
 in the 200 response is `null`.
 
 As an example of the deletion process,
@@ -58,9 +58,11 @@ to analyze the code in a repository. This tool has added 15 analyses:
 You therefore have two separate sets of analyses for this tool.
 You've now decided that you want to remove all of the analyses for the tool.
 To do this you must make 15 separate deletion requests.
-To start, you must find the deletable analysis for one of the sets,
-step through deleting the analyses in that set,
-and then repeat the process for the second set.
+To start, you must find an analysis that's identified as deletable.
+Each set of analyses always has one that's identified as deletable.
+Having found the deletable analysis for one of the two sets,
+delete this analysis and then continue deleting the next analysis in the set until they're all deleted.
+Then repeat the process for the second set.
 The procedure therefore consists of a nested loop:
 
 **Outer loop**:
@@ -96,8 +98,12 @@ octokit.rest.codeScanning.deleteAnalysis({
   <tbody>
     <tr><td>owner</td><td>yes</td><td>
 
+The account owner of the repository. The name is not case sensitive.
+
 </td></tr>
 <tr><td>repo</td><td>yes</td><td>
+
+The name of the repository. The name is not case sensitive.
 
 </td></tr>
 <tr><td>analysis_id</td><td>yes</td><td>

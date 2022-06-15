@@ -29,7 +29,7 @@ octokit.rest.users.getPublicSshKeyForAuthenticatedUser({
   <tbody>
     <tr><td>key_id</td><td>yes</td><td>
 
-key_id parameter
+The unique identifier of the key.
 
 </td></tr>
   </tbody>

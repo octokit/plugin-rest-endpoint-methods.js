@@ -30,8 +30,12 @@ octokit.rest.repos.update({
   <tbody>
     <tr><td>owner</td><td>yes</td><td>
 
+The account owner of the repository. The name is not case sensitive.
+
 </td></tr>
 <tr><td>repo</td><td>yes</td><td>
+
+The name of the repository. The name is not case sensitive.
 
 </td></tr>
 <tr><td>name</td><td>no</td><td>
@@ -52,7 +56,7 @@ A URL with more information about the repository.
 <tr><td>private</td><td>no</td><td>
 
 Either `true` to make the repository private or `false` to make it public. Default: `false`.  
-**Note**: You will get a `422` error if the organization restricts [changing repository visibility](https://help.github.com/articles/repository-permission-levels-for-an-organization#changing-the-visibility-of-repositories) to organization owners and a non-owner tries to change the value of private.
+**Note**: You will get a `422` error if the organization restricts [changing repository visibility](https://docs.github.com/articles/repository-permission-levels-for-an-organization#changing-the-visibility-of-repositories) to organization owners and a non-owner tries to change the value of private. **Note**: You will get a `422` error if the organization restricts [changing repository visibility](https://docs.github.com/articles/repository-permission-levels-for-an-organization#changing-the-visibility-of-repositories) to organization owners and a non-owner tries to change the value of private.
 
 </td></tr>
 <tr><td>visibility</td><td>no</td><td>
@@ -81,6 +85,16 @@ Use the `status` property to enable or disable secret scanning for this reposito
 
 </td></tr>
 <tr><td>security_and_analysis.secret_scanning.status</td><td>no</td><td>
+
+Can be `enabled` or `disabled`.
+
+</td></tr>
+<tr><td>security_and_analysis.secret_scanning_push_protection</td><td>no</td><td>
+
+Use the `status` property to enable or disable secret scanning push protection for this repository. For more information, see "[Protecting pushes with secret scanning](/code-security/secret-scanning/protecting-pushes-with-secret-scanning)."
+
+</td></tr>
+<tr><td>security_and_analysis.secret_scanning_push_protection.status</td><td>no</td><td>
 
 Can be `enabled` or `disabled`.
 
@@ -133,6 +147,16 @@ Either `true` to allow auto-merge on pull requests, or `false` to disallow auto-
 <tr><td>delete_branch_on_merge</td><td>no</td><td>
 
 Either `true` to allow automatically deleting head branches when pull requests are merged, or `false` to prevent automatic deletion.
+
+</td></tr>
+<tr><td>allow_update_branch</td><td>no</td><td>
+
+Either `true` to always allow a pull request head branch that is behind its base branch to be updated even if it is not required to be up to date before merging, or false otherwise.
+
+</td></tr>
+<tr><td>use_squash_pr_title_as_default</td><td>no</td><td>
+
+Either `true` to allow squash-merge commits to use pull request title, or `false` to use commit message.
 
 </td></tr>
 <tr><td>archived</td><td>no</td><td>

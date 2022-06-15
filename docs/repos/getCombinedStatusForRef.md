@@ -10,8 +10,6 @@ type: API method
 
 Users with pull access in a repository can access a combined view of commit statuses for a given ref. The ref can be a SHA, a branch name, or a tag name.
 
-The most recent status for each context is returned, up to 100. This field [paginates](https://docs.github.com/rest/overview/resources-in-the-rest-api#pagination) if there are over 100 contexts.
-
 Additionally, a combined `state` is returned. The `state` is one of:
 
 - **failure** if any of the contexts report as `error` or `failure`
@@ -39,8 +37,12 @@ octokit.rest.repos.getCombinedStatusForRef({
   <tbody>
     <tr><td>owner</td><td>yes</td><td>
 
+The account owner of the repository. The name is not case sensitive.
+
 </td></tr>
 <tr><td>repo</td><td>yes</td><td>
+
+The name of the repository. The name is not case sensitive.
 
 </td></tr>
 <tr><td>ref</td><td>yes</td><td>
@@ -50,7 +52,7 @@ ref parameter
 </td></tr>
 <tr><td>per_page</td><td>no</td><td>
 
-Results per page (max 100)
+The number of results per page (max 100).
 
 </td></tr>
 <tr><td>page</td><td>no</td><td>

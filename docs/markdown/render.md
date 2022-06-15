@@ -32,12 +32,12 @@ The Markdown text to render in HTML.
 </td></tr>
 <tr><td>mode</td><td>no</td><td>
 
-The rendering mode.
+The rendering mode. Can be either `markdown` or `gfm`.
 
 </td></tr>
 <tr><td>context</td><td>no</td><td>
 
-The repository context to use when creating references in `gfm` mode.
+The repository context to use when creating references in `gfm` mode. For example, setting `context` to `octo-org/octo-repo` will change the text `#42` into an HTML link to issue 42 in the `octo-org/octo-repo` repository.
 
 </td></tr>
   </tbody>

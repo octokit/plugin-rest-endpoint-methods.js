@@ -34,8 +34,12 @@ octokit.rest.repos.createDeploymentStatus({
   <tbody>
     <tr><td>owner</td><td>yes</td><td>
 
+The account owner of the repository. The name is not case sensitive.
+
 </td></tr>
 <tr><td>repo</td><td>yes</td><td>
+
+The name of the repository. The name is not case sensitive.
 
 </td></tr>
 <tr><td>deployment_id</td><td>yes</td><td>
@@ -45,7 +49,7 @@ deployment_id parameter
 </td></tr>
 <tr><td>state</td><td>yes</td><td>
 
-The state of the status. Can be one of `error`, `failure`, `inactive`, `in_progress`, `queued` `pending`, or `success`. When you set a transient deployment to `inactive`, the deployment will be shown as `destroyed` in GitHub.
+The state of the status. When you set a transient deployment to `inactive`, the deployment will be shown as `destroyed` in GitHub.
 
 </td></tr>
 <tr><td>target_url</td><td>no</td><td>

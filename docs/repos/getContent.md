@@ -21,7 +21,14 @@ object format.
 - To get a repository's contents recursively, you can [recursively get the tree](https://docs.github.com/rest/reference/git#trees).
 - This API has an upper limit of 1,000 files for a directory. If you need to retrieve more files, use the [Git Trees
   API](https://docs.github.com/rest/reference/git#get-a-tree).
-- This API supports files up to 1 megabyte in size.
+
+#### Size limits
+
+If the requested file's size is:
+
+- 1 MB or smaller: All features of this endpoint are supported.
+- Between 1-100 MB: Only the `raw` or `object` [custom media types](https://docs.github.com/rest/repos/contents#custom-media-types-for-repository-contents) are supported. Both will work as normal, except that when using the `object` media type, the `content` field will be an empty string and the `encoding` field will be `"none"`. To get the contents of these larger files, use the `raw` media type.
+- Greater than 100 MB: This endpoint is not supported.
 
 #### If the content is a directory
 
@@ -66,8 +73,12 @@ octokit.rest.repos.getContent({
   <tbody>
     <tr><td>owner</td><td>yes</td><td>
 
+The account owner of the repository. The name is not case sensitive.
+
 </td></tr>
 <tr><td>repo</td><td>yes</td><td>
+
+The name of the repository. The name is not case sensitive.
 
 </td></tr>
 <tr><td>path</td><td>yes</td><td>

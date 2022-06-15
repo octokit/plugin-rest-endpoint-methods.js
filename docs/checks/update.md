@@ -44,13 +44,17 @@ actions[].identifier
   <tbody>
     <tr><td>owner</td><td>yes</td><td>
 
+The account owner of the repository. The name is not case sensitive.
+
 </td></tr>
 <tr><td>repo</td><td>yes</td><td>
+
+The name of the repository. The name is not case sensitive.
 
 </td></tr>
 <tr><td>check_run_id</td><td>yes</td><td>
 
-check_run_id parameter
+The unique identifier of the check run.
 
 </td></tr>
 <tr><td>name</td><td>no</td><td>
@@ -75,12 +79,12 @@ This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format
 </td></tr>
 <tr><td>status</td><td>no</td><td>
 
-The current status. Can be one of `queued`, `in_progress`, or `completed`.
+The current status.
 
 </td></tr>
 <tr><td>conclusion</td><td>no</td><td>
 
-**Required if you provide `completed_at` or a `status` of `completed`**. The final conclusion of the check. Can be one of `action_required`, `cancelled`, `failure`, `neutral`, `success`, `skipped`, `stale`, or `timed_out`.  
+**Required if you provide `completed_at` or a `status` of `completed`**. The final conclusion of the check.
 **Note:** Providing `conclusion` will automatically set the `status` parameter to `completed`. You cannot change a check run conclusion to `stale`, only GitHub can set this.
 
 </td></tr>
@@ -111,7 +115,7 @@ Can contain Markdown.
 </td></tr>
 <tr><td>output.annotations</td><td>no</td><td>
 
-Adds information from your analysis to specific lines of code. Annotations are visible in GitHub's pull request UI. Annotations are visible in GitHub's pull request UI. The Checks API limits the number of annotations to a maximum of 50 per API request. To create more than 50 annotations, you have to make multiple requests to the [Update a check run](https://docs.github.com/rest/reference/checks#update-a-check-run) endpoint. Each time you update the check run, annotations are appended to the list of annotations that already exist for the check run. For details about annotations in the UI, see "[About status checks](https://help.github.com/articles/about-status-checks#checks)". See the [`annotations` object](https://docs.github.com/rest/reference/checks#annotations-object-1) description for details.
+Adds information from your analysis to specific lines of code. Annotations are visible in GitHub's pull request UI. Annotations are visible in GitHub's pull request UI. The Checks API limits the number of annotations to a maximum of 50 per API request. To create more than 50 annotations, you have to make multiple requests to the [Update a check run](https://docs.github.com/rest/reference/checks#update-a-check-run) endpoint. Each time you update the check run, annotations are appended to the list of annotations that already exist for the check run. For details about annotations in the UI, see "[About status checks](https://docs.github.com/articles/about-status-checks#checks)". See the [`annotations` object](https://docs.github.com/rest/reference/checks#annotations-object-1) description for details.
 
 </td></tr>
 <tr><td>output.annotations[].path</td><td>yes</td><td>
@@ -141,7 +145,7 @@ The end column of the annotation. Annotations only support `start_column` and `e
 </td></tr>
 <tr><td>output.annotations[].annotation_level</td><td>yes</td><td>
 
-The level of the annotation. Can be one of `notice`, `warning`, or `failure`.
+The level of the annotation.
 
 </td></tr>
 <tr><td>output.annotations[].message</td><td>yes</td><td>

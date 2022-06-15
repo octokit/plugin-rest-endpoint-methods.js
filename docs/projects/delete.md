@@ -29,6 +29,8 @@ octokit.rest.projects.delete({
   <tbody>
     <tr><td>project_id</td><td>yes</td><td>
 
+The unique identifier of the project.
+
 </td></tr>
   </tbody>
 </table>

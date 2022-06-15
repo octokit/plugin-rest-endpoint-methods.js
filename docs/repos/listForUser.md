@@ -29,25 +29,27 @@ octokit.rest.repos.listForUser({
   <tbody>
     <tr><td>username</td><td>yes</td><td>
 
+The handle for the GitHub user account.
+
 </td></tr>
 <tr><td>type</td><td>no</td><td>
 
-Can be one of `all`, `owner`, `member`.
+Limit results to repositories of the specified type.
 
 </td></tr>
 <tr><td>sort</td><td>no</td><td>
 
-Can be one of `created`, `updated`, `pushed`, `full_name`.
+The property to sort the results by.
 
 </td></tr>
 <tr><td>direction</td><td>no</td><td>
 
-Can be one of `asc` or `desc`. Default: `asc` when using `full_name`, otherwise `desc`
+The order to sort by. Default: `asc` when using `full_name`, otherwise `desc`.
 
 </td></tr>
 <tr><td>per_page</td><td>no</td><td>
 
-Results per page (max 100)
+The number of results per page (max 100).
 
 </td></tr>
 <tr><td>page</td><td>no</td><td>

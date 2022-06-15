@@ -31,10 +31,12 @@ octokit.rest.migrations.unlockRepoForOrg({
   <tbody>
     <tr><td>org</td><td>yes</td><td>
 
+The organization name. The name is not case sensitive.
+
 </td></tr>
 <tr><td>migration_id</td><td>yes</td><td>
 
-migration_id parameter
+The unique identifier of the migration.
 
 </td></tr>
 <tr><td>repo_name</td><td>yes</td><td>

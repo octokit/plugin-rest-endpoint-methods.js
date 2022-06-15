@@ -27,7 +27,12 @@ octokit.rest.users.createGpgKeyForAuthenticatedUser({
     </tr>
   </thead>
   <tbody>
-    <tr><td>armored_public_key</td><td>yes</td><td>
+    <tr><td>name</td><td>no</td><td>
+
+A descriptive name for the new key.
+
+</td></tr>
+<tr><td>armored_public_key</td><td>yes</td><td>
 
 A GPG key in ASCII-armored format.
 

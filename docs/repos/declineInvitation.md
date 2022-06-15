@@ -29,7 +29,7 @@ octokit.rest.repos.declineInvitation({
   <tbody>
     <tr><td>invitation_id</td><td>yes</td><td>
 
-invitation_id parameter
+The unique identifier of the invitation.
 
 </td></tr>
   </tbody>
