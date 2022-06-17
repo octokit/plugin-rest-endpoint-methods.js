@@ -31,7 +31,7 @@ octokit.rest.activity.getThreadSubscriptionForAuthenticatedUser({
   <tbody>
     <tr><td>thread_id</td><td>yes</td><td>
 
-The unique identifier of the thread.
+The unique identifier of the pull request thread.
 
 </td></tr>
   </tbody>

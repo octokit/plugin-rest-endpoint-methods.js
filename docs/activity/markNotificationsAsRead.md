@@ -27,7 +27,7 @@ octokit.rest.activity.markNotificationsAsRead();
   <tbody>
     <tr><td>last_read_at</td><td>no</td><td>
 
-Describes the last point that notifications were checked.
+Describes the last point that notifications were checked. Anything updated since this time will not be marked as read. If you omit this parameter, all notifications are marked as read. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`. Default: The current timestamp.
 
 </td></tr>
 <tr><td>read</td><td>no</td><td>
