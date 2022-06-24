@@ -3,7 +3,7 @@
   "version": "0.0.0-development",
   "description": "Octokit plugin adding one method for all of api.github.com REST API endpoints",
   "scripts": {
-    "build": "pika build",
+    "build": "pika-pack build",
     "lint": "prettier --check '{src,test}/**/*' '!src/generated/**' README.md package.json",
     "lint:fix": "prettier --write '{src,test}/**/*' '!src/generated/**' README.md package.json",
     "pretest": "npm run -s lint",
