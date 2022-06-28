@@ -106,6 +106,22 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["POST /repos/{owner}/{repo}/actions/workflows/{workflow_id}/dispatches"]["response"];
     };
+    deleteActionsCacheById: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["DELETE /repos/{owner}/{repo}/actions/caches/{cache_id}"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["DELETE /repos/{owner}/{repo}/actions/caches/{cache_id}"]["response"];
+    };
+    deleteActionsCacheByKey: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["DELETE /repos/{owner}/{repo}/actions/caches{?key,ref}"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["DELETE /repos/{owner}/{repo}/actions/caches{?key,ref}"]["response"];
+    };
     deleteArtifact: {
       parameters: RequestParameters &
         Omit<
@@ -233,6 +249,14 @@ export type RestEndpointMethodTypes = {
           "baseUrl" | "headers" | "mediaType"
         >;
       response: Endpoints["PUT /repos/{owner}/{repo}/actions/workflows/{workflow_id}/enable"]["response"];
+    };
+    getActionsCacheList: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /repos/{owner}/{repo}/actions/caches"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /repos/{owner}/{repo}/actions/caches"]["response"];
     };
     getActionsCacheUsage: {
       parameters: RequestParameters &
@@ -689,6 +713,14 @@ export type RestEndpointMethodTypes = {
           "baseUrl" | "headers" | "mediaType"
         >;
       response: Endpoints["POST /repos/{owner}/{repo}/actions/runs/{run_id}/pending_deployments"]["response"];
+    };
+    setActionsOidcCustomIssuerPolicyForEnterprise: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["PUT /enterprises/{enterprise}/actions/oidc/customization/issuer"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["PUT /enterprises/{enterprise}/actions/oidc/customization/issuer"]["response"];
     };
     setAllowedActionsOrganization: {
       parameters: RequestParameters &
@@ -1680,6 +1712,14 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["DELETE /user/codespaces/{codespace_name}"]["response"];
     };
+    deleteFromOrganization: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["DELETE /orgs/{org}/members/{username}/codespaces/{codespace_name}"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["DELETE /orgs/{org}/members/{username}/codespaces/{codespace_name}"]["response"];
+    };
     deleteRepoSecret: {
       parameters: RequestParameters &
         Omit<
@@ -1768,6 +1808,14 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["GET /user/codespaces"]["response"];
     };
+    listInOrganization: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /orgs/{org_id}/codespaces"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /orgs/{org_id}/codespaces"]["response"];
+    };
     listInRepositoryForAuthenticatedUser: {
       parameters: RequestParameters &
         Omit<
@@ -1839,6 +1887,14 @@ export type RestEndpointMethodTypes = {
           "baseUrl" | "headers" | "mediaType"
         >;
       response: Endpoints["POST /user/codespaces/{codespace_name}/stop"]["response"];
+    };
+    stopInOrganization: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["POST /orgs/{org}/members/{username}/codespaces/{codespace_name}/stop"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["POST /orgs/{org}/members/{username}/codespaces/{codespace_name}/stop"]["response"];
     };
     updateForAuthenticatedUser: {
       parameters: RequestParameters &
@@ -1964,6 +2020,14 @@ export type RestEndpointMethodTypes = {
     };
   };
   dependencyGraph: {
+    createRepositorySnapshot: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["POST /repos/{owner}/{repo}/dependency-graph/snapshots"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["POST /repos/{owner}/{repo}/dependency-graph/snapshots"]["response"];
+    };
     diffRange: {
       parameters: RequestParameters &
         Omit<
