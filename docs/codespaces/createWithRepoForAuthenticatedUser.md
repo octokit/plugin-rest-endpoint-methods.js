@@ -87,6 +87,11 @@ Time in minutes before codespace stops from inactivity
 Display name for this codespace
 
 </td></tr>
+<tr><td>retention_period_minutes</td><td>no</td><td>
+
+Duration in minutes after codespace has gone idle in which it will be deleted. Must be integer minutes between 0 and 43200 (30 days).
+
+</td></tr>
   </tbody>
 </table>
 

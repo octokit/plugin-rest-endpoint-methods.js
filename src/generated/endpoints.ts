@@ -36,6 +36,12 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     createWorkflowDispatch: [
       "POST /repos/{owner}/{repo}/actions/workflows/{workflow_id}/dispatches",
     ],
+    deleteActionsCacheById: [
+      "DELETE /repos/{owner}/{repo}/actions/caches/{cache_id}",
+    ],
+    deleteActionsCacheByKey: [
+      "DELETE /repos/{owner}/{repo}/actions/caches{?key,ref}",
+    ],
     deleteArtifact: [
       "DELETE /repos/{owner}/{repo}/actions/artifacts/{artifact_id}",
     ],
@@ -80,6 +86,7 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     enableWorkflow: [
       "PUT /repos/{owner}/{repo}/actions/workflows/{workflow_id}/enable",
     ],
+    getActionsCacheList: ["GET /repos/{owner}/{repo}/actions/caches"],
     getActionsCacheUsage: ["GET /repos/{owner}/{repo}/actions/cache/usage"],
     getActionsCacheUsageByRepoForOrg: [
       "GET /orgs/{org}/actions/cache/usage-by-repository",
@@ -212,6 +219,9 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     ],
     reviewPendingDeploymentsForRun: [
       "POST /repos/{owner}/{repo}/actions/runs/{run_id}/pending_deployments",
+    ],
+    setActionsOidcCustomIssuerPolicyForEnterprise: [
+      "PUT /enterprises/{enterprise}/actions/oidc/customization/issuer",
     ],
     setAllowedActionsOrganization: [
       "PUT /orgs/{org}/actions/permissions/selected-actions",
@@ -463,6 +473,9 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
       "POST /repos/{owner}/{repo}/codespaces",
     ],
     deleteForAuthenticatedUser: ["DELETE /user/codespaces/{codespace_name}"],
+    deleteFromOrganization: [
+      "DELETE /orgs/{org}/members/{username}/codespaces/{codespace_name}",
+    ],
     deleteRepoSecret: [
       "DELETE /repos/{owner}/{repo}/codespaces/secrets/{secret_name}",
     ],
@@ -492,6 +505,7 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
       "GET /repos/{owner}/{repo}/codespaces/devcontainers",
     ],
     listForAuthenticatedUser: ["GET /user/codespaces"],
+    listInOrganization: ["GET /orgs/{org_id}/codespaces"],
     listInRepositoryForAuthenticatedUser: [
       "GET /repos/{owner}/{repo}/codespaces",
     ],
@@ -511,6 +525,9 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     ],
     startForAuthenticatedUser: ["POST /user/codespaces/{codespace_name}/start"],
     stopForAuthenticatedUser: ["POST /user/codespaces/{codespace_name}/stop"],
+    stopInOrganization: [
+      "POST /orgs/{org}/members/{username}/codespaces/{codespace_name}/stop",
+    ],
     updateForAuthenticatedUser: ["PATCH /user/codespaces/{codespace_name}"],
   },
   dependabot: {
@@ -548,6 +565,9 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     ],
   },
   dependencyGraph: {
+    createRepositorySnapshot: [
+      "POST /repos/{owner}/{repo}/dependency-graph/snapshots",
+    ],
     diffRange: [
       "GET /repos/{owner}/{repo}/dependency-graph/compare/{basehead}",
     ],

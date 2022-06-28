@@ -273,7 +273,11 @@
       }
     ],
     "responses": [
-      { "code": 201, "description": "Response", "examples": null },
+      {
+        "code": 201,
+        "description": "Response",
+        "examples": [{ "data": "null" }]
+      },
       { "code": 403, "description": "Forbidden", "examples": null },
       { "code": 404, "description": "Resource not found", "examples": null }
     ],
@@ -423,7 +427,7 @@
       {
         "code": 201,
         "description": "Response when creating a secret",
-        "examples": null
+        "examples": [{ "data": "null" }]
       },
       {
         "code": 204,
@@ -530,7 +534,7 @@
       {
         "code": 201,
         "description": "Response when creating a secret",
-        "examples": null
+        "examples": [{ "data": "null" }]
       },
       {
         "code": 204,
@@ -918,6 +922,143 @@
       }
     ],
     "responses": [{ "code": 204, "description": "Response", "examples": null }],
+    "renamed": null
+  },
+  {
+    "name": "Delete a GitHub Actions cache for a repository (using a cache ID)",
+    "scope": "actions",
+    "id": "deleteActionsCacheById",
+    "method": "DELETE",
+    "url": "/repos/{owner}/{repo}/actions/caches/{cache_id}",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "removalDate": null,
+    "description": "Deletes a GitHub Actions cache for a repository, using a cache ID.\n\nYou must authenticate using an access token with the `repo` scope to use this endpoint.\n\nGitHub Apps must have the `actions:write` permission to use this endpoint.",
+    "documentationUrl": "https://docs.github.com/rest/actions/cache#delete-a-github-actions-cache-for-a-repository-using-a-cache-id",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "owner",
+        "description": "The account owner of the repository. The name is not case sensitive.",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "repo",
+        "description": "The name of the repository. The name is not case sensitive.",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "cache_id",
+        "description": "The unique identifier of the GitHub Actions cache.",
+        "in": "PATH",
+        "type": "integer",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [{ "code": 204, "description": "Response", "examples": null }],
+    "renamed": null
+  },
+  {
+    "name": "Delete GitHub Actions caches for a repository (using a cache key)",
+    "scope": "actions",
+    "id": "deleteActionsCacheByKey",
+    "method": "DELETE",
+    "url": "/repos/{owner}/{repo}/actions/caches{?key,ref}",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "removalDate": null,
+    "description": "Deletes one or more GitHub Actions caches for a repository, using a complete cache key. By default, all caches that match the provided key are deleted, but you can optionally provide a Git ref to restrict deletions to caches that match both the provided key and the Git ref.\n\nYou must authenticate using an access token with the `repo` scope to use this endpoint.\n\nGitHub Apps must have the `actions:write` permission to use this endpoint.",
+    "documentationUrl": "https://docs.github.com/rest/actions/cache#delete-github-actions-caches-for-a-repository-using-a-cache-key",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "owner",
+        "description": "The account owner of the repository. The name is not case sensitive.",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "repo",
+        "description": "The name of the repository. The name is not case sensitive.",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "key",
+        "description": "A key for identifying the cache.",
+        "in": "QUERY",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "ref",
+        "description": "The Git reference for the results you want to list. The `ref` for a branch can be formatted either as `refs/heads/<branch name>` or simply `<branch name>`. To reference a pull request use `refs/pull/<number>/merge`.",
+        "in": "QUERY",
+        "type": "string",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      {
+        "code": 200,
+        "description": "Response",
+        "examples": [
+          {
+            "data": "{\"total_count\":1,\"actions_caches\":[{\"id\":505,\"ref\":\"refs/heads/main\",\"key\":\"Linux-node-958aff96db2d75d67787d1e634ae70b659de937b\",\"version\":\"73885106f58cc52a7df9ec4d4a5622a5614813162cb516c759a30af6bf56e6f0\",\"last_accessed_at\":\"2019-01-24T22:45:36.000Z\",\"created_at\":\"2019-01-24T22:45:36.000Z\",\"size_in_bytes\":1024}]}"
+          }
+        ]
+      }
+    ],
     "renamed": null
   },
   {
@@ -1524,7 +1665,10 @@
         "deprecated": null
       }
     ],
-    "responses": [{ "code": 302, "description": "Response", "examples": null }],
+    "responses": [
+      { "code": 302, "description": "Response", "examples": null },
+      { "code": 410, "description": "Gone", "examples": null }
+    ],
     "renamed": null
   },
   {
@@ -1810,6 +1954,138 @@
       }
     ],
     "responses": [{ "code": 204, "description": "Response", "examples": null }],
+    "renamed": null
+  },
+  {
+    "name": "List GitHub Actions caches for a repository",
+    "scope": "actions",
+    "id": "getActionsCacheList",
+    "method": "GET",
+    "url": "/repos/{owner}/{repo}/actions/caches",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "removalDate": null,
+    "description": "Lists the GitHub Actions caches for a repository.\nYou must authenticate using an access token with the `repo` scope to use this endpoint.\nGitHub Apps must have the `actions:read` permission to use this endpoint.",
+    "documentationUrl": "https://docs.github.com/rest/actions/cache#list-github-actions-caches-for-a-repository",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "owner",
+        "description": "The account owner of the repository. The name is not case sensitive.",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "repo",
+        "description": "The name of the repository. The name is not case sensitive.",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "per_page",
+        "description": "The number of results per page (max 100).",
+        "in": "QUERY",
+        "type": "integer",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "page",
+        "description": "Page number of the results to fetch.",
+        "in": "QUERY",
+        "type": "integer",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "ref",
+        "description": "The Git reference for the results you want to list. The `ref` for a branch can be formatted either as `refs/heads/<branch name>` or simply `<branch name>`. To reference a pull request use `refs/pull/<number>/merge`.",
+        "in": "QUERY",
+        "type": "string",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "key",
+        "description": "An explicit key or prefix for identifying the cache",
+        "in": "QUERY",
+        "type": "string",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "sort",
+        "description": "The property to sort the results by. `created_at` means when the cache was created. `last_accessed_at` means when the cache was last accessed. `size_in_bytes` is the size of the cache in bytes.",
+        "in": "QUERY",
+        "type": "string",
+        "required": false,
+        "enum": ["created_at", "last_accessed_at", "size_in_bytes"],
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "direction",
+        "description": "The direction to sort the results by.",
+        "in": "QUERY",
+        "type": "string",
+        "required": false,
+        "enum": ["asc", "desc"],
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      {
+        "code": 200,
+        "description": "Response",
+        "examples": [
+          {
+            "data": "{\"total_count\":1,\"actions_caches\":[{\"id\":505,\"ref\":\"refs/heads/main\",\"key\":\"Linux-node-958aff96db2d75d67787d1e634ae70b659de937b\",\"version\":\"73885106f58cc52a7df9ec4d4a5622a5614813162cb516c759a30af6bf56e6f0\",\"last_accessed_at\":\"2019-01-24T22:45:36.000Z\",\"created_at\":\"2019-01-24T22:45:36.000Z\",\"size_in_bytes\":1024}]}"
+          }
+        ]
+      }
+    ],
     "renamed": null
   },
   {
@@ -5209,7 +5485,11 @@
       }
     ],
     "responses": [
-      { "code": 201, "description": "Response", "examples": null },
+      {
+        "code": 201,
+        "description": "Response",
+        "examples": [{ "data": "null" }]
+      },
       { "code": 403, "description": "Forbidden", "examples": null }
     ],
     "renamed": null
@@ -5351,7 +5631,13 @@
         "deprecated": null
       }
     ],
-    "responses": [{ "code": 201, "description": "Response", "examples": null }],
+    "responses": [
+      {
+        "code": 201,
+        "description": "Response",
+        "examples": [{ "data": "null" }]
+      }
+    ],
     "renamed": null
   },
   {
@@ -5800,6 +6086,50 @@
         ]
       }
     ],
+    "renamed": null
+  },
+  {
+    "name": "Set the GitHub Actions OIDC custom issuer policy for an enterprise",
+    "scope": "actions",
+    "id": "setActionsOidcCustomIssuerPolicyForEnterprise",
+    "method": "PUT",
+    "url": "/enterprises/{enterprise}/actions/oidc/customization/issuer",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "removalDate": null,
+    "description": "Sets the GitHub Actions OpenID Connect (OIDC) custom issuer policy for an enterprise.\nYou must authenticate using an access token with the `admin:enterprise` scope to use this endpoint.\nGitHub Apps must have the `enterprise_administration:write` permission to use this endpoint.",
+    "documentationUrl": "https://docs.github.com/rest/reference/actions/oidc#set-actions-oidc-custom-issuer-policy-for-enterprise",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "enterprise",
+        "description": "The slug version of the enterprise name. You can also substitute this value with the enterprise id.",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "include_enterprise_slug",
+        "description": "Whether the enterprise customer requested a custom issuer URL.",
+        "in": "BODY",
+        "type": "boolean",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [{ "code": 204, "description": "Response", "examples": null }],
     "renamed": null
   },
   {
@@ -7443,7 +7773,17 @@
         "deprecated": null
       }
     ],
-    "responses": [{ "code": 200, "description": "Response", "examples": null }],
+    "responses": [
+      {
+        "code": 200,
+        "description": "Response",
+        "examples": [
+          {
+            "data": "[{\"id\":\"22237752260\",\"type\":\"WatchEvent\",\"actor\":{\"id\":583231,\"login\":\"octocat\",\"display_login\":\"octocat\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/octocat\",\"avatar_url\":\"https://avatars.githubusercontent.com/u/583231?v=4\"},\"repo\":{\"id\":1296269,\"name\":\"octo-org/octo-repo\",\"url\":\"https://api.github.com/repos/octo-org/octo-repo\"},\"payload\":{\"action\":\"started\"},\"public\":true,\"created_at\":\"2022-06-08T23:29:25Z\"},{\"id\":\"22249084964\",\"type\":\"PushEvent\",\"actor\":{\"id\":583231,\"login\":\"octocat\",\"display_login\":\"octocat\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/octocat\",\"avatar_url\":\"https://avatars.githubusercontent.com/u/583231?v=4\"},\"repo\":{\"id\":1296269,\"name\":\"octo-org/octo-repo\",\"url\":\"https://api.github.com/repos/octo-org/oct-repo\"},\"payload\":{\"push_id\":10115855396,\"size\":1,\"distinct_size\":1,\"ref\":\"refs/heads/master\",\"head\":\"7a8f3ac80e2ad2f6842cb86f576d4bfe2c03e300\",\"before\":\"883efe034920928c47fe18598c01249d1a9fdabd\",\"commits\":[{\"sha\":\"7a8f3ac80e2ad2f6842cb86f576d4bfe2c03e300\",\"author\":{\"email\":\"octocat@github.com\",\"name\":\"Monalisa Octocat\"},\"message\":\"commit\",\"distinct\":true,\"url\":\"https://api.github.com/repos/octo-org/oct-repo/commits/7a8f3ac80e2ad2f6842cb86f576d4bfe2c03e300\"}]},\"public\":true,\"created_at\":\"2022-06-09T12:47:28Z\"}]"
+          }
+        ]
+      }
+    ],
     "renamed": null
   },
   {
@@ -7647,7 +7987,17 @@
         "deprecated": null
       }
     ],
-    "responses": [{ "code": 200, "description": "Response", "examples": null }],
+    "responses": [
+      {
+        "code": 200,
+        "description": "Response",
+        "examples": [
+          {
+            "data": "[{\"id\":\"22249084964\",\"type\":\"PushEvent\",\"actor\":{\"id\":583231,\"login\":\"octocat\",\"display_login\":\"octocat\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/octocat\",\"avatar_url\":\"https://avatars.githubusercontent.com/u/583231?v=4\"},\"repo\":{\"id\":1296269,\"name\":\"octocat/Hello-World\",\"url\":\"https://api.github.com/repos/octocat/Hello-World\"},\"payload\":{\"push_id\":10115855396,\"size\":1,\"distinct_size\":1,\"ref\":\"refs/heads/master\",\"head\":\"7a8f3ac80e2ad2f6842cb86f576d4bfe2c03e300\",\"before\":\"883efe034920928c47fe18598c01249d1a9fdabd\",\"commits\":[{\"sha\":\"7a8f3ac80e2ad2f6842cb86f576d4bfe2c03e300\",\"author\":{\"email\":\"octocat@github.com\",\"name\":\"Monalisa Octocat\"},\"message\":\"commit\",\"distinct\":true,\"url\":\"https://api.github.com/repos/octocat/Hello-World/commits/7a8f3ac80e2ad2f6842cb86f576d4bfe2c03e300\"}]},\"public\":true,\"created_at\":\"2022-06-09T12:47:28Z\"},{\"id\":\"22237752260\",\"type\":\"WatchEvent\",\"actor\":{\"id\":583231,\"login\":\"octocat\",\"display_login\":\"octocat\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/octocat\",\"avatar_url\":\"https://avatars.githubusercontent.com/u/583231?v=4\"},\"repo\":{\"id\":1296269,\"name\":\"octocat/Hello-World\",\"url\":\"https://api.github.com/repos/octocat/Hello-World\"},\"payload\":{\"action\":\"started\"},\"public\":true,\"created_at\":\"2022-06-08T23:29:25Z\"}]"
+          }
+        ]
+      }
+    ],
     "renamed": null
   },
   {
@@ -11691,7 +12041,7 @@
         "description": "Success",
         "examples": [
           {
-            "data": "{\"total_advanced_security_committers\":2,\"repositories\":[{\"name\":\"octocat-org/Hello-World\",\"advanced_security_committers\":2,\"advanced_security_committers_breakdown\":[{\"user_login\":\"octocat\",\"last_pushed_date\":\"2021-11-03\"},{\"user_login\":\"octokitten\",\"last_pushed_date\":\"2021-10-25\"}]},{\"name\":\"octocat-org/server\",\"advanced_security_committers\":1,\"advanced_security_committers_breakdown\":[{\"user_login\":\"octokitten\",\"last_pushed_date\":\"2021-10-26\"}]}]}"
+            "data": "{\"total_advanced_security_committers\":2,\"total_count\":2,\"repositories\":[{\"name\":\"octocat-org/Hello-World\",\"advanced_security_committers\":2,\"advanced_security_committers_breakdown\":[{\"user_login\":\"octocat\",\"last_pushed_date\":\"2021-11-03\"},{\"user_login\":\"octokitten\",\"last_pushed_date\":\"2021-10-25\"}]},{\"name\":\"octocat-org/server\",\"advanced_security_committers\":1,\"advanced_security_committers_breakdown\":[{\"user_login\":\"octokitten\",\"last_pushed_date\":\"2021-10-26\"}]}]}"
           }
         ]
       },
@@ -11763,7 +12113,7 @@
         "description": "Success",
         "examples": [
           {
-            "data": "{\"total_advanced_security_committers\":2,\"repositories\":[{\"name\":\"octocat-org/Hello-World\",\"advanced_security_committers\":2,\"advanced_security_committers_breakdown\":[{\"user_login\":\"octocat\",\"last_pushed_date\":\"2021-11-03\"},{\"user_login\":\"octokitten\",\"last_pushed_date\":\"2021-10-25\"}]},{\"name\":\"octocat-org/server\",\"advanced_security_committers\":1,\"advanced_security_committers_breakdown\":[{\"user_login\":\"octokitten\",\"last_pushed_date\":\"2021-10-26\"}]}]}"
+            "data": "{\"total_advanced_security_committers\":2,\"total_count\":2,\"repositories\":[{\"name\":\"octocat-org/Hello-World\",\"advanced_security_committers\":2,\"advanced_security_committers_breakdown\":[{\"user_login\":\"octocat\",\"last_pushed_date\":\"2021-11-03\"},{\"user_login\":\"octokitten\",\"last_pushed_date\":\"2021-10-25\"}]},{\"name\":\"octocat-org/server\",\"advanced_security_committers\":1,\"advanced_security_committers_breakdown\":[{\"user_login\":\"octokitten\",\"last_pushed_date\":\"2021-10-26\"}]}]}"
           }
         ]
       },
@@ -13988,7 +14338,7 @@
         "description": "Response",
         "examples": [
           {
-            "data": "[{\"number\":4,\"created_at\":\"2020-02-13T12:29:18Z\",\"url\":\"https://api.github.com/repos/octocat/hello-world/code-scanning/alerts/4\",\"html_url\":\"https://github.com/octocat/hello-world/code-scanning/4\",\"state\":\"open\",\"dismissed_by\":null,\"dismissed_at\":null,\"dismissed_reason\":null,\"dismissed_comment\":null,\"rule\":{\"id\":\"js/zipslip\",\"severity\":\"error\",\"tags\":[\"security\",\"external/cwe/cwe-022\"],\"description\":\"Arbitrary file write during zip extraction\",\"name\":\"js/zipslip\"},\"tool\":{\"name\":\"CodeQL\",\"guid\":null,\"version\":\"2.4.0\"},\"most_recent_instance\":{\"ref\":\"refs/heads/main\",\"analysis_key\":\".github/workflows/codeql-analysis.yml:CodeQL-Build\",\"environment\":\"{}\",\"state\":\"open\",\"commit_sha\":\"39406e42cb832f683daa691dd652a8dc36ee8930\",\"message\":{\"text\":\"This path depends on a user-provided value.\"},\"location\":{\"path\":\"spec-main/api-session-spec.ts\",\"start_line\":917,\"end_line\":917,\"start_column\":7,\"end_column\":18},\"classifications\":[\"test\"]},\"instances_url\":\"https://api.github.com/repos/octocat/hello-world/code-scanning/alerts/4/instances\",\"repository\":{\"id\":1296269,\"node_id\":\"MDEwOlJlcG9zaXRvcnkxMjk2MjY5\",\"name\":\"Hello-World\",\"full_name\":\"octocat/Hello-World\",\"owner\":{\"login\":\"octocat\",\"id\":1,\"node_id\":\"MDQ6VXNlcjE=\",\"avatar_url\":\"https://github.com/images/error/octocat_happy.gif\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/octocat\",\"html_url\":\"https://github.com/octocat\",\"followers_url\":\"https://api.github.com/users/octocat/followers\",\"following_url\":\"https://api.github.com/users/octocat/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/octocat/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/octocat/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/octocat/subscriptions\",\"organizations_url\":\"https://api.github.com/users/octocat/orgs\",\"repos_url\":\"https://api.github.com/users/octocat/repos\",\"events_url\":\"https://api.github.com/users/octocat/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/octocat/received_events\",\"type\":\"User\",\"site_admin\":false},\"private\":false,\"html_url\":\"https://github.com/octocat/Hello-World\",\"description\":\"This your first repo!\",\"fork\":false,\"url\":\"https://api.github.com/repos/octocat/Hello-World\",\"archive_url\":\"https://api.github.com/repos/octocat/Hello-World/{archive_format}{/ref}\",\"assignees_url\":\"https://api.github.com/repos/octocat/Hello-World/assignees{/user}\",\"blobs_url\":\"https://api.github.com/repos/octocat/Hello-World/git/blobs{/sha}\",\"branches_url\":\"https://api.github.com/repos/octocat/Hello-World/branches{/branch}\",\"collaborators_url\":\"https://api.github.com/repos/octocat/Hello-World/collaborators{/collaborator}\",\"comments_url\":\"https://api.github.com/repos/octocat/Hello-World/comments{/number}\",\"commits_url\":\"https://api.github.com/repos/octocat/Hello-World/commits{/sha}\",\"compare_url\":\"https://api.github.com/repos/octocat/Hello-World/compare/{base}...{head}\",\"contents_url\":\"https://api.github.com/repos/octocat/Hello-World/contents/{+path}\",\"contributors_url\":\"https://api.github.com/repos/octocat/Hello-World/contributors\",\"deployments_url\":\"https://api.github.com/repos/octocat/Hello-World/deployments\",\"downloads_url\":\"https://api.github.com/repos/octocat/Hello-World/downloads\",\"events_url\":\"https://api.github.com/repos/octocat/Hello-World/events\",\"forks_url\":\"https://api.github.com/repos/octocat/Hello-World/forks\",\"git_commits_url\":\"https://api.github.com/repos/octocat/Hello-World/git/commits{/sha}\",\"git_refs_url\":\"https://api.github.com/repos/octocat/Hello-World/git/refs{/sha}\",\"git_tags_url\":\"https://api.github.com/repos/octocat/Hello-World/git/tags{/sha}\",\"git_url\":\"git:github.com/octocat/Hello-World.git\",\"issue_comment_url\":\"https://api.github.com/repos/octocat/Hello-World/issues/comments{/number}\",\"issue_events_url\":\"https://api.github.com/repos/octocat/Hello-World/issues/events{/number}\",\"issues_url\":\"https://api.github.com/repos/octocat/Hello-World/issues{/number}\",\"keys_url\":\"https://api.github.com/repos/octocat/Hello-World/keys{/key_id}\",\"labels_url\":\"https://api.github.com/repos/octocat/Hello-World/labels{/name}\",\"languages_url\":\"https://api.github.com/repos/octocat/Hello-World/languages\",\"merges_url\":\"https://api.github.com/repos/octocat/Hello-World/merges\",\"milestones_url\":\"https://api.github.com/repos/octocat/Hello-World/milestones{/number}\",\"notifications_url\":\"https://api.github.com/repos/octocat/Hello-World/notifications{?since,all,participating}\",\"pulls_url\":\"https://api.github.com/repos/octocat/Hello-World/pulls{/number}\",\"releases_url\":\"https://api.github.com/repos/octocat/Hello-World/releases{/id}\",\"ssh_url\":\"git@github.com:octocat/Hello-World.git\",\"stargazers_url\":\"https://api.github.com/repos/octocat/Hello-World/stargazers\",\"statuses_url\":\"https://api.github.com/repos/octocat/Hello-World/statuses/{sha}\",\"subscribers_url\":\"https://api.github.com/repos/octocat/Hello-World/subscribers\",\"subscription_url\":\"https://api.github.com/repos/octocat/Hello-World/subscription\",\"tags_url\":\"https://api.github.com/repos/octocat/Hello-World/tags\",\"teams_url\":\"https://api.github.com/repos/octocat/Hello-World/teams\",\"trees_url\":\"https://api.github.com/repos/octocat/Hello-World/git/trees{/sha}\",\"clone_url\":\"https://github.com/octocat/Hello-World.git\",\"mirror_url\":\"git:git.example.com/octocat/Hello-World\",\"hooks_url\":\"https://api.github.com/repos/octocat/Hello-World/hooks\",\"svn_url\":\"https://svn.github.com/octocat/Hello-World\",\"homepage\":\"https://github.com\",\"language\":null,\"forks_count\":9,\"stargazers_count\":80,\"watchers_count\":80,\"size\":108,\"default_branch\":\"master\",\"open_issues_count\":0,\"is_template\":false,\"topics\":[\"octocat\",\"atom\",\"electron\",\"api\"],\"has_issues\":true,\"has_projects\":true,\"has_wiki\":true,\"has_pages\":false,\"has_downloads\":true,\"archived\":false,\"disabled\":false,\"visibility\":\"public\",\"pushed_at\":\"2011-01-26T19:06:43Z\",\"created_at\":\"2011-01-26T19:01:12Z\",\"updated_at\":\"2011-01-26T19:14:43Z\",\"permissions\":{\"admin\":false,\"push\":false,\"pull\":true},\"template_repository\":{\"id\":1296269,\"node_id\":\"MDEwOlJlcG9zaXRvcnkxMjk2MjY5\",\"name\":\"Hello-World-Template\",\"full_name\":\"octocat/Hello-World-Template\",\"owner\":{\"login\":\"octocat\",\"id\":1,\"node_id\":\"MDQ6VXNlcjE=\",\"avatar_url\":\"https://github.com/images/error/octocat_happy.gif\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/octocat\",\"html_url\":\"https://github.com/octocat\",\"followers_url\":\"https://api.github.com/users/octocat/followers\",\"following_url\":\"https://api.github.com/users/octocat/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/octocat/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/octocat/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/octocat/subscriptions\",\"organizations_url\":\"https://api.github.com/users/octocat/orgs\",\"repos_url\":\"https://api.github.com/users/octocat/repos\",\"events_url\":\"https://api.github.com/users/octocat/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/octocat/received_events\",\"type\":\"User\",\"site_admin\":false},\"private\":false,\"html_url\":\"https://github.com/octocat/Hello-World-Template\",\"description\":\"This your first repo!\",\"fork\":false,\"url\":\"https://api.github.com/repos/octocat/Hello-World-Template\",\"archive_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/{archive_format}{/ref}\",\"assignees_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/assignees{/user}\",\"blobs_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/git/blobs{/sha}\",\"branches_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/branches{/branch}\",\"collaborators_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/collaborators{/collaborator}\",\"comments_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/comments{/number}\",\"commits_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/commits{/sha}\",\"compare_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/compare/{base}...{head}\",\"contents_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/contents/{+path}\",\"contributors_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/contributors\",\"deployments_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/deployments\",\"downloads_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/downloads\",\"events_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/events\",\"forks_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/forks\",\"git_commits_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/git/commits{/sha}\",\"git_refs_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/git/refs{/sha}\",\"git_tags_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/git/tags{/sha}\",\"git_url\":\"git:github.com/octocat/Hello-World-Template.git\",\"issue_comment_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/issues/comments{/number}\",\"issue_events_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/issues/events{/number}\",\"issues_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/issues{/number}\",\"keys_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/keys{/key_id}\",\"labels_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/labels{/name}\",\"languages_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/languages\",\"merges_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/merges\",\"milestones_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/milestones{/number}\",\"notifications_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/notifications{?since,all,participating}\",\"pulls_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/pulls{/number}\",\"releases_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/releases{/id}\",\"ssh_url\":\"git@github.com:octocat/Hello-World-Template.git\",\"stargazers_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/stargazers\",\"statuses_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/statuses/{sha}\",\"subscribers_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/subscribers\",\"subscription_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/subscription\",\"tags_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/tags\",\"teams_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/teams\",\"trees_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/git/trees{/sha}\",\"clone_url\":\"https://github.com/octocat/Hello-World-Template.git\",\"mirror_url\":\"git:git.example.com/octocat/Hello-World-Template\",\"hooks_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/hooks\",\"svn_url\":\"https://svn.github.com/octocat/Hello-World-Template\",\"homepage\":\"https://github.com\",\"language\":null,\"forks\":9,\"forks_count\":9,\"stargazers_count\":80,\"watchers_count\":80,\"watchers\":80,\"size\":108,\"default_branch\":\"master\",\"open_issues\":0,\"open_issues_count\":0,\"is_template\":true,\"license\":{\"key\":\"mit\",\"name\":\"MIT License\",\"url\":\"https://api.github.com/licenses/mit\",\"spdx_id\":\"MIT\",\"node_id\":\"MDc6TGljZW5zZW1pdA==\",\"html_url\":\"https://api.github.com/licenses/mit\"},\"topics\":[\"octocat\",\"atom\",\"electron\",\"api\"],\"has_issues\":true,\"has_projects\":true,\"has_wiki\":true,\"has_pages\":false,\"has_downloads\":true,\"archived\":false,\"disabled\":false,\"visibility\":\"public\",\"pushed_at\":\"2011-01-26T19:06:43Z\",\"created_at\":\"2011-01-26T19:01:12Z\",\"updated_at\":\"2011-01-26T19:14:43Z\",\"permissions\":{\"admin\":false,\"push\":false,\"pull\":true},\"allow_rebase_merge\":true,\"temp_clone_token\":\"ABTLWHOULUVAXGTRYU7OC2876QJ2O\",\"allow_squash_merge\":true,\"allow_auto_merge\":false,\"delete_branch_on_merge\":true,\"allow_merge_commit\":true,\"subscribers_count\":42,\"network_count\":0}}},{\"number\":3,\"created_at\":\"2020-02-13T12:29:18Z\",\"url\":\"https://api.github.com/repos/octocat/hello-world/code-scanning/alerts/3\",\"html_url\":\"https://github.com/octocat/hello-world/code-scanning/3\",\"state\":\"dismissed\",\"dismissed_by\":{\"login\":\"octocat\",\"id\":1,\"node_id\":\"MDQ6VXNlcjE=\",\"avatar_url\":\"https://github.com/images/error/octocat_happy.gif\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/octocat\",\"html_url\":\"https://github.com/octocat\",\"followers_url\":\"https://api.github.com/users/octocat/followers\",\"following_url\":\"https://api.github.com/users/octocat/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/octocat/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/octocat/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/octocat/subscriptions\",\"organizations_url\":\"https://api.github.com/users/octocat/orgs\",\"repos_url\":\"https://api.github.com/users/octocat/repos\",\"events_url\":\"https://api.github.com/users/octocat/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/octocat/received_events\",\"type\":\"User\",\"site_admin\":false},\"dismissed_at\":\"2020-02-14T12:29:18Z\",\"dismissed_reason\":\"false positive\",\"dismissed_comment\":\"This alert is not actually correct, because there's a sanitizer included in the library.\",\"rule\":{\"id\":\"js/zipslip\",\"severity\":\"error\",\"tags\":[\"security\",\"external/cwe/cwe-022\"],\"description\":\"Arbitrary file write during zip extraction\",\"name\":\"js/zipslip\"},\"tool\":{\"name\":\"CodeQL\",\"guid\":null,\"version\":\"2.4.0\"},\"most_recent_instance\":{\"ref\":\"refs/heads/main\",\"analysis_key\":\".github/workflows/codeql-analysis.yml:CodeQL-Build\",\"environment\":\"{}\",\"state\":\"open\",\"commit_sha\":\"39406e42cb832f683daa691dd652a8dc36ee8930\",\"message\":{\"text\":\"This path depends on a user-provided value.\"},\"location\":{\"path\":\"lib/ab12-gen.js\",\"start_line\":917,\"end_line\":917,\"start_column\":7,\"end_column\":18},\"classifications\":[]},\"instances_url\":\"https://api.github.com/repos/octocat/hello-world/code-scanning/alerts/3/instances\",\"repository\":{\"id\":1296269,\"node_id\":\"MDEwOlJlcG9zaXRvcnkxMjk2MjY5\",\"name\":\"Hello-World\",\"full_name\":\"octocat/Hello-World\",\"owner\":{\"login\":\"octocat\",\"id\":1,\"node_id\":\"MDQ6VXNlcjE=\",\"avatar_url\":\"https://github.com/images/error/octocat_happy.gif\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/octocat\",\"html_url\":\"https://github.com/octocat\",\"followers_url\":\"https://api.github.com/users/octocat/followers\",\"following_url\":\"https://api.github.com/users/octocat/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/octocat/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/octocat/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/octocat/subscriptions\",\"organizations_url\":\"https://api.github.com/users/octocat/orgs\",\"repos_url\":\"https://api.github.com/users/octocat/repos\",\"events_url\":\"https://api.github.com/users/octocat/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/octocat/received_events\",\"type\":\"User\",\"site_admin\":false},\"private\":false,\"html_url\":\"https://github.com/octocat/Hello-World\",\"description\":\"This your first repo!\",\"fork\":false,\"url\":\"https://api.github.com/repos/octocat/Hello-World\",\"archive_url\":\"https://api.github.com/repos/octocat/Hello-World/{archive_format}{/ref}\",\"assignees_url\":\"https://api.github.com/repos/octocat/Hello-World/assignees{/user}\",\"blobs_url\":\"https://api.github.com/repos/octocat/Hello-World/git/blobs{/sha}\",\"branches_url\":\"https://api.github.com/repos/octocat/Hello-World/branches{/branch}\",\"collaborators_url\":\"https://api.github.com/repos/octocat/Hello-World/collaborators{/collaborator}\",\"comments_url\":\"https://api.github.com/repos/octocat/Hello-World/comments{/number}\",\"commits_url\":\"https://api.github.com/repos/octocat/Hello-World/commits{/sha}\",\"compare_url\":\"https://api.github.com/repos/octocat/Hello-World/compare/{base}...{head}\",\"contents_url\":\"https://api.github.com/repos/octocat/Hello-World/contents/{+path}\",\"contributors_url\":\"https://api.github.com/repos/octocat/Hello-World/contributors\",\"deployments_url\":\"https://api.github.com/repos/octocat/Hello-World/deployments\",\"downloads_url\":\"https://api.github.com/repos/octocat/Hello-World/downloads\",\"events_url\":\"https://api.github.com/repos/octocat/Hello-World/events\",\"forks_url\":\"https://api.github.com/repos/octocat/Hello-World/forks\",\"git_commits_url\":\"https://api.github.com/repos/octocat/Hello-World/git/commits{/sha}\",\"git_refs_url\":\"https://api.github.com/repos/octocat/Hello-World/git/refs{/sha}\",\"git_tags_url\":\"https://api.github.com/repos/octocat/Hello-World/git/tags{/sha}\",\"git_url\":\"git:github.com/octocat/Hello-World.git\",\"issue_comment_url\":\"https://api.github.com/repos/octocat/Hello-World/issues/comments{/number}\",\"issue_events_url\":\"https://api.github.com/repos/octocat/Hello-World/issues/events{/number}\",\"issues_url\":\"https://api.github.com/repos/octocat/Hello-World/issues{/number}\",\"keys_url\":\"https://api.github.com/repos/octocat/Hello-World/keys{/key_id}\",\"labels_url\":\"https://api.github.com/repos/octocat/Hello-World/labels{/name}\",\"languages_url\":\"https://api.github.com/repos/octocat/Hello-World/languages\",\"merges_url\":\"https://api.github.com/repos/octocat/Hello-World/merges\",\"milestones_url\":\"https://api.github.com/repos/octocat/Hello-World/milestones{/number}\",\"notifications_url\":\"https://api.github.com/repos/octocat/Hello-World/notifications{?since,all,participating}\",\"pulls_url\":\"https://api.github.com/repos/octocat/Hello-World/pulls{/number}\",\"releases_url\":\"https://api.github.com/repos/octocat/Hello-World/releases{/id}\",\"ssh_url\":\"git@github.com:octocat/Hello-World.git\",\"stargazers_url\":\"https://api.github.com/repos/octocat/Hello-World/stargazers\",\"statuses_url\":\"https://api.github.com/repos/octocat/Hello-World/statuses/{sha}\",\"subscribers_url\":\"https://api.github.com/repos/octocat/Hello-World/subscribers\",\"subscription_url\":\"https://api.github.com/repos/octocat/Hello-World/subscription\",\"tags_url\":\"https://api.github.com/repos/octocat/Hello-World/tags\",\"teams_url\":\"https://api.github.com/repos/octocat/Hello-World/teams\",\"trees_url\":\"https://api.github.com/repos/octocat/Hello-World/git/trees{/sha}\",\"clone_url\":\"https://github.com/octocat/Hello-World.git\",\"mirror_url\":\"git:git.example.com/octocat/Hello-World\",\"hooks_url\":\"https://api.github.com/repos/octocat/Hello-World/hooks\",\"svn_url\":\"https://svn.github.com/octocat/Hello-World\",\"homepage\":\"https://github.com\",\"language\":null,\"forks_count\":9,\"stargazers_count\":80,\"watchers_count\":80,\"size\":108,\"default_branch\":\"master\",\"open_issues_count\":0,\"is_template\":false,\"topics\":[\"octocat\",\"atom\",\"electron\",\"api\"],\"has_issues\":true,\"has_projects\":true,\"has_wiki\":true,\"has_pages\":false,\"has_downloads\":true,\"archived\":false,\"disabled\":false,\"visibility\":\"public\",\"pushed_at\":\"2011-01-26T19:06:43Z\",\"created_at\":\"2011-01-26T19:01:12Z\",\"updated_at\":\"2011-01-26T19:14:43Z\",\"permissions\":{\"admin\":false,\"push\":false,\"pull\":true},\"template_repository\":{\"id\":1296269,\"node_id\":\"MDEwOlJlcG9zaXRvcnkxMjk2MjY5\",\"name\":\"Hello-World-Template\",\"full_name\":\"octocat/Hello-World-Template\",\"owner\":{\"login\":\"octocat\",\"id\":1,\"node_id\":\"MDQ6VXNlcjE=\",\"avatar_url\":\"https://github.com/images/error/octocat_happy.gif\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/octocat\",\"html_url\":\"https://github.com/octocat\",\"followers_url\":\"https://api.github.com/users/octocat/followers\",\"following_url\":\"https://api.github.com/users/octocat/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/octocat/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/octocat/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/octocat/subscriptions\",\"organizations_url\":\"https://api.github.com/users/octocat/orgs\",\"repos_url\":\"https://api.github.com/users/octocat/repos\",\"events_url\":\"https://api.github.com/users/octocat/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/octocat/received_events\",\"type\":\"User\",\"site_admin\":false},\"private\":false,\"html_url\":\"https://github.com/octocat/Hello-World-Template\",\"description\":\"This your first repo!\",\"fork\":false,\"url\":\"https://api.github.com/repos/octocat/Hello-World-Template\",\"archive_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/{archive_format}{/ref}\",\"assignees_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/assignees{/user}\",\"blobs_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/git/blobs{/sha}\",\"branches_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/branches{/branch}\",\"collaborators_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/collaborators{/collaborator}\",\"comments_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/comments{/number}\",\"commits_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/commits{/sha}\",\"compare_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/compare/{base}...{head}\",\"contents_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/contents/{+path}\",\"contributors_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/contributors\",\"deployments_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/deployments\",\"downloads_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/downloads\",\"events_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/events\",\"forks_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/forks\",\"git_commits_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/git/commits{/sha}\",\"git_refs_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/git/refs{/sha}\",\"git_tags_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/git/tags{/sha}\",\"git_url\":\"git:github.com/octocat/Hello-World-Template.git\",\"issue_comment_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/issues/comments{/number}\",\"issue_events_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/issues/events{/number}\",\"issues_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/issues{/number}\",\"keys_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/keys{/key_id}\",\"labels_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/labels{/name}\",\"languages_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/languages\",\"merges_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/merges\",\"milestones_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/milestones{/number}\",\"notifications_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/notifications{?since,all,participating}\",\"pulls_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/pulls{/number}\",\"releases_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/releases{/id}\",\"ssh_url\":\"git@github.com:octocat/Hello-World-Template.git\",\"stargazers_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/stargazers\",\"statuses_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/statuses/{sha}\",\"subscribers_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/subscribers\",\"subscription_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/subscription\",\"tags_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/tags\",\"teams_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/teams\",\"trees_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/git/trees{/sha}\",\"clone_url\":\"https://github.com/octocat/Hello-World-Template.git\",\"mirror_url\":\"git:git.example.com/octocat/Hello-World-Template\",\"hooks_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/hooks\",\"svn_url\":\"https://svn.github.com/octocat/Hello-World-Template\",\"homepage\":\"https://github.com\",\"language\":null,\"forks\":9,\"forks_count\":9,\"stargazers_count\":80,\"watchers_count\":80,\"watchers\":80,\"size\":108,\"default_branch\":\"master\",\"open_issues\":0,\"open_issues_count\":0,\"is_template\":true,\"license\":{\"key\":\"mit\",\"name\":\"MIT License\",\"url\":\"https://api.github.com/licenses/mit\",\"spdx_id\":\"MIT\",\"node_id\":\"MDc6TGljZW5zZW1pdA==\",\"html_url\":\"https://api.github.com/licenses/mit\"},\"topics\":[\"octocat\",\"atom\",\"electron\",\"api\"],\"has_issues\":true,\"has_projects\":true,\"has_wiki\":true,\"has_pages\":false,\"has_downloads\":true,\"archived\":false,\"disabled\":false,\"visibility\":\"public\",\"pushed_at\":\"2011-01-26T19:06:43Z\",\"created_at\":\"2011-01-26T19:01:12Z\",\"updated_at\":\"2011-01-26T19:14:43Z\",\"permissions\":{\"admin\":false,\"push\":false,\"pull\":true},\"allow_rebase_merge\":true,\"temp_clone_token\":\"ABTLWHOULUVAXGTRYU7OC2876QJ2O\",\"allow_squash_merge\":true,\"allow_auto_merge\":false,\"delete_branch_on_merge\":true,\"allow_merge_commit\":true,\"subscribers_count\":42,\"network_count\":0}}}]"
+            "data": "[{\"number\":4,\"created_at\":\"2020-02-13T12:29:18Z\",\"url\":\"https://api.github.com/repos/octocat/hello-world/code-scanning/alerts/4\",\"html_url\":\"https://github.com/octocat/hello-world/code-scanning/4\",\"state\":\"open\",\"dismissed_by\":null,\"dismissed_at\":null,\"dismissed_reason\":null,\"dismissed_comment\":null,\"rule\":{\"id\":\"js/zipslip\",\"severity\":\"error\",\"tags\":[\"security\",\"external/cwe/cwe-022\"],\"description\":\"Arbitrary file write during zip extraction\",\"name\":\"js/zipslip\"},\"tool\":{\"name\":\"CodeQL\",\"guid\":null,\"version\":\"2.4.0\"},\"most_recent_instance\":{\"ref\":\"refs/heads/main\",\"analysis_key\":\".github/workflows/codeql-analysis.yml:CodeQL-Build\",\"environment\":\"{}\",\"state\":\"open\",\"commit_sha\":\"39406e42cb832f683daa691dd652a8dc36ee8930\",\"message\":{\"text\":\"This path depends on a user-provided value.\"},\"location\":{\"path\":\"spec-main/api-session-spec.ts\",\"start_line\":917,\"end_line\":917,\"start_column\":7,\"end_column\":18},\"classifications\":[\"test\"]},\"instances_url\":\"https://api.github.com/repos/octocat/hello-world/code-scanning/alerts/4/instances\",\"repository\":{\"id\":1296269,\"node_id\":\"MDEwOlJlcG9zaXRvcnkxMjk2MjY5\",\"name\":\"Hello-World\",\"full_name\":\"octocat/Hello-World\",\"owner\":{\"login\":\"octocat\",\"id\":1,\"node_id\":\"MDQ6VXNlcjE=\",\"avatar_url\":\"https://github.com/images/error/octocat_happy.gif\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/octocat\",\"html_url\":\"https://github.com/octocat\",\"followers_url\":\"https://api.github.com/users/octocat/followers\",\"following_url\":\"https://api.github.com/users/octocat/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/octocat/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/octocat/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/octocat/subscriptions\",\"organizations_url\":\"https://api.github.com/users/octocat/orgs\",\"repos_url\":\"https://api.github.com/users/octocat/repos\",\"events_url\":\"https://api.github.com/users/octocat/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/octocat/received_events\",\"type\":\"User\",\"site_admin\":false},\"private\":false,\"html_url\":\"https://github.com/octocat/Hello-World\",\"description\":\"This your first repo!\",\"fork\":false,\"url\":\"https://api.github.com/repos/octocat/Hello-World\",\"archive_url\":\"https://api.github.com/repos/octocat/Hello-World/{archive_format}{/ref}\",\"assignees_url\":\"https://api.github.com/repos/octocat/Hello-World/assignees{/user}\",\"blobs_url\":\"https://api.github.com/repos/octocat/Hello-World/git/blobs{/sha}\",\"branches_url\":\"https://api.github.com/repos/octocat/Hello-World/branches{/branch}\",\"collaborators_url\":\"https://api.github.com/repos/octocat/Hello-World/collaborators{/collaborator}\",\"comments_url\":\"https://api.github.com/repos/octocat/Hello-World/comments{/number}\",\"commits_url\":\"https://api.github.com/repos/octocat/Hello-World/commits{/sha}\",\"compare_url\":\"https://api.github.com/repos/octocat/Hello-World/compare/{base}...{head}\",\"contents_url\":\"https://api.github.com/repos/octocat/Hello-World/contents/{+path}\",\"contributors_url\":\"https://api.github.com/repos/octocat/Hello-World/contributors\",\"deployments_url\":\"https://api.github.com/repos/octocat/Hello-World/deployments\",\"downloads_url\":\"https://api.github.com/repos/octocat/Hello-World/downloads\",\"events_url\":\"https://api.github.com/repos/octocat/Hello-World/events\",\"forks_url\":\"https://api.github.com/repos/octocat/Hello-World/forks\",\"git_commits_url\":\"https://api.github.com/repos/octocat/Hello-World/git/commits{/sha}\",\"git_refs_url\":\"https://api.github.com/repos/octocat/Hello-World/git/refs{/sha}\",\"git_tags_url\":\"https://api.github.com/repos/octocat/Hello-World/git/tags{/sha}\",\"issue_comment_url\":\"https://api.github.com/repos/octocat/Hello-World/issues/comments{/number}\",\"issue_events_url\":\"https://api.github.com/repos/octocat/Hello-World/issues/events{/number}\",\"issues_url\":\"https://api.github.com/repos/octocat/Hello-World/issues{/number}\",\"keys_url\":\"https://api.github.com/repos/octocat/Hello-World/keys{/key_id}\",\"labels_url\":\"https://api.github.com/repos/octocat/Hello-World/labels{/name}\",\"languages_url\":\"https://api.github.com/repos/octocat/Hello-World/languages\",\"merges_url\":\"https://api.github.com/repos/octocat/Hello-World/merges\",\"milestones_url\":\"https://api.github.com/repos/octocat/Hello-World/milestones{/number}\",\"notifications_url\":\"https://api.github.com/repos/octocat/Hello-World/notifications{?since,all,participating}\",\"pulls_url\":\"https://api.github.com/repos/octocat/Hello-World/pulls{/number}\",\"releases_url\":\"https://api.github.com/repos/octocat/Hello-World/releases{/id}\",\"stargazers_url\":\"https://api.github.com/repos/octocat/Hello-World/stargazers\",\"statuses_url\":\"https://api.github.com/repos/octocat/Hello-World/statuses/{sha}\",\"subscribers_url\":\"https://api.github.com/repos/octocat/Hello-World/subscribers\",\"subscription_url\":\"https://api.github.com/repos/octocat/Hello-World/subscription\",\"tags_url\":\"https://api.github.com/repos/octocat/Hello-World/tags\",\"teams_url\":\"https://api.github.com/repos/octocat/Hello-World/teams\",\"trees_url\":\"https://api.github.com/repos/octocat/Hello-World/git/trees{/sha}\",\"hooks_url\":\"https://api.github.com/repos/octocat/Hello-World/hooks\"}},{\"number\":3,\"created_at\":\"2020-02-13T12:29:18Z\",\"url\":\"https://api.github.com/repos/octocat/hello-world/code-scanning/alerts/3\",\"html_url\":\"https://github.com/octocat/hello-world/code-scanning/3\",\"state\":\"dismissed\",\"dismissed_by\":{\"login\":\"octocat\",\"id\":1,\"node_id\":\"MDQ6VXNlcjE=\",\"avatar_url\":\"https://github.com/images/error/octocat_happy.gif\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/octocat\",\"html_url\":\"https://github.com/octocat\",\"followers_url\":\"https://api.github.com/users/octocat/followers\",\"following_url\":\"https://api.github.com/users/octocat/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/octocat/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/octocat/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/octocat/subscriptions\",\"organizations_url\":\"https://api.github.com/users/octocat/orgs\",\"repos_url\":\"https://api.github.com/users/octocat/repos\",\"events_url\":\"https://api.github.com/users/octocat/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/octocat/received_events\",\"type\":\"User\",\"site_admin\":false},\"dismissed_at\":\"2020-02-14T12:29:18Z\",\"dismissed_reason\":\"false positive\",\"dismissed_comment\":\"This alert is not actually correct, because there's a sanitizer included in the library.\",\"rule\":{\"id\":\"js/zipslip\",\"severity\":\"error\",\"tags\":[\"security\",\"external/cwe/cwe-022\"],\"description\":\"Arbitrary file write during zip extraction\",\"name\":\"js/zipslip\"},\"tool\":{\"name\":\"CodeQL\",\"guid\":null,\"version\":\"2.4.0\"},\"most_recent_instance\":{\"ref\":\"refs/heads/main\",\"analysis_key\":\".github/workflows/codeql-analysis.yml:CodeQL-Build\",\"environment\":\"{}\",\"state\":\"open\",\"commit_sha\":\"39406e42cb832f683daa691dd652a8dc36ee8930\",\"message\":{\"text\":\"This path depends on a user-provided value.\"},\"location\":{\"path\":\"lib/ab12-gen.js\",\"start_line\":917,\"end_line\":917,\"start_column\":7,\"end_column\":18},\"classifications\":[]},\"instances_url\":\"https://api.github.com/repos/octocat/hello-world/code-scanning/alerts/3/instances\",\"repository\":{\"id\":1296269,\"node_id\":\"MDEwOlJlcG9zaXRvcnkxMjk2MjY5\",\"name\":\"Hello-World\",\"full_name\":\"octocat/Hello-World\",\"owner\":{\"login\":\"octocat\",\"id\":1,\"node_id\":\"MDQ6VXNlcjE=\",\"avatar_url\":\"https://github.com/images/error/octocat_happy.gif\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/octocat\",\"html_url\":\"https://github.com/octocat\",\"followers_url\":\"https://api.github.com/users/octocat/followers\",\"following_url\":\"https://api.github.com/users/octocat/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/octocat/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/octocat/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/octocat/subscriptions\",\"organizations_url\":\"https://api.github.com/users/octocat/orgs\",\"repos_url\":\"https://api.github.com/users/octocat/repos\",\"events_url\":\"https://api.github.com/users/octocat/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/octocat/received_events\",\"type\":\"User\",\"site_admin\":false},\"private\":false,\"html_url\":\"https://github.com/octocat/Hello-World\",\"description\":\"This your first repo!\",\"fork\":false,\"url\":\"https://api.github.com/repos/octocat/Hello-World\",\"archive_url\":\"https://api.github.com/repos/octocat/Hello-World/{archive_format}{/ref}\",\"assignees_url\":\"https://api.github.com/repos/octocat/Hello-World/assignees{/user}\",\"blobs_url\":\"https://api.github.com/repos/octocat/Hello-World/git/blobs{/sha}\",\"branches_url\":\"https://api.github.com/repos/octocat/Hello-World/branches{/branch}\",\"collaborators_url\":\"https://api.github.com/repos/octocat/Hello-World/collaborators{/collaborator}\",\"comments_url\":\"https://api.github.com/repos/octocat/Hello-World/comments{/number}\",\"commits_url\":\"https://api.github.com/repos/octocat/Hello-World/commits{/sha}\",\"compare_url\":\"https://api.github.com/repos/octocat/Hello-World/compare/{base}...{head}\",\"contents_url\":\"https://api.github.com/repos/octocat/Hello-World/contents/{+path}\",\"contributors_url\":\"https://api.github.com/repos/octocat/Hello-World/contributors\",\"deployments_url\":\"https://api.github.com/repos/octocat/Hello-World/deployments\",\"downloads_url\":\"https://api.github.com/repos/octocat/Hello-World/downloads\",\"events_url\":\"https://api.github.com/repos/octocat/Hello-World/events\",\"forks_url\":\"https://api.github.com/repos/octocat/Hello-World/forks\",\"git_commits_url\":\"https://api.github.com/repos/octocat/Hello-World/git/commits{/sha}\",\"git_refs_url\":\"https://api.github.com/repos/octocat/Hello-World/git/refs{/sha}\",\"git_tags_url\":\"https://api.github.com/repos/octocat/Hello-World/git/tags{/sha}\",\"issue_comment_url\":\"https://api.github.com/repos/octocat/Hello-World/issues/comments{/number}\",\"issue_events_url\":\"https://api.github.com/repos/octocat/Hello-World/issues/events{/number}\",\"issues_url\":\"https://api.github.com/repos/octocat/Hello-World/issues{/number}\",\"keys_url\":\"https://api.github.com/repos/octocat/Hello-World/keys{/key_id}\",\"labels_url\":\"https://api.github.com/repos/octocat/Hello-World/labels{/name}\",\"languages_url\":\"https://api.github.com/repos/octocat/Hello-World/languages\",\"merges_url\":\"https://api.github.com/repos/octocat/Hello-World/merges\",\"milestones_url\":\"https://api.github.com/repos/octocat/Hello-World/milestones{/number}\",\"notifications_url\":\"https://api.github.com/repos/octocat/Hello-World/notifications{?since,all,participating}\",\"pulls_url\":\"https://api.github.com/repos/octocat/Hello-World/pulls{/number}\",\"releases_url\":\"https://api.github.com/repos/octocat/Hello-World/releases{/id}\",\"stargazers_url\":\"https://api.github.com/repos/octocat/Hello-World/stargazers\",\"statuses_url\":\"https://api.github.com/repos/octocat/Hello-World/statuses/{sha}\",\"subscribers_url\":\"https://api.github.com/repos/octocat/Hello-World/subscribers\",\"subscription_url\":\"https://api.github.com/repos/octocat/Hello-World/subscription\",\"tags_url\":\"https://api.github.com/repos/octocat/Hello-World/tags\",\"teams_url\":\"https://api.github.com/repos/octocat/Hello-World/teams\",\"trees_url\":\"https://api.github.com/repos/octocat/Hello-World/git/trees{/sha}\",\"hooks_url\":\"https://api.github.com/repos/octocat/Hello-World/hooks\"}}]"
           }
         ]
       },
@@ -15065,6 +15415,19 @@
         "deprecated": null
       },
       {
+        "name": "retention_period_minutes",
+        "description": "Duration in minutes after codespace has gone idle in which it will be deleted. Must be integer minutes between 0 and 43200 (30 days).",
+        "in": "BODY",
+        "type": "integer",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
         "name": "pull_request",
         "description": "Pull request number for this codespace",
         "in": "BODY",
@@ -15466,6 +15829,19 @@
         "validation": null,
         "alias": null,
         "deprecated": null
+      },
+      {
+        "name": "retention_period_minutes",
+        "description": "Duration in minutes after codespace has gone idle in which it will be deleted. Must be integer minutes between 0 and 43200 (30 days).",
+        "in": "BODY",
+        "type": "integer",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
       }
     ],
     "responses": [
@@ -15653,6 +16029,19 @@
         "validation": null,
         "alias": null,
         "deprecated": null
+      },
+      {
+        "name": "retention_period_minutes",
+        "description": "Duration in minutes after codespace has gone idle in which it will be deleted. Must be integer minutes between 0 and 43200 (30 days).",
+        "in": "BODY",
+        "type": "integer",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
       }
     ],
     "responses": [
@@ -15698,6 +16087,74 @@
     "previews": [],
     "headers": [],
     "parameters": [
+      {
+        "name": "codespace_name",
+        "description": "The name of the codespace.",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      { "code": 202, "description": "Accepted", "examples": null },
+      { "code": 304, "description": "Not modified", "examples": null },
+      {
+        "code": 401,
+        "description": "Requires authentication",
+        "examples": null
+      },
+      { "code": 403, "description": "Forbidden", "examples": null },
+      { "code": 404, "description": "Resource not found", "examples": null },
+      { "code": 500, "description": "Internal Error", "examples": null }
+    ],
+    "renamed": null
+  },
+  {
+    "name": "Delete a codespace from the organization",
+    "scope": "codespaces",
+    "id": "deleteFromOrganization",
+    "method": "DELETE",
+    "url": "/orgs/{org}/members/{username}/codespaces/{codespace_name}",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "removalDate": null,
+    "description": "Deletes a user's codespace.\n\nYou must authenticate using an access token with the `admin:org` scope to use this endpoint.",
+    "documentationUrl": "https://docs.github.com/rest/reference/codespaces",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "org",
+        "description": "The organization name. The name is not case sensitive.",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "username",
+        "description": "The handle for the GitHub user account.",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
       {
         "name": "codespace_name",
         "description": "The name of the codespace.",
@@ -16325,6 +16782,82 @@
     "renamed": null
   },
   {
+    "name": "List codespaces for the organization",
+    "scope": "codespaces",
+    "id": "listInOrganization",
+    "method": "GET",
+    "url": "/orgs/{org_id}/codespaces",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "removalDate": null,
+    "description": "Lists the codespaces associated to a specified organization.\n\nYou must authenticate using an access token with the `admin:org` scope to use this endpoint.",
+    "documentationUrl": "https://docs.github.com/rest/reference/codespaces#list-in-organization",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "per_page",
+        "description": "The number of results per page (max 100).",
+        "in": "QUERY",
+        "type": "integer",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "page",
+        "description": "Page number of the results to fetch.",
+        "in": "QUERY",
+        "type": "integer",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "org_id",
+        "description": "The unique identifier of the organization.",
+        "in": "PATH",
+        "type": "integer",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      {
+        "code": 200,
+        "description": "Response",
+        "examples": [
+          {
+            "data": "{\"total_count\":3,\"codespaces\":[{\"id\":1,\"name\":\"monalisa-octocat-hello-world-g4wpq6h95q\",\"environment_id\":\"26a7c758-7299-4a73-b978-5a92a7ae98a0\",\"owner\":{\"login\":\"octocat\",\"id\":1,\"node_id\":\"MDQ6VXNlcjE=\",\"avatar_url\":\"https://github.com/images/error/octocat_happy.gif\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/octocat\",\"html_url\":\"https://github.com/octocat\",\"followers_url\":\"https://api.github.com/users/octocat/followers\",\"following_url\":\"https://api.github.com/users/octocat/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/octocat/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/octocat/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/octocat/subscriptions\",\"organizations_url\":\"https://api.github.com/users/octocat/orgs\",\"repos_url\":\"https://api.github.com/users/octocat/repos\",\"events_url\":\"https://api.github.com/users/octocat/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/octocat/received_events\",\"type\":\"User\",\"site_admin\":false},\"billable_owner\":{\"login\":\"octocat\",\"id\":1,\"node_id\":\"MDQ6VXNlcjE=\",\"avatar_url\":\"https://github.com/images/error/octocat_happy.gif\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/octocat\",\"html_url\":\"https://github.com/octocat\",\"followers_url\":\"https://api.github.com/users/octocat/followers\",\"following_url\":\"https://api.github.com/users/octocat/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/octocat/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/octocat/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/octocat/subscriptions\",\"organizations_url\":\"https://api.github.com/users/octocat/orgs\",\"repos_url\":\"https://api.github.com/users/octocat/repos\",\"events_url\":\"https://api.github.com/users/octocat/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/octocat/received_events\",\"type\":\"User\",\"site_admin\":false},\"repository\":{\"id\":1296269,\"node_id\":\"MDEwOlJlcG9zaXRvcnkxMjk2MjY5\",\"name\":\"Hello-World\",\"full_name\":\"octocat/Hello-World\",\"owner\":{\"login\":\"octocat\",\"id\":1,\"node_id\":\"MDQ6VXNlcjE=\",\"avatar_url\":\"https://github.com/images/error/octocat_happy.gif\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/octocat\",\"html_url\":\"https://github.com/octocat\",\"followers_url\":\"https://api.github.com/users/octocat/followers\",\"following_url\":\"https://api.github.com/users/octocat/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/octocat/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/octocat/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/octocat/subscriptions\",\"organizations_url\":\"https://api.github.com/users/octocat/orgs\",\"repos_url\":\"https://api.github.com/users/octocat/repos\",\"events_url\":\"https://api.github.com/users/octocat/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/octocat/received_events\",\"type\":\"User\",\"site_admin\":false},\"private\":false,\"html_url\":\"https://github.com/octocat/Hello-World\",\"description\":\"This your first repo!\",\"fork\":false,\"url\":\"https://api.github.com/repos/octocat/Hello-World\",\"archive_url\":\"https://api.github.com/repos/octocat/Hello-World/{archive_format}{/ref}\",\"assignees_url\":\"https://api.github.com/repos/octocat/Hello-World/assignees{/user}\",\"blobs_url\":\"https://api.github.com/repos/octocat/Hello-World/git/blobs{/sha}\",\"branches_url\":\"https://api.github.com/repos/octocat/Hello-World/branches{/branch}\",\"collaborators_url\":\"https://api.github.com/repos/octocat/Hello-World/collaborators{/collaborator}\",\"comments_url\":\"https://api.github.com/repos/octocat/Hello-World/comments{/number}\",\"commits_url\":\"https://api.github.com/repos/octocat/Hello-World/commits{/sha}\",\"compare_url\":\"https://api.github.com/repos/octocat/Hello-World/compare/{base}...{head}\",\"contents_url\":\"https://api.github.com/repos/octocat/Hello-World/contents/{+path}\",\"contributors_url\":\"https://api.github.com/repos/octocat/Hello-World/contributors\",\"deployments_url\":\"https://api.github.com/repos/octocat/Hello-World/deployments\",\"downloads_url\":\"https://api.github.com/repos/octocat/Hello-World/downloads\",\"events_url\":\"https://api.github.com/repos/octocat/Hello-World/events\",\"forks_url\":\"https://api.github.com/repos/octocat/Hello-World/forks\",\"git_commits_url\":\"https://api.github.com/repos/octocat/Hello-World/git/commits{/sha}\",\"git_refs_url\":\"https://api.github.com/repos/octocat/Hello-World/git/refs{/sha}\",\"git_tags_url\":\"https://api.github.com/repos/octocat/Hello-World/git/tags{/sha}\",\"git_url\":\"git:github.com/octocat/Hello-World.git\",\"issue_comment_url\":\"https://api.github.com/repos/octocat/Hello-World/issues/comments{/number}\",\"issue_events_url\":\"https://api.github.com/repos/octocat/Hello-World/issues/events{/number}\",\"issues_url\":\"https://api.github.com/repos/octocat/Hello-World/issues{/number}\",\"keys_url\":\"https://api.github.com/repos/octocat/Hello-World/keys{/key_id}\",\"labels_url\":\"https://api.github.com/repos/octocat/Hello-World/labels{/name}\",\"languages_url\":\"https://api.github.com/repos/octocat/Hello-World/languages\",\"merges_url\":\"https://api.github.com/repos/octocat/Hello-World/merges\",\"milestones_url\":\"https://api.github.com/repos/octocat/Hello-World/milestones{/number}\",\"notifications_url\":\"https://api.github.com/repos/octocat/Hello-World/notifications{?since,all,participating}\",\"pulls_url\":\"https://api.github.com/repos/octocat/Hello-World/pulls{/number}\",\"releases_url\":\"https://api.github.com/repos/octocat/Hello-World/releases{/id}\",\"ssh_url\":\"git@github.com:octocat/Hello-World.git\",\"stargazers_url\":\"https://api.github.com/repos/octocat/Hello-World/stargazers\",\"statuses_url\":\"https://api.github.com/repos/octocat/Hello-World/statuses/{sha}\",\"subscribers_url\":\"https://api.github.com/repos/octocat/Hello-World/subscribers\",\"subscription_url\":\"https://api.github.com/repos/octocat/Hello-World/subscription\",\"tags_url\":\"https://api.github.com/repos/octocat/Hello-World/tags\",\"teams_url\":\"https://api.github.com/repos/octocat/Hello-World/teams\",\"trees_url\":\"https://api.github.com/repos/octocat/Hello-World/git/trees{/sha}\",\"hooks_url\":\"http://api.github.com/repos/octocat/Hello-World/hooks\"},\"machine\":{\"name\":\"standardLinux\",\"display_name\":\"4 cores, 8 GB RAM, 64 GB storage\",\"operating_system\":\"linux\",\"storage_in_bytes\":68719476736,\"memory_in_bytes\":8589934592,\"cpus\":4},\"prebuild\":false,\"devcontainer_path\":\".devcontainer/devcontainer.json\",\"created_at\":\"2021-10-14T00:53:30-06:00\",\"updated_at\":\"2021-10-14T00:53:32-06:00\",\"last_used_at\":\"2021-10-14T00:53:30-06:00\",\"state\":\"Available\",\"url\":\"https://api.github.com/user/codespaces/monalisa-octocat-hello-world-g4wpq6h95q\",\"git_status\":{\"ahead\":0,\"behind\":0,\"has_unpushed_changes\":false,\"has_uncommitted_changes\":false,\"ref\":\"main\"},\"location\":\"WestUs2\",\"idle_timeout_minutes\":60,\"web_url\":\"https://monalisa-octocat-hello-world-g4wpq6h95q.github.dev\",\"machines_url\":\"https://api.github.com/user/codespaces/monalisa-octocat-hello-world-g4wpq6h95q/machines\",\"start_url\":\"https://api.github.com/user/codespaces/monalisa-octocat-hello-world-g4wpq6h95q/start\",\"stop_url\":\"https://api.github.com/user/codespaces/monalisa-octocat-hello-world-g4wpq6h95q/stop\",\"recent_folders\":[]},{\"id\":1,\"name\":\"monalisa-octocat-hello-world-3f89ada1j3\",\"environment_id\":\"526ce4d7-46da-494f-a4f9-cfd25b818719\",\"owner\":{\"login\":\"octocat\",\"id\":1,\"node_id\":\"MDQ6VXNlcjE=\",\"avatar_url\":\"https://github.com/images/error/octocat_happy.gif\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/octocat\",\"html_url\":\"https://github.com/octocat\",\"followers_url\":\"https://api.github.com/users/octocat/followers\",\"following_url\":\"https://api.github.com/users/octocat/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/octocat/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/octocat/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/octocat/subscriptions\",\"organizations_url\":\"https://api.github.com/users/octocat/orgs\",\"repos_url\":\"https://api.github.com/users/octocat/repos\",\"events_url\":\"https://api.github.com/users/octocat/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/octocat/received_events\",\"type\":\"User\",\"site_admin\":false},\"billable_owner\":{\"login\":\"octocat\",\"id\":1,\"node_id\":\"MDQ6VXNlcjE=\",\"avatar_url\":\"https://github.com/images/error/octocat_happy.gif\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/octocat\",\"html_url\":\"https://github.com/octocat\",\"followers_url\":\"https://api.github.com/users/octocat/followers\",\"following_url\":\"https://api.github.com/users/octocat/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/octocat/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/octocat/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/octocat/subscriptions\",\"organizations_url\":\"https://api.github.com/users/octocat/orgs\",\"repos_url\":\"https://api.github.com/users/octocat/repos\",\"events_url\":\"https://api.github.com/users/octocat/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/octocat/received_events\",\"type\":\"User\",\"site_admin\":false},\"repository\":{\"id\":1296269,\"node_id\":\"MDEwOlJlcG9zaXRvcnkxMjk2MjY5\",\"name\":\"Hello-World\",\"full_name\":\"octocat/Hello-World\",\"owner\":{\"login\":\"octocat\",\"id\":1,\"node_id\":\"MDQ6VXNlcjE=\",\"avatar_url\":\"https://github.com/images/error/octocat_happy.gif\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/octocat\",\"html_url\":\"https://github.com/octocat\",\"followers_url\":\"https://api.github.com/users/octocat/followers\",\"following_url\":\"https://api.github.com/users/octocat/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/octocat/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/octocat/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/octocat/subscriptions\",\"organizations_url\":\"https://api.github.com/users/octocat/orgs\",\"repos_url\":\"https://api.github.com/users/octocat/repos\",\"events_url\":\"https://api.github.com/users/octocat/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/octocat/received_events\",\"type\":\"User\",\"site_admin\":false},\"private\":false,\"html_url\":\"https://github.com/octocat/Hello-World\",\"description\":\"This your first repo!\",\"fork\":false,\"url\":\"https://api.github.com/repos/octocat/Hello-World\",\"archive_url\":\"https://api.github.com/repos/octocat/Hello-World/{archive_format}{/ref}\",\"assignees_url\":\"https://api.github.com/repos/octocat/Hello-World/assignees{/user}\",\"blobs_url\":\"https://api.github.com/repos/octocat/Hello-World/git/blobs{/sha}\",\"branches_url\":\"https://api.github.com/repos/octocat/Hello-World/branches{/branch}\",\"collaborators_url\":\"https://api.github.com/repos/octocat/Hello-World/collaborators{/collaborator}\",\"comments_url\":\"https://api.github.com/repos/octocat/Hello-World/comments{/number}\",\"commits_url\":\"https://api.github.com/repos/octocat/Hello-World/commits{/sha}\",\"compare_url\":\"https://api.github.com/repos/octocat/Hello-World/compare/{base}...{head}\",\"contents_url\":\"https://api.github.com/repos/octocat/Hello-World/contents/{+path}\",\"contributors_url\":\"https://api.github.com/repos/octocat/Hello-World/contributors\",\"deployments_url\":\"https://api.github.com/repos/octocat/Hello-World/deployments\",\"downloads_url\":\"https://api.github.com/repos/octocat/Hello-World/downloads\",\"events_url\":\"https://api.github.com/repos/octocat/Hello-World/events\",\"forks_url\":\"https://api.github.com/repos/octocat/Hello-World/forks\",\"git_commits_url\":\"https://api.github.com/repos/octocat/Hello-World/git/commits{/sha}\",\"git_refs_url\":\"https://api.github.com/repos/octocat/Hello-World/git/refs{/sha}\",\"git_tags_url\":\"https://api.github.com/repos/octocat/Hello-World/git/tags{/sha}\",\"git_url\":\"git:github.com/octocat/Hello-World.git\",\"issue_comment_url\":\"https://api.github.com/repos/octocat/Hello-World/issues/comments{/number}\",\"issue_events_url\":\"https://api.github.com/repos/octocat/Hello-World/issues/events{/number}\",\"issues_url\":\"https://api.github.com/repos/octocat/Hello-World/issues{/number}\",\"keys_url\":\"https://api.github.com/repos/octocat/Hello-World/keys{/key_id}\",\"labels_url\":\"https://api.github.com/repos/octocat/Hello-World/labels{/name}\",\"languages_url\":\"https://api.github.com/repos/octocat/Hello-World/languages\",\"merges_url\":\"https://api.github.com/repos/octocat/Hello-World/merges\",\"milestones_url\":\"https://api.github.com/repos/octocat/Hello-World/milestones{/number}\",\"notifications_url\":\"https://api.github.com/repos/octocat/Hello-World/notifications{?since,all,participating}\",\"pulls_url\":\"https://api.github.com/repos/octocat/Hello-World/pulls{/number}\",\"releases_url\":\"https://api.github.com/repos/octocat/Hello-World/releases{/id}\",\"ssh_url\":\"git@github.com:octocat/Hello-World.git\",\"stargazers_url\":\"https://api.github.com/repos/octocat/Hello-World/stargazers\",\"statuses_url\":\"https://api.github.com/repos/octocat/Hello-World/statuses/{sha}\",\"subscribers_url\":\"https://api.github.com/repos/octocat/Hello-World/subscribers\",\"subscription_url\":\"https://api.github.com/repos/octocat/Hello-World/subscription\",\"tags_url\":\"https://api.github.com/repos/octocat/Hello-World/tags\",\"teams_url\":\"https://api.github.com/repos/octocat/Hello-World/teams\",\"trees_url\":\"https://api.github.com/repos/octocat/Hello-World/git/trees{/sha}\",\"hooks_url\":\"http://api.github.com/repos/octocat/Hello-World/hooks\"},\"machine\":{\"name\":\"standardLinux\",\"display_name\":\"4 cores, 8 GB RAM, 64 GB storage\",\"operating_system\":\"linux\",\"storage_in_bytes\":68719476736,\"memory_in_bytes\":8589934592,\"cpus\":4},\"prebuild\":false,\"devcontainer_path\":\".devcontainer/foobar/devcontainer.json\",\"created_at\":\"2021-10-14T00:53:30-06:00\",\"updated_at\":\"2021-10-14T00:53:32-06:00\",\"last_used_at\":\"2021-10-14T00:53:30-06:00\",\"state\":\"Available\",\"url\":\"https://api.github.com/user/codespaces/monalisa-octocat-hello-world-3f89ada1j3\",\"git_status\":{\"ahead\":0,\"behind\":0,\"has_unpushed_changes\":false,\"has_uncommitted_changes\":false,\"ref\":\"main\"},\"location\":\"WestUs2\",\"idle_timeout_minutes\":60,\"web_url\":\"https://monalisa-octocat-hello-world-3f89ada1j3.github.dev\",\"machines_url\":\"https://api.github.com/user/codespaces/monalisa-octocat-hello-world-3f89ada1j3/machines\",\"start_url\":\"https://api.github.com/user/codespaces/monalisa-octocat-hello-world-3f89ada1j3/start\",\"stop_url\":\"https://api.github.com/user/codespaces/monalisa-octocat-hello-world-3f89ada1j3/stop\",\"recent_folders\":[]},{\"id\":1,\"name\":\"monalisa-octocat-hello-world-f8adfad99a\",\"environment_id\":\"6ac8cd6d-a2d0-4ae3-8cea-e135059264df\",\"owner\":{\"login\":\"octocat\",\"id\":1,\"node_id\":\"MDQ6VXNlcjE=\",\"avatar_url\":\"https://github.com/images/error/octocat_happy.gif\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/octocat\",\"html_url\":\"https://github.com/octocat\",\"followers_url\":\"https://api.github.com/users/octocat/followers\",\"following_url\":\"https://api.github.com/users/octocat/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/octocat/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/octocat/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/octocat/subscriptions\",\"organizations_url\":\"https://api.github.com/users/octocat/orgs\",\"repos_url\":\"https://api.github.com/users/octocat/repos\",\"events_url\":\"https://api.github.com/users/octocat/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/octocat/received_events\",\"type\":\"User\",\"site_admin\":false},\"billable_owner\":{\"login\":\"octocat\",\"id\":1,\"node_id\":\"MDQ6VXNlcjE=\",\"avatar_url\":\"https://github.com/images/error/octocat_happy.gif\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/octocat\",\"html_url\":\"https://github.com/octocat\",\"followers_url\":\"https://api.github.com/users/octocat/followers\",\"following_url\":\"https://api.github.com/users/octocat/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/octocat/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/octocat/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/octocat/subscriptions\",\"organizations_url\":\"https://api.github.com/users/octocat/orgs\",\"repos_url\":\"https://api.github.com/users/octocat/repos\",\"events_url\":\"https://api.github.com/users/octocat/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/octocat/received_events\",\"type\":\"User\",\"site_admin\":false},\"repository\":{\"id\":1296269,\"node_id\":\"MDEwOlJlcG9zaXRvcnkxMjk2MjY5\",\"name\":\"Hello-World\",\"full_name\":\"octocat/Hello-World\",\"owner\":{\"login\":\"octocat\",\"id\":1,\"node_id\":\"MDQ6VXNlcjE=\",\"avatar_url\":\"https://github.com/images/error/octocat_happy.gif\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/octocat\",\"html_url\":\"https://github.com/octocat\",\"followers_url\":\"https://api.github.com/users/octocat/followers\",\"following_url\":\"https://api.github.com/users/octocat/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/octocat/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/octocat/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/octocat/subscriptions\",\"organizations_url\":\"https://api.github.com/users/octocat/orgs\",\"repos_url\":\"https://api.github.com/users/octocat/repos\",\"events_url\":\"https://api.github.com/users/octocat/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/octocat/received_events\",\"type\":\"User\",\"site_admin\":false},\"private\":false,\"html_url\":\"https://github.com/octocat/Hello-World\",\"description\":\"This your first repo!\",\"fork\":false,\"url\":\"https://api.github.com/repos/octocat/Hello-World\",\"archive_url\":\"https://api.github.com/repos/octocat/Hello-World/{archive_format}{/ref}\",\"assignees_url\":\"https://api.github.com/repos/octocat/Hello-World/assignees{/user}\",\"blobs_url\":\"https://api.github.com/repos/octocat/Hello-World/git/blobs{/sha}\",\"branches_url\":\"https://api.github.com/repos/octocat/Hello-World/branches{/branch}\",\"collaborators_url\":\"https://api.github.com/repos/octocat/Hello-World/collaborators{/collaborator}\",\"comments_url\":\"https://api.github.com/repos/octocat/Hello-World/comments{/number}\",\"commits_url\":\"https://api.github.com/repos/octocat/Hello-World/commits{/sha}\",\"compare_url\":\"https://api.github.com/repos/octocat/Hello-World/compare/{base}...{head}\",\"contents_url\":\"https://api.github.com/repos/octocat/Hello-World/contents/{+path}\",\"contributors_url\":\"https://api.github.com/repos/octocat/Hello-World/contributors\",\"deployments_url\":\"https://api.github.com/repos/octocat/Hello-World/deployments\",\"downloads_url\":\"https://api.github.com/repos/octocat/Hello-World/downloads\",\"events_url\":\"https://api.github.com/repos/octocat/Hello-World/events\",\"forks_url\":\"https://api.github.com/repos/octocat/Hello-World/forks\",\"git_commits_url\":\"https://api.github.com/repos/octocat/Hello-World/git/commits{/sha}\",\"git_refs_url\":\"https://api.github.com/repos/octocat/Hello-World/git/refs{/sha}\",\"git_tags_url\":\"https://api.github.com/repos/octocat/Hello-World/git/tags{/sha}\",\"git_url\":\"git:github.com/octocat/Hello-World.git\",\"issue_comment_url\":\"https://api.github.com/repos/octocat/Hello-World/issues/comments{/number}\",\"issue_events_url\":\"https://api.github.com/repos/octocat/Hello-World/issues/events{/number}\",\"issues_url\":\"https://api.github.com/repos/octocat/Hello-World/issues{/number}\",\"keys_url\":\"https://api.github.com/repos/octocat/Hello-World/keys{/key_id}\",\"labels_url\":\"https://api.github.com/repos/octocat/Hello-World/labels{/name}\",\"languages_url\":\"https://api.github.com/repos/octocat/Hello-World/languages\",\"merges_url\":\"https://api.github.com/repos/octocat/Hello-World/merges\",\"milestones_url\":\"https://api.github.com/repos/octocat/Hello-World/milestones{/number}\",\"notifications_url\":\"https://api.github.com/repos/octocat/Hello-World/notifications{?since,all,participating}\",\"pulls_url\":\"https://api.github.com/repos/octocat/Hello-World/pulls{/number}\",\"releases_url\":\"https://api.github.com/repos/octocat/Hello-World/releases{/id}\",\"ssh_url\":\"git@github.com:octocat/Hello-World.git\",\"stargazers_url\":\"https://api.github.com/repos/octocat/Hello-World/stargazers\",\"statuses_url\":\"https://api.github.com/repos/octocat/Hello-World/statuses/{sha}\",\"subscribers_url\":\"https://api.github.com/repos/octocat/Hello-World/subscribers\",\"subscription_url\":\"https://api.github.com/repos/octocat/Hello-World/subscription\",\"tags_url\":\"https://api.github.com/repos/octocat/Hello-World/tags\",\"teams_url\":\"https://api.github.com/repos/octocat/Hello-World/teams\",\"trees_url\":\"https://api.github.com/repos/octocat/Hello-World/git/trees{/sha}\",\"hooks_url\":\"http://api.github.com/repos/octocat/Hello-World/hooks\"},\"machine\":{\"name\":\"standardLinux\",\"display_name\":\"4 cores, 8 GB RAM, 64 GB storage\",\"operating_system\":\"linux\",\"storage_in_bytes\":68719476736,\"memory_in_bytes\":8589934592,\"cpus\":4},\"prebuild\":false,\"devcontainer_path\":\".devcontainer.json\",\"created_at\":\"2021-10-14T00:53:30-06:00\",\"updated_at\":\"2021-10-14T00:53:32-06:00\",\"last_used_at\":\"2021-10-14T00:53:30-06:00\",\"state\":\"Available\",\"url\":\"https://api.github.com/user/codespaces/monalisa-octocat-hello-world-f8adfad99a\",\"git_status\":{\"ahead\":0,\"behind\":0,\"has_unpushed_changes\":false,\"has_uncommitted_changes\":false,\"ref\":\"main\"},\"location\":\"WestUs2\",\"idle_timeout_minutes\":60,\"web_url\":\"https://monalisa-octocat-hello-world-f8adfad99a.github.dev\",\"machines_url\":\"https://api.github.com/user/codespaces/monalisa-octocat-hello-world-f8adfad99a/machines\",\"start_url\":\"https://api.github.com/user/codespaces/monalisa-octocat-hello-world-f8adfad99a/start\",\"stop_url\":\"https://api.github.com/user/codespaces/monalisa-octocat-hello-world-f8adfad99a/stop\",\"recent_folders\":[]}]}"
+          }
+        ]
+      },
+      { "code": 304, "description": "Not modified", "examples": null },
+      {
+        "code": 401,
+        "description": "Requires authentication",
+        "examples": null
+      },
+      { "code": 403, "description": "Forbidden", "examples": null },
+      { "code": 404, "description": "Resource not found", "examples": null },
+      { "code": 500, "description": "Internal Error", "examples": null }
+    ],
+    "renamed": null
+  },
+  {
     "name": "List codespaces in a repository for the authenticated user",
     "scope": "codespaces",
     "id": "listInRepositoryForAuthenticatedUser",
@@ -16904,6 +17437,82 @@
     "renamed": null
   },
   {
+    "name": "Stop a codespace for an organization user",
+    "scope": "codespaces",
+    "id": "stopInOrganization",
+    "method": "POST",
+    "url": "/orgs/{org}/members/{username}/codespaces/{codespace_name}/stop",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "removalDate": null,
+    "description": "Stops a user's codespace.\n\nYou must authenticate using an access token with the `admin:org` scope to use this endpoint.",
+    "documentationUrl": "https://docs.github.com/rest/reference/codespaces",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "org",
+        "description": "The organization name. The name is not case sensitive.",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "username",
+        "description": "The handle for the GitHub user account.",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "codespace_name",
+        "description": "The name of the codespace.",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      {
+        "code": 200,
+        "description": "Response",
+        "examples": [
+          {
+            "data": "{\"id\":1,\"name\":\"monalisa-octocat-hello-world-g4wpq6h95q\",\"environment_id\":\"26a7c758-7299-4a73-b978-5a92a7ae98a0\",\"owner\":{\"login\":\"octocat\",\"id\":1,\"node_id\":\"MDQ6VXNlcjE=\",\"avatar_url\":\"https://github.com/images/error/octocat_happy.gif\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/octocat\",\"html_url\":\"https://github.com/octocat\",\"followers_url\":\"https://api.github.com/users/octocat/followers\",\"following_url\":\"https://api.github.com/users/octocat/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/octocat/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/octocat/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/octocat/subscriptions\",\"organizations_url\":\"https://api.github.com/users/octocat/orgs\",\"repos_url\":\"https://api.github.com/users/octocat/repos\",\"events_url\":\"https://api.github.com/users/octocat/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/octocat/received_events\",\"type\":\"User\",\"site_admin\":false},\"billable_owner\":{\"login\":\"octocat\",\"id\":1,\"node_id\":\"MDQ6VXNlcjE=\",\"avatar_url\":\"https://github.com/images/error/octocat_happy.gif\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/octocat\",\"html_url\":\"https://github.com/octocat\",\"followers_url\":\"https://api.github.com/users/octocat/followers\",\"following_url\":\"https://api.github.com/users/octocat/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/octocat/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/octocat/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/octocat/subscriptions\",\"organizations_url\":\"https://api.github.com/users/octocat/orgs\",\"repos_url\":\"https://api.github.com/users/octocat/repos\",\"events_url\":\"https://api.github.com/users/octocat/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/octocat/received_events\",\"type\":\"User\",\"site_admin\":false},\"repository\":{\"id\":1296269,\"node_id\":\"MDEwOlJlcG9zaXRvcnkxMjk2MjY5\",\"name\":\"Hello-World\",\"full_name\":\"octocat/Hello-World\",\"owner\":{\"login\":\"octocat\",\"id\":1,\"node_id\":\"MDQ6VXNlcjE=\",\"avatar_url\":\"https://github.com/images/error/octocat_happy.gif\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/octocat\",\"html_url\":\"https://github.com/octocat\",\"followers_url\":\"https://api.github.com/users/octocat/followers\",\"following_url\":\"https://api.github.com/users/octocat/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/octocat/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/octocat/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/octocat/subscriptions\",\"organizations_url\":\"https://api.github.com/users/octocat/orgs\",\"repos_url\":\"https://api.github.com/users/octocat/repos\",\"events_url\":\"https://api.github.com/users/octocat/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/octocat/received_events\",\"type\":\"User\",\"site_admin\":false},\"private\":false,\"html_url\":\"https://github.com/octocat/Hello-World\",\"description\":\"This your first repo!\",\"fork\":false,\"url\":\"https://api.github.com/repos/octocat/Hello-World\",\"archive_url\":\"https://api.github.com/repos/octocat/Hello-World/{archive_format}{/ref}\",\"assignees_url\":\"https://api.github.com/repos/octocat/Hello-World/assignees{/user}\",\"blobs_url\":\"https://api.github.com/repos/octocat/Hello-World/git/blobs{/sha}\",\"branches_url\":\"https://api.github.com/repos/octocat/Hello-World/branches{/branch}\",\"collaborators_url\":\"https://api.github.com/repos/octocat/Hello-World/collaborators{/collaborator}\",\"comments_url\":\"https://api.github.com/repos/octocat/Hello-World/comments{/number}\",\"commits_url\":\"https://api.github.com/repos/octocat/Hello-World/commits{/sha}\",\"compare_url\":\"https://api.github.com/repos/octocat/Hello-World/compare/{base}...{head}\",\"contents_url\":\"https://api.github.com/repos/octocat/Hello-World/contents/{+path}\",\"contributors_url\":\"https://api.github.com/repos/octocat/Hello-World/contributors\",\"deployments_url\":\"https://api.github.com/repos/octocat/Hello-World/deployments\",\"downloads_url\":\"https://api.github.com/repos/octocat/Hello-World/downloads\",\"events_url\":\"https://api.github.com/repos/octocat/Hello-World/events\",\"forks_url\":\"https://api.github.com/repos/octocat/Hello-World/forks\",\"git_commits_url\":\"https://api.github.com/repos/octocat/Hello-World/git/commits{/sha}\",\"git_refs_url\":\"https://api.github.com/repos/octocat/Hello-World/git/refs{/sha}\",\"git_tags_url\":\"https://api.github.com/repos/octocat/Hello-World/git/tags{/sha}\",\"git_url\":\"git:github.com/octocat/Hello-World.git\",\"issue_comment_url\":\"https://api.github.com/repos/octocat/Hello-World/issues/comments{/number}\",\"issue_events_url\":\"https://api.github.com/repos/octocat/Hello-World/issues/events{/number}\",\"issues_url\":\"https://api.github.com/repos/octocat/Hello-World/issues{/number}\",\"keys_url\":\"https://api.github.com/repos/octocat/Hello-World/keys{/key_id}\",\"labels_url\":\"https://api.github.com/repos/octocat/Hello-World/labels{/name}\",\"languages_url\":\"https://api.github.com/repos/octocat/Hello-World/languages\",\"merges_url\":\"https://api.github.com/repos/octocat/Hello-World/merges\",\"milestones_url\":\"https://api.github.com/repos/octocat/Hello-World/milestones{/number}\",\"notifications_url\":\"https://api.github.com/repos/octocat/Hello-World/notifications{?since,all,participating}\",\"pulls_url\":\"https://api.github.com/repos/octocat/Hello-World/pulls{/number}\",\"releases_url\":\"https://api.github.com/repos/octocat/Hello-World/releases{/id}\",\"ssh_url\":\"git@github.com:octocat/Hello-World.git\",\"stargazers_url\":\"https://api.github.com/repos/octocat/Hello-World/stargazers\",\"statuses_url\":\"https://api.github.com/repos/octocat/Hello-World/statuses/{sha}\",\"subscribers_url\":\"https://api.github.com/repos/octocat/Hello-World/subscribers\",\"subscription_url\":\"https://api.github.com/repos/octocat/Hello-World/subscription\",\"tags_url\":\"https://api.github.com/repos/octocat/Hello-World/tags\",\"teams_url\":\"https://api.github.com/repos/octocat/Hello-World/teams\",\"trees_url\":\"https://api.github.com/repos/octocat/Hello-World/git/trees{/sha}\",\"hooks_url\":\"http://api.github.com/repos/octocat/Hello-World/hooks\"},\"machine\":{\"name\":\"standardLinux\",\"display_name\":\"4 cores, 8 GB RAM, 64 GB storage\",\"operating_system\":\"linux\",\"storage_in_bytes\":68719476736,\"memory_in_bytes\":8589934592,\"cpus\":4},\"prebuild\":false,\"devcontainer_path\":\".devcontainer/devcontainer.json\",\"created_at\":\"2021-10-14T00:53:30-06:00\",\"updated_at\":\"2021-10-14T00:53:32-06:00\",\"last_used_at\":\"2021-10-14T00:53:30-06:00\",\"state\":\"Available\",\"url\":\"https://api.github.com/user/codespaces/monalisa-octocat-hello-world-g4wpq6h95q\",\"git_status\":{\"ahead\":0,\"behind\":0,\"has_unpushed_changes\":false,\"has_uncommitted_changes\":false,\"ref\":\"main\"},\"location\":\"WestUs2\",\"idle_timeout_minutes\":60,\"web_url\":\"https://monalisa-octocat-hello-world-g4wpq6h95q.github.dev\",\"machines_url\":\"https://api.github.com/user/codespaces/monalisa-octocat-hello-world-g4wpq6h95q/machines\",\"start_url\":\"https://api.github.com/user/codespaces/monalisa-octocat-hello-world-g4wpq6h95q/start\",\"stop_url\":\"https://api.github.com/user/codespaces/monalisa-octocat-hello-world-g4wpq6h95q/stop\",\"pulls_url\":\"https://api.github.com/repos/octocat/Hello-World/pulls/1\",\"recent_folders\":[]}"
+          }
+        ]
+      },
+      { "code": 304, "description": "Not modified", "examples": null },
+      {
+        "code": 401,
+        "description": "Requires authentication",
+        "examples": null
+      },
+      { "code": 403, "description": "Forbidden", "examples": null },
+      { "code": 404, "description": "Resource not found", "examples": null },
+      { "code": 500, "description": "Internal Error", "examples": null }
+    ],
+    "renamed": null
+  },
+  {
     "name": "Update a codespace for the authenticated user",
     "scope": "codespaces",
     "id": "updateForAuthenticatedUser",
@@ -17155,7 +17764,7 @@
       {
         "code": 201,
         "description": "Response when creating a secret",
-        "examples": null
+        "examples": [{ "data": "null" }]
       },
       {
         "code": 204,
@@ -17926,6 +18535,346 @@
       }
     ],
     "responses": [{ "code": 204, "description": "Response", "examples": null }],
+    "renamed": null
+  },
+  {
+    "name": "Create a snapshot of dependencies for a repository",
+    "scope": "dependencyGraph",
+    "id": "createRepositorySnapshot",
+    "method": "POST",
+    "url": "/repos/{owner}/{repo}/dependency-graph/snapshots",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "removalDate": null,
+    "description": "Create a new snapshot of a repository's dependencies. You must authenticate using an access token with the `repo` scope to use this endpoint for a repository that the requesting user has access to.",
+    "documentationUrl": "https://docs.github.com/rest/reference/dependency-graph#create-a-snapshot-of-dependencies-for-a-repository",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "owner",
+        "description": "The account owner of the repository. The name is not case sensitive.",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "repo",
+        "description": "The name of the repository. The name is not case sensitive.",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "version",
+        "description": "The version of the repository snapshot submission.",
+        "in": "BODY",
+        "type": "integer",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "job",
+        "description": "",
+        "in": "BODY",
+        "type": "object",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "job.id",
+        "description": "The external ID of the job.",
+        "in": "BODY",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "job.correlator",
+        "description": "Correlator provides a key that is used to group snapshots submitted over time. Only the \"latest\" submitted snapshot for a given combination of `job.correlator` and `detector.name` will be considered when calculating a repository's current dependencies. Correlator should be as unique as it takes to distinguish all detection runs for a given \"wave\" of CI workflow you run. If you're using GitHub Actions, a good default value for this could be the environment variables GITHUB_WORKFLOW and GITHUB_JOB concatenated together. If you're using a build matrix, then you'll also need to add additional key(s) to distinguish between each submission inside a matrix variation.",
+        "in": "BODY",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "job.html_url",
+        "description": "The url for the job.",
+        "in": "BODY",
+        "type": "string",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "sha",
+        "description": "The commit SHA associated with this dependency snapshot.",
+        "in": "BODY",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "ref",
+        "description": "The repository branch that triggered this snapshot.",
+        "in": "BODY",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": "^refs/",
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "detector",
+        "description": "A description of the detector used.",
+        "in": "BODY",
+        "type": "object",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "detector.name",
+        "description": "The name of the detector used.",
+        "in": "BODY",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "detector.version",
+        "description": "The version of the detector used.",
+        "in": "BODY",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "detector.url",
+        "description": "The url of the detector used.",
+        "in": "BODY",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "metadata",
+        "description": "User-defined metadata to store domain-specific information limited to 8 keys with scalar values.",
+        "in": "BODY",
+        "type": "object",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "metadata.*",
+        "description": "",
+        "in": "BODY",
+        "type": "object",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "manifests",
+        "description": "A collection of package manifests",
+        "in": "BODY",
+        "type": "object",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "manifests.*",
+        "description": "A collection of related dependencies declared in a file or representing a logical group of dependencies.",
+        "in": "BODY",
+        "type": "object",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "manifests.*.name",
+        "description": "The name of the manifest.",
+        "in": "BODY",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "manifests.*.file",
+        "description": "",
+        "in": "BODY",
+        "type": "object",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "manifests.*.file.source_location",
+        "description": "The path of the manifest file relative to the root of the Git repository.",
+        "in": "BODY",
+        "type": "string",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "manifests.*.metadata",
+        "description": "User-defined metadata to store domain-specific information limited to 8 keys with scalar values.",
+        "in": "BODY",
+        "type": "object",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "manifests.*.metadata.*",
+        "description": "",
+        "in": "BODY",
+        "type": "object",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "manifests.*.resolved",
+        "description": "",
+        "in": "BODY",
+        "type": null,
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "scanned",
+        "description": "The time at which the snapshot was scanned.",
+        "in": "BODY",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      {
+        "code": 201,
+        "description": "Response",
+        "examples": [
+          {
+            "data": "{\"id\":12345,\"created_at\":\"2018-05-04T01:14:52Z\",\"message\":\"Dependency results for the repo have been successfully updated.\",\"result\":\"SUCCESS\"}"
+          }
+        ]
+      }
+    ],
     "renamed": null
   },
   {
@@ -48176,7 +49125,11 @@
           }
         ]
       },
-      { "code": 202, "description": "Empty response", "examples": null },
+      {
+        "code": 202,
+        "description": "Empty response",
+        "examples": [{ "data": "null" }]
+      },
       {
         "code": 400,
         "description": "Custom domains are not available for GitHub Pages",
@@ -56572,7 +57525,7 @@
         "description": "Response",
         "examples": [
           {
-            "data": "[{\"number\":2,\"created_at\":\"2020-11-06T18:48:51Z\",\"url\":\"https://api.github.com/repos/owner/private-repo/secret-scanning/alerts/2\",\"html_url\":\"https://github.com/owner/private-repo/security/secret-scanning/2\",\"locations_url\":\"https://api.github.com/repos/owner/private-repo/secret-scanning/alerts/2/locations\",\"state\":\"resolved\",\"resolution\":\"false_positive\",\"resolved_at\":\"2020-11-07T02:47:13Z\",\"resolved_by\":{\"login\":\"monalisa\",\"id\":2,\"node_id\":\"MDQ6VXNlcjI=\",\"avatar_url\":\"https://alambic.github.com/avatars/u/2?\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/monalisa\",\"html_url\":\"https://github.com/monalisa\",\"followers_url\":\"https://api.github.com/users/monalisa/followers\",\"following_url\":\"https://api.github.com/users/monalisa/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/monalisa/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/monalisa/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/monalisa/subscriptions\",\"organizations_url\":\"https://api.github.com/users/monalisa/orgs\",\"repos_url\":\"https://api.github.com/users/monalisa/repos\",\"events_url\":\"https://api.github.com/users/monalisa/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/monalisa/received_events\",\"type\":\"User\",\"site_admin\":true},\"secret_type\":\"adafruit_io_key\",\"secret_type_display_name\":\"Adafruit IO Key\",\"secret\":\"aio_XXXXXXXXXXXXXXXXXXXXXXXXXXXX\",\"repository\":{\"id\":1296269,\"node_id\":\"MDEwOlJlcG9zaXRvcnkxMjk2MjY5\",\"name\":\"Hello-World\",\"full_name\":\"octocat/Hello-World\",\"owner\":{\"login\":\"octocat\",\"id\":1,\"node_id\":\"MDQ6VXNlcjE=\",\"avatar_url\":\"https://github.com/images/error/octocat_happy.gif\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/octocat\",\"html_url\":\"https://github.com/octocat\",\"followers_url\":\"https://api.github.com/users/octocat/followers\",\"following_url\":\"https://api.github.com/users/octocat/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/octocat/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/octocat/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/octocat/subscriptions\",\"organizations_url\":\"https://api.github.com/users/octocat/orgs\",\"repos_url\":\"https://api.github.com/users/octocat/repos\",\"events_url\":\"https://api.github.com/users/octocat/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/octocat/received_events\",\"type\":\"User\",\"site_admin\":false},\"private\":false,\"html_url\":\"https://github.com/octocat/Hello-World\",\"description\":\"This your first repo!\",\"fork\":false,\"url\":\"https://api.github.com/repos/octocat/Hello-World\",\"archive_url\":\"https://api.github.com/repos/octocat/Hello-World/{archive_format}{/ref}\",\"assignees_url\":\"https://api.github.com/repos/octocat/Hello-World/assignees{/user}\",\"blobs_url\":\"https://api.github.com/repos/octocat/Hello-World/git/blobs{/sha}\",\"branches_url\":\"https://api.github.com/repos/octocat/Hello-World/branches{/branch}\",\"collaborators_url\":\"https://api.github.com/repos/octocat/Hello-World/collaborators{/collaborator}\",\"comments_url\":\"https://api.github.com/repos/octocat/Hello-World/comments{/number}\",\"commits_url\":\"https://api.github.com/repos/octocat/Hello-World/commits{/sha}\",\"compare_url\":\"https://api.github.com/repos/octocat/Hello-World/compare/{base}...{head}\",\"contents_url\":\"https://api.github.com/repos/octocat/Hello-World/contents/{+path}\",\"contributors_url\":\"https://api.github.com/repos/octocat/Hello-World/contributors\",\"deployments_url\":\"https://api.github.com/repos/octocat/Hello-World/deployments\",\"downloads_url\":\"https://api.github.com/repos/octocat/Hello-World/downloads\",\"events_url\":\"https://api.github.com/repos/octocat/Hello-World/events\",\"forks_url\":\"https://api.github.com/repos/octocat/Hello-World/forks\",\"git_commits_url\":\"https://api.github.com/repos/octocat/Hello-World/git/commits{/sha}\",\"git_refs_url\":\"https://api.github.com/repos/octocat/Hello-World/git/refs{/sha}\",\"git_tags_url\":\"https://api.github.com/repos/octocat/Hello-World/git/tags{/sha}\",\"git_url\":\"git:github.com/octocat/Hello-World.git\",\"issue_comment_url\":\"https://api.github.com/repos/octocat/Hello-World/issues/comments{/number}\",\"issue_events_url\":\"https://api.github.com/repos/octocat/Hello-World/issues/events{/number}\",\"issues_url\":\"https://api.github.com/repos/octocat/Hello-World/issues{/number}\",\"keys_url\":\"https://api.github.com/repos/octocat/Hello-World/keys{/key_id}\",\"labels_url\":\"https://api.github.com/repos/octocat/Hello-World/labels{/name}\",\"languages_url\":\"https://api.github.com/repos/octocat/Hello-World/languages\",\"merges_url\":\"https://api.github.com/repos/octocat/Hello-World/merges\",\"milestones_url\":\"https://api.github.com/repos/octocat/Hello-World/milestones{/number}\",\"notifications_url\":\"https://api.github.com/repos/octocat/Hello-World/notifications{?since,all,participating}\",\"pulls_url\":\"https://api.github.com/repos/octocat/Hello-World/pulls{/number}\",\"releases_url\":\"https://api.github.com/repos/octocat/Hello-World/releases{/id}\",\"ssh_url\":\"git@github.com:octocat/Hello-World.git\",\"stargazers_url\":\"https://api.github.com/repos/octocat/Hello-World/stargazers\",\"statuses_url\":\"https://api.github.com/repos/octocat/Hello-World/statuses/{sha}\",\"subscribers_url\":\"https://api.github.com/repos/octocat/Hello-World/subscribers\",\"subscription_url\":\"https://api.github.com/repos/octocat/Hello-World/subscription\",\"tags_url\":\"https://api.github.com/repos/octocat/Hello-World/tags\",\"teams_url\":\"https://api.github.com/repos/octocat/Hello-World/teams\",\"trees_url\":\"https://api.github.com/repos/octocat/Hello-World/git/trees{/sha}\",\"clone_url\":\"https://github.com/octocat/Hello-World.git\",\"mirror_url\":\"git:git.example.com/octocat/Hello-World\",\"hooks_url\":\"https://api.github.com/repos/octocat/Hello-World/hooks\",\"svn_url\":\"https://svn.github.com/octocat/Hello-World\",\"homepage\":\"https://github.com\",\"language\":null,\"forks_count\":9,\"stargazers_count\":80,\"watchers_count\":80,\"size\":108,\"default_branch\":\"master\",\"open_issues_count\":0,\"is_template\":false,\"topics\":[\"octocat\",\"atom\",\"electron\",\"api\"],\"has_issues\":true,\"has_projects\":true,\"has_wiki\":true,\"has_pages\":false,\"has_downloads\":true,\"archived\":false,\"disabled\":false,\"visibility\":\"public\",\"pushed_at\":\"2011-01-26T19:06:43Z\",\"created_at\":\"2011-01-26T19:01:12Z\",\"updated_at\":\"2011-01-26T19:14:43Z\",\"permissions\":{\"admin\":false,\"push\":false,\"pull\":true},\"template_repository\":{\"id\":1296269,\"node_id\":\"MDEwOlJlcG9zaXRvcnkxMjk2MjY5\",\"name\":\"Hello-World-Template\",\"full_name\":\"octocat/Hello-World-Template\",\"owner\":{\"login\":\"octocat\",\"id\":1,\"node_id\":\"MDQ6VXNlcjE=\",\"avatar_url\":\"https://github.com/images/error/octocat_happy.gif\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/octocat\",\"html_url\":\"https://github.com/octocat\",\"followers_url\":\"https://api.github.com/users/octocat/followers\",\"following_url\":\"https://api.github.com/users/octocat/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/octocat/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/octocat/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/octocat/subscriptions\",\"organizations_url\":\"https://api.github.com/users/octocat/orgs\",\"repos_url\":\"https://api.github.com/users/octocat/repos\",\"events_url\":\"https://api.github.com/users/octocat/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/octocat/received_events\",\"type\":\"User\",\"site_admin\":false},\"private\":false,\"html_url\":\"https://github.com/octocat/Hello-World-Template\",\"description\":\"This your first repo!\",\"fork\":false,\"url\":\"https://api.github.com/repos/octocat/Hello-World-Template\",\"archive_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/{archive_format}{/ref}\",\"assignees_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/assignees{/user}\",\"blobs_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/git/blobs{/sha}\",\"branches_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/branches{/branch}\",\"collaborators_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/collaborators{/collaborator}\",\"comments_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/comments{/number}\",\"commits_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/commits{/sha}\",\"compare_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/compare/{base}...{head}\",\"contents_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/contents/{+path}\",\"contributors_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/contributors\",\"deployments_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/deployments\",\"downloads_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/downloads\",\"events_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/events\",\"forks_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/forks\",\"git_commits_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/git/commits{/sha}\",\"git_refs_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/git/refs{/sha}\",\"git_tags_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/git/tags{/sha}\",\"git_url\":\"git:github.com/octocat/Hello-World-Template.git\",\"issue_comment_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/issues/comments{/number}\",\"issue_events_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/issues/events{/number}\",\"issues_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/issues{/number}\",\"keys_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/keys{/key_id}\",\"labels_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/labels{/name}\",\"languages_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/languages\",\"merges_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/merges\",\"milestones_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/milestones{/number}\",\"notifications_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/notifications{?since,all,participating}\",\"pulls_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/pulls{/number}\",\"releases_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/releases{/id}\",\"ssh_url\":\"git@github.com:octocat/Hello-World-Template.git\",\"stargazers_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/stargazers\",\"statuses_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/statuses/{sha}\",\"subscribers_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/subscribers\",\"subscription_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/subscription\",\"tags_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/tags\",\"teams_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/teams\",\"trees_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/git/trees{/sha}\",\"clone_url\":\"https://github.com/octocat/Hello-World-Template.git\",\"mirror_url\":\"git:git.example.com/octocat/Hello-World-Template\",\"hooks_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/hooks\",\"svn_url\":\"https://svn.github.com/octocat/Hello-World-Template\",\"homepage\":\"https://github.com\",\"language\":null,\"forks\":9,\"forks_count\":9,\"stargazers_count\":80,\"watchers_count\":80,\"watchers\":80,\"size\":108,\"default_branch\":\"master\",\"open_issues\":0,\"open_issues_count\":0,\"is_template\":true,\"license\":{\"key\":\"mit\",\"name\":\"MIT License\",\"url\":\"https://api.github.com/licenses/mit\",\"spdx_id\":\"MIT\",\"node_id\":\"MDc6TGljZW5zZW1pdA==\",\"html_url\":\"https://api.github.com/licenses/mit\"},\"topics\":[\"octocat\",\"atom\",\"electron\",\"api\"],\"has_issues\":true,\"has_projects\":true,\"has_wiki\":true,\"has_pages\":false,\"has_downloads\":true,\"archived\":false,\"disabled\":false,\"visibility\":\"public\",\"pushed_at\":\"2011-01-26T19:06:43Z\",\"created_at\":\"2011-01-26T19:01:12Z\",\"updated_at\":\"2011-01-26T19:14:43Z\",\"permissions\":{\"admin\":false,\"push\":false,\"pull\":true},\"allow_rebase_merge\":true,\"temp_clone_token\":\"ABTLWHOULUVAXGTRYU7OC2876QJ2O\",\"allow_squash_merge\":true,\"allow_auto_merge\":false,\"delete_branch_on_merge\":true,\"allow_merge_commit\":true,\"subscribers_count\":42,\"network_count\":0}},\"push_protection_bypassed_by\":{\"login\":\"monalisa\",\"id\":2,\"node_id\":\"MDQ6VXNlcjI=\",\"avatar_url\":\"https://alambic.github.com/avatars/u/2?\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/monalisa\",\"html_url\":\"https://github.com/monalisa\",\"followers_url\":\"https://api.github.com/users/monalisa/followers\",\"following_url\":\"https://api.github.com/users/monalisa/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/monalisa/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/monalisa/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/monalisa/subscriptions\",\"organizations_url\":\"https://api.github.com/users/monalisa/orgs\",\"repos_url\":\"https://api.github.com/users/monalisa/repos\",\"events_url\":\"https://api.github.com/users/monalisa/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/monalisa/received_events\",\"type\":\"User\",\"site_admin\":true},\"push_protection_bypassed\":true,\"push_protection_bypassed_at\":\"2020-11-06T21:48:51Z\"},{\"number\":1,\"created_at\":\"2020-11-06T18:18:30Z\",\"url\":\"https://api.github.com/repos/owner/repo/secret-scanning/alerts/1\",\"html_url\":\"https://github.com/owner/repo/security/secret-scanning/1\",\"locations_url\":\"https://api.github.com/repos/owner/private-repo/secret-scanning/alerts/1/locations\",\"state\":\"open\",\"resolution\":null,\"resolved_at\":null,\"resolved_by\":null,\"secret_type\":\"mailchimp_api_key\",\"secret_type_display_name\":\"Mailchimp API Key\",\"secret\":\"XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-us2\",\"repository\":{\"id\":1296269,\"node_id\":\"MDEwOlJlcG9zaXRvcnkxMjk2MjY5\",\"name\":\"Hello-World\",\"full_name\":\"octocat/Hello-World\",\"owner\":{\"login\":\"octocat\",\"id\":1,\"node_id\":\"MDQ6VXNlcjE=\",\"avatar_url\":\"https://github.com/images/error/octocat_happy.gif\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/octocat\",\"html_url\":\"https://github.com/octocat\",\"followers_url\":\"https://api.github.com/users/octocat/followers\",\"following_url\":\"https://api.github.com/users/octocat/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/octocat/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/octocat/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/octocat/subscriptions\",\"organizations_url\":\"https://api.github.com/users/octocat/orgs\",\"repos_url\":\"https://api.github.com/users/octocat/repos\",\"events_url\":\"https://api.github.com/users/octocat/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/octocat/received_events\",\"type\":\"User\",\"site_admin\":false},\"private\":false,\"html_url\":\"https://github.com/octocat/Hello-World\",\"description\":\"This your first repo!\",\"fork\":false,\"url\":\"https://api.github.com/repos/octocat/Hello-World\",\"archive_url\":\"https://api.github.com/repos/octocat/Hello-World/{archive_format}{/ref}\",\"assignees_url\":\"https://api.github.com/repos/octocat/Hello-World/assignees{/user}\",\"blobs_url\":\"https://api.github.com/repos/octocat/Hello-World/git/blobs{/sha}\",\"branches_url\":\"https://api.github.com/repos/octocat/Hello-World/branches{/branch}\",\"collaborators_url\":\"https://api.github.com/repos/octocat/Hello-World/collaborators{/collaborator}\",\"comments_url\":\"https://api.github.com/repos/octocat/Hello-World/comments{/number}\",\"commits_url\":\"https://api.github.com/repos/octocat/Hello-World/commits{/sha}\",\"compare_url\":\"https://api.github.com/repos/octocat/Hello-World/compare/{base}...{head}\",\"contents_url\":\"https://api.github.com/repos/octocat/Hello-World/contents/{+path}\",\"contributors_url\":\"https://api.github.com/repos/octocat/Hello-World/contributors\",\"deployments_url\":\"https://api.github.com/repos/octocat/Hello-World/deployments\",\"downloads_url\":\"https://api.github.com/repos/octocat/Hello-World/downloads\",\"events_url\":\"https://api.github.com/repos/octocat/Hello-World/events\",\"forks_url\":\"https://api.github.com/repos/octocat/Hello-World/forks\",\"git_commits_url\":\"https://api.github.com/repos/octocat/Hello-World/git/commits{/sha}\",\"git_refs_url\":\"https://api.github.com/repos/octocat/Hello-World/git/refs{/sha}\",\"git_tags_url\":\"https://api.github.com/repos/octocat/Hello-World/git/tags{/sha}\",\"git_url\":\"git:github.com/octocat/Hello-World.git\",\"issue_comment_url\":\"https://api.github.com/repos/octocat/Hello-World/issues/comments{/number}\",\"issue_events_url\":\"https://api.github.com/repos/octocat/Hello-World/issues/events{/number}\",\"issues_url\":\"https://api.github.com/repos/octocat/Hello-World/issues{/number}\",\"keys_url\":\"https://api.github.com/repos/octocat/Hello-World/keys{/key_id}\",\"labels_url\":\"https://api.github.com/repos/octocat/Hello-World/labels{/name}\",\"languages_url\":\"https://api.github.com/repos/octocat/Hello-World/languages\",\"merges_url\":\"https://api.github.com/repos/octocat/Hello-World/merges\",\"milestones_url\":\"https://api.github.com/repos/octocat/Hello-World/milestones{/number}\",\"notifications_url\":\"https://api.github.com/repos/octocat/Hello-World/notifications{?since,all,participating}\",\"pulls_url\":\"https://api.github.com/repos/octocat/Hello-World/pulls{/number}\",\"releases_url\":\"https://api.github.com/repos/octocat/Hello-World/releases{/id}\",\"ssh_url\":\"git@github.com:octocat/Hello-World.git\",\"stargazers_url\":\"https://api.github.com/repos/octocat/Hello-World/stargazers\",\"statuses_url\":\"https://api.github.com/repos/octocat/Hello-World/statuses/{sha}\",\"subscribers_url\":\"https://api.github.com/repos/octocat/Hello-World/subscribers\",\"subscription_url\":\"https://api.github.com/repos/octocat/Hello-World/subscription\",\"tags_url\":\"https://api.github.com/repos/octocat/Hello-World/tags\",\"teams_url\":\"https://api.github.com/repos/octocat/Hello-World/teams\",\"trees_url\":\"https://api.github.com/repos/octocat/Hello-World/git/trees{/sha}\",\"clone_url\":\"https://github.com/octocat/Hello-World.git\",\"mirror_url\":\"git:git.example.com/octocat/Hello-World\",\"hooks_url\":\"https://api.github.com/repos/octocat/Hello-World/hooks\",\"svn_url\":\"https://svn.github.com/octocat/Hello-World\",\"homepage\":\"https://github.com\",\"language\":null,\"forks_count\":9,\"stargazers_count\":80,\"watchers_count\":80,\"size\":108,\"default_branch\":\"master\",\"open_issues_count\":0,\"is_template\":false,\"topics\":[\"octocat\",\"atom\",\"electron\",\"api\"],\"has_issues\":true,\"has_projects\":true,\"has_wiki\":true,\"has_pages\":false,\"has_downloads\":true,\"archived\":false,\"disabled\":false,\"visibility\":\"public\",\"pushed_at\":\"2011-01-26T19:06:43Z\",\"created_at\":\"2011-01-26T19:01:12Z\",\"updated_at\":\"2011-01-26T19:14:43Z\",\"permissions\":{\"admin\":false,\"push\":false,\"pull\":true},\"template_repository\":{\"id\":1296269,\"node_id\":\"MDEwOlJlcG9zaXRvcnkxMjk2MjY5\",\"name\":\"Hello-World-Template\",\"full_name\":\"octocat/Hello-World-Template\",\"owner\":{\"login\":\"octocat\",\"id\":1,\"node_id\":\"MDQ6VXNlcjE=\",\"avatar_url\":\"https://github.com/images/error/octocat_happy.gif\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/octocat\",\"html_url\":\"https://github.com/octocat\",\"followers_url\":\"https://api.github.com/users/octocat/followers\",\"following_url\":\"https://api.github.com/users/octocat/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/octocat/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/octocat/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/octocat/subscriptions\",\"organizations_url\":\"https://api.github.com/users/octocat/orgs\",\"repos_url\":\"https://api.github.com/users/octocat/repos\",\"events_url\":\"https://api.github.com/users/octocat/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/octocat/received_events\",\"type\":\"User\",\"site_admin\":false},\"private\":false,\"html_url\":\"https://github.com/octocat/Hello-World-Template\",\"description\":\"This your first repo!\",\"fork\":false,\"url\":\"https://api.github.com/repos/octocat/Hello-World-Template\",\"archive_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/{archive_format}{/ref}\",\"assignees_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/assignees{/user}\",\"blobs_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/git/blobs{/sha}\",\"branches_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/branches{/branch}\",\"collaborators_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/collaborators{/collaborator}\",\"comments_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/comments{/number}\",\"commits_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/commits{/sha}\",\"compare_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/compare/{base}...{head}\",\"contents_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/contents/{+path}\",\"contributors_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/contributors\",\"deployments_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/deployments\",\"downloads_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/downloads\",\"events_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/events\",\"forks_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/forks\",\"git_commits_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/git/commits{/sha}\",\"git_refs_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/git/refs{/sha}\",\"git_tags_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/git/tags{/sha}\",\"git_url\":\"git:github.com/octocat/Hello-World-Template.git\",\"issue_comment_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/issues/comments{/number}\",\"issue_events_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/issues/events{/number}\",\"issues_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/issues{/number}\",\"keys_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/keys{/key_id}\",\"labels_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/labels{/name}\",\"languages_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/languages\",\"merges_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/merges\",\"milestones_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/milestones{/number}\",\"notifications_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/notifications{?since,all,participating}\",\"pulls_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/pulls{/number}\",\"releases_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/releases{/id}\",\"ssh_url\":\"git@github.com:octocat/Hello-World-Template.git\",\"stargazers_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/stargazers\",\"statuses_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/statuses/{sha}\",\"subscribers_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/subscribers\",\"subscription_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/subscription\",\"tags_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/tags\",\"teams_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/teams\",\"trees_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/git/trees{/sha}\",\"clone_url\":\"https://github.com/octocat/Hello-World-Template.git\",\"mirror_url\":\"git:git.example.com/octocat/Hello-World-Template\",\"hooks_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/hooks\",\"svn_url\":\"https://svn.github.com/octocat/Hello-World-Template\",\"homepage\":\"https://github.com\",\"language\":null,\"forks\":9,\"forks_count\":9,\"stargazers_count\":80,\"watchers_count\":80,\"watchers\":80,\"size\":108,\"default_branch\":\"master\",\"open_issues\":0,\"open_issues_count\":0,\"is_template\":true,\"license\":{\"key\":\"mit\",\"name\":\"MIT License\",\"url\":\"https://api.github.com/licenses/mit\",\"spdx_id\":\"MIT\",\"node_id\":\"MDc6TGljZW5zZW1pdA==\",\"html_url\":\"https://api.github.com/licenses/mit\"},\"topics\":[\"octocat\",\"atom\",\"electron\",\"api\"],\"has_issues\":true,\"has_projects\":true,\"has_wiki\":true,\"has_pages\":false,\"has_downloads\":true,\"archived\":false,\"disabled\":false,\"visibility\":\"public\",\"pushed_at\":\"2011-01-26T19:06:43Z\",\"created_at\":\"2011-01-26T19:01:12Z\",\"updated_at\":\"2011-01-26T19:14:43Z\",\"permissions\":{\"admin\":false,\"push\":false,\"pull\":true},\"allow_rebase_merge\":true,\"temp_clone_token\":\"ABTLWHOULUVAXGTRYU7OC2876QJ2O\",\"allow_squash_merge\":true,\"allow_auto_merge\":false,\"delete_branch_on_merge\":true,\"allow_merge_commit\":true,\"subscribers_count\":42,\"network_count\":0}},\"push_protection_bypassed_by\":null,\"push_protection_bypassed\":false,\"push_protection_bypassed_at\":null}]"
+            "data": "[{\"number\":2,\"created_at\":\"2020-11-06T18:48:51Z\",\"url\":\"https://api.github.com/repos/owner/private-repo/secret-scanning/alerts/2\",\"html_url\":\"https://github.com/owner/private-repo/security/secret-scanning/2\",\"locations_url\":\"https://api.github.com/repos/owner/private-repo/secret-scanning/alerts/2/locations\",\"state\":\"resolved\",\"resolution\":\"false_positive\",\"resolved_at\":\"2020-11-07T02:47:13Z\",\"resolved_by\":{\"login\":\"monalisa\",\"id\":2,\"node_id\":\"MDQ6VXNlcjI=\",\"avatar_url\":\"https://alambic.github.com/avatars/u/2?\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/monalisa\",\"html_url\":\"https://github.com/monalisa\",\"followers_url\":\"https://api.github.com/users/monalisa/followers\",\"following_url\":\"https://api.github.com/users/monalisa/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/monalisa/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/monalisa/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/monalisa/subscriptions\",\"organizations_url\":\"https://api.github.com/users/monalisa/orgs\",\"repos_url\":\"https://api.github.com/users/monalisa/repos\",\"events_url\":\"https://api.github.com/users/monalisa/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/monalisa/received_events\",\"type\":\"User\",\"site_admin\":true},\"secret_type\":\"adafruit_io_key\",\"secret_type_display_name\":\"Adafruit IO Key\",\"secret\":\"aio_XXXXXXXXXXXXXXXXXXXXXXXXXXXX\",\"repository\":{\"id\":1296269,\"node_id\":\"MDEwOlJlcG9zaXRvcnkxMjk2MjY5\",\"name\":\"Hello-World\",\"full_name\":\"octocat/Hello-World\",\"owner\":{\"login\":\"octocat\",\"id\":1,\"node_id\":\"MDQ6VXNlcjE=\",\"avatar_url\":\"https://github.com/images/error/octocat_happy.gif\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/octocat\",\"html_url\":\"https://github.com/octocat\",\"followers_url\":\"https://api.github.com/users/octocat/followers\",\"following_url\":\"https://api.github.com/users/octocat/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/octocat/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/octocat/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/octocat/subscriptions\",\"organizations_url\":\"https://api.github.com/users/octocat/orgs\",\"repos_url\":\"https://api.github.com/users/octocat/repos\",\"events_url\":\"https://api.github.com/users/octocat/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/octocat/received_events\",\"type\":\"User\",\"site_admin\":false},\"private\":false,\"html_url\":\"https://github.com/octocat/Hello-World\",\"description\":\"This your first repo!\",\"fork\":false,\"url\":\"https://api.github.com/repos/octocat/Hello-World\",\"archive_url\":\"https://api.github.com/repos/octocat/Hello-World/{archive_format}{/ref}\",\"assignees_url\":\"https://api.github.com/repos/octocat/Hello-World/assignees{/user}\",\"blobs_url\":\"https://api.github.com/repos/octocat/Hello-World/git/blobs{/sha}\",\"branches_url\":\"https://api.github.com/repos/octocat/Hello-World/branches{/branch}\",\"collaborators_url\":\"https://api.github.com/repos/octocat/Hello-World/collaborators{/collaborator}\",\"comments_url\":\"https://api.github.com/repos/octocat/Hello-World/comments{/number}\",\"commits_url\":\"https://api.github.com/repos/octocat/Hello-World/commits{/sha}\",\"compare_url\":\"https://api.github.com/repos/octocat/Hello-World/compare/{base}...{head}\",\"contents_url\":\"https://api.github.com/repos/octocat/Hello-World/contents/{+path}\",\"contributors_url\":\"https://api.github.com/repos/octocat/Hello-World/contributors\",\"deployments_url\":\"https://api.github.com/repos/octocat/Hello-World/deployments\",\"downloads_url\":\"https://api.github.com/repos/octocat/Hello-World/downloads\",\"events_url\":\"https://api.github.com/repos/octocat/Hello-World/events\",\"forks_url\":\"https://api.github.com/repos/octocat/Hello-World/forks\",\"git_commits_url\":\"https://api.github.com/repos/octocat/Hello-World/git/commits{/sha}\",\"git_refs_url\":\"https://api.github.com/repos/octocat/Hello-World/git/refs{/sha}\",\"git_tags_url\":\"https://api.github.com/repos/octocat/Hello-World/git/tags{/sha}\",\"issue_comment_url\":\"https://api.github.com/repos/octocat/Hello-World/issues/comments{/number}\",\"issue_events_url\":\"https://api.github.com/repos/octocat/Hello-World/issues/events{/number}\",\"issues_url\":\"https://api.github.com/repos/octocat/Hello-World/issues{/number}\",\"keys_url\":\"https://api.github.com/repos/octocat/Hello-World/keys{/key_id}\",\"labels_url\":\"https://api.github.com/repos/octocat/Hello-World/labels{/name}\",\"languages_url\":\"https://api.github.com/repos/octocat/Hello-World/languages\",\"merges_url\":\"https://api.github.com/repos/octocat/Hello-World/merges\",\"milestones_url\":\"https://api.github.com/repos/octocat/Hello-World/milestones{/number}\",\"notifications_url\":\"https://api.github.com/repos/octocat/Hello-World/notifications{?since,all,participating}\",\"pulls_url\":\"https://api.github.com/repos/octocat/Hello-World/pulls{/number}\",\"releases_url\":\"https://api.github.com/repos/octocat/Hello-World/releases{/id}\",\"stargazers_url\":\"https://api.github.com/repos/octocat/Hello-World/stargazers\",\"statuses_url\":\"https://api.github.com/repos/octocat/Hello-World/statuses/{sha}\",\"subscribers_url\":\"https://api.github.com/repos/octocat/Hello-World/subscribers\",\"subscription_url\":\"https://api.github.com/repos/octocat/Hello-World/subscription\",\"tags_url\":\"https://api.github.com/repos/octocat/Hello-World/tags\",\"teams_url\":\"https://api.github.com/repos/octocat/Hello-World/teams\",\"trees_url\":\"https://api.github.com/repos/octocat/Hello-World/git/trees{/sha}\",\"hooks_url\":\"https://api.github.com/repos/octocat/Hello-World/hooks\"},\"push_protection_bypassed_by\":{\"login\":\"monalisa\",\"id\":2,\"node_id\":\"MDQ6VXNlcjI=\",\"avatar_url\":\"https://alambic.github.com/avatars/u/2?\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/monalisa\",\"html_url\":\"https://github.com/monalisa\",\"followers_url\":\"https://api.github.com/users/monalisa/followers\",\"following_url\":\"https://api.github.com/users/monalisa/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/monalisa/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/monalisa/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/monalisa/subscriptions\",\"organizations_url\":\"https://api.github.com/users/monalisa/orgs\",\"repos_url\":\"https://api.github.com/users/monalisa/repos\",\"events_url\":\"https://api.github.com/users/monalisa/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/monalisa/received_events\",\"type\":\"User\",\"site_admin\":true},\"push_protection_bypassed\":true,\"push_protection_bypassed_at\":\"2020-11-06T21:48:51Z\"},{\"number\":1,\"created_at\":\"2020-11-06T18:18:30Z\",\"url\":\"https://api.github.com/repos/owner/repo/secret-scanning/alerts/1\",\"html_url\":\"https://github.com/owner/repo/security/secret-scanning/1\",\"locations_url\":\"https://api.github.com/repos/owner/private-repo/secret-scanning/alerts/1/locations\",\"state\":\"open\",\"resolution\":null,\"resolved_at\":null,\"resolved_by\":null,\"secret_type\":\"mailchimp_api_key\",\"secret_type_display_name\":\"Mailchimp API Key\",\"secret\":\"XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-us2\",\"repository\":{\"id\":1296269,\"node_id\":\"MDEwOlJlcG9zaXRvcnkxMjk2MjY5\",\"name\":\"Hello-World\",\"full_name\":\"octocat/Hello-World\",\"owner\":{\"login\":\"octocat\",\"id\":1,\"node_id\":\"MDQ6VXNlcjE=\",\"avatar_url\":\"https://github.com/images/error/octocat_happy.gif\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/octocat\",\"html_url\":\"https://github.com/octocat\",\"followers_url\":\"https://api.github.com/users/octocat/followers\",\"following_url\":\"https://api.github.com/users/octocat/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/octocat/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/octocat/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/octocat/subscriptions\",\"organizations_url\":\"https://api.github.com/users/octocat/orgs\",\"repos_url\":\"https://api.github.com/users/octocat/repos\",\"events_url\":\"https://api.github.com/users/octocat/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/octocat/received_events\",\"type\":\"User\",\"site_admin\":false},\"private\":false,\"html_url\":\"https://github.com/octocat/Hello-World\",\"description\":\"This your first repo!\",\"fork\":false,\"url\":\"https://api.github.com/repos/octocat/Hello-World\",\"archive_url\":\"https://api.github.com/repos/octocat/Hello-World/{archive_format}{/ref}\",\"assignees_url\":\"https://api.github.com/repos/octocat/Hello-World/assignees{/user}\",\"blobs_url\":\"https://api.github.com/repos/octocat/Hello-World/git/blobs{/sha}\",\"branches_url\":\"https://api.github.com/repos/octocat/Hello-World/branches{/branch}\",\"collaborators_url\":\"https://api.github.com/repos/octocat/Hello-World/collaborators{/collaborator}\",\"comments_url\":\"https://api.github.com/repos/octocat/Hello-World/comments{/number}\",\"commits_url\":\"https://api.github.com/repos/octocat/Hello-World/commits{/sha}\",\"compare_url\":\"https://api.github.com/repos/octocat/Hello-World/compare/{base}...{head}\",\"contents_url\":\"https://api.github.com/repos/octocat/Hello-World/contents/{+path}\",\"contributors_url\":\"https://api.github.com/repos/octocat/Hello-World/contributors\",\"deployments_url\":\"https://api.github.com/repos/octocat/Hello-World/deployments\",\"downloads_url\":\"https://api.github.com/repos/octocat/Hello-World/downloads\",\"events_url\":\"https://api.github.com/repos/octocat/Hello-World/events\",\"forks_url\":\"https://api.github.com/repos/octocat/Hello-World/forks\",\"git_commits_url\":\"https://api.github.com/repos/octocat/Hello-World/git/commits{/sha}\",\"git_refs_url\":\"https://api.github.com/repos/octocat/Hello-World/git/refs{/sha}\",\"git_tags_url\":\"https://api.github.com/repos/octocat/Hello-World/git/tags{/sha}\",\"issue_comment_url\":\"https://api.github.com/repos/octocat/Hello-World/issues/comments{/number}\",\"issue_events_url\":\"https://api.github.com/repos/octocat/Hello-World/issues/events{/number}\",\"issues_url\":\"https://api.github.com/repos/octocat/Hello-World/issues{/number}\",\"keys_url\":\"https://api.github.com/repos/octocat/Hello-World/keys{/key_id}\",\"labels_url\":\"https://api.github.com/repos/octocat/Hello-World/labels{/name}\",\"languages_url\":\"https://api.github.com/repos/octocat/Hello-World/languages\",\"merges_url\":\"https://api.github.com/repos/octocat/Hello-World/merges\",\"milestones_url\":\"https://api.github.com/repos/octocat/Hello-World/milestones{/number}\",\"notifications_url\":\"https://api.github.com/repos/octocat/Hello-World/notifications{?since,all,participating}\",\"pulls_url\":\"https://api.github.com/repos/octocat/Hello-World/pulls{/number}\",\"releases_url\":\"https://api.github.com/repos/octocat/Hello-World/releases{/id}\",\"stargazers_url\":\"https://api.github.com/repos/octocat/Hello-World/stargazers\",\"statuses_url\":\"https://api.github.com/repos/octocat/Hello-World/statuses/{sha}\",\"subscribers_url\":\"https://api.github.com/repos/octocat/Hello-World/subscribers\",\"subscription_url\":\"https://api.github.com/repos/octocat/Hello-World/subscription\",\"tags_url\":\"https://api.github.com/repos/octocat/Hello-World/tags\",\"teams_url\":\"https://api.github.com/repos/octocat/Hello-World/teams\",\"trees_url\":\"https://api.github.com/repos/octocat/Hello-World/git/trees{/sha}\",\"hooks_url\":\"https://api.github.com/repos/octocat/Hello-World/hooks\"},\"push_protection_bypassed_by\":null,\"push_protection_bypassed\":false,\"push_protection_bypassed_at\":null}]"
           }
         ]
       },
@@ -56732,7 +57685,7 @@
         "description": "Response",
         "examples": [
           {
-            "data": "[{\"number\":2,\"created_at\":\"2020-11-06T18:48:51Z\",\"url\":\"https://api.github.com/repos/owner/private-repo/secret-scanning/alerts/2\",\"html_url\":\"https://github.com/owner/private-repo/security/secret-scanning/2\",\"locations_url\":\"https://api.github.com/repos/owner/private-repo/secret-scanning/alerts/2/locations\",\"state\":\"resolved\",\"resolution\":\"false_positive\",\"resolved_at\":\"2020-11-07T02:47:13Z\",\"resolved_by\":{\"login\":\"monalisa\",\"id\":2,\"node_id\":\"MDQ6VXNlcjI=\",\"avatar_url\":\"https://alambic.github.com/avatars/u/2?\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/monalisa\",\"html_url\":\"https://github.com/monalisa\",\"followers_url\":\"https://api.github.com/users/monalisa/followers\",\"following_url\":\"https://api.github.com/users/monalisa/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/monalisa/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/monalisa/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/monalisa/subscriptions\",\"organizations_url\":\"https://api.github.com/users/monalisa/orgs\",\"repos_url\":\"https://api.github.com/users/monalisa/repos\",\"events_url\":\"https://api.github.com/users/monalisa/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/monalisa/received_events\",\"type\":\"User\",\"site_admin\":true},\"secret_type\":\"adafruit_io_key\",\"secret_type_display_name\":\"Adafruit IO Key\",\"secret\":\"aio_XXXXXXXXXXXXXXXXXXXXXXXXXXXX\",\"repository\":{\"id\":1296269,\"node_id\":\"MDEwOlJlcG9zaXRvcnkxMjk2MjY5\",\"name\":\"Hello-World\",\"full_name\":\"octocat/Hello-World\",\"owner\":{\"login\":\"octocat\",\"id\":1,\"node_id\":\"MDQ6VXNlcjE=\",\"avatar_url\":\"https://github.com/images/error/octocat_happy.gif\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/octocat\",\"html_url\":\"https://github.com/octocat\",\"followers_url\":\"https://api.github.com/users/octocat/followers\",\"following_url\":\"https://api.github.com/users/octocat/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/octocat/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/octocat/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/octocat/subscriptions\",\"organizations_url\":\"https://api.github.com/users/octocat/orgs\",\"repos_url\":\"https://api.github.com/users/octocat/repos\",\"events_url\":\"https://api.github.com/users/octocat/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/octocat/received_events\",\"type\":\"User\",\"site_admin\":false},\"private\":false,\"html_url\":\"https://github.com/octocat/Hello-World\",\"description\":\"This your first repo!\",\"fork\":false,\"url\":\"https://api.github.com/repos/octocat/Hello-World\",\"archive_url\":\"https://api.github.com/repos/octocat/Hello-World/{archive_format}{/ref}\",\"assignees_url\":\"https://api.github.com/repos/octocat/Hello-World/assignees{/user}\",\"blobs_url\":\"https://api.github.com/repos/octocat/Hello-World/git/blobs{/sha}\",\"branches_url\":\"https://api.github.com/repos/octocat/Hello-World/branches{/branch}\",\"collaborators_url\":\"https://api.github.com/repos/octocat/Hello-World/collaborators{/collaborator}\",\"comments_url\":\"https://api.github.com/repos/octocat/Hello-World/comments{/number}\",\"commits_url\":\"https://api.github.com/repos/octocat/Hello-World/commits{/sha}\",\"compare_url\":\"https://api.github.com/repos/octocat/Hello-World/compare/{base}...{head}\",\"contents_url\":\"https://api.github.com/repos/octocat/Hello-World/contents/{+path}\",\"contributors_url\":\"https://api.github.com/repos/octocat/Hello-World/contributors\",\"deployments_url\":\"https://api.github.com/repos/octocat/Hello-World/deployments\",\"downloads_url\":\"https://api.github.com/repos/octocat/Hello-World/downloads\",\"events_url\":\"https://api.github.com/repos/octocat/Hello-World/events\",\"forks_url\":\"https://api.github.com/repos/octocat/Hello-World/forks\",\"git_commits_url\":\"https://api.github.com/repos/octocat/Hello-World/git/commits{/sha}\",\"git_refs_url\":\"https://api.github.com/repos/octocat/Hello-World/git/refs{/sha}\",\"git_tags_url\":\"https://api.github.com/repos/octocat/Hello-World/git/tags{/sha}\",\"git_url\":\"git:github.com/octocat/Hello-World.git\",\"issue_comment_url\":\"https://api.github.com/repos/octocat/Hello-World/issues/comments{/number}\",\"issue_events_url\":\"https://api.github.com/repos/octocat/Hello-World/issues/events{/number}\",\"issues_url\":\"https://api.github.com/repos/octocat/Hello-World/issues{/number}\",\"keys_url\":\"https://api.github.com/repos/octocat/Hello-World/keys{/key_id}\",\"labels_url\":\"https://api.github.com/repos/octocat/Hello-World/labels{/name}\",\"languages_url\":\"https://api.github.com/repos/octocat/Hello-World/languages\",\"merges_url\":\"https://api.github.com/repos/octocat/Hello-World/merges\",\"milestones_url\":\"https://api.github.com/repos/octocat/Hello-World/milestones{/number}\",\"notifications_url\":\"https://api.github.com/repos/octocat/Hello-World/notifications{?since,all,participating}\",\"pulls_url\":\"https://api.github.com/repos/octocat/Hello-World/pulls{/number}\",\"releases_url\":\"https://api.github.com/repos/octocat/Hello-World/releases{/id}\",\"ssh_url\":\"git@github.com:octocat/Hello-World.git\",\"stargazers_url\":\"https://api.github.com/repos/octocat/Hello-World/stargazers\",\"statuses_url\":\"https://api.github.com/repos/octocat/Hello-World/statuses/{sha}\",\"subscribers_url\":\"https://api.github.com/repos/octocat/Hello-World/subscribers\",\"subscription_url\":\"https://api.github.com/repos/octocat/Hello-World/subscription\",\"tags_url\":\"https://api.github.com/repos/octocat/Hello-World/tags\",\"teams_url\":\"https://api.github.com/repos/octocat/Hello-World/teams\",\"trees_url\":\"https://api.github.com/repos/octocat/Hello-World/git/trees{/sha}\",\"clone_url\":\"https://github.com/octocat/Hello-World.git\",\"mirror_url\":\"git:git.example.com/octocat/Hello-World\",\"hooks_url\":\"https://api.github.com/repos/octocat/Hello-World/hooks\",\"svn_url\":\"https://svn.github.com/octocat/Hello-World\",\"homepage\":\"https://github.com\",\"language\":null,\"forks_count\":9,\"stargazers_count\":80,\"watchers_count\":80,\"size\":108,\"default_branch\":\"master\",\"open_issues_count\":0,\"is_template\":false,\"topics\":[\"octocat\",\"atom\",\"electron\",\"api\"],\"has_issues\":true,\"has_projects\":true,\"has_wiki\":true,\"has_pages\":false,\"has_downloads\":true,\"archived\":false,\"disabled\":false,\"visibility\":\"public\",\"pushed_at\":\"2011-01-26T19:06:43Z\",\"created_at\":\"2011-01-26T19:01:12Z\",\"updated_at\":\"2011-01-26T19:14:43Z\",\"permissions\":{\"admin\":false,\"push\":false,\"pull\":true},\"template_repository\":{\"id\":1296269,\"node_id\":\"MDEwOlJlcG9zaXRvcnkxMjk2MjY5\",\"name\":\"Hello-World-Template\",\"full_name\":\"octocat/Hello-World-Template\",\"owner\":{\"login\":\"octocat\",\"id\":1,\"node_id\":\"MDQ6VXNlcjE=\",\"avatar_url\":\"https://github.com/images/error/octocat_happy.gif\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/octocat\",\"html_url\":\"https://github.com/octocat\",\"followers_url\":\"https://api.github.com/users/octocat/followers\",\"following_url\":\"https://api.github.com/users/octocat/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/octocat/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/octocat/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/octocat/subscriptions\",\"organizations_url\":\"https://api.github.com/users/octocat/orgs\",\"repos_url\":\"https://api.github.com/users/octocat/repos\",\"events_url\":\"https://api.github.com/users/octocat/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/octocat/received_events\",\"type\":\"User\",\"site_admin\":false},\"private\":false,\"html_url\":\"https://github.com/octocat/Hello-World-Template\",\"description\":\"This your first repo!\",\"fork\":false,\"url\":\"https://api.github.com/repos/octocat/Hello-World-Template\",\"archive_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/{archive_format}{/ref}\",\"assignees_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/assignees{/user}\",\"blobs_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/git/blobs{/sha}\",\"branches_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/branches{/branch}\",\"collaborators_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/collaborators{/collaborator}\",\"comments_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/comments{/number}\",\"commits_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/commits{/sha}\",\"compare_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/compare/{base}...{head}\",\"contents_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/contents/{+path}\",\"contributors_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/contributors\",\"deployments_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/deployments\",\"downloads_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/downloads\",\"events_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/events\",\"forks_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/forks\",\"git_commits_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/git/commits{/sha}\",\"git_refs_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/git/refs{/sha}\",\"git_tags_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/git/tags{/sha}\",\"git_url\":\"git:github.com/octocat/Hello-World-Template.git\",\"issue_comment_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/issues/comments{/number}\",\"issue_events_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/issues/events{/number}\",\"issues_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/issues{/number}\",\"keys_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/keys{/key_id}\",\"labels_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/labels{/name}\",\"languages_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/languages\",\"merges_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/merges\",\"milestones_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/milestones{/number}\",\"notifications_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/notifications{?since,all,participating}\",\"pulls_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/pulls{/number}\",\"releases_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/releases{/id}\",\"ssh_url\":\"git@github.com:octocat/Hello-World-Template.git\",\"stargazers_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/stargazers\",\"statuses_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/statuses/{sha}\",\"subscribers_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/subscribers\",\"subscription_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/subscription\",\"tags_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/tags\",\"teams_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/teams\",\"trees_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/git/trees{/sha}\",\"clone_url\":\"https://github.com/octocat/Hello-World-Template.git\",\"mirror_url\":\"git:git.example.com/octocat/Hello-World-Template\",\"hooks_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/hooks\",\"svn_url\":\"https://svn.github.com/octocat/Hello-World-Template\",\"homepage\":\"https://github.com\",\"language\":null,\"forks\":9,\"forks_count\":9,\"stargazers_count\":80,\"watchers_count\":80,\"watchers\":80,\"size\":108,\"default_branch\":\"master\",\"open_issues\":0,\"open_issues_count\":0,\"is_template\":true,\"license\":{\"key\":\"mit\",\"name\":\"MIT License\",\"url\":\"https://api.github.com/licenses/mit\",\"spdx_id\":\"MIT\",\"node_id\":\"MDc6TGljZW5zZW1pdA==\",\"html_url\":\"https://api.github.com/licenses/mit\"},\"topics\":[\"octocat\",\"atom\",\"electron\",\"api\"],\"has_issues\":true,\"has_projects\":true,\"has_wiki\":true,\"has_pages\":false,\"has_downloads\":true,\"archived\":false,\"disabled\":false,\"visibility\":\"public\",\"pushed_at\":\"2011-01-26T19:06:43Z\",\"created_at\":\"2011-01-26T19:01:12Z\",\"updated_at\":\"2011-01-26T19:14:43Z\",\"permissions\":{\"admin\":false,\"push\":false,\"pull\":true},\"allow_rebase_merge\":true,\"temp_clone_token\":\"ABTLWHOULUVAXGTRYU7OC2876QJ2O\",\"allow_squash_merge\":true,\"allow_auto_merge\":false,\"delete_branch_on_merge\":true,\"allow_merge_commit\":true,\"subscribers_count\":42,\"network_count\":0}},\"push_protection_bypassed_by\":{\"login\":\"monalisa\",\"id\":2,\"node_id\":\"MDQ6VXNlcjI=\",\"avatar_url\":\"https://alambic.github.com/avatars/u/2?\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/monalisa\",\"html_url\":\"https://github.com/monalisa\",\"followers_url\":\"https://api.github.com/users/monalisa/followers\",\"following_url\":\"https://api.github.com/users/monalisa/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/monalisa/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/monalisa/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/monalisa/subscriptions\",\"organizations_url\":\"https://api.github.com/users/monalisa/orgs\",\"repos_url\":\"https://api.github.com/users/monalisa/repos\",\"events_url\":\"https://api.github.com/users/monalisa/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/monalisa/received_events\",\"type\":\"User\",\"site_admin\":true},\"push_protection_bypassed\":true,\"push_protection_bypassed_at\":\"2020-11-06T21:48:51Z\"},{\"number\":1,\"created_at\":\"2020-11-06T18:18:30Z\",\"url\":\"https://api.github.com/repos/owner/repo/secret-scanning/alerts/1\",\"html_url\":\"https://github.com/owner/repo/security/secret-scanning/1\",\"locations_url\":\"https://api.github.com/repos/owner/private-repo/secret-scanning/alerts/1/locations\",\"state\":\"open\",\"resolution\":null,\"resolved_at\":null,\"resolved_by\":null,\"secret_type\":\"mailchimp_api_key\",\"secret_type_display_name\":\"Mailchimp API Key\",\"secret\":\"XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-us2\",\"repository\":{\"id\":1296269,\"node_id\":\"MDEwOlJlcG9zaXRvcnkxMjk2MjY5\",\"name\":\"Hello-World\",\"full_name\":\"octocat/Hello-World\",\"owner\":{\"login\":\"octocat\",\"id\":1,\"node_id\":\"MDQ6VXNlcjE=\",\"avatar_url\":\"https://github.com/images/error/octocat_happy.gif\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/octocat\",\"html_url\":\"https://github.com/octocat\",\"followers_url\":\"https://api.github.com/users/octocat/followers\",\"following_url\":\"https://api.github.com/users/octocat/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/octocat/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/octocat/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/octocat/subscriptions\",\"organizations_url\":\"https://api.github.com/users/octocat/orgs\",\"repos_url\":\"https://api.github.com/users/octocat/repos\",\"events_url\":\"https://api.github.com/users/octocat/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/octocat/received_events\",\"type\":\"User\",\"site_admin\":false},\"private\":false,\"html_url\":\"https://github.com/octocat/Hello-World\",\"description\":\"This your first repo!\",\"fork\":false,\"url\":\"https://api.github.com/repos/octocat/Hello-World\",\"archive_url\":\"https://api.github.com/repos/octocat/Hello-World/{archive_format}{/ref}\",\"assignees_url\":\"https://api.github.com/repos/octocat/Hello-World/assignees{/user}\",\"blobs_url\":\"https://api.github.com/repos/octocat/Hello-World/git/blobs{/sha}\",\"branches_url\":\"https://api.github.com/repos/octocat/Hello-World/branches{/branch}\",\"collaborators_url\":\"https://api.github.com/repos/octocat/Hello-World/collaborators{/collaborator}\",\"comments_url\":\"https://api.github.com/repos/octocat/Hello-World/comments{/number}\",\"commits_url\":\"https://api.github.com/repos/octocat/Hello-World/commits{/sha}\",\"compare_url\":\"https://api.github.com/repos/octocat/Hello-World/compare/{base}...{head}\",\"contents_url\":\"https://api.github.com/repos/octocat/Hello-World/contents/{+path}\",\"contributors_url\":\"https://api.github.com/repos/octocat/Hello-World/contributors\",\"deployments_url\":\"https://api.github.com/repos/octocat/Hello-World/deployments\",\"downloads_url\":\"https://api.github.com/repos/octocat/Hello-World/downloads\",\"events_url\":\"https://api.github.com/repos/octocat/Hello-World/events\",\"forks_url\":\"https://api.github.com/repos/octocat/Hello-World/forks\",\"git_commits_url\":\"https://api.github.com/repos/octocat/Hello-World/git/commits{/sha}\",\"git_refs_url\":\"https://api.github.com/repos/octocat/Hello-World/git/refs{/sha}\",\"git_tags_url\":\"https://api.github.com/repos/octocat/Hello-World/git/tags{/sha}\",\"git_url\":\"git:github.com/octocat/Hello-World.git\",\"issue_comment_url\":\"https://api.github.com/repos/octocat/Hello-World/issues/comments{/number}\",\"issue_events_url\":\"https://api.github.com/repos/octocat/Hello-World/issues/events{/number}\",\"issues_url\":\"https://api.github.com/repos/octocat/Hello-World/issues{/number}\",\"keys_url\":\"https://api.github.com/repos/octocat/Hello-World/keys{/key_id}\",\"labels_url\":\"https://api.github.com/repos/octocat/Hello-World/labels{/name}\",\"languages_url\":\"https://api.github.com/repos/octocat/Hello-World/languages\",\"merges_url\":\"https://api.github.com/repos/octocat/Hello-World/merges\",\"milestones_url\":\"https://api.github.com/repos/octocat/Hello-World/milestones{/number}\",\"notifications_url\":\"https://api.github.com/repos/octocat/Hello-World/notifications{?since,all,participating}\",\"pulls_url\":\"https://api.github.com/repos/octocat/Hello-World/pulls{/number}\",\"releases_url\":\"https://api.github.com/repos/octocat/Hello-World/releases{/id}\",\"ssh_url\":\"git@github.com:octocat/Hello-World.git\",\"stargazers_url\":\"https://api.github.com/repos/octocat/Hello-World/stargazers\",\"statuses_url\":\"https://api.github.com/repos/octocat/Hello-World/statuses/{sha}\",\"subscribers_url\":\"https://api.github.com/repos/octocat/Hello-World/subscribers\",\"subscription_url\":\"https://api.github.com/repos/octocat/Hello-World/subscription\",\"tags_url\":\"https://api.github.com/repos/octocat/Hello-World/tags\",\"teams_url\":\"https://api.github.com/repos/octocat/Hello-World/teams\",\"trees_url\":\"https://api.github.com/repos/octocat/Hello-World/git/trees{/sha}\",\"clone_url\":\"https://github.com/octocat/Hello-World.git\",\"mirror_url\":\"git:git.example.com/octocat/Hello-World\",\"hooks_url\":\"https://api.github.com/repos/octocat/Hello-World/hooks\",\"svn_url\":\"https://svn.github.com/octocat/Hello-World\",\"homepage\":\"https://github.com\",\"language\":null,\"forks_count\":9,\"stargazers_count\":80,\"watchers_count\":80,\"size\":108,\"default_branch\":\"master\",\"open_issues_count\":0,\"is_template\":false,\"topics\":[\"octocat\",\"atom\",\"electron\",\"api\"],\"has_issues\":true,\"has_projects\":true,\"has_wiki\":true,\"has_pages\":false,\"has_downloads\":true,\"archived\":false,\"disabled\":false,\"visibility\":\"public\",\"pushed_at\":\"2011-01-26T19:06:43Z\",\"created_at\":\"2011-01-26T19:01:12Z\",\"updated_at\":\"2011-01-26T19:14:43Z\",\"permissions\":{\"admin\":false,\"push\":false,\"pull\":true},\"template_repository\":{\"id\":1296269,\"node_id\":\"MDEwOlJlcG9zaXRvcnkxMjk2MjY5\",\"name\":\"Hello-World-Template\",\"full_name\":\"octocat/Hello-World-Template\",\"owner\":{\"login\":\"octocat\",\"id\":1,\"node_id\":\"MDQ6VXNlcjE=\",\"avatar_url\":\"https://github.com/images/error/octocat_happy.gif\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/octocat\",\"html_url\":\"https://github.com/octocat\",\"followers_url\":\"https://api.github.com/users/octocat/followers\",\"following_url\":\"https://api.github.com/users/octocat/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/octocat/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/octocat/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/octocat/subscriptions\",\"organizations_url\":\"https://api.github.com/users/octocat/orgs\",\"repos_url\":\"https://api.github.com/users/octocat/repos\",\"events_url\":\"https://api.github.com/users/octocat/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/octocat/received_events\",\"type\":\"User\",\"site_admin\":false},\"private\":false,\"html_url\":\"https://github.com/octocat/Hello-World-Template\",\"description\":\"This your first repo!\",\"fork\":false,\"url\":\"https://api.github.com/repos/octocat/Hello-World-Template\",\"archive_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/{archive_format}{/ref}\",\"assignees_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/assignees{/user}\",\"blobs_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/git/blobs{/sha}\",\"branches_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/branches{/branch}\",\"collaborators_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/collaborators{/collaborator}\",\"comments_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/comments{/number}\",\"commits_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/commits{/sha}\",\"compare_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/compare/{base}...{head}\",\"contents_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/contents/{+path}\",\"contributors_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/contributors\",\"deployments_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/deployments\",\"downloads_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/downloads\",\"events_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/events\",\"forks_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/forks\",\"git_commits_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/git/commits{/sha}\",\"git_refs_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/git/refs{/sha}\",\"git_tags_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/git/tags{/sha}\",\"git_url\":\"git:github.com/octocat/Hello-World-Template.git\",\"issue_comment_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/issues/comments{/number}\",\"issue_events_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/issues/events{/number}\",\"issues_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/issues{/number}\",\"keys_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/keys{/key_id}\",\"labels_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/labels{/name}\",\"languages_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/languages\",\"merges_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/merges\",\"milestones_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/milestones{/number}\",\"notifications_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/notifications{?since,all,participating}\",\"pulls_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/pulls{/number}\",\"releases_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/releases{/id}\",\"ssh_url\":\"git@github.com:octocat/Hello-World-Template.git\",\"stargazers_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/stargazers\",\"statuses_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/statuses/{sha}\",\"subscribers_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/subscribers\",\"subscription_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/subscription\",\"tags_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/tags\",\"teams_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/teams\",\"trees_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/git/trees{/sha}\",\"clone_url\":\"https://github.com/octocat/Hello-World-Template.git\",\"mirror_url\":\"git:git.example.com/octocat/Hello-World-Template\",\"hooks_url\":\"https://api.github.com/repos/octocat/Hello-World-Template/hooks\",\"svn_url\":\"https://svn.github.com/octocat/Hello-World-Template\",\"homepage\":\"https://github.com\",\"language\":null,\"forks\":9,\"forks_count\":9,\"stargazers_count\":80,\"watchers_count\":80,\"watchers\":80,\"size\":108,\"default_branch\":\"master\",\"open_issues\":0,\"open_issues_count\":0,\"is_template\":true,\"license\":{\"key\":\"mit\",\"name\":\"MIT License\",\"url\":\"https://api.github.com/licenses/mit\",\"spdx_id\":\"MIT\",\"node_id\":\"MDc6TGljZW5zZW1pdA==\",\"html_url\":\"https://api.github.com/licenses/mit\"},\"topics\":[\"octocat\",\"atom\",\"electron\",\"api\"],\"has_issues\":true,\"has_projects\":true,\"has_wiki\":true,\"has_pages\":false,\"has_downloads\":true,\"archived\":false,\"disabled\":false,\"visibility\":\"public\",\"pushed_at\":\"2011-01-26T19:06:43Z\",\"created_at\":\"2011-01-26T19:01:12Z\",\"updated_at\":\"2011-01-26T19:14:43Z\",\"permissions\":{\"admin\":false,\"push\":false,\"pull\":true},\"allow_rebase_merge\":true,\"temp_clone_token\":\"ABTLWHOULUVAXGTRYU7OC2876QJ2O\",\"allow_squash_merge\":true,\"allow_auto_merge\":false,\"delete_branch_on_merge\":true,\"allow_merge_commit\":true,\"subscribers_count\":42,\"network_count\":0}},\"push_protection_bypassed_by\":null,\"push_protection_bypassed\":false,\"push_protection_bypassed_at\":null}]"
+            "data": "[{\"number\":2,\"created_at\":\"2020-11-06T18:48:51Z\",\"url\":\"https://api.github.com/repos/owner/private-repo/secret-scanning/alerts/2\",\"html_url\":\"https://github.com/owner/private-repo/security/secret-scanning/2\",\"locations_url\":\"https://api.github.com/repos/owner/private-repo/secret-scanning/alerts/2/locations\",\"state\":\"resolved\",\"resolution\":\"false_positive\",\"resolved_at\":\"2020-11-07T02:47:13Z\",\"resolved_by\":{\"login\":\"monalisa\",\"id\":2,\"node_id\":\"MDQ6VXNlcjI=\",\"avatar_url\":\"https://alambic.github.com/avatars/u/2?\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/monalisa\",\"html_url\":\"https://github.com/monalisa\",\"followers_url\":\"https://api.github.com/users/monalisa/followers\",\"following_url\":\"https://api.github.com/users/monalisa/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/monalisa/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/monalisa/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/monalisa/subscriptions\",\"organizations_url\":\"https://api.github.com/users/monalisa/orgs\",\"repos_url\":\"https://api.github.com/users/monalisa/repos\",\"events_url\":\"https://api.github.com/users/monalisa/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/monalisa/received_events\",\"type\":\"User\",\"site_admin\":true},\"secret_type\":\"adafruit_io_key\",\"secret_type_display_name\":\"Adafruit IO Key\",\"secret\":\"aio_XXXXXXXXXXXXXXXXXXXXXXXXXXXX\",\"repository\":{\"id\":1296269,\"node_id\":\"MDEwOlJlcG9zaXRvcnkxMjk2MjY5\",\"name\":\"Hello-World\",\"full_name\":\"octocat/Hello-World\",\"owner\":{\"login\":\"octocat\",\"id\":1,\"node_id\":\"MDQ6VXNlcjE=\",\"avatar_url\":\"https://github.com/images/error/octocat_happy.gif\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/octocat\",\"html_url\":\"https://github.com/octocat\",\"followers_url\":\"https://api.github.com/users/octocat/followers\",\"following_url\":\"https://api.github.com/users/octocat/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/octocat/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/octocat/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/octocat/subscriptions\",\"organizations_url\":\"https://api.github.com/users/octocat/orgs\",\"repos_url\":\"https://api.github.com/users/octocat/repos\",\"events_url\":\"https://api.github.com/users/octocat/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/octocat/received_events\",\"type\":\"User\",\"site_admin\":false},\"private\":false,\"html_url\":\"https://github.com/octocat/Hello-World\",\"description\":\"This your first repo!\",\"fork\":false,\"url\":\"https://api.github.com/repos/octocat/Hello-World\",\"archive_url\":\"https://api.github.com/repos/octocat/Hello-World/{archive_format}{/ref}\",\"assignees_url\":\"https://api.github.com/repos/octocat/Hello-World/assignees{/user}\",\"blobs_url\":\"https://api.github.com/repos/octocat/Hello-World/git/blobs{/sha}\",\"branches_url\":\"https://api.github.com/repos/octocat/Hello-World/branches{/branch}\",\"collaborators_url\":\"https://api.github.com/repos/octocat/Hello-World/collaborators{/collaborator}\",\"comments_url\":\"https://api.github.com/repos/octocat/Hello-World/comments{/number}\",\"commits_url\":\"https://api.github.com/repos/octocat/Hello-World/commits{/sha}\",\"compare_url\":\"https://api.github.com/repos/octocat/Hello-World/compare/{base}...{head}\",\"contents_url\":\"https://api.github.com/repos/octocat/Hello-World/contents/{+path}\",\"contributors_url\":\"https://api.github.com/repos/octocat/Hello-World/contributors\",\"deployments_url\":\"https://api.github.com/repos/octocat/Hello-World/deployments\",\"downloads_url\":\"https://api.github.com/repos/octocat/Hello-World/downloads\",\"events_url\":\"https://api.github.com/repos/octocat/Hello-World/events\",\"forks_url\":\"https://api.github.com/repos/octocat/Hello-World/forks\",\"git_commits_url\":\"https://api.github.com/repos/octocat/Hello-World/git/commits{/sha}\",\"git_refs_url\":\"https://api.github.com/repos/octocat/Hello-World/git/refs{/sha}\",\"git_tags_url\":\"https://api.github.com/repos/octocat/Hello-World/git/tags{/sha}\",\"issue_comment_url\":\"https://api.github.com/repos/octocat/Hello-World/issues/comments{/number}\",\"issue_events_url\":\"https://api.github.com/repos/octocat/Hello-World/issues/events{/number}\",\"issues_url\":\"https://api.github.com/repos/octocat/Hello-World/issues{/number}\",\"keys_url\":\"https://api.github.com/repos/octocat/Hello-World/keys{/key_id}\",\"labels_url\":\"https://api.github.com/repos/octocat/Hello-World/labels{/name}\",\"languages_url\":\"https://api.github.com/repos/octocat/Hello-World/languages\",\"merges_url\":\"https://api.github.com/repos/octocat/Hello-World/merges\",\"milestones_url\":\"https://api.github.com/repos/octocat/Hello-World/milestones{/number}\",\"notifications_url\":\"https://api.github.com/repos/octocat/Hello-World/notifications{?since,all,participating}\",\"pulls_url\":\"https://api.github.com/repos/octocat/Hello-World/pulls{/number}\",\"releases_url\":\"https://api.github.com/repos/octocat/Hello-World/releases{/id}\",\"stargazers_url\":\"https://api.github.com/repos/octocat/Hello-World/stargazers\",\"statuses_url\":\"https://api.github.com/repos/octocat/Hello-World/statuses/{sha}\",\"subscribers_url\":\"https://api.github.com/repos/octocat/Hello-World/subscribers\",\"subscription_url\":\"https://api.github.com/repos/octocat/Hello-World/subscription\",\"tags_url\":\"https://api.github.com/repos/octocat/Hello-World/tags\",\"teams_url\":\"https://api.github.com/repos/octocat/Hello-World/teams\",\"trees_url\":\"https://api.github.com/repos/octocat/Hello-World/git/trees{/sha}\",\"hooks_url\":\"https://api.github.com/repos/octocat/Hello-World/hooks\"},\"push_protection_bypassed_by\":{\"login\":\"monalisa\",\"id\":2,\"node_id\":\"MDQ6VXNlcjI=\",\"avatar_url\":\"https://alambic.github.com/avatars/u/2?\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/monalisa\",\"html_url\":\"https://github.com/monalisa\",\"followers_url\":\"https://api.github.com/users/monalisa/followers\",\"following_url\":\"https://api.github.com/users/monalisa/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/monalisa/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/monalisa/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/monalisa/subscriptions\",\"organizations_url\":\"https://api.github.com/users/monalisa/orgs\",\"repos_url\":\"https://api.github.com/users/monalisa/repos\",\"events_url\":\"https://api.github.com/users/monalisa/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/monalisa/received_events\",\"type\":\"User\",\"site_admin\":true},\"push_protection_bypassed\":true,\"push_protection_bypassed_at\":\"2020-11-06T21:48:51Z\"},{\"number\":1,\"created_at\":\"2020-11-06T18:18:30Z\",\"url\":\"https://api.github.com/repos/owner/repo/secret-scanning/alerts/1\",\"html_url\":\"https://github.com/owner/repo/security/secret-scanning/1\",\"locations_url\":\"https://api.github.com/repos/owner/private-repo/secret-scanning/alerts/1/locations\",\"state\":\"open\",\"resolution\":null,\"resolved_at\":null,\"resolved_by\":null,\"secret_type\":\"mailchimp_api_key\",\"secret_type_display_name\":\"Mailchimp API Key\",\"secret\":\"XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-us2\",\"repository\":{\"id\":1296269,\"node_id\":\"MDEwOlJlcG9zaXRvcnkxMjk2MjY5\",\"name\":\"Hello-World\",\"full_name\":\"octocat/Hello-World\",\"owner\":{\"login\":\"octocat\",\"id\":1,\"node_id\":\"MDQ6VXNlcjE=\",\"avatar_url\":\"https://github.com/images/error/octocat_happy.gif\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/octocat\",\"html_url\":\"https://github.com/octocat\",\"followers_url\":\"https://api.github.com/users/octocat/followers\",\"following_url\":\"https://api.github.com/users/octocat/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/octocat/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/octocat/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/octocat/subscriptions\",\"organizations_url\":\"https://api.github.com/users/octocat/orgs\",\"repos_url\":\"https://api.github.com/users/octocat/repos\",\"events_url\":\"https://api.github.com/users/octocat/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/octocat/received_events\",\"type\":\"User\",\"site_admin\":false},\"private\":false,\"html_url\":\"https://github.com/octocat/Hello-World\",\"description\":\"This your first repo!\",\"fork\":false,\"url\":\"https://api.github.com/repos/octocat/Hello-World\",\"archive_url\":\"https://api.github.com/repos/octocat/Hello-World/{archive_format}{/ref}\",\"assignees_url\":\"https://api.github.com/repos/octocat/Hello-World/assignees{/user}\",\"blobs_url\":\"https://api.github.com/repos/octocat/Hello-World/git/blobs{/sha}\",\"branches_url\":\"https://api.github.com/repos/octocat/Hello-World/branches{/branch}\",\"collaborators_url\":\"https://api.github.com/repos/octocat/Hello-World/collaborators{/collaborator}\",\"comments_url\":\"https://api.github.com/repos/octocat/Hello-World/comments{/number}\",\"commits_url\":\"https://api.github.com/repos/octocat/Hello-World/commits{/sha}\",\"compare_url\":\"https://api.github.com/repos/octocat/Hello-World/compare/{base}...{head}\",\"contents_url\":\"https://api.github.com/repos/octocat/Hello-World/contents/{+path}\",\"contributors_url\":\"https://api.github.com/repos/octocat/Hello-World/contributors\",\"deployments_url\":\"https://api.github.com/repos/octocat/Hello-World/deployments\",\"downloads_url\":\"https://api.github.com/repos/octocat/Hello-World/downloads\",\"events_url\":\"https://api.github.com/repos/octocat/Hello-World/events\",\"forks_url\":\"https://api.github.com/repos/octocat/Hello-World/forks\",\"git_commits_url\":\"https://api.github.com/repos/octocat/Hello-World/git/commits{/sha}\",\"git_refs_url\":\"https://api.github.com/repos/octocat/Hello-World/git/refs{/sha}\",\"git_tags_url\":\"https://api.github.com/repos/octocat/Hello-World/git/tags{/sha}\",\"issue_comment_url\":\"https://api.github.com/repos/octocat/Hello-World/issues/comments{/number}\",\"issue_events_url\":\"https://api.github.com/repos/octocat/Hello-World/issues/events{/number}\",\"issues_url\":\"https://api.github.com/repos/octocat/Hello-World/issues{/number}\",\"keys_url\":\"https://api.github.com/repos/octocat/Hello-World/keys{/key_id}\",\"labels_url\":\"https://api.github.com/repos/octocat/Hello-World/labels{/name}\",\"languages_url\":\"https://api.github.com/repos/octocat/Hello-World/languages\",\"merges_url\":\"https://api.github.com/repos/octocat/Hello-World/merges\",\"milestones_url\":\"https://api.github.com/repos/octocat/Hello-World/milestones{/number}\",\"notifications_url\":\"https://api.github.com/repos/octocat/Hello-World/notifications{?since,all,participating}\",\"pulls_url\":\"https://api.github.com/repos/octocat/Hello-World/pulls{/number}\",\"releases_url\":\"https://api.github.com/repos/octocat/Hello-World/releases{/id}\",\"stargazers_url\":\"https://api.github.com/repos/octocat/Hello-World/stargazers\",\"statuses_url\":\"https://api.github.com/repos/octocat/Hello-World/statuses/{sha}\",\"subscribers_url\":\"https://api.github.com/repos/octocat/Hello-World/subscribers\",\"subscription_url\":\"https://api.github.com/repos/octocat/Hello-World/subscription\",\"tags_url\":\"https://api.github.com/repos/octocat/Hello-World/tags\",\"teams_url\":\"https://api.github.com/repos/octocat/Hello-World/teams\",\"trees_url\":\"https://api.github.com/repos/octocat/Hello-World/git/trees{/sha}\",\"hooks_url\":\"https://api.github.com/repos/octocat/Hello-World/hooks\"},\"push_protection_bypassed_by\":null,\"push_protection_bypassed\":false,\"push_protection_bypassed_at\":null}]"
           }
         ]
       },

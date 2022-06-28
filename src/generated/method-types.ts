@@ -432,6 +432,38 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
+     * Deletes a GitHub Actions cache for a repository, using a cache ID.
+     *
+     * You must authenticate using an access token with the `repo` scope to use this endpoint.
+     *
+     * GitHub Apps must have the `actions:write` permission to use this endpoint.
+     */
+    deleteActionsCacheById: {
+      (
+        params?: RestEndpointMethodTypes["actions"]["deleteActionsCacheById"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["actions"]["deleteActionsCacheById"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Deletes one or more GitHub Actions caches for a repository, using a complete cache key. By default, all caches that match the provided key are deleted, but you can optionally provide a Git ref to restrict deletions to caches that match both the provided key and the Git ref.
+     *
+     * You must authenticate using an access token with the `repo` scope to use this endpoint.
+     *
+     * GitHub Apps must have the `actions:write` permission to use this endpoint.
+     */
+    deleteActionsCacheByKey: {
+      (
+        params?: RestEndpointMethodTypes["actions"]["deleteActionsCacheByKey"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["actions"]["deleteActionsCacheByKey"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
      * Deletes an artifact for a workflow run. You must authenticate using an access token with the `repo` scope to use this endpoint. GitHub Apps must have the `actions:write` permission to use this endpoint.
      */
     deleteArtifact: {
@@ -646,6 +678,20 @@ export type RestEndpointMethods = {
         params?: RestEndpointMethodTypes["actions"]["enableWorkflow"]["parameters"]
       ): Promise<
         RestEndpointMethodTypes["actions"]["enableWorkflow"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Lists the GitHub Actions caches for a repository.
+     * You must authenticate using an access token with the `repo` scope to use this endpoint.
+     * GitHub Apps must have the `actions:read` permission to use this endpoint.
+     */
+    getActionsCacheList: {
+      (
+        params?: RestEndpointMethodTypes["actions"]["getActionsCacheList"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["actions"]["getActionsCacheList"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -1415,6 +1461,20 @@ export type RestEndpointMethods = {
         params?: RestEndpointMethodTypes["actions"]["reviewPendingDeploymentsForRun"]["parameters"]
       ): Promise<
         RestEndpointMethodTypes["actions"]["reviewPendingDeploymentsForRun"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Sets the GitHub Actions OpenID Connect (OIDC) custom issuer policy for an enterprise.
+     * You must authenticate using an access token with the `admin:enterprise` scope to use this endpoint.
+     * GitHub Apps must have the `enterprise_administration:write` permission to use this endpoint.
+     */
+    setActionsOidcCustomIssuerPolicyForEnterprise: {
+      (
+        params?: RestEndpointMethodTypes["actions"]["setActionsOidcCustomIssuerPolicyForEnterprise"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["actions"]["setActionsOidcCustomIssuerPolicyForEnterprise"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -3342,6 +3402,20 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
+     * Deletes a user's codespace.
+     *
+     * You must authenticate using an access token with the `admin:org` scope to use this endpoint.
+     */
+    deleteFromOrganization: {
+      (
+        params?: RestEndpointMethodTypes["codespaces"]["deleteFromOrganization"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["codespaces"]["deleteFromOrganization"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
      * Deletes a secret in a repository using the secret name. You must authenticate using an access token with the `repo` scope to use this endpoint. GitHub Apps must have the `codespaces_secrets` repository permission to use this endpoint.
      */
     deleteRepoSecret: {
@@ -3507,6 +3581,20 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
+     * Lists the codespaces associated to a specified organization.
+     *
+     * You must authenticate using an access token with the `admin:org` scope to use this endpoint.
+     */
+    listInOrganization: {
+      (
+        params?: RestEndpointMethodTypes["codespaces"]["listInOrganization"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["codespaces"]["listInOrganization"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
      * Lists the codespaces associated to a specified repository and the authenticated user.
      *
      * You must authenticate using an access token with the `codespace` scope to use this endpoint.
@@ -3641,6 +3729,20 @@ export type RestEndpointMethods = {
         params?: RestEndpointMethodTypes["codespaces"]["stopForAuthenticatedUser"]["parameters"]
       ): Promise<
         RestEndpointMethodTypes["codespaces"]["stopForAuthenticatedUser"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Stops a user's codespace.
+     *
+     * You must authenticate using an access token with the `admin:org` scope to use this endpoint.
+     */
+    stopInOrganization: {
+      (
+        params?: RestEndpointMethodTypes["codespaces"]["stopInOrganization"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["codespaces"]["stopInOrganization"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -3983,6 +4085,18 @@ export type RestEndpointMethods = {
     };
   };
   dependencyGraph: {
+    /**
+     * Create a new snapshot of a repository's dependencies. You must authenticate using an access token with the `repo` scope to use this endpoint for a repository that the requesting user has access to.
+     */
+    createRepositorySnapshot: {
+      (
+        params?: RestEndpointMethodTypes["dependencyGraph"]["createRepositorySnapshot"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["dependencyGraph"]["createRepositorySnapshot"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
     /**
      * Gets the diff of the dependency changes between two commits of a repository, based on the changes to the dependency manifests made in those commits.
      */
