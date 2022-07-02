@@ -1,6 +1,6 @@
 ---
 name: Remove assignees from an issue
-example: octokit.rest.issues.removeAssignees({ owner, repo, issue_number })
+example: octokit.rest.issues.removeAssignees({ owner, repo, issue_number, assignees })
 route: DELETE /repos/{owner}/{repo}/issues/{issue_number}/assignees
 scope: issues
 type: API method
@@ -15,6 +15,7 @@ octokit.rest.issues.removeAssignees({
   owner,
   repo,
   issue_number,
+  assignees,
 });
 ```
 
@@ -44,7 +45,7 @@ The name of the repository. The name is not case sensitive.
 The number that identifies the issue.
 
 </td></tr>
-<tr><td>assignees</td><td>no</td><td>
+<tr><td>assignees</td><td>yes</td><td>
 
 Usernames of assignees to remove from an issue. _NOTE: Only users with push access can remove assignees from an issue. Assignees are silently ignored otherwise._
 
