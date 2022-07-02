@@ -1466,20 +1466,6 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Sets the GitHub Actions OpenID Connect (OIDC) custom issuer policy for an enterprise.
-     * You must authenticate using an access token with the `admin:enterprise` scope to use this endpoint.
-     * GitHub Apps must have the `enterprise_administration:write` permission to use this endpoint.
-     */
-    setActionsOidcCustomIssuerPolicyForEnterprise: {
-      (
-        params?: RestEndpointMethodTypes["actions"]["setActionsOidcCustomIssuerPolicyForEnterprise"]["parameters"]
-      ): Promise<
-        RestEndpointMethodTypes["actions"]["setActionsOidcCustomIssuerPolicyForEnterprise"]["response"]
-      >;
-      defaults: RequestInterface["defaults"];
-      endpoint: EndpointInterface<{ url: string }>;
-    };
-    /**
      * Sets the actions and reusable workflows that are allowed in an organization. To use this endpoint, the organization permission policy for `allowed_actions` must be configured to `selected`. For more information, see "[Set GitHub Actions permissions for an organization](#set-github-actions-permissions-for-an-organization)."
      *
      * If the organization belongs to an enterprise that has `selected` actions and reusable workflows set at the enterprise level, then you cannot override any of the enterprise's allowed actions and reusable workflows settings.

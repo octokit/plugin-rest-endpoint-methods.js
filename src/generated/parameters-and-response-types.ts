@@ -714,14 +714,6 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["POST /repos/{owner}/{repo}/actions/runs/{run_id}/pending_deployments"]["response"];
     };
-    setActionsOidcCustomIssuerPolicyForEnterprise: {
-      parameters: RequestParameters &
-        Omit<
-          Endpoints["PUT /enterprises/{enterprise}/actions/oidc/customization/issuer"]["parameters"],
-          "baseUrl" | "headers" | "mediaType"
-        >;
-      response: Endpoints["PUT /enterprises/{enterprise}/actions/oidc/customization/issuer"]["response"];
-    };
     setAllowedActionsOrganization: {
       parameters: RequestParameters &
         Omit<
