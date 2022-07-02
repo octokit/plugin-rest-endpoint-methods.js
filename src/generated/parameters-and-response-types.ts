@@ -1803,10 +1803,10 @@ export type RestEndpointMethodTypes = {
     listInOrganization: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /orgs/{org_id}/codespaces"]["parameters"],
+          Endpoints["GET /orgs/{org}/codespaces"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /orgs/{org_id}/codespaces"]["response"];
+      response: Endpoints["GET /orgs/{org}/codespaces"]["response"];
     };
     listInRepositoryForAuthenticatedUser: {
       parameters: RequestParameters &

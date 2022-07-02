@@ -502,7 +502,11 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
       "GET /repos/{owner}/{repo}/codespaces/devcontainers",
     ],
     listForAuthenticatedUser: ["GET /user/codespaces"],
-    listInOrganization: ["GET /orgs/{org_id}/codespaces"],
+    listInOrganization: [
+      "GET /orgs/{org}/codespaces",
+      {},
+      { renamedParameters: { org_id: "org" } },
+    ],
     listInRepositoryForAuthenticatedUser: [
       "GET /repos/{owner}/{repo}/codespaces",
     ],
