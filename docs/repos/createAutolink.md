@@ -42,12 +42,12 @@ The name of the repository. The name is not case sensitive.
 </td></tr>
 <tr><td>key_prefix</td><td>yes</td><td>
 
-The prefix appended by a number will generate a link any time it is found in an issue, pull request, or commit.
+The prefix appended by alphanumeric characters will generate a link any time it is found in an issue, pull request, or commit.
 
 </td></tr>
 <tr><td>url_template</td><td>yes</td><td>
 
-The URL must contain <num> for the reference number.
+The URL must contain `<num>` for the reference number. `<num>` matches alphanumeric characters `A-Z` (case insensitive), `0-9`, and `-`.
 
 </td></tr>
   </tbody>

@@ -1,7 +1,7 @@
 ---
 name: List codespaces for the organization
-example: octokit.rest.codespaces.listInOrganization({ org_id })
-route: GET /orgs/{org_id}/codespaces
+example: octokit.rest.codespaces.listInOrganization({ org })
+route: GET /orgs/{org}/codespaces
 scope: codespaces
 type: API method
 ---
@@ -14,7 +14,7 @@ You must authenticate using an access token with the `admin:org` scope to use th
 
 ```js
 octokit.rest.codespaces.listInOrganization({
-  org_id,
+  org,
 });
 ```
 
@@ -39,9 +39,14 @@ The number of results per page (max 100).
 Page number of the results to fetch.
 
 </td></tr>
-<tr><td>org_id</td><td>yes</td><td>
+<tr><td>org</td><td>yes</td><td>
 
-The unique identifier of the organization.
+The organization name. The name is not case sensitive.
+
+</td></tr>
+<tr><td>org_id</td><td>no</td><td>
+
+The organization name. The name is not case sensitive.
 
 </td></tr>
   </tbody>
