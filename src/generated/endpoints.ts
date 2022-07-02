@@ -220,9 +220,6 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     reviewPendingDeploymentsForRun: [
       "POST /repos/{owner}/{repo}/actions/runs/{run_id}/pending_deployments",
     ],
-    setActionsOidcCustomIssuerPolicyForEnterprise: [
-      "PUT /enterprises/{enterprise}/actions/oidc/customization/issuer",
-    ],
     setAllowedActionsOrganization: [
       "PUT /orgs/{org}/actions/permissions/selected-actions",
     ],
