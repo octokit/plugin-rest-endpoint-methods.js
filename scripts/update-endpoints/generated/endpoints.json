@@ -13932,13 +13932,21 @@
       }
     ],
     "responses": [
-      { "code": 200, "description": "Response", "examples": null },
       {
         "code": 200,
         "description": "Response",
         "examples": [
           {
             "data": "{\"ref\":\"refs/heads/main\",\"commit_sha\":\"c18c69115654ff0166991962832dc2bd7756e655\",\"analysis_key\":\".github/workflows/codeql-analysis.yml:analyze\",\"environment\":\"{\\\"language\\\":\\\"javascript\\\"}\",\"error\":\"\",\"category\":\".github/workflows/codeql-analysis.yml:analyze/language:javascript\",\"created_at\":\"2021-01-13T11:55:49Z\",\"results_count\":3,\"rules_count\":67,\"id\":3602840,\"url\":\"https://api.github.com/repos/octocat/hello-world/code-scanning/analyses/201\",\"sarif_id\":\"47177e22-5596-11eb-80a1-c1e54ef945c6\",\"tool\":{\"name\":\"CodeQL\",\"guid\":null,\"version\":\"2.4.0\"},\"deletable\":true,\"warning\":\"\"}"
+          }
+        ]
+      },
+      {
+        "code": 200,
+        "description": "Response",
+        "examples": [
+          {
+            "data": "{\"runs\":[{\"tool\":{\"driver\":{\"name\":\"CodeQL\",\"organization\":\"GitHub\",\"semanticVersion\":\"1.0.0\",\"rules\":[{\"id\":\"js/unused-local-variable\",\"name\":\"js/unused-local-variable\"}]}},\"results\":[{\"guid\":\"326aa09f-9af8-13cf-9851-3d0e5183ec38\",\"message\":{\"text\":\"Unused variable foo.\"},\"locations\":[{\"physicalLocation\":{\"artifactLocation\":{\"uri\":\"file1.js\"},\"region\":{\"startLine\":1}}}],\"ruleId\":\"js/unused-local-variable\",\"properties\":[{\"github/alertNumber\":2},{\"github/alertUrl\":\"https://api.github.com/repos/monalisa/monalisa/code-scanning/alerts/2\"}]}]}]}"
           }
         ]
       },
@@ -14428,11 +14436,11 @@
       },
       {
         "name": "sort",
-        "description": "The property by which to sort the results.",
+        "description": "The property by which to sort the results. `number` is deprecated - we recommend that you use `created` instead.",
         "in": "QUERY",
         "type": "string",
         "required": false,
-        "enum": ["created", "updated", "number"],
+        "enum": ["created", "number", "updated"],
         "allowNull": false,
         "mapToData": null,
         "validation": null,
@@ -43786,6 +43794,19 @@
       {
         "name": "organization",
         "description": "Optional parameter to specify the organization name if forking into an organization.",
+        "in": "BODY",
+        "type": "string",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "name",
+        "description": "When forking from an existing repository, a new name for the fork.",
         "in": "BODY",
         "type": "string",
         "required": false,
