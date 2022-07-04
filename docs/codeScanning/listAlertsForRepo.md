@@ -79,7 +79,7 @@ The direction to sort the results by.
 </td></tr>
 <tr><td>sort</td><td>no</td><td>
 
-The property by which to sort the results.
+The property by which to sort the results. `number` is deprecated - we recommend that you use `created` instead.
 
 </td></tr>
 <tr><td>state</td><td>no</td><td>
