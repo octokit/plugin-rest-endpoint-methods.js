@@ -45,6 +45,11 @@ The name of the repository. The name is not case sensitive.
 Optional parameter to specify the organization name if forking into an organization.
 
 </td></tr>
+<tr><td>name</td><td>no</td><td>
+
+When forking from an existing repository, a new name for the fork.
+
+</td></tr>
   </tbody>
 </table>
 
