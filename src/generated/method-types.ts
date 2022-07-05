@@ -1454,7 +1454,7 @@ export type RestEndpointMethods = {
     /**
      * Approve or reject pending deployments that are waiting on approval by a required reviewer.
      *
-     * Anyone with read access to the repository contents and deployments can use this endpoint.
+     * Required reviewers with read access to the repository contents and deployments can use this endpoint. Required reviewers must authenticate using an access token with the `repo` scope to use this endpoint.
      */
     reviewPendingDeploymentsForRun: {
       (
