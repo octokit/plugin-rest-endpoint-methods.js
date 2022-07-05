@@ -5991,7 +5991,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "removalDate": null,
-    "description": "Approve or reject pending deployments that are waiting on approval by a required reviewer.\n\nAnyone with read access to the repository contents and deployments can use this endpoint.",
+    "description": "Approve or reject pending deployments that are waiting on approval by a required reviewer.\n\nRequired reviewers with read access to the repository contents and deployments can use this endpoint. Required reviewers must authenticate using an access token with the `repo` scope to use this endpoint.",
     "documentationUrl": "https://docs.github.com/rest/reference/actions#review-pending-deployments-for-a-workflow-run",
     "previews": [],
     "headers": [],
