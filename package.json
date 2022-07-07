@@ -73,7 +73,10 @@
         "@pika/plugin-ts-standard-pkg"
       ],
       [
-        "@pika/plugin-build-node"
+        "@pika/plugin-build-node",
+        {
+          "minNodeVersion": "14"
+        }
       ],
       [
         "@pika/plugin-build-web"
@@ -113,5 +116,8 @@
     "ignoreDeps": [
       "sort-keys"
     ]
+  },
+  "engines": {
+    "node": ">= 14"
   }
 }
