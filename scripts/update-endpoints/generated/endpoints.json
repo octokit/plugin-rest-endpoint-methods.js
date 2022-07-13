@@ -29065,7 +29065,7 @@
     "parameters": [
       {
         "name": "client_id",
-        "description": "The client ID of the GitHub app.",
+        "description": "The client ID of the OAuth app.",
         "in": "PATH",
         "type": "string",
         "required": true,
@@ -29188,7 +29188,7 @@
     "parameters": [
       {
         "name": "client_id",
-        "description": "The client ID of the GitHub app.",
+        "description": "The client ID of the OAuth app.",
         "in": "PATH",
         "type": "string",
         "required": true,
