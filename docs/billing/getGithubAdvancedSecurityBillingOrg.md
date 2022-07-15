@@ -9,8 +9,12 @@ type: API method
 # Get GitHub Advanced Security active committers for an organization
 
 Gets the GitHub Advanced Security active committers for an organization per repository.
-Each distinct user login across all repositories is counted as a single Advanced Security seat, so the total_advanced_security_committers is not the sum of advanced_security_committers for each repository.
-If this organization defers to an enterprise for billing, the total_advanced_security_committers returned from the organization API may include some users that are in more than one organization, so they will only consume a single Advanced Security seat at the enterprise level.
+
+Each distinct user login across all repositories is counted as a single Advanced Security seat, so the `total_advanced_security_committers` is not the sum of advanced_security_committers for each repository.
+
+If this organization defers to an enterprise for billing, the `total_advanced_security_committers` returned from the organization API may include some users that are in more than one organization, so they will only consume a single Advanced Security seat at the enterprise level.
+
+The total number of repositories with committer information is tracked by the `total_count` field.
 
 ```js
 octokit.rest.billing.getGithubAdvancedSecurityBillingOrg({

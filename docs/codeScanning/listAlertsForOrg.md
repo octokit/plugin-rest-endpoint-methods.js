@@ -8,9 +8,9 @@ type: API method
 
 # List code scanning alerts for an organization
 
-Lists all code scanning alerts for the default branch (usually `main`
-or `master`) for all eligible repositories in an organization.
-To use this endpoint, you must be an administrator or security manager for the organization, and you must use an access token with the `repo` scope or `security_events` scope.
+Lists code scanning alerts for the default branch for all eligible repositories in an organization. Eligible repositories are repositories that are owned by organizations that you own or for which you are a security manager. For more information, see "[Managing security managers in your organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization)."
+
+To use this endpoint, you must be an owner or security manager for the organization, and you must use an access token with the `repo` scope or `security_events` scope.
 
 GitHub Apps must have the `security_events` read permission to use this endpoint.
 
@@ -73,7 +73,7 @@ The direction to sort the results by.
 </td></tr>
 <tr><td>state</td><td>no</td><td>
 
-Set to `open`, `closed`, `fixed`, or `dismissed` to list code scanning alerts in a specific state.
+If specified, only code scanning alerts with this state will be returned.
 
 </td></tr>
 <tr><td>sort</td><td>no</td><td>
