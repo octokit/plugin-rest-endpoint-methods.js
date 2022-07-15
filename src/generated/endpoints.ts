@@ -515,6 +515,9 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
       "GET /user/codespaces/secrets/{secret_name}/repositories",
     ],
     listSecretsForAuthenticatedUser: ["GET /user/codespaces/secrets"],
+    preFlightWithRepoForAuthenticatedUser: [
+      "GET /repos/{owner}/{repo}/codespaces/new",
+    ],
     removeRepositoryForSecretForAuthenticatedUser: [
       "DELETE /user/codespaces/secrets/{secret_name}/repositories/{repository_id}",
     ],

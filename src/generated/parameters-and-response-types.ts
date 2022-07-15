@@ -1840,6 +1840,14 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["GET /user/codespaces/secrets"]["response"];
     };
+    preFlightWithRepoForAuthenticatedUser: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /repos/{owner}/{repo}/codespaces/new"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /repos/{owner}/{repo}/codespaces/new"]["response"];
+    };
     removeRepositoryForSecretForAuthenticatedUser: {
       parameters: RequestParameters &
         Omit<
