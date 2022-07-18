@@ -21,7 +21,7 @@ jobs:
           node-version: 16
           cache: npm
       - run: git checkout routes-update || true
-      - run: npm install @octokit/types@latest
+      - run: npm install --save-exact @octokit/types@latest
         if: >-
           github.event_name == 'repository_dispatch' && github.event.action ==
           'octokit/types.ts release'
