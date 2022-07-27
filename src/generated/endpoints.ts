@@ -432,6 +432,9 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     listAlertInstances: [
       "GET /repos/{owner}/{repo}/code-scanning/alerts/{alert_number}/instances",
     ],
+    listAlertsForEnterprise: [
+      "GET /enterprises/{enterprise}/code-scanning/alerts",
+    ],
     listAlertsForOrg: ["GET /orgs/{org}/code-scanning/alerts"],
     listAlertsForRepo: ["GET /repos/{owner}/{repo}/code-scanning/alerts"],
     listAlertsInstances: [
