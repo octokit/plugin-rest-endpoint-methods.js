@@ -1572,6 +1572,14 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["GET /repos/{owner}/{repo}/code-scanning/alerts/{alert_number}/instances"]["response"];
     };
+    listAlertsForEnterprise: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /enterprises/{enterprise}/code-scanning/alerts"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /enterprises/{enterprise}/code-scanning/alerts"]["response"];
+    };
     listAlertsForOrg: {
       parameters: RequestParameters &
         Omit<
