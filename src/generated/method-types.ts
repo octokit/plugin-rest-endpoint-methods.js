@@ -5845,6 +5845,23 @@ export type RestEndpointMethods = {
     };
   };
   orgs: {
+    /**
+     * Adds a team as a security manager for an organization. For more information, see "[Managing security for an organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization) for an organization."
+     *
+     * To use this endpoint, you must be an administrator for the organization, and you must use an access token with the `write:org` scope.
+     *
+     * GitHub Apps must have the `administration` organization read-write permission to use this endpoint.
+     */
+    addSecurityManagerTeam: {
+      (
+        params?: RestEndpointMethodTypes["orgs"]["addSecurityManagerTeam"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["orgs"]["addSecurityManagerTeam"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+
     blockUser: {
       (
         params?: RestEndpointMethodTypes["orgs"]["blockUser"]["parameters"]
@@ -6172,6 +6189,22 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
+     * Lists teams that are security managers for an organization. For more information, see "[Managing security managers in your organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization)."
+     *
+     * To use this endpoint, you must be an administrator or security manager for the organization, and you must use an access token with the `read:org` scope.
+     *
+     * GitHub Apps must have the `administration` organization read permission to use this endpoint.
+     */
+    listSecurityManagerTeams: {
+      (
+        params?: RestEndpointMethodTypes["orgs"]["listSecurityManagerTeams"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["orgs"]["listSecurityManagerTeams"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
      * Returns a list of webhook deliveries for a webhook configured in an organization.
      */
     listWebhookDeliveries: {
@@ -6255,6 +6288,22 @@ export type RestEndpointMethods = {
         params?: RestEndpointMethodTypes["orgs"]["removePublicMembershipForAuthenticatedUser"]["parameters"]
       ): Promise<
         RestEndpointMethodTypes["orgs"]["removePublicMembershipForAuthenticatedUser"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Removes the security manager role from a team for an organization. For more information, see "[Managing security managers in your organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization) team from an organization."
+     *
+     * To use this endpoint, you must be an administrator for the organization, and you must use an access token with the `admin:org` scope.
+     *
+     * GitHub Apps must have the `administration` organization read-write permission to use this endpoint.
+     */
+    removeSecurityManagerTeam: {
+      (
+        params?: RestEndpointMethodTypes["orgs"]["removeSecurityManagerTeam"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["orgs"]["removeSecurityManagerTeam"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
