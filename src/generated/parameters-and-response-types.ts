@@ -4520,6 +4520,14 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["PUT /repos/{owner}/{repo}/contents/{path}"]["response"];
     };
+    createPagesDeployment: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["POST /repos/{owner}/{repo}/pages/deployment"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["POST /repos/{owner}/{repo}/pages/deployment"]["response"];
+    };
     createPagesSite: {
       parameters: RequestParameters &
         Omit<
