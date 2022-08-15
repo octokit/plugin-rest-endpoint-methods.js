@@ -3132,6 +3132,14 @@ export type RestEndpointMethodTypes = {
     };
   };
   orgs: {
+    addSecurityManagerTeam: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["PUT /orgs/{org}/security-managers/teams/{team_slug}"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["PUT /orgs/{org}/security-managers/teams/{team_slug}"]["response"];
+    };
     blockUser: {
       parameters: RequestParameters &
         Omit<
@@ -3356,6 +3364,14 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["GET /orgs/{org}/public_members"]["response"];
     };
+    listSecurityManagerTeams: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /orgs/{org}/security-managers"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /orgs/{org}/security-managers"]["response"];
+    };
     listWebhookDeliveries: {
       parameters: RequestParameters &
         Omit<
@@ -3419,6 +3435,14 @@ export type RestEndpointMethodTypes = {
           "baseUrl" | "headers" | "mediaType"
         >;
       response: Endpoints["DELETE /orgs/{org}/public_members/{username}"]["response"];
+    };
+    removeSecurityManagerTeam: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["DELETE /orgs/{org}/security-managers/teams/{team_slug}"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["DELETE /orgs/{org}/security-managers/teams/{team_slug}"]["response"];
     };
     setMembershipForUser: {
       parameters: RequestParameters &
