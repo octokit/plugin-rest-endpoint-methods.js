@@ -12,8 +12,6 @@ Draft pull requests are available in public repositories with GitHub Free and Gi
 
 To open or update a pull request in a public repository, you must have write access to the head or the source branch. For organization-owned repositories, you must be a member of the organization that owns the repository to open or update a pull request.
 
-You can create a new pull request.
-
 This endpoint triggers [notifications](https://docs.github.com/en/github/managing-subscriptions-and-notifications-on-github/about-notifications). Creating content too quickly using this endpoint may result in secondary rate limiting. See "[Secondary rate limits](https://docs.github.com/rest/overview/resources-in-the-rest-api#secondary-rate-limits)" and "[Dealing with secondary rate limits](https://docs.github.com/rest/guides/best-practices-for-integrators#dealing-with-rate-limits)" for details.
 
 ```js
@@ -48,7 +46,7 @@ The name of the repository. The name is not case sensitive.
 </td></tr>
 <tr><td>title</td><td>no</td><td>
 
-The title of the new pull request.
+The title of the new pull request. Required unless `issue` is specified.
 
 </td></tr>
 <tr><td>head</td><td>yes</td><td>
@@ -77,6 +75,8 @@ Indicates whether the pull request is a draft. See "[Draft Pull Requests](https:
 
 </td></tr>
 <tr><td>issue</td><td>no</td><td>
+
+An issue in the repository to convert to a pull request. The issue title, body, and comments will become the title, body, and comments on the new pull request. Required unless `title` is specified.
 
 </td></tr>
   </tbody>

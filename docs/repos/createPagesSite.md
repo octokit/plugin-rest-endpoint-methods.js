@@ -39,6 +39,11 @@ The account owner of the repository. The name is not case sensitive.
 The name of the repository. The name is not case sensitive.
 
 </td></tr>
+<tr><td>build_type</td><td>no</td><td>
+
+The process in which the Page will be built. Possible values are `"legacy"` and `"workflow"`.
+
+</td></tr>
 <tr><td>source</td><td>no</td><td>
 
 The source branch and directory used to publish your Pages site.
@@ -57,4 +62,4 @@ The repository directory that includes the source files for the Pages site. Allo
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#create-a-github-pages-site).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/pages#create-a-github-pages-site).

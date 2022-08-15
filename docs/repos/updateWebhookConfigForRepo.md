@@ -67,4 +67,4 @@ If provided, the `secret` will be used as the `key` to generate the HMAC hex dig
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#update-a-webhook-configuration-for-a-repository).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/webhooks/repo-config#update-a-webhook-configuration-for-a-repository).

@@ -66,10 +66,10 @@ The handle for the GitHub user account.
 </td></tr>
 <tr><td>permission</td><td>no</td><td>
 
-The permission to grant the collaborator. **Only valid on organization-owned repositories.** In addition to the enumerated values, you can also specify a custom repository role name, if the owning organization has defined any.
+The permission to grant the collaborator. **Only valid on organization-owned repositories.** We accept the following permissions to be set: `pull`, `triage`, `push`, `maintain`, `admin` and you can also specify a custom repository role name, if the owning organization has defined any.
 
 </td></tr>
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#add-a-repository-collaborator).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/collaborators/collaborators#add-a-repository-collaborator).

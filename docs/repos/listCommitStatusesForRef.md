@@ -59,4 +59,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#list-commit-statuses-for-a-reference).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/commits/statuses#list-commit-statuses-for-a-reference).

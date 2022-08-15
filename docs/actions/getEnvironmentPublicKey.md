@@ -35,7 +35,7 @@ The unique identifier of the repository.
 </td></tr>
 <tr><td>environment_name</td><td>yes</td><td>
 
-The name of the environment
+The name of the environment.
 
 </td></tr>
   </tbody>

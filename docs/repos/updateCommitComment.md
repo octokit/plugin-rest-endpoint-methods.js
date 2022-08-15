@@ -51,4 +51,4 @@ The contents of the comment
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#update-a-commit-comment).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/commits/comments#update-a-commit-comment).

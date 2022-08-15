@@ -1,6 +1,6 @@
 ---
 name: Create a review comment for a pull request
-example: octokit.rest.pulls.createReviewComment({ owner, repo, pull_number, body })
+example: octokit.rest.pulls.createReviewComment({ owner, repo, pull_number, body, commit_id, path, line })
 route: POST /repos/{owner}/{repo}/pulls/{pull_number}/comments
 scope: pulls
 type: API method
@@ -22,6 +22,9 @@ octokit.rest.pulls.createReviewComment({
   repo,
   pull_number,
   body,
+  commit_id,
+  path,
+  line,
 });
 ```
 
@@ -56,12 +59,12 @@ The number that identifies the pull request.
 The text of the review comment.
 
 </td></tr>
-<tr><td>commit_id</td><td>no</td><td>
+<tr><td>commit_id</td><td>yes</td><td>
 
 The SHA of the commit needing a comment. Not using the latest commit SHA may render your comment outdated if a subsequent commit modifies the line you specify as the `position`.
 
 </td></tr>
-<tr><td>path</td><td>no</td><td>
+<tr><td>path</td><td>yes</td><td>
 
 The relative path to the file that necessitates a comment.
 
@@ -76,7 +79,7 @@ The relative path to the file that necessitates a comment.
 In a split diff view, the side of the diff that the pull request's changes appear on. Can be `LEFT` or `RIGHT`. Use `LEFT` for deletions that appear in red. Use `RIGHT` for additions that appear in green or unchanged lines that appear in white and are shown for context. For a multi-line comment, side represents whether the last line of the comment range is a deletion or addition. For more information, see "[Diff view options](https://docs.github.com/en/articles/about-comparing-branches-in-pull-requests#diff-view-options)" in the GitHub Help documentation.
 
 </td></tr>
-<tr><td>line</td><td>no</td><td>
+<tr><td>line</td><td>yes</td><td>
 
 The line of the blob in the pull request diff that the comment applies to. For a multi-line comment, the last line of the range that your comment applies to.
 

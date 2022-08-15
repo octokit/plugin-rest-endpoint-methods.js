@@ -1,14 +1,14 @@
 ---
-name: List requested reviewers for a pull request
+name: Get all requested reviewers for a pull request
 example: octokit.rest.pulls.listRequestedReviewers({ owner, repo, pull_number })
 route: GET /repos/{owner}/{repo}/pulls/{pull_number}/requested_reviewers
 scope: pulls
 type: API method
 ---
 
-# List requested reviewers for a pull request
+# Get all requested reviewers for a pull request
 
-Lists the users or teams whose review is requested for a pull request. Once a requested reviewer submits a review, they are no longer considered a requested reviewer. Their review will instead be returned by the [List reviews for a pull request](https://docs.github.com/rest/pulls/reviews#list-reviews-for-a-pull-request) operation.
+Gets the users or teams whose review is requested for a pull request. Once a requested reviewer submits a review, they are no longer considered a requested reviewer. Their review will instead be returned by the [List reviews for a pull request](https://docs.github.com/rest/pulls/reviews#list-reviews-for-a-pull-request) operation.
 
 ```js
 octokit.rest.pulls.listRequestedReviewers({
@@ -44,17 +44,7 @@ The name of the repository. The name is not case sensitive.
 The number that identifies the pull request.
 
 </td></tr>
-<tr><td>per_page</td><td>no</td><td>
-
-The number of results per page (max 100).
-
-</td></tr>
-<tr><td>page</td><td>no</td><td>
-
-Page number of the results to fetch.
-
-</td></tr>
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/pulls#list-requested-reviewers-for-a-pull-request).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/pulls#get-all-requested-reviewers-for-a-pull-request).

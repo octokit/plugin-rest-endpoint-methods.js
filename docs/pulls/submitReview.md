@@ -8,6 +8,8 @@ type: API method
 
 # Submit a review for a pull request
 
+Submits a pending review for a pull request. For more information about creating a pending review for a pull request, see "[Create a review for a pull request](https://docs.github.com/rest/pulls#create-a-review-for-a-pull-request)."
+
 ```js
 octokit.rest.pulls.submitReview({
   owner,

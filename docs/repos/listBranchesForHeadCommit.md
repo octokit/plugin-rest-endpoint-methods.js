@@ -49,4 +49,4 @@ The SHA of the commit.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#list-branches-for-head-commit).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/commits/commits#list-branches-for-head-commit).

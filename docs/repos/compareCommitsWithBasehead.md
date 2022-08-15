@@ -96,4 +96,4 @@ The base branch and head branch to compare. This parameter expects the format `{
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#compare-two-commits).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/commits/commits#compare-two-commits).

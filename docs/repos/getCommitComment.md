@@ -45,4 +45,4 @@ The unique identifier of the comment.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#get-a-commit-comment).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/commits/comments#get-a-commit-comment).
