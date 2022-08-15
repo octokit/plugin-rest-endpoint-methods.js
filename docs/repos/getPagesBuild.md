@@ -43,4 +43,4 @@ The name of the repository. The name is not case sensitive.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#get-github-pages-build).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/pages#get-github-pages-build).

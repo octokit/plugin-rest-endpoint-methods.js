@@ -86,4 +86,4 @@ Determines if notifications are sent when the webhook is triggered. Set to `true
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#create-a-repository-webhook).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/webhooks/repos#create-a-repository-webhook).

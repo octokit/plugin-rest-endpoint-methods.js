@@ -10,11 +10,11 @@ type: API method
 
 Create or update an environment with protection rules, such as required reviewers. For more information about environment protection rules, see "[Environments](/actions/reference/environments#environment-protection-rules)."
 
-**Note:** Although you can use this operation to specify that only branches that match specified name patterns can deploy to this environment, you must use the UI to set the name patterns. For more information, see "[Environments](/actions/reference/environments#deployment-branches)."
+**Note:** To create or update name patterns that branches must match in order to deploy to this environment, see "[Deployment branch policies](/rest/deployments/branch-policies)."
 
 **Note:** To create or update secrets for an environment, see "[Secrets](/rest/reference/actions#secrets)."
 
-You must authenticate using an access token with the repo scope to use this endpoint.
+You must authenticate using an access token with the `repo` scope to use this endpoint. GitHub Apps must have the `administration:write` permission for the repository to use this endpoint.
 
 ```js
 octokit.rest.repos.createOrUpdateEnvironment({
@@ -49,7 +49,7 @@ The name of the repository. The name is not case sensitive.
 </td></tr>
 <tr><td>environment_name</td><td>yes</td><td>
 
-The name of the environment
+The name of the environment.
 
 </td></tr>
 <tr><td>wait_timer</td><td>no</td><td>

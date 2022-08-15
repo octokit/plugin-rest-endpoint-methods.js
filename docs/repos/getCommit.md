@@ -92,4 +92,4 @@ ref parameter
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#get-a-commit).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/commits/commits#get-a-commit).

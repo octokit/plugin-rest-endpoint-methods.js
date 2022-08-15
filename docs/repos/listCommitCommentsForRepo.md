@@ -53,4 +53,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#list-commit-comments-for-a-repository).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/commits/comments#list-commit-comments-for-a-repository).

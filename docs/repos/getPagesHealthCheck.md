@@ -45,4 +45,4 @@ The name of the repository. The name is not case sensitive.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#get-a-dns-health-check-for-github-pages).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/pages#get-a-dns-health-check-for-github-pages).

@@ -51,4 +51,4 @@ The unique identifier of the hook.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#get-a-delivery-for-a-repository-webhook).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/webhooks/repo-deliveries#get-a-delivery-for-a-repository-webhook).

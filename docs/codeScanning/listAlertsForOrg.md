@@ -12,6 +12,8 @@ Lists code scanning alerts for the default branch for all eligible repositories 
 
 To use this endpoint, you must be an owner or security manager for the organization, and you must use an access token with the `repo` scope or `security_events` scope.
 
+For public repositories, you may instead use the `public_repo` scope.
+
 GitHub Apps must have the `security_events` read permission to use this endpoint.
 
 ```js

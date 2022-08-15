@@ -56,7 +56,7 @@ A URL with more information about the repository.
 <tr><td>private</td><td>no</td><td>
 
 Either `true` to make the repository private or `false` to make it public. Default: `false`.  
-**Note**: You will get a `422` error if the organization restricts [changing repository visibility](https://docs.github.com/articles/repository-permission-levels-for-an-organization#changing-the-visibility-of-repositories) to organization owners and a non-owner tries to change the value of private. **Note**: You will get a `422` error if the organization restricts [changing repository visibility](https://docs.github.com/articles/repository-permission-levels-for-an-organization#changing-the-visibility-of-repositories) to organization owners and a non-owner tries to change the value of private.
+**Note**: You will get a `422` error if the organization restricts [changing repository visibility](https://docs.github.com/articles/repository-permission-levels-for-an-organization#changing-the-visibility-of-repositories) to organization owners and a non-owner tries to change the value of private.
 
 </td></tr>
 <tr><td>visibility</td><td>no</td><td>
@@ -66,7 +66,14 @@ Can be `public` or `private`. If your organization is associated with an enterpr
 </td></tr>
 <tr><td>security_and_analysis</td><td>no</td><td>
 
-Specify which security and analysis features to enable or disable. For example, to enable GitHub Advanced Security, use this data in the body of the PATCH request: `{"security_and_analysis": {"advanced_security": {"status": "enabled"}}}`. If you have admin permissions for a private repository covered by an Advanced Security license, you can check which security and analysis features are currently enabled by using a `GET /repos/{owner}/{repo}` request.
+Specify which security and analysis features to enable or disable for the repository.
+
+To use this parameter, you must have admin permissions for the repository or be an owner or security manager for the organization that owns the repository. For more information, see "[Managing security managers in your organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization)."
+
+For example, to enable GitHub Advanced Security, use this data in the body of the `PATCH` request:
+`{ "security_and_analysis": {"advanced_security": { "status": "enabled" } } }`.
+
+You can check which security and analysis features are currently enabled by using a `GET /repos/{owner}/{repo}` request.
 
 </td></tr>
 <tr><td>security_and_analysis.advanced_security</td><td>no</td><td>

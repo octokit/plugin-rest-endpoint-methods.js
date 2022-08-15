@@ -8,8 +8,6 @@ type: API method
 
 # Fork a gist
 
-**Note**: This was previously `/gists/:gist_id/fork`.
-
 ```js
 octokit.rest.gists.fork({
   gist_id,

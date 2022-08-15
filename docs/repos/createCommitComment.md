@@ -70,4 +70,4 @@ Line index in the diff to comment on.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#create-a-commit-comment).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/commits/comments#create-a-commit-comment).

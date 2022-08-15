@@ -35,4 +35,4 @@ The unique identifier of the invitation.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#decline-a-repository-invitation).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/collaborators/invitations#decline-a-repository-invitation).

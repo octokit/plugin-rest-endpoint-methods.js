@@ -50,4 +50,4 @@ The permissions that the associated user will have on the repository. Valid valu
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#update-a-repository-invitation).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/collaborators/invitations#update-a-repository-invitation).

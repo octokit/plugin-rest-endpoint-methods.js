@@ -45,14 +45,14 @@ Only show notifications updated after the given time. This is a timestamp in [IS
 Only show notifications updated before the given time. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.
 
 </td></tr>
-<tr><td>per_page</td><td>no</td><td>
-
-The number of results per page (max 100).
-
-</td></tr>
 <tr><td>page</td><td>no</td><td>
 
 Page number of the results to fetch.
+
+</td></tr>
+<tr><td>per_page</td><td>no</td><td>
+
+The number of results per page (max 50).
 
 </td></tr>
   </tbody>

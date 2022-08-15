@@ -40,7 +40,7 @@ The name of the repository. The name is not case sensitive.
 </td></tr>
 <tr><td>ref</td><td>yes</td><td>
 
-ref parameter
+The name of the fully qualified reference to update. For example, `refs/heads/master`. If the value doesn't start with `refs` and have at least two slashes, it will be rejected.
 
 </td></tr>
 <tr><td>sha</td><td>yes</td><td>

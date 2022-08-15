@@ -46,4 +46,4 @@ The time frame to display results for.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#get-repository-clones).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/metrics/traffic#get-repository-clones).
