@@ -1169,6 +1169,9 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     createCommitStatus: ["POST /repos/{owner}/{repo}/statuses/{sha}"],
     createDeployKey: ["POST /repos/{owner}/{repo}/keys"],
     createDeployment: ["POST /repos/{owner}/{repo}/deployments"],
+    createDeploymentBranchPolicy: [
+      "POST /repos/{owner}/{repo}/environments/{environment_name}/deployment-branch-policies",
+    ],
     createDeploymentStatus: [
       "POST /repos/{owner}/{repo}/deployments/{deployment_id}/statuses",
     ],
@@ -1216,6 +1219,9 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     deleteDeployKey: ["DELETE /repos/{owner}/{repo}/keys/{key_id}"],
     deleteDeployment: [
       "DELETE /repos/{owner}/{repo}/deployments/{deployment_id}",
+    ],
+    deleteDeploymentBranchPolicy: [
+      "DELETE /repos/{owner}/{repo}/environments/{environment_name}/deployment-branch-policies/{branch_policy_id}",
     ],
     deleteFile: ["DELETE /repos/{owner}/{repo}/contents/{path}"],
     deleteInvitation: [
@@ -1294,6 +1300,9 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     getContributorsStats: ["GET /repos/{owner}/{repo}/stats/contributors"],
     getDeployKey: ["GET /repos/{owner}/{repo}/keys/{key_id}"],
     getDeployment: ["GET /repos/{owner}/{repo}/deployments/{deployment_id}"],
+    getDeploymentBranchPolicy: [
+      "GET /repos/{owner}/{repo}/environments/{environment_name}/deployment-branch-policies/{branch_policy_id}",
+    ],
     getDeploymentStatus: [
       "GET /repos/{owner}/{repo}/deployments/{deployment_id}/statuses/{status_id}",
     ],
@@ -1350,6 +1359,9 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     listCommits: ["GET /repos/{owner}/{repo}/commits"],
     listContributors: ["GET /repos/{owner}/{repo}/contributors"],
     listDeployKeys: ["GET /repos/{owner}/{repo}/keys"],
+    listDeploymentBranchPolicies: [
+      "GET /repos/{owner}/{repo}/environments/{environment_name}/deployment-branch-policies",
+    ],
     listDeploymentStatuses: [
       "GET /repos/{owner}/{repo}/deployments/{deployment_id}/statuses",
     ],
@@ -1442,6 +1454,9 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
       "PUT /repos/{owner}/{repo}/branches/{branch}/protection",
     ],
     updateCommitComment: ["PATCH /repos/{owner}/{repo}/comments/{comment_id}"],
+    updateDeploymentBranchPolicy: [
+      "PUT /repos/{owner}/{repo}/environments/{environment_name}/deployment-branch-policies/{branch_policy_id}",
+    ],
     updateInformationAboutPagesSite: ["PUT /repos/{owner}/{repo}/pages"],
     updateInvitation: [
       "PATCH /repos/{owner}/{repo}/invitations/{invitation_id}",

@@ -8076,6 +8076,20 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
+     * Creates a deployment branch policy for an environment.
+     *
+     * You must authenticate using an access token with the `repo` scope to use this endpoint. GitHub Apps must have the `administration:write` permission for the repository to use this endpoint.
+     */
+    createDeploymentBranchPolicy: {
+      (
+        params?: RestEndpointMethodTypes["repos"]["createDeploymentBranchPolicy"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["repos"]["createDeploymentBranchPolicy"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
      * Users with `push` access can create deployment statuses for a given deployment.
      *
      * GitHub Apps require `read & write` access to "Deployments" and `read-only` access to "Repo contents" (for private repos). OAuth Apps require the `repo_deployment` scope.
@@ -8407,6 +8421,20 @@ export type RestEndpointMethods = {
         params?: RestEndpointMethodTypes["repos"]["deleteDeployment"]["parameters"]
       ): Promise<
         RestEndpointMethodTypes["repos"]["deleteDeployment"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Deletes a deployment branch policy for an environment.
+     *
+     * You must authenticate using an access token with the `repo` scope to use this endpoint. GitHub Apps must have the `administration:write` permission for the repository to use this endpoint.
+     */
+    deleteDeploymentBranchPolicy: {
+      (
+        params?: RestEndpointMethodTypes["repos"]["deleteDeploymentBranchPolicy"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["repos"]["deleteDeploymentBranchPolicy"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -8983,6 +9011,20 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
+     * Gets a deployment branch policy for an environment.
+     *
+     * Anyone with read access to the repository can use this endpoint. If the repository is private, you must use an access token with the `repo` scope. GitHub Apps must have the `actions:read` permission to use this endpoint.
+     */
+    getDeploymentBranchPolicy: {
+      (
+        params?: RestEndpointMethodTypes["repos"]["getDeploymentBranchPolicy"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["repos"]["getDeploymentBranchPolicy"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
      * Users with pull access can view a deployment status for a deployment:
      */
     getDeploymentStatus: {
@@ -9424,6 +9466,20 @@ export type RestEndpointMethods = {
         params?: RestEndpointMethodTypes["repos"]["listDeployKeys"]["parameters"]
       ): Promise<
         RestEndpointMethodTypes["repos"]["listDeployKeys"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Lists the deployment branch policies for an environment.
+     *
+     * Anyone with read access to the repository can use this endpoint. If the repository is private, you must use an access token with the `repo` scope. GitHub Apps must have the `actions:read` permission to use this endpoint.
+     */
+    listDeploymentBranchPolicies: {
+      (
+        params?: RestEndpointMethodTypes["repos"]["listDeploymentBranchPolicies"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["repos"]["listDeploymentBranchPolicies"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -9950,6 +10006,20 @@ export type RestEndpointMethods = {
         params?: RestEndpointMethodTypes["repos"]["updateCommitComment"]["parameters"]
       ): Promise<
         RestEndpointMethodTypes["repos"]["updateCommitComment"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Updates a deployment branch policy for an environment.
+     *
+     * You must authenticate using an access token with the `repo` scope to use this endpoint. GitHub Apps must have the `administration:write` permission for the repository to use this endpoint.
+     */
+    updateDeploymentBranchPolicy: {
+      (
+        params?: RestEndpointMethodTypes["repos"]["updateDeploymentBranchPolicy"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["repos"]["updateDeploymentBranchPolicy"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
