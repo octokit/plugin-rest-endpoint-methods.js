@@ -8203,6 +8203,20 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
+     * Create a GitHub Pages deployment for a repository.
+     *
+     * Users must have write permissions. GitHub Apps must have the `pages:write` permission to use this endpoint.
+     */
+    createPagesDeployment: {
+      (
+        params?: RestEndpointMethodTypes["repos"]["createPagesDeployment"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["repos"]["createPagesDeployment"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
      * Configures a GitHub Pages site. For more information, see "[About GitHub Pages](/github/working-with-github-pages/about-github-pages)."
      */
     createPagesSite: {
