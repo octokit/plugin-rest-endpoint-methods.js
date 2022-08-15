@@ -4456,6 +4456,14 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["POST /repos/{owner}/{repo}/deployments"]["response"];
     };
+    createDeploymentBranchPolicy: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["POST /repos/{owner}/{repo}/environments/{environment_name}/deployment-branch-policies"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["POST /repos/{owner}/{repo}/environments/{environment_name}/deployment-branch-policies"]["response"];
+    };
     createDeploymentStatus: {
       parameters: RequestParameters &
         Omit<
@@ -4647,6 +4655,14 @@ export type RestEndpointMethodTypes = {
           "baseUrl" | "headers" | "mediaType"
         >;
       response: Endpoints["DELETE /repos/{owner}/{repo}/deployments/{deployment_id}"]["response"];
+    };
+    deleteDeploymentBranchPolicy: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["DELETE /repos/{owner}/{repo}/environments/{environment_name}/deployment-branch-policies/{branch_policy_id}"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["DELETE /repos/{owner}/{repo}/environments/{environment_name}/deployment-branch-policies/{branch_policy_id}"]["response"];
     };
     deleteFile: {
       parameters: RequestParameters &
@@ -4976,6 +4992,14 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["GET /repos/{owner}/{repo}/deployments/{deployment_id}"]["response"];
     };
+    getDeploymentBranchPolicy: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /repos/{owner}/{repo}/environments/{environment_name}/deployment-branch-policies/{branch_policy_id}"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /repos/{owner}/{repo}/environments/{environment_name}/deployment-branch-policies/{branch_policy_id}"]["response"];
+    };
     getDeploymentStatus: {
       parameters: RequestParameters &
         Omit<
@@ -5247,6 +5271,14 @@ export type RestEndpointMethodTypes = {
           "baseUrl" | "headers" | "mediaType"
         >;
       response: Endpoints["GET /repos/{owner}/{repo}/keys"]["response"];
+    };
+    listDeploymentBranchPolicies: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /repos/{owner}/{repo}/environments/{environment_name}/deployment-branch-policies"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /repos/{owner}/{repo}/environments/{environment_name}/deployment-branch-policies"]["response"];
     };
     listDeploymentStatuses: {
       parameters: RequestParameters &
@@ -5583,6 +5615,14 @@ export type RestEndpointMethodTypes = {
           "baseUrl" | "headers" | "mediaType"
         >;
       response: Endpoints["PATCH /repos/{owner}/{repo}/comments/{comment_id}"]["response"];
+    };
+    updateDeploymentBranchPolicy: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["PUT /repos/{owner}/{repo}/environments/{environment_name}/deployment-branch-policies/{branch_policy_id}"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["PUT /repos/{owner}/{repo}/environments/{environment_name}/deployment-branch-policies/{branch_policy_id}"]["response"];
     };
     updateInformationAboutPagesSite: {
       parameters: RequestParameters &
