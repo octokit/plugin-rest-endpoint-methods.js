@@ -16138,6 +16138,8 @@
           }
         ]
       },
+      { "code": 400, "description": "Bad Request", "examples": null },
+      { "code": 400, "description": "Bad Request", "examples": null },
       {
         "code": 401,
         "description": "Requires authentication",
@@ -27242,7 +27244,13 @@
     "previews": [],
     "headers": [],
     "parameters": [],
-    "responses": [{ "code": 200, "description": "Response", "examples": null }],
+    "responses": [
+      {
+        "code": 200,
+        "description": "Response",
+        "examples": [{ "data": "\"Responsive is better than fast\"" }]
+      }
+    ],
     "renamed": null
   },
   {
