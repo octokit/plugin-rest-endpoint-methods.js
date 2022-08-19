@@ -69,6 +69,11 @@ The level of permission to grant the access token for checks on code.
 The level of permission to grant the access token for repository contents, commits, branches, downloads, releases, and merges.
 
 </td></tr>
+<tr><td>permissions.organization_custom_roles</td><td>no</td><td>
+
+The level of permission to grant the access token for custom roles management.
+
+</td></tr>
 <tr><td>permissions.deployments</td><td>no</td><td>
 
 The level of permission to grant the access token for deployments and deployment statuses.
