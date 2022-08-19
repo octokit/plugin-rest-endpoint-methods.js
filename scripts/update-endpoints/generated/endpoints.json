@@ -338,7 +338,11 @@
       }
     ],
     "responses": [
-      { "code": 202, "description": "Response", "examples": null },
+      {
+        "code": 202,
+        "description": "Response",
+        "examples": [{ "data": "null" }]
+      },
       { "code": 409, "description": "Conflict", "examples": null }
     ],
     "renamed": null
@@ -628,7 +632,7 @@
       {
         "code": 201,
         "description": "Response when creating a secret",
-        "examples": null
+        "examples": [{ "data": "null" }]
       },
       {
         "code": 204,
@@ -5561,7 +5565,13 @@
         "deprecated": null
       }
     ],
-    "responses": [{ "code": 201, "description": "Response", "examples": null }],
+    "responses": [
+      {
+        "code": 201,
+        "description": "Response",
+        "examples": [{ "data": "null" }]
+      }
+    ],
     "renamed": null
   },
   {
@@ -9299,6 +9309,19 @@
         "deprecated": null
       },
       {
+        "name": "permissions.organization_custom_roles",
+        "description": "The level of permission to grant the access token for custom roles management.",
+        "in": "BODY",
+        "type": "string",
+        "required": false,
+        "enum": ["read", "write"],
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
         "name": "permissions.deployments",
         "description": "The level of permission to grant the access token for deployments and deployment statuses.",
         "in": "BODY",
@@ -11337,6 +11360,19 @@
       {
         "name": "permissions.contents",
         "description": "The level of permission to grant the access token for repository contents, commits, branches, downloads, releases, and merges.",
+        "in": "BODY",
+        "type": "string",
+        "required": false,
+        "enum": ["read", "write"],
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "permissions.organization_custom_roles",
+        "description": "The level of permission to grant the access token for custom roles management.",
         "in": "BODY",
         "type": "string",
         "required": false,
@@ -18925,7 +18961,7 @@
       },
       {
         "name": "manifests",
-        "description": "A collection of package manifests",
+        "description": "A collection of package manifests, which are a collection of related dependencies declared in a file or representing a logical group of dependencies.",
         "in": "BODY",
         "type": "object",
         "required": false,
@@ -18938,7 +18974,7 @@
       },
       {
         "name": "manifests.*",
-        "description": "A collection of related dependencies declared in a file or representing a logical group of dependencies.",
+        "description": "",
         "in": "BODY",
         "type": "object",
         "required": false,
@@ -19016,9 +19052,100 @@
       },
       {
         "name": "manifests.*.resolved",
+        "description": "A collection of resolved package dependencies.",
+        "in": "BODY",
+        "type": "object",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "manifests.*.resolved.*",
         "description": "",
         "in": "BODY",
-        "type": null,
+        "type": "object",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "manifests.*.resolved.*.package_url",
+        "description": "Package-url (PURL) of dependency. See https://github.com/package-url/purl-spec for more details.",
+        "in": "BODY",
+        "type": "string",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": "^pkg",
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "manifests.*.resolved.*.metadata",
+        "description": "User-defined metadata to store domain-specific information limited to 8 keys with scalar values.",
+        "in": "BODY",
+        "type": "object",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "manifests.*.resolved.*.metadata.*",
+        "description": "",
+        "in": "BODY",
+        "type": "object",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "manifests.*.resolved.*.relationship",
+        "description": "A notation of whether a dependency is requested directly by this manifest or is a dependency of another dependency.",
+        "in": "BODY",
+        "type": "string",
+        "required": false,
+        "enum": ["direct", "indirect"],
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "manifests.*.resolved.*.scope",
+        "description": "A notation of whether the dependency is required for the primary build artifact (runtime) or is only used for development. Future versions of this specification may allow for more granular scopes.",
+        "in": "BODY",
+        "type": "string",
+        "required": false,
+        "enum": ["runtime", "development"],
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "manifests.*.resolved.*.dependencies",
+        "description": "Array of package-url (PURLs) of direct child dependencies.",
+        "in": "BODY",
+        "type": "string[]",
         "required": false,
         "enum": null,
         "allowNull": false,
@@ -30192,7 +30319,7 @@
     "parameters": [
       {
         "name": "organization_id",
-        "description": "",
+        "description": "The unique identifier of the organization.",
         "in": "PATH",
         "type": "string",
         "required": true,
@@ -43346,6 +43473,58 @@
         "deprecated": null
       },
       {
+        "name": "squash_merge_commit_title",
+        "description": "The default value for a squash merge commit title:\n\n- `PR_TITLE` - default to the pull request's title.\n- `COMMIT_OR_PR_TITLE` - default to the commit's title (if only one commit) or the pull request's title (when more than one commit).",
+        "in": "BODY",
+        "type": "string",
+        "required": false,
+        "enum": ["PR_TITLE", "COMMIT_OR_PR_TITLE"],
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "squash_merge_commit_message",
+        "description": "The default value for a squash merge commit message:\n\n- `PR_BODY` - default to the pull request's body.\n- `COMMIT_MESSAGES` - default to the branch's commit messages.\n- `BLANK` - default to a blank commit message.",
+        "in": "BODY",
+        "type": "string",
+        "required": false,
+        "enum": ["PR_BODY", "COMMIT_MESSAGES", "BLANK"],
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "merge_commit_title",
+        "description": "The default value for a merge commit title.\n\n- `PR_TITLE` - default to the pull request's title.\n- `MERGE_MESSAGE` - default to the classic title for a merge message (e.g., Merge pull request #123 from branch-name).",
+        "in": "BODY",
+        "type": "string",
+        "required": false,
+        "enum": ["PR_TITLE", "MERGE_MESSAGE"],
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "merge_commit_message",
+        "description": "The default value for a merge commit message.\n\n- `PR_TITLE` - default to the pull request's title.\n- `PR_BODY` - default to the pull request's body.\n- `BLANK` - default to a blank commit message.",
+        "in": "BODY",
+        "type": "string",
+        "required": false,
+        "enum": ["PR_BODY", "PR_TITLE", "BLANK"],
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
         "name": "has_downloads",
         "description": "Whether downloads are enabled.",
         "in": "BODY",
@@ -43749,6 +43928,58 @@
         "type": "boolean",
         "required": false,
         "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "squash_merge_commit_title",
+        "description": "The default value for a squash merge commit title:\n\n- `PR_TITLE` - default to the pull request's title.\n- `COMMIT_OR_PR_TITLE` - default to the commit's title (if only one commit) or the pull request's title (when more than one commit).",
+        "in": "BODY",
+        "type": "string",
+        "required": false,
+        "enum": ["PR_TITLE", "COMMIT_OR_PR_TITLE"],
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "squash_merge_commit_message",
+        "description": "The default value for a squash merge commit message:\n\n- `PR_BODY` - default to the pull request's body.\n- `COMMIT_MESSAGES` - default to the branch's commit messages.\n- `BLANK` - default to a blank commit message.",
+        "in": "BODY",
+        "type": "string",
+        "required": false,
+        "enum": ["PR_BODY", "COMMIT_MESSAGES", "BLANK"],
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "merge_commit_title",
+        "description": "The default value for a merge commit title.\n\n- `PR_TITLE` - default to the pull request's title.\n- `MERGE_MESSAGE` - default to the classic title for a merge message (e.g., Merge pull request #123 from branch-name).",
+        "in": "BODY",
+        "type": "string",
+        "required": false,
+        "enum": ["PR_TITLE", "MERGE_MESSAGE"],
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "merge_commit_message",
+        "description": "The default value for a merge commit message.\n\n- `PR_TITLE` - default to the pull request's title.\n- `PR_BODY` - default to the pull request's body.\n- `BLANK` - default to a blank commit message.",
+        "in": "BODY",
+        "type": "string",
+        "required": false,
+        "enum": ["PR_BODY", "PR_TITLE", "BLANK"],
         "allowNull": false,
         "mapToData": null,
         "validation": null,
@@ -54644,6 +54875,58 @@
         "type": "boolean",
         "required": false,
         "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "squash_merge_commit_title",
+        "description": "The default value for a squash merge commit title:\n\n- `PR_TITLE` - default to the pull request's title.\n- `COMMIT_OR_PR_TITLE` - default to the commit's title (if only one commit) or the pull request's title (when more than one commit).",
+        "in": "BODY",
+        "type": "string",
+        "required": false,
+        "enum": ["PR_TITLE", "COMMIT_OR_PR_TITLE"],
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "squash_merge_commit_message",
+        "description": "The default value for a squash merge commit message:\n\n- `PR_BODY` - default to the pull request's body.\n- `COMMIT_MESSAGES` - default to the branch's commit messages.\n- `BLANK` - default to a blank commit message.",
+        "in": "BODY",
+        "type": "string",
+        "required": false,
+        "enum": ["PR_BODY", "COMMIT_MESSAGES", "BLANK"],
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "merge_commit_title",
+        "description": "The default value for a merge commit title.\n\n- `PR_TITLE` - default to the pull request's title.\n- `MERGE_MESSAGE` - default to the classic title for a merge message (e.g., Merge pull request #123 from branch-name).",
+        "in": "BODY",
+        "type": "string",
+        "required": false,
+        "enum": ["PR_TITLE", "MERGE_MESSAGE"],
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "merge_commit_message",
+        "description": "The default value for a merge commit message.\n\n- `PR_TITLE` - default to the pull request's title.\n- `PR_BODY` - default to the pull request's body.\n- `BLANK` - default to a blank commit message.",
+        "in": "BODY",
+        "type": "string",
+        "required": false,
+        "enum": ["PR_BODY", "PR_TITLE", "BLANK"],
         "allowNull": false,
         "mapToData": null,
         "validation": null,

@@ -32,6 +32,8 @@ octokit.rest.orgs.listCustomRoles({
   <tbody>
     <tr><td>organization_id</td><td>yes</td><td>
 
+The unique identifier of the organization.
+
 </td></tr>
   </tbody>
 </table>

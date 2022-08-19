@@ -113,12 +113,10 @@ User-defined metadata to store domain-specific information limited to 8 keys wit
 </td></tr>
 <tr><td>manifests</td><td>no</td><td>
 
-A collection of package manifests
+A collection of package manifests, which are a collection of related dependencies declared in a file or representing a logical group of dependencies.
 
 </td></tr>
 <tr><td>manifests.*</td><td>no</td><td>
-
-A collection of related dependencies declared in a file or representing a logical group of dependencies.
 
 </td></tr>
 <tr><td>manifests.*.name</td><td>yes</td><td>
@@ -143,6 +141,39 @@ User-defined metadata to store domain-specific information limited to 8 keys wit
 
 </td></tr>
 <tr><td>manifests.*.resolved</td><td>no</td><td>
+
+A collection of resolved package dependencies.
+
+</td></tr>
+<tr><td>manifests.*.resolved.*</td><td>no</td><td>
+
+</td></tr>
+<tr><td>manifests.*.resolved.*.package_url</td><td>no</td><td>
+
+Package-url (PURL) of dependency. See https://github.com/package-url/purl-spec for more details.
+
+</td></tr>
+<tr><td>manifests.*.resolved.*.metadata</td><td>no</td><td>
+
+User-defined metadata to store domain-specific information limited to 8 keys with scalar values.
+
+</td></tr>
+<tr><td>manifests.*.resolved.*.metadata.*</td><td>no</td><td>
+
+</td></tr>
+<tr><td>manifests.*.resolved.*.relationship</td><td>no</td><td>
+
+A notation of whether a dependency is requested directly by this manifest or is a dependency of another dependency.
+
+</td></tr>
+<tr><td>manifests.*.resolved.*.scope</td><td>no</td><td>
+
+A notation of whether the dependency is required for the primary build artifact (runtime) or is only used for development. Future versions of this specification may allow for more granular scopes.
+
+</td></tr>
+<tr><td>manifests.*.resolved.*.dependencies</td><td>no</td><td>
+
+Array of package-url (PURLs) of direct child dependencies.
 
 </td></tr>
 <tr><td>scanned</td><td>yes</td><td>

@@ -166,6 +166,40 @@ Either `true` to always allow a pull request head branch that is behind its base
 Either `true` to allow squash-merge commits to use pull request title, or `false` to use commit message.
 
 </td></tr>
+<tr><td>squash_merge_commit_title</td><td>no</td><td>
+
+The default value for a squash merge commit title:
+
+- `PR_TITLE` - default to the pull request's title.
+- `COMMIT_OR_PR_TITLE` - default to the commit's title (if only one commit) or the pull request's title (when more than one commit).
+
+</td></tr>
+<tr><td>squash_merge_commit_message</td><td>no</td><td>
+
+The default value for a squash merge commit message:
+
+- `PR_BODY` - default to the pull request's body.
+- `COMMIT_MESSAGES` - default to the branch's commit messages.
+- `BLANK` - default to a blank commit message.
+
+</td></tr>
+<tr><td>merge_commit_title</td><td>no</td><td>
+
+The default value for a merge commit title.
+
+- `PR_TITLE` - default to the pull request's title.
+- `MERGE_MESSAGE` - default to the classic title for a merge message (e.g., Merge pull request #123 from branch-name).
+
+</td></tr>
+<tr><td>merge_commit_message</td><td>no</td><td>
+
+The default value for a merge commit message.
+
+- `PR_TITLE` - default to the pull request's title.
+- `PR_BODY` - default to the pull request's body.
+- `BLANK` - default to a blank commit message.
+
+</td></tr>
 <tr><td>archived</td><td>no</td><td>
 
 `true` to archive this repository. **Note**: You cannot unarchive repositories through the API.
