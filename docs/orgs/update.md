@@ -130,6 +130,11 @@ Whether organization members can create private GitHub Pages sites. Existing pub
 Whether organization members can fork private organization repositories.
 
 </td></tr>
+<tr><td>web_commit_signoff_required</td><td>no</td><td>
+
+Whether contributors to organization repositories are required to sign off on commits they make through GitHub's web interface.
+
+</td></tr>
 <tr><td>blog</td><td>no</td><td>
 
 </td></tr>

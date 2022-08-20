@@ -210,6 +210,11 @@ The default value for a merge commit message.
 Either `true` to allow private forks, or `false` to prevent private forks.
 
 </td></tr>
+<tr><td>web_commit_signoff_required</td><td>no</td><td>
+
+Either `true` to require contributors to sign off on web-based commits, or `false` to not require contributors to sign off on web-based commits.
+
+</td></tr>
   </tbody>
 </table>
 
