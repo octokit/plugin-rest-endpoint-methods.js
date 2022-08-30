@@ -64,6 +64,11 @@ Login for the user that this issue should be assigned to. **This field is deprec
 State of the issue. Either `open` or `closed`.
 
 </td></tr>
+<tr><td>state_reason</td><td>no</td><td>
+
+The reason for the current state
+
+</td></tr>
 <tr><td>milestone</td><td>no</td><td>
 
 </td></tr>

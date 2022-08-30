@@ -2855,8 +2855,7 @@ export type RestEndpointMethods = {
      *
      * * `ref`
      * * `tool`
-     * * `analysis_key`
-     * * `environment`
+     * * `category`
      *
      * If you attempt to delete an analysis that is not the most recent in a set,
      * you'll get a 400 response with the message:
@@ -6071,6 +6070,9 @@ export type RestEndpointMethods = {
      * List the custom repository roles available in this organization. In order to see custom
      * repository roles in an organization, the authenticated user must be an organization owner.
      *
+     * To use this endpoint the authenticated user must be an administrator for the organization or of an repository of the organizaiton and must use an access token with `admin:org repo` scope.
+     * GitHub Apps must have the `organization_custom_roles:read` organization permission to use this endpoint.
+     *
      * For more information on custom repository roles, see "[Managing custom repository roles for an organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-custom-repository-roles-for-an-organization)".
      */
     listCustomRoles: {
@@ -8958,11 +8960,11 @@ export type RestEndpointMethods = {
      * type](https://docs.github.com/rest/reference/repos#custom-media-types) to ensure the content is returned in a consistent
      * object format.
      *
-     * **Note**:
+     * **Notes**:
      * *   To get a repository's contents recursively, you can [recursively get the tree](https://docs.github.com/rest/reference/git#trees).
      * *   This API has an upper limit of 1,000 files for a directory. If you need to retrieve more files, use the [Git Trees
      * API](https://docs.github.com/rest/reference/git#get-a-tree).
-     *
+     *  *  Download URLs expire and are meant to be used just once. To ensure the download URL does not expire, please use the contents API to obtain a fresh download URL for each download.
      * #### Size limits
      * If the requested file's size is:
      * * 1 MB or smaller: All features of this endpoint are supported.

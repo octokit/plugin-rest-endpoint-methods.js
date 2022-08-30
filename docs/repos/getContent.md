@@ -16,11 +16,12 @@ retrieving the raw content or rendered HTML (when supported). All content types 
 type](https://docs.github.com/rest/reference/repos#custom-media-types) to ensure the content is returned in a consistent
 object format.
 
-**Note**:
+**Notes**:
 
 - To get a repository's contents recursively, you can [recursively get the tree](https://docs.github.com/rest/reference/git#trees).
 - This API has an upper limit of 1,000 files for a directory. If you need to retrieve more files, use the [Git Trees
   API](https://docs.github.com/rest/reference/git#get-a-tree).
+- Download URLs expire and are meant to be used just once. To ensure the download URL does not expire, please use the contents API to obtain a fresh download URL for each download.
 
 #### Size limits
 

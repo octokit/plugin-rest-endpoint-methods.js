@@ -31,8 +31,7 @@ where a set is determined by a unique combination of analysis values:
 
 - `ref`
 - `tool`
-- `analysis_key`
-- `environment`
+- `category`
 
 If you attempt to delete an analysis that is not the most recent in a set,
 you'll get a 400 response with the message:
