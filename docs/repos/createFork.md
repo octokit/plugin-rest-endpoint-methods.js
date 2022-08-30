@@ -50,6 +50,11 @@ Optional parameter to specify the organization name if forking into an organizat
 When forking from an existing repository, a new name for the fork.
 
 </td></tr>
+<tr><td>default_branch_only</td><td>no</td><td>
+
+When forking from an existing repository, fork with only the default branch.
+
+</td></tr>
   </tbody>
 </table>
 

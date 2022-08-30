@@ -84,6 +84,16 @@ The Git reference for the analyses you want to list. The `ref` for a branch can 
 Filter analyses belonging to the same SARIF upload.
 
 </td></tr>
+<tr><td>direction</td><td>no</td><td>
+
+The direction to sort the results by.
+
+</td></tr>
+<tr><td>sort</td><td>no</td><td>
+
+The property by which to sort the results.
+
+</td></tr>
   </tbody>
 </table>
 
