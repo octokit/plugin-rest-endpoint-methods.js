@@ -832,6 +832,9 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     createInvitation: ["POST /orgs/{org}/invitations"],
     createWebhook: ["POST /orgs/{org}/hooks"],
     deleteWebhook: ["DELETE /orgs/{org}/hooks/{hook_id}"],
+    enableOrDisableSecurityProductOnAllOrgRepos: [
+      "POST /orgs/{org}/{security_product}/{enablement}",
+    ],
     get: ["GET /orgs/{org}"],
     getMembershipForAuthenticatedUser: ["GET /user/memberships/orgs/{org}"],
     getMembershipForUser: ["GET /orgs/{org}/memberships/{username}"],
@@ -1602,6 +1605,7 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
       { renamed: ["users", "createPublicSshKeyForAuthenticatedUser"] },
     ],
     createPublicSshKeyForAuthenticatedUser: ["POST /user/keys"],
+    createSshSigningKeyForAuthenticatedUser: ["POST /user/ssh_signing_keys"],
     deleteEmailForAuthenticated: [
       "DELETE /user/emails",
       {},
@@ -1620,6 +1624,9 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
       { renamed: ["users", "deletePublicSshKeyForAuthenticatedUser"] },
     ],
     deletePublicSshKeyForAuthenticatedUser: ["DELETE /user/keys/{key_id}"],
+    deleteSshSigningKeyForAuthenticatedUser: [
+      "DELETE /user/ssh_signing_keys/{ssh_signing_key_id}",
+    ],
     follow: ["PUT /user/following/{username}"],
     getAuthenticated: ["GET /user"],
     getByUsername: ["GET /users/{username}"],
@@ -1636,6 +1643,9 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
       { renamed: ["users", "getPublicSshKeyForAuthenticatedUser"] },
     ],
     getPublicSshKeyForAuthenticatedUser: ["GET /user/keys/{key_id}"],
+    getSshSigningKeyForAuthenticatedUser: [
+      "GET /user/ssh_signing_keys/{ssh_signing_key_id}",
+    ],
     list: ["GET /users"],
     listBlockedByAuthenticated: [
       "GET /user/blocks",
@@ -1678,6 +1688,8 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
       { renamed: ["users", "listPublicSshKeysForAuthenticatedUser"] },
     ],
     listPublicSshKeysForAuthenticatedUser: ["GET /user/keys"],
+    listSshSigningKeysForAuthenticatedUser: ["GET /user/ssh_signing_keys"],
+    listSshSigningKeysForUser: ["GET /users/{username}/ssh_signing_keys"],
     setPrimaryEmailVisibilityForAuthenticated: [
       "PATCH /user/email/visibility",
       {},
