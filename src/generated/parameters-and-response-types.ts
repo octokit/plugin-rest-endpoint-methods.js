@@ -3212,6 +3212,14 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["DELETE /orgs/{org}/hooks/{hook_id}"]["response"];
     };
+    enableOrDisableSecurityProductOnAllOrgRepos: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["POST /orgs/{org}/{security_product}/{enablement}"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["POST /orgs/{org}/{security_product}/{enablement}"]["response"];
+    };
     get: {
       parameters: RequestParameters &
         Omit<
@@ -6144,6 +6152,14 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["POST /user/keys"]["response"];
     };
+    createSshSigningKeyForAuthenticatedUser: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["POST /user/ssh_signing_keys"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["POST /user/ssh_signing_keys"]["response"];
+    };
     deleteEmailForAuthenticated: {
       parameters: RequestParameters &
         Omit<
@@ -6191,6 +6207,14 @@ export type RestEndpointMethodTypes = {
           "baseUrl" | "headers" | "mediaType"
         >;
       response: Endpoints["DELETE /user/keys/{key_id}"]["response"];
+    };
+    deleteSshSigningKeyForAuthenticatedUser: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["DELETE /user/ssh_signing_keys/{ssh_signing_key_id}"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["DELETE /user/ssh_signing_keys/{ssh_signing_key_id}"]["response"];
     };
     follow: {
       parameters: RequestParameters &
@@ -6255,6 +6279,14 @@ export type RestEndpointMethodTypes = {
           "baseUrl" | "headers" | "mediaType"
         >;
       response: Endpoints["GET /user/keys/{key_id}"]["response"];
+    };
+    getSshSigningKeyForAuthenticatedUser: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /user/ssh_signing_keys/{ssh_signing_key_id}"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /user/ssh_signing_keys/{ssh_signing_key_id}"]["response"];
     };
     list: {
       parameters: RequestParameters &
@@ -6399,6 +6431,22 @@ export type RestEndpointMethodTypes = {
           "baseUrl" | "headers" | "mediaType"
         >;
       response: Endpoints["GET /user/keys"]["response"];
+    };
+    listSshSigningKeysForAuthenticatedUser: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /user/ssh_signing_keys"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /user/ssh_signing_keys"]["response"];
+    };
+    listSshSigningKeysForUser: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /users/{username}/ssh_signing_keys"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /users/{username}/ssh_signing_keys"]["response"];
     };
     setPrimaryEmailVisibilityForAuthenticated: {
       parameters: RequestParameters &

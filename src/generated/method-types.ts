@@ -5961,6 +5961,25 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
+     * Enables or disables the specified security feature for all repositories in an organization.
+     *
+     * To use this endpoint, you must be an organization owner or be member of a team with the security manager role.
+     * A token with the 'write:org' scope is also required.
+     *
+     * GitHub Apps must have the `organization_administration:write` permission to use this endpoint.
+     *
+     * For more information, see "[Managing security managers in your organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization)."
+     */
+    enableOrDisableSecurityProductOnAllOrgRepos: {
+      (
+        params?: RestEndpointMethodTypes["orgs"]["enableOrDisableSecurityProductOnAllOrgRepos"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["orgs"]["enableOrDisableSecurityProductOnAllOrgRepos"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
      * To see many of the organization response values, you need to be an authenticated organization owner with the `admin:org` scope. When the value of `two_factor_requirement_enabled` is `true`, the organization requires all members, billing managers, and outside collaborators to enable [two-factor authentication](https://docs.github.com/articles/securing-your-account-with-two-factor-authentication-2fa/).
      *
      * GitHub Apps with the `Organization plan` permission can use this endpoint to retrieve information about an organization's GitHub plan. See "[Authenticating with GitHub Apps](https://docs.github.com/apps/building-github-apps/authenticating-with-github-apps/)" for details. For an example response, see 'Response with GitHub plan information' below."
@@ -10979,6 +10998,18 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
+     * Creates an SSH signing key for the authenticated user's GitHub account. You must authenticate with Basic Authentication, or you must authenticate with OAuth with at least `write:ssh_signing_key` scope. For more information, see "[Understanding scopes for OAuth apps](https://docs.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/)."
+     */
+    createSshSigningKeyForAuthenticatedUser: {
+      (
+        params?: RestEndpointMethodTypes["users"]["createSshSigningKeyForAuthenticatedUser"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["users"]["createSshSigningKeyForAuthenticatedUser"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
      * This endpoint is accessible with the `user` scope.
      * @deprecated octokit.rest.users.deleteEmailForAuthenticated() has been renamed to octokit.rest.users.deleteEmailForAuthenticatedUser() (2021-10-05)
      */
@@ -11049,6 +11080,18 @@ export type RestEndpointMethods = {
         params?: RestEndpointMethodTypes["users"]["deletePublicSshKeyForAuthenticatedUser"]["parameters"]
       ): Promise<
         RestEndpointMethodTypes["users"]["deletePublicSshKeyForAuthenticatedUser"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Deletes an SSH signing key from the authenticated user's GitHub account. You must authenticate with Basic Authentication, or you must authenticate with OAuth with at least `admin:ssh_signing_key` scope. For more information, see "[Understanding scopes for OAuth apps](https://docs.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/)."
+     */
+    deleteSshSigningKeyForAuthenticatedUser: {
+      (
+        params?: RestEndpointMethodTypes["users"]["deleteSshSigningKeyForAuthenticatedUser"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["users"]["deleteSshSigningKeyForAuthenticatedUser"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -11160,6 +11203,18 @@ export type RestEndpointMethods = {
         params?: RestEndpointMethodTypes["users"]["getPublicSshKeyForAuthenticatedUser"]["parameters"]
       ): Promise<
         RestEndpointMethodTypes["users"]["getPublicSshKeyForAuthenticatedUser"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Gets extended details for an SSH signing key. You must authenticate with Basic Authentication, or you must authenticate with OAuth with at least `read:ssh_signing_key` scope. For more information, see "[Understanding scopes for OAuth apps](https://docs.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/)."
+     */
+    getSshSigningKeyForAuthenticatedUser: {
+      (
+        params?: RestEndpointMethodTypes["users"]["getSshSigningKeyForAuthenticatedUser"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["users"]["getSshSigningKeyForAuthenticatedUser"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -11382,6 +11437,30 @@ export type RestEndpointMethods = {
         params?: RestEndpointMethodTypes["users"]["listPublicSshKeysForAuthenticatedUser"]["parameters"]
       ): Promise<
         RestEndpointMethodTypes["users"]["listPublicSshKeysForAuthenticatedUser"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Lists the SSH signing keys for the authenticated user's GitHub account. You must authenticate with Basic Authentication, or you must authenticate with OAuth with at least `read:ssh_signing_key` scope. For more information, see "[Understanding scopes for OAuth apps](https://docs.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/)."
+     */
+    listSshSigningKeysForAuthenticatedUser: {
+      (
+        params?: RestEndpointMethodTypes["users"]["listSshSigningKeysForAuthenticatedUser"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["users"]["listSshSigningKeysForAuthenticatedUser"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Lists the SSH signing keys for a user. This operation is accessible by anyone.
+     */
+    listSshSigningKeysForUser: {
+      (
+        params?: RestEndpointMethodTypes["users"]["listSshSigningKeysForUser"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["users"]["listSshSigningKeysForUser"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;

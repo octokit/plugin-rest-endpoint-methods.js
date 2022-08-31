@@ -138,6 +138,60 @@ Whether contributors to organization repositories are required to sign off on co
 <tr><td>blog</td><td>no</td><td>
 
 </td></tr>
+<tr><td>advanced_security_enabled_for_new_repositories</td><td>no</td><td>
+
+Whether GitHub Advanced Security is automatically enabled for new repositories.
+
+To use this parameter, you must have admin permissions for the repository or be an owner or security manager for the organization that owns the repository. For more information, see "[Managing security managers in your organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization)."
+
+You can check which security and analysis features are currently enabled by using a `GET /orgs/{org}` request.
+
+</td></tr>
+<tr><td>dependabot_alerts_enabled_for_new_repositories</td><td>no</td><td>
+
+Whether Dependabot alerts is automatically enabled for new repositories.
+
+To use this parameter, you must have admin permissions for the repository or be an owner or security manager for the organization that owns the repository. For more information, see "[Managing security managers in your organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization)."
+
+You can check which security and analysis features are currently enabled by using a `GET /orgs/{org}` request.
+
+</td></tr>
+<tr><td>dependabot_security_updates_enabled_for_new_repositories</td><td>no</td><td>
+
+Whether Dependabot security updates is automatically enabled for new repositories.
+
+To use this parameter, you must have admin permissions for the repository or be an owner or security manager for the organization that owns the repository. For more information, see "[Managing security managers in your organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization)."
+
+You can check which security and analysis features are currently enabled by using a `GET /orgs/{org}` request.
+
+</td></tr>
+<tr><td>dependency_graph_enabled_for_new_repositories</td><td>no</td><td>
+
+Whether dependency graph is automatically enabled for new repositories.
+
+To use this parameter, you must have admin permissions for the repository or be an owner or security manager for the organization that owns the repository. For more information, see "[Managing security managers in your organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization)."
+
+You can check which security and analysis features are currently enabled by using a `GET /orgs/{org}` request.
+
+</td></tr>
+<tr><td>secret_scanning_enabled_for_new_repositories</td><td>no</td><td>
+
+Whether secret scanning is automatically enabled for new repositories.
+
+To use this parameter, you must have admin permissions for the repository or be an owner or security manager for the organization that owns the repository. For more information, see "[Managing security managers in your organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization)."
+
+You can check which security and analysis features are currently enabled by using a `GET /orgs/{org}` request.
+
+</td></tr>
+<tr><td>secret_scanning_push_protection_enabled_for_new_repositories</td><td>no</td><td>
+
+Whether secret scanning push protection is automatically enabled for new repositories.
+
+To use this parameter, you must have admin permissions for the repository or be an owner or security manager for the organization that owns the repository. For more information, see "[Managing security managers in your organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization)."
+
+You can check which security and analysis features are currently enabled by using a `GET /orgs/{org}` request.
+
+</td></tr>
   </tbody>
 </table>
 

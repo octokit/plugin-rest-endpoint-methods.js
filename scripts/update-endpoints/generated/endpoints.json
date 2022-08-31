@@ -29860,6 +29860,77 @@
     "renamed": null
   },
   {
+    "name": "Enable or disable a security feature for an organization",
+    "scope": "orgs",
+    "id": "enableOrDisableSecurityProductOnAllOrgRepos",
+    "method": "POST",
+    "url": "/orgs/{org}/{security_product}/{enablement}",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "removalDate": null,
+    "description": "Enables or disables the specified security feature for all repositories in an organization.\n\nTo use this endpoint, you must be an organization owner or be member of a team with the security manager role.\nA token with the 'write:org' scope is also required.\n\nGitHub Apps must have the `organization_administration:write` permission to use this endpoint.\n\nFor more information, see \"[Managing security managers in your organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization).\"",
+    "documentationUrl": "https://docs.github.com/rest/reference/orgs#enable-or-disable-security-product-on-all-org-repos",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "org",
+        "description": "The organization name. The name is not case sensitive.",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "security_product",
+        "description": "The security feature to enable or disable.",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": [
+          "dependency_graph",
+          "dependabot_alerts",
+          "dependabot_security_updates",
+          "advanced_security",
+          "secret_scanning",
+          "secret_scanning_push_protection"
+        ],
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "enablement",
+        "description": "The action to take.\n\n`enable_all` means to enable the specified security feature for all repositories in the organization.\n`disable_all` means to disable the specified security feature for all repositories in the organization.",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": ["enable_all", "disable_all"],
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      { "code": 204, "description": "Action started", "examples": null },
+      {
+        "code": 422,
+        "description": "The action could not be taken due to an in progress enablement, or a policy is preventing enablement",
+        "examples": null
+      }
+    ],
+    "renamed": null
+  },
+  {
     "name": "Get an organization",
     "scope": "orgs",
     "id": "get",
@@ -32040,6 +32111,84 @@
         "description": "",
         "in": "BODY",
         "type": "string",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "advanced_security_enabled_for_new_repositories",
+        "description": "Whether GitHub Advanced Security is automatically enabled for new repositories.\n\nTo use this parameter, you must have admin permissions for the repository or be an owner or security manager for the organization that owns the repository. For more information, see \"[Managing security managers in your organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization).\"\n\nYou can check which security and analysis features are currently enabled by using a `GET /orgs/{org}` request.",
+        "in": "BODY",
+        "type": "boolean",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "dependabot_alerts_enabled_for_new_repositories",
+        "description": "Whether Dependabot alerts is automatically enabled for new repositories.\n\nTo use this parameter, you must have admin permissions for the repository or be an owner or security manager for the organization that owns the repository. For more information, see \"[Managing security managers in your organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization).\"\n\nYou can check which security and analysis features are currently enabled by using a `GET /orgs/{org}` request.",
+        "in": "BODY",
+        "type": "boolean",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "dependabot_security_updates_enabled_for_new_repositories",
+        "description": "Whether Dependabot security updates is automatically enabled for new repositories.\n\nTo use this parameter, you must have admin permissions for the repository or be an owner or security manager for the organization that owns the repository. For more information, see \"[Managing security managers in your organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization).\"\n\nYou can check which security and analysis features are currently enabled by using a `GET /orgs/{org}` request.",
+        "in": "BODY",
+        "type": "boolean",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "dependency_graph_enabled_for_new_repositories",
+        "description": "Whether dependency graph is automatically enabled for new repositories.\n\nTo use this parameter, you must have admin permissions for the repository or be an owner or security manager for the organization that owns the repository. For more information, see \"[Managing security managers in your organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization).\"\n\nYou can check which security and analysis features are currently enabled by using a `GET /orgs/{org}` request.",
+        "in": "BODY",
+        "type": "boolean",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "secret_scanning_enabled_for_new_repositories",
+        "description": "Whether secret scanning is automatically enabled for new repositories.\n\nTo use this parameter, you must have admin permissions for the repository or be an owner or security manager for the organization that owns the repository. For more information, see \"[Managing security managers in your organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization).\"\n\nYou can check which security and analysis features are currently enabled by using a `GET /orgs/{org}` request.",
+        "in": "BODY",
+        "type": "boolean",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "secret_scanning_push_protection_enabled_for_new_repositories",
+        "description": "Whether secret scanning push protection is automatically enabled for new repositories.\n\nTo use this parameter, you must have admin permissions for the repository or be an owner or security manager for the organization that owns the repository. For more information, see \"[Managing security managers in your organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization).\"\n\nYou can check which security and analysis features are currently enabled by using a `GET /orgs/{org}` request.",
+        "in": "BODY",
+        "type": "boolean",
         "required": false,
         "enum": null,
         "allowNull": false,
@@ -63472,6 +63621,69 @@
     "renamed": null
   },
   {
+    "name": "Create a SSH signing key for the authenticated user",
+    "scope": "users",
+    "id": "createSshSigningKeyForAuthenticatedUser",
+    "method": "POST",
+    "url": "/user/ssh_signing_keys",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "removalDate": null,
+    "description": "Creates an SSH signing key for the authenticated user's GitHub account. You must authenticate with Basic Authentication, or you must authenticate with OAuth with at least `write:ssh_signing_key` scope. For more information, see \"[Understanding scopes for OAuth apps](https://docs.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).\"",
+    "documentationUrl": "https://docs.github.com/rest/reference/users#create-an-ssh-signing-key-for-the-authenticated-user",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "title",
+        "description": "A descriptive name for the new key.",
+        "in": "BODY",
+        "type": "string",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "key",
+        "description": "The public SSH key to add to your GitHub account. For more information, see \"[Checking for existing SSH keys](https://docs.github.com/authentication/connecting-to-github-with-ssh/checking-for-existing-ssh-keys).\"",
+        "in": "BODY",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": "^ssh-(rsa|dss|ed25519) |^ecdsa-sha2-nistp(256|384|521) ",
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      {
+        "code": 201,
+        "description": "Response",
+        "examples": [
+          {
+            "data": "{\"key\":\"2Sg8iYjAxxmI2LvUXpJjkYrMxURPc8r+dB7TJyvv1234\",\"id\":2,\"url\":\"https://api.github.com/user/keys/2\",\"title\":\"ssh-rsa AAAAB3NzaC1yc2EAAA\",\"created_at\":\"2020-06-11T21:31:57Z\"}"
+          }
+        ]
+      },
+      { "code": 304, "description": "Not modified", "examples": null },
+      {
+        "code": 401,
+        "description": "Requires authentication",
+        "examples": null
+      },
+      { "code": 403, "description": "Forbidden", "examples": null },
+      { "code": 404, "description": "Resource not found", "examples": null },
+      { "code": 422, "description": "Validation failed", "examples": null }
+    ],
+    "renamed": null
+  },
+  {
     "name": "Delete an email address for the authenticated user",
     "scope": "users",
     "id": "deleteEmailForAuthenticated",
@@ -63718,6 +63930,47 @@
       {
         "name": "key_id",
         "description": "The unique identifier of the key.",
+        "in": "PATH",
+        "type": "integer",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      { "code": 204, "description": "Response", "examples": null },
+      { "code": 304, "description": "Not modified", "examples": null },
+      {
+        "code": 401,
+        "description": "Requires authentication",
+        "examples": null
+      },
+      { "code": 403, "description": "Forbidden", "examples": null },
+      { "code": 404, "description": "Resource not found", "examples": null }
+    ],
+    "renamed": null
+  },
+  {
+    "name": "Delete an SSH signing key for the authenticated user",
+    "scope": "users",
+    "id": "deleteSshSigningKeyForAuthenticatedUser",
+    "method": "DELETE",
+    "url": "/user/ssh_signing_keys/{ssh_signing_key_id}",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "removalDate": null,
+    "description": "Deletes an SSH signing key from the authenticated user's GitHub account. You must authenticate with Basic Authentication, or you must authenticate with OAuth with at least `admin:ssh_signing_key` scope. For more information, see \"[Understanding scopes for OAuth apps](https://docs.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).\"",
+    "documentationUrl": "https://docs.github.com/rest/reference/users#delete-a-ssh-signing-key-for-the-authenticated-user",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "ssh_signing_key_id",
+        "description": "The unique identifier of the SSH signing key.",
         "in": "PATH",
         "type": "integer",
         "required": true,
@@ -64129,6 +64382,55 @@
         "examples": [
           {
             "data": "{\"key\":\"2Sg8iYjAxxmI2LvUXpJjkYrMxURPc8r+dB7TJyvv1234\",\"id\":2,\"url\":\"https://api.github.com/user/keys/2\",\"title\":\"ssh-rsa AAAAB3NzaC1yc2EAAA\",\"created_at\":\"2020-06-11T21:31:57Z\",\"verified\":false,\"read_only\":false}"
+          }
+        ]
+      },
+      { "code": 304, "description": "Not modified", "examples": null },
+      {
+        "code": 401,
+        "description": "Requires authentication",
+        "examples": null
+      },
+      { "code": 403, "description": "Forbidden", "examples": null },
+      { "code": 404, "description": "Resource not found", "examples": null }
+    ],
+    "renamed": null
+  },
+  {
+    "name": "Get an SSH signing key for the authenticated user",
+    "scope": "users",
+    "id": "getSshSigningKeyForAuthenticatedUser",
+    "method": "GET",
+    "url": "/user/ssh_signing_keys/{ssh_signing_key_id}",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "removalDate": null,
+    "description": "Gets extended details for an SSH signing key. You must authenticate with Basic Authentication, or you must authenticate with OAuth with at least `read:ssh_signing_key` scope. For more information, see \"[Understanding scopes for OAuth apps](https://docs.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).\"",
+    "documentationUrl": "https://docs.github.com/rest/reference/users#get-a-ssh-signing-key-for-the-authenticated-user",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "ssh_signing_key_id",
+        "description": "The unique identifier of the SSH signing key.",
+        "in": "PATH",
+        "type": "integer",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      {
+        "code": 200,
+        "description": "Response",
+        "examples": [
+          {
+            "data": "{\"key\":\"2Sg8iYjAxxmI2LvUXpJjkYrMxURPc8r+dB7TJyvv1234\",\"id\":2,\"url\":\"https://api.github.com/user/keys/2\",\"title\":\"ssh-rsa AAAAB3NzaC1yc2EAAA\",\"created_at\":\"2020-06-11T21:31:57Z\"}"
           }
         ]
       },
@@ -65244,6 +65546,135 @@
       },
       { "code": 403, "description": "Forbidden", "examples": null },
       { "code": 404, "description": "Resource not found", "examples": null }
+    ],
+    "renamed": null
+  },
+  {
+    "name": "List SSH signing keys for the authenticated user",
+    "scope": "users",
+    "id": "listSshSigningKeysForAuthenticatedUser",
+    "method": "GET",
+    "url": "/user/ssh_signing_keys",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "removalDate": null,
+    "description": "Lists the SSH signing keys for the authenticated user's GitHub account. You must authenticate with Basic Authentication, or you must authenticate with OAuth with at least `read:ssh_signing_key` scope. For more information, see \"[Understanding scopes for OAuth apps](https://docs.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).\"",
+    "documentationUrl": "https://docs.github.com/rest/reference/users#list-public-ssh-signing-keys-for-the-authenticated-user",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "per_page",
+        "description": "The number of results per page (max 100).",
+        "in": "QUERY",
+        "type": "integer",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "page",
+        "description": "Page number of the results to fetch.",
+        "in": "QUERY",
+        "type": "integer",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      {
+        "code": 200,
+        "description": "Response",
+        "examples": [
+          {
+            "data": "[{\"key\":\"2Sg8iYjAxxmI2LvUXpJjkYrMxURPc8r+dB7TJyvv1234\",\"id\":2,\"url\":\"https://api.github.com/user/keys/2\",\"title\":\"ssh-rsa AAAAB3NzaC1yc2EAAA\",\"created_at\":\"2020-06-11T21:31:57Z\"},{\"key\":\"2Sg8iYjAxxmI2LvUXpJjkYrMxURPc8r+dB7TJy931234\",\"id\":3,\"url\":\"https://api.github.com/user/keys/3\",\"title\":\"ssh-rsa AAAAB3NzaC1yc2EAAB\",\"created_at\":\"2020-07-11T21:31:57Z\"}]"
+          }
+        ]
+      },
+      { "code": 304, "description": "Not modified", "examples": null },
+      {
+        "code": 401,
+        "description": "Requires authentication",
+        "examples": null
+      },
+      { "code": 403, "description": "Forbidden", "examples": null },
+      { "code": 404, "description": "Resource not found", "examples": null }
+    ],
+    "renamed": null
+  },
+  {
+    "name": "List SSH signing keys for a user",
+    "scope": "users",
+    "id": "listSshSigningKeysForUser",
+    "method": "GET",
+    "url": "/users/{username}/ssh_signing_keys",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "removalDate": null,
+    "description": "Lists the SSH signing keys for a user. This operation is accessible by anyone.",
+    "documentationUrl": "https://docs.github.com/rest/reference/users#list-ssh-signing-keys-for-a-user",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "username",
+        "description": "The handle for the GitHub user account.",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "per_page",
+        "description": "The number of results per page (max 100).",
+        "in": "QUERY",
+        "type": "integer",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "page",
+        "description": "Page number of the results to fetch.",
+        "in": "QUERY",
+        "type": "integer",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      {
+        "code": 200,
+        "description": "Response",
+        "examples": [
+          {
+            "data": "[{\"key\":\"2Sg8iYjAxxmI2LvUXpJjkYrMxURPc8r+dB7TJyvv1234\",\"id\":2,\"url\":\"https://api.github.com/user/keys/2\",\"title\":\"ssh-rsa AAAAB3NzaC1yc2EAAA\",\"created_at\":\"2020-06-11T21:31:57Z\"},{\"key\":\"2Sg8iYjAxxmI2LvUXpJjkYrMxURPc8r+dB7TJy931234\",\"id\":3,\"url\":\"https://api.github.com/user/keys/3\",\"title\":\"ssh-rsa AAAAB3NzaC1yc2EAAB\",\"created_at\":\"2020-07-11T21:31:57Z\"}]"
+          }
+        ]
+      }
     ],
     "renamed": null
   },
