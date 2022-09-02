@@ -42,12 +42,17 @@ The name of the repository. The name is not case sensitive.
 </td></tr>
 <tr><td>key_prefix</td><td>yes</td><td>
 
-The prefix appended by alphanumeric characters will generate a link any time it is found in an issue, pull request, or commit.
+This prefix appended by certain characters will generate a link any time it is found in an issue, pull request, or commit.
 
 </td></tr>
 <tr><td>url_template</td><td>yes</td><td>
 
-The URL must contain `<num>` for the reference number. `<num>` matches alphanumeric characters `A-Z` (case insensitive), `0-9`, and `-`.
+The URL must contain `<num>` for the reference number. `<num>` matches different characters depending on the value of `is_alphanumeric`.
+
+</td></tr>
+<tr><td>is_alphanumeric</td><td>no</td><td>
+
+Whether this autolink reference matches alphanumeric characters. If true, the `<num>` parameter of the `url_template` matches alphanumeric characters `A-Z` (case insensitive), `0-9`, and `-`. If false, this autolink reference only matches numeric characters.
 
 </td></tr>
   </tbody>
