@@ -5221,6 +5221,19 @@
         "validation": null,
         "alias": null,
         "deprecated": null
+      },
+      {
+        "name": "head_sha",
+        "description": "Only returns workflow runs that are associated with the specified `head_sha`.",
+        "in": "QUERY",
+        "type": "string",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
       }
     ],
     "responses": [
@@ -5399,6 +5412,19 @@
         "description": "Returns workflow runs with the `check_suite_id` that you specify.",
         "in": "QUERY",
         "type": "integer",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "head_sha",
+        "description": "Only returns workflow runs that are associated with the specified `head_sha`.",
+        "in": "QUERY",
+        "type": "string",
         "required": false,
         "enum": null,
         "allowNull": false,
@@ -26689,7 +26715,7 @@
         "in": "BODY",
         "type": "string",
         "required": false,
-        "enum": null,
+        "enum": ["completed", "not_planned", "reopened"],
         "allowNull": true,
         "mapToData": null,
         "validation": null,
