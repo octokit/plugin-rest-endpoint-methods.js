@@ -9,7 +9,7 @@ name: Test
       - opened
       - synchronize
 jobs:
-  test:
+  test_matrix:
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -30,3 +30,19 @@ jobs:
         run: npm test
       - name: Build to verify integrity of code + types
         run: npm run build
+  test:
+    runs-on: ubuntu-latest
+    needs: test_matrix
+    steps:
+      - run: exit 1
+        if: ${{ needs.test_matrix.result != 'success' }}
+      - uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b
+      - uses: actions/cache@b195c997a41f41d0dab6d9aafe79e437611b78db
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+      - run: npm ci
+      - run: npm run lint
+    if: ${{ always() }}
