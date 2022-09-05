@@ -85,6 +85,11 @@ If `true` pull requests are omitted from the response (empty array).
 Returns workflow runs with the `check_suite_id` that you specify.
 
 </td></tr>
+<tr><td>head_sha</td><td>no</td><td>
+
+Only returns workflow runs that are associated with the specified `head_sha`.
+
+</td></tr>
   </tbody>
 </table>
 
