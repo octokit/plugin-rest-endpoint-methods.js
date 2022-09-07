@@ -59,7 +59,7 @@ The commit message.
 </td></tr>
 <tr><td>sha</td><td>yes</td><td>
 
-The blob SHA of the file being replaced.
+The blob SHA of the file being deleted.
 
 </td></tr>
 <tr><td>branch</td><td>no</td><td>

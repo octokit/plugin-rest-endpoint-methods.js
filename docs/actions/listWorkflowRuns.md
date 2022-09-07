@@ -1,12 +1,12 @@
 ---
-name: List workflow runs
+name: List workflow runs for a workflow
 example: octokit.rest.actions.listWorkflowRuns({ owner, repo, workflow_id })
 route: GET /repos/{owner}/{repo}/actions/workflows/{workflow_id}/runs
 scope: actions
 type: API method
 ---
 
-# List workflow runs
+# List workflow runs for a workflow
 
 List all workflow runs for a workflow. You can replace `workflow_id` with the workflow file name. For example, you could use `main.yaml`. You can use parameters to narrow the list of results. For more information about using parameters, see [Parameters](https://docs.github.com/rest/overview/resources-in-the-rest-api#parameters).
 
