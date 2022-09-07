@@ -1,14 +1,14 @@
 ---
-name: Get all package versions for a package owned by a user
+name: List package versions for a package owned by a user
 example: octokit.rest.packages.getAllPackageVersionsForPackageOwnedByUser({ package_type, package_name, username })
 route: GET /users/{username}/packages/{package_type}/{package_name}/versions
 scope: packages
 type: API method
 ---
 
-# Get all package versions for a package owned by a user
+# List package versions for a package owned by a user
 
-Returns all package versions for a public package owned by a specified user.
+Lists package versions for a public package owned by a specified user.
 
 To use this endpoint, you must authenticate using an access token with the `packages:read` scope.
 If `package_type` is not `container`, your token must also include the `repo` scope.
@@ -50,4 +50,4 @@ The handle for the GitHub user account.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/packages#get-all-package-versions-for-a-package-owned-by-a-user).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/packages#get-all-package-versions-for-a-package-owned-by-a-user).

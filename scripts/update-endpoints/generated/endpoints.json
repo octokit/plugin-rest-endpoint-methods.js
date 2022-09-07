@@ -5039,7 +5039,7 @@
     "renamed": null
   },
   {
-    "name": "List workflow runs",
+    "name": "List workflow runs for a workflow",
     "scope": "actions",
     "id": "listWorkflowRuns",
     "method": "GET",
@@ -29571,6 +29571,101 @@
     "renamed": null
   },
   {
+    "name": "Create a custom role",
+    "scope": "orgs",
+    "id": "createCustomRole",
+    "method": "POST",
+    "url": "/orgs/{org}/custom_roles",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "removalDate": null,
+    "description": "**Note**: This operation is in beta and is subject to change.\n\nCreates a custom repository role that can be used by all repositories owned by the organization.\n\nTo use this endpoint the authenticated user must be an administrator for the organization and must use an access token with `admin:org` scope.\nGitHub Apps must have the `organization_custom_roles:write` organization permission to use this endpoint.\n\nFor more information on custom repository roles, see \"[Managing custom repository roles for an organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-custom-repository-roles-for-an-organization).\"",
+    "documentationUrl": "https://docs.github.com/rest/reference/orgs#create-a-custom-role",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "org",
+        "description": "The organization name. The name is not case sensitive.",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "name",
+        "description": "The name of the custom role.",
+        "in": "BODY",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "description",
+        "description": "A short description about the intended usage of this role or what permissions it grants.",
+        "in": "BODY",
+        "type": "string",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "base_role",
+        "description": "The system role from which this role inherits permissions.",
+        "in": "BODY",
+        "type": "string",
+        "required": true,
+        "enum": ["read", "triage", "write", "maintain"],
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "permissions",
+        "description": "A list of additional permissions included in this role.",
+        "in": "BODY",
+        "type": "string[]",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      {
+        "code": 201,
+        "description": "Response",
+        "examples": [
+          {
+            "data": "{\"id\":8030,\"name\":\"Labeler\",\"description\":\"A role for issue and PR labelers\",\"base_role\":\"read\",\"permissions\":[\"add_label\"],\"organization\":{\"login\":\"github\",\"id\":9919,\"node_id\":\"MDEyOk9yZ2FuaXphdGlvbjk5MTk=\",\"avatar_url\":\"https://avatars.githubusercontent.com/u/9919?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/github\",\"html_url\":\"https://github.com/github\",\"followers_url\":\"https://api.github.com/users/github/followers\",\"following_url\":\"https://api.github.com/users/github/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/github/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/github/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/github/subscriptions\",\"organizations_url\":\"https://api.github.com/users/github/orgs\",\"repos_url\":\"https://api.github.com/users/github/repos\",\"events_url\":\"https://api.github.com/users/github/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/github/received_events\",\"type\":\"Organization\",\"site_admin\":false},\"created_at\":\"2022-07-04T22:19:11Z\",\"updated_at\":\"2022-07-04T22:19:11Z\"}"
+          }
+        ]
+      },
+      { "code": 404, "description": "Resource not found", "examples": null },
+      { "code": 422, "description": "Validation failed", "examples": null }
+    ],
+    "renamed": null
+  },
+  {
     "name": "Create an organization invitation",
     "scope": "orgs",
     "id": "createInvitation",
@@ -29836,6 +29931,50 @@
       { "code": 404, "description": "Resource not found", "examples": null },
       { "code": 422, "description": "Validation failed", "examples": null }
     ],
+    "renamed": null
+  },
+  {
+    "name": "Delete a custom role",
+    "scope": "orgs",
+    "id": "deleteCustomRole",
+    "method": "DELETE",
+    "url": "/orgs/{org}/custom_roles/{role_id}",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "removalDate": null,
+    "description": "**Note**: This operation is in beta and is subject to change.\n\nDeletes a custom role from an organization. Once the custom role has been deleted, any\nuser, team, or invitation with the deleted custom role will be reassigned the inherited role.\n\nTo use this endpoint the authenticated user must be an administrator for the organization and must use an access token with `admin:org` scope.\nGitHub Apps must have the `organization_custom_roles:write` organization permission to use this endpoint.\n\nFor more information about custom repository roles, see \"[Managing custom repository roles for an organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-custom-repository-roles-for-an-organization).\"",
+    "documentationUrl": "https://docs.github.com/rest/reference/orgs#delete-a-custom-role",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "org",
+        "description": "The organization name. The name is not case sensitive.",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "role_id",
+        "description": "The unique identifier of the role.",
+        "in": "PATH",
+        "type": "integer",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [{ "code": 204, "description": "Response", "examples": null }],
     "renamed": null
   },
   {
@@ -30473,7 +30612,7 @@
         "description": "Response - list of custom role names",
         "examples": [
           {
-            "data": "{\"total_count\":2,\"custom_roles\":[{\"id\":8030,\"name\":\"Developer\"},{\"id\":8031,\"name\":\"Designer\"}]}"
+            "data": "{\"total_count\":2,\"custom_roles\":[{\"id\":8030,\"name\":\"Security Engineer\",\"description\":\"Able to contribute code and maintain the security pipeline\",\"base_role\":\"maintain\",\"permissions\":[\"delete_alerts_code_scanning\"],\"organization\":{\"login\":\"github\",\"id\":9919,\"node_id\":\"MDEyOk9yZ2FuaXphdGlvbjk5MTk=\",\"avatar_url\":\"https://avatars.githubusercontent.com/u/9919?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/github\",\"html_url\":\"https://github.com/github\",\"followers_url\":\"https://api.github.com/users/github/followers\",\"following_url\":\"https://api.github.com/users/github/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/github/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/github/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/github/subscriptions\",\"organizations_url\":\"https://api.github.com/users/github/orgs\",\"repos_url\":\"https://api.github.com/users/github/repos\",\"events_url\":\"https://api.github.com/users/github/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/github/received_events\",\"type\":\"Organization\",\"site_admin\":false},\"created_at\":\"2022-07-04T22:19:11Z\",\"updated_at\":\"2022-07-04T22:20:11Z\"},{\"id\":8031,\"name\":\"Community manager\",\"description\":\"Able to handle all the community interactions without being able to contribute code\",\"base_role\":\"read\",\"permissions\":[\"mark_as_duplicate\",\"manage_settings_pages\",\"manage_settings_wiki\",\"set_social_preview\",\"edit_repo_metadata\",\"toggle_discussion_comment_minimize\"],\"organization\":{\"login\":\"github\",\"id\":9919,\"node_id\":\"MDEyOk9yZ2FuaXphdGlvbjk5MTk=\",\"avatar_url\":\"https://avatars.githubusercontent.com/u/9919?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/github\",\"html_url\":\"https://github.com/github\",\"followers_url\":\"https://api.github.com/users/github/followers\",\"following_url\":\"https://api.github.com/users/github/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/github/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/github/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/github/subscriptions\",\"organizations_url\":\"https://api.github.com/users/github/orgs\",\"repos_url\":\"https://api.github.com/users/github/repos\",\"events_url\":\"https://api.github.com/users/github/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/github/received_events\",\"type\":\"Organization\",\"site_admin\":false},\"created_at\":\"2022-07-05T12:01:11Z\",\"updated_at\":\"2022-07-05T12:20:11Z\"}]}"
           }
         ]
       }
@@ -30545,6 +30684,47 @@
         ]
       },
       { "code": 404, "description": "Resource not found", "examples": null }
+    ],
+    "renamed": null
+  },
+  {
+    "name": "List fine-grained permissions for an organization",
+    "scope": "orgs",
+    "id": "listFineGrainedPermissions",
+    "method": "GET",
+    "url": "/orgs/{org}/fine_grained_permissions",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "removalDate": null,
+    "description": "**Note**: This operation is in beta and subject to change.\n\nLists the fine-grained permissions available for an organization.\n\nTo use this endpoint the authenticated user must be an administrator for the organization or of an repository of the organizaiton and must use an access token with `admin:org repo` scope.\nGitHub Apps must have the `organization_custom_roles:read` organization permission to use this endpoint.",
+    "documentationUrl": "https://docs.github.com/rest/reference/orgs#list-fine-grained-permissions-for-an-organization",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "org",
+        "description": "The organization name. The name is not case sensitive.",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      {
+        "code": 200,
+        "description": "Response",
+        "examples": [
+          {
+            "data": "[{\"name\":\"add_assignee\",\"description\":\"Assign or remove a user\"},{\"name\":\"remove_assignee\",\"description\":\"Remove an assigned user\"},{\"name\":\"add_label\",\"description\":\"Add or remove a label\"}]"
+          }
+        ]
+      }
     ],
     "renamed": null
   },
@@ -32235,6 +32415,114 @@
     "renamed": null
   },
   {
+    "name": "Update a custom role",
+    "scope": "orgs",
+    "id": "updateCustomRole",
+    "method": "PATCH",
+    "url": "/orgs/{org}/custom_roles/{role_id}",
+    "isDeprecated": false,
+    "deprecationDate": null,
+    "removalDate": null,
+    "description": "**Note**: This operation is in beta and subject to change.\n\nUpdates a custom repository role that can be used by all repositories owned by the organization.\n\nTo use this endpoint the authenticated user must be an administrator for the organization and must use an access token with `admin:org` scope.\nGitHub Apps must have the `organization_custom_roles:write` organization permission to use this endpoint.\n\nFor more information about custom repository roles, see \"[Managing custom repository roles for an organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-custom-repository-roles-for-an-organization).\"",
+    "documentationUrl": "https://docs.github.com/rest/reference/orgs#update-a-custom-role",
+    "previews": [],
+    "headers": [],
+    "parameters": [
+      {
+        "name": "org",
+        "description": "The organization name. The name is not case sensitive.",
+        "in": "PATH",
+        "type": "string",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "role_id",
+        "description": "The unique identifier of the role.",
+        "in": "PATH",
+        "type": "integer",
+        "required": true,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "name",
+        "description": "The name of the custom role.",
+        "in": "BODY",
+        "type": "string",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "description",
+        "description": "A short description about who this role is for or what permissions it grants.",
+        "in": "BODY",
+        "type": "string",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "base_role",
+        "description": "The system role from which this role inherits permissions.",
+        "in": "BODY",
+        "type": "string",
+        "required": false,
+        "enum": ["read", "triage", "write", "maintain"],
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      },
+      {
+        "name": "permissions",
+        "description": "A list of additional permissions included in this role. If specified, these permissions will replace any currently set on the role.",
+        "in": "BODY",
+        "type": "string[]",
+        "required": false,
+        "enum": null,
+        "allowNull": false,
+        "mapToData": null,
+        "validation": null,
+        "alias": null,
+        "deprecated": null
+      }
+    ],
+    "responses": [
+      {
+        "code": 200,
+        "description": "Response",
+        "examples": [
+          {
+            "data": "{\"id\":8030,\"name\":\"Labeler\",\"description\":\"A role for issue and PR labelers\",\"base_role\":\"read\",\"permissions\":[\"add_label\",\"remove_label\"],\"organization\":{\"login\":\"github\",\"id\":9919,\"node_id\":\"MDEyOk9yZ2FuaXphdGlvbjk5MTk=\",\"avatar_url\":\"https://avatars.githubusercontent.com/u/9919?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/github\",\"html_url\":\"https://github.com/github\",\"followers_url\":\"https://api.github.com/users/github/followers\",\"following_url\":\"https://api.github.com/users/github/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/github/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/github/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/github/subscriptions\",\"organizations_url\":\"https://api.github.com/users/github/orgs\",\"repos_url\":\"https://api.github.com/users/github/repos\",\"events_url\":\"https://api.github.com/users/github/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/github/received_events\",\"type\":\"Organization\",\"site_admin\":false},\"created_at\":\"2022-07-04T22:19:11Z\",\"updated_at\":\"2022-07-04T22:19:11Z\"}"
+          }
+        ]
+      },
+      { "code": 404, "description": "Resource not found", "examples": null },
+      { "code": 422, "description": "Validation failed", "examples": null }
+    ],
+    "renamed": null
+  },
+  {
     "name": "Update an organization membership for the authenticated user",
     "scope": "orgs",
     "id": "updateMembershipForAuthenticatedUser",
@@ -32967,7 +33255,7 @@
     "renamed": null
   },
   {
-    "name": "Get all package versions for a package owned by an organization",
+    "name": "List package versions for a package owned by an organization",
     "scope": "packages",
     "id": "getAllPackageVersionsForAPackageOwnedByAnOrg",
     "method": "GET",
@@ -32975,8 +33263,8 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "removalDate": null,
-    "description": "Returns all package versions for a package owned by an organization.\n\nTo use this endpoint, you must authenticate using an access token with the `packages:read` scope.\nIf `package_type` is not `container`, your token must also include the `repo` scope.",
-    "documentationUrl": "https://docs.github.com/rest/reference/packages#get-all-package-versions-for-a-package-owned-by-an-organization",
+    "description": "Lists package versions for a package owned by an organization.\n\nTo use this endpoint, you must authenticate using an access token with the `packages:read` scope.\nIf `package_type` is not `container`, your token must also include the `repo` scope.",
+    "documentationUrl": "https://docs.github.com/rest/packages#get-all-package-versions-for-a-package-owned-by-an-organization",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -33091,7 +33379,7 @@
     }
   },
   {
-    "name": "Get all package versions for a package owned by the authenticated user",
+    "name": "List package versions for a package owned by the authenticated user",
     "scope": "packages",
     "id": "getAllPackageVersionsForAPackageOwnedByTheAuthenticatedUser",
     "method": "GET",
@@ -33099,8 +33387,8 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "removalDate": null,
-    "description": "Returns all package versions for a package owned by the authenticated user.\n\nTo use this endpoint, you must authenticate using an access token with the `packages:read` scope.\nIf `package_type` is not `container`, your token must also include the `repo` scope.",
-    "documentationUrl": "https://docs.github.com/rest/reference/packages#get-all-package-versions-for-a-package-owned-by-the-authenticated-user",
+    "description": "Lists package versions for a package owned by the authenticated user.\n\nTo use this endpoint, you must authenticate using an access token with the `packages:read` scope.\nIf `package_type` is not `container`, your token must also include the `repo` scope.",
+    "documentationUrl": "https://docs.github.com/rest/packages#get-all-package-versions-for-a-package-owned-by-the-authenticated-user",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -33202,7 +33490,7 @@
     }
   },
   {
-    "name": "Get all package versions for a package owned by the authenticated user",
+    "name": "List package versions for a package owned by the authenticated user",
     "scope": "packages",
     "id": "getAllPackageVersionsForPackageOwnedByAuthenticatedUser",
     "method": "GET",
@@ -33210,8 +33498,8 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "removalDate": null,
-    "description": "Returns all package versions for a package owned by the authenticated user.\n\nTo use this endpoint, you must authenticate using an access token with the `packages:read` scope.\nIf `package_type` is not `container`, your token must also include the `repo` scope.",
-    "documentationUrl": "https://docs.github.com/rest/reference/packages#get-all-package-versions-for-a-package-owned-by-the-authenticated-user",
+    "description": "Lists package versions for a package owned by the authenticated user.\n\nTo use this endpoint, you must authenticate using an access token with the `packages:read` scope.\nIf `package_type` is not `container`, your token must also include the `repo` scope.",
+    "documentationUrl": "https://docs.github.com/rest/packages#get-all-package-versions-for-a-package-owned-by-the-authenticated-user",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -33302,7 +33590,7 @@
     "renamed": null
   },
   {
-    "name": "Get all package versions for a package owned by an organization",
+    "name": "List package versions for a package owned by an organization",
     "scope": "packages",
     "id": "getAllPackageVersionsForPackageOwnedByOrg",
     "method": "GET",
@@ -33310,8 +33598,8 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "removalDate": null,
-    "description": "Returns all package versions for a package owned by an organization.\n\nTo use this endpoint, you must authenticate using an access token with the `packages:read` scope.\nIf `package_type` is not `container`, your token must also include the `repo` scope.",
-    "documentationUrl": "https://docs.github.com/rest/reference/packages#get-all-package-versions-for-a-package-owned-by-an-organization",
+    "description": "Lists package versions for a package owned by an organization.\n\nTo use this endpoint, you must authenticate using an access token with the `packages:read` scope.\nIf `package_type` is not `container`, your token must also include the `repo` scope.",
+    "documentationUrl": "https://docs.github.com/rest/packages#get-all-package-versions-for-a-package-owned-by-an-organization",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -33415,7 +33703,7 @@
     "renamed": null
   },
   {
-    "name": "Get all package versions for a package owned by a user",
+    "name": "List package versions for a package owned by a user",
     "scope": "packages",
     "id": "getAllPackageVersionsForPackageOwnedByUser",
     "method": "GET",
@@ -33423,8 +33711,8 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "removalDate": null,
-    "description": "Returns all package versions for a public package owned by a specified user.\n\nTo use this endpoint, you must authenticate using an access token with the `packages:read` scope.\nIf `package_type` is not `container`, your token must also include the `repo` scope.",
-    "documentationUrl": "https://docs.github.com/rest/reference/packages#get-all-package-versions-for-a-package-owned-by-a-user",
+    "description": "Lists package versions for a public package owned by a specified user.\n\nTo use this endpoint, you must authenticate using an access token with the `packages:read` scope.\nIf `package_type` is not `container`, your token must also include the `repo` scope.",
+    "documentationUrl": "https://docs.github.com/rest/packages#get-all-package-versions-for-a-package-owned-by-a-user",
     "previews": [],
     "headers": [],
     "parameters": [
@@ -44174,7 +44462,7 @@
       },
       {
         "name": "use_squash_pr_title_as_default",
-        "description": "Either `true` to allow squash-merge commits to use pull request title, or `false` to use commit message.",
+        "description": "Either `true` to allow squash-merge commits to use pull request title, or `false` to use commit message. **This property has been deprecated. Please use `squash_merge_commit_title` instead.",
         "in": "BODY",
         "type": "boolean",
         "required": false,
@@ -46215,7 +46503,7 @@
       },
       {
         "name": "sha",
-        "description": "The blob SHA of the file being replaced.",
+        "description": "The blob SHA of the file being deleted.",
         "in": "BODY",
         "type": "string",
         "required": true,
@@ -55130,7 +55418,7 @@
       },
       {
         "name": "use_squash_pr_title_as_default",
-        "description": "Either `true` to allow squash-merge commits to use pull request title, or `false` to use commit message.",
+        "description": "Either `true` to allow squash-merge commits to use pull request title, or `false` to use commit message. **This property has been deprecated. Please use `squash_merge_commit_title` instead.",
         "in": "BODY",
         "type": "boolean",
         "required": false,

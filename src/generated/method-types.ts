@@ -5929,6 +5929,25 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
+     * **Note**: This operation is in beta and is subject to change.
+     *
+     * Creates a custom repository role that can be used by all repositories owned by the organization.
+     *
+     * To use this endpoint the authenticated user must be an administrator for the organization and must use an access token with `admin:org` scope.
+     * GitHub Apps must have the `organization_custom_roles:write` organization permission to use this endpoint.
+     *
+     * For more information on custom repository roles, see "[Managing custom repository roles for an organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-custom-repository-roles-for-an-organization)."
+     */
+    createCustomRole: {
+      (
+        params?: RestEndpointMethodTypes["orgs"]["createCustomRole"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["orgs"]["createCustomRole"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
      * Invite people to an organization by using their GitHub user ID or their email address. In order to create invitations in an organization, the authenticated user must be an organization owner.
      *
      * This endpoint triggers [notifications](https://docs.github.com/en/github/managing-subscriptions-and-notifications-on-github/about-notifications). Creating content too quickly using this endpoint may result in secondary rate limiting. See "[Secondary rate limits](https://docs.github.com/rest/overview/resources-in-the-rest-api#secondary-rate-limits)" and "[Dealing with secondary rate limits](https://docs.github.com/rest/guides/best-practices-for-integrators#dealing-with-secondary-rate-limits)" for details.
@@ -5949,6 +5968,26 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["orgs"]["createWebhook"]["parameters"]
       ): Promise<RestEndpointMethodTypes["orgs"]["createWebhook"]["response"]>;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * **Note**: This operation is in beta and is subject to change.
+     *
+     * Deletes a custom role from an organization. Once the custom role has been deleted, any
+     * user, team, or invitation with the deleted custom role will be reassigned the inherited role.
+     *
+     * To use this endpoint the authenticated user must be an administrator for the organization and must use an access token with `admin:org` scope.
+     * GitHub Apps must have the `organization_custom_roles:write` organization permission to use this endpoint.
+     *
+     * For more information about custom repository roles, see "[Managing custom repository roles for an organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-custom-repository-roles-for-an-organization)."
+     */
+    deleteCustomRole: {
+      (
+        params?: RestEndpointMethodTypes["orgs"]["deleteCustomRole"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["orgs"]["deleteCustomRole"]["response"]
+      >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
@@ -6111,6 +6150,23 @@ export type RestEndpointMethods = {
         params?: RestEndpointMethodTypes["orgs"]["listFailedInvitations"]["parameters"]
       ): Promise<
         RestEndpointMethodTypes["orgs"]["listFailedInvitations"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * **Note**: This operation is in beta and subject to change.
+     *
+     * Lists the fine-grained permissions available for an organization.
+     *
+     * To use this endpoint the authenticated user must be an administrator for the organization or of an repository of the organizaiton and must use an access token with `admin:org repo` scope.
+     * GitHub Apps must have the `organization_custom_roles:read` organization permission to use this endpoint.
+     */
+    listFineGrainedPermissions: {
+      (
+        params?: RestEndpointMethodTypes["orgs"]["listFineGrainedPermissions"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["orgs"]["listFineGrainedPermissions"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -6385,6 +6441,25 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
+    /**
+     * **Note**: This operation is in beta and subject to change.
+     *
+     * Updates a custom repository role that can be used by all repositories owned by the organization.
+     *
+     * To use this endpoint the authenticated user must be an administrator for the organization and must use an access token with `admin:org` scope.
+     * GitHub Apps must have the `organization_custom_roles:write` organization permission to use this endpoint.
+     *
+     * For more information about custom repository roles, see "[Managing custom repository roles for an organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-custom-repository-roles-for-an-organization)."
+     */
+    updateCustomRole: {
+      (
+        params?: RestEndpointMethodTypes["orgs"]["updateCustomRole"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["orgs"]["updateCustomRole"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
 
     updateMembershipForAuthenticatedUser: {
       (
@@ -6516,7 +6591,7 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Returns all package versions for a package owned by an organization.
+     * Lists package versions for a package owned by an organization.
      *
      * To use this endpoint, you must authenticate using an access token with the `packages:read` scope.
      * If `package_type` is not `container`, your token must also include the `repo` scope.
@@ -6532,7 +6607,7 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Returns all package versions for a package owned by the authenticated user.
+     * Lists package versions for a package owned by the authenticated user.
      *
      * To use this endpoint, you must authenticate using an access token with the `packages:read` scope.
      * If `package_type` is not `container`, your token must also include the `repo` scope.
@@ -6548,7 +6623,7 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Returns all package versions for a package owned by the authenticated user.
+     * Lists package versions for a package owned by the authenticated user.
      *
      * To use this endpoint, you must authenticate using an access token with the `packages:read` scope.
      * If `package_type` is not `container`, your token must also include the `repo` scope.
@@ -6563,7 +6638,7 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Returns all package versions for a package owned by an organization.
+     * Lists package versions for a package owned by an organization.
      *
      * To use this endpoint, you must authenticate using an access token with the `packages:read` scope.
      * If `package_type` is not `container`, your token must also include the `repo` scope.
@@ -6578,7 +6653,7 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Returns all package versions for a public package owned by a specified user.
+     * Lists package versions for a public package owned by a specified user.
      *
      * To use this endpoint, you must authenticate using an access token with the `packages:read` scope.
      * If `package_type` is not `container`, your token must also include the `repo` scope.

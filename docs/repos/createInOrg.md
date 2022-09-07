@@ -132,7 +132,7 @@ Either `true` to allow automatically deleting head branches when pull requests a
 </td></tr>
 <tr><td>use_squash_pr_title_as_default</td><td>no</td><td>
 
-Either `true` to allow squash-merge commits to use pull request title, or `false` to use commit message.
+Either `true` to allow squash-merge commits to use pull request title, or `false` to use commit message. \*\*This property has been deprecated. Please use `squash_merge_commit_title` instead.
 
 </td></tr>
 <tr><td>squash_merge_commit_title</td><td>no</td><td>

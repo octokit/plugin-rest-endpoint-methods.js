@@ -3188,6 +3188,14 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["PUT /orgs/{org}/outside_collaborators/{username}"]["response"];
     };
+    createCustomRole: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["POST /orgs/{org}/custom_roles"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["POST /orgs/{org}/custom_roles"]["response"];
+    };
     createInvitation: {
       parameters: RequestParameters &
         Omit<
@@ -3203,6 +3211,14 @@ export type RestEndpointMethodTypes = {
           "baseUrl" | "headers" | "mediaType"
         >;
       response: Endpoints["POST /orgs/{org}/hooks"]["response"];
+    };
+    deleteCustomRole: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["DELETE /orgs/{org}/custom_roles/{role_id}"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["DELETE /orgs/{org}/custom_roles/{role_id}"]["response"];
     };
     deleteWebhook: {
       parameters: RequestParameters &
@@ -3307,6 +3323,14 @@ export type RestEndpointMethodTypes = {
           "baseUrl" | "headers" | "mediaType"
         >;
       response: Endpoints["GET /orgs/{org}/failed_invitations"]["response"];
+    };
+    listFineGrainedPermissions: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /orgs/{org}/fine_grained_permissions"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /orgs/{org}/fine_grained_permissions"]["response"];
     };
     listForAuthenticatedUser: {
       parameters: RequestParameters &
@@ -3483,6 +3507,14 @@ export type RestEndpointMethodTypes = {
           "baseUrl" | "headers" | "mediaType"
         >;
       response: Endpoints["PATCH /orgs/{org}"]["response"];
+    };
+    updateCustomRole: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["PATCH /orgs/{org}/custom_roles/{role_id}"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["PATCH /orgs/{org}/custom_roles/{role_id}"]["response"];
     };
     updateMembershipForAuthenticatedUser: {
       parameters: RequestParameters &

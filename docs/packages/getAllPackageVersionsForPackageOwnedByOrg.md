@@ -1,14 +1,14 @@
 ---
-name: Get all package versions for a package owned by an organization
+name: List package versions for a package owned by an organization
 example: octokit.rest.packages.getAllPackageVersionsForPackageOwnedByOrg({ package_type, package_name, org })
 route: GET /orgs/{org}/packages/{package_type}/{package_name}/versions
 scope: packages
 type: API method
 ---
 
-# Get all package versions for a package owned by an organization
+# List package versions for a package owned by an organization
 
-Returns all package versions for a package owned by an organization.
+Lists package versions for a package owned by an organization.
 
 To use this endpoint, you must authenticate using an access token with the `packages:read` scope.
 If `package_type` is not `container`, your token must also include the `repo` scope.
@@ -65,4 +65,4 @@ The state of the package, either active or deleted.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/packages#get-all-package-versions-for-a-package-owned-by-an-organization).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/packages#get-all-package-versions-for-a-package-owned-by-an-organization).
