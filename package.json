@@ -109,14 +109,6 @@
   "publishConfig": {
     "access": "public"
   },
-  "renovate": {
-    "extends": [
-      "github>octokit/.github"
-    ],
-    "ignoreDeps": [
-      "sort-keys"
-    ]
-  },
   "engines": {
     "node": ">= 14"
   }
