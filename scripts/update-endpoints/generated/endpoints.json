@@ -22414,7 +22414,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "removalDate": null,
-    "description": "Returns a single tree using the SHA1 value for that tree.\n\nIf `truncated` is `true` in the response then the number of items in the `tree` array exceeded our maximum limit. If you need to fetch more items, use the non-recursive method of fetching trees, and fetch one sub-tree at a time.",
+    "description": "Returns a single tree using the SHA1 value for that tree.\n\nIf `truncated` is `true` in the response then the number of items in the `tree` array exceeded our maximum limit. If you need to fetch more items, use the non-recursive method of fetching trees, and fetch one sub-tree at a time.\n\n\n**Note**: The limit for the `tree` array is 100,000 entries with a maximum size of 7 MB when using the `recursive` parameter.",
     "documentationUrl": "https://docs.github.com/rest/reference/git#get-a-tree",
     "previews": [],
     "headers": [],
@@ -63249,6 +63249,15 @@
     ],
     "responses": [
       {
+        "code": 200,
+        "description": "Response when the updated information already exists",
+        "examples": [
+          {
+            "data": "{\"id\":1,\"node_id\":\"MDQ6VGVhbTE=\",\"url\":\"https://api.github.com/teams/1\",\"html_url\":\"https://github.com/orgs/github/teams/justice-league\",\"name\":\"Justice League\",\"slug\":\"justice-league\",\"description\":\"A great team.\",\"privacy\":\"closed\",\"permission\":\"admin\",\"members_url\":\"https://api.github.com/teams/1/members{/member}\",\"repositories_url\":\"https://api.github.com/teams/1/repos\",\"parent\":null,\"members_count\":3,\"repos_count\":10,\"created_at\":\"2017-07-14T16:53:42Z\",\"updated_at\":\"2017-08-17T12:37:15Z\",\"organization\":{\"login\":\"github\",\"id\":1,\"node_id\":\"MDEyOk9yZ2FuaXphdGlvbjE=\",\"url\":\"https://api.github.com/orgs/github\",\"repos_url\":\"https://api.github.com/orgs/github/repos\",\"events_url\":\"https://api.github.com/orgs/github/events\",\"hooks_url\":\"https://api.github.com/orgs/github/hooks\",\"issues_url\":\"https://api.github.com/orgs/github/issues\",\"members_url\":\"https://api.github.com/orgs/github/members{/member}\",\"public_members_url\":\"https://api.github.com/orgs/github/public_members{/member}\",\"avatar_url\":\"https://github.com/images/error/octocat_happy.gif\",\"description\":\"A great organization\",\"name\":\"github\",\"company\":\"GitHub\",\"blog\":\"https://github.com/blog\",\"location\":\"San Francisco\",\"email\":\"octocat@github.com\",\"is_verified\":true,\"has_organization_projects\":true,\"has_repository_projects\":true,\"public_repos\":2,\"public_gists\":1,\"followers\":20,\"following\":0,\"html_url\":\"https://github.com/octocat\",\"created_at\":\"2008-01-14T04:33:35Z\",\"updated_at\":\"2017-08-17T12:37:15Z\",\"type\":\"Organization\"}}"
+          }
+        ]
+      },
+      {
         "code": 201,
         "description": "Response",
         "examples": [
@@ -63256,7 +63265,10 @@
             "data": "{\"id\":1,\"node_id\":\"MDQ6VGVhbTE=\",\"url\":\"https://api.github.com/teams/1\",\"html_url\":\"https://github.com/orgs/github/teams/justice-league\",\"name\":\"Justice League\",\"slug\":\"justice-league\",\"description\":\"A great team.\",\"privacy\":\"closed\",\"permission\":\"admin\",\"members_url\":\"https://api.github.com/teams/1/members{/member}\",\"repositories_url\":\"https://api.github.com/teams/1/repos\",\"parent\":null,\"members_count\":3,\"repos_count\":10,\"created_at\":\"2017-07-14T16:53:42Z\",\"updated_at\":\"2017-08-17T12:37:15Z\",\"organization\":{\"login\":\"github\",\"id\":1,\"node_id\":\"MDEyOk9yZ2FuaXphdGlvbjE=\",\"url\":\"https://api.github.com/orgs/github\",\"repos_url\":\"https://api.github.com/orgs/github/repos\",\"events_url\":\"https://api.github.com/orgs/github/events\",\"hooks_url\":\"https://api.github.com/orgs/github/hooks\",\"issues_url\":\"https://api.github.com/orgs/github/issues\",\"members_url\":\"https://api.github.com/orgs/github/members{/member}\",\"public_members_url\":\"https://api.github.com/orgs/github/public_members{/member}\",\"avatar_url\":\"https://github.com/images/error/octocat_happy.gif\",\"description\":\"A great organization\",\"name\":\"github\",\"company\":\"GitHub\",\"blog\":\"https://github.com/blog\",\"location\":\"San Francisco\",\"email\":\"octocat@github.com\",\"is_verified\":true,\"has_organization_projects\":true,\"has_repository_projects\":true,\"public_repos\":2,\"public_gists\":1,\"followers\":20,\"following\":0,\"html_url\":\"https://github.com/octocat\",\"created_at\":\"2008-01-14T04:33:35Z\",\"updated_at\":\"2017-08-17T12:37:15Z\",\"type\":\"Organization\"}}"
           }
         ]
-      }
+      },
+      { "code": 403, "description": "Forbidden", "examples": null },
+      { "code": 404, "description": "Resource not found", "examples": null },
+      { "code": 422, "description": "Validation failed", "examples": null }
     ],
     "renamed": null
   },
@@ -63982,7 +63994,7 @@
         "enum": null,
         "allowNull": false,
         "mapToData": null,
-        "validation": "^ssh-(rsa|dss|ed25519) |^ecdsa-sha2-nistp(256|384|521) ",
+        "validation": "^ssh-(rsa|dss|ed25519) |^ecdsa-sha2-nistp(256|384|521) |^(sk-ssh-ed25519|sk-ecdsa-sha2-nistp256)@openssh.com ",
         "alias": null,
         "deprecated": null
       }
