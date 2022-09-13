@@ -8,6 +8,8 @@ type: API method
 
 # List repository webhooks
 
+Lists webhooks for a repository. `last response` may return null if there have not been any deliveries within 30 days.
+
 ```js
 octokit.rest.repos.listWebhooks({
   owner,
