@@ -8,7 +8,7 @@ type: API method
 
 # Create or update file contents
 
-Creates a new file or replaces an existing file in a repository.
+Creates a new file or replaces an existing file in a repository. You must authenticate using an access token with the `workflow` scope to use this endpoint.
 
 ```js
 octokit.rest.repos.createOrUpdateFileContents({

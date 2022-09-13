@@ -50,6 +50,11 @@ The name of the repository. The name is not case sensitive.
 Filter collaborators returned by their affiliation. `outside` means all outside collaborators of an organization-owned repository. `direct` means all collaborators with permissions to an organization-owned repository, regardless of organization membership status. `all` means all collaborators the authenticated user can see.
 
 </td></tr>
+<tr><td>permission</td><td>no</td><td>
+
+Filter collaborators by the permissions they have on the repository. If not specified, all collaborators will be returned.
+
+</td></tr>
 <tr><td>per_page</td><td>no</td><td>
 
 The number of results per page (max 100).

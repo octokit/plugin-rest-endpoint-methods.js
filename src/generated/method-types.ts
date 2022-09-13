@@ -8292,7 +8292,7 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Creates a new file or replaces an existing file in a repository.
+     * Creates a new file or replaces an existing file in a repository. You must authenticate using an access token with the `workflow` scope to use this endpoint.
      */
     createOrUpdateFileContents: {
       (
@@ -9805,7 +9805,9 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
-
+    /**
+     * Lists webhooks for a repository. `last response` may return null if there have not been any deliveries within 30 days.
+     */
     listWebhooks: {
       (
         params?: RestEndpointMethodTypes["repos"]["listWebhooks"]["parameters"]
