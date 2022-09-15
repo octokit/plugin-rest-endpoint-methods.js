@@ -55,12 +55,12 @@ Filter pulls by base branch name. Example: `gh-pages`.
 </td></tr>
 <tr><td>sort</td><td>no</td><td>
 
-What to sort results by. Can be either `created`, `updated`, `popularity` (comment count) or `long-running` (age, filtering by pulls updated in the last month).
+What to sort results by. `popularity` will sort by the number of comments. `long-running` will sort by date created and will limit the results to pull requests that have been open for more than a month and have had activity within the past month.
 
 </td></tr>
 <tr><td>direction</td><td>no</td><td>
 
-The direction of the sort. Can be either `asc` or `desc`. Default: `desc` when sort is `created` or sort is not specified, otherwise `asc`.
+The direction of the sort. Default: `desc` when sort is `created` or sort is not specified, otherwise `asc`.
 
 </td></tr>
 <tr><td>per_page</td><td>no</td><td>

@@ -50,7 +50,7 @@ If an `integer` is passed, it should refer to a milestone by its `number` field.
 </td></tr>
 <tr><td>state</td><td>no</td><td>
 
-Indicates the state of the issues to return. Can be either `open`, `closed`, or `all`.
+Indicates the state of the issues to return.
 
 </td></tr>
 <tr><td>assignee</td><td>no</td><td>
@@ -75,7 +75,7 @@ A list of comma separated label names. Example: `bug,ui,@high`
 </td></tr>
 <tr><td>sort</td><td>no</td><td>
 
-What to sort results by. Can be either `created`, `updated`, `comments`.
+What to sort results by.
 
 </td></tr>
 <tr><td>direction</td><td>no</td><td>

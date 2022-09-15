@@ -32,7 +32,7 @@ The Markdown text to render in HTML.
 </td></tr>
 <tr><td>mode</td><td>no</td><td>
 
-The rendering mode. Can be either `markdown` or `gfm`.
+The rendering mode.
 
 </td></tr>
 <tr><td>context</td><td>no</td><td>

@@ -34,7 +34,7 @@ The organization name. The name is not case sensitive.
 </td></tr>
 <tr><td>state</td><td>no</td><td>
 
-Indicates the state of the projects to return. Can be either `open`, `closed`, or `all`.
+Indicates the state of the projects to return.
 
 </td></tr>
 <tr><td>per_page</td><td>no</td><td>
