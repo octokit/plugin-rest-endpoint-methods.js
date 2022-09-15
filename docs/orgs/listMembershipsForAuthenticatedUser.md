@@ -25,7 +25,7 @@ octokit.rest.orgs.listMembershipsForAuthenticatedUser();
   <tbody>
     <tr><td>state</td><td>no</td><td>
 
-Indicates the state of the memberships to return. Can be either `active` or `pending`. If not specified, the API returns both active and pending memberships.
+Indicates the state of the memberships to return. If not specified, the API returns both active and pending memberships.
 
 </td></tr>
 <tr><td>per_page</td><td>no</td><td>

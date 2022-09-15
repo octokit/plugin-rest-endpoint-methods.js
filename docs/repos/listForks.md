@@ -38,7 +38,7 @@ The name of the repository. The name is not case sensitive.
 </td></tr>
 <tr><td>sort</td><td>no</td><td>
 
-The sort order. Can be either `newest`, `oldest`, or `stargazers`.
+The sort order. `stargazers` will sort by star count.
 
 </td></tr>
 <tr><td>per_page</td><td>no</td><td>

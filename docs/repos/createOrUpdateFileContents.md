@@ -10,6 +10,8 @@ type: API method
 
 Creates a new file or replaces an existing file in a repository. You must authenticate using an access token with the `workflow` scope to use this endpoint.
 
+**Note:** If you use this endpoint and the "[Delete a file](https://docs.github.com/rest/reference/repos/#delete-file)" endpoint in parallel, the concurrent requests will conflict and you will receive errors. You must use these endpoints serially instead.
+
 ```js
 octokit.rest.repos.createOrUpdateFileContents({
         owner,

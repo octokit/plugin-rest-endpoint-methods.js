@@ -13843,7 +13843,7 @@
       { "code": 400, "description": "Bad Request", "examples": null },
       {
         "code": 403,
-        "description": "Response if the repository is archived or if github advanced security is not enabled for this repository",
+        "description": "Response if the repository is archived or if GitHub Advanced Security is not enabled for this repository",
         "examples": null
       },
       { "code": 404, "description": "Resource not found", "examples": null },
@@ -15097,7 +15097,7 @@
       },
       {
         "code": 403,
-        "description": "Response if the repository is archived or if github advanced security is not enabled for this repository",
+        "description": "Response if the repository is archived or if GitHub Advanced Security is not enabled for this repository",
         "examples": null
       },
       { "code": 404, "description": "Resource not found", "examples": null },
@@ -15241,7 +15241,7 @@
       },
       {
         "code": 403,
-        "description": "Response if the repository is archived or if github advanced security is not enabled for this repository",
+        "description": "Response if the repository is archived or if GitHub Advanced Security is not enabled for this repository",
         "examples": null
       },
       { "code": 404, "description": "Resource not found", "examples": null },
@@ -24530,7 +24530,7 @@
       },
       {
         "name": "state",
-        "description": "Indicates the state of the issues to return. Can be either `open`, `closed`, or `all`.",
+        "description": "Indicates the state of the issues to return.",
         "in": "QUERY",
         "type": "string",
         "required": false,
@@ -24556,7 +24556,7 @@
       },
       {
         "name": "sort",
-        "description": "What to sort results by. Can be either `created`, `updated`, `comments`.",
+        "description": "What to sort results by.",
         "in": "QUERY",
         "type": "string",
         "required": false,
@@ -25304,7 +25304,7 @@
       },
       {
         "name": "state",
-        "description": "Indicates the state of the issues to return. Can be either `open`, `closed`, or `all`.",
+        "description": "Indicates the state of the issues to return.",
         "in": "QUERY",
         "type": "string",
         "required": false,
@@ -25330,7 +25330,7 @@
       },
       {
         "name": "sort",
-        "description": "What to sort results by. Can be either `created`, `updated`, `comments`.",
+        "description": "What to sort results by.",
         "in": "QUERY",
         "type": "string",
         "required": false,
@@ -25458,7 +25458,7 @@
       },
       {
         "name": "state",
-        "description": "Indicates the state of the issues to return. Can be either `open`, `closed`, or `all`.",
+        "description": "Indicates the state of the issues to return.",
         "in": "QUERY",
         "type": "string",
         "required": false,
@@ -25484,7 +25484,7 @@
       },
       {
         "name": "sort",
-        "description": "What to sort results by. Can be either `created`, `updated`, `comments`.",
+        "description": "What to sort results by.",
         "in": "QUERY",
         "type": "string",
         "required": false,
@@ -25617,7 +25617,7 @@
       },
       {
         "name": "state",
-        "description": "Indicates the state of the issues to return. Can be either `open`, `closed`, or `all`.",
+        "description": "Indicates the state of the issues to return.",
         "in": "QUERY",
         "type": "string",
         "required": false,
@@ -25682,7 +25682,7 @@
       },
       {
         "name": "sort",
-        "description": "What to sort results by. Can be either `created`, `updated`, `comments`.",
+        "description": "What to sort results by.",
         "in": "QUERY",
         "type": "string",
         "required": false,
@@ -27282,7 +27282,7 @@
       },
       {
         "name": "mode",
-        "description": "The rendering mode. Can be either `markdown` or `gfm`.",
+        "description": "The rendering mode.",
         "in": "BODY",
         "type": "string",
         "required": false,
@@ -31047,7 +31047,7 @@
     "parameters": [
       {
         "name": "state",
-        "description": "Indicates the state of the memberships to return. Can be either `active` or `pending`. If not specified, the API returns both active and pending memberships.",
+        "description": "Indicates the state of the memberships to return. If not specified, the API returns both active and pending memberships.",
         "in": "QUERY",
         "type": "string",
         "required": false,
@@ -35896,7 +35896,7 @@
       },
       {
         "name": "state",
-        "description": "Indicates the state of the projects to return. Can be either `open`, `closed`, or `all`.",
+        "description": "Indicates the state of the projects to return.",
         "in": "QUERY",
         "type": "string",
         "required": false,
@@ -35990,7 +35990,7 @@
       },
       {
         "name": "state",
-        "description": "Indicates the state of the projects to return. Can be either `open`, `closed`, or `all`.",
+        "description": "Indicates the state of the projects to return.",
         "in": "QUERY",
         "type": "string",
         "required": false,
@@ -36079,7 +36079,7 @@
       },
       {
         "name": "state",
-        "description": "Indicates the state of the projects to return. Can be either `open`, `closed`, or `all`.",
+        "description": "Indicates the state of the projects to return.",
         "in": "QUERY",
         "type": "string",
         "required": false,
@@ -37831,7 +37831,7 @@
       },
       {
         "name": "sort",
-        "description": "What to sort results by. Can be either `created`, `updated`, `popularity` (comment count) or `long-running` (age, filtering by pulls updated in the last month).",
+        "description": "What to sort results by. `popularity` will sort by the number of comments. `long-running` will sort by date created and will limit the results to pull requests that have been open for more than a month and have had activity within the past month.",
         "in": "QUERY",
         "type": "string",
         "required": false,
@@ -37844,7 +37844,7 @@
       },
       {
         "name": "direction",
-        "description": "The direction of the sort. Can be either `asc` or `desc`. Default: `desc` when sort is `created` or sort is not specified, otherwise `asc`.",
+        "description": "The direction of the sort. Default: `desc` when sort is `created` or sort is not specified, otherwise `asc`.",
         "in": "QUERY",
         "type": "string",
         "required": false,
@@ -38328,7 +38328,7 @@
       },
       {
         "name": "direction",
-        "description": "Can be either `asc` or `desc`. Ignored without `sort` parameter.",
+        "description": "The direction to sort results. Ignored without `sort` parameter.",
         "in": "QUERY",
         "type": "string",
         "required": false,
@@ -38447,7 +38447,7 @@
       },
       {
         "name": "direction",
-        "description": "Can be either `asc` or `desc`. Ignored without `sort` parameter.",
+        "description": "The direction to sort results. Ignored without `sort` parameter.",
         "in": "QUERY",
         "type": "string",
         "required": false,
@@ -44713,7 +44713,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "removalDate": null,
-    "description": "Creates a new file or replaces an existing file in a repository. You must authenticate using an access token with the `workflow` scope to use this endpoint.",
+    "description": "Creates a new file or replaces an existing file in a repository. You must authenticate using an access token with the `workflow` scope to use this endpoint.\n\n**Note:** If you use this endpoint and the \"[Delete a file](https://docs.github.com/rest/reference/repos/#delete-file)\" endpoint in parallel, the concurrent requests will conflict and you will receive errors. You must use these endpoints serially instead.",
     "documentationUrl": "https://docs.github.com/rest/reference/repos#create-or-update-file-contents",
     "previews": [],
     "headers": [],
@@ -46444,7 +46444,7 @@
     "isDeprecated": false,
     "deprecationDate": null,
     "removalDate": null,
-    "description": "Deletes a file in a repository.\n\nYou can provide an additional `committer` parameter, which is an object containing information about the committer. Or, you can provide an `author` parameter, which is an object containing information about the author.\n\nThe `author` section is optional and is filled in with the `committer` information if omitted. If the `committer` information is omitted, the authenticated user's information is used.\n\nYou must provide values for both `name` and `email`, whether you choose to use `author` or `committer`. Otherwise, you'll receive a `422` status code.",
+    "description": "Deletes a file in a repository.\n\nYou can provide an additional `committer` parameter, which is an object containing information about the committer. Or, you can provide an `author` parameter, which is an object containing information about the author.\n\nThe `author` section is optional and is filled in with the `committer` information if omitted. If the `committer` information is omitted, the authenticated user's information is used.\n\nYou must provide values for both `name` and `email`, whether you choose to use `author` or `committer`. Otherwise, you'll receive a `422` status code.\n\n**Note:** If you use this endpoint and the \"[Create or update file contents](https://docs.github.com/rest/reference/repos/#create-or-update-file-contents)\" endpoint in parallel, the concurrent requests will conflict and you will receive errors. You must use these endpoints serially instead.",
     "documentationUrl": "https://docs.github.com/rest/reference/repos#delete-a-file",
     "previews": [],
     "headers": [],
@@ -52577,7 +52577,7 @@
       },
       {
         "name": "sort",
-        "description": "The sort order. Can be either `newest`, `oldest`, or `stargazers`.",
+        "description": "The sort order. `stargazers` will sort by star count.",
         "in": "QUERY",
         "type": "string",
         "required": false,
@@ -58943,7 +58943,7 @@
       },
       {
         "name": "state",
-        "description": "Sets the state of the secret scanning alert. Can be either `open` or `resolved`. You must provide `resolution` when you set the state to `resolved`.",
+        "description": "Sets the state of the secret scanning alert. You must provide `resolution` when you set the state to `resolved`.",
         "in": "BODY",
         "type": "string",
         "required": true,

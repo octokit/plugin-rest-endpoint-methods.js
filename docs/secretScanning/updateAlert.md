@@ -51,7 +51,7 @@ The number that identifies an alert. You can find this at the end of the URL for
 </td></tr>
 <tr><td>state</td><td>yes</td><td>
 
-Sets the state of the secret scanning alert. Can be either `open` or `resolved`. You must provide `resolution` when you set the state to `resolved`.
+Sets the state of the secret scanning alert. You must provide `resolution` when you set the state to `resolved`.
 
 </td></tr>
 <tr><td>resolution</td><td>no</td><td>

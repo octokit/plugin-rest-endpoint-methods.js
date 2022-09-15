@@ -51,7 +51,7 @@ The property to sort the results by. `created` means when the repository was sta
 </td></tr>
 <tr><td>direction</td><td>no</td><td>
 
-Can be either `asc` or `desc`. Ignored without `sort` parameter.
+The direction to sort results. Ignored without `sort` parameter.
 
 </td></tr>
 <tr><td>since</td><td>no</td><td>
