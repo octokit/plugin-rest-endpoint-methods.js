@@ -1556,6 +1556,14 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["GET /repos/{owner}/{repo}/code-scanning/analyses/{analysis_id}"]["response"];
     };
+    getCodeqlDatabase: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /repos/{owner}/{repo}/code-scanning/codeql/databases/{language}"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /repos/{owner}/{repo}/code-scanning/codeql/databases/{language}"]["response"];
+    };
     getSarif: {
       parameters: RequestParameters &
         Omit<
@@ -1603,6 +1611,14 @@ export type RestEndpointMethodTypes = {
           "baseUrl" | "headers" | "mediaType"
         >;
       response: Endpoints["GET /repos/{owner}/{repo}/code-scanning/alerts/{alert_number}/instances"]["response"];
+    };
+    listCodeqlDatabases: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /repos/{owner}/{repo}/code-scanning/codeql/databases"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /repos/{owner}/{repo}/code-scanning/codeql/databases"]["response"];
     };
     listRecentAnalyses: {
       parameters: RequestParameters &
@@ -1656,6 +1672,14 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["PUT /user/codespaces/secrets/{secret_name}/repositories/{repository_id}"]["response"];
     };
+    addSelectedRepoToOrgSecret: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["PUT /organizations/{org}/codespaces/secrets/{secret_name}/repositories/{repository_id}"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["PUT /organizations/{org}/codespaces/secrets/{secret_name}/repositories/{repository_id}"]["response"];
+    };
     codespaceMachinesForAuthenticatedUser: {
       parameters: RequestParameters &
         Omit<
@@ -1671,6 +1695,14 @@ export type RestEndpointMethodTypes = {
           "baseUrl" | "headers" | "mediaType"
         >;
       response: Endpoints["POST /user/codespaces"]["response"];
+    };
+    createOrUpdateOrgSecret: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["PUT /organizations/{org}/codespaces/secrets/{secret_name}"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["PUT /organizations/{org}/codespaces/secrets/{secret_name}"]["response"];
     };
     createOrUpdateRepoSecret: {
       parameters: RequestParameters &
@@ -1720,6 +1752,14 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["DELETE /orgs/{org}/members/{username}/codespaces/{codespace_name}"]["response"];
     };
+    deleteOrgSecret: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["DELETE /organizations/{org}/codespaces/secrets/{secret_name}"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["DELETE /organizations/{org}/codespaces/secrets/{secret_name}"]["response"];
+    };
     deleteRepoSecret: {
       parameters: RequestParameters &
         Omit<
@@ -1759,6 +1799,22 @@ export type RestEndpointMethodTypes = {
           "baseUrl" | "headers" | "mediaType"
         >;
       response: Endpoints["GET /user/codespaces/{codespace_name}"]["response"];
+    };
+    getOrgPublicKey: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /organizations/{org}/codespaces/secrets/public-key"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /organizations/{org}/codespaces/secrets/public-key"]["response"];
+    };
+    getOrgSecret: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /organizations/{org}/codespaces/secrets/{secret_name}"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /organizations/{org}/codespaces/secrets/{secret_name}"]["response"];
     };
     getPublicKeyForAuthenticatedUser: {
       parameters: RequestParameters &
@@ -1824,6 +1880,14 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["GET /repos/{owner}/{repo}/codespaces"]["response"];
     };
+    listOrgSecrets: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /organizations/{org}/codespaces/secrets"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /organizations/{org}/codespaces/secrets"]["response"];
+    };
     listRepoSecrets: {
       parameters: RequestParameters &
         Omit<
@@ -1848,6 +1912,14 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["GET /user/codespaces/secrets"]["response"];
     };
+    listSelectedReposForOrgSecret: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /organizations/{org}/codespaces/secrets/{secret_name}/repositories"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /organizations/{org}/codespaces/secrets/{secret_name}/repositories"]["response"];
+    };
     preFlightWithRepoForAuthenticatedUser: {
       parameters: RequestParameters &
         Omit<
@@ -1864,6 +1936,14 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["DELETE /user/codespaces/secrets/{secret_name}/repositories/{repository_id}"]["response"];
     };
+    removeSelectedRepoFromOrgSecret: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["DELETE /organizations/{org}/codespaces/secrets/{secret_name}/repositories/{repository_id}"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["DELETE /organizations/{org}/codespaces/secrets/{secret_name}/repositories/{repository_id}"]["response"];
+    };
     repoMachinesForAuthenticatedUser: {
       parameters: RequestParameters &
         Omit<
@@ -1879,6 +1959,14 @@ export type RestEndpointMethodTypes = {
           "baseUrl" | "headers" | "mediaType"
         >;
       response: Endpoints["PUT /user/codespaces/secrets/{secret_name}/repositories"]["response"];
+    };
+    setSelectedReposForOrgSecret: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["PUT /organizations/{org}/codespaces/secrets/{secret_name}/repositories"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["PUT /organizations/{org}/codespaces/secrets/{secret_name}/repositories"]["response"];
     };
     startForAuthenticatedUser: {
       parameters: RequestParameters &
@@ -1954,6 +2042,14 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["DELETE /repos/{owner}/{repo}/dependabot/secrets/{secret_name}"]["response"];
     };
+    getAlert: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /repos/{owner}/{repo}/dependabot/alerts/{alert_number}"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /repos/{owner}/{repo}/dependabot/alerts/{alert_number}"]["response"];
+    };
     getOrgPublicKey: {
       parameters: RequestParameters &
         Omit<
@@ -1985,6 +2081,14 @@ export type RestEndpointMethodTypes = {
           "baseUrl" | "headers" | "mediaType"
         >;
       response: Endpoints["GET /repos/{owner}/{repo}/dependabot/secrets/{secret_name}"]["response"];
+    };
+    listAlertsForRepo: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /repos/{owner}/{repo}/dependabot/alerts"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /repos/{owner}/{repo}/dependabot/alerts"]["response"];
     };
     listOrgSecrets: {
       parameters: RequestParameters &
@@ -2025,6 +2129,14 @@ export type RestEndpointMethodTypes = {
           "baseUrl" | "headers" | "mediaType"
         >;
       response: Endpoints["PUT /orgs/{org}/dependabot/secrets/{secret_name}/repositories"]["response"];
+    };
+    updateAlert: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["PATCH /repos/{owner}/{repo}/dependabot/alerts/{alert_number}"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["PATCH /repos/{owner}/{repo}/dependabot/alerts/{alert_number}"]["response"];
     };
   };
   dependencyGraph: {

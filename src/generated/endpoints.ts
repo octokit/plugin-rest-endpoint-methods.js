@@ -428,6 +428,9 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     getAnalysis: [
       "GET /repos/{owner}/{repo}/code-scanning/analyses/{analysis_id}",
     ],
+    getCodeqlDatabase: [
+      "GET /repos/{owner}/{repo}/code-scanning/codeql/databases/{language}",
+    ],
     getSarif: ["GET /repos/{owner}/{repo}/code-scanning/sarifs/{sarif_id}"],
     listAlertInstances: [
       "GET /repos/{owner}/{repo}/code-scanning/alerts/{alert_number}/instances",
@@ -441,6 +444,9 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
       "GET /repos/{owner}/{repo}/code-scanning/alerts/{alert_number}/instances",
       {},
       { renamed: ["codeScanning", "listAlertInstances"] },
+    ],
+    listCodeqlDatabases: [
+      "GET /repos/{owner}/{repo}/code-scanning/codeql/databases",
     ],
     listRecentAnalyses: ["GET /repos/{owner}/{repo}/code-scanning/analyses"],
     updateAlert: [
@@ -456,10 +462,16 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     addRepositoryForSecretForAuthenticatedUser: [
       "PUT /user/codespaces/secrets/{secret_name}/repositories/{repository_id}",
     ],
+    addSelectedRepoToOrgSecret: [
+      "PUT /organizations/{org}/codespaces/secrets/{secret_name}/repositories/{repository_id}",
+    ],
     codespaceMachinesForAuthenticatedUser: [
       "GET /user/codespaces/{codespace_name}/machines",
     ],
     createForAuthenticatedUser: ["POST /user/codespaces"],
+    createOrUpdateOrgSecret: [
+      "PUT /organizations/{org}/codespaces/secrets/{secret_name}",
+    ],
     createOrUpdateRepoSecret: [
       "PUT /repos/{owner}/{repo}/codespaces/secrets/{secret_name}",
     ],
@@ -476,6 +488,9 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     deleteFromOrganization: [
       "DELETE /orgs/{org}/members/{username}/codespaces/{codespace_name}",
     ],
+    deleteOrgSecret: [
+      "DELETE /organizations/{org}/codespaces/secrets/{secret_name}",
+    ],
     deleteRepoSecret: [
       "DELETE /repos/{owner}/{repo}/codespaces/secrets/{secret_name}",
     ],
@@ -489,6 +504,8 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
       "GET /user/codespaces/{codespace_name}/exports/{export_id}",
     ],
     getForAuthenticatedUser: ["GET /user/codespaces/{codespace_name}"],
+    getOrgPublicKey: ["GET /organizations/{org}/codespaces/secrets/public-key"],
+    getOrgSecret: ["GET /organizations/{org}/codespaces/secrets/{secret_name}"],
     getPublicKeyForAuthenticatedUser: [
       "GET /user/codespaces/secrets/public-key",
     ],
@@ -513,22 +530,32 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     listInRepositoryForAuthenticatedUser: [
       "GET /repos/{owner}/{repo}/codespaces",
     ],
+    listOrgSecrets: ["GET /organizations/{org}/codespaces/secrets"],
     listRepoSecrets: ["GET /repos/{owner}/{repo}/codespaces/secrets"],
     listRepositoriesForSecretForAuthenticatedUser: [
       "GET /user/codespaces/secrets/{secret_name}/repositories",
     ],
     listSecretsForAuthenticatedUser: ["GET /user/codespaces/secrets"],
+    listSelectedReposForOrgSecret: [
+      "GET /organizations/{org}/codespaces/secrets/{secret_name}/repositories",
+    ],
     preFlightWithRepoForAuthenticatedUser: [
       "GET /repos/{owner}/{repo}/codespaces/new",
     ],
     removeRepositoryForSecretForAuthenticatedUser: [
       "DELETE /user/codespaces/secrets/{secret_name}/repositories/{repository_id}",
     ],
+    removeSelectedRepoFromOrgSecret: [
+      "DELETE /organizations/{org}/codespaces/secrets/{secret_name}/repositories/{repository_id}",
+    ],
     repoMachinesForAuthenticatedUser: [
       "GET /repos/{owner}/{repo}/codespaces/machines",
     ],
     setRepositoriesForSecretForAuthenticatedUser: [
       "PUT /user/codespaces/secrets/{secret_name}/repositories",
+    ],
+    setSelectedReposForOrgSecret: [
+      "PUT /organizations/{org}/codespaces/secrets/{secret_name}/repositories",
     ],
     startForAuthenticatedUser: ["POST /user/codespaces/{codespace_name}/start"],
     stopForAuthenticatedUser: ["POST /user/codespaces/{codespace_name}/stop"],
@@ -551,6 +578,7 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     deleteRepoSecret: [
       "DELETE /repos/{owner}/{repo}/dependabot/secrets/{secret_name}",
     ],
+    getAlert: ["GET /repos/{owner}/{repo}/dependabot/alerts/{alert_number}"],
     getOrgPublicKey: ["GET /orgs/{org}/dependabot/secrets/public-key"],
     getOrgSecret: ["GET /orgs/{org}/dependabot/secrets/{secret_name}"],
     getRepoPublicKey: [
@@ -559,6 +587,7 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     getRepoSecret: [
       "GET /repos/{owner}/{repo}/dependabot/secrets/{secret_name}",
     ],
+    listAlertsForRepo: ["GET /repos/{owner}/{repo}/dependabot/alerts"],
     listOrgSecrets: ["GET /orgs/{org}/dependabot/secrets"],
     listRepoSecrets: ["GET /repos/{owner}/{repo}/dependabot/secrets"],
     listSelectedReposForOrgSecret: [
@@ -569,6 +598,9 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     ],
     setSelectedReposForOrgSecret: [
       "PUT /orgs/{org}/dependabot/secrets/{secret_name}/repositories",
+    ],
+    updateAlert: [
+      "PATCH /repos/{owner}/{repo}/dependabot/alerts/{alert_number}",
     ],
   },
   dependencyGraph: {
