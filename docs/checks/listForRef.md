@@ -77,4 +77,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/checks#list-check-runs-for-a-git-reference).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/checks#list-check-runs-for-a-git-reference).

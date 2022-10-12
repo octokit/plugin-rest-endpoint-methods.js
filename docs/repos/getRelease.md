@@ -8,7 +8,7 @@ type: API method
 
 # Get a release
 
-**Note:** This returns an `upload_url` key corresponding to the endpoint for uploading release assets. This key is a [hypermedia resource](https://docs.github.com/rest/overview/resources-in-the-rest-api#hypermedia).
+**Note:** This returns an `upload_url` key corresponding to the endpoint for uploading release assets. This key is a [hypermedia resource](https://docs.github.com/enterprise-cloud@latest//rest/overview/resources-in-the-rest-api#hypermedia).
 
 ```js
 octokit.rest.repos.getRelease({
@@ -47,4 +47,4 @@ The unique identifier of the release.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#get-a-release).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/repos#get-a-release).

@@ -20,4 +20,4 @@ octokit.rest.users.listBlockedByAuthenticated();
 
 This endpoint has no parameters
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/users#list-users-blocked-by-the-authenticated-user).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/users#list-users-blocked-by-the-authenticated-user).

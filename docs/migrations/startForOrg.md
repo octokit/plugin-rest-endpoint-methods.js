@@ -81,4 +81,4 @@ Exclude related items from being returned in the response in order to improve pe
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/migrations#start-an-organization-migration).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/migrations#start-an-organization-migration).

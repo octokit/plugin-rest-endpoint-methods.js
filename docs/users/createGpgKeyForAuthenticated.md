@@ -10,7 +10,7 @@ type: API method
 
 **Deprecated:** This method has been renamed to users.createGpgKeyForAuthenticatedUser
 
-Adds a GPG key to the authenticated user's GitHub account. Requires that you are authenticated via Basic Auth, or OAuth with at least `write:gpg_key` [scope](https://docs.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
+Adds a GPG key to the authenticated user's GitHub account. Requires that you are authenticated via Basic Auth, or OAuth with at least `write:gpg_key` [scope](https://docs.github.com/enterprise-cloud@latest//apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
 
 ```js
 octokit.rest.users.createGpgKeyForAuthenticated({
@@ -42,4 +42,4 @@ A GPG key in ASCII-armored format.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/users#create-a-gpg-key-for-the-authenticated-user).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/users#create-a-gpg-key-for-the-authenticated-user).

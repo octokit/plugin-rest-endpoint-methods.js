@@ -19,16 +19,16 @@ An import that does not have errors will progress through these steps:
 - `detecting` - the "detection" step of the import is in progress because the request did not include a `vcs` parameter. The import is identifying the type of source control present at the URL.
 - `importing` - the "raw" step of the import is in progress. This is where commit data is fetched from the original repository. The import progress response will include `commit_count` (the total number of raw commits that will be imported) and `percent` (0 - 100, the current progress through the import).
 - `mapping` - the "rewrite" step of the import is in progress. This is where SVN branches are converted to Git branches, and where author updates are applied. The import progress response does not include progress information.
-- `pushing` - the "push" step of the import is in progress. This is where the importer updates the repository on GitHub. The import progress response will include `push_percent`, which is the percent value reported by `git push` when it is "Writing objects".
-- `complete` - the import is complete, and the repository is ready on GitHub.
+- `pushing` - the "push" step of the import is in progress. This is where the importer updates the repository on GitHub Enterprise Cloud. The import progress response will include `push_percent`, which is the percent value reported by `git push` when it is "Writing objects".
+- `complete` - the import is complete, and the repository is ready on GitHub Enterprise Cloud.
 
 If there are problems, you will see one of these in the `status` field:
 
-- `auth_failed` - the import requires authentication in order to connect to the original repository. To update authentication for the import, please see the [Update an import](https://docs.github.com/rest/reference/migrations#update-an-import) section.
-- `error` - the import encountered an error. The import progress response will include the `failed_step` and an error message. Contact [GitHub Support](https://support.github.com/contact?tags=dotcom-rest-api) for more information.
-- `detection_needs_auth` - the importer requires authentication for the originating repository to continue detection. To update authentication for the import, please see the [Update an import](https://docs.github.com/rest/reference/migrations#update-an-import) section.
-- `detection_found_nothing` - the importer didn't recognize any source control at the URL. To resolve, [Cancel the import](https://docs.github.com/rest/reference/migrations#cancel-an-import) and [retry](https://docs.github.com/rest/reference/migrations#start-an-import) with the correct URL.
-- `detection_found_multiple` - the importer found several projects or repositories at the provided URL. When this is the case, the Import Progress response will also include a `project_choices` field with the possible project choices as values. To update project choice, please see the [Update an import](https://docs.github.com/rest/reference/migrations#update-an-import) section.
+- `auth_failed` - the import requires authentication in order to connect to the original repository. To update authentication for the import, please see the [Update an import](https://docs.github.com/enterprise-cloud@latest//rest/reference/migrations#update-an-import) section.
+- `error` - the import encountered an error. The import progress response will include the `failed_step` and an error message. Contact [GitHub Enterprise Cloud Support](https://support.github.com/contact?tags=dotcom-rest-api) for more information.
+- `detection_needs_auth` - the importer requires authentication for the originating repository to continue detection. To update authentication for the import, please see the [Update an import](https://docs.github.com/enterprise-cloud@latest//rest/reference/migrations#update-an-import) section.
+- `detection_found_nothing` - the importer didn't recognize any source control at the URL. To resolve, [Cancel the import](https://docs.github.com/enterprise-cloud@latest//rest/reference/migrations#cancel-an-import) and [retry](https://docs.github.com/enterprise-cloud@latest//rest/reference/migrations#start-an-import) with the correct URL.
+- `detection_found_multiple` - the importer found several projects or repositories at the provided URL. When this is the case, the Import Progress response will also include a `project_choices` field with the possible project choices as values. To update project choice, please see the [Update an import](https://docs.github.com/enterprise-cloud@latest//rest/reference/migrations#update-an-import) section.
 
 **The project_choices field**
 
@@ -74,4 +74,4 @@ The name of the repository. The name is not case sensitive.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/migrations#get-an-import-status).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/migrations#get-an-import-status).

@@ -8,9 +8,9 @@ type: API method
 
 # List plans
 
-Lists all plans that are part of your GitHub Marketplace listing.
+Lists all plans that are part of your GitHub Enterprise Cloud Marketplace listing.
 
-GitHub Apps must use a [JWT](https://docs.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint. OAuth Apps must use [basic authentication](https://docs.github.com/rest/overview/other-authentication-methods#basic-authentication) with their client ID and client secret to access this endpoint.
+GitHub Apps must use a [JWT](https://docs.github.com/enterprise-cloud@latest//apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint. OAuth Apps must use [basic authentication](https://docs.github.com/enterprise-cloud@latest//rest/overview/other-authentication-methods#basic-authentication) with their client ID and client secret to access this endpoint.
 
 ```js
 octokit.rest.apps.listPlans();
@@ -40,4 +40,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/apps#list-plans).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/apps#list-plans).

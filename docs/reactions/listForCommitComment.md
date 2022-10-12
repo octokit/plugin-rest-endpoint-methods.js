@@ -8,7 +8,7 @@ type: API method
 
 # List reactions for a commit comment
 
-List the reactions to a [commit comment](https://docs.github.com/rest/reference/repos#comments).
+List the reactions to a [commit comment](https://docs.github.com/enterprise-cloud@latest//rest/reference/repos#comments).
 
 ```js
 octokit.rest.reactions.listForCommitComment({
@@ -46,7 +46,7 @@ The unique identifier of the comment.
 </td></tr>
 <tr><td>content</td><td>no</td><td>
 
-Returns a single [reaction type](https://docs.github.com/rest/reference/reactions#reaction-types). Omit this parameter to list all reactions to a commit comment.
+Returns a single [reaction type](https://docs.github.com/enterprise-cloud@latest//rest/reference/reactions#reaction-types). Omit this parameter to list all reactions to a commit comment.
 
 </td></tr>
 <tr><td>per_page</td><td>no</td><td>
@@ -62,4 +62,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/reactions#list-reactions-for-a-commit-comment).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/reactions#list-reactions-for-a-commit-comment).

@@ -63,4 +63,4 @@ The dismissal comment associated with the dismissal of the alert.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/code-scanning#update-a-code-scanning-alert).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/code-scanning#update-a-code-scanning-alert).

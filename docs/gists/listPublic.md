@@ -10,7 +10,7 @@ type: API method
 
 List public gists sorted by most recently updated to least recently updated.
 
-Note: With [pagination](https://docs.github.com/rest/overview/resources-in-the-rest-api#pagination), you can fetch up to 3000 gists. For example, you can fetch 100 pages with 30 gists per page or 30 pages with 100 gists per page.
+Note: With [pagination](https://docs.github.com/enterprise-cloud@latest//rest/overview/resources-in-the-rest-api#pagination), you can fetch up to 3000 gists. For example, you can fetch 100 pages with 30 gists per page or 30 pages with 100 gists per page.
 
 ```js
 octokit.rest.gists.listPublic();
@@ -45,4 +45,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/gists#list-public-gists).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/gists#list-public-gists).

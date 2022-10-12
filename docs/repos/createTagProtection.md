@@ -48,4 +48,4 @@ An optional glob pattern to match against when enforcing tag protection.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#create-tag-protection-state-for-a-repository).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/repos#create-tag-protection-state-for-a-repository).

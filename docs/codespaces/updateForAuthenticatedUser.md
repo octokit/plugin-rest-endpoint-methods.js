@@ -56,4 +56,4 @@ Recently opened folders inside the codespace. It is currently used by the client
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/codespaces#update-a-codespace-for-the-authenticated-user).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/codespaces#update-a-codespace-for-the-authenticated-user).

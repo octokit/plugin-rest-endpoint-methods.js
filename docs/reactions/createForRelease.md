@@ -8,7 +8,7 @@ type: API method
 
 # Create reaction for a release
 
-Create a reaction to a [release](https://docs.github.com/rest/reference/repos#releases). A response with a `Status: 200 OK` means that you already added the reaction type to this release.
+Create a reaction to a [release](https://docs.github.com/enterprise-cloud@latest//rest/reference/repos#releases). A response with a `Status: 200 OK` means that you already added the reaction type to this release.
 
 ```js
 octokit.rest.reactions.createForRelease({
@@ -47,10 +47,10 @@ The unique identifier of the release.
 </td></tr>
 <tr><td>content</td><td>yes</td><td>
 
-The [reaction type](https://docs.github.com/rest/reference/reactions#reaction-types) to add to the release.
+The [reaction type](https://docs.github.com/enterprise-cloud@latest//rest/reference/reactions#reaction-types) to add to the release.
 
 </td></tr>
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/reactions/#create-reaction-for-a-release).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/reactions/#create-reaction-for-a-release).

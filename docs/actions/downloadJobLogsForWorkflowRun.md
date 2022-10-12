@@ -50,4 +50,4 @@ The unique identifier of the job.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/actions#download-job-logs-for-a-workflow-run).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/actions#download-job-logs-for-a-workflow-run).

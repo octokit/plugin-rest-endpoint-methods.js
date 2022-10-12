@@ -20,4 +20,4 @@ octokit.rest.interactions.removeRestrictionsForYourPublicRepos();
 
 This endpoint has no parameters
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/interactions#remove-interaction-restrictions-from-your-public-repositories).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/interactions#remove-interaction-restrictions-from-your-public-repositories).

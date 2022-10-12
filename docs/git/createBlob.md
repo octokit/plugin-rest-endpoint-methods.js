@@ -50,4 +50,4 @@ The encoding used for `content`. Currently, `"utf-8"` and `"base64"` are support
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/git#create-a-blob).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/git#create-a-blob).

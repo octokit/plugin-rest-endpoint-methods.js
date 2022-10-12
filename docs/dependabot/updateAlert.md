@@ -65,4 +65,4 @@ An optional comment associated with the alert's dismissal. The maximum size is 2
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/dependabot#update-a-dependabot-alert).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/dependabot#update-a-dependabot-alert).

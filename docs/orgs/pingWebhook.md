@@ -8,7 +8,7 @@ type: API method
 
 # Ping an organization webhook
 
-This will trigger a [ping event](https://docs.github.com/webhooks/#ping-event) to be sent to the hook.
+This will trigger a [ping event](https://docs.github.com/enterprise-cloud@latest//webhooks/#ping-event) to be sent to the hook.
 
 ```js
 octokit.rest.orgs.pingWebhook({
@@ -41,4 +41,4 @@ The unique identifier of the hook.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/orgs#ping-an-organization-webhook).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/orgs#ping-an-organization-webhook).

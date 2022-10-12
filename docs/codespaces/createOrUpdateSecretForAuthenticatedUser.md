@@ -110,7 +110,7 @@ The name of the secret.
 </td></tr>
 <tr><td>encrypted_value</td><td>no</td><td>
 
-Value for your secret, encrypted with [LibSodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages) using the public key retrieved from the [Get the public key for the authenticated user](https://docs.github.com/rest/reference/codespaces#get-the-public-key-for-the-authenticated-user) endpoint.
+Value for your secret, encrypted with [LibSodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages) using the public key retrieved from the [Get the public key for the authenticated user](https://docs.github.com/enterprise-cloud@latest//rest/reference/codespaces#get-the-public-key-for-the-authenticated-user) endpoint.
 
 </td></tr>
 <tr><td>key_id</td><td>yes</td><td>
@@ -120,10 +120,10 @@ ID of the key you used to encrypt the secret.
 </td></tr>
 <tr><td>selected_repository_ids</td><td>no</td><td>
 
-An array of repository ids that can access the user secret. You can manage the list of selected repositories using the [List selected repositories for a user secret](https://docs.github.com/rest/reference/codespaces#list-selected-repositories-for-a-user-secret), [Set selected repositories for a user secret](https://docs.github.com/rest/reference/codespaces#set-selected-repositories-for-a-user-secret), and [Remove a selected repository from a user secret](https://docs.github.com/rest/reference/codespaces#remove-a-selected-repository-from-a-user-secret) endpoints.
+An array of repository ids that can access the user secret. You can manage the list of selected repositories using the [List selected repositories for a user secret](https://docs.github.com/enterprise-cloud@latest//rest/reference/codespaces#list-selected-repositories-for-a-user-secret), [Set selected repositories for a user secret](https://docs.github.com/enterprise-cloud@latest//rest/reference/codespaces#set-selected-repositories-for-a-user-secret), and [Remove a selected repository from a user secret](https://docs.github.com/enterprise-cloud@latest//rest/reference/codespaces#remove-a-selected-repository-from-a-user-secret) endpoints.
 
 </td></tr>
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/codespaces#create-or-update-a-secret-for-the-authenticated-user).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/codespaces#create-or-update-a-secret-for-the-authenticated-user).

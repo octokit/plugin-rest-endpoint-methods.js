@@ -65,4 +65,4 @@ Input keys and values configured in the workflow file. The maximum number of pro
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/actions#create-a-workflow-dispatch-event).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/actions#create-a-workflow-dispatch-event).

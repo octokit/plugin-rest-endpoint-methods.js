@@ -66,4 +66,4 @@ The OIDC token issued by GitHub Actions certifying the origin of the deployment.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/pages#create-a-github-pages-deployment).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/pages#create-a-github-pages-deployment).

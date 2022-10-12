@@ -1,12 +1,12 @@
 ---
-name: Get a GitHub Pages site
+name: Get a GitHub Enterprise Cloud Pages site
 example: octokit.rest.repos.getPages({ owner, repo })
 route: GET /repos/{owner}/{repo}/pages
 scope: repos
 type: API method
 ---
 
-# Get a GitHub Pages site
+# Get a GitHub Enterprise Cloud Pages site
 
 ```js
 octokit.rest.repos.getPages({
@@ -39,4 +39,4 @@ The name of the repository. The name is not case sensitive.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/pages#get-a-github-pages-site).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/pages#get-a-github-pages-site).

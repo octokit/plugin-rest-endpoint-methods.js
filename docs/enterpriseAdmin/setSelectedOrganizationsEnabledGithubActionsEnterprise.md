@@ -45,4 +45,4 @@ List of organization IDs to enable for GitHub Actions.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/actions#set-selected-organizations-enabled-for-github-actions-in-an-enterprise).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/actions#set-selected-organizations-enabled-for-github-actions-in-an-enterprise).

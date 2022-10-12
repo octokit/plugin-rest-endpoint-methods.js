@@ -58,4 +58,4 @@ The new filename for the file
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/gists/#update-a-gist).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/gists/#update-a-gist).

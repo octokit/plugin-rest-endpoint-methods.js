@@ -47,7 +47,7 @@ The unique identifier of the hook.
 </td></tr>
 <tr><td>config</td><td>no</td><td>
 
-Key/value pairs to provide settings for this webhook. [These are defined below](https://docs.github.com/rest/reference/repos#create-hook-config-params).
+Key/value pairs to provide settings for this webhook. [These are defined below](https://docs.github.com/enterprise-cloud@latest//rest/reference/repos#create-hook-config-params).
 
 </td></tr>
 <tr><td>config.url</td><td>yes</td><td>
@@ -62,7 +62,7 @@ The media type used to serialize the payloads. Supported values include `json` a
 </td></tr>
 <tr><td>config.secret</td><td>no</td><td>
 
-If provided, the `secret` will be used as the `key` to generate the HMAC hex digest value for [delivery signature headers](https://docs.github.com/webhooks/event-payloads/#delivery-headers).
+If provided, the `secret` will be used as the `key` to generate the HMAC hex digest value for [delivery signature headers](https://docs.github.com/enterprise-cloud@latest//webhooks/event-payloads/#delivery-headers).
 
 </td></tr>
 <tr><td>config.insecure_ssl</td><td>no</td><td>
@@ -76,7 +76,7 @@ If provided, the `secret` will be used as the `key` to generate the HMAC hex dig
 </td></tr>
 <tr><td>events</td><td>no</td><td>
 
-Determines what [events](https://docs.github.com/webhooks/event-payloads) the hook is triggered for. This replaces the entire array of events.
+Determines what [events](https://docs.github.com/enterprise-cloud@latest//webhooks/event-payloads) the hook is triggered for. This replaces the entire array of events.
 
 </td></tr>
 <tr><td>add_events</td><td>no</td><td>
@@ -97,4 +97,4 @@ Determines if notifications are sent when the webhook is triggered. Set to `true
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/webhooks/repos#update-a-repository-webhook).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/webhooks/repos#update-a-repository-webhook).

@@ -51,4 +51,4 @@ The unique identifier of the GitHub Actions cache.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/actions/cache#delete-a-github-actions-cache-for-a-repository-using-a-cache-id).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/actions/cache#delete-a-github-actions-cache-for-a-repository-using-a-cache-id).

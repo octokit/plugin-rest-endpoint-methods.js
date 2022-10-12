@@ -8,7 +8,7 @@ type: API method
 
 # Update a repository
 
-**Note**: To edit a repository's topics, use the [Replace all repository topics](https://docs.github.com/rest/reference/repos#replace-all-repository-topics) endpoint.
+**Note**: To edit a repository's topics, use the [Replace all repository topics](https://docs.github.com/enterprise-cloud@latest//rest/reference/repos#replace-all-repository-topics) endpoint.
 
 ```js
 octokit.rest.repos.update({
@@ -68,7 +68,7 @@ Can be `public` or `private`. If your organization is associated with an enterpr
 
 Specify which security and analysis features to enable or disable for the repository.
 
-To use this parameter, you must have admin permissions for the repository or be an owner or security manager for the organization that owns the repository. For more information, see "[Managing security managers in your organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization)."
+To use this parameter, you must have admin permissions for the repository or be an owner or security manager for the organization that owns the repository. For more information, see "[Managing security managers in your organization](https://docs.github.com/enterprise-cloud@latest//organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization)."
 
 For example, to enable GitHub Advanced Security, use this data in the body of the `PATCH` request:
 `{ "security_and_analysis": {"advanced_security": { "status": "enabled" } } }`.
@@ -218,4 +218,4 @@ Either `true` to require contributors to sign off on web-based commits, or `fals
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos/#update-a-repository).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/repos/#update-a-repository).

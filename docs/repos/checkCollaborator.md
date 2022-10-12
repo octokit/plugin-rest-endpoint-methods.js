@@ -53,4 +53,4 @@ The handle for the GitHub user account.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/collaborators/collaborators#check-if-a-user-is-a-repository-collaborator).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/collaborators/collaborators#check-if-a-user-is-a-repository-collaborator).

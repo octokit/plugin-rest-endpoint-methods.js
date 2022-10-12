@@ -12,7 +12,7 @@ List any syntax errors that are detected in the CODEOWNERS
 file.
 
 For more information about the correct CODEOWNERS syntax,
-see "[About code owners](https://docs.github.com/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners)."
+see "[About code owners](https://docs.github.com/enterprise-cloud@latest//repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners)."
 
 ```js
 octokit.rest.repos.codeownersErrors({
@@ -50,4 +50,4 @@ A branch, tag or commit name used to determine which version of the CODEOWNERS f
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#list-codeowners-errors).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/repos#list-codeowners-errors).

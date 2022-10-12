@@ -55,4 +55,4 @@ An alternative IP for default location auto-detection, such as when proxying a r
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/codespaces#preview-attributes-for-a-new-codespace).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/codespaces#preview-attributes-for-a-new-codespace).

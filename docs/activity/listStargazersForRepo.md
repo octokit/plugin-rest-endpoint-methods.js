@@ -10,7 +10,7 @@ type: API method
 
 Lists the people that have starred the repository.
 
-You can also find out _when_ stars were created by passing the following custom [media type](https://docs.github.com/rest/overview/media-types/) via the `Accept` header: `application/vnd.github.star+json`.
+You can also find out _when_ stars were created by passing the following custom [media type](https://docs.github.com/enterprise-cloud@latest//rest/overview/media-types/) via the `Accept` header: `application/vnd.github.star+json`.
 
 ```js
 octokit.rest.activity.listStargazersForRepo({
@@ -53,4 +53,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/activity#list-stargazers).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/activity#list-stargazers).

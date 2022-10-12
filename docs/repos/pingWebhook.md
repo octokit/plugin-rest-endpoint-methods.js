@@ -8,7 +8,7 @@ type: API method
 
 # Ping a repository webhook
 
-This will trigger a [ping event](https://docs.github.com/webhooks/#ping-event) to be sent to the hook.
+This will trigger a [ping event](https://docs.github.com/enterprise-cloud@latest//webhooks/#ping-event) to be sent to the hook.
 
 ```js
 octokit.rest.repos.pingWebhook({
@@ -47,4 +47,4 @@ The unique identifier of the hook.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/webhooks/repos#ping-a-repository-webhook).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/webhooks/repos#ping-a-repository-webhook).

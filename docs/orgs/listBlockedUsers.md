@@ -35,4 +35,4 @@ The organization name. The name is not case sensitive.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/orgs#list-users-blocked-by-an-organization).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/orgs#list-users-blocked-by-an-organization).

@@ -49,4 +49,4 @@ The unique identifier of the project.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/teams#check-team-permissions-for-a-project).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/teams#check-team-permissions-for-a-project).

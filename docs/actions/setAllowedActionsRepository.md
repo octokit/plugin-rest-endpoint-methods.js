@@ -62,4 +62,4 @@ Specifies a list of string-matching patterns to allow specific action(s) and reu
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/actions#set-allowed-actions-for-a-repository).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/actions#set-allowed-actions-for-a-repository).

@@ -71,7 +71,7 @@ The full Git reference, formatted as `refs/heads/<branch name>`,
 </td></tr>
 <tr><td>sarif</td><td>yes</td><td>
 
-A Base64 string representing the SARIF file to upload. You must first compress your SARIF file using [`gzip`](http://www.gnu.org/software/gzip/manual/gzip.html) and then translate the contents of the file into a Base64 encoding string. For more information, see "[SARIF support for code scanning](https://docs.github.com/code-security/secure-coding/sarif-support-for-code-scanning)."
+A Base64 string representing the SARIF file to upload. You must first compress your SARIF file using [`gzip`](http://www.gnu.org/software/gzip/manual/gzip.html) and then translate the contents of the file into a Base64 encoding string. For more information, see "[SARIF support for code scanning](https://docs.github.com/enterprise-cloud@latest//code-security/secure-coding/sarif-support-for-code-scanning)."
 
 </td></tr>
 <tr><td>checkout_uri</td><td>no</td><td>
@@ -93,4 +93,4 @@ The name of the tool used to generate the code scanning analysis. If this parame
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/code-scanning#upload-a-sarif-file).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/code-scanning#upload-a-sarif-file).

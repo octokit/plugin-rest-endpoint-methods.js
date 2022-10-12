@@ -10,7 +10,7 @@ type: API method
 
 Deployments offer a few configurable parameters with certain defaults.
 
-The `ref` parameter can be any named branch, tag, or SHA. At GitHub we often deploy branches and verify them
+The `ref` parameter can be any named branch, tag, or SHA. At GitHub Enterprise Cloud we often deploy branches and verify them
 before we merge a pull request.
 
 The `environment` parameter allows deployments to be issued to different runtime environments. Teams often have
@@ -22,7 +22,7 @@ the ref _is_ behind the default branch for the repository, we will attempt to me
 the API will return a successful merge commit. If merge conflicts prevent the merge from succeeding, the API will
 return a failure response.
 
-By default, [commit statuses](https://docs.github.com/rest/commits/statuses) for every submitted context must be in a `success`
+By default, [commit statuses](https://docs.github.com/enterprise-cloud@latest//rest/commits/statuses) for every submitted context must be in a `success`
 state. The `required_contexts` parameter allows you to specify a subset of contexts that must be `success`, or to
 specify contexts that have not yet been submitted. You are not required to use commit statuses to deploy. If you do
 not require any contexts or create any commit statuses, the deployment will always succeed.
@@ -104,7 +104,7 @@ Attempts to automatically merge the default branch into the requested ref, if it
 </td></tr>
 <tr><td>required_contexts</td><td>no</td><td>
 
-The [status](https://docs.github.com/rest/commits/statuses) contexts to verify against commit status checks. If you omit this parameter, GitHub verifies all unique contexts before creating a deployment. To bypass checking entirely, pass an empty array. Defaults to all unique contexts.
+The [status](https://docs.github.com/enterprise-cloud@latest//rest/commits/statuses) contexts to verify against commit status checks. If you omit this parameter, GitHub verifies all unique contexts before creating a deployment. To bypass checking entirely, pass an empty array. Defaults to all unique contexts.
 
 </td></tr>
 <tr><td>payload</td><td>no</td><td>
@@ -133,4 +133,4 @@ Specifies if the given environment is one that end-users directly interact with.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#create-a-deployment).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/repos#create-a-deployment).

@@ -10,7 +10,7 @@ type: API method
 
 Sets the default workflow permissions granted to the `GITHUB_TOKEN` when running workflows in an enterprise, and sets
 whether GitHub Actions can submit approving pull request reviews. For more information, see
-"[Enforcing a policy for workflow permissions in your enterprise](https://docs.github.com/enterprise-cloud@latest/admin/policies/enforcing-policies-for-your-enterprise/enforcing-policies-for-github-actions-in-your-enterprise#enforcing-a-policy-for-workflow-permissions-in-your-enterprise)."
+"[Enforcing a policy for workflow permissions in your enterprise](https://docs.github.com/enterprise-cloud@latest//enterprise-cloud@latest/admin/policies/enforcing-policies-for-your-enterprise/enforcing-policies-for-github-actions-in-your-enterprise#enforcing-a-policy-for-workflow-permissions-in-your-enterprise)."
 
 You must authenticate using an access token with the `admin:enterprise` scope to use this endpoint.
 GitHub Apps must have the `enterprise_administration:write` permission to use this endpoint.
@@ -50,4 +50,4 @@ Whether GitHub Actions can approve pull requests. Enabling this can be a securit
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/actions#set-default-workflow-permissions-for-an-enterprise).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/actions#set-default-workflow-permissions-for-an-enterprise).

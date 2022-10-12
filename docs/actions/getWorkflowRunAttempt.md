@@ -61,4 +61,4 @@ If `true` pull requests are omitted from the response (empty array).
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/actions#get-a-workflow-run-attempt).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/actions#get-a-workflow-run-attempt).

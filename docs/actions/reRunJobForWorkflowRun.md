@@ -52,4 +52,4 @@ Whether to enable debug logging for the re-run.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/actions#re-run-job-for-workflow-run).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/actions#re-run-job-for-workflow-run).

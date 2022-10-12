@@ -80,4 +80,4 @@ The ID of a team to set as the parent team.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/teams#create-a-team).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/teams#create-a-team).

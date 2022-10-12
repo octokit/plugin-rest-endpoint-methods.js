@@ -46,4 +46,4 @@ Unique identifier of the self-hosted runner.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/actions#remove-all-custom-labels-from-a-self-hosted-runner-for-an-enterprise).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/actions#remove-all-custom-labels-from-a-self-hosted-runner-for-an-enterprise).

@@ -16,7 +16,7 @@ user, team, or invitation with the deleted custom role will be reassigned the in
 To use this endpoint the authenticated user must be an administrator for the organization and must use an access token with `admin:org` scope.
 GitHub Apps must have the `organization_custom_roles:write` organization permission to use this endpoint.
 
-For more information about custom repository roles, see "[Managing custom repository roles for an organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-custom-repository-roles-for-an-organization)."
+For more information about custom repository roles, see "[Managing custom repository roles for an organization](https://docs.github.com/enterprise-cloud@latest//organizations/managing-peoples-access-to-your-organization-with-roles/managing-custom-repository-roles-for-an-organization)."
 
 ```js
 octokit.rest.orgs.deleteCustomRole({
@@ -49,4 +49,4 @@ The unique identifier of the role.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/orgs#delete-a-custom-role).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/orgs#delete-a-custom-role).

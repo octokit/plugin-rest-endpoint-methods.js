@@ -8,7 +8,7 @@ type: API method
 
 # Approve a workflow run for a fork pull request
 
-Approves a workflow run for a pull request from a public fork of a first time contributor. For more information, see ["Approving workflow runs from public forks](https://docs.github.com/actions/managing-workflow-runs/approving-workflow-runs-from-public-forks)."
+Approves a workflow run for a pull request from a public fork of a first time contributor. For more information, see ["Approving workflow runs from public forks](https://docs.github.com/enterprise-cloud@latest//actions/managing-workflow-runs/approving-workflow-runs-from-public-forks)."
 
 You must authenticate using an access token with the `repo` scope to use this endpoint. GitHub Apps must have the `actions:write` permission to use this endpoint.
 
@@ -49,4 +49,4 @@ The unique identifier of the workflow run.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/actions#approve-a-workflow-run-for-a-fork-pull-request).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/actions#approve-a-workflow-run-for-a-fork-pull-request).

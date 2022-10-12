@@ -56,4 +56,4 @@ An array of team `slug`s that will be removed.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/pulls#remove-requested-reviewers-from-a-pull-request).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/pulls#remove-requested-reviewers-from-a-pull-request).

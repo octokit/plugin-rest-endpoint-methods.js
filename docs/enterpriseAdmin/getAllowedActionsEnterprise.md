@@ -37,4 +37,4 @@ The slug version of the enterprise name. You can also substitute this value with
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/actions#get-allowed-actions-for-an-enterprise).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/actions#get-allowed-actions-for-an-enterprise).

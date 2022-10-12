@@ -10,7 +10,7 @@ type: API method
 
 **Deprecated:** This method has been renamed to users.deleteGpgKeyForAuthenticatedUser
 
-Removes a GPG key from the authenticated user's GitHub account. Requires that you are authenticated via Basic Auth or via OAuth with at least `admin:gpg_key` [scope](https://docs.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
+Removes a GPG key from the authenticated user's GitHub account. Requires that you are authenticated via Basic Auth or via OAuth with at least `admin:gpg_key` [scope](https://docs.github.com/enterprise-cloud@latest//apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
 
 ```js
 octokit.rest.users.deleteGpgKeyForAuthenticated({
@@ -37,4 +37,4 @@ The unique identifier of the GPG key.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/users#delete-a-gpg-key-for-the-authenticated-user).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/users#delete-a-gpg-key-for-the-authenticated-user).

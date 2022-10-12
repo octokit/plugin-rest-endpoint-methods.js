@@ -47,4 +47,4 @@ The name of the branch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#delete-pull-request-review-protection).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/repos#delete-pull-request-review-protection).

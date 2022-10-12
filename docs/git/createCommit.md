@@ -134,4 +134,4 @@ The [PGP signature](https://en.wikipedia.org/wiki/Pretty_Good_Privacy) of the co
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/git#create-a-commit).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/git#create-a-commit).

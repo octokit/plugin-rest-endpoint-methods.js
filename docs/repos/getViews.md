@@ -46,4 +46,4 @@ The time frame to display results for.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/metrics/traffic#get-page-views).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/metrics/traffic#get-page-views).

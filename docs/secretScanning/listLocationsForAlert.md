@@ -61,4 +61,4 @@ The number of results per page (max 100).
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/secret-scanning#list-locations-for-a-secret-scanning-alert).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/secret-scanning#list-locations-for-a-secret-scanning-alert).

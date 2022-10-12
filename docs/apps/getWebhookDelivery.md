@@ -10,7 +10,7 @@ type: API method
 
 Returns a delivery for the webhook configured for a GitHub App.
 
-You must use a [JWT](https://docs.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint.
+You must use a [JWT](https://docs.github.com/enterprise-cloud@latest//apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint.
 
 ```js
 octokit.rest.apps.getWebhookDelivery({
@@ -35,4 +35,4 @@ octokit.rest.apps.getWebhookDelivery({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/apps#get-a-delivery-for-an-app-webhook).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/apps#get-a-delivery-for-an-app-webhook).

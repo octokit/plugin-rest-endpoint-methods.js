@@ -73,4 +73,4 @@ The direction to sort the results by.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/actions/cache#list-github-actions-caches-for-a-repository).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/actions/cache#list-github-actions-caches-for-a-repository).

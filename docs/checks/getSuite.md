@@ -49,4 +49,4 @@ The unique identifier of the check suite.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/checks#get-a-check-suite).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/checks#get-a-check-suite).

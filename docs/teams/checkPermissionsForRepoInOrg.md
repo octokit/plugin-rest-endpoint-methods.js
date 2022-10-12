@@ -10,7 +10,7 @@ type: API method
 
 Checks whether a team has `admin`, `push`, `maintain`, `triage`, or `pull` permission for a repository. Repositories inherited through a parent team will also be checked.
 
-You can also get information about the specified repository, including what permissions the team grants on it, by passing the following custom [media type](https://docs.github.com/rest/overview/media-types/) via the `application/vnd.github.v3.repository+json` accept header.
+You can also get information about the specified repository, including what permissions the team grants on it, by passing the following custom [media type](https://docs.github.com/enterprise-cloud@latest//rest/overview/media-types/) via the `application/vnd.github.v3.repository+json` accept header.
 
 If a team doesn't have permission for the repository, you will receive a `404 Not Found` response status.
 
@@ -59,4 +59,4 @@ The name of the repository. The name is not case sensitive.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/teams/#check-team-permissions-for-a-repository).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/teams/#check-team-permissions-for-a-repository).

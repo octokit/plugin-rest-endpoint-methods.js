@@ -8,7 +8,7 @@ type: API method
 
 # Add a security manager team
 
-Adds a team as a security manager for an organization. For more information, see "[Managing security for an organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization) for an organization."
+Adds a team as a security manager for an organization. For more information, see "[Managing security for an organization](https://docs.github.com/enterprise-cloud@latest//organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization) for an organization."
 
 To use this endpoint, you must be an administrator for the organization, and you must use an access token with the `write:org` scope.
 
@@ -45,4 +45,4 @@ The slug of the team name.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/orgs#add-a-security-manager-team).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/orgs#add-a-security-manager-team).

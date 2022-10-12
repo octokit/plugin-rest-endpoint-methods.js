@@ -49,4 +49,4 @@ The unique identifier of the workflow run.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/actions#get-pending-deployments-for-a-workflow-run).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/actions#get-pending-deployments-for-a-workflow-run).

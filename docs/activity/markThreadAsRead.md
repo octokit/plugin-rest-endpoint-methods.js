@@ -33,4 +33,4 @@ The unique identifier of the pull request thread.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/activity#mark-a-thread-as-read).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/activity#mark-a-thread-as-read).

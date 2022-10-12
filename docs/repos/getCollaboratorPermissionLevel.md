@@ -47,4 +47,4 @@ The handle for the GitHub user account.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/collaborators/collaborators#get-repository-permissions-for-a-user).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/collaborators/collaborators#get-repository-permissions-for-a-user).

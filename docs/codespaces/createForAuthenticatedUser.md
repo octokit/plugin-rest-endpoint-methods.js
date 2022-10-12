@@ -109,4 +109,4 @@ Repository id for this codespace
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/codespaces#create-a-codespace-for-the-authenticated-user).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/codespaces#create-a-codespace-for-the-authenticated-user).

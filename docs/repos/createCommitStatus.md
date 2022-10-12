@@ -70,4 +70,4 @@ A string label to differentiate this status from the status of other systems. Th
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/commits/statuses#create-a-commit-status).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/commits/statuses#create-a-commit-status).

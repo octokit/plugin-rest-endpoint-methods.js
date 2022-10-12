@@ -95,7 +95,7 @@ The time the check completed. This is a timestamp in [ISO 8601](https://en.wikip
 </td></tr>
 <tr><td>output</td><td>no</td><td>
 
-Check runs can accept a variety of data in the `output` object, including a `title` and `summary` and can optionally provide descriptive details about the run. See the [`output` object](https://docs.github.com/rest/reference/checks#output-object-1) description.
+Check runs can accept a variety of data in the `output` object, including a `title` and `summary` and can optionally provide descriptive details about the run. See the [`output` object](https://docs.github.com/enterprise-cloud@latest//rest/reference/checks#output-object-1) description.
 
 </td></tr>
 <tr><td>output.title</td><td>no</td><td>
@@ -115,7 +115,7 @@ Can contain Markdown.
 </td></tr>
 <tr><td>output.annotations</td><td>no</td><td>
 
-Adds information from your analysis to specific lines of code. Annotations are visible in GitHub's pull request UI. Annotations are visible in GitHub's pull request UI. The Checks API limits the number of annotations to a maximum of 50 per API request. To create more than 50 annotations, you have to make multiple requests to the [Update a check run](https://docs.github.com/rest/reference/checks#update-a-check-run) endpoint. Each time you update the check run, annotations are appended to the list of annotations that already exist for the check run. For details about annotations in the UI, see "[About status checks](https://docs.github.com/articles/about-status-checks#checks)". See the [`annotations` object](https://docs.github.com/rest/reference/checks#annotations-object-1) description for details.
+Adds information from your analysis to specific lines of code. Annotations are visible in GitHub's pull request UI. Annotations are visible in GitHub's pull request UI. The Checks API limits the number of annotations to a maximum of 50 per API request. To create more than 50 annotations, you have to make multiple requests to the [Update a check run](https://docs.github.com/enterprise-cloud@latest//rest/reference/checks#update-a-check-run) endpoint. Each time you update the check run, annotations are appended to the list of annotations that already exist for the check run. For details about annotations in the UI, see "[About status checks](https://docs.github.com/articles/about-status-checks#checks)". See the [`annotations` object](https://docs.github.com/enterprise-cloud@latest//rest/reference/checks#annotations-object-1) description for details.
 
 </td></tr>
 <tr><td>output.annotations[].path</td><td>yes</td><td>
@@ -165,7 +165,7 @@ Details about this annotation. The maximum size is 64 KB.
 </td></tr>
 <tr><td>output.images</td><td>no</td><td>
 
-Adds images to the output displayed in the GitHub pull request UI. See the [`images` object](https://docs.github.com/rest/reference/checks#annotations-object-1) description for details.
+Adds images to the output displayed in the GitHub pull request UI. See the [`images` object](https://docs.github.com/enterprise-cloud@latest//rest/reference/checks#annotations-object-1) description for details.
 
 </td></tr>
 <tr><td>output.images[].alt</td><td>yes</td><td>
@@ -185,7 +185,7 @@ A short image description.
 </td></tr>
 <tr><td>actions</td><td>no</td><td>
 
-Possible further actions the integrator can perform, which a user may trigger. Each action includes a `label`, `identifier` and `description`. A maximum of three actions are accepted. See the [`actions` object](https://docs.github.com/rest/reference/checks#actions-object) description. To learn more about check runs and requested actions, see "[Check runs and requested actions](https://docs.github.com/rest/reference/checks#check-runs-and-requested-actions)."
+Possible further actions the integrator can perform, which a user may trigger. Each action includes a `label`, `identifier` and `description`. A maximum of three actions are accepted. See the [`actions` object](https://docs.github.com/enterprise-cloud@latest//rest/reference/checks#actions-object) description. To learn more about check runs and requested actions, see "[Check runs and requested actions](https://docs.github.com/enterprise-cloud@latest//rest/reference/checks#check-runs-and-requested-actions)."
 
 </td></tr>
 <tr><td>actions[].label</td><td>yes</td><td>
@@ -206,4 +206,4 @@ A reference for the action on the integrator's system. The maximum size is 20 ch
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/checks#update-a-check-run).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/checks#update-a-check-run).

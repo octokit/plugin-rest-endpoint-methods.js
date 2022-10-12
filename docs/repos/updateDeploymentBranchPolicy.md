@@ -64,4 +64,4 @@ For more information about pattern matching syntax, see the [Ruby File.fnmatch d
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/deployments/branch-policies#update-deployment-branch-policy).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/deployments/branch-policies#update-deployment-branch-policy).

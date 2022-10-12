@@ -48,4 +48,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/v3/repos#list-autolinks).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//v3/repos#list-autolinks).

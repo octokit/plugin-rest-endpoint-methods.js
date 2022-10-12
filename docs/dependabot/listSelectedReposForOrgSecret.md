@@ -51,4 +51,4 @@ The number of results per page (max 100).
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/dependabot#list-selected-repositories-for-an-organization-secret).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/dependabot#list-selected-repositories-for-an-organization-secret).

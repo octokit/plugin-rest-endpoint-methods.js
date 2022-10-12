@@ -55,4 +55,4 @@ IP for location auto-detection when proxying a request
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/codespaces#list-available-machine-types-for-a-repository).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/codespaces#list-available-machine-types-for-a-repository).

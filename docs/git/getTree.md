@@ -54,4 +54,4 @@ Setting this parameter to any value returns the objects or subtrees referenced b
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/git#get-a-tree).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/git#get-a-tree).

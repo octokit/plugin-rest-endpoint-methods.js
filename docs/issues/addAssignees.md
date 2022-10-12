@@ -52,4 +52,4 @@ Usernames of people to assign this issue to. _NOTE: Only users with push access 
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/issues#add-assignees-to-an-issue).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/issues#add-assignees-to-an-issue).

@@ -56,4 +56,4 @@ Indicates whether to force the update or to make sure the update is a fast-forwa
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/git#update-a-reference).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/git#update-a-reference).

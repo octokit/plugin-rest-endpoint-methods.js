@@ -12,7 +12,7 @@ Gets a CodeQL database for a language in a repository.
 
 By default this endpoint returns JSON metadata about the CodeQL database. To
 download the CodeQL database binary content, set the `Accept` header of the request
-to [`application/zip`](https://docs.github.com/rest/overview/media-types), and make sure
+to [`application/zip`](https://docs.github.com/enterprise-cloud@latest//rest/overview/media-types), and make sure
 your HTTP client is configured to follow redirects or use the `Location` header
 to make a second request to get the redirect URL.
 
@@ -57,4 +57,4 @@ The language of the CodeQL database.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/code-scanning#get-codeql-database).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/code-scanning#get-codeql-database).

@@ -10,7 +10,7 @@ type: API method
 
 Renames a branch in a repository.
 
-**Note:** Although the API responds immediately, the branch rename process might take some extra time to complete in the background. You won't be able to push to the old branch name while the rename process is in progress. For more information, see "[Renaming a branch](https://docs.github.com/github/administering-a-repository/renaming-a-branch)".
+**Note:** Although the API responds immediately, the branch rename process might take some extra time to complete in the background. You won't be able to push to the old branch name while the rename process is in progress. For more information, see "[Renaming a branch](https://docs.github.com/enterprise-cloud@latest//github/administering-a-repository/renaming-a-branch)".
 
 The permissions required to use this endpoint depends on whether you are renaming the default branch.
 
@@ -67,4 +67,4 @@ The new name of the branch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#rename-a-branch).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/repos#rename-a-branch).

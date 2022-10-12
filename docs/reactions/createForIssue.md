@@ -8,7 +8,7 @@ type: API method
 
 # Create reaction for an issue
 
-Create a reaction to an [issue](https://docs.github.com/rest/reference/issues/). A response with an HTTP `200` status means that you already added the reaction type to this issue.
+Create a reaction to an [issue](https://docs.github.com/enterprise-cloud@latest//rest/reference/issues/). A response with an HTTP `200` status means that you already added the reaction type to this issue.
 
 ```js
 octokit.rest.reactions.createForIssue({
@@ -47,10 +47,10 @@ The number that identifies the issue.
 </td></tr>
 <tr><td>content</td><td>yes</td><td>
 
-The [reaction type](https://docs.github.com/rest/reference/reactions#reaction-types) to add to the issue.
+The [reaction type](https://docs.github.com/enterprise-cloud@latest//rest/reference/reactions#reaction-types) to add to the issue.
 
 </td></tr>
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/reactions#create-reaction-for-an-issue).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/reactions#create-reaction-for-an-issue).

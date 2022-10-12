@@ -55,4 +55,4 @@ The new Git author name.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/migrations#map-a-commit-author).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/migrations#map-a-commit-author).

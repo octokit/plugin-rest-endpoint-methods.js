@@ -15,7 +15,7 @@ To set a deployment as inactive, you must:
 - Create a new deployment that is active so that the system has a record of the current state, then delete the previously active deployment.
 - Mark the active deployment as inactive by adding any non-successful deployment status.
 
-For more information, see "[Create a deployment](https://docs.github.com/rest/reference/repos/#create-a-deployment)" and "[Create a deployment status](https://docs.github.com/rest/reference/repos#create-a-deployment-status)."
+For more information, see "[Create a deployment](https://docs.github.com/enterprise-cloud@latest//rest/reference/repos/#create-a-deployment)" and "[Create a deployment status](https://docs.github.com/enterprise-cloud@latest//rest/reference/repos#create-a-deployment-status)."
 
 ```js
 octokit.rest.repos.deleteDeployment({
@@ -54,4 +54,4 @@ deployment_id parameter
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#delete-a-deployment).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/repos#delete-a-deployment).

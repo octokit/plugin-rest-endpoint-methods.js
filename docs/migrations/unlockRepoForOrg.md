@@ -8,7 +8,7 @@ type: API method
 
 # Unlock an organization repository
 
-Unlocks a repository that was locked for migration. You should unlock each migrated repository and [delete them](https://docs.github.com/rest/reference/repos#delete-a-repository) when the migration is complete and you no longer need the source data.
+Unlocks a repository that was locked for migration. You should unlock each migrated repository and [delete them](https://docs.github.com/enterprise-cloud@latest//rest/reference/repos#delete-a-repository) when the migration is complete and you no longer need the source data.
 
 ```js
 octokit.rest.migrations.unlockRepoForOrg({
@@ -47,4 +47,4 @@ repo_name parameter
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/migrations#unlock-an-organization-repository).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/migrations#unlock-an-organization-repository).

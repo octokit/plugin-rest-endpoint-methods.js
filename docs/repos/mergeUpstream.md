@@ -47,4 +47,4 @@ The name of the branch which should be updated to match upstream.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#sync-a-fork-branch-with-the-upstream-repository).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/repos#sync-a-fork-branch-with-the-upstream-repository).

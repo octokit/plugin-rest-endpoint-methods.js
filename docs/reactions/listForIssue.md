@@ -8,7 +8,7 @@ type: API method
 
 # List reactions for an issue
 
-List the reactions to an [issue](https://docs.github.com/rest/reference/issues).
+List the reactions to an [issue](https://docs.github.com/enterprise-cloud@latest//rest/reference/issues).
 
 ```js
 octokit.rest.reactions.listForIssue({
@@ -46,7 +46,7 @@ The number that identifies the issue.
 </td></tr>
 <tr><td>content</td><td>no</td><td>
 
-Returns a single [reaction type](https://docs.github.com/rest/reference/reactions#reaction-types). Omit this parameter to list all reactions to an issue.
+Returns a single [reaction type](https://docs.github.com/enterprise-cloud@latest//rest/reference/reactions#reaction-types). Omit this parameter to list all reactions to an issue.
 
 </td></tr>
 <tr><td>per_page</td><td>no</td><td>
@@ -62,4 +62,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/reactions#list-reactions-for-an-issue).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/reactions#list-reactions-for-an-issue).

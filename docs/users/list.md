@@ -8,9 +8,9 @@ type: API method
 
 # List users
 
-Lists all users, in the order that they signed up on GitHub. This list includes personal user accounts and organization accounts.
+Lists all users, in the order that they signed up on GitHub Enterprise Cloud. This list includes personal user accounts and organization accounts.
 
-Note: Pagination is powered exclusively by the `since` parameter. Use the [Link header](https://docs.github.com/rest/overview/resources-in-the-rest-api#link-header) to get the URL for the next page of users.
+Note: Pagination is powered exclusively by the `since` parameter. Use the [Link header](https://docs.github.com/enterprise-cloud@latest//rest/overview/resources-in-the-rest-api#link-header) to get the URL for the next page of users.
 
 ```js
 octokit.rest.users.list();
@@ -40,4 +40,4 @@ The number of results per page (max 100).
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/users#list-users).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/users#list-users).
