@@ -8,7 +8,7 @@ type: API method
 
 # Get an SSH signing key for the authenticated user
 
-Gets extended details for an SSH signing key. You must authenticate with Basic Authentication, or you must authenticate with OAuth with at least `read:ssh_signing_key` scope. For more information, see "[Understanding scopes for OAuth apps](https://docs.github.com/enterprise-cloud@latest//apps/building-oauth-apps/understanding-scopes-for-oauth-apps/)."
+Gets extended details for an SSH signing key. You must authenticate with Basic Authentication, or you must authenticate with OAuth with at least `read:ssh_signing_key` scope. For more information, see "[Understanding scopes for OAuth apps](https://docs.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/)."
 
 ```js
 octokit.rest.users.getSshSigningKeyForAuthenticatedUser({
@@ -35,4 +35,4 @@ The unique identifier of the SSH signing key.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/users#get-a-ssh-signing-key-for-the-authenticated-user).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/users#get-a-ssh-signing-key-for-the-authenticated-user).

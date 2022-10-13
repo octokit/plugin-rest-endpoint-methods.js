@@ -58,7 +58,7 @@ The media type used to serialize the payloads. Supported values include `json` a
 </td></tr>
 <tr><td>secret</td><td>no</td><td>
 
-If provided, the `secret` will be used as the `key` to generate the HMAC hex digest value for [delivery signature headers](https://docs.github.com/enterprise-cloud@latest//webhooks/event-payloads/#delivery-headers).
+If provided, the `secret` will be used as the `key` to generate the HMAC hex digest value for [delivery signature headers](https://docs.github.com/webhooks/event-payloads/#delivery-headers).
 
 </td></tr>
 <tr><td>insecure_ssl</td><td>no</td><td>
@@ -67,4 +67,4 @@ If provided, the `secret` will be used as the `key` to generate the HMAC hex dig
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/webhooks/repo-config#update-a-webhook-configuration-for-a-repository).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/webhooks/repo-config#update-a-webhook-configuration-for-a-repository).

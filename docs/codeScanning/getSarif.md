@@ -47,4 +47,4 @@ The SARIF ID obtained after uploading.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/code-scanning#list-recent-code-scanning-analyses-for-a-repository).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/code-scanning#list-recent-code-scanning-analyses-for-a-repository).

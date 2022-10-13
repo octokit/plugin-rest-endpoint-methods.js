@@ -8,9 +8,9 @@ type: API method
 
 # Suspend an app installation
 
-Suspends a GitHub App on a user, organization, or business account, which blocks the app from accessing the account's resources. When a GitHub App is suspended, the app's access to the GitHub Enterprise Cloud API or webhook events is blocked for that account.
+Suspends a GitHub App on a user, organization, or business account, which blocks the app from accessing the account's resources. When a GitHub App is suspended, the app's access to the GitHub API or webhook events is blocked for that account.
 
-You must use a [JWT](https://docs.github.com/enterprise-cloud@latest//apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint.
+You must use a [JWT](https://docs.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint.
 
 ```js
 octokit.rest.apps.suspendInstallation({
@@ -37,4 +37,4 @@ The unique identifier of the installation.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/apps#suspend-an-app-installation).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/apps#suspend-an-app-installation).

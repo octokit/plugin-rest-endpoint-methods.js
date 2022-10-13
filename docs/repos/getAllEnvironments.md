@@ -53,4 +53,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/deployments/environments#list-environments).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/deployments/environments#list-environments).

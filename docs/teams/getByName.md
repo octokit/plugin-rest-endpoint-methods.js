@@ -8,7 +8,7 @@ type: API method
 
 # Get a team by name
 
-Gets a team using the team's `slug`. GitHub Enterprise Cloud generates the `slug` from the team `name`.
+Gets a team using the team's `slug`. GitHub generates the `slug` from the team `name`.
 
 **Note:** You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/{org_id}/team/{team_id}`.
 
@@ -43,4 +43,4 @@ The slug of the team name.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/teams#get-a-team-by-name).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/teams#get-a-team-by-name).

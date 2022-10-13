@@ -8,7 +8,7 @@ type: API method
 
 # Add selected repository to an organization secret
 
-Adds a repository to an organization secret when the `visibility` for repository access is set to `selected`. The visibility is set when you [Create or update an organization secret](https://docs.github.com/enterprise-cloud@latest//rest/reference/dependabot#create-or-update-an-organization-secret). You must authenticate using an access token with the `admin:org` scope to use this endpoint. GitHub Apps must have the `dependabot_secrets` organization permission to use this endpoint.
+Adds a repository to an organization secret when the `visibility` for repository access is set to `selected`. The visibility is set when you [Create or update an organization secret](https://docs.github.com/rest/reference/dependabot#create-or-update-an-organization-secret). You must authenticate using an access token with the `admin:org` scope to use this endpoint. GitHub Apps must have the `dependabot_secrets` organization permission to use this endpoint.
 
 ```js
 octokit.rest.dependabot.addSelectedRepoToOrgSecret({
@@ -45,4 +45,4 @@ The name of the secret.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/dependabot#add-selected-repository-to-an-organization-secret).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/dependabot#add-selected-repository-to-an-organization-secret).

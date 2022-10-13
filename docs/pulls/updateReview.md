@@ -59,4 +59,4 @@ The body text of the pull request review.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/pulls#update-a-review-for-a-pull-request).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/pulls#update-a-review-for-a-pull-request).

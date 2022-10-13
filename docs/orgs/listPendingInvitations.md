@@ -8,7 +8,7 @@ type: API method
 
 # List pending organization invitations
 
-The return hash contains a `role` field which refers to the Organization Invitation role and will be one of the following values: `direct_member`, `admin`, `billing_manager`, `hiring_manager`, or `reinstate`. If the invitee is not a GitHub Enterprise Cloud member, the `login` field in the return hash will be `null`.
+The return hash contains a `role` field which refers to the Organization Invitation role and will be one of the following values: `direct_member`, `admin`, `billing_manager`, `hiring_manager`, or `reinstate`. If the invitee is not a GitHub member, the `login` field in the return hash will be `null`.
 
 ```js
 octokit.rest.orgs.listPendingInvitations({
@@ -45,4 +45,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/orgs#list-pending-organization-invitations).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/orgs#list-pending-organization-invitations).

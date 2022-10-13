@@ -8,7 +8,7 @@ type: API method
 
 # Star a repository for the authenticated user
 
-Note that you'll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see "[HTTP verbs](https://docs.github.com/enterprise-cloud@latest//rest/overview/resources-in-the-rest-api#http-verbs)."
+Note that you'll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see "[HTTP verbs](https://docs.github.com/rest/overview/resources-in-the-rest-api#http-verbs)."
 
 ```js
 octokit.rest.activity.starRepoForAuthenticatedUser({
@@ -41,4 +41,4 @@ The name of the repository. The name is not case sensitive.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/activity#star-a-repository-for-the-authenticated-user).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/activity#star-a-repository-for-the-authenticated-user).

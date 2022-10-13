@@ -49,4 +49,4 @@ The ID of the workflow. You can also pass the workflow file name as a string.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/actions#enable-a-workflow).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/actions#enable-a-workflow).

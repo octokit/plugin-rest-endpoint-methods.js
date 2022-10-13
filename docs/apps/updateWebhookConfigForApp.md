@@ -10,7 +10,7 @@ type: API method
 
 Updates the webhook configuration for a GitHub App. For more information about configuring a webhook for your app, see "[Creating a GitHub App](/developers/apps/creating-a-github-app)."
 
-You must use a [JWT](https://docs.github.com/enterprise-cloud@latest//apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint.
+You must use a [JWT](https://docs.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint.
 
 ```js
 octokit.rest.apps.updateWebhookConfigForApp();
@@ -39,7 +39,7 @@ The media type used to serialize the payloads. Supported values include `json` a
 </td></tr>
 <tr><td>secret</td><td>no</td><td>
 
-If provided, the `secret` will be used as the `key` to generate the HMAC hex digest value for [delivery signature headers](https://docs.github.com/enterprise-cloud@latest//webhooks/event-payloads/#delivery-headers).
+If provided, the `secret` will be used as the `key` to generate the HMAC hex digest value for [delivery signature headers](https://docs.github.com/webhooks/event-payloads/#delivery-headers).
 
 </td></tr>
 <tr><td>insecure_ssl</td><td>no</td><td>
@@ -48,4 +48,4 @@ If provided, the `secret` will be used as the `key` to generate the HMAC hex dig
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/apps#update-a-webhook-configuration-for-an-app).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/apps#update-a-webhook-configuration-for-an-app).

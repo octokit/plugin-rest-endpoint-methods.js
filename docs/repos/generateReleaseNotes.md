@@ -8,7 +8,7 @@ type: API method
 
 # Generate release notes content for a release
 
-Generate a name and body describing a [release](https://docs.github.com/enterprise-cloud@latest//rest/reference/repos#releases). The body content will be markdown formatted and contain information like the changes since last release and users who contributed. The generated release notes are not saved anywhere. They are intended to be generated and used when creating a new release.
+Generate a name and body describing a [release](https://docs.github.com/rest/reference/repos#releases). The body content will be markdown formatted and contain information like the changes since last release and users who contributed. The generated release notes are not saved anywhere. They are intended to be generated and used when creating a new release.
 
 ```js
 octokit.rest.repos.generateReleaseNotes({
@@ -62,4 +62,4 @@ Specifies a path to a file in the repository containing configuration settings u
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/repos#generate-release-notes).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#generate-release-notes).

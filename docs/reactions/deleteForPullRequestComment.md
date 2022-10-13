@@ -10,7 +10,7 @@ type: API method
 
 **Note:** You can also specify a repository by `repository_id` using the route `DELETE /repositories/:repository_id/pulls/comments/:comment_id/reactions/:reaction_id.`
 
-Delete a reaction to a [pull request review comment](https://docs.github.com/enterprise-cloud@latest//rest/reference/pulls#review-comments).
+Delete a reaction to a [pull request review comment](https://docs.github.com/rest/reference/pulls#review-comments).
 
 ```js
 octokit.rest.reactions.deleteForPullRequestComment({
@@ -55,4 +55,4 @@ The unique identifier of the reaction.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/reactions#delete-a-pull-request-comment-reaction).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/reactions#delete-a-pull-request-comment-reaction).

@@ -8,7 +8,7 @@ type: API method
 
 # Remove a security manager team
 
-Removes the security manager role from a team for an organization. For more information, see "[Managing security managers in your organization](https://docs.github.com/enterprise-cloud@latest//organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization) team from an organization."
+Removes the security manager role from a team for an organization. For more information, see "[Managing security managers in your organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization) team from an organization."
 
 To use this endpoint, you must be an administrator for the organization, and you must use an access token with the `admin:org` scope.
 
@@ -45,4 +45,4 @@ The slug of the team name.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/orgs#remove-a-security-manager-team).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/orgs#remove-a-security-manager-team).

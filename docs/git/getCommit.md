@@ -76,4 +76,4 @@ The SHA of the commit.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/git#get-a-commit).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/git#get-a-commit).

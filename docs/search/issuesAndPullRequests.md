@@ -8,10 +8,10 @@ type: API method
 
 # Search issues and pull requests
 
-Find issues by state and keyword. This method returns up to 100 results [per page](https://docs.github.com/enterprise-cloud@latest//rest/overview/resources-in-the-rest-api#pagination).
+Find issues by state and keyword. This method returns up to 100 results [per page](https://docs.github.com/rest/overview/resources-in-the-rest-api#pagination).
 
 When searching for issues, you can get text match metadata for the issue **title**, issue **body**, and issue **comment body** fields when you pass the `text-match` media type. For more details about how to receive highlighted
-search results, see [Text match metadata](https://docs.github.com/enterprise-cloud@latest//rest/reference/search#text-match-metadata).
+search results, see [Text match metadata](https://docs.github.com/rest/reference/search#text-match-metadata).
 
 For example, if you want to find the oldest unresolved Python bugs on Windows. Your query might look something like this.
 
@@ -40,12 +40,12 @@ octokit.rest.search.issuesAndPullRequests({
   <tbody>
     <tr><td>q</td><td>yes</td><td>
 
-The query contains one or more search keywords and qualifiers. Qualifiers allow you to limit your search to specific areas of GitHub Enterprise Cloud. The REST API supports the same qualifiers as the web interface for GitHub Enterprise Cloud. To learn more about the format of the query, see [Constructing a search query](https://docs.github.com/enterprise-cloud@latest//rest/reference/search#constructing-a-search-query). See "[Searching issues and pull requests](https://docs.github.com/enterprise-cloud@latest//search-github/searching-on-github/searching-issues-and-pull-requests)" for a detailed list of qualifiers.
+The query contains one or more search keywords and qualifiers. Qualifiers allow you to limit your search to specific areas of GitHub. The REST API supports the same qualifiers as the web interface for GitHub. To learn more about the format of the query, see [Constructing a search query](https://docs.github.com/rest/reference/search#constructing-a-search-query). See "[Searching issues and pull requests](https://docs.github.com/search-github/searching-on-github/searching-issues-and-pull-requests)" for a detailed list of qualifiers.
 
 </td></tr>
 <tr><td>sort</td><td>no</td><td>
 
-Sorts the results of your query by the number of `comments`, `reactions`, `reactions-+1`, `reactions--1`, `reactions-smile`, `reactions-thinking_face`, `reactions-heart`, `reactions-tada`, or `interactions`. You can also sort results by how recently the items were `created` or `updated`, Default: [best match](https://docs.github.com/enterprise-cloud@latest//rest/reference/search#ranking-search-results)
+Sorts the results of your query by the number of `comments`, `reactions`, `reactions-+1`, `reactions--1`, `reactions-smile`, `reactions-thinking_face`, `reactions-heart`, `reactions-tada`, or `interactions`. You can also sort results by how recently the items were `created` or `updated`, Default: [best match](https://docs.github.com/rest/reference/search#ranking-search-results)
 
 </td></tr>
 <tr><td>order</td><td>no</td><td>
@@ -66,4 +66,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/search#search-issues-and-pull-requests).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/search#search-issues-and-pull-requests).

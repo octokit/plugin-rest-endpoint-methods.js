@@ -8,7 +8,7 @@ type: API method
 
 # Create a SSH signing key for the authenticated user
 
-Creates an SSH signing key for the authenticated user's GitHub account. You must authenticate with Basic Authentication, or you must authenticate with OAuth with at least `write:ssh_signing_key` scope. For more information, see "[Understanding scopes for OAuth apps](https://docs.github.com/enterprise-cloud@latest//apps/building-oauth-apps/understanding-scopes-for-oauth-apps/)."
+Creates an SSH signing key for the authenticated user's GitHub account. You must authenticate with Basic Authentication, or you must authenticate with OAuth with at least `write:ssh_signing_key` scope. For more information, see "[Understanding scopes for OAuth apps](https://docs.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/)."
 
 ```js
 octokit.rest.users.createSshSigningKeyForAuthenticatedUser({
@@ -34,10 +34,10 @@ A descriptive name for the new key.
 </td></tr>
 <tr><td>key</td><td>yes</td><td>
 
-The public SSH key to add to your GitHub account. For more information, see "[Checking for existing SSH keys](https://docs.github.com/enterprise-cloud@latest//authentication/connecting-to-github-with-ssh/checking-for-existing-ssh-keys)."
+The public SSH key to add to your GitHub account. For more information, see "[Checking for existing SSH keys](https://docs.github.com/authentication/connecting-to-github-with-ssh/checking-for-existing-ssh-keys)."
 
 </td></tr>
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/users#create-an-ssh-signing-key-for-the-authenticated-user).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/users#create-an-ssh-signing-key-for-the-authenticated-user).

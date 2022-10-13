@@ -8,9 +8,9 @@ type: API method
 
 # Delete an installation for the authenticated app
 
-Uninstalls a GitHub App on a user, organization, or business account. If you prefer to temporarily suspend an app's access to your account's resources, then we recommend the "[Suspend an app installation](https://docs.github.com/enterprise-cloud@latest//rest/reference/apps/#suspend-an-app-installation)" endpoint.
+Uninstalls a GitHub App on a user, organization, or business account. If you prefer to temporarily suspend an app's access to your account's resources, then we recommend the "[Suspend an app installation](https://docs.github.com/rest/reference/apps/#suspend-an-app-installation)" endpoint.
 
-You must use a [JWT](https://docs.github.com/enterprise-cloud@latest//apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint.
+You must use a [JWT](https://docs.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint.
 
 ```js
 octokit.rest.apps.deleteInstallation({
@@ -37,4 +37,4 @@ The unique identifier of the installation.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/apps#delete-an-installation-for-the-authenticated-app).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/apps#delete-an-installation-for-the-authenticated-app).

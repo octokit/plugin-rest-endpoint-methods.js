@@ -49,4 +49,4 @@ The unique identifier of the autolink.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//v3/repos#delete-autolink).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/v3/repos#delete-autolink).

@@ -41,4 +41,4 @@ The unique identifier of the migration.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/migrations#delete-an-organization-migration-archive).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/migrations#delete-an-organization-migration-archive).

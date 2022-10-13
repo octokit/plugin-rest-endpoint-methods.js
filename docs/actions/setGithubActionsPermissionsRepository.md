@@ -56,4 +56,4 @@ The permissions policy that controls the actions and reusable workflows that are
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/actions#set-github-actions-permissions-for-a-repository).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/actions#set-github-actions-permissions-for-a-repository).

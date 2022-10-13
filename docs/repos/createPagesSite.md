@@ -1,14 +1,14 @@
 ---
-name: Create a GitHub Enterprise Cloud Pages site
+name: Create a GitHub Pages site
 example: octokit.rest.repos.createPagesSite({ owner, repo, source.branch })
 route: POST /repos/{owner}/{repo}/pages
 scope: repos
 type: API method
 ---
 
-# Create a GitHub Enterprise Cloud Pages site
+# Create a GitHub Pages site
 
-Configures a GitHub Enterprise Cloud Pages site. For more information, see "[About GitHub Pages](/github/working-with-github-pages/about-github-pages)."
+Configures a GitHub Pages site. For more information, see "[About GitHub Pages](/github/working-with-github-pages/about-github-pages)."
 
 ```js
 octokit.rest.repos.createPagesSite({
@@ -62,4 +62,4 @@ The repository directory that includes the source files for the Pages site. Allo
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/pages#create-a-github-pages-site).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/pages#create-a-github-pages-site).

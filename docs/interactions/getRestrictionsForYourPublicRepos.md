@@ -20,4 +20,4 @@ octokit.rest.interactions.getRestrictionsForYourPublicRepos();
 
 This endpoint has no parameters
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/interactions#get-interaction-restrictions-for-your-public-repositories).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/interactions#get-interaction-restrictions-for-your-public-repositories).

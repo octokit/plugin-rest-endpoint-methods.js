@@ -33,4 +33,4 @@ The handle for the GitHub user account.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/users#block-a-user).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/users#block-a-user).

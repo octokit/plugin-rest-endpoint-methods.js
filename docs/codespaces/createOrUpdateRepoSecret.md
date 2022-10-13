@@ -119,7 +119,7 @@ The name of the secret.
 </td></tr>
 <tr><td>encrypted_value</td><td>no</td><td>
 
-Value for your secret, encrypted with [LibSodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages) using the public key retrieved from the [Get a repository public key](https://docs.github.com/enterprise-cloud@latest//rest/reference/codespaces#get-a-repository-public-key) endpoint.
+Value for your secret, encrypted with [LibSodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages) using the public key retrieved from the [Get a repository public key](https://docs.github.com/rest/reference/codespaces#get-a-repository-public-key) endpoint.
 
 </td></tr>
 <tr><td>key_id</td><td>no</td><td>
@@ -130,4 +130,4 @@ ID of the key you used to encrypt the secret.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/codespaces#create-or-update-a-repository-secret).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/codespaces#create-or-update-a-repository-secret).

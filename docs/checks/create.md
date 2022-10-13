@@ -51,4 +51,4 @@ The name of the repository. The name is not case sensitive.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/checks#create-a-check-run).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/checks#create-a-check-run).

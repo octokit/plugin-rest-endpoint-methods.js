@@ -12,7 +12,7 @@ Creates a new repository for the authenticated user.
 
 **OAuth scope requirements**
 
-When using [OAuth](https://docs.github.com/enterprise-cloud@latest//apps/building-oauth-apps/understanding-scopes-for-oauth-apps/), authorizations must include:
+When using [OAuth](https://docs.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/), authorizations must include:
 
 - `public_repo` scope or `repo` scope to create a public repository. Note: For GitHub AE, use `repo` scope to create an internal repository.
 - `repo` scope to create a private repository.
@@ -161,4 +161,4 @@ Whether this repository acts as a template that can be used to generate new repo
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/repos#create-a-repository-for-the-authenticated-user).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#create-a-repository-for-the-authenticated-user).

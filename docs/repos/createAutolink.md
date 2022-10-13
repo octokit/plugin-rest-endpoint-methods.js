@@ -58,4 +58,4 @@ Whether this autolink reference matches alphanumeric characters. If true, the `<
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//v3/repos#create-an-autolink).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/v3/repos#create-an-autolink).

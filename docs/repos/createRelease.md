@@ -10,7 +10,7 @@ type: API method
 
 Users with push access to the repository can create a release.
 
-This endpoint triggers [notifications](https://docs.github.com/en/github/managing-subscriptions-and-notifications-on-github/about-notifications). Creating content too quickly using this endpoint may result in secondary rate limiting. See "[Secondary rate limits](https://docs.github.com/enterprise-cloud@latest//rest/overview/resources-in-the-rest-api#secondary-rate-limits)" and "[Dealing with secondary rate limits](https://docs.github.com/enterprise-cloud@latest//rest/guides/best-practices-for-integrators#dealing-with-secondary-rate-limits)" for details.
+This endpoint triggers [notifications](https://docs.github.com/en/github/managing-subscriptions-and-notifications-on-github/about-notifications). Creating content too quickly using this endpoint may result in secondary rate limiting. See "[Secondary rate limits](https://docs.github.com/rest/overview/resources-in-the-rest-api#secondary-rate-limits)" and "[Dealing with secondary rate limits](https://docs.github.com/rest/guides/best-practices-for-integrators#dealing-with-secondary-rate-limits)" for details.
 
 ```js
 octokit.rest.repos.createRelease({
@@ -73,7 +73,7 @@ Text describing the contents of the tag.
 </td></tr>
 <tr><td>discussion_category_name</td><td>no</td><td>
 
-If specified, a discussion of the specified category is created and linked to the release. The value must be a category that already exists in the repository. For more information, see "[Managing categories for discussions in your repository](https://docs.github.com/enterprise-cloud@latest//discussions/managing-discussions-for-your-community/managing-categories-for-discussions-in-your-repository)."
+If specified, a discussion of the specified category is created and linked to the release. The value must be a category that already exists in the repository. For more information, see "[Managing categories for discussions in your repository](https://docs.github.com/discussions/managing-discussions-for-your-community/managing-categories-for-discussions-in-your-repository)."
 
 </td></tr>
 <tr><td>generate_release_notes</td><td>no</td><td>
@@ -84,4 +84,4 @@ Whether to automatically generate the name and body for this release. If `name` 
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/repos#create-a-release).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#create-a-release).

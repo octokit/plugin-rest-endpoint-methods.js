@@ -96,4 +96,4 @@ Duration in minutes after codespace has gone idle in which it will be deleted. M
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/codespaces#create-a-codespace-from-a-pull-request).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/codespaces#create-a-codespace-from-a-pull-request).

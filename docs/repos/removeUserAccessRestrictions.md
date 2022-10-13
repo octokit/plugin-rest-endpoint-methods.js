@@ -57,4 +57,4 @@ The name of the branch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/repos#remove-user-access-restrictions).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#remove-user-access-restrictions).

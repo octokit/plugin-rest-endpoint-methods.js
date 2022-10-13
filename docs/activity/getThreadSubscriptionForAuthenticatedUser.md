@@ -8,7 +8,7 @@ type: API method
 
 # Get a thread subscription for the authenticated user
 
-This checks to see if the current user is subscribed to a thread. You can also [get a repository subscription](https://docs.github.com/enterprise-cloud@latest//rest/reference/activity#get-a-repository-subscription).
+This checks to see if the current user is subscribed to a thread. You can also [get a repository subscription](https://docs.github.com/rest/reference/activity#get-a-repository-subscription).
 
 Note that subscriptions are only generated if a user is participating in a conversation--for example, they've replied to the thread, were **@mentioned**, or manually subscribe to a thread.
 
@@ -37,4 +37,4 @@ The unique identifier of the pull request thread.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/activity#get-a-thread-subscription-for-the-authenticated-user).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/activity#get-a-thread-subscription-for-the-authenticated-user).

@@ -43,4 +43,4 @@ The unique identifier of the organization.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/actions#enable-a-selected-organization-for-github-actions-in-an-enterprise).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/actions#enable-a-selected-organization-for-github-actions-in-an-enterprise).

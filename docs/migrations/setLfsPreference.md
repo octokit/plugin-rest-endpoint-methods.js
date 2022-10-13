@@ -47,4 +47,4 @@ Whether to store large files during the import. `opt_in` means large files will 
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/migrations#update-git-lfs-preference).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/migrations#update-git-lfs-preference).

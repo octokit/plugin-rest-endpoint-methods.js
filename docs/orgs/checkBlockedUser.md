@@ -39,4 +39,4 @@ The handle for the GitHub user account.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/orgs#check-if-a-user-is-blocked-by-an-organization).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/orgs#check-if-a-user-is-blocked-by-an-organization).

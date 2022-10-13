@@ -1,12 +1,12 @@
 ---
-name: Request a GitHub Enterprise Cloud Pages build
+name: Request a GitHub Pages build
 example: octokit.rest.repos.requestPagesBuild({ owner, repo })
 route: POST /repos/{owner}/{repo}/pages/builds
 scope: repos
 type: API method
 ---
 
-# Request a GitHub Enterprise Cloud Pages build
+# Request a GitHub Pages build
 
 You can request that your site be built from the latest revision on the default branch. This has the same effect as pushing a commit to your default branch, but does not require an additional commit. Manually triggering page builds can be helpful when diagnosing build warnings and failures.
 
@@ -43,4 +43,4 @@ The name of the repository. The name is not case sensitive.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/pages#request-a-github-pages-build).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/pages#request-a-github-pages-build).

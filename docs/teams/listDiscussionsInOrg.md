@@ -8,7 +8,7 @@ type: API method
 
 # List discussions
 
-List all discussions on a team's page. OAuth access tokens require the `read:discussion` [scope](https://docs.github.com/enterprise-cloud@latest//apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
+List all discussions on a team's page. OAuth access tokens require the `read:discussion` [scope](https://docs.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
 
 **Note:** You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/{org_id}/team/{team_id}/discussions`.
 
@@ -63,4 +63,4 @@ Pinned discussions only filter
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/teams#list-discussions).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/teams#list-discussions).

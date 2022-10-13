@@ -8,7 +8,7 @@ type: API method
 
 # List reactions for a pull request review comment
 
-List the reactions to a [pull request review comment](https://docs.github.com/enterprise-cloud@latest//rest/reference/pulls#review-comments).
+List the reactions to a [pull request review comment](https://docs.github.com/rest/reference/pulls#review-comments).
 
 ```js
 octokit.rest.reactions.listForPullRequestReviewComment({
@@ -46,7 +46,7 @@ The unique identifier of the comment.
 </td></tr>
 <tr><td>content</td><td>no</td><td>
 
-Returns a single [reaction type](https://docs.github.com/enterprise-cloud@latest//rest/reference/reactions#reaction-types). Omit this parameter to list all reactions to a pull request review comment.
+Returns a single [reaction type](https://docs.github.com/rest/reference/reactions#reaction-types). Omit this parameter to list all reactions to a pull request review comment.
 
 </td></tr>
 <tr><td>per_page</td><td>no</td><td>
@@ -62,4 +62,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/reactions#list-reactions-for-a-pull-request-review-comment).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/reactions#list-reactions-for-a-pull-request-review-comment).

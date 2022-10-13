@@ -8,7 +8,7 @@ type: API method
 
 # Submit a review for a pull request
 
-Submits a pending review for a pull request. For more information about creating a pending review for a pull request, see "[Create a review for a pull request](https://docs.github.com/enterprise-cloud@latest//rest/pulls#create-a-review-for-a-pull-request)."
+Submits a pending review for a pull request. For more information about creating a pending review for a pull request, see "[Create a review for a pull request](https://docs.github.com/rest/pulls#create-a-review-for-a-pull-request)."
 
 ```js
 octokit.rest.pulls.submitReview({
@@ -64,4 +64,4 @@ The review action you want to perform. The review actions include: `APPROVE`, `R
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/pulls#submit-a-review-for-a-pull-request).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/pulls#submit-a-review-for-a-pull-request).

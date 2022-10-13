@@ -202,4 +202,4 @@ Requires all conversations on code to be resolved before a pull request can be m
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/repos#update-branch-protection).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#update-branch-protection).

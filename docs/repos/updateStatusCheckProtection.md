@@ -75,4 +75,4 @@ The ID of the GitHub App that must provide this check. Omit this field to automa
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/repos#update-status-check-protection).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#update-status-check-protection).

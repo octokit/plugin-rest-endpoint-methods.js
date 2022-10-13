@@ -49,4 +49,4 @@ The number that identifies a Dependabot alert in its repository. You can find th
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/dependabot#get-a-dependabot-alert).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/dependabot#get-a-dependabot-alert).

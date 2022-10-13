@@ -8,7 +8,7 @@ type: API method
 
 # Start an import
 
-Start a source import to a GitHub Enterprise Cloud repository using GitHub Enterprise Cloud Importer.
+Start a source import to a GitHub repository using GitHub Importer.
 
 ```js
 octokit.rest.migrations.startImport({
@@ -67,4 +67,4 @@ For a tfvc import, the name of the project that is being imported.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/migrations#start-an-import).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/migrations#start-an-import).

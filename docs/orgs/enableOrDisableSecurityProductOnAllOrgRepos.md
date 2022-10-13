@@ -15,7 +15,7 @@ A token with the 'write:org' scope is also required.
 
 GitHub Apps must have the `organization_administration:write` permission to use this endpoint.
 
-For more information, see "[Managing security managers in your organization](https://docs.github.com/enterprise-cloud@latest//organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization)."
+For more information, see "[Managing security managers in your organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization)."
 
 ```js
 octokit.rest.orgs.enableOrDisableSecurityProductOnAllOrgRepos({
@@ -57,4 +57,4 @@ The action to take.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/orgs#enable-or-disable-security-product-on-all-org-repos).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/orgs#enable-or-disable-security-product-on-all-org-repos).

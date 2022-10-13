@@ -8,9 +8,9 @@ type: API method
 
 # List organizations
 
-Lists all organizations, in the order that they were created on GitHub Enterprise Cloud.
+Lists all organizations, in the order that they were created on GitHub.
 
-**Note:** Pagination is powered exclusively by the `since` parameter. Use the [Link header](https://docs.github.com/enterprise-cloud@latest//rest/overview/resources-in-the-rest-api#link-header) to get the URL for the next page of organizations.
+**Note:** Pagination is powered exclusively by the `since` parameter. Use the [Link header](https://docs.github.com/rest/overview/resources-in-the-rest-api#link-header) to get the URL for the next page of organizations.
 
 ```js
 octokit.rest.orgs.list();
@@ -40,4 +40,4 @@ The number of results per page (max 100).
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/orgs#list-organizations).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/orgs#list-organizations).

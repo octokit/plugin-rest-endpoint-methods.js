@@ -118,4 +118,4 @@ Allow deletion if the specified analysis is the last in a set. If you attempt to
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/code-scanning#delete-a-code-scanning-analysis-from-a-repository).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/code-scanning#delete-a-code-scanning-analysis-from-a-repository).

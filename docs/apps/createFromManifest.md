@@ -8,7 +8,7 @@ type: API method
 
 # Create a GitHub App from a manifest
 
-Use this endpoint to complete the handshake necessary when implementing the [GitHub App Manifest flow](https://docs.github.com/enterprise-cloud@latest//apps/building-github-apps/creating-github-apps-from-a-manifest/). When you create a GitHub App with the manifest flow, you receive a temporary `code` used to retrieve the GitHub App's `id`, `pem` (private key), and `webhook_secret`.
+Use this endpoint to complete the handshake necessary when implementing the [GitHub App Manifest flow](https://docs.github.com/apps/building-github-apps/creating-github-apps-from-a-manifest/). When you create a GitHub App with the manifest flow, you receive a temporary `code` used to retrieve the GitHub App's `id`, `pem` (private key), and `webhook_secret`.
 
 ```js
 octokit.rest.apps.createFromManifest({
@@ -33,4 +33,4 @@ octokit.rest.apps.createFromManifest({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/apps#create-a-github-app-from-a-manifest).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/apps#create-a-github-app-from-a-manifest).

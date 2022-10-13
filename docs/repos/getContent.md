@@ -11,16 +11,16 @@ type: API method
 Gets the contents of a file or directory in a repository. Specify the file path or directory in `:path`. If you omit
 `:path`, you will receive the contents of the repository's root directory. See the description below regarding what the API response includes for directories.
 
-Files and symlinks support [a custom media type](https://docs.github.com/enterprise-cloud@latest//rest/reference/repos#custom-media-types) for
+Files and symlinks support [a custom media type](https://docs.github.com/rest/reference/repos#custom-media-types) for
 retrieving the raw content or rendered HTML (when supported). All content types support [a custom media
-type](https://docs.github.com/enterprise-cloud@latest//rest/reference/repos#custom-media-types) to ensure the content is returned in a consistent
+type](https://docs.github.com/rest/reference/repos#custom-media-types) to ensure the content is returned in a consistent
 object format.
 
 **Notes**:
 
-- To get a repository's contents recursively, you can [recursively get the tree](https://docs.github.com/enterprise-cloud@latest//rest/reference/git#trees).
+- To get a repository's contents recursively, you can [recursively get the tree](https://docs.github.com/rest/reference/git#trees).
 - This API has an upper limit of 1,000 files for a directory. If you need to retrieve more files, use the [Git Trees
-  API](https://docs.github.com/enterprise-cloud@latest//rest/reference/git#get-a-tree).
+  API](https://docs.github.com/rest/reference/git#get-a-tree).
 - Download URLs expire and are meant to be used just once. To ensure the download URL does not expire, please use the contents API to obtain a fresh download URL for each download.
 
 #### Size limits
@@ -28,7 +28,7 @@ object format.
 If the requested file's size is:
 
 - 1 MB or smaller: All features of this endpoint are supported.
-- Between 1-100 MB: Only the `raw` or `object` [custom media types](https://docs.github.com/enterprise-cloud@latest//rest/repos/contents#custom-media-types-for-repository-contents) are supported. Both will work as normal, except that when using the `object` media type, the `content` field will be an empty string and the `encoding` field will be `"none"`. To get the contents of these larger files, use the `raw` media type.
+- Between 1-100 MB: Only the `raw` or `object` [custom media types](https://docs.github.com/rest/repos/contents#custom-media-types-for-repository-contents) are supported. Both will work as normal, except that when using the `object` media type, the `content` field will be an empty string and the `encoding` field will be `"none"`. To get the contents of these larger files, use the `raw` media type.
 - Greater than 100 MB: This endpoint is not supported.
 
 #### If the content is a directory
@@ -95,4 +95,4 @@ The name of the commit/branch/tag. Default: the repository’s default branch (u
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/repos#get-repository-content).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#get-repository-content).

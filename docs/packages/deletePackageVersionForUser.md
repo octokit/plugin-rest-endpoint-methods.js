@@ -58,4 +58,4 @@ Unique identifier of the package version.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/packages#delete-a-package-version-for-a-user).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/packages#delete-a-package-version-for-a-user).

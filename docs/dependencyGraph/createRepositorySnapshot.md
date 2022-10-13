@@ -184,4 +184,4 @@ The time at which the snapshot was scanned.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/dependency-graph#create-a-snapshot-of-dependencies-for-a-repository).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/dependency-graph#create-a-snapshot-of-dependencies-for-a-repository).

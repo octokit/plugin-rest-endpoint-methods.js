@@ -15,7 +15,7 @@ Updates a custom repository role that can be used by all repositories owned by t
 To use this endpoint the authenticated user must be an administrator for the organization and must use an access token with `admin:org` scope.
 GitHub Apps must have the `organization_custom_roles:write` organization permission to use this endpoint.
 
-For more information about custom repository roles, see "[Managing custom repository roles for an organization](https://docs.github.com/enterprise-cloud@latest//organizations/managing-peoples-access-to-your-organization-with-roles/managing-custom-repository-roles-for-an-organization)."
+For more information about custom repository roles, see "[Managing custom repository roles for an organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-custom-repository-roles-for-an-organization)."
 
 ```js
 octokit.rest.orgs.updateCustomRole({
@@ -68,4 +68,4 @@ A list of additional permissions included in this role. If specified, these perm
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/orgs#update-a-custom-role).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/orgs#update-a-custom-role).

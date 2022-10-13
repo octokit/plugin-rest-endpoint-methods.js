@@ -39,4 +39,4 @@ The unique identifier of the hook.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/orgs#delete-an-organization-webhook).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/orgs#delete-an-organization-webhook).

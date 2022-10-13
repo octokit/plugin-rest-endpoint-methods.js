@@ -8,7 +8,7 @@ type: API method
 
 # List code scanning alerts for an organization
 
-Lists code scanning alerts for the default branch for all eligible repositories in an organization. Eligible repositories are repositories that are owned by organizations that you own or for which you are a security manager. For more information, see "[Managing security managers in your organization](https://docs.github.com/enterprise-cloud@latest//organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization)."
+Lists code scanning alerts for the default branch for all eligible repositories in an organization. Eligible repositories are repositories that are owned by organizations that you own or for which you are a security manager. For more information, see "[Managing security managers in your organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization)."
 
 To use this endpoint, you must be an owner or security manager for the organization, and you must use an access token with the `repo` scope or `security_events` scope.
 
@@ -50,12 +50,12 @@ The GUID of a code scanning tool. Only results by this tool will be listed. Note
 </td></tr>
 <tr><td>before</td><td>no</td><td>
 
-A cursor, as given in the [Link header](https://docs.github.com/enterprise-cloud@latest//rest/overview/resources-in-the-rest-api#link-header). If specified, the query only searches for events before this cursor.
+A cursor, as given in the [Link header](https://docs.github.com/rest/overview/resources-in-the-rest-api#link-header). If specified, the query only searches for events before this cursor.
 
 </td></tr>
 <tr><td>after</td><td>no</td><td>
 
-A cursor, as given in the [Link header](https://docs.github.com/enterprise-cloud@latest//rest/overview/resources-in-the-rest-api#link-header). If specified, the query only searches for events after this cursor.
+A cursor, as given in the [Link header](https://docs.github.com/rest/overview/resources-in-the-rest-api#link-header). If specified, the query only searches for events after this cursor.
 
 </td></tr>
 <tr><td>page</td><td>no</td><td>
@@ -86,4 +86,4 @@ The property by which to sort the results.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/code-scanning#list-code-scanning-alerts-by-organization).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/code-scanning#list-code-scanning-alerts-by-organization).

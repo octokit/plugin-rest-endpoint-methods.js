@@ -8,7 +8,7 @@ type: API method
 
 # Update a discussion comment
 
-Edits the body text of a discussion comment. OAuth access tokens require the `write:discussion` [scope](https://docs.github.com/enterprise-cloud@latest//apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
+Edits the body text of a discussion comment. OAuth access tokens require the `write:discussion` [scope](https://docs.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
 
 **Note:** You can also specify a team by `org_id` and `team_id` using the route `PATCH /organizations/{org_id}/team/{team_id}/discussions/{discussion_number}/comments/{comment_number}`.
 
@@ -61,4 +61,4 @@ The discussion comment's body text.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/teams#update-a-discussion-comment).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/teams#update-a-discussion-comment).

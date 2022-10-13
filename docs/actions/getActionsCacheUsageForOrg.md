@@ -37,4 +37,4 @@ The organization name. The name is not case sensitive.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/actions#get-github-actions-cache-usage-for-an-organization).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/actions#get-github-actions-cache-usage-for-an-organization).

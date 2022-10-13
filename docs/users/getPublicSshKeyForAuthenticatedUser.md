@@ -8,7 +8,7 @@ type: API method
 
 # Get a public SSH key for the authenticated user
 
-View extended details for a single public SSH key. Requires that you are authenticated via Basic Auth or via OAuth with at least `read:public_key` [scope](https://docs.github.com/enterprise-cloud@latest//apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
+View extended details for a single public SSH key. Requires that you are authenticated via Basic Auth or via OAuth with at least `read:public_key` [scope](https://docs.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
 
 ```js
 octokit.rest.users.getPublicSshKeyForAuthenticatedUser({
@@ -35,4 +35,4 @@ The unique identifier of the key.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/users#get-a-public-ssh-key-for-the-authenticated-user).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/users#get-a-public-ssh-key-for-the-authenticated-user).

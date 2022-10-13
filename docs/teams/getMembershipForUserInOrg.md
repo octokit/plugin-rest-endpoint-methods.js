@@ -17,7 +17,7 @@ To get a user's membership with a team, the team must be visible to the authenti
 **Note:**
 The response contains the `state` of the membership and the member's `role`.
 
-The `role` for organization owners is set to `maintainer`. For more information about `maintainer` roles, see see [Create a team](https://docs.github.com/enterprise-cloud@latest//rest/reference/teams#create-a-team).
+The `role` for organization owners is set to `maintainer`. For more information about `maintainer` roles, see see [Create a team](https://docs.github.com/rest/reference/teams#create-a-team).
 
 ```js
 octokit.rest.teams.getMembershipForUserInOrg({
@@ -56,4 +56,4 @@ The handle for the GitHub user account.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/teams#get-team-membership-for-a-user).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/teams#get-team-membership-for-a-user).

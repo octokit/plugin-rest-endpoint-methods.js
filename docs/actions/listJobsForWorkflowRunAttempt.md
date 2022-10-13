@@ -8,7 +8,7 @@ type: API method
 
 # List jobs for a workflow run attempt
 
-Lists jobs for a specific workflow run attempt. Anyone with read access to the repository can use this endpoint. If the repository is private you must use an access token with the `repo` scope. GitHub Apps must have the `actions:read` permission to use this endpoint. You can use parameters to narrow the list of results. For more information about using parameters, see [Parameters](https://docs.github.com/enterprise-cloud@latest//rest/overview/resources-in-the-rest-api#parameters).
+Lists jobs for a specific workflow run attempt. Anyone with read access to the repository can use this endpoint. If the repository is private you must use an access token with the `repo` scope. GitHub Apps must have the `actions:read` permission to use this endpoint. You can use parameters to narrow the list of results. For more information about using parameters, see [Parameters](https://docs.github.com/rest/overview/resources-in-the-rest-api#parameters).
 
 ```js
 octokit.rest.actions.listJobsForWorkflowRunAttempt({
@@ -63,4 +63,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/actions#list-jobs-for-a-workflow-run-attempt).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/actions#list-jobs-for-a-workflow-run-attempt).

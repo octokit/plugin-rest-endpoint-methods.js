@@ -8,7 +8,7 @@ type: API method
 
 # Follow a user
 
-Note that you'll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see "[HTTP verbs](https://docs.github.com/enterprise-cloud@latest//rest/overview/resources-in-the-rest-api#http-verbs)."
+Note that you'll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see "[HTTP verbs](https://docs.github.com/rest/overview/resources-in-the-rest-api#http-verbs)."
 
 Following a user requires the user to be logged in and authenticated with basic auth or OAuth with the `user:follow` scope.
 
@@ -37,4 +37,4 @@ The handle for the GitHub user account.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/users#follow-a-user).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/users#follow-a-user).

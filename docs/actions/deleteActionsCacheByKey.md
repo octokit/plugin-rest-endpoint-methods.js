@@ -56,4 +56,4 @@ The Git reference for the results you want to list. The `ref` for a branch can b
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/actions/cache#delete-github-actions-caches-for-a-repository-using-a-cache-key).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/actions/cache#delete-github-actions-caches-for-a-repository-using-a-cache-key).

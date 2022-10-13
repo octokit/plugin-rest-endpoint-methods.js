@@ -8,7 +8,7 @@ type: API method
 
 # Delete a discussion
 
-Delete a discussion from a team's page. OAuth access tokens require the `write:discussion` [scope](https://docs.github.com/enterprise-cloud@latest//apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
+Delete a discussion from a team's page. OAuth access tokens require the `write:discussion` [scope](https://docs.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
 
 **Note:** You can also specify a team by `org_id` and `team_id` using the route `DELETE /organizations/{org_id}/team/{team_id}/discussions/{discussion_number}`.
 
@@ -49,4 +49,4 @@ The number that identifies the discussion.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/teams#delete-a-discussion).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/teams#delete-a-discussion).

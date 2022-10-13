@@ -1,12 +1,12 @@
 ---
-name: Get GitHub Enterprise Cloud Pages build
+name: Get GitHub Pages build
 example: octokit.rest.repos.getPagesBuild({ owner, repo, build_id })
 route: GET /repos/{owner}/{repo}/pages/builds/{build_id}
 scope: repos
 type: API method
 ---
 
-# Get GitHub Enterprise Cloud Pages build
+# Get GitHub Pages build
 
 ```js
 octokit.rest.repos.getPagesBuild({
@@ -43,4 +43,4 @@ The name of the repository. The name is not case sensitive.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/pages#get-github-pages-build).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/pages#get-github-pages-build).

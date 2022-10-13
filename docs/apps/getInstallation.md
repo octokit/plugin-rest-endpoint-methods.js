@@ -10,7 +10,7 @@ type: API method
 
 Enables an authenticated GitHub App to find an installation's information using the installation id.
 
-You must use a [JWT](https://docs.github.com/enterprise-cloud@latest//apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint.
+You must use a [JWT](https://docs.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint.
 
 ```js
 octokit.rest.apps.getInstallation({
@@ -37,4 +37,4 @@ The unique identifier of the installation.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/apps#get-an-installation-for-the-authenticated-app).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/apps#get-an-installation-for-the-authenticated-app).

@@ -10,7 +10,7 @@ type: API method
 
 Users with push access can lock an issue or pull request's conversation.
 
-Note that, if you choose not to pass any parameters, you'll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see "[HTTP verbs](https://docs.github.com/enterprise-cloud@latest//rest/overview/resources-in-the-rest-api#http-verbs)."
+Note that, if you choose not to pass any parameters, you'll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see "[HTTP verbs](https://docs.github.com/rest/overview/resources-in-the-rest-api#http-verbs)."
 
 ```js
 octokit.rest.issues.lock({
@@ -58,4 +58,4 @@ The reason for locking the issue or pull request conversation. Lock will fail if
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/issues#lock-an-issue).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/issues#lock-an-issue).

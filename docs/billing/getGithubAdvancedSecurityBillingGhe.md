@@ -49,4 +49,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/billing#export-advanced-security-active-committers-data-for-enterprise).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/billing#export-advanced-security-active-committers-data-for-enterprise).

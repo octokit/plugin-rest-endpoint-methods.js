@@ -46,4 +46,4 @@ The duration of the interaction restriction. Default: `one_day`.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/interactions#set-interaction-restrictions-for-an-organization).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/interactions#set-interaction-restrictions-for-an-organization).

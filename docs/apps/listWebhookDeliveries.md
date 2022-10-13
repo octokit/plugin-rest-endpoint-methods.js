@@ -10,7 +10,7 @@ type: API method
 
 Returns a list of webhook deliveries for the webhook configured for a GitHub App.
 
-You must use a [JWT](https://docs.github.com/enterprise-cloud@latest//apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint.
+You must use a [JWT](https://docs.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint.
 
 ```js
 octokit.rest.apps.listWebhookDeliveries();
@@ -40,4 +40,4 @@ Used for pagination: the starting delivery from which the page of deliveries is 
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/apps#list-deliveries-for-an-app-webhook).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/apps#list-deliveries-for-an-app-webhook).

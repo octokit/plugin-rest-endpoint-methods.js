@@ -59,4 +59,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/deployments/branch-policies#list-deployment-branch-policies).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/deployments/branch-policies#list-deployment-branch-policies).

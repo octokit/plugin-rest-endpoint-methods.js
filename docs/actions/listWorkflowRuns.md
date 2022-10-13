@@ -8,7 +8,7 @@ type: API method
 
 # List workflow runs for a workflow
 
-List all workflow runs for a workflow. You can replace `workflow_id` with the workflow file name. For example, you could use `main.yaml`. You can use parameters to narrow the list of results. For more information about using parameters, see [Parameters](https://docs.github.com/enterprise-cloud@latest//rest/overview/resources-in-the-rest-api#parameters).
+List all workflow runs for a workflow. You can replace `workflow_id` with the workflow file name. For example, you could use `main.yaml`. You can use parameters to narrow the list of results. For more information about using parameters, see [Parameters](https://docs.github.com/rest/overview/resources-in-the-rest-api#parameters).
 
 Anyone with read access to the repository can use this endpoint. If the repository is private you must use an access token with the `repo` scope.
 
@@ -78,7 +78,7 @@ Page number of the results to fetch.
 </td></tr>
 <tr><td>created</td><td>no</td><td>
 
-Returns workflow runs created within the given date-time range. For more information on the syntax, see "[Understanding the search syntax](https://docs.github.com/enterprise-cloud@latest//search-github/getting-started-with-searching-on-github/understanding-the-search-syntax#query-for-dates)."
+Returns workflow runs created within the given date-time range. For more information on the syntax, see "[Understanding the search syntax](https://docs.github.com/search-github/getting-started-with-searching-on-github/understanding-the-search-syntax#query-for-dates)."
 
 </td></tr>
 <tr><td>exclude_pull_requests</td><td>no</td><td>
@@ -99,4 +99,4 @@ Only returns workflow runs that are associated with the specified `head_sha`.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/actions#list-workflow-runs).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/actions#list-workflow-runs).

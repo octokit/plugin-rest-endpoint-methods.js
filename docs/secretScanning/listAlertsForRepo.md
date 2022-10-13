@@ -50,7 +50,7 @@ Set to `open` or `resolved` to only list secret scanning alerts in a specific st
 <tr><td>secret_type</td><td>no</td><td>
 
 A comma-separated list of secret types to return. By default all secret types are returned.
-See "[Secret scanning patterns](https://docs.github.com/enterprise-cloud@latest//code-security/secret-scanning/secret-scanning-patterns#supported-secrets-for-advanced-security)"
+See "[Secret scanning patterns](https://docs.github.com/code-security/secret-scanning/secret-scanning-patterns#supported-secrets-for-advanced-security)"
 for a complete list of secret types.
 
 </td></tr>
@@ -81,15 +81,15 @@ The number of results per page (max 100).
 </td></tr>
 <tr><td>before</td><td>no</td><td>
 
-A cursor, as given in the [Link header](https://docs.github.com/enterprise-cloud@latest//rest/overview/resources-in-the-rest-api#link-header). If specified, the query only searches for events before this cursor. To receive an initial cursor on your first request, include an empty "before" query string.
+A cursor, as given in the [Link header](https://docs.github.com/rest/overview/resources-in-the-rest-api#link-header). If specified, the query only searches for events before this cursor. To receive an initial cursor on your first request, include an empty "before" query string.
 
 </td></tr>
 <tr><td>after</td><td>no</td><td>
 
-A cursor, as given in the [Link header](https://docs.github.com/enterprise-cloud@latest//rest/overview/resources-in-the-rest-api#link-header). If specified, the query only searches for events after this cursor. To receive an initial cursor on your first request, include an empty "after" query string.
+A cursor, as given in the [Link header](https://docs.github.com/rest/overview/resources-in-the-rest-api#link-header). If specified, the query only searches for events after this cursor. To receive an initial cursor on your first request, include an empty "after" query string.
 
 </td></tr>
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/secret-scanning#list-secret-scanning-alerts-for-a-repository).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/secret-scanning#list-secret-scanning-alerts-for-a-repository).

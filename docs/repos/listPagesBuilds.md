@@ -1,12 +1,12 @@
 ---
-name: List GitHub Enterprise Cloud Pages builds
+name: List GitHub Pages builds
 example: octokit.rest.repos.listPagesBuilds({ owner, repo })
 route: GET /repos/{owner}/{repo}/pages/builds
 scope: repos
 type: API method
 ---
 
-# List GitHub Enterprise Cloud Pages builds
+# List GitHub Pages builds
 
 ```js
 octokit.rest.repos.listPagesBuilds({
@@ -49,4 +49,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/pages#list-github-pages-builds).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/pages#list-github-pages-builds).

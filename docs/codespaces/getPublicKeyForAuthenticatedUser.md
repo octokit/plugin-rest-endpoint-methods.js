@@ -22,4 +22,4 @@ octokit.rest.codespaces.getPublicKeyForAuthenticatedUser();
 
 This endpoint has no parameters
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/codespaces#get-public-key-for-the-authenticated-user).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/codespaces#get-public-key-for-the-authenticated-user).

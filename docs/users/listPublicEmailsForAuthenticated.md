@@ -10,7 +10,7 @@ type: API method
 
 **Deprecated:** This method has been renamed to users.listPublicEmailsForAuthenticatedUser
 
-Lists your publicly visible email address, which you can set with the [Set primary email visibility for the authenticated user](https://docs.github.com/enterprise-cloud@latest//rest/reference/users#set-primary-email-visibility-for-the-authenticated-user) endpoint. This endpoint is accessible with the `user:email` scope.
+Lists your publicly visible email address, which you can set with the [Set primary email visibility for the authenticated user](https://docs.github.com/rest/reference/users#set-primary-email-visibility-for-the-authenticated-user) endpoint. This endpoint is accessible with the `user:email` scope.
 
 ```js
 octokit.rest.users.listPublicEmailsForAuthenticated();
@@ -40,4 +40,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/users#list-public-email-addresses-for-the-authenticated-user).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/users#list-public-email-addresses-for-the-authenticated-user).

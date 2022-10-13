@@ -47,4 +47,4 @@ The unique identifier of the artifact.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/actions#delete-an-artifact).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/actions#delete-an-artifact).

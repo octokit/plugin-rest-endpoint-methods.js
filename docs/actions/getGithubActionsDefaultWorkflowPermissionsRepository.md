@@ -10,7 +10,7 @@ type: API method
 
 Gets the default workflow permissions granted to the `GITHUB_TOKEN` when running workflows in a repository,
 as well as if GitHub Actions can submit approving pull request reviews.
-For more information, see "[Setting the permissions of the GITHUB_TOKEN for your repository](https://docs.github.com/enterprise-cloud@latest//repositories/managing-your-repositorys-settings-and-features/enabling-features-for-your-repository/managing-github-actions-settings-for-a-repository#setting-the-permissions-of-the-github_token-for-your-repository)."
+For more information, see "[Setting the permissions of the GITHUB_TOKEN for your repository](https://docs.github.com/repositories/managing-your-repositorys-settings-and-features/enabling-features-for-your-repository/managing-github-actions-settings-for-a-repository#setting-the-permissions-of-the-github_token-for-your-repository)."
 
 You must authenticate using an access token with the `repo` scope to use this endpoint. GitHub Apps must have the repository `administration` permission to use this API.
 
@@ -45,4 +45,4 @@ The name of the repository. The name is not case sensitive.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/actions#get-default-workflow-permissions-for-a-repository).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/actions#get-default-workflow-permissions-for-a-repository).

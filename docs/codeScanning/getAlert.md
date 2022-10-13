@@ -55,4 +55,4 @@ The number that identifies an alert. You can find this at the end of the URL for
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/code-scanning#get-a-code-scanning-alert).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/code-scanning#get-a-code-scanning-alert).

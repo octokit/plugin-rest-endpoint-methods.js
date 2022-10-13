@@ -49,4 +49,4 @@ The name of the repository. The name is not case sensitive.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/issues#check-if-a-user-can-be-assigned).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/issues#check-if-a-user-can-be-assigned).

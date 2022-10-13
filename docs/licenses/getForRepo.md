@@ -10,7 +10,7 @@ type: API method
 
 This method returns the contents of the repository's license file, if one is detected.
 
-Similar to [Get repository content](https://docs.github.com/enterprise-cloud@latest//rest/reference/repos#get-repository-content), this method also supports [custom media types](https://docs.github.com/enterprise-cloud@latest//rest/overview/media-types) for retrieving the raw license content or rendered license HTML.
+Similar to [Get repository content](https://docs.github.com/rest/reference/repos#get-repository-content), this method also supports [custom media types](https://docs.github.com/rest/overview/media-types) for retrieving the raw license content or rendered license HTML.
 
 ```js
 octokit.rest.licenses.getForRepo({
@@ -43,4 +43,4 @@ The name of the repository. The name is not case sensitive.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/licenses/#get-the-license-for-a-repository).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/licenses/#get-the-license-for-a-repository).

@@ -50,4 +50,4 @@ Unique identifier of the self-hosted runner.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/actions#delete-a-self-hosted-runner-from-a-repository).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/actions#delete-a-self-hosted-runner-from-a-repository).

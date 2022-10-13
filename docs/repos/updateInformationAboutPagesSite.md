@@ -1,14 +1,14 @@
 ---
-name: Update information about a GitHub Enterprise Cloud Pages site
+name: Update information about a GitHub Pages site
 example: octokit.rest.repos.updateInformationAboutPagesSite({ owner, repo })
 route: PUT /repos/{owner}/{repo}/pages
 scope: repos
 type: API method
 ---
 
-# Update information about a GitHub Enterprise Cloud Pages site
+# Update information about a GitHub Pages site
 
-Updates information for a GitHub Enterprise Cloud Pages site. For more information, see "[About GitHub Pages](/github/working-with-github-pages/about-github-pages).
+Updates information for a GitHub Pages site. For more information, see "[About GitHub Pages](/github/working-with-github-pages/about-github-pages).
 
 ```js
 octokit.rest.repos.updateInformationAboutPagesSite({
@@ -64,4 +64,4 @@ The process by which the GitHub Pages site will be built. `workflow` means that 
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/pages#update-information-about-a-github-pages-site).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/pages#update-information-about-a-github-pages-site).

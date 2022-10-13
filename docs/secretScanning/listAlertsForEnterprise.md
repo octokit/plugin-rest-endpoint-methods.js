@@ -9,7 +9,7 @@ type: API method
 # List secret scanning alerts for an enterprise
 
 Lists secret scanning alerts for eligible repositories in an enterprise, from newest to oldest.
-To use this endpoint, you must be a member of the enterprise, and you must use an access token with the `repo` scope or `security_events` scope. Alerts are only returned for organizations in the enterprise for which you are an organization owner or a [security manager](https://docs.github.com/enterprise-cloud@latest//organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization).
+To use this endpoint, you must be a member of the enterprise, and you must use an access token with the `repo` scope or `security_events` scope. Alerts are only returned for organizations in the enterprise for which you are an organization owner or a [security manager](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization).
 
 ```js
 octokit.rest.secretScanning.listAlertsForEnterprise({
@@ -41,7 +41,7 @@ Set to `open` or `resolved` to only list secret scanning alerts in a specific st
 <tr><td>secret_type</td><td>no</td><td>
 
 A comma-separated list of secret types to return. By default all secret types are returned.
-See "[Secret scanning patterns](https://docs.github.com/enterprise-cloud@latest//code-security/secret-scanning/secret-scanning-patterns#supported-secrets-for-advanced-security)"
+See "[Secret scanning patterns](https://docs.github.com/code-security/secret-scanning/secret-scanning-patterns#supported-secrets-for-advanced-security)"
 for a complete list of secret types.
 
 </td></tr>
@@ -67,15 +67,15 @@ The number of results per page (max 100).
 </td></tr>
 <tr><td>before</td><td>no</td><td>
 
-A cursor, as given in the [Link header](https://docs.github.com/enterprise-cloud@latest//rest/overview/resources-in-the-rest-api#link-header). If specified, the query only searches for events before this cursor.
+A cursor, as given in the [Link header](https://docs.github.com/rest/overview/resources-in-the-rest-api#link-header). If specified, the query only searches for events before this cursor.
 
 </td></tr>
 <tr><td>after</td><td>no</td><td>
 
-A cursor, as given in the [Link header](https://docs.github.com/enterprise-cloud@latest//rest/overview/resources-in-the-rest-api#link-header). If specified, the query only searches for events after this cursor.
+A cursor, as given in the [Link header](https://docs.github.com/rest/overview/resources-in-the-rest-api#link-header). If specified, the query only searches for events after this cursor.
 
 </td></tr>
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/secret-scanning#list-secret-scanning-alerts-for-an-enterprise).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/secret-scanning#list-secret-scanning-alerts-for-an-enterprise).

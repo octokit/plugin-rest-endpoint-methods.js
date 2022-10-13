@@ -47,4 +47,4 @@ The name of the secret.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/actions#delete-an-environment-secret).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/actions#delete-an-environment-secret).

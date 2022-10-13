@@ -18,4 +18,4 @@ octokit.rest.meta.root();
 
 This endpoint has no parameters
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/overview/resources-in-the-rest-api#root-endpoint).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/overview/resources-in-the-rest-api#root-endpoint).

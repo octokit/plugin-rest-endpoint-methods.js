@@ -45,4 +45,4 @@ The slug of the team name.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/teams#delete-a-team).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/teams#delete-a-team).

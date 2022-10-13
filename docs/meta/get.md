@@ -1,12 +1,12 @@
 ---
-name: Get GitHub Enterprise Cloud meta information
+name: Get GitHub meta information
 example: octokit.rest.meta.get()
 route: GET /meta
 scope: meta
 type: API method
 ---
 
-# Get GitHub Enterprise Cloud meta information
+# Get GitHub meta information
 
 Returns meta information about GitHub, including a list of GitHub's IP addresses. For more information, see "[About GitHub's IP addresses](https://docs.github.com/articles/about-github-s-ip-addresses/)."
 
@@ -20,4 +20,4 @@ octokit.rest.meta.get();
 
 This endpoint has no parameters
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/meta#get-github-meta-information).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/meta#get-github-meta-information).

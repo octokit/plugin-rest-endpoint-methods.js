@@ -10,7 +10,7 @@ type: API method
 
 The `basehead` param is comprised of two parts: `base` and `head`. Both must be branch names in `repo`. To compare branches across other repositories in the same network as `repo`, use the format `<USERNAME>:branch`.
 
-The response from the API is equivalent to running the `git log base..head` command; however, commits are returned in chronological order. Pass the appropriate [media type](https://docs.github.com/enterprise-cloud@latest//rest/overview/media-types/#commits-commit-comparison-and-pull-requests) to fetch diff and patch formats.
+The response from the API is equivalent to running the `git log base..head` command; however, commits are returned in chronological order. Pass the appropriate [media type](https://docs.github.com/rest/overview/media-types/#commits-commit-comparison-and-pull-requests) to fetch diff and patch formats.
 
 The response also includes details on the files that were changed between the two commits. This includes the status of the change (for example, if a file was added, removed, modified, or renamed), and details of the change itself. For example, files with a `renamed` status have a `previous_filename` field showing the previous filename of the file, and files with a `modified` status have a `patch` field showing the changes made to the file.
 
@@ -96,4 +96,4 @@ The base branch and head branch to compare. This parameter expects the format `{
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/commits/commits#compare-two-commits).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/commits/commits#compare-two-commits).

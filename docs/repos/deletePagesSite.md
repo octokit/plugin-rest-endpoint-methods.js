@@ -1,12 +1,12 @@
 ---
-name: Delete a GitHub Enterprise Cloud Pages site
+name: Delete a GitHub Pages site
 example: octokit.rest.repos.deletePagesSite({ owner, repo })
 route: DELETE /repos/{owner}/{repo}/pages
 scope: repos
 type: API method
 ---
 
-# Delete a GitHub Enterprise Cloud Pages site
+# Delete a GitHub Pages site
 
 ```js
 octokit.rest.repos.deletePagesSite({
@@ -39,4 +39,4 @@ The name of the repository. The name is not case sensitive.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/pages#delete-a-github-pages-site).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/pages#delete-a-github-pages-site).

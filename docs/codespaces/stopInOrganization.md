@@ -49,4 +49,4 @@ The name of the codespace.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/enterprise-cloud@latest//rest/reference/codespaces).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/codespaces).
