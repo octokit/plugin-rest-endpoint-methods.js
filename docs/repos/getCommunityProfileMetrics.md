@@ -8,9 +8,10 @@ type: API method
 
 # Get community profile metrics
 
-This endpoint will return all community profile metrics, including an
-overall health score, repository description, the presence of documentation, detected
-code of conduct, detected license, and the presence of ISSUE_TEMPLATE, PULL_REQUEST_TEMPLATE,
+Returns all community profile metrics for a repository. The repository must be public, and cannot be a fork.
+
+The returned metrics include an overall health score, the repository description, the presence of documentation, the
+detected code of conduct, the detected license, and the presence of ISSUE_TEMPLATE, PULL_REQUEST_TEMPLATE,
 README, and CONTRIBUTING files.
 
 The `health_percentage` score is defined as a percentage of how many of

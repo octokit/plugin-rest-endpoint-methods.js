@@ -1867,7 +1867,7 @@ export type RestEndpointMethods = {
     /**
      * Lists repositories the authenticated user has starred.
      *
-     * You can also find out _when_ stars were created by passing the following custom [media type](https://docs.github.com/rest/overview/media-types/) via the `Accept` header:
+     * You can also find out _when_ stars were created by passing the following custom [media type](https://docs.github.com/rest/overview/media-types/) via the `Accept` header: `application/vnd.github.star+json`.
      */
     listReposStarredByAuthenticatedUser: {
       (
@@ -1881,7 +1881,7 @@ export type RestEndpointMethods = {
     /**
      * Lists repositories a user has starred.
      *
-     * You can also find out _when_ stars were created by passing the following custom [media type](https://docs.github.com/rest/overview/media-types/) via the `Accept` header:
+     * You can also find out _when_ stars were created by passing the following custom [media type](https://docs.github.com/rest/overview/media-types/) via the `Accept` header: `application/vnd.github.star+json`.
      */
     listReposStarredByUser: {
       (
@@ -1907,7 +1907,7 @@ export type RestEndpointMethods = {
     /**
      * Lists the people that have starred the repository.
      *
-     * You can also find out _when_ stars were created by passing the following custom [media type](https://docs.github.com/rest/overview/media-types/) via the `Accept` header:
+     * You can also find out _when_ stars were created by passing the following custom [media type](https://docs.github.com/rest/overview/media-types/) via the `Accept` header: `application/vnd.github.star+json`.
      */
     listStargazersForRepo: {
       (
@@ -2953,6 +2953,28 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
+     * Gets a CodeQL database for a language in a repository.
+     *
+     * By default this endpoint returns JSON metadata about the CodeQL database. To
+     * download the CodeQL database binary content, set the `Accept` header of the request
+     * to [`application/zip`](https://docs.github.com/rest/overview/media-types), and make sure
+     * your HTTP client is configured to follow redirects or use the `Location` header
+     * to make a second request to get the redirect URL.
+     *
+     * For private repositories, you must use an access token with the `security_events` scope.
+     * For public repositories, you can use tokens with the `security_events` or `public_repo` scope.
+     * GitHub Apps must have the `contents` read permission to use this endpoint.
+     */
+    getCodeqlDatabase: {
+      (
+        params?: RestEndpointMethodTypes["codeScanning"]["getCodeqlDatabase"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["codeScanning"]["getCodeqlDatabase"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
      * Gets information about a SARIF upload, including the status and the URL of the analysis that was uploaded so that you can retrieve details of the analysis. For more information, see "[Get a code scanning analysis for a repository](/rest/reference/code-scanning#get-a-code-scanning-analysis-for-a-repository)." You must use an access token with the `security_events` scope to use this endpoint with private repos, the `public_repo` scope also grants permission to read security events on public repos only. GitHub Apps must have the `security_events` read permission to use this endpoint.
      */
     getSarif: {
@@ -3045,6 +3067,22 @@ export type RestEndpointMethods = {
         params?: RestEndpointMethodTypes["codeScanning"]["listAlertsInstances"]["parameters"]
       ): Promise<
         RestEndpointMethodTypes["codeScanning"]["listAlertsInstances"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Lists the CodeQL databases that are available in a repository.
+     *
+     * For private repositories, you must use an access token with the `security_events` scope.
+     * For public repositories, you can use tokens with the `security_events` or `public_repo` scope.
+     * GitHub Apps must have the `contents` read permission to use this endpoint.
+     */
+    listCodeqlDatabases: {
+      (
+        params?: RestEndpointMethodTypes["codeScanning"]["listCodeqlDatabases"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["codeScanning"]["listCodeqlDatabases"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -3155,6 +3193,18 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
+     * Adds a repository to an organization secret when the `visibility` for repository access is set to `selected`. The visibility is set when you [Create or update an organization secret](https://docs.github.com/rest/reference/codespaces#create-or-update-an-organization-secret). You must authenticate using an access token with the `admin:org` scope to use this endpoint.
+     */
+    addSelectedRepoToOrgSecret: {
+      (
+        params?: RestEndpointMethodTypes["codespaces"]["addSelectedRepoToOrgSecret"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["codespaces"]["addSelectedRepoToOrgSecret"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
      * List the machine types a codespace can transition to use.
      *
      * You must authenticate using an access token with the `codespace` scope to use this endpoint.
@@ -3184,6 +3234,95 @@ export type RestEndpointMethods = {
         params?: RestEndpointMethodTypes["codespaces"]["createForAuthenticatedUser"]["parameters"]
       ): Promise<
         RestEndpointMethodTypes["codespaces"]["createForAuthenticatedUser"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Creates or updates an organization secret with an encrypted value. Encrypt your secret using
+     * [LibSodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages). You must authenticate using an access
+     * token with the `admin:org` scope to use this endpoint.
+     *
+     * #### Example encrypting a secret using Node.js
+     *
+     * Encrypt your secret using the [libsodium-wrappers](https://www.npmjs.com/package/libsodium-wrappers) library.
+     *
+     * ```
+     * // Written with ❤️ by PSJ and free to use under The Unlicense.
+     * const sodium=require('libsodium-wrappers')
+     * const secret = 'plain-text-secret' // replace with secret before running the script.
+     * const key = 'base64-encoded-public-key' // replace with the Base64 encoded public key.
+     *
+     * //Check if libsodium is ready and then proceed.
+     *
+     * sodium.ready.then( ()=>{
+     *
+     * // Convert Secret & Base64 key to Uint8Array.
+     * let binkey= sodium.from_base64(key, sodium.base64_variants.ORIGINAL) //Equivalent of Buffer.from(key, 'base64')
+     * let binsec= sodium.from_string(secret) // Equivalent of Buffer.from(secret)
+     *
+     * //Encrypt the secret using LibSodium
+     * let encBytes= sodium.crypto_box_seal(binsec,binkey) // Similar to tweetsodium.seal(binsec,binkey)
+     *
+     * // Convert encrypted Uint8Array to Base64
+     * let output=sodium.to_base64(encBytes, sodium.base64_variants.ORIGINAL) //Equivalent of Buffer.from(encBytes).toString('base64')
+     *
+     * console.log(output)
+     * });
+     * ```
+     *
+     * #### Example encrypting a secret using Python
+     *
+     * Encrypt your secret using [pynacl](https://pynacl.readthedocs.io/en/latest/public/#nacl-public-sealedbox) with Python 3.
+     *
+     * ```
+     * from base64 import b64encode
+     * from nacl import encoding, public
+     *
+     * def encrypt(public_key: str, secret_value: str) -> str:
+     *   """Encrypt a Unicode string using the public key."""
+     *   public_key = public.PublicKey(public_key.encode("utf-8"), encoding.Base64Encoder())
+     *   sealed_box = public.SealedBox(public_key)
+     *   encrypted = sealed_box.encrypt(secret_value.encode("utf-8"))
+     *   return b64encode(encrypted).decode("utf-8")
+     * ```
+     *
+     * #### Example encrypting a secret using C#
+     *
+     * Encrypt your secret using the [Sodium.Core](https://www.nuget.org/packages/Sodium.Core/) package.
+     *
+     * ```
+     * var secretValue = System.Text.Encoding.UTF8.GetBytes("mySecret");
+     * var publicKey = Convert.FromBase64String("2Sg8iYjAxxmI2LvUXpJjkYrMxURPc8r+dB7TJyvvcCU=");
+     *
+     * var sealedPublicKeyBox = Sodium.SealedPublicKeyBox.Create(secretValue, publicKey);
+     *
+     * Console.WriteLine(Convert.ToBase64String(sealedPublicKeyBox));
+     * ```
+     *
+     * #### Example encrypting a secret using Ruby
+     *
+     * Encrypt your secret using the [rbnacl](https://github.com/RubyCrypto/rbnacl) gem.
+     *
+     * ```ruby
+     * require "rbnacl"
+     * require "base64"
+     *
+     * key = Base64.decode64("+ZYvJDZMHUfBkJdyq5Zm9SKqeuBQ4sj+6sfjlH4CgG0=")
+     * public_key = RbNaCl::PublicKey.new(key)
+     *
+     * box = RbNaCl::Boxes::Sealed.from_public_key(public_key)
+     * encrypted_secret = box.encrypt("my_secret")
+     *
+     * # Print the base64 encoded secret
+     * puts Base64.strict_encode64(encrypted_secret)
+     * ```
+     */
+    createOrUpdateOrgSecret: {
+      (
+        params?: RestEndpointMethodTypes["codespaces"]["createOrUpdateOrgSecret"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["codespaces"]["createOrUpdateOrgSecret"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -3425,6 +3564,18 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
+     * Deletes an organization secret using the secret name. You must authenticate using an access token with the `admin:org` scope to use this endpoint.
+     */
+    deleteOrgSecret: {
+      (
+        params?: RestEndpointMethodTypes["codespaces"]["deleteOrgSecret"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["codespaces"]["deleteOrgSecret"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
      * Deletes a secret in a repository using the secret name. You must authenticate using an access token with the `repo` scope to use this endpoint. GitHub Apps must have the `codespaces_secrets` repository permission to use this endpoint.
      */
     deleteRepoSecret: {
@@ -3496,6 +3647,31 @@ export type RestEndpointMethods = {
         params?: RestEndpointMethodTypes["codespaces"]["getForAuthenticatedUser"]["parameters"]
       ): Promise<
         RestEndpointMethodTypes["codespaces"]["getForAuthenticatedUser"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Gets a public key for an organization, which is required in order to encrypt secrets. You need to encrypt the value of a secret before you can create or update secrets. You must authenticate using an access token with the `admin:org` scope to use this endpoint.
+     */
+    getOrgPublicKey: {
+      (
+        params?: RestEndpointMethodTypes["codespaces"]["getOrgPublicKey"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["codespaces"]["getOrgPublicKey"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Gets an organization secret without revealing its encrypted value.
+     * You must authenticate using an access token with the `admin:org` scope to use this endpoint.
+     */
+    getOrgSecret: {
+      (
+        params?: RestEndpointMethodTypes["codespaces"]["getOrgSecret"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["codespaces"]["getOrgSecret"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -3620,6 +3796,19 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
+     * Lists all Codespaces secrets available at the organization-level without revealing their encrypted values.
+     * You must authenticate using an access token with the `admin:org` scope to use this endpoint.
+     */
+    listOrgSecrets: {
+      (
+        params?: RestEndpointMethodTypes["codespaces"]["listOrgSecrets"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["codespaces"]["listOrgSecrets"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
      * Lists all secrets available in a repository without revealing their encrypted values. You must authenticate using an access token with the `repo` scope to use this endpoint. GitHub Apps must have the `codespaces_secrets` repository permission to use this endpoint.
      */
     listRepoSecrets: {
@@ -3665,6 +3854,18 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
+     * Lists all repositories that have been selected when the `visibility` for repository access to a secret is set to `selected`. You must authenticate using an access token with the `admin:org` scope to use this endpoint.
+     */
+    listSelectedReposForOrgSecret: {
+      (
+        params?: RestEndpointMethodTypes["codespaces"]["listSelectedReposForOrgSecret"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["codespaces"]["listSelectedReposForOrgSecret"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
      * Gets the default attributes for codespaces created by the user with the repository.
      *
      * You must authenticate using an access token with the `codespace` scope to use this endpoint.
@@ -3690,6 +3891,18 @@ export type RestEndpointMethods = {
         params?: RestEndpointMethodTypes["codespaces"]["removeRepositoryForSecretForAuthenticatedUser"]["parameters"]
       ): Promise<
         RestEndpointMethodTypes["codespaces"]["removeRepositoryForSecretForAuthenticatedUser"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Removes a repository from an organization secret when the `visibility` for repository access is set to `selected`. The visibility is set when you [Create or update an organization secret](https://docs.github.com/rest/reference/codespaces#create-or-update-an-organization-secret). You must authenticate using an access token with the `admin:org` scope to use this endpoint.
+     */
+    removeSelectedRepoFromOrgSecret: {
+      (
+        params?: RestEndpointMethodTypes["codespaces"]["removeSelectedRepoFromOrgSecret"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["codespaces"]["removeSelectedRepoFromOrgSecret"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -3722,6 +3935,18 @@ export type RestEndpointMethods = {
         params?: RestEndpointMethodTypes["codespaces"]["setRepositoriesForSecretForAuthenticatedUser"]["parameters"]
       ): Promise<
         RestEndpointMethodTypes["codespaces"]["setRepositoriesForSecretForAuthenticatedUser"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Replaces all repositories for an organization secret when the `visibility` for repository access is set to `selected`. The visibility is set when you [Create or update an organization secret](https://docs.github.com/rest/reference/codespaces#create-or-update-an-organization-secret). You must authenticate using an access token with the `admin:org` scope to use this endpoint.
+     */
+    setSelectedReposForOrgSecret: {
+      (
+        params?: RestEndpointMethodTypes["codespaces"]["setSelectedReposForOrgSecret"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["codespaces"]["setSelectedReposForOrgSecret"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -4001,6 +4226,18 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
+     * You must use an access token with the `security_events` scope to use this endpoint with private repositories.
+     * You can also use tokens with the `public_repo` scope for public repositories only.
+     * GitHub Apps must have **Dependabot alerts** read permission to use this endpoint.
+     */
+    getAlert: {
+      (
+        params?: RestEndpointMethodTypes["dependabot"]["getAlert"]["parameters"]
+      ): Promise<RestEndpointMethodTypes["dependabot"]["getAlert"]["response"]>;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
      * Gets your public key, which you need to encrypt secrets. You need to encrypt a secret before you can create or update secrets. You must authenticate using an access token with the `admin:org` scope to use this endpoint. GitHub Apps must have the `dependabot_secrets` organization permission to use this endpoint.
      */
     getOrgPublicKey: {
@@ -4044,6 +4281,20 @@ export type RestEndpointMethods = {
         params?: RestEndpointMethodTypes["dependabot"]["getRepoSecret"]["parameters"]
       ): Promise<
         RestEndpointMethodTypes["dependabot"]["getRepoSecret"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * You must use an access token with the `security_events` scope to use this endpoint with private repositories.
+     * You can also use tokens with the `public_repo` scope for public repositories only.
+     * GitHub Apps must have **Dependabot alerts** read permission to use this endpoint.
+     */
+    listAlertsForRepo: {
+      (
+        params?: RestEndpointMethodTypes["dependabot"]["listAlertsForRepo"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["dependabot"]["listAlertsForRepo"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -4104,6 +4355,20 @@ export type RestEndpointMethods = {
         params?: RestEndpointMethodTypes["dependabot"]["setSelectedReposForOrgSecret"]["parameters"]
       ): Promise<
         RestEndpointMethodTypes["dependabot"]["setSelectedReposForOrgSecret"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * You must use an access token with the `security_events` scope to use this endpoint with private repositories.
+     * You can also use tokens with the `public_repo` scope for public repositories only.
+     * GitHub Apps must have **Dependabot alerts** write permission to use this endpoint.
+     */
+    updateAlert: {
+      (
+        params?: RestEndpointMethodTypes["dependabot"]["updateAlert"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["dependabot"]["updateAlert"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -9030,9 +9295,10 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * This endpoint will return all community profile metrics, including an
-     * overall health score, repository description, the presence of documentation, detected
-     * code of conduct, detected license, and the presence of ISSUE\_TEMPLATE, PULL\_REQUEST\_TEMPLATE,
+     * Returns all community profile metrics for a repository. The repository must be public, and cannot be a fork.
+     *
+     * The returned metrics include an overall health score, the repository description, the presence of documentation, the
+     * detected code of conduct, the detected license, and the presence of ISSUE\_TEMPLATE, PULL\_REQUEST\_TEMPLATE,
      * README, and CONTRIBUTING files.
      *
      * The `health_percentage` score is defined as a percentage of how many of

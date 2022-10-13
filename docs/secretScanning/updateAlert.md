@@ -59,6 +59,11 @@ Sets the state of the secret scanning alert. You must provide `resolution` when 
 **Required when the `state` is `resolved`.** The reason for resolving the alert.
 
 </td></tr>
+<tr><td>resolution_comment</td><td>no</td><td>
+
+Sets an optional comment when closing an alert. Must be null when changing `state` to `open`.
+
+</td></tr>
   </tbody>
 </table>
 

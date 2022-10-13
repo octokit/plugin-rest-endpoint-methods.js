@@ -10,7 +10,7 @@ type: API method
 
 Lists repositories a user has starred.
 
-You can also find out _when_ stars were created by passing the following custom [media type](https://docs.github.com/rest/overview/media-types/) via the `Accept` header:
+You can also find out _when_ stars were created by passing the following custom [media type](https://docs.github.com/rest/overview/media-types/) via the `Accept` header: `application/vnd.github.star+json`.
 
 ```js
 octokit.rest.activity.listReposStarredByUser({

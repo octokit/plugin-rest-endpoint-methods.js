@@ -24,7 +24,7 @@
   "author": "Gregor Martynus (https://twitter.com/gr2m)",
   "license": "MIT",
   "dependencies": {
-    "@octokit/types": "^7.5.0",
+    "@octokit/types": "^8.0.0",
     "deprecation": "^2.3.1"
   },
   "devDependencies": {
@@ -39,7 +39,7 @@
     "@types/node": "^16.0.0",
     "fetch-mock": "^9.0.0",
     "fs-extra": "^10.0.0",
-    "github-openapi-graphql-query": "^2.0.0",
+    "github-openapi-graphql-query": "^3.0.0",
     "jest": "^29.0.0",
     "lodash.camelcase": "^4.3.0",
     "lodash.set": "^4.3.2",
