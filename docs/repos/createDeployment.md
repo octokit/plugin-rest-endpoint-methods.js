@@ -133,4 +133,4 @@ Specifies if the given environment is one that end-users directly interact with.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#create-a-deployment).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/deployments/deployments#create-a-deployment).

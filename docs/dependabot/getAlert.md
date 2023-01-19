@@ -43,7 +43,10 @@ The name of the repository. The name is not case sensitive.
 </td></tr>
 <tr><td>alert_number</td><td>yes</td><td>
 
-The number that identifies a Dependabot alert in its repository. You can find this at the end of the URL for a Dependabot alert within GitHub, or in `number` fields in the response from the `GET /repos/{owner}/{repo}/dependabot/alerts` operation.
+The number that identifies a Dependabot alert in its repository.
+You can find this at the end of the URL for a Dependabot alert within GitHub,
+or in `number` fields in the response from the
+`GET /repos/{owner}/{repo}/dependabot/alerts` operation.
 
 </td></tr>
   </tbody>

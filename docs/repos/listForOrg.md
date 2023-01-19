@@ -10,6 +10,8 @@ type: API method
 
 Lists repositories for the specified organization.
 
+**Note:** In order to see the `security_and_analysis` block for a repository you must have admin permissions for the repository or be an owner or security manager for the organization that owns the repository. For more information, see "[Managing security managers in your organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization)."
+
 ```js
 octokit.rest.repos.listForOrg({
   org,
@@ -34,7 +36,7 @@ The organization name. The name is not case sensitive.
 </td></tr>
 <tr><td>type</td><td>no</td><td>
 
-Specifies the types of repositories you want returned. If your organization is associated with an enterprise account using GitHub Enterprise Cloud or GitHub Enterprise Server 2.20+, `type` can also be `internal`. However, the `internal` value is not yet supported when a GitHub App calls this API with an installation access token.
+Specifies the types of repositories you want returned.
 
 </td></tr>
 <tr><td>sort</td><td>no</td><td>

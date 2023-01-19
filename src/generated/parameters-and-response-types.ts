@@ -26,6 +26,22 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["PUT /orgs/{org}/actions/secrets/{secret_name}/repositories/{repository_id}"]["response"];
     };
+    addSelectedRepoToOrgVariable: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["PUT /orgs/{org}/actions/variables/{name}/repositories/{repository_id}"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["PUT /orgs/{org}/actions/variables/{name}/repositories/{repository_id}"]["response"];
+    };
+    addSelectedRepoToRequiredWorkflow: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["PUT /orgs/{org}/actions/required_workflows/{required_workflow_id}/repositories/{repository_id}"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["PUT /orgs/{org}/actions/required_workflows/{required_workflow_id}/repositories/{repository_id}"]["response"];
+    };
     approveWorkflowRun: {
       parameters: RequestParameters &
         Omit<
@@ -41,6 +57,14 @@ export type RestEndpointMethodTypes = {
           "baseUrl" | "headers" | "mediaType"
         >;
       response: Endpoints["POST /repos/{owner}/{repo}/actions/runs/{run_id}/cancel"]["response"];
+    };
+    createEnvironmentVariable: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["POST /repositories/{repository_id}/environments/{environment_name}/variables"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["POST /repositories/{repository_id}/environments/{environment_name}/variables"]["response"];
     };
     createOrUpdateEnvironmentSecret: {
       parameters: RequestParameters &
@@ -65,6 +89,14 @@ export type RestEndpointMethodTypes = {
           "baseUrl" | "headers" | "mediaType"
         >;
       response: Endpoints["PUT /repos/{owner}/{repo}/actions/secrets/{secret_name}"]["response"];
+    };
+    createOrgVariable: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["POST /orgs/{org}/actions/variables"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["POST /orgs/{org}/actions/variables"]["response"];
     };
     createRegistrationTokenForOrg: {
       parameters: RequestParameters &
@@ -97,6 +129,22 @@ export type RestEndpointMethodTypes = {
           "baseUrl" | "headers" | "mediaType"
         >;
       response: Endpoints["POST /repos/{owner}/{repo}/actions/runners/remove-token"]["response"];
+    };
+    createRepoVariable: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["POST /repos/{owner}/{repo}/actions/variables"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["POST /repos/{owner}/{repo}/actions/variables"]["response"];
+    };
+    createRequiredWorkflow: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["POST /orgs/{org}/actions/required_workflows"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["POST /orgs/{org}/actions/required_workflows"]["response"];
     };
     createWorkflowDispatch: {
       parameters: RequestParameters &
@@ -138,6 +186,14 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["DELETE /repositories/{repository_id}/environments/{environment_name}/secrets/{secret_name}"]["response"];
     };
+    deleteEnvironmentVariable: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["DELETE /repositories/{repository_id}/environments/{environment_name}/variables/{name}"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["DELETE /repositories/{repository_id}/environments/{environment_name}/variables/{name}"]["response"];
+    };
     deleteOrgSecret: {
       parameters: RequestParameters &
         Omit<
@@ -146,6 +202,14 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["DELETE /orgs/{org}/actions/secrets/{secret_name}"]["response"];
     };
+    deleteOrgVariable: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["DELETE /orgs/{org}/actions/variables/{name}"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["DELETE /orgs/{org}/actions/variables/{name}"]["response"];
+    };
     deleteRepoSecret: {
       parameters: RequestParameters &
         Omit<
@@ -153,6 +217,22 @@ export type RestEndpointMethodTypes = {
           "baseUrl" | "headers" | "mediaType"
         >;
       response: Endpoints["DELETE /repos/{owner}/{repo}/actions/secrets/{secret_name}"]["response"];
+    };
+    deleteRepoVariable: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["DELETE /repos/{owner}/{repo}/actions/variables/{name}"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["DELETE /repos/{owner}/{repo}/actions/variables/{name}"]["response"];
+    };
+    deleteRequiredWorkflow: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["DELETE /orgs/{org}/actions/required_workflows/{required_workflow_id}"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["DELETE /orgs/{org}/actions/required_workflows/{required_workflow_id}"]["response"];
     };
     deleteSelfHostedRunnerFromOrg: {
       parameters: RequestParameters &
@@ -274,14 +354,6 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["GET /orgs/{org}/actions/cache/usage-by-repository"]["response"];
     };
-    getActionsCacheUsageForEnterprise: {
-      parameters: RequestParameters &
-        Omit<
-          Endpoints["GET /enterprises/{enterprise}/actions/cache/usage"]["parameters"],
-          "baseUrl" | "headers" | "mediaType"
-        >;
-      response: Endpoints["GET /enterprises/{enterprise}/actions/cache/usage"]["response"];
-    };
     getActionsCacheUsageForOrg: {
       parameters: RequestParameters &
         Omit<
@@ -330,13 +402,13 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["GET /repositories/{repository_id}/environments/{environment_name}/secrets/{secret_name}"]["response"];
     };
-    getGithubActionsDefaultWorkflowPermissionsEnterprise: {
+    getEnvironmentVariable: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /enterprises/{enterprise}/actions/permissions/workflow"]["parameters"],
+          Endpoints["GET /repositories/{repository_id}/environments/{environment_name}/variables/{name}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /enterprises/{enterprise}/actions/permissions/workflow"]["response"];
+      response: Endpoints["GET /repositories/{repository_id}/environments/{environment_name}/variables/{name}"]["response"];
     };
     getGithubActionsDefaultWorkflowPermissionsOrganization: {
       parameters: RequestParameters &
@@ -394,6 +466,14 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["GET /orgs/{org}/actions/secrets/{secret_name}"]["response"];
     };
+    getOrgVariable: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /orgs/{org}/actions/variables/{name}"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /orgs/{org}/actions/variables/{name}"]["response"];
+    };
     getPendingDeploymentsForRun: {
       parameters: RequestParameters &
         Omit<
@@ -418,6 +498,22 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["GET /repos/{owner}/{repo}/actions/secrets/public-key"]["response"];
     };
+    getRepoRequiredWorkflow: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /repos/{org}/{repo}/actions/required_workflows/{required_workflow_id_for_repo}"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /repos/{org}/{repo}/actions/required_workflows/{required_workflow_id_for_repo}"]["response"];
+    };
+    getRepoRequiredWorkflowUsage: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /repos/{org}/{repo}/actions/required_workflows/{required_workflow_id_for_repo}/timing"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /repos/{org}/{repo}/actions/required_workflows/{required_workflow_id_for_repo}/timing"]["response"];
+    };
     getRepoSecret: {
       parameters: RequestParameters &
         Omit<
@@ -425,6 +521,22 @@ export type RestEndpointMethodTypes = {
           "baseUrl" | "headers" | "mediaType"
         >;
       response: Endpoints["GET /repos/{owner}/{repo}/actions/secrets/{secret_name}"]["response"];
+    };
+    getRepoVariable: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /repos/{owner}/{repo}/actions/variables/{name}"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /repos/{owner}/{repo}/actions/variables/{name}"]["response"];
+    };
+    getRequiredWorkflow: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /orgs/{org}/actions/required_workflows/{required_workflow_id}"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /orgs/{org}/actions/required_workflows/{required_workflow_id}"]["response"];
     };
     getReviewsForRun: {
       parameters: RequestParameters &
@@ -514,6 +626,14 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["GET /repositories/{repository_id}/environments/{environment_name}/secrets"]["response"];
     };
+    listEnvironmentVariables: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /repositories/{repository_id}/environments/{environment_name}/variables"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /repositories/{repository_id}/environments/{environment_name}/variables"]["response"];
+    };
     listJobsForWorkflowRun: {
       parameters: RequestParameters &
         Omit<
@@ -554,6 +674,22 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["GET /orgs/{org}/actions/secrets"]["response"];
     };
+    listOrgVariables: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /orgs/{org}/actions/variables"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /orgs/{org}/actions/variables"]["response"];
+    };
+    listRepoRequiredWorkflows: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /repos/{org}/{repo}/actions/required_workflows"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /repos/{org}/{repo}/actions/required_workflows"]["response"];
+    };
     listRepoSecrets: {
       parameters: RequestParameters &
         Omit<
@@ -562,6 +698,14 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["GET /repos/{owner}/{repo}/actions/secrets"]["response"];
     };
+    listRepoVariables: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /repos/{owner}/{repo}/actions/variables"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /repos/{owner}/{repo}/actions/variables"]["response"];
+    };
     listRepoWorkflows: {
       parameters: RequestParameters &
         Omit<
@@ -569,6 +713,22 @@ export type RestEndpointMethodTypes = {
           "baseUrl" | "headers" | "mediaType"
         >;
       response: Endpoints["GET /repos/{owner}/{repo}/actions/workflows"]["response"];
+    };
+    listRequiredWorkflowRuns: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /repos/{owner}/{repo}/actions/required_workflows/{required_workflow_id_for_repo}/runs"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /repos/{owner}/{repo}/actions/required_workflows/{required_workflow_id_for_repo}/runs"]["response"];
+    };
+    listRequiredWorkflows: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /orgs/{org}/actions/required_workflows"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /orgs/{org}/actions/required_workflows"]["response"];
     };
     listRunnerApplicationsForOrg: {
       parameters: RequestParameters &
@@ -594,6 +754,14 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["GET /orgs/{org}/actions/secrets/{secret_name}/repositories"]["response"];
     };
+    listSelectedReposForOrgVariable: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /orgs/{org}/actions/variables/{name}/repositories"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /orgs/{org}/actions/variables/{name}/repositories"]["response"];
+    };
     listSelectedRepositoriesEnabledGithubActionsOrganization: {
       parameters: RequestParameters &
         Omit<
@@ -601,6 +769,14 @@ export type RestEndpointMethodTypes = {
           "baseUrl" | "headers" | "mediaType"
         >;
       response: Endpoints["GET /orgs/{org}/actions/permissions/repositories"]["response"];
+    };
+    listSelectedRepositoriesRequiredWorkflow: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /orgs/{org}/actions/required_workflows/{required_workflow_id}/repositories"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /orgs/{org}/actions/required_workflows/{required_workflow_id}/repositories"]["response"];
     };
     listSelfHostedRunnersForOrg: {
       parameters: RequestParameters &
@@ -706,6 +882,22 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["DELETE /orgs/{org}/actions/secrets/{secret_name}/repositories/{repository_id}"]["response"];
     };
+    removeSelectedRepoFromOrgVariable: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["DELETE /orgs/{org}/actions/variables/{name}/repositories/{repository_id}"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["DELETE /orgs/{org}/actions/variables/{name}/repositories/{repository_id}"]["response"];
+    };
+    removeSelectedRepoFromRequiredWorkflow: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["DELETE /orgs/{org}/actions/required_workflows/{required_workflow_id}/repositories/{repository_id}"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["DELETE /orgs/{org}/actions/required_workflows/{required_workflow_id}/repositories/{repository_id}"]["response"];
+    };
     reviewPendingDeploymentsForRun: {
       parameters: RequestParameters &
         Omit<
@@ -745,14 +937,6 @@ export type RestEndpointMethodTypes = {
           "baseUrl" | "headers" | "mediaType"
         >;
       response: Endpoints["PUT /repos/{owner}/{repo}/actions/runners/{runner_id}/labels"]["response"];
-    };
-    setGithubActionsDefaultWorkflowPermissionsEnterprise: {
-      parameters: RequestParameters &
-        Omit<
-          Endpoints["PUT /enterprises/{enterprise}/actions/permissions/workflow"]["parameters"],
-          "baseUrl" | "headers" | "mediaType"
-        >;
-      response: Endpoints["PUT /enterprises/{enterprise}/actions/permissions/workflow"]["response"];
     };
     setGithubActionsDefaultWorkflowPermissionsOrganization: {
       parameters: RequestParameters &
@@ -794,6 +978,22 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["PUT /orgs/{org}/actions/secrets/{secret_name}/repositories"]["response"];
     };
+    setSelectedReposForOrgVariable: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["PUT /orgs/{org}/actions/variables/{name}/repositories"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["PUT /orgs/{org}/actions/variables/{name}/repositories"]["response"];
+    };
+    setSelectedReposToRequiredWorkflow: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["PUT /orgs/{org}/actions/required_workflows/{required_workflow_id}/repositories"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["PUT /orgs/{org}/actions/required_workflows/{required_workflow_id}/repositories"]["response"];
+    };
     setSelectedRepositoriesEnabledGithubActionsOrganization: {
       parameters: RequestParameters &
         Omit<
@@ -809,6 +1009,38 @@ export type RestEndpointMethodTypes = {
           "baseUrl" | "headers" | "mediaType"
         >;
       response: Endpoints["PUT /repos/{owner}/{repo}/actions/permissions/access"]["response"];
+    };
+    updateEnvironmentVariable: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["PATCH /repositories/{repository_id}/environments/{environment_name}/variables/{name}"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["PATCH /repositories/{repository_id}/environments/{environment_name}/variables/{name}"]["response"];
+    };
+    updateOrgVariable: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["PATCH /orgs/{org}/actions/variables/{name}"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["PATCH /orgs/{org}/actions/variables/{name}"]["response"];
+    };
+    updateRepoVariable: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["PATCH /repos/{owner}/{repo}/actions/variables/{name}"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["PATCH /repos/{owner}/{repo}/actions/variables/{name}"]["response"];
+    };
+    updateRequiredWorkflow: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["PATCH /orgs/{org}/actions/required_workflows/{required_workflow_id}"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["PATCH /orgs/{org}/actions/required_workflows/{required_workflow_id}"]["response"];
     };
   };
   activity: {
@@ -1384,22 +1616,6 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["GET /users/{username}/settings/billing/actions"]["response"];
     };
-    getGithubAdvancedSecurityBillingGhe: {
-      parameters: RequestParameters &
-        Omit<
-          Endpoints["GET /enterprises/{enterprise}/settings/billing/advanced-security"]["parameters"],
-          "baseUrl" | "headers" | "mediaType"
-        >;
-      response: Endpoints["GET /enterprises/{enterprise}/settings/billing/advanced-security"]["response"];
-    };
-    getGithubAdvancedSecurityBillingOrg: {
-      parameters: RequestParameters &
-        Omit<
-          Endpoints["GET /orgs/{org}/settings/billing/advanced-security"]["parameters"],
-          "baseUrl" | "headers" | "mediaType"
-        >;
-      response: Endpoints["GET /orgs/{org}/settings/billing/advanced-security"]["response"];
-    };
     getGithubPackagesBillingOrg: {
       parameters: RequestParameters &
         Omit<
@@ -1580,14 +1796,6 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["GET /repos/{owner}/{repo}/code-scanning/alerts/{alert_number}/instances"]["response"];
     };
-    listAlertsForEnterprise: {
-      parameters: RequestParameters &
-        Omit<
-          Endpoints["GET /enterprises/{enterprise}/code-scanning/alerts"]["parameters"],
-          "baseUrl" | "headers" | "mediaType"
-        >;
-      response: Endpoints["GET /enterprises/{enterprise}/code-scanning/alerts"]["response"];
-    };
     listAlertsForOrg: {
       parameters: RequestParameters &
         Omit<
@@ -1675,10 +1883,10 @@ export type RestEndpointMethodTypes = {
     addSelectedRepoToOrgSecret: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["PUT /organizations/{org}/codespaces/secrets/{secret_name}/repositories/{repository_id}"]["parameters"],
+          Endpoints["PUT /orgs/{org}/codespaces/secrets/{secret_name}/repositories/{repository_id}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["PUT /organizations/{org}/codespaces/secrets/{secret_name}/repositories/{repository_id}"]["response"];
+      response: Endpoints["PUT /orgs/{org}/codespaces/secrets/{secret_name}/repositories/{repository_id}"]["response"];
     };
     codespaceMachinesForAuthenticatedUser: {
       parameters: RequestParameters &
@@ -1699,10 +1907,10 @@ export type RestEndpointMethodTypes = {
     createOrUpdateOrgSecret: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["PUT /organizations/{org}/codespaces/secrets/{secret_name}"]["parameters"],
+          Endpoints["PUT /orgs/{org}/codespaces/secrets/{secret_name}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["PUT /organizations/{org}/codespaces/secrets/{secret_name}"]["response"];
+      response: Endpoints["PUT /orgs/{org}/codespaces/secrets/{secret_name}"]["response"];
     };
     createOrUpdateRepoSecret: {
       parameters: RequestParameters &
@@ -1755,10 +1963,10 @@ export type RestEndpointMethodTypes = {
     deleteOrgSecret: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["DELETE /organizations/{org}/codespaces/secrets/{secret_name}"]["parameters"],
+          Endpoints["DELETE /orgs/{org}/codespaces/secrets/{secret_name}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["DELETE /organizations/{org}/codespaces/secrets/{secret_name}"]["response"];
+      response: Endpoints["DELETE /orgs/{org}/codespaces/secrets/{secret_name}"]["response"];
     };
     deleteRepoSecret: {
       parameters: RequestParameters &
@@ -1784,6 +1992,14 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["POST /user/codespaces/{codespace_name}/exports"]["response"];
     };
+    getCodespacesForUserInOrg: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /orgs/{org}/members/{username}/codespaces"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /orgs/{org}/members/{username}/codespaces"]["response"];
+    };
     getExportDetailsForAuthenticatedUser: {
       parameters: RequestParameters &
         Omit<
@@ -1803,18 +2019,18 @@ export type RestEndpointMethodTypes = {
     getOrgPublicKey: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /organizations/{org}/codespaces/secrets/public-key"]["parameters"],
+          Endpoints["GET /orgs/{org}/codespaces/secrets/public-key"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /organizations/{org}/codespaces/secrets/public-key"]["response"];
+      response: Endpoints["GET /orgs/{org}/codespaces/secrets/public-key"]["response"];
     };
     getOrgSecret: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /organizations/{org}/codespaces/secrets/{secret_name}"]["parameters"],
+          Endpoints["GET /orgs/{org}/codespaces/secrets/{secret_name}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /organizations/{org}/codespaces/secrets/{secret_name}"]["response"];
+      response: Endpoints["GET /orgs/{org}/codespaces/secrets/{secret_name}"]["response"];
     };
     getPublicKeyForAuthenticatedUser: {
       parameters: RequestParameters &
@@ -1883,10 +2099,10 @@ export type RestEndpointMethodTypes = {
     listOrgSecrets: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /organizations/{org}/codespaces/secrets"]["parameters"],
+          Endpoints["GET /orgs/{org}/codespaces/secrets"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /organizations/{org}/codespaces/secrets"]["response"];
+      response: Endpoints["GET /orgs/{org}/codespaces/secrets"]["response"];
     };
     listRepoSecrets: {
       parameters: RequestParameters &
@@ -1915,10 +2131,10 @@ export type RestEndpointMethodTypes = {
     listSelectedReposForOrgSecret: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["GET /organizations/{org}/codespaces/secrets/{secret_name}/repositories"]["parameters"],
+          Endpoints["GET /orgs/{org}/codespaces/secrets/{secret_name}/repositories"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["GET /organizations/{org}/codespaces/secrets/{secret_name}/repositories"]["response"];
+      response: Endpoints["GET /orgs/{org}/codespaces/secrets/{secret_name}/repositories"]["response"];
     };
     preFlightWithRepoForAuthenticatedUser: {
       parameters: RequestParameters &
@@ -1927,6 +2143,14 @@ export type RestEndpointMethodTypes = {
           "baseUrl" | "headers" | "mediaType"
         >;
       response: Endpoints["GET /repos/{owner}/{repo}/codespaces/new"]["response"];
+    };
+    publishForAuthenticatedUser: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["POST /user/codespaces/{codespace_name}/publish"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["POST /user/codespaces/{codespace_name}/publish"]["response"];
     };
     removeRepositoryForSecretForAuthenticatedUser: {
       parameters: RequestParameters &
@@ -1939,10 +2163,10 @@ export type RestEndpointMethodTypes = {
     removeSelectedRepoFromOrgSecret: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["DELETE /organizations/{org}/codespaces/secrets/{secret_name}/repositories/{repository_id}"]["parameters"],
+          Endpoints["DELETE /orgs/{org}/codespaces/secrets/{secret_name}/repositories/{repository_id}"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["DELETE /organizations/{org}/codespaces/secrets/{secret_name}/repositories/{repository_id}"]["response"];
+      response: Endpoints["DELETE /orgs/{org}/codespaces/secrets/{secret_name}/repositories/{repository_id}"]["response"];
     };
     repoMachinesForAuthenticatedUser: {
       parameters: RequestParameters &
@@ -1951,6 +2175,14 @@ export type RestEndpointMethodTypes = {
           "baseUrl" | "headers" | "mediaType"
         >;
       response: Endpoints["GET /repos/{owner}/{repo}/codespaces/machines"]["response"];
+    };
+    setCodespacesBilling: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["PUT /orgs/{org}/codespaces/billing"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["PUT /orgs/{org}/codespaces/billing"]["response"];
     };
     setRepositoriesForSecretForAuthenticatedUser: {
       parameters: RequestParameters &
@@ -1963,10 +2195,10 @@ export type RestEndpointMethodTypes = {
     setSelectedReposForOrgSecret: {
       parameters: RequestParameters &
         Omit<
-          Endpoints["PUT /organizations/{org}/codespaces/secrets/{secret_name}/repositories"]["parameters"],
+          Endpoints["PUT /orgs/{org}/codespaces/secrets/{secret_name}/repositories"]["parameters"],
           "baseUrl" | "headers" | "mediaType"
         >;
-      response: Endpoints["PUT /organizations/{org}/codespaces/secrets/{secret_name}/repositories"]["response"];
+      response: Endpoints["PUT /orgs/{org}/codespaces/secrets/{secret_name}/repositories"]["response"];
     };
     startForAuthenticatedUser: {
       parameters: RequestParameters &
@@ -2082,6 +2314,22 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["GET /repos/{owner}/{repo}/dependabot/secrets/{secret_name}"]["response"];
     };
+    listAlertsForEnterprise: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /enterprises/{enterprise}/dependabot/alerts"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /enterprises/{enterprise}/dependabot/alerts"]["response"];
+    };
+    listAlertsForOrg: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /orgs/{org}/dependabot/alerts"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /orgs/{org}/dependabot/alerts"]["response"];
+    };
     listAlertsForRepo: {
       parameters: RequestParameters &
         Omit<
@@ -2176,14 +2424,6 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["POST /enterprises/{enterprise}/actions/runners/{runner_id}/labels"]["response"];
     };
-    disableSelectedOrganizationGithubActionsEnterprise: {
-      parameters: RequestParameters &
-        Omit<
-          Endpoints["DELETE /enterprises/{enterprise}/actions/permissions/organizations/{org_id}"]["parameters"],
-          "baseUrl" | "headers" | "mediaType"
-        >;
-      response: Endpoints["DELETE /enterprises/{enterprise}/actions/permissions/organizations/{org_id}"]["response"];
-    };
     enableSelectedOrganizationGithubActionsEnterprise: {
       parameters: RequestParameters &
         Omit<
@@ -2192,30 +2432,6 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["PUT /enterprises/{enterprise}/actions/permissions/organizations/{org_id}"]["response"];
     };
-    getAllowedActionsEnterprise: {
-      parameters: RequestParameters &
-        Omit<
-          Endpoints["GET /enterprises/{enterprise}/actions/permissions/selected-actions"]["parameters"],
-          "baseUrl" | "headers" | "mediaType"
-        >;
-      response: Endpoints["GET /enterprises/{enterprise}/actions/permissions/selected-actions"]["response"];
-    };
-    getGithubActionsPermissionsEnterprise: {
-      parameters: RequestParameters &
-        Omit<
-          Endpoints["GET /enterprises/{enterprise}/actions/permissions"]["parameters"],
-          "baseUrl" | "headers" | "mediaType"
-        >;
-      response: Endpoints["GET /enterprises/{enterprise}/actions/permissions"]["response"];
-    };
-    getServerStatistics: {
-      parameters: RequestParameters &
-        Omit<
-          Endpoints["GET /enterprise-installation/{enterprise_or_org}/server-statistics"]["parameters"],
-          "baseUrl" | "headers" | "mediaType"
-        >;
-      response: Endpoints["GET /enterprise-installation/{enterprise_or_org}/server-statistics"]["response"];
-    };
     listLabelsForSelfHostedRunnerForEnterprise: {
       parameters: RequestParameters &
         Omit<
@@ -2223,62 +2439,6 @@ export type RestEndpointMethodTypes = {
           "baseUrl" | "headers" | "mediaType"
         >;
       response: Endpoints["GET /enterprises/{enterprise}/actions/runners/{runner_id}/labels"]["response"];
-    };
-    listSelectedOrganizationsEnabledGithubActionsEnterprise: {
-      parameters: RequestParameters &
-        Omit<
-          Endpoints["GET /enterprises/{enterprise}/actions/permissions/organizations"]["parameters"],
-          "baseUrl" | "headers" | "mediaType"
-        >;
-      response: Endpoints["GET /enterprises/{enterprise}/actions/permissions/organizations"]["response"];
-    };
-    removeAllCustomLabelsFromSelfHostedRunnerForEnterprise: {
-      parameters: RequestParameters &
-        Omit<
-          Endpoints["DELETE /enterprises/{enterprise}/actions/runners/{runner_id}/labels"]["parameters"],
-          "baseUrl" | "headers" | "mediaType"
-        >;
-      response: Endpoints["DELETE /enterprises/{enterprise}/actions/runners/{runner_id}/labels"]["response"];
-    };
-    removeCustomLabelFromSelfHostedRunnerForEnterprise: {
-      parameters: RequestParameters &
-        Omit<
-          Endpoints["DELETE /enterprises/{enterprise}/actions/runners/{runner_id}/labels/{name}"]["parameters"],
-          "baseUrl" | "headers" | "mediaType"
-        >;
-      response: Endpoints["DELETE /enterprises/{enterprise}/actions/runners/{runner_id}/labels/{name}"]["response"];
-    };
-    setAllowedActionsEnterprise: {
-      parameters: RequestParameters &
-        Omit<
-          Endpoints["PUT /enterprises/{enterprise}/actions/permissions/selected-actions"]["parameters"],
-          "baseUrl" | "headers" | "mediaType"
-        >;
-      response: Endpoints["PUT /enterprises/{enterprise}/actions/permissions/selected-actions"]["response"];
-    };
-    setCustomLabelsForSelfHostedRunnerForEnterprise: {
-      parameters: RequestParameters &
-        Omit<
-          Endpoints["PUT /enterprises/{enterprise}/actions/runners/{runner_id}/labels"]["parameters"],
-          "baseUrl" | "headers" | "mediaType"
-        >;
-      response: Endpoints["PUT /enterprises/{enterprise}/actions/runners/{runner_id}/labels"]["response"];
-    };
-    setGithubActionsPermissionsEnterprise: {
-      parameters: RequestParameters &
-        Omit<
-          Endpoints["PUT /enterprises/{enterprise}/actions/permissions"]["parameters"],
-          "baseUrl" | "headers" | "mediaType"
-        >;
-      response: Endpoints["PUT /enterprises/{enterprise}/actions/permissions"]["response"];
-    };
-    setSelectedOrganizationsEnabledGithubActionsEnterprise: {
-      parameters: RequestParameters &
-        Omit<
-          Endpoints["PUT /enterprises/{enterprise}/actions/permissions/organizations"]["parameters"],
-          "baseUrl" | "headers" | "mediaType"
-        >;
-      response: Endpoints["PUT /enterprises/{enterprise}/actions/permissions/organizations"]["response"];
     };
   };
   gists: {
@@ -2690,6 +2850,14 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["GET /repos/{owner}/{repo}/assignees/{assignee}"]["response"];
     };
+    checkUserCanBeAssignedToIssue: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /repos/{owner}/{repo}/issues/{issue_number}/assignees/{assignee}"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /repos/{owner}/{repo}/issues/{issue_number}/assignees/{assignee}"]["response"];
+    };
     create: {
       parameters: RequestParameters &
         Omit<
@@ -3032,6 +3200,14 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["GET /meta"]["response"];
     };
+    getAllVersions: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /versions"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /versions"]["response"];
+    };
     getOctocat: {
       parameters: RequestParameters &
         Omit<
@@ -3300,14 +3476,6 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["PUT /orgs/{org}/outside_collaborators/{username}"]["response"];
     };
-    createCustomRole: {
-      parameters: RequestParameters &
-        Omit<
-          Endpoints["POST /orgs/{org}/custom_roles"]["parameters"],
-          "baseUrl" | "headers" | "mediaType"
-        >;
-      response: Endpoints["POST /orgs/{org}/custom_roles"]["response"];
-    };
     createInvitation: {
       parameters: RequestParameters &
         Omit<
@@ -3323,14 +3491,6 @@ export type RestEndpointMethodTypes = {
           "baseUrl" | "headers" | "mediaType"
         >;
       response: Endpoints["POST /orgs/{org}/hooks"]["response"];
-    };
-    deleteCustomRole: {
-      parameters: RequestParameters &
-        Omit<
-          Endpoints["DELETE /orgs/{org}/custom_roles/{role_id}"]["parameters"],
-          "baseUrl" | "headers" | "mediaType"
-        >;
-      response: Endpoints["DELETE /orgs/{org}/custom_roles/{role_id}"]["response"];
     };
     deleteWebhook: {
       parameters: RequestParameters &
@@ -3420,14 +3580,6 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["GET /orgs/{org}/blocks"]["response"];
     };
-    listCustomRoles: {
-      parameters: RequestParameters &
-        Omit<
-          Endpoints["GET /organizations/{organization_id}/custom_roles"]["parameters"],
-          "baseUrl" | "headers" | "mediaType"
-        >;
-      response: Endpoints["GET /organizations/{organization_id}/custom_roles"]["response"];
-    };
     listFailedInvitations: {
       parameters: RequestParameters &
         Omit<
@@ -3435,14 +3587,6 @@ export type RestEndpointMethodTypes = {
           "baseUrl" | "headers" | "mediaType"
         >;
       response: Endpoints["GET /orgs/{org}/failed_invitations"]["response"];
-    };
-    listFineGrainedPermissions: {
-      parameters: RequestParameters &
-        Omit<
-          Endpoints["GET /orgs/{org}/fine_grained_permissions"]["parameters"],
-          "baseUrl" | "headers" | "mediaType"
-        >;
-      response: Endpoints["GET /orgs/{org}/fine_grained_permissions"]["response"];
     };
     listForAuthenticatedUser: {
       parameters: RequestParameters &
@@ -3619,14 +3763,6 @@ export type RestEndpointMethodTypes = {
           "baseUrl" | "headers" | "mediaType"
         >;
       response: Endpoints["PATCH /orgs/{org}"]["response"];
-    };
-    updateCustomRole: {
-      parameters: RequestParameters &
-        Omit<
-          Endpoints["PATCH /orgs/{org}/custom_roles/{role_id}"]["parameters"],
-          "baseUrl" | "headers" | "mediaType"
-        >;
-      response: Endpoints["PATCH /orgs/{org}/custom_roles/{role_id}"]["response"];
     };
     updateMembershipForAuthenticatedUser: {
       parameters: RequestParameters &
@@ -5932,6 +6068,14 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["GET /repos/{owner}/{repo}/secret-scanning/alerts/{alert_number}"]["response"];
     };
+    getSecurityAnalysisSettingsForEnterprise: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /enterprises/{enterprise}/code_security_and_analysis"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /enterprises/{enterprise}/code_security_and_analysis"]["response"];
+    };
     listAlertsForEnterprise: {
       parameters: RequestParameters &
         Omit<
@@ -5963,6 +6107,22 @@ export type RestEndpointMethodTypes = {
           "baseUrl" | "headers" | "mediaType"
         >;
       response: Endpoints["GET /repos/{owner}/{repo}/secret-scanning/alerts/{alert_number}/locations"]["response"];
+    };
+    patchSecurityAnalysisSettingsForEnterprise: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["PATCH /enterprises/{enterprise}/code_security_and_analysis"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["PATCH /enterprises/{enterprise}/code_security_and_analysis"]["response"];
+    };
+    postSecurityProductEnablementForEnterprise: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["POST /enterprises/{enterprise}/{security_product}/{enablement}"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["POST /enterprises/{enterprise}/{security_product}/{enablement}"]["response"];
     };
     updateAlert: {
       parameters: RequestParameters &

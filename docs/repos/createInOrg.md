@@ -62,7 +62,7 @@ Whether the repository is private.
 </td></tr>
 <tr><td>visibility</td><td>no</td><td>
 
-Can be `public` or `private`. If your organization is associated with an enterprise account using GitHub Enterprise Cloud or GitHub Enterprise Server 2.20+, `visibility` can also be `internal`. Note: For GitHub Enterprise Server and GitHub AE, this endpoint will only list repositories available to all users on the enterprise. For more information, see "[Creating an internal repository](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/about-repository-visibility#about-internal-repositories)" in the GitHub Help documentation.
+The visibility of the repository.
 
 </td></tr>
 <tr><td>has_issues</td><td>no</td><td>
@@ -78,6 +78,11 @@ Either `true` to enable projects for this repository or `false` to disable them.
 <tr><td>has_wiki</td><td>no</td><td>
 
 Either `true` to enable the wiki for this repository or `false` to disable it.
+
+</td></tr>
+<tr><td>has_downloads</td><td>no</td><td>
+
+Whether downloads are enabled.
 
 </td></tr>
 <tr><td>is_template</td><td>no</td><td>

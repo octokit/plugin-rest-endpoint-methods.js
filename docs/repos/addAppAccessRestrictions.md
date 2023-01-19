@@ -12,10 +12,6 @@ Protected branches are available in public repositories with GitHub Free and Git
 
 Grants the specified apps push access for this branch. Only installed GitHub Apps with `write` access to the `contents` permission can be added as authorized actors on a protected branch.
 
-| Type    | Description                                                                                                                                                |
-| ------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `array` | The GitHub Apps that have push access to this branch. Use the app's `slug`. **Note**: The list of users, apps, and teams in total is limited to 100 items. |
-
 ```js
 octokit.rest.repos.addAppAccessRestrictions({
   owner,
@@ -48,7 +44,7 @@ The name of the repository. The name is not case sensitive.
 </td></tr>
 <tr><td>branch</td><td>yes</td><td>
 
-The name of the branch.
+The name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use [the GraphQL API](https://docs.github.com/graphql).
 
 </td></tr>
 <tr><td>apps</td><td>yes</td><td>
@@ -57,4 +53,4 @@ The name of the branch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#add-app-access-restrictions).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/branches/branch-protection#add-app-access-restrictions).

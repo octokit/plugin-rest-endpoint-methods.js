@@ -67,12 +67,12 @@ The number of results per page (max 100).
 </td></tr>
 <tr><td>before</td><td>no</td><td>
 
-A cursor, as given in the [Link header](https://docs.github.com/rest/overview/resources-in-the-rest-api#link-header). If specified, the query only searches for events before this cursor.
+A cursor, as given in the [Link header](https://docs.github.com/rest/overview/resources-in-the-rest-api#link-header). If specified, the query only searches for results before this cursor.
 
 </td></tr>
 <tr><td>after</td><td>no</td><td>
 
-A cursor, as given in the [Link header](https://docs.github.com/rest/overview/resources-in-the-rest-api#link-header). If specified, the query only searches for events after this cursor.
+A cursor, as given in the [Link header](https://docs.github.com/rest/overview/resources-in-the-rest-api#link-header). If specified, the query only searches for results after this cursor.
 
 </td></tr>
   </tbody>

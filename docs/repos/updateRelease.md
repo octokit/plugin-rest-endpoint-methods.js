@@ -74,6 +74,11 @@ Text describing the contents of the tag.
 `true` to identify the release as a prerelease, `false` to identify the release as a full release.
 
 </td></tr>
+<tr><td>make_latest</td><td>no</td><td>
+
+Specifies whether this release should be set as the latest release for the repository. Drafts and prereleases cannot be set as latest. Defaults to `true` for newly published releases. `legacy` specifies that the latest release should be determined based on the release creation date and higher semantic version.
+
+</td></tr>
 <tr><td>discussion_category_name</td><td>no</td><td>
 
 If specified, a discussion of the specified category is created and linked to the release. The value must be a category that already exists in the repository. If there is already a discussion linked to the release, this parameter is ignored. For more information, see "[Managing categories for discussions in your repository](https://docs.github.com/discussions/managing-discussions-for-your-community/managing-categories-for-discussions-in-your-repository)."

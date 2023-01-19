@@ -85,4 +85,4 @@ Logins for Users to assign to this issue. Pass one or more user logins to _repla
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/issues/#update-an-issue).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/issues#update-an-issue).

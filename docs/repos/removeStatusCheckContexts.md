@@ -42,7 +42,7 @@ The name of the repository. The name is not case sensitive.
 </td></tr>
 <tr><td>branch</td><td>yes</td><td>
 
-The name of the branch.
+The name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use [the GraphQL API](https://docs.github.com/graphql).
 
 </td></tr>
 <tr><td>contexts</td><td>yes</td><td>
@@ -51,4 +51,4 @@ The name of the branch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#remove-status-check-contexts).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/branches/branch-protection#remove-status-check-contexts).

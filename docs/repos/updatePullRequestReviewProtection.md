@@ -45,7 +45,7 @@ The name of the repository. The name is not case sensitive.
 </td></tr>
 <tr><td>branch</td><td>yes</td><td>
 
-The name of the branch.
+The name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use [the GraphQL API](https://docs.github.com/graphql).
 
 </td></tr>
 <tr><td>dismissal_restrictions</td><td>no</td><td>
@@ -83,6 +83,11 @@ Blocks merging pull requests until [code owners](https://docs.github.com/article
 Specifies the number of reviewers required to approve pull requests. Use a number between 1 and 6 or 0 to not require reviewers.
 
 </td></tr>
+<tr><td>require_last_push_approval</td><td>no</td><td>
+
+Whether the most recent push must be approved by someone other than the person who pushed it. Default: `false`
+
+</td></tr>
 <tr><td>bypass_pull_request_allowances</td><td>no</td><td>
 
 Allow specific users, teams, or apps to bypass pull request requirements.
@@ -106,4 +111,4 @@ The list of app `slug`s allowed to bypass pull request requirements.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#update-pull-request-review-protection).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/branches/branch-protection#update-pull-request-review-protection).

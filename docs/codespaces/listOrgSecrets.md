@@ -1,7 +1,7 @@
 ---
 name: List organization secrets
 example: octokit.rest.codespaces.listOrgSecrets({ org })
-route: GET /organizations/{org}/codespaces/secrets
+route: GET /orgs/{org}/codespaces/secrets
 scope: codespaces
 type: API method
 ---

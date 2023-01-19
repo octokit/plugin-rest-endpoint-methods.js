@@ -61,7 +61,7 @@ SHA that pull request head must match to allow merge.
 </td></tr>
 <tr><td>merge_method</td><td>no</td><td>
 
-Merge method to use. Possible values are `merge`, `squash` or `rebase`. Default is `merge`.
+The merge method to use.
 
 </td></tr>
   </tbody>

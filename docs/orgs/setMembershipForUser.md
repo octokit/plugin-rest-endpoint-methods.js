@@ -47,9 +47,10 @@ The handle for the GitHub user account.
 </td></tr>
 <tr><td>role</td><td>no</td><td>
 
-The role to give the user in the organization. Can be one of:  
-\* `admin` - The user will become an owner of the organization.  
-\* `member` - The user will become a non-owner member of the organization.
+The role to give the user in the organization. Can be one of:
+
+- `admin` - The user will become an owner of the organization.
+- `member` - The user will become a non-owner member of the organization.
 
 </td></tr>
   </tbody>
