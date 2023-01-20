@@ -56,7 +56,7 @@ The name of the repository. The name is not case sensitive.
 </td></tr>
 <tr><td>branch</td><td>yes</td><td>
 
-The name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use [the GraphQL API](https://docs.github.com/graphql).
+The name of the branch.
 
 </td></tr>
 <tr><td>required_status_checks</td><td>yes</td><td>
@@ -134,11 +134,6 @@ Blocks merging pull requests until [code owners](https://docs.github.com/article
 Specify the number of reviewers required to approve pull requests. Use a number between 1 and 6 or 0 to not require reviewers.
 
 </td></tr>
-<tr><td>required_pull_request_reviews.require_last_push_approval</td><td>no</td><td>
-
-Whether the most recent push must be approved by someone other than the person who pushed it. Default: `false`.
-
-</td></tr>
 <tr><td>required_pull_request_reviews.bypass_pull_request_allowances</td><td>no</td><td>
 
 Allow specific users, teams, or apps to bypass pull request requirements.
@@ -186,12 +181,12 @@ Enforces a linear commit Git history, which prevents anyone from pushing merge c
 </td></tr>
 <tr><td>allow_force_pushes</td><td>no</td><td>
 
-Permits force pushes to the protected branch by anyone with write access to the repository. Set to `true` to allow force pushes. Set to `false` or `null` to block force pushes. Default: `false`. For more information, see "[Enabling force pushes to a protected branch](https://docs.github.com/github/administering-a-repository/enabling-force-pushes-to-a-protected-branch)" in the GitHub Help documentation."
+Permits force pushes to the protected branch by anyone with write access to the repository. Set to `true` to allow force pushes. Set to `false` or `null` to block force pushes. Default: `false`. For more information, see "[Enabling force pushes to a protected branch](https://docs.github.com/en/github/administering-a-repository/enabling-force-pushes-to-a-protected-branch)" in the GitHub Help documentation."
 
 </td></tr>
 <tr><td>allow_deletions</td><td>no</td><td>
 
-Allows deletion of the protected branch by anyone with write access to the repository. Set to `false` to prevent deletion of the protected branch. Default: `false`. For more information, see "[Enabling force pushes to a protected branch](https://docs.github.com/github/administering-a-repository/enabling-force-pushes-to-a-protected-branch)" in the GitHub Help documentation.
+Allows deletion of the protected branch by anyone with write access to the repository. Set to `false` to prevent deletion of the protected branch. Default: `false`. For more information, see "[Enabling force pushes to a protected branch](https://docs.github.com/en/github/administering-a-repository/enabling-force-pushes-to-a-protected-branch)" in the GitHub Help documentation.
 
 </td></tr>
 <tr><td>block_creations</td><td>no</td><td>
@@ -204,17 +199,7 @@ If set to `true`, the `restrictions` branch protection settings which limits who
 Requires all conversations on code to be resolved before a pull request can be merged into a branch that matches this rule. Set to `false` to disable. Default: `false`.
 
 </td></tr>
-<tr><td>lock_branch</td><td>no</td><td>
-
-Whether to set the branch as read-only. If this is true, users will not be able to push to the branch. Default: `false`.
-
-</td></tr>
-<tr><td>allow_fork_syncing</td><td>no</td><td>
-
-Whether users can pull changes from upstream when the branch is locked. Set to `true` to allow fork syncing. Set to `false` to prevent fork syncing. Default: `false`.
-
-</td></tr>
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/branches/branch-protection#update-branch-protection).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#update-branch-protection).

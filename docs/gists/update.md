@@ -8,7 +8,7 @@ type: API method
 
 # Update a gist
 
-Allows you to update a gist's description and to update, delete, or rename gist files. Files from the previous version of the gist that aren't explicitly changed during an edit are unchanged.
+Allows you to update or delete a gist file and rename gist files. Files from the previous version of the gist that aren't explicitly changed during an edit are unchanged.
 
 ```js
 octokit.rest.gists.update({
@@ -34,15 +34,12 @@ The unique identifier of the gist.
 </td></tr>
 <tr><td>description</td><td>no</td><td>
 
-The description of the gist.
+Description of the gist
 
 </td></tr>
 <tr><td>files</td><td>no</td><td>
 
-The gist files to be updated, renamed, or deleted. Each `key` must match the current filename
-(including extension) of the targeted gist file. For example: `hello.py`.
-
-To delete a file, set the whole file to null. For example: `hello.py : null`.
+Names of files to be updated
 
 </td></tr>
 <tr><td>files.*</td><td>no</td><td>
@@ -50,12 +47,12 @@ To delete a file, set the whole file to null. For example: `hello.py : null`.
 </td></tr>
 <tr><td>files.*.content</td><td>no</td><td>
 
-The new content of the file.
+The new content of the file
 
 </td></tr>
 <tr><td>files.*.filename</td><td>no</td><td>
 
-The new filename for the file.
+The new filename for the file
 
 </td></tr>
   </tbody>

@@ -34,11 +34,10 @@ Limit results to repositories with the specified visibility.
 </td></tr>
 <tr><td>affiliation</td><td>no</td><td>
 
-Comma-separated list of values. Can include:
-
-- `owner`: Repositories that are owned by the authenticated user.
-- `collaborator`: Repositories that the user has been added to as a collaborator.
-- `organization_member`: Repositories that the user has access to through being a member of an organization. This includes every repository on every team that the user is on.
+Comma-separated list of values. Can include:  
+\* `owner`: Repositories that are owned by the authenticated user.  
+\* `collaborator`: Repositories that the user has been added to as a collaborator.  
+\* `organization_member`: Repositories that the user has access to through being a member of an organization. This includes every repository on every team that the user is on.
 
 </td></tr>
 <tr><td>type</td><td>no</td><td>

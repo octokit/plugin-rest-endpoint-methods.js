@@ -55,7 +55,7 @@ A custom webhook event name. Must be 100 characters or fewer.
 </td></tr>
 <tr><td>client_payload</td><td>no</td><td>
 
-JSON payload with extra information about the webhook event that your action or workflow may use. The maximum number of top-level properties is 10.
+JSON payload with extra information about the webhook event that your action or workflow may use.
 
 </td></tr>
 <tr><td>client_payload.*</td><td>no</td><td>

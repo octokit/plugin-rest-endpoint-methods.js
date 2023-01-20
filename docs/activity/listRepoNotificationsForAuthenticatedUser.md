@@ -8,7 +8,7 @@ type: API method
 
 # List repository notifications for the authenticated user
 
-Lists all notifications for the current user in the specified repository.
+List all notifications for the current user.
 
 ```js
 octokit.rest.activity.listRepoNotificationsForAuthenticatedUser({

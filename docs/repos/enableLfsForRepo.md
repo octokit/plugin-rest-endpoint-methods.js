@@ -8,8 +8,6 @@ type: API method
 
 # Enable Git LFS for a repository
 
-Enables Git LFS for a repository. Access tokens must have the `admin:enterprise` scope.
-
 ```js
 octokit.rest.repos.enableLfsForRepo({
   owner,

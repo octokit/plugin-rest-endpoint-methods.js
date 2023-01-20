@@ -1,7 +1,7 @@
 ---
 name: List selected repositories for an organization secret
 example: octokit.rest.codespaces.listSelectedReposForOrgSecret({ org, secret_name })
-route: GET /orgs/{org}/codespaces/secrets/{secret_name}/repositories
+route: GET /organizations/{org}/codespaces/secrets/{secret_name}/repositories
 scope: codespaces
 type: API method
 ---

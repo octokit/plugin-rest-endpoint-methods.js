@@ -10,8 +10,6 @@ type: API method
 
 Triggers an export of the specified codespace and returns a URL and ID where the status of the export can be monitored.
 
-If changes cannot be pushed to the codespace's repository, they will be pushed to a new or previously-existing fork instead.
-
 You must authenticate using a personal access token with the `codespace` scope to use this endpoint.
 
 GitHub Apps must have write access to the `codespaces_lifecycle_admin` repository permission to use this endpoint.
@@ -41,4 +39,4 @@ The name of the codespace.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/codespaces/codespaces#export-a-codespace-for-the-authenticated-user).
+See also: [GitHub Developer Guide documentation]().

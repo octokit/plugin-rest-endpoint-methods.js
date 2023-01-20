@@ -45,4 +45,4 @@ deployment_id parameter
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/deployments/deployments#get-a-deployment).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#get-a-deployment).

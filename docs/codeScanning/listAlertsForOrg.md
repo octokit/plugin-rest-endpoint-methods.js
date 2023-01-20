@@ -50,12 +50,12 @@ The GUID of a code scanning tool. Only results by this tool will be listed. Note
 </td></tr>
 <tr><td>before</td><td>no</td><td>
 
-A cursor, as given in the [Link header](https://docs.github.com/rest/overview/resources-in-the-rest-api#link-header). If specified, the query only searches for results before this cursor.
+A cursor, as given in the [Link header](https://docs.github.com/rest/overview/resources-in-the-rest-api#link-header). If specified, the query only searches for events before this cursor.
 
 </td></tr>
 <tr><td>after</td><td>no</td><td>
 
-A cursor, as given in the [Link header](https://docs.github.com/rest/overview/resources-in-the-rest-api#link-header). If specified, the query only searches for results after this cursor.
+A cursor, as given in the [Link header](https://docs.github.com/rest/overview/resources-in-the-rest-api#link-header). If specified, the query only searches for events after this cursor.
 
 </td></tr>
 <tr><td>page</td><td>no</td><td>
@@ -81,11 +81,6 @@ If specified, only code scanning alerts with this state will be returned.
 <tr><td>sort</td><td>no</td><td>
 
 The property by which to sort the results.
-
-</td></tr>
-<tr><td>severity</td><td>no</td><td>
-
-If specified, only code scanning alerts with this severity will be returned.
 
 </td></tr>
   </tbody>

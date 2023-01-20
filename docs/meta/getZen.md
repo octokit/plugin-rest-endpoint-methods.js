@@ -18,4 +18,4 @@ octokit.rest.meta.getZen();
 
 This endpoint has no parameters
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/meta#get-the-zen-of-github).
+See also: [GitHub Developer Guide documentation]().

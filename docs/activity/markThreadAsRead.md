@@ -8,8 +8,6 @@ type: API method
 
 # Mark a thread as read
 
-Marks a thread as "read." Marking a thread as "read" is equivalent to clicking a notification in your notification inbox on GitHub: https://github.com/notifications.
-
 ```js
 octokit.rest.activity.markThreadAsRead({
   thread_id,
@@ -29,7 +27,7 @@ octokit.rest.activity.markThreadAsRead({
   <tbody>
     <tr><td>thread_id</td><td>yes</td><td>
 
-The unique identifier of the notification thread. This corresponds to the value returned in the `id` field when you retrieve notifications (for example with the [`GET /notifications` operation](https://docs.github.com/rest/reference/activity#list-notifications-for-the-authenticated-user)).
+The unique identifier of the pull request thread.
 
 </td></tr>
   </tbody>
