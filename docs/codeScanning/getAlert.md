@@ -10,9 +10,6 @@ type: API method
 
 Gets a single code scanning alert. You must use an access token with the `security_events` scope to use this endpoint with private repos, the `public_repo` scope also grants permission to read security events on public repos only. GitHub Apps must have the `security_events` read permission to use this endpoint.
 
-**Deprecation notice**:
-The instances field is deprecated and will, in future, not be included in the response for this endpoint. The example response reflects this change. The same information can now be retrieved via a GET request to the URL specified by `instances_url`.
-
 ```js
 octokit.rest.codeScanning.getAlert({
   owner,

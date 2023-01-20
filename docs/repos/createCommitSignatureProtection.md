@@ -43,10 +43,10 @@ The name of the repository. The name is not case sensitive.
 </td></tr>
 <tr><td>branch</td><td>yes</td><td>
 
-The name of the branch.
+The name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use [the GraphQL API](https://docs.github.com/graphql).
 
 </td></tr>
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#create-commit-signature-protection).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/branches/branch-protection#create-commit-signature-protection).

@@ -10,8 +10,7 @@ type: API method
 
 Lists packages owned by the authenticated user within the user's namespace.
 
-To use this endpoint, you must authenticate using an access token with the `packages:read` scope.
-If `package_type` is not `container`, your token must also include the `repo` scope.
+To use this endpoint, you must authenticate using an access token with the `read:packages` scope. If the `package_type` belongs to a GitHub Packages registry that only supports repository-scoped permissions, your token must also include the `repo` scope. For the list of GitHub Packages registries that only support repository-scoped permissions, see "[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#permissions-for-repository-scoped-packages)."
 
 ```js
 octokit.rest.packages.listPackagesForAuthenticatedUser({
@@ -37,7 +36,10 @@ The type of supported package. Packages in GitHub's Gradle registry have the typ
 </td></tr>
 <tr><td>visibility</td><td>no</td><td>
 
-The selected visibility of the packages. Only `container` package_types currently support `internal` visibility properly. For other ecosystems `internal` is synonymous with `private`. This parameter is optional and only filters an existing result set.
+The selected visibility of the packages. This parameter is optional and only filters an existing result set.
+
+The `internal` visibility is only supported for GitHub Packages registries that allow for granular permissions. For other ecosystems `internal` is synonymous with `private`.
+For the list of GitHub Packages registries that support granular permissions, see "[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#granular-permissions-for-userorganization-scoped-packages)."
 
 </td></tr>
   </tbody>

@@ -67,7 +67,7 @@ The name of the repository. The name is not case sensitive.
 </td></tr>
 <tr><td>sha</td><td>no</td><td>
 
-SHA or branch to start listing commits from. Default: the repository’s default branch (usually `master`).
+SHA or branch to start listing commits from. Default: the repository’s default branch (usually `main`).
 
 </td></tr>
 <tr><td>path</td><td>no</td><td>

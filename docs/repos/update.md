@@ -61,7 +61,7 @@ Either `true` to make the repository private or `false` to make it public. Defau
 </td></tr>
 <tr><td>visibility</td><td>no</td><td>
 
-Can be `public` or `private`. If your organization is associated with an enterprise account using GitHub Enterprise Cloud or GitHub Enterprise Server 2.20+, `visibility` can also be `internal`."
+The visibility of the repository.
 
 </td></tr>
 <tr><td>security_and_analysis</td><td>no</td><td>
@@ -202,7 +202,7 @@ The default value for a merge commit message.
 </td></tr>
 <tr><td>archived</td><td>no</td><td>
 
-`true` to archive this repository. **Note**: You cannot unarchive repositories through the API.
+Whether to archive this repository. `false` will unarchive a previously archived repository.
 
 </td></tr>
 <tr><td>allow_forking</td><td>no</td><td>
@@ -218,4 +218,4 @@ Either `true` to require contributors to sign off on web-based commits, or `fals
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos/#update-a-repository).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/repos/repos#update-a-repository).

@@ -59,4 +59,4 @@ Deploy keys with write access can perform the same actions as an organization me
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#create-a-deploy-key).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/deploy-keys#create-a-deploy-key).

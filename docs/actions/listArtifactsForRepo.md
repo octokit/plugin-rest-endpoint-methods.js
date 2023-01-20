@@ -48,6 +48,11 @@ The number of results per page (max 100).
 Page number of the results to fetch.
 
 </td></tr>
+<tr><td>name</td><td>no</td><td>
+
+Filters artifacts by exact match on their name field.
+
+</td></tr>
   </tbody>
 </table>
 

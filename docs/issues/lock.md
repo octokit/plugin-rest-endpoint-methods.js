@@ -48,11 +48,12 @@ The number that identifies the issue.
 </td></tr>
 <tr><td>lock_reason</td><td>no</td><td>
 
-The reason for locking the issue or pull request conversation. Lock will fail if you don't use one of these reasons:  
-\* `off-topic`  
-\* `too heated`  
-\* `resolved`  
-\* `spam`
+The reason for locking the issue or pull request conversation. Lock will fail if you don't use one of these reasons:
+
+- `off-topic`
+- `too heated`
+- `resolved`
+- `spam`
 
 </td></tr>
   </tbody>

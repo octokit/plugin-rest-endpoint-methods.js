@@ -8,7 +8,7 @@ type: API method
 
 # Get community profile metrics
 
-Returns all community profile metrics for a repository. The repository must be public, and cannot be a fork.
+Returns all community profile metrics for a repository. The repository cannot be a fork.
 
 The returned metrics include an overall health score, the repository description, the presence of documentation, the
 detected code of conduct, the detected license, and the presence of ISSUE_TEMPLATE, PULL_REQUEST_TEMPLATE,

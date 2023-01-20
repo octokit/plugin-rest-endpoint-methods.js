@@ -45,4 +45,4 @@ The ID of the export operation, or `latest`. Currently only `latest` is currentl
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation]().
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/codespaces/codespaces#get-details-about-a-codespace-export).

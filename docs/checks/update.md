@@ -95,7 +95,7 @@ The time the check completed. This is a timestamp in [ISO 8601](https://en.wikip
 </td></tr>
 <tr><td>output</td><td>no</td><td>
 
-Check runs can accept a variety of data in the `output` object, including a `title` and `summary` and can optionally provide descriptive details about the run. See the [`output` object](https://docs.github.com/rest/reference/checks#output-object-1) description.
+Check runs can accept a variety of data in the `output` object, including a `title` and `summary` and can optionally provide descriptive details about the run.
 
 </td></tr>
 <tr><td>output.title</td><td>no</td><td>
@@ -115,7 +115,7 @@ Can contain Markdown.
 </td></tr>
 <tr><td>output.annotations</td><td>no</td><td>
 
-Adds information from your analysis to specific lines of code. Annotations are visible in GitHub's pull request UI. Annotations are visible in GitHub's pull request UI. The Checks API limits the number of annotations to a maximum of 50 per API request. To create more than 50 annotations, you have to make multiple requests to the [Update a check run](https://docs.github.com/rest/reference/checks#update-a-check-run) endpoint. Each time you update the check run, annotations are appended to the list of annotations that already exist for the check run. For details about annotations in the UI, see "[About status checks](https://docs.github.com/articles/about-status-checks#checks)". See the [`annotations` object](https://docs.github.com/rest/reference/checks#annotations-object-1) description for details.
+Adds information from your analysis to specific lines of code. Annotations are visible in GitHub's pull request UI. Annotations are visible in GitHub's pull request UI. The Checks API limits the number of annotations to a maximum of 50 per API request. To create more than 50 annotations, you have to make multiple requests to the [Update a check run](https://docs.github.com/rest/reference/checks#update-a-check-run) endpoint. Each time you update the check run, annotations are appended to the list of annotations that already exist for the check run. For details about annotations in the UI, see "[About status checks](https://docs.github.com/articles/about-status-checks#checks)".
 
 </td></tr>
 <tr><td>output.annotations[].path</td><td>yes</td><td>
@@ -125,7 +125,7 @@ The path of the file to add an annotation to. For example, `assets/css/main.css`
 </td></tr>
 <tr><td>output.annotations[].start_line</td><td>yes</td><td>
 
-The start line of the annotation.
+The start line of the annotation. Line numbers start at 1.
 
 </td></tr>
 <tr><td>output.annotations[].end_line</td><td>yes</td><td>
@@ -135,7 +135,7 @@ The end line of the annotation.
 </td></tr>
 <tr><td>output.annotations[].start_column</td><td>no</td><td>
 
-The start column of the annotation. Annotations only support `start_column` and `end_column` on the same line. Omit this parameter if `start_line` and `end_line` have different values.
+The start column of the annotation. Annotations only support `start_column` and `end_column` on the same line. Omit this parameter if `start_line` and `end_line` have different values. Column numbers start at 1.
 
 </td></tr>
 <tr><td>output.annotations[].end_column</td><td>no</td><td>
@@ -165,7 +165,7 @@ Details about this annotation. The maximum size is 64 KB.
 </td></tr>
 <tr><td>output.images</td><td>no</td><td>
 
-Adds images to the output displayed in the GitHub pull request UI. See the [`images` object](https://docs.github.com/rest/reference/checks#annotations-object-1) description for details.
+Adds images to the output displayed in the GitHub pull request UI.
 
 </td></tr>
 <tr><td>output.images[].alt</td><td>yes</td><td>

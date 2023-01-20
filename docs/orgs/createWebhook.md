@@ -71,7 +71,7 @@ If provided, the `secret` will be used as the `key` to generate the HMAC hex dig
 </td></tr>
 <tr><td>events</td><td>no</td><td>
 
-Determines what [events](https://docs.github.com/webhooks/event-payloads) the hook is triggered for.
+Determines what [events](https://docs.github.com/webhooks/event-payloads) the hook is triggered for. Set to `["*"]` to receive all possible events.
 
 </td></tr>
 <tr><td>active</td><td>no</td><td>

@@ -44,6 +44,11 @@ The name of the repository. The name is not case sensitive.
 The username or organization name the repository will be transferred to.
 
 </td></tr>
+<tr><td>new_name</td><td>no</td><td>
+
+The new name to be given to the repository.
+
+</td></tr>
 <tr><td>team_ids</td><td>no</td><td>
 
 ID of the team or teams to add to the repository. Teams can only be added to organization-owned repositories.

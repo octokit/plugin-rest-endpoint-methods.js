@@ -47,4 +47,4 @@ The name of the environment.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#delete-an-environment).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/deployments/environments#delete-an-environment).

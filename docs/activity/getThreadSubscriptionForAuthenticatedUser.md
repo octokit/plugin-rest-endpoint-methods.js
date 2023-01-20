@@ -31,7 +31,7 @@ octokit.rest.activity.getThreadSubscriptionForAuthenticatedUser({
   <tbody>
     <tr><td>thread_id</td><td>yes</td><td>
 
-The unique identifier of the pull request thread.
+The unique identifier of the notification thread. This corresponds to the value returned in the `id` field when you retrieve notifications (for example with the [`GET /notifications` operation](https://docs.github.com/rest/reference/activity#list-notifications-for-the-authenticated-user)).
 
 </td></tr>
   </tbody>
