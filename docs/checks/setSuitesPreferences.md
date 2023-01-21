@@ -42,7 +42,7 @@ The name of the repository. The name is not case sensitive.
 </td></tr>
 <tr><td>auto_trigger_checks</td><td>no</td><td>
 
-Enables or disables automatic creation of CheckSuite events upon pushes to the repository. Enabled by default.
+Enables or disables automatic creation of CheckSuite events upon pushes to the repository. Enabled by default. See the [`auto_trigger_checks` object](https://docs.github.com/rest/reference/checks#auto_trigger_checks-object) description for details.
 
 </td></tr>
 <tr><td>auto_trigger_checks[].app_id</td><td>yes</td><td>

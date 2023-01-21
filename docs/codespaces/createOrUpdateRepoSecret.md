@@ -10,32 +10,30 @@ type: API method
 
 Creates or updates a repository secret with an encrypted value. Encrypt your secret using
 [LibSodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages). You must authenticate using an access
-token with the `repo` scope to use this endpoint. GitHub Apps must have write access to the `codespaces_secrets`
-repository permission to use this endpoint.
+token with the `repo` scope to use this endpoint. GitHub Apps must have the `codespaces_secrets` repository
+permission to use this endpoint.
 
 #### Example of encrypting a secret using Node.js
 
-Encrypt your secret using the [libsodium-wrappers](https://www.npmjs.com/package/libsodium-wrappers) library.
+Encrypt your secret using the [tweetsodium](https://github.com/github/tweetsodium) library.
 
 ```
-const sodium = require('libsodium-wrappers')
-const secret = 'plain-text-secret' // replace with the secret you want to encrypt
-const key = 'base64-encoded-public-key' // replace with the Base64 encoded public key
+const sodium = require('tweetsodium');
 
-//Check if libsodium is ready and then proceed.
-sodium.ready.then(() => {
-  // Convert Secret & Base64 key to Uint8Array.
-  let binkey = sodium.from_base64(key, sodium.base64_variants.ORIGINAL)
-  let binsec = sodium.from_string(secret)
+const key = "base64-encoded-public-key";
+const value = "plain-text-secret";
 
-  //Encrypt the secret using LibSodium
-  let encBytes = sodium.crypto_box_seal(binsec, binkey)
+// Convert the message and key to Uint8Array's (Buffer implements that interface)
+const messageBytes = Buffer.from(value);
+const keyBytes = Buffer.from(key, 'base64');
 
-  // Convert encrypted Uint8Array to Base64
-  let output = sodium.to_base64(encBytes, sodium.base64_variants.ORIGINAL)
+// Encrypt using LibSodium.
+const encryptedBytes = sodium.seal(messageBytes, keyBytes);
 
-  console.log(output)
-});
+// Base64 the encrypted secret
+const encrypted = Buffer.from(encryptedBytes).toString('base64');
+
+console.log(encrypted);
 ```
 
 #### Example of encrypting a secret using Python

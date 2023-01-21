@@ -10,20 +10,11 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     addSelectedRepoToOrgSecret: [
       "PUT /orgs/{org}/actions/secrets/{secret_name}/repositories/{repository_id}",
     ],
-    addSelectedRepoToOrgVariable: [
-      "PUT /orgs/{org}/actions/variables/{name}/repositories/{repository_id}",
-    ],
-    addSelectedRepoToRequiredWorkflow: [
-      "PUT /orgs/{org}/actions/required_workflows/{required_workflow_id}/repositories/{repository_id}",
-    ],
     approveWorkflowRun: [
       "POST /repos/{owner}/{repo}/actions/runs/{run_id}/approve",
     ],
     cancelWorkflowRun: [
       "POST /repos/{owner}/{repo}/actions/runs/{run_id}/cancel",
-    ],
-    createEnvironmentVariable: [
-      "POST /repositories/{repository_id}/environments/{environment_name}/variables",
     ],
     createOrUpdateEnvironmentSecret: [
       "PUT /repositories/{repository_id}/environments/{environment_name}/secrets/{secret_name}",
@@ -32,7 +23,6 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     createOrUpdateRepoSecret: [
       "PUT /repos/{owner}/{repo}/actions/secrets/{secret_name}",
     ],
-    createOrgVariable: ["POST /orgs/{org}/actions/variables"],
     createRegistrationTokenForOrg: [
       "POST /orgs/{org}/actions/runners/registration-token",
     ],
@@ -43,8 +33,6 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     createRemoveTokenForRepo: [
       "POST /repos/{owner}/{repo}/actions/runners/remove-token",
     ],
-    createRepoVariable: ["POST /repos/{owner}/{repo}/actions/variables"],
-    createRequiredWorkflow: ["POST /orgs/{org}/actions/required_workflows"],
     createWorkflowDispatch: [
       "POST /repos/{owner}/{repo}/actions/workflows/{workflow_id}/dispatches",
     ],
@@ -60,19 +48,9 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     deleteEnvironmentSecret: [
       "DELETE /repositories/{repository_id}/environments/{environment_name}/secrets/{secret_name}",
     ],
-    deleteEnvironmentVariable: [
-      "DELETE /repositories/{repository_id}/environments/{environment_name}/variables/{name}",
-    ],
     deleteOrgSecret: ["DELETE /orgs/{org}/actions/secrets/{secret_name}"],
-    deleteOrgVariable: ["DELETE /orgs/{org}/actions/variables/{name}"],
     deleteRepoSecret: [
       "DELETE /repos/{owner}/{repo}/actions/secrets/{secret_name}",
-    ],
-    deleteRepoVariable: [
-      "DELETE /repos/{owner}/{repo}/actions/variables/{name}",
-    ],
-    deleteRequiredWorkflow: [
-      "DELETE /orgs/{org}/actions/required_workflows/{required_workflow_id}",
     ],
     deleteSelfHostedRunnerFromOrg: [
       "DELETE /orgs/{org}/actions/runners/{runner_id}",
@@ -113,6 +91,9 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     getActionsCacheUsageByRepoForOrg: [
       "GET /orgs/{org}/actions/cache/usage-by-repository",
     ],
+    getActionsCacheUsageForEnterprise: [
+      "GET /enterprises/{enterprise}/actions/cache/usage",
+    ],
     getActionsCacheUsageForOrg: ["GET /orgs/{org}/actions/cache/usage"],
     getAllowedActionsOrganization: [
       "GET /orgs/{org}/actions/permissions/selected-actions",
@@ -127,8 +108,8 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     getEnvironmentSecret: [
       "GET /repositories/{repository_id}/environments/{environment_name}/secrets/{secret_name}",
     ],
-    getEnvironmentVariable: [
-      "GET /repositories/{repository_id}/environments/{environment_name}/variables/{name}",
+    getGithubActionsDefaultWorkflowPermissionsEnterprise: [
+      "GET /enterprises/{enterprise}/actions/permissions/workflow",
     ],
     getGithubActionsDefaultWorkflowPermissionsOrganization: [
       "GET /orgs/{org}/actions/permissions/workflow",
@@ -145,7 +126,6 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     getJobForWorkflowRun: ["GET /repos/{owner}/{repo}/actions/jobs/{job_id}"],
     getOrgPublicKey: ["GET /orgs/{org}/actions/secrets/public-key"],
     getOrgSecret: ["GET /orgs/{org}/actions/secrets/{secret_name}"],
-    getOrgVariable: ["GET /orgs/{org}/actions/variables/{name}"],
     getPendingDeploymentsForRun: [
       "GET /repos/{owner}/{repo}/actions/runs/{run_id}/pending_deployments",
     ],
@@ -155,17 +135,7 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
       { renamed: ["actions", "getGithubActionsPermissionsRepository"] },
     ],
     getRepoPublicKey: ["GET /repos/{owner}/{repo}/actions/secrets/public-key"],
-    getRepoRequiredWorkflow: [
-      "GET /repos/{org}/{repo}/actions/required_workflows/{required_workflow_id_for_repo}",
-    ],
-    getRepoRequiredWorkflowUsage: [
-      "GET /repos/{org}/{repo}/actions/required_workflows/{required_workflow_id_for_repo}/timing",
-    ],
     getRepoSecret: ["GET /repos/{owner}/{repo}/actions/secrets/{secret_name}"],
-    getRepoVariable: ["GET /repos/{owner}/{repo}/actions/variables/{name}"],
-    getRequiredWorkflow: [
-      "GET /orgs/{org}/actions/required_workflows/{required_workflow_id}",
-    ],
     getReviewsForRun: [
       "GET /repos/{owner}/{repo}/actions/runs/{run_id}/approvals",
     ],
@@ -191,9 +161,6 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     listEnvironmentSecrets: [
       "GET /repositories/{repository_id}/environments/{environment_name}/secrets",
     ],
-    listEnvironmentVariables: [
-      "GET /repositories/{repository_id}/environments/{environment_name}/variables",
-    ],
     listJobsForWorkflowRun: [
       "GET /repos/{owner}/{repo}/actions/runs/{run_id}/jobs",
     ],
@@ -207,17 +174,8 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
       "GET /repos/{owner}/{repo}/actions/runners/{runner_id}/labels",
     ],
     listOrgSecrets: ["GET /orgs/{org}/actions/secrets"],
-    listOrgVariables: ["GET /orgs/{org}/actions/variables"],
-    listRepoRequiredWorkflows: [
-      "GET /repos/{org}/{repo}/actions/required_workflows",
-    ],
     listRepoSecrets: ["GET /repos/{owner}/{repo}/actions/secrets"],
-    listRepoVariables: ["GET /repos/{owner}/{repo}/actions/variables"],
     listRepoWorkflows: ["GET /repos/{owner}/{repo}/actions/workflows"],
-    listRequiredWorkflowRuns: [
-      "GET /repos/{owner}/{repo}/actions/required_workflows/{required_workflow_id_for_repo}/runs",
-    ],
-    listRequiredWorkflows: ["GET /orgs/{org}/actions/required_workflows"],
     listRunnerApplicationsForOrg: ["GET /orgs/{org}/actions/runners/downloads"],
     listRunnerApplicationsForRepo: [
       "GET /repos/{owner}/{repo}/actions/runners/downloads",
@@ -225,14 +183,8 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     listSelectedReposForOrgSecret: [
       "GET /orgs/{org}/actions/secrets/{secret_name}/repositories",
     ],
-    listSelectedReposForOrgVariable: [
-      "GET /orgs/{org}/actions/variables/{name}/repositories",
-    ],
     listSelectedRepositoriesEnabledGithubActionsOrganization: [
       "GET /orgs/{org}/actions/permissions/repositories",
-    ],
-    listSelectedRepositoriesRequiredWorkflow: [
-      "GET /orgs/{org}/actions/required_workflows/{required_workflow_id}/repositories",
     ],
     listSelfHostedRunnersForOrg: ["GET /orgs/{org}/actions/runners"],
     listSelfHostedRunnersForRepo: ["GET /repos/{owner}/{repo}/actions/runners"],
@@ -265,12 +217,6 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     removeSelectedRepoFromOrgSecret: [
       "DELETE /orgs/{org}/actions/secrets/{secret_name}/repositories/{repository_id}",
     ],
-    removeSelectedRepoFromOrgVariable: [
-      "DELETE /orgs/{org}/actions/variables/{name}/repositories/{repository_id}",
-    ],
-    removeSelectedRepoFromRequiredWorkflow: [
-      "DELETE /orgs/{org}/actions/required_workflows/{required_workflow_id}/repositories/{repository_id}",
-    ],
     reviewPendingDeploymentsForRun: [
       "POST /repos/{owner}/{repo}/actions/runs/{run_id}/pending_deployments",
     ],
@@ -285,6 +231,9 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     ],
     setCustomLabelsForSelfHostedRunnerForRepo: [
       "PUT /repos/{owner}/{repo}/actions/runners/{runner_id}/labels",
+    ],
+    setGithubActionsDefaultWorkflowPermissionsEnterprise: [
+      "PUT /enterprises/{enterprise}/actions/permissions/workflow",
     ],
     setGithubActionsDefaultWorkflowPermissionsOrganization: [
       "PUT /orgs/{org}/actions/permissions/workflow",
@@ -301,27 +250,11 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     setSelectedReposForOrgSecret: [
       "PUT /orgs/{org}/actions/secrets/{secret_name}/repositories",
     ],
-    setSelectedReposForOrgVariable: [
-      "PUT /orgs/{org}/actions/variables/{name}/repositories",
-    ],
-    setSelectedReposToRequiredWorkflow: [
-      "PUT /orgs/{org}/actions/required_workflows/{required_workflow_id}/repositories",
-    ],
     setSelectedRepositoriesEnabledGithubActionsOrganization: [
       "PUT /orgs/{org}/actions/permissions/repositories",
     ],
     setWorkflowAccessToRepository: [
       "PUT /repos/{owner}/{repo}/actions/permissions/access",
-    ],
-    updateEnvironmentVariable: [
-      "PATCH /repositories/{repository_id}/environments/{environment_name}/variables/{name}",
-    ],
-    updateOrgVariable: ["PATCH /orgs/{org}/actions/variables/{name}"],
-    updateRepoVariable: [
-      "PATCH /repos/{owner}/{repo}/actions/variables/{name}",
-    ],
-    updateRequiredWorkflow: [
-      "PATCH /orgs/{org}/actions/required_workflows/{required_workflow_id}",
     ],
   },
   activity: {
@@ -442,6 +375,12 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     getGithubActionsBillingUser: [
       "GET /users/{username}/settings/billing/actions",
     ],
+    getGithubAdvancedSecurityBillingGhe: [
+      "GET /enterprises/{enterprise}/settings/billing/advanced-security",
+    ],
+    getGithubAdvancedSecurityBillingOrg: [
+      "GET /orgs/{org}/settings/billing/advanced-security",
+    ],
     getGithubPackagesBillingOrg: ["GET /orgs/{org}/settings/billing/packages"],
     getGithubPackagesBillingUser: [
       "GET /users/{username}/settings/billing/packages",
@@ -496,6 +435,9 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     listAlertInstances: [
       "GET /repos/{owner}/{repo}/code-scanning/alerts/{alert_number}/instances",
     ],
+    listAlertsForEnterprise: [
+      "GET /enterprises/{enterprise}/code-scanning/alerts",
+    ],
     listAlertsForOrg: ["GET /orgs/{org}/code-scanning/alerts"],
     listAlertsForRepo: ["GET /repos/{owner}/{repo}/code-scanning/alerts"],
     listAlertsInstances: [
@@ -521,14 +463,14 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
       "PUT /user/codespaces/secrets/{secret_name}/repositories/{repository_id}",
     ],
     addSelectedRepoToOrgSecret: [
-      "PUT /orgs/{org}/codespaces/secrets/{secret_name}/repositories/{repository_id}",
+      "PUT /organizations/{org}/codespaces/secrets/{secret_name}/repositories/{repository_id}",
     ],
     codespaceMachinesForAuthenticatedUser: [
       "GET /user/codespaces/{codespace_name}/machines",
     ],
     createForAuthenticatedUser: ["POST /user/codespaces"],
     createOrUpdateOrgSecret: [
-      "PUT /orgs/{org}/codespaces/secrets/{secret_name}",
+      "PUT /organizations/{org}/codespaces/secrets/{secret_name}",
     ],
     createOrUpdateRepoSecret: [
       "PUT /repos/{owner}/{repo}/codespaces/secrets/{secret_name}",
@@ -546,7 +488,9 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     deleteFromOrganization: [
       "DELETE /orgs/{org}/members/{username}/codespaces/{codespace_name}",
     ],
-    deleteOrgSecret: ["DELETE /orgs/{org}/codespaces/secrets/{secret_name}"],
+    deleteOrgSecret: [
+      "DELETE /organizations/{org}/codespaces/secrets/{secret_name}",
+    ],
     deleteRepoSecret: [
       "DELETE /repos/{owner}/{repo}/codespaces/secrets/{secret_name}",
     ],
@@ -556,15 +500,12 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     exportForAuthenticatedUser: [
       "POST /user/codespaces/{codespace_name}/exports",
     ],
-    getCodespacesForUserInOrg: [
-      "GET /orgs/{org}/members/{username}/codespaces",
-    ],
     getExportDetailsForAuthenticatedUser: [
       "GET /user/codespaces/{codespace_name}/exports/{export_id}",
     ],
     getForAuthenticatedUser: ["GET /user/codespaces/{codespace_name}"],
-    getOrgPublicKey: ["GET /orgs/{org}/codespaces/secrets/public-key"],
-    getOrgSecret: ["GET /orgs/{org}/codespaces/secrets/{secret_name}"],
+    getOrgPublicKey: ["GET /organizations/{org}/codespaces/secrets/public-key"],
+    getOrgSecret: ["GET /organizations/{org}/codespaces/secrets/{secret_name}"],
     getPublicKeyForAuthenticatedUser: [
       "GET /user/codespaces/secrets/public-key",
     ],
@@ -589,36 +530,32 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     listInRepositoryForAuthenticatedUser: [
       "GET /repos/{owner}/{repo}/codespaces",
     ],
-    listOrgSecrets: ["GET /orgs/{org}/codespaces/secrets"],
+    listOrgSecrets: ["GET /organizations/{org}/codespaces/secrets"],
     listRepoSecrets: ["GET /repos/{owner}/{repo}/codespaces/secrets"],
     listRepositoriesForSecretForAuthenticatedUser: [
       "GET /user/codespaces/secrets/{secret_name}/repositories",
     ],
     listSecretsForAuthenticatedUser: ["GET /user/codespaces/secrets"],
     listSelectedReposForOrgSecret: [
-      "GET /orgs/{org}/codespaces/secrets/{secret_name}/repositories",
+      "GET /organizations/{org}/codespaces/secrets/{secret_name}/repositories",
     ],
     preFlightWithRepoForAuthenticatedUser: [
       "GET /repos/{owner}/{repo}/codespaces/new",
-    ],
-    publishForAuthenticatedUser: [
-      "POST /user/codespaces/{codespace_name}/publish",
     ],
     removeRepositoryForSecretForAuthenticatedUser: [
       "DELETE /user/codespaces/secrets/{secret_name}/repositories/{repository_id}",
     ],
     removeSelectedRepoFromOrgSecret: [
-      "DELETE /orgs/{org}/codespaces/secrets/{secret_name}/repositories/{repository_id}",
+      "DELETE /organizations/{org}/codespaces/secrets/{secret_name}/repositories/{repository_id}",
     ],
     repoMachinesForAuthenticatedUser: [
       "GET /repos/{owner}/{repo}/codespaces/machines",
     ],
-    setCodespacesBilling: ["PUT /orgs/{org}/codespaces/billing"],
     setRepositoriesForSecretForAuthenticatedUser: [
       "PUT /user/codespaces/secrets/{secret_name}/repositories",
     ],
     setSelectedReposForOrgSecret: [
-      "PUT /orgs/{org}/codespaces/secrets/{secret_name}/repositories",
+      "PUT /organizations/{org}/codespaces/secrets/{secret_name}/repositories",
     ],
     startForAuthenticatedUser: ["POST /user/codespaces/{codespace_name}/start"],
     stopForAuthenticatedUser: ["POST /user/codespaces/{codespace_name}/stop"],
@@ -650,10 +587,6 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     getRepoSecret: [
       "GET /repos/{owner}/{repo}/dependabot/secrets/{secret_name}",
     ],
-    listAlertsForEnterprise: [
-      "GET /enterprises/{enterprise}/dependabot/alerts",
-    ],
-    listAlertsForOrg: ["GET /orgs/{org}/dependabot/alerts"],
     listAlertsForRepo: ["GET /repos/{owner}/{repo}/dependabot/alerts"],
     listOrgSecrets: ["GET /orgs/{org}/dependabot/secrets"],
     listRepoSecrets: ["GET /repos/{owner}/{repo}/dependabot/secrets"],
@@ -683,11 +616,44 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     addCustomLabelsToSelfHostedRunnerForEnterprise: [
       "POST /enterprises/{enterprise}/actions/runners/{runner_id}/labels",
     ],
+    disableSelectedOrganizationGithubActionsEnterprise: [
+      "DELETE /enterprises/{enterprise}/actions/permissions/organizations/{org_id}",
+    ],
     enableSelectedOrganizationGithubActionsEnterprise: [
       "PUT /enterprises/{enterprise}/actions/permissions/organizations/{org_id}",
     ],
+    getAllowedActionsEnterprise: [
+      "GET /enterprises/{enterprise}/actions/permissions/selected-actions",
+    ],
+    getGithubActionsPermissionsEnterprise: [
+      "GET /enterprises/{enterprise}/actions/permissions",
+    ],
+    getServerStatistics: [
+      "GET /enterprise-installation/{enterprise_or_org}/server-statistics",
+    ],
     listLabelsForSelfHostedRunnerForEnterprise: [
       "GET /enterprises/{enterprise}/actions/runners/{runner_id}/labels",
+    ],
+    listSelectedOrganizationsEnabledGithubActionsEnterprise: [
+      "GET /enterprises/{enterprise}/actions/permissions/organizations",
+    ],
+    removeAllCustomLabelsFromSelfHostedRunnerForEnterprise: [
+      "DELETE /enterprises/{enterprise}/actions/runners/{runner_id}/labels",
+    ],
+    removeCustomLabelFromSelfHostedRunnerForEnterprise: [
+      "DELETE /enterprises/{enterprise}/actions/runners/{runner_id}/labels/{name}",
+    ],
+    setAllowedActionsEnterprise: [
+      "PUT /enterprises/{enterprise}/actions/permissions/selected-actions",
+    ],
+    setCustomLabelsForSelfHostedRunnerForEnterprise: [
+      "PUT /enterprises/{enterprise}/actions/runners/{runner_id}/labels",
+    ],
+    setGithubActionsPermissionsEnterprise: [
+      "PUT /enterprises/{enterprise}/actions/permissions",
+    ],
+    setSelectedOrganizationsEnabledGithubActionsEnterprise: [
+      "PUT /enterprises/{enterprise}/actions/permissions/organizations",
     ],
   },
   gists: {
@@ -765,9 +731,6 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     ],
     addLabels: ["POST /repos/{owner}/{repo}/issues/{issue_number}/labels"],
     checkUserCanBeAssigned: ["GET /repos/{owner}/{repo}/assignees/{assignee}"],
-    checkUserCanBeAssignedToIssue: [
-      "GET /repos/{owner}/{repo}/issues/{issue_number}/assignees/{assignee}",
-    ],
     create: ["POST /repos/{owner}/{repo}/issues"],
     createComment: [
       "POST /repos/{owner}/{repo}/issues/{issue_number}/comments",
@@ -839,7 +802,6 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
   },
   meta: {
     get: ["GET /meta"],
-    getAllVersions: ["GET /versions"],
     getOctocat: ["GET /octocat"],
     getZen: ["GET /zen"],
     root: ["GET /"],
@@ -899,8 +861,10 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     convertMemberToOutsideCollaborator: [
       "PUT /orgs/{org}/outside_collaborators/{username}",
     ],
+    createCustomRole: ["POST /orgs/{org}/custom_roles"],
     createInvitation: ["POST /orgs/{org}/invitations"],
     createWebhook: ["POST /orgs/{org}/hooks"],
+    deleteCustomRole: ["DELETE /orgs/{org}/custom_roles/{role_id}"],
     deleteWebhook: ["DELETE /orgs/{org}/hooks/{hook_id}"],
     enableOrDisableSecurityProductOnAllOrgRepos: [
       "POST /orgs/{org}/{security_product}/{enablement}",
@@ -916,7 +880,9 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     list: ["GET /organizations"],
     listAppInstallations: ["GET /orgs/{org}/installations"],
     listBlockedUsers: ["GET /orgs/{org}/blocks"],
+    listCustomRoles: ["GET /organizations/{organization_id}/custom_roles"],
     listFailedInvitations: ["GET /orgs/{org}/failed_invitations"],
+    listFineGrainedPermissions: ["GET /orgs/{org}/fine_grained_permissions"],
     listForAuthenticatedUser: ["GET /user/orgs"],
     listForUser: ["GET /users/{username}/orgs"],
     listInvitationTeams: ["GET /orgs/{org}/invitations/{invitation_id}/teams"],
@@ -949,6 +915,7 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     ],
     unblockUser: ["DELETE /orgs/{org}/blocks/{username}"],
     update: ["PATCH /orgs/{org}"],
+    updateCustomRole: ["PATCH /orgs/{org}/custom_roles/{role_id}"],
     updateMembershipForAuthenticatedUser: [
       "PATCH /user/memberships/orgs/{org}",
     ],
@@ -1571,9 +1538,6 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     getAlert: [
       "GET /repos/{owner}/{repo}/secret-scanning/alerts/{alert_number}",
     ],
-    getSecurityAnalysisSettingsForEnterprise: [
-      "GET /enterprises/{enterprise}/code_security_and_analysis",
-    ],
     listAlertsForEnterprise: [
       "GET /enterprises/{enterprise}/secret-scanning/alerts",
     ],
@@ -1581,12 +1545,6 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     listAlertsForRepo: ["GET /repos/{owner}/{repo}/secret-scanning/alerts"],
     listLocationsForAlert: [
       "GET /repos/{owner}/{repo}/secret-scanning/alerts/{alert_number}/locations",
-    ],
-    patchSecurityAnalysisSettingsForEnterprise: [
-      "PATCH /enterprises/{enterprise}/code_security_and_analysis",
-    ],
-    postSecurityProductEnablementForEnterprise: [
-      "POST /enterprises/{enterprise}/{security_product}/{enablement}",
     ],
     updateAlert: [
       "PATCH /repos/{owner}/{repo}/secret-scanning/alerts/{alert_number}",

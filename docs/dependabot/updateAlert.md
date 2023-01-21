@@ -44,26 +44,22 @@ The name of the repository. The name is not case sensitive.
 </td></tr>
 <tr><td>alert_number</td><td>yes</td><td>
 
-The number that identifies a Dependabot alert in its repository.
-You can find this at the end of the URL for a Dependabot alert within GitHub,
-or in `number` fields in the response from the
-`GET /repos/{owner}/{repo}/dependabot/alerts` operation.
+The number that identifies a Dependabot alert in its repository. You can find this at the end of the URL for a Dependabot alert within GitHub, or in `number` fields in the response from the `GET /repos/{owner}/{repo}/dependabot/alerts` operation.
 
 </td></tr>
 <tr><td>state</td><td>yes</td><td>
 
-The state of the Dependabot alert.
-A `dismissed_reason` must be provided when setting the state to `dismissed`.
+Sets the status of the dependabot alert. You must provide `dismissed_reason` when you set the state to `dismissed`.
 
 </td></tr>
 <tr><td>dismissed_reason</td><td>no</td><td>
 
-**Required when `state` is `dismissed`.** A reason for dismissing the alert.
+**Required when the `state` is `dismissed`.** The reason for dismissing the Dependabot alert.
 
 </td></tr>
 <tr><td>dismissed_comment</td><td>no</td><td>
 
-An optional comment associated with dismissing the alert.
+An optional comment associated with the alert's dismissal. The maximum size is 280 characters.
 
 </td></tr>
   </tbody>

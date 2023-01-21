@@ -21,22 +21,10 @@ You must compress the SARIF-formatted analysis data that you want to upload, usi
 gzip -c analysis-data.sarif | base64 -w0
 ```
 
-<br>
-SARIF upload supports a maximum number of entries per the following data objects, and an analysis will be rejected if any of these objects is above its maximum value. For some objects, there are additional values over which the entries will be ignored while keeping the most important entries whenever applicable.
-To get the most out of your analysis when it includes data above the supported limits, try to optimize the analysis configuration (For example, for the CodeQL tool, identify and remove the most noisy queries).
+SARIF upload supports a maximum of 5000 results per analysis run. Any results over this limit are ignored and any SARIF uploads with more than 25,000 results are rejected. Typically, but not necessarily, a SARIF file contains a single run of a single tool. If a code scanning tool generates too many results, you should update the analysis configuration to run only the most important rules or queries.
 
-| **SARIF data**                   | **Maximum values** | **Additional limits**                                                            |
-| -------------------------------- | :----------------: | -------------------------------------------------------------------------------- |
-| Runs per file                    |         15         |                                                                                  |
-| Results per run                  |       25,000       | Only the top 5,000 results will be included, prioritized by severity.            |
-| Rules per run                    |       25,000       |                                                                                  |
-| Tool extensions per run          |        100         |                                                                                  |
-| Thread Flow Locations per result |       10,000       | Only the top 1,000 Thread Flow Locations will be included, using prioritization. |
-| Location per result              |       1,000        | Only 100 locations will be included.                                             |
-| Tags per rule                    |         20         | Only 10 tags will be included.                                                   |
-
-The `202 Accepted` response includes an `id` value.
-You can use this ID to check the status of the upload by using it in the `/sarifs/{sarif_id}` endpoint.
+The `202 Accepted`, response includes an `id` value.
+You can use this ID to check the status of the upload by using this for the `/sarifs/{sarif_id}` endpoint.
 For more information, see "[Get information about a SARIF upload](/rest/reference/code-scanning#get-information-about-a-sarif-upload)."
 
 ```js
@@ -100,12 +88,6 @@ The time that the analysis run began. This is a timestamp in [ISO 8601](https://
 <tr><td>tool_name</td><td>no</td><td>
 
 The name of the tool used to generate the code scanning analysis. If this parameter is not used, the tool name defaults to "API". If the uploaded SARIF contains a tool GUID, this will be available for filtering using the `tool_guid` parameter of operations such as `GET /repos/{owner}/{repo}/code-scanning/alerts`.
-
-</td></tr>
-<tr><td>validate</td><td>no</td><td>
-
-Whether the SARIF file will be validated according to the code scanning specifications.
-This parameter is intended to help integrators ensure that the uploaded SARIF files are correctly rendered by code scanning.
 
 </td></tr>
   </tbody>

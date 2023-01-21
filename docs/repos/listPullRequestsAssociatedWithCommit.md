@@ -8,7 +8,7 @@ type: API method
 
 # List pull requests associated with a commit
 
-Lists the merged pull request that introduced the commit to the repository. If the commit is not present in the default branch, will only return open pull requests associated with the commit.
+Lists the merged pull request that introduced the commit to the repository. If the commit is not present in the default branch, additionally returns open pull requests associated with the commit. The results may include open and closed pull requests.
 
 ```js
 octokit.rest.repos.listPullRequestsAssociatedWithCommit({

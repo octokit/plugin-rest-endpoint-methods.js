@@ -85,4 +85,4 @@ Adds a new `inactive` status to all prior non-transient, non-production environm
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/deployments/statuses#create-a-deployment-status).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#create-a-deployment-status).

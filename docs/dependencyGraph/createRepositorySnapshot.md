@@ -75,7 +75,7 @@ The url for the job.
 </td></tr>
 <tr><td>sha</td><td>yes</td><td>
 
-The commit SHA associated with this dependency snapshot. Maximum length: 40 characters.
+The commit SHA associated with this dependency snapshot.
 
 </td></tr>
 <tr><td>ref</td><td>yes</td><td>

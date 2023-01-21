@@ -56,4 +56,4 @@ Commit message to use for the merge commit. If omitted, a default message will b
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/branches/branches#merge-a-branch).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#merge-a-branch).

@@ -1,7 +1,7 @@
 ---
 name: Add selected repository to an organization secret
 example: octokit.rest.codespaces.addSelectedRepoToOrgSecret({ org, secret_name, repository_id })
-route: PUT /orgs/{org}/codespaces/secrets/{secret_name}/repositories/{repository_id}
+route: PUT /organizations/{org}/codespaces/secrets/{secret_name}/repositories/{repository_id}
 scope: codespaces
 type: API method
 ---

@@ -10,7 +10,7 @@ type: API method
 
 Cancel an organization invitation. In order to cancel an organization invitation, the authenticated user must be an organization owner.
 
-This endpoint triggers [notifications](https://docs.github.com/github/managing-subscriptions-and-notifications-on-github/about-notifications).
+This endpoint triggers [notifications](https://docs.github.com/en/github/managing-subscriptions-and-notifications-on-github/about-notifications).
 
 ```js
 octokit.rest.orgs.cancelInvitation({

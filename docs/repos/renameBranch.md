@@ -56,7 +56,7 @@ The name of the repository. The name is not case sensitive.
 </td></tr>
 <tr><td>branch</td><td>yes</td><td>
 
-The name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use [the GraphQL API](https://docs.github.com/graphql).
+The name of the branch.
 
 </td></tr>
 <tr><td>new_name</td><td>yes</td><td>
@@ -67,4 +67,4 @@ The new name of the branch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/branches/branches#rename-a-branch).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#rename-a-branch).

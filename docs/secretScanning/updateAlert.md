@@ -61,7 +61,7 @@ Sets the state of the secret scanning alert. You must provide `resolution` when 
 </td></tr>
 <tr><td>resolution_comment</td><td>no</td><td>
 
-An optional comment when closing an alert. Cannot be updated or deleted. Must be `null` when changing `state` to `open`.
+Sets an optional comment when closing an alert. Must be null when changing `state` to `open`.
 
 </td></tr>
   </tbody>

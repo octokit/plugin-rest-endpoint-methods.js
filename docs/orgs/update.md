@@ -192,17 +192,7 @@ To use this parameter, you must have admin permissions for the repository or be 
 You can check which security and analysis features are currently enabled by using a `GET /orgs/{org}` request.
 
 </td></tr>
-<tr><td>secret_scanning_push_protection_custom_link_enabled</td><td>no</td><td>
-
-Whether a custom link is shown to contributors who are blocked from pushing a secret by push protection.
-
-</td></tr>
-<tr><td>secret_scanning_push_protection_custom_link</td><td>no</td><td>
-
-If `secret_scanning_push_protection_custom_link_enabled` is true, the URL that will be displayed to contributors who are blocked from pushing a secret.
-
-</td></tr>
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/orgs#update-an-organization).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/orgs/#update-an-organization).

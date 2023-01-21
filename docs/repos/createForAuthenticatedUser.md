@@ -69,11 +69,6 @@ Whether projects are enabled.
 Whether the wiki is enabled.
 
 </td></tr>
-<tr><td>has_discussions</td><td>no</td><td>
-
-Whether discussions are enabled.
-
-</td></tr>
 <tr><td>team_id</td><td>no</td><td>
 
 The id of the team that will be granted access to this repository. This is only valid when creating a repository in an organization.
