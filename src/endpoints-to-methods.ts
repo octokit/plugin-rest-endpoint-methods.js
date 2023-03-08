@@ -1,52 +1,72 @@
 import { Octokit } from "@octokit/core";
-import {
-  EndpointOptions,
-  RequestParameters,
-  RequestMethod,
-  Route,
-  Url,
-} from "@octokit/types";
-import { EndpointsDefaultsAndDecorations, EndpointDecorations } from "./types";
+import { EndpointOptions, RequestParameters, Route } from "@octokit/types";
+import { EndpointDecorations } from "./types";
 import { RestEndpointMethods } from "./generated/method-types";
+import ENDPOINTS from "./generated/endpoints";
 
-type EndpointMethods = {
-  [methodName: string]: typeof Octokit.prototype.request;
+const enpointMethodsMap = new Map();
+for (const [scope, endpoints] of Object.entries(ENDPOINTS)) {
+  for (const [methodName, endpoint] of Object.entries(endpoints)) {
+    const [route, defaults, decorations] = endpoint;
+    const [method, url] = route.split(/ /);
+    const endpointDefaults = Object.assign(
+      {
+        method,
+        url,
+      },
+      defaults
+    );
+
+    if (!enpointMethodsMap.has(scope)) {
+      enpointMethodsMap.set(scope, new Map());
+    }
+
+    enpointMethodsMap.get(scope).set(methodName, {
+      scope,
+      methodName,
+      endpointDefaults,
+      decorations,
+    });
+  }
+}
+
+type ProxyTarget = {
+  octokit: Octokit;
+  scope: string;
+  cache: Record<string, (...args: any[]) => any>;
 };
 
-export function endpointsToMethods(
-  octokit: Octokit,
-  endpointsMap: EndpointsDefaultsAndDecorations
-) {
+const handler = {
+  get({ octokit, scope, cache }: ProxyTarget, methodName: string) {
+    if (cache[methodName]) {
+      return cache[methodName];
+    }
+
+    const { decorations, endpointDefaults } = enpointMethodsMap
+      .get(scope)
+      .get(methodName);
+
+    if (decorations) {
+      cache[methodName] = decorate(
+        octokit,
+        scope,
+        methodName,
+        endpointDefaults,
+        decorations
+      );
+    } else {
+      cache[methodName] = octokit.request.defaults(endpointDefaults);
+    }
+
+    return cache[methodName];
+  },
+};
+
+export function endpointsToMethods(octokit: Octokit): RestEndpointMethods {
   const newMethods = {} as { [key: string]: object };
 
-  for (const [scope, endpoints] of Object.entries(endpointsMap)) {
-    for (const [methodName, endpoint] of Object.entries(endpoints)) {
-      const [route, defaults, decorations] = endpoint;
-      const [method, url] = route.split(/ /) as [RequestMethod, Url];
-      const endpointDefaults: EndpointOptions = Object.assign(
-        { method, url },
-        defaults
-      );
-
-      if (!newMethods[scope]) {
-        newMethods[scope] = {};
-      }
-
-      const scopeMethods = newMethods[scope] as EndpointMethods;
-
-      if (decorations) {
-        scopeMethods[methodName] = decorate(
-          octokit,
-          scope,
-          methodName,
-          endpointDefaults,
-          decorations
-        );
-        continue;
-      }
-
-      scopeMethods[methodName] = octokit.request.defaults(endpointDefaults);
-    }
+  for (const scope of enpointMethodsMap.keys()) {
+    newMethods[scope] = new Proxy({ octokit, scope, cache: {} }, handler);
   }
 
   return newMethods as RestEndpointMethods;

@@ -1,13 +1,12 @@
 import { Octokit } from "@octokit/core";
 
-import ENDPOINTS from "./generated/endpoints";
 export { RestEndpointMethodTypes } from "./generated/parameters-and-response-types";
 import { VERSION } from "./version";
 import { Api } from "./types";
 import { endpointsToMethods } from "./endpoints-to-methods";
 
 export function restEndpointMethods(octokit: Octokit): Api {
-  const api = endpointsToMethods(octokit, ENDPOINTS);
+  const api = endpointsToMethods(octokit);
   return {
     rest: api,
   };
@@ -15,7 +14,7 @@ export function restEndpointMethods(octokit: Octokit): Api {
 restEndpointMethods.VERSION = VERSION;
 
 export function legacyRestEndpointMethods(octokit: Octokit): Api["rest"] & Api {
-  const api = endpointsToMethods(octokit, ENDPOINTS);
+  const api = endpointsToMethods(octokit);
   return {
     ...api,
     rest: api,
