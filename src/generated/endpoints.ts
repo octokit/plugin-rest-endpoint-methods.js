@@ -208,6 +208,12 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     ],
     listOrgSecrets: ["GET /orgs/{org}/actions/secrets"],
     listOrgVariables: ["GET /orgs/{org}/actions/variables"],
+    listRepoOrganizationSecrets: [
+      "GET /repos/{owner}/{repo}/actions/organization-secrets",
+    ],
+    listRepoOrganizationVariables: [
+      "GET /repos/{owner}/{repo}/actions/organization-variables",
+    ],
     listRepoRequiredWorkflows: [
       "GET /repos/{org}/{repo}/actions/required_workflows",
     ],
@@ -407,6 +413,9 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     listInstallationReposForAuthenticatedUser: [
       "GET /user/installations/{installation_id}/repositories",
     ],
+    listInstallationRequestsForAuthenticatedApp: [
+      "GET /app/installation-requests",
+    ],
     listInstallations: ["GET /app/installations"],
     listInstallationsForAuthenticatedUser: ["GET /user/installations"],
     listPlans: ["GET /marketplace_listing/plans"],
@@ -492,6 +501,7 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     getCodeqlDatabase: [
       "GET /repos/{owner}/{repo}/code-scanning/codeql/databases/{language}",
     ],
+    getDefaultSetup: ["GET /repos/{owner}/{repo}/code-scanning/default-setup"],
     getSarif: ["GET /repos/{owner}/{repo}/code-scanning/sarifs/{sarif_id}"],
     listAlertInstances: [
       "GET /repos/{owner}/{repo}/code-scanning/alerts/{alert_number}/instances",
@@ -509,6 +519,9 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     listRecentAnalyses: ["GET /repos/{owner}/{repo}/code-scanning/analyses"],
     updateAlert: [
       "PATCH /repos/{owner}/{repo}/code-scanning/alerts/{alert_number}",
+    ],
+    updateDefaultSetup: [
+      "PATCH /repos/{owner}/{repo}/code-scanning/default-setup",
     ],
     uploadSarif: ["POST /repos/{owner}/{repo}/code-scanning/sarifs"],
   },
@@ -541,6 +554,9 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     ],
     createWithRepoForAuthenticatedUser: [
       "POST /repos/{owner}/{repo}/codespaces",
+    ],
+    deleteCodespacesBillingUsers: [
+      "DELETE /orgs/{org}/codespaces/billing/selected_users",
     ],
     deleteForAuthenticatedUser: ["DELETE /user/codespaces/{codespace_name}"],
     deleteFromOrganization: [
@@ -614,6 +630,9 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
       "GET /repos/{owner}/{repo}/codespaces/machines",
     ],
     setCodespacesBilling: ["PUT /orgs/{org}/codespaces/billing"],
+    setCodespacesBillingUsers: [
+      "POST /orgs/{org}/codespaces/billing/selected_users",
+    ],
     setRepositoriesForSecretForAuthenticatedUser: [
       "PUT /user/codespaces/secrets/{secret_name}/repositories",
     ],
@@ -677,19 +696,9 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     diffRange: [
       "GET /repos/{owner}/{repo}/dependency-graph/compare/{basehead}",
     ],
+    exportSbom: ["GET /repos/{owner}/{repo}/dependency-graph/sbom"],
   },
   emojis: { get: ["GET /emojis"] },
-  enterpriseAdmin: {
-    addCustomLabelsToSelfHostedRunnerForEnterprise: [
-      "POST /enterprises/{enterprise}/actions/runners/{runner_id}/labels",
-    ],
-    enableSelectedOrganizationGithubActionsEnterprise: [
-      "PUT /enterprises/{enterprise}/actions/permissions/organizations/{org_id}",
-    ],
-    listLabelsForSelfHostedRunnerForEnterprise: [
-      "GET /enterprises/{enterprise}/actions/runners/{runner_id}/labels",
-    ],
-  },
   gists: {
     checkIsStarred: ["GET /gists/{gist_id}/star"],
     create: ["POST /gists"],
@@ -901,6 +910,7 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     ],
     createInvitation: ["POST /orgs/{org}/invitations"],
     createWebhook: ["POST /orgs/{org}/hooks"],
+    delete: ["DELETE /orgs/{org}"],
     deleteWebhook: ["DELETE /orgs/{org}/hooks/{hook_id}"],
     enableOrDisableSecurityProductOnAllOrgRepos: [
       "POST /orgs/{org}/{security_product}/{enablement}",
@@ -923,6 +933,16 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     listMembers: ["GET /orgs/{org}/members"],
     listMembershipsForAuthenticatedUser: ["GET /user/memberships/orgs"],
     listOutsideCollaborators: ["GET /orgs/{org}/outside_collaborators"],
+    listPatGrantRepositories: [
+      "GET /organizations/{org}/personal-access-tokens/{pat_id}/repositories",
+    ],
+    listPatGrantRequestRepositories: [
+      "GET /organizations/{org}/personal-access-token-requests/{pat_request_id}/repositories",
+    ],
+    listPatGrantRequests: [
+      "GET /organizations/{org}/personal-access-token-requests",
+    ],
+    listPatGrants: ["GET /organizations/{org}/personal-access-tokens"],
     listPendingInvitations: ["GET /orgs/{org}/invitations"],
     listPublicMembers: ["GET /orgs/{org}/public_members"],
     listSecurityManagerTeams: ["GET /orgs/{org}/security-managers"],
@@ -943,6 +963,12 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     removeSecurityManagerTeam: [
       "DELETE /orgs/{org}/security-managers/teams/{team_slug}",
     ],
+    reviewPatGrantRequest: [
+      "POST /organizations/{org}/personal-access-token-requests/{pat_request_id}",
+    ],
+    reviewPatGrantRequestsInBulk: [
+      "POST /organizations/{org}/personal-access-token-requests",
+    ],
     setMembershipForUser: ["PUT /orgs/{org}/memberships/{username}"],
     setPublicMembershipForAuthenticatedUser: [
       "PUT /orgs/{org}/public_members/{username}",
@@ -952,6 +978,10 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     updateMembershipForAuthenticatedUser: [
       "PATCH /user/memberships/orgs/{org}",
     ],
+    updatePatAccess: [
+      "POST /organizations/{org}/personal-access-tokens/{pat_id}",
+    ],
+    updatePatAccesses: ["POST /organizations/{org}/personal-access-tokens"],
     updateWebhook: ["PATCH /orgs/{org}/hooks/{hook_id}"],
     updateWebhookConfigForOrg: ["PATCH /orgs/{org}/hooks/{hook_id}/config"],
   },
@@ -1015,6 +1045,15 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     ],
     getPackageVersionForUser: [
       "GET /users/{username}/packages/{package_type}/{package_name}/versions/{package_version_id}",
+    ],
+    listDockerMigrationConflictingPackagesForAuthenticatedUser: [
+      "GET /user/docker/conflicts",
+    ],
+    listDockerMigrationConflictingPackagesForOrganization: [
+      "GET /orgs/{org}/docker/conflicts",
+    ],
+    listDockerMigrationConflictingPackagesForUser: [
+      "GET /users/{username}/docker/conflicts",
     ],
     listPackagesForAuthenticatedUser: ["GET /user/packages"],
     listPackagesForOrganization: ["GET /orgs/{org}/packages"],
@@ -1255,9 +1294,11 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
       "PUT /repos/{owner}/{repo}/environments/{environment_name}",
     ],
     createOrUpdateFileContents: ["PUT /repos/{owner}/{repo}/contents/{path}"],
+    createOrgRuleset: ["POST /orgs/{org}/rulesets"],
     createPagesDeployment: ["POST /repos/{owner}/{repo}/pages/deployment"],
     createPagesSite: ["POST /repos/{owner}/{repo}/pages"],
     createRelease: ["POST /repos/{owner}/{repo}/releases"],
+    createRepoRuleset: ["POST /repos/{owner}/{repo}/rulesets"],
     createTagProtection: ["POST /repos/{owner}/{repo}/tags/protection"],
     createUsingTemplate: [
       "POST /repos/{template_owner}/{template_repo}/generate",
@@ -1300,6 +1341,7 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     deleteInvitation: [
       "DELETE /repos/{owner}/{repo}/invitations/{invitation_id}",
     ],
+    deleteOrgRuleset: ["DELETE /orgs/{org}/rulesets/{ruleset_id}"],
     deletePagesSite: ["DELETE /repos/{owner}/{repo}/pages"],
     deletePullRequestReviewProtection: [
       "DELETE /repos/{owner}/{repo}/branches/{branch}/protection/required_pull_request_reviews",
@@ -1308,6 +1350,7 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     deleteReleaseAsset: [
       "DELETE /repos/{owner}/{repo}/releases/assets/{asset_id}",
     ],
+    deleteRepoRuleset: ["DELETE /repos/{owner}/{repo}/rulesets/{ruleset_id}"],
     deleteTagProtection: [
       "DELETE /repos/{owner}/{repo}/tags/protection/{tag_protection_id}",
     ],
@@ -1356,6 +1399,7 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     getBranchProtection: [
       "GET /repos/{owner}/{repo}/branches/{branch}/protection",
     ],
+    getBranchRules: ["GET /repos/{owner}/{repo}/rules/branches/{branch}"],
     getClones: ["GET /repos/{owner}/{repo}/traffic/clones"],
     getCodeFrequencyStats: ["GET /repos/{owner}/{repo}/stats/code_frequency"],
     getCollaboratorPermissionLevel: [
@@ -1384,6 +1428,8 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     ],
     getLatestPagesBuild: ["GET /repos/{owner}/{repo}/pages/builds/latest"],
     getLatestRelease: ["GET /repos/{owner}/{repo}/releases/latest"],
+    getOrgRuleset: ["GET /orgs/{org}/rulesets/{ruleset_id}"],
+    getOrgRulesets: ["GET /orgs/{org}/rulesets"],
     getPages: ["GET /repos/{owner}/{repo}/pages"],
     getPagesBuild: ["GET /repos/{owner}/{repo}/pages/builds/{build_id}"],
     getPagesHealthCheck: ["GET /repos/{owner}/{repo}/pages/health"],
@@ -1397,6 +1443,8 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     getRelease: ["GET /repos/{owner}/{repo}/releases/{release_id}"],
     getReleaseAsset: ["GET /repos/{owner}/{repo}/releases/assets/{asset_id}"],
     getReleaseByTag: ["GET /repos/{owner}/{repo}/releases/tags/{tag}"],
+    getRepoRuleset: ["GET /repos/{owner}/{repo}/rulesets/{ruleset_id}"],
+    getRepoRulesets: ["GET /repos/{owner}/{repo}/rulesets"],
     getStatusChecksProtection: [
       "GET /repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks",
     ],
@@ -1534,6 +1582,7 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     updateInvitation: [
       "PATCH /repos/{owner}/{repo}/invitations/{invitation_id}",
     ],
+    updateOrgRuleset: ["PUT /orgs/{org}/rulesets/{ruleset_id}"],
     updatePullRequestReviewProtection: [
       "PATCH /repos/{owner}/{repo}/branches/{branch}/protection/required_pull_request_reviews",
     ],
@@ -1541,6 +1590,7 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     updateReleaseAsset: [
       "PATCH /repos/{owner}/{repo}/releases/assets/{asset_id}",
     ],
+    updateRepoRuleset: ["PUT /repos/{owner}/{repo}/rulesets/{ruleset_id}"],
     updateStatusCheckPotection: [
       "PATCH /repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks",
       {},
@@ -1571,9 +1621,6 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     getAlert: [
       "GET /repos/{owner}/{repo}/secret-scanning/alerts/{alert_number}",
     ],
-    getSecurityAnalysisSettingsForEnterprise: [
-      "GET /enterprises/{enterprise}/code_security_and_analysis",
-    ],
     listAlertsForEnterprise: [
       "GET /enterprises/{enterprise}/secret-scanning/alerts",
     ],
@@ -1582,14 +1629,20 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     listLocationsForAlert: [
       "GET /repos/{owner}/{repo}/secret-scanning/alerts/{alert_number}/locations",
     ],
-    patchSecurityAnalysisSettingsForEnterprise: [
-      "PATCH /enterprises/{enterprise}/code_security_and_analysis",
-    ],
-    postSecurityProductEnablementForEnterprise: [
-      "POST /enterprises/{enterprise}/{security_product}/{enablement}",
-    ],
     updateAlert: [
       "PATCH /repos/{owner}/{repo}/secret-scanning/alerts/{alert_number}",
+    ],
+  },
+  securityAdvisories: {
+    createRepositoryAdvisory: [
+      "POST /repos/{owner}/{repo}/security-advisories",
+    ],
+    getRepositoryAdvisory: [
+      "GET /repos/{owner}/{repo}/security-advisories/{ghsa_id}",
+    ],
+    listRepositoryAdvisories: ["GET /repos/{owner}/{repo}/security-advisories"],
+    updateRepositoryAdvisory: [
+      "PATCH /repos/{owner}/{repo}/security-advisories/{ghsa_id}",
     ],
   },
   teams: {
@@ -1667,6 +1720,7 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
       { renamed: ["users", "addEmailForAuthenticatedUser"] },
     ],
     addEmailForAuthenticatedUser: ["POST /user/emails"],
+    addSocialAccountForAuthenticatedUser: ["POST /user/social_accounts"],
     block: ["PUT /user/blocks/{username}"],
     checkBlocked: ["GET /user/blocks/{username}"],
     checkFollowingForUser: ["GET /users/{username}/following/{target_user}"],
@@ -1702,6 +1756,7 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
       { renamed: ["users", "deletePublicSshKeyForAuthenticatedUser"] },
     ],
     deletePublicSshKeyForAuthenticatedUser: ["DELETE /user/keys/{key_id}"],
+    deleteSocialAccountForAuthenticatedUser: ["DELETE /user/social_accounts"],
     deleteSshSigningKeyForAuthenticatedUser: [
       "DELETE /user/ssh_signing_keys/{ssh_signing_key_id}",
     ],
@@ -1766,6 +1821,8 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
       { renamed: ["users", "listPublicSshKeysForAuthenticatedUser"] },
     ],
     listPublicSshKeysForAuthenticatedUser: ["GET /user/keys"],
+    listSocialAccountsForAuthenticatedUser: ["GET /user/social_accounts"],
+    listSocialAccountsForUser: ["GET /users/{username}/social_accounts"],
     listSshSigningKeysForAuthenticatedUser: ["GET /user/ssh_signing_keys"],
     listSshSigningKeysForUser: ["GET /users/{username}/ssh_signing_keys"],
     setPrimaryEmailVisibilityForAuthenticated: [

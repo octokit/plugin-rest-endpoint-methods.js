@@ -68,6 +68,15 @@ The level of privacy this team should have. The options are:
   Default for child team: `closed`
 
 </td></tr>
+<tr><td>notification_setting</td><td>no</td><td>
+
+The notification setting the team has chosen. The options are:
+
+- `notifications_enabled` - team members receive notifications when the team is @mentioned.
+- `notifications_disabled` - no one receives notifications.  
+  Default: `notifications_enabled`
+
+</td></tr>
 <tr><td>permission</td><td>no</td><td>
 
 **Deprecated**. The permission that new repositories will be added to the team with when none is specified.

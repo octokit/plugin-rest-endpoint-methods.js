@@ -8,7 +8,9 @@ type: API method
 
 # List organization migrations
 
-Lists the most recent migrations.
+Lists the most recent migrations, including both exports (which can be started through the REST API) and imports (which cannot be started using the REST API).
+
+A list of `repositories` is only returned for export migrations.
 
 ```js
 octokit.rest.migrations.listForOrg({
@@ -50,4 +52,4 @@ Exclude attributes from the API response to improve performance
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/migrations#list-organization-migrations).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/migrations/orgs#list-organization-migrations).

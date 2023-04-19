@@ -46,7 +46,7 @@ The number that identifies the pull request.
 </td></tr>
 <tr><td>sort</td><td>no</td><td>
 
-The property to sort the results by. `created` means when the repository was starred. `updated` means when the repository was last pushed to.
+The property to sort the results by.
 
 </td></tr>
 <tr><td>direction</td><td>no</td><td>

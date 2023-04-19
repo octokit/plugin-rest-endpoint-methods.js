@@ -13,7 +13,7 @@ Lists all public repositories in the order that they were created.
 Note:
 
 - For GitHub Enterprise Server, this endpoint will only list repositories available to all users on the enterprise.
-- Pagination is powered exclusively by the `since` parameter. Use the [Link header](https://docs.github.com/rest/overview/resources-in-the-rest-api#link-header) to get the URL for the next page of repositories.
+- Pagination is powered exclusively by the `since` parameter. Use the [Link header](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api#using-link-headers) to get the URL for the next page of repositories.
 
 ```js
 octokit.rest.repos.listPublic();

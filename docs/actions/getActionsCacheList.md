@@ -52,7 +52,7 @@ Page number of the results to fetch.
 </td></tr>
 <tr><td>ref</td><td>no</td><td>
 
-The Git reference for the results you want to list. The `ref` for a branch can be formatted either as `refs/heads/<branch name>` or simply `<branch name>`. To reference a pull request use `refs/pull/<number>/merge`.
+The full Git reference for narrowing down the cache. The `ref` for a branch should be formatted as `refs/heads/<branch name>`. To reference a pull request use `refs/pull/<number>/merge`.
 
 </td></tr>
 <tr><td>key</td><td>no</td><td>

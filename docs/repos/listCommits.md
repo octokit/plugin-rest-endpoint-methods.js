@@ -21,21 +21,21 @@ The response will include a `verification` object that describes the result of v
 
 These are the possible values for `reason` in the `verification` object:
 
-| Value                    | Description                                                                                                                       |
-| ------------------------ | --------------------------------------------------------------------------------------------------------------------------------- |
-| `expired_key`            | The key that made the signature is expired.                                                                                       |
-| `not_signing_key`        | The "signing" flag is not among the usage flags in the GPG key that made the signature.                                           |
-| `gpgverify_error`        | There was an error communicating with the signature verification service.                                                         |
-| `gpgverify_unavailable`  | The signature verification service is currently unavailable.                                                                      |
-| `unsigned`               | The object does not include a signature.                                                                                          |
-| `unknown_signature_type` | A non-PGP signature was found in the commit.                                                                                      |
-| `no_user`                | No user was associated with the `committer` email address in the commit.                                                          |
-| `unverified_email`       | The `committer` email address in the commit was associated with a user, but the email address is not verified on her/his account. |
-| `bad_email`              | The `committer` email address in the commit is not included in the identities of the PGP key that made the signature.             |
-| `unknown_key`            | The key that made the signature has not been registered with any user's account.                                                  |
-| `malformed_signature`    | There was an error parsing the signature.                                                                                         |
-| `invalid`                | The signature could not be cryptographically verified using the key whose key-id was found in the signature.                      |
-| `valid`                  | None of the above errors applied, so the signature is considered to be verified.                                                  |
+| Value                    | Description                                                                                                                     |
+| ------------------------ | ------------------------------------------------------------------------------------------------------------------------------- |
+| `expired_key`            | The key that made the signature is expired.                                                                                     |
+| `not_signing_key`        | The "signing" flag is not among the usage flags in the GPG key that made the signature.                                         |
+| `gpgverify_error`        | There was an error communicating with the signature verification service.                                                       |
+| `gpgverify_unavailable`  | The signature verification service is currently unavailable.                                                                    |
+| `unsigned`               | The object does not include a signature.                                                                                        |
+| `unknown_signature_type` | A non-PGP signature was found in the commit.                                                                                    |
+| `no_user`                | No user was associated with the `committer` email address in the commit.                                                        |
+| `unverified_email`       | The `committer` email address in the commit was associated with a user, but the email address is not verified on their account. |
+| `bad_email`              | The `committer` email address in the commit is not included in the identities of the PGP key that made the signature.           |
+| `unknown_key`            | The key that made the signature has not been registered with any user's account.                                                |
+| `malformed_signature`    | There was an error parsing the signature.                                                                                       |
+| `invalid`                | The signature could not be cryptographically verified using the key whose key-id was found in the signature.                    |
+| `valid`                  | None of the above errors applied, so the signature is considered to be verified.                                                |
 
 ```js
 octokit.rest.repos.listCommits({
@@ -77,7 +77,12 @@ Only commits containing this file path will be returned.
 </td></tr>
 <tr><td>author</td><td>no</td><td>
 
-GitHub login or email address by which to filter by commit author.
+GitHub username or email address to use to filter by commit author.
+
+</td></tr>
+<tr><td>committer</td><td>no</td><td>
+
+GitHub username or email address to use to filter by commit committer.
 
 </td></tr>
 <tr><td>since</td><td>no</td><td>

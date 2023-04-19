@@ -48,6 +48,16 @@ For the list of GitHub Packages registries that support granular permissions, se
 The handle for the GitHub user account.
 
 </td></tr>
+<tr><td>page</td><td>no</td><td>
+
+Page number of the results to fetch.
+
+</td></tr>
+<tr><td>per_page</td><td>no</td><td>
+
+The number of results per page (max 100).
+
+</td></tr>
   </tbody>
 </table>
 

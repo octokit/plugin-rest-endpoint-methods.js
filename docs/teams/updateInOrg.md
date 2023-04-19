@@ -61,6 +61,14 @@ The level of privacy this team should have. Editing teams without specifying thi
 - `closed` - visible to all members of this organization.
 
 </td></tr>
+<tr><td>notification_setting</td><td>no</td><td>
+
+The notification setting the team has chosen. Editing teams without specifying this parameter leaves `notification_setting` intact. The options are:
+
+- `notifications_enabled` - team members receive notifications when the team is @mentioned.
+- `notifications_disabled` - no one receives notifications.
+
+</td></tr>
 <tr><td>permission</td><td>no</td><td>
 
 **Deprecated**. The permission that new repositories will be added to the team with when none is specified.

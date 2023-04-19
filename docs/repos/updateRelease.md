@@ -51,7 +51,7 @@ The name of the tag.
 </td></tr>
 <tr><td>target_commitish</td><td>no</td><td>
 
-Specifies the commitish value that determines where the Git tag is created from. Can be any branch or commit SHA. Unused if the Git tag already exists. Default: the repository's default branch (usually `master`).
+Specifies the commitish value that determines where the Git tag is created from. Can be any branch or commit SHA. Unused if the Git tag already exists. Default: the repository's default branch.
 
 </td></tr>
 <tr><td>name</td><td>no</td><td>

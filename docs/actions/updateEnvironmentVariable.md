@@ -1,6 +1,6 @@
 ---
 name: Update an environment variable
-example: octokit.rest.actions.updateEnvironmentVariable({ repository_id })
+example: octokit.rest.actions.updateEnvironmentVariable({ repository_id, environment_name })
 route: PATCH /repositories/{repository_id}/environments/{environment_name}/variables/{name}
 scope: actions
 type: API method
@@ -15,6 +15,7 @@ GitHub Apps must have the `environment:write` repository permission to use this 
 ```js
 octokit.rest.actions.updateEnvironmentVariable({
   repository_id,
+  environment_name,
 });
 ```
 
@@ -37,6 +38,11 @@ The unique identifier of the repository.
 <tr><td>name</td><td>no</td><td>
 
 The name of the variable.
+
+</td></tr>
+<tr><td>environment_name</td><td>yes</td><td>
+
+The name of the environment.
 
 </td></tr>
 <tr><td>value</td><td>no</td><td>
