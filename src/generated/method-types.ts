@@ -4859,50 +4859,6 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
   };
-  enterpriseAdmin: {
-    /**
-     * Add custom labels to a self-hosted runner configured in an enterprise.
-     *
-     * You must authenticate using an access token with the `manage_runners:enterprise` scope to use this endpoint.
-     */
-    addCustomLabelsToSelfHostedRunnerForEnterprise: {
-      (
-        params?: RestEndpointMethodTypes["enterpriseAdmin"]["addCustomLabelsToSelfHostedRunnerForEnterprise"]["parameters"]
-      ): Promise<
-        RestEndpointMethodTypes["enterpriseAdmin"]["addCustomLabelsToSelfHostedRunnerForEnterprise"]["response"]
-      >;
-      defaults: RequestInterface["defaults"];
-      endpoint: EndpointInterface<{ url: string }>;
-    };
-    /**
-     * Adds an organization to the list of selected organizations that are enabled for GitHub Actions in an enterprise. To use this endpoint, the enterprise permission policy for `enabled_organizations` must be configured to `selected`. For more information, see "[Set GitHub Actions permissions for an enterprise](#set-github-actions-permissions-for-an-enterprise)."
-     *
-     * You must authenticate using an access token with the `admin:enterprise` scope to use this endpoint.
-     */
-    enableSelectedOrganizationGithubActionsEnterprise: {
-      (
-        params?: RestEndpointMethodTypes["enterpriseAdmin"]["enableSelectedOrganizationGithubActionsEnterprise"]["parameters"]
-      ): Promise<
-        RestEndpointMethodTypes["enterpriseAdmin"]["enableSelectedOrganizationGithubActionsEnterprise"]["response"]
-      >;
-      defaults: RequestInterface["defaults"];
-      endpoint: EndpointInterface<{ url: string }>;
-    };
-    /**
-     * Lists all labels for a self-hosted runner configured in an enterprise.
-     *
-     * You must authenticate using an access token with the `manage_runners:enterprise` scope to use this endpoint.
-     */
-    listLabelsForSelfHostedRunnerForEnterprise: {
-      (
-        params?: RestEndpointMethodTypes["enterpriseAdmin"]["listLabelsForSelfHostedRunnerForEnterprise"]["parameters"]
-      ): Promise<
-        RestEndpointMethodTypes["enterpriseAdmin"]["listLabelsForSelfHostedRunnerForEnterprise"]["response"]
-      >;
-      defaults: RequestInterface["defaults"];
-      endpoint: EndpointInterface<{ url: string }>;
-    };
-  };
   gists: {
     checkIsStarred: {
       (
@@ -10928,19 +10884,6 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Gets code security and analysis settings for the specified enterprise.
-     * To use this endpoint, you must be an administrator of the enterprise, and you must use an access token with the `admin:enterprise` scope.
-     */
-    getSecurityAnalysisSettingsForEnterprise: {
-      (
-        params?: RestEndpointMethodTypes["secretScanning"]["getSecurityAnalysisSettingsForEnterprise"]["parameters"]
-      ): Promise<
-        RestEndpointMethodTypes["secretScanning"]["getSecurityAnalysisSettingsForEnterprise"]["response"]
-      >;
-      defaults: RequestInterface["defaults"];
-      endpoint: EndpointInterface<{ url: string }>;
-    };
-    /**
      * Lists secret scanning alerts for eligible repositories in an enterprise, from newest to oldest.
      * To use this endpoint, you must be a member of the enterprise, and you must use an access token with the `repo` scope or `security_events` scope. Alerts are only returned for organizations in the enterprise for which you are an organization owner or a [security manager](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization).
      */
@@ -10997,33 +10940,6 @@ export type RestEndpointMethods = {
         params?: RestEndpointMethodTypes["secretScanning"]["listLocationsForAlert"]["parameters"]
       ): Promise<
         RestEndpointMethodTypes["secretScanning"]["listLocationsForAlert"]["response"]
-      >;
-      defaults: RequestInterface["defaults"];
-      endpoint: EndpointInterface<{ url: string }>;
-    };
-    /**
-     * Updates the settings for advanced security, secret scanning, and push protection for new repositories in an enterprise.
-     * To use this endpoint, you must be an administrator of the enterprise, and you must use an access token with the `admin:enterprise` scope.
-     */
-    patchSecurityAnalysisSettingsForEnterprise: {
-      (
-        params?: RestEndpointMethodTypes["secretScanning"]["patchSecurityAnalysisSettingsForEnterprise"]["parameters"]
-      ): Promise<
-        RestEndpointMethodTypes["secretScanning"]["patchSecurityAnalysisSettingsForEnterprise"]["response"]
-      >;
-      defaults: RequestInterface["defaults"];
-      endpoint: EndpointInterface<{ url: string }>;
-    };
-    /**
-     * Enables or disables the specified security feature for all repositories in an enterprise.
-     *
-     * To use this endpoint, you must be an administrator of the enterprise, and you must use an access token with the `admin:enterprise` scope.
-     */
-    postSecurityProductEnablementForEnterprise: {
-      (
-        params?: RestEndpointMethodTypes["secretScanning"]["postSecurityProductEnablementForEnterprise"]["parameters"]
-      ): Promise<
-        RestEndpointMethodTypes["secretScanning"]["postSecurityProductEnablementForEnterprise"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;

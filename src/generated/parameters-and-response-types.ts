@@ -2415,32 +2415,6 @@ export type RestEndpointMethodTypes = {
       response: Endpoints["GET /emojis"]["response"];
     };
   };
-  enterpriseAdmin: {
-    addCustomLabelsToSelfHostedRunnerForEnterprise: {
-      parameters: RequestParameters &
-        Omit<
-          Endpoints["POST /enterprises/{enterprise}/actions/runners/{runner_id}/labels"]["parameters"],
-          "baseUrl" | "headers" | "mediaType"
-        >;
-      response: Endpoints["POST /enterprises/{enterprise}/actions/runners/{runner_id}/labels"]["response"];
-    };
-    enableSelectedOrganizationGithubActionsEnterprise: {
-      parameters: RequestParameters &
-        Omit<
-          Endpoints["PUT /enterprises/{enterprise}/actions/permissions/organizations/{org_id}"]["parameters"],
-          "baseUrl" | "headers" | "mediaType"
-        >;
-      response: Endpoints["PUT /enterprises/{enterprise}/actions/permissions/organizations/{org_id}"]["response"];
-    };
-    listLabelsForSelfHostedRunnerForEnterprise: {
-      parameters: RequestParameters &
-        Omit<
-          Endpoints["GET /enterprises/{enterprise}/actions/runners/{runner_id}/labels"]["parameters"],
-          "baseUrl" | "headers" | "mediaType"
-        >;
-      response: Endpoints["GET /enterprises/{enterprise}/actions/runners/{runner_id}/labels"]["response"];
-    };
-  };
   gists: {
     checkIsStarred: {
       parameters: RequestParameters &
@@ -6068,14 +6042,6 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["GET /repos/{owner}/{repo}/secret-scanning/alerts/{alert_number}"]["response"];
     };
-    getSecurityAnalysisSettingsForEnterprise: {
-      parameters: RequestParameters &
-        Omit<
-          Endpoints["GET /enterprises/{enterprise}/code_security_and_analysis"]["parameters"],
-          "baseUrl" | "headers" | "mediaType"
-        >;
-      response: Endpoints["GET /enterprises/{enterprise}/code_security_and_analysis"]["response"];
-    };
     listAlertsForEnterprise: {
       parameters: RequestParameters &
         Omit<
@@ -6107,22 +6073,6 @@ export type RestEndpointMethodTypes = {
           "baseUrl" | "headers" | "mediaType"
         >;
       response: Endpoints["GET /repos/{owner}/{repo}/secret-scanning/alerts/{alert_number}/locations"]["response"];
-    };
-    patchSecurityAnalysisSettingsForEnterprise: {
-      parameters: RequestParameters &
-        Omit<
-          Endpoints["PATCH /enterprises/{enterprise}/code_security_and_analysis"]["parameters"],
-          "baseUrl" | "headers" | "mediaType"
-        >;
-      response: Endpoints["PATCH /enterprises/{enterprise}/code_security_and_analysis"]["response"];
-    };
-    postSecurityProductEnablementForEnterprise: {
-      parameters: RequestParameters &
-        Omit<
-          Endpoints["POST /enterprises/{enterprise}/{security_product}/{enablement}"]["parameters"],
-          "baseUrl" | "headers" | "mediaType"
-        >;
-      response: Endpoints["POST /enterprises/{enterprise}/{security_product}/{enablement}"]["response"];
     };
     updateAlert: {
       parameters: RequestParameters &
