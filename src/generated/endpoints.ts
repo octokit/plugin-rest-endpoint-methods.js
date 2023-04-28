@@ -277,6 +277,9 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     removeSelectedRepoFromRequiredWorkflow: [
       "DELETE /orgs/{org}/actions/required_workflows/{required_workflow_id}/repositories/{repository_id}",
     ],
+    reviewCustomGatesForRun: [
+      "POST /repos/{owner}/{repo}/actions/runs/{run_id}/deployment_protection_rule",
+    ],
     reviewPendingDeploymentsForRun: [
       "POST /repos/{owner}/{repo}/actions/runs/{run_id}/pending_deployments",
     ],
@@ -1283,6 +1286,9 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     createDeploymentBranchPolicy: [
       "POST /repos/{owner}/{repo}/environments/{environment_name}/deployment-branch-policies",
     ],
+    createDeploymentProtectionRule: [
+      "POST /repos/{owner}/{repo}/environments/{environment_name}/deployment_protection_rules",
+    ],
     createDeploymentStatus: [
       "POST /repos/{owner}/{repo}/deployments/{deployment_id}/statuses",
     ],
@@ -1358,6 +1364,9 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     disableAutomatedSecurityFixes: [
       "DELETE /repos/{owner}/{repo}/automated-security-fixes",
     ],
+    disableDeploymentProtectionRule: [
+      "DELETE /repos/{owner}/{repo}/environments/{environment_name}/deployment_protection_rules/{protection_rule_id}",
+    ],
     disableLfsForRepo: ["DELETE /repos/{owner}/{repo}/lfs"],
     disableVulnerabilityAlerts: [
       "DELETE /repos/{owner}/{repo}/vulnerability-alerts",
@@ -1385,6 +1394,9 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     ],
     getAdminBranchProtection: [
       "GET /repos/{owner}/{repo}/branches/{branch}/protection/enforce_admins",
+    ],
+    getAllDeploymentProtectionRules: [
+      "GET /repos/{owner}/{repo}/environments/{environment_name}/deployment_protection_rules",
     ],
     getAllEnvironments: ["GET /repos/{owner}/{repo}/environments"],
     getAllStatusCheckContexts: [
@@ -1415,6 +1427,9 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     getCommunityProfileMetrics: ["GET /repos/{owner}/{repo}/community/profile"],
     getContent: ["GET /repos/{owner}/{repo}/contents/{path}"],
     getContributorsStats: ["GET /repos/{owner}/{repo}/stats/contributors"],
+    getCustomDeploymentProtectionRule: [
+      "GET /repos/{owner}/{repo}/environments/{environment_name}/deployment_protection_rules/{protection_rule_id}",
+    ],
     getDeployKey: ["GET /repos/{owner}/{repo}/keys/{key_id}"],
     getDeployment: ["GET /repos/{owner}/{repo}/deployments/{deployment_id}"],
     getDeploymentBranchPolicy: [
@@ -1479,6 +1494,9 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     ],
     listCommits: ["GET /repos/{owner}/{repo}/commits"],
     listContributors: ["GET /repos/{owner}/{repo}/contributors"],
+    listCustomDeploymentRuleIntegrations: [
+      "GET /repos/{owner}/{repo}/environments/{environment_name}/deployment_protection_rules/apps",
+    ],
     listDeployKeys: ["GET /repos/{owner}/{repo}/keys"],
     listDeploymentBranchPolicies: [
       "GET /repos/{owner}/{repo}/environments/{environment_name}/deployment-branch-policies",
@@ -1634,6 +1652,9 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     ],
   },
   securityAdvisories: {
+    createPrivateVulnerabilityReport: [
+      "POST /repos/{owner}/{repo}/security-advisories/reports",
+    ],
     createRepositoryAdvisory: [
       "POST /repos/{owner}/{repo}/security-advisories",
     ],

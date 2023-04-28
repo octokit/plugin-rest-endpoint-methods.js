@@ -1806,6 +1806,23 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
+     * Approve or reject custom deployment protection rules provided by a GitHub App for a workflow run. For more information, see "[Using environments for deployment](https://docs.github.com/actions/deployment/targeting-different-environments/using-environments-for-deployment)."
+     *
+     * **Note:** GitHub Apps can only review their own custom deployment protection rules.
+     * To approve or reject pending deployments that are waiting for review from a specific person or team, see [`POST /repos/{owner}/{repo}/actions/runs/{run_id}/pending_deployments`](/rest/actions/workflow-runs#review-pending-deployments-for-a-workflow-run).
+     *
+     * GitHub Apps must have read and write permission for **Deployments** to use this endpoint.
+     */
+    reviewCustomGatesForRun: {
+      (
+        params?: RestEndpointMethodTypes["actions"]["reviewCustomGatesForRun"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["actions"]["reviewCustomGatesForRun"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
      * Approve or reject pending deployments that are waiting on approval by a required reviewer.
      *
      * Required reviewers with read access to the repository contents and deployments can use this endpoint. Required reviewers must authenticate using an access token with the `repo` scope to use this endpoint.
@@ -2256,7 +2273,9 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
-
+    /**
+     * **Note**: This API is not built to serve real-time use cases. Depending on the time of day, event latency can be anywhere from 30s to 6h.
+     */
     listRepoEvents: {
       (
         params?: RestEndpointMethodTypes["activity"]["listRepoEvents"]["parameters"]
@@ -6134,6 +6153,10 @@ export type RestEndpointMethods = {
   migrations: {
     /**
      * Stop an import for a repository.
+     *
+     * **Warning:** Support for importing Mercurial, Subversion and Team Foundation Version Control repositories will end
+     * on October 17, 2023. For more details, see [changelog](https://gh.io/github-importer-non-git-eol). In the coming weeks, we will update
+     * these docs to reflect relevant changes to the API and will contact all integrators using the "Source imports" API.
      */
     cancelImport: {
       (
@@ -6216,6 +6239,10 @@ export type RestEndpointMethods = {
      * Each type of source control system represents authors in a different way. For example, a Git commit author has a display name and an email address, but a Subversion commit author just has a username. The GitHub Importer will make the author information valid, but the author might not be correct. For example, it will change the bare Subversion username `hubot` into something like `hubot <hubot@12341234-abab-fefe-8787-fedcba987654>`.
      *
      * This endpoint and the [Map a commit author](https://docs.github.com/rest/migrations/source-imports#map-a-commit-author) endpoint allow you to provide correct Git author information.
+     *
+     * **Warning:** Support for importing Mercurial, Subversion and Team Foundation Version Control repositories will end
+     * on October 17, 2023. For more details, see [changelog](https://gh.io/github-importer-non-git-eol). In the coming weeks, we will update
+     * these docs to reflect relevant changes to the API and will contact all integrators using the "Source imports" API.
      */
     getCommitAuthors: {
       (
@@ -6228,6 +6255,10 @@ export type RestEndpointMethods = {
     };
     /**
      * View the progress of an import.
+     *
+     * **Warning:** Support for importing Mercurial, Subversion and Team Foundation Version Control repositories will end
+     * on October 17, 2023. For more details, see [changelog](https://gh.io/github-importer-non-git-eol). In the coming weeks, we will update
+     * these docs to reflect relevant changes to the API and will contact all integrators using the "Source imports" API.
      *
      * **Import status**
      *
@@ -6273,6 +6304,10 @@ export type RestEndpointMethods = {
     };
     /**
      * List files larger than 100MB found during the import
+     *
+     * **Warning:** Support for importing Mercurial, Subversion and Team Foundation Version Control repositories will end
+     * on October 17, 2023. For more details, see [changelog](https://gh.io/github-importer-non-git-eol). In the coming weeks, we will update
+     * these docs to reflect relevant changes to the API and will contact all integrators using the "Source imports" API.
      */
     getLargeFiles: {
       (
@@ -6385,7 +6420,12 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Update an author's identity for the import. Your application can continue updating authors any time before you push new commits to the repository.
+     * Update an author's identity for the import. Your application can continue updating authors any time before you push
+     * new commits to the repository.
+     *
+     * **Warning:** Support for importing Mercurial, Subversion and Team Foundation Version Control repositories will end
+     * on October 17, 2023. For more details, see [changelog](https://gh.io/github-importer-non-git-eol). In the coming weeks, we will update
+     * these docs to reflect relevant changes to the API and will contact all integrators using the "Source imports" API.
      */
     mapCommitAuthor: {
       (
@@ -6397,7 +6437,15 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * You can import repositories from Subversion, Mercurial, and TFS that include files larger than 100MB. This ability is powered by [Git LFS](https://git-lfs.com). You can learn more about our LFS feature and working with large files [on our help site](https://docs.github.com/repositories/working-with-files/managing-large-files).
+     * You can import repositories from Subversion, Mercurial, and TFS that include files larger than 100MB. This ability
+     * is powered by [Git LFS](https://git-lfs.com).
+     *
+     * You can learn more about our LFS feature and working with large files [on our help
+     * site](https://docs.github.com/repositories/working-with-files/managing-large-files).
+     *
+     * **Warning:** Support for importing Mercurial, Subversion and Team Foundation Version Control repositories will end
+     * on October 17, 2023. For more details, see [changelog](https://gh.io/github-importer-non-git-eol). In the coming weeks, we will update
+     * these docs to reflect relevant changes to the API and will contact all integrators using the "Source imports" API.
      */
     setLfsPreference: {
       (
@@ -6434,6 +6482,7 @@ export type RestEndpointMethods = {
     };
     /**
      * Start a source import to a GitHub repository using GitHub Importer. Importing into a GitHub repository with GitHub Actions enabled is not supported and will return a status `422 Unprocessable Entity` response.
+     * **Warning:** Support for importing Mercurial, Subversion and Team Foundation Version Control repositories will end on October 17, 2023. For more details, see [changelog](https://gh.io/github-importer-non-git-eol). In the coming weeks, we will update these docs to reflect relevant changes to the API and will contact all integrators using the "Source imports" API.
      */
     startImport: {
       (
@@ -6475,6 +6524,10 @@ export type RestEndpointMethods = {
      * Some servers (e.g. TFS servers) can have several projects at a single URL. In those cases the import progress will
      * have the status `detection_found_multiple` and the Import Progress response will include a `project_choices` array.
      * You can select the project to import by providing one of the objects in the `project_choices` array in the update request.
+     *
+     * **Warning:** Support for importing Mercurial, Subversion and Team Foundation Version Control repositories will end
+     * on October 17, 2023. For more details, see [changelog](https://gh.io/github-importer-non-git-eol). In the coming weeks, we will update
+     * these docs to reflect relevant changes to the API and will contact all integrators using the "Source imports" API.
      */
     updateImport: {
       (
@@ -8892,6 +8945,22 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
+     * Enable a custom deployment protection rule for an environment.
+     *
+     * You must authenticate using an access token with the `repo` scope to use this endpoint. Enabling a custom protection rule requires admin or owner permissions to the repository. GitHub Apps must have the `actions:write` permission to use this endpoint.
+     *
+     * For more information about the app that is providing this custom deployment rule, see the [documentation for the `GET /apps/{app_slug}` endpoint](https://docs.github.com/rest/apps/apps#get-an-app).
+     */
+    createDeploymentProtectionRule: {
+      (
+        params?: RestEndpointMethodTypes["repos"]["createDeploymentProtectionRule"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["repos"]["createDeploymentProtectionRule"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
      * Users with `push` access can create deployment statuses for a given deployment.
      *
      * GitHub Apps require `read & write` access to "Deployments" and `read-only` access to "Repo contents" (for private repos). OAuth Apps require the `repo_deployment` scope.
@@ -9417,6 +9486,20 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
+     * Disables a custom deployment protection rule for an environment.
+     *
+     * You must authenticate using an access token with the `repo` scope to use this endpoint. Removing a custom protection rule requires admin or owner permissions to the repository. GitHub Apps must have the `actions:write` permission to use this endpoint. For more information, see "[Get an app](https://docs.github.com/rest/apps/apps#get-an-app)".
+     */
+    disableDeploymentProtectionRule: {
+      (
+        params?: RestEndpointMethodTypes["repos"]["disableDeploymentProtectionRule"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["repos"]["disableDeploymentProtectionRule"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
      * Disables Git LFS for a repository. Access tokens must have the `admin:enterprise` scope.
      */
     disableLfsForRepo: {
@@ -9574,6 +9657,20 @@ export type RestEndpointMethods = {
         params?: RestEndpointMethodTypes["repos"]["getAdminBranchProtection"]["parameters"]
       ): Promise<
         RestEndpointMethodTypes["repos"]["getAdminBranchProtection"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Gets all custom deployment protection rules that are enabled for an environment. Anyone with read access to the repository can use this endpoint. If the repository is private and you want to use a personal access token (classic), you must use an access token with the `repo` scope. GitHub Apps and fine-grained personal access tokens must have the `actions:read` permission to use this endpoint. For more information about environments, see "[Using environments for deployment](https://docs.github.com/en/actions/deployment/targeting-different-environments/using-environments-for-deployment)."
+     *
+     * For more information about the app that is providing this custom deployment rule, see the [documentation for the `GET /apps/{app_slug}` endpoint](https://docs.github.com/rest/apps/apps#get-an-app).
+     */
+    getAllDeploymentProtectionRules: {
+      (
+        params?: RestEndpointMethodTypes["repos"]["getAllDeploymentProtectionRules"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["repos"]["getAllDeploymentProtectionRules"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -9889,6 +9986,20 @@ export type RestEndpointMethods = {
         params?: RestEndpointMethodTypes["repos"]["getContributorsStats"]["parameters"]
       ): Promise<
         RestEndpointMethodTypes["repos"]["getContributorsStats"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Gets an enabled custom deployment protection rule for an environment. Anyone with read access to the repository can use this endpoint. If the repository is private and you want to use a personal access token (classic), you must use an access token with the `repo` scope. GitHub Apps and fine-grained personal access tokens must have the `actions:read` permission to use this endpoint. For more information about environments, see "[Using environments for deployment](https://docs.github.com/en/actions/deployment/targeting-different-environments/using-environments-for-deployment)."
+     *
+     * For more information about the app that is providing this custom deployment rule, see [`GET /apps/{app_slug}`](https://docs.github.com/rest/apps/apps#get-an-app).
+     */
+    getCustomDeploymentProtectionRule: {
+      (
+        params?: RestEndpointMethodTypes["repos"]["getCustomDeploymentProtectionRule"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["repos"]["getCustomDeploymentProtectionRule"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -10405,6 +10516,22 @@ export type RestEndpointMethods = {
         params?: RestEndpointMethodTypes["repos"]["listContributors"]["parameters"]
       ): Promise<
         RestEndpointMethodTypes["repos"]["listContributors"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Gets all custom deployment protection rule integrations that are available for an environment. Anyone with read access to the repository can use this endpoint. If the repository is private and you want to use a personal access token (classic), you must use an access token with the `repo` scope. GitHub Apps and fine-grained personal access tokens must have the `actions:read` permission to use this endpoint.
+     *
+     * For more information about environments, see "[Using environments for deployment](https://docs.github.com/en/actions/deployment/targeting-different-environments/using-environments-for-deployment)."
+     *
+     * For more information about the app that is providing this custom deployment rule, see "[GET an app](https://docs.github.com/rest/apps/apps#get-an-app)".
+     */
+    listCustomDeploymentRuleIntegrations: {
+      (
+        params?: RestEndpointMethodTypes["repos"]["listCustomDeploymentRuleIntegrations"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["repos"]["listCustomDeploymentRuleIntegrations"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -11152,9 +11279,7 @@ export type RestEndpointMethods = {
      * *   You must always include at least one search term when searching source code. For example, searching for [`language:go`](https://github.com/search?utf8=%E2%9C%93&q=language%3Ago&type=Code) is not valid, while [`amazing
      * language:go`](https://github.com/search?utf8=%E2%9C%93&q=amazing+language%3Ago&type=Code) is.
      *
-     * **Note:** Starting on April 10, 2023, code search on GitHub.com will have a separate
-     * rate limit from other search types, of 10 requests per minute, and all code
-     * search requests will require authentication. For more information, see [this blog post](https://github.blog/changelog/2023-03-10-changes-to-the-code-search-api/).
+     * This endpoint requires you to authenticate and limits you to 10 requests per minute.
      */
     code: {
       (
@@ -11366,6 +11491,21 @@ export type RestEndpointMethods = {
         params?: RestEndpointMethodTypes["secretScanning"]["updateAlert"]["parameters"]
       ): Promise<
         RestEndpointMethodTypes["secretScanning"]["updateAlert"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+  };
+  securityAdvisories: {
+    /**
+     * Report a security vulnerability to the maintainers of the repository.
+     * See "[Privately reporting a security vulnerability](https://docs.github.com/code-security/security-advisories/guidance-on-reporting-and-writing/privately-reporting-a-security-vulnerability)" for more information about private vulnerability reporting.
+     */
+    createPrivateVulnerabilityReport: {
+      (
+        params?: RestEndpointMethodTypes["securityAdvisories"]["createPrivateVulnerabilityReport"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["securityAdvisories"]["createPrivateVulnerabilityReport"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;

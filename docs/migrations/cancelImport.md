@@ -10,6 +10,10 @@ type: API method
 
 Stop an import for a repository.
 
+**Warning:** Support for importing Mercurial, Subversion and Team Foundation Version Control repositories will end
+on October 17, 2023. For more details, see [changelog](https://gh.io/github-importer-non-git-eol). In the coming weeks, we will update
+these docs to reflect relevant changes to the API and will contact all integrators using the "Source imports" API.
+
 ```js
 octokit.rest.migrations.cancelImport({
   owner,

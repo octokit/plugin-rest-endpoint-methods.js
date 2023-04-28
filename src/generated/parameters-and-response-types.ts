@@ -914,6 +914,14 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["DELETE /orgs/{org}/actions/required_workflows/{required_workflow_id}/repositories/{repository_id}"]["response"];
     };
+    reviewCustomGatesForRun: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["POST /repos/{owner}/{repo}/actions/runs/{run_id}/deployment_protection_rule"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["POST /repos/{owner}/{repo}/actions/runs/{run_id}/deployment_protection_rule"]["response"];
+    };
     reviewPendingDeploymentsForRun: {
       parameters: RequestParameters &
         Omit<
@@ -4886,6 +4894,14 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["POST /repos/{owner}/{repo}/environments/{environment_name}/deployment-branch-policies"]["response"];
     };
+    createDeploymentProtectionRule: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["POST /repos/{owner}/{repo}/environments/{environment_name}/deployment_protection_rules"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["POST /repos/{owner}/{repo}/environments/{environment_name}/deployment_protection_rules"]["response"];
+    };
     createDeploymentStatus: {
       parameters: RequestParameters &
         Omit<
@@ -5198,6 +5214,14 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["DELETE /repos/{owner}/{repo}/automated-security-fixes"]["response"];
     };
+    disableDeploymentProtectionRule: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["DELETE /repos/{owner}/{repo}/environments/{environment_name}/deployment_protection_rules/{protection_rule_id}"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["DELETE /repos/{owner}/{repo}/environments/{environment_name}/deployment_protection_rules/{protection_rule_id}"]["response"];
+    };
     disableLfsForRepo: {
       parameters: RequestParameters &
         Omit<
@@ -5293,6 +5317,14 @@ export type RestEndpointMethodTypes = {
           "baseUrl" | "headers" | "mediaType"
         >;
       response: Endpoints["GET /repos/{owner}/{repo}/branches/{branch}/protection/enforce_admins"]["response"];
+    };
+    getAllDeploymentProtectionRules: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /repos/{owner}/{repo}/environments/{environment_name}/deployment_protection_rules"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /repos/{owner}/{repo}/environments/{environment_name}/deployment_protection_rules"]["response"];
     };
     getAllEnvironments: {
       parameters: RequestParameters &
@@ -5445,6 +5477,14 @@ export type RestEndpointMethodTypes = {
           "baseUrl" | "headers" | "mediaType"
         >;
       response: Endpoints["GET /repos/{owner}/{repo}/stats/contributors"]["response"];
+    };
+    getCustomDeploymentProtectionRule: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /repos/{owner}/{repo}/environments/{environment_name}/deployment_protection_rules/{protection_rule_id}"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /repos/{owner}/{repo}/environments/{environment_name}/deployment_protection_rules/{protection_rule_id}"]["response"];
     };
     getDeployKey: {
       parameters: RequestParameters &
@@ -5765,6 +5805,14 @@ export type RestEndpointMethodTypes = {
           "baseUrl" | "headers" | "mediaType"
         >;
       response: Endpoints["GET /repos/{owner}/{repo}/contributors"]["response"];
+    };
+    listCustomDeploymentRuleIntegrations: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /repos/{owner}/{repo}/environments/{environment_name}/deployment_protection_rules/apps"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /repos/{owner}/{repo}/environments/{environment_name}/deployment_protection_rules/apps"]["response"];
     };
     listDeployKeys: {
       parameters: RequestParameters &
@@ -6332,6 +6380,14 @@ export type RestEndpointMethodTypes = {
     };
   };
   securityAdvisories: {
+    createPrivateVulnerabilityReport: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["POST /repos/{owner}/{repo}/security-advisories/reports"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["POST /repos/{owner}/{repo}/security-advisories/reports"]["response"];
+    };
     createRepositoryAdvisory: {
       parameters: RequestParameters &
         Omit<

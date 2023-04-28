@@ -12,6 +12,10 @@ Each type of source control system represents authors in a different way. For ex
 
 This endpoint and the [Map a commit author](https://docs.github.com/rest/migrations/source-imports#map-a-commit-author) endpoint allow you to provide correct Git author information.
 
+**Warning:** Support for importing Mercurial, Subversion and Team Foundation Version Control repositories will end
+on October 17, 2023. For more details, see [changelog](https://gh.io/github-importer-non-git-eol). In the coming weeks, we will update
+these docs to reflect relevant changes to the API and will contact all integrators using the "Source imports" API.
+
 ```js
 octokit.rest.migrations.getCommitAuthors({
   owner,

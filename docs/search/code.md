@@ -27,9 +27,7 @@ Due to the complexity of searching code, there are a few restrictions on how sea
 - You must always include at least one search term when searching source code. For example, searching for [`language:go`](https://github.com/search?utf8=%E2%9C%93&q=language%3Ago&type=Code) is not valid, while [`amazing
 language:go`](https://github.com/search?utf8=%E2%9C%93&q=amazing+language%3Ago&type=Code) is.
 
-**Note:** Starting on April 10, 2023, code search on GitHub.com will have a separate
-rate limit from other search types, of 10 requests per minute, and all code
-search requests will require authentication. For more information, see [this blog post](https://github.blog/changelog/2023-03-10-changes-to-the-code-search-api/).
+This endpoint requires you to authenticate and limits you to 10 requests per minute.
 
 ```js
 octokit.rest.search.code({
@@ -55,12 +53,12 @@ The query contains one or more search keywords and qualifiers. Qualifiers allow 
 </td></tr>
 <tr><td>sort</td><td>no</td><td>
 
-**Note: This field is deprecated, and will be ignored after April 10, 2023 (except on GitHub Enterprise Server).** Sorts the results of your query. Can only be `indexed`, which indicates how recently a file has been indexed by the GitHub search infrastructure. Default: [best match](https://docs.github.com/rest/reference/search#ranking-search-results)
+**This field is deprecated.** Sorts the results of your query. Can only be `indexed`, which indicates how recently a file has been indexed by the GitHub search infrastructure. Default: [best match](https://docs.github.com/rest/reference/search#ranking-search-results)
 
 </td></tr>
 <tr><td>order</td><td>no</td><td>
 
-**Note: This field is deprecated, and will be ignored after April 10, 2023 (except on GitHub Enterprise Server).** Determines whether the first search result returned is the highest number of matches (`desc`) or lowest number of matches (`asc`). This parameter is ignored unless you provide `sort`.
+**This field is deprecated.** Determines whether the first search result returned is the highest number of matches (`desc`) or lowest number of matches (`asc`). This parameter is ignored unless you provide `sort`.
 
 </td></tr>
 <tr><td>per_page</td><td>no</td><td>
