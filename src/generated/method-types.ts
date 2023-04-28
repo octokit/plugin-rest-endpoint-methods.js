@@ -11510,8 +11510,6 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
-  };
-  securityAdvisories: {
     /**
      * Creates a new repository security advisory.
      * You must authenticate using an access token with the `repo` scope or `repository_advisories:write` permission to use this endpoint.
