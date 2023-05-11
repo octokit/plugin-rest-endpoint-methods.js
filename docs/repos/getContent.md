@@ -89,7 +89,7 @@ path parameter
 </td></tr>
 <tr><td>ref</td><td>no</td><td>
 
-The name of the commit/branch/tag. Default: the repository’s default branch (usually `master`)
+The name of the commit/branch/tag. Default: the repository’s default branch.
 
 </td></tr>
   </tbody>

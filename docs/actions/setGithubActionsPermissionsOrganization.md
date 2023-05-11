@@ -10,8 +10,6 @@ type: API method
 
 Sets the GitHub Actions permissions policy for repositories and allowed actions and reusable workflows in an organization.
 
-If the organization belongs to an enterprise that has set restrictive permissions at the enterprise level, such as `allowed_actions` to `selected` actions and reusable workflows, then you cannot override them for the organization.
-
 You must authenticate using an access token with the `admin:org` scope to use this endpoint. GitHub Apps must have the `administration` organization permission to use this API.
 
 ```js

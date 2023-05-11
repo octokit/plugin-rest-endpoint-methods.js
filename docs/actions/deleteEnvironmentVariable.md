@@ -1,6 +1,6 @@
 ---
 name: Delete an environment variable
-example: octokit.rest.actions.deleteEnvironmentVariable({ repository_id, name })
+example: octokit.rest.actions.deleteEnvironmentVariable({ repository_id, name, environment_name })
 route: DELETE /repositories/{repository_id}/environments/{environment_name}/variables/{name}
 scope: actions
 type: API method
@@ -16,6 +16,7 @@ GitHub Apps must have the `environment:write` repository permission to use this 
 octokit.rest.actions.deleteEnvironmentVariable({
   repository_id,
   name,
+  environment_name,
 });
 ```
 
@@ -38,6 +39,11 @@ The unique identifier of the repository.
 <tr><td>name</td><td>yes</td><td>
 
 The name of the variable.
+
+</td></tr>
+<tr><td>environment_name</td><td>yes</td><td>
+
+The name of the environment.
 
 </td></tr>
   </tbody>

@@ -8,7 +8,7 @@ type: API method
 
 # List packages for an organization
 
-Lists all packages in an organization readable by the user.
+Lists packages in an organization readable by the user.
 
 To use this endpoint, you must authenticate using an access token with the `read:packages` scope. If the `package_type` belongs to a registry that only supports repository-scoped permissions, your token must also include the `repo` scope. For the list of GitHub Packages registries that only support repository-scoped permissions, see "[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#permissions-for-repository-scoped-packages)."
 
@@ -46,6 +46,16 @@ The selected visibility of the packages. This parameter is optional and only fil
 
 The `internal` visibility is only supported for GitHub Packages registries that allow for granular permissions. For other ecosystems `internal` is synonymous with `private`.
 For the list of GitHub Packages registries that support granular permissions, see "[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#granular-permissions-for-userorganization-scoped-packages)."
+
+</td></tr>
+<tr><td>page</td><td>no</td><td>
+
+Page number of the results to fetch.
+
+</td></tr>
+<tr><td>per_page</td><td>no</td><td>
+
+The number of results per page (max 100).
 
 </td></tr>
   </tbody>

@@ -8,7 +8,7 @@ type: API method
 
 # Unlock a user repository
 
-Unlocks a repository. You can lock repositories when you [start a user migration](https://docs.github.com/rest/reference/migrations#start-a-user-migration). Once the migration is complete you can unlock each repository to begin using it again or [delete the repository](https://docs.github.com/rest/reference/repos#delete-a-repository) if you no longer need the source data. Returns a status of `404 Not Found` if the repository is not locked.
+Unlocks a repository. You can lock repositories when you [start a user migration](https://docs.github.com/rest/migrations/users#start-a-user-migration). Once the migration is complete you can unlock each repository to begin using it again or [delete the repository](https://docs.github.com/rest/repos/repos#delete-a-repository) if you no longer need the source data. Returns a status of `404 Not Found` if the repository is not locked.
 
 ```js
 octokit.rest.migrations.unlockRepoForAuthenticatedUser({
@@ -41,4 +41,4 @@ repo_name parameter
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/migrations#unlock-a-user-repository).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/migrations/users#unlock-a-user-repository).

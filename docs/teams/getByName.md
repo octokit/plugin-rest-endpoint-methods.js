@@ -8,7 +8,7 @@ type: API method
 
 # Get a team by name
 
-Gets a team using the team's `slug`. GitHub generates the `slug` from the team `name`.
+Gets a team using the team's `slug`. To create the `slug`, GitHub replaces special characters in the `name` string, changes all words to lowercase, and replaces spaces with a `-` separator. For example, `"My TEam Näme"` would become `my-team-name`.
 
 **Note:** You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/{org_id}/team/{team_id}`.
 

@@ -66,7 +66,7 @@ The blob SHA of the file being deleted.
 </td></tr>
 <tr><td>branch</td><td>no</td><td>
 
-The branch name. Default: the repository’s default branch (usually `master`)
+The branch name. Default: the repository’s default branch
 
 </td></tr>
 <tr><td>committer</td><td>no</td><td>

@@ -8,7 +8,8 @@ type: API method
 
 # Start an import
 
-Start a source import to a GitHub repository using GitHub Importer.
+Start a source import to a GitHub repository using GitHub Importer. Importing into a GitHub repository with GitHub Actions enabled is not supported and will return a status `422 Unprocessable Entity` response.
+**Warning:** Support for importing Mercurial, Subversion and Team Foundation Version Control repositories will end on October 17, 2023. For more details, see [changelog](https://gh.io/github-importer-non-git-eol). In the coming weeks, we will update these docs to reflect relevant changes to the API and will contact all integrators using the "Source imports" API.
 
 ```js
 octokit.rest.migrations.startImport({
@@ -67,4 +68,4 @@ For a tfvc import, the name of the project that is being imported.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/migrations#start-an-import).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/migrations/source-imports#start-an-import).

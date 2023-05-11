@@ -42,6 +42,16 @@ The `internal` visibility is only supported for GitHub Packages registries that 
 For the list of GitHub Packages registries that support granular permissions, see "[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#granular-permissions-for-userorganization-scoped-packages)."
 
 </td></tr>
+<tr><td>page</td><td>no</td><td>
+
+Page number of the results to fetch.
+
+</td></tr>
+<tr><td>per_page</td><td>no</td><td>
+
+The number of results per page (max 100).
+
+</td></tr>
   </tbody>
 </table>
 

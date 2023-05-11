@@ -48,7 +48,7 @@ Git ref (typically a branch name) for this codespace
 </td></tr>
 <tr><td>location</td><td>no</td><td>
 
-Location for this codespace. Assigned by IP if not provided
+The requested location for a new codespace. Best efforts are made to respect this upon creation. Assigned by IP if not provided.
 
 </td></tr>
 <tr><td>client_ip</td><td>no</td><td>

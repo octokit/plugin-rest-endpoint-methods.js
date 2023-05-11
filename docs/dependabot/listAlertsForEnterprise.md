@@ -39,7 +39,7 @@ The slug version of the enterprise name. You can also substitute this value with
 
 A comma-separated list of states. If specified, only alerts with these states will be returned.
 
-Can be: `dismissed`, `fixed`, `open`
+Can be: `auto_dismissed`, `dismissed`, `fixed`, `open`
 
 </td></tr>
 <tr><td>severity</td><td>no</td><td>
@@ -80,12 +80,12 @@ The direction to sort the results by.
 </td></tr>
 <tr><td>before</td><td>no</td><td>
 
-A cursor, as given in the [Link header](https://docs.github.com/rest/overview/resources-in-the-rest-api#link-header). If specified, the query only searches for results before this cursor.
+A cursor, as given in the [Link header](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api#using-link-headers). If specified, the query only searches for results before this cursor.
 
 </td></tr>
 <tr><td>after</td><td>no</td><td>
 
-A cursor, as given in the [Link header](https://docs.github.com/rest/overview/resources-in-the-rest-api#link-header). If specified, the query only searches for results after this cursor.
+A cursor, as given in the [Link header](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api#using-link-headers). If specified, the query only searches for results after this cursor.
 
 </td></tr>
 <tr><td>first</td><td>no</td><td>

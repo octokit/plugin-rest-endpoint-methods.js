@@ -132,7 +132,7 @@ Either `true` to allow auto-merge on pull requests, or `false` to disallow auto-
 </td></tr>
 <tr><td>delete_branch_on_merge</td><td>no</td><td>
 
-Either `true` to allow automatically deleting head branches when pull requests are merged, or `false` to prevent automatic deletion.
+Either `true` to allow automatically deleting head branches when pull requests are merged, or `false` to prevent automatic deletion. **The authenticated user must be an organization owner to set this property to `true`.**
 
 </td></tr>
 <tr><td>use_squash_pr_title_as_default</td><td>no</td><td>

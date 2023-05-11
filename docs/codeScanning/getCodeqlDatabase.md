@@ -57,4 +57,4 @@ The language of the CodeQL database.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/code-scanning#get-codeql-database).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/code-scanning#get-a-codeql-database-for-a-repository).

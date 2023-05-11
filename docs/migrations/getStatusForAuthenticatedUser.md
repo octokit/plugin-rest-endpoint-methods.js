@@ -15,7 +15,7 @@ Fetches a single user migration. The response includes the `state` of the migrat
 - `exported` - the migration finished successfully.
 - `failed` - the migration failed.
 
-Once the migration has been `exported` you can [download the migration archive](https://docs.github.com/rest/reference/migrations#download-a-user-migration-archive).
+Once the migration has been `exported` you can [download the migration archive](https://docs.github.com/rest/migrations/users#download-a-user-migration-archive).
 
 ```js
 octokit.rest.migrations.getStatusForAuthenticatedUser({
@@ -45,4 +45,4 @@ The unique identifier of the migration.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/migrations#get-a-user-migration-status).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/migrations/users#get-a-user-migration-status).
