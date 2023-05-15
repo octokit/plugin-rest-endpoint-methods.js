@@ -8,6 +8,8 @@ type: API method
 
 # Remove requested reviewers from a pull request
 
+Removes review requests from a pull request for a given set of users and/or teams.
+
 ```js
 octokit.rest.pulls.removeRequestedReviewers({
   owner,

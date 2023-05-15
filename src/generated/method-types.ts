@@ -7932,6 +7932,9 @@ export type RestEndpointMethods = {
     };
   };
   pulls: {
+    /**
+     * Checks if a pull request has been merged into the base branch. The HTTP status of the response indicates whether or not the pull request has been merged; the response body is empty.
+     */
     checkIfMerged: {
       (
         params?: RestEndpointMethodTypes["pulls"]["checkIfMerged"]["parameters"]
@@ -8001,7 +8004,9 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
-
+    /**
+     * Deletes a pull request review that has not been submitted. Submitted reviews cannot be deleted.
+     */
     deletePendingReview: {
       (
         params?: RestEndpointMethodTypes["pulls"]["deletePendingReview"]["parameters"]
@@ -8057,7 +8062,9 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
-
+    /**
+     * Retrieves a pull request review by its ID.
+     */
     getReview: {
       (
         params?: RestEndpointMethodTypes["pulls"]["getReview"]["parameters"]
@@ -8166,6 +8173,7 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
+     * Merges a pull request into the base branch.
      * This endpoint triggers [notifications](https://docs.github.com/github/managing-subscriptions-and-notifications-on-github/about-notifications). Creating content too quickly using this endpoint may result in secondary rate limiting. See "[Secondary rate limits](https://docs.github.com/rest/overview/resources-in-the-rest-api#secondary-rate-limits)" and "[Dealing with secondary rate limits](https://docs.github.com/rest/guides/best-practices-for-integrators#dealing-with-secondary-rate-limits)" for details.
      */
     merge: {
@@ -8175,7 +8183,9 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
-
+    /**
+     * Removes review requests from a pull request for a given set of users and/or teams.
+     */
     removeRequestedReviewers: {
       (
         params?: RestEndpointMethodTypes["pulls"]["removeRequestedReviewers"]["parameters"]
@@ -10062,7 +10072,11 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
-
+    /**
+     * Gets information about the single most recent build of a GitHub Pages site.
+     *
+     * A token with the `repo` scope is required. GitHub Apps must have the `pages:read` permission.
+     */
     getLatestPagesBuild: {
       (
         params?: RestEndpointMethodTypes["repos"]["getLatestPagesBuild"]["parameters"]
@@ -10108,7 +10122,11 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
-
+    /**
+     * Gets information about a GitHub Pages site.
+     *
+     * A token with the `repo` scope is required. GitHub Apps must have the `pages:read` permission.
+     */
     getPages: {
       (
         params?: RestEndpointMethodTypes["repos"]["getPages"]["parameters"]
@@ -10116,7 +10134,11 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
-
+    /**
+     * Gets information about a GitHub Pages build.
+     *
+     * A token with the `repo` scope is required. GitHub Apps must have the `pages:read` permission.
+     */
     getPagesBuild: {
       (
         params?: RestEndpointMethodTypes["repos"]["getPagesBuild"]["parameters"]
@@ -10662,7 +10684,11 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
-
+    /**
+     * Lists builts of a GitHub Pages site.
+     *
+     * A token with the `repo` scope is required. GitHub Apps must have the `pages:read` permission.
+     */
     listPagesBuilds: {
       (
         params?: RestEndpointMethodTypes["repos"]["listPagesBuilds"]["parameters"]

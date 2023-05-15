@@ -8,6 +8,10 @@ type: API method
 
 # Get a GitHub Pages site
 
+Gets information about a GitHub Pages site.
+
+A token with the `repo` scope is required. GitHub Apps must have the `pages:read` permission.
+
 ```js
 octokit.rest.repos.getPages({
   owner,
