@@ -8,6 +8,10 @@ type: API method
 
 # Get latest Pages build
 
+Gets information about the single most recent build of a GitHub Pages site.
+
+A token with the `repo` scope is required. GitHub Apps must have the `pages:read` permission.
+
 ```js
 octokit.rest.repos.getLatestPagesBuild({
   owner,

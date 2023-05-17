@@ -8,6 +8,8 @@ type: API method
 
 # Get a review for a pull request
 
+Retrieves a pull request review by its ID.
+
 ```js
 octokit.rest.pulls.getReview({
   owner,

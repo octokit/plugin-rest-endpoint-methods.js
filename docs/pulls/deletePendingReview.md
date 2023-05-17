@@ -8,6 +8,8 @@ type: API method
 
 # Delete a pending review for a pull request
 
+Deletes a pull request review that has not been submitted. Submitted reviews cannot be deleted.
+
 ```js
 octokit.rest.pulls.deletePendingReview({
   owner,
