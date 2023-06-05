@@ -13,7 +13,7 @@ describe("Smoke test", () => {
     return updateLabel(options);
 
     async function updateLabel(
-      options: RestEndpointMethodTypes["issues"]["updateLabel"]["parameters"]
+      _: RestEndpointMethodTypes["issues"]["updateLabel"]["parameters"]
     ): Promise<RestEndpointMethodTypes["issues"]["updateLabel"]["response"]> {
       return {
         headers: {},
