@@ -1,5 +1,5 @@
-import { EndpointInterface, RequestInterface } from "@octokit/types";
-import { RestEndpointMethodTypes } from "./parameters-and-response-types";
+import type { EndpointInterface, RequestInterface } from "@octokit/types";
+import type { RestEndpointMethodTypes } from "./parameters-and-response-types";
 
 export type RestEndpointMethods = {
   actions: {
