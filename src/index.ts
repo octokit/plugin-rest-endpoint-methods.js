@@ -1,4 +1,4 @@
-import { Octokit } from "@octokit/core";
+import type { Octokit } from "@octokit/core";
 
 import ENDPOINTS from "./generated/endpoints";
 export type { RestEndpointMethodTypes } from "./generated/parameters-and-response-types";
