@@ -1,4 +1,4 @@
-import { Octokit } from "@octokit/core";
+import type { Octokit } from "@octokit/core";
 import type {
   EndpointOptions,
   RequestParameters,
