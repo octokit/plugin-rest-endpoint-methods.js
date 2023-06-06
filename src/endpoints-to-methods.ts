@@ -6,7 +6,10 @@ import type {
   Route,
   Url,
 } from "@octokit/types";
-import type { EndpointsDefaultsAndDecorations, EndpointDecorations } from "./types";
+import type {
+  EndpointsDefaultsAndDecorations,
+  EndpointDecorations,
+} from "./types";
 import type { RestEndpointMethods } from "./generated/method-types";
 
 type EndpointMethods = {
