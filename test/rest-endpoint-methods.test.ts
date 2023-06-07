@@ -57,7 +57,7 @@ describe("REST API endpoint methods", () => {
         headers: {
           "content-type": "text/plain; charset=utf-8",
         },
-        matcher: (url, { body, headers }) => {
+        matcher: (_, { body }) => {
           expect(body).toEqual("# Hello, world!");
           return true;
         },
@@ -94,7 +94,7 @@ describe("REST API endpoint methods", () => {
           name: "test.txt",
           label: "test",
         },
-        matcher: (url, { body }) => {
+        matcher: (_, { body }) => {
           expect(body).toEqual("test 1, 2");
           return true;
         },
