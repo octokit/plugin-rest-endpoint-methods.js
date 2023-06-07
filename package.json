@@ -55,7 +55,6 @@
     "@octokit/core": ">=3"
   },
   "jest": {
-    "preset": "ts-jest",
     "transform": {
       "^.+\\.(ts|tsx)$": [
         "ts-jest",
