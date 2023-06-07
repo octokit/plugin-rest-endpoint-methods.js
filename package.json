@@ -3,7 +3,7 @@
   "version": "0.0.0-development",
   "description": "Octokit plugin adding one method for all of api.github.com REST API endpoints",
   "scripts": {
-    "build": "node scripts/build.mjs && tsc -p tsconfig.json --verbatimModuleSyntax",
+    "build": "node scripts/build.mjs && tsc -p tsconfig.json",
     "lint": "prettier --check '{src,test}/**/*' '!src/generated/**' README.md package.json",
     "lint:fix": "prettier --write '{src,test}/**/*' '!src/generated/**' README.md package.json",
     "pretest": "npm run -s lint",
@@ -29,7 +29,7 @@
   "devDependencies": {
     "@gimenete/type-writer": "^0.1.5",
     "@octokit/core": "^4.0.0",
-    "@octokit/tsconfig": "^1.0.2",
+    "@octokit/tsconfig": "^2.0.0",
     "@types/fetch-mock": "^7.3.1",
     "@types/jest": "^29.0.0",
     "@types/node": "^18.0.0",
@@ -56,6 +56,14 @@
   },
   "jest": {
     "preset": "ts-jest",
+    "transform": {
+      "^.+\\.(ts|tsx)$": [
+        "ts-jest",
+        {
+          "tsconfig": "test/tsconfig.test.json"
+        }
+      ]
+    },
     "coverageThreshold": {
       "global": {
         "statements": 100,
