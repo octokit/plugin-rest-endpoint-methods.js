@@ -8,6 +8,8 @@ type: API method
 
 # Create a project column
 
+Creates a new project column.
+
 ```js
 octokit.rest.projects.createColumn({
   project_id,

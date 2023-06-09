@@ -39,7 +39,7 @@ The account owner of the repository. The name is not case sensitive.
 </td></tr>
 <tr><td>repo</td><td>yes</td><td>
 
-The name of the repository. The name is not case sensitive.
+The name of the repository without the `.git` extension. The name is not case sensitive.
 
 </td></tr>
 <tr><td>ref</td><td>no</td><td>
@@ -50,6 +50,11 @@ Git ref (typically a branch name) for this codespace
 <tr><td>location</td><td>no</td><td>
 
 The requested location for a new codespace. Best efforts are made to respect this upon creation. Assigned by IP if not provided.
+
+</td></tr>
+<tr><td>geo</td><td>no</td><td>
+
+The geographic area for this codespace. If not specified, the value is assigned by IP. This property replaces `location`, which is being deprecated.
 
 </td></tr>
 <tr><td>client_ip</td><td>no</td><td>

@@ -8,6 +8,17 @@ type: API method
 
 # List repository teams
 
+Lists the teams that have access to the specified repository and that are also visible to the authenticated user.
+
+For a public repository, a team is listed only if that team added the public repository explicitly.
+
+Personal access tokens require the following scopes:
+
+- `public_repo` to call this endpoint on a public repository
+- `repo` to call this endpoint on a private repository (this scope also includes public repositories)
+
+This endpoint is not compatible with fine-grained personal access tokens.
+
 ```js
 octokit.rest.repos.listTeams({
   owner,
@@ -33,7 +44,7 @@ The account owner of the repository. The name is not case sensitive.
 </td></tr>
 <tr><td>repo</td><td>yes</td><td>
 
-The name of the repository. The name is not case sensitive.
+The name of the repository without the `.git` extension. The name is not case sensitive.
 
 </td></tr>
 <tr><td>per_page</td><td>no</td><td>

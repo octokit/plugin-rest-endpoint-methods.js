@@ -8,6 +8,8 @@ type: API method
 
 # List project cards
 
+Lists the project cards in a project.
+
 ```js
 octokit.rest.projects.listCards({
   column_id,

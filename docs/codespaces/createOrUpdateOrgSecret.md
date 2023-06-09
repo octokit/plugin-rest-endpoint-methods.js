@@ -12,7 +12,7 @@ Creates or updates an organization secret with an encrypted value. Encrypt your 
 [LibSodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages). You must authenticate using an access
 token with the `admin:org` scope to use this endpoint.
 
-#### Example encrypting a secret using Node.js
+**Example encrypting a secret using Node.js**
 
 Encrypt your secret using the [libsodium-wrappers](https://www.npmjs.com/package/libsodium-wrappers) library.
 
@@ -37,7 +37,7 @@ sodium.ready.then(() => {
 });
 ```
 
-#### Example encrypting a secret using Python
+**Example encrypting a secret using Python**
 
 Encrypt your secret using [pynacl](https://pynacl.readthedocs.io/en/latest/public/#nacl-public-sealedbox) with Python 3.
 
@@ -53,7 +53,7 @@ def encrypt(public_key: str, secret_value: str) -> str:
   return b64encode(encrypted).decode("utf-8")
 ```
 
-#### Example encrypting a secret using C#
+**Example encrypting a secret using C#**
 
 Encrypt your secret using the [Sodium.Core](https://www.nuget.org/packages/Sodium.Core/) package.
 
@@ -66,7 +66,7 @@ var sealedPublicKeyBox = Sodium.SealedPublicKeyBox.Create(secretValue, publicKey
 Console.WriteLine(Convert.ToBase64String(sealedPublicKeyBox));
 ```
 
-#### Example encrypting a secret using Ruby
+**Example encrypting a secret using Ruby**
 
 Encrypt your secret using the [rbnacl](https://github.com/RubyCrypto/rbnacl) gem.
 

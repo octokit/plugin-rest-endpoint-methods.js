@@ -8,6 +8,8 @@ type: API method
 
 # Delete a project column
 
+Deletes a project column.
+
 ```js
 octokit.rest.projects.deleteColumn({
   column_id,

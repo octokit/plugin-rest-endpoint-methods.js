@@ -8,6 +8,8 @@ type: API method
 
 # Get a milestone
 
+Gets a milestone using the given milestone number.
+
 ```js
 octokit.rest.issues.getMilestone({
   owner,
@@ -34,7 +36,7 @@ The account owner of the repository. The name is not case sensitive.
 </td></tr>
 <tr><td>repo</td><td>yes</td><td>
 
-The name of the repository. The name is not case sensitive.
+The name of the repository without the `.git` extension. The name is not case sensitive.
 
 </td></tr>
 <tr><td>milestone_number</td><td>yes</td><td>

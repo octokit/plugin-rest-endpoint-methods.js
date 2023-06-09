@@ -8,6 +8,8 @@ type: API method
 
 # Remove public organization membership for the authenticated user
 
+Removes the public membership for the authenticated user from the specified organization, unless public visibility is enforced by default.
+
 ```js
 octokit.rest.orgs.removePublicMembershipForAuthenticatedUser({
   org,
