@@ -8,6 +8,8 @@ type: API method
 
 # Check public organization membership for a user
 
+Check if the provided user is a public member of the organization.
+
 ```js
 octokit.rest.orgs.checkPublicMembershipForUser({
   org,

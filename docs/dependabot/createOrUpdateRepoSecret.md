@@ -13,7 +13,7 @@ Creates or updates a repository secret with an encrypted value. Encrypt your sec
 token with the `repo` scope to use this endpoint. GitHub Apps must have the `dependabot_secrets` repository
 permission to use this endpoint.
 
-#### Example encrypting a secret using Node.js
+**Example encrypting a secret using Node.js**
 
 Encrypt your secret using the [libsodium-wrappers](https://www.npmjs.com/package/libsodium-wrappers) library.
 
@@ -38,7 +38,7 @@ sodium.ready.then(() => {
 });
 ```
 
-#### Example encrypting a secret using Python
+**Example encrypting a secret using Python**
 
 Encrypt your secret using [pynacl](https://pynacl.readthedocs.io/en/latest/public/#nacl-public-sealedbox) with Python 3.
 
@@ -54,7 +54,7 @@ def encrypt(public_key: str, secret_value: str) -> str:
   return b64encode(encrypted).decode("utf-8")
 ```
 
-#### Example encrypting a secret using C#
+**Example encrypting a secret using C#**
 
 Encrypt your secret using the [Sodium.Core](https://www.nuget.org/packages/Sodium.Core/) package.
 
@@ -67,7 +67,7 @@ var sealedPublicKeyBox = Sodium.SealedPublicKeyBox.Create(secretValue, publicKey
 Console.WriteLine(Convert.ToBase64String(sealedPublicKeyBox));
 ```
 
-#### Example encrypting a secret using Ruby
+**Example encrypting a secret using Ruby**
 
 Encrypt your secret using the [rbnacl](https://github.com/RubyCrypto/rbnacl) gem.
 
@@ -111,7 +111,7 @@ The account owner of the repository. The name is not case sensitive.
 </td></tr>
 <tr><td>repo</td><td>yes</td><td>
 
-The name of the repository. The name is not case sensitive.
+The name of the repository without the `.git` extension. The name is not case sensitive.
 
 </td></tr>
 <tr><td>secret_name</td><td>yes</td><td>

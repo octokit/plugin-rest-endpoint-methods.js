@@ -8,6 +8,8 @@ type: API method
 
 # List user projects
 
+Lists projects for a user.
+
 ```js
 octokit.rest.projects.listForUser({
   username,

@@ -51,6 +51,11 @@ Git ref (typically a branch name) for this codespace
 The requested location for a new codespace. Best efforts are made to respect this upon creation. Assigned by IP if not provided.
 
 </td></tr>
+<tr><td>geo</td><td>no</td><td>
+
+The geographic area for this codespace. If not specified, the value is assigned by IP. This property replaces `location`, which is being deprecated.
+
+</td></tr>
 <tr><td>client_ip</td><td>no</td><td>
 
 IP for location auto-detection when proxying a request

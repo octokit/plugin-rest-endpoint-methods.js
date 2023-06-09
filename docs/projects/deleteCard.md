@@ -8,6 +8,8 @@ type: API method
 
 # Delete a project card
 
+Deletes a project card
+
 ```js
 octokit.rest.projects.deleteCard({
   card_id,

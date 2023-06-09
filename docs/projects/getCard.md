@@ -8,6 +8,8 @@ type: API method
 
 # Get a project card
 
+Gets information about a project card.
+
 ```js
 octokit.rest.projects.getCard({
   card_id,

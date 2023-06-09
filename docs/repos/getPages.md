@@ -8,6 +8,10 @@ type: API method
 
 # Get a GitHub Pages site
 
+Gets information about a GitHub Pages site.
+
+A token with the `repo` scope is required. GitHub Apps must have the `pages:read` permission.
+
 ```js
 octokit.rest.repos.getPages({
   owner,
@@ -33,7 +37,7 @@ The account owner of the repository. The name is not case sensitive.
 </td></tr>
 <tr><td>repo</td><td>yes</td><td>
 
-The name of the repository. The name is not case sensitive.
+The name of the repository without the `.git` extension. The name is not case sensitive.
 
 </td></tr>
   </tbody>
