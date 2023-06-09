@@ -8,6 +8,8 @@ type: API method
 
 # List organization memberships for the authenticated user
 
+Lists all of the authenticated user's organization memberships.
+
 ```js
 octokit.rest.orgs.listMembershipsForAuthenticatedUser();
 ```

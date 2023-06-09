@@ -330,6 +330,22 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["PUT /repos/{owner}/{repo}/actions/workflows/{workflow_id}/enable"]["response"];
     };
+    generateRunnerJitconfigForOrg: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["POST /orgs/{org}/actions/runners/generate-jitconfig"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["POST /orgs/{org}/actions/runners/generate-jitconfig"]["response"];
+    };
+    generateRunnerJitconfigForRepo: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["POST /repos/{owner}/{repo}/actions/runners/generate-jitconfig"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["POST /repos/{owner}/{repo}/actions/runners/generate-jitconfig"]["response"];
+    };
     getActionsCacheList: {
       parameters: RequestParameters &
         Omit<

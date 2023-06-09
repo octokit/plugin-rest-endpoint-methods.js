@@ -8,6 +8,8 @@ type: API method
 
 # Update an organization membership for the authenticated user
 
+Converts the authenticated user to an active member of the organization, if that user has a pending invitation from the organization.
+
 ```js
 octokit.rest.orgs.updateMembershipForAuthenticatedUser({
   org,

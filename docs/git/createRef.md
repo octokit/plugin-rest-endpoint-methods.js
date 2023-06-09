@@ -37,7 +37,7 @@ The account owner of the repository. The name is not case sensitive.
 </td></tr>
 <tr><td>repo</td><td>yes</td><td>
 
-The name of the repository. The name is not case sensitive.
+The name of the repository without the `.git` extension. The name is not case sensitive.
 
 </td></tr>
 <tr><td>ref</td><td>yes</td><td>
@@ -48,9 +48,6 @@ The name of the fully qualified reference (ie: `refs/heads/master`). If it doesn
 <tr><td>sha</td><td>yes</td><td>
 
 The SHA1 value for this reference.
-
-</td></tr>
-<tr><td>key</td><td>no</td><td>
 
 </td></tr>
   </tbody>

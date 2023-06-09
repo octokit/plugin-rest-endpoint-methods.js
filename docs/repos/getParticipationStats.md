@@ -12,6 +12,8 @@ Returns the total commit counts for the `owner` and total commit counts in `all`
 
 The array order is oldest week (index 0) to most recent week.
 
+The most recent week is seven days ago at UTC midnight to today at UTC midnight.
+
 ```js
 octokit.rest.repos.getParticipationStats({
   owner,
@@ -37,7 +39,7 @@ The account owner of the repository. The name is not case sensitive.
 </td></tr>
 <tr><td>repo</td><td>yes</td><td>
 
-The name of the repository. The name is not case sensitive.
+The name of the repository without the `.git` extension. The name is not case sensitive.
 
 </td></tr>
   </tbody>

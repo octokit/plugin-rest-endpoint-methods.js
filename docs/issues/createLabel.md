@@ -8,6 +8,8 @@ type: API method
 
 # Create a label
 
+Creates a label for the specified repository with the given name and color. The name and color parameters are required. The color must be a valid [hexadecimal color code](http://www.color-hex.com/).
+
 ```js
 octokit.rest.issues.createLabel({
   owner,
@@ -34,7 +36,7 @@ The account owner of the repository. The name is not case sensitive.
 </td></tr>
 <tr><td>repo</td><td>yes</td><td>
 
-The name of the repository. The name is not case sensitive.
+The name of the repository without the `.git` extension. The name is not case sensitive.
 
 </td></tr>
 <tr><td>name</td><td>yes</td><td>

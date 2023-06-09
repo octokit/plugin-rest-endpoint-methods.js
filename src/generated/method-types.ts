@@ -118,7 +118,7 @@ export type RestEndpointMethods = {
      * token with the `repo` scope to use this endpoint. GitHub Apps must have the `secrets` repository permission to use
      * this endpoint.
      *
-     * #### Example encrypting a secret using Node.js
+     * **Example encrypting a secret using Node.js**
      *
      * Encrypt your secret using the [libsodium-wrappers](https://www.npmjs.com/package/libsodium-wrappers) library.
      *
@@ -143,7 +143,7 @@ export type RestEndpointMethods = {
      * });
      * ```
      *
-     * #### Example encrypting a secret using Python
+     * **Example encrypting a secret using Python**
      *
      * Encrypt your secret using [pynacl](https://pynacl.readthedocs.io/en/latest/public/#nacl-public-sealedbox) with Python 3.
      *
@@ -159,7 +159,7 @@ export type RestEndpointMethods = {
      *   return b64encode(encrypted).decode("utf-8")
      * ```
      *
-     * #### Example encrypting a secret using C#
+     * **Example encrypting a secret using C#**
      *
      * Encrypt your secret using the [Sodium.Core](https://www.nuget.org/packages/Sodium.Core/) package.
      *
@@ -172,7 +172,7 @@ export type RestEndpointMethods = {
      * Console.WriteLine(Convert.ToBase64String(sealedPublicKeyBox));
      * ```
      *
-     * #### Example encrypting a secret using Ruby
+     * **Example encrypting a secret using Ruby**
      *
      * Encrypt your secret using the [rbnacl](https://github.com/RubyCrypto/rbnacl) gem.
      *
@@ -291,7 +291,7 @@ export type RestEndpointMethods = {
      * token with the `repo` scope to use this endpoint. GitHub Apps must have the `secrets` repository permission to use
      * this endpoint.
      *
-     * #### Example encrypting a secret using Node.js
+     * **Example encrypting a secret using Node.js**
      *
      * Encrypt your secret using the [libsodium-wrappers](https://www.npmjs.com/package/libsodium-wrappers) library.
      *
@@ -316,7 +316,7 @@ export type RestEndpointMethods = {
      * });
      * ```
      *
-     * #### Example encrypting a secret using Python
+     * **Example encrypting a secret using Python**
      *
      * Encrypt your secret using [pynacl](https://pynacl.readthedocs.io/en/latest/public/#nacl-public-sealedbox) with Python 3.
      *
@@ -332,7 +332,7 @@ export type RestEndpointMethods = {
      *   return b64encode(encrypted).decode("utf-8")
      * ```
      *
-     * #### Example encrypting a secret using C#
+     * **Example encrypting a secret using C#**
      *
      * Encrypt your secret using the [Sodium.Core](https://www.nuget.org/packages/Sodium.Core/) package.
      *
@@ -345,7 +345,7 @@ export type RestEndpointMethods = {
      * Console.WriteLine(Convert.ToBase64String(sealedPublicKeyBox));
      * ```
      *
-     * #### Example encrypting a secret using Ruby
+     * **Example encrypting a secret using Ruby**
      *
      * Encrypt your secret using the [rbnacl](https://github.com/RubyCrypto/rbnacl) gem.
      *
@@ -824,6 +824,34 @@ export type RestEndpointMethods = {
         params?: RestEndpointMethodTypes["actions"]["enableWorkflow"]["parameters"]
       ): Promise<
         RestEndpointMethodTypes["actions"]["enableWorkflow"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Generates a configuration that can be passed to the runner application at startup.
+     *
+     * You must authenticate using an access token with the `admin:org` scope to use this endpoint.
+     */
+    generateRunnerJitconfigForOrg: {
+      (
+        params?: RestEndpointMethodTypes["actions"]["generateRunnerJitconfigForOrg"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["actions"]["generateRunnerJitconfigForOrg"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Generates a configuration that can be passed to the runner application at startup.
+     *
+     * You must authenticate using an access token with the `repo` scope to use this endpoint.
+     */
+    generateRunnerJitconfigForRepo: {
+      (
+        params?: RestEndpointMethodTypes["actions"]["generateRunnerJitconfigForRepo"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["actions"]["generateRunnerJitconfigForRepo"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -2886,7 +2914,7 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Remove a single repository from an installation. The authenticated user must have admin access to the repository.
+     * Remove a single repository from an installation. The authenticated user must have admin access to the repository. The installation must have the `repository_selection` of `selected`.
      *
      * You must use a personal access token (which you can create via the [command line](https://docs.github.com/github/authenticating-to-github/creating-a-personal-access-token) or [Basic Authentication](https://docs.github.com/rest/overview/other-authentication-methods#basic-authentication)) to access this endpoint.
      * @deprecated octokit.rest.apps.removeRepoFromInstallation() has been renamed to octokit.rest.apps.removeRepoFromInstallationForAuthenticatedUser() (2021-10-05)
@@ -2901,7 +2929,7 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Remove a single repository from an installation. The authenticated user must have admin access to the repository.
+     * Remove a single repository from an installation. The authenticated user must have admin access to the repository. The installation must have the `repository_selection` of `selected`.
      *
      * You must use a personal access token (which you can create via the [command line](https://docs.github.com/github/authenticating-to-github/creating-a-personal-access-token) or [Basic Authentication](https://docs.github.com/rest/overview/other-authentication-methods#basic-authentication)) to access this endpoint.
      */
@@ -3679,7 +3707,7 @@ export type RestEndpointMethods = {
      * [LibSodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages). You must authenticate using an access
      * token with the `admin:org` scope to use this endpoint.
      *
-     * #### Example encrypting a secret using Node.js
+     * **Example encrypting a secret using Node.js**
      *
      * Encrypt your secret using the [libsodium-wrappers](https://www.npmjs.com/package/libsodium-wrappers) library.
      *
@@ -3704,7 +3732,7 @@ export type RestEndpointMethods = {
      * });
      * ```
      *
-     * #### Example encrypting a secret using Python
+     * **Example encrypting a secret using Python**
      *
      * Encrypt your secret using [pynacl](https://pynacl.readthedocs.io/en/latest/public/#nacl-public-sealedbox) with Python 3.
      *
@@ -3720,7 +3748,7 @@ export type RestEndpointMethods = {
      *   return b64encode(encrypted).decode("utf-8")
      * ```
      *
-     * #### Example encrypting a secret using C#
+     * **Example encrypting a secret using C#**
      *
      * Encrypt your secret using the [Sodium.Core](https://www.nuget.org/packages/Sodium.Core/) package.
      *
@@ -3733,7 +3761,7 @@ export type RestEndpointMethods = {
      * Console.WriteLine(Convert.ToBase64String(sealedPublicKeyBox));
      * ```
      *
-     * #### Example encrypting a secret using Ruby
+     * **Example encrypting a secret using Ruby**
      *
      * Encrypt your secret using the [rbnacl](https://github.com/RubyCrypto/rbnacl) gem.
      *
@@ -3855,7 +3883,7 @@ export type RestEndpointMethods = {
      *
      * GitHub Apps must have write access to the `codespaces_user_secrets` user permission and `codespaces_secrets` repository permission on all referenced repositories to use this endpoint.
      *
-     * #### Example encrypting a secret using Node.js
+     * **Example encrypting a secret using Node.js**
      *
      * Encrypt your secret using the [libsodium-wrappers](https://www.npmjs.com/package/libsodium-wrappers) library.
      *
@@ -3880,7 +3908,7 @@ export type RestEndpointMethods = {
      * });
      * ```
      *
-     * #### Example encrypting a secret using Python
+     * **Example encrypting a secret using Python**
      *
      * Encrypt your secret using [pynacl](https://pynacl.readthedocs.io/en/latest/public/#nacl-public-sealedbox) with Python 3.
      *
@@ -3896,7 +3924,7 @@ export type RestEndpointMethods = {
      *   return b64encode(encrypted).decode("utf-8")
      * ```
      *
-     * #### Example encrypting a secret using C#
+     * **Example encrypting a secret using C#**
      *
      * Encrypt your secret using the [Sodium.Core](https://www.nuget.org/packages/Sodium.Core/) package.
      *
@@ -3909,7 +3937,7 @@ export type RestEndpointMethods = {
      * Console.WriteLine(Convert.ToBase64String(sealedPublicKeyBox));
      * ```
      *
-     * #### Example encrypting a secret using Ruby
+     * **Example encrypting a secret using Ruby**
      *
      * Encrypt your secret using the [rbnacl](https://github.com/RubyCrypto/rbnacl) gem.
      *
@@ -4631,7 +4659,7 @@ export type RestEndpointMethods = {
      * token with the `repo` scope to use this endpoint. GitHub Apps must have the `dependabot_secrets` repository
      * permission to use this endpoint.
      *
-     * #### Example encrypting a secret using Node.js
+     * **Example encrypting a secret using Node.js**
      *
      * Encrypt your secret using the [libsodium-wrappers](https://www.npmjs.com/package/libsodium-wrappers) library.
      *
@@ -4656,7 +4684,7 @@ export type RestEndpointMethods = {
      * });
      * ```
      *
-     * #### Example encrypting a secret using Python
+     * **Example encrypting a secret using Python**
      *
      * Encrypt your secret using [pynacl](https://pynacl.readthedocs.io/en/latest/public/#nacl-public-sealedbox) with Python 3.
      *
@@ -4672,7 +4700,7 @@ export type RestEndpointMethods = {
      *   return b64encode(encrypted).decode("utf-8")
      * ```
      *
-     * #### Example encrypting a secret using C#
+     * **Example encrypting a secret using C#**
      *
      * Encrypt your secret using the [Sodium.Core](https://www.nuget.org/packages/Sodium.Core/) package.
      *
@@ -4685,7 +4713,7 @@ export type RestEndpointMethods = {
      * Console.WriteLine(Convert.ToBase64String(sealedPublicKeyBox));
      * ```
      *
-     * #### Example encrypting a secret using Ruby
+     * **Example encrypting a secret using Ruby**
      *
      * Encrypt your secret using the [rbnacl](https://github.com/RubyCrypto/rbnacl) gem.
      *
@@ -4907,6 +4935,8 @@ export type RestEndpointMethods = {
      * You must use an access token with the `security_events` scope to use this endpoint with private repositories.
      * You can also use tokens with the `public_repo` scope for public repositories only.
      * GitHub Apps must have **Dependabot alerts** write permission to use this endpoint.
+     *
+     * To use this endpoint, you must have access to security alerts for the repository. For more information, see "[Granting access to security alerts](https://docs.github.com/repositories/managing-your-repositorys-settings-and-features/enabling-features-for-your-repository/managing-security-and-analysis-settings-for-your-repository#granting-access-to-security-alerts)."
      */
     updateAlert: {
       (
@@ -5596,7 +5626,9 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
-
+    /**
+     * Adds labels to an issue. If you provide an empty array of labels, all labels are removed from the issue.
+     */
     addLabels: {
       (
         params?: RestEndpointMethodTypes["issues"]["addLabels"]["parameters"]
@@ -5666,7 +5698,9 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
-
+    /**
+     * Creates a label for the specified repository with the given name and color. The name and color parameters are required. The color must be a valid [hexadecimal color code](http://www.color-hex.com/).
+     */
     createLabel: {
       (
         params?: RestEndpointMethodTypes["issues"]["createLabel"]["parameters"]
@@ -5674,7 +5708,9 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
-
+    /**
+     * Creates a milestone.
+     */
     createMilestone: {
       (
         params?: RestEndpointMethodTypes["issues"]["createMilestone"]["parameters"]
@@ -5696,7 +5732,9 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
-
+    /**
+     * Deletes a label using the given label name.
+     */
     deleteLabel: {
       (
         params?: RestEndpointMethodTypes["issues"]["deleteLabel"]["parameters"]
@@ -5704,7 +5742,9 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
-
+    /**
+     * Deletes a milestone using the given milestone number.
+     */
     deleteMilestone: {
       (
         params?: RestEndpointMethodTypes["issues"]["deleteMilestone"]["parameters"]
@@ -5744,7 +5784,9 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
-
+    /**
+     * Gets a single event by the event id.
+     */
     getEvent: {
       (
         params?: RestEndpointMethodTypes["issues"]["getEvent"]["parameters"]
@@ -5752,7 +5794,9 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
-
+    /**
+     * Gets a label using the given name.
+     */
     getLabel: {
       (
         params?: RestEndpointMethodTypes["issues"]["getLabel"]["parameters"]
@@ -5760,7 +5804,9 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
-
+    /**
+     * Gets a milestone using the given milestone number.
+     */
     getMilestone: {
       (
         params?: RestEndpointMethodTypes["issues"]["getMilestone"]["parameters"]
@@ -5824,7 +5870,9 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
-
+    /**
+     * Lists all events for an issue.
+     */
     listEvents: {
       (
         params?: RestEndpointMethodTypes["issues"]["listEvents"]["parameters"]
@@ -5832,7 +5880,9 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
-
+    /**
+     * Lists events for a repository.
+     */
     listEventsForRepo: {
       (
         params?: RestEndpointMethodTypes["issues"]["listEventsForRepo"]["parameters"]
@@ -5842,7 +5892,9 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
-
+    /**
+     * List all timeline events for an issue.
+     */
     listEventsForTimeline: {
       (
         params?: RestEndpointMethodTypes["issues"]["listEventsForTimeline"]["parameters"]
@@ -5899,7 +5951,9 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
-
+    /**
+     * Lists labels for issues in a milestone.
+     */
     listLabelsForMilestone: {
       (
         params?: RestEndpointMethodTypes["issues"]["listLabelsForMilestone"]["parameters"]
@@ -5909,7 +5963,9 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
-
+    /**
+     * Lists all labels for a repository.
+     */
     listLabelsForRepo: {
       (
         params?: RestEndpointMethodTypes["issues"]["listLabelsForRepo"]["parameters"]
@@ -5919,7 +5975,9 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
-
+    /**
+     * Lists all labels for an issue.
+     */
     listLabelsOnIssue: {
       (
         params?: RestEndpointMethodTypes["issues"]["listLabelsOnIssue"]["parameters"]
@@ -5929,7 +5987,9 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
-
+    /**
+     * Lists milestones for a repository.
+     */
     listMilestones: {
       (
         params?: RestEndpointMethodTypes["issues"]["listMilestones"]["parameters"]
@@ -5951,7 +6011,9 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
-
+    /**
+     * Removes all labels from an issue.
+     */
     removeAllLabels: {
       (
         params?: RestEndpointMethodTypes["issues"]["removeAllLabels"]["parameters"]
@@ -6025,7 +6087,9 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
-
+    /**
+     * Updates a label using the given label name.
+     */
     updateLabel: {
       (
         params?: RestEndpointMethodTypes["issues"]["updateLabel"]["parameters"]
@@ -6097,6 +6161,8 @@ export type RestEndpointMethods = {
   meta: {
     /**
      * Returns meta information about GitHub, including a list of GitHub's IP addresses. For more information, see "[About GitHub's IP addresses](https://docs.github.com/articles/about-github-s-ip-addresses/)."
+     *
+     * The API's response also includes a list of GitHub's domain names.
      *
      * The values shown in the documentation's response are example values. You must always query the API directly to get the latest values.
      *
@@ -6600,7 +6666,9 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
-
+    /**
+     * Check if the provided user is a public member of the organization.
+     */
     checkPublicMembershipForUser: {
       (
         params?: RestEndpointMethodTypes["orgs"]["checkPublicMembershipForUser"]["parameters"]
@@ -6701,7 +6769,9 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
-
+    /**
+     * If the authenticated user is an active or pending member of the organization, this endpoint will return the user's membership. If the authenticated user is not affiliated with the organization, a `404` is returned. This endpoint will return a `403` if the request is made by a GitHub App that is blocked by the organization.
+     */
     getMembershipForAuthenticatedUser: {
       (
         params?: RestEndpointMethodTypes["orgs"]["getMembershipForAuthenticatedUser"]["parameters"]
@@ -6857,7 +6927,9 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
-
+    /**
+     * Lists all of the authenticated user's organization memberships.
+     */
     listMembershipsForAuthenticatedUser: {
       (
         params?: RestEndpointMethodTypes["orgs"]["listMembershipsForAuthenticatedUser"]["parameters"]
@@ -7055,7 +7127,9 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
-
+    /**
+     * Removes the public membership for the authenticated user from the specified organization, unless public visibility is enforced by default.
+     */
     removePublicMembershipForAuthenticatedUser: {
       (
         params?: RestEndpointMethodTypes["orgs"]["removePublicMembershipForAuthenticatedUser"]["parameters"]
@@ -7156,7 +7230,7 @@ export type RestEndpointMethods = {
     /**
      * **Parameter Deprecation Notice:** GitHub will replace and discontinue `members_allowed_repository_creation_type` in favor of more granular permissions. The new input parameters are `members_can_create_public_repositories`, `members_can_create_private_repositories` for all organizations and `members_can_create_internal_repositories` for organizations associated with an enterprise account using GitHub Enterprise Cloud or GitHub Enterprise Server 2.20+. For more information, see the [blog post](https://developer.github.com/changes/2019-12-03-internal-visibility-changes).
      *
-     * Enables an authenticated organization owner with the `admin:org` scope to update the organization's profile and member privileges.
+     * Enables an authenticated organization owner with the `admin:org` scope or the `repo` scope to update the organization's profile and member privileges.
      */
     update: {
       (
@@ -7165,7 +7239,9 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
-
+    /**
+     * Converts the authenticated user to an active member of the organization, if that user has a pending invitation from the organization.
+     */
     updateMembershipForAuthenticatedUser: {
       (
         params?: RestEndpointMethodTypes["orgs"]["updateMembershipForAuthenticatedUser"]["parameters"]
@@ -7700,7 +7776,9 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
-
+    /**
+     * Creates a new project column.
+     */
     createColumn: {
       (
         params?: RestEndpointMethodTypes["projects"]["createColumn"]["parameters"]
@@ -7756,7 +7834,9 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
-
+    /**
+     * Deletes a project card
+     */
     deleteCard: {
       (
         params?: RestEndpointMethodTypes["projects"]["deleteCard"]["parameters"]
@@ -7764,7 +7844,9 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
-
+    /**
+     * Deletes a project column.
+     */
     deleteColumn: {
       (
         params?: RestEndpointMethodTypes["projects"]["deleteColumn"]["parameters"]
@@ -7784,7 +7866,9 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
-
+    /**
+     * Gets information about a project card.
+     */
     getCard: {
       (
         params?: RestEndpointMethodTypes["projects"]["getCard"]["parameters"]
@@ -7792,7 +7876,9 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
-
+    /**
+     * Gets information about a project column.
+     */
     getColumn: {
       (
         params?: RestEndpointMethodTypes["projects"]["getColumn"]["parameters"]
@@ -7812,7 +7898,9 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
-
+    /**
+     * Lists the project cards in a project.
+     */
     listCards: {
       (
         params?: RestEndpointMethodTypes["projects"]["listCards"]["parameters"]
@@ -7832,7 +7920,9 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
-
+    /**
+     * Lists the project columns in a project.
+     */
     listColumns: {
       (
         params?: RestEndpointMethodTypes["projects"]["listColumns"]["parameters"]
@@ -7864,7 +7954,9 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
-
+    /**
+     * Lists projects for a user.
+     */
     listForUser: {
       (
         params?: RestEndpointMethodTypes["projects"]["listForUser"]["parameters"]
@@ -10166,6 +10258,8 @@ export type RestEndpointMethods = {
      * Returns the total commit counts for the `owner` and total commit counts in `all`. `all` is everyone combined, including the `owner` in the last 52 weeks. If you'd like to get the commit counts for non-owners, you can subtract `owner` from `all`.
      *
      * The array order is oldest week (index 0) to most recent week.
+     *
+     * The most recent week is seven days ago at UTC midnight to today at UTC midnight.
      */
     getParticipationStats: {
       (
@@ -10768,7 +10862,17 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
-
+    /**
+     * Lists the teams that have access to the specified repository and that are also visible to the authenticated user.
+     *
+     * For a public repository, a team is listed only if that team added the public repository explicitly.
+     *
+     * Personal access tokens require the following scopes:
+     * * `public_repo` to call this endpoint on a public repository
+     * * `repo` to call this endpoint on a private repository (this scope also includes public repositories)
+     *
+     * This endpoint is not compatible with fine-grained personal access tokens.
+     */
     listTeams: {
       (
         params?: RestEndpointMethodTypes["repos"]["listTeams"]["parameters"]
@@ -10852,7 +10956,29 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
-
+    /**
+     * Removes a collaborator from a repository.
+     *
+     * To use this endpoint, the authenticated user must either be an administrator of the repository or target themselves for removal.
+     *
+     * This endpoint also:
+     * - Cancels any outstanding invitations
+     * - Unasigns the user from any issues
+     * - Removes access to organization projects if the user is not an organization member and is not a collaborator on any other organization repositories.
+     * - Unstars the repository
+     * - Updates access permissions to packages
+     *
+     * Removing a user as a collaborator has the following effects on forks:
+     *  - If the user had access to a fork through their membership to this repository, the user will also be removed from the fork.
+     *  - If the user had their own fork of the repository, the fork will be deleted.
+     *  - If the user still has read access to the repository, open pull requests by this user from a fork will be denied.
+     *
+     * **Note**: A user can still have access to the repository through organization permissions like base repository permissions.
+     *
+     * Although the API responds immediately, the additional permission updates might take some extra time to complete in the background.
+     *
+     * For more information on fork permissions, see "[About permissions and visibility of forks](https://docs.github.com/pull-requests/collaborating-with-pull-requests/working-with-forks/about-permissions-and-visibility-of-forks)".
+     */
     removeCollaborator: {
       (
         params?: RestEndpointMethodTypes["repos"]["removeCollaborator"]["parameters"]
@@ -12289,7 +12415,7 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * If the authenticated user is authenticated through basic authentication or OAuth with the `user` scope, then the response lists public and private profile information.
+     * If the authenticated user is authenticated with an OAuth token with the `user` scope, then the response lists public and private profile information.
      *
      * If the authenticated user is authenticated through OAuth without the `user` scope, then the response lists only public profile information.
      */

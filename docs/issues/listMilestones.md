@@ -8,6 +8,8 @@ type: API method
 
 # List milestones
 
+Lists milestones for a repository.
+
 ```js
 octokit.rest.issues.listMilestones({
   owner,
@@ -33,7 +35,7 @@ The account owner of the repository. The name is not case sensitive.
 </td></tr>
 <tr><td>repo</td><td>yes</td><td>
 
-The name of the repository. The name is not case sensitive.
+The name of the repository without the `.git` extension. The name is not case sensitive.
 
 </td></tr>
 <tr><td>state</td><td>no</td><td>
