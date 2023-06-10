@@ -119,7 +119,7 @@ async function generateRoutes() {
   writeFileSync(
     ROUTES_PATH,
     prettier.format(
-      `import { EndpointsDefaultsAndDecorations } from "../types";
+      `import type { EndpointsDefaultsAndDecorations } from "../types";
   const Endpoints: EndpointsDefaultsAndDecorations = ${JSON.stringify(
     sortKeys(newRoutes, { deep: true })
   )}
