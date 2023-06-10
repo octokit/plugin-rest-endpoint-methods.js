@@ -1,4 +1,4 @@
-import { EndpointsDefaultsAndDecorations } from "../types";
+import type { EndpointsDefaultsAndDecorations } from "../types";
 const Endpoints: EndpointsDefaultsAndDecorations = {
   actions: {
     addCustomLabelsToSelfHostedRunnerForOrg: [
