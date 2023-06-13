@@ -51,4 +51,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/migrations#list-repositories-in-an-organization-migration).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/migrations/orgs#list-repositories-in-an-organization-migration).

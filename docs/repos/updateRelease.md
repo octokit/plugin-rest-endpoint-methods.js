@@ -36,7 +36,7 @@ The account owner of the repository. The name is not case sensitive.
 </td></tr>
 <tr><td>repo</td><td>yes</td><td>
 
-The name of the repository. The name is not case sensitive.
+The name of the repository without the `.git` extension. The name is not case sensitive.
 
 </td></tr>
 <tr><td>release_id</td><td>yes</td><td>
@@ -51,7 +51,7 @@ The name of the tag.
 </td></tr>
 <tr><td>target_commitish</td><td>no</td><td>
 
-Specifies the commitish value that determines where the Git tag is created from. Can be any branch or commit SHA. Unused if the Git tag already exists. Default: the repository's default branch (usually `master`).
+Specifies the commitish value that determines where the Git tag is created from. Can be any branch or commit SHA. Unused if the Git tag already exists. Default: the repository's default branch.
 
 </td></tr>
 <tr><td>name</td><td>no</td><td>

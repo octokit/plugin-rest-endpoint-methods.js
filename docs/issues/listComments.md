@@ -8,7 +8,9 @@ type: API method
 
 # List issue comments
 
-Issue Comments are ordered by ascending ID.
+You can use the REST API to list comments on issues and pull requests. Every pull request is an issue, but not every issue is a pull request.
+
+Issue comments are ordered by ascending ID.
 
 ```js
 octokit.rest.issues.listComments({
@@ -36,7 +38,7 @@ The account owner of the repository. The name is not case sensitive.
 </td></tr>
 <tr><td>repo</td><td>yes</td><td>
 
-The name of the repository. The name is not case sensitive.
+The name of the repository without the `.git` extension. The name is not case sensitive.
 
 </td></tr>
 <tr><td>issue_number</td><td>yes</td><td>

@@ -41,7 +41,7 @@ The account owner of the repository. The name is not case sensitive.
 </td></tr>
 <tr><td>repo</td><td>yes</td><td>
 
-The name of the repository. The name is not case sensitive.
+The name of the repository without the `.git` extension. The name is not case sensitive.
 
 </td></tr>
 <tr><td>title</td><td>no</td><td>
@@ -52,6 +52,11 @@ The title of the new pull request. Required unless `issue` is specified.
 <tr><td>head</td><td>yes</td><td>
 
 The name of the branch where your changes are implemented. For cross-repository pull requests in the same network, namespace `head` with a user like this: `username:branch`.
+
+</td></tr>
+<tr><td>head_repo</td><td>no</td><td>
+
+The name of the repository where the changes in the pull request were made. This field is required for cross-repository pull requests if both repositories are owned by the same organization.
 
 </td></tr>
 <tr><td>base</td><td>yes</td><td>

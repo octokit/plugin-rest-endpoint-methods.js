@@ -47,4 +47,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/migrations#list-repositories-for-a-user-migration).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/migrations/users#list-repositories-for-a-user-migration).

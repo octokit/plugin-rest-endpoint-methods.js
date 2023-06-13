@@ -1,7 +1,7 @@
-import { Octokit } from "@octokit/core";
-import { EndpointOptions, RequestParameters, Route } from "@octokit/types";
-import { EndpointDecorations } from "./types";
-import { RestEndpointMethods } from "./generated/method-types";
+import type { Octokit } from "@octokit/core";
+import type { EndpointOptions, RequestParameters, Route } from "@octokit/types";
+import type { EndpointDecorations } from "./types";
+import type { RestEndpointMethods } from "./generated/method-types";
 import ENDPOINTS from "./generated/endpoints";
 
 const enpointMethodsMap = new Map();

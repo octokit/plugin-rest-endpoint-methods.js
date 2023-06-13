@@ -23,11 +23,11 @@ gzip -c analysis-data.sarif | base64 -w0
 
 <br>
 SARIF upload supports a maximum number of entries per the following data objects, and an analysis will be rejected if any of these objects is above its maximum value. For some objects, there are additional values over which the entries will be ignored while keeping the most important entries whenever applicable.
-To get the most out of your analysis when it includes data above the supported limits, try to optimize the analysis configuration (For example, for the CodeQL tool, identify and remove the most noisy queries).
+To get the most out of your analysis when it includes data above the supported limits, try to optimize the analysis configuration. For example, for the CodeQL tool, identify and remove the most noisy queries.
 
 | **SARIF data**                   | **Maximum values** | **Additional limits**                                                            |
 | -------------------------------- | :----------------: | -------------------------------------------------------------------------------- |
-| Runs per file                    |         15         |                                                                                  |
+| Runs per file                    |         20         |                                                                                  |
 | Results per run                  |       25,000       | Only the top 5,000 results will be included, prioritized by severity.            |
 | Rules per run                    |       25,000       |                                                                                  |
 | Tool extensions per run          |        100         |                                                                                  |
@@ -67,7 +67,7 @@ The account owner of the repository. The name is not case sensitive.
 </td></tr>
 <tr><td>repo</td><td>yes</td><td>
 
-The name of the repository. The name is not case sensitive.
+The name of the repository without the `.git` extension. The name is not case sensitive.
 
 </td></tr>
 <tr><td>commit_sha</td><td>yes</td><td>
@@ -111,4 +111,4 @@ This parameter is intended to help integrators ensure that the uploaded SARIF fi
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/code-scanning#upload-a-sarif-file).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/code-scanning#upload-an-analysis-as-sarif-data).

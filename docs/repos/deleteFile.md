@@ -46,7 +46,7 @@ The account owner of the repository. The name is not case sensitive.
 </td></tr>
 <tr><td>repo</td><td>yes</td><td>
 
-The name of the repository. The name is not case sensitive.
+The name of the repository without the `.git` extension. The name is not case sensitive.
 
 </td></tr>
 <tr><td>path</td><td>yes</td><td>
@@ -66,7 +66,7 @@ The blob SHA of the file being deleted.
 </td></tr>
 <tr><td>branch</td><td>no</td><td>
 
-The branch name. Default: the repository’s default branch (usually `master`)
+The branch name. Default: the repository’s default branch
 
 </td></tr>
 <tr><td>committer</td><td>no</td><td>

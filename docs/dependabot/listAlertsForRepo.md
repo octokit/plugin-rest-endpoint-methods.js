@@ -37,14 +37,14 @@ The account owner of the repository. The name is not case sensitive.
 </td></tr>
 <tr><td>repo</td><td>yes</td><td>
 
-The name of the repository. The name is not case sensitive.
+The name of the repository without the `.git` extension. The name is not case sensitive.
 
 </td></tr>
 <tr><td>state</td><td>no</td><td>
 
 A comma-separated list of states. If specified, only alerts with these states will be returned.
 
-Can be: `dismissed`, `fixed`, `open`
+Can be: `auto_dismissed`, `dismissed`, `fixed`, `open`
 
 </td></tr>
 <tr><td>severity</td><td>no</td><td>
@@ -100,12 +100,12 @@ The number of results per page (max 100).
 </td></tr>
 <tr><td>before</td><td>no</td><td>
 
-A cursor, as given in the [Link header](https://docs.github.com/rest/overview/resources-in-the-rest-api#link-header). If specified, the query only searches for results before this cursor.
+A cursor, as given in the [Link header](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api#using-link-headers). If specified, the query only searches for results before this cursor.
 
 </td></tr>
 <tr><td>after</td><td>no</td><td>
 
-A cursor, as given in the [Link header](https://docs.github.com/rest/overview/resources-in-the-rest-api#link-header). If specified, the query only searches for results after this cursor.
+A cursor, as given in the [Link header](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api#using-link-headers). If specified, the query only searches for results after this cursor.
 
 </td></tr>
 <tr><td>first</td><td>no</td><td>

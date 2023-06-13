@@ -79,7 +79,7 @@ The account owner of the repository. The name is not case sensitive.
 </td></tr>
 <tr><td>repo</td><td>yes</td><td>
 
-The name of the repository. The name is not case sensitive.
+The name of the repository without the `.git` extension. The name is not case sensitive.
 
 </td></tr>
 <tr><td>path</td><td>yes</td><td>
@@ -89,7 +89,7 @@ path parameter
 </td></tr>
 <tr><td>ref</td><td>no</td><td>
 
-The name of the commit/branch/tag. Default: the repository’s default branch (usually `master`)
+The name of the commit/branch/tag. Default: the repository’s default branch.
 
 </td></tr>
   </tbody>

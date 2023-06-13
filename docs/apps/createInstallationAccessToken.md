@@ -104,11 +104,6 @@ The level of permission to grant the access token to retrieve Pages statuses, co
 The level of permission to grant the access token for pull requests and related comments, assignees, labels, milestones, and merges.
 
 </td></tr>
-<tr><td>permissions.repository_announcement_banners</td><td>no</td><td>
-
-The level of permission to grant the access token to view and manage announcement banners for a repository.
-
-</td></tr>
 <tr><td>permissions.repository_hooks</td><td>no</td><td>
 
 The level of permission to grant the access token to manage the post-receive hooks for a repository.
@@ -177,6 +172,16 @@ The level of permission to grant the access token to view and manage announcemen
 <tr><td>permissions.organization_hooks</td><td>no</td><td>
 
 The level of permission to grant the access token to manage the post-receive hooks for an organization.
+
+</td></tr>
+<tr><td>permissions.organization_personal_access_tokens</td><td>no</td><td>
+
+The level of permission to grant the access token for viewing and managing fine-grained personal access token requests to an organization.
+
+</td></tr>
+<tr><td>permissions.organization_personal_access_token_requests</td><td>no</td><td>
+
+The level of permission to grant the access token for viewing and managing fine-grained personal access tokens that have been approved by an organization.
 
 </td></tr>
 <tr><td>permissions.organization_plan</td><td>no</td><td>

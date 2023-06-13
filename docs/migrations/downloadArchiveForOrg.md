@@ -41,4 +41,4 @@ The unique identifier of the migration.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/migrations#download-an-organization-migration-archive).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/migrations/orgs#download-an-organization-migration-archive).

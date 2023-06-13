@@ -8,7 +8,7 @@ type: API method
 
 # Create a scoped access token
 
-Use a non-scoped user-to-server OAuth access token to create a repository scoped and/or permission scoped user-to-server OAuth access token. You can specify which repositories the token can access and which permissions are granted to the token. You must use [Basic Authentication](https://docs.github.com/rest/overview/other-authentication-methods#basic-authentication) when accessing this endpoint, using the OAuth application's `client_id` and `client_secret` as the username and password. Invalid tokens will return `404 NOT FOUND`.
+Use a non-scoped user-to-server access token to create a repository scoped and/or permission scoped user-to-server access token. You can specify which repositories the token can access and which permissions are granted to the token. You must use [Basic Authentication](https://docs.github.com/rest/overview/other-authentication-methods#basic-authentication) when accessing this endpoint, using the `client_id` and `client_secret` of the GitHub App as the username and password. Invalid tokens will return `404 NOT FOUND`.
 
 ```js
 octokit.rest.apps.scopeToken({
@@ -35,7 +35,7 @@ The client ID of the GitHub app.
 </td></tr>
 <tr><td>access_token</td><td>yes</td><td>
 
-The OAuth access token used to authenticate to the GitHub API.
+The access token used to authenticate to the GitHub API.
 
 </td></tr>
 <tr><td>target</td><td>no</td><td>
@@ -118,11 +118,6 @@ The level of permission to grant the access token to retrieve Pages statuses, co
 The level of permission to grant the access token for pull requests and related comments, assignees, labels, milestones, and merges.
 
 </td></tr>
-<tr><td>permissions.repository_announcement_banners</td><td>no</td><td>
-
-The level of permission to grant the access token to view and manage announcement banners for a repository.
-
-</td></tr>
 <tr><td>permissions.repository_hooks</td><td>no</td><td>
 
 The level of permission to grant the access token to manage the post-receive hooks for a repository.
@@ -193,6 +188,16 @@ The level of permission to grant the access token to view and manage announcemen
 The level of permission to grant the access token to manage the post-receive hooks for an organization.
 
 </td></tr>
+<tr><td>permissions.organization_personal_access_tokens</td><td>no</td><td>
+
+The level of permission to grant the access token for viewing and managing fine-grained personal access token requests to an organization.
+
+</td></tr>
+<tr><td>permissions.organization_personal_access_token_requests</td><td>no</td><td>
+
+The level of permission to grant the access token for viewing and managing fine-grained personal access tokens that have been approved by an organization.
+
+</td></tr>
 <tr><td>permissions.organization_plan</td><td>no</td><td>
 
 The level of permission to grant the access token for viewing an organization's plan.
@@ -231,4 +236,4 @@ The level of permission to grant the access token to manage team discussions and
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/apps#create-a-scoped-access-token).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/apps/apps#create-a-scoped-access-token).

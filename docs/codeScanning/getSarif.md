@@ -36,7 +36,7 @@ The account owner of the repository. The name is not case sensitive.
 </td></tr>
 <tr><td>repo</td><td>yes</td><td>
 
-The name of the repository. The name is not case sensitive.
+The name of the repository without the `.git` extension. The name is not case sensitive.
 
 </td></tr>
 <tr><td>sarif_id</td><td>yes</td><td>
@@ -47,4 +47,4 @@ The SARIF ID obtained after uploading.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/code-scanning#list-recent-code-scanning-analyses-for-a-repository).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/code-scanning#get-information-about-a-sarif-upload).

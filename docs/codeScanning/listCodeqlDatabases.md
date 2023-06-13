@@ -39,10 +39,10 @@ The account owner of the repository. The name is not case sensitive.
 </td></tr>
 <tr><td>repo</td><td>yes</td><td>
 
-The name of the repository. The name is not case sensitive.
+The name of the repository without the `.git` extension. The name is not case sensitive.
 
 </td></tr>
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/code-scanning#list-codeql-databases).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/code-scanning#list-codeql-databases-for-a-repository).

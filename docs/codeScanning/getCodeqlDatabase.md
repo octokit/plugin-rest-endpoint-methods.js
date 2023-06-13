@@ -46,7 +46,7 @@ The account owner of the repository. The name is not case sensitive.
 </td></tr>
 <tr><td>repo</td><td>yes</td><td>
 
-The name of the repository. The name is not case sensitive.
+The name of the repository without the `.git` extension. The name is not case sensitive.
 
 </td></tr>
 <tr><td>language</td><td>yes</td><td>
@@ -57,4 +57,4 @@ The language of the CodeQL database.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/code-scanning#get-codeql-database).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/code-scanning#get-a-codeql-database-for-a-repository).

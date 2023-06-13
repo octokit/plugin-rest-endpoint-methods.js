@@ -8,6 +8,8 @@ type: API method
 
 # List project columns
 
+Lists the project columns in a project.
+
 ```js
 octokit.rest.projects.listColumns({
   project_id,

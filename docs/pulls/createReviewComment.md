@@ -1,6 +1,6 @@
 ---
 name: Create a review comment for a pull request
-example: octokit.rest.pulls.createReviewComment({ owner, repo, pull_number, body, commit_id, path, line })
+example: octokit.rest.pulls.createReviewComment({ owner, repo, pull_number, body, commit_id, path })
 route: POST /repos/{owner}/{repo}/pulls/{pull_number}/comments
 scope: pulls
 type: API method
@@ -24,7 +24,6 @@ octokit.rest.pulls.createReviewComment({
   body,
   commit_id,
   path,
-  line,
 });
 ```
 
@@ -46,7 +45,7 @@ The account owner of the repository. The name is not case sensitive.
 </td></tr>
 <tr><td>repo</td><td>yes</td><td>
 
-The name of the repository. The name is not case sensitive.
+The name of the repository without the `.git` extension. The name is not case sensitive.
 
 </td></tr>
 <tr><td>pull_number</td><td>yes</td><td>
@@ -79,9 +78,9 @@ The relative path to the file that necessitates a comment.
 In a split diff view, the side of the diff that the pull request's changes appear on. Can be `LEFT` or `RIGHT`. Use `LEFT` for deletions that appear in red. Use `RIGHT` for additions that appear in green or unchanged lines that appear in white and are shown for context. For a multi-line comment, side represents whether the last line of the comment range is a deletion or addition. For more information, see "[Diff view options](https://docs.github.com/articles/about-comparing-branches-in-pull-requests#diff-view-options)" in the GitHub Help documentation.
 
 </td></tr>
-<tr><td>line</td><td>yes</td><td>
+<tr><td>line</td><td>no</td><td>
 
-The line of the blob in the pull request diff that the comment applies to. For a multi-line comment, the last line of the range that your comment applies to.
+**Required unless using `subject_type:file`**. The line of the blob in the pull request diff that the comment applies to. For a multi-line comment, the last line of the range that your comment applies to.
 
 </td></tr>
 <tr><td>start_line</td><td>no</td><td>
@@ -97,6 +96,11 @@ The line of the blob in the pull request diff that the comment applies to. For a
 <tr><td>in_reply_to</td><td>no</td><td>
 
 The ID of the review comment to reply to. To find the ID of a review comment with ["List review comments on a pull request"](#list-review-comments-on-a-pull-request). When specified, all parameters other than `body` in the request body are ignored.
+
+</td></tr>
+<tr><td>subject_type</td><td>no</td><td>
+
+The level at which the comment is targeted.
 
 </td></tr>
   </tbody>

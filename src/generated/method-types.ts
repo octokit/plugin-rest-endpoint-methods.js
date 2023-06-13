@@ -1,5 +1,5 @@
-import { EndpointInterface, RequestInterface } from "@octokit/types";
-import { RestEndpointMethodTypes } from "./parameters-and-response-types";
+import type { EndpointInterface, RequestInterface } from "@octokit/types";
+import type { RestEndpointMethodTypes } from "./parameters-and-response-types";
 
 export type RestEndpointMethods = {
   actions: {
@@ -118,7 +118,7 @@ export type RestEndpointMethods = {
      * token with the `repo` scope to use this endpoint. GitHub Apps must have the `secrets` repository permission to use
      * this endpoint.
      *
-     * #### Example encrypting a secret using Node.js
+     * **Example encrypting a secret using Node.js**
      *
      * Encrypt your secret using the [libsodium-wrappers](https://www.npmjs.com/package/libsodium-wrappers) library.
      *
@@ -143,7 +143,7 @@ export type RestEndpointMethods = {
      * });
      * ```
      *
-     * #### Example encrypting a secret using Python
+     * **Example encrypting a secret using Python**
      *
      * Encrypt your secret using [pynacl](https://pynacl.readthedocs.io/en/latest/public/#nacl-public-sealedbox) with Python 3.
      *
@@ -159,7 +159,7 @@ export type RestEndpointMethods = {
      *   return b64encode(encrypted).decode("utf-8")
      * ```
      *
-     * #### Example encrypting a secret using C#
+     * **Example encrypting a secret using C#**
      *
      * Encrypt your secret using the [Sodium.Core](https://www.nuget.org/packages/Sodium.Core/) package.
      *
@@ -172,7 +172,7 @@ export type RestEndpointMethods = {
      * Console.WriteLine(Convert.ToBase64String(sealedPublicKeyBox));
      * ```
      *
-     * #### Example encrypting a secret using Ruby
+     * **Example encrypting a secret using Ruby**
      *
      * Encrypt your secret using the [rbnacl](https://github.com/RubyCrypto/rbnacl) gem.
      *
@@ -291,7 +291,7 @@ export type RestEndpointMethods = {
      * token with the `repo` scope to use this endpoint. GitHub Apps must have the `secrets` repository permission to use
      * this endpoint.
      *
-     * #### Example encrypting a secret using Node.js
+     * **Example encrypting a secret using Node.js**
      *
      * Encrypt your secret using the [libsodium-wrappers](https://www.npmjs.com/package/libsodium-wrappers) library.
      *
@@ -316,7 +316,7 @@ export type RestEndpointMethods = {
      * });
      * ```
      *
-     * #### Example encrypting a secret using Python
+     * **Example encrypting a secret using Python**
      *
      * Encrypt your secret using [pynacl](https://pynacl.readthedocs.io/en/latest/public/#nacl-public-sealedbox) with Python 3.
      *
@@ -332,7 +332,7 @@ export type RestEndpointMethods = {
      *   return b64encode(encrypted).decode("utf-8")
      * ```
      *
-     * #### Example encrypting a secret using C#
+     * **Example encrypting a secret using C#**
      *
      * Encrypt your secret using the [Sodium.Core](https://www.nuget.org/packages/Sodium.Core/) package.
      *
@@ -345,7 +345,7 @@ export type RestEndpointMethods = {
      * Console.WriteLine(Convert.ToBase64String(sealedPublicKeyBox));
      * ```
      *
-     * #### Example encrypting a secret using Ruby
+     * **Example encrypting a secret using Ruby**
      *
      * Encrypt your secret using the [rbnacl](https://github.com/RubyCrypto/rbnacl) gem.
      *
@@ -824,6 +824,34 @@ export type RestEndpointMethods = {
         params?: RestEndpointMethodTypes["actions"]["enableWorkflow"]["parameters"]
       ): Promise<
         RestEndpointMethodTypes["actions"]["enableWorkflow"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Generates a configuration that can be passed to the runner application at startup.
+     *
+     * You must authenticate using an access token with the `admin:org` scope to use this endpoint.
+     */
+    generateRunnerJitconfigForOrg: {
+      (
+        params?: RestEndpointMethodTypes["actions"]["generateRunnerJitconfigForOrg"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["actions"]["generateRunnerJitconfigForOrg"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Generates a configuration that can be passed to the runner application at startup.
+     *
+     * You must authenticate using an access token with the `repo` scope to use this endpoint.
+     */
+    generateRunnerJitconfigForRepo: {
+      (
+        params?: RestEndpointMethodTypes["actions"]["generateRunnerJitconfigForRepo"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["actions"]["generateRunnerJitconfigForRepo"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -1412,6 +1440,30 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
+     * Lists all organization secrets shared with a repository without revealing their encrypted values. You must authenticate using an access token with the `repo` scope to use this endpoint. GitHub Apps must have the `secrets` repository permission to use this endpoint.
+     */
+    listRepoOrganizationSecrets: {
+      (
+        params?: RestEndpointMethodTypes["actions"]["listRepoOrganizationSecrets"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["actions"]["listRepoOrganizationSecrets"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Lists all organiation variables shared with a repository. You must authenticate using an access token with the `repo` scope to use this endpoint. GitHub Apps must have the `actions_variables:read` repository permission to use this endpoint.
+     */
+    listRepoOrganizationVariables: {
+      (
+        params?: RestEndpointMethodTypes["actions"]["listRepoOrganizationVariables"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["actions"]["listRepoOrganizationVariables"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
      * Lists the required workflows in a repository. Anyone with read access to the repository can use this endpoint. If the repository is private you must use an access token with the `repo` scope. GitHub Apps must have the `actions:read` permission to use this endpoint. For more information, see "[Required Workflows](https://docs.github.com/actions/using-workflows/required-workflows)."
      */
     listRepoRequiredWorkflows: {
@@ -1782,6 +1834,23 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
+     * Approve or reject custom deployment protection rules provided by a GitHub App for a workflow run. For more information, see "[Using environments for deployment](https://docs.github.com/actions/deployment/targeting-different-environments/using-environments-for-deployment)."
+     *
+     * **Note:** GitHub Apps can only review their own custom deployment protection rules.
+     * To approve or reject pending deployments that are waiting for review from a specific person or team, see [`POST /repos/{owner}/{repo}/actions/runs/{run_id}/pending_deployments`](/rest/actions/workflow-runs#review-pending-deployments-for-a-workflow-run).
+     *
+     * GitHub Apps must have read and write permission for **Deployments** to use this endpoint.
+     */
+    reviewCustomGatesForRun: {
+      (
+        params?: RestEndpointMethodTypes["actions"]["reviewCustomGatesForRun"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["actions"]["reviewCustomGatesForRun"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
      * Approve or reject pending deployments that are waiting on approval by a required reviewer.
      *
      * Required reviewers with read access to the repository contents and deployments can use this endpoint. Required reviewers must authenticate using an access token with the `repo` scope to use this endpoint.
@@ -1798,10 +1867,6 @@ export type RestEndpointMethods = {
     /**
      * Sets the actions and reusable workflows that are allowed in an organization. To use this endpoint, the organization permission policy for `allowed_actions` must be configured to `selected`. For more information, see "[Set GitHub Actions permissions for an organization](#set-github-actions-permissions-for-an-organization)."
      *
-     * If the organization belongs to an enterprise that has `selected` actions and reusable workflows set at the enterprise level, then you cannot override any of the enterprise's allowed actions and reusable workflows settings.
-     *
-     * To use the `patterns_allowed` setting for private repositories, the organization must belong to an enterprise. If the organization does not belong to an enterprise, then the `patterns_allowed` setting only applies to public repositories in the organization.
-     *
      * You must authenticate using an access token with the `admin:org` scope to use this endpoint. GitHub Apps must have the `administration` organization permission to use this API.
      */
     setAllowedActionsOrganization: {
@@ -1815,10 +1880,6 @@ export type RestEndpointMethods = {
     };
     /**
      * Sets the actions and reusable workflows that are allowed in a repository. To use this endpoint, the repository permission policy for `allowed_actions` must be configured to `selected`. For more information, see "[Set GitHub Actions permissions for a repository](#set-github-actions-permissions-for-a-repository)."
-     *
-     * If the repository belongs to an organization or enterprise that has `selected` actions and reusable workflows set at the organization or enterprise levels, then you cannot override any of the allowed actions and reusable workflows settings.
-     *
-     * To use the `patterns_allowed` setting for private repositories, the repository must belong to an enterprise. If the repository does not belong to an enterprise, then the `patterns_allowed` setting only applies to public repositories.
      *
      * You must authenticate using an access token with the `repo` scope to use this endpoint. GitHub Apps must have the `administration` repository permission to use this API.
      */
@@ -1897,8 +1958,6 @@ export type RestEndpointMethods = {
     /**
      * Sets the GitHub Actions permissions policy for repositories and allowed actions and reusable workflows in an organization.
      *
-     * If the organization belongs to an enterprise that has set restrictive permissions at the enterprise level, such as `allowed_actions` to `selected` actions and reusable workflows, then you cannot override them for the organization.
-     *
      * You must authenticate using an access token with the `admin:org` scope to use this endpoint. GitHub Apps must have the `administration` organization permission to use this API.
      */
     setGithubActionsPermissionsOrganization: {
@@ -1912,8 +1971,6 @@ export type RestEndpointMethods = {
     };
     /**
      * Sets the GitHub Actions permissions policy for enabling GitHub Actions and allowed actions and reusable workflows in the repository.
-     *
-     * If the repository belongs to an organization or enterprise that has set restrictive permissions at the organization or enterprise levels, such as `allowed_actions` to `selected` actions and reusable workflows, then you cannot override them for the repository.
      *
      * You must authenticate using an access token with the `repo` scope to use this endpoint. GitHub Apps must have the `administration` repository permission to use this API.
      */
@@ -2244,7 +2301,9 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
-
+    /**
+     * **Note**: This API is not built to serve real-time use cases. Depending on the time of day, event latency can be anywhere from 30s to 6h.
+     */
     listRepoEvents: {
       (
         params?: RestEndpointMethodTypes["activity"]["listRepoEvents"]["parameters"]
@@ -2462,7 +2521,7 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * OAuth applications can use a special API method for checking OAuth token validity without exceeding the normal rate limits for failed login attempts. Authentication works differently with this particular endpoint. You must use [Basic Authentication](https://docs.github.com/rest/overview/other-authentication-methods#basic-authentication) to use this endpoint, where the username is the OAuth application `client_id` and the password is its `client_secret`. Invalid tokens will return `404 NOT FOUND`.
+     * OAuth applications and GitHub applications with OAuth authorizations can use this API method for checking OAuth token validity without exceeding the normal rate limits for failed login attempts. Authentication works differently with this particular endpoint. You must use [Basic Authentication](https://docs.github.com/rest/overview/other-authentication-methods#basic-authentication) to use this endpoint, where the username is the application `client_id` and the password is its `client_secret`. Invalid tokens will return `404 NOT FOUND`.
      */
     checkToken: {
       (
@@ -2498,8 +2557,8 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * OAuth application owners can revoke a grant for their OAuth application and a specific user. You must use [Basic Authentication](https://docs.github.com/rest/overview/other-authentication-methods#basic-authentication) when accessing this endpoint, using the OAuth application's `client_id` and `client_secret` as the username and password. You must also provide a valid OAuth `access_token` as an input parameter and the grant for the token's owner will be deleted.
-     * Deleting an OAuth application's grant will also delete all OAuth tokens associated with the application for the user. Once deleted, the application will have no access to the user's account and will no longer be listed on [the application authorizations settings screen within GitHub](https://github.com/settings/applications#authorized).
+     * OAuth and GitHub application owners can revoke a grant for their application and a specific user. You must use [Basic Authentication](https://docs.github.com/rest/overview/other-authentication-methods#basic-authentication) when accessing this endpoint, using the OAuth application's `client_id` and `client_secret` as the username and password. You must also provide a valid OAuth `access_token` as an input parameter and the grant for the token's owner will be deleted.
+     * Deleting an application's grant will also delete all OAuth tokens associated with the application for the user. Once deleted, the application will have no access to the user's account and will no longer be listed on [the application authorizations settings screen within GitHub](https://github.com/settings/applications#authorized).
      */
     deleteAuthorization: {
       (
@@ -2525,7 +2584,7 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * OAuth application owners can revoke a single token for an OAuth application. You must use [Basic Authentication](https://docs.github.com/rest/overview/other-authentication-methods#basic-authentication) when accessing this endpoint, using the OAuth application's `client_id` and `client_secret` as the username and password.
+     * OAuth  or GitHub application owners can revoke a single token for an OAuth application or a GitHub application with an OAuth authorization. You must use [Basic Authentication](https://docs.github.com/rest/overview/other-authentication-methods#basic-authentication) when accessing this endpoint, using the application's `client_id` and `client_secret` as the username and password.
      */
     deleteToken: {
       (
@@ -2719,6 +2778,18 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
+     * Lists all the pending installation requests for the authenticated GitHub App.
+     */
+    listInstallationRequestsForAuthenticatedApp: {
+      (
+        params?: RestEndpointMethodTypes["apps"]["listInstallationRequestsForAuthenticatedApp"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["apps"]["listInstallationRequestsForAuthenticatedApp"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
      * You must use a [JWT](https://docs.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint.
      *
      * The permissions the installation has are included under the `permissions` key.
@@ -2843,7 +2914,7 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Remove a single repository from an installation. The authenticated user must have admin access to the repository.
+     * Remove a single repository from an installation. The authenticated user must have admin access to the repository. The installation must have the `repository_selection` of `selected`.
      *
      * You must use a personal access token (which you can create via the [command line](https://docs.github.com/github/authenticating-to-github/creating-a-personal-access-token) or [Basic Authentication](https://docs.github.com/rest/overview/other-authentication-methods#basic-authentication)) to access this endpoint.
      * @deprecated octokit.rest.apps.removeRepoFromInstallation() has been renamed to octokit.rest.apps.removeRepoFromInstallationForAuthenticatedUser() (2021-10-05)
@@ -2858,7 +2929,7 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Remove a single repository from an installation. The authenticated user must have admin access to the repository.
+     * Remove a single repository from an installation. The authenticated user must have admin access to the repository. The installation must have the `repository_selection` of `selected`.
      *
      * You must use a personal access token (which you can create via the [command line](https://docs.github.com/github/authenticating-to-github/creating-a-personal-access-token) or [Basic Authentication](https://docs.github.com/rest/overview/other-authentication-methods#basic-authentication)) to access this endpoint.
      */
@@ -2872,7 +2943,7 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * OAuth applications can use this API method to reset a valid OAuth token without end-user involvement. Applications must save the "token" property in the response because changes take effect immediately. You must use [Basic Authentication](https://docs.github.com/rest/overview/other-authentication-methods#basic-authentication) when accessing this endpoint, using the OAuth application's `client_id` and `client_secret` as the username and password. Invalid tokens will return `404 NOT FOUND`.
+     * OAuth applications and GitHub applications with OAuth authorizations can use this API method to reset a valid OAuth token without end-user involvement. Applications must save the "token" property in the response because changes take effect immediately. You must use [Basic Authentication](https://docs.github.com/rest/overview/other-authentication-methods#basic-authentication) when accessing this endpoint, using the application's `client_id` and `client_secret` as the username and password. Invalid tokens will return `404 NOT FOUND`.
      */
     resetToken: {
       (
@@ -2898,7 +2969,7 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Use a non-scoped user-to-server OAuth access token to create a repository scoped and/or permission scoped user-to-server OAuth access token. You can specify which repositories the token can access and which permissions are granted to the token. You must use [Basic Authentication](https://docs.github.com/rest/overview/other-authentication-methods#basic-authentication) when accessing this endpoint, using the OAuth application's `client_id` and `client_secret` as the username and password. Invalid tokens will return `404 NOT FOUND`.
+     * Use a non-scoped user-to-server access token to create a repository scoped and/or permission scoped user-to-server access token. You can specify which repositories the token can access and which permissions are granted to the token. You must use [Basic Authentication](https://docs.github.com/rest/overview/other-authentication-methods#basic-authentication) when accessing this endpoint, using the `client_id` and `client_secret` of the GitHub App as the username and password. Invalid tokens will return `404 NOT FOUND`.
      */
     scopeToken: {
       (
@@ -3342,6 +3413,20 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
+     * Gets a code scanning default setup configuration.
+     * You must use an access token with the `repo` scope to use this endpoint with private repos or the `public_repo`
+     * scope for public repos. GitHub Apps must have the `repo` write permission to use this endpoint.
+     */
+    getDefaultSetup: {
+      (
+        params?: RestEndpointMethodTypes["codeScanning"]["getDefaultSetup"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["codeScanning"]["getDefaultSetup"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
      * Gets information about a SARIF upload, including the status and the URL of the analysis that was uploaded so that you can retrieve details of the analysis. For more information, see "[Get a code scanning analysis for a repository](/rest/reference/code-scanning#get-a-code-scanning-analysis-for-a-repository)." You must use an access token with the `security_events` scope to use this endpoint with private repos, the `public_repo` scope also grants permission to read security events on public repos only. GitHub Apps must have the `security_events` read permission to use this endpoint.
      */
     getSarif: {
@@ -3480,6 +3565,20 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
+     * Updates a code scanning default setup configuration.
+     * You must use an access token with the `repo` scope to use this endpoint with private repos or the `public_repo`
+     * scope for public repos. GitHub Apps must have the `repo` write permission to use this endpoint.
+     */
+    updateDefaultSetup: {
+      (
+        params?: RestEndpointMethodTypes["codeScanning"]["updateDefaultSetup"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["codeScanning"]["updateDefaultSetup"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
      * Uploads SARIF data containing the results of a code scanning analysis to make the results available in a repository. You must use an access token with the `security_events` scope to use this endpoint for private repositories. You can also use tokens with the `public_repo` scope for public repositories only. GitHub Apps must have the `security_events` write permission to use this endpoint.
      *
      * There are two places where you can upload code scanning results.
@@ -3493,12 +3592,12 @@ export type RestEndpointMethods = {
      * ```
      * <br>
      * SARIF upload supports a maximum number of entries per the following data objects, and an analysis will be rejected if any of these objects is above its maximum value. For some objects, there are additional values over which the entries will be ignored while keeping the most important entries whenever applicable.
-     * To get the most out of your analysis when it includes data above the supported limits, try to optimize the analysis configuration (For example, for the CodeQL tool, identify and remove the most noisy queries).
+     * To get the most out of your analysis when it includes data above the supported limits, try to optimize the analysis configuration. For example, for the CodeQL tool, identify and remove the most noisy queries.
      *
      *
      * | **SARIF data**                   | **Maximum values** | **Additional limits**                                                            |
      * |----------------------------------|:------------------:|----------------------------------------------------------------------------------|
-     * | Runs per file                    |         15         |                                                                                  |
+     * | Runs per file                    |         20         |                                                                                  |
      * | Results per run                  |       25,000       | Only the top 5,000 results will be included, prioritized by severity.            |
      * | Rules per run                    |       25,000       |                                                                                  |
      * | Tool extensions per run          |        100         |                                                                                  |
@@ -3608,7 +3707,7 @@ export type RestEndpointMethods = {
      * [LibSodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages). You must authenticate using an access
      * token with the `admin:org` scope to use this endpoint.
      *
-     * #### Example encrypting a secret using Node.js
+     * **Example encrypting a secret using Node.js**
      *
      * Encrypt your secret using the [libsodium-wrappers](https://www.npmjs.com/package/libsodium-wrappers) library.
      *
@@ -3633,7 +3732,7 @@ export type RestEndpointMethods = {
      * });
      * ```
      *
-     * #### Example encrypting a secret using Python
+     * **Example encrypting a secret using Python**
      *
      * Encrypt your secret using [pynacl](https://pynacl.readthedocs.io/en/latest/public/#nacl-public-sealedbox) with Python 3.
      *
@@ -3649,7 +3748,7 @@ export type RestEndpointMethods = {
      *   return b64encode(encrypted).decode("utf-8")
      * ```
      *
-     * #### Example encrypting a secret using C#
+     * **Example encrypting a secret using C#**
      *
      * Encrypt your secret using the [Sodium.Core](https://www.nuget.org/packages/Sodium.Core/) package.
      *
@@ -3662,7 +3761,7 @@ export type RestEndpointMethods = {
      * Console.WriteLine(Convert.ToBase64String(sealedPublicKeyBox));
      * ```
      *
-     * #### Example encrypting a secret using Ruby
+     * **Example encrypting a secret using Ruby**
      *
      * Encrypt your secret using the [rbnacl](https://github.com/RubyCrypto/rbnacl) gem.
      *
@@ -3784,7 +3883,7 @@ export type RestEndpointMethods = {
      *
      * GitHub Apps must have write access to the `codespaces_user_secrets` user permission and `codespaces_secrets` repository permission on all referenced repositories to use this endpoint.
      *
-     * #### Example encrypting a secret using Node.js
+     * **Example encrypting a secret using Node.js**
      *
      * Encrypt your secret using the [libsodium-wrappers](https://www.npmjs.com/package/libsodium-wrappers) library.
      *
@@ -3809,7 +3908,7 @@ export type RestEndpointMethods = {
      * });
      * ```
      *
-     * #### Example encrypting a secret using Python
+     * **Example encrypting a secret using Python**
      *
      * Encrypt your secret using [pynacl](https://pynacl.readthedocs.io/en/latest/public/#nacl-public-sealedbox) with Python 3.
      *
@@ -3825,7 +3924,7 @@ export type RestEndpointMethods = {
      *   return b64encode(encrypted).decode("utf-8")
      * ```
      *
-     * #### Example encrypting a secret using C#
+     * **Example encrypting a secret using C#**
      *
      * Encrypt your secret using the [Sodium.Core](https://www.nuget.org/packages/Sodium.Core/) package.
      *
@@ -3838,7 +3937,7 @@ export type RestEndpointMethods = {
      * Console.WriteLine(Convert.ToBase64String(sealedPublicKeyBox));
      * ```
      *
-     * #### Example encrypting a secret using Ruby
+     * **Example encrypting a secret using Ruby**
      *
      * Encrypt your secret using the [rbnacl](https://github.com/RubyCrypto/rbnacl) gem.
      *
@@ -3893,6 +3992,19 @@ export type RestEndpointMethods = {
         params?: RestEndpointMethodTypes["codespaces"]["createWithRepoForAuthenticatedUser"]["parameters"]
       ): Promise<
         RestEndpointMethodTypes["codespaces"]["createWithRepoForAuthenticatedUser"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Codespaces for the specified users will no longer be billed to the organization.
+     * To use this endpoint, the billing settings for the organization must be set to `selected_members`. For information on how to change this setting please see [these docs].(https://docs.github.com/rest/codespaces/organizations#manage-access-control-for-organization-codespaces) You must authenticate using an access token with the `admin:org` scope to use this endpoint.
+     */
+    deleteCodespacesBillingUsers: {
+      (
+        params?: RestEndpointMethodTypes["codespaces"]["deleteCodespacesBillingUsers"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["codespaces"]["deleteCodespacesBillingUsers"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -4337,6 +4449,19 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
+     * Codespaces for the specified users will be billed to the organization.
+     * To use this endpoint, the billing settings for the organization must be set to `selected_members`. For information on how to change this setting please see [these docs].(https://docs.github.com/rest/codespaces/organizations#manage-access-control-for-organization-codespaces) You must authenticate using an access token with the `admin:org` scope to use this endpoint.
+     */
+    setCodespacesBillingUsers: {
+      (
+        params?: RestEndpointMethodTypes["codespaces"]["setCodespacesBillingUsers"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["codespaces"]["setCodespacesBillingUsers"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
      * Select the repositories that will use a user's codespace secret.
      *
      * You must authenticate using an access token with the `codespace` or `codespace:secrets` scope to use this endpoint. User must have Codespaces access to use this endpoint.
@@ -4534,7 +4659,7 @@ export type RestEndpointMethods = {
      * token with the `repo` scope to use this endpoint. GitHub Apps must have the `dependabot_secrets` repository
      * permission to use this endpoint.
      *
-     * #### Example encrypting a secret using Node.js
+     * **Example encrypting a secret using Node.js**
      *
      * Encrypt your secret using the [libsodium-wrappers](https://www.npmjs.com/package/libsodium-wrappers) library.
      *
@@ -4559,7 +4684,7 @@ export type RestEndpointMethods = {
      * });
      * ```
      *
-     * #### Example encrypting a secret using Python
+     * **Example encrypting a secret using Python**
      *
      * Encrypt your secret using [pynacl](https://pynacl.readthedocs.io/en/latest/public/#nacl-public-sealedbox) with Python 3.
      *
@@ -4575,7 +4700,7 @@ export type RestEndpointMethods = {
      *   return b64encode(encrypted).decode("utf-8")
      * ```
      *
-     * #### Example encrypting a secret using C#
+     * **Example encrypting a secret using C#**
      *
      * Encrypt your secret using the [Sodium.Core](https://www.nuget.org/packages/Sodium.Core/) package.
      *
@@ -4588,7 +4713,7 @@ export type RestEndpointMethods = {
      * Console.WriteLine(Convert.ToBase64String(sealedPublicKeyBox));
      * ```
      *
-     * #### Example encrypting a secret using Ruby
+     * **Example encrypting a secret using Ruby**
      *
      * Encrypt your secret using the [rbnacl](https://github.com/RubyCrypto/rbnacl) gem.
      *
@@ -4810,6 +4935,8 @@ export type RestEndpointMethods = {
      * You must use an access token with the `security_events` scope to use this endpoint with private repositories.
      * You can also use tokens with the `public_repo` scope for public repositories only.
      * GitHub Apps must have **Dependabot alerts** write permission to use this endpoint.
+     *
+     * To use this endpoint, you must have access to security alerts for the repository. For more information, see "[Granting access to security alerts](https://docs.github.com/repositories/managing-your-repositorys-settings-and-features/enabling-features-for-your-repository/managing-security-and-analysis-settings-for-your-repository#granting-access-to-security-alerts)."
      */
     updateAlert: {
       (
@@ -4846,6 +4973,18 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
+    /**
+     * Exports the software bill of materials (SBOM) for a repository in SPDX JSON format.
+     */
+    exportSbom: {
+      (
+        params?: RestEndpointMethodTypes["dependencyGraph"]["exportSbom"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["dependencyGraph"]["exportSbom"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
   };
   emojis: {
     /**
@@ -4855,50 +4994,6 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["emojis"]["get"]["parameters"]
       ): Promise<RestEndpointMethodTypes["emojis"]["get"]["response"]>;
-      defaults: RequestInterface["defaults"];
-      endpoint: EndpointInterface<{ url: string }>;
-    };
-  };
-  enterpriseAdmin: {
-    /**
-     * Add custom labels to a self-hosted runner configured in an enterprise.
-     *
-     * You must authenticate using an access token with the `manage_runners:enterprise` scope to use this endpoint.
-     */
-    addCustomLabelsToSelfHostedRunnerForEnterprise: {
-      (
-        params?: RestEndpointMethodTypes["enterpriseAdmin"]["addCustomLabelsToSelfHostedRunnerForEnterprise"]["parameters"]
-      ): Promise<
-        RestEndpointMethodTypes["enterpriseAdmin"]["addCustomLabelsToSelfHostedRunnerForEnterprise"]["response"]
-      >;
-      defaults: RequestInterface["defaults"];
-      endpoint: EndpointInterface<{ url: string }>;
-    };
-    /**
-     * Adds an organization to the list of selected organizations that are enabled for GitHub Actions in an enterprise. To use this endpoint, the enterprise permission policy for `enabled_organizations` must be configured to `selected`. For more information, see "[Set GitHub Actions permissions for an enterprise](#set-github-actions-permissions-for-an-enterprise)."
-     *
-     * You must authenticate using an access token with the `admin:enterprise` scope to use this endpoint.
-     */
-    enableSelectedOrganizationGithubActionsEnterprise: {
-      (
-        params?: RestEndpointMethodTypes["enterpriseAdmin"]["enableSelectedOrganizationGithubActionsEnterprise"]["parameters"]
-      ): Promise<
-        RestEndpointMethodTypes["enterpriseAdmin"]["enableSelectedOrganizationGithubActionsEnterprise"]["response"]
-      >;
-      defaults: RequestInterface["defaults"];
-      endpoint: EndpointInterface<{ url: string }>;
-    };
-    /**
-     * Lists all labels for a self-hosted runner configured in an enterprise.
-     *
-     * You must authenticate using an access token with the `manage_runners:enterprise` scope to use this endpoint.
-     */
-    listLabelsForSelfHostedRunnerForEnterprise: {
-      (
-        params?: RestEndpointMethodTypes["enterpriseAdmin"]["listLabelsForSelfHostedRunnerForEnterprise"]["parameters"]
-      ): Promise<
-        RestEndpointMethodTypes["enterpriseAdmin"]["listLabelsForSelfHostedRunnerForEnterprise"]["response"]
-      >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
@@ -5117,7 +5212,7 @@ export type RestEndpointMethods = {
      * | `unsigned` | The object does not include a signature. |
      * | `unknown_signature_type` | A non-PGP signature was found in the commit. |
      * | `no_user` | No user was associated with the `committer` email address in the commit. |
-     * | `unverified_email` | The `committer` email address in the commit was associated with a user, but the email address is not verified on her/his account. |
+     * | `unverified_email` | The `committer` email address in the commit was associated with a user, but the email address is not verified on their account. |
      * | `bad_email` | The `committer` email address in the commit is not included in the identities of the PGP key that made the signature. |
      * | `unknown_key` | The key that made the signature has not been registered with any user's account. |
      * | `malformed_signature` | There was an error parsing the signature. |
@@ -5166,7 +5261,7 @@ export type RestEndpointMethods = {
      * | `unsigned` | The object does not include a signature. |
      * | `unknown_signature_type` | A non-PGP signature was found in the commit. |
      * | `no_user` | No user was associated with the `committer` email address in the commit. |
-     * | `unverified_email` | The `committer` email address in the commit was associated with a user, but the email address is not verified on her/his account. |
+     * | `unverified_email` | The `committer` email address in the commit was associated with a user, but the email address is not verified on their account. |
      * | `bad_email` | The `committer` email address in the commit is not included in the identities of the PGP key that made the signature. |
      * | `unknown_key` | The key that made the signature has not been registered with any user's account. |
      * | `malformed_signature` | There was an error parsing the signature. |
@@ -5239,7 +5334,7 @@ export type RestEndpointMethods = {
      * | `unsigned` | The object does not include a signature. |
      * | `unknown_signature_type` | A non-PGP signature was found in the commit. |
      * | `no_user` | No user was associated with the `committer` email address in the commit. |
-     * | `unverified_email` | The `committer` email address in the commit was associated with a user, but the email address is not verified on her/his account. |
+     * | `unverified_email` | The `committer` email address in the commit was associated with a user, but the email address is not verified on their account. |
      * | `bad_email` | The `committer` email address in the commit is not included in the identities of the PGP key that made the signature. |
      * | `unknown_key` | The key that made the signature has not been registered with any user's account. |
      * | `malformed_signature` | There was an error parsing the signature. |
@@ -5288,7 +5383,7 @@ export type RestEndpointMethods = {
      * | `unsigned` | The object does not include a signature. |
      * | `unknown_signature_type` | A non-PGP signature was found in the commit. |
      * | `no_user` | No user was associated with the `committer` email address in the commit. |
-     * | `unverified_email` | The `committer` email address in the commit was associated with a user, but the email address is not verified on her/his account. |
+     * | `unverified_email` | The `committer` email address in the commit was associated with a user, but the email address is not verified on their account. |
      * | `bad_email` | The `committer` email address in the commit is not included in the identities of the PGP key that made the signature. |
      * | `unknown_key` | The key that made the signature has not been registered with any user's account. |
      * | `malformed_signature` | There was an error parsing the signature. |
@@ -5531,7 +5626,9 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
-
+    /**
+     * Adds labels to an issue. If you provide an empty array of labels, all labels are removed from the issue.
+     */
     addLabels: {
       (
         params?: RestEndpointMethodTypes["issues"]["addLabels"]["parameters"]
@@ -5584,7 +5681,13 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * This endpoint triggers [notifications](https://docs.github.com/github/managing-subscriptions-and-notifications-on-github/about-notifications). Creating content too quickly using this endpoint may result in secondary rate limiting. See "[Secondary rate limits](https://docs.github.com/rest/overview/resources-in-the-rest-api#secondary-rate-limits)" and "[Dealing with secondary rate limits](https://docs.github.com/rest/guides/best-practices-for-integrators#dealing-with-secondary-rate-limits)" for details.
+     * You can use the REST API to create comments on issues and pull requests. Every pull request is an issue, but not every issue is a pull request.
+     *
+     * This endpoint triggers [notifications](https://docs.github.com/github/managing-subscriptions-and-notifications-on-github/about-notifications).
+     * Creating content too quickly using this endpoint may result in secondary rate limiting.
+     * See "[Secondary rate limits](https://docs.github.com/rest/overview/resources-in-the-rest-api#secondary-rate-limits)"
+     * and "[Dealing with secondary rate limits](https://docs.github.com/rest/guides/best-practices-for-integrators#dealing-with-secondary-rate-limits)"
+     * for details.
      */
     createComment: {
       (
@@ -5595,7 +5698,9 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
-
+    /**
+     * Creates a label for the specified repository with the given name and color. The name and color parameters are required. The color must be a valid [hexadecimal color code](http://www.color-hex.com/).
+     */
     createLabel: {
       (
         params?: RestEndpointMethodTypes["issues"]["createLabel"]["parameters"]
@@ -5603,7 +5708,9 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
-
+    /**
+     * Creates a milestone.
+     */
     createMilestone: {
       (
         params?: RestEndpointMethodTypes["issues"]["createMilestone"]["parameters"]
@@ -5613,7 +5720,9 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
-
+    /**
+     * You can use the REST API to delete comments on issues and pull requests. Every pull request is an issue, but not every issue is a pull request.
+     */
     deleteComment: {
       (
         params?: RestEndpointMethodTypes["issues"]["deleteComment"]["parameters"]
@@ -5623,7 +5732,9 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
-
+    /**
+     * Deletes a label using the given label name.
+     */
     deleteLabel: {
       (
         params?: RestEndpointMethodTypes["issues"]["deleteLabel"]["parameters"]
@@ -5631,7 +5742,9 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
-
+    /**
+     * Deletes a milestone using the given milestone number.
+     */
     deleteMilestone: {
       (
         params?: RestEndpointMethodTypes["issues"]["deleteMilestone"]["parameters"]
@@ -5661,7 +5774,9 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
-
+    /**
+     * You can use the REST API to get comments on issues and pull requests. Every pull request is an issue, but not every issue is a pull request.
+     */
     getComment: {
       (
         params?: RestEndpointMethodTypes["issues"]["getComment"]["parameters"]
@@ -5669,7 +5784,9 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
-
+    /**
+     * Gets a single event by the event id.
+     */
     getEvent: {
       (
         params?: RestEndpointMethodTypes["issues"]["getEvent"]["parameters"]
@@ -5677,7 +5794,9 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
-
+    /**
+     * Gets a label using the given name.
+     */
     getLabel: {
       (
         params?: RestEndpointMethodTypes["issues"]["getLabel"]["parameters"]
@@ -5685,7 +5804,9 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
-
+    /**
+     * Gets a milestone using the given milestone number.
+     */
     getMilestone: {
       (
         params?: RestEndpointMethodTypes["issues"]["getMilestone"]["parameters"]
@@ -5724,7 +5845,9 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Issue Comments are ordered by ascending ID.
+     * You can use the REST API to list comments on issues and pull requests. Every pull request is an issue, but not every issue is a pull request.
+     *
+     * Issue comments are ordered by ascending ID.
      */
     listComments: {
       (
@@ -5734,7 +5857,9 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * By default, Issue Comments are ordered by ascending ID.
+     * You can use the REST API to list comments on issues and pull requests for a repository. Every pull request is an issue, but not every issue is a pull request.
+     *
+     * By default, issue comments are ordered by ascending ID.
      */
     listCommentsForRepo: {
       (
@@ -5745,7 +5870,9 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
-
+    /**
+     * Lists all events for an issue.
+     */
     listEvents: {
       (
         params?: RestEndpointMethodTypes["issues"]["listEvents"]["parameters"]
@@ -5753,7 +5880,9 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
-
+    /**
+     * Lists events for a repository.
+     */
     listEventsForRepo: {
       (
         params?: RestEndpointMethodTypes["issues"]["listEventsForRepo"]["parameters"]
@@ -5763,7 +5892,9 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
-
+    /**
+     * List all timeline events for an issue.
+     */
     listEventsForTimeline: {
       (
         params?: RestEndpointMethodTypes["issues"]["listEventsForTimeline"]["parameters"]
@@ -5820,7 +5951,9 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
-
+    /**
+     * Lists labels for issues in a milestone.
+     */
     listLabelsForMilestone: {
       (
         params?: RestEndpointMethodTypes["issues"]["listLabelsForMilestone"]["parameters"]
@@ -5830,7 +5963,9 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
-
+    /**
+     * Lists all labels for a repository.
+     */
     listLabelsForRepo: {
       (
         params?: RestEndpointMethodTypes["issues"]["listLabelsForRepo"]["parameters"]
@@ -5840,7 +5975,9 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
-
+    /**
+     * Lists all labels for an issue.
+     */
     listLabelsOnIssue: {
       (
         params?: RestEndpointMethodTypes["issues"]["listLabelsOnIssue"]["parameters"]
@@ -5850,7 +5987,9 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
-
+    /**
+     * Lists milestones for a repository.
+     */
     listMilestones: {
       (
         params?: RestEndpointMethodTypes["issues"]["listMilestones"]["parameters"]
@@ -5872,7 +6011,9 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
-
+    /**
+     * Removes all labels from an issue.
+     */
     removeAllLabels: {
       (
         params?: RestEndpointMethodTypes["issues"]["removeAllLabels"]["parameters"]
@@ -5934,7 +6075,9 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
-
+    /**
+     * You can use the REST API to update comments on issues and pull requests. Every pull request is an issue, but not every issue is a pull request.
+     */
     updateComment: {
       (
         params?: RestEndpointMethodTypes["issues"]["updateComment"]["parameters"]
@@ -5944,7 +6087,9 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
-
+    /**
+     * Updates a label using the given label name.
+     */
     updateLabel: {
       (
         params?: RestEndpointMethodTypes["issues"]["updateLabel"]["parameters"]
@@ -6017,7 +6162,11 @@ export type RestEndpointMethods = {
     /**
      * Returns meta information about GitHub, including a list of GitHub's IP addresses. For more information, see "[About GitHub's IP addresses](https://docs.github.com/articles/about-github-s-ip-addresses/)."
      *
-     * **Note:** The IP addresses shown in the documentation's response are only example values. You must always query the API directly to get the latest list of IP addresses.
+     * The API's response also includes a list of GitHub's domain names.
+     *
+     * The values shown in the documentation's response are example values. You must always query the API directly to get the latest values.
+     *
+     * **Note:** This endpoint returns both IPv4 and IPv6 addresses. However, not all features support IPv6. You should refer to the specific documentation for each feature to determine if IPv6 is supported.
      */
     get: {
       (params?: RestEndpointMethodTypes["meta"]["get"]["parameters"]): Promise<
@@ -6070,6 +6219,10 @@ export type RestEndpointMethods = {
   migrations: {
     /**
      * Stop an import for a repository.
+     *
+     * **Warning:** Support for importing Mercurial, Subversion and Team Foundation Version Control repositories will end
+     * on October 17, 2023. For more details, see [changelog](https://gh.io/github-importer-non-git-eol). In the coming weeks, we will update
+     * these docs to reflect relevant changes to the API and will contact all integrators using the "Source imports" API.
      */
     cancelImport: {
       (
@@ -6081,7 +6234,7 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Deletes a previous migration archive. Downloadable migration archives are automatically deleted after seven days. Migration metadata, which is returned in the [List user migrations](https://docs.github.com/rest/reference/migrations#list-user-migrations) and [Get a user migration status](https://docs.github.com/rest/reference/migrations#get-a-user-migration-status) endpoints, will continue to be available even after an archive is deleted.
+     * Deletes a previous migration archive. Downloadable migration archives are automatically deleted after seven days. Migration metadata, which is returned in the [List user migrations](https://docs.github.com/rest/migrations/users#list-user-migrations) and [Get a user migration status](https://docs.github.com/rest/migrations/users#get-a-user-migration-status) endpoints, will continue to be available even after an archive is deleted.
      */
     deleteArchiveForAuthenticatedUser: {
       (
@@ -6151,7 +6304,11 @@ export type RestEndpointMethods = {
     /**
      * Each type of source control system represents authors in a different way. For example, a Git commit author has a display name and an email address, but a Subversion commit author just has a username. The GitHub Importer will make the author information valid, but the author might not be correct. For example, it will change the bare Subversion username `hubot` into something like `hubot <hubot@12341234-abab-fefe-8787-fedcba987654>`.
      *
-     * This endpoint and the [Map a commit author](https://docs.github.com/rest/reference/migrations#map-a-commit-author) endpoint allow you to provide correct Git author information.
+     * This endpoint and the [Map a commit author](https://docs.github.com/rest/migrations/source-imports#map-a-commit-author) endpoint allow you to provide correct Git author information.
+     *
+     * **Warning:** Support for importing Mercurial, Subversion and Team Foundation Version Control repositories will end
+     * on October 17, 2023. For more details, see [changelog](https://gh.io/github-importer-non-git-eol). In the coming weeks, we will update
+     * these docs to reflect relevant changes to the API and will contact all integrators using the "Source imports" API.
      */
     getCommitAuthors: {
       (
@@ -6164,6 +6321,10 @@ export type RestEndpointMethods = {
     };
     /**
      * View the progress of an import.
+     *
+     * **Warning:** Support for importing Mercurial, Subversion and Team Foundation Version Control repositories will end
+     * on October 17, 2023. For more details, see [changelog](https://gh.io/github-importer-non-git-eol). In the coming weeks, we will update
+     * these docs to reflect relevant changes to the API and will contact all integrators using the "Source imports" API.
      *
      * **Import status**
      *
@@ -6179,11 +6340,11 @@ export type RestEndpointMethods = {
      *
      * If there are problems, you will see one of these in the `status` field:
      *
-     * *   `auth_failed` - the import requires authentication in order to connect to the original repository. To update authentication for the import, please see the [Update an import](https://docs.github.com/rest/reference/migrations#update-an-import) section.
+     * *   `auth_failed` - the import requires authentication in order to connect to the original repository. To update authentication for the import, please see the [Update an import](https://docs.github.com/rest/migrations/source-imports#update-an-import) section.
      * *   `error` - the import encountered an error. The import progress response will include the `failed_step` and an error message. Contact [GitHub Support](https://support.github.com/contact?tags=dotcom-rest-api) for more information.
-     * *   `detection_needs_auth` - the importer requires authentication for the originating repository to continue detection. To update authentication for the import, please see the [Update an import](https://docs.github.com/rest/reference/migrations#update-an-import) section.
-     * *   `detection_found_nothing` - the importer didn't recognize any source control at the URL. To resolve, [Cancel the import](https://docs.github.com/rest/reference/migrations#cancel-an-import) and [retry](https://docs.github.com/rest/reference/migrations#start-an-import) with the correct URL.
-     * *   `detection_found_multiple` - the importer found several projects or repositories at the provided URL. When this is the case, the Import Progress response will also include a `project_choices` field with the possible project choices as values. To update project choice, please see the [Update an import](https://docs.github.com/rest/reference/migrations#update-an-import) section.
+     * *   `detection_needs_auth` - the importer requires authentication for the originating repository to continue detection. To update authentication for the import, please see the [Update an import](https://docs.github.com/rest/migrations/source-imports#update-an-import) section.
+     * *   `detection_found_nothing` - the importer didn't recognize any source control at the URL. To resolve, [Cancel the import](https://docs.github.com/rest/migrations/source-imports#cancel-an-import) and [retry](https://docs.github.com/rest/migrations/source-imports#start-an-import) with the correct URL.
+     * *   `detection_found_multiple` - the importer found several projects or repositories at the provided URL. When this is the case, the Import Progress response will also include a `project_choices` field with the possible project choices as values. To update project choice, please see the [Update an import](https://docs.github.com/rest/migrations/source-imports#update-an-import) section.
      *
      * **The project_choices field**
      *
@@ -6209,6 +6370,10 @@ export type RestEndpointMethods = {
     };
     /**
      * List files larger than 100MB found during the import
+     *
+     * **Warning:** Support for importing Mercurial, Subversion and Team Foundation Version Control repositories will end
+     * on October 17, 2023. For more details, see [changelog](https://gh.io/github-importer-non-git-eol). In the coming weeks, we will update
+     * these docs to reflect relevant changes to the API and will contact all integrators using the "Source imports" API.
      */
     getLargeFiles: {
       (
@@ -6227,7 +6392,7 @@ export type RestEndpointMethods = {
      * *   `exported` - the migration finished successfully.
      * *   `failed` - the migration failed.
      *
-     * Once the migration has been `exported` you can [download the migration archive](https://docs.github.com/rest/reference/migrations#download-a-user-migration-archive).
+     * Once the migration has been `exported` you can [download the migration archive](https://docs.github.com/rest/migrations/users#download-a-user-migration-archive).
      */
     getStatusForAuthenticatedUser: {
       (
@@ -6270,7 +6435,9 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Lists the most recent migrations.
+     * Lists the most recent migrations, including both exports (which can be started through the REST API) and imports (which cannot be started using the REST API).
+     *
+     * A list of `repositories` is only returned for export migrations.
      */
     listForOrg: {
       (
@@ -6319,7 +6486,12 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Update an author's identity for the import. Your application can continue updating authors any time before you push new commits to the repository.
+     * Update an author's identity for the import. Your application can continue updating authors any time before you push
+     * new commits to the repository.
+     *
+     * **Warning:** Support for importing Mercurial, Subversion and Team Foundation Version Control repositories will end
+     * on October 17, 2023. For more details, see [changelog](https://gh.io/github-importer-non-git-eol). In the coming weeks, we will update
+     * these docs to reflect relevant changes to the API and will contact all integrators using the "Source imports" API.
      */
     mapCommitAuthor: {
       (
@@ -6331,7 +6503,15 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * You can import repositories from Subversion, Mercurial, and TFS that include files larger than 100MB. This ability is powered by [Git LFS](https://git-lfs.github.com). You can learn more about our LFS feature and working with large files [on our help site](https://docs.github.com/articles/versioning-large-files/).
+     * You can import repositories from Subversion, Mercurial, and TFS that include files larger than 100MB. This ability
+     * is powered by [Git LFS](https://git-lfs.com).
+     *
+     * You can learn more about our LFS feature and working with large files [on our help
+     * site](https://docs.github.com/repositories/working-with-files/managing-large-files).
+     *
+     * **Warning:** Support for importing Mercurial, Subversion and Team Foundation Version Control repositories will end
+     * on October 17, 2023. For more details, see [changelog](https://gh.io/github-importer-non-git-eol). In the coming weeks, we will update
+     * these docs to reflect relevant changes to the API and will contact all integrators using the "Source imports" API.
      */
     setLfsPreference: {
       (
@@ -6367,7 +6547,8 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Start a source import to a GitHub repository using GitHub Importer.
+     * Start a source import to a GitHub repository using GitHub Importer. Importing into a GitHub repository with GitHub Actions enabled is not supported and will return a status `422 Unprocessable Entity` response.
+     * **Warning:** Support for importing Mercurial, Subversion and Team Foundation Version Control repositories will end on October 17, 2023. For more details, see [changelog](https://gh.io/github-importer-non-git-eol). In the coming weeks, we will update these docs to reflect relevant changes to the API and will contact all integrators using the "Source imports" API.
      */
     startImport: {
       (
@@ -6379,7 +6560,7 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Unlocks a repository. You can lock repositories when you [start a user migration](https://docs.github.com/rest/reference/migrations#start-a-user-migration). Once the migration is complete you can unlock each repository to begin using it again or [delete the repository](https://docs.github.com/rest/reference/repos#delete-a-repository) if you no longer need the source data. Returns a status of `404 Not Found` if the repository is not locked.
+     * Unlocks a repository. You can lock repositories when you [start a user migration](https://docs.github.com/rest/migrations/users#start-a-user-migration). Once the migration is complete you can unlock each repository to begin using it again or [delete the repository](https://docs.github.com/rest/repos/repos#delete-a-repository) if you no longer need the source data. Returns a status of `404 Not Found` if the repository is not locked.
      */
     unlockRepoForAuthenticatedUser: {
       (
@@ -6391,7 +6572,7 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Unlocks a repository that was locked for migration. You should unlock each migrated repository and [delete them](https://docs.github.com/rest/reference/repos#delete-a-repository) when the migration is complete and you no longer need the source data.
+     * Unlocks a repository that was locked for migration. You should unlock each migrated repository and [delete them](https://docs.github.com/rest/repos/repos#delete-a-repository) when the migration is complete and you no longer need the source data.
      */
     unlockRepoForOrg: {
       (
@@ -6409,6 +6590,10 @@ export type RestEndpointMethods = {
      * Some servers (e.g. TFS servers) can have several projects at a single URL. In those cases the import progress will
      * have the status `detection_found_multiple` and the Import Progress response will include a `project_choices` array.
      * You can select the project to import by providing one of the objects in the `project_choices` array in the update request.
+     *
+     * **Warning:** Support for importing Mercurial, Subversion and Team Foundation Version Control repositories will end
+     * on October 17, 2023. For more details, see [changelog](https://gh.io/github-importer-non-git-eol). In the coming weeks, we will update
+     * these docs to reflect relevant changes to the API and will contact all integrators using the "Source imports" API.
      */
     updateImport: {
       (
@@ -6481,7 +6666,9 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
-
+    /**
+     * Check if the provided user is a public member of the organization.
+     */
     checkPublicMembershipForUser: {
       (
         params?: RestEndpointMethodTypes["orgs"]["checkPublicMembershipForUser"]["parameters"]
@@ -6527,6 +6714,22 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
+    /**
+     * Deletes an organization and all its repositories.
+     *
+     * The organization login will be unavailable for 90 days after deletion.
+     *
+     * Please review the Terms of Service regarding account deletion before using this endpoint:
+     *
+     * https://docs.github.com/site-policy/github-terms/github-terms-of-service
+     */
+    delete: {
+      (
+        params?: RestEndpointMethodTypes["orgs"]["delete"]["parameters"]
+      ): Promise<RestEndpointMethodTypes["orgs"]["delete"]["response"]>;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
 
     deleteWebhook: {
       (
@@ -6536,7 +6739,7 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Enables or disables the specified security feature for all repositories in an organization.
+     * Enables or disables the specified security feature for all eligible repositories in an organization.
      *
      * To use this endpoint, you must be an organization owner or be member of a team with the security manager role.
      * A token with the 'write:org' scope is also required.
@@ -6566,7 +6769,9 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
-
+    /**
+     * If the authenticated user is an active or pending member of the organization, this endpoint will return the user's membership. If the authenticated user is not affiliated with the organization, a `404` is returned. This endpoint will return a `403` if the request is made by a GitHub App that is blocked by the organization.
+     */
     getMembershipForAuthenticatedUser: {
       (
         params?: RestEndpointMethodTypes["orgs"]["getMembershipForAuthenticatedUser"]["parameters"]
@@ -6627,7 +6832,7 @@ export type RestEndpointMethods = {
     /**
      * Lists all organizations, in the order that they were created on GitHub.
      *
-     * **Note:** Pagination is powered exclusively by the `since` parameter. Use the [Link header](https://docs.github.com/rest/overview/resources-in-the-rest-api#link-header) to get the URL for the next page of organizations.
+     * **Note:** Pagination is powered exclusively by the `since` parameter. Use the [Link header](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api#using-link-headers) to get the URL for the next page of organizations.
      */
     list: {
       (params?: RestEndpointMethodTypes["orgs"]["list"]["parameters"]): Promise<
@@ -6722,7 +6927,9 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
-
+    /**
+     * Lists all of the authenticated user's organization memberships.
+     */
     listMembershipsForAuthenticatedUser: {
       (
         params?: RestEndpointMethodTypes["orgs"]["listMembershipsForAuthenticatedUser"]["parameters"]
@@ -6745,7 +6952,65 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * The return hash contains a `role` field which refers to the Organization Invitation role and will be one of the following values: `direct_member`, `admin`, `billing_manager`, `hiring_manager`, or `reinstate`. If the invitee is not a GitHub member, the `login` field in the return hash will be `null`.
+     * Lists the repositories a fine-grained personal access token has access to. Only GitHub Apps can call this API,
+     * using the `organization_personal_access_tokens: read` permission.
+     *
+     * **Note**: Fine-grained PATs are in public beta. Related APIs, events, and functionality are subject to change.
+     */
+    listPatGrantRepositories: {
+      (
+        params?: RestEndpointMethodTypes["orgs"]["listPatGrantRepositories"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["orgs"]["listPatGrantRepositories"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Lists the repositories a fine-grained personal access token request is requesting access to. Only GitHub Apps can call this API,
+     * using the `organization_personal_access_token_requests: read` permission.
+     *
+     * **Note**: Fine-grained PATs are in public beta. Related APIs, events, and functionality are subject to change.
+     */
+    listPatGrantRequestRepositories: {
+      (
+        params?: RestEndpointMethodTypes["orgs"]["listPatGrantRequestRepositories"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["orgs"]["listPatGrantRequestRepositories"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Lists requests from organization members to access organization resources with a fine-grained personal access token. Only GitHub Apps can call this API,
+     * using the `organization_personal_access_token_requests: read` permission.
+     *
+     * **Note**: Fine-grained PATs are in public beta. Related APIs, events, and functionality are subject to change.
+     */
+    listPatGrantRequests: {
+      (
+        params?: RestEndpointMethodTypes["orgs"]["listPatGrantRequests"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["orgs"]["listPatGrantRequests"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Lists approved fine-grained personal access tokens owned by organization members that can access organization resources. Only GitHub Apps can call this API,
+     * using the `organization_personal_access_tokens: read` permission.
+     *
+     * **Note**: Fine-grained PATs are in public beta. Related APIs, events, and functionality are subject to change.
+     */
+    listPatGrants: {
+      (
+        params?: RestEndpointMethodTypes["orgs"]["listPatGrants"]["parameters"]
+      ): Promise<RestEndpointMethodTypes["orgs"]["listPatGrants"]["response"]>;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * The return hash contains a `role` field which refers to the Organization Invitation role and will be one of the following values: `direct_member`, `admin`, `billing_manager`, or `hiring_manager`. If the invitee is not a GitHub member, the `login` field in the return hash will be `null`.
      */
     listPendingInvitations: {
       (
@@ -6862,7 +7127,9 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
-
+    /**
+     * Removes the public membership for the authenticated user from the specified organization, unless public visibility is enforced by default.
+     */
     removePublicMembershipForAuthenticatedUser: {
       (
         params?: RestEndpointMethodTypes["orgs"]["removePublicMembershipForAuthenticatedUser"]["parameters"]
@@ -6884,6 +7151,36 @@ export type RestEndpointMethods = {
         params?: RestEndpointMethodTypes["orgs"]["removeSecurityManagerTeam"]["parameters"]
       ): Promise<
         RestEndpointMethodTypes["orgs"]["removeSecurityManagerTeam"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Approves or denies a pending request to access organization resources via a fine-grained personal access token. Only GitHub Apps can call this API,
+     * using the `organization_personal_access_token_requests: write` permission.
+     *
+     * **Note**: Fine-grained PATs are in public beta. Related APIs, events, and functionality are subject to change.
+     */
+    reviewPatGrantRequest: {
+      (
+        params?: RestEndpointMethodTypes["orgs"]["reviewPatGrantRequest"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["orgs"]["reviewPatGrantRequest"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Approves or denies multiple pending requests to access organization resources via a fine-grained personal access token. Only GitHub Apps can call this API,
+     * using the `organization_personal_access_token_requests: write` permission.
+     *
+     * **Note**: Fine-grained PATs are in public beta. Related APIs, events, and functionality are subject to change.
+     */
+    reviewPatGrantRequestsInBulk: {
+      (
+        params?: RestEndpointMethodTypes["orgs"]["reviewPatGrantRequestsInBulk"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["orgs"]["reviewPatGrantRequestsInBulk"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -6933,7 +7230,7 @@ export type RestEndpointMethods = {
     /**
      * **Parameter Deprecation Notice:** GitHub will replace and discontinue `members_allowed_repository_creation_type` in favor of more granular permissions. The new input parameters are `members_can_create_public_repositories`, `members_can_create_private_repositories` for all organizations and `members_can_create_internal_repositories` for organizations associated with an enterprise account using GitHub Enterprise Cloud or GitHub Enterprise Server 2.20+. For more information, see the [blog post](https://developer.github.com/changes/2019-12-03-internal-visibility-changes).
      *
-     * Enables an authenticated organization owner with the `admin:org` scope to update the organization's profile and member privileges.
+     * Enables an authenticated organization owner with the `admin:org` scope or the `repo` scope to update the organization's profile and member privileges.
      */
     update: {
       (
@@ -6942,12 +7239,44 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
-
+    /**
+     * Converts the authenticated user to an active member of the organization, if that user has a pending invitation from the organization.
+     */
     updateMembershipForAuthenticatedUser: {
       (
         params?: RestEndpointMethodTypes["orgs"]["updateMembershipForAuthenticatedUser"]["parameters"]
       ): Promise<
         RestEndpointMethodTypes["orgs"]["updateMembershipForAuthenticatedUser"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Updates the access an organization member has to organization resources via a fine-grained personal access token. Limited to revoking the token's existing access. Limited to revoking a token's existing access. Only GitHub Apps can call this API,
+     * using the `organization_personal_access_tokens: write` permission.
+     *
+     * **Note**: Fine-grained PATs are in public beta. Related APIs, events, and functionality are subject to change.
+     */
+    updatePatAccess: {
+      (
+        params?: RestEndpointMethodTypes["orgs"]["updatePatAccess"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["orgs"]["updatePatAccess"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Updates the access organization members have to organization resources via fine-grained personal access tokens. Limited to revoking a token's existing access. Only GitHub Apps can call this API,
+     * using the `organization_personal_access_tokens: write` permission.
+     *
+     * **Note**: Fine-grained PATs are in public beta. Related APIs, events, and functionality are subject to change.
+     */
+    updatePatAccesses: {
+      (
+        params?: RestEndpointMethodTypes["orgs"]["updatePatAccesses"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["orgs"]["updatePatAccesses"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -7229,6 +7558,45 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
+     * Lists all packages that are owned by the authenticated user within the user's namespace, and that encountered a conflict during a Docker migration.
+     * To use this endpoint, you must authenticate using an access token with the `read:packages` scope.
+     */
+    listDockerMigrationConflictingPackagesForAuthenticatedUser: {
+      (
+        params?: RestEndpointMethodTypes["packages"]["listDockerMigrationConflictingPackagesForAuthenticatedUser"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["packages"]["listDockerMigrationConflictingPackagesForAuthenticatedUser"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Lists all packages that are in a specific organization, are readable by the requesting user, and that encountered a conflict during a Docker migration.
+     * To use this endpoint, you must authenticate using an access token with the `read:packages` scope.
+     */
+    listDockerMigrationConflictingPackagesForOrganization: {
+      (
+        params?: RestEndpointMethodTypes["packages"]["listDockerMigrationConflictingPackagesForOrganization"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["packages"]["listDockerMigrationConflictingPackagesForOrganization"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Lists all packages that are in a specific user's namespace, that the requesting user has access to, and that encountered a conflict during Docker migration.
+     * To use this endpoint, you must authenticate using an access token with the `read:packages` scope.
+     */
+    listDockerMigrationConflictingPackagesForUser: {
+      (
+        params?: RestEndpointMethodTypes["packages"]["listDockerMigrationConflictingPackagesForUser"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["packages"]["listDockerMigrationConflictingPackagesForUser"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
      * Lists packages owned by the authenticated user within the user's namespace.
      *
      * To use this endpoint, you must authenticate using an access token with the `read:packages` scope. If the `package_type` belongs to a GitHub Packages registry that only supports repository-scoped permissions, your token must also include the `repo` scope. For the list of GitHub Packages registries that only support repository-scoped permissions, see "[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#permissions-for-repository-scoped-packages)."
@@ -7243,7 +7611,7 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Lists all packages in an organization readable by the user.
+     * Lists packages in an organization readable by the user.
      *
      * To use this endpoint, you must authenticate using an access token with the `read:packages` scope. If the `package_type` belongs to a registry that only supports repository-scoped permissions, your token must also include the `repo` scope. For the list of GitHub Packages registries that only support repository-scoped permissions, see "[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#permissions-for-repository-scoped-packages)."
      */
@@ -7408,7 +7776,9 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
-
+    /**
+     * Creates a new project column.
+     */
     createColumn: {
       (
         params?: RestEndpointMethodTypes["projects"]["createColumn"]["parameters"]
@@ -7464,7 +7834,9 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
-
+    /**
+     * Deletes a project card
+     */
     deleteCard: {
       (
         params?: RestEndpointMethodTypes["projects"]["deleteCard"]["parameters"]
@@ -7472,7 +7844,9 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
-
+    /**
+     * Deletes a project column.
+     */
     deleteColumn: {
       (
         params?: RestEndpointMethodTypes["projects"]["deleteColumn"]["parameters"]
@@ -7492,7 +7866,9 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
-
+    /**
+     * Gets information about a project card.
+     */
     getCard: {
       (
         params?: RestEndpointMethodTypes["projects"]["getCard"]["parameters"]
@@ -7500,7 +7876,9 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
-
+    /**
+     * Gets information about a project column.
+     */
     getColumn: {
       (
         params?: RestEndpointMethodTypes["projects"]["getColumn"]["parameters"]
@@ -7520,7 +7898,9 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
-
+    /**
+     * Lists the project cards in a project.
+     */
     listCards: {
       (
         params?: RestEndpointMethodTypes["projects"]["listCards"]["parameters"]
@@ -7540,7 +7920,9 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
-
+    /**
+     * Lists the project columns in a project.
+     */
     listColumns: {
       (
         params?: RestEndpointMethodTypes["projects"]["listColumns"]["parameters"]
@@ -7572,7 +7954,9 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
-
+    /**
+     * Lists projects for a user.
+     */
     listForUser: {
       (
         params?: RestEndpointMethodTypes["projects"]["listForUser"]["parameters"]
@@ -7640,6 +8024,9 @@ export type RestEndpointMethods = {
     };
   };
   pulls: {
+    /**
+     * Checks if a pull request has been merged into the base branch. The HTTP status of the response indicates whether or not the pull request has been merged; the response body is empty.
+     */
     checkIfMerged: {
       (
         params?: RestEndpointMethodTypes["pulls"]["checkIfMerged"]["parameters"]
@@ -7709,7 +8096,9 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
-
+    /**
+     * Deletes a pull request review that has not been submitted. Submitted reviews cannot be deleted.
+     */
     deletePendingReview: {
       (
         params?: RestEndpointMethodTypes["pulls"]["deletePendingReview"]["parameters"]
@@ -7765,7 +8154,9 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
-
+    /**
+     * Retrieves a pull request review by its ID.
+     */
     getReview: {
       (
         params?: RestEndpointMethodTypes["pulls"]["getReview"]["parameters"]
@@ -7874,6 +8265,7 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
+     * Merges a pull request into the base branch.
      * This endpoint triggers [notifications](https://docs.github.com/github/managing-subscriptions-and-notifications-on-github/about-notifications). Creating content too quickly using this endpoint may result in secondary rate limiting. See "[Secondary rate limits](https://docs.github.com/rest/overview/resources-in-the-rest-api#secondary-rate-limits)" and "[Dealing with secondary rate limits](https://docs.github.com/rest/guides/best-practices-for-integrators#dealing-with-secondary-rate-limits)" for details.
      */
     merge: {
@@ -7883,7 +8275,9 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
-
+    /**
+     * Removes review requests from a pull request for a given set of users and/or teams.
+     */
     removeRequestedReviewers: {
       (
         params?: RestEndpointMethodTypes["pulls"]["removeRequestedReviewers"]["parameters"]
@@ -8335,10 +8729,6 @@ export type RestEndpointMethods = {
      * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
      *
      * Grants the specified teams push access for this branch. You can also give push access to child teams.
-     *
-     * | Type    | Description                                                                                                                                |
-     * | ------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
-     * | `array` | The teams that can have push access. Use the team's `slug`. **Note**: The list of users, apps, and teams in total is limited to 100 items. |
      */
     addTeamAccessRestrictions: {
       (
@@ -8467,7 +8857,7 @@ export type RestEndpointMethods = {
     /**
      * Compares two commits against one another. You can compare branches in the same repository, or you can compare branches that exist in different repositories within the same repository network, including fork branches. For more information about how to view a repository's network, see "[Understanding connections between repositories](https://docs.github.com/repositories/viewing-activity-and-data-for-your-repository/understanding-connections-between-repositories)."
      *
-     * This endpoint is equivalent to running the `git log BASE...HEAD` command, but it returns commits in a different order. The `git log BASE...HEAD` command returns commits in reverse chronological order, whereas the API returns commits in chronological order. You can pass the appropriate [media type](https://docs.github.com/rest/overview/media-types/#commits-commit-comparison-and-pull-requests) to fetch diff and patch formats.
+     * This endpoint is equivalent to running the `git log BASE..HEAD` command, but it returns commits in a different order. The `git log BASE..HEAD` command returns commits in reverse chronological order, whereas the API returns commits in chronological order. You can pass the appropriate [media type](https://docs.github.com/rest/overview/media-types/#commits-commit-comparison-and-pull-requests) to fetch diff and patch formats.
      *
      * The API response includes details about the files that were changed between the two commits. This includes the status of the change (if a file was added, removed, modified, or renamed), and details of the change itself. For example, files with a `renamed` status have a `previous_filename` field showing the previous filename of the file, and files with a `modified` status have a `patch` field showing the changes made to the file.
      *
@@ -8504,7 +8894,7 @@ export type RestEndpointMethods = {
      * | `unsigned` | The object does not include a signature. |
      * | `unknown_signature_type` | A non-PGP signature was found in the commit. |
      * | `no_user` | No user was associated with the `committer` email address in the commit. |
-     * | `unverified_email` | The `committer` email address in the commit was associated with a user, but the email address is not verified on her/his account. |
+     * | `unverified_email` | The `committer` email address in the commit was associated with a user, but the email address is not verified on their account. |
      * | `bad_email` | The `committer` email address in the commit is not included in the identities of the PGP key that made the signature. |
      * | `unknown_key` | The key that made the signature has not been registered with any user's account. |
      * | `malformed_signature` | There was an error parsing the signature. |
@@ -8657,6 +9047,22 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
+     * Enable a custom deployment protection rule for an environment.
+     *
+     * You must authenticate using an access token with the `repo` scope to use this endpoint. Enabling a custom protection rule requires admin or owner permissions to the repository. GitHub Apps must have the `actions:write` permission to use this endpoint.
+     *
+     * For more information about the app that is providing this custom deployment rule, see the [documentation for the `GET /apps/{app_slug}` endpoint](https://docs.github.com/rest/apps/apps#get-an-app).
+     */
+    createDeploymentProtectionRule: {
+      (
+        params?: RestEndpointMethodTypes["repos"]["createDeploymentProtectionRule"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["repos"]["createDeploymentProtectionRule"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
      * Users with `push` access can create deployment statuses for a given deployment.
      *
      * GitHub Apps require `read & write` access to "Deployments" and `read-only` access to "Repo contents" (for private repos). OAuth Apps require the `repo_deployment` scope.
@@ -8714,6 +9120,8 @@ export type RestEndpointMethods = {
      * Create a fork for the authenticated user.
      *
      * **Note**: Forking a Repository happens asynchronously. You may have to wait a short period of time before you can access the git objects. If this takes longer than 5 minutes, be sure to contact [GitHub Support](https://support.github.com/contact?tags=dotcom-rest-api).
+     *
+     * **Note**: Although this endpoint works with GitHub Apps, the GitHub App must be installed on the destination account with access to all repositories and on the source account with access to the source repository.
      */
     createFork: {
       (
@@ -8772,6 +9180,18 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
+     * Create a repository ruleset for an organization.
+     */
+    createOrgRuleset: {
+      (
+        params?: RestEndpointMethodTypes["repos"]["createOrgRuleset"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["repos"]["createOrgRuleset"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
      * Create a GitHub Pages deployment for a repository.
      *
      * Users must have write permissions. GitHub Apps must have the `pages:write` permission to use this endpoint.
@@ -8788,7 +9208,7 @@ export type RestEndpointMethods = {
     /**
      * Configures a GitHub Pages site. For more information, see "[About GitHub Pages](/github/working-with-github-pages/about-github-pages)."
      *
-     * To use this endpoint, you must be a repository administrator, maintainer, or have the 'manage GitHub Pages settings' permission. A token with the `repo` scope or Pages write permission is required. GitHub Apps must have the `administrative:write` and `pages:write` permissions.
+     * To use this endpoint, you must be a repository administrator, maintainer, or have the 'manage GitHub Pages settings' permission. A token with the `repo` scope or Pages write permission is required. GitHub Apps must have the `administration:write` and `pages:write` permissions.
      */
     createPagesSite: {
       (
@@ -8808,6 +9228,18 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["repos"]["createRelease"]["parameters"]
       ): Promise<RestEndpointMethodTypes["repos"]["createRelease"]["response"]>;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Create a ruleset for a repository.
+     */
+    createRepoRuleset: {
+      (
+        params?: RestEndpointMethodTypes["repos"]["createRepoRuleset"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["repos"]["createRepoRuleset"]["response"]
+      >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
@@ -9053,9 +9485,21 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Deletes a a GitHub Pages site. For more information, see "[About GitHub Pages](/github/working-with-github-pages/about-github-pages).
+     * Delete a ruleset for an organization.
+     */
+    deleteOrgRuleset: {
+      (
+        params?: RestEndpointMethodTypes["repos"]["deleteOrgRuleset"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["repos"]["deleteOrgRuleset"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Deletes a GitHub Pages site. For more information, see "[About GitHub Pages](/github/working-with-github-pages/about-github-pages).
      *
-     * To use this endpoint, you must be a repository administrator, maintainer, or have the 'manage GitHub Pages settings' permission. A token with the `repo` scope or Pages write permission is required. GitHub Apps must have the `administrative:write` and `pages:write` permissions.
+     * To use this endpoint, you must be a repository administrator, maintainer, or have the 'manage GitHub Pages settings' permission. A token with the `repo` scope or Pages write permission is required. GitHub Apps must have the `administration:write` and `pages:write` permissions.
      */
     deletePagesSite: {
       (
@@ -9099,6 +9543,18 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
+     * Delete a ruleset for a repository.
+     */
+    deleteRepoRuleset: {
+      (
+        params?: RestEndpointMethodTypes["repos"]["deleteRepoRuleset"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["repos"]["deleteRepoRuleset"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
      * This deletes a tag protection state for a repository.
      * This endpoint is only available to repository administrators.
      */
@@ -9132,6 +9588,20 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
+     * Disables a custom deployment protection rule for an environment.
+     *
+     * You must authenticate using an access token with the `repo` scope to use this endpoint. Removing a custom protection rule requires admin or owner permissions to the repository. GitHub Apps must have the `actions:write` permission to use this endpoint. For more information, see "[Get an app](https://docs.github.com/rest/apps/apps#get-an-app)".
+     */
+    disableDeploymentProtectionRule: {
+      (
+        params?: RestEndpointMethodTypes["repos"]["disableDeploymentProtectionRule"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["repos"]["disableDeploymentProtectionRule"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
      * Disables Git LFS for a repository. Access tokens must have the `admin:enterprise` scope.
      */
     disableLfsForRepo: {
@@ -9144,7 +9614,9 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Disables dependency alerts and the dependency graph for a repository. The authenticated user must have admin access to the repository. For more information, see "[About security alerts for vulnerable dependencies](https://docs.github.com/articles/about-security-alerts-for-vulnerable-dependencies)".
+     * Disables dependency alerts and the dependency graph for a repository.
+     * The authenticated user must have admin access to the repository. For more information,
+     * see "[About security alerts for vulnerable dependencies](https://docs.github.com/articles/about-security-alerts-for-vulnerable-dependencies)".
      */
     disableVulnerabilityAlerts: {
       (
@@ -9292,6 +9764,20 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
+     * Gets all custom deployment protection rules that are enabled for an environment. Anyone with read access to the repository can use this endpoint. If the repository is private and you want to use a personal access token (classic), you must use an access token with the `repo` scope. GitHub Apps and fine-grained personal access tokens must have the `actions:read` permission to use this endpoint. For more information about environments, see "[Using environments for deployment](https://docs.github.com/en/actions/deployment/targeting-different-environments/using-environments-for-deployment)."
+     *
+     * For more information about the app that is providing this custom deployment rule, see the [documentation for the `GET /apps/{app_slug}` endpoint](https://docs.github.com/rest/apps/apps#get-an-app).
+     */
+    getAllDeploymentProtectionRules: {
+      (
+        params?: RestEndpointMethodTypes["repos"]["getAllDeploymentProtectionRules"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["repos"]["getAllDeploymentProtectionRules"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
      * Lists the environments for a repository.
      *
      * Anyone with read access to the repository can use this endpoint. If the repository is private, you must use an access token with the `repo` scope. GitHub Apps must have the `actions:read` permission to use this endpoint.
@@ -9367,6 +9853,18 @@ export type RestEndpointMethods = {
         params?: RestEndpointMethodTypes["repos"]["getBranchProtection"]["parameters"]
       ): Promise<
         RestEndpointMethodTypes["repos"]["getBranchProtection"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Returns all rules that apply to the specified branch.
+     */
+    getBranchRules: {
+      (
+        params?: RestEndpointMethodTypes["repos"]["getBranchRules"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["repos"]["getBranchRules"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -9455,7 +9953,7 @@ export type RestEndpointMethods = {
      * | `unsigned` | The object does not include a signature. |
      * | `unknown_signature_type` | A non-PGP signature was found in the commit. |
      * | `no_user` | No user was associated with the `committer` email address in the commit. |
-     * | `unverified_email` | The `committer` email address in the commit was associated with a user, but the email address is not verified on her/his account. |
+     * | `unverified_email` | The `committer` email address in the commit was associated with a user, but the email address is not verified on their account. |
      * | `bad_email` | The `committer` email address in the commit is not included in the identities of the PGP key that made the signature. |
      * | `unknown_key` | The key that made the signature has not been registered with any user's account. |
      * | `malformed_signature` | There was an error parsing the signature. |
@@ -9594,6 +10092,20 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
+    /**
+     * Gets an enabled custom deployment protection rule for an environment. Anyone with read access to the repository can use this endpoint. If the repository is private and you want to use a personal access token (classic), you must use an access token with the `repo` scope. GitHub Apps and fine-grained personal access tokens must have the `actions:read` permission to use this endpoint. For more information about environments, see "[Using environments for deployment](https://docs.github.com/en/actions/deployment/targeting-different-environments/using-environments-for-deployment)."
+     *
+     * For more information about the app that is providing this custom deployment rule, see [`GET /apps/{app_slug}`](https://docs.github.com/rest/apps/apps#get-an-app).
+     */
+    getCustomDeploymentProtectionRule: {
+      (
+        params?: RestEndpointMethodTypes["repos"]["getCustomDeploymentProtectionRule"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["repos"]["getCustomDeploymentProtectionRule"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
 
     getDeployKey: {
       (
@@ -9652,7 +10164,11 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
-
+    /**
+     * Gets information about the single most recent build of a GitHub Pages site.
+     *
+     * A token with the `repo` scope is required. GitHub Apps must have the `pages:read` permission.
+     */
     getLatestPagesBuild: {
       (
         params?: RestEndpointMethodTypes["repos"]["getLatestPagesBuild"]["parameters"]
@@ -9676,7 +10192,33 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
-
+    /**
+     * Get a repository ruleset for an organization.
+     */
+    getOrgRuleset: {
+      (
+        params?: RestEndpointMethodTypes["repos"]["getOrgRuleset"]["parameters"]
+      ): Promise<RestEndpointMethodTypes["repos"]["getOrgRuleset"]["response"]>;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Get all the repository rulesets for an organization.
+     */
+    getOrgRulesets: {
+      (
+        params?: RestEndpointMethodTypes["repos"]["getOrgRulesets"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["repos"]["getOrgRulesets"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Gets information about a GitHub Pages site.
+     *
+     * A token with the `repo` scope is required. GitHub Apps must have the `pages:read` permission.
+     */
     getPages: {
       (
         params?: RestEndpointMethodTypes["repos"]["getPages"]["parameters"]
@@ -9684,7 +10226,11 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
-
+    /**
+     * Gets information about a GitHub Pages build.
+     *
+     * A token with the `repo` scope is required. GitHub Apps must have the `pages:read` permission.
+     */
     getPagesBuild: {
       (
         params?: RestEndpointMethodTypes["repos"]["getPagesBuild"]["parameters"]
@@ -9712,6 +10258,8 @@ export type RestEndpointMethods = {
      * Returns the total commit counts for the `owner` and total commit counts in `all`. `all` is everyone combined, including the `owner` in the last 52 weeks. If you'd like to get the commit counts for non-owners, you can subtract `owner` from `all`.
      *
      * The array order is oldest week (index 0) to most recent week.
+     *
+     * The most recent week is seven days ago at UTC midnight to today at UTC midnight.
      */
     getParticipationStats: {
       (
@@ -9808,6 +10356,30 @@ export type RestEndpointMethods = {
         params?: RestEndpointMethodTypes["repos"]["getReleaseByTag"]["parameters"]
       ): Promise<
         RestEndpointMethodTypes["repos"]["getReleaseByTag"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Get a ruleset for a repository.
+     */
+    getRepoRuleset: {
+      (
+        params?: RestEndpointMethodTypes["repos"]["getRepoRuleset"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["repos"]["getRepoRuleset"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Get all the rulesets for a repository.
+     */
+    getRepoRulesets: {
+      (
+        params?: RestEndpointMethodTypes["repos"]["getRepoRulesets"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["repos"]["getRepoRulesets"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -10036,7 +10608,7 @@ export type RestEndpointMethods = {
      * | `unsigned` | The object does not include a signature. |
      * | `unknown_signature_type` | A non-PGP signature was found in the commit. |
      * | `no_user` | No user was associated with the `committer` email address in the commit. |
-     * | `unverified_email` | The `committer` email address in the commit was associated with a user, but the email address is not verified on her/his account. |
+     * | `unverified_email` | The `committer` email address in the commit was associated with a user, but the email address is not verified on their account. |
      * | `bad_email` | The `committer` email address in the commit is not included in the identities of the PGP key that made the signature. |
      * | `unknown_key` | The key that made the signature has not been registered with any user's account. |
      * | `malformed_signature` | There was an error parsing the signature. |
@@ -10060,6 +10632,22 @@ export type RestEndpointMethods = {
         params?: RestEndpointMethodTypes["repos"]["listContributors"]["parameters"]
       ): Promise<
         RestEndpointMethodTypes["repos"]["listContributors"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Gets all custom deployment protection rule integrations that are available for an environment. Anyone with read access to the repository can use this endpoint. If the repository is private and you want to use a personal access token (classic), you must use an access token with the `repo` scope. GitHub Apps and fine-grained personal access tokens must have the `actions:read` permission to use this endpoint.
+     *
+     * For more information about environments, see "[Using environments for deployment](https://docs.github.com/en/actions/deployment/targeting-different-environments/using-environments-for-deployment)."
+     *
+     * For more information about the app that is providing this custom deployment rule, see "[GET an app](https://docs.github.com/rest/apps/apps#get-an-app)".
+     */
+    listCustomDeploymentRuleIntegrations: {
+      (
+        params?: RestEndpointMethodTypes["repos"]["listCustomDeploymentRuleIntegrations"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["repos"]["listCustomDeploymentRuleIntegrations"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -10190,7 +10778,11 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
-
+    /**
+     * Lists builts of a GitHub Pages site.
+     *
+     * A token with the `repo` scope is required. GitHub Apps must have the `pages:read` permission.
+     */
     listPagesBuilds: {
       (
         params?: RestEndpointMethodTypes["repos"]["listPagesBuilds"]["parameters"]
@@ -10205,7 +10797,7 @@ export type RestEndpointMethods = {
      *
      * Note:
      * - For GitHub Enterprise Server, this endpoint will only list repositories available to all users on the enterprise.
-     * - Pagination is powered exclusively by the `since` parameter. Use the [Link header](https://docs.github.com/rest/overview/resources-in-the-rest-api#link-header) to get the URL for the next page of repositories.
+     * - Pagination is powered exclusively by the `since` parameter. Use the [Link header](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api#using-link-headers) to get the URL for the next page of repositories.
      */
     listPublic: {
       (
@@ -10270,7 +10862,17 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
-
+    /**
+     * Lists the teams that have access to the specified repository and that are also visible to the authenticated user.
+     *
+     * For a public repository, a team is listed only if that team added the public repository explicitly.
+     *
+     * Personal access tokens require the following scopes:
+     * * `public_repo` to call this endpoint on a public repository
+     * * `repo` to call this endpoint on a private repository (this scope also includes public repositories)
+     *
+     * This endpoint is not compatible with fine-grained personal access tokens.
+     */
     listTeams: {
       (
         params?: RestEndpointMethodTypes["repos"]["listTeams"]["parameters"]
@@ -10354,7 +10956,29 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
-
+    /**
+     * Removes a collaborator from a repository.
+     *
+     * To use this endpoint, the authenticated user must either be an administrator of the repository or target themselves for removal.
+     *
+     * This endpoint also:
+     * - Cancels any outstanding invitations
+     * - Unasigns the user from any issues
+     * - Removes access to organization projects if the user is not an organization member and is not a collaborator on any other organization repositories.
+     * - Unstars the repository
+     * - Updates access permissions to packages
+     *
+     * Removing a user as a collaborator has the following effects on forks:
+     *  - If the user had access to a fork through their membership to this repository, the user will also be removed from the fork.
+     *  - If the user had their own fork of the repository, the fork will be deleted.
+     *  - If the user still has read access to the repository, open pull requests by this user from a fork will be denied.
+     *
+     * **Note**: A user can still have access to the repository through organization permissions like base repository permissions.
+     *
+     * Although the API responds immediately, the additional permission updates might take some extra time to complete in the background.
+     *
+     * For more information on fork permissions, see "[About permissions and visibility of forks](https://docs.github.com/pull-requests/collaborating-with-pull-requests/working-with-forks/about-permissions-and-visibility-of-forks)".
+     */
     removeCollaborator: {
       (
         params?: RestEndpointMethodTypes["repos"]["removeCollaborator"]["parameters"]
@@ -10392,10 +11016,6 @@ export type RestEndpointMethods = {
      * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
      *
      * Removes the ability of a team to push to this branch. You can also remove push access for child teams.
-     *
-     * | Type    | Description                                                                                                                                         |
-     * | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
-     * | `array` | Teams that should no longer have push access. Use the team's `slug`. **Note**: The list of users, apps, and teams in total is limited to 100 items. |
      */
     removeTeamAccessRestrictions: {
       (
@@ -10516,10 +11136,6 @@ export type RestEndpointMethods = {
      * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
      *
      * Replaces the list of teams that have push access to this branch. This removes all teams that previously had push access and grants push access to the new list of teams. Team restrictions include child teams.
-     *
-     * | Type    | Description                                                                                                                                |
-     * | ------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
-     * | `array` | The teams that can have push access. Use the team's `slug`. **Note**: The list of users, apps, and teams in total is limited to 100 items. |
      */
     setTeamAccessRestrictions: {
       (
@@ -10627,7 +11243,7 @@ export type RestEndpointMethods = {
     /**
      * Updates information for a GitHub Pages site. For more information, see "[About GitHub Pages](/github/working-with-github-pages/about-github-pages).
      *
-     * To use this endpoint, you must be a repository administrator, maintainer, or have the 'manage GitHub Pages settings' permission. A token with the `repo` scope or Pages write permission is required. GitHub Apps must have the `administrative:write` and `pages:write` permissions.
+     * To use this endpoint, you must be a repository administrator, maintainer, or have the 'manage GitHub Pages settings' permission. A token with the `repo` scope or Pages write permission is required. GitHub Apps must have the `administration:write` and `pages:write` permissions.
      */
     updateInformationAboutPagesSite: {
       (
@@ -10644,6 +11260,18 @@ export type RestEndpointMethods = {
         params?: RestEndpointMethodTypes["repos"]["updateInvitation"]["parameters"]
       ): Promise<
         RestEndpointMethodTypes["repos"]["updateInvitation"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Update a ruleset for an organization.
+     */
+    updateOrgRuleset: {
+      (
+        params?: RestEndpointMethodTypes["repos"]["updateOrgRuleset"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["repos"]["updateOrgRuleset"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -10682,6 +11310,18 @@ export type RestEndpointMethods = {
         params?: RestEndpointMethodTypes["repos"]["updateReleaseAsset"]["parameters"]
       ): Promise<
         RestEndpointMethodTypes["repos"]["updateReleaseAsset"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Update a ruleset for a repository.
+     */
+    updateRepoRuleset: {
+      (
+        params?: RestEndpointMethodTypes["repos"]["updateRepoRuleset"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["repos"]["updateRepoRuleset"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -10741,7 +11381,7 @@ export type RestEndpointMethods = {
     };
     /**
      * This endpoint makes use of [a Hypermedia relation](https://docs.github.com/rest/overview/resources-in-the-rest-api#hypermedia) to determine which URL to access. The endpoint you call to upload release assets is specific to your release. Use the `upload_url` returned in
-     * the response of the [Create a release endpoint](https://docs.github.com/rest/reference/repos#create-a-release) to upload a release asset.
+     * the response of the [Create a release endpoint](https://docs.github.com/rest/releases/releases#create-a-release) to upload a release asset.
      *
      * You need to use an HTTP client which supports [SNI](http://en.wikipedia.org/wiki/Server_Name_Indication) to make calls to this endpoint.
      *
@@ -10757,6 +11397,7 @@ export type RestEndpointMethods = {
      * **Notes:**
      * *   GitHub renames asset filenames that have special characters, non-alphanumeric characters, and leading or trailing periods. The "[List assets for a release](https://docs.github.com/rest/reference/repos#list-assets-for-a-release)"
      * endpoint lists the renamed filenames. For more information and help, contact [GitHub Support](https://support.github.com/contact?tags=dotcom-rest-api).
+     * *   To find the `release_id` query the [`GET /repos/{owner}/{repo}/releases/latest` endpoint](https://docs.github.com/rest/releases/releases#get-the-latest-release).
      * *   If you upload an asset with the same filename as another uploaded asset, you'll receive an error and must delete the old file before you can re-upload the new asset.
      */
     uploadReleaseAsset: {
@@ -10789,6 +11430,8 @@ export type RestEndpointMethods = {
      * *   Only files smaller than 384 KB are searchable.
      * *   You must always include at least one search term when searching source code. For example, searching for [`language:go`](https://github.com/search?utf8=%E2%9C%93&q=language%3Ago&type=Code) is not valid, while [`amazing
      * language:go`](https://github.com/search?utf8=%E2%9C%93&q=amazing+language%3Ago&type=Code) is.
+     *
+     * This endpoint requires you to authenticate and limits you to 10 requests per minute.
      */
     code: {
       (
@@ -10928,19 +11571,6 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Gets code security and analysis settings for the specified enterprise.
-     * To use this endpoint, you must be an administrator of the enterprise, and you must use an access token with the `admin:enterprise` scope.
-     */
-    getSecurityAnalysisSettingsForEnterprise: {
-      (
-        params?: RestEndpointMethodTypes["secretScanning"]["getSecurityAnalysisSettingsForEnterprise"]["parameters"]
-      ): Promise<
-        RestEndpointMethodTypes["secretScanning"]["getSecurityAnalysisSettingsForEnterprise"]["response"]
-      >;
-      defaults: RequestInterface["defaults"];
-      endpoint: EndpointInterface<{ url: string }>;
-    };
-    /**
      * Lists secret scanning alerts for eligible repositories in an enterprise, from newest to oldest.
      * To use this endpoint, you must be a member of the enterprise, and you must use an access token with the `repo` scope or `security_events` scope. Alerts are only returned for organizations in the enterprise for which you are an organization owner or a [security manager](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization).
      */
@@ -11002,33 +11632,6 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Updates the settings for advanced security, secret scanning, and push protection for new repositories in an enterprise.
-     * To use this endpoint, you must be an administrator of the enterprise, and you must use an access token with the `admin:enterprise` scope.
-     */
-    patchSecurityAnalysisSettingsForEnterprise: {
-      (
-        params?: RestEndpointMethodTypes["secretScanning"]["patchSecurityAnalysisSettingsForEnterprise"]["parameters"]
-      ): Promise<
-        RestEndpointMethodTypes["secretScanning"]["patchSecurityAnalysisSettingsForEnterprise"]["response"]
-      >;
-      defaults: RequestInterface["defaults"];
-      endpoint: EndpointInterface<{ url: string }>;
-    };
-    /**
-     * Enables or disables the specified security feature for all repositories in an enterprise.
-     *
-     * To use this endpoint, you must be an administrator of the enterprise, and you must use an access token with the `admin:enterprise` scope.
-     */
-    postSecurityProductEnablementForEnterprise: {
-      (
-        params?: RestEndpointMethodTypes["secretScanning"]["postSecurityProductEnablementForEnterprise"]["parameters"]
-      ): Promise<
-        RestEndpointMethodTypes["secretScanning"]["postSecurityProductEnablementForEnterprise"]["response"]
-      >;
-      defaults: RequestInterface["defaults"];
-      endpoint: EndpointInterface<{ url: string }>;
-    };
-    /**
      * Updates the status of a secret scanning alert in an eligible repository.
      * To use this endpoint, you must be an administrator for the repository or for the organization that owns the repository, and you must use a personal access token with the `repo` scope or `security_events` scope.
      * For public repositories, you may instead use the `public_repo` scope.
@@ -11040,6 +11643,86 @@ export type RestEndpointMethods = {
         params?: RestEndpointMethodTypes["secretScanning"]["updateAlert"]["parameters"]
       ): Promise<
         RestEndpointMethodTypes["secretScanning"]["updateAlert"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+  };
+  securityAdvisories: {
+    /**
+     * Report a security vulnerability to the maintainers of the repository.
+     * See "[Privately reporting a security vulnerability](https://docs.github.com/code-security/security-advisories/guidance-on-reporting-and-writing/privately-reporting-a-security-vulnerability)" for more information about private vulnerability reporting.
+     */
+    createPrivateVulnerabilityReport: {
+      (
+        params?: RestEndpointMethodTypes["securityAdvisories"]["createPrivateVulnerabilityReport"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["securityAdvisories"]["createPrivateVulnerabilityReport"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Creates a new repository security advisory.
+     * You must authenticate using an access token with the `repo` scope or `repository_advisories:write` permission to use this endpoint.
+     *
+     * In order to create a draft repository security advisory, you must be a security manager or administrator of that repository.
+     */
+    createRepositoryAdvisory: {
+      (
+        params?: RestEndpointMethodTypes["securityAdvisories"]["createRepositoryAdvisory"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["securityAdvisories"]["createRepositoryAdvisory"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Get a repository security advisory using its GitHub Security Advisory (GHSA) identifier.
+     * You can access any published security advisory on a public repository.
+     * You must authenticate using an access token with the `repo` scope or `repository_advisories:read` permission
+     * in order to get a published security advisory in a private repository, or any unpublished security advisory that you have access to.
+     *
+     * You can access an unpublished security advisory from a repository if you are a security manager or administrator of that repository, or if you are a
+     * collaborator on the security advisory.
+     */
+    getRepositoryAdvisory: {
+      (
+        params?: RestEndpointMethodTypes["securityAdvisories"]["getRepositoryAdvisory"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["securityAdvisories"]["getRepositoryAdvisory"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Lists security advisories in a repository.
+     * You must authenticate using an access token with the `repo` scope or `repository_advisories:read` permission
+     * in order to get published security advisories in a private repository, or any unpublished security advisories that you have access to.
+     *
+     * You can access unpublished security advisories from a repository if you are a security manager or administrator of that repository, or if you are a collaborator on any security advisory.
+     */
+    listRepositoryAdvisories: {
+      (
+        params?: RestEndpointMethodTypes["securityAdvisories"]["listRepositoryAdvisories"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["securityAdvisories"]["listRepositoryAdvisories"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Update a repository security advisory using its GitHub Security Advisory (GHSA) identifier.
+     * You must authenticate using an access token with the `repo` scope or `repository_advisories:write` permission to use this endpoint.
+     *
+     * In order to update any security advisory, you must be a security manager or administrator of that repository,
+     * or a collaborator on the repository security advisory.
+     */
+    updateRepositoryAdvisory: {
+      (
+        params?: RestEndpointMethodTypes["securityAdvisories"]["updateRepositoryAdvisory"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["securityAdvisories"]["updateRepositoryAdvisory"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -11217,7 +11900,7 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Gets a team using the team's `slug`. GitHub generates the `slug` from the team `name`.
+     * Gets a team using the team's `slug`. To create the `slug`, GitHub replaces special characters in the `name` string, changes all words to lowercase, and replaces spaces with a `-` separator. For example, `"My TEam Näme"` would become `my-team-name`.
      *
      * **Note:** You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/{org_id}/team/{team_id}`.
      */
@@ -11330,7 +12013,7 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * List all of the teams across all of the organizations to which the authenticated user belongs. This method requires `user`, `repo`, or `read:org` [scope](https://docs.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/) when authenticating via [OAuth](https://docs.github.com/apps/building-oauth-apps/).
+     * List all of the teams across all of the organizations to which the authenticated user belongs. This method requires `user`, `repo`, or `read:org` [scope](https://docs.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/) when authenticating via [OAuth](https://docs.github.com/apps/building-oauth-apps/). When using a fine-grained personal access token, the resource owner of the token [must be a single organization](https://docs.github.com/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token#fine-grained-personal-access-tokens), and have at least read-only member organization permissions. The response payload only contains the teams from a single organization when using a fine-grained personal access token.
      */
     listForAuthenticatedUser: {
       (
@@ -11510,6 +12193,18 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
+    /**
+     * Add one or more social accounts to the authenticated user's profile. This endpoint is accessible with the `user` scope.
+     */
+    addSocialAccountForAuthenticatedUser: {
+      (
+        params?: RestEndpointMethodTypes["users"]["addSocialAccountForAuthenticatedUser"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["users"]["addSocialAccountForAuthenticatedUser"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
 
     block: {
       (
@@ -11684,6 +12379,18 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
+     * Deletes one or more social accounts from the authenticated user's profile. This endpoint is accessible with the `user` scope.
+     */
+    deleteSocialAccountForAuthenticatedUser: {
+      (
+        params?: RestEndpointMethodTypes["users"]["deleteSocialAccountForAuthenticatedUser"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["users"]["deleteSocialAccountForAuthenticatedUser"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
      * Deletes an SSH signing key from the authenticated user's GitHub account. You must authenticate with Basic Authentication, or you must authenticate with OAuth with at least `admin:ssh_signing_key` scope. For more information, see "[Understanding scopes for OAuth apps](https://docs.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/)."
      */
     deleteSshSigningKeyForAuthenticatedUser: {
@@ -11708,7 +12415,7 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * If the authenticated user is authenticated through basic authentication or OAuth with the `user` scope, then the response lists public and private profile information.
+     * If the authenticated user is authenticated with an OAuth token with the `user` scope, then the response lists public and private profile information.
      *
      * If the authenticated user is authenticated through OAuth without the `user` scope, then the response lists only public profile information.
      */
@@ -11821,7 +12528,7 @@ export type RestEndpointMethods = {
     /**
      * Lists all users, in the order that they signed up on GitHub. This list includes personal user accounts and organization accounts.
      *
-     * Note: Pagination is powered exclusively by the `since` parameter. Use the [Link header](https://docs.github.com/rest/overview/resources-in-the-rest-api#link-header) to get the URL for the next page of users.
+     * Note: Pagination is powered exclusively by the `since` parameter. Use the [Link header](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api#using-link-headers) to get the URL for the next page of users.
      */
     list: {
       (
@@ -12036,6 +12743,30 @@ export type RestEndpointMethods = {
         params?: RestEndpointMethodTypes["users"]["listPublicSshKeysForAuthenticatedUser"]["parameters"]
       ): Promise<
         RestEndpointMethodTypes["users"]["listPublicSshKeysForAuthenticatedUser"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Lists all of your social accounts.
+     */
+    listSocialAccountsForAuthenticatedUser: {
+      (
+        params?: RestEndpointMethodTypes["users"]["listSocialAccountsForAuthenticatedUser"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["users"]["listSocialAccountsForAuthenticatedUser"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Lists social media accounts for a user. This endpoint is accessible by anyone.
+     */
+    listSocialAccountsForUser: {
+      (
+        params?: RestEndpointMethodTypes["users"]["listSocialAccountsForUser"]["parameters"]
+      ): Promise<
+        RestEndpointMethodTypes["users"]["listSocialAccountsForUser"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;

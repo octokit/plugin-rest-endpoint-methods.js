@@ -36,7 +36,7 @@ The account owner of the repository. The name is not case sensitive.
 </td></tr>
 <tr><td>repo</td><td>yes</td><td>
 
-The name of the repository. The name is not case sensitive.
+The name of the repository without the `.git` extension. The name is not case sensitive.
 
 </td></tr>
 <tr><td>issue_number</td><td>yes</td><td>
@@ -56,17 +56,17 @@ The contents of the issue.
 </td></tr>
 <tr><td>assignee</td><td>no</td><td>
 
-Login for the user that this issue should be assigned to. **This field is deprecated.**
+Username to assign to this issue. **This field is deprecated.**
 
 </td></tr>
 <tr><td>state</td><td>no</td><td>
 
-State of the issue. Either `open` or `closed`.
+The open or closed state of the issue.
 
 </td></tr>
 <tr><td>state_reason</td><td>no</td><td>
 
-The reason for the current state
+The reason for the state change. Ignored unless `state` is changed.
 
 </td></tr>
 <tr><td>milestone</td><td>no</td><td>
@@ -74,12 +74,12 @@ The reason for the current state
 </td></tr>
 <tr><td>labels</td><td>no</td><td>
 
-Labels to associate with this issue. Pass one or more Labels to _replace_ the set of Labels on this Issue. Send an empty array (`[]`) to clear all Labels from the Issue. _NOTE: Only users with push access can set labels for issues. Labels are silently dropped otherwise._
+Labels to associate with this issue. Pass one or more labels to _replace_ the set of labels on this issue. Send an empty array (`[]`) to clear all labels from the issue. Only users with push access can set labels for issues. Without push access to the repository, label changes are silently dropped.
 
 </td></tr>
 <tr><td>assignees</td><td>no</td><td>
 
-Logins for Users to assign to this issue. Pass one or more user logins to _replace_ the set of assignees on this Issue. Send an empty array (`[]`) to clear all assignees from the Issue. _NOTE: Only users with push access can set assignees for new issues. Assignees are silently dropped otherwise._
+Usernames to assign to this issue. Pass one or more user logins to _replace_ the set of assignees on this issue. Send an empty array (`[]`) to clear all assignees from the issue. Only users with push access can set assignees for new issues. Without push access to the repository, assignee changes are silently dropped.
 
 </td></tr>
   </tbody>

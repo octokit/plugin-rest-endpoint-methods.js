@@ -10,7 +10,7 @@ type: API method
 
 Compares two commits against one another. You can compare branches in the same repository, or you can compare branches that exist in different repositories within the same repository network, including fork branches. For more information about how to view a repository's network, see "[Understanding connections between repositories](https://docs.github.com/repositories/viewing-activity-and-data-for-your-repository/understanding-connections-between-repositories)."
 
-This endpoint is equivalent to running the `git log BASE...HEAD` command, but it returns commits in a different order. The `git log BASE...HEAD` command returns commits in reverse chronological order, whereas the API returns commits in chronological order. You can pass the appropriate [media type](https://docs.github.com/rest/overview/media-types/#commits-commit-comparison-and-pull-requests) to fetch diff and patch formats.
+This endpoint is equivalent to running the `git log BASE..HEAD` command, but it returns commits in a different order. The `git log BASE..HEAD` command returns commits in reverse chronological order, whereas the API returns commits in chronological order. You can pass the appropriate [media type](https://docs.github.com/rest/overview/media-types/#commits-commit-comparison-and-pull-requests) to fetch diff and patch formats.
 
 The API response includes details about the files that were changed between the two commits. This includes the status of the change (if a file was added, removed, modified, or renamed), and details of the change itself. For example, files with a `renamed` status have a `previous_filename` field showing the previous filename of the file, and files with a `modified` status have a `patch` field showing the changes made to the file.
 
@@ -38,21 +38,21 @@ The response will include a `verification` object that describes the result of v
 
 These are the possible values for `reason` in the `verification` object:
 
-| Value                    | Description                                                                                                                       |
-| ------------------------ | --------------------------------------------------------------------------------------------------------------------------------- |
-| `expired_key`            | The key that made the signature is expired.                                                                                       |
-| `not_signing_key`        | The "signing" flag is not among the usage flags in the GPG key that made the signature.                                           |
-| `gpgverify_error`        | There was an error communicating with the signature verification service.                                                         |
-| `gpgverify_unavailable`  | The signature verification service is currently unavailable.                                                                      |
-| `unsigned`               | The object does not include a signature.                                                                                          |
-| `unknown_signature_type` | A non-PGP signature was found in the commit.                                                                                      |
-| `no_user`                | No user was associated with the `committer` email address in the commit.                                                          |
-| `unverified_email`       | The `committer` email address in the commit was associated with a user, but the email address is not verified on her/his account. |
-| `bad_email`              | The `committer` email address in the commit is not included in the identities of the PGP key that made the signature.             |
-| `unknown_key`            | The key that made the signature has not been registered with any user's account.                                                  |
-| `malformed_signature`    | There was an error parsing the signature.                                                                                         |
-| `invalid`                | The signature could not be cryptographically verified using the key whose key-id was found in the signature.                      |
-| `valid`                  | None of the above errors applied, so the signature is considered to be verified.                                                  |
+| Value                    | Description                                                                                                                     |
+| ------------------------ | ------------------------------------------------------------------------------------------------------------------------------- |
+| `expired_key`            | The key that made the signature is expired.                                                                                     |
+| `not_signing_key`        | The "signing" flag is not among the usage flags in the GPG key that made the signature.                                         |
+| `gpgverify_error`        | There was an error communicating with the signature verification service.                                                       |
+| `gpgverify_unavailable`  | The signature verification service is currently unavailable.                                                                    |
+| `unsigned`               | The object does not include a signature.                                                                                        |
+| `unknown_signature_type` | A non-PGP signature was found in the commit.                                                                                    |
+| `no_user`                | No user was associated with the `committer` email address in the commit.                                                        |
+| `unverified_email`       | The `committer` email address in the commit was associated with a user, but the email address is not verified on their account. |
+| `bad_email`              | The `committer` email address in the commit is not included in the identities of the PGP key that made the signature.           |
+| `unknown_key`            | The key that made the signature has not been registered with any user's account.                                                |
+| `malformed_signature`    | There was an error parsing the signature.                                                                                       |
+| `invalid`                | The signature could not be cryptographically verified using the key whose key-id was found in the signature.                    |
+| `valid`                  | None of the above errors applied, so the signature is considered to be verified.                                                |
 
 ```js
 octokit.rest.repos.compareCommitsWithBasehead({
@@ -80,7 +80,7 @@ The account owner of the repository. The name is not case sensitive.
 </td></tr>
 <tr><td>repo</td><td>yes</td><td>
 
-The name of the repository. The name is not case sensitive.
+The name of the repository without the `.git` extension. The name is not case sensitive.
 
 </td></tr>
 <tr><td>page</td><td>no</td><td>

@@ -12,10 +12,6 @@ Protected branches are available in public repositories with GitHub Free and Git
 
 Grants the specified teams push access for this branch. You can also give push access to child teams.
 
-| Type    | Description                                                                                                                                |
-| ------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
-| `array` | The teams that can have push access. Use the team's `slug`. **Note**: The list of users, apps, and teams in total is limited to 100 items. |
-
 ```js
 octokit.rest.repos.addTeamAccessRestrictions({
   owner,
@@ -43,7 +39,7 @@ The account owner of the repository. The name is not case sensitive.
 </td></tr>
 <tr><td>repo</td><td>yes</td><td>
 
-The name of the repository. The name is not case sensitive.
+The name of the repository without the `.git` extension. The name is not case sensitive.
 
 </td></tr>
 <tr><td>branch</td><td>yes</td><td>

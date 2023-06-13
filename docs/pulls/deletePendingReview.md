@@ -8,6 +8,8 @@ type: API method
 
 # Delete a pending review for a pull request
 
+Deletes a pull request review that has not been submitted. Submitted reviews cannot be deleted.
+
 ```js
 octokit.rest.pulls.deletePendingReview({
   owner,
@@ -35,7 +37,7 @@ The account owner of the repository. The name is not case sensitive.
 </td></tr>
 <tr><td>repo</td><td>yes</td><td>
 
-The name of the repository. The name is not case sensitive.
+The name of the repository without the `.git` extension. The name is not case sensitive.
 
 </td></tr>
 <tr><td>pull_number</td><td>yes</td><td>
