@@ -1,10 +1,21 @@
 import type { Octokit } from "@octokit/core";
 import type { EndpointOptions, RequestParameters, Route } from "@octokit/types";
-import type { EndpointDecorations } from "./types";
-import type { RestEndpointMethods } from "./generated/method-types";
 import ENDPOINTS from "./generated/endpoints";
+import type { RestEndpointMethods } from "./generated/method-types";
+import type { EndpointDecorations } from "./types";
 
-const enpointMethodsMap = new Map();
+// The following code was refactored in: https://github.com/octokit/plugin-rest-endpoint-methods.js/pull/622
+// to optimise the runtime performance of Octokit initialization.
+//
+// This optimization involves two key changes:
+// 1. Pre-Computation: The endpoint methods are pre-computed once at module load
+//    time instead of each invocation of `endpointsToMethods()`.
+// 2. Lazy initialization and caching: We use a Proxy for each scope to only
+//    initialize methods that are actually called. This reduces runtime overhead
+//    as the initialization involves deep merging of objects. The initialized
+//    methods are then cached for future use.
+
+const endpointMethodsMap = new Map();
 for (const [scope, endpoints] of Object.entries(ENDPOINTS)) {
   for (const [methodName, endpoint] of Object.entries(endpoints)) {
     const [route, defaults, decorations] = endpoint;
@@ -17,11 +28,11 @@ for (const [scope, endpoints] of Object.entries(ENDPOINTS)) {
       defaults
     );
 
-    if (!enpointMethodsMap.has(scope)) {
-      enpointMethodsMap.set(scope, new Map());
+    if (!endpointMethodsMap.has(scope)) {
+      endpointMethodsMap.set(scope, new Map());
     }
 
-    enpointMethodsMap.get(scope).set(methodName, {
+    endpointMethodsMap.get(scope).set(methodName, {
       scope,
       methodName,
       endpointDefaults,
@@ -42,7 +53,7 @@ const handler = {
       return cache[methodName];
     }
 
-    const { decorations, endpointDefaults } = enpointMethodsMap
+    const { decorations, endpointDefaults } = endpointMethodsMap
       .get(scope)
       .get(methodName);
 
@@ -65,7 +76,7 @@ const handler = {
 export function endpointsToMethods(octokit: Octokit): RestEndpointMethods {
   const newMethods = {} as { [key: string]: object };
 
-  for (const scope of enpointMethodsMap.keys()) {
+  for (const scope of endpointMethodsMap.keys()) {
     newMethods[scope] = new Proxy({ octokit, scope, cache: {} }, handler);
   }
 
