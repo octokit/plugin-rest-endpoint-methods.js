@@ -13,7 +13,7 @@ describe("Smoke test", () => {
     return updateLabel(options);
 
     async function updateLabel(
-      _: RestEndpointMethodTypes["issues"]["updateLabel"]["parameters"]
+      _: RestEndpointMethodTypes["issues"]["updateLabel"]["parameters"],
     ): Promise<RestEndpointMethodTypes["issues"]["updateLabel"]["response"]> {
       return {
         headers: {},
@@ -47,7 +47,7 @@ describe("Smoke test", () => {
 
     expect(requestOptions.method).toEqual("GET");
     expect(requestOptions.url).toEqual(
-      "https://api.github.com/repos/foo/bar/contents/path%2Fto%2Fbinary%2Ffile"
+      "https://api.github.com/repos/foo/bar/contents/path%2Fto%2Fbinary%2Ffile",
     );
   });
 

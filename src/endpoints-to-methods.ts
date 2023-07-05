@@ -25,7 +25,7 @@ for (const [scope, endpoints] of Object.entries(ENDPOINTS)) {
         method,
         url,
       },
-      defaults
+      defaults,
     );
 
     if (!endpointMethodsMap.has(scope)) {
@@ -63,7 +63,7 @@ const handler = {
         scope,
         methodName,
         endpointDefaults,
-        decorations
+        decorations,
       );
     } else {
       cache[methodName] = octokit.request.defaults(endpointDefaults);
@@ -88,7 +88,7 @@ function decorate(
   scope: string,
   methodName: string,
   defaults: EndpointOptions,
-  decorations: EndpointDecorations
+  decorations: EndpointDecorations,
 ) {
   const requestWithDefaults = octokit.request.defaults(defaults);
 
@@ -111,7 +111,7 @@ function decorate(
     if (decorations.renamed) {
       const [newScope, newMethodName] = decorations.renamed;
       octokit.log.warn(
-        `octokit.${scope}.${methodName}() has been renamed to octokit.${newScope}.${newMethodName}()`
+        `octokit.${scope}.${methodName}() has been renamed to octokit.${newScope}.${newMethodName}()`,
       );
     }
     if (decorations.deprecated) {
@@ -123,11 +123,11 @@ function decorate(
       const options = requestWithDefaults.endpoint.merge(...args);
 
       for (const [name, alias] of Object.entries(
-        decorations.renamedParameters
+        decorations.renamedParameters,
       )) {
         if (name in options) {
           octokit.log.warn(
-            `"${name}" parameter is deprecated for "octokit.${scope}.${methodName}()". Use "${alias}" instead`
+            `"${name}" parameter is deprecated for "octokit.${scope}.${methodName}()". Use "${alias}" instead`,
           );
           if (!(alias in options)) {
             options[alias] = options[name];
