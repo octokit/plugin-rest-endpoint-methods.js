@@ -118,7 +118,7 @@ async function generateRoutes() {
 
   writeFileSync(
     ROUTES_PATH,
-    prettier.format(
+    await prettier.format(
       `import type { EndpointsDefaultsAndDecorations } from "../types";
   const Endpoints: EndpointsDefaultsAndDecorations = ${JSON.stringify(
     sortKeys(newRoutes, { deep: true })

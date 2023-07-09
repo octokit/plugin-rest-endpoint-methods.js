@@ -80,7 +80,7 @@ async function generateTypes() {
     }`);
   }
 
-  const methodTypesSource = prettier.format(
+  const methodTypesSource = await prettier.format(
     [
       `import type { EndpointInterface, RequestInterface } from "@octokit/types";`,
       `import type { RestEndpointMethodTypes } from "./parameters-and-response-types";`,
@@ -93,7 +93,7 @@ async function generateTypes() {
       parser: "typescript",
     }
   );
-  const parametersAndResponsesTypes = prettier.format(
+  const parametersAndResponsesTypes = await prettier.format(
     [
       `import type { Endpoints, RequestParameters } from "@octokit/types";`,
       "",

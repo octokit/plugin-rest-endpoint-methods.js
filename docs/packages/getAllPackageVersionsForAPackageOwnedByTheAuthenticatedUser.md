@@ -19,7 +19,7 @@ octokit.rest.packages.getAllPackageVersionsForAPackageOwnedByTheAuthenticatedUse
   {
     package_type,
     package_name,
-  }
+  },
 );
 ```
 

@@ -78,7 +78,7 @@ async function main() {
 
   writeFileSync(
     path.resolve(__dirname, "generated", "endpoints.json"),
-    prettier.format(JSON.stringify(endpoints), {
+    await prettier.format(JSON.stringify(endpoints), {
       parser: "json",
     })
   );

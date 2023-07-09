@@ -15,12 +15,12 @@ async function generateRoutes() {
 
   for (const endpoint of endpoints) {
     const path = `docs/${endpoint.scope}/${endpoint.id}.md`;
-    outputFileSync(path, template(endpoint));
+    outputFileSync(path, await template(endpoint));
     console.log(`${path} written`);
   }
 }
 
-function template(endpoint) {
+async function template(endpoint) {
   const deprecationNotice = endpoint.isDeprecated
     ? "**This method is deprecated.**"
     : "";
@@ -96,7 +96,7 @@ ${parameters}
 
 See also: [GitHub Developer Guide documentation](${endpoint.documentationUrl}).`;
 
-  return prettier.format(content, {
+  return await prettier.format(content, {
     parser: "markdown",
   });
 }

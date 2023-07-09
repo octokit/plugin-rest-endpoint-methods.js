@@ -12,7 +12,7 @@ describe("REST API endpoint methods", () => {
         body: {
           name: "my-new-repo",
         },
-      }
+      },
     );
 
     const MyOctokit = Octokit.plugin(restEndpointMethods);
@@ -61,7 +61,7 @@ describe("REST API endpoint methods", () => {
           expect(body).toEqual("# Hello, world!");
           return true;
         },
-      }
+      },
     );
 
     const MyOctokit = Octokit.plugin(restEndpointMethods);
@@ -98,7 +98,7 @@ describe("REST API endpoint methods", () => {
           expect(body).toEqual("test 1, 2");
           return true;
         },
-      }
+      },
     );
 
     const MyOctokit = Octokit.plugin(restEndpointMethods);
@@ -134,7 +134,7 @@ describe("REST API endpoint methods", () => {
       { ok: true },
       {
         body: ["myci1", "myci2"],
-      }
+      },
     );
 
     const MyOctokit = Octokit.plugin(restEndpointMethods);
@@ -187,7 +187,7 @@ describe("REST API endpoint methods", () => {
         body: {
           name: "my-new-repo",
         },
-      }
+      },
     );
 
     const MyOctokit = Octokit.plugin(legacyRestEndpointMethods);

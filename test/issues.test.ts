@@ -17,7 +17,7 @@ describe("https://github.com/octokit/plugin-rest-endpoint-methods.js/issues/83",
             },
           },
         },
-      }
+      },
     );
 
     const MyOctokit = Octokit.plugin(restEndpointMethods);
