@@ -10,7 +10,7 @@ export type RestEndpointMethods = {
      */
     addCustomLabelsToSelfHostedRunnerForOrg: {
       (
-        params?: RestEndpointMethodTypes["actions"]["addCustomLabelsToSelfHostedRunnerForOrg"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["addCustomLabelsToSelfHostedRunnerForOrg"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["addCustomLabelsToSelfHostedRunnerForOrg"]["response"]
       >;
@@ -25,7 +25,7 @@ export type RestEndpointMethods = {
      */
     addCustomLabelsToSelfHostedRunnerForRepo: {
       (
-        params?: RestEndpointMethodTypes["actions"]["addCustomLabelsToSelfHostedRunnerForRepo"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["addCustomLabelsToSelfHostedRunnerForRepo"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["addCustomLabelsToSelfHostedRunnerForRepo"]["response"]
       >;
@@ -37,7 +37,7 @@ export type RestEndpointMethods = {
      */
     addSelectedRepoToOrgSecret: {
       (
-        params?: RestEndpointMethodTypes["actions"]["addSelectedRepoToOrgSecret"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["addSelectedRepoToOrgSecret"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["addSelectedRepoToOrgSecret"]["response"]
       >;
@@ -49,7 +49,7 @@ export type RestEndpointMethods = {
      */
     addSelectedRepoToOrgVariable: {
       (
-        params?: RestEndpointMethodTypes["actions"]["addSelectedRepoToOrgVariable"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["addSelectedRepoToOrgVariable"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["addSelectedRepoToOrgVariable"]["response"]
       >;
@@ -65,7 +65,7 @@ export type RestEndpointMethods = {
      */
     addSelectedRepoToRequiredWorkflow: {
       (
-        params?: RestEndpointMethodTypes["actions"]["addSelectedRepoToRequiredWorkflow"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["addSelectedRepoToRequiredWorkflow"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["addSelectedRepoToRequiredWorkflow"]["response"]
       >;
@@ -79,7 +79,7 @@ export type RestEndpointMethods = {
      */
     approveWorkflowRun: {
       (
-        params?: RestEndpointMethodTypes["actions"]["approveWorkflowRun"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["approveWorkflowRun"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["approveWorkflowRun"]["response"]
       >;
@@ -91,7 +91,7 @@ export type RestEndpointMethods = {
      */
     cancelWorkflowRun: {
       (
-        params?: RestEndpointMethodTypes["actions"]["cancelWorkflowRun"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["cancelWorkflowRun"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["cancelWorkflowRun"]["response"]
       >;
@@ -105,7 +105,7 @@ export type RestEndpointMethods = {
      */
     createEnvironmentVariable: {
       (
-        params?: RestEndpointMethodTypes["actions"]["createEnvironmentVariable"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["createEnvironmentVariable"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["createEnvironmentVariable"]["response"]
       >;
@@ -192,7 +192,7 @@ export type RestEndpointMethods = {
      */
     createOrUpdateEnvironmentSecret: {
       (
-        params?: RestEndpointMethodTypes["actions"]["createOrUpdateEnvironmentSecret"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["createOrUpdateEnvironmentSecret"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["createOrUpdateEnvironmentSecret"]["response"]
       >;
@@ -278,7 +278,7 @@ export type RestEndpointMethods = {
      */
     createOrUpdateOrgSecret: {
       (
-        params?: RestEndpointMethodTypes["actions"]["createOrUpdateOrgSecret"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["createOrUpdateOrgSecret"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["createOrUpdateOrgSecret"]["response"]
       >;
@@ -365,7 +365,7 @@ export type RestEndpointMethods = {
      */
     createOrUpdateRepoSecret: {
       (
-        params?: RestEndpointMethodTypes["actions"]["createOrUpdateRepoSecret"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["createOrUpdateRepoSecret"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["createOrUpdateRepoSecret"]["response"]
       >;
@@ -379,7 +379,7 @@ export type RestEndpointMethods = {
      */
     createOrgVariable: {
       (
-        params?: RestEndpointMethodTypes["actions"]["createOrgVariable"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["createOrgVariable"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["createOrgVariable"]["response"]
       >;
@@ -401,7 +401,7 @@ export type RestEndpointMethods = {
      */
     createRegistrationTokenForOrg: {
       (
-        params?: RestEndpointMethodTypes["actions"]["createRegistrationTokenForOrg"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["createRegistrationTokenForOrg"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["createRegistrationTokenForOrg"]["response"]
       >;
@@ -422,7 +422,7 @@ export type RestEndpointMethods = {
      */
     createRegistrationTokenForRepo: {
       (
-        params?: RestEndpointMethodTypes["actions"]["createRegistrationTokenForRepo"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["createRegistrationTokenForRepo"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["createRegistrationTokenForRepo"]["response"]
       >;
@@ -445,7 +445,7 @@ export type RestEndpointMethods = {
      */
     createRemoveTokenForOrg: {
       (
-        params?: RestEndpointMethodTypes["actions"]["createRemoveTokenForOrg"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["createRemoveTokenForOrg"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["createRemoveTokenForOrg"]["response"]
       >;
@@ -466,7 +466,7 @@ export type RestEndpointMethods = {
      */
     createRemoveTokenForRepo: {
       (
-        params?: RestEndpointMethodTypes["actions"]["createRemoveTokenForRepo"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["createRemoveTokenForRepo"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["createRemoveTokenForRepo"]["response"]
       >;
@@ -480,7 +480,7 @@ export type RestEndpointMethods = {
      */
     createRepoVariable: {
       (
-        params?: RestEndpointMethodTypes["actions"]["createRepoVariable"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["createRepoVariable"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["createRepoVariable"]["response"]
       >;
@@ -496,7 +496,7 @@ export type RestEndpointMethods = {
      */
     createRequiredWorkflow: {
       (
-        params?: RestEndpointMethodTypes["actions"]["createRequiredWorkflow"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["createRequiredWorkflow"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["createRequiredWorkflow"]["response"]
       >;
@@ -512,7 +512,7 @@ export type RestEndpointMethods = {
      */
     createWorkflowDispatch: {
       (
-        params?: RestEndpointMethodTypes["actions"]["createWorkflowDispatch"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["createWorkflowDispatch"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["createWorkflowDispatch"]["response"]
       >;
@@ -528,7 +528,7 @@ export type RestEndpointMethods = {
      */
     deleteActionsCacheById: {
       (
-        params?: RestEndpointMethodTypes["actions"]["deleteActionsCacheById"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["deleteActionsCacheById"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["deleteActionsCacheById"]["response"]
       >;
@@ -544,7 +544,7 @@ export type RestEndpointMethods = {
      */
     deleteActionsCacheByKey: {
       (
-        params?: RestEndpointMethodTypes["actions"]["deleteActionsCacheByKey"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["deleteActionsCacheByKey"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["deleteActionsCacheByKey"]["response"]
       >;
@@ -556,7 +556,7 @@ export type RestEndpointMethods = {
      */
     deleteArtifact: {
       (
-        params?: RestEndpointMethodTypes["actions"]["deleteArtifact"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["deleteArtifact"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["deleteArtifact"]["response"]
       >;
@@ -568,7 +568,7 @@ export type RestEndpointMethods = {
      */
     deleteEnvironmentSecret: {
       (
-        params?: RestEndpointMethodTypes["actions"]["deleteEnvironmentSecret"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["deleteEnvironmentSecret"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["deleteEnvironmentSecret"]["response"]
       >;
@@ -582,7 +582,7 @@ export type RestEndpointMethods = {
      */
     deleteEnvironmentVariable: {
       (
-        params?: RestEndpointMethodTypes["actions"]["deleteEnvironmentVariable"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["deleteEnvironmentVariable"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["deleteEnvironmentVariable"]["response"]
       >;
@@ -594,7 +594,7 @@ export type RestEndpointMethods = {
      */
     deleteOrgSecret: {
       (
-        params?: RestEndpointMethodTypes["actions"]["deleteOrgSecret"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["deleteOrgSecret"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["deleteOrgSecret"]["response"]
       >;
@@ -608,7 +608,7 @@ export type RestEndpointMethods = {
      */
     deleteOrgVariable: {
       (
-        params?: RestEndpointMethodTypes["actions"]["deleteOrgVariable"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["deleteOrgVariable"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["deleteOrgVariable"]["response"]
       >;
@@ -620,7 +620,7 @@ export type RestEndpointMethods = {
      */
     deleteRepoSecret: {
       (
-        params?: RestEndpointMethodTypes["actions"]["deleteRepoSecret"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["deleteRepoSecret"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["deleteRepoSecret"]["response"]
       >;
@@ -634,7 +634,7 @@ export type RestEndpointMethods = {
      */
     deleteRepoVariable: {
       (
-        params?: RestEndpointMethodTypes["actions"]["deleteRepoVariable"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["deleteRepoVariable"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["deleteRepoVariable"]["response"]
       >;
@@ -650,7 +650,7 @@ export type RestEndpointMethods = {
      */
     deleteRequiredWorkflow: {
       (
-        params?: RestEndpointMethodTypes["actions"]["deleteRequiredWorkflow"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["deleteRequiredWorkflow"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["deleteRequiredWorkflow"]["response"]
       >;
@@ -664,7 +664,7 @@ export type RestEndpointMethods = {
      */
     deleteSelfHostedRunnerFromOrg: {
       (
-        params?: RestEndpointMethodTypes["actions"]["deleteSelfHostedRunnerFromOrg"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["deleteSelfHostedRunnerFromOrg"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["deleteSelfHostedRunnerFromOrg"]["response"]
       >;
@@ -679,7 +679,7 @@ export type RestEndpointMethods = {
      */
     deleteSelfHostedRunnerFromRepo: {
       (
-        params?: RestEndpointMethodTypes["actions"]["deleteSelfHostedRunnerFromRepo"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["deleteSelfHostedRunnerFromRepo"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["deleteSelfHostedRunnerFromRepo"]["response"]
       >;
@@ -693,7 +693,7 @@ export type RestEndpointMethods = {
      */
     deleteWorkflowRun: {
       (
-        params?: RestEndpointMethodTypes["actions"]["deleteWorkflowRun"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["deleteWorkflowRun"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["deleteWorkflowRun"]["response"]
       >;
@@ -705,7 +705,7 @@ export type RestEndpointMethods = {
      */
     deleteWorkflowRunLogs: {
       (
-        params?: RestEndpointMethodTypes["actions"]["deleteWorkflowRunLogs"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["deleteWorkflowRunLogs"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["deleteWorkflowRunLogs"]["response"]
       >;
@@ -719,7 +719,7 @@ export type RestEndpointMethods = {
      */
     disableSelectedRepositoryGithubActionsOrganization: {
       (
-        params?: RestEndpointMethodTypes["actions"]["disableSelectedRepositoryGithubActionsOrganization"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["disableSelectedRepositoryGithubActionsOrganization"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["disableSelectedRepositoryGithubActionsOrganization"]["response"]
       >;
@@ -733,7 +733,7 @@ export type RestEndpointMethods = {
      */
     disableWorkflow: {
       (
-        params?: RestEndpointMethodTypes["actions"]["disableWorkflow"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["disableWorkflow"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["disableWorkflow"]["response"]
       >;
@@ -748,7 +748,7 @@ export type RestEndpointMethods = {
      */
     downloadArtifact: {
       (
-        params?: RestEndpointMethodTypes["actions"]["downloadArtifact"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["downloadArtifact"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["downloadArtifact"]["response"]
       >;
@@ -763,7 +763,7 @@ export type RestEndpointMethods = {
      */
     downloadJobLogsForWorkflowRun: {
       (
-        params?: RestEndpointMethodTypes["actions"]["downloadJobLogsForWorkflowRun"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["downloadJobLogsForWorkflowRun"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["downloadJobLogsForWorkflowRun"]["response"]
       >;
@@ -778,7 +778,7 @@ export type RestEndpointMethods = {
      */
     downloadWorkflowRunAttemptLogs: {
       (
-        params?: RestEndpointMethodTypes["actions"]["downloadWorkflowRunAttemptLogs"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["downloadWorkflowRunAttemptLogs"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["downloadWorkflowRunAttemptLogs"]["response"]
       >;
@@ -793,7 +793,7 @@ export type RestEndpointMethods = {
      */
     downloadWorkflowRunLogs: {
       (
-        params?: RestEndpointMethodTypes["actions"]["downloadWorkflowRunLogs"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["downloadWorkflowRunLogs"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["downloadWorkflowRunLogs"]["response"]
       >;
@@ -807,7 +807,7 @@ export type RestEndpointMethods = {
      */
     enableSelectedRepositoryGithubActionsOrganization: {
       (
-        params?: RestEndpointMethodTypes["actions"]["enableSelectedRepositoryGithubActionsOrganization"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["enableSelectedRepositoryGithubActionsOrganization"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["enableSelectedRepositoryGithubActionsOrganization"]["response"]
       >;
@@ -821,7 +821,7 @@ export type RestEndpointMethods = {
      */
     enableWorkflow: {
       (
-        params?: RestEndpointMethodTypes["actions"]["enableWorkflow"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["enableWorkflow"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["enableWorkflow"]["response"]
       >;
@@ -835,7 +835,7 @@ export type RestEndpointMethods = {
      */
     generateRunnerJitconfigForOrg: {
       (
-        params?: RestEndpointMethodTypes["actions"]["generateRunnerJitconfigForOrg"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["generateRunnerJitconfigForOrg"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["generateRunnerJitconfigForOrg"]["response"]
       >;
@@ -849,7 +849,7 @@ export type RestEndpointMethods = {
      */
     generateRunnerJitconfigForRepo: {
       (
-        params?: RestEndpointMethodTypes["actions"]["generateRunnerJitconfigForRepo"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["generateRunnerJitconfigForRepo"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["generateRunnerJitconfigForRepo"]["response"]
       >;
@@ -863,7 +863,7 @@ export type RestEndpointMethods = {
      */
     getActionsCacheList: {
       (
-        params?: RestEndpointMethodTypes["actions"]["getActionsCacheList"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["getActionsCacheList"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["getActionsCacheList"]["response"]
       >;
@@ -877,7 +877,7 @@ export type RestEndpointMethods = {
      */
     getActionsCacheUsage: {
       (
-        params?: RestEndpointMethodTypes["actions"]["getActionsCacheUsage"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["getActionsCacheUsage"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["getActionsCacheUsage"]["response"]
       >;
@@ -891,7 +891,7 @@ export type RestEndpointMethods = {
      */
     getActionsCacheUsageByRepoForOrg: {
       (
-        params?: RestEndpointMethodTypes["actions"]["getActionsCacheUsageByRepoForOrg"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["getActionsCacheUsageByRepoForOrg"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["getActionsCacheUsageByRepoForOrg"]["response"]
       >;
@@ -905,7 +905,7 @@ export type RestEndpointMethods = {
      */
     getActionsCacheUsageForOrg: {
       (
-        params?: RestEndpointMethodTypes["actions"]["getActionsCacheUsageForOrg"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["getActionsCacheUsageForOrg"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["getActionsCacheUsageForOrg"]["response"]
       >;
@@ -919,7 +919,7 @@ export type RestEndpointMethods = {
      */
     getAllowedActionsOrganization: {
       (
-        params?: RestEndpointMethodTypes["actions"]["getAllowedActionsOrganization"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["getAllowedActionsOrganization"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["getAllowedActionsOrganization"]["response"]
       >;
@@ -933,7 +933,7 @@ export type RestEndpointMethods = {
      */
     getAllowedActionsRepository: {
       (
-        params?: RestEndpointMethodTypes["actions"]["getAllowedActionsRepository"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["getAllowedActionsRepository"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["getAllowedActionsRepository"]["response"]
       >;
@@ -945,7 +945,7 @@ export type RestEndpointMethods = {
      */
     getArtifact: {
       (
-        params?: RestEndpointMethodTypes["actions"]["getArtifact"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["getArtifact"]["parameters"],
       ): Promise<RestEndpointMethodTypes["actions"]["getArtifact"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -955,7 +955,7 @@ export type RestEndpointMethods = {
      */
     getEnvironmentPublicKey: {
       (
-        params?: RestEndpointMethodTypes["actions"]["getEnvironmentPublicKey"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["getEnvironmentPublicKey"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["getEnvironmentPublicKey"]["response"]
       >;
@@ -967,7 +967,7 @@ export type RestEndpointMethods = {
      */
     getEnvironmentSecret: {
       (
-        params?: RestEndpointMethodTypes["actions"]["getEnvironmentSecret"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["getEnvironmentSecret"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["getEnvironmentSecret"]["response"]
       >;
@@ -979,7 +979,7 @@ export type RestEndpointMethods = {
      */
     getEnvironmentVariable: {
       (
-        params?: RestEndpointMethodTypes["actions"]["getEnvironmentVariable"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["getEnvironmentVariable"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["getEnvironmentVariable"]["response"]
       >;
@@ -995,7 +995,7 @@ export type RestEndpointMethods = {
      */
     getGithubActionsDefaultWorkflowPermissionsOrganization: {
       (
-        params?: RestEndpointMethodTypes["actions"]["getGithubActionsDefaultWorkflowPermissionsOrganization"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["getGithubActionsDefaultWorkflowPermissionsOrganization"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["getGithubActionsDefaultWorkflowPermissionsOrganization"]["response"]
       >;
@@ -1011,7 +1011,7 @@ export type RestEndpointMethods = {
      */
     getGithubActionsDefaultWorkflowPermissionsRepository: {
       (
-        params?: RestEndpointMethodTypes["actions"]["getGithubActionsDefaultWorkflowPermissionsRepository"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["getGithubActionsDefaultWorkflowPermissionsRepository"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["getGithubActionsDefaultWorkflowPermissionsRepository"]["response"]
       >;
@@ -1025,7 +1025,7 @@ export type RestEndpointMethods = {
      */
     getGithubActionsPermissionsOrganization: {
       (
-        params?: RestEndpointMethodTypes["actions"]["getGithubActionsPermissionsOrganization"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["getGithubActionsPermissionsOrganization"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["getGithubActionsPermissionsOrganization"]["response"]
       >;
@@ -1039,7 +1039,7 @@ export type RestEndpointMethods = {
      */
     getGithubActionsPermissionsRepository: {
       (
-        params?: RestEndpointMethodTypes["actions"]["getGithubActionsPermissionsRepository"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["getGithubActionsPermissionsRepository"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["getGithubActionsPermissionsRepository"]["response"]
       >;
@@ -1051,7 +1051,7 @@ export type RestEndpointMethods = {
      */
     getJobForWorkflowRun: {
       (
-        params?: RestEndpointMethodTypes["actions"]["getJobForWorkflowRun"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["getJobForWorkflowRun"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["getJobForWorkflowRun"]["response"]
       >;
@@ -1063,7 +1063,7 @@ export type RestEndpointMethods = {
      */
     getOrgPublicKey: {
       (
-        params?: RestEndpointMethodTypes["actions"]["getOrgPublicKey"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["getOrgPublicKey"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["getOrgPublicKey"]["response"]
       >;
@@ -1075,7 +1075,7 @@ export type RestEndpointMethods = {
      */
     getOrgSecret: {
       (
-        params?: RestEndpointMethodTypes["actions"]["getOrgSecret"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["getOrgSecret"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["getOrgSecret"]["response"]
       >;
@@ -1087,7 +1087,7 @@ export type RestEndpointMethods = {
      */
     getOrgVariable: {
       (
-        params?: RestEndpointMethodTypes["actions"]["getOrgVariable"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["getOrgVariable"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["getOrgVariable"]["response"]
       >;
@@ -1101,7 +1101,7 @@ export type RestEndpointMethods = {
      */
     getPendingDeploymentsForRun: {
       (
-        params?: RestEndpointMethodTypes["actions"]["getPendingDeploymentsForRun"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["getPendingDeploymentsForRun"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["getPendingDeploymentsForRun"]["response"]
       >;
@@ -1116,7 +1116,7 @@ export type RestEndpointMethods = {
      */
     getRepoPermissions: {
       (
-        params?: RestEndpointMethodTypes["actions"]["getRepoPermissions"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["getRepoPermissions"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["getRepoPermissions"]["response"]
       >;
@@ -1128,7 +1128,7 @@ export type RestEndpointMethods = {
      */
     getRepoPublicKey: {
       (
-        params?: RestEndpointMethodTypes["actions"]["getRepoPublicKey"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["getRepoPublicKey"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["getRepoPublicKey"]["response"]
       >;
@@ -1140,7 +1140,7 @@ export type RestEndpointMethods = {
      */
     getRepoRequiredWorkflow: {
       (
-        params?: RestEndpointMethodTypes["actions"]["getRepoRequiredWorkflow"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["getRepoRequiredWorkflow"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["getRepoRequiredWorkflow"]["response"]
       >;
@@ -1156,7 +1156,7 @@ export type RestEndpointMethods = {
      */
     getRepoRequiredWorkflowUsage: {
       (
-        params?: RestEndpointMethodTypes["actions"]["getRepoRequiredWorkflowUsage"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["getRepoRequiredWorkflowUsage"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["getRepoRequiredWorkflowUsage"]["response"]
       >;
@@ -1168,7 +1168,7 @@ export type RestEndpointMethods = {
      */
     getRepoSecret: {
       (
-        params?: RestEndpointMethodTypes["actions"]["getRepoSecret"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["getRepoSecret"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["getRepoSecret"]["response"]
       >;
@@ -1180,7 +1180,7 @@ export type RestEndpointMethods = {
      */
     getRepoVariable: {
       (
-        params?: RestEndpointMethodTypes["actions"]["getRepoVariable"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["getRepoVariable"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["getRepoVariable"]["response"]
       >;
@@ -1196,7 +1196,7 @@ export type RestEndpointMethods = {
      */
     getRequiredWorkflow: {
       (
-        params?: RestEndpointMethodTypes["actions"]["getRequiredWorkflow"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["getRequiredWorkflow"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["getRequiredWorkflow"]["response"]
       >;
@@ -1208,7 +1208,7 @@ export type RestEndpointMethods = {
      */
     getReviewsForRun: {
       (
-        params?: RestEndpointMethodTypes["actions"]["getReviewsForRun"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["getReviewsForRun"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["getReviewsForRun"]["response"]
       >;
@@ -1222,7 +1222,7 @@ export type RestEndpointMethods = {
      */
     getSelfHostedRunnerForOrg: {
       (
-        params?: RestEndpointMethodTypes["actions"]["getSelfHostedRunnerForOrg"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["getSelfHostedRunnerForOrg"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["getSelfHostedRunnerForOrg"]["response"]
       >;
@@ -1237,7 +1237,7 @@ export type RestEndpointMethods = {
      */
     getSelfHostedRunnerForRepo: {
       (
-        params?: RestEndpointMethodTypes["actions"]["getSelfHostedRunnerForRepo"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["getSelfHostedRunnerForRepo"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["getSelfHostedRunnerForRepo"]["response"]
       >;
@@ -1249,7 +1249,7 @@ export type RestEndpointMethods = {
      */
     getWorkflow: {
       (
-        params?: RestEndpointMethodTypes["actions"]["getWorkflow"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["getWorkflow"]["parameters"],
       ): Promise<RestEndpointMethodTypes["actions"]["getWorkflow"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -1264,7 +1264,7 @@ export type RestEndpointMethods = {
      */
     getWorkflowAccessToRepository: {
       (
-        params?: RestEndpointMethodTypes["actions"]["getWorkflowAccessToRepository"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["getWorkflowAccessToRepository"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["getWorkflowAccessToRepository"]["response"]
       >;
@@ -1276,7 +1276,7 @@ export type RestEndpointMethods = {
      */
     getWorkflowRun: {
       (
-        params?: RestEndpointMethodTypes["actions"]["getWorkflowRun"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["getWorkflowRun"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["getWorkflowRun"]["response"]
       >;
@@ -1291,7 +1291,7 @@ export type RestEndpointMethods = {
      */
     getWorkflowRunAttempt: {
       (
-        params?: RestEndpointMethodTypes["actions"]["getWorkflowRunAttempt"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["getWorkflowRunAttempt"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["getWorkflowRunAttempt"]["response"]
       >;
@@ -1305,7 +1305,7 @@ export type RestEndpointMethods = {
      */
     getWorkflowRunUsage: {
       (
-        params?: RestEndpointMethodTypes["actions"]["getWorkflowRunUsage"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["getWorkflowRunUsage"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["getWorkflowRunUsage"]["response"]
       >;
@@ -1319,7 +1319,7 @@ export type RestEndpointMethods = {
      */
     getWorkflowUsage: {
       (
-        params?: RestEndpointMethodTypes["actions"]["getWorkflowUsage"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["getWorkflowUsage"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["getWorkflowUsage"]["response"]
       >;
@@ -1331,7 +1331,7 @@ export type RestEndpointMethods = {
      */
     listArtifactsForRepo: {
       (
-        params?: RestEndpointMethodTypes["actions"]["listArtifactsForRepo"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["listArtifactsForRepo"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["listArtifactsForRepo"]["response"]
       >;
@@ -1343,7 +1343,7 @@ export type RestEndpointMethods = {
      */
     listEnvironmentSecrets: {
       (
-        params?: RestEndpointMethodTypes["actions"]["listEnvironmentSecrets"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["listEnvironmentSecrets"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["listEnvironmentSecrets"]["response"]
       >;
@@ -1355,7 +1355,7 @@ export type RestEndpointMethods = {
      */
     listEnvironmentVariables: {
       (
-        params?: RestEndpointMethodTypes["actions"]["listEnvironmentVariables"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["listEnvironmentVariables"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["listEnvironmentVariables"]["response"]
       >;
@@ -1367,7 +1367,7 @@ export type RestEndpointMethods = {
      */
     listJobsForWorkflowRun: {
       (
-        params?: RestEndpointMethodTypes["actions"]["listJobsForWorkflowRun"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["listJobsForWorkflowRun"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["listJobsForWorkflowRun"]["response"]
       >;
@@ -1379,7 +1379,7 @@ export type RestEndpointMethods = {
      */
     listJobsForWorkflowRunAttempt: {
       (
-        params?: RestEndpointMethodTypes["actions"]["listJobsForWorkflowRunAttempt"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["listJobsForWorkflowRunAttempt"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["listJobsForWorkflowRunAttempt"]["response"]
       >;
@@ -1393,7 +1393,7 @@ export type RestEndpointMethods = {
      */
     listLabelsForSelfHostedRunnerForOrg: {
       (
-        params?: RestEndpointMethodTypes["actions"]["listLabelsForSelfHostedRunnerForOrg"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["listLabelsForSelfHostedRunnerForOrg"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["listLabelsForSelfHostedRunnerForOrg"]["response"]
       >;
@@ -1408,7 +1408,7 @@ export type RestEndpointMethods = {
      */
     listLabelsForSelfHostedRunnerForRepo: {
       (
-        params?: RestEndpointMethodTypes["actions"]["listLabelsForSelfHostedRunnerForRepo"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["listLabelsForSelfHostedRunnerForRepo"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["listLabelsForSelfHostedRunnerForRepo"]["response"]
       >;
@@ -1420,7 +1420,7 @@ export type RestEndpointMethods = {
      */
     listOrgSecrets: {
       (
-        params?: RestEndpointMethodTypes["actions"]["listOrgSecrets"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["listOrgSecrets"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["listOrgSecrets"]["response"]
       >;
@@ -1432,7 +1432,7 @@ export type RestEndpointMethods = {
      */
     listOrgVariables: {
       (
-        params?: RestEndpointMethodTypes["actions"]["listOrgVariables"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["listOrgVariables"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["listOrgVariables"]["response"]
       >;
@@ -1444,7 +1444,7 @@ export type RestEndpointMethods = {
      */
     listRepoOrganizationSecrets: {
       (
-        params?: RestEndpointMethodTypes["actions"]["listRepoOrganizationSecrets"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["listRepoOrganizationSecrets"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["listRepoOrganizationSecrets"]["response"]
       >;
@@ -1456,7 +1456,7 @@ export type RestEndpointMethods = {
      */
     listRepoOrganizationVariables: {
       (
-        params?: RestEndpointMethodTypes["actions"]["listRepoOrganizationVariables"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["listRepoOrganizationVariables"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["listRepoOrganizationVariables"]["response"]
       >;
@@ -1468,7 +1468,7 @@ export type RestEndpointMethods = {
      */
     listRepoRequiredWorkflows: {
       (
-        params?: RestEndpointMethodTypes["actions"]["listRepoRequiredWorkflows"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["listRepoRequiredWorkflows"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["listRepoRequiredWorkflows"]["response"]
       >;
@@ -1480,7 +1480,7 @@ export type RestEndpointMethods = {
      */
     listRepoSecrets: {
       (
-        params?: RestEndpointMethodTypes["actions"]["listRepoSecrets"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["listRepoSecrets"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["listRepoSecrets"]["response"]
       >;
@@ -1492,7 +1492,7 @@ export type RestEndpointMethods = {
      */
     listRepoVariables: {
       (
-        params?: RestEndpointMethodTypes["actions"]["listRepoVariables"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["listRepoVariables"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["listRepoVariables"]["response"]
       >;
@@ -1504,7 +1504,7 @@ export type RestEndpointMethods = {
      */
     listRepoWorkflows: {
       (
-        params?: RestEndpointMethodTypes["actions"]["listRepoWorkflows"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["listRepoWorkflows"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["listRepoWorkflows"]["response"]
       >;
@@ -1518,7 +1518,7 @@ export type RestEndpointMethods = {
      */
     listRequiredWorkflowRuns: {
       (
-        params?: RestEndpointMethodTypes["actions"]["listRequiredWorkflowRuns"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["listRequiredWorkflowRuns"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["listRequiredWorkflowRuns"]["response"]
       >;
@@ -1534,7 +1534,7 @@ export type RestEndpointMethods = {
      */
     listRequiredWorkflows: {
       (
-        params?: RestEndpointMethodTypes["actions"]["listRequiredWorkflows"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["listRequiredWorkflows"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["listRequiredWorkflows"]["response"]
       >;
@@ -1548,7 +1548,7 @@ export type RestEndpointMethods = {
      */
     listRunnerApplicationsForOrg: {
       (
-        params?: RestEndpointMethodTypes["actions"]["listRunnerApplicationsForOrg"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["listRunnerApplicationsForOrg"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["listRunnerApplicationsForOrg"]["response"]
       >;
@@ -1562,7 +1562,7 @@ export type RestEndpointMethods = {
      */
     listRunnerApplicationsForRepo: {
       (
-        params?: RestEndpointMethodTypes["actions"]["listRunnerApplicationsForRepo"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["listRunnerApplicationsForRepo"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["listRunnerApplicationsForRepo"]["response"]
       >;
@@ -1574,7 +1574,7 @@ export type RestEndpointMethods = {
      */
     listSelectedReposForOrgSecret: {
       (
-        params?: RestEndpointMethodTypes["actions"]["listSelectedReposForOrgSecret"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["listSelectedReposForOrgSecret"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["listSelectedReposForOrgSecret"]["response"]
       >;
@@ -1586,7 +1586,7 @@ export type RestEndpointMethods = {
      */
     listSelectedReposForOrgVariable: {
       (
-        params?: RestEndpointMethodTypes["actions"]["listSelectedReposForOrgVariable"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["listSelectedReposForOrgVariable"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["listSelectedReposForOrgVariable"]["response"]
       >;
@@ -1600,7 +1600,7 @@ export type RestEndpointMethods = {
      */
     listSelectedRepositoriesEnabledGithubActionsOrganization: {
       (
-        params?: RestEndpointMethodTypes["actions"]["listSelectedRepositoriesEnabledGithubActionsOrganization"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["listSelectedRepositoriesEnabledGithubActionsOrganization"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["listSelectedRepositoriesEnabledGithubActionsOrganization"]["response"]
       >;
@@ -1616,7 +1616,7 @@ export type RestEndpointMethods = {
      */
     listSelectedRepositoriesRequiredWorkflow: {
       (
-        params?: RestEndpointMethodTypes["actions"]["listSelectedRepositoriesRequiredWorkflow"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["listSelectedRepositoriesRequiredWorkflow"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["listSelectedRepositoriesRequiredWorkflow"]["response"]
       >;
@@ -1630,7 +1630,7 @@ export type RestEndpointMethods = {
      */
     listSelfHostedRunnersForOrg: {
       (
-        params?: RestEndpointMethodTypes["actions"]["listSelfHostedRunnersForOrg"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["listSelfHostedRunnersForOrg"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["listSelfHostedRunnersForOrg"]["response"]
       >;
@@ -1642,7 +1642,7 @@ export type RestEndpointMethods = {
      */
     listSelfHostedRunnersForRepo: {
       (
-        params?: RestEndpointMethodTypes["actions"]["listSelfHostedRunnersForRepo"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["listSelfHostedRunnersForRepo"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["listSelfHostedRunnersForRepo"]["response"]
       >;
@@ -1654,7 +1654,7 @@ export type RestEndpointMethods = {
      */
     listWorkflowRunArtifacts: {
       (
-        params?: RestEndpointMethodTypes["actions"]["listWorkflowRunArtifacts"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["listWorkflowRunArtifacts"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["listWorkflowRunArtifacts"]["response"]
       >;
@@ -1668,7 +1668,7 @@ export type RestEndpointMethods = {
      */
     listWorkflowRuns: {
       (
-        params?: RestEndpointMethodTypes["actions"]["listWorkflowRuns"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["listWorkflowRuns"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["listWorkflowRuns"]["response"]
       >;
@@ -1682,7 +1682,7 @@ export type RestEndpointMethods = {
      */
     listWorkflowRunsForRepo: {
       (
-        params?: RestEndpointMethodTypes["actions"]["listWorkflowRunsForRepo"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["listWorkflowRunsForRepo"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["listWorkflowRunsForRepo"]["response"]
       >;
@@ -1694,7 +1694,7 @@ export type RestEndpointMethods = {
      */
     reRunJobForWorkflowRun: {
       (
-        params?: RestEndpointMethodTypes["actions"]["reRunJobForWorkflowRun"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["reRunJobForWorkflowRun"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["reRunJobForWorkflowRun"]["response"]
       >;
@@ -1706,7 +1706,7 @@ export type RestEndpointMethods = {
      */
     reRunWorkflow: {
       (
-        params?: RestEndpointMethodTypes["actions"]["reRunWorkflow"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["reRunWorkflow"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["reRunWorkflow"]["response"]
       >;
@@ -1718,7 +1718,7 @@ export type RestEndpointMethods = {
      */
     reRunWorkflowFailedJobs: {
       (
-        params?: RestEndpointMethodTypes["actions"]["reRunWorkflowFailedJobs"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["reRunWorkflowFailedJobs"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["reRunWorkflowFailedJobs"]["response"]
       >;
@@ -1733,7 +1733,7 @@ export type RestEndpointMethods = {
      */
     removeAllCustomLabelsFromSelfHostedRunnerForOrg: {
       (
-        params?: RestEndpointMethodTypes["actions"]["removeAllCustomLabelsFromSelfHostedRunnerForOrg"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["removeAllCustomLabelsFromSelfHostedRunnerForOrg"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["removeAllCustomLabelsFromSelfHostedRunnerForOrg"]["response"]
       >;
@@ -1749,7 +1749,7 @@ export type RestEndpointMethods = {
      */
     removeAllCustomLabelsFromSelfHostedRunnerForRepo: {
       (
-        params?: RestEndpointMethodTypes["actions"]["removeAllCustomLabelsFromSelfHostedRunnerForRepo"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["removeAllCustomLabelsFromSelfHostedRunnerForRepo"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["removeAllCustomLabelsFromSelfHostedRunnerForRepo"]["response"]
       >;
@@ -1767,7 +1767,7 @@ export type RestEndpointMethods = {
      */
     removeCustomLabelFromSelfHostedRunnerForOrg: {
       (
-        params?: RestEndpointMethodTypes["actions"]["removeCustomLabelFromSelfHostedRunnerForOrg"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["removeCustomLabelFromSelfHostedRunnerForOrg"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["removeCustomLabelFromSelfHostedRunnerForOrg"]["response"]
       >;
@@ -1786,7 +1786,7 @@ export type RestEndpointMethods = {
      */
     removeCustomLabelFromSelfHostedRunnerForRepo: {
       (
-        params?: RestEndpointMethodTypes["actions"]["removeCustomLabelFromSelfHostedRunnerForRepo"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["removeCustomLabelFromSelfHostedRunnerForRepo"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["removeCustomLabelFromSelfHostedRunnerForRepo"]["response"]
       >;
@@ -1798,7 +1798,7 @@ export type RestEndpointMethods = {
      */
     removeSelectedRepoFromOrgSecret: {
       (
-        params?: RestEndpointMethodTypes["actions"]["removeSelectedRepoFromOrgSecret"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["removeSelectedRepoFromOrgSecret"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["removeSelectedRepoFromOrgSecret"]["response"]
       >;
@@ -1810,7 +1810,7 @@ export type RestEndpointMethods = {
      */
     removeSelectedRepoFromOrgVariable: {
       (
-        params?: RestEndpointMethodTypes["actions"]["removeSelectedRepoFromOrgVariable"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["removeSelectedRepoFromOrgVariable"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["removeSelectedRepoFromOrgVariable"]["response"]
       >;
@@ -1826,7 +1826,7 @@ export type RestEndpointMethods = {
      */
     removeSelectedRepoFromRequiredWorkflow: {
       (
-        params?: RestEndpointMethodTypes["actions"]["removeSelectedRepoFromRequiredWorkflow"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["removeSelectedRepoFromRequiredWorkflow"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["removeSelectedRepoFromRequiredWorkflow"]["response"]
       >;
@@ -1843,7 +1843,7 @@ export type RestEndpointMethods = {
      */
     reviewCustomGatesForRun: {
       (
-        params?: RestEndpointMethodTypes["actions"]["reviewCustomGatesForRun"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["reviewCustomGatesForRun"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["reviewCustomGatesForRun"]["response"]
       >;
@@ -1857,7 +1857,7 @@ export type RestEndpointMethods = {
      */
     reviewPendingDeploymentsForRun: {
       (
-        params?: RestEndpointMethodTypes["actions"]["reviewPendingDeploymentsForRun"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["reviewPendingDeploymentsForRun"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["reviewPendingDeploymentsForRun"]["response"]
       >;
@@ -1871,7 +1871,7 @@ export type RestEndpointMethods = {
      */
     setAllowedActionsOrganization: {
       (
-        params?: RestEndpointMethodTypes["actions"]["setAllowedActionsOrganization"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["setAllowedActionsOrganization"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["setAllowedActionsOrganization"]["response"]
       >;
@@ -1885,7 +1885,7 @@ export type RestEndpointMethods = {
      */
     setAllowedActionsRepository: {
       (
-        params?: RestEndpointMethodTypes["actions"]["setAllowedActionsRepository"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["setAllowedActionsRepository"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["setAllowedActionsRepository"]["response"]
       >;
@@ -1900,7 +1900,7 @@ export type RestEndpointMethods = {
      */
     setCustomLabelsForSelfHostedRunnerForOrg: {
       (
-        params?: RestEndpointMethodTypes["actions"]["setCustomLabelsForSelfHostedRunnerForOrg"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["setCustomLabelsForSelfHostedRunnerForOrg"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["setCustomLabelsForSelfHostedRunnerForOrg"]["response"]
       >;
@@ -1916,7 +1916,7 @@ export type RestEndpointMethods = {
      */
     setCustomLabelsForSelfHostedRunnerForRepo: {
       (
-        params?: RestEndpointMethodTypes["actions"]["setCustomLabelsForSelfHostedRunnerForRepo"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["setCustomLabelsForSelfHostedRunnerForRepo"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["setCustomLabelsForSelfHostedRunnerForRepo"]["response"]
       >;
@@ -1932,7 +1932,7 @@ export type RestEndpointMethods = {
      */
     setGithubActionsDefaultWorkflowPermissionsOrganization: {
       (
-        params?: RestEndpointMethodTypes["actions"]["setGithubActionsDefaultWorkflowPermissionsOrganization"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["setGithubActionsDefaultWorkflowPermissionsOrganization"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["setGithubActionsDefaultWorkflowPermissionsOrganization"]["response"]
       >;
@@ -1948,7 +1948,7 @@ export type RestEndpointMethods = {
      */
     setGithubActionsDefaultWorkflowPermissionsRepository: {
       (
-        params?: RestEndpointMethodTypes["actions"]["setGithubActionsDefaultWorkflowPermissionsRepository"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["setGithubActionsDefaultWorkflowPermissionsRepository"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["setGithubActionsDefaultWorkflowPermissionsRepository"]["response"]
       >;
@@ -1962,7 +1962,7 @@ export type RestEndpointMethods = {
      */
     setGithubActionsPermissionsOrganization: {
       (
-        params?: RestEndpointMethodTypes["actions"]["setGithubActionsPermissionsOrganization"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["setGithubActionsPermissionsOrganization"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["setGithubActionsPermissionsOrganization"]["response"]
       >;
@@ -1976,7 +1976,7 @@ export type RestEndpointMethods = {
      */
     setGithubActionsPermissionsRepository: {
       (
-        params?: RestEndpointMethodTypes["actions"]["setGithubActionsPermissionsRepository"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["setGithubActionsPermissionsRepository"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["setGithubActionsPermissionsRepository"]["response"]
       >;
@@ -1988,7 +1988,7 @@ export type RestEndpointMethods = {
      */
     setSelectedReposForOrgSecret: {
       (
-        params?: RestEndpointMethodTypes["actions"]["setSelectedReposForOrgSecret"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["setSelectedReposForOrgSecret"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["setSelectedReposForOrgSecret"]["response"]
       >;
@@ -2000,7 +2000,7 @@ export type RestEndpointMethods = {
      */
     setSelectedReposForOrgVariable: {
       (
-        params?: RestEndpointMethodTypes["actions"]["setSelectedReposForOrgVariable"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["setSelectedReposForOrgVariable"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["setSelectedReposForOrgVariable"]["response"]
       >;
@@ -2016,7 +2016,7 @@ export type RestEndpointMethods = {
      */
     setSelectedReposToRequiredWorkflow: {
       (
-        params?: RestEndpointMethodTypes["actions"]["setSelectedReposToRequiredWorkflow"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["setSelectedReposToRequiredWorkflow"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["setSelectedReposToRequiredWorkflow"]["response"]
       >;
@@ -2030,7 +2030,7 @@ export type RestEndpointMethods = {
      */
     setSelectedRepositoriesEnabledGithubActionsOrganization: {
       (
-        params?: RestEndpointMethodTypes["actions"]["setSelectedRepositoriesEnabledGithubActionsOrganization"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["setSelectedRepositoriesEnabledGithubActionsOrganization"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["setSelectedRepositoriesEnabledGithubActionsOrganization"]["response"]
       >;
@@ -2047,7 +2047,7 @@ export type RestEndpointMethods = {
      */
     setWorkflowAccessToRepository: {
       (
-        params?: RestEndpointMethodTypes["actions"]["setWorkflowAccessToRepository"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["setWorkflowAccessToRepository"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["setWorkflowAccessToRepository"]["response"]
       >;
@@ -2061,7 +2061,7 @@ export type RestEndpointMethods = {
      */
     updateEnvironmentVariable: {
       (
-        params?: RestEndpointMethodTypes["actions"]["updateEnvironmentVariable"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["updateEnvironmentVariable"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["updateEnvironmentVariable"]["response"]
       >;
@@ -2075,7 +2075,7 @@ export type RestEndpointMethods = {
      */
     updateOrgVariable: {
       (
-        params?: RestEndpointMethodTypes["actions"]["updateOrgVariable"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["updateOrgVariable"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["updateOrgVariable"]["response"]
       >;
@@ -2089,7 +2089,7 @@ export type RestEndpointMethods = {
      */
     updateRepoVariable: {
       (
-        params?: RestEndpointMethodTypes["actions"]["updateRepoVariable"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["updateRepoVariable"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["updateRepoVariable"]["response"]
       >;
@@ -2105,7 +2105,7 @@ export type RestEndpointMethods = {
      */
     updateRequiredWorkflow: {
       (
-        params?: RestEndpointMethodTypes["actions"]["updateRequiredWorkflow"]["parameters"]
+        params?: RestEndpointMethodTypes["actions"]["updateRequiredWorkflow"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["updateRequiredWorkflow"]["response"]
       >;
@@ -2116,7 +2116,7 @@ export type RestEndpointMethods = {
   activity: {
     checkRepoIsStarredByAuthenticatedUser: {
       (
-        params?: RestEndpointMethodTypes["activity"]["checkRepoIsStarredByAuthenticatedUser"]["parameters"]
+        params?: RestEndpointMethodTypes["activity"]["checkRepoIsStarredByAuthenticatedUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["activity"]["checkRepoIsStarredByAuthenticatedUser"]["response"]
       >;
@@ -2128,7 +2128,7 @@ export type RestEndpointMethods = {
      */
     deleteRepoSubscription: {
       (
-        params?: RestEndpointMethodTypes["activity"]["deleteRepoSubscription"]["parameters"]
+        params?: RestEndpointMethodTypes["activity"]["deleteRepoSubscription"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["activity"]["deleteRepoSubscription"]["response"]
       >;
@@ -2140,7 +2140,7 @@ export type RestEndpointMethods = {
      */
     deleteThreadSubscription: {
       (
-        params?: RestEndpointMethodTypes["activity"]["deleteThreadSubscription"]["parameters"]
+        params?: RestEndpointMethodTypes["activity"]["deleteThreadSubscription"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["activity"]["deleteThreadSubscription"]["response"]
       >;
@@ -2162,7 +2162,7 @@ export type RestEndpointMethods = {
      */
     getFeeds: {
       (
-        params?: RestEndpointMethodTypes["activity"]["getFeeds"]["parameters"]
+        params?: RestEndpointMethodTypes["activity"]["getFeeds"]["parameters"],
       ): Promise<RestEndpointMethodTypes["activity"]["getFeeds"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -2170,7 +2170,7 @@ export type RestEndpointMethods = {
 
     getRepoSubscription: {
       (
-        params?: RestEndpointMethodTypes["activity"]["getRepoSubscription"]["parameters"]
+        params?: RestEndpointMethodTypes["activity"]["getRepoSubscription"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["activity"]["getRepoSubscription"]["response"]
       >;
@@ -2182,7 +2182,7 @@ export type RestEndpointMethods = {
      */
     getThread: {
       (
-        params?: RestEndpointMethodTypes["activity"]["getThread"]["parameters"]
+        params?: RestEndpointMethodTypes["activity"]["getThread"]["parameters"],
       ): Promise<RestEndpointMethodTypes["activity"]["getThread"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -2194,7 +2194,7 @@ export type RestEndpointMethods = {
      */
     getThreadSubscriptionForAuthenticatedUser: {
       (
-        params?: RestEndpointMethodTypes["activity"]["getThreadSubscriptionForAuthenticatedUser"]["parameters"]
+        params?: RestEndpointMethodTypes["activity"]["getThreadSubscriptionForAuthenticatedUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["activity"]["getThreadSubscriptionForAuthenticatedUser"]["response"]
       >;
@@ -2206,7 +2206,7 @@ export type RestEndpointMethods = {
      */
     listEventsForAuthenticatedUser: {
       (
-        params?: RestEndpointMethodTypes["activity"]["listEventsForAuthenticatedUser"]["parameters"]
+        params?: RestEndpointMethodTypes["activity"]["listEventsForAuthenticatedUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["activity"]["listEventsForAuthenticatedUser"]["response"]
       >;
@@ -2218,7 +2218,7 @@ export type RestEndpointMethods = {
      */
     listNotificationsForAuthenticatedUser: {
       (
-        params?: RestEndpointMethodTypes["activity"]["listNotificationsForAuthenticatedUser"]["parameters"]
+        params?: RestEndpointMethodTypes["activity"]["listNotificationsForAuthenticatedUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["activity"]["listNotificationsForAuthenticatedUser"]["response"]
       >;
@@ -2230,7 +2230,7 @@ export type RestEndpointMethods = {
      */
     listOrgEventsForAuthenticatedUser: {
       (
-        params?: RestEndpointMethodTypes["activity"]["listOrgEventsForAuthenticatedUser"]["parameters"]
+        params?: RestEndpointMethodTypes["activity"]["listOrgEventsForAuthenticatedUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["activity"]["listOrgEventsForAuthenticatedUser"]["response"]
       >;
@@ -2242,7 +2242,7 @@ export type RestEndpointMethods = {
      */
     listPublicEvents: {
       (
-        params?: RestEndpointMethodTypes["activity"]["listPublicEvents"]["parameters"]
+        params?: RestEndpointMethodTypes["activity"]["listPublicEvents"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["activity"]["listPublicEvents"]["response"]
       >;
@@ -2252,7 +2252,7 @@ export type RestEndpointMethods = {
 
     listPublicEventsForRepoNetwork: {
       (
-        params?: RestEndpointMethodTypes["activity"]["listPublicEventsForRepoNetwork"]["parameters"]
+        params?: RestEndpointMethodTypes["activity"]["listPublicEventsForRepoNetwork"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["activity"]["listPublicEventsForRepoNetwork"]["response"]
       >;
@@ -2262,7 +2262,7 @@ export type RestEndpointMethods = {
 
     listPublicEventsForUser: {
       (
-        params?: RestEndpointMethodTypes["activity"]["listPublicEventsForUser"]["parameters"]
+        params?: RestEndpointMethodTypes["activity"]["listPublicEventsForUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["activity"]["listPublicEventsForUser"]["response"]
       >;
@@ -2272,7 +2272,7 @@ export type RestEndpointMethods = {
 
     listPublicOrgEvents: {
       (
-        params?: RestEndpointMethodTypes["activity"]["listPublicOrgEvents"]["parameters"]
+        params?: RestEndpointMethodTypes["activity"]["listPublicOrgEvents"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["activity"]["listPublicOrgEvents"]["response"]
       >;
@@ -2284,7 +2284,7 @@ export type RestEndpointMethods = {
      */
     listReceivedEventsForUser: {
       (
-        params?: RestEndpointMethodTypes["activity"]["listReceivedEventsForUser"]["parameters"]
+        params?: RestEndpointMethodTypes["activity"]["listReceivedEventsForUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["activity"]["listReceivedEventsForUser"]["response"]
       >;
@@ -2294,7 +2294,7 @@ export type RestEndpointMethods = {
 
     listReceivedPublicEventsForUser: {
       (
-        params?: RestEndpointMethodTypes["activity"]["listReceivedPublicEventsForUser"]["parameters"]
+        params?: RestEndpointMethodTypes["activity"]["listReceivedPublicEventsForUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["activity"]["listReceivedPublicEventsForUser"]["response"]
       >;
@@ -2306,7 +2306,7 @@ export type RestEndpointMethods = {
      */
     listRepoEvents: {
       (
-        params?: RestEndpointMethodTypes["activity"]["listRepoEvents"]["parameters"]
+        params?: RestEndpointMethodTypes["activity"]["listRepoEvents"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["activity"]["listRepoEvents"]["response"]
       >;
@@ -2318,7 +2318,7 @@ export type RestEndpointMethods = {
      */
     listRepoNotificationsForAuthenticatedUser: {
       (
-        params?: RestEndpointMethodTypes["activity"]["listRepoNotificationsForAuthenticatedUser"]["parameters"]
+        params?: RestEndpointMethodTypes["activity"]["listRepoNotificationsForAuthenticatedUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["activity"]["listRepoNotificationsForAuthenticatedUser"]["response"]
       >;
@@ -2332,7 +2332,7 @@ export type RestEndpointMethods = {
      */
     listReposStarredByAuthenticatedUser: {
       (
-        params?: RestEndpointMethodTypes["activity"]["listReposStarredByAuthenticatedUser"]["parameters"]
+        params?: RestEndpointMethodTypes["activity"]["listReposStarredByAuthenticatedUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["activity"]["listReposStarredByAuthenticatedUser"]["response"]
       >;
@@ -2346,7 +2346,7 @@ export type RestEndpointMethods = {
      */
     listReposStarredByUser: {
       (
-        params?: RestEndpointMethodTypes["activity"]["listReposStarredByUser"]["parameters"]
+        params?: RestEndpointMethodTypes["activity"]["listReposStarredByUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["activity"]["listReposStarredByUser"]["response"]
       >;
@@ -2358,7 +2358,7 @@ export type RestEndpointMethods = {
      */
     listReposWatchedByUser: {
       (
-        params?: RestEndpointMethodTypes["activity"]["listReposWatchedByUser"]["parameters"]
+        params?: RestEndpointMethodTypes["activity"]["listReposWatchedByUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["activity"]["listReposWatchedByUser"]["response"]
       >;
@@ -2372,7 +2372,7 @@ export type RestEndpointMethods = {
      */
     listStargazersForRepo: {
       (
-        params?: RestEndpointMethodTypes["activity"]["listStargazersForRepo"]["parameters"]
+        params?: RestEndpointMethodTypes["activity"]["listStargazersForRepo"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["activity"]["listStargazersForRepo"]["response"]
       >;
@@ -2384,7 +2384,7 @@ export type RestEndpointMethods = {
      */
     listWatchedReposForAuthenticatedUser: {
       (
-        params?: RestEndpointMethodTypes["activity"]["listWatchedReposForAuthenticatedUser"]["parameters"]
+        params?: RestEndpointMethodTypes["activity"]["listWatchedReposForAuthenticatedUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["activity"]["listWatchedReposForAuthenticatedUser"]["response"]
       >;
@@ -2396,7 +2396,7 @@ export type RestEndpointMethods = {
      */
     listWatchersForRepo: {
       (
-        params?: RestEndpointMethodTypes["activity"]["listWatchersForRepo"]["parameters"]
+        params?: RestEndpointMethodTypes["activity"]["listWatchersForRepo"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["activity"]["listWatchersForRepo"]["response"]
       >;
@@ -2408,7 +2408,7 @@ export type RestEndpointMethods = {
      */
     markNotificationsAsRead: {
       (
-        params?: RestEndpointMethodTypes["activity"]["markNotificationsAsRead"]["parameters"]
+        params?: RestEndpointMethodTypes["activity"]["markNotificationsAsRead"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["activity"]["markNotificationsAsRead"]["response"]
       >;
@@ -2420,7 +2420,7 @@ export type RestEndpointMethods = {
      */
     markRepoNotificationsAsRead: {
       (
-        params?: RestEndpointMethodTypes["activity"]["markRepoNotificationsAsRead"]["parameters"]
+        params?: RestEndpointMethodTypes["activity"]["markRepoNotificationsAsRead"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["activity"]["markRepoNotificationsAsRead"]["response"]
       >;
@@ -2432,7 +2432,7 @@ export type RestEndpointMethods = {
      */
     markThreadAsRead: {
       (
-        params?: RestEndpointMethodTypes["activity"]["markThreadAsRead"]["parameters"]
+        params?: RestEndpointMethodTypes["activity"]["markThreadAsRead"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["activity"]["markThreadAsRead"]["response"]
       >;
@@ -2444,7 +2444,7 @@ export type RestEndpointMethods = {
      */
     setRepoSubscription: {
       (
-        params?: RestEndpointMethodTypes["activity"]["setRepoSubscription"]["parameters"]
+        params?: RestEndpointMethodTypes["activity"]["setRepoSubscription"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["activity"]["setRepoSubscription"]["response"]
       >;
@@ -2460,7 +2460,7 @@ export type RestEndpointMethods = {
      */
     setThreadSubscription: {
       (
-        params?: RestEndpointMethodTypes["activity"]["setThreadSubscription"]["parameters"]
+        params?: RestEndpointMethodTypes["activity"]["setThreadSubscription"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["activity"]["setThreadSubscription"]["response"]
       >;
@@ -2472,7 +2472,7 @@ export type RestEndpointMethods = {
      */
     starRepoForAuthenticatedUser: {
       (
-        params?: RestEndpointMethodTypes["activity"]["starRepoForAuthenticatedUser"]["parameters"]
+        params?: RestEndpointMethodTypes["activity"]["starRepoForAuthenticatedUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["activity"]["starRepoForAuthenticatedUser"]["response"]
       >;
@@ -2482,7 +2482,7 @@ export type RestEndpointMethods = {
 
     unstarRepoForAuthenticatedUser: {
       (
-        params?: RestEndpointMethodTypes["activity"]["unstarRepoForAuthenticatedUser"]["parameters"]
+        params?: RestEndpointMethodTypes["activity"]["unstarRepoForAuthenticatedUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["activity"]["unstarRepoForAuthenticatedUser"]["response"]
       >;
@@ -2499,7 +2499,7 @@ export type RestEndpointMethods = {
      */
     addRepoToInstallation: {
       (
-        params?: RestEndpointMethodTypes["apps"]["addRepoToInstallation"]["parameters"]
+        params?: RestEndpointMethodTypes["apps"]["addRepoToInstallation"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["apps"]["addRepoToInstallation"]["response"]
       >;
@@ -2513,7 +2513,7 @@ export type RestEndpointMethods = {
      */
     addRepoToInstallationForAuthenticatedUser: {
       (
-        params?: RestEndpointMethodTypes["apps"]["addRepoToInstallationForAuthenticatedUser"]["parameters"]
+        params?: RestEndpointMethodTypes["apps"]["addRepoToInstallationForAuthenticatedUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["apps"]["addRepoToInstallationForAuthenticatedUser"]["response"]
       >;
@@ -2525,7 +2525,7 @@ export type RestEndpointMethods = {
      */
     checkToken: {
       (
-        params?: RestEndpointMethodTypes["apps"]["checkToken"]["parameters"]
+        params?: RestEndpointMethodTypes["apps"]["checkToken"]["parameters"],
       ): Promise<RestEndpointMethodTypes["apps"]["checkToken"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -2535,7 +2535,7 @@ export type RestEndpointMethods = {
      */
     createFromManifest: {
       (
-        params?: RestEndpointMethodTypes["apps"]["createFromManifest"]["parameters"]
+        params?: RestEndpointMethodTypes["apps"]["createFromManifest"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["apps"]["createFromManifest"]["response"]
       >;
@@ -2549,7 +2549,7 @@ export type RestEndpointMethods = {
      */
     createInstallationAccessToken: {
       (
-        params?: RestEndpointMethodTypes["apps"]["createInstallationAccessToken"]["parameters"]
+        params?: RestEndpointMethodTypes["apps"]["createInstallationAccessToken"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["apps"]["createInstallationAccessToken"]["response"]
       >;
@@ -2562,7 +2562,7 @@ export type RestEndpointMethods = {
      */
     deleteAuthorization: {
       (
-        params?: RestEndpointMethodTypes["apps"]["deleteAuthorization"]["parameters"]
+        params?: RestEndpointMethodTypes["apps"]["deleteAuthorization"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["apps"]["deleteAuthorization"]["response"]
       >;
@@ -2576,7 +2576,7 @@ export type RestEndpointMethods = {
      */
     deleteInstallation: {
       (
-        params?: RestEndpointMethodTypes["apps"]["deleteInstallation"]["parameters"]
+        params?: RestEndpointMethodTypes["apps"]["deleteInstallation"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["apps"]["deleteInstallation"]["response"]
       >;
@@ -2588,7 +2588,7 @@ export type RestEndpointMethods = {
      */
     deleteToken: {
       (
-        params?: RestEndpointMethodTypes["apps"]["deleteToken"]["parameters"]
+        params?: RestEndpointMethodTypes["apps"]["deleteToken"]["parameters"],
       ): Promise<RestEndpointMethodTypes["apps"]["deleteToken"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -2600,7 +2600,7 @@ export type RestEndpointMethods = {
      */
     getAuthenticated: {
       (
-        params?: RestEndpointMethodTypes["apps"]["getAuthenticated"]["parameters"]
+        params?: RestEndpointMethodTypes["apps"]["getAuthenticated"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["apps"]["getAuthenticated"]["response"]
       >;
@@ -2614,7 +2614,7 @@ export type RestEndpointMethods = {
      */
     getBySlug: {
       (
-        params?: RestEndpointMethodTypes["apps"]["getBySlug"]["parameters"]
+        params?: RestEndpointMethodTypes["apps"]["getBySlug"]["parameters"],
       ): Promise<RestEndpointMethodTypes["apps"]["getBySlug"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -2626,7 +2626,7 @@ export type RestEndpointMethods = {
      */
     getInstallation: {
       (
-        params?: RestEndpointMethodTypes["apps"]["getInstallation"]["parameters"]
+        params?: RestEndpointMethodTypes["apps"]["getInstallation"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["apps"]["getInstallation"]["response"]
       >;
@@ -2640,7 +2640,7 @@ export type RestEndpointMethods = {
      */
     getOrgInstallation: {
       (
-        params?: RestEndpointMethodTypes["apps"]["getOrgInstallation"]["parameters"]
+        params?: RestEndpointMethodTypes["apps"]["getOrgInstallation"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["apps"]["getOrgInstallation"]["response"]
       >;
@@ -2654,7 +2654,7 @@ export type RestEndpointMethods = {
      */
     getRepoInstallation: {
       (
-        params?: RestEndpointMethodTypes["apps"]["getRepoInstallation"]["parameters"]
+        params?: RestEndpointMethodTypes["apps"]["getRepoInstallation"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["apps"]["getRepoInstallation"]["response"]
       >;
@@ -2668,7 +2668,7 @@ export type RestEndpointMethods = {
      */
     getSubscriptionPlanForAccount: {
       (
-        params?: RestEndpointMethodTypes["apps"]["getSubscriptionPlanForAccount"]["parameters"]
+        params?: RestEndpointMethodTypes["apps"]["getSubscriptionPlanForAccount"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["apps"]["getSubscriptionPlanForAccount"]["response"]
       >;
@@ -2682,7 +2682,7 @@ export type RestEndpointMethods = {
      */
     getSubscriptionPlanForAccountStubbed: {
       (
-        params?: RestEndpointMethodTypes["apps"]["getSubscriptionPlanForAccountStubbed"]["parameters"]
+        params?: RestEndpointMethodTypes["apps"]["getSubscriptionPlanForAccountStubbed"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["apps"]["getSubscriptionPlanForAccountStubbed"]["response"]
       >;
@@ -2696,7 +2696,7 @@ export type RestEndpointMethods = {
      */
     getUserInstallation: {
       (
-        params?: RestEndpointMethodTypes["apps"]["getUserInstallation"]["parameters"]
+        params?: RestEndpointMethodTypes["apps"]["getUserInstallation"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["apps"]["getUserInstallation"]["response"]
       >;
@@ -2710,7 +2710,7 @@ export type RestEndpointMethods = {
      */
     getWebhookConfigForApp: {
       (
-        params?: RestEndpointMethodTypes["apps"]["getWebhookConfigForApp"]["parameters"]
+        params?: RestEndpointMethodTypes["apps"]["getWebhookConfigForApp"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["apps"]["getWebhookConfigForApp"]["response"]
       >;
@@ -2724,7 +2724,7 @@ export type RestEndpointMethods = {
      */
     getWebhookDelivery: {
       (
-        params?: RestEndpointMethodTypes["apps"]["getWebhookDelivery"]["parameters"]
+        params?: RestEndpointMethodTypes["apps"]["getWebhookDelivery"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["apps"]["getWebhookDelivery"]["response"]
       >;
@@ -2738,7 +2738,7 @@ export type RestEndpointMethods = {
      */
     listAccountsForPlan: {
       (
-        params?: RestEndpointMethodTypes["apps"]["listAccountsForPlan"]["parameters"]
+        params?: RestEndpointMethodTypes["apps"]["listAccountsForPlan"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["apps"]["listAccountsForPlan"]["response"]
       >;
@@ -2752,7 +2752,7 @@ export type RestEndpointMethods = {
      */
     listAccountsForPlanStubbed: {
       (
-        params?: RestEndpointMethodTypes["apps"]["listAccountsForPlanStubbed"]["parameters"]
+        params?: RestEndpointMethodTypes["apps"]["listAccountsForPlanStubbed"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["apps"]["listAccountsForPlanStubbed"]["response"]
       >;
@@ -2770,7 +2770,7 @@ export type RestEndpointMethods = {
      */
     listInstallationReposForAuthenticatedUser: {
       (
-        params?: RestEndpointMethodTypes["apps"]["listInstallationReposForAuthenticatedUser"]["parameters"]
+        params?: RestEndpointMethodTypes["apps"]["listInstallationReposForAuthenticatedUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["apps"]["listInstallationReposForAuthenticatedUser"]["response"]
       >;
@@ -2782,7 +2782,7 @@ export type RestEndpointMethods = {
      */
     listInstallationRequestsForAuthenticatedApp: {
       (
-        params?: RestEndpointMethodTypes["apps"]["listInstallationRequestsForAuthenticatedApp"]["parameters"]
+        params?: RestEndpointMethodTypes["apps"]["listInstallationRequestsForAuthenticatedApp"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["apps"]["listInstallationRequestsForAuthenticatedApp"]["response"]
       >;
@@ -2796,7 +2796,7 @@ export type RestEndpointMethods = {
      */
     listInstallations: {
       (
-        params?: RestEndpointMethodTypes["apps"]["listInstallations"]["parameters"]
+        params?: RestEndpointMethodTypes["apps"]["listInstallations"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["apps"]["listInstallations"]["response"]
       >;
@@ -2814,7 +2814,7 @@ export type RestEndpointMethods = {
      */
     listInstallationsForAuthenticatedUser: {
       (
-        params?: RestEndpointMethodTypes["apps"]["listInstallationsForAuthenticatedUser"]["parameters"]
+        params?: RestEndpointMethodTypes["apps"]["listInstallationsForAuthenticatedUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["apps"]["listInstallationsForAuthenticatedUser"]["response"]
       >;
@@ -2828,7 +2828,7 @@ export type RestEndpointMethods = {
      */
     listPlans: {
       (
-        params?: RestEndpointMethodTypes["apps"]["listPlans"]["parameters"]
+        params?: RestEndpointMethodTypes["apps"]["listPlans"]["parameters"],
       ): Promise<RestEndpointMethodTypes["apps"]["listPlans"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -2840,7 +2840,7 @@ export type RestEndpointMethods = {
      */
     listPlansStubbed: {
       (
-        params?: RestEndpointMethodTypes["apps"]["listPlansStubbed"]["parameters"]
+        params?: RestEndpointMethodTypes["apps"]["listPlansStubbed"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["apps"]["listPlansStubbed"]["response"]
       >;
@@ -2854,7 +2854,7 @@ export type RestEndpointMethods = {
      */
     listReposAccessibleToInstallation: {
       (
-        params?: RestEndpointMethodTypes["apps"]["listReposAccessibleToInstallation"]["parameters"]
+        params?: RestEndpointMethodTypes["apps"]["listReposAccessibleToInstallation"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["apps"]["listReposAccessibleToInstallation"]["response"]
       >;
@@ -2866,7 +2866,7 @@ export type RestEndpointMethods = {
      */
     listSubscriptionsForAuthenticatedUser: {
       (
-        params?: RestEndpointMethodTypes["apps"]["listSubscriptionsForAuthenticatedUser"]["parameters"]
+        params?: RestEndpointMethodTypes["apps"]["listSubscriptionsForAuthenticatedUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["apps"]["listSubscriptionsForAuthenticatedUser"]["response"]
       >;
@@ -2878,7 +2878,7 @@ export type RestEndpointMethods = {
      */
     listSubscriptionsForAuthenticatedUserStubbed: {
       (
-        params?: RestEndpointMethodTypes["apps"]["listSubscriptionsForAuthenticatedUserStubbed"]["parameters"]
+        params?: RestEndpointMethodTypes["apps"]["listSubscriptionsForAuthenticatedUserStubbed"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["apps"]["listSubscriptionsForAuthenticatedUserStubbed"]["response"]
       >;
@@ -2892,7 +2892,7 @@ export type RestEndpointMethods = {
      */
     listWebhookDeliveries: {
       (
-        params?: RestEndpointMethodTypes["apps"]["listWebhookDeliveries"]["parameters"]
+        params?: RestEndpointMethodTypes["apps"]["listWebhookDeliveries"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["apps"]["listWebhookDeliveries"]["response"]
       >;
@@ -2906,7 +2906,7 @@ export type RestEndpointMethods = {
      */
     redeliverWebhookDelivery: {
       (
-        params?: RestEndpointMethodTypes["apps"]["redeliverWebhookDelivery"]["parameters"]
+        params?: RestEndpointMethodTypes["apps"]["redeliverWebhookDelivery"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["apps"]["redeliverWebhookDelivery"]["response"]
       >;
@@ -2921,7 +2921,7 @@ export type RestEndpointMethods = {
      */
     removeRepoFromInstallation: {
       (
-        params?: RestEndpointMethodTypes["apps"]["removeRepoFromInstallation"]["parameters"]
+        params?: RestEndpointMethodTypes["apps"]["removeRepoFromInstallation"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["apps"]["removeRepoFromInstallation"]["response"]
       >;
@@ -2935,7 +2935,7 @@ export type RestEndpointMethods = {
      */
     removeRepoFromInstallationForAuthenticatedUser: {
       (
-        params?: RestEndpointMethodTypes["apps"]["removeRepoFromInstallationForAuthenticatedUser"]["parameters"]
+        params?: RestEndpointMethodTypes["apps"]["removeRepoFromInstallationForAuthenticatedUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["apps"]["removeRepoFromInstallationForAuthenticatedUser"]["response"]
       >;
@@ -2947,7 +2947,7 @@ export type RestEndpointMethods = {
      */
     resetToken: {
       (
-        params?: RestEndpointMethodTypes["apps"]["resetToken"]["parameters"]
+        params?: RestEndpointMethodTypes["apps"]["resetToken"]["parameters"],
       ): Promise<RestEndpointMethodTypes["apps"]["resetToken"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -2961,7 +2961,7 @@ export type RestEndpointMethods = {
      */
     revokeInstallationAccessToken: {
       (
-        params?: RestEndpointMethodTypes["apps"]["revokeInstallationAccessToken"]["parameters"]
+        params?: RestEndpointMethodTypes["apps"]["revokeInstallationAccessToken"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["apps"]["revokeInstallationAccessToken"]["response"]
       >;
@@ -2973,7 +2973,7 @@ export type RestEndpointMethods = {
      */
     scopeToken: {
       (
-        params?: RestEndpointMethodTypes["apps"]["scopeToken"]["parameters"]
+        params?: RestEndpointMethodTypes["apps"]["scopeToken"]["parameters"],
       ): Promise<RestEndpointMethodTypes["apps"]["scopeToken"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -2985,7 +2985,7 @@ export type RestEndpointMethods = {
      */
     suspendInstallation: {
       (
-        params?: RestEndpointMethodTypes["apps"]["suspendInstallation"]["parameters"]
+        params?: RestEndpointMethodTypes["apps"]["suspendInstallation"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["apps"]["suspendInstallation"]["response"]
       >;
@@ -2999,7 +2999,7 @@ export type RestEndpointMethods = {
      */
     unsuspendInstallation: {
       (
-        params?: RestEndpointMethodTypes["apps"]["unsuspendInstallation"]["parameters"]
+        params?: RestEndpointMethodTypes["apps"]["unsuspendInstallation"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["apps"]["unsuspendInstallation"]["response"]
       >;
@@ -3013,7 +3013,7 @@ export type RestEndpointMethods = {
      */
     updateWebhookConfigForApp: {
       (
-        params?: RestEndpointMethodTypes["apps"]["updateWebhookConfigForApp"]["parameters"]
+        params?: RestEndpointMethodTypes["apps"]["updateWebhookConfigForApp"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["apps"]["updateWebhookConfigForApp"]["response"]
       >;
@@ -3031,7 +3031,7 @@ export type RestEndpointMethods = {
      */
     getGithubActionsBillingOrg: {
       (
-        params?: RestEndpointMethodTypes["billing"]["getGithubActionsBillingOrg"]["parameters"]
+        params?: RestEndpointMethodTypes["billing"]["getGithubActionsBillingOrg"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["billing"]["getGithubActionsBillingOrg"]["response"]
       >;
@@ -3047,7 +3047,7 @@ export type RestEndpointMethods = {
      */
     getGithubActionsBillingUser: {
       (
-        params?: RestEndpointMethodTypes["billing"]["getGithubActionsBillingUser"]["parameters"]
+        params?: RestEndpointMethodTypes["billing"]["getGithubActionsBillingUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["billing"]["getGithubActionsBillingUser"]["response"]
       >;
@@ -3063,7 +3063,7 @@ export type RestEndpointMethods = {
      */
     getGithubPackagesBillingOrg: {
       (
-        params?: RestEndpointMethodTypes["billing"]["getGithubPackagesBillingOrg"]["parameters"]
+        params?: RestEndpointMethodTypes["billing"]["getGithubPackagesBillingOrg"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["billing"]["getGithubPackagesBillingOrg"]["response"]
       >;
@@ -3079,7 +3079,7 @@ export type RestEndpointMethods = {
      */
     getGithubPackagesBillingUser: {
       (
-        params?: RestEndpointMethodTypes["billing"]["getGithubPackagesBillingUser"]["parameters"]
+        params?: RestEndpointMethodTypes["billing"]["getGithubPackagesBillingUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["billing"]["getGithubPackagesBillingUser"]["response"]
       >;
@@ -3095,7 +3095,7 @@ export type RestEndpointMethods = {
      */
     getSharedStorageBillingOrg: {
       (
-        params?: RestEndpointMethodTypes["billing"]["getSharedStorageBillingOrg"]["parameters"]
+        params?: RestEndpointMethodTypes["billing"]["getSharedStorageBillingOrg"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["billing"]["getSharedStorageBillingOrg"]["response"]
       >;
@@ -3111,7 +3111,7 @@ export type RestEndpointMethods = {
      */
     getSharedStorageBillingUser: {
       (
-        params?: RestEndpointMethodTypes["billing"]["getSharedStorageBillingUser"]["parameters"]
+        params?: RestEndpointMethodTypes["billing"]["getSharedStorageBillingUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["billing"]["getSharedStorageBillingUser"]["response"]
       >;
@@ -3129,7 +3129,7 @@ export type RestEndpointMethods = {
      */
     create: {
       (
-        params?: RestEndpointMethodTypes["checks"]["create"]["parameters"]
+        params?: RestEndpointMethodTypes["checks"]["create"]["parameters"],
       ): Promise<RestEndpointMethodTypes["checks"]["create"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -3141,7 +3141,7 @@ export type RestEndpointMethods = {
      */
     createSuite: {
       (
-        params?: RestEndpointMethodTypes["checks"]["createSuite"]["parameters"]
+        params?: RestEndpointMethodTypes["checks"]["createSuite"]["parameters"],
       ): Promise<RestEndpointMethodTypes["checks"]["createSuite"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -3153,7 +3153,7 @@ export type RestEndpointMethods = {
      */
     get: {
       (
-        params?: RestEndpointMethodTypes["checks"]["get"]["parameters"]
+        params?: RestEndpointMethodTypes["checks"]["get"]["parameters"],
       ): Promise<RestEndpointMethodTypes["checks"]["get"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -3165,7 +3165,7 @@ export type RestEndpointMethods = {
      */
     getSuite: {
       (
-        params?: RestEndpointMethodTypes["checks"]["getSuite"]["parameters"]
+        params?: RestEndpointMethodTypes["checks"]["getSuite"]["parameters"],
       ): Promise<RestEndpointMethodTypes["checks"]["getSuite"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -3175,7 +3175,7 @@ export type RestEndpointMethods = {
      */
     listAnnotations: {
       (
-        params?: RestEndpointMethodTypes["checks"]["listAnnotations"]["parameters"]
+        params?: RestEndpointMethodTypes["checks"]["listAnnotations"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["checks"]["listAnnotations"]["response"]
       >;
@@ -3189,7 +3189,7 @@ export type RestEndpointMethods = {
      */
     listForRef: {
       (
-        params?: RestEndpointMethodTypes["checks"]["listForRef"]["parameters"]
+        params?: RestEndpointMethodTypes["checks"]["listForRef"]["parameters"],
       ): Promise<RestEndpointMethodTypes["checks"]["listForRef"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -3201,7 +3201,7 @@ export type RestEndpointMethods = {
      */
     listForSuite: {
       (
-        params?: RestEndpointMethodTypes["checks"]["listForSuite"]["parameters"]
+        params?: RestEndpointMethodTypes["checks"]["listForSuite"]["parameters"],
       ): Promise<RestEndpointMethodTypes["checks"]["listForSuite"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -3213,7 +3213,7 @@ export type RestEndpointMethods = {
      */
     listSuitesForRef: {
       (
-        params?: RestEndpointMethodTypes["checks"]["listSuitesForRef"]["parameters"]
+        params?: RestEndpointMethodTypes["checks"]["listSuitesForRef"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["checks"]["listSuitesForRef"]["response"]
       >;
@@ -3227,7 +3227,7 @@ export type RestEndpointMethods = {
      */
     rerequestRun: {
       (
-        params?: RestEndpointMethodTypes["checks"]["rerequestRun"]["parameters"]
+        params?: RestEndpointMethodTypes["checks"]["rerequestRun"]["parameters"],
       ): Promise<RestEndpointMethodTypes["checks"]["rerequestRun"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -3239,7 +3239,7 @@ export type RestEndpointMethods = {
      */
     rerequestSuite: {
       (
-        params?: RestEndpointMethodTypes["checks"]["rerequestSuite"]["parameters"]
+        params?: RestEndpointMethodTypes["checks"]["rerequestSuite"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["checks"]["rerequestSuite"]["response"]
       >;
@@ -3251,7 +3251,7 @@ export type RestEndpointMethods = {
      */
     setSuitesPreferences: {
       (
-        params?: RestEndpointMethodTypes["checks"]["setSuitesPreferences"]["parameters"]
+        params?: RestEndpointMethodTypes["checks"]["setSuitesPreferences"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["checks"]["setSuitesPreferences"]["response"]
       >;
@@ -3265,7 +3265,7 @@ export type RestEndpointMethods = {
      */
     update: {
       (
-        params?: RestEndpointMethodTypes["checks"]["update"]["parameters"]
+        params?: RestEndpointMethodTypes["checks"]["update"]["parameters"],
       ): Promise<RestEndpointMethodTypes["checks"]["update"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -3341,7 +3341,7 @@ export type RestEndpointMethods = {
      */
     deleteAnalysis: {
       (
-        params?: RestEndpointMethodTypes["codeScanning"]["deleteAnalysis"]["parameters"]
+        params?: RestEndpointMethodTypes["codeScanning"]["deleteAnalysis"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["codeScanning"]["deleteAnalysis"]["response"]
       >;
@@ -3353,7 +3353,7 @@ export type RestEndpointMethods = {
      */
     getAlert: {
       (
-        params?: RestEndpointMethodTypes["codeScanning"]["getAlert"]["parameters"]
+        params?: RestEndpointMethodTypes["codeScanning"]["getAlert"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["codeScanning"]["getAlert"]["response"]
       >;
@@ -3383,7 +3383,7 @@ export type RestEndpointMethods = {
      */
     getAnalysis: {
       (
-        params?: RestEndpointMethodTypes["codeScanning"]["getAnalysis"]["parameters"]
+        params?: RestEndpointMethodTypes["codeScanning"]["getAnalysis"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["codeScanning"]["getAnalysis"]["response"]
       >;
@@ -3405,7 +3405,7 @@ export type RestEndpointMethods = {
      */
     getCodeqlDatabase: {
       (
-        params?: RestEndpointMethodTypes["codeScanning"]["getCodeqlDatabase"]["parameters"]
+        params?: RestEndpointMethodTypes["codeScanning"]["getCodeqlDatabase"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["codeScanning"]["getCodeqlDatabase"]["response"]
       >;
@@ -3419,7 +3419,7 @@ export type RestEndpointMethods = {
      */
     getDefaultSetup: {
       (
-        params?: RestEndpointMethodTypes["codeScanning"]["getDefaultSetup"]["parameters"]
+        params?: RestEndpointMethodTypes["codeScanning"]["getDefaultSetup"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["codeScanning"]["getDefaultSetup"]["response"]
       >;
@@ -3431,7 +3431,7 @@ export type RestEndpointMethods = {
      */
     getSarif: {
       (
-        params?: RestEndpointMethodTypes["codeScanning"]["getSarif"]["parameters"]
+        params?: RestEndpointMethodTypes["codeScanning"]["getSarif"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["codeScanning"]["getSarif"]["response"]
       >;
@@ -3446,7 +3446,7 @@ export type RestEndpointMethods = {
      */
     listAlertInstances: {
       (
-        params?: RestEndpointMethodTypes["codeScanning"]["listAlertInstances"]["parameters"]
+        params?: RestEndpointMethodTypes["codeScanning"]["listAlertInstances"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["codeScanning"]["listAlertInstances"]["response"]
       >;
@@ -3464,7 +3464,7 @@ export type RestEndpointMethods = {
      */
     listAlertsForOrg: {
       (
-        params?: RestEndpointMethodTypes["codeScanning"]["listAlertsForOrg"]["parameters"]
+        params?: RestEndpointMethodTypes["codeScanning"]["listAlertsForOrg"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["codeScanning"]["listAlertsForOrg"]["response"]
       >;
@@ -3485,7 +3485,7 @@ export type RestEndpointMethods = {
      */
     listAlertsForRepo: {
       (
-        params?: RestEndpointMethodTypes["codeScanning"]["listAlertsForRepo"]["parameters"]
+        params?: RestEndpointMethodTypes["codeScanning"]["listAlertsForRepo"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["codeScanning"]["listAlertsForRepo"]["response"]
       >;
@@ -3501,7 +3501,7 @@ export type RestEndpointMethods = {
      */
     listAlertsInstances: {
       (
-        params?: RestEndpointMethodTypes["codeScanning"]["listAlertsInstances"]["parameters"]
+        params?: RestEndpointMethodTypes["codeScanning"]["listAlertsInstances"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["codeScanning"]["listAlertsInstances"]["response"]
       >;
@@ -3517,7 +3517,7 @@ export type RestEndpointMethods = {
      */
     listCodeqlDatabases: {
       (
-        params?: RestEndpointMethodTypes["codeScanning"]["listCodeqlDatabases"]["parameters"]
+        params?: RestEndpointMethodTypes["codeScanning"]["listCodeqlDatabases"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["codeScanning"]["listCodeqlDatabases"]["response"]
       >;
@@ -3545,7 +3545,7 @@ export type RestEndpointMethods = {
      */
     listRecentAnalyses: {
       (
-        params?: RestEndpointMethodTypes["codeScanning"]["listRecentAnalyses"]["parameters"]
+        params?: RestEndpointMethodTypes["codeScanning"]["listRecentAnalyses"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["codeScanning"]["listRecentAnalyses"]["response"]
       >;
@@ -3557,7 +3557,7 @@ export type RestEndpointMethods = {
      */
     updateAlert: {
       (
-        params?: RestEndpointMethodTypes["codeScanning"]["updateAlert"]["parameters"]
+        params?: RestEndpointMethodTypes["codeScanning"]["updateAlert"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["codeScanning"]["updateAlert"]["response"]
       >;
@@ -3571,7 +3571,7 @@ export type RestEndpointMethods = {
      */
     updateDefaultSetup: {
       (
-        params?: RestEndpointMethodTypes["codeScanning"]["updateDefaultSetup"]["parameters"]
+        params?: RestEndpointMethodTypes["codeScanning"]["updateDefaultSetup"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["codeScanning"]["updateDefaultSetup"]["response"]
       >;
@@ -3612,7 +3612,7 @@ export type RestEndpointMethods = {
      */
     uploadSarif: {
       (
-        params?: RestEndpointMethodTypes["codeScanning"]["uploadSarif"]["parameters"]
+        params?: RestEndpointMethodTypes["codeScanning"]["uploadSarif"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["codeScanning"]["uploadSarif"]["response"]
       >;
@@ -3623,7 +3623,7 @@ export type RestEndpointMethods = {
   codesOfConduct: {
     getAllCodesOfConduct: {
       (
-        params?: RestEndpointMethodTypes["codesOfConduct"]["getAllCodesOfConduct"]["parameters"]
+        params?: RestEndpointMethodTypes["codesOfConduct"]["getAllCodesOfConduct"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["codesOfConduct"]["getAllCodesOfConduct"]["response"]
       >;
@@ -3633,7 +3633,7 @@ export type RestEndpointMethods = {
 
     getConductCode: {
       (
-        params?: RestEndpointMethodTypes["codesOfConduct"]["getConductCode"]["parameters"]
+        params?: RestEndpointMethodTypes["codesOfConduct"]["getConductCode"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["codesOfConduct"]["getConductCode"]["response"]
       >;
@@ -3649,7 +3649,7 @@ export type RestEndpointMethods = {
      */
     addRepositoryForSecretForAuthenticatedUser: {
       (
-        params?: RestEndpointMethodTypes["codespaces"]["addRepositoryForSecretForAuthenticatedUser"]["parameters"]
+        params?: RestEndpointMethodTypes["codespaces"]["addRepositoryForSecretForAuthenticatedUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["codespaces"]["addRepositoryForSecretForAuthenticatedUser"]["response"]
       >;
@@ -3661,7 +3661,7 @@ export type RestEndpointMethods = {
      */
     addSelectedRepoToOrgSecret: {
       (
-        params?: RestEndpointMethodTypes["codespaces"]["addSelectedRepoToOrgSecret"]["parameters"]
+        params?: RestEndpointMethodTypes["codespaces"]["addSelectedRepoToOrgSecret"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["codespaces"]["addSelectedRepoToOrgSecret"]["response"]
       >;
@@ -3677,7 +3677,7 @@ export type RestEndpointMethods = {
      */
     codespaceMachinesForAuthenticatedUser: {
       (
-        params?: RestEndpointMethodTypes["codespaces"]["codespaceMachinesForAuthenticatedUser"]["parameters"]
+        params?: RestEndpointMethodTypes["codespaces"]["codespaceMachinesForAuthenticatedUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["codespaces"]["codespaceMachinesForAuthenticatedUser"]["response"]
       >;
@@ -3695,7 +3695,7 @@ export type RestEndpointMethods = {
      */
     createForAuthenticatedUser: {
       (
-        params?: RestEndpointMethodTypes["codespaces"]["createForAuthenticatedUser"]["parameters"]
+        params?: RestEndpointMethodTypes["codespaces"]["createForAuthenticatedUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["codespaces"]["createForAuthenticatedUser"]["response"]
       >;
@@ -3781,7 +3781,7 @@ export type RestEndpointMethods = {
      */
     createOrUpdateOrgSecret: {
       (
-        params?: RestEndpointMethodTypes["codespaces"]["createOrUpdateOrgSecret"]["parameters"]
+        params?: RestEndpointMethodTypes["codespaces"]["createOrUpdateOrgSecret"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["codespaces"]["createOrUpdateOrgSecret"]["response"]
       >;
@@ -3868,7 +3868,7 @@ export type RestEndpointMethods = {
      */
     createOrUpdateRepoSecret: {
       (
-        params?: RestEndpointMethodTypes["codespaces"]["createOrUpdateRepoSecret"]["parameters"]
+        params?: RestEndpointMethodTypes["codespaces"]["createOrUpdateRepoSecret"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["codespaces"]["createOrUpdateRepoSecret"]["response"]
       >;
@@ -3957,7 +3957,7 @@ export type RestEndpointMethods = {
      */
     createOrUpdateSecretForAuthenticatedUser: {
       (
-        params?: RestEndpointMethodTypes["codespaces"]["createOrUpdateSecretForAuthenticatedUser"]["parameters"]
+        params?: RestEndpointMethodTypes["codespaces"]["createOrUpdateSecretForAuthenticatedUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["codespaces"]["createOrUpdateSecretForAuthenticatedUser"]["response"]
       >;
@@ -3973,7 +3973,7 @@ export type RestEndpointMethods = {
      */
     createWithPrForAuthenticatedUser: {
       (
-        params?: RestEndpointMethodTypes["codespaces"]["createWithPrForAuthenticatedUser"]["parameters"]
+        params?: RestEndpointMethodTypes["codespaces"]["createWithPrForAuthenticatedUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["codespaces"]["createWithPrForAuthenticatedUser"]["response"]
       >;
@@ -3989,7 +3989,7 @@ export type RestEndpointMethods = {
      */
     createWithRepoForAuthenticatedUser: {
       (
-        params?: RestEndpointMethodTypes["codespaces"]["createWithRepoForAuthenticatedUser"]["parameters"]
+        params?: RestEndpointMethodTypes["codespaces"]["createWithRepoForAuthenticatedUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["codespaces"]["createWithRepoForAuthenticatedUser"]["response"]
       >;
@@ -4002,7 +4002,7 @@ export type RestEndpointMethods = {
      */
     deleteCodespacesBillingUsers: {
       (
-        params?: RestEndpointMethodTypes["codespaces"]["deleteCodespacesBillingUsers"]["parameters"]
+        params?: RestEndpointMethodTypes["codespaces"]["deleteCodespacesBillingUsers"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["codespaces"]["deleteCodespacesBillingUsers"]["response"]
       >;
@@ -4018,7 +4018,7 @@ export type RestEndpointMethods = {
      */
     deleteForAuthenticatedUser: {
       (
-        params?: RestEndpointMethodTypes["codespaces"]["deleteForAuthenticatedUser"]["parameters"]
+        params?: RestEndpointMethodTypes["codespaces"]["deleteForAuthenticatedUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["codespaces"]["deleteForAuthenticatedUser"]["response"]
       >;
@@ -4032,7 +4032,7 @@ export type RestEndpointMethods = {
      */
     deleteFromOrganization: {
       (
-        params?: RestEndpointMethodTypes["codespaces"]["deleteFromOrganization"]["parameters"]
+        params?: RestEndpointMethodTypes["codespaces"]["deleteFromOrganization"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["codespaces"]["deleteFromOrganization"]["response"]
       >;
@@ -4044,7 +4044,7 @@ export type RestEndpointMethods = {
      */
     deleteOrgSecret: {
       (
-        params?: RestEndpointMethodTypes["codespaces"]["deleteOrgSecret"]["parameters"]
+        params?: RestEndpointMethodTypes["codespaces"]["deleteOrgSecret"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["codespaces"]["deleteOrgSecret"]["response"]
       >;
@@ -4056,7 +4056,7 @@ export type RestEndpointMethods = {
      */
     deleteRepoSecret: {
       (
-        params?: RestEndpointMethodTypes["codespaces"]["deleteRepoSecret"]["parameters"]
+        params?: RestEndpointMethodTypes["codespaces"]["deleteRepoSecret"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["codespaces"]["deleteRepoSecret"]["response"]
       >;
@@ -4072,7 +4072,7 @@ export type RestEndpointMethods = {
      */
     deleteSecretForAuthenticatedUser: {
       (
-        params?: RestEndpointMethodTypes["codespaces"]["deleteSecretForAuthenticatedUser"]["parameters"]
+        params?: RestEndpointMethodTypes["codespaces"]["deleteSecretForAuthenticatedUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["codespaces"]["deleteSecretForAuthenticatedUser"]["response"]
       >;
@@ -4090,7 +4090,7 @@ export type RestEndpointMethods = {
      */
     exportForAuthenticatedUser: {
       (
-        params?: RestEndpointMethodTypes["codespaces"]["exportForAuthenticatedUser"]["parameters"]
+        params?: RestEndpointMethodTypes["codespaces"]["exportForAuthenticatedUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["codespaces"]["exportForAuthenticatedUser"]["response"]
       >;
@@ -4104,7 +4104,7 @@ export type RestEndpointMethods = {
      */
     getCodespacesForUserInOrg: {
       (
-        params?: RestEndpointMethodTypes["codespaces"]["getCodespacesForUserInOrg"]["parameters"]
+        params?: RestEndpointMethodTypes["codespaces"]["getCodespacesForUserInOrg"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["codespaces"]["getCodespacesForUserInOrg"]["response"]
       >;
@@ -4120,7 +4120,7 @@ export type RestEndpointMethods = {
      */
     getExportDetailsForAuthenticatedUser: {
       (
-        params?: RestEndpointMethodTypes["codespaces"]["getExportDetailsForAuthenticatedUser"]["parameters"]
+        params?: RestEndpointMethodTypes["codespaces"]["getExportDetailsForAuthenticatedUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["codespaces"]["getExportDetailsForAuthenticatedUser"]["response"]
       >;
@@ -4136,7 +4136,7 @@ export type RestEndpointMethods = {
      */
     getForAuthenticatedUser: {
       (
-        params?: RestEndpointMethodTypes["codespaces"]["getForAuthenticatedUser"]["parameters"]
+        params?: RestEndpointMethodTypes["codespaces"]["getForAuthenticatedUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["codespaces"]["getForAuthenticatedUser"]["response"]
       >;
@@ -4148,7 +4148,7 @@ export type RestEndpointMethods = {
      */
     getOrgPublicKey: {
       (
-        params?: RestEndpointMethodTypes["codespaces"]["getOrgPublicKey"]["parameters"]
+        params?: RestEndpointMethodTypes["codespaces"]["getOrgPublicKey"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["codespaces"]["getOrgPublicKey"]["response"]
       >;
@@ -4161,7 +4161,7 @@ export type RestEndpointMethods = {
      */
     getOrgSecret: {
       (
-        params?: RestEndpointMethodTypes["codespaces"]["getOrgSecret"]["parameters"]
+        params?: RestEndpointMethodTypes["codespaces"]["getOrgSecret"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["codespaces"]["getOrgSecret"]["response"]
       >;
@@ -4177,7 +4177,7 @@ export type RestEndpointMethods = {
      */
     getPublicKeyForAuthenticatedUser: {
       (
-        params?: RestEndpointMethodTypes["codespaces"]["getPublicKeyForAuthenticatedUser"]["parameters"]
+        params?: RestEndpointMethodTypes["codespaces"]["getPublicKeyForAuthenticatedUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["codespaces"]["getPublicKeyForAuthenticatedUser"]["response"]
       >;
@@ -4189,7 +4189,7 @@ export type RestEndpointMethods = {
      */
     getRepoPublicKey: {
       (
-        params?: RestEndpointMethodTypes["codespaces"]["getRepoPublicKey"]["parameters"]
+        params?: RestEndpointMethodTypes["codespaces"]["getRepoPublicKey"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["codespaces"]["getRepoPublicKey"]["response"]
       >;
@@ -4201,7 +4201,7 @@ export type RestEndpointMethods = {
      */
     getRepoSecret: {
       (
-        params?: RestEndpointMethodTypes["codespaces"]["getRepoSecret"]["parameters"]
+        params?: RestEndpointMethodTypes["codespaces"]["getRepoSecret"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["codespaces"]["getRepoSecret"]["response"]
       >;
@@ -4217,7 +4217,7 @@ export type RestEndpointMethods = {
      */
     getSecretForAuthenticatedUser: {
       (
-        params?: RestEndpointMethodTypes["codespaces"]["getSecretForAuthenticatedUser"]["parameters"]
+        params?: RestEndpointMethodTypes["codespaces"]["getSecretForAuthenticatedUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["codespaces"]["getSecretForAuthenticatedUser"]["response"]
       >;
@@ -4234,7 +4234,7 @@ export type RestEndpointMethods = {
      */
     listDevcontainersInRepositoryForAuthenticatedUser: {
       (
-        params?: RestEndpointMethodTypes["codespaces"]["listDevcontainersInRepositoryForAuthenticatedUser"]["parameters"]
+        params?: RestEndpointMethodTypes["codespaces"]["listDevcontainersInRepositoryForAuthenticatedUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["codespaces"]["listDevcontainersInRepositoryForAuthenticatedUser"]["response"]
       >;
@@ -4250,7 +4250,7 @@ export type RestEndpointMethods = {
      */
     listForAuthenticatedUser: {
       (
-        params?: RestEndpointMethodTypes["codespaces"]["listForAuthenticatedUser"]["parameters"]
+        params?: RestEndpointMethodTypes["codespaces"]["listForAuthenticatedUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["codespaces"]["listForAuthenticatedUser"]["response"]
       >;
@@ -4264,7 +4264,7 @@ export type RestEndpointMethods = {
      */
     listInOrganization: {
       (
-        params?: RestEndpointMethodTypes["codespaces"]["listInOrganization"]["parameters"]
+        params?: RestEndpointMethodTypes["codespaces"]["listInOrganization"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["codespaces"]["listInOrganization"]["response"]
       >;
@@ -4280,7 +4280,7 @@ export type RestEndpointMethods = {
      */
     listInRepositoryForAuthenticatedUser: {
       (
-        params?: RestEndpointMethodTypes["codespaces"]["listInRepositoryForAuthenticatedUser"]["parameters"]
+        params?: RestEndpointMethodTypes["codespaces"]["listInRepositoryForAuthenticatedUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["codespaces"]["listInRepositoryForAuthenticatedUser"]["response"]
       >;
@@ -4293,7 +4293,7 @@ export type RestEndpointMethods = {
      */
     listOrgSecrets: {
       (
-        params?: RestEndpointMethodTypes["codespaces"]["listOrgSecrets"]["parameters"]
+        params?: RestEndpointMethodTypes["codespaces"]["listOrgSecrets"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["codespaces"]["listOrgSecrets"]["response"]
       >;
@@ -4305,7 +4305,7 @@ export type RestEndpointMethods = {
      */
     listRepoSecrets: {
       (
-        params?: RestEndpointMethodTypes["codespaces"]["listRepoSecrets"]["parameters"]
+        params?: RestEndpointMethodTypes["codespaces"]["listRepoSecrets"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["codespaces"]["listRepoSecrets"]["response"]
       >;
@@ -4321,7 +4321,7 @@ export type RestEndpointMethods = {
      */
     listRepositoriesForSecretForAuthenticatedUser: {
       (
-        params?: RestEndpointMethodTypes["codespaces"]["listRepositoriesForSecretForAuthenticatedUser"]["parameters"]
+        params?: RestEndpointMethodTypes["codespaces"]["listRepositoriesForSecretForAuthenticatedUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["codespaces"]["listRepositoriesForSecretForAuthenticatedUser"]["response"]
       >;
@@ -4338,7 +4338,7 @@ export type RestEndpointMethods = {
      */
     listSecretsForAuthenticatedUser: {
       (
-        params?: RestEndpointMethodTypes["codespaces"]["listSecretsForAuthenticatedUser"]["parameters"]
+        params?: RestEndpointMethodTypes["codespaces"]["listSecretsForAuthenticatedUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["codespaces"]["listSecretsForAuthenticatedUser"]["response"]
       >;
@@ -4350,7 +4350,7 @@ export type RestEndpointMethods = {
      */
     listSelectedReposForOrgSecret: {
       (
-        params?: RestEndpointMethodTypes["codespaces"]["listSelectedReposForOrgSecret"]["parameters"]
+        params?: RestEndpointMethodTypes["codespaces"]["listSelectedReposForOrgSecret"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["codespaces"]["listSelectedReposForOrgSecret"]["response"]
       >;
@@ -4366,7 +4366,7 @@ export type RestEndpointMethods = {
      */
     preFlightWithRepoForAuthenticatedUser: {
       (
-        params?: RestEndpointMethodTypes["codespaces"]["preFlightWithRepoForAuthenticatedUser"]["parameters"]
+        params?: RestEndpointMethodTypes["codespaces"]["preFlightWithRepoForAuthenticatedUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["codespaces"]["preFlightWithRepoForAuthenticatedUser"]["response"]
       >;
@@ -4386,7 +4386,7 @@ export type RestEndpointMethods = {
      */
     publishForAuthenticatedUser: {
       (
-        params?: RestEndpointMethodTypes["codespaces"]["publishForAuthenticatedUser"]["parameters"]
+        params?: RestEndpointMethodTypes["codespaces"]["publishForAuthenticatedUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["codespaces"]["publishForAuthenticatedUser"]["response"]
       >;
@@ -4400,7 +4400,7 @@ export type RestEndpointMethods = {
      */
     removeRepositoryForSecretForAuthenticatedUser: {
       (
-        params?: RestEndpointMethodTypes["codespaces"]["removeRepositoryForSecretForAuthenticatedUser"]["parameters"]
+        params?: RestEndpointMethodTypes["codespaces"]["removeRepositoryForSecretForAuthenticatedUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["codespaces"]["removeRepositoryForSecretForAuthenticatedUser"]["response"]
       >;
@@ -4412,7 +4412,7 @@ export type RestEndpointMethods = {
      */
     removeSelectedRepoFromOrgSecret: {
       (
-        params?: RestEndpointMethodTypes["codespaces"]["removeSelectedRepoFromOrgSecret"]["parameters"]
+        params?: RestEndpointMethodTypes["codespaces"]["removeSelectedRepoFromOrgSecret"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["codespaces"]["removeSelectedRepoFromOrgSecret"]["response"]
       >;
@@ -4428,7 +4428,7 @@ export type RestEndpointMethods = {
      */
     repoMachinesForAuthenticatedUser: {
       (
-        params?: RestEndpointMethodTypes["codespaces"]["repoMachinesForAuthenticatedUser"]["parameters"]
+        params?: RestEndpointMethodTypes["codespaces"]["repoMachinesForAuthenticatedUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["codespaces"]["repoMachinesForAuthenticatedUser"]["response"]
       >;
@@ -4441,7 +4441,7 @@ export type RestEndpointMethods = {
      */
     setCodespacesBilling: {
       (
-        params?: RestEndpointMethodTypes["codespaces"]["setCodespacesBilling"]["parameters"]
+        params?: RestEndpointMethodTypes["codespaces"]["setCodespacesBilling"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["codespaces"]["setCodespacesBilling"]["response"]
       >;
@@ -4454,7 +4454,7 @@ export type RestEndpointMethods = {
      */
     setCodespacesBillingUsers: {
       (
-        params?: RestEndpointMethodTypes["codespaces"]["setCodespacesBillingUsers"]["parameters"]
+        params?: RestEndpointMethodTypes["codespaces"]["setCodespacesBillingUsers"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["codespaces"]["setCodespacesBillingUsers"]["response"]
       >;
@@ -4470,7 +4470,7 @@ export type RestEndpointMethods = {
      */
     setRepositoriesForSecretForAuthenticatedUser: {
       (
-        params?: RestEndpointMethodTypes["codespaces"]["setRepositoriesForSecretForAuthenticatedUser"]["parameters"]
+        params?: RestEndpointMethodTypes["codespaces"]["setRepositoriesForSecretForAuthenticatedUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["codespaces"]["setRepositoriesForSecretForAuthenticatedUser"]["response"]
       >;
@@ -4482,7 +4482,7 @@ export type RestEndpointMethods = {
      */
     setSelectedReposForOrgSecret: {
       (
-        params?: RestEndpointMethodTypes["codespaces"]["setSelectedReposForOrgSecret"]["parameters"]
+        params?: RestEndpointMethodTypes["codespaces"]["setSelectedReposForOrgSecret"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["codespaces"]["setSelectedReposForOrgSecret"]["response"]
       >;
@@ -4498,7 +4498,7 @@ export type RestEndpointMethods = {
      */
     startForAuthenticatedUser: {
       (
-        params?: RestEndpointMethodTypes["codespaces"]["startForAuthenticatedUser"]["parameters"]
+        params?: RestEndpointMethodTypes["codespaces"]["startForAuthenticatedUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["codespaces"]["startForAuthenticatedUser"]["response"]
       >;
@@ -4514,7 +4514,7 @@ export type RestEndpointMethods = {
      */
     stopForAuthenticatedUser: {
       (
-        params?: RestEndpointMethodTypes["codespaces"]["stopForAuthenticatedUser"]["parameters"]
+        params?: RestEndpointMethodTypes["codespaces"]["stopForAuthenticatedUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["codespaces"]["stopForAuthenticatedUser"]["response"]
       >;
@@ -4528,7 +4528,7 @@ export type RestEndpointMethods = {
      */
     stopInOrganization: {
       (
-        params?: RestEndpointMethodTypes["codespaces"]["stopInOrganization"]["parameters"]
+        params?: RestEndpointMethodTypes["codespaces"]["stopInOrganization"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["codespaces"]["stopInOrganization"]["response"]
       >;
@@ -4546,7 +4546,7 @@ export type RestEndpointMethods = {
      */
     updateForAuthenticatedUser: {
       (
-        params?: RestEndpointMethodTypes["codespaces"]["updateForAuthenticatedUser"]["parameters"]
+        params?: RestEndpointMethodTypes["codespaces"]["updateForAuthenticatedUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["codespaces"]["updateForAuthenticatedUser"]["response"]
       >;
@@ -4560,7 +4560,7 @@ export type RestEndpointMethods = {
      */
     addSelectedRepoToOrgSecret: {
       (
-        params?: RestEndpointMethodTypes["dependabot"]["addSelectedRepoToOrgSecret"]["parameters"]
+        params?: RestEndpointMethodTypes["dependabot"]["addSelectedRepoToOrgSecret"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["dependabot"]["addSelectedRepoToOrgSecret"]["response"]
       >;
@@ -4646,7 +4646,7 @@ export type RestEndpointMethods = {
      */
     createOrUpdateOrgSecret: {
       (
-        params?: RestEndpointMethodTypes["dependabot"]["createOrUpdateOrgSecret"]["parameters"]
+        params?: RestEndpointMethodTypes["dependabot"]["createOrUpdateOrgSecret"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["dependabot"]["createOrUpdateOrgSecret"]["response"]
       >;
@@ -4733,7 +4733,7 @@ export type RestEndpointMethods = {
      */
     createOrUpdateRepoSecret: {
       (
-        params?: RestEndpointMethodTypes["dependabot"]["createOrUpdateRepoSecret"]["parameters"]
+        params?: RestEndpointMethodTypes["dependabot"]["createOrUpdateRepoSecret"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["dependabot"]["createOrUpdateRepoSecret"]["response"]
       >;
@@ -4745,7 +4745,7 @@ export type RestEndpointMethods = {
      */
     deleteOrgSecret: {
       (
-        params?: RestEndpointMethodTypes["dependabot"]["deleteOrgSecret"]["parameters"]
+        params?: RestEndpointMethodTypes["dependabot"]["deleteOrgSecret"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["dependabot"]["deleteOrgSecret"]["response"]
       >;
@@ -4757,7 +4757,7 @@ export type RestEndpointMethods = {
      */
     deleteRepoSecret: {
       (
-        params?: RestEndpointMethodTypes["dependabot"]["deleteRepoSecret"]["parameters"]
+        params?: RestEndpointMethodTypes["dependabot"]["deleteRepoSecret"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["dependabot"]["deleteRepoSecret"]["response"]
       >;
@@ -4771,7 +4771,7 @@ export type RestEndpointMethods = {
      */
     getAlert: {
       (
-        params?: RestEndpointMethodTypes["dependabot"]["getAlert"]["parameters"]
+        params?: RestEndpointMethodTypes["dependabot"]["getAlert"]["parameters"],
       ): Promise<RestEndpointMethodTypes["dependabot"]["getAlert"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -4781,7 +4781,7 @@ export type RestEndpointMethods = {
      */
     getOrgPublicKey: {
       (
-        params?: RestEndpointMethodTypes["dependabot"]["getOrgPublicKey"]["parameters"]
+        params?: RestEndpointMethodTypes["dependabot"]["getOrgPublicKey"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["dependabot"]["getOrgPublicKey"]["response"]
       >;
@@ -4793,7 +4793,7 @@ export type RestEndpointMethods = {
      */
     getOrgSecret: {
       (
-        params?: RestEndpointMethodTypes["dependabot"]["getOrgSecret"]["parameters"]
+        params?: RestEndpointMethodTypes["dependabot"]["getOrgSecret"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["dependabot"]["getOrgSecret"]["response"]
       >;
@@ -4805,7 +4805,7 @@ export type RestEndpointMethods = {
      */
     getRepoPublicKey: {
       (
-        params?: RestEndpointMethodTypes["dependabot"]["getRepoPublicKey"]["parameters"]
+        params?: RestEndpointMethodTypes["dependabot"]["getRepoPublicKey"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["dependabot"]["getRepoPublicKey"]["response"]
       >;
@@ -4817,7 +4817,7 @@ export type RestEndpointMethods = {
      */
     getRepoSecret: {
       (
-        params?: RestEndpointMethodTypes["dependabot"]["getRepoSecret"]["parameters"]
+        params?: RestEndpointMethodTypes["dependabot"]["getRepoSecret"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["dependabot"]["getRepoSecret"]["response"]
       >;
@@ -4832,7 +4832,7 @@ export type RestEndpointMethods = {
      */
     listAlertsForEnterprise: {
       (
-        params?: RestEndpointMethodTypes["dependabot"]["listAlertsForEnterprise"]["parameters"]
+        params?: RestEndpointMethodTypes["dependabot"]["listAlertsForEnterprise"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["dependabot"]["listAlertsForEnterprise"]["response"]
       >;
@@ -4850,7 +4850,7 @@ export type RestEndpointMethods = {
      */
     listAlertsForOrg: {
       (
-        params?: RestEndpointMethodTypes["dependabot"]["listAlertsForOrg"]["parameters"]
+        params?: RestEndpointMethodTypes["dependabot"]["listAlertsForOrg"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["dependabot"]["listAlertsForOrg"]["response"]
       >;
@@ -4864,7 +4864,7 @@ export type RestEndpointMethods = {
      */
     listAlertsForRepo: {
       (
-        params?: RestEndpointMethodTypes["dependabot"]["listAlertsForRepo"]["parameters"]
+        params?: RestEndpointMethodTypes["dependabot"]["listAlertsForRepo"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["dependabot"]["listAlertsForRepo"]["response"]
       >;
@@ -4876,7 +4876,7 @@ export type RestEndpointMethods = {
      */
     listOrgSecrets: {
       (
-        params?: RestEndpointMethodTypes["dependabot"]["listOrgSecrets"]["parameters"]
+        params?: RestEndpointMethodTypes["dependabot"]["listOrgSecrets"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["dependabot"]["listOrgSecrets"]["response"]
       >;
@@ -4888,7 +4888,7 @@ export type RestEndpointMethods = {
      */
     listRepoSecrets: {
       (
-        params?: RestEndpointMethodTypes["dependabot"]["listRepoSecrets"]["parameters"]
+        params?: RestEndpointMethodTypes["dependabot"]["listRepoSecrets"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["dependabot"]["listRepoSecrets"]["response"]
       >;
@@ -4900,7 +4900,7 @@ export type RestEndpointMethods = {
      */
     listSelectedReposForOrgSecret: {
       (
-        params?: RestEndpointMethodTypes["dependabot"]["listSelectedReposForOrgSecret"]["parameters"]
+        params?: RestEndpointMethodTypes["dependabot"]["listSelectedReposForOrgSecret"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["dependabot"]["listSelectedReposForOrgSecret"]["response"]
       >;
@@ -4912,7 +4912,7 @@ export type RestEndpointMethods = {
      */
     removeSelectedRepoFromOrgSecret: {
       (
-        params?: RestEndpointMethodTypes["dependabot"]["removeSelectedRepoFromOrgSecret"]["parameters"]
+        params?: RestEndpointMethodTypes["dependabot"]["removeSelectedRepoFromOrgSecret"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["dependabot"]["removeSelectedRepoFromOrgSecret"]["response"]
       >;
@@ -4924,7 +4924,7 @@ export type RestEndpointMethods = {
      */
     setSelectedReposForOrgSecret: {
       (
-        params?: RestEndpointMethodTypes["dependabot"]["setSelectedReposForOrgSecret"]["parameters"]
+        params?: RestEndpointMethodTypes["dependabot"]["setSelectedReposForOrgSecret"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["dependabot"]["setSelectedReposForOrgSecret"]["response"]
       >;
@@ -4940,7 +4940,7 @@ export type RestEndpointMethods = {
      */
     updateAlert: {
       (
-        params?: RestEndpointMethodTypes["dependabot"]["updateAlert"]["parameters"]
+        params?: RestEndpointMethodTypes["dependabot"]["updateAlert"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["dependabot"]["updateAlert"]["response"]
       >;
@@ -4954,7 +4954,7 @@ export type RestEndpointMethods = {
      */
     createRepositorySnapshot: {
       (
-        params?: RestEndpointMethodTypes["dependencyGraph"]["createRepositorySnapshot"]["parameters"]
+        params?: RestEndpointMethodTypes["dependencyGraph"]["createRepositorySnapshot"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["dependencyGraph"]["createRepositorySnapshot"]["response"]
       >;
@@ -4966,7 +4966,7 @@ export type RestEndpointMethods = {
      */
     diffRange: {
       (
-        params?: RestEndpointMethodTypes["dependencyGraph"]["diffRange"]["parameters"]
+        params?: RestEndpointMethodTypes["dependencyGraph"]["diffRange"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["dependencyGraph"]["diffRange"]["response"]
       >;
@@ -4978,7 +4978,7 @@ export type RestEndpointMethods = {
      */
     exportSbom: {
       (
-        params?: RestEndpointMethodTypes["dependencyGraph"]["exportSbom"]["parameters"]
+        params?: RestEndpointMethodTypes["dependencyGraph"]["exportSbom"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["dependencyGraph"]["exportSbom"]["response"]
       >;
@@ -4992,7 +4992,7 @@ export type RestEndpointMethods = {
      */
     get: {
       (
-        params?: RestEndpointMethodTypes["emojis"]["get"]["parameters"]
+        params?: RestEndpointMethodTypes["emojis"]["get"]["parameters"],
       ): Promise<RestEndpointMethodTypes["emojis"]["get"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -5001,7 +5001,7 @@ export type RestEndpointMethods = {
   gists: {
     checkIsStarred: {
       (
-        params?: RestEndpointMethodTypes["gists"]["checkIsStarred"]["parameters"]
+        params?: RestEndpointMethodTypes["gists"]["checkIsStarred"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["gists"]["checkIsStarred"]["response"]
       >;
@@ -5015,7 +5015,7 @@ export type RestEndpointMethods = {
      */
     create: {
       (
-        params?: RestEndpointMethodTypes["gists"]["create"]["parameters"]
+        params?: RestEndpointMethodTypes["gists"]["create"]["parameters"],
       ): Promise<RestEndpointMethodTypes["gists"]["create"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -5023,7 +5023,7 @@ export type RestEndpointMethods = {
 
     createComment: {
       (
-        params?: RestEndpointMethodTypes["gists"]["createComment"]["parameters"]
+        params?: RestEndpointMethodTypes["gists"]["createComment"]["parameters"],
       ): Promise<RestEndpointMethodTypes["gists"]["createComment"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -5031,7 +5031,7 @@ export type RestEndpointMethods = {
 
     delete: {
       (
-        params?: RestEndpointMethodTypes["gists"]["delete"]["parameters"]
+        params?: RestEndpointMethodTypes["gists"]["delete"]["parameters"],
       ): Promise<RestEndpointMethodTypes["gists"]["delete"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -5039,7 +5039,7 @@ export type RestEndpointMethods = {
 
     deleteComment: {
       (
-        params?: RestEndpointMethodTypes["gists"]["deleteComment"]["parameters"]
+        params?: RestEndpointMethodTypes["gists"]["deleteComment"]["parameters"],
       ): Promise<RestEndpointMethodTypes["gists"]["deleteComment"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -5047,23 +5047,23 @@ export type RestEndpointMethods = {
 
     fork: {
       (
-        params?: RestEndpointMethodTypes["gists"]["fork"]["parameters"]
+        params?: RestEndpointMethodTypes["gists"]["fork"]["parameters"],
       ): Promise<RestEndpointMethodTypes["gists"]["fork"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
 
     get: {
-      (params?: RestEndpointMethodTypes["gists"]["get"]["parameters"]): Promise<
-        RestEndpointMethodTypes["gists"]["get"]["response"]
-      >;
+      (
+        params?: RestEndpointMethodTypes["gists"]["get"]["parameters"],
+      ): Promise<RestEndpointMethodTypes["gists"]["get"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
 
     getComment: {
       (
-        params?: RestEndpointMethodTypes["gists"]["getComment"]["parameters"]
+        params?: RestEndpointMethodTypes["gists"]["getComment"]["parameters"],
       ): Promise<RestEndpointMethodTypes["gists"]["getComment"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -5071,7 +5071,7 @@ export type RestEndpointMethods = {
 
     getRevision: {
       (
-        params?: RestEndpointMethodTypes["gists"]["getRevision"]["parameters"]
+        params?: RestEndpointMethodTypes["gists"]["getRevision"]["parameters"],
       ): Promise<RestEndpointMethodTypes["gists"]["getRevision"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -5081,7 +5081,7 @@ export type RestEndpointMethods = {
      */
     list: {
       (
-        params?: RestEndpointMethodTypes["gists"]["list"]["parameters"]
+        params?: RestEndpointMethodTypes["gists"]["list"]["parameters"],
       ): Promise<RestEndpointMethodTypes["gists"]["list"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -5089,7 +5089,7 @@ export type RestEndpointMethods = {
 
     listComments: {
       (
-        params?: RestEndpointMethodTypes["gists"]["listComments"]["parameters"]
+        params?: RestEndpointMethodTypes["gists"]["listComments"]["parameters"],
       ): Promise<RestEndpointMethodTypes["gists"]["listComments"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -5097,7 +5097,7 @@ export type RestEndpointMethods = {
 
     listCommits: {
       (
-        params?: RestEndpointMethodTypes["gists"]["listCommits"]["parameters"]
+        params?: RestEndpointMethodTypes["gists"]["listCommits"]["parameters"],
       ): Promise<RestEndpointMethodTypes["gists"]["listCommits"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -5107,7 +5107,7 @@ export type RestEndpointMethods = {
      */
     listForUser: {
       (
-        params?: RestEndpointMethodTypes["gists"]["listForUser"]["parameters"]
+        params?: RestEndpointMethodTypes["gists"]["listForUser"]["parameters"],
       ): Promise<RestEndpointMethodTypes["gists"]["listForUser"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -5115,7 +5115,7 @@ export type RestEndpointMethods = {
 
     listForks: {
       (
-        params?: RestEndpointMethodTypes["gists"]["listForks"]["parameters"]
+        params?: RestEndpointMethodTypes["gists"]["listForks"]["parameters"],
       ): Promise<RestEndpointMethodTypes["gists"]["listForks"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -5127,7 +5127,7 @@ export type RestEndpointMethods = {
      */
     listPublic: {
       (
-        params?: RestEndpointMethodTypes["gists"]["listPublic"]["parameters"]
+        params?: RestEndpointMethodTypes["gists"]["listPublic"]["parameters"],
       ): Promise<RestEndpointMethodTypes["gists"]["listPublic"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -5137,7 +5137,7 @@ export type RestEndpointMethods = {
      */
     listStarred: {
       (
-        params?: RestEndpointMethodTypes["gists"]["listStarred"]["parameters"]
+        params?: RestEndpointMethodTypes["gists"]["listStarred"]["parameters"],
       ): Promise<RestEndpointMethodTypes["gists"]["listStarred"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -5147,7 +5147,7 @@ export type RestEndpointMethods = {
      */
     star: {
       (
-        params?: RestEndpointMethodTypes["gists"]["star"]["parameters"]
+        params?: RestEndpointMethodTypes["gists"]["star"]["parameters"],
       ): Promise<RestEndpointMethodTypes["gists"]["star"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -5155,7 +5155,7 @@ export type RestEndpointMethods = {
 
     unstar: {
       (
-        params?: RestEndpointMethodTypes["gists"]["unstar"]["parameters"]
+        params?: RestEndpointMethodTypes["gists"]["unstar"]["parameters"],
       ): Promise<RestEndpointMethodTypes["gists"]["unstar"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -5165,7 +5165,7 @@ export type RestEndpointMethods = {
      */
     update: {
       (
-        params?: RestEndpointMethodTypes["gists"]["update"]["parameters"]
+        params?: RestEndpointMethodTypes["gists"]["update"]["parameters"],
       ): Promise<RestEndpointMethodTypes["gists"]["update"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -5173,7 +5173,7 @@ export type RestEndpointMethods = {
 
     updateComment: {
       (
-        params?: RestEndpointMethodTypes["gists"]["updateComment"]["parameters"]
+        params?: RestEndpointMethodTypes["gists"]["updateComment"]["parameters"],
       ): Promise<RestEndpointMethodTypes["gists"]["updateComment"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -5182,7 +5182,7 @@ export type RestEndpointMethods = {
   git: {
     createBlob: {
       (
-        params?: RestEndpointMethodTypes["git"]["createBlob"]["parameters"]
+        params?: RestEndpointMethodTypes["git"]["createBlob"]["parameters"],
       ): Promise<RestEndpointMethodTypes["git"]["createBlob"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -5221,7 +5221,7 @@ export type RestEndpointMethods = {
      */
     createCommit: {
       (
-        params?: RestEndpointMethodTypes["git"]["createCommit"]["parameters"]
+        params?: RestEndpointMethodTypes["git"]["createCommit"]["parameters"],
       ): Promise<RestEndpointMethodTypes["git"]["createCommit"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -5231,7 +5231,7 @@ export type RestEndpointMethods = {
      */
     createRef: {
       (
-        params?: RestEndpointMethodTypes["git"]["createRef"]["parameters"]
+        params?: RestEndpointMethodTypes["git"]["createRef"]["parameters"],
       ): Promise<RestEndpointMethodTypes["git"]["createRef"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -5270,7 +5270,7 @@ export type RestEndpointMethods = {
      */
     createTag: {
       (
-        params?: RestEndpointMethodTypes["git"]["createTag"]["parameters"]
+        params?: RestEndpointMethodTypes["git"]["createTag"]["parameters"],
       ): Promise<RestEndpointMethodTypes["git"]["createTag"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -5284,7 +5284,7 @@ export type RestEndpointMethods = {
      */
     createTree: {
       (
-        params?: RestEndpointMethodTypes["git"]["createTree"]["parameters"]
+        params?: RestEndpointMethodTypes["git"]["createTree"]["parameters"],
       ): Promise<RestEndpointMethodTypes["git"]["createTree"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -5292,7 +5292,7 @@ export type RestEndpointMethods = {
 
     deleteRef: {
       (
-        params?: RestEndpointMethodTypes["git"]["deleteRef"]["parameters"]
+        params?: RestEndpointMethodTypes["git"]["deleteRef"]["parameters"],
       ): Promise<RestEndpointMethodTypes["git"]["deleteRef"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -5304,7 +5304,7 @@ export type RestEndpointMethods = {
      */
     getBlob: {
       (
-        params?: RestEndpointMethodTypes["git"]["getBlob"]["parameters"]
+        params?: RestEndpointMethodTypes["git"]["getBlob"]["parameters"],
       ): Promise<RestEndpointMethodTypes["git"]["getBlob"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -5343,7 +5343,7 @@ export type RestEndpointMethods = {
      */
     getCommit: {
       (
-        params?: RestEndpointMethodTypes["git"]["getCommit"]["parameters"]
+        params?: RestEndpointMethodTypes["git"]["getCommit"]["parameters"],
       ): Promise<RestEndpointMethodTypes["git"]["getCommit"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -5355,7 +5355,7 @@ export type RestEndpointMethods = {
      */
     getRef: {
       (
-        params?: RestEndpointMethodTypes["git"]["getRef"]["parameters"]
+        params?: RestEndpointMethodTypes["git"]["getRef"]["parameters"],
       ): Promise<RestEndpointMethodTypes["git"]["getRef"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -5392,7 +5392,7 @@ export type RestEndpointMethods = {
      */
     getTag: {
       (
-        params?: RestEndpointMethodTypes["git"]["getTag"]["parameters"]
+        params?: RestEndpointMethodTypes["git"]["getTag"]["parameters"],
       ): Promise<RestEndpointMethodTypes["git"]["getTag"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -5407,7 +5407,7 @@ export type RestEndpointMethods = {
      */
     getTree: {
       (
-        params?: RestEndpointMethodTypes["git"]["getTree"]["parameters"]
+        params?: RestEndpointMethodTypes["git"]["getTree"]["parameters"],
       ): Promise<RestEndpointMethodTypes["git"]["getTree"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -5423,7 +5423,7 @@ export type RestEndpointMethods = {
      */
     listMatchingRefs: {
       (
-        params?: RestEndpointMethodTypes["git"]["listMatchingRefs"]["parameters"]
+        params?: RestEndpointMethodTypes["git"]["listMatchingRefs"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["git"]["listMatchingRefs"]["response"]
       >;
@@ -5433,7 +5433,7 @@ export type RestEndpointMethods = {
 
     updateRef: {
       (
-        params?: RestEndpointMethodTypes["git"]["updateRef"]["parameters"]
+        params?: RestEndpointMethodTypes["git"]["updateRef"]["parameters"],
       ): Promise<RestEndpointMethodTypes["git"]["updateRef"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -5445,7 +5445,7 @@ export type RestEndpointMethods = {
      */
     getAllTemplates: {
       (
-        params?: RestEndpointMethodTypes["gitignore"]["getAllTemplates"]["parameters"]
+        params?: RestEndpointMethodTypes["gitignore"]["getAllTemplates"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["gitignore"]["getAllTemplates"]["response"]
       >;
@@ -5458,7 +5458,7 @@ export type RestEndpointMethods = {
      */
     getTemplate: {
       (
-        params?: RestEndpointMethodTypes["gitignore"]["getTemplate"]["parameters"]
+        params?: RestEndpointMethodTypes["gitignore"]["getTemplate"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["gitignore"]["getTemplate"]["response"]
       >;
@@ -5472,7 +5472,7 @@ export type RestEndpointMethods = {
      */
     getRestrictionsForAuthenticatedUser: {
       (
-        params?: RestEndpointMethodTypes["interactions"]["getRestrictionsForAuthenticatedUser"]["parameters"]
+        params?: RestEndpointMethodTypes["interactions"]["getRestrictionsForAuthenticatedUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["interactions"]["getRestrictionsForAuthenticatedUser"]["response"]
       >;
@@ -5484,7 +5484,7 @@ export type RestEndpointMethods = {
      */
     getRestrictionsForOrg: {
       (
-        params?: RestEndpointMethodTypes["interactions"]["getRestrictionsForOrg"]["parameters"]
+        params?: RestEndpointMethodTypes["interactions"]["getRestrictionsForOrg"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["interactions"]["getRestrictionsForOrg"]["response"]
       >;
@@ -5496,7 +5496,7 @@ export type RestEndpointMethods = {
      */
     getRestrictionsForRepo: {
       (
-        params?: RestEndpointMethodTypes["interactions"]["getRestrictionsForRepo"]["parameters"]
+        params?: RestEndpointMethodTypes["interactions"]["getRestrictionsForRepo"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["interactions"]["getRestrictionsForRepo"]["response"]
       >;
@@ -5509,7 +5509,7 @@ export type RestEndpointMethods = {
      */
     getRestrictionsForYourPublicRepos: {
       (
-        params?: RestEndpointMethodTypes["interactions"]["getRestrictionsForYourPublicRepos"]["parameters"]
+        params?: RestEndpointMethodTypes["interactions"]["getRestrictionsForYourPublicRepos"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["interactions"]["getRestrictionsForYourPublicRepos"]["response"]
       >;
@@ -5521,7 +5521,7 @@ export type RestEndpointMethods = {
      */
     removeRestrictionsForAuthenticatedUser: {
       (
-        params?: RestEndpointMethodTypes["interactions"]["removeRestrictionsForAuthenticatedUser"]["parameters"]
+        params?: RestEndpointMethodTypes["interactions"]["removeRestrictionsForAuthenticatedUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["interactions"]["removeRestrictionsForAuthenticatedUser"]["response"]
       >;
@@ -5533,7 +5533,7 @@ export type RestEndpointMethods = {
      */
     removeRestrictionsForOrg: {
       (
-        params?: RestEndpointMethodTypes["interactions"]["removeRestrictionsForOrg"]["parameters"]
+        params?: RestEndpointMethodTypes["interactions"]["removeRestrictionsForOrg"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["interactions"]["removeRestrictionsForOrg"]["response"]
       >;
@@ -5545,7 +5545,7 @@ export type RestEndpointMethods = {
      */
     removeRestrictionsForRepo: {
       (
-        params?: RestEndpointMethodTypes["interactions"]["removeRestrictionsForRepo"]["parameters"]
+        params?: RestEndpointMethodTypes["interactions"]["removeRestrictionsForRepo"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["interactions"]["removeRestrictionsForRepo"]["response"]
       >;
@@ -5558,7 +5558,7 @@ export type RestEndpointMethods = {
      */
     removeRestrictionsForYourPublicRepos: {
       (
-        params?: RestEndpointMethodTypes["interactions"]["removeRestrictionsForYourPublicRepos"]["parameters"]
+        params?: RestEndpointMethodTypes["interactions"]["removeRestrictionsForYourPublicRepos"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["interactions"]["removeRestrictionsForYourPublicRepos"]["response"]
       >;
@@ -5570,7 +5570,7 @@ export type RestEndpointMethods = {
      */
     setRestrictionsForAuthenticatedUser: {
       (
-        params?: RestEndpointMethodTypes["interactions"]["setRestrictionsForAuthenticatedUser"]["parameters"]
+        params?: RestEndpointMethodTypes["interactions"]["setRestrictionsForAuthenticatedUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["interactions"]["setRestrictionsForAuthenticatedUser"]["response"]
       >;
@@ -5582,7 +5582,7 @@ export type RestEndpointMethods = {
      */
     setRestrictionsForOrg: {
       (
-        params?: RestEndpointMethodTypes["interactions"]["setRestrictionsForOrg"]["parameters"]
+        params?: RestEndpointMethodTypes["interactions"]["setRestrictionsForOrg"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["interactions"]["setRestrictionsForOrg"]["response"]
       >;
@@ -5594,7 +5594,7 @@ export type RestEndpointMethods = {
      */
     setRestrictionsForRepo: {
       (
-        params?: RestEndpointMethodTypes["interactions"]["setRestrictionsForRepo"]["parameters"]
+        params?: RestEndpointMethodTypes["interactions"]["setRestrictionsForRepo"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["interactions"]["setRestrictionsForRepo"]["response"]
       >;
@@ -5607,7 +5607,7 @@ export type RestEndpointMethods = {
      */
     setRestrictionsForYourPublicRepos: {
       (
-        params?: RestEndpointMethodTypes["interactions"]["setRestrictionsForYourPublicRepos"]["parameters"]
+        params?: RestEndpointMethodTypes["interactions"]["setRestrictionsForYourPublicRepos"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["interactions"]["setRestrictionsForYourPublicRepos"]["response"]
       >;
@@ -5621,7 +5621,7 @@ export type RestEndpointMethods = {
      */
     addAssignees: {
       (
-        params?: RestEndpointMethodTypes["issues"]["addAssignees"]["parameters"]
+        params?: RestEndpointMethodTypes["issues"]["addAssignees"]["parameters"],
       ): Promise<RestEndpointMethodTypes["issues"]["addAssignees"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -5631,7 +5631,7 @@ export type RestEndpointMethods = {
      */
     addLabels: {
       (
-        params?: RestEndpointMethodTypes["issues"]["addLabels"]["parameters"]
+        params?: RestEndpointMethodTypes["issues"]["addLabels"]["parameters"],
       ): Promise<RestEndpointMethodTypes["issues"]["addLabels"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -5645,7 +5645,7 @@ export type RestEndpointMethods = {
      */
     checkUserCanBeAssigned: {
       (
-        params?: RestEndpointMethodTypes["issues"]["checkUserCanBeAssigned"]["parameters"]
+        params?: RestEndpointMethodTypes["issues"]["checkUserCanBeAssigned"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["issues"]["checkUserCanBeAssigned"]["response"]
       >;
@@ -5661,7 +5661,7 @@ export type RestEndpointMethods = {
      */
     checkUserCanBeAssignedToIssue: {
       (
-        params?: RestEndpointMethodTypes["issues"]["checkUserCanBeAssignedToIssue"]["parameters"]
+        params?: RestEndpointMethodTypes["issues"]["checkUserCanBeAssignedToIssue"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["issues"]["checkUserCanBeAssignedToIssue"]["response"]
       >;
@@ -5675,7 +5675,7 @@ export type RestEndpointMethods = {
      */
     create: {
       (
-        params?: RestEndpointMethodTypes["issues"]["create"]["parameters"]
+        params?: RestEndpointMethodTypes["issues"]["create"]["parameters"],
       ): Promise<RestEndpointMethodTypes["issues"]["create"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -5691,7 +5691,7 @@ export type RestEndpointMethods = {
      */
     createComment: {
       (
-        params?: RestEndpointMethodTypes["issues"]["createComment"]["parameters"]
+        params?: RestEndpointMethodTypes["issues"]["createComment"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["issues"]["createComment"]["response"]
       >;
@@ -5703,7 +5703,7 @@ export type RestEndpointMethods = {
      */
     createLabel: {
       (
-        params?: RestEndpointMethodTypes["issues"]["createLabel"]["parameters"]
+        params?: RestEndpointMethodTypes["issues"]["createLabel"]["parameters"],
       ): Promise<RestEndpointMethodTypes["issues"]["createLabel"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -5713,7 +5713,7 @@ export type RestEndpointMethods = {
      */
     createMilestone: {
       (
-        params?: RestEndpointMethodTypes["issues"]["createMilestone"]["parameters"]
+        params?: RestEndpointMethodTypes["issues"]["createMilestone"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["issues"]["createMilestone"]["response"]
       >;
@@ -5725,7 +5725,7 @@ export type RestEndpointMethods = {
      */
     deleteComment: {
       (
-        params?: RestEndpointMethodTypes["issues"]["deleteComment"]["parameters"]
+        params?: RestEndpointMethodTypes["issues"]["deleteComment"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["issues"]["deleteComment"]["response"]
       >;
@@ -5737,7 +5737,7 @@ export type RestEndpointMethods = {
      */
     deleteLabel: {
       (
-        params?: RestEndpointMethodTypes["issues"]["deleteLabel"]["parameters"]
+        params?: RestEndpointMethodTypes["issues"]["deleteLabel"]["parameters"],
       ): Promise<RestEndpointMethodTypes["issues"]["deleteLabel"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -5747,7 +5747,7 @@ export type RestEndpointMethods = {
      */
     deleteMilestone: {
       (
-        params?: RestEndpointMethodTypes["issues"]["deleteMilestone"]["parameters"]
+        params?: RestEndpointMethodTypes["issues"]["deleteMilestone"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["issues"]["deleteMilestone"]["response"]
       >;
@@ -5769,7 +5769,7 @@ export type RestEndpointMethods = {
      */
     get: {
       (
-        params?: RestEndpointMethodTypes["issues"]["get"]["parameters"]
+        params?: RestEndpointMethodTypes["issues"]["get"]["parameters"],
       ): Promise<RestEndpointMethodTypes["issues"]["get"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -5779,7 +5779,7 @@ export type RestEndpointMethods = {
      */
     getComment: {
       (
-        params?: RestEndpointMethodTypes["issues"]["getComment"]["parameters"]
+        params?: RestEndpointMethodTypes["issues"]["getComment"]["parameters"],
       ): Promise<RestEndpointMethodTypes["issues"]["getComment"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -5789,7 +5789,7 @@ export type RestEndpointMethods = {
      */
     getEvent: {
       (
-        params?: RestEndpointMethodTypes["issues"]["getEvent"]["parameters"]
+        params?: RestEndpointMethodTypes["issues"]["getEvent"]["parameters"],
       ): Promise<RestEndpointMethodTypes["issues"]["getEvent"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -5799,7 +5799,7 @@ export type RestEndpointMethods = {
      */
     getLabel: {
       (
-        params?: RestEndpointMethodTypes["issues"]["getLabel"]["parameters"]
+        params?: RestEndpointMethodTypes["issues"]["getLabel"]["parameters"],
       ): Promise<RestEndpointMethodTypes["issues"]["getLabel"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -5809,7 +5809,7 @@ export type RestEndpointMethods = {
      */
     getMilestone: {
       (
-        params?: RestEndpointMethodTypes["issues"]["getMilestone"]["parameters"]
+        params?: RestEndpointMethodTypes["issues"]["getMilestone"]["parameters"],
       ): Promise<RestEndpointMethodTypes["issues"]["getMilestone"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -5827,7 +5827,7 @@ export type RestEndpointMethods = {
      */
     list: {
       (
-        params?: RestEndpointMethodTypes["issues"]["list"]["parameters"]
+        params?: RestEndpointMethodTypes["issues"]["list"]["parameters"],
       ): Promise<RestEndpointMethodTypes["issues"]["list"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -5837,7 +5837,7 @@ export type RestEndpointMethods = {
      */
     listAssignees: {
       (
-        params?: RestEndpointMethodTypes["issues"]["listAssignees"]["parameters"]
+        params?: RestEndpointMethodTypes["issues"]["listAssignees"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["issues"]["listAssignees"]["response"]
       >;
@@ -5851,7 +5851,7 @@ export type RestEndpointMethods = {
      */
     listComments: {
       (
-        params?: RestEndpointMethodTypes["issues"]["listComments"]["parameters"]
+        params?: RestEndpointMethodTypes["issues"]["listComments"]["parameters"],
       ): Promise<RestEndpointMethodTypes["issues"]["listComments"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -5863,7 +5863,7 @@ export type RestEndpointMethods = {
      */
     listCommentsForRepo: {
       (
-        params?: RestEndpointMethodTypes["issues"]["listCommentsForRepo"]["parameters"]
+        params?: RestEndpointMethodTypes["issues"]["listCommentsForRepo"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["issues"]["listCommentsForRepo"]["response"]
       >;
@@ -5875,7 +5875,7 @@ export type RestEndpointMethods = {
      */
     listEvents: {
       (
-        params?: RestEndpointMethodTypes["issues"]["listEvents"]["parameters"]
+        params?: RestEndpointMethodTypes["issues"]["listEvents"]["parameters"],
       ): Promise<RestEndpointMethodTypes["issues"]["listEvents"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -5885,7 +5885,7 @@ export type RestEndpointMethods = {
      */
     listEventsForRepo: {
       (
-        params?: RestEndpointMethodTypes["issues"]["listEventsForRepo"]["parameters"]
+        params?: RestEndpointMethodTypes["issues"]["listEventsForRepo"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["issues"]["listEventsForRepo"]["response"]
       >;
@@ -5897,7 +5897,7 @@ export type RestEndpointMethods = {
      */
     listEventsForTimeline: {
       (
-        params?: RestEndpointMethodTypes["issues"]["listEventsForTimeline"]["parameters"]
+        params?: RestEndpointMethodTypes["issues"]["listEventsForTimeline"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["issues"]["listEventsForTimeline"]["response"]
       >;
@@ -5914,7 +5914,7 @@ export type RestEndpointMethods = {
      */
     listForAuthenticatedUser: {
       (
-        params?: RestEndpointMethodTypes["issues"]["listForAuthenticatedUser"]["parameters"]
+        params?: RestEndpointMethodTypes["issues"]["listForAuthenticatedUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["issues"]["listForAuthenticatedUser"]["response"]
       >;
@@ -5931,7 +5931,7 @@ export type RestEndpointMethods = {
      */
     listForOrg: {
       (
-        params?: RestEndpointMethodTypes["issues"]["listForOrg"]["parameters"]
+        params?: RestEndpointMethodTypes["issues"]["listForOrg"]["parameters"],
       ): Promise<RestEndpointMethodTypes["issues"]["listForOrg"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -5946,7 +5946,7 @@ export type RestEndpointMethods = {
      */
     listForRepo: {
       (
-        params?: RestEndpointMethodTypes["issues"]["listForRepo"]["parameters"]
+        params?: RestEndpointMethodTypes["issues"]["listForRepo"]["parameters"],
       ): Promise<RestEndpointMethodTypes["issues"]["listForRepo"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -5956,7 +5956,7 @@ export type RestEndpointMethods = {
      */
     listLabelsForMilestone: {
       (
-        params?: RestEndpointMethodTypes["issues"]["listLabelsForMilestone"]["parameters"]
+        params?: RestEndpointMethodTypes["issues"]["listLabelsForMilestone"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["issues"]["listLabelsForMilestone"]["response"]
       >;
@@ -5968,7 +5968,7 @@ export type RestEndpointMethods = {
      */
     listLabelsForRepo: {
       (
-        params?: RestEndpointMethodTypes["issues"]["listLabelsForRepo"]["parameters"]
+        params?: RestEndpointMethodTypes["issues"]["listLabelsForRepo"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["issues"]["listLabelsForRepo"]["response"]
       >;
@@ -5980,7 +5980,7 @@ export type RestEndpointMethods = {
      */
     listLabelsOnIssue: {
       (
-        params?: RestEndpointMethodTypes["issues"]["listLabelsOnIssue"]["parameters"]
+        params?: RestEndpointMethodTypes["issues"]["listLabelsOnIssue"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["issues"]["listLabelsOnIssue"]["response"]
       >;
@@ -5992,7 +5992,7 @@ export type RestEndpointMethods = {
      */
     listMilestones: {
       (
-        params?: RestEndpointMethodTypes["issues"]["listMilestones"]["parameters"]
+        params?: RestEndpointMethodTypes["issues"]["listMilestones"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["issues"]["listMilestones"]["response"]
       >;
@@ -6006,7 +6006,7 @@ export type RestEndpointMethods = {
      */
     lock: {
       (
-        params?: RestEndpointMethodTypes["issues"]["lock"]["parameters"]
+        params?: RestEndpointMethodTypes["issues"]["lock"]["parameters"],
       ): Promise<RestEndpointMethodTypes["issues"]["lock"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -6016,7 +6016,7 @@ export type RestEndpointMethods = {
      */
     removeAllLabels: {
       (
-        params?: RestEndpointMethodTypes["issues"]["removeAllLabels"]["parameters"]
+        params?: RestEndpointMethodTypes["issues"]["removeAllLabels"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["issues"]["removeAllLabels"]["response"]
       >;
@@ -6028,7 +6028,7 @@ export type RestEndpointMethods = {
      */
     removeAssignees: {
       (
-        params?: RestEndpointMethodTypes["issues"]["removeAssignees"]["parameters"]
+        params?: RestEndpointMethodTypes["issues"]["removeAssignees"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["issues"]["removeAssignees"]["response"]
       >;
@@ -6040,7 +6040,7 @@ export type RestEndpointMethods = {
      */
     removeLabel: {
       (
-        params?: RestEndpointMethodTypes["issues"]["removeLabel"]["parameters"]
+        params?: RestEndpointMethodTypes["issues"]["removeLabel"]["parameters"],
       ): Promise<RestEndpointMethodTypes["issues"]["removeLabel"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -6050,7 +6050,7 @@ export type RestEndpointMethods = {
      */
     setLabels: {
       (
-        params?: RestEndpointMethodTypes["issues"]["setLabels"]["parameters"]
+        params?: RestEndpointMethodTypes["issues"]["setLabels"]["parameters"],
       ): Promise<RestEndpointMethodTypes["issues"]["setLabels"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -6060,7 +6060,7 @@ export type RestEndpointMethods = {
      */
     unlock: {
       (
-        params?: RestEndpointMethodTypes["issues"]["unlock"]["parameters"]
+        params?: RestEndpointMethodTypes["issues"]["unlock"]["parameters"],
       ): Promise<RestEndpointMethodTypes["issues"]["unlock"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -6070,7 +6070,7 @@ export type RestEndpointMethods = {
      */
     update: {
       (
-        params?: RestEndpointMethodTypes["issues"]["update"]["parameters"]
+        params?: RestEndpointMethodTypes["issues"]["update"]["parameters"],
       ): Promise<RestEndpointMethodTypes["issues"]["update"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -6080,7 +6080,7 @@ export type RestEndpointMethods = {
      */
     updateComment: {
       (
-        params?: RestEndpointMethodTypes["issues"]["updateComment"]["parameters"]
+        params?: RestEndpointMethodTypes["issues"]["updateComment"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["issues"]["updateComment"]["response"]
       >;
@@ -6092,7 +6092,7 @@ export type RestEndpointMethods = {
      */
     updateLabel: {
       (
-        params?: RestEndpointMethodTypes["issues"]["updateLabel"]["parameters"]
+        params?: RestEndpointMethodTypes["issues"]["updateLabel"]["parameters"],
       ): Promise<RestEndpointMethodTypes["issues"]["updateLabel"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -6100,7 +6100,7 @@ export type RestEndpointMethods = {
 
     updateMilestone: {
       (
-        params?: RestEndpointMethodTypes["issues"]["updateMilestone"]["parameters"]
+        params?: RestEndpointMethodTypes["issues"]["updateMilestone"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["issues"]["updateMilestone"]["response"]
       >;
@@ -6111,7 +6111,7 @@ export type RestEndpointMethods = {
   licenses: {
     get: {
       (
-        params?: RestEndpointMethodTypes["licenses"]["get"]["parameters"]
+        params?: RestEndpointMethodTypes["licenses"]["get"]["parameters"],
       ): Promise<RestEndpointMethodTypes["licenses"]["get"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -6119,7 +6119,7 @@ export type RestEndpointMethods = {
 
     getAllCommonlyUsed: {
       (
-        params?: RestEndpointMethodTypes["licenses"]["getAllCommonlyUsed"]["parameters"]
+        params?: RestEndpointMethodTypes["licenses"]["getAllCommonlyUsed"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["licenses"]["getAllCommonlyUsed"]["response"]
       >;
@@ -6133,7 +6133,7 @@ export type RestEndpointMethods = {
      */
     getForRepo: {
       (
-        params?: RestEndpointMethodTypes["licenses"]["getForRepo"]["parameters"]
+        params?: RestEndpointMethodTypes["licenses"]["getForRepo"]["parameters"],
       ): Promise<RestEndpointMethodTypes["licenses"]["getForRepo"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -6142,7 +6142,7 @@ export type RestEndpointMethods = {
   markdown: {
     render: {
       (
-        params?: RestEndpointMethodTypes["markdown"]["render"]["parameters"]
+        params?: RestEndpointMethodTypes["markdown"]["render"]["parameters"],
       ): Promise<RestEndpointMethodTypes["markdown"]["render"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -6152,7 +6152,7 @@ export type RestEndpointMethods = {
      */
     renderRaw: {
       (
-        params?: RestEndpointMethodTypes["markdown"]["renderRaw"]["parameters"]
+        params?: RestEndpointMethodTypes["markdown"]["renderRaw"]["parameters"],
       ): Promise<RestEndpointMethodTypes["markdown"]["renderRaw"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -6169,9 +6169,9 @@ export type RestEndpointMethods = {
      * **Note:** This endpoint returns both IPv4 and IPv6 addresses. However, not all features support IPv6. You should refer to the specific documentation for each feature to determine if IPv6 is supported.
      */
     get: {
-      (params?: RestEndpointMethodTypes["meta"]["get"]["parameters"]): Promise<
-        RestEndpointMethodTypes["meta"]["get"]["response"]
-      >;
+      (
+        params?: RestEndpointMethodTypes["meta"]["get"]["parameters"],
+      ): Promise<RestEndpointMethodTypes["meta"]["get"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
@@ -6180,7 +6180,7 @@ export type RestEndpointMethods = {
      */
     getAllVersions: {
       (
-        params?: RestEndpointMethodTypes["meta"]["getAllVersions"]["parameters"]
+        params?: RestEndpointMethodTypes["meta"]["getAllVersions"]["parameters"],
       ): Promise<RestEndpointMethodTypes["meta"]["getAllVersions"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -6190,7 +6190,7 @@ export type RestEndpointMethods = {
      */
     getOctocat: {
       (
-        params?: RestEndpointMethodTypes["meta"]["getOctocat"]["parameters"]
+        params?: RestEndpointMethodTypes["meta"]["getOctocat"]["parameters"],
       ): Promise<RestEndpointMethodTypes["meta"]["getOctocat"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -6200,7 +6200,7 @@ export type RestEndpointMethods = {
      */
     getZen: {
       (
-        params?: RestEndpointMethodTypes["meta"]["getZen"]["parameters"]
+        params?: RestEndpointMethodTypes["meta"]["getZen"]["parameters"],
       ): Promise<RestEndpointMethodTypes["meta"]["getZen"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -6209,9 +6209,9 @@ export type RestEndpointMethods = {
      * Get Hypermedia links to resources accessible in GitHub's REST API
      */
     root: {
-      (params?: RestEndpointMethodTypes["meta"]["root"]["parameters"]): Promise<
-        RestEndpointMethodTypes["meta"]["root"]["response"]
-      >;
+      (
+        params?: RestEndpointMethodTypes["meta"]["root"]["parameters"],
+      ): Promise<RestEndpointMethodTypes["meta"]["root"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
@@ -6226,7 +6226,7 @@ export type RestEndpointMethods = {
      */
     cancelImport: {
       (
-        params?: RestEndpointMethodTypes["migrations"]["cancelImport"]["parameters"]
+        params?: RestEndpointMethodTypes["migrations"]["cancelImport"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["migrations"]["cancelImport"]["response"]
       >;
@@ -6238,7 +6238,7 @@ export type RestEndpointMethods = {
      */
     deleteArchiveForAuthenticatedUser: {
       (
-        params?: RestEndpointMethodTypes["migrations"]["deleteArchiveForAuthenticatedUser"]["parameters"]
+        params?: RestEndpointMethodTypes["migrations"]["deleteArchiveForAuthenticatedUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["migrations"]["deleteArchiveForAuthenticatedUser"]["response"]
       >;
@@ -6250,7 +6250,7 @@ export type RestEndpointMethods = {
      */
     deleteArchiveForOrg: {
       (
-        params?: RestEndpointMethodTypes["migrations"]["deleteArchiveForOrg"]["parameters"]
+        params?: RestEndpointMethodTypes["migrations"]["deleteArchiveForOrg"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["migrations"]["deleteArchiveForOrg"]["response"]
       >;
@@ -6262,7 +6262,7 @@ export type RestEndpointMethods = {
      */
     downloadArchiveForOrg: {
       (
-        params?: RestEndpointMethodTypes["migrations"]["downloadArchiveForOrg"]["parameters"]
+        params?: RestEndpointMethodTypes["migrations"]["downloadArchiveForOrg"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["migrations"]["downloadArchiveForOrg"]["response"]
       >;
@@ -6294,7 +6294,7 @@ export type RestEndpointMethods = {
      */
     getArchiveForAuthenticatedUser: {
       (
-        params?: RestEndpointMethodTypes["migrations"]["getArchiveForAuthenticatedUser"]["parameters"]
+        params?: RestEndpointMethodTypes["migrations"]["getArchiveForAuthenticatedUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["migrations"]["getArchiveForAuthenticatedUser"]["response"]
       >;
@@ -6312,7 +6312,7 @@ export type RestEndpointMethods = {
      */
     getCommitAuthors: {
       (
-        params?: RestEndpointMethodTypes["migrations"]["getCommitAuthors"]["parameters"]
+        params?: RestEndpointMethodTypes["migrations"]["getCommitAuthors"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["migrations"]["getCommitAuthors"]["response"]
       >;
@@ -6361,7 +6361,7 @@ export type RestEndpointMethods = {
      */
     getImportStatus: {
       (
-        params?: RestEndpointMethodTypes["migrations"]["getImportStatus"]["parameters"]
+        params?: RestEndpointMethodTypes["migrations"]["getImportStatus"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["migrations"]["getImportStatus"]["response"]
       >;
@@ -6377,7 +6377,7 @@ export type RestEndpointMethods = {
      */
     getLargeFiles: {
       (
-        params?: RestEndpointMethodTypes["migrations"]["getLargeFiles"]["parameters"]
+        params?: RestEndpointMethodTypes["migrations"]["getLargeFiles"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["migrations"]["getLargeFiles"]["response"]
       >;
@@ -6396,7 +6396,7 @@ export type RestEndpointMethods = {
      */
     getStatusForAuthenticatedUser: {
       (
-        params?: RestEndpointMethodTypes["migrations"]["getStatusForAuthenticatedUser"]["parameters"]
+        params?: RestEndpointMethodTypes["migrations"]["getStatusForAuthenticatedUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["migrations"]["getStatusForAuthenticatedUser"]["response"]
       >;
@@ -6415,7 +6415,7 @@ export type RestEndpointMethods = {
      */
     getStatusForOrg: {
       (
-        params?: RestEndpointMethodTypes["migrations"]["getStatusForOrg"]["parameters"]
+        params?: RestEndpointMethodTypes["migrations"]["getStatusForOrg"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["migrations"]["getStatusForOrg"]["response"]
       >;
@@ -6427,7 +6427,7 @@ export type RestEndpointMethods = {
      */
     listForAuthenticatedUser: {
       (
-        params?: RestEndpointMethodTypes["migrations"]["listForAuthenticatedUser"]["parameters"]
+        params?: RestEndpointMethodTypes["migrations"]["listForAuthenticatedUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["migrations"]["listForAuthenticatedUser"]["response"]
       >;
@@ -6441,7 +6441,7 @@ export type RestEndpointMethods = {
      */
     listForOrg: {
       (
-        params?: RestEndpointMethodTypes["migrations"]["listForOrg"]["parameters"]
+        params?: RestEndpointMethodTypes["migrations"]["listForOrg"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["migrations"]["listForOrg"]["response"]
       >;
@@ -6453,7 +6453,7 @@ export type RestEndpointMethods = {
      */
     listReposForAuthenticatedUser: {
       (
-        params?: RestEndpointMethodTypes["migrations"]["listReposForAuthenticatedUser"]["parameters"]
+        params?: RestEndpointMethodTypes["migrations"]["listReposForAuthenticatedUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["migrations"]["listReposForAuthenticatedUser"]["response"]
       >;
@@ -6465,7 +6465,7 @@ export type RestEndpointMethods = {
      */
     listReposForOrg: {
       (
-        params?: RestEndpointMethodTypes["migrations"]["listReposForOrg"]["parameters"]
+        params?: RestEndpointMethodTypes["migrations"]["listReposForOrg"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["migrations"]["listReposForOrg"]["response"]
       >;
@@ -6478,7 +6478,7 @@ export type RestEndpointMethods = {
      */
     listReposForUser: {
       (
-        params?: RestEndpointMethodTypes["migrations"]["listReposForUser"]["parameters"]
+        params?: RestEndpointMethodTypes["migrations"]["listReposForUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["migrations"]["listReposForUser"]["response"]
       >;
@@ -6495,7 +6495,7 @@ export type RestEndpointMethods = {
      */
     mapCommitAuthor: {
       (
-        params?: RestEndpointMethodTypes["migrations"]["mapCommitAuthor"]["parameters"]
+        params?: RestEndpointMethodTypes["migrations"]["mapCommitAuthor"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["migrations"]["mapCommitAuthor"]["response"]
       >;
@@ -6515,7 +6515,7 @@ export type RestEndpointMethods = {
      */
     setLfsPreference: {
       (
-        params?: RestEndpointMethodTypes["migrations"]["setLfsPreference"]["parameters"]
+        params?: RestEndpointMethodTypes["migrations"]["setLfsPreference"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["migrations"]["setLfsPreference"]["response"]
       >;
@@ -6527,7 +6527,7 @@ export type RestEndpointMethods = {
      */
     startForAuthenticatedUser: {
       (
-        params?: RestEndpointMethodTypes["migrations"]["startForAuthenticatedUser"]["parameters"]
+        params?: RestEndpointMethodTypes["migrations"]["startForAuthenticatedUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["migrations"]["startForAuthenticatedUser"]["response"]
       >;
@@ -6539,7 +6539,7 @@ export type RestEndpointMethods = {
      */
     startForOrg: {
       (
-        params?: RestEndpointMethodTypes["migrations"]["startForOrg"]["parameters"]
+        params?: RestEndpointMethodTypes["migrations"]["startForOrg"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["migrations"]["startForOrg"]["response"]
       >;
@@ -6552,7 +6552,7 @@ export type RestEndpointMethods = {
      */
     startImport: {
       (
-        params?: RestEndpointMethodTypes["migrations"]["startImport"]["parameters"]
+        params?: RestEndpointMethodTypes["migrations"]["startImport"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["migrations"]["startImport"]["response"]
       >;
@@ -6564,7 +6564,7 @@ export type RestEndpointMethods = {
      */
     unlockRepoForAuthenticatedUser: {
       (
-        params?: RestEndpointMethodTypes["migrations"]["unlockRepoForAuthenticatedUser"]["parameters"]
+        params?: RestEndpointMethodTypes["migrations"]["unlockRepoForAuthenticatedUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["migrations"]["unlockRepoForAuthenticatedUser"]["response"]
       >;
@@ -6576,7 +6576,7 @@ export type RestEndpointMethods = {
      */
     unlockRepoForOrg: {
       (
-        params?: RestEndpointMethodTypes["migrations"]["unlockRepoForOrg"]["parameters"]
+        params?: RestEndpointMethodTypes["migrations"]["unlockRepoForOrg"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["migrations"]["unlockRepoForOrg"]["response"]
       >;
@@ -6597,7 +6597,7 @@ export type RestEndpointMethods = {
      */
     updateImport: {
       (
-        params?: RestEndpointMethodTypes["migrations"]["updateImport"]["parameters"]
+        params?: RestEndpointMethodTypes["migrations"]["updateImport"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["migrations"]["updateImport"]["response"]
       >;
@@ -6615,7 +6615,7 @@ export type RestEndpointMethods = {
      */
     addSecurityManagerTeam: {
       (
-        params?: RestEndpointMethodTypes["orgs"]["addSecurityManagerTeam"]["parameters"]
+        params?: RestEndpointMethodTypes["orgs"]["addSecurityManagerTeam"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["orgs"]["addSecurityManagerTeam"]["response"]
       >;
@@ -6625,7 +6625,7 @@ export type RestEndpointMethods = {
 
     blockUser: {
       (
-        params?: RestEndpointMethodTypes["orgs"]["blockUser"]["parameters"]
+        params?: RestEndpointMethodTypes["orgs"]["blockUser"]["parameters"],
       ): Promise<RestEndpointMethodTypes["orgs"]["blockUser"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -6637,7 +6637,7 @@ export type RestEndpointMethods = {
      */
     cancelInvitation: {
       (
-        params?: RestEndpointMethodTypes["orgs"]["cancelInvitation"]["parameters"]
+        params?: RestEndpointMethodTypes["orgs"]["cancelInvitation"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["orgs"]["cancelInvitation"]["response"]
       >;
@@ -6647,7 +6647,7 @@ export type RestEndpointMethods = {
 
     checkBlockedUser: {
       (
-        params?: RestEndpointMethodTypes["orgs"]["checkBlockedUser"]["parameters"]
+        params?: RestEndpointMethodTypes["orgs"]["checkBlockedUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["orgs"]["checkBlockedUser"]["response"]
       >;
@@ -6659,7 +6659,7 @@ export type RestEndpointMethods = {
      */
     checkMembershipForUser: {
       (
-        params?: RestEndpointMethodTypes["orgs"]["checkMembershipForUser"]["parameters"]
+        params?: RestEndpointMethodTypes["orgs"]["checkMembershipForUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["orgs"]["checkMembershipForUser"]["response"]
       >;
@@ -6671,7 +6671,7 @@ export type RestEndpointMethods = {
      */
     checkPublicMembershipForUser: {
       (
-        params?: RestEndpointMethodTypes["orgs"]["checkPublicMembershipForUser"]["parameters"]
+        params?: RestEndpointMethodTypes["orgs"]["checkPublicMembershipForUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["orgs"]["checkPublicMembershipForUser"]["response"]
       >;
@@ -6683,7 +6683,7 @@ export type RestEndpointMethods = {
      */
     convertMemberToOutsideCollaborator: {
       (
-        params?: RestEndpointMethodTypes["orgs"]["convertMemberToOutsideCollaborator"]["parameters"]
+        params?: RestEndpointMethodTypes["orgs"]["convertMemberToOutsideCollaborator"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["orgs"]["convertMemberToOutsideCollaborator"]["response"]
       >;
@@ -6697,7 +6697,7 @@ export type RestEndpointMethods = {
      */
     createInvitation: {
       (
-        params?: RestEndpointMethodTypes["orgs"]["createInvitation"]["parameters"]
+        params?: RestEndpointMethodTypes["orgs"]["createInvitation"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["orgs"]["createInvitation"]["response"]
       >;
@@ -6709,7 +6709,7 @@ export type RestEndpointMethods = {
      */
     createWebhook: {
       (
-        params?: RestEndpointMethodTypes["orgs"]["createWebhook"]["parameters"]
+        params?: RestEndpointMethodTypes["orgs"]["createWebhook"]["parameters"],
       ): Promise<RestEndpointMethodTypes["orgs"]["createWebhook"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -6725,7 +6725,7 @@ export type RestEndpointMethods = {
      */
     delete: {
       (
-        params?: RestEndpointMethodTypes["orgs"]["delete"]["parameters"]
+        params?: RestEndpointMethodTypes["orgs"]["delete"]["parameters"],
       ): Promise<RestEndpointMethodTypes["orgs"]["delete"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -6733,7 +6733,7 @@ export type RestEndpointMethods = {
 
     deleteWebhook: {
       (
-        params?: RestEndpointMethodTypes["orgs"]["deleteWebhook"]["parameters"]
+        params?: RestEndpointMethodTypes["orgs"]["deleteWebhook"]["parameters"],
       ): Promise<RestEndpointMethodTypes["orgs"]["deleteWebhook"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -6750,7 +6750,7 @@ export type RestEndpointMethods = {
      */
     enableOrDisableSecurityProductOnAllOrgRepos: {
       (
-        params?: RestEndpointMethodTypes["orgs"]["enableOrDisableSecurityProductOnAllOrgRepos"]["parameters"]
+        params?: RestEndpointMethodTypes["orgs"]["enableOrDisableSecurityProductOnAllOrgRepos"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["orgs"]["enableOrDisableSecurityProductOnAllOrgRepos"]["response"]
       >;
@@ -6763,9 +6763,9 @@ export type RestEndpointMethods = {
      * GitHub Apps with the `Organization plan` permission can use this endpoint to retrieve information about an organization's GitHub plan. See "[Authenticating with GitHub Apps](https://docs.github.com/apps/building-github-apps/authenticating-with-github-apps/)" for details. For an example response, see 'Response with GitHub plan information' below."
      */
     get: {
-      (params?: RestEndpointMethodTypes["orgs"]["get"]["parameters"]): Promise<
-        RestEndpointMethodTypes["orgs"]["get"]["response"]
-      >;
+      (
+        params?: RestEndpointMethodTypes["orgs"]["get"]["parameters"],
+      ): Promise<RestEndpointMethodTypes["orgs"]["get"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
@@ -6774,7 +6774,7 @@ export type RestEndpointMethods = {
      */
     getMembershipForAuthenticatedUser: {
       (
-        params?: RestEndpointMethodTypes["orgs"]["getMembershipForAuthenticatedUser"]["parameters"]
+        params?: RestEndpointMethodTypes["orgs"]["getMembershipForAuthenticatedUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["orgs"]["getMembershipForAuthenticatedUser"]["response"]
       >;
@@ -6786,7 +6786,7 @@ export type RestEndpointMethods = {
      */
     getMembershipForUser: {
       (
-        params?: RestEndpointMethodTypes["orgs"]["getMembershipForUser"]["parameters"]
+        params?: RestEndpointMethodTypes["orgs"]["getMembershipForUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["orgs"]["getMembershipForUser"]["response"]
       >;
@@ -6798,7 +6798,7 @@ export type RestEndpointMethods = {
      */
     getWebhook: {
       (
-        params?: RestEndpointMethodTypes["orgs"]["getWebhook"]["parameters"]
+        params?: RestEndpointMethodTypes["orgs"]["getWebhook"]["parameters"],
       ): Promise<RestEndpointMethodTypes["orgs"]["getWebhook"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -6810,7 +6810,7 @@ export type RestEndpointMethods = {
      */
     getWebhookConfigForOrg: {
       (
-        params?: RestEndpointMethodTypes["orgs"]["getWebhookConfigForOrg"]["parameters"]
+        params?: RestEndpointMethodTypes["orgs"]["getWebhookConfigForOrg"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["orgs"]["getWebhookConfigForOrg"]["response"]
       >;
@@ -6822,7 +6822,7 @@ export type RestEndpointMethods = {
      */
     getWebhookDelivery: {
       (
-        params?: RestEndpointMethodTypes["orgs"]["getWebhookDelivery"]["parameters"]
+        params?: RestEndpointMethodTypes["orgs"]["getWebhookDelivery"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["orgs"]["getWebhookDelivery"]["response"]
       >;
@@ -6835,9 +6835,9 @@ export type RestEndpointMethods = {
      * **Note:** Pagination is powered exclusively by the `since` parameter. Use the [Link header](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api#using-link-headers) to get the URL for the next page of organizations.
      */
     list: {
-      (params?: RestEndpointMethodTypes["orgs"]["list"]["parameters"]): Promise<
-        RestEndpointMethodTypes["orgs"]["list"]["response"]
-      >;
+      (
+        params?: RestEndpointMethodTypes["orgs"]["list"]["parameters"],
+      ): Promise<RestEndpointMethodTypes["orgs"]["list"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
@@ -6846,7 +6846,7 @@ export type RestEndpointMethods = {
      */
     listAppInstallations: {
       (
-        params?: RestEndpointMethodTypes["orgs"]["listAppInstallations"]["parameters"]
+        params?: RestEndpointMethodTypes["orgs"]["listAppInstallations"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["orgs"]["listAppInstallations"]["response"]
       >;
@@ -6858,7 +6858,7 @@ export type RestEndpointMethods = {
      */
     listBlockedUsers: {
       (
-        params?: RestEndpointMethodTypes["orgs"]["listBlockedUsers"]["parameters"]
+        params?: RestEndpointMethodTypes["orgs"]["listBlockedUsers"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["orgs"]["listBlockedUsers"]["response"]
       >;
@@ -6870,7 +6870,7 @@ export type RestEndpointMethods = {
      */
     listFailedInvitations: {
       (
-        params?: RestEndpointMethodTypes["orgs"]["listFailedInvitations"]["parameters"]
+        params?: RestEndpointMethodTypes["orgs"]["listFailedInvitations"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["orgs"]["listFailedInvitations"]["response"]
       >;
@@ -6886,7 +6886,7 @@ export type RestEndpointMethods = {
      */
     listForAuthenticatedUser: {
       (
-        params?: RestEndpointMethodTypes["orgs"]["listForAuthenticatedUser"]["parameters"]
+        params?: RestEndpointMethodTypes["orgs"]["listForAuthenticatedUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["orgs"]["listForAuthenticatedUser"]["response"]
       >;
@@ -6900,7 +6900,7 @@ export type RestEndpointMethods = {
      */
     listForUser: {
       (
-        params?: RestEndpointMethodTypes["orgs"]["listForUser"]["parameters"]
+        params?: RestEndpointMethodTypes["orgs"]["listForUser"]["parameters"],
       ): Promise<RestEndpointMethodTypes["orgs"]["listForUser"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -6910,7 +6910,7 @@ export type RestEndpointMethods = {
      */
     listInvitationTeams: {
       (
-        params?: RestEndpointMethodTypes["orgs"]["listInvitationTeams"]["parameters"]
+        params?: RestEndpointMethodTypes["orgs"]["listInvitationTeams"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["orgs"]["listInvitationTeams"]["response"]
       >;
@@ -6922,7 +6922,7 @@ export type RestEndpointMethods = {
      */
     listMembers: {
       (
-        params?: RestEndpointMethodTypes["orgs"]["listMembers"]["parameters"]
+        params?: RestEndpointMethodTypes["orgs"]["listMembers"]["parameters"],
       ): Promise<RestEndpointMethodTypes["orgs"]["listMembers"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -6932,7 +6932,7 @@ export type RestEndpointMethods = {
      */
     listMembershipsForAuthenticatedUser: {
       (
-        params?: RestEndpointMethodTypes["orgs"]["listMembershipsForAuthenticatedUser"]["parameters"]
+        params?: RestEndpointMethodTypes["orgs"]["listMembershipsForAuthenticatedUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["orgs"]["listMembershipsForAuthenticatedUser"]["response"]
       >;
@@ -6944,7 +6944,7 @@ export type RestEndpointMethods = {
      */
     listOutsideCollaborators: {
       (
-        params?: RestEndpointMethodTypes["orgs"]["listOutsideCollaborators"]["parameters"]
+        params?: RestEndpointMethodTypes["orgs"]["listOutsideCollaborators"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["orgs"]["listOutsideCollaborators"]["response"]
       >;
@@ -6959,7 +6959,7 @@ export type RestEndpointMethods = {
      */
     listPatGrantRepositories: {
       (
-        params?: RestEndpointMethodTypes["orgs"]["listPatGrantRepositories"]["parameters"]
+        params?: RestEndpointMethodTypes["orgs"]["listPatGrantRepositories"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["orgs"]["listPatGrantRepositories"]["response"]
       >;
@@ -6974,7 +6974,7 @@ export type RestEndpointMethods = {
      */
     listPatGrantRequestRepositories: {
       (
-        params?: RestEndpointMethodTypes["orgs"]["listPatGrantRequestRepositories"]["parameters"]
+        params?: RestEndpointMethodTypes["orgs"]["listPatGrantRequestRepositories"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["orgs"]["listPatGrantRequestRepositories"]["response"]
       >;
@@ -6989,7 +6989,7 @@ export type RestEndpointMethods = {
      */
     listPatGrantRequests: {
       (
-        params?: RestEndpointMethodTypes["orgs"]["listPatGrantRequests"]["parameters"]
+        params?: RestEndpointMethodTypes["orgs"]["listPatGrantRequests"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["orgs"]["listPatGrantRequests"]["response"]
       >;
@@ -7004,7 +7004,7 @@ export type RestEndpointMethods = {
      */
     listPatGrants: {
       (
-        params?: RestEndpointMethodTypes["orgs"]["listPatGrants"]["parameters"]
+        params?: RestEndpointMethodTypes["orgs"]["listPatGrants"]["parameters"],
       ): Promise<RestEndpointMethodTypes["orgs"]["listPatGrants"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -7014,7 +7014,7 @@ export type RestEndpointMethods = {
      */
     listPendingInvitations: {
       (
-        params?: RestEndpointMethodTypes["orgs"]["listPendingInvitations"]["parameters"]
+        params?: RestEndpointMethodTypes["orgs"]["listPendingInvitations"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["orgs"]["listPendingInvitations"]["response"]
       >;
@@ -7026,7 +7026,7 @@ export type RestEndpointMethods = {
      */
     listPublicMembers: {
       (
-        params?: RestEndpointMethodTypes["orgs"]["listPublicMembers"]["parameters"]
+        params?: RestEndpointMethodTypes["orgs"]["listPublicMembers"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["orgs"]["listPublicMembers"]["response"]
       >;
@@ -7042,7 +7042,7 @@ export type RestEndpointMethods = {
      */
     listSecurityManagerTeams: {
       (
-        params?: RestEndpointMethodTypes["orgs"]["listSecurityManagerTeams"]["parameters"]
+        params?: RestEndpointMethodTypes["orgs"]["listSecurityManagerTeams"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["orgs"]["listSecurityManagerTeams"]["response"]
       >;
@@ -7054,7 +7054,7 @@ export type RestEndpointMethods = {
      */
     listWebhookDeliveries: {
       (
-        params?: RestEndpointMethodTypes["orgs"]["listWebhookDeliveries"]["parameters"]
+        params?: RestEndpointMethodTypes["orgs"]["listWebhookDeliveries"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["orgs"]["listWebhookDeliveries"]["response"]
       >;
@@ -7064,7 +7064,7 @@ export type RestEndpointMethods = {
 
     listWebhooks: {
       (
-        params?: RestEndpointMethodTypes["orgs"]["listWebhooks"]["parameters"]
+        params?: RestEndpointMethodTypes["orgs"]["listWebhooks"]["parameters"],
       ): Promise<RestEndpointMethodTypes["orgs"]["listWebhooks"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -7074,7 +7074,7 @@ export type RestEndpointMethods = {
      */
     pingWebhook: {
       (
-        params?: RestEndpointMethodTypes["orgs"]["pingWebhook"]["parameters"]
+        params?: RestEndpointMethodTypes["orgs"]["pingWebhook"]["parameters"],
       ): Promise<RestEndpointMethodTypes["orgs"]["pingWebhook"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -7084,7 +7084,7 @@ export type RestEndpointMethods = {
      */
     redeliverWebhookDelivery: {
       (
-        params?: RestEndpointMethodTypes["orgs"]["redeliverWebhookDelivery"]["parameters"]
+        params?: RestEndpointMethodTypes["orgs"]["redeliverWebhookDelivery"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["orgs"]["redeliverWebhookDelivery"]["response"]
       >;
@@ -7096,7 +7096,7 @@ export type RestEndpointMethods = {
      */
     removeMember: {
       (
-        params?: RestEndpointMethodTypes["orgs"]["removeMember"]["parameters"]
+        params?: RestEndpointMethodTypes["orgs"]["removeMember"]["parameters"],
       ): Promise<RestEndpointMethodTypes["orgs"]["removeMember"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -7108,7 +7108,7 @@ export type RestEndpointMethods = {
      */
     removeMembershipForUser: {
       (
-        params?: RestEndpointMethodTypes["orgs"]["removeMembershipForUser"]["parameters"]
+        params?: RestEndpointMethodTypes["orgs"]["removeMembershipForUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["orgs"]["removeMembershipForUser"]["response"]
       >;
@@ -7120,7 +7120,7 @@ export type RestEndpointMethods = {
      */
     removeOutsideCollaborator: {
       (
-        params?: RestEndpointMethodTypes["orgs"]["removeOutsideCollaborator"]["parameters"]
+        params?: RestEndpointMethodTypes["orgs"]["removeOutsideCollaborator"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["orgs"]["removeOutsideCollaborator"]["response"]
       >;
@@ -7132,7 +7132,7 @@ export type RestEndpointMethods = {
      */
     removePublicMembershipForAuthenticatedUser: {
       (
-        params?: RestEndpointMethodTypes["orgs"]["removePublicMembershipForAuthenticatedUser"]["parameters"]
+        params?: RestEndpointMethodTypes["orgs"]["removePublicMembershipForAuthenticatedUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["orgs"]["removePublicMembershipForAuthenticatedUser"]["response"]
       >;
@@ -7148,7 +7148,7 @@ export type RestEndpointMethods = {
      */
     removeSecurityManagerTeam: {
       (
-        params?: RestEndpointMethodTypes["orgs"]["removeSecurityManagerTeam"]["parameters"]
+        params?: RestEndpointMethodTypes["orgs"]["removeSecurityManagerTeam"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["orgs"]["removeSecurityManagerTeam"]["response"]
       >;
@@ -7163,7 +7163,7 @@ export type RestEndpointMethods = {
      */
     reviewPatGrantRequest: {
       (
-        params?: RestEndpointMethodTypes["orgs"]["reviewPatGrantRequest"]["parameters"]
+        params?: RestEndpointMethodTypes["orgs"]["reviewPatGrantRequest"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["orgs"]["reviewPatGrantRequest"]["response"]
       >;
@@ -7178,7 +7178,7 @@ export type RestEndpointMethods = {
      */
     reviewPatGrantRequestsInBulk: {
       (
-        params?: RestEndpointMethodTypes["orgs"]["reviewPatGrantRequestsInBulk"]["parameters"]
+        params?: RestEndpointMethodTypes["orgs"]["reviewPatGrantRequestsInBulk"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["orgs"]["reviewPatGrantRequestsInBulk"]["response"]
       >;
@@ -7198,7 +7198,7 @@ export type RestEndpointMethods = {
      */
     setMembershipForUser: {
       (
-        params?: RestEndpointMethodTypes["orgs"]["setMembershipForUser"]["parameters"]
+        params?: RestEndpointMethodTypes["orgs"]["setMembershipForUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["orgs"]["setMembershipForUser"]["response"]
       >;
@@ -7212,7 +7212,7 @@ export type RestEndpointMethods = {
      */
     setPublicMembershipForAuthenticatedUser: {
       (
-        params?: RestEndpointMethodTypes["orgs"]["setPublicMembershipForAuthenticatedUser"]["parameters"]
+        params?: RestEndpointMethodTypes["orgs"]["setPublicMembershipForAuthenticatedUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["orgs"]["setPublicMembershipForAuthenticatedUser"]["response"]
       >;
@@ -7222,7 +7222,7 @@ export type RestEndpointMethods = {
 
     unblockUser: {
       (
-        params?: RestEndpointMethodTypes["orgs"]["unblockUser"]["parameters"]
+        params?: RestEndpointMethodTypes["orgs"]["unblockUser"]["parameters"],
       ): Promise<RestEndpointMethodTypes["orgs"]["unblockUser"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -7234,7 +7234,7 @@ export type RestEndpointMethods = {
      */
     update: {
       (
-        params?: RestEndpointMethodTypes["orgs"]["update"]["parameters"]
+        params?: RestEndpointMethodTypes["orgs"]["update"]["parameters"],
       ): Promise<RestEndpointMethodTypes["orgs"]["update"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -7244,7 +7244,7 @@ export type RestEndpointMethods = {
      */
     updateMembershipForAuthenticatedUser: {
       (
-        params?: RestEndpointMethodTypes["orgs"]["updateMembershipForAuthenticatedUser"]["parameters"]
+        params?: RestEndpointMethodTypes["orgs"]["updateMembershipForAuthenticatedUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["orgs"]["updateMembershipForAuthenticatedUser"]["response"]
       >;
@@ -7259,7 +7259,7 @@ export type RestEndpointMethods = {
      */
     updatePatAccess: {
       (
-        params?: RestEndpointMethodTypes["orgs"]["updatePatAccess"]["parameters"]
+        params?: RestEndpointMethodTypes["orgs"]["updatePatAccess"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["orgs"]["updatePatAccess"]["response"]
       >;
@@ -7274,7 +7274,7 @@ export type RestEndpointMethods = {
      */
     updatePatAccesses: {
       (
-        params?: RestEndpointMethodTypes["orgs"]["updatePatAccesses"]["parameters"]
+        params?: RestEndpointMethodTypes["orgs"]["updatePatAccesses"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["orgs"]["updatePatAccesses"]["response"]
       >;
@@ -7286,7 +7286,7 @@ export type RestEndpointMethods = {
      */
     updateWebhook: {
       (
-        params?: RestEndpointMethodTypes["orgs"]["updateWebhook"]["parameters"]
+        params?: RestEndpointMethodTypes["orgs"]["updateWebhook"]["parameters"],
       ): Promise<RestEndpointMethodTypes["orgs"]["updateWebhook"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -7298,7 +7298,7 @@ export type RestEndpointMethods = {
      */
     updateWebhookConfigForOrg: {
       (
-        params?: RestEndpointMethodTypes["orgs"]["updateWebhookConfigForOrg"]["parameters"]
+        params?: RestEndpointMethodTypes["orgs"]["updateWebhookConfigForOrg"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["orgs"]["updateWebhookConfigForOrg"]["response"]
       >;
@@ -7315,7 +7315,7 @@ export type RestEndpointMethods = {
      */
     deletePackageForAuthenticatedUser: {
       (
-        params?: RestEndpointMethodTypes["packages"]["deletePackageForAuthenticatedUser"]["parameters"]
+        params?: RestEndpointMethodTypes["packages"]["deletePackageForAuthenticatedUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["packages"]["deletePackageForAuthenticatedUser"]["response"]
       >;
@@ -7331,7 +7331,7 @@ export type RestEndpointMethods = {
      */
     deletePackageForOrg: {
       (
-        params?: RestEndpointMethodTypes["packages"]["deletePackageForOrg"]["parameters"]
+        params?: RestEndpointMethodTypes["packages"]["deletePackageForOrg"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["packages"]["deletePackageForOrg"]["response"]
       >;
@@ -7347,7 +7347,7 @@ export type RestEndpointMethods = {
      */
     deletePackageForUser: {
       (
-        params?: RestEndpointMethodTypes["packages"]["deletePackageForUser"]["parameters"]
+        params?: RestEndpointMethodTypes["packages"]["deletePackageForUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["packages"]["deletePackageForUser"]["response"]
       >;
@@ -7362,7 +7362,7 @@ export type RestEndpointMethods = {
      */
     deletePackageVersionForAuthenticatedUser: {
       (
-        params?: RestEndpointMethodTypes["packages"]["deletePackageVersionForAuthenticatedUser"]["parameters"]
+        params?: RestEndpointMethodTypes["packages"]["deletePackageVersionForAuthenticatedUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["packages"]["deletePackageVersionForAuthenticatedUser"]["response"]
       >;
@@ -7378,7 +7378,7 @@ export type RestEndpointMethods = {
      */
     deletePackageVersionForOrg: {
       (
-        params?: RestEndpointMethodTypes["packages"]["deletePackageVersionForOrg"]["parameters"]
+        params?: RestEndpointMethodTypes["packages"]["deletePackageVersionForOrg"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["packages"]["deletePackageVersionForOrg"]["response"]
       >;
@@ -7394,7 +7394,7 @@ export type RestEndpointMethods = {
      */
     deletePackageVersionForUser: {
       (
-        params?: RestEndpointMethodTypes["packages"]["deletePackageVersionForUser"]["parameters"]
+        params?: RestEndpointMethodTypes["packages"]["deletePackageVersionForUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["packages"]["deletePackageVersionForUser"]["response"]
       >;
@@ -7409,7 +7409,7 @@ export type RestEndpointMethods = {
      */
     getAllPackageVersionsForAPackageOwnedByAnOrg: {
       (
-        params?: RestEndpointMethodTypes["packages"]["getAllPackageVersionsForAPackageOwnedByAnOrg"]["parameters"]
+        params?: RestEndpointMethodTypes["packages"]["getAllPackageVersionsForAPackageOwnedByAnOrg"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["packages"]["getAllPackageVersionsForAPackageOwnedByAnOrg"]["response"]
       >;
@@ -7424,7 +7424,7 @@ export type RestEndpointMethods = {
      */
     getAllPackageVersionsForAPackageOwnedByTheAuthenticatedUser: {
       (
-        params?: RestEndpointMethodTypes["packages"]["getAllPackageVersionsForAPackageOwnedByTheAuthenticatedUser"]["parameters"]
+        params?: RestEndpointMethodTypes["packages"]["getAllPackageVersionsForAPackageOwnedByTheAuthenticatedUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["packages"]["getAllPackageVersionsForAPackageOwnedByTheAuthenticatedUser"]["response"]
       >;
@@ -7438,7 +7438,7 @@ export type RestEndpointMethods = {
      */
     getAllPackageVersionsForPackageOwnedByAuthenticatedUser: {
       (
-        params?: RestEndpointMethodTypes["packages"]["getAllPackageVersionsForPackageOwnedByAuthenticatedUser"]["parameters"]
+        params?: RestEndpointMethodTypes["packages"]["getAllPackageVersionsForPackageOwnedByAuthenticatedUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["packages"]["getAllPackageVersionsForPackageOwnedByAuthenticatedUser"]["response"]
       >;
@@ -7452,7 +7452,7 @@ export type RestEndpointMethods = {
      */
     getAllPackageVersionsForPackageOwnedByOrg: {
       (
-        params?: RestEndpointMethodTypes["packages"]["getAllPackageVersionsForPackageOwnedByOrg"]["parameters"]
+        params?: RestEndpointMethodTypes["packages"]["getAllPackageVersionsForPackageOwnedByOrg"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["packages"]["getAllPackageVersionsForPackageOwnedByOrg"]["response"]
       >;
@@ -7466,7 +7466,7 @@ export type RestEndpointMethods = {
      */
     getAllPackageVersionsForPackageOwnedByUser: {
       (
-        params?: RestEndpointMethodTypes["packages"]["getAllPackageVersionsForPackageOwnedByUser"]["parameters"]
+        params?: RestEndpointMethodTypes["packages"]["getAllPackageVersionsForPackageOwnedByUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["packages"]["getAllPackageVersionsForPackageOwnedByUser"]["response"]
       >;
@@ -7480,7 +7480,7 @@ export type RestEndpointMethods = {
      */
     getPackageForAuthenticatedUser: {
       (
-        params?: RestEndpointMethodTypes["packages"]["getPackageForAuthenticatedUser"]["parameters"]
+        params?: RestEndpointMethodTypes["packages"]["getPackageForAuthenticatedUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["packages"]["getPackageForAuthenticatedUser"]["response"]
       >;
@@ -7494,7 +7494,7 @@ export type RestEndpointMethods = {
      */
     getPackageForOrganization: {
       (
-        params?: RestEndpointMethodTypes["packages"]["getPackageForOrganization"]["parameters"]
+        params?: RestEndpointMethodTypes["packages"]["getPackageForOrganization"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["packages"]["getPackageForOrganization"]["response"]
       >;
@@ -7508,7 +7508,7 @@ export type RestEndpointMethods = {
      */
     getPackageForUser: {
       (
-        params?: RestEndpointMethodTypes["packages"]["getPackageForUser"]["parameters"]
+        params?: RestEndpointMethodTypes["packages"]["getPackageForUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["packages"]["getPackageForUser"]["response"]
       >;
@@ -7522,7 +7522,7 @@ export type RestEndpointMethods = {
      */
     getPackageVersionForAuthenticatedUser: {
       (
-        params?: RestEndpointMethodTypes["packages"]["getPackageVersionForAuthenticatedUser"]["parameters"]
+        params?: RestEndpointMethodTypes["packages"]["getPackageVersionForAuthenticatedUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["packages"]["getPackageVersionForAuthenticatedUser"]["response"]
       >;
@@ -7536,7 +7536,7 @@ export type RestEndpointMethods = {
      */
     getPackageVersionForOrganization: {
       (
-        params?: RestEndpointMethodTypes["packages"]["getPackageVersionForOrganization"]["parameters"]
+        params?: RestEndpointMethodTypes["packages"]["getPackageVersionForOrganization"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["packages"]["getPackageVersionForOrganization"]["response"]
       >;
@@ -7550,7 +7550,7 @@ export type RestEndpointMethods = {
      */
     getPackageVersionForUser: {
       (
-        params?: RestEndpointMethodTypes["packages"]["getPackageVersionForUser"]["parameters"]
+        params?: RestEndpointMethodTypes["packages"]["getPackageVersionForUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["packages"]["getPackageVersionForUser"]["response"]
       >;
@@ -7563,7 +7563,7 @@ export type RestEndpointMethods = {
      */
     listDockerMigrationConflictingPackagesForAuthenticatedUser: {
       (
-        params?: RestEndpointMethodTypes["packages"]["listDockerMigrationConflictingPackagesForAuthenticatedUser"]["parameters"]
+        params?: RestEndpointMethodTypes["packages"]["listDockerMigrationConflictingPackagesForAuthenticatedUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["packages"]["listDockerMigrationConflictingPackagesForAuthenticatedUser"]["response"]
       >;
@@ -7576,7 +7576,7 @@ export type RestEndpointMethods = {
      */
     listDockerMigrationConflictingPackagesForOrganization: {
       (
-        params?: RestEndpointMethodTypes["packages"]["listDockerMigrationConflictingPackagesForOrganization"]["parameters"]
+        params?: RestEndpointMethodTypes["packages"]["listDockerMigrationConflictingPackagesForOrganization"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["packages"]["listDockerMigrationConflictingPackagesForOrganization"]["response"]
       >;
@@ -7589,7 +7589,7 @@ export type RestEndpointMethods = {
      */
     listDockerMigrationConflictingPackagesForUser: {
       (
-        params?: RestEndpointMethodTypes["packages"]["listDockerMigrationConflictingPackagesForUser"]["parameters"]
+        params?: RestEndpointMethodTypes["packages"]["listDockerMigrationConflictingPackagesForUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["packages"]["listDockerMigrationConflictingPackagesForUser"]["response"]
       >;
@@ -7603,7 +7603,7 @@ export type RestEndpointMethods = {
      */
     listPackagesForAuthenticatedUser: {
       (
-        params?: RestEndpointMethodTypes["packages"]["listPackagesForAuthenticatedUser"]["parameters"]
+        params?: RestEndpointMethodTypes["packages"]["listPackagesForAuthenticatedUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["packages"]["listPackagesForAuthenticatedUser"]["response"]
       >;
@@ -7617,7 +7617,7 @@ export type RestEndpointMethods = {
      */
     listPackagesForOrganization: {
       (
-        params?: RestEndpointMethodTypes["packages"]["listPackagesForOrganization"]["parameters"]
+        params?: RestEndpointMethodTypes["packages"]["listPackagesForOrganization"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["packages"]["listPackagesForOrganization"]["response"]
       >;
@@ -7631,7 +7631,7 @@ export type RestEndpointMethods = {
      */
     listPackagesForUser: {
       (
-        params?: RestEndpointMethodTypes["packages"]["listPackagesForUser"]["parameters"]
+        params?: RestEndpointMethodTypes["packages"]["listPackagesForUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["packages"]["listPackagesForUser"]["response"]
       >;
@@ -7649,7 +7649,7 @@ export type RestEndpointMethods = {
      */
     restorePackageForAuthenticatedUser: {
       (
-        params?: RestEndpointMethodTypes["packages"]["restorePackageForAuthenticatedUser"]["parameters"]
+        params?: RestEndpointMethodTypes["packages"]["restorePackageForAuthenticatedUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["packages"]["restorePackageForAuthenticatedUser"]["response"]
       >;
@@ -7669,7 +7669,7 @@ export type RestEndpointMethods = {
      */
     restorePackageForOrg: {
       (
-        params?: RestEndpointMethodTypes["packages"]["restorePackageForOrg"]["parameters"]
+        params?: RestEndpointMethodTypes["packages"]["restorePackageForOrg"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["packages"]["restorePackageForOrg"]["response"]
       >;
@@ -7689,7 +7689,7 @@ export type RestEndpointMethods = {
      */
     restorePackageForUser: {
       (
-        params?: RestEndpointMethodTypes["packages"]["restorePackageForUser"]["parameters"]
+        params?: RestEndpointMethodTypes["packages"]["restorePackageForUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["packages"]["restorePackageForUser"]["response"]
       >;
@@ -7707,7 +7707,7 @@ export type RestEndpointMethods = {
      */
     restorePackageVersionForAuthenticatedUser: {
       (
-        params?: RestEndpointMethodTypes["packages"]["restorePackageVersionForAuthenticatedUser"]["parameters"]
+        params?: RestEndpointMethodTypes["packages"]["restorePackageVersionForAuthenticatedUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["packages"]["restorePackageVersionForAuthenticatedUser"]["response"]
       >;
@@ -7727,7 +7727,7 @@ export type RestEndpointMethods = {
      */
     restorePackageVersionForOrg: {
       (
-        params?: RestEndpointMethodTypes["packages"]["restorePackageVersionForOrg"]["parameters"]
+        params?: RestEndpointMethodTypes["packages"]["restorePackageVersionForOrg"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["packages"]["restorePackageVersionForOrg"]["response"]
       >;
@@ -7747,7 +7747,7 @@ export type RestEndpointMethods = {
      */
     restorePackageVersionForUser: {
       (
-        params?: RestEndpointMethodTypes["packages"]["restorePackageVersionForUser"]["parameters"]
+        params?: RestEndpointMethodTypes["packages"]["restorePackageVersionForUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["packages"]["restorePackageVersionForUser"]["response"]
       >;
@@ -7761,7 +7761,7 @@ export type RestEndpointMethods = {
      */
     addCollaborator: {
       (
-        params?: RestEndpointMethodTypes["projects"]["addCollaborator"]["parameters"]
+        params?: RestEndpointMethodTypes["projects"]["addCollaborator"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["projects"]["addCollaborator"]["response"]
       >;
@@ -7771,7 +7771,7 @@ export type RestEndpointMethods = {
 
     createCard: {
       (
-        params?: RestEndpointMethodTypes["projects"]["createCard"]["parameters"]
+        params?: RestEndpointMethodTypes["projects"]["createCard"]["parameters"],
       ): Promise<RestEndpointMethodTypes["projects"]["createCard"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -7781,7 +7781,7 @@ export type RestEndpointMethods = {
      */
     createColumn: {
       (
-        params?: RestEndpointMethodTypes["projects"]["createColumn"]["parameters"]
+        params?: RestEndpointMethodTypes["projects"]["createColumn"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["projects"]["createColumn"]["response"]
       >;
@@ -7793,7 +7793,7 @@ export type RestEndpointMethods = {
      */
     createForAuthenticatedUser: {
       (
-        params?: RestEndpointMethodTypes["projects"]["createForAuthenticatedUser"]["parameters"]
+        params?: RestEndpointMethodTypes["projects"]["createForAuthenticatedUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["projects"]["createForAuthenticatedUser"]["response"]
       >;
@@ -7805,7 +7805,7 @@ export type RestEndpointMethods = {
      */
     createForOrg: {
       (
-        params?: RestEndpointMethodTypes["projects"]["createForOrg"]["parameters"]
+        params?: RestEndpointMethodTypes["projects"]["createForOrg"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["projects"]["createForOrg"]["response"]
       >;
@@ -7817,7 +7817,7 @@ export type RestEndpointMethods = {
      */
     createForRepo: {
       (
-        params?: RestEndpointMethodTypes["projects"]["createForRepo"]["parameters"]
+        params?: RestEndpointMethodTypes["projects"]["createForRepo"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["projects"]["createForRepo"]["response"]
       >;
@@ -7829,7 +7829,7 @@ export type RestEndpointMethods = {
      */
     delete: {
       (
-        params?: RestEndpointMethodTypes["projects"]["delete"]["parameters"]
+        params?: RestEndpointMethodTypes["projects"]["delete"]["parameters"],
       ): Promise<RestEndpointMethodTypes["projects"]["delete"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -7839,7 +7839,7 @@ export type RestEndpointMethods = {
      */
     deleteCard: {
       (
-        params?: RestEndpointMethodTypes["projects"]["deleteCard"]["parameters"]
+        params?: RestEndpointMethodTypes["projects"]["deleteCard"]["parameters"],
       ): Promise<RestEndpointMethodTypes["projects"]["deleteCard"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -7849,7 +7849,7 @@ export type RestEndpointMethods = {
      */
     deleteColumn: {
       (
-        params?: RestEndpointMethodTypes["projects"]["deleteColumn"]["parameters"]
+        params?: RestEndpointMethodTypes["projects"]["deleteColumn"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["projects"]["deleteColumn"]["response"]
       >;
@@ -7861,7 +7861,7 @@ export type RestEndpointMethods = {
      */
     get: {
       (
-        params?: RestEndpointMethodTypes["projects"]["get"]["parameters"]
+        params?: RestEndpointMethodTypes["projects"]["get"]["parameters"],
       ): Promise<RestEndpointMethodTypes["projects"]["get"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -7871,7 +7871,7 @@ export type RestEndpointMethods = {
      */
     getCard: {
       (
-        params?: RestEndpointMethodTypes["projects"]["getCard"]["parameters"]
+        params?: RestEndpointMethodTypes["projects"]["getCard"]["parameters"],
       ): Promise<RestEndpointMethodTypes["projects"]["getCard"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -7881,7 +7881,7 @@ export type RestEndpointMethods = {
      */
     getColumn: {
       (
-        params?: RestEndpointMethodTypes["projects"]["getColumn"]["parameters"]
+        params?: RestEndpointMethodTypes["projects"]["getColumn"]["parameters"],
       ): Promise<RestEndpointMethodTypes["projects"]["getColumn"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -7891,7 +7891,7 @@ export type RestEndpointMethods = {
      */
     getPermissionForUser: {
       (
-        params?: RestEndpointMethodTypes["projects"]["getPermissionForUser"]["parameters"]
+        params?: RestEndpointMethodTypes["projects"]["getPermissionForUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["projects"]["getPermissionForUser"]["response"]
       >;
@@ -7903,7 +7903,7 @@ export type RestEndpointMethods = {
      */
     listCards: {
       (
-        params?: RestEndpointMethodTypes["projects"]["listCards"]["parameters"]
+        params?: RestEndpointMethodTypes["projects"]["listCards"]["parameters"],
       ): Promise<RestEndpointMethodTypes["projects"]["listCards"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -7913,7 +7913,7 @@ export type RestEndpointMethods = {
      */
     listCollaborators: {
       (
-        params?: RestEndpointMethodTypes["projects"]["listCollaborators"]["parameters"]
+        params?: RestEndpointMethodTypes["projects"]["listCollaborators"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["projects"]["listCollaborators"]["response"]
       >;
@@ -7925,7 +7925,7 @@ export type RestEndpointMethods = {
      */
     listColumns: {
       (
-        params?: RestEndpointMethodTypes["projects"]["listColumns"]["parameters"]
+        params?: RestEndpointMethodTypes["projects"]["listColumns"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["projects"]["listColumns"]["response"]
       >;
@@ -7937,7 +7937,7 @@ export type RestEndpointMethods = {
      */
     listForOrg: {
       (
-        params?: RestEndpointMethodTypes["projects"]["listForOrg"]["parameters"]
+        params?: RestEndpointMethodTypes["projects"]["listForOrg"]["parameters"],
       ): Promise<RestEndpointMethodTypes["projects"]["listForOrg"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -7947,7 +7947,7 @@ export type RestEndpointMethods = {
      */
     listForRepo: {
       (
-        params?: RestEndpointMethodTypes["projects"]["listForRepo"]["parameters"]
+        params?: RestEndpointMethodTypes["projects"]["listForRepo"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["projects"]["listForRepo"]["response"]
       >;
@@ -7959,7 +7959,7 @@ export type RestEndpointMethods = {
      */
     listForUser: {
       (
-        params?: RestEndpointMethodTypes["projects"]["listForUser"]["parameters"]
+        params?: RestEndpointMethodTypes["projects"]["listForUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["projects"]["listForUser"]["response"]
       >;
@@ -7969,7 +7969,7 @@ export type RestEndpointMethods = {
 
     moveCard: {
       (
-        params?: RestEndpointMethodTypes["projects"]["moveCard"]["parameters"]
+        params?: RestEndpointMethodTypes["projects"]["moveCard"]["parameters"],
       ): Promise<RestEndpointMethodTypes["projects"]["moveCard"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -7977,7 +7977,7 @@ export type RestEndpointMethods = {
 
     moveColumn: {
       (
-        params?: RestEndpointMethodTypes["projects"]["moveColumn"]["parameters"]
+        params?: RestEndpointMethodTypes["projects"]["moveColumn"]["parameters"],
       ): Promise<RestEndpointMethodTypes["projects"]["moveColumn"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -7987,7 +7987,7 @@ export type RestEndpointMethods = {
      */
     removeCollaborator: {
       (
-        params?: RestEndpointMethodTypes["projects"]["removeCollaborator"]["parameters"]
+        params?: RestEndpointMethodTypes["projects"]["removeCollaborator"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["projects"]["removeCollaborator"]["response"]
       >;
@@ -7999,7 +7999,7 @@ export type RestEndpointMethods = {
      */
     update: {
       (
-        params?: RestEndpointMethodTypes["projects"]["update"]["parameters"]
+        params?: RestEndpointMethodTypes["projects"]["update"]["parameters"],
       ): Promise<RestEndpointMethodTypes["projects"]["update"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -8007,7 +8007,7 @@ export type RestEndpointMethods = {
 
     updateCard: {
       (
-        params?: RestEndpointMethodTypes["projects"]["updateCard"]["parameters"]
+        params?: RestEndpointMethodTypes["projects"]["updateCard"]["parameters"],
       ): Promise<RestEndpointMethodTypes["projects"]["updateCard"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -8015,7 +8015,7 @@ export type RestEndpointMethods = {
 
     updateColumn: {
       (
-        params?: RestEndpointMethodTypes["projects"]["updateColumn"]["parameters"]
+        params?: RestEndpointMethodTypes["projects"]["updateColumn"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["projects"]["updateColumn"]["response"]
       >;
@@ -8029,7 +8029,7 @@ export type RestEndpointMethods = {
      */
     checkIfMerged: {
       (
-        params?: RestEndpointMethodTypes["pulls"]["checkIfMerged"]["parameters"]
+        params?: RestEndpointMethodTypes["pulls"]["checkIfMerged"]["parameters"],
       ): Promise<RestEndpointMethodTypes["pulls"]["checkIfMerged"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -8043,7 +8043,7 @@ export type RestEndpointMethods = {
      */
     create: {
       (
-        params?: RestEndpointMethodTypes["pulls"]["create"]["parameters"]
+        params?: RestEndpointMethodTypes["pulls"]["create"]["parameters"],
       ): Promise<RestEndpointMethodTypes["pulls"]["create"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -8055,7 +8055,7 @@ export type RestEndpointMethods = {
      */
     createReplyForReviewComment: {
       (
-        params?: RestEndpointMethodTypes["pulls"]["createReplyForReviewComment"]["parameters"]
+        params?: RestEndpointMethodTypes["pulls"]["createReplyForReviewComment"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["pulls"]["createReplyForReviewComment"]["response"]
       >;
@@ -8073,7 +8073,7 @@ export type RestEndpointMethods = {
      */
     createReview: {
       (
-        params?: RestEndpointMethodTypes["pulls"]["createReview"]["parameters"]
+        params?: RestEndpointMethodTypes["pulls"]["createReview"]["parameters"],
       ): Promise<RestEndpointMethodTypes["pulls"]["createReview"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -8089,7 +8089,7 @@ export type RestEndpointMethods = {
      */
     createReviewComment: {
       (
-        params?: RestEndpointMethodTypes["pulls"]["createReviewComment"]["parameters"]
+        params?: RestEndpointMethodTypes["pulls"]["createReviewComment"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["pulls"]["createReviewComment"]["response"]
       >;
@@ -8101,7 +8101,7 @@ export type RestEndpointMethods = {
      */
     deletePendingReview: {
       (
-        params?: RestEndpointMethodTypes["pulls"]["deletePendingReview"]["parameters"]
+        params?: RestEndpointMethodTypes["pulls"]["deletePendingReview"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["pulls"]["deletePendingReview"]["response"]
       >;
@@ -8113,7 +8113,7 @@ export type RestEndpointMethods = {
      */
     deleteReviewComment: {
       (
-        params?: RestEndpointMethodTypes["pulls"]["deleteReviewComment"]["parameters"]
+        params?: RestEndpointMethodTypes["pulls"]["deleteReviewComment"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["pulls"]["deleteReviewComment"]["response"]
       >;
@@ -8125,7 +8125,7 @@ export type RestEndpointMethods = {
      */
     dismissReview: {
       (
-        params?: RestEndpointMethodTypes["pulls"]["dismissReview"]["parameters"]
+        params?: RestEndpointMethodTypes["pulls"]["dismissReview"]["parameters"],
       ): Promise<RestEndpointMethodTypes["pulls"]["dismissReview"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -8148,9 +8148,9 @@ export type RestEndpointMethods = {
      * Pass the appropriate [media type](https://docs.github.com/rest/overview/media-types/#commits-commit-comparison-and-pull-requests) to fetch diff and patch formats.
      */
     get: {
-      (params?: RestEndpointMethodTypes["pulls"]["get"]["parameters"]): Promise<
-        RestEndpointMethodTypes["pulls"]["get"]["response"]
-      >;
+      (
+        params?: RestEndpointMethodTypes["pulls"]["get"]["parameters"],
+      ): Promise<RestEndpointMethodTypes["pulls"]["get"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
@@ -8159,7 +8159,7 @@ export type RestEndpointMethods = {
      */
     getReview: {
       (
-        params?: RestEndpointMethodTypes["pulls"]["getReview"]["parameters"]
+        params?: RestEndpointMethodTypes["pulls"]["getReview"]["parameters"],
       ): Promise<RestEndpointMethodTypes["pulls"]["getReview"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -8169,7 +8169,7 @@ export type RestEndpointMethods = {
      */
     getReviewComment: {
       (
-        params?: RestEndpointMethodTypes["pulls"]["getReviewComment"]["parameters"]
+        params?: RestEndpointMethodTypes["pulls"]["getReviewComment"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["pulls"]["getReviewComment"]["response"]
       >;
@@ -8181,7 +8181,7 @@ export type RestEndpointMethods = {
      */
     list: {
       (
-        params?: RestEndpointMethodTypes["pulls"]["list"]["parameters"]
+        params?: RestEndpointMethodTypes["pulls"]["list"]["parameters"],
       ): Promise<RestEndpointMethodTypes["pulls"]["list"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -8191,7 +8191,7 @@ export type RestEndpointMethods = {
      */
     listCommentsForReview: {
       (
-        params?: RestEndpointMethodTypes["pulls"]["listCommentsForReview"]["parameters"]
+        params?: RestEndpointMethodTypes["pulls"]["listCommentsForReview"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["pulls"]["listCommentsForReview"]["response"]
       >;
@@ -8203,7 +8203,7 @@ export type RestEndpointMethods = {
      */
     listCommits: {
       (
-        params?: RestEndpointMethodTypes["pulls"]["listCommits"]["parameters"]
+        params?: RestEndpointMethodTypes["pulls"]["listCommits"]["parameters"],
       ): Promise<RestEndpointMethodTypes["pulls"]["listCommits"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -8213,7 +8213,7 @@ export type RestEndpointMethods = {
      */
     listFiles: {
       (
-        params?: RestEndpointMethodTypes["pulls"]["listFiles"]["parameters"]
+        params?: RestEndpointMethodTypes["pulls"]["listFiles"]["parameters"],
       ): Promise<RestEndpointMethodTypes["pulls"]["listFiles"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -8223,7 +8223,7 @@ export type RestEndpointMethods = {
      */
     listRequestedReviewers: {
       (
-        params?: RestEndpointMethodTypes["pulls"]["listRequestedReviewers"]["parameters"]
+        params?: RestEndpointMethodTypes["pulls"]["listRequestedReviewers"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["pulls"]["listRequestedReviewers"]["response"]
       >;
@@ -8235,7 +8235,7 @@ export type RestEndpointMethods = {
      */
     listReviewComments: {
       (
-        params?: RestEndpointMethodTypes["pulls"]["listReviewComments"]["parameters"]
+        params?: RestEndpointMethodTypes["pulls"]["listReviewComments"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["pulls"]["listReviewComments"]["response"]
       >;
@@ -8247,7 +8247,7 @@ export type RestEndpointMethods = {
      */
     listReviewCommentsForRepo: {
       (
-        params?: RestEndpointMethodTypes["pulls"]["listReviewCommentsForRepo"]["parameters"]
+        params?: RestEndpointMethodTypes["pulls"]["listReviewCommentsForRepo"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["pulls"]["listReviewCommentsForRepo"]["response"]
       >;
@@ -8259,7 +8259,7 @@ export type RestEndpointMethods = {
      */
     listReviews: {
       (
-        params?: RestEndpointMethodTypes["pulls"]["listReviews"]["parameters"]
+        params?: RestEndpointMethodTypes["pulls"]["listReviews"]["parameters"],
       ): Promise<RestEndpointMethodTypes["pulls"]["listReviews"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -8270,7 +8270,7 @@ export type RestEndpointMethods = {
      */
     merge: {
       (
-        params?: RestEndpointMethodTypes["pulls"]["merge"]["parameters"]
+        params?: RestEndpointMethodTypes["pulls"]["merge"]["parameters"],
       ): Promise<RestEndpointMethodTypes["pulls"]["merge"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -8280,7 +8280,7 @@ export type RestEndpointMethods = {
      */
     removeRequestedReviewers: {
       (
-        params?: RestEndpointMethodTypes["pulls"]["removeRequestedReviewers"]["parameters"]
+        params?: RestEndpointMethodTypes["pulls"]["removeRequestedReviewers"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["pulls"]["removeRequestedReviewers"]["response"]
       >;
@@ -8292,7 +8292,7 @@ export type RestEndpointMethods = {
      */
     requestReviewers: {
       (
-        params?: RestEndpointMethodTypes["pulls"]["requestReviewers"]["parameters"]
+        params?: RestEndpointMethodTypes["pulls"]["requestReviewers"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["pulls"]["requestReviewers"]["response"]
       >;
@@ -8304,7 +8304,7 @@ export type RestEndpointMethods = {
      */
     submitReview: {
       (
-        params?: RestEndpointMethodTypes["pulls"]["submitReview"]["parameters"]
+        params?: RestEndpointMethodTypes["pulls"]["submitReview"]["parameters"],
       ): Promise<RestEndpointMethodTypes["pulls"]["submitReview"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -8316,7 +8316,7 @@ export type RestEndpointMethods = {
      */
     update: {
       (
-        params?: RestEndpointMethodTypes["pulls"]["update"]["parameters"]
+        params?: RestEndpointMethodTypes["pulls"]["update"]["parameters"],
       ): Promise<RestEndpointMethodTypes["pulls"]["update"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -8326,7 +8326,7 @@ export type RestEndpointMethods = {
      */
     updateBranch: {
       (
-        params?: RestEndpointMethodTypes["pulls"]["updateBranch"]["parameters"]
+        params?: RestEndpointMethodTypes["pulls"]["updateBranch"]["parameters"],
       ): Promise<RestEndpointMethodTypes["pulls"]["updateBranch"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -8336,7 +8336,7 @@ export type RestEndpointMethods = {
      */
     updateReview: {
       (
-        params?: RestEndpointMethodTypes["pulls"]["updateReview"]["parameters"]
+        params?: RestEndpointMethodTypes["pulls"]["updateReview"]["parameters"],
       ): Promise<RestEndpointMethodTypes["pulls"]["updateReview"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -8346,7 +8346,7 @@ export type RestEndpointMethods = {
      */
     updateReviewComment: {
       (
-        params?: RestEndpointMethodTypes["pulls"]["updateReviewComment"]["parameters"]
+        params?: RestEndpointMethodTypes["pulls"]["updateReviewComment"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["pulls"]["updateReviewComment"]["response"]
       >;
@@ -8362,7 +8362,7 @@ export type RestEndpointMethods = {
      */
     get: {
       (
-        params?: RestEndpointMethodTypes["rateLimit"]["get"]["parameters"]
+        params?: RestEndpointMethodTypes["rateLimit"]["get"]["parameters"],
       ): Promise<RestEndpointMethodTypes["rateLimit"]["get"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -8374,7 +8374,7 @@ export type RestEndpointMethods = {
      */
     createForCommitComment: {
       (
-        params?: RestEndpointMethodTypes["reactions"]["createForCommitComment"]["parameters"]
+        params?: RestEndpointMethodTypes["reactions"]["createForCommitComment"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["reactions"]["createForCommitComment"]["response"]
       >;
@@ -8386,7 +8386,7 @@ export type RestEndpointMethods = {
      */
     createForIssue: {
       (
-        params?: RestEndpointMethodTypes["reactions"]["createForIssue"]["parameters"]
+        params?: RestEndpointMethodTypes["reactions"]["createForIssue"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["reactions"]["createForIssue"]["response"]
       >;
@@ -8398,7 +8398,7 @@ export type RestEndpointMethods = {
      */
     createForIssueComment: {
       (
-        params?: RestEndpointMethodTypes["reactions"]["createForIssueComment"]["parameters"]
+        params?: RestEndpointMethodTypes["reactions"]["createForIssueComment"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["reactions"]["createForIssueComment"]["response"]
       >;
@@ -8410,7 +8410,7 @@ export type RestEndpointMethods = {
      */
     createForPullRequestReviewComment: {
       (
-        params?: RestEndpointMethodTypes["reactions"]["createForPullRequestReviewComment"]["parameters"]
+        params?: RestEndpointMethodTypes["reactions"]["createForPullRequestReviewComment"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["reactions"]["createForPullRequestReviewComment"]["response"]
       >;
@@ -8422,7 +8422,7 @@ export type RestEndpointMethods = {
      */
     createForRelease: {
       (
-        params?: RestEndpointMethodTypes["reactions"]["createForRelease"]["parameters"]
+        params?: RestEndpointMethodTypes["reactions"]["createForRelease"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["reactions"]["createForRelease"]["response"]
       >;
@@ -8436,7 +8436,7 @@ export type RestEndpointMethods = {
      */
     createForTeamDiscussionCommentInOrg: {
       (
-        params?: RestEndpointMethodTypes["reactions"]["createForTeamDiscussionCommentInOrg"]["parameters"]
+        params?: RestEndpointMethodTypes["reactions"]["createForTeamDiscussionCommentInOrg"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["reactions"]["createForTeamDiscussionCommentInOrg"]["response"]
       >;
@@ -8450,7 +8450,7 @@ export type RestEndpointMethods = {
      */
     createForTeamDiscussionInOrg: {
       (
-        params?: RestEndpointMethodTypes["reactions"]["createForTeamDiscussionInOrg"]["parameters"]
+        params?: RestEndpointMethodTypes["reactions"]["createForTeamDiscussionInOrg"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["reactions"]["createForTeamDiscussionInOrg"]["response"]
       >;
@@ -8464,7 +8464,7 @@ export type RestEndpointMethods = {
      */
     deleteForCommitComment: {
       (
-        params?: RestEndpointMethodTypes["reactions"]["deleteForCommitComment"]["parameters"]
+        params?: RestEndpointMethodTypes["reactions"]["deleteForCommitComment"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["reactions"]["deleteForCommitComment"]["response"]
       >;
@@ -8478,7 +8478,7 @@ export type RestEndpointMethods = {
      */
     deleteForIssue: {
       (
-        params?: RestEndpointMethodTypes["reactions"]["deleteForIssue"]["parameters"]
+        params?: RestEndpointMethodTypes["reactions"]["deleteForIssue"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["reactions"]["deleteForIssue"]["response"]
       >;
@@ -8492,7 +8492,7 @@ export type RestEndpointMethods = {
      */
     deleteForIssueComment: {
       (
-        params?: RestEndpointMethodTypes["reactions"]["deleteForIssueComment"]["parameters"]
+        params?: RestEndpointMethodTypes["reactions"]["deleteForIssueComment"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["reactions"]["deleteForIssueComment"]["response"]
       >;
@@ -8506,7 +8506,7 @@ export type RestEndpointMethods = {
      */
     deleteForPullRequestComment: {
       (
-        params?: RestEndpointMethodTypes["reactions"]["deleteForPullRequestComment"]["parameters"]
+        params?: RestEndpointMethodTypes["reactions"]["deleteForPullRequestComment"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["reactions"]["deleteForPullRequestComment"]["response"]
       >;
@@ -8520,7 +8520,7 @@ export type RestEndpointMethods = {
      */
     deleteForRelease: {
       (
-        params?: RestEndpointMethodTypes["reactions"]["deleteForRelease"]["parameters"]
+        params?: RestEndpointMethodTypes["reactions"]["deleteForRelease"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["reactions"]["deleteForRelease"]["response"]
       >;
@@ -8534,7 +8534,7 @@ export type RestEndpointMethods = {
      */
     deleteForTeamDiscussion: {
       (
-        params?: RestEndpointMethodTypes["reactions"]["deleteForTeamDiscussion"]["parameters"]
+        params?: RestEndpointMethodTypes["reactions"]["deleteForTeamDiscussion"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["reactions"]["deleteForTeamDiscussion"]["response"]
       >;
@@ -8548,7 +8548,7 @@ export type RestEndpointMethods = {
      */
     deleteForTeamDiscussionComment: {
       (
-        params?: RestEndpointMethodTypes["reactions"]["deleteForTeamDiscussionComment"]["parameters"]
+        params?: RestEndpointMethodTypes["reactions"]["deleteForTeamDiscussionComment"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["reactions"]["deleteForTeamDiscussionComment"]["response"]
       >;
@@ -8560,7 +8560,7 @@ export type RestEndpointMethods = {
      */
     listForCommitComment: {
       (
-        params?: RestEndpointMethodTypes["reactions"]["listForCommitComment"]["parameters"]
+        params?: RestEndpointMethodTypes["reactions"]["listForCommitComment"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["reactions"]["listForCommitComment"]["response"]
       >;
@@ -8572,7 +8572,7 @@ export type RestEndpointMethods = {
      */
     listForIssue: {
       (
-        params?: RestEndpointMethodTypes["reactions"]["listForIssue"]["parameters"]
+        params?: RestEndpointMethodTypes["reactions"]["listForIssue"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["reactions"]["listForIssue"]["response"]
       >;
@@ -8584,7 +8584,7 @@ export type RestEndpointMethods = {
      */
     listForIssueComment: {
       (
-        params?: RestEndpointMethodTypes["reactions"]["listForIssueComment"]["parameters"]
+        params?: RestEndpointMethodTypes["reactions"]["listForIssueComment"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["reactions"]["listForIssueComment"]["response"]
       >;
@@ -8596,7 +8596,7 @@ export type RestEndpointMethods = {
      */
     listForPullRequestReviewComment: {
       (
-        params?: RestEndpointMethodTypes["reactions"]["listForPullRequestReviewComment"]["parameters"]
+        params?: RestEndpointMethodTypes["reactions"]["listForPullRequestReviewComment"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["reactions"]["listForPullRequestReviewComment"]["response"]
       >;
@@ -8608,7 +8608,7 @@ export type RestEndpointMethods = {
      */
     listForRelease: {
       (
-        params?: RestEndpointMethodTypes["reactions"]["listForRelease"]["parameters"]
+        params?: RestEndpointMethodTypes["reactions"]["listForRelease"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["reactions"]["listForRelease"]["response"]
       >;
@@ -8622,7 +8622,7 @@ export type RestEndpointMethods = {
      */
     listForTeamDiscussionCommentInOrg: {
       (
-        params?: RestEndpointMethodTypes["reactions"]["listForTeamDiscussionCommentInOrg"]["parameters"]
+        params?: RestEndpointMethodTypes["reactions"]["listForTeamDiscussionCommentInOrg"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["reactions"]["listForTeamDiscussionCommentInOrg"]["response"]
       >;
@@ -8636,7 +8636,7 @@ export type RestEndpointMethods = {
      */
     listForTeamDiscussionInOrg: {
       (
-        params?: RestEndpointMethodTypes["reactions"]["listForTeamDiscussionInOrg"]["parameters"]
+        params?: RestEndpointMethodTypes["reactions"]["listForTeamDiscussionInOrg"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["reactions"]["listForTeamDiscussionInOrg"]["response"]
       >;
@@ -8650,7 +8650,7 @@ export type RestEndpointMethods = {
      */
     acceptInvitation: {
       (
-        params?: RestEndpointMethodTypes["repos"]["acceptInvitation"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["acceptInvitation"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["acceptInvitation"]["response"]
       >;
@@ -8660,7 +8660,7 @@ export type RestEndpointMethods = {
 
     acceptInvitationForAuthenticatedUser: {
       (
-        params?: RestEndpointMethodTypes["repos"]["acceptInvitationForAuthenticatedUser"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["acceptInvitationForAuthenticatedUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["acceptInvitationForAuthenticatedUser"]["response"]
       >;
@@ -8674,7 +8674,7 @@ export type RestEndpointMethods = {
      */
     addAppAccessRestrictions: {
       (
-        params?: RestEndpointMethodTypes["repos"]["addAppAccessRestrictions"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["addAppAccessRestrictions"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["addAppAccessRestrictions"]["response"]
       >;
@@ -8706,7 +8706,7 @@ export type RestEndpointMethods = {
      */
     addCollaborator: {
       (
-        params?: RestEndpointMethodTypes["repos"]["addCollaborator"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["addCollaborator"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["addCollaborator"]["response"]
       >;
@@ -8718,7 +8718,7 @@ export type RestEndpointMethods = {
      */
     addStatusCheckContexts: {
       (
-        params?: RestEndpointMethodTypes["repos"]["addStatusCheckContexts"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["addStatusCheckContexts"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["addStatusCheckContexts"]["response"]
       >;
@@ -8732,7 +8732,7 @@ export type RestEndpointMethods = {
      */
     addTeamAccessRestrictions: {
       (
-        params?: RestEndpointMethodTypes["repos"]["addTeamAccessRestrictions"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["addTeamAccessRestrictions"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["addTeamAccessRestrictions"]["response"]
       >;
@@ -8750,7 +8750,7 @@ export type RestEndpointMethods = {
      */
     addUserAccessRestrictions: {
       (
-        params?: RestEndpointMethodTypes["repos"]["addUserAccessRestrictions"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["addUserAccessRestrictions"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["addUserAccessRestrictions"]["response"]
       >;
@@ -8768,7 +8768,7 @@ export type RestEndpointMethods = {
      */
     checkCollaborator: {
       (
-        params?: RestEndpointMethodTypes["repos"]["checkCollaborator"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["checkCollaborator"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["checkCollaborator"]["response"]
       >;
@@ -8780,7 +8780,7 @@ export type RestEndpointMethods = {
      */
     checkVulnerabilityAlerts: {
       (
-        params?: RestEndpointMethodTypes["repos"]["checkVulnerabilityAlerts"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["checkVulnerabilityAlerts"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["checkVulnerabilityAlerts"]["response"]
       >;
@@ -8796,7 +8796,7 @@ export type RestEndpointMethods = {
      */
     codeownersErrors: {
       (
-        params?: RestEndpointMethodTypes["repos"]["codeownersErrors"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["codeownersErrors"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["codeownersErrors"]["response"]
       >;
@@ -8847,7 +8847,7 @@ export type RestEndpointMethods = {
      */
     compareCommits: {
       (
-        params?: RestEndpointMethodTypes["repos"]["compareCommits"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["compareCommits"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["compareCommits"]["response"]
       >;
@@ -8903,7 +8903,7 @@ export type RestEndpointMethods = {
      */
     compareCommitsWithBasehead: {
       (
-        params?: RestEndpointMethodTypes["repos"]["compareCommitsWithBasehead"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["compareCommitsWithBasehead"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["compareCommitsWithBasehead"]["response"]
       >;
@@ -8915,7 +8915,7 @@ export type RestEndpointMethods = {
      */
     createAutolink: {
       (
-        params?: RestEndpointMethodTypes["repos"]["createAutolink"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["createAutolink"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["createAutolink"]["response"]
       >;
@@ -8929,7 +8929,7 @@ export type RestEndpointMethods = {
      */
     createCommitComment: {
       (
-        params?: RestEndpointMethodTypes["repos"]["createCommitComment"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["createCommitComment"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["createCommitComment"]["response"]
       >;
@@ -8943,7 +8943,7 @@ export type RestEndpointMethods = {
      */
     createCommitSignatureProtection: {
       (
-        params?: RestEndpointMethodTypes["repos"]["createCommitSignatureProtection"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["createCommitSignatureProtection"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["createCommitSignatureProtection"]["response"]
       >;
@@ -8957,7 +8957,7 @@ export type RestEndpointMethods = {
      */
     createCommitStatus: {
       (
-        params?: RestEndpointMethodTypes["repos"]["createCommitStatus"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["createCommitStatus"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["createCommitStatus"]["response"]
       >;
@@ -8969,7 +8969,7 @@ export type RestEndpointMethods = {
      */
     createDeployKey: {
       (
-        params?: RestEndpointMethodTypes["repos"]["createDeployKey"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["createDeployKey"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["createDeployKey"]["response"]
       >;
@@ -9025,7 +9025,7 @@ export type RestEndpointMethods = {
      */
     createDeployment: {
       (
-        params?: RestEndpointMethodTypes["repos"]["createDeployment"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["createDeployment"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["createDeployment"]["response"]
       >;
@@ -9039,7 +9039,7 @@ export type RestEndpointMethods = {
      */
     createDeploymentBranchPolicy: {
       (
-        params?: RestEndpointMethodTypes["repos"]["createDeploymentBranchPolicy"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["createDeploymentBranchPolicy"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["createDeploymentBranchPolicy"]["response"]
       >;
@@ -9055,7 +9055,7 @@ export type RestEndpointMethods = {
      */
     createDeploymentProtectionRule: {
       (
-        params?: RestEndpointMethodTypes["repos"]["createDeploymentProtectionRule"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["createDeploymentProtectionRule"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["createDeploymentProtectionRule"]["response"]
       >;
@@ -9069,7 +9069,7 @@ export type RestEndpointMethods = {
      */
     createDeploymentStatus: {
       (
-        params?: RestEndpointMethodTypes["repos"]["createDeploymentStatus"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["createDeploymentStatus"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["createDeploymentStatus"]["response"]
       >;
@@ -9090,7 +9090,7 @@ export type RestEndpointMethods = {
      */
     createDispatchEvent: {
       (
-        params?: RestEndpointMethodTypes["repos"]["createDispatchEvent"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["createDispatchEvent"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["createDispatchEvent"]["response"]
       >;
@@ -9109,7 +9109,7 @@ export type RestEndpointMethods = {
      */
     createForAuthenticatedUser: {
       (
-        params?: RestEndpointMethodTypes["repos"]["createForAuthenticatedUser"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["createForAuthenticatedUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["createForAuthenticatedUser"]["response"]
       >;
@@ -9125,7 +9125,7 @@ export type RestEndpointMethods = {
      */
     createFork: {
       (
-        params?: RestEndpointMethodTypes["repos"]["createFork"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["createFork"]["parameters"],
       ): Promise<RestEndpointMethodTypes["repos"]["createFork"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -9142,7 +9142,7 @@ export type RestEndpointMethods = {
      */
     createInOrg: {
       (
-        params?: RestEndpointMethodTypes["repos"]["createInOrg"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["createInOrg"]["parameters"],
       ): Promise<RestEndpointMethodTypes["repos"]["createInOrg"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -9158,7 +9158,7 @@ export type RestEndpointMethods = {
      */
     createOrUpdateEnvironment: {
       (
-        params?: RestEndpointMethodTypes["repos"]["createOrUpdateEnvironment"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["createOrUpdateEnvironment"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["createOrUpdateEnvironment"]["response"]
       >;
@@ -9172,7 +9172,7 @@ export type RestEndpointMethods = {
      */
     createOrUpdateFileContents: {
       (
-        params?: RestEndpointMethodTypes["repos"]["createOrUpdateFileContents"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["createOrUpdateFileContents"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["createOrUpdateFileContents"]["response"]
       >;
@@ -9184,7 +9184,7 @@ export type RestEndpointMethods = {
      */
     createOrgRuleset: {
       (
-        params?: RestEndpointMethodTypes["repos"]["createOrgRuleset"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["createOrgRuleset"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["createOrgRuleset"]["response"]
       >;
@@ -9198,7 +9198,7 @@ export type RestEndpointMethods = {
      */
     createPagesDeployment: {
       (
-        params?: RestEndpointMethodTypes["repos"]["createPagesDeployment"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["createPagesDeployment"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["createPagesDeployment"]["response"]
       >;
@@ -9212,7 +9212,7 @@ export type RestEndpointMethods = {
      */
     createPagesSite: {
       (
-        params?: RestEndpointMethodTypes["repos"]["createPagesSite"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["createPagesSite"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["createPagesSite"]["response"]
       >;
@@ -9226,7 +9226,7 @@ export type RestEndpointMethods = {
      */
     createRelease: {
       (
-        params?: RestEndpointMethodTypes["repos"]["createRelease"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["createRelease"]["parameters"],
       ): Promise<RestEndpointMethodTypes["repos"]["createRelease"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -9236,7 +9236,7 @@ export type RestEndpointMethods = {
      */
     createRepoRuleset: {
       (
-        params?: RestEndpointMethodTypes["repos"]["createRepoRuleset"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["createRepoRuleset"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["createRepoRuleset"]["response"]
       >;
@@ -9249,7 +9249,7 @@ export type RestEndpointMethods = {
      */
     createTagProtection: {
       (
-        params?: RestEndpointMethodTypes["repos"]["createTagProtection"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["createTagProtection"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["createTagProtection"]["response"]
       >;
@@ -9268,7 +9268,7 @@ export type RestEndpointMethods = {
      */
     createUsingTemplate: {
       (
-        params?: RestEndpointMethodTypes["repos"]["createUsingTemplate"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["createUsingTemplate"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["createUsingTemplate"]["response"]
       >;
@@ -9281,7 +9281,7 @@ export type RestEndpointMethods = {
      */
     createWebhook: {
       (
-        params?: RestEndpointMethodTypes["repos"]["createWebhook"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["createWebhook"]["parameters"],
       ): Promise<RestEndpointMethodTypes["repos"]["createWebhook"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -9291,7 +9291,7 @@ export type RestEndpointMethods = {
      */
     declineInvitation: {
       (
-        params?: RestEndpointMethodTypes["repos"]["declineInvitation"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["declineInvitation"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["declineInvitation"]["response"]
       >;
@@ -9301,7 +9301,7 @@ export type RestEndpointMethods = {
 
     declineInvitationForAuthenticatedUser: {
       (
-        params?: RestEndpointMethodTypes["repos"]["declineInvitationForAuthenticatedUser"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["declineInvitationForAuthenticatedUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["declineInvitationForAuthenticatedUser"]["response"]
       >;
@@ -9316,7 +9316,7 @@ export type RestEndpointMethods = {
      */
     delete: {
       (
-        params?: RestEndpointMethodTypes["repos"]["delete"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["delete"]["parameters"],
       ): Promise<RestEndpointMethodTypes["repos"]["delete"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -9328,7 +9328,7 @@ export type RestEndpointMethods = {
      */
     deleteAccessRestrictions: {
       (
-        params?: RestEndpointMethodTypes["repos"]["deleteAccessRestrictions"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["deleteAccessRestrictions"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["deleteAccessRestrictions"]["response"]
       >;
@@ -9342,7 +9342,7 @@ export type RestEndpointMethods = {
      */
     deleteAdminBranchProtection: {
       (
-        params?: RestEndpointMethodTypes["repos"]["deleteAdminBranchProtection"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["deleteAdminBranchProtection"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["deleteAdminBranchProtection"]["response"]
       >;
@@ -9354,7 +9354,7 @@ export type RestEndpointMethods = {
      */
     deleteAnEnvironment: {
       (
-        params?: RestEndpointMethodTypes["repos"]["deleteAnEnvironment"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["deleteAnEnvironment"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["deleteAnEnvironment"]["response"]
       >;
@@ -9368,7 +9368,7 @@ export type RestEndpointMethods = {
      */
     deleteAutolink: {
       (
-        params?: RestEndpointMethodTypes["repos"]["deleteAutolink"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["deleteAutolink"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["deleteAutolink"]["response"]
       >;
@@ -9380,7 +9380,7 @@ export type RestEndpointMethods = {
      */
     deleteBranchProtection: {
       (
-        params?: RestEndpointMethodTypes["repos"]["deleteBranchProtection"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["deleteBranchProtection"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["deleteBranchProtection"]["response"]
       >;
@@ -9390,7 +9390,7 @@ export type RestEndpointMethods = {
 
     deleteCommitComment: {
       (
-        params?: RestEndpointMethodTypes["repos"]["deleteCommitComment"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["deleteCommitComment"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["deleteCommitComment"]["response"]
       >;
@@ -9404,7 +9404,7 @@ export type RestEndpointMethods = {
      */
     deleteCommitSignatureProtection: {
       (
-        params?: RestEndpointMethodTypes["repos"]["deleteCommitSignatureProtection"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["deleteCommitSignatureProtection"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["deleteCommitSignatureProtection"]["response"]
       >;
@@ -9416,7 +9416,7 @@ export type RestEndpointMethods = {
      */
     deleteDeployKey: {
       (
-        params?: RestEndpointMethodTypes["repos"]["deleteDeployKey"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["deleteDeployKey"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["deleteDeployKey"]["response"]
       >;
@@ -9435,7 +9435,7 @@ export type RestEndpointMethods = {
      */
     deleteDeployment: {
       (
-        params?: RestEndpointMethodTypes["repos"]["deleteDeployment"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["deleteDeployment"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["deleteDeployment"]["response"]
       >;
@@ -9449,7 +9449,7 @@ export type RestEndpointMethods = {
      */
     deleteDeploymentBranchPolicy: {
       (
-        params?: RestEndpointMethodTypes["repos"]["deleteDeploymentBranchPolicy"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["deleteDeploymentBranchPolicy"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["deleteDeploymentBranchPolicy"]["response"]
       >;
@@ -9469,7 +9469,7 @@ export type RestEndpointMethods = {
      */
     deleteFile: {
       (
-        params?: RestEndpointMethodTypes["repos"]["deleteFile"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["deleteFile"]["parameters"],
       ): Promise<RestEndpointMethodTypes["repos"]["deleteFile"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -9477,7 +9477,7 @@ export type RestEndpointMethods = {
 
     deleteInvitation: {
       (
-        params?: RestEndpointMethodTypes["repos"]["deleteInvitation"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["deleteInvitation"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["deleteInvitation"]["response"]
       >;
@@ -9489,7 +9489,7 @@ export type RestEndpointMethods = {
      */
     deleteOrgRuleset: {
       (
-        params?: RestEndpointMethodTypes["repos"]["deleteOrgRuleset"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["deleteOrgRuleset"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["deleteOrgRuleset"]["response"]
       >;
@@ -9503,7 +9503,7 @@ export type RestEndpointMethods = {
      */
     deletePagesSite: {
       (
-        params?: RestEndpointMethodTypes["repos"]["deletePagesSite"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["deletePagesSite"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["deletePagesSite"]["response"]
       >;
@@ -9515,7 +9515,7 @@ export type RestEndpointMethods = {
      */
     deletePullRequestReviewProtection: {
       (
-        params?: RestEndpointMethodTypes["repos"]["deletePullRequestReviewProtection"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["deletePullRequestReviewProtection"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["deletePullRequestReviewProtection"]["response"]
       >;
@@ -9527,7 +9527,7 @@ export type RestEndpointMethods = {
      */
     deleteRelease: {
       (
-        params?: RestEndpointMethodTypes["repos"]["deleteRelease"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["deleteRelease"]["parameters"],
       ): Promise<RestEndpointMethodTypes["repos"]["deleteRelease"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -9535,7 +9535,7 @@ export type RestEndpointMethods = {
 
     deleteReleaseAsset: {
       (
-        params?: RestEndpointMethodTypes["repos"]["deleteReleaseAsset"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["deleteReleaseAsset"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["deleteReleaseAsset"]["response"]
       >;
@@ -9547,7 +9547,7 @@ export type RestEndpointMethods = {
      */
     deleteRepoRuleset: {
       (
-        params?: RestEndpointMethodTypes["repos"]["deleteRepoRuleset"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["deleteRepoRuleset"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["deleteRepoRuleset"]["response"]
       >;
@@ -9560,7 +9560,7 @@ export type RestEndpointMethods = {
      */
     deleteTagProtection: {
       (
-        params?: RestEndpointMethodTypes["repos"]["deleteTagProtection"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["deleteTagProtection"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["deleteTagProtection"]["response"]
       >;
@@ -9570,7 +9570,7 @@ export type RestEndpointMethods = {
 
     deleteWebhook: {
       (
-        params?: RestEndpointMethodTypes["repos"]["deleteWebhook"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["deleteWebhook"]["parameters"],
       ): Promise<RestEndpointMethodTypes["repos"]["deleteWebhook"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -9580,7 +9580,7 @@ export type RestEndpointMethods = {
      */
     disableAutomatedSecurityFixes: {
       (
-        params?: RestEndpointMethodTypes["repos"]["disableAutomatedSecurityFixes"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["disableAutomatedSecurityFixes"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["disableAutomatedSecurityFixes"]["response"]
       >;
@@ -9594,7 +9594,7 @@ export type RestEndpointMethods = {
      */
     disableDeploymentProtectionRule: {
       (
-        params?: RestEndpointMethodTypes["repos"]["disableDeploymentProtectionRule"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["disableDeploymentProtectionRule"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["disableDeploymentProtectionRule"]["response"]
       >;
@@ -9606,7 +9606,7 @@ export type RestEndpointMethods = {
      */
     disableLfsForRepo: {
       (
-        params?: RestEndpointMethodTypes["repos"]["disableLfsForRepo"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["disableLfsForRepo"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["disableLfsForRepo"]["response"]
       >;
@@ -9620,7 +9620,7 @@ export type RestEndpointMethods = {
      */
     disableVulnerabilityAlerts: {
       (
-        params?: RestEndpointMethodTypes["repos"]["disableVulnerabilityAlerts"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["disableVulnerabilityAlerts"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["disableVulnerabilityAlerts"]["response"]
       >;
@@ -9637,7 +9637,7 @@ export type RestEndpointMethods = {
      */
     downloadArchive: {
       (
-        params?: RestEndpointMethodTypes["repos"]["downloadArchive"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["downloadArchive"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["downloadArchive"]["response"]
       >;
@@ -9652,7 +9652,7 @@ export type RestEndpointMethods = {
      */
     downloadTarballArchive: {
       (
-        params?: RestEndpointMethodTypes["repos"]["downloadTarballArchive"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["downloadTarballArchive"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["downloadTarballArchive"]["response"]
       >;
@@ -9668,7 +9668,7 @@ export type RestEndpointMethods = {
      */
     downloadZipballArchive: {
       (
-        params?: RestEndpointMethodTypes["repos"]["downloadZipballArchive"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["downloadZipballArchive"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["downloadZipballArchive"]["response"]
       >;
@@ -9680,7 +9680,7 @@ export type RestEndpointMethods = {
      */
     enableAutomatedSecurityFixes: {
       (
-        params?: RestEndpointMethodTypes["repos"]["enableAutomatedSecurityFixes"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["enableAutomatedSecurityFixes"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["enableAutomatedSecurityFixes"]["response"]
       >;
@@ -9692,7 +9692,7 @@ export type RestEndpointMethods = {
      */
     enableLfsForRepo: {
       (
-        params?: RestEndpointMethodTypes["repos"]["enableLfsForRepo"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["enableLfsForRepo"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["enableLfsForRepo"]["response"]
       >;
@@ -9704,7 +9704,7 @@ export type RestEndpointMethods = {
      */
     enableVulnerabilityAlerts: {
       (
-        params?: RestEndpointMethodTypes["repos"]["enableVulnerabilityAlerts"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["enableVulnerabilityAlerts"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["enableVulnerabilityAlerts"]["response"]
       >;
@@ -9716,7 +9716,7 @@ export type RestEndpointMethods = {
      */
     generateReleaseNotes: {
       (
-        params?: RestEndpointMethodTypes["repos"]["generateReleaseNotes"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["generateReleaseNotes"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["generateReleaseNotes"]["response"]
       >;
@@ -9729,9 +9729,9 @@ export type RestEndpointMethods = {
      * **Note:** In order to see the `security_and_analysis` block for a repository you must have admin permissions for the repository or be an owner or security manager for the organization that owns the repository. For more information, see "[Managing security managers in your organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization)."
      */
     get: {
-      (params?: RestEndpointMethodTypes["repos"]["get"]["parameters"]): Promise<
-        RestEndpointMethodTypes["repos"]["get"]["response"]
-      >;
+      (
+        params?: RestEndpointMethodTypes["repos"]["get"]["parameters"],
+      ): Promise<RestEndpointMethodTypes["repos"]["get"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
@@ -9744,7 +9744,7 @@ export type RestEndpointMethods = {
      */
     getAccessRestrictions: {
       (
-        params?: RestEndpointMethodTypes["repos"]["getAccessRestrictions"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["getAccessRestrictions"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["getAccessRestrictions"]["response"]
       >;
@@ -9756,7 +9756,7 @@ export type RestEndpointMethods = {
      */
     getAdminBranchProtection: {
       (
-        params?: RestEndpointMethodTypes["repos"]["getAdminBranchProtection"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["getAdminBranchProtection"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["getAdminBranchProtection"]["response"]
       >;
@@ -9770,7 +9770,7 @@ export type RestEndpointMethods = {
      */
     getAllDeploymentProtectionRules: {
       (
-        params?: RestEndpointMethodTypes["repos"]["getAllDeploymentProtectionRules"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["getAllDeploymentProtectionRules"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["getAllDeploymentProtectionRules"]["response"]
       >;
@@ -9784,7 +9784,7 @@ export type RestEndpointMethods = {
      */
     getAllEnvironments: {
       (
-        params?: RestEndpointMethodTypes["repos"]["getAllEnvironments"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["getAllEnvironments"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["getAllEnvironments"]["response"]
       >;
@@ -9796,7 +9796,7 @@ export type RestEndpointMethods = {
      */
     getAllStatusCheckContexts: {
       (
-        params?: RestEndpointMethodTypes["repos"]["getAllStatusCheckContexts"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["getAllStatusCheckContexts"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["getAllStatusCheckContexts"]["response"]
       >;
@@ -9806,7 +9806,7 @@ export type RestEndpointMethods = {
 
     getAllTopics: {
       (
-        params?: RestEndpointMethodTypes["repos"]["getAllTopics"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["getAllTopics"]["parameters"],
       ): Promise<RestEndpointMethodTypes["repos"]["getAllTopics"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -9818,7 +9818,7 @@ export type RestEndpointMethods = {
      */
     getAppsWithAccessToProtectedBranch: {
       (
-        params?: RestEndpointMethodTypes["repos"]["getAppsWithAccessToProtectedBranch"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["getAppsWithAccessToProtectedBranch"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["getAppsWithAccessToProtectedBranch"]["response"]
       >;
@@ -9832,7 +9832,7 @@ export type RestEndpointMethods = {
      */
     getAutolink: {
       (
-        params?: RestEndpointMethodTypes["repos"]["getAutolink"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["getAutolink"]["parameters"],
       ): Promise<RestEndpointMethodTypes["repos"]["getAutolink"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -9840,7 +9840,7 @@ export type RestEndpointMethods = {
 
     getBranch: {
       (
-        params?: RestEndpointMethodTypes["repos"]["getBranch"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["getBranch"]["parameters"],
       ): Promise<RestEndpointMethodTypes["repos"]["getBranch"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -9850,7 +9850,7 @@ export type RestEndpointMethods = {
      */
     getBranchProtection: {
       (
-        params?: RestEndpointMethodTypes["repos"]["getBranchProtection"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["getBranchProtection"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["getBranchProtection"]["response"]
       >;
@@ -9862,7 +9862,7 @@ export type RestEndpointMethods = {
      */
     getBranchRules: {
       (
-        params?: RestEndpointMethodTypes["repos"]["getBranchRules"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["getBranchRules"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["getBranchRules"]["response"]
       >;
@@ -9874,7 +9874,7 @@ export type RestEndpointMethods = {
      */
     getClones: {
       (
-        params?: RestEndpointMethodTypes["repos"]["getClones"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["getClones"]["parameters"],
       ): Promise<RestEndpointMethodTypes["repos"]["getClones"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -9884,7 +9884,7 @@ export type RestEndpointMethods = {
      */
     getCodeFrequencyStats: {
       (
-        params?: RestEndpointMethodTypes["repos"]["getCodeFrequencyStats"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["getCodeFrequencyStats"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["getCodeFrequencyStats"]["response"]
       >;
@@ -9896,7 +9896,7 @@ export type RestEndpointMethods = {
      */
     getCollaboratorPermissionLevel: {
       (
-        params?: RestEndpointMethodTypes["repos"]["getCollaboratorPermissionLevel"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["getCollaboratorPermissionLevel"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["getCollaboratorPermissionLevel"]["response"]
       >;
@@ -9915,7 +9915,7 @@ export type RestEndpointMethods = {
      */
     getCombinedStatusForRef: {
       (
-        params?: RestEndpointMethodTypes["repos"]["getCombinedStatusForRef"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["getCombinedStatusForRef"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["getCombinedStatusForRef"]["response"]
       >;
@@ -9962,7 +9962,7 @@ export type RestEndpointMethods = {
      */
     getCommit: {
       (
-        params?: RestEndpointMethodTypes["repos"]["getCommit"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["getCommit"]["parameters"],
       ): Promise<RestEndpointMethodTypes["repos"]["getCommit"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -9972,7 +9972,7 @@ export type RestEndpointMethods = {
      */
     getCommitActivityStats: {
       (
-        params?: RestEndpointMethodTypes["repos"]["getCommitActivityStats"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["getCommitActivityStats"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["getCommitActivityStats"]["response"]
       >;
@@ -9982,7 +9982,7 @@ export type RestEndpointMethods = {
 
     getCommitComment: {
       (
-        params?: RestEndpointMethodTypes["repos"]["getCommitComment"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["getCommitComment"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["getCommitComment"]["response"]
       >;
@@ -9998,7 +9998,7 @@ export type RestEndpointMethods = {
      */
     getCommitSignatureProtection: {
       (
-        params?: RestEndpointMethodTypes["repos"]["getCommitSignatureProtection"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["getCommitSignatureProtection"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["getCommitSignatureProtection"]["response"]
       >;
@@ -10022,7 +10022,7 @@ export type RestEndpointMethods = {
      */
     getCommunityProfileMetrics: {
       (
-        params?: RestEndpointMethodTypes["repos"]["getCommunityProfileMetrics"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["getCommunityProfileMetrics"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["getCommunityProfileMetrics"]["response"]
       >;
@@ -10070,7 +10070,7 @@ export type RestEndpointMethods = {
      */
     getContent: {
       (
-        params?: RestEndpointMethodTypes["repos"]["getContent"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["getContent"]["parameters"],
       ): Promise<RestEndpointMethodTypes["repos"]["getContent"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -10085,7 +10085,7 @@ export type RestEndpointMethods = {
      */
     getContributorsStats: {
       (
-        params?: RestEndpointMethodTypes["repos"]["getContributorsStats"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["getContributorsStats"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["getContributorsStats"]["response"]
       >;
@@ -10099,7 +10099,7 @@ export type RestEndpointMethods = {
      */
     getCustomDeploymentProtectionRule: {
       (
-        params?: RestEndpointMethodTypes["repos"]["getCustomDeploymentProtectionRule"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["getCustomDeploymentProtectionRule"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["getCustomDeploymentProtectionRule"]["response"]
       >;
@@ -10109,7 +10109,7 @@ export type RestEndpointMethods = {
 
     getDeployKey: {
       (
-        params?: RestEndpointMethodTypes["repos"]["getDeployKey"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["getDeployKey"]["parameters"],
       ): Promise<RestEndpointMethodTypes["repos"]["getDeployKey"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -10117,7 +10117,7 @@ export type RestEndpointMethods = {
 
     getDeployment: {
       (
-        params?: RestEndpointMethodTypes["repos"]["getDeployment"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["getDeployment"]["parameters"],
       ): Promise<RestEndpointMethodTypes["repos"]["getDeployment"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -10129,7 +10129,7 @@ export type RestEndpointMethods = {
      */
     getDeploymentBranchPolicy: {
       (
-        params?: RestEndpointMethodTypes["repos"]["getDeploymentBranchPolicy"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["getDeploymentBranchPolicy"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["getDeploymentBranchPolicy"]["response"]
       >;
@@ -10141,7 +10141,7 @@ export type RestEndpointMethods = {
      */
     getDeploymentStatus: {
       (
-        params?: RestEndpointMethodTypes["repos"]["getDeploymentStatus"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["getDeploymentStatus"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["getDeploymentStatus"]["response"]
       >;
@@ -10157,7 +10157,7 @@ export type RestEndpointMethods = {
      */
     getEnvironment: {
       (
-        params?: RestEndpointMethodTypes["repos"]["getEnvironment"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["getEnvironment"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["getEnvironment"]["response"]
       >;
@@ -10171,7 +10171,7 @@ export type RestEndpointMethods = {
      */
     getLatestPagesBuild: {
       (
-        params?: RestEndpointMethodTypes["repos"]["getLatestPagesBuild"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["getLatestPagesBuild"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["getLatestPagesBuild"]["response"]
       >;
@@ -10185,7 +10185,7 @@ export type RestEndpointMethods = {
      */
     getLatestRelease: {
       (
-        params?: RestEndpointMethodTypes["repos"]["getLatestRelease"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["getLatestRelease"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["getLatestRelease"]["response"]
       >;
@@ -10197,7 +10197,7 @@ export type RestEndpointMethods = {
      */
     getOrgRuleset: {
       (
-        params?: RestEndpointMethodTypes["repos"]["getOrgRuleset"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["getOrgRuleset"]["parameters"],
       ): Promise<RestEndpointMethodTypes["repos"]["getOrgRuleset"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -10207,7 +10207,7 @@ export type RestEndpointMethods = {
      */
     getOrgRulesets: {
       (
-        params?: RestEndpointMethodTypes["repos"]["getOrgRulesets"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["getOrgRulesets"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["getOrgRulesets"]["response"]
       >;
@@ -10221,7 +10221,7 @@ export type RestEndpointMethods = {
      */
     getPages: {
       (
-        params?: RestEndpointMethodTypes["repos"]["getPages"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["getPages"]["parameters"],
       ): Promise<RestEndpointMethodTypes["repos"]["getPages"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -10233,7 +10233,7 @@ export type RestEndpointMethods = {
      */
     getPagesBuild: {
       (
-        params?: RestEndpointMethodTypes["repos"]["getPagesBuild"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["getPagesBuild"]["parameters"],
       ): Promise<RestEndpointMethodTypes["repos"]["getPagesBuild"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -10247,7 +10247,7 @@ export type RestEndpointMethods = {
      */
     getPagesHealthCheck: {
       (
-        params?: RestEndpointMethodTypes["repos"]["getPagesHealthCheck"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["getPagesHealthCheck"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["getPagesHealthCheck"]["response"]
       >;
@@ -10263,7 +10263,7 @@ export type RestEndpointMethods = {
      */
     getParticipationStats: {
       (
-        params?: RestEndpointMethodTypes["repos"]["getParticipationStats"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["getParticipationStats"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["getParticipationStats"]["response"]
       >;
@@ -10275,7 +10275,7 @@ export type RestEndpointMethods = {
      */
     getPullRequestReviewProtection: {
       (
-        params?: RestEndpointMethodTypes["repos"]["getPullRequestReviewProtection"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["getPullRequestReviewProtection"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["getPullRequestReviewProtection"]["response"]
       >;
@@ -10293,7 +10293,7 @@ export type RestEndpointMethods = {
      */
     getPunchCardStats: {
       (
-        params?: RestEndpointMethodTypes["repos"]["getPunchCardStats"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["getPunchCardStats"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["getPunchCardStats"]["response"]
       >;
@@ -10307,7 +10307,7 @@ export type RestEndpointMethods = {
      */
     getReadme: {
       (
-        params?: RestEndpointMethodTypes["repos"]["getReadme"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["getReadme"]["parameters"],
       ): Promise<RestEndpointMethodTypes["repos"]["getReadme"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -10319,7 +10319,7 @@ export type RestEndpointMethods = {
      */
     getReadmeInDirectory: {
       (
-        params?: RestEndpointMethodTypes["repos"]["getReadmeInDirectory"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["getReadmeInDirectory"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["getReadmeInDirectory"]["response"]
       >;
@@ -10331,7 +10331,7 @@ export type RestEndpointMethods = {
      */
     getRelease: {
       (
-        params?: RestEndpointMethodTypes["repos"]["getRelease"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["getRelease"]["parameters"],
       ): Promise<RestEndpointMethodTypes["repos"]["getRelease"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -10341,7 +10341,7 @@ export type RestEndpointMethods = {
      */
     getReleaseAsset: {
       (
-        params?: RestEndpointMethodTypes["repos"]["getReleaseAsset"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["getReleaseAsset"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["getReleaseAsset"]["response"]
       >;
@@ -10353,7 +10353,7 @@ export type RestEndpointMethods = {
      */
     getReleaseByTag: {
       (
-        params?: RestEndpointMethodTypes["repos"]["getReleaseByTag"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["getReleaseByTag"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["getReleaseByTag"]["response"]
       >;
@@ -10365,7 +10365,7 @@ export type RestEndpointMethods = {
      */
     getRepoRuleset: {
       (
-        params?: RestEndpointMethodTypes["repos"]["getRepoRuleset"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["getRepoRuleset"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["getRepoRuleset"]["response"]
       >;
@@ -10377,7 +10377,7 @@ export type RestEndpointMethods = {
      */
     getRepoRulesets: {
       (
-        params?: RestEndpointMethodTypes["repos"]["getRepoRulesets"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["getRepoRulesets"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["getRepoRulesets"]["response"]
       >;
@@ -10389,7 +10389,7 @@ export type RestEndpointMethods = {
      */
     getStatusChecksProtection: {
       (
-        params?: RestEndpointMethodTypes["repos"]["getStatusChecksProtection"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["getStatusChecksProtection"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["getStatusChecksProtection"]["response"]
       >;
@@ -10403,7 +10403,7 @@ export type RestEndpointMethods = {
      */
     getTeamsWithAccessToProtectedBranch: {
       (
-        params?: RestEndpointMethodTypes["repos"]["getTeamsWithAccessToProtectedBranch"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["getTeamsWithAccessToProtectedBranch"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["getTeamsWithAccessToProtectedBranch"]["response"]
       >;
@@ -10415,7 +10415,7 @@ export type RestEndpointMethods = {
      */
     getTopPaths: {
       (
-        params?: RestEndpointMethodTypes["repos"]["getTopPaths"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["getTopPaths"]["parameters"],
       ): Promise<RestEndpointMethodTypes["repos"]["getTopPaths"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -10425,7 +10425,7 @@ export type RestEndpointMethods = {
      */
     getTopReferrers: {
       (
-        params?: RestEndpointMethodTypes["repos"]["getTopReferrers"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["getTopReferrers"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["getTopReferrers"]["response"]
       >;
@@ -10439,7 +10439,7 @@ export type RestEndpointMethods = {
      */
     getUsersWithAccessToProtectedBranch: {
       (
-        params?: RestEndpointMethodTypes["repos"]["getUsersWithAccessToProtectedBranch"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["getUsersWithAccessToProtectedBranch"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["getUsersWithAccessToProtectedBranch"]["response"]
       >;
@@ -10451,7 +10451,7 @@ export type RestEndpointMethods = {
      */
     getViews: {
       (
-        params?: RestEndpointMethodTypes["repos"]["getViews"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["getViews"]["parameters"],
       ): Promise<RestEndpointMethodTypes["repos"]["getViews"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -10461,7 +10461,7 @@ export type RestEndpointMethods = {
      */
     getWebhook: {
       (
-        params?: RestEndpointMethodTypes["repos"]["getWebhook"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["getWebhook"]["parameters"],
       ): Promise<RestEndpointMethodTypes["repos"]["getWebhook"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -10473,7 +10473,7 @@ export type RestEndpointMethods = {
      */
     getWebhookConfigForRepo: {
       (
-        params?: RestEndpointMethodTypes["repos"]["getWebhookConfigForRepo"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["getWebhookConfigForRepo"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["getWebhookConfigForRepo"]["response"]
       >;
@@ -10485,7 +10485,7 @@ export type RestEndpointMethods = {
      */
     getWebhookDelivery: {
       (
-        params?: RestEndpointMethodTypes["repos"]["getWebhookDelivery"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["getWebhookDelivery"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["getWebhookDelivery"]["response"]
       >;
@@ -10499,7 +10499,7 @@ export type RestEndpointMethods = {
      */
     listAutolinks: {
       (
-        params?: RestEndpointMethodTypes["repos"]["listAutolinks"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["listAutolinks"]["parameters"],
       ): Promise<RestEndpointMethodTypes["repos"]["listAutolinks"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -10507,7 +10507,7 @@ export type RestEndpointMethods = {
 
     listBranches: {
       (
-        params?: RestEndpointMethodTypes["repos"]["listBranches"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["listBranches"]["parameters"],
       ): Promise<RestEndpointMethodTypes["repos"]["listBranches"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -10519,7 +10519,7 @@ export type RestEndpointMethods = {
      */
     listBranchesForHeadCommit: {
       (
-        params?: RestEndpointMethodTypes["repos"]["listBranchesForHeadCommit"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["listBranchesForHeadCommit"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["listBranchesForHeadCommit"]["response"]
       >;
@@ -10538,7 +10538,7 @@ export type RestEndpointMethods = {
      */
     listCollaborators: {
       (
-        params?: RestEndpointMethodTypes["repos"]["listCollaborators"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["listCollaborators"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["listCollaborators"]["response"]
       >;
@@ -10550,7 +10550,7 @@ export type RestEndpointMethods = {
      */
     listCommentsForCommit: {
       (
-        params?: RestEndpointMethodTypes["repos"]["listCommentsForCommit"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["listCommentsForCommit"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["listCommentsForCommit"]["response"]
       >;
@@ -10564,7 +10564,7 @@ export type RestEndpointMethods = {
      */
     listCommitCommentsForRepo: {
       (
-        params?: RestEndpointMethodTypes["repos"]["listCommitCommentsForRepo"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["listCommitCommentsForRepo"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["listCommitCommentsForRepo"]["response"]
       >;
@@ -10578,7 +10578,7 @@ export type RestEndpointMethods = {
      */
     listCommitStatusesForRef: {
       (
-        params?: RestEndpointMethodTypes["repos"]["listCommitStatusesForRef"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["listCommitStatusesForRef"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["listCommitStatusesForRef"]["response"]
       >;
@@ -10617,7 +10617,7 @@ export type RestEndpointMethods = {
      */
     listCommits: {
       (
-        params?: RestEndpointMethodTypes["repos"]["listCommits"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["listCommits"]["parameters"],
       ): Promise<RestEndpointMethodTypes["repos"]["listCommits"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -10629,7 +10629,7 @@ export type RestEndpointMethods = {
      */
     listContributors: {
       (
-        params?: RestEndpointMethodTypes["repos"]["listContributors"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["listContributors"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["listContributors"]["response"]
       >;
@@ -10645,7 +10645,7 @@ export type RestEndpointMethods = {
      */
     listCustomDeploymentRuleIntegrations: {
       (
-        params?: RestEndpointMethodTypes["repos"]["listCustomDeploymentRuleIntegrations"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["listCustomDeploymentRuleIntegrations"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["listCustomDeploymentRuleIntegrations"]["response"]
       >;
@@ -10655,7 +10655,7 @@ export type RestEndpointMethods = {
 
     listDeployKeys: {
       (
-        params?: RestEndpointMethodTypes["repos"]["listDeployKeys"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["listDeployKeys"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["listDeployKeys"]["response"]
       >;
@@ -10669,7 +10669,7 @@ export type RestEndpointMethods = {
      */
     listDeploymentBranchPolicies: {
       (
-        params?: RestEndpointMethodTypes["repos"]["listDeploymentBranchPolicies"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["listDeploymentBranchPolicies"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["listDeploymentBranchPolicies"]["response"]
       >;
@@ -10681,7 +10681,7 @@ export type RestEndpointMethods = {
      */
     listDeploymentStatuses: {
       (
-        params?: RestEndpointMethodTypes["repos"]["listDeploymentStatuses"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["listDeploymentStatuses"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["listDeploymentStatuses"]["response"]
       >;
@@ -10693,7 +10693,7 @@ export type RestEndpointMethods = {
      */
     listDeployments: {
       (
-        params?: RestEndpointMethodTypes["repos"]["listDeployments"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["listDeployments"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["listDeployments"]["response"]
       >;
@@ -10707,7 +10707,7 @@ export type RestEndpointMethods = {
      */
     listForAuthenticatedUser: {
       (
-        params?: RestEndpointMethodTypes["repos"]["listForAuthenticatedUser"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["listForAuthenticatedUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["listForAuthenticatedUser"]["response"]
       >;
@@ -10721,7 +10721,7 @@ export type RestEndpointMethods = {
      */
     listForOrg: {
       (
-        params?: RestEndpointMethodTypes["repos"]["listForOrg"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["listForOrg"]["parameters"],
       ): Promise<RestEndpointMethodTypes["repos"]["listForOrg"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -10731,7 +10731,7 @@ export type RestEndpointMethods = {
      */
     listForUser: {
       (
-        params?: RestEndpointMethodTypes["repos"]["listForUser"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["listForUser"]["parameters"],
       ): Promise<RestEndpointMethodTypes["repos"]["listForUser"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -10739,7 +10739,7 @@ export type RestEndpointMethods = {
 
     listForks: {
       (
-        params?: RestEndpointMethodTypes["repos"]["listForks"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["listForks"]["parameters"],
       ): Promise<RestEndpointMethodTypes["repos"]["listForks"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -10749,7 +10749,7 @@ export type RestEndpointMethods = {
      */
     listInvitations: {
       (
-        params?: RestEndpointMethodTypes["repos"]["listInvitations"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["listInvitations"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["listInvitations"]["response"]
       >;
@@ -10761,7 +10761,7 @@ export type RestEndpointMethods = {
      */
     listInvitationsForAuthenticatedUser: {
       (
-        params?: RestEndpointMethodTypes["repos"]["listInvitationsForAuthenticatedUser"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["listInvitationsForAuthenticatedUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["listInvitationsForAuthenticatedUser"]["response"]
       >;
@@ -10773,7 +10773,7 @@ export type RestEndpointMethods = {
      */
     listLanguages: {
       (
-        params?: RestEndpointMethodTypes["repos"]["listLanguages"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["listLanguages"]["parameters"],
       ): Promise<RestEndpointMethodTypes["repos"]["listLanguages"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -10785,7 +10785,7 @@ export type RestEndpointMethods = {
      */
     listPagesBuilds: {
       (
-        params?: RestEndpointMethodTypes["repos"]["listPagesBuilds"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["listPagesBuilds"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["listPagesBuilds"]["response"]
       >;
@@ -10801,7 +10801,7 @@ export type RestEndpointMethods = {
      */
     listPublic: {
       (
-        params?: RestEndpointMethodTypes["repos"]["listPublic"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["listPublic"]["parameters"],
       ): Promise<RestEndpointMethodTypes["repos"]["listPublic"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -10811,7 +10811,7 @@ export type RestEndpointMethods = {
      */
     listPullRequestsAssociatedWithCommit: {
       (
-        params?: RestEndpointMethodTypes["repos"]["listPullRequestsAssociatedWithCommit"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["listPullRequestsAssociatedWithCommit"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["listPullRequestsAssociatedWithCommit"]["response"]
       >;
@@ -10821,7 +10821,7 @@ export type RestEndpointMethods = {
 
     listReleaseAssets: {
       (
-        params?: RestEndpointMethodTypes["repos"]["listReleaseAssets"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["listReleaseAssets"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["listReleaseAssets"]["response"]
       >;
@@ -10835,7 +10835,7 @@ export type RestEndpointMethods = {
      */
     listReleases: {
       (
-        params?: RestEndpointMethodTypes["repos"]["listReleases"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["listReleases"]["parameters"],
       ): Promise<RestEndpointMethodTypes["repos"]["listReleases"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -10847,7 +10847,7 @@ export type RestEndpointMethods = {
      */
     listTagProtection: {
       (
-        params?: RestEndpointMethodTypes["repos"]["listTagProtection"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["listTagProtection"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["listTagProtection"]["response"]
       >;
@@ -10857,7 +10857,7 @@ export type RestEndpointMethods = {
 
     listTags: {
       (
-        params?: RestEndpointMethodTypes["repos"]["listTags"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["listTags"]["parameters"],
       ): Promise<RestEndpointMethodTypes["repos"]["listTags"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -10875,7 +10875,7 @@ export type RestEndpointMethods = {
      */
     listTeams: {
       (
-        params?: RestEndpointMethodTypes["repos"]["listTeams"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["listTeams"]["parameters"],
       ): Promise<RestEndpointMethodTypes["repos"]["listTeams"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -10885,7 +10885,7 @@ export type RestEndpointMethods = {
      */
     listWebhookDeliveries: {
       (
-        params?: RestEndpointMethodTypes["repos"]["listWebhookDeliveries"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["listWebhookDeliveries"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["listWebhookDeliveries"]["response"]
       >;
@@ -10897,7 +10897,7 @@ export type RestEndpointMethods = {
      */
     listWebhooks: {
       (
-        params?: RestEndpointMethodTypes["repos"]["listWebhooks"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["listWebhooks"]["parameters"],
       ): Promise<RestEndpointMethodTypes["repos"]["listWebhooks"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -10905,7 +10905,7 @@ export type RestEndpointMethods = {
 
     merge: {
       (
-        params?: RestEndpointMethodTypes["repos"]["merge"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["merge"]["parameters"],
       ): Promise<RestEndpointMethodTypes["repos"]["merge"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -10915,7 +10915,7 @@ export type RestEndpointMethods = {
      */
     mergeUpstream: {
       (
-        params?: RestEndpointMethodTypes["repos"]["mergeUpstream"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["mergeUpstream"]["parameters"],
       ): Promise<RestEndpointMethodTypes["repos"]["mergeUpstream"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -10925,7 +10925,7 @@ export type RestEndpointMethods = {
      */
     pingWebhook: {
       (
-        params?: RestEndpointMethodTypes["repos"]["pingWebhook"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["pingWebhook"]["parameters"],
       ): Promise<RestEndpointMethodTypes["repos"]["pingWebhook"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -10935,7 +10935,7 @@ export type RestEndpointMethods = {
      */
     redeliverWebhookDelivery: {
       (
-        params?: RestEndpointMethodTypes["repos"]["redeliverWebhookDelivery"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["redeliverWebhookDelivery"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["redeliverWebhookDelivery"]["response"]
       >;
@@ -10949,7 +10949,7 @@ export type RestEndpointMethods = {
      */
     removeAppAccessRestrictions: {
       (
-        params?: RestEndpointMethodTypes["repos"]["removeAppAccessRestrictions"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["removeAppAccessRestrictions"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["removeAppAccessRestrictions"]["response"]
       >;
@@ -10981,7 +10981,7 @@ export type RestEndpointMethods = {
      */
     removeCollaborator: {
       (
-        params?: RestEndpointMethodTypes["repos"]["removeCollaborator"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["removeCollaborator"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["removeCollaborator"]["response"]
       >;
@@ -10993,7 +10993,7 @@ export type RestEndpointMethods = {
      */
     removeStatusCheckContexts: {
       (
-        params?: RestEndpointMethodTypes["repos"]["removeStatusCheckContexts"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["removeStatusCheckContexts"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["removeStatusCheckContexts"]["response"]
       >;
@@ -11005,7 +11005,7 @@ export type RestEndpointMethods = {
      */
     removeStatusCheckProtection: {
       (
-        params?: RestEndpointMethodTypes["repos"]["removeStatusCheckProtection"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["removeStatusCheckProtection"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["removeStatusCheckProtection"]["response"]
       >;
@@ -11019,7 +11019,7 @@ export type RestEndpointMethods = {
      */
     removeTeamAccessRestrictions: {
       (
-        params?: RestEndpointMethodTypes["repos"]["removeTeamAccessRestrictions"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["removeTeamAccessRestrictions"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["removeTeamAccessRestrictions"]["response"]
       >;
@@ -11037,7 +11037,7 @@ export type RestEndpointMethods = {
      */
     removeUserAccessRestrictions: {
       (
-        params?: RestEndpointMethodTypes["repos"]["removeUserAccessRestrictions"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["removeUserAccessRestrictions"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["removeUserAccessRestrictions"]["response"]
       >;
@@ -11063,7 +11063,7 @@ export type RestEndpointMethods = {
      */
     renameBranch: {
       (
-        params?: RestEndpointMethodTypes["repos"]["renameBranch"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["renameBranch"]["parameters"],
       ): Promise<RestEndpointMethodTypes["repos"]["renameBranch"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -11071,7 +11071,7 @@ export type RestEndpointMethods = {
 
     replaceAllTopics: {
       (
-        params?: RestEndpointMethodTypes["repos"]["replaceAllTopics"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["replaceAllTopics"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["replaceAllTopics"]["response"]
       >;
@@ -11085,7 +11085,7 @@ export type RestEndpointMethods = {
      */
     requestPagesBuild: {
       (
-        params?: RestEndpointMethodTypes["repos"]["requestPagesBuild"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["requestPagesBuild"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["requestPagesBuild"]["response"]
       >;
@@ -11099,7 +11099,7 @@ export type RestEndpointMethods = {
      */
     setAdminBranchProtection: {
       (
-        params?: RestEndpointMethodTypes["repos"]["setAdminBranchProtection"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["setAdminBranchProtection"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["setAdminBranchProtection"]["response"]
       >;
@@ -11113,7 +11113,7 @@ export type RestEndpointMethods = {
      */
     setAppAccessRestrictions: {
       (
-        params?: RestEndpointMethodTypes["repos"]["setAppAccessRestrictions"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["setAppAccessRestrictions"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["setAppAccessRestrictions"]["response"]
       >;
@@ -11125,7 +11125,7 @@ export type RestEndpointMethods = {
      */
     setStatusCheckContexts: {
       (
-        params?: RestEndpointMethodTypes["repos"]["setStatusCheckContexts"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["setStatusCheckContexts"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["setStatusCheckContexts"]["response"]
       >;
@@ -11139,7 +11139,7 @@ export type RestEndpointMethods = {
      */
     setTeamAccessRestrictions: {
       (
-        params?: RestEndpointMethodTypes["repos"]["setTeamAccessRestrictions"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["setTeamAccessRestrictions"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["setTeamAccessRestrictions"]["response"]
       >;
@@ -11157,7 +11157,7 @@ export type RestEndpointMethods = {
      */
     setUserAccessRestrictions: {
       (
-        params?: RestEndpointMethodTypes["repos"]["setUserAccessRestrictions"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["setUserAccessRestrictions"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["setUserAccessRestrictions"]["response"]
       >;
@@ -11171,7 +11171,7 @@ export type RestEndpointMethods = {
      */
     testPushWebhook: {
       (
-        params?: RestEndpointMethodTypes["repos"]["testPushWebhook"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["testPushWebhook"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["testPushWebhook"]["response"]
       >;
@@ -11183,7 +11183,7 @@ export type RestEndpointMethods = {
      */
     transfer: {
       (
-        params?: RestEndpointMethodTypes["repos"]["transfer"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["transfer"]["parameters"],
       ): Promise<RestEndpointMethodTypes["repos"]["transfer"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -11193,7 +11193,7 @@ export type RestEndpointMethods = {
      */
     update: {
       (
-        params?: RestEndpointMethodTypes["repos"]["update"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["update"]["parameters"],
       ): Promise<RestEndpointMethodTypes["repos"]["update"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -11209,7 +11209,7 @@ export type RestEndpointMethods = {
      */
     updateBranchProtection: {
       (
-        params?: RestEndpointMethodTypes["repos"]["updateBranchProtection"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["updateBranchProtection"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["updateBranchProtection"]["response"]
       >;
@@ -11219,7 +11219,7 @@ export type RestEndpointMethods = {
 
     updateCommitComment: {
       (
-        params?: RestEndpointMethodTypes["repos"]["updateCommitComment"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["updateCommitComment"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["updateCommitComment"]["response"]
       >;
@@ -11233,7 +11233,7 @@ export type RestEndpointMethods = {
      */
     updateDeploymentBranchPolicy: {
       (
-        params?: RestEndpointMethodTypes["repos"]["updateDeploymentBranchPolicy"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["updateDeploymentBranchPolicy"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["updateDeploymentBranchPolicy"]["response"]
       >;
@@ -11247,7 +11247,7 @@ export type RestEndpointMethods = {
      */
     updateInformationAboutPagesSite: {
       (
-        params?: RestEndpointMethodTypes["repos"]["updateInformationAboutPagesSite"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["updateInformationAboutPagesSite"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["updateInformationAboutPagesSite"]["response"]
       >;
@@ -11257,7 +11257,7 @@ export type RestEndpointMethods = {
 
     updateInvitation: {
       (
-        params?: RestEndpointMethodTypes["repos"]["updateInvitation"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["updateInvitation"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["updateInvitation"]["response"]
       >;
@@ -11269,7 +11269,7 @@ export type RestEndpointMethods = {
      */
     updateOrgRuleset: {
       (
-        params?: RestEndpointMethodTypes["repos"]["updateOrgRuleset"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["updateOrgRuleset"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["updateOrgRuleset"]["response"]
       >;
@@ -11285,7 +11285,7 @@ export type RestEndpointMethods = {
      */
     updatePullRequestReviewProtection: {
       (
-        params?: RestEndpointMethodTypes["repos"]["updatePullRequestReviewProtection"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["updatePullRequestReviewProtection"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["updatePullRequestReviewProtection"]["response"]
       >;
@@ -11297,7 +11297,7 @@ export type RestEndpointMethods = {
      */
     updateRelease: {
       (
-        params?: RestEndpointMethodTypes["repos"]["updateRelease"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["updateRelease"]["parameters"],
       ): Promise<RestEndpointMethodTypes["repos"]["updateRelease"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -11307,7 +11307,7 @@ export type RestEndpointMethods = {
      */
     updateReleaseAsset: {
       (
-        params?: RestEndpointMethodTypes["repos"]["updateReleaseAsset"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["updateReleaseAsset"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["updateReleaseAsset"]["response"]
       >;
@@ -11319,7 +11319,7 @@ export type RestEndpointMethods = {
      */
     updateRepoRuleset: {
       (
-        params?: RestEndpointMethodTypes["repos"]["updateRepoRuleset"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["updateRepoRuleset"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["updateRepoRuleset"]["response"]
       >;
@@ -11334,7 +11334,7 @@ export type RestEndpointMethods = {
      */
     updateStatusCheckPotection: {
       (
-        params?: RestEndpointMethodTypes["repos"]["updateStatusCheckPotection"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["updateStatusCheckPotection"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["updateStatusCheckPotection"]["response"]
       >;
@@ -11348,7 +11348,7 @@ export type RestEndpointMethods = {
      */
     updateStatusCheckProtection: {
       (
-        params?: RestEndpointMethodTypes["repos"]["updateStatusCheckProtection"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["updateStatusCheckProtection"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["updateStatusCheckProtection"]["response"]
       >;
@@ -11360,7 +11360,7 @@ export type RestEndpointMethods = {
      */
     updateWebhook: {
       (
-        params?: RestEndpointMethodTypes["repos"]["updateWebhook"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["updateWebhook"]["parameters"],
       ): Promise<RestEndpointMethodTypes["repos"]["updateWebhook"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -11372,7 +11372,7 @@ export type RestEndpointMethods = {
      */
     updateWebhookConfigForRepo: {
       (
-        params?: RestEndpointMethodTypes["repos"]["updateWebhookConfigForRepo"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["updateWebhookConfigForRepo"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["updateWebhookConfigForRepo"]["response"]
       >;
@@ -11402,7 +11402,7 @@ export type RestEndpointMethods = {
      */
     uploadReleaseAsset: {
       (
-        params?: RestEndpointMethodTypes["repos"]["uploadReleaseAsset"]["parameters"]
+        params?: RestEndpointMethodTypes["repos"]["uploadReleaseAsset"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["uploadReleaseAsset"]["response"]
       >;
@@ -11435,7 +11435,7 @@ export type RestEndpointMethods = {
      */
     code: {
       (
-        params?: RestEndpointMethodTypes["search"]["code"]["parameters"]
+        params?: RestEndpointMethodTypes["search"]["code"]["parameters"],
       ): Promise<RestEndpointMethodTypes["search"]["code"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -11452,7 +11452,7 @@ export type RestEndpointMethods = {
      */
     commits: {
       (
-        params?: RestEndpointMethodTypes["search"]["commits"]["parameters"]
+        params?: RestEndpointMethodTypes["search"]["commits"]["parameters"],
       ): Promise<RestEndpointMethodTypes["search"]["commits"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -11473,7 +11473,7 @@ export type RestEndpointMethods = {
      */
     issuesAndPullRequests: {
       (
-        params?: RestEndpointMethodTypes["search"]["issuesAndPullRequests"]["parameters"]
+        params?: RestEndpointMethodTypes["search"]["issuesAndPullRequests"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["search"]["issuesAndPullRequests"]["response"]
       >;
@@ -11493,7 +11493,7 @@ export type RestEndpointMethods = {
      */
     labels: {
       (
-        params?: RestEndpointMethodTypes["search"]["labels"]["parameters"]
+        params?: RestEndpointMethodTypes["search"]["labels"]["parameters"],
       ): Promise<RestEndpointMethodTypes["search"]["labels"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -11511,7 +11511,7 @@ export type RestEndpointMethods = {
      */
     repos: {
       (
-        params?: RestEndpointMethodTypes["search"]["repos"]["parameters"]
+        params?: RestEndpointMethodTypes["search"]["repos"]["parameters"],
       ): Promise<RestEndpointMethodTypes["search"]["repos"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -11529,7 +11529,7 @@ export type RestEndpointMethods = {
      */
     topics: {
       (
-        params?: RestEndpointMethodTypes["search"]["topics"]["parameters"]
+        params?: RestEndpointMethodTypes["search"]["topics"]["parameters"],
       ): Promise<RestEndpointMethodTypes["search"]["topics"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -11547,7 +11547,7 @@ export type RestEndpointMethods = {
      */
     users: {
       (
-        params?: RestEndpointMethodTypes["search"]["users"]["parameters"]
+        params?: RestEndpointMethodTypes["search"]["users"]["parameters"],
       ): Promise<RestEndpointMethodTypes["search"]["users"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -11563,7 +11563,7 @@ export type RestEndpointMethods = {
      */
     getAlert: {
       (
-        params?: RestEndpointMethodTypes["secretScanning"]["getAlert"]["parameters"]
+        params?: RestEndpointMethodTypes["secretScanning"]["getAlert"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["secretScanning"]["getAlert"]["response"]
       >;
@@ -11576,7 +11576,7 @@ export type RestEndpointMethods = {
      */
     listAlertsForEnterprise: {
       (
-        params?: RestEndpointMethodTypes["secretScanning"]["listAlertsForEnterprise"]["parameters"]
+        params?: RestEndpointMethodTypes["secretScanning"]["listAlertsForEnterprise"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["secretScanning"]["listAlertsForEnterprise"]["response"]
       >;
@@ -11592,7 +11592,7 @@ export type RestEndpointMethods = {
      */
     listAlertsForOrg: {
       (
-        params?: RestEndpointMethodTypes["secretScanning"]["listAlertsForOrg"]["parameters"]
+        params?: RestEndpointMethodTypes["secretScanning"]["listAlertsForOrg"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["secretScanning"]["listAlertsForOrg"]["response"]
       >;
@@ -11608,7 +11608,7 @@ export type RestEndpointMethods = {
      */
     listAlertsForRepo: {
       (
-        params?: RestEndpointMethodTypes["secretScanning"]["listAlertsForRepo"]["parameters"]
+        params?: RestEndpointMethodTypes["secretScanning"]["listAlertsForRepo"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["secretScanning"]["listAlertsForRepo"]["response"]
       >;
@@ -11624,7 +11624,7 @@ export type RestEndpointMethods = {
      */
     listLocationsForAlert: {
       (
-        params?: RestEndpointMethodTypes["secretScanning"]["listLocationsForAlert"]["parameters"]
+        params?: RestEndpointMethodTypes["secretScanning"]["listLocationsForAlert"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["secretScanning"]["listLocationsForAlert"]["response"]
       >;
@@ -11640,7 +11640,7 @@ export type RestEndpointMethods = {
      */
     updateAlert: {
       (
-        params?: RestEndpointMethodTypes["secretScanning"]["updateAlert"]["parameters"]
+        params?: RestEndpointMethodTypes["secretScanning"]["updateAlert"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["secretScanning"]["updateAlert"]["response"]
       >;
@@ -11655,7 +11655,7 @@ export type RestEndpointMethods = {
      */
     createPrivateVulnerabilityReport: {
       (
-        params?: RestEndpointMethodTypes["securityAdvisories"]["createPrivateVulnerabilityReport"]["parameters"]
+        params?: RestEndpointMethodTypes["securityAdvisories"]["createPrivateVulnerabilityReport"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["securityAdvisories"]["createPrivateVulnerabilityReport"]["response"]
       >;
@@ -11670,7 +11670,7 @@ export type RestEndpointMethods = {
      */
     createRepositoryAdvisory: {
       (
-        params?: RestEndpointMethodTypes["securityAdvisories"]["createRepositoryAdvisory"]["parameters"]
+        params?: RestEndpointMethodTypes["securityAdvisories"]["createRepositoryAdvisory"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["securityAdvisories"]["createRepositoryAdvisory"]["response"]
       >;
@@ -11688,7 +11688,7 @@ export type RestEndpointMethods = {
      */
     getRepositoryAdvisory: {
       (
-        params?: RestEndpointMethodTypes["securityAdvisories"]["getRepositoryAdvisory"]["parameters"]
+        params?: RestEndpointMethodTypes["securityAdvisories"]["getRepositoryAdvisory"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["securityAdvisories"]["getRepositoryAdvisory"]["response"]
       >;
@@ -11704,7 +11704,7 @@ export type RestEndpointMethods = {
      */
     listRepositoryAdvisories: {
       (
-        params?: RestEndpointMethodTypes["securityAdvisories"]["listRepositoryAdvisories"]["parameters"]
+        params?: RestEndpointMethodTypes["securityAdvisories"]["listRepositoryAdvisories"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["securityAdvisories"]["listRepositoryAdvisories"]["response"]
       >;
@@ -11720,7 +11720,7 @@ export type RestEndpointMethods = {
      */
     updateRepositoryAdvisory: {
       (
-        params?: RestEndpointMethodTypes["securityAdvisories"]["updateRepositoryAdvisory"]["parameters"]
+        params?: RestEndpointMethodTypes["securityAdvisories"]["updateRepositoryAdvisory"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["securityAdvisories"]["updateRepositoryAdvisory"]["response"]
       >;
@@ -11744,7 +11744,7 @@ export type RestEndpointMethods = {
      */
     addOrUpdateMembershipForUserInOrg: {
       (
-        params?: RestEndpointMethodTypes["teams"]["addOrUpdateMembershipForUserInOrg"]["parameters"]
+        params?: RestEndpointMethodTypes["teams"]["addOrUpdateMembershipForUserInOrg"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["teams"]["addOrUpdateMembershipForUserInOrg"]["response"]
       >;
@@ -11758,7 +11758,7 @@ export type RestEndpointMethods = {
      */
     addOrUpdateProjectPermissionsInOrg: {
       (
-        params?: RestEndpointMethodTypes["teams"]["addOrUpdateProjectPermissionsInOrg"]["parameters"]
+        params?: RestEndpointMethodTypes["teams"]["addOrUpdateProjectPermissionsInOrg"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["teams"]["addOrUpdateProjectPermissionsInOrg"]["response"]
       >;
@@ -11774,7 +11774,7 @@ export type RestEndpointMethods = {
      */
     addOrUpdateRepoPermissionsInOrg: {
       (
-        params?: RestEndpointMethodTypes["teams"]["addOrUpdateRepoPermissionsInOrg"]["parameters"]
+        params?: RestEndpointMethodTypes["teams"]["addOrUpdateRepoPermissionsInOrg"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["teams"]["addOrUpdateRepoPermissionsInOrg"]["response"]
       >;
@@ -11788,7 +11788,7 @@ export type RestEndpointMethods = {
      */
     checkPermissionsForProjectInOrg: {
       (
-        params?: RestEndpointMethodTypes["teams"]["checkPermissionsForProjectInOrg"]["parameters"]
+        params?: RestEndpointMethodTypes["teams"]["checkPermissionsForProjectInOrg"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["teams"]["checkPermissionsForProjectInOrg"]["response"]
       >;
@@ -11806,7 +11806,7 @@ export type RestEndpointMethods = {
      */
     checkPermissionsForRepoInOrg: {
       (
-        params?: RestEndpointMethodTypes["teams"]["checkPermissionsForRepoInOrg"]["parameters"]
+        params?: RestEndpointMethodTypes["teams"]["checkPermissionsForRepoInOrg"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["teams"]["checkPermissionsForRepoInOrg"]["response"]
       >;
@@ -11820,7 +11820,7 @@ export type RestEndpointMethods = {
      */
     create: {
       (
-        params?: RestEndpointMethodTypes["teams"]["create"]["parameters"]
+        params?: RestEndpointMethodTypes["teams"]["create"]["parameters"],
       ): Promise<RestEndpointMethodTypes["teams"]["create"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -11834,7 +11834,7 @@ export type RestEndpointMethods = {
      */
     createDiscussionCommentInOrg: {
       (
-        params?: RestEndpointMethodTypes["teams"]["createDiscussionCommentInOrg"]["parameters"]
+        params?: RestEndpointMethodTypes["teams"]["createDiscussionCommentInOrg"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["teams"]["createDiscussionCommentInOrg"]["response"]
       >;
@@ -11850,7 +11850,7 @@ export type RestEndpointMethods = {
      */
     createDiscussionInOrg: {
       (
-        params?: RestEndpointMethodTypes["teams"]["createDiscussionInOrg"]["parameters"]
+        params?: RestEndpointMethodTypes["teams"]["createDiscussionInOrg"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["teams"]["createDiscussionInOrg"]["response"]
       >;
@@ -11864,7 +11864,7 @@ export type RestEndpointMethods = {
      */
     deleteDiscussionCommentInOrg: {
       (
-        params?: RestEndpointMethodTypes["teams"]["deleteDiscussionCommentInOrg"]["parameters"]
+        params?: RestEndpointMethodTypes["teams"]["deleteDiscussionCommentInOrg"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["teams"]["deleteDiscussionCommentInOrg"]["response"]
       >;
@@ -11878,7 +11878,7 @@ export type RestEndpointMethods = {
      */
     deleteDiscussionInOrg: {
       (
-        params?: RestEndpointMethodTypes["teams"]["deleteDiscussionInOrg"]["parameters"]
+        params?: RestEndpointMethodTypes["teams"]["deleteDiscussionInOrg"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["teams"]["deleteDiscussionInOrg"]["response"]
       >;
@@ -11894,7 +11894,7 @@ export type RestEndpointMethods = {
      */
     deleteInOrg: {
       (
-        params?: RestEndpointMethodTypes["teams"]["deleteInOrg"]["parameters"]
+        params?: RestEndpointMethodTypes["teams"]["deleteInOrg"]["parameters"],
       ): Promise<RestEndpointMethodTypes["teams"]["deleteInOrg"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -11906,7 +11906,7 @@ export type RestEndpointMethods = {
      */
     getByName: {
       (
-        params?: RestEndpointMethodTypes["teams"]["getByName"]["parameters"]
+        params?: RestEndpointMethodTypes["teams"]["getByName"]["parameters"],
       ): Promise<RestEndpointMethodTypes["teams"]["getByName"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -11918,7 +11918,7 @@ export type RestEndpointMethods = {
      */
     getDiscussionCommentInOrg: {
       (
-        params?: RestEndpointMethodTypes["teams"]["getDiscussionCommentInOrg"]["parameters"]
+        params?: RestEndpointMethodTypes["teams"]["getDiscussionCommentInOrg"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["teams"]["getDiscussionCommentInOrg"]["response"]
       >;
@@ -11932,7 +11932,7 @@ export type RestEndpointMethods = {
      */
     getDiscussionInOrg: {
       (
-        params?: RestEndpointMethodTypes["teams"]["getDiscussionInOrg"]["parameters"]
+        params?: RestEndpointMethodTypes["teams"]["getDiscussionInOrg"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["teams"]["getDiscussionInOrg"]["response"]
       >;
@@ -11953,7 +11953,7 @@ export type RestEndpointMethods = {
      */
     getMembershipForUserInOrg: {
       (
-        params?: RestEndpointMethodTypes["teams"]["getMembershipForUserInOrg"]["parameters"]
+        params?: RestEndpointMethodTypes["teams"]["getMembershipForUserInOrg"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["teams"]["getMembershipForUserInOrg"]["response"]
       >;
@@ -11965,7 +11965,7 @@ export type RestEndpointMethods = {
      */
     list: {
       (
-        params?: RestEndpointMethodTypes["teams"]["list"]["parameters"]
+        params?: RestEndpointMethodTypes["teams"]["list"]["parameters"],
       ): Promise<RestEndpointMethodTypes["teams"]["list"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -11977,7 +11977,7 @@ export type RestEndpointMethods = {
      */
     listChildInOrg: {
       (
-        params?: RestEndpointMethodTypes["teams"]["listChildInOrg"]["parameters"]
+        params?: RestEndpointMethodTypes["teams"]["listChildInOrg"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["teams"]["listChildInOrg"]["response"]
       >;
@@ -11991,7 +11991,7 @@ export type RestEndpointMethods = {
      */
     listDiscussionCommentsInOrg: {
       (
-        params?: RestEndpointMethodTypes["teams"]["listDiscussionCommentsInOrg"]["parameters"]
+        params?: RestEndpointMethodTypes["teams"]["listDiscussionCommentsInOrg"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["teams"]["listDiscussionCommentsInOrg"]["response"]
       >;
@@ -12005,7 +12005,7 @@ export type RestEndpointMethods = {
      */
     listDiscussionsInOrg: {
       (
-        params?: RestEndpointMethodTypes["teams"]["listDiscussionsInOrg"]["parameters"]
+        params?: RestEndpointMethodTypes["teams"]["listDiscussionsInOrg"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["teams"]["listDiscussionsInOrg"]["response"]
       >;
@@ -12017,7 +12017,7 @@ export type RestEndpointMethods = {
      */
     listForAuthenticatedUser: {
       (
-        params?: RestEndpointMethodTypes["teams"]["listForAuthenticatedUser"]["parameters"]
+        params?: RestEndpointMethodTypes["teams"]["listForAuthenticatedUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["teams"]["listForAuthenticatedUser"]["response"]
       >;
@@ -12031,7 +12031,7 @@ export type RestEndpointMethods = {
      */
     listMembersInOrg: {
       (
-        params?: RestEndpointMethodTypes["teams"]["listMembersInOrg"]["parameters"]
+        params?: RestEndpointMethodTypes["teams"]["listMembersInOrg"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["teams"]["listMembersInOrg"]["response"]
       >;
@@ -12045,7 +12045,7 @@ export type RestEndpointMethods = {
      */
     listPendingInvitationsInOrg: {
       (
-        params?: RestEndpointMethodTypes["teams"]["listPendingInvitationsInOrg"]["parameters"]
+        params?: RestEndpointMethodTypes["teams"]["listPendingInvitationsInOrg"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["teams"]["listPendingInvitationsInOrg"]["response"]
       >;
@@ -12059,7 +12059,7 @@ export type RestEndpointMethods = {
      */
     listProjectsInOrg: {
       (
-        params?: RestEndpointMethodTypes["teams"]["listProjectsInOrg"]["parameters"]
+        params?: RestEndpointMethodTypes["teams"]["listProjectsInOrg"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["teams"]["listProjectsInOrg"]["response"]
       >;
@@ -12073,7 +12073,7 @@ export type RestEndpointMethods = {
      */
     listReposInOrg: {
       (
-        params?: RestEndpointMethodTypes["teams"]["listReposInOrg"]["parameters"]
+        params?: RestEndpointMethodTypes["teams"]["listReposInOrg"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["teams"]["listReposInOrg"]["response"]
       >;
@@ -12091,7 +12091,7 @@ export type RestEndpointMethods = {
      */
     removeMembershipForUserInOrg: {
       (
-        params?: RestEndpointMethodTypes["teams"]["removeMembershipForUserInOrg"]["parameters"]
+        params?: RestEndpointMethodTypes["teams"]["removeMembershipForUserInOrg"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["teams"]["removeMembershipForUserInOrg"]["response"]
       >;
@@ -12105,7 +12105,7 @@ export type RestEndpointMethods = {
      */
     removeProjectInOrg: {
       (
-        params?: RestEndpointMethodTypes["teams"]["removeProjectInOrg"]["parameters"]
+        params?: RestEndpointMethodTypes["teams"]["removeProjectInOrg"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["teams"]["removeProjectInOrg"]["response"]
       >;
@@ -12119,7 +12119,7 @@ export type RestEndpointMethods = {
      */
     removeRepoInOrg: {
       (
-        params?: RestEndpointMethodTypes["teams"]["removeRepoInOrg"]["parameters"]
+        params?: RestEndpointMethodTypes["teams"]["removeRepoInOrg"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["teams"]["removeRepoInOrg"]["response"]
       >;
@@ -12133,7 +12133,7 @@ export type RestEndpointMethods = {
      */
     updateDiscussionCommentInOrg: {
       (
-        params?: RestEndpointMethodTypes["teams"]["updateDiscussionCommentInOrg"]["parameters"]
+        params?: RestEndpointMethodTypes["teams"]["updateDiscussionCommentInOrg"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["teams"]["updateDiscussionCommentInOrg"]["response"]
       >;
@@ -12147,7 +12147,7 @@ export type RestEndpointMethods = {
      */
     updateDiscussionInOrg: {
       (
-        params?: RestEndpointMethodTypes["teams"]["updateDiscussionInOrg"]["parameters"]
+        params?: RestEndpointMethodTypes["teams"]["updateDiscussionInOrg"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["teams"]["updateDiscussionInOrg"]["response"]
       >;
@@ -12161,7 +12161,7 @@ export type RestEndpointMethods = {
      */
     updateInOrg: {
       (
-        params?: RestEndpointMethodTypes["teams"]["updateInOrg"]["parameters"]
+        params?: RestEndpointMethodTypes["teams"]["updateInOrg"]["parameters"],
       ): Promise<RestEndpointMethodTypes["teams"]["updateInOrg"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -12174,7 +12174,7 @@ export type RestEndpointMethods = {
      */
     addEmailForAuthenticated: {
       (
-        params?: RestEndpointMethodTypes["users"]["addEmailForAuthenticated"]["parameters"]
+        params?: RestEndpointMethodTypes["users"]["addEmailForAuthenticated"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["users"]["addEmailForAuthenticated"]["response"]
       >;
@@ -12186,7 +12186,7 @@ export type RestEndpointMethods = {
      */
     addEmailForAuthenticatedUser: {
       (
-        params?: RestEndpointMethodTypes["users"]["addEmailForAuthenticatedUser"]["parameters"]
+        params?: RestEndpointMethodTypes["users"]["addEmailForAuthenticatedUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["users"]["addEmailForAuthenticatedUser"]["response"]
       >;
@@ -12198,7 +12198,7 @@ export type RestEndpointMethods = {
      */
     addSocialAccountForAuthenticatedUser: {
       (
-        params?: RestEndpointMethodTypes["users"]["addSocialAccountForAuthenticatedUser"]["parameters"]
+        params?: RestEndpointMethodTypes["users"]["addSocialAccountForAuthenticatedUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["users"]["addSocialAccountForAuthenticatedUser"]["response"]
       >;
@@ -12208,7 +12208,7 @@ export type RestEndpointMethods = {
 
     block: {
       (
-        params?: RestEndpointMethodTypes["users"]["block"]["parameters"]
+        params?: RestEndpointMethodTypes["users"]["block"]["parameters"],
       ): Promise<RestEndpointMethodTypes["users"]["block"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -12216,7 +12216,7 @@ export type RestEndpointMethods = {
 
     checkBlocked: {
       (
-        params?: RestEndpointMethodTypes["users"]["checkBlocked"]["parameters"]
+        params?: RestEndpointMethodTypes["users"]["checkBlocked"]["parameters"],
       ): Promise<RestEndpointMethodTypes["users"]["checkBlocked"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -12224,7 +12224,7 @@ export type RestEndpointMethods = {
 
     checkFollowingForUser: {
       (
-        params?: RestEndpointMethodTypes["users"]["checkFollowingForUser"]["parameters"]
+        params?: RestEndpointMethodTypes["users"]["checkFollowingForUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["users"]["checkFollowingForUser"]["response"]
       >;
@@ -12234,7 +12234,7 @@ export type RestEndpointMethods = {
 
     checkPersonIsFollowedByAuthenticated: {
       (
-        params?: RestEndpointMethodTypes["users"]["checkPersonIsFollowedByAuthenticated"]["parameters"]
+        params?: RestEndpointMethodTypes["users"]["checkPersonIsFollowedByAuthenticated"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["users"]["checkPersonIsFollowedByAuthenticated"]["response"]
       >;
@@ -12247,7 +12247,7 @@ export type RestEndpointMethods = {
      */
     createGpgKeyForAuthenticated: {
       (
-        params?: RestEndpointMethodTypes["users"]["createGpgKeyForAuthenticated"]["parameters"]
+        params?: RestEndpointMethodTypes["users"]["createGpgKeyForAuthenticated"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["users"]["createGpgKeyForAuthenticated"]["response"]
       >;
@@ -12259,7 +12259,7 @@ export type RestEndpointMethods = {
      */
     createGpgKeyForAuthenticatedUser: {
       (
-        params?: RestEndpointMethodTypes["users"]["createGpgKeyForAuthenticatedUser"]["parameters"]
+        params?: RestEndpointMethodTypes["users"]["createGpgKeyForAuthenticatedUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["users"]["createGpgKeyForAuthenticatedUser"]["response"]
       >;
@@ -12272,7 +12272,7 @@ export type RestEndpointMethods = {
      */
     createPublicSshKeyForAuthenticated: {
       (
-        params?: RestEndpointMethodTypes["users"]["createPublicSshKeyForAuthenticated"]["parameters"]
+        params?: RestEndpointMethodTypes["users"]["createPublicSshKeyForAuthenticated"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["users"]["createPublicSshKeyForAuthenticated"]["response"]
       >;
@@ -12284,7 +12284,7 @@ export type RestEndpointMethods = {
      */
     createPublicSshKeyForAuthenticatedUser: {
       (
-        params?: RestEndpointMethodTypes["users"]["createPublicSshKeyForAuthenticatedUser"]["parameters"]
+        params?: RestEndpointMethodTypes["users"]["createPublicSshKeyForAuthenticatedUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["users"]["createPublicSshKeyForAuthenticatedUser"]["response"]
       >;
@@ -12296,7 +12296,7 @@ export type RestEndpointMethods = {
      */
     createSshSigningKeyForAuthenticatedUser: {
       (
-        params?: RestEndpointMethodTypes["users"]["createSshSigningKeyForAuthenticatedUser"]["parameters"]
+        params?: RestEndpointMethodTypes["users"]["createSshSigningKeyForAuthenticatedUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["users"]["createSshSigningKeyForAuthenticatedUser"]["response"]
       >;
@@ -12309,7 +12309,7 @@ export type RestEndpointMethods = {
      */
     deleteEmailForAuthenticated: {
       (
-        params?: RestEndpointMethodTypes["users"]["deleteEmailForAuthenticated"]["parameters"]
+        params?: RestEndpointMethodTypes["users"]["deleteEmailForAuthenticated"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["users"]["deleteEmailForAuthenticated"]["response"]
       >;
@@ -12321,7 +12321,7 @@ export type RestEndpointMethods = {
      */
     deleteEmailForAuthenticatedUser: {
       (
-        params?: RestEndpointMethodTypes["users"]["deleteEmailForAuthenticatedUser"]["parameters"]
+        params?: RestEndpointMethodTypes["users"]["deleteEmailForAuthenticatedUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["users"]["deleteEmailForAuthenticatedUser"]["response"]
       >;
@@ -12334,7 +12334,7 @@ export type RestEndpointMethods = {
      */
     deleteGpgKeyForAuthenticated: {
       (
-        params?: RestEndpointMethodTypes["users"]["deleteGpgKeyForAuthenticated"]["parameters"]
+        params?: RestEndpointMethodTypes["users"]["deleteGpgKeyForAuthenticated"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["users"]["deleteGpgKeyForAuthenticated"]["response"]
       >;
@@ -12346,7 +12346,7 @@ export type RestEndpointMethods = {
      */
     deleteGpgKeyForAuthenticatedUser: {
       (
-        params?: RestEndpointMethodTypes["users"]["deleteGpgKeyForAuthenticatedUser"]["parameters"]
+        params?: RestEndpointMethodTypes["users"]["deleteGpgKeyForAuthenticatedUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["users"]["deleteGpgKeyForAuthenticatedUser"]["response"]
       >;
@@ -12359,7 +12359,7 @@ export type RestEndpointMethods = {
      */
     deletePublicSshKeyForAuthenticated: {
       (
-        params?: RestEndpointMethodTypes["users"]["deletePublicSshKeyForAuthenticated"]["parameters"]
+        params?: RestEndpointMethodTypes["users"]["deletePublicSshKeyForAuthenticated"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["users"]["deletePublicSshKeyForAuthenticated"]["response"]
       >;
@@ -12371,7 +12371,7 @@ export type RestEndpointMethods = {
      */
     deletePublicSshKeyForAuthenticatedUser: {
       (
-        params?: RestEndpointMethodTypes["users"]["deletePublicSshKeyForAuthenticatedUser"]["parameters"]
+        params?: RestEndpointMethodTypes["users"]["deletePublicSshKeyForAuthenticatedUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["users"]["deletePublicSshKeyForAuthenticatedUser"]["response"]
       >;
@@ -12383,7 +12383,7 @@ export type RestEndpointMethods = {
      */
     deleteSocialAccountForAuthenticatedUser: {
       (
-        params?: RestEndpointMethodTypes["users"]["deleteSocialAccountForAuthenticatedUser"]["parameters"]
+        params?: RestEndpointMethodTypes["users"]["deleteSocialAccountForAuthenticatedUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["users"]["deleteSocialAccountForAuthenticatedUser"]["response"]
       >;
@@ -12395,7 +12395,7 @@ export type RestEndpointMethods = {
      */
     deleteSshSigningKeyForAuthenticatedUser: {
       (
-        params?: RestEndpointMethodTypes["users"]["deleteSshSigningKeyForAuthenticatedUser"]["parameters"]
+        params?: RestEndpointMethodTypes["users"]["deleteSshSigningKeyForAuthenticatedUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["users"]["deleteSshSigningKeyForAuthenticatedUser"]["response"]
       >;
@@ -12409,7 +12409,7 @@ export type RestEndpointMethods = {
      */
     follow: {
       (
-        params?: RestEndpointMethodTypes["users"]["follow"]["parameters"]
+        params?: RestEndpointMethodTypes["users"]["follow"]["parameters"],
       ): Promise<RestEndpointMethodTypes["users"]["follow"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -12421,7 +12421,7 @@ export type RestEndpointMethods = {
      */
     getAuthenticated: {
       (
-        params?: RestEndpointMethodTypes["users"]["getAuthenticated"]["parameters"]
+        params?: RestEndpointMethodTypes["users"]["getAuthenticated"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["users"]["getAuthenticated"]["response"]
       >;
@@ -12439,7 +12439,7 @@ export type RestEndpointMethods = {
      */
     getByUsername: {
       (
-        params?: RestEndpointMethodTypes["users"]["getByUsername"]["parameters"]
+        params?: RestEndpointMethodTypes["users"]["getByUsername"]["parameters"],
       ): Promise<RestEndpointMethodTypes["users"]["getByUsername"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -12456,7 +12456,7 @@ export type RestEndpointMethods = {
      */
     getContextForUser: {
       (
-        params?: RestEndpointMethodTypes["users"]["getContextForUser"]["parameters"]
+        params?: RestEndpointMethodTypes["users"]["getContextForUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["users"]["getContextForUser"]["response"]
       >;
@@ -12469,7 +12469,7 @@ export type RestEndpointMethods = {
      */
     getGpgKeyForAuthenticated: {
       (
-        params?: RestEndpointMethodTypes["users"]["getGpgKeyForAuthenticated"]["parameters"]
+        params?: RestEndpointMethodTypes["users"]["getGpgKeyForAuthenticated"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["users"]["getGpgKeyForAuthenticated"]["response"]
       >;
@@ -12481,7 +12481,7 @@ export type RestEndpointMethods = {
      */
     getGpgKeyForAuthenticatedUser: {
       (
-        params?: RestEndpointMethodTypes["users"]["getGpgKeyForAuthenticatedUser"]["parameters"]
+        params?: RestEndpointMethodTypes["users"]["getGpgKeyForAuthenticatedUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["users"]["getGpgKeyForAuthenticatedUser"]["response"]
       >;
@@ -12494,7 +12494,7 @@ export type RestEndpointMethods = {
      */
     getPublicSshKeyForAuthenticated: {
       (
-        params?: RestEndpointMethodTypes["users"]["getPublicSshKeyForAuthenticated"]["parameters"]
+        params?: RestEndpointMethodTypes["users"]["getPublicSshKeyForAuthenticated"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["users"]["getPublicSshKeyForAuthenticated"]["response"]
       >;
@@ -12506,7 +12506,7 @@ export type RestEndpointMethods = {
      */
     getPublicSshKeyForAuthenticatedUser: {
       (
-        params?: RestEndpointMethodTypes["users"]["getPublicSshKeyForAuthenticatedUser"]["parameters"]
+        params?: RestEndpointMethodTypes["users"]["getPublicSshKeyForAuthenticatedUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["users"]["getPublicSshKeyForAuthenticatedUser"]["response"]
       >;
@@ -12518,7 +12518,7 @@ export type RestEndpointMethods = {
      */
     getSshSigningKeyForAuthenticatedUser: {
       (
-        params?: RestEndpointMethodTypes["users"]["getSshSigningKeyForAuthenticatedUser"]["parameters"]
+        params?: RestEndpointMethodTypes["users"]["getSshSigningKeyForAuthenticatedUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["users"]["getSshSigningKeyForAuthenticatedUser"]["response"]
       >;
@@ -12532,7 +12532,7 @@ export type RestEndpointMethods = {
      */
     list: {
       (
-        params?: RestEndpointMethodTypes["users"]["list"]["parameters"]
+        params?: RestEndpointMethodTypes["users"]["list"]["parameters"],
       ): Promise<RestEndpointMethodTypes["users"]["list"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -12543,7 +12543,7 @@ export type RestEndpointMethods = {
      */
     listBlockedByAuthenticated: {
       (
-        params?: RestEndpointMethodTypes["users"]["listBlockedByAuthenticated"]["parameters"]
+        params?: RestEndpointMethodTypes["users"]["listBlockedByAuthenticated"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["users"]["listBlockedByAuthenticated"]["response"]
       >;
@@ -12555,7 +12555,7 @@ export type RestEndpointMethods = {
      */
     listBlockedByAuthenticatedUser: {
       (
-        params?: RestEndpointMethodTypes["users"]["listBlockedByAuthenticatedUser"]["parameters"]
+        params?: RestEndpointMethodTypes["users"]["listBlockedByAuthenticatedUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["users"]["listBlockedByAuthenticatedUser"]["response"]
       >;
@@ -12568,7 +12568,7 @@ export type RestEndpointMethods = {
      */
     listEmailsForAuthenticated: {
       (
-        params?: RestEndpointMethodTypes["users"]["listEmailsForAuthenticated"]["parameters"]
+        params?: RestEndpointMethodTypes["users"]["listEmailsForAuthenticated"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["users"]["listEmailsForAuthenticated"]["response"]
       >;
@@ -12580,7 +12580,7 @@ export type RestEndpointMethods = {
      */
     listEmailsForAuthenticatedUser: {
       (
-        params?: RestEndpointMethodTypes["users"]["listEmailsForAuthenticatedUser"]["parameters"]
+        params?: RestEndpointMethodTypes["users"]["listEmailsForAuthenticatedUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["users"]["listEmailsForAuthenticatedUser"]["response"]
       >;
@@ -12593,7 +12593,7 @@ export type RestEndpointMethods = {
      */
     listFollowedByAuthenticated: {
       (
-        params?: RestEndpointMethodTypes["users"]["listFollowedByAuthenticated"]["parameters"]
+        params?: RestEndpointMethodTypes["users"]["listFollowedByAuthenticated"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["users"]["listFollowedByAuthenticated"]["response"]
       >;
@@ -12605,7 +12605,7 @@ export type RestEndpointMethods = {
      */
     listFollowedByAuthenticatedUser: {
       (
-        params?: RestEndpointMethodTypes["users"]["listFollowedByAuthenticatedUser"]["parameters"]
+        params?: RestEndpointMethodTypes["users"]["listFollowedByAuthenticatedUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["users"]["listFollowedByAuthenticatedUser"]["response"]
       >;
@@ -12617,7 +12617,7 @@ export type RestEndpointMethods = {
      */
     listFollowersForAuthenticatedUser: {
       (
-        params?: RestEndpointMethodTypes["users"]["listFollowersForAuthenticatedUser"]["parameters"]
+        params?: RestEndpointMethodTypes["users"]["listFollowersForAuthenticatedUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["users"]["listFollowersForAuthenticatedUser"]["response"]
       >;
@@ -12629,7 +12629,7 @@ export type RestEndpointMethods = {
      */
     listFollowersForUser: {
       (
-        params?: RestEndpointMethodTypes["users"]["listFollowersForUser"]["parameters"]
+        params?: RestEndpointMethodTypes["users"]["listFollowersForUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["users"]["listFollowersForUser"]["response"]
       >;
@@ -12641,7 +12641,7 @@ export type RestEndpointMethods = {
      */
     listFollowingForUser: {
       (
-        params?: RestEndpointMethodTypes["users"]["listFollowingForUser"]["parameters"]
+        params?: RestEndpointMethodTypes["users"]["listFollowingForUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["users"]["listFollowingForUser"]["response"]
       >;
@@ -12654,7 +12654,7 @@ export type RestEndpointMethods = {
      */
     listGpgKeysForAuthenticated: {
       (
-        params?: RestEndpointMethodTypes["users"]["listGpgKeysForAuthenticated"]["parameters"]
+        params?: RestEndpointMethodTypes["users"]["listGpgKeysForAuthenticated"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["users"]["listGpgKeysForAuthenticated"]["response"]
       >;
@@ -12666,7 +12666,7 @@ export type RestEndpointMethods = {
      */
     listGpgKeysForAuthenticatedUser: {
       (
-        params?: RestEndpointMethodTypes["users"]["listGpgKeysForAuthenticatedUser"]["parameters"]
+        params?: RestEndpointMethodTypes["users"]["listGpgKeysForAuthenticatedUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["users"]["listGpgKeysForAuthenticatedUser"]["response"]
       >;
@@ -12678,7 +12678,7 @@ export type RestEndpointMethods = {
      */
     listGpgKeysForUser: {
       (
-        params?: RestEndpointMethodTypes["users"]["listGpgKeysForUser"]["parameters"]
+        params?: RestEndpointMethodTypes["users"]["listGpgKeysForUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["users"]["listGpgKeysForUser"]["response"]
       >;
@@ -12691,7 +12691,7 @@ export type RestEndpointMethods = {
      */
     listPublicEmailsForAuthenticated: {
       (
-        params?: RestEndpointMethodTypes["users"]["listPublicEmailsForAuthenticated"]["parameters"]
+        params?: RestEndpointMethodTypes["users"]["listPublicEmailsForAuthenticated"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["users"]["listPublicEmailsForAuthenticated"]["response"]
       >;
@@ -12703,7 +12703,7 @@ export type RestEndpointMethods = {
      */
     listPublicEmailsForAuthenticatedUser: {
       (
-        params?: RestEndpointMethodTypes["users"]["listPublicEmailsForAuthenticatedUser"]["parameters"]
+        params?: RestEndpointMethodTypes["users"]["listPublicEmailsForAuthenticatedUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["users"]["listPublicEmailsForAuthenticatedUser"]["response"]
       >;
@@ -12715,7 +12715,7 @@ export type RestEndpointMethods = {
      */
     listPublicKeysForUser: {
       (
-        params?: RestEndpointMethodTypes["users"]["listPublicKeysForUser"]["parameters"]
+        params?: RestEndpointMethodTypes["users"]["listPublicKeysForUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["users"]["listPublicKeysForUser"]["response"]
       >;
@@ -12728,7 +12728,7 @@ export type RestEndpointMethods = {
      */
     listPublicSshKeysForAuthenticated: {
       (
-        params?: RestEndpointMethodTypes["users"]["listPublicSshKeysForAuthenticated"]["parameters"]
+        params?: RestEndpointMethodTypes["users"]["listPublicSshKeysForAuthenticated"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["users"]["listPublicSshKeysForAuthenticated"]["response"]
       >;
@@ -12740,7 +12740,7 @@ export type RestEndpointMethods = {
      */
     listPublicSshKeysForAuthenticatedUser: {
       (
-        params?: RestEndpointMethodTypes["users"]["listPublicSshKeysForAuthenticatedUser"]["parameters"]
+        params?: RestEndpointMethodTypes["users"]["listPublicSshKeysForAuthenticatedUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["users"]["listPublicSshKeysForAuthenticatedUser"]["response"]
       >;
@@ -12752,7 +12752,7 @@ export type RestEndpointMethods = {
      */
     listSocialAccountsForAuthenticatedUser: {
       (
-        params?: RestEndpointMethodTypes["users"]["listSocialAccountsForAuthenticatedUser"]["parameters"]
+        params?: RestEndpointMethodTypes["users"]["listSocialAccountsForAuthenticatedUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["users"]["listSocialAccountsForAuthenticatedUser"]["response"]
       >;
@@ -12764,7 +12764,7 @@ export type RestEndpointMethods = {
      */
     listSocialAccountsForUser: {
       (
-        params?: RestEndpointMethodTypes["users"]["listSocialAccountsForUser"]["parameters"]
+        params?: RestEndpointMethodTypes["users"]["listSocialAccountsForUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["users"]["listSocialAccountsForUser"]["response"]
       >;
@@ -12776,7 +12776,7 @@ export type RestEndpointMethods = {
      */
     listSshSigningKeysForAuthenticatedUser: {
       (
-        params?: RestEndpointMethodTypes["users"]["listSshSigningKeysForAuthenticatedUser"]["parameters"]
+        params?: RestEndpointMethodTypes["users"]["listSshSigningKeysForAuthenticatedUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["users"]["listSshSigningKeysForAuthenticatedUser"]["response"]
       >;
@@ -12788,7 +12788,7 @@ export type RestEndpointMethods = {
      */
     listSshSigningKeysForUser: {
       (
-        params?: RestEndpointMethodTypes["users"]["listSshSigningKeysForUser"]["parameters"]
+        params?: RestEndpointMethodTypes["users"]["listSshSigningKeysForUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["users"]["listSshSigningKeysForUser"]["response"]
       >;
@@ -12801,7 +12801,7 @@ export type RestEndpointMethods = {
      */
     setPrimaryEmailVisibilityForAuthenticated: {
       (
-        params?: RestEndpointMethodTypes["users"]["setPrimaryEmailVisibilityForAuthenticated"]["parameters"]
+        params?: RestEndpointMethodTypes["users"]["setPrimaryEmailVisibilityForAuthenticated"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["users"]["setPrimaryEmailVisibilityForAuthenticated"]["response"]
       >;
@@ -12813,7 +12813,7 @@ export type RestEndpointMethods = {
      */
     setPrimaryEmailVisibilityForAuthenticatedUser: {
       (
-        params?: RestEndpointMethodTypes["users"]["setPrimaryEmailVisibilityForAuthenticatedUser"]["parameters"]
+        params?: RestEndpointMethodTypes["users"]["setPrimaryEmailVisibilityForAuthenticatedUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["users"]["setPrimaryEmailVisibilityForAuthenticatedUser"]["response"]
       >;
@@ -12823,7 +12823,7 @@ export type RestEndpointMethods = {
 
     unblock: {
       (
-        params?: RestEndpointMethodTypes["users"]["unblock"]["parameters"]
+        params?: RestEndpointMethodTypes["users"]["unblock"]["parameters"],
       ): Promise<RestEndpointMethodTypes["users"]["unblock"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -12833,7 +12833,7 @@ export type RestEndpointMethods = {
      */
     unfollow: {
       (
-        params?: RestEndpointMethodTypes["users"]["unfollow"]["parameters"]
+        params?: RestEndpointMethodTypes["users"]["unfollow"]["parameters"],
       ): Promise<RestEndpointMethodTypes["users"]["unfollow"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -12843,7 +12843,7 @@ export type RestEndpointMethods = {
      */
     updateAuthenticated: {
       (
-        params?: RestEndpointMethodTypes["users"]["updateAuthenticated"]["parameters"]
+        params?: RestEndpointMethodTypes["users"]["updateAuthenticated"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["users"]["updateAuthenticated"]["response"]
       >;
