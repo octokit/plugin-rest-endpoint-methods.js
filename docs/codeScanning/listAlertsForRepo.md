@@ -84,7 +84,7 @@ The property by which to sort the results. `number` is deprecated - we recommend
 </td></tr>
 <tr><td>state</td><td>no</td><td>
 
-Set to `open`, `closed, `fixed`, or `dismissed` to list code scanning alerts in a specific state.
+Set to `open`, `closed`, `fixed`, or `dismissed` to list code scanning alerts in a specific state.
 
 </td></tr>
   </tbody>
