@@ -42,4 +42,4 @@ The OAuth access token used to authenticate to the GitHub API.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/apps#delete-an-app-authorization).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/apps/oauth-applications#delete-an-app-authorization).

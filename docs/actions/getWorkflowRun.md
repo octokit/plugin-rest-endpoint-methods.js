@@ -52,4 +52,4 @@ If `true` pull requests are omitted from the response (empty array).
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/actions#get-a-workflow-run).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/actions/workflow-runs#get-a-workflow-run).

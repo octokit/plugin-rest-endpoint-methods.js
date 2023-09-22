@@ -71,4 +71,4 @@ An optional comment associated with dismissing the alert.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/dependabot#update-a-dependabot-alert).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/dependabot/alerts#update-a-dependabot-alert).

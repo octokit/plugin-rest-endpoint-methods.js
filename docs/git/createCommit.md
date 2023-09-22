@@ -8,7 +8,7 @@ type: API method
 
 # Create a commit
 
-Creates a new Git [commit object](https://git-scm.com/book/en/v1/Git-Internals-Git-Objects#Commit-Objects).
+Creates a new Git [commit object](https://git-scm.com/book/en/v2/Git-Internals-Git-Objects).
 
 **Signature verification object**
 
@@ -134,4 +134,4 @@ The [PGP signature](https://en.wikipedia.org/wiki/Pretty_Good_Privacy) of the co
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/git#create-a-commit).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/git/commits#create-a-commit).

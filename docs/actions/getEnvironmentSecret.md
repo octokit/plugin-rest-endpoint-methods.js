@@ -8,7 +8,11 @@ type: API method
 
 # Get an environment secret
 
-Gets a single environment secret without revealing its encrypted value. You must authenticate using an access token with the `repo` scope to use this endpoint. GitHub Apps must have the `secrets` repository permission to use this endpoint.
+Gets a single environment secret without revealing its encrypted value.
+
+You must authenticate using an access token with the `repo` scope to use this endpoint.
+GitHub Apps must have the `secrets` repository permission to use this endpoint.
+Authenticated users must have collaborator access to a repository to create, update, or read secrets.
 
 ```js
 octokit.rest.actions.getEnvironmentSecret({
@@ -47,4 +51,4 @@ The name of the secret.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/actions#get-an-environment-secret).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/actions/secrets#get-an-environment-secret).

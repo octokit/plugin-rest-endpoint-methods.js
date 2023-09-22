@@ -35,4 +35,4 @@ The unique identifier of the gist.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/gists#star-a-gist).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/gists/gists#star-a-gist).

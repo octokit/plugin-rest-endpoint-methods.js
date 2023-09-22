@@ -1,7 +1,7 @@
 ---
 name: List repositories requested to be accessed by a fine-grained personal access token
 example: octokit.rest.orgs.listPatGrantRequestRepositories({ org, pat_request_id })
-route: GET /organizations/{org}/personal-access-token-requests/{pat_request_id}/repositories
+route: GET /orgs/{org}/personal-access-token-requests/{pat_request_id}/repositories
 scope: orgs
 type: API method
 ---
@@ -54,4 +54,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/orgs/orgs#list-repositories-requested-to-be-accessed-by-a-fine-grained-personal-access-token).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/orgs/personal-access-tokens#list-repositories-requested-to-be-accessed-by-a-fine-grained-personal-access-token).

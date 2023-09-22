@@ -39,4 +39,4 @@ The organization name. The name is not case sensitive.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/actions#get-default-workflow-permissions).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/actions/permissions#get-default-workflow-permissions-for-an-organization).

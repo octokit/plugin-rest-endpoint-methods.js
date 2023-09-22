@@ -41,4 +41,4 @@ The handle for the GitHub user account.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/orgs#check-public-organization-membership-for-a-user).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/orgs/members#check-public-organization-membership-for-a-user).

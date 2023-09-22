@@ -1,14 +1,16 @@
 ---
-name: Get a commit
+name: Get a commit object
 example: octokit.rest.git.getCommit({ owner, repo, commit_sha })
 route: GET /repos/{owner}/{repo}/git/commits/{commit_sha}
 scope: git
 type: API method
 ---
 
-# Get a commit
+# Get a commit object
 
-Gets a Git [commit object](https://git-scm.com/book/en/v1/Git-Internals-Git-Objects#Commit-Objects).
+Gets a Git [commit object](https://git-scm.com/book/en/v2/Git-Internals-Git-Objects).
+
+To get the contents of a commit, see "[Get a commit](/rest/commits/commits#get-a-commit)."
 
 **Signature verification object**
 
@@ -76,4 +78,4 @@ The SHA of the commit.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/git#get-a-commit).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/git/commits#get-a-commit-object).

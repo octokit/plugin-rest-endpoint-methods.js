@@ -53,4 +53,4 @@ The unique identifier of the review.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/pulls#delete-a-pending-review-for-a-pull-request).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/pulls/reviews#delete-a-pending-review-for-a-pull-request).

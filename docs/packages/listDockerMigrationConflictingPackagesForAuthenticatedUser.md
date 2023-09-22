@@ -19,4 +19,4 @@ octokit.rest.packages.listDockerMigrationConflictingPackagesForAuthenticatedUser
 
 This endpoint has no parameters
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/packages#list-docker-migration-conflicting-packages-for-authenticated-user).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/packages/packages#get-list-of-conflicting-packages-during-docker-migration-for-authenticated-user).

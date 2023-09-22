@@ -49,4 +49,4 @@ The number that identifies the discussion.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/teams#delete-a-discussion).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/teams/discussions#delete-a-discussion).

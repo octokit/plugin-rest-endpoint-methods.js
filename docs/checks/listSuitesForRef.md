@@ -10,7 +10,7 @@ type: API method
 
 **Note:** The Checks API only looks for pushes in the repository where the check suite or check run were created. Pushes to a branch in a forked repository are not detected and return an empty `pull_requests` array and a `null` value for `head_branch`.
 
-Lists check suites for a commit `ref`. The `ref` can be a SHA, branch name, or a tag name. GitHub Apps must have the `checks:read` permission on a private repository or pull access to a public repository to list check suites. OAuth Apps and authenticated users must have the `repo` scope to get check suites in a private repository.
+Lists check suites for a commit `ref`. The `ref` can be a SHA, branch name, or a tag name. GitHub Apps must have the `checks:read` permission on a private repository or pull access to a public repository to list check suites. OAuth apps and authenticated users must have the `repo` scope to get check suites in a private repository.
 
 ```js
 octokit.rest.checks.listSuitesForRef({
@@ -43,7 +43,7 @@ The name of the repository without the `.git` extension. The name is not case se
 </td></tr>
 <tr><td>ref</td><td>yes</td><td>
 
-ref parameter
+The commit reference. Can be a commit SHA, branch name (`heads/BRANCH_NAME`), or tag name (`tags/TAG_NAME`). For more information, see "[Git References](https://git-scm.com/book/en/v2/Git-Internals-Git-References)" in the Git documentation.
 
 </td></tr>
 <tr><td>app_id</td><td>no</td><td>
@@ -69,4 +69,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/checks#list-check-suites-for-a-git-reference).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/checks/suites#list-check-suites-for-a-git-reference).

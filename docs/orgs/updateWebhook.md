@@ -8,7 +8,7 @@ type: API method
 
 # Update an organization webhook
 
-Updates a webhook configured in an organization. When you update a webhook, the `secret` will be overwritten. If you previously had a `secret` set, you must provide the same `secret` or set a new `secret` or the secret will be removed. If you are only updating individual webhook `config` properties, use "[Update a webhook configuration for an organization](/rest/reference/orgs#update-a-webhook-configuration-for-an-organization)."
+Updates a webhook configured in an organization. When you update a webhook, the `secret` will be overwritten. If you previously had a `secret` set, you must provide the same `secret` or set a new `secret` or the secret will be removed. If you are only updating individual webhook `config` properties, use "[Update a webhook configuration for an organization](/rest/orgs/webhooks#update-a-webhook-configuration-for-an-organization)."
 
 ```js
 octokit.rest.orgs.updateWebhook({
@@ -41,7 +41,7 @@ The unique identifier of the hook.
 </td></tr>
 <tr><td>config</td><td>no</td><td>
 
-Key/value pairs to provide settings for this webhook. [These are defined below](https://docs.github.com/rest/reference/orgs#update-hook-config-params).
+Key/value pairs to provide settings for this webhook.
 
 </td></tr>
 <tr><td>config.url</td><td>yes</td><td>
@@ -78,4 +78,4 @@ Determines if notifications are sent when the webhook is triggered. Set to `true
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/orgs#update-an-organization-webhook).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/orgs/webhooks#update-an-organization-webhook).

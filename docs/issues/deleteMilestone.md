@@ -47,4 +47,4 @@ The number that identifies the milestone.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/issues#delete-a-milestone).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/issues/milestones#delete-a-milestone).

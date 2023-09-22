@@ -49,4 +49,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/deploy-keys#list-deploy-keys).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/deploy-keys/deploy-keys#list-deploy-keys).

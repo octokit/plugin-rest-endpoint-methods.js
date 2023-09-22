@@ -45,4 +45,4 @@ The slug of the team name.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/orgs#remove-a-security-manager-team).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/orgs/security-managers#remove-a-security-manager-team).

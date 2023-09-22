@@ -47,4 +47,4 @@ The ID of the ruleset.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/repos/rules#delete-repository-ruleset).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/repos/rules#delete-a-repository-ruleset).

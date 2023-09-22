@@ -33,4 +33,4 @@ The unique identifier of the gist.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/gists#fork-a-gist).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/gists/gists#fork-a-gist).

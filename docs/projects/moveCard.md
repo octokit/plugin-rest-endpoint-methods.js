@@ -44,4 +44,4 @@ The unique identifier of the column the card should be moved to
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/projects#move-a-project-card).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/projects/cards#move-a-project-card).

@@ -40,7 +40,7 @@ The name of the repository without the `.git` extension. The name is not case se
 </td></tr>
 <tr><td>ref</td><td>yes</td><td>
 
-The name of the fully qualified reference to update. For example, `refs/heads/master`. If the value doesn't start with `refs` and have at least two slashes, it will be rejected.
+The name of the reference to update (for example, `heads/featureA`). Can be a branch name (`heads/BRANCH_NAME`) or tag name (`tags/TAG_NAME`). For more information, see "[Git References](https://git-scm.com/book/en/v2/Git-Internals-Git-References)" in the Git documentation.
 
 </td></tr>
 <tr><td>sha</td><td>yes</td><td>
@@ -56,4 +56,4 @@ Indicates whether to force the update or to make sure the update is a fast-forwa
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/git#update-a-reference).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/git/refs#update-a-reference).

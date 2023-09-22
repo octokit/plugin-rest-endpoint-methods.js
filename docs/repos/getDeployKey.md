@@ -45,4 +45,4 @@ The unique identifier of the key.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/deploy-keys#get-a-deploy-key).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/deploy-keys/deploy-keys#get-a-deploy-key).

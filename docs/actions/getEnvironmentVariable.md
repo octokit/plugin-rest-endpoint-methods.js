@@ -8,7 +8,12 @@ type: API method
 
 # Get an environment variable
 
-Gets a specific variable in an environment. You must authenticate using an access token with the `repo` scope to use this endpoint. GitHub Apps must have the `environments:read` repository permission to use this endpoint.
+Gets a specific variable in an environment.
+
+You must authenticate using an access token with the `repo` scope to use this endpoint.
+If the repository is private, you must use an access token with the `repo` scope.
+GitHub Apps must have the `environments:read` repository permission to use this endpoint.
+Authenticated users must have collaborator access to a repository to create, update, or read variables.
 
 ```js
 octokit.rest.actions.getEnvironmentVariable({

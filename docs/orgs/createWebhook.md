@@ -42,7 +42,7 @@ Must be passed as "web".
 </td></tr>
 <tr><td>config</td><td>yes</td><td>
 
-Key/value pairs to provide settings for this webhook. [These are defined below](https://docs.github.com/rest/reference/orgs#create-hook-config-params).
+Key/value pairs to provide settings for this webhook.
 
 </td></tr>
 <tr><td>config.url</td><td>yes</td><td>
@@ -82,4 +82,4 @@ Determines if notifications are sent when the webhook is triggered. Set to `true
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/orgs#create-an-organization-webhook).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/orgs/webhooks#create-an-organization-webhook).

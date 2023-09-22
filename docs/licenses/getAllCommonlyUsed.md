@@ -8,6 +8,8 @@ type: API method
 
 # Get all commonly used licenses
 
+Lists the most commonly used licenses on GitHub. For more information, see "[Licensing a repository ](https://docs.github.com/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/licensing-a-repository)."
+
 ```js
 octokit.rest.licenses.getAllCommonlyUsed();
 ```
@@ -39,4 +41,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/licenses#get-all-commonly-used-licenses).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/licenses/licenses#get-all-commonly-used-licenses).

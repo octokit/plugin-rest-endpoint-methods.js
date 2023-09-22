@@ -54,4 +54,4 @@ The permission to grant to the team for this project. Default: the team's `permi
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/teams#add-or-update-team-project-permissions).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/teams/teams#add-or-update-team-project-permissions).

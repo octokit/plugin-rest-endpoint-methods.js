@@ -8,6 +8,8 @@ type: API method
 
 # Block a user
 
+Blocks the given user and returns a 204. If the authenticated user cannot block the given user a 422 is returned.
+
 ```js
 octokit.rest.users.block({
   username,
@@ -33,4 +35,4 @@ The handle for the GitHub user account.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/users#block-a-user).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/users/blocking#block-a-user).

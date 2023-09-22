@@ -41,4 +41,4 @@ The handle for the GitHub user account.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/orgs#remove-public-organization-membership-for-the-authenticated-user).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/orgs/members#remove-public-organization-membership-for-the-authenticated-user).

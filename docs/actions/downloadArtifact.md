@@ -9,8 +9,9 @@ type: API method
 # Download an artifact
 
 Gets a redirect URL to download an archive for a repository. This URL expires after 1 minute. Look for `Location:` in
-the response header to find the URL for the download. The `:archive_format` must be `zip`. Anyone with read access to
-the repository can use this endpoint. If the repository is private you must use an access token with the `repo` scope.
+the response header to find the URL for the download. The `:archive_format` must be `zip`.
+
+You must authenticate using an access token with the `repo` scope to use this endpoint.
 GitHub Apps must have the `actions:read` permission to use this endpoint.
 
 ```js
@@ -54,4 +55,4 @@ The unique identifier of the artifact.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/actions#download-an-artifact).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/actions/artifacts#download-an-artifact).

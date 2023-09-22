@@ -79,4 +79,4 @@ Only show repositories updated before the given time. This is a timestamp in [IS
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#list-repositories-for-the-authenticated-user).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/repos/repos#list-repositories-for-the-authenticated-user).

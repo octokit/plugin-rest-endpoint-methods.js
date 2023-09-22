@@ -43,4 +43,4 @@ Used for pagination: the starting delivery from which the page of deliveries is 
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/apps#list-deliveries-for-an-app-webhook).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/apps/webhooks#list-deliveries-for-an-app-webhook).

@@ -67,4 +67,4 @@ An optional comment when closing an alert. Cannot be updated or deleted. Must be
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/secret-scanning#update-a-secret-scanning-alert).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/secret-scanning/secret-scanning#update-a-secret-scanning-alert).

@@ -137,6 +137,16 @@ The CVSS vector that calculates the severity of the advisory. You must choose be
 The state of the advisory.
 
 </td></tr>
+<tr><td>collaborating_users</td><td>no</td><td>
+
+A list of usernames who have been granted write access to the advisory.
+
+</td></tr>
+<tr><td>collaborating_teams</td><td>no</td><td>
+
+A list of team slugs which have been granted write access to the advisory.
+
+</td></tr>
   </tbody>
 </table>
 

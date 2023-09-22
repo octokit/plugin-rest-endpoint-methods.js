@@ -50,10 +50,10 @@ Page number of the results to fetch.
 </td></tr>
 <tr><td>name</td><td>no</td><td>
 
-Filters artifacts by exact match on their name field.
+The name field of an artifact. When specified, only artifacts with this name will be returned.
 
 </td></tr>
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/actions#list-artifacts-for-a-repository).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/actions/artifacts#list-artifacts-for-a-repository).

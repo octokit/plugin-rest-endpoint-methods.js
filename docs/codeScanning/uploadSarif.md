@@ -8,7 +8,7 @@ type: API method
 
 # Upload an analysis as SARIF data
 
-Uploads SARIF data containing the results of a code scanning analysis to make the results available in a repository. You must use an access token with the `security_events` scope to use this endpoint for private repositories. You can also use tokens with the `public_repo` scope for public repositories only. GitHub Apps must have the `security_events` write permission to use this endpoint.
+Uploads SARIF data containing the results of a code scanning analysis to make the results available in a repository. You must use an access token with the `security_events` scope to use this endpoint for private repositories. You can also use tokens with the `public_repo` scope for public repositories only. GitHub Apps must have the `security_events` write permission to use this endpoint. For troubleshooting information, see "[Troubleshooting SARIF uploads](https://docs.github.com/code-security/code-scanning/troubleshooting-sarif)."
 
 There are two places where you can upload code scanning results.
 
@@ -23,7 +23,7 @@ gzip -c analysis-data.sarif | base64 -w0
 
 <br>
 SARIF upload supports a maximum number of entries per the following data objects, and an analysis will be rejected if any of these objects is above its maximum value. For some objects, there are additional values over which the entries will be ignored while keeping the most important entries whenever applicable.
-To get the most out of your analysis when it includes data above the supported limits, try to optimize the analysis configuration. For example, for the CodeQL tool, identify and remove the most noisy queries.
+To get the most out of your analysis when it includes data above the supported limits, try to optimize the analysis configuration. For example, for the CodeQL tool, identify and remove the most noisy queries. For more information, see "[SARIF results exceed one or more limits](https://docs.github.com/code-security/code-scanning/troubleshooting-sarif/results-exceed-limit)."
 
 | **SARIF data**                   | **Maximum values** | **Additional limits**                                                            |
 | -------------------------------- | :----------------: | -------------------------------------------------------------------------------- |
@@ -37,7 +37,7 @@ To get the most out of your analysis when it includes data above the supported l
 
 The `202 Accepted` response includes an `id` value.
 You can use this ID to check the status of the upload by using it in the `/sarifs/{sarif_id}` endpoint.
-For more information, see "[Get information about a SARIF upload](/rest/reference/code-scanning#get-information-about-a-sarif-upload)."
+For more information, see "[Get information about a SARIF upload](/rest/code-scanning/code-scanning#get-information-about-a-sarif-upload)."
 
 ```js
 octokit.rest.codeScanning.uploadSarif({
@@ -111,4 +111,4 @@ This parameter is intended to help integrators ensure that the uploaded SARIF fi
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/code-scanning#upload-an-analysis-as-sarif-data).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/code-scanning/code-scanning#upload-an-analysis-as-sarif-data).

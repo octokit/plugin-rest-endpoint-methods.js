@@ -35,4 +35,4 @@ The unique identifier of the key.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/users#delete-a-public-ssh-key-for-the-authenticated-user).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/users/keys#delete-a-public-ssh-key-for-the-authenticated-user).

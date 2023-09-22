@@ -64,4 +64,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/teams#list-discussion-comments).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/teams/discussion-comments#list-discussion-comments).

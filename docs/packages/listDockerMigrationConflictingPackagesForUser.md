@@ -36,4 +36,4 @@ The handle for the GitHub user account.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/packages#list-docker-migration-conflicting-packages-for-user).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/packages/packages#get-list-of-conflicting-packages-during-docker-migration-for-user).

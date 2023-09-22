@@ -8,7 +8,13 @@ type: API method
 
 # Get a repository public key
 
-Gets your public key, which you need to encrypt secrets. You need to encrypt a secret before you can create or update secrets. Anyone with read access to the repository can use this endpoint. If the repository is private you must use an access token with the `repo` scope. GitHub Apps must have the `secrets` repository permission to use this endpoint.
+Gets your public key, which you need to encrypt secrets. You need to
+encrypt a secret before you can create or update secrets.
+
+Anyone with read access to the repository can use this endpoint.
+If the repository is private you must use an access token with the `repo` scope.
+GitHub Apps must have the `secrets` repository permission to use this endpoint.
+Authenticated users must have collaborator access to a repository to create, update, or read secrets.
 
 ```js
 octokit.rest.actions.getRepoPublicKey({
@@ -41,4 +47,4 @@ The name of the repository without the `.git` extension. The name is not case se
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/actions#get-a-repository-public-key).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/actions/secrets#get-a-repository-public-key).

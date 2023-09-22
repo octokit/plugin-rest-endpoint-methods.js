@@ -55,4 +55,4 @@ The unique identifier of the branch policy.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/deployments/branch-policies#delete-deployment-branch-policy).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/deployments/branch-policies#delete-a-deployment-branch-policy).

@@ -39,4 +39,4 @@ The name of the secret.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/codespaces#list-selected-repositories-for-a-user-secret).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/codespaces/secrets#list-selected-repositories-for-a-user-secret).

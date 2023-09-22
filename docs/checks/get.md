@@ -10,7 +10,7 @@ type: API method
 
 **Note:** The Checks API only looks for pushes in the repository where the check suite or check run were created. Pushes to a branch in a forked repository are not detected and return an empty `pull_requests` array.
 
-Gets a single check run using its `id`. GitHub Apps must have the `checks:read` permission on a private repository or pull access to a public repository to get check runs. OAuth Apps and authenticated users must have the `repo` scope to get check runs in a private repository.
+Gets a single check run using its `id`. GitHub Apps must have the `checks:read` permission on a private repository or pull access to a public repository to get check runs. OAuth apps and authenticated users must have the `repo` scope to get check runs in a private repository.
 
 ```js
 octokit.rest.checks.get({
@@ -49,4 +49,4 @@ The unique identifier of the check run.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/checks#get-a-check-run).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/checks/runs#get-a-check-run).

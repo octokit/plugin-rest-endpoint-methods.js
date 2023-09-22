@@ -57,4 +57,4 @@ The discussion comment's body text.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/teams#create-a-discussion-comment).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/teams/discussion-comments#create-a-discussion-comment).

@@ -59,4 +59,4 @@ The discussion post's body text.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/teams#update-a-discussion).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/teams/discussions#update-a-discussion).

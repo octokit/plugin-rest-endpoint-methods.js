@@ -62,4 +62,4 @@ The permission to grant the team on this repository. We accept the following per
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/teams/#add-or-update-team-repository-permissions).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/teams/teams#add-or-update-team-repository-permissions).

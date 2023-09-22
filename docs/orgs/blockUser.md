@@ -8,6 +8,8 @@ type: API method
 
 # Block a user from an organization
 
+Blocks the given user on behalf of the specified organization and returns a 204. If the organization cannot block the given user a 422 is returned.
+
 ```js
 octokit.rest.orgs.blockUser({
   org,
@@ -39,4 +41,4 @@ The handle for the GitHub user account.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/orgs#block-a-user-from-an-organization).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/orgs/blocking#block-a-user-from-an-organization).

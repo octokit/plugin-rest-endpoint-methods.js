@@ -35,4 +35,4 @@ The unique identifier of the card.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/projects#delete-a-project-card).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/projects/cards#delete-a-project-card).

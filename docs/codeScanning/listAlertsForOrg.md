@@ -91,4 +91,4 @@ If specified, only code scanning alerts with this severity will be returned.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/code-scanning#list-code-scanning-alerts-for-an-organization).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/code-scanning/code-scanning#list-code-scanning-alerts-for-an-organization).

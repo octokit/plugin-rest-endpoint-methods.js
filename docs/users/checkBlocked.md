@@ -8,6 +8,8 @@ type: API method
 
 # Check if a user is blocked by the authenticated user
 
+Returns a 204 if the given user is blocked by the authenticated user. Returns a 404 if the given user is not blocked by the authenticated user, or if the given user account has been identified as spam by GitHub.
+
 ```js
 octokit.rest.users.checkBlocked({
   username,
@@ -33,4 +35,4 @@ The handle for the GitHub user account.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/users#check-if-a-user-is-blocked-by-the-authenticated-user).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/users/blocking#check-if-a-user-is-blocked-by-the-authenticated-user).

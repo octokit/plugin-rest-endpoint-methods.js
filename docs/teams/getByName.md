@@ -43,4 +43,4 @@ The slug of the team name.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/teams#get-a-team-by-name).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/teams/teams#get-a-team-by-name).

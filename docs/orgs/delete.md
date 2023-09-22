@@ -41,4 +41,4 @@ The organization name. The name is not case sensitive.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/orgs/orgs/#delete-an-organization).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/orgs/orgs#delete-an-organization).

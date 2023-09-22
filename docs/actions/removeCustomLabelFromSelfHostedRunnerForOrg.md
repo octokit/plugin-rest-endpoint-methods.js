@@ -15,6 +15,9 @@ This endpoint returns a `404 Not Found` status if the custom label is not
 present on the runner.
 
 You must authenticate using an access token with the `admin:org` scope to use this endpoint.
+If the repository is private, you must use an access token with the `repo` scope.
+GitHub Apps must have the `administration` permission for repositories and the `organization_self_hosted_runners` permission for organizations.
+Authenticated users must have admin access to repositories or organizations, or the `manage_runners:enterprise` scope for enterprises, to use these endpoints.
 
 ```js
 octokit.rest.actions.removeCustomLabelFromSelfHostedRunnerForOrg({
@@ -53,4 +56,4 @@ The name of a self-hosted runner's custom label.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/actions#remove-a-custom-label-from-a-self-hosted-runner-for-an-organization).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/actions/self-hosted-runners#remove-a-custom-label-from-a-self-hosted-runner-for-an-organization).

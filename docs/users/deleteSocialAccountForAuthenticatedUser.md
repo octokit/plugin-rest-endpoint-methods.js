@@ -35,4 +35,4 @@ Full URLs for the social media profiles to delete.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/users/social-accounts#delete-social-account-for-authenticated-user).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/users/social-accounts#delete-social-accounts-for-the-authenticated-user).

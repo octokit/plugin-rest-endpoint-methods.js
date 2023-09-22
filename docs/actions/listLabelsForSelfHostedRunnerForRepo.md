@@ -10,8 +10,10 @@ type: API method
 
 Lists all labels for a self-hosted runner configured in a repository.
 
-You must authenticate using an access token with the `repo` scope to use this
-endpoint.
+You must authenticate using an access token with the `repo` scope to use this endpoint.
+If the repository is private, you must use an access token with the `repo` scope.
+GitHub Apps must have the `administration` permission for repositories and the `organization_self_hosted_runners` permission for organizations.
+Authenticated users must have admin access to repositories or organizations, or the `manage_runners:enterprise` scope for enterprises, to use these endpoints.
 
 ```js
 octokit.rest.actions.listLabelsForSelfHostedRunnerForRepo({
@@ -50,4 +52,4 @@ Unique identifier of the self-hosted runner.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/actions#list-labels-for-a-self-hosted-runner-for-a-repository).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/actions/self-hosted-runners#list-labels-for-a-self-hosted-runner-for-a-repository).

@@ -51,7 +51,12 @@ Whether code scanning default setup has been configured or not.
 CodeQL query suite to be used.
 
 </td></tr>
+<tr><td>languages</td><td>no</td><td>
+
+CodeQL languages to be analyzed. Supported values are: `c-cpp`, `csharp`, `go`, `java-kotlin`, `javascript-typescript`, `python`, `ruby`, and `swift`.
+
+</td></tr>
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/code-scanning#update-a-code-scanning-default-setup-configuration).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/code-scanning/code-scanning#update-a-code-scanning-default-setup-configuration).

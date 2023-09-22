@@ -41,4 +41,4 @@ The ID of the ruleset.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/repos/rules#get-organization-ruleset).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/orgs/rules#get-an-organization-repository-ruleset).

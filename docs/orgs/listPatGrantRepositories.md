@@ -1,7 +1,7 @@
 ---
 name: List repositories a fine-grained personal access token has access to
 example: octokit.rest.orgs.listPatGrantRepositories({ org, pat_id })
-route: GET /organizations/{org}/personal-access-tokens/{pat_id}/repositories
+route: GET /orgs/{org}/personal-access-tokens/{pat_id}/repositories
 scope: orgs
 type: API method
 ---
@@ -54,4 +54,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/orgs/orgs#list-repositories-a-fine-grained-personal-access-token-has-access-to).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/orgs/personal-access-tokens#list-repositories-a-fine-grained-personal-access-token-has-access-to).

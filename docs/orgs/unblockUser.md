@@ -8,6 +8,8 @@ type: API method
 
 # Unblock a user from an organization
 
+Unblocks the given user on behalf of the specified organization.
+
 ```js
 octokit.rest.orgs.unblockUser({
   org,
@@ -39,4 +41,4 @@ The handle for the GitHub user account.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/orgs#unblock-a-user-from-an-organization).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/orgs/blocking#unblock-a-user-from-an-organization).

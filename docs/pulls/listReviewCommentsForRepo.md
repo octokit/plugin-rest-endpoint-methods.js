@@ -48,7 +48,7 @@ The direction to sort results. Ignored without `sort` parameter.
 </td></tr>
 <tr><td>since</td><td>no</td><td>
 
-Only show notifications updated after the given time. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.
+Only show results that were last updated after the given time. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.
 
 </td></tr>
 <tr><td>per_page</td><td>no</td><td>
@@ -64,4 +64,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/pulls#list-review-comments-in-a-repository).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/pulls/comments#list-review-comments-in-a-repository).

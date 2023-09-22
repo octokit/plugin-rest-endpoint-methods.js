@@ -8,7 +8,13 @@ type: API method
 
 # Add selected repository to an organization variable
 
-Adds a repository to an organization variable that is available to selected repositories. Organization variables that are available to selected repositories have their `visibility` field set to `selected`. You must authenticate using an access token with the `admin:org` scope to use this endpoint. GitHub Apps must have the `organization_actions_variables:write` organization permission to use this endpoint.
+Adds a repository to an organization variable that is available to selected repositories.
+Organization variables that are available to selected repositories have their `visibility` field set to `selected`.
+
+You must authenticate using an access token with the `admin:org` scope to use this endpoint.
+If the repository is private, you must use an access token with the `repo` scope.
+GitHub Apps must have the `organization_actions_variables:write` organization permission to use this endpoint.
+Authenticated users must have collaborator access to a repository to create, update, or read variables.
 
 ```js
 octokit.rest.actions.addSelectedRepoToOrgVariable({

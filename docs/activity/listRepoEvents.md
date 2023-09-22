@@ -51,4 +51,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/activity#list-repository-events).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/activity/events#list-repository-events).

@@ -8,7 +8,12 @@ type: API method
 
 # List environment secrets
 
-Lists all secrets available in an environment without revealing their encrypted values. You must authenticate using an access token with the `repo` scope to use this endpoint. GitHub Apps must have the `secrets` repository permission to use this endpoint.
+Lists all secrets available in an environment without revealing their
+encrypted values.
+
+You must authenticate using an access token with the `repo` scope to use this endpoint.
+GitHub Apps must have the `secrets` repository permission to use this endpoint.
+Authenticated users must have collaborator access to a repository to create, update, or read secrets.
 
 ```js
 octokit.rest.actions.listEnvironmentSecrets({
@@ -51,4 +56,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/actions#list-environment-secrets).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/actions/secrets#list-environment-secrets).

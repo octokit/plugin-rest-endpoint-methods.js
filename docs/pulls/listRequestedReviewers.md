@@ -47,4 +47,4 @@ The number that identifies the pull request.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/pulls#get-all-requested-reviewers-for-a-pull-request).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/pulls/review-requests#get-all-requested-reviewers-for-a-pull-request).

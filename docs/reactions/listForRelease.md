@@ -8,7 +8,7 @@ type: API method
 
 # List reactions for a release
 
-List the reactions to a [release](https://docs.github.com/rest/reference/repos#releases).
+List the reactions to a [release](https://docs.github.com/rest/releases/releases#get-a-release).
 
 ```js
 octokit.rest.reactions.listForRelease({
@@ -46,7 +46,7 @@ The unique identifier of the release.
 </td></tr>
 <tr><td>content</td><td>no</td><td>
 
-Returns a single [reaction type](https://docs.github.com/rest/reference/reactions#reaction-types). Omit this parameter to list all reactions to a release.
+Returns a single [reaction type](https://docs.github.com/rest/reactions/reactions#about-reactions). Omit this parameter to list all reactions to a release.
 
 </td></tr>
 <tr><td>per_page</td><td>no</td><td>
@@ -62,4 +62,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/reactions/#list-reactions-for-a-release).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reactions/reactions#list-reactions-for-a-release).

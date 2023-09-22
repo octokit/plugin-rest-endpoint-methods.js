@@ -28,4 +28,4 @@ octokit.rest.activity.getFeeds();
 
 This endpoint has no parameters
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/activity#get-feeds).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/activity/feeds#get-feeds).

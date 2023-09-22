@@ -61,4 +61,4 @@ The text of the review comment.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/pulls#create-a-reply-for-a-review-comment).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/pulls/comments#create-a-reply-for-a-review-comment).

@@ -56,4 +56,4 @@ The attempt number of the workflow run.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/actions#download-workflow-run-attempt-logs).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/actions/workflow-runs#download-workflow-run-attempt-logs).

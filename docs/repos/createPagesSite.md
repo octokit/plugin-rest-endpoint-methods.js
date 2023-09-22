@@ -64,4 +64,4 @@ The repository directory that includes the source files for the Pages site. Allo
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/pages#create-a-github-pages-site).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/pages/pages#create-a-apiname-pages-site).

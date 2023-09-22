@@ -177,4 +177,4 @@ The default value for a merge commit message.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#create-an-organization-repository).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/repos/repos#create-an-organization-repository).

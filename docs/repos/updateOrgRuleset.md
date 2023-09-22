@@ -1,6 +1,6 @@
 ---
 name: Update an organization repository ruleset
-example: octokit.rest.repos.updateOrgRuleset({ org, ruleset_id, rules[].type, rules[].parameters.update_allows_fetch_and_merge, rules[].parameters.required_deployment_environments, rules[].parameters.dismiss_stale_reviews_on_push, rules[].parameters.require_code_owner_review, rules[].parameters.require_last_push_approval, rules[].parameters.required_approving_review_count, rules[].parameters.required_review_thread_resolution, rules[].parameters.required_status_checks, rules[].parameters.required_status_checks[].context, rules[].parameters.strict_required_status_checks_policy, rules[].parameters.operator, rules[].parameters.pattern })
+example: octokit.rest.repos.updateOrgRuleset({ org, ruleset_id, bypass_actors[].actor_id, bypass_actors[].actor_type, bypass_actors[].bypass_mode, rules[].type, rules[].parameters.update_allows_fetch_and_merge, rules[].parameters.required_deployment_environments, rules[].parameters.dismiss_stale_reviews_on_push, rules[].parameters.require_code_owner_review, rules[].parameters.require_last_push_approval, rules[].parameters.required_approving_review_count, rules[].parameters.required_review_thread_resolution, rules[].parameters.required_status_checks, rules[].parameters.required_status_checks[].context, rules[].parameters.strict_required_status_checks_policy, rules[].parameters.operator, rules[].parameters.pattern })
 route: PUT /orgs/{org}/rulesets/{ruleset_id}
 scope: repos
 type: API method
@@ -14,6 +14,9 @@ Update a ruleset for an organization.
 octokit.rest.repos.updateOrgRuleset({
         org,
 ruleset_id,
+bypass_actors[].actor_id,
+bypass_actors[].actor_type,
+bypass_actors[].bypass_mode,
 rules[].type,
 rules[].parameters.update_allows_fetch_and_merge,
 rules[].parameters.required_deployment_environments,
@@ -71,19 +74,24 @@ The enforcement level of the ruleset. `evaluate` allows admins to test rules bef
 The actors that can bypass the rules in this ruleset
 
 </td></tr>
-<tr><td>bypass_actors[].actor_id</td><td>no</td><td>
+<tr><td>bypass_actors[].actor_id</td><td>yes</td><td>
 
 The ID of the actor that can bypass a ruleset
 
 </td></tr>
-<tr><td>bypass_actors[].actor_type</td><td>no</td><td>
+<tr><td>bypass_actors[].actor_type</td><td>yes</td><td>
 
 The type of actor that can bypass a ruleset
 
 </td></tr>
+<tr><td>bypass_actors[].bypass_mode</td><td>yes</td><td>
+
+When the specified actor can bypass the ruleset. `pull_request` means that an actor can only bypass rules on pull requests.
+
+</td></tr>
 <tr><td>conditions</td><td>no</td><td>
 
-Conditions for a organization ruleset
+Conditions for an organization ruleset. The conditions object should contain both `repository_name` and `ref_name` properties or both `repository_id` and `ref_name` properties.
 
 </td></tr>
 <tr><td>rules</td><td>no</td><td>
@@ -175,4 +183,4 @@ The pattern to match with.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/repos/rules#update-organization-ruleset).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/orgs/rules#update-an-organization-repository-ruleset).

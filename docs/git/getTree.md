@@ -8,7 +8,7 @@ type: API method
 
 # Get a tree
 
-Returns a single tree using the SHA1 value for that tree.
+Returns a single tree using the SHA1 value or ref name for that tree.
 
 If `truncated` is `true` in the response then the number of items in the `tree` array exceeded our maximum limit. If you need to fetch more items, use the non-recursive method of fetching trees, and fetch one sub-tree at a time.
 
@@ -45,6 +45,8 @@ The name of the repository without the `.git` extension. The name is not case se
 </td></tr>
 <tr><td>tree_sha</td><td>yes</td><td>
 
+The SHA1 value or ref (branch or tag) name of the tree.
+
 </td></tr>
 <tr><td>recursive</td><td>no</td><td>
 
@@ -54,4 +56,4 @@ Setting this parameter to any value returns the objects or subtrees referenced b
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/git#get-a-tree).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/git/trees#get-a-tree).

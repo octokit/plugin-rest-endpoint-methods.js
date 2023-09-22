@@ -43,4 +43,4 @@ The unique identifier of the invitation.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/orgs#cancel-an-organization-invitation).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/orgs/members#cancel-an-organization-invitation).

@@ -87,7 +87,7 @@ GitHub username or email address to use to filter by commit committer.
 </td></tr>
 <tr><td>since</td><td>no</td><td>
 
-Only show notifications updated after the given time. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.
+Only show results that were last updated after the given time. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.
 
 </td></tr>
 <tr><td>until</td><td>no</td><td>

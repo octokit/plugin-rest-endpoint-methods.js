@@ -20,4 +20,4 @@ octokit.rest.apps.getWebhookConfigForApp();
 
 This endpoint has no parameters
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/apps#get-a-webhook-configuration-for-an-app).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/apps/webhooks#get-a-webhook-configuration-for-an-app).

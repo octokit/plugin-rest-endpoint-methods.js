@@ -8,7 +8,7 @@ type: API method
 
 # List check run annotations
 
-Lists annotations for a check run using the annotation `id`. GitHub Apps must have the `checks:read` permission on a private repository or pull access to a public repository to get annotations for a check run. OAuth Apps and authenticated users must have the `repo` scope to get annotations for a check run in a private repository.
+Lists annotations for a check run using the annotation `id`. GitHub Apps must have the `checks:read` permission on a private repository or pull access to a public repository to get annotations for a check run. OAuth apps and authenticated users must have the `repo` scope to get annotations for a check run in a private repository.
 
 ```js
 octokit.rest.checks.listAnnotations({
@@ -57,4 +57,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/checks#list-check-run-annotations).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/checks/runs#list-check-run-annotations).

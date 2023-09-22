@@ -59,4 +59,4 @@ The contents of the comment.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/issues#create-an-issue-comment).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/issues/comments#create-an-issue-comment).

@@ -60,4 +60,4 @@ A short description of the label. Must be 100 characters or fewer.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/issues#update-a-label).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/issues/labels#update-a-label).

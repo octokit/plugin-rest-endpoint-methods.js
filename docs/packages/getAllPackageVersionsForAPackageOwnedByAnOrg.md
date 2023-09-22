@@ -66,4 +66,4 @@ The state of the package, either active or deleted.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/packages#get-all-package-versions-for-a-package-owned-by-an-organization).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/packages/packages#list-package-versions-for-a-package-owned-by-an-organization).

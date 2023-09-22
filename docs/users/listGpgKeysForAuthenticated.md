@@ -40,4 +40,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/users#list-gpg-keys-for-the-authenticated-user).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/users/gpg-keys#list-gpg-keys-for-the-authenticated-user).

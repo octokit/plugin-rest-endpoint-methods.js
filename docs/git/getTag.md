@@ -72,4 +72,4 @@ The name of the repository without the `.git` extension. The name is not case se
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/git#get-a-tag).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/git/tags#get-a-tag).

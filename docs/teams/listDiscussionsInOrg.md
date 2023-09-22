@@ -63,4 +63,4 @@ Pinned discussions only filter
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/teams#list-discussions).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/teams/discussions#list-discussions).

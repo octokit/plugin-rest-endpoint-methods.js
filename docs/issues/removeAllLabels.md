@@ -47,4 +47,4 @@ The number that identifies the issue.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/issues#remove-all-labels-from-an-issue).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/issues/labels#remove-all-labels-from-an-issue).

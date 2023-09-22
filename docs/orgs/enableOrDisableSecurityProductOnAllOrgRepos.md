@@ -54,7 +54,13 @@ The action to take.
 `disable_all` means to disable the specified security feature for all repositories in the organization.
 
 </td></tr>
+<tr><td>query_suite</td><td>no</td><td>
+
+CodeQL query suite to be used. If you specify the `query_suite` parameter, the default setup will be configured with this query suite only on all repositories that didn't have default setup already configured. It will not change the query suite on repositories that already have default setup configured.
+If you don't specify any `query_suite` in your request, the preferred query suite of the organization will be applied.
+
+</td></tr>
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/orgs#enable-or-disable-security-product-on-all-org-repos).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/orgs/orgs#enable-or-disable-a-security-feature-for-an-organization).

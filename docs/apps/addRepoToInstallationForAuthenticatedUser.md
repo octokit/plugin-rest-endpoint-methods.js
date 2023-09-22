@@ -43,4 +43,4 @@ The unique identifier of the repository.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/apps#add-a-repository-to-an-app-installation).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/apps/installations#add-a-repository-to-an-app-installation).

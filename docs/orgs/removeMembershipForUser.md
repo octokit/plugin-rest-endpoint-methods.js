@@ -43,4 +43,4 @@ The handle for the GitHub user account.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/orgs#remove-organization-membership-for-a-user).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/orgs/members#remove-organization-membership-for-a-user).

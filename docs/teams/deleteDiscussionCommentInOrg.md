@@ -55,4 +55,4 @@ The number that identifies the comment.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/teams#delete-a-discussion-comment).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/teams/discussion-comments#delete-a-discussion-comment).

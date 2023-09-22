@@ -8,7 +8,7 @@ type: API method
 
 # Update a webhook configuration for an organization
 
-Updates the webhook configuration for an organization. To update more information about the webhook, including the `active` state and `events`, use "[Update an organization webhook ](/rest/reference/orgs#update-an-organization-webhook)."
+Updates the webhook configuration for an organization. To update more information about the webhook, including the `active` state and `events`, use "[Update an organization webhook ](/rest/orgs/webhooks#update-an-organization-webhook)."
 
 Access tokens must have the `admin:org_hook` scope, and GitHub Apps must have the `organization_hooks:write` permission.
 
@@ -61,4 +61,4 @@ If provided, the `secret` will be used as the `key` to generate the HMAC hex dig
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/orgs#update-a-webhook-configuration-for-an-organization).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/orgs/webhooks#update-a-webhook-configuration-for-an-organization).

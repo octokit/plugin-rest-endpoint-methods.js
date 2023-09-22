@@ -8,16 +8,20 @@ type: API method
 
 # Create a remove token for a repository
 
-Returns a token that you can pass to remove a self-hosted runner from a repository. The token expires after one hour.
+Returns a token that you can pass to remove a self-hosted runner from
+a repository. The token expires after one hour.
+
 You must authenticate using an access token with the `repo` scope to use this endpoint.
+If the repository is private, you must use an access token with the `repo` scope.
+GitHub Apps must have the `administration` permission for repositories and the `organization_self_hosted_runners` permission for organizations.
+Authenticated users must have admin access to repositories or organizations, or the `manage_runners:enterprise` scope for enterprises, to use these endpoints.
 
-#### Example using remove token
+Example using remove token:
 
-To remove your self-hosted runner from a repository, replace TOKEN with the remove token provided by this endpoint.
+To remove your self-hosted runner from a repository, replace TOKEN with
+the remove token provided by this endpoint.
 
-```
-./config.sh remove --token TOKEN
-```
+`config.sh remove --token TOKEN`
 
 ```js
 octokit.rest.actions.createRemoveTokenForRepo({
@@ -50,4 +54,4 @@ The name of the repository without the `.git` extension. The name is not case se
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/actions#create-a-remove-token-for-a-repository).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/actions/self-hosted-runners#create-a-remove-token-for-a-repository).

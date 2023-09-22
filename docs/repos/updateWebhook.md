@@ -8,7 +8,7 @@ type: API method
 
 # Update a repository webhook
 
-Updates a webhook configured in a repository. If you previously had a `secret` set, you must provide the same `secret` or set a new `secret` or the secret will be removed. If you are only updating individual webhook `config` properties, use "[Update a webhook configuration for a repository](/rest/reference/repos#update-a-webhook-configuration-for-a-repository)."
+Updates a webhook configured in a repository. If you previously had a `secret` set, you must provide the same `secret` or set a new `secret` or the secret will be removed. If you are only updating individual webhook `config` properties, use "[Update a webhook configuration for a repository](/rest/webhooks/repo-config#update-a-webhook-configuration-for-a-repository)."
 
 ```js
 octokit.rest.repos.updateWebhook({
@@ -47,7 +47,7 @@ The unique identifier of the hook.
 </td></tr>
 <tr><td>config</td><td>no</td><td>
 
-Key/value pairs to provide settings for this webhook. [These are defined below](https://docs.github.com/rest/reference/repos#create-hook-config-params).
+Key/value pairs to provide settings for this webhook.
 
 </td></tr>
 <tr><td>config.url</td><td>yes</td><td>

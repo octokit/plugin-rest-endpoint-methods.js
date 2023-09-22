@@ -8,7 +8,11 @@ type: API method
 
 # Delete a repository secret
 
-Deletes a secret in a repository using the secret name. You must authenticate using an access token with the `repo` scope to use this endpoint. GitHub Apps must have the `secrets` repository permission to use this endpoint.
+Deletes a secret in a repository using the secret name.
+
+You must authenticate using an access token with the `repo` scope to use this endpoint.
+GitHub Apps must have the `secrets` repository permission to use this endpoint.
+Authenticated users must have collaborator access to a repository to create, update, or read secrets.
 
 ```js
 octokit.rest.actions.deleteRepoSecret({
@@ -47,4 +51,4 @@ The name of the secret.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/actions#delete-a-repository-secret).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/actions/secrets#delete-a-repository-secret).

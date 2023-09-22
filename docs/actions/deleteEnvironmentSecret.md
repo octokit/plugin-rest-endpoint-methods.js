@@ -8,7 +8,11 @@ type: API method
 
 # Delete an environment secret
 
-Deletes a secret in an environment using the secret name. You must authenticate using an access token with the `repo` scope to use this endpoint. GitHub Apps must have the `secrets` repository permission to use this endpoint.
+Deletes a secret in an environment using the secret name.
+
+You must authenticate using an access token with the `repo` scope to use this endpoint.
+GitHub Apps must have the `secrets` repository permission to use this endpoint.
+Authenticated users must have collaborator access to a repository to create, update, or read secrets.
 
 ```js
 octokit.rest.actions.deleteEnvironmentSecret({
@@ -47,4 +51,4 @@ The name of the secret.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/actions#delete-an-environment-secret).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/actions/secrets#delete-an-environment-secret).

@@ -62,4 +62,4 @@ The milestone due date. This is a timestamp in [ISO 8601](https://en.wikipedia.o
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/issues#create-a-milestone).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/issues/milestones#create-a-milestone).

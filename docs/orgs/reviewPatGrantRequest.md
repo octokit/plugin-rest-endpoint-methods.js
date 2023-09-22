@@ -1,7 +1,7 @@
 ---
 name: Review a request to access organization resources with a fine-grained personal access token
 example: octokit.rest.orgs.reviewPatGrantRequest({ org, pat_request_id, action })
-route: POST /organizations/{org}/personal-access-token-requests/{pat_request_id}
+route: POST /orgs/{org}/personal-access-token-requests/{pat_request_id}
 scope: orgs
 type: API method
 ---
@@ -55,4 +55,4 @@ Reason for approving or denying the request. Max 1024 characters.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/orgs/orgs#review-a-request-to-access-organization-resources-with-a-fine-grained-personal-access-token).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/orgs/personal-access-tokens#review-a-request-to-access-organization-resources-with-a-fine-grained-personal-access-token).

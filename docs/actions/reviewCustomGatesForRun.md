@@ -13,6 +13,7 @@ Approve or reject custom deployment protection rules provided by a GitHub App fo
 **Note:** GitHub Apps can only review their own custom deployment protection rules.
 To approve or reject pending deployments that are waiting for review from a specific person or team, see [`POST /repos/{owner}/{repo}/actions/runs/{run_id}/pending_deployments`](/rest/actions/workflow-runs#review-pending-deployments-for-a-workflow-run).
 
+If the repository is private, you must use an access token with the `repo` scope.
 GitHub Apps must have read and write permission for **Deployments** to use this endpoint.
 
 ```js

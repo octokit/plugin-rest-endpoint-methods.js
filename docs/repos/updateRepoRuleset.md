@@ -1,6 +1,6 @@
 ---
 name: Update a repository ruleset
-example: octokit.rest.repos.updateRepoRuleset({ owner, repo, ruleset_id, rules[].type, rules[].parameters.update_allows_fetch_and_merge, rules[].parameters.required_deployment_environments, rules[].parameters.dismiss_stale_reviews_on_push, rules[].parameters.require_code_owner_review, rules[].parameters.require_last_push_approval, rules[].parameters.required_approving_review_count, rules[].parameters.required_review_thread_resolution, rules[].parameters.required_status_checks, rules[].parameters.required_status_checks[].context, rules[].parameters.strict_required_status_checks_policy, rules[].parameters.operator, rules[].parameters.pattern })
+example: octokit.rest.repos.updateRepoRuleset({ owner, repo, ruleset_id, bypass_actors[].actor_id, bypass_actors[].actor_type, bypass_actors[].bypass_mode, rules[].type, rules[].parameters.update_allows_fetch_and_merge, rules[].parameters.required_deployment_environments, rules[].parameters.dismiss_stale_reviews_on_push, rules[].parameters.require_code_owner_review, rules[].parameters.require_last_push_approval, rules[].parameters.required_approving_review_count, rules[].parameters.required_review_thread_resolution, rules[].parameters.required_status_checks, rules[].parameters.required_status_checks[].context, rules[].parameters.strict_required_status_checks_policy, rules[].parameters.operator, rules[].parameters.pattern })
 route: PUT /repos/{owner}/{repo}/rulesets/{ruleset_id}
 scope: repos
 type: API method
@@ -15,6 +15,9 @@ octokit.rest.repos.updateRepoRuleset({
         owner,
 repo,
 ruleset_id,
+bypass_actors[].actor_id,
+bypass_actors[].actor_type,
+bypass_actors[].bypass_mode,
 rules[].type,
 rules[].parameters.update_allows_fetch_and_merge,
 rules[].parameters.required_deployment_environments,
@@ -72,24 +75,24 @@ The target of the ruleset.
 The enforcement level of the ruleset. `evaluate` allows admins to test rules before enforcing them. Admins can view insights on the Rule Insights page (`evaluate` is only available with GitHub Enterprise).
 
 </td></tr>
-<tr><td>bypass_mode</td><td>no</td><td>
-
-The permission level required to bypass this ruleset. "repository" allows those with bypass permission at the repository level to bypass. "organization" allows those with bypass permission at the organization level to bypass. "none" prevents anyone from bypassing.
-
-</td></tr>
 <tr><td>bypass_actors</td><td>no</td><td>
 
 The actors that can bypass the rules in this ruleset
 
 </td></tr>
-<tr><td>bypass_actors[].actor_id</td><td>no</td><td>
+<tr><td>bypass_actors[].actor_id</td><td>yes</td><td>
 
 The ID of the actor that can bypass a ruleset
 
 </td></tr>
-<tr><td>bypass_actors[].actor_type</td><td>no</td><td>
+<tr><td>bypass_actors[].actor_type</td><td>yes</td><td>
 
 The type of actor that can bypass a ruleset
+
+</td></tr>
+<tr><td>bypass_actors[].bypass_mode</td><td>yes</td><td>
+
+When the specified actor can bypass the ruleset. `pull_request` means that an actor can only bypass rules on pull requests.
 
 </td></tr>
 <tr><td>conditions</td><td>no</td><td>
@@ -199,4 +202,4 @@ The pattern to match with.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/repos/rules#update-repository-ruleset).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/repos/rules#update-a-repository-ruleset).

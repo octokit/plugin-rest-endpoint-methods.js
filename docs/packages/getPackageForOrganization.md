@@ -49,4 +49,4 @@ The organization name. The name is not case sensitive.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/packages#get-a-package-for-an-organization).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/packages/packages#get-a-package-for-an-organization).

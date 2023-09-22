@@ -45,4 +45,4 @@ The unique identifier of the asset.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#delete-a-release-asset).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/releases/assets#delete-a-release-asset).

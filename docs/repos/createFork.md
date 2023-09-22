@@ -60,4 +60,4 @@ When forking from an existing repository, fork with only the default branch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#create-a-fork).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/repos/forks#create-a-fork).

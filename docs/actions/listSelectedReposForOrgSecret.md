@@ -8,7 +8,13 @@ type: API method
 
 # List selected repositories for an organization secret
 
-Lists all repositories that have been selected when the `visibility` for repository access to a secret is set to `selected`. You must authenticate using an access token with the `admin:org` scope to use this endpoint. GitHub Apps must have the `secrets` organization permission to use this endpoint.
+Lists all repositories that have been selected when the `visibility`
+for repository access to a secret is set to `selected`.
+
+You must authenticate using an access token with the `admin:org` scope to use this endpoint.
+If the repository is private, you must use an access token with the `repo` scope.
+GitHub Apps must have the `secrets` organization permission to use this endpoint.
+Authenticated users must have collaborator access to a repository to create, update, or read secrets.
 
 ```js
 octokit.rest.actions.listSelectedReposForOrgSecret({
@@ -51,4 +57,4 @@ The number of results per page (max 100).
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/actions#list-selected-repositories-for-an-organization-secret).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/actions/secrets#list-selected-repositories-for-an-organization-secret).

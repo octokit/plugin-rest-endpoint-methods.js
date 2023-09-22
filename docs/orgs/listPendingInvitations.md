@@ -55,4 +55,4 @@ Filter invitations by their invitation source.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/orgs#list-pending-organization-invitations).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/orgs/members#list-pending-organization-invitations).

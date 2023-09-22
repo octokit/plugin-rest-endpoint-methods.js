@@ -54,4 +54,4 @@ The number that identifies the issue.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/issues#add-labels-to-an-issue).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/issues/labels#add-labels-to-an-issue).

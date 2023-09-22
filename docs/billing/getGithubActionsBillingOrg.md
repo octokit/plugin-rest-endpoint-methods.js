@@ -39,4 +39,4 @@ The organization name. The name is not case sensitive.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/billing#get-github-actions-billing-for-an-organization).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/billing/billing#get-github-actions-billing-for-an-organization).

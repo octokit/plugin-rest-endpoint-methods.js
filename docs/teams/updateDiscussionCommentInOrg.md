@@ -61,4 +61,4 @@ The discussion comment's body text.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/teams#update-a-discussion-comment).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/teams/discussion-comments#update-a-discussion-comment).

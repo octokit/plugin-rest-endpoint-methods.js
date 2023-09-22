@@ -12,7 +12,7 @@ Create or update an environment with protection rules, such as required reviewer
 
 **Note:** To create or update name patterns that branches must match in order to deploy to this environment, see "[Deployment branch policies](/rest/deployments/branch-policies)."
 
-**Note:** To create or update secrets for an environment, see "[Secrets](/rest/reference/actions#secrets)."
+**Note:** To create or update secrets for an environment, see "[GitHub Actions secrets](/rest/actions/secrets)."
 
 You must authenticate using an access token with the `repo` scope to use this endpoint. GitHub Apps must have the `administration:write` permission for the repository to use this endpoint.
 

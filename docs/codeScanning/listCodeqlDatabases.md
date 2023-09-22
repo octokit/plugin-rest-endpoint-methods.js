@@ -45,4 +45,4 @@ The name of the repository without the `.git` extension. The name is not case se
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/code-scanning#list-codeql-databases-for-a-repository).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/code-scanning/code-scanning#list-codeql-databases-for-a-repository).

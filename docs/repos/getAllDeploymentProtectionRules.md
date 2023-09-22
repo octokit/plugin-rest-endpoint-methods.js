@@ -49,4 +49,4 @@ The account owner of the repository. The name is not case sensitive.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/deployments/protection-rules#get-all-deployment-protection-rules).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/deployments/protection-rules#get-all-deployment-protection-rules-for-an-environment).

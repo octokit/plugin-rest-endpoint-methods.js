@@ -46,7 +46,7 @@ Use `web` to create a webhook. Default: `web`. This parameter only accepts the v
 </td></tr>
 <tr><td>config</td><td>no</td><td>
 
-Key/value pairs to provide settings for this webhook. [These are defined below](https://docs.github.com/rest/reference/repos#create-hook-config-params).
+Key/value pairs to provide settings for this webhook.
 
 </td></tr>
 <tr><td>config.url</td><td>no</td><td>

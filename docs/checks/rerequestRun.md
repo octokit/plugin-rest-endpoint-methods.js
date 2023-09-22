@@ -12,6 +12,8 @@ Triggers GitHub to rerequest an existing check run, without pushing new code to 
 
 To rerequest a check run, your GitHub App must have the `checks:read` permission on a private repository or pull access to a public repository.
 
+For more information about how to re-run GitHub Actions jobs, see "[Re-run a job from a workflow run](https://docs.github.com/rest/actions/workflow-runs#re-run-a-job-from-a-workflow-run)".
+
 ```js
 octokit.rest.checks.rerequestRun({
   owner,
@@ -49,4 +51,4 @@ The unique identifier of the check run.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/checks#rerequest-a-check-run).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/checks/runs#rerequest-a-check-run).

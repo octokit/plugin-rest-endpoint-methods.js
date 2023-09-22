@@ -35,4 +35,4 @@ Full URLs for the social media profiles to add.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/users/social-accounts#add-social-account-for-authenticated-user).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/users/social-accounts#add-social-accounts-for-the-authenticated-user).

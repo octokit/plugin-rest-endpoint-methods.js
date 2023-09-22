@@ -40,4 +40,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/users#list-users-blocked-by-the-authenticated-user).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/users/blocking#list-users-blocked-by-the-authenticated-user).

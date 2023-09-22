@@ -63,4 +63,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/actions#list-jobs-for-a-workflow-run-attempt).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/actions/workflow-jobs#list-jobs-for-a-workflow-run-attempt).

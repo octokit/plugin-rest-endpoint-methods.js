@@ -38,4 +38,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/apps#list-installation-requests-for-the-authenticated-app).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/apps/apps#list-installation-requests-for-the-authenticated-app).

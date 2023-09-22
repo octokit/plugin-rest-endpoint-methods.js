@@ -57,4 +57,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/issues#list-timeline-events-for-an-issue).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/issues/timeline#list-timeline-events-for-an-issue).
