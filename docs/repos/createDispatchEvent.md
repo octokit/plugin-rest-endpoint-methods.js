@@ -64,4 +64,4 @@ JSON payload with extra information about the webhook event that your action or 
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#create-a-repository-dispatch-event).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/repos/repos#create-a-repository-dispatch-event).

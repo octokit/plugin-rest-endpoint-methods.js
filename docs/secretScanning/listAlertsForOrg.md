@@ -86,4 +86,4 @@ A cursor, as given in the [Link header](https://docs.github.com/rest/guides/usin
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/secret-scanning#list-secret-scanning-alerts-for-an-organization).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/secret-scanning/secret-scanning#list-secret-scanning-alerts-for-an-organization).

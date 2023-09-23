@@ -8,6 +8,8 @@ type: API method
 
 # Check if a repository is starred by the authenticated user
 
+Whether the authenticated user has starred the repository.
+
 ```js
 octokit.rest.activity.checkRepoIsStarredByAuthenticatedUser({
   owner,
@@ -39,4 +41,4 @@ The name of the repository without the `.git` extension. The name is not case se
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/activity#check-if-a-repository-is-starred-by-the-authenticated-user).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/activity/starring#check-if-a-repository-is-starred-by-the-authenticated-user).

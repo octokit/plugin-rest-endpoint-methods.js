@@ -37,4 +37,4 @@ Adds one or more email addresses to your GitHub account. Must contain at least o
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/users#add-an-email-address-for-the-authenticated-user).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/users/emails#add-an-email-address-for-the-authenticated-user).

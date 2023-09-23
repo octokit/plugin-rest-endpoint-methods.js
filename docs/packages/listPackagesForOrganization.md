@@ -61,4 +61,4 @@ The number of results per page (max 100).
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/packages#list-packages-for-an-organization).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/packages/packages#list-packages-for-an-organization).

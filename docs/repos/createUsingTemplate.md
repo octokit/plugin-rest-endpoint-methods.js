@@ -8,7 +8,7 @@ type: API method
 
 # Create a repository using a template
 
-Creates a new repository using a repository template. Use the `template_owner` and `template_repo` route parameters to specify the repository to use as the template. If the repository is not public, the authenticated user must own or be a member of an organization that owns the repository. To check if a repository is available to use as a template, get the repository's information using the [Get a repository](https://docs.github.com/rest/reference/repos#get-a-repository) endpoint and check that the `is_template` key is `true`.
+Creates a new repository using a repository template. Use the `template_owner` and `template_repo` route parameters to specify the repository to use as the template. If the repository is not public, the authenticated user must own or be a member of an organization that owns the repository. To check if a repository is available to use as a template, get the repository's information using the [Get a repository](https://docs.github.com/rest/repos/repos#get-a-repository) endpoint and check that the `is_template` key is `true`.
 
 **OAuth scope requirements**
 
@@ -38,8 +38,12 @@ octokit.rest.repos.createUsingTemplate({
   <tbody>
     <tr><td>template_owner</td><td>yes</td><td>
 
+The account owner of the template repository. The name is not case sensitive.
+
 </td></tr>
 <tr><td>template_repo</td><td>yes</td><td>
+
+The name of the template repository without the `.git` extension. The name is not case sensitive.
 
 </td></tr>
 <tr><td>owner</td><td>no</td><td>
@@ -70,4 +74,4 @@ Either `true` to create a new private repository or `false` to create a new publ
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#create-a-repository-using-a-template).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/repos/repos#create-a-repository-using-a-template).

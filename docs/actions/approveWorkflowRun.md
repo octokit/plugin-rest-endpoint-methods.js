@@ -49,4 +49,4 @@ The unique identifier of the workflow run.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/actions#approve-a-workflow-run-for-a-fork-pull-request).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/actions/workflow-runs#approve-a-workflow-run-for-a-fork-pull-request).

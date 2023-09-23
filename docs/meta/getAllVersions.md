@@ -18,4 +18,4 @@ octokit.rest.meta.getAllVersions();
 
 This endpoint has no parameters
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/meta#get-all-api-versions).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/meta/meta#get-all-api-versions).

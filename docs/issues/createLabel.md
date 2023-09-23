@@ -57,4 +57,4 @@ A short description of the label. Must be 100 characters or fewer.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/issues#create-a-label).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/issues/labels#create-a-label).

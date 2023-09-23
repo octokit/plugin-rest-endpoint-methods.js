@@ -53,4 +53,4 @@ The handle for the GitHub user account.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/codespaces#get-codespaces-for-user-in-org).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/codespaces/organizations#list-codespaces-for-a-user-in-organization).

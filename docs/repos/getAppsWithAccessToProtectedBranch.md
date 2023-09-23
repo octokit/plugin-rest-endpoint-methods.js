@@ -49,4 +49,4 @@ The name of the branch. Cannot contain wildcard characters. To use wildcard char
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/branches/branch-protection#list-apps-with-access-to-the-protected-branch).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/branches/branch-protection#get-apps-with-access-to-the-protected-branch).

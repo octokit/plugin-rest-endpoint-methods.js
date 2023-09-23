@@ -1,7 +1,7 @@
 ---
 name: List requests to access organization resources with fine-grained personal access tokens
 example: octokit.rest.orgs.listPatGrantRequests({ org })
-route: GET /organizations/{org}/personal-access-token-requests
+route: GET /orgs/{org}/personal-access-token-requests
 scope: orgs
 type: API method
 ---
@@ -83,4 +83,4 @@ Only show fine-grained personal access tokens used after the given time. This is
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/orgs/orgs#list-requests-to-access-organization-resources-with-fine-grained-personal-access-tokens).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/orgs/personal-access-tokens#list-requests-to-access-organization-resources-with-fine-grained-personal-access-tokens).

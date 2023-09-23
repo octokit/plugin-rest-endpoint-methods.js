@@ -9,8 +9,11 @@ type: API method
 # Create an organization variable
 
 Creates an organization variable that you can reference in a GitHub Actions workflow.
+
 You must authenticate using an access token with the `admin:org` scope to use this endpoint.
+If the repository is private, you must use an access token with the `repo` scope.
 GitHub Apps must have the `organization_actions_variables:write` organization permission to use this endpoint.
+Authenticated users must have collaborator access to a repository to create, update, or read variables.
 
 ```js
 octokit.rest.actions.createOrgVariable({

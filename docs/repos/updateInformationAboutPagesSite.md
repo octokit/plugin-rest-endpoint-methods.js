@@ -61,4 +61,4 @@ The process by which the GitHub Pages site will be built. `workflow` means that 
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/pages#update-information-about-a-github-pages-site).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/pages/pages#update-information-about-a-apiname-pages-site).

@@ -12,7 +12,7 @@ If you are watching a repository, you receive notifications for all threads by d
 
 You can also use this endpoint to subscribe to threads that you are currently not receiving notifications for or to subscribed to threads that you have previously ignored.
 
-Unsubscribing from a conversation in a repository that you are not watching is functionally equivalent to the [Delete a thread subscription](https://docs.github.com/rest/reference/activity#delete-a-thread-subscription) endpoint.
+Unsubscribing from a conversation in a repository that you are not watching is functionally equivalent to the [Delete a thread subscription](https://docs.github.com/rest/activity/notifications#delete-a-thread-subscription) endpoint.
 
 ```js
 octokit.rest.activity.setThreadSubscription({
@@ -33,7 +33,7 @@ octokit.rest.activity.setThreadSubscription({
   <tbody>
     <tr><td>thread_id</td><td>yes</td><td>
 
-The unique identifier of the notification thread. This corresponds to the value returned in the `id` field when you retrieve notifications (for example with the [`GET /notifications` operation](https://docs.github.com/rest/reference/activity#list-notifications-for-the-authenticated-user)).
+The unique identifier of the notification thread. This corresponds to the value returned in the `id` field when you retrieve notifications (for example with the [`GET /notifications` operation](https://docs.github.com/rest/activity/notifications#list-notifications-for-the-authenticated-user)).
 
 </td></tr>
 <tr><td>ignored</td><td>no</td><td>
@@ -44,4 +44,4 @@ Whether to block all notifications from a thread.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/activity#set-a-thread-subscription).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/activity/notifications#set-a-thread-subscription).

@@ -46,4 +46,4 @@ The permission to grant the collaborator.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/projects#add-project-collaborator).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/projects/collaborators#add-project-collaborator).

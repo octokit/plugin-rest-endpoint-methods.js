@@ -55,4 +55,4 @@ repository.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/actions#set-workflow-access-to-a-repository).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/actions/permissions#set-the-level-of-access-for-workflows-outside-of-the-repository).

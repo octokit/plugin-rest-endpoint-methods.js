@@ -49,4 +49,4 @@ The unique identifier of the workflow run.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/actions#delete-a-workflow-run).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/actions/workflow-runs#delete-a-workflow-run).

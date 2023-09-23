@@ -52,4 +52,4 @@ The full path, relative to the repository root, of the dependency manifest file.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/dependency-graph#get-a-diff-of-the-dependencies-between-commits).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/dependency-graph/dependency-review#get-a-diff-of-the-dependencies-between-commits).

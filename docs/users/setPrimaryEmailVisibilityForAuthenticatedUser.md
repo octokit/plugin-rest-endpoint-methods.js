@@ -35,4 +35,4 @@ Denotes whether an email is publicly visible.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/users#set-primary-email-visibility-for-the-authenticated-user).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/users/emails#set-primary-email-visibility-for-the-authenticated-user).

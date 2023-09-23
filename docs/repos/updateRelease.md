@@ -87,4 +87,4 @@ If specified, a discussion of the specified category is created and linked to th
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#update-a-release).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/releases/releases#update-a-release).

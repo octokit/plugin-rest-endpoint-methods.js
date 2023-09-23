@@ -36,7 +36,7 @@ application with debugging enabled.
 
 Users with `repo` or `repo_deployment` scopes can create a deployment for a given ref.
 
-#### Merged branch response
+Merged branch response:
 
 You will see this response when GitHub automatically merges the base branch into the topic branch instead of creating
 a deployment. This auto-merge happens when:
@@ -48,12 +48,12 @@ a deployment. This auto-merge happens when:
 If there are no new commits in the base branch, a new request to create a deployment should give a successful
 response.
 
-#### Merge conflict response
+Merge conflict response:
 
 This error happens when the `auto_merge` option is enabled and when the default branch (in this case `master`), can't
 be merged into the branch that's being deployed (in this case `topic-branch`), due to merge conflicts.
 
-#### Failed commit status checks
+Failed commit status checks:
 
 This error happens when the `required_contexts` parameter indicates that one or more contexts need to have a `success`
 status for the commit to be deployed, but one or more of the required contexts do not have a state of `success`.

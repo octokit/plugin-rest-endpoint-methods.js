@@ -35,4 +35,4 @@ Email addresses associated with the GitHub user account.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/users#delete-an-email-address-for-the-authenticated-user).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/users/emails#delete-an-email-address-for-the-authenticated-user).

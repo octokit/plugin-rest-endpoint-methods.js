@@ -67,4 +67,4 @@ A comment to accompany the deployment review
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/actions#review-pending-deployments-for-a-workflow-run).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/actions/workflow-runs#review-pending-deployments-for-a-workflow-run).

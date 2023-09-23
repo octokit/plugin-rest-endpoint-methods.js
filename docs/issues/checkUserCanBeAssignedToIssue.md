@@ -55,4 +55,4 @@ The number that identifies the issue.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/issues#check-if-a-user-can-be-assigned-to-a-issue).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/issues/assignees#check-if-a-user-can-be-assigned-to-a-issue).

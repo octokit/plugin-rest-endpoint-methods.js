@@ -8,6 +8,8 @@ type: API method
 
 # Get a repository subscription
 
+Gets information about whether the authenticated user is subscribed to the repository.
+
 ```js
 octokit.rest.activity.getRepoSubscription({
   owner,
@@ -39,4 +41,4 @@ The name of the repository without the `.git` extension. The name is not case se
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/activity#get-a-repository-subscription).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/activity/watching#get-a-repository-subscription).

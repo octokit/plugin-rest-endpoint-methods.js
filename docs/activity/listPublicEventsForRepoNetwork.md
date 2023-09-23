@@ -49,4 +49,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/activity#list-public-events-for-a-network-of-repositories).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/activity/events#list-public-events-for-a-network-of-repositories).

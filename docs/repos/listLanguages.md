@@ -41,4 +41,4 @@ The name of the repository without the `.git` extension. The name is not case se
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#list-repository-languages).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/repos/repos#list-repository-languages).

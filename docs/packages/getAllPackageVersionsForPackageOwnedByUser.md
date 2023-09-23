@@ -49,4 +49,4 @@ The handle for the GitHub user account.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/packages#get-all-package-versions-for-a-package-owned-by-a-user).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/packages/packages#list-package-versions-for-a-package-owned-by-a-user).

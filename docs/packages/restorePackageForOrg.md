@@ -62,4 +62,4 @@ package token
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/packages#restore-a-package-for-an-organization).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/packages/packages#restore-a-package-for-an-organization).

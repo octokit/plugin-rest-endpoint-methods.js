@@ -42,4 +42,4 @@ The name of the secret.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/codespaces#get-an-organization-secret).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/codespaces/organization-secrets#get-an-organization-secret).

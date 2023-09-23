@@ -47,4 +47,4 @@ The ID of the workflow. You can also pass the workflow file name as a string.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/actions#get-a-workflow).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/actions/workflows#get-a-workflow).

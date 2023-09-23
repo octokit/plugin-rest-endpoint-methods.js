@@ -52,4 +52,4 @@ The handle for the GitHub user account.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/packages#delete-a-package-for-a-user).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/packages/packages#delete-a-package-for-a-user).

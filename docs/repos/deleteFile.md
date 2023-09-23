@@ -16,7 +16,7 @@ The `author` section is optional and is filled in with the `committer` informati
 
 You must provide values for both `name` and `email`, whether you choose to use `author` or `committer`. Otherwise, you'll receive a `422` status code.
 
-**Note:** If you use this endpoint and the "[Create or update file contents](https://docs.github.com/rest/reference/repos/#create-or-update-file-contents)" endpoint in parallel, the concurrent requests will conflict and you will receive errors. You must use these endpoints serially instead.
+**Note:** If you use this endpoint and the "[Create or update file contents](https://docs.github.com/rest/repos/contents/#create-or-update-file-contents)" endpoint in parallel, the concurrent requests will conflict and you will receive errors. You must use these endpoints serially instead.
 
 ```js
 octokit.rest.repos.deleteFile({
@@ -102,4 +102,4 @@ The email of the author (or committer) of the commit
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#delete-a-file).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/repos/contents#delete-a-file).

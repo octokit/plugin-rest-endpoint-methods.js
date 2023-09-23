@@ -50,4 +50,4 @@ The unique identifier of the workflow run.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/actions#download-workflow-run-logs).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/actions/workflow-runs#download-workflow-run-logs).

@@ -37,4 +37,4 @@ The unique identifier of the key.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/users#get-a-public-ssh-key-for-the-authenticated-user).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/users/keys#get-a-public-ssh-key-for-the-authenticated-user).

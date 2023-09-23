@@ -8,7 +8,10 @@ type: API method
 
 # Get rules for a branch
 
-Returns all rules that apply to the specified branch.
+Returns all active rules that apply to the specified branch. The branch does not need to exist; rules that would apply
+to a branch with that name will be returned. All active rules that apply will be returned, regardless of the level
+at which they are configured (e.g. repository or organization). Rules in rulesets with "evaluate" or "disabled"
+enforcement statuses are not returned.
 
 ```js
 octokit.rest.repos.getBranchRules({

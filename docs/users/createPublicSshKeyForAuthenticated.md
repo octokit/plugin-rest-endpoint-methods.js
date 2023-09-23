@@ -42,4 +42,4 @@ The public SSH key to add to your GitHub account.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/users#create-a-public-ssh-key-for-the-authenticated-user).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/users/keys#create-a-public-ssh-key-for-the-authenticated-user).

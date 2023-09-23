@@ -52,4 +52,4 @@ or in `number` fields in the response from the
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/dependabot#get-a-dependabot-alert).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/dependabot/alerts#get-a-dependabot-alert).

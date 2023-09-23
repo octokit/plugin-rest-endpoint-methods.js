@@ -43,4 +43,4 @@ The name of the repository without the `.git` extension. The name is not case se
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/pages#get-a-github-pages-site).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/pages/pages#get-a-apiname-pages-site).

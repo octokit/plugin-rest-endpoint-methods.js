@@ -1,7 +1,7 @@
 ---
 name: Update the access to organization resources via fine-grained personal access tokens
 example: octokit.rest.orgs.updatePatAccesses({ org, action, pat_ids })
-route: POST /organizations/{org}/personal-access-tokens
+route: POST /orgs/{org}/personal-access-tokens
 scope: orgs
 type: API method
 ---
@@ -50,4 +50,4 @@ The IDs of the fine-grained personal access tokens.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/orgs/orgs#update-the-access-to-organization-resources-via-fine-grained-personal-access-tokens).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/orgs/personal-access-tokens#update-the-access-to-organization-resources-via-fine-grained-personal-access-tokens).

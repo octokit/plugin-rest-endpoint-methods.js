@@ -41,4 +41,4 @@ The access_token of the OAuth or GitHub application.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/apps#check-a-token).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/apps/oauth-applications#check-a-token).

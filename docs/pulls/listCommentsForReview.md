@@ -63,4 +63,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/pulls#list-comments-for-a-pull-request-review).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/pulls/reviews#list-comments-for-a-pull-request-review).

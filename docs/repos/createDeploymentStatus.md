@@ -10,7 +10,7 @@ type: API method
 
 Users with `push` access can create deployment statuses for a given deployment.
 
-GitHub Apps require `read & write` access to "Deployments" and `read-only` access to "Repo contents" (for private repos). OAuth Apps require the `repo_deployment` scope.
+GitHub Apps require `read & write` access to "Deployments" and `read-only` access to "Repo contents" (for private repos). OAuth apps require the `repo_deployment` scope.
 
 ```js
 octokit.rest.repos.createDeploymentStatus({
@@ -69,7 +69,7 @@ A short description of the status. The maximum description length is 140 charact
 </td></tr>
 <tr><td>environment</td><td>no</td><td>
 
-Name for the target deployment environment, which can be changed when setting a deploy status. For example, `production`, `staging`, or `qa`.
+Name for the target deployment environment, which can be changed when setting a deploy status. For example, `production`, `staging`, or `qa`. If not defined, the environment of the previous status on the deployment will be used, if it exists. Otherwise, the environment of the deployment will be used.
 
 </td></tr>
 <tr><td>environment_url</td><td>no</td><td>

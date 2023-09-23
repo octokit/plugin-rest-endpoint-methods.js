@@ -52,4 +52,4 @@ Include rulesets configured at higher levels that apply to this repository
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/repos/rules#get-repository-ruleset).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/repos/rules#get-a-repository-ruleset).

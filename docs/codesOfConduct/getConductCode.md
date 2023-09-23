@@ -8,6 +8,8 @@ type: API method
 
 # Get a code of conduct
 
+Returns information about the specified GitHub code of conduct.
+
 ```js
 octokit.rest.codesOfConduct.getConductCode({
   key,
@@ -31,4 +33,4 @@ octokit.rest.codesOfConduct.getConductCode({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/codes-of-conduct#get-a-code-of-conduct).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/codes-of-conduct/codes-of-conduct#get-a-code-of-conduct).

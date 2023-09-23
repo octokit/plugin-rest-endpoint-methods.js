@@ -47,4 +47,4 @@ The unique identifier of the artifact.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/actions#get-an-artifact).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/actions/artifacts#get-an-artifact).

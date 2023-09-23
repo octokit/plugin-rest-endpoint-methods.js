@@ -8,7 +8,7 @@ type: API method
 
 # Create a scoped access token
 
-Use a non-scoped user-to-server access token to create a repository scoped and/or permission scoped user-to-server access token. You can specify which repositories the token can access and which permissions are granted to the token. You must use [Basic Authentication](https://docs.github.com/rest/overview/other-authentication-methods#basic-authentication) when accessing this endpoint, using the `client_id` and `client_secret` of the GitHub App as the username and password. Invalid tokens will return `404 NOT FOUND`.
+Use a non-scoped user access token to create a repository scoped and/or permission scoped user access token. You can specify which repositories the token can access and which permissions are granted to the token. You must use [Basic Authentication](https://docs.github.com/rest/overview/other-authentication-methods#basic-authentication) when accessing this endpoint, using the `client_id` and `client_secret` of the GitHub App as the username and password. Invalid tokens will return `404 NOT FOUND`.
 
 ```js
 octokit.rest.apps.scopeToken({
@@ -40,27 +40,27 @@ The access token used to authenticate to the GitHub API.
 </td></tr>
 <tr><td>target</td><td>no</td><td>
 
-The name of the user or organization to scope the user-to-server access token to. **Required** unless `target_id` is specified.
+The name of the user or organization to scope the user access token to. **Required** unless `target_id` is specified.
 
 </td></tr>
 <tr><td>target_id</td><td>no</td><td>
 
-The ID of the user or organization to scope the user-to-server access token to. **Required** unless `target` is specified.
+The ID of the user or organization to scope the user access token to. **Required** unless `target` is specified.
 
 </td></tr>
 <tr><td>repositories</td><td>no</td><td>
 
-The list of repository names to scope the user-to-server access token to. `repositories` may not be specified if `repository_ids` is specified.
+The list of repository names to scope the user access token to. `repositories` may not be specified if `repository_ids` is specified.
 
 </td></tr>
 <tr><td>repository_ids</td><td>no</td><td>
 
-The list of repository IDs to scope the user-to-server access token to. `repository_ids` may not be specified if `repositories` is specified.
+The list of repository IDs to scope the user access token to. `repository_ids` may not be specified if `repositories` is specified.
 
 </td></tr>
 <tr><td>permissions</td><td>no</td><td>
 
-The permissions granted to the user-to-server access token.
+The permissions granted to the user access token.
 
 </td></tr>
 <tr><td>permissions.actions</td><td>no</td><td>

@@ -8,6 +8,8 @@ type: API method
 
 # Check if a user is blocked by an organization
 
+Returns a 204 if the given user is blocked by the given organization. Returns a 404 if the organization is not blocking the user, or if the user account has been identified as spam by GitHub.
+
 ```js
 octokit.rest.orgs.checkBlockedUser({
   org,
@@ -39,4 +41,4 @@ The handle for the GitHub user account.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/orgs#check-if-a-user-is-blocked-by-an-organization).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/orgs/blocking#check-if-a-user-is-blocked-by-an-organization).

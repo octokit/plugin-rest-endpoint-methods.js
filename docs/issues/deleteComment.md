@@ -47,4 +47,4 @@ The unique identifier of the comment.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/issues#delete-an-issue-comment).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/issues/comments#delete-an-issue-comment).

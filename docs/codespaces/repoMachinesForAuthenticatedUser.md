@@ -52,7 +52,12 @@ The location to check for available machines. Assigned by IP if not provided.
 IP for location auto-detection when proxying a request
 
 </td></tr>
+<tr><td>ref</td><td>no</td><td>
+
+The branch or commit to check for prebuild availability and devcontainer restrictions.
+
+</td></tr>
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/codespaces#list-available-machine-types-for-a-repository).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/codespaces/machines#list-available-machine-types-for-a-repository).

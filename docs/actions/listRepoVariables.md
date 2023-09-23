@@ -8,7 +8,11 @@ type: API method
 
 # List repository variables
 
-Lists all repository variables. You must authenticate using an access token with the `repo` scope to use this endpoint. GitHub Apps must have the `actions_variables:read` repository permission to use this endpoint.
+Lists all repository variables.
+You must authenticate using an access token with the `repo` scope to use this endpoint.
+If the repository is private, you must use an access token with the `repo` scope.
+GitHub Apps must have the `actions_variables:read` repository permission to use this endpoint.
+Authenticated users must have collaborator access to a repository to create, update, or read variables.
 
 ```js
 octokit.rest.actions.listRepoVariables({

@@ -41,4 +41,4 @@ The ID of the ruleset.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/repos/rules#delete-organization-ruleset).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/orgs/rules#delete-an-organization-repository-ruleset).

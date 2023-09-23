@@ -55,4 +55,4 @@ The name of the repository without the `.git` extension. The name is not case se
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/teams/#remove-a-repository-from-a-team).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/teams/teams#remove-a-repository-from-a-team).

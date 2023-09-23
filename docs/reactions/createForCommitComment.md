@@ -8,7 +8,7 @@ type: API method
 
 # Create reaction for a commit comment
 
-Create a reaction to a [commit comment](https://docs.github.com/rest/reference/repos#comments). A response with an HTTP `200` status means that you already added the reaction type to this commit comment.
+Create a reaction to a [commit comment](https://docs.github.com/rest/commits/comments#get-a-commit-comment). A response with an HTTP `200` status means that you already added the reaction type to this commit comment.
 
 ```js
 octokit.rest.reactions.createForCommitComment({
@@ -47,10 +47,10 @@ The unique identifier of the comment.
 </td></tr>
 <tr><td>content</td><td>yes</td><td>
 
-The [reaction type](https://docs.github.com/rest/reference/reactions#reaction-types) to add to the commit comment.
+The [reaction type](https://docs.github.com/rest/reactions/reactions#about-reactions) to add to the commit comment.
 
 </td></tr>
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/reactions#create-reaction-for-a-commit-comment).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reactions/reactions#create-reaction-for-a-commit-comment).

@@ -24,7 +24,7 @@ When an upstream failure occurs, you will receive a `502 Bad Gateway` status. Th
 
 **Notes:**
 
-- GitHub renames asset filenames that have special characters, non-alphanumeric characters, and leading or trailing periods. The "[List assets for a release](https://docs.github.com/rest/reference/repos#list-assets-for-a-release)"
+- GitHub renames asset filenames that have special characters, non-alphanumeric characters, and leading or trailing periods. The "[List release assets](https://docs.github.com/rest/releases/assets#list-release-assets)"
   endpoint lists the renamed filenames. For more information and help, contact [GitHub Support](https://support.github.com/contact?tags=dotcom-rest-api).
 - To find the `release_id` query the [`GET /repos/{owner}/{repo}/releases/latest` endpoint](https://docs.github.com/rest/releases/releases#get-the-latest-release).
 - If you upload an asset with the same filename as another uploaded asset, you'll receive an error and must delete the old file before you can re-upload the new asset.
@@ -84,4 +84,4 @@ The URL origin (protocol + host name + port) is included in `upload_url` returne
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#upload-a-release-asset).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/releases/assets#upload-a-release-asset).

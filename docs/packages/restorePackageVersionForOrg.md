@@ -63,4 +63,4 @@ Unique identifier of the package version.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/packages#restore-a-package-version-for-an-organization).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/packages/packages#restore-package-version-for-an-organization).

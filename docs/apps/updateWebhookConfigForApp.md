@@ -48,4 +48,4 @@ If provided, the `secret` will be used as the `key` to generate the HMAC hex dig
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/apps#update-a-webhook-configuration-for-an-app).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/apps/webhooks#update-a-webhook-configuration-for-an-app).

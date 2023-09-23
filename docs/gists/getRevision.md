@@ -37,4 +37,4 @@ The unique identifier of the gist.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/gists#get-a-gist-revision).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/gists/gists#get-a-gist-revision).

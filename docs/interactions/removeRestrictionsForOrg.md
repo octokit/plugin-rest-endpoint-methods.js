@@ -35,4 +35,4 @@ The organization name. The name is not case sensitive.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/interactions#remove-interaction-restrictions-for-an-organization).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/interactions/orgs#remove-interaction-restrictions-for-an-organization).

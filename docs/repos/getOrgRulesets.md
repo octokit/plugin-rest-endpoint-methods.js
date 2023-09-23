@@ -45,4 +45,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/repos/rules#get-organization-rulesets).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/orgs/rules#get-all-organization-repository-rulesets).

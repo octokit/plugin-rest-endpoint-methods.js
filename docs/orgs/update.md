@@ -205,4 +205,4 @@ If `secret_scanning_push_protection_custom_link_enabled` is true, the URL that w
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/orgs#update-an-organization).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/orgs/orgs#update-an-organization).

@@ -47,4 +47,4 @@ The unique identifier of the release.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#get-a-release).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/releases/releases#get-a-release).

@@ -68,4 +68,4 @@ The merge method to use.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/pulls#merge-a-pull-request).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/pulls/pulls#merge-a-pull-request).

@@ -8,7 +8,7 @@ type: API method
 
 # Update a repository
 
-**Note**: To edit a repository's topics, use the [Replace all repository topics](https://docs.github.com/rest/reference/repos#replace-all-repository-topics) endpoint.
+**Note**: To edit a repository's topics, use the [Replace all repository topics](https://docs.github.com/rest/repos/repos#replace-all-repository-topics) endpoint.
 
 ```js
 octokit.rest.repos.update({

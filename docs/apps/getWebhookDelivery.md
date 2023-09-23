@@ -35,4 +35,4 @@ octokit.rest.apps.getWebhookDelivery({
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/apps#get-a-delivery-for-an-app-webhook).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/apps/webhooks#get-a-delivery-for-an-app-webhook).

@@ -61,4 +61,4 @@ Specify IDs for the teams you want to invite new members to.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/orgs#create-an-organization-invitation).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/orgs/members#create-an-organization-invitation).

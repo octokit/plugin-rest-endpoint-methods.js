@@ -39,4 +39,4 @@ The unique identifier of the comment.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/gists#delete-a-gist-comment).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/gists/comments#delete-a-gist-comment).

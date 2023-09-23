@@ -97,4 +97,4 @@ The property by which to sort the results.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/code-scanning#list-code-scanning-analyses-for-a-repository).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/code-scanning/code-scanning#list-code-scanning-analyses-for-a-repository).

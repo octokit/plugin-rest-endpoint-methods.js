@@ -54,4 +54,4 @@ Specifies a list of string-matching patterns to allow specific action(s) and reu
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/actions#set-allowed-actions-for-an-organization).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/actions/permissions#set-allowed-actions-and-reusable-workflows-for-an-organization).

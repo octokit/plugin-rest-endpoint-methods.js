@@ -67,4 +67,4 @@ The Git reference for the results you want to list. The `ref` for a branch can b
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/code-scanning#list-instances-of-a-code-scanning-alert).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/code-scanning/code-scanning#list-instances-of-a-code-scanning-alert).

@@ -41,4 +41,4 @@ The name of the repository without the `.git` extension. The name is not case se
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/dependabot#get-a-repository-public-key).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/dependabot/secrets#get-a-repository-public-key).

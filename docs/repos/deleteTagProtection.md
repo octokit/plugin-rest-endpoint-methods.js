@@ -48,4 +48,4 @@ The unique identifier of the tag protection.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#delete-tag-protection-state-for-a-repository).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/repos/tags#delete-a-tag-protection-state-for-a-repository).

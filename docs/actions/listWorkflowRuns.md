@@ -99,4 +99,4 @@ Only returns workflow runs that are associated with the specified `head_sha`.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/actions#list-workflow-runs).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/actions/workflow-runs#list-workflow-runs-for-a-workflow).

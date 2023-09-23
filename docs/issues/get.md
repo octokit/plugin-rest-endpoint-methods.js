@@ -18,7 +18,7 @@ to the [`issues`](https://docs.github.com/webhooks/event-payloads/#issues) webho
 **Note**: GitHub's REST API considers every pull request an issue, but not every issue is a pull request. For this
 reason, "Issues" endpoints may return both issues and pull requests in the response. You can identify pull requests by
 the `pull_request` key. Be aware that the `id` of a pull request returned from "Issues" endpoints will be an _issue id_. To find out the pull
-request id, use the "[List pull requests](https://docs.github.com/rest/reference/pulls#list-pull-requests)" endpoint.
+request id, use the "[List pull requests](https://docs.github.com/rest/pulls/pulls#list-pull-requests)" endpoint.
 
 ```js
 octokit.rest.issues.get({
@@ -57,4 +57,4 @@ The number that identifies the issue.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/issues#get-an-issue).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/issues/issues#get-an-issue).

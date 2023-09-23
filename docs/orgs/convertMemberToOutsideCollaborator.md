@@ -46,4 +46,4 @@ When set to `true`, the request will be performed asynchronously. Returns a 202 
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/orgs#convert-an-organization-member-to-outside-collaborator).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/orgs/outside-collaborators#convert-an-organization-member-to-outside-collaborator).

@@ -10,7 +10,7 @@ type: API method
 
 **Note:** You can also specify a repository by `repository_id` using the route `DELETE /repositories/:repository_id/comments/:comment_id/reactions/:reaction_id`.
 
-Delete a reaction to a [commit comment](https://docs.github.com/rest/reference/repos#comments).
+Delete a reaction to a [commit comment](https://docs.github.com/rest/commits/comments#get-a-commit-comment).
 
 ```js
 octokit.rest.reactions.deleteForCommitComment({
@@ -55,4 +55,4 @@ The unique identifier of the reaction.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/reactions#delete-a-commit-comment-reaction).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reactions/reactions#delete-a-commit-comment-reaction).

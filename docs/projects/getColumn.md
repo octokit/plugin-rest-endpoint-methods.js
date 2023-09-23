@@ -35,4 +35,4 @@ The unique identifier of the column.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/projects#get-a-project-column).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/projects/columns#get-a-project-column).

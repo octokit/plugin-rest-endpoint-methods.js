@@ -40,4 +40,4 @@ Page number of the results to fetch.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/apps#list-repositories-accessible-to-the-app-installation).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/apps/installations#list-repositories-accessible-to-the-app-installation).

@@ -49,4 +49,4 @@ The name of the repository without the `.git` extension. The name is not case se
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/repos#download-a-repository-archive).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/repos/contents#download-a-repository-archive-zip).

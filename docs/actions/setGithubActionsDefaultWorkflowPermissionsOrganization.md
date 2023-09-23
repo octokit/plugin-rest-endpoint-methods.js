@@ -49,4 +49,4 @@ Whether GitHub Actions can approve pull requests. Enabling this can be a securit
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/actions#set-default-workflow-permissions).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/actions/permissions#set-default-workflow-permissions-for-an-organization).

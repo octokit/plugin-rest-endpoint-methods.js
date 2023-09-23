@@ -55,4 +55,4 @@ The unique identifier of the protection rule.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/deployments/protection-rules#get-a-deployment-protection-rule).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/deployments/protection-rules#get-a-custom-deployment-protection-rule).

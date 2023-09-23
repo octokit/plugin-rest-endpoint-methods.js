@@ -8,6 +8,8 @@ type: API method
 
 # Unstar a repository for the authenticated user
 
+Unstar a repository that the authenticated user has previously starred.
+
 ```js
 octokit.rest.activity.unstarRepoForAuthenticatedUser({
   owner,
@@ -39,4 +41,4 @@ The name of the repository without the `.git` extension. The name is not case se
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/activity#unstar-a-repository-for-the-authenticated-user).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/activity/starring#unstar-a-repository-for-the-authenticated-user).

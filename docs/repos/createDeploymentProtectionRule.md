@@ -56,4 +56,4 @@ The ID of the custom app that will be enabled on the environment.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/deployments/deployment-protection-rules#create-a-deployment-protection-rule).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/deployments/protection-rules#create-a-custom-deployment-protection-rule-on-an-environment).

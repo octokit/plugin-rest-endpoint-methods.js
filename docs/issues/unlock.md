@@ -47,4 +47,4 @@ The number that identifies the issue.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/issues#unlock-an-issue).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/issues/issues#unlock-an-issue).

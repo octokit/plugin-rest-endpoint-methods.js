@@ -61,4 +61,4 @@ The number of results per page (max 100).
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/deployments/protection-rules#list-custom-deployment-rule-integrations).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/deployments/protection-rules#list-custom-deployment-rule-integrations-available-for-an-environment).

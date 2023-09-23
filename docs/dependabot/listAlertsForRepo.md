@@ -125,4 +125,4 @@ Instead, use `per_page` in combination with `before` to fetch the last page of r
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/dependabot#list-dependabot-alerts-for-a-repository).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/dependabot/alerts#list-dependabot-alerts-for-a-repository).

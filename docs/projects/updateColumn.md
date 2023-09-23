@@ -39,4 +39,4 @@ Name of the project column
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/reference/projects#update-a-project-column).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/projects/columns#update-an-existing-project-column).
