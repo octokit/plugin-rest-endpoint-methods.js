@@ -5,14 +5,14 @@ import { fileURLToPath } from "url";
 import { format } from "prettier";
 import sortKeys from "sort-keys";
 
-const parentDir = new URL('.', import.meta.url);
+const parentDir = new URL(".", import.meta.url);
 const ENDPOINTS = JSON.parse(
   readFileSync(new URL("generated/endpoints.json", parentDir)).toString(),
 );
 import { isDeprecated } from "./util.mjs";
 
 const ROUTES_PATH = join(
-  fileURLToPath(new URL('.', import.meta.url)),
+  fileURLToPath(parentDir),
   "..",
   "..",
   "src",

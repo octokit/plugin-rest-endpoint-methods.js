@@ -78,7 +78,11 @@ async function main() {
   });
 
   writeFileSync(
-    resolve(fileURLToPath(new URL('.', import.meta.url)), "generated", "endpoints.json"),
+    resolve(
+      fileURLToPath(new URL(".", import.meta.url)),
+      "generated",
+      "endpoints.json",
+    ),
     await format(JSON.stringify(endpoints), {
       parser: "json",
     }),

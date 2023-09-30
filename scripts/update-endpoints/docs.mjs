@@ -1,10 +1,12 @@
 import { format } from "prettier";
 
 import { isDeprecated } from "./util.mjs";
-import { readFileSync, mkdirSync, writeFileSync } from "fs"
+import { readFileSync, mkdirSync, writeFileSync } from "fs";
 
 const ENDPOINTS = JSON.parse(
-  readFileSync(new URL("generated/endpoints.json", new URL('.', import.meta.url))).toString(),
+  readFileSync(
+    new URL("generated/endpoints.json", new URL(".", import.meta.url)),
+  ).toString(),
 );
 
 generateRoutes();
