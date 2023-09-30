@@ -1,8 +1,11 @@
-const { outputFileSync } = require("fs-extra");
-const prettier = require("prettier");
+import { format } from "prettier";
 
-const ENDPOINTS = require("./generated/endpoints.json");
-const { isDeprecated } = require("./util");
+import { isDeprecated } from "./util.mjs";
+import { readFileSync, mkdirSync, writeFileSync } from "fs"
+
+const ENDPOINTS = JSON.parse(
+  readFileSync(new URL("generated/endpoints.json", new URL('.', import.meta.url))).toString(),
+);
 
 generateRoutes();
 
@@ -14,8 +17,10 @@ async function generateRoutes() {
   });
 
   for (const endpoint of endpoints) {
-    const path = `docs/${endpoint.scope}/${endpoint.id}.md`;
-    outputFileSync(path, await template(endpoint));
+    const dirPath = `docs/${endpoint.scope}`;
+    const path = `${dirPath}/${endpoint.id}.md`;
+    mkdirSync(dirPath, { recursive: true });
+    writeFileSync(path, await template(endpoint));
     console.log(`${path} written`);
   }
 }
@@ -34,7 +39,7 @@ async function template(endpoint) {
 
 ${param.description || ""}
 
-</td></tr>`
+</td></tr>`,
   );
 
   const requiredParameterNames = endpoint.parameters
@@ -96,7 +101,7 @@ ${parameters}
 
 See also: [GitHub Developer Guide documentation](${endpoint.documentationUrl}).`;
 
-  return await prettier.format(content, {
+  return await format(content, {
     parser: "markdown",
   });
 }

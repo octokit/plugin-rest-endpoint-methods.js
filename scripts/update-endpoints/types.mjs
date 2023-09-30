@@ -1,13 +1,15 @@
-const { writeFileSync } = require("fs");
-const { join: pathJoin } = require("path");
+import { writeFileSync, readFileSync } from "fs";
+import { join as pathJoin } from "path";
 
-const camelCase = require("lodash.camelcase");
-const prettier = require("prettier");
-const { stringToJsdocComment } = require("string-to-jsdoc-comment");
-const sortKeys = require("sort-keys");
+import camelCase from "lodash.camelcase";
+import { format } from "prettier";
+import { stringToJsdocComment } from "string-to-jsdoc-comment";
+import sortKeys from "sort-keys";
 
-const ENDPOINTS = require("./generated/endpoints.json");
-const { isDeprecated } = require("./util");
+const ENDPOINTS = JSON.parse(
+  readFileSync(new URL("generated/endpoints.json", new URL('.', import.meta.url))).toString(),
+);
+import { isDeprecated } from "./util.mjs";
 
 generateTypes();
 
@@ -33,7 +35,7 @@ async function generateTypes() {
           jsdoc: stringToJsdocComment(description),
         });
       },
-      []
+      [],
     );
 
     return namespaces.concat({
@@ -50,7 +52,7 @@ async function generateTypes() {
         `${method.name}: {
           parameters: RequestParameters & Omit<Endpoints["${method.route}"]["parameters"], "baseUrl" | "headers" | "mediaType">,
           response: Endpoints["${method.route}"]["response"]
-        }`
+        }`,
       );
     }
 
@@ -71,7 +73,7 @@ async function generateTypes() {
           defaults: RequestInterface["defaults"];
           endpoint: EndpointInterface<{ url: string }>;
         }`,
-        ].join("\n")
+        ].join("\n"),
       );
     }
 
@@ -80,7 +82,7 @@ async function generateTypes() {
     }`);
   }
 
-  const methodTypesSource = await prettier.format(
+  const methodTypesSource = await format(
     [
       `import type { EndpointInterface, RequestInterface } from "@octokit/types";`,
       `import type { RestEndpointMethodTypes } from "./parameters-and-response-types";`,
@@ -91,9 +93,9 @@ async function generateTypes() {
     ].join("\n"),
     {
       parser: "typescript",
-    }
+    },
   );
-  const parametersAndResponsesTypes = await prettier.format(
+  const parametersAndResponsesTypes = await format(
     [
       `import type { Endpoints, RequestParameters } from "@octokit/types";`,
       "",
@@ -103,14 +105,14 @@ async function generateTypes() {
     ].join("\n"),
     {
       parser: "typescript",
-    }
+    },
   );
 
   const methodTypesFilePath = pathJoin(
     process.cwd(),
     "src",
     "generated",
-    "method-types.ts"
+    "method-types.ts",
   );
 
   writeFileSync(methodTypesFilePath, methodTypesSource, "utf8");
@@ -120,13 +122,13 @@ async function generateTypes() {
     process.cwd(),
     "src",
     "generated",
-    "parameters-and-response-types.ts"
+    "parameters-and-response-types.ts",
   );
 
   writeFileSync(
     parametersAndResponseFilePath,
     parametersAndResponsesTypes,
-    "utf8"
+    "utf8",
   );
   console.log(`Types written to ${parametersAndResponseFilePath}`);
 }
