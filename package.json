@@ -4,8 +4,8 @@
   "description": "Octokit plugin adding one method for all of api.github.com REST API endpoints",
   "scripts": {
     "build": "node scripts/build.mjs && tsc -p tsconfig.json",
-    "lint": "prettier --check '{src,test}/**/*' '!src/generated/**' README.md package.json",
-    "lint:fix": "prettier --write '{src,test}/**/*' '!src/generated/**' README.md package.json",
+    "lint": "prettier --check '{src,test,scripts}/**/*' '!scripts/update-endpoints/generated/**' '!src/generated/**' README.md package.json",
+    "lint:fix": "prettier --write '{src,test,scripts}/**/*' '!scripts/update-endpoints/generated/**' '!src/generated/**' README.md package.json",
     "pretest": "npm run -s lint",
     "test": "jest --coverage",
     "update-endpoints": "npm-run-all update-endpoints:*",
