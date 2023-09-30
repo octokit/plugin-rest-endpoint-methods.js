@@ -9,10 +9,10 @@
     "pretest": "npm run -s lint",
     "test": "jest --coverage",
     "update-endpoints": "npm-run-all update-endpoints:*",
-    "update-endpoints:fetch-json": "node scripts/update-endpoints/fetch-json",
-    "update-endpoints:code": "node scripts/update-endpoints/code",
-    "update-endpoints:docs": "node scripts/update-endpoints/docs",
-    "update-endpoints:types": "node scripts/update-endpoints/types"
+    "update-endpoints:fetch-json": "node scripts/update-endpoints/fetch-json.mjs",
+    "update-endpoints:code": "node scripts/update-endpoints/code.mjs",
+    "update-endpoints:docs": "node scripts/update-endpoints/docs.mjs",
+    "update-endpoints:types": "node scripts/update-endpoints/types.mjs"
   },
   "repository": "github:octokit/plugin-rest-endpoint-methods.js",
   "keywords": [
