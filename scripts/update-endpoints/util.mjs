@@ -1,12 +1,8 @@
-module.exports = {
-  isDeprecated,
-};
-
 /**
  * we ignore all legacy endpoints except the ones that were recently added
  * @param { Endpoint } endpoint
  */
-function isDeprecated(endpoint) {
+export function isDeprecated(endpoint) {
   if (
     endpoint.removalDate &&
     endpoint.removalDate < new Date().toISOString().substr(0, 10)

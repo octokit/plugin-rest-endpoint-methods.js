@@ -1,8 +1,9 @@
-const { writeFileSync } = require("fs");
-const path = require("path");
+import { writeFileSync } from "fs";
+import { resolve } from "path";
+import { fileURLToPath } from "url";
 
-const graphql = require("github-openapi-graphql-query");
-const prettier = require("prettier");
+import graphql from "github-openapi-graphql-query";
+import { format } from "prettier";
 
 if (!process.env.VERSION) {
   throw new Error(`VERSION environment variable must be set`);
@@ -77,9 +78,13 @@ async function main() {
   });
 
   writeFileSync(
-    path.resolve(__dirname, "generated", "endpoints.json"),
-    await prettier.format(JSON.stringify(endpoints), {
+    resolve(
+      fileURLToPath(new URL(".", import.meta.url)),
+      "generated",
+      "endpoints.json",
+    ),
+    await format(JSON.stringify(endpoints), {
       parser: "json",
-    })
+    }),
   );
 }

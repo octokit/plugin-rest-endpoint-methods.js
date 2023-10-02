@@ -1,19 +1,23 @@
-const { writeFileSync } = require("fs");
-const { join } = require("path");
+import { readFileSync, writeFileSync } from "fs";
+import { join } from "path";
+import { fileURLToPath } from "url";
 
-const prettier = require("prettier");
-const sortKeys = require("sort-keys");
+import { format } from "prettier";
+import sortKeys from "sort-keys";
 
-const ENDPOINTS = require("./generated/endpoints.json");
-const { isDeprecated } = require("./util");
+const parentDir = new URL(".", import.meta.url);
+const ENDPOINTS = JSON.parse(
+  readFileSync(new URL("generated/endpoints.json", parentDir)).toString(),
+);
+import { isDeprecated } from "./util.mjs";
 
 const ROUTES_PATH = join(
-  __dirname,
+  fileURLToPath(parentDir),
   "..",
   "..",
   "src",
   "generated",
-  "endpoints.ts"
+  "endpoints.ts",
 );
 
 const newRoutes = {};
@@ -84,7 +88,7 @@ async function generateRoutes() {
     }
 
     const renamedParameters = endpoint.parameters.filter(
-      (parameter) => !!parameter.alias
+      (parameter) => !!parameter.alias,
     );
 
     if (renamedParameters.length) {
@@ -118,15 +122,15 @@ async function generateRoutes() {
 
   writeFileSync(
     ROUTES_PATH,
-    await prettier.format(
+    await format(
       `import type { EndpointsDefaultsAndDecorations } from "../types";
   const Endpoints: EndpointsDefaultsAndDecorations = ${JSON.stringify(
-    sortKeys(newRoutes, { deep: true })
+    sortKeys(newRoutes, { deep: true }),
   )}
   
   export default Endpoints`,
-      { parser: "typescript" }
-    )
+      { parser: "typescript" },
+    ),
   );
   console.log(`${ROUTES_PATH} written.`);
 }
