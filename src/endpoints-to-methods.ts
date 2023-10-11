@@ -48,14 +48,46 @@ type ProxyTarget = {
 };
 
 const handler = {
+  has({ scope }: ProxyTarget, methodName: string) {
+    return endpointMethodsMap.get(scope).has(methodName);
+  },
+  getOwnPropertyDescriptor(target: ProxyTarget, methodName: string) {
+    return {
+      value: this.get(target, methodName), // ensures method is in the cache
+      configurable: true,
+      writable: true,
+      enumerable: true,
+    };
+  },
+  defineProperty(
+    target: ProxyTarget,
+    methodName: string,
+    descriptor: PropertyDescriptor,
+  ) {
+    Object.defineProperty(target.cache, methodName, descriptor);
+    return true;
+  },
+  deleteProperty(target: ProxyTarget, methodName: string) {
+    delete target.cache[methodName];
+    return true;
+  },
+  ownKeys({ scope }: ProxyTarget) {
+    return [...endpointMethodsMap.get(scope).keys()];
+  },
+  set(target: ProxyTarget, methodName: string, value: any) {
+    return (target.cache[methodName] = value);
+  },
   get({ octokit, scope, cache }: ProxyTarget, methodName: string) {
     if (cache[methodName]) {
       return cache[methodName];
     }
 
-    const { decorations, endpointDefaults } = endpointMethodsMap
-      .get(scope)
-      .get(methodName);
+    const method = endpointMethodsMap.get(scope).get(methodName);
+    if (!method) {
+      return undefined;
+    }
+
+    const { endpointDefaults, decorations } = method;
 
     if (decorations) {
       cache[methodName] = decorate(

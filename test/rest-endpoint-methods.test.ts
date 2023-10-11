@@ -1,7 +1,9 @@
-import fetchMock from "fetch-mock";
 import { Octokit } from "@octokit/core";
+import fetchMock from "fetch-mock";
 
-import { restEndpointMethods, legacyRestEndpointMethods } from "../src";
+import sinon from "sinon";
+import { legacyRestEndpointMethods, restEndpointMethods } from "../src";
+import { Api } from "../src/types";
 
 describe("REST API endpoint methods", () => {
   it("README example", async () => {
@@ -173,6 +175,100 @@ describe("REST API endpoint methods", () => {
     });
 
     return octokit.rest.apps.listInstallations();
+  });
+
+  describe("mocking", () => {
+    let octokit: Octokit & Api;
+
+    beforeEach(() => {
+      const networkMock = fetchMock
+        .sandbox()
+        .getOnce(
+          "https://api.github.com/repos/octokit/plugin-rest-endpoint-methods/issues/1/labels",
+          [{ name: "mocked from network" }],
+        );
+
+      const MyOctokit = Octokit.plugin(restEndpointMethods);
+      octokit = new MyOctokit({
+        request: {
+          fetch: networkMock,
+        },
+      });
+    });
+
+    afterEach(async () => {
+      const restoredResult = await octokit.rest.issues.listLabelsOnIssue({
+        owner: "octokit",
+        repo: "plugin-rest-endpoint-methods",
+        issue_number: 1,
+      });
+      expect(restoredResult.data[0].name).toBe("mocked from network");
+    });
+
+    it("allows mocking with sinon.stub", async () => {
+      const stub = sinon
+        .stub(octokit.rest.issues, "listLabelsOnIssue")
+        .resolves({ data: [{ name: "mocked from sinon" }] } as Awaited<
+          ReturnType<typeof octokit.rest.issues.listLabelsOnIssue>
+        >);
+
+      const sinonResult = await octokit.rest.issues.listLabelsOnIssue({
+        owner: "octokit",
+        repo: "plugin-rest-endpoint-methods",
+        issue_number: 1,
+      });
+      expect(sinonResult.data[0].name).toBe("mocked from sinon");
+
+      stub.restore();
+    });
+
+    it("allows mocking with jest.spyOn", async () => {
+      jest
+        .spyOn(octokit.rest.issues, "listLabelsOnIssue")
+        .mockResolvedValueOnce({
+          data: [{ name: "mocked from jest" }],
+        } as Awaited<ReturnType<typeof octokit.rest.issues.listLabelsOnIssue>>);
+
+      const jestResult = await octokit.rest.issues.listLabelsOnIssue({
+        owner: "octokit",
+        repo: "plugin-rest-endpoint-methods",
+        issue_number: 1,
+      });
+      expect(jestResult.data[0].name).toBe("mocked from jest");
+
+      jest.restoreAllMocks();
+    });
+
+    it("allows manually replacing a method", async () => {
+      const oldImplementation = octokit.rest.issues.listLabelsOnIssue;
+
+      octokit.rest.issues.listLabelsOnIssue = (async () => {
+        return {
+          data: [{ name: "mocked from custom implementation" }],
+        } as Awaited<ReturnType<typeof octokit.rest.issues.listLabelsOnIssue>>;
+      }) as unknown as typeof oldImplementation;
+
+      const customResult = await octokit.rest.issues.listLabelsOnIssue({
+        owner: "octokit",
+        repo: "plugin-rest-endpoint-methods",
+        issue_number: 1,
+      });
+      expect(customResult.data[0].name).toBe(
+        "mocked from custom implementation",
+      );
+
+      delete (octokit.rest.issues as any).listLabelsOnIssue;
+      octokit.rest.issues.listLabelsOnIssue = oldImplementation;
+    });
+  });
+
+  it("lists all methods (e.g. with tab-tab in a REPL)", async () => {
+    const MyOctokit = Octokit.plugin(restEndpointMethods);
+    const octokit = new MyOctokit();
+
+    const methods = Object.keys(octokit.rest.issues);
+
+    expect(methods).toContain("listLabelsOnIssue");
   });
 
   // besides setting `octokit.rest.*`, the plugin exports legacyRestEndpointMethods
