@@ -24,7 +24,6 @@ export type RestEndpointMethods = {
      * Add custom labels to a self-hosted runner configured in a repository.
      *
      * You must authenticate using an access token with the `repo` scope to use this endpoint.
-     * If the repository is private, you must use an access token with the `repo` scope.
      * GitHub Apps must have the `administration` permission for repositories and the `organization_self_hosted_runners` permission for organizations.
      * Authenticated users must have admin access to repositories or organizations, or the `manage_runners:enterprise` scope for enterprises, to use these endpoints.
      */
@@ -92,7 +91,6 @@ export type RestEndpointMethods = {
      * Cancels a workflow run using its `id`.
      *
      * You must authenticate using an access token with the `repo` scope to use this endpoint.
-     * If the repository is private, you must use an access token with the `repo` scope.
      * GitHub Apps must have the `actions:write` permission to use this endpoint.
      */
     cancelWorkflowRun: {
@@ -108,7 +106,6 @@ export type RestEndpointMethods = {
      * Create an environment variable that you can reference in a GitHub Actions workflow.
      *
      * You must authenticate using an access token with the `repo` scope to use this endpoint.
-     * If the repository is private, you must use an access token with the `repo` scope.
      * GitHub Apps must have the `environment:write` repository permission to use this endpoint.
      * Authenticated users must have collaborator access to a repository to create, update, or read variables.
      */
@@ -288,7 +285,6 @@ export type RestEndpointMethods = {
      * expires after one hour.
      *
      * You must authenticate using an access token with the `repo` scope to use this endpoint.
-     * If the repository is private, you must use an access token with the `repo` scope.
      * GitHub Apps must have the `administration` permission for repositories and the `organization_self_hosted_runners` permission for organizations.
      * Authenticated users must have admin access to repositories or organizations, or the `manage_runners:enterprise` scope for enterprises, to use these endpoints.
      *
@@ -339,7 +335,6 @@ export type RestEndpointMethods = {
      * a repository. The token expires after one hour.
      *
      * You must authenticate using an access token with the `repo` scope to use this endpoint.
-     * If the repository is private, you must use an access token with the `repo` scope.
      * GitHub Apps must have the `administration` permission for repositories and the `organization_self_hosted_runners` permission for organizations.
      * Authenticated users must have admin access to repositories or organizations, or the `manage_runners:enterprise` scope for enterprises, to use these endpoints.
      *
@@ -363,7 +358,6 @@ export type RestEndpointMethods = {
      * Creates a repository variable that you can reference in a GitHub Actions workflow.
      *
      * You must authenticate using an access token with the `repo` scope to use this endpoint.
-     * If the repository is private, you must use an access token with the `repo` scope.
      * GitHub Apps must have the `actions_variables:write` repository permission to use this endpoint.
      * Authenticated users must have collaborator access to a repository to create, update, or read variables.
      */
@@ -456,7 +450,6 @@ export type RestEndpointMethods = {
      * Deletes an environment variable using the variable name.
      *
      * You must authenticate using an access token with the `repo` scope to use this endpoint.
-     * If the repository is private, you must use an access token with the `repo` scope.
      * GitHub Apps must have the `environment:write` repository permission to use this endpoint.
      * Authenticated users must have collaborator access to a repository to create, update, or read variables.
      */
@@ -523,7 +516,6 @@ export type RestEndpointMethods = {
      * Deletes a repository variable using the variable name.
      *
      * You must authenticate using an access token with the `repo` scope to use this endpoint.
-     * If the repository is private, you must use an access token with the `repo` scope.
      * GitHub Apps must have the `actions_variables:write` repository permission to use this endpoint.
      * Authenticated users must have collaborator access to a repository to create, update, or read variables.
      */
@@ -557,7 +549,6 @@ export type RestEndpointMethods = {
      * Forces the removal of a self-hosted runner from a repository. You can use this endpoint to completely remove the runner when the machine you were using no longer exists.
      *
      * You must authenticate using an access token with the `repo` scope to use this endpoint.
-     * If the repository is private, you must use an access token with the `repo` scope.
      * GitHub Apps must have the `administration` permission for repositories and the `organization_self_hosted_runners` permission for organizations.
      * Authenticated users must have admin access to repositories or organizations, or the `manage_runners:enterprise` scope for enterprises, to use these endpoints.
      */
@@ -714,6 +705,22 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
+     * Cancels a workflow run and bypasses conditions that would otherwise cause a workflow execution to continue, such as an `always()` condition on a job.
+     * You should only use this endpoint to cancel a workflow run when the workflow run is not responding to [`POST /repos/{owner}/{repo}/actions/runs/{run_id}/cancel`](/rest/actions/workflow-runs#cancel-a-workflow-run).
+     *
+     * You must authenticate using an access token with the `repo` scope to use this endpoint.
+     * GitHub Apps must have the `actions:write` permission to use this endpoint.
+     */
+    forceCancelWorkflowRun: {
+      (
+        params?: RestEndpointMethodTypes["actions"]["forceCancelWorkflowRun"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["actions"]["forceCancelWorkflowRun"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
      * Generates a configuration that can be passed to the runner application at startup.
      *
      * You must authenticate using an access token with the `admin:org` scope to use this endpoint.
@@ -734,7 +741,6 @@ export type RestEndpointMethods = {
      * Generates a configuration that can be passed to the runner application at startup.
      *
      * You must authenticate using an access token with the `repo` scope to use this endpoint.
-     * If the repository is private, you must use an access token with the `repo` scope.
      * GitHub Apps must have the `administration` permission for repositories and the `organization_self_hosted_runners` permission for organizations.
      * Authenticated users must have admin access to repositories or organizations, or the `manage_runners:enterprise` scope for enterprises, to use these endpoints.
      */
@@ -879,7 +885,6 @@ export type RestEndpointMethods = {
      * Gets a specific variable in an environment.
      *
      * You must authenticate using an access token with the `repo` scope to use this endpoint.
-     * If the repository is private, you must use an access token with the `repo` scope.
      * GitHub Apps must have the `environments:read` repository permission to use this endpoint.
      * Authenticated users must have collaborator access to a repository to create, update, or read variables.
      */
@@ -1083,7 +1088,6 @@ export type RestEndpointMethods = {
      * Gets a specific variable in a repository.
      *
      * You must authenticate using an access token with the `repo` scope to use this endpoint.
-     * If the repository is private, you must use an access token with the `repo` scope.
      * GitHub Apps must have the `actions_variables:read` repository permission to use this endpoint.
      * Authenticated users must have collaborator access to a repository to create, update, or read variables.
      */
@@ -1129,7 +1133,6 @@ export type RestEndpointMethods = {
      * Gets a specific self-hosted runner configured in a repository.
      *
      * You must authenticate using an access token with the `repo` scope to use this endpoint.
-     * If the repository is private, you must use an access token with the `repo` scope.
      * GitHub Apps must have the `administration` permission for repositories and the `organization_self_hosted_runners` permission for organizations.
      * Authenticated users must have admin access to repositories or organizations, or the `manage_runners:enterprise` scope for enterprises, to use these endpoints.
      */
@@ -1257,7 +1260,6 @@ export type RestEndpointMethods = {
      * Lists all environment variables.
      *
      * You must authenticate using an access token with the `repo` scope to use this endpoint.
-     * If the repository is private, you must use an access token with the `repo` scope.
      * GitHub Apps must have the `environments:read` repository permission to use this endpoint.
      * Authenticated users must have collaborator access to a repository to create, update, or read variables.
      */
@@ -1315,7 +1317,6 @@ export type RestEndpointMethods = {
      * Lists all labels for a self-hosted runner configured in a repository.
      *
      * You must authenticate using an access token with the `repo` scope to use this endpoint.
-     * If the repository is private, you must use an access token with the `repo` scope.
      * GitHub Apps must have the `administration` permission for repositories and the `organization_self_hosted_runners` permission for organizations.
      * Authenticated users must have admin access to repositories or organizations, or the `manage_runners:enterprise` scope for enterprises, to use these endpoints.
      */
@@ -1380,7 +1381,6 @@ export type RestEndpointMethods = {
      * Lists all organiation variables shared with a repository.
      *
      * You must authenticate using an access token with the `repo` scope to use this endpoint.
-     * If the repository is private, you must use an access token with the `repo` scope.
      * GitHub Apps must have the `actions_variables:read` repository permission to use this endpoint.
      * Authenticated users must have collaborator access to a repository to create, update, or read variables.
      */
@@ -1413,7 +1413,6 @@ export type RestEndpointMethods = {
     /**
      * Lists all repository variables.
      * You must authenticate using an access token with the `repo` scope to use this endpoint.
-     * If the repository is private, you must use an access token with the `repo` scope.
      * GitHub Apps must have the `actions_variables:read` repository permission to use this endpoint.
      * Authenticated users must have collaborator access to a repository to create, update, or read variables.
      */
@@ -1459,7 +1458,6 @@ export type RestEndpointMethods = {
      * Lists binaries for the runner application that you can download and run.
      *
      * You must authenticate using an access token with the `repo` scope to use this endpoint.
-     * If the repository is private, you must use an access token with the `repo` scope.
      * GitHub Apps must have the `administration` permission for repositories and the `organization_self_hosted_runners` permission for organizations.
      * Authenticated users must have admin access to repositories or organizations, or the `manage_runners:enterprise` scope for enterprises, to use these endpoints.
      */
@@ -1543,7 +1541,6 @@ export type RestEndpointMethods = {
      * Lists all self-hosted runners configured in a repository.
      *
      * You must authenticate using an access token with the `repo` scope to use this endpoint.
-     * If the repository is private, you must use an access token with the `repo` scope.
      * GitHub Apps must have the `administration` permission for repositories and the `organization_self_hosted_runners` permission for organizations.
      * Authenticated users must have admin access to repositories or organizations, or the `manage_runners:enterprise` scope for enterprises, to use these endpoints.
      */
@@ -1600,7 +1597,6 @@ export type RestEndpointMethods = {
      * Re-run a job and its dependent jobs in a workflow run.
      *
      * You must authenticate using an access token with the `repo` scope to use this endpoint.
-     * If the repository is private, you must use an access token with the `repo` scope.
      * GitHub Apps must have the `actions:write` permission to use this endpoint.
      */
     reRunJobForWorkflowRun: {
@@ -1659,7 +1655,6 @@ export type RestEndpointMethods = {
      * repository. Returns the remaining read-only labels from the runner.
      *
      * You must authenticate using an access token with the `repo` scope to use this endpoint.
-     * If the repository is private, you must use an access token with the `repo` scope.
      * GitHub Apps must have the `administration` permission for repositories and the `organization_self_hosted_runners` permission for organizations.
      * Authenticated users must have admin access to repositories or organizations, or the `manage_runners:enterprise` scope for enterprises, to use these endpoints.
      */
@@ -1701,7 +1696,6 @@ export type RestEndpointMethods = {
      * present on the runner.
      *
      * You must authenticate using an access token with the `repo` scope to use this endpoint.
-     * If the repository is private, you must use an access token with the `repo` scope.
      * GitHub Apps must have the `administration` permission for repositories and the `organization_self_hosted_runners` permission for organizations.
      * Authenticated users must have admin access to repositories or organizations, or the `manage_runners:enterprise` scope for enterprises, to use these endpoints.
      */
@@ -1835,7 +1829,6 @@ export type RestEndpointMethods = {
      * self-hosted runner configured in a repository.
      *
      * You must authenticate using an access token with the `repo` scope to use this endpoint.
-     * If the repository is private, you must use an access token with the `repo` scope.
      * GitHub Apps must have the `administration` permission for repositories and the `organization_self_hosted_runners` permission for organizations.
      * Authenticated users must have admin access to repositories or organizations, or the `manage_runners:enterprise` scope for enterprises, to use these endpoints.
      */
@@ -1982,7 +1975,6 @@ export type RestEndpointMethods = {
      * Updates an environment variable that you can reference in a GitHub Actions workflow.
      *
      * You must authenticate using an access token with the `repo` scope to use this endpoint.
-     * If the repository is private, you must use an access token with the `repo` scope.
      * GitHub Apps must have the `environment:write` repository permission to use this endpoint.
      * Authenticated users must have collaborator access to a repository to create, update, or read variables.
      */
@@ -2016,7 +2008,6 @@ export type RestEndpointMethods = {
      * Updates a repository variable that you can reference in a GitHub Actions workflow.
      *
      * You must authenticate using an access token with the `repo` scope to use this endpoint.
-     * If the repository is private, you must use an access token with the `repo` scope.
      * GitHub Apps must have the `actions_variables:write` repository permission to use this endpoint.
      * Authenticated users must have collaborator access to a repository to create, update, or read variables.
      */
@@ -3107,9 +3098,11 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * **Note:** The Checks API only looks for pushes in the repository where the check suite or check run were created. Pushes to a branch in a forked repository are not detected and return an empty `pull_requests` array.
-     *
      * Lists check runs for a commit ref. The `ref` can be a SHA, branch name, or a tag name. GitHub Apps must have the `checks:read` permission on a private repository or pull access to a public repository to get check runs. OAuth apps and authenticated users must have the `repo` scope to get check runs in a private repository.
+     *
+     * **Note:** The endpoints to manage checks only look for pushes in the repository where the check suite or check run were created. Pushes to a branch in a forked repository are not detected and return an empty `pull_requests` array.
+     *
+     * If there are more than 1000 check suites on a single git reference, this endpoint will limit check runs to the 1000 most recent check suites. To iterate over all possible check runs, use the [List check suites for a Git reference](https://docs.github.com/rest/reference/checks#list-check-suites-for-a-git-reference) endpoint and provide the `check_suite_id` parameter to the [List check runs in a check suite](https://docs.github.com/rest/reference/checks#list-check-runs-in-a-check-suite) endpoint.
      */
     listForRef: {
       (
@@ -3119,9 +3112,9 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * **Note:** The Checks API only looks for pushes in the repository where the check suite or check run were created. Pushes to a branch in a forked repository are not detected and return an empty `pull_requests` array.
-     *
      * Lists check runs for a check suite using its `id`. GitHub Apps must have the `checks:read` permission on a private repository or pull access to a public repository to get check runs. OAuth apps and authenticated users must have the `repo` scope to get check runs in a private repository.
+     *
+     * **Note:** The endpoints to manage checks only look for pushes in the repository where the check suite or check run were created. Pushes to a branch in a forked repository are not detected and return an empty `pull_requests` array.
      */
     listForSuite: {
       (
@@ -3131,9 +3124,9 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * **Note:** The Checks API only looks for pushes in the repository where the check suite or check run were created. Pushes to a branch in a forked repository are not detected and return an empty `pull_requests` array and a `null` value for `head_branch`.
-     *
      * Lists check suites for a commit `ref`. The `ref` can be a SHA, branch name, or a tag name. GitHub Apps must have the `checks:read` permission on a private repository or pull access to a public repository to list check suites. OAuth apps and authenticated users must have the `repo` scope to get check suites in a private repository.
+     *
+     * **Note:** The endpoints to manage checks only look for pushes in the repository where the check suite or check run were created. Pushes to a branch in a forked repository are not detected and return an empty `pull_requests` array and a `null` value for `head_branch`.
      */
     listSuitesForRef: {
       (
@@ -3185,9 +3178,9 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * **Note:** The Checks API only looks for pushes in the repository where the check suite or check run were created. Pushes to a branch in a forked repository are not detected and return an empty `pull_requests` array.
-     *
      * Updates a check run for a specific commit in a repository. Your GitHub App must have the `checks:write` permission to edit check runs.
+     *
+     * **Note:** The endpoints to manage checks only look for pushes in the repository where the check suite or check run were created. Pushes to a branch in a forked repository are not detected and return an empty `pull_requests` array.
      */
     update: {
       (
@@ -3595,6 +3588,22 @@ export type RestEndpointMethods = {
         params?: RestEndpointMethodTypes["codespaces"]["addSelectedRepoToOrgSecret"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["codespaces"]["addSelectedRepoToOrgSecret"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Checks whether the permissions defined by a given devcontainer configuration have been accepted by the authenticated user.
+     *
+     * You must authenticate using an access token with the `codespace` scope to use this endpoint.
+     *
+     * GitHub Apps must have write access to the `codespaces` repository permission to use this endpoint.
+     */
+    checkPermissionsForDevcontainer: {
+      (
+        params?: RestEndpointMethodTypes["codespaces"]["checkPermissionsForDevcontainer"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["codespaces"]["checkPermissionsForDevcontainer"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -4349,11 +4358,11 @@ export type RestEndpointMethods = {
      *
      * Organization owners and members with admin permissions can view GitHub Copilot seat assignment details for members in their organization. You must authenticate using an access token with the `manage_billing:copilot` scope to use this endpoint.
      */
-    getCopilotSeatAssignmentDetailsForUser: {
+    getCopilotSeatDetailsForUser: {
       (
-        params?: RestEndpointMethodTypes["copilot"]["getCopilotSeatAssignmentDetailsForUser"]["parameters"],
+        params?: RestEndpointMethodTypes["copilot"]["getCopilotSeatDetailsForUser"]["parameters"],
       ): Promise<
-        RestEndpointMethodTypes["copilot"]["getCopilotSeatAssignmentDetailsForUser"]["response"]
+        RestEndpointMethodTypes["copilot"]["getCopilotSeatDetailsForUser"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -5979,9 +5988,9 @@ export type RestEndpointMethods = {
     /**
      * Stop an import for a repository.
      *
-     * **Warning:** Support for importing Mercurial, Subversion and Team Foundation Version Control repositories will end
-     * on October 17, 2023. For more details, see [changelog](https://gh.io/github-importer-non-git-eol). In the coming weeks, we will update
-     * these docs to reflect relevant changes to the API and will contact all integrators using the "Source imports" API.
+     * **Warning:** Due to very low levels of usage and available alternatives, this endpoint is deprecated and will no longer be available from 00:00 UTC on April 12, 2024. For more details and alternatives, see the [changelog](https://gh.io/source-imports-api-deprecation).
+     *
+     * @deprecated octokit.rest.migrations.cancelImport() is deprecated, see https://docs.github.com/rest/migrations/source-imports#cancel-an-import
      */
     cancelImport: {
       (
@@ -6065,9 +6074,8 @@ export type RestEndpointMethods = {
      *
      * This endpoint and the [Map a commit author](https://docs.github.com/rest/migrations/source-imports#map-a-commit-author) endpoint allow you to provide correct Git author information.
      *
-     * **Warning:** Support for importing Mercurial, Subversion and Team Foundation Version Control repositories will end
-     * on October 17, 2023. For more details, see [changelog](https://gh.io/github-importer-non-git-eol). In the coming weeks, we will update
-     * these docs to reflect relevant changes to the API and will contact all integrators using the "Source imports" API.
+     * **Warning:** Due to very low levels of usage and available alternatives, this endpoint is deprecated and will no longer be available from 00:00 UTC on April 12, 2024. For more details and alternatives, see the [changelog](https://gh.io/source-imports-api-deprecation).
+     * @deprecated octokit.rest.migrations.getCommitAuthors() is deprecated, see https://docs.github.com/rest/migrations/source-imports#get-commit-authors
      */
     getCommitAuthors: {
       (
@@ -6081,9 +6089,7 @@ export type RestEndpointMethods = {
     /**
      * View the progress of an import.
      *
-     * **Warning:** Support for importing Mercurial, Subversion and Team Foundation Version Control repositories will end
-     * on October 17, 2023. For more details, see [changelog](https://gh.io/github-importer-non-git-eol). In the coming weeks, we will update
-     * these docs to reflect relevant changes to the API and will contact all integrators using the "Source imports" API.
+     * **Warning:** Due to very low levels of usage and available alternatives, this endpoint is deprecated and will no longer be available from 00:00 UTC on April 12, 2024. For more details and alternatives, see the [changelog](https://gh.io/source-imports-api-deprecation).
      *
      * **Import status**
      *
@@ -6117,6 +6123,7 @@ export type RestEndpointMethods = {
      * *   `has_large_files` - the boolean value describing whether files larger than 100MB were found during the `importing` step.
      * *   `large_files_size` - the total size in gigabytes of files larger than 100MB found in the originating repository.
      * *   `large_files_count` - the total number of files larger than 100MB found in the originating repository. To see a list of these files, make a "Get Large Files" request.
+     * @deprecated octokit.rest.migrations.getImportStatus() is deprecated, see https://docs.github.com/rest/migrations/source-imports#get-an-import-status
      */
     getImportStatus: {
       (
@@ -6130,9 +6137,9 @@ export type RestEndpointMethods = {
     /**
      * List files larger than 100MB found during the import
      *
-     * **Warning:** Support for importing Mercurial, Subversion and Team Foundation Version Control repositories will end
-     * on October 17, 2023. For more details, see [changelog](https://gh.io/github-importer-non-git-eol). In the coming weeks, we will update
-     * these docs to reflect relevant changes to the API and will contact all integrators using the "Source imports" API.
+     * **Warning:** Due to very low levels of usage and available alternatives, this endpoint is deprecated and will no longer be available from 00:00 UTC on April 12, 2024. For more details and alternatives, see the [changelog](https://gh.io/source-imports-api-deprecation).
+     *
+     * @deprecated octokit.rest.migrations.getLargeFiles() is deprecated, see https://docs.github.com/rest/migrations/source-imports#get-large-files
      */
     getLargeFiles: {
       (
@@ -6248,9 +6255,9 @@ export type RestEndpointMethods = {
      * Update an author's identity for the import. Your application can continue updating authors any time before you push
      * new commits to the repository.
      *
-     * **Warning:** Support for importing Mercurial, Subversion and Team Foundation Version Control repositories will end
-     * on October 17, 2023. For more details, see [changelog](https://gh.io/github-importer-non-git-eol). In the coming weeks, we will update
-     * these docs to reflect relevant changes to the API and will contact all integrators using the "Source imports" API.
+     * **Warning:** Due to very low levels of usage and available alternatives, this endpoint is deprecated and will no longer be available from 00:00 UTC on April 12, 2024. For more details and alternatives, see the [changelog](https://gh.io/source-imports-api-deprecation).
+     *
+     * @deprecated octokit.rest.migrations.mapCommitAuthor() is deprecated, see https://docs.github.com/rest/migrations/source-imports#map-a-commit-author
      */
     mapCommitAuthor: {
       (
@@ -6268,9 +6275,9 @@ export type RestEndpointMethods = {
      * You can learn more about our LFS feature and working with large files [on our help
      * site](https://docs.github.com/repositories/working-with-files/managing-large-files).
      *
-     * **Warning:** Support for importing Mercurial, Subversion and Team Foundation Version Control repositories will end
-     * on October 17, 2023. For more details, see [changelog](https://gh.io/github-importer-non-git-eol). In the coming weeks, we will update
-     * these docs to reflect relevant changes to the API and will contact all integrators using the "Source imports" API.
+     * **Warning:** Due to very low levels of usage and available alternatives, this endpoint is deprecated and will no longer be available from 00:00 UTC on April 12, 2024. For more details and alternatives, see the [changelog](https://gh.io/source-imports-api-deprecation).
+     *
+     * @deprecated octokit.rest.migrations.setLfsPreference() is deprecated, see https://docs.github.com/rest/migrations/source-imports#update-git-lfs-preference
      */
     setLfsPreference: {
       (
@@ -6306,8 +6313,13 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Start a source import to a GitHub repository using GitHub Importer. Importing into a GitHub repository with GitHub Actions enabled is not supported and will return a status `422 Unprocessable Entity` response.
-     * **Warning:** Support for importing Mercurial, Subversion and Team Foundation Version Control repositories will end on October 17, 2023. For more details, see [changelog](https://gh.io/github-importer-non-git-eol). In the coming weeks, we will update these docs to reflect relevant changes to the API and will contact all integrators using the "Source imports" API.
+     * Start a source import to a GitHub repository using GitHub Importer.
+     * Importing into a GitHub repository with GitHub Actions enabled is not supported and will
+     * return a status `422 Unprocessable Entity` response.
+     *
+     * **Warning:** Due to very low levels of usage and available alternatives, this endpoint is deprecated and will no longer be available from 00:00 UTC on April 12, 2024. For more details and alternatives, see the [changelog](https://gh.io/source-imports-api-deprecation).
+     *
+     * @deprecated octokit.rest.migrations.startImport() is deprecated, see https://docs.github.com/rest/migrations/source-imports#start-an-import
      */
     startImport: {
       (
@@ -6350,9 +6362,8 @@ export type RestEndpointMethods = {
      * have the status `detection_found_multiple` and the Import Progress response will include a `project_choices` array.
      * You can select the project to import by providing one of the objects in the `project_choices` array in the update request.
      *
-     * **Warning:** Support for importing Mercurial, Subversion and Team Foundation Version Control repositories will end
-     * on October 17, 2023. For more details, see [changelog](https://gh.io/github-importer-non-git-eol). In the coming weeks, we will update
-     * these docs to reflect relevant changes to the API and will contact all integrators using the "Source imports" API.
+     * **Warning:** Due to very low levels of usage and available alternatives, this endpoint is deprecated and will no longer be available from 00:00 UTC on April 12, 2024. For more details and alternatives, see the [changelog](https://gh.io/source-imports-api-deprecation).
+     * @deprecated octokit.rest.migrations.updateImport() is deprecated, see https://docs.github.com/rest/migrations/source-imports#update-an-import
      */
     updateImport: {
       (
@@ -6468,6 +6479,51 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
+     * Creates new or updates existing custom properties defined for an organization in a batch.
+     * Only organization owners (or users with the proper permissions granted by them) can update these properties
+     */
+    createOrUpdateCustomProperties: {
+      (
+        params?: RestEndpointMethodTypes["orgs"]["createOrUpdateCustomProperties"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["orgs"]["createOrUpdateCustomProperties"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Create new or update existing custom property values for repositories in a batch that belong to an organization.
+     * Each target repository will have its custom property values updated to match the values provided in the request.
+     *
+     * A maximum of 30 repositories can be updated in a single request.
+     *
+     * Using a value of `null` for a custom property will remove or 'unset' the property value from the repository.
+     *
+     * Only organization owners (or users with the proper permissions granted by them) can update these properties
+     */
+    createOrUpdateCustomPropertiesValuesForRepos: {
+      (
+        params?: RestEndpointMethodTypes["orgs"]["createOrUpdateCustomPropertiesValuesForRepos"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["orgs"]["createOrUpdateCustomPropertiesValuesForRepos"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Creates a new or updates an existing custom property that is defined for an organization.
+     * You must be an organization owner to use this endpoint.
+     */
+    createOrUpdateCustomProperty: {
+      (
+        params?: RestEndpointMethodTypes["orgs"]["createOrUpdateCustomProperty"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["orgs"]["createOrUpdateCustomProperty"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
      * Here's how you can create a hook that posts payloads in JSON format:
      */
     createWebhook: {
@@ -6529,6 +6585,32 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["orgs"]["get"]["parameters"],
       ): Promise<RestEndpointMethodTypes["orgs"]["get"]["response"]>;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Gets all custom properties defined for an organization.
+     * You must be an organization owner to use this endpoint.
+     */
+    getAllCustomProperties: {
+      (
+        params?: RestEndpointMethodTypes["orgs"]["getAllCustomProperties"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["orgs"]["getAllCustomProperties"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Gets a custom property that is defined for an organization.
+     * You must be an organization owner to use this endpoint.
+     */
+    getCustomProperty: {
+      (
+        params?: RestEndpointMethodTypes["orgs"]["getCustomProperty"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["orgs"]["getCustomProperty"]["response"]
+      >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
@@ -6624,6 +6706,19 @@ export type RestEndpointMethods = {
         params?: RestEndpointMethodTypes["orgs"]["listBlockedUsers"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["orgs"]["listBlockedUsers"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Lists organization repositories with all of their custom property values.
+     * Organization members can read these properties.
+     */
+    listCustomPropertiesValuesForRepos: {
+      (
+        params?: RestEndpointMethodTypes["orgs"]["listCustomPropertiesValuesForRepos"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["orgs"]["listCustomPropertiesValuesForRepos"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -6850,6 +6945,19 @@ export type RestEndpointMethods = {
         params?: RestEndpointMethodTypes["orgs"]["redeliverWebhookDelivery"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["orgs"]["redeliverWebhookDelivery"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Removes a custom property that is defined for an organization.
+     * You must be an organization owner to use this endpoint.
+     */
+    removeCustomProperty: {
+      (
+        params?: RestEndpointMethodTypes["orgs"]["removeCustomProperty"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["orgs"]["removeCustomProperty"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -8368,7 +8476,7 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * List the reactions to a [pull request review comment](https://docs.github.com/pulls/comments#get-a-review-comment-for-a-pull-request).
+     * List the reactions to a [pull request review comment](https://docs.github.com/rest/pulls/comments#get-a-review-comment-for-a-pull-request).
      */
     listForPullRequestReviewComment: {
       (
@@ -8824,7 +8932,7 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Creates a deployment branch policy for an environment.
+     * Creates a deployment branch or tag policy for an environment.
      *
      * You must authenticate using an access token with the `repo` scope to use this endpoint. GitHub Apps must have the `administration:write` permission for the repository to use this endpoint.
      */
@@ -9234,7 +9342,7 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Deletes a deployment branch policy for an environment.
+     * Deletes a deployment branch or tag policy for an environment.
      *
      * You must authenticate using an access token with the `repo` scope to use this endpoint. GitHub Apps must have the `administration:write` permission for the repository to use this endpoint.
      */
@@ -9813,10 +9921,8 @@ export type RestEndpointMethods = {
      * README, and CONTRIBUTING files.
      *
      * The `health_percentage` score is defined as a percentage of how many of
-     * these four documents are present: README, CONTRIBUTING, LICENSE, and
-     * CODE_OF_CONDUCT. For example, if all four documents are present, then
-     * the `health_percentage` is `100`. If only one is present, then the
-     * `health_percentage` is `25`.
+     * the recommended community health files are present. For more information, see
+     * "[About community profiles for public repositories](https://docs.github.com/communities/setting-up-your-project-for-healthy-contributions/about-community-profiles-for-public-repositories)."
      *
      * `content_reports_enabled` is only returned for organization-owned repositories.
      */
@@ -9906,6 +10012,19 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
+    /**
+     * Gets all custom property values that are set for a repository.
+     * Users with admin access to the repository can use this endpoint.
+     */
+    getCustomPropertiesValues: {
+      (
+        params?: RestEndpointMethodTypes["repos"]["getCustomPropertiesValues"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["repos"]["getCustomPropertiesValues"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
 
     getDeployKey: {
       (
@@ -9923,7 +10042,7 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Gets a deployment branch policy for an environment.
+     * Gets a deployment branch or tag policy for an environment.
      *
      * Anyone with read access to the repository can use this endpoint. If the repository is private, you must use an access token with the `repo` scope. GitHub Apps must have the `actions:read` permission to use this endpoint.
      */
@@ -9988,6 +10107,32 @@ export type RestEndpointMethods = {
         params?: RestEndpointMethodTypes["repos"]["getLatestRelease"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["getLatestRelease"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Gets information about a suite of rule evaluations from within an organization.
+     * For more information, see "[Managing rulesets for repositories in your organization](https://docs.github.com/organizations/managing-organization-settings/managing-rulesets-for-repositories-in-your-organization#viewing-insights-for-rulesets)."
+     */
+    getOrgRuleSuite: {
+      (
+        params?: RestEndpointMethodTypes["repos"]["getOrgRuleSuite"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["repos"]["getOrgRuleSuite"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Lists suites of rule evaluations at the organization level.
+     * For more information, see "[Managing rulesets for repositories in your organization](https://docs.github.com/organizations/managing-organization-settings/managing-rulesets-for-repositories-in-your-organization#viewing-insights-for-rulesets)."
+     */
+    getOrgRuleSuites: {
+      (
+        params?: RestEndpointMethodTypes["repos"]["getOrgRuleSuites"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["repos"]["getOrgRuleSuites"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -10161,6 +10306,32 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
+     * Gets information about a suite of rule evaluations from within a repository.
+     * For more information, see "[Managing rulesets for a repository](https://docs.github.com/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/managing-rulesets-for-a-repository#viewing-insights-for-rulesets)."
+     */
+    getRepoRuleSuite: {
+      (
+        params?: RestEndpointMethodTypes["repos"]["getRepoRuleSuite"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["repos"]["getRepoRuleSuite"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Lists suites of rule evaluations at the repository level.
+     * For more information, see "[Managing rulesets for a repository](https://docs.github.com/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/managing-rulesets-for-a-repository#viewing-insights-for-rulesets)."
+     */
+    getRepoRuleSuites: {
+      (
+        params?: RestEndpointMethodTypes["repos"]["getRepoRuleSuites"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["repos"]["getRepoRuleSuites"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
      * Get a ruleset for a repository.
      */
     getRepoRuleset: {
@@ -10296,7 +10467,7 @@ export type RestEndpointMethods = {
      * Lists a detailed history of changes to a repository, such as pushes, merges, force pushes, and branch changes, and associates these changes with commits and users.
      *
      * For more information about viewing repository activity,
-     * see "[Viewing repository activity](https://docs.github.com/repositories/viewing-activity-and-data-for-your-repository/viewing-repository-activity)."
+     * see "[Viewing activity and data for your repository](https://docs.github.com/repositories/viewing-activity-and-data-for-your-repository)."
      */
     listActivities: {
       (
@@ -11045,7 +11216,7 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Updates a deployment branch policy for an environment.
+     * Updates a deployment branch or tag policy for an environment.
      *
      * You must authenticate using an access token with the `repo` scope to use this endpoint. GitHub Apps must have the `administration:write` permission for the repository to use this endpoint.
      */

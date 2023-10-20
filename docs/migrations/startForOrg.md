@@ -75,7 +75,7 @@ Indicates whether this should only include organization metadata (repositories a
 </td></tr>
 <tr><td>exclude</td><td>no</td><td>
 
-Exclude related items from being returned in the response in order to improve performance of the request. The array can include any of: `"repositories"`.
+Exclude related items from being returned in the response in order to improve performance of the request.
 
 </td></tr>
   </tbody>

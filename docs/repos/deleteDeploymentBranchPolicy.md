@@ -8,7 +8,7 @@ type: API method
 
 # Delete a deployment branch policy
 
-Deletes a deployment branch policy for an environment.
+Deletes a deployment branch or tag policy for an environment.
 
 You must authenticate using an access token with the `repo` scope to use this endpoint. GitHub Apps must have the `administration:write` permission for the repository to use this endpoint.
 

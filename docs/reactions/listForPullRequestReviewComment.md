@@ -8,7 +8,7 @@ type: API method
 
 # List reactions for a pull request review comment
 
-List the reactions to a [pull request review comment](https://docs.github.com/pulls/comments#get-a-review-comment-for-a-pull-request).
+List the reactions to a [pull request review comment](https://docs.github.com/rest/pulls/comments#get-a-review-comment-for-a-pull-request).
 
 ```js
 octokit.rest.reactions.listForPullRequestReviewComment({

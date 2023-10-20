@@ -15,10 +15,8 @@ detected code of conduct, the detected license, and the presence of ISSUE_TEMPLA
 README, and CONTRIBUTING files.
 
 The `health_percentage` score is defined as a percentage of how many of
-these four documents are present: README, CONTRIBUTING, LICENSE, and
-CODE_OF_CONDUCT. For example, if all four documents are present, then
-the `health_percentage` is `100`. If only one is present, then the
-`health_percentage` is `25`.
+the recommended community health files are present. For more information, see
+"[About community profiles for public repositories](https://docs.github.com/communities/setting-up-your-project-for-healthy-contributions/about-community-profiles-for-public-repositories)."
 
 `content_reports_enabled` is only returned for organization-owned repositories.
 

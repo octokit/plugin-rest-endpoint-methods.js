@@ -8,7 +8,7 @@ type: API method
 
 # Update a deployment branch policy
 
-Updates a deployment branch policy for an environment.
+Updates a deployment branch or tag policy for an environment.
 
 You must authenticate using an access token with the `repo` scope to use this endpoint. GitHub Apps must have the `administration:write` permission for the repository to use this endpoint.
 

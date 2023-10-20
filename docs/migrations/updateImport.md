@@ -8,6 +8,8 @@ type: API method
 
 # Update an import
 
+**This method is deprecated.**
+
 An import can be updated with credentials or a project choice by passing in the appropriate parameters in this API
 request. If no parameters are provided, the import will be restarted.
 
@@ -15,9 +17,7 @@ Some servers (e.g. TFS servers) can have several projects at a single URL. In th
 have the status `detection_found_multiple` and the Import Progress response will include a `project_choices` array.
 You can select the project to import by providing one of the objects in the `project_choices` array in the update request.
 
-**Warning:** Support for importing Mercurial, Subversion and Team Foundation Version Control repositories will end
-on October 17, 2023. For more details, see [changelog](https://gh.io/github-importer-non-git-eol). In the coming weeks, we will update
-these docs to reflect relevant changes to the API and will contact all integrators using the "Source imports" API.
+**Warning:** Due to very low levels of usage and available alternatives, this endpoint is deprecated and will no longer be available from 00:00 UTC on April 12, 2024. For more details and alternatives, see the [changelog](https://gh.io/source-imports-api-deprecation).
 
 ```js
 octokit.rest.migrations.updateImport({

@@ -306,6 +306,14 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["PUT /repos/{owner}/{repo}/actions/workflows/{workflow_id}/enable"]["response"];
     };
+    forceCancelWorkflowRun: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["POST /repos/{owner}/{repo}/actions/runs/{run_id}/force-cancel"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["POST /repos/{owner}/{repo}/actions/runs/{run_id}/force-cancel"]["response"];
+    };
     generateRunnerJitconfigForOrg: {
       parameters: RequestParameters &
         Omit<
@@ -1848,6 +1856,14 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["PUT /orgs/{org}/codespaces/secrets/{secret_name}/repositories/{repository_id}"]["response"];
     };
+    checkPermissionsForDevcontainer: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /repos/{owner}/{repo}/codespaces/permissions_check"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /repos/{owner}/{repo}/codespaces/permissions_check"]["response"];
+    };
     codespaceMachinesForAuthenticatedUser: {
       parameters: RequestParameters &
         Omit<
@@ -2226,7 +2242,7 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["GET /orgs/{org}/copilot/billing"]["response"];
     };
-    getCopilotSeatAssignmentDetailsForUser: {
+    getCopilotSeatDetailsForUser: {
       parameters: RequestParameters &
         Omit<
           Endpoints["GET /orgs/{org}/members/{username}/copilot"]["parameters"],
@@ -3476,6 +3492,30 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["POST /orgs/{org}/invitations"]["response"];
     };
+    createOrUpdateCustomProperties: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["PATCH /orgs/{org}/properties/schema"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["PATCH /orgs/{org}/properties/schema"]["response"];
+    };
+    createOrUpdateCustomPropertiesValuesForRepos: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["PATCH /orgs/{org}/properties/values"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["PATCH /orgs/{org}/properties/values"]["response"];
+    };
+    createOrUpdateCustomProperty: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["PUT /orgs/{org}/properties/schema/{custom_property_name}"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["PUT /orgs/{org}/properties/schema/{custom_property_name}"]["response"];
+    };
     createWebhook: {
       parameters: RequestParameters &
         Omit<
@@ -3515,6 +3555,22 @@ export type RestEndpointMethodTypes = {
           "baseUrl" | "headers" | "mediaType"
         >;
       response: Endpoints["GET /orgs/{org}"]["response"];
+    };
+    getAllCustomProperties: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /orgs/{org}/properties/schema"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /orgs/{org}/properties/schema"]["response"];
+    };
+    getCustomProperty: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /orgs/{org}/properties/schema/{custom_property_name}"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /orgs/{org}/properties/schema/{custom_property_name}"]["response"];
     };
     getMembershipForAuthenticatedUser: {
       parameters: RequestParameters &
@@ -3579,6 +3635,14 @@ export type RestEndpointMethodTypes = {
           "baseUrl" | "headers" | "mediaType"
         >;
       response: Endpoints["GET /orgs/{org}/blocks"]["response"];
+    };
+    listCustomPropertiesValuesForRepos: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /orgs/{org}/properties/values"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /orgs/{org}/properties/values"]["response"];
     };
     listFailedInvitations: {
       parameters: RequestParameters &
@@ -3723,6 +3787,14 @@ export type RestEndpointMethodTypes = {
           "baseUrl" | "headers" | "mediaType"
         >;
       response: Endpoints["POST /orgs/{org}/hooks/{hook_id}/deliveries/{delivery_id}/attempts"]["response"];
+    };
+    removeCustomProperty: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["DELETE /orgs/{org}/properties/schema/{custom_property_name}"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["DELETE /orgs/{org}/properties/schema/{custom_property_name}"]["response"];
     };
     removeMember: {
       parameters: RequestParameters &
@@ -5440,6 +5512,14 @@ export type RestEndpointMethodTypes = {
         >;
       response: Endpoints["GET /repos/{owner}/{repo}/environments/{environment_name}/deployment_protection_rules/{protection_rule_id}"]["response"];
     };
+    getCustomPropertiesValues: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /repos/{owner}/{repo}/properties/values"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /repos/{owner}/{repo}/properties/values"]["response"];
+    };
     getDeployKey: {
       parameters: RequestParameters &
         Omit<
@@ -5495,6 +5575,22 @@ export type RestEndpointMethodTypes = {
           "baseUrl" | "headers" | "mediaType"
         >;
       response: Endpoints["GET /repos/{owner}/{repo}/releases/latest"]["response"];
+    };
+    getOrgRuleSuite: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /orgs/{org}/rulesets/rule-suites/{rule_suite_id}"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /orgs/{org}/rulesets/rule-suites/{rule_suite_id}"]["response"];
+    };
+    getOrgRuleSuites: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /orgs/{org}/rulesets/rule-suites"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /orgs/{org}/rulesets/rule-suites"]["response"];
     };
     getOrgRuleset: {
       parameters: RequestParameters &
@@ -5599,6 +5695,22 @@ export type RestEndpointMethodTypes = {
           "baseUrl" | "headers" | "mediaType"
         >;
       response: Endpoints["GET /repos/{owner}/{repo}/releases/tags/{tag}"]["response"];
+    };
+    getRepoRuleSuite: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /repos/{owner}/{repo}/rulesets/rule-suites/{rule_suite_id}"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /repos/{owner}/{repo}/rulesets/rule-suites/{rule_suite_id}"]["response"];
+    };
+    getRepoRuleSuites: {
+      parameters: RequestParameters &
+        Omit<
+          Endpoints["GET /repos/{owner}/{repo}/rulesets/rule-suites"]["parameters"],
+          "baseUrl" | "headers" | "mediaType"
+        >;
+      response: Endpoints["GET /repos/{owner}/{repo}/rulesets/rule-suites"]["response"];
     };
     getRepoRuleset: {
       parameters: RequestParameters &
