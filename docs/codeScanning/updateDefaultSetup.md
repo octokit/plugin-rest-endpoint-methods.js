@@ -53,7 +53,7 @@ CodeQL query suite to be used.
 </td></tr>
 <tr><td>languages</td><td>no</td><td>
 
-CodeQL languages to be analyzed. Supported values are: `c-cpp`, `csharp`, `go`, `java-kotlin`, `javascript-typescript`, `python`, `ruby`, and `swift`.
+CodeQL languages to be analyzed.
 
 </td></tr>
   </tbody>

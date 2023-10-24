@@ -36,7 +36,7 @@ The organization name. The name is not case sensitive.
 </td></tr>
 <tr><td>hook_id</td><td>yes</td><td>
 
-The unique identifier of the hook.
+The unique identifier of the hook. You can find this value in the `X-GitHub-Hook-ID` header of a webhook delivery.
 
 </td></tr>
 <tr><td>config</td><td>no</td><td>

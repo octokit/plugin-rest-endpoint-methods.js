@@ -1,6 +1,6 @@
 ---
 name: Get Copilot for Business seat assignment details for a user
-example: octokit.rest.copilot.getCopilotSeatAssignmentDetailsForUser({ org, username })
+example: octokit.rest.copilot.getCopilotSeatDetailsForUser({ org, username })
 route: GET /orgs/{org}/members/{username}/copilot
 scope: copilot
 type: API method
@@ -15,7 +15,7 @@ Gets the GitHub Copilot for Business seat assignment details for a member of an 
 Organization owners and members with admin permissions can view GitHub Copilot seat assignment details for members in their organization. You must authenticate using an access token with the `manage_billing:copilot` scope to use this endpoint.
 
 ```js
-octokit.rest.copilot.getCopilotSeatAssignmentDetailsForUser({
+octokit.rest.copilot.getCopilotSeatDetailsForUser({
   org,
   username,
 });

@@ -1,6 +1,6 @@
 ---
 name: Create a repository ruleset
-example: octokit.rest.repos.createRepoRuleset({ owner, repo, name, enforcement, bypass_actors[].actor_id, bypass_actors[].actor_type, bypass_actors[].bypass_mode, rules[].type, rules[].parameters.update_allows_fetch_and_merge, rules[].parameters.required_deployment_environments, rules[].parameters.dismiss_stale_reviews_on_push, rules[].parameters.require_code_owner_review, rules[].parameters.require_last_push_approval, rules[].parameters.required_approving_review_count, rules[].parameters.required_review_thread_resolution, rules[].parameters.required_status_checks, rules[].parameters.required_status_checks[].context, rules[].parameters.strict_required_status_checks_policy, rules[].parameters.operator, rules[].parameters.pattern })
+example: octokit.rest.repos.createRepoRuleset({ owner, repo, name, enforcement, bypass_actors[].actor_id, bypass_actors[].actor_type, bypass_actors[].bypass_mode, rules[].type, rules[].parameters.update_allows_fetch_and_merge, rules[].parameters.required_deployment_environments, rules[].parameters.dismiss_stale_reviews_on_push, rules[].parameters.require_code_owner_review, rules[].parameters.require_last_push_approval, rules[].parameters.required_approving_review_count, rules[].parameters.required_review_thread_resolution, rules[].parameters.required_status_checks, rules[].parameters.required_status_checks[].context, rules[].parameters.strict_required_status_checks_policy, rules[].parameters.operator, rules[].parameters.pattern, rules[].parameters.workflows, rules[].parameters.workflows[].path, rules[].parameters.workflows[].repository_id })
 route: POST /repos/{owner}/{repo}/rulesets
 scope: repos
 type: API method
@@ -31,7 +31,10 @@ rules[].parameters.required_status_checks,
 rules[].parameters.required_status_checks[].context,
 rules[].parameters.strict_required_status_checks_policy,
 rules[].parameters.operator,
-rules[].parameters.pattern
+rules[].parameters.pattern,
+rules[].parameters.workflows,
+rules[].parameters.workflows[].path,
+rules[].parameters.workflows[].repository_id
       })
 ```
 
@@ -78,7 +81,7 @@ The actors that can bypass the rules in this ruleset
 </td></tr>
 <tr><td>bypass_actors[].actor_id</td><td>yes</td><td>
 
-The ID of the actor that can bypass a ruleset
+The ID of the actor that can bypass a ruleset. If `actor_type` is `OrganizationAdmin`, this should be `1`.
 
 </td></tr>
 <tr><td>bypass_actors[].actor_type</td><td>yes</td><td>
@@ -193,6 +196,31 @@ The operator to use for matching.
 <tr><td>rules[].parameters.pattern</td><td>yes</td><td>
 
 The pattern to match with.
+
+</td></tr>
+<tr><td>rules[].parameters.workflows</td><td>yes</td><td>
+
+Workflows that must pass for this rule to pass.
+
+</td></tr>
+<tr><td>rules[].parameters.workflows[].path</td><td>yes</td><td>
+
+The path to the workflow file
+
+</td></tr>
+<tr><td>rules[].parameters.workflows[].ref</td><td>no</td><td>
+
+The ref (branch or tag) of the workflow file to use
+
+</td></tr>
+<tr><td>rules[].parameters.workflows[].repository_id</td><td>yes</td><td>
+
+The ID of the repository where the workflow is defined
+
+</td></tr>
+<tr><td>rules[].parameters.workflows[].sha</td><td>no</td><td>
+
+The commit SHA of the workflow file to use
 
 </td></tr>
   </tbody>

@@ -8,7 +8,7 @@ type: API method
 
 # Create a deployment branch policy
 
-Creates a deployment branch policy for an environment.
+Creates a deployment branch or tag policy for an environment.
 
 You must authenticate using an access token with the `repo` scope to use this endpoint. GitHub Apps must have the `administration:write` permission for the repository to use this endpoint.
 
@@ -49,10 +49,15 @@ The name of the environment.
 </td></tr>
 <tr><td>name</td><td>yes</td><td>
 
-The name pattern that branches must match in order to deploy to the environment.
+The name pattern that branches or tags must match in order to deploy to the environment.
 
 Wildcard characters will not match `/`. For example, to match branches that begin with `release/` and contain an additional single slash, use `release/*/*`.
 For more information about pattern matching syntax, see the [Ruby File.fnmatch documentation](https://ruby-doc.org/core-2.5.1/File.html#method-c-fnmatch).
+
+</td></tr>
+<tr><td>type</td><td>no</td><td>
+
+Whether this rule targets a branch or tag
 
 </td></tr>
   </tbody>

@@ -11,7 +11,6 @@ type: API method
 Re-run a job and its dependent jobs in a workflow run.
 
 You must authenticate using an access token with the `repo` scope to use this endpoint.
-If the repository is private, you must use an access token with the `repo` scope.
 GitHub Apps must have the `actions:write` permission to use this endpoint.
 
 ```js
