@@ -49,4 +49,4 @@ The unique identifier of the hook. You can find this value in the `X-GitHub-Hook
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/webhooks/repo-config#get-a-webhook-configuration-for-a-repository).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/repos/webhooks#get-a-webhook-configuration-for-a-repository).
