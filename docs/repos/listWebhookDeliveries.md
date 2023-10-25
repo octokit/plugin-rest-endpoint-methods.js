@@ -60,4 +60,4 @@ Used for pagination: the starting delivery from which the page of deliveries is 
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/webhooks/repo-deliveries#list-deliveries-for-a-repository-webhook).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/repos/webhooks#list-deliveries-for-a-repository-webhook).

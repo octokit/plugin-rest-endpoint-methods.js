@@ -9,7 +9,7 @@ type: API method
 # Get all custom property values for a repository
 
 Gets all custom property values that are set for a repository.
-Users with admin access to the repository can use this endpoint.
+Users with read access to the repository can use this endpoint.
 
 ```js
 octokit.rest.repos.getCustomPropertiesValues({

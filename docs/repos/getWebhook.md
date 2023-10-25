@@ -47,4 +47,4 @@ The unique identifier of the hook. You can find this value in the `X-GitHub-Hook
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/webhooks/repos#get-a-repository-webhook).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/repos/webhooks#get-a-repository-webhook).
