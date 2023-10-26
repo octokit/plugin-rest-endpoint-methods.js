@@ -24,7 +24,7 @@
   "author": "Gregor Martynus (https://twitter.com/gr2m)",
   "license": "MIT",
   "dependencies": {
-    "@octokit/types": "^12.1.0"
+    "@octokit/types": "^12.1.1"
   },
   "devDependencies": {
     "@octokit/core": "^5.0.0",
