@@ -52,7 +52,7 @@ async function generateTypes() {
     for (const method of namespace.methods) {
       namespaceMethods.push(
         `${method.name}: {
-          parameters: RequestParameters & Omit<Endpoints["${method.route}"]["parameters"], "baseUrl" | "headers" | "mediaType">,
+          parameters: RequestParameters & Endpoints["${method.route}"]["parameters"],
           response: Endpoints["${method.route}"]["response"]
         }`,
       );
