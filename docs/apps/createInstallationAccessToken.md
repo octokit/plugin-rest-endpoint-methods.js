@@ -164,6 +164,11 @@ The level of permission to grant the access token to manage access to an organiz
 The level of permission to grant the access token for custom repository roles management. This property is in beta and is subject to change.
 
 </td></tr>
+<tr><td>permissions.organization_custom_properties</td><td>no</td><td>
+
+The level of permission to grant the access token for custom property management.
+
+</td></tr>
 <tr><td>permissions.organization_announcement_banners</td><td>no</td><td>
 
 The level of permission to grant the access token to view and manage announcement banners for an organization.

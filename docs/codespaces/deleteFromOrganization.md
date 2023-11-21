@@ -10,7 +10,10 @@ type: API method
 
 Deletes a user's codespace.
 
-You must authenticate using an access token with the `admin:org` scope to use this endpoint.
+To use this endpoint you must authenticate using one of the following methods:
+
+- An access token with the `admin:org` scope
+- An access token with write permissions for `Codespaces` on the specific repository and write permissions for `Organization codespaces`
 
 ```js
 octokit.rest.codespaces.deleteFromOrganization({

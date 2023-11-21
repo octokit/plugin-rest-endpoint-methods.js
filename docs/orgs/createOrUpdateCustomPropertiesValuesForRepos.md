@@ -66,4 +66,4 @@ The value assigned to the property
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/orgs/properties#create-or-update-custom-property-values-for-organization-repositories).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/orgs/custom-properties#create-or-update-custom-property-values-for-organization-repositories).
