@@ -1,6 +1,6 @@
-import { readFileSync, writeFileSync } from "fs";
-import { join } from "path";
-import { fileURLToPath } from "url";
+import { readFileSync, writeFileSync } from "node:fs";
+import { join } from "node:path";
+import { fileURLToPath } from "node:url";
 
 import { format } from "prettier";
 import sortKeys from "sort-keys";

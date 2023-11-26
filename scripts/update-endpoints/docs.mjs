@@ -1,7 +1,7 @@
 import { format } from "prettier";
 
 import { isDeprecated } from "./util.mjs";
-import { readFileSync, mkdirSync, writeFileSync } from "fs";
+import { readFileSync, mkdirSync, writeFileSync } from "node:fs";
 
 const ENDPOINTS = JSON.parse(
   readFileSync(

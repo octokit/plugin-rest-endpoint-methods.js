@@ -1,5 +1,5 @@
-import { writeFileSync, readFileSync } from "fs";
-import { join as pathJoin } from "path";
+import { writeFileSync, readFileSync } from "node:fs";
+import { join as pathJoin } from "node:path";
 
 import camelCase from "lodash.camelcase";
 import { format } from "prettier";
