@@ -1,7 +1,7 @@
 import fetchMock from "fetch-mock";
 import { Octokit } from "@octokit/core";
 
-import { restEndpointMethods } from "../src";
+import { restEndpointMethods } from "../src/index.ts";
 
 describe("https://github.com/octokit/plugin-rest-endpoint-methods.js/issues/83", () => {
   it("git.gists.update({ gist_id, files })", async () => {

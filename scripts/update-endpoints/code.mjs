@@ -123,7 +123,7 @@ async function generateRoutes() {
   writeFileSync(
     ROUTES_PATH,
     await format(
-      `import type { EndpointsDefaultsAndDecorations } from "../types";
+      `import type { EndpointsDefaultsAndDecorations } from "../types.js";
   const Endpoints: EndpointsDefaultsAndDecorations = ${JSON.stringify(
     sortKeys(newRoutes, { deep: true }),
   )}
