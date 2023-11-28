@@ -68,4 +68,4 @@ Ordered list of allowed values of the property
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/orgs/properties#create-or-update-a-custom-property-for-an-organization).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/orgs/custom-properties#create-or-update-a-custom-property-for-an-organization).

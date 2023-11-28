@@ -10,7 +10,7 @@ type: API method
 
 Lists the codespaces associated to a specified organization.
 
-You must authenticate using an access token with the `admin:org` scope to use this endpoint.
+You must authenticate using an access token with the `admin:org` scope or the `Organization codespaces` read permission to use this endpoint.
 
 ```js
 octokit.rest.codespaces.listInOrganization({

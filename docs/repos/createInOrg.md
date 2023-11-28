@@ -174,6 +174,14 @@ The default value for a merge commit message.
 - `BLANK` - default to a blank commit message.
 
 </td></tr>
+<tr><td>custom_properties</td><td>no</td><td>
+
+The custom properties for the new respository. The keys are the custom property names, and the values are the corresponding custom property values.
+
+</td></tr>
+<tr><td>custom_properties.*</td><td>no</td><td>
+
+</td></tr>
   </tbody>
 </table>
 

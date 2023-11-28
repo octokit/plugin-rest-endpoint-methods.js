@@ -42,4 +42,4 @@ The custom property name. The name is case sensitive.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/orgs/properties#remove-a-custom-property-for-an-organization).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/orgs/custom-properties#remove-a-custom-property-for-an-organization).

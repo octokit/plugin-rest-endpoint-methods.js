@@ -3743,7 +3743,10 @@ export type RestEndpointMethods = {
     /**
      * Deletes a user's codespace.
      *
-     * You must authenticate using an access token with the `admin:org` scope to use this endpoint.
+     * To use this endpoint you must authenticate using one of the following methods:
+     *
+     * - An access token with the `admin:org` scope
+     * - An access token with write permissions for `Codespaces` on the specific repository and write permissions for `Organization codespaces`
      */
     deleteFromOrganization: {
       (
@@ -3815,7 +3818,7 @@ export type RestEndpointMethods = {
     /**
      * Lists the codespaces that a member of an organization has for repositories in that organization.
      *
-     * You must authenticate using an access token with the `admin:org` scope to use this endpoint.
+     * You must authenticate using an access token with the `admin:org` scope or the `Organization codespaces` read permission to use this endpoint.
      */
     getCodespacesForUserInOrg: {
       (
@@ -3975,7 +3978,7 @@ export type RestEndpointMethods = {
     /**
      * Lists the codespaces associated to a specified organization.
      *
-     * You must authenticate using an access token with the `admin:org` scope to use this endpoint.
+     * You must authenticate using an access token with the `admin:org` scope or the `Organization codespaces` read permission to use this endpoint.
      */
     listInOrganization: {
       (
@@ -4213,7 +4216,10 @@ export type RestEndpointMethods = {
     /**
      * Stops a user's codespace.
      *
-     * You must authenticate using an access token with the `admin:org` scope to use this endpoint.
+     * To use this endpoint you must authenticate using one of the following methods:
+     *
+     * - An access token with the `admin:org` scope
+     * - An access token with write permissions for `Codespaces lifecycle admin` on the specific repository and write permissions for `Organization codespaces`
      */
     stopInOrganization: {
       (

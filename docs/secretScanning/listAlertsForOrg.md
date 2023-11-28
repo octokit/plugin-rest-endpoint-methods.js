@@ -83,6 +83,11 @@ A cursor, as given in the [Link header](https://docs.github.com/rest/guides/usin
 A cursor, as given in the [Link header](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api#using-link-headers). If specified, the query only searches for events after this cursor. To receive an initial cursor on your first request, include an empty "after" query string.
 
 </td></tr>
+<tr><td>validity</td><td>no</td><td>
+
+A comma-separated list of validities that, when present, will return alerts that match the validities in this list. Valid options are `active`, `inactive`, and `unknown`.
+
+</td></tr>
   </tbody>
 </table>
 
