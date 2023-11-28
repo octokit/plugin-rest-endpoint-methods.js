@@ -1,6 +1,6 @@
-import { readFileSync, writeFileSync } from "fs";
-import { join } from "path";
-import { fileURLToPath } from "url";
+import { readFileSync, writeFileSync } from "node:fs";
+import { join } from "node:path";
+import { fileURLToPath } from "node:url";
 
 import { format } from "prettier";
 import sortKeys from "sort-keys";
@@ -123,7 +123,7 @@ async function generateRoutes() {
   writeFileSync(
     ROUTES_PATH,
     await format(
-      `import type { EndpointsDefaultsAndDecorations } from "../types";
+      `import type { EndpointsDefaultsAndDecorations } from "../types.js";
   const Endpoints: EndpointsDefaultsAndDecorations = ${JSON.stringify(
     sortKeys(newRoutes, { deep: true }),
   )}

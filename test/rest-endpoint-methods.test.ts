@@ -2,8 +2,11 @@ import { Octokit } from "@octokit/core";
 import fetchMock from "fetch-mock";
 
 import sinon from "sinon";
-import { legacyRestEndpointMethods, restEndpointMethods } from "../src";
-import { Api } from "../src/types";
+import {
+  legacyRestEndpointMethods,
+  restEndpointMethods,
+} from "../src/index.ts";
+import { Api } from "../src/types.ts";
 
 describe("REST API endpoint methods", () => {
   it("README example", async () => {

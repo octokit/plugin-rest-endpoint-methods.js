@@ -1,4 +1,4 @@
-import { restEndpointMethods } from "../src";
+import { restEndpointMethods } from "../src/index.ts";
 
 describe("Smoke test", () => {
   it("is a function", () => {

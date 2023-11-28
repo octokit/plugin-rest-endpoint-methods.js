@@ -1,8 +1,8 @@
 import type { Octokit } from "@octokit/core";
 import type { EndpointOptions, RequestParameters, Route } from "@octokit/types";
-import ENDPOINTS from "./generated/endpoints";
-import type { RestEndpointMethods } from "./generated/method-types";
-import type { EndpointDecorations } from "./types";
+import ENDPOINTS from "./generated/endpoints.js";
+import type { RestEndpointMethods } from "./generated/method-types.js";
+import type { EndpointDecorations } from "./types.js";
 
 // The following code was refactored in: https://github.com/octokit/plugin-rest-endpoint-methods.js/pull/622
 // to optimise the runtime performance of Octokit initialization.
