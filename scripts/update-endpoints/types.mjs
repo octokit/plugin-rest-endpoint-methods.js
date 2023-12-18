@@ -87,7 +87,7 @@ async function generateTypes() {
   const methodTypesSource = await format(
     [
       `import type { EndpointInterface, RequestInterface } from "@octokit/types";`,
-      `import type { RestEndpointMethodTypes } from "./parameters-and-response-types";`,
+      `import type { RestEndpointMethodTypes } from "./parameters-and-response-types.js";`,
       "",
       `export type RestEndpointMethods = {
         ${RestEndpointMethodNamespaceTypes.join("\n")}
