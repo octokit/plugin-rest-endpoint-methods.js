@@ -42,7 +42,7 @@
     "lodash.set": "^4.3.2",
     "lodash.upperfirst": "^4.3.1",
     "mustache": "^4.0.0",
-    "npm-run-all": "^4.1.5",
+    "npm-run-all2": "^5.0.0",
     "prettier": "3.2.4",
     "semantic-release-plugin-update-version-in-files": "^1.0.0",
     "sinon": "^17.0.0",
