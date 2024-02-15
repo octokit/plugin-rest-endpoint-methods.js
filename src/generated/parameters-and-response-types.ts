@@ -242,6 +242,11 @@ export type RestEndpointMethodTypes = {
         Endpoints["GET /repos/{owner}/{repo}/actions/artifacts/{artifact_id}"]["parameters"];
       response: Endpoints["GET /repos/{owner}/{repo}/actions/artifacts/{artifact_id}"]["response"];
     };
+    getCustomOidcSubClaimForRepo: {
+      parameters: RequestParameters &
+        Endpoints["GET /repos/{owner}/{repo}/actions/oidc/customization/sub"]["parameters"];
+      response: Endpoints["GET /repos/{owner}/{repo}/actions/oidc/customization/sub"]["response"];
+    };
     getEnvironmentPublicKey: {
       parameters: RequestParameters &
         Endpoints["GET /repositories/{repository_id}/environments/{environment_name}/secrets/public-key"]["parameters"];
@@ -561,6 +566,11 @@ export type RestEndpointMethodTypes = {
       parameters: RequestParameters &
         Endpoints["PUT /repos/{owner}/{repo}/actions/runners/{runner_id}/labels"]["parameters"];
       response: Endpoints["PUT /repos/{owner}/{repo}/actions/runners/{runner_id}/labels"]["response"];
+    };
+    setCustomOidcSubClaimForRepo: {
+      parameters: RequestParameters &
+        Endpoints["PUT /repos/{owner}/{repo}/actions/oidc/customization/sub"]["parameters"];
+      response: Endpoints["PUT /repos/{owner}/{repo}/actions/oidc/customization/sub"]["response"];
     };
     setGithubActionsDefaultWorkflowPermissionsOrganization: {
       parameters: RequestParameters &
@@ -2142,6 +2152,18 @@ export type RestEndpointMethodTypes = {
       parameters: RequestParameters &
         Endpoints["PATCH /repos/{owner}/{repo}/import"]["parameters"];
       response: Endpoints["PATCH /repos/{owner}/{repo}/import"]["response"];
+    };
+  };
+  oidc: {
+    getOidcCustomSubTemplateForOrg: {
+      parameters: RequestParameters &
+        Endpoints["GET /orgs/{org}/actions/oidc/customization/sub"]["parameters"];
+      response: Endpoints["GET /orgs/{org}/actions/oidc/customization/sub"]["response"];
+    };
+    updateOidcCustomSubTemplateForOrg: {
+      parameters: RequestParameters &
+        Endpoints["PUT /orgs/{org}/actions/oidc/customization/sub"]["parameters"];
+      response: Endpoints["PUT /orgs/{org}/actions/oidc/customization/sub"]["response"];
     };
   };
   orgs: {

@@ -35,7 +35,7 @@
     "@types/sinon": "^17.0.0",
     "esbuild": "^0.20.0",
     "fetch-mock": "npm:@gr2m/fetch-mock@^9.11.0-pull-request-644.1",
-    "github-openapi-graphql-query": "^4.0.0",
+    "github-openapi-graphql-query": "^4.3.1",
     "glob": "^10.2.6",
     "jest": "^29.0.0",
     "lodash.camelcase": "^4.3.0",
