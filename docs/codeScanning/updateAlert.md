@@ -8,7 +8,8 @@ type: API method
 
 # Update a code scanning alert
 
-Updates the status of a single code scanning alert. You must use an access token with the `security_events` scope to use this endpoint with private repositories. You can also use tokens with the `public_repo` scope for public repositories only. GitHub Apps must have the `security_events` write permission to use this endpoint.
+Updates the status of a single code scanning alert.
+OAuth app tokens and personal access tokens (classic) need the `security_events` scope to use this endpoint with private or public repositories, or the `public_repo` scope to use this endpoint with only public repositories.
 
 ```js
 octokit.rest.codeScanning.updateAlert({

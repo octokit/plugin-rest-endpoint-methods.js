@@ -8,7 +8,7 @@ type: API method
 
 # Search code
 
-Searches for query terms inside of a file. This method returns up to 100 results [per page](https://docs.github.com/rest/overview/resources-in-the-rest-api#pagination).
+Searches for query terms inside of a file. This method returns up to 100 results [per page](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api).
 
 When searching for code, you can get text match metadata for the file **content** and file **path** fields when you pass the `text-match` media type. For more details about how to receive highlighted search results, see [Text match metadata](https://docs.github.com/rest/search/search#text-match-metadata).
 
@@ -63,12 +63,12 @@ The query contains one or more search keywords and qualifiers. Qualifiers allow 
 </td></tr>
 <tr><td>per_page</td><td>no</td><td>
 
-The number of results per page (max 100).
+The number of results per page (max 100). For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
 
 </td></tr>
 <tr><td>page</td><td>no</td><td>
 
-Page number of the results to fetch.
+The page number of the results to fetch. For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
 
 </td></tr>
   </tbody>

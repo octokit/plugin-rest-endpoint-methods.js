@@ -8,7 +8,9 @@ type: API method
 
 # Get the review history for a workflow run
 
-Anyone with read access to the repository can use this endpoint. If the repository is private, you must use an access token with the `repo` scope. GitHub Apps must have the `actions:read` permission to use this endpoint.
+Anyone with read access to the repository can use this endpoint.
+
+OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with a private repository.
 
 ```js
 octokit.rest.actions.getReviewsForRun({

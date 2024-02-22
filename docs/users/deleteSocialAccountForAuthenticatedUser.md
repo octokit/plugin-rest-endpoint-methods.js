@@ -8,7 +8,9 @@ type: API method
 
 # Delete social accounts for the authenticated user
 
-Deletes one or more social accounts from the authenticated user's profile. This endpoint is accessible with the `user` scope.
+Deletes one or more social accounts from the authenticated user's profile.
+
+OAuth app tokens and personal access tokens (classic) need the `user` scope to use this endpoint.
 
 ```js
 octokit.rest.users.deleteSocialAccountForAuthenticatedUser({

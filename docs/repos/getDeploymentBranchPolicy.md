@@ -10,7 +10,9 @@ type: API method
 
 Gets a deployment branch or tag policy for an environment.
 
-Anyone with read access to the repository can use this endpoint. If the repository is private, you must use an access token with the `repo` scope. GitHub Apps must have the `actions:read` permission to use this endpoint.
+Anyone with read access to the repository can use this endpoint.
+
+OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with a private repository.
 
 ```js
 octokit.rest.repos.getDeploymentBranchPolicy({
@@ -44,7 +46,7 @@ The name of the repository without the `.git` extension. The name is not case se
 </td></tr>
 <tr><td>environment_name</td><td>yes</td><td>
 
-The name of the environment.
+The name of the environment. The name must be URL encoded. For example, any slashes in the name must be replaced with `%2F`.
 
 </td></tr>
 <tr><td>branch_policy_id</td><td>yes</td><td>

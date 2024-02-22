@@ -11,9 +11,9 @@ type: API method
 Creates or updates an environment secret with an encrypted value. Encrypt your secret using
 [LibSodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages). For more information, see "[Encrypting secrets for the REST API](https://docs.github.com/rest/guides/encrypting-secrets-for-the-rest-api)."
 
-You must authenticate using an access token with the `repo` scope to use this endpoint.
-GitHub Apps must have the `secrets` repository permission to use this endpoint.
 Authenticated users must have collaborator access to a repository to create, update, or read secrets.
+
+OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 
 ```js
 octokit.rest.actions.createOrUpdateEnvironmentSecret({
@@ -43,7 +43,7 @@ The unique identifier of the repository.
 </td></tr>
 <tr><td>environment_name</td><td>yes</td><td>
 
-The name of the environment.
+The name of the environment. The name must be URL encoded. For example, any slashes in the name must be replaced with `%2F`.
 
 </td></tr>
 <tr><td>secret_name</td><td>yes</td><td>

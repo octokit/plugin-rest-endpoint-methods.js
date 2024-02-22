@@ -8,10 +8,9 @@ type: API method
 
 # Update the access to organization resources via fine-grained personal access tokens
 
-Updates the access organization members have to organization resources via fine-grained personal access tokens. Limited to revoking a token's existing access. Only GitHub Apps can call this API,
-using the `organization_personal_access_tokens: write` permission.
+Updates the access organization members have to organization resources via fine-grained personal access tokens. Limited to revoking a token's existing access.
 
-**Note**: Fine-grained PATs are in public beta. Related APIs, events, and functionality are subject to change.
+Only GitHub Apps can use this endpoint.
 
 ```js
 octokit.rest.orgs.updatePatAccesses({

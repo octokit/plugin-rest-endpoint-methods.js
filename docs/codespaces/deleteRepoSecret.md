@@ -8,7 +8,9 @@ type: API method
 
 # Delete a repository secret
 
-Deletes a secret in a repository using the secret name. You must authenticate using an access token with the `repo` scope to use this endpoint. GitHub Apps must have write access to the `codespaces_secrets` repository permission to use this endpoint.
+Deletes a development environment secret in a repository using the secret name.
+
+OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 
 ```js
 octokit.rest.codespaces.deleteRepoSecret({

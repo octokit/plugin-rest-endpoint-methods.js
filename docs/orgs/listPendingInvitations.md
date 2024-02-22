@@ -34,12 +34,12 @@ The organization name. The name is not case sensitive.
 </td></tr>
 <tr><td>per_page</td><td>no</td><td>
 
-The number of results per page (max 100).
+The number of results per page (max 100). For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
 
 </td></tr>
 <tr><td>page</td><td>no</td><td>
 
-Page number of the results to fetch.
+The page number of the results to fetch. For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
 
 </td></tr>
 <tr><td>role</td><td>no</td><td>

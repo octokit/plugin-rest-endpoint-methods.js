@@ -10,8 +10,7 @@ type: API method
 
 Re-run a job and its dependent jobs in a workflow run.
 
-You must authenticate using an access token with the `repo` scope to use this endpoint.
-GitHub Apps must have the `actions:write` permission to use this endpoint.
+OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 
 ```js
 octokit.rest.actions.reRunJobForWorkflowRun({

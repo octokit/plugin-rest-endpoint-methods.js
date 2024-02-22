@@ -10,7 +10,9 @@ type: API method
 
 Updates information for a GitHub Pages site. For more information, see "[About GitHub Pages](/github/working-with-github-pages/about-github-pages).
 
-To use this endpoint, you must be a repository administrator, maintainer, or have the 'manage GitHub Pages settings' permission. A token with the `repo` scope or Pages write permission is required. GitHub Apps must have the `administration:write` and `pages:write` permissions.
+The authenticated user must be a repository administrator, maintainer, or have the 'manage GitHub Pages settings' permission.
+
+OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 
 ```js
 octokit.rest.repos.updateInformationAboutPagesSite({

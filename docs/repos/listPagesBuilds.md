@@ -10,7 +10,7 @@ type: API method
 
 Lists builts of a GitHub Pages site.
 
-A token with the `repo` scope is required. GitHub Apps must have the `pages:read` permission.
+OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 
 ```js
 octokit.rest.repos.listPagesBuilds({
@@ -42,12 +42,12 @@ The name of the repository without the `.git` extension. The name is not case se
 </td></tr>
 <tr><td>per_page</td><td>no</td><td>
 
-The number of results per page (max 100).
+The number of results per page (max 100). For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
 
 </td></tr>
 <tr><td>page</td><td>no</td><td>
 
-Page number of the results to fetch.
+The page number of the results to fetch. For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
 
 </td></tr>
   </tbody>

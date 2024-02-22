@@ -12,9 +12,9 @@ If you want a CVE identification number for the security vulnerability in your p
 
 You may request a CVE for public repositories, but cannot do so for private repositories.
 
-You must authenticate using an access token with the `repo` scope or `repository_advisories:write` permission to use this endpoint.
+In order to request a CVE for a repository security advisory, the authenticated user must be a security manager or administrator of that repository.
 
-In order to request a CVE for a repository security advisory, you must be a security manager or administrator of that repository.
+OAuth app tokens and personal access tokens (classic) need the `repo` or `repository_advisories:write` scope to use this endpoint.
 
 ```js
 octokit.rest.securityAdvisories.createRepositoryAdvisoryCveRequest({

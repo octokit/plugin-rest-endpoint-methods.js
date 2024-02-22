@@ -8,7 +8,13 @@ type: API method
 
 # Create an installation access token for an app
 
-Creates an installation access token that enables a GitHub App to make authenticated API requests for the app's installation on an organization or individual account. Installation tokens expire one hour from the time you create them. Using an expired token produces a status code of `401 - Unauthorized`, and requires creating a new installation token. By default the installation token has access to all repositories that the installation can access. To restrict the access to specific repositories, you can provide the `repository_ids` when creating the token. When you omit `repository_ids`, the response does not contain the `repositories` key.
+Creates an installation access token that enables a GitHub App to make authenticated API requests for the app's installation on an organization or individual account. Installation tokens expire one hour from the time you create them. Using an expired token produces a status code of `401 - Unauthorized`, and requires creating a new installation token. By default the installation token has access to all repositories that the installation can access.
+
+Optionally, you can use the `repositories` or `repository_ids` body parameters to specify individual repositories that the installation access token can access. If you don't use `repositories` or `repository_ids` to grant access to specific repositories, the installation access token will have access to all repositories that the installation was granted access to. The installation access token cannot be granted access to repositories that the installation was not granted access to. Up to 500 repositories can be listed in this manner.
+
+Optionally, use the `permissions` body parameter to specify the permissions that the installation access token should have. If `permissions` is not specified, the installation access token will have all of the permissions that were granted to the app. The installation access token cannot be granted permissions that the app was not granted.
+
+When using the repository or permission parameters to reduce the access of the token, the complexity of the token is increased due to both the number of permissions in the request and the number of repositories the token will have access to. If the complexity is too large, the token will fail to be issued. If this occurs, the error message will indicate the maximum number of repositories that should be requested. For the average application requesting 8 permissions, this limit is around 5000 repositories. With fewer permissions requested, more repositories are supported.
 
 You must use a [JWT](https://docs.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint.
 
@@ -64,9 +70,19 @@ The level of permission to grant the access token for repository creation, delet
 The level of permission to grant the access token for checks on code.
 
 </td></tr>
+<tr><td>permissions.codespaces</td><td>no</td><td>
+
+The level of permission to grant the access token to create, edit, delete, and list Codespaces.
+
+</td></tr>
 <tr><td>permissions.contents</td><td>no</td><td>
 
 The level of permission to grant the access token for repository contents, commits, branches, downloads, releases, and merges.
+
+</td></tr>
+<tr><td>permissions.dependabot_secrets</td><td>no</td><td>
+
+The leve of permission to grant the access token to manage Dependabot secrets.
 
 </td></tr>
 <tr><td>permissions.deployments</td><td>no</td><td>
@@ -102,6 +118,11 @@ The level of permission to grant the access token to retrieve Pages statuses, co
 <tr><td>permissions.pull_requests</td><td>no</td><td>
 
 The level of permission to grant the access token for pull requests and related comments, assignees, labels, milestones, and merges.
+
+</td></tr>
+<tr><td>permissions.repository_custom_properties</td><td>no</td><td>
+
+The level of permission to grant the access token to view and edit custom properties for a repository, when allowed by the property.
 
 </td></tr>
 <tr><td>permissions.repository_hooks</td><td>no</td><td>
@@ -161,7 +182,12 @@ The level of permission to grant the access token to manage access to an organiz
 </td></tr>
 <tr><td>permissions.organization_custom_roles</td><td>no</td><td>
 
-The level of permission to grant the access token for custom repository roles management. This property is in beta and is subject to change.
+The level of permission to grant the access token for custom repository roles management.
+
+</td></tr>
+<tr><td>permissions.organization_custom_org_roles</td><td>no</td><td>
+
+The level of permission to grant the access token for custom organization roles management.
 
 </td></tr>
 <tr><td>permissions.organization_custom_properties</td><td>no</td><td>
@@ -169,9 +195,19 @@ The level of permission to grant the access token for custom repository roles ma
 The level of permission to grant the access token for custom property management.
 
 </td></tr>
+<tr><td>permissions.organization_copilot_seat_management</td><td>no</td><td>
+
+The level of permission to grant the access token for managing access to GitHub Copilot for members of an organization with a Copilot Business subscription. This property is in beta and is subject to change.
+
+</td></tr>
 <tr><td>permissions.organization_announcement_banners</td><td>no</td><td>
 
 The level of permission to grant the access token to view and manage announcement banners for an organization.
+
+</td></tr>
+<tr><td>permissions.organization_events</td><td>no</td><td>
+
+The level of permission to grant the access token to view events triggered by an activity in an organization.
 
 </td></tr>
 <tr><td>permissions.organization_hooks</td><td>no</td><td>
@@ -222,6 +258,41 @@ The level of permission to grant the access token to view and manage users block
 <tr><td>permissions.team_discussions</td><td>no</td><td>
 
 The level of permission to grant the access token to manage team discussions and related comments.
+
+</td></tr>
+<tr><td>permissions.email_addresses</td><td>no</td><td>
+
+The level of permission to grant the access token to manage the email addresses belonging to a user.
+
+</td></tr>
+<tr><td>permissions.followers</td><td>no</td><td>
+
+The level of permission to grant the access token to manage the followers belonging to a user.
+
+</td></tr>
+<tr><td>permissions.git_ssh_keys</td><td>no</td><td>
+
+The level of permission to grant the access token to manage git SSH keys.
+
+</td></tr>
+<tr><td>permissions.gpg_keys</td><td>no</td><td>
+
+The level of permission to grant the access token to view and manage GPG keys belonging to a user.
+
+</td></tr>
+<tr><td>permissions.interaction_limits</td><td>no</td><td>
+
+The level of permission to grant the access token to view and manage interaction limits on a repository.
+
+</td></tr>
+<tr><td>permissions.profile</td><td>no</td><td>
+
+The level of permission to grant the access token to manage the profile settings belonging to a user.
+
+</td></tr>
+<tr><td>permissions.starring</td><td>no</td><td>
+
+The level of permission to grant the access token to list and manage repositories a user is starring.
 
 </td></tr>
   </tbody>

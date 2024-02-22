@@ -8,10 +8,7 @@ type: API method
 
 # Delete a code scanning analysis from a repository
 
-Deletes a specified code scanning analysis from a repository. For
-private repositories, you must use an access token with the `repo` scope. For public repositories,
-you must use an access token with `public_repo` scope.
-GitHub Apps must have the `security_events` write permission to use this endpoint.
+Deletes a specified code scanning analysis from a repository.
 
 You can delete one analysis at a time.
 To delete a series of analyses, start with the most recent analysis and work backwards.
@@ -75,6 +72,8 @@ The procedure therefore consists of a nested loop:
   - Parse the response for the value of `confirm_delete_url` and, if found, use this in the next iteration.
 
 The above process assumes that you want to remove all trace of the tool's analyses from the GitHub user interface, for the specified repository, and it therefore uses the `confirm_delete_url` value. Alternatively, you could use the `next_analysis_url` value, which would leave the last analysis in each set undeleted to avoid removing a tool's analysis entirely.
+
+OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with private or public repositories, or the `public_repo` scope to use this endpoint with only public repositories.
 
 ```js
 octokit.rest.codeScanning.deleteAnalysis({

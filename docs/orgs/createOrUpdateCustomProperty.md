@@ -9,7 +9,11 @@ type: API method
 # Create or update a custom property for an organization
 
 Creates a new or updates an existing custom property that is defined for an organization.
-You must be an organization owner to use this endpoint.
+
+To use this endpoint, the authenticated user must be one of:
+
+- An administrator for the organization.
+- A user, or a user on a team, with the fine-grained permission of `custom_properties_org_definitions_manager` in the organization.
 
 ```js
 octokit.rest.orgs.createOrUpdateCustomProperty({
@@ -62,7 +66,8 @@ Short description of the property
 </td></tr>
 <tr><td>allowed_values</td><td>no</td><td>
 
-Ordered list of allowed values of the property
+An ordered list of the allowed values of the property.
+The property can have up to 200 allowed values.
 
 </td></tr>
   </tbody>

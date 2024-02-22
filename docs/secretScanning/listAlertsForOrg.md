@@ -9,10 +9,10 @@ type: API method
 # List secret scanning alerts for an organization
 
 Lists secret scanning alerts for eligible repositories in an organization, from newest to oldest.
-To use this endpoint, you must be an administrator or security manager for the organization, and you must use an access token with the `repo` scope or `security_events` scope.
-For public repositories, you may instead use the `public_repo` scope.
 
-GitHub Apps must have the `secret_scanning_alerts` read permission to use this endpoint.
+The authenticated user must be an administrator or security manager for the organization to use this endpoint.
+
+OAuth app tokens and personal access tokens (classic) need the `repo` or `security_events` scope to use this endpoint. If this endpoint is only used with public repositories, the token can use the `public_repo` scope instead.
 
 ```js
 octokit.rest.secretScanning.listAlertsForOrg({
@@ -65,12 +65,12 @@ The direction to sort the results by.
 </td></tr>
 <tr><td>page</td><td>no</td><td>
 
-Page number of the results to fetch.
+The page number of the results to fetch. For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
 
 </td></tr>
 <tr><td>per_page</td><td>no</td><td>
 
-The number of results per page (max 100).
+The number of results per page (max 100). For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
 
 </td></tr>
 <tr><td>before</td><td>no</td><td>

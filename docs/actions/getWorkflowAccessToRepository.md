@@ -12,8 +12,7 @@ Gets the level of access that workflows outside of the repository have to action
 This endpoint only applies to private repositories.
 For more information, see "[Allowing access to components in a private repository](https://docs.github.com/repositories/managing-your-repositorys-settings-and-features/enabling-features-for-your-repository/managing-github-actions-settings-for-a-repository#allowing-access-to-components-in-a-private-repository)."
 
-You must authenticate using an access token with the `repo` scope to use this endpoint. GitHub Apps must have the
-repository `administration` permission to use this endpoint.
+OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 
 ```js
 octokit.rest.actions.getWorkflowAccessToRepository({

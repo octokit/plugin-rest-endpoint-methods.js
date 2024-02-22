@@ -9,13 +9,12 @@ type: API method
 # Add selected repository to an organization secret
 
 Adds a repository to an organization secret when the `visibility` for
-repository access is set to `selected`. The visibility is set when you [Create or
+repository access is set to `selected`. For more information about setting the visibility, see [Create or
 update an organization secret](https://docs.github.com/rest/actions/secrets#create-or-update-an-organization-secret).
 
-You must authenticate using an access token with the `admin:org` scope to use this endpoint.
-If the repository is private, you must use an access token with the `repo` scope.
-GitHub Apps must have the `secrets` organization permission to use this endpoint.
 Authenticated users must have collaborator access to a repository to create, update, or read secrets.
+
+OAuth tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 
 ```js
 octokit.rest.actions.addSelectedRepoToOrgSecret({

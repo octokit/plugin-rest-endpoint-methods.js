@@ -8,9 +8,7 @@ type: API method
 
 # Get a Dependabot alert
 
-You must use an access token with the `security_events` scope to use this endpoint with private repositories.
-You can also use tokens with the `public_repo` scope for public repositories only.
-GitHub Apps must have **Dependabot alerts** read permission to use this endpoint.
+OAuth app tokens and personal access tokens (classic) need the `security_events` scope to use this endpoint. If this endpoint is only used with public repositories, the token can use the `public_repo` scope instead.
 
 ```js
 octokit.rest.dependabot.getAlert({

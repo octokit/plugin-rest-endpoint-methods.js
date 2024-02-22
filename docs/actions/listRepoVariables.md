@@ -9,9 +9,10 @@ type: API method
 # List repository variables
 
 Lists all repository variables.
-You must authenticate using an access token with the `repo` scope to use this endpoint.
-GitHub Apps must have the `actions_variables:read` repository permission to use this endpoint.
+
 Authenticated users must have collaborator access to a repository to create, update, or read variables.
+
+OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 
 ```js
 octokit.rest.actions.listRepoVariables({
@@ -43,12 +44,12 @@ The name of the repository without the `.git` extension. The name is not case se
 </td></tr>
 <tr><td>per_page</td><td>no</td><td>
 
-The number of results per page (max 30).
+The number of results per page (max 30). For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
 
 </td></tr>
 <tr><td>page</td><td>no</td><td>
 
-Page number of the results to fetch.
+The page number of the results to fetch. For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
 
 </td></tr>
   </tbody>

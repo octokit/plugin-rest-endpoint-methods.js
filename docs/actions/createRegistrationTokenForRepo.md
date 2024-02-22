@@ -8,19 +8,17 @@ type: API method
 
 # Create a registration token for a repository
 
-Returns a token that you can pass to the `config` script. The token
-expires after one hour.
+Returns a token that you can pass to the `config` script. The token expires after one hour.
 
-You must authenticate using an access token with the `repo` scope to use this endpoint.
-GitHub Apps must have the `administration` permission for repositories and the `organization_self_hosted_runners` permission for organizations.
-Authenticated users must have admin access to repositories or organizations, or the `manage_runners:enterprise` scope for enterprises, to use these endpoints.
+For example, you can replace `TOKEN` in the following example with the registration token provided by this endpoint to configure your self-hosted runner:
 
-Example using registration token:
+```
+./config.sh --url https://github.com/octo-org --token TOKEN
+```
 
-Configure your self-hosted runner, replacing `TOKEN` with the registration token provided
-by this endpoint.
+Authenticated users must have admin access to the repository to use this endpoint.
 
-`config.sh --url https://github.com/octo-org/octo-repo-artifacts --token TOKEN`
+OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 
 ```js
 octokit.rest.actions.createRegistrationTokenForRepo({

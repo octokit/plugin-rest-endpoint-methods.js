@@ -1,14 +1,14 @@
 ---
-name: List all autolinks of a repository
+name: Get all autolinks of a repository
 example: octokit.rest.repos.listAutolinks({ owner, repo })
 route: GET /repos/{owner}/{repo}/autolinks
 scope: repos
 type: API method
 ---
 
-# List all autolinks of a repository
+# Get all autolinks of a repository
 
-This returns a list of autolinks configured for the given repository.
+Gets all autolinks that are configured for a repository.
 
 Information about autolinks are only available to repository administrators.
 
@@ -40,12 +40,7 @@ The account owner of the repository. The name is not case sensitive.
 The name of the repository without the `.git` extension. The name is not case sensitive.
 
 </td></tr>
-<tr><td>page</td><td>no</td><td>
-
-Page number of the results to fetch.
-
-</td></tr>
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/repos/autolinks#list-all-autolinks-of-a-repository).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/repos/autolinks#get-all-autolinks-of-a-repository).

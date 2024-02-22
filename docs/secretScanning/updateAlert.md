@@ -9,10 +9,10 @@ type: API method
 # Update a secret scanning alert
 
 Updates the status of a secret scanning alert in an eligible repository.
-To use this endpoint, you must be an administrator for the repository or for the organization that owns the repository, and you must use a personal access token with the `repo` scope or `security_events` scope.
-For public repositories, you may instead use the `public_repo` scope.
 
-GitHub Apps must have the `secret_scanning_alerts` write permission to use this endpoint.
+The authenticated user must be an administrator for the repository or for the organization that owns the repository to use this endpoint.
+
+OAuth app tokens and personal access tokens (classic) need the `repo` or `security_events` scope to use this endpoint. If this endpoint is only used with public repositories, the token can use the `public_repo` scope instead.
 
 ```js
 octokit.rest.secretScanning.updateAlert({

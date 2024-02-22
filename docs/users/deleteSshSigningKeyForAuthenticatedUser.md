@@ -8,7 +8,9 @@ type: API method
 
 # Delete an SSH signing key for the authenticated user
 
-Deletes an SSH signing key from the authenticated user's GitHub account. You must authenticate with Basic Authentication, or you must authenticate with OAuth with at least `admin:ssh_signing_key` scope. For more information, see "[Understanding scopes for OAuth apps](https://docs.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/)."
+Deletes an SSH signing key from the authenticated user's GitHub account.
+
+OAuth app tokens and personal access tokens (classic) need the `admin:ssh_signing_key` scope to use this endpoint.
 
 ```js
 octokit.rest.users.deleteSshSigningKeyForAuthenticatedUser({

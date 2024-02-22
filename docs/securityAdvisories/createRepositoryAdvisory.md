@@ -9,9 +9,10 @@ type: API method
 # Create a repository security advisory
 
 Creates a new repository security advisory.
-You must authenticate using an access token with the `repo` scope or `repository_advisories:write` permission to use this endpoint.
 
-In order to create a draft repository security advisory, you must be a security manager or administrator of that repository.
+In order to create a draft repository security advisory, the authenticated user must be a security manager or administrator of that repository.
+
+OAuth app tokens and personal access tokens (classic) need the `repo` or `repository_advisories:write` scope to use this endpoint.
 
 ```js
 octokit.rest.securityAdvisories.createRepositoryAdvisory({
@@ -126,6 +127,11 @@ The severity of the advisory. You must choose between setting this field or `cvs
 <tr><td>cvss_vector_string</td><td>no</td><td>
 
 The CVSS vector that calculates the severity of the advisory. You must choose between setting this field or `severity`.
+
+</td></tr>
+<tr><td>start_private_fork</td><td>no</td><td>
+
+Whether to create a temporary private fork of the repository to collaborate on a fix.
 
 </td></tr>
   </tbody>

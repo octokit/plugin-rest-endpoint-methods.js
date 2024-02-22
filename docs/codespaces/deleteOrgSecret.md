@@ -8,7 +8,9 @@ type: API method
 
 # Delete an organization secret
 
-Deletes an organization secret using the secret name. You must authenticate using an access token with the `admin:org` scope to use this endpoint.
+Deletes an organization development environment secret using the secret name.
+
+OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 
 ```js
 octokit.rest.codespaces.deleteOrgSecret({

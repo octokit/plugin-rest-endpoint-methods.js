@@ -9,7 +9,11 @@ type: API method
 # Create or update custom properties for an organization
 
 Creates new or updates existing custom properties defined for an organization in a batch.
-Only organization owners (or users with the proper permissions granted by them) can update these properties
+
+To use this endpoint, the authenticated user must be one of:
+
+- An administrator for the organization.
+- A user, or a user on a team, with the fine-grained permission of `custom_properties_org_definitions_manager` in the organization.
 
 ```js
 octokit.rest.orgs.createOrUpdateCustomProperties({
@@ -68,7 +72,13 @@ Short description of the property
 </td></tr>
 <tr><td>properties[].allowed_values</td><td>no</td><td>
 
-Ordered list of allowed values of the property
+An ordered list of the allowed values of the property.
+The property can have up to 200 allowed values.
+
+</td></tr>
+<tr><td>properties[].values_editable_by</td><td>no</td><td>
+
+Who can edit the values of the property
 
 </td></tr>
   </tbody>

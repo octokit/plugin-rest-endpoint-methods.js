@@ -12,12 +12,7 @@ Lists the teams that have access to the specified repository and that are also v
 
 For a public repository, a team is listed only if that team added the public repository explicitly.
 
-Personal access tokens require the following scopes:
-
-- `public_repo` to call this endpoint on a public repository
-- `repo` to call this endpoint on a private repository (this scope also includes public repositories)
-
-This endpoint is not compatible with fine-grained personal access tokens.
+OAuth app tokens and personal access tokens (classic) need the `public_repo` or `repo` scope to use this endpoint with a public repository, and `repo` scope to use this endpoint with a private repository.
 
 ```js
 octokit.rest.repos.listTeams({
@@ -49,12 +44,12 @@ The name of the repository without the `.git` extension. The name is not case se
 </td></tr>
 <tr><td>per_page</td><td>no</td><td>
 
-The number of results per page (max 100).
+The number of results per page (max 100). For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
 
 </td></tr>
 <tr><td>page</td><td>no</td><td>
 
-Page number of the results to fetch.
+The page number of the results to fetch. For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
 
 </td></tr>
   </tbody>

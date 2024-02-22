@@ -8,10 +8,9 @@ type: API method
 
 # Review requests to access organization resources with fine-grained personal access tokens
 
-Approves or denies multiple pending requests to access organization resources via a fine-grained personal access token. Only GitHub Apps can call this API,
-using the `organization_personal_access_token_requests: write` permission.
+Approves or denies multiple pending requests to access organization resources via a fine-grained personal access token.
 
-**Note**: Fine-grained PATs are in public beta. Related APIs, events, and functionality are subject to change.
+Only GitHub Apps can use this endpoint.
 
 ```js
 octokit.rest.orgs.reviewPatGrantRequestsInBulk({

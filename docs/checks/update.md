@@ -8,9 +8,11 @@ type: API method
 
 # Update a check run
 
-Updates a check run for a specific commit in a repository. Your GitHub App must have the `checks:write` permission to edit check runs.
+Updates a check run for a specific commit in a repository.
 
 **Note:** The endpoints to manage checks only look for pushes in the repository where the check suite or check run were created. Pushes to a branch in a forked repository are not detected and return an empty `pull_requests` array.
+
+OAuth apps and personal access tokens (classic) cannot use this endpoint.
 
 ```js
 octokit.rest.checks.update({

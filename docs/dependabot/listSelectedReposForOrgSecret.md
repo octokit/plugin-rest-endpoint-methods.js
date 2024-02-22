@@ -8,7 +8,10 @@ type: API method
 
 # List selected repositories for an organization secret
 
-Lists all repositories that have been selected when the `visibility` for repository access to a secret is set to `selected`. You must authenticate using an access token with the `admin:org` scope to use this endpoint. GitHub Apps must have the `dependabot_secrets` organization permission to use this endpoint.
+Lists all repositories that have been selected when the `visibility`
+for repository access to a secret is set to `selected`.
+
+OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 
 ```js
 octokit.rest.dependabot.listSelectedReposForOrgSecret({
@@ -40,12 +43,12 @@ The name of the secret.
 </td></tr>
 <tr><td>page</td><td>no</td><td>
 
-Page number of the results to fetch.
+The page number of the results to fetch. For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
 
 </td></tr>
 <tr><td>per_page</td><td>no</td><td>
 
-The number of results per page (max 100).
+The number of results per page (max 100). For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
 
 </td></tr>
   </tbody>

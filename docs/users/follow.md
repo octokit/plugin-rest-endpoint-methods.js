@@ -8,9 +8,9 @@ type: API method
 
 # Follow a user
 
-Note that you'll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see "[HTTP verbs](https://docs.github.com/rest/overview/resources-in-the-rest-api#http-verbs)."
+Note that you'll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see "[HTTP verbs](https://docs.github.com/rest/guides/getting-started-with-the-rest-api#http-method)."
 
-Following a user requires the user to be logged in and authenticated with basic auth or OAuth with the `user:follow` scope.
+OAuth app tokens and personal access tokens (classic) need the `user:follow` scope to use this endpoint.
 
 ```js
 octokit.rest.users.follow({

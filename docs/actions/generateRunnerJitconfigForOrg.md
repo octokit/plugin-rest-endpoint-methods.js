@@ -10,10 +10,9 @@ type: API method
 
 Generates a configuration that can be passed to the runner application at startup.
 
-You must authenticate using an access token with the `admin:org` scope to use this endpoint.
-If the repository is private, you must use an access token with the `repo` scope.
-GitHub Apps must have the `administration` permission for repositories and the `organization_self_hosted_runners` permission for organizations.
-Authenticated users must have admin access to repositories or organizations, or the `manage_runners:enterprise` scope for enterprises, to use these endpoints.
+The authenticated user must have admin access to the organization.
+
+OAuth tokens and personal access tokens (classic) need the`admin:org` scope to use this endpoint. If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 
 ```js
 octokit.rest.actions.generateRunnerJitconfigForOrg({

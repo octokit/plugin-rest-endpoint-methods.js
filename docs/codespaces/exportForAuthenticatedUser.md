@@ -12,9 +12,7 @@ Triggers an export of the specified codespace and returns a URL and ID where the
 
 If changes cannot be pushed to the codespace's repository, they will be pushed to a new or previously-existing fork instead.
 
-You must authenticate using a personal access token with the `codespace` scope to use this endpoint.
-
-GitHub Apps must have write access to the `codespaces_lifecycle_admin` repository permission to use this endpoint.
+OAuth app tokens and personal access tokens (classic) need the `codespace` scope to use this endpoint.
 
 ```js
 octokit.rest.codespaces.exportForAuthenticatedUser({

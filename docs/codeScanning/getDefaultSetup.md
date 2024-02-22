@@ -9,8 +9,8 @@ type: API method
 # Get a code scanning default setup configuration
 
 Gets a code scanning default setup configuration.
-You must use an access token with the `repo` scope to use this endpoint with private repos or the `public_repo`
-scope for public repos. GitHub Apps must have the `repo` write permission to use this endpoint.
+
+OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with private or public repositories, or the `public_repo` scope to use this endpoint with only public repositories.
 
 ```js
 octokit.rest.codeScanning.getDefaultSetup({

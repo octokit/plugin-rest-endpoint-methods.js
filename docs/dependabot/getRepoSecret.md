@@ -8,7 +8,9 @@ type: API method
 
 # Get a repository secret
 
-Gets a single repository secret without revealing its encrypted value. You must authenticate using an access token with the `repo` scope to use this endpoint. GitHub Apps must have the `dependabot_secrets` repository permission to use this endpoint.
+Gets a single repository secret without revealing its encrypted value.
+
+OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 
 ```js
 octokit.rest.dependabot.getRepoSecret({

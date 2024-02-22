@@ -10,7 +10,7 @@ type: API method
 
 The user can publicize their own membership. (A user cannot publicize the membership for another user.)
 
-Note that you'll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see "[HTTP verbs](https://docs.github.com/rest/overview/resources-in-the-rest-api#http-verbs)."
+Note that you'll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see "[HTTP method](https://docs.github.com/rest/guides/getting-started-with-the-rest-api#http-method)."
 
 ```js
 octokit.rest.orgs.setPublicMembershipForAuthenticatedUser({

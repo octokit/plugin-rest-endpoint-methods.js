@@ -10,9 +10,9 @@ type: API method
 
 Triggers GitHub to rerequest an existing check run, without pushing new code to a repository. This endpoint will trigger the [`check_run` webhook](https://docs.github.com/webhooks/event-payloads/#check_run) event with the action `rerequested`. When a check run is `rerequested`, its `status` is reset to `queued` and the `conclusion` is cleared.
 
-To rerequest a check run, your GitHub App must have the `checks:read` permission on a private repository or pull access to a public repository.
-
 For more information about how to re-run GitHub Actions jobs, see "[Re-run a job from a workflow run](https://docs.github.com/rest/actions/workflow-runs#re-run-a-job-from-a-workflow-run)".
+
+OAuth apps and personal access tokens (classic) cannot use this endpoint.
 
 ```js
 octokit.rest.checks.rerequestRun({

@@ -8,10 +8,9 @@ type: API method
 
 # List fine-grained personal access tokens with access to organization resources
 
-Lists approved fine-grained personal access tokens owned by organization members that can access organization resources. Only GitHub Apps can call this API,
-using the `organization_personal_access_tokens: read` permission.
+Lists approved fine-grained personal access tokens owned by organization members that can access organization resources.
 
-**Note**: Fine-grained PATs are in public beta. Related APIs, events, and functionality are subject to change.
+Only GitHub Apps can use this endpoint.
 
 ```js
 octokit.rest.orgs.listPatGrants({
@@ -37,12 +36,12 @@ The organization name. The name is not case sensitive.
 </td></tr>
 <tr><td>per_page</td><td>no</td><td>
 
-The number of results per page (max 100).
+The number of results per page (max 100). For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
 
 </td></tr>
 <tr><td>page</td><td>no</td><td>
 
-Page number of the results to fetch.
+The page number of the results to fetch. For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
 
 </td></tr>
 <tr><td>sort</td><td>no</td><td>

@@ -10,7 +10,7 @@ type: API method
 
 Creates a deployment branch or tag policy for an environment.
 
-You must authenticate using an access token with the `repo` scope to use this endpoint. GitHub Apps must have the `administration:write` permission for the repository to use this endpoint.
+OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 
 ```js
 octokit.rest.repos.createDeploymentBranchPolicy({
@@ -44,7 +44,7 @@ The name of the repository without the `.git` extension. The name is not case se
 </td></tr>
 <tr><td>environment_name</td><td>yes</td><td>
 
-The name of the environment.
+The name of the environment. The name must be URL encoded. For example, any slashes in the name must be replaced with `%2F`.
 
 </td></tr>
 <tr><td>name</td><td>yes</td><td>

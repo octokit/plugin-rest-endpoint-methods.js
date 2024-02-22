@@ -10,9 +10,9 @@ type: API method
 
 Gets a single repository secret without revealing its encrypted value.
 
-You must authenticate using an access token with the `repo` scope to use this endpoint.
-GitHub Apps must have the `secrets` repository permission to use this endpoint.
-Authenticated users must have collaborator access to a repository to create, update, or read secrets.
+The authenticated user must have collaborator access to the repository to use this endpoint.
+
+OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 
 ```js
 octokit.rest.actions.getRepoSecret({

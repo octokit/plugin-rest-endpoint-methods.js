@@ -8,7 +8,9 @@ type: API method
 
 # Re-run failed jobs from a workflow run
 
-Re-run all of the failed jobs and their dependent jobs in a workflow run using the `id` of the workflow run. You must authenticate using an access token with the `repo` scope to use this endpoint.
+Re-run all of the failed jobs and their dependent jobs in a workflow run using the `id` of the workflow run.
+
+OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 
 ```js
 octokit.rest.actions.reRunWorkflowFailedJobs({

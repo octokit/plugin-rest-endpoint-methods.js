@@ -10,9 +10,9 @@ type: API method
 
 **Note:** To get information about name patterns that branches must match in order to deploy to this environment, see "[Get a deployment branch policy](/rest/deployments/branch-policies#get-a-deployment-branch-policy)."
 
-Anyone with read access to the repository can use this endpoint. If the
-repository is private, you must use an access token with the `repo` scope. GitHub
-Apps must have the `actions:read` permission to use this endpoint.
+Anyone with read access to the repository can use this endpoint.
+
+OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with a private repository.
 
 ```js
 octokit.rest.repos.getEnvironment({
@@ -45,7 +45,7 @@ The name of the repository without the `.git` extension. The name is not case se
 </td></tr>
 <tr><td>environment_name</td><td>yes</td><td>
 
-The name of the environment.
+The name of the environment. The name must be URL encoded. For example, any slashes in the name must be replaced with `%2F`.
 
 </td></tr>
   </tbody>

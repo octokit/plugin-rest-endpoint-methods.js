@@ -12,9 +12,7 @@ Updates a codespace owned by the authenticated user. Currently only the codespac
 
 If you specify a new machine type it will be applied the next time your codespace is started.
 
-You must authenticate using an access token with the `codespace` scope to use this endpoint.
-
-GitHub Apps must have write access to the `codespaces` repository permission to use this endpoint.
+OAuth app tokens and personal access tokens (classic) need the `codespace` scope to use this endpoint.
 
 ```js
 octokit.rest.codespaces.updateForAuthenticatedUser({

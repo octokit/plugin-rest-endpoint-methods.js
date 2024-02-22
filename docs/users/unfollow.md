@@ -8,7 +8,7 @@ type: API method
 
 # Unfollow a user
 
-Unfollowing a user requires the user to be logged in and authenticated with basic auth or OAuth with the `user:follow` scope.
+OAuth app tokens and personal access tokens (classic) need the `user:follow` scope to use this endpoint.
 
 ```js
 octokit.rest.users.unfollow({

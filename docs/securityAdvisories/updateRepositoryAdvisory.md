@@ -9,10 +9,11 @@ type: API method
 # Update a repository security advisory
 
 Update a repository security advisory using its GitHub Security Advisory (GHSA) identifier.
-You must authenticate using an access token with the `repo` scope or `repository_advisories:write` permission to use this endpoint.
 
-In order to update any security advisory, you must be a security manager or administrator of that repository,
+In order to update any security advisory, the authenticated user must be a security manager or administrator of that repository,
 or a collaborator on the repository security advisory.
+
+OAuth app tokens and personal access tokens (classic) need the `repo` or `repository_advisories:write` scope to use this endpoint.
 
 ```js
 octokit.rest.securityAdvisories.updateRepositoryAdvisory({

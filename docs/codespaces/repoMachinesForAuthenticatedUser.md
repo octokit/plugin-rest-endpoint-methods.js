@@ -10,9 +10,7 @@ type: API method
 
 List the machine types available for a given repository based on its configuration.
 
-You must authenticate using an access token with the `codespace` scope to use this endpoint.
-
-GitHub Apps must have write access to the `codespaces_metadata` repository permission to use this endpoint.
+OAuth app tokens and personal access tokens (classic) need the `codespace` scope to use this endpoint.
 
 ```js
 octokit.rest.codespaces.repoMachinesForAuthenticatedUser({

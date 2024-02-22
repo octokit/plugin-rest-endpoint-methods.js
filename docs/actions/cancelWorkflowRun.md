@@ -10,8 +10,7 @@ type: API method
 
 Cancels a workflow run using its `id`.
 
-You must authenticate using an access token with the `repo` scope to use this endpoint.
-GitHub Apps must have the `actions:write` permission to use this endpoint.
+OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 
 ```js
 octokit.rest.actions.cancelWorkflowRun({

@@ -10,9 +10,7 @@ type: API method
 
 Deletes one or more GitHub Actions caches for a repository, using a complete cache key. By default, all caches that match the provided key are deleted, but you can optionally provide a Git ref to restrict deletions to caches that match both the provided key and the Git ref.
 
-You must authenticate using an access token with the `repo` scope to use this endpoint.
-
-GitHub Apps must have the `actions:write` permission to use this endpoint.
+OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 
 ```js
 octokit.rest.actions.deleteActionsCacheByKey({

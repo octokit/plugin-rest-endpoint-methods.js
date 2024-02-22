@@ -8,7 +8,15 @@ type: API method
 
 # Create a scoped access token
 
-Use a non-scoped user access token to create a repository scoped and/or permission scoped user access token. You can specify which repositories the token can access and which permissions are granted to the token. You must use [Basic Authentication](https://docs.github.com/rest/overview/other-authentication-methods#basic-authentication) when accessing this endpoint, using the `client_id` and `client_secret` of the GitHub App as the username and password. Invalid tokens will return `404 NOT FOUND`.
+Use a non-scoped user access token to create a repository-scoped and/or permission-scoped user access token. You can specify
+which repositories the token can access and which permissions are granted to the
+token.
+
+Invalid tokens will return `404 NOT FOUND`.
+
+You must use [Basic Authentication](https://docs.github.com/rest/overview/other-authentication-methods#basic-authentication)
+when accessing this endpoint, using the `client_id` and `client_secret` of the GitHub App
+as the username and password.
 
 ```js
 octokit.rest.apps.scopeToken({
@@ -78,9 +86,19 @@ The level of permission to grant the access token for repository creation, delet
 The level of permission to grant the access token for checks on code.
 
 </td></tr>
+<tr><td>permissions.codespaces</td><td>no</td><td>
+
+The level of permission to grant the access token to create, edit, delete, and list Codespaces.
+
+</td></tr>
 <tr><td>permissions.contents</td><td>no</td><td>
 
 The level of permission to grant the access token for repository contents, commits, branches, downloads, releases, and merges.
+
+</td></tr>
+<tr><td>permissions.dependabot_secrets</td><td>no</td><td>
+
+The leve of permission to grant the access token to manage Dependabot secrets.
 
 </td></tr>
 <tr><td>permissions.deployments</td><td>no</td><td>
@@ -116,6 +134,11 @@ The level of permission to grant the access token to retrieve Pages statuses, co
 <tr><td>permissions.pull_requests</td><td>no</td><td>
 
 The level of permission to grant the access token for pull requests and related comments, assignees, labels, milestones, and merges.
+
+</td></tr>
+<tr><td>permissions.repository_custom_properties</td><td>no</td><td>
+
+The level of permission to grant the access token to view and edit custom properties for a repository, when allowed by the property.
 
 </td></tr>
 <tr><td>permissions.repository_hooks</td><td>no</td><td>
@@ -175,7 +198,12 @@ The level of permission to grant the access token to manage access to an organiz
 </td></tr>
 <tr><td>permissions.organization_custom_roles</td><td>no</td><td>
 
-The level of permission to grant the access token for custom repository roles management. This property is in beta and is subject to change.
+The level of permission to grant the access token for custom repository roles management.
+
+</td></tr>
+<tr><td>permissions.organization_custom_org_roles</td><td>no</td><td>
+
+The level of permission to grant the access token for custom organization roles management.
 
 </td></tr>
 <tr><td>permissions.organization_custom_properties</td><td>no</td><td>
@@ -183,9 +211,19 @@ The level of permission to grant the access token for custom repository roles ma
 The level of permission to grant the access token for custom property management.
 
 </td></tr>
+<tr><td>permissions.organization_copilot_seat_management</td><td>no</td><td>
+
+The level of permission to grant the access token for managing access to GitHub Copilot for members of an organization with a Copilot Business subscription. This property is in beta and is subject to change.
+
+</td></tr>
 <tr><td>permissions.organization_announcement_banners</td><td>no</td><td>
 
 The level of permission to grant the access token to view and manage announcement banners for an organization.
+
+</td></tr>
+<tr><td>permissions.organization_events</td><td>no</td><td>
+
+The level of permission to grant the access token to view events triggered by an activity in an organization.
 
 </td></tr>
 <tr><td>permissions.organization_hooks</td><td>no</td><td>
@@ -236,6 +274,41 @@ The level of permission to grant the access token to view and manage users block
 <tr><td>permissions.team_discussions</td><td>no</td><td>
 
 The level of permission to grant the access token to manage team discussions and related comments.
+
+</td></tr>
+<tr><td>permissions.email_addresses</td><td>no</td><td>
+
+The level of permission to grant the access token to manage the email addresses belonging to a user.
+
+</td></tr>
+<tr><td>permissions.followers</td><td>no</td><td>
+
+The level of permission to grant the access token to manage the followers belonging to a user.
+
+</td></tr>
+<tr><td>permissions.git_ssh_keys</td><td>no</td><td>
+
+The level of permission to grant the access token to manage git SSH keys.
+
+</td></tr>
+<tr><td>permissions.gpg_keys</td><td>no</td><td>
+
+The level of permission to grant the access token to view and manage GPG keys belonging to a user.
+
+</td></tr>
+<tr><td>permissions.interaction_limits</td><td>no</td><td>
+
+The level of permission to grant the access token to view and manage interaction limits on a repository.
+
+</td></tr>
+<tr><td>permissions.profile</td><td>no</td><td>
+
+The level of permission to grant the access token to manage the profile settings belonging to a user.
+
+</td></tr>
+<tr><td>permissions.starring</td><td>no</td><td>
+
+The level of permission to grant the access token to list and manage repositories a user is starring.
 
 </td></tr>
   </tbody>
