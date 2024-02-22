@@ -8,7 +8,9 @@ type: API method
 
 # Get an SSH signing key for the authenticated user
 
-Gets extended details for an SSH signing key. You must authenticate with Basic Authentication, or you must authenticate with OAuth with at least `read:ssh_signing_key` scope. For more information, see "[Understanding scopes for OAuth apps](https://docs.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/)."
+Gets extended details for an SSH signing key.
+
+OAuth app tokens and personal access tokens (classic) need the `read:ssh_signing_key` scope to use this endpoint.
 
 ```js
 octokit.rest.users.getSshSigningKeyForAuthenticatedUser({

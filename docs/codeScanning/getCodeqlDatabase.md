@@ -16,9 +16,7 @@ to [`application/zip`](https://docs.github.com/rest/overview/media-types), and m
 your HTTP client is configured to follow redirects or use the `Location` header
 to make a second request to get the redirect URL.
 
-For private repositories, you must use an access token with the `security_events` scope.
-For public repositories, you can use tokens with the `security_events` or `public_repo` scope.
-GitHub Apps must have the `contents` read permission to use this endpoint.
+OAuth app tokens and personal access tokens (classic) need the `security_events` scope to use this endpoint with private or public repositories, or the `public_repo` scope to use this endpoint with only public repositories.
 
 ```js
 octokit.rest.codeScanning.getCodeqlDatabase({

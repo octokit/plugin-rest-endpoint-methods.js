@@ -8,9 +8,11 @@ type: API method
 
 # Update a discussion
 
-Edits the title and body text of a discussion post. Only the parameters you provide are updated. OAuth access tokens require the `write:discussion` [scope](https://docs.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
+Edits the title and body text of a discussion post. Only the parameters you provide are updated.
 
 **Note:** You can also specify a team by `org_id` and `team_id` using the route `PATCH /organizations/{org_id}/team/{team_id}/discussions/{discussion_number}`.
+
+OAuth app tokens and personal access tokens (classic) need the `write:discussion` scope to use this endpoint.
 
 ```js
 octokit.rest.teams.updateDiscussionInOrg({

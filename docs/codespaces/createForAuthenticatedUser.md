@@ -12,9 +12,7 @@ Creates a new codespace, owned by the authenticated user.
 
 This endpoint requires either a `repository_id` OR a `pull_request` but not both.
 
-You must authenticate using an access token with the `codespace` scope to use this endpoint.
-
-GitHub Apps must have write access to the `codespaces` repository permission to use this endpoint.
+OAuth app tokens and personal access tokens (classic) need the `codespace` scope to use this endpoint.
 
 ```js
 octokit.rest.codespaces.createForAuthenticatedUser({

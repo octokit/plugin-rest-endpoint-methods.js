@@ -10,10 +10,12 @@ type: API method
 
 Returns the `total` number of commits authored by the contributor. In addition, the response includes a Weekly Hash (`weeks` array) with the following information:
 
-- `w` - Start of the week, given as a [Unix timestamp](http://en.wikipedia.org/wiki/Unix_time).
+- `w` - Start of the week, given as a [Unix timestamp](https://en.wikipedia.org/wiki/Unix_time).
 - `a` - Number of additions
 - `d` - Number of deletions
 - `c` - Number of commits
+
+**Note:** This endpoint will return `0` values for all addition and deletion counts in repositories with 10,000 or more commits.
 
 ```js
 octokit.rest.repos.getContributorsStats({

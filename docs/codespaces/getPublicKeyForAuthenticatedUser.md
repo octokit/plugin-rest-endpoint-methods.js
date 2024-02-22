@@ -10,9 +10,9 @@ type: API method
 
 Gets your public key, which you need to encrypt secrets. You need to encrypt a secret before you can create or update secrets.
 
-You must authenticate using an access token with the `codespace` or `codespace:secrets` scope to use this endpoint. User must have Codespaces access to use this endpoint.
+The authenticated user must have Codespaces access to use this endpoint.
 
-GitHub Apps must have read access to the `codespaces_user_secrets` user permission to use this endpoint.
+OAuth app tokens and personal access tokens (classic) need the `codespace` or `codespace:secrets` scope to use this endpoint.
 
 ```js
 octokit.rest.codespaces.getPublicKeyForAuthenticatedUser();

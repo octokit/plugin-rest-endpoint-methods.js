@@ -8,7 +8,8 @@ type: API method
 
 # Delete an artifact
 
-Deletes an artifact for a workflow run. You must authenticate using an access token with the `repo` scope to use this endpoint. GitHub Apps must have the `actions:write` permission to use this endpoint.
+Deletes an artifact for a workflow run.
+OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 
 ```js
 octokit.rest.actions.deleteArtifact({

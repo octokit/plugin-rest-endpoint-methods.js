@@ -8,7 +8,11 @@ type: API method
 
 # Get a repository public key
 
-Gets your public key, which you need to encrypt secrets. You need to encrypt a secret before you can create or update secrets. Anyone with read access to the repository can use this endpoint. If the repository is private you must use an access token with the `repo` scope. GitHub Apps must have the `dependabot_secrets` repository permission to use this endpoint.
+Gets your public key, which you need to encrypt secrets. You need to
+encrypt a secret before you can create or update secrets. Anyone with read access
+to the repository can use this endpoint.
+
+OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint if the repository is private.
 
 ```js
 octokit.rest.dependabot.getRepoPublicKey({

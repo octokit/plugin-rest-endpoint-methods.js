@@ -10,9 +10,9 @@ type: API method
 
 Lists teams that are security managers for an organization. For more information, see "[Managing security managers in your organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization)."
 
-To use this endpoint, you must be an administrator or security manager for the organization, and you must use an access token with the `read:org` scope.
+The authenticated user must be an administrator or security manager for the organization to use this endpoint.
 
-GitHub Apps must have the `administration` organization read permission to use this endpoint.
+OAuth app tokens and personal access tokens (classic) need the `read:org` scope to use this endpoint.
 
 ```js
 octokit.rest.orgs.listSecurityManagerTeams({

@@ -12,7 +12,7 @@ Gets the default workflow permissions granted to the `GITHUB_TOKEN` when running
 as well as if GitHub Actions can submit approving pull request reviews.
 For more information, see "[Setting the permissions of the GITHUB_TOKEN for your repository](https://docs.github.com/repositories/managing-your-repositorys-settings-and-features/enabling-features-for-your-repository/managing-github-actions-settings-for-a-repository#setting-the-permissions-of-the-github_token-for-your-repository)."
 
-You must authenticate using an access token with the `repo` scope to use this endpoint. GitHub Apps must have the repository `administration` permission to use this API.
+OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 
 ```js
 octokit.rest.actions.getGithubActionsDefaultWorkflowPermissionsRepository({

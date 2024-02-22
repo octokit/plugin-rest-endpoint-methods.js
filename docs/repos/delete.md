@@ -8,10 +8,12 @@ type: API method
 
 # Delete a repository
 
-Deleting a repository requires admin access. If OAuth is used, the `delete_repo` scope is required.
+Deleting a repository requires admin access.
 
 If an organization owner has configured the organization to prevent members from deleting organization-owned
 repositories, you will get a `403 Forbidden` response.
+
+OAuth app tokens and personal access tokens (classic) need the `delete_repo` scope to use this endpoint.
 
 ```js
 octokit.rest.repos.delete({

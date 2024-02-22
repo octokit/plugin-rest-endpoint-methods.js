@@ -10,7 +10,7 @@ type: API method
 
 Returns the webhook configuration for an organization. To get more information about the webhook, including the `active` state and `events`, use "[Get an organization webhook ](/rest/orgs/webhooks#get-an-organization-webhook)."
 
-Access tokens must have the `admin:org_hook` scope, and GitHub Apps must have the `organization_hooks:read` permission.
+OAuth app tokens and personal access tokens (classic) need the `admin:org_hook` scope to use this endpoint.
 
 ```js
 octokit.rest.orgs.getWebhookConfigForOrg({

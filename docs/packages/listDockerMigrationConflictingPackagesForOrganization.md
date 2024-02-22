@@ -9,7 +9,8 @@ type: API method
 # Get list of conflicting packages during Docker migration for organization
 
 Lists all packages that are in a specific organization, are readable by the requesting user, and that encountered a conflict during a Docker migration.
-To use this endpoint, you must authenticate using an access token with the `read:packages` scope.
+
+OAuth app tokens and personal access tokens (classic) need the `read:packages` scope to use this endpoint.
 
 ```js
 octokit.rest.packages.listDockerMigrationConflictingPackagesForOrganization({

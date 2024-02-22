@@ -8,7 +8,9 @@ type: API method
 
 # Add social accounts for the authenticated user
 
-Add one or more social accounts to the authenticated user's profile. This endpoint is accessible with the `user` scope.
+Add one or more social accounts to the authenticated user's profile.
+
+OAuth app tokens and personal access tokens (classic) need the `user` scope to use this endpoint.
 
 ```js
 octokit.rest.users.addSocialAccountForAuthenticatedUser({

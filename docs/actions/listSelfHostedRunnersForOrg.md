@@ -10,10 +10,9 @@ type: API method
 
 Lists all self-hosted runners configured in an organization.
 
-You must authenticate using an access token with the `admin:org` scope to use this endpoint.
-If the repository is private, you must use an access token with the `repo` scope.
-GitHub Apps must have the `administration` permission for repositories and the `organization_self_hosted_runners` permission for organizations.
-Authenticated users must have admin access to repositories or organizations, or the `manage_runners:enterprise` scope for enterprises, to use these endpoints.
+Authenticated users must have admin access to the organization to use this endpoint.
+
+OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, the `repo` scope is also required.
 
 ```js
 octokit.rest.actions.listSelfHostedRunnersForOrg({
@@ -44,12 +43,12 @@ The organization name. The name is not case sensitive.
 </td></tr>
 <tr><td>per_page</td><td>no</td><td>
 
-The number of results per page (max 100).
+The number of results per page (max 100). For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
 
 </td></tr>
 <tr><td>page</td><td>no</td><td>
 
-Page number of the results to fetch.
+The page number of the results to fetch. For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
 
 </td></tr>
   </tbody>

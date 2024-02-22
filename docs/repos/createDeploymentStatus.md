@@ -10,7 +10,7 @@ type: API method
 
 Users with `push` access can create deployment statuses for a given deployment.
 
-GitHub Apps require `read & write` access to "Deployments" and `read-only` access to "Repo contents" (for private repos). OAuth apps require the `repo_deployment` scope.
+OAuth app tokens and personal access tokens (classic) need the `repo_deployment` scope to use this endpoint.
 
 ```js
 octokit.rest.repos.createDeploymentStatus({

@@ -10,9 +10,9 @@ type: API method
 
 Gets a specific self-hosted runner configured in a repository.
 
-You must authenticate using an access token with the `repo` scope to use this endpoint.
-GitHub Apps must have the `administration` permission for repositories and the `organization_self_hosted_runners` permission for organizations.
-Authenticated users must have admin access to repositories or organizations, or the `manage_runners:enterprise` scope for enterprises, to use these endpoints.
+Authenticated users must have admin access to the repository to use this endpoint.
+
+OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 
 ```js
 octokit.rest.actions.getSelfHostedRunnerForRepo({

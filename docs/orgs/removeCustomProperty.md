@@ -9,7 +9,11 @@ type: API method
 # Remove a custom property for an organization
 
 Removes a custom property that is defined for an organization.
-You must be an organization owner to use this endpoint.
+
+To use this endpoint, the authenticated user must be one of:
+
+- An administrator for the organization.
+- A user, or a user on a team, with the fine-grained permission of `custom_properties_org_definitions_manager` in the organization.
 
 ```js
 octokit.rest.orgs.removeCustomProperty({

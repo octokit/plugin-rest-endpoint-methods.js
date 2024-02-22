@@ -10,12 +10,7 @@ type: API method
 
 Creates a new repository for the authenticated user.
 
-**OAuth scope requirements**
-
-When using [OAuth](https://docs.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/), authorizations must include:
-
-- `public_repo` scope or `repo` scope to create a public repository. Note: For GitHub AE, use `repo` scope to create an internal repository.
-- `repo` scope to create a private repository.
+OAuth app tokens and personal access tokens (classic) need the `public_repo` or `repo` scope to create a public repository, and `repo` scope to create a private repository.
 
 ```js
 octokit.rest.repos.createForAuthenticatedUser({

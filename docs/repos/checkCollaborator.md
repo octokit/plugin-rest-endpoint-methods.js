@@ -12,9 +12,9 @@ For organization-owned repositories, the list of collaborators includes outside 
 
 Team members will include the members of child teams.
 
-You must authenticate using an access token with the `read:org` and `repo` scopes with push access to use this
-endpoint. GitHub Apps must have the `members` organization permission and `metadata` repository permission to use this
-endpoint.
+The authenticated user must have push access to the repository to use this endpoint.
+
+OAuth app tokens and personal access tokens (classic) need the `read:org` and `repo` scopes to use this endpoint.
 
 ```js
 octokit.rest.repos.checkCollaborator({

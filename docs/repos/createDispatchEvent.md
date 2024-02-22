@@ -12,12 +12,9 @@ You can use this endpoint to trigger a webhook event called `repository_dispatch
 
 The `client_payload` parameter is available for any extra information that your workflow might need. This parameter is a JSON payload that will be passed on when the webhook event is dispatched. For example, the `client_payload` can include a message that a user would like to send using a GitHub Actions workflow. Or the `client_payload` can be used as a test to debug your workflow.
 
-This endpoint requires write access to the repository by providing either:
-
-- Personal access tokens with `repo` scope. For more information, see "[Creating a personal access token for the command line](https://docs.github.com/articles/creating-a-personal-access-token-for-the-command-line)" in the GitHub Help documentation.
-- GitHub Apps with both `metadata:read` and `contents:read&write` permissions.
-
 This input example shows how you can use the `client_payload` as a test to debug your workflow.
+
+OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 
 ```js
 octokit.rest.repos.createDispatchEvent({

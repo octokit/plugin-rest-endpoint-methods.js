@@ -9,12 +9,13 @@ type: API method
 # Get a repository security advisory
 
 Get a repository security advisory using its GitHub Security Advisory (GHSA) identifier.
-You can access any published security advisory on a public repository.
-You must authenticate using an access token with the `repo` scope or `repository_advisories:read` permission
-in order to get a published security advisory in a private repository, or any unpublished security advisory that you have access to.
 
-You can access an unpublished security advisory from a repository if you are a security manager or administrator of that repository, or if you are a
+Anyone can access any published security advisory on a public repository.
+
+The authenticated user can access an unpublished security advisory from a repository if they are a security manager or administrator of that repository, or if they are a
 collaborator on the security advisory.
+
+OAuth app tokens and personal access tokens (classic) need the `repo` or `repository_advisories:read` scope to to get a published security advisory in a private repository, or any unpublished security advisory that the authenticated user has access to.
 
 ```js
 octokit.rest.securityAdvisories.getRepositoryAdvisory({

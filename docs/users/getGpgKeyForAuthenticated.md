@@ -10,7 +10,9 @@ type: API method
 
 **Deprecated:** This method has been renamed to users.getGpgKeyForAuthenticatedUser
 
-View extended details for a single GPG key. Requires that you are authenticated via Basic Auth or via OAuth with at least `read:gpg_key` [scope](https://docs.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
+View extended details for a single GPG key.
+
+OAuth app tokens and personal access tokens (classic) need the `read:gpg_key` scope to use this endpoint.
 
 ```js
 octokit.rest.users.getGpgKeyForAuthenticated({

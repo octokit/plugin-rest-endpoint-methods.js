@@ -8,12 +8,10 @@ type: API method
 
 # Create or update a repository secret
 
-Creates or updates a repository secret with an encrypted value. Encrypt your secret using
+Creates or updates a repository development environment secret with an encrypted value. Encrypt your secret using
 [LibSodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages). For more information, see "[Encrypting secrets for the REST API](https://docs.github.com/rest/guides/encrypting-secrets-for-the-rest-api)."
 
-You must authenticate using an access
-token with the `repo` scope to use this endpoint. GitHub Apps must have write access to the `codespaces_secrets`
-repository permission to use this endpoint.
+OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 
 ```js
 octokit.rest.codespaces.createOrUpdateRepoSecret({

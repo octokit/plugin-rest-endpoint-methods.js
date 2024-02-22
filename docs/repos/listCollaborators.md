@@ -13,9 +13,9 @@ Organization members with write, maintain, or admin privileges on the organizati
 
 Team members will include the members of child teams.
 
-You must authenticate using an access token with the `read:org` and `repo` scopes with push access to use this
-endpoint. GitHub Apps must have the `members` organization permission and `metadata` repository permission to use this
-endpoint.
+The authenticated user must have push access to the repository to use this endpoint.
+
+OAuth app tokens and personal access tokens (classic) need the `read:org` and `repo` scopes to use this endpoint.
 
 ```js
 octokit.rest.repos.listCollaborators({
@@ -57,12 +57,12 @@ Filter collaborators by the permissions they have on the repository. If not spec
 </td></tr>
 <tr><td>per_page</td><td>no</td><td>
 
-The number of results per page (max 100).
+The number of results per page (max 100). For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
 
 </td></tr>
 <tr><td>page</td><td>no</td><td>
 
-Page number of the results to fetch.
+The page number of the results to fetch. For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
 
 </td></tr>
   </tbody>

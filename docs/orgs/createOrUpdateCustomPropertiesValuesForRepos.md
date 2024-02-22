@@ -15,7 +15,10 @@ A maximum of 30 repositories can be updated in a single request.
 
 Using a value of `null` for a custom property will remove or 'unset' the property value from the repository.
 
-Only organization owners (or users with the proper permissions granted by them) can update these properties
+To use this endpoint, the authenticated user must be one of:
+
+- An administrator for the organization.
+- A user, or a user on a team, with the fine-grained permission of `custom_properties_org_values_editor` in the organization.
 
 ```js
 octokit.rest.orgs.createOrUpdateCustomPropertiesValuesForRepos({

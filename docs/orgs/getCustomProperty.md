@@ -9,7 +9,7 @@ type: API method
 # Get a custom property for an organization
 
 Gets a custom property that is defined for an organization.
-You must be an organization owner to use this endpoint.
+Organization members can read these properties.
 
 ```js
 octokit.rest.orgs.getCustomProperty({

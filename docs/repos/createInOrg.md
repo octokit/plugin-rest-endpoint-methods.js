@@ -10,12 +10,7 @@ type: API method
 
 Creates a new repository in the specified organization. The authenticated user must be a member of the organization.
 
-**OAuth scope requirements**
-
-When using [OAuth](https://docs.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/), authorizations must include:
-
-- `public_repo` scope or `repo` scope to create a public repository. Note: For GitHub AE, use `repo` scope to create an internal repository.
-- `repo` scope to create a private repository
+OAuth app tokens and personal access tokens (classic) need the `public_repo` or `repo` scope to create a public repository, and `repo` scope to create a private repository.
 
 ```js
 octokit.rest.repos.createInOrg({
@@ -176,7 +171,7 @@ The default value for a merge commit message.
 </td></tr>
 <tr><td>custom_properties</td><td>no</td><td>
 
-The custom properties for the new respository. The keys are the custom property names, and the values are the corresponding custom property values.
+The custom properties for the new repository. The keys are the custom property names, and the values are the corresponding custom property values.
 
 </td></tr>
 <tr><td>custom_properties.*</td><td>no</td><td>

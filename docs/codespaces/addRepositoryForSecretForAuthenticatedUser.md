@@ -8,9 +8,11 @@ type: API method
 
 # Add a selected repository to a user secret
 
-Adds a repository to the selected repositories for a user's codespace secret.
-You must authenticate using an access token with the `codespace` or `codespace:secrets` scope to use this endpoint. User must have Codespaces access to use this endpoint.
-GitHub Apps must have write access to the `codespaces_user_secrets` user permission and write access to the `codespaces_secrets` repository permission on the referenced repository to use this endpoint.
+Adds a repository to the selected repositories for a user's development environment secret.
+
+The authenticated user must have Codespaces access to use this endpoint.
+
+OAuth app tokens and personal access tokens (classic) need the `codespace` or `codespace:secrets` scope to use this endpoint.
 
 ```js
 octokit.rest.codespaces.addRepositoryForSecretForAuthenticatedUser({

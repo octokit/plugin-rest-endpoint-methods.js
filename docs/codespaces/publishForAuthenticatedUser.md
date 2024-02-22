@@ -14,9 +14,7 @@ The codespace's token is granted write permissions to the repository, allowing t
 
 This will fail for a codespace that is already published, meaning it has an associated repository.
 
-You must authenticate using a personal access token with the `codespace` scope to use this endpoint.
-
-GitHub Apps must have write access to the `codespaces` repository permission to use this endpoint.
+OAuth app tokens and personal access tokens (classic) need the `codespace` scope to use this endpoint.
 
 ```js
 octokit.rest.codespaces.publishForAuthenticatedUser({

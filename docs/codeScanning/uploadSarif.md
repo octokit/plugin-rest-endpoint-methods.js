@@ -8,7 +8,7 @@ type: API method
 
 # Upload an analysis as SARIF data
 
-Uploads SARIF data containing the results of a code scanning analysis to make the results available in a repository. You must use an access token with the `security_events` scope to use this endpoint for private repositories. You can also use tokens with the `public_repo` scope for public repositories only. GitHub Apps must have the `security_events` write permission to use this endpoint. For troubleshooting information, see "[Troubleshooting SARIF uploads](https://docs.github.com/code-security/code-scanning/troubleshooting-sarif)."
+Uploads SARIF data containing the results of a code scanning analysis to make the results available in a repository. For troubleshooting information, see "[Troubleshooting SARIF uploads](https://docs.github.com/code-security/code-scanning/troubleshooting-sarif)."
 
 There are two places where you can upload code scanning results.
 
@@ -21,7 +21,6 @@ You must compress the SARIF-formatted analysis data that you want to upload, usi
 gzip -c analysis-data.sarif | base64 -w0
 ```
 
-<br>
 SARIF upload supports a maximum number of entries per the following data objects, and an analysis will be rejected if any of these objects is above its maximum value. For some objects, there are additional values over which the entries will be ignored while keeping the most important entries whenever applicable.
 To get the most out of your analysis when it includes data above the supported limits, try to optimize the analysis configuration. For example, for the CodeQL tool, identify and remove the most noisy queries. For more information, see "[SARIF results exceed one or more limits](https://docs.github.com/code-security/code-scanning/troubleshooting-sarif/results-exceed-limit)."
 
@@ -38,6 +37,8 @@ To get the most out of your analysis when it includes data above the supported l
 The `202 Accepted` response includes an `id` value.
 You can use this ID to check the status of the upload by using it in the `/sarifs/{sarif_id}` endpoint.
 For more information, see "[Get information about a SARIF upload](/rest/code-scanning/code-scanning#get-information-about-a-sarif-upload)."
+
+OAuth app tokens and personal access tokens (classic) need the `security_events` scope to use this endpoint with private or public repositories, or the `public_repo` scope to use this endpoint with only public repositories.
 
 ```js
 octokit.rest.codeScanning.uploadSarif({
@@ -78,7 +79,7 @@ The SHA of the commit to which the analysis you are uploading relates.
 <tr><td>ref</td><td>yes</td><td>
 
 The full Git reference, formatted as `refs/heads/<branch name>`,
-`refs/pull/<number>/merge`, or `refs/pull/<number>/head`.
+`refs/tags/<tag>`, `refs/pull/<number>/merge`, or `refs/pull/<number>/head`.
 
 </td></tr>
 <tr><td>sarif</td><td>yes</td><td>

@@ -9,7 +9,10 @@ type: API method
 # List organization variables
 
 Lists all organization variables.
-You must authenticate using an access token with the `admin:org` scope to use this endpoint. If the repository is private, you must use an access token with the `repo` scope. GitHub Apps must have the `organization_actions_variables:read` organization permission to use this endpoint. Authenticated users must have collaborator access to a repository to create, update, or read variables.
+
+Authenticated users must have collaborator access to a repository to create, update, or read variables.
+
+OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, the `repo` scope is also required.
 
 ```js
 octokit.rest.actions.listOrgVariables({
@@ -35,12 +38,12 @@ The organization name. The name is not case sensitive.
 </td></tr>
 <tr><td>per_page</td><td>no</td><td>
 
-The number of results per page (max 30).
+The number of results per page (max 30). For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
 
 </td></tr>
 <tr><td>page</td><td>no</td><td>
 
-Page number of the results to fetch.
+The page number of the results to fetch. For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
 
 </td></tr>
   </tbody>

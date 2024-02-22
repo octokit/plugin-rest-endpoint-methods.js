@@ -10,7 +10,7 @@ type: API method
 
 **Deprecated:** This method has been renamed to users.addEmailForAuthenticatedUser
 
-This endpoint is accessible with the `user` scope.
+OAuth app tokens and personal access tokens (classic) need the `user` scope to use this endpoint.
 
 ```js
 octokit.rest.users.addEmailForAuthenticated({

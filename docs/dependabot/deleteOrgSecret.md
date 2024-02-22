@@ -8,7 +8,9 @@ type: API method
 
 # Delete an organization secret
 
-Deletes a secret in an organization using the secret name. You must authenticate using an access token with the `admin:org` scope to use this endpoint. GitHub Apps must have the `dependabot_secrets` organization permission to use this endpoint.
+Deletes a secret in an organization using the secret name.
+
+OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 
 ```js
 octokit.rest.dependabot.deleteOrgSecret({

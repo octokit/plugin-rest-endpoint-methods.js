@@ -12,9 +12,8 @@ Get the public key for an environment, which you need to encrypt environment
 secrets. You need to encrypt a secret before you can create or update secrets.
 
 Anyone with read access to the repository can use this endpoint.
-If the repository is private you must use an access token with the `repo` scope.
-GitHub Apps must have the `secrets` repository permission to use this endpoint.
-Authenticated users must have collaborator access to a repository to create, update, or read secrets.
+
+If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 
 ```js
 octokit.rest.actions.getEnvironmentPublicKey({
@@ -41,7 +40,7 @@ The unique identifier of the repository.
 </td></tr>
 <tr><td>environment_name</td><td>yes</td><td>
 
-The name of the environment.
+The name of the environment. The name must be URL encoded. For example, any slashes in the name must be replaced with `%2F`.
 
 </td></tr>
   </tbody>

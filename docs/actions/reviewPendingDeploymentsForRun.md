@@ -10,7 +10,9 @@ type: API method
 
 Approve or reject pending deployments that are waiting on approval by a required reviewer.
 
-Required reviewers with read access to the repository contents and deployments can use this endpoint. Required reviewers must authenticate using an access token with the `repo` scope to use this endpoint.
+Required reviewers with read access to the repository contents and deployments can use this endpoint.
+
+OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 
 ```js
 octokit.rest.actions.reviewPendingDeploymentsForRun({

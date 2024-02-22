@@ -10,9 +10,9 @@ type: API method
 
 Removes the security manager role from a team for an organization. For more information, see "[Managing security managers in your organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization) team from an organization."
 
-To use this endpoint, you must be an administrator for the organization, and you must use an access token with the `admin:org` scope.
+The authenticated user must be an administrator for the organization to use this endpoint.
 
-GitHub Apps must have the `administration` organization read-write permission to use this endpoint.
+OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 
 ```js
 octokit.rest.orgs.removeSecurityManagerTeam({

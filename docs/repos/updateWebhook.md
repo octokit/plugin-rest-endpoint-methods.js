@@ -1,6 +1,6 @@
 ---
 name: Update a repository webhook
-example: octokit.rest.repos.updateWebhook({ owner, repo, hook_id, config.url })
+example: octokit.rest.repos.updateWebhook({ owner, repo, hook_id })
 route: PATCH /repos/{owner}/{repo}/hooks/{hook_id}
 scope: repos
 type: API method
@@ -12,11 +12,10 @@ Updates a webhook configured in a repository. If you previously had a `secret` s
 
 ```js
 octokit.rest.repos.updateWebhook({
-        owner,
-repo,
-hook_id,
-config.url
-      })
+  owner,
+  repo,
+  hook_id,
+});
 ```
 
 ## Parameters
@@ -47,10 +46,10 @@ The unique identifier of the hook. You can find this value in the `X-GitHub-Hook
 </td></tr>
 <tr><td>config</td><td>no</td><td>
 
-Key/value pairs to provide settings for this webhook.
+Configuration object of the webhook
 
 </td></tr>
-<tr><td>config.url</td><td>yes</td><td>
+<tr><td>config.url</td><td>no</td><td>
 
 The URL to which the payloads will be delivered.
 
@@ -66,12 +65,6 @@ If provided, the `secret` will be used as the `key` to generate the HMAC hex dig
 
 </td></tr>
 <tr><td>config.insecure_ssl</td><td>no</td><td>
-
-</td></tr>
-<tr><td>config.address</td><td>no</td><td>
-
-</td></tr>
-<tr><td>config.room</td><td>no</td><td>
 
 </td></tr>
 <tr><td>events</td><td>no</td><td>

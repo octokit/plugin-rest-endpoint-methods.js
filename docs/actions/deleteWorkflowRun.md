@@ -8,9 +8,11 @@ type: API method
 
 # Delete a workflow run
 
-Delete a specific workflow run. Anyone with write access to the repository can use this endpoint. If the repository is
-private you must use an access token with the `repo` scope. GitHub Apps must have the `actions:write` permission to use
-this endpoint.
+Deletes a specific workflow run.
+
+Anyone with write access to the repository can use this endpoint.
+
+If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 
 ```js
 octokit.rest.actions.deleteWorkflowRun({

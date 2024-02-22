@@ -34,8 +34,6 @@ The `task` parameter is used by the deployment system to allow different executi
 be `deploy:migrations` to run schema changes on the system. In the compiled world this could be a flag to compile an
 application with debugging enabled.
 
-Users with `repo` or `repo_deployment` scopes can create a deployment for a given ref.
-
 Merged branch response:
 
 You will see this response when GitHub automatically merges the base branch into the topic branch instead of creating
@@ -57,6 +55,8 @@ Failed commit status checks:
 
 This error happens when the `required_contexts` parameter indicates that one or more contexts need to have a `success`
 status for the commit to be deployed, but one or more of the required contexts do not have a state of `success`.
+
+OAuth app tokens and personal access tokens (classic) need the `repo` or `repo_deployment` scope to use this endpoint.
 
 ```js
 octokit.rest.repos.createDeployment({

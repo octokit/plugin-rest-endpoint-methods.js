@@ -9,9 +9,6 @@ type: API method
 # Get a code scanning analysis for a repository
 
 Gets a specified code scanning analysis for a repository.
-You must use an access token with the `security_events` scope to use this endpoint with private repos,
-the `public_repo` scope also grants permission to read security events on public repos only.
-GitHub Apps must have the `security_events` read permission to use this endpoint.
 
 The default JSON response contains fields that describe the analysis.
 This includes the Git reference and commit SHA to which the analysis relates,
@@ -23,10 +20,11 @@ that were run in the analysis.
 For very old analyses this data is not available,
 and `0` is returned in this field.
 
-If you use the Accept header `application/sarif+json`,
-the response contains the analysis data that was uploaded.
-This is formatted as
-[SARIF version 2.1.0](https://docs.oasis-open.org/sarif/sarif/v2.1.0/cs01/sarif-v2.1.0-cs01.html).
+This endpoint supports the following custom media types. For more information, see "[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types)."
+
+- **`application/sarif+json`**: Instead of returning a summary of the analysis, this endpoint returns a subset of the analysis data that was uploaded. The data is formatted as [SARIF version 2.1.0](https://docs.oasis-open.org/sarif/sarif/v2.1.0/cs01/sarif-v2.1.0-cs01.html). It also returns additional data such as the `github/alertNumber` and `github/alertUrl` properties.
+
+OAuth app tokens and personal access tokens (classic) need the `security_events` scope to use this endpoint with private or public repositories, or the `public_repo` scope to use this endpoint with only public repositories.
 
 ```js
 octokit.rest.codeScanning.getAnalysis({

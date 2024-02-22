@@ -10,9 +10,9 @@ type: API method
 
 Adds a team as a security manager for an organization. For more information, see "[Managing security for an organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization) for an organization."
 
-To use this endpoint, you must be an administrator for the organization, and you must use an access token with the `write:org` scope.
+The authenticated user must be an administrator for the organization to use this endpoint.
 
-GitHub Apps must have the `administration` organization read-write permission to use this endpoint.
+OAuth app tokens and personal access tokens (classic) need the `write:org` scope to use this endpoint.
 
 ```js
 octokit.rest.orgs.addSecurityManagerTeam({

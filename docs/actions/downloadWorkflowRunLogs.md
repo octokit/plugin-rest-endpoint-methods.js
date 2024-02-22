@@ -9,9 +9,11 @@ type: API method
 # Download workflow run logs
 
 Gets a redirect URL to download an archive of log files for a workflow run. This link expires after 1 minute. Look for
-`Location:` in the response header to find the URL for the download. Anyone with read access to the repository can use
-this endpoint. If the repository is private you must use an access token with the `repo` scope. GitHub Apps must have
-the `actions:read` permission to use this endpoint.
+`Location:` in the response header to find the URL for the download.
+
+Anyone with read access to the repository can use this endpoint.
+
+If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 
 ```js
 octokit.rest.actions.downloadWorkflowRunLogs({

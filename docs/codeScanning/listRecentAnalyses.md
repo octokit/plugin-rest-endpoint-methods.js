@@ -19,12 +19,10 @@ that were run in the analysis.
 For very old analyses this data is not available,
 and `0` is returned in this field.
 
-You must use an access token with the `security_events` scope to use this endpoint with private repos,
-the `public_repo` scope also grants permission to read security events on public repos only.
-GitHub Apps must have the `security_events` read permission to use this endpoint.
-
 **Deprecation notice**:
 The `tool_name` field is deprecated and will, in future, not be included in the response for this endpoint. The example response reflects this change. The tool name can now be found inside the `tool` field.
+
+OAuth app tokens and personal access tokens (classic) need the `security_events` scope to use this endpoint with private or public repositories, or the `public_repo` scope to use this endpoint with only public repositories.
 
 ```js
 octokit.rest.codeScanning.listRecentAnalyses({
@@ -66,12 +64,12 @@ The GUID of a code scanning tool. Only results by this tool will be listed. Note
 </td></tr>
 <tr><td>page</td><td>no</td><td>
 
-Page number of the results to fetch.
+The page number of the results to fetch. For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
 
 </td></tr>
 <tr><td>per_page</td><td>no</td><td>
 
-The number of results per page (max 100).
+The number of results per page (max 100). For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
 
 </td></tr>
 <tr><td>ref</td><td>no</td><td>

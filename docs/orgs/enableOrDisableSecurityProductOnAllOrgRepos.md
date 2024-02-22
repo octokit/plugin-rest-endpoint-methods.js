@@ -8,14 +8,11 @@ type: API method
 
 # Enable or disable a security feature for an organization
 
-Enables or disables the specified security feature for all eligible repositories in an organization.
+Enables or disables the specified security feature for all eligible repositories in an organization. For more information, see "[Managing security managers in your organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization)."
 
-To use this endpoint, you must be an organization owner or be member of a team with the security manager role.
-A token with the 'write:org' scope is also required.
+The authenticated user must be an organization owner or be member of a team with the security manager role to use this endpoint.
 
-GitHub Apps must have the `organization_administration:write` permission to use this endpoint.
-
-For more information, see "[Managing security managers in your organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization)."
+OAuth app tokens and personal access tokens (classic) need the `write:org` scope to use this endpoint.
 
 ```js
 octokit.rest.orgs.enableOrDisableSecurityProductOnAllOrgRepos({

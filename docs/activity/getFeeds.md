@@ -11,7 +11,7 @@ type: API method
 GitHub provides several timeline resources in [Atom](<http://en.wikipedia.org/wiki/Atom_(standard)>) format. The Feeds API lists all the feeds available to the authenticated user:
 
 - **Timeline**: The GitHub global public timeline
-- **User**: The public timeline for any user, using [URI template](https://docs.github.com/rest/overview/resources-in-the-rest-api#hypermedia)
+- **User**: The public timeline for any user, using `uri_template`. For more information, see "[Hypermedia](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#hypermedia)."
 - **Current user public**: The public timeline for the authenticated user
 - **Current user**: The private timeline for the authenticated user
 - **Current user actor**: The private timeline for activity created by the authenticated user

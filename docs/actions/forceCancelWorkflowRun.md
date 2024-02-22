@@ -11,8 +11,7 @@ type: API method
 Cancels a workflow run and bypasses conditions that would otherwise cause a workflow execution to continue, such as an `always()` condition on a job.
 You should only use this endpoint to cancel a workflow run when the workflow run is not responding to [`POST /repos/{owner}/{repo}/actions/runs/{run_id}/cancel`](/rest/actions/workflow-runs#cancel-a-workflow-run).
 
-You must authenticate using an access token with the `repo` scope to use this endpoint.
-GitHub Apps must have the `actions:write` permission to use this endpoint.
+OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 
 ```js
 octokit.rest.actions.forceCancelWorkflowRun({

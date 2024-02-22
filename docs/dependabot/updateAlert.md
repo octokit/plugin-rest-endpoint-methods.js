@@ -8,11 +8,9 @@ type: API method
 
 # Update a Dependabot alert
 
-You must use an access token with the `security_events` scope to use this endpoint with private repositories.
-You can also use tokens with the `public_repo` scope for public repositories only.
-GitHub Apps must have **Dependabot alerts** write permission to use this endpoint.
+The authenticated user must have access to security alerts for the repository to use this endpoint. For more information, see "[Granting access to security alerts](https://docs.github.com/repositories/managing-your-repositorys-settings-and-features/enabling-features-for-your-repository/managing-security-and-analysis-settings-for-your-repository#granting-access-to-security-alerts)."
 
-To use this endpoint, you must have access to security alerts for the repository. For more information, see "[Granting access to security alerts](https://docs.github.com/repositories/managing-your-repositorys-settings-and-features/enabling-features-for-your-repository/managing-security-and-analysis-settings-for-your-repository#granting-access-to-security-alerts)."
+OAuth app tokens and personal access tokens (classic) need the `security_events` scope to use this endpoint. If this endpoint is only used with public repositories, the token can use the `public_repo` scope instead.
 
 ```js
 octokit.rest.dependabot.updateAlert({

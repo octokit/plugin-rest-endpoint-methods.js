@@ -1,6 +1,6 @@
 ---
 name: Update a code scanning default setup configuration
-example: octokit.rest.codeScanning.updateDefaultSetup({ owner, repo, state })
+example: octokit.rest.codeScanning.updateDefaultSetup({ owner, repo })
 route: PATCH /repos/{owner}/{repo}/code-scanning/default-setup
 scope: codeScanning
 type: API method
@@ -9,14 +9,13 @@ type: API method
 # Update a code scanning default setup configuration
 
 Updates a code scanning default setup configuration.
-You must use an access token with the `repo` scope to use this endpoint with private repos or the `public_repo`
-scope for public repos. GitHub Apps must have the `repo` write permission to use this endpoint.
+
+OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with private or public repositories, or the `public_repo` scope to use this endpoint with only public repositories.
 
 ```js
 octokit.rest.codeScanning.updateDefaultSetup({
   owner,
   repo,
-  state,
 });
 ```
 
@@ -41,9 +40,9 @@ The account owner of the repository. The name is not case sensitive.
 The name of the repository without the `.git` extension. The name is not case sensitive.
 
 </td></tr>
-<tr><td>state</td><td>yes</td><td>
+<tr><td>state</td><td>no</td><td>
 
-Whether code scanning default setup has been configured or not.
+The desired state of code scanning default setup.
 
 </td></tr>
 <tr><td>query_suite</td><td>no</td><td>

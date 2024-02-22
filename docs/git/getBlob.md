@@ -10,7 +10,12 @@ type: API method
 
 The `content` in the response will always be Base64 encoded.
 
-_Note_: This API supports blobs up to 100 megabytes in size.
+This endpoint supports the following custom media types. For more information, see "[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types)."
+
+- **`application/vnd.github.raw+json`**: Returns the raw blob data.
+- **`application/vnd.github+json`**: Returns a JSON representation of the blob with `content` as a base64 encoded string. This is the default if no media type is specified.
+
+**Note** This endpoint supports blobs up to 100 megabytes in size.
 
 ```js
 octokit.rest.git.getBlob({

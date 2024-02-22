@@ -67,12 +67,6 @@ If provided, the `secret` will be used as the `key` to generate the HMAC hex dig
 <tr><td>config.insecure_ssl</td><td>no</td><td>
 
 </td></tr>
-<tr><td>config.token</td><td>no</td><td>
-
-</td></tr>
-<tr><td>config.digest</td><td>no</td><td>
-
-</td></tr>
 <tr><td>events</td><td>no</td><td>
 
 Determines what [events](https://docs.github.com/webhooks/event-payloads) the hook is triggered for.

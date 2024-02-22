@@ -747,6 +747,11 @@ export type RestEndpointMethodTypes = {
         Endpoints["PUT /repos/{owner}/{repo}/notifications"]["parameters"];
       response: Endpoints["PUT /repos/{owner}/{repo}/notifications"]["response"];
     };
+    markThreadAsDone: {
+      parameters: RequestParameters &
+        Endpoints["DELETE /notifications/threads/{thread_id}"]["parameters"];
+      response: Endpoints["DELETE /notifications/threads/{thread_id}"]["response"];
+    };
     markThreadAsRead: {
       parameters: RequestParameters &
         Endpoints["PATCH /notifications/threads/{thread_id}"]["parameters"];
@@ -1380,12 +1385,12 @@ export type RestEndpointMethodTypes = {
     };
   };
   copilot: {
-    addCopilotForBusinessSeatsForTeams: {
+    addCopilotSeatsForTeams: {
       parameters: RequestParameters &
         Endpoints["POST /orgs/{org}/copilot/billing/selected_teams"]["parameters"];
       response: Endpoints["POST /orgs/{org}/copilot/billing/selected_teams"]["response"];
     };
-    addCopilotForBusinessSeatsForUsers: {
+    addCopilotSeatsForUsers: {
       parameters: RequestParameters &
         Endpoints["POST /orgs/{org}/copilot/billing/selected_users"]["parameters"];
       response: Endpoints["POST /orgs/{org}/copilot/billing/selected_users"]["response"];
@@ -2150,6 +2155,16 @@ export type RestEndpointMethodTypes = {
         Endpoints["PUT /orgs/{org}/security-managers/teams/{team_slug}"]["parameters"];
       response: Endpoints["PUT /orgs/{org}/security-managers/teams/{team_slug}"]["response"];
     };
+    assignTeamToOrgRole: {
+      parameters: RequestParameters &
+        Endpoints["PUT /orgs/{org}/organization-roles/teams/{team_slug}/{role_id}"]["parameters"];
+      response: Endpoints["PUT /orgs/{org}/organization-roles/teams/{team_slug}/{role_id}"]["response"];
+    };
+    assignUserToOrgRole: {
+      parameters: RequestParameters &
+        Endpoints["PUT /orgs/{org}/organization-roles/users/{username}/{role_id}"]["parameters"];
+      response: Endpoints["PUT /orgs/{org}/organization-roles/users/{username}/{role_id}"]["response"];
+    };
     blockUser: {
       parameters: RequestParameters &
         Endpoints["PUT /orgs/{org}/blocks/{username}"]["parameters"];
@@ -2180,6 +2195,11 @@ export type RestEndpointMethodTypes = {
         Endpoints["PUT /orgs/{org}/outside_collaborators/{username}"]["parameters"];
       response: Endpoints["PUT /orgs/{org}/outside_collaborators/{username}"]["response"];
     };
+    createCustomOrganizationRole: {
+      parameters: RequestParameters &
+        Endpoints["POST /orgs/{org}/organization-roles"]["parameters"];
+      response: Endpoints["POST /orgs/{org}/organization-roles"]["response"];
+    };
     createInvitation: {
       parameters: RequestParameters &
         Endpoints["POST /orgs/{org}/invitations"]["parameters"];
@@ -2209,6 +2229,11 @@ export type RestEndpointMethodTypes = {
       parameters: RequestParameters &
         Endpoints["DELETE /orgs/{org}"]["parameters"];
       response: Endpoints["DELETE /orgs/{org}"]["response"];
+    };
+    deleteCustomOrganizationRole: {
+      parameters: RequestParameters &
+        Endpoints["DELETE /orgs/{org}/organization-roles/{role_id}"]["parameters"];
+      response: Endpoints["DELETE /orgs/{org}/organization-roles/{role_id}"]["response"];
     };
     deleteWebhook: {
       parameters: RequestParameters &
@@ -2244,6 +2269,11 @@ export type RestEndpointMethodTypes = {
       parameters: RequestParameters &
         Endpoints["GET /orgs/{org}/memberships/{username}"]["parameters"];
       response: Endpoints["GET /orgs/{org}/memberships/{username}"]["response"];
+    };
+    getOrgRole: {
+      parameters: RequestParameters &
+        Endpoints["GET /orgs/{org}/organization-roles/{role_id}"]["parameters"];
+      response: Endpoints["GET /orgs/{org}/organization-roles/{role_id}"]["response"];
     };
     getWebhook: {
       parameters: RequestParameters &
@@ -2309,6 +2339,26 @@ export type RestEndpointMethodTypes = {
         Endpoints["GET /user/memberships/orgs"]["parameters"];
       response: Endpoints["GET /user/memberships/orgs"]["response"];
     };
+    listOrgRoleTeams: {
+      parameters: RequestParameters &
+        Endpoints["GET /orgs/{org}/organization-roles/{role_id}/teams"]["parameters"];
+      response: Endpoints["GET /orgs/{org}/organization-roles/{role_id}/teams"]["response"];
+    };
+    listOrgRoleUsers: {
+      parameters: RequestParameters &
+        Endpoints["GET /orgs/{org}/organization-roles/{role_id}/users"]["parameters"];
+      response: Endpoints["GET /orgs/{org}/organization-roles/{role_id}/users"]["response"];
+    };
+    listOrgRoles: {
+      parameters: RequestParameters &
+        Endpoints["GET /orgs/{org}/organization-roles"]["parameters"];
+      response: Endpoints["GET /orgs/{org}/organization-roles"]["response"];
+    };
+    listOrganizationFineGrainedPermissions: {
+      parameters: RequestParameters &
+        Endpoints["GET /orgs/{org}/organization-fine-grained-permissions"]["parameters"];
+      response: Endpoints["GET /orgs/{org}/organization-fine-grained-permissions"]["response"];
+    };
     listOutsideCollaborators: {
       parameters: RequestParameters &
         Endpoints["GET /orgs/{org}/outside_collaborators"]["parameters"];
@@ -2359,6 +2409,11 @@ export type RestEndpointMethodTypes = {
         Endpoints["GET /orgs/{org}/hooks"]["parameters"];
       response: Endpoints["GET /orgs/{org}/hooks"]["response"];
     };
+    patchCustomOrganizationRole: {
+      parameters: RequestParameters &
+        Endpoints["PATCH /orgs/{org}/organization-roles/{role_id}"]["parameters"];
+      response: Endpoints["PATCH /orgs/{org}/organization-roles/{role_id}"]["response"];
+    };
     pingWebhook: {
       parameters: RequestParameters &
         Endpoints["POST /orgs/{org}/hooks/{hook_id}/pings"]["parameters"];
@@ -2408,6 +2463,26 @@ export type RestEndpointMethodTypes = {
       parameters: RequestParameters &
         Endpoints["POST /orgs/{org}/personal-access-token-requests"]["parameters"];
       response: Endpoints["POST /orgs/{org}/personal-access-token-requests"]["response"];
+    };
+    revokeAllOrgRolesTeam: {
+      parameters: RequestParameters &
+        Endpoints["DELETE /orgs/{org}/organization-roles/teams/{team_slug}"]["parameters"];
+      response: Endpoints["DELETE /orgs/{org}/organization-roles/teams/{team_slug}"]["response"];
+    };
+    revokeAllOrgRolesUser: {
+      parameters: RequestParameters &
+        Endpoints["DELETE /orgs/{org}/organization-roles/users/{username}"]["parameters"];
+      response: Endpoints["DELETE /orgs/{org}/organization-roles/users/{username}"]["response"];
+    };
+    revokeOrgRoleTeam: {
+      parameters: RequestParameters &
+        Endpoints["DELETE /orgs/{org}/organization-roles/teams/{team_slug}/{role_id}"]["parameters"];
+      response: Endpoints["DELETE /orgs/{org}/organization-roles/teams/{team_slug}/{role_id}"]["response"];
+    };
+    revokeOrgRoleUser: {
+      parameters: RequestParameters &
+        Endpoints["DELETE /orgs/{org}/organization-roles/users/{username}/{role_id}"]["parameters"];
+      response: Endpoints["DELETE /orgs/{org}/organization-roles/users/{username}/{role_id}"]["response"];
     };
     setMembershipForUser: {
       parameters: RequestParameters &
@@ -3016,6 +3091,11 @@ export type RestEndpointMethodTypes = {
         Endpoints["POST /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users"]["parameters"];
       response: Endpoints["POST /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users"]["response"];
     };
+    cancelPagesDeployment: {
+      parameters: RequestParameters &
+        Endpoints["POST /repos/{owner}/{repo}/pages/deployments/{pages_deployment_id}/cancel"]["parameters"];
+      response: Endpoints["POST /repos/{owner}/{repo}/pages/deployments/{pages_deployment_id}/cancel"]["response"];
+    };
     checkAutomatedSecurityFixes: {
       parameters: RequestParameters &
         Endpoints["GET /repos/{owner}/{repo}/automated-security-fixes"]["parameters"];
@@ -3111,6 +3191,11 @@ export type RestEndpointMethodTypes = {
         Endpoints["POST /orgs/{org}/repos"]["parameters"];
       response: Endpoints["POST /orgs/{org}/repos"]["response"];
     };
+    createOrUpdateCustomPropertiesValues: {
+      parameters: RequestParameters &
+        Endpoints["PATCH /repos/{owner}/{repo}/properties/values"]["parameters"];
+      response: Endpoints["PATCH /repos/{owner}/{repo}/properties/values"]["response"];
+    };
     createOrUpdateEnvironment: {
       parameters: RequestParameters &
         Endpoints["PUT /repos/{owner}/{repo}/environments/{environment_name}"]["parameters"];
@@ -3128,8 +3213,8 @@ export type RestEndpointMethodTypes = {
     };
     createPagesDeployment: {
       parameters: RequestParameters &
-        Endpoints["POST /repos/{owner}/{repo}/pages/deployment"]["parameters"];
-      response: Endpoints["POST /repos/{owner}/{repo}/pages/deployment"]["response"];
+        Endpoints["POST /repos/{owner}/{repo}/pages/deployments"]["parameters"];
+      response: Endpoints["POST /repos/{owner}/{repo}/pages/deployments"]["response"];
     };
     createPagesSite: {
       parameters: RequestParameters &
@@ -3520,6 +3605,11 @@ export type RestEndpointMethodTypes = {
       parameters: RequestParameters &
         Endpoints["GET /repos/{owner}/{repo}/pages/builds/{build_id}"]["parameters"];
       response: Endpoints["GET /repos/{owner}/{repo}/pages/builds/{build_id}"]["response"];
+    };
+    getPagesDeployment: {
+      parameters: RequestParameters &
+        Endpoints["GET /repos/{owner}/{repo}/pages/deployments/{pages_deployment_id}"]["parameters"];
+      response: Endpoints["GET /repos/{owner}/{repo}/pages/deployments/{pages_deployment_id}"]["response"];
     };
     getPagesHealthCheck: {
       parameters: RequestParameters &
@@ -4042,6 +4132,11 @@ export type RestEndpointMethodTypes = {
     };
   };
   securityAdvisories: {
+    createFork: {
+      parameters: RequestParameters &
+        Endpoints["POST /repos/{owner}/{repo}/security-advisories/{ghsa_id}/forks"]["parameters"];
+      response: Endpoints["POST /repos/{owner}/{repo}/security-advisories/{ghsa_id}/forks"]["response"];
+    };
     createPrivateVulnerabilityReport: {
       parameters: RequestParameters &
         Endpoints["POST /repos/{owner}/{repo}/security-advisories/reports"]["parameters"];

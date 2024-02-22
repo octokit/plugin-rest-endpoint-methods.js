@@ -1,7 +1,7 @@
 ---
 name: Create a GitHub Pages deployment
-example: octokit.rest.repos.createPagesDeployment({ owner, repo, artifact_url, pages_build_version, oidc_token })
-route: POST /repos/{owner}/{repo}/pages/deployment
+example: octokit.rest.repos.createPagesDeployment({ owner, repo, pages_build_version, oidc_token })
+route: POST /repos/{owner}/{repo}/pages/deployments
 scope: repos
 type: API method
 ---
@@ -10,13 +10,12 @@ type: API method
 
 Create a GitHub Pages deployment for a repository.
 
-Users must have write permissions. GitHub Apps must have the `pages:write` permission to use this endpoint.
+The authenticated user must have write permission to the repository.
 
 ```js
 octokit.rest.repos.createPagesDeployment({
   owner,
   repo,
-  artifact_url,
   pages_build_version,
   oidc_token,
 });
@@ -43,9 +42,14 @@ The account owner of the repository. The name is not case sensitive.
 The name of the repository without the `.git` extension. The name is not case sensitive.
 
 </td></tr>
-<tr><td>artifact_url</td><td>yes</td><td>
+<tr><td>artifact_id</td><td>no</td><td>
 
-The URL of an artifact that contains the .zip or .tar of static assets to deploy. The artifact belongs to the repository.
+The ID of an artifact that contains the .zip or .tar of static assets to deploy. The artifact belongs to the repository. Either `artifact_id` or `artifact_url` are required.
+
+</td></tr>
+<tr><td>artifact_url</td><td>no</td><td>
+
+The URL of an artifact that contains the .zip or .tar of static assets to deploy. The artifact belongs to the repository. Either `artifact_id` or `artifact_url` are required.
 
 </td></tr>
 <tr><td>environment</td><td>no</td><td>

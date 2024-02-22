@@ -10,9 +10,11 @@ type: API method
 
 Enable a custom deployment protection rule for an environment.
 
-You must authenticate using an access token with the `repo` scope to use this endpoint. Enabling a custom protection rule requires admin or owner permissions to the repository. GitHub Apps must have the `actions:write` permission to use this endpoint.
+The authenticated user must have admin or owner permissions to the repository to use this endpoint.
 
 For more information about the app that is providing this custom deployment rule, see the [documentation for the `GET /apps/{app_slug}` endpoint](https://docs.github.com/rest/apps/apps#get-an-app).
+
+OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 
 ```js
 octokit.rest.repos.createDeploymentProtectionRule({
@@ -35,7 +37,7 @@ octokit.rest.repos.createDeploymentProtectionRule({
   <tbody>
     <tr><td>environment_name</td><td>yes</td><td>
 
-The name of the environment.
+The name of the environment. The name must be URL encoded. For example, any slashes in the name must be replaced with `%2F`.
 
 </td></tr>
 <tr><td>repo</td><td>yes</td><td>

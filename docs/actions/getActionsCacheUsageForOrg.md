@@ -10,7 +10,8 @@ type: API method
 
 Gets the total GitHub Actions cache usage for an organization.
 The data fetched using this API is refreshed approximately every 5 minutes, so values returned from this endpoint may take at least 5 minutes to get updated.
-You must authenticate using an access token with the `read:org` scope to use this endpoint. GitHub Apps must have the `organization_admistration:read` permission to use this endpoint.
+
+OAuth tokens and personal access tokens (classic) need the `read:org` scope to use this endpoint.
 
 ```js
 octokit.rest.actions.getActionsCacheUsageForOrg({
