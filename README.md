@@ -30,10 +30,8 @@ Node
 Install with `npm install @octokit/core @octokit/plugin-rest-endpoint-methods`. Optionally replace `@octokit/core` with a compatible module
 
 ```js
-const { Octokit } = require("@octokit/core");
-const {
-  restEndpointMethods,
-} = require("@octokit/plugin-rest-endpoint-methods");
+import { Octokit } from "@octokit/core";
+import { restEndpointMethods } from "@octokit/plugin-rest-endpoint-methods";
 ```
 
 </td></tr>

@@ -7,9 +7,7 @@ import { stringToJsdocComment } from "string-to-jsdoc-comment";
 import sortKeys from "sort-keys";
 
 const ENDPOINTS = JSON.parse(
-  readFileSync(
-    new URL("generated/endpoints.json", new URL(".", import.meta.url)),
-  ).toString(),
+  readFileSync(new URL("./generated/endpoints.json", import.meta.url), "utf-8"),
 );
 import { isDeprecated } from "./util.mjs";
 

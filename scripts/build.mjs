@@ -8,6 +8,9 @@ const sharedOptions = {
   minify: false,
   allowOverwrite: true,
   packages: "external",
+  format: "esm",
+  platform: "neutral",
+  target: "es2022",
 };
 
 async function main() {
@@ -18,44 +21,20 @@ async function main() {
     entryPoints: await glob(["./src/*.ts", "./src/**/*.ts"]),
     outdir: "pkg/dist-src",
     bundle: false,
-    platform: "neutral",
-    format: "esm",
     ...sharedOptions,
-    sourcemap: false,
+    sourcemap: true,
   });
 
   // Remove the types file from the dist-src folder
   const typeFiles = await glob([
     "./pkg/dist-src/**/types.js.map",
     "./pkg/dist-src/**/types.js",
+    "./pkg/dist-src/generated/*-types.js",
+    "./pkg/dist-src/generated/*-types.js.map",
   ]);
   for (const typeFile of typeFiles) {
     await rm(typeFile);
   }
-
-  const entryPoints = ["./pkg/dist-src/index.js"];
-
-  await Promise.all([
-    // Build the a CJS Node.js bundle
-    esbuild.build({
-      entryPoints,
-      outdir: "pkg/dist-node",
-      bundle: true,
-      platform: "node",
-      target: "node18",
-      format: "cjs",
-      ...sharedOptions,
-    }),
-    // Build an ESM browser bundle
-    esbuild.build({
-      entryPoints,
-      outdir: "pkg/dist-web",
-      bundle: true,
-      platform: "browser",
-      format: "esm",
-      ...sharedOptions,
-    }),
-  ]);
 
   // Copy the README, LICENSE to the pkg folder
   await copyFile("LICENSE", "pkg/LICENSE");
@@ -73,11 +52,9 @@ async function main() {
     JSON.stringify(
       {
         ...pkg,
-        files: ["dist-*/**", "bin/**"],
-        main: "dist-node/index.js",
-        browser: "dist-web/index.js",
-        types: "dist-types/index.d.ts",
-        module: "dist-src/index.js",
+        files: ["dist-*/**"],
+        exports: "./dist-src/index.js",
+        types: "./dist-types/index.d.ts",
         sideEffects: false,
       },
       null,

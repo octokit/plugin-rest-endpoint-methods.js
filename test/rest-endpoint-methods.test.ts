@@ -1,12 +1,13 @@
 import { Octokit } from "@octokit/core";
 import fetchMock from "fetch-mock";
 
+import { jest } from "@jest/globals";
 import sinon from "sinon";
 import {
   legacyRestEndpointMethods,
   restEndpointMethods,
 } from "../src/index.ts";
-import { Api } from "../src/types.ts";
+import type { Api } from "../src/types.ts";
 
 describe("REST API endpoint methods", () => {
   it("README example", async () => {
