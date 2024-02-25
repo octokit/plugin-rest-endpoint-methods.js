@@ -22,24 +22,19 @@ async function main() {
     outdir: "pkg/dist-src",
     bundle: false,
     ...sharedOptions,
-    sourcemap: false,
+    sourcemap: true,
   });
 
   // Remove the types file from the dist-src folder
   const typeFiles = await glob([
     "./pkg/dist-src/**/types.js.map",
     "./pkg/dist-src/**/types.js",
+    "./pkg/dist-src/generated/*-types.js",
+    "./pkg/dist-src/generated/*-types.js.map",
   ]);
   for (const typeFile of typeFiles) {
     await rm(typeFile);
   }
-
-  await esbuild.build({
-    entryPoints: ["./pkg/dist-src/index.js"],
-    outdir: "pkg/dist-bundle",
-    bundle: true,
-    ...sharedOptions,
-  }),
 
   // Copy the README, LICENSE to the pkg folder
   await copyFile("LICENSE", "pkg/LICENSE");
@@ -57,8 +52,8 @@ async function main() {
     JSON.stringify(
       {
         ...pkg,
-        files: ["dist-*/**", "bin/**"],
-        exports: "./dist-bundle/index.js",
+        files: ["dist-*/**"],
+        exports: "./dist-src/index.js",
         types: "./dist-types/index.d.ts",
         sideEffects: false,
       },
