@@ -59,7 +59,7 @@ async function main() {
           ".": {
             import: "./dist-src/index.js",
             types: "./dist-types/index.d.ts",
-          }
+          },
         },
         sideEffects: false,
       },
