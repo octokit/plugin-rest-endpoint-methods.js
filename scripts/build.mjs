@@ -53,8 +53,14 @@ async function main() {
       {
         ...pkg,
         files: ["dist-*/**"],
-        exports: "./dist-src/index.js",
+        main: "./dist-src/index.js",
         types: "./dist-types/index.d.ts",
+        exports: {
+          ".": {
+            import: "./dist-src/index.js",
+            types: "./dist-types/index.d.ts",
+          },
+        },
         sideEffects: false,
       },
       null,
