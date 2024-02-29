@@ -52,7 +52,7 @@
     "typescript": "^5.0.0"
   },
   "peerDependencies": {
-    "@octokit/core": ">=5"
+    "@octokit/core": "5"
   },
   "jest": {
     "transform": {
