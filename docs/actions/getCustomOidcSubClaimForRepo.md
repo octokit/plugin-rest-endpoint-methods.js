@@ -9,8 +9,8 @@ type: API method
 # Get the customization template for an OIDC subject claim for a repository
 
 Gets the customization template for an OpenID Connect (OIDC) subject claim.
-You must authenticate using an access token with the `repo` scope to use this
-endpoint. GitHub Apps must have the `organization_administration:read` permission to use this endpoint.
+
+OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 
 ```js
 octokit.rest.actions.getCustomOidcSubClaimForRepo({

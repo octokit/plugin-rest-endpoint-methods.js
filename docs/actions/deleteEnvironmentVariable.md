@@ -1,7 +1,7 @@
 ---
 name: Delete an environment variable
-example: octokit.rest.actions.deleteEnvironmentVariable({ repository_id, name, environment_name })
-route: DELETE /repositories/{repository_id}/environments/{environment_name}/variables/{name}
+example: octokit.rest.actions.deleteEnvironmentVariable({ owner, repo, name, environment_name })
+route: DELETE /repos/{owner}/{repo}/environments/{environment_name}/variables/{name}
 scope: actions
 type: API method
 ---
@@ -16,7 +16,8 @@ OAuth tokens and personal access tokens (classic) need the `repo` scope to use t
 
 ```js
 octokit.rest.actions.deleteEnvironmentVariable({
-  repository_id,
+  owner,
+  repo,
   name,
   environment_name,
 });
@@ -33,9 +34,14 @@ octokit.rest.actions.deleteEnvironmentVariable({
     </tr>
   </thead>
   <tbody>
-    <tr><td>repository_id</td><td>yes</td><td>
+    <tr><td>owner</td><td>yes</td><td>
 
-The unique identifier of the repository.
+The account owner of the repository. The name is not case sensitive.
+
+</td></tr>
+<tr><td>repo</td><td>yes</td><td>
+
+The name of the repository without the `.git` extension. The name is not case sensitive.
 
 </td></tr>
 <tr><td>name</td><td>yes</td><td>

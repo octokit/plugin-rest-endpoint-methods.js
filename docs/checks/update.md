@@ -81,7 +81,7 @@ This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format
 </td></tr>
 <tr><td>status</td><td>no</td><td>
 
-The current status.
+The current status of the check run. Only GitHub Actions can set a status of `waiting`, `pending`, or `requested`.
 
 </td></tr>
 <tr><td>conclusion</td><td>no</td><td>

@@ -1,7 +1,7 @@
 ---
 name: Create or update an environment secret
-example: octokit.rest.actions.createOrUpdateEnvironmentSecret({ repository_id, environment_name, secret_name, encrypted_value, key_id })
-route: PUT /repositories/{repository_id}/environments/{environment_name}/secrets/{secret_name}
+example: octokit.rest.actions.createOrUpdateEnvironmentSecret({ owner, repo, environment_name, secret_name, encrypted_value, key_id })
+route: PUT /repos/{owner}/{repo}/environments/{environment_name}/secrets/{secret_name}
 scope: actions
 type: API method
 ---
@@ -17,7 +17,8 @@ OAuth tokens and personal access tokens (classic) need the `repo` scope to use t
 
 ```js
 octokit.rest.actions.createOrUpdateEnvironmentSecret({
-  repository_id,
+  owner,
+  repo,
   environment_name,
   secret_name,
   encrypted_value,
@@ -36,9 +37,14 @@ octokit.rest.actions.createOrUpdateEnvironmentSecret({
     </tr>
   </thead>
   <tbody>
-    <tr><td>repository_id</td><td>yes</td><td>
+    <tr><td>owner</td><td>yes</td><td>
 
-The unique identifier of the repository.
+The account owner of the repository. The name is not case sensitive.
+
+</td></tr>
+<tr><td>repo</td><td>yes</td><td>
+
+The name of the repository without the `.git` extension. The name is not case sensitive.
 
 </td></tr>
 <tr><td>environment_name</td><td>yes</td><td>

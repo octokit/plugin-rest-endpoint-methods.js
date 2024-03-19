@@ -1,7 +1,7 @@
 ---
 name: Get an environment variable
-example: octokit.rest.actions.getEnvironmentVariable({ repository_id, environment_name, name })
-route: GET /repositories/{repository_id}/environments/{environment_name}/variables/{name}
+example: octokit.rest.actions.getEnvironmentVariable({ owner, repo, environment_name, name })
+route: GET /repos/{owner}/{repo}/environments/{environment_name}/variables/{name}
 scope: actions
 type: API method
 ---
@@ -16,7 +16,8 @@ OAuth tokens and personal access tokens (classic) need the `repo` scope to use t
 
 ```js
 octokit.rest.actions.getEnvironmentVariable({
-  repository_id,
+  owner,
+  repo,
   environment_name,
   name,
 });
@@ -33,9 +34,14 @@ octokit.rest.actions.getEnvironmentVariable({
     </tr>
   </thead>
   <tbody>
-    <tr><td>repository_id</td><td>yes</td><td>
+    <tr><td>owner</td><td>yes</td><td>
 
-The unique identifier of the repository.
+The account owner of the repository. The name is not case sensitive.
+
+</td></tr>
+<tr><td>repo</td><td>yes</td><td>
+
+The name of the repository without the `.git` extension. The name is not case sensitive.
 
 </td></tr>
 <tr><td>environment_name</td><td>yes</td><td>
