@@ -843,8 +843,8 @@ export type RestEndpointMethods = {
     };
     /**
      * Gets the customization template for an OpenID Connect (OIDC) subject claim.
-     * You must authenticate using an access token with the `repo` scope to use this
-     * endpoint. GitHub Apps must have the `organization_administration:read` permission to use this endpoint.
+     *
+     * OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
      */
     getCustomOidcSubClaimForRepo: {
       (
@@ -1891,8 +1891,8 @@ export type RestEndpointMethods = {
     };
     /**
      * Sets the customization template and `opt-in` or `opt-out` flag for an OpenID Connect (OIDC) subject claim for a repository.
-     * You must authenticate using an access token with the `repo` scope to use this
-     * endpoint. GitHub Apps must have the `actions:write` permission to use this endpoint.
+     *
+     * OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
      */
     setCustomOidcSubClaimForRepo: {
       (
@@ -2117,7 +2117,7 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * GitHub provides several timeline resources in [Atom](http://en.wikipedia.org/wiki/Atom_(standard)) format. The Feeds API lists all the feeds available to the authenticated user:
+     * Lists the feeds available to the authenticated user. The response provides a URL for each feed. You can then get a specific feed by sending a request to one of the feed URLs.
      *
      * *   **Timeline**: The GitHub global public timeline
      * *   **User**: The public timeline for any user, using `uri_template`. For more information, see "[Hypermedia](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#hypermedia)."
@@ -2126,6 +2126,8 @@ export type RestEndpointMethods = {
      * *   **Current user actor**: The private timeline for activity created by the authenticated user
      * *   **Current user organizations**: The private timeline for the organizations the authenticated user is a member of.
      * *   **Security advisories**: A collection of public announcements that provide information about security-related vulnerabilities in software on GitHub.
+     *
+     * By default, timeline resources are returned in JSON. You can specify the `application/atom+xml` type in the `Accept` header to return timeline resources in Atom format. For more information, see "[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types)."
      *
      * **Note**: Private feeds are only returned when [authenticating via Basic Auth](https://docs.github.com/rest/overview/other-authentication-methods#basic-authentication) since current feed URIs use the older, non revocable auth tokens.
      */
@@ -5210,7 +5212,9 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
-
+    /**
+     * Deletes the provided reference.
+     */
     deleteRef: {
       (
         params?: RestEndpointMethodTypes["git"]["deleteRef"]["parameters"],
@@ -5358,7 +5362,9 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
-
+    /**
+     * Updates the provided reference to point to a new SHA. For more information, see "[Git References](https://git-scm.com/book/en/v2/Git-Internals-Git-References)" in the Git documentation.
+     */
     updateRef: {
       (
         params?: RestEndpointMethodTypes["git"]["updateRef"]["parameters"],
@@ -6632,8 +6638,8 @@ export type RestEndpointMethods = {
   oidc: {
     /**
      * Gets the customization template for an OpenID Connect (OIDC) subject claim.
-     * You must authenticate using an access token with the `read:org` scope to use this endpoint.
-     * GitHub Apps must have the `organization_administration:write` permission to use this endpoint.
+     *
+     * OAuth app tokens and personal access tokens (classic) need the `read:org` scope to use this endpoint.
      */
     getOidcCustomSubTemplateForOrg: {
       (
@@ -6646,8 +6652,8 @@ export type RestEndpointMethods = {
     };
     /**
      * Creates or updates the customization template for an OpenID Connect (OIDC) subject claim.
-     * You must authenticate using an access token with the `write:org` scope to use this endpoint.
-     * GitHub Apps must have the `admin:org` permission to use this endpoint.
+     *
+     * OAuth app tokens and personal access tokens (classic) need the `write:org` scope to use this endpoint.
      */
     updateOidcCustomSubTemplateForOrg: {
       (
@@ -7058,7 +7064,7 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Lists all organizations, in the order that they were created on GitHub.
+     * Lists all organizations, in the order that they were created.
      *
      * **Note:** Pagination is powered exclusively by the `since` parameter. Use the [Link header](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api#using-link-headers) to get the URL for the next page of organizations.
      */
@@ -9412,6 +9418,18 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
+     * Returns a boolean indicating whether or not private vulnerability reporting is enabled for the repository. For more information, see "[Evaluating the security settings of a repository](https://docs.github.com/code-security/security-advisories/working-with-repository-security-advisories/evaluating-the-security-settings-of-a-repository)".
+     */
+    checkPrivateVulnerabilityReporting: {
+      (
+        params?: RestEndpointMethodTypes["repos"]["checkPrivateVulnerabilityReporting"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["repos"]["checkPrivateVulnerabilityReporting"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
      * Shows whether dependency alerts are enabled or disabled for a repository. The authenticated user must have admin read access to the repository. For more information, see "[About security alerts for vulnerable dependencies](https://docs.github.com/articles/about-security-alerts-for-vulnerable-dependencies)".
      */
     checkVulnerabilityAlerts: {
@@ -9491,7 +9509,7 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Compares two commits against one another. You can compare branches in the same repository, or you can compare branches that exist in different repositories within the same repository network, including fork branches. For more information about how to view a repository's network, see "[Understanding connections between repositories](https://docs.github.com/repositories/viewing-activity-and-data-for-your-repository/understanding-connections-between-repositories)."
+     * Compares two commits against one another. You can compare refs (branches or tags) and commit SHAs in the same repository, or you can compare refs and commit SHAs that exist in different repositories within the same repository network, including fork branches. For more information about how to view a repository's network, see "[Understanding connections between repositories](https://docs.github.com/repositories/viewing-activity-and-data-for-your-repository/understanding-connections-between-repositories)."
      *
      * This endpoint is equivalent to running the `git log BASE..HEAD` command, but it returns commits in a different order. The `git log BASE..HEAD` command returns commits in reverse chronological order, whereas the API returns commits in chronological order.
      *
@@ -13386,12 +13404,7 @@ export type RestEndpointMethods = {
     /**
      * Provides hovercard information. You can find out more about someone in relation to their pull requests, issues, repositories, and organizations.
      *
-     * The `subject_type` and `subject_id` parameters provide context for the person's hovercard, which returns more information than without the parameters. For example, if you wanted to find out more about `octocat` who owns the `Spoon-Knife` repository via cURL, it would look like this:
-     *
-     * ```shell
-     *  curl -u username:token
-     *   https://api.github.com/users/octocat/hovercard?subject_type=repository&subject_id=1300192
-     * ```
+     *   The `subject_type` and `subject_id` parameters provide context for the person's hovercard, which returns more information than without the parameters. For example, if you wanted to find out more about `octocat` who owns the `Spoon-Knife` repository, you would use a `subject_type` value of `repository` and a `subject_id` value of `1300192` (the ID of the `Spoon-Knife` repository).
      *
      * OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
      */

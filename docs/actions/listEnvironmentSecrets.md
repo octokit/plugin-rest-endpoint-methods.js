@@ -1,7 +1,7 @@
 ---
 name: List environment secrets
-example: octokit.rest.actions.listEnvironmentSecrets({ repository_id, environment_name })
-route: GET /repositories/{repository_id}/environments/{environment_name}/secrets
+example: octokit.rest.actions.listEnvironmentSecrets({ owner, repo, environment_name })
+route: GET /repos/{owner}/{repo}/environments/{environment_name}/secrets
 scope: actions
 type: API method
 ---
@@ -17,7 +17,8 @@ OAuth app tokens and personal access tokens (classic) need the `repo` scope to u
 
 ```js
 octokit.rest.actions.listEnvironmentSecrets({
-  repository_id,
+  owner,
+  repo,
   environment_name,
 });
 ```
@@ -33,9 +34,14 @@ octokit.rest.actions.listEnvironmentSecrets({
     </tr>
   </thead>
   <tbody>
-    <tr><td>repository_id</td><td>yes</td><td>
+    <tr><td>owner</td><td>yes</td><td>
 
-The unique identifier of the repository.
+The account owner of the repository. The name is not case sensitive.
+
+</td></tr>
+<tr><td>repo</td><td>yes</td><td>
+
+The name of the repository without the `.git` extension. The name is not case sensitive.
 
 </td></tr>
 <tr><td>environment_name</td><td>yes</td><td>

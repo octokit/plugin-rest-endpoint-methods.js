@@ -59,7 +59,7 @@ Returns workflow run triggered by the event you specify. For example, `push`, `p
 </td></tr>
 <tr><td>status</td><td>no</td><td>
 
-Returns workflow runs with the check run `status` or `conclusion` that you specify. For example, a conclusion can be `success` or a status can be `in_progress`. Only GitHub can set a status of `waiting` or `requested`.
+Returns workflow runs with the check run `status` or `conclusion` that you specify. For example, a conclusion can be `success` or a status can be `in_progress`. Only GitHub Actions can set a status of `waiting`, `pending`, or `requested`.
 
 </td></tr>
 <tr><td>per_page</td><td>no</td><td>

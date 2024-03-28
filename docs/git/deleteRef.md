@@ -8,6 +8,8 @@ type: API method
 
 # Delete a reference
 
+Deletes the provided reference.
+
 ```js
 octokit.rest.git.deleteRef({
   owner,
@@ -39,7 +41,7 @@ The name of the repository without the `.git` extension. The name is not case se
 </td></tr>
 <tr><td>ref</td><td>yes</td><td>
 
-The commit reference. Can be a commit SHA, branch name (`heads/BRANCH_NAME`), or tag name (`tags/TAG_NAME`). For more information, see "[Git References](https://git-scm.com/book/en/v2/Git-Internals-Git-References)" in the Git documentation.
+The Git reference. For more information, see "[Git References](https://git-scm.com/book/en/v2/Git-Internals-Git-References)" in the Git documentation.
 
 </td></tr>
   </tbody>
