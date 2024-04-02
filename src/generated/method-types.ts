@@ -1632,6 +1632,8 @@ export type RestEndpointMethods = {
      * Anyone with read access to the repository can use this endpoint.
      *
      * OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with a private repository.
+     *
+     * This API will return up to 1,000 results for each search when using the following parameters: `actor`, `branch`, `check_suite_id`, `created`, `event`, `head_sha`, `status`.
      */
     listWorkflowRunsForRepo: {
       (
@@ -6874,7 +6876,12 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Here's how you can create a hook that posts payloads in JSON format:
+     * Create a hook that posts payloads in JSON format.
+     *
+     * You must be an organization owner to use this endpoint.
+     *
+     * OAuth app tokens and personal access tokens (classic) need `admin:org_hook` scope. OAuth apps cannot list, view, or
+     * edit webhooks that they did not create and users cannot list, view, or edit webhooks that were created by OAuth apps.
      */
     createWebhook: {
       (
@@ -6918,7 +6925,12 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
-
+    /**
+     * You must be an organization owner to use this endpoint.
+     *
+     * OAuth app tokens and personal access tokens (classic) need `admin:org_hook` scope. OAuth apps cannot list, view, or edit
+     * webhooks that they did not create and users cannot list, view, or edit webhooks that were created by OAuth apps.
+     */
     deleteWebhook: {
       (
         params?: RestEndpointMethodTypes["orgs"]["deleteWebhook"]["parameters"],
@@ -7028,7 +7040,13 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Returns a webhook configured in an organization. To get only the webhook `config` properties, see "[Get a webhook configuration for an organization](/rest/orgs/webhooks#get-a-webhook-configuration-for-an-organization)."
+     * Returns a webhook configured in an organization. To get only the webhook
+     * `config` properties, see "[Get a webhook configuration for an organization](/rest/orgs/webhooks#get-a-webhook-configuration-for-an-organization).
+     *
+     * You must be an organization owner to use this endpoint.
+     *
+     * OAuth app tokens and personal access tokens (classic) need `admin:org_hook` scope. OAuth apps cannot list, view, or edit
+     * webhooks that they did not create and users cannot list, view, or edit webhooks that were created by OAuth apps.
      */
     getWebhook: {
       (
@@ -7040,7 +7058,10 @@ export type RestEndpointMethods = {
     /**
      * Returns the webhook configuration for an organization. To get more information about the webhook, including the `active` state and `events`, use "[Get an organization webhook ](/rest/orgs/webhooks#get-an-organization-webhook)."
      *
-     * OAuth app tokens and personal access tokens (classic) need the `admin:org_hook` scope to use this endpoint.
+     * You must be an organization owner to use this endpoint.
+     *
+     * OAuth app tokens and personal access tokens (classic) need `admin:org_hook` scope. OAuth apps cannot list, view, or edit
+     * webhooks that they did not create and users cannot list, view, or edit webhooks that were created by OAuth apps.
      */
     getWebhookConfigForOrg: {
       (
@@ -7053,6 +7074,11 @@ export type RestEndpointMethods = {
     };
     /**
      * Returns a delivery for a webhook configured in an organization.
+     *
+     * You must be an organization owner to use this endpoint.
+     *
+     * OAuth app tokens and personal access tokens (classic) need `admin:org_hook` scope. OAuth apps cannot list, view, or edit
+     * webhooks that they did not create and users cannot list, view, or edit webhooks that were created by OAuth apps.
      */
     getWebhookDelivery: {
       (
@@ -7367,6 +7393,11 @@ export type RestEndpointMethods = {
     };
     /**
      * Returns a list of webhook deliveries for a webhook configured in an organization.
+     *
+     * You must be an organization owner to use this endpoint.
+     *
+     * OAuth app tokens and personal access tokens (classic) need `admin:org_hook` scope. OAuth apps cannot list, view, or edit
+     * webhooks that they did not create and users cannot list, view, or edit webhooks that were created by OAuth apps.
      */
     listWebhookDeliveries: {
       (
@@ -7377,7 +7408,12 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
-
+    /**
+     * You must be an organization owner to use this endpoint.
+     *
+     * OAuth app tokens and personal access tokens (classic) need `admin:org_hook` scope. OAuth apps cannot list, view, or edit
+     * webhooks that they did not create and users cannot list, view, or edit webhooks that were created by OAuth apps.
+     */
     listWebhooks: {
       (
         params?: RestEndpointMethodTypes["orgs"]["listWebhooks"]["parameters"],
@@ -7406,7 +7442,13 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * This will trigger a [ping event](https://docs.github.com/webhooks/#ping-event) to be sent to the hook.
+     * This will trigger a [ping event](https://docs.github.com/webhooks/#ping-event)
+     * to be sent to the hook.
+     *
+     * You must be an organization owner to use this endpoint.
+     *
+     * OAuth app tokens and personal access tokens (classic) need `admin:org_hook` scope. OAuth apps cannot list, view, or edit
+     * webhooks that they did not create and users cannot list, view, or edit webhooks that were created by OAuth apps.
      */
     pingWebhook: {
       (
@@ -7417,6 +7459,11 @@ export type RestEndpointMethods = {
     };
     /**
      * Redeliver a delivery for a webhook configured in an organization.
+     *
+     * You must be an organization owner to use this endpoint.
+     *
+     * OAuth app tokens and personal access tokens (classic) need `admin:org_hook` scope. OAuth apps cannot list, view, or edit
+     * webhooks that they did not create and users cannot list, view, or edit webhooks that were created by OAuth apps.
      */
     redeliverWebhookDelivery: {
       (
@@ -7700,7 +7747,16 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Updates a webhook configured in an organization. When you update a webhook, the `secret` will be overwritten. If you previously had a `secret` set, you must provide the same `secret` or set a new `secret` or the secret will be removed. If you are only updating individual webhook `config` properties, use "[Update a webhook configuration for an organization](/rest/orgs/webhooks#update-a-webhook-configuration-for-an-organization)."
+     * Updates a webhook configured in an organization. When you update a webhook,
+     * the `secret` will be overwritten. If you previously had a `secret` set, you must
+     * provide the same `secret` or set a new `secret` or the secret will be removed. If
+     * you are only updating individual webhook `config` properties, use "[Update a webhook
+     * configuration for an organization](/rest/orgs/webhooks#update-a-webhook-configuration-for-an-organization)".
+     *
+     * You must be an organization owner to use this endpoint.
+     *
+     * OAuth app tokens and personal access tokens (classic) need `admin:org_hook` scope. OAuth apps cannot list, view, or edit
+     * webhooks that they did not create and users cannot list, view, or edit webhooks that were created by OAuth apps.
      */
     updateWebhook: {
       (
@@ -7712,7 +7768,10 @@ export type RestEndpointMethods = {
     /**
      * Updates the webhook configuration for an organization. To update more information about the webhook, including the `active` state and `events`, use "[Update an organization webhook ](/rest/orgs/webhooks#update-an-organization-webhook)."
      *
-     * OAuth app tokens and personal access tokens (classic) need the `admin:org_hook` scope to use this endpoint.
+     * You must be an organization owner to use this endpoint.
+     *
+     * OAuth app tokens and personal access tokens (classic) need `admin:org_hook` scope. OAuth apps cannot list, view, or edit
+     * webhooks that they did not create and users cannot list, view, or edit webhooks that were created by OAuth apps.
      */
     updateWebhookConfigForOrg: {
       (
