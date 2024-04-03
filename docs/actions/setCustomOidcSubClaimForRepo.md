@@ -9,8 +9,8 @@ type: API method
 # Set the customization template for an OIDC subject claim for a repository
 
 Sets the customization template and `opt-in` or `opt-out` flag for an OpenID Connect (OIDC) subject claim for a repository.
-You must authenticate using an access token with the `repo` scope to use this
-endpoint. GitHub Apps must have the `actions:write` permission to use this endpoint.
+
+OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 
 ```js
 octokit.rest.actions.setCustomOidcSubClaimForRepo({

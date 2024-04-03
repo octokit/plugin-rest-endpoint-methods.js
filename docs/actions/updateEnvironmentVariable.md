@@ -1,7 +1,7 @@
 ---
 name: Update an environment variable
-example: octokit.rest.actions.updateEnvironmentVariable({ repository_id, environment_name })
-route: PATCH /repositories/{repository_id}/environments/{environment_name}/variables/{name}
+example: octokit.rest.actions.updateEnvironmentVariable({ owner, repo, environment_name })
+route: PATCH /repos/{owner}/{repo}/environments/{environment_name}/variables/{name}
 scope: actions
 type: API method
 ---
@@ -16,7 +16,8 @@ OAuth app tokens and personal access tokens (classic) need the `repo` scope to u
 
 ```js
 octokit.rest.actions.updateEnvironmentVariable({
-  repository_id,
+  owner,
+  repo,
   environment_name,
 });
 ```
@@ -32,9 +33,14 @@ octokit.rest.actions.updateEnvironmentVariable({
     </tr>
   </thead>
   <tbody>
-    <tr><td>repository_id</td><td>yes</td><td>
+    <tr><td>owner</td><td>yes</td><td>
 
-The unique identifier of the repository.
+The account owner of the repository. The name is not case sensitive.
+
+</td></tr>
+<tr><td>repo</td><td>yes</td><td>
+
+The name of the repository without the `.git` extension. The name is not case sensitive.
 
 </td></tr>
 <tr><td>name</td><td>no</td><td>

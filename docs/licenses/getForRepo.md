@@ -43,6 +43,11 @@ The account owner of the repository. The name is not case sensitive.
 The name of the repository without the `.git` extension. The name is not case sensitive.
 
 </td></tr>
+<tr><td>ref</td><td>no</td><td>
+
+The Git reference for the results you want to list. The `ref` for a branch can be formatted either as `refs/heads/<branch name>` or simply `<branch name>`. To reference a pull request use `refs/pull/<number>/merge`.
+
+</td></tr>
   </tbody>
 </table>
 

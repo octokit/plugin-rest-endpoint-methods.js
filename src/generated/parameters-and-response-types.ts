@@ -34,13 +34,13 @@ export type RestEndpointMethodTypes = {
     };
     createEnvironmentVariable: {
       parameters: RequestParameters &
-        Endpoints["POST /repositories/{repository_id}/environments/{environment_name}/variables"]["parameters"];
-      response: Endpoints["POST /repositories/{repository_id}/environments/{environment_name}/variables"]["response"];
+        Endpoints["POST /repos/{owner}/{repo}/environments/{environment_name}/variables"]["parameters"];
+      response: Endpoints["POST /repos/{owner}/{repo}/environments/{environment_name}/variables"]["response"];
     };
     createOrUpdateEnvironmentSecret: {
       parameters: RequestParameters &
-        Endpoints["PUT /repositories/{repository_id}/environments/{environment_name}/secrets/{secret_name}"]["parameters"];
-      response: Endpoints["PUT /repositories/{repository_id}/environments/{environment_name}/secrets/{secret_name}"]["response"];
+        Endpoints["PUT /repos/{owner}/{repo}/environments/{environment_name}/secrets/{secret_name}"]["parameters"];
+      response: Endpoints["PUT /repos/{owner}/{repo}/environments/{environment_name}/secrets/{secret_name}"]["response"];
     };
     createOrUpdateOrgSecret: {
       parameters: RequestParameters &
@@ -104,13 +104,13 @@ export type RestEndpointMethodTypes = {
     };
     deleteEnvironmentSecret: {
       parameters: RequestParameters &
-        Endpoints["DELETE /repositories/{repository_id}/environments/{environment_name}/secrets/{secret_name}"]["parameters"];
-      response: Endpoints["DELETE /repositories/{repository_id}/environments/{environment_name}/secrets/{secret_name}"]["response"];
+        Endpoints["DELETE /repos/{owner}/{repo}/environments/{environment_name}/secrets/{secret_name}"]["parameters"];
+      response: Endpoints["DELETE /repos/{owner}/{repo}/environments/{environment_name}/secrets/{secret_name}"]["response"];
     };
     deleteEnvironmentVariable: {
       parameters: RequestParameters &
-        Endpoints["DELETE /repositories/{repository_id}/environments/{environment_name}/variables/{name}"]["parameters"];
-      response: Endpoints["DELETE /repositories/{repository_id}/environments/{environment_name}/variables/{name}"]["response"];
+        Endpoints["DELETE /repos/{owner}/{repo}/environments/{environment_name}/variables/{name}"]["parameters"];
+      response: Endpoints["DELETE /repos/{owner}/{repo}/environments/{environment_name}/variables/{name}"]["response"];
     };
     deleteOrgSecret: {
       parameters: RequestParameters &
@@ -249,18 +249,18 @@ export type RestEndpointMethodTypes = {
     };
     getEnvironmentPublicKey: {
       parameters: RequestParameters &
-        Endpoints["GET /repositories/{repository_id}/environments/{environment_name}/secrets/public-key"]["parameters"];
-      response: Endpoints["GET /repositories/{repository_id}/environments/{environment_name}/secrets/public-key"]["response"];
+        Endpoints["GET /repos/{owner}/{repo}/environments/{environment_name}/secrets/public-key"]["parameters"];
+      response: Endpoints["GET /repos/{owner}/{repo}/environments/{environment_name}/secrets/public-key"]["response"];
     };
     getEnvironmentSecret: {
       parameters: RequestParameters &
-        Endpoints["GET /repositories/{repository_id}/environments/{environment_name}/secrets/{secret_name}"]["parameters"];
-      response: Endpoints["GET /repositories/{repository_id}/environments/{environment_name}/secrets/{secret_name}"]["response"];
+        Endpoints["GET /repos/{owner}/{repo}/environments/{environment_name}/secrets/{secret_name}"]["parameters"];
+      response: Endpoints["GET /repos/{owner}/{repo}/environments/{environment_name}/secrets/{secret_name}"]["response"];
     };
     getEnvironmentVariable: {
       parameters: RequestParameters &
-        Endpoints["GET /repositories/{repository_id}/environments/{environment_name}/variables/{name}"]["parameters"];
-      response: Endpoints["GET /repositories/{repository_id}/environments/{environment_name}/variables/{name}"]["response"];
+        Endpoints["GET /repos/{owner}/{repo}/environments/{environment_name}/variables/{name}"]["parameters"];
+      response: Endpoints["GET /repos/{owner}/{repo}/environments/{environment_name}/variables/{name}"]["response"];
     };
     getGithubActionsDefaultWorkflowPermissionsOrganization: {
       parameters: RequestParameters &
@@ -379,13 +379,13 @@ export type RestEndpointMethodTypes = {
     };
     listEnvironmentSecrets: {
       parameters: RequestParameters &
-        Endpoints["GET /repositories/{repository_id}/environments/{environment_name}/secrets"]["parameters"];
-      response: Endpoints["GET /repositories/{repository_id}/environments/{environment_name}/secrets"]["response"];
+        Endpoints["GET /repos/{owner}/{repo}/environments/{environment_name}/secrets"]["parameters"];
+      response: Endpoints["GET /repos/{owner}/{repo}/environments/{environment_name}/secrets"]["response"];
     };
     listEnvironmentVariables: {
       parameters: RequestParameters &
-        Endpoints["GET /repositories/{repository_id}/environments/{environment_name}/variables"]["parameters"];
-      response: Endpoints["GET /repositories/{repository_id}/environments/{environment_name}/variables"]["response"];
+        Endpoints["GET /repos/{owner}/{repo}/environments/{environment_name}/variables"]["parameters"];
+      response: Endpoints["GET /repos/{owner}/{repo}/environments/{environment_name}/variables"]["response"];
     };
     listJobsForWorkflowRun: {
       parameters: RequestParameters &
@@ -614,8 +614,8 @@ export type RestEndpointMethodTypes = {
     };
     updateEnvironmentVariable: {
       parameters: RequestParameters &
-        Endpoints["PATCH /repositories/{repository_id}/environments/{environment_name}/variables/{name}"]["parameters"];
-      response: Endpoints["PATCH /repositories/{repository_id}/environments/{environment_name}/variables/{name}"]["response"];
+        Endpoints["PATCH /repos/{owner}/{repo}/environments/{environment_name}/variables/{name}"]["parameters"];
+      response: Endpoints["PATCH /repos/{owner}/{repo}/environments/{environment_name}/variables/{name}"]["response"];
     };
     updateOrgVariable: {
       parameters: RequestParameters &
@@ -3127,6 +3127,11 @@ export type RestEndpointMethodTypes = {
       parameters: RequestParameters &
         Endpoints["GET /repos/{owner}/{repo}/collaborators/{username}"]["parameters"];
       response: Endpoints["GET /repos/{owner}/{repo}/collaborators/{username}"]["response"];
+    };
+    checkPrivateVulnerabilityReporting: {
+      parameters: RequestParameters &
+        Endpoints["GET /repos/{owner}/{repo}/private-vulnerability-reporting"]["parameters"];
+      response: Endpoints["GET /repos/{owner}/{repo}/private-vulnerability-reporting"]["response"];
     };
     checkVulnerabilityAlerts: {
       parameters: RequestParameters &

@@ -14,6 +14,8 @@ Anyone with read access to the repository can use this endpoint.
 
 OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with a private repository.
 
+This API will return up to 1,000 results for each search when using the following parameters: `actor`, `branch`, `check_suite_id`, `created`, `event`, `head_sha`, `status`.
+
 ```js
 octokit.rest.actions.listWorkflowRunsForRepo({
   owner,
@@ -59,7 +61,7 @@ Returns workflow run triggered by the event you specify. For example, `push`, `p
 </td></tr>
 <tr><td>status</td><td>no</td><td>
 
-Returns workflow runs with the check run `status` or `conclusion` that you specify. For example, a conclusion can be `success` or a status can be `in_progress`. Only GitHub can set a status of `waiting` or `requested`.
+Returns workflow runs with the check run `status` or `conclusion` that you specify. For example, a conclusion can be `success` or a status can be `in_progress`. Only GitHub Actions can set a status of `waiting`, `pending`, or `requested`.
 
 </td></tr>
 <tr><td>per_page</td><td>no</td><td>
