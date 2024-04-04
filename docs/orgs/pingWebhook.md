@@ -8,13 +8,7 @@ type: API method
 
 # Ping an organization webhook
 
-This will trigger a [ping event](https://docs.github.com/webhooks/#ping-event)
-to be sent to the hook.
-
-You must be an organization owner to use this endpoint.
-
-OAuth app tokens and personal access tokens (classic) need `admin:org_hook` scope. OAuth apps cannot list, view, or edit
-webhooks that they did not create and users cannot list, view, or edit webhooks that were created by OAuth apps.
+This will trigger a [ping event](https://docs.github.com/webhooks/#ping-event) to be sent to the hook.
 
 ```js
 octokit.rest.orgs.pingWebhook({
