@@ -12,6 +12,17 @@ type: API method
 
 Updates the organization's profile and member privileges.
 
+With security configurations (beta), your organization can choose a default security configuration which will automatically apply a set of security enablement settings to new repositories in your organization based on their visibility. For targeted repositories, the following attributes will be overridden by the default security configuration:
+
+- advanced_security_enabled_for_new_repositories
+- dependabot_alerts_enabled_for_new_repositories
+- dependabot_security_updates_enabled_for_new_repositories
+- dependency_graph_enabled_for_new_repositories
+- secret_scanning_enabled_for_new_repositories
+- secret_scanning_push_protection_enabled_for_new_repositories
+
+For more information on setting a default security configuration, see "[Enabling security features at scale](https://docs.github.com/code-security/securing-your-organization/introduction-to-securing-your-organization-at-scale/about-enabling-security-features-at-scale)."
+
 The authenticated user must be an organization owner to use this endpoint.
 
 OAuth app tokens and personal access tokens (classic) need the `admin:org` or `repo` scope to use this endpoint.
@@ -70,7 +81,7 @@ The shorthand name of the company.
 </td></tr>
 <tr><td>description</td><td>no</td><td>
 
-The description of the company.
+The description of the company. The maximum size is 160 characters.
 
 </td></tr>
 <tr><td>has_organization_projects</td><td>no</td><td>
