@@ -8,12 +8,7 @@ type: API method
 
 # Create an organization webhook
 
-Create a hook that posts payloads in JSON format.
-
-You must be an organization owner to use this endpoint.
-
-OAuth app tokens and personal access tokens (classic) need `admin:org_hook` scope. OAuth apps cannot list, view, or
-edit webhooks that they did not create and users cannot list, view, or edit webhooks that were created by OAuth apps.
+Here's how you can create a hook that posts payloads in JSON format:
 
 ```js
 octokit.rest.orgs.createWebhook({
