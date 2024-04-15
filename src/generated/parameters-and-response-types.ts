@@ -2043,11 +2043,6 @@ export type RestEndpointMethodTypes = {
     };
   };
   migrations: {
-    cancelImport: {
-      parameters: RequestParameters &
-        Endpoints["DELETE /repos/{owner}/{repo}/import"]["parameters"];
-      response: Endpoints["DELETE /repos/{owner}/{repo}/import"]["response"];
-    };
     deleteArchiveForAuthenticatedUser: {
       parameters: RequestParameters &
         Endpoints["DELETE /user/migrations/{migration_id}/archive"]["parameters"];
@@ -2067,21 +2062,6 @@ export type RestEndpointMethodTypes = {
       parameters: RequestParameters &
         Endpoints["GET /user/migrations/{migration_id}/archive"]["parameters"];
       response: Endpoints["GET /user/migrations/{migration_id}/archive"]["response"];
-    };
-    getCommitAuthors: {
-      parameters: RequestParameters &
-        Endpoints["GET /repos/{owner}/{repo}/import/authors"]["parameters"];
-      response: Endpoints["GET /repos/{owner}/{repo}/import/authors"]["response"];
-    };
-    getImportStatus: {
-      parameters: RequestParameters &
-        Endpoints["GET /repos/{owner}/{repo}/import"]["parameters"];
-      response: Endpoints["GET /repos/{owner}/{repo}/import"]["response"];
-    };
-    getLargeFiles: {
-      parameters: RequestParameters &
-        Endpoints["GET /repos/{owner}/{repo}/import/large_files"]["parameters"];
-      response: Endpoints["GET /repos/{owner}/{repo}/import/large_files"]["response"];
     };
     getStatusForAuthenticatedUser: {
       parameters: RequestParameters &
@@ -2118,16 +2098,6 @@ export type RestEndpointMethodTypes = {
         Endpoints["GET /user/migrations/{migration_id}/repositories"]["parameters"];
       response: Endpoints["GET /user/migrations/{migration_id}/repositories"]["response"];
     };
-    mapCommitAuthor: {
-      parameters: RequestParameters &
-        Endpoints["PATCH /repos/{owner}/{repo}/import/authors/{author_id}"]["parameters"];
-      response: Endpoints["PATCH /repos/{owner}/{repo}/import/authors/{author_id}"]["response"];
-    };
-    setLfsPreference: {
-      parameters: RequestParameters &
-        Endpoints["PATCH /repos/{owner}/{repo}/import/lfs"]["parameters"];
-      response: Endpoints["PATCH /repos/{owner}/{repo}/import/lfs"]["response"];
-    };
     startForAuthenticatedUser: {
       parameters: RequestParameters &
         Endpoints["POST /user/migrations"]["parameters"];
@@ -2138,11 +2108,6 @@ export type RestEndpointMethodTypes = {
         Endpoints["POST /orgs/{org}/migrations"]["parameters"];
       response: Endpoints["POST /orgs/{org}/migrations"]["response"];
     };
-    startImport: {
-      parameters: RequestParameters &
-        Endpoints["PUT /repos/{owner}/{repo}/import"]["parameters"];
-      response: Endpoints["PUT /repos/{owner}/{repo}/import"]["response"];
-    };
     unlockRepoForAuthenticatedUser: {
       parameters: RequestParameters &
         Endpoints["DELETE /user/migrations/{migration_id}/repos/{repo_name}/lock"]["parameters"];
@@ -2152,11 +2117,6 @@ export type RestEndpointMethodTypes = {
       parameters: RequestParameters &
         Endpoints["DELETE /orgs/{org}/migrations/{migration_id}/repos/{repo_name}/lock"]["parameters"];
       response: Endpoints["DELETE /orgs/{org}/migrations/{migration_id}/repos/{repo_name}/lock"]["response"];
-    };
-    updateImport: {
-      parameters: RequestParameters &
-        Endpoints["PATCH /repos/{owner}/{repo}/import"]["parameters"];
-      response: Endpoints["PATCH /repos/{owner}/{repo}/import"]["response"];
     };
   };
   oidc: {
