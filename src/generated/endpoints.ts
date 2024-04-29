@@ -644,6 +644,9 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
       "GET /orgs/{org}/members/{username}/copilot",
     ],
     listCopilotSeats: ["GET /orgs/{org}/copilot/billing/seats"],
+    usageMetricsForEnterprise: ["GET /enterprises/{enterprise}/copilot/usage"],
+    usageMetricsForOrg: ["GET /orgs/{org}/copilot/usage"],
+    usageMetricsForTeam: ["GET /orgs/{org}/team/{team_slug}/copilot/usage"],
   },
   dependabot: {
     addSelectedRepoToOrgSecret: [
