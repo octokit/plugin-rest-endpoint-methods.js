@@ -1430,6 +1430,21 @@ export type RestEndpointMethodTypes = {
         Endpoints["GET /orgs/{org}/copilot/billing/seats"]["parameters"];
       response: Endpoints["GET /orgs/{org}/copilot/billing/seats"]["response"];
     };
+    usageMetricsForEnterprise: {
+      parameters: RequestParameters &
+        Endpoints["GET /enterprises/{enterprise}/copilot/usage"]["parameters"];
+      response: Endpoints["GET /enterprises/{enterprise}/copilot/usage"]["response"];
+    };
+    usageMetricsForOrg: {
+      parameters: RequestParameters &
+        Endpoints["GET /orgs/{org}/copilot/usage"]["parameters"];
+      response: Endpoints["GET /orgs/{org}/copilot/usage"]["response"];
+    };
+    usageMetricsForTeam: {
+      parameters: RequestParameters &
+        Endpoints["GET /orgs/{org}/team/{team_slug}/copilot/usage"]["parameters"];
+      response: Endpoints["GET /orgs/{org}/team/{team_slug}/copilot/usage"]["response"];
+    };
   };
   dependabot: {
     addSelectedRepoToOrgSecret: {

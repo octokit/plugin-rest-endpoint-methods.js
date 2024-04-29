@@ -4473,6 +4473,83 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
+    /**
+     * **Note**: This endpoint is in beta and is subject to change.
+     *
+     * You can use this endpoint to see a daily breakdown of aggregated usage metrics for Copilot completions and Copilot Chat in the IDE
+     * for all users across organizations with access to Copilot within your enterprise, with a further breakdown of suggestions, acceptances,
+     * and number of active users by editor and language for each day. See the response schema tab for detailed metrics definitions.
+     *
+     * The response contains metrics for the prior 28 days. Usage metrics are processed once per day for the previous day,
+     * and the response will only include data up until yesterday. In order for an end user to be counted towards these metrics,
+     * they must have telemetry enabled in their IDE.
+     *
+     * Only the owners and billing managers of enterprises with a Copilot Business or Enterprise subscription can view Copilot usage
+     * metrics for the enterprise.
+     *
+     * OAuth app tokens and personal access tokens (classic) need the `copilot`, `manage_billing:copilot`, `admin:enterprise`, or `manage_billing:enterprise` scope to use this endpoint.
+     */
+    usageMetricsForEnterprise: {
+      (
+        params?: RestEndpointMethodTypes["copilot"]["usageMetricsForEnterprise"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["copilot"]["usageMetricsForEnterprise"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * **Note**: This endpoint is in beta and is subject to change.
+     *
+     * You can use this endpoint to see a daily breakdown of aggregated usage metrics for Copilot completions and Copilot Chat in the IDE
+     * across an organization, with a further breakdown of suggestions, acceptances, and number of active users by editor and language for each day.
+     * See the response schema tab for detailed metrics definitions.
+     *
+     * The response contains metrics for the prior 28 days. Usage metrics are processed once per day for the previous day,
+     * and the response will only include data up until yesterday. In order for an end user to be counted towards these metrics,
+     * they must have telemetry enabled in their IDE.
+     *
+     * Copilot Business or Copilot Enterprise organization owners, and owners and billing managers of their parent enterprises, can view
+     * Copilot usage metrics.
+     *
+     * OAuth app tokens and personal access tokens (classic) need the `copilot`, `manage_billing:copilot`, `admin:org`, `admin:enterprise`, or `manage_billing:enterprise` scope to use this endpoint.
+     */
+    usageMetricsForOrg: {
+      (
+        params?: RestEndpointMethodTypes["copilot"]["usageMetricsForOrg"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["copilot"]["usageMetricsForOrg"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * **Note**: This endpoint is in beta and is subject to change.
+     *
+     * You can use this endpoint to see a daily breakdown of aggregated usage metrics for Copilot completions and Copilot Chat in the IDE
+     * for users within a team, with a further breakdown of suggestions, acceptances, and number of active users by editor and language for each day.
+     * See the response schema tab for detailed metrics definitions.
+     *
+     * The response contains metrics for the prior 28 days. Usage metrics are processed once per day for the previous day,
+     * and the response will only include data up until yesterday. In order for an end user to be counted towards these metrics,
+     * they must have telemetry enabled in their IDE.
+     *
+     * **Note**: This endpoint will only return results for a given day if the team had five or more members on that day.
+     *
+     * Copilot Business or Copilot Enterprise organization owners for the organization that contains this team,
+     * and owners and billing managers of their parent enterprises, can view Copilot usage metrics for a team.
+     *
+     * OAuth app tokens and personal access tokens (classic) need the `copilot`, `manage_billing:copilot`, `admin:org`, `admin:enterprise`, or `manage_billing:enterprise` scope to use this endpoint.
+     */
+    usageMetricsForTeam: {
+      (
+        params?: RestEndpointMethodTypes["copilot"]["usageMetricsForTeam"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["copilot"]["usageMetricsForTeam"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
   };
   dependabot: {
     /**
@@ -8377,7 +8454,6 @@ export type RestEndpointMethods = {
      * - **`application/vnd.github.text+json`**: Returns a text only representation of the markdown body. Response will include `body_text`.
      * - **`application/vnd.github.html+json`**: Returns HTML rendered from the body's markdown. Response will include `body_html`.
      * - **`application/vnd.github.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
-     * - **`application/vnd.github.diff`**: For more information, see "[git-diff](https://git-scm.com/docs/git-diff)" in the Git documentation. If a diff is corrupt, contact us through the [GitHub Support portal](https://support.github.com/). Include the repository name and pull request ID in your message.
      */
     create: {
       (
@@ -8594,8 +8670,6 @@ export type RestEndpointMethods = {
      * - **`application/vnd.github.text+json`**: Returns a text only representation of the markdown body. Response will include `body_text`.
      * - **`application/vnd.github.html+json`**: Returns HTML rendered from the body's markdown. Response will include `body_html`.
      * - **`application/vnd.github.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
-     * - **`application/vnd.github.diff`**: For more information, see "[git-diff](https://git-scm.com/docs/git-diff)" in the Git documentation. If a diff is corrupt, contact us through the [GitHub Support portal](https://support.github.com/). Include the repository name and pull request ID in your message.
-     * - **`application/vnd.github.patch`**: For more information, see "[git-format-patch](https://git-scm.com/docs/git-format-patch)" in the Git documentation.
      */
     list: {
       (
@@ -8634,7 +8708,6 @@ export type RestEndpointMethods = {
      * - **`application/vnd.github.text+json`**: Returns a text only representation of the markdown body. Response will include `body_text`.
      * - **`application/vnd.github.html+json`**: Returns HTML rendered from the body's markdown. Response will include `body_html`.
      * - **`application/vnd.github.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
-     * - **`application/vnd.github.diff`**: For more information, see "[git-diff](https://git-scm.com/docs/git-diff)" in the Git documentation. If a diff is corrupt, contact us through the [GitHub Support portal](https://support.github.com/). Include the repository name and pull request ID in your message.
      */
     listCommits: {
       (
@@ -8655,7 +8728,6 @@ export type RestEndpointMethods = {
      * - **`application/vnd.github.text+json`**: Returns a text only representation of the markdown body. Response will include `body_text`.
      * - **`application/vnd.github.html+json`**: Returns HTML rendered from the body's markdown. Response will include `body_html`.
      * - **`application/vnd.github.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
-     * - **`application/vnd.github.diff`**: For more information, see "[git-diff](https://git-scm.com/docs/git-diff)" in the Git documentation. If a diff is corrupt, contact us through the [GitHub Support portal](https://support.github.com/). Include the repository name and pull request ID in your message.
      */
     listFiles: {
       (
@@ -8796,7 +8868,6 @@ export type RestEndpointMethods = {
      * - **`application/vnd.github.text+json`**: Returns a text only representation of the markdown body. Response will include `body_text`.
      * - **`application/vnd.github.html+json`**: Returns HTML rendered from the body's markdown. Response will include `body_html`.
      * - **`application/vnd.github.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
-     * - **`application/vnd.github.diff`**: For more information, see "[git-diff](https://git-scm.com/docs/git-diff)" in the Git documentation. If a diff is corrupt, contact us through the [GitHub Support portal](https://support.github.com/). Include the repository name and pull request ID in your message.
      */
     update: {
       (
