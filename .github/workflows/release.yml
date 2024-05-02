@@ -6,6 +6,7 @@ name: Release
       - beta
       - next
       - "*.x"
+      - cjs
 # These are recommended by the semantic-release docs: https://github.com/semantic-release/npm#npm-provenance
 permissions:
     contents: write # to be able to publish a GitHub release
