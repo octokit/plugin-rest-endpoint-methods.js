@@ -1,4 +1,6 @@
 import { writeFileSync } from "node:fs";
+import { resolve } from "node:path";
+import { fileURLToPath } from "node:url";
 
 import graphql from "github-openapi-graphql-query";
 import { format } from "prettier";
@@ -76,7 +78,11 @@ async function main() {
   });
 
   writeFileSync(
-    new URL("./generated/endpoints.json", import.meta.url),
+    resolve(
+      fileURLToPath(new URL(".", import.meta.url)),
+      "generated",
+      "endpoints.json",
+    ),
     await format(JSON.stringify(endpoints), {
       parser: "json",
     }),

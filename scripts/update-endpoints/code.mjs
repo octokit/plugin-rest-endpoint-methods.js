@@ -1,4 +1,5 @@
 import { readFileSync, writeFileSync } from "node:fs";
+import { join } from "node:path";
 import { fileURLToPath } from "node:url";
 
 import { format } from "prettier";
@@ -10,9 +11,13 @@ const ENDPOINTS = JSON.parse(
 );
 import { isDeprecated } from "./util.mjs";
 
-const ROUTES_PATH = new URL(
-  "../../src/generated/endpoints.ts",
-  import.meta.url,
+const ROUTES_PATH = join(
+  fileURLToPath(parentDir),
+  "..",
+  "..",
+  "src",
+  "generated",
+  "endpoints.ts",
 );
 
 const newRoutes = {};
@@ -127,5 +132,5 @@ async function generateRoutes() {
       { parser: "typescript" },
     ),
   );
-  console.log(`${fileURLToPath(ROUTES_PATH)} written.`);
+  console.log(`${ROUTES_PATH} written.`);
 }

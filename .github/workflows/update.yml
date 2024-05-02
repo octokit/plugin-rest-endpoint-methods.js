@@ -18,7 +18,7 @@ jobs:
           token: ${{ secrets.OCTOKITBOT_PAT }}
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 16
           cache: npm
       - run: git checkout routes-update || true
       - run: npm install @octokit/types@latest
