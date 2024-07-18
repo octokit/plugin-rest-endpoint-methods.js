@@ -1,7 +1,7 @@
+import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
 import { Octokit } from "@octokit/core";
 import fetchMock from "fetch-mock";
 
-import { jest } from "@jest/globals";
 import sinon from "sinon";
 import {
   legacyRestEndpointMethods,
@@ -227,11 +227,9 @@ describe("REST API endpoint methods", () => {
     });
 
     it("allows mocking with jest.spyOn", async () => {
-      jest
-        .spyOn(octokit.rest.issues, "listLabelsOnIssue")
-        .mockResolvedValueOnce({
-          data: [{ name: "mocked from jest" }],
-        } as Awaited<ReturnType<typeof octokit.rest.issues.listLabelsOnIssue>>);
+      vi.spyOn(octokit.rest.issues, "listLabelsOnIssue").mockResolvedValueOnce({
+        data: [{ name: "mocked from jest" }],
+      } as Awaited<ReturnType<typeof octokit.rest.issues.listLabelsOnIssue>>);
 
       const jestResult = await octokit.rest.issues.listLabelsOnIssue({
         owner: "octokit",
@@ -240,7 +238,7 @@ describe("REST API endpoint methods", () => {
       });
       expect(jestResult.data[0].name).toBe("mocked from jest");
 
-      jest.restoreAllMocks();
+      vi.restoreAllMocks();
     });
 
     it("allows manually replacing a method", async () => {
