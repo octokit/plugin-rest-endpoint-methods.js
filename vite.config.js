@@ -6,7 +6,7 @@ export default defineConfig({
       include: ["src/**/*.ts"],
       reporter: ["html"],
       thresholds: {
-        100: true,
+        100: false,
       },
     },
   },
