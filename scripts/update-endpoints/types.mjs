@@ -1,7 +1,7 @@
 import { writeFileSync, readFileSync } from "node:fs";
 import { join as pathJoin } from "node:path";
 
-import camelCase from "lodash.camelcase";
+import camelcase from "camelcase";
 import { format } from "prettier";
 import { stringToJsdocComment } from "string-to-jsdoc-comment";
 import sortKeys from "sort-keys";
@@ -39,7 +39,7 @@ async function generateTypes() {
     );
 
     return namespaces.concat({
-      namespace: camelCase(namespace),
+      namespace: camelcase(namespace),
       methods,
     });
   }, []);
