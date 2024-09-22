@@ -33,7 +33,7 @@
     "@types/node": "^20.0.0",
     "@vitest/coverage-v8": "^2.0.3",
     "camelcase": "^8.0.0",
-    "esbuild": "^0.23.0",
+    "esbuild": "^0.24.0",
     "fetch-mock": "^11.0.0",
     "github-openapi-graphql-query": "^4.3.1",
     "glob": "^11.0.0",
