@@ -44,4 +44,5 @@ jobs:
       - run: npm ci
       - run: npm run lint
       - run: VERSION=`npm info @octokit/openapi version` npm run update-endpoints
+      - run: npm run build
     if: ${{ always() }}
