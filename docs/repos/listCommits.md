@@ -12,12 +12,13 @@ type: API method
 
 The response will include a `verification` object that describes the result of verifying the commit's signature. The following fields are included in the `verification` object:
 
-| Name        | Type      | Description                                                                                      |
-| ----------- | --------- | ------------------------------------------------------------------------------------------------ |
-| `verified`  | `boolean` | Indicates whether GitHub considers the signature in this commit to be verified.                  |
-| `reason`    | `string`  | The reason for verified value. Possible values and their meanings are enumerated in table below. |
-| `signature` | `string`  | The signature that was extracted from the commit.                                                |
-| `payload`   | `string`  | The value that was signed.                                                                       |
+| Name          | Type      | Description                                                                                      |
+| ------------- | --------- | ------------------------------------------------------------------------------------------------ |
+| `verified`    | `boolean` | Indicates whether GitHub considers the signature in this commit to be verified.                  |
+| `reason`      | `string`  | The reason for verified value. Possible values and their meanings are enumerated in table below. |
+| `signature`   | `string`  | The signature that was extracted from the commit.                                                |
+| `payload`     | `string`  | The value that was signed.                                                                       |
+| `verified_at` | `string`  | The date the signature was verified by GitHub.                                                   |
 
 These are the possible values for `reason` in the `verification` object:
 
@@ -87,12 +88,12 @@ GitHub username or email address to use to filter by commit committer.
 </td></tr>
 <tr><td>since</td><td>no</td><td>
 
-Only show results that were last updated after the given time. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.
+Only show results that were last updated after the given time. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`. Due to limitations of Git, timestamps must be between 1970-01-01 and 2099-12-31 (inclusive) or unexpected results may be returned.
 
 </td></tr>
 <tr><td>until</td><td>no</td><td>
 
-Only commits before this date will be returned. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.
+Only commits before this date will be returned. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`. Due to limitations of Git, timestamps must be between 1970-01-01 and 2099-12-31 (inclusive) or unexpected results may be returned.
 
 </td></tr>
 <tr><td>per_page</td><td>no</td><td>

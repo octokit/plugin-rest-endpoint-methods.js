@@ -14,10 +14,6 @@ token.
 
 Invalid tokens will return `404 NOT FOUND`.
 
-You must use [Basic Authentication](https://docs.github.com/rest/overview/other-authentication-methods#basic-authentication)
-when accessing this endpoint, using the `client_id` and `client_secret` of the GitHub App
-as the username and password.
-
 ```js
 octokit.rest.apps.scopeToken({
   client_id,
@@ -213,7 +209,7 @@ The level of permission to grant the access token for custom property management
 </td></tr>
 <tr><td>permissions.organization_copilot_seat_management</td><td>no</td><td>
 
-The level of permission to grant the access token for managing access to GitHub Copilot for members of an organization with a Copilot Business subscription. This property is in beta and is subject to change.
+The level of permission to grant the access token for managing access to GitHub Copilot for members of an organization with a Copilot Business subscription. This property is in public preview and is subject to change.
 
 </td></tr>
 <tr><td>permissions.organization_announcement_banners</td><td>no</td><td>
@@ -248,7 +244,7 @@ The level of permission to grant the access token for viewing an organization's 
 </td></tr>
 <tr><td>permissions.organization_projects</td><td>no</td><td>
 
-The level of permission to grant the access token to manage organization projects and projects beta (where available).
+The level of permission to grant the access token to manage organization projects and projects public preview (where available).
 
 </td></tr>
 <tr><td>permissions.organization_packages</td><td>no</td><td>

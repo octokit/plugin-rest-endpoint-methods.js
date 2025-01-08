@@ -8,7 +8,9 @@ type: API method
 
 # List custom deployment rule integrations available for an environment
 
-Gets all custom deployment protection rule integrations that are available for an environment. Anyone with read access to the repository can use this endpoint.
+Gets all custom deployment protection rule integrations that are available for an environment.
+
+The authenticated user must have admin or owner permissions to the repository to use this endpoint.
 
 For more information about environments, see "[Using environments for deployment](https://docs.github.com/actions/deployment/targeting-different-environments/using-environments-for-deployment)."
 

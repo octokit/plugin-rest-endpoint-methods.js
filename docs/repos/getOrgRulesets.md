@@ -42,6 +42,13 @@ The number of results per page (max 100). For more information, see "[Using pagi
 The page number of the results to fetch. For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
 
 </td></tr>
+<tr><td>targets</td><td>no</td><td>
+
+A comma-separated list of rule targets to filter by.
+If provided, only rulesets that apply to the specified targets will be returned.
+For example, `branch,tag,push`.
+
+</td></tr>
   </tbody>
 </table>
 

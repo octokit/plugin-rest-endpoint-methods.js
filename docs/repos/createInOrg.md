@@ -132,10 +132,12 @@ Either `true` to allow automatically deleting head branches when pull requests a
 </td></tr>
 <tr><td>use_squash_pr_title_as_default</td><td>no</td><td>
 
-Either `true` to allow squash-merge commits to use pull request title, or `false` to use commit message. \*\*This property has been deprecated. Please use `squash_merge_commit_title` instead.
+Either `true` to allow squash-merge commits to use pull request title, or `false` to use commit message. \*\*This property is closing down. Please use `squash_merge_commit_title` instead.
 
 </td></tr>
 <tr><td>squash_merge_commit_title</td><td>no</td><td>
+
+Required when using `squash_merge_commit_message`.
 
 The default value for a squash merge commit title:
 
@@ -153,6 +155,8 @@ The default value for a squash merge commit message:
 
 </td></tr>
 <tr><td>merge_commit_title</td><td>no</td><td>
+
+Required when using `merge_commit_message`.
 
 The default value for a merge commit title.
 

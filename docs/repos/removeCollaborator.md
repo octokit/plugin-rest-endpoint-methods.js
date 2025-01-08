@@ -26,7 +26,8 @@ Removing a user as a collaborator has the following effects on forks:
 - If the user had their own fork of the repository, the fork will be deleted.
 - If the user still has read access to the repository, open pull requests by this user from a fork will be denied.
 
-**Note**: A user can still have access to the repository through organization permissions like base repository permissions.
+> [!NOTE]
+> A user can still have access to the repository through organization permissions like base repository permissions.
 
 Although the API responds immediately, the additional permission updates might take some extra time to complete in the background.
 

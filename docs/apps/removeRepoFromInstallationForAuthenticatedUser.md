@@ -10,6 +10,8 @@ type: API method
 
 Remove a single repository from an installation. The authenticated user must have admin access to the repository. The installation must have the `repository_selection` of `selected`.
 
+This endpoint only works for PATs (classic) with the `repo` scope.
+
 ```js
 octokit.rest.apps.removeRepoFromInstallationForAuthenticatedUser({
   installation_id,

@@ -10,6 +10,9 @@ type: API method
 
 Get a repository ruleset for an organization.
 
+**Note:** To prevent leaking sensitive information, the `bypass_actors` property is only returned if the user
+making the API request has write access to the ruleset.
+
 ```js
 octokit.rest.repos.getOrgRuleset({
   org,

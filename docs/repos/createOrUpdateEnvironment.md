@@ -10,9 +10,11 @@ type: API method
 
 Create or update an environment with protection rules, such as required reviewers. For more information about environment protection rules, see "[Environments](/actions/reference/environments#environment-protection-rules)."
 
-**Note:** To create or update name patterns that branches must match in order to deploy to this environment, see "[Deployment branch policies](/rest/deployments/branch-policies)."
+> [!NOTE]
+> To create or update name patterns that branches must match in order to deploy to this environment, see "[Deployment branch policies](/rest/deployments/branch-policies)."
 
-**Note:** To create or update secrets for an environment, see "[GitHub Actions secrets](/rest/actions/secrets)."
+> [!NOTE]
+> To create or update secrets for an environment, see "[GitHub Actions secrets](/rest/actions/secrets)."
 
 OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 

@@ -10,6 +10,8 @@ type: API method
 
 Add a single repository to an installation. The authenticated user must have admin access to the repository.
 
+This endpoint only works for PATs (classic) with the `repo` scope.
+
 ```js
 octokit.rest.apps.addRepoToInstallationForAuthenticatedUser({
   installation_id,

@@ -8,7 +8,8 @@ type: API method
 
 # Delete team discussion reaction
 
-**Note:** You can also specify a team or organization with `team_id` and `org_id` using the route `DELETE /organizations/:org_id/team/:team_id/discussions/:discussion_number/reactions/:reaction_id`.
+> [!NOTE]
+> You can also specify a team or organization with `team_id` and `org_id` using the route `DELETE /organizations/:org_id/team/:team_id/discussions/:discussion_number/reactions/:reaction_id`.
 
 Delete a reaction to a [team discussion](https://docs.github.com/rest/teams/discussions#get-a-discussion).
 

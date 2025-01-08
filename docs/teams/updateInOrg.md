@@ -10,7 +10,8 @@ type: API method
 
 To edit a team, the authenticated user must either be an organization owner or a team maintainer.
 
-**Note:** You can also specify a team by `org_id` and `team_id` using the route `PATCH /organizations/{org_id}/team/{team_id}`.
+> [!NOTE]
+> You can also specify a team by `org_id` and `team_id` using the route `PATCH /organizations/{org_id}/team/{team_id}`.
 
 ```js
 octokit.rest.teams.updateInOrg({
@@ -71,7 +72,7 @@ The notification setting the team has chosen. Editing teams without specifying t
 </td></tr>
 <tr><td>permission</td><td>no</td><td>
 
-**Deprecated**. The permission that new repositories will be added to the team with when none is specified.
+**Closing down notice**. The permission that new repositories will be added to the team with when none is specified.
 
 </td></tr>
 <tr><td>parent_team_id</td><td>no</td><td>

@@ -38,7 +38,7 @@ The name of the repository without the `.git` extension. The name is not case se
 </td></tr>
 <tr><td>protected</td><td>no</td><td>
 
-Setting to `true` returns only protected branches. When set to `false`, only unprotected branches are returned. Omitting this parameter returns all branches.
+Setting to `true` returns only branches protected by branch protections or rulesets. When set to `false`, only unprotected branches are returned. Omitting this parameter returns all branches.
 
 </td></tr>
 <tr><td>per_page</td><td>no</td><td>

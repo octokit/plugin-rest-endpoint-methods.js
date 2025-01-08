@@ -12,7 +12,8 @@ Protected branches are available in public repositories with GitHub Free and Git
 
 Updating pull request review enforcement requires admin or owner permissions to the repository and branch protection to be enabled.
 
-**Note**: Passing new arrays of `users` and `teams` replaces their previous values.
+> [!NOTE]
+> Passing new arrays of `users` and `teams` replaces their previous values.
 
 ```js
 octokit.rest.repos.updatePullRequestReviewProtection({

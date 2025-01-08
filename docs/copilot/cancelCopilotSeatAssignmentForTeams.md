@@ -8,18 +8,18 @@ type: API method
 
 # Remove teams from the Copilot subscription for an organization
 
-**Note**: This endpoint is in beta and is subject to change.
+> [!NOTE]
+> This endpoint is in public preview and is subject to change.
 
-Cancels the Copilot seat assignment for all members of each team specified.
-This will cause the members of the specified team(s) to lose access to GitHub Copilot at the end of the current billing cycle, and the organization will not be billed further for those users.
+Sets seats for all members of each team specified to "pending cancellation".
+This will cause the members of the specified team(s) to lose access to GitHub Copilot at the end of the current billing cycle unless they retain access through another team.
+For more information about disabling access to Copilot, see "[Revoking access to Copilot for members of your organization](https://docs.github.com/copilot/managing-copilot/managing-github-copilot-in-your-organization/managing-access-to-github-copilot-in-your-organization/revoking-access-to-copilot-for-members-of-your-organization)."
 
-For more information about Copilot pricing, see "[Pricing for GitHub Copilot](https://docs.github.com/billing/managing-billing-for-github-copilot/about-billing-for-github-copilot#about-billing-for-github-copilot)".
+Only organization owners can cancel Copilot seats for their organization members.
 
-For more information about disabling access to Copilot Business or Enterprise, see "[Revoking access to GitHub Copilot for specific users in your organization](https://docs.github.com/copilot/managing-copilot/managing-access-for-copilot-in-your-organization#revoking-access-to-github-copilot-for-specific-users-in-your-organization)".
+The response contains the total number of seats set to "pending cancellation".
 
-Only organization owners can configure GitHub Copilot in their organization.
-
-OAuth app tokens and personal access tokens (classic) need the `manage_billing:copilot` scope to use this endpoint.
+OAuth app tokens and personal access tokens (classic) need either the `manage_billing:copilot` or `admin:org` scopes to use this endpoint.
 
 ```js
 octokit.rest.copilot.cancelCopilotSeatAssignmentForTeams({

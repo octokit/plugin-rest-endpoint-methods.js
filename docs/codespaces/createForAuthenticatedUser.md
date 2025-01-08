@@ -51,7 +51,7 @@ The requested location for a new codespace. Best efforts are made to respect thi
 </td></tr>
 <tr><td>geo</td><td>no</td><td>
 
-The geographic area for this codespace. If not specified, the value is assigned by IP. This property replaces `location`, which is being deprecated.
+The geographic area for this codespace. If not specified, the value is assigned by IP. This property replaces `location`, which is closing down.
 
 </td></tr>
 <tr><td>client_ip</td><td>no</td><td>

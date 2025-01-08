@@ -10,9 +10,8 @@ type: API method
 
 Dismisses a specified review on a pull request.
 
-**Note:** To dismiss a pull request review on a [protected branch](https://docs.github.com/rest/branches/branch-protection),
-you must be a repository administrator or be included in the list of people or teams
-who can dismiss pull request reviews.
+> [!NOTE]
+> To dismiss a pull request review on a [protected branch](https://docs.github.com/rest/branches/branch-protection), you must be a repository administrator or be included in the list of people or teams who can dismiss pull request reviews.
 
 This endpoint supports the following custom media types. For more information, see "[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types)."
 

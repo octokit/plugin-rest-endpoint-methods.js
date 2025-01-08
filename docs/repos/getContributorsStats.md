@@ -15,7 +15,8 @@ Returns the `total` number of commits authored by the contributor. In addition, 
 - `d` - Number of deletions
 - `c` - Number of commits
 
-**Note:** This endpoint will return `0` values for all addition and deletion counts in repositories with 10,000 or more commits.
+> [!NOTE]
+> This endpoint will return `0` values for all addition and deletion counts in repositories with 10,000 or more commits.
 
 ```js
 octokit.rest.repos.getContributorsStats({
