@@ -12,9 +12,11 @@ Protected branches are available in public repositories with GitHub Free and Git
 
 Protecting a branch requires admin or owner permissions to the repository.
 
-**Note**: Passing new arrays of `users` and `teams` replaces their previous values.
+> [!NOTE]
+> Passing new arrays of `users` and `teams` replaces their previous values.
 
-**Note**: The list of users, apps, and teams in total is limited to 100 items.
+> [!NOTE]
+> The list of users, apps, and teams in total is limited to 100 items.
 
 ```js
 octokit.rest.repos.updateBranchProtection({
@@ -71,7 +73,7 @@ Require branches to be up to date before merging.
 </td></tr>
 <tr><td>required_status_checks.contexts</td><td>yes</td><td>
 
-**Deprecated**: The list of status checks to require in order to merge into this branch. If any of these checks have recently been set by a particular GitHub App, they will be required to come from that app in future for the branch to merge. Use `checks` instead of `contexts` for more fine-grained control.
+**Closing down notice**: The list of status checks to require in order to merge into this branch. If any of these checks have recently been set by a particular GitHub App, they will be required to come from that app in future for the branch to merge. Use `checks` instead of `contexts` for more fine-grained control.
 
 </td></tr>
 <tr><td>required_status_checks.checks</td><td>no</td><td>

@@ -16,12 +16,13 @@ To get the contents of a commit, see "[Get a commit](/rest/commits/commits#get-a
 
 The response will include a `verification` object that describes the result of verifying the commit's signature. The following fields are included in the `verification` object:
 
-| Name        | Type      | Description                                                                                          |
-| ----------- | --------- | ---------------------------------------------------------------------------------------------------- |
-| `verified`  | `boolean` | Indicates whether GitHub considers the signature in this commit to be verified.                      |
-| `reason`    | `string`  | The reason for verified value. Possible values and their meanings are enumerated in the table below. |
-| `signature` | `string`  | The signature that was extracted from the commit.                                                    |
-| `payload`   | `string`  | The value that was signed.                                                                           |
+| Name          | Type      | Description                                                                                          |
+| ------------- | --------- | ---------------------------------------------------------------------------------------------------- |
+| `verified`    | `boolean` | Indicates whether GitHub considers the signature in this commit to be verified.                      |
+| `reason`      | `string`  | The reason for verified value. Possible values and their meanings are enumerated in the table below. |
+| `signature`   | `string`  | The signature that was extracted from the commit.                                                    |
+| `payload`     | `string`  | The value that was signed.                                                                           |
+| `verified_at` | `string`  | The date the signature was verified by GitHub.                                                       |
 
 These are the possible values for `reason` in the `verification` object:
 

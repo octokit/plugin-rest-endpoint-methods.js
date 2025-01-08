@@ -33,9 +33,14 @@ octokit.rest.repos.getOrgRuleSuites({
 The organization name. The name is not case sensitive.
 
 </td></tr>
+<tr><td>ref</td><td>no</td><td>
+
+The name of the ref. Cannot contain wildcard characters. Optionally prefix with `refs/heads/` to limit to branches or `refs/tags/` to limit to tags. Omit the prefix to search across all refs. When specified, only rule evaluations triggered for this ref will be returned.
+
+</td></tr>
 <tr><td>repository_name</td><td>no</td><td>
 
-The name of the repository to filter on. When specified, only rule evaluations from this repository will be returned.
+The name of the repository to filter on.
 
 </td></tr>
 <tr><td>time_period</td><td>no</td><td>

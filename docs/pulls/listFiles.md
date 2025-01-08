@@ -10,8 +10,8 @@ type: API method
 
 Lists the files in a specified pull request.
 
-**Note:** Responses include a maximum of 3000 files. The paginated response
-returns 30 files per page by default.
+> [!NOTE]
+> Responses include a maximum of 3000 files. The paginated response returns 30 files per page by default.
 
 This endpoint supports the following custom media types. For more information, see "[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types)."
 

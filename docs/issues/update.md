@@ -8,7 +8,7 @@ type: API method
 
 # Update an issue
 
-Issue owners and users with push access can edit an issue.
+Issue owners and users with push access or Triage role can edit an issue.
 
 This endpoint supports the following custom media types. For more information, see "[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types)."
 
@@ -63,7 +63,7 @@ The contents of the issue.
 </td></tr>
 <tr><td>assignee</td><td>no</td><td>
 
-Username to assign to this issue. **This field is deprecated.**
+Username to assign to this issue. **This field is closing down.**
 
 </td></tr>
 <tr><td>state</td><td>no</td><td>

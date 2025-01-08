@@ -50,6 +50,16 @@ The array of custom properties to create or update.
 The name of the property
 
 </td></tr>
+<tr><td>properties[].url</td><td>no</td><td>
+
+The URL that can be used to fetch, update, or delete info about this property via the API.
+
+</td></tr>
+<tr><td>properties[].source_type</td><td>no</td><td>
+
+The source type of the property
+
+</td></tr>
 <tr><td>properties[].value_type</td><td>yes</td><td>
 
 The type of the value for the property

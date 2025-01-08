@@ -12,6 +12,11 @@ export type RestEndpointMethodTypes = {
         Endpoints["POST /repos/{owner}/{repo}/actions/runners/{runner_id}/labels"]["parameters"];
       response: Endpoints["POST /repos/{owner}/{repo}/actions/runners/{runner_id}/labels"]["response"];
     };
+    addRepoAccessToSelfHostedRunnerGroupInOrg: {
+      parameters: RequestParameters &
+        Endpoints["PUT /orgs/{org}/actions/runner-groups/{runner_group_id}/repositories/{repository_id}"]["parameters"];
+      response: Endpoints["PUT /orgs/{org}/actions/runner-groups/{runner_group_id}/repositories/{repository_id}"]["response"];
+    };
     addSelectedRepoToOrgSecret: {
       parameters: RequestParameters &
         Endpoints["PUT /orgs/{org}/actions/secrets/{secret_name}/repositories/{repository_id}"]["parameters"];
@@ -995,6 +1000,11 @@ export type RestEndpointMethodTypes = {
         Endpoints["GET /users/{username}/settings/billing/actions"]["parameters"];
       response: Endpoints["GET /users/{username}/settings/billing/actions"]["response"];
     };
+    getGithubBillingUsageReportOrg: {
+      parameters: RequestParameters &
+        Endpoints["GET /organizations/{org}/settings/billing/usage"]["parameters"];
+      response: Endpoints["GET /organizations/{org}/settings/billing/usage"]["response"];
+    };
     getGithubPackagesBillingOrg: {
       parameters: RequestParameters &
         Endpoints["GET /orgs/{org}/settings/billing/packages"]["parameters"];
@@ -1079,10 +1089,30 @@ export type RestEndpointMethodTypes = {
     };
   };
   codeScanning: {
+    commitAutofix: {
+      parameters: RequestParameters &
+        Endpoints["POST /repos/{owner}/{repo}/code-scanning/alerts/{alert_number}/autofix/commits"]["parameters"];
+      response: Endpoints["POST /repos/{owner}/{repo}/code-scanning/alerts/{alert_number}/autofix/commits"]["response"];
+    };
+    createAutofix: {
+      parameters: RequestParameters &
+        Endpoints["POST /repos/{owner}/{repo}/code-scanning/alerts/{alert_number}/autofix"]["parameters"];
+      response: Endpoints["POST /repos/{owner}/{repo}/code-scanning/alerts/{alert_number}/autofix"]["response"];
+    };
+    createVariantAnalysis: {
+      parameters: RequestParameters &
+        Endpoints["POST /repos/{owner}/{repo}/code-scanning/codeql/variant-analyses"]["parameters"];
+      response: Endpoints["POST /repos/{owner}/{repo}/code-scanning/codeql/variant-analyses"]["response"];
+    };
     deleteAnalysis: {
       parameters: RequestParameters &
         Endpoints["DELETE /repos/{owner}/{repo}/code-scanning/analyses/{analysis_id}{?confirm_delete}"]["parameters"];
       response: Endpoints["DELETE /repos/{owner}/{repo}/code-scanning/analyses/{analysis_id}{?confirm_delete}"]["response"];
+    };
+    deleteCodeqlDatabase: {
+      parameters: RequestParameters &
+        Endpoints["DELETE /repos/{owner}/{repo}/code-scanning/codeql/databases/{language}"]["parameters"];
+      response: Endpoints["DELETE /repos/{owner}/{repo}/code-scanning/codeql/databases/{language}"]["response"];
     };
     getAlert: {
       parameters: RequestParameters &
@@ -1093,6 +1123,11 @@ export type RestEndpointMethodTypes = {
       parameters: RequestParameters &
         Endpoints["GET /repos/{owner}/{repo}/code-scanning/analyses/{analysis_id}"]["parameters"];
       response: Endpoints["GET /repos/{owner}/{repo}/code-scanning/analyses/{analysis_id}"]["response"];
+    };
+    getAutofix: {
+      parameters: RequestParameters &
+        Endpoints["GET /repos/{owner}/{repo}/code-scanning/alerts/{alert_number}/autofix"]["parameters"];
+      response: Endpoints["GET /repos/{owner}/{repo}/code-scanning/alerts/{alert_number}/autofix"]["response"];
     };
     getCodeqlDatabase: {
       parameters: RequestParameters &
@@ -1108,6 +1143,16 @@ export type RestEndpointMethodTypes = {
       parameters: RequestParameters &
         Endpoints["GET /repos/{owner}/{repo}/code-scanning/sarifs/{sarif_id}"]["parameters"];
       response: Endpoints["GET /repos/{owner}/{repo}/code-scanning/sarifs/{sarif_id}"]["response"];
+    };
+    getVariantAnalysis: {
+      parameters: RequestParameters &
+        Endpoints["GET /repos/{owner}/{repo}/code-scanning/codeql/variant-analyses/{codeql_variant_analysis_id}"]["parameters"];
+      response: Endpoints["GET /repos/{owner}/{repo}/code-scanning/codeql/variant-analyses/{codeql_variant_analysis_id}"]["response"];
+    };
+    getVariantAnalysisRepoTask: {
+      parameters: RequestParameters &
+        Endpoints["GET /repos/{owner}/{repo}/code-scanning/codeql/variant-analyses/{codeql_variant_analysis_id}/repos/{repo_owner}/{repo_name}"]["parameters"];
+      response: Endpoints["GET /repos/{owner}/{repo}/code-scanning/codeql/variant-analyses/{codeql_variant_analysis_id}/repos/{repo_owner}/{repo_name}"]["response"];
     };
     listAlertInstances: {
       parameters: RequestParameters &
@@ -1153,6 +1198,108 @@ export type RestEndpointMethodTypes = {
       parameters: RequestParameters &
         Endpoints["POST /repos/{owner}/{repo}/code-scanning/sarifs"]["parameters"];
       response: Endpoints["POST /repos/{owner}/{repo}/code-scanning/sarifs"]["response"];
+    };
+  };
+  codeSecurity: {
+    attachConfiguration: {
+      parameters: RequestParameters &
+        Endpoints["POST /orgs/{org}/code-security/configurations/{configuration_id}/attach"]["parameters"];
+      response: Endpoints["POST /orgs/{org}/code-security/configurations/{configuration_id}/attach"]["response"];
+    };
+    attachEnterpriseConfiguration: {
+      parameters: RequestParameters &
+        Endpoints["POST /enterprises/{enterprise}/code-security/configurations/{configuration_id}/attach"]["parameters"];
+      response: Endpoints["POST /enterprises/{enterprise}/code-security/configurations/{configuration_id}/attach"]["response"];
+    };
+    createConfiguration: {
+      parameters: RequestParameters &
+        Endpoints["POST /orgs/{org}/code-security/configurations"]["parameters"];
+      response: Endpoints["POST /orgs/{org}/code-security/configurations"]["response"];
+    };
+    createConfigurationForEnterprise: {
+      parameters: RequestParameters &
+        Endpoints["POST /enterprises/{enterprise}/code-security/configurations"]["parameters"];
+      response: Endpoints["POST /enterprises/{enterprise}/code-security/configurations"]["response"];
+    };
+    deleteConfiguration: {
+      parameters: RequestParameters &
+        Endpoints["DELETE /orgs/{org}/code-security/configurations/{configuration_id}"]["parameters"];
+      response: Endpoints["DELETE /orgs/{org}/code-security/configurations/{configuration_id}"]["response"];
+    };
+    deleteConfigurationForEnterprise: {
+      parameters: RequestParameters &
+        Endpoints["DELETE /enterprises/{enterprise}/code-security/configurations/{configuration_id}"]["parameters"];
+      response: Endpoints["DELETE /enterprises/{enterprise}/code-security/configurations/{configuration_id}"]["response"];
+    };
+    detachConfiguration: {
+      parameters: RequestParameters &
+        Endpoints["DELETE /orgs/{org}/code-security/configurations/detach"]["parameters"];
+      response: Endpoints["DELETE /orgs/{org}/code-security/configurations/detach"]["response"];
+    };
+    getConfiguration: {
+      parameters: RequestParameters &
+        Endpoints["GET /orgs/{org}/code-security/configurations/{configuration_id}"]["parameters"];
+      response: Endpoints["GET /orgs/{org}/code-security/configurations/{configuration_id}"]["response"];
+    };
+    getConfigurationForRepository: {
+      parameters: RequestParameters &
+        Endpoints["GET /repos/{owner}/{repo}/code-security-configuration"]["parameters"];
+      response: Endpoints["GET /repos/{owner}/{repo}/code-security-configuration"]["response"];
+    };
+    getConfigurationsForEnterprise: {
+      parameters: RequestParameters &
+        Endpoints["GET /enterprises/{enterprise}/code-security/configurations"]["parameters"];
+      response: Endpoints["GET /enterprises/{enterprise}/code-security/configurations"]["response"];
+    };
+    getConfigurationsForOrg: {
+      parameters: RequestParameters &
+        Endpoints["GET /orgs/{org}/code-security/configurations"]["parameters"];
+      response: Endpoints["GET /orgs/{org}/code-security/configurations"]["response"];
+    };
+    getDefaultConfigurations: {
+      parameters: RequestParameters &
+        Endpoints["GET /orgs/{org}/code-security/configurations/defaults"]["parameters"];
+      response: Endpoints["GET /orgs/{org}/code-security/configurations/defaults"]["response"];
+    };
+    getDefaultConfigurationsForEnterprise: {
+      parameters: RequestParameters &
+        Endpoints["GET /enterprises/{enterprise}/code-security/configurations/defaults"]["parameters"];
+      response: Endpoints["GET /enterprises/{enterprise}/code-security/configurations/defaults"]["response"];
+    };
+    getRepositoriesForConfiguration: {
+      parameters: RequestParameters &
+        Endpoints["GET /orgs/{org}/code-security/configurations/{configuration_id}/repositories"]["parameters"];
+      response: Endpoints["GET /orgs/{org}/code-security/configurations/{configuration_id}/repositories"]["response"];
+    };
+    getRepositoriesForEnterpriseConfiguration: {
+      parameters: RequestParameters &
+        Endpoints["GET /enterprises/{enterprise}/code-security/configurations/{configuration_id}/repositories"]["parameters"];
+      response: Endpoints["GET /enterprises/{enterprise}/code-security/configurations/{configuration_id}/repositories"]["response"];
+    };
+    getSingleConfigurationForEnterprise: {
+      parameters: RequestParameters &
+        Endpoints["GET /enterprises/{enterprise}/code-security/configurations/{configuration_id}"]["parameters"];
+      response: Endpoints["GET /enterprises/{enterprise}/code-security/configurations/{configuration_id}"]["response"];
+    };
+    setConfigurationAsDefault: {
+      parameters: RequestParameters &
+        Endpoints["PUT /orgs/{org}/code-security/configurations/{configuration_id}/defaults"]["parameters"];
+      response: Endpoints["PUT /orgs/{org}/code-security/configurations/{configuration_id}/defaults"]["response"];
+    };
+    setConfigurationAsDefaultForEnterprise: {
+      parameters: RequestParameters &
+        Endpoints["PUT /enterprises/{enterprise}/code-security/configurations/{configuration_id}/defaults"]["parameters"];
+      response: Endpoints["PUT /enterprises/{enterprise}/code-security/configurations/{configuration_id}/defaults"]["response"];
+    };
+    updateConfiguration: {
+      parameters: RequestParameters &
+        Endpoints["PATCH /orgs/{org}/code-security/configurations/{configuration_id}"]["parameters"];
+      response: Endpoints["PATCH /orgs/{org}/code-security/configurations/{configuration_id}"]["response"];
+    };
+    updateEnterpriseConfiguration: {
+      parameters: RequestParameters &
+        Endpoints["PATCH /enterprises/{enterprise}/code-security/configurations/{configuration_id}"]["parameters"];
+      response: Endpoints["PATCH /enterprises/{enterprise}/code-security/configurations/{configuration_id}"]["response"];
     };
   };
   codesOfConduct: {
@@ -1415,6 +1562,16 @@ export type RestEndpointMethodTypes = {
         Endpoints["DELETE /orgs/{org}/copilot/billing/selected_users"]["parameters"];
       response: Endpoints["DELETE /orgs/{org}/copilot/billing/selected_users"]["response"];
     };
+    copilotMetricsForOrganization: {
+      parameters: RequestParameters &
+        Endpoints["GET /orgs/{org}/copilot/metrics"]["parameters"];
+      response: Endpoints["GET /orgs/{org}/copilot/metrics"]["response"];
+    };
+    copilotMetricsForTeam: {
+      parameters: RequestParameters &
+        Endpoints["GET /orgs/{org}/team/{team_slug}/copilot/metrics"]["parameters"];
+      response: Endpoints["GET /orgs/{org}/team/{team_slug}/copilot/metrics"]["response"];
+    };
     getCopilotOrganizationDetails: {
       parameters: RequestParameters &
         Endpoints["GET /orgs/{org}/copilot/billing"]["parameters"];
@@ -1429,11 +1586,6 @@ export type RestEndpointMethodTypes = {
       parameters: RequestParameters &
         Endpoints["GET /orgs/{org}/copilot/billing/seats"]["parameters"];
       response: Endpoints["GET /orgs/{org}/copilot/billing/seats"]["response"];
-    };
-    usageMetricsForEnterprise: {
-      parameters: RequestParameters &
-        Endpoints["GET /enterprises/{enterprise}/copilot/usage"]["parameters"];
-      response: Endpoints["GET /enterprises/{enterprise}/copilot/usage"]["response"];
     };
     usageMetricsForOrg: {
       parameters: RequestParameters &
@@ -1818,6 +1970,11 @@ export type RestEndpointMethodTypes = {
         Endpoints["POST /repos/{owner}/{repo}/issues/{issue_number}/labels"]["parameters"];
       response: Endpoints["POST /repos/{owner}/{repo}/issues/{issue_number}/labels"]["response"];
     };
+    addSubIssue: {
+      parameters: RequestParameters &
+        Endpoints["POST /repos/{owner}/{repo}/issues/{issue_number}/sub_issues"]["parameters"];
+      response: Endpoints["POST /repos/{owner}/{repo}/issues/{issue_number}/sub_issues"]["response"];
+    };
     checkUserCanBeAssigned: {
       parameters: RequestParameters &
         Endpoints["GET /repos/{owner}/{repo}/assignees/{assignee}"]["parameters"];
@@ -1957,6 +2114,11 @@ export type RestEndpointMethodTypes = {
         Endpoints["GET /repos/{owner}/{repo}/milestones"]["parameters"];
       response: Endpoints["GET /repos/{owner}/{repo}/milestones"]["response"];
     };
+    listSubIssues: {
+      parameters: RequestParameters &
+        Endpoints["GET /repos/{owner}/{repo}/issues/{issue_number}/sub_issues"]["parameters"];
+      response: Endpoints["GET /repos/{owner}/{repo}/issues/{issue_number}/sub_issues"]["response"];
+    };
     lock: {
       parameters: RequestParameters &
         Endpoints["PUT /repos/{owner}/{repo}/issues/{issue_number}/lock"]["parameters"];
@@ -1976,6 +2138,16 @@ export type RestEndpointMethodTypes = {
       parameters: RequestParameters &
         Endpoints["DELETE /repos/{owner}/{repo}/issues/{issue_number}/labels/{name}"]["parameters"];
       response: Endpoints["DELETE /repos/{owner}/{repo}/issues/{issue_number}/labels/{name}"]["response"];
+    };
+    removeSubIssue: {
+      parameters: RequestParameters &
+        Endpoints["DELETE /repos/{owner}/{repo}/issues/{issue_number}/sub_issue"]["parameters"];
+      response: Endpoints["DELETE /repos/{owner}/{repo}/issues/{issue_number}/sub_issue"]["response"];
+    };
+    reprioritizeSubIssue: {
+      parameters: RequestParameters &
+        Endpoints["PATCH /repos/{owner}/{repo}/issues/{issue_number}/sub_issues/priority"]["parameters"];
+      response: Endpoints["PATCH /repos/{owner}/{repo}/issues/{issue_number}/sub_issues/priority"]["response"];
     };
     setLabels: {
       parameters: RequestParameters &
@@ -2192,11 +2364,6 @@ export type RestEndpointMethodTypes = {
         Endpoints["PUT /orgs/{org}/outside_collaborators/{username}"]["parameters"];
       response: Endpoints["PUT /orgs/{org}/outside_collaborators/{username}"]["response"];
     };
-    createCustomOrganizationRole: {
-      parameters: RequestParameters &
-        Endpoints["POST /orgs/{org}/organization-roles"]["parameters"];
-      response: Endpoints["POST /orgs/{org}/organization-roles"]["response"];
-    };
     createInvitation: {
       parameters: RequestParameters &
         Endpoints["POST /orgs/{org}/invitations"]["parameters"];
@@ -2226,11 +2393,6 @@ export type RestEndpointMethodTypes = {
       parameters: RequestParameters &
         Endpoints["DELETE /orgs/{org}"]["parameters"];
       response: Endpoints["DELETE /orgs/{org}"]["response"];
-    };
-    deleteCustomOrganizationRole: {
-      parameters: RequestParameters &
-        Endpoints["DELETE /orgs/{org}/organization-roles/{role_id}"]["parameters"];
-      response: Endpoints["DELETE /orgs/{org}/organization-roles/{role_id}"]["response"];
     };
     deleteWebhook: {
       parameters: RequestParameters &
@@ -2296,6 +2458,11 @@ export type RestEndpointMethodTypes = {
       parameters: RequestParameters &
         Endpoints["GET /orgs/{org}/installations"]["parameters"];
       response: Endpoints["GET /orgs/{org}/installations"]["response"];
+    };
+    listAttestations: {
+      parameters: RequestParameters &
+        Endpoints["GET /orgs/{org}/attestations/{subject_digest}"]["parameters"];
+      response: Endpoints["GET /orgs/{org}/attestations/{subject_digest}"]["response"];
     };
     listBlockedUsers: {
       parameters: RequestParameters &
@@ -2405,11 +2572,6 @@ export type RestEndpointMethodTypes = {
       parameters: RequestParameters &
         Endpoints["GET /orgs/{org}/hooks"]["parameters"];
       response: Endpoints["GET /orgs/{org}/hooks"]["response"];
-    };
-    patchCustomOrganizationRole: {
-      parameters: RequestParameters &
-        Endpoints["PATCH /orgs/{org}/organization-roles/{role_id}"]["parameters"];
-      response: Endpoints["PATCH /orgs/{org}/organization-roles/{role_id}"]["response"];
     };
     pingWebhook: {
       parameters: RequestParameters &
@@ -2672,6 +2834,38 @@ export type RestEndpointMethodTypes = {
       parameters: RequestParameters &
         Endpoints["POST /users/{username}/packages/{package_type}/{package_name}/versions/{package_version_id}/restore"]["parameters"];
       response: Endpoints["POST /users/{username}/packages/{package_type}/{package_name}/versions/{package_version_id}/restore"]["response"];
+    };
+  };
+  privateRegistries: {
+    createOrgPrivateRegistry: {
+      parameters: RequestParameters &
+        Endpoints["POST /orgs/{org}/private-registries"]["parameters"];
+      response: Endpoints["POST /orgs/{org}/private-registries"]["response"];
+    };
+    deleteOrgPrivateRegistry: {
+      parameters: RequestParameters &
+        Endpoints["DELETE /orgs/{org}/private-registries/{secret_name}"]["parameters"];
+      response: Endpoints["DELETE /orgs/{org}/private-registries/{secret_name}"]["response"];
+    };
+    getOrgPrivateRegistry: {
+      parameters: RequestParameters &
+        Endpoints["GET /orgs/{org}/private-registries/{secret_name}"]["parameters"];
+      response: Endpoints["GET /orgs/{org}/private-registries/{secret_name}"]["response"];
+    };
+    getOrgPublicKey: {
+      parameters: RequestParameters &
+        Endpoints["GET /orgs/{org}/private-registries/public-key"]["parameters"];
+      response: Endpoints["GET /orgs/{org}/private-registries/public-key"]["response"];
+    };
+    listOrgPrivateRegistries: {
+      parameters: RequestParameters &
+        Endpoints["GET /orgs/{org}/private-registries"]["parameters"];
+      response: Endpoints["GET /orgs/{org}/private-registries"]["response"];
+    };
+    updateOrgPrivateRegistry: {
+      parameters: RequestParameters &
+        Endpoints["PATCH /orgs/{org}/private-registries/{secret_name}"]["parameters"];
+      response: Endpoints["PATCH /orgs/{org}/private-registries/{secret_name}"]["response"];
     };
   };
   projects: {
@@ -3128,6 +3322,11 @@ export type RestEndpointMethodTypes = {
         Endpoints["GET /repos/{owner}/{repo}/compare/{basehead}"]["parameters"];
       response: Endpoints["GET /repos/{owner}/{repo}/compare/{basehead}"]["response"];
     };
+    createAttestation: {
+      parameters: RequestParameters &
+        Endpoints["POST /repos/{owner}/{repo}/attestations"]["parameters"];
+      response: Endpoints["POST /repos/{owner}/{repo}/attestations"]["response"];
+    };
     createAutolink: {
       parameters: RequestParameters &
         Endpoints["POST /repos/{owner}/{repo}/autolinks"]["parameters"];
@@ -3232,11 +3431,6 @@ export type RestEndpointMethodTypes = {
       parameters: RequestParameters &
         Endpoints["POST /repos/{owner}/{repo}/rulesets"]["parameters"];
       response: Endpoints["POST /repos/{owner}/{repo}/rulesets"]["response"];
-    };
-    createTagProtection: {
-      parameters: RequestParameters &
-        Endpoints["POST /repos/{owner}/{repo}/tags/protection"]["parameters"];
-      response: Endpoints["POST /repos/{owner}/{repo}/tags/protection"]["response"];
     };
     createUsingTemplate: {
       parameters: RequestParameters &
@@ -3352,11 +3546,6 @@ export type RestEndpointMethodTypes = {
       parameters: RequestParameters &
         Endpoints["DELETE /repos/{owner}/{repo}/rulesets/{ruleset_id}"]["parameters"];
       response: Endpoints["DELETE /repos/{owner}/{repo}/rulesets/{ruleset_id}"]["response"];
-    };
-    deleteTagProtection: {
-      parameters: RequestParameters &
-        Endpoints["DELETE /repos/{owner}/{repo}/tags/protection/{tag_protection_id}"]["parameters"];
-      response: Endpoints["DELETE /repos/{owner}/{repo}/tags/protection/{tag_protection_id}"]["response"];
     };
     deleteWebhook: {
       parameters: RequestParameters &
@@ -3728,6 +3917,11 @@ export type RestEndpointMethodTypes = {
         Endpoints["GET /repos/{owner}/{repo}/activity"]["parameters"];
       response: Endpoints["GET /repos/{owner}/{repo}/activity"]["response"];
     };
+    listAttestations: {
+      parameters: RequestParameters &
+        Endpoints["GET /repos/{owner}/{repo}/attestations/{subject_digest}"]["parameters"];
+      response: Endpoints["GET /repos/{owner}/{repo}/attestations/{subject_digest}"]["response"];
+    };
     listAutolinks: {
       parameters: RequestParameters &
         Endpoints["GET /repos/{owner}/{repo}/autolinks"]["parameters"];
@@ -3857,11 +4051,6 @@ export type RestEndpointMethodTypes = {
       parameters: RequestParameters &
         Endpoints["GET /repos/{owner}/{repo}/releases"]["parameters"];
       response: Endpoints["GET /repos/{owner}/{repo}/releases"]["response"];
-    };
-    listTagProtection: {
-      parameters: RequestParameters &
-        Endpoints["GET /repos/{owner}/{repo}/tags/protection"]["parameters"];
-      response: Endpoints["GET /repos/{owner}/{repo}/tags/protection"]["response"];
     };
     listTags: {
       parameters: RequestParameters &
@@ -4102,10 +4291,20 @@ export type RestEndpointMethodTypes = {
     };
   };
   secretScanning: {
+    createPushProtectionBypass: {
+      parameters: RequestParameters &
+        Endpoints["POST /repos/{owner}/{repo}/secret-scanning/push-protection-bypasses"]["parameters"];
+      response: Endpoints["POST /repos/{owner}/{repo}/secret-scanning/push-protection-bypasses"]["response"];
+    };
     getAlert: {
       parameters: RequestParameters &
         Endpoints["GET /repos/{owner}/{repo}/secret-scanning/alerts/{alert_number}"]["parameters"];
       response: Endpoints["GET /repos/{owner}/{repo}/secret-scanning/alerts/{alert_number}"]["response"];
+    };
+    getScanHistory: {
+      parameters: RequestParameters &
+        Endpoints["GET /repos/{owner}/{repo}/secret-scanning/scan-history"]["parameters"];
+      response: Endpoints["GET /repos/{owner}/{repo}/secret-scanning/scan-history"]["response"];
     };
     listAlertsForEnterprise: {
       parameters: RequestParameters &
@@ -4447,6 +4646,11 @@ export type RestEndpointMethodTypes = {
       parameters: RequestParameters & Endpoints["GET /user"]["parameters"];
       response: Endpoints["GET /user"]["response"];
     };
+    getById: {
+      parameters: RequestParameters &
+        Endpoints["GET /user/{account_id}"]["parameters"];
+      response: Endpoints["GET /user/{account_id}"]["response"];
+    };
     getByUsername: {
       parameters: RequestParameters &
         Endpoints["GET /users/{username}"]["parameters"];
@@ -4485,6 +4689,11 @@ export type RestEndpointMethodTypes = {
     list: {
       parameters: RequestParameters & Endpoints["GET /users"]["parameters"];
       response: Endpoints["GET /users"]["response"];
+    };
+    listAttestations: {
+      parameters: RequestParameters &
+        Endpoints["GET /users/{username}/attestations/{subject_digest}"]["parameters"];
+      response: Endpoints["GET /users/{username}/attestations/{subject_digest}"]["response"];
     };
     listBlockedByAuthenticated: {
       parameters: RequestParameters &

@@ -45,6 +45,16 @@ The name of the repository without the `.git` extension. The name is not case se
 The desired state of code scanning default setup.
 
 </td></tr>
+<tr><td>runner_type</td><td>no</td><td>
+
+Runner type to be used.
+
+</td></tr>
+<tr><td>runner_label</td><td>no</td><td>
+
+Runner label to be used if the runner type is labeled.
+
+</td></tr>
 <tr><td>query_suite</td><td>no</td><td>
 
 CodeQL query suite to be used.

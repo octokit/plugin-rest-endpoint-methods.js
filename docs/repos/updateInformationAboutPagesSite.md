@@ -44,7 +44,7 @@ The name of the repository without the `.git` extension. The name is not case se
 </td></tr>
 <tr><td>cname</td><td>no</td><td>
 
-Specify a custom domain for the repository. Sending a `null` value will remove the custom domain. For more about custom domains, see "[Using a custom domain with GitHub Pages](https://docs.github.com/articles/using-a-custom-domain-with-github-pages/)."
+Specify a custom domain for the repository. Sending a `null` value will remove the custom domain. For more about custom domains, see "[Using a custom domain with GitHub Pages](https://docs.github.com/pages/configuring-a-custom-domain-for-your-github-pages-site)."
 
 </td></tr>
 <tr><td>https_enforced</td><td>no</td><td>

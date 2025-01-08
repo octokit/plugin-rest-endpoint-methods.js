@@ -54,9 +54,6 @@ The number of results per page (max 100). For more information, see "[Using pagi
 Used for pagination: the starting delivery from which the page of deliveries is fetched. Refer to the `link` header for the next and previous page cursors.
 
 </td></tr>
-<tr><td>redelivery</td><td>no</td><td>
-
-</td></tr>
   </tbody>
 </table>
 

@@ -106,6 +106,26 @@ Use the `status` property to enable or disable secret scanning push protection f
 Can be `enabled` or `disabled`.
 
 </td></tr>
+<tr><td>security_and_analysis.secret_scanning_ai_detection</td><td>no</td><td>
+
+Use the `status` property to enable or disable secret scanning AI detection for this repository. For more information, see "[Responsible detection of generic secrets with AI](https://docs.github.com/code-security/secret-scanning/using-advanced-secret-scanning-and-push-protection-features/generic-secret-detection/responsible-ai-generic-secrets)."
+
+</td></tr>
+<tr><td>security_and_analysis.secret_scanning_ai_detection.status</td><td>no</td><td>
+
+Can be `enabled` or `disabled`.
+
+</td></tr>
+<tr><td>security_and_analysis.secret_scanning_non_provider_patterns</td><td>no</td><td>
+
+Use the `status` property to enable or disable secret scanning non-provider patterns for this repository. For more information, see "[Supported secret scanning patterns](/code-security/secret-scanning/introduction/supported-secret-scanning-patterns#supported-secrets)."
+
+</td></tr>
+<tr><td>security_and_analysis.secret_scanning_non_provider_patterns.status</td><td>no</td><td>
+
+Can be `enabled` or `disabled`.
+
+</td></tr>
 <tr><td>has_issues</td><td>no</td><td>
 
 Either `true` to enable issues for this repository or `false` to disable them.
@@ -163,10 +183,12 @@ Either `true` to always allow a pull request head branch that is behind its base
 </td></tr>
 <tr><td>use_squash_pr_title_as_default</td><td>no</td><td>
 
-Either `true` to allow squash-merge commits to use pull request title, or `false` to use commit message. \*\*This property has been deprecated. Please use `squash_merge_commit_title` instead.
+Either `true` to allow squash-merge commits to use pull request title, or `false` to use commit message. \*\*This property is closing down. Please use `squash_merge_commit_title` instead.
 
 </td></tr>
 <tr><td>squash_merge_commit_title</td><td>no</td><td>
+
+Required when using `squash_merge_commit_message`.
 
 The default value for a squash merge commit title:
 
@@ -184,6 +206,8 @@ The default value for a squash merge commit message:
 
 </td></tr>
 <tr><td>merge_commit_title</td><td>no</td><td>
+
+Required when using `merge_commit_message`.
 
 The default value for a merge commit title.
 

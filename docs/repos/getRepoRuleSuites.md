@@ -41,7 +41,7 @@ The name of the repository without the `.git` extension. The name is not case se
 </td></tr>
 <tr><td>ref</td><td>no</td><td>
 
-The name of the ref. Cannot contain wildcard characters. When specified, only rule evaluations triggered for this ref will be returned.
+The name of the ref. Cannot contain wildcard characters. Optionally prefix with `refs/heads/` to limit to branches or `refs/tags/` to limit to tags. Omit the prefix to search across all refs. When specified, only rule evaluations triggered for this ref will be returned.
 
 </td></tr>
 <tr><td>time_period</td><td>no</td><td>

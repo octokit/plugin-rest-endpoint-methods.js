@@ -12,7 +12,8 @@ Protected branches are available in public repositories with GitHub Free and Git
 
 When authenticated with admin or owner permissions to the repository, you can use this endpoint to check whether a branch requires signed commits. An enabled status of `true` indicates you must sign commits on this branch. For more information, see [Signing commits with GPG](https://docs.github.com/articles/signing-commits-with-gpg) in GitHub Help.
 
-**Note**: You must enable branch protection to require signed commits.
+> [!NOTE]
+> You must enable branch protection to require signed commits.
 
 ```js
 octokit.rest.repos.getCommitSignatureProtection({

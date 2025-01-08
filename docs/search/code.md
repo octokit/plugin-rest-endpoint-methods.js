@@ -53,12 +53,12 @@ The query contains one or more search keywords and qualifiers. Qualifiers allow 
 </td></tr>
 <tr><td>sort</td><td>no</td><td>
 
-**This field is deprecated.** Sorts the results of your query. Can only be `indexed`, which indicates how recently a file has been indexed by the GitHub search infrastructure. Default: [best match](https://docs.github.com/rest/search/search#ranking-search-results)
+**This field is closing down.** Sorts the results of your query. Can only be `indexed`, which indicates how recently a file has been indexed by the GitHub search infrastructure. Default: [best match](https://docs.github.com/rest/search/search#ranking-search-results)
 
 </td></tr>
 <tr><td>order</td><td>no</td><td>
 
-**This field is deprecated.** Determines whether the first search result returned is the highest number of matches (`desc`) or lowest number of matches (`asc`). This parameter is ignored unless you provide `sort`.
+**This field is closing down.** Determines whether the first search result returned is the highest number of matches (`desc`) or lowest number of matches (`asc`). This parameter is ignored unless you provide `sort`.
 
 </td></tr>
 <tr><td>per_page</td><td>no</td><td>

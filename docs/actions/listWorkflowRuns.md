@@ -14,6 +14,8 @@ Anyone with read access to the repository can use this endpoint
 
 OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with a private repository.
 
+This endpoint will return up to 1,000 results for each search when using the following parameters: `actor`, `branch`, `check_suite_id`, `created`, `event`, `head_sha`, `status`.
+
 ```js
 octokit.rest.actions.listWorkflowRuns({
   owner,

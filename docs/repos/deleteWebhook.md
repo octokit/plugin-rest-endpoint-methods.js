@@ -8,6 +8,10 @@ type: API method
 
 # Delete a repository webhook
 
+Delete a webhook for an organization.
+
+The authenticated user must be a repository owner, or have admin access in the repository, to delete the webhook.
+
 ```js
 octokit.rest.repos.deleteWebhook({
   owner,

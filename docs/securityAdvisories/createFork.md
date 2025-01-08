@@ -10,7 +10,8 @@ type: API method
 
 Create a temporary private fork to collaborate on fixing a security vulnerability in your repository.
 
-**Note**: Forking a repository happens asynchronously. You may have to wait up to 5 minutes before you can access the fork.
+> [!NOTE]
+> Forking a repository happens asynchronously. You may have to wait up to 5 minutes before you can access the fork.
 
 ```js
 octokit.rest.securityAdvisories.createFork({

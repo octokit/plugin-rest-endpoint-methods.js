@@ -63,6 +63,11 @@ The number of results per page (max 100). For more information, see "[Using pagi
 The Git reference for the results you want to list. The `ref` for a branch can be formatted either as `refs/heads/<branch name>` or simply `<branch name>`. To reference a pull request use `refs/pull/<number>/merge`.
 
 </td></tr>
+<tr><td>pr</td><td>no</td><td>
+
+The number of the pull request for the results you want to list.
+
+</td></tr>
   </tbody>
 </table>
 

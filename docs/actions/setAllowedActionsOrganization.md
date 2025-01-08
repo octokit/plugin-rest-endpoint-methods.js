@@ -48,7 +48,8 @@ Whether actions from GitHub Marketplace verified creators are allowed. Set to `t
 
 Specifies a list of string-matching patterns to allow specific action(s) and reusable workflow(s). Wildcards, tags, and SHAs are allowed. For example, `monalisa/octocat@*`, `monalisa/octocat@v2`, `monalisa/*`.
 
-**Note**: The `patterns_allowed` setting only applies to public repositories.
+> [!NOTE]
+> The `patterns_allowed` setting only applies to public repositories.
 
 </td></tr>
   </tbody>

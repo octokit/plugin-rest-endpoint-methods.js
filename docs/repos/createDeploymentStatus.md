@@ -54,7 +54,10 @@ The state of the status. When you set a transient deployment to `inactive`, the 
 </td></tr>
 <tr><td>target_url</td><td>no</td><td>
 
-The target URL to associate with this status. This URL should contain output to keep the user updated while the task is running or serve as historical information for what happened in the deployment. **Note:** It's recommended to use the `log_url` parameter, which replaces `target_url`.
+The target URL to associate with this status. This URL should contain output to keep the user updated while the task is running or serve as historical information for what happened in the deployment.
+
+> [!NOTE]
+> It's recommended to use the `log_url` parameter, which replaces `target_url`.
 
 </td></tr>
 <tr><td>log_url</td><td>no</td><td>

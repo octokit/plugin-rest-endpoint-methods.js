@@ -10,9 +10,8 @@ type: API method
 
 Gets a public release with the specified release ID.
 
-**Note:** This returns an `upload_url` key corresponding to the endpoint
-for uploading release assets. This key is a hypermedia resource. For more information, see
-"[Getting started with the REST API](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#hypermedia)."
+> [!NOTE]
+> This returns an `upload_url` key corresponding to the endpoint for uploading release assets. This key is a hypermedia resource. For more information, see "[Getting started with the REST API](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#hypermedia)."
 
 ```js
 octokit.rest.repos.getRelease({
