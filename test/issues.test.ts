@@ -6,7 +6,7 @@ import { restEndpointMethods } from "../src/index.ts";
 
 describe("https://github.com/octokit/plugin-rest-endpoint-methods.js/issues/83", () => {
   it("git.gists.update({ gist_id, files })", async () => {
-    const mock = fetchMock.sandbox().patchOnce(
+    const mock = fetchMock.createInstance().patchOnce(
       "path:/gists/gist123",
       { ok: true },
       {
@@ -25,7 +25,7 @@ describe("https://github.com/octokit/plugin-rest-endpoint-methods.js/issues/83",
     const octokit = new MyOctokit({
       auth: "secret123",
       request: {
-        fetch: mock,
+        fetch: mock.fetchHandler,
       },
     });
 

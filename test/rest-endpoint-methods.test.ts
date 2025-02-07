@@ -11,7 +11,7 @@ import type { Api } from "../src/types.ts";
 
 describe("REST API endpoint methods", () => {
   it("README example", async () => {
-    const mock = fetchMock.sandbox().post(
+    const mock = fetchMock.createInstance().post(
       "path:/user/repos",
       { id: 1 },
       {
@@ -25,7 +25,7 @@ describe("REST API endpoint methods", () => {
     const octokit = new MyOctokit({
       auth: "secret123",
       request: {
-        fetch: mock,
+        fetch: mock.fetchHandler,
       },
     });
 
@@ -39,13 +39,13 @@ describe("REST API endpoint methods", () => {
 
   it("Required preview header", async () => {
     const mock = fetchMock
-      .sandbox()
+      .createInstance()
       .getOnce("path:/codes_of_conduct", [{ key: "mit" }]);
 
     const MyOctokit = Octokit.plugin(restEndpointMethods);
     const octokit = new MyOctokit({
       request: {
-        fetch: mock,
+        fetch: mock.fetchHandler,
       },
     });
 
@@ -56,16 +56,18 @@ describe("REST API endpoint methods", () => {
   });
 
   it("octokit.rest.markdown.renderRaw()", async () => {
-    const mock = fetchMock.sandbox().postOnce(
-      "path:/markdown/raw",
+    const mock = fetchMock.createInstance().postOnce(
+      ({ url, options: { body } }) => {
+        if (url === "https://api.github.com/markdown/raw") {
+          expect(body).toEqual("# Hello, world!");
+          return true;
+        }
+        return false;
+      },
       { ok: true },
       {
         headers: {
           "content-type": "text/plain; charset=utf-8",
-        },
-        matcher: (_, { body }) => {
-          expect(body).toEqual("# Hello, world!");
-          return true;
         },
       },
     );
@@ -73,7 +75,7 @@ describe("REST API endpoint methods", () => {
     const MyOctokit = Octokit.plugin(restEndpointMethods);
     const octokit = new MyOctokit({
       request: {
-        fetch: mock,
+        fetch: mock.fetchHandler,
       },
     });
 
@@ -89,8 +91,18 @@ describe("REST API endpoint methods", () => {
   });
 
   it("octokit.rest.repos.uploadReleaseAsset()", async () => {
-    const mock = fetchMock.sandbox().postOnce(
-      "https://uploads.github.com/repos/octocat/hello-world/releases/123/assets",
+    const mock = fetchMock.createInstance().postOnce(
+      ({ url, options: { body } }) => {
+        const path = new URL(url);
+        if (
+          `${path.origin}${path.pathname}` ===
+          "https://uploads.github.com/repos/octocat/hello-world/releases/123/assets"
+        ) {
+          expect(body).toEqual("test 1, 2");
+          return true;
+        }
+        return false;
+      },
       { ok: true },
       {
         headers: {
@@ -100,10 +112,6 @@ describe("REST API endpoint methods", () => {
           name: "test.txt",
           label: "test",
         },
-        matcher: (_, { body }) => {
-          expect(body).toEqual("test 1, 2");
-          return true;
-        },
       },
     );
 
@@ -111,7 +119,7 @@ describe("REST API endpoint methods", () => {
     const octokit = new MyOctokit({
       auth: "secret123",
       request: {
-        fetch: mock,
+        fetch: mock.fetchHandler,
       },
     });
 
@@ -135,7 +143,7 @@ describe("REST API endpoint methods", () => {
   });
 
   it("octokit.rest.repos.addProtectedBranchRequiredStatusChecksContexts(): `contexts` option value is sent as request body without namespace", async () => {
-    const mock = fetchMock.sandbox().postOnce(
+    const mock = fetchMock.createInstance().postOnce(
       "https://api.github.com/repos/octocat/hello-world/branches/latest/protection/required_status_checks/contexts",
       { ok: true },
       {
@@ -147,7 +155,7 @@ describe("REST API endpoint methods", () => {
     const octokit = new MyOctokit({
       auth: "secret123",
       request: {
-        fetch: mock,
+        fetch: mock.fetchHandler,
       },
     });
 
@@ -167,14 +175,14 @@ describe("REST API endpoint methods", () => {
 
   it("octokit.rest.apps.listInstallations(): method without options (octokit/rest.js#818)", async () => {
     const mock = fetchMock
-      .sandbox()
+      .createInstance()
       .getOnce("https://api.github.com/app/installations", { ok: true });
 
     const MyOctokit = Octokit.plugin(restEndpointMethods);
     const octokit = new MyOctokit({
       auth: "secret123",
       request: {
-        fetch: mock,
+        fetch: mock.fetchHandler,
       },
     });
 
@@ -186,7 +194,7 @@ describe("REST API endpoint methods", () => {
 
     beforeEach(() => {
       const networkMock = fetchMock
-        .sandbox()
+        .createInstance()
         .getOnce(
           "https://api.github.com/repos/octokit/plugin-rest-endpoint-methods/issues/1/labels",
           [{ name: "mocked from network" }],
@@ -195,7 +203,7 @@ describe("REST API endpoint methods", () => {
       const MyOctokit = Octokit.plugin(restEndpointMethods);
       octokit = new MyOctokit({
         request: {
-          fetch: networkMock,
+          fetch: networkMock.fetchHandler,
         },
       });
     });
@@ -278,7 +286,7 @@ describe("REST API endpoint methods", () => {
   // We will deprecate the `octokit.*` methods in future, but for now we just make sure they are set
 
   it("legacyRestEndpointMethods", async () => {
-    const mock = fetchMock.sandbox().post(
+    const mock = fetchMock.createInstance().post(
       "path:/user/repos",
       { id: 1 },
       {
@@ -292,7 +300,7 @@ describe("REST API endpoint methods", () => {
     const octokit = new MyOctokit({
       auth: "secret123",
       request: {
-        fetch: mock,
+        fetch: mock.fetchHandler,
       },
     });
 
