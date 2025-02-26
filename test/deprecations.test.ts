@@ -1,5 +1,3 @@
-import { describe, it } from "vitest";
-
 // There are currently no deprecated methods or parameters
 // Use the tests below as template once there are again.
 

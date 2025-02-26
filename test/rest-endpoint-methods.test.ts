@@ -1,4 +1,3 @@
-import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
 import { Octokit } from "@octokit/core";
 import fetchMock from "fetch-mock";
 

@@ -1,4 +1,3 @@
-import { describe, it, expect } from "vitest";
 import { Octokit } from "@octokit/core";
 import { RestEndpointMethodTypes, restEndpointMethods } from "../src/index.ts";
 

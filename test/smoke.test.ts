@@ -1,4 +1,3 @@
-import { describe, it, expect } from "vitest";
 import { restEndpointMethods } from "../src/index.ts";
 
 describe("Smoke test", () => {
