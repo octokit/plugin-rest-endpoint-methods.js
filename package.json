@@ -82,7 +82,8 @@
       "next",
       {
         "name": "cjs",
-        "channel": "cjs"
+        "channel": "cjs",
+        "prerelease": true
       },
       {
         "name": "beta",
