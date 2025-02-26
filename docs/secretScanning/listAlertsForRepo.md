@@ -49,9 +49,7 @@ Set to `open` or `resolved` to only list secret scanning alerts in a specific st
 </td></tr>
 <tr><td>secret_type</td><td>no</td><td>
 
-A comma-separated list of secret types to return. By default all secret types are returned.
-See "[Secret scanning patterns](https://docs.github.com/code-security/secret-scanning/secret-scanning-patterns#supported-secrets-for-advanced-security)"
-for a complete list of secret types.
+A comma-separated list of secret types to return. All default secret patterns are returned. To return experimental patterns, pass the token name(s) in the parameter. See "[Supported secret scanning patterns](https://docs.github.com/enterprise-cloud@latest/code-security/secret-scanning/introduction/supported-secret-scanning-patterns#supported-secrets)" for a complete list of secret types.
 
 </td></tr>
 <tr><td>resolution</td><td>no</td><td>
@@ -92,6 +90,16 @@ A cursor, as given in the [Link header](https://docs.github.com/rest/guides/usin
 <tr><td>validity</td><td>no</td><td>
 
 A comma-separated list of validities that, when present, will return alerts that match the validities in this list. Valid options are `active`, `inactive`, and `unknown`.
+
+</td></tr>
+<tr><td>is_publicly_leaked</td><td>no</td><td>
+
+A boolean value representing whether or not to filter alerts by the publicly-leaked tag being present.
+
+</td></tr>
+<tr><td>is_multi_repo</td><td>no</td><td>
+
+A boolean value representing whether or not to filter alerts by the multi-repo tag being present.
 
 </td></tr>
   </tbody>

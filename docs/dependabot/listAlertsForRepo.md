@@ -88,7 +88,7 @@ The direction to sort the results by.
 </td></tr>
 <tr><td>page</td><td>no</td><td>
 
-**Deprecated**. Page number of the results to fetch. Use cursor-based pagination with `before` or `after` instead.
+**Closing down notice**. Page number of the results to fetch. Use cursor-based pagination with `before` or `after` instead.
 
 </td></tr>
 <tr><td>per_page</td><td>no</td><td>

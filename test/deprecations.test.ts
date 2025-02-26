@@ -1,3 +1,5 @@
+import { describe, it } from "vitest";
+
 // There are currently no deprecated methods or parameters
 // Use the tests below as template once there are again.
 
@@ -14,12 +16,12 @@ describe("Deprecations", () => {
 // // have been removed. We keep them here for future reference
 // describe("Deprecations", () => {
 //   it("renamed method", async () => {
-//     const mock = fetchMock.sandbox().deleteOnce("path:/reactions/1", 204);
+//     const mock = fetchMock.createInstance().deleteOnce("path:/reactions/1", 204);
 //     const MyOctokit = Octokit.plugin(restEndpointMethods);
 //     let warnCalledCount = 0;
 //     const octokit = new MyOctokit({
 //       request: {
-//         fetch: mock,
+//         fetch: mock.fetchHandler,
 //       },
 //       log: {
 //         warn: (deprecation: Error) => {
@@ -37,12 +39,12 @@ describe("Deprecations", () => {
 //   });
 
 //   it("deprecated method", async () => {
-//     const mock = fetchMock.sandbox().deleteOnce("path:/reactions/1", 204);
+//     const mock = fetchMock.createInstance().deleteOnce("path:/reactions/1", 204);
 //     const MyOctokit = Octokit.plugin(restEndpointMethods);
 //     let warnCalledCount = 0;
 //     const octokit = new MyOctokit({
 //       request: {
-//         fetch: mock,
+//         fetch: mock.fetchHandler,
 //       },
 //       log: {
 //         warn: (deprecation: Error) => {
@@ -61,7 +63,7 @@ describe("Deprecations", () => {
 
 //   it("deprecated parameter", async () => {
 //     const mock = fetchMock
-//       .sandbox()
+//       .createInstance()
 //       .putOnce("path:/repos/octocat/hello-world/actions/secrets/MY_SECRET", {
 //         ok: true,
 //       });
@@ -70,7 +72,7 @@ describe("Deprecations", () => {
 //     let warnCalledCount = 0;
 //     const octokit = new MyOctokit({
 //       request: {
-//         fetch: mock,
+//         fetch: mock.fetchHandler,
 //       },
 //       log: {
 //         warn: (deprecation: Error) => {
@@ -97,7 +99,7 @@ describe("Deprecations", () => {
 
 //   it("deprecated parameter + new parameter", async () => {
 //     const mock = fetchMock
-//       .sandbox()
+//       .createInstance()
 //       .putOnce("path:/repos/octocat/hello-world/actions/secrets/MY_SECRET2", {
 //         ok: true,
 //       });
@@ -106,7 +108,7 @@ describe("Deprecations", () => {
 //     let warnCalledCount = 0;
 //     const octokit = new MyOctokit({
 //       request: {
-//         fetch: mock,
+//         fetch: mock.fetchHandler,
 //       },
 //       log: {
 //         warn: (deprecation: Error) => {
@@ -134,7 +136,7 @@ describe("Deprecations", () => {
 
 //   it("deprecated method + deprecated parameter", async () => {
 //     const mock = fetchMock
-//       .sandbox()
+//       .createInstance()
 //       .putOnce("path:/repos/octocat/hello-world/actions/secrets/MY_SECRET", {
 //         ok: true,
 //       });
@@ -143,7 +145,7 @@ describe("Deprecations", () => {
 //     const deprecations: string[] = [];
 //     const octokit = new MyOctokit({
 //       request: {
-//         fetch: mock,
+//         fetch: mock.fetchHandler,
 //       },
 //       log: {
 //         warn: (deprecation: Error) => {

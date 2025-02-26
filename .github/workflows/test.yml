@@ -16,6 +16,7 @@ jobs:
         node_version:
           - 18
           - 20
+          - 22
     steps:
       - uses: actions/checkout@v4
       - name: Use Node.js ${{ matrix.node_version }}
@@ -43,4 +44,5 @@ jobs:
       - run: npm ci
       - run: npm run lint
       - run: VERSION=`npm info @octokit/openapi version` npm run update-endpoints
+      - run: npm run build
     if: ${{ always() }}

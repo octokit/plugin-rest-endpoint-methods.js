@@ -9,6 +9,7 @@ type: API method
 # Update a pull request branch
 
 Updates the pull request branch with the latest upstream changes by merging HEAD from the base branch into the pull request branch.
+Note: If making a request on behalf of a GitHub App you must also have permissions to write the contents of the head repository.
 
 ```js
 octokit.rest.pulls.updateBranch({

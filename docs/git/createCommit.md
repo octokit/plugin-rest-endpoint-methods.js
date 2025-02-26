@@ -14,12 +14,13 @@ Creates a new Git [commit object](https://git-scm.com/book/en/v2/Git-Internals-G
 
 The response will include a `verification` object that describes the result of verifying the commit's signature. The following fields are included in the `verification` object:
 
-| Name        | Type      | Description                                                                                          |
-| ----------- | --------- | ---------------------------------------------------------------------------------------------------- |
-| `verified`  | `boolean` | Indicates whether GitHub considers the signature in this commit to be verified.                      |
-| `reason`    | `string`  | The reason for verified value. Possible values and their meanings are enumerated in the table below. |
-| `signature` | `string`  | The signature that was extracted from the commit.                                                    |
-| `payload`   | `string`  | The value that was signed.                                                                           |
+| Name          | Type      | Description                                                                                          |
+| ------------- | --------- | ---------------------------------------------------------------------------------------------------- |
+| `verified`    | `boolean` | Indicates whether GitHub considers the signature in this commit to be verified.                      |
+| `reason`      | `string`  | The reason for verified value. Possible values and their meanings are enumerated in the table below. |
+| `signature`   | `string`  | The signature that was extracted from the commit.                                                    |
+| `payload`     | `string`  | The value that was signed.                                                                           |
+| `verified_at` | `string`  | The date the signature was verified by GitHub.                                                       |
 
 These are the possible values for `reason` in the `verification` object:
 
@@ -83,7 +84,7 @@ The SHA of the tree object this commit points to
 </td></tr>
 <tr><td>parents</td><td>no</td><td>
 
-The SHAs of the commits that were the parents of this commit. If omitted or empty, the commit will be written as a root commit. For a single parent, an array of one SHA should be provided; for a merge commit, an array of more than one should be provided.
+The full SHAs of the commits that were the parents of this commit. If omitted or empty, the commit will be written as a root commit. For a single parent, an array of one SHA should be provided; for a merge commit, an array of more than one should be provided.
 
 </td></tr>
 <tr><td>author</td><td>no</td><td>

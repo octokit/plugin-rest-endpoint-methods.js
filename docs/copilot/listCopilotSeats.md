@@ -8,13 +8,16 @@ type: API method
 
 # List all Copilot seat assignments for an organization
 
-**Note**: This endpoint is in beta and is subject to change.
+> [!NOTE]
+> This endpoint is in public preview and is subject to change.
 
-Lists all Copilot seat assignments for an organization that are currently being billed (either active or pending cancellation at the start of the next billing cycle).
+Lists all Copilot seats for which an organization with a Copilot Business or Copilot Enterprise subscription is currently being billed.
+Only organization owners can view assigned seats.
 
-Only organization owners can configure and view details about the organization's Copilot Business or Enterprise subscription.
+Each seat object contains information about the assigned user's most recent Copilot activity. Users must have telemetry enabled in their IDE for Copilot in the IDE activity to be reflected in `last_activity_at`.
+For more information about activity data, see "[Reviewing user activity data for Copilot in your organization](https://docs.github.com/copilot/managing-copilot/managing-github-copilot-in-your-organization/reviewing-activity-related-to-github-copilot-in-your-organization/reviewing-user-activity-data-for-copilot-in-your-organization)."
 
-OAuth app tokens and personal access tokens (classic) need the `manage_billing:copilot` scope to use this endpoint.
+OAuth app tokens and personal access tokens (classic) need either the `manage_billing:copilot` or `read:org` scopes to use this endpoint.
 
 ```js
 octokit.rest.copilot.listCopilotSeats({

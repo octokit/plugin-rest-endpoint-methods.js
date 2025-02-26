@@ -116,6 +116,8 @@ Whether to delete head branches when pull requests are merged
 </td></tr>
 <tr><td>squash_merge_commit_title</td><td>no</td><td>
 
+Required when using `squash_merge_commit_message`.
+
 The default value for a squash merge commit title:
 
 - `PR_TITLE` - default to the pull request's title.
@@ -132,6 +134,8 @@ The default value for a squash merge commit message:
 
 </td></tr>
 <tr><td>merge_commit_title</td><td>no</td><td>
+
+Required when using `merge_commit_message`.
 
 The default value for a merge commit title.
 

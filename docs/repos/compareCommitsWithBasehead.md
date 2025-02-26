@@ -25,7 +25,7 @@ When calling this endpoint without any paging parameter (`per_page` or `page`), 
 
 To process a response with a large number of commits, use a query parameter (`per_page` or `page`) to paginate the results. When using pagination:
 
-- The list of changed files is only shown on the first page of results, but it includes all changed files for the entire comparison.
+- The list of changed files is only shown on the first page of results, and it includes up to 300 changed files for the entire comparison.
 - The results are returned in chronological order, but the last commit in the returned list may not be the most recent one in the entire set if there are more pages of results.
 
 For more information on working with pagination, see "[Using pagination in the REST API](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api)."
@@ -34,12 +34,13 @@ For more information on working with pagination, see "[Using pagination in the R
 
 The response will include a `verification` object that describes the result of verifying the commit's signature. The `verification` object includes the following fields:
 
-| Name        | Type      | Description                                                                                      |
-| ----------- | --------- | ------------------------------------------------------------------------------------------------ |
-| `verified`  | `boolean` | Indicates whether GitHub considers the signature in this commit to be verified.                  |
-| `reason`    | `string`  | The reason for verified value. Possible values and their meanings are enumerated in table below. |
-| `signature` | `string`  | The signature that was extracted from the commit.                                                |
-| `payload`   | `string`  | The value that was signed.                                                                       |
+| Name          | Type      | Description                                                                                      |
+| ------------- | --------- | ------------------------------------------------------------------------------------------------ |
+| `verified`    | `boolean` | Indicates whether GitHub considers the signature in this commit to be verified.                  |
+| `reason`      | `string`  | The reason for verified value. Possible values and their meanings are enumerated in table below. |
+| `signature`   | `string`  | The signature that was extracted from the commit.                                                |
+| `payload`     | `string`  | The value that was signed.                                                                       |
+| `verified_at` | `string`  | The date the signature was verified by GitHub.                                                   |
 
 These are the possible values for `reason` in the `verification` object:
 

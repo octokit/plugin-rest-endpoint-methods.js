@@ -40,6 +40,8 @@ For more information, see "[Get information about a SARIF upload](/rest/code-sca
 
 OAuth app tokens and personal access tokens (classic) need the `security_events` scope to use this endpoint with private or public repositories, or the `public_repo` scope to use this endpoint with only public repositories.
 
+This endpoint is limited to 1,000 requests per hour for each user or app installation calling it.
+
 ```js
 octokit.rest.codeScanning.uploadSarif({
   owner,

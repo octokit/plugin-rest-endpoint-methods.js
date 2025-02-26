@@ -14,8 +14,6 @@ Optionally, you can use the `repositories` or `repository_ids` body parameters t
 
 Optionally, use the `permissions` body parameter to specify the permissions that the installation access token should have. If `permissions` is not specified, the installation access token will have all of the permissions that were granted to the app. The installation access token cannot be granted permissions that the app was not granted.
 
-When using the repository or permission parameters to reduce the access of the token, the complexity of the token is increased due to both the number of permissions in the request and the number of repositories the token will have access to. If the complexity is too large, the token will fail to be issued. If this occurs, the error message will indicate the maximum number of repositories that should be requested. For the average application requesting 8 permissions, this limit is around 5000 repositories. With fewer permissions requested, more repositories are supported.
-
 You must use a [JWT](https://docs.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint.
 
 ```js
@@ -197,7 +195,7 @@ The level of permission to grant the access token for custom property management
 </td></tr>
 <tr><td>permissions.organization_copilot_seat_management</td><td>no</td><td>
 
-The level of permission to grant the access token for managing access to GitHub Copilot for members of an organization with a Copilot Business subscription. This property is in beta and is subject to change.
+The level of permission to grant the access token for managing access to GitHub Copilot for members of an organization with a Copilot Business subscription. This property is in public preview and is subject to change.
 
 </td></tr>
 <tr><td>permissions.organization_announcement_banners</td><td>no</td><td>
@@ -232,7 +230,7 @@ The level of permission to grant the access token for viewing an organization's 
 </td></tr>
 <tr><td>permissions.organization_projects</td><td>no</td><td>
 
-The level of permission to grant the access token to manage organization projects and projects beta (where available).
+The level of permission to grant the access token to manage organization projects and projects public preview (where available).
 
 </td></tr>
 <tr><td>permissions.organization_packages</td><td>no</td><td>

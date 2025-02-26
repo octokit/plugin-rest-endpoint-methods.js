@@ -8,7 +8,7 @@ type: API method
 
 # Remove an organization role from a team
 
-Removes an organization role from a team. For more information on organization roles, see "[Managing people's access to your organization with roles](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/about-custom-organization-roles)."
+Removes an organization role from a team. For more information on organization roles, see "[Using organization roles](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/using-organization-roles)."
 
 The authenticated user must be an administrator for the organization to use this endpoint.
 

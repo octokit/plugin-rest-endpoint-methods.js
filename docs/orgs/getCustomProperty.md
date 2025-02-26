@@ -36,7 +36,7 @@ The organization name. The name is not case sensitive.
 </td></tr>
 <tr><td>custom_property_name</td><td>yes</td><td>
 
-The custom property name. The name is case sensitive.
+The custom property name
 
 </td></tr>
   </tbody>

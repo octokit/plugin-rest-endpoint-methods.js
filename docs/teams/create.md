@@ -79,7 +79,7 @@ The notification setting the team has chosen. The options are:
 </td></tr>
 <tr><td>permission</td><td>no</td><td>
 
-**Deprecated**. The permission that new repositories will be added to the team with when none is specified.
+**Closing down notice**. The permission that new repositories will be added to the team with when none is specified.
 
 </td></tr>
 <tr><td>parent_team_id</td><td>no</td><td>
