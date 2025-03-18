@@ -57,6 +57,12 @@ The handle for the GitHub user account.
 Subject Digest
 
 </td></tr>
+<tr><td>predicate_type</td><td>no</td><td>
+
+Optional filter for fetching attestations with a given predicate type.
+This option accepts `provenance`, `sbom`, or freeform text for custom predicate types.
+
+</td></tr>
   </tbody>
 </table>
 

@@ -58,7 +58,7 @@ The number that identifies the issue.
 </td></tr>
 <tr><td>sub_issue_id</td><td>yes</td><td>
 
-The sub-issue to add
+The id of the sub-issue to add. The sub-issue must belong to the same repository owner as the parent issue
 
 </td></tr>
 <tr><td>replace_parent</td><td>no</td><td>

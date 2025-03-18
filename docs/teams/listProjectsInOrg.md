@@ -8,10 +8,10 @@ type: API method
 
 # List team projects
 
-Lists the organization projects for a team.
+**This method is deprecated.**
 
-> [!NOTE]
-> You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/{org_id}/team/{team_id}/projects`.
+> [!WARNING] > **Closing down notice:** Projects (classic) is being deprecated in favor of the new Projects experience.
+> See the [changelog](https://github.blog/changelog/2024-05-23-sunset-notice-projects-classic/) for more information.
 
 ```js
 octokit.rest.teams.listProjectsInOrg({

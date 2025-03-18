@@ -8,7 +8,10 @@ type: API method
 
 # Add project collaborator
 
-Adds a collaborator to an organization project and sets their permission level. You must be an organization owner or a project `admin` to add a collaborator.
+**This method is deprecated.**
+
+> [!WARNING] > **Closing down notice:** Projects (classic) is being deprecated in favor of the new Projects experience.
+> See the [changelog](https://github.blog/changelog/2024-05-23-sunset-notice-projects-classic/) for more information.
 
 ```js
 octokit.rest.projects.addCollaborator({

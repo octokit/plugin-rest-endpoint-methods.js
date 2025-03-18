@@ -61,6 +61,11 @@ Sets the state of the code scanning alert. You must provide `dismissed_reason` w
 The dismissal comment associated with the dismissal of the alert.
 
 </td></tr>
+<tr><td>create_request</td><td>no</td><td>
+
+If `true`, attempt to create an alert dismissal request.
+
+</td></tr>
   </tbody>
 </table>
 

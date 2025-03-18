@@ -8,7 +8,10 @@ type: API method
 
 # List project collaborators
 
-Lists the collaborators for an organization project. For a project, the list of collaborators includes outside collaborators, organization members that are direct collaborators, organization members with access through team memberships, organization members with access through default organization permissions, and organization owners. You must be an organization owner or a project `admin` to list collaborators.
+**This method is deprecated.**
+
+> [!WARNING] > **Closing down notice:** Projects (classic) is being deprecated in favor of the new Projects experience.
+> See the [changelog](https://github.blog/changelog/2024-05-23-sunset-notice-projects-classic/) for more information.
 
 ```js
 octokit.rest.projects.listCollaborators({

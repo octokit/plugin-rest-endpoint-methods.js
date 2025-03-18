@@ -69,6 +69,17 @@ A comma-separated list of package names. If specified, only alerts for these pac
 A comma-separated list of full manifest paths. If specified, only alerts for these manifests will be returned.
 
 </td></tr>
+<tr><td>epss_percentage</td><td>no</td><td>
+
+CVE Exploit Prediction Scoring System (EPSS) percentage. Can be specified as:
+
+- An exact number (`n`)
+- Comparators such as `>n`, `<n`, `>=n`, `<=n`
+- A range like `n..n`, where `n` is a number from 0.0 to 1.0
+
+Filters the list of alerts based on EPSS percentages. If specified, only alerts with the provided EPSS percentages will be returned.
+
+</td></tr>
 <tr><td>scope</td><td>no</td><td>
 
 The scope of the vulnerable dependency. If specified, only alerts with this scope will be returned.
@@ -79,6 +90,7 @@ The scope of the vulnerable dependency. If specified, only alerts with this scop
 The property by which to sort the results.
 `created` means when the alert was created.
 `updated` means when the alert's state last changed.
+`epss_percentage` sorts alerts by the Exploit Prediction Scoring System (EPSS) percentage.
 
 </td></tr>
 <tr><td>direction</td><td>no</td><td>

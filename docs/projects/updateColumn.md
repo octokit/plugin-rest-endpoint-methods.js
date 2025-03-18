@@ -8,6 +8,11 @@ type: API method
 
 # Update an existing project column
 
+**This method is deprecated.**
+
+> [!WARNING] > **Closing down notice:** Projects (classic) is being deprecated in favor of the new Projects experience.
+> See the [changelog](https://github.blog/changelog/2024-05-23-sunset-notice-projects-classic/) for more information.
+
 ```js
 octokit.rest.projects.updateColumn({
   column_id,
