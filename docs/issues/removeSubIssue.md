@@ -56,7 +56,7 @@ The number that identifies the issue.
 </td></tr>
 <tr><td>sub_issue_id</td><td>yes</td><td>
 
-The sub-issue to remove
+The id of the sub-issue to remove
 
 </td></tr>
   </tbody>

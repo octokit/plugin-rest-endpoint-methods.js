@@ -1,14 +1,14 @@
 ---
-name: Disable automated security fixes
+name: Disable Dependabot security updates
 example: octokit.rest.repos.disableAutomatedSecurityFixes({ owner, repo })
 route: DELETE /repos/{owner}/{repo}/automated-security-fixes
 scope: repos
 type: API method
 ---
 
-# Disable automated security fixes
+# Disable Dependabot security updates
 
-Disables automated security fixes for a repository. The authenticated user must have admin access to the repository. For more information, see "[Configuring automated security fixes](https://docs.github.com/articles/configuring-automated-security-fixes)".
+Disables Dependabot security updates for a repository. The authenticated user must have admin access to the repository. For more information, see "[Configuring Dependabot security updates](https://docs.github.com/articles/configuring-automated-security-fixes)".
 
 ```js
 octokit.rest.repos.disableAutomatedSecurityFixes({
@@ -41,4 +41,4 @@ The name of the repository without the `.git` extension. The name is not case se
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/repos/repos#disable-automated-security-fixes).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/repos/repos#disable-dependabot-security-updates).

@@ -47,7 +47,7 @@ The unique identifier of the code security configuration.
 </td></tr>
 <tr><td>scope</td><td>yes</td><td>
 
-The type of repositories to attach the configuration to. `selected` means the configuration will be attached to only the repositories specified by `selected_repository_ids`
+The type of repositories to attach the configuration to.
 
 </td></tr>
   </tbody>

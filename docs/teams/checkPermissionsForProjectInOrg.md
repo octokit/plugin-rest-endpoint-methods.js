@@ -8,10 +8,10 @@ type: API method
 
 # Check team permissions for a project
 
-Checks whether a team has `read`, `write`, or `admin` permissions for an organization project. The response includes projects inherited from a parent team.
+**This method is deprecated.**
 
-> [!NOTE]
-> You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/{org_id}/team/{team_id}/projects/{project_id}`.
+> [!WARNING] > **Closing down notice:** Projects (classic) is being deprecated in favor of the new Projects experience.
+> See the [changelog](https://github.blog/changelog/2024-05-23-sunset-notice-projects-classic/) for more information.
 
 ```js
 octokit.rest.teams.checkPermissionsForProjectInOrg({

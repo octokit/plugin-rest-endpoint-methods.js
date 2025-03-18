@@ -8,7 +8,10 @@ type: API method
 
 # Delete a project
 
-Deletes a project board. Returns a `404 Not Found` status if projects are disabled.
+**This method is deprecated.**
+
+> [!WARNING] > **Closing down notice:** Projects (classic) is being deprecated in favor of the new Projects experience.
+> See the [changelog](https://github.blog/changelog/2024-05-23-sunset-notice-projects-classic/) for more information.
 
 ```js
 octokit.rest.projects.delete({

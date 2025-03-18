@@ -42,6 +42,11 @@ export type RestEndpointMethodTypes = {
         Endpoints["POST /repos/{owner}/{repo}/environments/{environment_name}/variables"]["parameters"];
       response: Endpoints["POST /repos/{owner}/{repo}/environments/{environment_name}/variables"]["response"];
     };
+    createHostedRunnerForOrg: {
+      parameters: RequestParameters &
+        Endpoints["POST /orgs/{org}/actions/hosted-runners"]["parameters"];
+      response: Endpoints["POST /orgs/{org}/actions/hosted-runners"]["response"];
+    };
     createOrUpdateEnvironmentSecret: {
       parameters: RequestParameters &
         Endpoints["PUT /repos/{owner}/{repo}/environments/{environment_name}/secrets/{secret_name}"]["parameters"];
@@ -116,6 +121,11 @@ export type RestEndpointMethodTypes = {
       parameters: RequestParameters &
         Endpoints["DELETE /repos/{owner}/{repo}/environments/{environment_name}/variables/{name}"]["parameters"];
       response: Endpoints["DELETE /repos/{owner}/{repo}/environments/{environment_name}/variables/{name}"]["response"];
+    };
+    deleteHostedRunnerForOrg: {
+      parameters: RequestParameters &
+        Endpoints["DELETE /orgs/{org}/actions/hosted-runners/{hosted_runner_id}"]["parameters"];
+      response: Endpoints["DELETE /orgs/{org}/actions/hosted-runners/{hosted_runner_id}"]["response"];
     };
     deleteOrgSecret: {
       parameters: RequestParameters &
@@ -287,6 +297,36 @@ export type RestEndpointMethodTypes = {
         Endpoints["GET /repos/{owner}/{repo}/actions/permissions"]["parameters"];
       response: Endpoints["GET /repos/{owner}/{repo}/actions/permissions"]["response"];
     };
+    getHostedRunnerForOrg: {
+      parameters: RequestParameters &
+        Endpoints["GET /orgs/{org}/actions/hosted-runners/{hosted_runner_id}"]["parameters"];
+      response: Endpoints["GET /orgs/{org}/actions/hosted-runners/{hosted_runner_id}"]["response"];
+    };
+    getHostedRunnersGithubOwnedImagesForOrg: {
+      parameters: RequestParameters &
+        Endpoints["GET /orgs/{org}/actions/hosted-runners/images/github-owned"]["parameters"];
+      response: Endpoints["GET /orgs/{org}/actions/hosted-runners/images/github-owned"]["response"];
+    };
+    getHostedRunnersLimitsForOrg: {
+      parameters: RequestParameters &
+        Endpoints["GET /orgs/{org}/actions/hosted-runners/limits"]["parameters"];
+      response: Endpoints["GET /orgs/{org}/actions/hosted-runners/limits"]["response"];
+    };
+    getHostedRunnersMachineSpecsForOrg: {
+      parameters: RequestParameters &
+        Endpoints["GET /orgs/{org}/actions/hosted-runners/machine-sizes"]["parameters"];
+      response: Endpoints["GET /orgs/{org}/actions/hosted-runners/machine-sizes"]["response"];
+    };
+    getHostedRunnersPartnerImagesForOrg: {
+      parameters: RequestParameters &
+        Endpoints["GET /orgs/{org}/actions/hosted-runners/images/partner"]["parameters"];
+      response: Endpoints["GET /orgs/{org}/actions/hosted-runners/images/partner"]["response"];
+    };
+    getHostedRunnersPlatformsForOrg: {
+      parameters: RequestParameters &
+        Endpoints["GET /orgs/{org}/actions/hosted-runners/platforms"]["parameters"];
+      response: Endpoints["GET /orgs/{org}/actions/hosted-runners/platforms"]["response"];
+    };
     getJobForWorkflowRun: {
       parameters: RequestParameters &
         Endpoints["GET /repos/{owner}/{repo}/actions/jobs/{job_id}"]["parameters"];
@@ -391,6 +431,16 @@ export type RestEndpointMethodTypes = {
       parameters: RequestParameters &
         Endpoints["GET /repos/{owner}/{repo}/environments/{environment_name}/variables"]["parameters"];
       response: Endpoints["GET /repos/{owner}/{repo}/environments/{environment_name}/variables"]["response"];
+    };
+    listGithubHostedRunnersInGroupForOrg: {
+      parameters: RequestParameters &
+        Endpoints["GET /orgs/{org}/actions/runner-groups/{runner_group_id}/hosted-runners"]["parameters"];
+      response: Endpoints["GET /orgs/{org}/actions/runner-groups/{runner_group_id}/hosted-runners"]["response"];
+    };
+    listHostedRunnersForOrg: {
+      parameters: RequestParameters &
+        Endpoints["GET /orgs/{org}/actions/hosted-runners"]["parameters"];
+      response: Endpoints["GET /orgs/{org}/actions/hosted-runners"]["response"];
     };
     listJobsForWorkflowRun: {
       parameters: RequestParameters &
@@ -621,6 +671,11 @@ export type RestEndpointMethodTypes = {
       parameters: RequestParameters &
         Endpoints["PATCH /repos/{owner}/{repo}/environments/{environment_name}/variables/{name}"]["parameters"];
       response: Endpoints["PATCH /repos/{owner}/{repo}/environments/{environment_name}/variables/{name}"]["response"];
+    };
+    updateHostedRunnerForOrg: {
+      parameters: RequestParameters &
+        Endpoints["PATCH /orgs/{org}/actions/hosted-runners/{hosted_runner_id}"]["parameters"];
+      response: Endpoints["PATCH /orgs/{org}/actions/hosted-runners/{hosted_runner_id}"]["response"];
     };
     updateOrgVariable: {
       parameters: RequestParameters &
@@ -1897,6 +1952,38 @@ export type RestEndpointMethodTypes = {
       response: Endpoints["GET /gitignore/templates/{name}"]["response"];
     };
   };
+  hostedCompute: {
+    createNetworkConfigurationForOrg: {
+      parameters: RequestParameters &
+        Endpoints["POST /orgs/{org}/settings/network-configurations"]["parameters"];
+      response: Endpoints["POST /orgs/{org}/settings/network-configurations"]["response"];
+    };
+    deleteNetworkConfigurationFromOrg: {
+      parameters: RequestParameters &
+        Endpoints["DELETE /orgs/{org}/settings/network-configurations/{network_configuration_id}"]["parameters"];
+      response: Endpoints["DELETE /orgs/{org}/settings/network-configurations/{network_configuration_id}"]["response"];
+    };
+    getNetworkConfigurationForOrg: {
+      parameters: RequestParameters &
+        Endpoints["GET /orgs/{org}/settings/network-configurations/{network_configuration_id}"]["parameters"];
+      response: Endpoints["GET /orgs/{org}/settings/network-configurations/{network_configuration_id}"]["response"];
+    };
+    getNetworkSettingsForOrg: {
+      parameters: RequestParameters &
+        Endpoints["GET /orgs/{org}/settings/network-settings/{network_settings_id}"]["parameters"];
+      response: Endpoints["GET /orgs/{org}/settings/network-settings/{network_settings_id}"]["response"];
+    };
+    listNetworkConfigurationsForOrg: {
+      parameters: RequestParameters &
+        Endpoints["GET /orgs/{org}/settings/network-configurations"]["parameters"];
+      response: Endpoints["GET /orgs/{org}/settings/network-configurations"]["response"];
+    };
+    updateNetworkConfigurationForOrg: {
+      parameters: RequestParameters &
+        Endpoints["PATCH /orgs/{org}/settings/network-configurations/{network_configuration_id}"]["parameters"];
+      response: Endpoints["PATCH /orgs/{org}/settings/network-configurations/{network_configuration_id}"]["response"];
+    };
+  };
   interactions: {
     getRestrictionsForAuthenticatedUser: {
       parameters: RequestParameters &
@@ -2433,6 +2520,16 @@ export type RestEndpointMethodTypes = {
       parameters: RequestParameters &
         Endpoints["GET /orgs/{org}/organization-roles/{role_id}"]["parameters"];
       response: Endpoints["GET /orgs/{org}/organization-roles/{role_id}"]["response"];
+    };
+    getOrgRulesetHistory: {
+      parameters: RequestParameters &
+        Endpoints["GET /orgs/{org}/rulesets/{ruleset_id}/history"]["parameters"];
+      response: Endpoints["GET /orgs/{org}/rulesets/{ruleset_id}/history"]["response"];
+    };
+    getOrgRulesetVersion: {
+      parameters: RequestParameters &
+        Endpoints["GET /orgs/{org}/rulesets/{ruleset_id}/history/{version_id}"]["parameters"];
+      response: Endpoints["GET /orgs/{org}/rulesets/{ruleset_id}/history/{version_id}"]["response"];
     };
     getWebhook: {
       parameters: RequestParameters &
@@ -3862,6 +3959,16 @@ export type RestEndpointMethodTypes = {
         Endpoints["GET /repos/{owner}/{repo}/rulesets/{ruleset_id}"]["parameters"];
       response: Endpoints["GET /repos/{owner}/{repo}/rulesets/{ruleset_id}"]["response"];
     };
+    getRepoRulesetHistory: {
+      parameters: RequestParameters &
+        Endpoints["GET /repos/{owner}/{repo}/rulesets/{ruleset_id}/history"]["parameters"];
+      response: Endpoints["GET /repos/{owner}/{repo}/rulesets/{ruleset_id}/history"]["response"];
+    };
+    getRepoRulesetVersion: {
+      parameters: RequestParameters &
+        Endpoints["GET /repos/{owner}/{repo}/rulesets/{ruleset_id}/history/{version_id}"]["parameters"];
+      response: Endpoints["GET /repos/{owner}/{repo}/rulesets/{ruleset_id}/history/{version_id}"]["response"];
+    };
     getRepoRulesets: {
       parameters: RequestParameters &
         Endpoints["GET /repos/{owner}/{repo}/rulesets"]["parameters"];
@@ -4395,6 +4502,11 @@ export type RestEndpointMethodTypes = {
         Endpoints["PUT /orgs/{org}/teams/{team_slug}/projects/{project_id}"]["parameters"];
       response: Endpoints["PUT /orgs/{org}/teams/{team_slug}/projects/{project_id}"]["response"];
     };
+    addOrUpdateProjectPermissionsLegacy: {
+      parameters: RequestParameters &
+        Endpoints["PUT /teams/{team_id}/projects/{project_id}"]["parameters"];
+      response: Endpoints["PUT /teams/{team_id}/projects/{project_id}"]["response"];
+    };
     addOrUpdateRepoPermissionsInOrg: {
       parameters: RequestParameters &
         Endpoints["PUT /orgs/{org}/teams/{team_slug}/repos/{owner}/{repo}"]["parameters"];
@@ -4404,6 +4516,11 @@ export type RestEndpointMethodTypes = {
       parameters: RequestParameters &
         Endpoints["GET /orgs/{org}/teams/{team_slug}/projects/{project_id}"]["parameters"];
       response: Endpoints["GET /orgs/{org}/teams/{team_slug}/projects/{project_id}"]["response"];
+    };
+    checkPermissionsForProjectLegacy: {
+      parameters: RequestParameters &
+        Endpoints["GET /teams/{team_id}/projects/{project_id}"]["parameters"];
+      response: Endpoints["GET /teams/{team_id}/projects/{project_id}"]["response"];
     };
     checkPermissionsForRepoInOrg: {
       parameters: RequestParameters &
@@ -4500,6 +4617,11 @@ export type RestEndpointMethodTypes = {
         Endpoints["GET /orgs/{org}/teams/{team_slug}/projects"]["parameters"];
       response: Endpoints["GET /orgs/{org}/teams/{team_slug}/projects"]["response"];
     };
+    listProjectsLegacy: {
+      parameters: RequestParameters &
+        Endpoints["GET /teams/{team_id}/projects"]["parameters"];
+      response: Endpoints["GET /teams/{team_id}/projects"]["response"];
+    };
     listReposInOrg: {
       parameters: RequestParameters &
         Endpoints["GET /orgs/{org}/teams/{team_slug}/repos"]["parameters"];
@@ -4514,6 +4636,11 @@ export type RestEndpointMethodTypes = {
       parameters: RequestParameters &
         Endpoints["DELETE /orgs/{org}/teams/{team_slug}/projects/{project_id}"]["parameters"];
       response: Endpoints["DELETE /orgs/{org}/teams/{team_slug}/projects/{project_id}"]["response"];
+    };
+    removeProjectLegacy: {
+      parameters: RequestParameters &
+        Endpoints["DELETE /teams/{team_id}/projects/{project_id}"]["parameters"];
+      response: Endpoints["DELETE /teams/{team_id}/projects/{project_id}"]["response"];
     };
     removeRepoInOrg: {
       parameters: RequestParameters &

@@ -1,14 +1,14 @@
 ---
-name: Enable automated security fixes
+name: Enable Dependabot security updates
 example: octokit.rest.repos.enableAutomatedSecurityFixes({ owner, repo })
 route: PUT /repos/{owner}/{repo}/automated-security-fixes
 scope: repos
 type: API method
 ---
 
-# Enable automated security fixes
+# Enable Dependabot security updates
 
-Enables automated security fixes for a repository. The authenticated user must have admin access to the repository. For more information, see "[Configuring automated security fixes](https://docs.github.com/articles/configuring-automated-security-fixes)".
+Enables Dependabot security updates for a repository. The authenticated user must have admin access to the repository. For more information, see "[Configuring Dependabot security updates](https://docs.github.com/articles/configuring-automated-security-fixes)".
 
 ```js
 octokit.rest.repos.enableAutomatedSecurityFixes({
@@ -41,4 +41,4 @@ The name of the repository without the `.git` extension. The name is not case se
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/repos/repos#enable-automated-security-fixes).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/repos/repos#enable-dependabot-security-updates).

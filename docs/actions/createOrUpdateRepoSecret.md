@@ -1,6 +1,6 @@
 ---
 name: Create or update a repository secret
-example: octokit.rest.actions.createOrUpdateRepoSecret({ owner, repo, secret_name })
+example: octokit.rest.actions.createOrUpdateRepoSecret({ owner, repo, secret_name, encrypted_value, key_id })
 route: PUT /repos/{owner}/{repo}/actions/secrets/{secret_name}
 scope: actions
 type: API method
@@ -20,6 +20,8 @@ octokit.rest.actions.createOrUpdateRepoSecret({
   owner,
   repo,
   secret_name,
+  encrypted_value,
+  key_id,
 });
 ```
 
@@ -49,12 +51,12 @@ The name of the repository without the `.git` extension. The name is not case se
 The name of the secret.
 
 </td></tr>
-<tr><td>encrypted_value</td><td>no</td><td>
+<tr><td>encrypted_value</td><td>yes</td><td>
 
 Value for your secret, encrypted with [LibSodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages) using the public key retrieved from the [Get a repository public key](https://docs.github.com/rest/actions/secrets#get-a-repository-public-key) endpoint.
 
 </td></tr>
-<tr><td>key_id</td><td>no</td><td>
+<tr><td>key_id</td><td>yes</td><td>
 
 ID of the key you used to encrypt the secret.
 

@@ -105,6 +105,11 @@ Whether to use labeled runners or standard GitHub runners.
 The label of the runner to use for code scanning default setup when runner_type is 'labeled'.
 
 </td></tr>
+<tr><td>code_scanning_delegated_alert_dismissal</td><td>no</td><td>
+
+The enablement status of code scanning delegated alert dismissal
+
+</td></tr>
 <tr><td>secret_scanning</td><td>no</td><td>
 
 The enablement status of secret scanning
@@ -148,6 +153,16 @@ The enablement status of secret scanning validity checks
 <tr><td>secret_scanning_non_provider_patterns</td><td>no</td><td>
 
 The enablement status of secret scanning non provider patterns
+
+</td></tr>
+<tr><td>secret_scanning_generic_secrets</td><td>no</td><td>
+
+The enablement status of Copilot secret scanning
+
+</td></tr>
+<tr><td>secret_scanning_delegated_alert_dismissal</td><td>no</td><td>
+
+The enablement status of secret scanning delegated alert dismissal
 
 </td></tr>
 <tr><td>private_vulnerability_reporting</td><td>no</td><td>

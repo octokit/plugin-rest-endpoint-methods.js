@@ -167,7 +167,7 @@ The environments that must be successfully deployed to before branches can be me
 </td></tr>
 <tr><td>rules[].parameters.allowed_merge_methods</td><td>no</td><td>
 
-When merging pull requests, you can allow any combination of merge commits, squashing, or rebasing. At least one option must be enabled.
+Array of allowed merge methods. Allowed values include `merge`, `squash`, and `rebase`. At least one option must be enabled.
 
 </td></tr>
 <tr><td>rules[].parameters.dismiss_stale_reviews_on_push</td><td>yes</td><td>

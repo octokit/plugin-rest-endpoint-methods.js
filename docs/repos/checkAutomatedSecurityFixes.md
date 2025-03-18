@@ -1,14 +1,14 @@
 ---
-name: Check if automated security fixes are enabled for a repository
+name: Check if Dependabot security updates are enabled for a repository
 example: octokit.rest.repos.checkAutomatedSecurityFixes({ owner, repo })
 route: GET /repos/{owner}/{repo}/automated-security-fixes
 scope: repos
 type: API method
 ---
 
-# Check if automated security fixes are enabled for a repository
+# Check if Dependabot security updates are enabled for a repository
 
-Shows whether automated security fixes are enabled, disabled or paused for a repository. The authenticated user must have admin read access to the repository. For more information, see "[Configuring automated security fixes](https://docs.github.com/articles/configuring-automated-security-fixes)".
+Shows whether Dependabot security updates are enabled, disabled or paused for a repository. The authenticated user must have admin read access to the repository. For more information, see "[Configuring Dependabot security updates](https://docs.github.com/articles/configuring-automated-security-fixes)".
 
 ```js
 octokit.rest.repos.checkAutomatedSecurityFixes({
@@ -41,4 +41,4 @@ The name of the repository without the `.git` extension. The name is not case se
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/repos/repos#check-if-automated-security-fixes-are-enabled-for-a-repository).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/repos/repos#check-if-dependabot-security-updates-are-enabled-for-a-repository).

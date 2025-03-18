@@ -129,6 +129,19 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
+     * Creates a GitHub-hosted runner for an organization.
+     * OAuth tokens and personal access tokens (classic) need the `manage_runners:org` scope to use this endpoint.
+     */
+    createHostedRunnerForOrg: {
+      (
+        params?: RestEndpointMethodTypes["actions"]["createHostedRunnerForOrg"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["actions"]["createHostedRunnerForOrg"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
      * Creates or updates an environment secret with an encrypted value. Encrypt your secret using
      * [LibSodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages). For more information, see "[Encrypting secrets for the REST API](https://docs.github.com/rest/guides/encrypting-secrets-for-the-rest-api)."
      *
@@ -453,6 +466,18 @@ export type RestEndpointMethods = {
         params?: RestEndpointMethodTypes["actions"]["deleteEnvironmentVariable"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["deleteEnvironmentVariable"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Deletes a GitHub-hosted runner for an organization.
+     */
+    deleteHostedRunnerForOrg: {
+      (
+        params?: RestEndpointMethodTypes["actions"]["deleteHostedRunnerForOrg"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["actions"]["deleteHostedRunnerForOrg"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -979,6 +1004,80 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
+     * Gets a GitHub-hosted runner configured in an organization.
+     *
+     * OAuth app tokens and personal access tokens (classic) need the `manage_runners:org` scope to use this endpoint.
+     */
+    getHostedRunnerForOrg: {
+      (
+        params?: RestEndpointMethodTypes["actions"]["getHostedRunnerForOrg"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["actions"]["getHostedRunnerForOrg"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Get the list of GitHub-owned images available for GitHub-hosted runners for an organization.
+     */
+    getHostedRunnersGithubOwnedImagesForOrg: {
+      (
+        params?: RestEndpointMethodTypes["actions"]["getHostedRunnersGithubOwnedImagesForOrg"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["actions"]["getHostedRunnersGithubOwnedImagesForOrg"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Get the GitHub-hosted runners limits for an organization.
+     */
+    getHostedRunnersLimitsForOrg: {
+      (
+        params?: RestEndpointMethodTypes["actions"]["getHostedRunnersLimitsForOrg"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["actions"]["getHostedRunnersLimitsForOrg"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Get the list of machine specs available for GitHub-hosted runners for an organization.
+     */
+    getHostedRunnersMachineSpecsForOrg: {
+      (
+        params?: RestEndpointMethodTypes["actions"]["getHostedRunnersMachineSpecsForOrg"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["actions"]["getHostedRunnersMachineSpecsForOrg"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Get the list of partner images available for GitHub-hosted runners for an organization.
+     */
+    getHostedRunnersPartnerImagesForOrg: {
+      (
+        params?: RestEndpointMethodTypes["actions"]["getHostedRunnersPartnerImagesForOrg"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["actions"]["getHostedRunnersPartnerImagesForOrg"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Get the list of platforms available for GitHub-hosted runners for an organization.
+     */
+    getHostedRunnersPlatformsForOrg: {
+      (
+        params?: RestEndpointMethodTypes["actions"]["getHostedRunnersPlatformsForOrg"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["actions"]["getHostedRunnersPlatformsForOrg"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
      * Gets a specific job in a workflow run.
      *
      * Anyone with read access to the repository can use this endpoint.
@@ -1233,6 +1332,9 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
+     * > [!WARNING]
+     * > This endpoint is in the process of closing down. Refer to "[Actions Get workflow usage and Get workflow run usage endpoints closing down](https://github.blog/changelog/2025-02-02-actions-get-workflow-usage-and-get-workflow-run-usage-endpoints-closing-down/)" for more information.
+     *
      * Gets the number of billable minutes and total run time for a specific workflow run. Billable minutes only apply to workflows in private repositories that use GitHub-hosted runners. Usage is listed for each GitHub-hosted runner operating system in milliseconds. Any job re-runs are also included in the usage. The usage does not include the multiplier for macOS and Windows runners and is not rounded up to the nearest whole minute. For more information, see "[Managing billing for GitHub Actions](https://docs.github.com/github/setting-up-and-managing-billing-and-payments-on-github/managing-billing-for-github-actions)".
      *
      * Anyone with read access to the repository can use this endpoint.
@@ -1249,6 +1351,9 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
+     * > [!WARNING]
+     * > This endpoint is in the process of closing down. Refer to "[Actions Get workflow usage and Get workflow run usage endpoints closing down](https://github.blog/changelog/2025-02-02-actions-get-workflow-usage-and-get-workflow-run-usage-endpoints-closing-down/)" for more information.
+     *
      * Gets the number of billable minutes used by a specific workflow during the current billing cycle. Billable minutes only apply to workflows in private repositories that use GitHub-hosted runners. Usage is listed for each GitHub-hosted runner operating system in milliseconds. Any job re-runs are also included in the usage. The usage does not include the multiplier for macOS and Windows runners and is not rounded up to the nearest whole minute. For more information, see "[Managing billing for GitHub Actions](https://docs.github.com/github/setting-up-and-managing-billing-and-payments-on-github/managing-billing-for-github-actions)".
      *
      * You can replace `workflow_id` with the workflow file name. For example, you could use `main.yaml`.
@@ -1311,6 +1416,34 @@ export type RestEndpointMethods = {
         params?: RestEndpointMethodTypes["actions"]["listEnvironmentVariables"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["listEnvironmentVariables"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Lists the GitHub-hosted runners in an organization group.
+     *
+     * OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
+     */
+    listGithubHostedRunnersInGroupForOrg: {
+      (
+        params?: RestEndpointMethodTypes["actions"]["listGithubHostedRunnersInGroupForOrg"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["actions"]["listGithubHostedRunnersInGroupForOrg"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Lists all GitHub-hosted runners configured in an organization.
+     *
+     * OAuth app tokens and personal access tokens (classic) need the `manage_runner:org` scope to use this endpoint.
+     */
+    listHostedRunnersForOrg: {
+      (
+        params?: RestEndpointMethodTypes["actions"]["listHostedRunnersForOrg"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["actions"]["listHostedRunnersForOrg"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -2060,6 +2193,19 @@ export type RestEndpointMethods = {
         params?: RestEndpointMethodTypes["actions"]["updateEnvironmentVariable"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["updateEnvironmentVariable"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Updates a GitHub-hosted runner for an organization.
+     * OAuth app tokens and personal access tokens (classic) need the `manage_runners:org` scope to use this endpoint.
+     */
+    updateHostedRunnerForOrg: {
+      (
+        params?: RestEndpointMethodTypes["actions"]["updateHostedRunnerForOrg"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["actions"]["updateHostedRunnerForOrg"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -3352,7 +3498,7 @@ export type RestEndpointMethods = {
     /**
      * Commits an autofix for a code scanning alert.
      *
-     * If an autofix is commited as a result of this request, then this endpoint will return a 201 Created response.
+     * If an autofix is committed as a result of this request, then this endpoint will return a 201 Created response.
      *
      * OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with private or public repositories, or the `public_repo` scope to use this endpoint with only public repositories.
      */
@@ -5042,7 +5188,7 @@ export type RestEndpointMethods = {
     };
     /**
      * > [!NOTE]
-     * > This endpoint is in public preview and is subject to change.
+     * > This endpoint is closing down. It will be accessible throughout February 2025, but will not return any new data after February 1st.
      *
      * You can use this endpoint to see a daily breakdown of aggregated usage metrics for Copilot completions and Copilot Chat in the IDE
      * across an organization, with a further breakdown of suggestions, acceptances, and number of active users by editor and language for each day.
@@ -5067,7 +5213,7 @@ export type RestEndpointMethods = {
     };
     /**
      * > [!NOTE]
-     * > This endpoint is in public preview and is subject to change.
+     * > This endpoint is closing down. It will be accessible throughout February 2025, but will not return any new data after February 1st.
      *
      * You can use this endpoint to see a daily breakdown of aggregated usage metrics for Copilot completions and Copilot Chat in the IDE
      * for users within a team, with a further breakdown of suggestions, acceptances, and number of active users by editor and language for each day.
@@ -6027,6 +6173,92 @@ export type RestEndpointMethods = {
         params?: RestEndpointMethodTypes["gitignore"]["getTemplate"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["gitignore"]["getTemplate"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+  };
+  hostedCompute: {
+    /**
+     * Creates a hosted compute network configuration for an organization.
+     *
+     * OAuth app tokens and personal access tokens (classic) need the `write:network_configurations` scope to use this endpoint.
+     */
+    createNetworkConfigurationForOrg: {
+      (
+        params?: RestEndpointMethodTypes["hostedCompute"]["createNetworkConfigurationForOrg"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["hostedCompute"]["createNetworkConfigurationForOrg"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Deletes a hosted compute network configuration from an organization.
+     *
+     * OAuth app tokens and personal access tokens (classic) need the `write:network_configurations` scope to use this endpoint.
+     */
+    deleteNetworkConfigurationFromOrg: {
+      (
+        params?: RestEndpointMethodTypes["hostedCompute"]["deleteNetworkConfigurationFromOrg"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["hostedCompute"]["deleteNetworkConfigurationFromOrg"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Gets a hosted compute network configuration configured in an organization.
+     *
+     * OAuth app tokens and personal access tokens (classic) need the `read:network_configurations` scope to use this endpoint.
+     */
+    getNetworkConfigurationForOrg: {
+      (
+        params?: RestEndpointMethodTypes["hostedCompute"]["getNetworkConfigurationForOrg"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["hostedCompute"]["getNetworkConfigurationForOrg"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Gets a hosted compute network settings resource configured for an organization.
+     *
+     * OAuth app tokens and personal access tokens (classic) need the `read:network_configurations` scope to use this endpoint.
+     */
+    getNetworkSettingsForOrg: {
+      (
+        params?: RestEndpointMethodTypes["hostedCompute"]["getNetworkSettingsForOrg"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["hostedCompute"]["getNetworkSettingsForOrg"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Lists all hosted compute network configurations configured in an organization.
+     *
+     * OAuth app tokens and personal access tokens (classic) need the `read:network_configurations` scope to use this endpoint.
+     */
+    listNetworkConfigurationsForOrg: {
+      (
+        params?: RestEndpointMethodTypes["hostedCompute"]["listNetworkConfigurationsForOrg"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["hostedCompute"]["listNetworkConfigurationsForOrg"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Updates a hosted compute network configuration for an organization.
+     *
+     * OAuth app tokens and personal access tokens (classic) need the `write:network_configurations` scope to use this endpoint.
+     */
+    updateNetworkConfigurationForOrg: {
+      (
+        params?: RestEndpointMethodTypes["hostedCompute"]["updateNetworkConfigurationForOrg"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["hostedCompute"]["updateNetworkConfigurationForOrg"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -7441,7 +7673,7 @@ export type RestEndpointMethods = {
     /**
      * Gets information about an organization.
      *
-     * When the value of `two_factor_requirement_enabled` is `true`, the organization requires all members, billing managers, and outside collaborators to enable [two-factor authentication](https://docs.github.com/articles/securing-your-account-with-two-factor-authentication-2fa/).
+     * When the value of `two_factor_requirement_enabled` is `true`, the organization requires all members, billing managers, outside collaborators, guest collaborators, repository collaborators, or everyone with access to any repository within the organization to enable [two-factor authentication](https://docs.github.com/articles/securing-your-account-with-two-factor-authentication-2fa/).
      *
      * To see the full details about an organization, the authenticated user must be an organization owner.
      *
@@ -7520,6 +7752,30 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["orgs"]["getOrgRole"]["parameters"],
       ): Promise<RestEndpointMethodTypes["orgs"]["getOrgRole"]["response"]>;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Get the history of an organization ruleset.
+     */
+    getOrgRulesetHistory: {
+      (
+        params?: RestEndpointMethodTypes["orgs"]["getOrgRulesetHistory"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["orgs"]["getOrgRulesetHistory"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Get a version of an organization ruleset.
+     */
+    getOrgRulesetVersion: {
+      (
+        params?: RestEndpointMethodTypes["orgs"]["getOrgRulesetVersion"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["orgs"]["getOrgRulesetVersion"]["response"]
+      >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
@@ -8831,7 +9087,10 @@ export type RestEndpointMethods = {
   };
   projects: {
     /**
-     * Adds a collaborator to an organization project and sets their permission level. You must be an organization owner or a project `admin` to add a collaborator.
+     * > [!WARNING]
+     * > **Closing down notice:** Projects (classic) is being deprecated in favor of the new Projects experience.
+     * > See the [changelog](https://github.blog/changelog/2024-05-23-sunset-notice-projects-classic/) for more information.
+     * @deprecated octokit.rest.projects.addCollaborator() is deprecated, see https://docs.github.com/rest/projects/collaborators#add-project-collaborator
      */
     addCollaborator: {
       (
@@ -8842,7 +9101,12 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
-
+    /**
+     * > [!WARNING]
+     * > **Closing down notice:** Projects (classic) is being deprecated in favor of the new Projects experience.
+     * > See the [changelog](https://github.blog/changelog/2024-05-23-sunset-notice-projects-classic/) for more information.
+     * @deprecated octokit.rest.projects.createCard() is deprecated, see https://docs.github.com/rest/projects/cards#create-a-project-card
+     */
     createCard: {
       (
         params?: RestEndpointMethodTypes["projects"]["createCard"]["parameters"],
@@ -8851,7 +9115,10 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Creates a new project column.
+     * > [!WARNING]
+     * > **Closing down notice:** Projects (classic) is being deprecated in favor of the new Projects experience.
+     * > See the [changelog](https://github.blog/changelog/2024-05-23-sunset-notice-projects-classic/) for more information.
+     * @deprecated octokit.rest.projects.createColumn() is deprecated, see https://docs.github.com/rest/projects/columns#create-a-project-column
      */
     createColumn: {
       (
@@ -8863,7 +9130,10 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Creates a user project board. Returns a `410 Gone` status if the user does not have existing classic projects. If you do not have sufficient privileges to perform this action, a `401 Unauthorized` or `410 Gone` status is returned.
+     * > [!WARNING]
+     * > **Closing down notice:** Projects (classic) is being deprecated in favor of the new Projects experience.
+     * > See the [changelog](https://github.blog/changelog/2024-05-23-sunset-notice-projects-classic/) for more information.
+     * @deprecated octokit.rest.projects.createForAuthenticatedUser() is deprecated, see https://docs.github.com/rest/projects/projects#create-a-user-project
      */
     createForAuthenticatedUser: {
       (
@@ -8875,7 +9145,10 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Creates an organization project board. Returns a `410 Gone` status if projects are disabled in the organization or if the organization does not have existing classic projects. If you do not have sufficient privileges to perform this action, a `401 Unauthorized` or `410 Gone` status is returned.
+     * > [!WARNING]
+     * > **Closing down notice:** Projects (classic) is being deprecated in favor of the new Projects experience.
+     * > See the [changelog](https://github.blog/changelog/2024-05-23-sunset-notice-projects-classic/) for more information.
+     * @deprecated octokit.rest.projects.createForOrg() is deprecated, see https://docs.github.com/rest/projects/projects#create-an-organization-project
      */
     createForOrg: {
       (
@@ -8887,7 +9160,10 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Creates a repository project board. Returns a `410 Gone` status if projects are disabled in the repository or if the repository does not have existing classic projects. If you do not have sufficient privileges to perform this action, a `401 Unauthorized` or `410 Gone` status is returned.
+     * > [!WARNING]
+     * > **Closing down notice:** Projects (classic) is being deprecated in favor of the new Projects experience.
+     * > See the [changelog](https://github.blog/changelog/2024-05-23-sunset-notice-projects-classic/) for more information.
+     * @deprecated octokit.rest.projects.createForRepo() is deprecated, see https://docs.github.com/rest/projects/projects#create-a-repository-project
      */
     createForRepo: {
       (
@@ -8899,7 +9175,10 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Deletes a project board. Returns a `404 Not Found` status if projects are disabled.
+     * > [!WARNING]
+     * > **Closing down notice:** Projects (classic) is being deprecated in favor of the new Projects experience.
+     * > See the [changelog](https://github.blog/changelog/2024-05-23-sunset-notice-projects-classic/) for more information.
+     * @deprecated octokit.rest.projects.delete() is deprecated, see https://docs.github.com/rest/projects/projects#delete-a-project
      */
     delete: {
       (
@@ -8909,7 +9188,10 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Deletes a project card
+     * > [!WARNING]
+     * > **Closing down notice:** Projects (classic) is being deprecated in favor of the new Projects experience.
+     * > See the [changelog](https://github.blog/changelog/2024-05-23-sunset-notice-projects-classic/) for more information.
+     * @deprecated octokit.rest.projects.deleteCard() is deprecated, see https://docs.github.com/rest/projects/cards#delete-a-project-card
      */
     deleteCard: {
       (
@@ -8919,7 +9201,10 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Deletes a project column.
+     * > [!WARNING]
+     * > **Closing down notice:** Projects (classic) is being deprecated in favor of the new Projects experience.
+     * > See the [changelog](https://github.blog/changelog/2024-05-23-sunset-notice-projects-classic/) for more information.
+     * @deprecated octokit.rest.projects.deleteColumn() is deprecated, see https://docs.github.com/rest/projects/columns#delete-a-project-column
      */
     deleteColumn: {
       (
@@ -8931,7 +9216,10 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Gets a project by its `id`. Returns a `404 Not Found` status if projects are disabled. If you do not have sufficient privileges to perform this action, a `401 Unauthorized` or `410 Gone` status is returned.
+     * > [!WARNING]
+     * > **Closing down notice:** Projects (classic) is being deprecated in favor of the new Projects experience.
+     * > See the [changelog](https://github.blog/changelog/2024-05-23-sunset-notice-projects-classic/) for more information.
+     * @deprecated octokit.rest.projects.get() is deprecated, see https://docs.github.com/rest/projects/projects#get-a-project
      */
     get: {
       (
@@ -8941,7 +9229,10 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Gets information about a project card.
+     * > [!WARNING]
+     * > **Closing down notice:** Projects (classic) is being deprecated in favor of the new Projects experience.
+     * > See the [changelog](https://github.blog/changelog/2024-05-23-sunset-notice-projects-classic/) for more information.
+     * @deprecated octokit.rest.projects.getCard() is deprecated, see https://docs.github.com/rest/projects/cards#get-a-project-card
      */
     getCard: {
       (
@@ -8951,7 +9242,10 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Gets information about a project column.
+     * > [!WARNING]
+     * > **Closing down notice:** Projects (classic) is being deprecated in favor of the new Projects experience.
+     * > See the [changelog](https://github.blog/changelog/2024-05-23-sunset-notice-projects-classic/) for more information.
+     * @deprecated octokit.rest.projects.getColumn() is deprecated, see https://docs.github.com/rest/projects/columns#get-a-project-column
      */
     getColumn: {
       (
@@ -8961,7 +9255,10 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Returns the collaborator's permission level for an organization project. Possible values for the `permission` key: `admin`, `write`, `read`, `none`. You must be an organization owner or a project `admin` to review a user's permission level.
+     * > [!WARNING]
+     * > **Closing down notice:** Projects (classic) is being deprecated in favor of the new Projects experience.
+     * > See the [changelog](https://github.blog/changelog/2024-05-23-sunset-notice-projects-classic/) for more information.
+     * @deprecated octokit.rest.projects.getPermissionForUser() is deprecated, see https://docs.github.com/rest/projects/collaborators#get-project-permission-for-a-user
      */
     getPermissionForUser: {
       (
@@ -8973,7 +9270,10 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Lists the project cards in a project.
+     * > [!WARNING]
+     * > **Closing down notice:** Projects (classic) is being deprecated in favor of the new Projects experience.
+     * > See the [changelog](https://github.blog/changelog/2024-05-23-sunset-notice-projects-classic/) for more information.
+     * @deprecated octokit.rest.projects.listCards() is deprecated, see https://docs.github.com/rest/projects/cards#list-project-cards
      */
     listCards: {
       (
@@ -8983,7 +9283,10 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Lists the collaborators for an organization project. For a project, the list of collaborators includes outside collaborators, organization members that are direct collaborators, organization members with access through team memberships, organization members with access through default organization permissions, and organization owners. You must be an organization owner or a project `admin` to list collaborators.
+     * > [!WARNING]
+     * > **Closing down notice:** Projects (classic) is being deprecated in favor of the new Projects experience.
+     * > See the [changelog](https://github.blog/changelog/2024-05-23-sunset-notice-projects-classic/) for more information.
+     * @deprecated octokit.rest.projects.listCollaborators() is deprecated, see https://docs.github.com/rest/projects/collaborators#list-project-collaborators
      */
     listCollaborators: {
       (
@@ -8995,7 +9298,10 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Lists the project columns in a project.
+     * > [!WARNING]
+     * > **Closing down notice:** Projects (classic) is being deprecated in favor of the new Projects experience.
+     * > See the [changelog](https://github.blog/changelog/2024-05-23-sunset-notice-projects-classic/) for more information.
+     * @deprecated octokit.rest.projects.listColumns() is deprecated, see https://docs.github.com/rest/projects/columns#list-project-columns
      */
     listColumns: {
       (
@@ -9007,7 +9313,10 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Lists the projects in an organization. Returns a `404 Not Found` status if projects are disabled in the organization. If you do not have sufficient privileges to perform this action, a `401 Unauthorized` or `410 Gone` status is returned.
+     * > [!WARNING]
+     * > **Closing down notice:** Projects (classic) is being deprecated in favor of the new Projects experience.
+     * > See the [changelog](https://github.blog/changelog/2024-05-23-sunset-notice-projects-classic/) for more information.
+     * @deprecated octokit.rest.projects.listForOrg() is deprecated, see https://docs.github.com/rest/projects/projects#list-organization-projects
      */
     listForOrg: {
       (
@@ -9017,7 +9326,10 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Lists the projects in a repository. Returns a `404 Not Found` status if projects are disabled in the repository. If you do not have sufficient privileges to perform this action, a `401 Unauthorized` or `410 Gone` status is returned.
+     * > [!WARNING]
+     * > **Closing down notice:** Projects (classic) is being deprecated in favor of the new Projects experience.
+     * > See the [changelog](https://github.blog/changelog/2024-05-23-sunset-notice-projects-classic/) for more information.
+     * @deprecated octokit.rest.projects.listForRepo() is deprecated, see https://docs.github.com/rest/projects/projects#list-repository-projects
      */
     listForRepo: {
       (
@@ -9029,7 +9341,10 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Lists projects for a user.
+     * > [!WARNING]
+     * > **Closing down notice:** Projects (classic) is being deprecated in favor of the new Projects experience.
+     * > See the [changelog](https://github.blog/changelog/2024-05-23-sunset-notice-projects-classic/) for more information.
+     * @deprecated octokit.rest.projects.listForUser() is deprecated, see https://docs.github.com/rest/projects/projects#list-user-projects
      */
     listForUser: {
       (
@@ -9040,7 +9355,12 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
-
+    /**
+     * > [!WARNING]
+     * > **Closing down notice:** Projects (classic) is being deprecated in favor of the new Projects experience.
+     * > See the [changelog](https://github.blog/changelog/2024-05-23-sunset-notice-projects-classic/) for more information.
+     * @deprecated octokit.rest.projects.moveCard() is deprecated, see https://docs.github.com/rest/projects/cards#move-a-project-card
+     */
     moveCard: {
       (
         params?: RestEndpointMethodTypes["projects"]["moveCard"]["parameters"],
@@ -9048,7 +9368,12 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
-
+    /**
+     * > [!WARNING]
+     * > **Closing down notice:** Projects (classic) is being deprecated in favor of the new Projects experience.
+     * > See the [changelog](https://github.blog/changelog/2024-05-23-sunset-notice-projects-classic/) for more information.
+     * @deprecated octokit.rest.projects.moveColumn() is deprecated, see https://docs.github.com/rest/projects/columns#move-a-project-column
+     */
     moveColumn: {
       (
         params?: RestEndpointMethodTypes["projects"]["moveColumn"]["parameters"],
@@ -9057,7 +9382,10 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Removes a collaborator from an organization project. You must be an organization owner or a project `admin` to remove a collaborator.
+     * > [!WARNING]
+     * > **Closing down notice:** Projects (classic) is being deprecated in favor of the new Projects experience.
+     * > See the [changelog](https://github.blog/changelog/2024-05-23-sunset-notice-projects-classic/) for more information.
+     * @deprecated octokit.rest.projects.removeCollaborator() is deprecated, see https://docs.github.com/rest/projects/collaborators#remove-user-as-a-collaborator
      */
     removeCollaborator: {
       (
@@ -9069,7 +9397,10 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Updates a project board's information. Returns a `404 Not Found` status if projects are disabled. If you do not have sufficient privileges to perform this action, a `401 Unauthorized` or `410 Gone` status is returned.
+     * > [!WARNING]
+     * > **Closing down notice:** Projects (classic) is being deprecated in favor of the new Projects experience.
+     * > See the [changelog](https://github.blog/changelog/2024-05-23-sunset-notice-projects-classic/) for more information.
+     * @deprecated octokit.rest.projects.update() is deprecated, see https://docs.github.com/rest/projects/projects#update-a-project
      */
     update: {
       (
@@ -9078,7 +9409,12 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
-
+    /**
+     * > [!WARNING]
+     * > **Closing down notice:** Projects (classic) is being deprecated in favor of the new Projects experience.
+     * > See the [changelog](https://github.blog/changelog/2024-05-23-sunset-notice-projects-classic/) for more information.
+     * @deprecated octokit.rest.projects.updateCard() is deprecated, see https://docs.github.com/rest/projects/cards#update-an-existing-project-card
+     */
     updateCard: {
       (
         params?: RestEndpointMethodTypes["projects"]["updateCard"]["parameters"],
@@ -9086,7 +9422,12 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
-
+    /**
+     * > [!WARNING]
+     * > **Closing down notice:** Projects (classic) is being deprecated in favor of the new Projects experience.
+     * > See the [changelog](https://github.blog/changelog/2024-05-23-sunset-notice-projects-classic/) for more information.
+     * @deprecated octokit.rest.projects.updateColumn() is deprecated, see https://docs.github.com/rest/projects/columns#update-an-existing-project-column
+     */
     updateColumn: {
       (
         params?: RestEndpointMethodTypes["projects"]["updateColumn"]["parameters"],
@@ -10049,7 +10390,7 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Shows whether automated security fixes are enabled, disabled or paused for a repository. The authenticated user must have admin read access to the repository. For more information, see "[Configuring automated security fixes](https://docs.github.com/articles/configuring-automated-security-fixes)".
+     * Shows whether Dependabot security updates are enabled, disabled or paused for a repository. The authenticated user must have admin read access to the repository. For more information, see "[Configuring Dependabot security updates](https://docs.github.com/articles/configuring-automated-security-fixes)".
      */
     checkAutomatedSecurityFixes: {
       (
@@ -10916,7 +11257,7 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Disables automated security fixes for a repository. The authenticated user must have admin access to the repository. For more information, see "[Configuring automated security fixes](https://docs.github.com/articles/configuring-automated-security-fixes)".
+     * Disables Dependabot security updates for a repository. The authenticated user must have admin access to the repository. For more information, see "[Configuring Dependabot security updates](https://docs.github.com/articles/configuring-automated-security-fixes)".
      */
     disableAutomatedSecurityFixes: {
       (
@@ -11022,7 +11363,7 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Enables automated security fixes for a repository. The authenticated user must have admin access to the repository. For more information, see "[Configuring automated security fixes](https://docs.github.com/articles/configuring-automated-security-fixes)".
+     * Enables Dependabot security updates for a repository. The authenticated user must have admin access to the repository. For more information, see "[Configuring Dependabot security updates](https://docs.github.com/articles/configuring-automated-security-fixes)".
      */
     enableAutomatedSecurityFixes: {
       (
@@ -11842,6 +12183,30 @@ export type RestEndpointMethods = {
         params?: RestEndpointMethodTypes["repos"]["getRepoRuleset"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["getRepoRuleset"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Get the history of a repository ruleset.
+     */
+    getRepoRulesetHistory: {
+      (
+        params?: RestEndpointMethodTypes["repos"]["getRepoRulesetHistory"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["repos"]["getRepoRulesetHistory"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Get a version of a repository ruleset.
+     */
+    getRepoRulesetVersion: {
+      (
+        params?: RestEndpointMethodTypes["repos"]["getRepoRulesetVersion"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["repos"]["getRepoRulesetVersion"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -12976,19 +13341,9 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Find issues by state and keyword. This method returns up to 100 results [per page](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api).
-     *
-     * When searching for issues, you can get text match metadata for the issue **title**, issue **body**, and issue **comment body** fields when you pass the `text-match` media type. For more details about how to receive highlighted
-     * search results, see [Text match metadata](https://docs.github.com/rest/search/search#text-match-metadata).
-     *
-     * For example, if you want to find the oldest unresolved Python bugs on Windows. Your query might look something like this.
-     *
-     * `q=windows+label:bug+language:python+state:open&sort=created&order=asc`
-     *
-     * This query searches for the keyword `windows`, within any open issue that is labeled as `bug`. The search runs across repositories whose primary language is Python. The results are sorted by creation date in ascending order, which means the oldest issues appear first in the search results.
-     *
-     * > [!NOTE]
-     * > For requests made by GitHub Apps with a user access token, you can't retrieve a combination of issues and pull requests in a single query. Requests that don't include the `is:issue` or `is:pull-request` qualifier will receive an HTTP `422 Unprocessable Entity` response. To get results for both issues and pull requests, you must send separate queries for issues and pull requests. For more information about the `is` qualifier, see "[Searching only issues or pull requests](https://docs.github.com/github/searching-for-information-on-github/searching-issues-and-pull-requests#search-only-issues-or-pull-requests)."
+     * > [!WARNING]
+     * > **Notice:** Search for issues and pull requests will be overridden by advanced search on September 4, 2025.
+     * @deprecated octokit.rest.search.issuesAndPullRequests() is deprecated, see https://docs.github.com/rest/search/search#search-issues-and-pull-requests
      */
     issuesAndPullRequests: {
       (
@@ -13388,16 +13743,31 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Adds an organization project to a team. To add a project to a team or update the team's permission on a project, the authenticated user must have `admin` permissions for the project. The project and team must be part of the same organization.
-     *
-     * > [!NOTE]
-     * > You can also specify a team by `org_id` and `team_id` using the route `PUT /organizations/{org_id}/team/{team_id}/projects/{project_id}`.
+     * > [!WARNING]
+     * > **Closing down notice:** Projects (classic) is being deprecated in favor of the new Projects experience.
+     * > See the [changelog](https://github.blog/changelog/2024-05-23-sunset-notice-projects-classic/) for more information.
+     * @deprecated octokit.rest.teams.addOrUpdateProjectPermissionsInOrg() is deprecated, see https://docs.github.com/rest/teams/teams#add-or-update-team-project-permissions
      */
     addOrUpdateProjectPermissionsInOrg: {
       (
         params?: RestEndpointMethodTypes["teams"]["addOrUpdateProjectPermissionsInOrg"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["teams"]["addOrUpdateProjectPermissionsInOrg"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * > [!WARNING]
+     * > **Closing down notice:** Projects (classic) is being deprecated in favor of the new Projects experience.
+     * > See the [changelog](https://github.blog/changelog/2024-05-23-sunset-notice-projects-classic/) for more information.
+     * @deprecated octokit.rest.teams.addOrUpdateProjectPermissionsLegacy() is deprecated, see https://docs.github.com/rest/teams/teams#add-or-update-team-project-permissions-legacy
+     */
+    addOrUpdateProjectPermissionsLegacy: {
+      (
+        params?: RestEndpointMethodTypes["teams"]["addOrUpdateProjectPermissionsLegacy"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["teams"]["addOrUpdateProjectPermissionsLegacy"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -13420,16 +13790,31 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Checks whether a team has `read`, `write`, or `admin` permissions for an organization project. The response includes projects inherited from a parent team.
-     *
-     * > [!NOTE]
-     * > You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/{org_id}/team/{team_id}/projects/{project_id}`.
+     * > [!WARNING]
+     * > **Closing down notice:** Projects (classic) is being deprecated in favor of the new Projects experience.
+     * > See the [changelog](https://github.blog/changelog/2024-05-23-sunset-notice-projects-classic/) for more information.
+     * @deprecated octokit.rest.teams.checkPermissionsForProjectInOrg() is deprecated, see https://docs.github.com/rest/teams/teams#check-team-permissions-for-a-project
      */
     checkPermissionsForProjectInOrg: {
       (
         params?: RestEndpointMethodTypes["teams"]["checkPermissionsForProjectInOrg"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["teams"]["checkPermissionsForProjectInOrg"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * > [!WARNING]
+     * > **Closing down notice:** Projects (classic) is being deprecated in favor of the new Projects experience.
+     * > See the [changelog](https://github.blog/changelog/2024-05-23-sunset-notice-projects-classic/) for more information.
+     * @deprecated octokit.rest.teams.checkPermissionsForProjectLegacy() is deprecated, see https://docs.github.com/rest/teams/teams#check-team-permissions-for-a-project-legacy
+     */
+    checkPermissionsForProjectLegacy: {
+      (
+        params?: RestEndpointMethodTypes["teams"]["checkPermissionsForProjectLegacy"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["teams"]["checkPermissionsForProjectLegacy"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -13729,16 +14114,31 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Lists the organization projects for a team.
-     *
-     * > [!NOTE]
-     * > You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/{org_id}/team/{team_id}/projects`.
+     * > [!WARNING]
+     * > **Closing down notice:** Projects (classic) is being deprecated in favor of the new Projects experience.
+     * > See the [changelog](https://github.blog/changelog/2024-05-23-sunset-notice-projects-classic/) for more information.
+     * @deprecated octokit.rest.teams.listProjectsInOrg() is deprecated, see https://docs.github.com/rest/teams/teams#list-team-projects
      */
     listProjectsInOrg: {
       (
         params?: RestEndpointMethodTypes["teams"]["listProjectsInOrg"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["teams"]["listProjectsInOrg"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * > [!WARNING]
+     * > **Closing down notice:** Projects (classic) is being deprecated in favor of the new Projects experience.
+     * > See the [changelog](https://github.blog/changelog/2024-05-23-sunset-notice-projects-classic/) for more information.
+     * @deprecated octokit.rest.teams.listProjectsLegacy() is deprecated, see https://docs.github.com/rest/teams/teams#list-team-projects-legacy
+     */
+    listProjectsLegacy: {
+      (
+        params?: RestEndpointMethodTypes["teams"]["listProjectsLegacy"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["teams"]["listProjectsLegacy"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -13779,16 +14179,31 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Removes an organization project from a team. An organization owner or a team maintainer can remove any project from the team. To remove a project from a team as an organization member, the authenticated user must have `read` access to both the team and project, or `admin` access to the team or project. This endpoint removes the project from the team, but does not delete the project.
-     *
-     * > [!NOTE]
-     * > You can also specify a team by `org_id` and `team_id` using the route `DELETE /organizations/{org_id}/team/{team_id}/projects/{project_id}`.
+     * > [!WARNING]
+     * > **Closing down notice:** Projects (classic) is being deprecated in favor of the new Projects experience.
+     * > See the [changelog](https://github.blog/changelog/2024-05-23-sunset-notice-projects-classic/) for more information.
+     * @deprecated octokit.rest.teams.removeProjectInOrg() is deprecated, see https://docs.github.com/rest/teams/teams#remove-a-project-from-a-team
      */
     removeProjectInOrg: {
       (
         params?: RestEndpointMethodTypes["teams"]["removeProjectInOrg"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["teams"]["removeProjectInOrg"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * > [!WARNING]
+     * > **Closing down notice:** Projects (classic) is being deprecated in favor of the new Projects experience.
+     * > See the [changelog](https://github.blog/changelog/2024-05-23-sunset-notice-projects-classic/) for more information.
+     * @deprecated octokit.rest.teams.removeProjectLegacy() is deprecated, see https://docs.github.com/rest/teams/teams#remove-a-project-from-a-team-legacy
+     */
+    removeProjectLegacy: {
+      (
+        params?: RestEndpointMethodTypes["teams"]["removeProjectLegacy"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["teams"]["removeProjectLegacy"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -14146,9 +14561,11 @@ export type RestEndpointMethods = {
     /**
      * Provides publicly available information about someone with a GitHub account. This method takes their durable user `ID` instead of their `login`, which can change over time.
      *
-     * The `email` key in the following response is the publicly visible email address from your GitHub [profile page](https://github.com/settings/profile). When setting up your profile, you can select a primary email address to be “public” which provides an email entry for this endpoint. If you do not set a public email address for `email`, then it will have a value of `null`. You only see publicly visible email addresses when authenticated with GitHub. For more information, see [Authentication](https://docs.github.com/rest/guides/getting-started-with-the-rest-api#authentication).
+     * If you are requesting information about an [Enterprise Managed User](https://docs.github.com/enterprise-cloud@latest/admin/managing-iam/understanding-iam-for-enterprises/about-enterprise-managed-users), or a GitHub App bot that is installed in an organization that uses Enterprise Managed Users, your requests must be authenticated as a user or GitHub App that has access to the organization to view that account's information. If you are not authorized, the request will return a `404 Not Found` status.
      *
-     * The Emails API enables you to list all of your email addresses, and toggle a primary email to be visible publicly. For more information, see "[Emails API](https://docs.github.com/rest/users/emails)".
+     * The `email` key in the following response is the publicly visible email address from your GitHub [profile page](https://github.com/settings/profile). When setting up your profile, you can select a primary email address to be public which provides an email entry for this endpoint. If you do not set a public email address for `email`, then it will have a value of `null`. You only see publicly visible email addresses when authenticated with GitHub. For more information, see [Authentication](https://docs.github.com/rest/guides/getting-started-with-the-rest-api#authentication).
+     *
+     * The Emails API enables you to list all of your email addresses, and toggle a primary email to be visible publicly. For more information, see [Emails API](https://docs.github.com/rest/users/emails).
      */
     getById: {
       (
@@ -14160,9 +14577,11 @@ export type RestEndpointMethods = {
     /**
      * Provides publicly available information about someone with a GitHub account.
      *
-     * The `email` key in the following response is the publicly visible email address from your GitHub [profile page](https://github.com/settings/profile). When setting up your profile, you can select a primary email address to be “public” which provides an email entry for this endpoint. If you do not set a public email address for `email`, then it will have a value of `null`. You only see publicly visible email addresses when authenticated with GitHub. For more information, see [Authentication](https://docs.github.com/rest/guides/getting-started-with-the-rest-api#authentication).
+     * If you are requesting information about an [Enterprise Managed User](https://docs.github.com/enterprise-cloud@latest/admin/managing-iam/understanding-iam-for-enterprises/about-enterprise-managed-users), or a GitHub App bot that is installed in an organization that uses Enterprise Managed Users, your requests must be authenticated as a user or GitHub App that has access to the organization to view that account's information. If you are not authorized, the request will return a `404 Not Found` status.
      *
-     * The Emails API enables you to list all of your email addresses, and toggle a primary email to be visible publicly. For more information, see "[Emails API](https://docs.github.com/rest/users/emails)".
+     * The `email` key in the following response is the publicly visible email address from your GitHub [profile page](https://github.com/settings/profile). When setting up your profile, you can select a primary email address to be public which provides an email entry for this endpoint. If you do not set a public email address for `email`, then it will have a value of `null`. You only see publicly visible email addresses when authenticated with GitHub. For more information, see [Authentication](https://docs.github.com/rest/guides/getting-started-with-the-rest-api#authentication).
+     *
+     * The Emails API enables you to list all of your email addresses, and toggle a primary email to be visible publicly. For more information, see [Emails API](https://docs.github.com/rest/users/emails).
      */
     getByUsername: {
       (

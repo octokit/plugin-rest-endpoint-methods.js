@@ -10,7 +10,7 @@ type: API method
 
 Commits an autofix for a code scanning alert.
 
-If an autofix is commited as a result of this request, then this endpoint will return a 201 Created response.
+If an autofix is committed as a result of this request, then this endpoint will return a 201 Created response.
 
 OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with private or public repositories, or the `public_repo` scope to use this endpoint with only public repositories.
 
