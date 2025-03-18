@@ -10,6 +10,10 @@ type: API method
 
 Creates new or updates existing custom properties defined for an organization in a batch.
 
+If the property already exists, the existing property will be replaced with the new values.
+Missing optional values will fall back to default values, previous values will be overwritten.
+E.g. if a property exists with `values_editable_by: org_and_repo_actors` and it's updated without specifying `values_editable_by`, it will be updated to default value `org_actors`.
+
 To use this endpoint, the authenticated user must be one of:
 
 - An administrator for the organization.

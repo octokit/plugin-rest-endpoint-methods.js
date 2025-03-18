@@ -63,6 +63,11 @@ Indicates the state of the issues to return.
 Can be the name of a user. Pass in `none` for issues with no assigned user, and `*` for issues assigned to any user.
 
 </td></tr>
+<tr><td>type</td><td>no</td><td>
+
+Can be the name of an issue type. If the string `*` is passed, issues with any type are accepted. If the string `none` is passed, issues without type are returned.
+
+</td></tr>
 <tr><td>creator</td><td>no</td><td>
 
 The user that created the issue.

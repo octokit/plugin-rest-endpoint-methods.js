@@ -77,6 +77,11 @@ Labels to associate with this issue. _NOTE: Only users with push access can set 
 Logins for Users to assign to this issue. _NOTE: Only users with push access can set assignees for new issues. Assignees are silently dropped otherwise._
 
 </td></tr>
+<tr><td>type</td><td>no</td><td>
+
+The name of the issue type to associate with this issue.
+
+</td></tr>
   </tbody>
 </table>
 

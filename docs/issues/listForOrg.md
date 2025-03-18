@@ -57,6 +57,11 @@ Indicates the state of the issues to return.
 A list of comma separated label names. Example: `bug,ui,@high`
 
 </td></tr>
+<tr><td>type</td><td>no</td><td>
+
+Can be the name of an issue type.
+
+</td></tr>
 <tr><td>sort</td><td>no</td><td>
 
 What to sort results by.

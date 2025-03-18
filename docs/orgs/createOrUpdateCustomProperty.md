@@ -70,6 +70,11 @@ An ordered list of the allowed values of the property.
 The property can have up to 200 allowed values.
 
 </td></tr>
+<tr><td>values_editable_by</td><td>no</td><td>
+
+Who can edit the values of the property
+
+</td></tr>
   </tbody>
 </table>
 

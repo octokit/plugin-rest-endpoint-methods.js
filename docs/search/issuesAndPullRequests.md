@@ -11,6 +11,7 @@ type: API method
 **This method is deprecated.**
 
 > [!WARNING] > **Notice:** Search for issues and pull requests will be overridden by advanced search on September 4, 2025.
+> You can read more about this change on [the GitHub blog](https://github.blog/changelog/2025-03-06-github-issues-projects-api-support-for-issues-advanced-search-and-more/).
 
 ```js
 octokit.rest.search.issuesAndPullRequests({
