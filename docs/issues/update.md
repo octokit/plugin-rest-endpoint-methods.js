@@ -89,6 +89,11 @@ Labels to associate with this issue. Pass one or more labels to _replace_ the se
 Usernames to assign to this issue. Pass one or more user logins to _replace_ the set of assignees on this issue. Send an empty array (`[]`) to clear all assignees from the issue. Only users with push access can set assignees for new issues. Without push access to the repository, assignee changes are silently dropped.
 
 </td></tr>
+<tr><td>type</td><td>no</td><td>
+
+The name of the issue type to associate with this issue or use `null` to remove the current issue type.
+
+</td></tr>
   </tbody>
 </table>
 

@@ -2456,6 +2456,11 @@ export type RestEndpointMethodTypes = {
         Endpoints["POST /orgs/{org}/invitations"]["parameters"];
       response: Endpoints["POST /orgs/{org}/invitations"]["response"];
     };
+    createIssueType: {
+      parameters: RequestParameters &
+        Endpoints["POST /orgs/{org}/issue-types"]["parameters"];
+      response: Endpoints["POST /orgs/{org}/issue-types"]["response"];
+    };
     createOrUpdateCustomProperties: {
       parameters: RequestParameters &
         Endpoints["PATCH /orgs/{org}/properties/schema"]["parameters"];
@@ -2480,6 +2485,11 @@ export type RestEndpointMethodTypes = {
       parameters: RequestParameters &
         Endpoints["DELETE /orgs/{org}"]["parameters"];
       response: Endpoints["DELETE /orgs/{org}"]["response"];
+    };
+    deleteIssueType: {
+      parameters: RequestParameters &
+        Endpoints["DELETE /orgs/{org}/issue-types/{issue_type_id}"]["parameters"];
+      response: Endpoints["DELETE /orgs/{org}/issue-types/{issue_type_id}"]["response"];
     };
     deleteWebhook: {
       parameters: RequestParameters &
@@ -2589,6 +2599,11 @@ export type RestEndpointMethodTypes = {
       parameters: RequestParameters &
         Endpoints["GET /orgs/{org}/invitations/{invitation_id}/teams"]["parameters"];
       response: Endpoints["GET /orgs/{org}/invitations/{invitation_id}/teams"]["response"];
+    };
+    listIssueTypes: {
+      parameters: RequestParameters &
+        Endpoints["GET /orgs/{org}/issue-types"]["parameters"];
+      response: Endpoints["GET /orgs/{org}/issue-types"]["response"];
     };
     listMembers: {
       parameters: RequestParameters &
@@ -2759,6 +2774,11 @@ export type RestEndpointMethodTypes = {
       parameters: RequestParameters &
         Endpoints["PATCH /orgs/{org}"]["parameters"];
       response: Endpoints["PATCH /orgs/{org}"]["response"];
+    };
+    updateIssueType: {
+      parameters: RequestParameters &
+        Endpoints["PUT /orgs/{org}/issue-types/{issue_type_id}"]["parameters"];
+      response: Endpoints["PUT /orgs/{org}/issue-types/{issue_type_id}"]["response"];
     };
     updateMembershipForAuthenticatedUser: {
       parameters: RequestParameters &

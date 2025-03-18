@@ -94,7 +94,7 @@ The level of permission to grant the access token for repository contents, commi
 </td></tr>
 <tr><td>permissions.dependabot_secrets</td><td>no</td><td>
 
-The leve of permission to grant the access token to manage Dependabot secrets.
+The level of permission to grant the access token to manage Dependabot secrets.
 
 </td></tr>
 <tr><td>permissions.deployments</td><td>no</td><td>

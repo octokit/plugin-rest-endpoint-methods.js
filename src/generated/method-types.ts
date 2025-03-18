@@ -4401,7 +4401,7 @@ export type RestEndpointMethods = {
      * Creates or updates a repository development environment secret with an encrypted value. Encrypt your secret using
      * [LibSodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages). For more information, see "[Encrypting secrets for the REST API](https://docs.github.com/rest/guides/encrypting-secrets-for-the-rest-api)."
      *
-     * OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+     * OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint. The associated user must be a repository admin.
      */
     createOrUpdateRepoSecret: {
       (
@@ -4502,7 +4502,7 @@ export type RestEndpointMethods = {
     /**
      * Deletes a development environment secret in a repository using the secret name.
      *
-     * OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+     * OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint. The associated user must be a repository admin.
      */
     deleteRepoSecret: {
       (
@@ -7552,7 +7552,25 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
+     * Create a new issue type for an organization.
+     *
+     * You can find out more about issue types in [Managing issue types in an organization](https://docs.github.com/issues/tracking-your-work-with-issues/configuring-issues/managing-issue-types-in-an-organization).
+     */
+    createIssueType: {
+      (
+        params?: RestEndpointMethodTypes["orgs"]["createIssueType"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["orgs"]["createIssueType"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
      * Creates new or updates existing custom properties defined for an organization in a batch.
+     *
+     * If the property already exists, the existing property will be replaced with the new values.
+     * Missing optional values will fall back to default values, previous values will be overwritten.
+     * E.g. if a property exists with `values_editable_by: org_and_repo_actors` and it's updated without specifying `values_editable_by`, it will be updated to default value `org_actors`.
      *
      * To use this endpoint, the authenticated user must be one of:
      *   - An administrator for the organization.
@@ -7632,6 +7650,20 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["orgs"]["delete"]["parameters"],
       ): Promise<RestEndpointMethodTypes["orgs"]["delete"]["response"]>;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Deletes an issue type for an organization.
+     *
+     * You can find out more about issue types in [Managing issue types in an organization](https://docs.github.com/issues/tracking-your-work-with-issues/configuring-issues/managing-issue-types-in-an-organization).
+     */
+    deleteIssueType: {
+      (
+        params?: RestEndpointMethodTypes["orgs"]["deleteIssueType"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["orgs"]["deleteIssueType"]["response"]
+      >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
@@ -7950,6 +7982,16 @@ export type RestEndpointMethods = {
       ): Promise<
         RestEndpointMethodTypes["orgs"]["listInvitationTeams"]["response"]
       >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Lists all issue types for an organization.
+     */
+    listIssueTypes: {
+      (
+        params?: RestEndpointMethodTypes["orgs"]["listIssueTypes"]["parameters"],
+      ): Promise<RestEndpointMethodTypes["orgs"]["listIssueTypes"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
@@ -8448,6 +8490,20 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["orgs"]["update"]["parameters"],
       ): Promise<RestEndpointMethodTypes["orgs"]["update"]["response"]>;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Updates an issue type for an organization.
+     *
+     * You can find out more about issue types in [Managing issue types in an organization](https://docs.github.com/issues/tracking-your-work-with-issues/configuring-issues/managing-issue-types-in-an-organization).
+     */
+    updateIssueType: {
+      (
+        params?: RestEndpointMethodTypes["orgs"]["updateIssueType"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["orgs"]["updateIssueType"]["response"]
+      >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
@@ -10739,7 +10795,7 @@ export type RestEndpointMethods = {
      *
      * The authenticated user must have admin or owner permissions to the repository to use this endpoint.
      *
-     * For more information about the app that is providing this custom deployment rule, see the [documentation for the `GET /apps/{app_slug}` endpoint](https://docs.github.com/rest/apps/apps#get-an-app).
+     * For more information about the app that is providing this custom deployment rule, see the [documentation for the `GET /apps/{app_slug}` endpoint](https://docs.github.com/rest/apps/apps#get-an-app), as well as the [guide to creating custom deployment protection rules](https://docs.github.com/actions/managing-workflow-runs-and-deployments/managing-deployments/creating-custom-deployment-protection-rules).
      *
      * OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
      */
@@ -13343,6 +13399,7 @@ export type RestEndpointMethods = {
     /**
      * > [!WARNING]
      * > **Notice:** Search for issues and pull requests will be overridden by advanced search on September 4, 2025.
+     * > You can read more about this change on [the GitHub blog](https://github.blog/changelog/2025-03-06-github-issues-projects-api-support-for-issues-advanced-search-and-more/).
      * @deprecated octokit.rest.search.issuesAndPullRequests() is deprecated, see https://docs.github.com/rest/search/search#search-issues-and-pull-requests
      */
     issuesAndPullRequests: {
