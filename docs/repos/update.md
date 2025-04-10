@@ -86,6 +86,16 @@ Use the `status` property to enable or disable GitHub Advanced Security for this
 Can be `enabled` or `disabled`.
 
 </td></tr>
+<tr><td>security_and_analysis.code_security</td><td>no</td><td>
+
+Use the `status` property to enable or disable GitHub Code Security for this repository.
+
+</td></tr>
+<tr><td>security_and_analysis.code_security.status</td><td>no</td><td>
+
+Can be `enabled` or `disabled`.
+
+</td></tr>
 <tr><td>security_and_analysis.secret_scanning</td><td>no</td><td>
 
 Use the `status` property to enable or disable secret scanning for this repository. For more information, see "[About secret scanning](/code-security/secret-security/about-secret-scanning)."

@@ -8,7 +8,7 @@ type: API method
 
 # List issue types for an organization
 
-Lists all issue types for an organization.
+Lists all issue types for an organization. OAuth app tokens and personal access tokens (classic) need the read:org scope to use this endpoint.
 
 ```js
 octokit.rest.orgs.listIssueTypes({

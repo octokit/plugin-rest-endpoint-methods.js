@@ -12,6 +12,9 @@ Create a new issue type for an organization.
 
 You can find out more about issue types in [Managing issue types in an organization](https://docs.github.com/issues/tracking-your-work-with-issues/configuring-issues/managing-issue-types-in-an-organization).
 
+To use this endpoint, the authenticated user must be an administrator for the organization. OAuth app tokens and
+personal access tokens (classic) need the `admin:org` scope to use this endpoint.
+
 ```js
 octokit.rest.orgs.createIssueType({
   org,
@@ -44,11 +47,6 @@ Name of the issue type.
 <tr><td>is_enabled</td><td>yes</td><td>
 
 Whether or not the issue type is enabled at the organization level.
-
-</td></tr>
-<tr><td>is_private</td><td>no</td><td>
-
-Whether or not the issue type is restricted to issues in private repositories.
 
 </td></tr>
 <tr><td>description</td><td>no</td><td>
