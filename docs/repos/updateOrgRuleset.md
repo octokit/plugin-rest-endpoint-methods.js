@@ -174,6 +174,11 @@ The environments that must be successfully deployed to before branches can be me
 Array of allowed merge methods. Allowed values include `merge`, `squash`, and `rebase`. At least one option must be enabled.
 
 </td></tr>
+<tr><td>rules[].parameters.automatic_copilot_code_review_enabled</td><td>no</td><td>
+
+Automatically request review from Copilot for new pull requests, if the author has access to Copilot code review.
+
+</td></tr>
 <tr><td>rules[].parameters.dismiss_stale_reviews_on_push</td><td>yes</td><td>
 
 New, reviewable commits pushed will dismiss previous pull request review approvals.
@@ -251,7 +256,7 @@ The file paths that are restricted from being pushed to the commit graph.
 </td></tr>
 <tr><td>rules[].parameters.max_file_path_length</td><td>yes</td><td>
 
-The maximum amount of characters allowed in file paths
+The maximum amount of characters allowed in file paths.
 
 </td></tr>
 <tr><td>rules[].parameters.restricted_file_extensions</td><td>yes</td><td>

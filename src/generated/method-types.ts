@@ -3314,6 +3314,91 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
   };
+  campaigns: {
+    /**
+     * Create a campaign for an organization.
+     *
+     * The authenticated user must be an owner or security manager for the organization to use this endpoint.
+     *
+     * OAuth app tokens and personal access tokens (classic) need the `security_events` scope to use this endpoint.
+     *
+     * Fine-grained tokens must have the "Code scanning alerts" repository permissions (read) on all repositories included
+     * in the campaign.
+     */
+    createCampaign: {
+      (
+        params?: RestEndpointMethodTypes["campaigns"]["createCampaign"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["campaigns"]["createCampaign"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Deletes a campaign in an organization.
+     *
+     * The authenticated user must be an owner or security manager for the organization to use this endpoint.
+     *
+     * OAuth app tokens and personal access tokens (classic) need the `security_events` scope to use this endpoint.
+     */
+    deleteCampaign: {
+      (
+        params?: RestEndpointMethodTypes["campaigns"]["deleteCampaign"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["campaigns"]["deleteCampaign"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Gets a campaign for an organization.
+     *
+     * The authenticated user must be an owner or security manager for the organization to use this endpoint.
+     *
+     * OAuth app tokens and personal access tokens (classic) need the `security_events` scope to use this endpoint.
+     */
+    getCampaignSummary: {
+      (
+        params?: RestEndpointMethodTypes["campaigns"]["getCampaignSummary"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["campaigns"]["getCampaignSummary"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Lists campaigns in an organization.
+     *
+     * The authenticated user must be an owner or security manager for the organization to use this endpoint.
+     *
+     * OAuth app tokens and personal access tokens (classic) need the `security_events` scope to use this endpoint.
+     */
+    listOrgCampaigns: {
+      (
+        params?: RestEndpointMethodTypes["campaigns"]["listOrgCampaigns"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["campaigns"]["listOrgCampaigns"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Updates a campaign in an organization.
+     *
+     * The authenticated user must be an owner or security manager for the organization to use this endpoint.
+     *
+     * OAuth app tokens and personal access tokens (classic) need the `security_events` scope to use this endpoint.
+     */
+    updateCampaign: {
+      (
+        params?: RestEndpointMethodTypes["campaigns"]["updateCampaign"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["campaigns"]["updateCampaign"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+  };
   checks: {
     /**
      * **Note:** The Checks API only looks for pushes in the repository where the check suite or check run were created. Pushes to a branch in a forked repository are not detected and return an empty `pull_requests` array.
@@ -5182,59 +5267,6 @@ export type RestEndpointMethods = {
         params?: RestEndpointMethodTypes["copilot"]["listCopilotSeats"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["copilot"]["listCopilotSeats"]["response"]
-      >;
-      defaults: RequestInterface["defaults"];
-      endpoint: EndpointInterface<{ url: string }>;
-    };
-    /**
-     * > [!NOTE]
-     * > This endpoint is closing down. It will be accessible throughout February 2025, but will not return any new data after February 1st.
-     *
-     * You can use this endpoint to see a daily breakdown of aggregated usage metrics for Copilot completions and Copilot Chat in the IDE
-     * across an organization, with a further breakdown of suggestions, acceptances, and number of active users by editor and language for each day.
-     * See the response schema tab for detailed metrics definitions.
-     *
-     * The response contains metrics for up to 28 days prior. Usage metrics are processed once per day for the previous day,
-     * and the response will only include data up until yesterday. In order for an end user to be counted towards these metrics,
-     * they must have telemetry enabled in their IDE.
-     *
-     * Organization owners, and owners and billing managers of the parent enterprise, can view Copilot usage metrics.
-     *
-     * OAuth app tokens and personal access tokens (classic) need either the `manage_billing:copilot`, `read:org`, or `read:enterprise` scopes to use this endpoint.
-     */
-    usageMetricsForOrg: {
-      (
-        params?: RestEndpointMethodTypes["copilot"]["usageMetricsForOrg"]["parameters"],
-      ): Promise<
-        RestEndpointMethodTypes["copilot"]["usageMetricsForOrg"]["response"]
-      >;
-      defaults: RequestInterface["defaults"];
-      endpoint: EndpointInterface<{ url: string }>;
-    };
-    /**
-     * > [!NOTE]
-     * > This endpoint is closing down. It will be accessible throughout February 2025, but will not return any new data after February 1st.
-     *
-     * You can use this endpoint to see a daily breakdown of aggregated usage metrics for Copilot completions and Copilot Chat in the IDE
-     * for users within a team, with a further breakdown of suggestions, acceptances, and number of active users by editor and language for each day.
-     * See the response schema tab for detailed metrics definitions.
-     *
-     * The response contains metrics for up to 28 days prior. Usage metrics are processed once per day for the previous day,
-     * and the response will only include data up until yesterday. In order for an end user to be counted towards these metrics,
-     * they must have telemetry enabled in their IDE.
-     *
-     * > [!NOTE]
-     * > This endpoint will only return results for a given day if the team had five or more members with active Copilot licenses, as evaluated at the end of that day.
-     *
-     * Organization owners for the organization that contains this team, and owners and billing managers of the parent enterprise can view Copilot usage metrics for a team.
-     *
-     * OAuth app tokens and personal access tokens (classic) need either the `manage_billing:copilot`, `read:org`, or `read:enterprise` scopes to use this endpoint.
-     */
-    usageMetricsForTeam: {
-      (
-        params?: RestEndpointMethodTypes["copilot"]["usageMetricsForTeam"]["parameters"],
-      ): Promise<
-        RestEndpointMethodTypes["copilot"]["usageMetricsForTeam"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -7555,6 +7587,9 @@ export type RestEndpointMethods = {
      * Create a new issue type for an organization.
      *
      * You can find out more about issue types in [Managing issue types in an organization](https://docs.github.com/issues/tracking-your-work-with-issues/configuring-issues/managing-issue-types-in-an-organization).
+     *
+     * To use this endpoint, the authenticated user must be an administrator for the organization. OAuth app tokens and
+     * personal access tokens (classic) need the `admin:org` scope to use this endpoint.
      */
     createIssueType: {
       (
@@ -7657,6 +7692,9 @@ export type RestEndpointMethods = {
      * Deletes an issue type for an organization.
      *
      * You can find out more about issue types in [Managing issue types in an organization](https://docs.github.com/issues/tracking-your-work-with-issues/configuring-issues/managing-issue-types-in-an-organization).
+     *
+     * To use this endpoint, the authenticated user must be an administrator for the organization. OAuth app tokens and
+     * personal access tokens (classic) need the `admin:org` scope to use this endpoint.
      */
     deleteIssueType: {
       (
@@ -7986,7 +8024,7 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Lists all issue types for an organization.
+     * Lists all issue types for an organization. OAuth app tokens and personal access tokens (classic) need the read:org scope to use this endpoint.
      */
     listIssueTypes: {
       (
@@ -8497,6 +8535,9 @@ export type RestEndpointMethods = {
      * Updates an issue type for an organization.
      *
      * You can find out more about issue types in [Managing issue types in an organization](https://docs.github.com/issues/tracking-your-work-with-issues/configuring-issues/managing-issue-types-in-an-organization).
+     *
+     * To use this endpoint, the authenticated user must be an administrator for the organization. OAuth app tokens and
+     * personal access tokens (classic) need the `admin:org` scope to use this endpoint.
      */
     updateIssueType: {
       (
@@ -9136,359 +9177,6 @@ export type RestEndpointMethods = {
         params?: RestEndpointMethodTypes["privateRegistries"]["updateOrgPrivateRegistry"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["privateRegistries"]["updateOrgPrivateRegistry"]["response"]
-      >;
-      defaults: RequestInterface["defaults"];
-      endpoint: EndpointInterface<{ url: string }>;
-    };
-  };
-  projects: {
-    /**
-     * > [!WARNING]
-     * > **Closing down notice:** Projects (classic) is being deprecated in favor of the new Projects experience.
-     * > See the [changelog](https://github.blog/changelog/2024-05-23-sunset-notice-projects-classic/) for more information.
-     * @deprecated octokit.rest.projects.addCollaborator() is deprecated, see https://docs.github.com/rest/projects/collaborators#add-project-collaborator
-     */
-    addCollaborator: {
-      (
-        params?: RestEndpointMethodTypes["projects"]["addCollaborator"]["parameters"],
-      ): Promise<
-        RestEndpointMethodTypes["projects"]["addCollaborator"]["response"]
-      >;
-      defaults: RequestInterface["defaults"];
-      endpoint: EndpointInterface<{ url: string }>;
-    };
-    /**
-     * > [!WARNING]
-     * > **Closing down notice:** Projects (classic) is being deprecated in favor of the new Projects experience.
-     * > See the [changelog](https://github.blog/changelog/2024-05-23-sunset-notice-projects-classic/) for more information.
-     * @deprecated octokit.rest.projects.createCard() is deprecated, see https://docs.github.com/rest/projects/cards#create-a-project-card
-     */
-    createCard: {
-      (
-        params?: RestEndpointMethodTypes["projects"]["createCard"]["parameters"],
-      ): Promise<RestEndpointMethodTypes["projects"]["createCard"]["response"]>;
-      defaults: RequestInterface["defaults"];
-      endpoint: EndpointInterface<{ url: string }>;
-    };
-    /**
-     * > [!WARNING]
-     * > **Closing down notice:** Projects (classic) is being deprecated in favor of the new Projects experience.
-     * > See the [changelog](https://github.blog/changelog/2024-05-23-sunset-notice-projects-classic/) for more information.
-     * @deprecated octokit.rest.projects.createColumn() is deprecated, see https://docs.github.com/rest/projects/columns#create-a-project-column
-     */
-    createColumn: {
-      (
-        params?: RestEndpointMethodTypes["projects"]["createColumn"]["parameters"],
-      ): Promise<
-        RestEndpointMethodTypes["projects"]["createColumn"]["response"]
-      >;
-      defaults: RequestInterface["defaults"];
-      endpoint: EndpointInterface<{ url: string }>;
-    };
-    /**
-     * > [!WARNING]
-     * > **Closing down notice:** Projects (classic) is being deprecated in favor of the new Projects experience.
-     * > See the [changelog](https://github.blog/changelog/2024-05-23-sunset-notice-projects-classic/) for more information.
-     * @deprecated octokit.rest.projects.createForAuthenticatedUser() is deprecated, see https://docs.github.com/rest/projects/projects#create-a-user-project
-     */
-    createForAuthenticatedUser: {
-      (
-        params?: RestEndpointMethodTypes["projects"]["createForAuthenticatedUser"]["parameters"],
-      ): Promise<
-        RestEndpointMethodTypes["projects"]["createForAuthenticatedUser"]["response"]
-      >;
-      defaults: RequestInterface["defaults"];
-      endpoint: EndpointInterface<{ url: string }>;
-    };
-    /**
-     * > [!WARNING]
-     * > **Closing down notice:** Projects (classic) is being deprecated in favor of the new Projects experience.
-     * > See the [changelog](https://github.blog/changelog/2024-05-23-sunset-notice-projects-classic/) for more information.
-     * @deprecated octokit.rest.projects.createForOrg() is deprecated, see https://docs.github.com/rest/projects/projects#create-an-organization-project
-     */
-    createForOrg: {
-      (
-        params?: RestEndpointMethodTypes["projects"]["createForOrg"]["parameters"],
-      ): Promise<
-        RestEndpointMethodTypes["projects"]["createForOrg"]["response"]
-      >;
-      defaults: RequestInterface["defaults"];
-      endpoint: EndpointInterface<{ url: string }>;
-    };
-    /**
-     * > [!WARNING]
-     * > **Closing down notice:** Projects (classic) is being deprecated in favor of the new Projects experience.
-     * > See the [changelog](https://github.blog/changelog/2024-05-23-sunset-notice-projects-classic/) for more information.
-     * @deprecated octokit.rest.projects.createForRepo() is deprecated, see https://docs.github.com/rest/projects/projects#create-a-repository-project
-     */
-    createForRepo: {
-      (
-        params?: RestEndpointMethodTypes["projects"]["createForRepo"]["parameters"],
-      ): Promise<
-        RestEndpointMethodTypes["projects"]["createForRepo"]["response"]
-      >;
-      defaults: RequestInterface["defaults"];
-      endpoint: EndpointInterface<{ url: string }>;
-    };
-    /**
-     * > [!WARNING]
-     * > **Closing down notice:** Projects (classic) is being deprecated in favor of the new Projects experience.
-     * > See the [changelog](https://github.blog/changelog/2024-05-23-sunset-notice-projects-classic/) for more information.
-     * @deprecated octokit.rest.projects.delete() is deprecated, see https://docs.github.com/rest/projects/projects#delete-a-project
-     */
-    delete: {
-      (
-        params?: RestEndpointMethodTypes["projects"]["delete"]["parameters"],
-      ): Promise<RestEndpointMethodTypes["projects"]["delete"]["response"]>;
-      defaults: RequestInterface["defaults"];
-      endpoint: EndpointInterface<{ url: string }>;
-    };
-    /**
-     * > [!WARNING]
-     * > **Closing down notice:** Projects (classic) is being deprecated in favor of the new Projects experience.
-     * > See the [changelog](https://github.blog/changelog/2024-05-23-sunset-notice-projects-classic/) for more information.
-     * @deprecated octokit.rest.projects.deleteCard() is deprecated, see https://docs.github.com/rest/projects/cards#delete-a-project-card
-     */
-    deleteCard: {
-      (
-        params?: RestEndpointMethodTypes["projects"]["deleteCard"]["parameters"],
-      ): Promise<RestEndpointMethodTypes["projects"]["deleteCard"]["response"]>;
-      defaults: RequestInterface["defaults"];
-      endpoint: EndpointInterface<{ url: string }>;
-    };
-    /**
-     * > [!WARNING]
-     * > **Closing down notice:** Projects (classic) is being deprecated in favor of the new Projects experience.
-     * > See the [changelog](https://github.blog/changelog/2024-05-23-sunset-notice-projects-classic/) for more information.
-     * @deprecated octokit.rest.projects.deleteColumn() is deprecated, see https://docs.github.com/rest/projects/columns#delete-a-project-column
-     */
-    deleteColumn: {
-      (
-        params?: RestEndpointMethodTypes["projects"]["deleteColumn"]["parameters"],
-      ): Promise<
-        RestEndpointMethodTypes["projects"]["deleteColumn"]["response"]
-      >;
-      defaults: RequestInterface["defaults"];
-      endpoint: EndpointInterface<{ url: string }>;
-    };
-    /**
-     * > [!WARNING]
-     * > **Closing down notice:** Projects (classic) is being deprecated in favor of the new Projects experience.
-     * > See the [changelog](https://github.blog/changelog/2024-05-23-sunset-notice-projects-classic/) for more information.
-     * @deprecated octokit.rest.projects.get() is deprecated, see https://docs.github.com/rest/projects/projects#get-a-project
-     */
-    get: {
-      (
-        params?: RestEndpointMethodTypes["projects"]["get"]["parameters"],
-      ): Promise<RestEndpointMethodTypes["projects"]["get"]["response"]>;
-      defaults: RequestInterface["defaults"];
-      endpoint: EndpointInterface<{ url: string }>;
-    };
-    /**
-     * > [!WARNING]
-     * > **Closing down notice:** Projects (classic) is being deprecated in favor of the new Projects experience.
-     * > See the [changelog](https://github.blog/changelog/2024-05-23-sunset-notice-projects-classic/) for more information.
-     * @deprecated octokit.rest.projects.getCard() is deprecated, see https://docs.github.com/rest/projects/cards#get-a-project-card
-     */
-    getCard: {
-      (
-        params?: RestEndpointMethodTypes["projects"]["getCard"]["parameters"],
-      ): Promise<RestEndpointMethodTypes["projects"]["getCard"]["response"]>;
-      defaults: RequestInterface["defaults"];
-      endpoint: EndpointInterface<{ url: string }>;
-    };
-    /**
-     * > [!WARNING]
-     * > **Closing down notice:** Projects (classic) is being deprecated in favor of the new Projects experience.
-     * > See the [changelog](https://github.blog/changelog/2024-05-23-sunset-notice-projects-classic/) for more information.
-     * @deprecated octokit.rest.projects.getColumn() is deprecated, see https://docs.github.com/rest/projects/columns#get-a-project-column
-     */
-    getColumn: {
-      (
-        params?: RestEndpointMethodTypes["projects"]["getColumn"]["parameters"],
-      ): Promise<RestEndpointMethodTypes["projects"]["getColumn"]["response"]>;
-      defaults: RequestInterface["defaults"];
-      endpoint: EndpointInterface<{ url: string }>;
-    };
-    /**
-     * > [!WARNING]
-     * > **Closing down notice:** Projects (classic) is being deprecated in favor of the new Projects experience.
-     * > See the [changelog](https://github.blog/changelog/2024-05-23-sunset-notice-projects-classic/) for more information.
-     * @deprecated octokit.rest.projects.getPermissionForUser() is deprecated, see https://docs.github.com/rest/projects/collaborators#get-project-permission-for-a-user
-     */
-    getPermissionForUser: {
-      (
-        params?: RestEndpointMethodTypes["projects"]["getPermissionForUser"]["parameters"],
-      ): Promise<
-        RestEndpointMethodTypes["projects"]["getPermissionForUser"]["response"]
-      >;
-      defaults: RequestInterface["defaults"];
-      endpoint: EndpointInterface<{ url: string }>;
-    };
-    /**
-     * > [!WARNING]
-     * > **Closing down notice:** Projects (classic) is being deprecated in favor of the new Projects experience.
-     * > See the [changelog](https://github.blog/changelog/2024-05-23-sunset-notice-projects-classic/) for more information.
-     * @deprecated octokit.rest.projects.listCards() is deprecated, see https://docs.github.com/rest/projects/cards#list-project-cards
-     */
-    listCards: {
-      (
-        params?: RestEndpointMethodTypes["projects"]["listCards"]["parameters"],
-      ): Promise<RestEndpointMethodTypes["projects"]["listCards"]["response"]>;
-      defaults: RequestInterface["defaults"];
-      endpoint: EndpointInterface<{ url: string }>;
-    };
-    /**
-     * > [!WARNING]
-     * > **Closing down notice:** Projects (classic) is being deprecated in favor of the new Projects experience.
-     * > See the [changelog](https://github.blog/changelog/2024-05-23-sunset-notice-projects-classic/) for more information.
-     * @deprecated octokit.rest.projects.listCollaborators() is deprecated, see https://docs.github.com/rest/projects/collaborators#list-project-collaborators
-     */
-    listCollaborators: {
-      (
-        params?: RestEndpointMethodTypes["projects"]["listCollaborators"]["parameters"],
-      ): Promise<
-        RestEndpointMethodTypes["projects"]["listCollaborators"]["response"]
-      >;
-      defaults: RequestInterface["defaults"];
-      endpoint: EndpointInterface<{ url: string }>;
-    };
-    /**
-     * > [!WARNING]
-     * > **Closing down notice:** Projects (classic) is being deprecated in favor of the new Projects experience.
-     * > See the [changelog](https://github.blog/changelog/2024-05-23-sunset-notice-projects-classic/) for more information.
-     * @deprecated octokit.rest.projects.listColumns() is deprecated, see https://docs.github.com/rest/projects/columns#list-project-columns
-     */
-    listColumns: {
-      (
-        params?: RestEndpointMethodTypes["projects"]["listColumns"]["parameters"],
-      ): Promise<
-        RestEndpointMethodTypes["projects"]["listColumns"]["response"]
-      >;
-      defaults: RequestInterface["defaults"];
-      endpoint: EndpointInterface<{ url: string }>;
-    };
-    /**
-     * > [!WARNING]
-     * > **Closing down notice:** Projects (classic) is being deprecated in favor of the new Projects experience.
-     * > See the [changelog](https://github.blog/changelog/2024-05-23-sunset-notice-projects-classic/) for more information.
-     * @deprecated octokit.rest.projects.listForOrg() is deprecated, see https://docs.github.com/rest/projects/projects#list-organization-projects
-     */
-    listForOrg: {
-      (
-        params?: RestEndpointMethodTypes["projects"]["listForOrg"]["parameters"],
-      ): Promise<RestEndpointMethodTypes["projects"]["listForOrg"]["response"]>;
-      defaults: RequestInterface["defaults"];
-      endpoint: EndpointInterface<{ url: string }>;
-    };
-    /**
-     * > [!WARNING]
-     * > **Closing down notice:** Projects (classic) is being deprecated in favor of the new Projects experience.
-     * > See the [changelog](https://github.blog/changelog/2024-05-23-sunset-notice-projects-classic/) for more information.
-     * @deprecated octokit.rest.projects.listForRepo() is deprecated, see https://docs.github.com/rest/projects/projects#list-repository-projects
-     */
-    listForRepo: {
-      (
-        params?: RestEndpointMethodTypes["projects"]["listForRepo"]["parameters"],
-      ): Promise<
-        RestEndpointMethodTypes["projects"]["listForRepo"]["response"]
-      >;
-      defaults: RequestInterface["defaults"];
-      endpoint: EndpointInterface<{ url: string }>;
-    };
-    /**
-     * > [!WARNING]
-     * > **Closing down notice:** Projects (classic) is being deprecated in favor of the new Projects experience.
-     * > See the [changelog](https://github.blog/changelog/2024-05-23-sunset-notice-projects-classic/) for more information.
-     * @deprecated octokit.rest.projects.listForUser() is deprecated, see https://docs.github.com/rest/projects/projects#list-user-projects
-     */
-    listForUser: {
-      (
-        params?: RestEndpointMethodTypes["projects"]["listForUser"]["parameters"],
-      ): Promise<
-        RestEndpointMethodTypes["projects"]["listForUser"]["response"]
-      >;
-      defaults: RequestInterface["defaults"];
-      endpoint: EndpointInterface<{ url: string }>;
-    };
-    /**
-     * > [!WARNING]
-     * > **Closing down notice:** Projects (classic) is being deprecated in favor of the new Projects experience.
-     * > See the [changelog](https://github.blog/changelog/2024-05-23-sunset-notice-projects-classic/) for more information.
-     * @deprecated octokit.rest.projects.moveCard() is deprecated, see https://docs.github.com/rest/projects/cards#move-a-project-card
-     */
-    moveCard: {
-      (
-        params?: RestEndpointMethodTypes["projects"]["moveCard"]["parameters"],
-      ): Promise<RestEndpointMethodTypes["projects"]["moveCard"]["response"]>;
-      defaults: RequestInterface["defaults"];
-      endpoint: EndpointInterface<{ url: string }>;
-    };
-    /**
-     * > [!WARNING]
-     * > **Closing down notice:** Projects (classic) is being deprecated in favor of the new Projects experience.
-     * > See the [changelog](https://github.blog/changelog/2024-05-23-sunset-notice-projects-classic/) for more information.
-     * @deprecated octokit.rest.projects.moveColumn() is deprecated, see https://docs.github.com/rest/projects/columns#move-a-project-column
-     */
-    moveColumn: {
-      (
-        params?: RestEndpointMethodTypes["projects"]["moveColumn"]["parameters"],
-      ): Promise<RestEndpointMethodTypes["projects"]["moveColumn"]["response"]>;
-      defaults: RequestInterface["defaults"];
-      endpoint: EndpointInterface<{ url: string }>;
-    };
-    /**
-     * > [!WARNING]
-     * > **Closing down notice:** Projects (classic) is being deprecated in favor of the new Projects experience.
-     * > See the [changelog](https://github.blog/changelog/2024-05-23-sunset-notice-projects-classic/) for more information.
-     * @deprecated octokit.rest.projects.removeCollaborator() is deprecated, see https://docs.github.com/rest/projects/collaborators#remove-user-as-a-collaborator
-     */
-    removeCollaborator: {
-      (
-        params?: RestEndpointMethodTypes["projects"]["removeCollaborator"]["parameters"],
-      ): Promise<
-        RestEndpointMethodTypes["projects"]["removeCollaborator"]["response"]
-      >;
-      defaults: RequestInterface["defaults"];
-      endpoint: EndpointInterface<{ url: string }>;
-    };
-    /**
-     * > [!WARNING]
-     * > **Closing down notice:** Projects (classic) is being deprecated in favor of the new Projects experience.
-     * > See the [changelog](https://github.blog/changelog/2024-05-23-sunset-notice-projects-classic/) for more information.
-     * @deprecated octokit.rest.projects.update() is deprecated, see https://docs.github.com/rest/projects/projects#update-a-project
-     */
-    update: {
-      (
-        params?: RestEndpointMethodTypes["projects"]["update"]["parameters"],
-      ): Promise<RestEndpointMethodTypes["projects"]["update"]["response"]>;
-      defaults: RequestInterface["defaults"];
-      endpoint: EndpointInterface<{ url: string }>;
-    };
-    /**
-     * > [!WARNING]
-     * > **Closing down notice:** Projects (classic) is being deprecated in favor of the new Projects experience.
-     * > See the [changelog](https://github.blog/changelog/2024-05-23-sunset-notice-projects-classic/) for more information.
-     * @deprecated octokit.rest.projects.updateCard() is deprecated, see https://docs.github.com/rest/projects/cards#update-an-existing-project-card
-     */
-    updateCard: {
-      (
-        params?: RestEndpointMethodTypes["projects"]["updateCard"]["parameters"],
-      ): Promise<RestEndpointMethodTypes["projects"]["updateCard"]["response"]>;
-      defaults: RequestInterface["defaults"];
-      endpoint: EndpointInterface<{ url: string }>;
-    };
-    /**
-     * > [!WARNING]
-     * > **Closing down notice:** Projects (classic) is being deprecated in favor of the new Projects experience.
-     * > See the [changelog](https://github.blog/changelog/2024-05-23-sunset-notice-projects-classic/) for more information.
-     * @deprecated octokit.rest.projects.updateColumn() is deprecated, see https://docs.github.com/rest/projects/columns#update-an-existing-project-column
-     */
-    updateColumn: {
-      (
-        params?: RestEndpointMethodTypes["projects"]["updateColumn"]["parameters"],
-      ): Promise<
-        RestEndpointMethodTypes["projects"]["updateColumn"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -12753,7 +12441,7 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Lists the merged pull request that introduced the commit to the repository. If the commit is not present in the default branch, will only return open pull requests associated with the commit.
+     * Lists the merged pull request that introduced the commit to the repository. If the commit is not present in the default branch, it will return merged and open pull requests associated with the commit.
      *
      * To list the open or merged pull requests associated with a branch, you can set the `commit_sha` parameter to the branch name.
      */
@@ -12892,8 +12580,8 @@ export type RestEndpointMethods = {
      * To use this endpoint, the authenticated user must either be an administrator of the repository or target themselves for removal.
      *
      * This endpoint also:
-     * - Cancels any outstanding invitations
-     * - Unasigns the user from any issues
+     * - Cancels any outstanding invitations sent by the collaborator
+     * - Unassigns the user from any issues
      * - Removes access to organization projects if the user is not an organization member and is not a collaborator on any other organization repositories.
      * - Unstars the repository
      * - Updates access permissions to packages
@@ -13800,36 +13488,6 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * > [!WARNING]
-     * > **Closing down notice:** Projects (classic) is being deprecated in favor of the new Projects experience.
-     * > See the [changelog](https://github.blog/changelog/2024-05-23-sunset-notice-projects-classic/) for more information.
-     * @deprecated octokit.rest.teams.addOrUpdateProjectPermissionsInOrg() is deprecated, see https://docs.github.com/rest/teams/teams#add-or-update-team-project-permissions
-     */
-    addOrUpdateProjectPermissionsInOrg: {
-      (
-        params?: RestEndpointMethodTypes["teams"]["addOrUpdateProjectPermissionsInOrg"]["parameters"],
-      ): Promise<
-        RestEndpointMethodTypes["teams"]["addOrUpdateProjectPermissionsInOrg"]["response"]
-      >;
-      defaults: RequestInterface["defaults"];
-      endpoint: EndpointInterface<{ url: string }>;
-    };
-    /**
-     * > [!WARNING]
-     * > **Closing down notice:** Projects (classic) is being deprecated in favor of the new Projects experience.
-     * > See the [changelog](https://github.blog/changelog/2024-05-23-sunset-notice-projects-classic/) for more information.
-     * @deprecated octokit.rest.teams.addOrUpdateProjectPermissionsLegacy() is deprecated, see https://docs.github.com/rest/teams/teams#add-or-update-team-project-permissions-legacy
-     */
-    addOrUpdateProjectPermissionsLegacy: {
-      (
-        params?: RestEndpointMethodTypes["teams"]["addOrUpdateProjectPermissionsLegacy"]["parameters"],
-      ): Promise<
-        RestEndpointMethodTypes["teams"]["addOrUpdateProjectPermissionsLegacy"]["response"]
-      >;
-      defaults: RequestInterface["defaults"];
-      endpoint: EndpointInterface<{ url: string }>;
-    };
-    /**
      * To add a repository to a team or update the team's permission on a repository, the authenticated user must have admin access to the repository, and must be able to see the team. The repository must be owned by the organization, or a direct fork of a repository owned by the organization. You will get a `422 Unprocessable Entity` status if you attempt to add a repository to a team that is not owned by the organization. Note that, if you choose not to pass any parameters, you'll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see "[HTTP method](https://docs.github.com/rest/guides/getting-started-with-the-rest-api#http-method)."
      *
      * > [!NOTE]
@@ -13842,36 +13500,6 @@ export type RestEndpointMethods = {
         params?: RestEndpointMethodTypes["teams"]["addOrUpdateRepoPermissionsInOrg"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["teams"]["addOrUpdateRepoPermissionsInOrg"]["response"]
-      >;
-      defaults: RequestInterface["defaults"];
-      endpoint: EndpointInterface<{ url: string }>;
-    };
-    /**
-     * > [!WARNING]
-     * > **Closing down notice:** Projects (classic) is being deprecated in favor of the new Projects experience.
-     * > See the [changelog](https://github.blog/changelog/2024-05-23-sunset-notice-projects-classic/) for more information.
-     * @deprecated octokit.rest.teams.checkPermissionsForProjectInOrg() is deprecated, see https://docs.github.com/rest/teams/teams#check-team-permissions-for-a-project
-     */
-    checkPermissionsForProjectInOrg: {
-      (
-        params?: RestEndpointMethodTypes["teams"]["checkPermissionsForProjectInOrg"]["parameters"],
-      ): Promise<
-        RestEndpointMethodTypes["teams"]["checkPermissionsForProjectInOrg"]["response"]
-      >;
-      defaults: RequestInterface["defaults"];
-      endpoint: EndpointInterface<{ url: string }>;
-    };
-    /**
-     * > [!WARNING]
-     * > **Closing down notice:** Projects (classic) is being deprecated in favor of the new Projects experience.
-     * > See the [changelog](https://github.blog/changelog/2024-05-23-sunset-notice-projects-classic/) for more information.
-     * @deprecated octokit.rest.teams.checkPermissionsForProjectLegacy() is deprecated, see https://docs.github.com/rest/teams/teams#check-team-permissions-for-a-project-legacy
-     */
-    checkPermissionsForProjectLegacy: {
-      (
-        params?: RestEndpointMethodTypes["teams"]["checkPermissionsForProjectLegacy"]["parameters"],
-      ): Promise<
-        RestEndpointMethodTypes["teams"]["checkPermissionsForProjectLegacy"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -14171,36 +13799,6 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * > [!WARNING]
-     * > **Closing down notice:** Projects (classic) is being deprecated in favor of the new Projects experience.
-     * > See the [changelog](https://github.blog/changelog/2024-05-23-sunset-notice-projects-classic/) for more information.
-     * @deprecated octokit.rest.teams.listProjectsInOrg() is deprecated, see https://docs.github.com/rest/teams/teams#list-team-projects
-     */
-    listProjectsInOrg: {
-      (
-        params?: RestEndpointMethodTypes["teams"]["listProjectsInOrg"]["parameters"],
-      ): Promise<
-        RestEndpointMethodTypes["teams"]["listProjectsInOrg"]["response"]
-      >;
-      defaults: RequestInterface["defaults"];
-      endpoint: EndpointInterface<{ url: string }>;
-    };
-    /**
-     * > [!WARNING]
-     * > **Closing down notice:** Projects (classic) is being deprecated in favor of the new Projects experience.
-     * > See the [changelog](https://github.blog/changelog/2024-05-23-sunset-notice-projects-classic/) for more information.
-     * @deprecated octokit.rest.teams.listProjectsLegacy() is deprecated, see https://docs.github.com/rest/teams/teams#list-team-projects-legacy
-     */
-    listProjectsLegacy: {
-      (
-        params?: RestEndpointMethodTypes["teams"]["listProjectsLegacy"]["parameters"],
-      ): Promise<
-        RestEndpointMethodTypes["teams"]["listProjectsLegacy"]["response"]
-      >;
-      defaults: RequestInterface["defaults"];
-      endpoint: EndpointInterface<{ url: string }>;
-    };
-    /**
      * Lists a team's repositories visible to the authenticated user.
      *
      * > [!NOTE]
@@ -14231,36 +13829,6 @@ export type RestEndpointMethods = {
         params?: RestEndpointMethodTypes["teams"]["removeMembershipForUserInOrg"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["teams"]["removeMembershipForUserInOrg"]["response"]
-      >;
-      defaults: RequestInterface["defaults"];
-      endpoint: EndpointInterface<{ url: string }>;
-    };
-    /**
-     * > [!WARNING]
-     * > **Closing down notice:** Projects (classic) is being deprecated in favor of the new Projects experience.
-     * > See the [changelog](https://github.blog/changelog/2024-05-23-sunset-notice-projects-classic/) for more information.
-     * @deprecated octokit.rest.teams.removeProjectInOrg() is deprecated, see https://docs.github.com/rest/teams/teams#remove-a-project-from-a-team
-     */
-    removeProjectInOrg: {
-      (
-        params?: RestEndpointMethodTypes["teams"]["removeProjectInOrg"]["parameters"],
-      ): Promise<
-        RestEndpointMethodTypes["teams"]["removeProjectInOrg"]["response"]
-      >;
-      defaults: RequestInterface["defaults"];
-      endpoint: EndpointInterface<{ url: string }>;
-    };
-    /**
-     * > [!WARNING]
-     * > **Closing down notice:** Projects (classic) is being deprecated in favor of the new Projects experience.
-     * > See the [changelog](https://github.blog/changelog/2024-05-23-sunset-notice-projects-classic/) for more information.
-     * @deprecated octokit.rest.teams.removeProjectLegacy() is deprecated, see https://docs.github.com/rest/teams/teams#remove-a-project-from-a-team-legacy
-     */
-    removeProjectLegacy: {
-      (
-        params?: RestEndpointMethodTypes["teams"]["removeProjectLegacy"]["parameters"],
-      ): Promise<
-        RestEndpointMethodTypes["teams"]["removeProjectLegacy"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;

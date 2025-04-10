@@ -1081,6 +1081,33 @@ export type RestEndpointMethodTypes = {
       response: Endpoints["GET /users/{username}/settings/billing/shared-storage"]["response"];
     };
   };
+  campaigns: {
+    createCampaign: {
+      parameters: RequestParameters &
+        Endpoints["POST /orgs/{org}/campaigns"]["parameters"];
+      response: Endpoints["POST /orgs/{org}/campaigns"]["response"];
+    };
+    deleteCampaign: {
+      parameters: RequestParameters &
+        Endpoints["DELETE /orgs/{org}/campaigns/{campaign_number}"]["parameters"];
+      response: Endpoints["DELETE /orgs/{org}/campaigns/{campaign_number}"]["response"];
+    };
+    getCampaignSummary: {
+      parameters: RequestParameters &
+        Endpoints["GET /orgs/{org}/campaigns/{campaign_number}"]["parameters"];
+      response: Endpoints["GET /orgs/{org}/campaigns/{campaign_number}"]["response"];
+    };
+    listOrgCampaigns: {
+      parameters: RequestParameters &
+        Endpoints["GET /orgs/{org}/campaigns"]["parameters"];
+      response: Endpoints["GET /orgs/{org}/campaigns"]["response"];
+    };
+    updateCampaign: {
+      parameters: RequestParameters &
+        Endpoints["PATCH /orgs/{org}/campaigns/{campaign_number}"]["parameters"];
+      response: Endpoints["PATCH /orgs/{org}/campaigns/{campaign_number}"]["response"];
+    };
+  };
   checks: {
     create: {
       parameters: RequestParameters &
@@ -1641,16 +1668,6 @@ export type RestEndpointMethodTypes = {
       parameters: RequestParameters &
         Endpoints["GET /orgs/{org}/copilot/billing/seats"]["parameters"];
       response: Endpoints["GET /orgs/{org}/copilot/billing/seats"]["response"];
-    };
-    usageMetricsForOrg: {
-      parameters: RequestParameters &
-        Endpoints["GET /orgs/{org}/copilot/usage"]["parameters"];
-      response: Endpoints["GET /orgs/{org}/copilot/usage"]["response"];
-    };
-    usageMetricsForTeam: {
-      parameters: RequestParameters &
-        Endpoints["GET /orgs/{org}/team/{team_slug}/copilot/usage"]["parameters"];
-      response: Endpoints["GET /orgs/{org}/team/{team_slug}/copilot/usage"]["response"];
     };
   };
   dependabot: {
@@ -2983,133 +3000,6 @@ export type RestEndpointMethodTypes = {
       parameters: RequestParameters &
         Endpoints["PATCH /orgs/{org}/private-registries/{secret_name}"]["parameters"];
       response: Endpoints["PATCH /orgs/{org}/private-registries/{secret_name}"]["response"];
-    };
-  };
-  projects: {
-    addCollaborator: {
-      parameters: RequestParameters &
-        Endpoints["PUT /projects/{project_id}/collaborators/{username}"]["parameters"];
-      response: Endpoints["PUT /projects/{project_id}/collaborators/{username}"]["response"];
-    };
-    createCard: {
-      parameters: RequestParameters &
-        Endpoints["POST /projects/columns/{column_id}/cards"]["parameters"];
-      response: Endpoints["POST /projects/columns/{column_id}/cards"]["response"];
-    };
-    createColumn: {
-      parameters: RequestParameters &
-        Endpoints["POST /projects/{project_id}/columns"]["parameters"];
-      response: Endpoints["POST /projects/{project_id}/columns"]["response"];
-    };
-    createForAuthenticatedUser: {
-      parameters: RequestParameters &
-        Endpoints["POST /user/projects"]["parameters"];
-      response: Endpoints["POST /user/projects"]["response"];
-    };
-    createForOrg: {
-      parameters: RequestParameters &
-        Endpoints["POST /orgs/{org}/projects"]["parameters"];
-      response: Endpoints["POST /orgs/{org}/projects"]["response"];
-    };
-    createForRepo: {
-      parameters: RequestParameters &
-        Endpoints["POST /repos/{owner}/{repo}/projects"]["parameters"];
-      response: Endpoints["POST /repos/{owner}/{repo}/projects"]["response"];
-    };
-    delete: {
-      parameters: RequestParameters &
-        Endpoints["DELETE /projects/{project_id}"]["parameters"];
-      response: Endpoints["DELETE /projects/{project_id}"]["response"];
-    };
-    deleteCard: {
-      parameters: RequestParameters &
-        Endpoints["DELETE /projects/columns/cards/{card_id}"]["parameters"];
-      response: Endpoints["DELETE /projects/columns/cards/{card_id}"]["response"];
-    };
-    deleteColumn: {
-      parameters: RequestParameters &
-        Endpoints["DELETE /projects/columns/{column_id}"]["parameters"];
-      response: Endpoints["DELETE /projects/columns/{column_id}"]["response"];
-    };
-    get: {
-      parameters: RequestParameters &
-        Endpoints["GET /projects/{project_id}"]["parameters"];
-      response: Endpoints["GET /projects/{project_id}"]["response"];
-    };
-    getCard: {
-      parameters: RequestParameters &
-        Endpoints["GET /projects/columns/cards/{card_id}"]["parameters"];
-      response: Endpoints["GET /projects/columns/cards/{card_id}"]["response"];
-    };
-    getColumn: {
-      parameters: RequestParameters &
-        Endpoints["GET /projects/columns/{column_id}"]["parameters"];
-      response: Endpoints["GET /projects/columns/{column_id}"]["response"];
-    };
-    getPermissionForUser: {
-      parameters: RequestParameters &
-        Endpoints["GET /projects/{project_id}/collaborators/{username}/permission"]["parameters"];
-      response: Endpoints["GET /projects/{project_id}/collaborators/{username}/permission"]["response"];
-    };
-    listCards: {
-      parameters: RequestParameters &
-        Endpoints["GET /projects/columns/{column_id}/cards"]["parameters"];
-      response: Endpoints["GET /projects/columns/{column_id}/cards"]["response"];
-    };
-    listCollaborators: {
-      parameters: RequestParameters &
-        Endpoints["GET /projects/{project_id}/collaborators"]["parameters"];
-      response: Endpoints["GET /projects/{project_id}/collaborators"]["response"];
-    };
-    listColumns: {
-      parameters: RequestParameters &
-        Endpoints["GET /projects/{project_id}/columns"]["parameters"];
-      response: Endpoints["GET /projects/{project_id}/columns"]["response"];
-    };
-    listForOrg: {
-      parameters: RequestParameters &
-        Endpoints["GET /orgs/{org}/projects"]["parameters"];
-      response: Endpoints["GET /orgs/{org}/projects"]["response"];
-    };
-    listForRepo: {
-      parameters: RequestParameters &
-        Endpoints["GET /repos/{owner}/{repo}/projects"]["parameters"];
-      response: Endpoints["GET /repos/{owner}/{repo}/projects"]["response"];
-    };
-    listForUser: {
-      parameters: RequestParameters &
-        Endpoints["GET /users/{username}/projects"]["parameters"];
-      response: Endpoints["GET /users/{username}/projects"]["response"];
-    };
-    moveCard: {
-      parameters: RequestParameters &
-        Endpoints["POST /projects/columns/cards/{card_id}/moves"]["parameters"];
-      response: Endpoints["POST /projects/columns/cards/{card_id}/moves"]["response"];
-    };
-    moveColumn: {
-      parameters: RequestParameters &
-        Endpoints["POST /projects/columns/{column_id}/moves"]["parameters"];
-      response: Endpoints["POST /projects/columns/{column_id}/moves"]["response"];
-    };
-    removeCollaborator: {
-      parameters: RequestParameters &
-        Endpoints["DELETE /projects/{project_id}/collaborators/{username}"]["parameters"];
-      response: Endpoints["DELETE /projects/{project_id}/collaborators/{username}"]["response"];
-    };
-    update: {
-      parameters: RequestParameters &
-        Endpoints["PATCH /projects/{project_id}"]["parameters"];
-      response: Endpoints["PATCH /projects/{project_id}"]["response"];
-    };
-    updateCard: {
-      parameters: RequestParameters &
-        Endpoints["PATCH /projects/columns/cards/{card_id}"]["parameters"];
-      response: Endpoints["PATCH /projects/columns/cards/{card_id}"]["response"];
-    };
-    updateColumn: {
-      parameters: RequestParameters &
-        Endpoints["PATCH /projects/columns/{column_id}"]["parameters"];
-      response: Endpoints["PATCH /projects/columns/{column_id}"]["response"];
     };
   };
   pulls: {
@@ -4517,30 +4407,10 @@ export type RestEndpointMethodTypes = {
         Endpoints["PUT /orgs/{org}/teams/{team_slug}/memberships/{username}"]["parameters"];
       response: Endpoints["PUT /orgs/{org}/teams/{team_slug}/memberships/{username}"]["response"];
     };
-    addOrUpdateProjectPermissionsInOrg: {
-      parameters: RequestParameters &
-        Endpoints["PUT /orgs/{org}/teams/{team_slug}/projects/{project_id}"]["parameters"];
-      response: Endpoints["PUT /orgs/{org}/teams/{team_slug}/projects/{project_id}"]["response"];
-    };
-    addOrUpdateProjectPermissionsLegacy: {
-      parameters: RequestParameters &
-        Endpoints["PUT /teams/{team_id}/projects/{project_id}"]["parameters"];
-      response: Endpoints["PUT /teams/{team_id}/projects/{project_id}"]["response"];
-    };
     addOrUpdateRepoPermissionsInOrg: {
       parameters: RequestParameters &
         Endpoints["PUT /orgs/{org}/teams/{team_slug}/repos/{owner}/{repo}"]["parameters"];
       response: Endpoints["PUT /orgs/{org}/teams/{team_slug}/repos/{owner}/{repo}"]["response"];
-    };
-    checkPermissionsForProjectInOrg: {
-      parameters: RequestParameters &
-        Endpoints["GET /orgs/{org}/teams/{team_slug}/projects/{project_id}"]["parameters"];
-      response: Endpoints["GET /orgs/{org}/teams/{team_slug}/projects/{project_id}"]["response"];
-    };
-    checkPermissionsForProjectLegacy: {
-      parameters: RequestParameters &
-        Endpoints["GET /teams/{team_id}/projects/{project_id}"]["parameters"];
-      response: Endpoints["GET /teams/{team_id}/projects/{project_id}"]["response"];
     };
     checkPermissionsForRepoInOrg: {
       parameters: RequestParameters &
@@ -4632,16 +4502,6 @@ export type RestEndpointMethodTypes = {
         Endpoints["GET /orgs/{org}/teams/{team_slug}/invitations"]["parameters"];
       response: Endpoints["GET /orgs/{org}/teams/{team_slug}/invitations"]["response"];
     };
-    listProjectsInOrg: {
-      parameters: RequestParameters &
-        Endpoints["GET /orgs/{org}/teams/{team_slug}/projects"]["parameters"];
-      response: Endpoints["GET /orgs/{org}/teams/{team_slug}/projects"]["response"];
-    };
-    listProjectsLegacy: {
-      parameters: RequestParameters &
-        Endpoints["GET /teams/{team_id}/projects"]["parameters"];
-      response: Endpoints["GET /teams/{team_id}/projects"]["response"];
-    };
     listReposInOrg: {
       parameters: RequestParameters &
         Endpoints["GET /orgs/{org}/teams/{team_slug}/repos"]["parameters"];
@@ -4651,16 +4511,6 @@ export type RestEndpointMethodTypes = {
       parameters: RequestParameters &
         Endpoints["DELETE /orgs/{org}/teams/{team_slug}/memberships/{username}"]["parameters"];
       response: Endpoints["DELETE /orgs/{org}/teams/{team_slug}/memberships/{username}"]["response"];
-    };
-    removeProjectInOrg: {
-      parameters: RequestParameters &
-        Endpoints["DELETE /orgs/{org}/teams/{team_slug}/projects/{project_id}"]["parameters"];
-      response: Endpoints["DELETE /orgs/{org}/teams/{team_slug}/projects/{project_id}"]["response"];
-    };
-    removeProjectLegacy: {
-      parameters: RequestParameters &
-        Endpoints["DELETE /teams/{team_id}/projects/{project_id}"]["parameters"];
-      response: Endpoints["DELETE /teams/{team_id}/projects/{project_id}"]["response"];
     };
     removeRepoInOrg: {
       parameters: RequestParameters &
