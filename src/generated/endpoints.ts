@@ -470,6 +470,9 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     getGithubBillingUsageReportOrg: [
       "GET /organizations/{org}/settings/billing/usage",
     ],
+    getGithubBillingUsageReportUser: [
+      "GET /users/{username}/settings/billing/usage",
+    ],
     getGithubPackagesBillingOrg: ["GET /orgs/{org}/settings/billing/packages"],
     getGithubPackagesBillingUser: [
       "GET /users/{username}/settings/billing/packages",
@@ -768,6 +771,7 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     ],
     listCopilotSeats: ["GET /orgs/{org}/copilot/billing/seats"],
   },
+  credentials: { revoke: ["POST /credentials/revoke"] },
   dependabot: {
     addSelectedRepoToOrgSecret: [
       "PUT /orgs/{org}/dependabot/secrets/{secret_name}/repositories/{repository_id}",

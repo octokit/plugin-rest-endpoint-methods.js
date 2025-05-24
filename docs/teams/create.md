@@ -47,7 +47,7 @@ The description of the team.
 </td></tr>
 <tr><td>maintainers</td><td>no</td><td>
 
-List GitHub IDs for organization members who will become team maintainers.
+List GitHub usernames for organization members who will become team maintainers.
 
 </td></tr>
 <tr><td>repo_names</td><td>no</td><td>

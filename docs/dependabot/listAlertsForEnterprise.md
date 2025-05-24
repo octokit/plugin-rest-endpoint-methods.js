@@ -75,6 +75,12 @@ CVE Exploit Prediction Scoring System (EPSS) percentage. Can be specified as:
 Filters the list of alerts based on EPSS percentages. If specified, only alerts with the provided EPSS percentages will be returned.
 
 </td></tr>
+<tr><td>has</td><td>no</td><td>
+
+Filters the list of alerts based on whether the alert has the given value. If specified, only alerts meeting this criterion will be returned.
+Multiple `has` filters can be passed to filter for alerts that have all of the values. Currently, only `patch` is supported.
+
+</td></tr>
 <tr><td>scope</td><td>no</td><td>
 
 The scope of the vulnerable dependency. If specified, only alerts with this scope will be returned.

@@ -1060,6 +1060,11 @@ export type RestEndpointMethodTypes = {
         Endpoints["GET /organizations/{org}/settings/billing/usage"]["parameters"];
       response: Endpoints["GET /organizations/{org}/settings/billing/usage"]["response"];
     };
+    getGithubBillingUsageReportUser: {
+      parameters: RequestParameters &
+        Endpoints["GET /users/{username}/settings/billing/usage"]["parameters"];
+      response: Endpoints["GET /users/{username}/settings/billing/usage"]["response"];
+    };
     getGithubPackagesBillingOrg: {
       parameters: RequestParameters &
         Endpoints["GET /orgs/{org}/settings/billing/packages"]["parameters"];
@@ -1668,6 +1673,13 @@ export type RestEndpointMethodTypes = {
       parameters: RequestParameters &
         Endpoints["GET /orgs/{org}/copilot/billing/seats"]["parameters"];
       response: Endpoints["GET /orgs/{org}/copilot/billing/seats"]["response"];
+    };
+  };
+  credentials: {
+    revoke: {
+      parameters: RequestParameters &
+        Endpoints["POST /credentials/revoke"]["parameters"];
+      response: Endpoints["POST /credentials/revoke"]["response"];
     };
   };
   dependabot: {

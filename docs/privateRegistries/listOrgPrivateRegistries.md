@@ -8,9 +8,6 @@ type: API method
 
 # List private registries for an organization
 
-> [!NOTE]
-> This endpoint is in public preview and is subject to change.
-
 Lists all private registry configurations available at the organization-level without revealing their encrypted
 values.
 

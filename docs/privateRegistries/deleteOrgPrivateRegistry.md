@@ -8,9 +8,6 @@ type: API method
 
 # Delete a private registry for an organization
 
-> [!NOTE]
-> This endpoint is in public preview and is subject to change.
-
 Delete a private registry configuration at the organization-level.
 
 OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.

@@ -56,7 +56,7 @@ A description of the code security configuration
 </td></tr>
 <tr><td>advanced_security</td><td>no</td><td>
 
-The enablement status of GitHub Advanced Security
+The enablement status of GitHub Advanced Security features. `enabled` will enable both Code Security and Secret Protection features.
 
 </td></tr>
 <tr><td>dependency_graph</td><td>no</td><td>
