@@ -40,7 +40,7 @@
     "prettier": "3.5.3",
     "semantic-release-plugin-update-version-in-files": "^2.0.0",
     "sinon": "^20.0.0",
-    "sort-keys": "^5.0.0",
+    "sort-keys": "^6.0.0",
     "string-to-jsdoc-comment": "^1.0.0",
     "typescript": "^5.0.0",
     "vitest": "^3.0.5"
