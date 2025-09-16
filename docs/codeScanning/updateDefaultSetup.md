@@ -60,6 +60,11 @@ Runner label to be used if the runner type is labeled.
 CodeQL query suite to be used.
 
 </td></tr>
+<tr><td>threat_model</td><td>no</td><td>
+
+Threat model to be used for code scanning analysis. Use `remote` to analyze only network sources and `remote_and_local` to include local sources like filesystem access, command-line arguments, database reads, environment variable and standard input.
+
+</td></tr>
 <tr><td>languages</td><td>no</td><td>
 
 CodeQL languages to be analyzed.

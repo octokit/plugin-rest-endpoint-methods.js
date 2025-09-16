@@ -1768,6 +1768,16 @@ export type RestEndpointMethodTypes = {
         Endpoints["DELETE /orgs/{org}/dependabot/secrets/{secret_name}/repositories/{repository_id}"]["parameters"];
       response: Endpoints["DELETE /orgs/{org}/dependabot/secrets/{secret_name}/repositories/{repository_id}"]["response"];
     };
+    repositoryAccessForOrg: {
+      parameters: RequestParameters &
+        Endpoints["GET /organizations/{org}/dependabot/repository-access"]["parameters"];
+      response: Endpoints["GET /organizations/{org}/dependabot/repository-access"]["response"];
+    };
+    setRepositoryAccessDefaultLevel: {
+      parameters: RequestParameters &
+        Endpoints["PUT /organizations/{org}/dependabot/repository-access/default-level"]["parameters"];
+      response: Endpoints["PUT /organizations/{org}/dependabot/repository-access/default-level"]["response"];
+    };
     setSelectedReposForOrgSecret: {
       parameters: RequestParameters &
         Endpoints["PUT /orgs/{org}/dependabot/secrets/{secret_name}/repositories"]["parameters"];
@@ -1777,6 +1787,11 @@ export type RestEndpointMethodTypes = {
       parameters: RequestParameters &
         Endpoints["PATCH /repos/{owner}/{repo}/dependabot/alerts/{alert_number}"]["parameters"];
       response: Endpoints["PATCH /repos/{owner}/{repo}/dependabot/alerts/{alert_number}"]["response"];
+    };
+    updateRepositoryAccessForOrg: {
+      parameters: RequestParameters &
+        Endpoints["PATCH /organizations/{org}/dependabot/repository-access"]["parameters"];
+      response: Endpoints["PATCH /organizations/{org}/dependabot/repository-access"]["response"];
     };
   };
   dependencyGraph: {
@@ -2081,6 +2096,11 @@ export type RestEndpointMethodTypes = {
         Endpoints["POST /repos/{owner}/{repo}/issues/{issue_number}/assignees"]["parameters"];
       response: Endpoints["POST /repos/{owner}/{repo}/issues/{issue_number}/assignees"]["response"];
     };
+    addBlockedByDependency: {
+      parameters: RequestParameters &
+        Endpoints["POST /repos/{owner}/{repo}/issues/{issue_number}/dependencies/blocked_by"]["parameters"];
+      response: Endpoints["POST /repos/{owner}/{repo}/issues/{issue_number}/dependencies/blocked_by"]["response"];
+    };
     addLabels: {
       parameters: RequestParameters &
         Endpoints["POST /repos/{owner}/{repo}/issues/{issue_number}/labels"]["parameters"];
@@ -2161,6 +2181,11 @@ export type RestEndpointMethodTypes = {
         Endpoints["GET /repos/{owner}/{repo}/milestones/{milestone_number}"]["parameters"];
       response: Endpoints["GET /repos/{owner}/{repo}/milestones/{milestone_number}"]["response"];
     };
+    getParent: {
+      parameters: RequestParameters &
+        Endpoints["GET /repos/{owner}/{repo}/issues/{issue_number}/parent"]["parameters"];
+      response: Endpoints["GET /repos/{owner}/{repo}/issues/{issue_number}/parent"]["response"];
+    };
     list: {
       parameters: RequestParameters & Endpoints["GET /issues"]["parameters"];
       response: Endpoints["GET /issues"]["response"];
@@ -2179,6 +2204,16 @@ export type RestEndpointMethodTypes = {
       parameters: RequestParameters &
         Endpoints["GET /repos/{owner}/{repo}/issues/comments"]["parameters"];
       response: Endpoints["GET /repos/{owner}/{repo}/issues/comments"]["response"];
+    };
+    listDependenciesBlockedBy: {
+      parameters: RequestParameters &
+        Endpoints["GET /repos/{owner}/{repo}/issues/{issue_number}/dependencies/blocked_by"]["parameters"];
+      response: Endpoints["GET /repos/{owner}/{repo}/issues/{issue_number}/dependencies/blocked_by"]["response"];
+    };
+    listDependenciesBlocking: {
+      parameters: RequestParameters &
+        Endpoints["GET /repos/{owner}/{repo}/issues/{issue_number}/dependencies/blocking"]["parameters"];
+      response: Endpoints["GET /repos/{owner}/{repo}/issues/{issue_number}/dependencies/blocking"]["response"];
     };
     listEvents: {
       parameters: RequestParameters &
@@ -2249,6 +2284,11 @@ export type RestEndpointMethodTypes = {
       parameters: RequestParameters &
         Endpoints["DELETE /repos/{owner}/{repo}/issues/{issue_number}/assignees"]["parameters"];
       response: Endpoints["DELETE /repos/{owner}/{repo}/issues/{issue_number}/assignees"]["response"];
+    };
+    removeDependencyBlockedBy: {
+      parameters: RequestParameters &
+        Endpoints["DELETE /repos/{owner}/{repo}/issues/{issue_number}/dependencies/blocked_by/{issue_id}"]["parameters"];
+      response: Endpoints["DELETE /repos/{owner}/{repo}/issues/{issue_number}/dependencies/blocked_by/{issue_id}"]["response"];
     };
     removeLabel: {
       parameters: RequestParameters &
@@ -2480,6 +2520,11 @@ export type RestEndpointMethodTypes = {
         Endpoints["PUT /orgs/{org}/outside_collaborators/{username}"]["parameters"];
       response: Endpoints["PUT /orgs/{org}/outside_collaborators/{username}"]["response"];
     };
+    createArtifactStorageRecord: {
+      parameters: RequestParameters &
+        Endpoints["POST /orgs/{org}/artifacts/metadata/storage-record"]["parameters"];
+      response: Endpoints["POST /orgs/{org}/artifacts/metadata/storage-record"]["response"];
+    };
     createInvitation: {
       parameters: RequestParameters &
         Endpoints["POST /orgs/{org}/invitations"]["parameters"];
@@ -2515,6 +2560,21 @@ export type RestEndpointMethodTypes = {
         Endpoints["DELETE /orgs/{org}"]["parameters"];
       response: Endpoints["DELETE /orgs/{org}"]["response"];
     };
+    deleteAttestationsBulk: {
+      parameters: RequestParameters &
+        Endpoints["POST /orgs/{org}/attestations/delete-request"]["parameters"];
+      response: Endpoints["POST /orgs/{org}/attestations/delete-request"]["response"];
+    };
+    deleteAttestationsById: {
+      parameters: RequestParameters &
+        Endpoints["DELETE /orgs/{org}/attestations/{attestation_id}"]["parameters"];
+      response: Endpoints["DELETE /orgs/{org}/attestations/{attestation_id}"]["response"];
+    };
+    deleteAttestationsBySubjectDigest: {
+      parameters: RequestParameters &
+        Endpoints["DELETE /orgs/{org}/attestations/digest/{subject_digest}"]["parameters"];
+      response: Endpoints["DELETE /orgs/{org}/attestations/digest/{subject_digest}"]["response"];
+    };
     deleteIssueType: {
       parameters: RequestParameters &
         Endpoints["DELETE /orgs/{org}/issue-types/{issue_type_id}"]["parameters"];
@@ -2524,11 +2584,6 @@ export type RestEndpointMethodTypes = {
       parameters: RequestParameters &
         Endpoints["DELETE /orgs/{org}/hooks/{hook_id}"]["parameters"];
       response: Endpoints["DELETE /orgs/{org}/hooks/{hook_id}"]["response"];
-    };
-    enableOrDisableSecurityProductOnAllOrgRepos: {
-      parameters: RequestParameters &
-        Endpoints["POST /orgs/{org}/{security_product}/{enablement}"]["parameters"];
-      response: Endpoints["POST /orgs/{org}/{security_product}/{enablement}"]["response"];
     };
     get: {
       parameters: RequestParameters &
@@ -2595,10 +2650,20 @@ export type RestEndpointMethodTypes = {
         Endpoints["GET /orgs/{org}/installations"]["parameters"];
       response: Endpoints["GET /orgs/{org}/installations"]["response"];
     };
+    listArtifactStorageRecords: {
+      parameters: RequestParameters &
+        Endpoints["GET /orgs/{org}/artifacts/{subject_digest}/metadata/storage-records"]["parameters"];
+      response: Endpoints["GET /orgs/{org}/artifacts/{subject_digest}/metadata/storage-records"]["response"];
+    };
     listAttestations: {
       parameters: RequestParameters &
         Endpoints["GET /orgs/{org}/attestations/{subject_digest}"]["parameters"];
       response: Endpoints["GET /orgs/{org}/attestations/{subject_digest}"]["response"];
+    };
+    listAttestationsBulk: {
+      parameters: RequestParameters &
+        Endpoints["POST /orgs/{org}/attestations/bulk-list{?per_page,before,after}"]["parameters"];
+      response: Endpoints["POST /orgs/{org}/attestations/bulk-list{?per_page,before,after}"]["response"];
     };
     listBlockedUsers: {
       parameters: RequestParameters &
@@ -3012,6 +3077,98 @@ export type RestEndpointMethodTypes = {
       parameters: RequestParameters &
         Endpoints["PATCH /orgs/{org}/private-registries/{secret_name}"]["parameters"];
       response: Endpoints["PATCH /orgs/{org}/private-registries/{secret_name}"]["response"];
+    };
+  };
+  projects: {
+    addItemForOrg: {
+      parameters: RequestParameters &
+        Endpoints["POST /orgs/{org}/projectsV2/{project_number}/items"]["parameters"];
+      response: Endpoints["POST /orgs/{org}/projectsV2/{project_number}/items"]["response"];
+    };
+    addItemForUser: {
+      parameters: RequestParameters &
+        Endpoints["POST /users/{user_id}/projectsV2/{project_number}/items"]["parameters"];
+      response: Endpoints["POST /users/{user_id}/projectsV2/{project_number}/items"]["response"];
+    };
+    deleteItemForOrg: {
+      parameters: RequestParameters &
+        Endpoints["DELETE /orgs/{org}/projectsV2/{project_number}/items/{item_id}"]["parameters"];
+      response: Endpoints["DELETE /orgs/{org}/projectsV2/{project_number}/items/{item_id}"]["response"];
+    };
+    deleteItemForUser: {
+      parameters: RequestParameters &
+        Endpoints["DELETE /users/{user_id}/projectsV2/{project_number}/items/{item_id}"]["parameters"];
+      response: Endpoints["DELETE /users/{user_id}/projectsV2/{project_number}/items/{item_id}"]["response"];
+    };
+    getFieldForOrg: {
+      parameters: RequestParameters &
+        Endpoints["GET /orgs/{org}/projectsV2/{project_number}/fields/{field_id}"]["parameters"];
+      response: Endpoints["GET /orgs/{org}/projectsV2/{project_number}/fields/{field_id}"]["response"];
+    };
+    getFieldForUser: {
+      parameters: RequestParameters &
+        Endpoints["GET /users/{user_id}/projectsV2/{project_number}/fields/{field_id}"]["parameters"];
+      response: Endpoints["GET /users/{user_id}/projectsV2/{project_number}/fields/{field_id}"]["response"];
+    };
+    getForOrg: {
+      parameters: RequestParameters &
+        Endpoints["GET /orgs/{org}/projectsV2/{project_number}"]["parameters"];
+      response: Endpoints["GET /orgs/{org}/projectsV2/{project_number}"]["response"];
+    };
+    getForUser: {
+      parameters: RequestParameters &
+        Endpoints["GET /users/{user_id}/projectsV2/{project_number}"]["parameters"];
+      response: Endpoints["GET /users/{user_id}/projectsV2/{project_number}"]["response"];
+    };
+    getOrgItem: {
+      parameters: RequestParameters &
+        Endpoints["GET /orgs/{org}/projectsV2/{project_number}/items/{item_id}"]["parameters"];
+      response: Endpoints["GET /orgs/{org}/projectsV2/{project_number}/items/{item_id}"]["response"];
+    };
+    getUserItem: {
+      parameters: RequestParameters &
+        Endpoints["GET /users/{user_id}/projectsV2/{project_number}/items/{item_id}"]["parameters"];
+      response: Endpoints["GET /users/{user_id}/projectsV2/{project_number}/items/{item_id}"]["response"];
+    };
+    listFieldsForOrg: {
+      parameters: RequestParameters &
+        Endpoints["GET /orgs/{org}/projectsV2/{project_number}/fields"]["parameters"];
+      response: Endpoints["GET /orgs/{org}/projectsV2/{project_number}/fields"]["response"];
+    };
+    listFieldsForUser: {
+      parameters: RequestParameters &
+        Endpoints["GET /users/{user_id}/projectsV2/{project_number}/fields"]["parameters"];
+      response: Endpoints["GET /users/{user_id}/projectsV2/{project_number}/fields"]["response"];
+    };
+    listForOrg: {
+      parameters: RequestParameters &
+        Endpoints["GET /orgs/{org}/projectsV2"]["parameters"];
+      response: Endpoints["GET /orgs/{org}/projectsV2"]["response"];
+    };
+    listForUser: {
+      parameters: RequestParameters &
+        Endpoints["GET /users/{username}/projectsV2"]["parameters"];
+      response: Endpoints["GET /users/{username}/projectsV2"]["response"];
+    };
+    listItemsForOrg: {
+      parameters: RequestParameters &
+        Endpoints["GET /orgs/{org}/projectsV2/{project_number}/items"]["parameters"];
+      response: Endpoints["GET /orgs/{org}/projectsV2/{project_number}/items"]["response"];
+    };
+    listItemsForUser: {
+      parameters: RequestParameters &
+        Endpoints["GET /users/{user_id}/projectsV2/{project_number}/items"]["parameters"];
+      response: Endpoints["GET /users/{user_id}/projectsV2/{project_number}/items"]["response"];
+    };
+    updateItemForOrg: {
+      parameters: RequestParameters &
+        Endpoints["PATCH /orgs/{org}/projectsV2/{project_number}/items/{item_id}"]["parameters"];
+      response: Endpoints["PATCH /orgs/{org}/projectsV2/{project_number}/items/{item_id}"]["response"];
+    };
+    updateItemForUser: {
+      parameters: RequestParameters &
+        Endpoints["PATCH /users/{user_id}/projectsV2/{project_number}/items/{item_id}"]["parameters"];
+      response: Endpoints["PATCH /users/{user_id}/projectsV2/{project_number}/items/{item_id}"]["response"];
     };
   };
   pulls: {
@@ -4355,10 +4512,20 @@ export type RestEndpointMethodTypes = {
         Endpoints["GET /repos/{owner}/{repo}/secret-scanning/alerts/{alert_number}/locations"]["parameters"];
       response: Endpoints["GET /repos/{owner}/{repo}/secret-scanning/alerts/{alert_number}/locations"]["response"];
     };
+    listOrgPatternConfigs: {
+      parameters: RequestParameters &
+        Endpoints["GET /orgs/{org}/secret-scanning/pattern-configurations"]["parameters"];
+      response: Endpoints["GET /orgs/{org}/secret-scanning/pattern-configurations"]["response"];
+    };
     updateAlert: {
       parameters: RequestParameters &
         Endpoints["PATCH /repos/{owner}/{repo}/secret-scanning/alerts/{alert_number}"]["parameters"];
       response: Endpoints["PATCH /repos/{owner}/{repo}/secret-scanning/alerts/{alert_number}"]["response"];
+    };
+    updateOrgPatternConfigs: {
+      parameters: RequestParameters &
+        Endpoints["PATCH /orgs/{org}/secret-scanning/pattern-configurations"]["parameters"];
+      response: Endpoints["PATCH /orgs/{org}/secret-scanning/pattern-configurations"]["response"];
     };
   };
   securityAdvisories: {
@@ -4606,6 +4773,21 @@ export type RestEndpointMethodTypes = {
         Endpoints["POST /user/ssh_signing_keys"]["parameters"];
       response: Endpoints["POST /user/ssh_signing_keys"]["response"];
     };
+    deleteAttestationsBulk: {
+      parameters: RequestParameters &
+        Endpoints["POST /users/{username}/attestations/delete-request"]["parameters"];
+      response: Endpoints["POST /users/{username}/attestations/delete-request"]["response"];
+    };
+    deleteAttestationsById: {
+      parameters: RequestParameters &
+        Endpoints["DELETE /users/{username}/attestations/{attestation_id}"]["parameters"];
+      response: Endpoints["DELETE /users/{username}/attestations/{attestation_id}"]["response"];
+    };
+    deleteAttestationsBySubjectDigest: {
+      parameters: RequestParameters &
+        Endpoints["DELETE /users/{username}/attestations/digest/{subject_digest}"]["parameters"];
+      response: Endpoints["DELETE /users/{username}/attestations/digest/{subject_digest}"]["response"];
+    };
     deleteEmailForAuthenticated: {
       parameters: RequestParameters &
         Endpoints["DELETE /user/emails"]["parameters"];
@@ -4703,6 +4885,11 @@ export type RestEndpointMethodTypes = {
       parameters: RequestParameters &
         Endpoints["GET /users/{username}/attestations/{subject_digest}"]["parameters"];
       response: Endpoints["GET /users/{username}/attestations/{subject_digest}"]["response"];
+    };
+    listAttestationsBulk: {
+      parameters: RequestParameters &
+        Endpoints["POST /users/{username}/attestations/bulk-list{?per_page,before,after}"]["parameters"];
+      response: Endpoints["POST /users/{username}/attestations/bulk-list{?per_page,before,after}"]["response"];
     };
     listBlockedByAuthenticated: {
       parameters: RequestParameters &

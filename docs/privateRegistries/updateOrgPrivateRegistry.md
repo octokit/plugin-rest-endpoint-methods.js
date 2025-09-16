@@ -45,6 +45,11 @@ The name of the secret.
 The registry type.
 
 </td></tr>
+<tr><td>url</td><td>no</td><td>
+
+The URL of the private registry.
+
+</td></tr>
 <tr><td>username</td><td>no</td><td>
 
 The username to use when authenticating with the private registry. This field should be omitted if the private registry does not require a username for authentication.

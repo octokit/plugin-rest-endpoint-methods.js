@@ -102,6 +102,11 @@ A boolean value representing whether or not to filter alerts by the publicly-lea
 A boolean value representing whether or not to filter alerts by the multi-repo tag being present.
 
 </td></tr>
+<tr><td>hide_secret</td><td>no</td><td>
+
+A boolean value representing whether or not to hide literal secrets in the results.
+
+</td></tr>
   </tbody>
 </table>
 

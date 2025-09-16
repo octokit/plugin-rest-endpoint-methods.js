@@ -8,6 +8,8 @@ type: API method
 
 # Render a Markdown document
 
+Depending on what is rendered in the Markdown, you may need to provide additional token scopes for labels, such as `issues:read` or `pull_requests:read`.
+
 ```js
 octokit.rest.markdown.render({
   text,

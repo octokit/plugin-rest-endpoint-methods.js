@@ -94,7 +94,7 @@ The actors that can bypass the rules in this ruleset
 </td></tr>
 <tr><td>bypass_actors[].actor_id</td><td>no</td><td>
 
-The ID of the actor that can bypass a ruleset. If `actor_type` is `OrganizationAdmin`, this should be `1`. If `actor_type` is `DeployKey`, this should be null. `OrganizationAdmin` is not applicable for personal repositories.
+The ID of the actor that can bypass a ruleset. Required for `Integration`, `RepositoryRole`, and `Team` actor types. If `actor_type` is `OrganizationAdmin`, this should be `1`. If `actor_type` is `DeployKey`, this should be null. `OrganizationAdmin` is not applicable for personal repositories.
 
 </td></tr>
 <tr><td>bypass_actors[].actor_type</td><td>yes</td><td>
@@ -104,7 +104,7 @@ The type of actor that can bypass a ruleset.
 </td></tr>
 <tr><td>bypass_actors[].bypass_mode</td><td>no</td><td>
 
-When the specified actor can bypass the ruleset. `pull_request` means that an actor can only bypass rules on pull requests. `pull_request` is not applicable for the `DeployKey` actor type. Also, `pull_request` is only applicable to branch rulesets.
+When the specified actor can bypass the ruleset. `pull_request` means that an actor can only bypass rules on pull requests. `pull_request` is not applicable for the `DeployKey` actor type. Also, `pull_request` is only applicable to branch rulesets. When `bypass_mode` is `exempt`, rules will not be run for that actor and a bypass audit entry will not be created.
 
 </td></tr>
 <tr><td>conditions</td><td>no</td><td>
@@ -188,7 +188,7 @@ Array of allowed merge methods. Allowed values include `merge`, `squash`, and `r
 </td></tr>
 <tr><td>rules[].parameters.automatic_copilot_code_review_enabled</td><td>no</td><td>
 
-Automatically request review from Copilot for new pull requests, if the author has access to Copilot code review.
+Request Copilot code review for new pull requests automatically if the author has access to Copilot code review.
 
 </td></tr>
 <tr><td>rules[].parameters.dismiss_stale_reviews_on_push</td><td>yes</td><td>

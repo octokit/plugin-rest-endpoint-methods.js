@@ -39,7 +39,7 @@ The organization name. The name is not case sensitive.
 </td></tr>
 <tr><td>selected_repository_ids</td><td>no</td><td>
 
-An array of repository IDs to detach from configurations.
+An array of repository IDs to detach from configurations. Up to 250 IDs can be provided.
 
 </td></tr>
   </tbody>

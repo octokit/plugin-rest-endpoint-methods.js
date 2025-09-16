@@ -147,8 +147,7 @@ async function getRoutes() {
 
     const idName = endpoint.id;
     const url = endpoint.url
-      .toLowerCase()
-      // stecial case for "Upload a release asset": remove ":origin" prefix
+      // special case for "Upload a release asset": remove ":origin" prefix
       .replace(/^:origin/, "");
 
     // new route

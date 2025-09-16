@@ -54,6 +54,13 @@ A description of the code security configuration
 
 The enablement status of GitHub Advanced Security features. `enabled` will enable both Code Security and Secret Protection features.
 
+> [!WARNING] > `code_security` and `secret_protection` are deprecated values for this field. Prefer the individual `code_security` and `secret_protection` fields to set the status of these features.
+
+</td></tr>
+<tr><td>code_security</td><td>no</td><td>
+
+The enablement status of GitHub Code Security features.
+
 </td></tr>
 <tr><td>dependency_graph</td><td>no</td><td>
 
@@ -85,6 +92,16 @@ The enablement status of Dependabot alerts
 The enablement status of Dependabot security updates
 
 </td></tr>
+<tr><td>code_scanning_options</td><td>no</td><td>
+
+Security Configuration feature options for code scanning
+
+</td></tr>
+<tr><td>code_scanning_options.allow_advanced</td><td>no</td><td>
+
+Whether to allow repos which use advanced setup
+
+</td></tr>
 <tr><td>code_scanning_default_setup</td><td>no</td><td>
 
 The enablement status of code scanning default setup
@@ -108,6 +125,11 @@ The label of the runner to use for code scanning default setup when runner_type 
 <tr><td>code_scanning_delegated_alert_dismissal</td><td>no</td><td>
 
 The enablement status of code scanning delegated alert dismissal
+
+</td></tr>
+<tr><td>secret_protection</td><td>no</td><td>
+
+The enablement status of GitHub Secret Protection features.
 
 </td></tr>
 <tr><td>secret_scanning</td><td>no</td><td>

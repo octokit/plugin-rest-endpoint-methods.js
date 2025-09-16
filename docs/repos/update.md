@@ -78,7 +78,11 @@ You can check which security and analysis features are currently enabled by usin
 </td></tr>
 <tr><td>security_and_analysis.advanced_security</td><td>no</td><td>
 
-Use the `status` property to enable or disable GitHub Advanced Security for this repository. For more information, see "[About GitHub Advanced Security](/github/getting-started-with-github/learning-about-github/about-github-advanced-security)."
+Use the `status` property to enable or disable GitHub Advanced Security for this repository.
+For more information, see "[About GitHub Advanced
+Security](/github/getting-started-with-github/learning-about-github/about-github-advanced-security)."
+
+For standalone Code Scanning or Secret Protection products, this parameter cannot be used.
 
 </td></tr>
 <tr><td>security_and_analysis.advanced_security.status</td><td>no</td><td>

@@ -47,7 +47,7 @@ The name of the repository to filter on.
 
 The time period to filter by.
 
-For example, `day` will filter for rule suites that occurred in the past 24 hours, and `week` will filter for insights that occurred in the past 7 days (168 hours).
+For example, `day` will filter for rule suites that occurred in the past 24 hours, and `week` will filter for rule suites that occurred in the past 7 days (168 hours).
 
 </td></tr>
 <tr><td>actor_name</td><td>no</td><td>
@@ -57,7 +57,7 @@ The handle for the GitHub user account to filter on. When specified, only rule e
 </td></tr>
 <tr><td>rule_suite_result</td><td>no</td><td>
 
-The rule results to filter on. When specified, only suites with this result will be returned.
+The rule suite results to filter on. When specified, only suites with this result will be returned.
 
 </td></tr>
 <tr><td>per_page</td><td>no</td><td>
