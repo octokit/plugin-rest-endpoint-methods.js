@@ -1,6 +1,6 @@
 ---
 name: Update an organization repository ruleset
-example: octokit.rest.repos.updateOrgRuleset({ org, ruleset_id, bypass_actors[].actor_type, rules[].type, rules[].parameters.update_allows_fetch_and_merge, rules[].parameters.check_response_timeout_minutes, rules[].parameters.grouping_strategy, rules[].parameters.max_entries_to_build, rules[].parameters.max_entries_to_merge, rules[].parameters.merge_method, rules[].parameters.min_entries_to_merge, rules[].parameters.min_entries_to_merge_wait_minutes, rules[].parameters.required_deployment_environments, rules[].parameters.dismiss_stale_reviews_on_push, rules[].parameters.require_code_owner_review, rules[].parameters.require_last_push_approval, rules[].parameters.required_approving_review_count, rules[].parameters.required_review_thread_resolution, rules[].parameters.required_status_checks, rules[].parameters.required_status_checks[].context, rules[].parameters.strict_required_status_checks_policy, rules[].parameters.operator, rules[].parameters.pattern, rules[].parameters.restricted_file_paths, rules[].parameters.max_file_path_length, rules[].parameters.restricted_file_extensions, rules[].parameters.max_file_size, rules[].parameters.workflows, rules[].parameters.workflows[].path, rules[].parameters.workflows[].repository_id, rules[].parameters.code_scanning_tools, rules[].parameters.code_scanning_tools[].alerts_threshold, rules[].parameters.code_scanning_tools[].security_alerts_threshold, rules[].parameters.code_scanning_tools[].tool })
+example: octokit.rest.repos.updateOrgRuleset({ org, ruleset_id, bypass_actors[].actor_type, rules[].type, rules[].parameters.update_allows_fetch_and_merge, rules[].parameters.required_deployment_environments, rules[].parameters.dismiss_stale_reviews_on_push, rules[].parameters.require_code_owner_review, rules[].parameters.require_last_push_approval, rules[].parameters.required_approving_review_count, rules[].parameters.required_review_thread_resolution, rules[].parameters.required_status_checks, rules[].parameters.required_status_checks[].context, rules[].parameters.strict_required_status_checks_policy, rules[].parameters.operator, rules[].parameters.pattern, rules[].parameters.restricted_file_paths, rules[].parameters.max_file_path_length, rules[].parameters.restricted_file_extensions, rules[].parameters.max_file_size, rules[].parameters.workflows, rules[].parameters.workflows[].path, rules[].parameters.workflows[].repository_id, rules[].parameters.code_scanning_tools, rules[].parameters.code_scanning_tools[].alerts_threshold, rules[].parameters.code_scanning_tools[].security_alerts_threshold, rules[].parameters.code_scanning_tools[].tool })
 route: PUT /orgs/{org}/rulesets/{ruleset_id}
 scope: repos
 type: API method
@@ -17,13 +17,6 @@ ruleset_id,
 bypass_actors[].actor_type,
 rules[].type,
 rules[].parameters.update_allows_fetch_and_merge,
-rules[].parameters.check_response_timeout_minutes,
-rules[].parameters.grouping_strategy,
-rules[].parameters.max_entries_to_build,
-rules[].parameters.max_entries_to_merge,
-rules[].parameters.merge_method,
-rules[].parameters.min_entries_to_merge,
-rules[].parameters.min_entries_to_merge_wait_minutes,
 rules[].parameters.required_deployment_environments,
 rules[].parameters.dismiss_stale_reviews_on_push,
 rules[].parameters.require_code_owner_review,
@@ -92,7 +85,7 @@ The actors that can bypass the rules in this ruleset
 </td></tr>
 <tr><td>bypass_actors[].actor_id</td><td>no</td><td>
 
-The ID of the actor that can bypass a ruleset. If `actor_type` is `OrganizationAdmin`, this should be `1`. If `actor_type` is `DeployKey`, this should be null. `OrganizationAdmin` is not applicable for personal repositories.
+The ID of the actor that can bypass a ruleset. Required for `Integration`, `RepositoryRole`, and `Team` actor types. If `actor_type` is `OrganizationAdmin`, this should be `1`. If `actor_type` is `DeployKey`, this should be null. `OrganizationAdmin` is not applicable for personal repositories.
 
 </td></tr>
 <tr><td>bypass_actors[].actor_type</td><td>yes</td><td>
@@ -102,7 +95,7 @@ The type of actor that can bypass a ruleset.
 </td></tr>
 <tr><td>bypass_actors[].bypass_mode</td><td>no</td><td>
 
-When the specified actor can bypass the ruleset. `pull_request` means that an actor can only bypass rules on pull requests. `pull_request` is not applicable for the `DeployKey` actor type. Also, `pull_request` is only applicable to branch rulesets.
+When the specified actor can bypass the ruleset. `pull_request` means that an actor can only bypass rules on pull requests. `pull_request` is not applicable for the `DeployKey` actor type. Also, `pull_request` is only applicable to branch rulesets. When `bypass_mode` is `exempt`, rules will not be run for that actor and a bypass audit entry will not be created.
 
 </td></tr>
 <tr><td>conditions</td><td>no</td><td>
@@ -129,41 +122,6 @@ An array of rules within the ruleset.
 Branch can pull changes from its upstream repository
 
 </td></tr>
-<tr><td>rules[].parameters.check_response_timeout_minutes</td><td>yes</td><td>
-
-Maximum time for a required status check to report a conclusion. After this much time has elapsed, checks that have not reported a conclusion will be assumed to have failed
-
-</td></tr>
-<tr><td>rules[].parameters.grouping_strategy</td><td>yes</td><td>
-
-When set to ALLGREEN, the merge commit created by merge queue for each PR in the group must pass all required checks to merge. When set to HEADGREEN, only the commit at the head of the merge group, i.e. the commit containing changes from all of the PRs in the group, must pass its required checks to merge.
-
-</td></tr>
-<tr><td>rules[].parameters.max_entries_to_build</td><td>yes</td><td>
-
-Limit the number of queued pull requests requesting checks and workflow runs at the same time.
-
-</td></tr>
-<tr><td>rules[].parameters.max_entries_to_merge</td><td>yes</td><td>
-
-The maximum number of PRs that will be merged together in a group.
-
-</td></tr>
-<tr><td>rules[].parameters.merge_method</td><td>yes</td><td>
-
-Method to use when merging changes from queued pull requests.
-
-</td></tr>
-<tr><td>rules[].parameters.min_entries_to_merge</td><td>yes</td><td>
-
-The minimum number of PRs that will be merged together in a group.
-
-</td></tr>
-<tr><td>rules[].parameters.min_entries_to_merge_wait_minutes</td><td>yes</td><td>
-
-The time merge queue should wait after the first PR is added to the queue for the minimum group size to be met. After this time has elapsed, the minimum group size will be ignored and a smaller group will be merged.
-
-</td></tr>
 <tr><td>rules[].parameters.required_deployment_environments</td><td>yes</td><td>
 
 The environments that must be successfully deployed to before branches can be merged.
@@ -176,7 +134,7 @@ Array of allowed merge methods. Allowed values include `merge`, `squash`, and `r
 </td></tr>
 <tr><td>rules[].parameters.automatic_copilot_code_review_enabled</td><td>no</td><td>
 
-Automatically request review from Copilot for new pull requests, if the author has access to Copilot code review.
+Request Copilot code review for new pull requests automatically if the author has access to Copilot code review.
 
 </td></tr>
 <tr><td>rules[].parameters.dismiss_stale_reviews_on_push</td><td>yes</td><td>

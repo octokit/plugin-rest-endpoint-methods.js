@@ -12,7 +12,7 @@ Lists all code security configurations available in an organization.
 
 The authenticated user must be an administrator or security manager for the organization to use this endpoint.
 
-OAuth app tokens and personal access tokens (classic) need the `write:org` scope to use this endpoint.
+OAuth app tokens and personal access tokens (classic) need the `read:org` scope to use this endpoint.
 
 ```js
 octokit.rest.codeSecurity.getConfigurationsForOrg({

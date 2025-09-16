@@ -33,7 +33,7 @@ octokit.rest.codeSecurity.getDefaultConfigurationsForEnterprise({
   <tbody>
     <tr><td>enterprise</td><td>yes</td><td>
 
-The slug version of the enterprise name. You can also substitute this value with the enterprise id.
+The slug version of the enterprise name.
 
 </td></tr>
   </tbody>

@@ -2756,7 +2756,7 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Uninstalls a GitHub App on a user, organization, or business account. If you prefer to temporarily suspend an app's access to your account's resources, then we recommend the "[Suspend an app installation](https://docs.github.com/rest/apps/apps#suspend-an-app-installation)" endpoint.
+     * Uninstalls a GitHub App on a user, organization, or enterprise account. If you prefer to temporarily suspend an app's access to your account's resources, then we recommend the "[Suspend an app installation](https://docs.github.com/rest/apps/apps#suspend-an-app-installation)" endpoint.
      *
      * You must use a [JWT](https://docs.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint.
      */
@@ -3160,7 +3160,7 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Suspends a GitHub App on a user, organization, or business account, which blocks the app from accessing the account's resources. When a GitHub App is suspended, the app's access to the GitHub API or webhook events is blocked for that account.
+     * Suspends a GitHub App on a user, organization, or enterprise account, which blocks the app from accessing the account's resources. When a GitHub App is suspended, the app's access to the GitHub API or webhook events is blocked for that account.
      *
      * You must use a [JWT](https://docs.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint.
      */
@@ -4217,7 +4217,7 @@ export type RestEndpointMethods = {
      *
      * The authenticated user must be an administrator or security manager for the organization to use this endpoint.
      *
-     * OAuth app tokens and personal access tokens (classic) need the `write:org` scope to use this endpoint.
+     * OAuth app tokens and personal access tokens (classic) need the `read:org` scope to use this endpoint.
      */
     getConfigurationsForOrg: {
       (
@@ -4233,7 +4233,7 @@ export type RestEndpointMethods = {
      *
      * The authenticated user must be an administrator or security manager for the organization to use this endpoint.
      *
-     * OAuth app tokens and personal access tokens (classic) need the `write:org` scope to use this endpoint.
+     * OAuth app tokens and personal access tokens (classic) need the `read:org` scope to use this endpoint.
      */
     getDefaultConfigurations: {
       (
@@ -4265,7 +4265,7 @@ export type RestEndpointMethods = {
      *
      * The authenticated user must be an administrator or security manager for the organization to use this endpoint.
      *
-     * OAuth app tokens and personal access tokens (classic) need the `write:org` scope to use this endpoint.
+     * OAuth app tokens and personal access tokens (classic) need the `read:org` scope to use this endpoint.
      */
     getRepositoriesForConfiguration: {
       (
@@ -5175,7 +5175,7 @@ export type RestEndpointMethods = {
      * > [!NOTE]
      * > This endpoint will only return results for a given day if the organization contained **five or more members with active Copilot licenses** on that day, as evaluated at the end of that day.
      *
-     * The response contains metrics for up to 28 days prior. Metrics are processed once per day for the previous day,
+     * The response contains metrics for up to 100 days prior. Metrics are processed once per day for the previous day,
      * and the response will only include data up until yesterday. In order for an end user to be counted towards these metrics,
      * they must have telemetry enabled in their IDE.
      *
@@ -5199,7 +5199,7 @@ export type RestEndpointMethods = {
      * > [!NOTE]
      * > This endpoint will only return results for a given day if the team had **five or more members with active Copilot licenses** on that day, as evaluated at the end of that day.
      *
-     * The response contains metrics for up to 28 days prior. Metrics are processed once per day for the previous day,
+     * The response contains metrics for up to 100 days prior. Metrics are processed once per day for the previous day,
      * and the response will only include data up until yesterday. In order for an end user to be counted towards these metrics,
      * they must have telemetry enabled in their IDE.
      *
@@ -5245,7 +5245,7 @@ export type RestEndpointMethods = {
      * Gets the GitHub Copilot seat details for a member of an organization who currently has access to GitHub Copilot.
      *
      * The seat object contains information about the user's most recent Copilot activity. Users must have telemetry enabled in their IDE for Copilot in the IDE activity to be reflected in `last_activity_at`.
-     * For more information about activity data, see "[Reviewing user activity data for Copilot in your organization](https://docs.github.com/copilot/managing-copilot/managing-github-copilot-in-your-organization/reviewing-activity-related-to-github-copilot-in-your-organization/reviewing-user-activity-data-for-copilot-in-your-organization)."
+     * For more information about activity data, see [Metrics data properties for GitHub Copilot](https://docs.github.com/copilot/reference/metrics-data).
      *
      * Only organization owners can view Copilot seat assignment details for members of their organization.
      *
@@ -5268,7 +5268,7 @@ export type RestEndpointMethods = {
      * Only organization owners can view assigned seats.
      *
      * Each seat object contains information about the assigned user's most recent Copilot activity. Users must have telemetry enabled in their IDE for Copilot in the IDE activity to be reflected in `last_activity_at`.
-     * For more information about activity data, see "[Reviewing user activity data for Copilot in your organization](https://docs.github.com/copilot/managing-copilot/managing-github-copilot-in-your-organization/reviewing-activity-related-to-github-copilot-in-your-organization/reviewing-user-activity-data-for-copilot-in-your-organization)."
+     * For more information about activity data, see [Metrics data properties for GitHub Copilot](https://docs.github.com/copilot/reference/metrics-data).
      *
      * OAuth app tokens and personal access tokens (classic) need either the `manage_billing:copilot` or `read:org` scopes to use this endpoint.
      */
@@ -5629,6 +5629,39 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
+     * Lists repositories that organization admins have allowed Dependabot to access when updating dependencies.
+     * > [!NOTE]
+     * >    This operation supports both server-to-server and user-to-server access.
+     * Unauthorized users will not see the existence of this endpoint.
+     */
+    repositoryAccessForOrg: {
+      (
+        params?: RestEndpointMethodTypes["dependabot"]["repositoryAccessForOrg"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["dependabot"]["repositoryAccessForOrg"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Sets the default level of repository access Dependabot will have while performing an update.  Available values are:
+     * - 'public' - Dependabot will only have access to public repositories, unless access is explicitly granted to non-public repositories.
+     * - 'internal' - Dependabot will only have access to public and internal repositories, unless access is explicitly granted to private repositories.
+     *
+     * Unauthorized users will not see the existence of this endpoint.
+     *
+     * This operation supports both server-to-server and user-to-server access.
+     */
+    setRepositoryAccessDefaultLevel: {
+      (
+        params?: RestEndpointMethodTypes["dependabot"]["setRepositoryAccessDefaultLevel"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["dependabot"]["setRepositoryAccessDefaultLevel"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
      * Replaces all repositories for an organization secret when the `visibility`
      * for repository access is set to `selected`. The visibility is set when you [Create
      * or update an organization secret](https://docs.github.com/rest/dependabot/secrets#create-or-update-an-organization-secret).
@@ -5654,6 +5687,30 @@ export type RestEndpointMethods = {
         params?: RestEndpointMethodTypes["dependabot"]["updateAlert"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["dependabot"]["updateAlert"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Updates repositories according to the list of repositories that organization admins have given Dependabot access to when they've updated dependencies.
+     *
+     * > [!NOTE]
+     * >    This operation supports both server-to-server and user-to-server access.
+     * Unauthorized users will not see the existence of this endpoint.
+     *
+     * **Example request body:**
+     * ```json
+     * {
+     *   "repository_ids_to_add": [123, 456],
+     *   "repository_ids_to_remove": [789]
+     * }
+     * ```
+     */
+    updateRepositoryAccessForOrg: {
+      (
+        params?: RestEndpointMethodTypes["dependabot"]["updateRepositoryAccessForOrg"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["dependabot"]["updateRepositoryAccessForOrg"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -6491,6 +6548,29 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
+     * You can use the REST API to add a 'blocked by' relationship to an issue.
+     *
+     * Creating content too quickly using this endpoint may result in secondary rate limiting.
+     * For more information, see [Rate limits for the API](https://docs.github.com/rest/using-the-rest-api/rate-limits-for-the-rest-api#about-secondary-rate-limits)
+     * and [Best practices for using the REST API](https://docs.github.com/rest/guides/best-practices-for-using-the-rest-api).
+     *
+     * This endpoint supports the following custom media types. For more information, see [Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types).
+     *
+     * - **`application/vnd.github.raw+json`**: Returns the raw Markdown body. Response will include `body`. This is the default if you do not pass any specific media type.
+     * - **`application/vnd.github.text+json`**: Returns a text only representation of the Markdown body. Response will include `body_text`.
+     * - **`application/vnd.github.html+json`**: Returns HTML rendered from the body's Markdown. Response will include `body_html`.
+     * - **`application/vnd.github.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
+     */
+    addBlockedByDependency: {
+      (
+        params?: RestEndpointMethodTypes["issues"]["addBlockedByDependency"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["issues"]["addBlockedByDependency"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
      * Adds labels to an issue. If you provide an empty array of labels, all labels are removed from the issue.
      */
     addLabels: {
@@ -6726,6 +6806,23 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
+     * You can use the REST API to get the parent issue of a sub-issue.
+     *
+     * This endpoint supports the following custom media types. For more information, see [Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types).
+     *
+     * - **`application/vnd.github.raw+json`**: Returns the raw markdown body. Response will include `body`. This is the default if you do not pass any specific media type.
+     * - **`application/vnd.github.text+json`**: Returns a text only representation of the markdown body. Response will include `body_text`.
+     * - **`application/vnd.github.html+json`**: Returns HTML rendered from the body's markdown. Response will include `body_html`.
+     * - **`application/vnd.github.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
+     */
+    getParent: {
+      (
+        params?: RestEndpointMethodTypes["issues"]["getParent"]["parameters"],
+      ): Promise<RestEndpointMethodTypes["issues"]["getParent"]["response"]>;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
      * List issues assigned to the authenticated user across all visible repositories including owned repositories, member
      * repositories, and organization repositories. You can use the `filter` query parameter to fetch issues that are not
      * necessarily assigned to you.
@@ -6795,6 +6892,44 @@ export type RestEndpointMethods = {
         params?: RestEndpointMethodTypes["issues"]["listCommentsForRepo"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["issues"]["listCommentsForRepo"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * You can use the REST API to list the dependencies an issue is blocked by.
+     *
+     * This endpoint supports the following custom media types. For more information, see [Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types).
+     *
+     * - **`application/vnd.github.raw+json`**: Returns the raw Markdown body. Response will include `body`. This is the default if you do not pass any specific media type.
+     * - **`application/vnd.github.text+json`**: Returns a text only representation of the Markdown body. Response will include `body_text`.
+     * - **`application/vnd.github.html+json`**: Returns HTML rendered from the body's Markdown. Response will include `body_html`.
+     * - **`application/vnd.github.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
+     */
+    listDependenciesBlockedBy: {
+      (
+        params?: RestEndpointMethodTypes["issues"]["listDependenciesBlockedBy"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["issues"]["listDependenciesBlockedBy"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * You can use the REST API to list the dependencies an issue is blocking.
+     *
+     * This endpoint supports the following custom media types. For more information, see [Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types).
+     *
+     * - **`application/vnd.github.raw+json`**: Returns the raw Markdown body. Response will include `body`. This is the default if you do not pass any specific media type.
+     * - **`application/vnd.github.text+json`**: Returns a text only representation of the Markdown body. Response will include `body_text`.
+     * - **`application/vnd.github.html+json`**: Returns HTML rendered from the body's Markdown. Response will include `body_html`.
+     * - **`application/vnd.github.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
+     */
+    listDependenciesBlocking: {
+      (
+        params?: RestEndpointMethodTypes["issues"]["listDependenciesBlocking"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["issues"]["listDependenciesBlocking"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -6946,11 +7081,11 @@ export type RestEndpointMethods = {
     /**
      * You can use the REST API to list the sub-issues on an issue.
      *
-     * This endpoint supports the following custom media types. For more information, see "[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types)."
+     * This endpoint supports the following custom media types. For more information, see [Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types).
      *
-     * - **`application/vnd.github.raw+json`**: Returns the raw markdown body. Response will include `body`. This is the default if you do not pass any specific media type.
-     * - **`application/vnd.github.text+json`**: Returns a text only representation of the markdown body. Response will include `body_text`.
-     * - **`application/vnd.github.html+json`**: Returns HTML rendered from the body's markdown. Response will include `body_html`.
+     * - **`application/vnd.github.raw+json`**: Returns the raw Markdown body. Response will include `body`. This is the default if you do not pass any specific media type.
+     * - **`application/vnd.github.text+json`**: Returns a text only representation of the Markdown body. Response will include `body_text`.
+     * - **`application/vnd.github.html+json`**: Returns HTML rendered from the body's Markdown. Response will include `body_html`.
      * - **`application/vnd.github.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
      */
     listSubIssues: {
@@ -6994,6 +7129,28 @@ export type RestEndpointMethods = {
         params?: RestEndpointMethodTypes["issues"]["removeAssignees"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["issues"]["removeAssignees"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * You can use the REST API to remove a dependency that an issue is blocked by.
+     *
+     * Removing content too quickly using this endpoint may result in secondary rate limiting.
+     * For more information, see [Rate limits for the API](https://docs.github.com/rest/using-the-rest-api/rate-limits-for-the-rest-api#about-secondary-rate-limits)
+     * and [Best practices for using the REST API](https://docs.github.com/rest/guides/best-practices-for-using-the-rest-api).
+     *
+     * This endpoint supports the following custom media types. For more information, see [Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types).
+     * - **`application/vnd.github.raw+json`**: Returns the raw Markdown body. Response will include `body`. This is the default if you do not pass a specific media type.
+     * - **`application/vnd.github.text+json`**: Returns a text only representation of the Markdown body. Response will include `body_text`.
+     * - **`application/vnd.github.html+json`**: Returns HTML rendered from the body's Markdown. Response will include `body_html`.
+     * - **`application/vnd.github.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
+     */
+    removeDependencyBlockedBy: {
+      (
+        params?: RestEndpointMethodTypes["issues"]["removeDependencyBlockedBy"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["issues"]["removeDependencyBlockedBy"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -7157,6 +7314,9 @@ export type RestEndpointMethods = {
     };
   };
   markdown: {
+    /**
+     * Depending on what is rendered in the Markdown, you may need to provide additional token scopes for labels, such as `issues:read` or `pull_requests:read`.
+     */
     render: {
       (
         params?: RestEndpointMethodTypes["markdown"]["render"]["parameters"],
@@ -7603,6 +7763,20 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
+     * Create metadata storage records for artifacts associated with an organization.
+     * This endpoint will create a new artifact storage record on behalf of any artifact matching the provided digest and
+     * associated with a repository owned by the organization.
+     */
+    createArtifactStorageRecord: {
+      (
+        params?: RestEndpointMethodTypes["orgs"]["createArtifactStorageRecord"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["orgs"]["createArtifactStorageRecord"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
      * Invite people to an organization by using their GitHub user ID or their email address. In order to create invitations in an organization, the authenticated user must be an organization owner.
      *
      * This endpoint triggers [notifications](https://docs.github.com/github/managing-subscriptions-and-notifications-on-github/about-notifications). Creating content too quickly using this endpoint may result in secondary rate limiting. For more information, see "[Rate limits for the API](https://docs.github.com/rest/using-the-rest-api/rate-limits-for-the-rest-api#about-secondary-rate-limits)"
@@ -7723,6 +7897,42 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
+     * Delete artifact attestations in bulk by either subject digests or unique ID.
+     */
+    deleteAttestationsBulk: {
+      (
+        params?: RestEndpointMethodTypes["orgs"]["deleteAttestationsBulk"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["orgs"]["deleteAttestationsBulk"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Delete an artifact attestation by unique ID that is associated with a repository owned by an org.
+     */
+    deleteAttestationsById: {
+      (
+        params?: RestEndpointMethodTypes["orgs"]["deleteAttestationsById"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["orgs"]["deleteAttestationsById"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Delete an artifact attestation by subject digest.
+     */
+    deleteAttestationsBySubjectDigest: {
+      (
+        params?: RestEndpointMethodTypes["orgs"]["deleteAttestationsBySubjectDigest"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["orgs"]["deleteAttestationsBySubjectDigest"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
      * Deletes an issue type for an organization.
      *
      * You can find out more about issue types in [Managing issue types in an organization](https://docs.github.com/issues/tracking-your-work-with-issues/configuring-issues/managing-issue-types-in-an-organization).
@@ -7751,26 +7961,6 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["orgs"]["deleteWebhook"]["parameters"],
       ): Promise<RestEndpointMethodTypes["orgs"]["deleteWebhook"]["response"]>;
-      defaults: RequestInterface["defaults"];
-      endpoint: EndpointInterface<{ url: string }>;
-    };
-    /**
-     * > [!WARNING]
-     * > **Closing down notice:** The ability to enable or disable a security feature for all eligible repositories in an organization is closing down. Please use [code security configurations](https://docs.github.com/rest/code-security/configurations) instead. For more information, see the [changelog](https://github.blog/changelog/2024-07-22-deprecation-of-api-endpoint-to-enable-or-disable-a-security-feature-for-an-organization/).
-     *
-     * Enables or disables the specified security feature for all eligible repositories in an organization. For more information, see "[Managing security managers in your organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization)."
-     *
-     * The authenticated user must be an organization owner or be member of a team with the security manager role to use this endpoint.
-     *
-     * OAuth app tokens and personal access tokens (classic) need the `admin:org`, `write:org`, or `repo` scopes to use this endpoint.
-     * @deprecated octokit.rest.orgs.enableOrDisableSecurityProductOnAllOrgRepos() is deprecated, see https://docs.github.com/rest/orgs/orgs#enable-or-disable-a-security-feature-for-an-organization
-     */
-    enableOrDisableSecurityProductOnAllOrgRepos: {
-      (
-        params?: RestEndpointMethodTypes["orgs"]["enableOrDisableSecurityProductOnAllOrgRepos"]["parameters"],
-      ): Promise<
-        RestEndpointMethodTypes["orgs"]["enableOrDisableSecurityProductOnAllOrgRepos"]["response"]
-      >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
@@ -7964,6 +8154,20 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
+     * List a collection of artifact storage records with a given subject digest that are associated with repositories owned by an organization.
+     *
+     * The collection of storage records returned by this endpoint is filtered according to the authenticated user's permissions; if the authenticated user cannot read a repository, the attestations associated with that repository will not be included in the response. In addition, when using a fine-grained access token the `content:read` permission is required.
+     */
+    listArtifactStorageRecords: {
+      (
+        params?: RestEndpointMethodTypes["orgs"]["listArtifactStorageRecords"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["orgs"]["listArtifactStorageRecords"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
      * List a collection of artifact attestations with a given subject digest that are associated with repositories owned by an organization.
      *
      * The collection of attestations returned by this endpoint is filtered according to the authenticated user's permissions; if the authenticated user cannot read a repository, the attestations associated with that repository will not be included in the response. In addition, when using a fine-grained access token the `attestations:read` permission is required.
@@ -7975,6 +8179,22 @@ export type RestEndpointMethods = {
         params?: RestEndpointMethodTypes["orgs"]["listAttestations"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["orgs"]["listAttestations"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * List a collection of artifact attestations associated with any entry in a list of subject digests owned by an organization.
+     *
+     * The collection of attestations returned by this endpoint is filtered according to the authenticated user's permissions; if the authenticated user cannot read a repository, the attestations associated with that repository will not be included in the response. In addition, when using a fine-grained access token the `attestations:read` permission is required.
+     *
+     * **Please note:** in order to offer meaningful security benefits, an attestation's signature and timestamps **must** be cryptographically verified, and the identity of the attestation signer **must** be validated. Attestations can be verified using the [GitHub CLI `attestation verify` command](https://cli.github.com/manual/gh_attestation_verify). For more information, see [our guide on how to use artifact attestations to establish a build's provenance](https://docs.github.com/actions/security-guides/using-artifact-attestations-to-establish-provenance-for-builds).
+     */
+    listAttestationsBulk: {
+      (
+        params?: RestEndpointMethodTypes["orgs"]["listAttestationsBulk"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["orgs"]["listAttestationsBulk"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -8349,6 +8569,9 @@ export type RestEndpointMethods = {
     };
     /**
      * Removing a user from this list will remove them from all teams and they will no longer have any access to the organization's repositories.
+     *
+     * > [!NOTE]
+     * > If a user has both direct membership in the organization as well as indirect membership via an enterprise team, only their direct membership will be removed. Their indirect membership via an enterprise team remains until the user is removed from the enterprise team.
      */
     removeMember: {
       (
@@ -8361,6 +8584,9 @@ export type RestEndpointMethods = {
      * In order to remove a user's membership with an organization, the authenticated user must be an organization owner.
      *
      * If the specified user is an active member of the organization, this will remove them from the organization. If the specified user has been invited to the organization, this will cancel their invitation. The specified user will receive an email notification in both cases.
+     *
+     * > [!NOTE]
+     * > If a user has both direct membership in the organization as well as indirect membership via an enterprise team, only their direct membership will be removed. Their indirect membership via an enterprise team remains until the user is removed from the enterprise team.
      */
     removeMembershipForUser: {
       (
@@ -9198,6 +9424,216 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
   };
+  projects: {
+    /**
+     * Add an issue or pull request item to the specified organization owned project.
+     */
+    addItemForOrg: {
+      (
+        params?: RestEndpointMethodTypes["projects"]["addItemForOrg"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["projects"]["addItemForOrg"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Add an issue or pull request item to the specified user owned project.
+     */
+    addItemForUser: {
+      (
+        params?: RestEndpointMethodTypes["projects"]["addItemForUser"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["projects"]["addItemForUser"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Delete a specific item from an organization-owned project.
+     */
+    deleteItemForOrg: {
+      (
+        params?: RestEndpointMethodTypes["projects"]["deleteItemForOrg"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["projects"]["deleteItemForOrg"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Delete a specific item from a user-owned project.
+     */
+    deleteItemForUser: {
+      (
+        params?: RestEndpointMethodTypes["projects"]["deleteItemForUser"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["projects"]["deleteItemForUser"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Get a specific field for an organization-owned project.
+     */
+    getFieldForOrg: {
+      (
+        params?: RestEndpointMethodTypes["projects"]["getFieldForOrg"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["projects"]["getFieldForOrg"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Get a specific field for a user-owned project.
+     */
+    getFieldForUser: {
+      (
+        params?: RestEndpointMethodTypes["projects"]["getFieldForUser"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["projects"]["getFieldForUser"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Get a specific organization-owned project.
+     */
+    getForOrg: {
+      (
+        params?: RestEndpointMethodTypes["projects"]["getForOrg"]["parameters"],
+      ): Promise<RestEndpointMethodTypes["projects"]["getForOrg"]["response"]>;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Get a specific user-owned project.
+     */
+    getForUser: {
+      (
+        params?: RestEndpointMethodTypes["projects"]["getForUser"]["parameters"],
+      ): Promise<RestEndpointMethodTypes["projects"]["getForUser"]["response"]>;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Get a specific item from an organization-owned project.
+     */
+    getOrgItem: {
+      (
+        params?: RestEndpointMethodTypes["projects"]["getOrgItem"]["parameters"],
+      ): Promise<RestEndpointMethodTypes["projects"]["getOrgItem"]["response"]>;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Get a specific item from a user-owned project.
+     */
+    getUserItem: {
+      (
+        params?: RestEndpointMethodTypes["projects"]["getUserItem"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["projects"]["getUserItem"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * List all fields for a specific organization-owned project.
+     */
+    listFieldsForOrg: {
+      (
+        params?: RestEndpointMethodTypes["projects"]["listFieldsForOrg"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["projects"]["listFieldsForOrg"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * List all fields for a specific user-owned project.
+     */
+    listFieldsForUser: {
+      (
+        params?: RestEndpointMethodTypes["projects"]["listFieldsForUser"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["projects"]["listFieldsForUser"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * List all projects owned by a specific organization accessible by the authenticated user.
+     */
+    listForOrg: {
+      (
+        params?: RestEndpointMethodTypes["projects"]["listForOrg"]["parameters"],
+      ): Promise<RestEndpointMethodTypes["projects"]["listForOrg"]["response"]>;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * List all projects owned by a specific user accessible by the authenticated user.
+     */
+    listForUser: {
+      (
+        params?: RestEndpointMethodTypes["projects"]["listForUser"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["projects"]["listForUser"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * List all items for a specific organization-owned project accessible by the authenticated user.
+     */
+    listItemsForOrg: {
+      (
+        params?: RestEndpointMethodTypes["projects"]["listItemsForOrg"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["projects"]["listItemsForOrg"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * List all items for a specific user-owned project accessible by the authenticated user.
+     */
+    listItemsForUser: {
+      (
+        params?: RestEndpointMethodTypes["projects"]["listItemsForUser"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["projects"]["listItemsForUser"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Update a specific item in an organization-owned project.
+     */
+    updateItemForOrg: {
+      (
+        params?: RestEndpointMethodTypes["projects"]["updateItemForOrg"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["projects"]["updateItemForOrg"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Update a specific item in a user-owned project.
+     */
+    updateItemForUser: {
+      (
+        params?: RestEndpointMethodTypes["projects"]["updateItemForUser"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["projects"]["updateItemForUser"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+  };
   pulls: {
     /**
      * Checks if a pull request has been merged into the base branch. The HTTP status of the response indicates whether or not the pull request has been merged; the response body is empty.
@@ -9704,6 +10140,7 @@ export type RestEndpointMethods = {
      * * The `graphql` object provides your rate limit status for the GraphQL API. For more information, see "[Resource limitations](https://docs.github.com/graphql/overview/resource-limitations#rate-limit)."
      * * The `integration_manifest` object provides your rate limit status for the `POST /app-manifests/{code}/conversions` operation. For more information, see "[Creating a GitHub App from a manifest](https://docs.github.com/apps/creating-github-apps/setting-up-a-github-app/creating-a-github-app-from-a-manifest#3-you-exchange-the-temporary-code-to-retrieve-the-app-configuration)."
      * * The `dependency_snapshots` object provides your rate limit status for submitting snapshots to the dependency graph. For more information, see "[Dependency graph](https://docs.github.com/rest/dependency-graph)."
+     * * The `dependency_sbom` object provides your rate limit status for requesting SBOMs from the dependency graph. For more information, see "[Dependency graph](https://docs.github.com/rest/dependency-graph)."
      * * The `code_scanning_upload` object provides your rate limit status for uploading SARIF results to code scanning. For more information, see "[Uploading a SARIF file to GitHub](https://docs.github.com/code-security/code-scanning/integrating-with-code-scanning/uploading-a-sarif-file-to-github)."
      * * The `actions_runner_registration` object provides your rate limit status for registering self-hosted runners in GitHub Actions. For more information, see "[Self-hosted runners](https://docs.github.com/rest/actions/self-hosted-runners)."
      * * The `source_import` object is no longer in use for any API endpoints, and it will be removed in the next API version. For more information about API versions, see "[API Versions](https://docs.github.com/rest/about-the-rest-api/api-versions)."
@@ -11178,7 +11615,8 @@ export type RestEndpointMethods = {
      * The `parent` and `source` objects are present when the repository is a fork. `parent` is the repository this repository was forked from, `source` is the ultimate source for the network.
      *
      * > [!NOTE]
-     * > In order to see the `security_and_analysis` block for a repository you must have admin permissions for the repository or be an owner or security manager for the organization that owns the repository. For more information, see "[Managing security managers in your organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization)."
+     * > - In order to see the `security_and_analysis` block for a repository you must have admin permissions for the repository or be an owner or security manager for the organization that owns the repository. For more information, see "[Managing security managers in your organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization)."
+     * > - To view merge-related settings, you must have the `contents:read` and `contents:write` permissions.
      */
     get: {
       (
@@ -13108,7 +13546,7 @@ export type RestEndpointMethods = {
     };
     /**
      * > [!WARNING]
-     * > **Notice:** Search for issues and pull requests will be overridden by advanced search on September 4, 2025.
+     * > **Notice:** Search for issues and pull requests will be overridden by advanced search on November 4, 2025.
      * > You can read more about this change on [the GitHub blog](https://github.blog/changelog/2025-03-06-github-issues-projects-api-support-for-issues-advanced-search-and-more/).
      * @deprecated octokit.rest.search.issuesAndPullRequests() is deprecated, see https://docs.github.com/rest/search/search#search-issues-and-pull-requests
      */
@@ -13310,6 +13748,20 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
+     * Lists the secret scanning pattern configurations for an organization.
+     *
+     * Personal access tokens (classic) need the `read:org` scope to use this endpoint.
+     */
+    listOrgPatternConfigs: {
+      (
+        params?: RestEndpointMethodTypes["secretScanning"]["listOrgPatternConfigs"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["secretScanning"]["listOrgPatternConfigs"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
      * Updates the status of a secret scanning alert in an eligible repository.
      *
      * The authenticated user must be an administrator for the repository or for the organization that owns the repository to use this endpoint.
@@ -13321,6 +13773,20 @@ export type RestEndpointMethods = {
         params?: RestEndpointMethodTypes["secretScanning"]["updateAlert"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["secretScanning"]["updateAlert"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Updates the secret scanning pattern configurations for an organization.
+     *
+     * Personal access tokens (classic) need the `write:org` scope to use this endpoint.
+     */
+    updateOrgPatternConfigs: {
+      (
+        params?: RestEndpointMethodTypes["secretScanning"]["updateOrgPatternConfigs"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["secretScanning"]["updateOrgPatternConfigs"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -14030,7 +14496,7 @@ export type RestEndpointMethods = {
     /**
      * Adds a public SSH key to the authenticated user's GitHub account.
      *
-     * OAuth app tokens and personal access tokens (classic) need the `write:gpg_key` scope to use this endpoint.
+     * OAuth app tokens and personal access tokens (classic) need the `write:public_key` scope to use this endpoint.
      * @deprecated octokit.rest.users.createPublicSshKeyForAuthenticated() has been renamed to octokit.rest.users.createPublicSshKeyForAuthenticatedUser() (2021-10-05)
      */
     createPublicSshKeyForAuthenticated: {
@@ -14045,7 +14511,7 @@ export type RestEndpointMethods = {
     /**
      * Adds a public SSH key to the authenticated user's GitHub account.
      *
-     * OAuth app tokens and personal access tokens (classic) need the `write:gpg_key` scope to use this endpoint.
+     * OAuth app tokens and personal access tokens (classic) need the `write:public_key` scope to use this endpoint.
      */
     createPublicSshKeyForAuthenticatedUser: {
       (
@@ -14066,6 +14532,42 @@ export type RestEndpointMethods = {
         params?: RestEndpointMethodTypes["users"]["createSshSigningKeyForAuthenticatedUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["users"]["createSshSigningKeyForAuthenticatedUser"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Delete artifact attestations in bulk by either subject digests or unique ID.
+     */
+    deleteAttestationsBulk: {
+      (
+        params?: RestEndpointMethodTypes["users"]["deleteAttestationsBulk"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["users"]["deleteAttestationsBulk"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Delete an artifact attestation by unique ID that is associated with a repository owned by a user.
+     */
+    deleteAttestationsById: {
+      (
+        params?: RestEndpointMethodTypes["users"]["deleteAttestationsById"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["users"]["deleteAttestationsById"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Delete an artifact attestation by subject digest.
+     */
+    deleteAttestationsBySubjectDigest: {
+      (
+        params?: RestEndpointMethodTypes["users"]["deleteAttestationsBySubjectDigest"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["users"]["deleteAttestationsBySubjectDigest"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -14349,6 +14851,22 @@ export type RestEndpointMethods = {
         params?: RestEndpointMethodTypes["users"]["listAttestations"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["users"]["listAttestations"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * List a collection of artifact attestations associated with any entry in a list of subject digests owned by a user.
+     *
+     * The collection of attestations returned by this endpoint is filtered according to the authenticated user's permissions; if the authenticated user cannot read a repository, the attestations associated with that repository will not be included in the response. In addition, when using a fine-grained access token the `attestations:read` permission is required.
+     *
+     * **Please note:** in order to offer meaningful security benefits, an attestation's signature and timestamps **must** be cryptographically verified, and the identity of the attestation signer **must** be validated. Attestations can be verified using the [GitHub CLI `attestation verify` command](https://cli.github.com/manual/gh_attestation_verify). For more information, see [our guide on how to use artifact attestations to establish a build's provenance](https://docs.github.com/actions/security-guides/using-artifact-attestations-to-establish-provenance-for-builds).
+     */
+    listAttestationsBulk: {
+      (
+        params?: RestEndpointMethodTypes["users"]["listAttestationsBulk"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["users"]["listAttestationsBulk"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;

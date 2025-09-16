@@ -51,6 +51,11 @@ Whether GitHub Actions is enabled on the repository.
 The permissions policy that controls the actions and reusable workflows that are allowed to run.
 
 </td></tr>
+<tr><td>sha_pinning_required</td><td>no</td><td>
+
+Whether actions must be pinned to a full-length commit SHA.
+
+</td></tr>
   </tbody>
 </table>
 

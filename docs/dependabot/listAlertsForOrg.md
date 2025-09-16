@@ -73,6 +73,18 @@ CVE Exploit Prediction Scoring System (EPSS) percentage. Can be specified as:
 Filters the list of alerts based on EPSS percentages. If specified, only alerts with the provided EPSS percentages will be returned.
 
 </td></tr>
+<tr><td>artifact_registry_url</td><td>no</td><td>
+
+A comma-separated list of artifact registry URLs. If specified, only alerts for repositories with storage records matching these URLs will be returned.
+
+</td></tr>
+<tr><td>artifact_registry</td><td>no</td><td>
+
+A comma-separated list of Artifact Registry name strings. If specified, only alerts for repositories with storage records matching these registries will be returned.
+
+Can be: `jfrog-artifactory`
+
+</td></tr>
 <tr><td>has</td><td>no</td><td>
 
 Filters the list of alerts based on whether the alert has the given value. If specified, only alerts meeting this criterion will be returned.

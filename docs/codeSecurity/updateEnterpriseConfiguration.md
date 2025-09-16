@@ -34,7 +34,7 @@ octokit.rest.codeSecurity.updateEnterpriseConfiguration({
   <tbody>
     <tr><td>enterprise</td><td>yes</td><td>
 
-The slug version of the enterprise name. You can also substitute this value with the enterprise id.
+The slug version of the enterprise name.
 
 </td></tr>
 <tr><td>configuration_id</td><td>yes</td><td>
@@ -55,6 +55,13 @@ A description of the code security configuration
 <tr><td>advanced_security</td><td>no</td><td>
 
 The enablement status of GitHub Advanced Security features. `enabled` will enable both Code Security and Secret Protection features.
+
+> [!WARNING] > `code_security` and `secret_protection` are deprecated values for this field. Prefer the individual `code_security` and `secret_protection` fields to set the status of these features.
+
+</td></tr>
+<tr><td>code_security</td><td>no</td><td>
+
+The enablement status of GitHub Code Security features.
 
 </td></tr>
 <tr><td>dependency_graph</td><td>no</td><td>
@@ -110,6 +117,11 @@ The label of the runner to use for code scanning default setup when runner_type 
 <tr><td>code_scanning_delegated_alert_dismissal</td><td>no</td><td>
 
 The enablement status of code scanning delegated alert dismissal
+
+</td></tr>
+<tr><td>secret_protection</td><td>no</td><td>
+
+The enablement status of GitHub Secret Protection features.
 
 </td></tr>
 <tr><td>secret_scanning</td><td>no</td><td>

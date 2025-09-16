@@ -1,6 +1,6 @@
 ---
 name: Create a private registry for an organization
-example: octokit.rest.privateRegistries.createOrgPrivateRegistry({ org, registry_type, encrypted_value, key_id, visibility })
+example: octokit.rest.privateRegistries.createOrgPrivateRegistry({ org, registry_type, url, encrypted_value, key_id, visibility })
 route: POST /orgs/{org}/private-registries
 scope: privateRegistries
 type: API method
@@ -16,6 +16,7 @@ OAuth app tokens and personal access tokens (classic) need the `admin:org` scope
 octokit.rest.privateRegistries.createOrgPrivateRegistry({
   org,
   registry_type,
+  url,
   encrypted_value,
   key_id,
   visibility,
@@ -41,6 +42,11 @@ The organization name. The name is not case sensitive.
 <tr><td>registry_type</td><td>yes</td><td>
 
 The registry type.
+
+</td></tr>
+<tr><td>url</td><td>yes</td><td>
+
+The URL of the private registry.
 
 </td></tr>
 <tr><td>username</td><td>no</td><td>

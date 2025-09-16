@@ -13,7 +13,7 @@ Use this endpoint to see a breakdown of aggregated metrics for various GitHub Co
 > [!NOTE]
 > This endpoint will only return results for a given day if the organization contained **five or more members with active Copilot licenses** on that day, as evaluated at the end of that day.
 
-The response contains metrics for up to 28 days prior. Metrics are processed once per day for the previous day,
+The response contains metrics for up to 100 days prior. Metrics are processed once per day for the previous day,
 and the response will only include data up until yesterday. In order for an end user to be counted towards these metrics,
 they must have telemetry enabled in their IDE.
 
@@ -46,7 +46,7 @@ The organization name. The name is not case sensitive.
 </td></tr>
 <tr><td>since</td><td>no</td><td>
 
-Show usage metrics since this date. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format (`YYYY-MM-DDTHH:MM:SSZ`). Maximum value is 28 days ago.
+Show usage metrics since this date. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format (`YYYY-MM-DDTHH:MM:SSZ`). Maximum value is 100 days ago.
 
 </td></tr>
 <tr><td>until</td><td>no</td><td>
@@ -61,7 +61,7 @@ The page number of the results to fetch. For more information, see "[Using pagin
 </td></tr>
 <tr><td>per_page</td><td>no</td><td>
 
-The number of days of metrics to display per page (max 28). For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
+The number of days of metrics to display per page (max 100). For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
 
 </td></tr>
   </tbody>

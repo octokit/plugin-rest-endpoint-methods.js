@@ -35,7 +35,7 @@ octokit.rest.secretScanning.listAlertsForEnterprise({
   <tbody>
     <tr><td>enterprise</td><td>yes</td><td>
 
-The slug version of the enterprise name. You can also substitute this value with the enterprise id.
+The slug version of the enterprise name.
 
 </td></tr>
 <tr><td>state</td><td>no</td><td>
@@ -91,6 +91,11 @@ A boolean value representing whether or not to filter alerts by the publicly-lea
 <tr><td>is_multi_repo</td><td>no</td><td>
 
 A boolean value representing whether or not to filter alerts by the multi-repo tag being present.
+
+</td></tr>
+<tr><td>hide_secret</td><td>no</td><td>
+
+A boolean value representing whether or not to hide literal secrets in the results.
 
 </td></tr>
   </tbody>

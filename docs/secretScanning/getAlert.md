@@ -48,6 +48,11 @@ The name of the repository without the `.git` extension. The name is not case se
 The number that identifies an alert. You can find this at the end of the URL for a code scanning alert within GitHub, and in the `number` field in the response from the `GET /repos/{owner}/{repo}/code-scanning/alerts` operation.
 
 </td></tr>
+<tr><td>hide_secret</td><td>no</td><td>
+
+A boolean value representing whether or not to hide literal secrets in the results.
+
+</td></tr>
   </tbody>
 </table>
 
