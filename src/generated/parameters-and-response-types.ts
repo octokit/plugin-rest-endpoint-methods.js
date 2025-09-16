@@ -3082,93 +3082,93 @@ export type RestEndpointMethodTypes = {
   projects: {
     addItemForOrg: {
       parameters: RequestParameters &
-        Endpoints["POST /orgs/{org}/projectsv2/{project_number}/items"]["parameters"];
-      response: Endpoints["POST /orgs/{org}/projectsv2/{project_number}/items"]["response"];
+        Endpoints["POST /orgs/{org}/projectsV2/{project_number}/items"]["parameters"];
+      response: Endpoints["POST /orgs/{org}/projectsV2/{project_number}/items"]["response"];
     };
     addItemForUser: {
       parameters: RequestParameters &
-        Endpoints["POST /users/{user_id}/projectsv2/{project_number}/items"]["parameters"];
-      response: Endpoints["POST /users/{user_id}/projectsv2/{project_number}/items"]["response"];
+        Endpoints["POST /users/{user_id}/projectsV2/{project_number}/items"]["parameters"];
+      response: Endpoints["POST /users/{user_id}/projectsV2/{project_number}/items"]["response"];
     };
     deleteItemForOrg: {
       parameters: RequestParameters &
-        Endpoints["DELETE /orgs/{org}/projectsv2/{project_number}/items/{item_id}"]["parameters"];
-      response: Endpoints["DELETE /orgs/{org}/projectsv2/{project_number}/items/{item_id}"]["response"];
+        Endpoints["DELETE /orgs/{org}/projectsV2/{project_number}/items/{item_id}"]["parameters"];
+      response: Endpoints["DELETE /orgs/{org}/projectsV2/{project_number}/items/{item_id}"]["response"];
     };
     deleteItemForUser: {
       parameters: RequestParameters &
-        Endpoints["DELETE /users/{user_id}/projectsv2/{project_number}/items/{item_id}"]["parameters"];
-      response: Endpoints["DELETE /users/{user_id}/projectsv2/{project_number}/items/{item_id}"]["response"];
+        Endpoints["DELETE /users/{user_id}/projectsV2/{project_number}/items/{item_id}"]["parameters"];
+      response: Endpoints["DELETE /users/{user_id}/projectsV2/{project_number}/items/{item_id}"]["response"];
     };
     getFieldForOrg: {
       parameters: RequestParameters &
-        Endpoints["GET /orgs/{org}/projectsv2/{project_number}/fields/{field_id}"]["parameters"];
-      response: Endpoints["GET /orgs/{org}/projectsv2/{project_number}/fields/{field_id}"]["response"];
+        Endpoints["GET /orgs/{org}/projectsV2/{project_number}/fields/{field_id}"]["parameters"];
+      response: Endpoints["GET /orgs/{org}/projectsV2/{project_number}/fields/{field_id}"]["response"];
     };
     getFieldForUser: {
       parameters: RequestParameters &
-        Endpoints["GET /users/{user_id}/projectsv2/{project_number}/fields/{field_id}"]["parameters"];
-      response: Endpoints["GET /users/{user_id}/projectsv2/{project_number}/fields/{field_id}"]["response"];
+        Endpoints["GET /users/{user_id}/projectsV2/{project_number}/fields/{field_id}"]["parameters"];
+      response: Endpoints["GET /users/{user_id}/projectsV2/{project_number}/fields/{field_id}"]["response"];
     };
     getForOrg: {
       parameters: RequestParameters &
-        Endpoints["GET /orgs/{org}/projectsv2/{project_number}"]["parameters"];
-      response: Endpoints["GET /orgs/{org}/projectsv2/{project_number}"]["response"];
+        Endpoints["GET /orgs/{org}/projectsV2/{project_number}"]["parameters"];
+      response: Endpoints["GET /orgs/{org}/projectsV2/{project_number}"]["response"];
     };
     getForUser: {
       parameters: RequestParameters &
-        Endpoints["GET /users/{user_id}/projectsv2/{project_number}"]["parameters"];
-      response: Endpoints["GET /users/{user_id}/projectsv2/{project_number}"]["response"];
+        Endpoints["GET /users/{user_id}/projectsV2/{project_number}"]["parameters"];
+      response: Endpoints["GET /users/{user_id}/projectsV2/{project_number}"]["response"];
     };
     getOrgItem: {
       parameters: RequestParameters &
-        Endpoints["GET /orgs/{org}/projectsv2/{project_number}/items/{item_id}"]["parameters"];
-      response: Endpoints["GET /orgs/{org}/projectsv2/{project_number}/items/{item_id}"]["response"];
+        Endpoints["GET /orgs/{org}/projectsV2/{project_number}/items/{item_id}"]["parameters"];
+      response: Endpoints["GET /orgs/{org}/projectsV2/{project_number}/items/{item_id}"]["response"];
     };
     getUserItem: {
       parameters: RequestParameters &
-        Endpoints["GET /users/{user_id}/projectsv2/{project_number}/items/{item_id}"]["parameters"];
-      response: Endpoints["GET /users/{user_id}/projectsv2/{project_number}/items/{item_id}"]["response"];
+        Endpoints["GET /users/{user_id}/projectsV2/{project_number}/items/{item_id}"]["parameters"];
+      response: Endpoints["GET /users/{user_id}/projectsV2/{project_number}/items/{item_id}"]["response"];
     };
     listFieldsForOrg: {
       parameters: RequestParameters &
-        Endpoints["GET /orgs/{org}/projectsv2/{project_number}/fields"]["parameters"];
-      response: Endpoints["GET /orgs/{org}/projectsv2/{project_number}/fields"]["response"];
+        Endpoints["GET /orgs/{org}/projectsV2/{project_number}/fields"]["parameters"];
+      response: Endpoints["GET /orgs/{org}/projectsV2/{project_number}/fields"]["response"];
     };
     listFieldsForUser: {
       parameters: RequestParameters &
-        Endpoints["GET /users/{user_id}/projectsv2/{project_number}/fields"]["parameters"];
-      response: Endpoints["GET /users/{user_id}/projectsv2/{project_number}/fields"]["response"];
+        Endpoints["GET /users/{user_id}/projectsV2/{project_number}/fields"]["parameters"];
+      response: Endpoints["GET /users/{user_id}/projectsV2/{project_number}/fields"]["response"];
     };
     listForOrg: {
       parameters: RequestParameters &
-        Endpoints["GET /orgs/{org}/projectsv2"]["parameters"];
-      response: Endpoints["GET /orgs/{org}/projectsv2"]["response"];
+        Endpoints["GET /orgs/{org}/projectsV2"]["parameters"];
+      response: Endpoints["GET /orgs/{org}/projectsV2"]["response"];
     };
     listForUser: {
       parameters: RequestParameters &
-        Endpoints["GET /users/{username}/projectsv2"]["parameters"];
-      response: Endpoints["GET /users/{username}/projectsv2"]["response"];
+        Endpoints["GET /users/{username}/projectsV2"]["parameters"];
+      response: Endpoints["GET /users/{username}/projectsV2"]["response"];
     };
     listItemsForOrg: {
       parameters: RequestParameters &
-        Endpoints["GET /orgs/{org}/projectsv2/{project_number}/items"]["parameters"];
-      response: Endpoints["GET /orgs/{org}/projectsv2/{project_number}/items"]["response"];
+        Endpoints["GET /orgs/{org}/projectsV2/{project_number}/items"]["parameters"];
+      response: Endpoints["GET /orgs/{org}/projectsV2/{project_number}/items"]["response"];
     };
     listItemsForUser: {
       parameters: RequestParameters &
-        Endpoints["GET /users/{user_id}/projectsv2/{project_number}/items"]["parameters"];
-      response: Endpoints["GET /users/{user_id}/projectsv2/{project_number}/items"]["response"];
+        Endpoints["GET /users/{user_id}/projectsV2/{project_number}/items"]["parameters"];
+      response: Endpoints["GET /users/{user_id}/projectsV2/{project_number}/items"]["response"];
     };
     updateItemForOrg: {
       parameters: RequestParameters &
-        Endpoints["PATCH /orgs/{org}/projectsv2/{project_number}/items/{item_id}"]["parameters"];
-      response: Endpoints["PATCH /orgs/{org}/projectsv2/{project_number}/items/{item_id}"]["response"];
+        Endpoints["PATCH /orgs/{org}/projectsV2/{project_number}/items/{item_id}"]["parameters"];
+      response: Endpoints["PATCH /orgs/{org}/projectsV2/{project_number}/items/{item_id}"]["response"];
     };
     updateItemForUser: {
       parameters: RequestParameters &
-        Endpoints["PATCH /users/{user_id}/projectsv2/{project_number}/items/{item_id}"]["parameters"];
-      response: Endpoints["PATCH /users/{user_id}/projectsv2/{project_number}/items/{item_id}"]["response"];
+        Endpoints["PATCH /users/{user_id}/projectsV2/{project_number}/items/{item_id}"]["parameters"];
+      response: Endpoints["PATCH /users/{user_id}/projectsV2/{project_number}/items/{item_id}"]["response"];
     };
   };
   pulls: {
