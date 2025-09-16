@@ -37,7 +37,7 @@
     "fetch-mock": "^12.0.0",
     "github-openapi-graphql-query": "^5.0.0",
     "glob": "^11.0.0",
-    "prettier": "3.5.3",
+    "prettier": "3.6.2",
     "semantic-release-plugin-update-version-in-files": "^2.0.0",
     "sinon": "^20.0.0",
     "sort-keys": "^6.0.0",
