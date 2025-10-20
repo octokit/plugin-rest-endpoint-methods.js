@@ -58,7 +58,8 @@ A description of the code security configuration
 
 The enablement status of GitHub Advanced Security features. `enabled` will enable both Code Security and Secret Protection features.
 
-> [!WARNING] > `code_security` and `secret_protection` are deprecated values for this field. Prefer the individual `code_security` and `secret_protection` fields to set the status of these features.
+> [!WARNING]
+> `code_security` and `secret_protection` are deprecated values for this field. Prefer the individual `code_security` and `secret_protection` fields to set the status of these features.
 
 </td></tr>
 <tr><td>code_security</td><td>no</td><td>
