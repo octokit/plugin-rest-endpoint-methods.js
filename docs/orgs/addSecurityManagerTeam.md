@@ -10,7 +10,8 @@ type: API method
 
 **This method is deprecated.**
 
-> [!WARNING] > **Closing down notice:** This operation is closing down and will be removed starting January 1, 2026. Please use the "[Organization Roles](https://docs.github.com/rest/orgs/organization-roles)" endpoints instead.
+> [!WARNING]
+> **Closing down notice:** This operation is closing down and will be removed starting January 1, 2026. Please use the "[Organization Roles](https://docs.github.com/rest/orgs/organization-roles)" endpoints instead.
 
 ```js
 octokit.rest.orgs.addSecurityManagerTeam({

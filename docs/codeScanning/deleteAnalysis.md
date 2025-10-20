@@ -67,7 +67,6 @@ The procedure therefore consists of a nested loop:
 - Parse this list to find a deletable analysis. If found:
 
   **Inner loop**:
-
   - Delete the identified analysis.
   - Parse the response for the value of `confirm_delete_url` and, if found, use this in the next iteration.
 
