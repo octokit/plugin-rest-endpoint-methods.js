@@ -1,6 +1,6 @@
 ---
 name: List custom property values for organization repositories
-example: octokit.rest.orgs.listCustomPropertiesValuesForRepos({ org })
+example: octokit.rest.orgs.customPropertiesForReposGetOrganizationValues({ org })
 route: GET /orgs/{org}/properties/values
 scope: orgs
 type: API method
@@ -12,7 +12,7 @@ Lists organization repositories with all of their custom property values.
 Organization members can read these properties.
 
 ```js
-octokit.rest.orgs.listCustomPropertiesValuesForRepos({
+octokit.rest.orgs.customPropertiesForReposGetOrganizationValues({
   org,
 });
 ```

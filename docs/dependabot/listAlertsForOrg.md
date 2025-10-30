@@ -88,7 +88,14 @@ Can be: `jfrog-artifactory`
 <tr><td>has</td><td>no</td><td>
 
 Filters the list of alerts based on whether the alert has the given value. If specified, only alerts meeting this criterion will be returned.
-Multiple `has` filters can be passed to filter for alerts that have all of the values. Currently, only `patch` is supported.
+Multiple `has` filters can be passed to filter for alerts that have all of the values.
+
+</td></tr>
+<tr><td>runtime_risk</td><td>no</td><td>
+
+A comma-separated list of runtime risk strings. If specified, only alerts for repositories with deployment records matching these risks will be returned.
+
+Can be: `critical-resource`, `internet-exposed`, `sensitive-data`, `lateral-movement`
 
 </td></tr>
 <tr><td>scope</td><td>no</td><td>
@@ -117,20 +124,6 @@ A cursor, as given in the [Link header](https://docs.github.com/rest/guides/usin
 <tr><td>after</td><td>no</td><td>
 
 A cursor, as given in the [Link header](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api#using-link-headers). If specified, the query only searches for results after this cursor. For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
-
-</td></tr>
-<tr><td>first</td><td>no</td><td>
-
-**Deprecated**. The number of results per page (max 100), starting from the first matching result.
-This parameter must not be used in combination with `last`.
-Instead, use `per_page` in combination with `after` to fetch the first page of results.
-
-</td></tr>
-<tr><td>last</td><td>no</td><td>
-
-**Deprecated**. The number of results per page (max 100), starting from the last matching result.
-This parameter must not be used in combination with `first`.
-Instead, use `per_page` in combination with `before` to fetch the last page of results.
 
 </td></tr>
 <tr><td>per_page</td><td>no</td><td>

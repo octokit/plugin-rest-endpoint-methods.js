@@ -439,6 +439,34 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
+     * Delete a custom image from the organization.
+     *
+     * OAuth tokens and personal access tokens (classic) need the `manage_runners:org` scope to use this endpoint.
+     */
+    deleteCustomImageFromOrg: {
+      (
+        params?: RestEndpointMethodTypes["actions"]["deleteCustomImageFromOrg"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["actions"]["deleteCustomImageFromOrg"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Delete an image version of custom image from the organization.
+     *
+     * OAuth tokens and personal access tokens (classic) need the `manage_runners:org` scope to use this endpoint.
+     */
+    deleteCustomImageVersionFromOrg: {
+      (
+        params?: RestEndpointMethodTypes["actions"]["deleteCustomImageVersionFromOrg"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["actions"]["deleteCustomImageVersionFromOrg"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
      * Deletes a secret in an environment using the secret name.
      *
      * Authenticated users must have collaborator access to a repository to create, update, or read secrets.
@@ -877,6 +905,34 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["actions"]["getArtifact"]["parameters"],
       ): Promise<RestEndpointMethodTypes["actions"]["getArtifact"]["response"]>;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Get a custom image definition for GitHub Actions Hosted Runners.
+     *
+     * OAuth tokens and personal access tokens (classic) need the `manage_runners:org` scope to use this endpoint.
+     */
+    getCustomImageForOrg: {
+      (
+        params?: RestEndpointMethodTypes["actions"]["getCustomImageForOrg"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["actions"]["getCustomImageForOrg"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Get an image version of a custom image for GitHub Actions Hosted Runners.
+     *
+     * OAuth tokens and personal access tokens (classic) need the `manage_runners:org` scope to use this endpoint.
+     */
+    getCustomImageVersionForOrg: {
+      (
+        params?: RestEndpointMethodTypes["actions"]["getCustomImageVersionForOrg"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["actions"]["getCustomImageVersionForOrg"]["response"]
+      >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
@@ -1383,6 +1439,34 @@ export type RestEndpointMethods = {
         params?: RestEndpointMethodTypes["actions"]["listArtifactsForRepo"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["listArtifactsForRepo"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * List image versions of a custom image for an organization.
+     *
+     * OAuth tokens and personal access tokens (classic) need the `manage_runners:org` scope to use this endpoint.
+     */
+    listCustomImageVersionsForOrg: {
+      (
+        params?: RestEndpointMethodTypes["actions"]["listCustomImageVersionsForOrg"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["actions"]["listCustomImageVersionsForOrg"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * List custom images for an organization.
+     *
+     * OAuth tokens and personal access tokens (classic) need the `manage_runners:org` scope to use this endpoint.
+     */
+    listCustomImagesForOrg: {
+      (
+        params?: RestEndpointMethodTypes["actions"]["listCustomImagesForOrg"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["actions"]["listCustomImagesForOrg"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -3231,6 +3315,34 @@ export type RestEndpointMethods = {
         params?: RestEndpointMethodTypes["billing"]["getGithubActionsBillingUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["billing"]["getGithubActionsBillingUser"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Gets a report of premium request usage for an organization. To use this endpoint, you must be an administrator of an organization within an enterprise or an organization account.
+     *
+     * **Note:** Only data from the past 24 months is accessible via this endpoint.
+     */
+    getGithubBillingPremiumRequestUsageReportOrg: {
+      (
+        params?: RestEndpointMethodTypes["billing"]["getGithubBillingPremiumRequestUsageReportOrg"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["billing"]["getGithubBillingPremiumRequestUsageReportOrg"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Gets a report of premium request usage for a user.
+     *
+     * **Note:** Only data from the past 24 months is accessible via this endpoint.
+     */
+    getGithubBillingPremiumRequestUsageReportUser: {
+      (
+        params?: RestEndpointMethodTypes["billing"]["getGithubBillingPremiumRequestUsageReportUser"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["billing"]["getGithubBillingPremiumRequestUsageReportUser"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -5770,6 +5882,216 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
   };
+  enterpriseTeamMemberships: {
+    /**
+     * Add a team member to an enterprise team.
+     */
+    add: {
+      (
+        params?: RestEndpointMethodTypes["enterpriseTeamMemberships"]["add"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["enterpriseTeamMemberships"]["add"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Add multiple team members to an enterprise team.
+     */
+    bulkAdd: {
+      (
+        params?: RestEndpointMethodTypes["enterpriseTeamMemberships"]["bulkAdd"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["enterpriseTeamMemberships"]["bulkAdd"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Remove multiple team members from an enterprise team.
+     */
+    bulkRemove: {
+      (
+        params?: RestEndpointMethodTypes["enterpriseTeamMemberships"]["bulkRemove"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["enterpriseTeamMemberships"]["bulkRemove"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Returns whether the user is a member of the enterprise team.
+     */
+    get: {
+      (
+        params?: RestEndpointMethodTypes["enterpriseTeamMemberships"]["get"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["enterpriseTeamMemberships"]["get"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Lists all team members in an enterprise team.
+     */
+    list: {
+      (
+        params?: RestEndpointMethodTypes["enterpriseTeamMemberships"]["list"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["enterpriseTeamMemberships"]["list"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Remove membership of a specific user from a particular team in an enterprise.
+     */
+    remove: {
+      (
+        params?: RestEndpointMethodTypes["enterpriseTeamMemberships"]["remove"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["enterpriseTeamMemberships"]["remove"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+  };
+  enterpriseTeamOrganizations: {
+    /**
+     * Assign an enterprise team to an organization.
+     */
+    add: {
+      (
+        params?: RestEndpointMethodTypes["enterpriseTeamOrganizations"]["add"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["enterpriseTeamOrganizations"]["add"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Assign an enterprise team to multiple organizations.
+     */
+    bulkAdd: {
+      (
+        params?: RestEndpointMethodTypes["enterpriseTeamOrganizations"]["bulkAdd"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["enterpriseTeamOrganizations"]["bulkAdd"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Unassign an enterprise team from multiple organizations.
+     */
+    bulkRemove: {
+      (
+        params?: RestEndpointMethodTypes["enterpriseTeamOrganizations"]["bulkRemove"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["enterpriseTeamOrganizations"]["bulkRemove"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Unassign an enterprise team from an organization.
+     */
+    delete: {
+      (
+        params?: RestEndpointMethodTypes["enterpriseTeamOrganizations"]["delete"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["enterpriseTeamOrganizations"]["delete"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Check if an enterprise team is assigned to an organization
+     */
+    getAssignment: {
+      (
+        params?: RestEndpointMethodTypes["enterpriseTeamOrganizations"]["getAssignment"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["enterpriseTeamOrganizations"]["getAssignment"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Get all organizations assigned to an enterprise team
+     */
+    getAssignments: {
+      (
+        params?: RestEndpointMethodTypes["enterpriseTeamOrganizations"]["getAssignments"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["enterpriseTeamOrganizations"]["getAssignments"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+  };
+  enterpriseTeams: {
+    /**
+     * To create an enterprise team, the authenticated user must be an owner of the enterprise.
+     */
+    create: {
+      (
+        params?: RestEndpointMethodTypes["enterpriseTeams"]["create"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["enterpriseTeams"]["create"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * To delete an enterprise team, the authenticated user must be an enterprise owner.
+     *
+     * If you are an enterprise owner, deleting an enterprise team will delete all of its IdP mappings as well.
+     */
+    delete: {
+      (
+        params?: RestEndpointMethodTypes["enterpriseTeams"]["delete"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["enterpriseTeams"]["delete"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Gets a team using the team's slug. To create the slug, GitHub replaces special characters in the name string, changes all words to lowercase, and replaces spaces with a `-` separator and adds the "ent:" prefix. For example, "My TEam Näme" would become `ent:my-team-name`.
+     */
+    get: {
+      (
+        params?: RestEndpointMethodTypes["enterpriseTeams"]["get"]["parameters"],
+      ): Promise<RestEndpointMethodTypes["enterpriseTeams"]["get"]["response"]>;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * List all teams in the enterprise for the authenticated user
+     */
+    list: {
+      (
+        params?: RestEndpointMethodTypes["enterpriseTeams"]["list"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["enterpriseTeams"]["list"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * To edit a team, the authenticated user must be an enterprise owner.
+     */
+    update: {
+      (
+        params?: RestEndpointMethodTypes["enterpriseTeams"]["update"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["enterpriseTeams"]["update"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+  };
   gists: {
     checkIsStarred: {
       (
@@ -7809,6 +8131,76 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
+     * Create a hook that posts payloads in JSON format.
+     *
+     * You must be an organization owner to use this endpoint.
+     *
+     * OAuth app tokens and personal access tokens (classic) need `admin:org_hook` scope. OAuth apps cannot list, view, or
+     * edit webhooks that they did not create and users cannot list, view, or edit webhooks that were created by OAuth apps.
+     */
+    createWebhook: {
+      (
+        params?: RestEndpointMethodTypes["orgs"]["createWebhook"]["parameters"],
+      ): Promise<RestEndpointMethodTypes["orgs"]["createWebhook"]["response"]>;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Create new or update existing custom property values for an organization.
+     * To remove a custom property value from an organization, set the property value to `null`.
+     *
+     * The organization must belong to an enterprise.
+     *
+     * Access requirements:
+     * - Organization admins
+     * - OAuth tokens and personal access tokens (classic) with the `admin:org` scope
+     * - Actors with the organization-level "edit custom properties for an organization" fine-grained permission
+     */
+    customPropertiesForOrgsCreateOrUpdateOrganizationValues: {
+      (
+        params?: RestEndpointMethodTypes["orgs"]["customPropertiesForOrgsCreateOrUpdateOrganizationValues"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["orgs"]["customPropertiesForOrgsCreateOrUpdateOrganizationValues"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Gets all custom property values that are set for an organization.
+     *
+     * The organization must belong to an enterprise.
+     *
+     * Access requirements:
+     * - Organization admins
+     * - OAuth tokens and personal access tokens (classic) with the `read:org` scope
+     * - Actors with the organization-level "read custom properties for an organization" fine-grained permission or above
+     */
+    customPropertiesForOrgsGetOrganizationValues: {
+      (
+        params?: RestEndpointMethodTypes["orgs"]["customPropertiesForOrgsGetOrganizationValues"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["orgs"]["customPropertiesForOrgsGetOrganizationValues"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Creates a new or updates an existing custom property that is defined for an organization.
+     *
+     * To use this endpoint, the authenticated user must be one of:
+     * - An administrator for the organization.
+     * - A user, or a user on a team, with the fine-grained permission of `custom_properties_org_definitions_manager` in the organization.
+     */
+    customPropertiesForReposCreateOrUpdateOrganizationDefinition: {
+      (
+        params?: RestEndpointMethodTypes["orgs"]["customPropertiesForReposCreateOrUpdateOrganizationDefinition"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["orgs"]["customPropertiesForReposCreateOrUpdateOrganizationDefinition"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
      * Creates new or updates existing custom properties defined for an organization in a batch.
      *
      * If the property already exists, the existing property will be replaced with the new values.
@@ -7819,11 +8211,11 @@ export type RestEndpointMethods = {
      *   - An administrator for the organization.
      *   - A user, or a user on a team, with the fine-grained permission of `custom_properties_org_definitions_manager` in the organization.
      */
-    createOrUpdateCustomProperties: {
+    customPropertiesForReposCreateOrUpdateOrganizationDefinitions: {
       (
-        params?: RestEndpointMethodTypes["orgs"]["createOrUpdateCustomProperties"]["parameters"],
+        params?: RestEndpointMethodTypes["orgs"]["customPropertiesForReposCreateOrUpdateOrganizationDefinitions"]["parameters"],
       ): Promise<
-        RestEndpointMethodTypes["orgs"]["createOrUpdateCustomProperties"]["response"]
+        RestEndpointMethodTypes["orgs"]["customPropertiesForReposCreateOrUpdateOrganizationDefinitions"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -7840,43 +8232,67 @@ export type RestEndpointMethods = {
      *   - An administrator for the organization.
      *   - A user, or a user on a team, with the fine-grained permission of `custom_properties_org_values_editor` in the organization.
      */
-    createOrUpdateCustomPropertiesValuesForRepos: {
+    customPropertiesForReposCreateOrUpdateOrganizationValues: {
       (
-        params?: RestEndpointMethodTypes["orgs"]["createOrUpdateCustomPropertiesValuesForRepos"]["parameters"],
+        params?: RestEndpointMethodTypes["orgs"]["customPropertiesForReposCreateOrUpdateOrganizationValues"]["parameters"],
       ): Promise<
-        RestEndpointMethodTypes["orgs"]["createOrUpdateCustomPropertiesValuesForRepos"]["response"]
+        RestEndpointMethodTypes["orgs"]["customPropertiesForReposCreateOrUpdateOrganizationValues"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Creates a new or updates an existing custom property that is defined for an organization.
+     * Removes a custom property that is defined for an organization.
      *
      * To use this endpoint, the authenticated user must be one of:
-     * - An administrator for the organization.
-     * - A user, or a user on a team, with the fine-grained permission of `custom_properties_org_definitions_manager` in the organization.
+     *   - An administrator for the organization.
+     *   - A user, or a user on a team, with the fine-grained permission of `custom_properties_org_definitions_manager` in the organization.
      */
-    createOrUpdateCustomProperty: {
+    customPropertiesForReposDeleteOrganizationDefinition: {
       (
-        params?: RestEndpointMethodTypes["orgs"]["createOrUpdateCustomProperty"]["parameters"],
+        params?: RestEndpointMethodTypes["orgs"]["customPropertiesForReposDeleteOrganizationDefinition"]["parameters"],
       ): Promise<
-        RestEndpointMethodTypes["orgs"]["createOrUpdateCustomProperty"]["response"]
+        RestEndpointMethodTypes["orgs"]["customPropertiesForReposDeleteOrganizationDefinition"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Create a hook that posts payloads in JSON format.
-     *
-     * You must be an organization owner to use this endpoint.
-     *
-     * OAuth app tokens and personal access tokens (classic) need `admin:org_hook` scope. OAuth apps cannot list, view, or
-     * edit webhooks that they did not create and users cannot list, view, or edit webhooks that were created by OAuth apps.
+     * Gets a custom property that is defined for an organization.
+     * Organization members can read these properties.
      */
-    createWebhook: {
+    customPropertiesForReposGetOrganizationDefinition: {
       (
-        params?: RestEndpointMethodTypes["orgs"]["createWebhook"]["parameters"],
-      ): Promise<RestEndpointMethodTypes["orgs"]["createWebhook"]["response"]>;
+        params?: RestEndpointMethodTypes["orgs"]["customPropertiesForReposGetOrganizationDefinition"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["orgs"]["customPropertiesForReposGetOrganizationDefinition"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Gets all custom properties defined for an organization.
+     * Organization members can read these properties.
+     */
+    customPropertiesForReposGetOrganizationDefinitions: {
+      (
+        params?: RestEndpointMethodTypes["orgs"]["customPropertiesForReposGetOrganizationDefinitions"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["orgs"]["customPropertiesForReposGetOrganizationDefinitions"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Lists organization repositories with all of their custom property values.
+     * Organization members can read these properties.
+     */
+    customPropertiesForReposGetOrganizationValues: {
+      (
+        params?: RestEndpointMethodTypes["orgs"]["customPropertiesForReposGetOrganizationValues"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["orgs"]["customPropertiesForReposGetOrganizationValues"]["response"]
+      >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
@@ -7965,6 +8381,34 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
+     * Removes a repository from the list of selected repositories that are enforced for immutable releases in an organization. To use this endpoint, the organization immutable releases policy for `enforced_repositories` must be configured to `selected`.
+     *
+     * OAuth tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
+     */
+    disableSelectedRepositoryImmutableReleasesOrganization: {
+      (
+        params?: RestEndpointMethodTypes["orgs"]["disableSelectedRepositoryImmutableReleasesOrganization"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["orgs"]["disableSelectedRepositoryImmutableReleasesOrganization"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Adds a repository to the list of selected repositories that are enforced for immutable releases in an organization. To use this endpoint, the organization immutable releases policy for `enforced_repositories` must be configured to `selected`.
+     *
+     * OAuth tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
+     */
+    enableSelectedRepositoryImmutableReleasesOrganization: {
+      (
+        params?: RestEndpointMethodTypes["orgs"]["enableSelectedRepositoryImmutableReleasesOrganization"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["orgs"]["enableSelectedRepositoryImmutableReleasesOrganization"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
      * Gets information about an organization.
      *
      * When the value of `two_factor_requirement_enabled` is `true`, the organization requires all members, billing managers, outside collaborators, guest collaborators, repository collaborators, or everyone with access to any repository within the organization to enable [two-factor authentication](https://docs.github.com/articles/securing-your-account-with-two-factor-authentication-2fa/).
@@ -7983,27 +8427,29 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Gets all custom properties defined for an organization.
-     * Organization members can read these properties.
+     * Gets the immutable releases policy for repositories in an organization.
+     *
+     * OAuth tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
      */
-    getAllCustomProperties: {
+    getImmutableReleasesSettings: {
       (
-        params?: RestEndpointMethodTypes["orgs"]["getAllCustomProperties"]["parameters"],
+        params?: RestEndpointMethodTypes["orgs"]["getImmutableReleasesSettings"]["parameters"],
       ): Promise<
-        RestEndpointMethodTypes["orgs"]["getAllCustomProperties"]["response"]
+        RestEndpointMethodTypes["orgs"]["getImmutableReleasesSettings"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Gets a custom property that is defined for an organization.
-     * Organization members can read these properties.
+     * List all of the repositories that have been selected for immutable releases enforcement in an organization.
+     *
+     * OAuth tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
      */
-    getCustomProperty: {
+    getImmutableReleasesSettingsRepositories: {
       (
-        params?: RestEndpointMethodTypes["orgs"]["getCustomProperty"]["parameters"],
+        params?: RestEndpointMethodTypes["orgs"]["getImmutableReleasesSettingsRepositories"]["parameters"],
       ): Promise<
-        RestEndpointMethodTypes["orgs"]["getCustomProperty"]["response"]
+        RestEndpointMethodTypes["orgs"]["getImmutableReleasesSettingsRepositories"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -8168,6 +8614,19 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
+     * List repositories owned by the provided organization that have created at least one attested artifact
+     * Results will be sorted in ascending order by repository ID
+     */
+    listAttestationRepositories: {
+      (
+        params?: RestEndpointMethodTypes["orgs"]["listAttestationRepositories"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["orgs"]["listAttestationRepositories"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
      * List a collection of artifact attestations with a given subject digest that are associated with repositories owned by an organization.
      *
      * The collection of attestations returned by this endpoint is filtered according to the authenticated user's permissions; if the authenticated user cannot read a repository, the attestations associated with that repository will not be included in the response. In addition, when using a fine-grained access token the `attestations:read` permission is required.
@@ -8207,19 +8666,6 @@ export type RestEndpointMethods = {
         params?: RestEndpointMethodTypes["orgs"]["listBlockedUsers"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["orgs"]["listBlockedUsers"]["response"]
-      >;
-      defaults: RequestInterface["defaults"];
-      endpoint: EndpointInterface<{ url: string }>;
-    };
-    /**
-     * Lists organization repositories with all of their custom property values.
-     * Organization members can read these properties.
-     */
-    listCustomPropertiesValuesForRepos: {
-      (
-        params?: RestEndpointMethodTypes["orgs"]["listCustomPropertiesValuesForRepos"]["parameters"],
-      ): Promise<
-        RestEndpointMethodTypes["orgs"]["listCustomPropertiesValuesForRepos"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -8552,22 +8998,6 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Removes a custom property that is defined for an organization.
-     *
-     * To use this endpoint, the authenticated user must be one of:
-     *   - An administrator for the organization.
-     *   - A user, or a user on a team, with the fine-grained permission of `custom_properties_org_definitions_manager` in the organization.
-     */
-    removeCustomProperty: {
-      (
-        params?: RestEndpointMethodTypes["orgs"]["removeCustomProperty"]["parameters"],
-      ): Promise<
-        RestEndpointMethodTypes["orgs"]["removeCustomProperty"]["response"]
-      >;
-      defaults: RequestInterface["defaults"];
-      endpoint: EndpointInterface<{ url: string }>;
-    };
-    /**
      * Removing a user from this list will remove them from all teams and they will no longer have any access to the organization's repositories.
      *
      * > [!NOTE]
@@ -8723,6 +9153,34 @@ export type RestEndpointMethods = {
         params?: RestEndpointMethodTypes["orgs"]["revokeOrgRoleUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["orgs"]["revokeOrgRoleUser"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Sets the immutable releases policy for repositories in an organization.
+     *
+     * OAuth tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
+     */
+    setImmutableReleasesSettings: {
+      (
+        params?: RestEndpointMethodTypes["orgs"]["setImmutableReleasesSettings"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["orgs"]["setImmutableReleasesSettings"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Replaces all repositories that have been selected for immutable releases enforcement in an organization. To use this endpoint, the organization immutable releases policy for `enforced_repositories` must be configured to `selected`.
+     *
+     * OAuth tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
+     */
+    setImmutableReleasesSettingsRepositories: {
+      (
+        params?: RestEndpointMethodTypes["orgs"]["setImmutableReleasesSettingsRepositories"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["orgs"]["setImmutableReleasesSettingsRepositories"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -10621,6 +11079,19 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
+     * Shows whether immutable releases are enabled or disabled. Also identifies whether immutability is being
+     * enforced by the repository owner.  The authenticated user must have admin read access to the repository.
+     */
+    checkImmutableReleases: {
+      (
+        params?: RestEndpointMethodTypes["repos"]["checkImmutableReleases"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["repos"]["checkImmutableReleases"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
      * Returns a boolean indicating whether or not private vulnerability reporting is enabled for the repository. For more information, see "[Evaluating the security settings of a repository](https://docs.github.com/code-security/security-advisories/working-with-repository-security-advisories/evaluating-the-security-settings-of-a-repository)".
      */
     checkPrivateVulnerabilityReporting: {
@@ -11028,21 +11499,6 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Create new or update existing custom property values for a repository.
-     * Using a value of `null` for a custom property will remove or 'unset' the property value from the repository.
-     *
-     * Repository admins and other users with the repository-level "edit custom property values" fine-grained permission can use this endpoint.
-     */
-    createOrUpdateCustomPropertiesValues: {
-      (
-        params?: RestEndpointMethodTypes["repos"]["createOrUpdateCustomPropertiesValues"]["parameters"],
-      ): Promise<
-        RestEndpointMethodTypes["repos"]["createOrUpdateCustomPropertiesValues"]["response"]
-      >;
-      defaults: RequestInterface["defaults"];
-      endpoint: EndpointInterface<{ url: string }>;
-    };
-    /**
      * Create or update an environment with protection rules, such as required reviewers. For more information about environment protection rules, see "[Environments](/actions/reference/environments#environment-protection-rules)."
      *
      * > [!NOTE]
@@ -11167,6 +11623,34 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["repos"]["createWebhook"]["parameters"],
       ): Promise<RestEndpointMethodTypes["repos"]["createWebhook"]["response"]>;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Create new or update existing custom property values for a repository.
+     * Using a value of `null` for a custom property will remove or 'unset' the property value from the repository.
+     *
+     * Repository admins and other users with the repository-level "edit custom property values" fine-grained permission can use this endpoint.
+     */
+    customPropertiesForReposCreateOrUpdateRepositoryValues: {
+      (
+        params?: RestEndpointMethodTypes["repos"]["customPropertiesForReposCreateOrUpdateRepositoryValues"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["repos"]["customPropertiesForReposCreateOrUpdateRepositoryValues"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Gets all custom property values that are set for a repository.
+     * Users with read access to the repository can use this endpoint.
+     */
+    customPropertiesForReposGetRepositoryValues: {
+      (
+        params?: RestEndpointMethodTypes["repos"]["customPropertiesForReposGetRepositoryValues"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["repos"]["customPropertiesForReposGetRepositoryValues"]["response"]
+      >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
@@ -11486,6 +11970,18 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
+     * Disables immutable releases for a repository. The authenticated user must have admin access to the repository.
+     */
+    disableImmutableReleases: {
+      (
+        params?: RestEndpointMethodTypes["repos"]["disableImmutableReleases"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["repos"]["disableImmutableReleases"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
      * Disables private vulnerability reporting for a repository. The authenticated user must have admin access to the repository. For more information, see "[Privately reporting a security vulnerability](https://docs.github.com/code-security/security-advisories/guidance-on-reporting-and-writing/privately-reporting-a-security-vulnerability)".
      */
     disablePrivateVulnerabilityReporting: {
@@ -11571,6 +12067,18 @@ export type RestEndpointMethods = {
         params?: RestEndpointMethodTypes["repos"]["enableAutomatedSecurityFixes"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["enableAutomatedSecurityFixes"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Enables immutable releases for a repository. The authenticated user must have admin access to the repository.
+     */
+    enableImmutableReleases: {
+      (
+        params?: RestEndpointMethodTypes["repos"]["enableImmutableReleases"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["repos"]["enableImmutableReleases"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -12016,19 +12524,6 @@ export type RestEndpointMethods = {
         params?: RestEndpointMethodTypes["repos"]["getCustomDeploymentProtectionRule"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["repos"]["getCustomDeploymentProtectionRule"]["response"]
-      >;
-      defaults: RequestInterface["defaults"];
-      endpoint: EndpointInterface<{ url: string }>;
-    };
-    /**
-     * Gets all custom property values that are set for a repository.
-     * Users with read access to the repository can use this endpoint.
-     */
-    getCustomPropertiesValues: {
-      (
-        params?: RestEndpointMethodTypes["repos"]["getCustomPropertiesValues"]["parameters"],
-      ): Promise<
-        RestEndpointMethodTypes["repos"]["getCustomPropertiesValues"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -13545,10 +14040,19 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * > [!WARNING]
-     * > **Notice:** Search for issues and pull requests will be overridden by advanced search on November 4, 2025.
-     * > You can read more about this change on [the GitHub blog](https://github.blog/changelog/2025-03-06-github-issues-projects-api-support-for-issues-advanced-search-and-more/).
-     * @deprecated octokit.rest.search.issuesAndPullRequests() is deprecated, see https://docs.github.com/rest/search/search#search-issues-and-pull-requests
+     * Find issues by state and keyword. This method returns up to 100 results [per page](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api).
+     *
+     * When searching for issues, you can get text match metadata for the issue **title**, issue **body**, and issue **comment body** fields when you pass the `text-match` media type. For more details about how to receive highlighted
+     * search results, see [Text match metadata](https://docs.github.com/rest/search/search#text-match-metadata).
+     *
+     * For example, if you want to find the oldest unresolved Python bugs on Windows. Your query might look something like this.
+     *
+     * `q=windows+label:bug+language:python+state:open&sort=created&order=asc`
+     *
+     * This query searches for the keyword `windows`, within any open issue that is labeled as `bug`. The search runs across repositories whose primary language is Python. The results are sorted by creation date in ascending order, which means the oldest issues appear first in the search results.
+     *
+     * > [!NOTE]
+     * > For requests made by GitHub Apps with a user access token, you can't retrieve a combination of issues and pull requests in a single query. Requests that don't include the `is:issue` or `is:pull-request` qualifier will receive an HTTP `422 Unprocessable Entity` response. To get results for both issues and pull requests, you must send separate queries for issues and pull requests. For more information about the `is` qualifier, see "[Searching only issues or pull requests](https://docs.github.com/github/searching-for-information-on-github/searching-issues-and-pull-requests#search-only-issues-or-pull-requests)."
      */
     issuesAndPullRequests: {
       (
@@ -13670,6 +14174,9 @@ export type RestEndpointMethods = {
     /**
      * Lists the latest default incremental and backfill scans by type for a repository. Scans from Copilot Secret Scanning are not included.
      *
+     * > [!NOTE]
+     * > This endpoint requires [GitHub Advanced Security](https://docs.github.com/get-started/learning-about-github/about-github-advanced-security)."
+     *
      * OAuth app tokens and personal access tokens (classic) need the `repo` or `security_events` scope to use this endpoint. If this endpoint is only used with public repositories, the token can use the `public_repo` scope instead.
      */
     getScanHistory: {
@@ -13677,24 +14184,6 @@ export type RestEndpointMethods = {
         params?: RestEndpointMethodTypes["secretScanning"]["getScanHistory"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["secretScanning"]["getScanHistory"]["response"]
-      >;
-      defaults: RequestInterface["defaults"];
-      endpoint: EndpointInterface<{ url: string }>;
-    };
-    /**
-     * Lists secret scanning alerts for eligible repositories in an enterprise, from newest to oldest.
-     *
-     * Alerts are only returned for organizations in the enterprise for which the authenticated user is an organization owner or a [security manager](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization).
-     *
-     * The authenticated user must be a member of the enterprise in order to use this endpoint.
-     *
-     * OAuth app tokens and personal access tokens (classic) need the `repo` scope or `security_events` scope to use this endpoint.
-     */
-    listAlertsForEnterprise: {
-      (
-        params?: RestEndpointMethodTypes["secretScanning"]["listAlertsForEnterprise"]["parameters"],
-      ): Promise<
-        RestEndpointMethodTypes["secretScanning"]["listAlertsForEnterprise"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;

@@ -48,6 +48,8 @@ The unique identifier of the project item.
 
 Limit results to specific fields, by their IDs. If not specified, the title field will be returned.
 
+Example: fields[]=123&fields[]=456&fields[]=789 or fields=123,456,789
+
 </td></tr>
   </tbody>
 </table>

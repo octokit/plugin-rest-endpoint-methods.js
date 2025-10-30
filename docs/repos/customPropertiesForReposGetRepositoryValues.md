@@ -1,6 +1,6 @@
 ---
 name: Get all custom property values for a repository
-example: octokit.rest.repos.getCustomPropertiesValues({ owner, repo })
+example: octokit.rest.repos.customPropertiesForReposGetRepositoryValues({ owner, repo })
 route: GET /repos/{owner}/{repo}/properties/values
 scope: repos
 type: API method
@@ -12,7 +12,7 @@ Gets all custom property values that are set for a repository.
 Users with read access to the repository can use this endpoint.
 
 ```js
-octokit.rest.repos.getCustomPropertiesValues({
+octokit.rest.repos.customPropertiesForReposGetRepositoryValues({
   owner,
   repo,
 });

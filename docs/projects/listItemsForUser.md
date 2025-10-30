@@ -1,7 +1,7 @@
 ---
 name: List items for a user owned project
-example: octokit.rest.projects.listItemsForUser({ project_number, user_id })
-route: GET /users/{user_id}/projectsV2/{project_number}/items
+example: octokit.rest.projects.listItemsForUser({ project_number, username })
+route: GET /users/{username}/projectsV2/{project_number}/items
 scope: projects
 type: API method
 ---
@@ -13,7 +13,7 @@ List all items for a specific user-owned project accessible by the authenticated
 ```js
 octokit.rest.projects.listItemsForUser({
   project_number,
-  user_id,
+  username,
 });
 ```
 
@@ -33,9 +33,9 @@ octokit.rest.projects.listItemsForUser({
 The project's number.
 
 </td></tr>
-<tr><td>user_id</td><td>yes</td><td>
+<tr><td>username</td><td>yes</td><td>
 
-The unique identifier of the user.
+The handle for the GitHub user account.
 
 </td></tr>
 <tr><td>before</td><td>no</td><td>
@@ -61,6 +61,8 @@ Search query to filter items, see [Filtering projects](https://docs.github.com/i
 <tr><td>fields</td><td>no</td><td>
 
 Limit results to specific fields, by their IDs. If not specified, the title field will be returned.
+
+Example: `fields[]=123&fields[]=456&fields[]=789` or `fields=123,456,789`
 
 </td></tr>
   </tbody>

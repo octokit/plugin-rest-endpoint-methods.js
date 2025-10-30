@@ -1,7 +1,7 @@
 ---
 name: Get project field for user
-example: octokit.rest.projects.getFieldForUser({ project_number, field_id, user_id })
-route: GET /users/{user_id}/projectsV2/{project_number}/fields/{field_id}
+example: octokit.rest.projects.getFieldForUser({ project_number, field_id, username })
+route: GET /users/{username}/projectsV2/{project_number}/fields/{field_id}
 scope: projects
 type: API method
 ---
@@ -14,7 +14,7 @@ Get a specific field for a user-owned project.
 octokit.rest.projects.getFieldForUser({
   project_number,
   field_id,
-  user_id,
+  username,
 });
 ```
 
@@ -39,9 +39,9 @@ The project's number.
 The unique identifier of the field.
 
 </td></tr>
-<tr><td>user_id</td><td>yes</td><td>
+<tr><td>username</td><td>yes</td><td>
 
-The unique identifier of the user.
+The handle for the GitHub user account.
 
 </td></tr>
   </tbody>

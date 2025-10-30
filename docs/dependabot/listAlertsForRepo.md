@@ -104,11 +104,6 @@ The property by which to sort the results.
 The direction to sort the results by.
 
 </td></tr>
-<tr><td>page</td><td>no</td><td>
-
-**Closing down notice**. Page number of the results to fetch. Use cursor-based pagination with `before` or `after` instead.
-
-</td></tr>
 <tr><td>per_page</td><td>no</td><td>
 
 The number of results per page (max 100). For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
@@ -122,20 +117,6 @@ A cursor, as given in the [Link header](https://docs.github.com/rest/guides/usin
 <tr><td>after</td><td>no</td><td>
 
 A cursor, as given in the [Link header](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api#using-link-headers). If specified, the query only searches for results after this cursor. For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
-
-</td></tr>
-<tr><td>first</td><td>no</td><td>
-
-**Deprecated**. The number of results per page (max 100), starting from the first matching result.
-This parameter must not be used in combination with `last`.
-Instead, use `per_page` in combination with `after` to fetch the first page of results.
-
-</td></tr>
-<tr><td>last</td><td>no</td><td>
-
-**Deprecated**. The number of results per page (max 100), starting from the last matching result.
-This parameter must not be used in combination with `first`.
-Instead, use `per_page` in combination with `before` to fetch the last page of results.
 
 </td></tr>
   </tbody>

@@ -1,6 +1,6 @@
 ---
 name: Create a campaign for an organization
-example: octokit.rest.campaigns.createCampaign({ org, name, description, ends_at, code_scanning_alerts, code_scanning_alerts[].repository_id, code_scanning_alerts[].alert_numbers })
+example: octokit.rest.campaigns.createCampaign({ org })
 route: POST /orgs/{org}/campaigns
 scope: campaigns
 type: API method
@@ -19,14 +19,8 @@ in the campaign.
 
 ```js
 octokit.rest.campaigns.createCampaign({
-        org,
-name,
-description,
-ends_at,
-code_scanning_alerts,
-code_scanning_alerts[].repository_id,
-code_scanning_alerts[].alert_numbers
-      })
+  org,
+});
 ```
 
 ## Parameters
@@ -43,56 +37,6 @@ code_scanning_alerts[].alert_numbers
     <tr><td>org</td><td>yes</td><td>
 
 The organization name. The name is not case sensitive.
-
-</td></tr>
-<tr><td>name</td><td>yes</td><td>
-
-The name of the campaign
-
-</td></tr>
-<tr><td>description</td><td>yes</td><td>
-
-A description for the campaign
-
-</td></tr>
-<tr><td>managers</td><td>no</td><td>
-
-The logins of the users to set as the campaign managers. At this time, only a single manager can be supplied.
-
-</td></tr>
-<tr><td>team_managers</td><td>no</td><td>
-
-The slugs of the teams to set as the campaign managers.
-
-</td></tr>
-<tr><td>ends_at</td><td>yes</td><td>
-
-The end date and time of the campaign. The date must be in the future.
-
-</td></tr>
-<tr><td>contact_link</td><td>no</td><td>
-
-The contact link of the campaign. Must be a URI.
-
-</td></tr>
-<tr><td>code_scanning_alerts</td><td>yes</td><td>
-
-The code scanning alerts to include in this campaign
-
-</td></tr>
-<tr><td>code_scanning_alerts[].repository_id</td><td>yes</td><td>
-
-The repository id
-
-</td></tr>
-<tr><td>code_scanning_alerts[].alert_numbers</td><td>yes</td><td>
-
-The alert numbers
-
-</td></tr>
-<tr><td>generate_issues</td><td>no</td><td>
-
-If true, will automatically generate issues for the campaign. The default is false.
 
 </td></tr>
   </tbody>

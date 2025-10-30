@@ -1,6 +1,6 @@
 ---
 name: Get a custom property for an organization
-example: octokit.rest.orgs.getCustomProperty({ org, custom_property_name })
+example: octokit.rest.orgs.customPropertiesForReposGetOrganizationDefinition({ org, custom_property_name })
 route: GET /orgs/{org}/properties/schema/{custom_property_name}
 scope: orgs
 type: API method
@@ -12,7 +12,7 @@ Gets a custom property that is defined for an organization.
 Organization members can read these properties.
 
 ```js
-octokit.rest.orgs.getCustomProperty({
+octokit.rest.orgs.customPropertiesForReposGetOrganizationDefinition({
   org,
   custom_property_name,
 });

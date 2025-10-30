@@ -1,7 +1,7 @@
 ---
 name: Get project for user
-example: octokit.rest.projects.getForUser({ project_number, user_id })
-route: GET /users/{user_id}/projectsV2/{project_number}
+example: octokit.rest.projects.getForUser({ project_number, username })
+route: GET /users/{username}/projectsV2/{project_number}
 scope: projects
 type: API method
 ---
@@ -13,7 +13,7 @@ Get a specific user-owned project.
 ```js
 octokit.rest.projects.getForUser({
   project_number,
-  user_id,
+  username,
 });
 ```
 
@@ -33,9 +33,9 @@ octokit.rest.projects.getForUser({
 The project's number.
 
 </td></tr>
-<tr><td>user_id</td><td>yes</td><td>
+<tr><td>username</td><td>yes</td><td>
 
-The unique identifier of the user.
+The handle for the GitHub user account.
 
 </td></tr>
   </tbody>
