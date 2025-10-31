@@ -1,7 +1,7 @@
 ---
 name: Get an item for a user owned project
-example: octokit.rest.projects.getUserItem({ project_number, user_id, item_id })
-route: GET /users/{user_id}/projectsV2/{project_number}/items/{item_id}
+example: octokit.rest.projects.getUserItem({ project_number, username, item_id })
+route: GET /users/{username}/projectsV2/{project_number}/items/{item_id}
 scope: projects
 type: API method
 ---
@@ -13,7 +13,7 @@ Get a specific item from a user-owned project.
 ```js
 octokit.rest.projects.getUserItem({
   project_number,
-  user_id,
+  username,
   item_id,
 });
 ```
@@ -34,9 +34,9 @@ octokit.rest.projects.getUserItem({
 The project's number.
 
 </td></tr>
-<tr><td>user_id</td><td>yes</td><td>
+<tr><td>username</td><td>yes</td><td>
 
-The unique identifier of the user.
+The handle for the GitHub user account.
 
 </td></tr>
 <tr><td>item_id</td><td>yes</td><td>
@@ -47,6 +47,8 @@ The unique identifier of the project item.
 <tr><td>fields</td><td>no</td><td>
 
 Limit results to specific fields, by their IDs. If not specified, the title field will be returned.
+
+Example: fields[]=123&fields[]=456&fields[]=789 or fields=123,456,789
 
 </td></tr>
   </tbody>

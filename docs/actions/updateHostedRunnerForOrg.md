@@ -59,6 +59,11 @@ The maximum amount of runners to scale up to. Runners will not auto-scale above 
 Whether this runner should be updated with a static public IP. Note limit on account. To list limits on account, use `GET actions/hosted-runners/limits`
 
 </td></tr>
+<tr><td>image_version</td><td>no</td><td>
+
+The version of the runner image to deploy. This is relevant only for runners using custom images.
+
+</td></tr>
   </tbody>
 </table>
 

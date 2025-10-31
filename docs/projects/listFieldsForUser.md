@@ -1,7 +1,7 @@
 ---
 name: List project fields for user
-example: octokit.rest.projects.listFieldsForUser({ project_number, user_id })
-route: GET /users/{user_id}/projectsV2/{project_number}/fields
+example: octokit.rest.projects.listFieldsForUser({ project_number, username })
+route: GET /users/{username}/projectsV2/{project_number}/fields
 scope: projects
 type: API method
 ---
@@ -13,7 +13,7 @@ List all fields for a specific user-owned project.
 ```js
 octokit.rest.projects.listFieldsForUser({
   project_number,
-  user_id,
+  username,
 });
 ```
 
@@ -33,9 +33,9 @@ octokit.rest.projects.listFieldsForUser({
 The project's number.
 
 </td></tr>
-<tr><td>user_id</td><td>yes</td><td>
+<tr><td>username</td><td>yes</td><td>
 
-The unique identifier of the user.
+The handle for the GitHub user account.
 
 </td></tr>
 <tr><td>per_page</td><td>no</td><td>

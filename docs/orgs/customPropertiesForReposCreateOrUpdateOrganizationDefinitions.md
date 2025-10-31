@@ -1,6 +1,6 @@
 ---
 name: Create or update custom properties for an organization
-example: octokit.rest.orgs.createOrUpdateCustomProperties({ org, properties, properties[].property_name, properties[].value_type })
+example: octokit.rest.orgs.customPropertiesForReposCreateOrUpdateOrganizationDefinitions({ org, properties, properties[].property_name, properties[].value_type })
 route: PATCH /orgs/{org}/properties/schema
 scope: orgs
 type: API method
@@ -20,7 +20,7 @@ To use this endpoint, the authenticated user must be one of:
 - A user, or a user on a team, with the fine-grained permission of `custom_properties_org_definitions_manager` in the organization.
 
 ```js
-octokit.rest.orgs.createOrUpdateCustomProperties({
+octokit.rest.orgs.customPropertiesForReposCreateOrUpdateOrganizationDefinitions({
         org,
 properties,
 properties[].property_name,

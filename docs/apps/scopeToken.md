@@ -182,6 +182,11 @@ The level of permission to grant the access token to manage Dependabot alerts.
 The level of permission to grant the access token to update GitHub Actions workflow files.
 
 </td></tr>
+<tr><td>permissions.custom_properties_for_organizations</td><td>no</td><td>
+
+The level of permission to grant the access token to view and edit custom properties for an organization, when allowed by the property.
+
+</td></tr>
 <tr><td>permissions.members</td><td>no</td><td>
 
 The level of permission to grant the access token for organization teams and members.
@@ -204,7 +209,7 @@ The level of permission to grant the access token for custom organization roles 
 </td></tr>
 <tr><td>permissions.organization_custom_properties</td><td>no</td><td>
 
-The level of permission to grant the access token for custom property management.
+The level of permission to grant the access token for repository custom properties management at the organization level.
 
 </td></tr>
 <tr><td>permissions.organization_copilot_seat_management</td><td>no</td><td>
@@ -305,6 +310,11 @@ The level of permission to grant the access token to manage the profile settings
 <tr><td>permissions.starring</td><td>no</td><td>
 
 The level of permission to grant the access token to list and manage repositories a user is starring.
+
+</td></tr>
+<tr><td>permissions.enterprise_custom_properties_for_organizations</td><td>no</td><td>
+
+The level of permission to grant the access token for organization custom properties management at the enterprise level.
 
 </td></tr>
   </tbody>

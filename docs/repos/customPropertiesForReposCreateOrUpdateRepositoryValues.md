@@ -1,6 +1,6 @@
 ---
 name: Create or update custom property values for a repository
-example: octokit.rest.repos.createOrUpdateCustomPropertiesValues({ owner, repo, properties, properties[].property_name, properties[].value })
+example: octokit.rest.repos.customPropertiesForReposCreateOrUpdateRepositoryValues({ owner, repo, properties, properties[].property_name, properties[].value })
 route: PATCH /repos/{owner}/{repo}/properties/values
 scope: repos
 type: API method
@@ -14,7 +14,7 @@ Using a value of `null` for a custom property will remove or 'unset' the propert
 Repository admins and other users with the repository-level "edit custom property values" fine-grained permission can use this endpoint.
 
 ```js
-octokit.rest.repos.createOrUpdateCustomPropertiesValues({
+octokit.rest.repos.customPropertiesForReposCreateOrUpdateRepositoryValues({
         owner,
 repo,
 properties,

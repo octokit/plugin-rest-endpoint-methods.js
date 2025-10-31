@@ -1,6 +1,6 @@
 ---
 name: Remove a custom property for an organization
-example: octokit.rest.orgs.removeCustomProperty({ org, custom_property_name })
+example: octokit.rest.orgs.customPropertiesForReposDeleteOrganizationDefinition({ org, custom_property_name })
 route: DELETE /orgs/{org}/properties/schema/{custom_property_name}
 scope: orgs
 type: API method
@@ -16,7 +16,7 @@ To use this endpoint, the authenticated user must be one of:
 - A user, or a user on a team, with the fine-grained permission of `custom_properties_org_definitions_manager` in the organization.
 
 ```js
-octokit.rest.orgs.removeCustomProperty({
+octokit.rest.orgs.customPropertiesForReposDeleteOrganizationDefinition({
   org,
   custom_property_name,
 });

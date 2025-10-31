@@ -57,6 +57,11 @@ The unique identifier of the runner image.
 The source of the runner image.
 
 </td></tr>
+<tr><td>image.version</td><td>no</td><td>
+
+The version of the runner image to deploy. This is relevant only for runners using custom images.
+
+</td></tr>
 <tr><td>size</td><td>yes</td><td>
 
 The machine size of the runner. To list available sizes, use `GET actions/hosted-runners/machine-sizes`
@@ -75,6 +80,11 @@ The maximum amount of runners to scale up to. Runners will not auto-scale above 
 <tr><td>enable_static_ip</td><td>no</td><td>
 
 Whether this runner should be created with a static public IP. Note limit on account. To list limits on account, use `GET actions/hosted-runners/limits`
+
+</td></tr>
+<tr><td>image_gen</td><td>no</td><td>
+
+Whether this runner should be used to generate custom images.
 
 </td></tr>
   </tbody>

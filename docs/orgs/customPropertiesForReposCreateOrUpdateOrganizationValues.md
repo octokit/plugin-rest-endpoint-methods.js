@@ -1,6 +1,6 @@
 ---
 name: Create or update custom property values for organization repositories
-example: octokit.rest.orgs.createOrUpdateCustomPropertiesValuesForRepos({ org, repository_names, properties, properties[].property_name, properties[].value })
+example: octokit.rest.orgs.customPropertiesForReposCreateOrUpdateOrganizationValues({ org, repository_names, properties, properties[].property_name, properties[].value })
 route: PATCH /orgs/{org}/properties/values
 scope: orgs
 type: API method
@@ -21,7 +21,7 @@ To use this endpoint, the authenticated user must be one of:
 - A user, or a user on a team, with the fine-grained permission of `custom_properties_org_values_editor` in the organization.
 
 ```js
-octokit.rest.orgs.createOrUpdateCustomPropertiesValuesForRepos({
+octokit.rest.orgs.customPropertiesForReposCreateOrUpdateOrganizationValues({
         org,
 repository_names,
 properties,

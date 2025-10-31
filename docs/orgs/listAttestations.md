@@ -60,10 +60,11 @@ The parameter should be set to the attestation's subject's SHA256 digest, in the
 <tr><td>predicate_type</td><td>no</td><td>
 
 Optional filter for fetching attestations with a given predicate type.
-This option accepts `provenance`, `sbom`, or freeform text for custom predicate types.
+This option accepts `provenance`, `sbom`, `release`, or freeform text
+for custom predicate types.
 
 </td></tr>
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/orgs/orgs#list-attestations).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/orgs/attestations#list-attestations).

@@ -330,6 +330,16 @@ The severity level at which code scanning results that raise security alerts blo
 The name of a code scanning tool
 
 </td></tr>
+<tr><td>rules[].parameters.review_draft_pull_requests</td><td>no</td><td>
+
+Copilot automatically reviews draft pull requests before they are marked as ready for review.
+
+</td></tr>
+<tr><td>rules[].parameters.review_on_push</td><td>no</td><td>
+
+Copilot automatically reviews each new push to the pull request.
+
+</td></tr>
   </tbody>
 </table>
 

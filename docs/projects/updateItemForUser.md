@@ -1,7 +1,7 @@
 ---
 name: Update project item for user
-example: octokit.rest.projects.updateItemForUser({ project_number, user_id, item_id, fields, fields[].id, fields[].value })
-route: PATCH /users/{user_id}/projectsV2/{project_number}/items/{item_id}
+example: octokit.rest.projects.updateItemForUser({ project_number, username, item_id, fields, fields[].id, fields[].value })
+route: PATCH /users/{username}/projectsV2/{project_number}/items/{item_id}
 scope: projects
 type: API method
 ---
@@ -13,7 +13,7 @@ Update a specific item in a user-owned project.
 ```js
 octokit.rest.projects.updateItemForUser({
         project_number,
-user_id,
+username,
 item_id,
 fields,
 fields[].id,
@@ -37,9 +37,9 @@ fields[].value
 The project's number.
 
 </td></tr>
-<tr><td>user_id</td><td>yes</td><td>
+<tr><td>username</td><td>yes</td><td>
 
-The unique identifier of the user.
+The handle for the GitHub user account.
 
 </td></tr>
 <tr><td>item_id</td><td>yes</td><td>
