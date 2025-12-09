@@ -73,4 +73,4 @@ for custom predicate types.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/repos/repos#list-attestations).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/repos/attestations#list-attestations).

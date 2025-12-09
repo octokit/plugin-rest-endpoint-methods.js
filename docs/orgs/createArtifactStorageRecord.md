@@ -47,6 +47,11 @@ The name of the artifact.
 The digest of the artifact (algorithm:hex-encoded-digest).
 
 </td></tr>
+<tr><td>version</td><td>no</td><td>
+
+The artifact version.
+
+</td></tr>
 <tr><td>artifact_url</td><td>no</td><td>
 
 The URL where the artifact is stored.
@@ -70,6 +75,16 @@ The repository name within the registry.
 <tr><td>status</td><td>no</td><td>
 
 The status of the artifact (e.g., active, inactive).
+
+</td></tr>
+<tr><td>github_repository</td><td>no</td><td>
+
+The name of the GitHub repository associated with the artifact. This should be used
+when there are no provenance attestations available for the artifact. The repository
+must belong to the organization specified in the path parameter.
+
+If a provenance attestation is available for the artifact, the API will use
+the repository information from the attestation instead of this parameter.
 
 </td></tr>
   </tbody>

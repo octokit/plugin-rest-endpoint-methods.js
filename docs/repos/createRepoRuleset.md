@@ -1,6 +1,6 @@
 ---
 name: Create a repository ruleset
-example: octokit.rest.repos.createRepoRuleset({ owner, repo, name, enforcement, bypass_actors[].actor_type, rules[].type, rules[].parameters.update_allows_fetch_and_merge, rules[].parameters.check_response_timeout_minutes, rules[].parameters.grouping_strategy, rules[].parameters.max_entries_to_build, rules[].parameters.max_entries_to_merge, rules[].parameters.merge_method, rules[].parameters.min_entries_to_merge, rules[].parameters.min_entries_to_merge_wait_minutes, rules[].parameters.required_deployment_environments, rules[].parameters.dismiss_stale_reviews_on_push, rules[].parameters.require_code_owner_review, rules[].parameters.require_last_push_approval, rules[].parameters.required_approving_review_count, rules[].parameters.required_review_thread_resolution, rules[].parameters.required_status_checks, rules[].parameters.required_status_checks[].context, rules[].parameters.strict_required_status_checks_policy, rules[].parameters.operator, rules[].parameters.pattern, rules[].parameters.restricted_file_paths, rules[].parameters.max_file_path_length, rules[].parameters.restricted_file_extensions, rules[].parameters.max_file_size, rules[].parameters.workflows, rules[].parameters.workflows[].path, rules[].parameters.workflows[].repository_id, rules[].parameters.code_scanning_tools, rules[].parameters.code_scanning_tools[].alerts_threshold, rules[].parameters.code_scanning_tools[].security_alerts_threshold, rules[].parameters.code_scanning_tools[].tool })
+example: octokit.rest.repos.createRepoRuleset({ owner, repo, name, enforcement, bypass_actors[].actor_type, rules[].type, rules[].parameters.update_allows_fetch_and_merge, rules[].parameters.check_response_timeout_minutes, rules[].parameters.grouping_strategy, rules[].parameters.max_entries_to_build, rules[].parameters.max_entries_to_merge, rules[].parameters.merge_method, rules[].parameters.min_entries_to_merge, rules[].parameters.min_entries_to_merge_wait_minutes, rules[].parameters.required_deployment_environments, rules[].parameters.dismiss_stale_reviews_on_push, rules[].parameters.require_code_owner_review, rules[].parameters.require_last_push_approval, rules[].parameters.required_approving_review_count, rules[].parameters.required_review_thread_resolution, rules[].parameters.required_reviewers[].file_patterns, rules[].parameters.required_reviewers[].minimum_approvals, rules[].parameters.required_reviewers[].reviewer, rules[].parameters.required_reviewers[].reviewer.id, rules[].parameters.required_reviewers[].reviewer.type, rules[].parameters.required_status_checks, rules[].parameters.required_status_checks[].context, rules[].parameters.strict_required_status_checks_policy, rules[].parameters.operator, rules[].parameters.pattern, rules[].parameters.restricted_file_paths, rules[].parameters.max_file_path_length, rules[].parameters.restricted_file_extensions, rules[].parameters.max_file_size, rules[].parameters.workflows, rules[].parameters.workflows[].path, rules[].parameters.workflows[].repository_id, rules[].parameters.code_scanning_tools, rules[].parameters.code_scanning_tools[].alerts_threshold, rules[].parameters.code_scanning_tools[].security_alerts_threshold, rules[].parameters.code_scanning_tools[].tool })
 route: POST /repos/{owner}/{repo}/rulesets
 scope: repos
 type: API method
@@ -32,6 +32,11 @@ rules[].parameters.require_code_owner_review,
 rules[].parameters.require_last_push_approval,
 rules[].parameters.required_approving_review_count,
 rules[].parameters.required_review_thread_resolution,
+rules[].parameters.required_reviewers[].file_patterns,
+rules[].parameters.required_reviewers[].minimum_approvals,
+rules[].parameters.required_reviewers[].reviewer,
+rules[].parameters.required_reviewers[].reviewer.id,
+rules[].parameters.required_reviewers[].reviewer.type,
 rules[].parameters.required_status_checks,
 rules[].parameters.required_status_checks[].context,
 rules[].parameters.strict_required_status_checks_policy,
@@ -186,11 +191,6 @@ The environments that must be successfully deployed to before branches can be me
 Array of allowed merge methods. Allowed values include `merge`, `squash`, and `rebase`. At least one option must be enabled.
 
 </td></tr>
-<tr><td>rules[].parameters.automatic_copilot_code_review_enabled</td><td>no</td><td>
-
-Request Copilot code review for new pull requests automatically if the author has access to Copilot code review.
-
-</td></tr>
 <tr><td>rules[].parameters.dismiss_stale_reviews_on_push</td><td>yes</td><td>
 
 New, reviewable commits pushed will dismiss previous pull request review approvals.
@@ -214,6 +214,39 @@ The number of approving reviews that are required before a pull request can be m
 <tr><td>rules[].parameters.required_review_thread_resolution</td><td>yes</td><td>
 
 All conversations on code must be resolved before a pull request can be merged.
+
+</td></tr>
+<tr><td>rules[].parameters.required_reviewers</td><td>no</td><td>
+
+> [!NOTE]
+> `required_reviewers` is in beta and subject to change.
+
+A collection of reviewers and associated file patterns. Each reviewer has a list of file patterns which determine the files that reviewer is required to review.
+
+</td></tr>
+<tr><td>rules[].parameters.required_reviewers[].file_patterns</td><td>yes</td><td>
+
+Array of file patterns. Pull requests which change matching files must be approved by the specified team. File patterns use fnmatch syntax.
+
+</td></tr>
+<tr><td>rules[].parameters.required_reviewers[].minimum_approvals</td><td>yes</td><td>
+
+Minimum number of approvals required from the specified team. If set to zero, the team will be added to the pull request but approval is optional.
+
+</td></tr>
+<tr><td>rules[].parameters.required_reviewers[].reviewer</td><td>yes</td><td>
+
+A required reviewing team
+
+</td></tr>
+<tr><td>rules[].parameters.required_reviewers[].reviewer.id</td><td>yes</td><td>
+
+ID of the reviewer which must review changes to matching files.
+
+</td></tr>
+<tr><td>rules[].parameters.required_reviewers[].reviewer.type</td><td>yes</td><td>
+
+The type of the reviewer
 
 </td></tr>
 <tr><td>rules[].parameters.do_not_enforce_on_create</td><td>no</td><td>

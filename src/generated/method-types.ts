@@ -820,6 +820,96 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
+     * Gets GitHub Actions cache retention limit for an enterprise. All organizations and repositories under this
+     * enterprise may not set a higher cache retention limit.
+     *
+     * OAuth tokens and personal access tokens (classic) need the `admin:enterprise` scope to use this endpoint.
+     */
+    getActionsCacheRetentionLimitForEnterprise: {
+      (
+        params?: RestEndpointMethodTypes["actions"]["getActionsCacheRetentionLimitForEnterprise"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["actions"]["getActionsCacheRetentionLimitForEnterprise"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Gets GitHub Actions cache retention limit for an organization. All repositories under this
+     * organization may not set a higher cache retention limit.
+     *
+     * OAuth tokens and personal access tokens (classic) need the `admin:organization` scope to use this endpoint.
+     */
+    getActionsCacheRetentionLimitForOrganization: {
+      (
+        params?: RestEndpointMethodTypes["actions"]["getActionsCacheRetentionLimitForOrganization"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["actions"]["getActionsCacheRetentionLimitForOrganization"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Gets GitHub Actions cache retention limit for a repository. This determines how long caches will be retained for, if
+     * not manually removed or evicted due to size constraints.
+     *
+     * OAuth tokens and personal access tokens (classic) need the `admin:repository` scope to use this endpoint.
+     */
+    getActionsCacheRetentionLimitForRepository: {
+      (
+        params?: RestEndpointMethodTypes["actions"]["getActionsCacheRetentionLimitForRepository"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["actions"]["getActionsCacheRetentionLimitForRepository"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Gets GitHub Actions cache storage limit for an enterprise. All organizations and repositories under this
+     * enterprise may not set a higher cache storage limit.
+     *
+     * OAuth tokens and personal access tokens (classic) need the `admin:enterprise` scope to use this endpoint.
+     */
+    getActionsCacheStorageLimitForEnterprise: {
+      (
+        params?: RestEndpointMethodTypes["actions"]["getActionsCacheStorageLimitForEnterprise"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["actions"]["getActionsCacheStorageLimitForEnterprise"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Gets GitHub Actions cache storage limit for an organization. All repositories under this
+     * organization may not set a higher cache storage limit.
+     *
+     * OAuth tokens and personal access tokens (classic) need the `admin:organization` scope to use this endpoint.
+     */
+    getActionsCacheStorageLimitForOrganization: {
+      (
+        params?: RestEndpointMethodTypes["actions"]["getActionsCacheStorageLimitForOrganization"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["actions"]["getActionsCacheStorageLimitForOrganization"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Gets GitHub Actions cache storage limit for a repository. This determines the maximum size of caches that can be
+     * stored before eviction occurs.
+     *
+     * OAuth tokens and personal access tokens (classic) need the `admin:repository` scope to use this endpoint.
+     */
+    getActionsCacheStorageLimitForRepository: {
+      (
+        params?: RestEndpointMethodTypes["actions"]["getActionsCacheStorageLimitForRepository"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["actions"]["getActionsCacheStorageLimitForRepository"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
      * Gets GitHub Actions cache usage for a repository.
      * The data fetched using this API is refreshed approximately every 5 minutes, so values returned from this endpoint may take at least 5 minutes to get updated.
      *
@@ -2063,6 +2153,96 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
+     * Sets GitHub Actions cache retention limit for an enterprise. All organizations and repositories under this
+     * enterprise may not set a higher cache retention limit.
+     *
+     * OAuth tokens and personal access tokens (classic) need the `admin:enterprise` scope to use this endpoint.
+     */
+    setActionsCacheRetentionLimitForEnterprise: {
+      (
+        params?: RestEndpointMethodTypes["actions"]["setActionsCacheRetentionLimitForEnterprise"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["actions"]["setActionsCacheRetentionLimitForEnterprise"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Sets GitHub Actions cache retention limit for an organization. All repositories under this
+     * organization may not set a higher cache retention limit.
+     *
+     * OAuth tokens and personal access tokens (classic) need the `admin:organization` scope to use this endpoint.
+     */
+    setActionsCacheRetentionLimitForOrganization: {
+      (
+        params?: RestEndpointMethodTypes["actions"]["setActionsCacheRetentionLimitForOrganization"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["actions"]["setActionsCacheRetentionLimitForOrganization"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Sets GitHub Actions cache retention limit for a repository. This determines how long caches will be retained for, if
+     * not manually removed or evicted due to size constraints.
+     *
+     * OAuth tokens and personal access tokens (classic) need the `admin:repository` scope to use this endpoint.
+     */
+    setActionsCacheRetentionLimitForRepository: {
+      (
+        params?: RestEndpointMethodTypes["actions"]["setActionsCacheRetentionLimitForRepository"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["actions"]["setActionsCacheRetentionLimitForRepository"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Sets GitHub Actions cache storage limit for an enterprise. All organizations and repositories under this
+     * enterprise may not set a higher cache storage limit.
+     *
+     * OAuth tokens and personal access tokens (classic) need the `admin:enterprise` scope to use this endpoint.
+     */
+    setActionsCacheStorageLimitForEnterprise: {
+      (
+        params?: RestEndpointMethodTypes["actions"]["setActionsCacheStorageLimitForEnterprise"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["actions"]["setActionsCacheStorageLimitForEnterprise"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Sets GitHub Actions cache storage limit for an organization. All organizations and repositories under this
+     * organization may not set a higher cache storage limit.
+     *
+     * OAuth tokens and personal access tokens (classic) need the `admin:organization` scope to use this endpoint.
+     */
+    setActionsCacheStorageLimitForOrganization: {
+      (
+        params?: RestEndpointMethodTypes["actions"]["setActionsCacheStorageLimitForOrganization"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["actions"]["setActionsCacheStorageLimitForOrganization"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Sets GitHub Actions cache storage limit for a repository. This determines the maximum size of caches that can be
+     * stored before eviction occurs.
+     *
+     * OAuth tokens and personal access tokens (classic) need the `admin:repository` scope to use this endpoint.
+     */
+    setActionsCacheStorageLimitForRepository: {
+      (
+        params?: RestEndpointMethodTypes["actions"]["setActionsCacheStorageLimitForRepository"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["actions"]["setActionsCacheStorageLimitForRepository"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
      * Sets the actions and reusable workflows that are allowed in an organization. To use this endpoint, the organization permission policy for `allowed_actions` must be configured to `selected`. For more information, see "[Set GitHub Actions permissions for an organization](#set-github-actions-permissions-for-an-organization)."
      *
      * OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
@@ -3288,33 +3468,46 @@ export type RestEndpointMethods = {
   };
   billing: {
     /**
-     * Gets the summary of the free and paid GitHub Actions minutes used.
+     * > [!NOTE]
+     * > This endpoint is in public preview and is subject to change.
      *
-     * Paid minutes only apply to workflows in private repositories that use GitHub-hosted runners. Minutes used is listed for each GitHub-hosted runner operating system. Any job re-runs are also included in the usage. The usage returned includes any minute multipliers for macOS and Windows runners, and is rounded up to the nearest whole minute. For more information, see "[Managing billing for GitHub Actions](https://docs.github.com/github/setting-up-and-managing-billing-and-payments-on-github/managing-billing-for-github-actions)".
-     *
-     * OAuth app tokens and personal access tokens (classic) need the `repo` or `admin:org` scope to use this endpoint.
+     * Deletes a budget by ID for an organization. The authenticated user must be an organization admin or billing manager.
      */
-    getGithubActionsBillingOrg: {
+    deleteBudgetOrg: {
       (
-        params?: RestEndpointMethodTypes["billing"]["getGithubActionsBillingOrg"]["parameters"],
+        params?: RestEndpointMethodTypes["billing"]["deleteBudgetOrg"]["parameters"],
       ): Promise<
-        RestEndpointMethodTypes["billing"]["getGithubActionsBillingOrg"]["response"]
+        RestEndpointMethodTypes["billing"]["deleteBudgetOrg"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Gets the summary of the free and paid GitHub Actions minutes used.
+     * > [!NOTE]
+     * > This endpoint is in public preview and is subject to change.
      *
-     * Paid minutes only apply to workflows in private repositories that use GitHub-hosted runners. Minutes used is listed for each GitHub-hosted runner operating system. Any job re-runs are also included in the usage. The usage returned includes any minute multipliers for macOS and Windows runners, and is rounded up to the nearest whole minute. For more information, see "[Managing billing for GitHub Actions](https://docs.github.com/github/setting-up-and-managing-billing-and-payments-on-github/managing-billing-for-github-actions)".
-     *
-     * OAuth app tokens and personal access tokens (classic) need the `user` scope to use this endpoint.
+     * Gets all budgets for an organization. The authenticated user must be an organization admin or billing manager.
      */
-    getGithubActionsBillingUser: {
+    getAllBudgetsOrg: {
       (
-        params?: RestEndpointMethodTypes["billing"]["getGithubActionsBillingUser"]["parameters"],
+        params?: RestEndpointMethodTypes["billing"]["getAllBudgetsOrg"]["parameters"],
       ): Promise<
-        RestEndpointMethodTypes["billing"]["getGithubActionsBillingUser"]["response"]
+        RestEndpointMethodTypes["billing"]["getAllBudgetsOrg"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * > [!NOTE]
+     * > This endpoint is in public preview and is subject to change.
+     *
+     * Gets a budget by ID. The authenticated user must be an organization admin or billing manager.
+     */
+    getBudgetOrg: {
+      (
+        params?: RestEndpointMethodTypes["billing"]["getBudgetOrg"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["billing"]["getBudgetOrg"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -3376,65 +3569,50 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Gets the free and paid storage used for GitHub Packages in gigabytes.
+     * > [!NOTE]
+     * > This endpoint is in public preview and is subject to change.
      *
-     * Paid minutes only apply to packages stored for private repositories. For more information, see "[Managing billing for GitHub Packages](https://docs.github.com/github/setting-up-and-managing-billing-and-payments-on-github/managing-billing-for-github-packages)."
+     * Gets a summary report of usage for an organization. To use this endpoint, you must be an administrator of an organization within an enterprise or an organization account.
      *
-     * OAuth app tokens and personal access tokens (classic) need the `repo` or `admin:org` scope to use this endpoint.
+     * **Note:** Only data from the past 24 months is accessible via this endpoint.
      */
-    getGithubPackagesBillingOrg: {
+    getGithubBillingUsageSummaryReportOrg: {
       (
-        params?: RestEndpointMethodTypes["billing"]["getGithubPackagesBillingOrg"]["parameters"],
+        params?: RestEndpointMethodTypes["billing"]["getGithubBillingUsageSummaryReportOrg"]["parameters"],
       ): Promise<
-        RestEndpointMethodTypes["billing"]["getGithubPackagesBillingOrg"]["response"]
+        RestEndpointMethodTypes["billing"]["getGithubBillingUsageSummaryReportOrg"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Gets the free and paid storage used for GitHub Packages in gigabytes.
+     * > [!NOTE]
+     * > This endpoint is in public preview and is subject to change.
      *
-     * Paid minutes only apply to packages stored for private repositories. For more information, see "[Managing billing for GitHub Packages](https://docs.github.com/github/setting-up-and-managing-billing-and-payments-on-github/managing-billing-for-github-packages)."
+     * Gets a summary report of usage for a user.
      *
-     * OAuth app tokens and personal access tokens (classic) need the `user` scope to use this endpoint.
+     * **Note:** Only data from the past 24 months is accessible via this endpoint.
      */
-    getGithubPackagesBillingUser: {
+    getGithubBillingUsageSummaryReportUser: {
       (
-        params?: RestEndpointMethodTypes["billing"]["getGithubPackagesBillingUser"]["parameters"],
+        params?: RestEndpointMethodTypes["billing"]["getGithubBillingUsageSummaryReportUser"]["parameters"],
       ): Promise<
-        RestEndpointMethodTypes["billing"]["getGithubPackagesBillingUser"]["response"]
+        RestEndpointMethodTypes["billing"]["getGithubBillingUsageSummaryReportUser"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Gets the estimated paid and estimated total storage used for GitHub Actions and GitHub Packages.
+     * > [!NOTE]
+     * > This endpoint is in public preview and is subject to change.
      *
-     * Paid minutes only apply to packages stored for private repositories. For more information, see "[Managing billing for GitHub Packages](https://docs.github.com/github/setting-up-and-managing-billing-and-payments-on-github/managing-billing-for-github-packages)."
-     *
-     * OAuth app tokens and personal access tokens (classic) need the `repo` or `admin:org` scope to use this endpoint.
+     * Updates an existing budget for an organization. The authenticated user must be an organization admin or billing manager.
      */
-    getSharedStorageBillingOrg: {
+    updateBudgetOrg: {
       (
-        params?: RestEndpointMethodTypes["billing"]["getSharedStorageBillingOrg"]["parameters"],
+        params?: RestEndpointMethodTypes["billing"]["updateBudgetOrg"]["parameters"],
       ): Promise<
-        RestEndpointMethodTypes["billing"]["getSharedStorageBillingOrg"]["response"]
-      >;
-      defaults: RequestInterface["defaults"];
-      endpoint: EndpointInterface<{ url: string }>;
-    };
-    /**
-     * Gets the estimated paid and estimated total storage used for GitHub Actions and GitHub Packages.
-     *
-     * Paid minutes only apply to packages stored for private repositories. For more information, see "[Managing billing for GitHub Packages](https://docs.github.com/github/setting-up-and-managing-billing-and-payments-on-github/managing-billing-for-github-packages)."
-     *
-     * OAuth app tokens and personal access tokens (classic) need the `user` scope to use this endpoint.
-     */
-    getSharedStorageBillingUser: {
-      (
-        params?: RestEndpointMethodTypes["billing"]["getSharedStorageBillingUser"]["parameters"],
-      ): Promise<
-        RestEndpointMethodTypes["billing"]["getSharedStorageBillingUser"]["response"]
+        RestEndpointMethodTypes["billing"]["updateBudgetOrg"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -8085,6 +8263,19 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
+     * Create or update deployment records for an artifact associated with an organization.
+     * This endpoint allows you to record information about a specific artifact, such as its name, digest, environments, cluster, and deployment.
+     */
+    createArtifactDeploymentRecord: {
+      (
+        params?: RestEndpointMethodTypes["orgs"]["createArtifactDeploymentRecord"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["orgs"]["createArtifactDeploymentRecord"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
      * Create metadata storage records for artifacts associated with an organization.
      * This endpoint will create a new artifact storage record on behalf of any artifact matching the provided digest and
      * associated with a repository owned by the organization.
@@ -8595,6 +8786,18 @@ export type RestEndpointMethods = {
         params?: RestEndpointMethodTypes["orgs"]["listAppInstallations"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["orgs"]["listAppInstallations"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * List deployment records for an artifact metadata associated with an organization.
+     */
+    listArtifactDeploymentRecords: {
+      (
+        params?: RestEndpointMethodTypes["orgs"]["listArtifactDeploymentRecords"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["orgs"]["listArtifactDeploymentRecords"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -9153,6 +9356,18 @@ export type RestEndpointMethods = {
         params?: RestEndpointMethodTypes["orgs"]["revokeOrgRoleUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["orgs"]["revokeOrgRoleUser"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Set deployment records for a given cluster.
+     */
+    setClusterDeploymentRecords: {
+      (
+        params?: RestEndpointMethodTypes["orgs"]["setClusterDeploymentRecords"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["orgs"]["setClusterDeploymentRecords"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -9884,6 +10099,30 @@ export type RestEndpointMethods = {
   };
   projects: {
     /**
+     * Add a field to an organization-owned project.
+     */
+    addFieldForOrg: {
+      (
+        params?: RestEndpointMethodTypes["projects"]["addFieldForOrg"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["projects"]["addFieldForOrg"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Add a field to a specified user owned project.
+     */
+    addFieldForUser: {
+      (
+        params?: RestEndpointMethodTypes["projects"]["addFieldForUser"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["projects"]["addFieldForUser"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
      * Add an issue or pull request item to the specified organization owned project.
      */
     addItemForOrg: {
@@ -9903,6 +10142,30 @@ export type RestEndpointMethods = {
         params?: RestEndpointMethodTypes["projects"]["addItemForUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["projects"]["addItemForUser"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Create draft issue item for the specified user owned project.
+     */
+    createDraftItemForAuthenticatedUser: {
+      (
+        params?: RestEndpointMethodTypes["projects"]["createDraftItemForAuthenticatedUser"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["projects"]["createDraftItemForAuthenticatedUser"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Create draft issue item for the specified organization owned project.
+     */
+    createDraftItemForOrg: {
+      (
+        params?: RestEndpointMethodTypes["projects"]["createDraftItemForOrg"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["projects"]["createDraftItemForOrg"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -14252,6 +14515,8 @@ export type RestEndpointMethods = {
     };
     /**
      * Updates the status of a secret scanning alert in an eligible repository.
+     *
+     * You can also use this endpoint to assign or unassign an alert to a user who has write access to the repository.
      *
      * The authenticated user must be an administrator for the repository or for the organization that owns the repository to use this endpoint.
      *

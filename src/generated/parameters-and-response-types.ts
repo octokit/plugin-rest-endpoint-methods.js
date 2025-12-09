@@ -237,6 +237,36 @@ export type RestEndpointMethodTypes = {
         Endpoints["GET /repos/{owner}/{repo}/actions/caches"]["parameters"];
       response: Endpoints["GET /repos/{owner}/{repo}/actions/caches"]["response"];
     };
+    getActionsCacheRetentionLimitForEnterprise: {
+      parameters: RequestParameters &
+        Endpoints["GET /enterprises/{enterprise}/actions/cache/retention-limit"]["parameters"];
+      response: Endpoints["GET /enterprises/{enterprise}/actions/cache/retention-limit"]["response"];
+    };
+    getActionsCacheRetentionLimitForOrganization: {
+      parameters: RequestParameters &
+        Endpoints["GET /organizations/{org}/actions/cache/retention-limit"]["parameters"];
+      response: Endpoints["GET /organizations/{org}/actions/cache/retention-limit"]["response"];
+    };
+    getActionsCacheRetentionLimitForRepository: {
+      parameters: RequestParameters &
+        Endpoints["GET /repos/{owner}/{repo}/actions/cache/retention-limit"]["parameters"];
+      response: Endpoints["GET /repos/{owner}/{repo}/actions/cache/retention-limit"]["response"];
+    };
+    getActionsCacheStorageLimitForEnterprise: {
+      parameters: RequestParameters &
+        Endpoints["GET /enterprises/{enterprise}/actions/cache/storage-limit"]["parameters"];
+      response: Endpoints["GET /enterprises/{enterprise}/actions/cache/storage-limit"]["response"];
+    };
+    getActionsCacheStorageLimitForOrganization: {
+      parameters: RequestParameters &
+        Endpoints["GET /organizations/{org}/actions/cache/storage-limit"]["parameters"];
+      response: Endpoints["GET /organizations/{org}/actions/cache/storage-limit"]["response"];
+    };
+    getActionsCacheStorageLimitForRepository: {
+      parameters: RequestParameters &
+        Endpoints["GET /repos/{owner}/{repo}/actions/cache/storage-limit"]["parameters"];
+      response: Endpoints["GET /repos/{owner}/{repo}/actions/cache/storage-limit"]["response"];
+    };
     getActionsCacheUsage: {
       parameters: RequestParameters &
         Endpoints["GET /repos/{owner}/{repo}/actions/cache/usage"]["parameters"];
@@ -631,6 +661,36 @@ export type RestEndpointMethodTypes = {
       parameters: RequestParameters &
         Endpoints["POST /repos/{owner}/{repo}/actions/runs/{run_id}/pending_deployments"]["parameters"];
       response: Endpoints["POST /repos/{owner}/{repo}/actions/runs/{run_id}/pending_deployments"]["response"];
+    };
+    setActionsCacheRetentionLimitForEnterprise: {
+      parameters: RequestParameters &
+        Endpoints["PUT /enterprises/{enterprise}/actions/cache/retention-limit"]["parameters"];
+      response: Endpoints["PUT /enterprises/{enterprise}/actions/cache/retention-limit"]["response"];
+    };
+    setActionsCacheRetentionLimitForOrganization: {
+      parameters: RequestParameters &
+        Endpoints["PUT /organizations/{org}/actions/cache/retention-limit"]["parameters"];
+      response: Endpoints["PUT /organizations/{org}/actions/cache/retention-limit"]["response"];
+    };
+    setActionsCacheRetentionLimitForRepository: {
+      parameters: RequestParameters &
+        Endpoints["PUT /repos/{owner}/{repo}/actions/cache/retention-limit"]["parameters"];
+      response: Endpoints["PUT /repos/{owner}/{repo}/actions/cache/retention-limit"]["response"];
+    };
+    setActionsCacheStorageLimitForEnterprise: {
+      parameters: RequestParameters &
+        Endpoints["PUT /enterprises/{enterprise}/actions/cache/storage-limit"]["parameters"];
+      response: Endpoints["PUT /enterprises/{enterprise}/actions/cache/storage-limit"]["response"];
+    };
+    setActionsCacheStorageLimitForOrganization: {
+      parameters: RequestParameters &
+        Endpoints["PUT /organizations/{org}/actions/cache/storage-limit"]["parameters"];
+      response: Endpoints["PUT /organizations/{org}/actions/cache/storage-limit"]["response"];
+    };
+    setActionsCacheStorageLimitForRepository: {
+      parameters: RequestParameters &
+        Endpoints["PUT /repos/{owner}/{repo}/actions/cache/storage-limit"]["parameters"];
+      response: Endpoints["PUT /repos/{owner}/{repo}/actions/cache/storage-limit"]["response"];
     };
     setAllowedActionsOrganization: {
       parameters: RequestParameters &
@@ -1075,15 +1135,20 @@ export type RestEndpointMethodTypes = {
     };
   };
   billing: {
-    getGithubActionsBillingOrg: {
+    deleteBudgetOrg: {
       parameters: RequestParameters &
-        Endpoints["GET /orgs/{org}/settings/billing/actions"]["parameters"];
-      response: Endpoints["GET /orgs/{org}/settings/billing/actions"]["response"];
+        Endpoints["DELETE /organizations/{org}/settings/billing/budgets/{budget_id}"]["parameters"];
+      response: Endpoints["DELETE /organizations/{org}/settings/billing/budgets/{budget_id}"]["response"];
     };
-    getGithubActionsBillingUser: {
+    getAllBudgetsOrg: {
       parameters: RequestParameters &
-        Endpoints["GET /users/{username}/settings/billing/actions"]["parameters"];
-      response: Endpoints["GET /users/{username}/settings/billing/actions"]["response"];
+        Endpoints["GET /organizations/{org}/settings/billing/budgets"]["parameters"];
+      response: Endpoints["GET /organizations/{org}/settings/billing/budgets"]["response"];
+    };
+    getBudgetOrg: {
+      parameters: RequestParameters &
+        Endpoints["GET /organizations/{org}/settings/billing/budgets/{budget_id}"]["parameters"];
+      response: Endpoints["GET /organizations/{org}/settings/billing/budgets/{budget_id}"]["response"];
     };
     getGithubBillingPremiumRequestUsageReportOrg: {
       parameters: RequestParameters &
@@ -1105,25 +1170,20 @@ export type RestEndpointMethodTypes = {
         Endpoints["GET /users/{username}/settings/billing/usage"]["parameters"];
       response: Endpoints["GET /users/{username}/settings/billing/usage"]["response"];
     };
-    getGithubPackagesBillingOrg: {
+    getGithubBillingUsageSummaryReportOrg: {
       parameters: RequestParameters &
-        Endpoints["GET /orgs/{org}/settings/billing/packages"]["parameters"];
-      response: Endpoints["GET /orgs/{org}/settings/billing/packages"]["response"];
+        Endpoints["GET /organizations/{org}/settings/billing/usage/summary"]["parameters"];
+      response: Endpoints["GET /organizations/{org}/settings/billing/usage/summary"]["response"];
     };
-    getGithubPackagesBillingUser: {
+    getGithubBillingUsageSummaryReportUser: {
       parameters: RequestParameters &
-        Endpoints["GET /users/{username}/settings/billing/packages"]["parameters"];
-      response: Endpoints["GET /users/{username}/settings/billing/packages"]["response"];
+        Endpoints["GET /users/{username}/settings/billing/usage/summary"]["parameters"];
+      response: Endpoints["GET /users/{username}/settings/billing/usage/summary"]["response"];
     };
-    getSharedStorageBillingOrg: {
+    updateBudgetOrg: {
       parameters: RequestParameters &
-        Endpoints["GET /orgs/{org}/settings/billing/shared-storage"]["parameters"];
-      response: Endpoints["GET /orgs/{org}/settings/billing/shared-storage"]["response"];
-    };
-    getSharedStorageBillingUser: {
-      parameters: RequestParameters &
-        Endpoints["GET /users/{username}/settings/billing/shared-storage"]["parameters"];
-      response: Endpoints["GET /users/{username}/settings/billing/shared-storage"]["response"];
+        Endpoints["PATCH /organizations/{org}/settings/billing/budgets/{budget_id}"]["parameters"];
+      response: Endpoints["PATCH /organizations/{org}/settings/billing/budgets/{budget_id}"]["response"];
     };
   };
   campaigns: {
@@ -2651,6 +2711,11 @@ export type RestEndpointMethodTypes = {
         Endpoints["PUT /orgs/{org}/outside_collaborators/{username}"]["parameters"];
       response: Endpoints["PUT /orgs/{org}/outside_collaborators/{username}"]["response"];
     };
+    createArtifactDeploymentRecord: {
+      parameters: RequestParameters &
+        Endpoints["POST /orgs/{org}/artifacts/metadata/deployment-record"]["parameters"];
+      response: Endpoints["POST /orgs/{org}/artifacts/metadata/deployment-record"]["response"];
+    };
     createArtifactStorageRecord: {
       parameters: RequestParameters &
         Endpoints["POST /orgs/{org}/artifacts/metadata/storage-record"]["parameters"];
@@ -2820,6 +2885,11 @@ export type RestEndpointMethodTypes = {
       parameters: RequestParameters &
         Endpoints["GET /orgs/{org}/installations"]["parameters"];
       response: Endpoints["GET /orgs/{org}/installations"]["response"];
+    };
+    listArtifactDeploymentRecords: {
+      parameters: RequestParameters &
+        Endpoints["GET /orgs/{org}/artifacts/{subject_digest}/metadata/deployment-records"]["parameters"];
+      response: Endpoints["GET /orgs/{org}/artifacts/{subject_digest}/metadata/deployment-records"]["response"];
     };
     listArtifactStorageRecords: {
       parameters: RequestParameters &
@@ -3014,6 +3084,11 @@ export type RestEndpointMethodTypes = {
       parameters: RequestParameters &
         Endpoints["DELETE /orgs/{org}/organization-roles/users/{username}/{role_id}"]["parameters"];
       response: Endpoints["DELETE /orgs/{org}/organization-roles/users/{username}/{role_id}"]["response"];
+    };
+    setClusterDeploymentRecords: {
+      parameters: RequestParameters &
+        Endpoints["POST /orgs/{org}/artifacts/metadata/deployment-record/cluster/{cluster}"]["parameters"];
+      response: Endpoints["POST /orgs/{org}/artifacts/metadata/deployment-record/cluster/{cluster}"]["response"];
     };
     setImmutableReleasesSettings: {
       parameters: RequestParameters &
@@ -3256,6 +3331,16 @@ export type RestEndpointMethodTypes = {
     };
   };
   projects: {
+    addFieldForOrg: {
+      parameters: RequestParameters &
+        Endpoints["POST /orgs/{org}/projectsV2/{project_number}/fields"]["parameters"];
+      response: Endpoints["POST /orgs/{org}/projectsV2/{project_number}/fields"]["response"];
+    };
+    addFieldForUser: {
+      parameters: RequestParameters &
+        Endpoints["POST /users/{username}/projectsV2/{project_number}/fields"]["parameters"];
+      response: Endpoints["POST /users/{username}/projectsV2/{project_number}/fields"]["response"];
+    };
     addItemForOrg: {
       parameters: RequestParameters &
         Endpoints["POST /orgs/{org}/projectsV2/{project_number}/items"]["parameters"];
@@ -3265,6 +3350,16 @@ export type RestEndpointMethodTypes = {
       parameters: RequestParameters &
         Endpoints["POST /users/{username}/projectsV2/{project_number}/items"]["parameters"];
       response: Endpoints["POST /users/{username}/projectsV2/{project_number}/items"]["response"];
+    };
+    createDraftItemForAuthenticatedUser: {
+      parameters: RequestParameters &
+        Endpoints["POST /user/{user_id}/projectsV2/{project_number}/drafts"]["parameters"];
+      response: Endpoints["POST /user/{user_id}/projectsV2/{project_number}/drafts"]["response"];
+    };
+    createDraftItemForOrg: {
+      parameters: RequestParameters &
+        Endpoints["POST /orgs/{org}/projectsV2/{project_number}/drafts"]["parameters"];
+      response: Endpoints["POST /orgs/{org}/projectsV2/{project_number}/drafts"]["response"];
     };
     deleteItemForOrg: {
       parameters: RequestParameters &
