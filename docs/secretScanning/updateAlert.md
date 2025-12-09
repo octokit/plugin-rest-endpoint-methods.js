@@ -1,6 +1,6 @@
 ---
 name: Update a secret scanning alert
-example: octokit.rest.secretScanning.updateAlert({ owner, repo, alert_number, state })
+example: octokit.rest.secretScanning.updateAlert({ owner, repo, alert_number })
 route: PATCH /repos/{owner}/{repo}/secret-scanning/alerts/{alert_number}
 scope: secretScanning
 type: API method
@@ -9,6 +9,8 @@ type: API method
 # Update a secret scanning alert
 
 Updates the status of a secret scanning alert in an eligible repository.
+
+You can also use this endpoint to assign or unassign an alert to a user who has write access to the repository.
 
 The authenticated user must be an administrator for the repository or for the organization that owns the repository to use this endpoint.
 
@@ -19,7 +21,6 @@ octokit.rest.secretScanning.updateAlert({
   owner,
   repo,
   alert_number,
-  state,
 });
 ```
 
@@ -49,7 +50,7 @@ The name of the repository without the `.git` extension. The name is not case se
 The number that identifies an alert. You can find this at the end of the URL for a code scanning alert within GitHub, and in the `number` field in the response from the `GET /repos/{owner}/{repo}/code-scanning/alerts` operation.
 
 </td></tr>
-<tr><td>state</td><td>yes</td><td>
+<tr><td>state</td><td>no</td><td>
 
 Sets the state of the secret scanning alert. You must provide `resolution` when you set the state to `resolved`.
 
@@ -62,6 +63,11 @@ Sets the state of the secret scanning alert. You must provide `resolution` when 
 <tr><td>resolution_comment</td><td>no</td><td>
 
 An optional comment when closing or reopening an alert. Cannot be updated or deleted.
+
+</td></tr>
+<tr><td>assignee</td><td>no</td><td>
+
+The username of the user to assign to the alert. Set to `null` to unassign the alert.
 
 </td></tr>
   </tbody>

@@ -67,4 +67,4 @@ The product name to query usage for. The name is not case sensitive.
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/billing/enhanced-billing#get-billing-premium-request-usage-report-for-an-organization).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/billing/usage#get-billing-premium-request-usage-report-for-an-organization).

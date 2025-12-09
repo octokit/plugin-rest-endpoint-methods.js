@@ -54,6 +54,11 @@ The URL of the private registry.
 The username to use when authenticating with the private registry. This field should be omitted if the private registry does not require a username for authentication.
 
 </td></tr>
+<tr><td>replaces_base</td><td>no</td><td>
+
+Whether this private registry should replace the base registry (e.g., npmjs.org for npm, rubygems.org for rubygems). When set to `true`, Dependabot will only use this registry and will not fall back to the public registry. When set to `false` (default), Dependabot will use this registry for scoped packages but may fall back to the public registry for other packages.
+
+</td></tr>
 <tr><td>encrypted_value</td><td>yes</td><td>
 
 The value for your secret, encrypted with [LibSodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages) using the public key retrieved from the [Get private registries public key for an organization](https://docs.github.com/rest/private-registries/organization-configurations#get-private-registries-public-key-for-an-organization) endpoint.

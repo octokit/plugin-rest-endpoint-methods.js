@@ -124,6 +124,24 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
       "POST /repos/{owner}/{repo}/actions/runners/generate-jitconfig",
     ],
     getActionsCacheList: ["GET /repos/{owner}/{repo}/actions/caches"],
+    getActionsCacheRetentionLimitForEnterprise: [
+      "GET /enterprises/{enterprise}/actions/cache/retention-limit",
+    ],
+    getActionsCacheRetentionLimitForOrganization: [
+      "GET /organizations/{org}/actions/cache/retention-limit",
+    ],
+    getActionsCacheRetentionLimitForRepository: [
+      "GET /repos/{owner}/{repo}/actions/cache/retention-limit",
+    ],
+    getActionsCacheStorageLimitForEnterprise: [
+      "GET /enterprises/{enterprise}/actions/cache/storage-limit",
+    ],
+    getActionsCacheStorageLimitForOrganization: [
+      "GET /organizations/{org}/actions/cache/storage-limit",
+    ],
+    getActionsCacheStorageLimitForRepository: [
+      "GET /repos/{owner}/{repo}/actions/cache/storage-limit",
+    ],
     getActionsCacheUsage: ["GET /repos/{owner}/{repo}/actions/cache/usage"],
     getActionsCacheUsageByRepoForOrg: [
       "GET /orgs/{org}/actions/cache/usage-by-repository",
@@ -313,6 +331,24 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     reviewPendingDeploymentsForRun: [
       "POST /repos/{owner}/{repo}/actions/runs/{run_id}/pending_deployments",
     ],
+    setActionsCacheRetentionLimitForEnterprise: [
+      "PUT /enterprises/{enterprise}/actions/cache/retention-limit",
+    ],
+    setActionsCacheRetentionLimitForOrganization: [
+      "PUT /organizations/{org}/actions/cache/retention-limit",
+    ],
+    setActionsCacheRetentionLimitForRepository: [
+      "PUT /repos/{owner}/{repo}/actions/cache/retention-limit",
+    ],
+    setActionsCacheStorageLimitForEnterprise: [
+      "PUT /enterprises/{enterprise}/actions/cache/storage-limit",
+    ],
+    setActionsCacheStorageLimitForOrganization: [
+      "PUT /organizations/{org}/actions/cache/storage-limit",
+    ],
+    setActionsCacheStorageLimitForRepository: [
+      "PUT /repos/{owner}/{repo}/actions/cache/storage-limit",
+    ],
     setAllowedActionsOrganization: [
       "PUT /orgs/{org}/actions/permissions/selected-actions",
     ],
@@ -481,9 +517,12 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     updateWebhookConfigForApp: ["PATCH /app/hook/config"],
   },
   billing: {
-    getGithubActionsBillingOrg: ["GET /orgs/{org}/settings/billing/actions"],
-    getGithubActionsBillingUser: [
-      "GET /users/{username}/settings/billing/actions",
+    deleteBudgetOrg: [
+      "DELETE /organizations/{org}/settings/billing/budgets/{budget_id}",
+    ],
+    getAllBudgetsOrg: ["GET /organizations/{org}/settings/billing/budgets"],
+    getBudgetOrg: [
+      "GET /organizations/{org}/settings/billing/budgets/{budget_id}",
     ],
     getGithubBillingPremiumRequestUsageReportOrg: [
       "GET /organizations/{org}/settings/billing/premium_request/usage",
@@ -497,15 +536,14 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     getGithubBillingUsageReportUser: [
       "GET /users/{username}/settings/billing/usage",
     ],
-    getGithubPackagesBillingOrg: ["GET /orgs/{org}/settings/billing/packages"],
-    getGithubPackagesBillingUser: [
-      "GET /users/{username}/settings/billing/packages",
+    getGithubBillingUsageSummaryReportOrg: [
+      "GET /organizations/{org}/settings/billing/usage/summary",
     ],
-    getSharedStorageBillingOrg: [
-      "GET /orgs/{org}/settings/billing/shared-storage",
+    getGithubBillingUsageSummaryReportUser: [
+      "GET /users/{username}/settings/billing/usage/summary",
     ],
-    getSharedStorageBillingUser: [
-      "GET /users/{username}/settings/billing/shared-storage",
+    updateBudgetOrg: [
+      "PATCH /organizations/{org}/settings/billing/budgets/{budget_id}",
     ],
   },
   campaigns: {
@@ -1168,6 +1206,9 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     convertMemberToOutsideCollaborator: [
       "PUT /orgs/{org}/outside_collaborators/{username}",
     ],
+    createArtifactDeploymentRecord: [
+      "POST /orgs/{org}/artifacts/metadata/deployment-record",
+    ],
     createArtifactStorageRecord: [
       "POST /orgs/{org}/artifacts/metadata/storage-record",
     ],
@@ -1238,6 +1279,9 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     ],
     list: ["GET /organizations"],
     listAppInstallations: ["GET /orgs/{org}/installations"],
+    listArtifactDeploymentRecords: [
+      "GET /orgs/{org}/artifacts/{subject_digest}/metadata/deployment-records",
+    ],
     listArtifactStorageRecords: [
       "GET /orgs/{org}/artifacts/{subject_digest}/metadata/storage-records",
     ],
@@ -1318,6 +1362,9 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     ],
     revokeOrgRoleUser: [
       "DELETE /orgs/{org}/organization-roles/users/{username}/{role_id}",
+    ],
+    setClusterDeploymentRecords: [
+      "POST /orgs/{org}/artifacts/metadata/deployment-record/cluster/{cluster}",
     ],
     setImmutableReleasesSettings: [
       "PUT /orgs/{org}/settings/immutable-releases",
@@ -1445,9 +1492,19 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     ],
   },
   projects: {
+    addFieldForOrg: ["POST /orgs/{org}/projectsV2/{project_number}/fields"],
+    addFieldForUser: [
+      "POST /users/{username}/projectsV2/{project_number}/fields",
+    ],
     addItemForOrg: ["POST /orgs/{org}/projectsV2/{project_number}/items"],
     addItemForUser: [
       "POST /users/{username}/projectsV2/{project_number}/items",
+    ],
+    createDraftItemForAuthenticatedUser: [
+      "POST /user/{user_id}/projectsV2/{project_number}/drafts",
+    ],
+    createDraftItemForOrg: [
+      "POST /orgs/{org}/projectsV2/{project_number}/drafts",
     ],
     deleteItemForOrg: [
       "DELETE /orgs/{org}/projectsV2/{project_number}/items/{item_id}",
