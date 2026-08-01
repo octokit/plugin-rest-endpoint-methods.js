@@ -1184,14 +1184,6 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     ],
   },
   orgs: {
-    addSecurityManagerTeam: [
-      "PUT /orgs/{org}/security-managers/teams/{team_slug}",
-      {},
-      {
-        deprecated:
-          "octokit.rest.orgs.addSecurityManagerTeam() is deprecated, see https://docs.github.com/rest/orgs/security-managers#add-a-security-manager-team",
-      },
-    ],
     assignTeamToOrgRole: [
       "PUT /orgs/{org}/organization-roles/teams/{team_slug}/{role_id}",
     ],
@@ -1315,14 +1307,6 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     listPatGrants: ["GET /orgs/{org}/personal-access-tokens"],
     listPendingInvitations: ["GET /orgs/{org}/invitations"],
     listPublicMembers: ["GET /orgs/{org}/public_members"],
-    listSecurityManagerTeams: [
-      "GET /orgs/{org}/security-managers",
-      {},
-      {
-        deprecated:
-          "octokit.rest.orgs.listSecurityManagerTeams() is deprecated, see https://docs.github.com/rest/orgs/security-managers#list-security-manager-teams",
-      },
-    ],
     listWebhookDeliveries: ["GET /orgs/{org}/hooks/{hook_id}/deliveries"],
     listWebhooks: ["GET /orgs/{org}/hooks"],
     pingWebhook: ["POST /orgs/{org}/hooks/{hook_id}/pings"],
@@ -1336,14 +1320,6 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     ],
     removePublicMembershipForAuthenticatedUser: [
       "DELETE /orgs/{org}/public_members/{username}",
-    ],
-    removeSecurityManagerTeam: [
-      "DELETE /orgs/{org}/security-managers/teams/{team_slug}",
-      {},
-      {
-        deprecated:
-          "octokit.rest.orgs.removeSecurityManagerTeam() is deprecated, see https://docs.github.com/rest/orgs/security-managers#remove-a-security-manager-team",
-      },
     ],
     reviewPatGrantRequest: [
       "POST /orgs/{org}/personal-access-token-requests/{pat_request_id}",

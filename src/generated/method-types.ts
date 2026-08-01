@@ -8145,20 +8145,6 @@ export type RestEndpointMethods = {
   };
   orgs: {
     /**
-     * > [!WARNING]
-     * > **Closing down notice:** This operation is closing down and will be removed starting January 1, 2026. Please use the "[Organization Roles](https://docs.github.com/rest/orgs/organization-roles)" endpoints instead.
-     * @deprecated octokit.rest.orgs.addSecurityManagerTeam() is deprecated, see https://docs.github.com/rest/orgs/security-managers#add-a-security-manager-team
-     */
-    addSecurityManagerTeam: {
-      (
-        params?: RestEndpointMethodTypes["orgs"]["addSecurityManagerTeam"]["parameters"],
-      ): Promise<
-        RestEndpointMethodTypes["orgs"]["addSecurityManagerTeam"]["response"]
-      >;
-      defaults: RequestInterface["defaults"];
-      endpoint: EndpointInterface<{ url: string }>;
-    };
-    /**
      * Assigns an organization role to a team in an organization. For more information on organization roles, see "[Using organization roles](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/using-organization-roles)."
      *
      * The authenticated user must be an administrator for the organization to use this endpoint.
@@ -9122,20 +9108,6 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * > [!WARNING]
-     * > **Closing down notice:** This operation is closing down and will be removed starting January 1, 2026. Please use the "[Organization Roles](https://docs.github.com/rest/orgs/organization-roles)" endpoints instead.
-     * @deprecated octokit.rest.orgs.listSecurityManagerTeams() is deprecated, see https://docs.github.com/rest/orgs/security-managers#list-security-manager-teams
-     */
-    listSecurityManagerTeams: {
-      (
-        params?: RestEndpointMethodTypes["orgs"]["listSecurityManagerTeams"]["parameters"],
-      ): Promise<
-        RestEndpointMethodTypes["orgs"]["listSecurityManagerTeams"]["response"]
-      >;
-      defaults: RequestInterface["defaults"];
-      endpoint: EndpointInterface<{ url: string }>;
-    };
-    /**
      * Returns a list of webhook deliveries for a webhook configured in an organization.
      *
      * You must be an organization owner to use this endpoint.
@@ -9250,20 +9222,6 @@ export type RestEndpointMethods = {
         params?: RestEndpointMethodTypes["orgs"]["removePublicMembershipForAuthenticatedUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["orgs"]["removePublicMembershipForAuthenticatedUser"]["response"]
-      >;
-      defaults: RequestInterface["defaults"];
-      endpoint: EndpointInterface<{ url: string }>;
-    };
-    /**
-     * > [!WARNING]
-     * > **Closing down notice:** This operation is closing down and will be removed starting January 1, 2026. Please use the "[Organization Roles](https://docs.github.com/rest/orgs/organization-roles)" endpoints instead.
-     * @deprecated octokit.rest.orgs.removeSecurityManagerTeam() is deprecated, see https://docs.github.com/rest/orgs/security-managers#remove-a-security-manager-team
-     */
-    removeSecurityManagerTeam: {
-      (
-        params?: RestEndpointMethodTypes["orgs"]["removeSecurityManagerTeam"]["parameters"],
-      ): Promise<
-        RestEndpointMethodTypes["orgs"]["removeSecurityManagerTeam"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;

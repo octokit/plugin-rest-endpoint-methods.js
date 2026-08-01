@@ -2666,11 +2666,6 @@ export type RestEndpointMethodTypes = {
     };
   };
   orgs: {
-    addSecurityManagerTeam: {
-      parameters: RequestParameters &
-        Endpoints["PUT /orgs/{org}/security-managers/teams/{team_slug}"]["parameters"];
-      response: Endpoints["PUT /orgs/{org}/security-managers/teams/{team_slug}"]["response"];
-    };
     assignTeamToOrgRole: {
       parameters: RequestParameters &
         Endpoints["PUT /orgs/{org}/organization-roles/teams/{team_slug}/{role_id}"]["parameters"];
@@ -3005,11 +3000,6 @@ export type RestEndpointMethodTypes = {
         Endpoints["GET /orgs/{org}/public_members"]["parameters"];
       response: Endpoints["GET /orgs/{org}/public_members"]["response"];
     };
-    listSecurityManagerTeams: {
-      parameters: RequestParameters &
-        Endpoints["GET /orgs/{org}/security-managers"]["parameters"];
-      response: Endpoints["GET /orgs/{org}/security-managers"]["response"];
-    };
     listWebhookDeliveries: {
       parameters: RequestParameters &
         Endpoints["GET /orgs/{org}/hooks/{hook_id}/deliveries"]["parameters"];
@@ -3049,11 +3039,6 @@ export type RestEndpointMethodTypes = {
       parameters: RequestParameters &
         Endpoints["DELETE /orgs/{org}/public_members/{username}"]["parameters"];
       response: Endpoints["DELETE /orgs/{org}/public_members/{username}"]["response"];
-    };
-    removeSecurityManagerTeam: {
-      parameters: RequestParameters &
-        Endpoints["DELETE /orgs/{org}/security-managers/teams/{team_slug}"]["parameters"];
-      response: Endpoints["DELETE /orgs/{org}/security-managers/teams/{team_slug}"]["response"];
     };
     reviewPatGrantRequest: {
       parameters: RequestParameters &
