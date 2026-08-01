@@ -57,6 +57,11 @@ A comma-separated list of secret types to return. All default secret patterns ar
 A comma-separated list of resolutions. Only secret scanning alerts with one of these resolutions are listed. Valid resolutions are `false_positive`, `wont_fix`, `revoked`, `pattern_edited`, `pattern_deleted` or `used_in_tests`.
 
 </td></tr>
+<tr><td>assignee</td><td>no</td><td>
+
+Filters alerts by assignee. Use `*` to get all assigned alerts, `none` to get all unassigned alerts, or a GitHub username to get alerts assigned to a specific user.
+
+</td></tr>
 <tr><td>sort</td><td>no</td><td>
 
 The property to sort the results by. `created` means when the alert was created. `updated` means when the alert was updated or resolved.

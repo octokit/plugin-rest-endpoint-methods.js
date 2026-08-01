@@ -52,4 +52,4 @@ If specified, only return results for a single day. The value of `day` is an int
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/billing/enhanced-billing#get-billing-usage-report-for-a-user).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/billing/usage#get-billing-usage-report-for-a-user).

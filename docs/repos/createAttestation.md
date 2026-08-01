@@ -67,4 +67,4 @@ Refer to the [Sigstore Bundle Specification](https://github.com/sigstore/protobu
   </tbody>
 </table>
 
-See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/repos/repos#create-an-attestation).
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/repos/attestations#create-an-attestation).

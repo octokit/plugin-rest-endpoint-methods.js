@@ -77,6 +77,16 @@ The level of permission to grant the access token for GitHub Actions workflows, 
 The level of permission to grant the access token for repository creation, deletion, settings, teams, and collaborators creation.
 
 </td></tr>
+<tr><td>permissions.artifact_metadata</td><td>no</td><td>
+
+The level of permission to grant the access token to create and retrieve build artifact metadata records.
+
+</td></tr>
+<tr><td>permissions.attestations</td><td>no</td><td>
+
+The level of permission to create and retrieve the access token for repository attestations.
+
+</td></tr>
 <tr><td>permissions.checks</td><td>no</td><td>
 
 The level of permission to grant the access token for checks on code.
@@ -102,6 +112,11 @@ The level of permission to grant the access token to manage Dependabot secrets.
 The level of permission to grant the access token for deployments and deployment statuses.
 
 </td></tr>
+<tr><td>permissions.discussions</td><td>no</td><td>
+
+The level of permission to grant the access token for discussions and related comments and labels.
+
+</td></tr>
 <tr><td>permissions.environments</td><td>no</td><td>
 
 The level of permission to grant the access token for managing repository environments.
@@ -110,6 +125,11 @@ The level of permission to grant the access token for managing repository enviro
 <tr><td>permissions.issues</td><td>no</td><td>
 
 The level of permission to grant the access token for issues and related comments, assignees, labels, and milestones.
+
+</td></tr>
+<tr><td>permissions.merge_queues</td><td>no</td><td>
+
+The level of permission to grant the access token to manage the merge queues for a repository.
 
 </td></tr>
 <tr><td>permissions.metadata</td><td>no</td><td>

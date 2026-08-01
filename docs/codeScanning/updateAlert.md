@@ -1,6 +1,6 @@
 ---
 name: Update a code scanning alert
-example: octokit.rest.codeScanning.updateAlert({ owner, repo, alert_number, state })
+example: octokit.rest.codeScanning.updateAlert({ owner, repo, alert_number })
 route: PATCH /repos/{owner}/{repo}/code-scanning/alerts/{alert_number}
 scope: codeScanning
 type: API method
@@ -16,7 +16,6 @@ octokit.rest.codeScanning.updateAlert({
   owner,
   repo,
   alert_number,
-  state,
 });
 ```
 
@@ -46,7 +45,7 @@ The name of the repository without the `.git` extension. The name is not case se
 The number that identifies an alert. You can find this at the end of the URL for a code scanning alert within GitHub, and in the `number` field in the response from the `GET /repos/{owner}/{repo}/code-scanning/alerts` operation.
 
 </td></tr>
-<tr><td>state</td><td>yes</td><td>
+<tr><td>state</td><td>no</td><td>
 
 Sets the state of the code scanning alert. You must provide `dismissed_reason` when you set the state to `dismissed`.
 
