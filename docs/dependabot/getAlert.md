@@ -1,4 +1,5 @@
 ---
+
 name: Get a Dependabot alert
 example: octokit.rest.dependabot.getAlert({ owner, repo, alert_number })
 route: GET /repos/{owner}/{repo}/dependabot/alerts/{alert_number}

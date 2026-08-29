@@ -1,4 +1,5 @@
 ---
+
 name: Get GitHub-hosted runners machine specs for an organization
 example: octokit.rest.actions.getHostedRunnersMachineSpecsForOrg({ org })
 route: GET /orgs/{org}/actions/hosted-runners/machine-sizes

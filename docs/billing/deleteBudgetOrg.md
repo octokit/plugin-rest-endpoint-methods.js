@@ -1,4 +1,5 @@
 ---
+
 name: Delete a budget for an organization
 example: octokit.rest.billing.deleteBudgetOrg({ org, budget_id })
 route: DELETE /organizations/{org}/settings/billing/budgets/{budget_id}
@@ -7,9 +8,6 @@ type: API method
 ---
 
 # Delete a budget for an organization
-
-> [!NOTE]
-> This endpoint is in public preview and is subject to change.
 
 Deletes a budget by ID for an organization. The authenticated user must be an organization admin or billing manager.
 

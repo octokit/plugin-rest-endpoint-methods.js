@@ -1,4 +1,5 @@
 ---
+
 name: Remove organization membership for a user
 example: octokit.rest.orgs.removeMembershipForUser({ org, username })
 route: DELETE /orgs/{org}/memberships/{username}

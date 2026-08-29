@@ -1,4 +1,5 @@
 ---
+
 name: Get a repository secret
 example: octokit.rest.dependabot.getRepoSecret({ owner, repo, secret_name })
 route: GET /repos/{owner}/{repo}/dependabot/secrets/{secret_name}

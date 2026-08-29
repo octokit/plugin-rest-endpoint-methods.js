@@ -1,4 +1,5 @@
 ---
+
 name: Get a repository subscription
 example: octokit.rest.activity.getRepoSubscription({ owner, repo })
 route: GET /repos/{owner}/{repo}/subscription

@@ -1,4 +1,5 @@
 ---
+
 name: Get a repository security advisory
 example: octokit.rest.securityAdvisories.getRepositoryAdvisory({ owner, repo, ghsa_id })
 route: GET /repos/{owner}/{repo}/security-advisories/{ghsa_id}

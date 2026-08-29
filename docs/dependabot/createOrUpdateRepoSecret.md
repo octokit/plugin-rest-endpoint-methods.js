@@ -1,4 +1,5 @@
 ---
+
 name: Create or update a repository secret
 example: octokit.rest.dependabot.createOrUpdateRepoSecret({ owner, repo, secret_name })
 route: PUT /repos/{owner}/{repo}/dependabot/secrets/{secret_name}

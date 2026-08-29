@@ -1,4 +1,5 @@
 ---
+
 name: Get a diff of the dependencies between commits
 example: octokit.rest.dependencyGraph.diffRange({ owner, repo, basehead })
 route: GET /repos/{owner}/{repo}/dependency-graph/compare/{basehead}

@@ -1,4 +1,5 @@
 ---
+
 name: Retrieve a code security configuration of an enterprise
 example: octokit.rest.codeSecurity.getSingleConfigurationForEnterprise({ enterprise, configuration_id })
 route: GET /enterprises/{enterprise}/code-security/configurations/{configuration_id}

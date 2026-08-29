@@ -1,4 +1,5 @@
 ---
+
 name: List repositories starred by the authenticated user
 example: octokit.rest.activity.listReposStarredByAuthenticatedUser()
 route: GET /user/starred

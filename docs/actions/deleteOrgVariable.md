@@ -1,4 +1,5 @@
 ---
+
 name: Delete an organization variable
 example: octokit.rest.actions.deleteOrgVariable({ org, name })
 route: DELETE /orgs/{org}/actions/variables/{name}

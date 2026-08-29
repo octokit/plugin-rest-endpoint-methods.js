@@ -1,4 +1,5 @@
 ---
+
 name: Get allowed actions and reusable workflows for a repository
 example: octokit.rest.actions.getAllowedActionsRepository({ owner, repo })
 route: GET /repos/{owner}/{repo}/actions/permissions/selected-actions

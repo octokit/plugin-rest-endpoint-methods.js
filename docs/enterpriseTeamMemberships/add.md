@@ -1,4 +1,5 @@
 ---
+
 name: Add team member
 example: octokit.rest.enterpriseTeamMemberships.add({ enterprise, enterprise-team, username })
 route: PUT /enterprises/{enterprise}/teams/{enterprise-team}/memberships/{username}

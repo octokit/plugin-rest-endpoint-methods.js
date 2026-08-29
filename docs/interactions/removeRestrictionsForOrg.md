@@ -1,4 +1,5 @@
 ---
+
 name: Remove interaction restrictions for an organization
 example: octokit.rest.interactions.removeRestrictionsForOrg({ org })
 route: DELETE /orgs/{org}/interaction-limits

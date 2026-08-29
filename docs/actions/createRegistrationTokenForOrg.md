@@ -1,4 +1,5 @@
 ---
+
 name: Create a registration token for an organization
 example: octokit.rest.actions.createRegistrationTokenForOrg({ org })
 route: POST /orgs/{org}/actions/runners/registration-token

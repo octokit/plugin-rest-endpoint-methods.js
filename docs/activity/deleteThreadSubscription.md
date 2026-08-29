@@ -1,4 +1,5 @@
 ---
+
 name: Delete a thread subscription
 example: octokit.rest.activity.deleteThreadSubscription({ thread_id })
 route: DELETE /notifications/threads/{thread_id}/subscription

@@ -1,4 +1,5 @@
 ---
+
 name: Check if a user can be assigned
 example: octokit.rest.issues.checkUserCanBeAssigned({ owner, repo, assignee })
 route: GET /repos/{owner}/{repo}/assignees/{assignee}

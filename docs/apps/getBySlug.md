@@ -1,4 +1,5 @@
 ---
+
 name: Get an app
 example: octokit.rest.apps.getBySlug({ app_slug })
 route: GET /apps/{app_slug}

@@ -1,4 +1,5 @@
 ---
+
 name: Check public organization membership for a user
 example: octokit.rest.orgs.checkPublicMembershipForUser({ org, username })
 route: GET /orgs/{org}/public_members/{username}

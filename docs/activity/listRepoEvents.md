@@ -1,4 +1,5 @@
 ---
+
 name: List repository events
 example: octokit.rest.activity.listRepoEvents({ owner, repo })
 route: GET /repos/{owner}/{repo}/events

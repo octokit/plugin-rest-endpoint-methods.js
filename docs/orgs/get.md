@@ -1,4 +1,5 @@
 ---
+
 name: Get an organization
 example: octokit.rest.orgs.get({ org })
 route: GET /orgs/{org}

@@ -1,4 +1,5 @@
 ---
+
 name: Get a repository public key
 example: octokit.rest.codespaces.getRepoPublicKey({ owner, repo })
 route: GET /repos/{owner}/{repo}/codespaces/secrets/public-key

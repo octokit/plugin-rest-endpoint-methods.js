@@ -1,0 +1,57 @@
+---
+
+name: Set selected repositories for an organization variable
+example: octokit.rest.agents.setSelectedReposForOrgVariable({ org, name, selected_repository_ids })
+route: PUT /orgs/{org}/agents/variables/{name}/repositories
+scope: agents
+type: API method
+---
+
+# Set selected repositories for an organization variable
+
+Replaces all repositories for an organization agent variable that is available
+to selected repositories. Organization variables that are available to selected
+repositories have their `visibility` field set to `selected`.
+
+Authenticated users must have collaborator access to a repository to create, update, or read variables.
+
+OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, the `repo` scope is also required.
+
+```js
+octokit.rest.agents.setSelectedReposForOrgVariable({
+  org,
+  name,
+  selected_repository_ids,
+});
+```
+
+## Parameters
+
+<table>
+  <thead>
+    <tr>
+      <th>name</th>
+      <th>required</th>
+      <th>description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>org</td><td>yes</td><td>
+
+The organization name. The name is not case sensitive.
+
+</td></tr>
+<tr><td>name</td><td>yes</td><td>
+
+The name of the variable.
+
+</td></tr>
+<tr><td>selected_repository_ids</td><td>yes</td><td>
+
+The IDs of the repositories that can access the organization variable.
+
+</td></tr>
+  </tbody>
+</table>
+
+See also: [GitHub Developer Guide documentation](https://docs.github.com/rest/agents/variables#set-selected-repositories-for-an-organization-variable).

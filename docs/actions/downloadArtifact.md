@@ -1,4 +1,5 @@
 ---
+
 name: Download an artifact
 example: octokit.rest.actions.downloadArtifact({ owner, repo, artifact_id, archive_format })
 route: GET /repos/{owner}/{repo}/actions/artifacts/{artifact_id}/{archive_format}

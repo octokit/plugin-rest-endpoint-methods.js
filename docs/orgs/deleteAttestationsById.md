@@ -1,4 +1,5 @@
 ---
+
 name: Delete attestations by ID
 example: octokit.rest.orgs.deleteAttestationsById({ org, attestation_id })
 route: DELETE /orgs/{org}/attestations/{attestation_id}

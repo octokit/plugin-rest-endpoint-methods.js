@@ -1,4 +1,5 @@
 ---
+
 name: Create a pull request
 example: octokit.rest.pulls.create({ owner, repo, head, base })
 route: POST /repos/{owner}/{repo}/pulls

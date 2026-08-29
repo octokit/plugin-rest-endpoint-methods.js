@@ -1,4 +1,5 @@
 ---
+
 name: Attach a configuration to repositories
 example: octokit.rest.codeSecurity.attachConfiguration({ org, configuration_id, scope })
 route: POST /orgs/{org}/code-security/configurations/{configuration_id}/attach

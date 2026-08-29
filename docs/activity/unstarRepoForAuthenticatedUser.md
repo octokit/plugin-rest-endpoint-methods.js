@@ -1,4 +1,5 @@
 ---
+
 name: Unstar a repository for the authenticated user
 example: octokit.rest.activity.unstarRepoForAuthenticatedUser({ owner, repo })
 route: DELETE /user/starred/{owner}/{repo}

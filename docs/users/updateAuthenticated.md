@@ -1,4 +1,5 @@
 ---
+
 name: Update the authenticated user
 example: octokit.rest.users.updateAuthenticated()
 route: PATCH /user

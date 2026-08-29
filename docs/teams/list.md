@@ -1,4 +1,5 @@
 ---
+
 name: List teams
 example: octokit.rest.teams.list({ org })
 route: GET /orgs/{org}/teams
@@ -40,6 +41,11 @@ The number of results per page (max 100). For more information, see "[Using pagi
 <tr><td>page</td><td>no</td><td>
 
 The page number of the results to fetch. For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
+
+</td></tr>
+<tr><td>team_type</td><td>no</td><td>
+
+Filter team results by their type. For more information, see "[What kind of team should I use?](https://docs.github.com/enterprise-cloud@latest/admin/concepts/enterprise-fundamentals/teams-in-an-enterprise#what-kind-of-team-should-i-use)"
 
 </td></tr>
   </tbody>

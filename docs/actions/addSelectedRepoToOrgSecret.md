@@ -1,4 +1,5 @@
 ---
+
 name: Add selected repository to an organization secret
 example: octokit.rest.actions.addSelectedRepoToOrgSecret({ org, secret_name, repository_id })
 route: PUT /orgs/{org}/actions/secrets/{secret_name}/repositories/{repository_id}

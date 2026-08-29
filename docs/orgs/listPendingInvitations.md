@@ -1,4 +1,5 @@
 ---
+
 name: List pending organization invitations
 example: octokit.rest.orgs.listPendingInvitations({ org })
 route: GET /orgs/{org}/invitations

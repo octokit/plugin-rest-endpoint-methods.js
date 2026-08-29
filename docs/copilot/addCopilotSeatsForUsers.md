@@ -1,4 +1,5 @@
 ---
+
 name: Add users to the Copilot subscription for an organization
 example: octokit.rest.copilot.addCopilotSeatsForUsers({ org, selected_usernames })
 route: POST /orgs/{org}/copilot/billing/selected_users

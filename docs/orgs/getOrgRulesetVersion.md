@@ -1,4 +1,5 @@
 ---
+
 name: Get organization ruleset version
 example: octokit.rest.orgs.getOrgRulesetVersion({ org, ruleset_id, version_id })
 route: GET /orgs/{org}/rulesets/{ruleset_id}/history/{version_id}

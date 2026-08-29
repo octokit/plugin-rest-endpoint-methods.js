@@ -1,6 +1,7 @@
 ---
+
 name: Update a Dependabot alert
-example: octokit.rest.dependabot.updateAlert({ owner, repo, alert_number, state })
+example: octokit.rest.dependabot.updateAlert({ owner, repo, alert_number })
 route: PATCH /repos/{owner}/{repo}/dependabot/alerts/{alert_number}
 scope: dependabot
 type: API method
@@ -17,7 +18,6 @@ octokit.rest.dependabot.updateAlert({
   owner,
   repo,
   alert_number,
-  state,
 });
 ```
 
@@ -50,7 +50,7 @@ or in `number` fields in the response from the
 `GET /repos/{owner}/{repo}/dependabot/alerts` operation.
 
 </td></tr>
-<tr><td>state</td><td>yes</td><td>
+<tr><td>state</td><td>no</td><td>
 
 The state of the Dependabot alert.
 A `dismissed_reason` must be provided when setting the state to `dismissed`.
@@ -64,6 +64,35 @@ A `dismissed_reason` must be provided when setting the state to `dismissed`.
 <tr><td>dismissed_comment</td><td>no</td><td>
 
 An optional comment associated with dismissing the alert.
+
+</td></tr>
+<tr><td>assignees</td><td>no</td><td>
+
+Usernames to assign to this Dependabot Alert.
+Pass one or more user logins to _replace_ the set of assignees on this alert.
+Send an empty array (`[]`) to clear all assignees from the alert.
+To assign an AI agent, include the bot login (for example, `copilot-swe-agent[bot]`).
+
+</td></tr>
+<tr><td>agent_assignment</td><td>no</td><td>
+
+Parameters for AI agent assignment. Only used when an agent bot login is
+included in `assignees`. Ignored when no agent is being assigned.
+
+</td></tr>
+<tr><td>agent_assignment.custom_instructions</td><td>no</td><td>
+
+Custom instructions for the agent.
+
+</td></tr>
+<tr><td>agent_assignment.custom_agent</td><td>no</td><td>
+
+A custom agent identifier.
+
+</td></tr>
+<tr><td>agent_assignment.model</td><td>no</td><td>
+
+The model to use for the agent.
 
 </td></tr>
   </tbody>

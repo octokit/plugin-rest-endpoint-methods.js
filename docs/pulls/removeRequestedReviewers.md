@@ -1,4 +1,5 @@
 ---
+
 name: Remove requested reviewers from a pull request
 example: octokit.rest.pulls.removeRequestedReviewers({ owner, repo, pull_number, reviewers })
 route: DELETE /repos/{owner}/{repo}/pulls/{pull_number}/requested_reviewers

@@ -1,4 +1,5 @@
 ---
+
 name: Remove assignees from an issue
 example: octokit.rest.issues.removeAssignees({ owner, repo, issue_number, assignees })
 route: DELETE /repos/{owner}/{repo}/issues/{issue_number}/assignees

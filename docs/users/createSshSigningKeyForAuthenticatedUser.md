@@ -1,4 +1,5 @@
 ---
+
 name: Create a SSH signing key for the authenticated user
 example: octokit.rest.users.createSshSigningKeyForAuthenticatedUser({ key })
 route: POST /user/ssh_signing_keys

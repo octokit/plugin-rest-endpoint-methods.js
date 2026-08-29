@@ -1,4 +1,5 @@
 ---
+
 name: Delete an organization migration archive
 example: octokit.rest.migrations.deleteArchiveForOrg({ org, migration_id })
 route: DELETE /orgs/{org}/migrations/{migration_id}/archive

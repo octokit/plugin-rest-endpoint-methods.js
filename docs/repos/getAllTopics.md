@@ -1,4 +1,5 @@
 ---
+
 name: Get all repository topics
 example: octokit.rest.repos.getAllTopics({ owner, repo })
 route: GET /repos/{owner}/{repo}/topics

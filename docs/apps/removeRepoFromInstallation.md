@@ -1,4 +1,5 @@
 ---
+
 name: Remove a repository from an app installation
 example: octokit.rest.apps.removeRepoFromInstallation({ installation_id, repository_id })
 route: DELETE /user/installations/{installation_id}/repositories/{repository_id}

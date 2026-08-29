@@ -1,4 +1,5 @@
 ---
+
 name: Get a webhook configuration for a repository
 example: octokit.rest.repos.getWebhookConfigForRepo({ owner, repo, hook_id })
 route: GET /repos/{owner}/{repo}/hooks/{hook_id}/config

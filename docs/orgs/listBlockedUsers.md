@@ -1,4 +1,5 @@
 ---
+
 name: List users blocked by an organization
 example: octokit.rest.orgs.listBlockedUsers({ org })
 route: GET /orgs/{org}/blocks

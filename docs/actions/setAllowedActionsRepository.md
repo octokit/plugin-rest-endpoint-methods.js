@@ -1,4 +1,5 @@
 ---
+
 name: Set allowed actions and reusable workflows for a repository
 example: octokit.rest.actions.setAllowedActionsRepository({ owner, repo })
 route: PUT /repos/{owner}/{repo}/actions/permissions/selected-actions

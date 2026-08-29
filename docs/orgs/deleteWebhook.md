@@ -1,4 +1,5 @@
 ---
+
 name: Delete an organization webhook
 example: octokit.rest.orgs.deleteWebhook({ org, hook_id })
 route: DELETE /orgs/{org}/hooks/{hook_id}

@@ -1,4 +1,5 @@
 ---
+
 name: Get repository ruleset version
 example: octokit.rest.repos.getRepoRulesetVersion({ owner, repo, ruleset_id, version_id })
 route: GET /repos/{owner}/{repo}/rulesets/{ruleset_id}/history/{version_id}

@@ -1,4 +1,5 @@
 ---
+
 name: Update a label
 example: octokit.rest.issues.updateLabel({ owner, repo, name })
 route: PATCH /repos/{owner}/{repo}/labels/{name}

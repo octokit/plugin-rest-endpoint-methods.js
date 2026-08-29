@@ -1,4 +1,5 @@
 ---
+
 name: Get Octocat
 example: octokit.rest.meta.getOctocat()
 route: GET /octocat

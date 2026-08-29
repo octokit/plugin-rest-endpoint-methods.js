@@ -1,4 +1,5 @@
 ---
+
 name: Set GitHub Actions permissions for a repository
 example: octokit.rest.actions.setGithubActionsPermissionsRepository({ owner, repo, enabled })
 route: PUT /repos/{owner}/{repo}/actions/permissions

@@ -1,4 +1,5 @@
 ---
+
 name: List failed organization invitations
 example: octokit.rest.orgs.listFailedInvitations({ org })
 route: GET /orgs/{org}/failed_invitations

@@ -1,4 +1,5 @@
 ---
+
 name: Get an organization public key
 example: octokit.rest.actions.getOrgPublicKey({ org })
 route: GET /orgs/{org}/actions/secrets/public-key

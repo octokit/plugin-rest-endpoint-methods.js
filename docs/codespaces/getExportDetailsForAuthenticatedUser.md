@@ -1,4 +1,5 @@
 ---
+
 name: Get details about a codespace export
 example: octokit.rest.codespaces.getExportDetailsForAuthenticatedUser({ codespace_name, export_id })
 route: GET /user/codespaces/{codespace_name}/exports/{export_id}

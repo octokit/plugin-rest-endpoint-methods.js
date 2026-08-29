@@ -1,4 +1,5 @@
 ---
+
 name: Commit an autofix for a code scanning alert
 example: octokit.rest.codeScanning.commitAutofix({ owner, repo, alert_number })
 route: POST /repos/{owner}/{repo}/code-scanning/alerts/{alert_number}/autofix/commits
@@ -8,7 +9,7 @@ type: API method
 
 # Commit an autofix for a code scanning alert
 
-Commits an autofix for a code scanning alert.
+Commits an autofix for a code scanning alert from the repository's default branch.
 
 If an autofix is committed as a result of this request, then this endpoint will return a 201 Created response.
 

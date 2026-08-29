@@ -1,4 +1,5 @@
 ---
+
 name: Delete a repository ruleset
 example: octokit.rest.repos.deleteRepoRuleset({ owner, repo, ruleset_id })
 route: DELETE /repos/{owner}/{repo}/rulesets/{ruleset_id}

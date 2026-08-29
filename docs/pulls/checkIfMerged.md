@@ -1,4 +1,5 @@
 ---
+
 name: Check if a pull request has been merged
 example: octokit.rest.pulls.checkIfMerged({ owner, repo, pull_number })
 route: GET /repos/{owner}/{repo}/pulls/{pull_number}/merge

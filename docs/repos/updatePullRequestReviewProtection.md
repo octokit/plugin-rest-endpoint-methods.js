@@ -1,4 +1,5 @@
 ---
+
 name: Update pull request review protection
 example: octokit.rest.repos.updatePullRequestReviewProtection({ owner, repo, branch })
 route: PATCH /repos/{owner}/{repo}/branches/{branch}/protection/required_pull_request_reviews

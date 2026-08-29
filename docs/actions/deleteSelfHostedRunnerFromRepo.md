@@ -1,4 +1,5 @@
 ---
+
 name: Delete a self-hosted runner from a repository
 example: octokit.rest.actions.deleteSelfHostedRunnerFromRepo({ owner, repo, runner_id })
 route: DELETE /repos/{owner}/{repo}/actions/runners/{runner_id}

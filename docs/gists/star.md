@@ -1,4 +1,5 @@
 ---
+
 name: Star a gist
 example: octokit.rest.gists.star({ gist_id })
 route: PUT /gists/{gist_id}/star

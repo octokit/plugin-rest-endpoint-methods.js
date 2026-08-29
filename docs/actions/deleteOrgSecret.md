@@ -1,4 +1,5 @@
 ---
+
 name: Delete an organization secret
 example: octokit.rest.actions.deleteOrgSecret({ org, secret_name })
 route: DELETE /orgs/{org}/actions/secrets/{secret_name}

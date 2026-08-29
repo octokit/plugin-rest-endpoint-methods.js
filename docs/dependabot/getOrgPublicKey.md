@@ -1,4 +1,5 @@
 ---
+
 name: Get an organization public key
 example: octokit.rest.dependabot.getOrgPublicKey({ org })
 route: GET /orgs/{org}/dependabot/secrets/public-key

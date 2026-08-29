@@ -1,4 +1,5 @@
 ---
+
 name: Delete a GitHub-hosted runner for an organization
 example: octokit.rest.actions.deleteHostedRunnerForOrg({ org, hosted_runner_id })
 route: DELETE /orgs/{org}/actions/hosted-runners/{hosted_runner_id}

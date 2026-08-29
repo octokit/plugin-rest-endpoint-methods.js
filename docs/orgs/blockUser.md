@@ -1,4 +1,5 @@
 ---
+
 name: Block a user from an organization
 example: octokit.rest.orgs.blockUser({ org, username })
 route: PUT /orgs/{org}/blocks/{username}

@@ -1,4 +1,5 @@
 ---
+
 name: Search code
 example: octokit.rest.search.code({ q })
 route: GET /search/code

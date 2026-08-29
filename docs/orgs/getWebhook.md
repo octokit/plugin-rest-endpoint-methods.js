@@ -1,4 +1,5 @@
 ---
+
 name: Get an organization webhook
 example: octokit.rest.orgs.getWebhook({ org, hook_id })
 route: GET /orgs/{org}/hooks/{hook_id}

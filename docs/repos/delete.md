@@ -1,4 +1,5 @@
 ---
+
 name: Delete a repository
 example: octokit.rest.repos.delete({ owner, repo })
 route: DELETE /repos/{owner}/{repo}

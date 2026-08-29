@@ -1,4 +1,5 @@
 ---
+
 name: Get a GitHub-hosted runner for an organization
 example: octokit.rest.actions.getHostedRunnerForOrg({ org, hosted_runner_id })
 route: GET /orgs/{org}/actions/hosted-runners/{hosted_runner_id}

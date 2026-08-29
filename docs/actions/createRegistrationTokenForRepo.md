@@ -1,4 +1,5 @@
 ---
+
 name: Create a registration token for a repository
 example: octokit.rest.actions.createRegistrationTokenForRepo({ owner, repo })
 route: POST /repos/{owner}/{repo}/actions/runners/registration-token

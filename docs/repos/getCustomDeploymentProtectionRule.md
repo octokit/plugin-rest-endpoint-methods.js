@@ -1,4 +1,5 @@
 ---
+
 name: Get a custom deployment protection rule
 example: octokit.rest.repos.getCustomDeploymentProtectionRule({ owner, repo, environment_name, protection_rule_id })
 route: GET /repos/{owner}/{repo}/environments/{environment_name}/deployment_protection_rules/{protection_rule_id}

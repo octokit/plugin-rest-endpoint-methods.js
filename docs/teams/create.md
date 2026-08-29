@@ -1,4 +1,5 @@
 ---
+
 name: Create a team
 example: octokit.rest.teams.create({ org, name })
 route: POST /orgs/{org}/teams
@@ -85,6 +86,11 @@ The notification setting the team has chosen. The options are:
 <tr><td>parent_team_id</td><td>no</td><td>
 
 The ID of a team to set as the parent team.
+
+</td></tr>
+<tr><td>parent_team_slug</td><td>no</td><td>
+
+The slug of a team to set as the parent team. Ignored when `parent_team_id` is also provided.
 
 </td></tr>
   </tbody>

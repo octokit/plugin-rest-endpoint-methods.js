@@ -1,4 +1,5 @@
 ---
+
 name: Get a public SSH key for the authenticated user
 example: octokit.rest.users.getPublicSshKeyForAuthenticated({ key_id })
 route: GET /user/keys/{key_id}

@@ -1,4 +1,5 @@
 ---
+
 name: Ping an organization webhook
 example: octokit.rest.orgs.pingWebhook({ org, hook_id })
 route: POST /orgs/{org}/hooks/{hook_id}/pings

@@ -1,4 +1,5 @@
 ---
+
 name: List repository collaborators
 example: octokit.rest.repos.listCollaborators({ owner, repo })
 route: GET /repos/{owner}/{repo}/collaborators

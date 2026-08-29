@@ -1,4 +1,5 @@
 ---
+
 name: Stop a codespace for the authenticated user
 example: octokit.rest.codespaces.stopForAuthenticatedUser({ codespace_name })
 route: POST /user/codespaces/{codespace_name}/stop

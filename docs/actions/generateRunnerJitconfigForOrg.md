@@ -1,4 +1,5 @@
 ---
+
 name: Create configuration for a just-in-time runner for an organization
 example: octokit.rest.actions.generateRunnerJitconfigForOrg({ org, name, runner_group_id, labels })
 route: POST /orgs/{org}/actions/runners/generate-jitconfig

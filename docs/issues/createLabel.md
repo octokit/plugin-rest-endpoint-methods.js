@@ -1,4 +1,5 @@
 ---
+
 name: Create a label
 example: octokit.rest.issues.createLabel({ owner, repo, name })
 route: POST /repos/{owner}/{repo}/labels

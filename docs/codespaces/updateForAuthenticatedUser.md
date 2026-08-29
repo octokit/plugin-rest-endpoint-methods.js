@@ -1,4 +1,5 @@
 ---
+
 name: Update a codespace for the authenticated user
 example: octokit.rest.codespaces.updateForAuthenticatedUser({ codespace_name })
 route: PATCH /user/codespaces/{codespace_name}

@@ -1,4 +1,5 @@
 ---
+
 name: Get a user using their ID
 example: octokit.rest.users.getById({ account_id })
 route: GET /user/{account_id}

@@ -1,4 +1,5 @@
 ---
+
 name: List repository notifications for the authenticated user
 example: octokit.rest.activity.listRepoNotificationsForAuthenticatedUser({ owner, repo })
 route: GET /repos/{owner}/{repo}/notifications

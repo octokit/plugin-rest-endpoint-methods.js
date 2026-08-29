@@ -1,4 +1,5 @@
 ---
+
 name: Update a private registry for an organization
 example: octokit.rest.privateRegistries.updateOrgPrivateRegistry({ org, secret_name })
 route: PATCH /orgs/{org}/private-registries/{secret_name}
@@ -9,6 +10,7 @@ type: API method
 # Update a private registry for an organization
 
 Updates a private registry configuration with an encrypted value for an organization. Encrypt your secret using [LibSodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages). For more information, see "[Encrypting secrets for the REST API](https://docs.github.com/rest/guides/encrypting-secrets-for-the-rest-api)."
+For OIDC-based registries (`oidc_azure`, `oidc_aws`, `oidc_jfrog`, `oidc_cloudsmith`, or `oidc_gcp`), the `encrypted_value` and `key_id` fields should be omitted.
 
 OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 
@@ -78,6 +80,86 @@ Which type of organization repositories have access to the private registry. `se
 <tr><td>selected_repository_ids</td><td>no</td><td>
 
 An array of repository IDs that can access the organization private registry. You can only provide a list of repository IDs when `visibility` is set to `selected`. This field should be omitted if `visibility` is set to `all` or `private`.
+
+</td></tr>
+<tr><td>auth_type</td><td>no</td><td>
+
+The authentication type for the private registry. This field cannot be changed after creation. If provided, it must match the existing `auth_type` of the configuration. To change the authentication type, delete and recreate the configuration.
+
+</td></tr>
+<tr><td>tenant_id</td><td>no</td><td>
+
+The tenant ID of the Azure AD application. Required when `auth_type` is `oidc_azure`.
+
+</td></tr>
+<tr><td>client_id</td><td>no</td><td>
+
+The client ID of the Azure AD application. Required when `auth_type` is `oidc_azure`.
+
+</td></tr>
+<tr><td>aws_region</td><td>no</td><td>
+
+The AWS region. Required when `auth_type` is `oidc_aws`.
+
+</td></tr>
+<tr><td>account_id</td><td>no</td><td>
+
+The AWS account ID. Required when `auth_type` is `oidc_aws`.
+
+</td></tr>
+<tr><td>role_name</td><td>no</td><td>
+
+The AWS IAM role name. Required when `auth_type` is `oidc_aws`.
+
+</td></tr>
+<tr><td>domain</td><td>no</td><td>
+
+The CodeArtifact domain. Required when `auth_type` is `oidc_aws`.
+
+</td></tr>
+<tr><td>domain_owner</td><td>no</td><td>
+
+The CodeArtifact domain owner (AWS account ID). Required when `auth_type` is `oidc_aws`.
+
+</td></tr>
+<tr><td>jfrog_oidc_provider_name</td><td>no</td><td>
+
+The JFrog OIDC provider name. Required when `auth_type` is `oidc_jfrog`.
+
+</td></tr>
+<tr><td>audience</td><td>no</td><td>
+
+The OIDC audience. Optional for `oidc_aws`, `oidc_jfrog`, and `oidc_gcp`, and required for `oidc_cloudsmith` auth types.
+
+</td></tr>
+<tr><td>identity_mapping_name</td><td>no</td><td>
+
+The JFrog identity mapping name. Optional for `oidc_jfrog` auth type.
+
+</td></tr>
+<tr><td>namespace</td><td>no</td><td>
+
+The Cloudsmith organization namespace. Required when `auth_type` is `oidc_cloudsmith`.
+
+</td></tr>
+<tr><td>service_slug</td><td>no</td><td>
+
+The Cloudsmith service account slug. Required when `auth_type` is `oidc_cloudsmith`.
+
+</td></tr>
+<tr><td>api_host</td><td>no</td><td>
+
+The Cloudsmith API host. Optional for `oidc_cloudsmith` auth type. If omitted, `api.cloudsmith.io` is used by default.
+
+</td></tr>
+<tr><td>workload_identity_provider</td><td>no</td><td>
+
+The full resource name of the GCP Workload Identity Provider (e.g. `projects/<NUM>/locations/global/workloadIdentityPools/<POOL>/providers/<PROVIDER>`). Required when `auth_type` is `oidc_gcp`.
+
+</td></tr>
+<tr><td>service_account</td><td>no</td><td>
+
+The GCP service account email to impersonate. Optional for `oidc_gcp` auth type. If omitted, the federated token is used directly (direct WIF).
 
 </td></tr>
   </tbody>

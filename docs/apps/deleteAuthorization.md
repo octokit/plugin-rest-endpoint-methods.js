@@ -1,4 +1,5 @@
 ---
+
 name: Delete an app authorization
 example: octokit.rest.apps.deleteAuthorization({ client_id, access_token })
 route: DELETE /applications/{client_id}/grant

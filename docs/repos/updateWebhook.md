@@ -1,4 +1,5 @@
 ---
+
 name: Update a repository webhook
 example: octokit.rest.repos.updateWebhook({ owner, repo, hook_id })
 route: PATCH /repos/{owner}/{repo}/hooks/{hook_id}

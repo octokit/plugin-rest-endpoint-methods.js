@@ -1,4 +1,5 @@
 ---
+
 name: Unlock an organization repository
 example: octokit.rest.migrations.unlockRepoForOrg({ org, migration_id, repo_name })
 route: DELETE /orgs/{org}/migrations/{migration_id}/repos/{repo_name}/lock

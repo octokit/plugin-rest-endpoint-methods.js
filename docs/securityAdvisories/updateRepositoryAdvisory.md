@@ -1,4 +1,5 @@
 ---
+
 name: Update a repository security advisory
 example: octokit.rest.securityAdvisories.updateRepositoryAdvisory({ owner, repo, ghsa_id, vulnerabilities[].package, vulnerabilities[].package.ecosystem, credits[].login, credits[].type })
 route: PATCH /repos/{owner}/{repo}/security-advisories/{ghsa_id}

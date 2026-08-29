@@ -1,4 +1,5 @@
 ---
+
 name: Update information about a GitHub Pages site
 example: octokit.rest.repos.updateInformationAboutPagesSite({ owner, repo })
 route: PUT /repos/{owner}/{repo}/pages

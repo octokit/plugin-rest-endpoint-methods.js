@@ -1,4 +1,5 @@
 ---
+
 name: Re-run a workflow
 example: octokit.rest.actions.reRunWorkflow({ owner, repo, run_id })
 route: POST /repos/{owner}/{repo}/actions/runs/{run_id}/rerun

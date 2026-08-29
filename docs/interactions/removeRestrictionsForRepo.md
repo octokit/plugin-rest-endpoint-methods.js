@@ -1,4 +1,5 @@
 ---
+
 name: Remove interaction restrictions for a repository
 example: octokit.rest.interactions.removeRestrictionsForRepo({ owner, repo })
 route: DELETE /repos/{owner}/{repo}/interaction-limits

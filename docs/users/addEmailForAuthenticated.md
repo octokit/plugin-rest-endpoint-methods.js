@@ -1,4 +1,5 @@
 ---
+
 name: Add an email address for the authenticated user
 example: octokit.rest.users.addEmailForAuthenticated({ emails })
 route: POST /user/emails

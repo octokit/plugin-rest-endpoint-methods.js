@@ -1,4 +1,5 @@
 ---
+
 name: Get allowed actions and reusable workflows for an organization
 example: octokit.rest.actions.getAllowedActionsOrganization({ org })
 route: GET /orgs/{org}/actions/permissions/selected-actions

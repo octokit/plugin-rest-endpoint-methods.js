@@ -1,4 +1,5 @@
 ---
+
 name: Accept a repository invitation
 example: octokit.rest.repos.acceptInvitation({ invitation_id })
 route: PATCH /user/repository_invitations/{invitation_id}

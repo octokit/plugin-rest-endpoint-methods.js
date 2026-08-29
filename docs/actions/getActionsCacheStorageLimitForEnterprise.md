@@ -1,4 +1,5 @@
 ---
+
 name: Get GitHub Actions cache storage limit for an enterprise
 example: octokit.rest.actions.getActionsCacheStorageLimitForEnterprise({ enterprise })
 route: GET /enterprises/{enterprise}/actions/cache/storage-limit

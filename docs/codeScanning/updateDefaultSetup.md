@@ -1,4 +1,5 @@
 ---
+
 name: Update a code scanning default setup configuration
 example: octokit.rest.codeScanning.updateDefaultSetup({ owner, repo })
 route: PATCH /repos/{owner}/{repo}/code-scanning/default-setup

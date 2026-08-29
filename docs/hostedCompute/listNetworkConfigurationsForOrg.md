@@ -1,4 +1,5 @@
 ---
+
 name: List hosted compute network configurations for an organization
 example: octokit.rest.hostedCompute.listNetworkConfigurationsForOrg({ org })
 route: GET /orgs/{org}/settings/network-configurations

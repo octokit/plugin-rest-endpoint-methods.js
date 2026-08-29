@@ -1,4 +1,5 @@
 ---
+
 name: Create an artifact deployment record
 example: octokit.rest.orgs.createArtifactDeploymentRecord({ org, name, digest, status, logical_environment, deployment_name })
 route: POST /orgs/{org}/artifacts/metadata/deployment-record
@@ -8,8 +9,19 @@ type: API method
 
 # Create an artifact deployment record
 
-Create or update deployment records for an artifact associated with an organization.
-This endpoint allows you to record information about a specific artifact, such as its name, digest, environments, cluster, and deployment.
+Create or update deployment records for an artifact associated
+with an organization.
+This endpoint allows you to record information about a specific
+artifact, such as its name, digest, environments, cluster, and
+deployment.
+The deployment name has to be uniqe within a cluster (i.e a
+combination of logical, physical environment and cluster) as it
+identifies unique deployment.
+Multiple requests for the same combination of logical, physical
+environment, cluster and deployment name will only create one
+record, successive request will update the existing record.
+This allows for a stable tracking of a deployment where the actual
+deployed artifact can change over time.
 
 ```js
 octokit.rest.orgs.createArtifactDeploymentRecord({
@@ -75,7 +87,9 @@ The deployment cluster.
 </td></tr>
 <tr><td>deployment_name</td><td>yes</td><td>
 
-The name of the deployment.
+The unique identifier for the deployment represented by the new record. To accommodate differing
+containers and namespaces within a cluster, the following format is recommended:
+{namespaceName}-{deploymentName}-{containerName}.
 
 </td></tr>
 <tr><td>tags</td><td>no</td><td>
@@ -99,6 +113,11 @@ must belong to the organization specified in the path parameter.
 
 If a provenance attestation is available for the artifact, the API will use
 the repository information from the attestation instead of this parameter.
+
+</td></tr>
+<tr><td>return_records</td><td>no</td><td>
+
+If true, the endpoint will return the created or updated record in the response body.
 
 </td></tr>
   </tbody>

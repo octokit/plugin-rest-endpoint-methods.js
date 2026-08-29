@@ -1,4 +1,5 @@
 ---
+
 name: Update a gist
 example: octokit.rest.gists.update({ gist_id })
 route: PATCH /gists/{gist_id}

@@ -1,4 +1,5 @@
 ---
+
 name: Update a code security configuration
 example: octokit.rest.codeSecurity.updateConfiguration({ org, configuration_id, secret_scanning_delegated_bypass_options.reviewers[].reviewer_id, secret_scanning_delegated_bypass_options.reviewers[].reviewer_type })
 route: PATCH /orgs/{org}/code-security/configurations/{configuration_id}
@@ -97,6 +98,11 @@ The enablement status of Dependabot alerts
 The enablement status of Dependabot security updates
 
 </td></tr>
+<tr><td>dependabot_delegated_alert_dismissal</td><td>no</td><td>
+
+The enablement status of Dependabot delegated alert dismissal. Requires Dependabot alerts to be enabled.
+
+</td></tr>
 <tr><td>code_scanning_default_setup</td><td>no</td><td>
 
 The enablement status of code scanning default setup
@@ -115,6 +121,16 @@ Whether to use labeled runners or standard GitHub runners.
 <tr><td>code_scanning_default_setup_options.runner_label</td><td>no</td><td>
 
 The label of the runner to use for code scanning default setup when runner_type is 'labeled'.
+
+</td></tr>
+<tr><td>code_scanning_options</td><td>no</td><td>
+
+Security Configuration feature options for code scanning
+
+</td></tr>
+<tr><td>code_scanning_options.allow_advanced</td><td>no</td><td>
+
+Whether to allow repos which use advanced setup
 
 </td></tr>
 <tr><td>code_scanning_delegated_alert_dismissal</td><td>no</td><td>
@@ -162,6 +178,11 @@ The ID of the team or role selected as a bypass reviewer
 The type of the bypass reviewer
 
 </td></tr>
+<tr><td>secret_scanning_delegated_bypass_options.reviewers[].mode</td><td>no</td><td>
+
+The bypass mode for the reviewer
+
+</td></tr>
 <tr><td>secret_scanning_validity_checks</td><td>no</td><td>
 
 The enablement status of secret scanning validity checks
@@ -180,6 +201,11 @@ The enablement status of Copilot secret scanning
 <tr><td>secret_scanning_delegated_alert_dismissal</td><td>no</td><td>
 
 The enablement status of secret scanning delegated alert dismissal
+
+</td></tr>
+<tr><td>secret_scanning_extended_metadata</td><td>no</td><td>
+
+The enablement status of secret scanning extended metadata
 
 </td></tr>
 <tr><td>private_vulnerability_reporting</td><td>no</td><td>

@@ -1,4 +1,5 @@
 ---
+
 name: Update the access to organization resources via fine-grained personal access tokens
 example: octokit.rest.orgs.updatePatAccesses({ org, action, pat_ids })
 route: POST /orgs/{org}/personal-access-tokens

@@ -1,4 +1,5 @@
 ---
+
 name: Check if immutable releases are enabled for a repository
 example: octokit.rest.repos.checkImmutableReleases({ owner, repo })
 route: GET /repos/{owner}/{repo}/immutable-releases

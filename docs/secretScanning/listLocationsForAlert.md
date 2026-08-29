@@ -1,4 +1,5 @@
 ---
+
 name: List locations for a secret scanning alert
 example: octokit.rest.secretScanning.listLocationsForAlert({ owner, repo, alert_number })
 route: GET /repos/{owner}/{repo}/secret-scanning/alerts/{alert_number}/locations

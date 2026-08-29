@@ -1,4 +1,5 @@
 ---
+
 name: Remove a custom label from a self-hosted runner for a repository
 example: octokit.rest.actions.removeCustomLabelFromSelfHostedRunnerForRepo({ owner, repo, runner_id, name })
 route: DELETE /repos/{owner}/{repo}/actions/runners/{runner_id}/labels/{name}

@@ -1,6 +1,7 @@
 ---
+
 name: Update an issue
-example: octokit.rest.issues.update({ owner, repo, issue_number })
+example: octokit.rest.issues.update({ owner, repo, issue_number, issue_field_values[].field_id, issue_field_values[].value })
 route: PATCH /repos/{owner}/{repo}/issues/{issue_number}
 scope: issues
 type: API method
@@ -19,10 +20,12 @@ This endpoint supports the following custom media types. For more information, s
 
 ```js
 octokit.rest.issues.update({
-  owner,
-  repo,
-  issue_number,
-});
+        owner,
+repo,
+issue_number,
+issue_field_values[].field_id,
+issue_field_values[].value
+      })
 ```
 
 ## Parameters
@@ -76,6 +79,11 @@ The open or closed state of the issue.
 The reason for the state change. Ignored unless `state` is changed.
 
 </td></tr>
+<tr><td>duplicate_issue_id</td><td>no</td><td>
+
+The ID of the issue to mark as the canonical duplicate when `state_reason` is `duplicate`. The issue must exist and be accessible to the authenticated user. Ignored when `state_reason` is not `duplicate`.
+
+</td></tr>
 <tr><td>milestone</td><td>no</td><td>
 
 </td></tr>
@@ -89,9 +97,39 @@ Labels to associate with this issue. Pass one or more labels to _replace_ the se
 Usernames to assign to this issue. Pass one or more user logins to _replace_ the set of assignees on this issue. Send an empty array (`[]`) to clear all assignees from the issue. Only users with push access can set assignees for new issues. Without push access to the repository, assignee changes are silently dropped.
 
 </td></tr>
+<tr><td>issue_field_values</td><td>no</td><td>
+
+An array of issue field values to set on this issue. Each field value must include the field ID and the value to set. Only users with push access can set field values for issues
+
+</td></tr>
+<tr><td>issue_field_values[].field_id</td><td>yes</td><td>
+
+The ID of the issue field to set
+
+</td></tr>
+<tr><td>issue_field_values[].value</td><td>yes</td><td>
+
+The value to set for the field. For multi-select fields, provide an array of option names.
+
+</td></tr>
+<tr><td>issue_field_values[].rationale</td><td>no</td><td>
+
+Optional reasoning for setting this field value.
+
+</td></tr>
+<tr><td>issue_field_values[].suggest</td><td>no</td><td>
+
+If `true`, the change is stored as a pending suggestion for human review rather than applied directly.
+
+</td></tr>
+<tr><td>issue_field_values[].confidence</td><td>no</td><td>
+
+The confidence level for this field value choice.
+
+</td></tr>
 <tr><td>type</td><td>no</td><td>
 
-The name of the issue type to associate with this issue or use `null` to remove the current issue type. Only users with push access can set the type for issues. Without push access to the repository, type changes are silently dropped.
+The issue type to associate with this issue. Only users with push access can set the type for issues. Without push access to the repository, type changes are silently dropped.
 
 </td></tr>
   </tbody>

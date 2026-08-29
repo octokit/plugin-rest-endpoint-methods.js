@@ -1,4 +1,5 @@
 ---
+
 name: Get emojis
 example: octokit.rest.emojis.get()
 route: GET /emojis

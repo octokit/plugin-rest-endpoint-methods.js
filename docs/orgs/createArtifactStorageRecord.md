@@ -1,4 +1,5 @@
 ---
+
 name: Create artifact metadata storage record
 example: octokit.rest.orgs.createArtifactStorageRecord({ org, name, digest, registry_url })
 route: POST /orgs/{org}/artifacts/metadata/storage-record
@@ -85,6 +86,11 @@ must belong to the organization specified in the path parameter.
 
 If a provenance attestation is available for the artifact, the API will use
 the repository information from the attestation instead of this parameter.
+
+</td></tr>
+<tr><td>return_records</td><td>no</td><td>
+
+If true, the endpoint will return the created record in the response body.
 
 </td></tr>
   </tbody>

@@ -1,4 +1,5 @@
 ---
+
 name: Unblock a user from an organization
 example: octokit.rest.orgs.unblockUser({ org, username })
 route: DELETE /orgs/{org}/blocks/{username}

@@ -1,4 +1,5 @@
 ---
+
 name: Create or update an organization secret
 example: octokit.rest.actions.createOrUpdateOrgSecret({ org, secret_name, visibility })
 route: PUT /orgs/{org}/actions/secrets/{secret_name}

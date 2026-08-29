@@ -1,4 +1,5 @@
 ---
+
 name: Get an organization secret
 example: octokit.rest.actions.getOrgSecret({ org, secret_name })
 route: GET /orgs/{org}/actions/secrets/{secret_name}

@@ -1,4 +1,5 @@
 ---
+
 name: Get the weekly commit activity
 example: octokit.rest.repos.getCodeFrequencyStats({ owner, repo })
 route: GET /repos/{owner}/{repo}/stats/code_frequency

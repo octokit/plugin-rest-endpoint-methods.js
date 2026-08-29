@@ -1,4 +1,5 @@
 ---
+
 name: Update a custom code security configuration for an enterprise
 example: octokit.rest.codeSecurity.updateEnterpriseConfiguration({ enterprise, configuration_id })
 route: PATCH /enterprises/{enterprise}/code-security/configurations/{configuration_id}
@@ -115,6 +116,16 @@ Whether to use labeled runners or standard GitHub runners.
 The label of the runner to use for code scanning default setup when runner_type is 'labeled'.
 
 </td></tr>
+<tr><td>code_scanning_options</td><td>no</td><td>
+
+Security Configuration feature options for code scanning
+
+</td></tr>
+<tr><td>code_scanning_options.allow_advanced</td><td>no</td><td>
+
+Whether to allow repos which use advanced setup
+
+</td></tr>
 <tr><td>code_scanning_delegated_alert_dismissal</td><td>no</td><td>
 
 The enablement status of code scanning delegated alert dismissal
@@ -153,6 +164,11 @@ The enablement status of Copilot secret scanning
 <tr><td>secret_scanning_delegated_alert_dismissal</td><td>no</td><td>
 
 The enablement status of secret scanning delegated alert dismissal
+
+</td></tr>
+<tr><td>secret_scanning_extended_metadata</td><td>no</td><td>
+
+The enablement status of secret scanning extended metadata
 
 </td></tr>
 <tr><td>private_vulnerability_reporting</td><td>no</td><td>

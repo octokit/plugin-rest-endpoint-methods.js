@@ -1,4 +1,5 @@
 ---
+
 name: Check a token
 example: octokit.rest.apps.checkToken({ client_id, access_token })
 route: POST /applications/{client_id}/token

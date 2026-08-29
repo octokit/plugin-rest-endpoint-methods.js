@@ -1,4 +1,5 @@
 ---
+
 name: Get immutable releases settings for an organization
 example: octokit.rest.orgs.getImmutableReleasesSettings({ org })
 route: GET /orgs/{org}/settings/immutable-releases

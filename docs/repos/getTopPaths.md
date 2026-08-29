@@ -1,4 +1,5 @@
 ---
+
 name: Get top referral paths
 example: octokit.rest.repos.getTopPaths({ owner, repo })
 route: GET /repos/{owner}/{repo}/traffic/popular/paths

@@ -1,4 +1,5 @@
 ---
+
 name: Update a release
 example: octokit.rest.repos.updateRelease({ owner, repo, release_id })
 route: PATCH /repos/{owner}/{repo}/releases/{release_id}
@@ -9,6 +10,11 @@ type: API method
 # Update a release
 
 Users with push access to the repository can edit a release.
+
+> [!NOTE]
+> If the resolved target commit (the new value of `target_commitish` if you are changing it, otherwise the existing target) adds or modifies any file under `.github/workflows/` relative to the repository's default branch, the authenticating token must be authorized to modify workflows. Otherwise, this endpoint returns `404 Not Found`; some authentication paths surface `403 Resource not accessible by integration` instead.
+
+OAuth app tokens and personal access tokens (classic) need the `workflow` scope when the resolved target commit modifies workflow files. Fine-grained access tokens and GitHub App installation tokens also need the "Workflows" repository permission (write). The `GITHUB_TOKEN` available to GitHub Actions cannot be authorized for this; for more information, see "[Automatic token authentication](https://docs.github.com/actions/security-guides/automatic-token-authentication#permissions-for-the-github_token)".
 
 ```js
 octokit.rest.repos.updateRelease({

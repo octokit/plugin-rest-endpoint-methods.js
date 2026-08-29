@@ -1,4 +1,5 @@
 ---
+
 name: Remove app access restrictions
 example: octokit.rest.repos.removeAppAccessRestrictions({ owner, repo, branch, apps })
 route: DELETE /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/apps

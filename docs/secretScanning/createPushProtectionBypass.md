@@ -1,4 +1,5 @@
 ---
+
 name: Create a push protection bypass
 example: octokit.rest.secretScanning.createPushProtectionBypass({ owner, repo, reason, placeholder_id })
 route: POST /repos/{owner}/{repo}/secret-scanning/push-protection-bypasses

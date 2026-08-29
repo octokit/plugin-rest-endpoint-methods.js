@@ -1,4 +1,5 @@
 ---
+
 name: List private registries for an organization
 example: octokit.rest.privateRegistries.listOrgPrivateRegistries({ org })
 route: GET /orgs/{org}/private-registries

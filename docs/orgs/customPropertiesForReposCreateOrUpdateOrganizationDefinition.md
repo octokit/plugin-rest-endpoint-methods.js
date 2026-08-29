@@ -1,4 +1,5 @@
 ---
+
 name: Create or update a custom property for an organization
 example: octokit.rest.orgs.customPropertiesForReposCreateOrUpdateOrganizationDefinition({ org, custom_property_name, value_type })
 route: PUT /orgs/{org}/properties/schema/{custom_property_name}
@@ -73,6 +74,11 @@ The property can have up to 200 allowed values.
 <tr><td>values_editable_by</td><td>no</td><td>
 
 Who can edit the values of the property
+
+</td></tr>
+<tr><td>require_explicit_values</td><td>no</td><td>
+
+Whether setting properties values is mandatory
 
 </td></tr>
   </tbody>

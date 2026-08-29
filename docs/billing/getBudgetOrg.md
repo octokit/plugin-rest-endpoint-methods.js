@@ -1,4 +1,5 @@
 ---
+
 name: Get a budget by ID for an organization
 example: octokit.rest.billing.getBudgetOrg({ org, budget_id })
 route: GET /organizations/{org}/settings/billing/budgets/{budget_id}
@@ -7,9 +8,6 @@ type: API method
 ---
 
 # Get a budget by ID for an organization
-
-> [!NOTE]
-> This endpoint is in public preview and is subject to change.
 
 Gets a budget by ID. The authenticated user must be an organization admin or billing manager.
 

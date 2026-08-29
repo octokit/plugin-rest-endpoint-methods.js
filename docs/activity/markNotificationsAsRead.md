@@ -1,4 +1,5 @@
 ---
+
 name: Mark notifications as read
 example: octokit.rest.activity.markNotificationsAsRead()
 route: PUT /notifications

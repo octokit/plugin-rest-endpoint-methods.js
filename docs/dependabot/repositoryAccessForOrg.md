@@ -1,7 +1,8 @@
 ---
+
 name: Lists the repositories Dependabot can access in an organization
 example: octokit.rest.dependabot.repositoryAccessForOrg({ org })
-route: GET /organizations/{org}/dependabot/repository-access
+route: GET /orgs/{org}/dependabot/repository-access
 scope: dependabot
 type: API method
 ---

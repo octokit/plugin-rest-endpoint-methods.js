@@ -1,4 +1,5 @@
 ---
+
 name: Request a CVE for a repository security advisory
 example: octokit.rest.securityAdvisories.createRepositoryAdvisoryCveRequest({ owner, repo, ghsa_id })
 route: POST /repos/{owner}/{repo}/security-advisories/{ghsa_id}/cve

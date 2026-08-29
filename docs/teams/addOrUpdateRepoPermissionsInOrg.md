@@ -1,4 +1,5 @@
 ---
+
 name: Add or update team repository permissions
 example: octokit.rest.teams.addOrUpdateRepoPermissionsInOrg({ org, team_slug, owner, repo })
 route: PUT /orgs/{org}/teams/{team_slug}/repos/{owner}/{repo}

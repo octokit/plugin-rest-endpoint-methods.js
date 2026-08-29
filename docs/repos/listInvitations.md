@@ -1,4 +1,5 @@
 ---
+
 name: List repository invitations
 example: octokit.rest.repos.listInvitations({ owner, repo })
 route: GET /repos/{owner}/{repo}/invitations

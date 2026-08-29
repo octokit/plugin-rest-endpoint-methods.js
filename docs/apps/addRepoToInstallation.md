@@ -1,4 +1,5 @@
 ---
+
 name: Add a repository to an app installation
 example: octokit.rest.apps.addRepoToInstallation({ installation_id, repository_id })
 route: PUT /user/installations/{installation_id}/repositories/{repository_id}

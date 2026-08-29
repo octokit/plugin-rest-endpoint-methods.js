@@ -1,4 +1,5 @@
 ---
+
 name: Get a commit object
 example: octokit.rest.git.getCommit({ owner, repo, commit_sha })
 route: GET /repos/{owner}/{repo}/git/commits/{commit_sha}

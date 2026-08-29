@@ -1,4 +1,5 @@
 ---
+
 name: Check if a user is a repository collaborator
 example: octokit.rest.repos.checkCollaborator({ owner, repo, username })
 route: GET /repos/{owner}/{repo}/collaborators/{username}

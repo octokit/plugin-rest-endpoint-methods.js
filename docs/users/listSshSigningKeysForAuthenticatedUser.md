@@ -1,4 +1,5 @@
 ---
+
 name: List SSH signing keys for the authenticated user
 example: octokit.rest.users.listSshSigningKeysForAuthenticatedUser()
 route: GET /user/ssh_signing_keys

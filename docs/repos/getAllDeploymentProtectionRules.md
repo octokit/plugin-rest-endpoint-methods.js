@@ -1,4 +1,5 @@
 ---
+
 name: Get all deployment protection rules for an environment
 example: octokit.rest.repos.getAllDeploymentProtectionRules({ environment_name, repo, owner })
 route: GET /repos/{owner}/{repo}/environments/{environment_name}/deployment_protection_rules

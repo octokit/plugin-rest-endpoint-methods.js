@@ -1,4 +1,5 @@
 ---
+
 name: Get the customization template for an OIDC subject claim for an organization
 example: octokit.rest.oidc.getOidcCustomSubTemplateForOrg({ org })
 route: GET /orgs/{org}/actions/oidc/customization/sub

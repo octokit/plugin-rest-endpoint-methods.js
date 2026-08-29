@@ -1,4 +1,5 @@
 ---
+
 name: Delete a repository secret
 example: octokit.rest.dependabot.deleteRepoSecret({ owner, repo, secret_name })
 route: DELETE /repos/{owner}/{repo}/dependabot/secrets/{secret_name}

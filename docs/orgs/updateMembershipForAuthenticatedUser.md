@@ -1,4 +1,5 @@
 ---
+
 name: Update an organization membership for the authenticated user
 example: octokit.rest.orgs.updateMembershipForAuthenticatedUser({ org, state })
 route: PATCH /user/memberships/orgs/{org}

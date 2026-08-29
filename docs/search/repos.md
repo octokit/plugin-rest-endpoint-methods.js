@@ -1,4 +1,5 @@
 ---
+
 name: Search repositories
 example: octokit.rest.search.repos({ q })
 route: GET /search/repositories

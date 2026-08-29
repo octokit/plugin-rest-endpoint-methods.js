@@ -1,4 +1,5 @@
 ---
+
 name: Delete an organization secret
 example: octokit.rest.dependabot.deleteOrgSecret({ org, secret_name })
 route: DELETE /orgs/{org}/dependabot/secrets/{secret_name}

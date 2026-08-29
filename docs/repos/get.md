@@ -1,4 +1,5 @@
 ---
+
 name: Get a repository
 example: octokit.rest.repos.get({ owner, repo })
 route: GET /repos/{owner}/{repo}

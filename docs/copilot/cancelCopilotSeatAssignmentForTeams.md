@@ -1,4 +1,5 @@
 ---
+
 name: Remove teams from the Copilot subscription for an organization
 example: octokit.rest.copilot.cancelCopilotSeatAssignmentForTeams({ org, selected_teams })
 route: DELETE /orgs/{org}/copilot/billing/selected_teams

@@ -1,4 +1,5 @@
 ---
+
 name: Get a code of conduct
 example: octokit.rest.codesOfConduct.getConductCode({ key })
 route: GET /codes_of_conduct/{key}

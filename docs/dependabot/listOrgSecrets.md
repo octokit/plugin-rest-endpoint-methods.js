@@ -1,4 +1,5 @@
 ---
+
 name: List organization secrets
 example: octokit.rest.dependabot.listOrgSecrets({ org })
 route: GET /orgs/{org}/dependabot/secrets

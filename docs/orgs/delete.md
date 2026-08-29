@@ -1,4 +1,5 @@
 ---
+
 name: Delete an organization
 example: octokit.rest.orgs.delete({ org })
 route: DELETE /orgs/{org}

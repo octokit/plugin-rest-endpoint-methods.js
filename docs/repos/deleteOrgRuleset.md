@@ -1,4 +1,5 @@
 ---
+
 name: Delete an organization repository ruleset
 example: octokit.rest.repos.deleteOrgRuleset({ org, ruleset_id })
 route: DELETE /orgs/{org}/rulesets/{ruleset_id}

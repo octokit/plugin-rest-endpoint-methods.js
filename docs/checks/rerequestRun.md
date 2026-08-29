@@ -1,4 +1,5 @@
 ---
+
 name: Rerequest a check run
 example: octokit.rest.checks.rerequestRun({ owner, repo, check_run_id })
 route: POST /repos/{owner}/{repo}/check-runs/{check_run_id}/rerequest

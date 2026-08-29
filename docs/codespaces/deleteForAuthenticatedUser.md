@@ -1,4 +1,5 @@
 ---
+
 name: Delete a codespace for the authenticated user
 example: octokit.rest.codespaces.deleteForAuthenticatedUser({ codespace_name })
 route: DELETE /user/codespaces/{codespace_name}

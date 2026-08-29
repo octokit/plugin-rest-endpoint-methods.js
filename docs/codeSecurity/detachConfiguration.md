@@ -1,6 +1,7 @@
 ---
+
 name: Detach configurations from repositories
-example: octokit.rest.codeSecurity.detachConfiguration({ org })
+example: octokit.rest.codeSecurity.detachConfiguration({ org, selected_repository_ids })
 route: DELETE /orgs/{org}/code-security/configurations/detach
 scope: codeSecurity
 type: API method
@@ -18,6 +19,7 @@ OAuth app tokens and personal access tokens (classic) need the `write:org` scope
 ```js
 octokit.rest.codeSecurity.detachConfiguration({
   org,
+  selected_repository_ids,
 });
 ```
 
@@ -37,7 +39,7 @@ octokit.rest.codeSecurity.detachConfiguration({
 The organization name. The name is not case sensitive.
 
 </td></tr>
-<tr><td>selected_repository_ids</td><td>no</td><td>
+<tr><td>selected_repository_ids</td><td>yes</td><td>
 
 An array of repository IDs to detach from configurations. Up to 250 IDs can be provided.
 

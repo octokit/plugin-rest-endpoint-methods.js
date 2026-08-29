@@ -1,4 +1,5 @@
 ---
+
 name: Update branch protection
 example: octokit.rest.repos.updateBranchProtection({ owner, repo, branch, required_status_checks, required_status_checks.strict, required_status_checks.contexts, required_status_checks.checks[].context, enforce_admins, required_pull_request_reviews, restrictions, restrictions.users, restrictions.teams })
 route: PUT /repos/{owner}/{repo}/branches/{branch}/protection

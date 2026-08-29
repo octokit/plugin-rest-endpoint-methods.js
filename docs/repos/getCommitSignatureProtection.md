@@ -1,4 +1,5 @@
 ---
+
 name: Get commit signature protection
 example: octokit.rest.repos.getCommitSignatureProtection({ owner, repo, branch })
 route: GET /repos/{owner}/{repo}/branches/{branch}/protection/required_signatures

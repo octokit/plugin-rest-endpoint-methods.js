@@ -1,4 +1,5 @@
 ---
+
 name: Delete a commit comment reaction
 example: octokit.rest.reactions.deleteForCommitComment({ owner, repo, comment_id, reaction_id })
 route: DELETE /repos/{owner}/{repo}/comments/{comment_id}/reactions/{reaction_id}

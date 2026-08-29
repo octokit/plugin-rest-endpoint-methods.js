@@ -1,4 +1,5 @@
 ---
+
 name: List labels for a self-hosted runner for a repository
 example: octokit.rest.actions.listLabelsForSelfHostedRunnerForRepo({ owner, repo, runner_id })
 route: GET /repos/{owner}/{repo}/actions/runners/{runner_id}/labels

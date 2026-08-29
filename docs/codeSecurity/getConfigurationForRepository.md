@@ -1,4 +1,5 @@
 ---
+
 name: Get the code security configuration associated with a repository
 example: octokit.rest.codeSecurity.getConfigurationForRepository({ owner, repo })
 route: GET /repos/{owner}/{repo}/code-security-configuration
