@@ -1,4 +1,5 @@
 ---
+
 name: Get a GPG key for the authenticated user
 example: octokit.rest.users.getGpgKeyForAuthenticated({ gpg_key_id })
 route: GET /user/gpg_keys/{gpg_key_id}

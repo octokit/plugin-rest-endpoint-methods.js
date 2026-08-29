@@ -1,4 +1,5 @@
 ---
+
 name: List selected repositories for immutable releases enforcement
 example: octokit.rest.orgs.getImmutableReleasesSettingsRepositories({ org })
 route: GET /orgs/{org}/settings/immutable-releases/repositories

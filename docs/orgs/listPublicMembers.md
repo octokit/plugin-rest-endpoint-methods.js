@@ -1,4 +1,5 @@
 ---
+
 name: List public organization members
 example: octokit.rest.orgs.listPublicMembers({ org })
 route: GET /orgs/{org}/public_members

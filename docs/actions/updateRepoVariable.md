@@ -1,4 +1,5 @@
 ---
+
 name: Update a repository variable
 example: octokit.rest.actions.updateRepoVariable({ owner, repo })
 route: PATCH /repos/{owner}/{repo}/actions/variables/{name}

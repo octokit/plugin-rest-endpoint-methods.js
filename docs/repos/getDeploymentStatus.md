@@ -1,4 +1,5 @@
 ---
+
 name: Get a deployment status
 example: octokit.rest.repos.getDeploymentStatus({ owner, repo, deployment_id, status_id })
 route: GET /repos/{owner}/{repo}/deployments/{deployment_id}/statuses/{status_id}

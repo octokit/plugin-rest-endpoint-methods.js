@@ -1,4 +1,5 @@
 ---
+
 name: Delete pull request review protection
 example: octokit.rest.repos.deletePullRequestReviewProtection({ owner, repo, branch })
 route: DELETE /repos/{owner}/{repo}/branches/{branch}/protection/required_pull_request_reviews

@@ -1,4 +1,5 @@
 ---
+
 name: Get a webhook configuration for an organization
 example: octokit.rest.orgs.getWebhookConfigForOrg({ org, hook_id })
 route: GET /orgs/{org}/hooks/{hook_id}/config

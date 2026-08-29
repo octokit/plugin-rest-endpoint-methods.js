@@ -1,4 +1,5 @@
 ---
+
 name: Update a webhook configuration for an app
 example: octokit.rest.apps.updateWebhookConfigForApp()
 route: PATCH /app/hook/config

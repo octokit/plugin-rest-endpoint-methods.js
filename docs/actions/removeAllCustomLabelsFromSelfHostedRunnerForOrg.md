@@ -1,4 +1,5 @@
 ---
+
 name: Remove all custom labels from a self-hosted runner for an organization
 example: octokit.rest.actions.removeAllCustomLabelsFromSelfHostedRunnerForOrg({ org, runner_id })
 route: DELETE /orgs/{org}/actions/runners/{runner_id}/labels

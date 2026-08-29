@@ -1,4 +1,5 @@
 ---
+
 name: List repository secrets
 example: octokit.rest.dependabot.listRepoSecrets({ owner, repo })
 route: GET /repos/{owner}/{repo}/dependabot/secrets

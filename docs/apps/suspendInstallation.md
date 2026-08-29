@@ -1,4 +1,5 @@
 ---
+
 name: Suspend an app installation
 example: octokit.rest.apps.suspendInstallation({ installation_id })
 route: PUT /app/installations/{installation_id}/suspended

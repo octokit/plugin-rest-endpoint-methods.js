@@ -1,4 +1,5 @@
 ---
+
 name: Remove a repository collaborator
 example: octokit.rest.repos.removeCollaborator({ owner, repo, username })
 route: DELETE /repos/{owner}/{repo}/collaborators/{username}

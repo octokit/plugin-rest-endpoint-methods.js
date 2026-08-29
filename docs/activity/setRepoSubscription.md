@@ -1,4 +1,5 @@
 ---
+
 name: Set a repository subscription
 example: octokit.rest.activity.setRepoSubscription({ owner, repo })
 route: PUT /repos/{owner}/{repo}/subscription

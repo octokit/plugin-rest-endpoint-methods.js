@@ -1,4 +1,5 @@
 ---
+
 name: List public events
 example: octokit.rest.activity.listPublicEvents()
 route: GET /events

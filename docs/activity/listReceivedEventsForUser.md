@@ -1,4 +1,5 @@
 ---
+
 name: List events received by the authenticated user
 example: octokit.rest.activity.listReceivedEventsForUser({ username })
 route: GET /users/{username}/received_events

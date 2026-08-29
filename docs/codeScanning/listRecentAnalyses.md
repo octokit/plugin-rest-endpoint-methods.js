@@ -1,4 +1,5 @@
 ---
+
 name: List code scanning analyses for a repository
 example: octokit.rest.codeScanning.listRecentAnalyses({ owner, repo })
 route: GET /repos/{owner}/{repo}/code-scanning/analyses

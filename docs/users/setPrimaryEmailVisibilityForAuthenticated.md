@@ -1,4 +1,5 @@
 ---
+
 name: Set primary email visibility for the authenticated user
 example: octokit.rest.users.setPrimaryEmailVisibilityForAuthenticated({ visibility })
 route: PATCH /user/email/visibility

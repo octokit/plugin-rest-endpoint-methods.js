@@ -1,4 +1,5 @@
 ---
+
 name: Check if a user is blocked by the authenticated user
 example: octokit.rest.users.checkBlocked({ username })
 route: GET /user/blocks/{username}

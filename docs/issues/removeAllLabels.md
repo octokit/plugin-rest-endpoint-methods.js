@@ -1,4 +1,5 @@
 ---
+
 name: Remove all labels from an issue
 example: octokit.rest.issues.removeAllLabels({ owner, repo, issue_number })
 route: DELETE /repos/{owner}/{repo}/issues/{issue_number}/labels

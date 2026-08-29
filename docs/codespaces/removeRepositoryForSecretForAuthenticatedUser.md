@@ -1,4 +1,5 @@
 ---
+
 name: Remove a selected repository from a user secret
 example: octokit.rest.codespaces.removeRepositoryForSecretForAuthenticatedUser({ secret_name, repository_id })
 route: DELETE /user/codespaces/secrets/{secret_name}/repositories/{repository_id}

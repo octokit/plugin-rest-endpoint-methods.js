@@ -1,4 +1,5 @@
 ---
+
 name: List public SSH keys for the authenticated user
 example: octokit.rest.users.listPublicSshKeysForAuthenticatedUser()
 route: GET /user/keys

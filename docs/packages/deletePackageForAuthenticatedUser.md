@@ -1,4 +1,5 @@
 ---
+
 name: Delete a package for the authenticated user
 example: octokit.rest.packages.deletePackageForAuthenticatedUser({ package_type, package_name })
 route: DELETE /user/packages/{package_type}/{package_name}

@@ -1,4 +1,5 @@
 ---
+
 name: Get an issue
 example: octokit.rest.issues.get({ owner, repo, issue_number })
 route: GET /repos/{owner}/{repo}/issues/{issue_number}

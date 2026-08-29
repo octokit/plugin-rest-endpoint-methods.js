@@ -1,4 +1,5 @@
 ---
+
 name: Update organization pattern configurations
 example: octokit.rest.secretScanning.updateOrgPatternConfigs({ org })
 route: PATCH /orgs/{org}/secret-scanning/pattern-configurations

@@ -1,4 +1,5 @@
 ---
+
 name: Get a deploy key
 example: octokit.rest.repos.getDeployKey({ owner, repo, key_id })
 route: GET /repos/{owner}/{repo}/keys/{key_id}

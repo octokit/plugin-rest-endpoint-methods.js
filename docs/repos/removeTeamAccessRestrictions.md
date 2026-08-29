@@ -1,4 +1,5 @@
 ---
+
 name: Remove team access restrictions
 example: octokit.rest.repos.removeTeamAccessRestrictions({ owner, repo, branch, teams })
 route: DELETE /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams

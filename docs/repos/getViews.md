@@ -1,4 +1,5 @@
 ---
+
 name: Get page views
 example: octokit.rest.repos.getViews({ owner, repo })
 route: GET /repos/{owner}/{repo}/traffic/views

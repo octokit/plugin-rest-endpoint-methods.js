@@ -1,4 +1,5 @@
 ---
+
 name: Rename a branch
 example: octokit.rest.repos.renameBranch({ owner, repo, branch, new_name })
 route: POST /repos/{owner}/{repo}/branches/{branch}/rename

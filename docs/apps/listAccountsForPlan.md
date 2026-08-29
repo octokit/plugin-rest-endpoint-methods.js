@@ -1,4 +1,5 @@
 ---
+
 name: List accounts for a plan
 example: octokit.rest.apps.listAccountsForPlan({ plan_id })
 route: GET /marketplace_listing/plans/{plan_id}/accounts

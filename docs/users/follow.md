@@ -1,4 +1,5 @@
 ---
+
 name: Follow a user
 example: octokit.rest.users.follow({ username })
 route: PUT /user/following/{username}

@@ -1,4 +1,5 @@
 ---
+
 name: Delete a package version for the authenticated user
 example: octokit.rest.packages.deletePackageVersionForAuthenticatedUser({ package_type, package_name, package_version_id })
 route: DELETE /user/packages/{package_type}/{package_name}/versions/{package_version_id}

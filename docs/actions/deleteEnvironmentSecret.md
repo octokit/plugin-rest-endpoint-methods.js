@@ -1,4 +1,5 @@
 ---
+
 name: Delete an environment secret
 example: octokit.rest.actions.deleteEnvironmentSecret({ owner, repo, environment_name, secret_name })
 route: DELETE /repos/{owner}/{repo}/environments/{environment_name}/secrets/{secret_name}

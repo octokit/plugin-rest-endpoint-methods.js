@@ -1,4 +1,5 @@
 ---
+
 name: Check if permissions defined by a devcontainer have been accepted by the authenticated user
 example: octokit.rest.codespaces.checkPermissionsForDevcontainer({ owner, repo, ref, devcontainer_path })
 route: GET /repos/{owner}/{repo}/codespaces/permissions_check

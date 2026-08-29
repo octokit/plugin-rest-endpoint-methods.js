@@ -1,4 +1,5 @@
 ---
+
 name: Get all organization repository rulesets
 example: octokit.rest.repos.getOrgRulesets({ org })
 route: GET /orgs/{org}/rulesets

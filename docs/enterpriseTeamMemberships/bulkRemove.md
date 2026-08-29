@@ -1,4 +1,5 @@
 ---
+
 name: Bulk remove team members
 example: octokit.rest.enterpriseTeamMemberships.bulkRemove({ enterprise, enterprise-team, usernames })
 route: POST /enterprises/{enterprise}/teams/{enterprise-team}/memberships/remove

@@ -1,4 +1,5 @@
 ---
+
 name: Delete a secret for the authenticated user
 example: octokit.rest.codespaces.deleteSecretForAuthenticatedUser({ secret_name })
 route: DELETE /user/codespaces/secrets/{secret_name}

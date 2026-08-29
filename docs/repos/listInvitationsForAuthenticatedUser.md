@@ -1,4 +1,5 @@
 ---
+
 name: List repository invitations for the authenticated user
 example: octokit.rest.repos.listInvitationsForAuthenticatedUser()
 route: GET /user/repository_invitations

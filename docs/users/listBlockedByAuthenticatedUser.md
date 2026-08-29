@@ -1,4 +1,5 @@
 ---
+
 name: List users blocked by the authenticated user
 example: octokit.rest.users.listBlockedByAuthenticatedUser()
 route: GET /user/blocks

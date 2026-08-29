@@ -1,4 +1,5 @@
 ---
+
 name: List repositories watched by the authenticated user
 example: octokit.rest.activity.listWatchedReposForAuthenticatedUser()
 route: GET /user/subscriptions

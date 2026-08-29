@@ -1,4 +1,5 @@
 ---
+
 name: Get access restrictions
 example: octokit.rest.repos.getAccessRestrictions({ owner, repo, branch })
 route: GET /repos/{owner}/{repo}/branches/{branch}/protection/restrictions

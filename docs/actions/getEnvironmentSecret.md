@@ -1,4 +1,5 @@
 ---
+
 name: Get an environment secret
 example: octokit.rest.actions.getEnvironmentSecret({ owner, repo, environment_name, secret_name })
 route: GET /repos/{owner}/{repo}/environments/{environment_name}/secrets/{secret_name}

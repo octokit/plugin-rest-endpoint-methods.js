@@ -1,4 +1,5 @@
 ---
+
 name: Delete a repository subscription
 example: octokit.rest.activity.deleteRepoSubscription({ owner, repo })
 route: DELETE /repos/{owner}/{repo}/subscription

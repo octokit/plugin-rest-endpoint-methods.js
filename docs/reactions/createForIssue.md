@@ -1,4 +1,5 @@
 ---
+
 name: Create reaction for an issue
 example: octokit.rest.reactions.createForIssue({ owner, repo, issue_number, content })
 route: POST /repos/{owner}/{repo}/issues/{issue_number}/reactions

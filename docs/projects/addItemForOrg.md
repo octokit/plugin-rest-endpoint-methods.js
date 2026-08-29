@@ -1,6 +1,7 @@
 ---
+
 name: Add item to organization owned project
-example: octokit.rest.projects.addItemForOrg({ org, project_number, type, id })
+example: octokit.rest.projects.addItemForOrg({ org, project_number })
 route: POST /orgs/{org}/projectsV2/{project_number}/items
 scope: projects
 type: API method
@@ -14,8 +15,6 @@ Add an issue or pull request item to the specified organization owned project.
 octokit.rest.projects.addItemForOrg({
   org,
   project_number,
-  type,
-  id,
 });
 ```
 
@@ -38,16 +37,6 @@ The organization name. The name is not case sensitive.
 <tr><td>project_number</td><td>yes</td><td>
 
 The project's number.
-
-</td></tr>
-<tr><td>type</td><td>yes</td><td>
-
-The type of item to add to the project. Must be either Issue or PullRequest.
-
-</td></tr>
-<tr><td>id</td><td>yes</td><td>
-
-The numeric ID of the issue or pull request to add to the project.
 
 </td></tr>
   </tbody>

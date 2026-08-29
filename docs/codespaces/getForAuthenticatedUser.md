@@ -1,4 +1,5 @@
 ---
+
 name: Get a codespace for the authenticated user
 example: octokit.rest.codespaces.getForAuthenticatedUser({ codespace_name })
 route: GET /user/codespaces/{codespace_name}

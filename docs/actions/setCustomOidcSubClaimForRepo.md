@@ -1,4 +1,5 @@
 ---
+
 name: Set the customization template for an OIDC subject claim for a repository
 example: octokit.rest.actions.setCustomOidcSubClaimForRepo({ owner, repo, use_default })
 route: PUT /repos/{owner}/{repo}/actions/oidc/customization/sub
@@ -49,6 +50,11 @@ Whether to use the default template or not. If `true`, the `include_claim_keys` 
 <tr><td>include_claim_keys</td><td>no</td><td>
 
 Array of unique strings. Each claim key can only contain alphanumeric characters and underscores.
+
+</td></tr>
+<tr><td>use_immutable_subject</td><td>no</td><td>
+
+Whether to opt in to the immutable OIDC subject claim format for this repository. When `true`, OIDC tokens will use a stable, repository-ID-based `sub` claim.
 
 </td></tr>
   </tbody>

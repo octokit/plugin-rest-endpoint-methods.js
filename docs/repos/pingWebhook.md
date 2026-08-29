@@ -1,4 +1,5 @@
 ---
+
 name: Ping a repository webhook
 example: octokit.rest.repos.pingWebhook({ owner, repo, hook_id })
 route: POST /repos/{owner}/{repo}/hooks/{hook_id}/pings

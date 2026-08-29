@@ -1,4 +1,5 @@
 ---
+
 name: Delete a GPG key for the authenticated user
 example: octokit.rest.users.deleteGpgKeyForAuthenticated({ gpg_key_id })
 route: DELETE /user/gpg_keys/{gpg_key_id}

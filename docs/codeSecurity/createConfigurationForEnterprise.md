@@ -1,6 +1,7 @@
 ---
+
 name: Create a code security configuration for an enterprise
-example: octokit.rest.codeSecurity.createConfigurationForEnterprise({ enterprise, name, description })
+example: octokit.rest.codeSecurity.createConfigurationForEnterprise({ enterprise, name })
 route: POST /enterprises/{enterprise}/code-security/configurations
 scope: codeSecurity
 type: API method
@@ -18,7 +19,6 @@ OAuth app tokens and personal access tokens (classic) need the `admin:enterprise
 octokit.rest.codeSecurity.createConfigurationForEnterprise({
   enterprise,
   name,
-  description,
 });
 ```
 
@@ -43,7 +43,7 @@ The slug version of the enterprise name.
 The name of the code security configuration. Must be unique within the enterprise.
 
 </td></tr>
-<tr><td>description</td><td>yes</td><td>
+<tr><td>description</td><td>no</td><td>
 
 A description of the code security configuration
 
@@ -159,6 +159,11 @@ The enablement status of Copilot secret scanning
 <tr><td>secret_scanning_delegated_alert_dismissal</td><td>no</td><td>
 
 The enablement status of secret scanning delegated alert dismissal
+
+</td></tr>
+<tr><td>secret_scanning_extended_metadata</td><td>no</td><td>
+
+The enablement status of secret scanning extended metadata
 
 </td></tr>
 <tr><td>private_vulnerability_reporting</td><td>no</td><td>

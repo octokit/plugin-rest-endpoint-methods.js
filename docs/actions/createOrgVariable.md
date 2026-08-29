@@ -1,4 +1,5 @@
 ---
+
 name: Create an organization variable
 example: octokit.rest.actions.createOrgVariable({ org, name, value, visibility })
 route: POST /orgs/{org}/actions/variables

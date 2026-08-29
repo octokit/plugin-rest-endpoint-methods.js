@@ -1,4 +1,5 @@
 ---
+
 name: Add organization assignments
 example: octokit.rest.enterpriseTeamOrganizations.bulkAdd({ enterprise, enterprise-team, organization_slugs })
 route: POST /enterprises/{enterprise}/teams/{enterprise-team}/organizations/add

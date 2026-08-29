@@ -1,4 +1,5 @@
 ---
+
 name: Approve a workflow run for a fork pull request
 example: octokit.rest.actions.approveWorkflowRun({ owner, repo, run_id })
 route: POST /repos/{owner}/{repo}/actions/runs/{run_id}/approve

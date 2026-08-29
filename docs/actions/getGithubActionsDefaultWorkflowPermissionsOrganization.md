@@ -1,4 +1,5 @@
 ---
+
 name: Get default workflow permissions for an organization
 example: octokit.rest.actions.getGithubActionsDefaultWorkflowPermissionsOrganization({ org })
 route: GET /orgs/{org}/actions/permissions/workflow

@@ -1,4 +1,5 @@
 ---
+
 name: Get a repository public key
 example: octokit.rest.actions.getRepoPublicKey({ owner, repo })
 route: GET /repos/{owner}/{repo}/actions/secrets/public-key

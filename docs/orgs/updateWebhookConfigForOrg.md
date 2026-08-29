@@ -1,4 +1,5 @@
 ---
+
 name: Update a webhook configuration for an organization
 example: octokit.rest.orgs.updateWebhookConfigForOrg({ org, hook_id })
 route: PATCH /orgs/{org}/hooks/{hook_id}/config

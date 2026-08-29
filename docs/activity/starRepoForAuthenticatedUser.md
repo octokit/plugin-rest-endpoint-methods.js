@@ -1,4 +1,5 @@
 ---
+
 name: Star a repository for the authenticated user
 example: octokit.rest.activity.starRepoForAuthenticatedUser({ owner, repo })
 route: PUT /user/starred/{owner}/{repo}

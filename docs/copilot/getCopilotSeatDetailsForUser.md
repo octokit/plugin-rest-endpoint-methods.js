@@ -1,4 +1,5 @@
 ---
+
 name: Get Copilot seat assignment details for a user
 example: octokit.rest.copilot.getCopilotSeatDetailsForUser({ org, username })
 route: GET /orgs/{org}/members/{username}/copilot

@@ -1,4 +1,5 @@
 ---
+
 name: Enable Dependabot security updates
 example: octokit.rest.repos.enableAutomatedSecurityFixes({ owner, repo })
 route: PUT /repos/{owner}/{repo}/automated-security-fixes

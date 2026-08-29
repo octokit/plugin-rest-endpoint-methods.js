@@ -1,4 +1,5 @@
 ---
+
 name: Delete an enterprise team
 example: octokit.rest.enterpriseTeams.delete({ enterprise, team_slug })
 route: DELETE /enterprises/{enterprise}/teams/{team_slug}

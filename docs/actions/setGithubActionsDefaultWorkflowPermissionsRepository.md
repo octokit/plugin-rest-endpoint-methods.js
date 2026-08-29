@@ -1,4 +1,5 @@
 ---
+
 name: Set default workflow permissions for a repository
 example: octokit.rest.actions.setGithubActionsDefaultWorkflowPermissionsRepository({ owner, repo })
 route: PUT /repos/{owner}/{repo}/actions/permissions/workflow

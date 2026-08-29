@@ -1,4 +1,5 @@
 ---
+
 name: Get a repository secret
 example: octokit.rest.codespaces.getRepoSecret({ owner, repo, secret_name })
 route: GET /repos/{owner}/{repo}/codespaces/secrets/{secret_name}

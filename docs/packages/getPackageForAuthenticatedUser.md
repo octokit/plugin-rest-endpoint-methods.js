@@ -1,4 +1,5 @@
 ---
+
 name: Get a package for the authenticated user
 example: octokit.rest.packages.getPackageForAuthenticatedUser({ package_type, package_name })
 route: GET /user/packages/{package_type}/{package_name}

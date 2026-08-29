@@ -1,4 +1,5 @@
 ---
+
 name: Set GitHub Actions cache retention limit for an enterprise
 example: octokit.rest.actions.setActionsCacheRetentionLimitForEnterprise({ enterprise })
 route: PUT /enterprises/{enterprise}/actions/cache/retention-limit

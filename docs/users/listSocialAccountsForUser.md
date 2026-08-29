@@ -1,4 +1,5 @@
 ---
+
 name: List social accounts for a user
 example: octokit.rest.users.listSocialAccountsForUser({ username })
 route: GET /users/{username}/social_accounts

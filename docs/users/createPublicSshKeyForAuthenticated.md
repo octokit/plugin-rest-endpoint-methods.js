@@ -1,4 +1,5 @@
 ---
+
 name: Create a public SSH key for the authenticated user
 example: octokit.rest.users.createPublicSshKeyForAuthenticated({ key })
 route: POST /user/keys

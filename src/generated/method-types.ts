@@ -999,6 +999,31 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
+     * Gets a specific concurrency group for a repository, including all instances in the group's queue.
+     * Returns 404 if the group is inactive or does not exist.
+     *
+     * Optionally, pass `ahead_of_run` or `ahead_of_job` to filter the results to only the items
+     * ahead of the specified workflow run or job in the queue, plus the specified item itself
+     * (returned as the last element). This is useful for determining what is blocking a particular
+     * run or job. Returns 422 if the specified run or job is not in this concurrency group.
+     *
+     * When using `ahead_of_run`, this matches workflow-level concurrency and any reusable-workflow
+     * leases held on behalf of that run. Job-level leases within the run are not considered to
+     * block the run as a whole. Use `ahead_of_job` to match job-level concurrency and reusable-workflow
+     * leases on the job's ancestor paths.
+     *
+     * OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with a private repository.
+     */
+    getConcurrencyGroupForRepository: {
+      (
+        params?: RestEndpointMethodTypes["actions"]["getConcurrencyGroupForRepository"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["actions"]["getConcurrencyGroupForRepository"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
      * Get a custom image definition for GitHub Actions Hosted Runners.
      *
      * OAuth tokens and personal access tokens (classic) need the `manage_runners:org` scope to use this endpoint.
@@ -1478,7 +1503,7 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * > [!WARNING]
+     * > [!WARNING]  
      * > This endpoint is in the process of closing down. Refer to "[Actions Get workflow usage and Get workflow run usage endpoints closing down](https://github.blog/changelog/2025-02-02-actions-get-workflow-usage-and-get-workflow-run-usage-endpoints-closing-down/)" for more information.
      *
      * Gets the number of billable minutes and total run time for a specific workflow run. Billable minutes only apply to workflows in private repositories that use GitHub-hosted runners. Usage is listed for each GitHub-hosted runner operating system in milliseconds. Any job re-runs are also included in the usage. The usage does not include the multiplier for macOS and Windows runners and is not rounded up to the nearest whole minute. For more information, see "[Managing billing for GitHub Actions](https://docs.github.com/github/setting-up-and-managing-billing-and-payments-on-github/managing-billing-for-github-actions)".
@@ -1497,7 +1522,7 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * > [!WARNING]
+     * > [!WARNING]  
      * > This endpoint is in the process of closing down. Refer to "[Actions Get workflow usage and Get workflow run usage endpoints closing down](https://github.blog/changelog/2025-02-02-actions-get-workflow-usage-and-get-workflow-run-usage-endpoints-closing-down/)" for more information.
      *
      * Gets the number of billable minutes used by a specific workflow during the current billing cycle. Billable minutes only apply to workflows in private repositories that use GitHub-hosted runners. Usage is listed for each GitHub-hosted runner operating system in milliseconds. Any job re-runs are also included in the usage. The usage does not include the multiplier for macOS and Windows runners and is not rounded up to the nearest whole minute. For more information, see "[Managing billing for GitHub Actions](https://docs.github.com/github/setting-up-and-managing-billing-and-payments-on-github/managing-billing-for-github-actions)".
@@ -1529,6 +1554,50 @@ export type RestEndpointMethods = {
         params?: RestEndpointMethodTypes["actions"]["listArtifactsForRepo"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["actions"]["listArtifactsForRepo"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Lists the active concurrency groups for a repository.
+     *
+     * OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with a private repository.
+     */
+    listConcurrencyGroupsForRepository: {
+      (
+        params?: RestEndpointMethodTypes["actions"]["listConcurrencyGroupsForRepository"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["actions"]["listConcurrencyGroupsForRepository"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Lists all concurrency groups associated with a workflow run or its jobs.
+     *
+     * The set of groups is derived from the run's configuration, so a group is
+     * included even when the run no longer has any items currently holding or
+     * waiting in it. In that case the `group_members` array will be empty.
+     * `total_count` reflects the number of groups the run participates in by
+     * configuration, not the number with active items.
+     *
+     * This differs from `GET /repos/{owner}/{repo}/actions/concurrency_groups/{group_name}`,
+     * which returns 404 when a group has no active items. That endpoint reports
+     * the live state of a group repo-wide, while this endpoint reports the
+     * groups associated with a specific run by configuration.
+     *
+     * Results are sorted by group name and support cursor-based pagination via
+     * `before` and `after`. The `after` cursor paginates forward only and does
+     * not emit a `rel="prev"` Link; use `before` to page backward from a
+     * forward page's `next` cursor.
+     *
+     * OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with a private repository.
+     */
+    listConcurrencyGroupsForWorkflowRun: {
+      (
+        params?: RestEndpointMethodTypes["actions"]["listConcurrencyGroupsForWorkflowRun"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["actions"]["listConcurrencyGroupsForWorkflowRun"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -2580,6 +2649,18 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
+     * Gets the current number of users who have starred the repository. Users who previously starred the repository but later removed their star are not included.
+     */
+    getStargazerCountForRepo: {
+      (
+        params?: RestEndpointMethodTypes["activity"]["getStargazerCountForRepo"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["activity"]["getStargazerCountForRepo"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
      * Gets information about a notification thread.
      */
     getThread: {
@@ -2936,6 +3017,651 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
   };
+  agentTasks: {
+    /**
+     * > [!NOTE]
+     * > This endpoint is in public preview and is subject to change.
+     *
+     * Starts a new Copilot cloud agent task for a repository.
+     *
+     * This endpoint is only available to users with a Copilot Business or Copilot Enterprise subscription.
+     *
+     * **Fine-grained access tokens for "Start a task"**
+     *
+     * This endpoint works with the following fine-grained token types:
+     *
+     * * [GitHub App user access tokens](https://docs.github.com/en/apps/creating-github-apps/authenticating-with-a-github-app/generating-a-user-access-token-for-a-github-app)
+     * * [Fine-grained personal access tokens](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-fine-grained-personal-access-token)
+     *
+     * The fine-grained token must have the following permission set:
+     *
+     * * "Agent tasks" repository permissions (read and write)
+     *
+     * GitHub App installation access tokens are not supported for this endpoint.
+     */
+    createTaskInRepo: {
+      (
+        params?: RestEndpointMethodTypes["agentTasks"]["createTaskInRepo"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["agentTasks"]["createTaskInRepo"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * > [!NOTE]
+     * > This endpoint is in public preview and is subject to change.
+     *
+     * Returns a task by ID with its associated sessions
+     *
+     * **Fine-grained access tokens for "Get a task by ID"**
+     *
+     * This endpoint works with the following fine-grained token types:
+     *
+     * * [GitHub App user access tokens](https://docs.github.com/en/apps/creating-github-apps/authenticating-with-a-github-app/generating-a-user-access-token-for-a-github-app)
+     * * [Fine-grained personal access tokens](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-fine-grained-personal-access-token)
+     *
+     * The fine-grained token must have the following permission set:
+     *
+     * * "Agent tasks" repository permissions (read)
+     *
+     * GitHub App installation access tokens are not supported for this endpoint.
+     */
+    getTaskById: {
+      (
+        params?: RestEndpointMethodTypes["agentTasks"]["getTaskById"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["agentTasks"]["getTaskById"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * > [!NOTE]
+     * > This endpoint is in public preview and is subject to change.
+     *
+     * Returns a task by ID scoped to an owner/repo path
+     *
+     * **Fine-grained access tokens for "Get a task by repo"**
+     *
+     * This endpoint works with the following fine-grained token types:
+     *
+     * * [GitHub App user access tokens](https://docs.github.com/en/apps/creating-github-apps/authenticating-with-a-github-app/generating-a-user-access-token-for-a-github-app)
+     * * [Fine-grained personal access tokens](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-fine-grained-personal-access-token)
+     *
+     * The fine-grained token must have the following permission set:
+     *
+     * * "Agent tasks" repository permissions (read)
+     *
+     * GitHub App installation access tokens are not supported for this endpoint.
+     */
+    getTaskByRepoAndId: {
+      (
+        params?: RestEndpointMethodTypes["agentTasks"]["getTaskByRepoAndId"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["agentTasks"]["getTaskByRepoAndId"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * > [!NOTE]
+     * > This endpoint is in public preview and is subject to change.
+     *
+     * Returns a list of tasks for the authenticated user
+     *
+     * **Fine-grained access tokens for "List tasks"**
+     *
+     * This endpoint works with the following fine-grained token types:
+     *
+     * * [GitHub App user access tokens](https://docs.github.com/en/apps/creating-github-apps/authenticating-with-a-github-app/generating-a-user-access-token-for-a-github-app)
+     * * [Fine-grained personal access tokens](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-fine-grained-personal-access-token)
+     *
+     * The fine-grained token must have the following permission set:
+     *
+     * * "Agent tasks" repository permissions (read)
+     *
+     * GitHub App installation access tokens are not supported for this endpoint.
+     */
+    listTasks: {
+      (
+        params?: RestEndpointMethodTypes["agentTasks"]["listTasks"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["agentTasks"]["listTasks"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * > [!NOTE]
+     * > This endpoint is in public preview and is subject to change.
+     *
+     * Returns a list of tasks for a specific repository
+     *
+     * **Fine-grained access tokens for "List tasks for repository"**
+     *
+     * This endpoint works with the following fine-grained token types:
+     *
+     * * [GitHub App user access tokens](https://docs.github.com/en/apps/creating-github-apps/authenticating-with-a-github-app/generating-a-user-access-token-for-a-github-app)
+     * * [Fine-grained personal access tokens](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-fine-grained-personal-access-token)
+     *
+     * The fine-grained token must have the following permission set:
+     *
+     * * "Agent tasks" repository permissions (read)
+     *
+     * GitHub App installation access tokens are not supported for this endpoint.
+     */
+    listTasksForRepo: {
+      (
+        params?: RestEndpointMethodTypes["agentTasks"]["listTasksForRepo"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["agentTasks"]["listTasksForRepo"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+  };
+  agents: {
+    /**
+     * Adds a repository to an organization secret when the `visibility` for
+     * repository access is set to `selected`. For more information about setting the visibility, see [Create or
+     * update an organization secret](https://docs.github.com/rest/agents/secrets#create-or-update-an-organization-secret).
+     *
+     * Authenticated users must have collaborator access to a repository to create, update, or read secrets.
+     *
+     * OAuth tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+     */
+    addSelectedRepoToOrgSecret: {
+      (
+        params?: RestEndpointMethodTypes["agents"]["addSelectedRepoToOrgSecret"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["agents"]["addSelectedRepoToOrgSecret"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Adds a repository to an organization agent variable that is available to selected repositories.
+     * Organization variables that are available to selected repositories have their `visibility` field set to `selected`.
+     *
+     * Authenticated users must have collaborator access to a repository to create, update, or read variables.
+     *
+     * OAuth tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+     */
+    addSelectedRepoToOrgVariable: {
+      (
+        params?: RestEndpointMethodTypes["agents"]["addSelectedRepoToOrgVariable"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["agents"]["addSelectedRepoToOrgVariable"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Creates or updates an organization secret with an encrypted value. Encrypt your secret using
+     * [LibSodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages). For more information, see "[Encrypting secrets for the REST API](https://docs.github.com/rest/guides/encrypting-secrets-for-the-rest-api)."
+     *
+     * Authenticated users must have collaborator access to a repository to create, update, or read secrets.
+     *
+     * OAuth tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+     */
+    createOrUpdateOrgSecret: {
+      (
+        params?: RestEndpointMethodTypes["agents"]["createOrUpdateOrgSecret"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["agents"]["createOrUpdateOrgSecret"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Creates or updates a repository secret with an encrypted value. Encrypt your secret using
+     * [LibSodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages). For more information, see "[Encrypting secrets for the REST API](https://docs.github.com/rest/guides/encrypting-secrets-for-the-rest-api)."
+     *
+     * Authenticated users must have collaborator access to a repository to create, update, or read secrets.
+     *
+     * OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+     */
+    createOrUpdateRepoSecret: {
+      (
+        params?: RestEndpointMethodTypes["agents"]["createOrUpdateRepoSecret"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["agents"]["createOrUpdateRepoSecret"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Creates an organization agent variable that you can reference in a GitHub Actions workflow.
+     *
+     * Authenticated users must have collaborator access to a repository to create, update, or read variables.
+     *
+     * OAuth tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+     */
+    createOrgVariable: {
+      (
+        params?: RestEndpointMethodTypes["agents"]["createOrgVariable"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["agents"]["createOrgVariable"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Creates a repository variable that you can reference in a GitHub Actions workflow.
+     *
+     * Authenticated users must have collaborator access to a repository to create, update, or read variables.
+     *
+     * OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+     */
+    createRepoVariable: {
+      (
+        params?: RestEndpointMethodTypes["agents"]["createRepoVariable"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["agents"]["createRepoVariable"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Deletes a secret in an organization using the secret name.
+     *
+     * Authenticated users must have collaborator access to a repository to create, update, or read secrets.
+     *
+     * OAuth tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+     */
+    deleteOrgSecret: {
+      (
+        params?: RestEndpointMethodTypes["agents"]["deleteOrgSecret"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["agents"]["deleteOrgSecret"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Deletes an organization agent variable using the variable name.
+     *
+     * Authenticated users must have collaborator access to a repository to create, update, or read variables.
+     *
+     * OAuth tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+     */
+    deleteOrgVariable: {
+      (
+        params?: RestEndpointMethodTypes["agents"]["deleteOrgVariable"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["agents"]["deleteOrgVariable"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Deletes a secret in a repository using the secret name.
+     *
+     * Authenticated users must have collaborator access to a repository to create, update, or read secrets.
+     *
+     * OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+     */
+    deleteRepoSecret: {
+      (
+        params?: RestEndpointMethodTypes["agents"]["deleteRepoSecret"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["agents"]["deleteRepoSecret"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Deletes a repository variable using the variable name.
+     *
+     * Authenticated users must have collaborator access to a repository to create, update, or read variables.
+     *
+     * OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+     */
+    deleteRepoVariable: {
+      (
+        params?: RestEndpointMethodTypes["agents"]["deleteRepoVariable"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["agents"]["deleteRepoVariable"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Gets your public key, which you need to encrypt secrets. You need to
+     * encrypt a secret before you can create or update secrets.
+     *
+     * Authenticated users must have collaborator access to a repository to create, update, or read secrets.
+     *
+     * OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, the `repo` scope is also required.
+     */
+    getOrgPublicKey: {
+      (
+        params?: RestEndpointMethodTypes["agents"]["getOrgPublicKey"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["agents"]["getOrgPublicKey"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Gets a single organization secret without revealing its encrypted value.
+     *
+     * The authenticated user must have collaborator access to a repository to create, update, or read secrets.
+     *
+     * OAuth tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+     */
+    getOrgSecret: {
+      (
+        params?: RestEndpointMethodTypes["agents"]["getOrgSecret"]["parameters"],
+      ): Promise<RestEndpointMethodTypes["agents"]["getOrgSecret"]["response"]>;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Gets a specific agent variable in an organization.
+     *
+     * The authenticated user must have collaborator access to a repository to create, update, or read variables.
+     *
+     * OAuth tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+     */
+    getOrgVariable: {
+      (
+        params?: RestEndpointMethodTypes["agents"]["getOrgVariable"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["agents"]["getOrgVariable"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Gets your public key, which you need to encrypt secrets. You need to
+     * encrypt a secret before you can create or update secrets.
+     *
+     * Anyone with read access to the repository can use this endpoint.
+     *
+     * If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+     */
+    getRepoPublicKey: {
+      (
+        params?: RestEndpointMethodTypes["agents"]["getRepoPublicKey"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["agents"]["getRepoPublicKey"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Gets a single repository secret without revealing its encrypted value.
+     *
+     * The authenticated user must have collaborator access to the repository to use this endpoint.
+     *
+     * OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+     */
+    getRepoSecret: {
+      (
+        params?: RestEndpointMethodTypes["agents"]["getRepoSecret"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["agents"]["getRepoSecret"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Gets a specific variable in a repository.
+     *
+     * The authenticated user must have collaborator access to the repository to use this endpoint.
+     *
+     * OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+     */
+    getRepoVariable: {
+      (
+        params?: RestEndpointMethodTypes["agents"]["getRepoVariable"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["agents"]["getRepoVariable"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Lists all secrets available in an organization without revealing their
+     * encrypted values.
+     *
+     * Authenticated users must have collaborator access to a repository to create, update, or read secrets.
+     *
+     * OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, the `repo` scope is also required.
+     */
+    listOrgSecrets: {
+      (
+        params?: RestEndpointMethodTypes["agents"]["listOrgSecrets"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["agents"]["listOrgSecrets"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Lists all agent variables available in an organization.
+     * Returned variables include their values.
+     *
+     * Authenticated users must have collaborator access to a repository to create, update, or read variables.
+     *
+     * OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, the `repo` scope is also required.
+     */
+    listOrgVariables: {
+      (
+        params?: RestEndpointMethodTypes["agents"]["listOrgVariables"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["agents"]["listOrgVariables"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Lists all organization secrets shared with a repository without revealing their encrypted
+     * values.
+     *
+     * Authenticated users must have collaborator access to a repository to create, update, or read secrets.
+     *
+     * OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+     */
+    listRepoOrganizationSecrets: {
+      (
+        params?: RestEndpointMethodTypes["agents"]["listRepoOrganizationSecrets"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["agents"]["listRepoOrganizationSecrets"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Lists all organization variables shared with a repository.
+     *
+     * Authenticated users must have collaborator access to a repository to create, update, or read variables.
+     *
+     * OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+     */
+    listRepoOrganizationVariables: {
+      (
+        params?: RestEndpointMethodTypes["agents"]["listRepoOrganizationVariables"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["agents"]["listRepoOrganizationVariables"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Lists all secrets available in a repository without revealing their encrypted
+     * values.
+     *
+     * Authenticated users must have collaborator access to a repository to create, update, or read secrets.
+     *
+     * OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+     */
+    listRepoSecrets: {
+      (
+        params?: RestEndpointMethodTypes["agents"]["listRepoSecrets"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["agents"]["listRepoSecrets"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Lists all repository variables.
+     *
+     * Authenticated users must have collaborator access to a repository to create, update, or read variables.
+     *
+     * OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+     */
+    listRepoVariables: {
+      (
+        params?: RestEndpointMethodTypes["agents"]["listRepoVariables"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["agents"]["listRepoVariables"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Lists all repositories that have been selected when the `visibility`
+     * for repository access to a secret is set to `selected`.
+     *
+     * Authenticated users must have collaborator access to a repository to create, update, or read secrets.
+     *
+     * OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, the `repo` scope is also required.
+     */
+    listSelectedReposForOrgSecret: {
+      (
+        params?: RestEndpointMethodTypes["agents"]["listSelectedReposForOrgSecret"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["agents"]["listSelectedReposForOrgSecret"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Lists all repositories that can access an organization agent variable
+     * that is available to selected repositories.
+     *
+     * Authenticated users must have collaborator access to a repository to create, update, or read variables.
+     *
+     * OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, the `repo` scope is also required.
+     */
+    listSelectedReposForOrgVariable: {
+      (
+        params?: RestEndpointMethodTypes["agents"]["listSelectedReposForOrgVariable"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["agents"]["listSelectedReposForOrgVariable"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Removes a repository from an organization secret when the `visibility`
+     * for repository access is set to `selected`. The visibility is set when you [Create
+     * or update an organization secret](https://docs.github.com/rest/agents/secrets#create-or-update-an-organization-secret).
+     *
+     * Authenticated users must have collaborator access to a repository to create, update, or read secrets.
+     *
+     * OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, the `repo` scope is also required.
+     */
+    removeSelectedRepoFromOrgSecret: {
+      (
+        params?: RestEndpointMethodTypes["agents"]["removeSelectedRepoFromOrgSecret"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["agents"]["removeSelectedRepoFromOrgSecret"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Removes a repository from an organization agent variable that is
+     * available to selected repositories. Organization variables that are available to
+     * selected repositories have their `visibility` field set to `selected`.
+     *
+     * Authenticated users must have collaborator access to a repository to create, update, or read variables.
+     *
+     * OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, the `repo` scope is also required.
+     */
+    removeSelectedRepoFromOrgVariable: {
+      (
+        params?: RestEndpointMethodTypes["agents"]["removeSelectedRepoFromOrgVariable"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["agents"]["removeSelectedRepoFromOrgVariable"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Replaces all repositories for an organization secret when the `visibility`
+     * for repository access is set to `selected`. The visibility is set when you [Create
+     * or update an organization secret](https://docs.github.com/rest/agents/secrets#create-or-update-an-organization-secret).
+     *
+     * Authenticated users must have collaborator access to a repository to create, update, or read secrets.
+     *
+     * OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, the `repo` scope is also required.
+     */
+    setSelectedReposForOrgSecret: {
+      (
+        params?: RestEndpointMethodTypes["agents"]["setSelectedReposForOrgSecret"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["agents"]["setSelectedReposForOrgSecret"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Replaces all repositories for an organization agent variable that is available
+     * to selected repositories. Organization variables that are available to selected
+     * repositories have their `visibility` field set to `selected`.
+     *
+     * Authenticated users must have collaborator access to a repository to create, update, or read variables.
+     *
+     * OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, the `repo` scope is also required.
+     */
+    setSelectedReposForOrgVariable: {
+      (
+        params?: RestEndpointMethodTypes["agents"]["setSelectedReposForOrgVariable"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["agents"]["setSelectedReposForOrgVariable"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Updates an organization agent variable that you can reference in a GitHub Actions workflow.
+     *
+     * Authenticated users must have collaborator access to a repository to create, update, or read variables.
+     *
+     * OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, the `repo` scope is also required.
+     */
+    updateOrgVariable: {
+      (
+        params?: RestEndpointMethodTypes["agents"]["updateOrgVariable"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["agents"]["updateOrgVariable"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Updates a repository variable that you can reference in a GitHub Actions workflow.
+     *
+     * Authenticated users must have collaborator access to a repository to create, update, or read variables.
+     *
+     * OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+     */
+    updateRepoVariable: {
+      (
+        params?: RestEndpointMethodTypes["agents"]["updateRepoVariable"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["agents"]["updateRepoVariable"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+  };
   apps: {
     /**
      * Add a single repository to an installation. The authenticated user must have admin access to the repository.
@@ -2990,6 +3716,9 @@ export type RestEndpointMethods = {
     };
     /**
      * Creates an installation access token that enables a GitHub App to make authenticated API requests for the app's installation on an organization or individual account. Installation tokens expire one hour from the time you create them. Using an expired token produces a status code of `401 - Unauthorized`, and requires creating a new installation token. By default the installation token has access to all repositories that the installation can access.
+     *
+     * > [!NOTE]
+     * > Starting April 27, 2026, GitHub began a staged rollout of a stateless format (`ghs_APPID_JWT`) to all newly minted GitHub App installation tokens, making them more performant and improving the reliability of our API surface. If your application expects or relies on installation tokens being exactly 40 characters long, it may not handle this new token format correctly. You can now validate your apps and workflows using a temporary request header that lets you enable the token format on demand. For more information about the temporary header, see [the GitHub blog](https://github.blog/changelog/2026-05-15-github-app-installation-tokens-per-request-override-header).
      *
      * Optionally, you can use the `repositories` or `repository_ids` body parameters to specify individual repositories that the installation access token can access. If you don't use `repositories` or `repository_ids` to grant access to specific repositories, the installation access token will have access to all repositories that the installation was granted access to. The installation access token cannot be granted access to repositories that the installation was not granted access to. Up to 500 repositories can be listed in this manner.
      *
@@ -3468,9 +4197,19 @@ export type RestEndpointMethods = {
   };
   billing: {
     /**
-     * > [!NOTE]
-     * > This endpoint is in public preview and is subject to change.
-     *
+     * Creates a new budget for an organization. The authenticated user must be an
+     * organization admin or billing manager.
+     */
+    createOrganizationBudget: {
+      (
+        params?: RestEndpointMethodTypes["billing"]["createOrganizationBudget"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["billing"]["createOrganizationBudget"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
      * Deletes a budget by ID for an organization. The authenticated user must be an organization admin or billing manager.
      */
     deleteBudgetOrg: {
@@ -3483,10 +4222,8 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * > [!NOTE]
-     * > This endpoint is in public preview and is subject to change.
-     *
      * Gets all budgets for an organization. The authenticated user must be an organization admin or billing manager.
+     * Each page returns up to 100 budgets.
      */
     getAllBudgetsOrg: {
       (
@@ -3498,9 +4235,6 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * > [!NOTE]
-     * > This endpoint is in public preview and is subject to change.
-     *
      * Gets a budget by ID. The authenticated user must be an organization admin or billing manager.
      */
     getBudgetOrg: {
@@ -3508,6 +4242,34 @@ export type RestEndpointMethods = {
         params?: RestEndpointMethodTypes["billing"]["getBudgetOrg"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["billing"]["getBudgetOrg"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Gets a report of AI credit usage for an organization. To use this endpoint, you must be an administrator of an organization within an enterprise or an organization account.
+     *
+     * **Note:** Only data from the past 24 months is accessible via this endpoint.
+     */
+    getGithubBillingAiCreditUsageReportOrg: {
+      (
+        params?: RestEndpointMethodTypes["billing"]["getGithubBillingAiCreditUsageReportOrg"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["billing"]["getGithubBillingAiCreditUsageReportOrg"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Gets a report of AI credit usage for a user.
+     *
+     * **Note:** Only data from the past 24 months is accessible via this endpoint.
+     */
+    getGithubBillingAiCreditUsageReportUser: {
+      (
+        params?: RestEndpointMethodTypes["billing"]["getGithubBillingAiCreditUsageReportUser"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["billing"]["getGithubBillingAiCreditUsageReportUser"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -3603,9 +4365,6 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * > [!NOTE]
-     * > This endpoint is in public preview and is subject to change.
-     *
      * Updates an existing budget for an organization. The authenticated user must be an organization admin or billing manager.
      */
     updateBudgetOrg: {
@@ -3879,9 +4638,67 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
   };
+  codeQuality: {
+    /**
+     * Gets a single code quality finding.
+     *
+     * OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with private or public repositories, or the `public_repo` scope to use this endpoint with only public repositories.
+     */
+    getFinding: {
+      (
+        params?: RestEndpointMethodTypes["codeQuality"]["getFinding"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["codeQuality"]["getFinding"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Gets a code quality setup configuration.
+     *
+     * OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with private or public repositories, or the `public_repo` scope to use this endpoint with only public repositories.
+     */
+    getSetup: {
+      (
+        params?: RestEndpointMethodTypes["codeQuality"]["getSetup"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["codeQuality"]["getSetup"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Lists code quality findings for a repository.
+     *
+     * OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with private or public repositories, or the `public_repo` scope to use this endpoint with only public repositories.
+     */
+    listFindingsForRepo: {
+      (
+        params?: RestEndpointMethodTypes["codeQuality"]["listFindingsForRepo"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["codeQuality"]["listFindingsForRepo"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Updates a code quality setup configuration.
+     *
+     * OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with private or public repositories, or the `public_repo` scope to use this endpoint with only public repositories.
+     */
+    updateSetup: {
+      (
+        params?: RestEndpointMethodTypes["codeQuality"]["updateSetup"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["codeQuality"]["updateSetup"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+  };
   codeScanning: {
     /**
-     * Commits an autofix for a code scanning alert.
+     * Commits an autofix for a code scanning alert from the repository's default branch.
      *
      * If an autofix is committed as a result of this request, then this endpoint will return a 201 Created response.
      *
@@ -3897,7 +4714,7 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Creates an autofix for a code scanning alert.
+     * Creates an autofix for a code scanning alert from the repository's default branch.
      *
      * If a new autofix is to be created as a result of this request or is currently being generated, then this endpoint will return a 202 Accepted response.
      *
@@ -4065,7 +4882,7 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Gets the status and description of an autofix for a code scanning alert.
+     * Gets the status and description of an autofix for a code scanning alert on the repository's default branch.
      *
      * OAuth app tokens and personal access tokens (classic) need the `security_events` scope to use this endpoint with private or public repositories, or the `public_repo` scope to use this endpoint with only public repositories.
      */
@@ -5460,49 +6277,332 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Use this endpoint to see a breakdown of aggregated metrics for various GitHub Copilot features. See the response schema tab for detailed metrics definitions.
-     *
      * > [!NOTE]
-     * > This endpoint will only return results for a given day if the organization contained **five or more members with active Copilot licenses** on that day, as evaluated at the end of that day.
+     * > This endpoint is in public preview and is subject to change.
      *
-     * The response contains metrics for up to 100 days prior. Metrics are processed once per day for the previous day,
-     * and the response will only include data up until yesterday. In order for an end user to be counted towards these metrics,
-     * they must have telemetry enabled in their IDE.
+     * Gets information about an organization's Copilot content exclusion path rules.
+     * To configure these settings, go to the organization's settings on GitHub.
+     * For more information, see "[Excluding content from GitHub Copilot](https://docs.github.com/copilot/managing-copilot/configuring-and-auditing-content-exclusion/excluding-content-from-github-copilot#configuring-content-exclusions-for-your-organization)."
      *
-     * To access this endpoint, the Copilot Metrics API access policy must be enabled for the organization.
-     * Only organization owners and owners and billing managers of the parent enterprise can view Copilot metrics.
+     * Organization owners can view details about Copilot content exclusion rules for the organization.
      *
-     * OAuth app tokens and personal access tokens (classic) need either the `manage_billing:copilot`, `read:org`, or `read:enterprise` scopes to use this endpoint.
+     * OAuth app tokens and personal access tokens (classic) need either the `copilot` or `read:org` scopes to use this endpoint.
+     *
+     * > [!CAUTION]
+     * > * At this time, the API does not support comments. This endpoint will not return any comments in the existing rules.
+     * > * At this time, the API does not support duplicate keys. If your content exclusion configuration contains duplicate keys, the API will return only the last occurrence of that key. For example, if duplicate entries are present, only the final value will be included in the response.
      */
-    copilotMetricsForOrganization: {
+    copilotContentExclusionForOrganization: {
       (
-        params?: RestEndpointMethodTypes["copilot"]["copilotMetricsForOrganization"]["parameters"],
+        params?: RestEndpointMethodTypes["copilot"]["copilotContentExclusionForOrganization"]["parameters"],
       ): Promise<
-        RestEndpointMethodTypes["copilot"]["copilotMetricsForOrganization"]["response"]
+        RestEndpointMethodTypes["copilot"]["copilotContentExclusionForOrganization"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Use this endpoint to see a breakdown of aggregated metrics for various GitHub Copilot features. See the response schema tab for detailed metrics definitions.
+     * Use this endpoint to retrieve download links for the Copilot enterprise usage metrics report for a specific day. The report provides comprehensive usage data for Copilot features across the enterprise.
      *
-     * > [!NOTE]
-     * > This endpoint will only return results for a given day if the team had **five or more members with active Copilot licenses** on that day, as evaluated at the end of that day.
+     * The report contains aggregated metrics for the specified day, including usage statistics for various Copilot features, user engagement data, and feature adoption metrics. Reports are generated daily and made available for download through signed URLs with a limited expiration time.
      *
-     * The response contains metrics for up to 100 days prior. Metrics are processed once per day for the previous day,
-     * and the response will only include data up until yesterday. In order for an end user to be counted towards these metrics,
-     * they must have telemetry enabled in their IDE.
+     * The response includes download links to the report files, along with the specific date of the report. The report covers a complete day for which data has been processed. Reports are available starting from October 10, 2025, and historical data can be accessed for up to 1 year from the current date.
      *
-     * To access this endpoint, the Copilot Metrics API access policy must be enabled for the organization containing the team within GitHub settings.
-     * Only organization owners for the organization that contains this team and owners and billing managers of the parent enterprise can view Copilot metrics for a team.
-     *
-     * OAuth app tokens and personal access tokens (classic) need either the `manage_billing:copilot`, `read:org`, or `read:enterprise` scopes to use this endpoint.
+     * Enterprise owners, billing managers, and authorized users with fine-grained "View Enterprise Copilot Metrics" permission can retrieve Copilot metrics reports for the enterprise. OAuth app tokens and personal access tokens (classic) need either the `manage_billing:copilot` or `read:enterprise` scopes to use this endpoint.
      */
-    copilotMetricsForTeam: {
+    copilotEnterpriseOneDayUsageMetrics: {
       (
-        params?: RestEndpointMethodTypes["copilot"]["copilotMetricsForTeam"]["parameters"],
+        params?: RestEndpointMethodTypes["copilot"]["copilotEnterpriseOneDayUsageMetrics"]["parameters"],
       ): Promise<
-        RestEndpointMethodTypes["copilot"]["copilotMetricsForTeam"]["response"]
+        RestEndpointMethodTypes["copilot"]["copilotEnterpriseOneDayUsageMetrics"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Use this endpoint to retrieve download links for the Copilot enterprise repository report for a specific day. The report provides per-repository pull request metrics for Copilot across the enterprise, with one entry per repository.
+     *
+     * The report contains repository-level pull request activity for the specified day, including the Copilot Coding Agent (CCA) and Copilot Code Review (CCR) breakdowns. Only repositories that had activity on the specified day are included. Reports are generated daily and made available for download through signed URLs with a limited expiration time.
+     *
+     * The response includes download links to the report files, along with the specific date of the report. The report covers a complete day for which data has been processed.
+     *
+     * Enterprise owners, billing managers, and authorized users with fine-grained "View Enterprise Copilot Metrics" permission can retrieve Copilot metrics reports for the enterprise. OAuth app tokens and personal access tokens (classic) need either the `manage_billing:copilot` or `read:enterprise` scopes to use this endpoint.
+     */
+    copilotEnterpriseReposOneDayReport: {
+      (
+        params?: RestEndpointMethodTypes["copilot"]["copilotEnterpriseReposOneDayReport"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["copilot"]["copilotEnterpriseReposOneDayReport"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Use this endpoint to retrieve download links for the latest 28-day enterprise Copilot usage metrics report. The report provides comprehensive usage data for Copilot features across the enterprise.
+     *
+     * The report contains aggregated metrics for the previous 28 days, including usage statistics for various Copilot features, user engagement data, and feature adoption metrics. Reports are generated daily and made available for download through signed URLs with a limited expiration time.
+     *
+     * The response includes download links to the report files, along with the specific date range covered by the report. The report covers a complete 28-day period ending on the most recent day for which data has been processed.
+     *
+     * Enterprise owners, billing managers, and authorized users with fine-grained "View Enterprise Copilot Metrics" permission can retrieve Copilot metrics reports for the enterprise. OAuth app tokens and personal access tokens (classic) need either the `manage_billing:copilot` or `read:enterprise` scopes to use this endpoint.
+     */
+    copilotEnterpriseUsageMetrics: {
+      (
+        params?: RestEndpointMethodTypes["copilot"]["copilotEnterpriseUsageMetrics"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["copilot"]["copilotEnterpriseUsageMetrics"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Use this endpoint to retrieve download links for the Copilot enterprise user-teams report for a specific day. The report provides user-team join data for Copilot across the enterprise, with one entry per user-team pair.
+     *
+     * The report contains user-team membership data for the specified day, enabling consumers to join with the existing enterprise user reports to compute team-level usage metrics. Reports are generated daily and made available for download through signed URLs with a limited expiration time.
+     *
+     * The response includes download links to the report files, along with the specific date of the report. The report covers a complete day for which data has been processed.
+     *
+     * Enterprise owners, billing managers, and authorized users with fine-grained "View Enterprise Copilot Metrics" permission can retrieve Copilot metrics reports for the enterprise. OAuth app tokens and personal access tokens (classic) need either the `manage_billing:copilot` or `read:enterprise` scopes to use this endpoint.
+     */
+    copilotEnterpriseUserTeamsOneDayReport: {
+      (
+        params?: RestEndpointMethodTypes["copilot"]["copilotEnterpriseUserTeamsOneDayReport"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["copilot"]["copilotEnterpriseUserTeamsOneDayReport"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Use this endpoint to retrieve download links for the Copilot organization usage metrics report for a specific day. The report provides comprehensive usage data for Copilot features across the organization.
+     *
+     * The report contains aggregated metrics for the specified day, including usage statistics for various Copilot features, user engagement data, and feature adoption metrics. Reports are generated daily and made available for download through signed URLs with a limited expiration time.
+     *
+     * The response includes download links to the report files, along with the specific date of the report. The report covers a complete day for which data has been processed.
+     *
+     * Organization owners and authorized users with fine-grained "View Organization Copilot Metrics" permission can retrieve Copilot metrics reports for the organization. OAuth app tokens and personal access tokens (classic) need the `read:org` scope to use this endpoint.
+     *
+     * For more information about organization metrics attribution, see [How are metrics attributed across organizations](https://docs.github.com/copilot/concepts/copilot-metrics#how-are-metrics-attributed-across-organizations).
+     */
+    copilotOrganizationOneDayUsageMetrics: {
+      (
+        params?: RestEndpointMethodTypes["copilot"]["copilotOrganizationOneDayUsageMetrics"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["copilot"]["copilotOrganizationOneDayUsageMetrics"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Use this endpoint to retrieve download links for the Copilot organization repository report for a specific day. The report provides per-repository pull request metrics for Copilot across the organization, with one entry per repository.
+     *
+     * The report contains repository-level pull request activity for the specified day, including the Copilot Coding Agent (CCA) and Copilot Code Review (CCR) breakdowns. Only repositories that had activity on the specified day are included. Reports are generated daily and made available for download through signed URLs with a limited expiration time.
+     *
+     * The response includes download links to the report files, along with the specific date of the report. The report covers a complete day for which data has been processed.
+     *
+     * Organization owners and authorized users with fine-grained "View Organization Copilot Metrics" permission can retrieve Copilot metrics reports for the organization. OAuth app tokens and personal access tokens (classic) need the `read:org` scope to use this endpoint.
+     *
+     * For more information about organization metrics attribution, see [How are metrics attributed across organizations](https://docs.github.com/copilot/concepts/copilot-metrics#how-are-metrics-attributed-across-organizations).
+     */
+    copilotOrganizationReposOneDayReport: {
+      (
+        params?: RestEndpointMethodTypes["copilot"]["copilotOrganizationReposOneDayReport"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["copilot"]["copilotOrganizationReposOneDayReport"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Use this endpoint to retrieve download links for the latest 28-day organization Copilot usage metrics report. The report provides comprehensive usage data for Copilot features across the organization.
+     *
+     * The report contains aggregated metrics for the previous 28 days, including usage statistics for various Copilot features, user engagement data, and feature adoption metrics. Reports are generated daily and made available for download through signed URLs with a limited expiration time.
+     *
+     * The response includes download links to the report files, along with the specific date range covered by the report. The report covers a complete 28-day period ending on the most recent day for which data has been processed.
+     *
+     * Organization owners and authorized users with fine-grained "View Organization Copilot Metrics" permission can retrieve Copilot metrics reports for the organization. OAuth app tokens and personal access tokens (classic) need the `read:org` scope to use this endpoint.
+     *
+     * For more information about organization metrics attribution, see [How are metrics attributed across organizations](https://docs.github.com/copilot/concepts/copilot-metrics#how-are-metrics-attributed-across-organizations).
+     */
+    copilotOrganizationUsageMetrics: {
+      (
+        params?: RestEndpointMethodTypes["copilot"]["copilotOrganizationUsageMetrics"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["copilot"]["copilotOrganizationUsageMetrics"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Use this endpoint to retrieve download links for the Copilot organization user-teams report for a specific day. The report provides user-team join data for Copilot across the organization, with one entry per user-team pair.
+     *
+     * The report contains user-team membership data for the specified day, enabling consumers to join with the existing organization user reports to compute team-level usage metrics. Reports are generated daily and made available for download through signed URLs with a limited expiration time.
+     *
+     * The response includes download links to the report files, along with the specific date of the report. The report covers a complete day for which data has been processed.
+     *
+     * Organization owners and authorized users with fine-grained "View Organization Copilot Metrics" permission can retrieve Copilot metrics reports for the organization. OAuth app tokens and personal access tokens (classic) need the `read:org` scope to use this endpoint.
+     *
+     * For more information about organization metrics attribution, see [How are metrics attributed across organizations](https://docs.github.com/copilot/concepts/copilot-metrics#how-are-metrics-attributed-across-organizations).
+     */
+    copilotOrganizationUserTeamsOneDayReport: {
+      (
+        params?: RestEndpointMethodTypes["copilot"]["copilotOrganizationUserTeamsOneDayReport"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["copilot"]["copilotOrganizationUserTeamsOneDayReport"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Use this endpoint to retrieve download links for the Copilot organization user usage metrics report for a specific day. The report provides detailed user-level usage data and engagement metrics for Copilot features across the organization.
+     *
+     * The report contains user-specific metrics for the specified day, including individual user engagement statistics, feature usage patterns, and adoption metrics broken down by user. This report allows authorized users to analyze Copilot usage at the user level to understand adoption patterns and identify opportunities for increased engagement.
+     *
+     * Reports are generated daily and made available for download through signed URLs with a limited expiration time. The response includes download links to the report files, along with the specific date of the report. The report covers a complete day for which data has been processed.
+     *
+     * Organization owners and authorized users with fine-grained "View Organization Copilot Metrics" permission can retrieve Copilot metrics reports for the organization. OAuth app tokens and personal access tokens (classic) need the `read:org` scope to use this endpoint.
+     *
+     * For more information about organization metrics attribution, see [How are metrics attributed across organizations](https://docs.github.com/copilot/concepts/copilot-metrics#how-are-metrics-attributed-across-organizations).
+     */
+    copilotOrganizationUsersOneDayUsageMetrics: {
+      (
+        params?: RestEndpointMethodTypes["copilot"]["copilotOrganizationUsersOneDayUsageMetrics"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["copilot"]["copilotOrganizationUsersOneDayUsageMetrics"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Use this endpoint to retrieve download links for the latest 28-day organization users Copilot usage metrics report. The report provides detailed user-level usage data and engagement metrics for Copilot features across the organization.
+     *
+     * The report contains user-specific metrics for the previous 28 days, including individual user engagement statistics, feature usage patterns, and adoption metrics broken down by user. This report allows authorized users to analyze Copilot usage at the user level to understand adoption patterns and identify opportunities for increased engagement.
+     *
+     * Reports are generated daily and made available for download through signed URLs with a limited expiration time. The response includes download links to the report files, along with the specific date range covered by the report. The report covers a complete 28-day period ending on the most recent day for which data has been processed.
+     *
+     * Organization owners and authorized users with fine-grained "View Organization Copilot Metrics" permission can retrieve Copilot metrics reports for the organization. OAuth app tokens and personal access tokens (classic) need the `read:org` scope to use this endpoint.
+     *
+     * For more information about organization metrics attribution, see [How are metrics attributed across organizations](https://docs.github.com/copilot/concepts/copilot-metrics#how-are-metrics-attributed-across-organizations).
+     */
+    copilotOrganizationUsersUsageMetrics: {
+      (
+        params?: RestEndpointMethodTypes["copilot"]["copilotOrganizationUsersUsageMetrics"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["copilot"]["copilotOrganizationUsersUsageMetrics"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Use this endpoint to retrieve download links for the Copilot user usage metrics report for a specific day. The report provides detailed user-level usage data and engagement metrics for Copilot features across the enterprise.
+     *
+     * The report contains user-specific metrics for the specified day, including individual user engagement statistics, feature usage patterns, and adoption metrics broken down by user. This report allows authorized users to analyze Copilot usage at the user level to understand adoption patterns and identify opportunities for increased engagement.
+     *
+     * Reports are generated daily and made available for download through signed URLs with a limited expiration time. The response includes download links to the report files, along with the specific date of the report. The report covers a complete day for which data has been processed. Reports are available starting from October 10, 2025, and historical data can be accessed for up to 1 year from the current date.
+     *
+     * Enterprise owners, billing managers, and authorized users with fine-grained "View Enterprise Copilot Metrics" permission can retrieve Copilot metrics reports for the enterprise. OAuth app tokens and personal access tokens (classic) need either the `manage_billing:copilot` or `read:enterprise` scopes to use this endpoint.
+     */
+    copilotUsersOneDayUsageMetrics: {
+      (
+        params?: RestEndpointMethodTypes["copilot"]["copilotUsersOneDayUsageMetrics"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["copilot"]["copilotUsersOneDayUsageMetrics"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Use this endpoint to retrieve download links for the latest 28-day enterprise users Copilot usage metrics report. The report provides detailed user-level usage data and engagement metrics for Copilot features across the enterprise.
+     *
+     * The report contains user-specific metrics for the previous 28 days, including individual user engagement statistics, feature usage patterns, and adoption metrics broken down by user. This report allows authorized users to analyze Copilot usage at the user level to understand adoption patterns and identify opportunities for increased engagement.
+     *
+     * Reports are generated daily and made available for download through signed URLs with a limited expiration time. The response includes download links to the report files, along with the specific date range covered by the report. The report covers a complete 28-day period ending on the most recent day for which data has been processed.
+     *
+     * Enterprise owners, billing managers, and authorized users with fine-grained "View Enterprise Copilot Metrics" permission can retrieve Copilot metrics reports for the enterprise. OAuth app tokens and personal access tokens (classic) need either the `manage_billing:copilot` or `read:enterprise` scopes to use this endpoint.
+     */
+    copilotUsersUsageMetrics: {
+      (
+        params?: RestEndpointMethodTypes["copilot"]["copilotUsersUsageMetrics"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["copilot"]["copilotUsersUsageMetrics"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * > [!NOTE]
+     * > This endpoint is in public preview and is subject to change.
+     *
+     * Removes a repository from the list of selected repositories enabled for Copilot
+     * cloud agent in an organization. This method can only be called when the
+     * cloud agent repository policy is set to `selected`.
+     *
+     * OAuth app tokens and personal access tokens (classic) need the `admin:org` scopes to use this endpoint.
+     */
+    disableCopilotCodingAgentForRepositoryInOrganization: {
+      (
+        params?: RestEndpointMethodTypes["copilot"]["disableCopilotCodingAgentForRepositoryInOrganization"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["copilot"]["disableCopilotCodingAgentForRepositoryInOrganization"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * > [!NOTE]
+     * > This endpoint is in public preview and is subject to change.
+     *
+     * Adds a repository to the list of selected repositories enabled for Copilot
+     * cloud agent in an organization. This method can only be called when the
+     * cloud agent repository policy is set to `selected`.
+     *
+     * OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
+     */
+    enableCopilotCodingAgentForRepositoryInOrganization: {
+      (
+        params?: RestEndpointMethodTypes["copilot"]["enableCopilotCodingAgentForRepositoryInOrganization"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["copilot"]["enableCopilotCodingAgentForRepositoryInOrganization"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * > [!NOTE]
+     * > This endpoint is in public preview and is subject to change.
+     *
+     * Gets the Copilot cloud agent configuration for a repository, including MCP server
+     * configuration, enabled review tools, Actions workflow approval settings, and firewall
+     * configuration.
+     *
+     * OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+     */
+    getCopilotCloudAgentConfiguration: {
+      (
+        params?: RestEndpointMethodTypes["copilot"]["getCopilotCloudAgentConfiguration"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["copilot"]["getCopilotCloudAgentConfiguration"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * > [!NOTE]
+     * > This endpoint is in public preview and is subject to change.
+     *
+     * Gets information about which repositories in an organization have been enabled
+     * or disabled for the Copilot cloud agent.
+     *
+     * Organization owners can configure whether Copilot cloud agent is enabled for
+     * all repositories, selected repositories, or no repositories owned by organization.
+     *
+     * OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
+     */
+    getCopilotCodingAgentPermissionsOrganization: {
+      (
+        params?: RestEndpointMethodTypes["copilot"]["getCopilotCodingAgentPermissionsOrganization"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["copilot"]["getCopilotCodingAgentPermissionsOrganization"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -5554,6 +6654,26 @@ export type RestEndpointMethods = {
      * > [!NOTE]
      * > This endpoint is in public preview and is subject to change.
      *
+     * Lists the selected repositories that are enabled for Copilot cloud agent in an organization.
+     *
+     * Organization owners can use this endpoint when the coding agent repository policy
+     * is set to `selected` to see which repositories have been enabled.
+     *
+     * OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
+     */
+    listCopilotCodingAgentSelectedRepositoriesForOrganization: {
+      (
+        params?: RestEndpointMethodTypes["copilot"]["listCopilotCodingAgentSelectedRepositoriesForOrganization"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["copilot"]["listCopilotCodingAgentSelectedRepositoriesForOrganization"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * > [!NOTE]
+     * > This endpoint is in public preview and is subject to change.
+     *
      * Lists all Copilot seats for which an organization with a Copilot Business or Copilot Enterprise subscription is currently being billed.
      * Only organization owners can view assigned seats.
      *
@@ -5571,14 +6691,57 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
+    /**
+     * > [!NOTE]
+     * > This endpoint is in public preview and is subject to change.
+     *
+     * Sets the policy for which repositories in an organization can use Copilot cloud agent.
+     *
+     * Organization owners can configure whether Copilot cloud agent is enabled for
+     * all repositories, selected repositories, or no repositories owned by the organization.
+     *
+     * OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
+     */
+    setCopilotCodingAgentPermissionsOrganization: {
+      (
+        params?: RestEndpointMethodTypes["copilot"]["setCopilotCodingAgentPermissionsOrganization"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["copilot"]["setCopilotCodingAgentPermissionsOrganization"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * > [!NOTE]
+     * > This endpoint is in public preview and is subject to change.
+     *
+     * Replaces the list of selected repositories that are enabled for Copilot cloud
+     * agent in an organization. This method can only be called when the cloud agent
+     * repository policy is set to `selected`.
+     *
+     * OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
+     */
+    setCopilotCodingAgentSelectedRepositoriesForOrganization: {
+      (
+        params?: RestEndpointMethodTypes["copilot"]["setCopilotCodingAgentSelectedRepositoriesForOrganization"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["copilot"]["setCopilotCodingAgentSelectedRepositoriesForOrganization"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
   };
   credentials: {
     /**
      * Submit a list of credentials to be revoked. This endpoint is intended to revoke credentials the caller does not own and may have found exposed on GitHub.com or elsewhere. It can also be used for credentials associated with an old user account that you no longer have access to. Credential owners will be notified of the revocation.
      *
      * This endpoint currently accepts the following credential types:
-     * - Personal access tokens (classic)
-     * - Fine-grained personal access tokens
+     * - Personal access tokens (classic) (`ghp_`)
+     * - Fine-grained personal access tokens (`github_pat_`)
+     * - OAuth app access tokens (`gho_`)
+     * - User-to-server tokens from GitHub Apps (`ghu_`)
+     * - Refresh tokens from GitHub Apps (`ghr_`)
+     *
      *
      * Revoked credentials may impact users on GitHub Free, Pro, & Team and GitHub Enterprise Cloud, and GitHub Enterprise Cloud with Enterprise Managed Users.
      * GitHub cannot reactivate any credentials that have been revoked; new credentials will need to be generated.
@@ -5919,6 +7082,20 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
+     * Lists repositories that enterprise admins have allowed Dependabot to access when updating dependencies across organizations in the enterprise.
+     *
+     * The authenticated user must be an enterprise owner to use this endpoint.
+     */
+    repositoryAccessForEnterprise: {
+      (
+        params?: RestEndpointMethodTypes["dependabot"]["repositoryAccessForEnterprise"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["dependabot"]["repositoryAccessForEnterprise"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
      * Lists repositories that organization admins have allowed Dependabot to access when updating dependencies.
      * > [!NOTE]
      * >    This operation supports both server-to-server and user-to-server access.
@@ -5952,6 +7129,22 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
+     * Sets the default level of repository access Dependabot will have while performing an update across organizations in the enterprise. Available values are:
+     * - 'public' - Dependabot will only have access to public repositories, unless access is explicitly granted to non-public repositories.
+     * - 'internal' - Dependabot will only have access to public and internal repositories, unless access is explicitly granted to private repositories.
+     *
+     * The authenticated user must be an enterprise owner to use this endpoint.
+     */
+    setRepositoryAccessDefaultLevelForEnterprise: {
+      (
+        params?: RestEndpointMethodTypes["dependabot"]["setRepositoryAccessDefaultLevelForEnterprise"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["dependabot"]["setRepositoryAccessDefaultLevelForEnterprise"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
      * Replaces all repositories for an organization secret when the `visibility`
      * for repository access is set to `selected`. The visibility is set when you [Create
      * or update an organization secret](https://docs.github.com/rest/dependabot/secrets#create-or-update-an-organization-secret).
@@ -5977,6 +7170,28 @@ export type RestEndpointMethods = {
         params?: RestEndpointMethodTypes["dependabot"]["updateAlert"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["dependabot"]["updateAlert"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Updates repositories according to the list of repositories that enterprise admins have given Dependabot access to when they've updated dependencies across organizations in the enterprise.
+     *
+     * The authenticated user must be an enterprise owner to use this endpoint.
+     *
+     * **Example request body:**
+     * ```json
+     * {
+     *   "repository_ids_to_add": [123, 456],
+     *   "repository_ids_to_remove": [789]
+     * }
+     * ```
+     */
+    updateRepositoryAccessForEnterprise: {
+      (
+        params?: RestEndpointMethodTypes["dependabot"]["updateRepositoryAccessForEnterprise"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["dependabot"]["updateRepositoryAccessForEnterprise"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -6043,6 +7258,33 @@ export type RestEndpointMethods = {
         params?: RestEndpointMethodTypes["dependencyGraph"]["exportSbom"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["dependencyGraph"]["exportSbom"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Fetches a previously generated software bill of materials (SBOM) for a repository.
+     * When the SBOM is ready, the response is a 302 redirect to a temporary download URL for the SBOM in SPDX JSON format.
+     * The generated SBOM report may be retained for up to one week from the original request.
+     * The temporary download URL returned by this endpoint expires separately, and its expiry is set when the fetch request is made.
+     */
+    fetchSbomReport: {
+      (
+        params?: RestEndpointMethodTypes["dependencyGraph"]["fetchSbomReport"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["dependencyGraph"]["fetchSbomReport"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Triggers a job to generate a software bill of materials (SBOM) for a repository in SPDX JSON format.
+     */
+    generateSbomReport: {
+      (
+        params?: RestEndpointMethodTypes["dependencyGraph"]["generateSbomReport"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["dependencyGraph"]["generateSbomReport"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -6299,7 +7541,6 @@ export type RestEndpointMethods = {
      * This endpoint supports the following custom media types. For more information, see "[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types)."
      *
      * - **`application/vnd.github.raw+json`**: Returns the raw markdown. This is the default if you do not pass any specific media type.
-     * - **`application/vnd.github.base64+json`**: Returns the base64-encoded contents. This can be useful if your gist contains any invalid UTF-8 sequences.
      */
     createComment: {
       (
@@ -6338,7 +7579,6 @@ export type RestEndpointMethods = {
      * This endpoint supports the following custom media types. For more information, see "[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types)."
      *
      * - **`application/vnd.github.raw+json`**: Returns the raw markdown. This is the default if you do not pass any specific media type.
-     * - **`application/vnd.github.base64+json`**: Returns the base64-encoded contents. This can be useful if your gist contains any invalid UTF-8 sequences.
      */
     get: {
       (
@@ -6353,7 +7593,6 @@ export type RestEndpointMethods = {
      * This endpoint supports the following custom media types. For more information, see "[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types)."
      *
      * - **`application/vnd.github.raw+json`**: Returns the raw markdown. This is the default if you do not pass any specific media type.
-     * - **`application/vnd.github.base64+json`**: Returns the base64-encoded contents. This can be useful if your gist contains any invalid UTF-8 sequences.
      */
     getComment: {
       (
@@ -6368,7 +7607,6 @@ export type RestEndpointMethods = {
      * This endpoint supports the following custom media types. For more information, see "[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types)."
      *
      * - **`application/vnd.github.raw+json`**: Returns the raw markdown. This is the default if you do not pass any specific media type.
-     * - **`application/vnd.github.base64+json`**: Returns the base64-encoded contents. This can be useful if your gist contains any invalid UTF-8 sequences.
      */
     getRevision: {
       (
@@ -6393,7 +7631,6 @@ export type RestEndpointMethods = {
      * This endpoint supports the following custom media types. For more information, see "[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types)."
      *
      * - **`application/vnd.github.raw+json`**: Returns the raw markdown. This is the default if you do not pass any specific media type.
-     * - **`application/vnd.github.base64+json`**: Returns the base64-encoded contents. This can be useful if your gist contains any invalid UTF-8 sequences.
      */
     listComments: {
       (
@@ -6484,7 +7721,6 @@ export type RestEndpointMethods = {
      * This endpoint supports the following custom media types. For more information, see "[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types)."
      *
      * - **`application/vnd.github.raw+json`**: Returns the raw markdown. This is the default if you do not pass any specific media type.
-     * - **`application/vnd.github.base64+json`**: Returns the base64-encoded contents. This can be useful if your gist contains any invalid UTF-8 sequences.
      */
     updateComment: {
       (
@@ -6889,6 +8125,53 @@ export type RestEndpointMethods = {
   };
   interactions: {
     /**
+     * Lists the users that are on the pull request creation cap bypass list for a
+     * repository. Users on this list can create pull requests regardless of any
+     * configured pull request creation cap.
+     *
+     * Only users with maintainer permissions can view the bypass list.
+     */
+    getPullRequestBypassListForRepo: {
+      (
+        params?: RestEndpointMethodTypes["interactions"]["getPullRequestBypassListForRepo"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["interactions"]["getPullRequestBypassListForRepo"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Gets the pull request creation cap configuration for an organization.
+     * The cap limits the total number of open pull requests a user can have across all public
+     * repositories in the organization at one time.
+     *
+     * Only users with admin access to the organization can view the cap configuration.
+     */
+    getPullRequestCreationCapForOrg: {
+      (
+        params?: RestEndpointMethodTypes["interactions"]["getPullRequestCreationCapForOrg"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["interactions"]["getPullRequestCreationCapForOrg"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Gets the pull request creation cap configuration for a repository.
+     * The cap limits the number of open pull requests a user can have at one time.
+     *
+     * Only users with admin access to the repository can view the cap configuration.
+     */
+    getPullRequestCreationCapForRepo: {
+      (
+        params?: RestEndpointMethodTypes["interactions"]["getPullRequestCreationCapForRepo"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["interactions"]["getPullRequestCreationCapForRepo"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
      * Shows which type of GitHub user can interact with your public repositories and when the restriction expires.
      */
     getRestrictionsForAuthenticatedUser: {
@@ -6933,6 +8216,22 @@ export type RestEndpointMethods = {
         params?: RestEndpointMethodTypes["interactions"]["getRestrictionsForYourPublicRepos"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["interactions"]["getRestrictionsForYourPublicRepos"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Removes users from the pull request creation cap bypass list for a repository.
+     * Removed users will be subject to any configured pull request creation cap.
+     *
+     * Only users with maintainer permissions can modify the bypass list.
+     * You can remove a maximum of 100 users per request.
+     */
+    removePullRequestBypassListForRepo: {
+      (
+        params?: RestEndpointMethodTypes["interactions"]["removePullRequestBypassListForRepo"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["interactions"]["removePullRequestBypassListForRepo"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -6987,6 +8286,24 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
+     * Adds users to the pull request creation cap bypass list for a repository.
+     * Users on this list can create pull requests regardless of any configured
+     * pull request creation cap.
+     *
+     * Only users with maintainer permissions can modify the bypass list.
+     * You can add a maximum of 100 users per request.
+     * The bypass list can only hold a maximum of 100 users.
+     */
+    setPullRequestBypassListForRepo: {
+      (
+        params?: RestEndpointMethodTypes["interactions"]["setPullRequestBypassListForRepo"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["interactions"]["setPullRequestBypassListForRepo"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
      * Temporarily restricts which type of GitHub user can interact with your public repositories. Setting the interaction limit at the user level will overwrite any interaction limits that are set for individual repositories owned by the user.
      */
     setRestrictionsForAuthenticatedUser: {
@@ -7035,6 +8352,37 @@ export type RestEndpointMethods = {
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
+    /**
+     * Updates the pull request creation cap for an organization. The cap limits the total number
+     * of open pull requests a user can have across all public repositories in the organization
+     * at one time.
+     *
+     * Only users with admin access to the organization can configure the cap.
+     */
+    updatePullRequestCreationCapForOrg: {
+      (
+        params?: RestEndpointMethodTypes["interactions"]["updatePullRequestCreationCapForOrg"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["interactions"]["updatePullRequestCreationCapForOrg"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Updates the pull request creation cap for a repository. The cap limits the number
+     * of open pull requests a user can have at one time.
+     *
+     * Only users with admin access to the repository can configure the cap.
+     */
+    updatePullRequestCreationCapForRepo: {
+      (
+        params?: RestEndpointMethodTypes["interactions"]["updatePullRequestCreationCapForRepo"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["interactions"]["updatePullRequestCreationCapForRepo"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
   };
   issues: {
     /**
@@ -7071,7 +8419,31 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Adds labels to an issue. If you provide an empty array of labels, all labels are removed from the issue.
+     * Add custom field values to an issue. You can set values for organization-level issue fields that have been defined for the repository's organization.
+     * Adding an empty array will clear all existing field values for the issue.
+     *
+     * This endpoint supports the following field data types:
+     * - **`text`**: String values for text fields
+     * - **`single_select`**: Option names for single-select fields (must match an existing option name)
+     * - **`number`**: Numeric values for number fields
+     * - **`date`**: ISO 8601 date strings for date fields
+     *
+     * Only users with push access to the repository can add issue field values. If you don't have the proper permissions, you'll receive a `403 Forbidden` response.
+     *
+     * This endpoint triggers [notifications](https://docs.github.com/github/managing-subscriptions-and-notifications-on-github/about-notifications). Creating content too quickly using this endpoint may result in secondary rate limiting. For more information, see "[Rate limits for the API](https://docs.github.com/rest/using-the-rest-api/rate-limits-for-the-rest-api#about-secondary-rate-limits)"
+     * and "[Best practices for using the REST API](https://docs.github.com/rest/guides/best-practices-for-using-the-rest-api)."
+     */
+    addIssueFieldValues: {
+      (
+        params?: RestEndpointMethodTypes["issues"]["addIssueFieldValues"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["issues"]["addIssueFieldValues"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Adds labels to an issue.
      */
     addLabels: {
       (
@@ -7098,6 +8470,20 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["issues"]["addSubIssue"]["parameters"],
       ): Promise<RestEndpointMethodTypes["issues"]["addSubIssue"]["response"]>;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Approves a pending suggestion on an issue. Applies the proposed change (creating the corresponding timeline event), transitions the suggestion to `approved`, and dismisses any competing pending suggestions for the same change.
+     *
+     * Requires triage access to the repository. Approving a suggestion also requires permission to perform the change it applies (for example, setting the issue type, adding a label or assignee, or closing the issue); this only affects fine-grained access tokens and GitHub Apps whose permissions are narrower than the triage role. This endpoint only supports issues, not pull requests.
+     */
+    approveSuggestion: {
+      (
+        params?: RestEndpointMethodTypes["issues"]["approveSuggestion"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["issues"]["approveSuggestion"]["response"]
+      >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
@@ -7212,6 +8598,25 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
+     * Remove a specific custom field value from an issue.
+     *
+     * Only users with push access to the repository can delete issue field values. If you don't have the proper permissions, you'll receive a `403 Forbidden` response.
+     *
+     * If the specified field does not have a value set on the issue, this operation will return a `404` error.
+     *
+     * This endpoint triggers [notifications](https://docs.github.com/github/managing-subscriptions-and-notifications-on-github/about-notifications). Creating content too quickly using this endpoint may result in secondary rate limiting. For more information, see "[Rate limits for the API](https://docs.github.com/rest/using-the-rest-api/rate-limits-for-the-rest-api#about-secondary-rate-limits)"
+     * and "[Best practices for using the REST API](https://docs.github.com/rest/guides/best-practices-for-using-the-rest-api)."
+     */
+    deleteIssueFieldValue: {
+      (
+        params?: RestEndpointMethodTypes["issues"]["deleteIssueFieldValue"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["issues"]["deleteIssueFieldValue"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
      * Deletes a label using the given label name.
      */
     deleteLabel: {
@@ -7229,6 +8634,20 @@ export type RestEndpointMethods = {
         params?: RestEndpointMethodTypes["issues"]["deleteMilestone"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["issues"]["deleteMilestone"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Dismisses a pending suggestion on an issue. Transitions the suggestion to `dismissed` without applying any change or creating a timeline event.
+     *
+     * Requires triage access to the repository. This endpoint only supports issues, not pull requests.
+     */
+    dismissSuggestion: {
+      (
+        params?: RestEndpointMethodTypes["issues"]["dismissSuggestion"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["issues"]["dismissSuggestion"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -7531,6 +8950,18 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
+     * Lists all issue field values for an issue.
+     */
+    listIssueFieldValuesForIssue: {
+      (
+        params?: RestEndpointMethodTypes["issues"]["listIssueFieldValuesForIssue"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["issues"]["listIssueFieldValuesForIssue"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
      * Lists labels for issues in a milestone.
      */
     listLabelsForMilestone: {
@@ -7598,6 +9029,24 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
+     * Lists the suggestions on an issue. A suggestion is an agent-proposed change to an issue's type, labels, fields, assignees, or closed state that a maintainer can approve or dismiss.
+     *
+     * By default only pending suggestions are returned. Use `state=all` to return suggestions in every state, or `state=<state>` to filter to a single state. Use `action=<action>` to return only suggestions for a specific change.
+     *
+     * This endpoint is only available while the issue suggestions feature is enabled for the repository, and only supports issues, not pull requests.
+     *
+     * Requires triage access to the repository.
+     */
+    listSuggestions: {
+      (
+        params?: RestEndpointMethodTypes["issues"]["listSuggestions"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["issues"]["listSuggestions"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
      * Users with push access can lock an issue or pull request's conversation.
      *
      * Note that, if you choose not to pass any parameters, you'll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see "[HTTP method](https://docs.github.com/rest/guides/getting-started-with-the-rest-api#http-method)."
@@ -7606,6 +9055,23 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["issues"]["lock"]["parameters"],
       ): Promise<RestEndpointMethodTypes["issues"]["lock"]["response"]>;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * You can use the REST API to pin comments on issues.
+     *
+     * This endpoint supports the following custom media types. For more information, see "[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types)."
+     *
+     * - **`application/vnd.github.raw+json`**: Returns the raw markdown body. Response will include `body`. This is the default if you do not pass any specific media type.
+     * - **`application/vnd.github.text+json`**: Returns a text only representation of the markdown body. Response will include `body_text`.
+     * - **`application/vnd.github.html+json`**: Returns HTML rendered from the body's markdown. Response will include `body_html`.
+     * - **`application/vnd.github.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
+     */
+    pinComment: {
+      (
+        params?: RestEndpointMethodTypes["issues"]["pinComment"]["parameters"],
+      ): Promise<RestEndpointMethodTypes["issues"]["pinComment"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
@@ -7698,6 +9164,31 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
+     * Set custom field values for an issue, replacing any existing values. You can set values for organization-level issue fields that have been defined for the repository's organization.
+     *
+     * This endpoint supports the following field data types:
+     * - **`text`**: String values for text fields
+     * - **`single_select`**: Option names for single-select fields (must match an existing option name)
+     * - **`number`**: Numeric values for number fields
+     * - **`date`**: ISO 8601 date strings for date fields
+     *
+     * This operation will replace all existing field values with the provided ones. If you want to add field values without replacing existing ones, use the `POST` endpoint instead.
+     *
+     * Only users with push access to the repository can set issue field values. If you don't have the proper permissions, you'll receive a `403 Forbidden` response.
+     *
+     * This endpoint triggers [notifications](https://docs.github.com/github/managing-subscriptions-and-notifications-on-github/about-notifications). Creating content too quickly using this endpoint may result in secondary rate limiting. For more information, see "[Rate limits for the API](https://docs.github.com/rest/using-the-rest-api/rate-limits-for-the-rest-api#about-secondary-rate-limits)"
+     * and "[Best practices for using the REST API](https://docs.github.com/rest/guides/best-practices-for-using-the-rest-api)."
+     */
+    setIssueFieldValues: {
+      (
+        params?: RestEndpointMethodTypes["issues"]["setIssueFieldValues"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["issues"]["setIssueFieldValues"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
      * Removes any previous labels and sets the new labels for an issue.
      */
     setLabels: {
@@ -7714,6 +9205,16 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["issues"]["unlock"]["parameters"],
       ): Promise<RestEndpointMethodTypes["issues"]["unlock"]["response"]>;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * You can use the REST API to unpin comments on issues.
+     */
+    unpinComment: {
+      (
+        params?: RestEndpointMethodTypes["issues"]["unpinComment"]["parameters"],
+      ): Promise<RestEndpointMethodTypes["issues"]["unpinComment"]["response"]>;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
@@ -7839,7 +9340,7 @@ export type RestEndpointMethods = {
     /**
      * Returns meta information about GitHub, including a list of GitHub's IP addresses. For more information, see "[About GitHub's IP addresses](https://docs.github.com/articles/about-github-s-ip-addresses/)."
      *
-     * The API's response also includes a list of GitHub's domain names.
+     * The API's response also includes a list of GitHub's domain names, and the public keys used by GitHub to sign commits made through the web UI.
      *
      * The values shown in the documentation's response are example values. You must always query the API directly to get the latest values.
      *
@@ -8115,6 +9616,34 @@ export type RestEndpointMethods = {
   };
   oidc: {
     /**
+     * Adds a repository custom property to be included in the OIDC token for repository actions in an enterprise.
+     *
+     * OAuth app tokens and personal access tokens (classic) need the `admin:enterprise` scope to use this endpoint.
+     */
+    createOidcCustomPropertyInclusionForEnterprise: {
+      (
+        params?: RestEndpointMethodTypes["oidc"]["createOidcCustomPropertyInclusionForEnterprise"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["oidc"]["createOidcCustomPropertyInclusionForEnterprise"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Removes a repository custom property from being included in the OIDC token for repository actions in an enterprise.
+     *
+     * OAuth app tokens and personal access tokens (classic) need the `admin:enterprise` scope to use this endpoint.
+     */
+    deleteOidcCustomPropertyInclusionForEnterprise: {
+      (
+        params?: RestEndpointMethodTypes["oidc"]["deleteOidcCustomPropertyInclusionForEnterprise"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["oidc"]["deleteOidcCustomPropertyInclusionForEnterprise"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
      * Gets the customization template for an OpenID Connect (OIDC) subject claim.
      *
      * OAuth app tokens and personal access tokens (classic) need the `read:org` scope to use this endpoint.
@@ -8124,6 +9653,20 @@ export type RestEndpointMethods = {
         params?: RestEndpointMethodTypes["oidc"]["getOidcCustomSubTemplateForOrg"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["oidc"]["getOidcCustomSubTemplateForOrg"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Lists the repository custom properties that are included in the OIDC token for repository actions in an enterprise.
+     *
+     * OAuth app tokens and personal access tokens (classic) need the `admin:enterprise` scope to use this endpoint.
+     */
+    listOidcCustomPropertyInclusionsForEnterprise: {
+      (
+        params?: RestEndpointMethodTypes["oidc"]["listOidcCustomPropertyInclusionsForEnterprise"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["oidc"]["listOidcCustomPropertyInclusionsForEnterprise"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -8249,8 +9792,19 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Create or update deployment records for an artifact associated with an organization.
-     * This endpoint allows you to record information about a specific artifact, such as its name, digest, environments, cluster, and deployment.
+     * Create or update deployment records for an artifact associated
+     * with an organization.
+     * This endpoint allows you to record information about a specific
+     * artifact, such as its name, digest, environments, cluster, and
+     * deployment.
+     * The deployment name has to be uniqe within a cluster (i.e a
+     * combination of logical, physical environment and cluster) as it
+     * identifies unique deployment.
+     * Multiple requests for the same combination of logical, physical
+     * environment, cluster and deployment name will only create one
+     * record, successive request will update the existing record.
+     * This allows for a stable tracking of a deployment where the actual
+     * deployed artifact can change over time.
      */
     createArtifactDeploymentRecord: {
       (
@@ -8276,6 +9830,21 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
+     * Create a background job to set deployment records for a given cluster.
+     * Performs validation and permission checks synchronously, returning rejected
+     * deployments immediately, then enqueues a background job for the actual
+     * deployment updates. Use the companion GET endpoint to poll for job status.
+     */
+    createClusterDeploymentRecordsJob: {
+      (
+        params?: RestEndpointMethodTypes["orgs"]["createClusterDeploymentRecordsJob"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["orgs"]["createClusterDeploymentRecordsJob"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
      * Invite people to an organization by using their GitHub user ID or their email address. In order to create invitations in an organization, the authenticated user must be an organization owner.
      *
      * This endpoint triggers [notifications](https://docs.github.com/github/managing-subscriptions-and-notifications-on-github/about-notifications). Creating content too quickly using this endpoint may result in secondary rate limiting. For more information, see "[Rate limits for the API](https://docs.github.com/rest/using-the-rest-api/rate-limits-for-the-rest-api#about-secondary-rate-limits)"
@@ -8286,6 +9855,23 @@ export type RestEndpointMethods = {
         params?: RestEndpointMethodTypes["orgs"]["createInvitation"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["orgs"]["createInvitation"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Creates a new issue field for an organization.
+     *
+     * You can find out more about issue fields in [Managing issue fields in an organization](https://docs.github.com/issues/tracking-your-work-with-issues/using-issues/managing-issue-fields-in-an-organization).
+     *
+     * To use this endpoint, the authenticated user must be an administrator for the organization. OAuth app tokens and
+     * personal access tokens (classic) need the `admin:org` scope to use this endpoint.
+     */
+    createIssueField: {
+      (
+        params?: RestEndpointMethodTypes["orgs"]["createIssueField"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["orgs"]["createIssueField"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -8319,45 +9905,6 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["orgs"]["createWebhook"]["parameters"],
       ): Promise<RestEndpointMethodTypes["orgs"]["createWebhook"]["response"]>;
-      defaults: RequestInterface["defaults"];
-      endpoint: EndpointInterface<{ url: string }>;
-    };
-    /**
-     * Create new or update existing custom property values for an organization.
-     * To remove a custom property value from an organization, set the property value to `null`.
-     *
-     * The organization must belong to an enterprise.
-     *
-     * Access requirements:
-     * - Organization admins
-     * - OAuth tokens and personal access tokens (classic) with the `admin:org` scope
-     * - Actors with the organization-level "edit custom properties for an organization" fine-grained permission
-     */
-    customPropertiesForOrgsCreateOrUpdateOrganizationValues: {
-      (
-        params?: RestEndpointMethodTypes["orgs"]["customPropertiesForOrgsCreateOrUpdateOrganizationValues"]["parameters"],
-      ): Promise<
-        RestEndpointMethodTypes["orgs"]["customPropertiesForOrgsCreateOrUpdateOrganizationValues"]["response"]
-      >;
-      defaults: RequestInterface["defaults"];
-      endpoint: EndpointInterface<{ url: string }>;
-    };
-    /**
-     * Gets all custom property values that are set for an organization.
-     *
-     * The organization must belong to an enterprise.
-     *
-     * Access requirements:
-     * - Organization admins
-     * - OAuth tokens and personal access tokens (classic) with the `read:org` scope
-     * - Actors with the organization-level "read custom properties for an organization" fine-grained permission or above
-     */
-    customPropertiesForOrgsGetOrganizationValues: {
-      (
-        params?: RestEndpointMethodTypes["orgs"]["customPropertiesForOrgsGetOrganizationValues"]["parameters"],
-      ): Promise<
-        RestEndpointMethodTypes["orgs"]["customPropertiesForOrgsGetOrganizationValues"]["response"]
-      >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
@@ -8526,6 +10073,23 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
+     * Deletes an issue field for an organization.
+     *
+     * You can find out more about issue fields in [Managing issue fields in an organization](https://docs.github.com/issues/tracking-your-work-with-issues/using-issues/managing-issue-fields-in-an-organization).
+     *
+     * To use this endpoint, the authenticated user must be an administrator for the organization. OAuth app tokens and
+     * personal access tokens (classic) need the `admin:org` scope to use this endpoint.
+     */
+    deleteIssueField: {
+      (
+        params?: RestEndpointMethodTypes["orgs"]["deleteIssueField"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["orgs"]["deleteIssueField"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
      * Deletes an issue type for an organization.
      *
      * You can find out more about issue types in [Managing issue types in an organization](https://docs.github.com/issues/tracking-your-work-with-issues/configuring-issues/managing-issue-types-in-an-organization).
@@ -8604,6 +10168,18 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
+     * Get the status and results of a previously created cluster deployment records job.
+     */
+    getClusterDeploymentRecordsJob: {
+      (
+        params?: RestEndpointMethodTypes["orgs"]["getClusterDeploymentRecordsJob"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["orgs"]["getClusterDeploymentRecordsJob"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
      * Gets the immutable releases policy for repositories in an organization.
      *
      * OAuth tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
@@ -8661,7 +10237,7 @@ export type RestEndpointMethods = {
      * To use this endpoint, the authenticated user must be one of:
      *
      * - An administrator for the organization.
-     * - A user, or a user on a team, with the fine-grained permissions of `read_organization_custom_org_role` in the organization.
+     * - An organization member (or a member of a team) assigned a custom organization role that includes the **View organization roles** (`read_organization_custom_org_role`) permission. For more information, see "[Permissions for organization access](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/permissions-of-custom-organization-roles#permissions-for-organization-access)."
      *
      * OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
      */
@@ -8789,9 +10365,9 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * List a collection of artifact storage records with a given subject digest that are associated with repositories owned by an organization.
+     * List artifact storage records with a given subject digest for repositories owned by an organization.
      *
-     * The collection of storage records returned by this endpoint is filtered according to the authenticated user's permissions; if the authenticated user cannot read a repository, the attestations associated with that repository will not be included in the response. In addition, when using a fine-grained access token the `content:read` permission is required.
+     * Results are filtered by the authenticated user's permissions; records for repositories the user cannot read are omitted. Fine-grained access tokens require the `artifact-metadata:read` permission.
      */
     listArtifactStorageRecords: {
       (
@@ -8913,6 +10489,18 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
+     * Lists all issue fields for an organization. OAuth app tokens and personal access tokens (classic) need the read:org scope to use this endpoint.
+     */
+    listIssueFields: {
+      (
+        params?: RestEndpointMethodTypes["orgs"]["listIssueFields"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["orgs"]["listIssueFields"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
      * Lists all issue types for an organization. OAuth app tokens and personal access tokens (classic) need the read:org scope to use this endpoint.
      */
     listIssueTypes: {
@@ -8982,7 +10570,7 @@ export type RestEndpointMethods = {
      * To use this endpoint, the authenticated user must be one of:
      *
      * - An administrator for the organization.
-     * - A user, or a user on a team, with the fine-grained permissions of `read_organization_custom_org_role` in the organization.
+     * - An organization member (or a member of a team) assigned a custom organization role that includes the **View organization roles** (`read_organization_custom_org_role`) permission. For more information, see "[Permissions for organization access](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/permissions-of-custom-organization-roles#permissions-for-organization-access)."
      *
      * OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
      */
@@ -9320,6 +10908,13 @@ export type RestEndpointMethods = {
     };
     /**
      * Set deployment records for a given cluster.
+     * If proposed records in the 'deployments' field have identical 'cluster', 'logical_environment',
+     * 'physical_environment', and 'deployment_name' values as existing records, the existing records will be updated.
+     * If no existing records match, new records will be created.
+     * Note: Artifacts are uniquely identified by the combination of their repository and digest fields. If two entries in the deployments
+     * array resolve to the same repository and have identical digest fields but differing name and version fields, the endpoint will use
+     * the artifact name and version from the record processed first, since a single artifact (identified by repository and digest) can
+     * only have one name and version.
      */
     setClusterDeploymentRecords: {
       (
@@ -9419,6 +11014,23 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["orgs"]["update"]["parameters"],
       ): Promise<RestEndpointMethodTypes["orgs"]["update"]["response"]>;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Updates an issue field for an organization.
+     *
+     * You can find out more about issue fields in [Managing issue fields in an organization](https://docs.github.com/issues/tracking-your-work-with-issues/using-issues/managing-issue-fields-in-an-organization).
+     *
+     * To use this endpoint, the authenticated user must be an administrator for the organization. OAuth app tokens and
+     * personal access tokens (classic) need the `admin:org` scope to use this endpoint.
+     */
+    updateIssueField: {
+      (
+        params?: RestEndpointMethodTypes["orgs"]["updateIssueField"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["orgs"]["updateIssueField"]["response"]
+      >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
@@ -9971,6 +11583,7 @@ export type RestEndpointMethods = {
   privateRegistries: {
     /**
      * Creates a private registry configuration with an encrypted value for an organization. Encrypt your secret using [LibSodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages). For more information, see "[Encrypting secrets for the REST API](https://docs.github.com/rest/guides/encrypting-secrets-for-the-rest-api)."
+     * For OIDC-based registries (`oidc_azure`, `oidc_aws`, `oidc_jfrog`, `oidc_cloudsmith`, or `oidc_gcp`), the `encrypted_value` and `key_id` fields should be omitted.
      *
      * OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
      */
@@ -10042,6 +11655,7 @@ export type RestEndpointMethods = {
     };
     /**
      * Updates a private registry configuration with an encrypted value for an organization. Encrypt your secret using [LibSodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages). For more information, see "[Encrypting secrets for the REST API](https://docs.github.com/rest/guides/encrypting-secrets-for-the-rest-api)."
+     * For OIDC-based registries (`oidc_azure`, `oidc_aws`, `oidc_jfrog`, `oidc_cloudsmith`, or `oidc_gcp`), the `encrypted_value` and `key_id` fields should be omitted.
      *
      * OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
      */
@@ -10124,6 +11738,30 @@ export type RestEndpointMethods = {
         params?: RestEndpointMethodTypes["projects"]["createDraftItemForOrg"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["projects"]["createDraftItemForOrg"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Create a new view in an organization-owned project. Views allow you to customize how items in a project are displayed and filtered.
+     */
+    createViewForOrg: {
+      (
+        params?: RestEndpointMethodTypes["projects"]["createViewForOrg"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["projects"]["createViewForOrg"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Create a new view in a user-owned project. Views allow you to customize how items in a project are displayed and filtered.
+     */
+    createViewForUser: {
+      (
+        params?: RestEndpointMethodTypes["projects"]["createViewForUser"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["projects"]["createViewForUser"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -10289,6 +11927,30 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
+     * List items in an organization project with the saved view's filter applied.
+     */
+    listViewItemsForOrg: {
+      (
+        params?: RestEndpointMethodTypes["projects"]["listViewItemsForOrg"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["projects"]["listViewItemsForOrg"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * List items in a user project with the saved view's filter applied.
+     */
+    listViewItemsForUser: {
+      (
+        params?: RestEndpointMethodTypes["projects"]["listViewItemsForUser"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["projects"]["listViewItemsForUser"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
      * Update a specific item in an organization-owned project.
      */
     updateItemForOrg: {
@@ -10308,6 +11970,76 @@ export type RestEndpointMethods = {
         params?: RestEndpointMethodTypes["projects"]["updateItemForUser"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["projects"]["updateItemForUser"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+  };
+  pullRequestStacks: {
+    /**
+     * Appends an ordered list of pull request numbers onto the top of an existing
+     * stack. Provide only the pull requests you want to add, from the current top of
+     * the stack upward. The first new pull request's base ref must match the current
+     * top pull request's head ref.
+     */
+    add: {
+      (
+        params?: RestEndpointMethodTypes["pullRequestStacks"]["add"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["pullRequestStacks"]["add"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Creates a stack from an ordered list of pull request numbers. Provide the pull
+     * request numbers from the bottom of the stack to the top. Each pull request's
+     * base ref must match the previous pull request's head ref.
+     */
+    create: {
+      (
+        params?: RestEndpointMethodTypes["pullRequestStacks"]["create"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["pullRequestStacks"]["create"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Gets a pull request stack by providing its stack number.
+     */
+    get: {
+      (
+        params?: RestEndpointMethodTypes["pullRequestStacks"]["get"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["pullRequestStacks"]["get"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Lists pull request stacks in a repository.
+     */
+    list: {
+      (
+        params?: RestEndpointMethodTypes["pullRequestStacks"]["list"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["pullRequestStacks"]["list"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Removes the unmerged pull requests from a stack. Pull requests that cannot be
+     * unstacked (for example, those that are queued for merge) are left in place. When pull requests remain in the stack, the updated
+     * stack is returned with a `200`. When no pull requests remain, the stack is
+     * dissolved and a `204` is returned.
+     */
+    unstack: {
+      (
+        params?: RestEndpointMethodTypes["pullRequestStacks"]["unstack"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["pullRequestStacks"]["unstack"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -10499,6 +12231,22 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["pulls"]["get"]["parameters"],
       ): Promise<RestEndpointMethodTypes["pulls"]["get"]["response"]>;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Fetches the current result of an asynchronous merge request, identified by the UUID that was returned when the merge was requested.
+     *
+     * While the merge is still queued, the response includes the UUID, merge method, and expected head SHA of the request. Once the merge has completed, the response reports whether it was merged, including the merge commit OID on success or a message describing why it could not be merged on failure.
+     *
+     * The result of an asynchronous merge request is retained for 24 hours after its most recent update. After this window the request expires and this endpoint returns a `404` response for its UUID.
+     */
+    getMergeAsyncResult: {
+      (
+        params?: RestEndpointMethodTypes["pulls"]["getMergeAsyncResult"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["pulls"]["getMergeAsyncResult"]["response"]
+      >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
@@ -10700,6 +12448,24 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
+     * Merges a pull request into the base branch in the background. Merging in this way allows certain types of errors to be retried, and avoids the risk of timeouts for particularly complex merges.
+     *
+     * This is the required method for merging stacked PRs, but also supports unstacked PRs. When using this endpoint to merge a stacked pull request, all pull requests in the stack up to and including the requested PR will be merged into the base branch.
+     *
+     * The response includes a UUID that can be used to fetch the result of the merge. If another asynchronous merge request has already been made for this pull request, the UUID of that request will be returned instead with a 409 response status to indicate that the merge options may be different from those that were requested. If there isn't an existing asynchronous merge request, a 202 response status is used.
+     *
+     * If the pull request is already merged, the merge commit OID will be returned immediately with a 200 status.
+     *
+     * If the pull request cannot be merged (e.g. because it is closed, or still a draft) this result will be returned immediately with a 400 response status. Branch protection rules and repository rules are not run at this stage, only basic pull request state checks are performed.
+     */
+    mergeAsync: {
+      (
+        params?: RestEndpointMethodTypes["pulls"]["mergeAsync"]["parameters"],
+      ): Promise<RestEndpointMethodTypes["pulls"]["mergeAsync"]["response"]>;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
      * Removes review requests from a pull request for a given set of users and/or teams.
      */
     removeRequestedReviewers: {
@@ -10820,7 +12586,6 @@ export type RestEndpointMethods = {
      * * The `integration_manifest` object provides your rate limit status for the `POST /app-manifests/{code}/conversions` operation. For more information, see "[Creating a GitHub App from a manifest](https://docs.github.com/apps/creating-github-apps/setting-up-a-github-app/creating-a-github-app-from-a-manifest#3-you-exchange-the-temporary-code-to-retrieve-the-app-configuration)."
      * * The `dependency_snapshots` object provides your rate limit status for submitting snapshots to the dependency graph. For more information, see "[Dependency graph](https://docs.github.com/rest/dependency-graph)."
      * * The `dependency_sbom` object provides your rate limit status for requesting SBOMs from the dependency graph. For more information, see "[Dependency graph](https://docs.github.com/rest/dependency-graph)."
-     * * The `code_scanning_upload` object provides your rate limit status for uploading SARIF results to code scanning. For more information, see "[Uploading a SARIF file to GitHub](https://docs.github.com/code-security/code-scanning/integrating-with-code-scanning/uploading-a-sarif-file-to-github)."
      * * The `actions_runner_registration` object provides your rate limit status for registering self-hosted runners in GitHub Actions. For more information, see "[Self-hosted runners](https://docs.github.com/rest/actions/self-hosted-runners)."
      * * The `source_import` object is no longer in use for any API endpoints, and it will be removed in the next API version. For more information about API versions, see "[API Versions](https://docs.github.com/rest/about-the-rest-api/api-versions)."
      *
@@ -10892,44 +12657,6 @@ export type RestEndpointMethods = {
         params?: RestEndpointMethodTypes["reactions"]["createForRelease"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["reactions"]["createForRelease"]["response"]
-      >;
-      defaults: RequestInterface["defaults"];
-      endpoint: EndpointInterface<{ url: string }>;
-    };
-    /**
-     * Create a reaction to a [team discussion comment](https://docs.github.com/rest/teams/discussion-comments#get-a-discussion-comment).
-     *
-     * A response with an HTTP `200` status means that you already added the reaction type to this team discussion comment.
-     *
-     * > [!NOTE]
-     * > You can also specify a team by `org_id` and `team_id` using the route `POST /organizations/:org_id/team/:team_id/discussions/:discussion_number/comments/:comment_number/reactions`.
-     *
-     * OAuth app tokens and personal access tokens (classic) need the `write:discussion` scope to use this endpoint.
-     */
-    createForTeamDiscussionCommentInOrg: {
-      (
-        params?: RestEndpointMethodTypes["reactions"]["createForTeamDiscussionCommentInOrg"]["parameters"],
-      ): Promise<
-        RestEndpointMethodTypes["reactions"]["createForTeamDiscussionCommentInOrg"]["response"]
-      >;
-      defaults: RequestInterface["defaults"];
-      endpoint: EndpointInterface<{ url: string }>;
-    };
-    /**
-     * Create a reaction to a [team discussion](https://docs.github.com/rest/teams/discussions#get-a-discussion).
-     *
-     * A response with an HTTP `200` status means that you already added the reaction type to this team discussion.
-     *
-     * > [!NOTE]
-     * > You can also specify a team by `org_id` and `team_id` using the route `POST /organizations/:org_id/team/:team_id/discussions/:discussion_number/reactions`.
-     *
-     * OAuth app tokens and personal access tokens (classic) need the `write:discussion` scope to use this endpoint.
-     */
-    createForTeamDiscussionInOrg: {
-      (
-        params?: RestEndpointMethodTypes["reactions"]["createForTeamDiscussionInOrg"]["parameters"],
-      ): Promise<
-        RestEndpointMethodTypes["reactions"]["createForTeamDiscussionInOrg"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -11010,40 +12737,6 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * > [!NOTE]
-     * > You can also specify a team or organization with `team_id` and `org_id` using the route `DELETE /organizations/:org_id/team/:team_id/discussions/:discussion_number/reactions/:reaction_id`.
-     *
-     * Delete a reaction to a [team discussion](https://docs.github.com/rest/teams/discussions#get-a-discussion).
-     *
-     * OAuth app tokens and personal access tokens (classic) need the `write:discussion` scope to use this endpoint.
-     */
-    deleteForTeamDiscussion: {
-      (
-        params?: RestEndpointMethodTypes["reactions"]["deleteForTeamDiscussion"]["parameters"],
-      ): Promise<
-        RestEndpointMethodTypes["reactions"]["deleteForTeamDiscussion"]["response"]
-      >;
-      defaults: RequestInterface["defaults"];
-      endpoint: EndpointInterface<{ url: string }>;
-    };
-    /**
-     * > [!NOTE]
-     * > You can also specify a team or organization with `team_id` and `org_id` using the route `DELETE /organizations/:org_id/team/:team_id/discussions/:discussion_number/comments/:comment_number/reactions/:reaction_id`.
-     *
-     * Delete a reaction to a [team discussion comment](https://docs.github.com/rest/teams/discussion-comments#get-a-discussion-comment).
-     *
-     * OAuth app tokens and personal access tokens (classic) need the `write:discussion` scope to use this endpoint.
-     */
-    deleteForTeamDiscussionComment: {
-      (
-        params?: RestEndpointMethodTypes["reactions"]["deleteForTeamDiscussionComment"]["parameters"],
-      ): Promise<
-        RestEndpointMethodTypes["reactions"]["deleteForTeamDiscussionComment"]["response"]
-      >;
-      defaults: RequestInterface["defaults"];
-      endpoint: EndpointInterface<{ url: string }>;
-    };
-    /**
      * List the reactions to a [commit comment](https://docs.github.com/rest/commits/comments#get-a-commit-comment).
      */
     listForCommitComment: {
@@ -11099,40 +12792,6 @@ export type RestEndpointMethods = {
         params?: RestEndpointMethodTypes["reactions"]["listForRelease"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["reactions"]["listForRelease"]["response"]
-      >;
-      defaults: RequestInterface["defaults"];
-      endpoint: EndpointInterface<{ url: string }>;
-    };
-    /**
-     * List the reactions to a [team discussion comment](https://docs.github.com/rest/teams/discussion-comments#get-a-discussion-comment).
-     *
-     * > [!NOTE]
-     * > You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/:org_id/team/:team_id/discussions/:discussion_number/comments/:comment_number/reactions`.
-     *
-     * OAuth app tokens and personal access tokens (classic) need the `read:discussion` scope to use this endpoint.
-     */
-    listForTeamDiscussionCommentInOrg: {
-      (
-        params?: RestEndpointMethodTypes["reactions"]["listForTeamDiscussionCommentInOrg"]["parameters"],
-      ): Promise<
-        RestEndpointMethodTypes["reactions"]["listForTeamDiscussionCommentInOrg"]["response"]
-      >;
-      defaults: RequestInterface["defaults"];
-      endpoint: EndpointInterface<{ url: string }>;
-    };
-    /**
-     * List the reactions to a [team discussion](https://docs.github.com/rest/teams/discussions#get-a-discussion).
-     *
-     * > [!NOTE]
-     * > You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/:org_id/team/:team_id/discussions/:discussion_number/reactions`.
-     *
-     * OAuth app tokens and personal access tokens (classic) need the `read:discussion` scope to use this endpoint.
-     */
-    listForTeamDiscussionInOrg: {
-      (
-        params?: RestEndpointMethodTypes["reactions"]["listForTeamDiscussionInOrg"]["parameters"],
-      ): Promise<
-        RestEndpointMethodTypes["reactions"]["listForTeamDiscussionInOrg"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -11496,6 +13155,8 @@ export type RestEndpointMethods = {
     /**
      * Create a comment for a commit using its `:commit_sha`.
      *
+     * Access to commit comments can be controlled by organization owners. For more information, see "[Managing commit comments for your organization](https://docs.github.com/organizations/managing-organization-settings/managing-commit-comments-for-your-organization)".
+     *
      * This endpoint triggers [notifications](https://docs.github.com/github/managing-subscriptions-and-notifications-on-github/about-notifications). Creating content too quickly using this endpoint may result in secondary rate limiting. For more information, see "[Rate limits for the API](https://docs.github.com/rest/using-the-rest-api/rate-limits-for-the-rest-api#about-secondary-rate-limits)" and "[Best practices for using the REST API](https://docs.github.com/rest/guides/best-practices-for-using-the-rest-api)."
      *
      * This endpoint supports the following custom media types. For more information, see "[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types)."
@@ -11800,6 +13461,11 @@ export type RestEndpointMethods = {
     };
     /**
      * Users with push access to the repository can create a release.
+     *
+     * > [!NOTE]
+     * > If the commit identified by `target_commitish` (or, when `target_commitish` is omitted, the latest commit on the default branch) adds or modifies any file under `.github/workflows/` relative to the repository's default branch, the authenticating token must be authorized to modify workflows. Otherwise, this endpoint returns `404 Not Found`; some authentication paths surface `403 Resource not accessible by integration` instead.
+     *
+     * OAuth app tokens and personal access tokens (classic) need the `workflow` scope when the resolved target commit modifies workflow files. Fine-grained access tokens and GitHub App installation tokens also need the "Workflows" repository permission (write). The `GITHUB_TOKEN` available to GitHub Actions cannot be authorized for this; for more information, see "[Automatic token authentication](https://docs.github.com/actions/security-guides/automatic-token-authentication#permissions-for-the-github_token)".
      *
      * This endpoint triggers [notifications](https://docs.github.com/github/managing-subscriptions-and-notifications-on-github/about-notifications). Creating content too quickly using this endpoint may result in secondary rate limiting. For more information, see "[Rate limits for the API](https://docs.github.com/rest/using-the-rest-api/rate-limits-for-the-rest-api#about-secondary-rate-limits)" and "[Best practices for using the REST API](https://docs.github.com/rest/guides/best-practices-for-using-the-rest-api)."
      */
@@ -12811,6 +14477,18 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
+     * Returns the hash algorithm used to store repository objects.
+     */
+    getHashAlgorithm: {
+      (
+        params?: RestEndpointMethodTypes["repos"]["getHashAlgorithm"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["repos"]["getHashAlgorithm"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
      * Gets information about the single most recent build of a GitHub Pages site.
      *
      * OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
@@ -13579,6 +15257,20 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
+     * Lists issue types available for a repository (inherited from its organization owner, with any per-repository overrides applied).
+     * OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+     * Fine-grained access tokens require the "Metadata" repository permission (read).
+     */
+    listIssueTypes: {
+      (
+        params?: RestEndpointMethodTypes["repos"]["listIssueTypes"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["repos"]["listIssueTypes"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
      * Lists languages for the specified repository. The value shown for each language is the number of bytes of code written in that language.
      */
     listLanguages: {
@@ -14097,6 +15789,11 @@ export type RestEndpointMethods = {
     };
     /**
      * Users with push access to the repository can edit a release.
+     *
+     * > [!NOTE]
+     * > If the resolved target commit (the new value of `target_commitish` if you are changing it, otherwise the existing target) adds or modifies any file under `.github/workflows/` relative to the repository's default branch, the authenticating token must be authorized to modify workflows. Otherwise, this endpoint returns `404 Not Found`; some authentication paths surface `403 Resource not accessible by integration` instead.
+     *
+     * OAuth app tokens and personal access tokens (classic) need the `workflow` scope when the resolved target commit modifies workflow files. Fine-grained access tokens and GitHub App installation tokens also need the "Workflows" repository permission (write). The `GITHUB_TOKEN` available to GitHub Actions cannot be authorized for this; for more information, see "[Automatic token authentication](https://docs.github.com/actions/security-guides/automatic-token-authentication#permissions-for-the-github_token)".
      */
     updateRelease: {
       (
@@ -14361,6 +16058,62 @@ export type RestEndpointMethods = {
   };
   secretScanning: {
     /**
+     * Bulk creates secret scanning custom patterns for an organization.
+     *
+     * Personal access tokens (classic) need the `write:org` scope to use this endpoint.
+     */
+    bulkCreateOrgCustomPatterns: {
+      (
+        params?: RestEndpointMethodTypes["secretScanning"]["bulkCreateOrgCustomPatterns"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["secretScanning"]["bulkCreateOrgCustomPatterns"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Bulk creates secret scanning custom patterns for a repository.
+     *
+     * OAuth app tokens and personal access tokens (classic) need the `repo` or `security_events` scope to use this endpoint. If this endpoint is only used with public repositories, the token can use the `public_repo` scope instead.
+     */
+    bulkCreateRepoCustomPatterns: {
+      (
+        params?: RestEndpointMethodTypes["secretScanning"]["bulkCreateRepoCustomPatterns"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["secretScanning"]["bulkCreateRepoCustomPatterns"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Bulk deletes secret scanning custom patterns for an organization.
+     *
+     * Personal access tokens (classic) need the `write:org` scope to use this endpoint.
+     */
+    bulkDeleteOrgCustomPatterns: {
+      (
+        params?: RestEndpointMethodTypes["secretScanning"]["bulkDeleteOrgCustomPatterns"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["secretScanning"]["bulkDeleteOrgCustomPatterns"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Bulk deletes secret scanning custom patterns for a repository.
+     *
+     * OAuth app tokens and personal access tokens (classic) need the `repo` or `security_events` scope to use this endpoint. If this endpoint is only used with public repositories, the token can use the `public_repo` scope instead.
+     */
+    bulkDeleteRepoCustomPatterns: {
+      (
+        params?: RestEndpointMethodTypes["secretScanning"]["bulkDeleteRepoCustomPatterns"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["secretScanning"]["bulkDeleteRepoCustomPatterns"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
      * Creates a bypass for a previously push protected secret.
      *
      * The authenticated user must be the original author of the committed secret.
@@ -14393,10 +16146,10 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Lists the latest default incremental and backfill scans by type for a repository. Scans from Copilot Secret Scanning are not included.
+     * Lists the latest default incremental and backfill scans by type for a repository.
      *
      * > [!NOTE]
-     * > This endpoint requires [GitHub Advanced Security](https://docs.github.com/get-started/learning-about-github/about-github-advanced-security)."
+     * > This endpoint requires [GitHub Advanced Security](https://docs.github.com/get-started/learning-about-github/about-github-advanced-security).
      *
      * OAuth app tokens and personal access tokens (classic) need the `repo` or `security_events` scope to use this endpoint. If this endpoint is only used with public repositories, the token can use the `public_repo` scope instead.
      */
@@ -14458,6 +16211,20 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
+     * Lists secret scanning custom patterns for an organization.
+     *
+     * Personal access tokens (classic) need the `read:org` scope to use this endpoint.
+     */
+    listOrgCustomPatterns: {
+      (
+        params?: RestEndpointMethodTypes["secretScanning"]["listOrgCustomPatterns"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["secretScanning"]["listOrgCustomPatterns"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
      * Lists the secret scanning pattern configurations for an organization.
      *
      * Personal access tokens (classic) need the `read:org` scope to use this endpoint.
@@ -14467,6 +16234,20 @@ export type RestEndpointMethods = {
         params?: RestEndpointMethodTypes["secretScanning"]["listOrgPatternConfigs"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["secretScanning"]["listOrgPatternConfigs"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Lists secret scanning custom patterns for a repository.
+     *
+     * OAuth app tokens and personal access tokens (classic) need the `repo` or `security_events` scope to use this endpoint. If this endpoint is only used with public repositories, the token can use the `public_repo` scope instead.
+     */
+    listRepoCustomPatterns: {
+      (
+        params?: RestEndpointMethodTypes["secretScanning"]["listRepoCustomPatterns"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["secretScanning"]["listRepoCustomPatterns"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -14490,6 +16271,20 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
+     * Updates a secret scanning custom pattern for an organization.
+     *
+     * Personal access tokens (classic) need the `write:org` scope to use this endpoint.
+     */
+    updateOrgCustomPattern: {
+      (
+        params?: RestEndpointMethodTypes["secretScanning"]["updateOrgCustomPattern"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["secretScanning"]["updateOrgCustomPattern"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
      * Updates the secret scanning pattern configurations for an organization.
      *
      * Personal access tokens (classic) need the `write:org` scope to use this endpoint.
@@ -14499,6 +16294,20 @@ export type RestEndpointMethods = {
         params?: RestEndpointMethodTypes["secretScanning"]["updateOrgPatternConfigs"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["secretScanning"]["updateOrgPatternConfigs"]["response"]
+      >;
+      defaults: RequestInterface["defaults"];
+      endpoint: EndpointInterface<{ url: string }>;
+    };
+    /**
+     * Updates a secret scanning custom pattern for a repository.
+     *
+     * OAuth app tokens and personal access tokens (classic) need the `repo` or `security_events` scope to use this endpoint. If this endpoint is only used with public repositories, the token can use the `public_repo` scope instead.
+     */
+    updateRepoCustomPattern: {
+      (
+        params?: RestEndpointMethodTypes["secretScanning"]["updateRepoCustomPattern"]["parameters"],
+      ): Promise<
+        RestEndpointMethodTypes["secretScanning"]["updateRepoCustomPattern"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
@@ -14738,78 +16547,6 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * Creates a new comment on a team discussion.
-     *
-     * This endpoint triggers [notifications](https://docs.github.com/github/managing-subscriptions-and-notifications-on-github/about-notifications). Creating content too quickly using this endpoint may result in secondary rate limiting. For more information, see "[Rate limits for the API](https://docs.github.com/rest/using-the-rest-api/rate-limits-for-the-rest-api#about-secondary-rate-limits)" and "[Best practices for using the REST API](https://docs.github.com/rest/guides/best-practices-for-using-the-rest-api)."
-     *
-     * > [!NOTE]
-     * > You can also specify a team by `org_id` and `team_id` using the route `POST /organizations/{org_id}/team/{team_id}/discussions/{discussion_number}/comments`.
-     *
-     * OAuth app tokens and personal access tokens (classic) need the `write:discussion` scope to use this endpoint.
-     */
-    createDiscussionCommentInOrg: {
-      (
-        params?: RestEndpointMethodTypes["teams"]["createDiscussionCommentInOrg"]["parameters"],
-      ): Promise<
-        RestEndpointMethodTypes["teams"]["createDiscussionCommentInOrg"]["response"]
-      >;
-      defaults: RequestInterface["defaults"];
-      endpoint: EndpointInterface<{ url: string }>;
-    };
-    /**
-     * Creates a new discussion post on a team's page.
-     *
-     * This endpoint triggers [notifications](https://docs.github.com/github/managing-subscriptions-and-notifications-on-github/about-notifications). Creating content too quickly using this endpoint may result in secondary rate limiting. For more information, see "[Rate limits for the API](https://docs.github.com/rest/using-the-rest-api/rate-limits-for-the-rest-api#about-secondary-rate-limits)" and "[Best practices for using the REST API](https://docs.github.com/rest/guides/best-practices-for-using-the-rest-api)."
-     *
-     * > [!NOTE]
-     * > You can also specify a team by `org_id` and `team_id` using the route `POST /organizations/{org_id}/team/{team_id}/discussions`.
-     *
-     * OAuth app tokens and personal access tokens (classic) need the `write:discussion` scope to use this endpoint.
-     */
-    createDiscussionInOrg: {
-      (
-        params?: RestEndpointMethodTypes["teams"]["createDiscussionInOrg"]["parameters"],
-      ): Promise<
-        RestEndpointMethodTypes["teams"]["createDiscussionInOrg"]["response"]
-      >;
-      defaults: RequestInterface["defaults"];
-      endpoint: EndpointInterface<{ url: string }>;
-    };
-    /**
-     * Deletes a comment on a team discussion.
-     *
-     * > [!NOTE]
-     * > You can also specify a team by `org_id` and `team_id` using the route `DELETE /organizations/{org_id}/team/{team_id}/discussions/{discussion_number}/comments/{comment_number}`.
-     *
-     * OAuth app tokens and personal access tokens (classic) need the `write:discussion` scope to use this endpoint.
-     */
-    deleteDiscussionCommentInOrg: {
-      (
-        params?: RestEndpointMethodTypes["teams"]["deleteDiscussionCommentInOrg"]["parameters"],
-      ): Promise<
-        RestEndpointMethodTypes["teams"]["deleteDiscussionCommentInOrg"]["response"]
-      >;
-      defaults: RequestInterface["defaults"];
-      endpoint: EndpointInterface<{ url: string }>;
-    };
-    /**
-     * Delete a discussion from a team's page.
-     *
-     * > [!NOTE]
-     * > You can also specify a team by `org_id` and `team_id` using the route `DELETE /organizations/{org_id}/team/{team_id}/discussions/{discussion_number}`.
-     *
-     * OAuth app tokens and personal access tokens (classic) need the `write:discussion` scope to use this endpoint.
-     */
-    deleteDiscussionInOrg: {
-      (
-        params?: RestEndpointMethodTypes["teams"]["deleteDiscussionInOrg"]["parameters"],
-      ): Promise<
-        RestEndpointMethodTypes["teams"]["deleteDiscussionInOrg"]["response"]
-      >;
-      defaults: RequestInterface["defaults"];
-      endpoint: EndpointInterface<{ url: string }>;
-    };
-    /**
      * To delete a team, the authenticated user must be an organization owner or team maintainer.
      *
      * If you are an organization owner, deleting a parent team will delete all of its child teams as well.
@@ -14834,40 +16571,6 @@ export type RestEndpointMethods = {
       (
         params?: RestEndpointMethodTypes["teams"]["getByName"]["parameters"],
       ): Promise<RestEndpointMethodTypes["teams"]["getByName"]["response"]>;
-      defaults: RequestInterface["defaults"];
-      endpoint: EndpointInterface<{ url: string }>;
-    };
-    /**
-     * Get a specific comment on a team discussion.
-     *
-     * > [!NOTE]
-     * > You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/{org_id}/team/{team_id}/discussions/{discussion_number}/comments/{comment_number}`.
-     *
-     * OAuth app tokens and personal access tokens (classic) need the `read:discussion` scope to use this endpoint.
-     */
-    getDiscussionCommentInOrg: {
-      (
-        params?: RestEndpointMethodTypes["teams"]["getDiscussionCommentInOrg"]["parameters"],
-      ): Promise<
-        RestEndpointMethodTypes["teams"]["getDiscussionCommentInOrg"]["response"]
-      >;
-      defaults: RequestInterface["defaults"];
-      endpoint: EndpointInterface<{ url: string }>;
-    };
-    /**
-     * Get a specific discussion on a team's page.
-     *
-     * > [!NOTE]
-     * > You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/{org_id}/team/{team_id}/discussions/{discussion_number}`.
-     *
-     * OAuth app tokens and personal access tokens (classic) need the `read:discussion` scope to use this endpoint.
-     */
-    getDiscussionInOrg: {
-      (
-        params?: RestEndpointMethodTypes["teams"]["getDiscussionInOrg"]["parameters"],
-      ): Promise<
-        RestEndpointMethodTypes["teams"]["getDiscussionInOrg"]["response"]
-      >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;
     };
@@ -14919,40 +16622,6 @@ export type RestEndpointMethods = {
       endpoint: EndpointInterface<{ url: string }>;
     };
     /**
-     * List all comments on a team discussion.
-     *
-     * > [!NOTE]
-     * > You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/{org_id}/team/{team_id}/discussions/{discussion_number}/comments`.
-     *
-     * OAuth app tokens and personal access tokens (classic) need the `read:discussion` scope to use this endpoint.
-     */
-    listDiscussionCommentsInOrg: {
-      (
-        params?: RestEndpointMethodTypes["teams"]["listDiscussionCommentsInOrg"]["parameters"],
-      ): Promise<
-        RestEndpointMethodTypes["teams"]["listDiscussionCommentsInOrg"]["response"]
-      >;
-      defaults: RequestInterface["defaults"];
-      endpoint: EndpointInterface<{ url: string }>;
-    };
-    /**
-     * List all discussions on a team's page.
-     *
-     * > [!NOTE]
-     * > You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/{org_id}/team/{team_id}/discussions`.
-     *
-     * OAuth app tokens and personal access tokens (classic) need the `read:discussion` scope to use this endpoint.
-     */
-    listDiscussionsInOrg: {
-      (
-        params?: RestEndpointMethodTypes["teams"]["listDiscussionsInOrg"]["parameters"],
-      ): Promise<
-        RestEndpointMethodTypes["teams"]["listDiscussionsInOrg"]["response"]
-      >;
-      defaults: RequestInterface["defaults"];
-      endpoint: EndpointInterface<{ url: string }>;
-    };
-    /**
      * List all of the teams across all of the organizations to which the authenticated
      * user belongs.
      *
@@ -14971,6 +16640,8 @@ export type RestEndpointMethods = {
     };
     /**
      * Team members will include the members of child teams.
+     *
+     * Each member includes their `role` on the team (`member` or `maintainer`) and an `inherited` flag indicating whether the membership is inherited from a child team (`true`) or is a direct membership (`false`). These fields let you read a member's role and direct/inherited status without additional requests.
      *
      * To list members in a team, the team must be visible to the authenticated user.
      */
@@ -15000,6 +16671,8 @@ export type RestEndpointMethods = {
     };
     /**
      * Lists a team's repositories visible to the authenticated user.
+     *
+     * OAuth app tokens and personal access tokens (classic) need the `read:org` or `repo` scope to use this endpoint.
      *
      * > [!NOTE]
      * > You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/{org_id}/team/{team_id}/repos`.
@@ -15044,40 +16717,6 @@ export type RestEndpointMethods = {
         params?: RestEndpointMethodTypes["teams"]["removeRepoInOrg"]["parameters"],
       ): Promise<
         RestEndpointMethodTypes["teams"]["removeRepoInOrg"]["response"]
-      >;
-      defaults: RequestInterface["defaults"];
-      endpoint: EndpointInterface<{ url: string }>;
-    };
-    /**
-     * Edits the body text of a discussion comment.
-     *
-     * > [!NOTE]
-     * > You can also specify a team by `org_id` and `team_id` using the route `PATCH /organizations/{org_id}/team/{team_id}/discussions/{discussion_number}/comments/{comment_number}`.
-     *
-     * OAuth app tokens and personal access tokens (classic) need the `write:discussion` scope to use this endpoint.
-     */
-    updateDiscussionCommentInOrg: {
-      (
-        params?: RestEndpointMethodTypes["teams"]["updateDiscussionCommentInOrg"]["parameters"],
-      ): Promise<
-        RestEndpointMethodTypes["teams"]["updateDiscussionCommentInOrg"]["response"]
-      >;
-      defaults: RequestInterface["defaults"];
-      endpoint: EndpointInterface<{ url: string }>;
-    };
-    /**
-     * Edits the title and body text of a discussion post. Only the parameters you provide are updated.
-     *
-     * > [!NOTE]
-     * > You can also specify a team by `org_id` and `team_id` using the route `PATCH /organizations/{org_id}/team/{team_id}/discussions/{discussion_number}`.
-     *
-     * OAuth app tokens and personal access tokens (classic) need the `write:discussion` scope to use this endpoint.
-     */
-    updateDiscussionInOrg: {
-      (
-        params?: RestEndpointMethodTypes["teams"]["updateDiscussionInOrg"]["parameters"],
-      ): Promise<
-        RestEndpointMethodTypes["teams"]["updateDiscussionInOrg"]["response"]
       >;
       defaults: RequestInterface["defaults"];
       endpoint: EndpointInterface<{ url: string }>;

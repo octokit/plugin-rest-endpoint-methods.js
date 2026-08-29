@@ -1,4 +1,5 @@
 ---
+
 name: Check team permissions for a repository
 example: octokit.rest.teams.checkPermissionsForRepoInOrg({ org, team_slug, owner, repo })
 route: GET /orgs/{org}/teams/{team_slug}/repos/{owner}/{repo}

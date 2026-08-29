@@ -1,4 +1,5 @@
 ---
+
 name: Create a remove token for an organization
 example: octokit.rest.actions.createRemoveTokenForOrg({ org })
 route: POST /orgs/{org}/actions/runners/remove-token

@@ -1,4 +1,5 @@
 ---
+
 name: Check if a user is blocked by an organization
 example: octokit.rest.orgs.checkBlockedUser({ org, username })
 route: GET /orgs/{org}/blocks/{username}

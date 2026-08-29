@@ -1,4 +1,5 @@
 ---
+
 name: Add or update team membership for a user
 example: octokit.rest.teams.addOrUpdateMembershipForUserInOrg({ org, team_slug, username })
 route: PUT /orgs/{org}/teams/{team_slug}/memberships/{username}

@@ -1,4 +1,5 @@
 ---
+
 name: Create a repository security advisory
 example: octokit.rest.securityAdvisories.createRepositoryAdvisory({ owner, repo, summary, description, vulnerabilities, vulnerabilities[].package, vulnerabilities[].package.ecosystem, credits[].login, credits[].type })
 route: POST /repos/{owner}/{repo}/security-advisories

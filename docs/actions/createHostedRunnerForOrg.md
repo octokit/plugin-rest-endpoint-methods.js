@@ -1,4 +1,5 @@
 ---
+
 name: Create a GitHub-hosted runner for an organization
 example: octokit.rest.actions.createHostedRunnerForOrg({ org, name, image, size, runner_group_id })
 route: POST /orgs/{org}/actions/hosted-runners
@@ -39,7 +40,7 @@ The organization name. The name is not case sensitive.
 </td></tr>
 <tr><td>name</td><td>yes</td><td>
 
-Name of the runner. Must be between 1 and 64 characters and may only contain upper and lowercase letters a-z, numbers 0-9, '.', '-', and '\_'.
+Name of the runner. Must be between 1 and 64 characters and may only contain upper and lowercase letters a-z, numbers 0-9, '.', '-', and '_'.
 
 </td></tr>
 <tr><td>image</td><td>yes</td><td>

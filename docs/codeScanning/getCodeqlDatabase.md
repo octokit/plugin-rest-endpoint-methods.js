@@ -1,4 +1,5 @@
 ---
+
 name: Get a CodeQL database for a repository
 example: octokit.rest.codeScanning.getCodeqlDatabase({ owner, repo, language })
 route: GET /repos/{owner}/{repo}/code-scanning/codeql/databases/{language}

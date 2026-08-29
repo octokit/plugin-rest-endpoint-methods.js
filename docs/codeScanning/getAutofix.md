@@ -1,4 +1,5 @@
 ---
+
 name: Get the status of an autofix for a code scanning alert
 example: octokit.rest.codeScanning.getAutofix({ owner, repo, alert_number })
 route: GET /repos/{owner}/{repo}/code-scanning/alerts/{alert_number}/autofix
@@ -8,7 +9,7 @@ type: API method
 
 # Get the status of an autofix for a code scanning alert
 
-Gets the status and description of an autofix for a code scanning alert.
+Gets the status and description of an autofix for a code scanning alert on the repository's default branch.
 
 OAuth app tokens and personal access tokens (classic) need the `security_events` scope to use this endpoint with private or public repositories, or the `public_repo` scope to use this endpoint with only public repositories.
 

@@ -1,4 +1,5 @@
 ---
+
 name: Delete an artifact
 example: octokit.rest.actions.deleteArtifact({ owner, repo, artifact_id })
 route: DELETE /repos/{owner}/{repo}/actions/artifacts/{artifact_id}

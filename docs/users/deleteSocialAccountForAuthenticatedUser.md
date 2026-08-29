@@ -1,4 +1,5 @@
 ---
+
 name: Delete social accounts for the authenticated user
 example: octokit.rest.users.deleteSocialAccountForAuthenticatedUser({ account_urls })
 route: DELETE /user/social_accounts

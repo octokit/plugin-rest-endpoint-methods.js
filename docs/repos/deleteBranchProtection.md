@@ -1,4 +1,5 @@
 ---
+
 name: Delete branch protection
 example: octokit.rest.repos.deleteBranchProtection({ owner, repo, branch })
 route: DELETE /repos/{owner}/{repo}/branches/{branch}/protection

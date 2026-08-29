@@ -1,4 +1,5 @@
 ---
+
 name: Revoke a list of credentials
 example: octokit.rest.credentials.revoke({ credentials })
 route: POST /credentials/revoke
@@ -12,8 +13,11 @@ Submit a list of credentials to be revoked. This endpoint is intended to revoke 
 
 This endpoint currently accepts the following credential types:
 
-- Personal access tokens (classic)
-- Fine-grained personal access tokens
+- Personal access tokens (classic) (`ghp_`)
+- Fine-grained personal access tokens (`github_pat_`)
+- OAuth app access tokens (`gho_`)
+- User-to-server tokens from GitHub Apps (`ghu_`)
+- Refresh tokens from GitHub Apps (`ghr_`)
 
 Revoked credentials may impact users on GitHub Free, Pro, & Team and GitHub Enterprise Cloud, and GitHub Enterprise Cloud with Enterprise Managed Users.
 GitHub cannot reactivate any credentials that have been revoked; new credentials will need to be generated.

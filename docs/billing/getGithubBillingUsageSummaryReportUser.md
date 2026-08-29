@@ -1,4 +1,5 @@
 ---
+
 name: Get billing usage summary for a user
 example: octokit.rest.billing.getGithubBillingUsageSummaryReportUser({ username })
 route: GET /users/{username}/settings/billing/usage/summary

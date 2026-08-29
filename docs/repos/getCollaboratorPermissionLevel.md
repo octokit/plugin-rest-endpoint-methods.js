@@ -1,4 +1,5 @@
 ---
+
 name: Get repository permissions for a user
 example: octokit.rest.repos.getCollaboratorPermissionLevel({ owner, repo, username })
 route: GET /repos/{owner}/{repo}/collaborators/{username}/permission

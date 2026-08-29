@@ -1,4 +1,5 @@
 ---
+
 name: List codespaces in a repository for the authenticated user
 example: octokit.rest.codespaces.listInRepositoryForAuthenticatedUser({ owner, repo })
 route: GET /repos/{owner}/{repo}/codespaces

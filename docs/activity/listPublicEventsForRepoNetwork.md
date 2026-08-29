@@ -1,4 +1,5 @@
 ---
+
 name: List public events for a network of repositories
 example: octokit.rest.activity.listPublicEventsForRepoNetwork({ owner, repo })
 route: GET /networks/{owner}/{repo}/events

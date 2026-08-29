@@ -1,4 +1,5 @@
 ---
+
 name: Get billing premium request usage report for an organization
 example: octokit.rest.billing.getGithubBillingPremiumRequestUsageReportOrg({ org })
 route: GET /organizations/{org}/settings/billing/premium_request/usage

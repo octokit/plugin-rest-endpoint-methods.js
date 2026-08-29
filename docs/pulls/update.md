@@ -1,4 +1,5 @@
 ---
+
 name: Update a pull request
 example: octokit.rest.pulls.update({ owner, repo, pull_number })
 route: PATCH /repos/{owner}/{repo}/pulls/{pull_number}

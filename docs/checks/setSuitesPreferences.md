@@ -1,4 +1,5 @@
 ---
+
 name: Update repository preferences for check suites
 example: octokit.rest.checks.setSuitesPreferences({ owner, repo, auto_trigger_checks[].app_id, auto_trigger_checks[].setting })
 route: PATCH /repos/{owner}/{repo}/check-suites/preferences

@@ -1,4 +1,5 @@
 ---
+
 name: Create issue type for an organization
 example: octokit.rest.orgs.createIssueType({ org, name, is_enabled })
 route: POST /orgs/{org}/issue-types

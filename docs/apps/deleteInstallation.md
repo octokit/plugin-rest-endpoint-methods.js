@@ -1,4 +1,5 @@
 ---
+
 name: Delete an installation for the authenticated app
 example: octokit.rest.apps.deleteInstallation({ installation_id })
 route: DELETE /app/installations/{installation_id}

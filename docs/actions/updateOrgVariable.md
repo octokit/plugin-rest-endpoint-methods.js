@@ -1,4 +1,5 @@
 ---
+
 name: Update an organization variable
 example: octokit.rest.actions.updateOrgVariable({ org })
 route: PATCH /orgs/{org}/actions/variables/{name}

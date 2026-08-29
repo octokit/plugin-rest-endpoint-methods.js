@@ -1,4 +1,5 @@
 ---
+
 name: List repositories a fine-grained personal access token has access to
 example: octokit.rest.orgs.listPatGrantRepositories({ org, pat_id })
 route: GET /orgs/{org}/personal-access-tokens/{pat_id}/repositories

@@ -1,4 +1,5 @@
 ---
+
 name: Update a team
 example: octokit.rest.teams.updateInOrg({ org, team_slug })
 route: PATCH /orgs/{org}/teams/{team_slug}
@@ -78,6 +79,11 @@ The notification setting the team has chosen. Editing teams without specifying t
 <tr><td>parent_team_id</td><td>no</td><td>
 
 The ID of a team to set as the parent team.
+
+</td></tr>
+<tr><td>parent_team_slug</td><td>no</td><td>
+
+The slug of a team to set as the parent team. Ignored when `parent_team_id` is also provided.
 
 </td></tr>
   </tbody>

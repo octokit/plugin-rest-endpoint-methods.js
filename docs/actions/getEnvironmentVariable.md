@@ -1,4 +1,5 @@
 ---
+
 name: Get an environment variable
 example: octokit.rest.actions.getEnvironmentVariable({ owner, repo, environment_name, name })
 route: GET /repos/{owner}/{repo}/environments/{environment_name}/variables/{name}

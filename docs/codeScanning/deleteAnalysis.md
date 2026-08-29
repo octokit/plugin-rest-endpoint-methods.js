@@ -1,4 +1,5 @@
 ---
+
 name: Delete a code scanning analysis from a repository
 example: octokit.rest.codeScanning.deleteAnalysis({ owner, repo, analysis_id })
 route: DELETE /repos/{owner}/{repo}/code-scanning/analyses/{analysis_id}{?confirm_delete}

@@ -1,4 +1,5 @@
 ---
+
 name: List teams for the authenticated user
 example: octokit.rest.teams.listForAuthenticatedUser()
 route: GET /user/teams

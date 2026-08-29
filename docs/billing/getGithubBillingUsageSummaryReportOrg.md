@@ -1,4 +1,5 @@
 ---
+
 name: Get billing usage summary for an organization
 example: octokit.rest.billing.getGithubBillingUsageSummaryReportOrg({ org })
 route: GET /organizations/{org}/settings/billing/usage/summary

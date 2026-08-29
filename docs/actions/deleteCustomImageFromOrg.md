@@ -1,4 +1,5 @@
 ---
+
 name: Delete a custom image from the organization
 example: octokit.rest.actions.deleteCustomImageFromOrg({ org, image_definition_id })
 route: DELETE /orgs/{org}/actions/hosted-runners/images/custom/{image_definition_id}

@@ -1,4 +1,5 @@
 ---
+
 name: List Dependabot alerts for an organization
 example: octokit.rest.dependabot.listAlertsForOrg({ org })
 route: GET /orgs/{org}/dependabot/alerts
@@ -34,6 +35,13 @@ octokit.rest.dependabot.listAlertsForOrg({
     <tr><td>org</td><td>yes</td><td>
 
 The organization name. The name is not case sensitive.
+
+</td></tr>
+<tr><td>classification</td><td>no</td><td>
+
+A comma-separated list of vulnerability classifications. If specified, only alerts for vulnerabilities with these classifications will be returned.
+
+Can be: `malware`, `general`
 
 </td></tr>
 <tr><td>state</td><td>no</td><td>
@@ -91,6 +99,13 @@ Filters the list of alerts based on whether the alert has the given value. If sp
 Multiple `has` filters can be passed to filter for alerts that have all of the values.
 
 </td></tr>
+<tr><td>assignee</td><td>no</td><td>
+
+Filter alerts by assignees.
+Provide a comma-separated list of user handles (e.g., `octocat` or `octocat,hubot`) to return alerts assigned to any of the specified users.
+Use `*` to list alerts with at least one assignee or `none` to list alerts with no assignees.
+
+</td></tr>
 <tr><td>runtime_risk</td><td>no</td><td>
 
 A comma-separated list of runtime risk strings. If specified, only alerts for repositories with deployment records matching these risks will be returned.
@@ -101,6 +116,14 @@ Can be: `critical-resource`, `internet-exposed`, `sensitive-data`, `lateral-move
 <tr><td>scope</td><td>no</td><td>
 
 The scope of the vulnerable dependency. If specified, only alerts with this scope will be returned.
+
+</td></tr>
+<tr><td>relationship</td><td>no</td><td>
+
+A comma-separated list of relationships of the vulnerable dependency to your project. If specified, only alerts with these relationships will be returned.
+
+> [!NOTE]
+> We are rolling out support for dependency relationship across ecosystems. This value will be "unknown" for all dependencies in unsupported ecosystems.
 
 </td></tr>
 <tr><td>sort</td><td>no</td><td>

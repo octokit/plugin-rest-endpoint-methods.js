@@ -1,4 +1,5 @@
 ---
+
 name: Merge a branch
 example: octokit.rest.repos.merge({ owner, repo, base, head })
 route: POST /repos/{owner}/{repo}/merges

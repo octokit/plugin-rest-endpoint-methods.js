@@ -1,4 +1,5 @@
 ---
+
 name: Get an issue comment
 example: octokit.rest.issues.getComment({ owner, repo, comment_id })
 route: GET /repos/{owner}/{repo}/issues/comments/{comment_id}

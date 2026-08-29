@@ -1,4 +1,5 @@
 ---
+
 name: Get organization assignment
 example: octokit.rest.enterpriseTeamOrganizations.getAssignment({ enterprise, enterprise-team, org })
 route: GET /enterprises/{enterprise}/teams/{enterprise-team}/organizations/{org}

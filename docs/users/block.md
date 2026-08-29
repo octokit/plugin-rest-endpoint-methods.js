@@ -1,4 +1,5 @@
 ---
+
 name: Block a user
 example: octokit.rest.users.block({ username })
 route: PUT /user/blocks/{username}

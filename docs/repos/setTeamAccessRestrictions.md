@@ -1,4 +1,5 @@
 ---
+
 name: Set team access restrictions
 example: octokit.rest.repos.setTeamAccessRestrictions({ owner, repo, branch, teams })
 route: PUT /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams

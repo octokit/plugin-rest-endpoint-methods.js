@@ -1,4 +1,5 @@
 ---
+
 name: Get the latest release
 example: octokit.rest.repos.getLatestRelease({ owner, repo })
 route: GET /repos/{owner}/{repo}/releases/latest

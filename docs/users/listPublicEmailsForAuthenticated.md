@@ -1,4 +1,5 @@
 ---
+
 name: List public email addresses for the authenticated user
 example: octokit.rest.users.listPublicEmailsForAuthenticated()
 route: GET /user/public_emails

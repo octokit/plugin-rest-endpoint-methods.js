@@ -1,6 +1,7 @@
 ---
+
 name: Update a repository
-example: octokit.rest.repos.update({ owner, repo })
+example: octokit.rest.repos.update({ owner, repo, security_and_analysis.secret_scanning_delegated_bypass_options.reviewers[].reviewer_id, security_and_analysis.secret_scanning_delegated_bypass_options.reviewers[].reviewer_type })
 route: PATCH /repos/{owner}/{repo}
 scope: repos
 type: API method
@@ -12,9 +13,11 @@ type: API method
 
 ```js
 octokit.rest.repos.update({
-  owner,
-  repo,
-});
+        owner,
+repo,
+security_and_analysis.secret_scanning_delegated_bypass_options.reviewers[].reviewer_id,
+security_and_analysis.secret_scanning_delegated_bypass_options.reviewers[].reviewer_type
+      })
 ```
 
 ## Parameters
@@ -140,6 +143,54 @@ Use the `status` property to enable or disable secret scanning non-provider patt
 Can be `enabled` or `disabled`.
 
 </td></tr>
+<tr><td>security_and_analysis.secret_scanning_delegated_alert_dismissal</td><td>no</td><td>
+
+Use the `status` property to enable or disable secret scanning delegated alert dismissal for this repository.
+
+</td></tr>
+<tr><td>security_and_analysis.secret_scanning_delegated_alert_dismissal.status</td><td>no</td><td>
+
+Can be `enabled` or `disabled`.
+
+</td></tr>
+<tr><td>security_and_analysis.secret_scanning_delegated_bypass</td><td>no</td><td>
+
+Use the `status` property to enable or disable secret scanning delegated bypass for this repository.
+
+</td></tr>
+<tr><td>security_and_analysis.secret_scanning_delegated_bypass.status</td><td>no</td><td>
+
+Can be `enabled` or `disabled`.
+
+</td></tr>
+<tr><td>security_and_analysis.secret_scanning_delegated_bypass_options</td><td>no</td><td>
+
+Feature options for secret scanning delegated bypass.
+This object is only honored when `security_and_analysis.secret_scanning_delegated_bypass.status` is set to `enabled`.
+You can send this object in the same request as `secret_scanning_delegated_bypass`, or update just the options in a separate request.
+
+</td></tr>
+<tr><td>security_and_analysis.secret_scanning_delegated_bypass_options.reviewers</td><td>no</td><td>
+
+The bypass reviewers for secret scanning delegated bypass.
+If you omit this field, the existing set of reviewers is unchanged.
+
+</td></tr>
+<tr><td>security_and_analysis.secret_scanning_delegated_bypass_options.reviewers[].reviewer_id</td><td>yes</td><td>
+
+The ID of the team or role selected as a bypass reviewer
+
+</td></tr>
+<tr><td>security_and_analysis.secret_scanning_delegated_bypass_options.reviewers[].reviewer_type</td><td>yes</td><td>
+
+The type of the bypass reviewer
+
+</td></tr>
+<tr><td>security_and_analysis.secret_scanning_delegated_bypass_options.reviewers[].mode</td><td>no</td><td>
+
+The bypass mode for the reviewer
+
+</td></tr>
 <tr><td>has_issues</td><td>no</td><td>
 
 Either `true` to enable issues for this repository or `false` to disable them.
@@ -153,6 +204,16 @@ Either `true` to enable projects for this repository or `false` to disable them.
 <tr><td>has_wiki</td><td>no</td><td>
 
 Either `true` to enable the wiki for this repository or `false` to disable it.
+
+</td></tr>
+<tr><td>has_pull_requests</td><td>no</td><td>
+
+Either `true` to allow pull requests for this repository or `false` to prevent pull requests.
+
+</td></tr>
+<tr><td>pull_request_creation_policy</td><td>no</td><td>
+
+The policy that controls who can create pull requests for this repository: `all` or `collaborators_only`.
 
 </td></tr>
 <tr><td>is_template</td><td>no</td><td>
@@ -197,7 +258,7 @@ Either `true` to always allow a pull request head branch that is behind its base
 </td></tr>
 <tr><td>use_squash_pr_title_as_default</td><td>no</td><td>
 
-Either `true` to allow squash-merge commits to use pull request title, or `false` to use commit message. \*\*This property is closing down. Please use `squash_merge_commit_title` instead.
+Either `true` to allow squash-merge commits to use pull request title, or `false` to use commit message. **This property is closing down. Please use `squash_merge_commit_title` instead.
 
 </td></tr>
 <tr><td>squash_merge_commit_title</td><td>no</td><td>

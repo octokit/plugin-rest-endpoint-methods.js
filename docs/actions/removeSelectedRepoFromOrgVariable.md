@@ -1,4 +1,5 @@
 ---
+
 name: Remove selected repository from an organization variable
 example: octokit.rest.actions.removeSelectedRepoFromOrgVariable({ org, name, repository_id })
 route: DELETE /orgs/{org}/actions/variables/{name}/repositories/{repository_id}

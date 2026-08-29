@@ -1,4 +1,5 @@
 ---
+
 name: Re-run a job from a workflow run
 example: octokit.rest.actions.reRunJobForWorkflowRun({ owner, repo, job_id })
 route: POST /repos/{owner}/{repo}/actions/jobs/{job_id}/rerun
@@ -49,6 +50,11 @@ The unique identifier of the job.
 <tr><td>enable_debug_logging</td><td>no</td><td>
 
 Whether to enable debug logging for the re-run.
+
+</td></tr>
+<tr><td>enable_debugger</td><td>no</td><td>
+
+Whether to enable the debugger for the re-run of this job.
 
 </td></tr>
   </tbody>

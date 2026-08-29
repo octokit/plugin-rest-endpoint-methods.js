@@ -1,4 +1,5 @@
 ---
+
 name: Get a hosted compute network settings resource for an organization
 example: octokit.rest.hostedCompute.getNetworkSettingsForOrg({ org, network_settings_id })
 route: GET /orgs/{org}/settings/network-settings/{network_settings_id}

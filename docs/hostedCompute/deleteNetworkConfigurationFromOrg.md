@@ -1,4 +1,5 @@
 ---
+
 name: Delete a hosted compute network configuration from an organization
 example: octokit.rest.hostedCompute.deleteNetworkConfigurationFromOrg({ org, network_configuration_id })
 route: DELETE /orgs/{org}/settings/network-configurations/{network_configuration_id}

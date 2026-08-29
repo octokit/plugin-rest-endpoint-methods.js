@@ -1,4 +1,5 @@
 ---
+
 name: List organization secrets
 example: octokit.rest.actions.listOrgSecrets({ org })
 route: GET /orgs/{org}/actions/secrets

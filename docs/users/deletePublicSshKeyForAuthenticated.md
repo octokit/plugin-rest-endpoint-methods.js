@@ -1,4 +1,5 @@
 ---
+
 name: Delete a public SSH key for the authenticated user
 example: octokit.rest.users.deletePublicSshKeyForAuthenticated({ key_id })
 route: DELETE /user/keys/{key_id}

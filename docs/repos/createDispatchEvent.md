@@ -1,4 +1,5 @@
 ---
+
 name: Create a repository dispatch event
 example: octokit.rest.repos.createDispatchEvent({ owner, repo, event_type })
 route: POST /repos/{owner}/{repo}/dispatches

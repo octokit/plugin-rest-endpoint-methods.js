@@ -1,4 +1,5 @@
 ---
+
 name: Get a check run
 example: octokit.rest.checks.get({ owner, repo, check_run_id })
 route: GET /repos/{owner}/{repo}/check-runs/{check_run_id}

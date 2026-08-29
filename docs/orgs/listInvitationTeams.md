@@ -1,4 +1,5 @@
 ---
+
 name: List organization invitation teams
 example: octokit.rest.orgs.listInvitationTeams({ org, invitation_id })
 route: GET /orgs/{org}/invitations/{invitation_id}/teams

@@ -1,4 +1,5 @@
 ---
+
 name: Generate release notes content for a release
 example: octokit.rest.repos.generateReleaseNotes({ owner, repo, tag_name })
 route: POST /repos/{owner}/{repo}/releases/generate-notes

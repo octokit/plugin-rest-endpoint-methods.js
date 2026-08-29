@@ -1,4 +1,5 @@
 ---
+
 name: Decline a repository invitation
 example: octokit.rest.repos.declineInvitationForAuthenticatedUser({ invitation_id })
 route: DELETE /user/repository_invitations/{invitation_id}

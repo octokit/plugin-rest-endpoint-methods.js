@@ -1,4 +1,5 @@
 ---
+
 name: Get the last year of commit activity
 example: octokit.rest.repos.getCommitActivityStats({ owner, repo })
 route: GET /repos/{owner}/{repo}/stats/commit_activity

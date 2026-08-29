@@ -1,4 +1,5 @@
 ---
+
 name: Get GitHub Actions permissions for an organization
 example: octokit.rest.actions.getGithubActionsPermissionsOrganization({ org })
 route: GET /orgs/{org}/actions/permissions

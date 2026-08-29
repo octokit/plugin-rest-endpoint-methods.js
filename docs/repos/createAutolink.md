@@ -1,4 +1,5 @@
 ---
+
 name: Create an autolink reference for a repository
 example: octokit.rest.repos.createAutolink({ owner, repo, key_prefix, url_template })
 route: POST /repos/{owner}/{repo}/autolinks

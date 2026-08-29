@@ -1,4 +1,5 @@
 ---
+
 name: Create a workflow dispatch event
 example: octokit.rest.actions.createWorkflowDispatch({ owner, repo, workflow_id, ref })
 route: POST /repos/{owner}/{repo}/actions/workflows/{workflow_id}/dispatches
@@ -56,10 +57,15 @@ The git reference for the workflow. The reference can be a branch or tag name.
 </td></tr>
 <tr><td>inputs</td><td>no</td><td>
 
-Input keys and values configured in the workflow file. The maximum number of properties is 10. Any default properties configured in the workflow file will be used when `inputs` are omitted.
+Input keys and values configured in the workflow file. The maximum number of properties is 25. Any default properties configured in the workflow file will be used when `inputs` are omitted.
 
 </td></tr>
 <tr><td>inputs.*</td><td>no</td><td>
+
+</td></tr>
+<tr><td>return_run_details</td><td>no</td><td>
+
+Whether the response should include the workflow run ID and URLs.
 
 </td></tr>
   </tbody>

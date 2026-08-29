@@ -1,4 +1,5 @@
 ---
+
 name: Restore a package version for the authenticated user
 example: octokit.rest.packages.restorePackageVersionForAuthenticatedUser({ package_type, package_name, package_version_id })
 route: POST /user/packages/{package_type}/{package_name}/versions/{package_version_id}/restore

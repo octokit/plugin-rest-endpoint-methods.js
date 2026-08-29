@@ -1,4 +1,5 @@
 ---
+
 name: Get the customization template for an OIDC subject claim for a repository
 example: octokit.rest.actions.getCustomOidcSubClaimForRepo({ owner, repo })
 route: GET /repos/{owner}/{repo}/actions/oidc/customization/sub

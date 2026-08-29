@@ -1,4 +1,5 @@
 ---
+
 name: List gists for a user
 example: octokit.rest.gists.listForUser({ username })
 route: GET /users/{username}/gists

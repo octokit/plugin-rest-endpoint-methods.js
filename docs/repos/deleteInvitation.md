@@ -1,4 +1,5 @@
 ---
+
 name: Delete a repository invitation
 example: octokit.rest.repos.deleteInvitation({ owner, repo, invitation_id })
 route: DELETE /repos/{owner}/{repo}/invitations/{invitation_id}

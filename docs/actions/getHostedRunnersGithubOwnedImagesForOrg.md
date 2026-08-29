@@ -1,4 +1,5 @@
 ---
+
 name: Get GitHub-owned images for GitHub-hosted runners in an organization
 example: octokit.rest.actions.getHostedRunnersGithubOwnedImagesForOrg({ org })
 route: GET /orgs/{org}/actions/hosted-runners/images/github-owned

@@ -1,4 +1,5 @@
 ---
+
 name: List organization fine-grained permissions for an organization
 example: octokit.rest.orgs.listOrganizationFineGrainedPermissions({ org })
 route: GET /orgs/{org}/organization-fine-grained-permissions

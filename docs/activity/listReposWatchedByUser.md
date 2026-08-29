@@ -1,4 +1,5 @@
 ---
+
 name: List repositories watched by a user
 example: octokit.rest.activity.listReposWatchedByUser({ username })
 route: GET /users/{username}/subscriptions

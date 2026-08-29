@@ -1,4 +1,5 @@
 ---
+
 name: Create an installation access token for an app
 example: octokit.rest.apps.createInstallationAccessToken({ installation_id })
 route: POST /app/installations/{installation_id}/access_tokens
@@ -9,6 +10,9 @@ type: API method
 # Create an installation access token for an app
 
 Creates an installation access token that enables a GitHub App to make authenticated API requests for the app's installation on an organization or individual account. Installation tokens expire one hour from the time you create them. Using an expired token produces a status code of `401 - Unauthorized`, and requires creating a new installation token. By default the installation token has access to all repositories that the installation can access.
+
+> [!NOTE]
+> Starting April 27, 2026, GitHub began a staged rollout of a stateless format (`ghs_APPID_JWT`) to all newly minted GitHub App installation tokens, making them more performant and improving the reliability of our API surface. If your application expects or relies on installation tokens being exactly 40 characters long, it may not handle this new token format correctly. You can now validate your apps and workflows using a temporary request header that lets you enable the token format on demand. For more information about the temporary header, see [the GitHub blog](https://github.blog/changelog/2026-05-15-github-app-installation-tokens-per-request-override-header).
 
 Optionally, you can use the `repositories` or `repository_ids` body parameters to specify individual repositories that the installation access token can access. If you don't use `repositories` or `repository_ids` to grant access to specific repositories, the installation access token will have access to all repositories that the installation was granted access to. The installation access token cannot be granted access to repositories that the installation was not granted access to. Up to 500 repositories can be listed in this manner.
 
@@ -50,7 +54,7 @@ List of repository IDs that the token should have access to
 </td></tr>
 <tr><td>permissions</td><td>no</td><td>
 
-The permissions granted to the user access token.
+The permissions granted to the fine-grained access token.
 
 </td></tr>
 <tr><td>permissions.actions</td><td>no</td><td>
@@ -76,6 +80,11 @@ The level of permission to create and retrieve the access token for repository a
 <tr><td>permissions.checks</td><td>no</td><td>
 
 The level of permission to grant the access token for checks on code.
+
+</td></tr>
+<tr><td>permissions.code_quality</td><td>no</td><td>
+
+The level of permission to grant the access token to view and manage code quality data.
 
 </td></tr>
 <tr><td>permissions.codespaces</td><td>no</td><td>
@@ -223,6 +232,11 @@ The level of permission to grant the access token for repository custom properti
 The level of permission to grant the access token for managing access to GitHub Copilot for members of an organization with a Copilot Business subscription. This property is in public preview and is subject to change.
 
 </td></tr>
+<tr><td>permissions.organization_copilot_agent_settings</td><td>no</td><td>
+
+The level of permission to grant the access token to view and manage Copilot cloud agent settings for an organization.
+
+</td></tr>
 <tr><td>permissions.organization_announcement_banners</td><td>no</td><td>
 
 The level of permission to grant the access token to view and manage announcement banners for an organization.
@@ -276,11 +290,6 @@ The level of permission to grant the access token to view and manage GitHub Acti
 <tr><td>permissions.organization_user_blocking</td><td>no</td><td>
 
 The level of permission to grant the access token to view and manage users blocked by the organization.
-
-</td></tr>
-<tr><td>permissions.team_discussions</td><td>no</td><td>
-
-The level of permission to grant the access token to manage team discussions and related comments.
 
 </td></tr>
 <tr><td>permissions.email_addresses</td><td>no</td><td>

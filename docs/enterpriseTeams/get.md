@@ -1,4 +1,5 @@
 ---
+
 name: Get an enterprise team
 example: octokit.rest.enterpriseTeams.get({ enterprise, team_slug })
 route: GET /enterprises/{enterprise}/teams/{team_slug}

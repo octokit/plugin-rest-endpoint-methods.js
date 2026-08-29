@@ -1,4 +1,5 @@
 ---
+
 name: Delete a CodeQL database
 example: octokit.rest.codeScanning.deleteCodeqlDatabase({ owner, repo, language })
 route: DELETE /repos/{owner}/{repo}/code-scanning/codeql/databases/{language}

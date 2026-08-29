@@ -1,4 +1,5 @@
 ---
+
 name: Delete an app token
 example: octokit.rest.apps.deleteToken({ client_id, access_token })
 route: DELETE /applications/{client_id}/token

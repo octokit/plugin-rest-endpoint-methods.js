@@ -1,4 +1,5 @@
 ---
+
 name: Get teams with access to the protected branch
 example: octokit.rest.repos.getTeamsWithAccessToProtectedBranch({ owner, repo, branch })
 route: GET /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams

@@ -1,4 +1,5 @@
 ---
+
 name: Delete a gist comment
 example: octokit.rest.gists.deleteComment({ gist_id, comment_id })
 route: DELETE /gists/{gist_id}/comments/{comment_id}

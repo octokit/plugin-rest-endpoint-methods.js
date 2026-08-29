@@ -1,4 +1,5 @@
 ---
+
 name: List team members
 example: octokit.rest.teams.listMembersInOrg({ org, team_slug })
 route: GET /orgs/{org}/teams/{team_slug}/members
@@ -9,6 +10,8 @@ type: API method
 # List team members
 
 Team members will include the members of child teams.
+
+Each member includes their `role` on the team (`member` or `maintainer`) and an `inherited` flag indicating whether the membership is inherited from a child team (`true`) or is a direct membership (`false`). These fields let you read a member's role and direct/inherited status without additional requests.
 
 To list members in a team, the team must be visible to the authenticated user.
 

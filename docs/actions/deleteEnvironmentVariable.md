@@ -1,4 +1,5 @@
 ---
+
 name: Delete an environment variable
 example: octokit.rest.actions.deleteEnvironmentVariable({ owner, repo, name, environment_name })
 route: DELETE /repos/{owner}/{repo}/environments/{environment_name}/variables/{name}

@@ -1,4 +1,5 @@
 ---
+
 name: Get an organization rule suite
 example: octokit.rest.repos.getOrgRuleSuite({ org, rule_suite_id })
 route: GET /orgs/{org}/rulesets/rule-suites/{rule_suite_id}

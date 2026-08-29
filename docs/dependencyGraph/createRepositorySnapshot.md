@@ -1,4 +1,5 @@
 ---
+
 name: Create a snapshot of dependencies for a repository
 example: octokit.rest.dependencyGraph.createRepositorySnapshot({ owner, repo, version, job, job.id, job.correlator, sha, ref, detector, detector.name, detector.version, detector.url, manifests.*.name, scanned })
 route: POST /repos/{owner}/{repo}/dependency-graph/snapshots
@@ -79,7 +80,7 @@ The url for the job.
 </td></tr>
 <tr><td>sha</td><td>yes</td><td>
 
-The commit SHA associated with this dependency snapshot. Maximum length: 40 characters.
+The commit SHA associated with this dependency snapshot. Maximum length: 64 characters.
 
 </td></tr>
 <tr><td>ref</td><td>yes</td><td>

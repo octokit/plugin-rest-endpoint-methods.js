@@ -1,4 +1,5 @@
 ---
+
 name: Get a thread
 example: octokit.rest.activity.getThread({ thread_id })
 route: GET /notifications/threads/{thread_id}

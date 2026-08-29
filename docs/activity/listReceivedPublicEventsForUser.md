@@ -1,4 +1,5 @@
 ---
+
 name: List public events received by a user
 example: octokit.rest.activity.listReceivedPublicEventsForUser({ username })
 route: GET /users/{username}/received_events/public

@@ -1,4 +1,5 @@
 ---
+
 name: Get an image version of a custom image for GitHub Actions Hosted Runners
 example: octokit.rest.actions.getCustomImageVersionForOrg({ org, image_definition_id, version })
 route: GET /orgs/{org}/actions/hosted-runners/images/custom/{image_definition_id}/versions/{version}

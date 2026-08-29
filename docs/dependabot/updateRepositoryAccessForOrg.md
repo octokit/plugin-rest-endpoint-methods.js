@@ -1,7 +1,8 @@
 ---
+
 name: Updates Dependabot's repository access list for an organization
 example: octokit.rest.dependabot.updateRepositoryAccessForOrg({ org })
-route: PATCH /organizations/{org}/dependabot/repository-access
+route: PATCH /orgs/{org}/dependabot/repository-access
 scope: dependabot
 type: API method
 ---

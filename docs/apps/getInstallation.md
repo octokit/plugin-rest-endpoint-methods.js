@@ -1,4 +1,5 @@
 ---
+
 name: Get an installation for the authenticated app
 example: octokit.rest.apps.getInstallation({ installation_id })
 route: GET /app/installations/{installation_id}

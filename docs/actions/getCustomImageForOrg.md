@@ -1,4 +1,5 @@
 ---
+
 name: Get a custom image definition for GitHub Actions Hosted Runners
 example: octokit.rest.actions.getCustomImageForOrg({ org, image_definition_id })
 route: GET /orgs/{org}/actions/hosted-runners/images/custom/{image_definition_id}

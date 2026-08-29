@@ -1,4 +1,5 @@
 ---
+
 name: Reprioritize sub-issue
 example: octokit.rest.issues.reprioritizeSubIssue({ owner, repo, issue_number, sub_issue_id })
 route: PATCH /repos/{owner}/{repo}/issues/{issue_number}/sub_issues/priority

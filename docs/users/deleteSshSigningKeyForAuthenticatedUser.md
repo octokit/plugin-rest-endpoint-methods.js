@@ -1,4 +1,5 @@
 ---
+
 name: Delete an SSH signing key for the authenticated user
 example: octokit.rest.users.deleteSshSigningKeyForAuthenticatedUser({ ssh_signing_key_id })
 route: DELETE /user/ssh_signing_keys/{ssh_signing_key_id}

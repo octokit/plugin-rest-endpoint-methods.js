@@ -1,4 +1,5 @@
 ---
+
 name: List repository organization variables
 example: octokit.rest.actions.listRepoOrganizationVariables({ owner, repo })
 route: GET /repos/{owner}/{repo}/actions/organization-variables

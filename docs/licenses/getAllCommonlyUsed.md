@@ -1,4 +1,5 @@
 ---
+
 name: Get all commonly used licenses
 example: octokit.rest.licenses.getAllCommonlyUsed()
 route: GET /licenses

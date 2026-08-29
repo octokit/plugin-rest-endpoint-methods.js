@@ -1,4 +1,5 @@
 ---
+
 name: Disable immutable releases
 example: octokit.rest.repos.disableImmutableReleases({ owner, repo })
 route: DELETE /repos/{owner}/{repo}/immutable-releases

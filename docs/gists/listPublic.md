@@ -1,4 +1,5 @@
 ---
+
 name: List public gists
 example: octokit.rest.gists.listPublic()
 route: GET /gists/public

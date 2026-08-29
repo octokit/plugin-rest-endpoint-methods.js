@@ -1,4 +1,5 @@
 ---
+
 name: Delete issue type for an organization
 example: octokit.rest.orgs.deleteIssueType({ org, issue_type_id })
 route: DELETE /orgs/{org}/issue-types/{issue_type_id}

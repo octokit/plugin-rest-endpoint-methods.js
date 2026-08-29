@@ -1,4 +1,5 @@
 ---
+
 name: Get a webhook configuration for an app
 example: octokit.rest.apps.getWebhookConfigForApp()
 route: GET /app/hook/config

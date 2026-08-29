@@ -1,4 +1,5 @@
 ---
+
 name: Remove status check contexts
 example: octokit.rest.repos.removeStatusCheckContexts({ owner, repo, branch, contexts })
 route: DELETE /repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks/contexts

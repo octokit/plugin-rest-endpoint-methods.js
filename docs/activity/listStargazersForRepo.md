@@ -1,4 +1,5 @@
 ---
+
 name: List stargazers
 example: octokit.rest.activity.listStargazersForRepo({ owner, repo })
 route: GET /repos/{owner}/{repo}/stargazers
