@@ -11,7 +11,7 @@
 <tbody valign=top align=left>
 <tr><th>
 Browsers
-</th><td width=100%>
+</th><td width=100%> 
 
 Load `@octokit/plugin-rest-endpoint-methods` and [`@octokit/core`](https://github.com/octokit/core.js) (or core-compatible module) directly from [esm.sh](https://esm.sh)
 
