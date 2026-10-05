@@ -1,4 +1,5 @@
 ---
+
 name: Create a CodeQL variant analysis
 example: octokit.rest.codeScanning.createVariantAnalysis({ owner, repo })
 route: POST /repos/{owner}/{repo}/code-scanning/codeql/variant-analyses

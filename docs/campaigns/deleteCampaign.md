@@ -1,4 +1,5 @@
 ---
+
 name: Delete a campaign for an organization
 example: octokit.rest.campaigns.deleteCampaign({ org, campaign_number })
 route: DELETE /orgs/{org}/campaigns/{campaign_number}

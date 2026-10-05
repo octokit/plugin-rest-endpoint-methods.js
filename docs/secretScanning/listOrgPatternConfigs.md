@@ -1,4 +1,5 @@
 ---
+
 name: List organization pattern configurations
 example: octokit.rest.secretScanning.listOrgPatternConfigs({ org })
 route: GET /orgs/{org}/secret-scanning/pattern-configurations

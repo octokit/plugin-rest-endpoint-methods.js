@@ -1,4 +1,5 @@
 ---
+
 name: Create a GPG key for the authenticated user
 example: octokit.rest.users.createGpgKeyForAuthenticated({ armored_public_key })
 route: POST /user/gpg_keys

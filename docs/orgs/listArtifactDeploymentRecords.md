@@ -1,4 +1,5 @@
 ---
+
 name: List artifact deployment records
 example: octokit.rest.orgs.listArtifactDeploymentRecords({ org, subject_digest })
 route: GET /orgs/{org}/artifacts/{subject_digest}/metadata/deployment-records

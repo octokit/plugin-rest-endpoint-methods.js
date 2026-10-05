@@ -1,4 +1,5 @@
 ---
+
 name: Delete a release reaction
 example: octokit.rest.reactions.deleteForRelease({ owner, repo, release_id, reaction_id })
 route: DELETE /repos/{owner}/{repo}/releases/{release_id}/reactions/{reaction_id}

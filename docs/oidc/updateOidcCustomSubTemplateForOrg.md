@@ -1,6 +1,7 @@
 ---
+
 name: Set the customization template for an OIDC subject claim for an organization
-example: octokit.rest.oidc.updateOidcCustomSubTemplateForOrg({ org, include_claim_keys })
+example: octokit.rest.oidc.updateOidcCustomSubTemplateForOrg({ org })
 route: PUT /orgs/{org}/actions/oidc/customization/sub
 scope: oidc
 type: API method
@@ -15,7 +16,6 @@ OAuth app tokens and personal access tokens (classic) need the `write:org` scope
 ```js
 octokit.rest.oidc.updateOidcCustomSubTemplateForOrg({
   org,
-  include_claim_keys,
 });
 ```
 
@@ -35,9 +35,14 @@ octokit.rest.oidc.updateOidcCustomSubTemplateForOrg({
 The organization name. The name is not case sensitive.
 
 </td></tr>
-<tr><td>include_claim_keys</td><td>yes</td><td>
+<tr><td>include_claim_keys</td><td>no</td><td>
 
 Array of unique strings. Each claim key can only contain alphanumeric characters and underscores.
+
+</td></tr>
+<tr><td>use_immutable_subject</td><td>no</td><td>
+
+Whether to opt in to the immutable OIDC subject claim format for the organization. When `true`, new OIDC tokens will use a stable, repository-ID-based `sub` claim instead of the name-based format.
 
 </td></tr>
   </tbody>

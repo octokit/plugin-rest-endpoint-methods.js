@@ -1,4 +1,5 @@
 ---
+
 name: Update a secret scanning alert
 example: octokit.rest.secretScanning.updateAlert({ owner, repo, alert_number })
 route: PATCH /repos/{owner}/{repo}/secret-scanning/alerts/{alert_number}
@@ -68,6 +69,11 @@ An optional comment when closing or reopening an alert. Cannot be updated or del
 <tr><td>assignee</td><td>no</td><td>
 
 The username of the user to assign to the alert. Set to `null` to unassign the alert.
+
+</td></tr>
+<tr><td>validity</td><td>no</td><td>
+
+Sets the validity of the secret scanning alert. Can be `active`, `inactive`, or `null` to clear the override.
 
 </td></tr>
   </tbody>

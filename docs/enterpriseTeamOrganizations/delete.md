@@ -1,4 +1,5 @@
 ---
+
 name: Delete an organization assignment
 example: octokit.rest.enterpriseTeamOrganizations.delete({ enterprise, enterprise-team, org })
 route: DELETE /enterprises/{enterprise}/teams/{enterprise-team}/organizations/{org}

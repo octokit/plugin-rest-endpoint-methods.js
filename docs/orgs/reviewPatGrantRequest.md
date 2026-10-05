@@ -1,4 +1,5 @@
 ---
+
 name: Review a request to access organization resources with a fine-grained personal access token
 example: octokit.rest.orgs.reviewPatGrantRequest({ org, pat_request_id, action })
 route: POST /orgs/{org}/personal-access-token-requests/{pat_request_id}

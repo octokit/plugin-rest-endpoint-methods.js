@@ -1,4 +1,5 @@
 ---
+
 name: Set selected repositories for an organization secret
 example: octokit.rest.dependabot.setSelectedReposForOrgSecret({ org, secret_name, selected_repository_ids })
 route: PUT /orgs/{org}/dependabot/secrets/{secret_name}/repositories

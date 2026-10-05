@@ -1,4 +1,5 @@
 ---
+
 name: Get a check suite
 example: octokit.rest.checks.getSuite({ owner, repo, check_suite_id })
 route: GET /repos/{owner}/{repo}/check-suites/{check_suite_id}

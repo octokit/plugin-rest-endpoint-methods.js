@@ -1,4 +1,5 @@
 ---
+
 name: Download a user migration archive
 example: octokit.rest.migrations.getArchiveForAuthenticatedUser({ migration_id })
 route: GET /user/migrations/{migration_id}/archive
@@ -12,19 +13,19 @@ Fetches the URL to download the migration archive as a `tar.gz` file. Depending 
 
 - attachments
 - bases
-- commit_comments
-- issue_comments
-- issue_events
+- commit\_comments
+- issue\_comments
+- issue\_events
 - issues
 - milestones
 - organizations
 - projects
-- protected_branches
-- pull_request_reviews
-- pull_requests
+- protected\_branches
+- pull\_request\_reviews
+- pull\_requests
 - releases
 - repositories
-- review_comments
+- review\_comments
 - schema
 - users
 

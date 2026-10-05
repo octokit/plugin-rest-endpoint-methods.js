@@ -1,4 +1,5 @@
 ---
+
 name: Get an organization variable
 example: octokit.rest.actions.getOrgVariable({ org, name })
 route: GET /orgs/{org}/actions/variables/{name}

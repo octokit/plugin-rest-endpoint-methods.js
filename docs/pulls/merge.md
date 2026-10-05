@@ -1,4 +1,5 @@
 ---
+
 name: Merge a pull request
 example: octokit.rest.pulls.merge({ owner, repo, pull_number })
 route: PUT /repos/{owner}/{repo}/pulls/{pull_number}/merge

@@ -1,4 +1,5 @@
 ---
+
 name: Remove team membership
 example: octokit.rest.enterpriseTeamMemberships.remove({ enterprise, enterprise-team, username })
 route: DELETE /enterprises/{enterprise}/teams/{enterprise-team}/memberships/{username}

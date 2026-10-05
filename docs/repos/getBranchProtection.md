@@ -1,4 +1,5 @@
 ---
+
 name: Get branch protection
 example: octokit.rest.repos.getBranchProtection({ owner, repo, branch })
 route: GET /repos/{owner}/{repo}/branches/{branch}/protection

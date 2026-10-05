@@ -1,4 +1,5 @@
 ---
+
 name: Get all autolinks of a repository
 example: octokit.rest.repos.listAutolinks({ owner, repo })
 route: GET /repos/{owner}/{repo}/autolinks

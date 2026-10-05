@@ -1,4 +1,5 @@
 ---
+
 name: List repository teams
 example: octokit.rest.repos.listTeams({ owner, repo })
 route: GET /repos/{owner}/{repo}/teams

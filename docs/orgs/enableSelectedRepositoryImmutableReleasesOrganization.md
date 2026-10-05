@@ -1,4 +1,5 @@
 ---
+
 name: Enable a selected repository for immutable releases in an organization
 example: octokit.rest.orgs.enableSelectedRepositoryImmutableReleasesOrganization({ org, repository_id })
 route: PUT /orgs/{org}/settings/immutable-releases/repositories/{repository_id}

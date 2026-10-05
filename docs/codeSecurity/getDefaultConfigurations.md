@@ -1,4 +1,5 @@
 ---
+
 name: Get default code security configurations
 example: octokit.rest.codeSecurity.getDefaultConfigurations({ org })
 route: GET /orgs/{org}/code-security/configurations/defaults

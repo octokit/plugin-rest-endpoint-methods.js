@@ -1,4 +1,5 @@
 ---
+
 name: Remove a custom property for an organization
 example: octokit.rest.orgs.customPropertiesForReposDeleteOrganizationDefinition({ org, custom_property_name })
 route: DELETE /orgs/{org}/properties/schema/{custom_property_name}

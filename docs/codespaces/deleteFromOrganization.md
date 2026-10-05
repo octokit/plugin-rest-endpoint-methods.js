@@ -1,4 +1,5 @@
 ---
+
 name: Delete a codespace from the organization
 example: octokit.rest.codespaces.deleteFromOrganization({ org, username, codespace_name })
 route: DELETE /orgs/{org}/members/{username}/codespaces/{codespace_name}

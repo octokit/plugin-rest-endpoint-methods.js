@@ -1,4 +1,5 @@
 ---
+
 name: List environment variables
 example: octokit.rest.actions.listEnvironmentVariables({ owner, repo, environment_name })
 route: GET /repos/{owner}/{repo}/environments/{environment_name}/variables

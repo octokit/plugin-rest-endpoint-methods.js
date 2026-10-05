@@ -1,4 +1,5 @@
 ---
+
 name: List followers of a user
 example: octokit.rest.users.listFollowersForUser({ username })
 route: GET /users/{username}/followers

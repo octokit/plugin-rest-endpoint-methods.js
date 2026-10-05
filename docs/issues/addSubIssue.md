@@ -1,4 +1,5 @@
 ---
+
 name: Add sub-issue
 example: octokit.rest.issues.addSubIssue({ owner, repo, issue_number, sub_issue_id })
 route: POST /repos/{owner}/{repo}/issues/{issue_number}/sub_issues

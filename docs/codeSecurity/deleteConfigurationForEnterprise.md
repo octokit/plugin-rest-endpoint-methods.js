@@ -1,4 +1,5 @@
 ---
+
 name: Delete a code security configuration for an enterprise
 example: octokit.rest.codeSecurity.deleteConfigurationForEnterprise({ enterprise, configuration_id })
 route: DELETE /enterprises/{enterprise}/code-security/configurations/{configuration_id}

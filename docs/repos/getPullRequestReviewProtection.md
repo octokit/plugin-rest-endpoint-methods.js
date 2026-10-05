@@ -1,4 +1,5 @@
 ---
+
 name: Get pull request review protection
 example: octokit.rest.repos.getPullRequestReviewProtection({ owner, repo, branch })
 route: GET /repos/{owner}/{repo}/branches/{branch}/protection/required_pull_request_reviews

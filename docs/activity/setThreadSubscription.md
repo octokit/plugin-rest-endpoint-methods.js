@@ -1,4 +1,5 @@
 ---
+
 name: Set a thread subscription
 example: octokit.rest.activity.setThreadSubscription({ thread_id })
 route: PUT /notifications/threads/{thread_id}/subscription

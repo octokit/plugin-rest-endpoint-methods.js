@@ -1,4 +1,5 @@
 ---
+
 name: Mark a thread as done
 example: octokit.rest.activity.markThreadAsDone({ thread_id })
 route: DELETE /notifications/threads/{thread_id}

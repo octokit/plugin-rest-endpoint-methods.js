@@ -1,4 +1,5 @@
 ---
+
 name: Get a user
 example: octokit.rest.users.getByUsername({ username })
 route: GET /users/{username}

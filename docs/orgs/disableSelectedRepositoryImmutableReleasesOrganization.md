@@ -1,4 +1,5 @@
 ---
+
 name: Disable a selected repository for immutable releases in an organization
 example: octokit.rest.orgs.disableSelectedRepositoryImmutableReleasesOrganization({ org, repository_id })
 route: DELETE /orgs/{org}/settings/immutable-releases/repositories/{repository_id}

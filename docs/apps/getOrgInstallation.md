@@ -1,4 +1,5 @@
 ---
+
 name: Get an organization installation for the authenticated app
 example: octokit.rest.apps.getOrgInstallation({ org })
 route: GET /orgs/{org}/installation

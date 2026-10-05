@@ -1,4 +1,5 @@
 ---
+
 name: List organization repositories
 example: octokit.rest.repos.listForOrg({ org })
 route: GET /orgs/{org}/repos

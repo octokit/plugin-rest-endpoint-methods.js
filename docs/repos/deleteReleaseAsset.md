@@ -1,4 +1,5 @@
 ---
+
 name: Delete a release asset
 example: octokit.rest.repos.deleteReleaseAsset({ owner, repo, asset_id })
 route: DELETE /repos/{owner}/{repo}/releases/assets/{asset_id}

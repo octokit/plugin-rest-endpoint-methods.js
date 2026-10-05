@@ -1,4 +1,5 @@
 ---
+
 name: Review custom deployment protection rules for a workflow run
 example: octokit.rest.actions.reviewCustomGatesForRun({ owner, repo, run_id })
 route: POST /repos/{owner}/{repo}/actions/runs/{run_id}/deployment_protection_rule

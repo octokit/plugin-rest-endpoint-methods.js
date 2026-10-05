@@ -1,4 +1,5 @@
 ---
+
 name: Create an organization invitation
 example: octokit.rest.orgs.createInvitation({ org })
 route: POST /orgs/{org}/invitations

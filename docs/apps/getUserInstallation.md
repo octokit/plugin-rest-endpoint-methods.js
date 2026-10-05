@@ -1,4 +1,5 @@
 ---
+
 name: Get a user installation for the authenticated app
 example: octokit.rest.apps.getUserInstallation({ username })
 route: GET /users/{username}/installation

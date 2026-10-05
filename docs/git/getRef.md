@@ -1,4 +1,5 @@
 ---
+
 name: Get a reference
 example: octokit.rest.git.getRef({ owner, repo, ref })
 route: GET /repos/{owner}/{repo}/git/ref/{ref}

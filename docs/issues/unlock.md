@@ -1,4 +1,5 @@
 ---
+
 name: Unlock an issue
 example: octokit.rest.issues.unlock({ owner, repo, issue_number })
 route: DELETE /repos/{owner}/{repo}/issues/{issue_number}/lock

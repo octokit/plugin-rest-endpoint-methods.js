@@ -1,4 +1,5 @@
 ---
+
 name: Stop a codespace for an organization user
 example: octokit.rest.codespaces.stopInOrganization({ org, username, codespace_name })
 route: POST /orgs/{org}/members/{username}/codespaces/{codespace_name}/stop

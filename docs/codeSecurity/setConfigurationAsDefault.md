@@ -1,4 +1,5 @@
 ---
+
 name: Set a code security configuration as a default for an organization
 example: octokit.rest.codeSecurity.setConfigurationAsDefault({ org, configuration_id })
 route: PUT /orgs/{org}/code-security/configurations/{configuration_id}/defaults

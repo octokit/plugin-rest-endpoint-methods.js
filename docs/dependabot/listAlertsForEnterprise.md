@@ -1,4 +1,5 @@
 ---
+
 name: List Dependabot alerts for an enterprise
 example: octokit.rest.dependabot.listAlertsForEnterprise({ enterprise })
 route: GET /enterprises/{enterprise}/dependabot/alerts
@@ -36,6 +37,13 @@ octokit.rest.dependabot.listAlertsForEnterprise({
     <tr><td>enterprise</td><td>yes</td><td>
 
 The slug version of the enterprise name.
+
+</td></tr>
+<tr><td>classification</td><td>no</td><td>
+
+A comma-separated list of vulnerability classifications. If specified, only alerts for vulnerabilities with these classifications will be returned.
+
+Can be: `malware`, `general`
 
 </td></tr>
 <tr><td>state</td><td>no</td><td>
@@ -81,9 +89,24 @@ Filters the list of alerts based on whether the alert has the given value. If sp
 Multiple `has` filters can be passed to filter for alerts that have all of the values. Currently, only `patch` is supported.
 
 </td></tr>
+<tr><td>assignee</td><td>no</td><td>
+
+Filter alerts by assignees.
+Provide a comma-separated list of user handles (e.g., `octocat` or `octocat,hubot`) to return alerts assigned to any of the specified users.
+Use `*` to list alerts with at least one assignee or `none` to list alerts with no assignees.
+
+</td></tr>
 <tr><td>scope</td><td>no</td><td>
 
 The scope of the vulnerable dependency. If specified, only alerts with this scope will be returned.
+
+</td></tr>
+<tr><td>relationship</td><td>no</td><td>
+
+A comma-separated list of relationships of the vulnerable dependency to your project. If specified, only alerts with these relationships will be returned.
+
+> [!NOTE]
+> We are rolling out support for dependency relationship across ecosystems. This value will be "unknown" for all dependencies in unsupported ecosystems.
 
 </td></tr>
 <tr><td>sort</td><td>no</td><td>

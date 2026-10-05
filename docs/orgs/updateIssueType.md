@@ -1,4 +1,5 @@
 ---
+
 name: Update issue type for an organization
 example: octokit.rest.orgs.updateIssueType({ org, issue_type_id, name, is_enabled })
 route: PUT /orgs/{org}/issue-types/{issue_type_id}

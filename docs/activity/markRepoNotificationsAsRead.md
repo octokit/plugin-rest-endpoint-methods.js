@@ -1,4 +1,5 @@
 ---
+
 name: Mark repository notifications as read
 example: octokit.rest.activity.markRepoNotificationsAsRead({ owner, repo })
 route: PUT /repos/{owner}/{repo}/notifications

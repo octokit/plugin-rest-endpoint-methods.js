@@ -1,4 +1,5 @@
 ---
+
 name: List CODEOWNERS errors
 example: octokit.rest.repos.codeownersErrors({ owner, repo })
 route: GET /repos/{owner}/{repo}/codeowners/errors

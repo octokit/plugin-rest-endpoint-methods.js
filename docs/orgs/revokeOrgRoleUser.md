@@ -1,4 +1,5 @@
 ---
+
 name: Remove an organization role from a user
 example: octokit.rest.orgs.revokeOrgRoleUser({ org, username, role_id })
 route: DELETE /orgs/{org}/organization-roles/users/{username}/{role_id}

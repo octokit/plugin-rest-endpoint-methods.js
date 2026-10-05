@@ -1,4 +1,5 @@
 ---
+
 name: Get an issue event
 example: octokit.rest.issues.getEvent({ owner, repo, event_id })
 route: GET /repos/{owner}/{repo}/issues/events/{event_id}

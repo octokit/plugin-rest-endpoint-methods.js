@@ -1,4 +1,5 @@
 ---
+
 name: List the people the authenticated user follows
 example: octokit.rest.users.listFollowedByAuthenticatedUser()
 route: GET /user/following

@@ -1,4 +1,5 @@
 ---
+
 name: List code scanning alerts for an organization
 example: octokit.rest.codeScanning.listAlertsForOrg({ org })
 route: GET /orgs/{org}/code-scanning/alerts
@@ -84,6 +85,12 @@ The property by which to sort the results.
 <tr><td>severity</td><td>no</td><td>
 
 If specified, only code scanning alerts with this severity will be returned.
+
+</td></tr>
+<tr><td>assignees</td><td>no</td><td>
+
+Filter alerts by assignees. Provide a comma-separated list of user handles (e.g., `octocat` or `octocat,hubot`).
+Use `*` to list alerts with at least one assignee or `none` to list alerts with no assignees.
 
 </td></tr>
   </tbody>

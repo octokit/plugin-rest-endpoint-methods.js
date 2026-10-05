@@ -1,4 +1,5 @@
 ---
+
 name: Get a repository variable
 example: octokit.rest.actions.getRepoVariable({ owner, repo, name })
 route: GET /repos/{owner}/{repo}/actions/variables/{name}

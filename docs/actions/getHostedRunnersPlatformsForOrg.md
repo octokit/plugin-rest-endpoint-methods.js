@@ -1,4 +1,5 @@
 ---
+
 name: Get platforms for GitHub-hosted runners in an organization
 example: octokit.rest.actions.getHostedRunnersPlatformsForOrg({ org })
 route: GET /orgs/{org}/actions/hosted-runners/platforms

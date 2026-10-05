@@ -1,4 +1,5 @@
 ---
+
 name: Get default code security configurations for an enterprise
 example: octokit.rest.codeSecurity.getDefaultConfigurationsForEnterprise({ enterprise })
 route: GET /enterprises/{enterprise}/code-security/configurations/defaults

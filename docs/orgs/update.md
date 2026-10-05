@@ -1,4 +1,5 @@
 ---
+
 name: Update an organization
 example: octokit.rest.orgs.update({ org })
 route: PATCH /orgs/{org}

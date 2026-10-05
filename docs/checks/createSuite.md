@@ -1,4 +1,5 @@
 ---
+
 name: Create a check suite
 example: octokit.rest.checks.createSuite({ owner, repo, head_sha })
 route: POST /repos/{owner}/{repo}/check-suites

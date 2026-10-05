@@ -1,4 +1,5 @@
 ---
+
 name: Delete a GitHub Actions cache for a repository (using a cache ID)
 example: octokit.rest.actions.deleteActionsCacheById({ owner, repo, cache_id })
 route: DELETE /repos/{owner}/{repo}/actions/caches/{cache_id}

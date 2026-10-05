@@ -1,4 +1,5 @@
 ---
+
 name: List GPG keys for a user
 example: octokit.rest.users.listGpgKeysForUser({ username })
 route: GET /users/{username}/gpg_keys

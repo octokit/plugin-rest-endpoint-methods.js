@@ -1,4 +1,5 @@
 ---
+
 name: Get a repository README for a directory
 example: octokit.rest.repos.getReadmeInDirectory({ owner, repo, dir })
 route: GET /repos/{owner}/{repo}/readme/{dir}

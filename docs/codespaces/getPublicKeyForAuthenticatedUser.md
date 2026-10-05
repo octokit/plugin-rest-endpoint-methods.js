@@ -1,4 +1,5 @@
 ---
+
 name: Get public key for the authenticated user
 example: octokit.rest.codespaces.getPublicKeyForAuthenticatedUser()
 route: GET /user/codespaces/secrets/public-key

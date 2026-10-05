@@ -1,6 +1,7 @@
 ---
+
 name: Update a repository ruleset
-example: octokit.rest.repos.updateRepoRuleset({ owner, repo, ruleset_id, bypass_actors[].actor_type, rules[].type, rules[].parameters.update_allows_fetch_and_merge, rules[].parameters.check_response_timeout_minutes, rules[].parameters.grouping_strategy, rules[].parameters.max_entries_to_build, rules[].parameters.max_entries_to_merge, rules[].parameters.merge_method, rules[].parameters.min_entries_to_merge, rules[].parameters.min_entries_to_merge_wait_minutes, rules[].parameters.required_deployment_environments, rules[].parameters.dismiss_stale_reviews_on_push, rules[].parameters.require_code_owner_review, rules[].parameters.require_last_push_approval, rules[].parameters.required_approving_review_count, rules[].parameters.required_review_thread_resolution, rules[].parameters.required_reviewers[].file_patterns, rules[].parameters.required_reviewers[].minimum_approvals, rules[].parameters.required_reviewers[].reviewer, rules[].parameters.required_reviewers[].reviewer.id, rules[].parameters.required_reviewers[].reviewer.type, rules[].parameters.required_status_checks, rules[].parameters.required_status_checks[].context, rules[].parameters.strict_required_status_checks_policy, rules[].parameters.operator, rules[].parameters.pattern, rules[].parameters.restricted_file_paths, rules[].parameters.max_file_path_length, rules[].parameters.restricted_file_extensions, rules[].parameters.max_file_size, rules[].parameters.workflows, rules[].parameters.workflows[].path, rules[].parameters.workflows[].repository_id, rules[].parameters.code_scanning_tools, rules[].parameters.code_scanning_tools[].alerts_threshold, rules[].parameters.code_scanning_tools[].security_alerts_threshold, rules[].parameters.code_scanning_tools[].tool })
+example: octokit.rest.repos.updateRepoRuleset({ owner, repo, ruleset_id, bypass_actors[].actor_type, rules[].type, rules[].parameters.update_allows_fetch_and_merge, rules[].parameters.check_response_timeout_minutes, rules[].parameters.grouping_strategy, rules[].parameters.max_entries_to_build, rules[].parameters.max_entries_to_merge, rules[].parameters.merge_method, rules[].parameters.min_entries_to_merge, rules[].parameters.min_entries_to_merge_wait_minutes, rules[].parameters.required_deployment_environments, rules[].parameters.dismiss_stale_reviews_on_push, rules[].parameters.dismissal_restriction.allowed_actors[].id, rules[].parameters.dismissal_restriction.allowed_actors[].type, rules[].parameters.dismissal_restriction.enabled, rules[].parameters.require_code_owner_review, rules[].parameters.require_last_push_approval, rules[].parameters.required_approving_review_count, rules[].parameters.required_review_thread_resolution, rules[].parameters.required_reviewers[].file_patterns, rules[].parameters.required_reviewers[].minimum_approvals, rules[].parameters.required_reviewers[].reviewer, rules[].parameters.required_reviewers[].reviewer.id, rules[].parameters.required_reviewers[].reviewer.type, rules[].parameters.required_status_checks, rules[].parameters.required_status_checks[].context, rules[].parameters.strict_required_status_checks_policy, rules[].parameters.operator, rules[].parameters.pattern, rules[].parameters.workflows, rules[].parameters.workflows[].path, rules[].parameters.workflows[].repository_id, rules[].parameters.code_scanning_tools, rules[].parameters.code_scanning_tools[].alerts_threshold, rules[].parameters.code_scanning_tools[].security_alerts_threshold, rules[].parameters.code_scanning_tools[].tool, rules[].parameters.restricted_file_paths, rules[].parameters.max_file_path_length, rules[].parameters.restricted_file_extensions, rules[].parameters.max_file_size })
 route: PUT /repos/{owner}/{repo}/rulesets/{ruleset_id}
 scope: repos
 type: API method
@@ -27,6 +28,9 @@ rules[].parameters.min_entries_to_merge,
 rules[].parameters.min_entries_to_merge_wait_minutes,
 rules[].parameters.required_deployment_environments,
 rules[].parameters.dismiss_stale_reviews_on_push,
+rules[].parameters.dismissal_restriction.allowed_actors[].id,
+rules[].parameters.dismissal_restriction.allowed_actors[].type,
+rules[].parameters.dismissal_restriction.enabled,
 rules[].parameters.require_code_owner_review,
 rules[].parameters.require_last_push_approval,
 rules[].parameters.required_approving_review_count,
@@ -41,17 +45,17 @@ rules[].parameters.required_status_checks[].context,
 rules[].parameters.strict_required_status_checks_policy,
 rules[].parameters.operator,
 rules[].parameters.pattern,
-rules[].parameters.restricted_file_paths,
-rules[].parameters.max_file_path_length,
-rules[].parameters.restricted_file_extensions,
-rules[].parameters.max_file_size,
 rules[].parameters.workflows,
 rules[].parameters.workflows[].path,
 rules[].parameters.workflows[].repository_id,
 rules[].parameters.code_scanning_tools,
 rules[].parameters.code_scanning_tools[].alerts_threshold,
 rules[].parameters.code_scanning_tools[].security_alerts_threshold,
-rules[].parameters.code_scanning_tools[].tool
+rules[].parameters.code_scanning_tools[].tool,
+rules[].parameters.restricted_file_paths,
+rules[].parameters.max_file_path_length,
+rules[].parameters.restricted_file_extensions,
+rules[].parameters.max_file_size
       })
 ```
 
@@ -103,7 +107,7 @@ The actors that can bypass the rules in this ruleset
 </td></tr>
 <tr><td>bypass_actors[].actor_id</td><td>no</td><td>
 
-The ID of the actor that can bypass a ruleset. Required for `Integration`, `RepositoryRole`, and `Team` actor types. If `actor_type` is `OrganizationAdmin`, this should be `1`. If `actor_type` is `DeployKey`, this should be null. `OrganizationAdmin` is not applicable for personal repositories.
+The ID of the actor that can bypass a ruleset. Required for `Integration`, `RepositoryRole`, `Team`, and `User` actor types. If `actor_type` is `OrganizationAdmin`, `actor_id` is ignored. If `actor_type` is `DeployKey`, this should be null. `OrganizationAdmin` is not applicable for personal repositories.
 
 </td></tr>
 <tr><td>bypass_actors[].actor_type</td><td>yes</td><td>
@@ -200,6 +204,31 @@ Array of allowed merge methods. Allowed values include `merge`, `squash`, and `r
 New, reviewable commits pushed will dismiss previous pull request review approvals.
 
 </td></tr>
+<tr><td>rules[].parameters.dismissal_restriction</td><td>no</td><td>
+
+Specify people, teams, or apps allowed to dismiss pull request reviews.
+
+</td></tr>
+<tr><td>rules[].parameters.dismissal_restriction.allowed_actors</td><td>no</td><td>
+
+Specify people, teams, or apps allowed to dismiss pull request reviews.
+
+</td></tr>
+<tr><td>rules[].parameters.dismissal_restriction.allowed_actors[].id</td><td>yes</td><td>
+
+ID of the actor that can dismiss reviews.
+
+</td></tr>
+<tr><td>rules[].parameters.dismissal_restriction.allowed_actors[].type</td><td>yes</td><td>
+
+The type of the actor
+
+</td></tr>
+<tr><td>rules[].parameters.dismissal_restriction.enabled</td><td>yes</td><td>
+
+Whether to restrict review dismissal to specific actors.
+
+</td></tr>
 <tr><td>rules[].parameters.require_code_owner_review</td><td>yes</td><td>
 
 Require an approving review in pull requests that modify files that have a designated code owner.
@@ -280,7 +309,7 @@ Whether pull requests targeting a matching branch must be tested with the latest
 </td></tr>
 <tr><td>rules[].parameters.name</td><td>no</td><td>
 
-How this rule will appear to users.
+How this rule appears when configuring it.
 
 </td></tr>
 <tr><td>rules[].parameters.negate</td><td>no</td><td>
@@ -296,26 +325,6 @@ The operator to use for matching.
 <tr><td>rules[].parameters.pattern</td><td>yes</td><td>
 
 The pattern to match with.
-
-</td></tr>
-<tr><td>rules[].parameters.restricted_file_paths</td><td>yes</td><td>
-
-The file paths that are restricted from being pushed to the commit graph.
-
-</td></tr>
-<tr><td>rules[].parameters.max_file_path_length</td><td>yes</td><td>
-
-The maximum amount of characters allowed in file paths.
-
-</td></tr>
-<tr><td>rules[].parameters.restricted_file_extensions</td><td>yes</td><td>
-
-The file extensions that are restricted from being pushed to the commit graph.
-
-</td></tr>
-<tr><td>rules[].parameters.max_file_size</td><td>yes</td><td>
-
-The maximum file size allowed in megabytes. This limit does not apply to Git Large File Storage (Git LFS).
 
 </td></tr>
 <tr><td>rules[].parameters.workflows</td><td>yes</td><td>
@@ -371,6 +380,26 @@ Copilot automatically reviews draft pull requests before they are marked as read
 <tr><td>rules[].parameters.review_on_push</td><td>no</td><td>
 
 Copilot automatically reviews each new push to the pull request.
+
+</td></tr>
+<tr><td>rules[].parameters.restricted_file_paths</td><td>yes</td><td>
+
+The file paths that are restricted from being pushed to the commit graph.
+
+</td></tr>
+<tr><td>rules[].parameters.max_file_path_length</td><td>yes</td><td>
+
+The maximum amount of characters allowed in file paths.
+
+</td></tr>
+<tr><td>rules[].parameters.restricted_file_extensions</td><td>yes</td><td>
+
+The file extensions that are restricted from being pushed to the commit graph.
+
+</td></tr>
+<tr><td>rules[].parameters.max_file_size</td><td>yes</td><td>
+
+The maximum file size allowed in megabytes. This limit does not apply to Git Large File Storage (Git LFS).
 
 </td></tr>
   </tbody>

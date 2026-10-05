@@ -1,4 +1,5 @@
 ---
+
 name: Mark a thread as read
 example: octokit.rest.activity.markThreadAsRead({ thread_id })
 route: PATCH /notifications/threads/{thread_id}

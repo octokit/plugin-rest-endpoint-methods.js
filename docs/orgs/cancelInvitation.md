@@ -1,4 +1,5 @@
 ---
+
 name: Cancel an organization invitation
 example: octokit.rest.orgs.cancelInvitation({ org, invitation_id })
 route: DELETE /orgs/{org}/invitations/{invitation_id}

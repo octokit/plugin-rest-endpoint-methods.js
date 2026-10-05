@@ -1,4 +1,5 @@
 ---
+
 name: Get organization ruleset history
 example: octokit.rest.orgs.getOrgRulesetHistory({ org, ruleset_id })
 route: GET /orgs/{org}/rulesets/{ruleset_id}/history

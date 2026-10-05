@@ -1,4 +1,5 @@
 ---
+
 name: Unblock a user
 example: octokit.rest.users.unblock({ username })
 route: DELETE /user/blocks/{username}

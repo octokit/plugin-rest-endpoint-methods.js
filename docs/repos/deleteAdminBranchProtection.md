@@ -1,4 +1,5 @@
 ---
+
 name: Delete admin branch protection
 example: octokit.rest.repos.deleteAdminBranchProtection({ owner, repo, branch })
 route: DELETE /repos/{owner}/{repo}/branches/{branch}/protection/enforce_admins

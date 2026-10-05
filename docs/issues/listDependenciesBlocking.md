@@ -1,4 +1,5 @@
 ---
+
 name: List dependencies an issue is blocking
 example: octokit.rest.issues.listDependenciesBlocking({ owner, repo, issue_number })
 route: GET /repos/{owner}/{repo}/issues/{issue_number}/dependencies/blocking

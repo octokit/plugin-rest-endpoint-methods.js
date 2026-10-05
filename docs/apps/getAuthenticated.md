@@ -1,4 +1,5 @@
 ---
+
 name: Get the authenticated app
 example: octokit.rest.apps.getAuthenticated()
 route: GET /app

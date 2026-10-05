@@ -1,4 +1,5 @@
 ---
+
 name: Remove outside collaborator from an organization
 example: octokit.rest.orgs.removeOutsideCollaborator({ org, username })
 route: DELETE /orgs/{org}/outside_collaborators/{username}

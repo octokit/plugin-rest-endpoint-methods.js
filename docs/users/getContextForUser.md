@@ -1,4 +1,5 @@
 ---
+
 name: Get contextual information for a user
 example: octokit.rest.users.getContextForUser({ username })
 route: GET /users/{username}/hovercard

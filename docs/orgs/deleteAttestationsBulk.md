@@ -1,4 +1,5 @@
 ---
+
 name: Delete attestations in bulk
 example: octokit.rest.orgs.deleteAttestationsBulk({ org, subject_digests, attestation_ids })
 route: POST /orgs/{org}/attestations/delete-request

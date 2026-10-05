@@ -1,4 +1,5 @@
 ---
+
 name: Get the Zen of GitHub
 example: octokit.rest.meta.getZen()
 route: GET /zen

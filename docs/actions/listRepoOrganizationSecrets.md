@@ -1,4 +1,5 @@
 ---
+
 name: List repository organization secrets
 example: octokit.rest.actions.listRepoOrganizationSecrets({ owner, repo })
 route: GET /repos/{owner}/{repo}/actions/organization-secrets

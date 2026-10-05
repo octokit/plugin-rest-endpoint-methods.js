@@ -1,4 +1,5 @@
 ---
+
 name: Remove a repository from a team
 example: octokit.rest.teams.removeRepoInOrg({ org, team_slug, owner, repo })
 route: DELETE /orgs/{org}/teams/{team_slug}/repos/{owner}/{repo}

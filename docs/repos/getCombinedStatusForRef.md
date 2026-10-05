@@ -1,4 +1,5 @@
 ---
+
 name: Get the combined status for a specific reference
 example: octokit.rest.repos.getCombinedStatusForRef({ owner, repo, ref })
 route: GET /repos/{owner}/{repo}/commits/{ref}/status

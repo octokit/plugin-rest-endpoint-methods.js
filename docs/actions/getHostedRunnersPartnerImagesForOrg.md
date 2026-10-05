@@ -1,4 +1,5 @@
 ---
+
 name: Get partner images for GitHub-hosted runners in an organization
 example: octokit.rest.actions.getHostedRunnersPartnerImagesForOrg({ org })
 route: GET /orgs/{org}/actions/hosted-runners/images/partner

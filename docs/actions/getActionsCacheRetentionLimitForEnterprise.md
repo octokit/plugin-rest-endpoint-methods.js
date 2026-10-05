@@ -1,4 +1,5 @@
 ---
+
 name: Get GitHub Actions cache retention limit for an enterprise
 example: octokit.rest.actions.getActionsCacheRetentionLimitForEnterprise({ enterprise })
 route: GET /enterprises/{enterprise}/actions/cache/retention-limit

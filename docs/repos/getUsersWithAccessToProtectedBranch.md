@@ -1,4 +1,5 @@
 ---
+
 name: Get users with access to the protected branch
 example: octokit.rest.repos.getUsersWithAccessToProtectedBranch({ owner, repo, branch })
 route: GET /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users

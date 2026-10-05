@@ -1,4 +1,5 @@
 ---
+
 name: Delete commit signature protection
 example: octokit.rest.repos.deleteCommitSignatureProtection({ owner, repo, branch })
 route: DELETE /repos/{owner}/{repo}/branches/{branch}/protection/required_signatures

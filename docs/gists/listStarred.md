@@ -1,4 +1,5 @@
 ---
+
 name: List starred gists
 example: octokit.rest.gists.listStarred()
 route: GET /gists/starred

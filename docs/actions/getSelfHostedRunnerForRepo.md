@@ -1,4 +1,5 @@
 ---
+
 name: Get a self-hosted runner for a repository
 example: octokit.rest.actions.getSelfHostedRunnerForRepo({ owner, repo, runner_id })
 route: GET /repos/{owner}/{repo}/actions/runners/{runner_id}

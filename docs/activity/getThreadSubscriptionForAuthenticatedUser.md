@@ -1,4 +1,5 @@
 ---
+
 name: Get a thread subscription for the authenticated user
 example: octokit.rest.activity.getThreadSubscriptionForAuthenticatedUser({ thread_id })
 route: GET /notifications/threads/{thread_id}/subscription

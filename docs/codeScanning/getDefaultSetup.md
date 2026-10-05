@@ -1,4 +1,5 @@
 ---
+
 name: Get a code scanning default setup configuration
 example: octokit.rest.codeScanning.getDefaultSetup({ owner, repo })
 route: GET /repos/{owner}/{repo}/code-scanning/default-setup

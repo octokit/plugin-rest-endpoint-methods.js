@@ -1,4 +1,5 @@
 ---
+
 name: Reset a token
 example: octokit.rest.apps.resetToken({ client_id, access_token })
 route: PATCH /applications/{client_id}/token

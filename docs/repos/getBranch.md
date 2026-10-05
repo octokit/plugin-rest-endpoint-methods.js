@@ -1,4 +1,5 @@
 ---
+
 name: Get a branch
 example: octokit.rest.repos.getBranch({ owner, repo, branch })
 route: GET /repos/{owner}/{repo}/branches/{branch}

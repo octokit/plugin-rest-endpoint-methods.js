@@ -1,4 +1,5 @@
 ---
+
 name: Get the license for a repository
 example: octokit.rest.licenses.getForRepo({ owner, repo })
 route: GET /repos/{owner}/{repo}/license

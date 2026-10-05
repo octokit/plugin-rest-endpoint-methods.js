@@ -1,4 +1,5 @@
 ---
+
 name: Get a campaign for an organization
 example: octokit.rest.campaigns.getCampaignSummary({ org, campaign_number })
 route: GET /orgs/{org}/campaigns/{campaign_number}

@@ -1,4 +1,5 @@
 ---
+
 name: Update a repository invitation
 example: octokit.rest.repos.updateInvitation({ owner, repo, invitation_id })
 route: PATCH /repos/{owner}/{repo}/invitations/{invitation_id}

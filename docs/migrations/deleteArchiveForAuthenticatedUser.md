@@ -1,4 +1,5 @@
 ---
+
 name: Delete a user migration archive
 example: octokit.rest.migrations.deleteArchiveForAuthenticatedUser({ migration_id })
 route: DELETE /user/migrations/{migration_id}/archive

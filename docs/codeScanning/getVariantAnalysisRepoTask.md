@@ -1,4 +1,5 @@
 ---
+
 name: Get the analysis status of a repository in a CodeQL variant analysis
 example: octokit.rest.codeScanning.getVariantAnalysisRepoTask({ owner, repo, codeql_variant_analysis_id, repo_owner, repo_name })
 route: GET /repos/{owner}/{repo}/code-scanning/codeql/variant-analyses/{codeql_variant_analysis_id}/repos/{repo_owner}/{repo_name}

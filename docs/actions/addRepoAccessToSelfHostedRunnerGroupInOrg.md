@@ -1,4 +1,5 @@
 ---
+
 name: Add repository access to a self-hosted runner group in an organization
 example: octokit.rest.actions.addRepoAccessToSelfHostedRunnerGroupInOrg({ org, runner_group_id, repository_id })
 route: PUT /orgs/{org}/actions/runner-groups/{runner_group_id}/repositories/{repository_id}

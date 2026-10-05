@@ -1,4 +1,5 @@
 ---
+
 name: Get GitHub Actions permissions for a repository
 example: octokit.rest.actions.getRepoPermissions({ owner, repo })
 route: GET /repos/{owner}/{repo}/actions/permissions

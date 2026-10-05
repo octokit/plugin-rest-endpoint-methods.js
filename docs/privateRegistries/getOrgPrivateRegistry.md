@@ -1,4 +1,5 @@
 ---
+
 name: Get a private registry for an organization
 example: octokit.rest.privateRegistries.getOrgPrivateRegistry({ org, secret_name })
 route: GET /orgs/{org}/private-registries/{secret_name}

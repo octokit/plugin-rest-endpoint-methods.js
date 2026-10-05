@@ -1,4 +1,5 @@
 ---
+
 name: Unstar a gist
 example: octokit.rest.gists.unstar({ gist_id })
 route: DELETE /gists/{gist_id}/star

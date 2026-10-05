@@ -1,4 +1,5 @@
 ---
+
 name: Get the status of a GitHub Pages deployment
 example: octokit.rest.repos.getPagesDeployment({ owner, repo, pages_deployment_id })
 route: GET /repos/{owner}/{repo}/pages/deployments/{pages_deployment_id}

@@ -1,4 +1,5 @@
 ---
+
 name: Unlock a user repository
 example: octokit.rest.migrations.unlockRepoForAuthenticatedUser({ migration_id, repo_name })
 route: DELETE /user/migrations/{migration_id}/repos/{repo_name}/lock

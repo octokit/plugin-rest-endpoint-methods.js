@@ -1,4 +1,5 @@
 ---
+
 name: Get information about a SARIF upload
 example: octokit.rest.codeScanning.getSarif({ owner, repo, sarif_id })
 route: GET /repos/{owner}/{repo}/code-scanning/sarifs/{sarif_id}

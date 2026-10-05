@@ -1,4 +1,5 @@
 ---
+
 name: Get an organization public key
 example: octokit.rest.codespaces.getOrgPublicKey({ org })
 route: GET /orgs/{org}/codespaces/secrets/public-key

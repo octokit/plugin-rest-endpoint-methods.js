@@ -1,4 +1,5 @@
 ---
+
 name: Remove users from the Copilot subscription for an organization
 example: octokit.rest.copilot.cancelCopilotSeatAssignmentForUsers({ org, selected_usernames })
 route: DELETE /orgs/{org}/copilot/billing/selected_users

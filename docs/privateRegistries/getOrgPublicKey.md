@@ -1,4 +1,5 @@
 ---
+
 name: Get private registries public key for an organization
 example: octokit.rest.privateRegistries.getOrgPublicKey({ org })
 route: GET /orgs/{org}/private-registries/public-key

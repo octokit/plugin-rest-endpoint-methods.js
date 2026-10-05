@@ -1,4 +1,5 @@
 ---
+
 name: List email addresses for the authenticated user
 example: octokit.rest.users.listEmailsForAuthenticated()
 route: GET /user/emails

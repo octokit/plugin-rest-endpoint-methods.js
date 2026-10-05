@@ -1,4 +1,5 @@
 ---
+
 name: List organization events for the authenticated user
 example: octokit.rest.activity.listOrgEventsForAuthenticatedUser({ username, org })
 route: GET /users/{username}/events/orgs/{org}

@@ -1,4 +1,5 @@
 ---
+
 name: Update a code scanning alert
 example: octokit.rest.codeScanning.updateAlert({ owner, repo, alert_number })
 route: PATCH /repos/{owner}/{repo}/code-scanning/alerts/{alert_number}
@@ -63,6 +64,11 @@ The dismissal comment associated with the dismissal of the alert.
 <tr><td>create_request</td><td>no</td><td>
 
 If `true`, attempt to create an alert dismissal request.
+
+</td></tr>
+<tr><td>assignees</td><td>no</td><td>
+
+The list of users to assign to the code scanning alert. An empty array unassigns all previous assignees from the alert.
 
 </td></tr>
   </tbody>

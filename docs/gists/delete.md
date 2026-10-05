@@ -1,4 +1,5 @@
 ---
+
 name: Delete a gist
 example: octokit.rest.gists.delete({ gist_id })
 route: DELETE /gists/{gist_id}

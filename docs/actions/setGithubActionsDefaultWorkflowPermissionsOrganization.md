@@ -1,4 +1,5 @@
 ---
+
 name: Set default workflow permissions for an organization
 example: octokit.rest.actions.setGithubActionsDefaultWorkflowPermissionsOrganization({ org })
 route: PUT /orgs/{org}/actions/permissions/workflow

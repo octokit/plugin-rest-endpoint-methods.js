@@ -1,4 +1,5 @@
 ---
+
 name: Check if a user can be assigned to a issue
 example: octokit.rest.issues.checkUserCanBeAssignedToIssue({ owner, repo, issue_number, assignee })
 route: GET /repos/{owner}/{repo}/issues/{issue_number}/assignees/{assignee}

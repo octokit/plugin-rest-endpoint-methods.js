@@ -1,4 +1,5 @@
 ---
+
 name: List check run annotations
 example: octokit.rest.checks.listAnnotations({ owner, repo, check_run_id })
 route: GET /repos/{owner}/{repo}/check-runs/{check_run_id}/annotations

@@ -1,4 +1,5 @@
 ---
+
 name: Get team membership for a user
 example: octokit.rest.teams.getMembershipForUserInOrg({ org, team_slug, username })
 route: GET /orgs/{org}/teams/{team_slug}/memberships/{username}

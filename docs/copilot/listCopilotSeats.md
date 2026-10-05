@@ -1,4 +1,5 @@
 ---
+
 name: List all Copilot seat assignments for an organization
 example: octokit.rest.copilot.listCopilotSeats({ org })
 route: GET /orgs/{org}/copilot/billing/seats

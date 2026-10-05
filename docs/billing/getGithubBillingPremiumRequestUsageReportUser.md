@@ -1,4 +1,5 @@
 ---
+
 name: Get billing premium request usage report for a user
 example: octokit.rest.billing.getGithubBillingPremiumRequestUsageReportUser({ username })
 route: GET /users/{username}/settings/billing/premium_request/usage

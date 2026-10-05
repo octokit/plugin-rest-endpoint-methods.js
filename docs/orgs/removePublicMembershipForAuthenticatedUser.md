@@ -1,4 +1,5 @@
 ---
+
 name: Remove public organization membership for the authenticated user
 example: octokit.rest.orgs.removePublicMembershipForAuthenticatedUser({ org, username })
 route: DELETE /orgs/{org}/public_members/{username}

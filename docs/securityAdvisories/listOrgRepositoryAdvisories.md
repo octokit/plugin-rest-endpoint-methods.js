@@ -1,4 +1,5 @@
 ---
+
 name: List repository security advisories for an organization
 example: octokit.rest.securityAdvisories.listOrgRepositoryAdvisories({ org })
 route: GET /orgs/{org}/security-advisories

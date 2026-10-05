@@ -1,4 +1,5 @@
 ---
+
 name: Get a repository installation for the authenticated app
 example: octokit.rest.apps.getRepoInstallation({ owner, repo })
 route: GET /repos/{owner}/{repo}/installation

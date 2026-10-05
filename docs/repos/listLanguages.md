@@ -1,4 +1,5 @@
 ---
+
 name: List repository languages
 example: octokit.rest.repos.listLanguages({ owner, repo })
 route: GET /repos/{owner}/{repo}/languages

@@ -1,4 +1,5 @@
 ---
+
 name: Upload an analysis as SARIF data
 example: octokit.rest.codeScanning.uploadSarif({ owner, repo, commit_sha, ref, sarif })
 route: POST /repos/{owner}/{repo}/code-scanning/sarifs

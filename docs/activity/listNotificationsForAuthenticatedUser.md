@@ -1,4 +1,5 @@
 ---
+
 name: List notifications for the authenticated user
 example: octokit.rest.activity.listNotificationsForAuthenticatedUser()
 route: GET /notifications

@@ -1,4 +1,5 @@
 ---
+
 name: List sub-issues
 example: octokit.rest.issues.listSubIssues({ owner, repo, issue_number })
 route: GET /repos/{owner}/{repo}/issues/{issue_number}/sub_issues

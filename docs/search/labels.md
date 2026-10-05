@@ -1,4 +1,5 @@
 ---
+
 name: Search labels
 example: octokit.rest.search.labels({ repository_id, q })
 route: GET /search/labels

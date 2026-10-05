@@ -1,4 +1,5 @@
 ---
+
 name: Restore a package for the authenticated user
 example: octokit.rest.packages.restorePackageForAuthenticatedUser({ package_type, package_name })
 route: POST /user/packages/{package_type}/{package_name}/restore{?token}

@@ -1,4 +1,5 @@
 ---
+
 name: Get parent issue
 example: octokit.rest.issues.getParent({ owner, repo, issue_number })
 route: GET /repos/{owner}/{repo}/issues/{issue_number}/parent

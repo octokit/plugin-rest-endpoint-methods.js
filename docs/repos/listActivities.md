@@ -1,4 +1,5 @@
 ---
+
 name: List repository activities
 example: octokit.rest.repos.listActivities({ owner, repo })
 route: GET /repos/{owner}/{repo}/activity

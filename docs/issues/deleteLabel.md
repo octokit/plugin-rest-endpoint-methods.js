@@ -1,4 +1,5 @@
 ---
+
 name: Delete a label
 example: octokit.rest.issues.deleteLabel({ owner, repo, name })
 route: DELETE /repos/{owner}/{repo}/labels/{name}

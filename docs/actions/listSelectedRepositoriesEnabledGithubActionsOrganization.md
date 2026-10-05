@@ -1,4 +1,5 @@
 ---
+
 name: List selected repositories enabled for GitHub Actions in an organization
 example: octokit.rest.actions.listSelectedRepositoriesEnabledGithubActionsOrganization({ org })
 route: GET /orgs/{org}/actions/permissions/repositories

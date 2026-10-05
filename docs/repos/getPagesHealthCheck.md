@@ -1,4 +1,5 @@
 ---
+
 name: Get a DNS health check for GitHub Pages
 example: octokit.rest.repos.getPagesHealthCheck({ owner, repo })
 route: GET /repos/{owner}/{repo}/pages/health

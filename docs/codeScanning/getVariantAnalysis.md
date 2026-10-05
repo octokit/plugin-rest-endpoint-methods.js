@@ -1,4 +1,5 @@
 ---
+
 name: Get the summary of a CodeQL variant analysis
 example: octokit.rest.codeScanning.getVariantAnalysis({ owner, repo, codeql_variant_analysis_id })
 route: GET /repos/{owner}/{repo}/code-scanning/codeql/variant-analyses/{codeql_variant_analysis_id}

@@ -1,4 +1,5 @@
 ---
+
 name: List codespaces for the authenticated user
 example: octokit.rest.codespaces.listForAuthenticatedUser()
 route: GET /user/codespaces

@@ -1,4 +1,5 @@
 ---
+
 name: Set admin branch protection
 example: octokit.rest.repos.setAdminBranchProtection({ owner, repo, branch })
 route: POST /repos/{owner}/{repo}/branches/{branch}/protection/enforce_admins

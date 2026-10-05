@@ -1,4 +1,5 @@
 ---
+
 name: Delete a private registry for an organization
 example: octokit.rest.privateRegistries.deleteOrgPrivateRegistry({ org, secret_name })
 route: DELETE /orgs/{org}/private-registries/{secret_name}

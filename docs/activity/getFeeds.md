@@ -1,4 +1,5 @@
 ---
+
 name: Get feeds
 example: octokit.rest.activity.getFeeds()
 route: GET /feeds

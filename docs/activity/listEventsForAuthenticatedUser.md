@@ -1,4 +1,5 @@
 ---
+
 name: List events for the authenticated user
 example: octokit.rest.activity.listEventsForAuthenticatedUser({ username })
 route: GET /users/{username}/events

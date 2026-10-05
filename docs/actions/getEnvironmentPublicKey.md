@@ -1,4 +1,5 @@
 ---
+
 name: Get an environment public key
 example: octokit.rest.actions.getEnvironmentPublicKey({ owner, repo, environment_name })
 route: GET /repos/{owner}/{repo}/environments/{environment_name}/secrets/public-key

@@ -1,4 +1,5 @@
 ---
+
 name: Set allowed actions and reusable workflows for an organization
 example: octokit.rest.actions.setAllowedActionsOrganization({ org })
 route: PUT /orgs/{org}/actions/permissions/selected-actions

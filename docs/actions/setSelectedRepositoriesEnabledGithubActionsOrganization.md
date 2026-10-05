@@ -1,4 +1,5 @@
 ---
+
 name: Set selected repositories enabled for GitHub Actions in an organization
 example: octokit.rest.actions.setSelectedRepositoriesEnabledGithubActionsOrganization({ org, selected_repository_ids })
 route: PUT /orgs/{org}/actions/permissions/repositories

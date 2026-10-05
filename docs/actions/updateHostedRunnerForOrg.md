@@ -1,4 +1,5 @@
 ---
+
 name: Update a GitHub-hosted runner for an organization
 example: octokit.rest.actions.updateHostedRunnerForOrg({ org, hosted_runner_id })
 route: PATCH /orgs/{org}/actions/hosted-runners/{hosted_runner_id}
@@ -41,7 +42,7 @@ Unique identifier of the GitHub-hosted runner.
 </td></tr>
 <tr><td>name</td><td>no</td><td>
 
-Name of the runner. Must be between 1 and 64 characters and may only contain upper and lowercase letters a-z, numbers 0-9, '.', '-', and '\_'.
+Name of the runner. Must be between 1 and 64 characters and may only contain upper and lowercase letters a-z, numbers 0-9, '.', '-', and '_'.
 
 </td></tr>
 <tr><td>runner_group_id</td><td>no</td><td>
@@ -59,9 +60,29 @@ The maximum amount of runners to scale up to. Runners will not auto-scale above 
 Whether this runner should be updated with a static public IP. Note limit on account. To list limits on account, use `GET actions/hosted-runners/limits`
 
 </td></tr>
+<tr><td>size</td><td>no</td><td>
+
+The machine size of the runner. To list available sizes, use `GET actions/hosted-runners/machine-sizes`
+
+</td></tr>
+<tr><td>image_source</td><td>no</td><td>
+
+The source type of the runner image to use. Must match the source of the image specified by `image_id`. Can be one of `github`, `partner`, or `custom`.
+
+</td></tr>
+<tr><td>image_id</td><td>no</td><td>
+
+The unique identifier of the runner image. To list available images, use `GET /actions/hosted-runners/images/github-owned`, `GET /actions/hosted-runners/images/partner`, or `GET /actions/hosted-runners/images/custom`.
+
+</td></tr>
 <tr><td>image_version</td><td>no</td><td>
 
 The version of the runner image to deploy. This is relevant only for runners using custom images.
+
+</td></tr>
+<tr><td>image_gen</td><td>no</td><td>
+
+Whether to enable image generation for this runner pool. When enabled, the runner pool is used to build and publish custom runner images.
 
 </td></tr>
   </tbody>

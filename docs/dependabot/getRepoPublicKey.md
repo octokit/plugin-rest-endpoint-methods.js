@@ -1,4 +1,5 @@
 ---
+
 name: Get a repository public key
 example: octokit.rest.dependabot.getRepoPublicKey({ owner, repo })
 route: GET /repos/{owner}/{repo}/dependabot/secrets/public-key

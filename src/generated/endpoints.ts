@@ -154,6 +154,9 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
       "GET /repos/{owner}/{repo}/actions/permissions/selected-actions",
     ],
     getArtifact: ["GET /repos/{owner}/{repo}/actions/artifacts/{artifact_id}"],
+    getConcurrencyGroupForRepository: [
+      "GET /repos/{owner}/{repo}/actions/concurrency_groups/{concurrency_group_name}",
+    ],
     getCustomImageForOrg: [
       "GET /orgs/{org}/actions/hosted-runners/images/custom/{image_definition_id}",
     ],
@@ -239,6 +242,12 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
       "GET /repos/{owner}/{repo}/actions/workflows/{workflow_id}/timing",
     ],
     listArtifactsForRepo: ["GET /repos/{owner}/{repo}/actions/artifacts"],
+    listConcurrencyGroupsForRepository: [
+      "GET /repos/{owner}/{repo}/actions/concurrency_groups",
+    ],
+    listConcurrencyGroupsForWorkflowRun: [
+      "GET /repos/{owner}/{repo}/actions/runs/{run_id}/concurrency_groups",
+    ],
     listCustomImageVersionsForOrg: [
       "GET /orgs/{org}/actions/hosted-runners/images/custom/{image_definition_id}/versions",
     ],
@@ -407,6 +416,7 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     ],
     getFeeds: ["GET /feeds"],
     getRepoSubscription: ["GET /repos/{owner}/{repo}/subscription"],
+    getStargazerCountForRepo: ["GET /repos/{owner}/{repo}/stargazers/count"],
     getThread: ["GET /notifications/threads/{thread_id}"],
     getThreadSubscriptionForAuthenticatedUser: [
       "GET /notifications/threads/{thread_id}/subscription",
@@ -444,6 +454,71 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     ],
     starRepoForAuthenticatedUser: ["PUT /user/starred/{owner}/{repo}"],
     unstarRepoForAuthenticatedUser: ["DELETE /user/starred/{owner}/{repo}"],
+  },
+  agentTasks: {
+    createTaskInRepo: ["POST /agents/repos/{owner}/{repo}/tasks"],
+    getTaskById: ["GET /agents/tasks/{task_id}"],
+    getTaskByRepoAndId: ["GET /agents/repos/{owner}/{repo}/tasks/{task_id}"],
+    listTasks: ["GET /agents/tasks"],
+    listTasksForRepo: ["GET /agents/repos/{owner}/{repo}/tasks"],
+  },
+  agents: {
+    addSelectedRepoToOrgSecret: [
+      "PUT /orgs/{org}/agents/secrets/{secret_name}/repositories/{repository_id}",
+    ],
+    addSelectedRepoToOrgVariable: [
+      "PUT /orgs/{org}/agents/variables/{name}/repositories/{repository_id}",
+    ],
+    createOrUpdateOrgSecret: ["PUT /orgs/{org}/agents/secrets/{secret_name}"],
+    createOrUpdateRepoSecret: [
+      "PUT /repos/{owner}/{repo}/agents/secrets/{secret_name}",
+    ],
+    createOrgVariable: ["POST /orgs/{org}/agents/variables"],
+    createRepoVariable: ["POST /repos/{owner}/{repo}/agents/variables"],
+    deleteOrgSecret: ["DELETE /orgs/{org}/agents/secrets/{secret_name}"],
+    deleteOrgVariable: ["DELETE /orgs/{org}/agents/variables/{name}"],
+    deleteRepoSecret: [
+      "DELETE /repos/{owner}/{repo}/agents/secrets/{secret_name}",
+    ],
+    deleteRepoVariable: [
+      "DELETE /repos/{owner}/{repo}/agents/variables/{name}",
+    ],
+    getOrgPublicKey: ["GET /orgs/{org}/agents/secrets/public-key"],
+    getOrgSecret: ["GET /orgs/{org}/agents/secrets/{secret_name}"],
+    getOrgVariable: ["GET /orgs/{org}/agents/variables/{name}"],
+    getRepoPublicKey: ["GET /repos/{owner}/{repo}/agents/secrets/public-key"],
+    getRepoSecret: ["GET /repos/{owner}/{repo}/agents/secrets/{secret_name}"],
+    getRepoVariable: ["GET /repos/{owner}/{repo}/agents/variables/{name}"],
+    listOrgSecrets: ["GET /orgs/{org}/agents/secrets"],
+    listOrgVariables: ["GET /orgs/{org}/agents/variables"],
+    listRepoOrganizationSecrets: [
+      "GET /repos/{owner}/{repo}/agents/organization-secrets",
+    ],
+    listRepoOrganizationVariables: [
+      "GET /repos/{owner}/{repo}/agents/organization-variables",
+    ],
+    listRepoSecrets: ["GET /repos/{owner}/{repo}/agents/secrets"],
+    listRepoVariables: ["GET /repos/{owner}/{repo}/agents/variables"],
+    listSelectedReposForOrgSecret: [
+      "GET /orgs/{org}/agents/secrets/{secret_name}/repositories",
+    ],
+    listSelectedReposForOrgVariable: [
+      "GET /orgs/{org}/agents/variables/{name}/repositories",
+    ],
+    removeSelectedRepoFromOrgSecret: [
+      "DELETE /orgs/{org}/agents/secrets/{secret_name}/repositories/{repository_id}",
+    ],
+    removeSelectedRepoFromOrgVariable: [
+      "DELETE /orgs/{org}/agents/variables/{name}/repositories/{repository_id}",
+    ],
+    setSelectedReposForOrgSecret: [
+      "PUT /orgs/{org}/agents/secrets/{secret_name}/repositories",
+    ],
+    setSelectedReposForOrgVariable: [
+      "PUT /orgs/{org}/agents/variables/{name}/repositories",
+    ],
+    updateOrgVariable: ["PATCH /orgs/{org}/agents/variables/{name}"],
+    updateRepoVariable: ["PATCH /repos/{owner}/{repo}/agents/variables/{name}"],
   },
   apps: {
     addRepoToInstallation: [
@@ -517,12 +592,21 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     updateWebhookConfigForApp: ["PATCH /app/hook/config"],
   },
   billing: {
+    createOrganizationBudget: [
+      "POST /organizations/{org}/settings/billing/budgets",
+    ],
     deleteBudgetOrg: [
       "DELETE /organizations/{org}/settings/billing/budgets/{budget_id}",
     ],
     getAllBudgetsOrg: ["GET /organizations/{org}/settings/billing/budgets"],
     getBudgetOrg: [
       "GET /organizations/{org}/settings/billing/budgets/{budget_id}",
+    ],
+    getGithubBillingAiCreditUsageReportOrg: [
+      "GET /organizations/{org}/settings/billing/ai_credit/usage",
+    ],
+    getGithubBillingAiCreditUsageReportUser: [
+      "GET /users/{username}/settings/billing/ai_credit/usage",
     ],
     getGithubBillingPremiumRequestUsageReportOrg: [
       "GET /organizations/{org}/settings/billing/premium_request/usage",
@@ -576,6 +660,14 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
       "PATCH /repos/{owner}/{repo}/check-suites/preferences",
     ],
     update: ["PATCH /repos/{owner}/{repo}/check-runs/{check_run_id}"],
+  },
+  codeQuality: {
+    getFinding: [
+      "GET /repos/{owner}/{repo}/code-quality/findings/{finding_number}",
+    ],
+    getSetup: ["GET /repos/{owner}/{repo}/code-quality/setup"],
+    listFindingsForRepo: ["GET /repos/{owner}/{repo}/code-quality/findings"],
+    updateSetup: ["PATCH /repos/{owner}/{repo}/code-quality/setup"],
   },
   codeScanning: {
     commitAutofix: [
@@ -825,13 +917,71 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     cancelCopilotSeatAssignmentForUsers: [
       "DELETE /orgs/{org}/copilot/billing/selected_users",
     ],
-    copilotMetricsForOrganization: ["GET /orgs/{org}/copilot/metrics"],
-    copilotMetricsForTeam: ["GET /orgs/{org}/team/{team_slug}/copilot/metrics"],
+    copilotContentExclusionForOrganization: [
+      "GET /orgs/{org}/copilot/content_exclusion",
+    ],
+    copilotEnterpriseOneDayUsageMetrics: [
+      "GET /enterprises/{enterprise}/copilot/metrics/reports/enterprise-1-day",
+    ],
+    copilotEnterpriseReposOneDayReport: [
+      "GET /enterprises/{enterprise}/copilot/metrics/reports/repos-1-day",
+    ],
+    copilotEnterpriseUsageMetrics: [
+      "GET /enterprises/{enterprise}/copilot/metrics/reports/enterprise-28-day/latest",
+    ],
+    copilotEnterpriseUserTeamsOneDayReport: [
+      "GET /enterprises/{enterprise}/copilot/metrics/reports/user-teams-1-day",
+    ],
+    copilotOrganizationOneDayUsageMetrics: [
+      "GET /orgs/{org}/copilot/metrics/reports/organization-1-day",
+    ],
+    copilotOrganizationReposOneDayReport: [
+      "GET /orgs/{org}/copilot/metrics/reports/repos-1-day",
+    ],
+    copilotOrganizationUsageMetrics: [
+      "GET /orgs/{org}/copilot/metrics/reports/organization-28-day/latest",
+    ],
+    copilotOrganizationUserTeamsOneDayReport: [
+      "GET /orgs/{org}/copilot/metrics/reports/user-teams-1-day",
+    ],
+    copilotOrganizationUsersOneDayUsageMetrics: [
+      "GET /orgs/{org}/copilot/metrics/reports/users-1-day",
+    ],
+    copilotOrganizationUsersUsageMetrics: [
+      "GET /orgs/{org}/copilot/metrics/reports/users-28-day/latest",
+    ],
+    copilotUsersOneDayUsageMetrics: [
+      "GET /enterprises/{enterprise}/copilot/metrics/reports/users-1-day",
+    ],
+    copilotUsersUsageMetrics: [
+      "GET /enterprises/{enterprise}/copilot/metrics/reports/users-28-day/latest",
+    ],
+    disableCopilotCodingAgentForRepositoryInOrganization: [
+      "DELETE /orgs/{org}/copilot/coding-agent/permissions/repositories/{repository_id}",
+    ],
+    enableCopilotCodingAgentForRepositoryInOrganization: [
+      "PUT /orgs/{org}/copilot/coding-agent/permissions/repositories/{repository_id}",
+    ],
+    getCopilotCloudAgentConfiguration: [
+      "GET /repos/{owner}/{repo}/copilot/cloud-agent/configuration",
+    ],
+    getCopilotCodingAgentPermissionsOrganization: [
+      "GET /orgs/{org}/copilot/coding-agent/permissions",
+    ],
     getCopilotOrganizationDetails: ["GET /orgs/{org}/copilot/billing"],
     getCopilotSeatDetailsForUser: [
       "GET /orgs/{org}/members/{username}/copilot",
     ],
+    listCopilotCodingAgentSelectedRepositoriesForOrganization: [
+      "GET /orgs/{org}/copilot/coding-agent/permissions/repositories",
+    ],
     listCopilotSeats: ["GET /orgs/{org}/copilot/billing/seats"],
+    setCopilotCodingAgentPermissionsOrganization: [
+      "PUT /orgs/{org}/copilot/coding-agent/permissions",
+    ],
+    setCopilotCodingAgentSelectedRepositoriesForOrganization: [
+      "PUT /orgs/{org}/copilot/coding-agent/permissions/repositories",
+    ],
   },
   credentials: { revoke: ["POST /credentials/revoke"] },
   dependabot: {
@@ -870,11 +1020,15 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     removeSelectedRepoFromOrgSecret: [
       "DELETE /orgs/{org}/dependabot/secrets/{secret_name}/repositories/{repository_id}",
     ],
-    repositoryAccessForOrg: [
-      "GET /organizations/{org}/dependabot/repository-access",
+    repositoryAccessForEnterprise: [
+      "GET /enterprises/{enterprise}/dependabot/repository-access",
     ],
+    repositoryAccessForOrg: ["GET /orgs/{org}/dependabot/repository-access"],
     setRepositoryAccessDefaultLevel: [
-      "PUT /organizations/{org}/dependabot/repository-access/default-level",
+      "PUT /orgs/{org}/dependabot/repository-access/default-level",
+    ],
+    setRepositoryAccessDefaultLevelForEnterprise: [
+      "PUT /enterprises/{enterprise}/dependabot/repository-access/default-level",
     ],
     setSelectedReposForOrgSecret: [
       "PUT /orgs/{org}/dependabot/secrets/{secret_name}/repositories",
@@ -882,8 +1036,11 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     updateAlert: [
       "PATCH /repos/{owner}/{repo}/dependabot/alerts/{alert_number}",
     ],
+    updateRepositoryAccessForEnterprise: [
+      "PATCH /enterprises/{enterprise}/dependabot/repository-access",
+    ],
     updateRepositoryAccessForOrg: [
-      "PATCH /organizations/{org}/dependabot/repository-access",
+      "PATCH /orgs/{org}/dependabot/repository-access",
     ],
   },
   dependencyGraph: {
@@ -894,6 +1051,12 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
       "GET /repos/{owner}/{repo}/dependency-graph/compare/{basehead}",
     ],
     exportSbom: ["GET /repos/{owner}/{repo}/dependency-graph/sbom"],
+    fetchSbomReport: [
+      "GET /repos/{owner}/{repo}/dependency-graph/sbom/fetch-report/{sbom_uuid}",
+    ],
+    generateSbomReport: [
+      "GET /repos/{owner}/{repo}/dependency-graph/sbom/generate-report",
+    ],
   },
   emojis: { get: ["GET /emojis"] },
   enterpriseTeamMemberships: {
@@ -1003,6 +1166,15 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     ],
   },
   interactions: {
+    getPullRequestBypassListForRepo: [
+      "GET /repos/{owner}/{repo}/interaction-limits/pulls/bypass-list",
+    ],
+    getPullRequestCreationCapForOrg: [
+      "GET /orgs/{org}/interaction-limits/pulls/creation-cap",
+    ],
+    getPullRequestCreationCapForRepo: [
+      "GET /repos/{owner}/{repo}/interaction-limits/pulls/creation-cap",
+    ],
     getRestrictionsForAuthenticatedUser: ["GET /user/interaction-limits"],
     getRestrictionsForOrg: ["GET /orgs/{org}/interaction-limits"],
     getRestrictionsForRepo: ["GET /repos/{owner}/{repo}/interaction-limits"],
@@ -1010,6 +1182,9 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
       "GET /user/interaction-limits",
       {},
       { renamed: ["interactions", "getRestrictionsForAuthenticatedUser"] },
+    ],
+    removePullRequestBypassListForRepo: [
+      "DELETE /repos/{owner}/{repo}/interaction-limits/pulls/bypass-list",
     ],
     removeRestrictionsForAuthenticatedUser: ["DELETE /user/interaction-limits"],
     removeRestrictionsForOrg: ["DELETE /orgs/{org}/interaction-limits"],
@@ -1021,6 +1196,9 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
       {},
       { renamed: ["interactions", "removeRestrictionsForAuthenticatedUser"] },
     ],
+    setPullRequestBypassListForRepo: [
+      "PUT /repos/{owner}/{repo}/interaction-limits/pulls/bypass-list",
+    ],
     setRestrictionsForAuthenticatedUser: ["PUT /user/interaction-limits"],
     setRestrictionsForOrg: ["PUT /orgs/{org}/interaction-limits"],
     setRestrictionsForRepo: ["PUT /repos/{owner}/{repo}/interaction-limits"],
@@ -1028,6 +1206,12 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
       "PUT /user/interaction-limits",
       {},
       { renamed: ["interactions", "setRestrictionsForAuthenticatedUser"] },
+    ],
+    updatePullRequestCreationCapForOrg: [
+      "PATCH /orgs/{org}/interaction-limits/pulls/creation-cap",
+    ],
+    updatePullRequestCreationCapForRepo: [
+      "PATCH /repos/{owner}/{repo}/interaction-limits/pulls/creation-cap",
     ],
   },
   issues: {
@@ -1037,9 +1221,15 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     addBlockedByDependency: [
       "POST /repos/{owner}/{repo}/issues/{issue_number}/dependencies/blocked_by",
     ],
+    addIssueFieldValues: [
+      "POST /repos/{owner}/{repo}/issues/{issue_number}/issue-field-values",
+    ],
     addLabels: ["POST /repos/{owner}/{repo}/issues/{issue_number}/labels"],
     addSubIssue: [
       "POST /repos/{owner}/{repo}/issues/{issue_number}/sub_issues",
+    ],
+    approveSuggestion: [
+      "POST /repos/{owner}/{repo}/issues/{issue_number}/suggestions/{suggestion_id}/approve",
     ],
     checkUserCanBeAssigned: ["GET /repos/{owner}/{repo}/assignees/{assignee}"],
     checkUserCanBeAssignedToIssue: [
@@ -1054,9 +1244,15 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     deleteComment: [
       "DELETE /repos/{owner}/{repo}/issues/comments/{comment_id}",
     ],
+    deleteIssueFieldValue: [
+      "DELETE /repos/{owner}/{repo}/issues/{issue_number}/issue-field-values/{issue_field_id}",
+    ],
     deleteLabel: ["DELETE /repos/{owner}/{repo}/labels/{name}"],
     deleteMilestone: [
       "DELETE /repos/{owner}/{repo}/milestones/{milestone_number}",
+    ],
+    dismissSuggestion: [
+      "POST /repos/{owner}/{repo}/issues/{issue_number}/suggestions/{suggestion_id}/dismiss",
     ],
     get: ["GET /repos/{owner}/{repo}/issues/{issue_number}"],
     getComment: ["GET /repos/{owner}/{repo}/issues/comments/{comment_id}"],
@@ -1082,6 +1278,9 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     listForAuthenticatedUser: ["GET /user/issues"],
     listForOrg: ["GET /orgs/{org}/issues"],
     listForRepo: ["GET /repos/{owner}/{repo}/issues"],
+    listIssueFieldValuesForIssue: [
+      "GET /repos/{owner}/{repo}/issues/{issue_number}/issue-field-values",
+    ],
     listLabelsForMilestone: [
       "GET /repos/{owner}/{repo}/milestones/{milestone_number}/labels",
     ],
@@ -1093,7 +1292,11 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     listSubIssues: [
       "GET /repos/{owner}/{repo}/issues/{issue_number}/sub_issues",
     ],
+    listSuggestions: [
+      "GET /repos/{owner}/{repo}/issues/{issue_number}/suggestions",
+    ],
     lock: ["PUT /repos/{owner}/{repo}/issues/{issue_number}/lock"],
+    pinComment: ["PUT /repos/{owner}/{repo}/issues/comments/{comment_id}/pin"],
     removeAllLabels: [
       "DELETE /repos/{owner}/{repo}/issues/{issue_number}/labels",
     ],
@@ -1112,8 +1315,14 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     reprioritizeSubIssue: [
       "PATCH /repos/{owner}/{repo}/issues/{issue_number}/sub_issues/priority",
     ],
+    setIssueFieldValues: [
+      "PUT /repos/{owner}/{repo}/issues/{issue_number}/issue-field-values",
+    ],
     setLabels: ["PUT /repos/{owner}/{repo}/issues/{issue_number}/labels"],
     unlock: ["DELETE /repos/{owner}/{repo}/issues/{issue_number}/lock"],
+    unpinComment: [
+      "DELETE /repos/{owner}/{repo}/issues/comments/{comment_id}/pin",
+    ],
     update: ["PATCH /repos/{owner}/{repo}/issues/{issue_number}"],
     updateComment: ["PATCH /repos/{owner}/{repo}/issues/comments/{comment_id}"],
     updateLabel: ["PATCH /repos/{owner}/{repo}/labels/{name}"],
@@ -1176,8 +1385,17 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     ],
   },
   oidc: {
+    createOidcCustomPropertyInclusionForEnterprise: [
+      "POST /enterprises/{enterprise}/actions/oidc/customization/properties/repo",
+    ],
+    deleteOidcCustomPropertyInclusionForEnterprise: [
+      "DELETE /enterprises/{enterprise}/actions/oidc/customization/properties/repo/{custom_property_name}",
+    ],
     getOidcCustomSubTemplateForOrg: [
       "GET /orgs/{org}/actions/oidc/customization/sub",
+    ],
+    listOidcCustomPropertyInclusionsForEnterprise: [
+      "GET /enterprises/{enterprise}/actions/oidc/customization/properties/repo",
     ],
     updateOidcCustomSubTemplateForOrg: [
       "PUT /orgs/{org}/actions/oidc/customization/sub",
@@ -1204,15 +1422,13 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     createArtifactStorageRecord: [
       "POST /orgs/{org}/artifacts/metadata/storage-record",
     ],
+    createClusterDeploymentRecordsJob: [
+      "POST /orgs/{org}/artifacts/metadata/deployment-record/cluster/{cluster}/jobs",
+    ],
     createInvitation: ["POST /orgs/{org}/invitations"],
+    createIssueField: ["POST /orgs/{org}/issue-fields"],
     createIssueType: ["POST /orgs/{org}/issue-types"],
     createWebhook: ["POST /orgs/{org}/hooks"],
-    customPropertiesForOrgsCreateOrUpdateOrganizationValues: [
-      "PATCH /organizations/{org}/org-properties/values",
-    ],
-    customPropertiesForOrgsGetOrganizationValues: [
-      "GET /organizations/{org}/org-properties/values",
-    ],
     customPropertiesForReposCreateOrUpdateOrganizationDefinition: [
       "PUT /orgs/{org}/properties/schema/{custom_property_name}",
     ],
@@ -1242,6 +1458,7 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     deleteAttestationsBySubjectDigest: [
       "DELETE /orgs/{org}/attestations/digest/{subject_digest}",
     ],
+    deleteIssueField: ["DELETE /orgs/{org}/issue-fields/{issue_field_id}"],
     deleteIssueType: ["DELETE /orgs/{org}/issue-types/{issue_type_id}"],
     deleteWebhook: ["DELETE /orgs/{org}/hooks/{hook_id}"],
     disableSelectedRepositoryImmutableReleasesOrganization: [
@@ -1251,6 +1468,9 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
       "PUT /orgs/{org}/settings/immutable-releases/repositories/{repository_id}",
     ],
     get: ["GET /orgs/{org}"],
+    getClusterDeploymentRecordsJob: [
+      "GET /orgs/{org}/artifacts/metadata/deployment-record/cluster/{cluster}/jobs/{job_id}",
+    ],
     getImmutableReleasesSettings: [
       "GET /orgs/{org}/settings/immutable-releases",
     ],
@@ -1287,6 +1507,7 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     listForAuthenticatedUser: ["GET /user/orgs"],
     listForUser: ["GET /users/{username}/orgs"],
     listInvitationTeams: ["GET /orgs/{org}/invitations/{invitation_id}/teams"],
+    listIssueFields: ["GET /orgs/{org}/issue-fields"],
     listIssueTypes: ["GET /orgs/{org}/issue-types"],
     listMembers: ["GET /orgs/{org}/members"],
     listMembershipsForAuthenticatedUser: ["GET /user/memberships/orgs"],
@@ -1354,6 +1575,7 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     ],
     unblockUser: ["DELETE /orgs/{org}/blocks/{username}"],
     update: ["PATCH /orgs/{org}"],
+    updateIssueField: ["PATCH /orgs/{org}/issue-fields/{issue_field_id}"],
     updateIssueType: ["PUT /orgs/{org}/issue-types/{issue_type_id}"],
     updateMembershipForAuthenticatedUser: [
       "PATCH /user/memberships/orgs/{org}",
@@ -1482,6 +1704,10 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     createDraftItemForOrg: [
       "POST /orgs/{org}/projectsV2/{project_number}/drafts",
     ],
+    createViewForOrg: ["POST /orgs/{org}/projectsV2/{project_number}/views"],
+    createViewForUser: [
+      "POST /users/{user_id}/projectsV2/{project_number}/views",
+    ],
     deleteItemForOrg: [
       "DELETE /orgs/{org}/projectsV2/{project_number}/items/{item_id}",
     ],
@@ -1510,12 +1736,25 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     listItemsForUser: [
       "GET /users/{username}/projectsV2/{project_number}/items",
     ],
+    listViewItemsForOrg: [
+      "GET /orgs/{org}/projectsV2/{project_number}/views/{view_number}/items",
+    ],
+    listViewItemsForUser: [
+      "GET /users/{username}/projectsV2/{project_number}/views/{view_number}/items",
+    ],
     updateItemForOrg: [
       "PATCH /orgs/{org}/projectsV2/{project_number}/items/{item_id}",
     ],
     updateItemForUser: [
       "PATCH /users/{username}/projectsV2/{project_number}/items/{item_id}",
     ],
+  },
+  pullRequestStacks: {
+    add: ["POST /repos/{owner}/{repo}/stacks/{stack_number}/add"],
+    create: ["POST /repos/{owner}/{repo}/stacks"],
+    get: ["GET /repos/{owner}/{repo}/stacks/{stack_number}"],
+    list: ["GET /repos/{owner}/{repo}/stacks"],
+    unstack: ["POST /repos/{owner}/{repo}/stacks/{stack_number}/unstack"],
   },
   pulls: {
     checkIfMerged: ["GET /repos/{owner}/{repo}/pulls/{pull_number}/merge"],
@@ -1537,6 +1776,9 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
       "PUT /repos/{owner}/{repo}/pulls/{pull_number}/reviews/{review_id}/dismissals",
     ],
     get: ["GET /repos/{owner}/{repo}/pulls/{pull_number}"],
+    getMergeAsyncResult: [
+      "GET /repos/{owner}/{repo}/pulls/{pull_number}/merge-async/{uuid}",
+    ],
     getReview: [
       "GET /repos/{owner}/{repo}/pulls/{pull_number}/reviews/{review_id}",
     ],
@@ -1556,6 +1798,7 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     listReviewCommentsForRepo: ["GET /repos/{owner}/{repo}/pulls/comments"],
     listReviews: ["GET /repos/{owner}/{repo}/pulls/{pull_number}/reviews"],
     merge: ["PUT /repos/{owner}/{repo}/pulls/{pull_number}/merge"],
+    mergeAsync: ["PUT /repos/{owner}/{repo}/pulls/{pull_number}/merge-async"],
     removeRequestedReviewers: [
       "DELETE /repos/{owner}/{repo}/pulls/{pull_number}/requested_reviewers",
     ],
@@ -1593,12 +1836,6 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     createForRelease: [
       "POST /repos/{owner}/{repo}/releases/{release_id}/reactions",
     ],
-    createForTeamDiscussionCommentInOrg: [
-      "POST /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}/reactions",
-    ],
-    createForTeamDiscussionInOrg: [
-      "POST /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/reactions",
-    ],
     deleteForCommitComment: [
       "DELETE /repos/{owner}/{repo}/comments/{comment_id}/reactions/{reaction_id}",
     ],
@@ -1614,12 +1851,6 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     deleteForRelease: [
       "DELETE /repos/{owner}/{repo}/releases/{release_id}/reactions/{reaction_id}",
     ],
-    deleteForTeamDiscussion: [
-      "DELETE /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/reactions/{reaction_id}",
-    ],
-    deleteForTeamDiscussionComment: [
-      "DELETE /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}/reactions/{reaction_id}",
-    ],
     listForCommitComment: [
       "GET /repos/{owner}/{repo}/comments/{comment_id}/reactions",
     ],
@@ -1632,12 +1863,6 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     ],
     listForRelease: [
       "GET /repos/{owner}/{repo}/releases/{release_id}/reactions",
-    ],
-    listForTeamDiscussionCommentInOrg: [
-      "GET /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}/reactions",
-    ],
-    listForTeamDiscussionInOrg: [
-      "GET /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/reactions",
     ],
   },
   repos: {
@@ -1868,6 +2093,7 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     getEnvironment: [
       "GET /repos/{owner}/{repo}/environments/{environment_name}",
     ],
+    getHashAlgorithm: ["GET /repos/{owner}/{repo}/hash-algorithm"],
     getLatestPagesBuild: ["GET /repos/{owner}/{repo}/pages/builds/latest"],
     getLatestRelease: ["GET /repos/{owner}/{repo}/releases/latest"],
     getOrgRuleSuite: ["GET /orgs/{org}/rulesets/rule-suites/{rule_suite_id}"],
@@ -1957,6 +2183,7 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     listForks: ["GET /repos/{owner}/{repo}/forks"],
     listInvitations: ["GET /repos/{owner}/{repo}/invitations"],
     listInvitationsForAuthenticatedUser: ["GET /user/repository_invitations"],
+    listIssueTypes: ["GET /repos/{owner}/{repo}/issue-types"],
     listLanguages: ["GET /repos/{owner}/{repo}/languages"],
     listPagesBuilds: ["GET /repos/{owner}/{repo}/pages/builds"],
     listPublic: ["GET /repositories"],
@@ -2081,6 +2308,18 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     users: ["GET /search/users"],
   },
   secretScanning: {
+    bulkCreateOrgCustomPatterns: [
+      "POST /orgs/{org}/secret-scanning/custom-patterns",
+    ],
+    bulkCreateRepoCustomPatterns: [
+      "POST /repos/{owner}/{repo}/secret-scanning/custom-patterns",
+    ],
+    bulkDeleteOrgCustomPatterns: [
+      "DELETE /orgs/{org}/secret-scanning/custom-patterns",
+    ],
+    bulkDeleteRepoCustomPatterns: [
+      "DELETE /repos/{owner}/{repo}/secret-scanning/custom-patterns",
+    ],
     createPushProtectionBypass: [
       "POST /repos/{owner}/{repo}/secret-scanning/push-protection-bypasses",
     ],
@@ -2093,14 +2332,24 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     listLocationsForAlert: [
       "GET /repos/{owner}/{repo}/secret-scanning/alerts/{alert_number}/locations",
     ],
+    listOrgCustomPatterns: ["GET /orgs/{org}/secret-scanning/custom-patterns"],
     listOrgPatternConfigs: [
       "GET /orgs/{org}/secret-scanning/pattern-configurations",
+    ],
+    listRepoCustomPatterns: [
+      "GET /repos/{owner}/{repo}/secret-scanning/custom-patterns",
     ],
     updateAlert: [
       "PATCH /repos/{owner}/{repo}/secret-scanning/alerts/{alert_number}",
     ],
+    updateOrgCustomPattern: [
+      "PATCH /orgs/{org}/secret-scanning/custom-patterns/{pattern_id}",
+    ],
     updateOrgPatternConfigs: [
       "PATCH /orgs/{org}/secret-scanning/pattern-configurations",
+    ],
+    updateRepoCustomPattern: [
+      "PATCH /repos/{owner}/{repo}/secret-scanning/custom-patterns/{pattern_id}",
     ],
   },
   securityAdvisories: {
@@ -2138,33 +2387,13 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
       "GET /orgs/{org}/teams/{team_slug}/repos/{owner}/{repo}",
     ],
     create: ["POST /orgs/{org}/teams"],
-    createDiscussionCommentInOrg: [
-      "POST /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments",
-    ],
-    createDiscussionInOrg: ["POST /orgs/{org}/teams/{team_slug}/discussions"],
-    deleteDiscussionCommentInOrg: [
-      "DELETE /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}",
-    ],
-    deleteDiscussionInOrg: [
-      "DELETE /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}",
-    ],
     deleteInOrg: ["DELETE /orgs/{org}/teams/{team_slug}"],
     getByName: ["GET /orgs/{org}/teams/{team_slug}"],
-    getDiscussionCommentInOrg: [
-      "GET /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}",
-    ],
-    getDiscussionInOrg: [
-      "GET /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}",
-    ],
     getMembershipForUserInOrg: [
       "GET /orgs/{org}/teams/{team_slug}/memberships/{username}",
     ],
     list: ["GET /orgs/{org}/teams"],
     listChildInOrg: ["GET /orgs/{org}/teams/{team_slug}/teams"],
-    listDiscussionCommentsInOrg: [
-      "GET /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments",
-    ],
-    listDiscussionsInOrg: ["GET /orgs/{org}/teams/{team_slug}/discussions"],
     listForAuthenticatedUser: ["GET /user/teams"],
     listMembersInOrg: ["GET /orgs/{org}/teams/{team_slug}/members"],
     listPendingInvitationsInOrg: [
@@ -2176,12 +2405,6 @@ const Endpoints: EndpointsDefaultsAndDecorations = {
     ],
     removeRepoInOrg: [
       "DELETE /orgs/{org}/teams/{team_slug}/repos/{owner}/{repo}",
-    ],
-    updateDiscussionCommentInOrg: [
-      "PATCH /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}",
-    ],
-    updateDiscussionInOrg: [
-      "PATCH /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}",
     ],
     updateInOrg: ["PATCH /orgs/{org}/teams/{team_slug}"],
   },

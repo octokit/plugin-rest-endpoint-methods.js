@@ -1,4 +1,5 @@
 ---
+
 name: Get a GitHub Pages site
 example: octokit.rest.repos.getPages({ owner, repo })
 route: GET /repos/{owner}/{repo}/pages

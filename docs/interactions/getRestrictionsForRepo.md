@@ -1,4 +1,5 @@
 ---
+
 name: Get interaction restrictions for a repository
 example: octokit.rest.interactions.getRestrictionsForRepo({ owner, repo })
 route: GET /repos/{owner}/{repo}/interaction-limits

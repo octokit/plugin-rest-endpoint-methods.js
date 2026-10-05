@@ -1,4 +1,5 @@
 ---
+
 name: Remove status check protection
 example: octokit.rest.repos.removeStatusCheckProtection({ owner, repo, branch })
 route: DELETE /repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks

@@ -1,4 +1,5 @@
 ---
+
 name: List organizations for a user
 example: octokit.rest.orgs.listForUser({ username })
 route: GET /users/{username}/orgs

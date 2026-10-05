@@ -1,4 +1,5 @@
 ---
+
 name: List code scanning alerts for a repository
 example: octokit.rest.codeScanning.listAlertsForRepo({ owner, repo })
 route: GET /repos/{owner}/{repo}/code-scanning/alerts

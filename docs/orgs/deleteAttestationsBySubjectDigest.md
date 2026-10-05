@@ -1,4 +1,5 @@
 ---
+
 name: Delete attestations by subject digest
 example: octokit.rest.orgs.deleteAttestationsBySubjectDigest({ org, subject_digest })
 route: DELETE /orgs/{org}/attestations/digest/{subject_digest}

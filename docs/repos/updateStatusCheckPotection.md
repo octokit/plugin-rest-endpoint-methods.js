@@ -1,4 +1,5 @@
 ---
+
 name: Update status check protection
 example: octokit.rest.repos.updateStatusCheckPotection({ owner, repo, branch, checks[].context })
 route: PATCH /repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks

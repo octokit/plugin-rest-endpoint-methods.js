@@ -1,4 +1,5 @@
 ---
+
 name: List outside collaborators for an organization
 example: octokit.rest.orgs.listOutsideCollaborators({ org })
 route: GET /orgs/{org}/outside_collaborators

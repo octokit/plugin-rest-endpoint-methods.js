@@ -1,4 +1,5 @@
 ---
+
 name: List labels for a repository
 example: octokit.rest.issues.listLabelsForRepo({ owner, repo })
 route: GET /repos/{owner}/{repo}/labels

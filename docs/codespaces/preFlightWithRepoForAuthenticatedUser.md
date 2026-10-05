@@ -1,4 +1,5 @@
 ---
+
 name: Get default attributes for a codespace
 example: octokit.rest.codespaces.preFlightWithRepoForAuthenticatedUser({ owner, repo })
 route: GET /repos/{owner}/{repo}/codespaces/new

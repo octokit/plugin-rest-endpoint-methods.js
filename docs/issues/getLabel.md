@@ -1,4 +1,5 @@
 ---
+
 name: Get a label
 example: octokit.rest.issues.getLabel({ owner, repo, name })
 route: GET /repos/{owner}/{repo}/labels/{name}

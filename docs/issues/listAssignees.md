@@ -1,4 +1,5 @@
 ---
+
 name: List assignees
 example: octokit.rest.issues.listAssignees({ owner, repo })
 route: GET /repos/{owner}/{repo}/assignees

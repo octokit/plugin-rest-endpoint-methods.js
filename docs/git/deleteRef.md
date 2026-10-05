@@ -1,4 +1,5 @@
 ---
+
 name: Delete a reference
 example: octokit.rest.git.deleteRef({ owner, repo, ref })
 route: DELETE /repos/{owner}/{repo}/git/refs/{ref}

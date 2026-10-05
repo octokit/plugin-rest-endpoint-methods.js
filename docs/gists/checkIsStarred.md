@@ -1,4 +1,5 @@
 ---
+
 name: Check if a gist is starred
 example: octokit.rest.gists.checkIsStarred({ gist_id })
 route: GET /gists/{gist_id}/star

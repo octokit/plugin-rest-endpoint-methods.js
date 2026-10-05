@@ -1,4 +1,5 @@
 ---
+
 name: List repository rule suites
 example: octokit.rest.repos.getRepoRuleSuites({ owner, repo })
 route: GET /repos/{owner}/{repo}/rulesets/rule-suites
@@ -59,6 +60,15 @@ The handle for the GitHub user account to filter on. When specified, only rule e
 <tr><td>rule_suite_result</td><td>no</td><td>
 
 The rule suite results to filter on. When specified, only suites with this result will be returned.
+
+</td></tr>
+<tr><td>evaluate_status</td><td>no</td><td>
+
+The evaluate status to filter on. When specified, only rule suites resulting from rulesets with the specified evaluate status will be returned.
+
+- `all` - all rule suites will be returned.
+- `active` - only rule suites resulting from rulesets in active (non-evaluate) mode will be returned.
+- `evaluate` - only rule suites resulting from rulesets in evaluate mode will be returned.
 
 </td></tr>
 <tr><td>per_page</td><td>no</td><td>

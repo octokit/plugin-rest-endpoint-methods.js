@@ -1,4 +1,5 @@
 ---
+
 name: List issue types for an organization
 example: octokit.rest.orgs.listIssueTypes({ org })
 route: GET /orgs/{org}/issue-types

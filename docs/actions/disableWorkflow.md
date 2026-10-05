@@ -1,4 +1,5 @@
 ---
+
 name: Disable a workflow
 example: octokit.rest.actions.disableWorkflow({ owner, repo, workflow_id })
 route: PUT /repos/{owner}/{repo}/actions/workflows/{workflow_id}/disable

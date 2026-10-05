@@ -1,4 +1,5 @@
 ---
+
 name: Get interaction restrictions for an organization
 example: octokit.rest.interactions.getRestrictionsForOrg({ org })
 route: GET /orgs/{org}/interaction-limits

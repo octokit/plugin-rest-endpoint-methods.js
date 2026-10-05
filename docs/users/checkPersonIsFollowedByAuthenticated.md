@@ -1,4 +1,5 @@
 ---
+
 name: Check if a person is followed by the authenticated user
 example: octokit.rest.users.checkPersonIsFollowedByAuthenticated({ username })
 route: GET /user/following/{username}

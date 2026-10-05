@@ -1,4 +1,5 @@
 ---
+
 name: Check if a user follows another user
 example: octokit.rest.users.checkFollowingForUser({ username, target_user })
 route: GET /users/{username}/following/{target_user}

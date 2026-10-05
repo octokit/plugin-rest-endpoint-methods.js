@@ -1,4 +1,5 @@
 ---
+
 name: Delete a repository webhook
 example: octokit.rest.repos.deleteWebhook({ owner, repo, hook_id })
 route: DELETE /repos/{owner}/{repo}/hooks/{hook_id}

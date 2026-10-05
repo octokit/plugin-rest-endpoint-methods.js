@@ -1,4 +1,5 @@
 ---
+
 name: Disable a selected repository for GitHub Actions in an organization
 example: octokit.rest.actions.disableSelectedRepositoryGithubActionsOrganization({ org, repository_id })
 route: DELETE /orgs/{org}/actions/permissions/repositories/{repository_id}

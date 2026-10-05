@@ -1,4 +1,5 @@
 ---
+
 name: Get all contributor commit activity
 example: octokit.rest.repos.getContributorsStats({ owner, repo })
 route: GET /repos/{owner}/{repo}/stats/contributors

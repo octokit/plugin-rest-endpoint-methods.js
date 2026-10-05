@@ -1,4 +1,5 @@
 ---
+
 name: Attach an enterprise configuration to repositories
 example: octokit.rest.codeSecurity.attachEnterpriseConfiguration({ enterprise, configuration_id, scope })
 route: POST /enterprises/{enterprise}/code-security/configurations/{configuration_id}/attach

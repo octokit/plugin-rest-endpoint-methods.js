@@ -1,4 +1,5 @@
 ---
+
 name: Compare two commits
 example: octokit.rest.repos.compareCommits({ owner, repo, base, head })
 route: GET /repos/{owner}/{repo}/compare/{base}...{head}

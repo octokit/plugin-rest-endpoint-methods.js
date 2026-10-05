@@ -1,4 +1,5 @@
 ---
+
 name: Get the authenticated user
 example: octokit.rest.users.getAuthenticated()
 route: GET /user

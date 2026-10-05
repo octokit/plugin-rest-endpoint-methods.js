@@ -1,4 +1,5 @@
 ---
+
 name: List plans (stubbed)
 example: octokit.rest.apps.listPlansStubbed()
 route: GET /marketplace_listing/stubbed/plans

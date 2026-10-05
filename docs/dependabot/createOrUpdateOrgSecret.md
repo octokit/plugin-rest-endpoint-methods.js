@@ -1,4 +1,5 @@
 ---
+
 name: Create or update an organization secret
 example: octokit.rest.dependabot.createOrUpdateOrgSecret({ org, secret_name, visibility })
 route: PUT /orgs/{org}/dependabot/secrets/{secret_name}

@@ -1,4 +1,5 @@
 ---
+
 name: Get interaction restrictions for your public repositories
 example: octokit.rest.interactions.getRestrictionsForYourPublicRepos()
 route: GET /user/interaction-limits

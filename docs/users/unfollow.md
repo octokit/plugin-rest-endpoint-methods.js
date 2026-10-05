@@ -1,4 +1,5 @@
 ---
+
 name: Unfollow a user
 example: octokit.rest.users.unfollow({ username })
 route: DELETE /user/following/{username}

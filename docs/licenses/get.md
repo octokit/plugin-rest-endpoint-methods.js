@@ -1,4 +1,5 @@
 ---
+
 name: Get a license
 example: octokit.rest.licenses.get({ license })
 route: GET /licenses/{license}

@@ -1,4 +1,5 @@
 ---
+
 name: List selected repositories for an organization secret
 example: octokit.rest.actions.listSelectedReposForOrgSecret({ org, secret_name })
 route: GET /orgs/{org}/actions/secrets/{secret_name}/repositories

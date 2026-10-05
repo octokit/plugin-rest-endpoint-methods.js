@@ -1,4 +1,5 @@
 ---
+
 name: List Dependabot alerts for a repository
 example: octokit.rest.dependabot.listAlertsForRepo({ owner, repo })
 route: GET /repos/{owner}/{repo}/dependabot/alerts
@@ -36,6 +37,13 @@ The account owner of the repository. The name is not case sensitive.
 <tr><td>repo</td><td>yes</td><td>
 
 The name of the repository without the `.git` extension. The name is not case sensitive.
+
+</td></tr>
+<tr><td>classification</td><td>no</td><td>
+
+A comma-separated list of vulnerability classifications. If specified, only alerts for vulnerabilities with these classifications will be returned.
+
+Can be: `malware`, `general`
 
 </td></tr>
 <tr><td>state</td><td>no</td><td>
@@ -86,9 +94,24 @@ Filters the list of alerts based on whether the alert has the given value. If sp
 Multiple `has` filters can be passed to filter for alerts that have all of the values. Currently, only `patch` is supported.
 
 </td></tr>
+<tr><td>assignee</td><td>no</td><td>
+
+Filter alerts by assignees.
+Provide a comma-separated list of user handles (e.g., `octocat` or `octocat,hubot`) to return alerts assigned to any of the specified users.
+Use `*` to list alerts with at least one assignee or `none` to list alerts with no assignees.
+
+</td></tr>
 <tr><td>scope</td><td>no</td><td>
 
 The scope of the vulnerable dependency. If specified, only alerts with this scope will be returned.
+
+</td></tr>
+<tr><td>relationship</td><td>no</td><td>
+
+A comma-separated list of relationships of the vulnerable dependency to your project. If specified, only alerts with these relationships will be returned.
+
+> [!NOTE]
+> We are rolling out support for dependency relationship across ecosystems. This value will be "unknown" for all dependencies in unsupported ecosystems.
 
 </td></tr>
 <tr><td>sort</td><td>no</td><td>
@@ -104,11 +127,6 @@ The property by which to sort the results.
 The direction to sort the results by.
 
 </td></tr>
-<tr><td>per_page</td><td>no</td><td>
-
-The number of results per page (max 100). For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
-
-</td></tr>
 <tr><td>before</td><td>no</td><td>
 
 A cursor, as given in the [Link header](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api#using-link-headers). If specified, the query only searches for results before this cursor. For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
@@ -117,6 +135,11 @@ A cursor, as given in the [Link header](https://docs.github.com/rest/guides/usin
 <tr><td>after</td><td>no</td><td>
 
 A cursor, as given in the [Link header](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api#using-link-headers). If specified, the query only searches for results after this cursor. For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
+
+</td></tr>
+<tr><td>per_page</td><td>no</td><td>
+
+The number of results per page (max 100). For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
 
 </td></tr>
   </tbody>

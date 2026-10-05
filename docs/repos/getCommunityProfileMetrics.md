@@ -1,4 +1,5 @@
 ---
+
 name: Get community profile metrics
 example: octokit.rest.repos.getCommunityProfileMetrics({ owner, repo })
 route: GET /repos/{owner}/{repo}/community/profile
@@ -11,7 +12,7 @@ type: API method
 Returns all community profile metrics for a repository. The repository cannot be a fork.
 
 The returned metrics include an overall health score, the repository description, the presence of documentation, the
-detected code of conduct, the detected license, and the presence of ISSUE_TEMPLATE, PULL_REQUEST_TEMPLATE,
+detected code of conduct, the detected license, and the presence of ISSUE\_TEMPLATE, PULL\_REQUEST\_TEMPLATE,
 README, and CONTRIBUTING files.
 
 The `health_percentage` score is defined as a percentage of how many of

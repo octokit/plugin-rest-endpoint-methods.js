@@ -1,4 +1,5 @@
 ---
+
 name: Set interaction restrictions for your public repositories
 example: octokit.rest.interactions.setRestrictionsForAuthenticatedUser({ limit })
 route: PUT /user/interaction-limits

@@ -1,4 +1,5 @@
 ---
+
 name: Get default workflow permissions for a repository
 example: octokit.rest.actions.getGithubActionsDefaultWorkflowPermissionsRepository({ owner, repo })
 route: GET /repos/{owner}/{repo}/actions/permissions/workflow

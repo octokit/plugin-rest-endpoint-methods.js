@@ -1,4 +1,5 @@
 ---
+
 name: Set custom labels for a self-hosted runner for an organization
 example: octokit.rest.actions.setCustomLabelsForSelfHostedRunnerForOrg({ org, runner_id, labels })
 route: PUT /orgs/{org}/actions/runners/{runner_id}/labels

@@ -1,4 +1,5 @@
 ---
+
 name: Add teams to the Copilot subscription for an organization
 example: octokit.rest.copilot.addCopilotSeatsForTeams({ org, selected_teams })
 route: POST /orgs/{org}/copilot/billing/selected_teams

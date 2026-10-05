@@ -1,4 +1,5 @@
 ---
+
 name: Enable immutable releases
 example: octokit.rest.repos.enableImmutableReleases({ owner, repo })
 route: PUT /repos/{owner}/{repo}/immutable-releases

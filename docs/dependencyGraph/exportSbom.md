@@ -1,4 +1,5 @@
 ---
+
 name: Export a software bill of materials (SBOM) for a repository.
 example: octokit.rest.dependencyGraph.exportSbom({ owner, repo })
 route: GET /repos/{owner}/{repo}/dependency-graph/sbom

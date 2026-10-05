@@ -1,4 +1,5 @@
 ---
+
 name: List repository contributors
 example: octokit.rest.repos.listContributors({ owner, repo })
 route: GET /repos/{owner}/{repo}/contributors

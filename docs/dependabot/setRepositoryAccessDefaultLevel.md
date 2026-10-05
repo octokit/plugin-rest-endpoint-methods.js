@@ -1,7 +1,8 @@
 ---
+
 name: Set the default repository access level for Dependabot
 example: octokit.rest.dependabot.setRepositoryAccessDefaultLevel({ org, default_level })
-route: PUT /organizations/{org}/dependabot/repository-access/default-level
+route: PUT /orgs/{org}/dependabot/repository-access/default-level
 scope: dependabot
 type: API method
 ---

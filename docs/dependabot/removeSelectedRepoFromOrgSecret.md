@@ -1,4 +1,5 @@
 ---
+
 name: Remove selected repository from an organization secret
 example: octokit.rest.dependabot.removeSelectedRepoFromOrgSecret({ org, secret_name, repository_id })
 route: DELETE /orgs/{org}/dependabot/secrets/{secret_name}/repositories/{repository_id}

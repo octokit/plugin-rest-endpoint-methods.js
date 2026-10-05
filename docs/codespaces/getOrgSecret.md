@@ -1,4 +1,5 @@
 ---
+
 name: Get an organization secret
 example: octokit.rest.codespaces.getOrgSecret({ org, secret_name })
 route: GET /orgs/{org}/codespaces/secrets/{secret_name}

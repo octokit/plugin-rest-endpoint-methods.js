@@ -1,4 +1,5 @@
 ---
+
 name: List repository variables
 example: octokit.rest.actions.listRepoVariables({ owner, repo })
 route: GET /repos/{owner}/{repo}/actions/variables

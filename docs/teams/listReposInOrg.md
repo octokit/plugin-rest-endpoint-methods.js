@@ -1,4 +1,5 @@
 ---
+
 name: List team repositories
 example: octokit.rest.teams.listReposInOrg({ org, team_slug })
 route: GET /orgs/{org}/teams/{team_slug}/repos
@@ -9,6 +10,8 @@ type: API method
 # List team repositories
 
 Lists a team's repositories visible to the authenticated user.
+
+OAuth app tokens and personal access tokens (classic) need the `read:org` or `repo` scope to use this endpoint.
 
 > [!NOTE]
 > You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/{org_id}/team/{team_id}/repos`.

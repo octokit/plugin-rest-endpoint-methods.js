@@ -1,4 +1,5 @@
 ---
+
 name: Delete an organization secret
 example: octokit.rest.codespaces.deleteOrgSecret({ org, secret_name })
 route: DELETE /orgs/{org}/codespaces/secrets/{secret_name}

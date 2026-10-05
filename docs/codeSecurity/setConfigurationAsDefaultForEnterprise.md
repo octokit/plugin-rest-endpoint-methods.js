@@ -1,4 +1,5 @@
 ---
+
 name: Set a code security configuration as a default for an enterprise
 example: octokit.rest.codeSecurity.setConfigurationAsDefaultForEnterprise({ enterprise, configuration_id })
 route: PUT /enterprises/{enterprise}/code-security/configurations/{configuration_id}/defaults

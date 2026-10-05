@@ -1,4 +1,5 @@
 ---
+
 name: List available machine types for a repository
 example: octokit.rest.codespaces.repoMachinesForAuthenticatedUser({ owner, repo })
 route: GET /repos/{owner}/{repo}/codespaces/machines

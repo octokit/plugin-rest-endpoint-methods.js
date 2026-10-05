@@ -1,6 +1,7 @@
 ---
+
 name: Create an issue
-example: octokit.rest.issues.create({ owner, repo, title })
+example: octokit.rest.issues.create({ owner, repo, title, issue_field_values[].field_id, issue_field_values[].value })
 route: POST /repos/{owner}/{repo}/issues
 scope: issues
 type: API method
@@ -22,10 +23,12 @@ This endpoint supports the following custom media types. For more information, s
 
 ```js
 octokit.rest.issues.create({
-  owner,
-  repo,
-  title,
-});
+        owner,
+repo,
+title,
+issue_field_values[].field_id,
+issue_field_values[].value
+      })
 ```
 
 ## Parameters
@@ -75,6 +78,21 @@ Labels to associate with this issue. _NOTE: Only users with push access can set 
 <tr><td>assignees</td><td>no</td><td>
 
 Logins for Users to assign to this issue. _NOTE: Only users with push access can set assignees for new issues. Assignees are silently dropped otherwise._
+
+</td></tr>
+<tr><td>issue_field_values</td><td>no</td><td>
+
+An array of issue field values to set on this issue. Each field value must include the field ID and the value to set. Issue fields are only available for organization-owned repositories with the feature enabled. Field values are silently dropped otherwise.
+
+</td></tr>
+<tr><td>issue_field_values[].field_id</td><td>yes</td><td>
+
+The ID of the issue field to set
+
+</td></tr>
+<tr><td>issue_field_values[].value</td><td>yes</td><td>
+
+The value to set for the field. For multi-select fields, provide an array of option names.
 
 </td></tr>
 <tr><td>type</td><td>no</td><td>

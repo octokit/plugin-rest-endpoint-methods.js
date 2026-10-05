@@ -1,4 +1,5 @@
 ---
+
 name: Update an enterprise team
 example: octokit.rest.enterpriseTeams.update({ enterprise, team_slug })
 route: PATCH /enterprises/{enterprise}/teams/{team_slug}
@@ -66,6 +67,14 @@ Specifies which organizations in the enterprise should have access to this team.
 <tr><td>group_id</td><td>no</td><td>
 
 The ID of the IdP group to assign team membership with. The new IdP group will replace the existing one, or replace existing direct members if the team isn't currently linked to an IdP group.
+
+</td></tr>
+<tr><td>notification_setting</td><td>no</td><td>
+
+The notification setting the team is set to. The options are:
+
+- `notifications_enabled` - team members receive notifications when the team is @mentioned.
+- `notifications_disabled` - no one receives notifications.
 
 </td></tr>
   </tbody>

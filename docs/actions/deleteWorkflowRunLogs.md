@@ -1,4 +1,5 @@
 ---
+
 name: Delete workflow run logs
 example: octokit.rest.actions.deleteWorkflowRunLogs({ owner, repo, run_id })
 route: DELETE /repos/{owner}/{repo}/actions/runs/{run_id}/logs

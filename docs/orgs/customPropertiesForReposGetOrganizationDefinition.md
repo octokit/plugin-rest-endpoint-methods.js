@@ -1,4 +1,5 @@
 ---
+
 name: Get a custom property for an organization
 example: octokit.rest.orgs.customPropertiesForReposGetOrganizationDefinition({ org, custom_property_name })
 route: GET /orgs/{org}/properties/schema/{custom_property_name}

@@ -1,4 +1,5 @@
 ---
+
 name: Remove dependency an issue is blocked by
 example: octokit.rest.issues.removeDependencyBlockedBy({ owner, repo, issue_number, issue_id })
 route: DELETE /repos/{owner}/{repo}/issues/{issue_number}/dependencies/blocked_by/{issue_id}

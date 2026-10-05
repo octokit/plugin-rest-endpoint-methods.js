@@ -1,4 +1,5 @@
 ---
+
 name: Get admin branch protection
 example: octokit.rest.repos.getAdminBranchProtection({ owner, repo, branch })
 route: GET /repos/{owner}/{repo}/branches/{branch}/protection/enforce_admins

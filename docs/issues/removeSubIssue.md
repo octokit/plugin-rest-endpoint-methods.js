@@ -1,4 +1,5 @@
 ---
+
 name: Remove sub-issue
 example: octokit.rest.issues.removeSubIssue({ owner, repo, issue_number, sub_issue_id })
 route: DELETE /repos/{owner}/{repo}/issues/{issue_number}/sub_issue

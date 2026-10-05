@@ -1,4 +1,5 @@
 ---
+
 name: List attestation repositories
 example: octokit.rest.orgs.listAttestationRepositories({ org })
 route: GET /orgs/{org}/attestations/repositories

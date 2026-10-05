@@ -1,4 +1,5 @@
 ---
+
 name: Delete a file
 example: octokit.rest.repos.deleteFile({ owner, repo, path, message, sha })
 route: DELETE /repos/{owner}/{repo}/contents/{path}

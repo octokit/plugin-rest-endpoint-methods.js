@@ -1,4 +1,5 @@
 ---
+
 name: Set selected repositories for immutable releases enforcement
 example: octokit.rest.orgs.setImmutableReleasesSettingsRepositories({ org, selected_repository_ids })
 route: PUT /orgs/{org}/settings/immutable-releases/repositories

@@ -1,4 +1,5 @@
 ---
+
 name: Lock an issue
 example: octokit.rest.issues.lock({ owner, repo, issue_number })
 route: PUT /repos/{owner}/{repo}/issues/{issue_number}/lock

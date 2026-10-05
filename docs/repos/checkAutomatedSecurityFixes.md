@@ -1,4 +1,5 @@
 ---
+
 name: Check if Dependabot security updates are enabled for a repository
 example: octokit.rest.repos.checkAutomatedSecurityFixes({ owner, repo })
 route: GET /repos/{owner}/{repo}/automated-security-fixes

@@ -1,4 +1,5 @@
 ---
+
 name: Get a secret for the authenticated user
 example: octokit.rest.codespaces.getSecretForAuthenticatedUser({ secret_name })
 route: GET /user/codespaces/secrets/{secret_name}

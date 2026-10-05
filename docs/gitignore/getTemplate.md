@@ -1,4 +1,5 @@
 ---
+
 name: Get a gitignore template
 example: octokit.rest.gitignore.getTemplate({ name })
 route: GET /gitignore/templates/{name}

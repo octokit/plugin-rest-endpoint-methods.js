@@ -1,4 +1,5 @@
 ---
+
 name: Delete an autolink reference from a repository
 example: octokit.rest.repos.deleteAutolink({ owner, repo, autolink_id })
 route: DELETE /repos/{owner}/{repo}/autolinks/{autolink_id}

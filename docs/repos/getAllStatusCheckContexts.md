@@ -1,4 +1,5 @@
 ---
+
 name: Get all status check contexts
 example: octokit.rest.repos.getAllStatusCheckContexts({ owner, repo, branch })
 route: GET /repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks/contexts

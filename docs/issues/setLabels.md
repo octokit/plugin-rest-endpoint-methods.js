@@ -1,4 +1,5 @@
 ---
+
 name: Set labels for an issue
 example: octokit.rest.issues.setLabels({ owner, repo, issue_number, labels[].name })
 route: PUT /repos/{owner}/{repo}/issues/{issue_number}/labels

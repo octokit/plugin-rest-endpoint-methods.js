@@ -1,4 +1,5 @@
 ---
+
 name: Get rules for a branch
 example: octokit.rest.repos.getBranchRules({ owner, repo, branch })
 route: GET /repos/{owner}/{repo}/rules/branches/{branch}

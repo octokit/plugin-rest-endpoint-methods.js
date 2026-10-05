@@ -1,4 +1,5 @@
 ---
+
 name: Get the weekly commit count
 example: octokit.rest.repos.getParticipationStats({ owner, repo })
 route: GET /repos/{owner}/{repo}/stats/participation

@@ -1,6 +1,7 @@
 ---
+
 name: Add a field to an organization-owned project.
-example: octokit.rest.projects.addFieldForOrg({ project_number, org, issue_field_id, name, data_type, single_select_options, iteration_configuration })
+example: octokit.rest.projects.addFieldForOrg({ project_number, org, issue_field_id, name, data_type, single_select_options, iteration_configuration, iteration_configuration.start_date, iteration_configuration.duration, iteration_configuration.iterations[].title, iteration_configuration.iterations[].start_date, iteration_configuration.iterations[].duration })
 route: POST /orgs/{org}/projectsV2/{project_number}/fields
 scope: projects
 type: API method
@@ -12,14 +13,19 @@ Add a field to an organization-owned project.
 
 ```js
 octokit.rest.projects.addFieldForOrg({
-  project_number,
-  org,
-  issue_field_id,
-  name,
-  data_type,
-  single_select_options,
-  iteration_configuration,
-});
+        project_number,
+org,
+issue_field_id,
+name,
+data_type,
+single_select_options,
+iteration_configuration,
+iteration_configuration.start_date,
+iteration_configuration.duration,
+iteration_configuration.iterations[].title,
+iteration_configuration.iterations[].start_date,
+iteration_configuration.iterations[].duration
+      })
 ```
 
 ## Parameters
@@ -83,12 +89,12 @@ The description of the option.
 The configuration for iteration fields.
 
 </td></tr>
-<tr><td>iteration_configuration.start_date</td><td>no</td><td>
+<tr><td>iteration_configuration.start_date</td><td>yes</td><td>
 
 The start date of the first iteration.
 
 </td></tr>
-<tr><td>iteration_configuration.duration</td><td>no</td><td>
+<tr><td>iteration_configuration.duration</td><td>yes</td><td>
 
 The default duration for iterations in days. Individual iterations can override this value.
 
@@ -98,17 +104,17 @@ The default duration for iterations in days. Individual iterations can override 
 Zero or more iterations for the field.
 
 </td></tr>
-<tr><td>iteration_configuration.iterations[].title</td><td>no</td><td>
+<tr><td>iteration_configuration.iterations[].title</td><td>yes</td><td>
 
 The title of the iteration.
 
 </td></tr>
-<tr><td>iteration_configuration.iterations[].start_date</td><td>no</td><td>
+<tr><td>iteration_configuration.iterations[].start_date</td><td>yes</td><td>
 
 The start date of the iteration.
 
 </td></tr>
-<tr><td>iteration_configuration.iterations[].duration</td><td>no</td><td>
+<tr><td>iteration_configuration.iterations[].duration</td><td>yes</td><td>
 
 The duration of the iteration in days.
 

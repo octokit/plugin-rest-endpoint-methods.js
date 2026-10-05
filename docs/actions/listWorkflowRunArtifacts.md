@@ -1,4 +1,5 @@
 ---
+
 name: List workflow run artifacts
 example: octokit.rest.actions.listWorkflowRunArtifacts({ owner, repo, run_id })
 route: GET /repos/{owner}/{repo}/actions/runs/{run_id}/artifacts
@@ -61,6 +62,11 @@ The page number of the results to fetch. For more information, see "[Using pagin
 <tr><td>name</td><td>no</td><td>
 
 The name field of an artifact. When specified, only artifacts with this name will be returned.
+
+</td></tr>
+<tr><td>direction</td><td>no</td><td>
+
+The direction to sort the results by.
 
 </td></tr>
   </tbody>

@@ -1,4 +1,5 @@
 ---
+
 name: Disable Dependabot security updates
 example: octokit.rest.repos.disableAutomatedSecurityFixes({ owner, repo })
 route: DELETE /repos/{owner}/{repo}/automated-security-fixes

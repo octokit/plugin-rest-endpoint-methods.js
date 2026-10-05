@@ -1,4 +1,5 @@
 ---
+
 name: Delete a milestone
 example: octokit.rest.issues.deleteMilestone({ owner, repo, milestone_number })
 route: DELETE /repos/{owner}/{repo}/milestones/{milestone_number}

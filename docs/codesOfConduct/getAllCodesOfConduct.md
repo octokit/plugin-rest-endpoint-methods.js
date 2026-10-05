@@ -1,4 +1,5 @@
 ---
+
 name: Get all codes of conduct
 example: octokit.rest.codesOfConduct.getAllCodesOfConduct()
 route: GET /codes_of_conduct

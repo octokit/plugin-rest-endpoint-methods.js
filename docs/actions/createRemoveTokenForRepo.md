@@ -1,4 +1,5 @@
 ---
+
 name: Create a remove token for a repository
 example: octokit.rest.actions.createRemoveTokenForRepo({ owner, repo })
 route: POST /repos/{owner}/{repo}/actions/runners/remove-token

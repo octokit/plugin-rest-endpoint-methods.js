@@ -1,4 +1,5 @@
 ---
+
 name: Unsuspend an app installation
 example: octokit.rest.apps.unsuspendInstallation({ installation_id })
 route: DELETE /app/installations/{installation_id}/suspended

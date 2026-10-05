@@ -1,4 +1,5 @@
 ---
+
 name: List public organization events
 example: octokit.rest.activity.listPublicOrgEvents({ org })
 route: GET /orgs/{org}/events

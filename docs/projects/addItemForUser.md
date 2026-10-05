@@ -1,6 +1,7 @@
 ---
+
 name: Add item to user owned project
-example: octokit.rest.projects.addItemForUser({ username, project_number, type, id })
+example: octokit.rest.projects.addItemForUser({ username, project_number })
 route: POST /users/{username}/projectsV2/{project_number}/items
 scope: projects
 type: API method
@@ -14,8 +15,6 @@ Add an issue or pull request item to the specified user owned project.
 octokit.rest.projects.addItemForUser({
   username,
   project_number,
-  type,
-  id,
 });
 ```
 
@@ -38,16 +37,6 @@ The handle for the GitHub user account.
 <tr><td>project_number</td><td>yes</td><td>
 
 The project's number.
-
-</td></tr>
-<tr><td>type</td><td>yes</td><td>
-
-The type of item to add to the project. Must be either Issue or PullRequest.
-
-</td></tr>
-<tr><td>id</td><td>yes</td><td>
-
-The numeric ID of the issue or pull request to add to the project.
 
 </td></tr>
   </tbody>

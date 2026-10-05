@@ -1,4 +1,5 @@
 ---
+
 name: Get a team by name
 example: octokit.rest.teams.getByName({ org, team_slug })
 route: GET /orgs/{org}/teams/{team_slug}

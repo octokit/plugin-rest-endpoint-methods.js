@@ -1,4 +1,5 @@
 ---
+
 name: Delete an issue reaction
 example: octokit.rest.reactions.deleteForIssue({ owner, repo, issue_number, reaction_id })
 route: DELETE /repos/{owner}/{repo}/issues/{issue_number}/reactions/{reaction_id}

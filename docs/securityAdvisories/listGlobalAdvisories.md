@@ -1,4 +1,5 @@
 ---
+
 name: List global security advisories
 example: octokit.rest.securityAdvisories.listGlobalAdvisories()
 route: GET /advisories

@@ -1,4 +1,5 @@
 ---
+
 name: List selected repositories for an organization secret
 example: octokit.rest.dependabot.listSelectedReposForOrgSecret({ org, secret_name })
 route: GET /orgs/{org}/dependabot/secrets/{secret_name}/repositories

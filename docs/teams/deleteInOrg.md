@@ -1,4 +1,5 @@
 ---
+
 name: Delete a team
 example: octokit.rest.teams.deleteInOrg({ org, team_slug })
 route: DELETE /orgs/{org}/teams/{team_slug}

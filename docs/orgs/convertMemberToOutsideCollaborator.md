@@ -1,4 +1,5 @@
 ---
+
 name: Convert an organization member to outside collaborator
 example: octokit.rest.orgs.convertMemberToOutsideCollaborator({ org, username })
 route: PUT /orgs/{org}/outside_collaborators/{username}

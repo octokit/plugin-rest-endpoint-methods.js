@@ -1,4 +1,5 @@
 ---
+
 name: Set interaction restrictions for an organization
 example: octokit.rest.interactions.setRestrictionsForOrg({ org, limit })
 route: PUT /orgs/{org}/interaction-limits

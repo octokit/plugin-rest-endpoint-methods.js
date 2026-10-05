@@ -1,4 +1,5 @@
 ---
+
 name: Get a subscription plan for an account (stubbed)
 example: octokit.rest.apps.getSubscriptionPlanForAccountStubbed({ account_id })
 route: GET /marketplace_listing/stubbed/accounts/{account_id}

@@ -1,4 +1,5 @@
 ---
+
 name: GitHub API Root
 example: octokit.rest.meta.root()
 route: GET /

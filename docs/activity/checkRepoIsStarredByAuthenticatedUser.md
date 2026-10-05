@@ -1,4 +1,5 @@
 ---
+
 name: Check if a repository is starred by the authenticated user
 example: octokit.rest.activity.checkRepoIsStarredByAuthenticatedUser({ owner, repo })
 route: GET /user/starred/{owner}/{repo}

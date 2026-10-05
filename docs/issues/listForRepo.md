@@ -1,4 +1,5 @@
 ---
+
 name: List repository issues
 example: octokit.rest.issues.listForRepo({ owner, repo })
 route: GET /repos/{owner}/{repo}/issues
@@ -76,6 +77,18 @@ The user that created the issue.
 <tr><td>mentioned</td><td>no</td><td>
 
 A user that's mentioned in the issue.
+
+</td></tr>
+<tr><td>issue_field_values</td><td>no</td><td>
+
+A comma-separated list of issue field filters in `field_slug:value` format.
+Only issues matching all specified field values are returned.
+Requires issue fields to be enabled for the repository. Issue fields are
+not available for user-owned repositories, and field availability for
+organization-owned public repositories depends on the organization's
+visibility settings. For example, `priority:Urgent,severity:High` filters
+issues where the `priority` field is `Urgent` AND the `severity` field is
+`High`.
 
 </td></tr>
 <tr><td>labels</td><td>no</td><td>

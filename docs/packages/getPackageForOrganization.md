@@ -1,4 +1,5 @@
 ---
+
 name: Get a package for an organization
 example: octokit.rest.packages.getPackageForOrganization({ package_type, package_name, org })
 route: GET /orgs/{org}/packages/{package_type}/{package_name}

@@ -1,4 +1,5 @@
 ---
+
 name: Get an artifact
 example: octokit.rest.actions.getArtifact({ owner, repo, artifact_id })
 route: GET /repos/{owner}/{repo}/actions/artifacts/{artifact_id}

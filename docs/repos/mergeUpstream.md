@@ -1,4 +1,5 @@
 ---
+
 name: Sync a fork branch with the upstream repository
 example: octokit.rest.repos.mergeUpstream({ owner, repo, branch })
 route: POST /repos/{owner}/{repo}/merge-upstream

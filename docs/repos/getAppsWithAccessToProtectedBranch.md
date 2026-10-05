@@ -1,4 +1,5 @@
 ---
+
 name: Get apps with access to the protected branch
 example: octokit.rest.repos.getAppsWithAccessToProtectedBranch({ owner, repo, branch })
 route: GET /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/apps

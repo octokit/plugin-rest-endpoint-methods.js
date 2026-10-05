@@ -1,4 +1,5 @@
 ---
+
 name: Get status checks protection
 example: octokit.rest.repos.getStatusChecksProtection({ owner, repo, branch })
 route: GET /repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks

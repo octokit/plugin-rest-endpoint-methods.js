@@ -1,4 +1,5 @@
 ---
+
 name: Create a scoped access token
 example: octokit.rest.apps.scopeToken({ client_id, access_token })
 route: POST /applications/{client_id}/token/scoped
@@ -64,7 +65,7 @@ The list of repository IDs to scope the user access token to. `repository_ids` m
 </td></tr>
 <tr><td>permissions</td><td>no</td><td>
 
-The permissions granted to the user access token.
+The permissions granted to the fine-grained access token.
 
 </td></tr>
 <tr><td>permissions.actions</td><td>no</td><td>
@@ -90,6 +91,11 @@ The level of permission to create and retrieve the access token for repository a
 <tr><td>permissions.checks</td><td>no</td><td>
 
 The level of permission to grant the access token for checks on code.
+
+</td></tr>
+<tr><td>permissions.code_quality</td><td>no</td><td>
+
+The level of permission to grant the access token to view and manage code quality data.
 
 </td></tr>
 <tr><td>permissions.codespaces</td><td>no</td><td>
@@ -237,6 +243,11 @@ The level of permission to grant the access token for repository custom properti
 The level of permission to grant the access token for managing access to GitHub Copilot for members of an organization with a Copilot Business subscription. This property is in public preview and is subject to change.
 
 </td></tr>
+<tr><td>permissions.organization_copilot_agent_settings</td><td>no</td><td>
+
+The level of permission to grant the access token to view and manage Copilot cloud agent settings for an organization.
+
+</td></tr>
 <tr><td>permissions.organization_announcement_banners</td><td>no</td><td>
 
 The level of permission to grant the access token to view and manage announcement banners for an organization.
@@ -290,11 +301,6 @@ The level of permission to grant the access token to view and manage GitHub Acti
 <tr><td>permissions.organization_user_blocking</td><td>no</td><td>
 
 The level of permission to grant the access token to view and manage users blocked by the organization.
-
-</td></tr>
-<tr><td>permissions.team_discussions</td><td>no</td><td>
-
-The level of permission to grant the access token to manage team discussions and related comments.
 
 </td></tr>
 <tr><td>permissions.email_addresses</td><td>no</td><td>

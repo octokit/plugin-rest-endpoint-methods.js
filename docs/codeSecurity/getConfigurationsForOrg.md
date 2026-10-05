@@ -1,4 +1,5 @@
 ---
+
 name: Get code security configurations for an organization
 example: octokit.rest.codeSecurity.getConfigurationsForOrg({ org })
 route: GET /orgs/{org}/code-security/configurations

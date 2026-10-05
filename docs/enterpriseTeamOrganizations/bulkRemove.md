@@ -1,4 +1,5 @@
 ---
+
 name: Remove organization assignments
 example: octokit.rest.enterpriseTeamOrganizations.bulkRemove({ enterprise, enterprise-team, organization_slugs })
 route: POST /enterprises/{enterprise}/teams/{enterprise-team}/organizations/remove

@@ -1,4 +1,5 @@
 ---
+
 name: Set public organization membership for the authenticated user
 example: octokit.rest.orgs.setPublicMembershipForAuthenticatedUser({ org, username })
 route: PUT /orgs/{org}/public_members/{username}

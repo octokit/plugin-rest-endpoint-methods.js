@@ -1,4 +1,5 @@
 ---
+
 name: Get repositories associated with an enterprise code security configuration
 example: octokit.rest.codeSecurity.getRepositoriesForEnterpriseConfiguration({ enterprise, configuration_id })
 route: GET /enterprises/{enterprise}/code-security/configurations/{configuration_id}/repositories

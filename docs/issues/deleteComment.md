@@ -1,4 +1,5 @@
 ---
+
 name: Delete an issue comment
 example: octokit.rest.issues.deleteComment({ owner, repo, comment_id })
 route: DELETE /repos/{owner}/{repo}/issues/comments/{comment_id}

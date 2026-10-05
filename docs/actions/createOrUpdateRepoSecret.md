@@ -1,4 +1,5 @@
 ---
+
 name: Create or update a repository secret
 example: octokit.rest.actions.createOrUpdateRepoSecret({ owner, repo, secret_name, encrypted_value, key_id })
 route: PUT /repos/{owner}/{repo}/actions/secrets/{secret_name}

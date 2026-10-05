@@ -1,4 +1,5 @@
 ---
+
 name: Update a pull request branch
 example: octokit.rest.pulls.updateBranch({ owner, repo, pull_number })
 route: PUT /repos/{owner}/{repo}/pulls/{pull_number}/update-branch

@@ -1,4 +1,5 @@
 ---
+
 name: Delete a repository variable
 example: octokit.rest.actions.deleteRepoVariable({ owner, repo, name })
 route: DELETE /repos/{owner}/{repo}/actions/variables/{name}

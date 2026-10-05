@@ -1,4 +1,5 @@
 ---
+
 name: Get a repository ruleset
 example: octokit.rest.repos.getRepoRuleset({ owner, repo, ruleset_id })
 route: GET /repos/{owner}/{repo}/rulesets/{ruleset_id}

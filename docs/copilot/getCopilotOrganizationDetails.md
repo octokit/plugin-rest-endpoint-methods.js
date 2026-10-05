@@ -1,4 +1,5 @@
 ---
+
 name: Get Copilot seat information and settings for an organization
 example: octokit.rest.copilot.getCopilotOrganizationDetails({ org })
 route: GET /orgs/{org}/copilot/billing

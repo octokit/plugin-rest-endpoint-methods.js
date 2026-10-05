@@ -297,6 +297,11 @@ export type RestEndpointMethodTypes = {
         Endpoints["GET /repos/{owner}/{repo}/actions/artifacts/{artifact_id}"]["parameters"];
       response: Endpoints["GET /repos/{owner}/{repo}/actions/artifacts/{artifact_id}"]["response"];
     };
+    getConcurrencyGroupForRepository: {
+      parameters: RequestParameters &
+        Endpoints["GET /repos/{owner}/{repo}/actions/concurrency_groups/{concurrency_group_name}"]["parameters"];
+      response: Endpoints["GET /repos/{owner}/{repo}/actions/concurrency_groups/{concurrency_group_name}"]["response"];
+    };
     getCustomImageForOrg: {
       parameters: RequestParameters &
         Endpoints["GET /orgs/{org}/actions/hosted-runners/images/custom/{image_definition_id}"]["parameters"];
@@ -471,6 +476,16 @@ export type RestEndpointMethodTypes = {
       parameters: RequestParameters &
         Endpoints["GET /repos/{owner}/{repo}/actions/artifacts"]["parameters"];
       response: Endpoints["GET /repos/{owner}/{repo}/actions/artifacts"]["response"];
+    };
+    listConcurrencyGroupsForRepository: {
+      parameters: RequestParameters &
+        Endpoints["GET /repos/{owner}/{repo}/actions/concurrency_groups"]["parameters"];
+      response: Endpoints["GET /repos/{owner}/{repo}/actions/concurrency_groups"]["response"];
+    };
+    listConcurrencyGroupsForWorkflowRun: {
+      parameters: RequestParameters &
+        Endpoints["GET /repos/{owner}/{repo}/actions/runs/{run_id}/concurrency_groups"]["parameters"];
+      response: Endpoints["GET /repos/{owner}/{repo}/actions/runs/{run_id}/concurrency_groups"]["response"];
     };
     listCustomImageVersionsForOrg: {
       parameters: RequestParameters &
@@ -803,6 +818,11 @@ export type RestEndpointMethodTypes = {
         Endpoints["GET /repos/{owner}/{repo}/subscription"]["parameters"];
       response: Endpoints["GET /repos/{owner}/{repo}/subscription"]["response"];
     };
+    getStargazerCountForRepo: {
+      parameters: RequestParameters &
+        Endpoints["GET /repos/{owner}/{repo}/stargazers/count"]["parameters"];
+      response: Endpoints["GET /repos/{owner}/{repo}/stargazers/count"]["response"];
+    };
     getThread: {
       parameters: RequestParameters &
         Endpoints["GET /notifications/threads/{thread_id}"]["parameters"];
@@ -936,6 +956,185 @@ export type RestEndpointMethodTypes = {
       parameters: RequestParameters &
         Endpoints["DELETE /user/starred/{owner}/{repo}"]["parameters"];
       response: Endpoints["DELETE /user/starred/{owner}/{repo}"]["response"];
+    };
+  };
+  agentTasks: {
+    createTaskInRepo: {
+      parameters: RequestParameters &
+        Endpoints["POST /agents/repos/{owner}/{repo}/tasks"]["parameters"];
+      response: Endpoints["POST /agents/repos/{owner}/{repo}/tasks"]["response"];
+    };
+    getTaskById: {
+      parameters: RequestParameters &
+        Endpoints["GET /agents/tasks/{task_id}"]["parameters"];
+      response: Endpoints["GET /agents/tasks/{task_id}"]["response"];
+    };
+    getTaskByRepoAndId: {
+      parameters: RequestParameters &
+        Endpoints["GET /agents/repos/{owner}/{repo}/tasks/{task_id}"]["parameters"];
+      response: Endpoints["GET /agents/repos/{owner}/{repo}/tasks/{task_id}"]["response"];
+    };
+    listTasks: {
+      parameters: RequestParameters &
+        Endpoints["GET /agents/tasks"]["parameters"];
+      response: Endpoints["GET /agents/tasks"]["response"];
+    };
+    listTasksForRepo: {
+      parameters: RequestParameters &
+        Endpoints["GET /agents/repos/{owner}/{repo}/tasks"]["parameters"];
+      response: Endpoints["GET /agents/repos/{owner}/{repo}/tasks"]["response"];
+    };
+  };
+  agents: {
+    addSelectedRepoToOrgSecret: {
+      parameters: RequestParameters &
+        Endpoints["PUT /orgs/{org}/agents/secrets/{secret_name}/repositories/{repository_id}"]["parameters"];
+      response: Endpoints["PUT /orgs/{org}/agents/secrets/{secret_name}/repositories/{repository_id}"]["response"];
+    };
+    addSelectedRepoToOrgVariable: {
+      parameters: RequestParameters &
+        Endpoints["PUT /orgs/{org}/agents/variables/{name}/repositories/{repository_id}"]["parameters"];
+      response: Endpoints["PUT /orgs/{org}/agents/variables/{name}/repositories/{repository_id}"]["response"];
+    };
+    createOrUpdateOrgSecret: {
+      parameters: RequestParameters &
+        Endpoints["PUT /orgs/{org}/agents/secrets/{secret_name}"]["parameters"];
+      response: Endpoints["PUT /orgs/{org}/agents/secrets/{secret_name}"]["response"];
+    };
+    createOrUpdateRepoSecret: {
+      parameters: RequestParameters &
+        Endpoints["PUT /repos/{owner}/{repo}/agents/secrets/{secret_name}"]["parameters"];
+      response: Endpoints["PUT /repos/{owner}/{repo}/agents/secrets/{secret_name}"]["response"];
+    };
+    createOrgVariable: {
+      parameters: RequestParameters &
+        Endpoints["POST /orgs/{org}/agents/variables"]["parameters"];
+      response: Endpoints["POST /orgs/{org}/agents/variables"]["response"];
+    };
+    createRepoVariable: {
+      parameters: RequestParameters &
+        Endpoints["POST /repos/{owner}/{repo}/agents/variables"]["parameters"];
+      response: Endpoints["POST /repos/{owner}/{repo}/agents/variables"]["response"];
+    };
+    deleteOrgSecret: {
+      parameters: RequestParameters &
+        Endpoints["DELETE /orgs/{org}/agents/secrets/{secret_name}"]["parameters"];
+      response: Endpoints["DELETE /orgs/{org}/agents/secrets/{secret_name}"]["response"];
+    };
+    deleteOrgVariable: {
+      parameters: RequestParameters &
+        Endpoints["DELETE /orgs/{org}/agents/variables/{name}"]["parameters"];
+      response: Endpoints["DELETE /orgs/{org}/agents/variables/{name}"]["response"];
+    };
+    deleteRepoSecret: {
+      parameters: RequestParameters &
+        Endpoints["DELETE /repos/{owner}/{repo}/agents/secrets/{secret_name}"]["parameters"];
+      response: Endpoints["DELETE /repos/{owner}/{repo}/agents/secrets/{secret_name}"]["response"];
+    };
+    deleteRepoVariable: {
+      parameters: RequestParameters &
+        Endpoints["DELETE /repos/{owner}/{repo}/agents/variables/{name}"]["parameters"];
+      response: Endpoints["DELETE /repos/{owner}/{repo}/agents/variables/{name}"]["response"];
+    };
+    getOrgPublicKey: {
+      parameters: RequestParameters &
+        Endpoints["GET /orgs/{org}/agents/secrets/public-key"]["parameters"];
+      response: Endpoints["GET /orgs/{org}/agents/secrets/public-key"]["response"];
+    };
+    getOrgSecret: {
+      parameters: RequestParameters &
+        Endpoints["GET /orgs/{org}/agents/secrets/{secret_name}"]["parameters"];
+      response: Endpoints["GET /orgs/{org}/agents/secrets/{secret_name}"]["response"];
+    };
+    getOrgVariable: {
+      parameters: RequestParameters &
+        Endpoints["GET /orgs/{org}/agents/variables/{name}"]["parameters"];
+      response: Endpoints["GET /orgs/{org}/agents/variables/{name}"]["response"];
+    };
+    getRepoPublicKey: {
+      parameters: RequestParameters &
+        Endpoints["GET /repos/{owner}/{repo}/agents/secrets/public-key"]["parameters"];
+      response: Endpoints["GET /repos/{owner}/{repo}/agents/secrets/public-key"]["response"];
+    };
+    getRepoSecret: {
+      parameters: RequestParameters &
+        Endpoints["GET /repos/{owner}/{repo}/agents/secrets/{secret_name}"]["parameters"];
+      response: Endpoints["GET /repos/{owner}/{repo}/agents/secrets/{secret_name}"]["response"];
+    };
+    getRepoVariable: {
+      parameters: RequestParameters &
+        Endpoints["GET /repos/{owner}/{repo}/agents/variables/{name}"]["parameters"];
+      response: Endpoints["GET /repos/{owner}/{repo}/agents/variables/{name}"]["response"];
+    };
+    listOrgSecrets: {
+      parameters: RequestParameters &
+        Endpoints["GET /orgs/{org}/agents/secrets"]["parameters"];
+      response: Endpoints["GET /orgs/{org}/agents/secrets"]["response"];
+    };
+    listOrgVariables: {
+      parameters: RequestParameters &
+        Endpoints["GET /orgs/{org}/agents/variables"]["parameters"];
+      response: Endpoints["GET /orgs/{org}/agents/variables"]["response"];
+    };
+    listRepoOrganizationSecrets: {
+      parameters: RequestParameters &
+        Endpoints["GET /repos/{owner}/{repo}/agents/organization-secrets"]["parameters"];
+      response: Endpoints["GET /repos/{owner}/{repo}/agents/organization-secrets"]["response"];
+    };
+    listRepoOrganizationVariables: {
+      parameters: RequestParameters &
+        Endpoints["GET /repos/{owner}/{repo}/agents/organization-variables"]["parameters"];
+      response: Endpoints["GET /repos/{owner}/{repo}/agents/organization-variables"]["response"];
+    };
+    listRepoSecrets: {
+      parameters: RequestParameters &
+        Endpoints["GET /repos/{owner}/{repo}/agents/secrets"]["parameters"];
+      response: Endpoints["GET /repos/{owner}/{repo}/agents/secrets"]["response"];
+    };
+    listRepoVariables: {
+      parameters: RequestParameters &
+        Endpoints["GET /repos/{owner}/{repo}/agents/variables"]["parameters"];
+      response: Endpoints["GET /repos/{owner}/{repo}/agents/variables"]["response"];
+    };
+    listSelectedReposForOrgSecret: {
+      parameters: RequestParameters &
+        Endpoints["GET /orgs/{org}/agents/secrets/{secret_name}/repositories"]["parameters"];
+      response: Endpoints["GET /orgs/{org}/agents/secrets/{secret_name}/repositories"]["response"];
+    };
+    listSelectedReposForOrgVariable: {
+      parameters: RequestParameters &
+        Endpoints["GET /orgs/{org}/agents/variables/{name}/repositories"]["parameters"];
+      response: Endpoints["GET /orgs/{org}/agents/variables/{name}/repositories"]["response"];
+    };
+    removeSelectedRepoFromOrgSecret: {
+      parameters: RequestParameters &
+        Endpoints["DELETE /orgs/{org}/agents/secrets/{secret_name}/repositories/{repository_id}"]["parameters"];
+      response: Endpoints["DELETE /orgs/{org}/agents/secrets/{secret_name}/repositories/{repository_id}"]["response"];
+    };
+    removeSelectedRepoFromOrgVariable: {
+      parameters: RequestParameters &
+        Endpoints["DELETE /orgs/{org}/agents/variables/{name}/repositories/{repository_id}"]["parameters"];
+      response: Endpoints["DELETE /orgs/{org}/agents/variables/{name}/repositories/{repository_id}"]["response"];
+    };
+    setSelectedReposForOrgSecret: {
+      parameters: RequestParameters &
+        Endpoints["PUT /orgs/{org}/agents/secrets/{secret_name}/repositories"]["parameters"];
+      response: Endpoints["PUT /orgs/{org}/agents/secrets/{secret_name}/repositories"]["response"];
+    };
+    setSelectedReposForOrgVariable: {
+      parameters: RequestParameters &
+        Endpoints["PUT /orgs/{org}/agents/variables/{name}/repositories"]["parameters"];
+      response: Endpoints["PUT /orgs/{org}/agents/variables/{name}/repositories"]["response"];
+    };
+    updateOrgVariable: {
+      parameters: RequestParameters &
+        Endpoints["PATCH /orgs/{org}/agents/variables/{name}"]["parameters"];
+      response: Endpoints["PATCH /orgs/{org}/agents/variables/{name}"]["response"];
+    };
+    updateRepoVariable: {
+      parameters: RequestParameters &
+        Endpoints["PATCH /repos/{owner}/{repo}/agents/variables/{name}"]["parameters"];
+      response: Endpoints["PATCH /repos/{owner}/{repo}/agents/variables/{name}"]["response"];
     };
   };
   apps: {
@@ -1135,6 +1334,11 @@ export type RestEndpointMethodTypes = {
     };
   };
   billing: {
+    createOrganizationBudget: {
+      parameters: RequestParameters &
+        Endpoints["POST /organizations/{org}/settings/billing/budgets"]["parameters"];
+      response: Endpoints["POST /organizations/{org}/settings/billing/budgets"]["response"];
+    };
     deleteBudgetOrg: {
       parameters: RequestParameters &
         Endpoints["DELETE /organizations/{org}/settings/billing/budgets/{budget_id}"]["parameters"];
@@ -1149,6 +1353,16 @@ export type RestEndpointMethodTypes = {
       parameters: RequestParameters &
         Endpoints["GET /organizations/{org}/settings/billing/budgets/{budget_id}"]["parameters"];
       response: Endpoints["GET /organizations/{org}/settings/billing/budgets/{budget_id}"]["response"];
+    };
+    getGithubBillingAiCreditUsageReportOrg: {
+      parameters: RequestParameters &
+        Endpoints["GET /organizations/{org}/settings/billing/ai_credit/usage"]["parameters"];
+      response: Endpoints["GET /organizations/{org}/settings/billing/ai_credit/usage"]["response"];
+    };
+    getGithubBillingAiCreditUsageReportUser: {
+      parameters: RequestParameters &
+        Endpoints["GET /users/{username}/settings/billing/ai_credit/usage"]["parameters"];
+      response: Endpoints["GET /users/{username}/settings/billing/ai_credit/usage"]["response"];
     };
     getGithubBillingPremiumRequestUsageReportOrg: {
       parameters: RequestParameters &
@@ -1273,6 +1487,28 @@ export type RestEndpointMethodTypes = {
       parameters: RequestParameters &
         Endpoints["PATCH /repos/{owner}/{repo}/check-runs/{check_run_id}"]["parameters"];
       response: Endpoints["PATCH /repos/{owner}/{repo}/check-runs/{check_run_id}"]["response"];
+    };
+  };
+  codeQuality: {
+    getFinding: {
+      parameters: RequestParameters &
+        Endpoints["GET /repos/{owner}/{repo}/code-quality/findings/{finding_number}"]["parameters"];
+      response: Endpoints["GET /repos/{owner}/{repo}/code-quality/findings/{finding_number}"]["response"];
+    };
+    getSetup: {
+      parameters: RequestParameters &
+        Endpoints["GET /repos/{owner}/{repo}/code-quality/setup"]["parameters"];
+      response: Endpoints["GET /repos/{owner}/{repo}/code-quality/setup"]["response"];
+    };
+    listFindingsForRepo: {
+      parameters: RequestParameters &
+        Endpoints["GET /repos/{owner}/{repo}/code-quality/findings"]["parameters"];
+      response: Endpoints["GET /repos/{owner}/{repo}/code-quality/findings"]["response"];
+    };
+    updateSetup: {
+      parameters: RequestParameters &
+        Endpoints["PATCH /repos/{owner}/{repo}/code-quality/setup"]["parameters"];
+      response: Endpoints["PATCH /repos/{owner}/{repo}/code-quality/setup"]["response"];
     };
   };
   codeScanning: {
@@ -1749,15 +1985,90 @@ export type RestEndpointMethodTypes = {
         Endpoints["DELETE /orgs/{org}/copilot/billing/selected_users"]["parameters"];
       response: Endpoints["DELETE /orgs/{org}/copilot/billing/selected_users"]["response"];
     };
-    copilotMetricsForOrganization: {
+    copilotContentExclusionForOrganization: {
       parameters: RequestParameters &
-        Endpoints["GET /orgs/{org}/copilot/metrics"]["parameters"];
-      response: Endpoints["GET /orgs/{org}/copilot/metrics"]["response"];
+        Endpoints["GET /orgs/{org}/copilot/content_exclusion"]["parameters"];
+      response: Endpoints["GET /orgs/{org}/copilot/content_exclusion"]["response"];
     };
-    copilotMetricsForTeam: {
+    copilotEnterpriseOneDayUsageMetrics: {
       parameters: RequestParameters &
-        Endpoints["GET /orgs/{org}/team/{team_slug}/copilot/metrics"]["parameters"];
-      response: Endpoints["GET /orgs/{org}/team/{team_slug}/copilot/metrics"]["response"];
+        Endpoints["GET /enterprises/{enterprise}/copilot/metrics/reports/enterprise-1-day"]["parameters"];
+      response: Endpoints["GET /enterprises/{enterprise}/copilot/metrics/reports/enterprise-1-day"]["response"];
+    };
+    copilotEnterpriseReposOneDayReport: {
+      parameters: RequestParameters &
+        Endpoints["GET /enterprises/{enterprise}/copilot/metrics/reports/repos-1-day"]["parameters"];
+      response: Endpoints["GET /enterprises/{enterprise}/copilot/metrics/reports/repos-1-day"]["response"];
+    };
+    copilotEnterpriseUsageMetrics: {
+      parameters: RequestParameters &
+        Endpoints["GET /enterprises/{enterprise}/copilot/metrics/reports/enterprise-28-day/latest"]["parameters"];
+      response: Endpoints["GET /enterprises/{enterprise}/copilot/metrics/reports/enterprise-28-day/latest"]["response"];
+    };
+    copilotEnterpriseUserTeamsOneDayReport: {
+      parameters: RequestParameters &
+        Endpoints["GET /enterprises/{enterprise}/copilot/metrics/reports/user-teams-1-day"]["parameters"];
+      response: Endpoints["GET /enterprises/{enterprise}/copilot/metrics/reports/user-teams-1-day"]["response"];
+    };
+    copilotOrganizationOneDayUsageMetrics: {
+      parameters: RequestParameters &
+        Endpoints["GET /orgs/{org}/copilot/metrics/reports/organization-1-day"]["parameters"];
+      response: Endpoints["GET /orgs/{org}/copilot/metrics/reports/organization-1-day"]["response"];
+    };
+    copilotOrganizationReposOneDayReport: {
+      parameters: RequestParameters &
+        Endpoints["GET /orgs/{org}/copilot/metrics/reports/repos-1-day"]["parameters"];
+      response: Endpoints["GET /orgs/{org}/copilot/metrics/reports/repos-1-day"]["response"];
+    };
+    copilotOrganizationUsageMetrics: {
+      parameters: RequestParameters &
+        Endpoints["GET /orgs/{org}/copilot/metrics/reports/organization-28-day/latest"]["parameters"];
+      response: Endpoints["GET /orgs/{org}/copilot/metrics/reports/organization-28-day/latest"]["response"];
+    };
+    copilotOrganizationUserTeamsOneDayReport: {
+      parameters: RequestParameters &
+        Endpoints["GET /orgs/{org}/copilot/metrics/reports/user-teams-1-day"]["parameters"];
+      response: Endpoints["GET /orgs/{org}/copilot/metrics/reports/user-teams-1-day"]["response"];
+    };
+    copilotOrganizationUsersOneDayUsageMetrics: {
+      parameters: RequestParameters &
+        Endpoints["GET /orgs/{org}/copilot/metrics/reports/users-1-day"]["parameters"];
+      response: Endpoints["GET /orgs/{org}/copilot/metrics/reports/users-1-day"]["response"];
+    };
+    copilotOrganizationUsersUsageMetrics: {
+      parameters: RequestParameters &
+        Endpoints["GET /orgs/{org}/copilot/metrics/reports/users-28-day/latest"]["parameters"];
+      response: Endpoints["GET /orgs/{org}/copilot/metrics/reports/users-28-day/latest"]["response"];
+    };
+    copilotUsersOneDayUsageMetrics: {
+      parameters: RequestParameters &
+        Endpoints["GET /enterprises/{enterprise}/copilot/metrics/reports/users-1-day"]["parameters"];
+      response: Endpoints["GET /enterprises/{enterprise}/copilot/metrics/reports/users-1-day"]["response"];
+    };
+    copilotUsersUsageMetrics: {
+      parameters: RequestParameters &
+        Endpoints["GET /enterprises/{enterprise}/copilot/metrics/reports/users-28-day/latest"]["parameters"];
+      response: Endpoints["GET /enterprises/{enterprise}/copilot/metrics/reports/users-28-day/latest"]["response"];
+    };
+    disableCopilotCodingAgentForRepositoryInOrganization: {
+      parameters: RequestParameters &
+        Endpoints["DELETE /orgs/{org}/copilot/coding-agent/permissions/repositories/{repository_id}"]["parameters"];
+      response: Endpoints["DELETE /orgs/{org}/copilot/coding-agent/permissions/repositories/{repository_id}"]["response"];
+    };
+    enableCopilotCodingAgentForRepositoryInOrganization: {
+      parameters: RequestParameters &
+        Endpoints["PUT /orgs/{org}/copilot/coding-agent/permissions/repositories/{repository_id}"]["parameters"];
+      response: Endpoints["PUT /orgs/{org}/copilot/coding-agent/permissions/repositories/{repository_id}"]["response"];
+    };
+    getCopilotCloudAgentConfiguration: {
+      parameters: RequestParameters &
+        Endpoints["GET /repos/{owner}/{repo}/copilot/cloud-agent/configuration"]["parameters"];
+      response: Endpoints["GET /repos/{owner}/{repo}/copilot/cloud-agent/configuration"]["response"];
+    };
+    getCopilotCodingAgentPermissionsOrganization: {
+      parameters: RequestParameters &
+        Endpoints["GET /orgs/{org}/copilot/coding-agent/permissions"]["parameters"];
+      response: Endpoints["GET /orgs/{org}/copilot/coding-agent/permissions"]["response"];
     };
     getCopilotOrganizationDetails: {
       parameters: RequestParameters &
@@ -1769,10 +2080,25 @@ export type RestEndpointMethodTypes = {
         Endpoints["GET /orgs/{org}/members/{username}/copilot"]["parameters"];
       response: Endpoints["GET /orgs/{org}/members/{username}/copilot"]["response"];
     };
+    listCopilotCodingAgentSelectedRepositoriesForOrganization: {
+      parameters: RequestParameters &
+        Endpoints["GET /orgs/{org}/copilot/coding-agent/permissions/repositories"]["parameters"];
+      response: Endpoints["GET /orgs/{org}/copilot/coding-agent/permissions/repositories"]["response"];
+    };
     listCopilotSeats: {
       parameters: RequestParameters &
         Endpoints["GET /orgs/{org}/copilot/billing/seats"]["parameters"];
       response: Endpoints["GET /orgs/{org}/copilot/billing/seats"]["response"];
+    };
+    setCopilotCodingAgentPermissionsOrganization: {
+      parameters: RequestParameters &
+        Endpoints["PUT /orgs/{org}/copilot/coding-agent/permissions"]["parameters"];
+      response: Endpoints["PUT /orgs/{org}/copilot/coding-agent/permissions"]["response"];
+    };
+    setCopilotCodingAgentSelectedRepositoriesForOrganization: {
+      parameters: RequestParameters &
+        Endpoints["PUT /orgs/{org}/copilot/coding-agent/permissions/repositories"]["parameters"];
+      response: Endpoints["PUT /orgs/{org}/copilot/coding-agent/permissions/repositories"]["response"];
     };
   };
   credentials: {
@@ -1868,15 +2194,25 @@ export type RestEndpointMethodTypes = {
         Endpoints["DELETE /orgs/{org}/dependabot/secrets/{secret_name}/repositories/{repository_id}"]["parameters"];
       response: Endpoints["DELETE /orgs/{org}/dependabot/secrets/{secret_name}/repositories/{repository_id}"]["response"];
     };
+    repositoryAccessForEnterprise: {
+      parameters: RequestParameters &
+        Endpoints["GET /enterprises/{enterprise}/dependabot/repository-access"]["parameters"];
+      response: Endpoints["GET /enterprises/{enterprise}/dependabot/repository-access"]["response"];
+    };
     repositoryAccessForOrg: {
       parameters: RequestParameters &
-        Endpoints["GET /organizations/{org}/dependabot/repository-access"]["parameters"];
-      response: Endpoints["GET /organizations/{org}/dependabot/repository-access"]["response"];
+        Endpoints["GET /orgs/{org}/dependabot/repository-access"]["parameters"];
+      response: Endpoints["GET /orgs/{org}/dependabot/repository-access"]["response"];
     };
     setRepositoryAccessDefaultLevel: {
       parameters: RequestParameters &
-        Endpoints["PUT /organizations/{org}/dependabot/repository-access/default-level"]["parameters"];
-      response: Endpoints["PUT /organizations/{org}/dependabot/repository-access/default-level"]["response"];
+        Endpoints["PUT /orgs/{org}/dependabot/repository-access/default-level"]["parameters"];
+      response: Endpoints["PUT /orgs/{org}/dependabot/repository-access/default-level"]["response"];
+    };
+    setRepositoryAccessDefaultLevelForEnterprise: {
+      parameters: RequestParameters &
+        Endpoints["PUT /enterprises/{enterprise}/dependabot/repository-access/default-level"]["parameters"];
+      response: Endpoints["PUT /enterprises/{enterprise}/dependabot/repository-access/default-level"]["response"];
     };
     setSelectedReposForOrgSecret: {
       parameters: RequestParameters &
@@ -1888,10 +2224,15 @@ export type RestEndpointMethodTypes = {
         Endpoints["PATCH /repos/{owner}/{repo}/dependabot/alerts/{alert_number}"]["parameters"];
       response: Endpoints["PATCH /repos/{owner}/{repo}/dependabot/alerts/{alert_number}"]["response"];
     };
+    updateRepositoryAccessForEnterprise: {
+      parameters: RequestParameters &
+        Endpoints["PATCH /enterprises/{enterprise}/dependabot/repository-access"]["parameters"];
+      response: Endpoints["PATCH /enterprises/{enterprise}/dependabot/repository-access"]["response"];
+    };
     updateRepositoryAccessForOrg: {
       parameters: RequestParameters &
-        Endpoints["PATCH /organizations/{org}/dependabot/repository-access"]["parameters"];
-      response: Endpoints["PATCH /organizations/{org}/dependabot/repository-access"]["response"];
+        Endpoints["PATCH /orgs/{org}/dependabot/repository-access"]["parameters"];
+      response: Endpoints["PATCH /orgs/{org}/dependabot/repository-access"]["response"];
     };
   };
   dependencyGraph: {
@@ -1909,6 +2250,16 @@ export type RestEndpointMethodTypes = {
       parameters: RequestParameters &
         Endpoints["GET /repos/{owner}/{repo}/dependency-graph/sbom"]["parameters"];
       response: Endpoints["GET /repos/{owner}/{repo}/dependency-graph/sbom"]["response"];
+    };
+    fetchSbomReport: {
+      parameters: RequestParameters &
+        Endpoints["GET /repos/{owner}/{repo}/dependency-graph/sbom/fetch-report/{sbom_uuid}"]["parameters"];
+      response: Endpoints["GET /repos/{owner}/{repo}/dependency-graph/sbom/fetch-report/{sbom_uuid}"]["response"];
+    };
+    generateSbomReport: {
+      parameters: RequestParameters &
+        Endpoints["GET /repos/{owner}/{repo}/dependency-graph/sbom/generate-report"]["parameters"];
+      response: Endpoints["GET /repos/{owner}/{repo}/dependency-graph/sbom/generate-report"]["response"];
     };
   };
   emojis: {
@@ -2220,6 +2571,21 @@ export type RestEndpointMethodTypes = {
     };
   };
   interactions: {
+    getPullRequestBypassListForRepo: {
+      parameters: RequestParameters &
+        Endpoints["GET /repos/{owner}/{repo}/interaction-limits/pulls/bypass-list"]["parameters"];
+      response: Endpoints["GET /repos/{owner}/{repo}/interaction-limits/pulls/bypass-list"]["response"];
+    };
+    getPullRequestCreationCapForOrg: {
+      parameters: RequestParameters &
+        Endpoints["GET /orgs/{org}/interaction-limits/pulls/creation-cap"]["parameters"];
+      response: Endpoints["GET /orgs/{org}/interaction-limits/pulls/creation-cap"]["response"];
+    };
+    getPullRequestCreationCapForRepo: {
+      parameters: RequestParameters &
+        Endpoints["GET /repos/{owner}/{repo}/interaction-limits/pulls/creation-cap"]["parameters"];
+      response: Endpoints["GET /repos/{owner}/{repo}/interaction-limits/pulls/creation-cap"]["response"];
+    };
     getRestrictionsForAuthenticatedUser: {
       parameters: RequestParameters &
         Endpoints["GET /user/interaction-limits"]["parameters"];
@@ -2239,6 +2605,11 @@ export type RestEndpointMethodTypes = {
       parameters: RequestParameters &
         Endpoints["GET /user/interaction-limits"]["parameters"];
       response: Endpoints["GET /user/interaction-limits"]["response"];
+    };
+    removePullRequestBypassListForRepo: {
+      parameters: RequestParameters &
+        Endpoints["DELETE /repos/{owner}/{repo}/interaction-limits/pulls/bypass-list"]["parameters"];
+      response: Endpoints["DELETE /repos/{owner}/{repo}/interaction-limits/pulls/bypass-list"]["response"];
     };
     removeRestrictionsForAuthenticatedUser: {
       parameters: RequestParameters &
@@ -2260,6 +2631,11 @@ export type RestEndpointMethodTypes = {
         Endpoints["DELETE /user/interaction-limits"]["parameters"];
       response: Endpoints["DELETE /user/interaction-limits"]["response"];
     };
+    setPullRequestBypassListForRepo: {
+      parameters: RequestParameters &
+        Endpoints["PUT /repos/{owner}/{repo}/interaction-limits/pulls/bypass-list"]["parameters"];
+      response: Endpoints["PUT /repos/{owner}/{repo}/interaction-limits/pulls/bypass-list"]["response"];
+    };
     setRestrictionsForAuthenticatedUser: {
       parameters: RequestParameters &
         Endpoints["PUT /user/interaction-limits"]["parameters"];
@@ -2280,6 +2656,16 @@ export type RestEndpointMethodTypes = {
         Endpoints["PUT /user/interaction-limits"]["parameters"];
       response: Endpoints["PUT /user/interaction-limits"]["response"];
     };
+    updatePullRequestCreationCapForOrg: {
+      parameters: RequestParameters &
+        Endpoints["PATCH /orgs/{org}/interaction-limits/pulls/creation-cap"]["parameters"];
+      response: Endpoints["PATCH /orgs/{org}/interaction-limits/pulls/creation-cap"]["response"];
+    };
+    updatePullRequestCreationCapForRepo: {
+      parameters: RequestParameters &
+        Endpoints["PATCH /repos/{owner}/{repo}/interaction-limits/pulls/creation-cap"]["parameters"];
+      response: Endpoints["PATCH /repos/{owner}/{repo}/interaction-limits/pulls/creation-cap"]["response"];
+    };
   };
   issues: {
     addAssignees: {
@@ -2292,6 +2678,11 @@ export type RestEndpointMethodTypes = {
         Endpoints["POST /repos/{owner}/{repo}/issues/{issue_number}/dependencies/blocked_by"]["parameters"];
       response: Endpoints["POST /repos/{owner}/{repo}/issues/{issue_number}/dependencies/blocked_by"]["response"];
     };
+    addIssueFieldValues: {
+      parameters: RequestParameters &
+        Endpoints["POST /repos/{owner}/{repo}/issues/{issue_number}/issue-field-values"]["parameters"];
+      response: Endpoints["POST /repos/{owner}/{repo}/issues/{issue_number}/issue-field-values"]["response"];
+    };
     addLabels: {
       parameters: RequestParameters &
         Endpoints["POST /repos/{owner}/{repo}/issues/{issue_number}/labels"]["parameters"];
@@ -2301,6 +2692,11 @@ export type RestEndpointMethodTypes = {
       parameters: RequestParameters &
         Endpoints["POST /repos/{owner}/{repo}/issues/{issue_number}/sub_issues"]["parameters"];
       response: Endpoints["POST /repos/{owner}/{repo}/issues/{issue_number}/sub_issues"]["response"];
+    };
+    approveSuggestion: {
+      parameters: RequestParameters &
+        Endpoints["POST /repos/{owner}/{repo}/issues/{issue_number}/suggestions/{suggestion_id}/approve"]["parameters"];
+      response: Endpoints["POST /repos/{owner}/{repo}/issues/{issue_number}/suggestions/{suggestion_id}/approve"]["response"];
     };
     checkUserCanBeAssigned: {
       parameters: RequestParameters &
@@ -2337,6 +2733,11 @@ export type RestEndpointMethodTypes = {
         Endpoints["DELETE /repos/{owner}/{repo}/issues/comments/{comment_id}"]["parameters"];
       response: Endpoints["DELETE /repos/{owner}/{repo}/issues/comments/{comment_id}"]["response"];
     };
+    deleteIssueFieldValue: {
+      parameters: RequestParameters &
+        Endpoints["DELETE /repos/{owner}/{repo}/issues/{issue_number}/issue-field-values/{issue_field_id}"]["parameters"];
+      response: Endpoints["DELETE /repos/{owner}/{repo}/issues/{issue_number}/issue-field-values/{issue_field_id}"]["response"];
+    };
     deleteLabel: {
       parameters: RequestParameters &
         Endpoints["DELETE /repos/{owner}/{repo}/labels/{name}"]["parameters"];
@@ -2346,6 +2747,11 @@ export type RestEndpointMethodTypes = {
       parameters: RequestParameters &
         Endpoints["DELETE /repos/{owner}/{repo}/milestones/{milestone_number}"]["parameters"];
       response: Endpoints["DELETE /repos/{owner}/{repo}/milestones/{milestone_number}"]["response"];
+    };
+    dismissSuggestion: {
+      parameters: RequestParameters &
+        Endpoints["POST /repos/{owner}/{repo}/issues/{issue_number}/suggestions/{suggestion_id}/dismiss"]["parameters"];
+      response: Endpoints["POST /repos/{owner}/{repo}/issues/{issue_number}/suggestions/{suggestion_id}/dismiss"]["response"];
     };
     get: {
       parameters: RequestParameters &
@@ -2436,6 +2842,11 @@ export type RestEndpointMethodTypes = {
         Endpoints["GET /repos/{owner}/{repo}/issues"]["parameters"];
       response: Endpoints["GET /repos/{owner}/{repo}/issues"]["response"];
     };
+    listIssueFieldValuesForIssue: {
+      parameters: RequestParameters &
+        Endpoints["GET /repos/{owner}/{repo}/issues/{issue_number}/issue-field-values"]["parameters"];
+      response: Endpoints["GET /repos/{owner}/{repo}/issues/{issue_number}/issue-field-values"]["response"];
+    };
     listLabelsForMilestone: {
       parameters: RequestParameters &
         Endpoints["GET /repos/{owner}/{repo}/milestones/{milestone_number}/labels"]["parameters"];
@@ -2461,10 +2872,20 @@ export type RestEndpointMethodTypes = {
         Endpoints["GET /repos/{owner}/{repo}/issues/{issue_number}/sub_issues"]["parameters"];
       response: Endpoints["GET /repos/{owner}/{repo}/issues/{issue_number}/sub_issues"]["response"];
     };
+    listSuggestions: {
+      parameters: RequestParameters &
+        Endpoints["GET /repos/{owner}/{repo}/issues/{issue_number}/suggestions"]["parameters"];
+      response: Endpoints["GET /repos/{owner}/{repo}/issues/{issue_number}/suggestions"]["response"];
+    };
     lock: {
       parameters: RequestParameters &
         Endpoints["PUT /repos/{owner}/{repo}/issues/{issue_number}/lock"]["parameters"];
       response: Endpoints["PUT /repos/{owner}/{repo}/issues/{issue_number}/lock"]["response"];
+    };
+    pinComment: {
+      parameters: RequestParameters &
+        Endpoints["PUT /repos/{owner}/{repo}/issues/comments/{comment_id}/pin"]["parameters"];
+      response: Endpoints["PUT /repos/{owner}/{repo}/issues/comments/{comment_id}/pin"]["response"];
     };
     removeAllLabels: {
       parameters: RequestParameters &
@@ -2496,6 +2917,11 @@ export type RestEndpointMethodTypes = {
         Endpoints["PATCH /repos/{owner}/{repo}/issues/{issue_number}/sub_issues/priority"]["parameters"];
       response: Endpoints["PATCH /repos/{owner}/{repo}/issues/{issue_number}/sub_issues/priority"]["response"];
     };
+    setIssueFieldValues: {
+      parameters: RequestParameters &
+        Endpoints["PUT /repos/{owner}/{repo}/issues/{issue_number}/issue-field-values"]["parameters"];
+      response: Endpoints["PUT /repos/{owner}/{repo}/issues/{issue_number}/issue-field-values"]["response"];
+    };
     setLabels: {
       parameters: RequestParameters &
         Endpoints["PUT /repos/{owner}/{repo}/issues/{issue_number}/labels"]["parameters"];
@@ -2505,6 +2931,11 @@ export type RestEndpointMethodTypes = {
       parameters: RequestParameters &
         Endpoints["DELETE /repos/{owner}/{repo}/issues/{issue_number}/lock"]["parameters"];
       response: Endpoints["DELETE /repos/{owner}/{repo}/issues/{issue_number}/lock"]["response"];
+    };
+    unpinComment: {
+      parameters: RequestParameters &
+        Endpoints["DELETE /repos/{owner}/{repo}/issues/comments/{comment_id}/pin"]["parameters"];
+      response: Endpoints["DELETE /repos/{owner}/{repo}/issues/comments/{comment_id}/pin"]["response"];
     };
     update: {
       parameters: RequestParameters &
@@ -2654,10 +3085,25 @@ export type RestEndpointMethodTypes = {
     };
   };
   oidc: {
+    createOidcCustomPropertyInclusionForEnterprise: {
+      parameters: RequestParameters &
+        Endpoints["POST /enterprises/{enterprise}/actions/oidc/customization/properties/repo"]["parameters"];
+      response: Endpoints["POST /enterprises/{enterprise}/actions/oidc/customization/properties/repo"]["response"];
+    };
+    deleteOidcCustomPropertyInclusionForEnterprise: {
+      parameters: RequestParameters &
+        Endpoints["DELETE /enterprises/{enterprise}/actions/oidc/customization/properties/repo/{custom_property_name}"]["parameters"];
+      response: Endpoints["DELETE /enterprises/{enterprise}/actions/oidc/customization/properties/repo/{custom_property_name}"]["response"];
+    };
     getOidcCustomSubTemplateForOrg: {
       parameters: RequestParameters &
         Endpoints["GET /orgs/{org}/actions/oidc/customization/sub"]["parameters"];
       response: Endpoints["GET /orgs/{org}/actions/oidc/customization/sub"]["response"];
+    };
+    listOidcCustomPropertyInclusionsForEnterprise: {
+      parameters: RequestParameters &
+        Endpoints["GET /enterprises/{enterprise}/actions/oidc/customization/properties/repo"]["parameters"];
+      response: Endpoints["GET /enterprises/{enterprise}/actions/oidc/customization/properties/repo"]["response"];
     };
     updateOidcCustomSubTemplateForOrg: {
       parameters: RequestParameters &
@@ -2716,10 +3162,20 @@ export type RestEndpointMethodTypes = {
         Endpoints["POST /orgs/{org}/artifacts/metadata/storage-record"]["parameters"];
       response: Endpoints["POST /orgs/{org}/artifacts/metadata/storage-record"]["response"];
     };
+    createClusterDeploymentRecordsJob: {
+      parameters: RequestParameters &
+        Endpoints["POST /orgs/{org}/artifacts/metadata/deployment-record/cluster/{cluster}/jobs"]["parameters"];
+      response: Endpoints["POST /orgs/{org}/artifacts/metadata/deployment-record/cluster/{cluster}/jobs"]["response"];
+    };
     createInvitation: {
       parameters: RequestParameters &
         Endpoints["POST /orgs/{org}/invitations"]["parameters"];
       response: Endpoints["POST /orgs/{org}/invitations"]["response"];
+    };
+    createIssueField: {
+      parameters: RequestParameters &
+        Endpoints["POST /orgs/{org}/issue-fields"]["parameters"];
+      response: Endpoints["POST /orgs/{org}/issue-fields"]["response"];
     };
     createIssueType: {
       parameters: RequestParameters &
@@ -2730,16 +3186,6 @@ export type RestEndpointMethodTypes = {
       parameters: RequestParameters &
         Endpoints["POST /orgs/{org}/hooks"]["parameters"];
       response: Endpoints["POST /orgs/{org}/hooks"]["response"];
-    };
-    customPropertiesForOrgsCreateOrUpdateOrganizationValues: {
-      parameters: RequestParameters &
-        Endpoints["PATCH /organizations/{org}/org-properties/values"]["parameters"];
-      response: Endpoints["PATCH /organizations/{org}/org-properties/values"]["response"];
-    };
-    customPropertiesForOrgsGetOrganizationValues: {
-      parameters: RequestParameters &
-        Endpoints["GET /organizations/{org}/org-properties/values"]["parameters"];
-      response: Endpoints["GET /organizations/{org}/org-properties/values"]["response"];
     };
     customPropertiesForReposCreateOrUpdateOrganizationDefinition: {
       parameters: RequestParameters &
@@ -2796,6 +3242,11 @@ export type RestEndpointMethodTypes = {
         Endpoints["DELETE /orgs/{org}/attestations/digest/{subject_digest}"]["parameters"];
       response: Endpoints["DELETE /orgs/{org}/attestations/digest/{subject_digest}"]["response"];
     };
+    deleteIssueField: {
+      parameters: RequestParameters &
+        Endpoints["DELETE /orgs/{org}/issue-fields/{issue_field_id}"]["parameters"];
+      response: Endpoints["DELETE /orgs/{org}/issue-fields/{issue_field_id}"]["response"];
+    };
     deleteIssueType: {
       parameters: RequestParameters &
         Endpoints["DELETE /orgs/{org}/issue-types/{issue_type_id}"]["parameters"];
@@ -2820,6 +3271,11 @@ export type RestEndpointMethodTypes = {
       parameters: RequestParameters &
         Endpoints["GET /orgs/{org}"]["parameters"];
       response: Endpoints["GET /orgs/{org}"]["response"];
+    };
+    getClusterDeploymentRecordsJob: {
+      parameters: RequestParameters &
+        Endpoints["GET /orgs/{org}/artifacts/metadata/deployment-record/cluster/{cluster}/jobs/{job_id}"]["parameters"];
+      response: Endpoints["GET /orgs/{org}/artifacts/metadata/deployment-record/cluster/{cluster}/jobs/{job_id}"]["response"];
     };
     getImmutableReleasesSettings: {
       parameters: RequestParameters &
@@ -2929,6 +3385,11 @@ export type RestEndpointMethodTypes = {
       parameters: RequestParameters &
         Endpoints["GET /orgs/{org}/invitations/{invitation_id}/teams"]["parameters"];
       response: Endpoints["GET /orgs/{org}/invitations/{invitation_id}/teams"]["response"];
+    };
+    listIssueFields: {
+      parameters: RequestParameters &
+        Endpoints["GET /orgs/{org}/issue-fields"]["parameters"];
+      response: Endpoints["GET /orgs/{org}/issue-fields"]["response"];
     };
     listIssueTypes: {
       parameters: RequestParameters &
@@ -3104,6 +3565,11 @@ export type RestEndpointMethodTypes = {
       parameters: RequestParameters &
         Endpoints["PATCH /orgs/{org}"]["parameters"];
       response: Endpoints["PATCH /orgs/{org}"]["response"];
+    };
+    updateIssueField: {
+      parameters: RequestParameters &
+        Endpoints["PATCH /orgs/{org}/issue-fields/{issue_field_id}"]["parameters"];
+      response: Endpoints["PATCH /orgs/{org}/issue-fields/{issue_field_id}"]["response"];
     };
     updateIssueType: {
       parameters: RequestParameters &
@@ -3346,6 +3812,16 @@ export type RestEndpointMethodTypes = {
         Endpoints["POST /orgs/{org}/projectsV2/{project_number}/drafts"]["parameters"];
       response: Endpoints["POST /orgs/{org}/projectsV2/{project_number}/drafts"]["response"];
     };
+    createViewForOrg: {
+      parameters: RequestParameters &
+        Endpoints["POST /orgs/{org}/projectsV2/{project_number}/views"]["parameters"];
+      response: Endpoints["POST /orgs/{org}/projectsV2/{project_number}/views"]["response"];
+    };
+    createViewForUser: {
+      parameters: RequestParameters &
+        Endpoints["POST /users/{user_id}/projectsV2/{project_number}/views"]["parameters"];
+      response: Endpoints["POST /users/{user_id}/projectsV2/{project_number}/views"]["response"];
+    };
     deleteItemForOrg: {
       parameters: RequestParameters &
         Endpoints["DELETE /orgs/{org}/projectsV2/{project_number}/items/{item_id}"]["parameters"];
@@ -3416,6 +3892,16 @@ export type RestEndpointMethodTypes = {
         Endpoints["GET /users/{username}/projectsV2/{project_number}/items"]["parameters"];
       response: Endpoints["GET /users/{username}/projectsV2/{project_number}/items"]["response"];
     };
+    listViewItemsForOrg: {
+      parameters: RequestParameters &
+        Endpoints["GET /orgs/{org}/projectsV2/{project_number}/views/{view_number}/items"]["parameters"];
+      response: Endpoints["GET /orgs/{org}/projectsV2/{project_number}/views/{view_number}/items"]["response"];
+    };
+    listViewItemsForUser: {
+      parameters: RequestParameters &
+        Endpoints["GET /users/{username}/projectsV2/{project_number}/views/{view_number}/items"]["parameters"];
+      response: Endpoints["GET /users/{username}/projectsV2/{project_number}/views/{view_number}/items"]["response"];
+    };
     updateItemForOrg: {
       parameters: RequestParameters &
         Endpoints["PATCH /orgs/{org}/projectsV2/{project_number}/items/{item_id}"]["parameters"];
@@ -3425,6 +3911,33 @@ export type RestEndpointMethodTypes = {
       parameters: RequestParameters &
         Endpoints["PATCH /users/{username}/projectsV2/{project_number}/items/{item_id}"]["parameters"];
       response: Endpoints["PATCH /users/{username}/projectsV2/{project_number}/items/{item_id}"]["response"];
+    };
+  };
+  pullRequestStacks: {
+    add: {
+      parameters: RequestParameters &
+        Endpoints["POST /repos/{owner}/{repo}/stacks/{stack_number}/add"]["parameters"];
+      response: Endpoints["POST /repos/{owner}/{repo}/stacks/{stack_number}/add"]["response"];
+    };
+    create: {
+      parameters: RequestParameters &
+        Endpoints["POST /repos/{owner}/{repo}/stacks"]["parameters"];
+      response: Endpoints["POST /repos/{owner}/{repo}/stacks"]["response"];
+    };
+    get: {
+      parameters: RequestParameters &
+        Endpoints["GET /repos/{owner}/{repo}/stacks/{stack_number}"]["parameters"];
+      response: Endpoints["GET /repos/{owner}/{repo}/stacks/{stack_number}"]["response"];
+    };
+    list: {
+      parameters: RequestParameters &
+        Endpoints["GET /repos/{owner}/{repo}/stacks"]["parameters"];
+      response: Endpoints["GET /repos/{owner}/{repo}/stacks"]["response"];
+    };
+    unstack: {
+      parameters: RequestParameters &
+        Endpoints["POST /repos/{owner}/{repo}/stacks/{stack_number}/unstack"]["parameters"];
+      response: Endpoints["POST /repos/{owner}/{repo}/stacks/{stack_number}/unstack"]["response"];
     };
   };
   pulls: {
@@ -3472,6 +3985,11 @@ export type RestEndpointMethodTypes = {
       parameters: RequestParameters &
         Endpoints["GET /repos/{owner}/{repo}/pulls/{pull_number}"]["parameters"];
       response: Endpoints["GET /repos/{owner}/{repo}/pulls/{pull_number}"]["response"];
+    };
+    getMergeAsyncResult: {
+      parameters: RequestParameters &
+        Endpoints["GET /repos/{owner}/{repo}/pulls/{pull_number}/merge-async/{uuid}"]["parameters"];
+      response: Endpoints["GET /repos/{owner}/{repo}/pulls/{pull_number}/merge-async/{uuid}"]["response"];
     };
     getReview: {
       parameters: RequestParameters &
@@ -3527,6 +4045,11 @@ export type RestEndpointMethodTypes = {
       parameters: RequestParameters &
         Endpoints["PUT /repos/{owner}/{repo}/pulls/{pull_number}/merge"]["parameters"];
       response: Endpoints["PUT /repos/{owner}/{repo}/pulls/{pull_number}/merge"]["response"];
+    };
+    mergeAsync: {
+      parameters: RequestParameters &
+        Endpoints["PUT /repos/{owner}/{repo}/pulls/{pull_number}/merge-async"]["parameters"];
+      response: Endpoints["PUT /repos/{owner}/{repo}/pulls/{pull_number}/merge-async"]["response"];
     };
     removeRequestedReviewers: {
       parameters: RequestParameters &
@@ -3597,16 +4120,6 @@ export type RestEndpointMethodTypes = {
         Endpoints["POST /repos/{owner}/{repo}/releases/{release_id}/reactions"]["parameters"];
       response: Endpoints["POST /repos/{owner}/{repo}/releases/{release_id}/reactions"]["response"];
     };
-    createForTeamDiscussionCommentInOrg: {
-      parameters: RequestParameters &
-        Endpoints["POST /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}/reactions"]["parameters"];
-      response: Endpoints["POST /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}/reactions"]["response"];
-    };
-    createForTeamDiscussionInOrg: {
-      parameters: RequestParameters &
-        Endpoints["POST /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/reactions"]["parameters"];
-      response: Endpoints["POST /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/reactions"]["response"];
-    };
     deleteForCommitComment: {
       parameters: RequestParameters &
         Endpoints["DELETE /repos/{owner}/{repo}/comments/{comment_id}/reactions/{reaction_id}"]["parameters"];
@@ -3632,16 +4145,6 @@ export type RestEndpointMethodTypes = {
         Endpoints["DELETE /repos/{owner}/{repo}/releases/{release_id}/reactions/{reaction_id}"]["parameters"];
       response: Endpoints["DELETE /repos/{owner}/{repo}/releases/{release_id}/reactions/{reaction_id}"]["response"];
     };
-    deleteForTeamDiscussion: {
-      parameters: RequestParameters &
-        Endpoints["DELETE /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/reactions/{reaction_id}"]["parameters"];
-      response: Endpoints["DELETE /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/reactions/{reaction_id}"]["response"];
-    };
-    deleteForTeamDiscussionComment: {
-      parameters: RequestParameters &
-        Endpoints["DELETE /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}/reactions/{reaction_id}"]["parameters"];
-      response: Endpoints["DELETE /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}/reactions/{reaction_id}"]["response"];
-    };
     listForCommitComment: {
       parameters: RequestParameters &
         Endpoints["GET /repos/{owner}/{repo}/comments/{comment_id}/reactions"]["parameters"];
@@ -3666,16 +4169,6 @@ export type RestEndpointMethodTypes = {
       parameters: RequestParameters &
         Endpoints["GET /repos/{owner}/{repo}/releases/{release_id}/reactions"]["parameters"];
       response: Endpoints["GET /repos/{owner}/{repo}/releases/{release_id}/reactions"]["response"];
-    };
-    listForTeamDiscussionCommentInOrg: {
-      parameters: RequestParameters &
-        Endpoints["GET /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}/reactions"]["parameters"];
-      response: Endpoints["GET /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}/reactions"]["response"];
-    };
-    listForTeamDiscussionInOrg: {
-      parameters: RequestParameters &
-        Endpoints["GET /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/reactions"]["parameters"];
-      response: Endpoints["GET /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/reactions"]["response"];
     };
   };
   repos: {
@@ -4204,6 +4697,11 @@ export type RestEndpointMethodTypes = {
         Endpoints["GET /repos/{owner}/{repo}/environments/{environment_name}"]["parameters"];
       response: Endpoints["GET /repos/{owner}/{repo}/environments/{environment_name}"]["response"];
     };
+    getHashAlgorithm: {
+      parameters: RequestParameters &
+        Endpoints["GET /repos/{owner}/{repo}/hash-algorithm"]["parameters"];
+      response: Endpoints["GET /repos/{owner}/{repo}/hash-algorithm"]["response"];
+    };
     getLatestPagesBuild: {
       parameters: RequestParameters &
         Endpoints["GET /repos/{owner}/{repo}/pages/builds/latest"]["parameters"];
@@ -4479,6 +4977,11 @@ export type RestEndpointMethodTypes = {
         Endpoints["GET /user/repository_invitations"]["parameters"];
       response: Endpoints["GET /user/repository_invitations"]["response"];
     };
+    listIssueTypes: {
+      parameters: RequestParameters &
+        Endpoints["GET /repos/{owner}/{repo}/issue-types"]["parameters"];
+      response: Endpoints["GET /repos/{owner}/{repo}/issue-types"]["response"];
+    };
     listLanguages: {
       parameters: RequestParameters &
         Endpoints["GET /repos/{owner}/{repo}/languages"]["parameters"];
@@ -4748,6 +5251,26 @@ export type RestEndpointMethodTypes = {
     };
   };
   secretScanning: {
+    bulkCreateOrgCustomPatterns: {
+      parameters: RequestParameters &
+        Endpoints["POST /orgs/{org}/secret-scanning/custom-patterns"]["parameters"];
+      response: Endpoints["POST /orgs/{org}/secret-scanning/custom-patterns"]["response"];
+    };
+    bulkCreateRepoCustomPatterns: {
+      parameters: RequestParameters &
+        Endpoints["POST /repos/{owner}/{repo}/secret-scanning/custom-patterns"]["parameters"];
+      response: Endpoints["POST /repos/{owner}/{repo}/secret-scanning/custom-patterns"]["response"];
+    };
+    bulkDeleteOrgCustomPatterns: {
+      parameters: RequestParameters &
+        Endpoints["DELETE /orgs/{org}/secret-scanning/custom-patterns"]["parameters"];
+      response: Endpoints["DELETE /orgs/{org}/secret-scanning/custom-patterns"]["response"];
+    };
+    bulkDeleteRepoCustomPatterns: {
+      parameters: RequestParameters &
+        Endpoints["DELETE /repos/{owner}/{repo}/secret-scanning/custom-patterns"]["parameters"];
+      response: Endpoints["DELETE /repos/{owner}/{repo}/secret-scanning/custom-patterns"]["response"];
+    };
     createPushProtectionBypass: {
       parameters: RequestParameters &
         Endpoints["POST /repos/{owner}/{repo}/secret-scanning/push-protection-bypasses"]["parameters"];
@@ -4778,20 +5301,40 @@ export type RestEndpointMethodTypes = {
         Endpoints["GET /repos/{owner}/{repo}/secret-scanning/alerts/{alert_number}/locations"]["parameters"];
       response: Endpoints["GET /repos/{owner}/{repo}/secret-scanning/alerts/{alert_number}/locations"]["response"];
     };
+    listOrgCustomPatterns: {
+      parameters: RequestParameters &
+        Endpoints["GET /orgs/{org}/secret-scanning/custom-patterns"]["parameters"];
+      response: Endpoints["GET /orgs/{org}/secret-scanning/custom-patterns"]["response"];
+    };
     listOrgPatternConfigs: {
       parameters: RequestParameters &
         Endpoints["GET /orgs/{org}/secret-scanning/pattern-configurations"]["parameters"];
       response: Endpoints["GET /orgs/{org}/secret-scanning/pattern-configurations"]["response"];
+    };
+    listRepoCustomPatterns: {
+      parameters: RequestParameters &
+        Endpoints["GET /repos/{owner}/{repo}/secret-scanning/custom-patterns"]["parameters"];
+      response: Endpoints["GET /repos/{owner}/{repo}/secret-scanning/custom-patterns"]["response"];
     };
     updateAlert: {
       parameters: RequestParameters &
         Endpoints["PATCH /repos/{owner}/{repo}/secret-scanning/alerts/{alert_number}"]["parameters"];
       response: Endpoints["PATCH /repos/{owner}/{repo}/secret-scanning/alerts/{alert_number}"]["response"];
     };
+    updateOrgCustomPattern: {
+      parameters: RequestParameters &
+        Endpoints["PATCH /orgs/{org}/secret-scanning/custom-patterns/{pattern_id}"]["parameters"];
+      response: Endpoints["PATCH /orgs/{org}/secret-scanning/custom-patterns/{pattern_id}"]["response"];
+    };
     updateOrgPatternConfigs: {
       parameters: RequestParameters &
         Endpoints["PATCH /orgs/{org}/secret-scanning/pattern-configurations"]["parameters"];
       response: Endpoints["PATCH /orgs/{org}/secret-scanning/pattern-configurations"]["response"];
+    };
+    updateRepoCustomPattern: {
+      parameters: RequestParameters &
+        Endpoints["PATCH /repos/{owner}/{repo}/secret-scanning/custom-patterns/{pattern_id}"]["parameters"];
+      response: Endpoints["PATCH /repos/{owner}/{repo}/secret-scanning/custom-patterns/{pattern_id}"]["response"];
     };
   };
   securityAdvisories: {
@@ -4867,26 +5410,6 @@ export type RestEndpointMethodTypes = {
         Endpoints["POST /orgs/{org}/teams"]["parameters"];
       response: Endpoints["POST /orgs/{org}/teams"]["response"];
     };
-    createDiscussionCommentInOrg: {
-      parameters: RequestParameters &
-        Endpoints["POST /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments"]["parameters"];
-      response: Endpoints["POST /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments"]["response"];
-    };
-    createDiscussionInOrg: {
-      parameters: RequestParameters &
-        Endpoints["POST /orgs/{org}/teams/{team_slug}/discussions"]["parameters"];
-      response: Endpoints["POST /orgs/{org}/teams/{team_slug}/discussions"]["response"];
-    };
-    deleteDiscussionCommentInOrg: {
-      parameters: RequestParameters &
-        Endpoints["DELETE /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}"]["parameters"];
-      response: Endpoints["DELETE /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}"]["response"];
-    };
-    deleteDiscussionInOrg: {
-      parameters: RequestParameters &
-        Endpoints["DELETE /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}"]["parameters"];
-      response: Endpoints["DELETE /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}"]["response"];
-    };
     deleteInOrg: {
       parameters: RequestParameters &
         Endpoints["DELETE /orgs/{org}/teams/{team_slug}"]["parameters"];
@@ -4896,16 +5419,6 @@ export type RestEndpointMethodTypes = {
       parameters: RequestParameters &
         Endpoints["GET /orgs/{org}/teams/{team_slug}"]["parameters"];
       response: Endpoints["GET /orgs/{org}/teams/{team_slug}"]["response"];
-    };
-    getDiscussionCommentInOrg: {
-      parameters: RequestParameters &
-        Endpoints["GET /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}"]["parameters"];
-      response: Endpoints["GET /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}"]["response"];
-    };
-    getDiscussionInOrg: {
-      parameters: RequestParameters &
-        Endpoints["GET /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}"]["parameters"];
-      response: Endpoints["GET /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}"]["response"];
     };
     getMembershipForUserInOrg: {
       parameters: RequestParameters &
@@ -4921,16 +5434,6 @@ export type RestEndpointMethodTypes = {
       parameters: RequestParameters &
         Endpoints["GET /orgs/{org}/teams/{team_slug}/teams"]["parameters"];
       response: Endpoints["GET /orgs/{org}/teams/{team_slug}/teams"]["response"];
-    };
-    listDiscussionCommentsInOrg: {
-      parameters: RequestParameters &
-        Endpoints["GET /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments"]["parameters"];
-      response: Endpoints["GET /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments"]["response"];
-    };
-    listDiscussionsInOrg: {
-      parameters: RequestParameters &
-        Endpoints["GET /orgs/{org}/teams/{team_slug}/discussions"]["parameters"];
-      response: Endpoints["GET /orgs/{org}/teams/{team_slug}/discussions"]["response"];
     };
     listForAuthenticatedUser: {
       parameters: RequestParameters &
@@ -4961,16 +5464,6 @@ export type RestEndpointMethodTypes = {
       parameters: RequestParameters &
         Endpoints["DELETE /orgs/{org}/teams/{team_slug}/repos/{owner}/{repo}"]["parameters"];
       response: Endpoints["DELETE /orgs/{org}/teams/{team_slug}/repos/{owner}/{repo}"]["response"];
-    };
-    updateDiscussionCommentInOrg: {
-      parameters: RequestParameters &
-        Endpoints["PATCH /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}"]["parameters"];
-      response: Endpoints["PATCH /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}"]["response"];
-    };
-    updateDiscussionInOrg: {
-      parameters: RequestParameters &
-        Endpoints["PATCH /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}"]["parameters"];
-      response: Endpoints["PATCH /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}"]["response"];
     };
     updateInOrg: {
       parameters: RequestParameters &

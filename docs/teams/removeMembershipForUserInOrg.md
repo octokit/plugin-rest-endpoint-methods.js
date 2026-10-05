@@ -1,4 +1,5 @@
 ---
+
 name: Remove team membership for a user
 example: octokit.rest.teams.removeMembershipForUserInOrg({ org, team_slug, username })
 route: DELETE /orgs/{org}/teams/{team_slug}/memberships/{username}

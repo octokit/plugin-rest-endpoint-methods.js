@@ -1,4 +1,5 @@
 ---
+
 name: Remove an organization role from a team
 example: octokit.rest.orgs.revokeOrgRoleTeam({ org, team_slug, role_id })
 route: DELETE /orgs/{org}/organization-roles/teams/{team_slug}/{role_id}

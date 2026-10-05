@@ -1,4 +1,5 @@
 ---
+
 name: List subscriptions for the authenticated user (stubbed)
 example: octokit.rest.apps.listSubscriptionsForAuthenticatedUserStubbed()
 route: GET /user/marketplace_purchases/stubbed

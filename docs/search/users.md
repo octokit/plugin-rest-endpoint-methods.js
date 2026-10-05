@@ -1,4 +1,5 @@
 ---
+
 name: Search users
 example: octokit.rest.search.users({ q })
 route: GET /search/users
