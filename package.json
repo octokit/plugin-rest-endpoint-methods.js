@@ -38,7 +38,7 @@
     "github-openapi-graphql-query": "^5.0.0",
     "prettier": "3.9.6",
     "semantic-release-plugin-update-version-in-files": "^2.0.0",
-    "sinon": "^21.0.0",
+    "sinon": "^22.0.0",
     "sort-keys": "^6.0.0",
     "string-to-jsdoc-comment": "^1.0.0",
     "tinyglobby": "^0.2.15",
