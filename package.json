@@ -30,7 +30,7 @@
   "devDependencies": {
     "@octokit/core": "^7.0.7",
     "@octokit/tsconfig": "^4.0.0",
-    "@types/node": "^24.0.0",
+    "@types/node": "^26.0.0",
     "@vitest/coverage-v8": "^4.0.0",
     "camelcase": "^9.0.0",
     "esbuild": "^0.28.0",
